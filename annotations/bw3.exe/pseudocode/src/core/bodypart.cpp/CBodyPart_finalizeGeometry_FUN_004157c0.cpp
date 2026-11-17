@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(CBodyPart *this_ptr)
 
 {
@@ -78,7 +76,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(CBodyPart
     local_7c.x = local_7c.x + iVar13;
     local_7c.y = local_7c.y + (int)local_14;
     local_7c.z = local_7c.z + iVar11;
-    fVar7 = (float)_DAT_005b6c7a;
+    fVar7 = (float)0.00390625;
     (this_ptr->bounding_box).min.x = (float)local_58.x * fVar7;
     (this_ptr->bounding_box).min.y = (float)local_58.y * fVar7;
     (this_ptr->bounding_box).min.z = (float)local_58.z * fVar7;
@@ -174,7 +172,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(CBodyPart
           *piVar10 = piVar10[2];
         }
         else {
-          dVar17 = _DAT_005b6c82 / dVar17;
+          dVar17 = 65535 / dVar17;
           dVar15 = round(dVar15 * dVar17);
           dVar16 = round(dVar16 * dVar17);
           dVar17 = round(dVar3 * dVar17);
@@ -216,10 +214,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(CBodyPart
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_00414910(this_ptr,0,0);
   pCVar5 = &(this_ptr->bounding_box).max;
-  if (pCVar5 != (CVector3f *)&DAT_02cfd900) {
-    pCVar5->x = _DAT_02cfd900;
-    (this_ptr->bounding_box).max.y = _DAT_02cfd904;
-    (this_ptr->bounding_box).max.z = _DAT_02cfd908;
+  if (pCVar5 != &g_CVector3f_02cfd900) {
+    pCVar5->x = g_CVector3f_02cfd900.x;
+    (this_ptr->bounding_box).max.y = g_CVector3f_02cfd900.y;
+    (this_ptr->bounding_box).max.z = g_CVector3f_02cfd900.z;
   }
   if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar5) {
     (this_ptr->bounding_box).min.x = pCVar5->x;

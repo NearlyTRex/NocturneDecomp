@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_005752a0 at 005752a5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006232ec
+;   int g_INT_006232ec = 0x2
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getAudioFormat_FUN_005751c0
@@ -22,11 +22,11 @@ section .text
 
     PUSH 0x0                            ; 00575240
         ;   Label: sound_sndmain.cpp_getAudioChannelCount_FUN_00575240
-    PUSH 0x6232ec                       ; 00575242 | DAT_006232ec
+    PUSH 0x6232ec                       ; 00575242 | g_INT_006232ec
     PUSH 0x0                            ; 00575247
     CALL sound_sndmain.cpp_getAudioFormat_FUN_005751c0 ; 00575249
         ;   XREF to: 005751c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getAudioFormat_FUN_005751c0(int * bits_per_sample, int * channels, int * sample_rate)
-    MOV EAX,[0x006232ec]                ; 0057524e | DAT_006232ec
+    MOV EAX,[0x006232ec]                ; 0057524e | g_INT_006232ec
     ADD ESP,0xc                         ; 00575253
     RET                                 ; 00575256
 

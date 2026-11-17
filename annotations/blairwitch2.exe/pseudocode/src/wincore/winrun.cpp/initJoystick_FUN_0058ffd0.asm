@@ -17,10 +17,10 @@
 ;   void* PTR_GetProcAddress_005c85b8 = 001c8f44
 ;   TerminatedCString s_winmm_dll_005eeadd
 ;   TerminatedCString s_joyGetPosEx_005eeae7
-;   undefined4 DAT_006141d0
-;   undefined4 DAT_01c38b04
-;   undefined4 DAT_01c38b14
-;   undefined4 DAT_026656bc
+;   int g_INT_006141d0 = 0x4
+;   int g_INT_01c38b04
+;   int g_INT_01c38b14
+;   void* g_PTR_026656bc
 ;   undefined4 DAT_026656c0
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     PUSH 0x5eeae7                       ; 0058ffeb | = "joyGetPosEx"
     PUSH EAX                            ; 0058fff0
     CALL dword ptr CS:[0x5c85b8]        ; 0058fff1 | PTR_GetProcAddress_005c85b8
-    MOV [0x026656bc],EAX                ; 0058fff8 | DAT_026656bc
+    MOV [0x026656bc],EAX                ; 0058fff8 | g_PTR_026656bc
     PUSH 0x194                          ; 0058fffd
         ;   Label: LAB_0058fffd
     LEA EAX,[ESP + 0x4]                 ; 00590002
@@ -56,9 +56,9 @@ section .text
     TEST byte ptr [ESP + 0x60],0x10     ; 00590014
     SETNZ AL                            ; 00590019
     AND EAX,0xff                        ; 0059001c
-    MOV [0x01c38b14],EAX                ; 00590021 | DAT_01c38b14
+    MOV [0x01c38b14],EAX                ; 00590021 | g_INT_01c38b14
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00590026
-    MOV [0x006141d0],EAX                ; 0059002a | DAT_006141d0
+    MOV [0x006141d0],EAX                ; 0059002a | g_INT_006141d0
     CMP EAX,0x8                         ; 0059002f
     JG 0x0059004d                       ; 00590032
         ;   XREF to: 0059004d (CONDITIONAL_JUMP)  ; LAB_0059004d
@@ -68,11 +68,11 @@ section .text
     PUSH EBX                            ; 00590041
         ;   Label: LAB_00590041
     XOR EBX,EBX                         ; 00590042
-    MOV dword ptr [0x01c38b04],EBX      ; 00590044 | DAT_01c38b04
+    MOV dword ptr [0x01c38b04],EBX      ; 00590044 | g_INT_01c38b04
     POP EBX                             ; 0059004a
     JMP 0x00590034                      ; 0059004b
         ;   XREF to: 00590034 (UNCONDITIONAL_JUMP)  ; LAB_00590034
-    MOV dword ptr [0x006141d0],0x8      ; 0059004d | DAT_006141d0
+    MOV dword ptr [0x006141d0],0x8      ; 0059004d | g_INT_006141d0
         ;   Label: LAB_0059004d
     ADD ESP,0x194                       ; 00590057
     RET                                 ; 0059005d

@@ -18,10 +18,10 @@
 ;   crt_unknown.c_FUN_005c17c8 at 005c17fa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006013f2
-;   undefined4 DAT_006013f4
-;   undefined4 DAT_0060140c
-;   undefined4 DAT_0060140e
+;   undefined4 g_DOUBLE_006013ec+6
+;   short g_SHORT_006013f4 = 0x0
+;   short g_SHORT_0060140c = 0x16d
+;   short g_SHORT_0060140e = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c__mktime_FUN_005c43e0
@@ -52,14 +52,14 @@ section .text
     JZ 0x005c1708                       ; 005c16f3
         ;   XREF to: 005c1708 (CONDITIONAL_JUMP)  ; LAB_005c1708
     MOV EAX,dword ptr [EBX + 0x10]      ; 005c16f5
-    MOV ESI,dword ptr [EAX*0x2 + 0x60140e] ; 005c16f8 | DAT_0060140e
-    MOV EAX,dword ptr [EAX*0x2 + 0x60140c] ; 005c16ff | DAT_0060140c
+    MOV ESI,dword ptr [EAX*0x2 + 0x60140e] ; 005c16f8 | g_SHORT_0060140e
+    MOV EAX,dword ptr [EAX*0x2 + 0x60140c] ; 005c16ff | g_SHORT_0060140c
     JMP 0x005c1719                      ; 005c1706
         ;   XREF to: 005c1719 (UNCONDITIONAL_JUMP)  ; LAB_005c1719
     MOV EAX,dword ptr [EBX + 0x10]      ; 005c1708
         ;   Label: LAB_005c1708
-    MOV ESI,dword ptr [EAX*0x2 + 0x6013f4] ; 005c170b | DAT_006013f4
-    MOV EAX,dword ptr [EAX*0x2 + 0x6013f2] ; 005c1712 | DAT_006013f2
+    MOV ESI,dword ptr [EAX*0x2 + 0x6013f4] ; 005c170b | g_SHORT_006013f4
+    MOV EAX,dword ptr [EAX*0x2 + 0x6013f2] ; 005c1712 | g_DOUBLE_006013ec+6
     SAR ESI,0x10                        ; 005c1719
         ;   Label: LAB_005c1719
     SAR EAX,0x10                        ; 005c171c

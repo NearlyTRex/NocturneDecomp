@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80(CDemonMission *this_ptr)
 
 {
@@ -26,10 +24,11 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80
     if (this_ptr->current_set_index == (pCVar1->location).area_id) {
       if (pCVar1->lifecycle_state == ACTOR_NOT_CREATED) {
         if (pCVar1->create_event[0] != '\0') {
-          iVar3 = _stricmp(pCVar1->create_event,&DAT_005c8b57);
+          iVar3 = _stricmp(pCVar1->create_event,"none");
           if ((iVar3 != 0) &&
              (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                                (0x01C6E360,pCVar1->create_event), iVar3 == 0)) goto LAB_004f707a;
+                                (g_CEventList_PTR_005fba60,pCVar1->create_event), iVar3 == 0))
+          goto LAB_004f707a;
         }
         iVar3 = core_actor_cpp_randomChance_FUN_0040cf40(pCVar1->create_prob);
         if (iVar3 == 0) {
@@ -39,8 +38,8 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80
           pCVar1->lifecycle_state = ACTOR_CREATED;
 LAB_004f6ffc:
           if (1999 < g_CDemonSetPtr->actor_count) {
-            _DAT_01d71de0 = "..\\core\\mission.cpp";
-            _DAT_01d71de4 = 0x497;
+            g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
+            g_INT_01d71de4 = 0x497;
             core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
           }
           pCVar2 = g_CDemonSetPtr;

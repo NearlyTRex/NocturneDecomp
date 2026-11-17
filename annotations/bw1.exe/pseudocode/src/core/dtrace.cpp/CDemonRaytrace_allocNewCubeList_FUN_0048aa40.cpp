@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40(CDemonRaytrace *this_ptr)
 
 {
@@ -24,8 +22,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40(CDemon
   if (pCVar1 != (CDemonCube *)0x0) {
     return;
   }
-  _DAT_01d1d400 = "..\\core\\dtrace.cpp";
-  _DAT_01d1d404 = 0xae;
+  g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
+  g_INT_01d1d404 = 0xae;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonRaytrace::allocNewCubeList - Out of memory!");
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_00572250(CSfxSlot *this_ptr)
 
 {
@@ -16,8 +14,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_00572250(CSfxSlot *this_ptr)
   int dest_buffer_offset;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
-    _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-    _DAT_01d1d404 = 0xd75;
+    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+    g_INT_01d1d404 = 0xd75;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::seek - no sample?!");
   }
   dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430

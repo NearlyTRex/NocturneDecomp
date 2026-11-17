@@ -12,7 +12,7 @@
 ;   core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000 at 0059d015
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -66,7 +66,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10 ; 00589bec
         ;   XREF to: 00408a10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00589bf1
-    MOV EDX,dword ptr [0x0060b280]      ; 00589bf4 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 00589bf4 | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 00589bfa
     MOV dword ptr [EBX + 0x6d0],0x0     ; 00589bfb
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00589c05

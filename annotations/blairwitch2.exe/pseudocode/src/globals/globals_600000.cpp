@@ -498,6 +498,10 @@ CDemonActor_vtable g_CNecklaceVTable = {
 CDemonFilter* g_GlobalFilters = (CDemonFilter*)&CDemonFilter_ARRAY_01510e18;
 CDemonFilter* g_PlayerFilters = (CDemonFilter*)&CDemonFilter_ARRAY_01510e18;
 
+// CDemonRenderer*
+CDemonRenderer* g_CDemonRenderer_PTR_0060b27c = (CDemonRenderer*)&g_CDemonRenderer_01ba5c50;
+CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = (CDemonRenderer*)&g_CDemonRenderer_01ba5c50;
+
 // CDog_full_vtable
 CDog_full_vtable g_CDogVTable = {
     ._ub = {
@@ -936,6 +940,388 @@ CHand_full_vtable g_CHandVTable = {
     ._uhand = {.processMeleeAttackState = (CHand_processMeleeAttackState *)core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0, .processSleepingState = (CHand_processSleepingState *)core_hand_cpp_CHand_processSleepingState_FUN_005a9ff0}
 };
 
+// CVector3i[62]
+CVector3i g_CVector3i_ARRAY_0060a0fc[62] = {
+    {
+        .x = 0x00000000,
+        .y = 0x00000100,
+        .z = 0x00000000
+    },
+    {
+        .x = -110,
+        .y = 0x000000DD,
+        .z = -64
+    },
+    {
+        .x = -128,
+        .y = 0x000000DD,
+        .z = 0x00000000
+    },
+    {
+        .x = -64,
+        .y = 0x000000DD,
+        .z = -110
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x000000DD,
+        .z = -128
+    },
+    {
+        .x = 0x00000040,
+        .y = 0x000000DD,
+        .z = -110
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x000000DD,
+        .z = -64
+    },
+    {
+        .x = 0x00000080,
+        .y = 0x000000DD,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x000000DD,
+        .z = 0x00000040
+    },
+    {
+        .x = 0x00000040,
+        .y = 0x000000DD,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x000000DD,
+        .z = 0x00000080
+    },
+    {
+        .x = -64,
+        .y = 0x000000DD,
+        .z = 0x0000006E
+    },
+    {
+        .x = -110,
+        .y = 0x000000DD,
+        .z = 0x00000040
+    },
+    {
+        .x = 0x000000DD,
+        .y = 0x00000080,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x000000C0,
+        .y = 0x00000080,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x00000080,
+        .z = 0x000000C0
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000080,
+        .z = 0x000000DD
+    },
+    {
+        .x = -110,
+        .y = 0x00000080,
+        .z = 0x000000C0
+    },
+    {
+        .x = -192,
+        .y = 0x00000080,
+        .z = 0x0000006E
+    },
+    {
+        .x = -221,
+        .y = 0x00000080,
+        .z = 0x00000000
+    },
+    {
+        .x = -192,
+        .y = 0x00000080,
+        .z = -110
+    },
+    {
+        .x = -110,
+        .y = 0x00000080,
+        .z = -192
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000080,
+        .z = -221
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x00000080,
+        .z = -192
+    },
+    {
+        .x = 0x000000C0,
+        .y = 0x00000080,
+        .z = -110
+    },
+    {
+        .x = 0x00000100,
+        .y = 0x00000000,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x000000DD,
+        .y = 0x00000000,
+        .z = 0x00000080
+    },
+    {
+        .x = 0x00000080,
+        .y = 0x00000000,
+        .z = 0x000000DD
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000000,
+        .z = 0x00000100
+    },
+    {
+        .x = -128,
+        .y = 0x00000000,
+        .z = 0x000000DD
+    },
+    {
+        .x = -221,
+        .y = 0x00000000,
+        .z = 0x00000080
+    },
+    {
+        .x = -256,
+        .y = 0x00000000,
+        .z = 0x00000000
+    },
+    {
+        .x = -221,
+        .y = 0x00000000,
+        .z = -128
+    },
+    {
+        .x = -128,
+        .y = 0x00000000,
+        .z = -221
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000000,
+        .z = -256
+    },
+    {
+        .x = 0x00000080,
+        .y = 0x00000000,
+        .z = -221
+    },
+    {
+        .x = 0x000000DD,
+        .y = 0x00000000,
+        .z = -128
+    },
+    {
+        .x = 0x000000DD,
+        .y = -128,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x000000C0,
+        .y = -128,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x0000006E,
+        .y = -128,
+        .z = 0x000000C0
+    },
+    {
+        .x = 0x00000000,
+        .y = -128,
+        .z = 0x000000DD
+    },
+    {
+        .x = -110,
+        .y = -128,
+        .z = 0x000000C0
+    },
+    {
+        .x = -192,
+        .y = -128,
+        .z = 0x0000006E
+    },
+    {
+        .x = -221,
+        .y = -128,
+        .z = 0x00000000
+    },
+    {
+        .x = -192,
+        .y = -128,
+        .z = -110
+    },
+    {
+        .x = -110,
+        .y = -128,
+        .z = -192
+    },
+    {
+        .x = 0x00000000,
+        .y = -128,
+        .z = -221
+    },
+    {
+        .x = 0x0000006E,
+        .y = -128,
+        .z = -192
+    },
+    {
+        .x = 0x000000C0,
+        .y = -128,
+        .z = -110
+    },
+    {
+        .x = 0x00000080,
+        .y = -221,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x0000006E,
+        .y = -221,
+        .z = 0x00000040
+    },
+    {
+        .x = 0x00000040,
+        .y = -221,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x00000000,
+        .y = -221,
+        .z = 0x00000080
+    },
+    {
+        .x = -64,
+        .y = -221,
+        .z = 0x0000006E
+    },
+    {
+        .x = -110,
+        .y = -221,
+        .z = 0x00000040
+    },
+    {
+        .x = -128,
+        .y = -221,
+        .z = 0x00000000
+    },
+    {
+        .x = -110,
+        .y = -221,
+        .z = -64
+    },
+    {
+        .x = -64,
+        .y = -221,
+        .z = -110
+    },
+    {
+        .x = 0x00000000,
+        .y = -221,
+        .z = -128
+    },
+    {
+        .x = 0x00000040,
+        .y = -221,
+        .z = -110
+    },
+    {
+        .x = 0x0000006E,
+        .y = -221,
+        .z = -64
+    },
+    {
+        .x = 0x00000000,
+        .y = -256,
+        .z = 0x00000000
+    }
+};
+
+// SMRGLPrimitiveQuad*[2000]
+SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_0060b288[2000] = {};
+
+// SMRGLSkyTexture*
+SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_0060d1f0 = (SMRGLSkyTexture*)&g_SMRGLSkyTexture_ARRAY_01bd3a00;
+
+// SMRGLTextureBasic
+SMRGLTextureBasic g_SMRGLTextureBasic_00609810 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BLUEGLOW.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_00609acc = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "CHAR2.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_00609ae4 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BLUSPARK.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_00609ff0 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BACKGND.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0060a0e4 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "headlite.raw"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0060afc8 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "LITEFUZZ.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0060afe0 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "HEADLITE.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0060aff8 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "SUN06.RAW"
+};
+
+// SMRGLTextureBasic[6]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00609a10[6] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT4.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT5.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT6.RAW"
+    }
+};
+
 // WatcomDestructorCall
 WatcomDestructorCall DAT_006002B0 = {
     .delete_flags = 0x00000004,
@@ -1139,7 +1525,22 @@ WatcomTypeInfo g_CMorphModelTypeInfo = {
     .class_name = (char *)s_CMorphModel_0061ed84
 };
 
+// char[104]
+char g_CHAR_ARRAY_00609590[104] = "";
+
+// char[300]
+char g_CHAR_ARRAY_006095f8[300] = "";
+
+// float
+float g_FLOAT_0060b274 = 0.1f;
+float g_FLOAT_0060d1f4 = 5.0f;
+
 // int
+int g_INT_006013f6 = 0x3B001F;
+int g_INT_0060936c = 0x1;
+int g_INT_00609370 = 0xF8;
+int g_INT_006093bc = 0x1;
+int g_INT_006093c0 = 0xFFFFFF;
 int g_CDemonActorClassVersion = 0x7;
 int g_CAmmoClassVersion = 0x1;
 int g_CAmmoBoxClassVersion = 0x4;
@@ -1147,6 +1548,7 @@ int g_CAnvilClassVersion = 0x1;
 int g_CArmourClassVersion = 0x1;
 int g_CBackgroundActorClassVersion = 0x3;
 int g_CBaronClassVersion = 0x2;
+int g_INT_00609828 = 0x1;
 int g_CBarrierClassVersion = 0x2;
 int g_CBatClassVersion = 0x4;
 int g_CBatCreatureClassVersion = 0x1;
@@ -1157,54 +1559,110 @@ int g_CBiggsClassVersion = 0x1;
 int g_CBodyPartClassVersion = 0x5;
 int g_CBoneGuyClassVersion = 0x5;
 int g_CBoxActorClassVersion = 0x10;
+int g_INT_00609960 = 0x2;
 int g_CBrideClassVersion = 0x4;
 int g_CBugsClassVersion = 0x1;
 int g_CCharacterClassVersion = 0x9;
+int g_INT_00609b30 = 0x1;
+int g_INT_00609b34 = 0x7FFFFFFF;
 int g_CColonelClassVersion = 0x1;
 int g_CConstructClassVersion = 0x3;
 int g_CConveyorClassVersion = 0x2;
 int g_CZombieCowClassVersion = 0x2;
 int g_CCrateClassVersion = 0x2;
 int g_CCrossbowClassVersion = 0x1;
+int g_INT_00609f98 = 0x10000;
+int g_INT_00609f9c = 0xC80000;
+int g_INT_00609fa0 = 0x3;
+int g_INT_00609fa4 = 0x40;
+int g_INT_00609fa8 = 0x40;
+int g_INT_00609fac = 0x40;
+int g_INT_0060a008 = -1;
 int g_CActorDestinationClassVersion = 0x4;
 int g_CDocClassVersion = 0xB;
 int g_CZombieDogClassVersion = 0x2;
 int g_CDoorClassVersion = 0xD;
 int g_CDraculaBrideClassVersion = 0x9;
+int g_INT_0060b270 = 0x1;
+int g_INT_0060b284 = 0x1;
 int g_CDripClassVersion = 0x6;
 int g_CDroneClassVersion = 0x2;
+int g_INT_0060d254 = 0;
+int g_INT_0060d258 = 0;
+int g_INT_0060d25c = 0;
+int g_INT_0060d264 = 0;
+
+// int[16]
+int g_INT_ARRAY_006094d0[16] = {
+    0x000000FF, 0x000000F8, 0x00000002, 0x00000004, 0x00000001, 0x00000003, 0x00000005, 0x00000006,
+    0x00000007, 0x000000F9, 0x000000FA, 0x000000FB, 0x000000E6, 0x000000F5, 0x00000000, 0x000000FD
+};
+
+// int[8]
+int g_INT_ARRAY_00609fb0[8] = {0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1, -1, -1};
+int g_INT_ARRAY_00609fd0[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1};
+
+// short
+short g_SHORT_006013f4 = 0;
+short g_SHORT_0060140c = 0x16D;
+short g_SHORT_0060140e = 0;
+
+// uint
+uint g_UINT_0060d238 = 0;
+uint g_UINT_0060d23c = 0;
+uint g_UINT_0060d244 = 0;
+
+// uint*
+uint* g_UINT_PTR_0060d268 = nullptr;
 
 // undefined1
 undefined1 DAT_0060958f = 0x00;
-undefined1 DAT_00609590 = 0x00;
-undefined1 DAT_00609591 = 0x00;
 
 // undefined4
-undefined4 DAT_00601430 = 0x00000000;
-undefined4 DAT_0060936c = 0x00000001;
-undefined4 DAT_00609370 = 0x000000F8;
-undefined4 DAT_006093c0 = 0x00FFFFFF;
-undefined4 DAT_006095f8 = 0x00000000;
-undefined4 DAT_006095fc = 0x00000000;
-undefined4 DAT_00609b34 = 0x7FFFFFFF;
-undefined4 DAT_00609f98 = 0x00010000;
-undefined4 DAT_00609f9c = 0x00C80000;
-undefined4 DAT_00609fa0 = 0x00000003;
-undefined4 DAT_00609fa4 = 0x00000040;
-undefined4 DAT_00609fa8 = 0x00000040;
-undefined4 DAT_00609fac = 0x00000040;
-undefined4 DAT_00609fb0 = 0x00000000;
-undefined4 DAT_0060a0fc = 0x00000000;
-undefined4 DAT_0060a104 = 0x00000000;
 undefined4 DAT_0060a400 = 0x00000000;
 undefined4 DAT_0060a404 = 0x00000000;
 undefined4 DAT_0060a424 = 0x00000000;
-undefined4 DAT_0060b280 = 0x01BA5C50;
-undefined4 DAT_0060b284 = 0x00000001;
-undefined4 DAT_0060d238 = 0x00000000;
-undefined4 DAT_0060d23c = 0x00000000;
-undefined4 DAT_0060d244 = 0x00000000;
-undefined4 DAT_0060d260 = 0x00000000;
-undefined4 DAT_0060d264 = 0x00000000;
-undefined4 DAT_0060d268 = 0x00000000;
+
+// void*
+void* g_PTR_006002e4 = (void*)0x005A86D0; // LAB_005a86d0
+void* g_PTR_0060d260 = nullptr;
+
+// void*[54]
+void* g_CChainVTable[54] = {
+    (void*)core_chain_cpp_CChain_setup_FUN_005b48e0, (void*)core_actor_cpp_CDemonActor_markResourcesInUse_FUN_00408ac0, (void*)core_actor_cpp_CDemonActor_markResourcesInUse_FUN_00408ac0, (void*)core_chain_cpp_CChain_process_FUN_005b4d30,
+    (void*)core_actor_cpp_CDemonActor_renderTransparent_FUN_004089b0, (void*)core_chain_cpp_CChain_renderTransparent_FUN_005b56c0, (void*)core_actor_cpp_CDemonActor_renderBackground_FUN_004089c0, (void*)core_chain_cpp_CChain_getBoundingBox_FUN_005b5ca0,
+    (void*)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c990, (void*)core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40, (void*)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60, (void*)core_actor_cpp_CDemonActor_playSound_FUN_00408e50,
+    (void*)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408e70, (void*)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408e90, (void*)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0, (void*)core_chain_cpp_CChain_getCollisionType_FUN_005b5f40,
+    (void*)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20,
+    (void*)core_actor_cpp_CDemonActor_updateCollisionData_FUN_00409850, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20, (void*)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409af0, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20,
+    (void*)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409e30, (void*)core_actor_cpp_CDemonActor_processActionButton_FUN_00409e40, (void*)core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409e70, (void*)core_actor_cpp_CDemonActor_onPickup_FUN_00409ec0,
+    (void*)core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890, (void*)core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409f20, (void*)core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050, (void*)core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50,
+    (void*)core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ad90, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20, (void*)core_actor_cpp_CDemonActor_pickup_FUN_00408ef0, (void*)core_actor_cpp_CDemonActor_pickup_FUN_00408ef0,
+    (void*)core_actor_cpp_CDemonActor_pickup_FUN_00408ef0, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20, (void*)core_actor_cpp_CDemonActor_getInteractionInfo_FUN_00409ed0, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20,
+    (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20, (void*)core_actor_cpp_CDemonActor_stopInteraction_FUN_00409f10, (void*)core_actor_cpp_CDemonActor_spawnFlies_FUN_00409db0, (void*)core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408f00,
+    (void*)core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408f90, (void*)core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830, (void*)core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408b90, (void*)core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0,
+    (void*)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0, (void*)core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20, (void*)core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409df0, (void*)core_chain_cpp_CChain_getActorType_FUN_005b4710,
+    (void*)core_chain_cpp_CChain_dtor_FUN_005b5f50, (void*)core_chain_cpp_CChain_archive_FUN_005b5e10
+};
+
+// void*[67]
+void* g_ARRAY_PTR_006093c4[67] = {
+    (void*)engine_3d_c_badMRGLStruct_FUN_00403800, (void*)engine_3d_c_processCameraRelativePoint_FUN_00403830, (void*)engine_3d_c_transformAndBufferVertices_FUN_00403890, (void*)engine_3d_c_processVertexLighting_FUN_00403a40,
+    (void*)engine_3d_c_processTextureCoordinates_FUN_00403aa0, (void*)engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403af0, (void*)engine_3d_c_renderPolygonFogColorOp6_FUN_00403bc0, (void*)engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403ce0,
+    (void*)engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00403d80, (void*)engine_3d_c_abortOldFuncOp9_FUN_00403e20, (void*)engine_3d_c_processPolygonColor_FUN_00403e50, (void*)engine_3d_c_abortOldFuncOp11_FUN_00403ee0,
+    (void*)engine_3d_c_abortOldFuncOp12_FUN_00403f10, (void*)engine_texture_cpp_ensureTextureLoaded_FUN_00574e00, (void*)engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403f40, (void*)engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00404140,
+    (void*)engine_3d_c_abortOldFuncOp16_FUN_004041f0, (void*)engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00404240, (void*)engine_3d_c_abortOldFuncOp18_FUN_00404440, (void*)engine_3d_c_badMRGLStruct_FUN_00403800,
+    (void*)engine_3d_c_setRelativeCoord_FUN_00404470, (void*)engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_004044c0, (void*)engine_3d_c_drawLineStrip2D_FUN_00404590, (void*)engine_3d_c_abortOldFuncOp23_FUN_004046b0,
+    (void*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046e0, (void*)engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404b00, (void*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c80, (void*)engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00404d70,
+    (void*)engine_3d_c_abortOldFuncOp28_FUN_00404e10, (void*)engine_3d_c_updateAnimatedTexture_FUN_004050e0, (void*)engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00405190, (void*)engine_3d_c_setVertexTextureU_FUN_00405290,
+    (void*)engine_keyframe_c_interpolateCubicKeyframes_FUN_004df960, (void*)engine_3d_c_renderPolygonDestReadBlendOp33_FUN_004052d0, (void*)engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404860, (void*)engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00404a60,
+    (void*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004056b0, (void*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057d0, (void*)engine_boss_c_modelStructNotSupported1_FUN_0041a480, (void*)engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_004058f0,
+    (void*)engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405a20, (void*)engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70, (void*)engine_3d_c_renderPolygonFogTexturedDepthOp42_FUN_00405d00, (void*)engine_3d_c_renderPolygonTexturedDepthWriteOp43_FUN_00405da0,
+    (void*)engine_3d_c_renderPolygonFogTexturedDepthWriteOp44_FUN_00405e40, (void*)engine_3d_c_renderPolygonTexturedOp45_FUN_00405ee0, (void*)engine_3d_c_renderPolygonTexturedOp46_FUN_00405f80, (void*)engine_3d_c_renderPolygonTexturedDepthWriteOp47_FUN_00406020,
+    (void*)engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_004060c0, (void*)engine_3d_c_renderPolygonTexturedDepthLitOp49_FUN_00406170, (void*)engine_3d_c_renderPolygonTexturedNormalizedOp50_FUN_00406210, (void*)engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004062b0,
+    (void*)engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450, (void*)engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_00405ac0, (void*)engine_3d_c_renderPolygonGrayscaleLitOp54_FUN_004066f0, (void*)engine_3d_c_renderPolygonDestReadBlendDepthLitOp55_FUN_004067c0,
+    (void*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406880, (void*)engine_3d_c_renderPolygonFullEffectsLitOp57_FUN_00406b60, (void*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406e00, (void*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f40,
+    (void*)engine_3d_c_renderPolygonVertexAlphaLitOp60_FUN_00406c00, (void*)engine_3d_c_setRenderAlphaFromBlock_FUN_00406d80, (void*)engine_3d_c_renderPolygonSolidLitOp62_FUN_00406a40, (void*)engine_3d_c_renderPolygonBlendedLitOp63_FUN_00406ca0,
+    (void*)engine_texture_cpp_loadTextureAndGetData_FUN_00574e80, (void*)engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004072b0, (void*)engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490
+};
 

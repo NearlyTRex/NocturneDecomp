@@ -19,13 +19,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005cf320
 ;   TerminatedCString s_CDemonLight_endScene_Sce_005cf333
-;   undefined4 DAT_005cf35f
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005cf35f = 0.00390625
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0043b7d0
@@ -79,17 +79,17 @@ section .text
     MOV dword ptr [ESP],EBX             ; 0044a328
         ;   Label: LAB_0044a328
     FILD dword ptr [ESP]                ; 0044a32b
-    FMUL double ptr [0x005cf35f]        ; 0044a32e | DAT_005cf35f
+    FMUL double ptr [0x005cf35f]        ; 0044a32e | g_DOUBLE_005cf35f
     FSTP float ptr [ESI + 0x140]        ; 0044a334
     PUSH 0x0                            ; 0044a33a
         ;   Label: LAB_0044a33a
-    MOV EDX,dword ptr [0x0060b280]      ; 0044a33c | DAT_0060b280
-    PUSH EDX                            ; 0044a342 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 0044a33c | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 0044a342 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 0044a343
         ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044a348
-    MOV ECX,dword ptr [0x0060b280]      ; 0044a34b | DAT_0060b280
-    PUSH ECX                            ; 0044a351 | DAT_01ba5c50
+    MOV ECX,dword ptr [0x0060b280]      ; 0044a34b | g_CDemonRenderer_PTR_0060b280
+    PUSH ECX                            ; 0044a351 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_popViewport_FUN_0046b740 ; 0044a352
         ;   XREF to: 0046b740 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046b740()
     ADD ESP,0x4                         ; 0044a357
@@ -101,7 +101,7 @@ section .text
     MOV EDX,ESI                         ; 0044a366
     MOV ECX,dword ptr [EDX + 0x1cd4]    ; 0044a368
         ;   Label: LAB_0044a368
-    MOV dword ptr [EAX*0x4 + 0x1c2a38c],ECX ; 0044a36e | DAT_01c2a38c | DAT_01c2a390
+    MOV dword ptr [EAX*0x4 + 0x1c2a38c],ECX ; 0044a36e | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     INC EAX                             ; 0044a375
     MOV EDI,dword ptr [ESI + 0x1cc4]    ; 0044a376
     ADD EDX,0x4                         ; 0044a37c
@@ -127,8 +127,8 @@ section .text
         ;   Label: LAB_0044a3aa
     MOV EBX,0x165                       ; 0044a3af
     PUSH 0x5cf333                       ; 0044a3b4 | = "CDemonLight::endScene - Scene not open"
-    MOV dword ptr [0x01d046a0],ECX      ; 0044a3b9 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0044a3bf | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044a3b9 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 0044a3bf | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a3c5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a3ca

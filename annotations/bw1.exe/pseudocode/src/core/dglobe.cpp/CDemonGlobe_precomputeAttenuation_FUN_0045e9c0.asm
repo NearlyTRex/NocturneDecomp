@@ -22,8 +22,8 @@
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_005adb20 at 005add21
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d88fb
-;   undefined4 DAT_005d8903
+;   float g_FLOAT_005d88fb = 256
+;   double g_DOUBLE_005d8903 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -38,10 +38,10 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 0045e9c7
     FMUL ST0                            ; 0045e9cb
     FLD float ptr [ESP + 0x10]          ; 0045e9cd
-    FMUL float ptr [0x005d88fb]         ; 0045e9d1 | DAT_005d88fb
+    FMUL float ptr [0x005d88fb]         ; 0045e9d1 | g_FLOAT_005d88fb
     MOV EAX,dword ptr [ESP + 0x10]      ; 0045e9d7
     FXCH                                ; 0045e9db
-    FMUL double ptr [0x005d8903]        ; 0045e9dd | DAT_005d8903
+    FMUL double ptr [0x005d8903]        ; 0045e9dd | g_DOUBLE_005d8903
     MOV dword ptr [EDX + 0x30],EAX      ; 0045e9e3
     FXCH                                ; 0045e9e6
     CALL crt_math.c_round_FUN_005c03a0  ; 0045e9e8
@@ -72,7 +72,7 @@ section .text
     MOV EAX,dword ptr [EDX + 0x10]      ; 0045ea25
     FILD word ptr [ESP + 0x4]           ; 0045ea28
     SAR EAX,0x10                        ; 0045ea2c
-    FMUL double ptr [0x005d8903]        ; 0045ea2f | DAT_005d8903
+    FMUL double ptr [0x005d8903]        ; 0045ea2f | g_DOUBLE_005d8903
     MOV dword ptr [ESP],EAX             ; 0045ea35
     FILD dword ptr [ESP]                ; 0045ea38
     FDIVP                               ; 0045ea3b

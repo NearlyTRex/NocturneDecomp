@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   param_2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d54b7
-;   undefined4 DAT_005d54bb
-;   undefined4 DAT_005fc5a0
-;   undefined4 DAT_00600530
+;   float g_FLOAT_005d54b7 = 6
+;   float g_FLOAT_005d54bb = 3
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -88,7 +88,7 @@ section .text
     LEA EAX,[EBP + 0x158]               ; 005639fc
         ;   Label: LAB_005639fc
     PUSH EAX                            ; 00563a02
-    MOV ESI,dword ptr [0x00600530]      ; 00563a03 | DAT_00600530
+    MOV ESI,dword ptr [0x00600530]      ; 00563a03 | g_CDemonMission_PTR_00600530
     PUSH ESI                            ; 00563a09
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90 ; 00563a0a
         ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission * this_ptr, char * name)
@@ -173,7 +173,7 @@ section .text
         ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     FLD float ptr [EBP + 0x24]          ; 00563aea
     ADD ESP,0x8                         ; 00563aed
-    FADD float ptr [0x005d54b7]         ; 00563af0 | DAT_005d54b7
+    FADD float ptr [0x005d54b7]         ; 00563af0 | g_FLOAT_005d54b7
     SUB ESP,0x4                         ; 00563af6
     FSTP float ptr [ESP]                ; 00563af9
     PUSH dword ptr [EBP + 0x24]         ; 00563afc
@@ -344,7 +344,7 @@ section .text
     MOV dword ptr [EAX + 0xd0e4],EDX    ; 00563cad
     PUSH EBX                            ; 00563cb3
         ;   Label: LAB_00563cb3
-    MOV ESI,dword ptr [0x00600530]      ; 00563cb4 | DAT_00600530
+    MOV ESI,dword ptr [0x00600530]      ; 00563cb4 | g_CDemonMission_PTR_00600530
     PUSH ESI                            ; 00563cba
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 00563cbb
         ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
@@ -356,7 +356,7 @@ section .text
         ;   XREF to: 00563e1f (CONDITIONAL_JUMP)  ; LAB_00563e1f
     FLD float ptr [ESP + 0x70]          ; 00563cd2
         ;   Label: LAB_00563cd2
-    FADD float ptr [0x005d54bb]         ; 00563cd6 | DAT_005d54bb
+    FADD float ptr [0x005d54bb]         ; 00563cd6 | g_FLOAT_005d54bb
     XOR EBX,EBX                         ; 00563cdc
     FSTP float ptr [ESP + 0x70]         ; 00563cde
     PUSH 0x41a00000                     ; 00563ce2
@@ -410,7 +410,7 @@ section .text
     PUSH EAX                            ; 00563dbd
     LEA EAX,[ESP + 0x80]                ; 00563dbe
     PUSH EAX                            ; 00563dc5
-    MOV EDI,dword ptr [0x005fc5a0]      ; 00563dc6 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 00563dc6 | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 00563dcc
     INC EBX                             ; 00563dcd
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 00563dce

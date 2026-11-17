@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004b0a20(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
 
 {
@@ -22,7 +20,7 @@ int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004b0a20(CBitFont *this_ptr,ch
   double dVar6;
   
   this_ptr_00 = this_ptr;
-  if ((this_ptr->use_3d_rendering != 0) && (_DAT_01c6cee8 != 0)) {
+  if ((this_ptr->use_3d_rendering != 0) && (g_INT_01c6cee8 != 0)) {
     if (this_ptr->win_font_enabled == 0) {
       iVar1 = engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004b33d0
                         (this_ptr,text,x,y,color_mode);
@@ -66,13 +64,14 @@ LAB_004b0ac4:
   y_00 = y;
   if (this_ptr->use_3d_rendering == 0) goto LAB_004b0b31;
   if (color_mode == -2) {
-    if (DAT_005fba20 == 0x20) {
-      uVar5 = _DAT_01d1ad68 << (DAT_01c6af74 & 0x1f) | _DAT_01d1ad6c << (DAT_01c6af80 & 0x1f);
-      uVar2 = _DAT_01d1ad70 << (DAT_01c6af8c & 0x1f);
+    if (g_INT_005fba20 == 0x20) {
+      uVar5 = g_INT_01d1ad68 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+              g_INT_01d1ad6c << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
+      uVar2 = g_INT_01d1ad70 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
     }
     else {
-      uVar5 = _DAT_01d1ad6c << 8 | _DAT_01d1ad68 << 0x10;
-      uVar2 = _DAT_01d1ad70;
+      uVar5 = g_INT_01d1ad6c << 8 | g_INT_01d1ad68 << 0x10;
+      uVar2 = g_INT_01d1ad70;
     }
 LAB_004b0b9b:
     uVar5 = uVar5 | uVar2;
@@ -80,21 +79,22 @@ LAB_004b0b9b:
   else {
     if (-1 < color_mode) {
       iVar3 = color_mode * 3;
-      uVar5 = (uint)(byte)(&DAT_01c6af9a)[iVar3];
-      if (DAT_005fba20 == 0x20) {
-        uVar2 = (uint)(byte)(&DAT_01c6af99)[iVar3] << (DAT_01c6af80 & 0x1f) |
-                (uint)(byte)(&DAT_01c6af98)[iVar3] << (DAT_01c6af74 & 0x1f);
-        uVar5 = uVar5 << (DAT_01c6af8c & 0x1f);
+      uVar5 = (uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 2];
+      if (g_INT_005fba20 == 0x20) {
+        uVar2 = (uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 1] <<
+                (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f) |
+                (uint)g_UCHAR_ARRAY_01c6af98[iVar3] << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f);
+        uVar5 = uVar5 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f);
       }
       else {
-        uVar2 = (uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c6af99)[iVar3] << 8
-        ;
+        uVar2 = (uint)g_UCHAR_ARRAY_01c6af98[iVar3] << 0x10 |
+                (uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 1] << 8;
       }
       goto LAB_004b0b9b;
     }
     uVar5 = 0xffffff;
   }
-  dVar6 = round((double)(_DAT_01d76c40 * (float)_DAT_005c2074));
+  dVar6 = round((double)(g_FLOAT_01d76c40 * (float)255));
   this_ptr->accel_color = uVar5 | (int)ROUND(dVar6) << 0x18;
 LAB_004b0b31:
   while (uVar5 = (uint)(byte)this_ptr->bitmap_count, uVar5 != 0) {

@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 323,
-    "complexity_score": 289,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
-    "suspect_count": 16,
+    "pseudocode_lines": 111,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
-      "suspect_float",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 432
+    "total_lines": 434
   },
   "cross_references": [
     {
@@ -97,27 +95,27 @@
   "globals": [
     {
       "addr": "005e7475",
-      "name": "DAT_005e7475",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e7475",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005e747d",
-      "name": "DAT_005e747d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e747d",
+      "type": "double",
+      "value": "0.0100000000000000"
     },
     {
       "addr": "00603420",
-      "name": "DAT_00603420",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00603420",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "00622c18",
@@ -231,132 +229,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&pSVar5->rotation,&pSVar5->position);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 36,
+      "line": 34,
       "match": "7.375872e-39",
       "severity": "mild",
       "text": "fog_scale.f = 7.375872e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_54);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_6c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_60);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_48);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pSVar1 = DAT_00612560->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 107,
       "match": "&stack0xffffff40",
       "severity": "moderate",
-      "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&stack0xffffff40);",
+      "text": "(g_CDemonRenderer_PTR_00612560,(SMRGLPrimitivePoly *)&stack0xffffff40);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&stack0xffffff40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
-      "type": "undefined_data"
     }
   ]
 }

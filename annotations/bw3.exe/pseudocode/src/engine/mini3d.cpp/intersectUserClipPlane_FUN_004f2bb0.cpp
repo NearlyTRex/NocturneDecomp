@@ -6,22 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_intersectUserClipPlane_FUN_004f2bb0(float *from,float *to,float *out)
 
 {
   float fVar1;
   
-  fVar1 = (to[2] - from[2]) * _DAT_01d7a6a4 +
-          (*to - *from) * _DAT_01d7a69c + (to[1] - from[1]) * _DAT_01d7a6a0;
+  fVar1 = (to[2] - from[2]) * g_FLOAT_01d7a6a4 +
+          (*to - *from) * g_FLOAT_01d7a69c + (to[1] - from[1]) * g_FLOAT_01d7a6a0;
   if (ABS(fVar1) == 0.0) {
-    _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
-    _DAT_01d71de4 = 0x1473;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\mini3d.cpp";
+    g_INT_01d71de4 = 0x1473;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Bad clip!");
   }
-  fVar1 = -(_DAT_01d7a6a4 * from[2] +
-           _DAT_01d7a6a0 * from[1] + _DAT_01d7a69c * *from + _DAT_01d7a6a8) / fVar1;
+  fVar1 = -(g_FLOAT_01d7a6a4 * from[2] +
+           g_FLOAT_01d7a6a0 * from[1] + g_FLOAT_01d7a69c * *from + g_FLOAT_01d7a6a8) / fVar1;
   *out = (*to - *from) * fVar1 + *from;
   out[1] = (to[1] - from[1]) * fVar1 + from[1];
   out[2] = (to[2] - from[2]) * fVar1 + from[2];

@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005d6a58
 ;   TerminatedCString s_CLZWDictionary_init_out_005d6a6d
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -66,8 +66,8 @@ section .text
     MOV EBP,0x5d6a58                    ; 00443032 | = "..\\support\\codec.cpp"
     MOV EAX,0x348                       ; 00443037
     PUSH 0x5d6a6d                       ; 0044303c | = "CLZWDictionary::init - out of memory"
-    MOV dword ptr [0x01d1d400],EBP      ; 00443041 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00443047 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 00443041 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00443047 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044304c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00443051

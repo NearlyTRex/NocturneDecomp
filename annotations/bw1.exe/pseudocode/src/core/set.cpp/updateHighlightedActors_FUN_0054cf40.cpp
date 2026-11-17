@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_updateHighlightedActors_FUN_0054cf40(void)
 
 {
-  int iVar1;
+  CHero *pCVar1;
   
-  _DAT_02026358 = 0;
+  g_INT_02026358 = 0;
   if (((g_CGamePtr->letterbox_mode == 0) &&
-      (iVar1 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4), iVar1 != 0)) &&
-     (*(int *)(iVar1 + 0x1ff60) != 0)) {
-    _DAT_02026358 = *(uint *)(iVar1 + 0x1ff68);
+      (pCVar1 = g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4], pCVar1 != (CHero *)0x0)) &&
+     (pCVar1->hero_action != 0)) {
+    g_INT_02026358 = (int)pCVar1->hero_action_target;
   }
   return;
 }

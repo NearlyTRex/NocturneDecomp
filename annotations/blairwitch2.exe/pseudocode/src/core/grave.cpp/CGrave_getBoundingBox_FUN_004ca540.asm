@@ -8,7 +8,7 @@
 ; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d192f8
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     SUB ESP,0x1c                        ; 004ca542
     MOV ECX,dword ptr [ESP + 0x28]      ; 004ca545
     MOV EBX,ESI                         ; 004ca549
-    MOV EDX,dword ptr [0x00618170]      ; 004ca54b | DAT_00618170
+    MOV EDX,dword ptr [0x00618170]      ; 004ca54b | g_CDemonMission_PTR_00618170
     MOV ESI,dword ptr [EDX + 0x1008]    ; 004ca551 | DAT_01d192f8
     LEA EAX,[ECX + 0x2b4]               ; 004ca557
     TEST ESI,ESI                        ; 004ca55d

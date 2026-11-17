@@ -11,12 +11,12 @@
 ;   core_skeleton.cpp_getDeformableModel_FUN_00548e80 at 00548f06
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6e17
+;   TerminatedCString s_rt_005e6e17
 ;   TerminatedCString s_models_005e6e1a
 ;   TerminatedCString s_core_skeleton_cpp_005e6e21
 ;   TerminatedCString s_CDeformableModel_load_Ca_005e6e36
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -34,7 +34,7 @@ section .text
     PUSH EDI                            ; 005427c2
     MOV EDI,dword ptr [ESP + 0x10]      ; 005427c3
     MOV ESI,dword ptr [ESP + 0x14]      ; 005427c7
-    PUSH 0x5e6e17                       ; 005427cb | DAT_005e6e17
+    PUSH 0x5e6e17                       ; 005427cb | = "rt"
     PUSH ESI                            ; 005427d0
     PUSH 0x5e6e1a                       ; 005427d1 | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 005427d6
@@ -80,8 +80,8 @@ section .text
     MOV EDX,0x5e6e21                    ; 0054281c | = "..\\core\\skeleton.cpp"
     MOV ECX,0x4c0                       ; 00542821
     PUSH 0x5e6e36                       ; 00542826 | = "CDeformableModel::load - Can't open %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 0054282b | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00542831 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0054282b | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00542831 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00542837
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054283c

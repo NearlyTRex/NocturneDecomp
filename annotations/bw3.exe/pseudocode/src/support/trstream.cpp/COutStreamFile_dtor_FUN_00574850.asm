@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamFileTypeInfo
-;   undefined1* g_COutStreamFileVTable = 00574850
+;   TerminatedCString g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005a308f
@@ -36,7 +36,7 @@ section .text
     JNZ 0x00574885                      ; 0057485a
         ;   XREF to: 00574885 (CONDITIONAL_JUMP)  ; LAB_00574885
     PUSH EBX                            ; 0057485c
-    MOV dword ptr [EBX],0x5e5b24        ; 0057485d | g_COutStreamFileVTable
+    MOV dword ptr [EBX],0x5e5b24        ; 0057485d | = "PHW"
     CALL support_trstream.cpp_COutStreamFile_close_FUN_005749a0 ; 00574863
         ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00574868

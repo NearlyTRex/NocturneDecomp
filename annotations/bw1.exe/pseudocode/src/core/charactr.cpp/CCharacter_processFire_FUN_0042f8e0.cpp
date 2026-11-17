@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *this_ptr,float delta_time)
 
 {
@@ -57,21 +55,21 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
       if (0 < pCVar3->bone_count) {
         iVar5 = 0;
         do {
-          *(uint *)((int)&DAT_007c6384 + iVar5) = 0;
+          *(uint *)((int)g_FLOAT_ARRAY_007c6384 + iVar5) = 0;
           iVar7 = iVar7 + 1;
           iVar5 = iVar5 + 4;
         } while (iVar7 < local_40->bone_count);
       }
-      fVar1 = 0x40400000;
+      fVar1 = 3.0f;
       iVar7 = 0;
       if (0 < this_ptr->fire_count) {
-        fVar2 = (float)_DAT_005d59ff;
+        fVar2 = (float)65535;
         pCVar8 = this_ptr;
         do {
           iVar5 = pCVar8->fires[0].bone_index;
           iVar7 = iVar7 + 1;
-          (&DAT_007c6384)[iVar5] =
-               (float)(&DAT_007c6384)[iVar5] + (pCVar8->fires[0].size * fVar2) / fVar1;
+          g_FLOAT_ARRAY_007c6384[iVar5] =
+               g_FLOAT_ARRAY_007c6384[iVar5] + (pCVar8->fires[0].size * fVar2) / fVar1;
           pCVar8 = (CCharacter *)((pCVar8->base).actor_name + 0x18);
         } while (iVar7 < this_ptr->fire_count);
       }
@@ -82,7 +80,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
         iVar5 = 0;
         local_3c = pCVar4;
         do {
-          if ((float)_DAT_005d59ff <= *(float *)((int)&DAT_007c6384 + iVar5)) {
+          if ((float)65535 <= *(float *)((int)g_FLOAT_ARRAY_007c6384 + iVar5)) {
             iVar7 = iVar7 + 1;
           }
           if (local_3c->farthest_child_bone[0] == -1) {
@@ -102,8 +100,8 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
         this_ptr->burn_alpha = 1.0;
         this_ptr->is_fully_burned = 1;
       }
-      local_54 = (float)this_ptr->fire_count * (float)_DAT_005d5a07 * (float)_DAT_005d5a0f +
-                 (float)_DAT_005d5a17;
+      local_54 = (float)this_ptr->fire_count * (float)0.59999999999999998 * (float)0.02 +
+                 (float)0.40000000000000002;
       iVar7 = sound_sndmain_cpp_setSfxVolume_FUN_00573950(this_ptr->sfx_handle,local_54);
       if (iVar7 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
@@ -121,7 +119,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
     if (fVar1 < 0.0) {
       sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
       (*((this_ptr->base).vtable._ub)->playSound)
-                (&this_ptr->base,"?character-onfire-fallapart.wav" + 1);
+                (&this_ptr->base,"character-onfire-fallapart.wav");
       core_charactr_cpp_CCharacter_dismember_FUN_00430d90(this_ptr,(CVector3f *)0x0,-1.0,0);
     }
   }
@@ -153,7 +151,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
         (local_2c->position).x = local_70;
         (local_2c->position).y = local_6c[0];
         (local_2c->position).z = local_6c[1];
-        fVar1 = (float)_DAT_005d5a1f;
+        fVar1 = (float)0.5;
         local_28->flames[0].flame_size.x = local_24->size * fVar1;
         local_28->flames[0].flame_size.y = local_24->size;
         local_28->flames[0].flame_size.z = fVar1 * local_24->size;
@@ -168,14 +166,14 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
   }
   if ((this_ptr->is_ethereal == 0) && (0 < this_ptr->fire_count)) {
     local_20 = this_ptr->fires;
-    local_50 = delta_time * _DAT_005fd60c;
+    local_50 = delta_time * 2.0f;
     local_34 = 0;
     do {
       local_1c = local_20;
       if (((this_ptr->model).part_data.visibility_flags[local_20->bone_part] != 0) &&
          (fVar1 = local_50 * this_ptr->flame_scale + local_20->size, local_20->size = fVar1,
-         0x40400000 < fVar1)) {
-        local_20->size = 0x40400000;
+         3.0f < fVar1)) {
+        local_20->size = 3.0f;
         iVar7 = 0;
         pCVar3 = local_18;
         if (0 < local_18->bone_count) {

@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setRendererOption_FUN_004f3470(int value)
 
 {
-  _DAT_0061e280 = value;
+  g_INT_0061e280 = value;
   return;
 }

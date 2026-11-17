@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y_pos)
 
 {
@@ -26,18 +24,18 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y
   
   iVar5 = (char_code + -0x20) * 0x91;
   uVar10 = (uint)(byte)(&DAT_00601440)[iVar5];
-  if ((((x_pos < _DAT_01c35e48) || (y_pos < _DAT_01c35e4c)) ||
-      ((int)((_DAT_01c35e50 + 1) - uVar10) < x_pos)) || (_DAT_01c35e54 + -10 < y_pos)) {
+  if ((((x_pos < g_INT_01c35e48) || (y_pos < g_INT_01c35e4c)) ||
+      ((int)((g_INT_01c35e50 + 1) - uVar10) < x_pos)) || (g_INT_01c35e54 + -10 < y_pos)) {
     iVar5 = 0;
   }
   else {
     iVar12 = y_pos * 4;
     pbVar2 = &DAT_00601441 + iVar5;
     iVar5 = iVar12 + 0x2c;
-    if (DAT_006141c0 == 8) {
+    if (g_INT_006141c0 == 8) {
       do {
         iVar11 = 0;
-        pbVar6 = (byte *)(*(int *)(&DAT_01c2a38c + iVar12) + x_pos);
+        pbVar6 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar12) + x_pos);
         pbVar7 = pbVar6;
         if (uVar10 != 0) {
           do {
@@ -53,10 +51,10 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y
         *pbVar6 = 0;
       } while (iVar12 != iVar5);
     }
-    else if (DAT_006141c0 == 0x10) {
+    else if (g_INT_006141c0 == 0x10) {
       do {
         iVar11 = 0;
-        puVar3 = (ushort *)(*(int *)(&DAT_01c2a38c + iVar12) + x_pos * 2);
+        puVar3 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar12) + x_pos * 2);
         puVar4 = puVar3;
         if (uVar10 != 0) {
           do {
@@ -64,7 +62,7 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y
             pbVar2 = pbVar2 + 1;
             puVar3 = puVar4 + 1;
             iVar11 = iVar11 + 1;
-            *puVar4 = *(ushort *)(&DAT_01c34910 + (uint)bVar1 * 2);
+            *puVar4 = g_USHORT_ARRAY_01c34910[bVar1];
             puVar4 = puVar3;
           } while (iVar11 < (int)uVar10);
         }
@@ -75,7 +73,7 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y
     else {
       do {
         iVar11 = 0;
-        puVar8 = (uint *)(*(int *)(&DAT_01c2a38c + iVar12) + x_pos * 4);
+        puVar8 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar12) + x_pos * 4);
         puVar9 = puVar8;
         if (uVar10 != 0) {
           do {
@@ -83,7 +81,7 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y
             pbVar2 = pbVar2 + 1;
             puVar8 = puVar9 + 1;
             iVar11 = iVar11 + 1;
-            *puVar9 = *(uint *)((uint)bVar1 * 4 + 0x1c34b10);
+            *puVar9 = g_UINT_ARRAY_01c34b10[bVar1];
             puVar9 = puVar8;
           } while (iVar11 < (int)uVar10);
         }

@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 84,
+    "complexity_score": 41,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 6,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 49
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -86,15 +85,15 @@
     },
     {
       "addr": "00626adc",
-      "name": "DAT_00626adc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00626adc",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "00626ae0",
-      "name": "DAT_00626ae0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00626ae0",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -197,40 +196,8 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_00626adc",
-      "severity": "mild",
-      "text": "if (DAT_00626adc == -1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00626adc",
-      "severity": "mild",
-      "text": "DAT_00626adc = (int)CreateFileA(\"conin$\",0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00626ae0",
-      "severity": "mild",
-      "text": "if (DAT_00626ae0 == -1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00626ae0",
-      "severity": "mild",
-      "text": "DAT_00626ae0 = (int)CreateFileA(\"conout$\",0x40000000,2,(LPSECURITY_ATTRIBUTES)0x0,3,0x80",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 16,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(0);",

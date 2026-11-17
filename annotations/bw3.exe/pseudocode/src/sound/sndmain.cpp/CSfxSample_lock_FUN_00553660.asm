@@ -20,9 +20,9 @@
 ;   TerminatedCString s_SfxSample_lock_invalid_r_005d2c4e
 ;   TerminatedCString s_sound_sndmain_cpp_005d2c6f
 ;   TerminatedCString s_SfxSample_lock_nothing_a_005d2c84
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cf3280
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -56,8 +56,8 @@ section .text
         ;   Label: LAB_0055368e
     MOV EBP,0x8a1                       ; 00553693
     PUSH 0x5d2c4e                       ; 00553698 | = "SfxSample::lock - invalid region"
-    MOV dword ptr [0x01d71de0],ECX      ; 0055369d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 005536a3 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0055369d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 005536a3 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005536a9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005536ae
@@ -71,8 +71,8 @@ section .text
     MOV EAX,0x5d2c6f                    ; 005536c7 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x8a8                       ; 005536cc
     PUSH 0x5d2c84                       ; 005536d1 | = "SfxSample::lock - nothing allocated!"
-    MOV [0x01d71de0],EAX                ; 005536d6 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 005536db | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 005536d6 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 005536db | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005536e1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005536e6
@@ -100,14 +100,14 @@ section .text
         ;   Label: LAB_00553710
     MOV EBP,0x89c                       ; 00553715
     PUSH 0x5d2c17                       ; 0055371a | = "SfxSample::lock - already locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 0055371f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 00553725 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0055371f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 00553725 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055372b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00553730
     JMP 0x0055367d                      ; 00553733
         ;   XREF to: 0055367d (UNCONDITIONAL_JUMP)  ; LAB_0055367d
-    MOV EDX,dword ptr [0x02cf3280]      ; 00553738 | DAT_02cf3280
+    MOV EDX,dword ptr [0x02cf3280]      ; 00553738 | g_CSoundDevice_PTR_02cf3280
         ;   Label: LAB_00553738
     TEST EDX,EDX                        ; 0055373e
     JNZ 0x00553749                      ; 00553740

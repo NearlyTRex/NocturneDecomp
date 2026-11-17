@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 111,
+    "complexity_score": 96,
     "cross_reference_count": 19,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
       "stack_alignment_array",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
     "total_lines": 105
   },
@@ -162,15 +161,15 @@
   "globals": [
     {
       "addr": "005bdc4f",
-      "name": "DAT_005bdc4f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005bdc4f",
+      "type": "double",
+      "value": "1.20000000000000"
     },
     {
       "addr": "005bdc57",
-      "name": "DAT_005bdc57",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005bdc57",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "005fed24",
@@ -421,16 +420,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
+      "line": 9,
       "match": "aiStackY_100c",
       "severity": "moderate",
       "text": "int aiStackY_100c [1011];",
@@ -438,7 +429,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(int *)((int)point",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)point + (uint)bVar2 * -8 + 4);",
@@ -446,7 +437,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 30,
+      "line": 29,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_28._4_4_ = point->x;",
@@ -454,7 +445,7 @@
     },
     {
       "description": "Raw hex address 0x489458 assigned to bare local `blood_type`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `blood_type` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 25,
+      "line": 23,
       "match": "0x489458",
       "severity": "moderate",
       "text": "blood_type = 0x489458;",

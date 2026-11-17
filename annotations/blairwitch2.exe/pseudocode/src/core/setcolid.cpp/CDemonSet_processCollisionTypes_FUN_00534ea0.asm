@@ -42,11 +42,11 @@
 ;   TerminatedCString s_info_keyFramedModelInsta_005e5d2a
 ;   TerminatedCString s_core_setcolid_cpp_005e5d76
 ;   TerminatedCString s_Invalid_collision_type_005e5d8b
-;   undefined4 DAT_005e5da5
-;   undefined4 DAT_005e5da9
+;   float g_FLOAT_005e5da5 = 2
+;   float g_FLOAT_005e5da9 = -10
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   undefined4 g_CSpikeClassInfo.name_hash
 ;
@@ -121,7 +121,7 @@ section .text
     MOV dword ptr [ESP + 0x2d0],EAX     ; 00534f48
     FLD float ptr [ESP + 0x2cc]         ; 00534f4f
         ;   Label: LAB_00534f4f
-    FADD float ptr [0x005e5da5]         ; 00534f56 | DAT_005e5da5
+    FADD float ptr [0x005e5da5]         ; 00534f56 | g_FLOAT_005e5da5
     MOV EAX,dword ptr [ESP + 0x3bc]     ; 00534f5c
     FSTP float ptr [ESP + 0x2cc]        ; 00534f63
     MOV dword ptr [EAX + 0x14d144],0x0  ; 00534f6a
@@ -178,7 +178,7 @@ section .text
     FLD float ptr [ESP + 0x20c]         ; 00535065
         ;   Label: LAB_00535065
     LEA EAX,[ESP + 0x1b0]               ; 0053506c
-    FADD float ptr [0x005e5da9]         ; 00535073 | DAT_005e5da9
+    FADD float ptr [0x005e5da9]         ; 00535073 | g_FLOAT_005e5da9
     PUSH EAX                            ; 00535079
     FSTP float ptr [ESP + 0x210]        ; 0053507a
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00537fa0 ; 00535081
@@ -885,8 +885,8 @@ section .text
     MOV ECX,0x5e5d15                    ; 00535a66 | = "..\\core\\setcolid.cpp"
     MOV ESI,0xcb                        ; 00535a6b
     PUSH 0x5e5d2a                       ; 00535a70 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00535a75 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00535a7b | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00535a75 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00535a7b | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00535a81
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00535a86
@@ -1018,8 +1018,8 @@ section .text
         ;   Label: LAB_00535c8d
     MOV EBX,0x12b                       ; 00535c92
     PUSH 0x5e5d8b                       ; 00535c97 | = "Invalid collision type!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00535c9c | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00535ca2 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00535c9c | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00535ca2 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00535ca8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00535cad

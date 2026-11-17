@@ -149,13 +149,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0x810]     ; 0057ae25
         ;   Label: LAB_0057ae25
     PUSH EDI                            ; 0057ae2c
-    MOV AL,byte ptr [ESI]               ; 0057ae2d | DAT_005ed519 | DAT_005ed51b
+    MOV AL,byte ptr [ESI]               ; 0057ae2d | = "Done" | s_ne_005ed519+2
         ;   Label: LAB_0057ae2d
     MOV byte ptr [EDI],AL               ; 0057ae2f
     CMP AL,0x0                          ; 0057ae31
     JZ 0x0057ae45                       ; 0057ae33
         ;   XREF to: 0057ae45 (CONDITIONAL_JUMP)  ; LAB_0057ae45
-    MOV AL,byte ptr [ESI + 0x1]         ; 0057ae35 | DAT_005ed51a | DAT_005ed51c
+    MOV AL,byte ptr [ESI + 0x1]         ; 0057ae35 | s_one_005ed519+1 | s_e_005ed519+3
     ADD ESI,0x2                         ; 0057ae38
     MOV byte ptr [EDI + 0x1],AL         ; 0057ae3b
     ADD EDI,0x2                         ; 0057ae3e
@@ -611,7 +611,7 @@ section .text
         ;   XREF to: 0057b3dc (CONDITIONAL_JUMP)  ; LAB_0057b3dc
     MOV ESI,dword ptr [ESP + 0x7f4]     ; 0057b3bf
     PUSH ESI                            ; 0057b3c6
-    PUSH 0x5ed4bb                       ; 0057b3c7 | DAT_005ed4bb
+    PUSH 0x5ed4bb                       ; 0057b3c7 | = "%d"
     MOV EDI,dword ptr [ESP + 0x7f8]     ; 0057b3cc
     PUSH EDI                            ; 0057b3d3
     CALL crt_stdio.c_sscanf_FUN_005ba8cc ; 0057b3d4
@@ -805,7 +805,7 @@ section .text
     POP ESI                             ; 0057b5f5
     POP EBX                             ; 0057b5f6
     RET                                 ; 0057b5f7
-    MOV ESI,0x5ed519                    ; 0057b5f8 | DAT_005ed519
+    MOV ESI,0x5ed519                    ; 0057b5f8 | = "Done"
         ;   Label: caseD_5
     JMP 0x0057ae25                      ; 0057b5fd
         ;   XREF to: 0057ae25 (UNCONDITIONAL_JUMP)  ; LAB_0057ae25

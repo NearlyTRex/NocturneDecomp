@@ -12,7 +12,7 @@
 ;   core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60 at 0057bb73
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df8fc
+;   float g_FLOAT_005df8fc = 0.02000000
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     MOV dword ptr [EAX + 0x14],0x0      ; 004a2dff
     MOV dword ptr [EAX + 0x18],0x0      ; 004a2e06
     MOV dword ptr [EAX + 0x1c],0x0      ; 004a2e0d
-    MOV EDX,dword ptr [0x005df8fc]      ; 004a2e14 | DAT_005df8fc
+    MOV EDX,dword ptr [0x005df8fc]      ; 004a2e14 | g_FLOAT_005df8fc
     MOV dword ptr [EAX + 0x4],EDX       ; 004a2e1a
     RET                                 ; 004a2e1d
 

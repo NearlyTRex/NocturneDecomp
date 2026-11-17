@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_SPageResourceText_draw_FUN_004a8570(SPageResourceText *this_ptr)
 
 {
@@ -22,8 +20,8 @@ void __cdecl core_fldnotes_cpp_SPageResourceText_draw_FUN_004a8570(SPageResource
   }
   iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(this_ptr->font,0x78);
   iVar1 = (this_ptr->base).y + iVar1;
-  if (this_ptr->font != _DAT_01549ac0) {
-    _DAT_01c6b5c0 = 0;
+  if (this_ptr->font != g_CBitFont_PTR_01549ac0) {
+    g_INT_01c6b5c0 = 0;
     engine_2d_c_drawHLine_FUN_00402f30
               ((this_ptr->base).x,iVar1,(this_ptr->base).x + (this_ptr->base).width + -1);
     return;

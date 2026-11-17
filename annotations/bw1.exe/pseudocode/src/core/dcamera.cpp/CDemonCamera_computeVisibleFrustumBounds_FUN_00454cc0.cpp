@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454cc0(CDemonCamera *this_ptr,CVector3f *output_bounds)
 
 {
@@ -60,10 +58,10 @@ CVector3f * __stack_esi core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBound
   
   bVar5 = 0;
   pCStack_34 = output_bounds;
-  if (&stack0x00000000 != (byte *)0x2c8b038) {
-    CStack_11c.max.x = _DAT_02c8af28;
-    CStack_11c.max.y = _DAT_02c8af2c;
-    CStack_11c.max.z = _DAT_02c8af30;
+  if ((int *)&stack0x00000000 != g_INT_ARRAY_02c8afe0 + 0x16) {
+    CStack_11c.max.x = g_CVector3f_02c8af28.x;
+    CStack_11c.max.y = g_CVector3f_02c8af28.y;
+    CStack_11c.max.z = g_CVector3f_02c8af28.z;
   }
   if (&CStack_11c != (CBoundingBox3D *)&CStack_11c.max) {
     CStack_11c.min.x = CStack_11c.max.x;
@@ -107,13 +105,13 @@ LAB_00454e8a:
         aiStack_40[(uint)bVar5 * -2] = *(int *)((int)&CStack_a4 + (uint)bVar5 * -8 + 4);
         aiStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
              *(int *)((int)&CStack_a4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-        fStack_5c = (float)iStack_44 * _DAT_005fe604;
-        fStack_58 = (float)aiStack_40[0] * _DAT_005fe604;
-        fStack_54 = (float)aiStack_40[1] * _DAT_005fe604;
-        fStack_80 = (float)iStack_44 * _DAT_005fe604 - (pUStack_1c->f).x;
-        afStack_7c[0] = (float)aiStack_40[0] * _DAT_005fe604 - (pUStack_1c->f).y;
+        fStack_5c = (float)iStack_44 * 0.00390625f;
+        fStack_58 = (float)aiStack_40[0] * 0.00390625f;
+        fStack_54 = (float)aiStack_40[1] * 0.00390625f;
+        fStack_80 = (float)iStack_44 * 0.00390625f - (pUStack_1c->f).x;
+        afStack_7c[0] = (float)aiStack_40[0] * 0.00390625f - (pUStack_1c->f).y;
         pCVar4 = &CStack_ec;
-        afStack_7c[1] = (float)aiStack_40[1] * _DAT_005fe604 - (pUStack_1c->f).z;
+        afStack_7c[1] = (float)aiStack_40[1] * 0.00390625f - (pUStack_1c->f).z;
         CStack_ec.x = fStack_80;
         *(float *)((int)&CStack_ec + (uint)bVar5 * -8 + 4) = afStack_7c[(uint)bVar5 * -2];
         *(float *)((int)&CStack_ec + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =

@@ -21,9 +21,9 @@ int __cdecl core_trap_cpp_CTrap_renderOpaque_FUN_0059a010(CTrap *this_ptr)
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (DAT_00612560,&(this_ptr->base).location.position);
+            (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   this_ptr_00 = &CStack_38;
   puVar2 = auStack_20;

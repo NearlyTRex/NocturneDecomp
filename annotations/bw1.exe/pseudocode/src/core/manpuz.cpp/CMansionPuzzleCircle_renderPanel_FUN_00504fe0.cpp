@@ -16,7 +16,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0(CMans
     return;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,&pSVar1->rotation,&pSVar1->local_position);
+            (g_CDemonRenderer_PTR_00612560,&pSVar1->rotation,&pSVar1->local_position);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
             (&this_ptr->panel_model,0.0,-1);
   engine_drender_cpp_pop_FUN_004839a0();

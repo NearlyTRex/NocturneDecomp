@@ -16,9 +16,9 @@
 ;   core_carved.cpp_CCarved_processPickup_FUN_0042a930 at 0042b0c5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d51cd
-;   undefined4 DAT_005d51d5
-;   undefined4 DAT_005d51dd
+;   double g_DOUBLE_005d51cd = 2
+;   double g_DOUBLE_005d51d5 = 0.700000000000000
+;   double g_DOUBLE_005d51dd = 6
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x8]       ; 00428559
     FLD float ptr [EDX]                 ; 0042855c
     FST double ptr [ESP + 0x8]          ; 0042855e
-    FCOMP double ptr [0x005d51cd]       ; 00428562 | DAT_005d51cd
+    FCOMP double ptr [0x005d51cd]       ; 00428562 | g_DOUBLE_005d51cd
     FNSTSW AX                           ; 00428568
     SAHF                                ; 0042856a
     JC 0x00428628                       ; 0042856b
@@ -54,13 +54,13 @@ section .text
         ;   XREF to: 004285c2 (CONDITIONAL_JUMP)  ; LAB_004285c2
     FLD float ptr [EDX + 0x8]           ; 00428588
     FST double ptr [ESP + 0x20]         ; 0042858b
-    FCOMP double ptr [0x005d51cd]       ; 0042858f | DAT_005d51cd
+    FCOMP double ptr [0x005d51cd]       ; 0042858f | g_DOUBLE_005d51cd
     FNSTSW AX                           ; 00428595
     SAHF                                ; 00428597
     JBE 0x004285c2                      ; 00428598
         ;   XREF to: 004285c2 (CONDITIONAL_JUMP)  ; LAB_004285c2
     FLD double ptr [ESP + 0x20]         ; 0042859a
-    FCOMP double ptr [0x005d51dd]       ; 0042859e | DAT_005d51dd
+    FCOMP double ptr [0x005d51dd]       ; 0042859e | g_DOUBLE_005d51dd
     FNSTSW AX                           ; 004285a4
     SAHF                                ; 004285a6
     JNC 0x004285c2                      ; 004285a7
@@ -101,7 +101,7 @@ section .text
     JNC 0x0042868b                      ; 004285f1
         ;   XREF to: 0042868b (CONDITIONAL_JUMP)  ; LAB_0042868b
     FLD double ptr [ESP + 0x10]         ; 004285f7
-    FCOMP double ptr [0x005d51cd]       ; 004285fb | DAT_005d51cd
+    FCOMP double ptr [0x005d51cd]       ; 004285fb | g_DOUBLE_005d51cd
     FNSTSW AX                           ; 00428601
     SAHF                                ; 00428603
     JNC 0x0042868b                      ; 00428604
@@ -125,32 +125,32 @@ section .text
     FLD float ptr [EDX + 0x4]           ; 00428628
         ;   Label: LAB_00428628
     FST double ptr [ESP + 0x18]         ; 0042862b
-    FCOMP double ptr [0x005d51cd]       ; 0042862f | DAT_005d51cd
+    FCOMP double ptr [0x005d51cd]       ; 0042862f | g_DOUBLE_005d51cd
     FNSTSW AX                           ; 00428635
     SAHF                                ; 00428637
     JNC 0x00428571                      ; 00428638
         ;   XREF to: 00428571 (CONDITIONAL_JUMP)  ; LAB_00428571
     FLD float ptr [EDX + 0x8]           ; 0042863e
     FST double ptr [ESP]                ; 00428641
-    FCOMP double ptr [0x005d51cd]       ; 00428644 | DAT_005d51cd
+    FCOMP double ptr [0x005d51cd]       ; 00428644 | g_DOUBLE_005d51cd
     FNSTSW AX                           ; 0042864a
     SAHF                                ; 0042864c
     JNC 0x00428571                      ; 0042864d
         ;   XREF to: 00428571 (CONDITIONAL_JUMP)  ; LAB_00428571
     FLD double ptr [ESP + 0x8]          ; 00428653
-    FCOMP double ptr [0x005d51d5]       ; 00428657 | DAT_005d51d5
+    FCOMP double ptr [0x005d51d5]       ; 00428657 | g_DOUBLE_005d51d5
     FNSTSW AX                           ; 0042865d
     SAHF                                ; 0042865f
     JBE 0x00428571                      ; 00428660
         ;   XREF to: 00428571 (CONDITIONAL_JUMP)  ; LAB_00428571
     FLD double ptr [ESP + 0x18]         ; 00428666
-    FCOMP double ptr [0x005d51d5]       ; 0042866a | DAT_005d51d5
+    FCOMP double ptr [0x005d51d5]       ; 0042866a | g_DOUBLE_005d51d5
     FNSTSW AX                           ; 00428670
     SAHF                                ; 00428672
     JBE 0x00428571                      ; 00428673
         ;   XREF to: 00428571 (CONDITIONAL_JUMP)  ; LAB_00428571
     FLD double ptr [ESP]                ; 00428679
-    FCOMP double ptr [0x005d51d5]       ; 0042867c | DAT_005d51d5
+    FCOMP double ptr [0x005d51d5]       ; 0042867c | g_DOUBLE_005d51d5
     FNSTSW AX                           ; 00428682
     SAHF                                ; 00428684
     JBE 0x00428571                      ; 00428685

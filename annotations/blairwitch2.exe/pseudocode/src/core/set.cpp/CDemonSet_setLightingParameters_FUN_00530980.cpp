@@ -12,52 +12,52 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_00530980(CDemonSet
 
 {
   int iVar1;
-  uint *puVar2;
+  float *pfVar2;
   
   if (position == (CVector3f *)0x0) {
-    _DAT_0200e88c = 1;
+    g_INT_0200e88c = 1;
   }
   else {
-    if (position != (CVector3f *)&DAT_0200e890) {
-      _DAT_0200e890 = position->x;
-      _DAT_0200e898 = position->z;
+    if (position != (CVector3f *)&g_FLOAT_0200e890) {
+      g_FLOAT_0200e890 = position->x;
+      g_FLOAT_0200e898 = position->z;
       _DAT_0200e894 = position->y;
     }
-    if (orientation != (UOrientationVector *)&DAT_0200e89c) {
-      _DAT_0200e89c = (orientation->vec).x;
-      _DAT_0200e8a4 = (orientation->vec).z;
+    if (orientation != (UOrientationVector *)&g_FLOAT_0200e89c) {
+      g_FLOAT_0200e89c = (orientation->vec).x;
+      g_FLOAT_0200e8a4 = (orientation->vec).z;
       _DAT_0200e8a0 = (orientation->vec).y;
     }
-    if (aabb_min != (CVector3f *)&DAT_0200e8a8) {
-      _DAT_0200e8a8 = aabb_min->x;
-      _DAT_0200e8b0 = aabb_min->z;
+    if (aabb_min != (CVector3f *)&g_FLOAT_0200e8a8) {
+      g_FLOAT_0200e8a8 = aabb_min->x;
+      g_FLOAT_0200e8b0 = aabb_min->z;
       _DAT_0200e8ac = aabb_min->y;
     }
-    if (aabb_max != (CVector3f *)&DAT_0200e8b4) {
-      _DAT_0200e8b4 = aabb_max->x;
-      _DAT_0200e8bc = aabb_max->z;
+    if (aabb_max != (CVector3f *)&g_FLOAT_0200e8b4) {
+      g_FLOAT_0200e8b4 = aabb_max->x;
+      g_FLOAT_0200e8bc = aabb_max->z;
       _DAT_0200e8b8 = aabb_max->y;
     }
     if (rotation_matrix == (CMatrix3x3f *)0x0) {
-      _DAT_0200e8c4 = rotation_matrix;
-      _DAT_0200e8c8 = rotation_matrix;
-      _DAT_0200e8cc = rotation_matrix;
-      _DAT_0200e8d4 = rotation_matrix;
-      _DAT_0200e8d8 = rotation_matrix;
-      _DAT_0200e8dc = rotation_matrix;
-      _DAT_0200e8d0 = 0x3f800000;
-      _DAT_0200e8e0 = 0x3f800000;
-      _DAT_0200e8c0 = 0x3f800000;
-      _DAT_0200e88c = 2;
+      g_CMatrix3x3f_0200e8c0.m[0].y = (float)rotation_matrix;
+      g_CMatrix3x3f_0200e8c0.m[0].z = (float)rotation_matrix;
+      g_CMatrix3x3f_0200e8c0.m[1].x = (float)rotation_matrix;
+      g_CMatrix3x3f_0200e8c0.m[1].z = (float)rotation_matrix;
+      g_CMatrix3x3f_0200e8c0.m[2].x = (float)rotation_matrix;
+      g_CMatrix3x3f_0200e8c0.m[2].y = (float)rotation_matrix;
+      g_CMatrix3x3f_0200e8c0.m[1].y = 1.0;
+      g_CMatrix3x3f_0200e8c0.m[2].z = 1.0;
+      g_CMatrix3x3f_0200e8c0.m[0].x = 1.0;
+      g_INT_0200e88c = 2;
       return;
     }
-    puVar2 = (uint *)&DAT_0200e8c0;
+    pfVar2 = (float *)&g_CMatrix3x3f_0200e8c0;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = *(uint *)rotation_matrix;
+      *pfVar2 = *(float *)rotation_matrix;
       rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);
-      puVar2 = puVar2 + 1;
+      pfVar2 = pfVar2 + 1;
     }
-    _DAT_0200e88c = 2;
+    g_INT_0200e88c = 2;
   }
   return;
 }

@@ -7,8 +7,8 @@
 ; CBarrier *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cb61f
-;   undefined4 DAT_005cb627
+;   double g_DOUBLE_005cb61f = 0.5
+;   double g_DOUBLE_005cb627 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 00410d41
     MOV EDX,dword ptr [ESP + 0x20]      ; 00410d44
     MOV EAX,ESI                         ; 00410d48
-    FLD double ptr [0x005cb61f]         ; 00410d4a | DAT_005cb61f
+    FLD double ptr [0x005cb61f]         ; 00410d4a | g_DOUBLE_005cb61f
     FLD float ptr [EDX + 0x2b4]         ; 00410d50
     FMUL ST1                            ; 00410d56
     FLD float ptr [EDX + 0x2bc]         ; 00410d58
@@ -35,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 00410d7f
     MOV ESI,ESP                         ; 00410d81
     MOV dword ptr [ESP + 0x4],ECX       ; 00410d83
-    FADD double ptr [0x005cb627]        ; 00410d87 | DAT_005cb627
+    FADD double ptr [0x005cb627]        ; 00410d87 | g_DOUBLE_005cb627
     FXCH ST3                            ; 00410d8d
     FSTP float ptr [ESP + 0xc]          ; 00410d8f
     FXCH ST2                            ; 00410d93

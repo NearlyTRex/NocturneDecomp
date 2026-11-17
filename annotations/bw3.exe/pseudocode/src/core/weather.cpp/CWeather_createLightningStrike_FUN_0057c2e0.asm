@@ -50,15 +50,15 @@
 ;   TerminatedCString s_light_wav_005d7943
 ;   TerminatedCString s_light_wav_005d794e
 ;   TerminatedCString s_noLightningFlash_005d7959
-;   undefined4 DAT_005d796b
-;   undefined4 DAT_005d7973
-;   undefined4 DAT_005d7977
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005d796b = 0.5
+;   float g_FLOAT_005d7973 = 0.6500000
+;   float g_FLOAT_005d7977 = 50
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
@@ -190,7 +190,7 @@ section .text
     TEST EAX,EAX                        ; 0057c455
     JZ 0x0057c3b7                       ; 0057c457
         ;   XREF to: 0057c3b7 (CONDITIONAL_JUMP)  ; LAB_0057c3b7
-    MOV EAX,[0x01d5ba14]                ; 0057c45d | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 0057c45d | g_INT_01d5ba14
     SHL EAX,0x2                         ; 0057c462
     MOV EDX,dword ptr [EAX + 0x1d5ba04] ; 0057c465
     TEST EDX,EDX                        ; 0057c46b
@@ -225,7 +225,7 @@ section .text
     FMUL ST0                            ; 0057c4d3
     FADDP                               ; 0057c4d5
     FSQRT                               ; 0057c4d7
-    FCOMP float ptr [0x005d7977]        ; 0057c4d9 | DAT_005d7977
+    FCOMP float ptr [0x005d7977]        ; 0057c4d9 | g_FLOAT_005d7977
     FNSTSW AX                           ; 0057c4df
     SAHF                                ; 0057c4e1
     JA 0x0057c3b7                       ; 0057c4e2
@@ -277,7 +277,7 @@ section .text
     ADD ESI,0x20                        ; 0057c56a
     PUSH 0x41f00000                     ; 0057c56d
     PUSH ESI                            ; 0057c572
-    MOV EDI,dword ptr [0x005fc5a0]      ; 0057c573 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 0057c573 | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 0057c579
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0057c57a
         ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
@@ -285,7 +285,7 @@ section .text
     PUSH ESI                            ; 0057c582
     PUSH 0x5d7943                       ; 0057c583 | = "light?.wav"
     PUSH EBX                            ; 0057c588
-    MOV EAX,[0x006045f8]                ; 0057c589 | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 0057c589 | g_CSound_PTR_006045f8
     PUSH EAX                            ; 0057c58e
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0057c58f
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -299,7 +299,7 @@ section .text
         ;   Label: LAB_0057c5a8
     PUSH 0x5d7959                       ; 0057c5ad | = "noLightningFlash"
     MOV dword ptr [ESP + 0x144],EAX     ; 0057c5b2
-    MOV EDI,dword ptr [0x005fba60]      ; 0057c5b9 | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 0057c5b9 | g_CEventList_PTR_005fba60
     MOV EAX,dword ptr [ESP + 0x144]     ; 0057c5bf
     MOV dword ptr [EBX + 0x30],EAX      ; 0057c5c6
     MOV EAX,dword ptr [EBX + 0x30]      ; 0057c5c9
@@ -312,7 +312,7 @@ section .text
     JNZ 0x0057c609                      ; 0057c5db
         ;   XREF to: 0057c609 (CONDITIONAL_JUMP)  ; LAB_0057c609
     FLD float ptr [ESP]                 ; 0057c5dd
-    FADD float ptr [0x005d7973]         ; 0057c5e0 | DAT_005d7973
+    FADD float ptr [0x005d7973]         ; 0057c5e0 | g_FLOAT_005d7973
     FST float ptr [ESP]                 ; 0057c5e6
     FLD1                                ; 0057c5e9
     FCOMPP                              ; 0057c5eb
@@ -360,7 +360,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0057c663
     FLD float ptr [ESP + 0x98]          ; 0057c664
     FSUB float ptr [ESP + 0x104]        ; 0057c66b
-    FMUL double ptr [0x005d796b]        ; 0057c672 | DAT_005d796b
+    FMUL double ptr [0x005d796b]        ; 0057c672 | g_DOUBLE_005d796b
     XOR ESI,ESI                         ; 0057c678
     FLDZ                                ; 0057c67a
     MOV dword ptr [ESP + 0x128],ESI     ; 0057c67c
@@ -387,7 +387,7 @@ section .text
     FLD float ptr [ESP + 0xa0]          ; 0057c6d5
         ;   Label: LAB_0057c6d5
     FSUB float ptr [ESP + 0x10c]        ; 0057c6dc
-    FMUL double ptr [0x005d796b]        ; 0057c6e3 | DAT_005d796b
+    FMUL double ptr [0x005d796b]        ; 0057c6e3 | g_DOUBLE_005d796b
     FST float ptr [ESP + 0x120]         ; 0057c6e9
     FCOMP float ptr [ESP + 0x128]       ; 0057c6f0
     FNSTSW AX                           ; 0057c6f7
@@ -462,7 +462,7 @@ section .text
     LEA EAX,[ESP + 0xdc]                ; 0057c800
     PUSH dword ptr [ESP + 0x130]        ; 0057c807
     PUSH EAX                            ; 0057c80e
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0057c80f | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0057c80f | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 0057c815
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0057c816
         ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
@@ -471,7 +471,7 @@ section .text
     PUSH EAX                            ; 0057c825
     PUSH 0x5d794e                       ; 0057c826 | = "light?.wav"
     PUSH EBX                            ; 0057c82b
-    MOV ESI,dword ptr [0x006045f8]      ; 0057c82c | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 0057c82c | g_CSound_PTR_006045f8
     PUSH ESI                            ; 0057c832
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0057c833
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

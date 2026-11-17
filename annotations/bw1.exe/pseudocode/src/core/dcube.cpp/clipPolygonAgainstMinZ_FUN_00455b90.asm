@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00455b84 = 00455c44
 ;   undefined1* PTR_caseD_3_00455b8c = 00455c29
-;   undefined4 DAT_0152c05c
-;   undefined4 DAT_0152c120
+;   int g_INT_0152c05c
+;   uint g_UINT_0152c120
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_00455460
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 00455b94
     SUB ESP,0x8                         ; 00455b96
     AND ESP,0xfffffff8                  ; 00455b99
-    MOV EBX,dword ptr [0x0152c120]      ; 00455b9c | DAT_0152c120
+    MOV EBX,dword ptr [0x0152c120]      ; 00455b9c | g_UINT_0152c120
     MOV EDX,dword ptr [EBP + 0x14]      ; 00455ba2
     MOV dword ptr [ESP],EDX             ; 00455ba5
-    MOV EDX,dword ptr [0x0152c05c]      ; 00455ba8 | DAT_0152c05c
+    MOV EDX,dword ptr [0x0152c05c]      ; 00455ba8 | g_INT_0152c05c
     XOR EDI,EDI                         ; 00455bae
     TEST EDX,EDX                        ; 00455bb0
     JLE 0x00455c37                      ; 00455bb2
         ;   XREF to: 00455c37 (CONDITIONAL_JUMP)  ; LAB_00455c37
     MOV ESI,0x152c060                   ; 00455bb8
-    MOV EAX,[0x0152c05c]                ; 00455bbd | DAT_0152c05c
+    MOV EAX,[0x0152c05c]                ; 00455bbd | g_INT_0152c05c
         ;   Label: LAB_00455bbd
     LEA ECX,[EDI + 0x1]                 ; 00455bc2
     CMP ECX,EAX                         ; 00455bc5
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00455c25
     INC EBX                             ; 00455c28
         ;   Label: LAB_00455c28
-    MOV ECX,dword ptr [0x0152c05c]      ; 00455c29 | DAT_0152c05c
+    MOV ECX,dword ptr [0x0152c05c]      ; 00455c29 | g_INT_0152c05c
         ;   Label: caseD_3
     INC EDI                             ; 00455c2f
     ADD ESI,0xc                         ; 00455c30
     CMP EDI,ECX                         ; 00455c33
     JL 0x00455bbd                       ; 00455c35
         ;   XREF to: 00455bbd (CONDITIONAL_JUMP)  ; LAB_00455bbd
-    MOV dword ptr [0x0152c120],EBX      ; 00455c37 | DAT_0152c120
+    MOV dword ptr [0x0152c120],EBX      ; 00455c37 | g_UINT_0152c120
         ;   Label: LAB_00455c37
     MOV ESP,EBP                         ; 00455c3d
     POP EBP                             ; 00455c3f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00455c66
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00455c67
     PUSH EAX                            ; 00455c6b
-    MOV dword ptr [0x0152c120],EBX      ; 00455c6c | DAT_0152c120
+    MOV dword ptr [0x0152c120],EBX      ; 00455c6c | g_UINT_0152c120
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00455c72
         ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x0152c120]      ; 00455c77 | DAT_0152c120
+    MOV EBX,dword ptr [0x0152c120]      ; 00455c77 | g_UINT_0152c120
     ADD ESP,0x2c                        ; 00455c7d
     JMP 0x00455c28                      ; 00455c80
         ;   XREF to: 00455c28 (UNCONDITIONAL_JUMP)  ; LAB_00455c28
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00455cc2
     PUSH ECX                            ; 00455cc6
     PUSH EDX                            ; 00455cc7
-    MOV dword ptr [0x0152c120],EBX      ; 00455cc8 | DAT_0152c120
+    MOV dword ptr [0x0152c120],EBX      ; 00455cc8 | g_UINT_0152c120
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00455cce
         ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x0152c120]      ; 00455cd3 | DAT_0152c120
+    MOV EBX,dword ptr [0x0152c120]      ; 00455cd3 | g_UINT_0152c120
     ADD ESP,0x2c                        ; 00455cd9
     JMP 0x00455c28                      ; 00455cdc
         ;   XREF to: 00455c28 (UNCONDITIONAL_JUMP)  ; LAB_00455c28

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 423,
-    "complexity_score": 676,
+    "complexity_score": 660,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
-    "suspect_count": 45,
+    "pseudocode_lines": 185,
+    "suspect_count": 44,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,10 +16,9 @@
       "stack_param",
       "stale_struct_offset_64bit",
       "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 609
+    "total_lines": 608
   },
   "cross_references": [
     {
@@ -111,26 +110,26 @@
   "globals": [
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8337c",
-      "name": "DAT_02c8337c",
-      "type": "undefined4",
+      "name": "g_INT_02c8337c",
+      "type": "int",
       "value": null
     }
   ],
@@ -236,16 +235,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "CBitFont *in_stack_00000018;",
@@ -253,7 +244,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "int in_stack_0000001c;",
@@ -261,7 +252,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 142,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "in_stack_00000018->accel_vertex_alloc = pvVar4;",
@@ -269,7 +260,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 149,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "in_stack_00000018->accel_vertices =",
@@ -277,7 +268,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 152,
+      "line": 150,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "(void *)((int)in_stack_00000018->accel_vertex_alloc + 0x1fU & 0xffffffe0);",
@@ -285,7 +276,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 150,
       "match": "(void *)((int)in_stack_00000018",
       "severity": "moderate",
       "text": "(void *)((int)in_stack_00000018->accel_vertex_alloc + 0x1fU & 0xffffffe0);",
@@ -293,7 +284,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 154,
+      "line": 152,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "in_stack_00000018->accel_indices = pvVar4;",
@@ -301,7 +292,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 159,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "pcVar3 = in_stack_00000018->bitmap_files[1] + 0x2c;",
@@ -309,7 +300,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 160,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "pcVar10 = in_stack_00000018->palette_data + 0x4c;",
@@ -317,7 +308,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 163,
+      "line": 161,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "in_stack_00000018->accel_vertex_count = 0;",
@@ -325,7 +316,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 162,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "in_stack_00000018->accel_index_count = 0;",
@@ -333,7 +324,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 166,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "(int)in_stack_00000018->bitmap_data[*(int *)(pcVar3 + 0x21e8)];",
@@ -341,7 +332,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 167,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "iVar9 = in_stack_00000018->bitmap_widths[*(int *)(pcVar3 + 0x21e8)];",
@@ -349,7 +340,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 182,
+      "line": 180,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "} while (pcVar3 != in_stack_00000018->palette_data + 0x24c);",
@@ -357,7 +348,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 186,
+      "line": 184,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "in_stack_00000018->use_3d_rendering = in_stack_0000001c;",
@@ -365,7 +356,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 186,
+      "line": 184,
       "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "in_stack_00000018->use_3d_rendering = in_stack_0000001c;",
@@ -373,7 +364,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
+      "line": 185,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "engine_font_cpp_CBitFont_setAccelScale_FUN_004c1520(in_stack_00000018,1.1);",
@@ -381,7 +372,7 @@
     },
     {
       "description": "Pointer value `&uStack_458` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
+      "line": 88,
       "match": "(int)&uStack_458",
       "severity": "moderate",
       "text": "*puVar8 = *(byte *)((int)&uStack_458 + iVar6);",
@@ -389,7 +380,7 @@
     },
     {
       "description": "Pointer value `&uStack_458` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
+      "line": 98,
       "match": "(int)&uStack_458",
       "severity": "moderate",
       "text": "*puVar8 = *(byte *)((int)&uStack_458 + iVar6);",
@@ -397,7 +388,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->accel_texture` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 142,
+      "line": 140,
       "match": "(int)&this_ptr->accel_texture",
       "severity": "moderate",
       "text": "((int)&this_ptr->accel_texture,iVar9,(int)pvVar4,(int)pcStack_24,(int)puStack_20);",
@@ -405,7 +396,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 142,
+      "line": 140,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "((int)&this_ptr->accel_texture,iVar9,(int)pvVar4,(int)pcStack_24,(int)puStack_20);",
@@ -413,7 +404,7 @@
     },
     {
       "description": "Pointer value `pcStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 142,
+      "line": 140,
       "match": "(int)pcStack_24",
       "severity": "moderate",
       "text": "((int)&this_ptr->accel_texture,iVar9,(int)pvVar4,(int)pcStack_24,(int)puStack_20);",
@@ -421,7 +412,7 @@
     },
     {
       "description": "Pointer value `puStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 142,
+      "line": 140,
       "match": "(int)puStack_20",
       "severity": "moderate",
       "text": "((int)&this_ptr->accel_texture,iVar9,(int)pvVar4,(int)pcStack_24,(int)puStack_20);",
@@ -429,7 +420,7 @@
     },
     {
       "description": "Pointer value `in_stack_00000018->accel_vertex_alloc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
+      "line": 150,
       "match": "(int)in_stack_00000018->accel_vertex_alloc",
       "severity": "moderate",
       "text": "(void *)((int)in_stack_00000018->accel_vertex_alloc + 0x1fU & 0xffffffe0);",
@@ -437,7 +428,7 @@
     },
     {
       "description": "Pointer value `in_stack_00000018->bitmap_data[*(int *)(pcVar3 + 0x21e8)]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 168,
+      "line": 166,
       "match": "(int)in_stack_00000018->bitmap_data[*(int *)(pcVar3 + 0x21e8)]",
       "severity": "moderate",
       "text": "(int)in_stack_00000018->bitmap_data[*(int *)(pcVar3 + 0x21e8)];",
@@ -445,7 +436,7 @@
     },
     {
       "description": "Raw hex address 0x4c1253 assigned to bare local `uStack_458`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_458` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 148,
+      "line": 146,
       "match": "0x4c1253",
       "severity": "moderate",
       "text": "uStack_458 = 0x4c1253;",
@@ -453,7 +444,7 @@
     },
     {
       "description": "Raw hex address 0x4c1444 assigned to bare local `uStack_458`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_458` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 158,
+      "line": 156,
       "match": "0x4c1444",
       "severity": "moderate",
       "text": "uStack_458 = 0x4c1444;",
@@ -461,7 +452,7 @@
     },
     {
       "description": "Raw hex address 0x4c12f7 assigned to bare local `uStack_458`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_458` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 183,
+      "line": 181,
       "match": "0x4c12f7",
       "severity": "moderate",
       "text": "uStack_458 = 0x4c12f7;",
@@ -469,7 +460,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 132,
+      "line": 130,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -477,7 +468,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 119,
+      "line": 117,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -485,7 +476,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 124,
+      "line": 122,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -493,7 +484,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 90,
+      "line": 88,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*puVar8 = *(byte *)((int)&uStack_458 + iVar6);",
@@ -501,7 +492,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 100,
+      "line": 98,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*puVar8 = *(byte *)((int)&uStack_458 + iVar6);",
@@ -509,7 +500,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 142,
+      "line": 140,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&this_ptr->accel_texture,iVar9,(int)pvVar4,(int)pcStack_24,(int)puStack_20);",
@@ -517,7 +508,7 @@
     },
     {
       "description": "*(...)(pcVar3 + 0x35e8) reaches field char_widths (0x35e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 166,
+      "line": 164,
       "match": "*(...)(pcVar3 + 0x35e8)",
       "severity": "moderate",
       "text": "if (*(int *)(pcVar3 + 0x35e8) != 0) {",
@@ -525,7 +516,7 @@
     },
     {
       "description": "*(...)(pcVar3 + 0x1de8) reaches field char_positions (0x1de8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 167,
+      "line": 165,
       "match": "*(...)(pcVar3 + 0x1de8)",
       "severity": "moderate",
       "text": "iVar5 = *(int *)(pcVar3 + 0x1de8) -",
@@ -533,7 +524,7 @@
     },
     {
       "description": "*(...)(pcVar3 + 0x21e8) reaches field char_bitmap_index (0x21e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 168,
+      "line": 166,
       "match": "*(...)(pcVar3 + 0x21e8)",
       "severity": "moderate",
       "text": "(int)in_stack_00000018->bitmap_data[*(int *)(pcVar3 + 0x21e8)];",
@@ -541,7 +532,7 @@
     },
     {
       "description": "*(...)(pcVar3 + 0x21e8) reaches field char_bitmap_index (0x21e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 169,
+      "line": 167,
       "match": "*(...)(pcVar3 + 0x21e8)",
       "severity": "moderate",
       "text": "iVar9 = in_stack_00000018->bitmap_widths[*(int *)(pcVar3 + 0x21e8)];",
@@ -549,7 +540,7 @@
     },
     {
       "description": "*(...)(pcVar3 + 0x35e8) reaches field char_widths (0x35e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 173,
+      "line": 171,
       "match": "*(...)(pcVar3 + 0x35e8)",
       "severity": "moderate",
       "text": "iStack_18 = *(int *)(pcVar3 + 0x35e8) + iVar7 + 1;",
@@ -557,7 +548,7 @@
     },
     {
       "description": "*(...)(pcVar3 + 0x39e8) reaches field char_heights (0x39e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 174,
+      "line": 172,
       "match": "*(...)(pcVar3 + 0x39e8)",
       "severity": "moderate",
       "text": "iVar9 = *(int *)(pcVar3 + 0x39e8);",
@@ -565,7 +556,7 @@
     },
     {
       "description": "*(...)(pcVar10 + 0x25ec) reaches field char_uv_rects (0x25e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 176,
+      "line": 174,
       "match": "*(...)(pcVar10 + 0x25ec)",
       "severity": "moderate",
       "text": "*(float *)(pcVar10 + 0x25ec) = (float)iVar5 * fVar2;",
@@ -573,7 +564,7 @@
     },
     {
       "description": "*(...)(pcVar10 + 0x25f0) reaches field char_uv_rects (0x25e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 177,
+      "line": 175,
       "match": "*(...)(pcVar10 + 0x25f0)",
       "severity": "moderate",
       "text": "*(float *)(pcVar10 + 0x25f0) = (float)iStack_18 * fVar2;",
@@ -581,7 +572,7 @@
     },
     {
       "description": "*(...)(pcVar10 + 0x25f4) reaches field char_uv_rects (0x25e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",
-      "line": 178,
+      "line": 176,
       "match": "*(...)(pcVar10 + 0x25f4)",
       "severity": "moderate",
       "text": "*(float *)(pcVar10 + 0x25f4) = (float)(iVar9 + iVar5 + 1) * fVar2;",

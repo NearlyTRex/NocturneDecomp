@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *this_ptr,_FILE *file)
 
 {
@@ -45,10 +43,10 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *t
   local_4c = 0;
   _fscanf(file,"%*[^\n]\n");
   _fscanf(file,"%*[^\n]\n");
-  _fscanf(file,&DAT_005c17c9);
+  _fscanf(file,"%d\n");
   if ((local_4c < 1) || (2 < local_4c)) {
-    _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-    _DAT_01d71de4 = 0xbae;
+    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+    g_INT_01d71de4 = 0xbae;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid field notes file version: %d, latest this .exe supports is %d");
   }
   puVar5 = &DAT_005fe4b8;
@@ -60,12 +58,12 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *t
   }
   _fscanf(file,"%*[^\n]\n");
   _fscanf(file," \"%[^\"]");
-  _fscanf(file,&DAT_005c1838);
+  _fscanf(file,"\"\n");
   if (local_34c[0] != '\0') {
     core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004aa810(this_ptr,local_34c,(char *)0x0);
     local_48 = 0;
     _fscanf(file,"%*[^\n]\n");
-    _fscanf(file,&DAT_005c1843);
+    _fscanf(file,"%d\n");
     local_20 = 0;
     if (0 < local_48) {
       do {
@@ -80,7 +78,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *t
         _fscanf(file,"\"%[^\"]\", %d\n");
         local_1c = local_24c;
         local_2c = (int *)0x0;
-        if (0 < _DAT_01d0d210) {
+        if (0 < g_INT_01d0d210) {
           pSVar6 = SNotesSection_ARRAY_01d0d214;
           do {
             pSVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a9c30(pSVar6,local_1c);
@@ -96,7 +94,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *t
             }
             iVar3 = iVar3 + 1;
             pSVar6 = pSVar6 + 1;
-          } while (iVar3 < _DAT_01d0d210);
+          } while (iVar3 < g_INT_01d0d210);
         }
         shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0
                   (g_CEditorToolsPtr,"Ignoring saved game reference to field notes entry %s which doesn't exist in %s",local_24c,this_ptr);
@@ -106,7 +104,7 @@ LAB_004acb0b:
     }
     if (local_4c < 2) {
       iVar2 = 0;
-      if (0 < _DAT_01d0e36c) {
+      if (0 < g_INT_01d0e36c) {
         iVar3 = 0;
         do {
           if (*(int *)(*(int *)(SNotesMap_ARRAY_01d0e370[0].image_name + iVar3 + -4) + 0x140) == 6)
@@ -117,13 +115,13 @@ LAB_004acb0b:
           }
           iVar2 = iVar2 + 1;
           iVar3 = iVar3 + 0x126c;
-        } while (iVar2 < _DAT_01d0e36c);
+        } while (iVar2 < g_INT_01d0e36c);
       }
     }
     else {
       local_40 = 0;
       _fscanf(file,"%*[^\n]\n");
-      _fscanf(file,&DAT_005c18ac);
+      _fscanf(file,"%d\n");
       local_24 = 0;
       if (0 < local_40) {
         do {
@@ -139,7 +137,7 @@ LAB_004acb0b:
           _fscanf(file," %[^,], %d, %d\n");
           local_18 = local_14c;
           local_28 = (int *)0x0;
-          if (0 < _DAT_01d0d210) {
+          if (0 < g_INT_01d0d210) {
             pSVar6 = SNotesSection_ARRAY_01d0d214;
             do {
               pSVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a9c30(pSVar6,local_18);
@@ -151,54 +149,54 @@ LAB_004acb0b:
               }
               iVar2 = iVar2 + 1;
               pSVar6 = pSVar6 + 1;
-            } while (iVar2 < _DAT_01d0d210);
+            } while (iVar2 < g_INT_01d0d210);
           }
           pSVar1 = (SNotesEntry *)0x0;
 LAB_004acc7a:
           if (pSVar1 == (SNotesEntry *)0x0) {
-            _DAT_01d71de4 = 0xbe4;
-            _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
+            g_INT_01d71de4 = 0xbe4;
+            g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
             core_main_c_displayErrorAndQuit_FUN_004e4330("CFieldNotes::loadState - No such map '%s'");
           }
           if ((pSVar1->kind != 6) || (pSVar1->map_index < 0)) {
-            _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-            _DAT_01d71de4 = 0xbe7;
+            g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+            g_INT_01d71de4 = 0xbe7;
             core_main_c_displayErrorAndQuit_FUN_004e4330("CFieldNotes::loadState - Entry '%s' is not an enabled map");
           }
           iVar2 = pSVar1->map_index;
           if ((local_3c != SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.width) ||
              (local_38 != SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.height)) {
-            _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-            _DAT_01d71de4 = 0xbec;
+            g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+            g_INT_01d71de4 = 0xbec;
             core_main_c_displayErrorAndQuit_FUN_004e4330("CFieldNotes::loadState - Map '%s' has changed size");
           }
           _fscanf(file,"%*[^\n]\n");
           local_14 = 0;
           if (0 < SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.height) {
             do {
-              _fscanf(file,&DAT_005c19a6);
+              _fscanf(file," ");
               iVar3 = SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.width;
               iVar7 = 0;
               pcVar4 = SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.opa + local_14 * iVar3;
               if (0 < iVar3) {
                 do {
-                  _fscanf(file,&DAT_005c19a8);
+                  _fscanf(file,"%2X");
                   *pcVar4 = local_30;
                   iVar7 = iVar7 + 1;
                   pcVar4 = pcVar4 + 1;
                 } while (iVar7 < SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.width);
               }
-              _fscanf(file,&DAT_005c19ac);
+              _fscanf(file," ");
               local_14 = local_14 + 1;
             } while (local_14 < SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.height);
           }
           iVar3 = 0;
           local_34 = 0;
           _fscanf(file,"%*[^\n]\n");
-          _fscanf(file,&DAT_005c19b6);
+          _fscanf(file,"%d\n");
           if (0 < local_34) {
             do {
-              _fscanf(file,&DAT_005c19ba);
+              _fscanf(file,"%s\n");
               core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004aa1a0
                         (SNotesMap_ARRAY_01d0e370 + iVar2,acStack_44c);
               iVar3 = iVar3 + 1;

@@ -27,7 +27,7 @@ int __cdecl core_prye_cpp_CPrye_tryThrowDynamite_FUN_005262f0(CPrye *this_ptr)
                           (this_ptr_01,unaff_ESI,unaff_EBX), iVar2 == 0)))))) {
     return 0;
   }
-  fVar1 = 0x41200000;
+  fVar1 = 10.0f;
   (this_ptr->base).action_pending = 3;
   this_ptr->aim_speed_factor = fVar1;
   return 1;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor *this_ptr,int hit_type)
 
 {
@@ -145,7 +143,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
       CStack_104.y = afStack_164[1];
     }
   }
-  iVar6 = core_actor_cpp_isOfClass_FUN_0040c790(this_ptr,"@CHolycross" + 1);
+  iVar6 = core_actor_cpp_isOfClass_FUN_0040c790(this_ptr,"CHolycross");
   if (iVar6 != 0) {
     iStack_40 = 1;
     if ((CLocation *)&fStack_108 != &this_ptr->location) {
@@ -297,7 +295,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
           if (0.0 < (double)SStack_238.gore_multiplier) {
             blood_type = 0x40a3b1;
             dVar12 = round
-                               ((double)SStack_238.gore_multiplier * _DAT_005b5679 + 1.0);
+                               ((double)SStack_238.gore_multiplier * 0.5 + 1.0);
             in_stack_fffffc68 = (CVector3f *)0x40a3dc;
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
                       (g_CGorePtr,&CStack_94,(CVector3f *)(auStack_120 + 8),(int)ROUND(dVar12),
@@ -330,7 +328,7 @@ LAB_0040a2aa:
           CStack_104.y = *(float *)((int)pCStack_1c + 4);
           CStack_104.z = *(float *)((int)pCStack_1c + 8);
         }
-        CStack_104.y = CStack_104.y + _DAT_005b5689;
+        CStack_104.y = CStack_104.y + -3.0f;
         fVar3 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
                           (g_CDemonSetPtr,&CStack_104,&CStack_b0);
       }
@@ -419,7 +417,7 @@ LAB_0040a2aa:
         *(uint *)((int)&CStack_15c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 4) =
              *(uint *)(auStack_120 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + -8);
         pCStack_30 = (CCrate *)
-                     ((float)_DAT_005b5681 /
+                     ((float)10 /
                      SQRT(CStack_15c.y * CStack_15c.y +
                           afStack_164[1] * afStack_164[1] + CStack_15c.x * CStack_15c.x));
         afStack_4c[0] = afStack_164[1] * (float)pCStack_30;

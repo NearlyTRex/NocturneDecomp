@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005ce880(byte *param_1,int param_2)
 
 {
-  uint *puVar1;
+  char **ppcVar1;
   byte *pbVar2;
   byte bVar3;
-  void *ptr;
-  void *pvVar4;
+  char *ptr;
+  char *pcVar4;
   int iVar5;
   int iVar6;
   byte *puVar7;
   byte *pbVar8;
-  uint *dest;
+  char **dest;
   byte *pbVar9;
   SIZE_T n;
   
-  dest = _DAT_02c9f6d4;
+  dest = g_CHAR_PTR_PTR_02c9f6d4;
   do {
     pbVar8 = (byte *)*dest;
     if (pbVar8 == (byte *)0x0) {
-      return (int)_DAT_02c9f6d4 - (int)dest >> 2;
+      return (int)g_CHAR_PTR_PTR_02c9f6d4 - (int)dest >> 2;
     }
     bVar3 = *param_1;
     pbVar9 = param_1;
@@ -37,25 +35,25 @@ int FUN_005ce880(byte *param_1,int param_2)
       iVar6 = toupper((uint)*pbVar9);
       if (iVar5 != iVar6) break;
       if (*pbVar8 == 0x3d) {
-        iVar5 = (int)dest - (int)_DAT_02c9f6d4 >> 2;
+        iVar5 = (int)dest - (int)g_CHAR_PTR_PTR_02c9f6d4 >> 2;
         if (param_2 == 0) {
           return iVar5 + 1;
         }
-        ptr = (void *)*dest;
-        pvVar4 = ptr;
-        while (pvVar4 != (void *)0x0) {
+        ptr = *dest;
+        pcVar4 = ptr;
+        while (pcVar4 != (char *)0x0) {
           *dest = dest[1];
-          puVar1 = dest + 1;
+          ppcVar1 = dest + 1;
           dest = dest + 1;
-          pvVar4 = (void *)*puVar1;
+          pcVar4 = *ppcVar1;
         }
-        if (_DAT_02c9f6d0 != (uint *)0x0) {
-          if (*(char *)(iVar5 + (int)_DAT_02c9f6d0) != '\0') {
+        if (g_CHAR_PTR_PTR_02c9f6d0 != (char **)0x0) {
+          if (*(char *)(iVar5 + (int)g_CHAR_PTR_PTR_02c9f6d0) != '\0') {
             debugFree(ptr);
           }
-          n = (int)dest - (int)_DAT_02c9f6d4 >> 2;
-          memmove(dest,_DAT_02c9f6d0,n);
-          _DAT_02c9f6d0 = dest;
+          n = (int)dest - (int)g_CHAR_PTR_PTR_02c9f6d4 >> 2;
+          memmove(dest,g_CHAR_PTR_PTR_02c9f6d0,n);
+          g_CHAR_PTR_PTR_02c9f6d0 = dest;
           if (iVar5 < (int)n) {
             puVar7 = (byte *)(iVar5 + (int)dest);
             do {

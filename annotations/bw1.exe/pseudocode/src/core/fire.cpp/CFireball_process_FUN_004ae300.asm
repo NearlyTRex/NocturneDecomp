@@ -7,9 +7,9 @@
 ; CFireball *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061c010
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01c43530
+;   int g_INT_01c43530
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_004ae320
     CALL core_particle.cpp_CParticle_process_FUN_00532250 ; 004ae321
         ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00532250(CParticle * this_ptr)
-    MOV EAX,[0x01c43530]                ; 004ae326 | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004ae326 | g_INT_01c43530
     MOV EDX,EAX                         ; 004ae32b
     SAR EDX,0x1f                        ; 004ae32d
     SHL EDX,0x2                         ; 004ae330
@@ -52,7 +52,7 @@ section .text
     SAR EAX,0x2                         ; 004ae335
     MOV ESI,dword ptr [EBP + 0x54]      ; 004ae338
     ADD ESI,EAX                         ; 004ae33b
-    MOV EAX,[0x01c43530]                ; 004ae33d | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004ae33d | g_INT_01c43530
     MOV EDX,EAX                         ; 004ae342
     SAR EDX,0x1f                        ; 004ae344
     SUB EAX,EDX                         ; 004ae347
@@ -96,7 +96,7 @@ section .text
     MOV dword ptr [EBX + 0x20],0x0      ; 004ae3aa
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_00551960 ; 004ae3b1
         ;   XREF to: 00551960 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_00551960(CDemonSet * this_ptr, CDemonGlobe * globe)
-    MOV EAX,[0x01c43530]                ; 004ae3b6 | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004ae3b6 | g_INT_01c43530
     MOV ECX,dword ptr [EBP + 0x50]      ; 004ae3bb
     ADD ECX,EAX                         ; 004ae3be
     ADD ESP,0x8                         ; 004ae3c0
@@ -108,7 +108,7 @@ section .text
     PUSH 0x0                            ; 004ae3d7
     PUSH 0x40000000                     ; 004ae3d9
     PUSH EBP                            ; 004ae3de
-    MOV ESI,dword ptr [0x0061c010]      ; 004ae3df | DAT_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 004ae3df | g_CFireEffect_PTR_0061c010
     LEA EDI,[ECX + 0xfffff000]          ; 004ae3e5
     PUSH ESI                            ; 004ae3eb
     MOV dword ptr [EBP + 0x50],EDI      ; 004ae3ec
@@ -121,7 +121,7 @@ section .text
     PUSH 0x20000                        ; 004ae403
     PUSH 0x0                            ; 004ae408
     PUSH EBP                            ; 004ae40a
-    MOV EAX,[0x0061c010]                ; 004ae40b | DAT_0061c010
+    MOV EAX,[0x0061c010]                ; 004ae40b | g_CFireEffect_PTR_0061c010
     PUSH EAX                            ; 004ae410
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004ae411
         ;   XREF to: 004b59e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -132,7 +132,7 @@ section .text
     PUSH 0x20000                        ; 004ae425
     PUSH 0x0                            ; 004ae42a
     PUSH EBP                            ; 004ae42c
-    MOV EDX,dword ptr [0x0061c010]      ; 004ae42d | DAT_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004ae42d | g_CFireEffect_PTR_0061c010
     PUSH EDX                            ; 004ae433
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004ae434
         ;   XREF to: 004b59e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -143,7 +143,7 @@ section .text
     PUSH 0x20000                        ; 004ae448
     PUSH 0x0                            ; 004ae44d
     PUSH EBP                            ; 004ae44f
-    MOV ECX,dword ptr [0x0061c010]      ; 004ae450 | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 004ae450 | g_CFireEffect_PTR_0061c010
     PUSH ECX                            ; 004ae456
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004ae457
         ;   XREF to: 004b59e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -154,7 +154,7 @@ section .text
     PUSH 0x20000                        ; 004ae46b
     PUSH 0x0                            ; 004ae470
     PUSH EBP                            ; 004ae472
-    MOV EBX,dword ptr [0x0061c010]      ; 004ae473 | DAT_0061c010
+    MOV EBX,dword ptr [0x0061c010]      ; 004ae473 | g_CFireEffect_PTR_0061c010
     PUSH EBX                            ; 004ae479
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004ae47a
         ;   XREF to: 004b59e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -182,7 +182,7 @@ section .text
     POP ESI                             ; 004ae4b2
     POP EBX                             ; 004ae4b3
     RET                                 ; 004ae4b4
-    MOV EDX,dword ptr [0x01c43530]      ; 004ae4b5 | DAT_01c43530
+    MOV EDX,dword ptr [0x01c43530]      ; 004ae4b5 | g_INT_01c43530
         ;   Label: LAB_004ae4b5
     MOV EAX,dword ptr [EBP + 0x44]      ; 004ae4bb
     IMUL EDX                            ; 004ae4be

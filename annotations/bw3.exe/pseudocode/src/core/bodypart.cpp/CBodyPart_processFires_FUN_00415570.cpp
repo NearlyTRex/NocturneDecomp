@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(CBodyPart *this_ptr,float delta_time)
 
 {
@@ -50,11 +48,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(CBodyPart *th
         (local_18->position).y = local_40;
         (local_18->position).z = local_3c;
         local_48 = 1.0;
-        if ((float)this_ptr->fire_time_remaining < (float)_DAT_005b6c72) {
-          local_48 = (float)this_ptr->fire_time_remaining * (float)_DAT_005b6c6a;
+        if ((float)this_ptr->fire_time_remaining < (float)4) {
+          local_48 = (float)this_ptr->fire_time_remaining * (float)0.25;
         }
-        local_24 = local_48 * (float)_DAT_005b6c5a;
-        fVar1 = (float)_DAT_005b6c62;
+        local_24 = local_48 * (float)1.5;
+        fVar1 = (float)3;
         input_local_point[0x1d].z = local_24;
         input_local_point[0x1e].x = local_48 * fVar1;
         input_local_point[0x1e].y = local_24;

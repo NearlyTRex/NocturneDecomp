@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ub_die_wav_005cc8d9
 ;   TerminatedCString s_ub_hurt_wav_005cc8e5
-;   undefined4 DAT_005cc8f9
-;   undefined4 DAT_00614d30
+;   double g_DOUBLE_005cc8f9 = 2
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -179,7 +179,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0041ec48
         ;   Label: LAB_0041ec48
     FLD ST0                             ; 0041ec4b
-    FMUL double ptr [0x005cc8f9]        ; 0041ec4d | DAT_005cc8f9
+    FMUL double ptr [0x005cc8f9]        ; 0041ec4d | g_DOUBLE_005cc8f9
     ADD EAX,0x1c                        ; 0041ec53
     MOV EBX,dword ptr [EBP + 0x14]      ; 0041ec56
     PUSH EAX                            ; 0041ec59
@@ -205,7 +205,7 @@ section .text
     PUSH 0x0                            ; 0041ec84
     LEA EAX,[EBP + -0x14]               ; 0041ec86
     PUSH EAX                            ; 0041ec89
-    MOV EDI,dword ptr [0x00614d30]      ; 0041ec8a | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 0041ec8a | g_CFireEffect_PTR_00614d30
     PUSH EDI                            ; 0041ec90
     INC EBX                             ; 0041ec91
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 0041ec92

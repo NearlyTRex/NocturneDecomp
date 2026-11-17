@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0062331c
-;   undefined4 DAT_02c81038
+;   int g_INT_0062331c = -0x1
+;   CSoundDevice* g_CSoundDevice_PTR_02c81038
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_releaseRecordingDevice_FUN_00575940
@@ -24,12 +24,12 @@ section .text
     JNZ 0x005758ea                      ; 005758e7
         ;   XREF to: 005758ea (CONDITIONAL_JUMP)  ; LAB_005758ea
     RET                                 ; 005758e9
-    MOV EDX,dword ptr [0x0062331c]      ; 005758ea | DAT_0062331c
+    MOV EDX,dword ptr [0x0062331c]      ; 005758ea | g_INT_0062331c
         ;   Label: LAB_005758ea
     PUSH EDX                            ; 005758f0
     CALL sound_sndmain.cpp_selectRecordingDevice_FUN_00575870 ; 005758f1
         ;   XREF to: 00575870 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectRecordingDevice_FUN_00575870(int device_id)
-    MOV ECX,dword ptr [0x0062331c]      ; 005758f6 | DAT_0062331c
+    MOV ECX,dword ptr [0x0062331c]      ; 005758f6 | g_INT_0062331c
     ADD ESP,0x4                         ; 005758fc
     TEST ECX,ECX                        ; 005758ff
     JL 0x00575939                       ; 00575901
@@ -47,9 +47,9 @@ section .text
     CALL sound_sndwav.cpp_getWavInDevice_FUN_0057b500 ; 0057591e
         ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; CWavInDevice * sound_sndwav.cpp_getWavInDevice_FUN_0057b500(UINT device_id)
     ADD ESP,0x4                         ; 00575923
-    MOV [0x02c81038],EAX                ; 00575926 | DAT_02c81038
+    MOV [0x02c81038],EAX                ; 00575926 | g_CSoundDevice_PTR_02c81038
     POP ESI                             ; 0057592b
-    CMP dword ptr [0x02c81038],0x0      ; 0057592c | DAT_02c81038
+    CMP dword ptr [0x02c81038],0x0      ; 0057592c | g_CSoundDevice_PTR_02c81038
         ;   Label: LAB_0057592c
     JNZ 0x0057510c                      ; 00575933
         ;   XREF to: 0057510c (CONDITIONAL_JUMP)  ; LAB_0057510c

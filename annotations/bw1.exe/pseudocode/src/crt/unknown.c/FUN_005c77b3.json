@@ -2,18 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 78,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "register_param",
       "unresolved_funcptr",
       "warning_indirect_jump",
-      "warning_jumptable"
+      "warning_jumptable",
+      "wrong_global"
     ],
     "total_lines": 11
   },
@@ -47,8 +48,8 @@
   "globals": [
     {
       "addr": "00628bcc",
-      "name": "PTR_crt_unknown.c_FUN_005c77bd_00628bcc",
-      "type": "undefined1*",
+      "name": "g_PTR_00628bcc",
+      "type": "void*",
       "value": "005c77bd"
     }
   ],
@@ -108,7 +109,7 @@
       "line": 9,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "(*(code *)(&PTR_crt_unknown_c_FUN_005c77bd_00628bcc)[in_EAX])();",
+      "text": "(*(code *)(&g_PTR_00628bcc)[in_EAX])();",
       "type": "register_param"
     },
     {
@@ -116,8 +117,16 @@
       "line": 9,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)(&PTR_crt_unknown_c_FUN_005c77bd_00628bcc)[in_EAX])();",
+      "text": "(*(code *)(&g_PTR_00628bcc)[in_EAX])();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Scalar global g_PTR_00628bcc accessed via (&g_PTR_00628bcc)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_ARRAY_PTR_00628cdc (at 0x00628cdc, +272 bytes).",
+      "line": 9,
+      "match": "g_PTR_00628bcc",
+      "severity": "moderate",
+      "text": "(*(code *)(&g_PTR_00628bcc)[in_EAX])();",
+      "type": "wrong_global"
     }
   ]
 }

@@ -10,7 +10,7 @@
 ;   core_shadow.cpp_CShadow_processDamage_FUN_005459b0 at 00545a94
 ;
 ; Referenced Globals:
-;   undefined4 s_shb_alert_wav_005d1310+2
+;   TerminatedCString s_shb_alert_wav_005d1312
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 0054501a (CONDITIONAL_JUMP)  ; LAB_0054501a
     POP EBX                             ; 00545018
     RET                                 ; 00545019
-    PUSH 0x5d1312                       ; 0054501a | s_shb_alert_wav_005d1310+2
+    PUSH 0x5d1312                       ; 0054501a | = "shb_alert??.wav"
         ;   Label: LAB_0054501a
     MOV EAX,dword ptr [EBX + 0x154]     ; 0054501f
     PUSH EBX                            ; 00545025

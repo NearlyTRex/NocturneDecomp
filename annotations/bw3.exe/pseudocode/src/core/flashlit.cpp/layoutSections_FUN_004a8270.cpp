@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flashlit_cpp_layoutSections_FUN_004a8270(void)
 
 {
@@ -18,9 +16,9 @@ int __cdecl core_flashlit_cpp_layoutSections_FUN_004a8270(void)
   core_fldnotes_cpp_STextView_setRect_FUN_004a8eb0(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
   iVar2 = 0;
   core_fldnotes_cpp_STextView_reset_FUN_004a8e00(&g_STextViewInstance);
-  DAT_005fe374 = 0;
-  DAT_01d0d010 = 0;
-  if (0 < _DAT_01d0d210) {
+  g_INT_005fe374 = 0;
+  g_CHAR_ARRAY_01d0d010[0] = '\0';
+  if (0 < g_INT_01d0d210) {
     this_ptr = SNotesSection_ARRAY_01d0d214;
     do {
       iVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a9d90(this_ptr,&g_STextViewInstance);
@@ -29,7 +27,7 @@ int __cdecl core_flashlit_cpp_layoutSections_FUN_004a8270(void)
       }
       iVar2 = iVar2 + 1;
       this_ptr = this_ptr + 1;
-    } while (iVar2 < _DAT_01d0d210);
+    } while (iVar2 < g_INT_01d0d210);
   }
   return 1;
 }

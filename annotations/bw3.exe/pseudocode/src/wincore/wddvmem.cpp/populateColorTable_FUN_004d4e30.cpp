@@ -17,18 +17,20 @@ void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004d4e30(void)
   iVar1 = 0;
   iVar3 = 0;
   do {
-    if (DAT_005fba20 == 0x20) {
-      uVar2 = (uint)(byte)(&DAT_01c6af9a)[iVar1] << (DAT_01c6af8c & 0x1f) |
-              (uint)(byte)(&DAT_01c6af98)[iVar1] << (DAT_01c6af74 & 0x1f) |
-              (uint)(byte)(&DAT_01c6af99)[iVar1] << (DAT_01c6af80 & 0x1f);
+    if (g_INT_005fba20 == 0x20) {
+      uVar2 = (uint)g_UCHAR_ARRAY_01c6af98[iVar1 + 2] << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)
+              | (uint)g_UCHAR_ARRAY_01c6af98[iVar1] << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+                (uint)g_UCHAR_ARRAY_01c6af98[iVar1 + 1] <<
+                (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
     }
     else {
-      uVar2 = (uint)(byte)(&DAT_01c6af98)[iVar1] << 0x10 | (uint)(byte)(&DAT_01c6af99)[iVar1] << 8 |
-              (uint)(byte)(&DAT_01c6af9a)[iVar1];
+      uVar2 = (uint)g_UCHAR_ARRAY_01c6af98[iVar1] << 0x10 |
+              (uint)g_UCHAR_ARRAY_01c6af98[iVar1 + 1] << 8 | (uint)g_UCHAR_ARRAY_01c6af98[iVar1 + 2]
+      ;
     }
     iVar4 = iVar3 + 4;
     iVar1 = iVar1 + 3;
-    *(uint *)(iVar3 + 0x1c6a270) = uVar2;
+    *(uint *)((int)g_UINT_ARRAY_01c6a270 + iVar3) = uVar2;
     iVar3 = iVar4;
   } while (iVar4 != 0x400);
   return;

@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 70,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 25
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -45,20 +42,20 @@
   "globals": [
     {
       "addr": "00610600",
-      "name": "DAT_00610600",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_00610600",
+      "type": "int[16]",
       "value": null
     },
     {
       "addr": "00713a5c",
-      "name": "DAT_00713a5c",
-      "type": "undefined4",
+      "name": "g_INT_00713a5c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f020",
-      "name": "DAT_01c4f020",
-      "type": "undefined4",
+      "name": "g_INT_01c4f020",
+      "type": "int",
       "value": null
     }
   ],
@@ -148,46 +145,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00713a5c",
-      "severity": "mild",
-      "text": "if (-1 < DAT_00713a5c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_00610600",
-      "severity": "mild",
-      "text": "_DAT_01c4f020 = *(uint *)(&DAT_00610600 + DAT_00713a5c * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_00713a5c",
-      "severity": "mild",
-      "text": "_DAT_01c4f020 = *(uint *)(&DAT_00610600 + DAT_00713a5c * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00713a5c",
-      "severity": "mild",
-      "text": "_DAT_01c4f020 = -DAT_00713a5c;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

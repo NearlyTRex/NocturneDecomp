@@ -10,25 +10,25 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_0050d5b0(void)
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
-  bool bVar4;
+  EInputCodeType key_code;
+  EInputCodeType EVar2;
+  bool bVar3;
   
   if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
     core_game_cpp_CGame_resetKeyState_FUN_004d0960(g_CGamePtr);
   }
-  iVar3 = -1;
-  iVar2 = 0;
+  EVar2 = 0xffffffff;
+  key_code = 0;
   do {
-    iVar1 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,iVar2);
-    if ((iVar1 != 0) && (bVar4 = -1 < iVar3, iVar3 = iVar2, bVar4)) {
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,key_code);
+    if ((iVar1 != 0) && (bVar3 = -1 < (int)EVar2, EVar2 = key_code, bVar3)) {
       return -2;
     }
-    iVar2 = iVar2 + 1;
-  } while (iVar2 < 600);
+    key_code = key_code + DIK_ESCAPE;
+  } while ((int)key_code < 600);
   if ((g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) &&
-     ((iVar3 == 0x200 || (iVar3 == 0x201)))) {
+     ((EVar2 == DIM_LBUTTON || (EVar2 == DIM_RBUTTON)))) {
     return -3;
   }
-  return iVar3;
+  return EVar2;
 }

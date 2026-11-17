@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr)
 
 {
@@ -19,8 +17,8 @@ void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr)
   if (piVar1 != (int *)0x0) {
     return;
   }
-  _DAT_01d71de0 = "..\\core\\cloth.cpp";
-  _DAT_01d71de4 = 0x77;
+  g_CHAR_PTR_01d71de0 = "..\\core\\cloth.cpp";
+  g_INT_01d71de4 = 0x77;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CCloth::allocMemory - Out of memory");
   return;
 }

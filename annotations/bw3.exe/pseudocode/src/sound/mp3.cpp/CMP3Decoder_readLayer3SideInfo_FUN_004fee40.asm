@@ -37,9 +37,9 @@
 ;   TerminatedCString s_Side_info_bad_block_type_005ca0e0
 ;   TerminatedCString s_sound_mp3_cpp_005ca119
 ;   TerminatedCString s_Side_info_bad_block_type_005ca12a
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d94b98
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   char[256] g_CHAR_ARRAY_01d94b98
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -225,12 +225,12 @@ section .text
     TEST ECX,ECX                        ; 004feffb
     JNZ 0x004ff0e3                      ; 004feffd
         ;   XREF to: 004ff0e3 (CONDITIONAL_JUMP)  ; LAB_004ff0e3
-    PUSH 0x1d94b98                      ; 004ff003 | DAT_01d94b98
+    PUSH 0x1d94b98                      ; 004ff003 | g_CHAR_ARRAY_01d94b98
     MOV EBP,0x5ca0cf                    ; 004ff008 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x6d5                       ; 004ff00d
     PUSH 0x5ca0e0                       ; 004ff012 | = "Side info bad: block_type == 0 in spl..."
-    MOV dword ptr [0x01d71de0],EBP      ; 004ff017 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004ff01d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004ff017 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004ff01d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ff022
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004ff027
@@ -536,12 +536,12 @@ section .text
     TEST ECX,ECX                        ; 004ff352
     JNZ 0x004ff399                      ; 004ff354
         ;   XREF to: 004ff399 (CONDITIONAL_JUMP)  ; LAB_004ff399
-    PUSH 0x1d94b98                      ; 004ff356 | DAT_01d94b98
+    PUSH 0x1d94b98                      ; 004ff356 | g_CHAR_ARRAY_01d94b98
     MOV EBP,0x5ca119                    ; 004ff35b | = "..\\sound\\mp3.cpp"
     MOV EAX,0x704                       ; 004ff360
     PUSH 0x5ca12a                       ; 004ff365 | = "Side info bad: block_type == 0 in spl..."
-    MOV dword ptr [0x01d71de0],EBP      ; 004ff36a | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004ff370 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004ff36a | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004ff370 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ff375
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004ff37a

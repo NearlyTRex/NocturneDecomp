@@ -6,37 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004bb2f0(CGame *this_ptr)
 
 {
-  if (_DAT_01cb80e0 != 0) {
-    if (_DAT_01cb80e0 < 4) {
-      if ((_DAT_01cb80e0 != 2) ||
-         (_DAT_01cb810c =
-               ((float)this_ptr->delta_time_int * (float)_DAT_005d83fb) /
-               ((float)_DAT_005d83f3 / (float)DAT_006141bc) + _DAT_01cb810c,
-         _DAT_01cb810c <= (float)DAT_006141b8)) {
-        if ((_DAT_01cb80e0 == 3) &&
-           (_DAT_01cb810c =
-                 _DAT_01cb810c -
-                 ((float)this_ptr->delta_time_int * (float)_DAT_005d83fb) /
-                 ((float)_DAT_005d83f3 / (float)DAT_006141bc), _DAT_01cb810c < 0.0)) {
-          _DAT_01cb810c = 0.0;
-          _DAT_01cb80e0 = 4;
+  if (g_INT_01cb80e0 != 0) {
+    if (g_INT_01cb80e0 < 4) {
+      if ((g_INT_01cb80e0 != 2) ||
+         (g_FLOAT_01cb810c =
+               ((float)this_ptr->delta_time_int * (float)256) /
+               ((float)31457280 / (float)g_INT_006141bc) + g_FLOAT_01cb810c,
+         g_FLOAT_01cb810c <= (float)g_INT_006141b8)) {
+        if ((g_INT_01cb80e0 == 3) &&
+           (g_FLOAT_01cb810c =
+                 g_FLOAT_01cb810c -
+                 ((float)this_ptr->delta_time_int * (float)256) /
+                 ((float)31457280 / (float)g_INT_006141bc), g_FLOAT_01cb810c < 0.0)) {
+          g_FLOAT_01cb810c = 0.0;
+          g_INT_01cb80e0 = 4;
           return;
         }
-        if (_DAT_01cb80e0 == 1) {
-          _DAT_01cb80e0 = 2;
+        if (g_INT_01cb80e0 == 1) {
+          g_INT_01cb80e0 = 2;
         }
       }
       else {
-        _DAT_01cb80e0 = 0;
+        g_INT_01cb80e0 = 0;
       }
     }
     else {
-      _DAT_01cb80e0 = 5;
+      g_INT_01cb80e0 = 5;
     }
   }
   return;

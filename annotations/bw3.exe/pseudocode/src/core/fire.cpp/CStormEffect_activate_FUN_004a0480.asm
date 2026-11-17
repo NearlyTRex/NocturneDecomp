@@ -18,12 +18,12 @@
 ;   core_fire.cpp_CFireEffect_createStormEffect_FUN_004a3fd0 at 004a3ffa
 ;
 ; Referenced Globals:
-;   undefined4 s_wp_storm_wav_005c093b+1
+;   TerminatedCString s_wp_storm_wav_005c093c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
-;   undefined4 DAT_006071f0
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
+;   CWeather* g_CWeather_PTR_006071f0 = 02d0c1a0
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
-;   undefined4 DAT_02d0c1a0
+;   CWeather g_CWeather_02d0c1a0
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
@@ -39,8 +39,8 @@ section .text
     PUSH EDI                            ; 004a0481
     SUB ESP,0x18                        ; 004a0482
     MOV EBX,dword ptr [ESP + 0x24]      ; 004a0485
-    MOV EAX,[0x006071f0]                ; 004a0489 | DAT_006071f0
-    MOV EDX,dword ptr [EAX]             ; 004a048e | DAT_02d0c1a0
+    MOV EAX,[0x006071f0]                ; 004a0489 | g_CWeather_PTR_006071f0
+    MOV EDX,dword ptr [EAX]             ; 004a048e | g_CWeather_02d0c1a0
     MOV dword ptr [EBX + 0x4],EDX       ; 004a0490
     TEST EDX,EDX                        ; 004a0493
     JNZ 0x004a0562                      ; 004a0495
@@ -75,8 +75,8 @@ section .text
     PUSH ESI                            ; 004a04f4
         ;   Label: LAB_004a04f4
     PUSH 0x5                            ; 004a04f5
-    MOV ECX,dword ptr [0x006071f0]      ; 004a04f7 | DAT_006071f0
-    PUSH ECX                            ; 004a04fd | DAT_02d0c1a0
+    MOV ECX,dword ptr [0x006071f0]      ; 004a04f7 | g_CWeather_PTR_006071f0
+    PUSH ECX                            ; 004a04fd | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004a04fe
         ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004a0503
@@ -84,8 +84,8 @@ section .text
     PUSH EAX                            ; 004a050a
     LEA EAX,[ESP + 0x14]                ; 004a050b
     PUSH EAX                            ; 004a050f
-    MOV ESI,dword ptr [0x006071f0]      ; 004a0510 | DAT_006071f0
-    PUSH ESI                            ; 004a0516 | DAT_02d0c1a0
+    MOV ESI,dword ptr [0x006071f0]      ; 004a0510 | g_CWeather_PTR_006071f0
+    PUSH ESI                            ; 004a0516 | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 004a0517
         ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
     ADD ESP,0xc                         ; 004a051c
@@ -93,9 +93,9 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 004a0520
         ;   Label: LAB_004a0520
     PUSH EAX                            ; 004a0524
-    PUSH 0x5c093c                       ; 004a0525 | s_wp_storm_wav_005c093b+1
+    PUSH 0x5c093c                       ; 004a0525 | = "wp_storm.wav"
     PUSH EBX                            ; 004a052a
-    MOV EDI,dword ptr [0x006045f8]      ; 004a052b | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 004a052b | g_CSound_PTR_006045f8
     PUSH EDI                            ; 004a0531
     MOV dword ptr [EBX],0x40a00000      ; 004a0532
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004a0538
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 004a04c5 (UNCONDITIONAL_JUMP)  ; LAB_004a04c5
     PUSH 0x5                            ; 004a0562
         ;   Label: LAB_004a0562
-    PUSH EAX                            ; 004a0564 | DAT_02d0c1a0
+    PUSH EAX                            ; 004a0564 | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004a0565
         ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004a056a

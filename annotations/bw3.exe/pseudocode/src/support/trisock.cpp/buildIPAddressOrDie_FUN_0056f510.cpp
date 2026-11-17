@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4)
 
 {
@@ -17,8 +15,8 @@ uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(uchar *de
   if (iVar1 != 0) {
     return dest_ip;
   }
-  _DAT_01d71de0 = "..\\support\\trisock.cpp";
-  _DAT_01d71de4 = 0x62;
+  g_CHAR_PTR_01d71de0 = "..\\support\\trisock.cpp";
+  g_INT_01d71de4 = 0x62;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid IP values: %d, %d, %d, %d");
   return dest_ip;
 }

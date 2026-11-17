@@ -14,16 +14,16 @@ DWORD FUN_005c65d0(uint param_1,LPVOID param_2,DWORD param_3)
   BOOL BVar3;
   DWORD DStack_14;
   
-  if (((int)param_1 < 0) || (0x00000014 < param_1)) {
+  if (((int)param_1 < 0) || (g_UINT_006267e0 < param_1)) {
     setErrno(4);
     DStack_14 = 0xffffffff;
   }
   else {
     (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(param_1);
-    if (DAT_0062679c != (code *)0x0) {
-      iVar1 = (*DAT_00626774)(param_1);
+    if (g_PTR_0062679c != (byte *)0x0) {
+      iVar1 = (*(code *)g_PTR_00626774)(param_1);
       if (iVar1 != 0) {
-        uVar2 = (*DAT_0062679c)(iVar1,param_2,param_3);
+        uVar2 = (*(code *)g_PTR_0062679c)(iVar1,param_2,param_3);
         (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_1);
         return uVar2;
       }

@@ -84,7 +84,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_004392b0(CZombieCow *this_ptr,f
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
           iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70
-                            (0x0264B290,this_ptr->sfx_handle);
+                            (g_CSound_PTR_0061c068,this_ptr->sfx_handle);
           if (iVar4 == 0) {
             uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"cow?.wav");
@@ -100,7 +100,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_004392b0(CZombieCow *this_ptr,f
       break;
     case 1:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar11 = 0x40900000;
+      fVar11 = 4.5f;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00488970(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
@@ -108,7 +108,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_004392b0(CZombieCow *this_ptr,f
         }
       }
       else {
-        fStack_18 = 0x40900000;
+        fStack_18 = 4.5f;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
              (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -146,7 +146,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_004392b0(CZombieCow *this_ptr,f
       fVar11 = 0.7;
       fStack_14 = SStack_10c.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,
+                (&g_CVector3f_0265370c,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_head,&CStack_d0);
       pCVar10 = &CStack_4c;

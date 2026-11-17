@@ -9,13 +9,13 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00557f60 at 00557ff0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060423c
+;   int g_INT_0060423c = -0x1
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x0060423c]                ; 00558840 | DAT_0060423c
+    MOV EAX,[0x0060423c]                ; 00558840 | g_INT_0060423c
         ;   Label: sound_sndmain.cpp_getCurrentSoundDevice_FUN_00558840
     RET                                 ; 00558845
 

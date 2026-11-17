@@ -21,8 +21,8 @@
 ;   TerminatedCString s_CBodyPart_setCounts_out_005d42ca
 ;   TerminatedCString s_core_bodypart_cpp_005d430f
 ;   TerminatedCString s_CBodyPart_setCounts_out_005d4324
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -101,8 +101,8 @@ section .text
     MOV ECX,0x5d42b5                    ; 00418dd4 | = "..\\core\\bodypart.cpp"
     MOV ESI,0xba                        ; 00418dd9
     PUSH 0x5d42ca                       ; 00418dde | = "CBodyPart::setCounts - out of memory ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00418de3 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00418de9 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00418de3 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00418de9 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00418def
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00418df4
@@ -128,8 +128,8 @@ section .text
     MOV ECX,0x5d430f                    ; 00418e1e | = "..\\core\\bodypart.cpp"
     MOV ESI,0xbf                        ; 00418e23
     PUSH 0x5d4324                       ; 00418e28 | = "CBodyPart::setCounts - out of memory ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00418e2d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00418e33 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00418e2d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00418e33 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00418e39
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00418e3e

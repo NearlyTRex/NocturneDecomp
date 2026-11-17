@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_0053d7d0(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info)
 
 {
@@ -61,7 +59,7 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_0053d7d0(SIntersectXZCylin
     }
     else {
       fVar2 = SQRT(fVar1) - fVar2;
-      if ((float)_DAT_005d0ad6 < fVar2) {
+      if ((float)-0.001 < fVar2) {
         fVar2 = -0.001;
       }
       if (fVar2 < cylinder->closest_t) {

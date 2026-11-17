@@ -11,11 +11,11 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_007dffb4
-;   undefined4 DAT_007dffbc
-;   undefined4 DAT_01c5fadc
-;   undefined4 DAT_01c5fae0
-;   undefined4 DAT_01c5fae4
+;   CPuzzle* g_CPuzzle_PTR_007dffb4
+;   int g_INT_007dffbc
+;   int g_INT_01c5fadc
+;   int g_INT_01c5fae0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; *****************************************************************************
@@ -26,7 +26,7 @@ section .text
         ;   Label: core_bmppuzzl.cpp_processActivePuzzle_FUN_00411a90
     PUSH ESI                            ; 00411a91
     PUSH EBP                            ; 00411a92
-    MOV ESI,dword ptr [0x007dffb4]      ; 00411a93 | DAT_007dffb4
+    MOV ESI,dword ptr [0x007dffb4]      ; 00411a93 | g_CPuzzle_PTR_007dffb4
     TEST ESI,ESI                        ; 00411a99
     JZ 0x00411aca                       ; 00411a9b
         ;   XREF to: 00411aca (CONDITIONAL_JUMP)  ; LAB_00411aca
@@ -37,9 +37,9 @@ section .text
     MOV EAX,0x1                         ; 00411aa3
         ;   Label: LAB_00411aa3
     MOV CL,BL                           ; 00411aa8
-    MOV EDX,dword ptr [0x007dffbc]      ; 00411aaa | DAT_007dffbc
+    MOV EDX,dword ptr [0x007dffbc]      ; 00411aaa | g_INT_007dffbc
     SHL EAX,CL                          ; 00411ab0
-    MOV ECX,dword ptr [0x01c5fae4]      ; 00411ab2 | DAT_01c5fae4
+    MOV ECX,dword ptr [0x01c5fae4]      ; 00411ab2 | g_BIT_INTEGER32_01c5fae4
     AND EDX,EAX                         ; 00411ab8
     AND ECX,EAX                         ; 00411aba
     CMP ECX,EDX                         ; 00411abc
@@ -53,29 +53,29 @@ section .text
     TEST ESI,ESI                        ; 00411ac6
     JNZ 0x00411aa3                      ; 00411ac8
         ;   XREF to: 00411aa3 (CONDITIONAL_JUMP)  ; LAB_00411aa3
-    MOV dword ptr [0x007dffb4],ESI      ; 00411aca | DAT_007dffb4
+    MOV dword ptr [0x007dffb4],ESI      ; 00411aca | g_CPuzzle_PTR_007dffb4
         ;   Label: LAB_00411aca
     POP EBP                             ; 00411ad0
     POP ESI                             ; 00411ad1
     POP EBX                             ; 00411ad2
     RET                                 ; 00411ad3
-    MOV EDX,dword ptr [0x01c5fae4]      ; 00411ad4 | DAT_01c5fae4
+    MOV EDX,dword ptr [0x01c5fae4]      ; 00411ad4 | g_BIT_INTEGER32_01c5fae4
         ;   Label: LAB_00411ad4
     MOV ECX,dword ptr [ESI]             ; 00411ada
-    MOV dword ptr [0x007dffbc],EDX      ; 00411adc | DAT_007dffbc
+    MOV dword ptr [0x007dffbc],EDX      ; 00411adc | g_INT_007dffbc
     TEST EAX,EDX                        ; 00411ae2
     SETNZ AL                            ; 00411ae4
     AND EAX,0xff                        ; 00411ae7
     PUSH EAX                            ; 00411aec
     PUSH EBX                            ; 00411aed
-    MOV EBP,dword ptr [0x01c5fae0]      ; 00411aee | DAT_01c5fae0
+    MOV EBP,dword ptr [0x01c5fae0]      ; 00411aee | g_INT_01c5fae0
     PUSH EBP                            ; 00411af4
-    MOV EAX,[0x01c5fadc]                ; 00411af5 | DAT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 00411af5 | g_INT_01c5fadc
     PUSH EAX                            ; 00411afa
     PUSH ESI                            ; 00411afb
-    MOV dword ptr [0x007dffb4],ESI      ; 00411afc | DAT_007dffb4
+    MOV dword ptr [0x007dffb4],ESI      ; 00411afc | g_CPuzzle_PTR_007dffb4
     CALL dword ptr [ECX + 0x24]         ; 00411b02
-    MOV ESI,dword ptr [0x007dffb4]      ; 00411b05 | DAT_007dffb4
+    MOV ESI,dword ptr [0x007dffb4]      ; 00411b05 | g_CPuzzle_PTR_007dffb4
     ADD ESP,0x14                        ; 00411b0b
     TEST ESI,ESI                        ; 00411b0e
     JZ 0x00411aca                       ; 00411b10
@@ -89,11 +89,11 @@ section .text
     MOV EAX,dword ptr [EDX + 0x314]     ; 00411b1f | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EAX             ; 00411b25
     PUSH ESI                            ; 00411b28
-    MOV dword ptr [0x007dffb4],ESI      ; 00411b29 | DAT_007dffb4
+    MOV dword ptr [0x007dffb4],ESI      ; 00411b29 | g_CPuzzle_PTR_007dffb4
     CALL dword ptr [ECX + 0x20]         ; 00411b2f
-    MOV ESI,dword ptr [0x007dffb4]      ; 00411b32 | DAT_007dffb4
+    MOV ESI,dword ptr [0x007dffb4]      ; 00411b32 | g_CPuzzle_PTR_007dffb4
     ADD ESP,0x8                         ; 00411b38
-    MOV dword ptr [0x007dffb4],ESI      ; 00411b3b | DAT_007dffb4
+    MOV dword ptr [0x007dffb4],ESI      ; 00411b3b | g_CPuzzle_PTR_007dffb4
     POP EBP                             ; 00411b41
     POP ESI                             ; 00411b42
     POP EBX                             ; 00411b43

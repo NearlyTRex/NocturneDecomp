@@ -21,8 +21,8 @@
 ;   TerminatedCString s_frankx_flap_up_wav_005d6c22
 ;   TerminatedCString s_frankx_flap_down_wav_005d6c35
 ;   TerminatedCString s_frankx_big_ramp_wav_005d6c4a
-;   undefined4 DAT_005d6c79
-;   undefined4 DAT_005d6c81
+;   float g_FLOAT_005d6c79 = 1580
+;   double g_DOUBLE_005d6c81 = 0.0100000000000000
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     SUB ESP,0xb8                        ; 004ac4c1
     MOV EBP,dword ptr [ESP + 0xc0]      ; 004ac4c7
     MOV EAX,dword ptr [EBP + 0x2b8]     ; 004ac4ce
-    MOV [0x01cb0620],EAX                ; 004ac4d4 | DAT_01cb0620
+    MOV [0x01cb0620],EAX                ; 004ac4d4 | g_FLOAT_01cb0620
     CALL core_frankgen.cpp_findLeader_FUN_004ace60 ; 004ac4d9
         ;   XREF to: 004ace60 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_findLeader_FUN_004ace60()
     CMP EAX,EBP                         ; 004ac4de
@@ -53,16 +53,16 @@ section .text
         ;   XREF to: 004ac895 (CONDITIONAL_JUMP)  ; LAB_004ac895
     MOV EDX,dword ptr [EAX + 0x2b8]     ; 004ac4e6
     MOV dword ptr [EBP + 0x2b8],EDX     ; 004ac4ec
-    FLD float ptr [0x01cb0620]          ; 004ac4f2 | DAT_01cb0620
+    FLD float ptr [0x01cb0620]          ; 004ac4f2 | g_FLOAT_01cb0620
         ;   Label: LAB_004ac4f2
     FCOMP float ptr [EBP + 0x2b8]       ; 004ac4f8
     FNSTSW AX                           ; 004ac4fe
     SAHF                                ; 004ac500
     JBE 0x004ac515                      ; 004ac501
         ;   XREF to: 004ac515 (CONDITIONAL_JUMP)  ; LAB_004ac515
-    FLD float ptr [0x005f71f0]          ; 004ac503 | DAT_005f71f0
-    FSUBR float ptr [0x01cb0620]        ; 004ac509 | DAT_01cb0620
-    FSTP float ptr [0x01cb0620]         ; 004ac50f | DAT_01cb0620
+    FLD float ptr [0x005f71f0]          ; 004ac503 | g_FLOAT_005f71f0
+    FSUBR float ptr [0x01cb0620]        ; 004ac509 | g_FLOAT_01cb0620
+    FSTP float ptr [0x01cb0620]         ; 004ac50f | g_FLOAT_01cb0620
     PUSH EBP                            ; 004ac515
         ;   Label: LAB_004ac515
     CALL core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0 ; 004ac516
@@ -89,10 +89,10 @@ section .text
     JGE 0x004ac8d4                      ; 004ac55b
         ;   XREF to: 004ac8d4 (CONDITIONAL_JUMP)  ; LAB_004ac8d4
     FLD float ptr [EBP + 0x2b8]         ; 004ac561
-    FADD float ptr [0x005d6c91]         ; 004ac567 | DAT_005d6c91
-    FMUL double ptr [0x005d6c81]        ; 004ac56d | DAT_005d6c81
-    FMUL double ptr [0x005d6c99]        ; 004ac573 | DAT_005d6c99
-    FADD float ptr [0x005d6ca1]         ; 004ac579 | DAT_005d6ca1
+    FADD float ptr [0x005d6c91]         ; 004ac567 | g_FLOAT_005d6c91
+    FMUL double ptr [0x005d6c81]        ; 004ac56d | g_DOUBLE_005d6c81
+    FMUL double ptr [0x005d6c99]        ; 004ac573 | g_DOUBLE_005d6c99
+    FADD float ptr [0x005d6ca1]         ; 004ac579 | g_FLOAT_005d6ca1
     FSTP float ptr [ESP + 0xb8]         ; 004ac57f
         ;   Label: LAB_004ac57f
     PUSH dword ptr [ESP + 0xd0]         ; 004ac586
@@ -185,7 +185,7 @@ section .text
     LEA EAX,[ESP + 0xb4]                ; 004ac6e9
     FSTP float ptr [ESP]                ; 004ac6f0
     PUSH EAX                            ; 004ac6f3
-    MOV EDX,dword ptr [0x00614d30]      ; 004ac6f4 | DAT_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 004ac6f4 | g_CFireEffect_PTR_00614d30
     PUSH EDX                            ; 004ac6fa
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230 ; 004ac6fb
         ;   XREF to: 0049d230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -260,7 +260,7 @@ section .text
     PUSH 0x0                            ; 004ac7ff
     LEA EAX,[ESP + 0x80]                ; 004ac801
     PUSH EAX                            ; 004ac808
-    MOV EDI,dword ptr [0x00614d30]      ; 004ac809 | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 004ac809 | g_CFireEffect_PTR_00614d30
     PUSH EDI                            ; 004ac80f
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 004ac810
         ;   XREF to: 0049d090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0049d090(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -311,24 +311,24 @@ section .text
     RET                                 ; 004ac894
     FLD float ptr [ESP + 0xc4]          ; 004ac895
         ;   Label: LAB_004ac895
-    FMUL float ptr [0x005f71ec]         ; 004ac89c | DAT_005f71ec
+    FMUL float ptr [0x005f71ec]         ; 004ac89c | g_FLOAT_005f71ec
     FADD float ptr [EBP + 0x2b8]        ; 004ac8a2
     FST float ptr [EBP + 0x2b8]         ; 004ac8a8
-    FCOMP float ptr [0x005f71f0]        ; 004ac8ae | DAT_005f71f0
+    FCOMP float ptr [0x005f71f0]        ; 004ac8ae | g_FLOAT_005f71f0
     FNSTSW AX                           ; 004ac8b4
     SAHF                                ; 004ac8b6
     JC 0x004ac4f2                       ; 004ac8b7
         ;   XREF to: 004ac4f2 (CONDITIONAL_JUMP)  ; LAB_004ac4f2
-    FLD float ptr [0x005f71f0]          ; 004ac8bd | DAT_005f71f0
+    FLD float ptr [0x005f71f0]          ; 004ac8bd | g_FLOAT_005f71f0
     FSUBR float ptr [EBP + 0x2b8]       ; 004ac8c3
     FSTP float ptr [EBP + 0x2b8]        ; 004ac8c9
     JMP 0x004ac4f2                      ; 004ac8cf
         ;   XREF to: 004ac4f2 (UNCONDITIONAL_JUMP)  ; LAB_004ac4f2
-    FLD float ptr [0x005d6c79]          ; 004ac8d4 | DAT_005d6c79
+    FLD float ptr [0x005d6c79]          ; 004ac8d4 | g_FLOAT_005d6c79
         ;   Label: LAB_004ac8d4
     FSUB float ptr [EBP + 0x2b8]        ; 004ac8da
-    FMUL double ptr [0x005d6c81]        ; 004ac8e0 | DAT_005d6c81
-    FMUL double ptr [0x005d6c89]        ; 004ac8e6 | DAT_005d6c89
+    FMUL double ptr [0x005d6c81]        ; 004ac8e0 | g_DOUBLE_005d6c81
+    FMUL double ptr [0x005d6c89]        ; 004ac8e6 | g_DOUBLE_005d6c89
     JMP 0x004ac57f                      ; 004ac8ec
         ;   XREF to: 004ac57f (UNCONDITIONAL_JUMP)  ; LAB_004ac57f
     PUSH 0x5d6bdd                       ; 004ac8f1 | = "frankx-crane1.wav"
@@ -401,8 +401,8 @@ section .text
         ;   Label: default
     MOV ECX,0x13e                       ; 004ac9ab
     PUSH 0x5d6c73                       ; 004ac9b0
-    MOV dword ptr [0x01d046a0],EDX      ; 004ac9b5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004ac9bb | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004ac9b5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004ac9bb | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ac9c1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ac9c6

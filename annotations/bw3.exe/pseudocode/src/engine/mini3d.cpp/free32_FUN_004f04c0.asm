@@ -10,8 +10,8 @@
 ;   engine_mini3d.cpp_kill_FUN_004ec820 at 004ec827
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_004f04de
     MOV ECX,0xdfe                       ; 004f04e3
     PUSH 0x5c81ff                       ; 004f04e8
-    MOV dword ptr [0x01d71de0],EDX      ; 004f04ed | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004f04f3 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004f04ed | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004f04f3 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f04f9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f04fe

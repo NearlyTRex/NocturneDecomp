@@ -11,7 +11,7 @@
 ;   core_fldnotes.cpp_SPageResourceTwanaCharacter_onMouse_FUN_004bac50 at 004bac73
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
@@ -137,7 +137,7 @@ section .text
         ;   XREF to: 004bafc7 (CONDITIONAL_JUMP)  ; LAB_004bafc7
     MOV EDX,ESP                         ; 004bb032
     PUSH EDX                            ; 004bb034
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004bb035 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004bb035 | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 004bb03b
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004bb03c
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 57,
+    "complexity_score": 41,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 171
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 170
   },
   "cross_references": [
     {
@@ -96,14 +94,14 @@
     },
     {
       "addr": "01d51d9c",
-      "name": "DAT_01d51d9c",
-      "type": "undefined4",
+      "name": "g_INT_01d51d9c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d51da0",
-      "name": "DAT_01d51da0",
-      "type": "undefined4",
+      "name": "g_UINT_01d51da0",
+      "type": "uint",
       "value": null
     }
   ],
@@ -215,14 +213,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

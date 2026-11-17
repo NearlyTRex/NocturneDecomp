@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 257,
+    "complexity_score": 225,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
-    "suspect_count": 13,
+    "pseudocode_lines": 90,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "undefined_data",
       "unrolled_strchr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 296
+    "total_lines": 294
   },
   "cross_references": [],
   "function": {
@@ -68,14 +66,14 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -209,16 +207,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "uint unaff_EBX;",
@@ -226,7 +216,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint unaff_ESI;",
@@ -234,7 +224,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "SIZE_T in_stack_00000014;",
@@ -242,7 +232,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 20,
       "match": "&stack0xfffffee4",
       "severity": "moderate",
       "text": "pcVar6 = &stack0xfffffee4;",
@@ -250,31 +240,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 31,
       "match": "&stack0xfffffee4",
       "severity": "moderate",
-      "text": "p_Var4 = engine_dosio_cpp_getFile_FUN_00479180((char *)0x5d895b,&stack0xfffffee4,(char *)0x5d8958)",
+      "text": "p_Var4 = engine_dosio_cpp_getFile_FUN_00479180(\"art\",&stack0xfffffee4,\"rb\");",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 40,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "_fread(this_ptr->data,width,in_stack_00000014,p_Var4);",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_01c45ad0",
-      "severity": "mild",
-      "text": "*pcVar7 = (&DAT_01c45ad0)",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 89,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "[(uint)(bVar2 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3)];",
@@ -282,7 +264,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 89,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "[(uint)(bVar2 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3)];",
@@ -290,7 +272,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 24,
+      "line": 22,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -298,7 +280,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 62,
+      "line": 59,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -306,7 +288,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 46,
+      "line": 43,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

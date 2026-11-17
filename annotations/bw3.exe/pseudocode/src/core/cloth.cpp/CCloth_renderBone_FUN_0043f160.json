@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 316,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 86,
-    "suspect_count": 20,
+    "pseudocode_lines": 85,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "stack_ref",
-      "unaffected_reg",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 269
+    "total_lines": 268
   },
   "cross_references": [
     {
@@ -79,27 +77,27 @@
   "globals": [
     {
       "addr": "005b9144",
-      "name": "DAT_005b9144",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005b9144",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005b9148",
-      "name": "DAT_005b9148",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005b9148",
+      "type": "float",
+      "value": "0.08333334"
     },
     {
       "addr": "005dd3b0",
-      "name": "DAT_005dd3b0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dd3b0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005fb140",
@@ -227,16 +225,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -244,7 +234,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
@@ -252,7 +242,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 13,
       "match": "aiStackY_1034",
       "severity": "moderate",
       "text": "int aiStackY_1034 [1006];",
@@ -260,7 +250,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(uint *)((int)aCStack_40",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + 4) =",
@@ -268,7 +258,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(uint *)((int)aCStack_40",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + -8);",
@@ -276,7 +266,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)aCStack_40",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -284,106 +274,58 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(uint *)((int)aCStack_40",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + -4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,euler_angles,translation);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar1),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c)",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 64,
+      "line": 62,
       "match": "&stack0xffffff90",
       "severity": "moderate",
-      "text": ",(CVector3i *)&stack0xffffff90);",
+      "text": "transformed_x + iStack_1c),(CVector3i *)&stack0xffffff90);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,vertex_index1,iStack_28);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 69,
+      "line": 67,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(DAT_005f2afc,vertex_index1,unaff_EDI);",
+      "text": "(g_CDemonRenderer_PTR_005f2afc,vertex_index1,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,vertex_index1,unaff_EDI);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 71,
+      "line": 69,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(DAT_005f2afc,unaff_EBP,unaff_EDI);",
+      "text": "(g_CDemonRenderer_PTR_005f2afc,unaff_EBP,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 71,
+      "line": 69,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(DAT_005f2afc,unaff_EBP,unaff_EDI);",
+      "text": "(g_CDemonRenderer_PTR_005f2afc,unaff_EBP,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,unaff_EBP,unaff_EDI);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 58,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
-      "text": "((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar1),",
+      "text": "((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 61,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
-      "text": "((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c)",
+      "text": "((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     }
   ]

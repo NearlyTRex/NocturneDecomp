@@ -21,8 +21,8 @@
 ;   TerminatedCString s_DjienSacksGone_005d8d32
 ;   TerminatedCString s_DjienHeartDestroyed_005d8d41
 ;   TerminatedCString s_djien_die_wav_4_005d8d55
-;   undefined4 DAT_005d8d68
-;   undefined4 DAT_005d8d70
+;   float g_FLOAT_005d8d68 = 4
+;   double g_DOUBLE_005d8d70 = 0.950000000000000
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 00524770 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770(CMotionController * this_ptr)
     FLD float ptr [EBP + 0x92]          ; 004602a5
     FMUL float ptr [EBX + 0xc1d0]       ; 004602ab
-    FMUL float ptr [0x005d8d68]         ; 004602b1 | DAT_005d8d68
+    FMUL float ptr [0x005d8d68]         ; 004602b1 | g_FLOAT_005d8d68
     FLD float ptr [EBX + 0x24a4]        ; 004602b7
     ADD ESP,0x4                         ; 004602bd
     MOV EDI,dword ptr [EAX + 0x24]      ; 004602c0
@@ -137,13 +137,13 @@ section .text
     JG 0x004603f1                       ; 0046033e
         ;   XREF to: 004603f1 (CONDITIONAL_JUMP)  ; LAB_004603f1
     PUSH 0x5d8d32                       ; 00460344 | = "DjienSacksGone"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00460349 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00460349 | g_CEventList_PTR_0061b4d0
     PUSH ECX                            ; 0046034f
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00460350
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00460355
     PUSH 0x5d8d41                       ; 00460358 | = "DjienHeartDestroyed"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0046035d | DAT_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0046035d | g_CEventList_PTR_0061b4d0
     PUSH ESI                            ; 00460363
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460364
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 004603f1 (CONDITIONAL_JUMP)  ; LAB_004603f1
     MOV EDI,dword ptr [EBX + 0xc2c8]    ; 0046039a
     PUSH EDI                            ; 004603a0
-    MOV EAX,[0x006236b8]                ; 004603a1 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 004603a1 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 004603a6
     CALL core_sound.cpp_CSound_killSound_FUN_0057d9d0 ; 004603a7
         ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)
@@ -353,7 +353,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00460583
     ADD ESP,0x4                         ; 00460586
     FLD float ptr [EBP + 0x76]          ; 00460589
-    FCOMP double ptr [0x005d8d70]       ; 0046058c | DAT_005d8d70
+    FCOMP double ptr [0x005d8d70]       ; 0046058c | g_DOUBLE_005d8d70
     FNSTSW AX                           ; 00460592
     SAHF                                ; 00460594
     JBE 0x0046031a                      ; 00460595
@@ -464,7 +464,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0xc2c8]    ; 004606cb
         ;   Label: LAB_004606cb
     PUSH EDX                            ; 004606d1
-    MOV ECX,dword ptr [0x006236b8]      ; 004606d2 | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 004606d2 | g_CSound_PTR_006236b8
     PUSH ECX                            ; 004606d8
     MOV dword ptr [EBX + 0xc9c0],0x1    ; 004606d9
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004606e3
@@ -533,7 +533,7 @@ section .text
     FADDP                               ; 004607aa
     FSTP float ptr [EBP + 0x6e]         ; 004607ac
     MOV EAX,dword ptr [EBP + 0x6e]      ; 004607af
-    MOV EDX,dword ptr [0x01cc804c]      ; 004607b2 | DAT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 004607b2 | g_INT_01cc804c
     SAR EAX,0x1                         ; 004607b8
     ADD EAX,EDX                         ; 004607ba
     MOV dword ptr [EBP + 0x6a],EAX      ; 004607bc
@@ -569,7 +569,7 @@ section .text
     JNZ 0x00460332                      ; 0046081f
         ;   XREF to: 00460332 (CONDITIONAL_JUMP)  ; LAB_00460332
     PUSH 0x5d8ca9                       ; 00460825 | = "DjienInZone"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 0046082a | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 0046082a | g_CEventList_PTR_0061b4d0
     PUSH EDI                            ; 00460830
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460831
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

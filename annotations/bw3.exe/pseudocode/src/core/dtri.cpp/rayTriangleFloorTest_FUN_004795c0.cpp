@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_004795c0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height)
 
 {
@@ -28,7 +26,7 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_004795c0(CDemonTriangle *tria
   CVector3f local_40;
   CVector3f local_34 [3];
   
-  if ((triangle->normal).y <= (float)_DAT_005bcca9) {
+  if ((triangle->normal).y <= (float)-0.34000000000000002) {
     fVar1 = (triangle->vertex1).x - position->x;
     fVar9 = (triangle->vertex1).y;
     fVar2 = (triangle->vertex1).z - position->z;
@@ -108,28 +106,29 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_004795c0(CDemonTriangle *tria
         fVar1 = (triangle->normal).z;
         uVar8 = uVar6 | uVar7 | uVar8;
         fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
-        if ((DAT_01c599d8 & 1) == 0) {
-          DAT_01c599d8 = DAT_01c599d8 | 1;
-          _DAT_01c599cc = 0;
-          _DAT_01c599d4 = 0;
-          _DAT_01c599d0 = -100.0;
+        if ((g_BYTE_01c599d8 & 1) == 0) {
+          g_BYTE_01c599d8 = g_BYTE_01c599d8 | 1;
+          g_CVector3f_01c599cc.x = 0.0;
+          g_CVector3f_01c599cc.z = 0.0;
+          g_CVector3f_01c599cc.y = -100.0;
         }
-        if (_DAT_005bccb1 <= (double)fVar9) {
+        if (0.01 <= (double)fVar9) {
           fVar9 = search_radius / fVar9;
           local_34[0].x = (triangle->normal).x * fVar9 + position->x;
           local_34[0].z = fVar9 * (triangle->normal).z + position->z;
           local_34[0].y = position->y;
           fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_00478ac0
-                            (triangle,local_34,(CVector3f *)&DAT_01c599cc);
+                            (triangle,local_34,&g_CVector3f_01c599cc);
           if ((0.0 <= fVar9) &&
-             (local_34[0].y = fVar9 * _DAT_01c599d0 + local_34[0].y, *out_height < local_34[0].y)) {
+             (local_34[0].y = fVar9 * g_CVector3f_01c599cc.y + local_34[0].y,
+             *out_height < local_34[0].y)) {
             *out_height = local_34[0].y;
             return 1;
           }
         }
         else if (uVar8 == 0) {
           fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_00478ac0
-                            (triangle,position,(CVector3f *)&DAT_01c599cc);
+                            (triangle,position,&g_CVector3f_01c599cc);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_40.y;

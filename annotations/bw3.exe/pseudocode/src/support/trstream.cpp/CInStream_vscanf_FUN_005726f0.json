@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1502,
-    "complexity_score": 1511,
+    "complexity_score": 1457,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 751,
-    "suspect_count": 74,
+    "pseudocode_lines": 752,
+    "suspect_count": 69,
     "suspect_types": [
       "pointer_cast",
       "sub84_truncation",
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 2253
+    "total_lines": 2254
   },
   "cross_references": [
     {
@@ -75,8 +74,8 @@
     },
     {
       "addr": "006074b8",
-      "name": "DAT_006074b8",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_006074b8",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -206,14 +205,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((&DAT_006074b8)[(byte)(*format + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(code **)((int)this_ptr",
@@ -244,14 +235,6 @@
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4), uVar4 = uStack_18,",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((&DAT_006074b8)[(byte)(*pbVar8 + 1)] & 0x20) == 0) break;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -302,14 +285,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((&DAT_006074b8)[(byte)((byte)uStack_44 + 1)] & 0x20) == 0) break;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 171,
       "match": "(code **)((int)this_ptr",
@@ -356,14 +331,6 @@
       "severity": "moderate",
       "text": "(uStack_44 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr),",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 195,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((&DAT_006074b8)[(byte)((byte)uStack_44 + 1)] & 0x20) == 0) break;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -462,16 +429,8 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 261,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((&DAT_006074b8)[(byte)((byte)uStack_44 + 1)] & 0x20) == 0) break;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 267,
+      "line": 268,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_44);",
@@ -479,7 +438,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 267,
+      "line": 268,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_44);",
@@ -487,7 +446,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 276,
+      "line": 277,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_54);",
@@ -495,7 +454,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 276,
+      "line": 277,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_54);",
@@ -503,7 +462,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 301,
+      "line": 302,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_e8 = SUB84(dStack_5c,0);",
@@ -511,7 +470,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 342,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -519,7 +478,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 341,
+      "line": 342,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -527,7 +486,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 349,
+      "line": 350,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "(iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4),",
@@ -535,7 +494,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 349,
+      "line": 350,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4),",
@@ -543,7 +502,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 361,
+      "line": 362,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "(uStack_44 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr), uVar4 = uStack_44,",
@@ -551,7 +510,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 361,
+      "line": 362,
       "match": "code *",
       "severity": "moderate",
       "text": "(uStack_44 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr), uVar4 = uStack_44,",
@@ -559,7 +518,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 420,
+      "line": 421,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_44);",
@@ -567,7 +526,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 420,
+      "line": 421,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_44);",
@@ -575,7 +534,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 486,
+      "line": 487,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -583,7 +542,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 486,
+      "line": 487,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -591,7 +550,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 496,
+      "line": 497,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "(iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4), uVar13 = uVar12,",
@@ -599,7 +558,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 496,
+      "line": 497,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4), uVar13 = uVar12,",
@@ -607,7 +566,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 507,
+      "line": 508,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -615,7 +574,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 507,
+      "line": 508,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -623,7 +582,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 514,
+      "line": 515,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -631,7 +590,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 514,
+      "line": 515,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -639,7 +598,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 523,
+      "line": 524,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",
@@ -647,7 +606,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 523,
+      "line": 524,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",
@@ -655,7 +614,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 534,
+      "line": 535,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",
@@ -663,7 +622,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 534,
+      "line": 535,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",
@@ -671,7 +630,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 616,
+      "line": 617,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uStack_3c = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -679,7 +638,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 616,
+      "line": 617,
       "match": "code *",
       "severity": "moderate",
       "text": "uStack_3c = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -687,7 +646,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 622,
+      "line": 623,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_3c);",
@@ -695,7 +654,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 622,
+      "line": 623,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uStack_3c);",
@@ -703,7 +662,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 659,
+      "line": 660,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -711,7 +670,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 659,
+      "line": 660,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -719,7 +678,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 667,
+      "line": 668,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "(iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4),",
@@ -727,7 +686,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 667,
+      "line": 668,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4),",
@@ -735,7 +694,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 678,
+      "line": 679,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -743,7 +702,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 678,
+      "line": 679,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -751,7 +710,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 686,
+      "line": 687,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -759,7 +718,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 686,
+      "line": 687,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
@@ -767,7 +726,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 697,
+      "line": 698,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",
@@ -775,7 +734,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 697,
+      "line": 698,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",
@@ -783,7 +742,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 709,
+      "line": 710,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",
@@ -791,7 +750,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 709,
+      "line": 710,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar9 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,uVar4);",

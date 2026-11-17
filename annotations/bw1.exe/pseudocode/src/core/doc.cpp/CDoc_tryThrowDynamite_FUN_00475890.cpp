@@ -21,7 +21,7 @@ int __cdecl core_doc_cpp_CDoc_tryThrowDynamite_FUN_00475890(CDoc *this_ptr)
       ))) {
     return 0;
   }
-  fVar1 = 0x41200000;
+  fVar1 = 10.0f;
   (this_ptr->base).action_pending = 3;
   this_ptr->aim_speed_factor = fVar1;
   return 1;

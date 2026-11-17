@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 171,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 10,
+    "pseudocode_lines": 44,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 128
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -73,8 +71,8 @@
   "globals": [
     {
       "addr": "005e8a00",
-      "name": "s_s_attacking_hero_005e89fe+2",
-      "type": "undefined4",
+      "name": "s_s_attacking_hero_005e8a00",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -97,8 +95,8 @@
     },
     {
       "addr": "01d06ab4",
-      "name": "DAT_01d06ab4",
-      "type": "undefined4",
+      "name": "g_INT_01d06ab4",
+      "type": "int",
       "value": null
     }
   ],
@@ -201,24 +199,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 23,
-      "match": "*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4),",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 30,
       "match": "(SClothVertex *)((int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
@@ -226,7 +208,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(CPlatform **)((int)ppCVar4",
       "severity": "moderate",
       "text": "ppCVar4 = (CPlatform **)((int)ppCVar4 + (uint)bVar6 * -2 + 1);",
@@ -234,7 +216,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(SClothVertex *)((int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
@@ -242,7 +224,7 @@
     },
     {
       "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "(int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
@@ -250,7 +232,7 @@
     },
     {
       "description": "Pointer value `ppCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 34,
       "match": "(int)ppCVar4",
       "severity": "moderate",
       "text": "ppCVar4 = (CPlatform **)((int)ppCVar4 + (uint)bVar6 * -2 + 1);",
@@ -258,7 +240,7 @@
     },
     {
       "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "(int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
@@ -266,7 +248,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 34,
+      "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",

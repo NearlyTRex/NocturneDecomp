@@ -36,7 +36,7 @@ int FUN_005c5f7c(int param_1,int *param_2,int param_3,int param_4)
   while( true ) {
     local_24 = FUN_005c5430(param_1);
     iVar4 = local_24;
-    if (((&DAT_00626114)[(byte)((char)local_24 + 1)] & 2) == 0) break;
+    if ((g_UCHAR_ARRAY_00626114[(byte)((char)local_24 + 1)] & 2) == 0) break;
     local_1c = local_1c + 1;
     local_24 = iVar4;
   }

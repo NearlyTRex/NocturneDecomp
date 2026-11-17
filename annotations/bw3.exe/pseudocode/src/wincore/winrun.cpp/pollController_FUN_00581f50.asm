@@ -12,8 +12,8 @@
 ;   wincore_winrun.cpp_pollControllerWrapper_FUN_00582630 at 00582635
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7efa
-;   undefined4 DAT_02d22c1c
+;   double g_DOUBLE_005d7efa = 0.100000000000000
+;   void* g_PTR_02d22c1c
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -64,7 +64,7 @@ section .text
     AND CL,0x3                          ; 00581fa5
     MOVSB.REP ES:EDI,ESI                ; 00581fa8
     POP EDI                             ; 00581faa
-    MOV EDI,dword ptr [0x02d22c1c]      ; 00581fab | DAT_02d22c1c
+    MOV EDI,dword ptr [0x02d22c1c]      ; 00581fab | g_PTR_02d22c1c
     TEST EDI,EDI                        ; 00581fb1
     JZ 0x00582233                       ; 00581fb3
         ;   XREF to: 00582233 (CONDITIONAL_JUMP)  ; LAB_00582233
@@ -99,7 +99,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00582002
     MOV ESI,dword ptr [EAX*0x4 + 0x2d22ed4] ; 00582005
     PUSH ESI                            ; 0058200c
-    CALL dword ptr [0x02d22c1c]         ; 0058200d | DAT_02d22c1c
+    CALL dword ptr [0x02d22c1c]         ; 0058200d | g_PTR_02d22c1c
     TEST EAX,EAX                        ; 00582013
     JNZ 0x00582227                      ; 00582015
         ;   XREF to: 00582227 (CONDITIONAL_JUMP)  ; LAB_00582227
@@ -237,7 +237,7 @@ section .text
     FLD float ptr [ECX + 0x20]          ; 0058217b
         ;   Label: LAB_0058217b
     FABS                                ; 0058217e
-    FCOMP double ptr [0x005d7efa]       ; 00582180 | DAT_005d7efa
+    FCOMP double ptr [0x005d7efa]       ; 00582180 | g_DOUBLE_005d7efa
     FNSTSW AX                           ; 00582186
     SAHF                                ; 00582188
     JA 0x00582331                       ; 00582189

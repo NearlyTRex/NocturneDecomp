@@ -22,12 +22,13 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004d85f0(CGame *this_ptr)
   
   this_ptr->need_chapter_reload = 0;
   this_ptr->chapter_reload_filename[0] = '\0';
-  splitpath(&DAT_01cd05c0,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
+  splitpath
+            (g_CHAR_ARRAY_01cd05c0,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
   iVar2 = _stricmp(local_10c,"noc");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_10c,".noc"), iVar2 == 0)) {
     pcVar4 = local_210;
-    pcVar3 = &DAT_01cd05c0;
+    pcVar3 = g_CHAR_ARRAY_01cd05c0;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;

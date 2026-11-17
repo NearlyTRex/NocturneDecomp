@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_005732e0(CTentacle *this_ptr,CMatrix3x4f *out_matrix)
 
@@ -24,9 +23,10 @@ CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_
   
   bVar4 = 0;
   core_xform_cpp_lerpMatrix3x4_FUN_00593770
-            ((this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_0264c0b0,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_0264c0b4,0.5,
-             &local_6c);
+            ((this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_0264c0b0[0],
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_0264c0b0[1],0.5,&local_6c);
   pCVar2 = &local_6c;
   pCVar3 = &local_cc;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -35,9 +35,10 @@ CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   core_xform_cpp_lerpMatrix3x4_FUN_00593770
-            ((this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_0264c0b8,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_0264c0bc,0.5,
-             &local_fc);
+            ((this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_0264c0b0[2],
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_0264c0b0[3],0.5,&local_fc);
   pCVar2 = &local_fc;
   pCVar3 = &local_9c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

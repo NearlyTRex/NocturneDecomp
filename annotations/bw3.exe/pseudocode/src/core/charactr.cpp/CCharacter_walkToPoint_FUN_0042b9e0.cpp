@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 
 {
@@ -90,17 +88,17 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
     local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_12c - local_c0[3]);
     local_138 = ABS(local_14);
   }
-  if (((local_13c < min_distance + (float)_DAT_005b81f6) &&
-      (local_138 < max_distance + (float)_DAT_005b81f6)) &&
-     (ABS(local_118.y) < (float)_DAT_005b81fe)) {
+  if (((local_13c < min_distance + (float)0.01) &&
+      (local_138 < max_distance + (float)0.01)) &&
+     (ABS(local_118.y) < (float)5)) {
     local_50 = 1;
   }
-  fVar3 = (float)_DAT_005b8206;
-  fVar2 = (float)_DAT_005b820e;
+  fVar3 = (float)0.31830988619288902;
+  fVar2 = (float)2;
   (this_ptr->model).accumulated_root_motion.z = 0.0;
-  fVar4 = (float)_DAT_005b8216;
+  fVar4 = (float)1.5;
   (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;
-  fVar6 = (float)_DAT_005b821e;
+  fVar6 = (float)0.5;
   (this_ptr->model).accumulated_root_motion.x = (this_ptr->model).accumulated_root_motion.y;
   local_64 = local_134 * fVar4 + fVar6 + ABS(local_140) * fVar3 * fVar2;
   if ((this_ptr->is_spectral != 0) || ((local_24 < local_64 && (ABS(local_118.y) <= 1.0)))) {

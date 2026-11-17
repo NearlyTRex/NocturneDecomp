@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundingBox3D *this_ptr)
 
 {
@@ -47,17 +45,21 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundi
     local_3c[(uint)bVar5 * -2] = *(float *)((int)&local_4c + (uint)bVar5 * -8 + 4);
     local_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
          *(float *)((int)&local_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-    local_28.x = (int)ROUND(local_40 * _DAT_005fce08);
-    local_28.y = (int)ROUND(local_3c[0] * _DAT_005fce08);
-    local_28.z = (int)ROUND(local_3c[1] * _DAT_005fce08);
+    local_28.x = (int)ROUND(local_40 * 256.0f);
+    local_28.y = (int)ROUND(local_3c[0] * 256.0f);
+    local_28.z = (int)ROUND(local_3c[1] * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
-              ((SProjectedVertex *)(*0x01BC120C + iVar3),&local_28);
-    if ((*(byte *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar3 + 3) &
-        0x80) == 0) {
+              ((SProjectedVertex *)
+               ((int)&(g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr->projected_vertex).
+                      transformed_x + iVar3),&local_28);
+    if ((*(byte *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
+                         screen_x + iVar3 + 3) & 0x80) == 0) {
       local_18 = 0;
     }
     else {
-      local_18 = local_18 & *(uint *)(*0x01BC120C + 0x10 + iVar3);
+      local_18 = local_18 &
+                 *(uint *)((int)&(g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr->projected_vertex
+                                 ).screen_x + iVar3);
       local_1c = 1;
     }
     uVar1 = local_18;
@@ -67,17 +69,19 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundi
   if (local_18 != 0) {
     return 0;
   }
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,local_1c);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
+            (g_CDemonRenderer_PTR_00612560,local_1c);
   SStack_80.base.count = 4;
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70
+            (g_CDemonRenderer_PTR_00612560,0);
   iVar3 = 1;
-  local_34 = (int)ROUND((this_ptr->min).x * _DAT_005fce08);
-  local_30 = (int)ROUND((this_ptr->min).y * _DAT_005fce08);
-  local_2c = (int)ROUND((this_ptr->min).z * _DAT_005fce08);
+  local_34 = (int)ROUND((this_ptr->min).x * 256.0f);
+  local_30 = (int)ROUND((this_ptr->min).y * 256.0f);
+  local_2c = (int)ROUND((this_ptr->min).z * 256.0f);
   iVar4 = 1;
-  local_58 = (int)ROUND((this_ptr->max).x * _DAT_005fce08);
-  local_54.i = (int)ROUND((this_ptr->max).y * _DAT_005fce08);
-  local_50.i = (int)ROUND((this_ptr->max).z * _DAT_005fce08);
+  local_58 = (int)ROUND((this_ptr->max).x * 256.0f);
+  local_54.i = (int)ROUND((this_ptr->max).y * 256.0f);
+  local_50.i = (int)ROUND((this_ptr->max).z * 256.0f);
   SStack_80.surface_normal.B.i = uVar1;
   SStack_80.surface_normal.C.i = uVar1;
   SStack_80.surface_normal.D.i = -local_34;
@@ -170,7 +174,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundi
     }
   }
 LAB_00420d5c:
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(g_CDemonRenderer_PTR_00612560,1);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70
+            (g_CDemonRenderer_PTR_00612560,1);
   return iVar3;
 }

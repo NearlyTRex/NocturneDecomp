@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50(CSfxSlot *this_ptr)
 
 {
@@ -17,9 +15,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50(CSfxS
   float local_20;
   float local_14;
   
-  if (_DAT_02c807ec < 1) {
-    _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-    _DAT_01d1d404 = 0xa98;
+  if (g_INT_02c807ec < 1) {
+    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+    g_INT_01d1d404 = 0xa98;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::kill - must be locked!");
   }
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0((this_ptr->options).channel_index);
@@ -27,7 +25,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50(CSfxS
   if (((this_ptr->options).flags & 1) == 0) {
     iVar2 = 0;
     pCVar3 = this_ptr;
-    if (0 < DAT_006232ec) {
+    if (0 < g_INT_006232ec) {
       do {
         local_14 = pCVar3->distance_to_speakers[0];
         if (pCVar3->distance_to_speakers[0] < this_ptr->min_distance) {
@@ -36,7 +34,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50(CSfxS
         if (this_ptr->max_distance < local_14) {
           local_14 = this_ptr->max_distance;
         }
-        if (this_ptr->reference_distance * _DAT_005f379c < local_14) {
+        if (this_ptr->reference_distance * 0.05f < local_14) {
           local_20 = this_ptr->reference_distance / local_14;
         }
         else {
@@ -45,17 +43,17 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50(CSfxS
         iVar2 = iVar2 + 1;
         pCVar3->channel_volumes[0] = fVar1 * local_20;
         pCVar3 = (CSfxSlot *)&(pCVar3->options).position;
-      } while (iVar2 < DAT_006232ec);
+      } while (iVar2 < g_INT_006232ec);
     }
   }
   else {
     iVar2 = 0;
-    if (0 < DAT_006232ec) {
+    if (0 < g_INT_006232ec) {
       do {
         iVar2 = iVar2 + 1;
         this_ptr->channel_volumes[0] = fVar1;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar2 < DAT_006232ec);
+      } while (iVar2 < g_INT_006232ec);
     }
   }
   return;

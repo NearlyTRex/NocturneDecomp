@@ -12,8 +12,8 @@
 ;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_0049add0 at 0049af46
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 0049bfb4
     MOV EBX,dword ptr [ESP + 0x18]      ; 0049bfb8
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0049bfbc
-    MOV ESI,dword ptr [0x01c4f008]      ; 0049bfc0 | DAT_01c4f008
-    MOV EDI,dword ptr [0x01c4f00c]      ; 0049bfc6 | DAT_01c4f00c
+    MOV ESI,dword ptr [0x01c4f008]      ; 0049bfc0 | g_INT_01c4f008
+    MOV EDI,dword ptr [0x01c4f00c]      ; 0049bfc6 | g_INT_01c4f00c
     SUB EBX,ESI                         ; 0049bfcc
     SUB EDX,EDI                         ; 0049bfce
     TEST EBX,EBX                        ; 0049bfd0

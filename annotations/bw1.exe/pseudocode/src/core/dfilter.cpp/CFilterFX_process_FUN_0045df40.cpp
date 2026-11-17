@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0045df40(CFilterFX *this_ptr)
 
 {
@@ -23,7 +21,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0045df40(CFilterFX *this_ptr
                      (g_CFilterCachePtr,"movscrn.raw");
   if ((pCVar1 != (CDemonFilter *)0x0) && (this_ptr->movie_data != (SMovieFrame *)0x0)) {
     this_ptr->current_frame =
-         g_CGamePtr->delta_time_float * (float)_DAT_005d8649 + this_ptr->current_frame;
+         g_CGamePtr->delta_time_float * (float)30 + this_ptr->current_frame;
     if ((float)this_ptr->frame_count <= this_ptr->current_frame) {
       this_ptr->current_frame = 0.0;
     }

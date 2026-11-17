@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 56,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 117
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -43,14 +42,14 @@
   "globals": [
     {
       "addr": "01c5fadc",
-      "name": "DAT_01c5fadc",
-      "type": "undefined4",
+      "name": "g_INT_01c5fadc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5fae0",
-      "name": "DAT_01c5fae0",
-      "type": "undefined4",
+      "name": "g_INT_01c5fae0",
+      "type": "int",
       "value": null
     }
   ],
@@ -121,16 +120,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 18,
+      "line": 16,
       "match": "pCVar1 = (T *)&pCVar1->FIELD",
       "severity": "moderate",
       "text": "pCVar1 = (CChemPuzzle *)&pCVar1->previous_mouse_button;",

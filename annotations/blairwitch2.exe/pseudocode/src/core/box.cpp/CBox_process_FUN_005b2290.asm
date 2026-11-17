@@ -18,8 +18,8 @@
 ;   core_weapon.cpp_CWeapon_process_FUN_00589c80 at 00589ce9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f12d8
-;   undefined4 DAT_005f12e0
+;   double g_DOUBLE_005f12d8 = 0.0125000000000000
+;   double g_DOUBLE_005f12e0 = 0.5
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_processPhysics_FUN_005b22f0
@@ -37,13 +37,13 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc]       ; 005b229a
     FLD float ptr [EBP + 0x10]          ; 005b229d
     FST double ptr [ESP]                ; 005b22a0
-    FCOMP double ptr [0x005f12d8]       ; 005b22a3 | DAT_005f12d8
+    FCOMP double ptr [0x005f12d8]       ; 005b22a3 | g_DOUBLE_005f12d8
     FNSTSW AX                           ; 005b22a9
     SAHF                                ; 005b22ab
     JBE 0x005b22da                      ; 005b22ac
         ;   XREF to: 005b22da (CONDITIONAL_JUMP)  ; LAB_005b22da
     FLD double ptr [ESP]                ; 005b22ae
-    FMUL double ptr [0x005f12e0]        ; 005b22b1 | DAT_005f12e0
+    FMUL double ptr [0x005f12e0]        ; 005b22b1 | g_DOUBLE_005f12e0
     FSTP float ptr [ESP + 0x8]          ; 005b22b7
     PUSH dword ptr [ESP + 0x8]          ; 005b22bb
     PUSH EBX                            ; 005b22bf

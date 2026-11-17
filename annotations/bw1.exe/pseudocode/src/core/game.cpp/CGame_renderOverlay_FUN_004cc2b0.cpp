@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr)
 
 {
@@ -40,39 +38,39 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr)
   CGame *local_18;
   int local_14;
   
-  local_60 = DAT_0061b498;
-  local_5c = DAT_0061b49c;
-  local_64 = DAT_0061b49c;
+  local_60 = g_INT_0061b498;
+  local_5c = g_INT_0061b49c;
+  local_64 = g_INT_0061b49c;
   if (ABS(this_ptr->message_timer) != 0.0) {
     if (1.0 <= (double)this_ptr->message_timer) {
       iVar2 = 0xffff;
     }
     else {
       iVar2 = 0x4cc692;
-      dVar6 = round((double)this_ptr->message_timer * _DAT_005e13a4);
+      dVar6 = round((double)this_ptr->message_timer * 65535);
       local_18 = (CGame *)(int)ROUND(dVar6);
     }
     engine_3d_c_setRenderAlpha_FUN_00406bd0(iVar2);
-    local_38 = _DAT_0152d244;
+    local_38 = g_CBitFont_PTR_0152d244;
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
-      local_38 = _DAT_0152d248;
+      local_38 = g_CBitFont_PTR_0152d248;
     }
     iVar2 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
-                      (local_38,this_ptr->message_text,(char *)0x1cc91a0,10,0x100,
+                      (local_38,this_ptr->message_text,g_CHAR_ARRAY_01cc91a0,10,0x100,
                        (g_CDemonCameraInstance.framebuffer_width * 9) / 10);
     local_48 = iVar2;
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_38,0x58);
-    iVar2 = DAT_0061b49c - iVar2 * iVar4;
+    iVar2 = g_INT_0061b49c - iVar2 * iVar4;
     local_54 = iVar4;
     iVar3 = core_script_cpp_CScript_getLetterboxHeight_FUN_00543950(g_CScriptPtr);
     iVar4 = (iVar2 - iVar3) - iVar4;
-    if (_DAT_0152d248 == local_38) {
+    if (g_CBitFont_PTR_0152d248 == local_38) {
       iVar4 = iVar4 + -7;
     }
     iVar2 = 0;
     if (0 < local_48) {
-      pcVar5 = (char *)0x1cc91a0;
-      local_4c = DAT_0061b498 + -1;
+      pcVar5 = g_CHAR_ARRAY_01cc91a0;
+      local_4c = g_INT_0061b498 + -1;
       do {
         iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_38,pcVar5);
         iVar2 = iVar2 + 1;
@@ -83,18 +81,19 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr)
       } while (iVar2 < local_48);
     }
   }
-  if (0.0 < _DAT_01cd0aec) {
-    this_ptr_00 = _DAT_0152d23c;
-    if ((DAT_0061b49c < 0x1e0) && (this_ptr_00 = _DAT_0152d240, DAT_0061b49c < 0x180)) {
-      this_ptr_00 = _DAT_0152d248;
+  if (0.0 < g_FLOAT_01cd0aec) {
+    this_ptr_00 = g_CBitFont_PTR_0152d23c;
+    if ((g_INT_0061b49c < 0x1e0) && (this_ptr_00 = g_CBitFont_PTR_0152d240, g_INT_0061b49c < 0x180))
+    {
+      this_ptr_00 = g_CBitFont_PTR_0152d248;
     }
     iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
     iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004c44e0(this_ptr_00,0x58);
     core_script_cpp_CScript_getLetterboxHeight_FUN_00543950(g_CScriptPtr);
     iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_00543950(g_CScriptPtr);
-    iVar4 = DAT_0061b49c - iVar4;
+    iVar4 = g_INT_0061b49c - iVar4;
     engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-    _sprintf(local_164,"?%d - %s" + 1);
+    _sprintf(local_164,"%d - %s");
     engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
               (this_ptr_00,local_164,iVar3 * 2,(iVar4 - iVar2) - iVar3,0xf8,0);
   }
@@ -102,12 +101,12 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr)
     iVar3 = local_60 >> 0x1f;
     iVar2 = local_60 + iVar3 * -4;
     local_44 = (CBitFont *)(local_5c / 0x28);
-    local_40 = _DAT_0152d248;
-    if (0x280 < DAT_0061b498) {
-      local_40 = _DAT_0152d240;
+    local_40 = g_CBitFont_PTR_0152d248;
+    if (0x280 < g_INT_0061b498) {
+      local_40 = g_CBitFont_PTR_0152d240;
     }
-    if (800 < DAT_0061b498) {
-      local_40 = _DAT_0152d23c;
+    if (800 < g_INT_0061b498) {
+      local_40 = g_CBitFont_PTR_0152d23c;
     }
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_40,0x58);
     if ((int)local_44 < iVar4) {
@@ -127,10 +126,10 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr)
         local_28 = local_58;
         iVar4 = 2;
         fVar1 = local_18->status_bar_values[0];
-        if (fVar1 < (float)_DAT_005e13ac) {
+        if (fVar1 < (float)0.59999999999999998) {
           iVar4 = 0xfb;
         }
-        if (fVar1 < (float)_DAT_005e13b4) {
+        if (fVar1 < (float)0.34999999999999998) {
           iVar4 = 1;
         }
         local_30 = local_34;

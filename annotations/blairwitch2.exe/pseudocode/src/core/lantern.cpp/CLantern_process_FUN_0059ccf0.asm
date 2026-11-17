@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ef7b1
-;   undefined4 DAT_005ef7b9
-;   undefined4 DAT_005ef7c1
-;   undefined4 DAT_005ef7c9
+;   double g_DOUBLE_005ef7b1 = 8
+;   double g_DOUBLE_005ef7b9 = 28
+;   double g_DOUBLE_005ef7c1 = 0.100000000000000
+;   double g_DOUBLE_005ef7c9 = 0.700000000000000
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     FSTP float ptr [EBX + 0x6f8]        ; 0059cd63
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0059cd69
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
-    FLD double ptr [0x005ef7b1]         ; 0059cd6e | DAT_005ef7b1
+    FLD double ptr [0x005ef7b1]         ; 0059cd6e | g_DOUBLE_005ef7b1
     FLD float ptr [EBX + 0x6f8]         ; 0059cd74
     FMUL ST1                            ; 0059cd7a
     FLD float ptr [EBX + 0x6f8]         ; 0059cd7c
@@ -72,7 +72,7 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 0059cd88
     FMUL float ptr [EBX + 0x6f8]        ; 0059cd8c
     FXCH                                ; 0059cd92
-    FLD double ptr [0x005ef7b9]         ; 0059cd94 | DAT_005ef7b9
+    FLD double ptr [0x005ef7b9]         ; 0059cd94 | g_DOUBLE_005ef7b9
     FXCH                                ; 0059cd9a
     FADD ST0,ST1                        ; 0059cd9c
     FLD float ptr [EBX + 0x700]         ; 0059cd9e
@@ -112,8 +112,8 @@ section .text
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570 ; 0059ce4d
         ;   XREF to: 0044d570 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570(CDemonLight * this_ptr, float intensity)
     FLD float ptr [EBX + 0x6f8]         ; 0059ce52
-    FMUL double ptr [0x005ef7c1]        ; 0059ce58 | DAT_005ef7c1
-    FADD double ptr [0x005ef7c9]        ; 0059ce5e | DAT_005ef7c9
+    FMUL double ptr [0x005ef7c1]        ; 0059ce58 | g_DOUBLE_005ef7c1
+    FADD double ptr [0x005ef7c9]        ; 0059ce5e | g_DOUBLE_005ef7c9
     FMUL float ptr [EBX + 0x700]        ; 0059ce64
     MOV EAX,dword ptr [EBX + 0x704]     ; 0059ce6a
     ADD ESP,0x8                         ; 0059ce70

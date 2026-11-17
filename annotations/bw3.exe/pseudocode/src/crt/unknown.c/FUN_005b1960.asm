@@ -9,7 +9,7 @@
 ;   crt_unknown.c_ldexp_FUN_005b0611 at 005b0e66
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00607997
+;   void* g_PTR_00607997 = 005a7e24
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
 
     PUSH EAX                            ; 005b1960
         ;   Label: crt_unknown.c_FUN_005b1960
-    CALL dword ptr [0x00607997]         ; 005b1961 | DAT_00607997
+    CALL dword ptr [0x00607997]         ; 005b1961 | g_PTR_00607997
     ADD ESP,0x4                         ; 005b1967
     RET                                 ; 005b196a
 

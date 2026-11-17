@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004f1d70(CMimic *this_ptr)
 
@@ -17,8 +16,8 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004f1d70(CMimic *this_ptr)
   CConsole *this_ptr_00;
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
-    _DAT_01d046a0 = "..\\core\\mimic.cpp";
-    _DAT_01d046a4 = 0x499;
+    g_CHAR_PTR_01d046a0 = "..\\core\\mimic.cpp";
+    g_INT_01d046a4 = 0x499;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMimic::beginMorph() - can't do this unless morphActor has been created!");
   }
   (this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;

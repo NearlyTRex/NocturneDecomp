@@ -7,9 +7,9 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ee532
-;   undefined4 DAT_005ee536
-;   undefined4 DAT_005ee53a
+;   float g_FLOAT_005ee532 = 0.3490658
+;   float g_FLOAT_005ee536 = 15
+;   float g_FLOAT_005ee53a = 0.06666667
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDemonLightInstance.base.base.position
@@ -82,7 +82,7 @@ section .text
     PUSH EAX                            ; 0058a046
     FLD float ptr [ESP + 0x60]          ; 0058a047
     LEA EDI,[ESP + 0x78]                ; 0058a04b
-    FADD float ptr [0x005ee532]         ; 0058a04f | DAT_005ee532
+    FADD float ptr [0x005ee532]         ; 0058a04f | g_FLOAT_005ee532
     XOR ESI,ESI                         ; 0058a055
     FSTP float ptr [ESP + 0x60]         ; 0058a057
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 0058a05b
@@ -157,13 +157,13 @@ section .text
     MOV EAX,dword ptr [EAX + 0x2437c]   ; 0058a142
     MOV dword ptr [ESP + 0x88],EAX      ; 0058a148
     FLD float ptr [ESP + 0x88]          ; 0058a14f
-    FCOMP float ptr [0x005ee536]        ; 0058a156 | DAT_005ee536
+    FCOMP float ptr [0x005ee536]        ; 0058a156 | g_FLOAT_005ee536
     FNSTSW AX                           ; 0058a15c
     SAHF                                ; 0058a15e
     JNC 0x0058a175                      ; 0058a15f
         ;   XREF to: 0058a175 (CONDITIONAL_JUMP)  ; LAB_0058a175
     FLD float ptr [ESP + 0x88]          ; 0058a161
-    FMUL float ptr [0x005ee53a]         ; 0058a168 | DAT_005ee53a
+    FMUL float ptr [0x005ee53a]         ; 0058a168 | g_FLOAT_005ee53a
     FSTP float ptr [ESP + 0x8c]         ; 0058a16e
     PUSH dword ptr [ESP + 0x8c]         ; 0058a175
         ;   Label: LAB_0058a175
@@ -191,10 +191,10 @@ section .text
     ADD ESP,0x8                         ; 0058a1b2
     MOV EAX,0x8000                      ; 0058a1b5
     PUSH 0x40a00000                     ; 0058a1ba
-    MOV [0x02661f78],EAX                ; 0058a1bf | DAT_02661f78
+    MOV [0x02661f78],EAX                ; 0058a1bf | g_CDemonGlobe_02661f3c.intensity_multiplier
     MOV AH,0x20                         ; 0058a1c4
     PUSH 0x2661f3c                      ; 0058a1c6
-    MOV byte ptr [0x02661f58],AH        ; 0058a1cb | DAT_02661f58
+    MOV byte ptr [0x02661f58],AH        ; 0058a1cb | g_CDemonGlobe_02661f3c.intensity
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860 ; 0058a1d1
         ;   XREF to: 00448860 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 0058a1d6
@@ -202,7 +202,7 @@ section .text
     MOV ECX,dword ptr [0x0061b5a8]      ; 0058a1de | g_CDemonSetPtr
     XOR EDX,EDX                         ; 0058a1e4
     PUSH ECX                            ; 0058a1e6 | g_CDemonSetInstance
-    MOV dword ptr [0x02661f5c],EDX      ; 0058a1e7 | DAT_02661f5c
+    MOV dword ptr [0x02661f5c],EDX      ; 0058a1e7 | g_CDemonGlobe_02661f3c.corona_mode
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005306b0 ; 0058a1ed
         ;   XREF to: 005306b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005306b0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 0058a1f2

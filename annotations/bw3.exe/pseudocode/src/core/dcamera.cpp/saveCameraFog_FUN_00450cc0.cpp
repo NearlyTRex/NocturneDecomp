@@ -9,11 +9,11 @@
 void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00450cc0(SFog *fog,_FILE *file_handle)
 
 {
-  _fprintf(file_handle,(char *)0x5ba0ad);
-  _fprintf(file_handle,(char *)0x5ba0bd);
-  _fprintf(file_handle,(char *)0x5ba0c7);
-  _fprintf(file_handle,(char *)0x5ba0cf);
-  _fprintf(file_handle,(char *)0x5ba0d9);
-  _fprintf(file_handle,(char *)0x5ba0e0);
+  _fprintf(file_handle,"fogR,fogG,fogB\n");
+  _fprintf(file_handle,"%d,%d,%d\n");
+  _fprintf(file_handle,"fogVel\n");
+  _fprintf(file_handle,"%f,%f,%f\n");
+  _fprintf(file_handle,"%f,%f\n");
+  _fprintf(file_handle,"%f\n");
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,float lifetime,float alpha_start,float alpha_end,float size_start,float size_end,float red,float green,float blue,CVector3f *position_offset,CVector3f *velocity,CVector3f *acceleration,int texture_index)
 
 {
@@ -21,10 +19,10 @@ void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimplePar
   float local_1c [3];
   
   if (this_ptr->active != 0) {
-    if (this_ptr != (CSimpleParticleSystem *)&DAT_0265370c) {
-      (this_ptr->position).x = _DAT_0265370c;
-      (this_ptr->position).y = _DAT_02653710;
-      (this_ptr->position).z = _DAT_02653714;
+    if (this_ptr != (CSimpleParticleSystem *)&g_CVector3f_0265370c) {
+      (this_ptr->position).x = g_CVector3f_0265370c.x;
+      (this_ptr->position).y = g_CVector3f_0265370c.y;
+      (this_ptr->position).z = g_CVector3f_0265370c.z;
     }
     if (this_ptr->standalone == 0) {
       pCVar5 = this_ptr->owner;

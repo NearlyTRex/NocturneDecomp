@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 141,
+    "complexity_score": 133,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 88,
     "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 299
+    "total_lines": 291
   },
   "cross_references": [],
   "function": {
@@ -60,8 +60,8 @@
     },
     {
       "addr": "005f4df7",
-      "name": "s_Create_secondary_buffer_005f4df6+1",
-      "type": "undefined4",
+      "name": "s_Create_secondary_buffer_005f4df7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -72,8 +72,8 @@
     },
     {
       "addr": "02c81d94",
-      "name": "DAT_02c81d94",
-      "type": "undefined4",
+      "name": "g_IDirectSound_PTR_02c81d94",
+      "type": "IDirectSound*",
       "value": null
     },
     {
@@ -84,44 +84,44 @@
     },
     {
       "addr": "02c81ddc",
-      "name": "DAT_02c81ddc",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c81df4",
-      "name": "DAT_02c81df4",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c81dfc",
-      "name": "DAT_02c81dfc",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c81e00",
-      "name": "DAT_02c81e00",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[15]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c81e04",
-      "name": "DAT_02c81e04",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c81e0c",
-      "name": "DAT_02c81e0c",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[18]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c823dc",
-      "name": "DAT_02c823dc",
-      "type": "undefined4",
+      "name": "g_INT_02c823dc",
+      "type": "int",
       "value": null
     }
   ],
@@ -230,20 +230,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_02c81ddc",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_02c81ddc + iVar3);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4",
+      "severity": "moderate",
+      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4 + iVar3 + 0x18)",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
-      "match": "code *",
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4",
       "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))();",
-      "type": "unresolved_funcptr"
+      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4 + iVar3 + 0x18)",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

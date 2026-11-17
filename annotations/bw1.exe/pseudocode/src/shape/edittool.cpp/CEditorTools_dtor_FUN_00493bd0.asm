@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c3eb58
-;   undefined4 DAT_01c3eb5c
+;   char* g_CHAR_PTR_01c3eb58
+;   int g_INT_01c3eb5c
 ;
 ; Called Functions:
 ;   crt_unknown.c_debugFree_FUN_005c09f0
@@ -23,7 +23,7 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_dtor_FUN_00493bd0
     PUSH ESI                            ; 00493bd1
     PUSH EBP                            ; 00493bd2
-    MOV EDX,dword ptr [0x01c3eb5c]      ; 00493bd3 | DAT_01c3eb5c
+    MOV EDX,dword ptr [0x01c3eb5c]      ; 00493bd3 | g_INT_01c3eb5c
     MOV EBX,dword ptr [ESP + 0x10]      ; 00493bd9
     TEST EDX,EDX                        ; 00493bdd
     JLE 0x00493c00                      ; 00493bdf
@@ -32,14 +32,14 @@ section .text
         ;   Label: LAB_00493be1
     CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_00496df0 ; 00493be2
         ;   XREF to: 00496df0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_popWindowState_FUN_00496df0(CEditorTools * this_ptr)
-    MOV ECX,dword ptr [0x01c3eb5c]      ; 00493be7 | DAT_01c3eb5c
+    MOV ECX,dword ptr [0x01c3eb5c]      ; 00493be7 | g_INT_01c3eb5c
     ADD ESP,0x4                         ; 00493bed
     TEST ECX,ECX                        ; 00493bf0
     JG 0x00493be1                       ; 00493bf2
         ;   XREF to: 00493be1 (CONDITIONAL_JUMP)  ; LAB_00493be1
     LEA EAX,[EAX]                       ; 00493bf4
     LEA EDX,[EDX]                       ; 00493bfa
-    MOV ESI,dword ptr [0x01c3eb58]      ; 00493c00 | DAT_01c3eb58
+    MOV ESI,dword ptr [0x01c3eb58]      ; 00493c00 | g_CHAR_PTR_01c3eb58
         ;   Label: LAB_00493c00
     TEST ESI,ESI                        ; 00493c06
     JNZ 0x00493c10                      ; 00493c08
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR EBP,EBP                         ; 00493c16
     ADD ESP,0x4                         ; 00493c18
-    MOV dword ptr [0x01c3eb58],EBP      ; 00493c1b | DAT_01c3eb58
+    MOV dword ptr [0x01c3eb58],EBP      ; 00493c1b | g_CHAR_PTR_01c3eb58
     MOV EAX,EBX                         ; 00493c21
     POP EBP                             ; 00493c23
     POP ESI                             ; 00493c24

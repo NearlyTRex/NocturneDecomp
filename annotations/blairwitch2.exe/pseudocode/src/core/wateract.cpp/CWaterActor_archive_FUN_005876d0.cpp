@@ -10,7 +10,7 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005876d0(CWaterActor *thi
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
-  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->size,&DAT_005edfc6);
+  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->size,"size");
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->opacity,"opacity");
   if (g_CWaterActorClassVersion == 2) {
     core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->height_delta,"heightDelta");
@@ -40,8 +40,8 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005876d0(CWaterActor *thi
   if (g_CWaterActorClassVersion < 6) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b960(&(this_ptr->color).r,&DAT_005ee080);
-  core_actor_cpp_archiveInteger_FUN_0040b960(&(this_ptr->color).g,&DAT_005ee085);
-  core_actor_cpp_archiveInteger_FUN_0040b960(&(this_ptr->color).b,&DAT_005ee08a);
+  core_actor_cpp_archiveInteger_FUN_0040b960(&(this_ptr->color).r,"colR");
+  core_actor_cpp_archiveInteger_FUN_0040b960(&(this_ptr->color).g,"colG");
+  core_actor_cpp_archiveInteger_FUN_0040b960(&(this_ptr->color).b,"colB");
   return;
 }

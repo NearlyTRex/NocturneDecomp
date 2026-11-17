@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *this_ptr)
 
 {
@@ -40,7 +38,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
   SFollowSlotStruct *pSStack_14;
   
   bVar6 = 0;
-  iVar2 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(DAT_0060b280);
+  iVar2 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(g_CDemonRenderer_PTR_0060b280)
+  ;
   if (iVar2 == 0) {
     this_ptr->was_rendered_opaque = 0;
   }
@@ -60,7 +59,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
       this_ptr->was_rendered_opaque = 1;
       core_charactr_cpp_CCharacter_renderCharacter_FUN_00424bd0(this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);
-      iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+      iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                        (g_CDemonRenderer_PTR_0060b280);
       if ((iVar2 == 0) && (g_CGameHookPtr->debug_follow_slot_display != 0)) {
         afStack_60[2] = 0.0;
         afStack_60[3] = 0.0;
@@ -75,45 +75,49 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
           afStack_60[(uint)bVar6 * -2] = *pfVar4;
           afStack_60[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] = pfVar4[(uint)bVar6 * -2 + 1];
           afStack_60[0] = 0.0;
-          aCStack_34[0].x = (int)ROUND(afStack_60[2] * _DAT_005f4060);
-          aCStack_34[0].y = (int)ROUND(afStack_60[3] * _DAT_005f4060);
-          aCStack_34[0].z = (int)ROUND(afStack_60[4] * _DAT_005f4060);
+          aCStack_34[0].x = (int)ROUND(afStack_60[2] * 256.0f);
+          aCStack_34[0].y = (int)ROUND(afStack_60[3] * 256.0f);
+          aCStack_34[0].z = (int)ROUND(afStack_60[4] * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_34);
-          CStack_40.x = (int)ROUND(fStack_64 * _DAT_005f4060);
-          CStack_40.y = (int)ROUND(afStack_60[0] * _DAT_005f4060);
-          CStack_40.z = (int)ROUND(afStack_60[1] * _DAT_005f4060);
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_34)
+          ;
+          CStack_40.x = (int)ROUND(fStack_64 * 256.0f);
+          CStack_40.y = (int)ROUND(afStack_60[0] * 256.0f);
+          CStack_40.z = (int)ROUND(afStack_60[1] * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_40);
-          _DAT_01c35e60 = 1;
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,
+                     &CStack_40);
+          g_INT_01c35e60 = 1;
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,1);
-          _DAT_01c35e60 = 2;
+          g_INT_01c35e60 = 2;
           if (pSStack_14 == pSStack_18) {
-            _DAT_01c35e60 = 0xfc;
+            g_INT_01c35e60 = 0xfc;
           }
           fVar7 = (float10)fsin((float10)pSStack_14->heading -
-                                (float10)pSStack_14->spread_angle * (float10)_DAT_005ccd26);
+                                (float10)pSStack_14->spread_angle * (float10)0.5f);
           fStack_64 = (float)(fVar7 * (float10)pSStack_14->follow_distance);
           fVar7 = (float10)fcos((float10)pSStack_14->heading -
-                                (float10)pSStack_14->spread_angle * (float10)_DAT_005ccd26);
+                                (float10)pSStack_14->spread_angle * (float10)0.5f);
           afStack_60[1] = (float)(fVar7 * (float10)pSStack_14->follow_distance);
-          CStack_a0.x = (int)ROUND(fStack_64 * _DAT_005f4060);
-          CStack_a0.y = (int)ROUND(afStack_60[0] * _DAT_005f4060);
-          CStack_a0.z = (int)ROUND(afStack_60[1] * _DAT_005f4060);
+          CStack_a0.x = (int)ROUND(fStack_64 * 256.0f);
+          CStack_a0.y = (int)ROUND(afStack_60[0] * 256.0f);
+          CStack_a0.z = (int)ROUND(afStack_60[1] * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_a0);
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[2].projected_vertex,
+                     &CStack_a0);
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,2);
-          fVar7 = (float10)fsin((float10)pSStack_14->spread_angle * (float10)_DAT_005ccd26 +
+          fVar7 = (float10)fsin((float10)pSStack_14->spread_angle * (float10)0.5f +
                                 (float10)pSStack_14->heading);
           fStack_64 = (float)(fVar7 * (float10)pSStack_14->follow_distance);
-          fVar7 = (float10)fcos((float10)pSStack_14->spread_angle * (float10)_DAT_005ccd26 +
+          fVar7 = (float10)fcos((float10)pSStack_14->spread_angle * (float10)0.5f +
                                 (float10)pSStack_14->heading);
           afStack_60[1] = (float)(fVar7 * (float10)pSStack_14->follow_distance);
-          CStack_94.x = (int)ROUND(fStack_64 * _DAT_005f4060);
-          CStack_94.y = (int)ROUND(afStack_60[0] * _DAT_005f4060);
-          CStack_94.z = (int)ROUND(afStack_60[1] * _DAT_005f4060);
+          CStack_94.x = (int)ROUND(fStack_64 * 256.0f);
+          CStack_94.y = (int)ROUND(afStack_60[0] * 256.0f);
+          CStack_94.z = (int)ROUND(afStack_60[1] * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_94);
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,
+                     &CStack_94);
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,3);
           if ((CVector3f *)&fStack_64 != &pSStack_14->offset) {
             fStack_64 = (pSStack_14->offset).x;
@@ -123,35 +127,36 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
           iVar2 = 0;
           do {
             fStack_6c = 0.0;
-            fVar7 = (float10)fsin((float10)iVar2 * (float10)_DAT_005ccd2a);
-            fVar8 = (float10)fcos((float10)iVar2 * (float10)_DAT_005ccd2a);
+            fVar7 = (float10)fsin((float10)iVar2 * (float10)0.3141593f);
+            fVar8 = (float10)fcos((float10)iVar2 * (float10)0.3141593f);
             fStack_70 = (float)(fVar7 * (float10)pSStack_14->follower_radius + (float10)fStack_64);
             fStack_68 = (float)(fVar8 * (float10)pSStack_14->follower_radius +
                                (float10)afStack_60[1]);
             if (iVar2 == 0) {
-              CStack_88.x = (int)ROUND(fStack_70 * _DAT_005f4060);
-              CStack_88.y = (int)ROUND(_DAT_005f4060 * 0.0);
-              CStack_88.z = (int)ROUND(fStack_68 * _DAT_005f4060);
+              CStack_88.x = (int)ROUND(fStack_70 * 256.0f);
+              CStack_88.y = (int)ROUND(256.0f * 0.0);
+              CStack_88.z = (int)ROUND(fStack_68 * 256.0f);
               input = &CStack_88;
             }
             else {
-              CStack_4c.x = (int)ROUND(fStack_70 * _DAT_005f4060);
-              CStack_4c.y = (int)ROUND(_DAT_005f4060 * 0.0);
-              CStack_4c.z = (int)ROUND(fStack_68 * _DAT_005f4060);
+              CStack_4c.x = (int)ROUND(fStack_70 * 256.0f);
+              CStack_4c.y = (int)ROUND(256.0f * 0.0);
+              CStack_4c.z = (int)ROUND(fStack_68 * 256.0f);
               engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                        (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_4c);
-              _DAT_01c35e60 = 4;
+                        (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,
+                         &CStack_4c);
+              g_INT_01c35e60 = 4;
               engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,1);
-              CStack_7c.x = (int)ROUND(fStack_70 * _DAT_005f4060);
-              CStack_7c.y = (int)ROUND(fStack_6c * _DAT_005f4060);
-              CStack_7c.z = (int)ROUND(fStack_68 * _DAT_005f4060);
+              CStack_7c.x = (int)ROUND(fStack_70 * 256.0f);
+              CStack_7c.y = (int)ROUND(fStack_6c * 256.0f);
+              CStack_7c.z = (int)ROUND(fStack_68 * 256.0f);
               input = &CStack_7c;
             }
             engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                      (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,input);
+                      (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,input);
             iVar2 = iVar2 + 1;
           } while (iVar2 < 0x15);
-          pSVar1 = DAT_0060b280->vertex_buffer_ptr;
+          pSVar1 = g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr;
           if ((int)(pSVar1[1].projected_vertex.screen_x & -0x80000000) == 0) {
             engine_2d_c_drawText_FUN_00401fe0
                       ((char *)pSStack_14->follower,pSVar1[1].projected_vertex.screen_x >> 0x10,
@@ -160,9 +165,9 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
         }
       }
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
-      if ((_DAT_01d1cdc8 != 0) &&
-         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),
-         iVar2 == 0)) {
+      if ((g_INT_01d1cdc8 != 0) &&
+         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                            (g_CDemonRenderer_PTR_0060b280), iVar2 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_005042e0
                   (&(this_ptr->model).base,&this_ptr->base);
         (*((this_ptr->base).vtable._ub)->renderTargetPoints)(&this_ptr->base);

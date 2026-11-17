@@ -6,11 +6,11 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 54
   },
@@ -31,8 +31,8 @@
   "globals": [
     {
       "addr": "01dc5c80",
-      "name": "DAT_01dc5c80",
-      "type": "undefined4",
+      "name": "g_INT_01dc5c80",
+      "type": "int",
       "value": null
     }
   ],
@@ -117,12 +117,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_SSimFrame_ARRAY_01dc5c84",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SSimFrame_ARRAY_01dc5c84[0].player_input + iVar1 + -0xc)) {",
+      "type": "pointer_cast"
     }
   ]
 }

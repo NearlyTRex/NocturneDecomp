@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_haystack_cpp_CHaystack_setup_FUN_004cc7d0(CHaystack *this_ptr)
 
 {
@@ -16,39 +14,39 @@ void __cdecl core_haystack_cpp_CHaystack_setup_FUN_004cc7d0(CHaystack *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004ce4a0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
                           (&(this_ptr->base).base.model);
-  _DAT_01cede20 =
+  g_INT_ARRAY_01cede20[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 head",1);
-  _DAT_01cede24 =
+  g_INT_ARRAY_01cede20[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Clavicle",1);
-  _DAT_01cede28 =
+  g_INT_ARRAY_01cede20[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Clavicle",1);
-  _DAT_01cede2c =
+  g_INT_ARRAY_01cede20[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L UpperArm",1);
-  _DAT_01cede30 =
+  g_INT_ARRAY_01cede20[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R UpperArm",1);
-  _DAT_01cede34 =
+  g_INT_ARRAY_01cede20[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L ForeArm",1);
-  _DAT_01cede38 =
+  g_INT_ARRAY_01cede20[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R ForeArm",1);
-  _DAT_01cede3c =
+  g_INT_ARRAY_01cede20[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Foot",1);
-  _DAT_01cede40 =
+  g_INT_ARRAY_01cede20[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Foot",1);
-  _DAT_01cede44 =
+  g_INT_ARRAY_01cede20[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Thigh",1);
-  _DAT_01cede48 =
+  g_INT_ARRAY_01cede20[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Thigh",1);
-  _DAT_01cede4c =
+  g_INT_ARRAY_01cede20[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Calf",1);
-  _DAT_01cede50 =
+  g_INT_ARRAY_01cede20[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Calf",1);
-  _DAT_01cede54 =
+  g_INT_ARRAY_01cede20[0xd] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Hand",1);
-  _DAT_01cede58 =
+  g_INT_ARRAY_01cede20[0xe] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Hand",1);
-  _DAT_01cede5c =
+  g_INT_ARRAY_01cede20[0xf] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine2",1);
-  _DAT_01cede60 =
+  g_INT_ARRAY_01cede20[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
   this_ptr->guns_drawn = 0;
   return;

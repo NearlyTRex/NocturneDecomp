@@ -11,11 +11,11 @@
 ;   support_trisock.cpp_dnsRequestLookupHost_FUN_0057a750 at 0057a781
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0265363c
-;   undefined4 DAT_02653640
-;   undefined4 DAT_02653648
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   HANDLE g_HANDLE_0265363c
+;   void* g_PTR_02653640
+;   int g_INT_02653648
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -44,19 +44,19 @@ section .text
     PUSH EAX                            ; 0057a859
     CALL crt_memory.c_memset_FUN_005b77c0 ; 0057a85a
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
-    MOV EDX,dword ptr [0x0265363c]      ; 0057a85f | DAT_0265363c
+    MOV EDX,dword ptr [0x0265363c]      ; 0057a85f | g_HANDLE_0265363c
     ADD ESP,0xc                         ; 0057a865
     TEST EDX,EDX                        ; 0057a868
     JZ 0x0057a906                       ; 0057a86a
         ;   XREF to: 0057a906 (CONDITIONAL_JUMP)  ; LAB_0057a906
-    MOV EDI,dword ptr [0x0265363c]      ; 0057a870 | DAT_0265363c
+    MOV EDI,dword ptr [0x0265363c]      ; 0057a870 | g_HANDLE_0265363c
         ;   Label: LAB_0057a870
     PUSH EDI                            ; 0057a876
     CALL wincore_winrun.cpp_waitForMutex_FUN_0058fca0 ; 0057a877
         ;   XREF to: 0058fca0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_waitForMutex_FUN_0058fca0(HANDLE mutex_handle)
     MOV dword ptr [EBX + 0x3bc],0x1     ; 0057a87c
     MOV EAX,0x2653640                   ; 0057a886
-    MOV EDX,dword ptr [0x02653640]      ; 0057a88b | DAT_02653640
+    MOV EDX,dword ptr [0x02653640]      ; 0057a88b | g_PTR_02653640
     ADD ESP,0x4                         ; 0057a891
     TEST EDX,EDX                        ; 0057a894
     JZ 0x0057a8b0                       ; 0057a896
@@ -73,10 +73,10 @@ section .text
     MOV dword ptr [EAX],EBX             ; 0057a8b0
         ;   Label: LAB_0057a8b0
     MOV dword ptr [EBX + 0x3c0],0x0     ; 0057a8b2
-    CMP dword ptr [0x02653648],0x0      ; 0057a8bc | DAT_02653648
+    CMP dword ptr [0x02653648],0x0      ; 0057a8bc | g_INT_02653648
     JZ 0x0057a8e3                       ; 0057a8c3
         ;   XREF to: 0057a8e3 (CONDITIONAL_JUMP)  ; LAB_0057a8e3
-    CMP dword ptr [0x02653648],0x2      ; 0057a8c5 | DAT_02653648
+    CMP dword ptr [0x02653648],0x2      ; 0057a8c5 | g_INT_02653648
         ;   Label: LAB_0057a8c5
     JZ 0x0057a8e3                       ; 0057a8cc
         ;   XREF to: 0057a8e3 (CONDITIONAL_JUMP)  ; LAB_0057a8e3
@@ -85,15 +85,15 @@ section .text
     CALL wincore_winrun.cpp_sleep_FUN_0058fd90 ; 0057a8d2
         ;   XREF to: 0058fd90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_sleep_FUN_0058fd90(double seconds)
     ADD ESP,0x8                         ; 0057a8d7
-    CMP dword ptr [0x02653648],0x0      ; 0057a8da | DAT_02653648
+    CMP dword ptr [0x02653648],0x0      ; 0057a8da | g_INT_02653648
     JNZ 0x0057a8c5                      ; 0057a8e1
         ;   XREF to: 0057a8c5 (CONDITIONAL_JUMP)  ; LAB_0057a8c5
-    CMP dword ptr [0x02653648],0x1      ; 0057a8e3 | DAT_02653648
+    CMP dword ptr [0x02653648],0x1      ; 0057a8e3 | g_INT_02653648
         ;   Label: LAB_0057a8e3
     JL 0x0057a940                       ; 0057a8ea
         ;   XREF to: 0057a940 (CONDITIONAL_JUMP)  ; LAB_0057a940
     LEA EAX,[EAX]                       ; 0057a8ec
-    MOV ESI,dword ptr [0x0265363c]      ; 0057a8f0 | DAT_0265363c
+    MOV ESI,dword ptr [0x0265363c]      ; 0057a8f0 | g_HANDLE_0265363c
         ;   Label: LAB_0057a8f0
     PUSH ESI                            ; 0057a8f6
     CALL wincore_winrun.cpp_releaseMutex_FUN_0058fd00 ; 0057a8f7
@@ -108,15 +108,15 @@ section .text
     CALL wincore_winrun.cpp_createMutex_FUN_0058fc90 ; 0057a906
         ;   XREF to: 0058fc90 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createMutex_FUN_0058fc90()
         ;   Label: LAB_0057a906
-    MOV [0x0265363c],EAX                ; 0057a90b | DAT_0265363c
+    MOV [0x0265363c],EAX                ; 0057a90b | g_HANDLE_0265363c
     TEST EAX,EAX                        ; 0057a910
     JNZ 0x0057a870                      ; 0057a912
         ;   XREF to: 0057a870 (CONDITIONAL_JUMP)  ; LAB_0057a870
     MOV ECX,0x5ed31c                    ; 0057a918
     MOV ESI,0x70a                       ; 0057a91d
     PUSH 0x5ed333                       ; 0057a922
-    MOV dword ptr [0x01d046a0],ECX      ; 0057a927 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0057a92d | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0057a927 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0057a92d | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0057a933
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0057a938
@@ -126,11 +126,11 @@ section .text
         ;   Label: LAB_0057a940
     MOV EDX,0x1                         ; 0057a942
     PUSH 0x57a480                       ; 0057a947
-    MOV dword ptr [0x02653648],EDX      ; 0057a94c | DAT_02653648
+    MOV dword ptr [0x02653648],EDX      ; 0057a94c | g_INT_02653648
     CALL wincore_winrun.cpp_createThread_FUN_0058fd20 ; 0057a952
         ;   XREF to: 0058fd20 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createThread_FUN_0058fd20(LPTHREAD_START_ROUTINE thread_func, LPVOID thread_param)
     ADD ESP,0x8                         ; 0057a957
-    CMP dword ptr [0x02653648],0x1      ; 0057a95a | DAT_02653648
+    CMP dword ptr [0x02653648],0x1      ; 0057a95a | g_INT_02653648
     JNZ 0x0057a8f0                      ; 0057a961
         ;   XREF to: 0057a8f0 (CONDITIONAL_JUMP)  ; LAB_0057a8f0
     PUSH 0x0                            ; 0057a963
@@ -139,7 +139,7 @@ section .text
     CALL wincore_winrun.cpp_sleep_FUN_0058fd90 ; 0057a967
         ;   XREF to: 0058fd90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_sleep_FUN_0058fd90(double seconds)
     ADD ESP,0x8                         ; 0057a96c
-    CMP dword ptr [0x02653648],0x1      ; 0057a96f | DAT_02653648
+    CMP dword ptr [0x02653648],0x1      ; 0057a96f | g_INT_02653648
     JZ 0x0057a963                       ; 0057a976
         ;   XREF to: 0057a963 (CONDITIONAL_JUMP)  ; LAB_0057a963
     JMP 0x0057a8f0                      ; 0057a978

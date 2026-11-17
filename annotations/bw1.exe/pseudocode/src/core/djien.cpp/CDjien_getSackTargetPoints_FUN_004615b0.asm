@@ -13,9 +13,9 @@
 ;   core_djien.cpp_CDjien_getTargetPoints_FUN_00461590 at 004615a0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8ee0
-;   undefined4 DAT_00612258
-;   undefined4 DAT_0061c010
+;   float g_FLOAT_005d8ee0 = 0.5
+;   SMRGLTextureBasic g_SMRGLTextureBasic_00612258
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -120,7 +120,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0046172e
     MOVSD ES:EDI,ESI                    ; 0046172f
     MOVSD ES:EDI,ESI                    ; 00461730
-    FLD float ptr [0x005d8ee0]          ; 00461731 | DAT_005d8ee0
+    FLD float ptr [0x005d8ee0]          ; 00461731 | g_FLOAT_005d8ee0
     FLD float ptr [ESP + 0x1c4]         ; 00461737
     FMUL ST1                            ; 0046173e
     FLD float ptr [ESP + 0x1c8]         ; 00461740
@@ -247,7 +247,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00461951
     MOVSD ES:EDI,ESI                    ; 00461952
     MOVSD ES:EDI,ESI                    ; 00461953
-    FLD float ptr [0x005d8ee0]          ; 00461954 | DAT_005d8ee0
+    FLD float ptr [0x005d8ee0]          ; 00461954 | g_FLOAT_005d8ee0
     FLD float ptr [ESP + 0x11c]         ; 0046195a
     FMUL ST1                            ; 00461961
     FLD float ptr [ESP + 0x120]         ; 00461963
@@ -372,7 +372,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00461b54
     MOVSD ES:EDI,ESI                    ; 00461b55
     MOVSD ES:EDI,ESI                    ; 00461b56
-    FLD float ptr [0x005d8ee0]          ; 00461b57 | DAT_005d8ee0
+    FLD float ptr [0x005d8ee0]          ; 00461b57 | g_FLOAT_005d8ee0
     FLD float ptr [ESP + 0xc8]          ; 00461b5d
     FMUL ST1                            ; 00461b64
     FLD float ptr [ESP + 0xcc]          ; 00461b66
@@ -499,7 +499,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00461d3e
     MOVSD ES:EDI,ESI                    ; 00461d3f
     MOVSD ES:EDI,ESI                    ; 00461d40
-    FLD float ptr [0x005d8ee0]          ; 00461d41 | DAT_005d8ee0
+    FLD float ptr [0x005d8ee0]          ; 00461d41 | g_FLOAT_005d8ee0
     FLD float ptr [ESP + 0x68]          ; 00461d47
     FMUL ST1                            ; 00461d4b
     FLD float ptr [ESP + 0x6c]          ; 00461d4d
@@ -626,7 +626,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00461f4c
     MOVSD ES:EDI,ESI                    ; 00461f4d
     MOVSD ES:EDI,ESI                    ; 00461f4e
-    FLD float ptr [0x005d8ee0]          ; 00461f4f | DAT_005d8ee0
+    FLD float ptr [0x005d8ee0]          ; 00461f4f | g_FLOAT_005d8ee0
     FLD float ptr [ESP + 0x170]         ; 00461f55
     FMUL ST1                            ; 00461f5c
     FLD float ptr [ESP + 0x174]         ; 00461f5e
@@ -760,7 +760,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00462138
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0046213d
-    PUSH 0x612258                       ; 00462140 | DAT_00612258
+    PUSH 0x612258                       ; 00462140 | g_SMRGLTextureBasic_00612258
     LEA EDI,[ESP + 0x264]               ; 00462145
     PUSH 0x3f800000                     ; 0046214c
     LEA ESI,[ESP + 0x274]               ; 00462151
@@ -771,7 +771,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0046216a
     MOVSD ES:EDI,ESI                    ; 0046216b
     PUSH EAX                            ; 0046216c
-    MOV EDI,dword ptr [0x0061c010]      ; 0046216d | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 0046216d | g_CFireEffect_PTR_0061c010
     PUSH EDI                            ; 00462173
     CALL core_fire.cpp_CFireEffect_createTrailSegment_FUN_004b70f0 ; 00462174
         ;   XREF to: 004b70f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailSegment_FUN_004b70f0(CFireEffect * this_ptr, CVector3f * position, float size, float alpha, ...)
@@ -870,7 +870,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004622d6
     MOVSD ES:EDI,ESI                    ; 004622d7
     MOVSD ES:EDI,ESI                    ; 004622d8
-    FLD float ptr [0x005d8ee0]          ; 004622d9 | DAT_005d8ee0
+    FLD float ptr [0x005d8ee0]          ; 004622d9 | g_FLOAT_005d8ee0
     FLD float ptr [ESP + 0x218]         ; 004622df
     FMUL ST1                            ; 004622e6
     FLD float ptr [ESP + 0x21c]         ; 004622e8

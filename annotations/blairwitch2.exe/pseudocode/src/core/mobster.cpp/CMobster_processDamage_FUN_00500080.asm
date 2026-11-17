@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_mobster_die_wav_005deef4+1
+;   TerminatedCString s_mobster_die_wav_005deef5
 ;   TerminatedCString s_mobster_hit_wav_005def07
 ;   undefined4 g_CTommyGunClassInfo.name_hash
 ;
@@ -147,7 +147,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00551050 ; 005001a6
         ;   XREF to: 00551050 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00551050(uint sfx_handle)
     ADD ESP,0x4                         ; 005001ab
-    PUSH 0x5deef5                       ; 005001ae | s_mobster_die_wav_005deef4+1
+    PUSH 0x5deef5                       ; 005001ae | = "mobster-die-?.wav"
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 005001b3
     PUSH EBX                            ; 005001b9
     CALL dword ptr [EAX + 0x34]         ; 005001ba

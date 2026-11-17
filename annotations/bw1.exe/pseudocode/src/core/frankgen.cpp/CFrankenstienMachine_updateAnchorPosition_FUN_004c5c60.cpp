@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60(CFrankenstienMachine *this_ptr)
 
 {
@@ -32,7 +30,7 @@ CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_
   switch(this_ptr->which_part) {
   case 0:
     start_frame = 0.0;
-    fVar6 = 0x450FC000;
+    fVar6 = 2300.0f;
     goto LAB_004c5c89;
   case 1:
     core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004c5e80(this_ptr,131.0,671.0);
@@ -61,9 +59,9 @@ LAB_004c5c89:
     core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004c5f10(this_ptr,start_frame,fVar6);
     break;
   default:
-    _DAT_01d1d400 = "..\\core\\frankgen.cpp";
-    _DAT_01d1d404 = 0x1bb;
-    core_main_c_displayErrorAndQuit_FUN_005030e0(&DAT_005e0d5f);
+    g_CHAR_PTR_01d1d400 = "..\\core\\frankgen.cpp";
+    g_INT_01d1d404 = 0x1bb;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("WTF!");
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(&this_ptr->base);
   fVar6 = 7.012734e-39;
@@ -79,9 +77,9 @@ LAB_004c5c89:
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar4 * -8) = *puVar3;
   *(uint *)((int)&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        puVar3[(uint)bVar4 * -2 + 1];
-  local_30.x = (float)iStack_3c * _DAT_00600c08;
-  local_30.y = (float)local_38 * _DAT_00600c08;
-  local_30.z = (float)local_34 * _DAT_00600c08;
+  local_30.x = (float)iStack_3c * 0.00390625f;
+  local_30.y = (float)local_38 * 0.00390625f;
+  local_30.z = (float)local_34 * 0.00390625f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
             (&this_ptr->base,&local_30,(CVector3f *)&stack0xffffffb8);
   local_24.x = fVar6;

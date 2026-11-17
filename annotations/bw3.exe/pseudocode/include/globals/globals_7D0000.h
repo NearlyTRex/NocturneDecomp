@@ -4,8 +4,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
 #include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CPuzzle.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7D0000
@@ -14,9 +18,16 @@
 // CAlphaBitmap[4]
 extern CAlphaBitmap CAlphaBitmap_ARRAY_007dffc0[4];
 
+// CDemonActor*
+extern CDemonActor* g_CDemonActor_PTR_007df974;
+extern CDemonActor* g_CDemonActor_PTR_007df9bc;
+
 // CDemonActorType
 extern CDemonActorType g_CDemonActorClassInfo;
 extern CDemonActorType g_CAmmoClassInfo;
+extern CDemonActorType g_CDemonActorType_007dfd28;
+extern CDemonActorType g_CDemonActorType_007dfd64;
+extern CDemonActorType g_CDemonActorType_007dfda0;
 extern CDemonActorType g_CAmmoBoxClassInfo;
 extern CDemonActorType g_CBarrierClassInfo;
 extern CDemonActorType g_CBatClassInfo;
@@ -25,21 +36,37 @@ extern CDemonActorType g_CBindEvilClassInfo;
 extern CDemonActorType g_CBirdClassInfo;
 extern CDemonActorType g_CBlunderbusClassInfo;
 
+// CDemonActorType*[200]
+extern CDemonActorType* g_CDemonActorType_PTR_ARRAY_007df9c8[200];
+
+// CPuzzle*
+extern CPuzzle* g_CPuzzle_PTR_007dffb4;
+
+// SMRGLHeaderPrimitive*[2000]
+extern SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007dd9f4[2000];
+
+// _FILE*
+extern _FILE* g_FILE_PTR_007df9b4;
+
+// char[52]
+extern char g_CHAR_ARRAY_007df940[52];
+
+// int
+extern int g_INT_007dd9f0;
+extern int g_INT_007df9b8;
+extern int g_INT_007df9c0;
+extern int g_INT_007df9c4;
+extern int g_INT_007dff08;
+extern int g_INT_007dffb8;
+extern int g_INT_007dffbc;
+
+// int[1]
+extern int g_INT_ARRAY_007dff88[1];
+
+// uint
+extern uint g_UINT_007dfce8;
+
 // undefined4
-extern undefined4 DAT_007df974;
-extern undefined4 DAT_007df9b4;
-extern undefined4 DAT_007df9b8;
-extern undefined4 DAT_007df9bc;
-extern undefined4 DAT_007df9c0;
-extern undefined4 DAT_007df9c4;
-extern undefined4 DAT_007df9c8;
-extern undefined4 DAT_007df9cc;
-extern undefined4 DAT_007dfce8;
-extern undefined4 DAT_007dff08;
-extern undefined4 DAT_007dff88;
 extern undefined4 DAT_007dff8c;
 extern undefined4 DAT_007dff90;
-extern undefined4 DAT_007dffb4;
-extern undefined4 DAT_007dffb8;
-extern undefined4 DAT_007dffbc;
 

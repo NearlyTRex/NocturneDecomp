@@ -14,18 +14,18 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0 at 004540c0
 ;
 ; Referenced Globals:
-;   undefined8 DAT_006185f8
-;   undefined8 DAT_00618600
-;   undefined4 DAT_00619b60
-;   undefined4 DAT_0061a358
-;   undefined4 DAT_00623f38
-;   undefined4 DAT_00623f58
-;   undefined4 DAT_00623f78
-;   undefined4 DAT_00623f80
-;   undefined4 DAT_00623fa0
-;   undefined4 DAT_00623fc0
-;   undefined4 DAT_00b8189c
-;   undefined4 DAT_01c51d1c
+;   qword g_QWORD_006185f8 = 0x4000400040004
+;   qword g_QWORD_00618600 = 0xc000c000c000c
+;   ushort[2048] g_USHORT_ARRAY_00619b60
+;   undefined4 g_USHORT_ARRAY_00619b60[1020]
+;   qword g_QWORD_00623f38 = 0xf80000
+;   qword g_QWORD_00623f58 = 0xfc00
+;   qword g_QWORD_00623f78 = 0xf8
+;   qword g_QWORD_00623f80 = 0x8
+;   qword g_QWORD_00623fa0 = 0x5
+;   qword g_QWORD_00623fc0 = 0x3
+;   uint[256] g_UINT_ARRAY_00b8189c
+;   ulong g_ULONG_01c51d1c
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 0048a4c3
     MOV EBP,dword ptr [EBP + 0x14]      ; 0048a4c6
     PXOR MM7,MM7                        ; 0048a4c9
-    MOVD MM5,dword ptr [0x01c51d1c]     ; 0048a4cc | DAT_01c51d1c
+    MOVD MM5,dword ptr [0x01c51d1c]     ; 0048a4cc | g_ULONG_01c51d1c
     PUNPCKLBW MM5,MM7                   ; 0048a4d3
     PSLLW MM5,0x6                       ; 0048a4d6
     MOV EAX,dword ptr [ESI]             ; 0048a4da
@@ -129,31 +129,31 @@ section .text
     MOVZX EDX,byte ptr [EBX]            ; 0048a6ad
         ;   Label: LAB_0048a6ad
     MOVQ MM0,qword ptr [ESI]            ; 0048a6b0
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 0048a6b3 | DAT_00b8189c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 0048a6b3 | g_UINT_ARRAY_00b8189c
     MOVZX EAX,byte ptr [EBP]            ; 0048a6bb
     PUNPCKLBW MM0,MM7                   ; 0048a6bf
     SHR EDX,0x1                         ; 0048a6c2
     PUNPCKLBW MM2,MM7                   ; 0048a6c4
     ADD EAX,EDX                         ; 0048a6c7
     PMULLW MM0,MM2                      ; 0048a6c9
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 0048a6cc | DAT_00619b60
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 0048a6cc | g_USHORT_ARRAY_00619b60
     MOVQ MM2,MM3                        ; 0048a6d4
     MOVQ MM4,MM5                        ; 0048a6d7
-    PXOR MM2,qword ptr [0x0061a358]     ; 0048a6da | DAT_0061a358
+    PXOR MM2,qword ptr [0x0061a358]     ; 0048a6da | g_USHORT_ARRAY_00619b60[1020]
     PMULHW MM0,MM2                      ; 0048a6e1
     PMULHW MM4,MM3                      ; 0048a6e4
     PADDW MM0,MM4                       ; 0048a6e7
-    PADDW MM0,qword ptr [0x006185f8]    ; 0048a6ea | DAT_006185f8
+    PADDW MM0,qword ptr [0x006185f8]    ; 0048a6ea | g_QWORD_006185f8
     PSRLW MM0,0x4                       ; 0048a6f1
     PACKUSWB MM0,MM7                    ; 0048a6f5
     MOVQ MM2,MM0                        ; 0048a6f8
     MOVQ MM3,MM0                        ; 0048a6fb
-    PAND MM0,qword ptr [0x00623f78]     ; 0048a6fe | DAT_00623f78
-    PAND MM2,qword ptr [0x00623f58]     ; 0048a705 | DAT_00623f58
-    PAND MM3,qword ptr [0x00623f38]     ; 0048a70c | DAT_00623f38
-    PSRLQ MM0,qword ptr [0x00623fc0]    ; 0048a713 | DAT_00623fc0
-    PSRLQ MM2,qword ptr [0x00623fa0]    ; 0048a71a | DAT_00623fa0
-    PSRLQ MM3,qword ptr [0x00623f80]    ; 0048a721 | DAT_00623f80
+    PAND MM0,qword ptr [0x00623f78]     ; 0048a6fe | g_QWORD_00623f78
+    PAND MM2,qword ptr [0x00623f58]     ; 0048a705 | g_QWORD_00623f58
+    PAND MM3,qword ptr [0x00623f38]     ; 0048a70c | g_QWORD_00623f38
+    PSRLQ MM0,qword ptr [0x00623fc0]    ; 0048a713 | g_QWORD_00623fc0
+    PSRLQ MM2,qword ptr [0x00623fa0]    ; 0048a71a | g_QWORD_00623fa0
+    PSRLQ MM3,qword ptr [0x00623f80]    ; 0048a721 | g_QWORD_00623f80
     POR MM0,MM2                         ; 0048a728
     POR MM0,MM3                         ; 0048a72b
     MOVQ MM6,MM0                        ; 0048a72e
@@ -162,31 +162,31 @@ section .text
     INC EBP                             ; 0048a735
     MOVZX EDX,byte ptr [EBX]            ; 0048a736
     MOVQ MM0,qword ptr [ESI]            ; 0048a739
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 0048a73c | DAT_00b8189c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 0048a73c | g_UINT_ARRAY_00b8189c
     MOVZX EAX,byte ptr [EBP]            ; 0048a744
     PUNPCKLBW MM0,MM7                   ; 0048a748
     SHR EDX,0x1                         ; 0048a74b
     PUNPCKLBW MM2,MM7                   ; 0048a74d
     ADD EAX,EDX                         ; 0048a750
     PMULLW MM0,MM2                      ; 0048a752
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 0048a755 | DAT_00619b60
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 0048a755 | g_USHORT_ARRAY_00619b60
     MOVQ MM2,MM3                        ; 0048a75d
     MOVQ MM4,MM5                        ; 0048a760
-    PXOR MM2,qword ptr [0x0061a358]     ; 0048a763 | DAT_0061a358
+    PXOR MM2,qword ptr [0x0061a358]     ; 0048a763 | g_USHORT_ARRAY_00619b60[1020]
     PMULHW MM0,MM2                      ; 0048a76a
     PMULHW MM4,MM3                      ; 0048a76d
     PADDW MM0,MM4                       ; 0048a770
-    PADDW MM0,qword ptr [0x00618600]    ; 0048a773 | DAT_00618600
+    PADDW MM0,qword ptr [0x00618600]    ; 0048a773 | g_QWORD_00618600
     PSRLW MM0,0x4                       ; 0048a77a
     PACKUSWB MM0,MM7                    ; 0048a77e
     MOVQ MM2,MM0                        ; 0048a781
     MOVQ MM3,MM0                        ; 0048a784
-    PAND MM0,qword ptr [0x00623f78]     ; 0048a787 | DAT_00623f78
-    PAND MM2,qword ptr [0x00623f58]     ; 0048a78e | DAT_00623f58
-    PAND MM3,qword ptr [0x00623f38]     ; 0048a795 | DAT_00623f38
-    PSRLQ MM0,qword ptr [0x00623fc0]    ; 0048a79c | DAT_00623fc0
-    PSRLQ MM2,qword ptr [0x00623fa0]    ; 0048a7a3 | DAT_00623fa0
-    PSRLQ MM3,qword ptr [0x00623f80]    ; 0048a7aa | DAT_00623f80
+    PAND MM0,qword ptr [0x00623f78]     ; 0048a787 | g_QWORD_00623f78
+    PAND MM2,qword ptr [0x00623f58]     ; 0048a78e | g_QWORD_00623f58
+    PAND MM3,qword ptr [0x00623f38]     ; 0048a795 | g_QWORD_00623f38
+    PSRLQ MM0,qword ptr [0x00623fc0]    ; 0048a79c | g_QWORD_00623fc0
+    PSRLQ MM2,qword ptr [0x00623fa0]    ; 0048a7a3 | g_QWORD_00623fa0
+    PSRLQ MM3,qword ptr [0x00623f80]    ; 0048a7aa | g_QWORD_00623f80
     POR MM0,MM2                         ; 0048a7b1
     POR MM0,MM3                         ; 0048a7b4
     PSLLQ MM0,0x10                      ; 0048a7b7

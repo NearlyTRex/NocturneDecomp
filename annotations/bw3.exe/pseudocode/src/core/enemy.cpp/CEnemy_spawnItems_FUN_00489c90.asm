@@ -37,13 +37,13 @@
 ;   TerminatedCString s_CAmmo_Bullet_005bdcb0
 ;   TerminatedCString s_CAmmo_Mana_005bdcbd
 ;   TerminatedCString s_CHealthItemSmall_005bdcc8
-;   undefined4 DAT_005bdcdb
-;   undefined4 DAT_005bdcdf
-;   undefined4 DAT_005bdce7
-;   undefined4 DAT_005bdcef
-;   undefined4 DAT_00600530
+;   float g_FLOAT_005bdcdb = 0.04000000
+;   float g_FLOAT_005bdcdf = 5
+;   double g_DOUBLE_005bdce7 = 0.0800000000000000
+;   double g_DOUBLE_005bdcef = 5
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   undefined4 g_CBoxActorClassInfo.name_hash
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;   undefined4 DAT_01d81080
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00489cdc
     ADD EAX,0xce68                      ; 00489cdf
     MOV dword ptr [ESP + 0x28],EAX      ; 00489ce4
-    MOV EAX,[0x01d5ba14]                ; 00489ce8 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 00489ce8 | g_INT_01d5ba14
         ;   Label: LAB_00489ce8
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 00489ced
     PUSH 0xa                            ; 00489cf4
@@ -204,7 +204,7 @@ section .text
     CALL dword ptr [EAX]                ; 00489e27
     ADD ESP,0x4                         ; 00489e29
     PUSH EBX                            ; 00489e2c
-    MOV ECX,dword ptr [0x00600530]      ; 00489e2d | DAT_00600530
+    MOV ECX,dword ptr [0x00600530]      ; 00489e2d | g_CDemonMission_PTR_00600530
     PUSH ECX                            ; 00489e33 | DAT_01d81080
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 00489e34
         ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
@@ -238,7 +238,7 @@ section .text
     JZ 0x00489e84                       ; 00489e7e
         ;   XREF to: 00489e84 (CONDITIONAL_JUMP)  ; LAB_00489e84
     MOV dword ptr [ESP + 0x48],EDX      ; 00489e80
-    MOV EBX,dword ptr [0x01d5ba14]      ; 00489e84 | DAT_01d5ba14
+    MOV EBX,dword ptr [0x01d5ba14]      ; 00489e84 | g_INT_01d5ba14
         ;   Label: LAB_00489e84
     MOV EBX,dword ptr [EBX*0x4 + 0x1d5ba04] ; 00489e8a
     MOV EAX,dword ptr [EBX + 0x20b80]   ; 00489e91
@@ -247,13 +247,13 @@ section .text
     SAR EDX,0x1f                        ; 00489e9e
     IDIV ECX                            ; 00489ea1
     FLD float ptr [EBX + 0x2538]        ; 00489ea3
-    FMUL float ptr [0x005bdcdb]         ; 00489ea9 | DAT_005bdcdb
+    FMUL float ptr [0x005bdcdb]         ; 00489ea9 | g_FLOAT_005bdcdb
     FILD dword ptr [EBX + 0x20b84]      ; 00489eaf
-    FMUL double ptr [0x005bdce7]        ; 00489eb5 | DAT_005bdce7
+    FMUL double ptr [0x005bdce7]        ; 00489eb5 | g_DOUBLE_005bdce7
     FXCH                                ; 00489ebb
-    FSUBR float ptr [0x005bdcdf]        ; 00489ebd | DAT_005bdcdf
+    FSUBR float ptr [0x005bdcdf]        ; 00489ebd | g_FLOAT_005bdcdf
     FXCH                                ; 00489ec3
-    FSUBR double ptr [0x005bdcef]       ; 00489ec5 | DAT_005bdcef
+    FSUBR double ptr [0x005bdcef]       ; 00489ec5 | g_DOUBLE_005bdcef
     FXCH                                ; 00489ecb
     FMUL float ptr [ESP + 0x44]         ; 00489ecd
     FLD float ptr [ESP]                 ; 00489ed1

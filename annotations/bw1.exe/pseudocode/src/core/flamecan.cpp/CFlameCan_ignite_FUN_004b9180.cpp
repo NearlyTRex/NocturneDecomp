@@ -16,8 +16,8 @@ void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_004b9180(CFlameCan *this_ptr
   do {
     iVar1 = iVar1 + 1;
     core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-              (0x01C57074,&(this_ptr->flame).base.location.position,(CVector3f *)0x0,0x4000,0x4000
-               ,0,0xffff);
+              (g_CFireEffect_PTR_0061c010,&(this_ptr->flame).base.location.position,(CVector3f *)0x0
+               ,0x4000,0x4000,0,0xffff);
   } while (iVar1 < 5);
   (this_ptr->flame).flame_state = 1;
   return;

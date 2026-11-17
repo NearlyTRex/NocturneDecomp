@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
 
 {
@@ -16,35 +14,35 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
   CDemonSet *this_ptr;
   char *pcVar3;
   int iVar4;
-  byte *puVar5;
-  int iVar6;
+  int iVar5;
   CAlphaBitmap *this_ptr_00;
+  char *pcVar6;
   char *pcVar7;
   int local_10;
   float local_c;
   int local_8;
   
   pCVar2 = g_CGamePtr;
-  if (DAT_0061b49c < 0x1e0) {
+  if (g_INT_0061b49c < 0x1e0) {
     return 1;
   }
-  if ((_DAT_02c83370 == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
+  if ((g_INT_02c83370 == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
     g_CGamePtr->game_pixy = 0x1e0;
     pCVar2->game_pixx = 0x280;
   }
   this_ptr_00 = g_MenuBitmaps;
-  iVar6 = 0;
+  iVar5 = 0;
   do {
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-              (this_ptr_00,*(char **)((int)&PTR_s_f0100_0061f570 + iVar6),0x40,0x40);
-    iVar6 = iVar6 + 4;
+              (this_ptr_00,*(char **)((int)&PTR_s_f0100_0061f570 + iVar5),0x40,0x40);
+    iVar5 = iVar5 + 4;
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(this_ptr_00,2,1);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (iVar6 != 0x20);
+  } while (iVar5 != 0x20);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&g_MenuBlurLeft,"fblurl",0x68,0x46);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&g_MenuBlurMiddle,"fblurm",0x20,0x46);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&g_MenuBlurRight,"fblurr",0x68,0x46);
-  iVar6 = 0;
+  iVar5 = 0;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   engine_texture_cpp_clearTextureCache_FUN_00597c30();
   local_10 = 0;
@@ -62,41 +60,41 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
     core_moon_cpp_CMoon_render_FUN_00521e40(&g_CMoonInstance);
     g_CDemonSetPtr->rendering_mode = 0;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("S T A R T");
-    pcVar7 = &DAT_01d21048;
+    pcVar6 = g_CHAR_ARRAY_01d21048;
     do {
       cVar1 = *pcVar3;
-      *pcVar7 = cVar1;
+      *pcVar6 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("O P T I O N S");
-    pcVar7 = &DAT_01d21148;
+    pcVar6 = &DAT_01d21148;
     do {
       cVar1 = *pcVar3;
-      *pcVar7 = cVar1;
+      *pcVar6 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("L O A D");
-    pcVar7 = &DAT_01d21248;
+    pcVar6 = &DAT_01d21248;
     do {
       cVar1 = *pcVar3;
-      *pcVar7 = cVar1;
+      *pcVar6 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     pcVar7 = &DAT_01d21348;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Q U I T");
-    puVar5 = &DAT_01d21048;
+    pcVar6 = g_CHAR_ARRAY_01d21048;
     do {
       cVar1 = *pcVar3;
       *pcVar7 = cVar1;
@@ -108,12 +106,12 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
     } while (cVar1 != '\0');
     iVar4 = 0;
     do {
-      *(byte **)(iVar4 + 0x1d21448) = puVar5;
+      *(char **)((int)g_CHAR_PTR_ARRAY_01d21448 + iVar4) = pcVar6;
       iVar4 = iVar4 + 4;
-      puVar5 = puVar5 + 0x100;
+      pcVar6 = pcVar6 + 0x100;
     } while (iVar4 != 0x10);
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20
-                      ((char **)0x1d21448,4,&local_10,0x32,(char *)0x0);
+                      (g_CHAR_PTR_ARRAY_01d21448,4,&local_10,0x32,(char *)0x0);
     if (local_8 != 0) {
       engine_special_cpp_clearScreen_FUN_0057dc40();
     }
@@ -121,10 +119,12 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
     switch(iVar4) {
     case 0:
       core_moon_cpp_CMoon_free_FUN_00521d50(&g_CMoonInstance);
-      core_sound_cpp_CSound_reset_FUN_0057d800(0x02C82A60);
-      iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x2a);
-      if ((iVar4 == 0) || (iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d), iVar4 == 0)) {
-        iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);
+      core_sound_cpp_CSound_reset_FUN_0057d800(g_CSound_PTR_006236b8);
+      iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LSHIFT);
+      if ((iVar4 == 0) ||
+         (iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL),
+         iVar4 == 0)) {
+        iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL);
         if (iVar4 == 0) {
           iVar4 = 0;
         }
@@ -145,52 +145,56 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
       break;
     case 2:
       core_moon_cpp_CMoon_free_FUN_00521d50(&g_CMoonInstance);
-      core_sound_cpp_CSound_reset_FUN_0057d800(0x02C82A60);
+      core_sound_cpp_CSound_reset_FUN_0057d800(g_CSound_PTR_006236b8);
       core_game_cpp_CGame_loadGame_FUN_004d6990(g_CGamePtr,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       engine_texture_cpp_clearTextureCache_FUN_00597c30();
       core_moon_cpp_CMoon_init_FUN_00521c50(&g_CMoonInstance);
 LAB_0050cf69:
-      core_sound_cpp_CSound_configure_FUN_0057d6a0(0x02C82A60);
+      core_sound_cpp_CSound_configure_FUN_0057d6a0(g_CSound_PTR_006236b8);
       break;
     case 3:
-      iVar6 = 99;
+      iVar5 = 99;
     }
-    iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);
+    iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_ESCAPE);
     if (iVar4 != 0) {
-      iVar6 = 99;
+      iVar5 = 99;
     }
-    iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);
-    if ((iVar4 != 0) && (iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x32), iVar4 != 0)) {
+    iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL);
+    if ((iVar4 != 0) &&
+       (iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_M),
+       iVar4 != 0)) {
       iVar4 = sound_sndmain_cpp_isSoundMuted_FUN_005735f0();
       sound_sndmain_cpp_setSoundMuted_FUN_00573600((uint)(iVar4 == 0));
-      core_sound_cpp_CSound_configure_FUN_0057d6a0(0x02C82A60);
+      core_sound_cpp_CSound_configure_FUN_0057d6a0(g_CSound_PTR_006236b8);
     }
-    iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);
+    iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL);
     if ((iVar4 != 0) &&
-       ((iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x20), iVar4 != 0 ||
-        (iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x26), iVar4 != 0)))) {
+       ((iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_D),
+        iVar4 != 0 ||
+        (iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_L),
+        iVar4 != 0)))) {
       core_moon_cpp_CMoon_free_FUN_00521d50(&g_CMoonInstance);
-      core_sound_cpp_CSound_reset_FUN_0057d800(0x02C82A60);
+      core_sound_cpp_CSound_reset_FUN_0057d800(g_CSound_PTR_006236b8);
       core_main_c_showDeveloperToolsMenu_FUN_005031c0();
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       engine_texture_cpp_clearTextureCache_FUN_00597c30();
       core_moon_cpp_CMoon_init_FUN_00521c50(&g_CMoonInstance);
-      core_sound_cpp_CSound_configure_FUN_0057d6a0(0x02C82A60);
+      core_sound_cpp_CSound_configure_FUN_0057d6a0(g_CSound_PTR_006236b8);
     }
-    iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);
+    iVar4 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL);
     if (iVar4 != 0) {
-      (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x21);
+      (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_F);
     }
     if (local_8 != 0) {
       local_8 = 0;
-      core_sound_cpp_CSound_configure_FUN_0057d6a0(0x02C82A60);
+      core_sound_cpp_CSound_configure_FUN_0057d6a0(g_CSound_PTR_006236b8);
       engine_2d_c_clearInputAndWait_FUN_004032b0();
     }
-    if (iVar6 != 0) {
-      core_sound_cpp_CSound_reset_FUN_0057d800(0x02C82A60);
+    if (iVar5 != 0) {
+      core_sound_cpp_CSound_reset_FUN_0057d800(g_CSound_PTR_006236b8);
       core_moon_cpp_CMoon_free_FUN_00521d50(&g_CMoonInstance);
-      return iVar6;
+      return iVar5;
     }
   } while( true );
 }

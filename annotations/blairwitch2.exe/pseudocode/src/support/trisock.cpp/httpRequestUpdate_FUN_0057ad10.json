@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 763,
-    "complexity_score": 1479,
+    "complexity_score": 1454,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 319,
-    "suspect_count": 113,
+    "suspect_count": 111,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -238,8 +237,8 @@
     },
     {
       "addr": "005ed4bb",
-      "name": "DAT_005ed4bb",
-      "type": "undefined4",
+      "name": "s_d_005ed4bb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -274,26 +273,26 @@
     },
     {
       "addr": "005ed519",
-      "name": "DAT_005ed519",
-      "type": "undefined1",
+      "name": "s_Done_005ed519",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ed51a",
-      "name": "DAT_005ed51a",
-      "type": "undefined1",
+      "name": "s_one_005ed519+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ed51b",
-      "name": "DAT_005ed51b",
-      "type": "undefined1",
+      "name": "s_ne_005ed519+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ed51c",
-      "name": "DAT_005ed51c",
-      "type": "undefined1",
+      "name": "s_e_005ed519+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -976,14 +975,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 240,
-      "match": "DAT_005ed4bb",
-      "severity": "mild",
-      "text": "sscanf(pcStack_18,&DAT_005ed4bb);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 242,
       "match": "(byte *)((int)request",
@@ -1222,14 +1213,6 @@
       "severity": "moderate",
       "text": "return *(int *)((int)request + 0xd28);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 307,
-      "match": "DAT_005ed519",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_005ed519;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

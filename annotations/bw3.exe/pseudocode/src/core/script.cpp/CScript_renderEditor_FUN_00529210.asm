@@ -21,7 +21,7 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b787b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cde1c
+;   TerminatedCString s_d_005cde1c
 ;   TerminatedCString s_No_script_loaded_005cde1f
 ;
 ; Called Functions:
@@ -141,7 +141,7 @@ section .text
     ADD ESP,0x4                         ; 0052932d
     LEA EDI,[EBX + 0x1]                 ; 00529330
     PUSH EDI                            ; 00529333
-    PUSH 0x5cde1c                       ; 00529334 | DAT_005cde1c
+    PUSH 0x5cde1c                       ; 00529334 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 00529339
     PUSH EAX                            ; 0052933d
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0052933e

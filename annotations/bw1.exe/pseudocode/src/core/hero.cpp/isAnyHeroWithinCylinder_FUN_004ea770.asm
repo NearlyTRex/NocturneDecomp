@@ -20,7 +20,7 @@
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0 at 0042e3b1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d06aa0
+;   int g_INT_01d06aa0
 ;
 ; *****************************************************************************
 
@@ -39,12 +39,12 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004ea782
     FLD float ptr [EBP + 0x18]          ; 004ea785
     FMUL ST0                            ; 004ea788
-    MOV EDX,dword ptr [0x01d06aa0]      ; 004ea78a | DAT_01d06aa0
+    MOV EDX,dword ptr [0x01d06aa0]      ; 004ea78a | g_INT_01d06aa0
     FSTP float ptr [EBP + 0x18]         ; 004ea790
     TEST EDX,EDX                        ; 004ea793
     JLE 0x004ea7b3                      ; 004ea795
         ;   XREF to: 004ea7b3 (CONDITIONAL_JUMP)  ; LAB_004ea7b3
-    MOV EBX,dword ptr [0x01d06aa0]      ; 004ea797 | DAT_01d06aa0
+    MOV EBX,dword ptr [0x01d06aa0]      ; 004ea797 | g_INT_01d06aa0
     XOR EDX,EDX                         ; 004ea79d
     SHL EBX,0x2                         ; 004ea79f
     MOV ESI,dword ptr [EDX + 0x1d06aa4] ; 004ea7a2

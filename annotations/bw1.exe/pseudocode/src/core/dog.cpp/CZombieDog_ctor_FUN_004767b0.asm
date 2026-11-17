@@ -10,8 +10,8 @@
 ;   core_dog.cpp_factoryFuncZombieDog_FUN_00476780 at 00476793
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fee8c
-;   undefined4 DAT_005fee90
+;   float g_FLOAT_005fee8c = 50
+;   float g_FLOAT_005fee90 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -35,9 +35,9 @@ section .text
     MOV dword ptr [EAX + -0x4],0x5feea4 ; 004767cb
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004767d2
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x005fee8c]          ; 004767d7 | DAT_005fee8c
+    FLD float ptr [0x005fee8c]          ; 004767d7 | g_FLOAT_005fee8c
     MOV dword ptr [EBX + 0x2fec],0x3f400000 ; 004767dd
-    FLD float ptr [0x005fee90]          ; 004767e7 | DAT_005fee90
+    FLD float ptr [0x005fee90]          ; 004767e7 | g_FLOAT_005fee90
     MOV dword ptr [EBX + 0x2ff0],0x3fc00000 ; 004767ed
     ADD ESP,0x8                         ; 004767f7
     MOV dword ptr [EBX + 0xc270],0x0    ; 004767fa

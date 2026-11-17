@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_004771c0(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array)
 
 {
@@ -19,45 +17,45 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_004771c0(CDemonRaytrace 
   int iVar6;
   int iVar7;
   
-  if (_DAT_01c0b7b8 == 0) {
-    _DAT_01d71de0 = "..\\core\\dtrace.cpp";
-    _DAT_01d71de4 = 0x8ea;
+  if (g_INT_01c0b7b8 == 0) {
+    g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
+    g_INT_01d71de4 = 0x8ea;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRenderer::getPVS - PVS is not valid!");
   }
-  iVar5 = _DAT_01c0b7b4;
-  *output_count = _DAT_01c0b7b4;
+  iVar5 = g_INT_01c0b7b4;
+  *output_count = g_INT_01c0b7b4;
   piVar2 = (int *)realloc(*input_indices_array,iVar5 << 2);
   *input_indices_array = piVar2;
   if (*output_count < 1) {
-    _DAT_01d71de0 = "..\\core\\dtrace.cpp";
-    _DAT_01d71de4 = 0x8f6;
+    g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
+    g_INT_01d71de4 = 0x8f6;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::getPVS - no cubes rendered???");
   }
   if (*input_indices_array == (int *)0x0) {
-    _DAT_01d71de0 = "..\\core\\dtrace.cpp";
-    _DAT_01d71de4 = 0x8fa;
+    g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
+    g_INT_01d71de4 = 0x8fa;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::getPVS - out of memory");
   }
   iVar6 = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
   iVar5 = 0;
-  if (0 < _DAT_01c0b7b4) {
+  if (0 < g_INT_01c0b7b4) {
     iVar7 = 0;
     do {
       iVar4 = 0;
       if (0 < iVar6) {
         pCVar3 = this_ptr->cube_data;
         do {
-          if (pCVar3 == *(CDemonCube **)(iVar7 + 0x1c0b7bc)) break;
+          if (pCVar3 == *(CDemonCube **)((int)g_CDemonCube_PTR_ARRAY_01c0b7bc + iVar7)) break;
           iVar4 = iVar4 + 1;
           pCVar3 = pCVar3 + 1;
         } while (iVar4 < iVar6);
       }
       if (iVar6 <= iVar4) {
-        _DAT_01d71de0 = "..\\core\\dtrace.cpp";
-        _DAT_01d71de4 = 0x907;
+        g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
+        g_INT_01d71de4 = 0x907;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRenderer::savePVS - can't find drawn cube!");
       }
-      iVar1 = _DAT_01c0b7b4;
+      iVar1 = g_INT_01c0b7b4;
       iVar5 = iVar5 + 1;
       *(int *)(iVar7 + (int)*input_indices_array) = iVar4;
       iVar7 = iVar7 + 4;

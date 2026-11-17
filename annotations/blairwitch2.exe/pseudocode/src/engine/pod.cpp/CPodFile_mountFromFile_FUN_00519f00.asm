@@ -66,9 +66,9 @@
 ;   engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0 at 0051b8ef
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e2407
-;   undefined4 DAT_005e240a
-;   undefined4 DAT_005e240e
+;   TerminatedCString s_rb_005e2407
+;   TerminatedCString s_epd_005e240a
+;   TerminatedCString s_epd_005e240e
 ;   TerminatedCString s_engine_pod_cpp_005e2413
 ;   TerminatedCString s_Out_of_memory_005e2425
 ;   TerminatedCString s_engine_pod_cpp_005e2434
@@ -79,8 +79,8 @@
 ;   TerminatedCString s_Out_of_memory_005e2488
 ;   TerminatedCString s_engine_pod_cpp_005e2497
 ;   TerminatedCString s_realloc_returns_NULL_shr_005e24a9
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 00519f61 (CONDITIONAL_JUMP)  ; LAB_00519f61
     POP EDI                             ; 00519f79
         ;   Label: LAB_00519f79
-    PUSH 0x5e2407                       ; 00519f7a | DAT_005e2407
+    PUSH 0x5e2407                       ; 00519f7a | = "rb"
     MOV EAX,dword ptr [ESP + 0x210]     ; 00519f7f
     PUSH EDX                            ; 00519f86
     MOV dword ptr [EBX + 0x104],EAX     ; 00519f87
@@ -201,7 +201,7 @@ section .text
     CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 00519fe2
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00519fe7
-    PUSH 0x5e240a                       ; 00519fea | DAT_005e240a
+    PUSH 0x5e240a                       ; 00519fea | = "epd"
     LEA EAX,[ESP + 0x448]               ; 00519fef
     PUSH EAX                            ; 00519ff6
     CALL crt_string.c__stricmp_FUN_005b8130 ; 00519ff7
@@ -210,7 +210,7 @@ section .text
     TEST EAX,EAX                        ; 00519fff
     JZ 0x0051a020                       ; 0051a001
         ;   XREF to: 0051a020 (CONDITIONAL_JUMP)  ; LAB_0051a020
-    PUSH 0x5e240e                       ; 0051a003 | DAT_005e240e
+    PUSH 0x5e240e                       ; 0051a003 | = ".epd"
     LEA EAX,[ESP + 0x448]               ; 0051a008
     PUSH EAX                            ; 0051a00f
     CALL crt_string.c__stricmp_FUN_005b8130 ; 0051a010
@@ -313,8 +313,8 @@ section .text
     MOV ECX,0x5e2413                    ; 0051a13f | = "..\\engine\\pod.cpp"
     MOV ESI,0x198                       ; 0051a144
     PUSH 0x5e2425                       ; 0051a149 | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0051a14e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0051a154 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0051a14e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0051a154 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a15a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a15f
@@ -397,8 +397,8 @@ section .text
     MOV ESI,0x5e2497                    ; 0051a262 | = "..\\engine\\pod.cpp"
     MOV EDI,0x27b                       ; 0051a267
     PUSH 0x5e24a9                       ; 0051a26c | = "realloc returns NULL shrinking filena..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0051a271 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051a277 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0051a271 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0051a277 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a27d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a282
@@ -577,8 +577,8 @@ section .text
     MOV ECX,0x5e2455                    ; 0051a478 | = "..\\engine\\pod.cpp"
     MOV ESI,0x228                       ; 0051a47d
     PUSH 0x5e2467                       ; 0051a482 | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0051a487 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0051a48d | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0051a487 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0051a48d | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a493
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a498
@@ -741,8 +741,8 @@ section .text
     MOV EDI,0x5e2434                    ; 0051a655 | = "..\\engine\\pod.cpp"
     MOV EAX,0x1ed                       ; 0051a65a
     PUSH 0x5e2446                       ; 0051a65f | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],EDI      ; 0051a664 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0051a66a | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0051a664 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0051a66a | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a66f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a674
@@ -877,8 +877,8 @@ section .text
     MOV ESI,0x5e2476                    ; 0051a80d | = "..\\engine\\pod.cpp"
     MOV EDI,0x260                       ; 0051a812
     PUSH 0x5e2488                       ; 0051a817 | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],ESI      ; 0051a81c | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051a822 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0051a81c | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0051a822 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a828
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a82d

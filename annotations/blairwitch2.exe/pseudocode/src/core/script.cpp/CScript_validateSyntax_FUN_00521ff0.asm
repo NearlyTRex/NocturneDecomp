@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   min_error_line
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e650f8
+;   int g_INT_01e650f8
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_initRuntime_FUN_00522080
@@ -31,7 +31,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 00521fff
     MOV EDX,0x1                         ; 00522003
     PUSH EBX                            ; 00522008
-    MOV dword ptr [0x01e650f8],EDX      ; 00522009 | DAT_01e650f8
+    MOV dword ptr [0x01e650f8],EDX      ; 00522009 | g_INT_01e650f8
     CALL core_script.cpp_CScript_initRuntime_FUN_00522080 ; 0052200f
         ;   XREF to: 00522080 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initRuntime_FUN_00522080(CScript * this_ptr)
     ADD ESP,0x4                         ; 00522014
@@ -67,7 +67,7 @@ section .text
     XOR EDI,EDI                         ; 00522054
         ;   Label: LAB_00522054
     XOR EAX,EAX                         ; 00522056
-    MOV dword ptr [0x01e650f8],EDI      ; 00522058 | DAT_01e650f8
+    MOV dword ptr [0x01e650f8],EDI      ; 00522058 | g_INT_01e650f8
     ADD ESP,0x4                         ; 0052205e
     POP EBP                             ; 00522061
     POP EDI                             ; 00522062

@@ -22,17 +22,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005d672d
 ;   TerminatedCString s_Too_many_bitmaps_005d6740
-;   undefined4 DAT_005d6751
+;   TerminatedCString s_art_005d6751
 ;   TerminatedCString s_Invalid_font_file_size_s_005d6755
 ;   TerminatedCString s_engine_font_cpp_005d6772
 ;   TerminatedCString s_Unable_to_allocate_memor_005d6785
 ;   TerminatedCString s_engine_font_cpp_005d67b5
-;   undefined4 DAT_005d67c8
-;   undefined4 DAT_005d67cc
+;   TerminatedCString s_act_005d67c8
+;   TerminatedCString s_art_005d67cc
 ;   TerminatedCString s_engine_font_cpp_005d67d0
 ;   TerminatedCString s_CBitFont_addBitmap_File_005d67e3
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520
@@ -105,7 +105,7 @@ section .text
     IMUL ESI,EDI                        ; 004a7d7a
     PUSH EBP                            ; 004a7d7d
     MOV EAX,dword ptr [EBX]             ; 004a7d7e
-    PUSH 0x5d6751                       ; 004a7d80 | DAT_005d6751
+    PUSH 0x5d6751                       ; 004a7d80 | = "art"
     MOV dword ptr [EBX + EAX*0x4 + 0x1a4],EDX ; 004a7d85
     CALL engine_dosio.cpp_getFileSize_FUN_00460aa0 ; 004a7d8c
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00460aa0(char * directory, char * filename)
@@ -121,11 +121,11 @@ section .text
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x5d6772                    ; 004a7da8 | = "..\\engine\\font.cpp"
     ADD ESP,0xc                         ; 004a7dad
-    MOV [0x01d046a0],EAX                ; 004a7db0 | DAT_01d046a0
+    MOV [0x01d046a0],EAX                ; 004a7db0 | g_CHAR_PTR_01d046a0
     MOV EAX,ESP                         ; 004a7db5
     MOV EDX,0x10f                       ; 004a7db7
     PUSH EAX                            ; 004a7dbc
-    MOV dword ptr [0x01d046a4],EDX      ; 004a7dbd | DAT_01d046a4
+    MOV dword ptr [0x01d046a4],EDX      ; 004a7dbd | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7dc3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a7dc8
@@ -149,11 +149,11 @@ section .text
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x117                       ; 004a7dfa
     ADD ESP,0xc                         ; 004a7dff
-    MOV [0x01d046a4],EAX                ; 004a7e02 | DAT_01d046a4
+    MOV [0x01d046a4],EAX                ; 004a7e02 | g_INT_01d046a4
     MOV EAX,ESP                         ; 004a7e07
     MOV EDI,0x5d67b5                    ; 004a7e09 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004a7e0e
-    MOV dword ptr [0x01d046a0],EDI      ; 004a7e0f | DAT_01d046a0
+    MOV dword ptr [0x01d046a0],EDI      ; 004a7e0f | g_CHAR_PTR_01d046a0
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7e15
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a7e1a
@@ -176,7 +176,7 @@ section .text
     CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 004a7e46
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a7e4b
-    PUSH 0x5d67c8                       ; 004a7e4e | DAT_005d67c8
+    PUSH 0x5d67c8                       ; 004a7e4e | = "act"
     LEA EAX,[ESP + 0x330]               ; 004a7e53
     PUSH EAX                            ; 004a7e5a
     LEA EAX,[ESP + 0x234]               ; 004a7e5b
@@ -194,7 +194,7 @@ section .text
     ADD ESP,0x4                         ; 004a7e82
     LEA EAX,[ESP + 0x12c]               ; 004a7e85
     PUSH EAX                            ; 004a7e8c
-    PUSH 0x5d67cc                       ; 004a7e8d | DAT_005d67cc
+    PUSH 0x5d67cc                       ; 004a7e8d | = "art"
     LEA EAX,[ESP + 0x434]               ; 004a7e92
     PUSH EAX                            ; 004a7e99
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 004a7e9a
@@ -274,8 +274,8 @@ section .text
         ;   Label: LAB_004a7f73
     MOV ESI,0xfa                        ; 004a7f78
     PUSH 0x5d6740                       ; 004a7f7d | = "Too many bitmaps"
-    MOV dword ptr [0x01d046a0],ECX      ; 004a7f82 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004a7f88 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004a7f82 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004a7f88 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7f8e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a7f93
@@ -287,8 +287,8 @@ section .text
     MOV ECX,0x5d67d0                    ; 004a7fa3 | = "..\\engine\\font.cpp"
     MOV ESI,0x128                       ; 004a7fa8
     PUSH 0x5d67e3                       ; 004a7fad | = "CBitFont::addBitmap - File not found ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004a7fb2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004a7fb8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004a7fb2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004a7fb8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7fbe
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004a7fc3

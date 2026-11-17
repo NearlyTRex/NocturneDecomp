@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_editorDrawVLine_FUN_00492e10(int x,int y1,int y2)
 
 {
-  if (_DAT_01c3f544 != 0) {
+  if (g_INT_01c3f544 != 0) {
     engine_mini3d_cpp_drawVLine_FUN_00518300(x,y1,y2);
     return;
   }

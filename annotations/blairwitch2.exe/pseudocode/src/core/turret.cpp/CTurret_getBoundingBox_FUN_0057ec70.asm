@@ -8,7 +8,7 @@
 ; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0265370c
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041a590
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_0057ed2c
     ADD EAX,0x6d4                       ; 0057ed33
     PUSH EAX                            ; 0057ed38
-    PUSH 0x265370c                      ; 0057ed39 | DAT_0265370c
+    PUSH 0x265370c                      ; 0057ed39 | g_CVector3f_0265370c
     LEA EAX,[ESP + 0x8]                 ; 0057ed3e
     PUSH EAX                            ; 0057ed42
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 0057ed43
@@ -93,7 +93,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x134]     ; 0057ed4b
     ADD EAX,0x30                        ; 0057ed52
     PUSH EAX                            ; 0057ed55
-    PUSH 0x265370c                      ; 0057ed56 | DAT_0265370c
+    PUSH 0x265370c                      ; 0057ed56 | g_CVector3f_0265370c
     LEA EAX,[ESP + 0x38]                ; 0057ed5b
     PUSH EAX                            ; 0057ed5f
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 0057ed60

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0(CSpike *this_ptr)
 
 {
@@ -74,10 +72,10 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0(CSpi
     pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
     pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
   }
-  auStack_164._20_4_ = (float)auStack_164._20_4_ + _DAT_005d5be6;
-  fStack_14c = fStack_14c + _DAT_005d5be6;
-  fStack_144 = fStack_144 + _DAT_005d5bea;
-  fStack_140 = fStack_140 + _DAT_005d5bea;
+  auStack_164._20_4_ = (float)auStack_164._20_4_ + -0.1f;
+  fStack_14c = fStack_14c + -0.1f;
+  fStack_144 = fStack_144 + 0.1f;
+  fStack_140 = fStack_140 + 0.1f;
   core_box_cpp_CBoundingBox3D_reset_FUN_0041e8b0((CBoundingBox3D *)auStack_120);
   __arrinit(aCStack_230,8,&g_CVectorTypeInfo);
   pCVar5 = aCStack_230;
@@ -111,7 +109,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0(CSpi
   if (fStack_30 < fStack_2c) {
     fStack_28 = fStack_2c;
   }
-  fStack_28 = fStack_28 * _DAT_005d5bee + _DAT_005d5bf2;
+  fStack_28 = fStack_28 * 2.0f + 10.0f;
   fStack_24 = fStack_28 * fStack_28;
   CStack_fc.z = fStack_13c - fStack_148;
   CStack_fc.x = 0.0;

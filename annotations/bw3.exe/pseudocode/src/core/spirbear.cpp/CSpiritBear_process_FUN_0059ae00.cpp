@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_spirbear_cpp_CSpiritBear_process_FUN_0059ae00(CSpiritBear *this_ptr,float delta_time)
 
@@ -111,12 +110,12 @@ void __cdecl core_spirbear_cpp_CSpiritBear_process_FUN_0059ae00(CSpiritBear *thi
     }
     if (((this_ptr->current_motion_type == 0x91) || (this_ptr->current_motion_type == 0x92)) &&
        ((this_ptr->current_motion_type == 0x92 &&
-        ((fVar4 = delta_time * (float)_DAT_005d9b90 + this_ptr->morph_time,
+        ((fVar4 = delta_time * (float)0.5 + this_ptr->morph_time,
          this_ptr->morph_time = fVar4, 1.0 <= fVar4 && (this_ptr->morph_actor != (CPryeMorph *)0x0))
         )))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                (0x01D81080,(CDemonActor *)this_ptr->morph_actor);
-      this_ptr_00 = 0x01D81080;
+                (g_CDemonMission_PTR_00600530,(CDemonActor *)this_ptr->morph_actor);
+      this_ptr_00 = g_CDemonMission_PTR_00600530;
       this_ptr->morph_actor = (CPryeMorph *)0x0;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
                 (this_ptr_00,(CDemonActor *)this_ptr,1);
@@ -154,7 +153,7 @@ void __cdecl core_spirbear_cpp_CSpiritBear_process_FUN_0059ae00(CSpiritBear *thi
   if (EVar6 < 2) {
     if (EVar6 == WALK_STATE_WALKING) {
 LAB_0059af55:
-      pcVar13 = &DAT_005d9b85;
+      pcVar13 = "WALK";
     }
     else {
 LAB_0059b12a:
@@ -165,7 +164,7 @@ LAB_0059b12a:
   }
   else if (EVar6 < WALK_STATE_NO_PATH) {
     iVar9 = 0;
-    pcVar13 = &DAT_005d9b81;
+    pcVar13 = "RUN";
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&pCVar2->base);
     iVar9 = core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(this_ptr_01,pcVar13,iVar9);
     if (iVar9 < 0) goto LAB_0059af55;

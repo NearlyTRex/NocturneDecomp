@@ -9,10 +9,10 @@
 int __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)
 
 {
-  int iVar1;
+  uint uVar1;
   
-  iVar1 = *(int *)(*(int *)(&DAT_01c60dac + screen_y * 4) + screen_x * 4);
-  if (iVar1 == 0) {
+  uVar1 = g_UINT_PTR_ARRAY_01c60dac[screen_y][screen_x];
+  if (uVar1 == 0) {
     output_ptr->x = screen_x << 0x10;
     output_ptr->y = screen_y << 0x10;
     output_ptr->z = 0x7fffffff;
@@ -20,6 +20,6 @@ int __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(C
   }
   output_ptr->x = screen_x << 0x10;
   output_ptr->y = screen_y << 0x10;
-  output_ptr->z = (int)(0x7fffffff / (longlong)iVar1);
+  output_ptr->z = (int)(0x7fffffff / (longlong)(int)uVar1);
   return (int)output_ptr;
 }

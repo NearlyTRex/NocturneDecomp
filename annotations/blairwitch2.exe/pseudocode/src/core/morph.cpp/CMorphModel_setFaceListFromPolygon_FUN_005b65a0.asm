@@ -28,9 +28,9 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_005f1639
 ;   TerminatedCString s_core_morph_cpp_005f1667
 ;   TerminatedCString s_CMorphModel_setFaceList_005f1679
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0268014c
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_INT_0268014c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_005b65bb
     MOV EBP,0x152                       ; 005b65c0
     PUSH 0x5f1639                       ; 005b65c5 | = "CMorphModel::setFaceList - invalid pa..."
-    MOV dword ptr [0x01d046a0],ECX      ; 005b65ca | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 005b65d0 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005b65ca | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 005b65d0 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b65d6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b65db
@@ -79,8 +79,8 @@ section .text
     MOV EBP,0x5f1667                    ; 005b65f9 | = "..\\core\\morph.cpp"
     MOV EAX,0x159                       ; 005b65fe
     PUSH 0x5f1679                       ; 005b6603 | = "CMorphModel::setFaceList - invalid ve..."
-    MOV dword ptr [0x01d046a0],EBP      ; 005b6608 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 005b660e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 005b6608 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 005b660e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b6613
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b6618
@@ -119,7 +119,7 @@ section .text
     IMUL EAX,ESI,0x3c                   ; 005b667a
     MOV ESI,dword ptr [EBX + 0x60]      ; 005b667d
         ;   Label: LAB_005b667d
-    MOV EDI,dword ptr [0x0268014c]      ; 005b6680 | DAT_0268014c
+    MOV EDI,dword ptr [0x0268014c]      ; 005b6680 | g_INT_0268014c
     MOV dword ptr [ESI + EAX*0x1 + 0x4],0x3 ; 005b6686
     TEST EDI,EDI                        ; 005b668e
     JZ 0x005b674f                       ; 005b6690

@@ -18,7 +18,7 @@ int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_0053dd60(SRenderVert
   int local_1c;
   int local_18;
   
-  if (DAT_00713a7c == 1) {
+  if (g_INT_00713a7c == 1) {
     local_24 = (v1->projected_vertex).screen_x - (v0->projected_vertex).screen_x;
     local_20 = (v1->projected_vertex).screen_y - (v0->projected_vertex).screen_y;
     local_1c = (v2->projected_vertex).screen_x - (v1->projected_vertex).screen_x;

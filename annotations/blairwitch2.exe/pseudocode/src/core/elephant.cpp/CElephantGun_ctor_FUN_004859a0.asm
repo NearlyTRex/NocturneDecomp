@@ -10,7 +10,7 @@
 ;   core_elephant.cpp_factoryFuncElephantGun_FUN_00485970 at 00485983
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f5dec
+;   float g_FLOAT_005f5dec = 8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
@@ -40,7 +40,7 @@ section .text
     MOV dword ptr [EBX + 0x43c],0x1     ; 004859e5
     MOV dword ptr [EBX + 0x440],0x1     ; 004859ef
     MOV dword ptr [EBX + 0x444],0x41700000 ; 004859f9
-    FLD float ptr [0x005f5dec]          ; 00485a03 | DAT_005f5dec
+    FLD float ptr [0x005f5dec]          ; 00485a03 | g_FLOAT_005f5dec
     MOV dword ptr [EBX + 0x448],0x0     ; 00485a09
     ADD ESP,0x8                         ; 00485a13
     MOV dword ptr [EBX + 0x6d8],0x0     ; 00485a16

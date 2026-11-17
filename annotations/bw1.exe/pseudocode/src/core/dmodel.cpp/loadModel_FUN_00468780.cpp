@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00468780(char *filename)
 
 {
@@ -16,7 +14,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00468780(char *filename)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < _DAT_01b2efdc) {
+  if (0 < g_INT_01b2efdc) {
     pCVar2 = g_CKeyFramedModelPool;
     do {
       iVar1 = _stricmp(pCVar2->model_filename,filename);
@@ -25,15 +23,15 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00468780(char *filename)
       }
       iVar3 = iVar3 + 1;
       pCVar2 = pCVar2 + 1;
-    } while (iVar3 < _DAT_01b2efdc);
+    } while (iVar3 < g_INT_01b2efdc);
   }
-  if (0xff < _DAT_01b2efdc) {
-    _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-    _DAT_01d1d404 = 0x4cd;
+  if (0xff < g_INT_01b2efdc) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+    g_INT_01d1d404 = 0x4cd;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't load %s because keyFrame model manager is full.  (Size is %d)");
   }
-  pCVar2 = g_CKeyFramedModelPool + _DAT_01b2efdc;
-  _DAT_01b2efdc = _DAT_01b2efdc + 1;
+  pCVar2 = g_CKeyFramedModelPool + g_INT_01b2efdc;
+  g_INT_01b2efdc = g_INT_01b2efdc + 1;
   core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(pCVar2,filename);
   core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00467bc0(pCVar2);
   return pCVar2;

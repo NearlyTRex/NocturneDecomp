@@ -64,10 +64,10 @@
 ;   core_flies.cpp_CFlies_process_FUN_004ad950 at 004adcc3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1c79
-;   undefined4 DAT_005c1c81
-;   undefined4 DAT_005c1c89
-;   undefined4 DAT_005c1c91
+;   double g_DOUBLE_005c1c79 = 0.5
+;   double g_DOUBLE_005c1c81 = -0.5
+;   double g_DOUBLE_005c1c89 = 4
+;   float g_FLOAT_005c1c91 = 4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -99,10 +99,10 @@ section .text
     FSTP float ptr [ESP + 0x28]         ; 004ae3c6
     FLD float ptr [ESI + 0x158]         ; 004ae3ca
     FLD ST0                             ; 004ae3d0
-    FMUL double ptr [0x005c1c79]        ; 004ae3d2 | DAT_005c1c79
+    FMUL double ptr [0x005c1c79]        ; 004ae3d2 | g_DOUBLE_005c1c79
     SUB ESP,0x4                         ; 004ae3d8
     FXCH                                ; 004ae3db
-    FMUL double ptr [0x005c1c81]        ; 004ae3dd | DAT_005c1c81
+    FMUL double ptr [0x005c1c81]        ; 004ae3dd | g_DOUBLE_005c1c81
     FXCH                                ; 004ae3e3
     FSTP float ptr [ESP]                ; 004ae3e5
     SUB ESP,0x4                         ; 004ae3e8
@@ -115,10 +115,10 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 004ae404
     FLD float ptr [ESI + 0x160]         ; 004ae408
     FLD ST0                             ; 004ae40e
-    FMUL double ptr [0x005c1c79]        ; 004ae410 | DAT_005c1c79
+    FMUL double ptr [0x005c1c79]        ; 004ae410 | g_DOUBLE_005c1c79
     SUB ESP,0x4                         ; 004ae416
     FXCH                                ; 004ae419
-    FMUL double ptr [0x005c1c81]        ; 004ae41b | DAT_005c1c81
+    FMUL double ptr [0x005c1c81]        ; 004ae41b | g_DOUBLE_005c1c81
     FXCH                                ; 004ae421
     FSTP float ptr [ESP]                ; 004ae423
     SUB ESP,0x4                         ; 004ae426
@@ -162,7 +162,7 @@ section .text
     FSQRT                               ; 004ae4b1
     FST float ptr [ESP + 0x8]           ; 004ae4b3
     FST double ptr [ESP]                ; 004ae4b7
-    FCOMP double ptr [0x005c1c89]       ; 004ae4ba | DAT_005c1c89
+    FCOMP double ptr [0x005c1c89]       ; 004ae4ba | g_DOUBLE_005c1c89
     FNSTSW AX                           ; 004ae4c0
     SAHF                                ; 004ae4c2
     JA 0x004ae5b1                       ; 004ae4c3
@@ -243,7 +243,7 @@ section .text
     POP EDI                             ; 004ae5ae
     POP EBX                             ; 004ae5af
     RET                                 ; 004ae5b0
-    FLD float ptr [0x005c1c91]          ; 004ae5b1 | DAT_005c1c91
+    FLD float ptr [0x005c1c91]          ; 004ae5b1 | g_FLOAT_005c1c91
         ;   Label: LAB_004ae5b1
     FLD float ptr [ESP + 0xb4]          ; 004ae5b7
     FMUL ST1                            ; 004ae5be

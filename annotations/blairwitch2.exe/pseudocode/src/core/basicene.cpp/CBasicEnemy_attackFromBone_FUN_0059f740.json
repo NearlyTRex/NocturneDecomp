@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 258,
+    "complexity_score": 243,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 19,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "warning_type_propagation"
     ],
     "total_lines": 110
@@ -105,8 +104,8 @@
   "globals": [
     {
       "addr": "0265370c",
-      "name": "DAT_0265370c",
-      "type": "undefined4",
+      "name": "g_CVector3f_0265370c",
+      "type": "CVector3f",
       "value": null
     }
   ],
@@ -369,14 +368,6 @@
       "severity": "moderate",
       "text": "uint auStackY_101c [997];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "((CVector3f *)&DAT_0265370c,",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&local_10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

@@ -20,11 +20,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d304e
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005d3063
-;   undefined4 DAT_005d3086
-;   undefined4 DAT_0060422c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cf341c
+;   float g_FLOAT_005d3086 = 0.05000000
+;   int g_INT_0060422c = 0x2
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_02cf341c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -39,9 +39,9 @@ section .text
     PUSH ESI                            ; 00554251
     PUSH EBP                            ; 00554252
     SUB ESP,0x1c                        ; 00554253
-    MOV ESI,dword ptr [0x0060422c]      ; 00554256 | DAT_0060422c
+    MOV ESI,dword ptr [0x0060422c]      ; 00554256 | g_INT_0060422c
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0055425c
-    CMP dword ptr [0x02cf341c],0x0      ; 00554260 | DAT_02cf341c
+    CMP dword ptr [0x02cf341c],0x0      ; 00554260 | g_INT_02cf341c
     JLE 0x005542bd                      ; 00554267
         ;   XREF to: 005542bd (CONDITIONAL_JUMP)  ; LAB_005542bd
     MOV EBP,dword ptr [EBX]             ; 00554269
@@ -58,7 +58,7 @@ section .text
     TEST AH,0x1                         ; 00554285
     JZ 0x005542e4                       ; 00554288
         ;   XREF to: 005542e4 (CONDITIONAL_JUMP)  ; LAB_005542e4
-    MOV ESI,dword ptr [0x0060422c]      ; 0055428a | DAT_0060422c
+    MOV ESI,dword ptr [0x0060422c]      ; 0055428a | g_INT_0060422c
     XOR EDX,EDX                         ; 00554290
     TEST ESI,ESI                        ; 00554292
     JLE 0x005542b0                      ; 00554294
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 00554299 (CONDITIONAL_JUMP)  ; LAB_00554299
     LEA EAX,[EAX]                       ; 005542a7
     LEA EDX,[EDX]                       ; 005542ad
-    MOV dword ptr [0x0060422c],ESI      ; 005542b0 | DAT_0060422c
+    MOV dword ptr [0x0060422c],ESI      ; 005542b0 | g_INT_0060422c
         ;   Label: LAB_005542b0
     ADD ESP,0x1c                        ; 005542b6
     POP EBP                             ; 005542b9
@@ -85,15 +85,15 @@ section .text
     MOV ECX,0x5d304e                    ; 005542be | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xa9a                       ; 005542c3
     PUSH 0x5d3063                       ; 005542c8 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 005542cd | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005542d3 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005542cd | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 005542d3 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005542d9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005542de
     POP EDI                             ; 005542e1
     JMP 0x00554269                      ; 005542e2
         ;   XREF to: 00554269 (UNCONDITIONAL_JUMP)  ; LAB_00554269
-    MOV ESI,dword ptr [0x0060422c]      ; 005542e4 | DAT_0060422c
+    MOV ESI,dword ptr [0x0060422c]      ; 005542e4 | g_INT_0060422c
         ;   Label: LAB_005542e4
     XOR ECX,ECX                         ; 005542ea
     TEST ESI,ESI                        ; 005542ec
@@ -126,7 +126,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 00554335
     FLD float ptr [ESP + 0xc]           ; 00554339
         ;   Label: LAB_00554339
-    FMUL float ptr [0x005d3086]         ; 0055433d | DAT_005d3086
+    FMUL float ptr [0x005d3086]         ; 0055433d | g_FLOAT_005d3086
     FCOMP float ptr [ESP + 0x14]        ; 00554343
     FNSTSW AX                           ; 00554347
     SAHF                                ; 00554349

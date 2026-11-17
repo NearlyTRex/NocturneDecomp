@@ -12,7 +12,7 @@ uint FUN_005c2120(uint param_1,ushort param_2)
   code *pcVar1;
   uint uVar2;
   
-  if (DAT_0061f650 != '\0') {
+  if (g_BYTE_0061f650 != 0) {
     pcVar1 = (code *)swi(3);
     uVar2 = (*pcVar1)(param_2);
     return uVar2;

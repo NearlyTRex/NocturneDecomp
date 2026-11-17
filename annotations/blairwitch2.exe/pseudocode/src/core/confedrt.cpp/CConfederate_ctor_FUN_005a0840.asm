@@ -10,8 +10,8 @@
 ;   core_confedrt.cpp_factoryFuncConfederate_FUN_005a0810 at 005a0823
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fedac
-;   undefined4 DAT_005fedb0
+;   float g_FLOAT_005fedac = 25
+;   float g_FLOAT_005fedb0 = 15
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
@@ -50,9 +50,9 @@ section .text
     MOV dword ptr [EBX + 0x11384],0x0   ; 005a08a9
     LEA EDI,[EBX + 0x113d4]             ; 005a08b3
     MOV dword ptr [EBX + 0x11388],0x1   ; 005a08b9
-    FLD float ptr [0x005fedac]          ; 005a08c3 | DAT_005fedac
+    FLD float ptr [0x005fedac]          ; 005a08c3 | g_FLOAT_005fedac
     MOV dword ptr [EBX + 0x1138c],0x4   ; 005a08c9
-    FLD float ptr [0x005fedb0]          ; 005a08d3 | DAT_005fedb0
+    FLD float ptr [0x005fedb0]          ; 005a08d3 | g_FLOAT_005fedb0
     MOV dword ptr [EBX + 0x11398],0x40a00000 ; 005a08d9
     MOV ESI,0x5efbaa                    ; 005a08e3
     MOV dword ptr [EBX + 0x11418],0x1   ; 005a08e8

@@ -22,15 +22,15 @@
 ;   engine_2d.c_buildColorLookupTable_FUN_00402880 at 00402902
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ca034
-;   undefined4 DAT_005ca03c
-;   undefined4 DAT_005ca044
-;   undefined4 DAT_005ca04c
-;   undefined4 DAT_005ca054
+;   double g_DOUBLE_005ca034 = 0.577350270000000
+;   double g_DOUBLE_005ca03c = 0.300000000000000
+;   double g_DOUBLE_005ca044 = 0.590000000000000
+;   double g_DOUBLE_005ca04c = 0.110000000000000
+;   double g_DOUBLE_005ca054 = 0.150000000000000
 ;   undefined4 DAT_0070c638
-;   undefined4 DAT_01c35838
-;   undefined4 DAT_01c35839
-;   undefined4 DAT_01c3583a
+;   uchar[768] g_UCHAR_ARRAY_01c35838
+;   undefined4 g_UCHAR_ARRAY_01c35838+1
+;   undefined4 g_UCHAR_ARRAY_01c35838+2
 ;
 ; *****************************************************************************
 
@@ -63,7 +63,7 @@ section .text
     FADDP                               ; 00401497
     FSQRT                               ; 00401499
     MOV EDX,0x7149f2ca                  ; 0040149b
-    FMUL double ptr [0x005ca034]        ; 004014a0 | DAT_005ca034
+    FMUL double ptr [0x005ca034]        ; 004014a0 | g_DOUBLE_005ca034
     MOV dword ptr [ESP + 0x20],EDX      ; 004014a6
     MOV EBX,ESI                         ; 004014aa
     MOV EAX,dword ptr [ESP + 0x54]      ; 004014ac
@@ -75,7 +75,7 @@ section .text
     XOR EAX,EAX                         ; 004014bf
         ;   Label: LAB_004014bf
     MOV EDX,dword ptr [ESP + 0x44]      ; 004014c1
-    MOV AL,byte ptr [ECX]               ; 004014c5 | DAT_01c35838
+    MOV AL,byte ptr [ECX]               ; 004014c5 | g_UCHAR_ARRAY_01c35838
     SUB EDX,EAX                         ; 004014c7
     MOV EAX,EDX                         ; 004014c9
     CDQ                                 ; 004014cb
@@ -84,7 +84,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 004014d0
     XOR EAX,EAX                         ; 004014d4
     MOV EDX,EBP                         ; 004014d6
-    MOV AL,byte ptr [ECX + 0x1]         ; 004014d8 | DAT_01c35839
+    MOV AL,byte ptr [ECX + 0x1]         ; 004014d8 | g_UCHAR_ARRAY_01c35838+1
     SUB EDX,EAX                         ; 004014db
     FILD dword ptr [ESP + 0x2c]         ; 004014dd
     MOV EAX,EDX                         ; 004014e1
@@ -95,7 +95,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 004014ec
     XOR EAX,EAX                         ; 004014f0
     MOV EDX,dword ptr [ESP + 0x4c]      ; 004014f2
-    MOV AL,byte ptr [ECX + 0x2]         ; 004014f6 | DAT_01c3583a
+    MOV AL,byte ptr [ECX + 0x2]         ; 004014f6 | g_UCHAR_ARRAY_01c35838+2
     SUB EDX,EAX                         ; 004014f9
     FILD dword ptr [ESP + 0x2c]         ; 004014fb
     MOV EAX,EDX                         ; 004014ff
@@ -109,19 +109,19 @@ section .text
     FABS                                ; 00401517
     FLD float ptr [ESP + 0x8]           ; 00401519
     FMUL ST0                            ; 0040151d
-    FMUL double ptr [0x005ca03c]        ; 0040151f | DAT_005ca03c
+    FMUL double ptr [0x005ca03c]        ; 0040151f | g_DOUBLE_005ca03c
     FLD float ptr [ESP]                 ; 00401525
     FMUL ST0                            ; 00401528
-    FMUL double ptr [0x005ca044]        ; 0040152a | DAT_005ca044
+    FMUL double ptr [0x005ca044]        ; 0040152a | g_DOUBLE_005ca044
     FADDP                               ; 00401530
     FILD dword ptr [ESP + 0x2c]         ; 00401532
     FMUL ST0                            ; 00401536
-    FMUL double ptr [0x005ca04c]        ; 00401538 | DAT_005ca04c
+    FMUL double ptr [0x005ca04c]        ; 00401538 | g_DOUBLE_005ca04c
     FADDP                               ; 0040153e
     FLD ST1                             ; 00401540
     FMULP ST2                           ; 00401542
     FXCH                                ; 00401544
-    FMUL double ptr [0x005ca054]        ; 00401546 | DAT_005ca054
+    FMUL double ptr [0x005ca054]        ; 00401546 | g_DOUBLE_005ca054
     FADDP                               ; 0040154c
     FST float ptr [ESP + 0x24]          ; 0040154e
     FCOMP float ptr [ESP + 0x20]        ; 00401552

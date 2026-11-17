@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 133,
+    "complexity_score": 117,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 6,
+    "pseudocode_lines": 52,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 151
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -53,104 +52,104 @@
   "globals": [
     {
       "addr": "005e5fb8",
-      "name": "DAT_005e5fb8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e5fb8",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "01c4eff8",
-      "name": "DAT_01c4eff8",
-      "type": "undefined4",
+      "name": "g_INT_01c4eff8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4effc",
-      "name": "DAT_01c4effc",
-      "type": "undefined4",
+      "name": "g_INT_01c4effc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f000",
-      "name": "DAT_01c4f000",
-      "type": "undefined4",
+      "name": "g_INT_01c4f000",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f004",
-      "name": "DAT_01c4f004",
-      "type": "undefined4",
+      "name": "g_INT_01c4f004",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d2c",
-      "name": "DAT_01c51d2c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d2c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d30",
-      "name": "DAT_01c51d30",
-      "type": "undefined4",
+      "name": "g_INT_01c51d30",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d34",
-      "name": "DAT_01c51d34",
-      "type": "undefined4",
+      "name": "g_INT_01c51d34",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd18",
-      "name": "DAT_01d1dd18",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd18",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd1c",
-      "name": "DAT_01d1dd1c",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd1c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd20",
-      "name": "DAT_01d1dd20",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd20",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd24",
-      "name": "DAT_01d1dd24",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd24",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd28",
-      "name": "DAT_01d1dd28",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd28",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd2c",
-      "name": "DAT_01d1dd2c",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd2c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd30",
-      "name": "DAT_01d1dd30",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd30",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd34",
-      "name": "DAT_01d1dd34",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd34",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd38",
-      "name": "DAT_01d1dd38",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd38",
+      "type": "int",
       "value": null
     }
   ],
@@ -391,16 +390,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(uint *)((int)out_point",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)out_point + (uint)bVar9 * -8 + 4);",
@@ -408,7 +399,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 53,
+      "line": 51,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*puVar8 = *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8);",
@@ -416,7 +407,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 53,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
@@ -424,7 +415,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffe4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
@@ -432,7 +423,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",

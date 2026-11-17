@@ -59,9 +59,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e7221
 ;   TerminatedCString s_CDeformableModel_compute_005e7236
-;   undefined4 DAT_005fb9a0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005fb9a0 = 0.00390625
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -138,8 +138,8 @@ section .text
     MOV ESI,0x5e7221                    ; 0054440e | = "..\\core\\skeleton.cpp"
     MOV EDI,0x7e2                       ; 00544413
     PUSH 0x5e7236                       ; 00544418 | = "CDeformableModel::computePartDominant..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0054441d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00544423 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0054441d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00544423 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00544429
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054442e
@@ -214,13 +214,13 @@ section .text
     LEA EBX,[ESP + 0x1cc]               ; 0054450f
     ADD EAX,ECX                         ; 00544516
     FILD dword ptr [EAX]                ; 00544518
-    FMUL float ptr [0x005fb9a0]         ; 0054451a | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 0054451a | g_FLOAT_005fb9a0
     FSTP float ptr [EBX]                ; 00544520
     FILD dword ptr [EAX + 0x4]          ; 00544522
-    FMUL float ptr [0x005fb9a0]         ; 00544525 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 00544525 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x4]          ; 0054452b
     FILD dword ptr [EAX + 0x8]          ; 0054452e
-    FMUL float ptr [0x005fb9a0]         ; 00544531 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 00544531 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x8]          ; 00544537
     XOR EAX,EAX                         ; 0054453a
     MOV AX,word ptr [EDX + 0x2]         ; 0054453c
@@ -230,13 +230,13 @@ section .text
     LEA EBX,[ESP + 0x1c0]               ; 00544550
     ADD EAX,ECX                         ; 00544557
     FILD dword ptr [EAX]                ; 00544559
-    FMUL float ptr [0x005fb9a0]         ; 0054455b | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 0054455b | g_FLOAT_005fb9a0
     FSTP float ptr [EBX]                ; 00544561
     FILD dword ptr [EAX + 0x4]          ; 00544563
-    FMUL float ptr [0x005fb9a0]         ; 00544566 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 00544566 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x4]          ; 0054456c
     FILD dword ptr [EAX + 0x8]          ; 0054456f
-    FMUL float ptr [0x005fb9a0]         ; 00544572 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 00544572 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x8]          ; 00544578
     XOR EAX,EAX                         ; 0054457b
     MOV AX,word ptr [EDX + 0x4]         ; 0054457d
@@ -248,13 +248,13 @@ section .text
     ADD EAX,ECX                         ; 0054459f
     LEA ESI,[ESP + 0x190]               ; 005445a1
     FILD dword ptr [EAX]                ; 005445a8
-    FMUL float ptr [0x005fb9a0]         ; 005445aa | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 005445aa | g_FLOAT_005fb9a0
     FSTP float ptr [EBX]                ; 005445b0
     FILD dword ptr [EAX + 0x4]          ; 005445b2
-    FMUL float ptr [0x005fb9a0]         ; 005445b5 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 005445b5 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x4]          ; 005445bb
     FILD dword ptr [EAX + 0x8]          ; 005445be
-    FMUL float ptr [0x005fb9a0]         ; 005445c1 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 005445c1 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x8]          ; 005445c7
     FLD float ptr [ESP + 0x1f0]         ; 005445ca
     FLD float ptr [ESP + 0x1f4]         ; 005445d1

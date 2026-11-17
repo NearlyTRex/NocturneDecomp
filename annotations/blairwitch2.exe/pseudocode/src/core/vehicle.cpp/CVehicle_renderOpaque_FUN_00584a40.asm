@@ -7,9 +7,9 @@
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
@@ -62,8 +62,8 @@ section .text
     TEST EAX,EAX                        ; 00584aab
     JZ 0x00584b20                       ; 00584aad
         ;   XREF to: 00584b20 (CONDITIONAL_JUMP)  ; LAB_00584b20
-    MOV EBX,dword ptr [0x0060b280]      ; 00584aaf | DAT_0060b280
-    PUSH EBX                            ; 00584ab5 | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 00584aaf | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 00584ab5 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00584ab6
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00584abb
@@ -136,15 +136,15 @@ section .text
         ;   Label: LAB_00584ba7
     MOV EAX,dword ptr [ESP + 0xb0]      ; 00584ba8
     PUSH EAX                            ; 00584baf
-    MOV EDX,dword ptr [0x0060b280]      ; 00584bb0 | DAT_0060b280
-    PUSH EDX                            ; 00584bb6 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 00584bb0 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 00584bb6 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 00584bb7
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 00584bbc
     PUSH 0x0                            ; 00584bbf
     PUSH EBP                            ; 00584bc1
-    MOV ECX,dword ptr [0x0060b280]      ; 00584bc2 | DAT_0060b280
-    PUSH ECX                            ; 00584bc8 | DAT_01ba5c50
+    MOV ECX,dword ptr [0x0060b280]      ; 00584bc2 | g_CDemonRenderer_PTR_0060b280
+    PUSH ECX                            ; 00584bc8 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 00584bc9
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 00584bce
@@ -154,13 +154,13 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0 ; 00584bd6
         ;   XREF to: 0044fcc0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 00584bdb
-    MOV EAX,[0x0060b280]                ; 00584bde | DAT_0060b280
-    PUSH EAX                            ; 00584be3 | DAT_01ba5c50
+    MOV EAX,[0x0060b280]                ; 00584bde | g_CDemonRenderer_PTR_0060b280
+    PUSH EAX                            ; 00584be3 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 00584be4
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 00584be9
-    MOV EDX,dword ptr [0x0060b280]      ; 00584bec | DAT_0060b280
-    PUSH EDX                            ; 00584bf2 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 00584bec | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 00584bf2 | g_CDemonRenderer_01ba5c50
     INC ESI                             ; 00584bf3
     ADD EDI,0x1b4                       ; 00584bf4
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 00584bfa
@@ -178,9 +178,9 @@ section .text
         ;   XREF to: 00584ba7 (CONDITIONAL_JUMP)  ; LAB_00584ba7
     JMP 0x00584b20                      ; 00584c37
         ;   XREF to: 00584b20 (UNCONDITIONAL_JUMP)  ; LAB_00584b20
-    MOV ESI,dword ptr [0x0060b280]      ; 00584c3c | DAT_0060b280
+    MOV ESI,dword ptr [0x0060b280]      ; 00584c3c | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_00584c3c
-    PUSH ESI                            ; 00584c42 | DAT_01ba5c50
+    PUSH ESI                            ; 00584c42 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00584c43
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00584c48

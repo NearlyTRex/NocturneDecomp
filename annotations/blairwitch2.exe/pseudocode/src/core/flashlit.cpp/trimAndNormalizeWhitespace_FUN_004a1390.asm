@@ -12,7 +12,7 @@
 ;   core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 at 004a29c5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005ba1f0
@@ -42,7 +42,7 @@ section .text
         ;   Label: LAB_004a13ac
     INC DL                              ; 004a13af
     AND EDX,0xff                        ; 004a13b1
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 004a13b7 | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 004a13b7 | g_UCHAR_ARRAY_0061ed94
     JNZ 0x004a13e9                      ; 004a13be
         ;   XREF to: 004a13e9 (CONDITIONAL_JUMP)  ; LAB_004a13e9
     LEA EAX,[ESI + EBX*0x1]             ; 004a13c0
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_004a13c9
     INC AL                              ; 004a13cb
     AND EAX,0xff                        ; 004a13cd
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004a13d2 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004a13d2 | g_UCHAR_ARRAY_0061ed94
     JZ 0x004a13f1                       ; 004a13d9
         ;   XREF to: 004a13f1 (CONDITIONAL_JUMP)  ; LAB_004a13f1
     PUSH EBX                            ; 004a13db
@@ -83,7 +83,7 @@ section .text
         ;   Label: LAB_004a13f9
     INC CL                              ; 004a13fb
     MOVZX ESI,CL                        ; 004a13fd
-    TEST byte ptr [ESI + 0x61ed94],0x2  ; 004a1400 | DAT_0061ed94
+    TEST byte ptr [ESI + 0x61ed94],0x2  ; 004a1400 | g_UCHAR_ARRAY_0061ed94
     JNZ 0x004a1413                      ; 004a1407
         ;   XREF to: 004a1413 (CONDITIONAL_JUMP)  ; LAB_004a1413
     INC EDX                             ; 004a1409

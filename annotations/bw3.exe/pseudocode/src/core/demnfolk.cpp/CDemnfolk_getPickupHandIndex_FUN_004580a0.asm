@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_jeff_dfm_005ba836
-;   undefined4 DAT_005ba83f
+;   TerminatedCString s_new_005ba83f
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260
@@ -45,7 +45,7 @@ section .text
     PUSH 0x3                            ; 004580c6
         ;   Label: LAB_004580c6
     MOV EAX,dword ptr [EBP + 0xc]       ; 004580c8
-    PUSH 0x5ba83f                       ; 004580cb | DAT_005ba83f
+    PUSH 0x5ba83f                       ; 004580cb | = "new"
     ADD EAX,0x24a8                      ; 004580d0
     PUSH EAX                            ; 004580d5
     CALL crt_string.c__strnicmp_FUN_005a3f90 ; 004580d6

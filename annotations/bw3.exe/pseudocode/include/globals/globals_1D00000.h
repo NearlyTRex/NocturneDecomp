@@ -5,9 +5,12 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CLightningBolt.h"
 #include "types/classes/CPopcorn.h"
 #include "types/classes/CRainDrop.h"
 #include "types/classes/CShell.h"
+#include "types/classes/CStormEffect.h"
+#include "types/classes/CTrail.h"
 #include "types/structs/SNotesMap.h"
 #include "types/structs/SNotesSection.h"
 
@@ -21,6 +24,12 @@ extern CDemonActorType g_CFlameClassInfo;
 extern CDemonActorType g_CFlameCanClassInfo;
 extern CDemonActorType g_CFlashlightClassInfo;
 
+// CLightningBolt
+extern CLightningBolt g_CLightningBolt_01d0bb94;
+
+// CLightningBolt[10]
+extern CLightningBolt g_CLightningBolt_ARRAY_01d00eb0[10];
+
 // CPopcorn[256]
 extern CPopcorn g_PopcornPool[256];
 
@@ -30,9 +39,34 @@ extern CRainDrop g_RainDropPool[256];
 // CShell[50]
 extern CShell g_ShellPool[50];
 
+// CStormEffect
+extern CStormEffect g_CStormEffect_01d0ce80;
+
+// CTrail[100]
+extern CTrail g_CTrail_ARRAY_01d01ab4[100];
+
 // SNotesMap[10]
 extern SNotesMap SNotesMap_ARRAY_01d0e370[10];
 
 // SNotesSection[6]
 extern SNotesSection SNotesSection_ARRAY_01d0d214[6];
+
+// char
+extern char g_CHAR_01d0cfc8;
+
+// char[512]
+extern char g_CHAR_ARRAY_01d0d010[512];
+
+// int
+extern int g_INT_01d00eac;
+extern int g_INT_01d01ab0;
+extern int g_INT_01d028c4;
+extern int g_INT_01d03b88;
+extern int g_INT_01d07b8c;
+extern int g_INT_01d0bb90;
+extern int g_INT_01d0ce7c;
+extern int g_INT_01d0cfa0;
+extern int g_INT_01d0d008;
+extern int g_INT_01d0d210;
+extern int g_INT_01d0e36c;
 

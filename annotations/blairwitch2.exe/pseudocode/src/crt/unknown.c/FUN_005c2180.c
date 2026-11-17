@@ -11,8 +11,8 @@ void FUN_005c2180(void)
 {
   (*(code *)PTR_crt_unknown_c_FUN_005c2150_0061f654)();
   (*(code *)PTR_crt_unknown_c_FUN_005c2150_0061f658)();
-  if (DAT_0061f454 != (code *)0x0) {
-    (*DAT_0061f454)();
+  if (g_PTR_0061f454 != (byte *)0x0) {
+    (*(code *)g_PTR_0061f454)();
   }
   FUN_005bd0d0();
   return;

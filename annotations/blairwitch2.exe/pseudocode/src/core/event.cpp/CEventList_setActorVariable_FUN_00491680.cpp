@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00491680(CEventList *this_ptr,char *var_name,CDemonActor *actor)
 
 {
@@ -19,8 +16,8 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00491680(CEventList 
   int iVar4;
   
   if ((actor != (CDemonActor *)0x0) && (actor->actor_name[0] == '\0')) {
-    _DAT_01d046a0 = "..\\core\\event.cpp";
-    _DAT_01d046a4 = 0xe3d;
+    g_CHAR_PTR_01d046a0 = "..\\core\\event.cpp";
+    g_INT_01d046a4 = 0xe3d;
     core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(actor);
     core_main_c_displayErrorAndQuit_FUN_004e4500("Tried to assign actor var %s an actor of type %s with no name");
   }
@@ -28,8 +25,8 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00491680(CEventList 
   if (iVar2 < 0) {
     if (actor != (CDemonActor *)0x0) {
       if (0x18 < (this_ptr->actor_vars).count) {
-        _DAT_01d046a0 = "..\\core\\event.cpp";
-        _DAT_01d046a4 = 0xe4a;
+        g_CHAR_PTR_01d046a0 = "..\\core\\event.cpp";
+        g_INT_01d046a4 = 0xe4a;
         core_main_c_displayErrorAndQuit_FUN_004e4500("CEventList::setActorVariable - already too many actor variables.  Max is %d.");
       }
       pacVar3 = (this_ptr->actor_vars).var_names + (this_ptr->actor_vars).count;

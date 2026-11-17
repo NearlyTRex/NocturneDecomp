@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00538180(CDemonSet *this_ptr,CVector3f *point)
 
 {
@@ -52,7 +50,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00538180(CDemonSet *t
             puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
             puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
           }
-          fStack_38 = fStack_38 + _DAT_005e5f59;
+          fStack_38 = fStack_38 + -10.0f;
           if ((((fStack_3c <= fStack_24) && (fStack_38 <= local_20.x)) && (fStack_34 <= local_20.y))
              && (((fStack_24 <= fStack_30 && (local_20.x <= local_2c)) && (local_20.y <= fStack_28))
                 )) {

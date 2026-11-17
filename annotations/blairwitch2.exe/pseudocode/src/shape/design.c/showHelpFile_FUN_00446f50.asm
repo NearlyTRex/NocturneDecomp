@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   help_filename
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141bc
+;   int g_INT_006141bc = 0xc8
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005b89c0
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00446fb3
     ADD dword ptr [EBP + -0x4],0xb      ; 00446fb6
-    MOV EAX,[0x006141bc]                ; 00446fba | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 00446fba | g_INT_006141bc
     SUB EAX,0xb                         ; 00446fbf
     CMP EAX,dword ptr [EBP + -0x4]      ; 00446fc2
     JGE 0x00446fe2                      ; 00446fc5

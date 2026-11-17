@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Copyright_2000_Humanhead_005ef672
 ;   TerminatedCString s_anon_005ef69a
 ;   TerminatedCString s_anon_005ef6c2
-;   undefined4 DAT_005ef6ea
+;   TerminatedCString s_anon_005ef6ea
 ;   TerminatedCString s_GameHook_enabled_005ef6ec
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
@@ -76,7 +76,7 @@ section .text
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0059c347
         ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0059c34c
-    PUSH 0x5ef6ea                       ; 0059c34f | DAT_005ef6ea
+    PUSH 0x5ef6ea                       ; 0059c34f | = "\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 0059c354 | g_CConsolePtr
     PUSH EDX                            ; 0059c35a | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0059c35b

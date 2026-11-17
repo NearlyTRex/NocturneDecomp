@@ -10,10 +10,10 @@
 ;   core_spike.cpp_CSpike_process_FUN_00560760 at 00560a7e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eb0c8
-;   undefined4 DAT_005eb0cc
-;   undefined4 DAT_005eb0d0
-;   undefined4 DAT_005eb0d4
+;   float g_FLOAT_005eb0c8 = -0.1000000
+;   float g_FLOAT_005eb0cc = 0.1000000
+;   float g_FLOAT_005eb0d0 = 2
+;   float g_FLOAT_005eb0d4 = 10
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;
 ; Called Functions:
@@ -58,13 +58,13 @@ section .text
     FLD float ptr [ESP + 0x100]         ; 00560d04
     FLD float ptr [ESP + 0x104]         ; 00560d0b
     FXCH ST3                            ; 00560d12
-    FLD float ptr [0x005eb0c8]          ; 00560d14 | DAT_005eb0c8
+    FLD float ptr [0x005eb0c8]          ; 00560d14 | g_FLOAT_005eb0c8
     FXCH                                ; 00560d1a
     FADD ST0,ST1                        ; 00560d1c
     FXCH ST3                            ; 00560d1e
     FADDP                               ; 00560d20
     FXCH                                ; 00560d22
-    FLD float ptr [0x005eb0cc]          ; 00560d24 | DAT_005eb0cc
+    FLD float ptr [0x005eb0cc]          ; 00560d24 | g_FLOAT_005eb0cc
     FXCH                                ; 00560d2a
     FADD ST0,ST1                        ; 00560d2c
     FXCH ST4                            ; 00560d2e
@@ -170,8 +170,8 @@ section .text
         ;   XREF to: 00560fbe (CONDITIONAL_JUMP)  ; LAB_00560fbe
     FLD float ptr [ESP + 0x218]         ; 00560ea1
         ;   Label: LAB_00560ea1
-    FMUL float ptr [0x005eb0d0]         ; 00560ea8 | DAT_005eb0d0
-    FADD float ptr [0x005eb0d4]         ; 00560eae | DAT_005eb0d4
+    FMUL float ptr [0x005eb0d0]         ; 00560ea8 | g_FLOAT_005eb0d0
+    FADD float ptr [0x005eb0d4]         ; 00560eae | g_FLOAT_005eb0d4
     FST float ptr [ESP + 0x218]         ; 00560eb4
     FMUL float ptr [ESP + 0x218]        ; 00560ebb
     FLD float ptr [ESP + 0x104]         ; 00560ec2

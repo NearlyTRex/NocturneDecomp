@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_clearLights_FUN_005308e0(CDemonSet *this_ptr)
 
 {
@@ -17,21 +15,21 @@ void __cdecl core_set_cpp_CDemonSet_clearLights_FUN_005308e0(CDemonSet *this_ptr
   int iVar3;
   
   iVar3 = 0;
-  if (0 < _DAT_01fc8d00) {
+  if (0 < g_INT_01fc8d00) {
     iVar2 = 0;
     do {
-      iVar1 = *(int *)(&DAT_01fc8d04 + iVar2);
+      iVar1 = *(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8d04 + iVar2);
       if (iVar1 != 0) {
         (*(code *)**(uint **)(iVar1 + 0x3c))(iVar1,2);
       }
-      iVar1 = _DAT_01fc8d00;
+      iVar1 = g_INT_01fc8d00;
       iVar3 = iVar3 + 1;
-      *(uint *)(&DAT_01fc8d04 + iVar2) = 0;
+      *(uint *)((int)g_CDemonLight_PTR_ARRAY_01fc8d04 + iVar2) = 0;
       iVar2 = iVar2 + 4;
     } while (iVar3 < iVar1);
   }
   iVar3 = 0;
-  _DAT_01fc8d00 = 0;
+  g_INT_01fc8d00 = 0;
   if (0 < this_ptr->light_count) {
     this_ptr_00 = this_ptr->lights;
     do {

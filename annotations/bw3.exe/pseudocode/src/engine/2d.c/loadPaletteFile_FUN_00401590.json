@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 58,
+    "complexity_score": 17,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 71
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -70,8 +67,8 @@
   "globals": [
     {
       "addr": "005b505c",
-      "name": "DAT_005b505c",
-      "type": "undefined4",
+      "name": "s_art_005b505c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -88,20 +85,20 @@
     },
     {
       "addr": "01c6af98",
-      "name": "DAT_01c6af98",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_01c6af98",
+      "type": "uchar[768]",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -199,30 +196,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005b505c",
-      "severity": "mild",
-      "text": "(&local_2c,&DAT_005b505c,filename,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_01c6af98",
-      "severity": "mild",
-      "text": "support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_2c,&DAT_01c6af98,0x300);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00479c64 = 00479d24
 ;   undefined1* PTR_caseD_3_00479c6c = 00479d09
-;   undefined4 DAT_01c59aa0
-;   undefined4 DAT_01c59b64
+;   int g_INT_01c59aa0
+;   int g_INT_01c59b64
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00479970
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 00479c74
     SUB ESP,0x8                         ; 00479c76
     AND ESP,0xfffffff8                  ; 00479c79
-    MOV EBX,dword ptr [0x01c59b64]      ; 00479c7c | DAT_01c59b64
+    MOV EBX,dword ptr [0x01c59b64]      ; 00479c7c | g_INT_01c59b64
     MOV EDX,dword ptr [EBP + 0x14]      ; 00479c82
     MOV dword ptr [ESP],EDX             ; 00479c85
-    MOV EDX,dword ptr [0x01c59aa0]      ; 00479c88 | DAT_01c59aa0
+    MOV EDX,dword ptr [0x01c59aa0]      ; 00479c88 | g_INT_01c59aa0
     XOR EDI,EDI                         ; 00479c8e
     TEST EDX,EDX                        ; 00479c90
     JLE 0x00479d17                      ; 00479c92
         ;   XREF to: 00479d17 (CONDITIONAL_JUMP)  ; LAB_00479d17
     MOV ESI,0x1c59aa4                   ; 00479c98
-    MOV EAX,[0x01c59aa0]                ; 00479c9d | DAT_01c59aa0
+    MOV EAX,[0x01c59aa0]                ; 00479c9d | g_INT_01c59aa0
         ;   Label: LAB_00479c9d
     LEA ECX,[EDI + 0x1]                 ; 00479ca2
     CMP ECX,EAX                         ; 00479ca5
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00479d05
     INC EBX                             ; 00479d08
         ;   Label: LAB_00479d08
-    MOV ECX,dword ptr [0x01c59aa0]      ; 00479d09 | DAT_01c59aa0
+    MOV ECX,dword ptr [0x01c59aa0]      ; 00479d09 | g_INT_01c59aa0
         ;   Label: caseD_3
     INC EDI                             ; 00479d0f
     ADD ESI,0xc                         ; 00479d10
     CMP EDI,ECX                         ; 00479d13
     JL 0x00479c9d                       ; 00479d15
         ;   XREF to: 00479c9d (CONDITIONAL_JUMP)  ; LAB_00479c9d
-    MOV dword ptr [0x01c59b64],EBX      ; 00479d17 | DAT_01c59b64
+    MOV dword ptr [0x01c59b64],EBX      ; 00479d17 | g_INT_01c59b64
         ;   Label: LAB_00479d17
     MOV ESP,EBP                         ; 00479d1d
     POP EBP                             ; 00479d1f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00479d46
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00479d47
     PUSH EAX                            ; 00479d4b
-    MOV dword ptr [0x01c59b64],EBX      ; 00479d4c | DAT_01c59b64
+    MOV dword ptr [0x01c59b64],EBX      ; 00479d4c | g_INT_01c59b64
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 00479d52
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59b64]      ; 00479d57 | DAT_01c59b64
+    MOV EBX,dword ptr [0x01c59b64]      ; 00479d57 | g_INT_01c59b64
     ADD ESP,0x2c                        ; 00479d5d
     JMP 0x00479d08                      ; 00479d60
         ;   XREF to: 00479d08 (UNCONDITIONAL_JUMP)  ; LAB_00479d08
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00479da2
     PUSH ECX                            ; 00479da6
     PUSH EDX                            ; 00479da7
-    MOV dword ptr [0x01c59b64],EBX      ; 00479da8 | DAT_01c59b64
+    MOV dword ptr [0x01c59b64],EBX      ; 00479da8 | g_INT_01c59b64
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 00479dae
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59b64]      ; 00479db3 | DAT_01c59b64
+    MOV EBX,dword ptr [0x01c59b64]      ; 00479db3 | g_INT_01c59b64
     ADD ESP,0x2c                        ; 00479db9
     JMP 0x00479d08                      ; 00479dbc
         ;   XREF to: 00479d08 (UNCONDITIONAL_JUMP)  ; LAB_00479d08

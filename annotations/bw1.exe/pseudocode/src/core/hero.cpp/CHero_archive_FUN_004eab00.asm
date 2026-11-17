@@ -254,12 +254,12 @@ section .text
         ;   Label: LAB_004ead27
     JL 0x004eab4b                       ; 004ead2e
         ;   XREF to: 004eab4b (CONDITIONAL_JUMP)  ; LAB_004eab4b
-    MOV ECX,dword ptr [0x007c3038]      ; 004ead34 | DAT_007c3038
+    MOV ECX,dword ptr [0x007c3038]      ; 004ead34 | g_INT_007c3038
     LEA EAX,[ESI + 0x1fae8]             ; 004ead3a
     CMP ECX,0x1                         ; 004ead40
     JNZ 0x004ead5e                      ; 004ead43
         ;   XREF to: 004ead5e (CONDITIONAL_JUMP)  ; LAB_004ead5e
-    MOV ESI,dword ptr [0x007c3034]      ; 004ead45 | DAT_007c3034
+    MOV ESI,dword ptr [0x007c3034]      ; 004ead45 | g_FILE_PTR_007c3034
     PUSH ESI                            ; 004ead4b
     PUSH EAX                            ; 004ead4c
     CALL core_inv.cpp_CInventory_load_FUN_004f97a0 ; 004ead4d
@@ -269,7 +269,7 @@ section .text
     POP ESI                             ; 004ead5b
     POP EBX                             ; 004ead5c
     RET                                 ; 004ead5d
-    MOV EBX,dword ptr [0x007c3034]      ; 004ead5e | DAT_007c3034
+    MOV EBX,dword ptr [0x007c3034]      ; 004ead5e | g_FILE_PTR_007c3034
         ;   Label: LAB_004ead5e
     PUSH EBX                            ; 004ead64
     PUSH EAX                            ; 004ead65

@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_melee_cpp_005e7930
 ;   TerminatedCString s_CMelee_fire_should_never_005e7942
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_melee.cpp_CMelee_fire_FUN_005097c0
     MOV ECX,0x8c                        ; 005097c5
     PUSH 0x5e7942                       ; 005097ca | = "CMelee::fire - should never be called..."
-    MOV dword ptr [0x01d1d400],EDX      ; 005097cf | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005097d5 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 005097cf | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 005097d5 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005097db
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     MOV EAX,0x1                         ; 005097e0

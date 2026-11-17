@@ -14,14 +14,14 @@ void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c950(void)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < DAT_007bc044) {
+  if (0 < g_INT_007bc044) {
     iVar2 = 0;
     do {
-      piVar1 = (int *)((int)&DAT_007bc048 + iVar2);
+      piVar1 = (int *)((int)g_CDemonActorType_PTR_ARRAY_007bc048 + iVar2);
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
       **(uint **)(*piVar1 + 0x30) = 1;
-    } while (iVar3 < DAT_007bc044);
+    } while (iVar3 < g_INT_007bc044);
   }
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_005c7018(short param_1,int *param_2,uint param_3,uint *param_4)
+; undefined4 crt_unknown_c_FUN_005c7018(short param_1,Heap *param_2,uint param_3,uint *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -12,8 +12,8 @@
 ;   crt_unknown.c_FUN_005c71d4 at 005c71f8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626220
-;   undefined4 DAT_02c9f691
+;   Heap* g_Heap_PTR_00626220 = 00000000
+;   undefined4 g_CHAR_ARRAY_02c9f690+1
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0a00
@@ -73,11 +73,11 @@ section .text
     MOV EAX,dword ptr [EBP + 0x4]       ; 005c7085
     MOV DX,DS                           ; 005c7088
     MOV dword ptr [ESP + 0x8],EAX       ; 005c708a
-    MOV EAX,0x626220                    ; 005c708e | DAT_00626220
+    MOV EAX,0x626220                    ; 005c708e | g_Heap_PTR_00626220
     CMP DX,word ptr [ESP + 0x20]        ; 005c7093
     JNZ 0x005c70bb                      ; 005c7098
         ;   XREF to: 005c70bb (CONDITIONAL_JUMP)  ; LAB_005c70bb
-    MOV EBX,dword ptr [0x00626220]      ; 005c709a | DAT_00626220
+    MOV EBX,dword ptr [0x00626220]      ; 005c709a | g_Heap_PTR_00626220
     CMP dword ptr [EBX + 0x8],0x0       ; 005c70a0
     JZ 0x005c70bb                       ; 005c70a4
         ;   XREF to: 005c70bb (CONDITIONAL_JUMP)  ; LAB_005c70bb
@@ -128,7 +128,7 @@ section .text
     DEC ECX                             ; 005c70ff
     XOR DL,DL                           ; 005c7100
     MOV dword ptr [EBX + 0x1c],ECX      ; 005c7102
-    MOV byte ptr [0x02c9f691],DL        ; 005c7105 | DAT_02c9f691
+    MOV byte ptr [0x02c9f691],DL        ; 005c7105 | g_CHAR_ARRAY_02c9f690+1
     MOV EDX,dword ptr [EAX]             ; 005c710b
     CMP EDI,EDX                         ; 005c710d
     JC 0x005c714f                       ; 005c710f
@@ -152,7 +152,7 @@ section .text
     ADD EDI,EAX                         ; 005c713e
     XOR AH,AH                           ; 005c7140
     MOV dword ptr [EDX],EDI             ; 005c7142
-    MOV byte ptr [0x02c9f691],AH        ; 005c7144 | DAT_02c9f691
+    MOV byte ptr [0x02c9f691],AH        ; 005c7144 | g_CHAR_ARRAY_02c9f690+1
     JMP 0x005c71c8                      ; 005c714a
         ;   XREF to: 005c71c8 (UNCONDITIONAL_JUMP)  ; LAB_005c71c8
     MOV ECX,EDX                         ; 005c714f
@@ -181,14 +181,14 @@ section .text
     OR DI,0x1                           ; 005c7178
     LEA ECX,[EAX + EBP*0x1]             ; 005c717c
     MOV dword ptr [EBP],EDI             ; 005c717f
-    MOV EAX,0x626220                    ; 005c7182 | DAT_00626220
+    MOV EAX,0x626220                    ; 005c7182 | g_Heap_PTR_00626220
     MOV dword ptr [ECX],EDX             ; 005c7187
     MOV DX,DS                           ; 005c7189
     MOV dword ptr [ESP],ECX             ; 005c718b
     CMP DX,word ptr [ESP + 0x20]        ; 005c718e
     JNZ 0x005c71b6                      ; 005c7193
         ;   XREF to: 005c71b6 (CONDITIONAL_JUMP)  ; LAB_005c71b6
-    MOV EBX,dword ptr [0x00626220]      ; 005c7195 | DAT_00626220
+    MOV EBX,dword ptr [0x00626220]      ; 005c7195 | g_Heap_PTR_00626220
     CMP dword ptr [EBX + 0x8],0x0       ; 005c719b
     JZ 0x005c71b6                       ; 005c719f
         ;   XREF to: 005c71b6 (CONDITIONAL_JUMP)  ; LAB_005c71b6

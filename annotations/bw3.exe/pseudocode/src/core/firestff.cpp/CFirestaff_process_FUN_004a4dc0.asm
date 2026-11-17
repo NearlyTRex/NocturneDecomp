@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;
@@ -676,7 +676,7 @@ section .text
     PUSH EAX                            ; 004a5740
     PUSH 0x5c0b49                       ; 004a5741
     PUSH EBP                            ; 004a5746
-    MOV EBX,dword ptr [0x006045f8]      ; 004a5747 | DAT_006045f8
+    MOV EBX,dword ptr [0x006045f8]      ; 004a5747 | g_CSound_PTR_006045f8
     PUSH EBX                            ; 004a574d
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004a574e
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

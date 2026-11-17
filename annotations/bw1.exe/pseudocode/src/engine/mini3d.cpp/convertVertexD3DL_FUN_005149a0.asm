@@ -11,8 +11,8 @@
 ;   engine_mini3d.cpp_polyList_FUN_005126d0 at 00512826
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8e93
-;   undefined4 DAT_0061f600
+;   float g_FLOAT_005e8e93 = 255
+;   float g_FLOAT_0061f600 = 0.5
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_lightVertex_FUN_00513ca0
@@ -43,39 +43,39 @@ section .text
         ;   XREF to: 00513ca0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_lightVertex_FUN_00513ca0(float * vertex, float * out_color)
     ADD ESP,0x8                         ; 005149d0
     FLD float ptr [ESP]                 ; 005149d3
-    FMUL float ptr [0x005e8e93]         ; 005149d6 | DAT_005e8e93
+    FMUL float ptr [0x005e8e93]         ; 005149d6 | g_FLOAT_005e8e93
     LEA EBX,[ESP + 0x1c]                ; 005149dc
     LEA EAX,[ESP + 0x10]                ; 005149e0
     FSTP float ptr [ESP + 0x1c]         ; 005149e4
     FLD float ptr [EBX]                 ; 005149e8
-    FLD float ptr [0x0061f600]          ; 005149ea | DAT_0061f600
+    FLD float ptr [0x0061f600]          ; 005149ea | g_FLOAT_0061f600
     FSUBP                               ; 005149f0
     FISTP dword ptr [EAX]               ; 005149f2
     FLD float ptr [ESP + 0x4]           ; 005149f4
-    FMUL float ptr [0x005e8e93]         ; 005149f8 | DAT_005e8e93
+    FMUL float ptr [0x005e8e93]         ; 005149f8 | g_FLOAT_005e8e93
     LEA EBX,[ESP + 0x24]                ; 005149fe
     LEA EAX,[ESP + 0x14]                ; 00514a02
     FSTP float ptr [ESP + 0x24]         ; 00514a06
     FLD float ptr [EBX]                 ; 00514a0a
-    FLD float ptr [0x0061f600]          ; 00514a0c | DAT_0061f600
+    FLD float ptr [0x0061f600]          ; 00514a0c | g_FLOAT_0061f600
     FSUBP                               ; 00514a12
     FISTP dword ptr [EAX]               ; 00514a14
     FLD float ptr [ESP + 0x8]           ; 00514a16
-    FMUL float ptr [0x005e8e93]         ; 00514a1a | DAT_005e8e93
+    FMUL float ptr [0x005e8e93]         ; 00514a1a | g_FLOAT_005e8e93
     LEA EBX,[ESP + 0x28]                ; 00514a20
     LEA EAX,[ESP + 0x20]                ; 00514a24
     FSTP float ptr [ESP + 0x28]         ; 00514a28
     FLD float ptr [EBX]                 ; 00514a2c
-    FLD float ptr [0x0061f600]          ; 00514a2e | DAT_0061f600
+    FLD float ptr [0x0061f600]          ; 00514a2e | g_FLOAT_0061f600
     FSUBP                               ; 00514a34
     FISTP dword ptr [EAX]               ; 00514a36
     FLD float ptr [ESP + 0xc]           ; 00514a38
-    FMUL float ptr [0x005e8e93]         ; 00514a3c | DAT_005e8e93
+    FMUL float ptr [0x005e8e93]         ; 00514a3c | g_FLOAT_005e8e93
     LEA EBX,[ESP + 0x2c]                ; 00514a42
     LEA EAX,[ESP + 0x18]                ; 00514a46
     FSTP float ptr [ESP + 0x2c]         ; 00514a4a
     FLD float ptr [EBX]                 ; 00514a4e
-    FLD float ptr [0x0061f600]          ; 00514a50 | DAT_0061f600
+    FLD float ptr [0x0061f600]          ; 00514a50 | g_FLOAT_0061f600
     FSUBP                               ; 00514a56
     FISTP dword ptr [EAX]               ; 00514a58
     MOV EAX,dword ptr [ESP + 0x14]      ; 00514a5a

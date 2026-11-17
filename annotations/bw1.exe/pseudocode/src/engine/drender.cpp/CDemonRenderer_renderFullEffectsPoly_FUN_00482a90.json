@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 143,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 7,
+    "pseudocode_lines": 57,
+    "suspect_count": 4,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [],
   "function": {
@@ -44,26 +43,26 @@
   "globals": [
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c4f02c",
-      "name": "DAT_01c4f02c",
-      "type": "undefined4",
+      "name": "g_PTR_01c4f02c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c51d14",
-      "name": "DAT_01c51d14",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c51d14",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c51d18",
-      "name": "DAT_01c51d18",
-      "type": "undefined4",
+      "name": "g_INT_01c51d18",
+      "type": "int",
       "value": null
     }
   ],
@@ -158,48 +157,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)g_INT_ARRAY_01bc1240",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01bc1240 + iVar3) = iVar1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01bc1240",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bc1240 + iVar3) = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01bc1240",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_01bc1240 + iVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_01bc1240",
-      "severity": "mild",
-      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(int *)((int)g_INT_ARRAY_01bc1240",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_INT_ARRAY_01bc1240 + iVar3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
+      "line": 23,
       "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
@@ -207,7 +182,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 46,
+      "line": 44,
       "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",

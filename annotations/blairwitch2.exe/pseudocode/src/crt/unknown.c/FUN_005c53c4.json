@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 736,
+    "complexity_score": 721,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 166,
-    "suspect_count": 53,
+    "suspect_count": 52,
     "suspect_types": [
       "bitcast_double_numeric",
       "bitcast_double_pair",
@@ -16,8 +16,7 @@
       "concat_reconstruction",
       "fnstsw_flag_artifact",
       "register_param",
-      "unaffected_reg",
-      "undefined_data"
+      "unaffected_reg"
     ],
     "total_lines": 395
   },
@@ -45,9 +44,9 @@
   "globals": [
     {
       "addr": "0061ee9d",
-      "name": "DAT_0061ee9d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BYTE_0061ee9d",
+      "type": "byte",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -300,14 +299,6 @@
       "severity": "moderate",
       "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
       "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0061ee9d",
-      "severity": "mild",
-      "text": "if (DAT_0061ee9d != '\\0') {",
-      "type": "undefined_data"
     },
     {
       "description": "Inferred register parameter",

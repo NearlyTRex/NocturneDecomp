@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_0048ca40(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z)
 
 {
@@ -44,13 +42,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_0048ca40(CDemonR
         iVar7 = 0;
         iStack_18 = iStack_20;
         do {
-          if ((*(byte *)(*(int *)voxel_data + iStack_18) & (&DAT_0061ab68)[iVar7]) != 0) {
-            CStack_34.x = (float)iVar7 * (this_ptr->cell_size).x * _DAT_005db968 +
+          if ((*(byte *)(*(int *)voxel_data + iStack_18) & g_UCHAR_ARRAY_0061ab68[iVar7]) != 0) {
+            CStack_34.x = (float)iVar7 * (this_ptr->cell_size).x * 0.125f +
                           (float)grid_x * fVar1 + fVar4;
             iStack_14 = iStack_1c;
-            CStack_34.y = (float)iVar8 * (this_ptr->cell_size).y * _DAT_005db968 +
+            CStack_34.y = (float)iVar8 * (this_ptr->cell_size).y * 0.125f +
                           (float)grid_y * fVar2 + fVar5;
-            CStack_34.z = (float)iStack_1c * (this_ptr->cell_size).z * _DAT_005db968 +
+            CStack_34.z = (float)iStack_1c * (this_ptr->cell_size).z * 0.125f +
                           (float)grid_z * fVar3 + fVar6;
             core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(this_ptr,&CStack_34);
           }

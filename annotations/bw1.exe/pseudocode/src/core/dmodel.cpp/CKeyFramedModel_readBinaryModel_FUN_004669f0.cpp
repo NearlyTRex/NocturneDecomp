@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFramedModel *this_ptr,_FILE *file)
 
 {
@@ -25,8 +23,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFr
   if (SVar1 != 1) goto LAB_00466a69;
   do {
     if ((local_2c < 3) || (4 < local_2c)) {
-      _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-      _DAT_01d1d404 = 0xed;
+      g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+      g_INT_01d1d404 = 0xed;
       core_main_c_displayErrorAndQuit_FUN_005030e0("KFM file is invalid version %d");
     }
     local_14 = 0;
@@ -61,8 +59,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFr
       }
     }
 LAB_00466a69:
-    _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-    _DAT_01d1d404 = 0xe7;
+    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+    g_INT_01d1d404 = 0xe7;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Error reading keyframed model file");
   } while( true );
 }

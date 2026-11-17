@@ -140,9 +140,9 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(byte **)((int)pvVar3",
+      "match": "(byte ***)((int)pvVar3",
       "severity": "moderate",
-      "text": "*(byte **)((int)pvVar3 + -0x138) = &g_CChainVTable;",
+      "text": "*(byte ***)((int)pvVar3 + -0x138) = g_CChainVTable;",
       "type": "pointer_cast"
     },
     {
@@ -294,7 +294,7 @@
       "line": 14,
       "match": "(int)pvVar3",
       "severity": "moderate",
-      "text": "*(byte **)((int)pvVar3 + -0x138) = &g_CChainVTable;",
+      "text": "*(byte ***)((int)pvVar3 + -0x138) = g_CChainVTable;",
       "type": "pointer_truncation"
     },
     {

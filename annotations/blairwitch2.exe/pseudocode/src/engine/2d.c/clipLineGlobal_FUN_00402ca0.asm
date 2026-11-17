@@ -13,10 +13,10 @@
 ;   shape_edittool.cpp_CEdCheck_render_FUN_00485610 at 004856ed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
+;   int g_INT_01c35e50
+;   int g_INT_01c35e54
 ;
 ; Called Functions:
 ;   engine_2d.c_clipAndDrawLine_FUN_00402cf0
@@ -30,13 +30,13 @@ section .text
     PUSH ESI                            ; 00402ca1
     PUSH EDI                            ; 00402ca2
     PUSH EBP                            ; 00402ca3
-    MOV EDX,dword ptr [0x01c35e54]      ; 00402ca4 | DAT_01c35e54
+    MOV EDX,dword ptr [0x01c35e54]      ; 00402ca4 | g_INT_01c35e54
     PUSH EDX                            ; 00402caa
-    MOV ECX,dword ptr [0x01c35e50]      ; 00402cab | DAT_01c35e50
+    MOV ECX,dword ptr [0x01c35e50]      ; 00402cab | g_INT_01c35e50
     PUSH ECX                            ; 00402cb1
-    MOV EBX,dword ptr [0x01c35e4c]      ; 00402cb2 | DAT_01c35e4c
+    MOV EBX,dword ptr [0x01c35e4c]      ; 00402cb2 | g_INT_01c35e4c
     PUSH EBX                            ; 00402cb8
-    MOV ESI,dword ptr [0x01c35e48]      ; 00402cb9 | DAT_01c35e48
+    MOV ESI,dword ptr [0x01c35e48]      ; 00402cb9 | g_INT_01c35e48
     PUSH ESI                            ; 00402cbf
     MOV EDI,dword ptr [ESP + 0x30]      ; 00402cc0
     PUSH EDI                            ; 00402cc4

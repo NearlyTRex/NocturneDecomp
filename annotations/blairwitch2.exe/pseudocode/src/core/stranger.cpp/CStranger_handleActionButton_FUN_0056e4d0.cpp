@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStranger *this_ptr)
 
 {
@@ -22,7 +20,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStrang
     pCVar1 = &(this_ptr->base).base.model;
     fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0);
     fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,1);
-    if ((float)_DAT_005ebe3d < fVar4 + fVar3) {
+    if ((float)0.99990000000000001 < fVar4 + fVar3) {
       iVar2 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(&this_ptr->base,0);
       switch(iVar2) {
       case 0:
@@ -34,7 +32,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStrang
       case 1:
         if ((this_ptr->base).door_to_open != (CDoor *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
-                    (g_CEditorToolsPtr,"?eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s" + 1);
+                    (g_CEditorToolsPtr,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s");
           (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }
@@ -88,7 +86,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStrang
       }
       if (((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&
          (fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
-                            ((CCharacter *)this_ptr,0), (float)_DAT_005ebe45 < fVar3)) {
+                            ((CCharacter *)this_ptr,0), (float)0.98999999999999999 < fVar3)) {
         iVar2 = core_hero_cpp_CHero_tryPullLever_FUN_004cf2b0(&this_ptr->base);
         if (iVar2 != 0) {
           (this_ptr->base).player_input.action_state.fire = 0;

@@ -59,9 +59,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1f1e
 ;   TerminatedCString s_CDeformableModel_compute_005d1f33
-;   undefined4 DAT_005e4760
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005e4760 = 0.00390625
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -138,8 +138,8 @@ section .text
     MOV ESI,0x5d1f1e                    ; 0054b63e | = "..\\core\\skeleton.cpp"
     MOV EDI,0x7e9                       ; 0054b643
     PUSH 0x5d1f33                       ; 0054b648 | = "CDeformableModel::computePartDominant..."
-    MOV dword ptr [0x01d71de0],ESI      ; 0054b64d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0054b653 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0054b64d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 0054b653 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054b659
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054b65e
@@ -214,13 +214,13 @@ section .text
     LEA EBX,[ESP + 0x1cc]               ; 0054b73f
     ADD EAX,ECX                         ; 0054b746
     FILD dword ptr [EAX]                ; 0054b748
-    FMUL float ptr [0x005e4760]         ; 0054b74a | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b74a | g_FLOAT_005e4760
     FSTP float ptr [EBX]                ; 0054b750
     FILD dword ptr [EAX + 0x4]          ; 0054b752
-    FMUL float ptr [0x005e4760]         ; 0054b755 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b755 | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x4]          ; 0054b75b
     FILD dword ptr [EAX + 0x8]          ; 0054b75e
-    FMUL float ptr [0x005e4760]         ; 0054b761 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b761 | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x8]          ; 0054b767
     XOR EAX,EAX                         ; 0054b76a
     MOV AX,word ptr [EDX + 0x2]         ; 0054b76c
@@ -230,13 +230,13 @@ section .text
     LEA EBX,[ESP + 0x1c0]               ; 0054b780
     ADD EAX,ECX                         ; 0054b787
     FILD dword ptr [EAX]                ; 0054b789
-    FMUL float ptr [0x005e4760]         ; 0054b78b | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b78b | g_FLOAT_005e4760
     FSTP float ptr [EBX]                ; 0054b791
     FILD dword ptr [EAX + 0x4]          ; 0054b793
-    FMUL float ptr [0x005e4760]         ; 0054b796 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b796 | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x4]          ; 0054b79c
     FILD dword ptr [EAX + 0x8]          ; 0054b79f
-    FMUL float ptr [0x005e4760]         ; 0054b7a2 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b7a2 | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x8]          ; 0054b7a8
     XOR EAX,EAX                         ; 0054b7ab
     MOV AX,word ptr [EDX + 0x4]         ; 0054b7ad
@@ -248,13 +248,13 @@ section .text
     ADD EAX,ECX                         ; 0054b7cf
     LEA ESI,[ESP + 0x190]               ; 0054b7d1
     FILD dword ptr [EAX]                ; 0054b7d8
-    FMUL float ptr [0x005e4760]         ; 0054b7da | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b7da | g_FLOAT_005e4760
     FSTP float ptr [EBX]                ; 0054b7e0
     FILD dword ptr [EAX + 0x4]          ; 0054b7e2
-    FMUL float ptr [0x005e4760]         ; 0054b7e5 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b7e5 | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x4]          ; 0054b7eb
     FILD dword ptr [EAX + 0x8]          ; 0054b7ee
-    FMUL float ptr [0x005e4760]         ; 0054b7f1 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054b7f1 | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x8]          ; 0054b7f7
     FLD float ptr [ESP + 0x1f0]         ; 0054b7fa
     FLD float ptr [ESP + 0x1f4]         ; 0054b801

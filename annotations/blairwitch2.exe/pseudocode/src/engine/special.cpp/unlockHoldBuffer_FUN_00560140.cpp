@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00560140(void)
 
 {
   int iVar1;
   
-  if (_DAT_0264bc50 == (code *)0x0) {
+  if (g_PTR_0264bc50 == (byte *)0x0) {
     return 0;
   }
-  iVar1 = (*_DAT_0264bc50)();
+  iVar1 = (*(code *)g_PTR_0264bc50)();
   return iVar1;
 }

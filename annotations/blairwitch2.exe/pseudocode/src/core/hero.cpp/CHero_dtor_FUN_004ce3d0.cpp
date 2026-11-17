@@ -18,11 +18,11 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004ce3d0(CHero *this_ptr,uint flags
   CDeformableModelInstance *pCVar7;
   CHero *pCVar8;
   
-  (this_ptr->base).base.vtable._ub = (CDemonActor_vtable *)&DAT_005f8274;
+  (this_ptr->base).base.vtable._ub = (CDemonActor_vtable *)g_ARRAY_PTR_005f8274;
   iVar1 = 0;
   do {
-    if (this_ptr == *(CHero **)(iVar1 + 0x1cedee4)) {
-      *(uint *)(iVar1 + 0x1cedee4) = 0;
+    if (this_ptr == *(CHero **)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar1)) {
+      *(uint *)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar1) = 0;
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x10);

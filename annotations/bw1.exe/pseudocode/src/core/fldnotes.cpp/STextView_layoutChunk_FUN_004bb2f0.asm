@@ -20,8 +20,8 @@
 ;   TerminatedCString s_Incomplete_markup_tag_be_005df96d
 ;   TerminatedCString s_Markup_tag_beginning_wit_005df997
 ;   TerminatedCString s_Unexpected_found_near_s_005df9ca
-;   undefined4 DAT_00626114
-;   undefined4 DAT_01cc4270
+;   uchar[257] g_UCHAR_ARRAY_00626114
+;   char[512] g_CHAR_ARRAY_01cc4270
 ;
 ; Called Functions:
 ;   core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004b9c50
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_004bb31a
     INC AL                              ; 004bb31c
     AND EAX,0xff                        ; 004bb31e
-    MOV DL,byte ptr [EAX + 0x626114]    ; 004bb323 | DAT_00626114
+    MOV DL,byte ptr [EAX + 0x626114]    ; 004bb323 | g_UCHAR_ARRAY_00626114
     LEA ESI,[EBX + 0x1]                 ; 004bb329
     TEST DL,0x2                         ; 004bb32c
     JZ 0x004bb335                       ; 004bb32f
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_004bb358
     INC DL                              ; 004bb35a
     AND EDX,0xff                        ; 004bb35c
-    TEST byte ptr [EDX + 0x626114],0x2  ; 004bb362 | DAT_00626114
+    TEST byte ptr [EDX + 0x626114],0x2  ; 004bb362 | g_UCHAR_ARRAY_00626114
     JZ 0x004bb4d6                       ; 004bb369
         ;   XREF to: 004bb4d6 (CONDITIONAL_JUMP)  ; LAB_004bb4d6
     XOR CH,CH                           ; 004bb36f
@@ -179,7 +179,7 @@ section .text
         ;   Label: LAB_004bb439
     PUSH EDI                            ; 004bb440
     PUSH 0x5df96d                       ; 004bb441 | = "Incomplete markup tag beginning with ..."
-    PUSH 0x1cc4270                      ; 004bb446 | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bb446 | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb44b
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bb450
@@ -194,7 +194,7 @@ section .text
         ;   Label: LAB_004bb463
     PUSH ESI                            ; 004bb46a
     PUSH 0x5df997                       ; 004bb46b | = "Markup tag beginning with '%s' - tag ..."
-    PUSH 0x1cc4270                      ; 004bb470 | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bb470 | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb475
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bb47a
@@ -217,7 +217,7 @@ section .text
         ;   Label: LAB_004bb49d
     PUSH EBX                            ; 004bb4a4
     PUSH 0x5df9ca                       ; 004bb4a5 | = "Unexpected '>' found near '%s'"
-    PUSH 0x1cc4270                      ; 004bb4aa | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bb4aa | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb4af
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bb4b4

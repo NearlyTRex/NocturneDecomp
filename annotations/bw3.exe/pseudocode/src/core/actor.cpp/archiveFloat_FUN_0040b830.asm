@@ -23,12 +23,12 @@
 ;   ... and 59 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b5aed
-;   undefined4 DAT_005b5af0
+;   TerminatedCString s_f_005b5aed
+;   TerminatedCString s_s_g_005b5af0
 ;   TerminatedCString s_Floating_point_value_005f0960
-;   undefined1 DAT_005f0990
-;   undefined4 DAT_007df9b4
-;   undefined4 DAT_007df9b8
+;   char[104] g_CHAR_ARRAY_005f0990
+;   _FILE* g_FILE_PTR_007df9b4
+;   int g_INT_007df9b8
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040b350
@@ -44,12 +44,12 @@ section .text
         ;   Label: core_actor.cpp_archiveFloat_FUN_0040b830
     PUSH EDI                            ; 0040b831
     MOV EAX,dword ptr [ESP + 0xc]       ; 0040b832
-    CMP dword ptr [0x007df9b8],0x1      ; 0040b836 | DAT_007df9b8
+    CMP dword ptr [0x007df9b8],0x1      ; 0040b836 | g_INT_007df9b8
     JNZ 0x0040b884                      ; 0040b83d
         ;   XREF to: 0040b884 (CONDITIONAL_JUMP)  ; LAB_0040b884
     PUSH EAX                            ; 0040b83f
-    PUSH 0x5b5aed                       ; 0040b840 | DAT_005b5aed
-    MOV EBX,dword ptr [0x007df9b4]      ; 0040b845 | DAT_007df9b4
+    PUSH 0x5b5aed                       ; 0040b840 | = "%f"
+    MOV EBX,dword ptr [0x007df9b4]      ; 0040b845 | g_FILE_PTR_007df9b4
     PUSH EBX                            ; 0040b84b
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0040b84c
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -82,9 +82,9 @@ section .text
         ;   Label: LAB_0040b884
     FLD float ptr [EAX]                 ; 0040b887
     FSTP double ptr [ESP]               ; 0040b889
-    PUSH 0x5f0990                       ; 0040b88c | DAT_005f0990
-    PUSH 0x5b5af0                       ; 0040b891 | DAT_005b5af0
-    MOV ECX,dword ptr [0x007df9b4]      ; 0040b896 | DAT_007df9b4
+    PUSH 0x5f0990                       ; 0040b88c | g_CHAR_ARRAY_005f0990
+    PUSH 0x5b5af0                       ; 0040b891 | = "%s%g"
+    MOV ECX,dword ptr [0x007df9b4]      ; 0040b896 | g_FILE_PTR_007df9b4
     PUSH ECX                            ; 0040b89c
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0040b89d
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)

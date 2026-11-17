@@ -21,21 +21,21 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_unknown.c_FUN_005c871c
     Address: 005c871c
-    Suspect count: 71
+    Suspect count: 63
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 005c88be: SUB ESP,EAX
     - [alt_frame_pointer] at 005c88ce: MOV ESI,ESP
 
   crt_startup.cpp_WinMainBootstrap_FUN_005ca370
     Address: 005ca370
-    Suspect count: 17
+    Suspect count: 12
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 005ca38b: SUB ESP,EAX
     - [dynamic_alloca] at 005ca3de: SUB ESP,EAX
 
   crt_unknown.c_FUN_005cea10
     Address: 005cea10
-    Suspect count: 33
+    Suspect count: 32
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 005cea3d: SUB ESP,EAX
 
@@ -44,34 +44,34 @@ MEDIUM SEVERITY - May cause decompiler artifacts
 ====================================================================================================
 
   engine_2d.c_wrapTextToWidth_FUN_00401d90
-    File: engine/2d.c, Suspects: 5
+    File: engine/2d.c, Suspects: 4
     - [alt_frame_pointer] at 00401e1d: MOV EDI,ESP
 
   engine_2d.c_loadOrBuildColorMap_FUN_00402940
-    File: engine/2d.c, Suspects: 9
+    File: engine/2d.c, Suspects: 2
     - [alt_frame_pointer] at 0040295c: MOV EDI,ESP
     - [alt_frame_pointer] at 0040297a: MOV ESI,ESP
 
   engine_3d.c_drawLineStrip2D_FUN_00404440
-    File: engine/3d.c, Suspects: 31
+    File: engine/3d.c, Suspects: 33
     - [alt_frame_pointer] at 00404490: MOV EDI,ESP
     - [alt_frame_pointer] at 004044ab: MOV EDI,ESP
     - [alt_frame_pointer] at 004044be: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip3D_FUN_004044d0
-    File: engine/3d.c, Suspects: 31
+    File: engine/3d.c, Suspects: 33
     - [alt_frame_pointer] at 00404520: MOV EDI,ESP
     - [alt_frame_pointer] at 0040453b: MOV EDI,ESP
     - [alt_frame_pointer] at 0040454e: MOV EDI,ESP
 
   engine_3d.c_drawLine2DFromIndices_FUN_00407a70
-    File: engine/3d.c, Suspects: 12
+    File: engine/3d.c, Suspects: 10
     - [alt_frame_pointer] at 00407a8a: MOV EDI,ESP
     - [alt_frame_pointer] at 00407ac1: MOV EDI,ESP
     - [alt_frame_pointer] at 00407ad1: MOV EDI,ESP
 
   engine_3d.c_drawLine3DFromIndices_FUN_00407d70
-    File: engine/3d.c, Suspects: 12
+    File: engine/3d.c, Suspects: 10
     - [alt_frame_pointer] at 00407d8a: MOV EDI,ESP
     - [alt_frame_pointer] at 00407dc1: MOV EDI,ESP
     - [alt_frame_pointer] at 00407dd1: MOV EDI,ESP
@@ -97,49 +97,49 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040904a: MOV ESI,ESP
 
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
-    File: core/actor.cpp, Suspects: 38
+    File: core/actor.cpp, Suspects: 37
     - [stack_alignment] at 0040917c: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940
-    File: core/actor.cpp, Suspects: 27
+    File: core/actor.cpp, Suspects: 7
     - [alt_frame_pointer] at 00409982: MOV EDI,ESP
 
   core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70
-    File: core/actor.cpp, Suspects: 33
+    File: core/actor.cpp, Suspects: 32
     - [stack_alignment] at 00409d79: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
-    File: core/actor.cpp, Suspects: 91
+    File: core/actor.cpp, Suspects: 90
     - [stack_alignment] at 00409f2c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b560
-    File: core/actor.cpp, Suspects: 5
+    File: core/actor.cpp, Suspects: 4
     - [alt_frame_pointer] at 0040b574: MOV EDI,ESP
     - [alt_frame_pointer] at 0040b586: MOV EDI,ESP
     - [alt_frame_pointer] at 0040b5aa: MOV EDI,ESP
     - [alt_frame_pointer] at 0040b5c6: MOV EDI,ESP
 
   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770
-    File: core/actor.cpp, Suspects: 2
+    File: core/actor.cpp, Suspects: 1
     - [alt_frame_pointer] at 0040b79d: MOV ESI,ESP
     - [alt_frame_pointer] at 0040b7b5: MOV EDI,ESP
 
   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
-    File: core/actor.cpp, Suspects: 2
+    File: core/actor.cpp, Suspects: 1
     - [alt_frame_pointer] at 0040b81d: MOV ESI,ESP
     - [alt_frame_pointer] at 0040b838: MOV EDI,ESP
 
   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c6a0
-    File: core/actor.cpp, Suspects: 1
+    File: core/actor.cpp, Suspects: 0
     - [alt_frame_pointer] at 0040c6ab: MOV EDI,ESP
     - [alt_frame_pointer] at 0040c6b9: MOV ESI,ESP
 
   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c750
-    File: core/actor.cpp, Suspects: 18
+    File: core/actor.cpp, Suspects: 17
     - [alt_frame_pointer] at 0040c783: MOV EDI,ESP
 
   core_actor.cpp_getRandomInt_FUN_0040cc60
-    File: core/actor.cpp, Suspects: 1
+    File: core/actor.cpp, Suspects: 0
     - [stack_alignment] at 0040cc68: AND ESP,0xfffffff8
 
   core_actor.cpp_CVector3f_length_FUN_0040d010
@@ -171,15 +171,15 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00410115: AND ESP,0xfffffff8
 
   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0
-    File: core/baron.cpp, Suspects: 13
+    File: core/baron.cpp, Suspects: 3
     - [stack_alignment] at 004101f9: AND ESP,0xfffffff8
 
   core_barrier.cpp_CBarrier_getBoundingBox_FUN_004108c0
-    File: core/barrier.cpp, Suspects: 3
+    File: core/barrier.cpp, Suspects: 2
     - [alt_frame_pointer] at 00410901: MOV ESI,ESP
 
   core_bat.cpp_CBat_process_FUN_00410d80
-    File: core/bat.cpp, Suspects: 12
+    File: core/bat.cpp, Suspects: 11
     - [stack_alignment] at 00410d89: AND ESP,0xfffffff8
 
   core_bat.cpp_CBat_getBoundingBox_FUN_00411000
@@ -192,11 +192,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00411067: AND ESP,0xfffffff8
 
   core_batman.cpp_CBatman_renderOpaque_FUN_00413970
-    File: core/batman.cpp, Suspects: 12
+    File: core/batman.cpp, Suspects: 4
     - [stack_alignment] at 00413979: AND ESP,0xfffffff8
 
   core_batman.cpp_CBatman_getTargetPoints_FUN_004141c0
-    File: core/batman.cpp, Suspects: 32
+    File: core/batman.cpp, Suspects: 29
     - [alt_frame_pointer] at 00414243: MOV ESI,ESP
 
   core_battery.cpp_CBattery_getBoundingBox_FUN_00414600
@@ -212,7 +212,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00414b39: AND ESP,0xfffffff8
 
   core_bird.cpp_CBird_process_FUN_00415340
-    File: core/bird.cpp, Suspects: 40
+    File: core/bird.cpp, Suspects: 38
     - [stack_alignment] at 0041534c: AND ESP,0xfffffff8
 
   core_bird.cpp_setRandomMotionVariant_FUN_00415830
@@ -220,19 +220,19 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004158c8: MOV EDI,ESP
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0
-    File: core/bmppuzzl.cpp, Suspects: 24
+    File: core/bmppuzzl.cpp, Suspects: 9
     - [alt_frame_pointer] at 0041707a: MOV EDI,ESP
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00417230
-    File: core/bmppuzzl.cpp, Suspects: 34
+    File: core/bmppuzzl.cpp, Suspects: 26
     - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00419740
-    File: core/bodypart.cpp, Suspects: 10
+    File: core/bodypart.cpp, Suspects: 9
     - [stack_alignment] at 00419749: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_processFires_FUN_00419940
-    File: core/bodypart.cpp, Suspects: 7
+    File: core/bodypart.cpp, Suspects: 6
     - [stack_alignment] at 00419949: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419ab0
@@ -241,7 +241,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00419ace: MOV ESI,ESP
 
   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
-    File: core/bodypart.cpp, Suspects: 28
+    File: core/bodypart.cpp, Suspects: 27
     - [stack_alignment] at 00419b9c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_scaleVector_FUN_0041afa0
@@ -268,5 +268,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 24.2 suspects/function
-  Without stack patterns: avg 6.1 suspects/function
+  With stack patterns:    avg 20.8 suspects/function
+  Without stack patterns: avg 4.5 suspects/function

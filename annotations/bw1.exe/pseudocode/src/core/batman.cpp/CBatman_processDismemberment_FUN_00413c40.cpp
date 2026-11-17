@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_00413c40(CBatman *this_ptr,SDamageInfo *damage_info)
 
@@ -107,26 +106,26 @@ switchD_00413c76_default:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] == 0) {
         damage_info->damage_amount = 9999.0;
       }
-      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005d3b49;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
   iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[0]) {
-    fVar3 = damage_info->damage_amount * (float)_DAT_005d3b59;
+    fVar3 = damage_info->damage_amount * (float)2.5;
   }
   else {
     if ((iVar1 == this_ptr->part_indices[6]) || (iVar1 == this_ptr->part_indices[1])) {
       damage_info->damage_amount = damage_info->damage_amount;
       goto LAB_00413e31;
     }
-    fVar3 = damage_info->damage_amount * (float)_DAT_005d3b51;
+    fVar3 = damage_info->damage_amount * (float)0.5;
   }
   damage_info->damage_amount = fVar3;
 LAB_00413e31:
   this_ptr_00 = g_CConsolePtr;
   if ((this_ptr->part_indices[1] == damage_info->hit_part_index) &&
      (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE)) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d3b61;
+    damage_info->damage_amount = damage_info->damage_amount * (float)20;
     engine_console_cpp_CConsole_printf_FUN_00445430(this_ptr_00,"Shot thru the heart\n");
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(0.5);
     if (iVar1 != 0) {

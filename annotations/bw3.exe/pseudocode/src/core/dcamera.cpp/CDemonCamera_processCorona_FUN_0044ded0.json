@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 51,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 75
   },
   "cross_references": [
@@ -55,32 +52,32 @@
   "globals": [
     {
       "addr": "00b9dd48",
-      "name": "DAT_00b9dd48",
-      "type": "undefined4",
+      "name": "g_INT_00b9dd48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0134017c",
-      "name": "DAT_0134017c",
-      "type": "undefined4",
+      "name": "g_INT_0134017c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d0",
-      "name": "DAT_0149d6d0",
-      "type": "undefined4",
+      "name": "g_INT_0149d6d0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d4",
-      "name": "DAT_0149d6d4",
-      "type": "undefined4",
+      "name": "g_INT_0149d6d4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d8",
-      "name": "DAT_0149d6d8",
-      "type": "undefined4",
+      "name": "g_INT_0149d6d8",
+      "type": "int",
       "value": null
     }
   ],
@@ -180,22 +177,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "_memcpy(&DAT_0135ead0,(void *)0x13716d0,0x12c00);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

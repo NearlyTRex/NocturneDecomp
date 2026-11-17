@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   CFilterCache* g_CFilterCachePtr = 0152c72c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0045da30
@@ -68,8 +68,8 @@ section .text
     MOV EDX,0x5d85d3                    ; 0045de06
     MOV ECX,0x15a                       ; 0045de0b
     PUSH 0x5d85e7                       ; 0045de10
-    MOV dword ptr [0x01d1d400],EDX      ; 0045de15 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0045de1b | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0045de15 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0045de1b | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045de21
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0045de26
@@ -169,8 +169,8 @@ section .text
     MOV EBP,0x5d860d                    ; 0045defe
     MOV EAX,0x166                       ; 0045df03
     PUSH 0x5d8621                       ; 0045df08
-    MOV dword ptr [0x01d1d400],EBP      ; 0045df0d | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0045df13 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0045df0d | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0045df13 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045df18
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0045df1d

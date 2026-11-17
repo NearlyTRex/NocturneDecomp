@@ -14,8 +14,8 @@
 ;   TerminatedCString s_CInventory_setupItems_we_005e6707
 ;   undefined4 g_CGasMaskClassInfo.name_hash
 ;   undefined4 g_CGogglesClassInfo.name_hash
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
@@ -79,8 +79,8 @@ section .text
         ;   Label: LAB_004f9b84
     MOV ESI,0x6c0                       ; 004f9b89
     PUSH 0x5e6707                       ; 004f9b8e | = "CInventory::setupItems - we should ow..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004f9b93 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004f9b99 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004f9b93 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 004f9b99 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f9b9f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f9ba4

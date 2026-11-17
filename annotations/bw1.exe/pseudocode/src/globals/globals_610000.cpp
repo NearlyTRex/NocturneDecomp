@@ -11,8 +11,18 @@ CConsole* g_CConsolePtr = (CConsole*)&g_CConsoleInstance;
 CDemonFilter* g_GlobalFilters = (CDemonFilter*)&CDemonFilter_ARRAY_0152c39c;
 CDemonFilter* g_PlayerFilters = (CDemonFilter*)&CDemonFilter_ARRAY_0152c39c;
 
+// CDemonMission*
+CDemonMission* g_CDemonMission_PTR_0061f650 = (CDemonMission*)0x01D2C900; // DAT_01d2c900
+
+// CDemonRenderer*
+CDemonRenderer* g_CDemonRenderer_PTR_0061255c = (CDemonRenderer*)&g_CDemonRenderer_01bc120c;
+CDemonRenderer* g_CDemonRenderer_PTR_00612560 = (CDemonRenderer*)&g_CDemonRenderer_01bc120c;
+
 // CEditorTools*
 CEditorTools* g_CEditorToolsPtr = (CEditorTools*)&g_CEditorToolsInstance;
+
+// CEventList*
+CEventList* g_CEventList_PTR_0061b4d0 = (CEventList*)&g_CEventList_01c51d80;
 
 // CFieldNotes*
 CFieldNotes* g_CFieldNotesPtr = (CFieldNotes*)&g_CFieldNotesInstance;
@@ -23,6 +33,9 @@ CFilterCache* g_CFilterCachePtr = (CFilterCache*)&g_CFilterCacheInstance;
 // CFilterFX*
 CFilterFX* g_CFilterFXPtr = (CFilterFX*)&g_CFilterFXInstance;
 
+// CFireEffect*
+CFireEffect* g_CFireEffect_PTR_0061c010 = (CFireEffect*)&g_CFireEffect_01c57074;
+
 // CGame*
 CGame* g_CGamePtr = (CGame*)&g_CGameInstance;
 
@@ -32,11 +45,1836 @@ CGore* g_CGorePtr = (CGore*)&g_CGoreInstance;
 // CGround*
 CGround* g_CGroundPtr = (CGround*)&g_CGroundInstance;
 
+// CKeys*
+CKeys* g_CKeys_PTR_0061f2a4 = (CKeys*)&g_PTR_01d1bca0;
+
 // CLevelLoader*
 CLevelLoader* g_CLevelLoaderPtr = (CLevelLoader*)&g_CLevelLoaderInstance;
 
 // CMini3D*
 CMini3D* g_CMini3DPtr = (CMini3D*)&g_CMini3DInstance;
+
+// CVector3i[62]
+CVector3i g_CVector3i_ARRAY_006113a0[62] = {
+    {
+        .x = 0x00000000,
+        .y = 0x00000100,
+        .z = 0x00000000
+    },
+    {
+        .x = -110,
+        .y = 0x000000DD,
+        .z = -64
+    },
+    {
+        .x = -128,
+        .y = 0x000000DD,
+        .z = 0x00000000
+    },
+    {
+        .x = -64,
+        .y = 0x000000DD,
+        .z = -110
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x000000DD,
+        .z = -128
+    },
+    {
+        .x = 0x00000040,
+        .y = 0x000000DD,
+        .z = -110
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x000000DD,
+        .z = -64
+    },
+    {
+        .x = 0x00000080,
+        .y = 0x000000DD,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x000000DD,
+        .z = 0x00000040
+    },
+    {
+        .x = 0x00000040,
+        .y = 0x000000DD,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x000000DD,
+        .z = 0x00000080
+    },
+    {
+        .x = -64,
+        .y = 0x000000DD,
+        .z = 0x0000006E
+    },
+    {
+        .x = -110,
+        .y = 0x000000DD,
+        .z = 0x00000040
+    },
+    {
+        .x = 0x000000DD,
+        .y = 0x00000080,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x000000C0,
+        .y = 0x00000080,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x00000080,
+        .z = 0x000000C0
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000080,
+        .z = 0x000000DD
+    },
+    {
+        .x = -110,
+        .y = 0x00000080,
+        .z = 0x000000C0
+    },
+    {
+        .x = -192,
+        .y = 0x00000080,
+        .z = 0x0000006E
+    },
+    {
+        .x = -221,
+        .y = 0x00000080,
+        .z = 0x00000000
+    },
+    {
+        .x = -192,
+        .y = 0x00000080,
+        .z = -110
+    },
+    {
+        .x = -110,
+        .y = 0x00000080,
+        .z = -192
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000080,
+        .z = -221
+    },
+    {
+        .x = 0x0000006E,
+        .y = 0x00000080,
+        .z = -192
+    },
+    {
+        .x = 0x000000C0,
+        .y = 0x00000080,
+        .z = -110
+    },
+    {
+        .x = 0x00000100,
+        .y = 0x00000000,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x000000DD,
+        .y = 0x00000000,
+        .z = 0x00000080
+    },
+    {
+        .x = 0x00000080,
+        .y = 0x00000000,
+        .z = 0x000000DD
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000000,
+        .z = 0x00000100
+    },
+    {
+        .x = -128,
+        .y = 0x00000000,
+        .z = 0x000000DD
+    },
+    {
+        .x = -221,
+        .y = 0x00000000,
+        .z = 0x00000080
+    },
+    {
+        .x = -256,
+        .y = 0x00000000,
+        .z = 0x00000000
+    },
+    {
+        .x = -221,
+        .y = 0x00000000,
+        .z = -128
+    },
+    {
+        .x = -128,
+        .y = 0x00000000,
+        .z = -221
+    },
+    {
+        .x = 0x00000000,
+        .y = 0x00000000,
+        .z = -256
+    },
+    {
+        .x = 0x00000080,
+        .y = 0x00000000,
+        .z = -221
+    },
+    {
+        .x = 0x000000DD,
+        .y = 0x00000000,
+        .z = -128
+    },
+    {
+        .x = 0x000000DD,
+        .y = -128,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x000000C0,
+        .y = -128,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x0000006E,
+        .y = -128,
+        .z = 0x000000C0
+    },
+    {
+        .x = 0x00000000,
+        .y = -128,
+        .z = 0x000000DD
+    },
+    {
+        .x = -110,
+        .y = -128,
+        .z = 0x000000C0
+    },
+    {
+        .x = -192,
+        .y = -128,
+        .z = 0x0000006E
+    },
+    {
+        .x = -221,
+        .y = -128,
+        .z = 0x00000000
+    },
+    {
+        .x = -192,
+        .y = -128,
+        .z = -110
+    },
+    {
+        .x = -110,
+        .y = -128,
+        .z = -192
+    },
+    {
+        .x = 0x00000000,
+        .y = -128,
+        .z = -221
+    },
+    {
+        .x = 0x0000006E,
+        .y = -128,
+        .z = -192
+    },
+    {
+        .x = 0x000000C0,
+        .y = -128,
+        .z = -110
+    },
+    {
+        .x = 0x00000080,
+        .y = -221,
+        .z = 0x00000000
+    },
+    {
+        .x = 0x0000006E,
+        .y = -221,
+        .z = 0x00000040
+    },
+    {
+        .x = 0x00000040,
+        .y = -221,
+        .z = 0x0000006E
+    },
+    {
+        .x = 0x00000000,
+        .y = -221,
+        .z = 0x00000080
+    },
+    {
+        .x = -64,
+        .y = -221,
+        .z = 0x0000006E
+    },
+    {
+        .x = -110,
+        .y = -221,
+        .z = 0x00000040
+    },
+    {
+        .x = -128,
+        .y = -221,
+        .z = 0x00000000
+    },
+    {
+        .x = -110,
+        .y = -221,
+        .z = -64
+    },
+    {
+        .x = -64,
+        .y = -221,
+        .z = -110
+    },
+    {
+        .x = 0x00000000,
+        .y = -221,
+        .z = -128
+    },
+    {
+        .x = 0x00000040,
+        .y = -221,
+        .z = -110
+    },
+    {
+        .x = 0x0000006E,
+        .y = -221,
+        .z = -64
+    },
+    {
+        .x = 0x00000000,
+        .y = -256,
+        .z = 0x00000000
+    }
+};
+
+// SMRGLPrimitiveQuad*[2000]
+SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_00612568[2000] = {};
+
+// SMRGLSkyTexture*
+SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_006144d0 = (SMRGLSkyTexture*)&g_SMRGLSkyTexture_ARRAY_01beefbc;
+
+// SMRGLTextureBasic
+SMRGLTextureBasic g_SMRGLTextureBasic_00610914 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BLUEGLOW.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_00610cdc = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "CHAR2.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_00611130 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BLUEGLOW.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061127c = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BACKGND.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_00611388 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "headlite.raw"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_00612258 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BLUEGLOW.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_006122a8 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "LITEFUZZ.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_006122c0 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "SUNMARK.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_006122d8 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "SUN06.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c3d4 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BHOLE.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c3ec = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "SPARK.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c404 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BLUSPARK.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c41c = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "GRNSPARK.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c44c = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "FIREFLY.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c4ac = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "REDSPARK.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c4c4 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "LASER.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c4dc = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BEAMFUZZ.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c4f4 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "RETICLE.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061c50c = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "HEADLITE.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061ca94 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BLAST1.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061cb3c = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "POPCORN.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061cb54 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "RAINDRP1.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061cda8 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "GLOW1.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061d828 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BBWHITE.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061dcb4 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "BGLOB.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061ee2c = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "FOOTSTEP.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061f274 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "INV3D.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061f2e4 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "MOONGLOW.RAW"
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_0061f414 = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "SPARK.RAW"
+};
+
+// SMRGLTextureBasic[116]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061e32c[116] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-17.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-18.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-19.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-20.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-21.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-22.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-23.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-24.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-25.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-26.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-27.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-28.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL1-29.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-17.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-18.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-19.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-20.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-21.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-22.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-23.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-24.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-25.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-26.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-27.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-28.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL2-29.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-17.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-18.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-19.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-20.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-21.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-22.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-23.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-24.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-25.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-26.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-27.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-28.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL3-29.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-17.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-18.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-19.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-20.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-21.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-22.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-23.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-24.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-25.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-26.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-27.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-28.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BPOL4-29.RAW"
+    }
+};
+
+// SMRGLTextureBasic[40]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061c014[40] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0050.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0051.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0052.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0053.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0054.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0055.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0056.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0057.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0058.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0059.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0060.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0061.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0062.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0063.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0064.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0065.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0066.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0067.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0068.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0069.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0070.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0071.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0072.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0073.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0074.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0075.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0076.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0077.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0078.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0079.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0080.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0081.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0082.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0083.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0084.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0085.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0086.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0087.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0088.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0089.RAW"
+    }
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061cdc0[40] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1500.RAW"
+    }
+};
+
+// SMRGLTextureBasic[4]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061dccc[4] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP4.RAW"
+    }
+};
+
+// SMRGLTextureBasic[54]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061c524[54] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01101.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01102.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01103.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01104.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01105.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01106.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01107.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01108.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01109.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01110.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01111.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01112.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01113.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01114.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01115.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01116.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01117.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01118.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01119.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01120.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01121.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01122.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01123.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01124.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01125.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01126.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01127.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01128.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01129.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01130.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01131.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01132.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01133.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01134.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01135.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01140.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01141.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01142.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01143.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01144.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01145.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01146.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01147.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01148.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01149.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01150.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01151.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01152.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01153.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01154.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01155.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01156.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01157.RAW"
+    }
+};
+
+// SMRGLTextureBasic[64]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061dd2c[64] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-16.RAW"
+    }
+};
+
+// SMRGLTextureBasic[6]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00610c20[6] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT4.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT5.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT6.RAW"
+    }
+};
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061caac[6] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT4.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT5.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT6.RAW"
+    }
+};
+
+// SMRGLTextureBasic[8]
+SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061f4b0[8] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1500.RAW"
+    }
+};
 
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode DAT_00610A05 = {
@@ -514,7 +2352,43 @@ WatcomStaticDestructorNode DAT_0061F820 = {
     .object_instance = (void *)&CAlphaBitmap_01d33f50
 };
 
+// byte
+byte g_BYTE_0061f7bb = 0;
+
+// char[100]
+char g_CHAR_ARRAY_0061d8f0[100] = "";
+char g_CHAR_ARRAY_0061db70[100] = "10.0.0.105";
+char g_CHAR_ARRAY_0061f210[100] = "";
+
+// char[104]
+char g_CHAR_ARRAY_006106c0[104] = "";
+char g_CHAR_ARRAY_0061f1a8[104] = "";
+char g_CHAR_ARRAY_0061f6c0[104] = "";
+char g_CHAR_ARRAY_0061f728[104] = "";
+
+// char[260]
+char g_CHAR_ARRAY_0061b2e8[260] = "";
+
+// char[300]
+char g_CHAR_ARRAY_00610728[300] = "";
+
+// char[512]
+char g_CHAR_ARRAY_0061aee8[512] = "";
+char g_CHAR_ARRAY_0061b0e8[512] = "";
+
+// char[60]
+char g_CHAR_ARRAY_0061cb70[60] = "";
+
+// float
+float g_FLOAT_00612554 = 0.1f;
+float g_FLOAT_006144d4 = 5.0f;
+float g_FLOAT_0061d954 = 3.0f;
+
 // int
+int g_INT_0061049c = 0x1;
+int g_INT_006104a0 = 0xF8;
+int g_INT_006104ec = 0x1;
+int g_INT_006104f0 = 0xFFFFFF;
 int g_CDemonActorClassVersion = 0x7;
 int g_CAmmoClassVersion = 0x1;
 int g_CAmmoBoxClassVersion = 0x4;
@@ -522,6 +2396,7 @@ int g_CAnvilClassVersion = 0x1;
 int g_CArmourClassVersion = 0x1;
 int g_CBackgroundActorClassVersion = 0x3;
 int g_CBaronClassVersion = 0x2;
+int g_INT_0061092c = 0x1;
 int g_CBarrierClassVersion = 0x2;
 int g_CBatClassVersion = 0x4;
 int g_CBatCreatureClassVersion = 0x1;
@@ -533,11 +2408,14 @@ int g_CBirdClassVersion = 0x1;
 int g_CBodyPartClassVersion = 0x6;
 int g_CBoneGuyClassVersion = 0x5;
 int g_CBoxActorClassVersion = 0x10;
+int g_INT_00610b60 = 0x2;
 int g_CBrideClassVersion = 0x4;
 int g_CBugsClassVersion = 0x1;
 int g_CCarvedClassVersion = 0x1;
 int g_CCharacterClassVersion = 0xB;
 int g_CChainClassVersion = 0x4;
+int g_INT_00610d40 = 0x1;
+int g_INT_00610d44 = 0x7FFFFFFF;
 int g_CColonelClassVersion = 0x1;
 int g_CConstructClassVersion = 0x3;
 int g_CConveyorClassVersion = 0x2;
@@ -545,27 +2423,68 @@ int g_CZombieCowClassVersion = 0x2;
 int g_CCrateClassVersion = 0x2;
 int g_CCrossbowClassVersion = 0x1;
 int g_CCurtainClassVersion = 0x6;
+int g_INT_00611224 = 0x10000;
+int g_INT_00611228 = 0xC80000;
+int g_INT_0061122c = 0x3;
+int g_INT_00611230 = 0x40;
+int g_INT_00611234 = 0x40;
+int g_INT_00611238 = 0x40;
+int g_INT_00611294 = -1;
 int g_CDemnfolkClassVersion = 0xC;
 int g_CActorDestinationClassVersion = 0x4;
+int g_INT_00612270 = 0x14;
 int g_CDjienClassVersion = 0x2;
 int g_CDocClassVersion = 0x9;
 int g_CZombieDogClassVersion = 0x2;
 int g_CDoorClassVersion = 0xD;
 int g_CDraculaBrideClassVersion = 0x9;
+int g_INT_00612550 = 0x1;
+int g_INT_00612564 = 0x1;
 int g_CDripClassVersion = 0x6;
 int g_CDroneClassVersion = 0x2;
+int g_INT_00614534 = 0;
+int g_INT_00614538 = 0;
+int g_INT_0061453c = 0;
+int g_INT_00614544 = 0;
+int g_INT_006185a8 = 0;
+int g_INT_0061ab60 = 0x4;
 int g_CDynamiteClassVersion = 0x1;
+int g_INT_0061abc4 = 0x9;
+int g_INT_0061abc8 = 0x9;
 int g_CElephantGunClassVersion = 0x1;
 int g_CEmitterClassVersion = 0xE;
 int g_CEnemyClassVersion = 0xA;
+int g_INT_0061b498 = 0x140;
+int g_INT_0061b49c = 0xC8;
+int g_INT_0061b4a0 = 0x8;
+int g_INT_0061b4a4 = 0x1;
+int g_INT_0061b4a8 = 0x100;
+int g_INT_0061b4ac = 0x7F;
+int g_INT_0061b4b0 = 0x4;
+int g_INT_0061b4b8 = 0xFF;
+int g_INT_0061b4c4 = 0x10000;
+int g_INT_0061b564 = 0x2;
+int g_INT_0061bf24 = 0x4AB164;
 int g_CFilmReelClassVersion = 0x2;
+int g_INT_0061bf2c = 0x2;
 int g_CFlameClassVersion = 0x7;
 int g_CFlameCanClassVersion = 0x1;
 int g_CFlameThrowerClassVersion = 0x1;
 int g_CFlashlightClassVersion = 0x1;
+int g_INT_0061d2e0 = 0x1;
+int g_INT_0061d2e4 = 0x1;
+int g_INT_0061d2e8 = 0x4A;
+int g_INT_0061d2ec = 0x1AE;
+int g_INT_0061d2f0 = 0x1F4;
+int g_INT_0061d2f4 = 0x1AE;
+int g_INT_0061d2f8 = 0x262;
+int g_INT_0061d2fc = 0x1C0;
+int g_INT_0061d310 = -1;
 int g_CFliesClassVersion = 0x3;
 int g_CFrankenstienMachineClassVersion = 0x1;
 int g_CGabriellaClassVersion = 0x3;
+int g_INT_0061d96c = 0x40;
+int g_INT_0061d970 = 0x40;
 int g_CGargoyleClassVersion = 0x2;
 int g_CGasMaskClassVersion = 0x1;
 int g_CGhoulClassVersion = 0x7;
@@ -576,83 +2495,121 @@ int g_CGunClassVersion = 0x1;
 int g_CHaystackClassVersion = 0x1;
 int g_CHealthItemClassVersion = 0x3;
 int g_CHeroClassVersion = 0xD;
+int g_INT_0061ef24 = 0x2;
 int g_CHiramClassVersion = 0x1;
 int g_CHostageClassVersion = 0xC;
 int g_CHotDemonClassVersion = 0x1;
 int g_CHighPriestOfGardathClassVersion = 0x1;
 int g_CIcePickClassVersion = 0x1;
 int g_CImpClassVersion = 0x1;
+int g_INT_0061f1a0 = 0xD0;
+int g_INT_0061f1a4 = 0x60;
 int g_CKeyActorClassVersion = 0x3;
 int g_CLadderClassVersion = 0x2;
 int g_CLarvaClassVersion = 0x2;
 int g_CLeverClassVersion = 0x8;
+int g_INT_0061f310 = 0x8000;
+int g_INT_0061f314 = 0x1;
+int g_INT_0061f318 = 0x10000;
+int g_INT_0061f31c = 0x10000;
 int g_CLightGunClassVersion = 0x1;
 int g_CLightPisClassVersion = 0x1;
 int g_CLightConeClassVersion = 0x2;
 int g_CMansionPuzzleCircleClassVersion = 0x3;
+int g_INT_0061f3ac = 0x1;
 int g_CMarqueeClassVersion = 0x1;
 int g_CMeleeClassVersion = 0x7;
 int g_CMimicClassVersion = 0x3;
 int g_CMineCarClassVersion = 0x1;
+int g_INT_0061f7b0 = 0;
+int g_INT_0061f7b4 = 0;
 int g_CMobsterClassVersion = 0x7;
 int g_CMolochClassVersion = 0x1;
 int g_CMooCowClassVersion = 0x1;
+int g_INT_0061f8ac = 0x1;
+int g_INT_0061f8b0 = 0x1;
+int g_INT_0061f8b4 = 0x1;
+
+// int[16]
+int g_INT_ARRAY_00610600[16] = {
+    0x000000FF, 0x000000F8, 0x00000002, 0x00000004, 0x00000001, 0x00000003, 0x00000005, 0x00000006,
+    0x00000007, 0x000000F9, 0x000000FA, 0x000000FB, 0x000000E6, 0x000000F5, 0x00000000, 0x000000FD
+};
+
+// int[5]
+int g_INT_ARRAY_0061db5c[5] = {0x00000795, 0x0000078B, 0x0000078D, 0x0000078F, 0x00000796};
+
+// int[8]
+int g_INT_ARRAY_0061123c[8] = {0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1, -1, -1};
+int g_INT_ARRAY_0061125c[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1};
+
+// qword
+qword g_QWORD_006185e8 = 0;
+qword g_QWORD_006185f0 = 0x8000800080008;
+qword g_QWORD_006185f8 = 0x4000400040004;
+qword g_QWORD_00618600 = 0xC000C000C000C;
+
+// uchar
+uchar g_UCHAR_0061f7b8 = '\0';
+uchar g_UCHAR_0061f7b9 = '\0';
+uchar g_UCHAR_0061f7ba = '\0';
+uchar g_UCHAR_0061f7bc = '\0';
+uchar g_UCHAR_0061f7c1 = '\0';
+
+// uint
+uint g_UINT_00614518 = 0;
+uint g_UINT_0061451c = 0;
+uint g_UINT_00614524 = 0;
+uint g_UINT_0061b4b4 = 0x5;
+uint g_UINT_0061b4c0 = 0x1;
+uint g_UINT_0061f7bd = 0;
+
+// uint*
+uint* g_UINT_PTR_00614548 = nullptr;
+
+// ulonglong[256]
+ulonglong g_ULONGLONG_ARRAY_0061b6a0[256] = {
+    0x0000000000000000, 0x0101010101010101, 0x0202020202020202, 0x0303030303030303, 0x0404040404040404, 0x0505050505050505, 0x0606060606060606, 0x0707070707070707,
+    0x0808080808080808, 0x0909090909090909, 0x0A0A0A0A0A0A0A0A, 0x0B0B0B0B0B0B0B0B, 0x0C0C0C0C0C0C0C0C, 0x0D0D0D0D0D0D0D0D, 0x0E0E0E0E0E0E0E0E, 0x0F0F0F0F0F0F0F0F,
+    0x1010101010101010, 0x1111111111111111, 0x1212121212121212, 0x1313131313131313, 0x1414141414141414, 0x1515151515151515, 0x1616161616161616, 0x1717171717171717,
+    0x1818181818181818, 0x1919191919191919, 0x1A1A1A1A1A1A1A1A, 0x1B1B1B1B1B1B1B1B, 0x1C1C1C1C1C1C1C1C, 0x1D1D1D1D1D1D1D1D, 0x1E1E1E1E1E1E1E1E, 0x1F1F1F1F1F1F1F1F,
+    0x2020202020202020, 0x2121212121212121, 0x2222222222222222, 0x2323232323232323, 0x2424242424242424, 0x2525252525252525, 0x2626262626262626, 0x2727272727272727,
+    0x2828282828282828, 0x2929292929292929, 0x2A2A2A2A2A2A2A2A, 0x2B2B2B2B2B2B2B2B, 0x2C2C2C2C2C2C2C2C, 0x2D2D2D2D2D2D2D2D, 0x2E2E2E2E2E2E2E2E, 0x2F2F2F2F2F2F2F2F,
+    0x3030303030303030, 0x3131313131313131, 0x3232323232323232, 0x3333333333333333, 0x3434343434343434, 0x3535353535353535, 0x3636363636363636, 0x3737373737373737,
+    0x3838383838383838, 0x3939393939393939, 0x3A3A3A3A3A3A3A3A, 0x3B3B3B3B3B3B3B3B, 0x3C3C3C3C3C3C3C3C, 0x3D3D3D3D3D3D3D3D, 0x3E3E3E3E3E3E3E3E, 0x3F3F3F3F3F3F3F3F,
+    0x4040404040404040, 0x4141414141414141, 0x4242424242424242, 0x4343434343434343, 0x4444444444444444, 0x4545454545454545, 0x4646464646464646, 0x4747474747474747,
+    0x4848484848484848, 0x4949494949494949, 0x4A4A4A4A4A4A4A4A, 0x4B4B4B4B4B4B4B4B, 0x4C4C4C4C4C4C4C4C, 0x4D4D4D4D4D4D4D4D, 0x4E4E4E4E4E4E4E4E, 0x4F4F4F4F4F4F4F4F,
+    0x5050505050505050, 0x5151515151515151, 0x5252525252525252, 0x5353535353535353, 0x5454545454545454, 0x5555555555555555, 0x5656565656565656, 0x5757575757575757,
+    0x5858585858585858, 0x5959595959595959, 0x5A5A5A5A5A5A5A5A, 0x5B5B5B5B5B5B5B5B, 0x5C5C5C5C5C5C5C5C, 0x5D5D5D5D5D5D5D5D, 0x5E5E5E5E5E5E5E5E, 0x5F5F5F5F5F5F5F5F,
+    0x6060606060606060, 0x6161616161616161, 0x6262626262626262, 0x6363636363636363, 0x6464646464646464, 0x6565656565656565, 0x6666666666666666, 0x6767676767676767,
+    0x6868686868686868, 0x6969696969696969, 0x6A6A6A6A6A6A6A6A, 0x6B6B6B6B6B6B6B6B, 0x6C6C6C6C6C6C6C6C, 0x6D6D6D6D6D6D6D6D, 0x6E6E6E6E6E6E6E6E, 0x6F6F6F6F6F6F6F6F,
+    0x7070707070707070, 0x7171717171717171, 0x7272727272727272, 0x7373737373737373, 0x7474747474747474, 0x7575757575757575, 0x7676767676767676, 0x7777777777777777,
+    0x7878787878787878, 0x7979797979797979, 0x7A7A7A7A7A7A7A7A, 0x7B7B7B7B7B7B7B7B, 0x7C7C7C7C7C7C7C7C, 0x7D7D7D7D7D7D7D7D, 0x7E7E7E7E7E7E7E7E, 0x7F7F7F7F7F7F7F7F,
+    0x8080808080808080, 0x8181818181818181, 0x8282828282828282, 0x8383838383838383, 0x8484848484848484, 0x8585858585858585, 0x8686868686868686, 0x8787878787878787,
+    0x8888888888888888, 0x8989898989898989, 0x8A8A8A8A8A8A8A8A, 0x8B8B8B8B8B8B8B8B, 0x8C8C8C8C8C8C8C8C, 0x8D8D8D8D8D8D8D8D, 0x8E8E8E8E8E8E8E8E, 0x8F8F8F8F8F8F8F8F,
+    0x9090909090909090, 0x9191919191919191, 0x9292929292929292, 0x9393939393939393, 0x9494949494949494, 0x9595959595959595, 0x9696969696969696, 0x9797979797979797,
+    0x9898989898989898, 0x9999999999999999, 0x9A9A9A9A9A9A9A9A, 0x9B9B9B9B9B9B9B9B, 0x9C9C9C9C9C9C9C9C, 0x9D9D9D9D9D9D9D9D, 0x9E9E9E9E9E9E9E9E, 0x9F9F9F9F9F9F9F9F,
+    0xA0A0A0A0A0A0A0A0, 0xA1A1A1A1A1A1A1A1, 0xA2A2A2A2A2A2A2A2, 0xA3A3A3A3A3A3A3A3, 0xA4A4A4A4A4A4A4A4, 0xA5A5A5A5A5A5A5A5, 0xA6A6A6A6A6A6A6A6, 0xA7A7A7A7A7A7A7A7,
+    0xA8A8A8A8A8A8A8A8, 0xA9A9A9A9A9A9A9A9, 0xAAAAAAAAAAAAAAAA, 0xABABABABABABABAB, 0xACACACACACACACAC, 0xADADADADADADADAD, 0xAEAEAEAEAEAEAEAE, 0xAFAFAFAFAFAFAFAF,
+    0xB0B0B0B0B0B0B0B0, 0xB1B1B1B1B1B1B1B1, 0xB2B2B2B2B2B2B2B2, 0xB3B3B3B3B3B3B3B3, 0xB4B4B4B4B4B4B4B4, 0xB5B5B5B5B5B5B5B5, 0xB6B6B6B6B6B6B6B6, 0xB7B7B7B7B7B7B7B7,
+    0xB8B8B8B8B8B8B8B8, 0xB9B9B9B9B9B9B9B9, 0xBABABABABABABABA, 0xBBBBBBBBBBBBBBBB, 0xBCBCBCBCBCBCBCBC, 0xBDBDBDBDBDBDBDBD, 0xBEBEBEBEBEBEBEBE, 0xBFBFBFBFBFBFBFBF,
+    0xC0C0C0C0C0C0C0C0, 0xC1C1C1C1C1C1C1C1, 0xC2C2C2C2C2C2C2C2, 0xC3C3C3C3C3C3C3C3, 0xC4C4C4C4C4C4C4C4, 0xC5C5C5C5C5C5C5C5, 0xC6C6C6C6C6C6C6C6, 0xC7C7C7C7C7C7C7C7,
+    0xC8C8C8C8C8C8C8C8, 0xC9C9C9C9C9C9C9C9, 0xCACACACACACACACA, 0xCBCBCBCBCBCBCBCB, 0xCCCCCCCCCCCCCCCC, 0xCDCDCDCDCDCDCDCD, 0xCECECECECECECECE, 0xCFCFCFCFCFCFCFCF,
+    0xD0D0D0D0D0D0D0D0, 0xD1D1D1D1D1D1D1D1, 0xD2D2D2D2D2D2D2D2, 0xD3D3D3D3D3D3D3D3, 0xD4D4D4D4D4D4D4D4, 0xD5D5D5D5D5D5D5D5, 0xD6D6D6D6D6D6D6D6, 0xD7D7D7D7D7D7D7D7,
+    0xD8D8D8D8D8D8D8D8, 0xD9D9D9D9D9D9D9D9, 0xDADADADADADADADA, 0xDBDBDBDBDBDBDBDB, 0xDCDCDCDCDCDCDCDC, 0xDDDDDDDDDDDDDDDD, 0xDEDEDEDEDEDEDEDE, 0xDFDFDFDFDFDFDFDF,
+    0xE0E0E0E0E0E0E0E0, 0xE1E1E1E1E1E1E1E1, 0xE2E2E2E2E2E2E2E2, 0xE3E3E3E3E3E3E3E3, 0xE4E4E4E4E4E4E4E4, 0xE5E5E5E5E5E5E5E5, 0xE6E6E6E6E6E6E6E6, 0xE7E7E7E7E7E7E7E7,
+    0xE8E8E8E8E8E8E8E8, 0xE9E9E9E9E9E9E9E9, 0xEAEAEAEAEAEAEAEA, 0xEBEBEBEBEBEBEBEB, 0xECECECECECECECEC, 0xEDEDEDEDEDEDEDED, 0xEEEEEEEEEEEEEEEE, 0xEFEFEFEFEFEFEFEF,
+    0xF0F0F0F0F0F0F0F0, 0xF1F1F1F1F1F1F1F1, 0xF2F2F2F2F2F2F2F2, 0xF3F3F3F3F3F3F3F3, 0xF4F4F4F4F4F4F4F4, 0xF5F5F5F5F5F5F5F5, 0xF6F6F6F6F6F6F6F6, 0xF7F7F7F7F7F7F7F7,
+    0xF8F8F8F8F8F8F8F8, 0xF9F9F9F9F9F9F9F9, 0xFAFAFAFAFAFAFAFA, 0xFBFBFBFBFBFBFBFB, 0xFCFCFCFCFCFCFCFC, 0xFDFDFDFDFDFDFDFD, 0xFEFEFEFEFEFEFEFE, 0xFFFFFFFFFFFFFFFF
+};
 
 // undefined1
 undefined1 DAT_006106bf = 0x00;
-undefined1 DAT_006106c0 = 0x00;
-undefined1 DAT_006106c1 = 0x00;
-undefined1 DAT_0061f7b8 = 0x00;
-undefined1 DAT_0061f7bc = 0x00;
-undefined1 DAT_0061f7c1 = 0x00;
-
-// undefined2
-undefined2 DAT_0061cb74 = 0x0000;
 
 // undefined4
-undefined4 DAT_0061049c = 0x00000001;
-undefined4 DAT_006104a0 = 0x000000F8;
-undefined4 DAT_006104f0 = 0x00FFFFFF;
-undefined4 DAT_00610728 = 0x00000000;
-undefined4 DAT_0061072c = 0x00000000;
-undefined4 DAT_00610d44 = 0x7FFFFFFF;
-undefined4 DAT_00611224 = 0x00010000;
-undefined4 DAT_00611228 = 0x00C80000;
-undefined4 DAT_0061122c = 0x00000003;
-undefined4 DAT_00611230 = 0x00000040;
-undefined4 DAT_00611234 = 0x00000040;
-undefined4 DAT_00611238 = 0x00000040;
-undefined4 DAT_0061123c = 0x00000000;
-undefined4 DAT_006113a0 = 0x00000000;
-undefined4 DAT_006113a8 = 0x00000000;
 undefined4 DAT_006116a4 = 0x00000000;
 undefined4 DAT_006116a8 = 0x00000000;
 undefined4 DAT_006116c8 = 0x00000000;
-undefined4 DAT_00612560 = 0x01BC120C;
-undefined4 DAT_00612564 = 0x00000001;
-undefined4 DAT_00614518 = 0x00000000;
-undefined4 DAT_0061451c = 0x00000000;
-undefined4 DAT_00614524 = 0x00000000;
-undefined4 DAT_00614540 = 0x00000000;
-undefined4 DAT_00614544 = 0x00000000;
-undefined4 DAT_00614548 = 0x00000000;
-undefined4 DAT_00619b60 = 0x00000000;
-undefined4 DAT_0061abc4 = 0x00000009;
-undefined4 DAT_0061abc8 = 0x00000009;
-undefined4 DAT_0061aee8 = 0x00000000;
-undefined4 DAT_0061aeec = 0x00000000;
-undefined4 DAT_0061b0e8 = 0x00000000;
-undefined4 DAT_0061b0ec = 0x00000000;
-undefined4 DAT_0061b2e8 = 0x00000000;
-undefined4 DAT_0061b2ec = 0x00000000;
-undefined4 DAT_0061b498 = 0x00000140;
-undefined4 DAT_0061b49c = 0x000000C8;
-undefined4 DAT_0061b4a0 = 0x00000008;
-undefined4 DAT_0061b4a8 = 0x00000100;
-undefined4 DAT_0061b4ac = 0x0000007F;
-undefined4 DAT_0061b4b8 = 0x000000FF;
-undefined4 DAT_0061b4c0 = 0x00000001;
-undefined4 DAT_0061b4c4 = 0x00010000;
 undefined4 DAT_0061b4d4 = 0x00000000;
 undefined4 DAT_0061b514 = 0x00000000;
 undefined4 DAT_0061b518 = 0x00000000;
@@ -661,35 +2618,298 @@ undefined4 DAT_0061b568 = 0x00000000;
 undefined4 DAT_0061b56c = 0x00000000;
 undefined4 DAT_0061b630 = 0x00000000;
 undefined4 DAT_0061b634 = 0x00000000;
-undefined4 DAT_0061cb70 = 0x00000000;
-undefined4 DAT_0061d2e0 = 0x00000001;
-undefined4 DAT_0061d2e4 = 0x00000001;
-undefined4 DAT_0061d310 = 0xFFFFFFFF;
 undefined4 DAT_0061d420 = 0x00000000;
 undefined4 DAT_0061d424 = 0x00000000;
-undefined4 DAT_0061f1a8 = 0x00000000;
-undefined4 DAT_0061f1ac = 0x00000000;
-undefined4 DAT_0061f210 = 0x00000000;
-undefined4 DAT_0061f214 = 0x00000000;
-undefined4 DAT_0061f310 = 0x00008000;
-undefined4 DAT_0061f314 = 0x00000001;
-undefined4 DAT_0061f318 = 0x00010000;
-undefined4 DAT_0061f31c = 0x00010000;
-undefined4 DAT_0061f6c0 = 0x00000000;
-undefined4 DAT_0061f6c4 = 0x00000000;
-undefined4 DAT_0061f728 = 0x00000000;
-undefined4 DAT_0061f72c = 0x00000000;
-undefined4 DAT_0061f7bd = 0x00000000;
-undefined4 DAT_0061f8ac = 0x00000001;
-undefined4 DAT_0061f8b0 = 0x00000001;
-undefined4 DAT_0061f8b4 = 0x00000001;
 
 // undefined8
-undefined8 DAT_006185a8 = 0x0000000000000000;
-undefined8 DAT_006185e8 = 0x0000000000000000;
 undefined8 DAT_00618608 = 0x0000000000000000;
 
+// ushort
+ushort g_USHORT_0061f5d8 = 0;
+
+// ushort[2048]
+ushort g_USHORT_ARRAY_00619b60[2048] = {
+    0x0000, 0x0000, 0x0000, 0x0000, 0x0040, 0x0040, 0x0040, 0x0040,
+    0x0080, 0x0080, 0x0080, 0x0080, 0x00C0, 0x00C0, 0x00C0, 0x00C0,
+    0x0100, 0x0100, 0x0100, 0x0100, 0x0140, 0x0140, 0x0140, 0x0140,
+    0x0180, 0x0180, 0x0180, 0x0180, 0x01C0, 0x01C0, 0x01C0, 0x01C0,
+    0x0200, 0x0200, 0x0200, 0x0200, 0x0240, 0x0240, 0x0240, 0x0240,
+    0x0280, 0x0280, 0x0280, 0x0280, 0x02C0, 0x02C0, 0x02C0, 0x02C0,
+    0x0300, 0x0300, 0x0300, 0x0300, 0x0340, 0x0340, 0x0340, 0x0340,
+    0x0380, 0x0380, 0x0380, 0x0380, 0x03C0, 0x03C0, 0x03C0, 0x03C0,
+    0x0400, 0x0400, 0x0400, 0x0400, 0x0440, 0x0440, 0x0440, 0x0440,
+    0x0480, 0x0480, 0x0480, 0x0480, 0x04C0, 0x04C0, 0x04C0, 0x04C0,
+    0x0500, 0x0500, 0x0500, 0x0500, 0x0540, 0x0540, 0x0540, 0x0540,
+    0x0580, 0x0580, 0x0580, 0x0580, 0x05C0, 0x05C0, 0x05C0, 0x05C0,
+    0x0600, 0x0600, 0x0600, 0x0600, 0x0640, 0x0640, 0x0640, 0x0640,
+    0x0680, 0x0680, 0x0680, 0x0680, 0x06C0, 0x06C0, 0x06C0, 0x06C0,
+    0x0700, 0x0700, 0x0700, 0x0700, 0x0740, 0x0740, 0x0740, 0x0740,
+    0x0780, 0x0780, 0x0780, 0x0780, 0x07C0, 0x07C0, 0x07C0, 0x07C0,
+    0x0800, 0x0800, 0x0800, 0x0800, 0x0840, 0x0840, 0x0840, 0x0840,
+    0x0880, 0x0880, 0x0880, 0x0880, 0x08C0, 0x08C0, 0x08C0, 0x08C0,
+    0x0900, 0x0900, 0x0900, 0x0900, 0x0940, 0x0940, 0x0940, 0x0940,
+    0x0980, 0x0980, 0x0980, 0x0980, 0x09C0, 0x09C0, 0x09C0, 0x09C0,
+    0x0A00, 0x0A00, 0x0A00, 0x0A00, 0x0A40, 0x0A40, 0x0A40, 0x0A40,
+    0x0A80, 0x0A80, 0x0A80, 0x0A80, 0x0AC0, 0x0AC0, 0x0AC0, 0x0AC0,
+    0x0B00, 0x0B00, 0x0B00, 0x0B00, 0x0B40, 0x0B40, 0x0B40, 0x0B40,
+    0x0B80, 0x0B80, 0x0B80, 0x0B80, 0x0BC0, 0x0BC0, 0x0BC0, 0x0BC0,
+    0x0C00, 0x0C00, 0x0C00, 0x0C00, 0x0C40, 0x0C40, 0x0C40, 0x0C40,
+    0x0C80, 0x0C80, 0x0C80, 0x0C80, 0x0CC0, 0x0CC0, 0x0CC0, 0x0CC0,
+    0x0D00, 0x0D00, 0x0D00, 0x0D00, 0x0D40, 0x0D40, 0x0D40, 0x0D40,
+    0x0D80, 0x0D80, 0x0D80, 0x0D80, 0x0DC0, 0x0DC0, 0x0DC0, 0x0DC0,
+    0x0E00, 0x0E00, 0x0E00, 0x0E00, 0x0E40, 0x0E40, 0x0E40, 0x0E40,
+    0x0E80, 0x0E80, 0x0E80, 0x0E80, 0x0EC0, 0x0EC0, 0x0EC0, 0x0EC0,
+    0x0F00, 0x0F00, 0x0F00, 0x0F00, 0x0F40, 0x0F40, 0x0F40, 0x0F40,
+    0x0F80, 0x0F80, 0x0F80, 0x0F80, 0x0FC0, 0x0FC0, 0x0FC0, 0x0FC0,
+    0x1000, 0x1000, 0x1000, 0x1000, 0x1040, 0x1040, 0x1040, 0x1040,
+    0x1080, 0x1080, 0x1080, 0x1080, 0x10C0, 0x10C0, 0x10C0, 0x10C0,
+    0x1100, 0x1100, 0x1100, 0x1100, 0x1140, 0x1140, 0x1140, 0x1140,
+    0x1180, 0x1180, 0x1180, 0x1180, 0x11C0, 0x11C0, 0x11C0, 0x11C0,
+    0x1200, 0x1200, 0x1200, 0x1200, 0x1240, 0x1240, 0x1240, 0x1240,
+    0x1280, 0x1280, 0x1280, 0x1280, 0x12C0, 0x12C0, 0x12C0, 0x12C0,
+    0x1300, 0x1300, 0x1300, 0x1300, 0x1340, 0x1340, 0x1340, 0x1340,
+    0x1380, 0x1380, 0x1380, 0x1380, 0x13C0, 0x13C0, 0x13C0, 0x13C0,
+    0x1400, 0x1400, 0x1400, 0x1400, 0x1440, 0x1440, 0x1440, 0x1440,
+    0x1480, 0x1480, 0x1480, 0x1480, 0x14C0, 0x14C0, 0x14C0, 0x14C0,
+    0x1500, 0x1500, 0x1500, 0x1500, 0x1540, 0x1540, 0x1540, 0x1540,
+    0x1580, 0x1580, 0x1580, 0x1580, 0x15C0, 0x15C0, 0x15C0, 0x15C0,
+    0x1600, 0x1600, 0x1600, 0x1600, 0x1640, 0x1640, 0x1640, 0x1640,
+    0x1680, 0x1680, 0x1680, 0x1680, 0x16C0, 0x16C0, 0x16C0, 0x16C0,
+    0x1700, 0x1700, 0x1700, 0x1700, 0x1740, 0x1740, 0x1740, 0x1740,
+    0x1780, 0x1780, 0x1780, 0x1780, 0x17C0, 0x17C0, 0x17C0, 0x17C0,
+    0x1800, 0x1800, 0x1800, 0x1800, 0x1840, 0x1840, 0x1840, 0x1840,
+    0x1880, 0x1880, 0x1880, 0x1880, 0x18C0, 0x18C0, 0x18C0, 0x18C0,
+    0x1900, 0x1900, 0x1900, 0x1900, 0x1940, 0x1940, 0x1940, 0x1940,
+    0x1980, 0x1980, 0x1980, 0x1980, 0x19C0, 0x19C0, 0x19C0, 0x19C0,
+    0x1A00, 0x1A00, 0x1A00, 0x1A00, 0x1A40, 0x1A40, 0x1A40, 0x1A40,
+    0x1A80, 0x1A80, 0x1A80, 0x1A80, 0x1AC0, 0x1AC0, 0x1AC0, 0x1AC0,
+    0x1B00, 0x1B00, 0x1B00, 0x1B00, 0x1B40, 0x1B40, 0x1B40, 0x1B40,
+    0x1B80, 0x1B80, 0x1B80, 0x1B80, 0x1BC0, 0x1BC0, 0x1BC0, 0x1BC0,
+    0x1C00, 0x1C00, 0x1C00, 0x1C00, 0x1C40, 0x1C40, 0x1C40, 0x1C40,
+    0x1C80, 0x1C80, 0x1C80, 0x1C80, 0x1CC0, 0x1CC0, 0x1CC0, 0x1CC0,
+    0x1D00, 0x1D00, 0x1D00, 0x1D00, 0x1D40, 0x1D40, 0x1D40, 0x1D40,
+    0x1D80, 0x1D80, 0x1D80, 0x1D80, 0x1DC0, 0x1DC0, 0x1DC0, 0x1DC0,
+    0x1E00, 0x1E00, 0x1E00, 0x1E00, 0x1E40, 0x1E40, 0x1E40, 0x1E40,
+    0x1E80, 0x1E80, 0x1E80, 0x1E80, 0x1EC0, 0x1EC0, 0x1EC0, 0x1EC0,
+    0x1F00, 0x1F00, 0x1F00, 0x1F00, 0x1F40, 0x1F40, 0x1F40, 0x1F40,
+    0x1F80, 0x1F80, 0x1F80, 0x1F80, 0x1FC0, 0x1FC0, 0x1FC0, 0x1FC0,
+    0x2000, 0x2000, 0x2000, 0x2000, 0x2040, 0x2040, 0x2040, 0x2040,
+    0x2080, 0x2080, 0x2080, 0x2080, 0x20C0, 0x20C0, 0x20C0, 0x20C0,
+    0x2100, 0x2100, 0x2100, 0x2100, 0x2140, 0x2140, 0x2140, 0x2140,
+    0x2180, 0x2180, 0x2180, 0x2180, 0x21C0, 0x21C0, 0x21C0, 0x21C0,
+    0x2200, 0x2200, 0x2200, 0x2200, 0x2240, 0x2240, 0x2240, 0x2240,
+    0x2280, 0x2280, 0x2280, 0x2280, 0x22C0, 0x22C0, 0x22C0, 0x22C0,
+    0x2300, 0x2300, 0x2300, 0x2300, 0x2340, 0x2340, 0x2340, 0x2340,
+    0x2380, 0x2380, 0x2380, 0x2380, 0x23C0, 0x23C0, 0x23C0, 0x23C0,
+    0x2400, 0x2400, 0x2400, 0x2400, 0x2440, 0x2440, 0x2440, 0x2440,
+    0x2480, 0x2480, 0x2480, 0x2480, 0x24C0, 0x24C0, 0x24C0, 0x24C0,
+    0x2500, 0x2500, 0x2500, 0x2500, 0x2540, 0x2540, 0x2540, 0x2540,
+    0x2580, 0x2580, 0x2580, 0x2580, 0x25C0, 0x25C0, 0x25C0, 0x25C0,
+    0x2600, 0x2600, 0x2600, 0x2600, 0x2640, 0x2640, 0x2640, 0x2640,
+    0x2680, 0x2680, 0x2680, 0x2680, 0x26C0, 0x26C0, 0x26C0, 0x26C0,
+    0x2700, 0x2700, 0x2700, 0x2700, 0x2740, 0x2740, 0x2740, 0x2740,
+    0x2780, 0x2780, 0x2780, 0x2780, 0x27C0, 0x27C0, 0x27C0, 0x27C0,
+    0x2800, 0x2800, 0x2800, 0x2800, 0x2840, 0x2840, 0x2840, 0x2840,
+    0x2880, 0x2880, 0x2880, 0x2880, 0x28C0, 0x28C0, 0x28C0, 0x28C0,
+    0x2900, 0x2900, 0x2900, 0x2900, 0x2940, 0x2940, 0x2940, 0x2940,
+    0x2980, 0x2980, 0x2980, 0x2980, 0x29C0, 0x29C0, 0x29C0, 0x29C0,
+    0x2A00, 0x2A00, 0x2A00, 0x2A00, 0x2A40, 0x2A40, 0x2A40, 0x2A40,
+    0x2A80, 0x2A80, 0x2A80, 0x2A80, 0x2AC0, 0x2AC0, 0x2AC0, 0x2AC0,
+    0x2B00, 0x2B00, 0x2B00, 0x2B00, 0x2B40, 0x2B40, 0x2B40, 0x2B40,
+    0x2B80, 0x2B80, 0x2B80, 0x2B80, 0x2BC0, 0x2BC0, 0x2BC0, 0x2BC0,
+    0x2C00, 0x2C00, 0x2C00, 0x2C00, 0x2C40, 0x2C40, 0x2C40, 0x2C40,
+    0x2C80, 0x2C80, 0x2C80, 0x2C80, 0x2CC0, 0x2CC0, 0x2CC0, 0x2CC0,
+    0x2D00, 0x2D00, 0x2D00, 0x2D00, 0x2D40, 0x2D40, 0x2D40, 0x2D40,
+    0x2D80, 0x2D80, 0x2D80, 0x2D80, 0x2DC0, 0x2DC0, 0x2DC0, 0x2DC0,
+    0x2E00, 0x2E00, 0x2E00, 0x2E00, 0x2E40, 0x2E40, 0x2E40, 0x2E40,
+    0x2E80, 0x2E80, 0x2E80, 0x2E80, 0x2EC0, 0x2EC0, 0x2EC0, 0x2EC0,
+    0x2F00, 0x2F00, 0x2F00, 0x2F00, 0x2F40, 0x2F40, 0x2F40, 0x2F40,
+    0x2F80, 0x2F80, 0x2F80, 0x2F80, 0x2FC0, 0x2FC0, 0x2FC0, 0x2FC0,
+    0x3000, 0x3000, 0x3000, 0x3000, 0x3040, 0x3040, 0x3040, 0x3040,
+    0x3080, 0x3080, 0x3080, 0x3080, 0x30C0, 0x30C0, 0x30C0, 0x30C0,
+    0x3100, 0x3100, 0x3100, 0x3100, 0x3140, 0x3140, 0x3140, 0x3140,
+    0x3180, 0x3180, 0x3180, 0x3180, 0x31C0, 0x31C0, 0x31C0, 0x31C0,
+    0x3200, 0x3200, 0x3200, 0x3200, 0x3240, 0x3240, 0x3240, 0x3240,
+    0x3280, 0x3280, 0x3280, 0x3280, 0x32C0, 0x32C0, 0x32C0, 0x32C0,
+    0x3300, 0x3300, 0x3300, 0x3300, 0x3340, 0x3340, 0x3340, 0x3340,
+    0x3380, 0x3380, 0x3380, 0x3380, 0x33C0, 0x33C0, 0x33C0, 0x33C0,
+    0x3400, 0x3400, 0x3400, 0x3400, 0x3440, 0x3440, 0x3440, 0x3440,
+    0x3480, 0x3480, 0x3480, 0x3480, 0x34C0, 0x34C0, 0x34C0, 0x34C0,
+    0x3500, 0x3500, 0x3500, 0x3500, 0x3540, 0x3540, 0x3540, 0x3540,
+    0x3580, 0x3580, 0x3580, 0x3580, 0x35C0, 0x35C0, 0x35C0, 0x35C0,
+    0x3600, 0x3600, 0x3600, 0x3600, 0x3640, 0x3640, 0x3640, 0x3640,
+    0x3680, 0x3680, 0x3680, 0x3680, 0x36C0, 0x36C0, 0x36C0, 0x36C0,
+    0x3700, 0x3700, 0x3700, 0x3700, 0x3740, 0x3740, 0x3740, 0x3740,
+    0x3780, 0x3780, 0x3780, 0x3780, 0x37C0, 0x37C0, 0x37C0, 0x37C0,
+    0x3800, 0x3800, 0x3800, 0x3800, 0x3840, 0x3840, 0x3840, 0x3840,
+    0x3880, 0x3880, 0x3880, 0x3880, 0x38C0, 0x38C0, 0x38C0, 0x38C0,
+    0x3900, 0x3900, 0x3900, 0x3900, 0x3940, 0x3940, 0x3940, 0x3940,
+    0x3980, 0x3980, 0x3980, 0x3980, 0x39C0, 0x39C0, 0x39C0, 0x39C0,
+    0x3A00, 0x3A00, 0x3A00, 0x3A00, 0x3A40, 0x3A40, 0x3A40, 0x3A40,
+    0x3A80, 0x3A80, 0x3A80, 0x3A80, 0x3AC0, 0x3AC0, 0x3AC0, 0x3AC0,
+    0x3B00, 0x3B00, 0x3B00, 0x3B00, 0x3B40, 0x3B40, 0x3B40, 0x3B40,
+    0x3B80, 0x3B80, 0x3B80, 0x3B80, 0x3BC0, 0x3BC0, 0x3BC0, 0x3BC0,
+    0x3C00, 0x3C00, 0x3C00, 0x3C00, 0x3C40, 0x3C40, 0x3C40, 0x3C40,
+    0x3C80, 0x3C80, 0x3C80, 0x3C80, 0x3CC0, 0x3CC0, 0x3CC0, 0x3CC0,
+    0x3D00, 0x3D00, 0x3D00, 0x3D00, 0x3D40, 0x3D40, 0x3D40, 0x3D40,
+    0x3D80, 0x3D80, 0x3D80, 0x3D80, 0x3DC0, 0x3DC0, 0x3DC0, 0x3DC0,
+    0x3E00, 0x3E00, 0x3E00, 0x3E00, 0x3E40, 0x3E40, 0x3E40, 0x3E40,
+    0x3E80, 0x3E80, 0x3E80, 0x3E80, 0x3EC0, 0x3EC0, 0x3EC0, 0x3EC0,
+    0x3F00, 0x3F00, 0x3F00, 0x3F00, 0x3F40, 0x3F40, 0x3F40, 0x3F40,
+    0x3F80, 0x3F80, 0x3F80, 0x3F80, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0,
+    0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0, 0x3FC0
+};
+
 // void*
+void* g_PTR_00614540 = nullptr;
 void* switchdataD_0061bea0 = (void*)0x004AB05C; // caseD_0
 void* switchdataD_0061bee4 = (void*)0x004AB0EB; // caseD_0
+
+// void*[67]
+void* g_ARRAY_PTR_006104f4[67] = {
+    (void*)engine_3d_c_badMRGLStruct_FUN_004037b0, (void*)engine_3d_c_processCameraRelativePoint_FUN_004037e0, (void*)engine_3d_c_transformAndBufferVertices_FUN_00403840, (void*)engine_3d_c_processVertexLighting_FUN_004039f0,
+    (void*)engine_3d_c_processTextureCoordinates_FUN_00403a50, (void*)engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403aa0, (void*)engine_3d_c_renderPolygonFogColorOp6_FUN_00403b70, (void*)engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403c90,
+    (void*)engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00403d30, (void*)engine_3d_c_skipOldFuncOp_FUN_00403dd0, (void*)engine_3d_c_processPolygonColor_FUN_00403de0, (void*)engine_3d_c_skipOldFuncOp_FUN_00403dd0,
+    (void*)engine_3d_c_skipOldFuncOp_FUN_00403dd0, (void*)engine_texture_cpp_ensureTextureLoaded_FUN_00597a20, (void*)engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70, (void*)engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00404070,
+    (void*)engine_3d_c_skipOldFuncOp_FUN_00403dd0, (void*)engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00404120, (void*)engine_3d_c_skipOldFuncOp_FUN_00403dd0, (void*)engine_3d_c_badMRGLStruct_FUN_004037b0,
+    (void*)engine_3d_c_setRelativeCoord_FUN_00404320, (void*)engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_00404370, (void*)engine_3d_c_drawLineStrip2D_FUN_00404440, (void*)engine_3d_c_skipOldFuncOp_FUN_00403dd0,
+    (void*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560, (void*)engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404980, (void*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404b00, (void*)engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00404bf0,
+    (void*)engine_3d_c_skipOldFuncOp_FUN_00403dd0, (void*)engine_3d_c_updateAnimatedTexture_FUN_00404f10, (void*)engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00404fc0, (void*)engine_3d_c_setVertexTextureU_FUN_004050c0,
+    (void*)engine_keyframe_c_interpolateCubicKeyframes_FUN_004fcd30, (void*)engine_3d_c_renderPolygonDestReadBlendOp33_FUN_00405100, (void*)engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0, (void*)engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_004048e0,
+    (void*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0, (void*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600, (void*)engine_boss_c_modelStructNotSupported1_FUN_0041d8f0, (void*)engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_00405720,
+    (void*)engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405850, (void*)engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0, (void*)engine_3d_c_renderPolygonFogTexturedDepthOp42_FUN_00405b30, (void*)engine_3d_c_renderPolygonTexturedDepthWriteOp43_FUN_00405bd0,
+    (void*)engine_3d_c_renderPolygonFogTexturedDepthWriteOp44_FUN_00405c70, (void*)engine_3d_c_renderPolygonTexturedOp45_FUN_00405d10, (void*)engine_3d_c_renderPolygonTexturedOp46_FUN_00405db0, (void*)engine_3d_c_renderPolygonTexturedDepthWriteOp47_FUN_00405e50,
+    (void*)engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_00405ef0, (void*)engine_3d_c_renderPolygonTexturedDepthLitOp49_FUN_00405fa0, (void*)engine_3d_c_renderPolygonTexturedNormalizedOp50_FUN_00406040, (void*)engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0,
+    (void*)engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406280, (void*)engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_004058f0, (void*)engine_3d_c_renderPolygonGrayscaleLitOp54_FUN_00406520, (void*)engine_3d_c_renderPolygonDestReadBlendDepthLitOp55_FUN_004065f0,
+    (void*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_004066b0, (void*)engine_3d_c_renderPolygonFullEffectsLitOp57_FUN_00406990, (void*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c30, (void*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406d70,
+    (void*)engine_3d_c_renderPolygonVertexAlphaLitOp60_FUN_00406a30, (void*)engine_3d_c_setRenderAlphaFromBlock_FUN_00406bb0, (void*)engine_3d_c_renderPolygonSolidLitOp62_FUN_00406870, (void*)engine_3d_c_renderPolygonBlendedLitOp63_FUN_00406ad0,
+    (void*)engine_texture_cpp_loadTextureAndGetData_FUN_00597aa0, (void*)engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0, (void*)engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_004072c0
+};
 

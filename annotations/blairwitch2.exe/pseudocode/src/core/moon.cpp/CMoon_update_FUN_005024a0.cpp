@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_moon_cpp_CMoon_update_FUN_005024a0(CMoon *this_ptr,float param_2)
 
 {
-  _DAT_01d1cdc4 = param_2 * (float)_DAT_005df2dd + _DAT_01d1cdc4;
-  if ((float)_DAT_005df2e5 <= _DAT_01d1cdc4) {
-    _DAT_01d1cdc4 = _DAT_01d1cdc4 + _DAT_005df2ed;
+  g_FLOAT_01d1cdc4 = param_2 * (float)12 + g_FLOAT_01d1cdc4;
+  if ((float)74 <= g_FLOAT_01d1cdc4) {
+    g_FLOAT_01d1cdc4 = g_FLOAT_01d1cdc4 + -74.0f;
   }
-  _DAT_01d1cdbc = _DAT_01d1cdbc + _DAT_01c2a370 * 0x20;
-  _DAT_01d1cdc0 = _DAT_01d1cdc0 + _DAT_01c2a370 * 0x10;
+  g_INT_01d1cdbc = g_INT_01d1cdbc + g_INT_01c2a370 * 0x20;
+  g_INT_01d1cdc0 = g_INT_01d1cdc0 + g_INT_01c2a370 * 0x10;
   return;
 }

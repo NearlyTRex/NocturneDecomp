@@ -16,10 +16,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_gore_cpp_005d954a
 ;   TerminatedCString s_Can_t_create_flies_005d955b
-;   undefined4 DAT_005d9572
-;   undefined4 DAT_00618170
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005d9572 = 60
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   undefined4 DAT_01d182f0
 ;
 ; Called Functions:
@@ -54,14 +54,14 @@ section .text
     MOV EDX,0x5d954a                    ; 004c9bf6 | = "..\\core\\gore.cpp"
     MOV ECX,0x681                       ; 004c9bfb
     PUSH 0x5d955b                       ; 004c9c00 | = "Can't create flies!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004c9c05 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004c9c0b | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004c9c05 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004c9c0b | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004c9c11
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004c9c16
     FLD float ptr [ESP + 0x1c]          ; 004c9c19
         ;   Label: LAB_004c9c19
-    FDIVR double ptr [0x005d9572]       ; 004c9c1d | DAT_005d9572
+    FDIVR double ptr [0x005d9572]       ; 004c9c1d | g_DOUBLE_005d9572
     LEA EAX,[EBX + 0x20]                ; 004c9c23
     MOV EDX,dword ptr [EDI]             ; 004c9c26
     MOV dword ptr [EAX],EDX             ; 004c9c28
@@ -69,7 +69,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004c9c2d
     MOV EDX,dword ptr [EDI + 0x8]       ; 004c9c30
     MOV dword ptr [EAX + 0x8],EDX       ; 004c9c33
-    MOV EAX,[0x00618170]                ; 004c9c36 | DAT_00618170
+    MOV EAX,[0x00618170]                ; 004c9c36 | g_CDemonMission_PTR_00618170
     MOV EAX,dword ptr [EAX]             ; 004c9c3b | DAT_01d182f0
     MOV dword ptr [EBX + 0x2c0],0x0     ; 004c9c3d
     MOV dword ptr [EBX + 0x2c],EAX      ; 004c9c47
@@ -95,13 +95,13 @@ section .text
     CALL dword ptr [EAX + 0x8]          ; 004c9c7f
     ADD ESP,0x4                         ; 004c9c82
     PUSH EBX                            ; 004c9c85
-    MOV ESI,dword ptr [0x00618170]      ; 004c9c86 | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 004c9c86 | g_CDemonMission_PTR_00618170
     PUSH ESI                            ; 004c9c8c | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 004c9c8d
         ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004c9c92
     PUSH EBX                            ; 004c9c95
-    MOV EDI,dword ptr [0x00618170]      ; 004c9c96 | DAT_00618170
+    MOV EDI,dword ptr [0x00618170]      ; 004c9c96 | g_CDemonMission_PTR_00618170
     PUSH EDI                            ; 004c9c9c | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 004c9c9d
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)

@@ -11,8 +11,8 @@
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_00558010 at 00558029
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf3280
-;   undefined4 DAT_02cf3288
+;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
+;   int g_INT_02cf3288
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520
@@ -41,7 +41,7 @@ section .text
     CMP EBX,ESI                         ; 00558805
     JNZ 0x005587f6                      ; 00558807
         ;   XREF to: 005587f6 (CONDITIONAL_JUMP)  ; LAB_005587f6
-    MOV EDX,dword ptr [0x02cf3280]      ; 00558809 | DAT_02cf3280
+    MOV EDX,dword ptr [0x02cf3280]      ; 00558809 | g_CSoundDevice_PTR_02cf3280
     TEST EDX,EDX                        ; 0055880f
     JNZ 0x0055881b                      ; 00558811
         ;   XREF to: 0055881b (CONDITIONAL_JUMP)  ; LAB_0055881b
@@ -60,8 +60,8 @@ section .text
         ;   XREF to: 00558818 (CONDITIONAL_JUMP)  ; LAB_00558818
     XOR ECX,ECX                         ; 00558827
     MOV EAX,0x1                         ; 00558829
-    MOV dword ptr [0x02cf3288],ECX      ; 0055882e | DAT_02cf3288
-    MOV dword ptr [0x02cf3280],ECX      ; 00558834 | DAT_02cf3280
+    MOV dword ptr [0x02cf3288],ECX      ; 0055882e | g_INT_02cf3288
+    MOV dword ptr [0x02cf3280],ECX      ; 00558834 | g_CSoundDevice_PTR_02cf3280
     POP ESI                             ; 0055883a
     POP EBX                             ; 0055883b
     RET                                 ; 0055883c

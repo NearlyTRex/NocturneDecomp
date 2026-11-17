@@ -22,8 +22,8 @@
 ;   core_set.cpp_CDemonSet_processActors_FUN_005353e0 at 0053561c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cb85c
-;   undefined4 DAT_01c5fad0
+;   double g_DOUBLE_005cb85c = 4
+;   int g_INT_01c5fad0
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     CMP dword ptr [EBP + 0x1c],0x0      ; 0050b1df
     JNZ 0x0050b2c5                      ; 0050b1e3
         ;   XREF to: 0050b2c5 (CONDITIONAL_JUMP)  ; LAB_0050b2c5
-    MOV EAX,[0x01c5fad0]                ; 0050b1e9 | DAT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 0050b1e9 | g_INT_01c5fad0
     MOV ECX,dword ptr [EBX + 0x138d8]   ; 0050b1ee
     SUB ECX,EAX                         ; 0050b1f4
     MOV dword ptr [EBX + 0x138d8],ECX   ; 0050b1f6
@@ -75,21 +75,21 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0050b236
     FLD float ptr [ESP + 0xc]           ; 0050b237
     FABS                                ; 0050b23b
-    FCOMP double ptr [0x005cb85c]       ; 0050b23d | DAT_005cb85c
+    FCOMP double ptr [0x005cb85c]       ; 0050b23d | g_DOUBLE_005cb85c
     FNSTSW AX                           ; 0050b243
     SAHF                                ; 0050b245
     JNC 0x0050b26a                      ; 0050b246
         ;   XREF to: 0050b26a (CONDITIONAL_JUMP)  ; LAB_0050b26a
     FLD float ptr [ESP + 0x10]          ; 0050b248
     FABS                                ; 0050b24c
-    FCOMP double ptr [0x005cb85c]       ; 0050b24e | DAT_005cb85c
+    FCOMP double ptr [0x005cb85c]       ; 0050b24e | g_DOUBLE_005cb85c
     FNSTSW AX                           ; 0050b254
     SAHF                                ; 0050b256
     JNC 0x0050b26a                      ; 0050b257
         ;   XREF to: 0050b26a (CONDITIONAL_JUMP)  ; LAB_0050b26a
     FLD float ptr [ESP + 0x14]          ; 0050b259
     FABS                                ; 0050b25d
-    FCOMP double ptr [0x005cb85c]       ; 0050b25f | DAT_005cb85c
+    FCOMP double ptr [0x005cb85c]       ; 0050b25f | g_DOUBLE_005cb85c
     FNSTSW AX                           ; 0050b265
     SAHF                                ; 0050b267
     JC 0x0050b2be                       ; 0050b268

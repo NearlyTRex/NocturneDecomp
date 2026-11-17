@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale)
 
@@ -412,15 +411,15 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b
   local_52c.m[1].z = -(this_ptr->camera_origin).y;
   local_52c.m[2].z = -(this_ptr->camera_origin).z;
   core_xform_cpp_setIdentityMatrix3x4_FUN_005835d0(&local_40c);
-  local_40c.m[0].w = (float)_DAT_01c6e2fc * (float)_DAT_005c836d;
-  local_40c.m[1].w = (float)_DAT_01c6e300 * (float)_DAT_005c836d;
-  local_40c.m[2].w = (float)_DAT_01c6e304 * (float)_DAT_005c836d;
-  local_40c.m[0].x = (float)_DAT_01c6e308 * (float)_DAT_005c836d;
-  local_40c.m[1].x = (float)_DAT_01c6e30c * (float)_DAT_005c836d;
-  local_40c.m[2].x = (float)_DAT_01c6e310 * (float)_DAT_005c836d;
-  local_40c.m[0].y = (float)_DAT_01c6e314 * (float)_DAT_005c836d;
-  local_40c.m[1].y = (float)_DAT_01c6e318 * (float)_DAT_005c836d;
-  local_40c.m[2].y = (float)_DAT_01c6e31c * (float)_DAT_005c836d;
+  local_40c.m[0].w = (float)g_INT_01c6e2fc * (float)1.52587890625e-05;
+  local_40c.m[1].w = (float)g_INT_01c6e300 * (float)1.52587890625e-05;
+  local_40c.m[2].w = (float)g_INT_01c6e304 * (float)1.52587890625e-05;
+  local_40c.m[0].x = (float)g_INT_01c6e308 * (float)1.52587890625e-05;
+  local_40c.m[1].x = (float)g_INT_01c6e30c * (float)1.52587890625e-05;
+  local_40c.m[2].x = (float)g_INT_01c6e310 * (float)1.52587890625e-05;
+  local_40c.m[0].y = (float)g_INT_01c6e314 * (float)1.52587890625e-05;
+  local_40c.m[1].y = (float)g_INT_01c6e318 * (float)1.52587890625e-05;
+  local_40c.m[2].y = (float)g_INT_01c6e31c * (float)1.52587890625e-05;
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&local_52c,&local_40c,&local_31c);
   pCVar6 = &local_31c;
   pCVar5 = &local_43c;

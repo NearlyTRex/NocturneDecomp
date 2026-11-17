@@ -10,8 +10,8 @@
 ;   core_moocow.cpp_factoryFuncMooCow_FUN_005212d0 at 005212e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006040a8
-;   undefined4 DAT_006040ac
+;   float g_FLOAT_006040a8 = 50
+;   float g_FLOAT_006040ac = 100
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042c080
@@ -36,9 +36,9 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00521322
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2fec],0x3fe00000 ; 00521327
-    FLD float ptr [0x006040a8]          ; 00521331 | DAT_006040a8
+    FLD float ptr [0x006040a8]          ; 00521331 | g_FLOAT_006040a8
     MOV dword ptr [EBX + 0x2ff0],0x40600000 ; 00521337
-    FLD float ptr [0x006040ac]          ; 00521341 | DAT_006040ac
+    FLD float ptr [0x006040ac]          ; 00521341 | g_FLOAT_006040ac
     MOV dword ptr [EBX + 0xc1d8],0x0    ; 00521347
     ADD ESP,0x8                         ; 00521351
     MOV dword ptr [EBX + 0x252c],0x3f490fdb ; 00521354

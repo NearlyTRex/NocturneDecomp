@@ -30,7 +30,7 @@ void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_0056eed0(CStrange
         (*(((this_ptr_01->base).vtable._uc)->_uc).isGrabbable)(this_ptr_01,unaff_EBX);
         this_ptr->weapon = (CWeapon *)0x0;
         (this_ptr->base).base.layer_action_index = 0;
-        fVar1 = 0x41200000;
+        fVar1 = 10.0f;
         (this_ptr->base).base.layer_action_t = 0.0;
         this_ptr->aim_speed_factor = fVar1;
         if (this_ptr->action_pending == 3) {

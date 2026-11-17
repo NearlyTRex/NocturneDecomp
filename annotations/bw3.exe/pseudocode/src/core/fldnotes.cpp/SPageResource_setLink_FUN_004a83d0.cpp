@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource *this_ptr,char *param_2)
 
 {
@@ -40,8 +38,8 @@ void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource 
   pcVar2 = (char *)malloc(~uVar3);
   this_ptr->link = pcVar2;
   if (pcVar2 == (char *)0x0) {
-    _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-    _DAT_01d71de4 = 0x36c;
+    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+    g_INT_01d71de4 = 0x36c;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
   }
   pcVar2 = this_ptr->link;

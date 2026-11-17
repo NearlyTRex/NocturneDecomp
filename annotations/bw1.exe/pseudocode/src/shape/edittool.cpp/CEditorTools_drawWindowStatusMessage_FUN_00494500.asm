@@ -8,14 +8,14 @@
 ; char *           Stack[0x8]:4   format_string
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c3eb50
-;   undefined4 DAT_01c3f538
-;   undefined4 DAT_01c3f53c
-;   undefined4 DAT_01c3f578
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   CBitFont* g_CBitFont_PTR_01c3eb50
+;   int g_INT_01c3f538
+;   int g_INT_01c3f53c
+;   int g_INT_01c3f578
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -37,19 +37,19 @@ section .text
     PUSH EDI                            ; 00494502
     PUSH EBP                            ; 00494503
     SUB ESP,0x404                       ; 00494504
-    CMP dword ptr [0x01c3eb50],0x0      ; 0049450a | DAT_01c3eb50
+    CMP dword ptr [0x01c3eb50],0x0      ; 0049450a | g_CBitFont_PTR_01c3eb50
     JZ 0x004945d0                       ; 00494511
         ;   XREF to: 004945d0 (CONDITIONAL_JUMP)  ; LAB_004945d0
-    MOV EAX,[0x01c3eb50]                ; 00494517 | DAT_01c3eb50
+    MOV EAX,[0x01c3eb50]                ; 00494517 | g_CBitFont_PTR_01c3eb50
         ;   Label: LAB_00494517
     PUSH 0x6a                           ; 0049451c
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0049451e
     PUSH EAX                            ; 00494524
-    MOV dword ptr [0x01c3f538],EDX      ; 00494525 | DAT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 00494525 | g_INT_01c3f538
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049452b
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00494530
-    MOV [0x01c3f53c],EAX                ; 00494533 | DAT_01c3f53c
+    MOV [0x01c3f53c],EAX                ; 00494533 | g_INT_01c3f53c
     LEA EAX,[ESP + 0x420]               ; 00494538
     MOV dword ptr [ESP + 0x400],EAX     ; 0049453f
     LEA EAX,[ESP + 0x400]               ; 00494546
@@ -77,15 +77,15 @@ section .text
         ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_00512320(float alpha)
     ADD ESP,0x4                         ; 00494593
     PUSH -0x1                           ; 00494596
-    MOV EAX,[0x01c3f578]                ; 00494598 | DAT_01c3f578
+    MOV EAX,[0x01c3f578]                ; 00494598 | g_INT_01c3f578
     PUSH EAX                            ; 0049459d
-    MOV EDX,dword ptr [0x01c4f00c]      ; 0049459e | DAT_01c4f00c
+    MOV EDX,dword ptr [0x01c4f00c]      ; 0049459e | g_INT_01c4f00c
     PUSH EDX                            ; 004945a4
-    MOV ECX,dword ptr [0x01c4f008]      ; 004945a5 | DAT_01c4f008
+    MOV ECX,dword ptr [0x01c4f008]      ; 004945a5 | g_INT_01c4f008
     PUSH ECX                            ; 004945ab
     LEA EAX,[ESP + 0x10]                ; 004945ac
     PUSH EAX                            ; 004945b0
-    MOV EBX,dword ptr [0x01c3eb50]      ; 004945b1 | DAT_01c3eb50
+    MOV EBX,dword ptr [0x01c3eb50]      ; 004945b1 | g_CBitFont_PTR_01c3eb50
     PUSH EBX                            ; 004945b7
     CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 004945b8
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_004945d0
     MOV EBX,0xa4                        ; 004945d5
     PUSH 0x5dbc7e                       ; 004945da
-    MOV dword ptr [0x01d1d400],ECX      ; 004945df | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 004945e5 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004945df | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 004945e5 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004945eb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004945f0

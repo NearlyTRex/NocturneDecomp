@@ -7,141 +7,138 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* WARNING: Exceeded maximum restarts with more pending */
 
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 {
   uint uVar1;
   double dVar2;
-  uint uVar3;
-  char acStack_6d0 [384];
-  char acStack_550 [416];
+  char acStack_540 [400];
   char acStack_3b0 [400];
-  char acStack_220 [380];
-  uint uStack_a4;
-  uint uStack_a0;
-  int iStack_9c;
-  ushort **ppuStack_94;
-  uint uStack_6c;
-  uint uStack_68;
-  uint uStack_64;
-  ushort *apuStack_5c [5];
-  ushort uStack_48;
+  char acStack_220 [396];
+  DSBUFFERDESC aDStack_94 [2];
+  DSBUFFERDESC DStack_6c;
+  byte auStack_4c [6];
   ushort uStack_46;
-  int iStack_44;
+  DWORD DStack_44;
   int iStack_40;
   ushort uStack_3c;
   ushort uStack_3a;
-  ushort uStack_34;
-  ushort uStack_32;
-  int *piStack_30;
-  int *piStack_2c;
-  uint uStack_28;
-  float fStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  tWAVEFORMATEX tStack_34;
+  IDirectSoundBuffer *pIStack_20;
+  int *piStack_1c;
+  uint uStack_18;
+  float fStack_14;
   
   if (_DAT_02cf49d4 != (int *)0x0) {
-    (**(code **)(*_DAT_02cf49d4 + 8))(_DAT_02cf49d4);
+    (**(code **)(*_DAT_02cf49d4 + 8))();
     _DAT_02cf49d4 = (int *)0x0;
   }
-  if (_DAT_02cf49c8 != (int *)0x0) {
-    memset(&uStack_48,0,0x12);
-    uStack_48 = 1;
+  if (g_IDirectSoundBuffer_PTR_02cf49c8 != (IDirectSoundBuffer *)0x0) {
+    memset(auStack_4c + 4,0,0x12);
+    auStack_4c._4_2_ = 1;
     uStack_46 = (ushort)channels;
-    iStack_44 = sample_rate;
+    DStack_44 = sample_rate;
     uStack_3c = (short)((int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -
                              (uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3) * uStack_46;
     iStack_40 = sample_rate * (uint)uStack_3c;
     uStack_3a = (ushort)bits_per_sample;
-    uVar1 = (**(code **)(*_DAT_02cf49c8 + 0x38))(_DAT_02cf49c8,&uStack_48);
+    uVar1 = (*g_IDirectSoundBuffer_PTR_02cf49c8->vtable->SetFormat)
+                      (g_IDirectSoundBuffer_PTR_02cf49c8,(LPCWAVEFORMATEX)(auStack_4c + 4));
     if (uVar1 == 0) {
-      uVar1 = (**(code **)(*_DAT_02cf49c8 + 0x14))(_DAT_02cf49c8,&uStack_48,0x12,0);
+      uVar1 = (*g_IDirectSoundBuffer_PTR_02cf49c8->vtable->GetFormat)
+                        (g_IDirectSoundBuffer_PTR_02cf49c8,(LPWAVEFORMATEX)(auStack_4c + 4),0x12,
+                         (LPDWORD)0x0);
       if (uVar1 == 0) {
-        _DAT_02cf49d8 = (uint)uStack_3a;
-        _DAT_02cf49dc = iStack_44;
-        _DAT_02cf49e0 = (uint)uStack_46;
+        g_INT_02cf49d8 = (int)uStack_3a;
+        g_INT_02cf49dc = DStack_44;
+        g_INT_02cf49e0 = (int)uStack_46;
         if (_DAT_02cf49d4 != (int *)0x0) {
-          (**(code **)(*_DAT_02cf49d4 + 8))(_DAT_02cf49d4);
+          (**(code **)(*_DAT_02cf49d4 + 8))();
           _DAT_02cf49d4 = (int *)0x0;
         }
-        uStack_20 = 0;
-        uStack_1c = 0;
-        memset(&uStack_34,0,0x12);
-        uStack_34 = 1;
-        uStack_32 = 1;
-        piStack_30 = (int *)0x5622;
-        uStack_28 = 0x100002;
-        piStack_2c = (int *)0xac44;
-        memset(&uStack_6c,0,0x24);
-        apuStack_5c[0] = &uStack_34;
-        uStack_6c = 0x24;
-        uStack_68 = 0x12;
-        uStack_64 = 0x400;
-        uVar1 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_6c,&uStack_20,0);
+        pIStack_20 = (IDirectSoundBuffer *)0x0;
+        piStack_1c = (int *)0x0;
+        memset(&tStack_34,0,0x12);
+        tStack_34.wFormatTag = 1;
+        tStack_34.nChannels = 1;
+        tStack_34.nSamplesPerSec = 0x5622;
+        tStack_34.wBitsPerSample = 0x10;
+        tStack_34.nBlockAlign = 2;
+        tStack_34.nAvgBytesPerSec = 0xac44;
+        memset(&DStack_6c,0,0x24);
+        DStack_6c.lpwfxFormat = &tStack_34;
+        DStack_6c.dwSize = 0x24;
+        DStack_6c.dwFlags = 0x12;
+        DStack_6c.dwBufferBytes = 0x400;
+        uVar1 = (*g_IDirectSound_PTR_02cf49c4->vtable->CreateSoundBuffer)
+                          (g_IDirectSound_PTR_02cf49c4,&DStack_6c,&pIStack_20,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
-          (**(code **)*piStack_30)(piStack_30,&g_IID_IDirectSound3DBuffer,&piStack_2c);
-          if (piStack_2c == (int *)0x0) {
-            if (piStack_30 != (int *)0x0) {
-              (**(code **)(*piStack_30 + 8))(piStack_30);
-              piStack_30 = (int *)0x0;
+          (*pIStack_20->vtable->QueryInterface)(pIStack_20,&g_IID_IDirectSound3DBuffer);
+          if (piStack_1c == (int *)0x0) {
+            if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
+              (*pIStack_20->vtable->Release)();
+              pIStack_20 = (IDirectSoundBuffer *)0x0;
             }
           }
           else {
-            (**(code **)*piStack_2c)(piStack_2c,&g_IID_IKsPropertySet,&DAT_02cf49d4);
-            if (piStack_30 != (int *)0x0) {
-              (**(code **)(*piStack_30 + 8))(piStack_30);
-              piStack_30 = (int *)0x0;
+            (**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet);
+            if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
+              (*pIStack_20->vtable->Release)();
+              pIStack_20 = (IDirectSoundBuffer *)0x0;
             }
-            if (piStack_2c != (int *)0x0) {
-              (**(code **)(*piStack_2c + 8))(piStack_2c);
-              piStack_2c = (int *)0x0;
+            if (piStack_1c != (int *)0x0) {
+              (**(code **)(*piStack_1c + 8))();
+              piStack_1c = (int *)0x0;
             }
           }
         }
         else {
           sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
-          _sprintf(acStack_550,"DirectSux: Unable to %s.  (%s)");
-          sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_550);
+          _sprintf(acStack_540,"DirectSux: Unable to %s.  (%s)");
+          sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_540);
         }
         if (_DAT_02cf49d4 != (int *)0x0) {
-          uStack_28 = 1;
+          uStack_18 = 1;
           (**(code **)(*_DAT_02cf49d4 + 0x10))
-                    (_DAT_02cf49d4,&g_DSPROPSETID_VoiceManager,0,0,0,&uStack_28,4);
+                    (_DAT_02cf49d4,&g_DSPROPSETID_VoiceManager,0,0,0,&uStack_18);
         }
         uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0();
         if (0 < (int)uVar1) {
-          (this_ptr->base).vtable = (CSoundDeviceFull_vtable *)0x0;
+          *out_samples_per_block = 0;
           return 1;
         }
-        _DAT_02cf49ec = 8;
-        fStack_24 = sound_sndmain_cpp_getMaxSwLatency_FUN_005591a0();
-        uVar3 = 0x55b3e9;
+        g_INT_02cf49ec = 8;
+        fStack_14 = sound_sndmain_cpp_getMaxSwLatency_FUN_005591a0();
         dVar2 = round
-                          ((double)(((float)_DAT_02cf49dc * fStack_24) / (float)_DAT_02cf49ec));
-        _DAT_02cf49e4 = (uint)ROUND(dVar2);
-        _DAT_02cf49e4 = _DAT_02cf49e4 + 0xf & 0xfffffff0;
-        _DAT_02cf49e8 =
-             _DAT_02cf49e4 *
-             ((int)((_DAT_02cf49d8 + ((int)_DAT_02cf49d8 >> 0x1f) * -8) -
-                   (uint)(((int)_DAT_02cf49d8 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02cf49e0;
-        memset(&uStack_a4,0,0x24);
-        ppuStack_94 = apuStack_5c;
-        iStack_9c = _DAT_02cf49e8 * _DAT_02cf49ec;
-        uStack_a4 = 0x24;
-        uStack_a0 = 0;
-        if (_DAT_02cf49cc != (int *)0x0) {
-          (**(code **)(*_DAT_02cf49cc + 8))(_DAT_02cf49cc,uVar3);
-          _DAT_02cf49cc = (int *)0x0;
+                          ((double)(((float)g_INT_02cf49dc * fStack_14) / (float)g_INT_02cf49ec));
+        g_INT_02cf49e4 = (int)ROUND(dVar2);
+        g_INT_02cf49e4 = g_INT_02cf49e4 + 0xfU & 0xfffffff0;
+        g_INT_02cf49e8 =
+             g_INT_02cf49e4 *
+             ((int)((g_INT_02cf49d8 + (g_INT_02cf49d8 >> 0x1f) * -8) -
+                   (uint)((g_INT_02cf49d8 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02cf49e0;
+        memset(aDStack_94,0,0x24);
+        aDStack_94[0].lpwfxFormat = (LPWAVEFORMATEX)auStack_4c;
+        aDStack_94[0].dwBufferBytes = g_INT_02cf49e8 * g_INT_02cf49ec;
+        aDStack_94[0].dwSize = 0x24;
+        aDStack_94[0].dwFlags = 0;
+        if (g_IDirectSoundBuffer_PTR_02cf49cc != (IDirectSoundBuffer *)0x0) {
+          (*g_IDirectSoundBuffer_PTR_02cf49cc->vtable->Release)
+                    ((IUnknown *)g_IDirectSoundBuffer_PTR_02cf49cc);
+          g_IDirectSoundBuffer_PTR_02cf49cc = (IDirectSoundBuffer *)0x0;
         }
-        uVar1 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_a4,&DAT_02cf49cc,0);
+        uVar1 = (*g_IDirectSound_PTR_02cf49c4->vtable->CreateSoundBuffer)
+                          (g_IDirectSound_PTR_02cf49c4,aDStack_94,&g_IDirectSoundBuffer_PTR_02cf49cc
+                           ,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
-          *out_samples_per_block = _DAT_02cf49e4;
+          *(int *)sample_rate = g_INT_02cf49e4;
           return 1;
         }
         sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
-        _sprintf(acStack_6d0,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_6d0);
+        _sprintf(&stack0xfffff92c,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xfffff92c);
       }
       else {
         sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
@@ -155,9 +152,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
       sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_3b0);
     }
   }
-  if (_DAT_02cf49cc != (int *)0x0) {
-    (**(code **)(*_DAT_02cf49cc + 8))(_DAT_02cf49cc);
-    _DAT_02cf49cc = (int *)0x0;
+  if (g_IDirectSoundBuffer_PTR_02cf49cc != (IDirectSoundBuffer *)0x0) {
+    (*g_IDirectSoundBuffer_PTR_02cf49cc->vtable->Release)
+              ((IUnknown *)g_IDirectSoundBuffer_PTR_02cf49cc);
+    g_IDirectSoundBuffer_PTR_02cf49cc = (IDirectSoundBuffer *)0x0;
   }
   return 0;
 }

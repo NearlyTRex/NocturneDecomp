@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 110,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 5,
+    "pseudocode_lines": 44,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_stride_bytecount",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 175
+    "total_lines": 174
   },
   "cross_references": [],
   "function": {
@@ -44,14 +43,14 @@
   "globals": [
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -160,16 +159,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 28,
+      "line": 26,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -177,7 +168,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -185,7 +176,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((this_ptr->list_size - index) * 100) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 22,
+      "line": 20,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",
@@ -193,7 +184,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((this_ptr->list_size - index) * 100) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 25,
+      "line": 23,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

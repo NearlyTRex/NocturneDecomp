@@ -8,8 +8,8 @@
 ; SInteractionInfo * Stack[0x8]:4   interaction_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006074cc
-;   undefined4 DAT_006074d0
+;   float g_FLOAT_006074cc = -0.5235988
+;   float g_FLOAT_006074d0 = 1.221730
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409d20
@@ -41,9 +41,9 @@ section .text
     MOV dword ptr [EBX + 0x10],0x40c90fdb ; 005a355d
     MOV dword ptr [EBX + 0x14],0xc0c90fdb ; 005a3564
     MOV dword ptr [EBX + 0x4],EAX       ; 005a356b
-    FLD float ptr [0x006074d0]          ; 005a356e | DAT_006074d0
+    FLD float ptr [0x006074d0]          ; 005a356e | g_FLOAT_006074d0
     FSUB float ptr [ESI + 0x30]         ; 005a3574
-    FLD float ptr [0x006074cc]          ; 005a3577 | DAT_006074cc
+    FLD float ptr [0x006074cc]          ; 005a3577 | g_FLOAT_006074cc
     FXCH                                ; 005a357d
     FSTP float ptr [EBX + 0x18]         ; 005a357f
     FSUB float ptr [ESI + 0x30]         ; 005a3582

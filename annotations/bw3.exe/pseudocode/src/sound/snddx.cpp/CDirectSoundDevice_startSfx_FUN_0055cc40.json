@@ -2,22 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 344,
+    "complexity_score": 177,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
-    "suspect_count": 21,
+    "pseudocode_lines": 117,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "raw_address_pointer_store",
-      "stack_ref",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 493
+    "total_lines": 506
   },
   "cross_references": [],
   "function": {
@@ -146,14 +142,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -253,152 +249,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 39,
-      "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(**(int **)(iVar1 * 0x24 + 0x2cf500c) + 0x30))();",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(**(int **)(iVar1 * 0x24 + 0x2cf500c) + 0x30))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 41,
-      "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
-      "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*piVar2 + 0x44))(piVar2,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 49,
-      "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
-      "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,0xffffd8f0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 57,
-      "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
-      "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*piVar2 + 0x30))(piVar2,0,0,uStack_28);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 72,
-      "match": "*(int **)(iVar5 + 0x2cf500c",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(**(int **)(iVar5 + 0x2cf500c) + 0x44))",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(**(int **)(iVar5 + 0x2cf500c) + 0x44))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 73,
-      "match": "*(int **)(iVar5 + 0x2cf500c",
-      "severity": "moderate",
-      "text": "(*(int **)(iVar5 + 0x2cf500c),iVar3);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Pointer value `dwFrequency` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 81,
-      "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
+      "match": "(int)dwFrequency",
       "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
-      "type": "raw_address_pointer_store"
+      "text": "1 < (uint)((int)dwFrequency - (int)g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9 + 7]))",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 82,
-      "match": "code *",
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9 + 7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9 + 7]",
       "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*piVar2 + 0x34))(piVar2,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 89,
-      "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
-      "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 90,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,*(uint *)(iVar1 * 0x24 + 0x2cf5020));",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 100,
-      "match": "&stack0xfffff4f8",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xfffff4f8,\"DirectSux: Unable to %s.  (%s)\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 101,
-      "match": "&stack0xfffff4f8",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xfffff4f8);",
-      "type": "stack_ref"
+      "text": "1 < (uint)((int)dwFrequency - (int)g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9 + 7]))",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&slot->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 105,
+      "line": 117,
       "match": "(int)&slot->changed_flags",
       "severity": "moderate",
       "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
@@ -406,7 +274,7 @@
     },
     {
       "description": "Pointer value `&slot->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 105,
+      "line": 117,
       "match": "(int)&slot->changed_flags",
       "severity": "moderate",
       "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
@@ -414,7 +282,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 105,
+      "line": 117,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",

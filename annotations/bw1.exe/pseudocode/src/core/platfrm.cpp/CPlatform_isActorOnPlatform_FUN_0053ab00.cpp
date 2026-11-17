@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform *this_ptr,CDemonActor *actor)
 
 {
@@ -52,8 +50,8 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform 
       fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fVar4);
       fVar4 = (this_ptr->base).orient.vec.x;
       (this_ptr->base).orient.vec.z = fVar2;
-      if ((ABS(fVar4) <= (float)_DAT_005ed61b) &&
-         (ABS((this_ptr->base).orient.vec.z) <= (float)_DAT_005ed61b)) {
+      if ((ABS(fVar4) <= (float)0.01) &&
+         (ABS((this_ptr->base).orient.vec.z) <= (float)0.01)) {
         (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,out_box);
         pfVar6 = afStack_70;
         pfVar7 = &fStack_58;
@@ -86,7 +84,7 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform 
             *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
                  *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
             iVar5 = 0;
-            CStack_1c.y = fStack_80 + _DAT_005ed623 + CStack_1c.y;
+            CStack_1c.y = fStack_80 + -1.0f + CStack_1c.y;
             CStack_28.y = 1.0;
             pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
                                (&this_ptr->model);

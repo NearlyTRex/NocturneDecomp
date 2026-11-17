@@ -7,12 +7,11 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_basicene_cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0(CBasicEnemy *this_ptr)
 
 {
-  int iVar1;
+  SRenderVertex *pSVar1;
   byte bVar2;
   float afStackY_1010 [1008];
   CVector3i local_34;
@@ -33,19 +32,20 @@ void __cdecl core_basicene_cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0(CBasicEn
   local_18[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        *(float *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   local_18[0] = local_18[0] + 1.0;
-  local_34.x = (int)ROUND(local_1c * _DAT_005febc0);
-  local_34.y = (int)ROUND(local_18[0] * _DAT_005febc0);
-  local_34.z = (int)ROUND(local_18[1] * _DAT_005febc0);
+  local_34.x = (int)ROUND(local_1c * 256.0f);
+  local_34.y = (int)ROUND(local_18[0] * 256.0f);
+  local_34.z = (int)ROUND(local_18[1] * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            ((SProjectedVertex *)*DAT_0060b280,&local_34);
-  iVar1 = *DAT_0060b280;
-  if ((*(byte *)(iVar1 + 0x13) & 0x80) == 0) {
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,&local_34);
+  pSVar1 = g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr;
+  if ((int)((pSVar1->projected_vertex).screen_x & -0x80000000) == 0) {
     core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
               (&(this_ptr->base).base.model.base);
     core_muzzle_cpp_SStateMachine_getStateName_FUN_0059db70(&this_ptr->state_machine);
-    _sprintf((char *)0x2668360,"@(%s)\n%s:[%s] (%0.2f)" + 1);
+    _sprintf(g_CHAR_ARRAY_02668360,"(%s)\n%s:[%s] (%0.2f)");
     engine_2d_c_drawText_FUN_00401fe0
-              ((char *)0x2668360,*(int *)(iVar1 + 0x10) >> 0x10,*(int *)(iVar1 + 0x14) >> 0x10);
+              (g_CHAR_ARRAY_02668360,(pSVar1->projected_vertex).screen_x >> 0x10,
+               (pSVar1->projected_vertex).screen_y >> 0x10);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   return;

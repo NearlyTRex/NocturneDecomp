@@ -10,7 +10,7 @@
 ;   core_waypoint.cpp_CWayPoint_archive_FUN_00588230 at 0058823c
 ;
 ; Referenced Globals:
-;   undefined4 s_triggerState_005ecda1+1
+;   TerminatedCString s_triggerState_005ecda2
 ;   TerminatedCString s_triggerSize_005ecdaf
 ;   TerminatedCString s_triggerType_005ecdbb
 ;   TerminatedCString s_onName_005ecdc7
@@ -48,7 +48,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 005780e7
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005780ec
-    PUSH 0x5ecda2                       ; 005780ef | s_triggerState_005ecda1+1
+    PUSH 0x5ecda2                       ; 005780ef | = "triggerState"
     LEA EAX,[EBX + 0x2c8]               ; 005780f4
     PUSH EAX                            ; 005780fa
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 005780fb

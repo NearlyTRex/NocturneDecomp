@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620(CDeformableModelInstance *this_ptr)
 
@@ -80,13 +79,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
     } while (iVar7 < iVar5 * 0xc);
   }
   pCVar1 = &this_ptr->bounding_box;
-  (pCVar1->min).x = (float)local_54[2] * _DAT_005fb9a0;
-  (this_ptr->bounding_box).min.y = (float)local_54[3] * _DAT_005fb9a0;
-  (this_ptr->bounding_box).min.z = (float)local_54[4] * _DAT_005fb9a0;
+  (pCVar1->min).x = (float)local_54[2] * 0.00390625f;
+  (this_ptr->bounding_box).min.y = (float)local_54[3] * 0.00390625f;
+  (this_ptr->bounding_box).min.z = (float)local_54[4] * 0.00390625f;
   pCVar8 = &(this_ptr->bounding_box).max;
-  pCVar8->x = (float)local_64 * _DAT_005fb9a0;
-  (this_ptr->bounding_box).max.y = (float)local_60 * _DAT_005fb9a0;
-  (this_ptr->bounding_box).max.z = (float)local_5c * _DAT_005fb9a0;
+  pCVar8->x = (float)local_64 * 0.00390625f;
+  (this_ptr->bounding_box).max.y = (float)local_60 * 0.00390625f;
+  (this_ptr->bounding_box).max.z = (float)local_5c * 0.00390625f;
   local_3c[2] = pCVar8->x - (pCVar1->min).x;
   local_3c[3] = (this_ptr->bounding_box).max.y - (this_ptr->bounding_box).min.y;
   local_2c = (this_ptr->bounding_box).max.z - (this_ptr->bounding_box).min.z;
@@ -94,10 +93,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
   local_3c[(uint)bVar11 * -2 + 6] = local_3c[(uint)bVar11 * -2 + 3];
   local_3c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
        local_3c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-  local_1c = local_28 * _DAT_005e73f3;
-  local_18 = local_24 * _DAT_005e73f3;
-  local_14 = local_20 * _DAT_005e73f3;
-  local_40 = local_28 * _DAT_005e73f3;
+  local_1c = local_28 * 0.05f;
+  local_18 = local_24 * 0.05f;
+  local_14 = local_20 * 0.05f;
+  local_40 = local_28 * 0.05f;
   local_3c[(uint)bVar11 * -2] = local_3c[(uint)bVar11 * -2 + 9];
   local_3c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
        local_3c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];

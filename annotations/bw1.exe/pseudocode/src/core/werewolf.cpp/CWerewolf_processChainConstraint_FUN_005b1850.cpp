@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005b1850(CWerewolf *this_ptr)
 
@@ -57,7 +56,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005b1850(CWe
          *(uint *)((int)&local_90 + (uint)bVar2 * -8 + 4);
     *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)((int)&local_90 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-    if (local_98 < (float)_DAT_005f9c02) {
+    if (local_98 < (float)2) {
       local_3c.x = local_90.x;
       *(uint *)((int)&local_3c + (uint)bVar2 * -8 + 4) =
            *(uint *)((int)&local_90 + (uint)bVar2 * -8 + 4);

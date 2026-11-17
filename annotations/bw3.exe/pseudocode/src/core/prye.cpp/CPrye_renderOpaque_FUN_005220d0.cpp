@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
 
@@ -76,7 +75,7 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
   }
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
                         ((CCharacter *)this_ptr,6);
-  if ((float)_DAT_005cd687 < fStack_14) {
+  if ((float)0.98999999999999999 < fStack_14) {
     pCVar4 = (this_ptr->base).base.carry_hands[1].carry_actor;
     pCStack_18 = (CVector3f *)0x0;
     if (pCVar4 != (CDemonActor *)0x0) {
@@ -115,8 +114,8 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
         fStack_1c = 10.0;
       }
       core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70
-                (0x01C73654,pCStack_18,&CStack_14c,1.0,1.0,&g_CDemonSetPtr->collision_normal,
-                 fStack_1c,0xff,0,0);
+                (g_CFireEffect_PTR_005fc5a0,pCStack_18,&CStack_14c,1.0,1.0,
+                 &g_CDemonSetPtr->collision_normal,fStack_1c,0xff,0,0);
       core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
     }
   }
@@ -128,7 +127,7 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
   if ((((pCVar1 == (CWeapon *)0x0) ||
        (pCVar1 == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (pCVar1 == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01ed3744] == 0))
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] == 0))
   goto LAB_00522382;
   pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840
                      (&this_ptr->weapon->base,g_CDiseaseClassInfo.name_hash);
@@ -177,7 +176,7 @@ switchD_00522306_caseD_3:
   }
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
                         ((CCharacter *)this_ptr,iVar3);
-  bVar2 = (float)_DAT_005cd68f < fStack_14;
+  bVar2 = (float)0.94999999999999996 < fStack_14;
   if ((this_ptr->weapon->weapon_type == WEAPON_TYPE_SHOTGUN) &&
      ((this_ptr->base).base.layer_action_index == 8)) {
     bVar2 = true;
@@ -189,7 +188,7 @@ switchD_00522306_caseD_3:
   core_prye_cpp_CPrye_updateWeaponPosition_FUN_0051f360(this_ptr,0);
 LAB_00522382:
   if (((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
-     ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01ed3744] != 0)) {
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] != 0)) {
     uVar11 = g_CGasMaskClassInfo.name_hash;
     pCVar4 = core_inv_cpp_CInventory_findItemOfClass_FUN_004db9e0
                        (&(this_ptr->base).inventory,"CGasMask");
@@ -212,7 +211,7 @@ LAB_00522382:
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                   (&CStack_2cc,&CStack_50,pCVar10);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                  (&CStack_2cc,pCStack_20 + _DAT_01ed36dc,&CStack_1dc);
+                  (&CStack_2cc,pCStack_20 + g_INT_01ed36dc,&CStack_1dc);
         pCVar5 = &CStack_1dc;
       }
       else {
@@ -230,7 +229,8 @@ LAB_00522382:
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                   ((CMatrix3x4f *)&stack0xfffffcd4,&CStack_110,pCVar10);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                  ((CMatrix3x4f *)&stack0xfffffcd4,pCStack_20 + _DAT_01ed3714,&CStack_2fc);
+                  ((CMatrix3x4f *)&stack0xfffffcd4,pCStack_20 + g_INT_ARRAY_01ed36ec[10],&CStack_2fc
+                  );
         pCVar5 = &CStack_2fc;
       }
       pCVar6 = &CStack_20c;
@@ -250,7 +250,7 @@ LAB_00522382:
       CStack_f8.x = CStack_134.x;
       *(uint *)((int)&CStack_f8 + (uint)bVar7 * -8 + 4) =
            *(uint *)((int)&CStack_134 + (uint)bVar7 * -8 + 4);
-      pCVar8 = DAT_005f2afc;
+      pCVar8 = g_CDemonRenderer_PTR_005f2afc;
       *(uint *)((int)&CStack_f8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
            *(uint *)((int)&CStack_134 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(pCVar8,pCVar9,pCVar10);
@@ -261,7 +261,7 @@ LAB_00522382:
     }
   }
   if (((this_ptr->base).is_wearing_goggles != 0) &&
-     ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01ed3744] != 0)) {
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] != 0)) {
     uVar11 = g_CGogglesClassInfo.name_hash;
     pCVar4 = core_inv_cpp_CInventory_findItemOfClass_FUN_004db9e0
                        (&(this_ptr->base).inventory,"CGoggles");
@@ -284,7 +284,7 @@ LAB_00522382:
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                   (&CStack_26c,&CStack_11c,pCVar10);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                  (&CStack_26c,pCStack_24 + _DAT_01ed36dc,&CStack_23c);
+                  (&CStack_26c,pCStack_24 + g_INT_01ed36dc,&CStack_23c);
         pCVar5 = &CStack_23c;
       }
       else {
@@ -302,7 +302,7 @@ LAB_00522382:
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                   (&CStack_1ac,&CStack_74,pCVar10);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                  (&CStack_1ac,pCStack_24 + _DAT_01ed3710,&CStack_29c);
+                  (&CStack_1ac,pCStack_24 + g_INT_ARRAY_01ed36ec[9],&CStack_29c);
         pCVar5 = &CStack_29c;
       }
       pCVar6 = &CStack_17c;
@@ -322,7 +322,7 @@ LAB_00522382:
       CStack_b0.x = CStack_bc.x;
       *(uint *)((int)&CStack_b0 + (uint)bVar7 * -8 + 4) =
            *(uint *)((int)&CStack_bc + (uint)bVar7 * -8 + 4);
-      pCVar8 = DAT_005f2afc;
+      pCVar8 = g_CDemonRenderer_PTR_005f2afc;
       *(uint *)((int)&CStack_b0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
            *(uint *)((int)&CStack_bc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(pCVar8,pCVar9,pCVar10);
@@ -332,9 +332,10 @@ LAB_00522382:
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
     }
   }
-  if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01ed3744] == 0) &&
-      (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc), iVar3 == 0
-      )) && (0 < (this_ptr->base).base.cloth_list.count)) {
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_01ed36ec[0x16]] == 0) &&
+      (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                         (g_CDemonRenderer_PTR_005f2afc), iVar3 == 0)) &&
+     (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_0043f9d0(&(this_ptr->base).base.cloth_list);
   }
   return 1;

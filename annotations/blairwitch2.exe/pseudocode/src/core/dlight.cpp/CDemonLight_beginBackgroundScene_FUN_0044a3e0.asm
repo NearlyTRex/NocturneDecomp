@@ -14,17 +14,17 @@
 ;   TerminatedCString s_CDemonLight_beginBackgro_005cf37a
 ;   TerminatedCString s_core_dlight_cpp_005cf3ad
 ;   TerminatedCString s_CDemonLight_beginBackgro_005cf3c0
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01b11db4
-;   undefined4 DAT_01b11db8
-;   undefined4 DAT_01b11dbc
-;   undefined4 DAT_01b11dbd
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
-;   undefined4 DAT_01c2a391
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   int g_INT_01b11db4
+;   void*[1200] g_ARRAY_PTR_01b11db8
+;   undefined4 g_ARRAY_PTR_01b11db8[1]
+;   undefined4 g_ARRAY_PTR_01b11db8[1]+1
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]+1
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -43,10 +43,10 @@ section .text
     CMP dword ptr [EBX + 0x11e4],0x0    ; 0044a3e8
     JZ 0x0044a4a6                       ; 0044a3ef
         ;   XREF to: 0044a4a6 (CONDITIONAL_JUMP)  ; LAB_0044a4a6
-    MOV EDI,dword ptr [0x01b11db4]      ; 0044a3f5 | DAT_01b11db4
+    MOV EDI,dword ptr [0x01b11db4]      ; 0044a3f5 | g_INT_01b11db4
         ;   Label: LAB_0044a3f5
     INC EDI                             ; 0044a3fb
-    MOV dword ptr [0x01b11db4],EDI      ; 0044a3fc | DAT_01b11db4
+    MOV dword ptr [0x01b11db4],EDI      ; 0044a3fc | g_INT_01b11db4
     CMP EDI,0x1                         ; 0044a402
     JNZ 0x0044a4a1                      ; 0044a405
         ;   XREF to: 0044a4a1 (CONDITIONAL_JUMP)  ; LAB_0044a4a1
@@ -54,13 +54,13 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1cc4]    ; 0044a410
     MOV EDI,0x1b11db8                   ; 0044a416
     SHL ECX,0x2                         ; 0044a41b
-    PUSH EDI                            ; 0044a41e | DAT_01b11db8
+    PUSH EDI                            ; 0044a41e | g_ARRAY_PTR_01b11db8
     MOV EAX,ECX                         ; 0044a41f
     SHR ECX,0x2                         ; 0044a421
-    MOVSD.REP ES:EDI,ESI                ; 0044a424 | DAT_01c2a38c | DAT_01b11db8 | DAT_01c2a390
+    MOVSD.REP ES:EDI,ESI                ; 0044a424 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01b11db8 | g_ARRAY_PTR_01c2a38c[1]
     MOV CL,AL                           ; 0044a426
     AND CL,0x3                          ; 0044a428
-    MOVSB.REP ES:EDI,ESI                ; 0044a42b | DAT_01c2a390 | DAT_01b11dbc | DAT_01c2a391
+    MOVSB.REP ES:EDI,ESI                ; 0044a42b | g_ARRAY_PTR_01c2a38c[1] | g_ARRAY_PTR_01b11db8[1] | g_ARRAY_PTR_01c2a38c[1]+1
     POP EDI                             ; 0044a42d
     CMP dword ptr [EBX + 0x2f9c],0x0    ; 0044a42e
     JNZ 0x0044a45a                      ; 0044a435
@@ -68,8 +68,8 @@ section .text
     MOV EDX,0x5cf3ad                    ; 0044a437 | = "..\\core\\dlight.cpp"
     MOV ECX,0x1bd                       ; 0044a43c
     PUSH 0x5cf3c0                       ; 0044a441 | = "CDemonLight::beginBackgroundScene - N..."
-    MOV dword ptr [0x01d046a0],EDX      ; 0044a446 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0044a44c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0044a446 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0044a44c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a452
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a457
@@ -86,7 +86,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x2f9c]    ; 0044a471
     ADD ESI,ESI                         ; 0044a477
     ADD ECX,ESI                         ; 0044a479
-    MOV dword ptr [EDX + 0x1c2a38c],ECX ; 0044a47b | DAT_01c2a38c | DAT_01c2a390
+    MOV dword ptr [EDX + 0x1c2a38c],ECX ; 0044a47b | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     INC EAX                             ; 0044a481
     MOV EDI,dword ptr [EBX + 0x1cc4]    ; 0044a482
     ADD EDX,0x4                         ; 0044a488
@@ -96,8 +96,8 @@ section .text
     NOP                                 ; 0044a48f
     PUSH 0x1                            ; 0044a490
         ;   Label: LAB_0044a490
-    MOV EBP,dword ptr [0x0060b280]      ; 0044a492 | DAT_0060b280
-    PUSH EBP                            ; 0044a498 | DAT_01ba5c50
+    MOV EBP,dword ptr [0x0060b280]      ; 0044a492 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBP                            ; 0044a498 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 0044a499
         ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044a49e
@@ -111,8 +111,8 @@ section .text
         ;   Label: LAB_0044a4a6
     MOV ESI,0x1b0                       ; 0044a4ab
     PUSH 0x5cf37a                       ; 0044a4b0 | = "CDemonLight::beginBackgroundScene - S..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0044a4b5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0044a4bb | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044a4b5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0044a4bb | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a4c1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a4c6

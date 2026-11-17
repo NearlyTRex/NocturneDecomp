@@ -10,9 +10,9 @@
 ;   sound_sndwav.cpp_CWavOutDevice_reset_FUN_0057a8c0 at 0057a8f6
 ;
 ; Referenced Globals:
-;   undefined4 s_Mb_killSoundThread_faile_005f439c+4
-;   undefined4 DAT_02c807e0
-;   undefined4 DAT_02c807e4
+;   TerminatedCString s_killSoundThread_failed_005f43a0
+;   int g_INT_02c807e0
+;   int g_INT_02c807e4
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
@@ -28,9 +28,9 @@ section .text
     MOV EBP,ESP                         ; 00575ca2
     AND ESP,0xfffffff8                  ; 00575ca4
     MOV EDX,0x1                         ; 00575ca7
-    MOV ECX,dword ptr [0x02c807e0]      ; 00575cac | DAT_02c807e0
+    MOV ECX,dword ptr [0x02c807e0]      ; 00575cac | g_INT_02c807e0
     XOR EBX,EBX                         ; 00575cb2
-    MOV dword ptr [0x02c807e4],EDX      ; 00575cb4 | DAT_02c807e4
+    MOV dword ptr [0x02c807e4],EDX      ; 00575cb4 | g_INT_02c807e4
     TEST ECX,ECX                        ; 00575cba
     JZ 0x00575cdf                       ; 00575cbc
         ;   XREF to: 00575cdf (CONDITIONAL_JUMP)  ; LAB_00575cdf
@@ -44,26 +44,26 @@ section .text
     CMP EBX,0x64                        ; 00575cd1
     JGE 0x00575cdf                      ; 00575cd4
         ;   XREF to: 00575cdf (CONDITIONAL_JUMP)  ; LAB_00575cdf
-    CMP dword ptr [0x02c807e0],0x0      ; 00575cd6 | DAT_02c807e0
+    CMP dword ptr [0x02c807e0],0x0      ; 00575cd6 | g_INT_02c807e0
     JNZ 0x00575cbe                      ; 00575cdd
         ;   XREF to: 00575cbe (CONDITIONAL_JUMP)  ; LAB_00575cbe
-    CMP dword ptr [0x02c807e0],0x0      ; 00575cdf | DAT_02c807e0
+    CMP dword ptr [0x02c807e0],0x0      ; 00575cdf | g_INT_02c807e0
         ;   Label: LAB_00575cdf
     JNZ 0x00575cfc                      ; 00575ce6
         ;   XREF to: 00575cfc (CONDITIONAL_JUMP)  ; LAB_00575cfc
-    CMP dword ptr [0x02c807e0],0x0      ; 00575ce8 | DAT_02c807e0
+    CMP dword ptr [0x02c807e0],0x0      ; 00575ce8 | g_INT_02c807e0
     SETZ AL                             ; 00575cef
     AND EAX,0xff                        ; 00575cf2
     MOV ESP,EBP                         ; 00575cf7
     POP EBP                             ; 00575cf9
     POP EBX                             ; 00575cfa
     RET                                 ; 00575cfb
-    PUSH 0x5f43a0                       ; 00575cfc | s_Mb_killSoundThread_faile_005f439c+4
+    PUSH 0x5f43a0                       ; 00575cfc | = "killSoundThread - failed!\n"
         ;   Label: LAB_00575cfc
     CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00575d01
         ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00575d06
-    CMP dword ptr [0x02c807e0],0x0      ; 00575d09 | DAT_02c807e0
+    CMP dword ptr [0x02c807e0],0x0      ; 00575d09 | g_INT_02c807e0
     SETZ AL                             ; 00575d10
     AND EAX,0xff                        ; 00575d13
     MOV ESP,EBP                         ; 00575d18

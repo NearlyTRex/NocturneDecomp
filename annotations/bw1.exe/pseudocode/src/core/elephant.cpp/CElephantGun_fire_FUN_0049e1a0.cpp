@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_0049e1a0(CElephantGun *this_ptr)
 
 {
@@ -94,11 +92,12 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_0049e1a0(CElephantGun *this_
   iVar3 = core_weapon_cpp_CWeapon_fire_FUN_005adde0(&this_ptr_01->base);
   if (iVar3 == 0) {
     core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
-              (0x02C82A60,(CDemonActor *)this_ptr,"shotgun-noammo.wav",&CStack_a8);
+              (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"shotgun-noammo.wav",
+               &CStack_a8);
     return 0;
   }
-  fVar7 = (float10)fptan((float10)this_ptr->spread_angle * (float10)_DAT_005dc8df *
-                         (float10)_DAT_005dc8e7);
+  fVar7 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.141593f *
+                         (float10)0.0055555555555555497);
   pCStack_3c = (CDemonActor *)(float)(fVar7 * (float10)(this_ptr->base).bolt_velocity);
   fStack_30 = (float)core_actor_cpp_getRandomInt_FUN_0040cc60(10,0xf);
   pCStack_38 = (CCrate *)0x0;
@@ -134,7 +133,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_0049e1a0(CElephantGun *this_
       fVar2 = CStack_a8.z;
       fVar1 = CStack_a8.y;
       fVar4 = CStack_a8.x;
-      pCStack_34 = (CFlameCan *)((float)_DAT_005dc8f7 / (this_ptr->base).bolt_velocity);
+      pCStack_34 = (CFlameCan *)((float)1.5 / (this_ptr->base).bolt_velocity);
       pCStack_78 = (CDemonActor *)(CStack_90.x * (float)pCStack_34);
       afStack_74[0] = CStack_90.y * (float)pCStack_34;
       afStack_74[1] = CStack_90.z * (float)pCStack_34;
@@ -199,7 +198,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_0049e1a0(CElephantGun *this_
                   in_stack_fffffe5c = (CDemonSet *)g_CDemonSetPtr->ground_type;
                   in_stack_fffffe58 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;
                   core_fire_cpp_CFireEffect_createBulletImpact_FUN_004b56a0
-                            (0x01C57074,&g_CDemonSetPtr->collision_impact_position,
+                            (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
                              (CVector3f *)in_stack_fffffe58,(int)in_stack_fffffe5c,
                              g_CDemonSetPtr->collision_actor);
                   break;
@@ -249,7 +248,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_0049e1a0(CElephantGun *this_
           afStack_104[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                afStack_14c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
           pCStack_24 = (CCharacter *)
-                       ((float)_DAT_005dc8ff /
+                       ((float)10 /
                        SQRT(afStack_104[1] * afStack_104[1] +
                             fStack_108 * fStack_108 + afStack_104[0] * afStack_104[0]));
           CStack_114.x = fStack_108 * (float)pCStack_24;
@@ -300,10 +299,11 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_0049e1a0(CElephantGun *this_
        *(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + 4);
   *(uint *)((int)&CStack_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        *(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  CStack_6c.y = CStack_6c.y + _DAT_005dc8ef;
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70(0x01C57074,&CStack_6c,rotation_matrix);
+  CStack_6c.y = CStack_6c.y + -0.125f;
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
+            (g_CFireEffect_PTR_0061c010,&CStack_6c,rotation_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
-            (0x02C82A60,(CDemonActor *)this_ptr,"elephantgun.wav",&CStack_a8);
+            (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"elephantgun.wav",&CStack_a8);
   (this_ptr->base).fire_cooldown_timer = 1.0;
   return 1;
 }

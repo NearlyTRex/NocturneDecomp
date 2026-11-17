@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 277,
+    "complexity_score": 232,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 19,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unrolled_strchr"
     ],
@@ -96,8 +95,8 @@
     },
     {
       "addr": "005da874",
-      "name": "DAT_005da874",
-      "type": "undefined4",
+      "name": "s_con_005da874",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -108,15 +107,15 @@
     },
     {
       "addr": "005da880",
-      "name": "DAT_005da880",
-      "type": "undefined4",
+      "name": "s_EXE_005da880",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00607985",
-      "name": "DAT_00607985",
-      "type": "undefined2",
-      "value": null
+      "name": "g_SHORT_00607985",
+      "type": "short",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -223,14 +222,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00607985",
-      "severity": "mild",
-      "text": "if (DAT_00607985 < 0x8000) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_1",
@@ -243,16 +234,8 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = _stricmp(param_2,&DAT_005da874);",
+      "text": "iVar2 = _stricmp(param_2,\"con\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005da874",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(param_2,&DAT_005da874);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -261,14 +244,6 @@
       "severity": "mild",
       "text": "pcVar5 = param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00607985",
-      "severity": "mild",
-      "text": "if ((0x7fff < DAT_00607985) || (DVar3 = GetLastError(), DVar3 == 5)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -325,14 +300,6 @@
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005da880",
-      "severity": "mild",
-      "text": "(iVar2 = _strcmp(pcVar5 + 1,&DAT_005da880), iVar2 == 0)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

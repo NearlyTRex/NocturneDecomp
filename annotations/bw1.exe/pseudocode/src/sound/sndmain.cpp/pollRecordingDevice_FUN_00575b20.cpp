@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_pollRecordingDevice_FUN_00575b20(short *output_buffer,int num_samples)
 
 {
@@ -15,8 +13,8 @@ int __cdecl sound_sndmain_cpp_pollRecordingDevice_FUN_00575b20(short *output_buf
   
   sound_sndmain_cpp_lockSound_FUN_00575d20();
   iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_00575990();
-  if ((iVar1 != 0) && (_DAT_02c81038 != (int *)0x0)) {
-    iVar1 = (**(code **)(*_DAT_02c81038 + 0x10))(_DAT_02c81038,output_buffer,num_samples);
+  if ((iVar1 != 0) && (g_CSoundDevice_PTR_02c81038 != (CSoundDevice *)0x0)) {
+    iVar1 = (*g_CSoundDevice_PTR_02c81038->vtable->poll)(g_CSoundDevice_PTR_02c81038);
     sound_sndmain_cpp_unlockSound_FUN_00573e70();
     return iVar1;
   }

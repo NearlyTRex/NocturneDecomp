@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 182,
+    "complexity_score": 166,
     "cross_reference_count": 49,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 6,
+    "pseudocode_lines": 96,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unrolled_memcpy",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 323
+    "total_lines": 322
   },
   "cross_references": [
     {
@@ -371,15 +370,15 @@
   "globals": [
     {
       "addr": "005d592f",
-      "name": "DAT_005d592f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d592f",
+      "type": "double",
+      "value": "0.0100000000000000"
     },
     {
       "addr": "005fd614",
-      "name": "DAT_005fd614",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fd614",
+      "type": "float",
+      "value": "9999"
     },
     {
       "addr": "0061d95c",
@@ -625,16 +624,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_ffffffcc",
       "severity": "moderate",
       "text": "int in_stack_ffffffcc;",
@@ -642,7 +633,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 83,
+      "line": 81,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
       "text": "puVar7 = (uint *)&stack0xffffffc8;",
@@ -650,7 +641,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 89,
+      "line": 87,
       "match": "in_stack_ffffffcc",
       "severity": "moderate",
       "text": "iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(this_ptr_01,in_stack_ffffffcc);",
@@ -658,7 +649,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 84,
+      "line": 82,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -666,7 +657,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 71,
+      "line": 69,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->position_delta).z = 0.0;",

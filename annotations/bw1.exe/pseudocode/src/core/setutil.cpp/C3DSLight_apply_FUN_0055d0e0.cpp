@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_0055d0e0(C3DSLight *this_ptr,CDemonLight *light)
 
 {
@@ -26,7 +24,7 @@ void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_0055d0e0(C3DSLight *this_ptr,C
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
             (&(light->base).base.rotation_matrix,&this_ptr->orient);
   (light->base).base.focal_length = this_ptr->fov;
-  dVar5 = round((double)(this_ptr->aspect * (float)_DAT_005f1309));
+  dVar5 = round((double)(this_ptr->aspect * (float)65536));
   light->transform_scale_factor = (int)ROUND(dVar5);
   pcVar3 = this_ptr->name;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(light,this_ptr->intensity);

@@ -22,21 +22,21 @@
 ;   core_game.cpp_CGame_process_FUN_004d8060 at 004d842e
 ;
 ; Referenced Globals:
-;   undefined4 s_noLightningFlash_005f9919+1
+;   TerminatedCString s_noLightningFlash_005f991a
 ;   TerminatedCString s_noLightningFlash_005f992b
 ;   TerminatedCString s_rain_wav_1_005f993c
-;   undefined4 DAT_005f994a
-;   undefined4 DAT_005f9952
-;   undefined4 DAT_005f995a
-;   undefined4 DAT_005f9962
-;   undefined4 DAT_005f996a
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_0061c010
+;   double g_DOUBLE_005f994a = 0.0000152590218966964
+;   double g_DOUBLE_005f9952 = 0.600000000000000
+;   double g_DOUBLE_005f995a = 15
+;   double g_DOUBLE_005f9962 = 0.100000000000000
+;   float g_FLOAT_005f996a = 100
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
-;   undefined4 DAT_02c997f8
+;   CVector3f[200] g_CVector3f_ARRAY_02c997f8
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -87,18 +87,18 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae1e0
     FLD float ptr [EAX + 0x4]           ; 005ae1e3
     FMUL float ptr [ESP + 0x8]          ; 005ae1e6
-    FSUBR float ptr [EBX + 0x2c997fc]   ; 005ae1ea | DAT_02c997fc | DAT_02c99808
+    FSUBR float ptr [EBX + 0x2c997fc]   ; 005ae1ea | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
     MOV EAX,dword ptr [ESP + 0x28]      ; 005ae1f0
-    FST float ptr [EBX + 0x2c997fc]     ; 005ae1f4 | DAT_02c997fc | DAT_02c99808
+    FST float ptr [EBX + 0x2c997fc]     ; 005ae1f4 | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
     FCOMP float ptr [EAX + 0x2c9a158]   ; 005ae1fa
     FNSTSW AX                           ; 005ae200
     SAHF                                ; 005ae202
     JNC 0x005ae295                      ; 005ae203
         ;   XREF to: 005ae295 (CONDITIONAL_JUMP)  ; LAB_005ae295
-    FLD float ptr [EBX + 0x2c997fc]     ; 005ae209 | DAT_02c997fc | DAT_02c99808
-    FADD float ptr [0x005f996a]         ; 005ae20f | DAT_005f996a
+    FLD float ptr [EBX + 0x2c997fc]     ; 005ae209 | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
+    FADD float ptr [0x005f996a]         ; 005ae20f | g_FLOAT_005f996a
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae215
-    FSTP float ptr [EBX + 0x2c997fc]    ; 005ae218 | DAT_02c997fc | DAT_02c99808
+    FSTP float ptr [EBX + 0x2c997fc]    ; 005ae218 | g_CVector3f_ARRAY_02c997f8[0].y | g_CVector3f_ARRAY_02c997f8[1].y
     CMP dword ptr [EAX],0x1             ; 005ae21e
     JNZ 0x005ae295                      ; 005ae221
         ;   XREF to: 005ae295 (CONDITIONAL_JUMP)  ; LAB_005ae295
@@ -106,14 +106,14 @@ section .text
     LEA EDI,[ESP + 0x10]                ; 005ae227
     LEA ESI,[EBX + 0x2c997f8]           ; 005ae22b
     MOV EAX,dword ptr [EAX + 0x2c9a158] ; 005ae231
-    MOVSD ES:EDI,ESI                    ; 005ae237 | DAT_02c997f8
-    MOVSD ES:EDI,ESI                    ; 005ae238 | DAT_02c997fc
-    MOVSD ES:EDI,ESI                    ; 005ae239 | DAT_02c99800
+    MOVSD ES:EDI,ESI                    ; 005ae237 | g_CVector3f_ARRAY_02c997f8
+    MOVSD ES:EDI,ESI                    ; 005ae238 | g_CVector3f_ARRAY_02c997f8[0].y
+    MOVSD ES:EDI,ESI                    ; 005ae239 | g_CVector3f_ARRAY_02c997f8[0].z
     PUSH 0x0                            ; 005ae23a
     MOV dword ptr [ESP + 0x18],EAX      ; 005ae23c
     LEA EAX,[ESP + 0x14]                ; 005ae240
     PUSH EAX                            ; 005ae244
-    MOV ECX,dword ptr [0x0061c010]      ; 005ae245 | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 005ae245 | g_CFireEffect_PTR_0061c010
     PUSH ECX                            ; 005ae24b
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae24c
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -121,7 +121,7 @@ section .text
     PUSH 0x0                            ; 005ae254
     LEA EAX,[ESP + 0x14]                ; 005ae256
     PUSH EAX                            ; 005ae25a
-    MOV ESI,dword ptr [0x0061c010]      ; 005ae25b | DAT_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 005ae25b | g_CFireEffect_PTR_0061c010
     PUSH ESI                            ; 005ae261
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae262
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -129,7 +129,7 @@ section .text
     PUSH 0x0                            ; 005ae26a
     LEA EAX,[ESP + 0x14]                ; 005ae26c
     PUSH EAX                            ; 005ae270
-    MOV EDI,dword ptr [0x0061c010]      ; 005ae271 | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 005ae271 | g_CFireEffect_PTR_0061c010
     PUSH EDI                            ; 005ae277
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae278
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -137,7 +137,7 @@ section .text
     PUSH 0x0                            ; 005ae280
     LEA EAX,[ESP + 0x14]                ; 005ae282
     PUSH EAX                            ; 005ae286
-    MOV EAX,[0x0061c010]                ; 005ae287 | DAT_0061c010
+    MOV EAX,[0x0061c010]                ; 005ae287 | g_CFireEffect_PTR_0061c010
     PUSH EAX                            ; 005ae28c
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320 ; 005ae28d
         ;   XREF to: 004b7320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -188,7 +188,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae30e
     PUSH 0x5f992b                       ; 005ae311 | = "noLightningFlash"
     FSTP float ptr [EAX + 0x2c]         ; 005ae316
-    MOV EAX,[0x0061b4d0]                ; 005ae319 | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 005ae319 | g_CEventList_PTR_0061b4d0
     PUSH EAX                            ; 005ae31e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005ae31f
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -200,7 +200,7 @@ section .text
         ;   Label: LAB_005ae32f
     FLD float ptr [EAX + 0x34]          ; 005ae332
     FST double ptr [ESP]                ; 005ae335
-    FCOMP double ptr [0x005f995a]       ; 005ae338 | DAT_005f995a
+    FCOMP double ptr [0x005f995a]       ; 005ae338 | g_DOUBLE_005f995a
     FNSTSW AX                           ; 005ae33e
     SAHF                                ; 005ae340
     JNC 0x005ae526                      ; 005ae341
@@ -210,7 +210,7 @@ section .text
     FXCH                                ; 005ae34c
     FYL2X                               ; 005ae34e
     FLD float ptr [ESP + 0x8]           ; 005ae350
-    FMUL double ptr [0x005f9962]        ; 005ae354 | DAT_005f9962
+    FMUL double ptr [0x005f9962]        ; 005ae354 | g_DOUBLE_005f9962
     FADDP                               ; 005ae35a
     FLD1                                ; 005ae35c
     FLDL2E                              ; 005ae35e
@@ -223,7 +223,7 @@ section .text
     FSTP ST1                            ; 005ae36c
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae36e
     FSTP float ptr [EAX + 0x34]         ; 005ae371
-    MOV ESI,dword ptr [0x02c9a540]      ; 005ae374 | DAT_02c9a540
+    MOV ESI,dword ptr [0x02c9a540]      ; 005ae374 | g_UINT_02c9a540
         ;   Label: LAB_005ae374
     PUSH ESI                            ; 005ae37a
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 005ae37b
@@ -249,8 +249,8 @@ section .text
     SAHF                                ; 005ae3a2
     JA 0x005ae414                       ; 005ae3a3
         ;   XREF to: 005ae414 (CONDITIONAL_JUMP)  ; LAB_005ae414
-    PUSH 0x5f991a                       ; 005ae3a5 | s_noLightningFlash_005f9919+1
-    MOV ECX,dword ptr [0x0061b4d0]      ; 005ae3aa | DAT_0061b4d0
+    PUSH 0x5f991a                       ; 005ae3a5 | = "noLightningFlash"
+    MOV ECX,dword ptr [0x0061b4d0]      ; 005ae3aa | g_CEventList_PTR_0061b4d0
     PUSH ECX                            ; 005ae3b0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005ae3b1
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -261,7 +261,7 @@ section .text
     MOV EAX,[0x01fe49d4]                ; 005ae3bd | g_CDemonCameraInstance.corona_blend_factor
     MOV dword ptr [ESP + 0x2c],EAX      ; 005ae3c2
     FILD dword ptr [ESP + 0x2c]         ; 005ae3c6
-    FMUL double ptr [0x005f994a]        ; 005ae3ca | DAT_005f994a
+    FMUL double ptr [0x005f994a]        ; 005ae3ca | g_DOUBLE_005f994a
     FSUB float ptr [ESP + 0x1c]         ; 005ae3d0
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ae3d4
     FST float ptr [ESP + 0x20]          ; 005ae3d7
@@ -296,7 +296,7 @@ section .text
     MOV dword ptr [EAX + 0x28],0x0      ; 005ae431
     JMP 0x005ae1bc                      ; 005ae438
         ;   XREF to: 005ae1bc (UNCONDITIONAL_JUMP)  ; LAB_005ae1bc
-    MOV EAX,[0x02c9a540]                ; 005ae43d | DAT_02c9a540
+    MOV EAX,[0x02c9a540]                ; 005ae43d | g_UINT_02c9a540
         ;   Label: LAB_005ae43d
     PUSH EAX                            ; 005ae442
     CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 005ae443
@@ -339,7 +339,7 @@ section .text
     MOV EAX,[0x01fe49d4]                ; 005ae491 | g_CDemonCameraInstance.corona_blend_factor
     MOV dword ptr [ESP + 0x2c],EAX      ; 005ae496
     FILD dword ptr [ESP + 0x2c]         ; 005ae49a
-    FMUL double ptr [0x005f994a]        ; 005ae49e | DAT_005f994a
+    FMUL double ptr [0x005f994a]        ; 005ae49e | g_DOUBLE_005f994a
     PUSH 0x3e99999a                     ; 005ae4a4
     MOV EBX,dword ptr [EBP + 0x14]      ; 005ae4a9
     FSTP float ptr [ESP + 0x10]         ; 005ae4ac
@@ -362,7 +362,7 @@ section .text
     MOV dword ptr [ESP + 0xc],0x3f800000 ; 005ae4dd
     FLD float ptr [ESP + 0xc]           ; 005ae4e5
         ;   Label: LAB_005ae4e5
-    FMUL double ptr [0x005f9952]        ; 005ae4e9 | DAT_005f9952
+    FMUL double ptr [0x005f9952]        ; 005ae4e9 | g_DOUBLE_005f9952
     SUB ESP,0x4                         ; 005ae4ef
     FSTP float ptr [ESP]                ; 005ae4f2
     PUSH 0x3c23d70a                     ; 005ae4f5
@@ -389,12 +389,12 @@ section .text
         ;   Label: LAB_005ae535
     MOV EDI,dword ptr [EBP + 0x14]      ; 005ae53a
     PUSH EDI                            ; 005ae53d
-    MOV EAX,[0x006236b8]                ; 005ae53e | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 005ae53e | g_CSound_PTR_006236b8
     PUSH EAX                            ; 005ae543
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 005ae544
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 005ae549
-    MOV [0x02c9a540],EAX                ; 005ae54c | DAT_02c9a540
+    MOV [0x02c9a540],EAX                ; 005ae54c | g_UINT_02c9a540
     MOV ESP,EBP                         ; 005ae551
     POP EBP                             ; 005ae553
     POP EDI                             ; 005ae554

@@ -17,8 +17,8 @@
 ;   TerminatedCString s_Too_many_game_flags_005d4d43
 ;   TerminatedCString s_core_event_cpp_005d4d58
 ;   TerminatedCString s_Event_name_s_too_long_005d4d6a
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findGameFlag_FUN_00491590
@@ -78,8 +78,8 @@ section .text
     MOV EDX,0x5d4d58                    ; 00491161 | = "..\\core\\event.cpp"
     MOV ECX,0xd43                       ; 00491166
     PUSH 0x5d4d6a                       ; 0049116b | = "Event name %s too long!"
-    MOV dword ptr [0x01d046a0],EDX      ; 00491170 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00491176 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00491170 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00491176 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0049117c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00491181
@@ -123,8 +123,8 @@ section .text
         ;   Label: LAB_004911d5
     MOV EAX,0xd3d                       ; 004911da
     PUSH 0x5d4d43                       ; 004911df | = "Too many game flags!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004911e4 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004911ea | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004911e4 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004911ea | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004911ef
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004911f4

@@ -18,8 +18,8 @@
 ;   wincore_winrun.cpp_loadControllerSettings_FUN_00590b10 at 00590b59
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dad87
-;   undefined4 DAT_005dad8a
+;   TerminatedCString s_d_005dad87
+;   TerminatedCString s_d_005dad8a
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005ba8cc
@@ -36,7 +36,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x78]      ; 004d8b25
     MOV EDX,dword ptr [EAX]             ; 004d8b29
     PUSH EDX                            ; 004d8b2b
-    PUSH 0x5dad87                       ; 004d8b2c | DAT_005dad87
+    PUSH 0x5dad87                       ; 004d8b2c | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004d8b31
     PUSH EAX                            ; 004d8b35
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004d8b36
@@ -55,7 +55,7 @@ section .text
     ADD ESP,0x10                        ; 004d8b5c
     MOV ESI,dword ptr [ESP + 0x78]      ; 004d8b5f
     PUSH ESI                            ; 004d8b63
-    PUSH 0x5dad8a                       ; 004d8b64 | DAT_005dad8a
+    PUSH 0x5dad8a                       ; 004d8b64 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004d8b69
     PUSH EAX                            ; 004d8b6d
     CALL crt_stdio.c_sscanf_FUN_005ba8cc ; 004d8b6e

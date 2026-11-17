@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -75,9 +75,9 @@ section .text
     POP ESI                             ; 0040f466
     POP EBX                             ; 0040f467
     RET                                 ; 0040f468
-    MOV ESI,dword ptr [0x0060b280]      ; 0040f469 | DAT_0060b280
+    MOV ESI,dword ptr [0x0060b280]      ; 0040f469 | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_0040f469
-    PUSH ESI                            ; 0040f46f | DAT_01ba5c50
+    PUSH ESI                            ; 0040f46f | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 0040f470
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0040f475

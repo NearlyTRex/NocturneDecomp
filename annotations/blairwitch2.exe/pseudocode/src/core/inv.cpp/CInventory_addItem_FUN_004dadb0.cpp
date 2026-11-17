@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message,int unused_flag)
 
 {
@@ -52,7 +50,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
   pcVar11 = acStack_32c;
   pcVar12 = acStack_32c;
   pcVar7 = acStack_32c;
-  if (((this_ptr->owner == *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4)) &&
+  if ((((CHero *)this_ptr->owner == g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]) &&
       (show_tutorial_message != 0)) && (g_CGamePtr->letterbox_mode == 0)) {
     pcStack_28 = core_inv_cpp_getItemDisplayName_FUN_004d9f10(item_actor);
     core_inv_cpp_getItemDescription_FUN_004d9f80(item_actor);
@@ -69,7 +67,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     if (pCVar3 != (CDemonActor *)0x0) {
-      _sprintf(acStack_22c,&DAT_005db537);
+      _sprintf(acStack_22c,"%d ");
       pcVar9 = acStack_22c;
       iVar6 = -1;
       pcVar4 = acStack_12c;
@@ -328,8 +326,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
       pcVar12 = pcVar12 + 2;
     } while (cVar1 != '\0');
     iStack_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00
-                          (_DAT_01511cc4,this_ptr->message_text);
-    this_ptr->message_display_timer = (float)iStack_14 * (float)_DAT_005db702;
+                          (g_CBitFont_PTR_01511cc4,this_ptr->message_text);
+    this_ptr->message_display_timer = (float)iStack_14 * (float)0.025000000000000001;
   }
   pCStack_1c = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0
                                   (item_actor,g_CAmmoClassInfo.name_hash);
@@ -352,7 +350,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
                (float)((int)pCVar3[1].particle_systems[1].fade_start + pCStack_1c->ammo_count);
           engine_console_cpp_CConsole_printf_FUN_00436710
                     (this_ptr_00,"Found existing ammo... adding count");
-          core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,item_actor,1);
+          core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
+                    (g_CDemonMission_PTR_00618170,item_actor,1);
           return 1;
         }
         iVar6 = iVar6 + 1;
@@ -379,7 +378,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
     iVar6 = _strcmp(pCStack_1c->weapon_class_name,"CDynamite");
     if (iVar6 == 0) {
       pCVar3 = core_actor_cpp_createActorByName_FUN_0040c5a0("CDynamite");
-      core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(0x01D182F0,pCVar3);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0
+                (g_CDemonMission_PTR_00618170,pCVar3);
       (*((pCVar3->vtable)._ub)->setup)(pCVar3);
       pCVar3[2].particle_systems[0].position.z = (float)pCStack_1c->ammo_count;
       (*((pCVar3->vtable)._ub)->pickup)(pCVar3,this_ptr->owner);
@@ -397,7 +397,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
     do {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (pCVar8->items[0],g_CHealthItemClassInfo.name_hash);
-      pCVar2 = 0x01D182F0;
+      pCVar2 = g_CDemonMission_PTR_00618170;
       if ((pCVar8->item_groups[0] == this_ptr->current_group) && (pCVar3 != (CDemonActor *)0x0)) {
         pCVar3[1].particle_systems[0].fade_end =
              (float)((int)pCVar3[1].particle_systems[0].fade_end +
@@ -415,7 +415,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
     if (pCVar3 != (CDemonActor *)0x0) {
       this_ptr->items[this_ptr->item_count] = item_actor;
       this_ptr->item_groups[this_ptr->item_count] = local_24;
-      pCVar2 = 0x01D182F0;
+      pCVar2 = g_CDemonMission_PTR_00618170;
       this_ptr->item_count = this_ptr->item_count + 1;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(pCVar2,item_actor,0);
       (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
@@ -445,8 +445,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
             }
             engine_console_cpp_CConsole_printf_FUN_00436710
                       (g_CConsolePtr,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,item_actor,1)
-            ;
+            core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
+                      (g_CDemonMission_PTR_00618170,item_actor,1);
             return 1;
           }
         }
@@ -457,7 +457,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
   }
   this_ptr->items[this_ptr->item_count] = item_actor;
   this_ptr->item_groups[this_ptr->item_count] = this_ptr->current_group;
-  pCVar2 = 0x01D182F0;
+  pCVar2 = g_CDemonMission_PTR_00618170;
   this_ptr->item_count = this_ptr->item_count + 1;
   core_mission_cpp_CDemonMission_removeActorFromList_FUN_004fc270(pCVar2,item_actor);
   (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);

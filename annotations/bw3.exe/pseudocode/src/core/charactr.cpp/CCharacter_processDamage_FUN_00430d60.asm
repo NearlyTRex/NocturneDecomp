@@ -25,12 +25,12 @@
 ;   core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60 at 00599dc5
 ;
 ; Referenced Globals:
-;   undefined4 s_ShotInvulnerable_005b83c5+1
-;   undefined4 DAT_005fba60
+;   TerminatedCString s_ShotInvulnerable_005b83c6
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -200,7 +200,7 @@ section .text
         ;   Label: LAB_00430ec9
     JNZ 0x00430f0c                      ; 00430ed0
         ;   XREF to: 00430f0c (CONDITIONAL_JUMP)  ; LAB_00430f0c
-    MOV EAX,[0x01d5ba14]                ; 00430ed2 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 00430ed2 | g_INT_01d5ba14
     CMP EBX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 00430ed7
     JZ 0x00430f0c                       ; 00430ede
         ;   XREF to: 00430f0c (CONDITIONAL_JUMP)  ; LAB_00430f0c
@@ -216,7 +216,7 @@ section .text
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004bd930 ; 00430f04
         ;   XREF to: 004bd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004bd930(CGame * this_ptr, char * name, float value, float duration)
     ADD ESP,0x10                        ; 00430f09
-    MOV EAX,[0x01d5ba14]                ; 00430f0c | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 00430f0c | g_INT_01d5ba14
         ;   Label: LAB_00430f0c
     CMP EBX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 00430f11
     JZ 0x00430f50                       ; 00430f18
@@ -252,9 +252,9 @@ section .text
     POP ESI                             ; 00430f67
     POP EBX                             ; 00430f68
     RET                                 ; 00430f69
-    PUSH 0x5b83c6                       ; 00430f6a | s_ShotInvulnerable_005b83c5+1
+    PUSH 0x5b83c6                       ; 00430f6a | = "ShotInvulnerable"
         ;   Label: LAB_00430f6a
-    MOV EDI,dword ptr [0x005fba60]      ; 00430f6f | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 00430f6f | g_CEventList_PTR_005fba60
     PUSH EDI                            ; 00430f75
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00430f76
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

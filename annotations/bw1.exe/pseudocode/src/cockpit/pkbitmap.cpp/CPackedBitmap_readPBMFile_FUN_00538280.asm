@@ -13,8 +13,8 @@
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0 at 005386e7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_005382ca
     MOV ESI,0x4b2                       ; 005382cf
     PUSH 0x5ecf66                       ; 005382d4
-    MOV dword ptr [0x01d1d400],ECX      ; 005382d9 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005382df | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 005382d9 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 005382df | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005382e5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005382ea
@@ -78,8 +78,8 @@ section .text
         ;   Label: LAB_005382ed
     MOV EAX,0x4b3                       ; 005382f2
     PUSH 0x5ecfa1                       ; 005382f7
-    MOV dword ptr [0x01d1d400],EDI      ; 005382fc | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00538302 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 005382fc | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00538302 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00538307
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     JMP 0x00538295                      ; 0053830c
@@ -88,8 +88,8 @@ section .text
         ;   Label: LAB_0053830e
     MOV EDX,0x4b1                       ; 00538313
     PUSH 0x5ecf20                       ; 00538318
-    MOV [0x01d1d400],EAX                ; 0053831d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00538322 | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0053831d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00538322 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00538328
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053832d

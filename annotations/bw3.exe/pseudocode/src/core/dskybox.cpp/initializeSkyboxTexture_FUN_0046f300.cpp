@@ -13,7 +13,7 @@ SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_0046f300(
   char *pcVar2;
   char *pcVar3;
   
-  pcVar2 = "ANITESKY.RAW" + 1;
+  pcVar2 = "NITESKY.RAW";
   pcVar3 = texture->texture_name;
   texture->reserved = 0;
   do {

@@ -15,11 +15,11 @@
 ;   TerminatedCString s_vga_map_005d2014
 ;   TerminatedCString s_vga_act_005d201c
 ;   TerminatedCString s_default_act_005d2024
-;   undefined4 DAT_005d2030
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4f030
-;   undefined4 DAT_01c4f034
-;   undefined4 DAT_01c4f038
+;   TerminatedCString s_art_005d2030
+;   int g_INT_0061b4a0 = 0x8
+;   uint[1600] g_UINT_ARRAY_01c4f030
+;   undefined4 g_UINT_ARRAY_01c4f030[1]
+;   undefined4 g_UINT_ARRAY_01c4f030[2]
 ;
 ; Called Functions:
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940
@@ -43,7 +43,7 @@ section .text
     PUSH 0x1e0                          ; 00401014
     MOV EDX,0x20                        ; 00401019
     PUSH 0x280                          ; 0040101e
-    MOV dword ptr [0x0061b4a0],EDX      ; 00401023 | DAT_0061b4a0
+    MOV dword ptr [0x0061b4a0],EDX      ; 00401023 | g_INT_0061b4a0
     CALL wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ac040 ; 00401029
         ;   XREF to: 005ac040 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ac040(int width, int height)
     ADD ESP,0x8                         ; 0040102e
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 005acec0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0()
     MOV ECX,0xffffffff                  ; 00401074
     MOV EBX,0x4                         ; 00401079
-    MOV dword ptr [0x01c4f030],ECX      ; 0040107e | DAT_01c4f030
+    MOV dword ptr [0x01c4f030],ECX      ; 0040107e | g_UINT_ARRAY_01c4f030
     MOV ECX,0x1                         ; 00401084
     MOV EAX,0xffffffff                  ; 00401089
         ;   Label: LAB_00401089
@@ -77,7 +77,7 @@ section .text
     DIV ECX                             ; 00401090
     ADD EBX,0x4                         ; 00401092
     INC ECX                             ; 00401095
-    MOV dword ptr [EBX + 0x1c4f02c],EAX ; 00401096 | DAT_01c4f034 | DAT_01c4f038
+    MOV dword ptr [EBX + 0x1c4f02c],EAX ; 00401096 | g_UINT_ARRAY_01c4f030[1] | g_UINT_ARRAY_01c4f030[2]
     CMP ECX,0x640                       ; 0040109c
     JC 0x00401089                       ; 004010a2
         ;   XREF to: 00401089 (CONDITIONAL_JUMP)  ; LAB_00401089
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x4                         ; 004010ac
     PUSH 0x1                            ; 004010af
     PUSH 0x5d2024                       ; 004010b1 | = "default.act"
-    PUSH 0x5d2030                       ; 004010b6 | DAT_005d2030
+    PUSH 0x5d2030                       ; 004010b6 | = "art"
     LEA EAX,[ESP + 0xc]                 ; 004010bb
     PUSH EAX                            ; 004010bf
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 004010c0

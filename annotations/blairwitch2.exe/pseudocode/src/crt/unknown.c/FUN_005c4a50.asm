@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_TlsGetValue_005c8654 = 001c922a
 ;   TerminatedCString s_Thread_has_no_thread_spe_005f1fe4
-;   undefined4 DAT_0061f2a0
+;   int g_INT_0061f2a0 = -0x1
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c1c20
@@ -31,7 +31,7 @@ section .text
     TEST EAX,EAX                        ; 005c4a5c
     JZ 0x005c4a70                       ; 005c4a5e
         ;   XREF to: 005c4a70 (CONDITIONAL_JUMP)  ; LAB_005c4a70
-    MOV EDX,dword ptr [0x0061f2a0]      ; 005c4a60 | DAT_0061f2a0
+    MOV EDX,dword ptr [0x0061f2a0]      ; 005c4a60 | g_INT_0061f2a0
     PUSH EDX                            ; 005c4a66
     CALL dword ptr CS:[0x5c8654]        ; 005c4a67 | PTR_TlsGetValue_005c8654
     MOV EBX,EAX                         ; 005c4a6e

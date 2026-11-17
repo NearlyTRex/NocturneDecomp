@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_ctor_FUN_005a3d30(CUnionZombie *this_ptr)
 
 {
@@ -31,7 +29,7 @@ CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_ctor_FUN_005a3d30(CUnionZo
   (this_ptr_01->base).idle_motion = 0;
   pcVar4 = (this_ptr_01->base).flinch_motion_name;
   (this_ptr_01->base).walk_motion = 1;
-  fVar2 = _DAT_005ff53c;
+  fVar2 = 25.0f;
   (this_ptr_01->base).run_motion = 1;
   pcVar3 = "flinch";
   (this_ptr_01->base).can_flinch = 1;
@@ -48,7 +46,7 @@ CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_ctor_FUN_005a3d30(CUnionZo
   this_ptr_01->vanish_phase = 0;
   core_unionzom_cpp_CUnionZombie_processStates_FUN_005a3fc0(this_ptr_01,0.0,0);
   this_ptr_00 = &(this_ptr_01->base).state_machine;
-  (this_ptr_01->base).attack_range = _DAT_005ff540;
+  (this_ptr_01->base).attack_range = 8.0f;
   core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
             (this_ptr_00,"ChaseComplete","VanishAttack");
   core_muzzle_cpp_SStateMachine_setInitialState_FUN_0059d990(this_ptr_00,"AlertInvisible");

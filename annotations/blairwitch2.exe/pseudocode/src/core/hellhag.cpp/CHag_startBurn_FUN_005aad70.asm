@@ -9,10 +9,10 @@
 ; float            Stack[0xc]:4   strength
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0c0e
+;   TerminatedCString s_Burn_005f0c0e
 ;   TerminatedCString s_BurnComplete_005f0c13
-;   undefined4 DAT_005f0c20
-;   undefined4 DAT_005f0c26
+;   TerminatedCString s_Burn_005f0c20
+;   float g_FLOAT_005f0c26 = 2
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
@@ -42,7 +42,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_00503620 ; 005aad8d
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 005aad92
-    PUSH 0x5f0c0e                       ; 005aad95 | DAT_005f0c0e
+    PUSH 0x5f0c0e                       ; 005aad95 | = "Burn"
     LEA ESI,[EBX + 0x10af8]             ; 005aad9a
     PUSH ESI                            ; 005aada0
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005aada1
@@ -61,7 +61,7 @@ section .text
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005aadbd
         ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005aadc2
-    PUSH 0x5f0c20                       ; 005aadc5 | DAT_005f0c20
+    PUSH 0x5f0c20                       ; 005aadc5 | = "Burn"
         ;   Label: LAB_005aadc5
     LEA EAX,[EBX + 0x10af8]             ; 005aadca
     PUSH EAX                            ; 005aadd0
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aadd6
     FLD float ptr [EBP + 0x1c]          ; 005aadd9
-    FMUL float ptr [0x005f0c26]         ; 005aaddc | DAT_005f0c26
+    FMUL float ptr [0x005f0c26]         ; 005aaddc | g_FLOAT_005f0c26
     LEA EDX,[EBX + 0x11434]             ; 005aade2
     FSTP float ptr [EBX + 0x11430]      ; 005aade8
     CMP EDX,EDI                         ; 005aadee

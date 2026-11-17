@@ -13,11 +13,11 @@ void __cdecl core_bugs_cpp_CBugs_archive_FUN_00421960(CBugs *this_ptr)
   int iVar1;
   
   core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
-  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->count,"?count" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->count,"count");
   core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->model_count,"modelCount");
-  if (DAT_007df9b8 == 1) {
+  if (g_INT_007df9b8 == 1) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-              (this_ptr->models,&DAT_005b7782);
+              (this_ptr->models,&g_CHAR_005b7782);
   }
   iVar1 = 0;
   if (0 < this_ptr->model_count) {

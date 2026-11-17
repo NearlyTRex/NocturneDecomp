@@ -24,11 +24,11 @@
 ;   core_fire.cpp_CFireEffect_allocateToss_FUN_004b6ed0 at 004b6efe
 ;
 ; Referenced Globals:
-;   undefined4 s_dynamitestick_kfm_005df389+3
+;   TerminatedCString s_dynamitestick_kfm_005df38c
 ;   TerminatedCString s_core_fire_cpp_005df39e
 ;   TerminatedCString s_CToss_create_invalid_tos_005df3af
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dac0
@@ -61,8 +61,8 @@ section .text
     MOV EDX,0x5df39e                    ; 004b1c7f | = "..\\core\\fire.cpp"
     MOV ECX,0xd76                       ; 004b1c84
     PUSH 0x5df3af                       ; 004b1c89 | = "CToss::create - invalid toss type."
-    MOV dword ptr [0x01d1d400],EDX      ; 004b1c8e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004b1c94 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004b1c8e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004b1c94 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004b1c9a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004b1c9f
@@ -137,7 +137,7 @@ section .text
     POP ESI                             ; 004b1d5f
     POP EBX                             ; 004b1d60
     RET                                 ; 004b1d61
-    PUSH 0x5df38c                       ; 004b1d62 | s_dynamitestick_kfm_005df389+3
+    PUSH 0x5df38c                       ; 004b1d62 | = "dynamitestick.kfm"
         ;   Label: LAB_004b1d62
     LEA EAX,[EBX + 0x4]                 ; 004b1d67
     PUSH EAX                            ; 004b1d6a

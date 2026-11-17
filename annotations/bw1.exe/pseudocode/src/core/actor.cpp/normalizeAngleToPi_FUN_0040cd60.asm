@@ -24,12 +24,12 @@
 ;   ... and 55 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2eb9
-;   undefined4 DAT_005d2ebd
-;   undefined4 DAT_005d2ec1
-;   undefined4 DAT_005d2ec9
-;   undefined4 DAT_005d2ed1
-;   undefined4 DAT_005d2ed9
+;   float g_FLOAT_005d2eb9 = -3.141593
+;   float g_FLOAT_005d2ebd = 3.141593
+;   double g_DOUBLE_005d2ec1 = 0.159154943096444
+;   double g_DOUBLE_005d2ec9 = -6.28318530700000
+;   double g_DOUBLE_005d2ed1 = -0.159154943096444
+;   double g_DOUBLE_005d2ed9 = 6.28318530700000
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005c0880
@@ -41,13 +41,13 @@ section .text
     SUB ESP,0xc                         ; 0040cd60
         ;   Label: core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
     FLD float ptr [ESP + 0x10]          ; 0040cd63
-    FCOMP float ptr [0x005d2eb9]        ; 0040cd67 | DAT_005d2eb9
+    FCOMP float ptr [0x005d2eb9]        ; 0040cd67 | g_FLOAT_005d2eb9
     FNSTSW AX                           ; 0040cd6d
     SAHF                                ; 0040cd6f
     JC 0x0040cd91                       ; 0040cd70
         ;   XREF to: 0040cd91 (CONDITIONAL_JUMP)  ; LAB_0040cd91
     FLD float ptr [ESP + 0x10]          ; 0040cd72
-    FCOMP float ptr [0x005d2ebd]        ; 0040cd76 | DAT_005d2ebd
+    FCOMP float ptr [0x005d2ebd]        ; 0040cd76 | g_FLOAT_005d2ebd
     FNSTSW AX                           ; 0040cd7c
     SAHF                                ; 0040cd7e
     JA 0x0040cdcf                       ; 0040cd7f
@@ -60,8 +60,8 @@ section .text
     RET                                 ; 0040cd90
     FLD float ptr [ESP + 0x10]          ; 0040cd91
         ;   Label: LAB_0040cd91
-    FADD float ptr [0x005d2ebd]         ; 0040cd95 | DAT_005d2ebd
-    FMUL double ptr [0x005d2ed1]        ; 0040cd9b | DAT_005d2ed1
+    FADD float ptr [0x005d2ebd]         ; 0040cd95 | g_FLOAT_005d2ebd
+    FMUL double ptr [0x005d2ed1]        ; 0040cd9b | g_DOUBLE_005d2ed1
     SUB ESP,0x8                         ; 0040cda1
     FSTP double ptr [ESP]               ; 0040cda4
     CALL crt_math.c_floor_FUN_005c0880  ; 0040cda7
@@ -71,7 +71,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 0040cdb4
     FLD1                                ; 0040cdb8
     FADDP                               ; 0040cdba
-    FMUL double ptr [0x005d2ed9]        ; 0040cdbc | DAT_005d2ed9
+    FMUL double ptr [0x005d2ed9]        ; 0040cdbc | g_DOUBLE_005d2ed9
     ADD ESP,0x8                         ; 0040cdc2
     FADD float ptr [ESP + 0x10]         ; 0040cdc5
     FSTP float ptr [ESP + 0x8]          ; 0040cdc9
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 0040cd89 (UNCONDITIONAL_JUMP)  ; LAB_0040cd89
     FLD float ptr [ESP + 0x10]          ; 0040cdcf
         ;   Label: LAB_0040cdcf
-    FADD float ptr [0x005d2eb9]         ; 0040cdd3 | DAT_005d2eb9
-    FMUL double ptr [0x005d2ec1]        ; 0040cdd9 | DAT_005d2ec1
+    FADD float ptr [0x005d2eb9]         ; 0040cdd3 | g_FLOAT_005d2eb9
+    FMUL double ptr [0x005d2ec1]        ; 0040cdd9 | g_DOUBLE_005d2ec1
     SUB ESP,0x8                         ; 0040cddf
     FSTP double ptr [ESP]               ; 0040cde2
     CALL crt_math.c_floor_FUN_005c0880  ; 0040cde5
@@ -90,7 +90,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 0040cdf2
     FLD1                                ; 0040cdf6
     FADDP                               ; 0040cdf8
-    FMUL double ptr [0x005d2ec9]        ; 0040cdfa | DAT_005d2ec9
+    FMUL double ptr [0x005d2ec9]        ; 0040cdfa | g_DOUBLE_005d2ec9
     ADD ESP,0x8                         ; 0040ce00
     FADD float ptr [ESP + 0x10]         ; 0040ce03
     FSTP float ptr [ESP + 0x8]          ; 0040ce07

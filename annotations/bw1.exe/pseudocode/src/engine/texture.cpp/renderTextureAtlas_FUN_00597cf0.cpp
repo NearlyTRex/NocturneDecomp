@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_00597cf0(void)
 
 {
-  engine_texture_cpp_CTextureCache_renderAllTextures_FUN_00597900(_DAT_02c8a680);
+  engine_texture_cpp_CTextureCache_renderAllTextures_FUN_00597900(g_CTextureCache_PTR_02c8a680);
   return;
 }

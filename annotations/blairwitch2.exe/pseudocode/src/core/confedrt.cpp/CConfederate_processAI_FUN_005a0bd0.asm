@@ -13,8 +13,8 @@
 ;   TerminatedCString s_Chasing_005efc55
 ;   TerminatedCString s_RangeAttack_005efc5d
 ;   TerminatedCString s_ChaseComplete_005efc69
-;   undefined4 DAT_005fedb0
-;   undefined4 DAT_0265370c
+;   float g_FLOAT_005fedb0 = 15
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -98,7 +98,7 @@ section .text
     ADD EAX,0x1134                      ; 005a0c89
     ADD EAX,EBX                         ; 005a0c8e
     PUSH EAX                            ; 005a0c90
-    PUSH 0x265370c                      ; 005a0c91 | DAT_0265370c
+    PUSH 0x265370c                      ; 005a0c91 | g_CVector3f_0265370c
     LEA ESI,[EBP + 0x1e]                ; 005a0c96
     LEA EDI,[EBP + -0x1e]               ; 005a0c99
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a0c9c
@@ -388,7 +388,7 @@ section .text
     FADD float ptr [EBP + 0x5a]         ; 005a0fa8
     FSQRT                               ; 005a0fab
     FST float ptr [EBP + 0x62]          ; 005a0fad
-    FCOMP float ptr [0x005fedb0]        ; 005a0fb0 | DAT_005fedb0
+    FCOMP float ptr [0x005fedb0]        ; 005a0fb0 | g_FLOAT_005fedb0
     FNSTSW AX                           ; 005a0fb6
     SAHF                                ; 005a0fb8
     JNC 0x005a0f21                      ; 005a0fb9

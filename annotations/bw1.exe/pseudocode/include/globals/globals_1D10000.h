@@ -8,7 +8,10 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CLevelLoader.h"
+#include "types/classes/CMatrix3x3i.h"
 #include "types/classes/CMoon.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D10000
@@ -51,6 +54,7 @@ extern CDemonActorType g_CLightGunClassInfo;
 extern CDemonActorType g_CLightPisClassInfo;
 extern CDemonActorType g_CLightConeClassInfo;
 extern CDemonActorType g_CMansionPuzzleCircleClassInfo;
+extern CDemonActorType g_CDemonActorType_01d1d498;
 extern CDemonActorType g_CMarqueeClassInfo;
 extern CDemonActorType g_CMeleeClassInfo;
 
@@ -60,6 +64,123 @@ extern CKeyFramedModel g_LoadingMoonModel;
 // CLevelLoader
 extern CLevelLoader g_CLevelLoaderInstance;
 
+// CMatrix3x3i
+extern CMatrix3x3i g_CMatrix3x3i_01d1dd40;
+
 // CMoon
 extern CMoon g_CMoonInstance;
+
+// CVector3i
+extern CVector3i g_CVector3i_01d1c22c;
+extern CVector3i g_CVector3i_01d1c238;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_01d1baac;
+
+// char*
+extern char* g_CHAR_PTR_01d1d400;
+extern char* g_CHAR_PTR_01d1ffe0;
+
+// char*[16]
+extern char* g_CHAR_PTR_ARRAY_01d1f5dc[16];
+extern char* g_CHAR_PTR_ARRAY_01d1f61c[16];
+
+// char*[9]
+extern char* g_CHAR_PTR_ARRAY_01d1f5b8[9];
+
+// char[2304]
+extern char g_CHAR_ARRAY_01d1f6e0[2304];
+
+// char[256]
+extern char g_CHAR_ARRAY_01d1efb8[256];
+extern char g_CHAR_ARRAY_01d1f0b8[256];
+extern char g_CHAR_ARRAY_01d1f1b8[256];
+extern char g_CHAR_ARRAY_01d1f3b8[256];
+
+// char[4352]
+extern char g_CHAR_ARRAY_01d1c300[4352];
+
+// char[9]
+extern char g_CHAR_ARRAY_01d1eeb8[9];
+
+// int
+extern int g_INT_01d1bc48;
+extern int g_INT_01d1bc5c;
+extern int g_INT_01d1bc60;
+extern int g_INT_01d1c220;
+extern int g_INT_01d1c224;
+extern int g_INT_01d1c228;
+extern int g_INT_01d1d404;
+extern int g_INT_01d1d408;
+extern int g_INT_01d1dd18;
+extern int g_INT_01d1dd1c;
+extern int g_INT_01d1dd20;
+extern int g_INT_01d1dd24;
+extern int g_INT_01d1dd28;
+extern int g_INT_01d1dd2c;
+extern int g_INT_01d1dd30;
+extern int g_INT_01d1dd34;
+extern int g_INT_01d1dd38;
+extern int g_INT_01d1dd70;
+extern int g_INT_01d1dd74;
+extern int g_INT_01d1dfd0;
+extern int g_INT_01d1ee8c;
+extern int g_INT_01d1ee90;
+extern int g_INT_01d1ee98;
+extern int g_INT_01d1ee9c;
+
+// int[10]
+extern int g_INT_ARRAY_01d1dd78[10];
+extern int g_INT_ARRAY_01d1dda0[10];
+extern int g_INT_ARRAY_01d1ddc8[10];
+extern int g_INT_ARRAY_01d1ddf0[10];
+extern int g_INT_ARRAY_01d1de18[10];
+extern int g_INT_ARRAY_01d1de40[10];
+extern int g_INT_ARRAY_01d1de68[10];
+extern int g_INT_ARRAY_01d1de90[10];
+extern int g_INT_ARRAY_01d1deb8[10];
+extern int g_INT_ARRAY_01d1dee0[10];
+extern int g_INT_ARRAY_01d1df08[10];
+extern int g_INT_ARRAY_01d1df30[10];
+extern int g_INT_ARRAY_01d1df58[10];
+extern int g_INT_ARRAY_01d1df80[10];
+extern int g_INT_ARRAY_01d1dfa8[10];
+extern int g_INT_ARRAY_01d1dfd4[10];
+extern int g_INT_ARRAY_01d1dffc[10];
+extern int g_INT_ARRAY_01d1e024[10];
+extern int g_INT_ARRAY_01d1e04c[10];
+extern int g_INT_ARRAY_01d1e074[10];
+extern int g_INT_ARRAY_01d1e09c[10];
+extern int g_INT_ARRAY_01d1e0c4[10];
+extern int g_INT_ARRAY_01d1e0ec[10];
+extern int g_INT_ARRAY_01d1e114[10];
+extern int g_INT_ARRAY_01d1e13c[10];
+extern int g_INT_ARRAY_01d1e164[10];
+extern int g_INT_ARRAY_01d1e18c[10];
+extern int g_INT_ARRAY_01d1e1b4[10];
+extern int g_INT_ARRAY_01d1e1dc[10];
+extern int g_INT_ARRAY_01d1e204[10];
+extern int g_INT_ARRAY_01d1e22c[10];
+extern int g_INT_ARRAY_01d1e254[10];
+extern int g_INT_ARRAY_01d1e27c[10];
+
+// int[16]
+extern int g_INT_ARRAY_01d1f65c[16];
+
+// int[17]
+extern int g_INT_ARRAY_01d1f69c[17];
+
+// int[256]
+extern int g_INT_ARRAY_01d1d510[256];
+
+// int[257]
+extern int g_INT_ARRAY_01d1d914[257];
+
+// uint
+extern uint g_UINT_01d1dd64;
+extern uint g_UINT_01d1dd68;
+extern uint g_UINT_01d1dd6c;
+
+// void*
+extern void* g_PTR_01d1bca0;
 

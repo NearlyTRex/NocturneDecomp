@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(CCharacter *this_ptr)
 
 {
@@ -21,7 +19,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(CCharacter *t
   uint local_20 [6];
   
   bVar5 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046d860(DAT_005f2afc);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046d860(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if (iVar1 == 0) {
     this_ptr->was_rendered_opaque = 0;
   }
@@ -40,8 +39,9 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(CCharacter *t
     if (iVar1 != 0) {
       this_ptr->was_rendered_opaque = 1;
       core_charactr_cpp_CCharacter_renderCharacter_FUN_0042d8e0(this_ptr);
-      if (_DAT_01d8e40c != 0) {
-        iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+      if (g_INT_01d8e40c != 0) {
+        iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                          (g_CDemonRenderer_PTR_005f2afc);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_004fcdc0
                     (&(this_ptr->model).base,&this_ptr->base);

@@ -13,24 +13,25 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_0055b700(CDirec
 {
   int iVar1;
   uint error_code;
-  uint auStack_64 [4];
-  int iStack_54;
+  char acStack_1f4 [400];
+  DSCAPS DStack_64;
   
-  if (_DAT_02cf49c4 == (int *)0x0) {
+  if (g_IDirectSound_PTR_02cf49c4 == (IDirectSound *)0x0) {
     iVar1 = 0;
   }
   else if (_DAT_02cf49d0 == 0) {
-    memset(auStack_64,0,0x60);
-    auStack_64[0] = 0x60;
-    error_code = (**(code **)(*_DAT_02cf49c4 + 0x10))();
+    memset(&DStack_64,0,0x60);
+    DStack_64.dwSize = 0x60;
+    error_code = (*g_IDirectSound_PTR_02cf49c4->vtable->GetCaps)
+                           (g_IDirectSound_PTR_02cf49c4,&DStack_64);
     if (error_code != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(error_code);
-      _sprintf(&stack0xfffffe04,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xfffffe04);
+      _sprintf(acStack_1f4,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_1f4);
       return 0;
     }
     iVar1 = 0;
-    if (iStack_54 != 0) {
+    if (DStack_64.dwMaxHwMixingStaticBuffers != 0) {
       return 1;
     }
   }

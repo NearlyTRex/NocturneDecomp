@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3af6
 ;   TerminatedCString s_getSoundDeviceInfo_inval_005d3b0b
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_005584f8
     MOV ECX,0x1523                      ; 005584fd
     PUSH 0x5d3b0b                       ; 00558502 | = "getSoundDeviceInfo - invalid index"
-    MOV dword ptr [0x01d71de0],EDX      ; 00558507 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0055850d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00558507 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0055850d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00558513
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00558518

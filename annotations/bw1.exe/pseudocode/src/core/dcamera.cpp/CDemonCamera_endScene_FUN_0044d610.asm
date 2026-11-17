@@ -15,14 +15,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_005d7608
 ;   TerminatedCString s_CDemonCamera_endScene_Sc_005d761c
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01c4480c
-;   undefined4 DAT_01c44810
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c83370
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
+;   undefined4 g_UINT_PTR_ARRAY_01c4480c[1]
+;   int g_INT_01c50948
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_INT_02c83370
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90
@@ -45,7 +45,7 @@ section .text
     JZ 0x0044d6bc                       ; 0044d61e
         ;   XREF to: 0044d6bc (CONDITIONAL_JUMP)  ; LAB_0044d6bc
     MOV dword ptr [EBX + 0x11e4],0x0    ; 0044d624
-    CMP dword ptr [0x02c83370],0x0      ; 0044d62e | DAT_02c83370
+    CMP dword ptr [0x02c83370],0x0      ; 0044d62e | g_INT_02c83370
         ;   Label: LAB_0044d62e
     JZ 0x0044d63c                       ; 0044d635
         ;   XREF to: 0044d63c (CONDITIONAL_JUMP)  ; LAB_0044d63c
@@ -59,7 +59,7 @@ section .text
     CMP dword ptr [ESP + 0x14],0x0      ; 0044d646
     JNZ 0x0044d6a1                      ; 0044d64b
         ;   XREF to: 0044d6a1 (CONDITIONAL_JUMP)  ; LAB_0044d6a1
-    CMP dword ptr [0x01c50948],0x0      ; 0044d64d | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 0044d64d | g_INT_01c50948
     JNZ 0x0044d6e4                      ; 0044d654
         ;   XREF to: 0044d6e4 (CONDITIONAL_JUMP)  ; LAB_0044d6e4
     MOV ECX,dword ptr [EBX + 0x148]     ; 0044d65a
@@ -78,7 +78,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x15c]     ; 0044d67b
     PUSH EDX                            ; 0044d681
     SHL ECX,0x2                         ; 0044d682
-    MOV EDX,dword ptr [EDI + 0x1c4480c] ; 0044d685 | DAT_01c4480c | DAT_01c44810
+    MOV EDX,dword ptr [EDI + 0x1c4480c] ; 0044d685 | g_UINT_PTR_ARRAY_01c4480c | g_UINT_PTR_ARRAY_01c4480c[1]
     ADD ECX,EAX                         ; 0044d68b
     INC ESI                             ; 0044d68d
     CALL crt_watcom.c__memcpy_FUN_004ab0c8 ; 0044d68e
@@ -89,9 +89,9 @@ section .text
     JL 0x0044d669                       ; 0044d69e
         ;   XREF to: 0044d669 (CONDITIONAL_JUMP)  ; LAB_0044d669
     POP EDI                             ; 0044d6a0
-    MOV EAX,[0x00612560]                ; 0044d6a1 | DAT_00612560
+    MOV EAX,[0x00612560]                ; 0044d6a1 | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_0044d6a1
-    PUSH EAX                            ; 0044d6a6 | DAT_01bc120c
+    PUSH EAX                            ; 0044d6a6 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_popViewport_FUN_00483c40 ; 0044d6a7
         ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_00483c40()
     ADD ESP,0x4                         ; 0044d6ac
@@ -107,8 +107,8 @@ section .text
         ;   Label: LAB_0044d6bc
     MOV ESI,0x3f2                       ; 0044d6c1
     PUSH 0x5d761c                       ; 0044d6c6 | = "CDemonCamera::endScene - Scene not open!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0044d6cb | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0044d6d1 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0044d6cb | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0044d6d1 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044d6d7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0044d6dc

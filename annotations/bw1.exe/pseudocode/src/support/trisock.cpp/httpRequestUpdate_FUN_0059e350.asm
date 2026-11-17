@@ -15,8 +15,8 @@
 ;   TerminatedCString s_Error_connecting_socket_005f8646
 ;   TerminatedCString s_DNS_error_resolving_s_005f8664
 ;   TerminatedCString s_Error_contacting_s_005f867b
-;   undefined4 DAT_005f868f
-;   undefined4 DAT_005f8694
+;   TerminatedCString s_cgi_005f868f
+;   TerminatedCString s_asp_005f8694
 ;   TerminatedCString s_Cache_Control_no_cache_005f8699
 ;   undefined4 s_Cache_Control_no_cache_005f8699+1
 ;   undefined4 s_Cache_Control_no_cache_005f8699+2
@@ -150,13 +150,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0xa08]     ; 0059e465
         ;   Label: LAB_0059e465
     PUSH EDI                            ; 0059e46c
-    MOV AL,byte ptr [ESI]               ; 0059e46d | DAT_005f8831 | DAT_005f8833
+    MOV AL,byte ptr [ESI]               ; 0059e46d | = "Done" | s_ne_005f8831+2
         ;   Label: LAB_0059e46d
     MOV byte ptr [EDI],AL               ; 0059e46f
     CMP AL,0x0                          ; 0059e471
     JZ 0x0059e485                       ; 0059e473
         ;   XREF to: 0059e485 (CONDITIONAL_JUMP)  ; LAB_0059e485
-    MOV AL,byte ptr [ESI + 0x1]         ; 0059e475 | DAT_005f8832 | DAT_005f8834
+    MOV AL,byte ptr [ESI + 0x1]         ; 0059e475 | s_one_005f8831+1 | s_e_005f8831+3
     ADD ESI,0x2                         ; 0059e478
     MOV byte ptr [EDI + 0x1],AL         ; 0059e47b
     ADD EDI,0x2                         ; 0059e47e
@@ -276,7 +276,7 @@ section .text
     CALL engine_dosio.cpp_splitPath_FUN_00479580 ; 0059e5ca
         ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0059e5cf
-    PUSH 0x5f868f                       ; 0059e5d2 | DAT_005f868f
+    PUSH 0x5f868f                       ; 0059e5d2 | = ".cgi"
     LEA EAX,[ESP + 0x6bc]               ; 0059e5d7
     PUSH EAX                            ; 0059e5de
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 0059e5df
@@ -372,7 +372,7 @@ section .text
         ;   Label: LAB_0059e6d7
     JMP 0x0059e5a2                      ; 0059e6e1
         ;   XREF to: 0059e5a2 (UNCONDITIONAL_JUMP)  ; LAB_0059e5a2
-    PUSH 0x5f8694                       ; 0059e6e6 | DAT_005f8694
+    PUSH 0x5f8694                       ; 0059e6e6 | = ".asp"
         ;   Label: LAB_0059e6e6
     LEA EAX,[ESP + 0x6bc]               ; 0059e6eb
     PUSH EAX                            ; 0059e6f2
@@ -663,7 +663,7 @@ section .text
         ;   XREF to: 0059ea89 (CONDITIONAL_JUMP)  ; LAB_0059ea89
     MOV EDI,dword ptr [ESP + 0x9dc]     ; 0059ea6c
     PUSH EDI                            ; 0059ea73
-    PUSH 0x5f87d3                       ; 0059ea74 | DAT_005f87d3
+    PUSH 0x5f87d3                       ; 0059ea74 | = "%d"
     MOV EAX,dword ptr [ESP + 0x9ec]     ; 0059ea79
     PUSH EAX                            ; 0059ea80
     CALL crt_stdio.c_sscanf_FUN_005c2cac ; 0059ea81
@@ -901,7 +901,7 @@ section .text
     POP ESI                             ; 0059ed11
     POP EBX                             ; 0059ed12
     RET                                 ; 0059ed13
-    MOV ESI,0x5f8831                    ; 0059ed14 | DAT_005f8831
+    MOV ESI,0x5f8831                    ; 0059ed14 | = "Done"
         ;   Label: caseD_5
     JMP 0x0059e465                      ; 0059ed19
         ;   XREF to: 0059e465 (UNCONDITIONAL_JUMP)  ; LAB_0059e465

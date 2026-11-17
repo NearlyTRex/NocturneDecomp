@@ -12,10 +12,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Gore_005c4799
-;   undefined4 DAT_005c47a7
-;   undefined4 DAT_005c47ab
-;   undefined4 DAT_01d276b8
-;   undefined4 DAT_01d4a940
+;   TerminatedCString s_d_005c47a7
+;   TerminatedCString s_d_005c47ab
+;   int g_INT_01d276b8
+;   int g_INT_01d4a940
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_save_FUN_004ce0f0
@@ -37,14 +37,14 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004cf0ce
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004cf0d3
-    MOV EDX,dword ptr [0x01d4a940]      ; 004cf0d6 | DAT_01d4a940
+    MOV EDX,dword ptr [0x01d4a940]      ; 004cf0d6 | g_INT_01d4a940
     PUSH EDX                            ; 004cf0dc
-    PUSH 0x5c47a7                       ; 004cf0dd | DAT_005c47a7
+    PUSH 0x5c47a7                       ; 004cf0dd | = "%d\n"
     PUSH EDI                            ; 004cf0e2
     XOR ESI,ESI                         ; 004cf0e3
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004cf0e5
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
-    MOV ECX,dword ptr [0x01d4a940]      ; 004cf0ea | DAT_01d4a940
+    MOV ECX,dword ptr [0x01d4a940]      ; 004cf0ea | g_INT_01d4a940
     ADD ESP,0xc                         ; 004cf0f0
     TEST ECX,ECX                        ; 004cf0f3
     JLE 0x004cf120                      ; 004cf0f5
@@ -56,7 +56,7 @@ section .text
     INC ESI                             ; 004cf0fe
     CALL core_gore.cpp_CBloodPool_save_FUN_004ce0f0 ; 004cf0ff
         ;   XREF to: 004ce0f0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodPool_save_FUN_004ce0f0(CBloodPool * this_ptr, _FILE * file_handle)
-    MOV EBP,dword ptr [0x01d4a940]      ; 004cf104 | DAT_01d4a940
+    MOV EBP,dword ptr [0x01d4a940]      ; 004cf104 | g_INT_01d4a940
     ADD ESP,0x8                         ; 004cf10a
     ADD EBX,0x2c                        ; 004cf10d
     CMP ESI,EBP                         ; 004cf110
@@ -64,15 +64,15 @@ section .text
         ;   XREF to: 004cf0fc (CONDITIONAL_JUMP)  ; LAB_004cf0fc
     LEA EAX,[EAX]                       ; 004cf114
     LEA EDX,[EDX]                       ; 004cf11a
-    MOV EAX,[0x01d276b8]                ; 004cf120 | DAT_01d276b8
+    MOV EAX,[0x01d276b8]                ; 004cf120 | g_INT_01d276b8
         ;   Label: LAB_004cf120
     PUSH EAX                            ; 004cf125
-    PUSH 0x5c47ab                       ; 004cf126 | DAT_005c47ab
+    PUSH 0x5c47ab                       ; 004cf126 | = "%d\n"
     PUSH EDI                            ; 004cf12b
     XOR EBX,EBX                         ; 004cf12c
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004cf12e
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
-    MOV EDX,dword ptr [0x01d276b8]      ; 004cf133 | DAT_01d276b8
+    MOV EDX,dword ptr [0x01d276b8]      ; 004cf133 | g_INT_01d276b8
     ADD ESP,0xc                         ; 004cf139
     TEST EDX,EDX                        ; 004cf13c
     JLE 0x004cf160                      ; 004cf13e
@@ -84,7 +84,7 @@ section .text
     INC EBX                             ; 004cf147
     CALL core_gore.cpp_CBloodSplat_save_FUN_004cdbe0 ; 004cf148
         ;   XREF to: 004cdbe0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodSplat_save_FUN_004cdbe0(CBloodSplat * this_ptr, _FILE * file_handle)
-    MOV ECX,dword ptr [0x01d276b8]      ; 004cf14d | DAT_01d276b8
+    MOV ECX,dword ptr [0x01d276b8]      ; 004cf14d | g_INT_01d276b8
     ADD ESP,0x8                         ; 004cf153
     ADD ESI,0x48                        ; 004cf156
     CMP EBX,ECX                         ; 004cf159

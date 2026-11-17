@@ -12,7 +12,7 @@ CInStreamPipe * __cdecl support_codec_cpp_CInStreamPipe_ctor_FUN_004417f0(CInStr
   CInStreamPipe *pCVar1;
   
   pCVar1 = (CInStreamPipe *)support_trstream_cpp_CInStream_ctor_FUN_00572530(&this_ptr->base);
-  (pCVar1->base).vtable = &g_CInStreamPipeVTable;
+  (pCVar1->base).vtable = g_CInStreamPipeVTable;
   pCVar1->codec = (CCodec *)0x0;
   pCVar1->source = (void *)0x0;
   pCVar1->owns_streams = 0;

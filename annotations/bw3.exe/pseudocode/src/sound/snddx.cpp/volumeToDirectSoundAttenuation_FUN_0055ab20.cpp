@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_volumeToDirectSoundAttenuation_FUN_0055ab20(float volume)
 
 {
@@ -21,7 +19,7 @@ int __cdecl sound_snddx_cpp_volumeToDirectSoundAttenuation_FUN_0055ab20(float vo
   if (1.0 <= dVar1) {
     return 0;
   }
-  dVar1 = floor(dVar1 * 0.6931471805599453 * _DAT_005d45a5);
+  dVar1 = floor(dVar1 * 0.6931471805599453 * 868.58900000000006);
   dVar1 = round(dVar1);
   uStack_14 = (int)ROUND(dVar1);
   if (uStack_14 < 1) {

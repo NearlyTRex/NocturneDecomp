@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7939
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6b5c0
+;   int g_INT_01c6b5c0
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004011a0
@@ -115,7 +115,7 @@ section .text
     PUSH EDI                            ; 0044233c
     MOV ECX,0xf8                        ; 0044233d
     PUSH ESI                            ; 00442342
-    MOV dword ptr [0x01c6b5c0],ECX      ; 00442343 | DAT_01c6b5c0
+    MOV dword ptr [0x01c6b5c0],ECX      ; 00442343 | g_INT_01c6b5c0
     CALL engine_2d.c_drawLine_FUN_004011a0 ; 00442349
         ;   XREF to: 004011a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004011a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0044234e

@@ -15,10 +15,10 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40 at 00533fdb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007bee30
-;   undefined4 DAT_007bee34
-;   undefined4 DAT_01c38b54
-;   undefined4 DAT_01c38b58
+;   int g_INT_007bee30
+;   SRenderVertex[16] g_SRenderVertex_ARRAY_007bee34
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   int g_INT_01c38b58
 ;
 ; Called Functions:
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00594f40
@@ -74,11 +74,11 @@ section .text
     MOV EBP,dword ptr [EBX + 0x4]       ; 0046b799
     MOV EDI,0x6                         ; 0046b79c
     PUSH EBP                            ; 0046b7a1
-    MOV dword ptr [0x01c38b54],ESI      ; 0046b7a2 | DAT_01c38b54
-    MOV dword ptr [0x01c38b58],EDI      ; 0046b7a8 | DAT_01c38b58
+    MOV dword ptr [0x01c38b54],ESI      ; 0046b7a2 | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x01c38b58],EDI      ; 0046b7a8 | g_INT_01c38b58
     CALL core_xform.cpp_transformAndClipGeometry_FUN_00594f40 ; 0046b7ae
         ;   XREF to: 00594f40 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_00594f40(int vertex_count, int * vertex_indices)
-    MOV EAX,[0x007bee30]                ; 0046b7b3 | DAT_007bee30
+    MOV EAX,[0x007bee30]                ; 0046b7b3 | g_INT_007bee30
     ADD ESP,0x8                         ; 0046b7b8
     CMP EAX,0x2                         ; 0046b7bb
     JLE 0x0046b76c                      ; 0046b7be
@@ -86,7 +86,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0046b7c0
     PUSH EDX                            ; 0046b7c4
     PUSH EAX                            ; 0046b7c5
-    PUSH 0x7bee34                       ; 0046b7c6 | DAT_007bee34
+    PUSH 0x7bee34                       ; 0046b7c6 | g_SRenderVertex_ARRAY_007bee34
     CALL core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 ; 0046b7cb
         ;   XREF to: 0059a5d0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 0046b7d0

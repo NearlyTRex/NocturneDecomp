@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 96,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 167
   },
   "cross_references": [
@@ -44,8 +42,8 @@
   "globals": [
     {
       "addr": "005cdd33",
-      "name": "DAT_005cdd33",
-      "type": "undefined4",
+      "name": "s_walk_005cdd33",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -56,14 +54,14 @@
     },
     {
       "addr": "005cdd3f",
-      "name": "DAT_005cdd3f",
-      "type": "undefined4",
+      "name": "s_run_005cdd3f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cdd43",
-      "name": "DAT_005cdd43",
-      "type": "undefined4",
+      "name": "s_fire_005cdd43",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -86,14 +84,14 @@
     },
     {
       "addr": "005cdd5d",
-      "name": "DAT_005cdd5d",
-      "type": "undefined4",
+      "name": "s_draw_005cdd5d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cdd62",
-      "name": "DAT_005cdd62",
-      "type": "undefined4",
+      "name": "s_jump_005cdd62",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -201,46 +199,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005cdd33",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005cdd33);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005cdd3f",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005cdd3f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005cdd43",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005cdd43);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005cdd5d",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005cdd5d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005cdd62",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005cdd62);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

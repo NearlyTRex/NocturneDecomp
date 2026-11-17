@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 180,
+    "complexity_score": 164,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 11,
+    "pseudocode_lines": 44,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unaffected_reg",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 113
+    "total_lines": 112
   },
   "cross_references": [],
   "function": {
@@ -63,21 +62,21 @@
     },
     {
       "addr": "005edc27",
-      "name": "DAT_005edc27",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005edc27",
+      "type": "double",
+      "value": "-0.100000000000000"
     },
     {
       "addr": "005edc2f",
-      "name": "DAT_005edc2f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005edc2f",
+      "type": "double",
+      "value": "-1"
     },
     {
       "addr": "005edc37",
-      "name": "DAT_005edc37",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005edc37",
+      "type": "float",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -152,16 +151,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CVector3f *unaff_ESI;",
@@ -169,7 +160,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(CBoundingBox3D *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
@@ -177,7 +168,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 44,
+      "line": 42,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -185,7 +176,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(float *)((int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -193,7 +184,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 43,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI->x = fStack_18;",
@@ -201,7 +192,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 46,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -209,7 +200,7 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
@@ -217,7 +208,7 @@
     },
     {
       "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
+      "line": 42,
       "match": "(int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -225,7 +216,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 27,
+      "line": 25,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",

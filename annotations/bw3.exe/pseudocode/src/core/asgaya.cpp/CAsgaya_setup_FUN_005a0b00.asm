@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_R_Hand_005da576
 ;   TerminatedCString s_Bip01_L_Hand_005da583
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_charactr.cpp_preloadEtherealTextures_FUN_0042f280
@@ -66,13 +66,13 @@ section .text
     MOV dword ptr [EBX + 0xfc],0x1      ; 005a0b76
     PUSH 0x3                            ; 005a0b80
         ;   Label: LAB_005a0b80
-    MOV ECX,dword ptr [0x005fc5a0]      ; 005a0b82 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 005a0b82 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 005a0b88
     CALL core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130 ; 005a0b89
         ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(CFireEffect * this_ptr, int bolt_style)
     ADD ESP,0x8                         ; 005a0b8e
     PUSH 0x4                            ; 005a0b91
-    MOV ESI,dword ptr [0x005fc5a0]      ; 005a0b93 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 005a0b93 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 005a0b99
     CALL core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0 ; 005a0b9a
         ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(CFireEffect * this_ptr, int flame_style)

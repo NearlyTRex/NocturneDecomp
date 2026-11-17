@@ -17,8 +17,8 @@
 ;   TerminatedCString s_CIniFile_getString_filen_005e5814
 ;   TerminatedCString s_engine_ini_cpp_005e583c
 ;   TerminatedCString s_CIniFile_getString_secti_005e584e
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -60,8 +60,8 @@ section .text
         ;   Label: LAB_004f4c37
     MOV ECX,0x27a                       ; 004f4c3c
     PUSH 0x5e5814                       ; 004f4c41 | = "CIniFile::getString - filename not set!"
-    MOV dword ptr [0x01d1d400],EDX      ; 004f4c46 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004f4c4c | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004f4c46 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004f4c4c | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f4c52
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f4c57
@@ -73,8 +73,8 @@ section .text
     MOV ESI,0x5e583c                    ; 004f4c5e | = "..\\engine\\ini.cpp"
     MOV EDI,0x27b                       ; 004f4c63
     PUSH 0x5e584e                       ; 004f4c68 | = "CIniFile::getString - section not set!"
-    MOV dword ptr [0x01d1d400],ESI      ; 004f4c6d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004f4c73 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 004f4c6d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 004f4c73 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f4c79
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f4c7e

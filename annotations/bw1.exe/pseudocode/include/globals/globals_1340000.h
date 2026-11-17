@@ -13,3 +13,19 @@
 // CLZWDecompress
 extern CLZWDecompress g_CLZWDecompressInstance;
 
+// char[4096]
+extern char g_CHAR_ARRAY_01341200[4096];
+
+// char[76797]
+extern char g_CHAR_ARRAY_01342220[76797];
+
+// int
+extern int g_INT_01342200;
+extern int g_INT_01342204;
+extern int g_INT_01342208;
+extern int g_INT_0134220c;
+extern int g_INT_01342210;
+extern int g_INT_01342214;
+extern int g_INT_01342218;
+extern int g_INT_0134221c;
+

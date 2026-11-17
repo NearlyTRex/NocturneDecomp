@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004fc370(CInventory *this_ptr)
 
 {
-  if (this_ptr->owner == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
+  if ((CHero *)this_ptr->owner == g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]) {
     this_ptr->render_mode_flag = (uint)(this_ptr->render_mode_flag == 0);
     if (0.0 < this_ptr->item_highlight_timer) {
       core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004fa710(this_ptr);

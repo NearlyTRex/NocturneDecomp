@@ -6,36 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005cde20(void)
 
 {
-  uint *puVar1;
+  char **ppcVar1;
   
-  puVar1 = _DAT_02c9f6d4;
-  if (_DAT_02c9f6d4 != (uint *)0x0) {
-    for (; (void *)*puVar1 != (void *)0x0; puVar1 = puVar1 + 1) {
-      if (_DAT_02c9f6d0 != (uint *)0x0) {
-        if (*(char *)(((int)puVar1 - (int)_DAT_02c9f6d4 >> 2) + (int)_DAT_02c9f6d0) != '\0') {
-          debugFree((void *)*puVar1);
+  ppcVar1 = g_CHAR_PTR_PTR_02c9f6d4;
+  if (g_CHAR_PTR_PTR_02c9f6d4 != (char **)0x0) {
+    for (; *ppcVar1 != (char *)0x0; ppcVar1 = ppcVar1 + 1) {
+      if (g_CHAR_PTR_PTR_02c9f6d0 != (char **)0x0) {
+        if (*(char *)(((int)ppcVar1 - (int)g_CHAR_PTR_PTR_02c9f6d4 >> 2) +
+                     (int)g_CHAR_PTR_PTR_02c9f6d0) != '\0') {
+          debugFree(*ppcVar1);
         }
-        *puVar1 = 0;
+        *ppcVar1 = (char *)0x0;
       }
     }
-    if (_DAT_02c9f6d0 == (uint *)0x0) {
-      puVar1 = (uint *)malloc(5);
+    if (g_CHAR_PTR_PTR_02c9f6d0 == (char **)0x0) {
+      ppcVar1 = (char **)malloc(5);
     }
     else {
-      puVar1 = (uint *)realloc(_DAT_02c9f6d4,5);
+      ppcVar1 = (char **)realloc(g_CHAR_PTR_PTR_02c9f6d4,5);
     }
-    if (puVar1 == (uint *)0x0) {
+    if (ppcVar1 == (char **)0x0) {
       return 0xffffffff;
     }
-    _DAT_02c9f6d4 = puVar1;
-    *puVar1 = 0;
-    _DAT_02c9f6d0 = puVar1 + 1;
-    *(byte *)_DAT_02c9f6d0 = 0;
+    g_CHAR_PTR_PTR_02c9f6d4 = ppcVar1;
+    *ppcVar1 = (char *)0x0;
+    g_CHAR_PTR_PTR_02c9f6d0 = ppcVar1 + 1;
+    *(byte *)g_CHAR_PTR_PTR_02c9f6d0 = 0;
   }
   return 0;
 }

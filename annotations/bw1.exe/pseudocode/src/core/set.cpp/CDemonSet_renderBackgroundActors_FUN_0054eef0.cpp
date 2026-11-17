@@ -47,11 +47,13 @@ void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSe
                  (CVector3f *)&stack0xffffffa8,&CStack_4c,&this_ptr_00->orient_matrix);
       core_set_cpp_CDemonSet_setFlatColor_FUN_00555770
                 (this_ptr,(this_ptr_00->scale).x,(this_ptr_00->scale).y,(this_ptr_00->scale).z);
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
+                (g_CDemonRenderer_PTR_00612560,0xffff);
       (*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,in_stack_00000010);
       in_stack_ffffffa0 = this_ptr;
       core_set_cpp_CDemonSet_setFlatColor_FUN_00555770(this_ptr,0x10000,0x10000,0x10000);
-      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
+      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
+                (g_CDemonRenderer_PTR_00612560,1);
       unaff_EBX = unaff_EBX + 1;
     } while (unaff_EBX < this_ptr->sorted_render_actor_count);
   }

@@ -18,8 +18,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -82,9 +82,9 @@ section .text
     MOV EBP,0x5e4e47                    ; 00529ba2 | = "..\\core\\script.cpp"
     MOV EAX,0x1192                      ; 00529ba7
     MOV EDI,dword ptr [EBX + 0x44]      ; 00529bac
-    MOV [0x01d046a4],EAX                ; 00529baf | DAT_01d046a4
+    MOV [0x01d046a4],EAX                ; 00529baf | g_INT_01d046a4
     MOV EAX,dword ptr [EBX + 0x30]      ; 00529bb4
-    MOV dword ptr [0x01d046a0],EBP      ; 00529bb7 | DAT_01d046a0
+    MOV dword ptr [0x01d046a0],EBP      ; 00529bb7 | g_CHAR_PTR_01d046a0
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00529bbd
     PUSH EDX                            ; 00529bc0
     PUSH 0x5e4e5a                       ; 00529bc1 | = "Infinite loop detected trying to skip..."

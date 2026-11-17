@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00609370
+;   int g_INT_00609370 = 0xf8
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV dword ptr [0x00609370],0xf8     ; 00402860 | DAT_00609370
+    MOV dword ptr [0x00609370],0xf8     ; 00402860 | g_INT_00609370
         ;   Label: engine_2d.c_resetTextColor_FUN_00402860
     LEA EAX,[EAX]                       ; 0040286a
     RET                                 ; 00402870

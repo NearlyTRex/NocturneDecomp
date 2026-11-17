@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005cb810(HANDLE param_1)
 
 {
@@ -16,22 +14,22 @@ uint FUN_005cb810(HANDLE param_1)
   _INPUT_RECORD local_28;
   DWORD local_14;
   
-  if (DAT_00626a68 != 0) {
-    if (DAT_00626a68 < 2) {
-      _DAT_02c9ff88 = _DAT_02c9ff88 + -1;
-      if (_DAT_02c9ff84 == 0) {
-        DAT_00626a68 = 2;
+  if (g_INT_00626a68 != 0) {
+    if ((uint)g_INT_00626a68 < 2) {
+      g_INT_02c9ff88 = g_INT_02c9ff88 + -1;
+      if (g_INT_02c9ff84 == 0) {
+        g_INT_00626a68 = 2;
         return 0;
       }
-      if (_DAT_02c9ff88 != 0) {
-        return _DAT_02c9ff84;
+      if (g_INT_02c9ff88 != 0) {
+        return g_INT_02c9ff84;
       }
-      DAT_00626a68 = 0;
-      return _DAT_02c9ff84;
+      g_INT_00626a68 = 0;
+      return g_INT_02c9ff84;
     }
-    if (DAT_00626a68 == 2) {
-      DAT_00626a68 = (uint)(_DAT_02c9ff88 != 0);
-      return _DAT_02c9ff80;
+    if (g_INT_00626a68 == 2) {
+      g_INT_00626a68 = (uint)(g_INT_02c9ff88 != 0);
+      return g_INT_02c9ff80;
     }
   }
   do {
@@ -41,17 +39,17 @@ uint FUN_005cb810(HANDLE param_1)
     }
     iVar2 = FUN_005cd020(&local_28);
   } while (iVar2 == 0);
-  _DAT_02c9ff84 = (uint)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;
-  if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (_DAT_02c9ff84 != 0)) {
+  g_INT_02c9ff84 = (int)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;
+  if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (g_INT_02c9ff84 != 0)) {
     if (local_28.Event.KeyEvent.wRepeatCount - 1 != 0) {
-      DAT_00626a68 = 1;
+      g_INT_00626a68 = 1;
     }
   }
   else {
-    _DAT_02c9ff84 = 0;
-    _DAT_02c9ff80 = (uint)local_28.Event.KeyEvent.wVirtualScanCode;
-    DAT_00626a68 = 2;
+    g_INT_02c9ff84 = 0;
+    g_INT_02c9ff80 = (int)local_28.Event.KeyEvent.wVirtualScanCode;
+    g_INT_00626a68 = 2;
   }
-  _DAT_02c9ff88 = local_28.Event.KeyEvent.wRepeatCount - 1;
-  return _DAT_02c9ff84;
+  g_INT_02c9ff88 = local_28.Event.KeyEvent.wRepeatCount - 1;
+  return g_INT_02c9ff84;
 }

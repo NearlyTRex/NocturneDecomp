@@ -7,13 +7,13 @@
 ; CConstructRed *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007f8f18
+;   CDemonActorType g_CDemonActorType_007f8f18
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x7f8f18                    ; 004445f0 | DAT_007f8f18
+    MOV EAX,0x7f8f18                    ; 004445f0 | g_CDemonActorType_007f8f18
         ;   Label: core_construc.cpp_CConstructRed_getActorType_FUN_004445f0
     RET                                 ; 004445f5
 

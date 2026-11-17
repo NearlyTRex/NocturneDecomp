@@ -7,7 +7,7 @@
 ; CSpawner *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_spawn_name_005d54bd+2
+;   TerminatedCString s_spawn_name_005d54bf
 ;   TerminatedCString s_actor_class_name_005d54ca
 ;   TerminatedCString s_spawn_timer_005d54db
 ;   TerminatedCString s_spawn_time_005d54e7
@@ -38,7 +38,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 00563e56
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00563e5b
-    PUSH 0x5d54bf                       ; 00563e5e | s_spawn_name_005d54bd+2
+    PUSH 0x5d54bf                       ; 00563e5e | = "spawn_name"
     LEA EAX,[EBX + 0x158]               ; 00563e63
     PUSH EAX                            ; 00563e69
     CALL core_actor.cpp_archiveString_FUN_0040b680 ; 00563e6a

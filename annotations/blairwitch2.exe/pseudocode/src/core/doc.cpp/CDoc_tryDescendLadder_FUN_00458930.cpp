@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
 
 {
@@ -67,7 +65,7 @@ int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
   this_ptr->ladder_to_descend = (CLadder *)0x0;
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                         ((CCharacter *)this_ptr,0);
-  if ((float)_DAT_005d038f <= fStack_14) {
+  if ((float)0.98999999999999999 <= fStack_14) {
     if (((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) &&
        ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       pCStack_28 = &(this_ptr->base).base.base.location.position;
@@ -82,7 +80,7 @@ int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
         if ((this_ptr_00 != (CDemonActor *)0x0) &&
            (ABS((this_ptr->base).base.base.location.position.y -
                 ((this_ptr_00->location).position.y +
-                this_ptr_00[1].particle_systems[0].fade_duration)) <= (float)_DAT_005d039f)) {
+                this_ptr_00[1].particle_systems[0].fade_duration)) <= (float)2)) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                     (this_ptr_00,pCStack_28,&CStack_114);
           CStack_f4.y = CStack_114.x;
@@ -90,7 +88,7 @@ int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
                *(uint *)((int)&CStack_114 + (uint)bVar4 * -8 + 4);
           *(uint *)((int)&CStack_e8 + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4) =
                *(uint *)((int)&CStack_114 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-          if ((ABS(CStack_e8.x) <= (float)_DAT_005d03a7) && (CStack_e8.x <= 0.0)) {
+          if ((ABS(CStack_e8.x) <= (float)4) && (CStack_e8.x <= 0.0)) {
             (*((this_ptr_00->vtable)._ub)->getBoundingBox)
                       (this_ptr_00,(CBoundingBox3D *)in_stack_fffffea0);
             puVar2 = (uint *)&stack0xfffffeb8;
@@ -105,7 +103,7 @@ int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
               CStack_e8.x = fStack_124;
             }
             if (CStack_e8.x < fStack_130) {
-              if (CStack_e8.x < fStack_130 + (float)_DAT_005d03af) goto LAB_004589bb;
+              if (CStack_e8.x < fStack_130 + (float)-1) goto LAB_004589bb;
               CStack_e8.x = fStack_130;
             }
             fStack_94 = fStack_130 + fStack_124;
@@ -115,10 +113,10 @@ int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
             afStack_cc[(uint)bVar4 * -2 + 3] = afStack_90[(uint)bVar4 * -2];
             afStack_cc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
                  afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-            fStack_100 = afStack_cc[2] * _DAT_005d0397;
-            afStack_fc[0] = afStack_cc[3] * _DAT_005d0397;
-            afStack_fc[1] = fStack_bc * _DAT_005d0397;
-            fStack_118 = afStack_cc[2] * _DAT_005d0397;
+            fStack_100 = afStack_cc[2] * 0.5f;
+            afStack_fc[0] = afStack_cc[3] * 0.5f;
+            afStack_fc[1] = fStack_bc * 0.5f;
+            fStack_118 = afStack_cc[2] * 0.5f;
             *(float *)((int)&CStack_114 + (uint)bVar4 * -8) = afStack_fc[(uint)bVar4 * -2];
             *(float *)((int)&CStack_114 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4) =
                  afStack_fc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
@@ -142,7 +140,7 @@ int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
             pCStack_28 = (CVector3f *)(unaff_EBP->base).base.base.orient_matrix.m[0].z;
             fStack_24 = (unaff_EBP->base).base.base.orient_matrix.m[1].z;
             fStack_1c = (unaff_EBP->base).base.base.orient_matrix.m[2].z;
-            fVar5 = (float10)fcos((float10)_DAT_005d03b7);
+            fVar5 = (float10)fcos((float10)0.261799387791667);
             if (fVar5 <= (float10)ABS(fStack_34 * fStack_1c +
                                       fStack_30 * (float)pCStack_28 + fStack_2c * fStack_24)) {
               in_stack_fffffea0 = this_ptr;
@@ -155,7 +153,7 @@ int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
                    *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
               if (0.0 < afStack_cc[1]) {
                 engine_console_cpp_CConsole_printf_FUN_00436710
-                          (g_CConsolePtr,"?Ladder dot : %f\n" + 1);
+                          (g_CConsolePtr,"Ladder dot : %f\n");
                 this_ptr->ladder_to_descend = (CLadder *)unaff_EBP;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                           (&(this_ptr->base).base.model.base,0x2d,1);

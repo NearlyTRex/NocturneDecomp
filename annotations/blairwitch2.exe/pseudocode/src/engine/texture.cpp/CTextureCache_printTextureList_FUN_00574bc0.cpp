@@ -34,7 +34,7 @@ void __cdecl engine_texture_cpp_CTextureCache_printTextureList_FUN_00574bc0(CTex
   if (0 < this_ptr->current_texture_count) {
     do {
       if (dimension == pCVar2->entries[0].dimension) {
-        _fprintf(file,(char *)0x5ec9ba);
+        _fprintf(file,"%s\n");
       }
       iVar1 = iVar1 + 1;
       pCVar2 = (CTextureCache *)&pCVar2->entries[0].hw_texture_handle;

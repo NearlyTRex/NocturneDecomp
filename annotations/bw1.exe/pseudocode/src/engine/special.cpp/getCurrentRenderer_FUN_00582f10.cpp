@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl engine_special_cpp_getCurrentRenderer_FUN_00582f10(int *card_index_out)
 
 {
-  *card_index_out = _DAT_02c83374;
-  return &DAT_006257d0;
+  *card_index_out = g_INT_02c83374;
+  return g_CHAR_ARRAY_006257d0;
 }

@@ -7,9 +7,9 @@
 ; CFilmProjector * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_I_keyReel_005d531f+2
+;   TerminatedCString s_keyReel_005d5321
 ;   TerminatedCString s_keyEvent_005d5329
-;   undefined4 DAT_00614c4c
+;   int g_INT_00614c4c = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b9e0
@@ -26,14 +26,14 @@ section .text
     PUSH EBX                            ; 00492ff5
     CALL core_dest.cpp_CActorDestination_archive_FUN_00447450 ; 00492ff6
         ;   XREF to: 00447450 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_archive_FUN_00447450(CActorDestination * this_ptr)
-    MOV EDX,dword ptr [0x00614c4c]      ; 00492ffb | DAT_00614c4c
+    MOV EDX,dword ptr [0x00614c4c]      ; 00492ffb | g_INT_00614c4c
     ADD ESP,0x4                         ; 00493001
     CMP EDX,0x2                         ; 00493004
     JGE 0x0049300b                      ; 00493007
         ;   XREF to: 0049300b (CONDITIONAL_JUMP)  ; LAB_0049300b
     POP EBX                             ; 00493009
     RET                                 ; 0049300a
-    PUSH 0x5d5321                       ; 0049300b | s_I_keyReel_005d531f+2
+    PUSH 0x5d5321                       ; 0049300b | = "keyReel"
         ;   Label: LAB_0049300b
     LEA EAX,[EBX + 0x4cc]               ; 00493010
     PUSH EAX                            ; 00493016

@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_editorSetAlpha_FUN_0047b9e0(int alpha)
 
 {
   engine_3d_c_setRenderAlpha_FUN_00406bf0(alpha);
-  engine_mini3d_cpp_setAlpha_FUN_004edaf0((float)alpha * _DAT_005bcd65);
+  engine_mini3d_cpp_setAlpha_FUN_004edaf0((float)alpha * 1.525902e-05f);
   return;
 }

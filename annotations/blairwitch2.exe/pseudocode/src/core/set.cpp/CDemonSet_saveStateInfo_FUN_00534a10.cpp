@@ -11,15 +11,15 @@ void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_00534a10(CDemonSet *this_p
 {
   int iVar1;
   
-  _fprintf(file_handle,"@// Set state version\n" + 1);
-  _fprintf(file_handle,&DAT_005e5bf0);
+  _fprintf(file_handle,"// Set state version\n");
+  _fprintf(file_handle,"1\n");
   _fprintf(file_handle,"// Camera count, enabled list\n");
   iVar1 = 0;
-  _fprintf(file_handle,&DAT_005e5c12);
+  _fprintf(file_handle,"%d\n");
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(file_handle,&DAT_005e5c16);
+      _fprintf(file_handle,"%d\n");
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

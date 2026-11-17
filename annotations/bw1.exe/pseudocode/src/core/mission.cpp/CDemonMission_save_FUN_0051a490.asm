@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -54,8 +54,8 @@ section .text
     MOV ECX,0x5e90d9                    ; 0051a4ca
     MOV ESI,0xbd                        ; 0051a4cf
     PUSH 0x5e90ed                       ; 0051a4d4
-    MOV dword ptr [0x01d1d400],ECX      ; 0051a4d9 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0051a4df | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0051a4d9 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0051a4df | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a4e5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a4ea

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 105,
+    "complexity_score": 89,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 4,
+    "pseudocode_lines": 49,
+    "suspect_count": 3,
     "suspect_types": [
       "alloc_magic_size",
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 208
+    "total_lines": 207
   },
   "cross_references": [
     {
@@ -91,14 +90,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -259,16 +258,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pSVar6 = (SMRGLHeaderPrimitive *)((int)&(pSVar6->base).type + poly_stride);",
@@ -276,7 +267,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x10 == sizeof(SMorphPoint). Replace the magic with sizeof(SMorphPoint) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 32,
+      "line": 30,
       "match": "(SMorphPoint*) alloc stride 0x10",
       "severity": "moderate",
       "text": "(SMorphPoint *)realloc(this_ptr->points,this_ptr->num_points << 4)",
@@ -284,7 +275,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 34,
+      "line": 32,
       "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
       "severity": "moderate",
       "text": "(SMRGLPrimitiveTriangle *)realloc(this_ptr->faces,this_ptr->num_faces * 0x3c)",

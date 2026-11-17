@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 163,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
       "raw_address_constant",
       "stack_param",
       "stack_ref",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 179
   },
@@ -77,21 +75,21 @@
   "globals": [
     {
       "addr": "00603420",
-      "name": "DAT_00603420",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00603420",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     }
   ],
   "param_estimates": {
@@ -175,16 +173,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_ffffffbc",
       "severity": "moderate",
       "text": "int in_stack_ffffffbc;",
@@ -192,7 +182,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 18,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffffc0;",
@@ -200,31 +190,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_ffffffbc",
       "severity": "moderate",
       "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_28,in_stack_ffffffbc);",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[1000].projected_vertex,(CVector3i *)&iStack_10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),",
-      "type": "undefined_data"
-    },
-    {
       "description": "Raw hex address 0x5043c9 assigned to bare local `uStack_30`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_30` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 51,
+      "line": 50,
       "match": "0x5043c9",
       "severity": "moderate",
       "text": "uStack_30 = 0x5043c9;",
@@ -232,7 +206,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_0053c4c0(CPodFile *this_ptr,int file_index)
 
 {
@@ -18,14 +16,14 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_0053c4c0(CPodFile *this_
   uint current_crc;
   
   if ((file_index < 0) || (this_ptr->file_count <= file_index)) {
-    _DAT_01d1d400 = "..\\engine\\pod.cpp";
-    _DAT_01d1d404 = 0x401;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
+    g_INT_01d1d404 = 0x401;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CPodFile::computeOneFileCRC - invalid index");
   }
-  file = _fopen(this_ptr->filename,(char *)0x5ed99a);
+  file = _fopen(this_ptr->filename,"rb");
   if (file == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\pod.cpp";
-    _DAT_01d1d404 = 0x406;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
+    g_INT_01d1d404 = 0x406;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CPodFile::computeOneFileCRC - can't open %s");
   }
   _fseek(file,this_ptr->directory_entries[file_index].offset,0);

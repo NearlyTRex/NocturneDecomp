@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "system/stdlib.h"
 #include "system/time.h"
 #include "system/winbase.h"
 #include "system/windef.h"
@@ -134,7 +135,7 @@ uint crt_unknown_c_FUN_005c3510(HANDLE param_1);
 int crt_unknown_c_FUN_005c3628(void);
 undefined4 crt_unknown_c_FUN_005c36c0(undefined4 param_1);
 undefined4 crt_unknown_c_FUN_005c3750(void);
-undefined4 crt_unknown_c_FUN_005c378c(LPVOID param_1);
+undefined4 crt_unknown_c_FUN_005c378c(Heap *param_1);
 void crt_unknown_c_FUN_005c37ec(int param_1);
 undefined4 crt_unknown_c_FUN_005c3870(uint param_1);
 void crt_unknown_c_FUN_005c3910(int param_1,undefined4 *param_2,undefined4 *param_3);
@@ -142,7 +143,7 @@ void crt_unknown_c_FUN_005c3954(uint param_1,byte *param_2);
 undefined4 crt_unknown_c_FUN_005c39c0(int param_1);
 void crt_unknown_c_FUN_005c3a30(void);
 undefined8 crt_unknown_c_FUN_005c3aaa(undefined4 param_1,undefined4 param_2);
-undefined8 crt_unknown_c_FUN_005c3add(uint param_1,undefined4 *param_2,undefined4 *param_3);
+undefined8 crt_unknown_c_FUN_005c3add(uint param_1,undefined4 *param_2,double *param_3);
 undefined8 crt_unknown_c_FUN_005c3bdb(double param_1,byte param_2);
 undefined8 crt_unknown_c_FUN_005c3c70(void);
 undefined8 crt_unknown_c_FUN_005c3dd0(void);
@@ -182,7 +183,7 @@ undefined4 crt_unknown_c_FUN_005c49cc(undefined4 param_1,undefined4 param_2,unde
 LPVOID crt_unknown_c_FUN_005c4a50(void);
 undefined4 * crt_unknown_c_FUN_005c4a88(void);
 undefined4 crt_unknown_c_FUN_005c4b60(undefined4 param_1,int param_2);
-void crt_unknown_c_FUN_005c4bcc(int param_1);
+void crt_unknown_c_FUN_005c4bcc(undefined *param_1);
 void crt_unknown_c_FUN_005c4c20(void);
 void crt_unknown_c_FUN_005c4c44(void);
 void crt_unknown_c_FUN_005c4c80(int param_1);
@@ -191,15 +192,15 @@ int crt_unknown_c_FUN_005c4cc0(short *param_1);
 undefined4 * crt_unknown_c_FUN_005c4cf0(undefined4 *param_1,undefined4 *param_2,uint param_3);
 undefined4 crt_unknown_c_FUN_005c4d20(short *param_1);
 void crt_unknown_c_FUN_005c4d4c(void);
-undefined4 crt_unknown_c_FUN_005c4dc0(void);
-undefined4 crt_unknown_c_FUN_005c4dcc(void);
+int crt_unknown_c_FUN_005c4dc0(void);
+int crt_unknown_c_FUN_005c4dcc(void);
 void crt_unknown_c_FUN_005c4de0(void);
 undefined4 crt_unknown_c_FUN_005c4df0(int param_1,undefined4 param_2);
 undefined4 crt_unknown_c_FUN_005c4e44(int param_1);
 undefined4 crt_unknown_c_FUN_005c4e68(int param_1);
 undefined4 crt_unknown_c_FUN_005c4eb0(int param_1);
 undefined4 crt_unknown_c_FUN_005c4f10(void);
-char crt_unknown_c_FUN_005c4f48(void);
+byte crt_unknown_c_FUN_005c4f48(void);
 bool crt_unknown_c_FUN_005c4f74(void);
 void __cdecl crt_signal_c_FUN_005c4fac(void);
 undefined4 crt_unknown_c_FUN_005c4fb8(undefined4 param_1);
@@ -230,7 +231,7 @@ void crt_unknown_c_FUN_005c5d00(undefined4 param_1);
 void crt_unknown_c_FUN_005c5d10(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
 uint crt_unknown_c_FUN_005c5d60(uint param_1,uint param_2);
 undefined4 crt_unknown_c_FUN_005c5e14(void);
-undefined * crt_unknown_c_FUN_005c5e20(uint param_1);
+int crt_unknown_c_FUN_005c5e20(uint param_1);
 int crt_unknown_c_FUN_005c5e50(byte *param_1,_FILE *param_2);
 uint crt_unknown_c_FUN_005c5f03(int *param_1);
 uint crt_unknown_c_FUN_005c5f69(int *param_1);

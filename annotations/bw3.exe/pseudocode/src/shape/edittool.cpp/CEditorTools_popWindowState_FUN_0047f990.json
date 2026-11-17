@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 70,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 3,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 101
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -73,80 +70,80 @@
     },
     {
       "addr": "01c5b104",
-      "name": "DAT_01c5b104",
-      "type": "undefined4",
+      "name": "g_INT_01c5b104",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b598",
-      "name": "DAT_01c6b598",
-      "type": "undefined4",
+      "name": "g_INT_01c6b598",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b59c",
-      "name": "DAT_01c6b59c",
-      "type": "undefined4",
+      "name": "g_INT_01c6b59c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a0",
-      "name": "DAT_01c6b5a0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a4",
-      "name": "DAT_01c6b5a4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a8",
-      "name": "DAT_01c6b5a8",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5ac",
-      "name": "DAT_01c6b5ac",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b0",
-      "name": "DAT_01c6b5b0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5b0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b4",
-      "name": "DAT_01c6b5b4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b8",
-      "name": "DAT_01c6b5b8",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5b8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5bc",
-      "name": "DAT_01c6b5bc",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5bc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -254,30 +251,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
-      "match": "*(void **)(iVar1 + 0x1c5b2e0",
-      "severity": "moderate",
-      "text": "if (*(void **)(iVar1 + 0x1c5b2e0) != (void *)0x0) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 17,
-      "match": "*(void **)(iVar1 + 0x1c5b2e0",
-      "severity": "moderate",
-      "text": "debugFree(*(void **)(iVar1 + 0x1c5b2e0));",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

@@ -17,13 +17,13 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00537760 at 005377a6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a0
+;   int g_INT_0061b4a0 = 0x8
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0061b4a0]      ; 00437270 | DAT_0061b4a0
+    MOV EDX,dword ptr [0x0061b4a0]      ; 00437270 | g_INT_0061b4a0
         ;   Label: cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
     CMP EDX,0x8                         ; 00437276
     JZ 0x00437290                       ; 00437279

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 27,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 38
+    "total_lines": 37
   },
   "cross_references": [
     {
@@ -212,8 +211,8 @@
     },
     {
       "addr": "01c5bb0c",
-      "name": "DAT_01c5bb0c",
-      "type": "undefined4",
+      "name": "g_INT_01c5bb0c",
+      "type": "int",
       "value": null
     }
   ],
@@ -425,16 +424,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 10,
+      "line": 8,
       "match": "&stack0x0000000c",
       "severity": "moderate",
       "text": "local_8 = &stack0x0000000c;",

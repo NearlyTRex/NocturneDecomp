@@ -14,8 +14,8 @@
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 at 004fcdcd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005de8eb
-;   undefined4 DAT_005de8ee
+;   TerminatedCString s_d_005de8eb
+;   TerminatedCString s_s_d_005de8ee
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_004fcd4d
     PUSH ESI                            ; 004fcd4e
     PUSH EBP                            ; 004fcd4f
-    PUSH 0x5de8ee                       ; 004fcd50 | DAT_005de8ee
+    PUSH 0x5de8ee                       ; 004fcd50 | = "%s%d"
     MOV ECX,dword ptr [ESP + 0x28]      ; 004fcd55
     PUSH ECX                            ; 004fcd59
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004fcd5a
@@ -93,7 +93,7 @@ section .text
     MOV EAX,ESP                         ; 004fcd78
         ;   Label: LAB_004fcd78
     PUSH EAX                            ; 004fcd7a
-    PUSH 0x5de8eb                       ; 004fcd7b | DAT_005de8eb
+    PUSH 0x5de8eb                       ; 004fcd7b | = "%d"
     LEA EAX,[EBX + EDI*0x1]             ; 004fcd80
     PUSH EAX                            ; 004fcd83
     CALL crt_stdio.c_sscanf_FUN_005ba8cc ; 004fcd84

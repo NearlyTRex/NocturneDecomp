@@ -23,7 +23,7 @@ void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004cd880(CHaystack *t
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).invincibility_timer = 0x3F000000;
+  (this_ptr->base).invincibility_timer = 0.5f;
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

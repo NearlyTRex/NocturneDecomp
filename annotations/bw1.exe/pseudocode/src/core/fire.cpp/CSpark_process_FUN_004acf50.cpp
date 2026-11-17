@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CSpark_process_FUN_004acf50(CSpark *this_ptr)
 
 {
@@ -19,7 +17,7 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004acf50(CSpark *this_ptr)
     this_ptr->first_update_flag = 1;
   }
   else {
-    lVar1 = (longlong)_DAT_01c43530 * (longlong)this_ptr->fade_rate;
+    lVar1 = (longlong)g_INT_01c43530 * (longlong)this_ptr->fade_rate;
     lVar1 = (longlong)this_ptr->intensity_target *
             (longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     iVar2 = this_ptr->intensity_current -
@@ -31,11 +29,11 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004acf50(CSpark *this_ptr)
     }
   }
   delta_time = g_CGamePtr->delta_time_float;
-  lVar1 = (longlong)this_ptr->fade_rate * (longlong)_DAT_01c43530;
+  lVar1 = (longlong)this_ptr->fade_rate * (longlong)g_INT_01c43530;
   core_game_cpp_CGame_slamDT_FUN_004d7f50
             (g_CGamePtr,
              (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
-             (float)_DAT_005df1dc);
+             (float)1.52587890625e-05);
   core_particle_cpp_CParticle_process_FUN_00532250(&this_ptr->base);
   core_game_cpp_CGame_slamDT_FUN_004d7f50(g_CGamePtr,delta_time);
   return;

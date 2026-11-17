@@ -7,7 +7,7 @@
 ; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -23,7 +23,7 @@ section .text
         ;   Label: core_marquee.cpp_CMarquee_renderOpaque_FUN_00506c10
     SUB ESP,0x30                        ; 00506c11
     MOV EBX,dword ptr [ESP + 0x38]      ; 00506c14
-    MOV EDX,dword ptr [0x00612560]      ; 00506c18 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00506c18 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00506c1e
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00506c1f
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)

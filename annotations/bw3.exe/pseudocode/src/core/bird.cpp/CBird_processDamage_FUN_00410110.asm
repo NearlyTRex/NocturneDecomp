@@ -8,8 +8,8 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6452
-;   undefined4 DAT_005b6456
+;   TerminatedCString s_DIE_005b6452
+;   TerminatedCString s_DIE_005b6456
 ;   CDemonActorType g_CBirdClassInfo
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
     CMP dword ptr [EBX + 0x26fc],0x0    ; 0041015c
     JNZ 0x00410173                      ; 00410163
         ;   XREF to: 00410173 (CONDITIONAL_JUMP)  ; LAB_00410173
-    PUSH 0x5b6456                       ; 00410165 | DAT_005b6456
+    PUSH 0x5b6456                       ; 00410165 | = "DIE"
     PUSH ESI                            ; 0041016a
         ;   Label: LAB_0041016a
     CALL core_bird.cpp_setRandomMotionVariant_FUN_00410030 ; 0041016b
@@ -82,7 +82,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0 ; 004101a3
         ;   XREF to: 00431ce0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004101a8
-    PUSH 0x5b6452                       ; 004101ab | DAT_005b6452
+    PUSH 0x5b6452                       ; 004101ab | = "DIE"
     JMP 0x0041016a                      ; 004101b0
         ;   XREF to: 0041016a (UNCONDITIONAL_JUMP)  ; LAB_0041016a
 

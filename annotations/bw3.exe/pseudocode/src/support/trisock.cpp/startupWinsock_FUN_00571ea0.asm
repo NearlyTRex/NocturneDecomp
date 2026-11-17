@@ -11,9 +11,9 @@
 ;   TerminatedCString s_initSockets_005d6dc0
 ;   TerminatedCString s_support_trisock_cpp_005d6dcd
 ;   TerminatedCString s_Can_t_create_mutex_005d6de4
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cfd8a8
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   HANDLE g_HANDLE_02cfd8a8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -36,7 +36,7 @@ section .text
     PUSH 0x101                          ; 00571eb6
     CALL crt_wsock32.c_WSAStartup       ; 00571ebb
         ;   XREF to: 005b2568 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_WSAStartup(WORD wVersionRequired, LPWSADATA lpWSAData)
-    CMP dword ptr [0x02cfd8a8],0x0      ; 00571ec0 | DAT_02cfd8a8
+    CMP dword ptr [0x02cfd8a8],0x0      ; 00571ec0 | g_HANDLE_02cfd8a8
     JZ 0x00571ed0                       ; 00571ec7
         ;   XREF to: 00571ed0 (CONDITIONAL_JUMP)  ; LAB_00571ed0
     ADD ESP,0x190                       ; 00571ec9
@@ -45,7 +45,7 @@ section .text
     CALL wincore_winrun.cpp_createMutex_FUN_00581920 ; 00571ed0
         ;   XREF to: 00581920 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createMutex_FUN_00581920()
         ;   Label: LAB_00571ed0
-    MOV [0x02cfd8a8],EAX                ; 00571ed5 | DAT_02cfd8a8
+    MOV [0x02cfd8a8],EAX                ; 00571ed5 | g_HANDLE_02cfd8a8
     TEST EAX,EAX                        ; 00571eda
     JNZ 0x00571ec9                      ; 00571edc
         ;   XREF to: 00571ec9 (CONDITIONAL_JUMP)  ; LAB_00571ec9
@@ -53,8 +53,8 @@ section .text
     MOV ECX,0x5d6dcd                    ; 00571edf | = "..\\support\\trisock.cpp"
     MOV EBX,0x927                       ; 00571ee4
     PUSH 0x5d6de4                       ; 00571ee9 | = "Can't create mutex"
-    MOV dword ptr [0x01d71de0],ECX      ; 00571eee | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00571ef4 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00571eee | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00571ef4 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00571efa
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00571eff

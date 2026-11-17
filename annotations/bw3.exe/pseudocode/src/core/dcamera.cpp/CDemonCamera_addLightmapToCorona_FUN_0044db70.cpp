@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_0044db70(CDemonCamera *this_ptr,CDemonLight *light_source)
@@ -21,7 +20,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_0044db70(CDem
   int iVar7;
   int iVar8;
   uint *puVar9;
-  int local_20;
+  char *local_20;
   int local_1c;
   int local_18;
   CDemonLight *local_14;
@@ -29,7 +28,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_0044db70(CDem
   local_1c = 0;
   if (0 < this_ptr->display_height) {
     local_18 = 0;
-    local_20 = 0xb2cfc8;
+    local_20 = g_CHAR_ARRAY_00b2cfc8;
     local_14 = light_source;
     do {
       iVar2 = (local_14->right_extent[0] - local_14->left_extent[0]) + 1;
@@ -40,8 +39,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_0044db70(CDem
                  ((int)light_source->corona_depth_buffer + local_14->left_extent[0] * 4 + local_18);
         piVar4 = (int *)((int)light_source->corona_lightmap_indices +
                         local_14->left_extent[0] * 4 + local_18);
-        pcVar5 = (char *)(local_20 + local_14->left_extent[0]);
-        _DAT_01547204 = light_source->precomputed_lighting_textures;
+        pcVar5 = local_20 + local_14->left_extent[0];
+        g_CHAR_PTR_01547204 = (char *)light_source->precomputed_lighting_textures;
         iVar8 = iVar2;
         do {
           iVar6 = iVar8 + -8;
@@ -62,7 +61,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_0044db70(CDem
         } while (iVar7 != 0 && bVar1);
         do {
           if ((*puVar3 != 0) && (*puVar3 <= (uint)*(ushort *)*puVar9)) {
-            *pcVar5 = *pcVar5 + _DAT_01547204[*piVar4];
+            *pcVar5 = *pcVar5 + g_CHAR_PTR_01547204[*piVar4];
           }
           puVar3 = puVar3 + 1;
           puVar9 = puVar9 + 1;

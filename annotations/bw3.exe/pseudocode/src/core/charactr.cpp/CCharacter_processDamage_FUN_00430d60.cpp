@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(CCharacter *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -30,7 +28,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(CCharacter 
   bVar3 = 0;
   if (this_ptr->is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
-              (0x01C6E360,"?ShotInvulnerable" + 1);
+              (g_CEventList_PTR_005fba60,"ShotInvulnerable");
     return;
   }
   if (damage_info->damage_amount <= 0.0) {
@@ -111,12 +109,12 @@ LAB_00430dee:
               );
   }
   if ((this_ptr->health_bar_mode == HEALTH_BAR_WHEN_HURT) &&
-     (this_ptr != *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04))) {
+     ((CHero *)this_ptr != g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004bd930
               (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
                ,5.0);
   }
-  if ((this_ptr != *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) &&
+  if (((CHero *)this_ptr != g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]) &&
      (damage_info->damage_type == DAMAGE_TYPE_EXORCISM)) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004bd930
               (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points

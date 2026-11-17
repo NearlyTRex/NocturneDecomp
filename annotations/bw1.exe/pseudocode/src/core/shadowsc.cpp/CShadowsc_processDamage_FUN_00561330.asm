@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ShotShadowWithLead_005f197c
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -109,7 +109,7 @@ section .text
     RET                                 ; 00561403
     PUSH 0x5f197c                       ; 00561404 | = "ShotShadowWithLead"
         ;   Label: LAB_00561404
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00561409 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00561409 | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 0056140f
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00561410
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

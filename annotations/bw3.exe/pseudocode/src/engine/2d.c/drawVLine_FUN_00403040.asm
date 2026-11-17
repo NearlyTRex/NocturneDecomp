@@ -19,16 +19,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_005b51ba
 ;   TerminatedCString s_vLine_invalid_bitsPerPix_005b51c9
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5ac
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
-;   undefined4 DAT_01c6b5c0
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_INT_005fba20 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c5faec
+;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5ac
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
+;   int g_INT_01c6b5c0
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -45,18 +45,18 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 00403044
     MOV EAX,dword ptr [ESP + 0x18]      ; 00403048
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0040304c
-    CMP ESI,dword ptr [0x01c6b5a8]      ; 00403050 | DAT_01c6b5a8
+    CMP ESI,dword ptr [0x01c6b5a8]      ; 00403050 | g_INT_01c6b5a8
     JL 0x00403100                       ; 00403056
         ;   XREF to: 00403100 (CONDITIONAL_JUMP)  ; LAB_00403100
-    CMP ESI,dword ptr [0x01c6b5b0]      ; 0040305c | DAT_01c6b5b0
+    CMP ESI,dword ptr [0x01c6b5b0]      ; 0040305c | g_INT_01c6b5b0
     JG 0x00403100                       ; 00403062
         ;   XREF to: 00403100 (CONDITIONAL_JUMP)  ; LAB_00403100
-    MOV EDI,dword ptr [0x01c6b5ac]      ; 00403068 | DAT_01c6b5ac
+    MOV EDI,dword ptr [0x01c6b5ac]      ; 00403068 | g_INT_01c6b5ac
     CMP EAX,EDI                         ; 0040306e
     JGE 0x00403074                      ; 00403070
         ;   XREF to: 00403074 (CONDITIONAL_JUMP)  ; LAB_00403074
     MOV EAX,EDI                         ; 00403072
-    MOV EBP,dword ptr [0x01c6b5b4]      ; 00403074 | DAT_01c6b5b4
+    MOV EBP,dword ptr [0x01c6b5b4]      ; 00403074 | g_INT_01c6b5b4
         ;   Label: LAB_00403074
     CMP EDX,EBP                         ; 0040307a
     JLE 0x00403080                      ; 0040307c
@@ -66,7 +66,7 @@ section .text
         ;   Label: LAB_00403080
     JG 0x00403100                       ; 00403082
         ;   XREF to: 00403100 (CONDITIONAL_JUMP)  ; LAB_00403100
-    MOV EBX,dword ptr [0x005fba20]      ; 00403088 | DAT_005fba20
+    MOV EBX,dword ptr [0x005fba20]      ; 00403088 | g_INT_005fba20
     LEA ECX,[EDX*0x4 + 0x0]             ; 0040308e
     LEA EBP,[EAX*0x4 + 0x0]             ; 00403095
     CMP EBX,0x10                        ; 0040309c
@@ -81,14 +81,14 @@ section .text
         ;   Label: LAB_004030b2
     JG 0x00403100                       ; 004030b4
         ;   XREF to: 00403100 (CONDITIONAL_JUMP)  ; LAB_00403100
-    MOV BL,byte ptr [0x01c6b5c0]        ; 004030b6 | DAT_01c6b5c0
-    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 004030bc | DAT_01c5faec | DAT_01c5faf0
+    MOV BL,byte ptr [0x01c6b5c0]        ; 004030b6 | g_INT_01c6b5c0
+    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 004030bc | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
     ADD EDX,0x4                         ; 004030c2
     INC EAX                             ; 004030c5
     MOV byte ptr [ECX + ESI*0x1],BL     ; 004030c6
     JMP 0x004030b2                      ; 004030c9
         ;   XREF to: 004030b2 (UNCONDITIONAL_JUMP)  ; LAB_004030b2
-    MOV EBX,dword ptr [0x01c6b5c0]      ; 004030cb | DAT_01c6b5c0
+    MOV EBX,dword ptr [0x01c6b5c0]      ; 004030cb | g_INT_01c6b5c0
         ;   Label: LAB_004030cb
     MOV BX,word ptr [EBX*0x2 + 0x1c6a070] ; 004030d1
     CMP EAX,EDX                         ; 004030d9
@@ -97,7 +97,7 @@ section .text
     LEA EDI,[ESI + ESI*0x1]             ; 004030dd
     MOV EDX,EBP                         ; 004030e0
     MOV ESI,ECX                         ; 004030e2
-    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 004030e4 | DAT_01c5faec | DAT_01c5faf0
+    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 004030e4 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
         ;   Label: LAB_004030e4
     ADD EDX,0x4                         ; 004030ea
     INC EAX                             ; 004030ed
@@ -113,7 +113,7 @@ section .text
     POP ESI                             ; 00403102
     POP EBX                             ; 00403103
     RET                                 ; 00403104
-    MOV EDI,dword ptr [0x01c6b5c0]      ; 00403105 | DAT_01c6b5c0
+    MOV EDI,dword ptr [0x01c6b5c0]      ; 00403105 | g_INT_01c6b5c0
         ;   Label: LAB_00403105
     MOV EDI,dword ptr [EDI*0x4 + 0x1c6a270] ; 0040310b
     CMP EAX,EDX                         ; 00403112
@@ -122,7 +122,7 @@ section .text
     LEA EBX,[ESI*0x4 + 0x0]             ; 00403116
     MOV EDX,EBP                         ; 0040311d
     MOV ESI,ECX                         ; 0040311f
-    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 00403121 | DAT_01c5faec | DAT_01c5faf0
+    MOV ECX,dword ptr [EDX + 0x1c5faec] ; 00403121 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
         ;   Label: LAB_00403121
     ADD EDX,0x4                         ; 00403127
     INC EAX                             ; 0040312a
@@ -145,8 +145,8 @@ section .text
         ;   Label: LAB_0040313e
     MOV EDX,0x8d3                       ; 00403143
     PUSH 0x5b51c9                       ; 00403148 | = "vLine - invalid bitsPerPixel"
-    MOV [0x01d71de0],EAX                ; 0040314d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00403152 | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0040314d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 00403152 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00403158
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0040315d

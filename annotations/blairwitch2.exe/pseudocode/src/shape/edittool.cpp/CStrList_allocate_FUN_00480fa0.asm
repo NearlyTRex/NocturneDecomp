@@ -19,8 +19,8 @@
 ;   TerminatedCString s_CStrList_allocate_invali_005d2661
 ;   TerminatedCString s_shape_edittool_cpp_005d2688
 ;   TerminatedCString s_CStrList_insert_out_of_m_005d269e
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -48,8 +48,8 @@ section .text
     MOV EBP,0x5d264b                    ; 00480fb6 | = "..\\shape\\edittool.cpp"
     MOV EAX,0xbcd                       ; 00480fbb
     PUSH 0x5d2661                       ; 00480fc0 | = "CStrList::allocate - invalid count: %d"
-    MOV dword ptr [0x01d046a0],EBP      ; 00480fc5 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00480fcb | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00480fc5 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00480fcb | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00480fd0
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00480fd5
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_00480fe2
     MOV EDI,0xbcc                       ; 00480fe7
     PUSH 0x5d2623                       ; 00480fec | = "CStrList::allocate - Can't shrink list!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00480ff1 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00480ff7 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00480ff1 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00480ff7 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00480ffd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00481002
@@ -90,8 +90,8 @@ section .text
     MOV EDI,0x5d2688                    ; 00481025 | = "..\\shape\\edittool.cpp"
     MOV EBP,0xbd1                       ; 0048102a
     PUSH 0x5d269e                       ; 0048102f | = "CStrList::insert - out of memory"
-    MOV dword ptr [0x01d046a0],EDI      ; 00481034 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0048103a | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00481034 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0048103a | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00481040
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00481045

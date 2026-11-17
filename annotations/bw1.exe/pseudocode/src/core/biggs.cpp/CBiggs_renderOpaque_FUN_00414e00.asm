@@ -7,10 +7,10 @@
 ; CBiggs *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5c0
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01d39d34
+;   float g_FLOAT_005fc5c0 = 4
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   int g_INT_01d39d34
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -94,7 +94,7 @@ section .text
     CALL core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_005232d0 ; 00414ea7
         ;   XREF to: 005232d0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_005232d0(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index, ...)
     FLD float ptr [EBX + 0xc3e8]        ; 00414eac
-    FDIV float ptr [0x005fc5c0]         ; 00414eb2 | DAT_005fc5c0
+    FDIV float ptr [0x005fc5c0]         ; 00414eb2 | g_FLOAT_005fc5c0
     ADD ESP,0x14                        ; 00414eb8
     SUB ESP,0x4                         ; 00414ebb
     FSTP float ptr [ESP]                ; 00414ebe
@@ -102,12 +102,12 @@ section .text
     CALL core_morph.cpp_CMorph_render_FUN_005237e0 ; 00414ec2
         ;   XREF to: 005237e0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_render_FUN_005237e0(CMorph * this_ptr, float morph_t)
     ADD ESP,0x8                         ; 00414ec7
-    CMP dword ptr [0x01d39d34],0x0      ; 00414eca | DAT_01d39d34
+    CMP dword ptr [0x01d39d34],0x0      ; 00414eca | g_INT_01d39d34
         ;   Label: LAB_00414eca
     JZ 0x00414f03                       ; 00414ed1
         ;   XREF to: 00414f03 (CONDITIONAL_JUMP)  ; LAB_00414f03
-    MOV EBP,dword ptr [0x00612560]      ; 00414ed3 | DAT_00612560
-    PUSH EBP                            ; 00414ed9 | DAT_01bc120c
+    MOV EBP,dword ptr [0x00612560]      ; 00414ed3 | g_CDemonRenderer_PTR_00612560
+    PUSH EBP                            ; 00414ed9 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00414eda
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00414edf

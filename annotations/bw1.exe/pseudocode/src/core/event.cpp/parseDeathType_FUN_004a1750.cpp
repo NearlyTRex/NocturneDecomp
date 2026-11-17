@@ -21,7 +21,7 @@ int __cdecl core_event_cpp_parseDeathType_FUN_004a1750(char *type_name,int *out_
     *out_type_id = 1;
     return 1;
   }
-  iVar1 = _stricmp(type_name,&DAT_005dcd13);
+  iVar1 = _stricmp(type_name,"fall");
   if (iVar1 == 0) {
     *out_type_id = 2;
     return 1;
@@ -46,7 +46,7 @@ int __cdecl core_event_cpp_parseDeathType_FUN_004a1750(char *type_name,int *out_
     *out_type_id = 6;
     return 1;
   }
-  iVar1 = _stricmp(type_name,&DAT_005dcd3e);
+  iVar1 = _stricmp(type_name,"gas");
   if (iVar1 == 0) {
     *out_type_id = 0x69;
     return 1;
@@ -66,7 +66,7 @@ int __cdecl core_event_cpp_parseDeathType_FUN_004a1750(char *type_name,int *out_
     *out_type_id = 9;
     return 1;
   }
-  iVar1 = _stricmp(type_name,&DAT_005dcd59);
+  iVar1 = _stricmp(type_name,"Fire");
   if (iVar1 == 0) {
     *out_type_id = 10;
     return 1;

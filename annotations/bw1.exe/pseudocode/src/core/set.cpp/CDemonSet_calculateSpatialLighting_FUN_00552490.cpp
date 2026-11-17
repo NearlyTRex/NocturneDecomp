@@ -21,10 +21,10 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00552490(CDemonS
   int iVar8;
   byte bVar9;
   int aiStackY_1030 [1012];
-  CVector3f *position;
-  CVector3f *orientation;
-  CVector3f *aabb_min;
-  CVector3f *aabb_max;
+  float *position;
+  float *orientation;
+  float *aabb_min;
+  float *aabb_max;
   CDemonLight *light_source;
   CMatrix3x3f *rotation_matrix;
   CVector3i *light_direction;
@@ -36,63 +36,64 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00552490(CDemonS
   CDemonSet *local_14;
   
   bVar9 = 0;
-  if (_DAT_0202a840 != 0) {
-    if (_DAT_0202a840 == 1) {
+  if (g_INT_0202a840 != 0) {
+    if (g_INT_0202a840 == 1) {
       rotation_matrix = (CMatrix3x3f *)0x0;
-      aabb_max = (CVector3f *)0x0;
-      aabb_min = (CVector3f *)0x0;
-      orientation = (CVector3f *)0x0;
-      position = (CVector3f *)0x0;
+      aabb_max = (float *)0x0;
+      aabb_min = (float *)0x0;
+      orientation = (float *)0x0;
+      position = (float *)0x0;
     }
     else {
-      rotation_matrix = (CMatrix3x3f *)&DAT_0202a874;
-      aabb_max = (CVector3f *)&DAT_0202a868;
-      aabb_min = (CVector3f *)&DAT_0202a85c;
-      orientation = (CVector3f *)&DAT_0202a850;
-      position = (CVector3f *)&DAT_0202a844;
+      rotation_matrix = &g_CMatrix3x3f_0202a874;
+      aabb_max = &g_FLOAT_0202a868;
+      aabb_min = &g_FLOAT_0202a85c;
+      orientation = &g_FLOAT_0202a850;
+      position = &g_FLOAT_0202a844;
     }
     core_set_cpp_CDemonSet_gatherVisibleLights_FUN_00551d50
-              (this_ptr,position,orientation,aabb_min,aabb_max,rotation_matrix);
-    _DAT_0202a840 = 0;
+              (this_ptr,(CVector3f *)position,(CVector3f *)orientation,(CVector3f *)aabb_min,
+               (CVector3f *)aabb_max,rotation_matrix);
+    g_INT_0202a840 = 0;
   }
   iVar7 = 0;
   iVar6 = 0;
-  if (0 < _DAT_0202a374) {
+  if (0 < g_INT_0202a374) {
     iVar8 = 0;
     do {
-      puVar1 = (uint *)(&DAT_0202a378 + iVar8);
+      puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_0202a378 + iVar8);
       iVar8 = iVar8 + 4;
       iVar7 = iVar7 + 1;
       iVar5 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0
                         (&g_CDemonCameraInstance,world_position,(CDemonLight *)*puVar1,
                          surface_normal);
       iVar6 = iVar6 + iVar5;
-    } while (iVar7 < _DAT_0202a374);
+    } while (iVar7 < g_INT_0202a374);
   }
   iVar7 = 0;
-  if (0 < _DAT_0202a1f0) {
+  if (0 < g_INT_0202a1f0) {
     iVar8 = 0;
     do {
-      puVar1 = (uint *)(&DAT_0202a1f4 + iVar8);
+      puVar1 = (uint *)((int)g_CDemonLight_PTR_ARRAY_0202a1f4 + iVar8);
       iVar8 = iVar8 + 4;
       iVar7 = iVar7 + 1;
       iVar5 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0
                         (&g_CDemonCameraInstance,world_position,(CDemonLight *)*puVar1,
                          surface_normal);
       iVar6 = iVar6 + iVar5;
-    } while (iVar7 < _DAT_0202a1f0);
+    } while (iVar7 < g_INT_0202a1f0);
   }
   iVar7 = 0;
-  if (0 < _DAT_0202a388) {
+  if (0 < g_INT_0202a388) {
     iVar8 = 0;
     do {
-      puVar1 = (uint *)(&DAT_0202a38c + iVar8);
+      puVar1 = (uint *)((int)&g_INT_0202a38c + iVar8);
       iVar8 = iVar8 + 4;
       iVar7 = iVar7 + 1;
       iVar5 = core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045ef00
                         ((CDemonGlobe *)*puVar1,world_position,surface_normal);
       iVar6 = iVar6 + iVar5;
-    } while (iVar7 < _DAT_0202a388);
+    } while (iVar7 < g_INT_0202a388);
   }
   if (((ABS(this_ptr->directional_light_intensity) != 0.0) && (surface_normal != (CVector3i *)0x0))
      && (lVar2 = (longlong)_DAT_0202634c * (longlong)surface_normal->x,
@@ -125,23 +126,23 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00552490(CDemonS
              *(uint *)((int)&local_24 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
       }
       iVar7 = 0;
-      if (0 < _DAT_01fe55bc) {
+      if (0 < g_INT_01fe55bc) {
         iVar8 = 0;
         do {
           if (surface_normal == (CVector3i *)0x0) {
-            light_source = *(CDemonLight **)(iVar8 + 0x1fe55c0);
+            light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fe55c0 + iVar8);
             light_direction = (CVector3i *)0x0;
           }
           else {
             light_direction = &local_30;
-            light_source = *(CDemonLight **)(iVar8 + 0x1fe55c0);
+            light_source = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fe55c0 + iVar8);
           }
           iVar5 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0
                             (&g_CDemonCameraInstance,&local_3c,light_source,light_direction);
           iVar6 = iVar6 + iVar5;
           iVar7 = iVar7 + 1;
           iVar8 = iVar8 + 4;
-        } while (iVar7 < _DAT_01fe55bc);
+        } while (iVar7 < g_INT_01fe55bc);
       }
       local_14 = (CDemonSet *)local_14->cameras;
       local_18 = local_18 + 1;

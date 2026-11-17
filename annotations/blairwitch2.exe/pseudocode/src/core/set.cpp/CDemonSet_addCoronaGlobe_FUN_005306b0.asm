@@ -18,13 +18,13 @@
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0 at 0058a1ed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fc961c
+;   int g_INT_01fc961c
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01fc961c]      ; 005306b0 | DAT_01fc961c
+    MOV EDX,dword ptr [0x01fc961c]      ; 005306b0 | g_INT_01fc961c
         ;   Label: core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005306b0
     MOV ECX,dword ptr [ESP + 0x8]       ; 005306b6
     CMP dword ptr [ECX + 0xc],0x100     ; 005306ba
@@ -33,12 +33,12 @@ section .text
     CMP EDX,0x64                        ; 005306c3
     JL 0x005306cf                       ; 005306c6
         ;   XREF to: 005306cf (CONDITIONAL_JUMP)  ; LAB_005306cf
-    MOV dword ptr [0x01fc961c],EDX      ; 005306c8 | DAT_01fc961c
+    MOV dword ptr [0x01fc961c],EDX      ; 005306c8 | g_INT_01fc961c
         ;   Label: LAB_005306c8
     RET                                 ; 005306ce
     INC EDX                             ; 005306cf
         ;   Label: LAB_005306cf
-    MOV dword ptr [EDX*0x4 + 0x1fc961c],ECX ; 005306d0 | DAT_01fc961c
-    MOV dword ptr [0x01fc961c],EDX      ; 005306d7 | DAT_01fc961c
+    MOV dword ptr [EDX*0x4 + 0x1fc961c],ECX ; 005306d0 | g_INT_01fc961c
+    MOV dword ptr [0x01fc961c],EDX      ; 005306d7 | g_INT_01fc961c
     RET                                 ; 005306dd
 

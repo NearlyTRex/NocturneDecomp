@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   sequence_number
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d715a8
+;   int g_INT_01d715a8
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     PUSH EBX                            ; 0052c2e0
         ;   Label: core_netgame.cpp_findSimFrame_FUN_0052c2e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0052c2e1
-    MOV ECX,dword ptr [0x01d715a8]      ; 0052c2e5 | DAT_01d715a8
+    MOV ECX,dword ptr [0x01d715a8]      ; 0052c2e5 | g_INT_01d715a8
     XOR EDX,EDX                         ; 0052c2eb
     TEST ECX,ECX                        ; 0052c2ed
     JLE 0x0052c316                      ; 0052c2ef

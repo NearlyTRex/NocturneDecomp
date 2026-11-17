@@ -8,9 +8,9 @@
 ; SMRGLPrimitivePoly * Stack[0x8]:4   poly
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6b5cc
-;   undefined4 DAT_01c6e2b4
-;   undefined4 DAT_01c6e2b8
+;   void* g_PTR_01c6b5cc
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
+;   int g_INT_01c6e2b8
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -81,9 +81,9 @@ section .text
         ;   XREF to: 0046b7a9 (CONDITIONAL_JUMP)  ; LAB_0046b7a9
     XOR EDI,EDI                         ; 0046b70a
     MOV ESI,0x46f9a6                    ; 0046b70c
-    MOV dword ptr [0x01c6e2b4],EDI      ; 0046b711 | DAT_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],EDI      ; 0046b717 | DAT_01c6e2b8
-    MOV dword ptr [0x01c6b5cc],ESI      ; 0046b71d | DAT_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],EDI      ; 0046b711 | g_BIT_INTEGER32_01c6e2b4
+    MOV dword ptr [0x01c6e2b8],EDI      ; 0046b717 | g_INT_01c6e2b8
+    MOV dword ptr [0x01c6b5cc],ESI      ; 0046b71d | g_PTR_01c6b5cc
     MOV EAX,dword ptr [ESP + 0x20]      ; 0046b723
         ;   Label: LAB_0046b723
     PUSH 0x1bdd818                      ; 0046b727
@@ -150,9 +150,9 @@ section .text
         ;   Label: LAB_0046b7a9
     MOV ECX,0x3                         ; 0046b7ae
     MOV EAX,0x470130                    ; 0046b7b3
-    MOV dword ptr [0x01c6e2b4],EDX      ; 0046b7b8 | DAT_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],ECX      ; 0046b7be | DAT_01c6e2b8
-    MOV [0x01c6b5cc],EAX                ; 0046b7c4 | DAT_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],EDX      ; 0046b7b8 | g_BIT_INTEGER32_01c6e2b4
+    MOV dword ptr [0x01c6e2b8],ECX      ; 0046b7be | g_INT_01c6e2b8
+    MOV [0x01c6b5cc],EAX                ; 0046b7c4 | g_PTR_01c6b5cc
     JMP 0x0046b723                      ; 0046b7c9
         ;   XREF to: 0046b723 (UNCONDITIONAL_JUMP)  ; LAB_0046b723
 

@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   grabber
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7e23
+;   float g_FLOAT_005b7e23 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -89,7 +89,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00428772
     MOVSD ES:EDI,ESI                    ; 00428773
     MOVSD ES:EDI,ESI                    ; 00428774
-    FLD float ptr [0x005b7e23]          ; 00428775 | DAT_005b7e23
+    FLD float ptr [0x005b7e23]          ; 00428775 | g_FLOAT_005b7e23
     FLD float ptr [ESP + 0x44]          ; 0042877b
     FMUL ST1                            ; 0042877f
     FLD float ptr [ESP + 0x48]          ; 00428781

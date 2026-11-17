@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_haystack_cpp_CHaystack_process_FUN_004e9250(CHaystack *this_ptr,float delta_time)
 
 {
@@ -243,13 +240,13 @@ switchD_004e9753_caseD_4:
       pCStack_14 = (CCharacter_full_vtable *)
                    core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_74[0]);
       fStack_1c = (float)pCStack_14;
-      if ((float)pCStack_14 < _DAT_005e4533) {
-        fStack_1c = (float)pCStack_14 + _DAT_005e4537;
+      if ((float)pCStack_14 < -1.570796f) {
+        fStack_1c = (float)pCStack_14 + 3.141593f;
       }
-      if (_DAT_005e453b < fStack_1c) {
-        fStack_1c = fStack_1c + _DAT_005e453f;
+      if (1.570796f < fStack_1c) {
+        fStack_1c = fStack_1c + -3.141593f;
       }
-      afStack_2c[2] = delta_time * _DAT_005e4537;
+      afStack_2c[2] = delta_time * 3.141593f;
       fStack_18 = -afStack_2c[2];
       if (fStack_1c < fStack_18) {
         fStack_1c = fStack_18;
@@ -294,7 +291,7 @@ LAB_004e94dd:
      pSVar7->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar14 = this_ptr->head_look_blend_weight;
-    iVar5 = _DAT_01d069d8;
+    iVar5 = g_INT_ARRAY_01d069d8[0];
     core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(&this_ptr->head_look_euler,&CStack_bc);
     source_quaternions = &CStack_ac;
     CStack_ac.w = CStack_bc.w;

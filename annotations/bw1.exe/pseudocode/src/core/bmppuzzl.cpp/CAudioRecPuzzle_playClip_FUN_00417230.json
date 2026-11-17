@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 587,
+    "complexity_score": 501,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 222,
-    "suspect_count": 34,
+    "pseudocode_lines": 221,
+    "suspect_count": 26,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 566
+    "total_lines": 565
   },
   "cross_references": [],
   "function": {
@@ -47,32 +46,32 @@
   "globals": [
     {
       "addr": "005d4002",
-      "name": "DAT_005d4002",
-      "type": "undefined4",
+      "name": "s_d_005d4002",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d4005",
-      "name": "DAT_005d4005",
-      "type": "undefined4",
+      "name": "s_d_005d4005",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d4008",
-      "name": "DAT_005d4008",
-      "type": "undefined4",
+      "name": "s_d_005d4008",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d400b",
-      "name": "DAT_005d400b",
-      "type": "undefined4",
+      "name": "s_f_005d400b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d400e",
-      "name": "DAT_005d400e",
-      "type": "undefined4",
+      "name": "s_f_005d400e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -125,8 +124,8 @@
     },
     {
       "addr": "005d4029",
-      "name": "DAT_005d4029",
-      "type": "undefined4",
+      "name": "s_f_005d4029",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -137,45 +136,45 @@
     },
     {
       "addr": "005d4032",
-      "name": "DAT_005d4032",
-      "type": "undefined1",
+      "name": "s_wav_005d4032",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d4033",
-      "name": "DAT_005d4033",
-      "type": "undefined1",
+      "name": "s_wav_005d4032+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d4034",
-      "name": "DAT_005d4034",
-      "type": "undefined1",
+      "name": "s_wav_005d4032+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d4035",
-      "name": "DAT_005d4035",
-      "type": "undefined1",
+      "name": "s_wav_005d4032+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d403a",
-      "name": "DAT_005d403a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d403a",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005d403e",
-      "name": "DAT_005d403e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d403e",
+      "type": "float",
+      "value": "6"
     },
     {
       "addr": "006236b8",
-      "name": "DAT_006236b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006236b8",
+      "type": "CSound*",
+      "value": "02c82a60"
     }
   ],
   "param_estimates": {
@@ -297,56 +296,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005d4002",
-      "severity": "mild",
-      "text": "_sprintf(acStack_34,&DAT_005d4002);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005d4005",
-      "severity": "mild",
-      "text": "_sprintf(acStack_40,&DAT_005d4005);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005d4008",
-      "severity": "mild",
-      "text": "_sprintf(acStack_4c,&DAT_005d4008);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 35,
-      "match": "DAT_005d400b",
-      "severity": "mild",
-      "text": "_sprintf(acStack_64c,&DAT_005d400b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005d400e",
-      "severity": "mild",
-      "text": "_sprintf(acStack_44c,&DAT_005d400e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
       "match": "DAT_005d4011",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d4011;",
@@ -354,31 +305,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 67,
       "match": "DAT_005d401d",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d401d;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 101,
-      "match": "DAT_005d4029",
-      "severity": "mild",
-      "text": "_sprintf(acStack_54c,&DAT_005d4029);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 177,
-      "match": "DAT_005d4032",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_005d4032;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 39,
+      "line": 37,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -386,7 +321,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -394,7 +329,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 71,
+      "line": 69,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -402,7 +337,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 92,
+      "line": 90,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -410,7 +345,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 105,
+      "line": 103,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -418,7 +353,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 126,
+      "line": 124,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -426,7 +361,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 147,
+      "line": 145,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -434,7 +369,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 168,
+      "line": 166,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -442,7 +377,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 189,
+      "line": 187,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -450,7 +385,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 210,
+      "line": 208,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -458,7 +393,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 51,
+      "line": 49,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -466,7 +401,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 83,
+      "line": 81,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -474,7 +409,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 117,
+      "line": 115,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -482,7 +417,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 138,
+      "line": 136,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -490,7 +425,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 159,
+      "line": 157,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -498,7 +433,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 180,
+      "line": 178,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -506,7 +441,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 201,
+      "line": 199,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -514,7 +449,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -522,7 +457,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -530,7 +465,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 117,
+      "line": 115,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -538,7 +473,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 138,
+      "line": 136,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -546,7 +481,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 159,
+      "line": 157,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -554,7 +489,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 180,
+      "line": 178,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -562,7 +497,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 201,
+      "line": 199,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

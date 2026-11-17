@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 65,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 40,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 147
   },
   "cross_references": [
@@ -56,8 +54,8 @@
     },
     {
       "addr": "005d2fd4",
-      "name": "DAT_005d2fd4",
-      "type": "undefined4",
+      "name": "s_Fire_005d2fd4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -74,8 +72,8 @@
     },
     {
       "addr": "005d2fe5",
-      "name": "DAT_005d2fe5",
-      "type": "undefined4",
+      "name": "s_Gas_005d2fe5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -178,22 +176,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005d2fd4",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(type_name,&DAT_005d2fd4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005d2fe5",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(type_name,&DAT_005d2fe5);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

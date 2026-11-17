@@ -7,7 +7,7 @@
 ; CShadow *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f17c5
+;   double g_DOUBLE_005f17c5 = 2
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;
 ; Called Functions:
@@ -80,7 +80,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0056024d
     ADD ESP,0x8                         ; 0056024e
     FLD float ptr [EBP + -0xa]          ; 00560251
-    FCOMP double ptr [0x005f17c5]       ; 00560254 | DAT_005f17c5
+    FCOMP double ptr [0x005f17c5]       ; 00560254 | g_DOUBLE_005f17c5
     FNSTSW AX                           ; 0056025a
     SAHF                                ; 0056025c
     JC 0x00560381                       ; 0056025d

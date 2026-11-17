@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 242,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
-    "suspect_count": 12,
+    "pseudocode_lines": 101,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "sub84_truncation",
-      "undefined_data"
+      "sub84_truncation"
     ],
-    "total_lines": 271
+    "total_lines": 270
   },
   "cross_references": [
     {
@@ -42,20 +40,20 @@
   "globals": [
     {
       "addr": "0062029c",
-      "name": "DAT_0062029c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0062029c",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "006202a0",
-      "name": "DAT_006202a0",
-      "type": "undefined8",
+      "name": "g_DOUBLE_ARRAY_006202a0",
+      "type": "double[8]",
       "value": null
     },
     {
       "addr": "006202a8",
-      "name": "DAT_006202a8",
-      "type": "undefined8",
+      "name": "g_DOUBLE_ARRAY_006202a0[1]",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -262,99 +260,91 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_0062029c",
-      "severity": "mild",
-      "text": "if (DAT_0062029c != 0) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(double *)((int)g_DOUBLE_ARRAY_006202a0",
+      "severity": "moderate",
+      "text": "dVar5 = 1.0 / SQRT(*(double *)((int)g_DOUBLE_ARRAY_006202a0 + iVar11) *",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 31,
-      "match": "DAT_006202a0",
-      "severity": "mild",
-      "text": "dVar6 = 1.0 / SQRT(*(double *)((int)&DAT_006202a0 + iVar12) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_006202a0",
-      "severity": "mild",
-      "text": "*(double *)((int)&DAT_006202a0 + iVar12) + 1.0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_006202a0",
-      "severity": "mild",
-      "text": "dVar5 = *(double *)((int)&DAT_006202a0 + iVar12);",
-      "type": "undefined_data"
+      "match": "(double *)((int)g_DOUBLE_ARRAY_006202a0",
+      "severity": "moderate",
+      "text": "*(double *)((int)g_DOUBLE_ARRAY_006202a0 + iVar11) + 1.0);",
+      "type": "pointer_cast"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 35,
+      "line": 33,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_48 = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "text": "local_48 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "sub84_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0062029c",
-      "severity": "mild",
-      "text": "DAT_0062029c = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&DAT_006202a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)&DAT_006202a0",
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_01d3e988",
       "severity": "moderate",
-      "text": "dVar6 = 1.0 / SQRT(*(double *)((int)&DAT_006202a0 + iVar12) *",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&DAT_006202a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
-      "match": "(int)&DAT_006202a0",
-      "severity": "moderate",
-      "text": "*(double *)((int)&DAT_006202a0 + iVar12) + 1.0);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&DAT_006202a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
-      "match": "(int)&DAT_006202a0",
-      "severity": "moderate",
-      "text": "dVar5 = *(double *)((int)&DAT_006202a0 + iVar12);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 31,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "dVar6 = 1.0 / SQRT(*(double *)((int)&DAT_006202a0 + iVar12) *",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11) = local_48;",
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(double *)((int)g_DOUBLE_ARRAY_01d3e948",
       "severity": "moderate",
-      "text": "*(double *)((int)&DAT_006202a0 + iVar12) + 1.0);",
+      "text": "*(double *)((int)g_DOUBLE_ARRAY_01d3e948 + iVar11) =",
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(double *)((int)g_DOUBLE_ARRAY_006202a0",
       "severity": "moderate",
-      "text": "dVar5 = *(double *)((int)&DAT_006202a0 + iVar12);",
+      "text": "*(double *)((int)g_DOUBLE_ARRAY_006202a0 + iVar11) * dVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_01d3e988",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11 + 4) = uStack_44;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(double *)((int)g_DOUBLE_ARRAY_01d3e988",
+      "severity": "moderate",
+      "text": "*pfVar12 = fVar3 * (float)*(double *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(double *)((int)g_DOUBLE_ARRAY_01d3e948",
+      "severity": "moderate",
+      "text": "fVar4 * (float)*(double *)((int)g_DOUBLE_ARRAY_01d3e948 + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(double *)((int)g_DOUBLE_ARRAY_01d3e988",
+      "severity": "moderate",
+      "text": "pdVar1 = (double *)((int)g_DOUBLE_ARRAY_01d3e988 + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(double *)((int)g_DOUBLE_ARRAY_01d3e948",
+      "severity": "moderate",
+      "text": "pdVar2 = (double *)((int)g_DOUBLE_ARRAY_01d3e948 + iVar11);",
       "type": "pointer_cast"
     }
   ]

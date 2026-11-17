@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_n_005e2e00
 ;   TerminatedCString s_Character_s_model_s_does_005e2e0c
-;   undefined4 DAT_01e65100
+;   char[2048] g_CHAR_ARRAY_01e65100
 ;
 ; Called Functions:
 ;   core_script.cpp_getDeformableModelFilename_FUN_0052a690
@@ -100,7 +100,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x80]      ; 00521599
     PUSH EAX                            ; 005215a0
     PUSH 0x5e2e0c                       ; 005215a1 | = "Character %s model %s does not have a..."
-    PUSH 0x1e65100                      ; 005215a6 | DAT_01e65100
+    PUSH 0x1e65100                      ; 005215a6 | g_CHAR_ARRAY_01e65100
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005215ab
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x14                        ; 005215b0

@@ -16,8 +16,8 @@
 ;   core_scat.cpp_CScat_process_FUN_00540df0 at 005411dc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005edebf
-;   undefined4 DAT_01e7e054
+;   double g_DOUBLE_005edebf = 0.000100000000000000
+;   undefined4 g_INT_ARRAY_01e7e014[16]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
@@ -128,7 +128,7 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 00542197
         ;   Label: LAB_00542197
     FST double ptr [ESP]                ; 0054219b
-    FCOMP double ptr [0x005edebf]       ; 0054219e | DAT_005edebf
+    FCOMP double ptr [0x005edebf]       ; 0054219e | g_DOUBLE_005edebf
     FNSTSW AX                           ; 005421a4
     SAHF                                ; 005421a6
     JBE 0x0054223e                      ; 005421a7
@@ -171,7 +171,7 @@ section .text
     FLD float ptr [ESP + 0x28]          ; 0054220a
     ADD ESP,0xc                         ; 0054220e
     PUSH 0x567360                       ; 00542211
-    MOV EDX,dword ptr [0x01e7e054]      ; 00542216 | DAT_01e7e054
+    MOV EDX,dword ptr [0x01e7e054]      ; 00542216 | g_INT_ARRAY_01e7e014[16]
     PUSH EDX                            ; 0054221c
     PUSH dword ptr [ESP + 0x10]         ; 0054221d
     FSTP float ptr [ESP + 0x20]         ; 00542221

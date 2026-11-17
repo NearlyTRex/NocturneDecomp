@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet *this_ptr,CVector3f *position,float radius)
 
@@ -126,7 +125,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDe
     local_ec = position->y;
     local_e8._0_4_ = position->z;
   }
-  local_ec = local_ec + _DAT_005d0abe;
+  local_ec = local_ec + 2.0f;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   this_ptr->collision_part_index = -1;
   this_ptr->collision_bone_index = -1;
@@ -146,7 +145,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDe
       CStack_1c0.max.y = local_1a8.min.y;
       local_1a8.min.x = local_1a8.max.x;
     }
-    CStack_1c0.max.z = CStack_1c0.max.z + _DAT_005d0ac2;
+    CStack_1c0.max.z = CStack_1c0.max.z + -10.0f;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80((SCollisionInfo *)(auStack_230 + 0x28));
     auStack_230._40_4_ = 0.0;
     afStack_28[1] = 0.0;
@@ -184,8 +183,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDe
                   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
                                           (SStack_200.keyframed_model);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
-                    _DAT_01d71de0 = "..\\core\\setcolid.cpp";
-                    _DAT_01d71de4 = 0xcb;
+                    g_CHAR_PTR_01d71de0 = "..\\core\\setcolid.cpp";
+                    g_INT_01d71de4 = 0xcb;
                     core_main_c_displayErrorAndQuit_FUN_004e4330
                               ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
                   }
@@ -434,8 +433,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDe
                   }
                   else {
 LAB_0053ca6d:
-                    _DAT_01d71de0 = "..\\core\\setcolid.cpp";
-                    _DAT_01d71de4 = 299;
+                    g_CHAR_PTR_01d71de0 = "..\\core\\setcolid.cpp";
+                    g_INT_01d71de4 = 299;
                     core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid collision type!");
                   }
                 }

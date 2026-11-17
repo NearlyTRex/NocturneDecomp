@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)
 
 {
@@ -16,14 +14,15 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
   byte *pbVar3;
   uint uVar4;
   ushort *puVar5;
-  int iVar6;
-  byte *puVar7;
-  int iVar8;
-  uint uVar9;
-  uint *puVar10;
-  ushort *puVar11;
+  int *piVar6;
+  int iVar7;
+  byte *puVar8;
+  int iVar9;
+  uint uVar10;
+  uint *puVar11;
+  ushort *puVar12;
   uint (*color_table) [256];
-  int iVar12;
+  int iVar13;
   byte *local_d4;
   int local_d0;
   int local_cc;
@@ -59,38 +58,38 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
   local_d0 = x + this_ptr->char_widths[character_code] + -1;
   local_cc = y + -1 + this_ptr->char_heights[character_code];
   local_c8 = this_ptr->char_bitmap_index[character_code];
-  iVar12 = this_ptr->bitmap_widths[local_c8];
+  iVar13 = this_ptr->bitmap_widths[local_c8];
   if (this_ptr->rendering_ready == 0) {
-    if (x < _DAT_01c4f008) {
+    if (x < g_INT_01c4f008) {
       return iVar2;
     }
-    if (y < _DAT_01c4f00c) {
+    if (y < g_INT_01c4f00c) {
       return iVar2;
     }
-    if ((_DAT_01c4f010 + 1) - this_ptr->char_widths[character_code] < x) {
+    if ((g_INT_01c4f010 + 1) - this_ptr->char_widths[character_code] < x) {
       return iVar2;
     }
-    if ((_DAT_01c4f014 + 1) - this_ptr->char_heights[character_code] < y) {
+    if ((g_INT_01c4f014 + 1) - this_ptr->char_heights[character_code] < y) {
       return iVar2;
     }
   }
   else {
-    iVar6 = engine_font_cpp_clipCharacter_FUN_004c0a80
-                      ((int *)&local_d4,&x,&y,&local_d0,&local_cc,iVar12);
-    if (iVar6 != 0) {
+    iVar7 = engine_font_cpp_clipCharacter_FUN_004c0a80
+                      ((int *)&local_d4,&x,&y,&local_d0,&local_cc,iVar13);
+    if (iVar7 != 0) {
       return iVar2;
     }
   }
-  iVar6 = local_c8;
-  local_c4 = iVar12 - ((local_d0 - x) + 1);
-  if (DAT_0061b4a0 == 8) {
+  iVar7 = local_c8;
+  local_c4 = iVar13 - ((local_d0 - x) + 1);
+  if (g_INT_0061b4a0 == 8) {
     if (color_mode == -1) {
       local_c0 = y;
       if (y <= local_cc) {
-        iVar12 = y * 4;
+        iVar13 = y * 4;
         do {
-          pbVar3 = (byte *)(*(int *)(&DAT_01c4354c + iVar12) + x);
-          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+          pbVar3 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x);
+          for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *pbVar3 = *local_d4;
             }
@@ -98,7 +97,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
             local_d4 = local_d4 + 1;
           }
           local_c0 = local_c0 + 1;
-          iVar12 = iVar12 + 4;
+          iVar13 = iVar13 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_c0 <= local_cc);
       }
@@ -106,18 +105,18 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
     else if (color_mode == -2) {
       local_bc = y;
       if (y <= local_cc) {
-        iVar12 = y * 4;
+        iVar13 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01c4354c + iVar12) + x);
-          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+          puVar8 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x);
+          for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
-              *puVar7 = DAT_01cc8cd0;
+              *puVar8 = DAT_01cc8cd0;
             }
-            puVar7 = puVar7 + 1;
+            puVar8 = puVar8 + 1;
             local_d4 = local_d4 + 1;
           }
           local_bc = local_bc + 1;
-          iVar12 = iVar12 + 4;
+          iVar13 = iVar13 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_bc <= local_cc);
       }
@@ -125,18 +124,18 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
     else if (color_mode == -3) {
       local_b8 = y;
       if (y <= local_cc) {
-        iVar12 = y * 4;
+        iVar13 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01c4354c + iVar12) + x);
-          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+          puVar8 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x);
+          for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
-              *puVar7 = DAT_01cc8ce4;
+              *puVar8 = (byte)g_INT_01cc8ce4;
             }
-            puVar7 = puVar7 + 1;
+            puVar8 = puVar8 + 1;
             local_d4 = local_d4 + 1;
           }
           local_b8 = local_b8 + 1;
-          iVar12 = iVar12 + 4;
+          iVar13 = iVar13 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_b8 <= local_cc);
       }
@@ -144,40 +143,40 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
     else {
       local_b4 = y;
       if (y <= local_cc) {
-        iVar12 = y * 4;
+        iVar13 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01c4354c + iVar12) + x);
-          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+          puVar8 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x);
+          for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
-              *puVar7 = (byte)color_mode;
+              *puVar8 = (byte)color_mode;
             }
-            puVar7 = puVar7 + 1;
+            puVar8 = puVar8 + 1;
             local_d4 = local_d4 + 1;
           }
           local_b4 = local_b4 + 1;
-          iVar12 = iVar12 + 4;
+          iVar13 = iVar13 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_b4 <= local_cc);
       }
     }
   }
   else {
-    iVar12 = y << 2;
-    if (DAT_0061b4a0 == 0x10) {
+    iVar13 = y << 2;
+    if (g_INT_0061b4a0 == 0x10) {
       if (color_mode == -1) {
         if (this_ptr->is_initialized == 0) {
           if (y <= local_cc) {
-            iVar12 = y * 4;
+            iVar13 = y * 4;
             do {
-              puVar5 = (ushort *)(*(int *)(&DAT_01c4354c + iVar12) + x * 2);
-              for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              puVar5 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x * 2);
+              for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar5 = (short)this_ptr->palettes_display[local_c8][*local_d4];
                 }
                 local_d4 = local_d4 + 1;
                 puVar5 = puVar5 + 1;
               }
-              iVar12 = iVar12 + 4;
+              iVar13 = iVar13 + 4;
               local_d4 = local_d4 + local_c4;
               y = y + 1;
             } while (y <= local_cc);
@@ -188,36 +187,45 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
           if (y <= local_cc) {
             local_28 = y << 2;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01c4354c + local_28) + x * 2);
-              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
+              puVar12 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + local_28) + x * 2);
+              for (iVar13 = x; iVar13 <= local_d0; iVar13 = iVar13 + 1) {
                 uVar4 = (uint)*local_d4;
-                iVar6 = DAT_0061b4b8 *
+                iVar7 = g_INT_0061b4b8 *
                         (uint)(byte)this_ptr->palette_data[uVar4 * 3 + local_c8 * 0x300];
-                iVar8 = iVar6 >> 0x1f;
-                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
-                if (iVar6 != 0) {
-                  uVar9 = (uint)*puVar11;
-                  iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_00623f28
-                                         ) >> (DAT_01c4e9e0 & 0x1f)) << (DAT_01c4e9e8 & 0x1f) & 0xff
-                                       ) * iVar6 +
-                                       (((DAT_00623f28 & uVar9) >> (DAT_01c4e9e0 & 0x1f)) <<
-                                        (DAT_01c4e9e8 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9e4
-                                     << (DAT_01c4e9e0 & 0x1f)) |
-                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_00623f20
-                                         ) >> (DAT_01c4e9d4 & 0x1f)) << (DAT_01c4e9dc & 0x1f) & 0xff
-                                       ) * iVar6 +
-                                       (((DAT_00623f20 & uVar9) >> (DAT_01c4e9d4 & 0x1f)) <<
-                                        (DAT_01c4e9dc & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9d8
-                                     << (DAT_01c4e9d4 & 0x1f)) |
-                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_00623f30
-                                         ) >> (DAT_01c4e9ec & 0x1f)) << (DAT_01c4e9f4 & 0x1f) & 0xff
-                                       ) * iVar6 +
-                                       iVar8 * (((DAT_00623f30 & uVar9) >> (DAT_01c4e9ec & 0x1f)) <<
-                                                (DAT_01c4e9f4 & 0x1f) & 0xff) >> 8) / _DAT_01c4e9f0
-                                     << (DAT_01c4e9ec & 0x1f));
+                iVar9 = iVar7 >> 0x1f;
+                iVar7 = (int)((iVar7 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
+                if (iVar7 != 0) {
+                  uVar10 = (uint)*puVar12;
+                  iVar9 = 0xff - iVar7;
+                  *puVar12 = (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] &
+                                         g_INT_00623f28) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((g_INT_00623f28 & uVar10) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9e4 <<
+                                     (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
+                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] &
+                                         g_INT_00623f20) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((g_INT_00623f20 & uVar10) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9d8 <<
+                                     (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
+                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] &
+                                         g_INT_00623f30) >>
+                                        (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       iVar9 * (((g_INT_00623f30 & uVar10) >>
+                                                (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                                (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff)
+                                      >> 8) / (uint)g_INT_01c4e9f0 <<
+                                     (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f));
                 }
-                puVar11 = puVar11 + 1;
+                puVar12 = puVar12 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_28 = local_28 + 4;
@@ -230,17 +238,17 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
       else if (color_mode == -2) {
         if (this_ptr->is_initialized == 0) {
           if (y <= local_cc) {
-            iVar12 = y * 4;
+            iVar13 = y * 4;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01c4354c + iVar12) + x * 2);
-              for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              puVar12 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x * 2);
+              for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
-                  *puVar11 = _DAT_01cc8cd2;
+                  *puVar12 = g_USHORT_01cc8cd2;
                 }
-                puVar11 = puVar11 + 1;
+                puVar12 = puVar12 + 1;
                 local_d4 = local_d4 + 1;
               }
-              iVar12 = iVar12 + 4;
+              iVar13 = iVar13 + 4;
               local_d4 = local_d4 + local_c4;
               y = y + 1;
             } while (y <= local_cc);
@@ -251,33 +259,42 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
           if (y <= local_cc) {
             local_2c = y << 2;
             do {
-              puVar11 = (ushort *)(x * 2 + *(int *)(&DAT_01c4354c + local_2c));
-              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
-                iVar6 = DAT_0061b4b8 *
+              puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ARRAY_PTR_01c4354c + local_2c));
+              for (iVar13 = x; iVar13 <= local_d0; iVar13 = iVar13 + 1) {
+                iVar7 = g_INT_0061b4b8 *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar8 = iVar6 >> 0x1f;
-                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
-                if (iVar6 != 0) {
-                  uVar4 = (uint)_DAT_01cc8cd2;
-                  uVar9 = (uint)*puVar11;
-                  iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((DAT_00623f28 & uVar4) >> (DAT_01c4e9e0 & 0x1f)) <<
-                                        (DAT_01c4e9e8 & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_00623f28 & uVar9) >> (DAT_01c4e9e0 & 0x1f)) <<
-                                        (DAT_01c4e9e8 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9e4
-                                     << (DAT_01c4e9e0 & 0x1f)) |
-                             (ushort)(((((DAT_00623f20 & uVar4) >> (DAT_01c4e9d4 & 0x1f)) <<
-                                        (DAT_01c4e9dc & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_00623f20 & uVar9) >> (DAT_01c4e9d4 & 0x1f)) <<
-                                        (DAT_01c4e9dc & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9d8
-                                     << (DAT_01c4e9d4 & 0x1f)) |
-                             (ushort)(((((DAT_00623f30 & uVar4) >> (DAT_01c4e9ec & 0x1f)) <<
-                                        (DAT_01c4e9f4 & 0x1f) & 0xff) * iVar6 +
-                                       iVar8 * (((DAT_00623f30 & uVar9) >> (DAT_01c4e9ec & 0x1f)) <<
-                                                (DAT_01c4e9f4 & 0x1f) & 0xff) >> 8) / _DAT_01c4e9f0
-                                     << (DAT_01c4e9ec & 0x1f));
+                iVar9 = iVar7 >> 0x1f;
+                iVar7 = (int)((iVar7 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
+                if (iVar7 != 0) {
+                  uVar4 = (uint)g_USHORT_01cc8cd2;
+                  uVar10 = (uint)*puVar12;
+                  iVar9 = 0xff - iVar7;
+                  *puVar12 = (ushort)(((((g_INT_00623f28 & uVar4) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((g_INT_00623f28 & uVar10) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9e4 <<
+                                     (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
+                             (ushort)(((((g_INT_00623f20 & uVar4) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((g_INT_00623f20 & uVar10) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9d8 <<
+                                     (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
+                             (ushort)(((((g_INT_00623f30 & uVar4) >>
+                                        (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       iVar9 * (((g_INT_00623f30 & uVar10) >>
+                                                (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                                (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff)
+                                      >> 8) / (uint)g_INT_01c4e9f0 <<
+                                     (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f));
                 }
-                puVar11 = puVar11 + 1;
+                puVar12 = puVar12 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_2c = local_2c + 4;
@@ -290,17 +307,17 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
       else if (color_mode == -3) {
         if (this_ptr->is_initialized == 0) {
           if (y <= local_cc) {
-            iVar12 = y * 4;
+            iVar13 = y * 4;
             do {
-              puVar5 = (ushort *)(x * 2 + *(int *)(&DAT_01c4354c + iVar12));
-              for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ARRAY_PTR_01c4354c + iVar13));
+              for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
-                  *puVar5 = _DAT_01cc8ce4;
+                  *puVar5 = (ushort)g_INT_01cc8ce4;
                 }
                 local_d4 = local_d4 + 1;
                 puVar5 = puVar5 + 1;
               }
-              iVar12 = iVar12 + 4;
+              iVar13 = iVar13 + 4;
               local_d4 = local_d4 + local_c4;
               y = y + 1;
             } while (y <= local_cc);
@@ -311,32 +328,41 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
           if (y <= local_cc) {
             local_30 = y << 2;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01c4354c + local_30) + x * 2);
-              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
-                iVar6 = DAT_0061b4b8 *
+              puVar12 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + local_30) + x * 2);
+              for (iVar13 = x; iVar13 <= local_d0; iVar13 = iVar13 + 1) {
+                iVar7 = g_INT_0061b4b8 *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar8 = iVar6 >> 0x1f;
-                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
-                if (iVar6 != 0) {
-                  uVar4 = (uint)*puVar11;
-                  iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((_DAT_01cc8ce4 & DAT_00623f20) >> (DAT_01c4e9d4 & 0x1f)) <<
-                                        (DAT_01c4e9dc & 0x1f) & 0xff) * iVar6 +
-                                       (((uVar4 & DAT_00623f20) >> (DAT_01c4e9d4 & 0x1f)) <<
-                                        (DAT_01c4e9dc & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9d8
-                                     << (DAT_01c4e9d4 & 0x1f)) |
-                             (ushort)(((((DAT_00623f28 & _DAT_01cc8ce4) >> (DAT_01c4e9e0 & 0x1f)) <<
-                                        (DAT_01c4e9e8 & 0x1f) & 0xff) * iVar6 +
-                                       (((uVar4 & DAT_00623f28) >> (DAT_01c4e9e0 & 0x1f)) <<
-                                        (DAT_01c4e9e8 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9e4
-                                     << (DAT_01c4e9e0 & 0x1f)) |
-                             (ushort)(((((_DAT_01cc8ce4 & DAT_00623f30) >> (DAT_01c4e9ec & 0x1f)) <<
-                                        (DAT_01c4e9f4 & 0x1f) & 0xff) * iVar6 +
-                                       iVar8 * (((uVar4 & DAT_00623f30) >> (DAT_01c4e9ec & 0x1f)) <<
-                                                (DAT_01c4e9f4 & 0x1f) & 0xff) >> 8) / _DAT_01c4e9f0
-                                     << (DAT_01c4e9ec & 0x1f));
+                iVar9 = iVar7 >> 0x1f;
+                iVar7 = (int)((iVar7 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
+                if (iVar7 != 0) {
+                  uVar4 = (uint)*puVar12;
+                  iVar9 = 0xff - iVar7;
+                  *puVar12 = (ushort)(((((uint)(g_INT_01cc8ce4 & g_INT_00623f20) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((uVar4 & g_INT_00623f20) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9d8 <<
+                                     (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
+                             (ushort)(((((uint)(g_INT_00623f28 & g_INT_01cc8ce4) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((uVar4 & g_INT_00623f28) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9e4 <<
+                                     (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
+                             (ushort)(((((uint)(g_INT_01cc8ce4 & g_INT_00623f30) >>
+                                        (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       iVar9 * (((uVar4 & g_INT_00623f30) >>
+                                                (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                                (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff)
+                                      >> 8) / (uint)g_INT_01c4e9f0 <<
+                                     (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f));
                 }
-                puVar11 = puVar11 + 1;
+                puVar12 = puVar12 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_30 = local_30 + 4;
@@ -347,18 +373,18 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
         }
       }
       else {
-        uVar1 = *(ushort *)(&DAT_01c4dad0 + color_mode * 2);
+        uVar1 = g_USHORT_ARRAY_01c4dad0[color_mode];
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar11 = (ushort *)(x * 2 + *(int *)(&DAT_01c4354c + iVar12));
-            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ARRAY_PTR_01c4354c + iVar13));
+            for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *puVar11 = uVar1;
+                *puVar12 = uVar1;
               }
               local_d4 = local_d4 + 1;
-              puVar11 = puVar11 + 1;
+              puVar12 = puVar12 + 1;
             }
-            iVar12 = iVar12 + 4;
+            iVar13 = iVar13 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
@@ -367,33 +393,42 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
           if (y <= local_cc) {
             local_34 = y << 2;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01c4354c + local_34) + x * 2);
-              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
-                iVar6 = DAT_0061b4b8 *
+              puVar12 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + local_34) + x * 2);
+              for (iVar13 = x; iVar13 <= local_d0; iVar13 = iVar13 + 1) {
+                iVar7 = g_INT_0061b4b8 *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar8 = iVar6 >> 0x1f;
-                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
-                if (iVar6 != 0) {
+                iVar9 = iVar7 >> 0x1f;
+                iVar7 = (int)((iVar7 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
+                if (iVar7 != 0) {
                   uVar4 = (uint)uVar1;
-                  uVar9 = (uint)*puVar11;
-                  iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((DAT_00623f28 & uVar4) >> (DAT_01c4e9e0 & 0x1f)) <<
-                                        (DAT_01c4e9e8 & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_00623f28 & uVar9) >> (DAT_01c4e9e0 & 0x1f)) <<
-                                        (DAT_01c4e9e8 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9e4
-                                     << (DAT_01c4e9e0 & 0x1f)) |
-                             (ushort)(((((DAT_00623f20 & uVar4) >> (DAT_01c4e9d4 & 0x1f)) <<
-                                        (DAT_01c4e9dc & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_00623f20 & uVar9) >> (DAT_01c4e9d4 & 0x1f)) <<
-                                        (DAT_01c4e9dc & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c4e9d8
-                                     << (DAT_01c4e9d4 & 0x1f)) |
-                             (ushort)((iVar6 * (((uVar4 & DAT_00623f30) >> (DAT_01c4e9ec & 0x1f)) <<
-                                                (DAT_01c4e9f4 & 0x1f) & 0xff) +
-                                       iVar8 * (((DAT_00623f30 & uVar9) >> (DAT_01c4e9ec & 0x1f)) <<
-                                                (DAT_01c4e9f4 & 0x1f) & 0xff) >> 8) / _DAT_01c4e9f0
-                                     << (DAT_01c4e9ec & 0x1f));
+                  uVar10 = (uint)*puVar12;
+                  iVar9 = 0xff - iVar7;
+                  *puVar12 = (ushort)(((((g_INT_00623f28 & uVar4) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((g_INT_00623f28 & uVar10) >>
+                                        (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9e4 <<
+                                     (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f)) |
+                             (ushort)(((((g_INT_00623f20 & uVar4) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar7 +
+                                       (((g_INT_00623f20 & uVar10) >>
+                                        (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) <<
+                                        (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f) & 0xff) * iVar9
+                                      >> 8) / (uint)g_INT_01c4e9d8 <<
+                                     (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f)) |
+                             (ushort)((iVar7 * (((uVar4 & g_INT_00623f30) >>
+                                                (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                                (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff) +
+                                       iVar9 * (((g_INT_00623f30 & uVar10) >>
+                                                (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f)) <<
+                                                (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f) & 0xff)
+                                      >> 8) / (uint)g_INT_01c4e9f0 <<
+                                     (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f));
                 }
-                puVar11 = puVar11 + 1;
+                puVar12 = puVar12 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_34 = local_34 + 4;
@@ -404,34 +439,35 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
         }
       }
     }
-    else if (DAT_0061b4a0 == 0x20) {
+    else if (g_INT_0061b4a0 == 0x20) {
       color_table = this_ptr->palettes_display + local_c8;
       if (color_mode == -1) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(*(int *)(&DAT_01c4354c + iVar12) + x * 4);
-            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            puVar11 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x * 4);
+            for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *puVar10 = this_ptr->palettes_display[local_c8][*local_d4];
+                *puVar11 = this_ptr->palettes_display[local_c8][*local_d4];
               }
               local_d4 = local_d4 + 1;
-              puVar10 = puVar10 + 1;
+              puVar11 = puVar11 + 1;
             }
-            iVar12 = iVar12 + 4;
+            iVar13 = iVar13 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          iVar8 = y;
+          iVar9 = y;
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004c26c0
-                        ((uint *)(*(int *)(&DAT_01c4354c + iVar12) + x * 4),local_d4,*color_table,
-                         (local_d0 - x) + 1,this_ptr->palettes_display[iVar6][*local_d4]);
-              iVar12 = iVar12 + 4;
+                        ((uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x * 4),local_d4,
+                         *color_table,(local_d0 - x) + 1,
+                         this_ptr->palettes_display[iVar7][*local_d4]);
+              iVar13 = iVar13 + 4;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
-              iVar8 = iVar8 + 1;
-            } while (iVar8 <= local_cc);
+              iVar9 = iVar9 + 1;
+            } while (iVar9 <= local_cc);
             return iVar2;
           }
         }
@@ -439,29 +475,29 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
       else if (color_mode == -2) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(x * 4 + *(int *)(&DAT_01c4354c + iVar12));
-            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            piVar6 = (int *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c4354c + iVar13));
+            for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *puVar10 = _DAT_01cc8cd4;
+                *piVar6 = g_INT_01cc8cd4;
               }
               local_d4 = local_d4 + 1;
-              puVar10 = puVar10 + 1;
+              piVar6 = piVar6 + 1;
             }
-            iVar12 = iVar12 + 4;
+            iVar13 = iVar13 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          iVar6 = y;
+          iVar7 = y;
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004c26c0
-                        ((uint *)(x * 4 + *(int *)(&DAT_01c4354c + iVar12)),local_d4,*color_table,
-                         (local_d0 - x) + 1,_DAT_01cc8cd4);
-              iVar12 = iVar12 + 4;
-              iVar6 = iVar6 + 1;
+                        ((uint *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c4354c + iVar13)),local_d4,
+                         *color_table,(local_d0 - x) + 1,g_INT_01cc8cd4);
+              iVar13 = iVar13 + 4;
+              iVar7 = iVar7 + 1;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
-            } while (iVar6 <= local_cc);
+            } while (iVar7 <= local_cc);
             return iVar2;
           }
         }
@@ -469,60 +505,60 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004c2810(CBitFont *this_p
       else if (color_mode == -3) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(x * 4 + *(int *)(&DAT_01c4354c + iVar12));
-            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            piVar6 = (int *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c4354c + iVar13));
+            for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *puVar10 = _DAT_01cc8ce4;
+                *piVar6 = g_INT_01cc8ce4;
               }
               local_d4 = local_d4 + 1;
-              puVar10 = puVar10 + 1;
+              piVar6 = piVar6 + 1;
             }
-            iVar12 = iVar12 + 4;
+            iVar13 = iVar13 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          iVar6 = y;
+          iVar7 = y;
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004c26c0
-                        ((uint *)(*(int *)(&DAT_01c4354c + iVar12) + x * 4),local_d4,*color_table,
-                         (local_d0 - x) + 1,_DAT_01cc8ce4);
-              iVar12 = iVar12 + 4;
-              iVar6 = iVar6 + 1;
+                        ((uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x * 4),local_d4,
+                         *color_table,(local_d0 - x) + 1,g_INT_01cc8ce4);
+              iVar13 = iVar13 + 4;
+              iVar7 = iVar7 + 1;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
-            } while (iVar6 <= local_cc);
+            } while (iVar7 <= local_cc);
             return iVar2;
           }
         }
       }
       else {
-        uVar4 = *(uint *)(color_mode * 4 + 0x1c4dcd0);
+        uVar4 = g_UINT_ARRAY_01c4dcd0[color_mode];
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(*(int *)(&DAT_01c4354c + iVar12) + x * 4);
-            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            puVar11 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x * 4);
+            for (iVar7 = x; iVar7 <= local_d0; iVar7 = iVar7 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
-                *puVar10 = uVar4;
+                *puVar11 = uVar4;
               }
               local_d4 = local_d4 + 1;
-              puVar10 = puVar10 + 1;
+              puVar11 = puVar11 + 1;
             }
-            iVar12 = iVar12 + 4;
+            iVar13 = iVar13 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          iVar6 = y;
+          iVar7 = y;
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_004c26c0
-                        ((uint *)(x * 4 + *(int *)(&DAT_01c4354c + iVar12)),local_d4,*color_table,
-                         (local_d0 - x) + 1,uVar4);
-              iVar12 = iVar12 + 4;
+                        ((uint *)(x * 4 + *(int *)((int)g_ARRAY_PTR_01c4354c + iVar13)),local_d4,
+                         *color_table,(local_d0 - x) + 1,uVar4);
+              iVar13 = iVar13 + 4;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
-              iVar6 = iVar6 + 1;
-            } while (iVar6 <= local_cc);
+              iVar7 = iVar7 + 1;
+            } while (iVar7 <= local_cc);
             return iVar2;
           }
         }

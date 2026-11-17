@@ -15,8 +15,8 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e850
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c558e0
-;   undefined4 DAT_01c594e8
+;   int g_INT_01c558e0
+;   int g_INT_01c594e8
 ;   undefined4 g_StakePool[0].physics_box.is_valid
 ;   undefined4 g_StakePool[1].physics_box.is_valid
 ;
@@ -43,7 +43,7 @@ section .text
     CMP dword ptr [ESP + 0x18],0x0      ; 0049cb65
     JZ 0x0049cc35                       ; 0049cb6a
         ;   XREF to: 0049cc35 (CONDITIONAL_JUMP)  ; LAB_0049cc35
-    MOV EBX,dword ptr [0x01c558e0]      ; 0049cb70 | DAT_01c558e0
+    MOV EBX,dword ptr [0x01c558e0]      ; 0049cb70 | g_INT_01c558e0
     XOR ESI,ESI                         ; 0049cb76
     TEST EBX,EBX                        ; 0049cb78
     JLE 0x0049cba4                      ; 0049cb7a
@@ -59,7 +59,7 @@ section .text
     CALL core_fire.cpp_CBulletHole_render_FUN_00493dd0 ; 0049cb8f
         ;   XREF to: 00493dd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_00493dd0(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 0049cb94
-    MOV EAX,[0x01c558e0]                ; 0049cb97 | DAT_01c558e0
+    MOV EAX,[0x01c558e0]                ; 0049cb97 | g_INT_01c558e0
         ;   Label: LAB_0049cb97
     INC ESI                             ; 0049cb9c
     ADD EBX,0x3c                        ; 0049cb9d
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_0049cba4
     JZ 0x0049cbfc                       ; 0049cba9
         ;   XREF to: 0049cbfc (CONDITIONAL_JUMP)  ; LAB_0049cbfc
-    MOV ECX,dword ptr [0x01c594e8]      ; 0049cbab | DAT_01c594e8
+    MOV ECX,dword ptr [0x01c594e8]      ; 0049cbab | g_INT_01c594e8
     XOR ESI,ESI                         ; 0049cbb1
     TEST ECX,ECX                        ; 0049cbb3
     JLE 0x0049cbfc                      ; 0049cbb5
@@ -92,7 +92,7 @@ section .text
     CALL core_fire.cpp_CStake_render_FUN_004944c0 ; 0049cbdd
         ;   XREF to: 004944c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_render_FUN_004944c0(CStake * this_ptr)
     ADD ESP,0x4                         ; 0049cbe2
-    MOV ECX,dword ptr [0x01c594e8]      ; 0049cbe5 | DAT_01c594e8
+    MOV ECX,dword ptr [0x01c594e8]      ; 0049cbe5 | g_INT_01c594e8
         ;   Label: LAB_0049cbe5
     ADD EBX,0x260                       ; 0049cbeb
     INC ESI                             ; 0049cbf1
@@ -125,7 +125,7 @@ section .text
     POP ESI                             ; 0049cc32
     POP EBX                             ; 0049cc33
     RET                                 ; 0049cc34
-    MOV ECX,dword ptr [0x01c558e0]      ; 0049cc35 | DAT_01c558e0
+    MOV ECX,dword ptr [0x01c558e0]      ; 0049cc35 | g_INT_01c558e0
         ;   Label: LAB_0049cc35
     XOR ESI,ESI                         ; 0049cc3b
     TEST ECX,ECX                        ; 0049cc3d
@@ -150,7 +150,7 @@ section .text
     JZ 0x0049cc73                       ; 0049cc6b
         ;   XREF to: 0049cc73 (CONDITIONAL_JUMP)  ; LAB_0049cc73
     MOV dword ptr [EBX + 0x1c558f4],EDI ; 0049cc6d
-    MOV ECX,dword ptr [0x01c558e0]      ; 0049cc73 | DAT_01c558e0
+    MOV ECX,dword ptr [0x01c558e0]      ; 0049cc73 | g_INT_01c558e0
         ;   Label: LAB_0049cc73
     INC ESI                             ; 0049cc79
     ADD EBX,0x3c                        ; 0049cc7a

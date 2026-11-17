@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_005398d0(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
@@ -57,7 +55,7 @@ LAB_005398e9:
     if (local_8->is_panning != 0) break;
     core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470
               (g_CZThumbPool + iVar3 * 6,&local_8->position,&local_8->orientation,0x40,0x30,
-               local_8->projection_scale * (float)_DAT_005e6045,file_handle);
+               local_8->projection_scale * (float)0.055555555555555601,file_handle);
     iVar3 = iVar3 + 1;
     unaff_EBX = uStack_b0;
     unaff_ESI = uStack_ac;
@@ -155,8 +153,8 @@ LAB_005398e9:
         goto LAB_005398e9;
       }
       if (uVar2 < 6) break;
-      _DAT_01d046a0 = "..\\core\\setdir.cpp";
-      _DAT_01d046a4 = 0x3aa;
+      g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
+      g_INT_01d046a4 = 0x3aa;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze");
     }
   } while( true );

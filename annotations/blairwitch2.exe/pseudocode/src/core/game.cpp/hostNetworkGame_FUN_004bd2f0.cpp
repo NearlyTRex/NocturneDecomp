@@ -15,13 +15,13 @@ void __cdecl core_game_cpp_hostNetworkGame_FUN_004bd2f0(void)
   if (iVar1 != 0) {
     iVar1 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970
                       (g_CEditorToolsPtr,"Select mission to play","world",
-                       (char *)0x5d87eb,g_CNetGamePtr->mission_name,0);
+                       "*.msn",g_CNetGamePtr->mission_name,0);
     if (iVar1 != 0) {
-      DAT_01cb7b50 = 0;
+      g_CHAR_ARRAY_01cb7b50[0] = '\0';
       while( true ) {
         iVar1 = core_netgame_cpp_CNetGame_runLobby_FUN_0050cf50(g_CNetGamePtr);
         if (iVar1 == 0) break;
-        core_mission_cpp_CDemonMission_run_FUN_004fcb00(0x01D182F0);
+        core_mission_cpp_CDemonMission_run_FUN_004fcb00(g_CDemonMission_PTR_00618170);
       }
     }
     core_netgame_cpp_CNetGame_disconnect_FUN_0050b8d0(g_CNetGamePtr,1);

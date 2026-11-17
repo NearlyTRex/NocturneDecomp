@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 46,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 16,
-    "suspect_count": 2,
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [],
   "function": {
@@ -43,9 +42,9 @@
   "globals": [
     {
       "addr": "005d15c3",
-      "name": "DAT_005d15c3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d15c3",
+      "type": "double",
+      "value": "65536"
     }
   ],
   "param_estimates": {
@@ -134,16 +133,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Raw hex address 0x46b580 assigned to bare local `dir_z`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `dir_z` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 15,
+      "line": 13,
       "match": "0x46b580",
       "severity": "moderate",
       "text": "dir_z = 0x46b580;",

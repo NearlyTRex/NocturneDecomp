@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this_ptr)
 
 {
@@ -28,7 +26,7 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this
   bVar7 = 0;
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                      (&(this_ptr->base).base.model.base);
-  this_ptr_02 = 0x01C51D80;
+  this_ptr_02 = g_CEventList_PTR_0061b4d0;
   iVar4 = pSVar1->state_index;
   (this_ptr->base).base.was_rendered_opaque = 0;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
@@ -54,28 +52,30 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
     iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_34,in_stack_ffffffc4);
-    this_ptr_01 = DAT_00612560;
+    this_ptr_01 = g_CDemonRenderer_PTR_00612560;
     if (iVar4 != 0) {
       iVar4 = this_ptr->fade_alpha;
       (this_ptr->base).base.was_rendered_opaque = 1;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(this_ptr_01,iVar4);
-      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
-      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);
+      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
+      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
+                (g_CDemonRenderer_PTR_00612560,1);
       this_ptr_00 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
                 (this_ptr_00,-1,0x2e7,1,0);
-      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);
-      if (_DAT_01d39d34 != 0) {
+      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
+                (g_CDemonRenderer_PTR_00612560);
+      if (g_INT_01d39d34 != 0) {
         core_motion_cpp_CMotionController_render_FUN_005254b0
                   (&this_ptr_00->base,(CDemonActor *)this_ptr);
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     if (this_ptr->corona_added != 0) {
-      core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(g_CDemonSetPtr,(CDemonGlobe *)0x269cbb0)
-      ;
+      core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(g_CDemonSetPtr,&g_CDemonGlobe_0269cbb0);
     }
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,65000);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
+              (g_CDemonRenderer_PTR_00612560,65000);
     iVar3 = (this_ptr->base).base.was_rendered_opaque;
   }
   return iVar3;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0(CEventList *this_ptr,char *name,int add_flag)
 
 {
@@ -35,19 +33,19 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0(CEventLi
     }
     else if (iVar2 < 0) {
       if (0x31 < (this_ptr->game_flags).count) {
-        file = _fopen("events.txt",&DAT_005bfe8a);
+        file = _fopen("events.txt","wt");
         if (file != (_FILE *)0x0) {
           iVar2 = 0;
           if (0 < (this_ptr->game_flags).count) {
             do {
               iVar2 = iVar2 + 1;
-              _fprintf(file,&DAT_005bfe98);
+              _fprintf(file,"%s\n");
             } while (iVar2 < (this_ptr->game_flags).count);
           }
           _fclose(file);
         }
-        _DAT_01d71de0 = "..\\core\\event.cpp";
-        _DAT_01d71de4 = 0xe40;
+        g_CHAR_PTR_01d71de0 = "..\\core\\event.cpp";
+        g_INT_01d71de4 = 0xe40;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Too many game flags - check events.txt!");
       }
       uVar3 = 0xffffffff;
@@ -59,8 +57,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0(CEventLi
         pcVar4 = pcVar4 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar3 - 1) {
-        _DAT_01d71de0 = "..\\core\\event.cpp";
-        _DAT_01d71de4 = 0xe46;
+        g_CHAR_PTR_01d71de0 = "..\\core\\event.cpp";
+        g_INT_01d71de4 = 0xe46;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Event name %s too long!");
       }
       pacVar5 = (this_ptr->game_flags).names + (this_ptr->game_flags).count;

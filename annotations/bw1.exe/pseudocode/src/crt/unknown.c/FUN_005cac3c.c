@@ -9,14 +9,14 @@
 void * FUN_005cac3c(void *param_1)
 
 {
-  uint uVar1;
+  ulong uVar1;
   
   if (param_1 == (void *)0x0) {
-    param_1 = calloc(1,0x000000F4);
-    uVar1 = 0x000000F4;
+    param_1 = calloc(1,g_ULONG_00626ad4);
+    uVar1 = g_ULONG_00626ad4;
     if (param_1 != (void *)0x0) {
       *(byte *)((int)param_1 + 0x52) = 1;
-      *(uint *)((int)param_1 + 0xf0) = uVar1;
+      *(ulong *)((int)param_1 + 0xf0) = uVar1;
     }
   }
   FUN_005ccf80(param_1);

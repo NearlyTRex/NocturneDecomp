@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 263,
-    "complexity_score": 357,
+    "complexity_score": 347,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 24,
+    "pseudocode_lines": 92,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_param",
       "unaffected_reg",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 350
+    "total_lines": 355
   },
   "cross_references": [],
   "function": {
@@ -107,80 +106,80 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c38b54",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09854",
-      "name": "DAT_01d09854",
-      "type": "undefined4",
+      "name": "g_INT_01d09854",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09914",
-      "name": "DAT_01d09914",
-      "type": "undefined4",
+      "name": "g_INT_01d09914",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09b7c",
-      "name": "DAT_01d09b7c",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d09b7c",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d0d2b4",
-      "name": "DAT_01d0d2b4",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0d2b8",
-      "name": "DAT_01d0d2b8",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2b8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e61b58",
-      "name": "DAT_01e61b58",
-      "type": "undefined4",
+      "name": "g_INT_01e61b58",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bc88",
-      "name": "DAT_0264bc88",
-      "type": "undefined4",
+      "name": "g_PTR_0264bc88",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "0264bc90",
-      "name": "DAT_0264bc90",
-      "type": "undefined4",
+      "name": "g_PTR_0264bc90",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "0264bc94",
-      "name": "DAT_0264bc94",
-      "type": "undefined4",
+      "name": "g_PTR_0264bc94",
+      "type": "void*",
       "value": null
     }
   ],
@@ -276,16 +275,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 7,
+      "line": 5,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "float *unaff_EBX;",
@@ -293,7 +284,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "ushort *in_stack_00000014;",
@@ -301,7 +292,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "int in_stack_00000018;",
@@ -309,7 +300,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "in_stack_00000014 = engine_mini3d_cpp_mirrorFaces_FUN_004f34d0(indices,triangle_count);",
@@ -317,79 +308,79 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 25,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_PTR_0264bc88)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((_DAT_0264bc88 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc88)(vertices,vertex_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(vertices,vertex_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc88)(vertices,vertex_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(vertices,vertex_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 48,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bc90 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_PTR_0264bc90)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 49,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc90)(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 49,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc90)(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
+      "line": 64,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bc94 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_PTR_0264bc94)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 65,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc94)(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 65,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc94)(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 75,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "pfVar1[7] = ((CVector3f *)((int)vertices + 0x18))->x;",
@@ -397,7 +388,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 76,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "pfVar1[8] = ((CVector3f *)((int)vertices + 0x18))->y;",
@@ -405,7 +396,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 74,
+      "line": 78,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "engine_mini3d_cpp_lightVertex_FUN_004f4f50(vertices,unaff_EBX);",
@@ -413,7 +404,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 76,
+      "line": 80,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = pfVar1;",
@@ -421,7 +412,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 82,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "vertices = &((CVector3f *)((int)vertices + 0x18))->z;",
@@ -429,26 +420,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,clip_flags);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,clip_flags);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 89,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018);",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,clip_flags);",
       "type": "stack_param"
     },
     {
@@ -456,12 +431,28 @@
       "line": 89,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(_DAT_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018);",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018,clip_flags);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "(g_FLOAT_PTR_01d09b7c,vertex_count,in_stack_00000014,in_stack_00000018);",
       "type": "stack_param"
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 79,
+      "line": 83,
       "match": "(uint)pCVar3",
       "severity": "moderate",
       "text": "clip_flags = (uint)pCVar3 | (uint)pfVar1[4];",

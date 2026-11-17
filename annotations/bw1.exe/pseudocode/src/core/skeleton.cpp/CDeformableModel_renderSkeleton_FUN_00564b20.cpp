@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00564b20(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
 
 {
@@ -65,20 +63,20 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00564b20(CDef
         afStack_4c[(uint)bVar10 * -2] = *(float *)((int)&CStack_38 + (uint)bVar10 * -8 + 4);
         afStack_4c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
              *(float *)((int)&CStack_38 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-        iStack_2c = (int)ROUND(fStack_50 * _DAT_00605888);
-        iStack_28 = (int)ROUND(afStack_4c[0] * _DAT_00605888);
-        iStack_24 = (int)ROUND(afStack_4c[1] * _DAT_00605888);
+        iStack_2c = (int)ROUND(fStack_50 * 256.0f);
+        iStack_28 = (int)ROUND(afStack_4c[0] * 256.0f);
+        iStack_24 = (int)ROUND(afStack_4c[1] * 256.0f);
         this_ptr = (CDeformableModel *)&iStack_2c;
         output = (SProjectedVertex *)
-                 ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x +
-                 iStack_20);
+                 ((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iStack_20);
         in_stack_ffffff80 = 0x564bc7;
         engine_special_cpp_transformAndProjectPoint_FUN_00580173(output,(CVector3i *)this_ptr);
         iVar4 = iVar4 + 1;
         pCStack_1c = pCStack_1c + 1;
       } while (iVar4 < pCStack_14->bone_count);
     }
-    _DAT_01c4f020 = color;
+    g_INT_01c4f020 = color;
     iStack_18 = 0;
     if (0 < pCStack_14->bone_count) {
       iVar4 = 0;
@@ -86,7 +84,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00564b20(CDef
       do {
         iVar3 = pCVar5->bone_list[0].parent_index;
         if (-1 < iVar3) {
-          pSVar1 = DAT_00612560->vertex_buffer_ptr;
+          pSVar1 = g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr;
           pSVar6 = pSVar1 + iVar3;
           piVar8 = (int *)&stack0xffffff5c;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -136,13 +134,13 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00564b20(CDef
       CStack_5c.x = CStack_68.x;
       *(uint *)((int)&CStack_5c + (uint)bVar10 * -8 + 4) =
            *(uint *)((int)&CStack_68 + (uint)bVar10 * -8 + 4);
-      this_ptr_00 = DAT_00612560;
+      this_ptr_00 = g_CDemonRenderer_PTR_00612560;
       *(uint *)((int)&CStack_5c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
            *(uint *)((int)&CStack_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
                 (this_ptr_00,euler_angles,translation);
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00498360(g_CEditorToolsPtr,0.5,0xff);
-      pCStack_6c = DAT_00612560;
+      pCStack_6c = g_CDemonRenderer_PTR_00612560;
       uStack_70 = 0x564d0a;
       engine_drender_cpp_pop_FUN_004839a0();
       iVar4 = iVar4 + 1;

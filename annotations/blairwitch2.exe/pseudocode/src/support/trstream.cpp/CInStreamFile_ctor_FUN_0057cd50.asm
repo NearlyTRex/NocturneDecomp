@@ -20,7 +20,7 @@
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   undefined1* g_CInStreamFileVTable = 0057cec0
+;   void*[13] g_CInStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStream_ctor_FUN_0057b9c0

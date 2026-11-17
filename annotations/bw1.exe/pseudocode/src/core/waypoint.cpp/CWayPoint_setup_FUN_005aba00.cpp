@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_005aba00(CWayPoint *this_ptr)
 
@@ -24,7 +23,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_005aba00(CWayPoint *this_ptr)
   core_trigger_cpp_CTrigger_setup_FUN_0059b100(&this_ptr->base);
   iVar5 = this_ptr->num_adjacent_waypoints;
   iVar6 = 0;
-  (this_ptr->base).base.is_renderable = *(int *)(0x01D2C900 + 0x1008);
+  (this_ptr->base).base.is_renderable = g_CDemonMission_PTR_0061f650->is_in_editor;
   if (0 < iVar5) {
     pCVar7 = this_ptr;
     do {
@@ -39,11 +38,11 @@ void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_005aba00(CWayPoint *this_ptr)
   }
   if ((this_ptr->base).base.create_event[0] != '\0') {
     str1 = (this_ptr->base).base.create_event;
-    iVar5 = _stricmp(str1,(char *)0x5f941b);
+    iVar5 = _stricmp(str1,"none");
     if ((iVar5 != 0) &&
-       (iVar5 = _stricmp(str1,(char *)0x5f9420), iVar5 != 0)) {
-      _DAT_01d1d400 = "..\\core\\waypoint.cpp";
-      _DAT_01d1d404 = 0x81;
+       (iVar5 = _stricmp(str1,"true"), iVar5 != 0)) {
+      g_CHAR_PTR_01d1d400 = "..\\core\\waypoint.cpp";
+      g_INT_01d1d404 = 0x81;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't have creation event for waypoint.");
       return;
     }

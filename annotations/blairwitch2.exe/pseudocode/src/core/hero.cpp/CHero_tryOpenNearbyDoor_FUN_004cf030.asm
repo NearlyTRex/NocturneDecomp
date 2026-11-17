@@ -29,9 +29,9 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 00570a87
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9c7c
-;   undefined4 DAT_005d9c84
-;   undefined4 DAT_005d9c8c
+;   double g_DOUBLE_005d9c7c = 10
+;   float g_FLOAT_005d9c84 = 1.047198
+;   double g_DOUBLE_005d9c8c = 5
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDoorClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -94,7 +94,7 @@ section .text
     FLD float ptr [EBX + 0x20]          ; 004cf0a2
     FSUB float ptr [EAX + 0x20]         ; 004cf0a5
     FABS                                ; 004cf0a8
-    FCOMP double ptr [0x005d9c7c]       ; 004cf0aa | DAT_005d9c7c
+    FCOMP double ptr [0x005d9c7c]       ; 004cf0aa | g_DOUBLE_005d9c7c
     FNSTSW AX                           ; 004cf0b0
     SAHF                                ; 004cf0b2
     JA 0x004cf1d8                       ; 004cf0b3
@@ -103,7 +103,7 @@ section .text
     FLD float ptr [EBX + 0x24]          ; 004cf0bc
     FSUB float ptr [EAX + 0x24]         ; 004cf0bf
     FABS                                ; 004cf0c2
-    FCOMP double ptr [0x005d9c7c]       ; 004cf0c4 | DAT_005d9c7c
+    FCOMP double ptr [0x005d9c7c]       ; 004cf0c4 | g_DOUBLE_005d9c7c
     FNSTSW AX                           ; 004cf0ca
     SAHF                                ; 004cf0cc
     JA 0x004cf1d8                       ; 004cf0cd
@@ -112,7 +112,7 @@ section .text
     FLD float ptr [EBX + 0x28]          ; 004cf0d6
     FSUB float ptr [EAX + 0x28]         ; 004cf0d9
     FABS                                ; 004cf0dc
-    FCOMP double ptr [0x005d9c7c]       ; 004cf0de | DAT_005d9c7c
+    FCOMP double ptr [0x005d9c7c]       ; 004cf0de | g_DOUBLE_005d9c7c
     FNSTSW AX                           ; 004cf0e4
     SAHF                                ; 004cf0e6
     JA 0x004cf1d8                       ; 004cf0e7
@@ -153,14 +153,14 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cf148
     FLD float ptr [ESP + 0x1c]          ; 004cf149
     FABS                                ; 004cf14d
-    FCOMP float ptr [0x005d9c84]        ; 004cf14f | DAT_005d9c84
+    FCOMP float ptr [0x005d9c84]        ; 004cf14f | g_FLOAT_005d9c84
     FNSTSW AX                           ; 004cf155
     SAHF                                ; 004cf157
     JA 0x004cf1d8                       ; 004cf158
         ;   XREF to: 004cf1d8 (CONDITIONAL_JUMP)  ; LAB_004cf1d8
     FLD float ptr [ESP + 0x10]          ; 004cf15e
     FABS                                ; 004cf162
-    FCOMP double ptr [0x005d9c8c]       ; 004cf164 | DAT_005d9c8c
+    FCOMP double ptr [0x005d9c8c]       ; 004cf164 | g_DOUBLE_005d9c8c
     FNSTSW AX                           ; 004cf16a
     SAHF                                ; 004cf16c
     JA 0x004cf1d8                       ; 004cf16d

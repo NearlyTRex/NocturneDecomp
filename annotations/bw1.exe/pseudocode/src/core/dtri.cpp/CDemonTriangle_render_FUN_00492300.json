@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 65,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 141
   },
   "cross_references": [],
@@ -48,33 +45,33 @@
   "globals": [
     {
       "addr": "005dbc1c",
-      "name": "DAT_005dbc1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbc1c",
+      "type": "double",
+      "value": "-65536"
     },
     {
       "addr": "005dbc24",
-      "name": "DAT_005dbc24",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbc24",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "005dbc2c",
-      "name": "DAT_005dbc2c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbc2c",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "005ff660",
-      "name": "DAT_005ff660",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ff660",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0061255c",
-      "name": "DAT_0061255c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0061255c",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     }
   ],
   "param_estimates": {
@@ -155,22 +152,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1bc120c assigned to bare local `poly`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `poly` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 34,
-      "match": "0x1bc120c",
-      "severity": "moderate",
-      "text": "poly = 0x01BC120C;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

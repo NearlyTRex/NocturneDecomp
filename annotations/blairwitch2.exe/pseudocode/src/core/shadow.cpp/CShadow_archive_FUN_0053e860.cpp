@@ -27,7 +27,7 @@ void __cdecl core_shadow_cpp_CShadow_archive_FUN_0053e860(CShadow *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->chain_length,"chainLength");
   }
   if (4 < g_CShadowClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->type,&DAT_005e675e);
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->type,"type");
   }
   if (g_CShadowClassVersion < 6) {
     return;

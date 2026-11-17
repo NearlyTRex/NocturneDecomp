@@ -10,7 +10,7 @@ void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_00587340(SRenderVertex
 
 {
   longlong lVar1;
-  byte bVar2;
+  byte uVar2;
   uint uVar3;
   int iVar4;
   int iVar5;
@@ -45,9 +45,9 @@ void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_00587340(SRenderVertex
   (vertex_out->projected_vertex).transformed_y =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
        (vertex_a->projected_vertex).transformed_y;
-  bVar2 = DAT_01c6e2b4;
+  uVar2 = g_BIT_INTEGER32_01c6e2b4.bytes[0];
   (vertex_out->projected_vertex).screen_x = -1;
-  if ((bVar2 & 4) == 0) {
+  if ((uVar2 & 4) == 0) {
     return;
   }
   lVar1 = (longlong)(vertex_b->r - vertex_a->r) * (longlong)iVar4;

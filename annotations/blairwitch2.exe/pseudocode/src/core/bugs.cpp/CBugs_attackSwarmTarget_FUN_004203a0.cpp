@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004203a0(CBugs *this_ptr,float delta_time)
 
@@ -87,8 +86,8 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004203a0(CBugs *this_ptr,
     local_3c = local_84;
     local_38 = local_80;
     local_34 = local_7c;
-    if ((((float)_DAT_005cca31 < ABS(local_80)) || ((float)_DAT_005cca31 < ABS(local_84))) ||
-       ((float)_DAT_005cca31 < ABS(local_7c))) {
+    if ((((float)2 < ABS(local_80)) || ((float)2 < ABS(local_84)))
+       || ((float)2 < ABS(local_7c))) {
       this_ptr_01 = (*((this_ptr->swarm_target->vtable)._ub)->getPathMap)(this_ptr->swarm_target);
       if (this_ptr_01 == (CPathMap *)0x0) {
         this_ptr_01 = core_path_cpp_getPathMap_FUN_00513ea0(&this_ptr->swarm_target->location);
@@ -99,7 +98,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004203a0(CBugs *this_ptr,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar4 != 0) {
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&CStack_e8,&CStack_54);
-        CStack_6c.z = _DAT_005f3e34 * delta_time;
+        CStack_6c.z = 2.0f * delta_time;
         CStack_6c.x = 0.0;
         CStack_6c.y = 0.0;
         local_14 = CStack_6c.z;
@@ -142,7 +141,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004203a0(CBugs *this_ptr,
     if (this_ptr_00 != (CCharacter *)0x0) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&local_1b4);
       local_14 = local_1b8;
-      local_1b4.damage_amount = (float)(int)local_1b8 * (float)_DAT_005cca39;
+      local_1b4.damage_amount = (float)(int)local_1b8 * (float)0.050000000000000003;
       local_1b4.attacker = (CDemonActor *)this_ptr;
       local_1b4.wielder = (CDemonActor *)this_ptr;
       (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&local_1b4);
@@ -183,10 +182,10 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004203a0(CBugs *this_ptr,
   afStack_bc[(uint)bVar9 * -2 + 3] = afStack_bc[(uint)bVar9 * -2 + 6];
   afStack_bc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
        afStack_bc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
-  fStack_9c = afStack_bc[2] * _DAT_005cca41;
-  fStack_98 = afStack_bc[3] * _DAT_005cca41;
-  fStack_94 = fStack_ac * _DAT_005cca41;
-  fStack_c0 = afStack_bc[2] * _DAT_005cca41;
+  fStack_9c = afStack_bc[2] * 0.5f;
+  fStack_98 = afStack_bc[3] * 0.5f;
+  fStack_94 = fStack_ac * 0.5f;
+  fStack_c0 = afStack_bc[2] * 0.5f;
   afStack_bc[(uint)bVar9 * -2] = afStack_bc[(uint)bVar9 * -2 + 9];
   afStack_bc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
        afStack_bc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];

@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d09860
+;   float g_FLOAT_01d09860
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x01d09860]                ; 004abc40 | DAT_01d09860
+    MOV EAX,[0x01d09860]                ; 004abc40 | g_FLOAT_01d09860
         ;   Label: engine_font.cpp_getAlpha_FUN_004abc40
     RET                                 ; 004abc45
 

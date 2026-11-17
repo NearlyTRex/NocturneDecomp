@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_pollAllControllers_FUN_00582370(void)
 
 {
@@ -18,6 +16,6 @@ void __cdecl wincore_winrun_cpp_pollAllControllers_FUN_00582370(void)
     wincore_winrun_cpp_pollController_FUN_00581f50(controller_index);
     controller_index = controller_index + 1;
   } while (controller_index < 4);
-  wincore_winrun_cpp_updateInputIdleTimers_FUN_00582500((float)_DAT_01c5fad0 * _DAT_005d7f02);
+  wincore_winrun_cpp_updateInputIdleTimers_FUN_00582500((float)g_INT_01c5fad0 * 1.525879e-05f);
   return;
 }

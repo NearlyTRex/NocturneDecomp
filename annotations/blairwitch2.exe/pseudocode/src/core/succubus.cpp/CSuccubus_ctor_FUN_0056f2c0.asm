@@ -10,8 +10,8 @@
 ;   core_succubus.cpp_factoryFuncSuccubus_FUN_0056f290 at 0056f2a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc3cc
-;   undefined4 DAT_005fc3d0
+;   float g_FLOAT_005fc3cc = 50
+;   float g_FLOAT_005fc3d0 = 100
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_ctor_FUN_005b1440
@@ -64,9 +64,9 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0 ; 0056f335
         ;   XREF to: 005478b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x3430],0x3f19999a ; 0056f33a
-    FLD float ptr [0x005fc3cc]          ; 0056f344 | DAT_005fc3cc
+    FLD float ptr [0x005fc3cc]          ; 0056f344 | g_FLOAT_005fc3cc
     MOV dword ptr [EBX + 0x3434],0x3f666666 ; 0056f34a
-    FLD float ptr [0x005fc3d0]          ; 0056f354 | DAT_005fc3d0
+    FLD float ptr [0x005fc3d0]          ; 0056f354 | g_FLOAT_005fc3d0
     MOV dword ptr [EBX + 0x12dac],0x1   ; 0056f35a
     ADD ESP,0x8                         ; 0056f364
     FXCH                                ; 0056f367

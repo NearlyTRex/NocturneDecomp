@@ -24,7 +24,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Warning_005d1fc1
-;   undefined4 DAT_01c263a0
+;   int g_INT_01c263a0
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005b7768
@@ -47,7 +47,7 @@ section .text
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 0047be08
         ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047be0d
-    MOV EBX,dword ptr [0x01c263a0]      ; 0047be10 | DAT_01c263a0
+    MOV EBX,dword ptr [0x01c263a0]      ; 0047be10 | g_INT_01c263a0
     PUSH EBX                            ; 0047be16
     PUSH 0x1c229f0                      ; 0047be17
     XOR ECX,ECX                         ; 0047be1c

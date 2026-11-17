@@ -13,8 +13,8 @@
 ;   TerminatedCString s_core_dtrace_cpp_005bc843
 ;   TerminatedCString s_CDemonRaytrace_allocNewC_005bc856
 ;   WatcomTypeInfo g_CDemonCubeTypeInfo
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -59,8 +59,8 @@ section .text
     MOV EBX,0x5bc843                    ; 00473608 | = "..\\core\\dtrace.cpp"
     MOV ESI,0xae                        ; 0047360d
     PUSH 0x5bc856                       ; 00473612 | = "CDemonRaytrace::allocNewCubeList - Ou..."
-    MOV dword ptr [0x01d71de0],EBX      ; 00473617 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0047361d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 00473617 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0047361d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00473623
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00473628

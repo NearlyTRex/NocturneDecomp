@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_lightsta_cpp_CLightStaff_getMuzzlePoint_FUN_004e3de0(CLightStaff *this_ptr,CVector3f *out_point)
 
 {
@@ -31,8 +29,8 @@ CVector3f * __cdecl core_lightsta_cpp_CLightStaff_getMuzzlePoint_FUN_004e3de0(CL
     afStack_1c[0] = afStack_1c[3];
     afStack_1c[1] = (float)uStack_c;
   }
-  fStack_20 = fStack_20 + _DAT_005c6aa6;
-  afStack_1c[0] = afStack_1c[0] + _DAT_005c6aaa;
+  fStack_20 = fStack_20 + 0.25f;
+  afStack_1c[0] = afStack_1c[0] + -1.0f;
   pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);
   unaff_ESI->x = fStack_20;
   *pfVar1 = afStack_1c[(uint)bVar2 * -2];

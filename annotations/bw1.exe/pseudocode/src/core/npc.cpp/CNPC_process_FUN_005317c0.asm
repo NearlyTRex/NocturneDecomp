@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_005ec745
 ;   TerminatedCString s_s_confused_while_walking_005ec74b
-;   undefined4 DAT_005ec775
-;   undefined4 DAT_005ec779
+;   TerminatedCString s_RUN_005ec775
+;   TerminatedCString s_WALK_005ec779
 ;   TerminatedCString s_STAND_005ec77e
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CGore* g_CGorePtr = 01cd0e3c
@@ -187,7 +187,7 @@ section .text
         ;   XREF to: 00531ad0 (CONDITIONAL_JUMP)  ; LAB_00531ad0
     PUSH 0x1                            ; 00531922
         ;   Label: LAB_00531922
-    PUSH 0x5ec779                       ; 00531924 | DAT_005ec779
+    PUSH 0x5ec779                       ; 00531924 | = "WALK"
     LEA EAX,[EBX + 0x158]               ; 00531929
         ;   Label: LAB_00531929
     PUSH EAX                            ; 0053192f
@@ -322,7 +322,7 @@ section .text
         ;   XREF to: 00531935 (UNCONDITIONAL_JUMP)  ; LAB_00531935
     PUSH 0x0                            ; 00531a94
         ;   Label: LAB_00531a94
-    PUSH 0x5ec775                       ; 00531a96 | DAT_005ec775
+    PUSH 0x5ec775                       ; 00531a96 | = "RUN"
     PUSH ESI                            ; 00531a9b
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 00531a9c
         ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)

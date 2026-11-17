@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(CTextureCache *this_ptr)
 
 {
-  code *pcVar1;
+  byte *puVar1;
   STextureCacheEntry *pSVar2;
   
   this_ptr->use_counter = 0;
@@ -33,11 +31,11 @@ void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(CTexture
     pSVar2 = pSVar2 + 1;
   } while (pSVar2 != (STextureCacheEntry *)&this_ptr->current_texture_count);
   memset(this_ptr->entries,0,0x18000);
-  pcVar1 = _DAT_0264bcbc;
+  puVar1 = g_PTR_0264bcbc;
   this_ptr->wrap_indicator = 0;
-  if (pcVar1 == (code *)0x0) {
+  if (puVar1 == (byte *)0x0) {
     return;
   }
-  (*_DAT_0264bcbc)();
+  (*(code *)g_PTR_0264bcbc)();
   return;
 }

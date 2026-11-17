@@ -13,16 +13,16 @@
 ;   TerminatedCString s_dog5_wav_005da6d2
 ;   TerminatedCString s_dog5_wav_005da6db
 ;   TerminatedCString s_s_gave_up_chase_I_m_conf_005da6e4
-;   undefined4 DAT_005da708
-;   undefined4 DAT_005da710
+;   double g_DOUBLE_005da708 = 2
+;   double g_DOUBLE_005da710 = 0.5
 ;   undefined4 DAT_005fee88
-;   undefined4 DAT_005fee94
+;   float g_FLOAT_005fee94 = 8
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01cc804c
+;   int g_INT_01cc804c
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 00476993 (CONDITIONAL_JUMP)  ; LAB_00476993
     FLD float ptr [EBX + 0x2528]        ; 0047697d
     FLD ST0                             ; 00476983
-    FMUL double ptr [0x005da708]        ; 00476985 | DAT_005da708
+    FMUL double ptr [0x005da708]        ; 00476985 | g_DOUBLE_005da708
     FSTP ST1                            ; 0047698b
     FSTP float ptr [EBX + 0x2528]       ; 0047698d
     PUSH dword ptr [EBP + 0x92]         ; 00476993
@@ -360,7 +360,7 @@ section .text
     ADD EAX,EDX                         ; 00476bff
     PUSH 0x3f333333                     ; 00476c01
     PUSH EAX                            ; 00476c06
-    PUSH 0x2c8af28                      ; 00476c07 | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 00476c07 | g_CVector3f_02c8af28
     LEA ESI,[EBP + 0xffffff7a]          ; 00476c0c
     LEA EDI,[EBP + 0x46]                ; 00476c12
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00476c15
@@ -390,7 +390,7 @@ section .text
     ADD ESP,0x10                        ; 00476c49
     MOV EAX,dword ptr [EBX + 0xc270]    ; 00476c4c
     PUSH EAX                            ; 00476c52
-    MOV EDX,dword ptr [0x006236b8]      ; 00476c53 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 00476c53 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 00476c59
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 00476c5a
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -508,12 +508,12 @@ section .text
     FADDP                               ; 00476d8e
     FSTP float ptr [EBP + 0x5e]         ; 00476d90
     MOV EAX,dword ptr [EBP + 0x5e]      ; 00476d93
-    MOV EDX,dword ptr [0x01cc804c]      ; 00476d96 | DAT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 00476d96 | g_INT_01cc804c
     SAR EAX,0x1                         ; 00476d9c
     ADD EAX,EDX                         ; 00476d9e
     MOV dword ptr [EBP + 0x62],EAX      ; 00476da0
     FLD float ptr [EBP + 0x62]          ; 00476da3
-    FCOMP float ptr [0x005fee94]        ; 00476da6 | DAT_005fee94
+    FCOMP float ptr [0x005fee94]        ; 00476da6 | g_FLOAT_005fee94
     FNSTSW AX                           ; 00476dac
     SAHF                                ; 00476dae
     JC 0x00476dfb                       ; 00476daf
@@ -528,7 +528,7 @@ section .text
     ADD ESP,0xc                         ; 00476dbe
     MOV EDI,dword ptr [EBX + 0xc270]    ; 00476dc1
     PUSH EDI                            ; 00476dc7
-    MOV EAX,[0x006236b8]                ; 00476dc8 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 00476dc8 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 00476dcd
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 00476dce
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -592,7 +592,7 @@ section .text
     FMUL ST0                            ; 00476e71
     FADDP                               ; 00476e73
     FSQRT                               ; 00476e75
-    FCOMP float ptr [0x005fee94]        ; 00476e77 | DAT_005fee94
+    FCOMP float ptr [0x005fee94]        ; 00476e77 | g_FLOAT_005fee94
     FNSTSW AX                           ; 00476e7d
     SAHF                                ; 00476e7f
     JBE 0x00476e99                      ; 00476e80
@@ -659,7 +659,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00476f32
     ADD ESP,0x8                         ; 00476f35
     FLD float ptr [EBP + 0x76]          ; 00476f38
-    FCOMP double ptr [0x005da710]       ; 00476f3b | DAT_005da710
+    FCOMP double ptr [0x005da710]       ; 00476f3b | g_DOUBLE_005da710
     FNSTSW AX                           ; 00476f41
     SAHF                                ; 00476f43
     JA 0x00476fc9                       ; 00476f44

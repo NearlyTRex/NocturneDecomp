@@ -6,189 +6,179 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int height,int bits_per_pixel)
 
 {
-  int iVar1;
+  HRESULT HVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  void *dest;
-  int *piStack_110;
-  int *piStack_100;
-  int iStack_fc;
-  int iStack_f8;
-  int iStack_b4;
-  uint auStack_b0 [2];
-  uint uStack_a8;
-  void *pvStack_a0;
-  uint uStack_98;
-  int iStack_40;
-  uint auStack_38 [4];
-  int iStack_28;
-  int iStack_24;
+  LPVOID dest;
+  int iVar6;
+  DDSURFACEDESC DStack_f0;
+  DDSURFACEDESC DStack_84;
+  DDSCAPS DStack_18;
+  int iStack_14;
   
-  if (_DAT_02d0bcec != (int *)0x0) {
-    iStack_f8 = 0x579dd7;
-    (**(code **)(*_DAT_02d0bcec + 8))();
-    _DAT_02d0bcec = (int *)0x0;
+  if (g_IUnknown_PTR_02d0bcec != (IUnknown *)0x0) {
+    (*g_IUnknown_PTR_02d0bcec->vtable->Release)(g_IUnknown_PTR_02d0bcec);
+    g_IUnknown_PTR_02d0bcec = (IUnknown *)0x0;
   }
-  if (_DAT_02d0bce8 != (int *)0x0) {
-    iStack_f8 = 0x579be1;
-    (**(code **)(*_DAT_02d0bce8 + 8))();
-    _DAT_02d0bce8 = (int *)0x0;
+  if (g_IDirectDrawSurface_PTR_02d0bce8 != (IDirectDrawSurface *)0x0) {
+    (*g_IDirectDrawSurface_PTR_02d0bce8->vtable->Release)
+              ((IUnknown *)g_IDirectDrawSurface_PTR_02d0bce8);
+    g_IDirectDrawSurface_PTR_02d0bce8 = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02d0bce4 != (int *)0x0) {
-    iStack_f8 = 0x579bf8;
-    (**(code **)(*_DAT_02d0bce4 + 8))();
-    _DAT_02d0bce4 = (int *)0x0;
+  if (g_IDirectDrawSurface_PTR_02d0bce4 != (IDirectDrawSurface *)0x0) {
+    (*g_IDirectDrawSurface_PTR_02d0bce4->vtable->Release)
+              ((IUnknown *)g_IDirectDrawSurface_PTR_02d0bce4);
+    g_IDirectDrawSurface_PTR_02d0bce4 = (IDirectDrawSurface *)0x0;
   }
   if (((bits_per_pixel != 8) && (bits_per_pixel != 0x10)) && (bits_per_pixel != 0x20)) {
     return 0;
   }
-  DAT_005fba20 = bits_per_pixel;
-  _DAT_02d0bd08 = bits_per_pixel;
-  DAT_005fba18 = width;
-  _DAT_02d0bd0c = 0;
-  DAT_005fba1c = height;
-  _DAT_02d0bd10 = 0;
-  _DAT_02d0bd00 = width;
-  _DAT_02d0bcfc = 0;
-  _DAT_02d0bd04 = height;
-  if (DAT_0060b010 != (void *)0x0) {
-    iStack_f8 = 0x579c72;
-    debugFree(DAT_0060b010);
-    DAT_0060b010 = (void *)0x0;
+  g_INT_005fba20 = bits_per_pixel;
+  g_INT_02d0bd08 = bits_per_pixel;
+  g_INT_005fba18 = width;
+  g_INT_02d0bd0c = 0;
+  g_INT_005fba1c = height;
+  g_INT_02d0bd10 = 0;
+  g_INT_02d0bd00 = width;
+  g_INT_02d0bcfc = 0;
+  g_INT_02d0bd04 = height;
+  if (g_PTR_0060b010 != (byte *)0x0) {
+    debugFree(g_PTR_0060b010);
+    g_PTR_0060b010 = (byte *)0x0;
   }
-  if (_DAT_02d0bcf0 != (void *)0x0) {
-    iStack_f8 = 0x579c8c;
-    debugFree(_DAT_02d0bcf0);
-    DAT_0072ffac = 0;
+  if (g_PTR_02d0bcf0 != (byte *)0x0) {
+    debugFree(g_PTR_02d0bcf0);
+    g_PTR_0072ffac = (byte *)0x0;
   }
-  iStack_f8 = 0x579cbf;
-  DAT_0060b010 = malloc
-                           (((int)((DAT_005fba20 + (DAT_005fba20 >> 0x1f) * -8) -
-                                  (uint)((DAT_005fba20 >> 0x1f) << 2 < 0)) >> 3) *
-                            DAT_005fba18 * DAT_005fba1c);
-  if (DAT_0060b010 == (void *)0x0) {
-    _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01d71de4 = 0xed;
-    iStack_f8 = 0x579cea;
+  g_PTR_0060b010 =
+       malloc
+                 (((int)((g_INT_005fba20 + (g_INT_005fba20 >> 0x1f) * -8) -
+                        (uint)((g_INT_005fba20 >> 0x1f) << 2 < 0)) >> 3) *
+                  g_INT_005fba18 * g_INT_005fba1c);
+  if (g_PTR_0060b010 == (byte *)0x0) {
+    g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01d71de4 = 0xed;
     core_main_c_displayErrorAndQuit_FUN_004e4330("WDDVMEM: Fatal - out of frame buffer memory");
   }
-  iStack_f8 = 0x579d05;
-  _DAT_02d0bcf0 = malloc(DAT_005fba18 * DAT_005fba1c * 4 + 0x40);
-  if (_DAT_02d0bcf0 == (void *)0x0) {
-    _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01d71de4 = 0xf2;
-    iStack_f8 = 0x579d31;
+  g_PTR_02d0bcf0 = malloc(g_INT_005fba18 * g_INT_005fba1c * 4 + 0x40);
+  if (g_PTR_02d0bcf0 == (byte *)0x0) {
+    g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01d71de4 = 0xf2;
     core_main_c_displayErrorAndQuit_FUN_004e4330("WDDVMEM: Fatal - out of Z buffer memory");
   }
-  iStack_f8 = height;
-  DAT_0072ffac = (int)_DAT_02d0bcf0 + 0x10U & 0xfffffff0;
-  iStack_fc = width;
-  piStack_100 = _DAT_02d0bce0;
-  iVar1 = (**(code **)(*_DAT_02d0bce0 + 0x54))();
-  if ((iVar1 != 0) && (height < 0x1e0)) {
-    _DAT_02d0bd00 = 0x280;
-    _DAT_02d0bd0c = (0x280 - width) / 2;
-    _DAT_02d0bd10 = (0x1e0 - height) / 2;
-    piStack_110 = _DAT_02d0bce0;
-    _DAT_02d0bd04 = 0x1e0;
-    iVar1 = (**(code **)(*_DAT_02d0bce0 + 0x54))();
+  g_PTR_0072ffac = (byte *)((uint)(g_PTR_02d0bcf0 + 0x10) & 0xfffffff0);
+  HVar1 = (*g_IDirectDraw_PTR_02d0bce0->vtable->SetDisplayMode)
+                    (g_IDirectDraw_PTR_02d0bce0,width,height,bits_per_pixel);
+  if ((HVar1 != 0) && (height < 0x1e0)) {
+    g_INT_02d0bd00 = 0x280;
+    g_INT_02d0bd0c = (0x280 - width) / 2;
+    g_INT_02d0bd10 = (0x1e0 - height) / 2;
+    g_INT_02d0bd04 = 0x1e0;
+    HVar1 = (*g_IDirectDraw_PTR_02d0bce0->vtable->SetDisplayMode)
+                      (g_IDirectDraw_PTR_02d0bce0,0x280,0x1e0,bits_per_pixel);
   }
-  if (iVar1 != 0) {
+  if (HVar1 != 0) {
     if (bits_per_pixel != 0x20) {
       return 0;
     }
-    piStack_110 = _DAT_02d0bce0;
-    iVar1 = (**(code **)(*_DAT_02d0bce0 + 0x54))();
-    if (iVar1 != 0) {
+    HVar1 = (*g_IDirectDraw_PTR_02d0bce0->vtable->SetDisplayMode)
+                      (g_IDirectDraw_PTR_02d0bce0,g_INT_02d0bd00,g_INT_02d0bd04,0x18);
+    if (HVar1 != 0) {
       return 0;
     }
-    _DAT_02d0bd08 = 0x18;
-    _DAT_02d0bcfc = 1;
+    g_INT_02d0bd08 = 0x18;
+    g_INT_02d0bcfc = 1;
   }
-  piStack_110 = (int *)0x579e31;
-  memset(&piStack_100,0,0x6c);
-  piStack_100 = (int *)0x6c;
-  uStack_98 = 0x6218;
-  iStack_fc = 0x21;
-  piStack_110 = _DAT_02d0bce0;
-  iVar1 = (**(code **)(*_DAT_02d0bce0 + 0x18))();
-  if (iVar1 != 0) {
-    iStack_fc = 1;
-    iVar1 = (**(code **)(*_DAT_02d0bce0 + 0x18))(_DAT_02d0bce0,&piStack_110,&DAT_02d0bce4,0);
-    if (iVar1 != 0) {
-      uStack_a8 = 0xa18;
-      iVar1 = (**(code **)(*_DAT_02d0bce0 + 0x18))(_DAT_02d0bce0,&piStack_110,&DAT_02d0bce4,0);
-      if (iVar1 != 0) {
+  memset(&DStack_f0,0,0x6c);
+  DStack_f0.dwSize = 0x6c;
+  DStack_f0.ddsCaps.dwCaps = 0x6218;
+  DStack_f0.dwBackBufferCount = 2;
+  DStack_f0.dwFlags = 0x21;
+  HVar1 = (*g_IDirectDraw_PTR_02d0bce0->vtable->CreateSurface)
+                    (g_IDirectDraw_PTR_02d0bce0,&DStack_f0,&g_IDirectDrawSurface_PTR_02d0bce4,
+                     (IUnknown *)0x0);
+  if (HVar1 != 0) {
+    DStack_f0.dwBackBufferCount = 1;
+    HVar1 = (*g_IDirectDraw_PTR_02d0bce0->vtable->CreateSurface)
+                      (g_IDirectDraw_PTR_02d0bce0,&DStack_f0,&g_IDirectDrawSurface_PTR_02d0bce4,
+                       (IUnknown *)0x0);
+    if (HVar1 != 0) {
+      DStack_f0.ddsCaps.dwCaps = 0xa18;
+      HVar1 = (*g_IDirectDraw_PTR_02d0bce0->vtable->CreateSurface)
+                        (g_IDirectDraw_PTR_02d0bce0,&DStack_f0,&g_IDirectDrawSurface_PTR_02d0bce4,
+                         (IUnknown *)0x0);
+      if (HVar1 != 0) {
         return 0;
       }
     }
   }
-  memset(auStack_38,0,4);
-  auStack_38[0] = 4;
-  iVar1 = (**(code **)(*_DAT_02d0bce4 + 0x30))(_DAT_02d0bce4,auStack_38,&DAT_02d0bce8);
-  if (iVar1 == 0) {
-    iVar1 = 0;
-    if (0 < DAT_005fba1c) {
-      iVar3 = DAT_005fba20 >> 0x1f;
-      iVar2 = DAT_005fba20 + iVar3 * -8;
-      iStack_40 = DAT_005fba18 * 4;
+  memset(&DStack_18,0,4);
+  DStack_18.dwCaps = 4;
+  HVar1 = (*g_IDirectDrawSurface_PTR_02d0bce4->vtable->GetAttachedSurface)
+                    (g_IDirectDrawSurface_PTR_02d0bce4,&DStack_18,&g_IDirectDrawSurface_PTR_02d0bce8
+                    );
+  if (HVar1 == 0) {
+    iVar5 = 0;
+    if (0 < g_INT_005fba1c) {
+      iVar2 = g_INT_005fba20 >> 0x1f;
+      iVar6 = g_INT_005fba20 + iVar2 * -8;
+      iStack_14 = g_INT_005fba18 * 4;
+      iVar3 = 0;
       iVar4 = 0;
-      iVar5 = 0;
       do {
-        *(void **)(&DAT_01c5faec + iVar5) =
-             (void *)(DAT_005fba18 * iVar1 * ((int)(iVar2 - (uint)(iVar3 << 2 < 0)) >> 3) +
-                     (int)DAT_0060b010);
-        iVar1 = iVar1 + 1;
-        *(uint *)(&DAT_01c60dac + iVar5) = DAT_0072ffac + iVar4;
-        iVar4 = iVar4 + iStack_40;
-        iVar5 = iVar5 + 4;
-      } while (iVar1 < DAT_005fba1c);
+        *(byte **)((int)g_ARRAY_PTR_01c5faec + iVar4) =
+             g_PTR_0060b010 + g_INT_005fba18 * iVar5 * ((int)(iVar6 - (uint)(iVar2 << 2 < 0)) >> 3);
+        iVar5 = iVar5 + 1;
+        *(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar4) = g_PTR_0072ffac + iVar3;
+        iVar3 = iVar3 + iStack_14;
+        iVar4 = iVar4 + 4;
+      } while (iVar5 < g_INT_005fba1c);
     }
-    engine_2d_c_setupViewportAndClipping_FUN_00401810(0,0,iStack_28 + -1,iStack_24 + -1);
-    iVar1 = 0;
+    engine_2d_c_setupViewportAndClipping_FUN_00401810(0,0,width + -1,height + -1);
+    iVar5 = 0;
     wincore_wddvmem_cpp_setupColorPalette_FUN_0057a770();
     do {
-      memset(auStack_b0,0,0x6c);
-      auStack_b0[0] = 0x6c;
-      iVar2 = (**(code **)(*_DAT_02d0bce8 + 100))(_DAT_02d0bce8,0,auStack_b0,1,0);
-      if (iVar2 != 0) {
-        _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
-        _DAT_01d71de4 = 0x1ec;
+      memset(&DStack_84,0,0x6c);
+      DStack_84.dwSize = 0x6c;
+      HVar1 = (*g_IDirectDrawSurface_PTR_02d0bce8->vtable->Lock)
+                        (g_IDirectDrawSurface_PTR_02d0bce8,(RECT *)0x0,&DStack_84,1,(void *)0x0);
+      if (HVar1 != 0) {
+        g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
+        g_INT_01d71de4 = 0x1ec;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Clear of back buffer failed");
       }
-      iVar2 = 0;
-      dest = pvStack_a0;
-      if (0 < _DAT_02d0bd04) {
+      iVar6 = 0;
+      dest = DStack_84.lpSurface;
+      if (0 < g_INT_02d0bd04) {
         do {
-          iVar5 = _DAT_02d0bd00 * _DAT_02d0bd08 >> 0x1f;
+          iVar4 = g_INT_02d0bd00 * g_INT_02d0bd08 >> 0x1f;
           memset
-                    (dest,0,(int)((_DAT_02d0bd00 * _DAT_02d0bd08 + iVar5 * -8) -
-                                 (uint)(iVar5 << 2 < 0)) >> 3);
-          iVar2 = iVar2 + 1;
-          dest = (void *)((int)dest + iStack_b4);
-        } while (iVar2 < _DAT_02d0bd04);
+                    (dest,0,(int)((g_INT_02d0bd00 * g_INT_02d0bd08 + iVar4 * -8) -
+                                 (uint)(iVar4 << 2 < 0)) >> 3);
+          iVar6 = iVar6 + 1;
+          dest = (LPVOID)((int)dest + DStack_84.dwPitchOrLinearSize.lPitch);
+        } while (iVar6 < g_INT_02d0bd04);
       }
-      iVar2 = (**(code **)(*_DAT_02d0bce8 + 0x80))(_DAT_02d0bce8,0);
-      if (iVar2 != 0) {
-        _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
-        _DAT_01d71de4 = 0x1f6;
+      HVar1 = (*g_IDirectDrawSurface_PTR_02d0bce8->vtable->Unlock)
+                        (g_IDirectDrawSurface_PTR_02d0bce8,(void *)0x0);
+      if (HVar1 != 0) {
+        g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
+        g_INT_01d71de4 = 0x1f6;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Unlock of back buffer clear failed");
       }
-      _DAT_02d0bcf4 = 1;
-      iVar1 = iVar1 + 1;
+      g_INT_02d0bcf4 = 1;
+      iVar5 = iVar5 + 1;
       wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-    } while (iVar1 < 3);
+    } while (iVar5 < 3);
     return 1;
   }
-  _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
-  _DAT_01d71de4 = 0x1d1;
+  g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
+  g_INT_01d71de4 = 0x1d1;
   core_main_c_displayErrorAndQuit_FUN_004e4330("setScreenResolution - Create back buffer failed!");
   return 0;
 }

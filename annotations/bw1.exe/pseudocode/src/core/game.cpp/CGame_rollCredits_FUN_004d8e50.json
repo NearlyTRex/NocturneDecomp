@@ -2,23 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 324,
+    "complexity_score": 241,
     "cross_reference_count": 2,
     "function_call_count": 30,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 159,
-    "suspect_count": 13,
+    "pseudocode_lines": 156,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
-      "undefined_data",
-      "unresolved_funcptr",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 517
+    "total_lines": 514
   },
   "cross_references": [
     {
@@ -207,8 +203,8 @@
     },
     {
       "addr": "005e358a",
-      "name": "DAT_005e358a",
-      "type": "undefined4",
+      "name": "s_rt_005e358a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -219,14 +215,14 @@
     },
     {
       "addr": "005e3599",
-      "name": "DAT_005e3599",
-      "type": "undefined4",
+      "name": "s_data_005e3599",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e359e",
-      "name": "DAT_005e359e",
-      "type": "undefined4",
+      "name": "s_end_005e359e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -249,44 +245,44 @@
     },
     {
       "addr": "005e35ec",
-      "name": "DAT_005e35ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e35ec",
+      "type": "float",
+      "value": "32"
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "0152d244",
-      "name": "DAT_0152d244",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d244",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d7f1b8",
-      "name": "DAT_01d7f1b8",
-      "type": "undefined4",
+      "name": "g_INT_01d7f1b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -475,48 +471,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 36,
       "match": "(uint *)((int)local_1134",
       "severity": "moderate",
       "text": "*(uint *)((int)local_1134 + iVar6) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005e3599",
-      "severity": "mild",
-      "text": "stream = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e3599,\"credits.txt\",&DAT_005e358a)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005e358a",
-      "severity": "mild",
-      "text": "stream = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e3599,\"credits.txt\",&DAT_005e358a)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_005e359e",
-      "severity": "mild",
-      "text": "iVar2 = _strcmp(local_134,&DAT_005e359e);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 62,
       "match": "(void **)((int)local_1134",
       "severity": "moderate",
       "text": "*(void **)((int)local_1134 + iVar6) = pvVar4;",
@@ -524,7 +488,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 69,
       "match": "(char **)((int)local_1134",
       "severity": "moderate",
       "text": "pcVar8 = *(char **)((int)local_1134 + iVar6);",
@@ -532,7 +496,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 113,
       "match": "(char **)((int)local_1134",
       "severity": "moderate",
       "text": "pcVar3 = *(char **)((int)local_1134 + iVar7 + -4);",
@@ -540,31 +504,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 144,
       "match": "(void **)((int)local_1134",
       "severity": "moderate",
       "text": "debugFree(*(void **)((int)local_1134 + iVar7));",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 158,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,1,uVar11);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Raw hex address 0x4d8fbd assigned to bare local `uVar11`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar11` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 106,
-      "match": "0x4d8fbd",
-      "severity": "moderate",
-      "text": "uVar11 = 0x4d8fbd;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 73,
+      "line": 70,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -572,7 +520,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 58,
+      "line": 55,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

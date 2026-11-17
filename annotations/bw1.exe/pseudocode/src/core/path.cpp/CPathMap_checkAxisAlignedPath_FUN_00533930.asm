@@ -38,7 +38,7 @@
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0 at 00534412
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e6be44
+;   int g_INT_01e6be44
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00533640
@@ -116,7 +116,7 @@ section .text
     CDQ                                 ; 005339e0
     XOR EAX,EDX                         ; 005339e1
     SUB EAX,EDX                         ; 005339e3
-    CMP EAX,dword ptr [0x01e6be44]      ; 005339e5 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 005339e5 | g_INT_01e6be44
     JLE 0x00533aaa                      ; 005339eb
         ;   XREF to: 00533aaa (CONDITIONAL_JUMP)  ; LAB_00533aaa
     CMP dword ptr [ESP + 0x40],0x0      ; 005339f1
@@ -169,7 +169,7 @@ section .text
     CDQ                                 ; 00533a6a
     XOR EAX,EDX                         ; 00533a6b
     SUB EAX,EDX                         ; 00533a6d
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533a6f | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533a6f | g_INT_01e6be44
     JLE 0x00533c1e                      ; 00533a75
         ;   XREF to: 00533c1e (CONDITIONAL_JUMP)  ; LAB_00533c1e
     CMP dword ptr [ESP + 0x38],0x0      ; 00533a7b
@@ -206,7 +206,7 @@ section .text
     CDQ                                 ; 00533abe
     XOR EAX,EDX                         ; 00533abf
     SUB EAX,EDX                         ; 00533ac1
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533ac3 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533ac3 | g_INT_01e6be44
     JG 0x005339f1                       ; 00533ac9
         ;   XREF to: 005339f1 (CONDITIONAL_JUMP)  ; LAB_005339f1
     PUSH ESI                            ; 00533acf
@@ -222,7 +222,7 @@ section .text
     CDQ                                 ; 00533ae3
     XOR EAX,EDX                         ; 00533ae4
     SUB EAX,EDX                         ; 00533ae6
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533ae8 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533ae8 | g_INT_01e6be44
     JG 0x005339f1                       ; 00533aee
         ;   XREF to: 005339f1 (CONDITIONAL_JUMP)  ; LAB_005339f1
     PUSH ESI                            ; 00533af4
@@ -273,7 +273,7 @@ section .text
     CDQ                                 ; 00533b5d
     XOR EAX,EDX                         ; 00533b5e
     SUB EAX,EDX                         ; 00533b60
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533b62 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533b62 | g_INT_01e6be44
     JLE 0x00533ba4                      ; 00533b68
         ;   XREF to: 00533ba4 (CONDITIONAL_JUMP)  ; LAB_00533ba4
     CMP dword ptr [ESP + 0x3c],0x0      ; 00533b6a
@@ -315,7 +315,7 @@ section .text
     CDQ                                 ; 00533bbc
     XOR EAX,EDX                         ; 00533bbd
     SUB EAX,EDX                         ; 00533bbf
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533bc1 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533bc1 | g_INT_01e6be44
     JG 0x00533b6a                       ; 00533bc7
         ;   XREF to: 00533b6a (CONDITIONAL_JUMP)  ; LAB_00533b6a
     PUSH ESI                            ; 00533bc9
@@ -332,7 +332,7 @@ section .text
     CDQ                                 ; 00533be1
     XOR EAX,EDX                         ; 00533be2
     SUB EAX,EDX                         ; 00533be4
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533be6 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533be6 | g_INT_01e6be44
     JG 0x00533b6a                       ; 00533bec
         ;   XREF to: 00533b6a (CONDITIONAL_JUMP)  ; LAB_00533b6a
     PUSH ESI                            ; 00533bf2
@@ -367,7 +367,7 @@ section .text
     CDQ                                 ; 00533c32
     XOR EAX,EDX                         ; 00533c33
     SUB EAX,EDX                         ; 00533c35
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533c37 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533c37 | g_INT_01e6be44
     JG 0x00533a7b                       ; 00533c3d
         ;   XREF to: 00533a7b (CONDITIONAL_JUMP)  ; LAB_00533a7b
     PUSH ESI                            ; 00533c43
@@ -383,7 +383,7 @@ section .text
     CDQ                                 ; 00533c57
     XOR EAX,EDX                         ; 00533c58
     SUB EAX,EDX                         ; 00533c5a
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533c5c | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533c5c | g_INT_01e6be44
     JG 0x00533a7b                       ; 00533c62
         ;   XREF to: 00533a7b (CONDITIONAL_JUMP)  ; LAB_00533a7b
     PUSH ESI                            ; 00533c68
@@ -434,7 +434,7 @@ section .text
     CDQ                                 ; 00533cd1
     XOR EAX,EDX                         ; 00533cd2
     SUB EAX,EDX                         ; 00533cd4
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533cd6 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533cd6 | g_INT_01e6be44
     JLE 0x00533d18                      ; 00533cdc
         ;   XREF to: 00533d18 (CONDITIONAL_JUMP)  ; LAB_00533d18
     CMP dword ptr [ESP + 0x34],0x0      ; 00533cde
@@ -476,7 +476,7 @@ section .text
     CDQ                                 ; 00533d30
     XOR EAX,EDX                         ; 00533d31
     SUB EAX,EDX                         ; 00533d33
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533d35 | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533d35 | g_INT_01e6be44
     JG 0x00533cde                       ; 00533d3b
         ;   XREF to: 00533cde (CONDITIONAL_JUMP)  ; LAB_00533cde
     PUSH ESI                            ; 00533d3d
@@ -493,7 +493,7 @@ section .text
     CDQ                                 ; 00533d55
     XOR EAX,EDX                         ; 00533d56
     SUB EAX,EDX                         ; 00533d58
-    CMP EAX,dword ptr [0x01e6be44]      ; 00533d5a | DAT_01e6be44
+    CMP EAX,dword ptr [0x01e6be44]      ; 00533d5a | g_INT_01e6be44
     JG 0x00533cde                       ; 00533d60
         ;   XREF to: 00533cde (CONDITIONAL_JUMP)  ; LAB_00533cde
     PUSH ESI                            ; 00533d66

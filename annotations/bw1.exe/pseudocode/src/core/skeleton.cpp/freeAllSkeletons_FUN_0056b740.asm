@@ -9,7 +9,7 @@
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_0051bf10 at 0051bf1f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c5fc1c
+;   char[188] g_CHAR_ARRAY_02c5fc1c
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00562f70
@@ -39,7 +39,7 @@ section .text
         ;   XREF to: 0056b752 (CONDITIONAL_JUMP)  ; LAB_0056b752
     PUSH 0xa0                           ; 0056b767
     PUSH 0x0                            ; 0056b76c
-    PUSH 0x2c5fc1c                      ; 0056b76e | DAT_02c5fc1c
+    PUSH 0x2c5fc1c                      ; 0056b76e | g_CHAR_ARRAY_02c5fc1c
     CALL crt_memory.c_memset_FUN_005bfb70 ; 0056b773
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0056b778

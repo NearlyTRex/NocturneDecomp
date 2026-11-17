@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_doc_cpp_CDoc_applyArmAimRotation_FUN_004562a0(CDoc *this_ptr,int arm_side)
 
@@ -73,8 +72,8 @@ void __cdecl core_doc_cpp_CDoc_applyArmAimRotation_FUN_004562a0(CDoc *this_ptr,i
   
   bVar6 = 0;
   if (arm_side == 0) {
-    local_24 = _DAT_01b4d264;
-    local_30 = _DAT_01b4d26c;
+    local_24 = g_INT_01b4d264;
+    local_30 = g_INT_01b4d26c;
     core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(1.5707964,&local_1ac);
     local_28c.w = local_1ac.w;
     puVar3 = (uint *)((int)&local_28c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -113,8 +112,8 @@ void __cdecl core_doc_cpp_CDoc_applyArmAimRotation_FUN_004562a0(CDoc *this_ptr,i
     pCVar1 = &local_16c;
   }
   else {
-    local_24 = _DAT_01b4d268;
-    local_30 = _DAT_01b4d270;
+    local_24 = g_INT_01b4d268;
+    local_30 = g_INT_01b4d270;
     core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(-1.5707964,&local_24c);
     local_28c.w = local_24c.w;
     puVar3 = (uint *)((int)&local_28c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -203,10 +202,9 @@ void __cdecl core_doc_cpp_CDoc_applyArmAimRotation_FUN_004562a0(CDoc *this_ptr,i
          *(uint *)((int)&local_ec + (uint)bVar6 * -8 + 4);
     *puVar3 = *puVar2;
     puVar3[(uint)bVar6 * -2 + 1] = puVar2[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_slerpQuaternion_FUN_00593df0
-              ((CQuaternion4f *)&DAT_005fe2f0,pCVar1,fVar8,&local_dc);
-    core_xform_cpp_slerpQuaternion_FUN_00593df0
-              ((CQuaternion4f *)&DAT_005fe2f0,&local_26c,0.95,&local_cc);
+    core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_CQuaternion4f_005fe2f0,pCVar1,fVar8,&local_dc);
+    core_xform_cpp_slerpQuaternion_FUN_00593df0(&g_CQuaternion4f_005fe2f0,&local_26c,0.95,&local_cc)
+    ;
     pCVar1 = &local_23c;
     local_7c.w = local_cc.w;
     puVar3 = (uint *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -255,7 +253,7 @@ void __cdecl core_doc_cpp_CDoc_applyArmAimRotation_FUN_004562a0(CDoc *this_ptr,i
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
               (local_1c,&local_1ec,local_2a0,local_30,
                core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
-    if ((float)_DAT_005d0287 < this_ptr->arm_recoil_blend) {
+    if ((float)0.0001 < this_ptr->arm_recoil_blend) {
       core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(0.7853982,&local_14c);
       pCVar1 = &local_4c;
       local_4c.w = local_14c.w;

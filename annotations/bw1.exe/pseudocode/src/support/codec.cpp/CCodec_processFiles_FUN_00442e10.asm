@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   output_file_path
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d6a55
+;   TerminatedCString s_wb_005d6a55
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStreamFile_ctorOpen_FUN_005a0930
@@ -43,7 +43,7 @@ section .text
     TEST EAX,EAX                        ; 00442e37
     JZ 0x00442ec4                       ; 00442e39
         ;   XREF to: 00442ec4 (CONDITIONAL_JUMP)  ; LAB_00442ec4
-    PUSH 0x5d6a55                       ; 00442e3f | DAT_005d6a55
+    PUSH 0x5d6a55                       ; 00442e3f | = "wb"
     MOV ECX,dword ptr [ESP + 0x48]      ; 00442e44
     PUSH ECX                            ; 00442e48
     LEA EAX,[ESP + 0x34]                ; 00442e49

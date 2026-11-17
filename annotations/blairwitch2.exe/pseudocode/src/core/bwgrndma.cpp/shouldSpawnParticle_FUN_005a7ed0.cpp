@@ -12,5 +12,5 @@ int __cdecl core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0(void)
   int iVar1;
   
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0xffff);
-  return (uint)(iVar1 < DAT_0061ec60);
+  return (uint)(iVar1 < g_INT_0061ec60);
 }

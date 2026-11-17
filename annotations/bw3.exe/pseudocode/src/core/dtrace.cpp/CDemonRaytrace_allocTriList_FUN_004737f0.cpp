@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_004737f0(CDemonRaytrace *this_ptr)
 
 {
@@ -21,8 +19,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_004737f0(CDemonRayt
   if ((this_ptr->triangle_list != (CDemonTriangle *)0x0) && (puVar2 != (uchar *)0x0)) {
     return;
   }
-  _DAT_01d71de0 = "..\\core\\dtrace.cpp";
-  _DAT_01d71de4 = 0xf9;
+  g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
+  g_INT_01d71de4 = 0xf9;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::allocTriList - Out of memory!");
   return;
 }

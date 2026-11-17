@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_ptr,float delta_time)
 
@@ -56,8 +55,8 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
                          ((this_ptr->base).base.carry_hands[1].carry_actor,
                           g_CWeaponClassInfo.name_hash);
       if (pCVar3 == (CDemonActor *)0x0) {
-        _DAT_01d046a0 = "..\\core\\mobster.cpp";
-        _DAT_01d046a4 = 0x323;
+        g_CHAR_PTR_01d046a0 = "..\\core\\mobster.cpp";
+        g_INT_01d046a4 = 0x323;
         core_main_c_displayErrorAndQuit_FUN_004e4500("CMobster::aimTommyGun - I'm not carrying one!");
       }
       local_b4 = 0.7853982;
@@ -65,9 +64,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
         local_b4 = 1.5707964;
       }
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d1c718,
-                 &local_44);
+                (&g_CVector3f_0265370c,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_01d1c710[2],&local_44);
       input_local_point = &local_68;
       local_68.x = local_44.x;
       *(uint *)((int)&local_68 + (uint)bVar6 * -8 + 4) =
@@ -90,9 +89,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
            local_4c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (&((this_ptr->base).victim)->base,g_CHeroClassInfo.name_hash);
-      fVar7 = _DAT_005dee11;
+      fVar7 = 3.0f;
       if (pCVar3 != (CDemonActor *)0x0) {
-        fVar7 = _DAT_005dee15;
+        fVar7 = 4.0f;
       }
       local_5c.y = local_5c.y + fVar7;
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_5c,&local_38);
@@ -104,7 +103,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
                  core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                            (local_7c[3] - (this_ptr->base).base.base.orient.vec.y);
       local_b8 = SQRT(local_5c.z * local_5c.z + local_5c.x * local_5c.x + local_5c.y * local_5c.y);
-      if ((local_b4 <= ABS((float)local_18)) || (local_b8 <= (float)_DAT_005dee1d)) {
+      if ((local_b4 <= ABS((float)local_18)) || (local_b8 <= (float)2)) {
         fVar7 = this_ptr->firing_blend - delta_time;
         this_ptr->firing_blend = fVar7;
         if (fVar7 < 0.0) {
@@ -142,7 +141,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
         iVar2 = 6;
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-                (&(this_ptr->base).base.model,iVar2,6.0,fVar7,_DAT_01d1c738,
+                (&(this_ptr->base).base.model,iVar2,6.0,fVar7,g_INT_ARRAY_01d1c710[10],
                  core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
       core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(local_7c[2],&local_a0);
       local_b0.w = local_a0.w;
@@ -154,7 +153,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
       puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
       local_18 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
-                (local_18,&local_b0,this_ptr->firing_blend,_DAT_01d1c738,
+                (local_18,&local_b0,this_ptr->firing_blend,g_INT_ARRAY_01d1c710[10],
                  core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
       core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(local_7c[3],&local_90);
       blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
@@ -163,7 +162,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
       puVar4 = (uint *)((int)&local_90 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       *(uint *)((int)&local_b0 + (uint)bVar6 * -8 + 4) =
            *(uint *)((int)&local_90 + (uint)bVar6 * -8 + 4);
-      iVar2 = _DAT_01d1c738;
+      iVar2 = g_INT_ARRAY_01d1c710[10];
       *puVar5 = *puVar4;
       puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40

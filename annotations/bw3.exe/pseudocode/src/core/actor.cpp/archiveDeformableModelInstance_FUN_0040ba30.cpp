@@ -15,7 +15,7 @@ void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30(CDeforma
   char local_d0 [200];
   
   pcVar3 = local_d0;
-  if (DAT_007df9b8 == 1) {
+  if (g_INT_007df9b8 == 1) {
     core_actor_cpp_archiveString_FUN_0040b680(local_d0,property_name);
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0(model_ptr,local_d0);
     return;

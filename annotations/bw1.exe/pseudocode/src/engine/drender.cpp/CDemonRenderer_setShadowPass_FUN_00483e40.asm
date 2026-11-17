@@ -18,7 +18,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0 at 00481f06
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00713a74
+;   int g_INT_00713a74
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00483e40
         ;   Label: engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40
     MOV EDX,dword ptr [ESP + 0x4]       ; 00483e44
-    MOV [0x00713a74],EAX                ; 00483e48 | DAT_00713a74
+    MOV [0x00713a74],EAX                ; 00483e48 | g_INT_00713a74
     MOV dword ptr [EDX + 0x4],EAX       ; 00483e4d
     RET                                 ; 00483e50
 

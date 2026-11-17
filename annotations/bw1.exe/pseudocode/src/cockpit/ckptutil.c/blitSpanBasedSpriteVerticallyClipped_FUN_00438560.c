@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560(void *sprite_data,void *span_data)
 
 {
@@ -27,14 +25,14 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0043856
   int iStack_2c;
   
   pCVar4 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
-  if (DAT_0061b4a0 == 8) {
-    iStack_2c = _DAT_01c4f00c;
-    if (_DAT_01c4f00c <= _DAT_01c4f014) {
-      iStack_34 = _DAT_01c4f00c * 0x84;
-      iStack_38 = _DAT_01c4f00c << 2;
+  if (g_INT_0061b4a0 == 8) {
+    iStack_2c = g_INT_01c4f00c;
+    if (g_INT_01c4f00c <= g_INT_01c4f014) {
+      iStack_34 = g_INT_01c4f00c * 0x84;
+      iStack_38 = g_INT_01c4f00c << 2;
       do {
-        iVar2 = *(int *)(&DAT_01c4354c + iStack_38);
-        iVar5 = iStack_2c * DAT_0061b498;
+        iVar2 = *(int *)((int)g_ARRAY_PTR_01c4354c + iStack_38);
+        iVar5 = iStack_2c * g_INT_0061b498;
         iVar8 = 0;
         for (iVar7 = 0; piVar6 = (int *)(iStack_34 + (int)span_data), iVar7 < *piVar6;
             iVar7 = iVar7 + 1) {
@@ -47,17 +45,17 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0043856
         iStack_34 = iStack_34 + 0x84;
         iStack_38 = iStack_38 + 4;
         iStack_2c = iStack_2c + 1;
-      } while (iStack_2c <= _DAT_01c4f014);
+      } while (iStack_2c <= g_INT_01c4f014);
     }
   }
   else {
-    iStack_30 = _DAT_01c4f00c;
-    if (_DAT_01c4f00c <= _DAT_01c4f014) {
-      iStack_3c = _DAT_01c4f00c * 0x84;
-      iStack_40 = _DAT_01c4f00c << 2;
+    iStack_30 = g_INT_01c4f00c;
+    if (g_INT_01c4f00c <= g_INT_01c4f014) {
+      iStack_3c = g_INT_01c4f00c * 0x84;
+      iStack_40 = g_INT_01c4f00c << 2;
       do {
-        iVar2 = *(int *)(&DAT_01c4354c + iStack_40);
-        iVar5 = iStack_30 * DAT_0061b498;
+        iVar2 = *(int *)((int)g_ARRAY_PTR_01c4354c + iStack_40);
+        iVar5 = iStack_30 * g_INT_0061b498;
         iVar7 = 0;
         for (iVar8 = 0; piVar6 = (int *)(iStack_3c + (int)span_data), iVar8 < *piVar6;
             iVar8 = iVar8 + 1) {
@@ -70,7 +68,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0043856
         iStack_3c = iStack_3c + 0x84;
         iStack_40 = iStack_40 + 4;
         iStack_30 = iStack_30 + 1;
-      } while (iStack_30 <= _DAT_01c4f014);
+      } while (iStack_30 <= g_INT_01c4f014);
     }
   }
   return;

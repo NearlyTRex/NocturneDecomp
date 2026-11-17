@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDeformableModel.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x20C0000
@@ -12,4 +13,19 @@
 
 // CDeformableModel[64]
 extern CDeformableModel g_DeformableModelPool[64];
+
+// CVector3f
+extern CVector3f g_CVector3f_020ccfe0;
+
+// CVector3f[3000]
+extern CVector3f g_CVector3f_ARRAY_020c4338[3000];
+
+// int
+extern int g_INT_020ccfdc;
+extern int g_INT_020ccfec;
+extern int g_INT_020ccff0;
+
+// uchar
+extern uchar g_UCHAR_020c4334;
+extern uchar g_UCHAR_020ccfd8;
 

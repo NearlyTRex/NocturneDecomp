@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 252,
+    "complexity_score": 254,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 139,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 433
+    "total_lines": 435
   },
   "cross_references": [
     {
@@ -101,80 +101,80 @@
     },
     {
       "addr": "005e8e7b",
-      "name": "DAT_005e8e7b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e8e7b",
+      "type": "float",
+      "value": "0.003921569"
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d14",
-      "name": "DAT_01c51d14",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c51d14",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d224b4",
-      "name": "DAT_01d224b4",
-      "type": "undefined4",
+      "name": "g_INT_01d224b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d224dc",
-      "name": "DAT_01d224dc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d224dc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d224e0",
-      "name": "DAT_01d224e0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d224e0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d224e4",
-      "name": "DAT_01d224e4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d224e4",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d224e8",
-      "name": "DAT_01d224e8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d224e8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d22544",
-      "name": "DAT_01d22544",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22544",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d227e0",
-      "name": "DAT_01d227e0",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d227e0",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d25f14",
-      "name": "DAT_01d25f14",
-      "type": "undefined4",
+      "name": "g_INT_01d25f14",
+      "type": "int",
       "value": null
     },
     {
@@ -185,14 +185,14 @@
     },
     {
       "addr": "01e7dac8",
-      "name": "DAT_01e7dac8",
-      "type": "undefined4",
+      "name": "g_INT_01e7dac8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8346c",
-      "name": "DAT_02c8346c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8346c",
+      "type": "void*",
       "value": null
     }
   ],
@@ -367,24 +367,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((_DAT_02c8346c == (code *)0x0) || (_DAT_01c50948 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 103,
       "match": "(float *)((int)local_124",
       "severity": "moderate",
       "text": "pfVar10 = (float *)((int)local_124 + iVar9);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 135,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_PTR_02c8346c)",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Pointer value `&local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 110,
+      "line": 111,
       "match": "(int)&local_14",
       "severity": "moderate",
       "text": "*(byte *)((int)&local_14 + (uint)uVar3) = 1;",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Pointer value `&local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
+      "line": 117,
       "match": "(int)&local_14",
       "severity": "moderate",
       "text": "cVar2 = *(char *)((int)&local_14 + iVar9 + 1);",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 121,
+      "line": 122,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -416,7 +416,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 110,
+      "line": 111,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&local_14 + (uint)uVar3) = 1;",
@@ -424,7 +424,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 116,
+      "line": 117,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "cVar2 = *(char *)((int)&local_14 + iVar9 + 1);",

@@ -14,14 +14,14 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00506048
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c837b
+;   TerminatedCString s_rt_005c837b
 ;   TerminatedCString s_world_005c837e
 ;   TerminatedCString s_core_mission_cpp_005c8384
 ;   TerminatedCString s_CDemonMission_load_Unabl_005c8398
 ;   TerminatedCString s_Loading_mission_005c83c2
 ;   CLevelLoader* g_CLevelLoaderPtr = 01d70ab8
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_level.cpp_CLevelLoader_update_FUN_004e0000
@@ -40,7 +40,7 @@ section .text
         ;   Label: core_mission.cpp_CDemonMission_load_FUN_004f5bc0
     PUSH EDI                            ; 004f5bc1
     PUSH EBP                            ; 004f5bc2
-    PUSH 0x5c837b                       ; 004f5bc3 | DAT_005c837b
+    PUSH 0x5c837b                       ; 004f5bc3 | = "rt"
     MOV EDX,dword ptr [ESP + 0x18]      ; 004f5bc8
     PUSH EDX                            ; 004f5bcc
     PUSH 0x5c837e                       ; 004f5bcd | = "world"
@@ -89,8 +89,8 @@ section .text
     MOV ECX,0x5c8384                    ; 004f5c2d | = "..\\core\\mission.cpp"
     MOV ESI,0xa3                        ; 004f5c32
     PUSH 0x5c8398                       ; 004f5c37 | = "CDemonMission::load - Unable to open ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004f5c3c | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f5c42 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f5c3c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004f5c42 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f5c48
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f5c4d

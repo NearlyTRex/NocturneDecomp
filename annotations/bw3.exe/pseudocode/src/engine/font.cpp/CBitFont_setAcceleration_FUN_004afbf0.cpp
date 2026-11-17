@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *this_ptr,int enable)
 
 {
@@ -49,10 +47,10 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
     debugFree(this_ptr->accel_indices);
     this_ptr->accel_indices = (void *)0x0;
   }
-  if (_DAT_01c6cee8 != 0) {
+  if (g_INT_01c6cee8 != 0) {
     if (enable != 0) {
       iVar9 = this_ptr->bitmap_widths[0];
-      if (_DAT_02cf5fd8 == 0) {
+      if (g_INT_02cf5fd8 == 0) {
         iVar9 = iVar9 * 2;
       }
       uStack_1c = iVar9 * iVar9;
@@ -63,24 +61,24 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
       puStack_20 = (byte *)malloc(uStack_1c);
       if (((pcVar3 == (char *)0x0) || (pvVar4 == (void *)0x0)) || (puStack_20 == (byte *)0x0))
       {
-        _DAT_01d71de0 = "..\\engine\\font.cpp";
-        _DAT_01d71de4 = 0x184;
+        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
+        g_INT_01d71de4 = 0x184;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CBitFont::setAcceleration - Out of memory");
       }
       engine_dosio_cpp_splitPath_FUN_00465e50
                 (this_ptr->bitmap_files[0],(char *)0x0,(char *)0x0,acStack_158,(char *)0x0);
       engine_dosio_cpp_makePath_FUN_00465e80
-                (acStack_258,(char *)0x0,(char *)0x0,acStack_158,(char *)0x5c1ee1);
+                (acStack_258,(char *)0x0,(char *)0x0,acStack_158,"opa");
       support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0((CInStreamFile *)auStack_58);
       iVar5 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
-                        ((CInStreamFile *)auStack_58,(char *)0x5c1ee5,acStack_258,1);
+                        ((CInStreamFile *)auStack_58,"art",acStack_258,1);
       if (iVar5 == 0) {
-        _DAT_01d71de4 = 0x1a3;
-        _DAT_01d71de0 = "..\\engine\\font.cpp";
+        g_INT_01d71de4 = 0x1a3;
+        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
         core_main_c_displayErrorAndQuit_FUN_004e4330("CBitFont::setAcceleration - No opacity file found: %s");
       }
       else {
-        if (_DAT_02cf5fd8 == 0) {
+        if (g_INT_02cf5fd8 == 0) {
           iStack_14 = iVar9 / 2;
           iVar5 = 0;
           puVar12 = puStack_20;
@@ -150,8 +148,8 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
       pvVar4 = malloc(0x7d20);
       in_stack_00000018->accel_vertex_alloc = pvVar4;
       if (pvVar4 == (void *)0x0) {
-        _DAT_01d71de0 = "..\\engine\\font.cpp";
-        _DAT_01d71de4 = 0x1e5;
+        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
+        g_INT_01d71de4 = 0x1e5;
         uStack_458 = 0x4afea3;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory loading opacity mapped font : ");
       }
@@ -160,8 +158,8 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
       pvVar4 = malloc(2000);
       in_stack_00000018->accel_indices = pvVar4;
       if (pvVar4 == (void *)0x0) {
-        _DAT_01d71de0 = "..\\engine\\font.cpp";
-        _DAT_01d71de4 = 0x1ed;
+        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
+        g_INT_01d71de4 = 0x1ed;
         uStack_458 = 0x4b0094;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory loading opacity mapped font : ");
       }

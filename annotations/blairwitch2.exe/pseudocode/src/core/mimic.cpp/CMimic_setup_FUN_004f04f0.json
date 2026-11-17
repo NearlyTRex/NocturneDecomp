@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 370,
+    "complexity_score": 353,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 20,
+    "pseudocode_lines": 143,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 477
+    "total_lines": 475
   },
   "cross_references": [],
   "function": {
@@ -261,121 +260,121 @@
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d097c4",
-      "name": "DAT_01d097c4",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_01d097c4",
+      "type": "int[20]",
       "value": null
     },
     {
       "addr": "01d097c8",
-      "name": "DAT_01d097c8",
+      "name": "g_INT_ARRAY_01d097c4[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097cc",
-      "name": "DAT_01d097cc",
+      "name": "g_INT_ARRAY_01d097c4[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097d0",
-      "name": "DAT_01d097d0",
+      "name": "g_INT_ARRAY_01d097c4[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097d4",
-      "name": "DAT_01d097d4",
+      "name": "g_INT_ARRAY_01d097c4[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097d8",
-      "name": "DAT_01d097d8",
+      "name": "g_INT_ARRAY_01d097c4[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097dc",
-      "name": "DAT_01d097dc",
+      "name": "g_INT_ARRAY_01d097c4[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097e0",
-      "name": "DAT_01d097e0",
+      "name": "g_INT_ARRAY_01d097c4[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097e4",
-      "name": "DAT_01d097e4",
+      "name": "g_INT_ARRAY_01d097c4[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097e8",
-      "name": "DAT_01d097e8",
+      "name": "g_INT_ARRAY_01d097c4[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097ec",
-      "name": "DAT_01d097ec",
+      "name": "g_INT_ARRAY_01d097c4[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097f0",
-      "name": "DAT_01d097f0",
+      "name": "g_INT_ARRAY_01d097c4[11]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d097f4",
-      "name": "DAT_01d097f4",
+      "name": "g_INT_ARRAY_01d097c4[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d09804",
-      "name": "DAT_01d09804",
+      "name": "g_INT_ARRAY_01d097c4[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d09808",
-      "name": "DAT_01d09808",
+      "name": "g_INT_ARRAY_01d097c4[17]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d0980c",
-      "name": "DAT_01d0980c",
+      "name": "g_INT_ARRAY_01d097c4[18]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d09810",
-      "name": "DAT_01d09810",
+      "name": "g_INT_ARRAY_01d097c4[19]",
       "type": "undefined4",
       "value": null
     },
@@ -492,16 +491,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 15,
       "match": "auStackY_1010",
       "severity": "moderate",
       "text": "uint auStackY_1010 [1014];",
@@ -509,7 +500,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 114,
+      "line": 111,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;",
@@ -517,7 +508,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 112,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -525,7 +516,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 117,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;",
@@ -533,7 +524,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 121,
+      "line": 118,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -541,7 +532,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 126,
+      "line": 123,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
       "text": "*puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);",
@@ -549,7 +540,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 125,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
@@ -557,7 +548,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 132,
+      "line": 129,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "*puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);",
@@ -565,7 +556,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 134,
+      "line": 131,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
@@ -573,7 +564,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 111,
+      "line": 108,
       "match": "(int)&pSVar4->vertices[2].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
@@ -581,7 +572,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 117,
+      "line": 114,
       "match": "(int)&pSVar4->vertices[0].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -589,7 +580,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 120,
       "match": "(int)&pSVar4->vertices[0].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -597,7 +588,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 129,
+      "line": 126,
       "match": "(int)&pSVar4->vertices[2].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
@@ -605,7 +596,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 101,
+      "line": 98,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&(pSVar3->position).x + iVar6) =",
@@ -613,7 +604,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 102,
+      "line": 99,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "-*(float *)((int)&(pSVar3->position).x + iVar6);",
@@ -621,7 +612,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 111,
+      "line": 108,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
@@ -629,7 +620,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 117,
+      "line": 114,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -637,7 +628,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 123,
+      "line": 120,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -645,7 +636,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 129,
+      "line": 126,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",

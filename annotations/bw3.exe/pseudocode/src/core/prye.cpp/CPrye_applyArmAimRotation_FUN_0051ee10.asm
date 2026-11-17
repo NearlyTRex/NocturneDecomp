@@ -53,14 +53,14 @@
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051ec3c
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_L_Finger1_005cd466+1
+;   TerminatedCString s_Bip01_L_Finger1_005cd467
 ;   TerminatedCString s_Bip01_L_Finger11_005cd477
-;   undefined4 DAT_005cd48f
-;   undefined4 DAT_005e65b0
-;   undefined4 DAT_01ed36e8
-;   undefined4 DAT_01ed36ec
-;   undefined4 DAT_01ed36f0
-;   undefined4 DAT_01ed36f4
+;   double g_DOUBLE_005cd48f = 0.000100000000000000
+;   CQuaternion4f g_CQuaternion4f_005e65b0
+;   int g_INT_01ed36e8
+;   int[23] g_INT_ARRAY_01ed36ec
+;   undefined4 g_INT_ARRAY_01ed36ec[1]
+;   undefined4 g_INT_ARRAY_01ed36ec[2]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20
@@ -92,10 +92,10 @@ section .text
     JZ 0x0051f256                       ; 0051ee26
         ;   XREF to: 0051f256 (CONDITIONAL_JUMP)  ; LAB_0051f256
     PUSH 0xbfc90fdb                     ; 0051ee2c
-    MOV EAX,[0x01ed36ec]                ; 0051ee31 | DAT_01ed36ec
+    MOV EAX,[0x01ed36ec]                ; 0051ee31 | g_INT_ARRAY_01ed36ec
     LEA ESI,[ESP + 0xe8]                ; 0051ee36
     MOV dword ptr [ESP + 0x220],EAX     ; 0051ee3d
-    MOV EAX,[0x01ed36f4]                ; 0051ee44 | DAT_01ed36f4
+    MOV EAX,[0x01ed36f4]                ; 0051ee44 | g_INT_ARRAY_01ed36ec[2]
     LEA EDI,[ESP + 0x18]                ; 0051ee49
     MOV dword ptr [ESP + 0x218],EAX     ; 0051ee4d
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00585d10 ; 0051ee54
@@ -221,7 +221,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0051efd7
     MOVSD ES:EDI,ESI                    ; 0051efd8
     MOVSD ES:EDI,ESI                    ; 0051efd9
-    PUSH 0x5e65b0                       ; 0051efda | DAT_005e65b0
+    PUSH 0x5e65b0                       ; 0051efda | g_CQuaternion4f_005e65b0
     LEA ESI,[ESP + 0x200]               ; 0051efdf
     LEA EDI,[ESP + 0x90]                ; 0051efe6
     CALL core_xform.cpp_slerpQuaternion_FUN_00585b20 ; 0051efed
@@ -312,7 +312,7 @@ section .text
         ;   XREF to: 0054eac0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051f100
     PUSH 0x1                            ; 0051f103
-    PUSH 0x5cd467                       ; 0051f105 | s_Bip01_L_Finger1_005cd466+1
+    PUSH 0x5cd467                       ; 0051f105 | = "Bip01 L Finger1"
     PUSH EAX                            ; 0051f10a
     MOV ESI,EAX                         ; 0051f10b
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 0051f10d
@@ -402,7 +402,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0051f23d
     FLD float ptr [EBX + 0x20c80]       ; 0051f23e
         ;   Label: LAB_0051f23e
-    FCOMP double ptr [0x005cd48f]       ; 0051f244 | DAT_005cd48f
+    FCOMP double ptr [0x005cd48f]       ; 0051f244 | g_DOUBLE_005cd48f
     FNSTSW AX                           ; 0051f24a
     SAHF                                ; 0051f24c
     JA 0x0051f2b2                       ; 0051f24d
@@ -416,10 +416,10 @@ section .text
     RET                                 ; 0051f255
     PUSH 0x3fc90fdb                     ; 0051f256
         ;   Label: LAB_0051f256
-    MOV EAX,[0x01ed36e8]                ; 0051f25b | DAT_01ed36e8
+    MOV EAX,[0x01ed36e8]                ; 0051f25b | g_INT_01ed36e8
     LEA ESI,[ESP + 0xc8]                ; 0051f260
     MOV dword ptr [ESP + 0x220],EAX     ; 0051f267
-    MOV EAX,[0x01ed36f0]                ; 0051f26e | DAT_01ed36f0
+    MOV EAX,[0x01ed36f0]                ; 0051f26e | g_INT_ARRAY_01ed36ec[1]
     LEA EDI,[ESP + 0x18]                ; 0051f273
     MOV dword ptr [ESP + 0x218],EAX     ; 0051f277
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00585d10 ; 0051f27e

@@ -57,9 +57,9 @@
   "globals": [
     {
       "addr": "0061f754",
-      "name": "DAT_0061f754",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ULONG_0061f754",
+      "type": "ulong",
+      "value": "0xf4"
     }
   ],
   "param_estimates": {
@@ -170,7 +170,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = calloc(1,0x000000F4);",
+      "text": "param_1 = calloc(1,g_ULONG_0061f754);",
       "type": "unnamed_param"
     },
     {
@@ -200,9 +200,9 @@
     {
       "description": "Complex pointer cast",
       "line": 12,
-      "match": "(uint *)((int)param_1",
+      "match": "(ulong *)((int)param_1",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0xf0) = uVar1;",
+      "text": "*(ulong *)((int)param_1 + 0xf0) = uVar1;",
       "type": "pointer_cast"
     },
     {
@@ -210,7 +210,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)((int)param_1 + 0xf0) = uVar1;",
+      "text": "*(ulong *)((int)param_1 + 0xf0) = uVar1;",
       "type": "unnamed_param"
     },
     {
@@ -240,9 +240,9 @@
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 12,
-      "match": "(uint *)((int)param_1 + 0xf0)",
+      "match": "(ulong *)((int)param_1 + 0xf0)",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0xf0) = uVar1;",
+      "text": "*(ulong *)((int)param_1 + 0xf0) = uVar1;",
       "type": "pointer_cast"
     },
     {

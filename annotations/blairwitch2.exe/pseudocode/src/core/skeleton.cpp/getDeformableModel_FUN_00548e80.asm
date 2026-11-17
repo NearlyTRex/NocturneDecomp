@@ -13,10 +13,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e753f
 ;   TerminatedCString s_Can_t_load_s_because_def_005e7554
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   undefined4 g_DeformableModelPool[0].model_filename[0]
-;   undefined4 DAT_02177ff4
+;   char[256] g_CHAR_ARRAY_02177ff4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -55,7 +55,7 @@ section .text
     CMP EBX,0x40                        ; 00548ebc
     JL 0x00548e93                       ; 00548ebf
         ;   XREF to: 00548e93 (CONDITIONAL_JUMP)  ; LAB_00548e93
-    MOV ECX,dword ptr [0x02177ff4]      ; 00548ec1 | DAT_02177ff4
+    MOV ECX,dword ptr [0x02177ff4]      ; 00548ec1 | g_CHAR_ARRAY_02177ff4
     XOR EBX,EBX                         ; 00548ec7
     XOR EAX,EAX                         ; 00548ec9
     TEST ECX,ECX                        ; 00548ecb
@@ -107,7 +107,7 @@ section .text
         ;   XREF to: 00541540 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00548f34
     MOV EAX,EDI                         ; 00548f37
-    MOV dword ptr [EBX*0x4 + 0x2177ff4],ESI ; 00548f39 | DAT_02177ff4
+    MOV dword ptr [EBX*0x4 + 0x2177ff4],ESI ; 00548f39 | g_CHAR_ARRAY_02177ff4
     POP EBP                             ; 00548f40
     POP EDI                             ; 00548f41
     POP ESI                             ; 00548f42
@@ -120,8 +120,8 @@ section .text
     MOV EBX,0x5e753f                    ; 00548f4b | = "..\\core\\skeleton.cpp"
     MOV ESI,0x1076                      ; 00548f50
     PUSH 0x5e7554                       ; 00548f55 | = "Can't load %s because deformable mode..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00548f5a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00548f60 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00548f5a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00548f60 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00548f66
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00548f6b

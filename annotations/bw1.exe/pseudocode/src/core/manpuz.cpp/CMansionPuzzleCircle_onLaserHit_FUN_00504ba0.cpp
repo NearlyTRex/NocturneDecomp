@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info)
 
 {
@@ -40,8 +38,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0(CMansi
       fVar3 = pCVar4->y - (laser_info->local_hit_position).y;
       fVar2 = pCVar4->z - (laser_info->local_hit_position).z;
       pSVar5 = this_ptr->gems + iVar6;
-      if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < (float)_DAT_005e746d) {
-        fVar1 = (float)_DAT_005e7465;
+      if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < (float)0.25) {
+        fVar1 = (float)0.0039215686274509803;
         (pSVar5->light).r =
              (float)(laser_info->color).r * laser_info->intensity * (pSVar5->color).r * fVar1 +
              (pSVar5->light).r;

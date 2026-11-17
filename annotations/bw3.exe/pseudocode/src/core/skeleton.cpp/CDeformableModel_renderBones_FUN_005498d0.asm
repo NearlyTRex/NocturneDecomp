@@ -8,8 +8,8 @@
 ; CMatrix3x4f *    Stack[0x8]:4   bone_matrices
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4758
-;   undefined4 DAT_005f2afc
+;   float g_FLOAT_005e4758 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0
@@ -56,15 +56,15 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00549926
     MOVSD ES:EDI,ESI                    ; 00549927
     LEA EAX,[ESP + 0xc]                 ; 00549928
-    MOV ESI,dword ptr [0x005f2afc]      ; 0054992c | DAT_005f2afc
+    MOV ESI,dword ptr [0x005f2afc]      ; 0054992c | g_CDemonRenderer_PTR_005f2afc
     FLD float ptr [EAX]                 ; 00549932
-    FMUL float ptr [0x005e4758]         ; 00549934 | DAT_005e4758
+    FMUL float ptr [0x005e4758]         ; 00549934 | g_FLOAT_005e4758
     FISTP dword ptr [EBX]               ; 0054993a
     FLD float ptr [EAX + 0x4]           ; 0054993c
-    FMUL float ptr [0x005e4758]         ; 0054993f | DAT_005e4758
+    FMUL float ptr [0x005e4758]         ; 0054993f | g_FLOAT_005e4758
     FISTP dword ptr [EBX + 0x4]         ; 00549945
     FLD float ptr [EAX + 0x8]           ; 00549948
-    FMUL float ptr [0x005e4758]         ; 0054994b | DAT_005e4758
+    FMUL float ptr [0x005e4758]         ; 0054994b | g_FLOAT_005e4758
     FISTP dword ptr [EBX + 0x8]         ; 00549951
     MOV EAX,ESP                         ; 00549954
     PUSH EAX                            ; 00549956
@@ -73,7 +73,7 @@ section .text
     PUSH EAX                            ; 0054995e
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0054995f
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005f2afc]                ; 00549964 | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 00549964 | g_CDemonRenderer_PTR_005f2afc
     MOV EAX,dword ptr [EAX]             ; 00549969
     ADD ESP,0x8                         ; 0054996b
     MOV DL,byte ptr [EAX + 0x124f63]    ; 0054996e

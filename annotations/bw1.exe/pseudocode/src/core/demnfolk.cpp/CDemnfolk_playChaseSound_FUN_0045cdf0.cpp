@@ -18,7 +18,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playChaseSound_FUN_0045cdf0(CDemnfolk *
   byte bVar7;
   
   bVar7 = 0;
-  pcVar4 = &DAT_005d82cd;
+  pcVar4 = "demn_";
   pcVar5 = &DAT_0152c320;
   do {
     cVar1 = *pcVar4;

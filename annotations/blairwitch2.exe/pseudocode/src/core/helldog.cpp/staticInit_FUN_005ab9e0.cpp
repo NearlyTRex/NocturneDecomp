@@ -10,7 +10,7 @@ void __cdecl core_helldog_cpp_staticInit_FUN_005ab9e0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CDogClassInfo,(char *)0x5f0cbe,core_helldog_cpp_factoryFuncDog_FUN_005aba10,
+            (&g_CDogClassInfo,"CDog",core_helldog_cpp_factoryFuncDog_FUN_005aba10,
              &g_CDogClassVersion,2,&g_CBasicEnemyClassInfo);
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0046d750(CDrone *this_ptr)
 
 {
@@ -20,9 +18,9 @@ CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0046d750(CDrone *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(pCVar3->base).base.model,"drone.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.75;
-  fVar1 = _DAT_005f596c;
+  fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  fVar2 = _DAT_005f5970;
+  fVar2 = 100.0f;
   (pCVar3->base).base.blood_type = BLOOD_TYPE_ICHOR;
   (pCVar3->base).base.hit_points = 75.0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

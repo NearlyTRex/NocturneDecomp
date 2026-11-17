@@ -17,15 +17,15 @@
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7e29
 ;
 ; Referenced Globals:
-;   undefined4 s_Unable_to_allocate_u_byt_005cd345+1
+;   TerminatedCString s_Unable_to_allocate_u_byt_005cd346
 ;   TerminatedCString s_cockpit_ckptutil_c_005cd378
-;   undefined4 DAT_005cd38e
+;   TerminatedCString s_art_005cd38e
 ;   TerminatedCString s_Unable_to_open_bitmap_fi_005cd392
 ;   TerminatedCString s_cockpit_ckptutil_c_005cd3b3
 ;   TerminatedCString s_Unable_to_read_bitmap_fi_005cd3c9
 ;   TerminatedCString s_cockpit_ckptutil_c_005cd3ea
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0042c54e
     PUSH ESI                            ; 0042c551
-    PUSH 0x5cd38e                       ; 0042c552 | DAT_005cd38e
+    PUSH 0x5cd38e                       ; 0042c552 | = "art"
     LEA EAX,[ESP + 0x58]                ; 0042c557
     PUSH EAX                            ; 0042c55b
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 0042c55c
@@ -77,11 +77,11 @@ section .text
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0xf1                        ; 0042c578
     ADD ESP,0xc                         ; 0042c57d
-    MOV [0x01d046a4],EAX                ; 0042c580 | DAT_01d046a4
+    MOV [0x01d046a4],EAX                ; 0042c580 | g_INT_01d046a4
     MOV EAX,ESP                         ; 0042c585
     MOV EBP,0x5cd3b3                    ; 0042c587 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 0042c58c
-    MOV dword ptr [0x01d046a0],EBP      ; 0042c58d | DAT_01d046a0
+    MOV dword ptr [0x01d046a0],EBP      ; 0042c58d | g_CHAR_PTR_01d046a0
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042c593
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042c598
@@ -126,7 +126,7 @@ section .text
         ;   XREF to: 0042c544 (CONDITIONAL_JUMP)  ; LAB_0042c544
     PUSH ESI                            ; 0042c5e7
     PUSH EDI                            ; 0042c5e8
-    PUSH 0x5cd346                       ; 0042c5e9 | s_Unable_to_allocate_u_byt_005cd345+1
+    PUSH 0x5cd346                       ; 0042c5e9 | = "Unable to allocate %u bytes for bitma..."
     LEA EAX,[ESP + 0xc]                 ; 0042c5ee
     PUSH EAX                            ; 0042c5f2
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0042c5f3
@@ -136,8 +136,8 @@ section .text
     MOV EAX,ESP                         ; 0042c600
     MOV ECX,0xe8                        ; 0042c602
     PUSH EAX                            ; 0042c607
-    MOV dword ptr [0x01d046a0],EDX      ; 0042c608 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0042c60e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0042c608 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0042c60e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042c614
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042c619
@@ -160,8 +160,8 @@ section .text
     MOV EAX,ESP                         ; 0042c646
     MOV ECX,0xf9                        ; 0042c648
     PUSH EAX                            ; 0042c64d
-    MOV dword ptr [0x01d046a0],EDX      ; 0042c64e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0042c654 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0042c64e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0042c654 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042c65a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042c65f

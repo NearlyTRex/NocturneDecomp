@@ -12,10 +12,10 @@
 ;   core_flies.cpp_CFlies_process_FUN_004a6c30 at 004a6fa3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d6711
-;   undefined4 DAT_005d6719
-;   undefined4 DAT_005d6721
-;   undefined4 DAT_005d6729
+;   double g_DOUBLE_005d6711 = 0.5
+;   double g_DOUBLE_005d6719 = -0.5
+;   double g_DOUBLE_005d6721 = 4
+;   float g_FLOAT_005d6729 = 4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -47,10 +47,10 @@ section .text
     FSTP float ptr [ESP + 0x28]         ; 004a76a6
     FLD float ptr [ESI + 0x2b4]         ; 004a76aa
     FLD ST0                             ; 004a76b0
-    FMUL double ptr [0x005d6711]        ; 004a76b2 | DAT_005d6711
+    FMUL double ptr [0x005d6711]        ; 004a76b2 | g_DOUBLE_005d6711
     SUB ESP,0x4                         ; 004a76b8
     FXCH                                ; 004a76bb
-    FMUL double ptr [0x005d6719]        ; 004a76bd | DAT_005d6719
+    FMUL double ptr [0x005d6719]        ; 004a76bd | g_DOUBLE_005d6719
     FXCH                                ; 004a76c3
     FSTP float ptr [ESP]                ; 004a76c5
     SUB ESP,0x4                         ; 004a76c8
@@ -63,10 +63,10 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 004a76e4
     FLD float ptr [ESI + 0x2bc]         ; 004a76e8
     FLD ST0                             ; 004a76ee
-    FMUL double ptr [0x005d6711]        ; 004a76f0 | DAT_005d6711
+    FMUL double ptr [0x005d6711]        ; 004a76f0 | g_DOUBLE_005d6711
     SUB ESP,0x4                         ; 004a76f6
     FXCH                                ; 004a76f9
-    FMUL double ptr [0x005d6719]        ; 004a76fb | DAT_005d6719
+    FMUL double ptr [0x005d6719]        ; 004a76fb | g_DOUBLE_005d6719
     FXCH                                ; 004a7701
     FSTP float ptr [ESP]                ; 004a7703
     SUB ESP,0x4                         ; 004a7706
@@ -110,7 +110,7 @@ section .text
     FSQRT                               ; 004a7791
     FST float ptr [ESP + 0x8]           ; 004a7793
     FST double ptr [ESP]                ; 004a7797
-    FCOMP double ptr [0x005d6721]       ; 004a779a | DAT_005d6721
+    FCOMP double ptr [0x005d6721]       ; 004a779a | g_DOUBLE_005d6721
     FNSTSW AX                           ; 004a77a0
     SAHF                                ; 004a77a2
     JA 0x004a7891                       ; 004a77a3
@@ -191,7 +191,7 @@ section .text
     POP EDI                             ; 004a788e
     POP EBX                             ; 004a788f
     RET                                 ; 004a7890
-    FLD float ptr [0x005d6729]          ; 004a7891 | DAT_005d6729
+    FLD float ptr [0x005d6729]          ; 004a7891 | g_FLOAT_005d6729
         ;   Label: LAB_004a7891
     FLD float ptr [ESP + 0xb4]          ; 004a7897
     FMUL ST1                            ; 004a789e

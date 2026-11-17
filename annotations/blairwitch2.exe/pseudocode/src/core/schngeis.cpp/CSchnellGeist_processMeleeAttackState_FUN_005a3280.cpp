@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280(CSchnellGeist *this_ptr,float delta_time)
 
@@ -31,9 +30,9 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a328
     this_ptr_00 = &(this_ptr->base).base.base.model;
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     iVar6 = pSVar5->state_index;
-    if (_DAT_005ff350 < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
+    if (5.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
       this_ptr_01 = &(this_ptr->base).state_machine;
-      (this_ptr->base).attack_range = _DAT_005ff350;
+      (this_ptr->base).attack_range = 5.0f;
       core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,0.5);
       core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
       if (iVar6 == 10) {

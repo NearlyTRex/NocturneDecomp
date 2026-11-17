@@ -15,8 +15,8 @@
 ;   TerminatedCString s_Invalid_mode_005d6aa7
 ;   undefined4 DAT_00610db8
 ;   undefined4 DAT_00610eb8
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_00443ac3
     MOV EBX,0x70b                       ; 00443ac8
     PUSH 0x5d6aa7                       ; 00443acd | = "Invalid mode."
-    MOV dword ptr [0x01d1d400],ECX      ; 00443ad2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00443ad8 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00443ad2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00443ad8 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00443ade
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00443ae3

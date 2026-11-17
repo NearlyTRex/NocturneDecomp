@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance *this_ptr,int target_motion_index,float target_frame_number ,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *callback_func)
 
 {
@@ -92,7 +90,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
   uint *puVar7;
   
   bVar10 = 0;
-  if ((float)_DAT_005f24f1 < blend_weight) {
+  if ((float)0.001 < blend_weight) {
     core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00525240
               (&this_ptr->base,target_motion_index,target_frame_number,&local_5c,&local_54,
                &stack0xfffff680);
@@ -235,8 +233,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
       }
     }
     else {
-      _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-      _DAT_01d1d404 = 0xaa1;
+      g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+      g_INT_01d1d404 = 0xaa1;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Write me!");
     }
     if (bone_index < 0) {

@@ -10,9 +10,9 @@
 ;   core_boxactor.cpp_CLightActor_setup_FUN_004203f0 at 004203f6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b76e9
-;   undefined4 DAT_005b76f1
-;   undefined4 DAT_007e1778
+;   float g_FLOAT_005b76e9 = 0.5
+;   double g_DOUBLE_005b76f1 = 0.100000000000000
+;   int g_INT_007e1778
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_00459980
@@ -93,7 +93,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004209a1
     MOVSD ES:EDI,ESI                    ; 004209a2
     MOVSD ES:EDI,ESI                    ; 004209a3
-    FLD float ptr [0x005b76e9]          ; 004209a4 | DAT_005b76e9
+    FLD float ptr [0x005b76e9]          ; 004209a4 | g_FLOAT_005b76e9
     FLD float ptr [ESP + 0xd0]          ; 004209aa
     FMUL ST1                            ; 004209b1
     FLD float ptr [ESP + 0xd4]          ; 004209b3
@@ -139,7 +139,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00420a77
     FLD float ptr [ESP + 0x84]          ; 00420a78
     MOV EAX,dword ptr [ESP + 0xc8]      ; 00420a7f
-    FADD double ptr [0x005b76f1]        ; 00420a86 | DAT_005b76f1
+    FADD double ptr [0x005b76f1]        ; 00420a86 | g_DOUBLE_005b76f1
     MOV dword ptr [EBX + 0x369c],EAX    ; 00420a8c
     MOV EAX,dword ptr [ESP + 0x14c]     ; 00420a92
     FSTP float ptr [EBX + 0x36a0]       ; 00420a99
@@ -197,7 +197,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00420b60
     MOVSD ES:EDI,ESI                    ; 00420b61
     MOVSD ES:EDI,ESI                    ; 00420b62
-    FLD float ptr [0x005b76e9]          ; 00420b63 | DAT_005b76e9
+    FLD float ptr [0x005b76e9]          ; 00420b63 | g_FLOAT_005b76e9
     FLD float ptr [ESP + 0x100]         ; 00420b69
     FMUL ST1                            ; 00420b70
     FLD float ptr [ESP + 0x104]         ; 00420b72
@@ -257,7 +257,7 @@ section .text
     MOV dword ptr [EBX + 0x23a8],0x1    ; 00420c82
     MOV dword ptr [EAX + 0x38],0x42b40000 ; 00420c8c
     MOV dword ptr [EBX + 0x82c],0x42400000 ; 00420c93
-    MOV EDX,dword ptr [0x007e1778]      ; 00420c9d | DAT_007e1778
+    MOV EDX,dword ptr [0x007e1778]      ; 00420c9d | g_INT_007e1778
     MOV dword ptr [EBX + 0x314],0x2     ; 00420ca3
     TEST EDX,EDX                        ; 00420cad
     JNZ 0x00420cea                      ; 00420caf
@@ -283,7 +283,7 @@ section .text
     CMP ESI,0x8                         ; 00420cdb
     JL 0x00420cb8                       ; 00420cde
         ;   XREF to: 00420cb8 (CONDITIONAL_JUMP)  ; LAB_00420cb8
-    MOV dword ptr [0x007e1778],0x1      ; 00420ce0 | DAT_007e1778
+    MOV dword ptr [0x007e1778],0x1      ; 00420ce0 | g_INT_007e1778
     PUSH 0x0                            ; 00420cea
         ;   Label: LAB_00420cea
     PUSH 0x0                            ; 00420cec

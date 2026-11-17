@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_005f0c2a
 ;   TerminatedCString s_BurnComplete_005f0c30
-;   undefined4 DAT_005f0c3e
+;   float g_FLOAT_005f0c3e = 0.5
 ;   CGore* g_CGorePtr = 01cb8284
-;   undefined4 DAT_01cedef4
-;   undefined4 DAT_0265370c
+;   int g_INT_01cedef4
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -64,7 +64,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x110]     ; 005aaeed
     MOV dword ptr [ESP + 0xec],EDX      ; 005aaef4
     MOV dword ptr [ESP + 0xf0],EDX      ; 005aaefb
-    MOV EAX,[0x01cedef4]                ; 005aaf02 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005aaf02 | g_INT_01cedef4
     ADD EBP,0x11434                     ; 005aaf07
     ADD EBX,0x11430                     ; 005aaf0d
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 005aaf13
@@ -111,7 +111,7 @@ section .text
         ;   XREF to: 005ab1ec (CONDITIONAL_JUMP)  ; LAB_005ab1ec
     MOV ECX,dword ptr [ESP + 0xe8]      ; 005aafb5
     PUSH ECX                            ; 005aafbc
-    PUSH 0x265370c                      ; 005aafbd | DAT_0265370c
+    PUSH 0x265370c                      ; 005aafbd | g_CVector3f_0265370c
     LEA ESI,[ESP + 0x80]                ; 005aafc2
     LEA EDI,[ESP + 0xb0]                ; 005aafc9
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005aafd0
@@ -149,7 +149,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005ab037
     MOVSD ES:EDI,ESI                    ; 005ab038
     MOVSD ES:EDI,ESI                    ; 005ab039
-    FLD float ptr [0x005f0c3e]          ; 005ab03a | DAT_005f0c3e
+    FLD float ptr [0x005f0c3e]          ; 005ab03a | g_FLOAT_005f0c3e
     FLD float ptr [ESP + 0x54]          ; 005ab040
     FMUL ST1                            ; 005ab044
     FLD float ptr [ESP + 0x58]          ; 005ab046
@@ -176,7 +176,7 @@ section .text
     PUSH 0x2                            ; 005ab095
     MOV dword ptr [ESP + 0xdc],EAX      ; 005ab097
     MOV EAX,dword ptr [ESP + 0xcc]      ; 005ab09e
-    PUSH 0x265370c                      ; 005ab0a5 | DAT_0265370c
+    PUSH 0x265370c                      ; 005ab0a5 | g_CVector3f_0265370c
     MOV dword ptr [ESP + 0xe8],EAX      ; 005ab0aa
     LEA EAX,[ESP + 0x98]                ; 005ab0b1
     PUSH EAX                            ; 005ab0b8

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size)
 
 {
@@ -15,12 +13,12 @@ void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *t
   int iVar2;
   CFirefly *this_ptr_00;
   
-  iVar1 = _DAT_01cba2b4;
-  iVar2 = _DAT_01cba2b4 + 1;
-  this_ptr_00 = CFirefly_ARRAY_01cba2b8 + _DAT_01cba2b4;
-  _DAT_01cba2b4 = iVar2;
+  iVar1 = g_INT_01cba2b4;
+  iVar2 = g_INT_01cba2b4 + 1;
+  this_ptr_00 = CFirefly_ARRAY_01cba2b8 + g_INT_01cba2b4;
+  g_INT_01cba2b4 = iVar2;
   if (0x3f < iVar2) {
-    _DAT_01cba2b4 = 0;
+    g_INT_01cba2b4 = 0;
   }
   (*(CFirefly_ARRAY_01cba2b8[iVar1].base.vtable)->setup)(&this_ptr_00->base,position,velocity);
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0xc000,0xffff);

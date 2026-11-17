@@ -16,10 +16,10 @@
 ;   sound_sndmain.cpp_getSfxSample_FUN_0056e830 at 0056ed5a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d404c8
-;   undefined4 DAT_01d404c9
-;   undefined4 DAT_01d404ca
-;   undefined4 DAT_01d404cb
+;   char[256] g_CHAR_ARRAY_01d404c8
+;   undefined4 g_CHAR_ARRAY_01d404c8+1
+;   undefined4 g_CHAR_ARRAY_01d404c8+2
+;   undefined4 g_CHAR_ARRAY_01d404c8+3
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450
@@ -41,13 +41,13 @@ section .text
     PUSH EDI                            ; 0052b188
     MOV AL,byte ptr [ESI]               ; 0052b189
         ;   Label: LAB_0052b189
-    MOV byte ptr [EDI],AL               ; 0052b18b | DAT_01d404c8 | DAT_01d404ca
+    MOV byte ptr [EDI],AL               ; 0052b18b | g_CHAR_ARRAY_01d404c8 | g_CHAR_ARRAY_01d404c8+2
     CMP AL,0x0                          ; 0052b18d
     JZ 0x0052b1a1                       ; 0052b18f
         ;   XREF to: 0052b1a1 (CONDITIONAL_JUMP)  ; LAB_0052b1a1
     MOV AL,byte ptr [ESI + 0x1]         ; 0052b191
     ADD ESI,0x2                         ; 0052b194
-    MOV byte ptr [EDI + 0x1],AL         ; 0052b197 | DAT_01d404c9 | DAT_01d404cb
+    MOV byte ptr [EDI + 0x1],AL         ; 0052b197 | g_CHAR_ARRAY_01d404c8+1 | g_CHAR_ARRAY_01d404c8+3
     ADD EDI,0x2                         ; 0052b19a
     CMP AL,0x0                          ; 0052b19d
     JNZ 0x0052b189                      ; 0052b19f

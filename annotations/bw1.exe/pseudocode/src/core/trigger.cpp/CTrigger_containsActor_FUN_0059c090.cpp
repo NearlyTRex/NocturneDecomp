@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_0059c090(CTrigger *this_ptr,CDemonActor *actor)
 
 {
@@ -68,10 +66,10 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_0059c090(CTrigger *this_
     afStack_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
          *(float *)((int)&stack0xffffff90 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
     input_local_point = &CStack_48;
-    fStack_24 = fStack_54 * _DAT_005f8298;
-    afStack_20[0] = afStack_50[0] * _DAT_005f8298;
-    afStack_20[1] = afStack_50[1] * _DAT_005f8298;
-    CStack_48.x = fStack_54 * _DAT_005f8298;
+    fStack_24 = fStack_54 * 0.5f;
+    afStack_20[0] = afStack_50[0] * 0.5f;
+    afStack_20[1] = afStack_50[1] * 0.5f;
+    CStack_48.x = fStack_54 * 0.5f;
     *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + 4) = afStack_20[(uint)bVar8 * -2];
     *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
          afStack_20[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
@@ -123,11 +121,11 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_0059c090(CTrigger *this_
       }
       else {
         if (this_ptr->trigger_shape != TRIGGER_SHAPE_CYLINDER) {
-          _DAT_01d1d400 = "..\\core\\trigger.cpp";
-          _DAT_01d1d404 = 0x38e;
+          g_CHAR_PTR_01d1d400 = "..\\core\\trigger.cpp";
+          g_INT_01d1d404 = 0x38e;
           core_main_c_displayErrorAndQuit_FUN_005030e0("CTrigger::containsActor - invalid trigger shape %d for %s");
-          _DAT_01d1d400 = "..\\core\\trigger.cpp";
-          _DAT_01d1d404 = 0x394;
+          g_CHAR_PTR_01d1d400 = "..\\core\\trigger.cpp";
+          g_INT_01d1d404 = 0x394;
           core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze...");
           return 0;
         }
@@ -141,7 +139,7 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_0059c090(CTrigger *this_
         }
         if ((fStack_fc <= fStack_54) && (fStack_54 <= fStack_f0)) {
           if (CStack_60.z * CStack_60.z + afStack_50[0] * afStack_50[0] <=
-              (this_ptr->trigger_size).x * (this_ptr->trigger_size).z * (float)_DAT_005f829c) {
+              (this_ptr->trigger_size).x * (this_ptr->trigger_size).z * (float)0.25) {
             return 1;
           }
           return 0;

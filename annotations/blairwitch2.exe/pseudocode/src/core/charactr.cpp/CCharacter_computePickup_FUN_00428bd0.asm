@@ -25,8 +25,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005ccfa7
 ;   TerminatedCString s_CCharacter_computePickup_005ccfbc
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -151,8 +151,8 @@ section .text
     MOV ECX,0x5ccfa7                    ; 00428d01 | = "..\\core\\charactr.cpp"
     MOV EDI,0xe32                       ; 00428d06
     PUSH 0x5ccfbc                       ; 00428d0b | = "CCharacter::computePickup - invalid h..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00428d10 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00428d16 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00428d10 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00428d16 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00428d1c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00428d21

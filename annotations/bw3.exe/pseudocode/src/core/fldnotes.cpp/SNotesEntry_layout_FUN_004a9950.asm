@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_image_box_32_32_005c102a
 ;   TerminatedCString s_image_check_32_32_005c103c
-;   undefined4 DAT_005c1050
+;   TerminatedCString s_ul_005c1050
 ;   TerminatedCString s_cont_005c1055
 ;   TerminatedCString s_ul_br_005c105d
 ;   TerminatedCString s_ERROR_item_won_t_fit_br_005c1067
-;   undefined4 DAT_01d0d008
+;   int g_INT_01d0d008
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesMap_paginate_FUN_004aa6d0
@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 004a9957
     MOV ESI,dword ptr [ESP + 0x20]      ; 004a995b
     MOV EAX,dword ptr [EBX + 0x10]      ; 004a995f
-    MOV EDX,dword ptr [0x01d0d008]      ; 004a9962 | DAT_01d0d008
+    MOV EDX,dword ptr [0x01d0d008]      ; 004a9962 | g_INT_01d0d008
     MOV dword ptr [ESI + 0x144],EAX     ; 004a9968
     TEST EDX,EDX                        ; 004a996e
     JZ 0x004a99df                       ; 004a9970
@@ -206,7 +206,7 @@ section .text
         ;   XREF to: 004a9a91 (CONDITIONAL_JUMP)  ; LAB_004a9a91
     JMP 0x004a9b5c                      ; 004a9ac8
         ;   XREF to: 004a9b5c (UNCONDITIONAL_JUMP)  ; LAB_004a9b5c
-    PUSH 0x5c1050                       ; 004a9acd | DAT_005c1050
+    PUSH 0x5c1050                       ; 004a9acd | = "<ul>"
         ;   Label: LAB_004a9acd
     PUSH EBX                            ; 004a9ad2
     CALL core_fldnotes.cpp_STextView_addText_FUN_004a8ed0 ; 004a9ad3

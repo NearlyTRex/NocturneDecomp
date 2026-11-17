@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_setRenderingQuality_FUN_00407710(int quality)
 
 {
-  _DAT_005fba3c = quality;
+  g_INT_005fba3c = quality;
   return;
 }

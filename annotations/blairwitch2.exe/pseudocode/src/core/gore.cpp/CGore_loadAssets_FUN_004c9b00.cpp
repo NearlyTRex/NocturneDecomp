@@ -13,36 +13,39 @@ void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004c9b00(CGore *this_ptr)
   SMRGLTextureBasic *pSVar2;
   int iVar3;
   
-  pSVar1 = (SMRGLTextureBasic *)&DAT_00616808;
+  pSVar1 = g_SMRGLTextureBasic_ARRAY_00616808;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_006167f0);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_006167f0);
   do {
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,pSVar1);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
+              (g_CDemonRenderer_PTR_0060b280,pSVar1);
     pSVar1 = pSVar1 + 1;
-  } while (pSVar1 != (SMRGLTextureBasic *)&DAT_00616868);
+  } while (pSVar1 != g_SMRGLTextureBasic_ARRAY_00616808 + sizeof(g_SMRGLTextureBasic_ARRAY_00616808) / sizeof(g_SMRGLTextureBasic_ARRAY_00616808[0]));
   iVar3 = 0;
-  pSVar1 = (SMRGLTextureBasic *)&DAT_006169e8;
+  pSVar1 = g_SMRGLTextureBasic_ARRAY_00616868;
   do {
-    pSVar2 = (SMRGLTextureBasic *)(&DAT_00616868 + iVar3 * 0x180);
+    pSVar1 = pSVar1 + 0x10;
+    pSVar2 = g_SMRGLTextureBasic_ARRAY_00616868 + iVar3 * 0x10;
     do {
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,pSVar2);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
+                (g_CDemonRenderer_PTR_0060b280,pSVar2);
       pSVar2 = pSVar2 + 1;
     } while (pSVar2 != pSVar1);
     iVar3 = iVar3 + 1;
-    pSVar1 = pSVar1 + 0x10;
   } while (iVar3 < 4);
   iVar3 = 0;
-  pSVar1 = (SMRGLTextureBasic *)&DAT_00617120;
+  pSVar1 = g_SMRGLTextureBasic_ARRAY_00616e68;
   do {
-    pSVar2 = (SMRGLTextureBasic *)(&DAT_00616e68 + iVar3 * 0x2b8);
+    pSVar1 = pSVar1 + 0x1d;
+    pSVar2 = g_SMRGLTextureBasic_ARRAY_00616e68 + iVar3 * 0x1d;
     do {
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,pSVar2);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
+                (g_CDemonRenderer_PTR_0060b280,pSVar2);
       pSVar2 = pSVar2 + 1;
     } while (pSVar2 != pSVar1);
     iVar3 = iVar3 + 1;
-    pSVar1 = pSVar1 + 0x1d;
   } while (iVar3 < 4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00617968);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00617968);
   return;
 }

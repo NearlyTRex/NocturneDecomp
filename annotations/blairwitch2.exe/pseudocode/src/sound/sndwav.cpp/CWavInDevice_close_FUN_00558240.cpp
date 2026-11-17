@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_00558240(CWavInDevice *this_ptr)
 
 {
@@ -26,7 +24,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_00558240(CWavInDevice *this_
       *(uint *)(iVar1 + 0x264b1ac) = 0;
     }
     hMem = *(HGLOBAL *)(iVar1 + 0x264b10c);
-    *(uint *)(&DAT_0264b1fc + iVar1) = 0;
+    *(uint *)((int)g_INT_ARRAY_0264b1fc + iVar1) = 0;
     if (hMem != (HGLOBAL)0x0) {
       GlobalFree(hMem);
       *(uint *)(iVar1 + 0x264b10c) = 0;
@@ -35,14 +33,14 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_00558240(CWavInDevice *this_
     *(uint *)(iVar1 + 0x264b15c) = 0;
     iVar1 = iVar3;
   } while (iVar3 != 0x50);
-  if (_DAT_0264b108 == (HWAVEIN)0x0) {
+  if (g_INT_0264b108 == 0) {
     return uVar4;
   }
-  MVar2 = waveInClose(_DAT_0264b108);
+  MVar2 = waveInClose((HWAVEIN)g_INT_0264b108);
   if (MVar2 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005549c0("waveInClose failed.");
     uVar4 = 0;
   }
-  _DAT_0264b108 = (HWAVEIN)0x0;
+  g_INT_0264b108 = 0;
   return uVar4;
 }

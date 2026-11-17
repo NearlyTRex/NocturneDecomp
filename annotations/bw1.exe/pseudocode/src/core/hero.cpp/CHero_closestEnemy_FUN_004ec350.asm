@@ -22,7 +22,7 @@
 ;   core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0 at 00593a09
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e493d
+;   double g_DOUBLE_005e493d = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CMobsterClassInfo.name_hash
@@ -149,7 +149,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004ec49d
     FLD float ptr [ESP + 0x88]          ; 004ec49e
     FLD ST0                             ; 004ec4a5
-    FMUL double ptr [0x005e493d]        ; 004ec4a7 | DAT_005e493d
+    FMUL double ptr [0x005e493d]        ; 004ec4a7 | g_DOUBLE_005e493d
     FSTP ST1                            ; 004ec4ad
     FST float ptr [ESP + 0x88]          ; 004ec4af
     FMUL float ptr [ESP + 0x88]         ; 004ec4b6

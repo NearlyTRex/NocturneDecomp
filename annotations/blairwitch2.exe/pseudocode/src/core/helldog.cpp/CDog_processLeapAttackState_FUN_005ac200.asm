@@ -11,8 +11,8 @@
 ;   TerminatedCString s_MeleeAttack_005f0dd2
 ;   TerminatedCString s_ChaseComplete_005f0dde
 ;   TerminatedCString s_Chasing_005f0dec
-;   undefined4 DAT_005f0df6
-;   undefined4 DAT_00600c50
+;   double g_DOUBLE_005f0df6 = 0.300000000000000
+;   float g_FLOAT_00600c50 = 12
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -67,7 +67,7 @@ section .text
     JNZ 0x005ac27a                      ; 005ac257
         ;   XREF to: 005ac27a (CONDITIONAL_JUMP)  ; LAB_005ac27a
     FLD float ptr [ESP]                 ; 005ac259
-    FCOMP double ptr [0x005f0df6]       ; 005ac25c | DAT_005f0df6
+    FCOMP double ptr [0x005f0df6]       ; 005ac25c | g_DOUBLE_005f0df6
     FNSTSW AX                           ; 005ac262
     SAHF                                ; 005ac264
     JNC 0x005ac27a                      ; 005ac265
@@ -107,7 +107,7 @@ section .text
     PUSH 0x5f0dd2                       ; 005ac2aa | = "MeleeAttack"
     ADD EBX,0x10af8                     ; 005ac2af
     PUSH 0x5f0dde                       ; 005ac2b5 | = "ChaseComplete"
-    FLD float ptr [0x00600c50]          ; 005ac2ba | DAT_00600c50
+    FLD float ptr [0x00600c50]          ; 005ac2ba | g_FLOAT_00600c50
     PUSH EBX                            ; 005ac2c0
     FSTP float ptr [EBX + 0x89c]        ; 005ac2c1
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005ac2c7

@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005a3e68 at 005a3ea7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006075c4
+;   Heap* g_Heap_PTR_006075c4 = 00000000
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079bc = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079c4 = 005a7f44
 ;
@@ -30,7 +30,7 @@ section .text
     PUSH EDX                            ; 005aa055
     MOV EBX,dword ptr [ESP + 0x14]      ; 005aa056
     PUSH EBX                            ; 005aa05a
-    MOV EAX,0x6075c4                    ; 005aa05b | DAT_006075c4
+    MOV EAX,0x6075c4                    ; 005aa05b | g_Heap_PTR_006075c4
     MOV DX,DS                           ; 005aa060
     XOR EAX,EAX                         ; 005aa062
     MOV AX,DX                           ; 005aa064

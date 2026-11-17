@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 435,
-    "complexity_score": 234,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
-    "suspect_count": 8,
+    "pseudocode_lines": 128,
+    "suspect_count": 6,
     "suspect_types": [
       "dropped_loop_counter",
       "suspect_float",
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 564
+    "total_lines": 563
   },
   "cross_references": [
     {
@@ -54,20 +52,20 @@
   "globals": [
     {
       "addr": "005dbb20",
-      "name": "DAT_005dbb20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbb20",
+      "type": "float",
+      "value": "0.125"
     },
     {
       "addr": "005dbb24",
-      "name": "DAT_005dbb24",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbb24",
+      "type": "float",
+      "value": "2.684355E+8"
     },
     {
       "addr": "0061ab68",
-      "name": "DAT_0061ab68",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_0061ab68",
+      "type": "uchar[8]",
       "value": null
     }
   ],
@@ -445,16 +443,8 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 5,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 70,
+      "line": 69,
       "match": "6.69626e-39",
       "severity": "mild",
       "text": "dVar14 = round((double)(fVar3 * 6.69626e-39));",
@@ -462,23 +452,15 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 72,
+      "line": 71,
       "match": "6.69625e-39",
       "severity": "mild",
       "text": "dVar14 = round((double)(fVar3 * 6.69625e-39));",
       "type": "suspect_float"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_0061ab68",
-      "severity": "mild",
-      "text": "(&DAT_0061ab68)[local_68 % 8]) != 0)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
-      "line": 132,
+      "line": 131,
       "match": "} while( true );",
       "severity": "moderate",
       "text": "} while( true );",

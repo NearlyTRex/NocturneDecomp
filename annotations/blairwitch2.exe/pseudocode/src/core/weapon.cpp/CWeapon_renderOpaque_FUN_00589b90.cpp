@@ -36,7 +36,7 @@ int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90(CWeapon *this_ptr)
               (&this_ptr->model,0.0,-1);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);
-  this_ptr_00 = DAT_0060b280;
+  this_ptr_00 = g_CDemonRenderer_PTR_0060b280;
   this_ptr->is_rendered = 0;
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(this_ptr_00);
   if ((iVar1 == 0) && (iVar2 != 0)) {

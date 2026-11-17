@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005f4c35
-;   undefined4 s_Stop_secondary_sound_buf_005f4cf2+1
+;   TerminatedCString s_Stop_secondary_sound_buf_005f4cf3
 ;   TerminatedCString s_Stop_primary_sound_buffe_005f4d0f
-;   undefined4 DAT_02c81d98
-;   undefined4 DAT_02c81d9c
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02c81d98
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02c81d9c
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -28,12 +28,12 @@ section .text
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_reset_FUN_00577cd0
     PUSH ESI                            ; 00577cd1
     SUB ESP,0x320                       ; 00577cd2
-    MOV EDX,dword ptr [0x02c81d9c]      ; 00577cd8 | DAT_02c81d9c
+    MOV EDX,dword ptr [0x02c81d9c]      ; 00577cd8 | g_IDirectSoundBuffer_PTR_02c81d9c
     MOV ESI,0x1                         ; 00577cde
     TEST EDX,EDX                        ; 00577ce3
     JNZ 0x00577d26                      ; 00577ce5
         ;   XREF to: 00577d26 (CONDITIONAL_JUMP)  ; LAB_00577d26
-    MOV ECX,dword ptr [0x02c81d98]      ; 00577ce7 | DAT_02c81d98
+    MOV ECX,dword ptr [0x02c81d98]      ; 00577ce7 | g_IDirectSoundBuffer_PTR_02c81d98
         ;   Label: LAB_00577ce7
     TEST ECX,ECX                        ; 00577ced
     JNZ 0x00577d6b                      ; 00577cef
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00577d36
     PUSH EAX                            ; 00577d39
-    PUSH 0x5f4cf3                       ; 00577d3a | s_Stop_secondary_sound_buf_005f4cf2+1
+    PUSH 0x5f4cf3                       ; 00577d3a | = "Stop secondary sound buffer"
     PUSH 0x5f4c35                       ; 00577d3f | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x19c]               ; 00577d44
     PUSH EAX                            ; 00577d4b

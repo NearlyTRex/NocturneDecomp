@@ -12,12 +12,12 @@
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040104a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b505c
+;   TerminatedCString s_art_005b505c
 ;   TerminatedCString s_engine_2d_c_005b5060
 ;   TerminatedCString s_Unable_to_open_VGA_palet_005b506f
-;   undefined4 DAT_01c6af98
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   uchar[768] g_UCHAR_ARRAY_01c6af98
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -41,7 +41,7 @@ section .text
     PUSH 0x1                            ; 0040159e
     MOV EDX,dword ptr [ESP + 0x34]      ; 004015a0
     PUSH EDX                            ; 004015a4
-    PUSH 0x5b505c                       ; 004015a5 | DAT_005b505c
+    PUSH 0x5b505c                       ; 004015a5 | = "art"
     LEA EAX,[ESP + 0xc]                 ; 004015aa
     PUSH EAX                            ; 004015ae
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 ; 004015af
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 004015f0 (CONDITIONAL_JUMP)  ; LAB_004015f0
     PUSH 0x300                          ; 004015bb
         ;   Label: LAB_004015bb
-    PUSH 0x1c6af98                      ; 004015c0 | DAT_01c6af98
+    PUSH 0x1c6af98                      ; 004015c0 | g_UCHAR_ARRAY_01c6af98
     LEA EAX,[ESP + 0x8]                 ; 004015c5
     PUSH EAX                            ; 004015c9
     CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 004015ca
@@ -76,8 +76,8 @@ section .text
     MOV ECX,0x5b5060                    ; 004015f1 | = "..\\engine\\2d.c"
     MOV EBX,0x29b                       ; 004015f6
     PUSH 0x5b506f                       ; 004015fb | = "Unable to open VGA palette (probably ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00401600 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00401606 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00401600 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00401606 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040160c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00401611

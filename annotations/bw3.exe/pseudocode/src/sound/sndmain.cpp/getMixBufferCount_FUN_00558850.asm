@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf3338
+;   int g_INT_02cf3338
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02cf3338]                ; 00558850 | DAT_02cf3338
+    MOV EAX,[0x02cf3338]                ; 00558850 | g_INT_02cf3338
         ;   Label: sound_sndmain.cpp_getMixBufferCount_FUN_00558850
     RET                                 ; 00558855
 

@@ -8,10 +8,10 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_s_4_batman_die_wav_005d3b67+2
+;   TerminatedCString s_batman_die_wav_005d3b69
 ;   TerminatedCString s_batman_hurt_wav_005d3b78
-;   undefined4 DAT_005d3b89
-;   undefined4 DAT_0061c010
+;   double g_DOUBLE_005d3b89 = 2
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -173,7 +173,7 @@ section .text
         ;   Label: LAB_004140df
     ADD EAX,0x1c                        ; 004140e2
     FLD ST0                             ; 004140e5
-    FMUL double ptr [0x005d3b89]        ; 004140e7 | DAT_005d3b89
+    FMUL double ptr [0x005d3b89]        ; 004140e7 | g_DOUBLE_005d3b89
     PUSH EAX                            ; 004140ed
     LEA ESI,[ESP + 0x28]                ; 004140ee
     LEA EDI,[ESP + 0x4]                 ; 004140f2
@@ -197,7 +197,7 @@ section .text
     PUSH ESI                            ; 0041411f
     LEA EAX,[ESP + 0x14]                ; 00414120
     PUSH EAX                            ; 00414124
-    MOV EDI,dword ptr [0x0061c010]      ; 00414125 | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 00414125 | g_CFireEffect_PTR_0061c010
     PUSH EDI                            ; 0041412b
     INC EBX                             ; 0041412c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 0041412d
@@ -232,7 +232,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 0041417b
         ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00573a80(uint sfx_handle)
     ADD ESP,0x4                         ; 00414180
-    PUSH 0x5d3b69                       ; 00414183 | s_s_4_batman_die_wav_005d3b67+2
+    PUSH 0x5d3b69                       ; 00414183 | = "batman-die.wav"
     MOV EAX,dword ptr [EBP + 0x154]     ; 00414188
     PUSH EBP                            ; 0041418e
     CALL dword ptr [EAX + 0x2c]         ; 0041418f

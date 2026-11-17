@@ -17,7 +17,7 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_getPickupHandIndex_FUN_0045bec0(CDemnfol
     return -1;
   }
   iVar1 = _strnicmp
-                    ((this_ptr->base).base.model.model_name,&DAT_005d81c0,3);
+                    ((this_ptr->base).base.model.model_name,"new",3);
   if (iVar1 == 0) {
     if ((uint)object_shape_type < 2) {
       if (object_shape_type != 1) {

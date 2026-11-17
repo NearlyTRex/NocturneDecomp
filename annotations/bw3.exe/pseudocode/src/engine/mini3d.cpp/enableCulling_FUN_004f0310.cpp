@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_enableCulling_FUN_004f0310(int enable)
 
 {
-  _DAT_01d76cf8 = enable;
-  if ((_DAT_02cf60ec != (code *)0x0) && (_DAT_01c6cee8 != 0)) {
-    (*_DAT_02cf60ec)(enable);
+  g_INT_01d76cf8 = enable;
+  if ((g_PTR_02cf60ec != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+    (*(code *)g_PTR_02cf60ec)(enable);
     return;
   }
   return;

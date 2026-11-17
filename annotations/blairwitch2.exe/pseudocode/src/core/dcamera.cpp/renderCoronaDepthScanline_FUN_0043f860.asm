@@ -13,9 +13,9 @@
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044ac60 at 0044af89
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01308800
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01308800
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 0043f864
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0043f868
     MOV ECX,dword ptr [ESP + 0x14]      ; 0043f86c
-    SUB ECX,dword ptr [0x01c35e4c]      ; 0043f870 | DAT_01c35e4c
-    MOV EBX,dword ptr [0x01308800]      ; 0043f876 | DAT_01308800
+    SUB ECX,dword ptr [0x01c35e4c]      ; 0043f870 | g_INT_01c35e4c
+    MOV EBX,dword ptr [0x01308800]      ; 0043f876 | g_BIT_INTEGER32_01308800
     MOV dword ptr [ESP + 0x14],ECX      ; 0043f87c
     CMP EBX,0x1                         ; 0043f880
     JNZ 0x0043f890                      ; 0043f883
@@ -38,7 +38,7 @@ section .text
     TEST byte ptr [ESP + 0x14],0x1      ; 0043f885
     JNZ 0x0043f970                      ; 0043f88a
         ;   XREF to: 0043f970 (CONDITIONAL_JUMP)  ; LAB_0043f970
-    CMP dword ptr [0x01308800],0x2      ; 0043f890 | DAT_01308800
+    CMP dword ptr [0x01308800],0x2      ; 0043f890 | g_BIT_INTEGER32_01308800
         ;   Label: LAB_0043f890
     JNZ 0x0043f8a4                      ; 0043f897
         ;   XREF to: 0043f8a4 (CONDITIONAL_JUMP)  ; LAB_0043f8a4
@@ -47,8 +47,8 @@ section .text
         ;   XREF to: 0043f970 (CONDITIONAL_JUMP)  ; LAB_0043f970
     MOV EBP,dword ptr [ESP + 0x14]      ; 0043f8a4
         ;   Label: LAB_0043f8a4
-    MOV CL,byte ptr [0x01308800]        ; 0043f8a8 | DAT_01308800
-    MOV EAX,[0x01c35e48]                ; 0043f8ae | DAT_01c35e48
+    MOV CL,byte ptr [0x01308800]        ; 0043f8a8 | g_BIT_INTEGER32_01308800
+    MOV EAX,[0x01c35e48]                ; 0043f8ae | g_INT_01c35e48
     MOV EBX,dword ptr [EDI + 0x8]       ; 0043f8b3
     MOV ESI,dword ptr [EDX + 0x8]       ; 0043f8b6
     SAR EBX,0x10                        ; 0043f8b9

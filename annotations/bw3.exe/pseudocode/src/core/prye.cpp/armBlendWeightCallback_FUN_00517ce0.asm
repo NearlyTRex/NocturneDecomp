@@ -14,8 +14,8 @@
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051eb60
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cca87
-;   undefined4 DAT_005cca8f
+;   double g_DOUBLE_005cca87 = 0.700000000000000
+;   double g_DOUBLE_005cca8f = 0.800000000000000
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     JNZ 0x00517d10                      ; 00517cee
         ;   XREF to: 00517d10 (CONDITIONAL_JUMP)  ; LAB_00517d10
     FLD float ptr [ESP + 0x10]          ; 00517cf0
-    FMUL double ptr [0x005cca87]        ; 00517cf4 | DAT_005cca87
+    FMUL double ptr [0x005cca87]        ; 00517cf4 | g_DOUBLE_005cca87
     FSTP float ptr [ESP]                ; 00517cfa
         ;   Label: LAB_00517cfa
     MOV EAX,dword ptr [ESP]             ; 00517cfd
@@ -39,7 +39,7 @@ section .text
     RET                                 ; 00517d03
     FLD float ptr [ESP + 0x10]          ; 00517d04
         ;   Label: LAB_00517d04
-    FMUL double ptr [0x005cca8f]        ; 00517d08 | DAT_005cca8f
+    FMUL double ptr [0x005cca8f]        ; 00517d08 | g_DOUBLE_005cca8f
     JMP 0x00517cfa                      ; 00517d0e
         ;   XREF to: 00517cfa (UNCONDITIONAL_JUMP)  ; LAB_00517cfa
     MOV EAX,dword ptr [ESP + 0x10]      ; 00517d10

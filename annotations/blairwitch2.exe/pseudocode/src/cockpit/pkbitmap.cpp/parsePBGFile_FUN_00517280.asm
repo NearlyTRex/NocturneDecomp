@@ -14,8 +14,8 @@
 ;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400 at 0051744f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_00516140
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_005172c3
     MOV EDX,0x572                       ; 005172c8
     PUSH 0x5e1e29                       ; 005172cd
-    MOV [0x01d046a0],EAX                ; 005172d2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 005172d7 | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 005172d2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 005172d7 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005172dd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005172e2
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_005172e5
     MOV ESI,0x573                       ; 005172ea
     PUSH 0x5e1e64                       ; 005172ef
-    MOV dword ptr [0x01d046a0],ECX      ; 005172f4 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 005172fa | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005172f4 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 005172fa | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00517300
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00517305
@@ -87,8 +87,8 @@ section .text
         ;   Label: LAB_0051730a
     MOV EDI,0x571                       ; 0051730f
     PUSH 0x5e1de3                       ; 00517314
-    MOV dword ptr [0x01d046a0],ESI      ; 00517319 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051731f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00517319 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0051731f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00517325
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051732a

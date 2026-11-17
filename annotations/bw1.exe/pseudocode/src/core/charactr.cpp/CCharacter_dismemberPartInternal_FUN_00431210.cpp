@@ -67,7 +67,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210(CCh
           *(float *)((int)&local_5c + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2];
           *(float *)((int)&local_5c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
                afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-          model_name = &DAT_007c623c;
+          model_name = g_CKeyFramedModelInstance_007c61c4.model_name;
           local_44.x = local_50;
           *(float *)((int)&local_44 + (uint)bVar7 * -8 + 4) = local_4c[(uint)bVar7 * -2];
           this_ptr_00 = body_part;

@@ -15,7 +15,7 @@ LPVOID FUN_005ccd50(void)
   pvVar2 = (LPVOID)0x0;
   iVar1 = FUN_005cacd8(0);
   if (iVar1 != 0) {
-    pvVar2 = TlsGetValue(DAT_006265f8);
+    pvVar2 = TlsGetValue(g_INT_006265f8);
   }
   if (pvVar2 == (LPVOID)0x0) {
     FUN_005c9f70("Thread has no thread-specific data\r\n",1);

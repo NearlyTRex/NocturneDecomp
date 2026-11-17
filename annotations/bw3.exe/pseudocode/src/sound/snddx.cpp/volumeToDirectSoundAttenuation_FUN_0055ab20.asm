@@ -15,7 +15,7 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0 at 0055c1b7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d45a5
+;   double g_DOUBLE_005d45a5 = 868.589000000000
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005a3600
@@ -62,7 +62,7 @@ section .text
     FLDLN2                              ; 0055ab5a
     FXCH                                ; 0055ab5c
     FYL2X                               ; 0055ab5e
-    FMUL double ptr [0x005d45a5]        ; 0055ab60 | DAT_005d45a5
+    FMUL double ptr [0x005d45a5]        ; 0055ab60 | g_DOUBLE_005d45a5
     SUB ESP,0x8                         ; 0055ab66
     FSTP double ptr [ESP]               ; 0055ab69
     CALL crt_math.c_floor_FUN_005a3600  ; 0055ab6c

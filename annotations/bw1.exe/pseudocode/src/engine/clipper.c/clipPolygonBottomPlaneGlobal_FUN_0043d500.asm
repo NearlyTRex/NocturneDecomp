@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   string caseD_2
-;   undefined4 DAT_007c7554
-;   undefined4 DAT_007c842c
+;   int g_INT_007c7554
+;   int g_INT_007c842c
 ;
 ; Called Functions:
 ;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043d000
@@ -23,7 +23,7 @@ section .text
     PUSH EBP                            ; 0043d503
     SUB ESP,0x4                         ; 0043d504
     XOR EDX,EDX                         ; 0043d507
-    MOV ECX,dword ptr [0x007c842c]      ; 0043d509 | DAT_007c842c
+    MOV ECX,dword ptr [0x007c842c]      ; 0043d509 | g_INT_007c842c
     MOV dword ptr [ESP],EDX             ; 0043d50f
     TEST ECX,ECX                        ; 0043d512
     JLE 0x0043d5aa                      ; 0043d514
@@ -31,7 +31,7 @@ section .text
     MOV EBX,0x7c9630                    ; 0043d51a
     MOV EAX,dword ptr [ESP]             ; 0043d51f
         ;   Label: LAB_0043d51f
-    MOV EBP,dword ptr [0x007c842c]      ; 0043d522 | DAT_007c842c
+    MOV EBP,dword ptr [0x007c842c]      ; 0043d522 | g_INT_007c842c
     INC EAX                             ; 0043d528
     CMP EAX,EBP                         ; 0043d529
     JNZ 0x0043d52f                      ; 0043d52b
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 0043d592 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x43d4e8]  ; 0043d561 | caseD_0 | caseD_1 | = "k=Tu|"
         ;   Label: switchD
-    IMUL EDI,dword ptr [0x007c7554],0x30 ; 0043d568 | DAT_007c7554
+    IMUL EDI,dword ptr [0x007c7554],0x30 ; 0043d568 | g_INT_007c7554
         ;   Label: caseD_0
     MOV ECX,0x30                        ; 0043d56f
     MOV ESI,EDX                         ; 0043d574
@@ -77,10 +77,10 @@ section .text
     AND CL,0x3                          ; 0043d586
     MOVSB.REP ES:EDI,ESI                ; 0043d589
     POP EDI                             ; 0043d58b
-    INC dword ptr [0x007c7554]          ; 0043d58c | DAT_007c7554
+    INC dword ptr [0x007c7554]          ; 0043d58c | g_INT_007c7554
     MOV ESI,dword ptr [ESP]             ; 0043d592
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x007c842c]      ; 0043d595 | DAT_007c842c
+    MOV EDI,dword ptr [0x007c842c]      ; 0043d595 | g_INT_007c842c
     INC ESI                             ; 0043d59b
     ADD EBX,0x30                        ; 0043d59c
     MOV dword ptr [ESP],ESI             ; 0043d59f
@@ -94,7 +94,7 @@ section .text
     POP ESI                             ; 0043d5af
     POP EBX                             ; 0043d5b0
     RET                                 ; 0043d5b1
-    IMUL EAX,dword ptr [0x007c7554],0x30 ; 0043d5b2 | DAT_007c7554
+    IMUL EAX,dword ptr [0x007c7554],0x30 ; 0043d5b2 | g_INT_007c7554
         ;   Label: caseD_1
     ADD EAX,0x7c7558                    ; 0043d5b9
     PUSH EAX                            ; 0043d5be
@@ -102,10 +102,10 @@ section .text
     PUSH EBP                            ; 0043d5c0
     CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043d000 ; 0043d5c1
         ;   XREF to: 0043d000 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043d000(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
-    MOV ESI,dword ptr [0x007c7554]      ; 0043d5c6 | DAT_007c7554
+    MOV ESI,dword ptr [0x007c7554]      ; 0043d5c6 | g_INT_007c7554
     INC ESI                             ; 0043d5cc
     ADD ESP,0xc                         ; 0043d5cd
-    MOV dword ptr [0x007c7554],ESI      ; 0043d5d0 | DAT_007c7554
+    MOV dword ptr [0x007c7554],ESI      ; 0043d5d0 | g_INT_007c7554
     JMP 0x0043d592                      ; 0043d5d6
         ;   XREF to: 0043d592 (UNCONDITIONAL_JUMP)  ; caseD_3
 

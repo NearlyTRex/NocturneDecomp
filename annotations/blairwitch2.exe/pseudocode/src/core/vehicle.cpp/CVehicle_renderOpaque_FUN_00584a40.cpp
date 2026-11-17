@@ -53,7 +53,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_00584a40(CVehicle *this_p
   ;
   in_stack_0000000c[6].particle_systems[0].particles = pvVar1;
   if (pvVar1 != (void *)0x0) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+    iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                      (g_CDemonRenderer_PTR_0060b280);
     if ((iVar2 == 0) || (g_CGamePtr->goggles_active != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
                 ((CKeyFramedModelInstance *)(in_stack_0000000c + 1),0.0,-1);
@@ -66,9 +67,9 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_00584a40(CVehicle *this_p
         translation = (CVector3f *)&in_stack_0000000c[4].particle_systems[0].active;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                    (DAT_0060b280,pCVar9,translation);
+                    (g_CDemonRenderer_PTR_0060b280,pCVar9,translation);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                    (DAT_0060b280,(CVector3f *)&pCVar8->y,(CVector3f *)0x0);
+                    (g_CDemonRenderer_PTR_0060b280,(CVector3f *)&pCVar8->y,(CVector3f *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
                     (this_ptr_00,0.0,-1);
           engine_drender_cpp_pop_FUN_0046b4a0();
@@ -95,8 +96,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_00584a40(CVehicle *this_p
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(in_stack_0000000c);
   if ((in_stack_0000000c[6].particle_systems[0].particles != (void *)0x0) &&
-     (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280), iVar2 == 0)
-     ) {
+     (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                        (g_CDemonRenderer_PTR_0060b280), iVar2 == 0)) {
     CStack_40.z = 6.0;
     CStack_28.z = 6.0;
     CStack_40.x = 1.14;

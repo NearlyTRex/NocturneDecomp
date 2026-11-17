@@ -44,9 +44,9 @@ int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005a2280(CTurret *this_ptr)
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model);
     if (0 < pCVar2->poly_count) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-                (DAT_00612560,&(this_ptr->base).base.location.position);
+                (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).base.location.position);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-                (DAT_00612560,&(this_ptr->home_orient).vec,(CVector3f *)0x0);
+                (g_CDemonRenderer_PTR_00612560,&(this_ptr->home_orient).vec,(CVector3f *)0x0);
       iVar7 = -1;
       fVar1 = core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(this_ptr,1);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0

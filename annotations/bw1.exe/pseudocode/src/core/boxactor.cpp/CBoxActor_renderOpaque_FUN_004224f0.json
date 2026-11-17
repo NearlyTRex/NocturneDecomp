@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 108,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
-    "suspect_count": 5,
+    "pseudocode_lines": 44,
+    "suspect_count": 3,
     "suspect_types": [
       "unaffected_reg",
-      "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 150
+    "total_lines": 151
   },
   "cross_references": [],
   "function": {
@@ -69,15 +68,15 @@
   "globals": [
     {
       "addr": "0061255c",
-      "name": "DAT_0061255c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0061255c",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     }
   ],
   "param_estimates": {
@@ -170,24 +169,8 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar2 == 0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar2 != 0)",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 40,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "((CBoundingBox3D *)(auStack_20 + 2),unaff_EDI);",
@@ -195,7 +178,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",

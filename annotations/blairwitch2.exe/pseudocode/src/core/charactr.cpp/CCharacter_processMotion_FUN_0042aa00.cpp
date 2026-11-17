@@ -35,7 +35,7 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00(CCharacter *
   if ((uint)bone_index < 7) {
     if ((bone_index == 1) && (this_ptr->is_on_ground != 0)) {
       iVar7 = 0;
-      pcVar5 = "?Bip01 L Foot" + 1;
+      pcVar5 = "Bip01 L Foot";
       pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
       bone_index = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(pCVar2,pcVar5,iVar7);
       if (-1 < bone_index) {

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004d2c50(CHostage *this_ptr,float delta_time)
 
@@ -31,7 +30,7 @@ int __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004d2c50(CHostage *
   }
   fVar1 = this_ptr->grabber_flee_timer - delta_time;
   this_ptr->grabber_flee_timer = fVar1;
-  if ((0.0 < fVar1) && ((this_ptr->base).base.walk_stuck_timer <= (float)_DAT_005da3a6)) {
+  if ((0.0 < fVar1) && ((this_ptr->base).base.walk_stuck_timer <= (float)1.5)) {
     pCVar2 = this_ptr->grabber;
     local_2c = (this_ptr->base).base.base.location.position.x - (pCVar2->location).position.x;
     local_28 = (this_ptr->base).base.base.location.position.y - (pCVar2->location).position.y;

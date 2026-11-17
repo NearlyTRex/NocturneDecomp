@@ -33,10 +33,10 @@ LAB_005c1f58:
   uVar6 = (uint)(CONCAT11(bStack_2b,uStack_2c) & 0x7fff);
   if (0x43fe < uVar6) {
     FUN_005be19c();
-    uVar5 = 0x7FF00000;
-    uVar1 = DAT_00601430;
+    uVar5 = INFINITY._4_4_;
+    uVar1 = INFINITY._0_4_;
     if ((bStack_2b & 0x80) != 0) {
-      return -__BITCAST_DOUBLE(CONCAT44(0x7FF00000,DAT_00601430));
+      return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));
     }
     goto LAB_005c1f58;
   }

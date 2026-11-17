@@ -24,12 +24,12 @@ void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004bc830(SNotesMap *this_ptr,i
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&this_ptr->image,x,in_stack_00000010,0xffff)
   ;
-  if (*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) != 0) {
+  if (g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4] != (CHero *)0x0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,"?HeroIsLost" + 1);
+                      (g_CEventList_PTR_0061b4d0,"HeroIsLost");
     if (iVar1 == 0) {
       iVar1 = core_fldnotes_cpp_SNotesMap_worldToMap_FUN_004bc6f0
-                        (this_ptr,(CLocation *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x20),
+                        (this_ptr,&(g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base).base.location,
                          &iStack_18,&iStack_14);
       if (iVar1 < 0) goto LAB_004bc8c3;
       iVar1 = (in_stack_00000010 + iStack_14) - _DAT_0061d30c;
@@ -50,8 +50,8 @@ LAB_004bc8c3:
     do {
       if (pSVar2->annotations[0].visible != 0) {
         engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
-                  (_DAT_0152d250,this_ptr->annotations[iVar1].text,pSVar2->annotations[0].x + x,
-                   in_stack_00000010 + pSVar2->annotations[0].y,1,-1);
+                  (g_CBitFont_PTR_0152d250,this_ptr->annotations[iVar1].text,
+                   pSVar2->annotations[0].x + x,in_stack_00000010 + pSVar2->annotations[0].y,1,-1);
       }
       iVar1 = iVar1 + 1;
       pSVar2 = (SNotesMap *)(pSVar2->sets[0].level_name + 0x34);

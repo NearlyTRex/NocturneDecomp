@@ -13,7 +13,7 @@
 ;   core_hpatrol.cpp_findNextPatrolPoint_FUN_0059c9c0 at 0059c9d9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00601428
+;   double g_DOUBLE_00601428 = -1.79399301312127E-307
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c20d0
@@ -49,7 +49,7 @@ section .text
     MOV CL,byte ptr [ESP + ECX*0x1]     ; 005baf50
     AND EAX,0x7                         ; 005baf53
     AND ECX,0xff                        ; 005baf56
-    MOV AL,byte ptr [EAX + 0x601428]    ; 005baf5c | DAT_00601428
+    MOV AL,byte ptr [EAX + 0x601428]    ; 005baf5c | g_DOUBLE_00601428
     AND EAX,0xff                        ; 005baf62
     TEST ECX,EAX                        ; 005baf67
     JNZ 0x005baf75                      ; 005baf69

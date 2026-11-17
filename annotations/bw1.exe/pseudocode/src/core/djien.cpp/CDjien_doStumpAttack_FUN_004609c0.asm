@@ -7,9 +7,9 @@
 ; CDjien *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_stick_stump_wav_005d8d77+1
-;   undefined4 DAT_005d8d8c
-;   undefined4 DAT_006236b8
+;   TerminatedCString s_stick_stump_wav_005d8d78
+;   float g_FLOAT_005d8d8c = 0.5
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -136,7 +136,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00460b38
     MOVSD ES:EDI,ESI                    ; 00460b39
     MOVSD ES:EDI,ESI                    ; 00460b3a
-    FLD float ptr [0x005d8d8c]          ; 00460b3b | DAT_005d8d8c
+    FLD float ptr [0x005d8d8c]          ; 00460b3b | g_FLOAT_005d8d8c
     FLD float ptr [ESP + 0x84]          ; 00460b41
     FMUL ST1                            ; 00460b48
     FLD float ptr [ESP + 0x88]          ; 00460b4a
@@ -213,7 +213,7 @@ section .text
     ADD ESP,0x10                        ; 00460c5c
     MOV EBP,dword ptr [EBX + 0xc2c8]    ; 00460c5f
     PUSH EBP                            ; 00460c65
-    MOV EAX,[0x006236b8]                ; 00460c66 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 00460c66 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 00460c6b
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 00460c6c
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -227,7 +227,7 @@ section .text
     POP ESI                             ; 00460c80
     POP EBX                             ; 00460c81
     RET                                 ; 00460c82
-    PUSH 0x5d8d78                       ; 00460c83 | s_stick_stump_wav_005d8d77+1
+    PUSH 0x5d8d78                       ; 00460c83 | = "stick-stump?.wav"
         ;   Label: LAB_00460c83
     MOV EAX,dword ptr [EBX + 0x154]     ; 00460c88
     PUSH EBX                            ; 00460c8e

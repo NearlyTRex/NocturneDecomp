@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 162,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 9,
+    "pseudocode_lines": 51,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 183
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -82,14 +81,14 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -221,16 +220,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "char *in_stack_0000001c;",
@@ -238,7 +229,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000020",
       "severity": "moderate",
       "text": "int in_stack_00000020;",
@@ -246,7 +237,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_005375c0(this_ptr,in_stack_0000001c);",
@@ -254,7 +245,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000020",
       "severity": "moderate",
       "text": "if (in_stack_00000020 != 0) {",
@@ -262,7 +253,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 36,
       "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00437400(in_stack_0000001c,&stack0xfffffe9c);",
@@ -270,7 +261,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
+      "line": 36,
       "match": "&stack0xfffffe9c",
       "severity": "moderate",
       "text": "cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00437400(in_stack_0000001c,&stack0xfffffe9c);",
@@ -278,7 +269,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(char *)((int)pbg_filename",
       "severity": "moderate",
       "text": "pbg_filename = (char *)((int)pbg_filename + 0x24);",
@@ -286,7 +277,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 49,
       "match": "(char *)((int)pbg_filename",
       "severity": "moderate",
       "text": "pbg_filename = (char *)((int)pbg_filename + 0x24);",

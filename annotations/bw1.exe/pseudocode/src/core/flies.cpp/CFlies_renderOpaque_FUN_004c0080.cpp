@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
 
 {
@@ -38,7 +36,8 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
   SFly *pSStack_14;
   
   bVar11 = 0;
-  iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar5 != 0) {
     return 0;
   }
@@ -54,27 +53,28 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
   }
   iStack_1c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0
                         ((CBoundingBox3D *)(auStack_b8 + 0x60),in_stack_ffffff44);
-  iVar5 = _DAT_01cc8084;
+  iVar5 = g_INT_01cc8084;
   if (iStack_1c != 0) {
     this_ptr->is_visible = 1;
     if (iVar5 == 0) {
-      out_basis = (float *)0x1cc80cc;
+      out_basis = g_FLOAT_ARRAY_01cc80cc;
       iVar5 = 0;
       do {
         fVar2 = (float)iVar5;
         iVar5 = iVar5 + 1;
         core_spline_cpp_computeSplineBasis_FUN_00583d60
-                  (out_basis,(fVar2 + (float)_DAT_005e0772) * (float)_DAT_005e0762,0.0);
+                  (out_basis,(fVar2 + (float)0.5) * (float)0.015625,0.0);
         out_basis = out_basis + 8;
       } while (iVar5 < 0x40);
-      _DAT_01cc8084 = 1;
+      g_INT_01cc8084 = 1;
     }
-    pCVar3 = DAT_00612560;
-    if (_DAT_01c50948 == 0) {
-      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00483cf0(DAT_00612560,0,0,0);
-      uVar6 = _DAT_01c51cac >> 8;
-      _DAT_01cc80c4 = uVar6 | uVar6 << 8 | uVar6 << 0x10;
-      _DAT_01cc80c8 = _DAT_01cc80c4 ^ 0xffffff;
+    pCVar3 = g_CDemonRenderer_PTR_00612560;
+    if (g_INT_01c50948 == 0) {
+      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00483cf0
+                (g_CDemonRenderer_PTR_00612560,0,0,0);
+      uVar6 = g_INT_01c51cac >> 8;
+      g_UINT_01cc80c4 = uVar6 | uVar6 << 8 | uVar6 << 0x10;
+      g_UINT_01cc80c8 = g_UINT_01cc80c4 ^ 0xffffff;
     }
     else {
       auStack_b8._4_4_ = 3;
@@ -91,7 +91,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
       auStack_b8._56_4_ = 0x800000;
       auStack_b8._36_4_ = 1;
       auStack_b8._48_4_ = 2;
-      DAT_00612560->vertex_buffer_ptr->r = 0;
+      g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r = 0;
       pCVar3->vertex_buffer_ptr->g = 0;
       pCVar3->vertex_buffer_ptr->b = 0;
       pCVar3->vertex_buffer_ptr[1].r = 0;
@@ -99,20 +99,20 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
       pCVar3->vertex_buffer_ptr[1].b = 0;
       pCVar3->vertex_buffer_ptr[2].r = 0;
       pCVar3->vertex_buffer_ptr[2].g = 0;
-      iVar5 = _DAT_01c51cac;
+      iVar5 = g_INT_01c51cac;
       pCVar3->vertex_buffer_ptr[2].b = 0;
       iVar5 = 0xffff - iVar5;
       pCVar3->vertex_buffer_ptr->a = iVar5;
       pCVar3->vertex_buffer_ptr[1].a = iVar5;
       pCVar3->vertex_buffer_ptr[2].a = iVar5;
-      engine_texture_cpp_ensureTextureLoaded_FUN_00597a20((SMRGLTextureBasic *)0x61d828);
+      engine_texture_cpp_ensureTextureLoaded_FUN_00597a20(&g_SMRGLTextureBasic_0061d828);
     }
     iStack_18 = 0;
     if (0 < this_ptr->fly_count) {
       pSStack_14 = this_ptr->flies;
       do {
         pSVar4 = pSStack_14;
-        dVar12 = round((double)(pSStack_14->t * _DAT_005e076a));
+        dVar12 = round((double)(pSStack_14->t * 64.0f));
         pSStack_14 = (SFly *)(int)ROUND(dVar12);
         if ((int)pSStack_14 < 0) {
           pSStack_14 = (SFly *)0x0;
@@ -121,32 +121,32 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
           pSStack_14 = (SFly *)0x3f;
         }
         core_spline_cpp_evaluateSplinePoint3D_FUN_00583f90
-                  ((float *)((int)pSStack_14 * 0x20 + 0x1cc80cc),pSVar4->control_points,
+                  (g_FLOAT_ARRAY_01cc80cc + (int)pSStack_14 * 8,pSVar4->control_points,
                    pSVar4->control_points + 1,pSVar4->control_points + 2,pSVar4->control_points + 3,
                    &CStack_2c);
         fStack_38 = CStack_2c.x;
         afStack_34[(uint)bVar11 * -2] = *(float *)((int)&CStack_2c + (uint)bVar11 * -8 + 4);
         afStack_34[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
              *(float *)((int)&CStack_2c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-        CStack_44.x = (int)ROUND(fStack_38 * _DAT_00600aa0);
-        CStack_44.y = (int)ROUND(afStack_34[0] * _DAT_00600aa0);
-        CStack_44.z = (int)ROUND(afStack_34[1] * _DAT_00600aa0);
+        CStack_44.x = (int)ROUND(fStack_38 * 256.0f);
+        CStack_44.y = (int)ROUND(afStack_34[0] * 256.0f);
+        CStack_44.z = (int)ROUND(afStack_34[1] * 256.0f);
         engine_special_cpp_transformAndProjectPoint_FUN_00580173
-                  (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_44);
-        pCVar3 = DAT_00612560;
-        vertices = DAT_00612560->vertex_buffer_ptr;
+                  (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,&CStack_44);
+        pCVar3 = g_CDemonRenderer_PTR_00612560;
+        vertices = g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr;
         if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
           screen_y = (vertices->projected_vertex).screen_y >> 0x10;
           iVar5 = (vertices->projected_vertex).screen_x >> 0x10;
-          if (_DAT_01c50948 == 0) {
+          if (g_INT_01c50948 == 0) {
             engine_prim_c_replaceWWithDepth_FUN_0053dd20(vertices,1);
-            if ((((-1 < iVar5) && (iVar5 < DAT_0061b498)) && (-1 < screen_y)) &&
-               (screen_y < DAT_0061b49c)) {
+            if ((((-1 < iVar5) && (iVar5 < g_INT_0061b498)) && (-1 < screen_y)) &&
+               (screen_y < g_INT_0061b49c)) {
               core_flies_cpp_drawFlyPixel_FUN_004bffb0
                         (iVar5,screen_y,(vertices->projected_vertex).transformed_z);
             }
           }
-          else if ((iVar5 < DAT_0061b498 + -1) && (screen_y < DAT_0061b49c + -1)) {
+          else if ((iVar5 < g_INT_0061b498 + -1) && (screen_y < g_INT_0061b49c + -1)) {
             *(ushort *)&(vertices->projected_vertex).screen_x = 0;
             *(ushort *)&(vertices->projected_vertex).screen_y = 0;
             pSVar8 = vertices;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo laser_info,int recursion_depth)
 
 {
@@ -233,7 +231,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect *this
         }
         fVar15 = local_f0[1] * direction->z + local_f4 * direction->x + local_f0[0] * direction->y;
         dVar7 = (double)fVar15;
-        if ((float)_DAT_005d57f2 < fVar15) {
+        if ((float)-1 < fVar15) {
           if (dVar7 < 1.0) {
             dVar7 = acos(dVar7);
             fStack_28 = (float)dVar7;
@@ -255,7 +253,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect *this
       }
       if (0.0 < laser_info.transparency) {
         fStack_28 = (local_58.z * direction->z +
-                    local_58.x * direction->x + local_58.y * direction->y) * _DAT_005d57e6;
+                    local_58.x * direction->x + local_58.y * direction->y) * 2.0f;
         fStack_dc = local_58.x * fStack_28;
         fStack_d8 = local_58.y * fStack_28;
         fStack_d4 = local_58.z * fStack_28;
@@ -319,7 +317,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect *this
         core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20
                   (this_ptr,&local_64,&CStack_160,laser_info_00,iVar1);
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00537c40(g_CDemonSetPtr);
-        local_168 = (1.0 - laser_info.transparency) * (float)_DAT_005d57ea * local_168;
+        local_168 = (1.0 - laser_info.transparency) * (float)0.25 * local_168;
       }
       if (laser_info.reflectivity <= 0.0) goto LAB_0049e1ac;
       if ((laser_info.reflectivity != 1.0) ||
@@ -369,7 +367,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect *this
     laser_info_01.transparency = (float)pCVar13;
     core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20
               (this_ptr,&local_64,&CStack_94,laser_info_01,iVar1);
-    local_168 = (1.0 - laser_info.reflectivity) * (float)_DAT_005d57ea * local_168;
+    local_168 = (1.0 - laser_info.reflectivity) * (float)0.25 * local_168;
 LAB_0049e1ac:
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_0049d770
               (this_ptr,&local_100,&local_64,laser_info.intensity,local_168,&local_58,

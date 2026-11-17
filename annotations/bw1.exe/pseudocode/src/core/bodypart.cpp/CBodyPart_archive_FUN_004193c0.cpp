@@ -17,14 +17,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->vertex_count,"vertexCount");
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->tri_count,"triCount");
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->texture_count,"textureCount");
-  if (DAT_007c3038 == 1) {
+  if (g_INT_007c3038 == 1) {
     iVar2 = 0;
     core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00
               (this_ptr,this_ptr->vertex_count,this_ptr->tri_count);
     if (0 < this_ptr->vertex_count) {
       do {
         iVar2 = iVar2 + 1;
-        _fscanf(DAT_007c3034,"%d,%d,%d\n");
+        _fscanf(g_FILE_PTR_007c3034,"%d,%d,%d\n");
       } while (iVar2 < this_ptr->vertex_count);
     }
     iVar2 = 0;
@@ -33,7 +33,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
       do {
         pSVar1 = this_ptr->faces;
         iVar2 = iVar2 + 1;
-        _fscanf(DAT_007c3034,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n");
+        _fscanf(g_FILE_PTR_007c3034,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n");
         *(uint *)((int)pSVar1->vertices + iVar3 + -0x14) = 3;
         iVar3 = iVar3 + 0x3c;
       } while (iVar2 < this_ptr->tri_count);
@@ -42,7 +42,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
     if (0 < this_ptr->texture_count) {
       do {
         iVar2 = iVar2 + 1;
-        _fscanf(DAT_007c3034," \"%[^\"]\"\n");
+        _fscanf(g_FILE_PTR_007c3034," \"%[^\"]\"\n");
       } while (iVar2 < this_ptr->texture_count);
     }
     core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(this_ptr);
@@ -52,13 +52,13 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
     if (0 < this_ptr->vertex_count) {
       do {
         iVar2 = iVar2 + 1;
-        _fprintf(DAT_007c3034,"\t%d,%d,%d\n");
+        _fprintf(g_FILE_PTR_007c3034,"\t%d,%d,%d\n");
       } while (iVar2 < this_ptr->vertex_count);
     }
     iVar2 = 0;
     if (0 < this_ptr->tri_count) {
       do {
-        _fprintf(DAT_007c3034,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n");
+        _fprintf(g_FILE_PTR_007c3034,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n");
         iVar2 = iVar2 + 1;
       } while (iVar2 < this_ptr->tri_count);
     }
@@ -66,7 +66,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
     if (0 < this_ptr->texture_count) {
       do {
         iVar2 = iVar2 + 1;
-        _fprintf(DAT_007c3034,"\t\"%s\"\n");
+        _fprintf(g_FILE_PTR_007c3034,"\t\"%s\"\n");
       } while (iVar2 < this_ptr->texture_count);
     }
   }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)
 
 {
@@ -32,7 +30,7 @@ CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchne
   this_ptr_01->unused_11860 = 0;
   pcVar4 = (this_ptr_01->base).flinch_motion_name;
   this_ptr_01->breath_state = 0;
-  fVar2 = _DAT_005ff34c;
+  fVar2 = 25.0f;
   this_ptr_01->blood_frame_counter = 2;
   pcVar3 = "flinch";
   (this_ptr_01->base).can_flinch = 1;
@@ -47,7 +45,7 @@ CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchne
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   core_schngeis_cpp_CSchnellGeist_processStates_FUN_005a31c0(this_ptr_01,0.0,0);
-  fVar2 = _DAT_005ff350;
+  fVar2 = 5.0f;
   (this_ptr_01->base).run_distance = 0.0;
   this_ptr_00 = &(this_ptr_01->base).state_machine;
   this_ptr_01->attack_variant = 0;

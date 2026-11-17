@@ -12,11 +12,11 @@ void __cdecl core_fire_cpp_CFireEffect_save_FUN_004a40b0(CFireEffect *this_ptr,_
   CCrater *this_ptr_00;
   
   _fprintf(file_handle,"Fire state\n");
-  this_ptr_00 = (CCrater *)0x1cfaff8;
-  _fprintf(file_handle,&DAT_005c0a60);
+  this_ptr_00 = g_CCrater_ARRAY_01cfaff8;
+  _fprintf(file_handle,"1\n");
   do {
     core_fire_cpp_CCrater_save_FUN_0049dd20(this_ptr_00,file_handle);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CCrater *)&DAT_01cfb8b8);
+  } while (this_ptr_00 != g_CCrater_ARRAY_01cfaff8 + sizeof(g_CCrater_ARRAY_01cfaff8) / sizeof(g_CCrater_ARRAY_01cfaff8[0]));
   return;
 }

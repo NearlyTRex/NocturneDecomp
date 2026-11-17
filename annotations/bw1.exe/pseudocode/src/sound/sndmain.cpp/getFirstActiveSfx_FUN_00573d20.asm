@@ -8,8 +8,8 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cee2f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c74650
-;   undefined4 DAT_02c7476c
+;   undefined4 g_CSfxSlot_ARRAY_02c745ec[0].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_02c745ec[1].playback_state
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
         ;   Label: LAB_00573d27
     JZ 0x00573d39                       ; 00573d2d
         ;   XREF to: 00573d39 (CONDITIONAL_JUMP)  ; LAB_00573d39
-    MOV ESI,dword ptr [EAX + 0x2c74650] ; 00573d2f | DAT_02c74650 | DAT_02c7476c
+    MOV ESI,dword ptr [EAX + 0x2c74650] ; 00573d2f | g_CSfxSlot_ARRAY_02c745ec[0].playback_state | g_CSfxSlot_ARRAY_02c745ec[1].playback_state
     CMP ECX,ESI                         ; 00573d35
     JNZ 0x00573d4a                      ; 00573d37
         ;   XREF to: 00573d4a (CONDITIONAL_JUMP)  ; LAB_00573d4a

@@ -6,23 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_lockFrame_FUN_00565820(void)
 
 {
   int iVar1;
   
-  if (_DAT_01c6cee8 == 0) {
-    _DAT_02cf612c = _DAT_01c6cee8;
+  if (g_INT_01c6cee8 == 0) {
+    g_INT_02cf612c = g_INT_01c6cee8;
   }
   else {
-    iVar1 = (*_DAT_02cf6004)();
+    iVar1 = (*(code *)g_PTR_02cf6004)();
     if (iVar1 != 0) {
-      _DAT_02cf6128 = DAT_005fba20;
-      _DAT_02cf612c = 1;
-      _DAT_01c6cee8 = 0;
-      DAT_005fba20 = _DAT_02cf6120;
+      g_INT_02cf6128 = g_INT_005fba20;
+      g_INT_02cf612c = 1;
+      g_INT_01c6cee8 = 0;
+      g_INT_005fba20 = g_INT_02cf6120;
       return 1;
     }
   }

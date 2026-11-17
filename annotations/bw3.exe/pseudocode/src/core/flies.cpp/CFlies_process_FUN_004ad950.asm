@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1c41
-;   undefined4 DAT_005c1c49
+;   float g_FLOAT_005c1c41 = 0.5
+;   double g_DOUBLE_005c1c49 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40
@@ -89,7 +89,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004ad9fd
     MOVSD ES:EDI,ESI                    ; 004ad9fe
     MOVSD ES:EDI,ESI                    ; 004ad9ff
-    FLD float ptr [0x005c1c41]          ; 004ada00 | DAT_005c1c41
+    FLD float ptr [0x005c1c41]          ; 004ada00 | g_FLOAT_005c1c41
     FLD float ptr [ESP + 0x20]          ; 004ada06
     FMUL ST1                            ; 004ada0a
     FLD float ptr [ESP + 0x24]          ; 004ada0c
@@ -218,7 +218,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 004adb87
         ;   Label: LAB_004adb87
     FLD ST0                             ; 004adb8a
-    FMUL double ptr [0x005c1c49]        ; 004adb8c | DAT_005c1c49
+    FMUL double ptr [0x005c1c49]        ; 004adb8c | g_DOUBLE_005c1c49
     XOR EBX,EBX                         ; 004adb92
     MOV EAX,dword ptr [EBP + 0x14]      ; 004adb94
     MOV dword ptr [ESP + 0x70],EBX      ; 004adb97

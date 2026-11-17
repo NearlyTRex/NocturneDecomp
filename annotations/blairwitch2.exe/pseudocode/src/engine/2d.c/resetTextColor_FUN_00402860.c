@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_resetTextColor_FUN_00402860(void)
 
 {
-  DAT_00609370 = 0xf8;
+  g_INT_00609370 = 0xf8;
   return;
 }

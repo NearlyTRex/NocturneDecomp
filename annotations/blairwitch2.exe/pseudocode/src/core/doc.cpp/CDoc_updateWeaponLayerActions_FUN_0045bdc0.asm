@@ -39,12 +39,12 @@
 ;   void* switchdataD_0045bd4c = 0045c79f
 ;   void* switchdataD_0045bd84 = 0045c7f3
 ;   TerminatedCString s_axeswing0_wav_005d0617
-;   undefined4 DAT_005d064f
-;   undefined4 DAT_005d0657
-;   undefined4 DAT_005d065f
-;   undefined4 DAT_005f5134
-;   undefined4 DAT_005f5138
-;   undefined4 DAT_00618170
+;   double g_DOUBLE_005d064f = 25
+;   double g_DOUBLE_005d0657 = 0.990000000000000
+;   double g_DOUBLE_005d065f = 0.100000000000000
+;   float g_FLOAT_005f5134 = 10
+;   float g_FLOAT_005f5138 = 70
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -126,7 +126,7 @@ section .text
     MOV dword ptr [ESP + 0x6c],EAX      ; 0045be5d
     FLD float ptr [ESP + 0x6c]          ; 0045be61
     ADD ESP,0x8                         ; 0045be65
-    FCOMP double ptr [0x005d065f]       ; 0045be68 | DAT_005d065f
+    FCOMP double ptr [0x005d065f]       ; 0045be68 | g_DOUBLE_005d065f
     FNSTSW AX                           ; 0045be6e
     SAHF                                ; 0045be70
     JNC 0x0045c1ef                      ; 0045be71
@@ -470,16 +470,16 @@ section .text
     MOV dword ptr [ESP + 0x6c],EAX      ; 0045c258
     FLD float ptr [ESP + 0x6c]          ; 0045c25c
     ADD ESP,0x8                         ; 0045c260
-    FCOMP double ptr [0x005d0657]       ; 0045c263 | DAT_005d0657
+    FCOMP double ptr [0x005d0657]       ; 0045c263 | g_DOUBLE_005d0657
     FNSTSW AX                           ; 0045c269
     SAHF                                ; 0045c26b
     JBE 0x0045be7f                      ; 0045c26c
         ;   XREF to: 0045be7f (CONDITIONAL_JUMP)  ; LAB_0045be7f
     FLD float ptr [EBP + 0x18]          ; 0045c272
-    FMUL double ptr [0x005d064f]        ; 0045c275 | DAT_005d064f
+    FMUL double ptr [0x005d064f]        ; 0045c275 | g_DOUBLE_005d064f
     FADD float ptr [EBX + 0x25650]      ; 0045c27b
     FST float ptr [EBX + 0x25650]       ; 0045c281
-    FCOMP float ptr [0x005f5138]        ; 0045c287 | DAT_005f5138
+    FCOMP float ptr [0x005f5138]        ; 0045c287 | g_FLOAT_005f5138
     FNSTSW AX                           ; 0045c28d
     SAHF                                ; 0045c28f
     JA 0x0045c2a9                       ; 0045c290
@@ -492,7 +492,7 @@ section .text
     MOV dword ptr [ESP + 0x60],ECX      ; 0045c2a0
     JMP 0x0045be7f                      ; 0045c2a4
         ;   XREF to: 0045be7f (UNCONDITIONAL_JUMP)  ; LAB_0045be7f
-    MOV EAX,[0x005f5138]                ; 0045c2a9 | DAT_005f5138
+    MOV EAX,[0x005f5138]                ; 0045c2a9 | g_FLOAT_005f5138
         ;   Label: LAB_0045c2a9
     MOV dword ptr [EBX + 0x25650],EAX   ; 0045c2ae
     JMP 0x0045c292                      ; 0045c2b4
@@ -922,7 +922,7 @@ section .text
     ADD ESP,0xc                         ; 0045c6a3
     MOV dword ptr [EBX + 0x256a4],0x0   ; 0045c6a6
         ;   Label: LAB_0045c6a6
-    MOV EAX,[0x005f5134]                ; 0045c6b0 | DAT_005f5134
+    MOV EAX,[0x005f5134]                ; 0045c6b0 | g_FLOAT_005f5134
     MOV dword ptr [EBX + 0x25650],EAX   ; 0045c6b5
     FLD float ptr [EBX + 0x2d08]        ; 0045c6bb
         ;   Label: LAB_0045c6bb
@@ -963,7 +963,7 @@ section .text
     PUSH ESI                            ; 0045c73b
     PUSH 0x5d0617                       ; 0045c73c | = "axeswing0?.wav"
     PUSH EBX                            ; 0045c741
-    MOV EDI,dword ptr [0x0061c068]      ; 0045c742 | DAT_0061c068
+    MOV EDI,dword ptr [0x0061c068]      ; 0045c742 | g_CSound_PTR_0061c068
     PUSH EDI                            ; 0045c748
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 0045c749
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -1075,7 +1075,7 @@ section .text
     ADD ESP,0xc                         ; 0045c862
     MOV ECX,dword ptr [EBX + 0x2561c]   ; 0045c865
     PUSH ECX                            ; 0045c86b
-    MOV ESI,dword ptr [0x00618170]      ; 0045c86c | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 0045c86c | g_CDemonMission_PTR_00618170
     PUSH ESI                            ; 0045c872 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 0045c873
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)
@@ -1105,7 +1105,7 @@ section .text
     ADD ESP,0xc                         ; 0045c8cb
     MOV ECX,dword ptr [EBX + 0x2561c]   ; 0045c8ce
     PUSH ECX                            ; 0045c8d4
-    MOV ESI,dword ptr [0x00618170]      ; 0045c8d5 | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 0045c8d5 | g_CDemonMission_PTR_00618170
     PUSH ESI                            ; 0045c8db | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 0045c8dc
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)

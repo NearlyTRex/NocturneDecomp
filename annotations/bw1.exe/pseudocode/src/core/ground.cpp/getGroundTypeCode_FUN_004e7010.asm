@@ -12,20 +12,20 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004e6fd0 = 004e7021
-;   undefined4 DAT_005e4248
-;   undefined4 DAT_005e424b
-;   undefined4 DAT_005e424e
-;   undefined4 DAT_005e4251
-;   undefined4 DAT_005e4254
-;   undefined4 DAT_005e4257
-;   undefined4 DAT_005e425a
-;   undefined4 DAT_005e425d
-;   undefined4 DAT_005e4260
-;   undefined4 DAT_005e4263
-;   undefined4 DAT_005e4266
-;   undefined4 DAT_005e4269
-;   undefined4 DAT_005e426c
-;   undefined4 DAT_005e426f
+;   TerminatedCString s_no_005e4248
+;   TerminatedCString s_ct_005e424b
+;   TerminatedCString s_dt_005e424e
+;   TerminatedCString s_dt_005e4251
+;   TerminatedCString s_mt_005e4254
+;   TerminatedCString s_wt_005e4257
+;   TerminatedCString s_wd_005e425a
+;   TerminatedCString s_mb_005e425d
+;   TerminatedCString s_md_005e4260
+;   TerminatedCString s_cp_005e4263
+;   TerminatedCString s_bd_005e4266
+;   TerminatedCString s_gl_005e4269
+;   TerminatedCString s_gr_005e426c
+;   TerminatedCString s_lv_005e426f
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -40,46 +40,46 @@ section .text
         ;   XREF to: 004e7075 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x4e6fd0]  ; 004e701a | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
-    MOV EAX,0x5e4248                    ; 004e7021 | DAT_005e4248
+    MOV EAX,0x5e4248                    ; 004e7021 | = "no"
         ;   Label: caseD_1
     RET                                 ; 004e7026
-    MOV EAX,0x5e424b                    ; 004e7027 | DAT_005e424b
+    MOV EAX,0x5e424b                    ; 004e7027 | = "ct"
         ;   Label: caseD_2
     RET                                 ; 004e702c
-    MOV EAX,0x5e424e                    ; 004e702d | DAT_005e424e
+    MOV EAX,0x5e424e                    ; 004e702d | = "dt"
         ;   Label: caseD_3
     RET                                 ; 004e7032
-    MOV EAX,0x5e4251                    ; 004e7033 | DAT_005e4251
+    MOV EAX,0x5e4251                    ; 004e7033 | = "dt"
         ;   Label: caseD_4
     RET                                 ; 004e7038
-    MOV EAX,0x5e4254                    ; 004e7039 | DAT_005e4254
+    MOV EAX,0x5e4254                    ; 004e7039 | = "mt"
         ;   Label: caseD_5
     RET                                 ; 004e703e
-    MOV EAX,0x5e4257                    ; 004e703f | DAT_005e4257
+    MOV EAX,0x5e4257                    ; 004e703f | = "wt"
         ;   Label: caseD_6
     RET                                 ; 004e7044
-    MOV EAX,0x5e425a                    ; 004e7045 | DAT_005e425a
+    MOV EAX,0x5e425a                    ; 004e7045 | = "wd"
         ;   Label: caseD_7
     RET                                 ; 004e704a
-    MOV EAX,0x5e425d                    ; 004e704b | DAT_005e425d
+    MOV EAX,0x5e425d                    ; 004e704b | = "mb"
         ;   Label: caseD_8
     RET                                 ; 004e7050
-    MOV EAX,0x5e4260                    ; 004e7051 | DAT_005e4260
+    MOV EAX,0x5e4260                    ; 004e7051 | = "md"
         ;   Label: caseD_9
     RET                                 ; 004e7056
-    MOV EAX,0x5e4263                    ; 004e7057 | DAT_005e4263
+    MOV EAX,0x5e4263                    ; 004e7057 | = "cp"
         ;   Label: caseD_a
     RET                                 ; 004e705c
-    MOV EAX,0x5e4266                    ; 004e705d | DAT_005e4266
+    MOV EAX,0x5e4266                    ; 004e705d | = "bd"
         ;   Label: caseD_b
     RET                                 ; 004e7062
-    MOV EAX,0x5e4269                    ; 004e7063 | DAT_005e4269
+    MOV EAX,0x5e4269                    ; 004e7063 | = "gl"
         ;   Label: caseD_c
     RET                                 ; 004e7068
-    MOV EAX,0x5e426c                    ; 004e7069 | DAT_005e426c
+    MOV EAX,0x5e426c                    ; 004e7069 | = "gr"
         ;   Label: caseD_d
     RET                                 ; 004e706e
-    MOV EAX,0x5e426f                    ; 004e706f | DAT_005e426f
+    MOV EAX,0x5e426f                    ; 004e706f | = "lv"
         ;   Label: caseD_e
     RET                                 ; 004e7074
     MOV EAX,0x5e4272                    ; 004e7075 | DAT_005e4272

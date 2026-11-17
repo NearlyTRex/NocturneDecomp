@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 101,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
     "total_lines": 46
   },
@@ -39,9 +38,9 @@
   "globals": [
     {
       "addr": "0061bf88",
-      "name": "DAT_0061bf88",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061bf88",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -125,14 +124,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0264b280",
-      "severity": "mild",
-      "text": "iVar1 = sound_sndwav_cpp_CWavInDevice_close_FUN_00558240((CWavInDevice *)&DAT_0264b280);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
@@ -153,24 +144,8 @@
       "line": 17,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "DAT_0061bf88 = in_stack_00000008;",
+      "text": "g_INT_0061bf88 = in_stack_00000008;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0061bf88",
-      "severity": "mild",
-      "text": "DAT_0061bf88 = in_stack_00000008;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0264b280",
-      "severity": "mild",
-      "text": "return (CWavInDevice *)&DAT_0264b280;",
-      "type": "undefined_data"
     }
   ]
 }

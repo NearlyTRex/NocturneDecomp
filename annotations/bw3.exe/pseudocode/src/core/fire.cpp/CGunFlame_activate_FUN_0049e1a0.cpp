@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGunFlame_activate_FUN_0049e1a0(CGunFlame *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_type,int flame_style)
 
 {
@@ -32,11 +30,11 @@ void __cdecl core_fire_cpp_CGunFlame_activate_FUN_0049e1a0(CGunFlame *this_ptr,C
     (this_ptr->position).z = position->z;
   }
   if (flame_style == 6) {
-    this_ptr->lifetime = 0x40400000;
+    this_ptr->lifetime = 3.0f;
   }
   else {
     fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.9,1.0);
-    this_ptr->lifetime = fVar4 * _DAT_005df900;
+    this_ptr->lifetime = fVar4 * 2.0f;
   }
   if ((((flame_style == 2) || (flame_style == 4)) || (flame_style == 3)) ||
      ((flame_style == 6 || (flame_style == 7)))) {

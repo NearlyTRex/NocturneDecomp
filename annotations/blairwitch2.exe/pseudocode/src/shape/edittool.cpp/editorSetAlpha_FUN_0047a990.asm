@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   alpha
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1eaf
+;   float g_FLOAT_005d1eaf = 0.00001525902
 ;
 ; Called Functions:
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
@@ -27,7 +27,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0047a9a0
     MOV dword ptr [ESP],EAX             ; 0047a9a4
     FILD dword ptr [ESP]                ; 0047a9a7
-    FMUL float ptr [0x005d1eaf]         ; 0047a9aa | DAT_005d1eaf
+    FMUL float ptr [0x005d1eaf]         ; 0047a9aa | g_FLOAT_005d1eaf
     SUB ESP,0x4                         ; 0047a9b0
     FSTP float ptr [ESP]                ; 0047a9b3
     CALL engine_mini3d.cpp_setAlpha_FUN_004f3570 ; 0047a9b6

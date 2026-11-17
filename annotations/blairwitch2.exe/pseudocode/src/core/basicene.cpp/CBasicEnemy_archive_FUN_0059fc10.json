@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 368,
+    "complexity_score": 233,
     "cross_reference_count": 9,
     "function_call_count": 16,
     "global_count": 42,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 168,
-    "suspect_count": 19,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 678
@@ -258,26 +257,26 @@
     },
     {
       "addr": "005efa99",
-      "name": "DAT_005efa99",
-      "type": "undefined1",
+      "name": "s_Dummy_005efa99",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005efa9a",
-      "name": "DAT_005efa9a",
-      "type": "undefined1",
+      "name": "s_ummy_005efa99+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005efa9b",
-      "name": "DAT_005efa9b",
-      "type": "undefined1",
+      "name": "s_mmy_005efa99+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005efa9c",
-      "name": "DAT_005efa9c",
-      "type": "undefined1",
+      "name": "s_my_005efa99+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -414,8 +413,8 @@
     },
     {
       "addr": "007bc038",
-      "name": "DAT_007bc038",
-      "type": "undefined4",
+      "name": "g_INT_007bc038",
+      "type": "int",
       "value": null
     }
   ],
@@ -639,110 +638,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 < 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "else if (DAT_007bc038 == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if ((5 < g_CBasicEnemyClassVersion) && (DAT_007bc038 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 < 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "else if (DAT_007bc038 == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_005efa99",
-      "severity": "mild",
-      "text": "pcVar2 = &DAT_005efa99;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if ((6 < g_CBasicEnemyClassVersion) && (DAT_007bc038 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 < 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "else if (DAT_007bc038 == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 < 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "else if (DAT_007bc038 == 2) {",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 35,

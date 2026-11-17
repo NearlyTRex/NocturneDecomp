@@ -6,32 +6,31 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0055bd50(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size)
 
 {
-  int iVar1;
   uint error_code;
-  int *piStack_1ac;
+  char acStack_198 [400];
   
-  if ((((buffer_id < 1) || (0x40 < buffer_id)) || (*(int *)(buffer_id * 0x18 + 0x2cf49f4) == 0)) ||
-     (*(int *)(buffer_id * 0x18 + 0x2cf49fc) < 1)) {
-    _DAT_01d71de0 = "..\\sound\\snddx.cpp";
-    _DAT_01d71de4 = 0x45c;
-    piStack_1ac = (int *)0x55bd8f;
+  if ((((buffer_id < 1) || (0x40 < buffer_id)) ||
+      (g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6] == (IDirectSoundBuffer *)0x0)) ||
+     ((int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6 + 2] < 1)) {
+    g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
+    g_INT_01d71de4 = 0x45c;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::unlockSample - Can't unlock invalid handle: %d");
   }
-  iVar1 = buffer_id * 0x18;
-  if (*(int *)(iVar1 + 0x2cf4a04) != 0) {
-    piStack_1ac = *(int **)(iVar1 + 0x2cf49f4);
-    error_code = (**(code **)(*piStack_1ac + 0x4c))();
+  if (g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6 + 4] != (IDirectSoundBuffer *)0x0) {
+    error_code = (*g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6]->vtable->Unlock)
+                           (g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6],
+                            g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6 + 4],
+                            (DWORD)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6 + 5],
+                            (LPVOID)0x0,0);
     if (error_code != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(error_code);
-      _sprintf((char *)&piStack_1ac,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_logSoundError_FUN_0055a560((char *)&piStack_1ac);
+      _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_198);
     }
-    *(uint *)(iVar1 + 0x2cf4a04) = 0;
+    g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6 + 4] = (IDirectSoundBuffer *)0x0;
   }
   return;
 }

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_djien_cpp_CDjien_process_FUN_00460230(CDjien *this_ptr,float delta_time)
 
@@ -78,7 +77,7 @@ void __cdecl core_djien_cpp_CDjien_process_FUN_00460230(CDjien *this_ptr,float d
     core_charactr_cpp_CCharacter_processMotion_FUN_00434a80((CCharacter *)this_ptr,iVar10);
   }
   pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
-  fVar8 = delta_time * (this_ptr->base).speed * _DAT_005d8d68;
+  fVar8 = delta_time * (this_ptr->base).speed * 4.0f;
   uVar12 = pSVar11->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320((CCharacter *)this_ptr,fVar8);
@@ -109,7 +108,7 @@ LAB_004605ea:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,7,1);
       }
     }
-    this_ptr_01 = 0x02C82A60;
+    this_ptr_01 = g_CSound_PTR_006236b8;
     if ((uVar12 < 3) || (uVar12 < 4)) {
       fVar8 = this_ptr->state_timer - delta_time;
       this_ptr->is_alert = 0;
@@ -143,7 +142,7 @@ LAB_004605ea:
       fVar8 = (float)this_ptr->walk_target;
       if (fVar8 == 0.0) {
         iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                           (0x01C51D80,"DjienInZone");
+                           (g_CEventList_PTR_0061b4d0,"DjienInZone");
         if (iVar10 == 0) {
           engine_console_cpp_CConsole_printf_FUN_00445430
                     (g_CConsolePtr,"DJIEN: got outside of box - hesitating\n");
@@ -207,7 +206,7 @@ LAB_004605ea:
           afStack_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0x10] =
                afStack_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 10];
           fStack_1c = fStack_28 * fStack_28 + fStack_30 * fStack_30 + fStack_2c * fStack_2c;
-          fStack_20 = (float)(((int)fStack_1c >> 1) + _DAT_01cc804c);
+          fStack_20 = (float)(((int)fStack_1c >> 1) + g_INT_01cc804c);
           if (fStack_20 < (this_ptr->base).guard_distance) {
             engine_console_cpp_CConsole_printf_FUN_00445430
                       (g_CConsolePtr,"DJIEN: protect found victim - going to run\n");
@@ -229,7 +228,7 @@ LAB_00460307:
 LAB_00460577:
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
                             (&(this_ptr->base).base.model.base);
-      if (fStack_14 <= (float)_DAT_005d8d70) goto LAB_0046031a;
+      if (fStack_14 <= (float)0.94999999999999996) goto LAB_0046031a;
       iVar10 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -250,15 +249,16 @@ LAB_0046031a:
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_00460332:
   if (this_ptr->num_sacks_to_blow <= this_ptr->num_sacks_blown) {
-    core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,"DjienSacksGone");
+    core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+              (g_CEventList_PTR_0061b4d0,"DjienSacksGone");
     iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                       (0x01C51D80,"DjienHeartDestroyed");
+                       (g_CEventList_PTR_0061b4d0,"DjienHeartDestroyed");
     if (iVar10 != 0) {
       pCVar1 = &(this_ptr->base).base.model;
       (this_ptr->base).base.hit_points = 0.0;
       pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
       if ((pSVar11->state_index != 0xf) && (pSVar11->state_index != 0xe)) {
-        core_sound_cpp_CSound_killSound_FUN_0057d9d0(0x02C82A60,this_ptr->sfx_handle);
+        core_sound_cpp_CSound_killSound_FUN_0057d9d0(g_CSound_PTR_006236b8,this_ptr->sfx_handle);
         uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                            ((CDemonActor *)this_ptr,"djien_die.wav@ 4");
         (this_ptr->base).pool_me = 1;

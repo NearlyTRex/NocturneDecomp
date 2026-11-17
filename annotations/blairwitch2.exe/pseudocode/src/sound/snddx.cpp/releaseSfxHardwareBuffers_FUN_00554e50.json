@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 110,
+    "complexity_score": 108,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 53,
     "suspect_count": 5,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "unresolved_funcptr"
+      "pointer_truncation"
     ],
-    "total_lines": 163
+    "total_lines": 166
   },
   "cross_references": [
     {
@@ -153,44 +152,44 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
-      "match": "code *",
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4]",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*apiStack_1a4[0] + 0x48))();",
-      "type": "unresolved_funcptr"
+      "text": "[(int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4] * 9 + 3] =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 25,
-      "match": "*(int **)(iVar2 + 0x264ac14",
+      "description": "Pointer value `pIVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)pIVar1",
       "severity": "moderate",
-      "text": "piVar1 = *(int **)(iVar2 + 0x264ac14);",
-      "type": "raw_address_pointer_store"
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[(int)pIVar1 * 6 + 1]) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
+      "description": "Pointer value `pIVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)pIVar1",
       "severity": "moderate",
-      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
-      "type": "unresolved_funcptr"
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[(int)pIVar1 * 6 + 1] =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 43,
-      "match": "*(int **)(iVar3 + 0x264a5f4",
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 3]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 3]",
       "severity": "moderate",
-      "text": "if ((piVar1 != *(int **)(iVar3 + 0x264a5f4)) && (piVar1 != (int *)0x0)) {",
-      "type": "raw_address_pointer_store"
+      "text": "[(int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 3] * 9 + 4] =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
-      "match": "code *",
+      "description": "Pointer value `pIVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pIVar1",
       "severity": "moderate",
-      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
-      "type": "unresolved_funcptr"
+      "text": "if ((this_ptr_00 != g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[(int)pIVar1 * 6]) &&",
+      "type": "pointer_truncation"
     }
   ]
 }

@@ -6,35 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00579690(void)
 
 {
   HRESULT HVar1;
-  int iVar2;
   
-  if (_DAT_02d0bcec != (int *)0x0) {
-    (**(code **)(*_DAT_02d0bcec + 8))(_DAT_02d0bcec);
-    _DAT_02d0bcec = (int *)0x0;
+  if (g_IUnknown_PTR_02d0bcec != (IUnknown *)0x0) {
+    (*g_IUnknown_PTR_02d0bcec->vtable->Release)(g_IUnknown_PTR_02d0bcec);
+    g_IUnknown_PTR_02d0bcec = (IUnknown *)0x0;
   }
-  if (_DAT_02d0bce8 != (int *)0x0) {
-    (**(code **)(*_DAT_02d0bce8 + 8))(_DAT_02d0bce8);
-    _DAT_02d0bce8 = (int *)0x0;
+  if (g_IDirectDrawSurface_PTR_02d0bce8 != (IDirectDrawSurface *)0x0) {
+    (*g_IDirectDrawSurface_PTR_02d0bce8->vtable->Release)
+              ((IUnknown *)g_IDirectDrawSurface_PTR_02d0bce8);
+    g_IDirectDrawSurface_PTR_02d0bce8 = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02d0bce4 != (int *)0x0) {
-    (**(code **)(*_DAT_02d0bce4 + 8))(_DAT_02d0bce4);
-    _DAT_02d0bce4 = (int *)0x0;
+  if (g_IDirectDrawSurface_PTR_02d0bce4 != (IDirectDrawSurface *)0x0) {
+    (*g_IDirectDrawSurface_PTR_02d0bce4->vtable->Release)
+              ((IUnknown *)g_IDirectDrawSurface_PTR_02d0bce4);
+    g_IDirectDrawSurface_PTR_02d0bce4 = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02d0bce0 != (int *)0x0) {
-    (**(code **)(*_DAT_02d0bce0 + 0x4c))(_DAT_02d0bce0);
-    (**(code **)(*_DAT_02d0bce0 + 8))(_DAT_02d0bce0);
-    _DAT_02d0bce0 = (int *)0x0;
+  if (g_IDirectDraw_PTR_02d0bce0 != (IDirectDraw *)0x0) {
+    (*g_IDirectDraw_PTR_02d0bce0->vtable->RestoreDisplayMode)(g_IDirectDraw_PTR_02d0bce0);
+    (*g_IDirectDraw_PTR_02d0bce0->vtable->Release)((IUnknown *)g_IDirectDraw_PTR_02d0bce0);
+    g_IDirectDraw_PTR_02d0bce0 = (IDirectDraw *)0x0;
   }
-  HVar1 = DirectDrawCreate((GUID *)0x0,(LPDIRECTDRAW *)&DAT_02d0bce0,(IUnknown *)0x0);
+  HVar1 = DirectDrawCreate((GUID *)0x0,&g_IDirectDraw_PTR_02d0bce0,(IUnknown *)0x0);
   if (HVar1 == 0) {
-    iVar2 = (**(code **)(*_DAT_02d0bce0 + 0x50))(_DAT_02d0bce0,_DAT_02d21b78,0x11);
-    if (iVar2 == 0) {
+    HVar1 = (*g_IDirectDraw_PTR_02d0bce0->vtable->SetCooperativeLevel)
+                      (g_IDirectDraw_PTR_02d0bce0,g_HWND_02d21b78,0x11);
+    if (HVar1 == 0) {
       return 1;
     }
   }

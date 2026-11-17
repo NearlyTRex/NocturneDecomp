@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   drawn
 ;
 ; Referenced Globals:
-;   undefined4 s_flashlit_wav_5_005da5f3+1
+;   TerminatedCString s_flashlit_wav_5_005da5f4
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.flashlight_active
@@ -30,7 +30,7 @@ section .text
         ;   XREF to: 00476241 (CONDITIONAL_JUMP)  ; LAB_00476241
     RET                                 ; 00476240
         ;   Label: LAB_00476240
-    PUSH 0x5da5f4                       ; 00476241 | s_flashlit_wav_5_005da5f3+1
+    PUSH 0x5da5f4                       ; 00476241 | = "flashlit.wav @ .5"
         ;   Label: LAB_00476241
     MOV dword ptr [EAX + 0x264],0x0     ; 00476246 | g_CGameInstance.flashlight_active
     PUSH EDX                            ; 00476250

@@ -13,7 +13,7 @@
 ;   void* PTR_GetFileType_005c8598 = 001c8eb6
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2ac = 005bce04
-;   undefined4 DAT_0061f414
+;   void* g_PTR_0061f414 = 00000000
 ;   undefined4 DAT_0061f4d8
 ;
 ; Called Functions:
@@ -29,13 +29,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005c39c1
     PUSH EBX                            ; 005c39c5
     CALL dword ptr [0x0061f2a8]         ; 005c39c6 | PTR_crt_unknown.c_FUN_005bce04_0061f2a8
-    MOV EDX,dword ptr [0x0061f414]      ; 005c39cc | DAT_0061f414
+    MOV EDX,dword ptr [0x0061f414]      ; 005c39cc | g_PTR_0061f414
     ADD ESP,0x4                         ; 005c39d2
     TEST EDX,EDX                        ; 005c39d5
     JZ 0x005c39f8                       ; 005c39d7
         ;   XREF to: 005c39f8 (CONDITIONAL_JUMP)  ; LAB_005c39f8
     PUSH EBX                            ; 005c39d9
-    CALL dword ptr [0x0061f414]         ; 005c39da | DAT_0061f414
+    CALL dword ptr [0x0061f414]         ; 005c39da | g_PTR_0061f414
     ADD ESP,0x4                         ; 005c39e0
     TEST EAX,EAX                        ; 005c39e3
     JZ 0x005c39f8                       ; 005c39e5

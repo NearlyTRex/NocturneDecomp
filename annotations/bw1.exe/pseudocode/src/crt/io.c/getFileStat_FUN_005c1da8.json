@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 125,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 100,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 103
   },
   "cross_references": [
@@ -207,22 +205,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005fabc8",
-      "severity": "mild",
-      "text": "(iVar3 = FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "((((((&DAT_00626114)[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d2257c
+;   void* g_PTR_01d2257c
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     SUB ESP,0x4                         ; 00513900
         ;   Label: engine_mini3d.cpp_getViewDepth_FUN_00513900
     MOV EDX,dword ptr [ESP + 0x8]       ; 00513903
-    MOV EAX,[0x01d2257c]                ; 00513907 | DAT_01d2257c
+    MOV EAX,[0x01d2257c]                ; 00513907 | g_PTR_01d2257c
     FLD float ptr [EDX + 0x4]           ; 0051390c
     FSUB float ptr [EAX + 0x28]         ; 0051390f
     FMUL float ptr [EAX + 0x14]         ; 00513912

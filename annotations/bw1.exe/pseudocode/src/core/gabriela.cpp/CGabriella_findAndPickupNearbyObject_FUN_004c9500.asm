@@ -48,12 +48,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_gabriela_cpp_005e10ee
 ;   TerminatedCString s_Hell_froze_invalid_pickU_005e1103
-;   undefined4 DAT_005e112c
-;   undefined4 DAT_005e1134
+;   double g_DOUBLE_005e112c = -0.800000000000000
+;   double g_DOUBLE_005e1134 = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -243,7 +243,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c9750
     FLD float ptr [ESP + 0x7c]          ; 004c9751
     FABS                                ; 004c9755
-    FCOMP double ptr [0x005e1134]       ; 004c9757 | DAT_005e1134
+    FCOMP double ptr [0x005e1134]       ; 004c9757 | g_DOUBLE_005e1134
     FNSTSW AX                           ; 004c975d
     SAHF                                ; 004c975f
     JA 0x004c96c7                       ; 004c9760
@@ -315,7 +315,7 @@ section .text
     FSTP float ptr [ESP + 0x8c]         ; 004c9851
     FLD float ptr [ESP + 0x8c]          ; 004c9858
         ;   Label: LAB_004c9858
-    FCOMP double ptr [0x005e112c]       ; 004c985f | DAT_005e112c
+    FCOMP double ptr [0x005e112c]       ; 004c985f | g_DOUBLE_005e112c
     FNSTSW AX                           ; 004c9865
     SAHF                                ; 004c9867
     JA 0x004c96c7                       ; 004c9868
@@ -418,8 +418,8 @@ section .text
     MOV EDI,0x5e10ee                    ; 004c995e | = "..\\core\\gabriela.cpp"
     MOV EAX,0x637                       ; 004c9963
     PUSH 0x5e1103                       ; 004c9968 | = "Hell froze - invalid pickUpType: %d"
-    MOV dword ptr [0x01d1d400],EDI      ; 004c996d | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 004c9973 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 004c996d | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 004c9973 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c9978
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004c997d

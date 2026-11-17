@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_lineListD3DTL_FUN_004ee9f0(float *vertices,int vertex_count)
 
 {
   engine_mini3d_cpp_updateTransform_FUN_004edcc0();
   engine_mini3d_cpp_updateRenderState_FUN_004f2430();
-  if ((_DAT_02cf60dc != (code *)0x0) && (_DAT_01c6cee8 != 0)) {
-    (*_DAT_02cf60dc)(vertices,vertex_count,_DAT_01c6e2b4);
+  if ((g_PTR_02cf60dc != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+    (*(code *)g_PTR_02cf60dc)(vertices,vertex_count,g_BIT_INTEGER32_01c6e2b4.dword);
     return;
   }
   return;

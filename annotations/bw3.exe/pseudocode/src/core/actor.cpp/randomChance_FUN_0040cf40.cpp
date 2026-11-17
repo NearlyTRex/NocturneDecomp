@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_actor_cpp_randomChance_FUN_0040cf40(float probability_threshold)
 
 {
@@ -17,11 +15,11 @@ int __cdecl core_actor_cpp_randomChance_FUN_0040cf40(float probability_threshold
   
   if (g_CGamePtr->is_processing == 0) {
     iVar3 = rand();
-    fVar1 = (float)iVar3 * _DAT_005b5f01;
+    fVar1 = (float)iVar3 * 3.051851e-05f;
   }
   else {
     uVar2 = core_actor_cpp_generateRandomValue_FUN_0040cdd0();
-    fVar1 = (float)(int)uVar2 * _DAT_005b5f05;
+    fVar1 = (float)(int)uVar2 * 5.960465e-08f;
   }
   return (uint)(fVar1 < probability_threshold);
 }

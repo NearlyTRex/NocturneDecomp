@@ -16,7 +16,7 @@ void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr)
   core_hero_cpp_CHero_archive_FUN_004ce590(&this_ptr->base);
   if ((1 < g_CDocClassVersion) && (g_CDocClassVersion < 5)) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
-              (&(this_ptr->base).object_to_pick_up,"@objectToPickUp" + 1);
+              (&(this_ptr->base).object_to_pick_up,"objectToPickUp");
     core_actor_cpp_archiveActor_FUN_0040b9e0
               ((CDemonActor **)&(this_ptr->base).door_to_open,"doorToOpen");
     core_actor_cpp_archiveActor_FUN_0040b9e0

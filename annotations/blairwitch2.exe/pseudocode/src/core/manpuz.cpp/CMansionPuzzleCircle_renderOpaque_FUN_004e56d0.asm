@@ -7,9 +7,9 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f98a0
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_00618170
+;   float g_FLOAT_005f98a0 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -68,15 +68,15 @@ section .text
         ;   Label: LAB_004e572a
     LEA EBX,[ESP + 0x34]                ; 004e572b
     MOV EAX,0x265370c                   ; 004e572f
-    MOV EDX,dword ptr [0x0060b280]      ; 004e5734 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 004e5734 | g_CDemonRenderer_PTR_0060b280
     FLD float ptr [EAX]                 ; 004e573a
-    FMUL float ptr [0x005f98a0]         ; 004e573c | DAT_005f98a0
+    FMUL float ptr [0x005f98a0]         ; 004e573c | g_FLOAT_005f98a0
     FISTP dword ptr [EBX]               ; 004e5742
     FLD float ptr [EAX + 0x4]           ; 004e5744
-    FMUL float ptr [0x005f98a0]         ; 004e5747 | DAT_005f98a0
+    FMUL float ptr [0x005f98a0]         ; 004e5747 | g_FLOAT_005f98a0
     FISTP dword ptr [EBX + 0x4]         ; 004e574d
     FLD float ptr [EAX + 0x8]           ; 004e5750
-    FMUL float ptr [0x005f98a0]         ; 004e5753 | DAT_005f98a0
+    FMUL float ptr [0x005f98a0]         ; 004e5753 | g_FLOAT_005f98a0
     FISTP dword ptr [EBX + 0x8]         ; 004e5759
     LEA EAX,[ESP + 0x34]                ; 004e575c
     PUSH EAX                            ; 004e5760
@@ -102,7 +102,7 @@ section .text
     CMP EBX,0xc                         ; 004e5788
     JL 0x004e5773                       ; 004e578b
         ;   XREF to: 004e5773 (CONDITIONAL_JUMP)  ; LAB_004e5773
-    MOV EAX,[0x00618170]                ; 004e578d | DAT_00618170
+    MOV EAX,[0x00618170]                ; 004e578d | g_CDemonMission_PTR_00618170
     CMP dword ptr [EAX + 0x1008],0x0    ; 004e5792
     JNZ 0x004e57c5                      ; 004e5799
         ;   XREF to: 004e57c5 (CONDITIONAL_JUMP)  ; LAB_004e57c5
@@ -131,7 +131,7 @@ section .text
     POP EDI                             ; 004e57c2
     POP ESI                             ; 004e57c3
     RET                                 ; 004e57c4
-    MOV ECX,dword ptr [0x0060b280]      ; 004e57c5 | DAT_0060b280
+    MOV ECX,dword ptr [0x0060b280]      ; 004e57c5 | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_004e57c5
     PUSH ECX                            ; 004e57cb
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 004e57cc

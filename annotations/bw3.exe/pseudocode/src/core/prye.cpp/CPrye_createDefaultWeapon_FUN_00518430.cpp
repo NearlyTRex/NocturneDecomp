@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_ptr)
 
 {
@@ -23,8 +21,8 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CFlintlock");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,uVar5);
   if (pCVar2 == (CDemonActor *)0x0) {
-    _DAT_01d71de0 = "..\\core\\prye.cpp";
-    _DAT_01d71de4 = 0x39f;
+    g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
+    g_INT_01d71de4 = 0x39f;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   pcVar3 = "Prye's flintlock";
@@ -45,8 +43,8 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CHolycross");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,uVar5);
   if (pCVar2 == (CDemonActor *)0x0) {
-    _DAT_01d71de0 = "..\\core\\prye.cpp";
-    _DAT_01d71de4 = 0x3ab;
+    g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
+    g_INT_01d71de4 = 0x3ab;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   pcVar3 = "Prye's holy cross";
@@ -61,12 +59,12 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
   core_inv_cpp_CInventory_addItem_FUN_004da880(&(this_ptr->base).inventory,pCVar2,1);
-  uVar5 = DAT_007e1a50;
+  uVar5 = g_CDemonActorType_007e1a18.name_hash;
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CLightActor");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,uVar5);
   if (pCVar2 == (CDemonActor *)0x0) {
-    _DAT_01d71de0 = "..\\core\\prye.cpp";
-    _DAT_01d71de4 = 0x3b3;
+    g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
+    g_INT_01d71de4 = 0x3b3;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   pcVar3 = "Prye's lantern";
@@ -87,8 +85,8 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CBoxActor");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,uVar5);
   if (pCVar2 == (CDemonActor *)0x0) {
-    _DAT_01d71de0 = "..\\core\\prye.cpp";
-    _DAT_01d71de4 = 0x3bd;
+    g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
+    g_INT_01d71de4 = 0x3bd;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0

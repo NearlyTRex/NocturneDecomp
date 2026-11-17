@@ -20,8 +20,8 @@
 ;   ... and 30 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01dd4894
-;   undefined4 DAT_01dd4898
+;   int g_INT_01dd4894
+;   int g_INT_01dd4898
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005a3d00
@@ -35,12 +35,12 @@ section .text
         ;   Label: support_newmsg.cpp_getLocalizedString_FUN_00508960
     PUSH EBP                            ; 00508961
     MOV EDI,dword ptr [ESP + 0xc]       ; 00508962
-    CMP dword ptr [0x01dd4894],0x0      ; 00508966 | DAT_01dd4894
+    CMP dword ptr [0x01dd4894],0x0      ; 00508966 | g_INT_01dd4894
     JZ 0x00508983                       ; 0050896d
         ;   XREF to: 00508983 (CONDITIONAL_JUMP)  ; LAB_00508983
     PUSH ESI                            ; 0050896f
     PUSH EBX                            ; 00508970
-    MOV EBX,dword ptr [0x01dd4898]      ; 00508971 | DAT_01dd4898
+    MOV EBX,dword ptr [0x01dd4898]      ; 00508971 | g_INT_01dd4898
     DEC EBX                             ; 00508977
     TEST EBX,EBX                        ; 00508978
     JGE 0x00508988                      ; 0050897a

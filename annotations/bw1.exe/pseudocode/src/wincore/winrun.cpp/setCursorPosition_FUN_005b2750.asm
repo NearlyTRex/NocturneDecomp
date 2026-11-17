@@ -15,8 +15,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_SetCursorPos_005d04f8 = 001d0bda
-;   undefined4 DAT_01c4353c
-;   undefined4 DAT_01c43540
+;   int g_INT_01c4353c
+;   int g_INT_01c43540
 ;
 ; Called Functions:
 ;   SetCursorPos
@@ -32,8 +32,8 @@ section .text
     PUSH ECX                            ; 005b2759
     CALL dword ptr CS:[0x5d04f8]        ; 005b275a | PTR_SetCursorPos_005d04f8
     MOV EAX,dword ptr [ESP + 0x4]       ; 005b2761
-    MOV [0x01c4353c],EAX                ; 005b2765 | DAT_01c4353c
+    MOV [0x01c4353c],EAX                ; 005b2765 | g_INT_01c4353c
     MOV EAX,dword ptr [ESP + 0x8]       ; 005b276a
-    MOV [0x01c43540],EAX                ; 005b276e | DAT_01c43540
+    MOV [0x01c43540],EAX                ; 005b276e | g_INT_01c43540
     RET                                 ; 005b2773
 

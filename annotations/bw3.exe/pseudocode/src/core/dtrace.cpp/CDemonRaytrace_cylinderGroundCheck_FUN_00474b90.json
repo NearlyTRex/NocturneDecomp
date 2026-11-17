@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 393,
+    "complexity_score": 377,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 123,
-    "suspect_count": 25,
+    "pseudocode_lines": 122,
+    "suspect_count": 24,
     "suspect_types": [
       "raw_address_constant",
       "suspect_float",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 340
+    "total_lines": 339
   },
   "cross_references": [
     {
@@ -57,15 +56,15 @@
   "globals": [
     {
       "addr": "005bca19",
-      "name": "DAT_005bca19",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005bca19",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005bca1d",
-      "name": "DAT_005bca1d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005bca1d",
+      "type": "float",
+      "value": "-10"
     }
   ],
   "param_estimates": {
@@ -339,16 +338,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 14,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "float *unaff_EBX;",
@@ -356,7 +347,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 18,
+      "line": 16,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float *unaff_ESI;",
@@ -364,7 +355,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 20,
+      "line": 18,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "float unaff_EDI;",
@@ -372,7 +363,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 63,
+      "line": 61,
       "match": "6.547703e-39",
       "severity": "mild",
       "text": "fStack_6c = 6.547703e-39;",
@@ -380,7 +371,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 70,
+      "line": 68,
       "match": "6.547756e-39",
       "severity": "mild",
       "text": "CStack_7c.z = 6.547756e-39;",
@@ -388,7 +379,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 72,
+      "line": 70,
       "match": "6.547766e-39",
       "severity": "mild",
       "text": "CStack_7c.y = 6.547766e-39;",
@@ -396,7 +387,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 74,
+      "line": 72,
       "match": "6.547776e-39",
       "severity": "mild",
       "text": "CStack_7c.x = 6.547776e-39;",
@@ -404,7 +395,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 90,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(this_ptr_00,&local_64,unaff_EDI,&local_58,&CStack_7c,",
@@ -412,7 +403,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 105,
+      "line": 103,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if ((unaff_EBX != (float *)0x0) && (&CStack_7c != (CVector3f *)unaff_EBX)) {",
@@ -420,7 +411,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 105,
+      "line": 103,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if ((unaff_EBX != (float *)0x0) && (&CStack_7c != (CVector3f *)unaff_EBX)) {",
@@ -428,7 +419,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 106,
+      "line": 104,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = CStack_7c.x;",
@@ -436,7 +427,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 107,
+      "line": 105,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = CStack_7c.y;",
@@ -444,7 +435,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 108,
+      "line": 106,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = CStack_7c.z;",
@@ -452,7 +443,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 110,
+      "line": 108,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI != (float *)0x0) {",
@@ -460,7 +451,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 111,
+      "line": 109,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = local_4c;",
@@ -468,7 +459,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 118,
+      "line": 116,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI != (float *)0x0) {",
@@ -476,7 +467,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 117,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = 1.4013e-45;",
@@ -484,7 +475,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 119,
+      "line": 117,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "*unaff_ESI = 1.4013e-45;",
@@ -492,7 +483,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 121,
+      "line": 119,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (unaff_EBX != (float *)0x0) {",
@@ -500,7 +491,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 122,
+      "line": 120,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[1] = 1.0;",
@@ -508,7 +499,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 123,
+      "line": 121,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX[2] = 0.0;",
@@ -516,7 +507,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 124,
+      "line": 122,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = 0.0;",
@@ -524,7 +515,7 @@
     },
     {
       "description": "Raw hex address 0x474c4e assigned to bare local `uStack_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 61,
+      "line": 59,
       "match": "0x474c4e",
       "severity": "moderate",
       "text": "uStack_68 = 0x474c4e;",
@@ -532,7 +523,7 @@
     },
     {
       "description": "Raw hex address 0x474c74 assigned to bare local `uStack_70`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_70` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 66,
+      "line": 64,
       "match": "0x474c74",
       "severity": "moderate",
       "text": "uStack_70 = 0x474c74;",

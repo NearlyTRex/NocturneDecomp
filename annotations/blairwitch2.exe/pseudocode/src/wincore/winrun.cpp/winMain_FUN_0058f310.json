@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 234,
-    "complexity_score": 379,
+    "complexity_score": 294,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 40,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
-    "suspect_count": 21,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "undefined_data",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -346,8 +345,8 @@
     },
     {
       "addr": "02664628",
-      "name": "DAT_02664628",
-      "type": "undefined4",
+      "name": "g_HWND_02664628",
+      "type": "HWND",
       "value": null
     },
     {
@@ -358,68 +357,68 @@
     },
     {
       "addr": "02664638",
-      "name": "DAT_02664638",
-      "type": "undefined4",
+      "name": "g_INT_02664638",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0266463c",
-      "name": "DAT_0266463c",
-      "type": "undefined4",
+      "name": "g_INT_0266463c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02664fb8",
-      "name": "DAT_02664fb8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_02664fb8",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "02664fb9",
-      "name": "DAT_02664fb9",
+      "name": "g_CHAR_ARRAY_02664fb8+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026650b8",
-      "name": "DAT_026650b8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_026650b8",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "026651b8",
-      "name": "DAT_026651b8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_026651b8",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "026651b9",
-      "name": "DAT_026651b9",
+      "name": "g_CHAR_ARRAY_026651b8+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026651ba",
-      "name": "DAT_026651ba",
+      "name": "g_CHAR_ARRAY_026651b8+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026651bb",
-      "name": "DAT_026651bb",
+      "name": "g_CHAR_ARRAY_026651b8+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026651bc",
-      "name": "DAT_026651bc",
+      "name": "g_CHAR_ARRAY_026651b8+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026652b8",
-      "name": "DAT_026652b8",
-      "type": "undefined4",
+      "name": "g_INT_026652b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -658,84 +657,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_026651b8",
-      "severity": "mild",
-      "text": "pcVar11 = &DAT_026651b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_026651b8",
-      "severity": "mild",
-      "text": "pcVar11 = &DAT_026651b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_026651b8",
-      "severity": "mild",
-      "text": "if (DAT_026651b8 != '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 70,
-      "match": "*(char **)(iVar8 + 0x26652bc",
+      "match": "(char **)((int)g_CHAR_PTR_ARRAY_026652bc",
       "severity": "moderate",
-      "text": "*(char **)(iVar8 + 0x26652bc) = pcVar11;",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_026650b8",
-      "severity": "mild",
-      "text": "GetCurrentDirectoryA(0x100,&DAT_026650b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_02664fb8",
-      "severity": "mild",
-      "text": "GetModuleFileNameA(hInstance,&DAT_02664fb8,0x100);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_02664fb8",
-      "severity": "mild",
-      "text": "pcVar11 = &DAT_02664fb8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_02664fb8",
-      "severity": "mild",
-      "text": "} while ((&DAT_02664fb8)[uVar9] != '\\\\');",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_02664fb8",
-      "severity": "mild",
-      "text": "(&DAT_02664fb8)[uVar9] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_02664fb8",
-      "severity": "mild",
-      "text": "SetCurrentDirectoryA(&DAT_02664fb8);",
-      "type": "undefined_data"
+      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_026652bc + iVar8) = pcVar11;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -783,6 +710,14 @@
       "match": "(int)pWVar10",
       "severity": "moderate",
       "text": "} while (iVar8 < (int)pWVar10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHAR_PTR_ARRAY_026652bc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)g_CHAR_PTR_ARRAY_026652bc",
+      "severity": "moderate",
+      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_026652bc + iVar8) = pcVar11;",
       "type": "pointer_truncation"
     },
     {

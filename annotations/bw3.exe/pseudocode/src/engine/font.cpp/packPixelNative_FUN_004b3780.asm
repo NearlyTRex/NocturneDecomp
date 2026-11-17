@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   blue
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c6af74
-;   undefined4 DAT_01c6af80
-;   undefined4 DAT_01c6af8c
+;   int g_INT_005fba20 = 0x8
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
 ;
 ; *****************************************************************************
 
@@ -21,14 +21,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004b3780
         ;   Label: engine_font.cpp_packPixelNative_FUN_004b3780
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b3784
-    CMP dword ptr [0x005fba20],0x20     ; 004b3788 | DAT_005fba20
+    CMP dword ptr [0x005fba20],0x20     ; 004b3788 | g_INT_005fba20
     JNZ 0x004b37b6                      ; 004b378f
         ;   XREF to: 004b37b6 (CONDITIONAL_JUMP)  ; LAB_004b37b6
-    MOV CL,byte ptr [0x01c6af74]        ; 004b3791 | DAT_01c6af74
+    MOV CL,byte ptr [0x01c6af74]        ; 004b3791 | g_BIT_INTEGER32_01c6af74
     SHL EAX,CL                          ; 004b3797
-    MOV CL,byte ptr [0x01c6af80]        ; 004b3799 | DAT_01c6af80
+    MOV CL,byte ptr [0x01c6af80]        ; 004b3799 | g_BIT_INTEGER32_01c6af80
     SHL EDX,CL                          ; 004b379f
-    MOV CL,byte ptr [0x01c6af8c]        ; 004b37a1 | DAT_01c6af8c
+    MOV CL,byte ptr [0x01c6af8c]        ; 004b37a1 | g_BIT_INTEGER32_01c6af8c
     OR EAX,EDX                          ; 004b37a7
     MOV EDX,dword ptr [ESP + 0xc]       ; 004b37a9
     SHL EDX,CL                          ; 004b37ad

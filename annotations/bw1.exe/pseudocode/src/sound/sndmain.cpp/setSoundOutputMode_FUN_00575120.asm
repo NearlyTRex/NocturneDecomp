@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f41b4
 ;   TerminatedCString s_setSoundOutputMode_can_t_005f41c9
-;   undefined4 DAT_006232e8
-;   undefined4 DAT_006232ec
-;   undefined4 DAT_006232f0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c80650
+;   int g_INT_006232e8 = 0x10
+;   int g_INT_006232ec = 0x2
+;   int g_INT_006232f0 = 0x5622
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   CSoundDevice* g_CSoundDevice_PTR_02c80650
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -48,12 +48,12 @@ section .text
         ;   XREF to: 00575160 (CONDITIONAL_JUMP)  ; LAB_00575160
     MOV EAX,dword ptr [ESP + 0x14]      ; 0057512f
         ;   Label: LAB_0057512f
-    MOV [0x006232e8],EAX                ; 00575133 | DAT_006232e8
+    MOV [0x006232e8],EAX                ; 00575133 | g_INT_006232e8
     MOV EAX,dword ptr [ESP + 0x18]      ; 00575138
-    MOV [0x006232ec],EAX                ; 0057513c | DAT_006232ec
+    MOV [0x006232ec],EAX                ; 0057513c | g_INT_006232ec
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00575141
-    MOV EBX,dword ptr [0x02c80650]      ; 00575145 | DAT_02c80650
-    MOV [0x006232f0],EAX                ; 0057514b | DAT_006232f0
+    MOV EBX,dword ptr [0x02c80650]      ; 00575145 | g_CSoundDevice_PTR_02c80650
+    MOV [0x006232f0],EAX                ; 0057514b | g_INT_006232f0
     TEST EBX,EBX                        ; 00575150
     JNZ 0x00575185                      ; 00575152
         ;   XREF to: 00575185 (CONDITIONAL_JUMP)  ; LAB_00575185
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_00575160
     MOV ECX,0x1479                      ; 00575165
     PUSH 0x5f41c9                       ; 0057516a | = "setSoundOutputMode - can't do this wh..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0057516f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00575175 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0057516f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00575175 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057517b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575180

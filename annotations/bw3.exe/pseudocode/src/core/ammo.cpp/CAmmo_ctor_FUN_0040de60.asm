@@ -16,10 +16,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bullet_kfm_005b60b7
-;   undefined1 DAT_005b60c2
-;   undefined1 DAT_005b60c3
-;   undefined1 DAT_005b60c4
-;   undefined1 DAT_005b60c5
+;   TerminatedCString s_CGun_005b60c2
+;   undefined4 s_Gun_005b60c2+1
+;   undefined4 s_un_005b60c2+2
+;   undefined4 s_n_005b60c2+3
 ;   CDemonActor_vtable g_CAmmoVTable
 ;
 ; Called Functions:
@@ -53,16 +53,16 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0 ; 0040de9a
         ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040de9f
-    MOV ESI,0x5b60c2                    ; 0040dea2 | DAT_005b60c2
+    MOV ESI,0x5b60c2                    ; 0040dea2 | = "CGun"
     LEA EDI,[EBX + 0x2d4]               ; 0040dea7
     PUSH EDI                            ; 0040dead
-    MOV AL,byte ptr [ESI]               ; 0040deae | DAT_005b60c2 | DAT_005b60c4
+    MOV AL,byte ptr [ESI]               ; 0040deae | = "CGun" | s_un_005b60c2+2
         ;   Label: LAB_0040deae
     MOV byte ptr [EDI],AL               ; 0040deb0
     CMP AL,0x0                          ; 0040deb2
     JZ 0x0040dec6                       ; 0040deb4
         ;   XREF to: 0040dec6 (CONDITIONAL_JUMP)  ; LAB_0040dec6
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040deb6 | DAT_005b60c3 | DAT_005b60c5
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040deb6 | s_Gun_005b60c2+1 | s_n_005b60c2+3
     ADD ESI,0x2                         ; 0040deb9
     MOV byte ptr [EDI + 0x1],AL         ; 0040debc
     ADD EDI,0x2                         ; 0040debf

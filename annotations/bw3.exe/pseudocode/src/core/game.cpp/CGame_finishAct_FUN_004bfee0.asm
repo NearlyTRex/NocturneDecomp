@@ -25,19 +25,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_stats_005c3b18
 ;   TerminatedCString s_Mission_time_005c3b1e
-;   undefined1 DAT_005c3b2b
-;   undefined1 DAT_005c3b2c
-;   undefined1 DAT_005c3b2d
+;   TerminatedCString s_anon_005c3b2b
+;   undefined4 s_anon_005c3b2b+1
+;   undefined4 s_anon_005c3b2b+2
 ;   TerminatedCString s_s_2d_2d_2d_2d_005c3b2e
 ;   TerminatedCString s_Total_body_count_005c3b40
-;   undefined1 DAT_005c3b51
-;   undefined1 DAT_005c3b52
-;   undefined1 DAT_005c3b53
-;   undefined1 DAT_005c3b54
-;   undefined4 DAT_005c3b60
-;   undefined4 DAT_005c3b68
-;   undefined4 DAT_005c3b70
-;   undefined4 DAT_005c3b78
+;   TerminatedCString s_anon_005c3b51
+;   undefined4 s_anon_005c3b51+1
+;   undefined4 s_anon_005c3b51+2
+;   TerminatedCString s_d_005c3b54
+;   double g_DOUBLE_005c3b60 = 0.000277777777777778
+;   double g_DOUBLE_005c3b68 = 3600
+;   double g_DOUBLE_005c3b70 = 0.0166666666666667
+;   double g_DOUBLE_005c3b78 = 60
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -104,24 +104,24 @@ section .text
     ADD ESP,0x10                        ; 004bff6e
     FLD float ptr [EBP + 0x270]         ; 004bff71
     FLD ST0                             ; 004bff77
-    FMUL double ptr [0x005c3b60]        ; 004bff79 | DAT_005c3b60
+    FMUL double ptr [0x005c3b60]        ; 004bff79 | g_DOUBLE_005c3b60
     CALL crt_math.c_round_FUN_005a3120  ; 004bff7f
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x52c]       ; 004bff84
     MOV EAX,dword ptr [ESP + 0x52c]     ; 004bff8b
     MOV dword ptr [ESP + 0x540],EAX     ; 004bff92
     FILD dword ptr [ESP + 0x540]        ; 004bff99
-    FMUL double ptr [0x005c3b68]        ; 004bffa0 | DAT_005c3b68
+    FMUL double ptr [0x005c3b68]        ; 004bffa0 | g_DOUBLE_005c3b68
     FSUBP                               ; 004bffa6
     FLD ST0                             ; 004bffa8
-    FMUL double ptr [0x005c3b70]        ; 004bffaa | DAT_005c3b70
+    FMUL double ptr [0x005c3b70]        ; 004bffaa | g_DOUBLE_005c3b70
     CALL crt_math.c_round_FUN_005a3120  ; 004bffb0
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x528]       ; 004bffb5
     MOV EAX,dword ptr [ESP + 0x528]     ; 004bffbc
     MOV dword ptr [ESP + 0x540],EAX     ; 004bffc3
     FILD dword ptr [ESP + 0x540]        ; 004bffca
-    FMUL double ptr [0x005c3b78]        ; 004bffd1 | DAT_005c3b78
+    FMUL double ptr [0x005c3b78]        ; 004bffd1 | g_DOUBLE_005c3b78
     FSUBP                               ; 004bffd7
     FST float ptr [EBP + 0x270]         ; 004bffd9
     CALL crt_math.c_round_FUN_005a3120  ; 004bffdf
@@ -132,7 +132,7 @@ section .text
     FILD dword ptr [ESP + 0x540]        ; 004bfff9
     FSUBR float ptr [EBP + 0x270]       ; 004c0000
     FST float ptr [EBP + 0x270]         ; 004c0006
-    FMUL double ptr [0x005c3b80]        ; 004c000c | DAT_005c3b80
+    FMUL double ptr [0x005c3b80]        ; 004c000c | g_DOUBLE_005c3b80
     PUSH 0x5c3b1e                       ; 004c0012 | = "Mission time"
     CALL crt_math.c_round_FUN_005a3120  ; 004c0017
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
@@ -158,7 +158,7 @@ section .text
         ;   XREF to: 004c0032 (CONDITIONAL_JUMP)  ; LAB_004c0032
     POP EDI                             ; 004c004a
         ;   Label: LAB_004c004a
-    MOV ESI,0x5c3b2b                    ; 004c004b | DAT_005c3b2b
+    MOV ESI,0x5c3b2b                    ; 004c004b | = "\n\n"
     LEA EDI,[ESP + 0xc]                 ; 004c0050
     MOV EBX,dword ptr [ESP + 0x530]     ; 004c0054
     PUSH EDI                            ; 004c005b
@@ -167,13 +167,13 @@ section .text
     MOV AL,0x0                          ; 004c005f
     SCASB.REPNE ES:EDI                  ; 004c0061
     DEC EDI                             ; 004c0063
-    MOV AL,byte ptr [ESI]               ; 004c0064 | DAT_005c3b2b | DAT_005c3b2d
+    MOV AL,byte ptr [ESI]               ; 004c0064 | = "\n\n" | s_anon_005c3b2b+2
         ;   Label: LAB_004c0064
     MOV byte ptr [EDI],AL               ; 004c0066
     CMP AL,0x0                          ; 004c0068
     JZ 0x004c007c                       ; 004c006a
         ;   XREF to: 004c007c (CONDITIONAL_JUMP)  ; LAB_004c007c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c006c | DAT_005c3b2c | = "%2d:%2d:%2d.%2d\n\n"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c006c | s_anon_005c3b2b+1 | = "%2d:%2d:%2d.%2d\n\n"
     ADD ESI,0x2                         ; 004c006f
     MOV byte ptr [EDI + 0x1],AL         ; 004c0072
     ADD EDI,0x2                         ; 004c0075
@@ -280,7 +280,7 @@ section .text
         ;   XREF to: 004c0139 (CONDITIONAL_JUMP)  ; LAB_004c0139
     POP EDI                             ; 004c0151
         ;   Label: LAB_004c0151
-    MOV ESI,0x5c3b51                    ; 004c0152 | DAT_005c3b51
+    MOV ESI,0x5c3b51                    ; 004c0152 | = "\n\n"
     LEA EDI,[ESP + 0xc]                 ; 004c0157
     PUSH EDI                            ; 004c015b
     SUB ECX,ECX                         ; 004c015c
@@ -288,13 +288,13 @@ section .text
     MOV AL,0x0                          ; 004c015f
     SCASB.REPNE ES:EDI                  ; 004c0161
     DEC EDI                             ; 004c0163
-    MOV AL,byte ptr [ESI]               ; 004c0164 | DAT_005c3b51 | DAT_005c3b53
+    MOV AL,byte ptr [ESI]               ; 004c0164 | = "\n\n" | s_anon_005c3b51+2
         ;   Label: LAB_004c0164
     MOV byte ptr [EDI],AL               ; 004c0166
     CMP AL,0x0                          ; 004c0168
     JZ 0x004c017c                       ; 004c016a
         ;   XREF to: 004c017c (CONDITIONAL_JUMP)  ; LAB_004c017c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004c016c | DAT_005c3b52 | DAT_005c3b54
+    MOV AL,byte ptr [ESI + 0x1]         ; 004c016c | s_anon_005c3b51+1 | = "%d\n\n"
     ADD ESI,0x2                         ; 004c016f
     MOV byte ptr [EDI + 0x1],AL         ; 004c0172
     ADD EDI,0x2                         ; 004c0175
@@ -305,7 +305,7 @@ section .text
         ;   Label: LAB_004c017c
     MOV EDX,dword ptr [EBP + 0x27c]     ; 004c017d
     PUSH EDX                            ; 004c0183
-    PUSH 0x5c3b54                       ; 004c0184 | DAT_005c3b54
+    PUSH 0x5c3b54                       ; 004c0184 | = "%d\n\n"
     LEA EAX,[ESP + 0x414]               ; 004c0189
     PUSH EAX                            ; 004c0190
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004c0191
@@ -335,7 +335,7 @@ section .text
     POP EDI                             ; 004c01c5
         ;   Label: LAB_004c01c5
     PUSH 0xffff                         ; 004c01c6
-    MOV EBP,dword ptr [0x01549aa8]      ; 004c01cb | DAT_01549aa8
+    MOV EBP,dword ptr [0x01549aa8]      ; 004c01cb | g_CBitFont_PTR_01549aa8
     CALL engine_3d.c_setRenderAlpha_FUN_00406bf0 ; 004c01d1
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 004c01d6

@@ -12,7 +12,7 @@
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0 at 004a377e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cfaff4
+;   int g_INT_01cfaff4
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_activate_FUN_0049d590
@@ -23,7 +23,7 @@ section .text
 
     PUSH dword ptr [ESP + 0xc]          ; 004a3aa0
         ;   Label: core_fire.cpp_CFireEffect_createCrater_FUN_004a3aa0
-    MOV EAX,[0x01cfaff4]                ; 004a3aa4 | DAT_01cfaff4
+    MOV EAX,[0x01cfaff4]                ; 004a3aa4 | g_INT_01cfaff4
     MOV EDX,dword ptr [ESP + 0xc]       ; 004a3aa9
     SHL EAX,0x4                         ; 004a3aad
     PUSH EDX                            ; 004a3ab0
@@ -34,10 +34,10 @@ section .text
     PUSH EAX                            ; 004a3abd
     CALL core_fire.cpp_CCrater_activate_FUN_0049d590 ; 004a3abe
         ;   XREF to: 0049d590 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_activate_FUN_0049d590(CCrater * this_ptr, CVector3f * center_position, float radius)
-    MOV ECX,dword ptr [0x01cfaff4]      ; 004a3ac3 | DAT_01cfaff4
+    MOV ECX,dword ptr [0x01cfaff4]      ; 004a3ac3 | g_INT_01cfaff4
     INC ECX                             ; 004a3ac9
     ADD ESP,0xc                         ; 004a3aca
-    MOV dword ptr [0x01cfaff4],ECX      ; 004a3acd | DAT_01cfaff4
+    MOV dword ptr [0x01cfaff4],ECX      ; 004a3acd | g_INT_01cfaff4
     CMP ECX,0x14                        ; 004a3ad3
     JGE 0x004a3ad9                      ; 004a3ad6
         ;   XREF to: 004a3ad9 (CONDITIONAL_JUMP)  ; LAB_004a3ad9
@@ -45,7 +45,7 @@ section .text
     PUSH ESI                            ; 004a3ad9
         ;   Label: LAB_004a3ad9
     XOR ESI,ESI                         ; 004a3ada
-    MOV dword ptr [0x01cfaff4],ESI      ; 004a3adc | DAT_01cfaff4
+    MOV dword ptr [0x01cfaff4],ESI      ; 004a3adc | g_INT_01cfaff4
     POP ESI                             ; 004a3ae2
     RET                                 ; 004a3ae3
 

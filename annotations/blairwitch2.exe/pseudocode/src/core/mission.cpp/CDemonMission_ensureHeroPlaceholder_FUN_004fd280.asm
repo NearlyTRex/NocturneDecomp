@@ -19,9 +19,9 @@
 ;   TerminatedCString s_Hell_froze_finding_hero_005deb72
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_005deb8b
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_01cedf8c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   undefined4 g_CDemonActorType_01cedf54.name_hash
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -74,7 +74,7 @@ section .text
     CALL shape_edittool.cpp_CStrList_add_FUN_00480e70 ; 004fd2bd
         ;   XREF to: 00480e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00480e70(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 004fd2c2
-    MOV EBP,dword ptr [0x01cedf8c]      ; 004fd2c5 | DAT_01cedf8c
+    MOV EBP,dword ptr [0x01cedf8c]      ; 004fd2c5 | g_CDemonActorType_01cedf54.name_hash
         ;   Label: LAB_004fd2c5
     PUSH EBP                            ; 004fd2cb
     PUSH EBX                            ; 004fd2cc
@@ -123,8 +123,8 @@ section .text
     MOV ECX,0x5deb5e                    ; 004fd32e | = "..\\core\\mission.cpp"
     MOV EBX,0x6d4                       ; 004fd333
     PUSH 0x5deb72                       ; 004fd338 | = "Hell froze finding hero."
-    MOV dword ptr [0x01d046a0],ECX      ; 004fd33d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 004fd343 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004fd33d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 004fd343 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fd349
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fd34e

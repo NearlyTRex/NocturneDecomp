@@ -23,10 +23,10 @@
 ;   core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90 at 004d3de6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4dcd
-;   undefined4 DAT_005c4dd5
-;   undefined4 DAT_005c4ddd
-;   undefined4 DAT_005c4de5
+;   double g_DOUBLE_005c4dcd = 6
+;   double g_DOUBLE_005c4dd5 = 0.5
+;   double g_DOUBLE_005c4ddd = 3
+;   double g_DOUBLE_005c4de5 = 60
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CActorDestinationClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -127,27 +127,27 @@ section .text
     JA 0x004d3b62                       ; 004d3bdc
         ;   XREF to: 004d3b62 (CONDITIONAL_JUMP)  ; LAB_004d3b62
     FLD double ptr [ESP + 0x8]          ; 004d3bde
-    FCOMP double ptr [0x005c4dcd]       ; 004d3be2 | DAT_005c4dcd
+    FCOMP double ptr [0x005c4dcd]       ; 004d3be2 | g_DOUBLE_005c4dcd
     FNSTSW AX                           ; 004d3be8
     SAHF                                ; 004d3bea
     JA 0x004d3b62                       ; 004d3beb
         ;   XREF to: 004d3b62 (CONDITIONAL_JUMP)  ; LAB_004d3b62
     FLD float ptr [ESP + 0x30]          ; 004d3bf1
     FST double ptr [ESP]                ; 004d3bf5
-    FCOMP double ptr [0x005c4dd5]       ; 004d3bf8 | DAT_005c4dd5
+    FCOMP double ptr [0x005c4dd5]       ; 004d3bf8 | g_DOUBLE_005c4dd5
     FNSTSW AX                           ; 004d3bfe
     SAHF                                ; 004d3c00
     JC 0x004d3b62                       ; 004d3c01
         ;   XREF to: 004d3b62 (CONDITIONAL_JUMP)  ; LAB_004d3b62
     FLD double ptr [ESP]                ; 004d3c07
-    FCOMP double ptr [0x005c4ddd]       ; 004d3c0a | DAT_005c4ddd
+    FCOMP double ptr [0x005c4ddd]       ; 004d3c0a | g_DOUBLE_005c4ddd
     FNSTSW AX                           ; 004d3c10
     SAHF                                ; 004d3c12
     JA 0x004d3b62                       ; 004d3c13
         ;   XREF to: 004d3b62 (CONDITIONAL_JUMP)  ; LAB_004d3b62
     FLD float ptr [ESP + 0x28]          ; 004d3c19
     FABS                                ; 004d3c1d
-    FCOMP double ptr [0x005c4ddd]       ; 004d3c1f | DAT_005c4ddd
+    FCOMP double ptr [0x005c4ddd]       ; 004d3c1f | g_DOUBLE_005c4ddd
     FNSTSW AX                           ; 004d3c25
     SAHF                                ; 004d3c27
     JA 0x004d3b62                       ; 004d3c28
@@ -165,7 +165,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d3c49
     FLD float ptr [ESP + 0x20]          ; 004d3c4a
     FABS                                ; 004d3c4e
-    FCOMP double ptr [0x005c4de5]       ; 004d3c50 | DAT_005c4de5
+    FCOMP double ptr [0x005c4de5]       ; 004d3c50 | g_DOUBLE_005c4de5
     FNSTSW AX                           ; 004d3c56
     SAHF                                ; 004d3c58
     JA 0x004d3b62                       ; 004d3c59

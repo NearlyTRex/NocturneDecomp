@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   controller_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d22fa4
+;   int g_INT_02d22fa4
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_pollController_FUN_00581f50
@@ -22,11 +22,11 @@ section .text
     MOV EDX,0x1                         ; 00582645
     PUSH ECX                            ; 0058264a
     XOR EBX,EBX                         ; 0058264b
-    MOV dword ptr [0x02d22fa4],EDX      ; 0058264d | DAT_02d22fa4
+    MOV dword ptr [0x02d22fa4],EDX      ; 0058264d | g_INT_02d22fa4
     CALL wincore_winrun.cpp_pollController_FUN_00581f50 ; 00582653
         ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_pollController_FUN_00581f50(int controller_index)
     ADD ESP,0x4                         ; 00582658
-    MOV dword ptr [0x02d22fa4],EBX      ; 0058265b | DAT_02d22fa4
+    MOV dword ptr [0x02d22fa4],EBX      ; 0058265b | g_INT_02d22fa4
     POP EBX                             ; 00582661
     LEA EAX,[EAX]                       ; 00582662
     LEA EDX,[EDX]                       ; 00582668

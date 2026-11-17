@@ -9,6 +9,6 @@
 void __cdecl core_dtrace_cpp_staticInit_FUN_0048a8d0(void)
 
 {
-  __arrinit(&DAT_01c02aa0,20000,&g_CVectorTypeInfo);
+  __arrinit(g_CVector3f_ARRAY_01c02aa0,20000,&g_CVectorTypeInfo);
   return;
 }

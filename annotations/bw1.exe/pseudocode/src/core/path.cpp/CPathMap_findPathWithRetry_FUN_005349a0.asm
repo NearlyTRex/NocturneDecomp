@@ -23,7 +23,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e6be44
+;   int g_INT_01e6be44
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0
@@ -55,7 +55,7 @@ section .text
     MOV EDX,0x1                         ; 005349c9
         ;   Label: LAB_005349c9
     LEA EDI,[EBX + 0x138cc]             ; 005349ce
-    MOV dword ptr [0x01e6be44],EDX      ; 005349d4 | DAT_01e6be44
+    MOV dword ptr [0x01e6be44],EDX      ; 005349d4 | g_INT_01e6be44
     PUSH EBP                            ; 005349da
         ;   Label: LAB_005349da
     PUSH EDI                            ; 005349db
@@ -104,10 +104,10 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00534a2f
     JMP 0x005349c9                      ; 00534a32
         ;   XREF to: 005349c9 (UNCONDITIONAL_JUMP)  ; LAB_005349c9
-    MOV EAX,[0x01e6be44]                ; 00534a34 | DAT_01e6be44
+    MOV EAX,[0x01e6be44]                ; 00534a34 | g_INT_01e6be44
         ;   Label: LAB_00534a34
     INC EAX                             ; 00534a39
-    MOV [0x01e6be44],EAX                ; 00534a3a | DAT_01e6be44
+    MOV [0x01e6be44],EAX                ; 00534a3a | g_INT_01e6be44
     CMP EAX,0x3                         ; 00534a3f
     JLE 0x005349da                      ; 00534a42
         ;   XREF to: 005349da (CONDITIONAL_JUMP)  ; LAB_005349da

@@ -26,7 +26,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440
   int iStack_20;
   
   if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
-    iVar4 = (dest_x - clip_left) * DAT_005fba20;
+    iVar4 = (dest_x - clip_left) * g_INT_005fba20;
     iVar5 = iVar4 >> 0x1f;
     pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80();
     iStack_24 = dest_y << 2;
@@ -35,7 +35,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440
       piVar6 = (int *)((int)this_ptr->row_offsets + iStack_20);
       puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);
       puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);
-      iVar1 = *(int *)(&DAT_01c5faec + iStack_24);
+      iVar1 = *(int *)((int)g_ARRAY_PTR_01c5faec + iStack_24);
       do {
         if (puVar7 <= puVar9) goto LAB_0050f4f8;
         uVar3 = (uint)*puVar9;
@@ -50,8 +50,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440
         count = count - (clip_left - uVar3);
         uVar3 = clip_left;
       }
-      while (iVar8 = (int)(DAT_005fba20 * uVar3) >> 0x1f,
-            dest_buffer = (void *)(((int)((DAT_005fba20 * uVar3 + iVar8 * -8) -
+      while (iVar8 = (int)(g_INT_005fba20 * uVar3) >> 0x1f,
+            dest_buffer = (void *)(((int)((g_INT_005fba20 * uVar3 + iVar8 * -8) -
                                          (uint)(iVar8 << 2 < 0)) >> 3) +
                                   ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3) +
                                   iVar1), iVar10 <= clip_right) {

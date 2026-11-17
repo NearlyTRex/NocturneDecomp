@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos)
 
 {
@@ -22,18 +20,18 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos
   
   iVar3 = (char_code + -0x20) * 0x91;
   uVar7 = (uint)(byte)(&DAT_00601440)[iVar3];
-  if ((((x_pos < _DAT_01c35e48) || (y_pos < _DAT_01c35e4c)) ||
-      ((int)((_DAT_01c35e50 + 1) - uVar7) < x_pos)) || (_DAT_01c35e54 + -10 < y_pos)) {
+  if ((((x_pos < g_INT_01c35e48) || (y_pos < g_INT_01c35e4c)) ||
+      ((int)((g_INT_01c35e50 + 1) - uVar7) < x_pos)) || (g_INT_01c35e54 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
     iVar8 = y_pos * 4;
     pcVar1 = &DAT_00601441 + iVar3;
     iVar3 = iVar8 + 0x2c;
-    if (DAT_006141c0 == 8) {
+    if (g_INT_006141c0 == 8) {
       do {
         iVar2 = 0;
-        puVar5 = (byte *)(*(int *)(&DAT_01c2a38c + iVar8) + x_pos);
+        puVar5 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar8) + x_pos);
         if (uVar7 != 0) {
           do {
             if (*pcVar1 == '\0') {
@@ -53,13 +51,13 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos
     }
     else {
       do {
-        puVar4 = (ushort *)(*(int *)(&DAT_01c2a38c + iVar8) + x_pos * 2);
+        puVar4 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar8) + x_pos * 2);
         iVar2 = 0;
         if (uVar7 != 0) {
           do {
-            uVar6 = _DAT_01c34910;
+            uVar6 = g_USHORT_ARRAY_01c34910[0];
             if (*pcVar1 != '\0') {
-              uVar6 = _DAT_01c34914;
+              uVar6 = g_USHORT_ARRAY_01c34910[2];
             }
             *puVar4 = uVar6;
             pcVar1 = pcVar1 + 1;
@@ -68,7 +66,7 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos
           } while (iVar2 < (int)uVar7);
         }
         iVar8 = iVar8 + 4;
-        *puVar4 = _DAT_01c34910;
+        *puVar4 = g_USHORT_ARRAY_01c34910[0];
       } while (iVar8 != iVar3);
     }
     iVar3 = uVar7 + 1;

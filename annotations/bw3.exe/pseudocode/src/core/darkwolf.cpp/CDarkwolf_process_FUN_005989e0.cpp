@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_ptr,float delta_time)
 
@@ -73,7 +72,7 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
   core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
             ((CCharacter *)this_ptr,delta_time * fVar5);
   if (iVar9 == 2) {
-    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005d9872;
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)2;
   }
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
@@ -85,12 +84,12 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
     pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base);
     iStack_1c = pSVar10->state_index;
     if ((((iStack_1c == 6) || (iStack_1c == 7)) && (iStack_1c == 7)) &&
-       ((fVar5 = delta_time * (float)_DAT_005d987a + this_ptr->morph_time,
+       ((fVar5 = delta_time * (float)0.5 + this_ptr->morph_time,
         this_ptr->morph_time = fVar5, 1.0 <= fVar5 && (this_ptr->morph_target != (CDemonActor *)0x0)
         ))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                (0x01D81080,this_ptr->morph_target);
-      this_ptr_00 = 0x01D81080;
+                (g_CDemonMission_PTR_00600530,this_ptr->morph_target);
+      this_ptr_00 = g_CDemonMission_PTR_00600530;
       this_ptr->morph_target = (CDemonActor *)0x0;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
                 (this_ptr_00,(CDemonActor *)this_ptr,1);
@@ -120,9 +119,9 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
     }
     if (((iStack_1c == 3) &&
         (fStack_18 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
-                               (&(this_ptr->base).base.model.base), fStack_18 < (float)_DAT_005d9882
-        )) && (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle), iVar9 == 0
-              )) {
+                               (&(this_ptr->base).base.model.base),
+        fStack_18 < (float)0.29999999999999999)) &&
+       (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle), iVar9 == 0)) {
       uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                          ((CDemonActor *)this_ptr,"dog_howl.wav");
       this_ptr->sfx_handle = uVar11;

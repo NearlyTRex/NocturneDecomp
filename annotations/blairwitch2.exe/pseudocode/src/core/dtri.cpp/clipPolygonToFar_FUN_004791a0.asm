@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00479188 = 00479254
 ;   undefined1* PTR_caseD_3_00479190 = 00479239
-;   undefined4 DAT_01c22258
-;   undefined4 DAT_01c2231c
+;   int g_INT_01c22258
+;   int g_INT_01c2231c
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00478900
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 004791a4
     SUB ESP,0x8                         ; 004791a6
     AND ESP,0xfffffff8                  ; 004791a9
-    MOV EBX,dword ptr [0x01c2231c]      ; 004791ac | DAT_01c2231c
+    MOV EBX,dword ptr [0x01c2231c]      ; 004791ac | g_INT_01c2231c
     MOV EDX,dword ptr [EBP + 0x14]      ; 004791b2
     MOV dword ptr [ESP],EDX             ; 004791b5
-    MOV EDX,dword ptr [0x01c22258]      ; 004791b8 | DAT_01c22258
+    MOV EDX,dword ptr [0x01c22258]      ; 004791b8 | g_INT_01c22258
     XOR EDI,EDI                         ; 004791be
     TEST EDX,EDX                        ; 004791c0
     JLE 0x00479247                      ; 004791c2
         ;   XREF to: 00479247 (CONDITIONAL_JUMP)  ; LAB_00479247
     MOV ESI,0x1c2225c                   ; 004791c8
-    MOV EAX,[0x01c22258]                ; 004791cd | DAT_01c22258
+    MOV EAX,[0x01c22258]                ; 004791cd | g_INT_01c22258
         ;   Label: LAB_004791cd
     LEA ECX,[EDI + 0x1]                 ; 004791d2
     CMP ECX,EAX                         ; 004791d5
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00479235
     INC EBX                             ; 00479238
         ;   Label: LAB_00479238
-    MOV ECX,dword ptr [0x01c22258]      ; 00479239 | DAT_01c22258
+    MOV ECX,dword ptr [0x01c22258]      ; 00479239 | g_INT_01c22258
         ;   Label: caseD_3
     INC EDI                             ; 0047923f
     ADD ESI,0xc                         ; 00479240
     CMP EDI,ECX                         ; 00479243
     JL 0x004791cd                       ; 00479245
         ;   XREF to: 004791cd (CONDITIONAL_JUMP)  ; LAB_004791cd
-    MOV dword ptr [0x01c2231c],EBX      ; 00479247 | DAT_01c2231c
+    MOV dword ptr [0x01c2231c],EBX      ; 00479247 | g_INT_01c2231c
         ;   Label: LAB_00479247
     MOV ESP,EBP                         ; 0047924d
     POP EBP                             ; 0047924f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00479276
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00479277
     PUSH EAX                            ; 0047927b
-    MOV dword ptr [0x01c2231c],EBX      ; 0047927c | DAT_01c2231c
+    MOV dword ptr [0x01c2231c],EBX      ; 0047927c | g_INT_01c2231c
     CALL core_dtri.cpp_clipLineToPlane_FUN_00478900 ; 00479282
         ;   XREF to: 00478900 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00478900(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c2231c]      ; 00479287 | DAT_01c2231c
+    MOV EBX,dword ptr [0x01c2231c]      ; 00479287 | g_INT_01c2231c
     ADD ESP,0x2c                        ; 0047928d
     JMP 0x00479238                      ; 00479290
         ;   XREF to: 00479238 (UNCONDITIONAL_JUMP)  ; LAB_00479238
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 004792d2
     PUSH ECX                            ; 004792d6
     PUSH EDX                            ; 004792d7
-    MOV dword ptr [0x01c2231c],EBX      ; 004792d8 | DAT_01c2231c
+    MOV dword ptr [0x01c2231c],EBX      ; 004792d8 | g_INT_01c2231c
     CALL core_dtri.cpp_clipLineToPlane_FUN_00478900 ; 004792de
         ;   XREF to: 00478900 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00478900(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c2231c]      ; 004792e3 | DAT_01c2231c
+    MOV EBX,dword ptr [0x01c2231c]      ; 004792e3 | g_INT_01c2231c
     ADD ESP,0x2c                        ; 004792e9
     JMP 0x00479238                      ; 004792ec
         ;   XREF to: 00479238 (UNCONDITIONAL_JUMP)  ; LAB_00479238

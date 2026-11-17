@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -63,7 +61,7 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
   CStack_70.x = -0.771;
   CStack_70.z = 2.536;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-            (&CStack_124,(CVector3f *)&DAT_0265370c,&CStack_70);
+            (&CStack_124,&g_CVector3f_0265370c,&CStack_70);
   (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffe7c);
   pfVar2 = afStack_dc;
   pfVar4 = &fStack_f4;
@@ -82,14 +80,14 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
   afStack_54[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
        *(float *)((int)&CStack_64 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4 + 8);
   core_actor_cpp_CVector3f_ctor_FUN_0040d340(this_ptr_01);
-  CStack_1c.x = fStack_40 * _DAT_005cc1f2;
-  CStack_1c.y = fStack_3c * _DAT_005cc1f2;
-  CStack_1c.z = fStack_38 * _DAT_005cc1f2;
-  fStack_94 = fStack_40 * _DAT_005cc1f2;
+  CStack_1c.x = fStack_40 * 0.5f;
+  CStack_1c.y = fStack_3c * 0.5f;
+  CStack_1c.z = fStack_38 * 0.5f;
+  fStack_94 = fStack_40 * 0.5f;
   afStack_a8[(uint)bVar6 * -2 + 6] = *(float *)((int)&CStack_1c + (uint)bVar6 * -8 + 4);
   afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
        *(float *)((int)&CStack_1c + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4 + 8);
-  fStack_8c = fStack_ec + (float)_DAT_005cc1fa;
+  fStack_8c = fStack_ec + (float)0.40000000000000002;
   CStack_a0.x = fStack_94;
   afStack_a8[(uint)bVar6 * -2 + 3] = afStack_a8[(uint)bVar6 * -2 + 6];
   afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =

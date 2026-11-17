@@ -9,7 +9,7 @@
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b4180(CGame *this_ptr)
 
 {
-  this_ptr->vtable = (void *)0x5e0704;
+  this_ptr->vtable = g_ARRAY_PTR_005e0704;
   this_ptr->game_pixx = 0x280;
   this_ptr->game_pixy = 0x1e0;
   this_ptr->game_bpp = 0x20;
@@ -76,7 +76,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b4180(CGame *this_ptr)
   this_ptr->bitmap_display_time = 0.0;
   this_ptr->new_set_event_pending = 1;
   this_ptr->end_timer = -1.0;
-  DAT_01d225c8 = 0;
+  g_CHAR_ARRAY_01d225c8[0] = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';
   core_game_cpp_CGame_resetMusic_FUN_004c4d10(this_ptr);
   return this_ptr;

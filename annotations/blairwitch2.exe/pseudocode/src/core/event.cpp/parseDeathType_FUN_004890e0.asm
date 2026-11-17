@@ -13,16 +13,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_generic_005d2f6c
 ;   TerminatedCString s_drown_005d2f74
-;   undefined4 DAT_005d2f7a
+;   TerminatedCString s_fall_005d2f7a
 ;   TerminatedCString s_explode_005d2f7f
 ;   TerminatedCString s_fallApart_005d2f87
 ;   TerminatedCString s_shatter_005d2f91
 ;   TerminatedCString s_electrocute_005d2f99
-;   undefined4 DAT_005d2fa5
+;   TerminatedCString s_gas_005d2fa5
 ;   TerminatedCString s_Chopped_005d2fa9
 ;   TerminatedCString s_Crushed_005d2fb1
 ;   TerminatedCString s_Impale_005d2fb9
-;   undefined4 DAT_005d2fc0
+;   TerminatedCString s_Fire_005d2fc0
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130
@@ -63,7 +63,7 @@ section .text
     POP ESI                             ; 00489123
     POP EBX                             ; 00489124
     RET                                 ; 00489125
-    PUSH 0x5d2f7a                       ; 00489126 | DAT_005d2f7a
+    PUSH 0x5d2f7a                       ; 00489126 | = "fall"
         ;   Label: LAB_00489126
     PUSH EBX                            ; 0048912b
     CALL crt_string.c__stricmp_FUN_005b8130 ; 0048912c
@@ -133,7 +133,7 @@ section .text
     POP ESI                             ; 004891c3
     POP EBX                             ; 004891c4
     RET                                 ; 004891c5
-    PUSH 0x5d2fa5                       ; 004891c6 | DAT_005d2fa5
+    PUSH 0x5d2fa5                       ; 004891c6 | = "gas"
         ;   Label: LAB_004891c6
     PUSH EBX                            ; 004891cb
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004891cc
@@ -189,7 +189,7 @@ section .text
     POP ESI                             ; 00489243
     POP EBX                             ; 00489244
     RET                                 ; 00489245
-    PUSH 0x5d2fc0                       ; 00489246 | DAT_005d2fc0
+    PUSH 0x5d2fc0                       ; 00489246 | = "Fire"
         ;   Label: LAB_00489246
     PUSH EBX                            ; 0048924b
     CALL crt_string.c__stricmp_FUN_005b8130 ; 0048924c

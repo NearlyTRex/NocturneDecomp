@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
 
 {
@@ -27,9 +25,10 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
   float fStack_14;
   
   bVar4 = 0;
-  fStack_14 = (float)this_ptr->fade_out_opacity * (float)_DAT_005d9699 * (float)_DAT_005d96a1;
-  fStack_18 = ((float)_DAT_005d9691 - (float)this_ptr->fade_out_opacity) * (float)_DAT_005d9699 *
-              (float)_DAT_005d96a1;
+  fStack_14 = (float)this_ptr->fade_out_opacity * (float)0.01 *
+              (float)65536;
+  fStack_18 = ((float)100 - (float)this_ptr->fade_out_opacity) *
+              (float)0.01 * (float)65536;
   if (this_ptr->fading_in == 0) {
     dVar5 = round
                       ((double)((fStack_14 * this_ptr->fade_timer) / this_ptr->max_fade_time));
@@ -54,18 +53,20 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_02,in_stack_ffffffac);
-  this_ptr_01 = DAT_005f2afc;
+  this_ptr_01 = g_CDemonRenderer_PTR_005f2afc;
   if (iVar1 != 0) {
     iVar1 = this_ptr->render_alpha;
     (this_ptr->base).base.was_rendered_opaque = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr_01,iVar1);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,0);
+    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120
+              (g_CDemonRenderer_PTR_005f2afc,1);
     this_ptr_00 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
               (this_ptr_00,-1,0x2e7,1,0);
-    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
-    if (_DAT_01d8e40c != 0) {
+    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
+              (g_CDemonRenderer_PTR_005f2afc);
+    if (g_INT_01d8e40c != 0) {
       core_motion_cpp_CMotionController_render_FUN_004fcdc0
                 (&this_ptr_00->base,(CDemonActor *)this_ptr);
     }

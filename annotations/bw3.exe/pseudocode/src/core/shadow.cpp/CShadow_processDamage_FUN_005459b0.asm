@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ShadowDead_005d13b3
-;   undefined4 DAT_005d13be
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_01d5ba14
+;   double g_DOUBLE_005d13be = 10
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   int g_INT_01d5ba14
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 00545aab
     FLD float ptr [ESP + 0x38]          ; 00545aaf
-    FMUL double ptr [0x005d13be]        ; 00545ab3 | DAT_005d13be
+    FMUL double ptr [0x005d13be]        ; 00545ab3 | g_DOUBLE_005d13be
     LEA EAX,[EBP + 0x1c]                ; 00545ab9
     ADD ESP,0x8                         ; 00545abc
     FLD float ptr [EBP + 0x4]           ; 00545abf
@@ -177,7 +177,7 @@ section .text
     CMP EAX,0xe                         ; 00545b0f
     JZ 0x00545a81                       ; 00545b12
         ;   XREF to: 00545a81 (CONDITIONAL_JUMP)  ; LAB_00545a81
-    MOV EAX,[0x01d5ba14]                ; 00545b18 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 00545b18 | g_INT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 00545b1d
     ADD EAX,0x20                        ; 00545b24
     PUSH EAX                            ; 00545b27
@@ -210,7 +210,7 @@ section .text
         ;   XREF to: 00545100 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_00545100(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00545b62
     PUSH 0x5d13b3                       ; 00545b65 | = "ShadowDead"
-    MOV ECX,dword ptr [0x005fba60]      ; 00545b6a | DAT_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00545b6a | g_CEventList_PTR_005fba60
     PUSH ECX                            ; 00545b70
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00545b71
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00513d20(CPodFile *this_ptr)
 
 {
@@ -76,23 +74,23 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00513d20(CPodFile *this_p
     if (iVar6 == 100) {
       return 0;
     }
-    _DAT_01d71de0 = "..\\engine\\pod.cpp";
-    _DAT_01d71de4 = 0x388;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\pod.cpp";
+    g_INT_01d71de4 = 0x388;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid pod version for %s: %d");
   }
   filename = this_ptr->filename;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
             (g_CEditorToolsPtr,"Verifying CRC for %s...");
-  p_Var2 = _fopen(filename,(char *)0x5cc61e);
+  p_Var2 = _fopen(filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
     return 0;
   }
   _fseek(p_Var2,iVar4 + -4,0);
   _fread(&uStack_20,4,1,p_Var2);
   _fclose(p_Var2);
-  iStack_1c = engine_dosio_cpp_getFileSize_FUN_004657f0((char *)0x5cc4c6,filename);
+  iStack_1c = engine_dosio_cpp_getFileSize_FUN_004657f0(&g_CHAR_005cc4c6,filename);
   iStack_1c = iStack_1c - iVar4;
-  p_Var2 = _fopen(filename,(char *)0x5cc4c7);
+  p_Var2 = _fopen(filename,"rb");
   p_Stack_18 = p_Var2;
   _fseek(p_Var2,iVar4,0);
   iVar6 = iStack_1c;

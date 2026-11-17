@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_00544380(CDeformableModel *this_ptr)
 
@@ -95,8 +94,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00544cd0(pCVar6);
     }
     if (local_24 == (CDeformableModelInstance *)0x0) {
-      _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-      _DAT_01d046a4 = 0x7e2;
+      g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+      g_INT_01d046a4 = 0x7e2;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModel::computePartDominantBones - out of memory!");
     }
     core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0(local_24,this_ptr);
@@ -126,17 +125,17 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
             puVar14 = (ushort *)
                       ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_20);
             pCVar8 = local_24->skinned_vertices_buffer + *puVar14;
-            local_8c = (float)pCVar8->x * _DAT_005fb9a0;
-            local_88 = (float)pCVar8->y * _DAT_005fb9a0;
-            local_84 = (float)pCVar8->z * _DAT_005fb9a0;
+            local_8c = (float)pCVar8->x * 0.00390625f;
+            local_88 = (float)pCVar8->y * 0.00390625f;
+            local_84 = (float)pCVar8->z * 0.00390625f;
             pCVar8 = local_24->skinned_vertices_buffer + puVar14[1];
-            local_98 = (float)pCVar8->x * _DAT_005fb9a0;
-            local_94 = (float)pCVar8->y * _DAT_005fb9a0;
-            local_90 = (float)pCVar8->z * _DAT_005fb9a0;
+            local_98 = (float)pCVar8->x * 0.00390625f;
+            local_94 = (float)pCVar8->y * 0.00390625f;
+            local_90 = (float)pCVar8->z * 0.00390625f;
             pCVar8 = local_24->skinned_vertices_buffer + puVar14[2];
-            local_68 = (float)pCVar8->x * _DAT_005fb9a0;
-            local_64 = (float)pCVar8->y * _DAT_005fb9a0;
-            local_60 = (float)pCVar8->z * _DAT_005fb9a0;
+            local_68 = (float)pCVar8->x * 0.00390625f;
+            local_64 = (float)pCVar8->y * 0.00390625f;
+            local_60 = (float)pCVar8->z * 0.00390625f;
             local_c8 = local_68 - local_98;
             local_c4 = local_64 - local_94;
             local_c0 = local_60 - local_90;

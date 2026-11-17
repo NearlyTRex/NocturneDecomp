@@ -21,7 +21,7 @@
 ;   TerminatedCString s_CHero_doHeroAction_type_005e4b40
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CDoorClassInfo.name_hash
@@ -315,7 +315,7 @@ section .text
     ADD EAX,0x2698                      ; 004ec89e
         ;   Label: LAB_004ec89e
     PUSH EAX                            ; 004ec8a3
-    MOV EBP,dword ptr [0x0061b4d0]      ; 004ec8a4 | DAT_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 004ec8a4 | g_CEventList_PTR_0061b4d0
     PUSH EBP                            ; 004ec8aa
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004ec8ab
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

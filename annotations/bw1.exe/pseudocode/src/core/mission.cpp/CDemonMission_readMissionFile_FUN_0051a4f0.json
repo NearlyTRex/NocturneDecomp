@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 409,
+    "complexity_score": 307,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 229,
-    "suspect_count": 15,
+    "pseudocode_lines": 227,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 799
+    "total_lines": 797
   },
   "cross_references": [
     {
@@ -162,26 +160,26 @@
     },
     {
       "addr": "005e9214",
-      "name": "DAT_005e9214",
-      "type": "undefined4",
+      "name": "s_s_005e9214",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e9218",
-      "name": "DAT_005e9218",
-      "type": "undefined4",
+      "name": "s_d_005e9218",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e921c",
-      "name": "DAT_005e921c",
-      "type": "undefined4",
+      "name": "s_s_005e921c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e9220",
-      "name": "DAT_005e9220",
-      "type": "undefined4",
+      "name": "s_d_005e9220",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -204,14 +202,14 @@
     },
     {
       "addr": "005e92a8",
-      "name": "DAT_005e92a8",
-      "type": "undefined4",
+      "name": "s_d_005e92a8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e92ac",
-      "name": "DAT_005e92ac",
-      "type": "undefined4",
+      "name": "s_d_005e92ac",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -300,25 +298,25 @@
     },
     {
       "addr": "0061f6c0",
-      "name": "DAT_0061f6c0",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_0061f6c0",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "0061f6c4",
-      "name": "DAT_0061f6c4",
+      "name": "g_CHAR_ARRAY_0061f6c0+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f728",
-      "name": "DAT_0061f728",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_0061f728",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "0061f72c",
-      "name": "DAT_0061f72c",
+      "name": "g_CHAR_ARRAY_0061f728+4",
       "type": "undefined4",
       "value": null
     },
@@ -330,14 +328,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -539,96 +537,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005e9214",
-      "severity": "mild",
-      "text": "_fscanf((_FILE *)load_flags,&DAT_005e9214);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_005e9218",
-      "severity": "mild",
-      "text": "_fscanf((_FILE *)load_flags,&DAT_005e9218);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005e921c",
-      "severity": "mild",
-      "text": "_fscanf((_FILE *)load_flags,&DAT_005e921c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_005e9220",
-      "severity": "mild",
-      "text": "_fscanf((_FILE *)load_flags,&DAT_005e9220);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(char *)((int)pcVar9",
+      "line": 82,
+      "match": "(char *)((int)pcVar8",
       "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pcVar8 = (char *)((int)pcVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_005e92a8",
-      "severity": "mild",
-      "text": "_fscanf((_FILE *)load_flags,&DAT_005e92a8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_005e92ac",
-      "severity": "mild",
-      "text": "_fscanf((_FILE *)load_flags,&DAT_005e92ac);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_0061f6c0",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_0061f6c0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_0061f728",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_0061f728;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `pcVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
-      "match": "(int)pcVar9",
+      "description": "Pointer value `pcVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 82,
+      "match": "(int)pcVar8",
       "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pcVar8 = (char *)((int)pcVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 144,
+      "line": 141,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -636,7 +562,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 82,
+      "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -644,7 +570,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 127,
+      "line": 124,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -652,7 +578,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 134,
+      "line": 131,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",

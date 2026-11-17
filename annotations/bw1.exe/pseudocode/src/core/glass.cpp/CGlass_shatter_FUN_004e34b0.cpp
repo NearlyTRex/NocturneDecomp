@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector3f *location)
 
 {
@@ -55,7 +53,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
   if (this_ptr->shattered == 0) {
     this_ptr->shattered = 1;
     if (this_ptr->mirror_flag != 0) {
-      pcVar2 = ">7YEARS.RAW" + 1;
+      pcVar2 = "7YEARS.RAW";
       pcVar3 = (this_ptr->glass_texture).texture_name;
       this_ptr->opacity = 0xffff;
       do {
@@ -70,7 +68,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
       core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00555730(g_CDemonSetPtr);
     }
     __arrinit(&local_12c,4,&g_CVectorTypeInfo);
-    local_70.x = (this_ptr->glass_size).x * (float)_DAT_005e3fd4;
+    local_70.x = (this_ptr->glass_size).x * (float)0.5;
     local_70.y = 0.0;
     local_70.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
@@ -149,8 +147,8 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
       local_12c.vertices[3].z = local_20;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (DAT_00612560,&this_ptr->glass_texture);
-    if (DAT_0061b4a8 == 0x40) {
+              (g_CDemonRenderer_PTR_00612560,&this_ptr->glass_texture);
+    if (g_INT_0061b4a8 == 0x40) {
       local_fc.x = 0xf80000;
       local_ec.y = 0x80000;
       local_fc.y = 0x80000;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(CStranger *this_ptr)
 
 {
@@ -66,7 +64,7 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(CStranger *t
   (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
   local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
                        ((CCharacter *)this_ptr,0);
-  if ((float)_DAT_005f6d31 <= local_14) {
+  if ((float)0.98999999999999999 <= local_14) {
     if (((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) &&
        ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       local_24 = &(this_ptr->base).base.base.location.position;
@@ -80,14 +78,14 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(CStranger *t
         local_18 = this_ptr_01;
         if ((this_ptr_01 != (CDemonActor *)0x0) &&
            (ABS((this_ptr->base).base.base.location.position.y - (this_ptr_01->location).position.y)
-            <= (float)_DAT_005f6d41)) {
+            <= (float)2)) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(this_ptr_01,local_24,&local_f0);
           CStack_70.y = local_f0.x;
           *(uint *)((int)&CStack_70 + (uint)bVar4 * -8 + 8) =
                *(uint *)((int)&local_f0 + (uint)bVar4 * -8 + 4);
           *(uint *)((int)&local_64 + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4) =
                *(uint *)((int)&local_f0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-          if ((ABS(local_64.x) <= (float)_DAT_005f6d49) && (0.0 <= (double)local_64.x)) {
+          if ((ABS(local_64.x) <= (float)4) && (0.0 <= (double)local_64.x)) {
             (*((this_ptr_01->vtable)._ub)->getBoundingBox)(this_ptr_01,SUB84(__BITCAST_UINT64((double)local_64.x),0));
             puVar2 = (uint *)&stack0xfffffeb8;
             puVar3 = (uint *)&stack0xfffffec8;
@@ -101,7 +99,7 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(CStranger *t
               local_64.x = fStack_124;
             }
             if (local_64.x < fStack_130) {
-              if (local_64.x < fStack_130 + (float)_DAT_005f6d51) goto LAB_0058cf0b;
+              if (local_64.x < fStack_130 + (float)-1) goto LAB_0058cf0b;
               local_64.x = fStack_130;
             }
             fStack_f4 = fStack_130 + fStack_124;
@@ -111,10 +109,10 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(CStranger *t
             afStack_84[(uint)bVar4 * -2] = *(float *)((int)&local_f0 + (uint)bVar4 * -8);
             afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
                  *(float *)((int)&local_f0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
-            afStack_54[2] = fStack_88 * _DAT_005f6d39;
-            afStack_54[3] = afStack_84[0] * _DAT_005f6d39;
-            fStack_44 = afStack_84[1] * _DAT_005f6d39;
-            fStack_40 = fStack_88 * _DAT_005f6d39;
+            afStack_54[2] = fStack_88 * 0.5f;
+            afStack_54[3] = afStack_84[0] * 0.5f;
+            fStack_44 = afStack_84[1] * 0.5f;
+            fStack_40 = fStack_88 * 0.5f;
             afStack_54[(uint)bVar4 * -2 + 6] = afStack_54[(uint)bVar4 * -2 + 3];
             afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
                  afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
@@ -136,7 +134,7 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(CStranger *t
             local_20 = (unaff_EBP->base).orient_matrix.m[0].z;
             fStack_30 = (unaff_EBP->base).orient_matrix.m[1].z;
             fStack_28 = (unaff_EBP->base).orient_matrix.m[2].z;
-            fVar5 = (float10)fcos((float10)_DAT_005f6d59);
+            fVar5 = (float10)fcos((float10)0.261799387791667);
             if (fVar5 <= ABS((float10)fStack_34 * (float10)fStack_28 +
                              (float10)(float)local_24 * (float10)local_20 +
                              (float10)fStack_2c * (float10)fStack_30)) {

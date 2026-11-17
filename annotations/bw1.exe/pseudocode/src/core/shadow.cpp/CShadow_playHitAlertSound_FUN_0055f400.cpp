@@ -16,7 +16,7 @@ void __cdecl core_shadow_cpp_CShadow_playHitAlertSound_FUN_0055f400(CShadow *thi
   iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[2]);
   if (iVar1 == 0) {
     if (this_ptr->is_shadow_beast == 1) {
-      sound_name = "@@shb_alert??.wav" + 2;
+      sound_name = "shb_alert??.wav";
     }
     else {
       sound_name = "ghost_child??.wav";

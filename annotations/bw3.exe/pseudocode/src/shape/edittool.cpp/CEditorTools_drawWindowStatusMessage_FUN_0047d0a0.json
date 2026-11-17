@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
     "total_lines": 101
   },
@@ -73,50 +72,50 @@
   "globals": [
     {
       "addr": "01c5b0e0",
-      "name": "DAT_01c5b0e0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c5b0e0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c5bae0",
-      "name": "DAT_01c5bae0",
-      "type": "undefined4",
+      "name": "g_INT_01c5bae0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5bae4",
-      "name": "DAT_01c5bae4",
-      "type": "undefined4",
+      "name": "g_INT_01c5bae4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5bb20",
-      "name": "DAT_01c5bb20",
-      "type": "undefined4",
+      "name": "g_INT_01c5bb20",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a8",
-      "name": "DAT_01c6b5a8",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5ac",
-      "name": "DAT_01c6b5ac",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -205,16 +204,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 16,
       "match": "&stack0x0000000c",
       "severity": "moderate",
       "text": "puStack_14 = &stack0x0000000c;",

@@ -21,7 +21,7 @@
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ee2fd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4f07
+;   double g_DOUBLE_005e4f07 = 1.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
@@ -49,7 +49,7 @@ section .text
     JNC 0x004eefa5                      ; 004eeeac
         ;   XREF to: 004eefa5 (CONDITIONAL_JUMP)  ; LAB_004eefa5
     FLD float ptr [EBX + 0x2fe0]        ; 004eeeb2
-    FCOMP double ptr [0x005e4f07]       ; 004eeeb8 | DAT_005e4f07
+    FCOMP double ptr [0x005e4f07]       ; 004eeeb8 | g_DOUBLE_005e4f07
     FNSTSW AX                           ; 004eeebe
     SAHF                                ; 004eeec0
     JA 0x004eefa5                       ; 004eeec1

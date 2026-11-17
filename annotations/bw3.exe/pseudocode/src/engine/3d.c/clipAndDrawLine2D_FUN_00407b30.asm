@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   undefined4 DAT_0072ff34
 ;   undefined4 DAT_0072ff38
-;   undefined4 DAT_0072ff44
-;   undefined4 DAT_0072ff48
+;   int g_INT_0072ff44
+;   int g_INT_0072ff48
 ;   undefined4 DAT_0072ff64
 ;   undefined4 DAT_0072ff68
-;   undefined4 DAT_0072ff74
-;   undefined4 DAT_0072ff78
+;   int g_INT_0072ff74
+;   int g_INT_0072ff78
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004011a0
@@ -278,17 +278,17 @@ section .text
     PUSH 0x61a7                         ; 00407d6d
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004e5630 ; 00407d72
         ;   XREF to: 004e5630 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_004e5630(int cache_index)
-    MOV EAX,[0x0072ff78]                ; 00407d77 | DAT_0072ff78
+    MOV EAX,[0x0072ff78]                ; 00407d77 | g_INT_0072ff78
     ADD ESP,0x4                         ; 00407d7c
     SAR EAX,0x10                        ; 00407d7f
     PUSH EAX                            ; 00407d82
-    MOV EAX,[0x0072ff74]                ; 00407d83 | DAT_0072ff74
+    MOV EAX,[0x0072ff74]                ; 00407d83 | g_INT_0072ff74
     SAR EAX,0x10                        ; 00407d88
     PUSH EAX                            ; 00407d8b
-    MOV EAX,[0x0072ff48]                ; 00407d8c | DAT_0072ff48
+    MOV EAX,[0x0072ff48]                ; 00407d8c | g_INT_0072ff48
     SAR EAX,0x10                        ; 00407d91
     PUSH EAX                            ; 00407d94
-    MOV EAX,[0x0072ff44]                ; 00407d95 | DAT_0072ff44
+    MOV EAX,[0x0072ff44]                ; 00407d95 | g_INT_0072ff44
     SAR EAX,0x10                        ; 00407d9a
     PUSH EAX                            ; 00407d9d
     CALL engine_2d.c_drawLine_FUN_004011a0 ; 00407d9e

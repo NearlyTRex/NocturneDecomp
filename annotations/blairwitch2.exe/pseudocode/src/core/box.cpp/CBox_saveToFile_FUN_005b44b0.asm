@@ -26,7 +26,7 @@
 ;   TerminatedCString s_s_f_f_f_005f13d4
 ;   TerminatedCString s_s_f_f_f_005f13e0
 ;   TerminatedCString s_s_d_005f13ec
-;   undefined4 DAT_005f13f8
+;   double g_DOUBLE_005f13f8 = 32
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005b8010
@@ -107,7 +107,7 @@ section .text
         ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     FLD float ptr [EBX + 0x94]          ; 005b4571
     ADD ESP,0x24                        ; 005b4577
-    FMUL double ptr [0x005f13f8]        ; 005b457a | DAT_005f13f8
+    FMUL double ptr [0x005f13f8]        ; 005b457a | g_DOUBLE_005f13f8
     SUB ESP,0x8                         ; 005b4580
     FSTP double ptr [ESP]               ; 005b4583
     PUSH EDI                            ; 005b4586

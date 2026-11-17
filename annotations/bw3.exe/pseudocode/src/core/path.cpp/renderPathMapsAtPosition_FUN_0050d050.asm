@@ -11,9 +11,9 @@
 ; int              Stack[0x14]:4   fog
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01ec1518
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01ec1518
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0
@@ -43,7 +43,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0050d079
     MOVSD ES:EDI,ESI                    ; 0050d07a
     MOVSD ES:EDI,ESI                    ; 0050d07b
-    MOV ECX,dword ptr [0x01ec1518]      ; 0050d07c | DAT_01ec1518
+    MOV ECX,dword ptr [0x01ec1518]      ; 0050d07c | g_INT_01ec1518
     XOR ESI,ESI                         ; 0050d082
     TEST ECX,ECX                        ; 0050d084
     JLE 0x0050d0b3                      ; 0050d086
@@ -58,7 +58,7 @@ section .text
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 0050d099
     JLE 0x0050d0e0                      ; 0050d0a3
         ;   XREF to: 0050d0e0 (CONDITIONAL_JUMP)  ; LAB_0050d0e0
-    MOV EDI,dword ptr [0x01ec1518]      ; 0050d0a5 | DAT_01ec1518
+    MOV EDI,dword ptr [0x01ec1518]      ; 0050d0a5 | g_INT_01ec1518
         ;   Label: LAB_0050d0a5
     INC ESI                             ; 0050d0ab
     ADD EBX,0x4                         ; 0050d0ac
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_0050d0bb
     MOV ECX,0x6b6                       ; 0050d0c0
     PUSH 0x5cb97d                       ; 0050d0c5
-    MOV dword ptr [0x01d71de0],EDX      ; 0050d0ca | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0050d0d0 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0050d0ca | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0050d0d0 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050d0d6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050d0db

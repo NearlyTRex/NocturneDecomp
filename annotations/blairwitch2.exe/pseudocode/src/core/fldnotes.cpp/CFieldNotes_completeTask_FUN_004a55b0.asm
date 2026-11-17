@@ -17,10 +17,10 @@
 ;   TerminatedCString s_core_fldnotes_cpp_005d6424
 ;   TerminatedCString s_Field_note_s_has_invalid_005d6439
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_00616014
-;   undefined4 DAT_01cab9f0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_00616014 = 0x1
+;   int g_INT_01cab9f0
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0
@@ -37,7 +37,7 @@ section .text
     PUSH EDI                            ; 004a55b2
     PUSH EBP                            ; 004a55b3
     MOV EDI,dword ptr [ESP + 0x18]      ; 004a55b4
-    MOV EDX,dword ptr [0x01cab9f0]      ; 004a55b8 | DAT_01cab9f0
+    MOV EDX,dword ptr [0x01cab9f0]      ; 004a55b8 | g_INT_01cab9f0
     XOR EBP,EBP                         ; 004a55be
     XOR EBX,EBX                         ; 004a55c0
     TEST EDX,EDX                        ; 004a55c2
@@ -79,19 +79,19 @@ section .text
     MOV EDI,0x5d6424                    ; 004a5609 | = "..\\core\\fldnotes.cpp"
     MOV EBP,0xa42                       ; 004a560e
     PUSH 0x5d6439                       ; 004a5613 | = "Field note %s has invalid type %d"
-    MOV dword ptr [0x01d046a0],EDI      ; 004a5618 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004a561e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004a5618 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 004a561e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a5624
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004a5629
-    MOV dword ptr [0x00616014],0x1      ; 004a562c | DAT_00616014
+    MOV dword ptr [0x00616014],0x1      ; 004a562c | g_INT_00616014
         ;   Label: caseD_4
     POP EBP                             ; 004a5636
     POP EDI                             ; 004a5637
     POP ESI                             ; 004a5638
     POP EBX                             ; 004a5639
     RET                                 ; 004a563a
-    MOV ECX,dword ptr [0x01cab9f0]      ; 004a563b | DAT_01cab9f0
+    MOV ECX,dword ptr [0x01cab9f0]      ; 004a563b | g_INT_01cab9f0
         ;   Label: LAB_004a563b
     INC EBX                             ; 004a5641
     ADD ESI,0x2e4                       ; 004a5642
@@ -111,7 +111,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 004a5661
         ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a5666
-    MOV dword ptr [0x00616014],0x1      ; 004a5669 | DAT_00616014
+    MOV dword ptr [0x00616014],0x1      ; 004a5669 | g_INT_00616014
     POP EBP                             ; 004a5673
     POP EDI                             ; 004a5674
     POP ESI                             ; 004a5675
@@ -126,7 +126,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 004a5689
         ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a568e
-    MOV dword ptr [0x00616014],0x1      ; 004a5691 | DAT_00616014
+    MOV dword ptr [0x00616014],0x1      ; 004a5691 | g_INT_00616014
     POP EBP                             ; 004a569b
     POP EDI                             ; 004a569c
     POP ESI                             ; 004a569d
@@ -134,7 +134,7 @@ section .text
     RET                                 ; 004a569f
     MOV dword ptr [EDX + 0x140],0x4     ; 004a56a0
         ;   Label: caseD_2
-    MOV dword ptr [0x00616014],0x1      ; 004a56aa | DAT_00616014
+    MOV dword ptr [0x00616014],0x1      ; 004a56aa | g_INT_00616014
     POP EBP                             ; 004a56b4
     POP EDI                             ; 004a56b5
     POP ESI                             ; 004a56b6

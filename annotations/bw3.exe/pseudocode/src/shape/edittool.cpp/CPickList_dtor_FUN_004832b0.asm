@@ -18,7 +18,7 @@
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047dcc2
 ;
 ; Referenced Globals:
-;   undefined1* g_CPickListVTable = 004832b0
+;   CPickList_full_vtable g_CPickListVTable
 ;   WatcomTypeInfo g_CPickListTypeInfo
 ;
 ; Called Functions:

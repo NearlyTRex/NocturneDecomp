@@ -17,10 +17,10 @@
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 00591315
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e48c9
-;   undefined4 DAT_005e48cd
-;   undefined4 DAT_005e48d5
-;   undefined4 DAT_005e48dd
+;   float g_FLOAT_005e48c9 = 0.5
+;   double g_DOUBLE_005e48cd = 1.20000000000000
+;   double g_DOUBLE_005e48d5 = 5
+;   double g_DOUBLE_005e48dd = 0.610865238180555
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -168,11 +168,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eb9fb
     MOVSD ES:EDI,ESI                    ; 004eb9fc
     FLD float ptr [ESP + 0xb0]          ; 004eb9fd
-    FMUL float ptr [0x005e48c9]         ; 004eba04 | DAT_005e48c9
+    FMUL float ptr [0x005e48c9]         ; 004eba04 | g_FLOAT_005e48c9
     FLD float ptr [ESP + 0xb4]          ; 004eba0a
-    FMUL float ptr [0x005e48c9]         ; 004eba11 | DAT_005e48c9
+    FMUL float ptr [0x005e48c9]         ; 004eba11 | g_FLOAT_005e48c9
     FLD float ptr [ESP + 0xb8]          ; 004eba17
-    FMUL float ptr [0x005e48c9]         ; 004eba1e | DAT_005e48c9
+    FMUL float ptr [0x005e48c9]         ; 004eba1e | g_FLOAT_005e48c9
     LEA EDI,[ESP + 0xd4]                ; 004eba24
     LEA ESI,[ESP + 0xbc]                ; 004eba2b
     FXCH ST2                            ; 004eba32
@@ -227,11 +227,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004ebad5
     MOVSD ES:EDI,ESI                    ; 004ebad6
     FLD float ptr [ESP + 0x44]          ; 004ebad7
-    FMUL float ptr [0x005e48c9]         ; 004ebadb | DAT_005e48c9
+    FMUL float ptr [0x005e48c9]         ; 004ebadb | g_FLOAT_005e48c9
     FLD float ptr [ESP + 0x48]          ; 004ebae1
-    FMUL float ptr [0x005e48c9]         ; 004ebae5 | DAT_005e48c9
+    FMUL float ptr [0x005e48c9]         ; 004ebae5 | g_FLOAT_005e48c9
     FLD float ptr [ESP + 0x4c]          ; 004ebaeb
-    FMUL float ptr [0x005e48c9]         ; 004ebaef | DAT_005e48c9
+    FMUL float ptr [0x005e48c9]         ; 004ebaef | g_FLOAT_005e48c9
     LEA EDI,[ESP + 0x98]                ; 004ebaf5
     LEA ESI,[ESP + 0x8c]                ; 004ebafc
     FXCH ST2                            ; 004ebb03
@@ -250,7 +250,7 @@ section .text
     XOR EDX,EDX                         ; 004ebb33
     FSUBR float ptr [ESP + 0x64]        ; 004ebb35
     MOV dword ptr [ESP + 0x9c],EDX      ; 004ebb39
-    FCOMP double ptr [0x005e48cd]       ; 004ebb40 | DAT_005e48cd
+    FCOMP double ptr [0x005e48cd]       ; 004ebb40 | g_DOUBLE_005e48cd
     FNSTSW AX                           ; 004ebb46
     SAHF                                ; 004ebb48
     JA 0x004eb946                       ; 004ebb49
@@ -265,7 +265,7 @@ section .text
     JA 0x004eb946                       ; 004ebb60
         ;   XREF to: 004eb946 (CONDITIONAL_JUMP)  ; LAB_004eb946
     FLD double ptr [ESP]                ; 004ebb66
-    FCOMP double ptr [0x005e48d5]       ; 004ebb69 | DAT_005e48d5
+    FCOMP double ptr [0x005e48d5]       ; 004ebb69 | g_DOUBLE_005e48d5
     FNSTSW AX                           ; 004ebb6f
     SAHF                                ; 004ebb71
     JA 0x004eb946                       ; 004ebb72
@@ -288,7 +288,7 @@ section .text
     FLD float ptr [ESP + 0xec]          ; 004ebbaa
     FABS                                ; 004ebbb1
     ADD ESP,0x4                         ; 004ebbb3
-    FCOMP double ptr [0x005e48dd]       ; 004ebbb6 | DAT_005e48dd
+    FCOMP double ptr [0x005e48dd]       ; 004ebbb6 | g_DOUBLE_005e48dd
     FNSTSW AX                           ; 004ebbbc
     SAHF                                ; 004ebbbe
     JA 0x004eb946                       ; 004ebbbf

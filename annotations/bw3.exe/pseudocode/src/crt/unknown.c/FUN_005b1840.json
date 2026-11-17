@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 170,
+    "complexity_score": 156,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 10,
+    "pseudocode_lines": 61,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_alignment_array",
-      "undefined_data",
+      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 153
+    "total_lines": 159
   },
   "cross_references": [],
   "function": {
@@ -115,27 +115,27 @@
     },
     {
       "addr": "005daf78",
-      "name": "DAT_005daf78",
-      "type": "undefined4",
+      "name": "s_bgnthd_005daf78",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005daf7c",
-      "name": "DAT_005daf7c",
+      "name": "s_bgnthd_005daf78+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005daf80",
-      "name": "DAT_005daf80",
-      "type": "undefined1",
+      "name": "s_bgnthd_005daf78+8",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060799c",
-      "name": "DAT_0060799c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0060799c",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -255,16 +255,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0060799c",
-      "severity": "mild",
-      "text": "if (DAT_0060799c == -1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_2c = param_1;",
@@ -272,31 +264,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 33,
       "match": "param_3",
       "severity": "mild",
       "text": "uStack_28 = param_3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005daf7c",
-      "severity": "mild",
-      "text": "(&uStack_48)[(uint)bVar2 * -2] = (&DAT_005daf7c)[(uint)bVar2 * -2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005daf80",
-      "severity": "mild",
-      "text": "(&DAT_005daf80)[(uint)bVar2 * -8 + (uint)bVar2 * -8];",
-      "type": "undefined_data"
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0xffffffb4",
+      "severity": "moderate",
+      "text": "pvStack_20 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",

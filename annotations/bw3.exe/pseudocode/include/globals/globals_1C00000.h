@@ -5,6 +5,12 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonCube.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SFace.h"
+#include "types/structs/SMRGLSkyTexture.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C00000
@@ -12,4 +18,30 @@
 
 // CDemonActorType
 extern CDemonActorType g_CDripClassInfo;
+
+// CDemonCube*[20000]
+extern CDemonCube* g_CDemonCube_PTR_ARRAY_01c0b7bc[20000];
+
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c0b3dc;
+
+// CVector3f
+extern CVector3f g_CVector3f_01c0b798;
+
+// SFace*[5000]
+extern SFace* g_SFace_PTR_ARRAY_01c04960[5000];
+
+// SMRGLSkyTexture[24]
+extern SMRGLSkyTexture g_SMRGLSkyTexture_ARRAY_01c0b558[24];
+
+// SMRGLTextureBasic[300]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01c09780[300];
+
+// int
+extern int g_INT_01c0b7a4;
+extern int g_INT_01c0b7a8;
+extern int g_INT_01c0b7ac;
+extern int g_INT_01c0b7b0;
+extern int g_INT_01c0b7b4;
+extern int g_INT_01c0b7b8;
 

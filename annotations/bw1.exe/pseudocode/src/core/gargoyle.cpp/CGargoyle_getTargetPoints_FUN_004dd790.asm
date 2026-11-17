@@ -8,11 +8,11 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cd0c9c
-;   undefined4 DAT_01cd0cb0
-;   undefined4 DAT_01cd0cb4
-;   undefined4 DAT_01cd0cc0
-;   undefined4 DAT_01cd0cc8
+;   int[12] g_INT_ARRAY_01cd0c9c
+;   undefined4 g_INT_ARRAY_01cd0c9c[5]
+;   undefined4 g_INT_ARRAY_01cd0c9c[6]
+;   undefined4 g_INT_ARRAY_01cd0c9c[9]
+;   undefined4 g_INT_ARRAY_01cd0c9c[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -28,7 +28,7 @@ section .text
     PUSH EBP                            ; 004dd793
     SUB ESP,0x78                        ; 004dd794
     MOV EBP,dword ptr [ESP + 0x8c]      ; 004dd797
-    MOV EDX,dword ptr [0x01cd0c9c]      ; 004dd79e | DAT_01cd0c9c
+    MOV EDX,dword ptr [0x01cd0c9c]      ; 004dd79e | g_INT_ARRAY_01cd0c9c
     PUSH EDX                            ; 004dd7a4
     LEA EAX,[EBP + 0x158]               ; 004dd7a5
     MOV EBX,0x1                         ; 004dd7ab
@@ -52,7 +52,7 @@ section .text
     CMP dword ptr [EBP + EAX*0x4 + 0x2298],0x0 ; 004dd7e1
     JZ 0x004dd842                       ; 004dd7e9
         ;   XREF to: 004dd842 (CONDITIONAL_JUMP)  ; LAB_004dd842
-    MOV EDI,dword ptr [0x01cd0cb0]      ; 004dd7eb | DAT_01cd0cb0
+    MOV EDI,dword ptr [0x01cd0cb0]      ; 004dd7eb | g_INT_ARRAY_01cd0c9c[5]
     PUSH EDI                            ; 004dd7f1
     LEA EAX,[EBP + 0x158]               ; 004dd7f2
     PUSH EAX                            ; 004dd7f8
@@ -87,7 +87,7 @@ section .text
     CMP dword ptr [EBP + EAX*0x4 + 0x2298],0x0 ; 004dd848
     JZ 0x004dd8a7                       ; 004dd850
         ;   XREF to: 004dd8a7 (CONDITIONAL_JUMP)  ; LAB_004dd8a7
-    MOV ECX,dword ptr [0x01cd0cb4]      ; 004dd852 | DAT_01cd0cb4
+    MOV ECX,dword ptr [0x01cd0cb4]      ; 004dd852 | g_INT_ARRAY_01cd0c9c[6]
     PUSH ECX                            ; 004dd858
     LEA EAX,[EBP + 0x158]               ; 004dd859
     PUSH EAX                            ; 004dd85f
@@ -122,7 +122,7 @@ section .text
     CMP dword ptr [EBP + EAX*0x4 + 0x2298],0x0 ; 004dd8ad
     JZ 0x004dd90e                       ; 004dd8b5
         ;   XREF to: 004dd90e (CONDITIONAL_JUMP)  ; LAB_004dd90e
-    MOV EDI,dword ptr [0x01cd0cc0]      ; 004dd8b7 | DAT_01cd0cc0
+    MOV EDI,dword ptr [0x01cd0cc0]      ; 004dd8b7 | g_INT_ARRAY_01cd0c9c[9]
     PUSH EDI                            ; 004dd8bd
     LEA EAX,[EBP + 0x158]               ; 004dd8be
     PUSH EAX                            ; 004dd8c4
@@ -173,7 +173,7 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 004dd939
     JMP 0x004dd7db                      ; 004dd93c
         ;   XREF to: 004dd7db (UNCONDITIONAL_JUMP)  ; LAB_004dd7db
-    MOV ECX,dword ptr [0x01cd0cc8]      ; 004dd941 | DAT_01cd0cc8
+    MOV ECX,dword ptr [0x01cd0cc8]      ; 004dd941 | g_INT_ARRAY_01cd0c9c[11]
         ;   Label: LAB_004dd941
     PUSH ECX                            ; 004dd947
     ADD EBP,0x158                       ; 004dd948

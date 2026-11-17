@@ -10,7 +10,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_archive_FUN_0058f510(CZombiePri
 
 {
   core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
-  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"?speed" + 1);
+  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30
             (&(this_ptr->base).base.model,"modelName");
   if (g_CZombiePriestClassVersion < 4) {

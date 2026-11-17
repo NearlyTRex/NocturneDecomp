@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00437b90(void *sprite_data,int dest_x,int dest_y,int width,int height)
 
 {
@@ -17,40 +15,39 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00437b90(void *sprite_d
   int iVar4;
   int iVar5;
   int iVar6;
-  int iVar7;
+  byte *puVar7;
   
-  iVar1 = _DAT_01c4f010 - dest_x;
-  iVar2 = _DAT_01c43550 - _DAT_01c4354c;
-  iVar6 = _DAT_01c4f008 - dest_x;
+  iVar1 = g_INT_01c4f010 - dest_x;
+  iVar2 = (int)g_ARRAY_PTR_01c4354c[1] - (int)g_ARRAY_PTR_01c4354c[0];
+  iVar6 = g_INT_01c4f008 - dest_x;
   if (sprite_data != (void *)0x0) {
     pCVar3 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
     iVar4 = width + -1;
-    if (DAT_0061b4a0 == 8) {
-      iVar7 = *(int *)(&DAT_01c4354c + dest_y * 4) + dest_x;
+    if (g_INT_0061b4a0 == 8) {
+      puVar7 = g_ARRAY_PTR_01c4354c[dest_y] + dest_x;
       iVar5 = 0;
       if (((iVar6 < 1) || (iVar5 = iVar6, iVar6 <= iVar4)) &&
          (((iVar4 <= iVar1 || (iVar4 = iVar1, iVar5 <= iVar1)) && (iVar1 = 0, 0 < height)))) {
         do {
-          (*pCVar3)((void *)(iVar7 + iVar5),(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);
+          (*pCVar3)(puVar7 + iVar5,(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);
           iVar1 = iVar1 + 1;
-          iVar7 = iVar7 + iVar2;
+          puVar7 = puVar7 + iVar2;
           sprite_data = (void *)((int)sprite_data + width);
         } while (iVar1 < height);
         return;
       }
     }
     else {
-      iVar7 = *(int *)(&DAT_01c4354c + dest_y * 4) + dest_x * 2;
+      puVar7 = g_ARRAY_PTR_01c4354c[dest_y] + dest_x * 2;
       iVar5 = 0;
       if (((iVar6 < 1) || (iVar5 = iVar6, iVar6 <= iVar4)) &&
          ((iVar4 <= iVar1 || (iVar4 = iVar1, iVar5 <= iVar1)))) {
         iVar1 = 0;
         if (0 < height) {
           do {
-            (*pCVar3)((void *)(iVar5 * 2 + iVar7),(void *)((int)sprite_data + iVar5),
-                      (iVar4 - iVar5) + 1);
+            (*pCVar3)(puVar7 + iVar5 * 2,(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);
             iVar1 = iVar1 + 1;
-            iVar7 = iVar7 + (iVar2 / 2) * 2;
+            puVar7 = puVar7 + (iVar2 / 2) * 2;
             sprite_data = (void *)((int)sprite_data + width);
           } while (iVar1 < height);
           return;

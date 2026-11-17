@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(CCharacter *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -28,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(CCharacter 
   bVar3 = 0;
   if (this_ptr->is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (0x01C51D80,"?ShotInvulnerable" + 1);
+              (g_CEventList_PTR_0061b4d0,"ShotInvulnerable");
     return;
   }
   if (damage_info->damage_amount <= 0.0) {
@@ -108,7 +106,7 @@ LAB_00431a64:
                this_ptr->blood_type);
   }
   if ((this_ptr->health_bar_mode == HEALTH_BAR_WHEN_HURT) &&
-     (this_ptr != *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4))) {
+     ((CHero *)this_ptr != g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004d6340
               (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
                ,5.0);

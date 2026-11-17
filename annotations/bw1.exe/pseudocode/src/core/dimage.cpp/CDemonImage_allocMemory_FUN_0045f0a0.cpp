@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_0045f0a0(CDemonImage *this_ptr)
 
 {
@@ -19,8 +17,8 @@ void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_0045f0a0(CDemonImage *t
   if (pvVar1 != (void *)0x0) {
     return;
   }
-  _DAT_01d1d400 = "..\\core\\dimage.cpp";
-  _DAT_01d1d404 = 0x31;
+  g_CHAR_PTR_01d1d400 = "..\\core\\dimage.cpp";
+  g_INT_01d1d404 = 0x31;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonImage::allocMemory - Out of memory!");
   return;
 }

@@ -19,7 +19,7 @@
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840 at 00420915
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f3e28
+;   float g_FLOAT_005f3e28 = 0.5
 ;
 ; Called Functions:
 ;   core_bugs.cpp_maxFloat_FUN_00422120
@@ -37,7 +37,7 @@ section .text
     FLD float ptr [ESP + 0x24]          ; 0041feb9
     FSUB float ptr [ESI + 0x1e628]      ; 0041febd
     FLD1                                ; 0041fec3
-    FDIV float ptr [0x005f3e28]         ; 0041fec5 | DAT_005f3e28
+    FDIV float ptr [0x005f3e28]         ; 0041fec5 | g_FLOAT_005f3e28
     FLD float ptr [ESP + 0x28]          ; 0041fecb
     FSUB float ptr [ESI + 0x1e62c]      ; 0041fecf
     FXCH ST2                            ; 0041fed5

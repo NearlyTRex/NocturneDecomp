@@ -11,8 +11,8 @@
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20 at 00513f02
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -44,8 +44,8 @@ section .text
         ;   Label: LAB_0051423b
     MOV ESI,0x401                       ; 00514240
     PUSH 0x5cc7d6                       ; 00514245
-    MOV dword ptr [0x01d71de0],ECX      ; 0051424a | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00514250 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0051424a | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00514250 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00514256
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051425b
@@ -64,8 +64,8 @@ section .text
     MOV EBP,0x5cc805                    ; 00514277
     MOV EAX,0x406                       ; 0051427c
     PUSH 0x5cc817                       ; 00514281
-    MOV dword ptr [0x01d71de0],EBP      ; 00514286 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 0051428c | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 00514286 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 0051428c | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00514291
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00514296

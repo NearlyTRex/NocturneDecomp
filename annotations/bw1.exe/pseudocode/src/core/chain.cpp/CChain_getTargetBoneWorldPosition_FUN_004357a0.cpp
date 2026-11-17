@@ -18,7 +18,7 @@ CVector3f * __stack_esi core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_004
   
   bVar2 = 0;
   core_xform_cpp_transformVector3x4_FUN_005b5080
-            ((CVector3f *)&DAT_02c8af28,
+            (&g_CVector3f_02c8af28,
              (this_ptr->target->model).bone_transform.bone_model_matrices + this_ptr->target_bone,
              &CStack_18);
   CStack_24.x = CStack_18.x;

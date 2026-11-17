@@ -15,8 +15,7 @@ void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005a84d0(CVehicle *this_ptr)
   CKeyFramedModelInstance *model_ptr;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->model,">@modelName" + 2);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->tire_count,"tireCount");
   iVar1 = 0;
   if (0 < this_ptr->tire_count) {

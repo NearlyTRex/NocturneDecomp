@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_demnfolk_cpp_CDemnfolk_processDismemberment_FUN_00458680(CDemnfolk *this_ptr,SDamageInfo *damage_info)
 
@@ -97,7 +96,7 @@ switchD_004586b6_default:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0) {
         damage_info->damage_amount = 9999.0;
       }
-      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005ba8f2;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
       if (this_ptr->part_indices[4] < 0) {
         damage_info->damage_amount = 999.0;
       }
@@ -105,11 +104,11 @@ switchD_004586b6_default:
   }
   iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[6]) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005ba902;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
     return;
   }
   if ((iVar1 != this_ptr->part_indices[4]) && (iVar1 != this_ptr->part_indices[5])) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005ba8fa;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
   damage_info->damage_amount = damage_info->damage_amount;

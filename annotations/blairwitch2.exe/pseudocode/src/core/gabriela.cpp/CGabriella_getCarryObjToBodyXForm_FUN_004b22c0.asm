@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_gabriela_cpp_005d71c3
 ;   TerminatedCString s_Don_t_know_how_to_carry_005d71d8
-;   undefined4 DAT_005d71fb
-;   undefined4 DAT_005d7203
-;   undefined4 DAT_005d720b
-;   undefined4 DAT_007bcc84
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005d71fb = 0.5
+;   double g_DOUBLE_005d7203 = 0.700000000000000
+;   double g_DOUBLE_005d720b = 0.300000000000000
+;   undefined4 g_CDemonActorType_007bcc4c.name_hash
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -52,7 +52,7 @@ section .text
     XOR ECX,ECX                         ; 004b22ee
     MOV dword ptr [ESP + 0x1d4],EAX     ; 004b22f0
     MOV dword ptr [ESP + 0x128],ECX     ; 004b22f7
-    MOV EAX,[0x007bcc84]                ; 004b22fe | DAT_007bcc84
+    MOV EAX,[0x007bcc84]                ; 004b22fe | g_CDemonActorType_007bcc4c.name_hash
     MOV dword ptr [ESP + 0x124],ECX     ; 004b2303
     PUSH EAX                            ; 004b230a
     MOV dword ptr [ESP + 0x124],ECX     ; 004b230b
@@ -194,7 +194,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b254b
     MOVSD ES:EDI,ESI                    ; 004b254c
     MOVSD ES:EDI,ESI                    ; 004b254d
-    FLD float ptr [0x005d71fb]          ; 004b254e | DAT_005d71fb
+    FLD float ptr [0x005d71fb]          ; 004b254e | g_FLOAT_005d71fb
     FLD float ptr [ESP + 0x180]         ; 004b2554
     FMUL ST1                            ; 004b255b
     FLD float ptr [ESP + 0x184]         ; 004b255d
@@ -292,9 +292,9 @@ section .text
     MOV dword ptr [ESP + 0x128],EAX     ; 004b26cb
     FLD float ptr [ESP + 0x110]         ; 004b26d2
         ;   Label: LAB_004b26d2
-    FMUL double ptr [0x005d7203]        ; 004b26d9 | DAT_005d7203
+    FMUL double ptr [0x005d7203]        ; 004b26d9 | g_DOUBLE_005d7203
     FLD float ptr [ESP + 0x11c]         ; 004b26df
-    FMUL double ptr [0x005d720b]        ; 004b26e6 | DAT_005d720b
+    FMUL double ptr [0x005d720b]        ; 004b26e6 | g_DOUBLE_005d720b
     FADDP                               ; 004b26ec
     FSTP float ptr [ESP + 0x140]        ; 004b26ee
     JMP 0x004b233f                      ; 004b26f5
@@ -334,8 +334,8 @@ section .text
     MOV EDI,0x5d71c3                    ; 004b2750 | = "..\\core\\gabriela.cpp"
     MOV EAX,0x944                       ; 004b2755
     PUSH 0x5d71d8                       ; 004b275a | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 004b275f | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004b2765 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004b275f | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004b2765 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b276a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004b276f

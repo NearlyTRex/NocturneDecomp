@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_ptr,float delta_time)
 
@@ -16,7 +15,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
   float fVar1;
   EHeroTask EVar2;
   float fVar3;
-  CEnemy *pCVar4;
+  CHero *pCVar4;
   SMotion *pSVar5;
   CPathMap *this_ptr_01;
   int iVar6;
@@ -43,7 +42,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
   float local_40;
   float local_3c;
   float local_30;
-  CEnemy *local_2c;
+  CHero *local_2c;
   float local_28;
   int local_24;
   float local_20;
@@ -51,27 +50,31 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
   float local_18;
   
   bVar7 = 0;
-  local_2c = *(CEnemy **)(_DAT_01cedef4 * 4 + 0x1cedee4);
+  local_2c = g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
   local_24 = 0;
   local_20 = 0.25;
   local_30 = 0.7853982;
   memset(&(this_ptr->base).player_input,0,0x34);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    iVar6 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-    local_60 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar6 + 0x20);
-    local_5c = (this_ptr->base).base.base.location.position.y - *(float *)(iVar6 + 0x24);
-    local_58 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar6 + 0x28);
+    pCVar4 = g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
+    local_60 = (this_ptr->base).base.base.location.position.x -
+               (pCVar4->base).base.location.position.x;
+    local_5c = (this_ptr->base).base.base.location.position.y -
+               (pCVar4->base).base.location.position.y;
+    local_58 = (this_ptr->base).base.base.location.position.z -
+               (pCVar4->base).base.location.position.z;
     local_9c.x = local_60;
     *(float *)((int)&local_9c + (uint)bVar7 * -8 + 4) = local_8c[(uint)bVar7 * -2 + 0xc];
     *(float *)((int)&local_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
     local_48 = SQRT(local_9c.z * local_9c.z + local_9c.x * local_9c.x + local_9c.y * local_9c.y);
-    if ((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_48 < _DAT_005d9942)) &&
+    if ((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_48 < 20.0f)) &&
        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
     {
       local_dc = 9999.9;
-      pCVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004d00c0(&this_ptr->base,&stack0xffffff24);
-      if ((pCVar4 == (CEnemy *)0x0) || ((float)_DAT_005d9946 <= local_dc)) {
+      pCVar4 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004d00c0
+                                  (&this_ptr->base,&stack0xffffff24);
+      if ((pCVar4 == (CHero *)0x0) || ((float)20 <= local_dc)) {
         if (this_ptr->guns_drawn != 0) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }
@@ -98,11 +101,11 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
     }
     fVar1 = SQRT(local_9c.z * local_9c.z + local_9c.x * local_9c.x + local_9c.y * local_9c.y);
     local_1c = fVar1;
-    if ((float)_DAT_005d994e <= fVar1) {
+    if ((float)6 <= fVar1) {
       this_ptr_01 = (CPathMap *)0x0;
       if (local_24 == 0) {
-        iVar6 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-        this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar6 + 0x2b0) + 0xcc))(iVar6);
+        this_ptr_01 = (*((g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.vtable._ub)->
+                        getPathMap)((CDemonActor *)g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
         this_ptr_01 = core_path_cpp_getPathMap_FUN_00513ea0(&(local_2c->base).base.location);
@@ -113,7 +116,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
       if (iVar6 != 0) {
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                              (local_d8.y - (this_ptr->base).base.base.orient.vec.y);
-        fVar3 = local_18 * _DAT_005d9956 * (float)_DAT_005d995e;
+        fVar3 = local_18 * 0.3183099f * (float)4;
         local_3c = -local_20;
         (this_ptr->base).player_input.turn_speed = fVar3;
         if (fVar3 < local_3c) {
@@ -122,7 +125,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
         if (local_20 < (this_ptr->base).player_input.turn_speed) {
           (this_ptr->base).player_input.turn_speed = local_20;
         }
-        if (((float)_DAT_005d9966 <= fVar1) || (local_24 == 1)) {
+        if (((float)10 <= fVar1) || (local_24 == 1)) {
           (this_ptr->base).player_input.action_state.run = 1;
           (this_ptr->base).player_input.action_state.walk = 1;
         }
@@ -160,7 +163,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
              *(float *)((int)&local_b4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                              (local_74 - (this_ptr->base).base.base.orient.vec.y);
-        fVar1 = local_18 * _DAT_005d9956 * (float)_DAT_005d995e;
+        fVar1 = local_18 * 0.3183099f * (float)4;
         local_40 = -local_20;
         (this_ptr->base).player_input.turn_speed = fVar1;
         if (fVar1 < local_40) {
@@ -170,7 +173,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
           (this_ptr->base).player_input.turn_speed = local_20;
         }
         fVar1 = (this_ptr->base).player_input.turn_speed;
-        if ((((float)_DAT_005d996e < fVar1) && ((double)fVar1 < _DAT_005d9976)) &&
+        if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
            ((this_ptr->base).player_input.action_state.fire != 0)) {
           (this_ptr->base).player_input.turn_speed = 0.0;
         }
@@ -210,11 +213,11 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
       local_bc = -local_30;
     }
     local_28 = local_bc - (this_ptr->head_look_euler).y;
-    if (delta_time * _DAT_005d997e < local_28) {
-      local_28 = delta_time * _DAT_005d997e;
+    if (delta_time * 3.141593f < local_28) {
+      local_28 = delta_time * 3.141593f;
     }
-    if (local_28 < delta_time * _DAT_005d9982) {
-      local_28 = delta_time * _DAT_005d9982;
+    if (local_28 < delta_time * -3.141593f) {
+      local_28 = delta_time * -3.141593f;
     }
     (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + local_28;
   }

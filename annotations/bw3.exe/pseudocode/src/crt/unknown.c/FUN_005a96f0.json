@@ -2,21 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 338,
+    "complexity_score": 288,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 28,
+    "pseudocode_lines": 38,
+    "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 83
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -36,15 +35,15 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005a96f0",
-    "signature": "int * crt_unknown_c_FUN_005a96f0(int *param_1)"
+    "signature": "Heap ** crt_unknown_c_FUN_005a96f0(Heap *param_1)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "006075c4",
-      "name": "DAT_006075c4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Heap_PTR_006075c4",
+      "type": "Heap*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -134,39 +133,15 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int * FUN_005a96f0(int *param_1)",
+      "text": "Heap ** FUN_005a96f0(Heap *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "for (piVar2 = DAT_006075c4; (piVar2 != (int *)0x0 && (piVar2 <= param_1));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_006075c4",
-      "severity": "mild",
-      "text": "for (piVar2 = DAT_006075c4; (piVar2 != (int *)0x0 && (piVar2 <= param_1));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] = (int)piVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2] = (int)piVar2;",
+      "text": "for (pHVar3 = g_Heap_PTR_006075c4; (pHVar3 != (Heap *)0x0 && (pHVar3 <= param_1));",
       "type": "unnamed_param"
     },
     {
@@ -174,23 +149,23 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "DAT_006075c4 = param_1;",
+      "text": "param_1->heap_base = pHVar4;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_006075c4",
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
       "severity": "mild",
-      "text": "DAT_006075c4 = param_1;",
-      "type": "undefined_data"
+      "text": "param_1->next_heap_block = pHVar3;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar1[2] = (int)param_1;",
+      "text": "g_Heap_PTR_006075c4 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -198,15 +173,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar2[1] = (int)param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar1 = param_1 + 8;",
+      "text": "pHVar4->next_heap_block = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -214,15 +181,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar2 = param_1 + 0xb;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[8] = 0;",
+      "text": "pHVar3->heap_base = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -230,7 +189,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[4] = 0;",
+      "text": "ppHVar1 = &param_1[2].next_heap_block;",
       "type": "unnamed_param"
     },
     {
@@ -238,7 +197,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6] = 0;",
+      "text": "ppHVar5 = &param_1[3].next_heap_block;",
       "type": "unnamed_param"
     },
     {
@@ -246,7 +205,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[7] = 0;",
+      "text": "param_1[2].next_heap_block = (Heap *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -254,7 +213,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[9] = (int)piVar1;",
+      "text": "param_1[1].heap_base = (void *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -262,7 +221,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[10] = (int)piVar1;",
+      "text": "param_1[2].heap_size = 0;",
       "type": "unnamed_param"
     },
     {
@@ -270,7 +229,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[3] = (int)piVar1;",
+      "text": "param_1[2].heap_base = (void *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -278,71 +237,71 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*piVar2 = *param_1 + -0x2c;",
+      "text": "param_1[3].heap_size = (int)ppHVar1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)piVar2",
-      "severity": "moderate",
-      "text": "*(uint *)((int)piVar2 + *param_1 + -0x2c) = 0xffffffff;",
-      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)((int)piVar2 + *param_1 + -0x2c) = 0xffffffff;",
+      "text": "iVar2 = param_1->heap_size;",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
-      "match": "(int)piVar1",
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3].heap_base = ppHVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].heap_size = (int)ppHVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)ppHVar5",
       "severity": "moderate",
-      "text": "param_1[1] = (int)piVar1;",
+      "text": "*(uint *)((int)ppHVar5 + (int)pHVar4) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `ppHVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)ppHVar1",
+      "severity": "moderate",
+      "text": "param_1[3].heap_size = (int)ppHVar1;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 14,
-      "match": "(int)piVar2",
+      "description": "Pointer value `ppHVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)ppHVar1",
       "severity": "moderate",
-      "text": "param_1[2] = (int)piVar2;",
+      "text": "param_1[1].heap_size = (int)ppHVar1;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
-      "match": "(int)piVar1",
+      "description": "Pointer value `ppHVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)ppHVar5",
       "severity": "moderate",
-      "text": "param_1[9] = (int)piVar1;",
+      "text": "*(uint *)((int)ppHVar5 + (int)pHVar4) = 0xffffffff;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)piVar1",
+      "description": "Pointer value `pHVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)pHVar4",
       "severity": "moderate",
-      "text": "param_1[10] = (int)piVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
-      "match": "(int)piVar1",
-      "severity": "moderate",
-      "text": "param_1[3] = (int)piVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
-      "match": "(int)piVar2",
-      "severity": "moderate",
-      "text": "*(uint *)((int)piVar2 + *param_1 + -0x2c) = 0xffffffff;",
+      "text": "*(uint *)((int)ppHVar5 + (int)pHVar4) = 0xffffffff;",
       "type": "pointer_truncation"
     },
     {

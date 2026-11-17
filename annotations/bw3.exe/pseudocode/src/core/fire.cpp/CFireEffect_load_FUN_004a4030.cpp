@@ -16,11 +16,11 @@ void __cdecl core_fire_cpp_CFireEffect_load_FUN_004a4030(CFireEffect *this_ptr,_
   local_10 = 0;
   core_fire_cpp_CFireEffect_init_FUN_004a1480(this_ptr);
   _fgets(local_110,0xff,file_handle);
-  this_ptr_00 = (CCrater *)0x1cfaff8;
-  _fscanf(file_handle,&DAT_005c0a50);
+  this_ptr_00 = g_CCrater_ARRAY_01cfaff8;
+  _fscanf(file_handle,"%d\n");
   do {
     core_fire_cpp_CCrater_load_FUN_0049dbe0(this_ptr_00,file_handle);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CCrater *)&DAT_01cfb8b8);
+  } while (this_ptr_00 != g_CCrater_ARRAY_01cfaff8 + sizeof(g_CCrater_ARRAY_01cfaff8) / sizeof(g_CCrater_ARRAY_01cfaff8[0]));
   return;
 }

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_staticInit_FUN_005039b0(void)
 
 {
   core_netgame_cpp_CNetGame_ctor_FUN_00503d70(&g_CNetGameInstance);
   _atexit(&g_CNetGameInstanceDestructorNode);
-  __arrinit((void *)0x1da6490,400,&g_SChatHistoryTypeInfo);
-  _DAT_01dd4488 = 0x405;
-  DAT_01dd448c = 0;
+  __arrinit(g_SChatHistory_ARRAY_01da6490,400,&g_SChatHistoryTypeInfo);
+  g_UNetPacket_01dd4488.header.size = 0x405;
+  g_UNetPacket_01dd4488.header.type = PACKET_NONE;
   return;
 }

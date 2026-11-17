@@ -15,12 +15,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_has_no_guard_trigger_005ed7e7
-;   undefined4 DAT_005ed804
-;   undefined4 DAT_005ed808
-;   undefined4 DAT_005ed80c
+;   float g_FLOAT_005ed804 = -15
+;   float g_FLOAT_005ed808 = 15
+;   float g_FLOAT_005ed80c = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_005fd52c
-;   undefined4 DAT_005fd530
+;   float g_FLOAT_005fd52c = -0.5235988
+;   float g_FLOAT_005fd530 = 1.221730
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
@@ -127,7 +127,7 @@ section .text
     ADD EAX,0xc                         ; 0057f1d4
     MOV dword ptr [ESP + 0x1d0],ECX     ; 0057f1d7
     FXCH ST5                            ; 0057f1de
-    FLD float ptr [0x005ed804]          ; 0057f1e0 | DAT_005ed804
+    FLD float ptr [0x005ed804]          ; 0057f1e0 | g_FLOAT_005ed804
     FXCH                                ; 0057f1e6
     FADD ST0,ST1                        ; 0057f1e8
     FXCH ST5                            ; 0057f1ea
@@ -135,7 +135,7 @@ section .text
     FXCH ST4                            ; 0057f1ee
     FADDP                               ; 0057f1f0
     FXCH ST2                            ; 0057f1f2
-    FLD float ptr [0x005ed808]          ; 0057f1f4 | DAT_005ed808
+    FLD float ptr [0x005ed808]          ; 0057f1f4 | g_FLOAT_005ed808
     FXCH                                ; 0057f1fa
     FADD ST0,ST1                        ; 0057f1fc
     FXCH ST2                            ; 0057f1fe
@@ -287,7 +287,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0057f3e7
     MOVSD ES:EDI,ESI                    ; 0057f3e8
     MOVSD ES:EDI,ESI                    ; 0057f3e9
-    FLD float ptr [0x005ed80c]          ; 0057f3ea | DAT_005ed80c
+    FLD float ptr [0x005ed80c]          ; 0057f3ea | g_FLOAT_005ed80c
     FLD float ptr [ESP + 0x174]         ; 0057f3f0
     FMUL ST1                            ; 0057f3f7
     FLD float ptr [ESP + 0x178]         ; 0057f3f9
@@ -402,13 +402,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0057f58c
     MOVSD ES:EDI,ESI                    ; 0057f58d
     FLD float ptr [ESP + 0x150]         ; 0057f58e
-    FCOMP float ptr [0x005fd52c]        ; 0057f595 | DAT_005fd52c
+    FCOMP float ptr [0x005fd52c]        ; 0057f595 | g_FLOAT_005fd52c
     FNSTSW AX                           ; 0057f59b
     SAHF                                ; 0057f59d
     JC 0x0057f28a                       ; 0057f59e
         ;   XREF to: 0057f28a (CONDITIONAL_JUMP)  ; LAB_0057f28a
     FLD float ptr [ESP + 0x150]         ; 0057f5a4
-    FCOMP float ptr [0x005fd530]        ; 0057f5ab | DAT_005fd530
+    FCOMP float ptr [0x005fd530]        ; 0057f5ab | g_FLOAT_005fd530
     FNSTSW AX                           ; 0057f5b1
     SAHF                                ; 0057f5b3
     JA 0x0057f28a                       ; 0057f5b4

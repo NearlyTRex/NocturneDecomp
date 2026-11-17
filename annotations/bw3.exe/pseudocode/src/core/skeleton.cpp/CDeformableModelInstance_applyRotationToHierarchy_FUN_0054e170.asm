@@ -29,7 +29,7 @@
 ;   core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0 at 0058ebc2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2034
+;   double g_DOUBLE_005d2034 = 0.0000100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -127,7 +127,7 @@ section .text
     FMUL float ptr [ESP + 0xc0]         ; 0054e251
     FST float ptr [ESP]                 ; 0054e258
     FABS                                ; 0054e25b
-    FCOMP double ptr [0x005d2034]       ; 0054e25d | DAT_005d2034
+    FCOMP double ptr [0x005d2034]       ; 0054e25d | g_DOUBLE_005d2034
     FNSTSW AX                           ; 0054e263
     SAHF                                ; 0054e265
     JBE 0x0054e1ee                      ; 0054e266

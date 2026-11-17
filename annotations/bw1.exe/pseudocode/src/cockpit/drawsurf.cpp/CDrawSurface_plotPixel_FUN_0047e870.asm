@@ -16,13 +16,13 @@
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090 at 00481355
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01bc11e4
-;   undefined4 DAT_01bc11f0
-;   undefined4 DAT_01bc11f4
-;   undefined4 DAT_01bc1204
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_0061b4a0 = 0x8
+;   int g_INT_01bc11e4
+;   int g_INT_01bc11f0
+;   int g_INT_01bc11f4
+;   int g_INT_01bc1204
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -56,14 +56,14 @@ section .text
     CMP ECX,dword ptr [EDX + 0x1c]      ; 0047e89b
     JG 0x0047e8db                       ; 0047e89e
         ;   XREF to: 0047e8db (CONDITIONAL_JUMP)  ; LAB_0047e8db
-    MOV EDI,dword ptr [0x01bc11f0]      ; 0047e8a0 | DAT_01bc11f0
+    MOV EDI,dword ptr [0x01bc11f0]      ; 0047e8a0 | g_INT_01bc11f0
     LEA ESI,[EAX + EAX*0x1]             ; 0047e8a6
     SHL ECX,0x2                         ; 0047e8a9
     LEA EBX,[EAX*0x4 + 0x0]             ; 0047e8ac
     TEST EDI,EDI                        ; 0047e8b3
     JNZ 0x0047e982                      ; 0047e8b5
         ;   XREF to: 0047e982 (CONDITIONAL_JUMP)  ; LAB_0047e982
-    MOV EDX,dword ptr [0x0061b4a0]      ; 0047e8bb | DAT_0061b4a0
+    MOV EDX,dword ptr [0x0061b4a0]      ; 0047e8bb | g_INT_0061b4a0
     CMP EDX,0x10                        ; 0047e8c1
     JNC 0x0047e932                      ; 0047e8c4
         ;   XREF to: 0047e932 (CONDITIONAL_JUMP)  ; LAB_0047e932
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 0047e90a (CONDITIONAL_JUMP)  ; LAB_0047e90a
     MOV EDX,dword ptr [ECX + 0x1c4354c] ; 0047e8cb
     ADD EAX,EDX                         ; 0047e8d1
-    MOV DL,byte ptr [0x01bc11e4]        ; 0047e8d3 | DAT_01bc11e4
+    MOV DL,byte ptr [0x01bc11e4]        ; 0047e8d3 | g_INT_01bc11e4
     MOV byte ptr [EAX],DL               ; 0047e8d9
     POP EBP                             ; 0047e8db
         ;   Label: LAB_0047e8db
@@ -83,7 +83,7 @@ section .text
     MOV EAX,dword ptr [ECX + 0x1c4354c] ; 0047e8e0
         ;   Label: LAB_0047e8e0
     ADD ESI,EAX                         ; 0047e8e6
-    MOV AX,[0x01bc11e4]                 ; 0047e8e8 | DAT_01bc11e4
+    MOV AX,[0x01bc11e4]                 ; 0047e8e8 | g_INT_01bc11e4
     MOV word ptr [ESI],AX               ; 0047e8ee
     POP EBP                             ; 0047e8f1
     POP EDI                             ; 0047e8f2
@@ -93,7 +93,7 @@ section .text
     MOV EAX,dword ptr [ECX + 0x1c4354c] ; 0047e8f6
         ;   Label: LAB_0047e8f6
     ADD EBX,EAX                         ; 0047e8fc
-    MOV EAX,[0x01bc11e4]                ; 0047e8fe | DAT_01bc11e4
+    MOV EAX,[0x01bc11e4]                ; 0047e8fe | g_INT_01bc11e4
     MOV dword ptr [EBX],EAX             ; 0047e903
     POP EBP                             ; 0047e905
     POP EDI                             ; 0047e906
@@ -104,8 +104,8 @@ section .text
         ;   Label: LAB_0047e90a
     MOV EBX,0x18e                       ; 0047e90f
     PUSH 0x5db093                       ; 0047e914
-    MOV dword ptr [0x01d1d400],ECX      ; 0047e919 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0047e91f | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0047e919 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 0047e91f | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047e925
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047e92a
@@ -125,9 +125,9 @@ section .text
     MOV EAX,dword ptr [ECX + 0x1c4354c] ; 0047e93b
         ;   Label: LAB_0047e93b
     XOR EDX,EDX                         ; 0047e941
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047e943 | DAT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047e943 | g_INT_01bc11f4
     MOV DX,word ptr [ESI + EAX*0x1]     ; 0047e949
-    MOV EBP,dword ptr [0x01bc1204]      ; 0047e94d | DAT_01bc1204
+    MOV EBP,dword ptr [0x01bc1204]      ; 0047e94d | g_INT_01bc1204
     SHR EDX,CL                          ; 0047e953
     AND EDX,EBP                         ; 0047e955
     MOV word ptr [ESI + EAX*0x1],DX     ; 0047e957
@@ -138,11 +138,11 @@ section .text
     RET                                 ; 0047e95f
     MOV EDX,dword ptr [ECX + 0x1c4354c] ; 0047e960
         ;   Label: LAB_0047e960
-    MOV CL,byte ptr [0x01bc11f4]        ; 0047e966 | DAT_01bc11f4
+    MOV CL,byte ptr [0x01bc11f4]        ; 0047e966 | g_INT_01bc11f4
     MOV EAX,dword ptr [EDX + EBX*0x1]   ; 0047e96c
     SHR EAX,CL                          ; 0047e96f
     MOV ECX,EAX                         ; 0047e971
-    MOV EAX,[0x01bc1204]                ; 0047e973 | DAT_01bc1204
+    MOV EAX,[0x01bc1204]                ; 0047e973 | g_INT_01bc1204
     AND ECX,EAX                         ; 0047e978
     MOV dword ptr [EDX + EBX*0x1],ECX   ; 0047e97a
     POP EBP                             ; 0047e97d
@@ -150,7 +150,7 @@ section .text
     POP ESI                             ; 0047e97f
     POP EBX                             ; 0047e980
     RET                                 ; 0047e981
-    MOV EAX,[0x0061b4a0]                ; 0047e982 | DAT_0061b4a0
+    MOV EAX,[0x0061b4a0]                ; 0047e982 | g_INT_0061b4a0
         ;   Label: LAB_0047e982
     CMP EAX,0x10                        ; 0047e987
     JNC 0x0047e997                      ; 0047e98a
@@ -170,8 +170,8 @@ section .text
         ;   Label: LAB_0047e99e
     MOV EDX,0x19f                       ; 0047e9a3
     PUSH 0x5db0c1                       ; 0047e9a8
-    MOV [0x01d1d400],EAX                ; 0047e9ad | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0047e9b2 | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0047e9ad | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0047e9b2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047e9b8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047e9bd

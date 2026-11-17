@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044d210(CDemonCamera *this_ptr,CRect *rect_ptr)
 
 {
@@ -20,15 +18,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044d210(CDemo
        ((this_ptr->viewport_rect).x_max < rect_ptr->y_max)) &&
       (rect_ptr->x_min < (this_ptr->viewport_rect).y_min)) &&
      (rect_ptr->y_min < (this_ptr->viewport_rect).y_max)) {
-    if (_DAT_01c50948 != 0) {
-      engine_special_cpp_restoreZBuffer_FUN_00582aa0(0,0,0,DAT_0061b498 + -1,DAT_0061b49c + -1);
+    if (g_INT_01c50948 != 0) {
+      engine_special_cpp_restoreZBuffer_FUN_00582aa0(0,0,0,g_INT_0061b498 + -1,g_INT_0061b49c + -1);
       return;
     }
     iVar4 = rect_ptr->y_min;
     if (iVar4 <= rect_ptr->y_max) {
       iVar3 = iVar4 * 4;
       do {
-        piVar1 = (int *)(&DAT_01c4480c + iVar3);
+        piVar1 = (int *)((int)g_UINT_PTR_ARRAY_01c4480c + iVar3);
         iVar2 = this_ptr->framebuffer_width * iVar4;
         iVar3 = iVar3 + 4;
         iVar4 = iVar4 + 1;

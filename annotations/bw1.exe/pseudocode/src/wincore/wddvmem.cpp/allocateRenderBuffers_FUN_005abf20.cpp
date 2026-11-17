@@ -6,28 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005abf20(void)
 
 {
-  DAT_00629010 = malloc
-                           (((int)((DAT_0061b4a0 + (DAT_0061b4a0 >> 0x1f) * -8) -
-                                  (uint)((DAT_0061b4a0 >> 0x1f) << 2 < 0)) >> 3) *
-                            DAT_0061b498 * DAT_0061b49c);
-  if (DAT_00629010 == (void *)0x0) {
-    _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01d1d404 = 0xed;
+  g_PTR_00629010 =
+       malloc
+                 (((int)((g_INT_0061b4a0 + (g_INT_0061b4a0 >> 0x1f) * -8) -
+                        (uint)((g_INT_0061b4a0 >> 0x1f) << 2 < 0)) >> 3) *
+                  g_INT_0061b498 * g_INT_0061b49c);
+  if (g_PTR_00629010 == (byte *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01d1d404 = 0xed;
     core_main_c_displayErrorAndQuit_FUN_005030e0("WDDVMEM: Fatal - out of frame buffer memory");
   }
-  _DAT_02c99310 = malloc(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);
-  if (_DAT_02c99310 != (void *)0x0) {
-    DAT_0071362c = (int)_DAT_02c99310 + 0x10U & 0xfffffff0;
+  g_PTR_02c99310 = malloc(g_INT_0061b498 * g_INT_0061b49c * 4 + 0x40);
+  if (g_PTR_02c99310 != (byte *)0x0) {
+    g_PTR_0071362c = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
     return;
   }
-  _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
-  _DAT_01d1d404 = 0xf2;
+  g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
+  g_INT_01d1d404 = 0xf2;
   core_main_c_displayErrorAndQuit_FUN_005030e0("WDDVMEM: Fatal - out of Z buffer memory");
-  DAT_0071362c = (int)_DAT_02c99310 + 0x10U & 0xfffffff0;
+  g_PTR_0071362c = (byte *)((uint)(g_PTR_02c99310 + 0x10) & 0xfffffff0);
   return;
 }

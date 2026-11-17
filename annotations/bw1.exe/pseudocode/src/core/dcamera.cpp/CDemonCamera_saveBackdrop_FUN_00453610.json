@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 589,
+    "complexity_score": 518,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 204,
-    "suspect_count": 34,
+    "pseudocode_lines": 218,
+    "suspect_count": 26,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
@@ -17,10 +17,9 @@
       "raw_address_constant",
       "unaffected_reg",
       "undefined_data",
-      "undefined_type",
-      "warning_overlapping_globals"
+      "undefined_type"
     ],
-    "total_lines": 659
+    "total_lines": 673
   },
   "cross_references": [
     {
@@ -154,8 +153,8 @@
     },
     {
       "addr": "005d7916",
-      "name": "DAT_005d7916",
-      "type": "undefined4",
+      "name": "s_rb_005d7916",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -172,8 +171,8 @@
     },
     {
       "addr": "005d792e",
-      "name": "DAT_005d792e",
-      "type": "undefined4",
+      "name": "s_wb_005d792e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -226,14 +225,14 @@
     },
     {
       "addr": "005d79ef",
-      "name": "DAT_005d79ef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d79ef",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "00611298",
-      "name": "DAT_00611298",
-      "type": "undefined4",
+      "name": "s_EFD_00611298",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -256,104 +255,104 @@
     },
     {
       "addr": "00b36698",
-      "name": "DAT_00b36698",
+      "name": "g_INT_ARRAY_00b36198[320]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b36b98",
-      "name": "DAT_00b36b98",
+      "name": "g_INT_ARRAY_00b36198[640]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b36b9c",
-      "name": "DAT_00b36b9c",
+      "name": "g_INT_ARRAY_00b36198[641]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013238cc",
-      "name": "DAT_013238cc",
-      "type": "undefined4",
+      "name": "g_INT_013238cc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01342220",
-      "name": "DAT_01342220",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01342220",
+      "type": "char[76797]",
       "value": null
     },
     {
       "addr": "01342221",
-      "name": "DAT_01342221",
+      "name": "g_CHAR_ARRAY_01342220+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01342360",
-      "name": "DAT_01342360",
+      "name": "g_CHAR_ARRAY_01342220+0x140",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013424a0",
-      "name": "DAT_013424a0",
+      "name": "g_CHAR_ARRAY_01342220+0x280",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01480e20",
-      "name": "DAT_01480e20",
-      "type": "undefined4",
+      "name": "g_INT_01480e20",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01480e24",
-      "name": "DAT_01480e24",
-      "type": "undefined4",
+      "name": "g_INT_01480e24",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01480e28",
-      "name": "DAT_01480e28",
-      "type": "undefined4",
+      "name": "g_INT_01480e28",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01481e38",
-      "name": "DAT_01481e38",
+      "name": "g_SFogGrid_01480e2c.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01481e3c",
-      "name": "DAT_01481e3c",
+      "name": "g_SFogGrid_01480e2c.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01481e40",
-      "name": "DAT_01481e40",
+      "name": "g_SFogGrid_01480e2c.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01481e48",
-      "name": "DAT_01481e48",
+      "name": "g_SFogGrid_01480e2c.density_multiplier",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -636,16 +635,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved type",
-      "line": 9,
+      "line": 7,
       "match": "undefined3 extraout_var",
       "severity": "moderate",
       "text": "undefined3 extraout_var;",
@@ -653,7 +644,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 7,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "undefined3 extraout_var;",
@@ -661,7 +652,7 @@
     },
     {
       "description": "Unresolved type",
-      "line": 12,
+      "line": 10,
       "match": "undefined3 extraout_var_00",
       "severity": "moderate",
       "text": "undefined3 extraout_var_00;",
@@ -669,7 +660,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 10,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "undefined3 extraout_var_00;",
@@ -677,31 +668,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 14,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CDemonCamera *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005d7916",
-      "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00479180(\"backdrop\",local_20c,&DAT_005d7916);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005d792e",
-      "severity": "mild",
-      "text": "support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005a17f0(&local_5c,local_10c,&DAT_005d792e);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
+      "line": 59,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
@@ -709,7 +684,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 98,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (1 < unaff_ESI->display_height) {",
@@ -717,23 +692,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 103,
       "match": "DAT_00857cd8",
       "severity": "mild",
       "text": "end_pos = (CVector3i *)(&DAT_00857cd8 + local_48);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_01342220",
-      "severity": "mild",
-      "text": "puVar6 = &DAT_01342220 + local_4c;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)g_INT_ARRAY_00b36198",
+      "severity": "moderate",
+      "text": "piVar7 = (int *)((int)g_INT_ARRAY_00b36198 + local_50);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 101,
+      "line": 107,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (1 < unaff_ESI->display_width) {",
@@ -741,7 +716,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 125,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (iVar11 < unaff_ESI->display_width);",
@@ -749,7 +724,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 125,
+      "line": 131,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (local_3c < unaff_ESI->display_height);",
@@ -757,7 +732,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 127,
+      "line": 133,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90(unaff_ESI,local_24);",
@@ -765,7 +740,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 129,
+      "line": 135,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (0 < unaff_ESI->display_height) {",
@@ -773,23 +748,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 138,
+      "line": 150,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (0 < unaff_ESI->display_width) {",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_01342220",
-      "severity": "mild",
-      "text": "(&DAT_01342220)[iVar8] = (char)iVar3;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 167,
+      "line": 179,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (iVar12 < unaff_ESI->display_width);",
@@ -797,63 +764,31 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 172,
+      "line": 184,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (local_40 < unaff_ESI->display_height);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 176,
-      "match": "DAT_01342220",
-      "severity": "mild",
-      "text": "((CCodec *)auStack_b4,&DAT_01342220,(int *)&local_5c,&local_68);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 188,
+      "line": 201,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Pointer value `&local_5c.file[0xbe577]._link` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
-      "match": "(int)&local_5c.file[0xbe577]._link",
-      "severity": "moderate",
-      "text": "uVar2 = uVar2 - *(byte *)((int)&local_5c.file[0xbe577]._link +",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&local_5c.file[0xbe577]._link` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 160,
-      "match": "(int)&local_5c.file[0xbe577]._link",
-      "severity": "moderate",
-      "text": "cVar5 = cVar5 + *(char *)((int)&local_5c.file[0xbe577]._link +",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `&local_5c.file[0xb89]._bufsize` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 194,
+      "line": 207,
       "match": "(int)&local_5c.file[0xb89]._bufsize",
       "severity": "moderate",
       "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x444645 assigned to bare local `local_54`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_54` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 70,
-      "match": "0x444645",
-      "severity": "moderate",
-      "text": "local_54 = 0x00444645;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex address 0x453781 assigned to bare local `flags`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `flags` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 73,
+      "line": 75,
       "match": "0x453781",
       "severity": "moderate",
       "text": "flags = 0x453781;",
@@ -861,7 +796,7 @@
     },
     {
       "description": "Raw hex address 0x4537af assigned to bare local `iVar11`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar11` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 79,
+      "line": 82,
       "match": "0x4537af",
       "severity": "moderate",
       "text": "iVar11 = 0x4537af;",
@@ -869,7 +804,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 60,
+      "line": 59,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
@@ -877,7 +812,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 188,
+      "line": 201,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
@@ -885,23 +820,23 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 146,
+      "line": 159,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uVar2 = uVar2 - *(byte *)((int)&local_5c.file[0xbe577]._link +",
+      "text": "[(int)&(local_5c.file)->_ptr + local_38 + iVar12];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 160,
+      "line": 173,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "cVar5 = cVar5 + *(char *)((int)&local_5c.file[0xbe577]._link +",
+      "text": "[(int)&(local_5c.file)->_ptr + local_38 + iVar12];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 194,
+      "line": 207,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",

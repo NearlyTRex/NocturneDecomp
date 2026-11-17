@@ -26,7 +26,7 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this
     do {
       pcVar4 = pcVar5;
       pcVar5 = pcVar4 + 1;
-    } while (((&DAT_00626114)[(byte)(*pcVar4 + 1)] & 2) != 0);
+    } while ((g_UCHAR_ARRAY_00626114[(byte)(*pcVar4 + 1)] & 2) != 0);
     cVar1 = *pcVar4;
     pcVar6 = pcVar4;
     if (cVar1 == '\0') break;
@@ -36,11 +36,11 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this
       cVar1 = *pcVar5;
       while (cVar1 != '>') {
         if (*pcVar5 == '\0') {
-          _sprintf(&DAT_01cc4270,"Incomplete markup tag beginning with '%s'");
+          _sprintf(g_CHAR_ARRAY_01cc4270,"Incomplete markup tag beginning with '%s'");
           return -1;
         }
         if (0xfe < uVar3) {
-          _sprintf(&DAT_01cc4270,"Markup tag beginning with '%s' - tag text too long");
+          _sprintf(g_CHAR_ARRAY_01cc4270,"Markup tag beginning with '%s' - tag text too long");
           return -1;
         }
         cVar1 = *pcVar5;
@@ -63,7 +63,8 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this
     }
     else {
       if (cVar1 == '>') {
-        _sprintf(&DAT_01cc4270,"Unexpected '>' found near '%s'");
+        _sprintf(g_CHAR_ARRAY_01cc4270,"Unexpected '>' found near '%s'")
+        ;
         return -1;
       }
       bVar7 = this_ptr->word[0] != '\0';
@@ -71,8 +72,9 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this
         local_314[0] = ' ';
       }
       uVar3 = (uint)bVar7;
-      for (; (((((&DAT_00626114)[(byte)(*pcVar6 + 1)] & 2) == 0 && (cVar1 = *pcVar6, cVar1 != '\0'))
-              && (cVar1 != '<')) && (cVar1 != '>')); pcVar6 = pcVar6 + 1) {
+      for (; ((((g_UCHAR_ARRAY_00626114[(byte)(*pcVar6 + 1)] & 2) == 0 &&
+               (cVar1 = *pcVar6, cVar1 != '\0')) && (cVar1 != '<')) && (cVar1 != '>'));
+          pcVar6 = pcVar6 + 1) {
         local_314[uVar3] = cVar1;
         uVar3 = uVar3 + 1;
       }

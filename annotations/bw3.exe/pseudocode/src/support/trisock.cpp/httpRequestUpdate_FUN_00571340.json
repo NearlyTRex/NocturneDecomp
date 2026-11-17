@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 858,
-    "complexity_score": 1642,
+    "complexity_score": 1602,
     "cross_reference_count": 0,
     "function_call_count": 19,
     "global_count": 40,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 362,
-    "suspect_count": 125,
+    "suspect_count": 121,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
@@ -174,14 +174,14 @@
     },
     {
       "addr": "005d6bfe",
-      "name": "DAT_005d6bfe",
-      "type": "undefined4",
+      "name": "s_cgi_005d6bfe",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d6c03",
-      "name": "DAT_005d6c03",
-      "type": "undefined4",
+      "name": "s_asp_005d6c03",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -294,8 +294,8 @@
     },
     {
       "addr": "005d6d42",
-      "name": "DAT_005d6d42",
-      "type": "undefined4",
+      "name": "s_d_005d6d42",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -330,26 +330,26 @@
     },
     {
       "addr": "005d6da0",
-      "name": "DAT_005d6da0",
-      "type": "undefined1",
+      "name": "s_Done_005d6da0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d6da1",
-      "name": "DAT_005d6da1",
-      "type": "undefined1",
+      "name": "s_one_005d6da0+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d6da2",
-      "name": "DAT_005d6da2",
-      "type": "undefined1",
+      "name": "s_ne_005d6da0+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d6da3",
-      "name": "DAT_005d6da3",
-      "type": "undefined1",
+      "name": "s_e_005d6da0+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -724,22 +724,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_005d6bfe",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(acStack_348,&DAT_005d6bfe);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_005d6c03",
-      "severity": "mild",
-      "text": "(iVar5 = _stricmp(acStack_348,&DAT_005d6c03), iVar5 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(int *)((int)request",
@@ -1076,14 +1060,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 278,
-      "match": "DAT_005d6d42",
-      "severity": "mild",
-      "text": "sscanf(pcStack_1c,&DAT_005d6d42);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 280,
       "match": "(byte *)((int)request",
@@ -1186,14 +1162,6 @@
       "severity": "moderate",
       "text": "return *(int *)((int)request + 0xd28);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 314,
-      "match": "DAT_005d6da0",
-      "severity": "mild",
-      "text": "pcVar9 = &DAT_005d6da0;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

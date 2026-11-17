@@ -42,15 +42,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Loading_set_005f0484
-;   undefined4 DAT_005f0490
+;   TerminatedCString s_rt_005f0490
 ;   TerminatedCString s_models_005f0493
 ;   TerminatedCString s_core_set_cpp_005f049a
 ;   TerminatedCString s_CDemonSet_Unable_to_open_005f04aa
-;   undefined4 DAT_005f04c7
-;   undefined4 DAT_005f04cb
-;   undefined4 DAT_005f04cf
-;   undefined4 DAT_005f04d3
-;   undefined4 DAT_005f04d7
+;   TerminatedCString s_d_005f04c7
+;   TerminatedCString s_f_005f04cb
+;   TerminatedCString s_s_005f04cf
+;   TerminatedCString s_s_005f04d3
+;   TerminatedCString s_f_005f04d7
 ;   TerminatedCString s_f_f_f_f_005f04db
 ;   TerminatedCString s_d_d_d_d_005f04e8
 ;   TerminatedCString s_f_f_f_005f04f5
@@ -105,7 +105,7 @@ section .text
     CALL core_set.cpp_CDemonSet_clear_FUN_0054d370 ; 0054d3f5
         ;   XREF to: 0054d370 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clear_FUN_0054d370(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0054d3fa
-    PUSH 0x5f0490                       ; 0054d3fd | DAT_005f0490
+    PUSH 0x5f0490                       ; 0054d3fd | = "rt"
     PUSH ESI                            ; 0054d402
     PUSH 0x5f0493                       ; 0054d403 | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0054d408
@@ -119,7 +119,7 @@ section .text
         ;   Label: LAB_0054d41a
     ADD EAX,0x15acc0                    ; 0054d41d
     PUSH EAX                            ; 0054d422
-    PUSH 0x5f04c7                       ; 0054d423 | DAT_005f04c7
+    PUSH 0x5f04c7                       ; 0054d423 | = "%d\n"
     PUSH EBX                            ; 0054d428
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d429
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -127,21 +127,21 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d431
     ADD EAX,0x15aea8                    ; 0054d434
     PUSH EAX                            ; 0054d439
-    PUSH 0x5f04cb                       ; 0054d43a | DAT_005f04cb
+    PUSH 0x5f04cb                       ; 0054d43a | = "%f\n"
     PUSH EBX                            ; 0054d43f
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d440
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0054d445
     MOV EAX,ESP                         ; 0054d448
     PUSH EAX                            ; 0054d44a
-    PUSH 0x5f04cf                       ; 0054d44b | DAT_005f04cf
+    PUSH 0x5f04cf                       ; 0054d44b | = "%s\n"
     PUSH EBX                            ; 0054d450
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d451
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0054d456
     LEA EAX,[ESP + 0x200]               ; 0054d459
     PUSH EAX                            ; 0054d460
-    PUSH 0x5f04d3                       ; 0054d461 | DAT_005f04d3
+    PUSH 0x5f04d3                       ; 0054d461 | = "%s\n"
     PUSH EBX                            ; 0054d466
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d467
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -149,7 +149,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d46f
     ADD EAX,0x14d150                    ; 0054d472
     PUSH EAX                            ; 0054d477
-    PUSH 0x5f04d7                       ; 0054d478 | DAT_005f04d7
+    PUSH 0x5f04d7                       ; 0054d478 | = "%f\n"
     PUSH EBX                            ; 0054d47d
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d47e
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -296,10 +296,10 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 0054d61f
         ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0054d624
-    PUSH 0x2c8afc4                      ; 0054d627 | DAT_02c8afc4
-    PUSH 0x2c8afc0                      ; 0054d62c | DAT_02c8afc0
-    PUSH 0x625c98                       ; 0054d631 | DAT_00625c98
-    PUSH 0x625c94                       ; 0054d636 | DAT_00625c94
+    PUSH 0x2c8afc4                      ; 0054d627 | g_FLOAT_02c8afc4
+    PUSH 0x2c8afc0                      ; 0054d62c | g_FLOAT_02c8afc0
+    PUSH 0x625c98                       ; 0054d631 | g_INT_00625c98
+    PUSH 0x625c94                       ; 0054d636 | g_FLOAT_00625c94
     PUSH 0x5f0513                       ; 0054d63b | = "%f,%d,%f,%f\n"
     PUSH EBX                            ; 0054d640
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d641
@@ -337,7 +337,7 @@ section .text
     ADD ESP,0xc                         ; 0054d69c
     MOV ESI,dword ptr [0x00625c90]      ; 0054d69f | g_CWaterPtr
     PUSH ESI                            ; 0054d6a5 | g_CWaterInstance
-    PUSH 0x5f0527                       ; 0054d6a6 | DAT_005f0527
+    PUSH 0x5f0527                       ; 0054d6a6 | = "%d\n"
     PUSH EBX                            ; 0054d6ab
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d6ac
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -357,7 +357,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d6d7
     ADD EAX,0x161640                    ; 0054d6da
     PUSH EAX                            ; 0054d6df
-    PUSH 0x5f0530                       ; 0054d6e0 | DAT_005f0530
+    PUSH 0x5f0530                       ; 0054d6e0 | = "%d\n"
     PUSH EBX                            ; 0054d6e5
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d6e6
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -417,7 +417,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d787
     ADD EAX,0x161680                    ; 0054d78a
     PUSH EAX                            ; 0054d78f
-    PUSH 0x5f0553                       ; 0054d790 | DAT_005f0553
+    PUSH 0x5f0553                       ; 0054d790 | = "%d\n"
     PUSH EBX                            ; 0054d795
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d796
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -437,7 +437,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d7c1
     ADD EAX,0x15acbc                    ; 0054d7c4
     PUSH EAX                            ; 0054d7c9
-    PUSH 0x5f0557                       ; 0054d7ca | DAT_005f0557
+    PUSH 0x5f0557                       ; 0054d7ca | = "%f\n"
     PUSH EBX                            ; 0054d7cf
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d7d0
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -462,7 +462,7 @@ section .text
     TEST EAX,EAX                        ; 0054d80b
     JNZ 0x0054e15b                      ; 0054d80d
         ;   XREF to: 0054e15b (CONDITIONAL_JUMP)  ; LAB_0054e15b
-    MOV EDX,dword ptr [0x00625bc0]      ; 0054d813 | DAT_00625bc0
+    MOV EDX,dword ptr [0x00625bc0]      ; 0054d813 | g_CTerrain_PTR_00625bc0
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d819
     PUSH EDX                            ; 0054d81c
     MOV dword ptr [EAX + 0x15acb8],0x1  ; 0054d81d
@@ -488,7 +488,7 @@ section .text
         ;   Label: LAB_0054d855
     ADD EAX,0x19a2c                     ; 0054d858
     PUSH EAX                            ; 0054d85d
-    PUSH 0x5f0561                       ; 0054d85e | DAT_005f0561
+    PUSH 0x5f0561                       ; 0054d85e | = "%d\n"
     PUSH EBX                            ; 0054d863
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d864
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -529,7 +529,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0054d8bf
         ;   Label: LAB_0054d8bf
     PUSH EDI                            ; 0054d8c2
-    PUSH 0x5f0565                       ; 0054d8c3 | DAT_005f0565
+    PUSH 0x5f0565                       ; 0054d8c3 | = "%d\n"
     PUSH EBX                            ; 0054d8c8
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d8c9
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -571,7 +571,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d923
     ADD EAX,0x15aed0                    ; 0054d926
     PUSH EAX                            ; 0054d92b
-    PUSH 0x5f0569                       ; 0054d92c | DAT_005f0569
+    PUSH 0x5f0569                       ; 0054d92c | = "%d\n"
     PUSH EBX                            ; 0054d931
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d932
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -579,7 +579,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054d93a
     ADD EAX,0x15aed4                    ; 0054d93d
     PUSH EAX                            ; 0054d942
-    PUSH 0x5f056d                       ; 0054d943 | DAT_005f056d
+    PUSH 0x5f056d                       ; 0054d943 | = "%d\n"
     PUSH EBX                            ; 0054d948
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054d949
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -656,7 +656,7 @@ section .text
     ADD ESP,0x8                         ; 0054da58
     MOV EDX,dword ptr [ESP + 0x31c]     ; 0054da5b
     PUSH EDX                            ; 0054da62
-    PUSH 0x5f058f                       ; 0054da63 | DAT_005f058f
+    PUSH 0x5f058f                       ; 0054da63 | = "%d\n"
     PUSH EBX                            ; 0054da68
     ADD EDI,0x44                        ; 0054da69
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054da6c
@@ -702,7 +702,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054db13
     ADD EAX,0x15f694                    ; 0054db16
     PUSH EAX                            ; 0054db1b
-    PUSH 0x5f05b0                       ; 0054db1c | DAT_005f05b0
+    PUSH 0x5f05b0                       ; 0054db1c | = "%d\n"
     PUSH EBX                            ; 0054db21
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054db22
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -722,7 +722,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054db4d
     ADD EAX,0x15ac8c                    ; 0054db50
     PUSH EAX                            ; 0054db55
-    PUSH 0x5f05d8                       ; 0054db56 | DAT_005f05d8
+    PUSH 0x5f05d8                       ; 0054db56 | = "%d\n"
     PUSH EBX                            ; 0054db5b
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054db5c
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -756,7 +756,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054dba4
     ADD EAX,0x15b428                    ; 0054dba7
     PUSH EAX                            ; 0054dbac
-    PUSH 0x5f05dc                       ; 0054dbad | DAT_005f05dc
+    PUSH 0x5f05dc                       ; 0054dbad | = "%d\n"
     PUSH EBX                            ; 0054dbb2
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054dbb3
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -955,9 +955,9 @@ section .text
         ;   XREF to: 0054de04 (CONDITIONAL_JUMP)  ; LAB_0054de04
     POP EDI                             ; 0054de1c
         ;   Label: LAB_0054de1c
-    PUSH 0x5f0613                       ; 0054de1d | DAT_005f0613
+    PUSH 0x5f0613                       ; 0054de1d | = "rb"
     PUSH EBX                            ; 0054de22
-    PUSH 0x5f0616                       ; 0054de23 | DAT_005f0616
+    PUSH 0x5f0616                       ; 0054de23 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0054de28
         ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054de2d
@@ -1056,16 +1056,16 @@ section .text
         ;   Label: LAB_0054dee3
     MOV EDI,ESI                         ; 0054dee5
         ;   Label: LAB_0054dee5
-    MOV ESI,0x5f0651                    ; 0054dee7 | DAT_005f0651
+    MOV ESI,0x5f0651                    ; 0054dee7 | = ".zth"
         ;   Label: LAB_0054dee7
     PUSH EDI                            ; 0054deec
-    MOV AL,byte ptr [ESI]               ; 0054deed | DAT_005f0651 | DAT_005f0653
+    MOV AL,byte ptr [ESI]               ; 0054deed | = ".zth" | s_zth_005f0651+2
         ;   Label: LAB_0054deed
     MOV byte ptr [EDI],AL               ; 0054deef
     CMP AL,0x0                          ; 0054def1
     JZ 0x0054df05                       ; 0054def3
         ;   XREF to: 0054df05 (CONDITIONAL_JUMP)  ; LAB_0054df05
-    MOV AL,byte ptr [ESI + 0x1]         ; 0054def5 | DAT_005f0652 | DAT_005f0654
+    MOV AL,byte ptr [ESI + 0x1]         ; 0054def5 | s_zth_005f0651+1 | s_zth_005f0651+3
     ADD ESI,0x2                         ; 0054def8
     MOV byte ptr [EDI + 0x1],AL         ; 0054defb
     ADD EDI,0x2                         ; 0054defe
@@ -1114,7 +1114,7 @@ section .text
     LEA EAX,[EAX]                       ; 0054df75
     LEA EDX,[EDX]                       ; 0054df7b
     MOV EBX,EBX                         ; 0054df7e
-    MOV dword ptr [0x02026348],0x1      ; 0054df80 | DAT_02026348
+    MOV dword ptr [0x02026348],0x1      ; 0054df80 | g_INT_02026348
         ;   Label: LAB_0054df80
     MOV ESP,EBP                         ; 0054df8a
     POP EBP                             ; 0054df8c
@@ -1127,8 +1127,8 @@ section .text
     MOV EDI,0x5f049a                    ; 0054df92 | = "..\\core\\set.cpp"
     MOV EAX,0x15c                       ; 0054df97
     PUSH 0x5f04aa                       ; 0054df9c | = "CDemonSet::Unable to open %s"
-    MOV dword ptr [0x01d1d400],EDI      ; 0054dfa1 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0054dfa7 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0054dfa1 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0054dfa7 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054dfac
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0054dfb1
@@ -1196,15 +1196,15 @@ section .text
         ;   Label: LAB_0054e06d
     MOV ESI,0x3e800000                  ; 0054e072
     XOR EAX,EAX                         ; 0054e077
-    MOV dword ptr [0x00625c98],EDI      ; 0054e079 | DAT_00625c98
-    MOV [0x02c8afc0],EAX                ; 0054e07f | DAT_02c8afc0
-    MOV [0x02c8afc4],EAX                ; 0054e084 | DAT_02c8afc4
-    MOV dword ptr [0x00625c94],ESI      ; 0054e089 | DAT_00625c94
+    MOV dword ptr [0x00625c98],EDI      ; 0054e079 | g_INT_00625c98
+    MOV [0x02c8afc0],EAX                ; 0054e07f | g_FLOAT_02c8afc0
+    MOV [0x02c8afc4],EAX                ; 0054e084 | g_FLOAT_02c8afc4
+    MOV dword ptr [0x00625c94],ESI      ; 0054e089 | g_FLOAT_00625c94
     JMP 0x0054d649                      ; 0054e08f
         ;   XREF to: 0054d649 (UNCONDITIONAL_JUMP)  ; LAB_0054d649
     PUSH 0x4                            ; 0054e094
         ;   Label: LAB_0054e094
-    PUSH 0x5f052b                       ; 0054e096 | DAT_005f052b
+    PUSH 0x5f052b                       ; 0054e096 | = "ndun"
     LEA EAX,[ESP + 0x208]               ; 0054e09b
     PUSH EAX                            ; 0054e0a2
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 0054e0a3
@@ -1248,17 +1248,17 @@ section .text
     MOV dword ptr [EAX + 0x161664],0x4000 ; 0054e100
     JMP 0x0054d71e                      ; 0054e10a
         ;   XREF to: 0054d71e (UNCONDITIONAL_JUMP)  ; LAB_0054d71e
-    MOV ESI,0x5f054e                    ; 0054e10f | DAT_005f054e
+    MOV ESI,0x5f054e                    ; 0054e10f | = "none"
         ;   Label: LAB_0054e10f
     MOV dword ptr [EAX + 0x15ae60],0x0  ; 0054e114
     PUSH EDI                            ; 0054e11e
-    MOV AL,byte ptr [ESI]               ; 0054e11f | DAT_005f054e | DAT_005f0550
+    MOV AL,byte ptr [ESI]               ; 0054e11f | = "none" | s_ne_005f054e+2
         ;   Label: LAB_0054e11f
     MOV byte ptr [EDI],AL               ; 0054e121
     CMP AL,0x0                          ; 0054e123
     JZ 0x0054e137                       ; 0054e125
         ;   XREF to: 0054e137 (CONDITIONAL_JUMP)  ; LAB_0054e137
-    MOV AL,byte ptr [ESI + 0x1]         ; 0054e127 | DAT_005f054f | DAT_005f0551
+    MOV AL,byte ptr [ESI + 0x1]         ; 0054e127 | s_one_005f054e+1 | s_e_005f054e+3
     ADD ESI,0x2                         ; 0054e12a
     MOV byte ptr [EDI + 0x1],AL         ; 0054e12d
     ADD EDI,0x2                         ; 0054e130
@@ -1277,7 +1277,7 @@ section .text
         ;   Label: LAB_0054e14c
     JMP 0x0054d7d8                      ; 0054e156
         ;   XREF to: 0054d7d8 (UNCONDITIONAL_JUMP)  ; LAB_0054d7d8
-    MOV EAX,[0x00625bc0]                ; 0054e15b | DAT_00625bc0
+    MOV EAX,[0x00625bc0]                ; 0054e15b | g_CTerrain_PTR_00625bc0
         ;   Label: LAB_0054e15b
     PUSH EAX                            ; 0054e160
     CALL core_terrain.cpp_CTerrain_free_FUN_0059f3c0 ; 0054e161
@@ -1303,7 +1303,7 @@ section .text
     MOV dword ptr [EAX + 0x15aed0],0x2  ; 0054e1a3
     PUSH 0x4                            ; 0054e1ad
         ;   Label: LAB_0054e1ad
-    PUSH 0x5f0599                       ; 0054e1af | DAT_005f0599
+    PUSH 0x5f0599                       ; 0054e1af | = "h109"
     LEA EAX,[ESP + 0x208]               ; 0054e1b4
     PUSH EAX                            ; 0054e1bb
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 0054e1bc
@@ -1342,7 +1342,7 @@ section .text
     MOV dword ptr [EAX + 0x15aed0],0x0  ; 0054e21b
     PUSH 0x4                            ; 0054e225
         ;   Label: LAB_0054e225
-    PUSH 0x5f05ab                       ; 0054e227 | DAT_005f05ab
+    PUSH 0x5f05ab                       ; 0054e227 | = "ndun"
     LEA EAX,[ESP + 0x208]               ; 0054e22c
     PUSH EAX                            ; 0054e233
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 0054e234
@@ -1374,7 +1374,7 @@ section .text
     MOV dword ptr [EAX + 0x15f694],0x8  ; 0054e287
     PUSH 0x4                            ; 0054e291
         ;   Label: LAB_0054e291
-    PUSH 0x5f05ba                       ; 0054e293 | DAT_005f05ba
+    PUSH 0x5f05ba                       ; 0054e293 | = "h109"
     LEA EAX,[ESP + 0x208]               ; 0054e298
     PUSH EAX                            ; 0054e29f
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 0054e2a0
@@ -1426,7 +1426,7 @@ section .text
     MOV dword ptr [EAX + 0x15f694],0x2  ; 0054e327
     PUSH 0x4                            ; 0054e331
         ;   Label: LAB_0054e331
-    PUSH 0x5f05d3                       ; 0054e333 | DAT_005f05d3
+    PUSH 0x5f05d3                       ; 0054e333 | = "ndun"
     LEA EAX,[ESP + 0x208]               ; 0054e338
     PUSH EAX                            ; 0054e33f
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 0054e340

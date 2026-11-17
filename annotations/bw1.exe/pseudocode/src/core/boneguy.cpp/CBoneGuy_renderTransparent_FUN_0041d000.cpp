@@ -35,12 +35,13 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d000(CBoneGuy *t
   }
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_30,unaff_EDI);
   if (iVar2 != 0) {
-    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,0);
-    pCVar1 = DAT_00612560;
+    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
+              (g_CDemonRenderer_PTR_00612560,0);
+    pCVar1 = g_CDemonRenderer_PTR_00612560;
     g_CDemonSetPtr->disable_directional_lighting = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(pCVar1,0xffff);
     core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960((CCharacter *)this_ptr);
-    pCVar1 = DAT_00612560;
+    pCVar1 = g_CDemonRenderer_PTR_00612560;
     g_CDemonSetPtr->disable_directional_lighting = 0;
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(pCVar1);
   }

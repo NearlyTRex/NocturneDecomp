@@ -18,11 +18,11 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004ffca4 = 004ffd00
 ;   TerminatedCString s_limb_wav_005deebd
-;   undefined4 DAT_005deecd
-;   undefined4 DAT_005deed5
-;   undefined4 DAT_005deedd
-;   undefined4 DAT_005deee5
-;   undefined4 DAT_005deeed
+;   double g_DOUBLE_005deecd = 0.333000000000000
+;   double g_DOUBLE_005deed5 = 0.666000000000000
+;   double g_DOUBLE_005deedd = 7
+;   double g_DOUBLE_005deee5 = 0.5
+;   double g_DOUBLE_005deeed = 2.5
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.blood_flag
 ;   undefined4 g_CGameInstance.gratuitous_dismemberment
@@ -95,7 +95,7 @@ section .text
     FLD float ptr [ESP + 0x20]          ; 004ffd32
     ADD ESP,0x8                         ; 004ffd36
     FST double ptr [ESP]                ; 004ffd39
-    FCOMP double ptr [0x005deecd]       ; 004ffd3c | DAT_005deecd
+    FCOMP double ptr [0x005deecd]       ; 004ffd3c | g_DOUBLE_005deecd
     FNSTSW AX                           ; 004ffd42
     SAHF                                ; 004ffd44
     JNC 0x00500003                      ; 004ffd45
@@ -265,7 +265,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 004ffef0
         ;   Label: LAB_004ffef0
     FLD ST0                             ; 004ffef3
-    FMUL double ptr [0x005deedd]        ; 004ffef5 | DAT_005deedd
+    FMUL double ptr [0x005deedd]        ; 004ffef5 | g_DOUBLE_005deedd
     MOV EAX,dword ptr [ESI]             ; 004ffefb
     FSTP ST1                            ; 004ffefd
     FSTP float ptr [ESI + 0x8]          ; 004ffeff
@@ -359,7 +359,7 @@ section .text
         ;   XREF to: 004fff5a (UNCONDITIONAL_JUMP)  ; LAB_004fff5a
     FLD double ptr [ESP]                ; 00500003
         ;   Label: LAB_00500003
-    FCOMP double ptr [0x005deed5]       ; 00500006 | DAT_005deed5
+    FCOMP double ptr [0x005deed5]       ; 00500006 | g_DOUBLE_005deed5
     FNSTSW AX                           ; 0050000c
     SAHF                                ; 0050000e
     JNC 0x004ffd53                      ; 0050000f
@@ -386,7 +386,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 0050004e
         ;   Label: LAB_0050004e
     FLD ST0                             ; 00500051
-    FMUL double ptr [0x005deeed]        ; 00500053 | DAT_005deeed
+    FMUL double ptr [0x005deeed]        ; 00500053 | g_DOUBLE_005deeed
     FSTP ST1                            ; 00500059
     FSTP float ptr [ESI + 0x4]          ; 0050005b
     MOV ESP,EBP                         ; 0050005e
@@ -398,7 +398,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 00500065
         ;   Label: LAB_00500065
     FLD ST0                             ; 00500068
-    FMUL double ptr [0x005deee5]        ; 0050006a | DAT_005deee5
+    FMUL double ptr [0x005deee5]        ; 0050006a | g_DOUBLE_005deee5
     FSTP ST1                            ; 00500070
     FSTP float ptr [ESI + 0x4]          ; 00500072
     MOV ESP,EBP                         ; 00500075

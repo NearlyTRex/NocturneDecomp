@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_ptr)
 
 {
@@ -183,12 +181,12 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
   iVar5 = core_weapon_cpp_CWeapon_fire_FUN_0057b880(&this_ptr_03->base);
   if (iVar5 == 0) {
     core_sound_cpp_CSound_playActorSound_FUN_005609d0
-              (0x02CF5680,(CDemonActor *)this_ptr,"wp_noammo.wav",&CStack_7c);
+              (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_noammo.wav",&CStack_7c);
     (this_ptr->base).fire_cooldown_timer = 1.0;
     return 0;
   }
-  fVar8 = (float10)fptan((float10)this_ptr->spread_angle * (float10)_DAT_005b64e2 *
-                         (float10)_DAT_005b64ea);
+  fVar8 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.141593f *
+                         (float10)0.0055555555555555497);
   fStack_38 = (float)(fVar8 * (float10)(this_ptr->base).bolt_velocity);
   iStack_28 = 0;
   if (0 < (this_ptr->base).ammo_per_shot) {
@@ -222,7 +220,7 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
       fVar2 = CStack_7c.x;
       *(float *)((int)&CStack_154 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
            afStack_474[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      fStack_20 = (float)_DAT_005b651a / (this_ptr->base).bolt_velocity;
+      fStack_20 = (float)1.5 / (this_ptr->base).bolt_velocity;
       fStack_220 = CStack_364.x * fStack_20;
       afStack_21c[0] = CStack_364.y * fStack_20;
       afStack_21c[1] = CStack_364.z * fStack_20;
@@ -280,7 +278,7 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
             afStack_1d4[(uint)bVar7 * -2] = afStack_cc[(uint)bVar7 * -2];
             afStack_1d4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
                  afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-            fStack_24 = (float)_DAT_005b6542 /
+            fStack_24 = (float)10 /
                         SQRT(afStack_1d4[1] * afStack_1d4[1] +
                              fStack_1d8 * fStack_1d8 + afStack_1d4[0] * afStack_1d4[0]);
             fStack_244 = fStack_1d8 * fStack_24;
@@ -322,7 +320,7 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
         if (this_ptr_01 == (CGlass *)0x0) {
           if (this_ptr_02 == (CTrigger *)0x0) {
             core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090
-                      (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
+                      (g_CFireEffect_PTR_005fc5a0,&g_CDemonSetPtr->collision_impact_position,
                        &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                        g_CDemonSetPtr->collision_actor,0);
             fStack_1fc = (g_CDemonSetPtr->collision_impact_position).x - CStack_2f8.x;
@@ -337,7 +335,7 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
               afStack_198[3] = fStack_15c;
               fStack_188 = fStack_158;
             }
-            if (_DAT_005b6522 <=
+            if (20.0f <=
                 SQRT(fStack_188 * fStack_188 +
                      afStack_198[2] * afStack_198[2] + afStack_198[3] * afStack_198[3])) break;
             fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,1.0);
@@ -347,46 +345,46 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
 LAB_004116f9:
                 fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,0.2);
                 core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
-                          (0x02CF5680,(CDemonActor *)this_ptr,"RIC-DT.WAV",&CStack_7c,
-                           fStack_14);
+                          (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"RIC-DT.WAV",
+                           &CStack_7c,fStack_14);
                 break;
               }
             }
             else {
               if (uVar1 < 8) {
-                if ((float)_DAT_005b652a <= fStack_14) {
+                if ((float)0.5 <= fStack_14) {
                   fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,0.2);
                   core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
-                            (0x02CF5680,(CDemonActor *)this_ptr,"RIC-WD0C.WAV",&CStack_7c
-                             ,fStack_14);
+                            (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"RIC-WD0C.WAV",
+                             &CStack_7c,fStack_14);
                 }
                 else {
                   fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,0.2);
                   core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
-                            (0x02CF5680,(CDemonActor *)this_ptr,"RIC-WD0B.WAV",&CStack_7c
-                             ,fStack_14);
+                            (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"RIC-WD0B.WAV",
+                             &CStack_7c,fStack_14);
                 }
                 break;
               }
               if (uVar1 != 8) goto LAB_004116f9;
             }
-            if (fStack_14 < (float)_DAT_005b6532) {
+            if (fStack_14 < (float)0.33000000000000002) {
               fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,0.2);
               core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
-                        (0x02CF5680,(CDemonActor *)this_ptr,"RIC-CT0A.WAV",&CStack_7c,
-                         fStack_14);
+                        (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"RIC-CT0A.WAV",
+                         &CStack_7c,fStack_14);
             }
-            else if (_DAT_005b653a <= (double)fStack_14) {
+            else if (0.66000000000000003 <= (double)fStack_14) {
               fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,0.2);
               core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
-                        (0x02CF5680,(CDemonActor *)this_ptr,"RIC-CT0C.WAV",&CStack_7c,
-                         fStack_14);
+                        (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"RIC-CT0C.WAV",
+                         &CStack_7c,fStack_14);
             }
             else {
               fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,0.2);
               core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
-                        (0x02CF5680,(CDemonActor *)this_ptr,"RIC-CT0B.WAV",&CStack_7c,
-                         fStack_14);
+                        (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"RIC-CT0B.WAV",
+                         &CStack_7c,fStack_14);
             }
             break;
           }
@@ -435,7 +433,7 @@ LAB_004116f9:
   afStack_3cc[(uint)bVar7 * -2 + 3] = afStack_300[(uint)bVar7 * -2];
   afStack_3cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        afStack_300[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-  CStack_268.z = fStack_3bc + (float)_DAT_005b64f2;
+  CStack_268.z = fStack_3bc + (float)-2.75;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_268,&CStack_dc);
   CStack_2e0.x = CStack_dc.x;
@@ -460,7 +458,7 @@ LAB_004116f9:
   afStack_33c[(uint)bVar7 * -2 + 3] = afStack_138[(uint)bVar7 * -2 + 0x12];
   afStack_33c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        afStack_138[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13];
-  CStack_394.z = fStack_32c + (float)_DAT_005b64fa;
+  CStack_394.z = fStack_32c + (float)-2.5;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_394,&CStack_280);
   (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
@@ -480,7 +478,7 @@ LAB_004116f9:
   afStack_138[(uint)bVar7 * -2 + 6] = afStack_cc[(uint)bVar7 * -2 + 6];
   afStack_138[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
        afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-  CStack_184.z = fStack_11c + _DAT_005b6502;
+  CStack_184.z = fStack_11c + 50.0f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_184,&CStack_70);
   CStack_1e4.x = CStack_70.x;
@@ -505,7 +503,7 @@ LAB_004116f9:
   afStack_3cc[(uint)bVar7 * -2 + 6] = afStack_474[(uint)bVar7 * -2 + 0x12];
   afStack_3cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
        afStack_474[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13];
-  CStack_2a4.z = fStack_3b0 + _DAT_005b6506;
+  CStack_2a4.z = fStack_3b0 + 100.0f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_2a4,&CStack_370);
   CStack_3dc.x = CStack_370.x;
@@ -530,7 +528,7 @@ LAB_004116f9:
   afStack_cc[(uint)bVar7 * -2 + 0x12] = afStack_474[(uint)bVar7 * -2 + 3];
   afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13] =
        afStack_474[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-  CStack_3ac.z = fStack_80 + _DAT_005b650a;
+  CStack_3ac.z = fStack_80 + 150.0f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_3ac,&CStack_31c);
   CStack_1b4.x = CStack_31c.x;
@@ -555,7 +553,7 @@ LAB_004116f9:
   afStack_2e8[(uint)bVar7 * -2] = afStack_cc[(uint)bVar7 * -2 + 0xc];
   afStack_2e8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
        afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
-  CStack_34c.z = afStack_2e8[1] + _DAT_005b650e;
+  CStack_34c.z = afStack_2e8[1] + 200.0f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_34c,&CStack_148);
   CStack_1a8.x = CStack_148.x;
@@ -580,7 +578,7 @@ LAB_004116f9:
   afStack_cc[(uint)bVar7 * -2 + 3] = afStack_414[(uint)bVar7 * -2];
   afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        afStack_414[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-  CStack_2bc.z = fStack_bc + _DAT_005b6512;
+  CStack_2bc.z = fStack_bc + 300.0f;
   rotation_matrix = &(this_ptr->base).base.orient_matrix;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_2bc,&CStack_424);
@@ -590,28 +588,29 @@ LAB_004116f9:
   rotation_matrix_00 = rotation_matrix;
   *(uint *)((int)&CStack_e8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
        *(uint *)((int)&CStack_424 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  CStack_298.y = CStack_298.y + _DAT_005b6516;
-  CStack_268.y = CStack_268.y + _DAT_005b6516;
+  CStack_298.y = CStack_298.y + -0.125f;
+  CStack_268.y = CStack_268.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
-            (0x01C73654,&CStack_298,rotation_matrix_00);
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(0x01C73654,&CStack_298);
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(0x01C73654,&CStack_1e4,rotation_matrix)
-  ;
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(0x01C73654,&CStack_1e4);
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(0x01C73654,&CStack_3dc,rotation_matrix)
-  ;
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(0x01C73654,&CStack_3dc);
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(0x01C73654,&CStack_1b4,rotation_matrix)
-  ;
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(0x01C73654,&CStack_1b4);
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(0x01C73654,&CStack_1a8,rotation_matrix)
-  ;
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(0x01C73654,&CStack_1a8);
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(0x01C73654,&CStack_e8,rotation_matrix);
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(0x01C73654,&CStack_e8);
+            (g_CFireEffect_PTR_005fc5a0,&CStack_298,rotation_matrix_00);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(g_CFireEffect_PTR_005fc5a0,&CStack_298);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
+            (g_CFireEffect_PTR_005fc5a0,&CStack_1e4,rotation_matrix);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(g_CFireEffect_PTR_005fc5a0,&CStack_1e4);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
+            (g_CFireEffect_PTR_005fc5a0,&CStack_3dc,rotation_matrix);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(g_CFireEffect_PTR_005fc5a0,&CStack_3dc);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
+            (g_CFireEffect_PTR_005fc5a0,&CStack_1b4,rotation_matrix);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(g_CFireEffect_PTR_005fc5a0,&CStack_1b4);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
+            (g_CFireEffect_PTR_005fc5a0,&CStack_1a8,rotation_matrix);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(g_CFireEffect_PTR_005fc5a0,&CStack_1a8);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
+            (g_CFireEffect_PTR_005fc5a0,&CStack_e8,rotation_matrix);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(g_CFireEffect_PTR_005fc5a0,&CStack_e8);
   iVar5 = 0;
   core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004a2560
-            (0x01C73654,&CStack_298,1.1,&CStack_388,0xffff);
+            (g_CFireEffect_PTR_005fc5a0,&CStack_298,1.1,&CStack_388,0xffff);
   do {
     fStack_40 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-3.0,3.0);
     fStack_3c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,8.0);
@@ -629,10 +628,10 @@ LAB_004116f9:
     fStack_2c = CStack_400.x;
     fStack_14 = CStack_400.x;
     core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-              (0x01C73654,&CStack_2e0,&CStack_310,0x20000,0x10000,6,0xffff);
+              (g_CFireEffect_PTR_005fc5a0,&CStack_2e0,&CStack_310,0x20000,0x10000,6,0xffff);
   } while (iVar5 < 8);
   core_sound_cpp_CSound_playActorSound_FUN_005609d0
-            (0x02CF5680,(CDemonActor *)this_ptr,"wp_blunderbus.wav",&CStack_7c);
+            (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_blunderbus.wav",&CStack_7c);
   (this_ptr->base).fire_cooldown_timer = 2.5;
   return 1;
 }

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_wateract_cpp_CLava_getActorType_FUN_00579010(CLava *this_ptr)
 
 {
-  return (CDemonActorType *)0x2d09d24;
+  return &g_CDemonActorType_02d09d24;
 }

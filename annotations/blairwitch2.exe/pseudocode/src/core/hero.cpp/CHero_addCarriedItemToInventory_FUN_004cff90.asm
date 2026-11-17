@@ -15,13 +15,13 @@
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50 at 0056dd0e
 ;
 ; Referenced Globals:
-;   undefined4 s_s_63Ravinammo01_005d9d83+1
+;   TerminatedCString s_s_63Ravinammo01_005d9d84
 ;   TerminatedCString s_searchedravine_005d9d92
 ;   TerminatedCString s_s_63Ravinammo02_005d9da1
 ;   TerminatedCString s_searchedravine_005d9daf
 ;   TerminatedCString s_s_63Ravinfood01_005d9dbe
 ;   TerminatedCString s_searchedravine_005d9dcc
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 004d0032 (CONDITIONAL_JUMP)  ; LAB_004d0032
     JZ 0x004d0005                       ; 004cffb5
         ;   XREF to: 004d0005 (CONDITIONAL_JUMP)  ; LAB_004d0005
-    PUSH 0x5d9d84                       ; 004cffb7 | s_s_63Ravinammo01_005d9d83+1
+    PUSH 0x5d9d84                       ; 004cffb7 | = "63Ravinammo01"
     PUSH EBX                            ; 004cffbc
     CALL crt_string.c__strcmp_FUN_005b8c30 ; 004cffbd
         ;   XREF to: 005b8c30 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005b8c30(char * str1, char * str2)
@@ -77,7 +77,7 @@ section .text
     PUSH EDI                            ; 004cffed
     PUSH 0x1                            ; 004cffee
     PUSH 0x5d9dcc                       ; 004cfff0 | = "searchedravine"
-    MOV EDI,dword ptr [0x006141f0]      ; 004cfff5 | DAT_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 004cfff5 | g_CEventList_PTR_006141f0
     PUSH EDI                            ; 004cfffb
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004cfffc
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
@@ -105,7 +105,7 @@ section .text
     PUSH 0x1                            ; 004d0035
         ;   Label: LAB_004d0035
     PUSH 0x5d9d92                       ; 004d0037 | = "searchedravine"
-    MOV EDX,dword ptr [0x006141f0]      ; 004d003c | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004d003c | g_CEventList_PTR_006141f0
     PUSH EDX                            ; 004d0042
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004d0043
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
@@ -115,7 +115,7 @@ section .text
     PUSH 0x1                            ; 004d0050
         ;   Label: LAB_004d0050
     PUSH 0x5d9daf                       ; 004d0052 | = "searchedravine"
-    MOV ECX,dword ptr [0x006141f0]      ; 004d0057 | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 004d0057 | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 004d005d
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004d005e
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)

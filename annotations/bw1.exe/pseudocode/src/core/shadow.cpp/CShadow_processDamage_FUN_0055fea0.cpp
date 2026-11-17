@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -31,7 +29,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
      ((EVar1 == DAMAGE_TYPE_ATTACK_GAS ||
       ((EVar1 == DAMAGE_TYPE_ATTACK_ELECTROCUTE || (EVar1 == DAMAGE_TYPE_PIERCING)))))) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (0x01C51D80,"ShotShadowWithLead");
+              (g_CEventList_PTR_0061b4d0,"ShotShadowWithLead");
     damage_info->damage_amount = 0.0;
   }
   else {
@@ -76,7 +74,8 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
     if (((iVar5 != 0x11) && (iVar5 != 0xf)) && ((iVar5 != 0x12 && (iVar5 != 0x10)))) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                 ((CDemonActor *)this_ptr,
-                 (CVector3f *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x20),&CStack_24);
+                 &(g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base).base.location.position,
+                 &CStack_24);
       fStack_18 = CStack_24.x;
       afStack_14[(uint)bVar4 * -2] = *(float *)((int)&CStack_24 + (uint)bVar4 * -8 + 4);
       afStack_14[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -89,7 +88,8 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_c,iVar5,1);
       core_shadow_cpp_CShadow_playDeathSound_FUN_0055f540(this_ptr);
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,"ShadowDead");
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+                (g_CEventList_PTR_0061b4d0,"ShadowDead");
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   }

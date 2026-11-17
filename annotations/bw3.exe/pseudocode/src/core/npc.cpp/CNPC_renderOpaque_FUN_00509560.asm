@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_heroCanSee_005cb5b8
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fba60
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
@@ -35,8 +35,8 @@ section .text
     CMP dword ptr [EBX + 0x27a8],0x0    ; 00509570
     JZ 0x005095a9                       ; 00509577
         ;   XREF to: 005095a9 (CONDITIONAL_JUMP)  ; LAB_005095a9
-    MOV ESI,dword ptr [0x005f2afc]      ; 00509579 | DAT_005f2afc
-    PUSH ESI                            ; 0050957f | DAT_01bdd7e4
+    MOV ESI,dword ptr [0x005f2afc]      ; 00509579 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ESI                            ; 0050957f | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 00509580
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00509585
@@ -68,7 +68,7 @@ section .text
     RET                                 ; 005095b5
     PUSH 0x5cb5b8                       ; 005095b6 | = "heroCanSee"
         ;   Label: LAB_005095b6
-    MOV EDI,dword ptr [0x005fba60]      ; 005095bb | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 005095bb | g_CEventList_PTR_005fba60
     PUSH EDI                            ; 005095c1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005095c2
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

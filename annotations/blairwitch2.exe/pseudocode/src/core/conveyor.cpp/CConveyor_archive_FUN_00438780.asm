@@ -7,7 +7,7 @@
 ; CConveyor *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cdf96
+;   TerminatedCString s_size_005cdf96
 ;   TerminatedCString s_direction_005cdf9b
 ;   TerminatedCString s_startEvent_005cdfa5
 ;   TerminatedCString s_stopEvent_005cdfb0
@@ -32,7 +32,7 @@ section .text
     CALL core_platfrm.cpp_CPlatform_archive_FUN_005193f0 ; 00438786
         ;   XREF to: 005193f0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_archive_FUN_005193f0(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 0043878b
-    PUSH 0x5cdf96                       ; 0043878e | DAT_005cdf96
+    PUSH 0x5cdf96                       ; 0043878e | = "size"
     LEA EAX,[EBX + 0x884]               ; 00438793
     PUSH EAX                            ; 00438799
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 0043879a

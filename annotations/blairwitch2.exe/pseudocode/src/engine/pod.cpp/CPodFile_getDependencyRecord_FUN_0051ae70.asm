@@ -11,8 +11,8 @@
 ;   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_0051ba20 at 0051bb73
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_0051ae95
     MOV EDI,0x37c                       ; 0051ae9a
     PUSH 0x5e264e                       ; 0051ae9f
-    MOV dword ptr [0x01d046a0],ESI      ; 0051aea4 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051aeaa | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0051aea4 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0051aeaa | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051aeb0
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051aeb5
@@ -63,8 +63,8 @@ section .text
     MOV EAX,0x5e2692                    ; 0051aed0
     MOV EDX,0x381                       ; 0051aed5
     PUSH 0x5e26a4                       ; 0051aeda
-    MOV [0x01d046a0],EAX                ; 0051aedf | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0051aee4 | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0051aedf | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 0051aee4 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051aeea
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0051aeef
@@ -115,8 +115,8 @@ section .text
     MOV EDI,0x5e26d2                    ; 0051af5a
     MOV EAX,0x392                       ; 0051af5f
     PUSH 0x5e26e4                       ; 0051af64
-    MOV dword ptr [0x01d046a0],EDI      ; 0051af69 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0051af6f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0051af69 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0051af6f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051af74
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0051af79

@@ -12,9 +12,9 @@
 ;   void* PTR_ReadFile_005b3618 = 001b4100
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a8 = 005a7f44
-;   undefined4 DAT_00607b18
-;   undefined4 DAT_00607b40
-;   undefined4 DAT_00607b84
+;   void* g_PTR_00607b18 = 00000000
+;   void* g_PTR_00607b40 = 00000000
+;   uint g_UINT_00607b84 = 0x14
 ;   undefined4 DAT_00607bdc
 ;
 ; Called Functions:
@@ -37,7 +37,7 @@ section .text
     TEST EBX,EBX                        ; 005a944b
     JL 0x005a9457                       ; 005a944d
         ;   XREF to: 005a9457 (CONDITIONAL_JUMP)  ; LAB_005a9457
-    CMP EBX,dword ptr [0x00607b84]      ; 005a944f | DAT_00607b84
+    CMP EBX,dword ptr [0x00607b84]      ; 005a944f | g_UINT_00607b84
     JBE 0x005a946b                      ; 005a9455
         ;   XREF to: 005a946b (CONDITIONAL_JUMP)  ; LAB_005a946b
     PUSH 0x4                            ; 005a9457
@@ -51,13 +51,13 @@ section .text
     PUSH EBX                            ; 005a946b
         ;   Label: LAB_005a946b
     CALL dword ptr [0x006079a4]         ; 005a946c | PTR_crt_unknown.c_FUN_005a7f44_006079a4
-    MOV ECX,dword ptr [0x00607b40]      ; 005a9472 | DAT_00607b40
+    MOV ECX,dword ptr [0x00607b40]      ; 005a9472 | g_PTR_00607b40
     ADD ESP,0x4                         ; 005a9478
     TEST ECX,ECX                        ; 005a947b
     JZ 0x005a94b7                       ; 005a947d
         ;   XREF to: 005a94b7 (CONDITIONAL_JUMP)  ; LAB_005a94b7
     PUSH EBX                            ; 005a947f
-    CALL dword ptr [0x00607b18]         ; 005a9480 | DAT_00607b18
+    CALL dword ptr [0x00607b18]         ; 005a9480 | g_PTR_00607b18
     ADD ESP,0x4                         ; 005a9486
     TEST EAX,EAX                        ; 005a9489
     JZ 0x005a94b7                       ; 005a948b
@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 005a9492
     PUSH ECX                            ; 005a9496
     PUSH EAX                            ; 005a9497
-    CALL dword ptr [0x00607b40]         ; 005a9498 | DAT_00607b40
+    CALL dword ptr [0x00607b40]         ; 005a9498 | g_PTR_00607b40
     ADD ESP,0xc                         ; 005a949e
     PUSH EBX                            ; 005a94a1
     MOV ESI,EAX                         ; 005a94a2

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005a86c4(int param_1,int *param_2)
 
 {
@@ -64,7 +62,7 @@ int FUN_005a86c4(int param_1,int *param_2)
       }
       else {
         local_18 = bVar4;
-        if ((_DAT_02d25930 != 0) && ((*(byte *)(bVar4 + 0x2d25941) & 1) != 0)) {
+        if ((g_INT_02d25930 != 0) && ((g_CHAR_ARRAY_02d25941[bVar4] & 1U) != 0)) {
           local_17 = FUN_005a82a0(param_1);
         }
         iVar5 = FUN_005ae560(local_1c,&local_18,2);

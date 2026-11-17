@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 double __fpustack_safe acos(double x)
 
 {
@@ -29,7 +27,7 @@ double __fpustack_safe acos(double x)
     cVar1 = FUN_005c7f06();
     if (cVar1 == '\0') {
       fVar2 = atan2(y,fVar2);
-      fVar2 = _DAT_0062622c - fVar2;
+      fVar2 = 1.5707963f - fVar2;
     }
   }
   return (double)fVar2;

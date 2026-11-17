@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 358,
+    "complexity_score": 168,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 118,
-    "suspect_count": 22,
+    "suspect_count": 4,
     "suspect_types": [
       "bit_int_float_compare",
-      "unresolved_funcptr",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
     "total_lines": 508
   },
@@ -42,63 +40,63 @@
   "globals": [
     {
       "addr": "005f2813",
-      "name": "DAT_005f2813",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f2813",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "005f281b",
-      "name": "DAT_005f281b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f281b",
+      "type": "double",
+      "value": "0.0500000000000000"
     },
     {
       "addr": "005f2823",
-      "name": "DAT_005f2823",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f2823",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005f282b",
-      "name": "DAT_005f282b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f282b",
+      "type": "double",
+      "value": "8"
     },
     {
       "addr": "005f2833",
-      "name": "DAT_005f2833",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f2833",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005f283b",
-      "name": "DAT_005f283b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f283b",
+      "type": "float",
+      "value": "-1.570796"
     },
     {
       "addr": "005f283f",
-      "name": "DAT_005f283f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f283f",
+      "type": "float",
+      "value": "1.570796"
     },
     {
       "addr": "005f2843",
-      "name": "DAT_005f2843",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f2843",
+      "type": "float",
+      "value": "-3.141593"
     },
     {
       "addr": "005f2847",
-      "name": "DAT_005f2847",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f2847",
+      "type": "float",
+      "value": "6.283185"
     },
     {
       "addr": "005f284b",
-      "name": "DAT_005f284b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f284b",
+      "type": "float",
+      "value": "-6.283185"
     },
     {
       "addr": "0061d95c",
@@ -108,9 +106,9 @@
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "01ccf624",
@@ -120,8 +118,8 @@
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     }
   ],
@@ -260,152 +258,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x38);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x2a), dVar4 = _DAT_005f2813, iVar5 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x4f);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x51);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 34,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x48);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x50);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x4b);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x4d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x10);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 68,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1e);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x3f);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 76,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x42);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x47);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 84,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x49);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 88,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0xc);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 92,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0xd);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 96,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x4c);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 98,
+      "line": 97,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->orientation).vec.z = 0.0;",
@@ -413,7 +267,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
-      "line": 105,
+      "line": 104,
       "match": "0x40490fdb < (int)(this_ptr->orientation).vec.y)",
       "severity": "moderate",
       "text": "if (0x40490fdb < (int)(this_ptr->orientation).vec.y) {",
@@ -421,7 +275,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
-      "line": 111,
+      "line": 110,
       "match": "0x40490fdb < (int)(this_ptr->orientation).vec.x)",
       "severity": "moderate",
       "text": "if (0x40490fdb < (int)(this_ptr->orientation).vec.x) {",
@@ -429,7 +283,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
-      "line": 117,
+      "line": 116,
       "match": "0x40490fdb < (int)(this_ptr->orientation).vec.z)",
       "severity": "moderate",
       "text": "if (0x40490fdb < (int)(this_ptr->orientation).vec.z) {",

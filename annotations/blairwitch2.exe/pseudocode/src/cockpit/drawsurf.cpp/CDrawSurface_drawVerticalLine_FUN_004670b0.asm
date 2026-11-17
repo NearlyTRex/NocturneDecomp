@@ -20,15 +20,15 @@
 ;   TerminatedCString s_Invalid_bitsPerPixel_005d136b
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005d1381
 ;   TerminatedCString s_Invalid_bitsPerPixel_005d1399
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01ba5c28
-;   undefined4 DAT_01ba5c34
-;   undefined4 DAT_01ba5c38
-;   undefined4 DAT_01ba5c48
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_006141c0 = 0x8
+;   int g_INT_01ba5c28
+;   int g_INT_01ba5c34
+;   int g_INT_01ba5c38
+;   int g_INT_01ba5c48
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -75,7 +75,7 @@ section .text
     JG 0x00467150                       ; 004670fb
         ;   XREF to: 00467150 (CONDITIONAL_JUMP)  ; LAB_00467150
     LEA EDI,[ESI + ESI*0x1]             ; 004670fd
-    MOV EBP,dword ptr [0x01ba5c34]      ; 00467100 | DAT_01ba5c34
+    MOV EBP,dword ptr [0x01ba5c34]      ; 00467100 | g_INT_01ba5c34
     LEA EDX,[ESI*0x4 + 0x0]             ; 00467106
     SHL EBX,0x2                         ; 0046710d
     MOV dword ptr [ESP],EDX             ; 00467110
@@ -83,7 +83,7 @@ section .text
     TEST EBP,EBP                        ; 0046711a
     JNZ 0x00467236                      ; 0046711c
         ;   XREF to: 00467236 (CONDITIONAL_JUMP)  ; LAB_00467236
-    MOV ECX,dword ptr [0x006141c0]      ; 00467122 | DAT_006141c0
+    MOV ECX,dword ptr [0x006141c0]      ; 00467122 | g_INT_006141c0
     CMP ECX,0x10                        ; 00467128
     JNC 0x004671be                      ; 0046712b
         ;   XREF to: 004671be (CONDITIONAL_JUMP)  ; LAB_004671be
@@ -91,9 +91,9 @@ section .text
     JNZ 0x00467193                      ; 00467134
         ;   XREF to: 00467193 (CONDITIONAL_JUMP)  ; LAB_00467193
     MOV EDI,EBX                         ; 00467136
-    MOV CL,byte ptr [0x01ba5c28]        ; 00467138 | DAT_01ba5c28
+    MOV CL,byte ptr [0x01ba5c28]        ; 00467138 | g_INT_01ba5c28
         ;   Label: LAB_00467138
-    MOV EBX,dword ptr [EDX + 0x1c2a38c] ; 0046713e | DAT_01c2a38c | DAT_01c2a390
+    MOV EBX,dword ptr [EDX + 0x1c2a38c] ; 0046713e | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     ADD EDX,0x4                         ; 00467144
     INC EAX                             ; 00467147
     MOV byte ptr [ESI + EBX*0x1],CL     ; 00467148
@@ -110,9 +110,9 @@ section .text
     RET                                 ; 00467157
     MOV ESI,EBX                         ; 00467158
         ;   Label: LAB_00467158
-    MOV BX,word ptr [0x01ba5c28]        ; 0046715a | DAT_01ba5c28
+    MOV BX,word ptr [0x01ba5c28]        ; 0046715a | g_INT_01ba5c28
         ;   Label: LAB_0046715a
-    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 00467161 | DAT_01c2a38c | DAT_01c2a390
+    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 00467161 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     ADD EDX,0x4                         ; 00467167
     INC EAX                             ; 0046716a
     MOV word ptr [ECX + EDI*0x1],BX     ; 0046716b
@@ -124,9 +124,9 @@ section .text
     MOV EDI,dword ptr [ESP]             ; 00467175
         ;   Label: LAB_00467175
     MOV ESI,EBX                         ; 00467178
-    MOV EBX,dword ptr [0x01ba5c28]      ; 0046717a | DAT_01ba5c28
+    MOV EBX,dword ptr [0x01ba5c28]      ; 0046717a | g_INT_01ba5c28
         ;   Label: LAB_0046717a
-    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 00467180 | DAT_01c2a38c | DAT_01c2a390
+    MOV ECX,dword ptr [EDX + 0x1c2a38c] ; 00467180 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     ADD EDX,0x4                         ; 00467186
     INC EAX                             ; 00467189
     MOV dword ptr [ECX + EDI*0x1],EBX   ; 0046718a
@@ -139,8 +139,8 @@ section .text
         ;   Label: LAB_00467193
     MOV EBX,0x3db                       ; 00467198
     PUSH 0x5d136b                       ; 0046719d | = "Invalid bitsPerPixel!"
-    MOV dword ptr [0x01d046a0],ECX      ; 004671a2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 004671a8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004671a2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 004671a8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004671ae
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004671b3
@@ -161,13 +161,13 @@ section .text
     MOV EBP,EDI                         ; 004671c7
         ;   Label: LAB_004671c7
     MOV EDI,EBX                         ; 004671c9
-    MOV EBX,dword ptr [EDX + 0x1c2a38c] ; 004671cb | DAT_01c2a38c | DAT_01c2a390
+    MOV EBX,dword ptr [EDX + 0x1c2a38c] ; 004671cb | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
         ;   Label: LAB_004671cb
     XOR ESI,ESI                         ; 004671d1
-    MOV CL,byte ptr [0x01ba5c38]        ; 004671d3 | DAT_01ba5c38
+    MOV CL,byte ptr [0x01ba5c38]        ; 004671d3 | g_INT_01ba5c38
     MOV SI,word ptr [EBX + EBP*0x1]     ; 004671d9
     SHR ESI,CL                          ; 004671dd
-    MOV ECX,dword ptr [0x01ba5c48]      ; 004671df | DAT_01ba5c48
+    MOV ECX,dword ptr [0x01ba5c48]      ; 004671df | g_INT_01ba5c48
     ADD EDX,0x4                         ; 004671e5
     AND ESI,ECX                         ; 004671e8
     INC EAX                             ; 004671ea
@@ -186,14 +186,14 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 004671fe
     MOV EDI,EBX                         ; 00467202
     MOV EBP,dword ptr [ESP + 0x4]       ; 00467204
-    MOV ESI,dword ptr [EDX + 0x1c2a38c] ; 00467208 | DAT_01c2a38c | DAT_01c2a390
+    MOV ESI,dword ptr [EDX + 0x1c2a38c] ; 00467208 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
         ;   Label: LAB_00467208
     ADD ESI,EBP                         ; 0046720e
-    MOV CL,byte ptr [0x01ba5c38]        ; 00467210 | DAT_01ba5c38
+    MOV CL,byte ptr [0x01ba5c38]        ; 00467210 | g_INT_01ba5c38
     MOV EBX,dword ptr [ESI]             ; 00467216
     SHR EBX,CL                          ; 00467218
     MOV ECX,EBX                         ; 0046721a
-    MOV EBX,dword ptr [0x01ba5c48]      ; 0046721c | DAT_01ba5c48
+    MOV EBX,dword ptr [0x01ba5c48]      ; 0046721c | g_INT_01ba5c48
     ADD EDX,0x4                         ; 00467222
     AND ECX,EBX                         ; 00467225
     INC EAX                             ; 00467227
@@ -207,7 +207,7 @@ section .text
     POP ESI                             ; 00467233
     POP EBX                             ; 00467234
     RET                                 ; 00467235
-    MOV ECX,dword ptr [0x006141c0]      ; 00467236 | DAT_006141c0
+    MOV ECX,dword ptr [0x006141c0]      ; 00467236 | g_INT_006141c0
         ;   Label: LAB_00467236
     CMP ECX,0x10                        ; 0046723c
     JNC 0x0046724c                      ; 0046723f
@@ -227,8 +227,8 @@ section .text
         ;   Label: LAB_00467257
     MOV EDX,0x3fb                       ; 0046725c
     PUSH 0x5d1399                       ; 00467261 | = "Invalid bitsPerPixel!"
-    MOV [0x01d046a0],EAX                ; 00467266 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0046726b | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00467266 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 0046726b | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00467271
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00467276

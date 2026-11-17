@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_005dec4d
 ;   TerminatedCString s_CEventList_setCounter_to_005dec5f
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findCounter_FUN_004a9fa0
@@ -101,8 +101,8 @@ section .text
     MOV ESI,0x5dec4d                    ; 004a9e0b | = "..\\core\\event.cpp"
     MOV EDI,0xe09                       ; 004a9e10
     PUSH 0x5dec5f                       ; 004a9e15 | = "CEventList::setCounter - too many cou..."
-    MOV dword ptr [0x01d1d400],ESI      ; 004a9e1a | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004a9e20 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 004a9e1a | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 004a9e20 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a9e26
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004a9e2b

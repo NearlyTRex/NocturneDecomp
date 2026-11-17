@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40(CFrankenstienMachine *this_ptr)
 
 {
@@ -28,7 +26,7 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40(CFr
   
   iVar3 = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);
   bVar7 = 0;
-  if (*(int *)(0x01D2C900 + 0x1008) != 0) {
+  if (g_CDemonMission_PTR_0061f650->is_in_editor != 0) {
     pCVar2 = core_frankgen_cpp_findLeader_FUN_004c5e10();
     this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
     core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60(this_ptr);
@@ -55,20 +53,20 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40(CFr
         fStack_48 = 0.0;
       }
       else if ((int)fVar1 < 0x44ed8000) {
-        fStack_48 = this_ptr->master_frame + _DAT_005e0d46;
+        fStack_48 = this_ptr->master_frame + -1800.0f;
       }
       else if ((int)fVar1 < 0x44fa0000) {
         fStack_48 = 100.0;
       }
       else {
-        fVar1 = (this_ptr->master_frame + _DAT_005e0d1e) * (float)_DAT_005e0d22;
-        dVar9 = floor((double)(fVar1 * _DAT_005e0d2a));
-        fVar8 = (float10)fVar1 - (float10)dVar9 * (float10)_DAT_005e0d32;
+        fVar1 = (this_ptr->master_frame + -2000.0f) * (float)3;
+        dVar9 = floor((double)(fVar1 * 0.005f));
+        fVar8 = (float10)fVar1 - (float10)dVar9 * (float10)200;
         fStack_48 = (float)fVar8;
-        if ((float10)_DAT_005e0d3a < fVar8) {
-          fStack_48 = _DAT_005e0d3e - fStack_48;
+        if ((float10)100.0f < fVar8) {
+          fStack_48 = 200.0f - fStack_48;
         }
-        fStack_48 = fStack_48 + _DAT_005e0d42;
+        fStack_48 = fStack_48 + 99.0f;
       }
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                 (&this_ptr->body_model,fStack_48,-1);

@@ -18,8 +18,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_platfrm_cpp_005cc48f
 ;   TerminatedCString s_CPlatform_attachActor_to_005cc4a3
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -122,8 +122,8 @@ section .text
         ;   Label: LAB_00512b68
     MOV EBX,0x3d0                       ; 00512b6d
     PUSH 0x5cc4a3                       ; 00512b72 | = "CPlatform::attachActor - too many!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00512b77 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00512b7d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00512b77 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00512b7d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00512b83
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00512b88

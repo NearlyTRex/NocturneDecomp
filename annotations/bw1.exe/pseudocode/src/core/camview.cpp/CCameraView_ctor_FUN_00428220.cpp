@@ -11,7 +11,6 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_00428220(CCameraView
 {
   this_ptr->focal_length = 28.0;
   this_ptr->fixed_point_scale = 256.0;
-  this_ptr->vtable =
-       (CCameraView_vtable *)&PTR_core_camview_cpp_CCameraView_dtor_FUN_00428240_005fd414;
+  this_ptr->vtable = &g_CCameraView_vtable_005fd414;
   return this_ptr;
 }

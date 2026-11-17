@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags)
 
 {
@@ -20,17 +18,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
   int local_14;
   
   if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
-     (DAT_007303fc != 0)) {
+     (g_INT_007303fc != 0)) {
     if (this_ptr->shadow_pass_active == 0) {
-      if (DAT_005fba20 == 0x20) {
-        _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
+      if (g_INT_005fba20 == 0x20) {
+        g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
       }
       else {
-        _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+        g_PTR_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
       }
-      _DAT_01c6e2b4 = render_flags;
-      _DAT_01c6e2b8 = 6;
-      if (_DAT_01c6cee8 == 0) {
+      g_BIT_INTEGER32_01c6e2b4.dword = render_flags;
+      g_INT_01c6e2b8 = 6;
+      if (g_INT_01c6cee8 == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
           local_28.x = primitive_array->vertices[0].vertex_index;
           local_28.y = primitive_array->vertices[1].vertex_index;
@@ -69,11 +67,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
             if (iVar2 != 0) {
               iVar3 = iVar3 + 1;
               iVar2 = local_18 + 4;
-              *(SMRGLPrimitiveQuad **)(&DAT_005f2b04 + local_18) = primitive_array;
+              *(SMRGLPrimitiveQuad **)((int)g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04 + local_18) =
+                   primitive_array;
               local_18 = iVar2;
               if (1999 < iVar3) {
-                _DAT_01d71de0 = "..\\engine\\drender.cpp";
-                _DAT_01d71de4 = 0x9b6;
+                g_CHAR_PTR_01d71de0 = "..\\engine\\drender.cpp";
+                g_INT_01d71de4 = 0x9b6;
                 core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d");
               }
             }
@@ -86,16 +85,16 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
         }
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_00565c70
-                    (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveQuad **)&DAT_005f2b04,iVar3,
-                     _DAT_01c6e2b4);
+                    (this_ptr->vertex_buffer_ptr,g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04,iVar3,
+                     g_BIT_INTEGER32_01c6e2b4.dword);
           return;
         }
       }
     }
     else {
-      _DAT_01c6b5cc = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6;
-      _DAT_01c6e2b4 = 0;
-      _DAT_01c6e2b8 = _DAT_01c6e2b4;
+      g_PTR_01c6b5cc = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6;
+      g_BIT_INTEGER32_01c6e2b4.dword = 0;
+      g_INT_01c6e2b8 = g_BIT_INTEGER32_01c6e2b4.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
         local_28.x = primitive_array->vertices[0].vertex_index;
         local_28.y = primitive_array->vertices[1].vertex_index;

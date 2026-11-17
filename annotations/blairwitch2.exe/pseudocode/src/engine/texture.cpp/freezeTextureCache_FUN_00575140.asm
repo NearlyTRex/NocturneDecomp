@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02652eb4
+;   int g_INT_02652eb4
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV dword ptr [0x02652eb4],0x1      ; 00575140 | DAT_02652eb4
+    MOV dword ptr [0x02652eb4],0x1      ; 00575140 | g_INT_02652eb4
         ;   Label: engine_texture.cpp_freezeTextureCache_FUN_00575140
     RET                                 ; 0057514a
 

@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNumberOfSfxChannels_FUN_005511e0(int channel_count)
 
 {
   if (channel_count < 0x21) {
-    DAT_0061bc94 = channel_count;
+    g_INT_0061bc94 = channel_count;
     return;
   }
-  _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-  _DAT_01d046a4 = 0x1128;
+  g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+  g_INT_01d046a4 = 0x1128;
   core_main_c_displayErrorAndQuit_FUN_004e4500("setNumberOfSfxChannels - too many!");
-  DAT_0061bc94 = channel_count;
+  g_INT_0061bc94 = channel_count;
   return;
 }

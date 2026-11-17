@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d34c2
 ;   TerminatedCString s_SfxSlot_seek_no_sample_005d34d7
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -42,8 +42,8 @@ section .text
     MOV ECX,0x5d34c2                    ; 00555761 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xd77                       ; 00555766
     PUSH 0x5d34d7                       ; 0055576b | = "SfxSlot::seek - no sample?!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00555770 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00555776 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00555770 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00555776 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055577c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00555781

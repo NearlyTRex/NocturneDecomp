@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00521070(CMoloch *this_ptr)
 
 {
@@ -22,7 +20,8 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00521070(CMoloch *this_ptr)
   uint auStack_1c [6];
   
   bVar5 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar1 == 0) {
     (this_ptr->base).base.was_rendered_opaque = 0;
   }
@@ -51,11 +50,12 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00521070(CMoloch *this_ptr)
                   (this_ptr_00,0,&(this_ptr->base).base.model,0);
         core_morph_cpp_CMorph_updateModelFromDeformable_FUN_00523290
                   (this_ptr_00,1,&this_ptr->model,0);
-        core_morph_cpp_CMorph_render_FUN_005237e0(this_ptr_00,this_ptr->morph_timer / _DAT_00603ef8)
-        ;
+        core_morph_cpp_CMorph_render_FUN_005237e0
+                  (this_ptr_00,this_ptr->morph_timer / 2.0f);
       }
-      if (_DAT_01d39d34 != 0) {
-        iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+      if (g_INT_01d39d34 != 0) {
+        iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                          (g_CDemonRenderer_PTR_00612560);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_005254b0
                     (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);

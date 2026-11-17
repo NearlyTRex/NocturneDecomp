@@ -17,7 +17,7 @@
 ;   engine_zraster.c_rasterizeTriangle_FUN_005a1ea0 at 005a21b0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6e2b0
+;   int g_INT_01c6e2b0
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 00515921
     MOV EAX,dword ptr [ESP + 0xc]       ; 00515922
     MOV EBX,dword ptr [ESP + 0x10]      ; 00515926
-    MOV EDX,dword ptr [0x01c6e2b0]      ; 0051592a | DAT_01c6e2b0
+    MOV EDX,dword ptr [0x01c6e2b0]      ; 0051592a | g_INT_01c6e2b0
     TEST EDX,EDX                        ; 00515930
     JZ 0x0051595f                       ; 00515932
         ;   XREF to: 0051595f (CONDITIONAL_JUMP)  ; LAB_0051595f

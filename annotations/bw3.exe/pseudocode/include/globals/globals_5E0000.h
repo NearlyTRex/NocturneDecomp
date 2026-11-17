@@ -6,9 +6,14 @@
 #include "system/basetypes.h"
 #include "system/watcom.h"
 #include "types/classes/CCharacter_full_vtable.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CFont_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
+#include "types/classes/CParticle_vtable.h"
+#include "types/classes/CPod_vtable.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CSoundDeviceBasic_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
@@ -27,6 +32,9 @@ extern CCharacter_full_vtable g_CSpiritEagleVTable;
 extern CCharacter_full_vtable g_CSpiritIndianVTable;
 extern CCharacter_full_vtable g_CSpiritBearVTable;
 extern CCharacter_full_vtable g_CAsgayaVTable;
+
+// CDemonActor*
+extern CDemonActor* g_CDemonActor_PTR_005e39c0;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CFliesVTable;
@@ -93,8 +101,21 @@ extern CEnemy_full_vtable g_CHinoVTable;
 extern CEnemy_full_vtable g_CStylerVTable;
 extern CEnemy_full_vtable g_CStylerDemonVTable;
 
+// CFont_vtable
+extern CFont_vtable g_CFont_vtable_005e6534;
+
 // CHero_full_vtable
 extern CHero_full_vtable g_CPryeVTable;
+
+// CParticle_vtable
+extern CParticle_vtable g_CBloodParticleVTable;
+extern CParticle_vtable g_CParticle_vtable_005e2fa4;
+
+// CPod_vtable
+extern CPod_vtable g_CPod_vtable_005e3424;
+
+// CQuaternion4f
+extern CQuaternion4f g_CQuaternion4f_005e65b0;
 
 // CSoundDeviceBasic_vtable
 extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
@@ -120,6 +141,12 @@ extern CWeapon_full_vtable g_CWeaponVTable;
 
 // CZombiePriest_full_vtable
 extern CZombiePriest_full_vtable g_CZombiePriestVTable;
+
+// TerminatedCString
+extern TerminatedCString g_CInStreamFileVTable;
+extern TerminatedCString g_COutStreamFileVTable;
+extern TerminatedCString g_COutStreamMemoryVTable;
+extern TerminatedCString g_COutStreamDebugVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_005E01B0;
@@ -332,17 +359,13 @@ extern WatcomTypeInfo g_CStylerTypeInfo;
 extern WatcomTypeInfo g_CStylerDemonTypeInfo;
 extern WatcomTypeInfo g_CAsgayaTypeInfo;
 
-// undefined1*
-extern undefined1* g_CBloodParticleVTable;
-extern undefined1* g_CDemonPodVTable;
-extern undefined1* g_CInStreamFileVTable;
-extern undefined1* g_CInStreamMemoryVTable;
-extern undefined1* g_COutStreamFileVTable;
-extern undefined1* g_COutStreamMemoryVTable;
-extern undefined1* g_COutStreamDebugVTable;
+// int
+extern int g_INT_005e8806;
 
-// undefined4
-extern undefined4 DAT_005e8838;
+// short
+extern short g_SHORT_005e8804;
+extern short g_SHORT_005e881c;
+extern short g_SHORT_005e881e;
 
 // void*
 extern void* g_SPageResourceVTable;
@@ -352,4 +375,20 @@ extern void* g_SPageResourceTwanaCharacterVTable;
 extern void* g_SPageResourceTwanaEntryVTable;
 extern void* g_SPageResourceMapVTable;
 extern void* g_CDeformableModelInstanceVTable;
+
+// void*[12]
+extern void* g_CInStreamMemoryVTable[12];
+
+// void*[2]
+extern void* g_ARRAY_PTR_005e0704[2];
+
+// void*[3]
+extern void* g_ARRAY_PTR_005e224c[3];
+
+// void*[5]
+extern void* g_ARRAY_PTR_005e2f74[5];
+extern void* g_ARRAY_PTR_005e5b04[5];
+
+// void*[6]
+extern void* g_CDemonPodVTable[6];
 

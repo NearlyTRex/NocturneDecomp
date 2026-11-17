@@ -21,6 +21,6 @@ CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctor_FUN_
   this_ptr->stop_after_fade = 0;
   this_ptr->active = 0;
   this_ptr->standalone = 0;
-  this_ptr->vtable = (void *)0x6002e4;
+  this_ptr->vtable = &g_PTR_006002e4;
   return this_ptr;
 }

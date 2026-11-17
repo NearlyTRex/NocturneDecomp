@@ -6,25 +6,26 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_00551220(int channel_index,int enable_state)
 
 {
   int iVar1;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x112e;
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x112e;
     core_main_c_displayErrorAndQuit_FUN_004e4500("enableSfxChannel - invalid channel index: %d");
   }
-  *(int *)(channel_index * 4 + 0x2648540) = enable_state;
+  g_INT_ARRAY_02648540[channel_index] = enable_state;
   if (enable_state == 0) {
     sound_sndmain_cpp_lockSound_FUN_005532f0();
     iVar1 = 0;
     do {
-      if (channel_index == *(int *)(iVar1 + 0x263cf1c)) {
-        sound_sndmain_cpp_CSfxSlot_kill_FUN_0054f700((CSfxSlot *)(iVar1 + 0x263cf1c));
+      if (channel_index ==
+          *(int *)((int)g_CSfxSlot_ARRAY_0263cf1c[0].options.userdata + iVar1 + -0x44)) {
+        sound_sndmain_cpp_CSfxSlot_kill_FUN_0054f700
+                  ((CSfxSlot *)((int)g_CSfxSlot_ARRAY_0263cf1c[0].options.userdata + iVar1 + -0x44))
+        ;
       }
       iVar1 = iVar1 + 0x11c;
     } while (iVar1 != 0x4700);

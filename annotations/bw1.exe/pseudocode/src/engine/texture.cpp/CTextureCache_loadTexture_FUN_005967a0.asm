@@ -26,13 +26,13 @@
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000
 ;   TerminatedCString s_engine_texture_cpp_005f7932
 ;   TerminatedCString s_Texture_name_is_too_big_005f7948
-;   undefined4 DAT_005f7965
+;   TerminatedCString s_art_005f7965
 ;   TerminatedCString s_engine_texture_cpp_005f7969
 ;   TerminatedCString s_CTextureCache_load_Can_t_005f797f
-;   undefined4 DAT_005f79af
-;   undefined4 DAT_005f79b4
-;   undefined4 DAT_005f79b8
-;   undefined4 DAT_005f79bd
+;   TerminatedCString s_act_005f79af
+;   TerminatedCString s_art_005f79b4
+;   TerminatedCString s_opa_005f79b8
+;   TerminatedCString s_art_005f79bd
 ;   TerminatedCString s_engine_texture_cpp_005f79c1
 ;   TerminatedCString s_CTextureCache_load_Out_o_005f79d7
 ;   TerminatedCString s_CTextureCache_load_Bad_t_005f79fb
@@ -103,7 +103,7 @@ section .text
     ADD ESP,0xc                         ; 00596814
     MOV EDI,dword ptr [ESP + 0x1e4]     ; 00596817
     PUSH EDI                            ; 0059681e
-    PUSH 0x5f7965                       ; 0059681f | DAT_005f7965
+    PUSH 0x5f7965                       ; 0059681f | = "art"
     PUSH 0x2c8a688                      ; 00596824
     CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20 ; 00596829
         ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20(char * dest_path, char * directory, char * filename)
@@ -119,14 +119,14 @@ section .text
     MOV EBP,0x5f7969                    ; 00596843 | = "..\\engine\\texture.cpp"
     MOV EAX,0x107                       ; 00596848
     PUSH 0x5f797f                       ; 0059684d | = "CTextureCache::load - Can't get file ..."
-    MOV dword ptr [0x01d1d400],EBP      ; 00596852 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00596858 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 00596852 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00596858 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0059685d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00596862
     PUSH EBX                            ; 00596865
         ;   Label: LAB_00596865
-    MOV EBP,dword ptr [0x02c8a88c]      ; 00596866 | DAT_02c8a88c
+    MOV EBP,dword ptr [0x02c8a88c]      ; 00596866 | g_ULONG_02c8a88c
     CALL engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00596680 ; 0059686c
         ;   XREF to: 00596680 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 00596871
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 005968ba (CONDITIONAL_JUMP)  ; LAB_005968ba
     POP EDI                             ; 005968d2
         ;   Label: LAB_005968d2
-    PUSH 0x5f79af                       ; 005968d3 | DAT_005f79af
+    PUSH 0x5f79af                       ; 005968d3 | = ".act"
     LEA EAX,[ESP + 0x4]                 ; 005968d8
     PUSH EAX                            ; 005968dc
     CALL engine_dosio.cpp_changeFileExtension_FUN_004796b0 ; 005968dd
@@ -180,7 +180,7 @@ section .text
     ADD ESP,0x8                         ; 005968e2
     MOV EAX,ESP                         ; 005968e5
     PUSH EAX                            ; 005968e7
-    PUSH 0x5f79b4                       ; 005968e8 | DAT_005f79b4
+    PUSH 0x5f79b4                       ; 005968e8 | = "art"
     PUSH 0x2c8a89c                      ; 005968ed
     CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20 ; 005968f2
         ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20(char * dest_path, char * directory, char * filename)
@@ -208,7 +208,7 @@ section .text
         ;   XREF to: 0059691d (CONDITIONAL_JUMP)  ; LAB_0059691d
     POP EDI                             ; 00596935
         ;   Label: LAB_00596935
-    PUSH 0x5f79b8                       ; 00596936 | DAT_005f79b8
+    PUSH 0x5f79b8                       ; 00596936 | = ".opa"
     LEA EAX,[ESP + 0x84]                ; 0059693b
     PUSH EAX                            ; 00596942
     CALL engine_dosio.cpp_changeFileExtension_FUN_004796b0 ; 00596943
@@ -216,7 +216,7 @@ section .text
     ADD ESP,0x8                         ; 00596948
     LEA EAX,[ESP + 0x80]                ; 0059694b
     PUSH EAX                            ; 00596952
-    PUSH 0x5f79bd                       ; 00596953 | DAT_005f79bd
+    PUSH 0x5f79bd                       ; 00596953 | = "art"
     PUSH 0x2c8aab0                      ; 00596958
     CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20 ; 0059695d
         ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20(char * dest_path, char * directory, char * filename)
@@ -241,8 +241,8 @@ section .text
     MOV EDI,0x5f79c1                    ; 00596997 | = "..\\engine\\texture.cpp"
     MOV EAX,0x131                       ; 0059699c
     PUSH 0x5f79d7                       ; 005969a1 | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 005969a6 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 005969ac | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 005969a6 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 005969ac | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005969b1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005969b6
@@ -264,11 +264,11 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5f7a2c                    ; 005969ec | = "..\\engine\\texture.cpp"
     ADD ESP,0x10                        ; 005969f1
-    MOV [0x01d1d400],EAX                ; 005969f4 | DAT_01d1d400
+    MOV [0x01d1d400],EAX                ; 005969f4 | g_CHAR_PTR_01d1d400
     LEA EAX,[ESP + 0x100]               ; 005969f9
     MOV EDX,0x14a                       ; 00596a00
     PUSH EAX                            ; 00596a05
-    MOV dword ptr [0x01d1d404],EDX      ; 00596a06 | DAT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 00596a06 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596a0c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596a11
@@ -286,8 +286,8 @@ section .text
     MOV EDI,0x5f7a42                    ; 00596a2d | = "..\\engine\\texture.cpp"
     MOV EAX,0x154                       ; 00596a32
     PUSH 0x5f7a58                       ; 00596a37 | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 00596a3c | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00596a42 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00596a3c | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00596a42 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596a47
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596a4c
@@ -306,8 +306,8 @@ section .text
     MOV ECX,0x5f7a7c                    ; 00596a63 | = "..\\engine\\texture.cpp"
     MOV EDI,0x15a                       ; 00596a68
     PUSH 0x5f7a92                       ; 00596a6d | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],ECX      ; 00596a72 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00596a78 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00596a72 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00596a78 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596a7e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596a83
@@ -315,7 +315,7 @@ section .text
         ;   Label: LAB_00596a86
     LEA EAX,[ESP + 0x4]                 ; 00596a88
     PUSH EAX                            ; 00596a8c
-    PUSH 0x5f7ab6                       ; 00596a8d | DAT_005f7ab6
+    PUSH 0x5f7ab6                       ; 00596a8d | = "art"
     LEA EAX,[ESP + 0x18c]               ; 00596a92
     PUSH EAX                            ; 00596a99
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596a9a
@@ -340,7 +340,7 @@ section .text
     PUSH 0x1                            ; 00596acf
     LEA EAX,[ESP + 0x84]                ; 00596ad1
     PUSH EAX                            ; 00596ad8
-    PUSH 0x5f7aba                       ; 00596ad9 | DAT_005f7aba
+    PUSH 0x5f7aba                       ; 00596ad9 | = "art"
     LEA EAX,[ESP + 0x18c]               ; 00596ade
     PUSH EAX                            ; 00596ae5
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596ae6
@@ -365,7 +365,7 @@ section .text
         ;   Label: LAB_00596b1d
     MOV ESI,dword ptr [ESP + 0x1e8]     ; 00596b1f
     PUSH ESI                            ; 00596b26
-    PUSH 0x5f7abe                       ; 00596b27 | DAT_005f7abe
+    PUSH 0x5f7abe                       ; 00596b27 | = "art"
     LEA EAX,[ESP + 0x18c]               ; 00596b2c
     PUSH EAX                            ; 00596b33
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596b34
@@ -391,9 +391,9 @@ section .text
     JZ 0x00596c09                       ; 00596b72
         ;   XREF to: 00596c09 (CONDITIONAL_JUMP)  ; LAB_00596c09
     XOR EDX,EDX                         ; 00596b78
-    FLD float ptr [0x005f7b52]          ; 00596b7a | DAT_005f7b52
-    FLD float ptr [0x005f7b4e]          ; 00596b80 | DAT_005f7b4e
-    FLD float ptr [0x005f7b4a]          ; 00596b86 | DAT_005f7b4a
+    FLD float ptr [0x005f7b52]          ; 00596b7a | g_FLOAT_005f7b52
+    FLD float ptr [0x005f7b4e]          ; 00596b80 | g_FLOAT_005f7b4e
+    FLD float ptr [0x005f7b4a]          ; 00596b86 | g_FLOAT_005f7b4a
     MOV ECX,dword ptr [EBX + 0x4c]      ; 00596b8c
         ;   Label: LAB_00596b8c
     XOR EAX,EAX                         ; 00596b8f
@@ -449,8 +449,8 @@ section .text
     MOV EDX,0x5f7932                    ; 00596c35 | = "..\\engine\\texture.cpp"
     MOV ECX,0xfb                        ; 00596c3a
     PUSH 0x5f7948                       ; 00596c3f | = "Texture name is too big : %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 00596c44 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00596c4a | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00596c44 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00596c4a | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596c50
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00596c55
@@ -523,8 +523,8 @@ section .text
     MOV ESI,0x5f7b09                    ; 00596d1e | = "..\\engine\\texture.cpp"
     MOV EDI,0x19e                       ; 00596d23
     PUSH 0x5f7b1f                       ; 00596d28 | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],ESI      ; 00596d2d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00596d33 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00596d2d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00596d33 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596d39
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596d3e
@@ -532,7 +532,7 @@ section .text
         ;   Label: LAB_00596d41
     MOV EAX,dword ptr [ESP + 0x1e8]     ; 00596d43
     PUSH EAX                            ; 00596d4a
-    PUSH 0x5f7b43                       ; 00596d4b | DAT_005f7b43
+    PUSH 0x5f7b43                       ; 00596d4b | = "art"
     LEA EAX,[ESP + 0x18c]               ; 00596d50
     PUSH EAX                            ; 00596d57
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596d58
@@ -615,11 +615,11 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5f7af3                    ; 00596e33 | = "..\\engine\\texture.cpp"
     ADD ESP,0x10                        ; 00596e38
-    MOV [0x01d1d400],EAX                ; 00596e3b | DAT_01d1d400
+    MOV [0x01d1d400],EAX                ; 00596e3b | g_CHAR_PTR_01d1d400
     LEA EAX,[ESP + 0x100]               ; 00596e40
     MOV EDX,0x194                       ; 00596e47
     PUSH EAX                            ; 00596e4c
-    MOV dword ptr [0x01d1d404],EDX      ; 00596e4d | DAT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 00596e4d | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596e53
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596e58

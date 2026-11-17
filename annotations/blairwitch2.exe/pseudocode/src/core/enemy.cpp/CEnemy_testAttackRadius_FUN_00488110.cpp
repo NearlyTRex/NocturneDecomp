@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info)
 
 {
@@ -30,7 +28,8 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(CEnemy *this_ptr
     auStack_28 = (byte  [8])(double)damage_info->damage_amount;
     if (0.0 < (double)auStack_28) {
       blood_type = 0x488178;
-      dVar3 = round((double)auStack_28 * _DAT_005d2da9 * _DAT_005d2db1);
+      dVar3 = round
+                        ((double)auStack_28 * 1.2 * 0.25);
       count = (int)ROUND(dVar3);
       direction = (CVector3f *)0x0;
       piVar1 = (int *)((int)point + (uint)bVar2 * -8 + 4);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type)
 
 {
@@ -27,24 +25,25 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVect
     pCVar4 = pCVar1->corners;
     fVar5 = (float10)fsin((float10)(orientation->vec).y);
     fVar6 = (float10)fcos((float10)(orientation->vec).y);
-    fVar5 = fVar5 * (float10)_DAT_005c4739;
-    fVar6 = fVar6 * (float10)_DAT_005c4739;
+    fVar5 = fVar5 * (float10)0.5;
+    fVar6 = fVar6 * (float10)0.5;
     local_34[0].x =
          (float)(fVar5 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +
-                 -fVar6 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3) + (float10)position->x);
+                 -fVar6 * (float10)*(float *)((int)g_FLOAT_ARRAY_005ffe8c + iVar3) +
+                (float10)position->x);
     local_34[0].z =
          (float)(fVar6 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +
-                fVar5 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3)) + position->z;
+                fVar5 * (float10)*(float *)((int)g_FLOAT_ARRAY_005ffe8c + iVar3)) + position->z;
     if (&local_40 != local_34) {
       local_40.x = local_34[0].x;
       local_40.y = position->y;
       local_40.z = local_34[0].z;
     }
     local_34[0].y = position->y + 1.0;
-    local_40.y = local_40.y + _DAT_005c4749;
+    local_40.y = local_40.y + -3.0f;
     local_18 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0
                          (&g_CDemonRaytraceInstance,local_34,&local_40,(CVector3f *)0x0,(int *)0x0);
-    fVar2 = (local_34[0].y - local_18 * (float)_DAT_005c4741) + _DAT_005c474d;
+    fVar2 = (local_34[0].y - local_18 * (float)4) + 0.08333334f;
     if (pCVar4 != local_34) {
       pCVar4->x = local_34[0].x;
       pCVar1->corners[0].y = fVar2;
@@ -55,7 +54,7 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVect
   } while (iVar3 != 0x10);
   pCVar4 = this_ptr->corners;
   do {
-    if ((float)_DAT_005c4739 < ABS(this_ptr->corners[0].y - pCVar4[1].y)) {
+    if ((float)0.5 < ABS(this_ptr->corners[0].y - pCVar4[1].y)) {
       pCVar4[1].y = this_ptr->corners[0].y;
     }
     pCVar4 = pCVar4 + 1;
@@ -64,6 +63,6 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVect
   this_ptr->alpha = alpha;
   this_ptr->is_bloody = is_bloody;
   this_ptr->blood_type = blood_type;
-  this_ptr->area_id = *(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
+  this_ptr->area_id = (g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.location.area_id;
   return;
 }

@@ -38,7 +38,7 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00585da6
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_stranger_005f68d4+1
+;   TerminatedCString s_actionPending_d_stranger_005f68d5
 ;   TerminatedCString s_actionPending_d_stranger_005f68fd
 ;   TerminatedCString s_Object_to_pick_up_is_now_005f6925
 ;   TerminatedCString s_actionPending_d_stranger_005f6958
@@ -48,8 +48,8 @@
 ;   TerminatedCString s_fall_1_wav_005f69c2
 ;   TerminatedCString s_actionPending_d_stranger_005f69cd
 ;   TerminatedCString s_doorToOpen_NULL_stranger_005f69f5
-;   undefined4 DAT_005f6a21
-;   undefined4 DAT_005f6a29
+;   double g_DOUBLE_005f6a21 = 0.200000000000000
+;   double g_DOUBLE_005f6a29 = 0.400000000000000
 ;   undefined4 DAT_00606090
 ;   undefined4 DAT_00606098
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
@@ -117,7 +117,7 @@ section .text
         ;   Label: LAB_00588243
     JNZ 0x00588503                      ; 00588246
         ;   XREF to: 00588503 (CONDITIONAL_JUMP)  ; LAB_00588503
-    MOV EAX,[0x02c83620]                ; 0058824c | DAT_02c83620
+    MOV EAX,[0x02c83620]                ; 0058824c | g_INT_ARRAY_02c83600[8]
     PUSH EAX                            ; 00588251
         ;   Label: LAB_00588251
     MOV EDI,dword ptr [ESP + 0x100]     ; 00588252
@@ -221,8 +221,8 @@ section .text
         ;   XREF to: 0058833e (CONDITIONAL_JUMP)  ; LAB_0058833e
     PUSH 0x7c4                          ; 00588391
     PUSH EDX                            ; 00588396
-    MOV EAX,0x5f68d5                    ; 00588397 | s_actionPending_d_stranger_005f68d4+1
-    PUSH EAX                            ; 0058839c | s_actionPending_d_stranger_005f68d4+1
+    MOV EAX,0x5f68d5                    ; 00588397 | = "actionPending = %d\nstranger.cpp line %d"
+    PUSH EAX                            ; 0058839c | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x0061abc0]                ; 0058839d | g_CEditorToolsPtr
     PUSH EAX                            ; 005883a2
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 005883a3
@@ -350,7 +350,7 @@ section .text
         ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     JMP 0x005882e9                      ; 005884fe
         ;   XREF to: 005882e9 (UNCONDITIONAL_JUMP)  ; LAB_005882e9
-    MOV EAX,[0x02c8361c]                ; 00588503 | DAT_02c8361c
+    MOV EAX,[0x02c8361c]                ; 00588503 | g_INT_ARRAY_02c83600[7]
         ;   Label: LAB_00588503
     JMP 0x00588251                      ; 00588508
         ;   XREF to: 00588251 (UNCONDITIONAL_JUMP)  ; LAB_00588251
@@ -370,7 +370,7 @@ section .text
     MOV dword ptr [ESP + 0x108],EAX     ; 00588537
     FLD float ptr [ESP + 0x108]         ; 0058853e
     ADD ESP,0x8                         ; 00588545
-    FCOMP double ptr [0x005f6a29]       ; 00588548 | DAT_005f6a29
+    FCOMP double ptr [0x005f6a29]       ; 00588548 | g_DOUBLE_005f6a29
     FNSTSW AX                           ; 0058854e
     SAHF                                ; 00588550
     JA 0x005885eb                       ; 00588551
@@ -382,7 +382,7 @@ section .text
     MOV dword ptr [ESP + 0x108],EAX     ; 0058855f
     FLD float ptr [ESP + 0x108]         ; 00588566
     ADD ESP,0x8                         ; 0058856d
-    FCOMP double ptr [0x005f6a29]       ; 00588570 | DAT_005f6a29
+    FCOMP double ptr [0x005f6a29]       ; 00588570 | g_DOUBLE_005f6a29
     FNSTSW AX                           ; 00588576
     SAHF                                ; 00588578
     JBE 0x0058860a                      ; 00588579
@@ -436,7 +436,7 @@ section .text
     MOV dword ptr [ESP + 0x108],EAX     ; 00588612
     FLD float ptr [ESP + 0x108]         ; 00588619
     ADD ESP,0x8                         ; 00588620
-    FCOMP double ptr [0x005f6a29]       ; 00588623 | DAT_005f6a29
+    FCOMP double ptr [0x005f6a29]       ; 00588623 | g_DOUBLE_005f6a29
     FNSTSW AX                           ; 00588629
     SAHF                                ; 0058862b
     JBE 0x005882ec                      ; 0058862c
@@ -463,7 +463,7 @@ section .text
     TEST EAX,EAX                        ; 00588675
     JZ 0x005887cd                       ; 00588677
         ;   XREF to: 005887cd (CONDITIONAL_JUMP)  ; LAB_005887cd
-    MOV EDX,dword ptr [0x02c83630]      ; 0058867d | DAT_02c83630
+    MOV EDX,dword ptr [0x02c83630]      ; 0058867d | g_INT_ARRAY_02c83600[12]
     PUSH EDX                            ; 00588683
     MOV ECX,dword ptr [ESP + 0x100]     ; 00588684
     PUSH ECX                            ; 0058868b
@@ -545,7 +545,7 @@ section .text
     JNC 0x005887cd                      ; 00588781
         ;   XREF to: 005887cd (CONDITIONAL_JUMP)  ; LAB_005887cd
     FLD double ptr [ESP]                ; 00588783
-    FMUL double ptr [0x005f6a21]        ; 00588786 | DAT_005f6a21
+    FMUL double ptr [0x005f6a21]        ; 00588786 | g_DOUBLE_005f6a21
     CALL crt_math.c_round_FUN_005c03a0  ; 0058878c
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x100]       ; 00588791

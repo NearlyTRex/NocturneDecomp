@@ -14,8 +14,8 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afe14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d6d8b
-;   undefined4 DAT_005d6d93
+;   double g_DOUBLE_005d6d8b = 0.950000000000000
+;   double g_DOUBLE_005d6d93 = 0.900000000000000
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     JNZ 0x004ad1d0                      ; 004ad1ae
         ;   XREF to: 004ad1d0 (CONDITIONAL_JUMP)  ; LAB_004ad1d0
     FLD float ptr [ESP + 0x10]          ; 004ad1b0
-    FMUL double ptr [0x005d6d8b]        ; 004ad1b4 | DAT_005d6d8b
+    FMUL double ptr [0x005d6d8b]        ; 004ad1b4 | g_DOUBLE_005d6d8b
     FSTP float ptr [ESP]                ; 004ad1ba
         ;   Label: LAB_004ad1ba
     MOV EAX,dword ptr [ESP]             ; 004ad1bd
@@ -39,7 +39,7 @@ section .text
     RET                                 ; 004ad1c3
     FLD float ptr [ESP + 0x10]          ; 004ad1c4
         ;   Label: LAB_004ad1c4
-    FMUL double ptr [0x005d6d93]        ; 004ad1c8 | DAT_005d6d93
+    FMUL double ptr [0x005d6d93]        ; 004ad1c8 | g_DOUBLE_005d6d93
     JMP 0x004ad1ba                      ; 004ad1ce
         ;   XREF to: 004ad1ba (UNCONDITIONAL_JUMP)  ; LAB_004ad1ba
     MOV EAX,dword ptr [ESP + 0x10]      ; 004ad1d0

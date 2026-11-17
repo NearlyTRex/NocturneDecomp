@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CFootstep_init_FUN_004e56e0(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type)
 
 {
@@ -26,23 +24,24 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004e56e0(CFootstep *this_ptr,CVect
   do {
     fVar5 = (float10)fsin((float10)(orientation->vec).y);
     fVar6 = (float10)fcos((float10)(orientation->vec).y);
-    fVar5 = fVar5 * (float10)_DAT_005e4115;
-    fVar6 = fVar6 * (float10)_DAT_005e4115;
+    fVar5 = fVar5 * (float10)0.5;
+    fVar6 = fVar6 * (float10)0.5;
     local_40.x = (float)(fVar5 * (float10)*(float *)((int)&DAT_0061ee1c + iVar2) +
-                         -fVar6 * (float10)*(float *)((int)&DAT_0061ee0c + iVar2) +
+                         -fVar6 * (float10)*(float *)((int)g_FLOAT_ARRAY_0061ee0c + iVar2) +
                         (float10)position->x);
     local_40.z = (float)(fVar6 * (float10)*(float *)((int)&DAT_0061ee1c + iVar2) +
-                        fVar5 * (float10)*(float *)((int)&DAT_0061ee0c + iVar2)) + position->z;
+                        fVar5 * (float10)*(float *)((int)g_FLOAT_ARRAY_0061ee0c + iVar2)) +
+                 position->z;
     if (local_34 != &local_40) {
       local_34[0].x = local_40.x;
       local_34[0].y = position->y;
       local_34[0].z = local_40.z;
     }
     local_40.y = position->y + 1.0;
-    local_34[0].y = local_34[0].y + _DAT_005e4125;
+    local_34[0].y = local_34[0].y + -3.0f;
     local_18 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150
                          (&g_CDemonRaytraceInstance,&local_40,local_34,(CVector3f *)0x0,(int *)0x0);
-    fVar1 = (local_40.y - local_18 * (float)_DAT_005e411d) + _DAT_005e4129;
+    fVar1 = (local_40.y - local_18 * (float)4) + 0.08333334f;
     if (pCVar4 != &local_40) {
       pCVar4->x = local_40.x;
       pCVar4->y = fVar1;
@@ -53,7 +52,7 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004e56e0(CFootstep *this_ptr,CVect
   } while (iVar2 != 0x10);
   pfVar3 = &this_ptr->corners[0].y;
   do {
-    if ((float)_DAT_005e4115 < ABS(this_ptr->corners[0].y - pfVar3[3])) {
+    if ((float)0.5 < ABS(this_ptr->corners[0].y - pfVar3[3])) {
       pfVar3[3] = this_ptr->corners[0].y;
     }
     pfVar3 = pfVar3 + 3;

@@ -10,8 +10,8 @@
 ; char *           Stack[0x10]:4   event
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -39,8 +39,8 @@ section .text
         ;   Label: LAB_004aace7
     MOV EDI,0x1030                      ; 004aacec
     PUSH 0x5df001                       ; 004aacf1
-    MOV dword ptr [0x01d1d400],ECX      ; 004aacf6 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004aacfc | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004aacf6 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 004aacfc | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004aad02
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004aad07
@@ -144,8 +144,8 @@ section .text
         ;   Label: LAB_004aade4
     MOV EDX,0x1031                      ; 004aade9
     PUSH 0x5df035                       ; 004aadee
-    MOV [0x01d1d400],EAX                ; 004aadf3 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 004aadf8 | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 004aadf3 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 004aadf8 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004aadfe
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004aae03

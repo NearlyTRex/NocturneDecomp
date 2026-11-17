@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 52,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
     "suspect_types": [
-      "alloc_magic_size",
-      "warning_overlapping_globals"
+      "alloc_magic_size"
     ],
-    "total_lines": 73
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -73,14 +72,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -176,16 +175,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Allocation size hardcodes 0x144 == sizeof(STextPage). Replace the magic with sizeof(STextPage) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 12,
+      "line": 10,
       "match": "(STextPage*) alloc stride 0x144",
       "severity": "moderate",
       "text": "(STextPage *)realloc(this_ptr->pages,(this_ptr->page_count + 1) * 0x144)",

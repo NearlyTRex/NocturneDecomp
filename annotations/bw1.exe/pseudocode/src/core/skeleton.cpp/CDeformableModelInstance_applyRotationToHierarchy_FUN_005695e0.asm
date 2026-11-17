@@ -35,7 +35,7 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2531
+;   double g_DOUBLE_005f2531 = 0.0000100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
@@ -133,7 +133,7 @@ section .text
     FMUL float ptr [ESP + 0xc0]         ; 005696c1
     FST float ptr [ESP]                 ; 005696c8
     FABS                                ; 005696cb
-    FCOMP double ptr [0x005f2531]       ; 005696cd | DAT_005f2531
+    FCOMP double ptr [0x005f2531]       ; 005696cd | g_DOUBLE_005f2531
     FNSTSW AX                           ; 005696d3
     SAHF                                ; 005696d5
     JBE 0x0056965e                      ; 005696d6

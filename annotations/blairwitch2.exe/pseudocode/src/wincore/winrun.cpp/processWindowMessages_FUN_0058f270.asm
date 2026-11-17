@@ -17,9 +17,9 @@
 ;   void* PTR_PeekMessageA_005c84d8 = 001c8b6a
 ;   void* PTR_TranslateMessage_005c8500 = 001c8c0e
 ;   void* PTR_Sleep_005c8644 = 001c91f4
-;   undefined4 DAT_0061e98c
-;   undefined4 DAT_0061e990
-;   undefined4 DAT_02664630
+;   int g_INT_0061e98c = -0x1
+;   int g_INT_0061e990 = 0x1
+;   int g_INT_02664630
 ;
 ; Called Functions:
 ;   DispatchMessageA
@@ -74,19 +74,19 @@ section .text
         ;   Label: LAB_0058f2c3
     JMP 0x0058f285                      ; 0058f2c9
         ;   XREF to: 0058f285 (UNCONDITIONAL_JUMP)  ; LAB_0058f285
-    MOV ESI,dword ptr [0x0061e98c]      ; 0058f2cb | DAT_0061e98c
+    MOV ESI,dword ptr [0x0061e98c]      ; 0058f2cb | g_INT_0061e98c
         ;   Label: LAB_0058f2cb
     CMP EBX,ESI                         ; 0058f2d1
     JNZ 0x0058f2fa                      ; 0058f2d3
         ;   XREF to: 0058f2fa (CONDITIONAL_JUMP)  ; LAB_0058f2fa
-    MOV EDI,dword ptr [0x02664630]      ; 0058f2d5 | DAT_02664630
+    MOV EDI,dword ptr [0x02664630]      ; 0058f2d5 | g_INT_02664630
     CMP ESI,EDI                         ; 0058f2db
     JNZ 0x0058f2fa                      ; 0058f2dd
         ;   XREF to: 0058f2fa (CONDITIONAL_JUMP)  ; LAB_0058f2fa
-    CMP EDI,dword ptr [0x0061e990]      ; 0058f2df | DAT_0061e990
+    CMP EDI,dword ptr [0x0061e990]      ; 0058f2df | g_INT_0061e990
     JZ 0x0058f2fa                       ; 0058f2e5
         ;   XREF to: 0058f2fa (CONDITIONAL_JUMP)  ; LAB_0058f2fa
-    CMP EDI,dword ptr [0x0061e98c]      ; 0058f2e7 | DAT_0061e98c
+    CMP EDI,dword ptr [0x0061e98c]      ; 0058f2e7 | g_INT_0061e98c
     JNZ 0x0058f298                      ; 0058f2ed
         ;   XREF to: 0058f298 (CONDITIONAL_JUMP)  ; LAB_0058f298
     PUSH 0x14                           ; 0058f2ef

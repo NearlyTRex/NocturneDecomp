@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_0040d060(CVector3f *this_ptr,CVector3i *other)
 
 {
-  other->x = (int)ROUND(this_ptr->x * _DAT_005fb310);
-  other->y = (int)ROUND(this_ptr->y * _DAT_005fb310);
-  other->z = (int)ROUND(this_ptr->z * _DAT_005fb310);
+  other->x = (int)ROUND(this_ptr->x * 256.0f);
+  other->y = (int)ROUND(this_ptr->y * 256.0f);
+  other->z = (int)ROUND(this_ptr->z * 256.0f);
   return;
 }

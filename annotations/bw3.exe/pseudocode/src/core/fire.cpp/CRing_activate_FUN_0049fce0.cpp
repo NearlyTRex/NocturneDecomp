@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner)
 
 {
@@ -40,8 +38,8 @@ void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f
       pCVar3->y = (this_ptr->center).y;
       pCVar3->z = (this_ptr->center).z;
     }
-    fVar5 = (float10)fcos((float10)iVar4 * (float10)_DAT_005c0900);
-    fVar6 = (float10)fsin((float10)iVar4 * (float10)_DAT_005c0900);
+    fVar5 = (float10)fcos((float10)iVar4 * (float10)0.39269908168750001);
+    fVar6 = (float10)fsin((float10)iVar4 * (float10)0.39269908168750001);
     pCVar3 = pCVar3 + 1;
     pCVar2->directions[0].y = 0.0;
     iVar4 = iVar4 + 1;

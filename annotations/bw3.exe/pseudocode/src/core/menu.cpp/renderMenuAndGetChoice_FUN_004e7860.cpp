@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)
 
 {
@@ -26,13 +24,14 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_a
   CBitFont *local_18;
   int local_14;
   
-  pCVar1 = _DAT_01549aac;
-  local_18 = _DAT_01549aac;
+  pCVar1 = g_CBitFont_PTR_01549aac;
+  local_18 = g_CBitFont_PTR_01549aac;
   if (title != (char *)0x0) {
-    engine_font_cpp_CBitFont_drawText_FUN_004b0a20(_DAT_01549aac,title,0xaf,y_position,0x9a,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+              (g_CBitFont_PTR_01549aac,title,0xaf,y_position,0x9a,0);
     iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar1,0x58);
     y_position = y_position + iVar2 * 2;
-    local_18 = _DAT_01549ab0;
+    local_18 = g_CBitFont_PTR_01549ab0;
   }
   local_20 = 0;
   if (0 < menu_count) {
@@ -93,16 +92,16 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_a
   }
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
   _sprintf(local_f0,"Blair Witch Volume III: The Elly Kedward Tale (c) 2000 Ritual Entertainment, Ver %1.2f");
-  if (_DAT_01dd4890 == 0) {
-    iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549ab4,local_f0);
-    iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01549ab4,local_f0);
+  if (g_INT_01dd4890 == 0) {
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_CBitFont_PTR_01549ab4,local_f0);
+    iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_CBitFont_PTR_01549ab4,local_f0);
   }
   else {
-    iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549ab4,local_f0);
-    iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01549ab4,local_f0);
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_CBitFont_PTR_01549ab4,local_f0);
+    iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_CBitFont_PTR_01549ab4,local_f0);
   }
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
-            (_DAT_01549ab4,local_f0,0x26b - iVar5,0x1df - iVar2,0xf8,0);
+            (g_CBitFont_PTR_01549ab4,local_f0,0x26b - iVar2,0x1df - iVar5,0xf8,0);
   pcVar7 = menu_text_array[*selected_index_ptr];
   do {
     pcVar6 = pcVar7;
@@ -114,36 +113,36 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_a
   } while (*pcVar6 != '\0');
   pcVar6 = (char *)0x0;
 LAB_004e7adc:
-  _DAT_01d737e4 = 0;
-  iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x48);
+  g_INT_01d737e4 = 0;
+  iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD8);
   if (iVar2 != 0) {
-    _DAT_01d737e4 = 1;
+    g_INT_01d737e4 = 1;
     iVar2 = *selected_index_ptr;
     *selected_index_ptr = iVar2 + -1;
     if (iVar2 + -1 < 0) {
       *selected_index_ptr = menu_count + -1;
     }
   }
-  iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x50);
+  iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD2);
   if (iVar2 != 0) {
     iVar2 = *selected_index_ptr;
-    _DAT_01d737e4 = 1;
+    g_INT_01d737e4 = 1;
     *selected_index_ptr = iVar2 + 1;
     if (menu_count <= iVar2 + 1) {
       *selected_index_ptr = 0;
     }
   }
   if (pcVar6 != (char *)0x0) {
-    _DAT_01d737d4 = 0;
-    iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4b);
+    g_INT_01d737d4 = 0;
+    iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD4);
     if (iVar2 != 0) {
-      _DAT_01d737d4 = 1;
+      g_INT_01d737d4 = 1;
       return *selected_index_ptr;
     }
-    iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4d);
+    iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_NUMPAD6);
     if (iVar2 != 0) goto LAB_004e7bab;
   }
-  iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);
+  iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_RETURN);
   if (iVar2 == 0) {
     return -1;
   }

@@ -15,7 +15,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40 at 004e6cb8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dc585
+;   double g_DOUBLE_005dc585 = 0.00392156862745098
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
@@ -67,7 +67,7 @@ section .text
         ;   Label: LAB_004e6b65
     FLD float ptr [EDX]                 ; 004e6b67
         ;   Label: LAB_004e6b67
-    FMUL double ptr [0x005dc585]        ; 004e6b69 | DAT_005dc585
+    FMUL double ptr [0x005dc585]        ; 004e6b69 | g_DOUBLE_005dc585
     FST float ptr [ESP]                 ; 004e6b6f
     FLDZ                                ; 004e6b72
     FCOMPP                              ; 004e6b74

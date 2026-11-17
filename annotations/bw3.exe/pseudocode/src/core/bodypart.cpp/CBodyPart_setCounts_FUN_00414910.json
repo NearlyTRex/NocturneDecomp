@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 83,
+    "complexity_score": 67,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 4,
+    "pseudocode_lines": 32,
+    "suspect_count": 3,
     "suspect_types": [
-      "alloc_magic_size",
-      "warning_overlapping_globals"
+      "alloc_magic_size"
     ],
-    "total_lines": 139
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -104,14 +103,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -279,16 +278,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 13,
+      "line": 11,
       "match": "(CVector3i*) alloc stride 0xc",
       "severity": "moderate",
       "text": "(CVector3i *)realloc(this_ptr->vertices,this_ptr->vertex_count * 0xc)",
@@ -296,7 +287,7 @@
     },
     {
       "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 15,
+      "line": 13,
       "match": "(CVector3i*) alloc stride 0xc",
       "severity": "moderate",
       "text": "(CVector3i *)realloc(this_ptr->normals,this_ptr->vertex_count * 0xc)",
@@ -304,7 +295,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 17,
+      "line": 15,
       "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
       "severity": "moderate",
       "text": "(SMRGLPrimitiveTriangle *)realloc(this_ptr->faces,this_ptr->tri_count * 0x3c)",

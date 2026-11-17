@@ -32,8 +32,8 @@
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044dc90 at 0044dd57
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d768f
-;   undefined4 DAT_005d7697
+;   double g_DOUBLE_005d768f = 0.0000152587890625
+;   double g_DOUBLE_005d7697 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -49,27 +49,27 @@ section .text
     AND ESP,0xfffffff8                  ; 0044d9f6
     MOV EAX,dword ptr [EBP + 0x8]       ; 0044d9f9
     FILD dword ptr [EAX + 0x178]        ; 0044d9fc
-    FMUL double ptr [0x005d768f]        ; 0044da02 | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da02 | g_DOUBLE_005d768f
     FILD dword ptr [EAX + 0x17c]        ; 0044da08
-    FMUL double ptr [0x005d768f]        ; 0044da0e | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da0e | g_DOUBLE_005d768f
     FILD dword ptr [EAX + 0x180]        ; 0044da14
-    FMUL double ptr [0x005d768f]        ; 0044da1a | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da1a | g_DOUBLE_005d768f
     FILD dword ptr [EAX + 0x184]        ; 0044da20
-    FMUL double ptr [0x005d768f]        ; 0044da26 | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da26 | g_DOUBLE_005d768f
     FILD dword ptr [EAX + 0x188]        ; 0044da2c
-    FMUL double ptr [0x005d768f]        ; 0044da32 | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da32 | g_DOUBLE_005d768f
     FILD dword ptr [EAX + 0x18c]        ; 0044da38
-    FMUL double ptr [0x005d768f]        ; 0044da3e | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da3e | g_DOUBLE_005d768f
     FILD dword ptr [EAX + 0x190]        ; 0044da44
-    FMUL double ptr [0x005d768f]        ; 0044da4a | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da4a | g_DOUBLE_005d768f
     FXCH ST6                            ; 0044da50
     FSTP float ptr [ESP + 0x50]         ; 0044da52
     FILD dword ptr [EAX + 0x194]        ; 0044da56
-    FMUL double ptr [0x005d768f]        ; 0044da5c | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da5c | g_DOUBLE_005d768f
     FXCH ST2                            ; 0044da62
     FSTP float ptr [ESP + 0x44]         ; 0044da64
     FILD dword ptr [EAX + 0x198]        ; 0044da68
-    FMUL double ptr [0x005d768f]        ; 0044da6e | DAT_005d768f
+    FMUL double ptr [0x005d768f]        ; 0044da6e | g_DOUBLE_005d768f
     FXCH                                ; 0044da74
     FST float ptr [ESP + 0x1c]          ; 0044da76
     FXCH ST2                            ; 0044da7a
@@ -166,7 +166,7 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 0044db98
     FSTP float ptr [ESP]                ; 0044db9c
     FLD float ptr [ESP]                 ; 0044db9f
-    FDIVR double ptr [0x005d7697]       ; 0044dba2 | DAT_005d7697
+    FDIVR double ptr [0x005d7697]       ; 0044dba2 | g_DOUBLE_005d7697
     FLD float ptr [ESP + 0x50]          ; 0044dba8
     FMUL float ptr [ESP + 0x44]         ; 0044dbac
     FLD float ptr [ESP + 0x4c]          ; 0044dbb0

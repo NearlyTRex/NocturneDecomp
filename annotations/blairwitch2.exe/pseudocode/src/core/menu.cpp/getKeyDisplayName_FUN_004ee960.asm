@@ -222,18 +222,18 @@ section .text
         ;   Label: LAB_004eeb2a
     JZ 0x004eeb8c                       ; 004eeb2c
         ;   XREF to: 004eeb8c (CONDITIONAL_JUMP)  ; LAB_004eeb8c
-    MOV EDX,dword ptr [0x01d08d80]      ; 004eeb2e | DAT_01d08d80
+    MOV EDX,dword ptr [0x01d08d80]      ; 004eeb2e | g_INT_01d08d80
         ;   Label: LAB_004eeb2e
     INC EDX                             ; 004eeb34
     MOV ECX,0xa                         ; 004eeb35
     MOV EAX,EDX                         ; 004eeb3a
     SAR EDX,0x1f                        ; 004eeb3c
     IDIV ECX                            ; 004eeb3f
-    MOV EBX,dword ptr [0x01d08d80]      ; 004eeb41 | DAT_01d08d80
+    MOV EBX,dword ptr [0x01d08d80]      ; 004eeb41 | g_INT_01d08d80
     SHL EBX,0x8                         ; 004eeb47
     ADD EBX,0x1d08d88                   ; 004eeb4a
     MOV EDI,EBX                         ; 004eeb50
-    MOV dword ptr [0x01d08d80],EDX      ; 004eeb52 | DAT_01d08d80
+    MOV dword ptr [0x01d08d80],EDX      ; 004eeb52 | g_INT_01d08d80
     PUSH EDI                            ; 004eeb58
     MOV AL,byte ptr [ESI]               ; 004eeb59
         ;   Label: LAB_004eeb59

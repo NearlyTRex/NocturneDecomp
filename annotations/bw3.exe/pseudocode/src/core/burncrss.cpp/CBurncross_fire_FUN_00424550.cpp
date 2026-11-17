@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
 
 {
@@ -88,7 +86,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   iVar3 = core_weapon_cpp_CWeapon_fire_FUN_0057b880(&this_ptr_03->base);
   if (iVar3 == 0) {
     core_sound_cpp_CSound_playActorSound_FUN_005609d0
-              (0x02CF5680,(CDemonActor *)this_ptr,"wp_nomana.wav",&CStack_c8);
+              (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_nomana.wav",&CStack_c8);
     this_ptr->firing = 0;
     (this_ptr->base).fire_cooldown_timer = 1.0;
     return 0;
@@ -96,7 +94,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
   if (iVar3 == 0) {
     uVar6 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                      (0x02CF5680,(CDemonActor *)this_ptr,"wp_burningcross.wav",
+                      (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_burningcross.wav",
                        &CStack_c8);
     this_ptr->sfx_handle = uVar6;
   }
@@ -123,7 +121,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   fVar2 = CStack_c8.z;
   fVar1 = CStack_c8.y;
   fVar8 = CStack_c8.x;
-  CStack_38.z = (float)_DAT_005b7926 / (this_ptr->base).bolt_velocity;
+  CStack_38.z = (float)1.5 / (this_ptr->base).bolt_velocity;
   afStack_a0[2] = fStack_a4 * CStack_38.z;
   afStack_a0[3] = afStack_a0[0] * CStack_38.z;
   fStack_90 = afStack_a0[1] * CStack_38.z;
@@ -188,7 +186,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
         afStack_b8[(uint)bVar9 * -2] = afStack_64[(uint)bVar9 * -2];
         afStack_b8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
              afStack_64[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-        fStack_20 = (float)_DAT_005b792e /
+        fStack_20 = (float)10 /
                     SQRT(CStack_b0.z * CStack_b0.z +
                          CStack_b0.x * CStack_b0.x + CStack_b0.y * CStack_b0.y);
         fStack_80 = CStack_b0.x * fStack_20;
@@ -242,7 +240,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
           }
           iVar3 = iVar3 + 1;
           core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                    (0x01C73654,&CStack_ec,aCStack_110,0x20000,0x10000,4,0xffff);
+                    (g_CFireEffect_PTR_005fc5a0,&CStack_ec,aCStack_110,0x20000,0x10000,4,0xffff);
         } while (iVar3 < 0x10);
         if (unaff_retaddr->gun_flame_ignitable != 0) {
           core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0
@@ -254,15 +252,15 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
     if (this_ptr_00 == (CGlass *)0x0) {
       if (this_ptr_01 == (CTrigger *)0x0) {
         core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090
-                  (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
+                  (g_CFireEffect_PTR_005fc5a0,&g_CDemonSetPtr->collision_impact_position,
                    &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                    g_CDemonSetPtr->collision_actor,1);
         core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                  (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
+                  (g_CFireEffect_PTR_005fc5a0,&g_CDemonSetPtr->collision_impact_position,
                    &g_CDemonSetPtr->collision_normal,3,0,0);
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                  (0x02CF5680,(CDemonActor *)this_ptr,"wp_burningcross_scorch.wav",
-                   &g_CDemonSetPtr->collision_impact_position);
+                  (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_burningcross_scorch.wav"
+                   ,&g_CDemonSetPtr->collision_impact_position);
         break;
       }
       core_trigger_cpp_CTrigger_onProjectileHit_FUN_0056edc0(this_ptr_01);

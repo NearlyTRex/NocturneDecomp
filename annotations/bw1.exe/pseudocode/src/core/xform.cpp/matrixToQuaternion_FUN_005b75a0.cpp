@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CQuaternion4f * __stack_esi core_xform_cpp_matrixToQuaternion_FUN_005b75a0(CMatrix3x3f *matrix_in,CQuaternion4f *quat_out)
 
 {
@@ -24,8 +22,8 @@ CQuaternion4f * __stack_esi core_xform_cpp_matrixToQuaternion_FUN_005b75a0(CMatr
   fVar2 = fVar1 + matrix_in[1].m[0].y;
   if (0.0 < fVar2) {
     local_30 = SQRT(fVar2 + 1.0);
-    fVar1 = _DAT_005fa168 / local_30;
-    local_30 = local_30 * _DAT_005fa168;
+    fVar1 = 0.5f / local_30;
+    local_30 = local_30 * 0.5f;
     local_2c = (matrix_in[1].m[0].x - matrix_in->m[2].x) * fVar1;
     fVar2 = (matrix_in->m[0].z - matrix_in->m[2].z) * fVar1;
     fVar1 = (matrix_in->m[1].y - matrix_in->m[0].y) * fVar1;
@@ -39,8 +37,8 @@ LAB_005b762a:
   if (matrix_in->m[0].x <= matrix_in->m[1].z) {
     if (matrix_in[1].m[0].y < matrix_in->m[1].z) {
       fVar5 = SQRT((matrix_in->m[1].z - (matrix_in[1].m[0].y + matrix_in->m[0].x)) + 1.0);
-      fVar6 = _DAT_005fa168 / fVar5;
-      fVar5 = fVar5 * _DAT_005fa168;
+      fVar6 = 0.5f / fVar5;
+      fVar5 = fVar5 * 0.5f;
       fVar1 = matrix_in->m[0].y;
       fVar2 = matrix_in[1].m[0].x;
       fVar3 = matrix_in->m[2].x;
@@ -54,16 +52,16 @@ LAB_005b762a:
   }
   else if (matrix_in[1].m[0].y < matrix_in->m[0].x) {
     local_2c = SQRT((matrix_in->m[0].x - (matrix_in->m[1].z + matrix_in[1].m[0].y)) + 1.0);
-    fVar1 = _DAT_005fa168 / local_2c;
-    local_2c = local_2c * _DAT_005fa168;
+    fVar1 = 0.5f / local_2c;
+    local_2c = local_2c * 0.5f;
     local_30 = (matrix_in[1].m[0].x - matrix_in->m[2].x) * fVar1;
     fVar2 = (matrix_in->m[1].y + matrix_in->m[0].y) * fVar1;
     fVar1 = (matrix_in->m[2].z + matrix_in->m[0].z) * fVar1;
     goto LAB_005b762a;
   }
   fVar5 = SQRT((matrix_in[1].m[0].y - fVar1) + 1.0);
-  fVar6 = _DAT_005fa168 / fVar5;
-  fVar5 = fVar5 * _DAT_005fa168;
+  fVar6 = 0.5f / fVar5;
+  fVar5 = fVar5 * 0.5f;
   fVar1 = matrix_in->m[2].x;
   fVar2 = matrix_in->m[0].z;
   fVar3 = matrix_in->m[2].z;

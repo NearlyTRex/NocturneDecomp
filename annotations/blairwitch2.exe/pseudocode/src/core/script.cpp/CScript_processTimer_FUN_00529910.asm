@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_005e4db3
 ;   TerminatedCString s_CScript_processTimer_inv_005e4dc6
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -64,8 +64,8 @@ section .text
         ;   Label: LAB_00529958
     MOV ECX,0x10e5                      ; 0052995d
     PUSH 0x5e4dc6                       ; 00529962 | = "CScript::processTimer - invalidTimeTo..."
-    MOV dword ptr [0x01d046a0],EDX      ; 00529967 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0052996d | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00529967 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0052996d | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00529973
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00529978

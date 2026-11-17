@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c2bcc at 005c2c4d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02681070
+;   int g_INT_02681070
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 005c26c8
         ;   Label: crt_unknown.c_FUN_005c26c8
     PUSH ESI                            ; 005c26c9
-    MOV EDX,dword ptr [0x02681070]      ; 005c26ca | DAT_02681070
+    MOV EDX,dword ptr [0x02681070]      ; 005c26ca | g_INT_02681070
     XOR ESI,ESI                         ; 005c26d0
     TEST EDX,EDX                        ; 005c26d2
     JLE 0x005c26f1                      ; 005c26d4
@@ -27,7 +27,7 @@ section .text
         ;   Label: LAB_005c26db
     INC ESI                             ; 005c26dc
     CALL dword ptr CS:[0x5c8524]        ; 005c26dd
-    MOV ECX,dword ptr [0x02681070]      ; 005c26e4 | DAT_02681070
+    MOV ECX,dword ptr [0x02681070]      ; 005c26e4 | g_INT_02681070
     ADD EBX,0x18                        ; 005c26ea
     CMP ESI,ECX                         ; 005c26ed
     JL 0x005c26db                       ; 005c26ef

@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 149,
+    "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 10,
+    "pseudocode_lines": 28,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 80
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -80,8 +79,8 @@
     },
     {
       "addr": "02c9ffa0",
-      "name": "DAT_02c9ffa0",
-      "type": "undefined4",
+      "name": "g_PTR_02c9ffa0",
+      "type": "void*",
       "value": null
     }
   ],
@@ -178,16 +177,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint FUN_005cce60(uint param_1,int param_2)",
@@ -195,7 +186,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint FUN_005cce60(uint param_1,int param_2)",
@@ -203,7 +194,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
+      "line": 9,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626628)();",
@@ -211,7 +202,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = FUN_005ce000(param_2);",
@@ -219,7 +210,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "ptr[2] = param_2;",
@@ -227,7 +218,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "ptr[1] = param_1;",
@@ -235,7 +226,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "ptr[3] = (uint)*(byte *)(param_2 + 0x52);",
@@ -243,7 +234,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 29,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_0062662c)();",

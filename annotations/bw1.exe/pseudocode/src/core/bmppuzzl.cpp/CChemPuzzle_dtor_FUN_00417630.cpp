@@ -19,7 +19,7 @@ CChemPuzzle * __cdecl core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630(CChemPuzzl
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable = &g_CChemPuzzleVTable;
+  (this_ptr->base).vtable = g_CChemPuzzleVTable;
   pSVar1 = core_bmppuzzl_cpp_SButtonStruct_arrdtor50Chem_FUN_00418890(this_ptr->buttons,0);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)&pSVar1[-3].x,0);
   ptr = (CChemPuzzle *)core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0((CPuzzle *)&pCVar2[-1].height,1);

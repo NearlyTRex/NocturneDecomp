@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_box_cpp_CBox_updateTransform_FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
 
@@ -57,12 +56,12 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_005b2050(CBox *this_ptr,CVect
   fVar2 = (this_ptr->extents).x;
   fVar3 = (this_ptr->extents).x;
   fVar4 = (this_ptr->extents).x;
-  fVar11 = (float)_DAT_005f12c8;
+  fVar11 = (float)0.03125;
   fVar5 = (this_ptr->extents).z;
   fVar6 = (this_ptr->extents).z;
   fVar7 = (this_ptr->extents).y;
   this_ptr->mass = speed * fVar11;
-  fVar10 = (float)_DAT_005f12d0;
+  fVar10 = (float)0.083333333333333301;
   fVar8 = this_ptr->mass;
   fVar9 = this_ptr->mass;
   (this_ptr->moment_of_inertia).x = speed * fVar11 * fVar10 * (fVar5 * fVar5 + fVar1 * fVar1);

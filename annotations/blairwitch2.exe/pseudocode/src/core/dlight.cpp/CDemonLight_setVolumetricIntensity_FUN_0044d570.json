@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 89,
+    "complexity_score": 73,
     "cross_reference_count": 9,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 5,
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant",
-      "warning_overlapping_globals",
       "wrong_global"
     ],
-    "total_lines": 69
+    "total_lines": 68
   },
   "cross_references": [
     {
@@ -99,15 +98,15 @@
   "globals": [
     {
       "addr": "005cf57f",
-      "name": "DAT_005cf57f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf57f",
+      "type": "double",
+      "value": "7"
     },
     {
       "addr": "005cf587",
-      "name": "DAT_005cf587",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf587",
+      "type": "double",
+      "value": "3"
     },
     {
       "addr": "0060a084",
@@ -319,16 +318,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Scalar global g_PlayerFilters accessed via (&g_PlayerFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilterCachePtr (at 0x0060a0b4, +16 bytes).",
-      "line": 18,
+      "line": 16,
       "match": "g_PlayerFilters",
       "severity": "moderate",
       "text": "(this_ptr,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
@@ -336,7 +327,7 @@
     },
     {
       "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x0060a0a4, +32 bytes).",
-      "line": 26,
+      "line": 24,
       "match": "g_GlobalFilters",
       "severity": "moderate",
       "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
@@ -344,7 +335,7 @@
     },
     {
       "description": "Raw hex address 0x44d5a3 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 14,
+      "line": 12,
       "match": "0x44d5a3",
       "severity": "moderate",
       "text": "iVar2 = 0x44d5a3;",
@@ -352,7 +343,7 @@
     },
     {
       "description": "Raw hex address 0x44d5d8 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 22,
+      "line": 20,
       "match": "0x44d5d8",
       "severity": "moderate",
       "text": "iVar2 = 0x44d5d8;",

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 314,
-    "complexity_score": 592,
+    "complexity_score": 567,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 162,
-    "suspect_count": 40,
+    "suspect_count": 38,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
       "unrolled_memset"
     ],
     "total_lines": 476
@@ -140,14 +139,14 @@
     },
     {
       "addr": "005b63cd",
-      "name": "DAT_005b63cd",
-      "type": "undefined4",
+      "name": "s_FLY_005b63cd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005b63d1",
-      "name": "DAT_005b63d1",
-      "type": "undefined4",
+      "name": "s_FLY_005b63d1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -306,22 +305,6 @@
       "severity": "moderate",
       "text": "(&this_ptr_00->base,&stack0xffffff70);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005b63d1",
-      "severity": "mild",
-      "text": "state_name = &DAT_005b63d1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_005b63cd",
-      "severity": "mild",
-      "text": "state_name = &DAT_005b63cd;",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

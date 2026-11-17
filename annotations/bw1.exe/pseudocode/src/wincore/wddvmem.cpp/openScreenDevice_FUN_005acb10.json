@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 102,
+    "complexity_score": 82,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation",
+      "signed_shift_global_idiom"
     ],
     "total_lines": 130
   },
@@ -81,68 +81,68 @@
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c4354c",
-      "name": "DAT_01c4354c",
-      "type": "undefined4",
+      "name": "g_ARRAY_PTR_01c4354c",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "DAT_01c43550",
+      "name": "g_ARRAY_PTR_01c4354c[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c99308",
-      "name": "DAT_02c99308",
-      "type": "undefined4",
+      "name": "g_IDirectDrawSurface_PTR_02c99308",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02c9931c",
-      "name": "DAT_02c9931c",
-      "type": "undefined4",
+      "name": "g_INT_02c9931c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c99328",
-      "name": "DAT_02c99328",
-      "type": "undefined4",
+      "name": "g_INT_02c99328",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c9932c",
-      "name": "DAT_02c9932c",
-      "type": "undefined4",
+      "name": "g_INT_02c9932c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c99330",
-      "name": "DAT_02c99330",
-      "type": "undefined4",
+      "name": "g_INT_02c99330",
+      "type": "int",
       "value": null
     }
   ],
@@ -227,44 +227,28 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(LPVOID *)((int)g_ARRAY_PTR_01c4354c",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02c99308 + 100))(_DAT_02c99308,0,local_7c,1);",
-      "type": "unresolved_funcptr"
+      "text": "*(LPVOID *)((int)g_ARRAY_PTR_01c4354c + iVar2) = local_7c.lpSurface;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "if (0 < DAT_0061b49c) {",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_ARRAY_PTR_01c4354c + iVar2) = local_7c.lpSurface;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "iVar1 = DAT_0061b49c * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01c4354c + iVar2) = iStack_6c;",
-      "type": "undefined_data"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 21,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar3 = g_INT_02c9932c * g_INT_02c99328 >> 0x1f;",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

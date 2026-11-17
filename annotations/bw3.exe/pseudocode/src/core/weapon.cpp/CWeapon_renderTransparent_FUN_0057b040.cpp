@@ -37,12 +37,12 @@ int __cdecl core_weapon_cpp_CWeapon_renderTransparent_FUN_0057b040(CWeapon *this
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
     if (iVar2 != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-                (DAT_005f2afc,this_ptr->render_alpha);
+                (g_CDemonRenderer_PTR_005f2afc,this_ptr->render_alpha);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
                 (&this_ptr->model,0.0,0x267);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
-    this_ptr_00 = DAT_005f2afc;
+    this_ptr_00 = g_CDemonRenderer_PTR_005f2afc;
     this_ptr->is_rendered = 0;
     iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(this_ptr_00);
     if ((iVar1 == 0) && (iVar2 != 0)) {

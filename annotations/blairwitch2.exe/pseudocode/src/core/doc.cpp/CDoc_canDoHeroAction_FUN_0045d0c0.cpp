@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int action_type)
 
 {
@@ -33,12 +31,12 @@ int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int ac
     ;
     fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&this_ptr_00->base,5)
     ;
-    fVar7 = (float)_DAT_005d07cf;
+    fVar7 = (float)0.999;
     switch(action_type) {
     case 4:
       fVar8 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                         ((CCharacter *)this_ptr,0);
-      if (fVar8 < (float)_DAT_005d07d7) {
+      if (fVar8 < (float)0.98999999999999999) {
         return 0;
       }
     case 3:
@@ -54,7 +52,7 @@ int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int ac
     case 0xb:
       fVar7 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                         ((CCharacter *)this_ptr,0);
-      if (fVar7 < (float)_DAT_005d07d7) {
+      if (fVar7 < (float)0.98999999999999999) {
         return 0;
       }
     }

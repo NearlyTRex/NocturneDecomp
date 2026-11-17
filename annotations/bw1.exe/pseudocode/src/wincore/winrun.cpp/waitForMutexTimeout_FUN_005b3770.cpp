@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_005b3770(HANDLE mutex_handle,double timeout_seconds)
 
 {
@@ -18,7 +16,7 @@ int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_005b3770(HANDLE mutex_han
   if (mutex_handle == (HANDLE)0x0) {
     return 0;
   }
-  dVar2 = round(timeout_seconds * _DAT_005f9e72);
+  dVar2 = round(timeout_seconds * 1000);
   uStack_c = (DWORD)(longlong)ROUND(dVar2);
   DVar1 = WaitForSingleObject(mutex_handle,uStack_c);
   return (uint)(DVar1 == 0);

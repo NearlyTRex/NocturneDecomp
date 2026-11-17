@@ -11,11 +11,11 @@
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50 at 0049cf7a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9665
+;   TerminatedCString s_dirt_005d9665
 ;   TerminatedCString s_leaves_005d966a
-;   undefined4 DAT_005d9671
-;   undefined4 DAT_005d9676
-;   undefined4 DAT_005d967b
+;   TerminatedCString s_rock_005d9671
+;   TerminatedCString s_wood_005d9676
+;   TerminatedCString s_dirt_005d967b
 ;
 ; *****************************************************************************
 
@@ -29,15 +29,15 @@ section .text
     CMP EAX,0x1                         ; 004ca7c9
     JNZ 0x004ca7f4                      ; 004ca7cc
         ;   XREF to: 004ca7f4 (CONDITIONAL_JUMP)  ; LAB_004ca7f4
-    MOV EAX,0x5d9665                    ; 004ca7ce | DAT_005d9665
+    MOV EAX,0x5d9665                    ; 004ca7ce | = "dirt"
     RET                                 ; 004ca7d3
     MOV EAX,0x5d966a                    ; 004ca7d4 | = "leaves"
         ;   Label: LAB_004ca7d4
     RET                                 ; 004ca7d9
-    MOV EAX,0x5d9671                    ; 004ca7da | DAT_005d9671
+    MOV EAX,0x5d9671                    ; 004ca7da | = "rock"
         ;   Label: LAB_004ca7da
     RET                                 ; 004ca7df
-    MOV EAX,0x5d9676                    ; 004ca7e0 | DAT_005d9676
+    MOV EAX,0x5d9676                    ; 004ca7e0 | = "wood"
         ;   Label: LAB_004ca7e0
     RET                                 ; 004ca7e5
     JBE 0x004ca7da                      ; 004ca7e6
@@ -51,7 +51,7 @@ section .text
     CMP EAX,0xe                         ; 004ca7ef
     JZ 0x004ca7d4                       ; 004ca7f2
         ;   XREF to: 004ca7d4 (CONDITIONAL_JUMP)  ; LAB_004ca7d4
-    MOV EAX,0x5d967b                    ; 004ca7f4 | DAT_005d967b
+    MOV EAX,0x5d967b                    ; 004ca7f4 | = "dirt"
         ;   Label: LAB_004ca7f4
     RET                                 ; 004ca7f9
 

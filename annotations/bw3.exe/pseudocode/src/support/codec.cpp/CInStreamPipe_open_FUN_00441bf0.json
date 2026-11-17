@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 67,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 76
+    "total_lines": 75
   },
   "cross_references": [],
   "function": {
@@ -49,14 +48,14 @@
   "globals": [
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -152,16 +151,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "(**(code **)((int)this_ptr->codec->vtable + 4))(this_ptr->codec);",
@@ -169,7 +160,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
+      "line": 22,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)this_ptr->codec->vtable + 4))(this_ptr->codec);",

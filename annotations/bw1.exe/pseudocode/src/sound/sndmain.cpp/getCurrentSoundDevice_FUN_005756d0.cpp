@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_getCurrentSoundDevice_FUN_005756d0(void)
 
 {
-  return DAT_006232fc;
+  return g_INT_006232fc;
 }

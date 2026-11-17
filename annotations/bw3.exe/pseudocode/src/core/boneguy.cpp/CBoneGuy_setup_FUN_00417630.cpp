@@ -20,48 +20,48 @@ void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_00417630(CBoneGuy *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
-  DAT_007e1620 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"CBip01 Head" + 1,1);
+  g_INT_007e1620 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
   _DAT_007e162c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L ForeArm",1);
   _DAT_007e1630 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R ForeArm",1);
-  DAT_007e1634 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 L UpperArm",1);
-  DAT_007e1638 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 R UpperArm",1);
+  g_INT_007e1634 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
+  g_INT_007e1638 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
   _DAT_007e163c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Foot",1);
   _DAT_007e1640 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Foot",1);
-  DAT_007e1624 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 L Hand",1);
-  DAT_007e1628 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 R Hand",1);
-  DAT_007e1644 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 Spine",1);
-  DAT_007e1648 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 Spine2",1);
-  DAT_007e1620 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 Head",1);
-  DAT_007e1634 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 L UpperArm",1);
-  DAT_007e1638 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 R UpperArm",1);
-  DAT_007e1644 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 Spine",1);
-  DAT_007e1648 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 Spine2",1);
+  g_INT_007e1624 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Hand",1);
+  g_INT_007e1628 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
+  g_INT_007e1644 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
+  g_INT_007e1648 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
+  g_INT_007e1620 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
+  g_INT_007e1634 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
+  g_INT_007e1638 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
+  g_INT_007e1644 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
+  g_INT_007e1648 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   iVar1 = pCVar2->num_parts;
   this_ptr->box_count = iVar1;
   if (0x14 < iVar1) {
-    _DAT_01d71de0 = "..\\core\\boneguy.cpp";
-    _DAT_01d71de4 = 0x136;
+    g_CHAR_PTR_01d71de0 = "..\\core\\boneguy.cpp";
+    g_INT_01d71de4 = 0x136;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CBoneGuy::explode - Not enough containers");
   }
-  (this_ptr->base).base.carry_hands[0].bone_index = DAT_007e1624;
-  (this_ptr->base).base.carry_hands[1].bone_index = DAT_007e1628;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_007e1624;
+  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_007e1628;
   core_enemy_cpp_CEnemy_setup_FUN_00489110(&this_ptr->base);
   this_ptr->sfx_handle = 0;
   this_ptr->guard_idle = 0;

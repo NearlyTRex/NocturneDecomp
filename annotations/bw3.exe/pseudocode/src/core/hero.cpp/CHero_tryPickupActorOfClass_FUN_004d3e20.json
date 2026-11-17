@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 135,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 90,
-    "suspect_count": 3,
+    "pseudocode_lines": 89,
+    "suspect_count": 2,
     "suspect_types": [
       "bit_int_float_compare",
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 298
+    "total_lines": 297
   },
   "cross_references": [
     {
@@ -85,9 +84,9 @@
     },
     {
       "addr": "005c4e75",
-      "name": "DAT_005c4e75",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c4e75",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "005fe9dc",
@@ -290,16 +289,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(CHero **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CHero **)((int)g_CDemonSetPtr->actors + local_24);",
@@ -307,7 +298,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
-      "line": 47,
+      "line": 45,
       "match": "(int)local_28 < 0x40400000",
       "severity": "moderate",
       "text": "if ((iVar2 == 5) && ((int)local_28 < 0x40400000)) {",

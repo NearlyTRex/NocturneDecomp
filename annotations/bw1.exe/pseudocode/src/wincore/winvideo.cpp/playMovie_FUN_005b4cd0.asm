@@ -79,7 +79,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005b4cf4
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 005b4cf9
-    PUSH 0x5fa085                       ; 005b4cfc | DAT_005fa085
+    PUSH 0x5fa085                       ; 005b4cfc | = "rb"
     LEA EAX,[ESP + 0x188]               ; 005b4d01
     PUSH EAX                            ; 005b4d08
     CALL crt_stdio.c_fopen_FUN_005c157c ; 005b4d09
@@ -104,8 +104,8 @@ section .text
         ;   XREF to: 0057dc40 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0057dc40()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 005b4d35
         ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
-    MOV EDI,dword ptr [0x02c9d2a0]      ; 005b4d3a | DAT_02c9d2a0
-    MOV EBX,dword ptr [0x02c9be68]      ; 005b4d40 | DAT_02c9be68
+    MOV EDI,dword ptr [0x02c9d2a0]      ; 005b4d3a | g_INT_02c9d2a0
+    MOV EBX,dword ptr [0x02c9be68]      ; 005b4d40 | g_HWND_02c9be68
     TEST EDI,EDI                        ; 005b4d46
     JZ 0x005b4d53                       ; 005b4d48
         ;   XREF to: 005b4d53 (CONDITIONAL_JUMP)  ; LAB_005b4d53
@@ -134,7 +134,7 @@ section .text
     PUSH 0x0                            ; 005b4d81
     MOV EAX,0x1                         ; 005b4d83
     PUSH 0x104                          ; 005b4d88
-    MOV [0x02c9d2a0],EAX                ; 005b4d8d | DAT_02c9d2a0
+    MOV [0x02c9d2a0],EAX                ; 005b4d8d | g_INT_02c9d2a0
     LEA EAX,[ESP + 0x14]                ; 005b4d92
     PUSH EAX                            ; 005b4d96
     PUSH 0x5fa015                       ; 005b4d97 | = "status mov window handle"
@@ -147,12 +147,12 @@ section .text
     CALL crt_stdlib.c_atoi_FUN_005c30e0 ; 005b4db0
         ;   XREF to: 005c30e0 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_005c30e0(char * string_ptr)
     ADD ESP,0x4                         ; 005b4db5
-    MOV [0x02c9d298],EAX                ; 005b4db8 | DAT_02c9d298
-    CMP dword ptr [0x02c9d2a8],0x0      ; 005b4dbd | DAT_02c9d2a8
+    MOV [0x02c9d298],EAX                ; 005b4db8 | g_INT_02c9d298
+    CMP dword ptr [0x02c9d2a8],0x0      ; 005b4dbd | g_INT_02c9d2a8
         ;   Label: LAB_005b4dbd
     JNZ 0x005b4f67                      ; 005b4dc4
         ;   XREF to: 005b4f67 (CONDITIONAL_JUMP)  ; LAB_005b4f67
-    CMP dword ptr [0x02c9d2a0],0x0      ; 005b4dca | DAT_02c9d2a0
+    CMP dword ptr [0x02c9d2a0],0x0      ; 005b4dca | g_INT_02c9d2a0
     JZ 0x005b4f67                       ; 005b4dd1
         ;   XREF to: 005b4f67 (CONDITIONAL_JUMP)  ; LAB_005b4f67
     LEA EAX,[ESP + 0x1f0]               ; 005b4dd7
@@ -307,20 +307,20 @@ section .text
     SUB ECX,EAX                         ; 005b4f55
     PUSH ECX                            ; 005b4f57
     PUSH EBX                            ; 005b4f58
-    MOV EDI,dword ptr [0x02c9d298]      ; 005b4f59 | DAT_02c9d298
+    MOV EDI,dword ptr [0x02c9d298]      ; 005b4f59 | g_INT_02c9d298
     PUSH EDI                            ; 005b4f5f
     CALL dword ptr CS:[0x5d04e0]        ; 005b4f60 | PTR_MoveWindow_005d04e0
-    MOV ECX,dword ptr [0x02c9d29c]      ; 005b4f67 | DAT_02c9d29c
+    MOV ECX,dword ptr [0x02c9d29c]      ; 005b4f67 | g_INT_02c9d29c
         ;   Label: LAB_005b4f67
-    MOV EDX,dword ptr [0x02c9be68]      ; 005b4f6d | DAT_02c9be68
+    MOV EDX,dword ptr [0x02c9be68]      ; 005b4f6d | g_HWND_02c9be68
     TEST ECX,ECX                        ; 005b4f73
     SETZ AL                             ; 005b4f75
     AND EAX,0xff                        ; 005b4f78
-    MOV [0x02c9d29c],EAX                ; 005b4f7d | DAT_02c9d29c
+    MOV [0x02c9d29c],EAX                ; 005b4f7d | g_INT_02c9d29c
     TEST EAX,EAX                        ; 005b4f82
     JZ 0x005b5027                       ; 005b4f84
         ;   XREF to: 005b5027 (CONDITIONAL_JUMP)  ; LAB_005b5027
-    MOV ESI,dword ptr [0x02c9d2a8]      ; 005b4f8a | DAT_02c9d2a8
+    MOV ESI,dword ptr [0x02c9d2a8]      ; 005b4f8a | g_INT_02c9d2a8
     TEST ESI,ESI                        ; 005b4f90
     JZ 0x005b5037                       ; 005b4f92
         ;   XREF to: 005b5037 (CONDITIONAL_JUMP)  ; LAB_005b5037
@@ -343,7 +343,7 @@ section .text
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0 ; 005b4fca
         ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0()
         ;   Label: LAB_005b4fca
-    CMP EBX,dword ptr [0x02c9d29c]      ; 005b4fcf | DAT_02c9d29c
+    CMP EBX,dword ptr [0x02c9d29c]      ; 005b4fcf | g_INT_02c9d29c
     JZ 0x005b5044                       ; 005b4fd5
         ;   XREF to: 005b5044 (CONDITIONAL_JUMP)  ; LAB_005b5044
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005b2580 ; 005b4fd7
@@ -351,7 +351,7 @@ section .text
     TEST EAX,EAX                        ; 005b4fdc
     JNZ 0x005b5044                      ; 005b4fde
         ;   XREF to: 005b5044 (CONDITIONAL_JUMP)  ; LAB_005b5044
-    CMP EBX,dword ptr [0x02c9d2a0]      ; 005b4fe0 | DAT_02c9d2a0
+    CMP EBX,dword ptr [0x02c9d2a0]      ; 005b4fe0 | g_INT_02c9d2a0
     JZ 0x005b5044                       ; 005b4fe6
         ;   XREF to: 005b5044 (CONDITIONAL_JUMP)  ; LAB_005b5044
     PUSH 0x14                           ; 005b4fe8
@@ -371,7 +371,7 @@ section .text
     PUSH EBX                            ; 005b5012
     XOR EBP,EBP                         ; 005b5013
     CALL dword ptr CS:[0x5d04dc]        ; 005b5015 | PTR_MessageBoxA_005d04dc
-    MOV dword ptr [0x02c9d2a0],EBP      ; 005b501c | DAT_02c9d2a0
+    MOV dword ptr [0x02c9d2a0],EBP      ; 005b501c | g_INT_02c9d2a0
     JMP 0x005b4f67                      ; 005b5022
         ;   XREF to: 005b4f67 (UNCONDITIONAL_JUMP)  ; LAB_005b4f67
     PUSH 0x0                            ; 005b5027
@@ -392,7 +392,7 @@ section .text
         ;   Label: LAB_005b5044
     PUSH ESI                            ; 005b5045
     CALL dword ptr CS:[0x5d0650]        ; 005b5046 | PTR_SetThreadPriority_005d0650
-    MOV EDX,dword ptr [0x02c9be68]      ; 005b504d | DAT_02c9be68
+    MOV EDX,dword ptr [0x02c9be68]      ; 005b504d | g_HWND_02c9be68
     PUSH EDX                            ; 005b5053
     CALL wincore_winvideo.cpp_closeMovie_FUN_005b4980 ; 005b5054
         ;   XREF to: 005b4980 (UNCONDITIONAL_CALL)  ; void wincore_winvideo.cpp_closeMovie_FUN_005b4980(HWND window_handle)

@@ -13,7 +13,6 @@
 /* WARNING: Removing unreachable block (ram,0x00473f9b) */
 /* WARNING: Removing unreachable block (ram,0x00473fa4) */
 /* WARNING: Removing unreachable block (ram,0x00473f5c) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder)
 
@@ -26,13 +25,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10(C
   int unaff_EBX;
   int unaff_EDI;
   
-  _DAT_01510dac = _DAT_02653710;
-  _DAT_01510dc8 = _DAT_02653714;
-  _DAT_01510dc0 = _DAT_0265370c;
-  _DAT_01510dbc = _DAT_02653714;
-  _DAT_01510db4 = _DAT_0265370c;
-  _DAT_01510db0 = _DAT_02653714;
-  _DAT_01510da8 = _DAT_0265370c;
+  g_INT_01510dac = (int)g_CVector3f_0265370c.y;
+  g_FLOAT_01510dc8 = g_CVector3f_0265370c.z;
+  g_FLOAT_01510dc0 = g_CVector3f_0265370c.x;
+  g_FLOAT_01510dbc = g_CVector3f_0265370c.z;
+  g_FLOAT_01510db4 = g_CVector3f_0265370c.x;
+  g_FLOAT_01510db0 = g_CVector3f_0265370c.z;
+  g_FLOAT_01510da8 = g_CVector3f_0265370c.x;
   if (cylinder->dir_x <= 0.0) {
     fVar5 = ((cylinder->center_x + cylinder->dir_x) - (this_ptr->bbox_min).x) - cylinder->radius;
     fVar1 = (this_ptr->cell_size).x;
@@ -45,8 +44,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10(C
   }
   fVar2 = (this_ptr->bbox_min).x;
   fVar3 = cylinder->radius;
-  _DAT_01510db8 = _DAT_01510dac;
-  _DAT_01510dc4 = _DAT_01510dac;
+  g_INT_01510db8 = g_INT_01510dac;
+  g_INT_01510dc4 = g_INT_01510dac;
   round((double)(fVar5 * (1.0 / fVar1)));
   round((double)(((fVar4 - fVar2) + fVar3) * (1.0 / fVar1)));
   fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);

@@ -11,28 +11,28 @@ void __cdecl core_actor_cpp_archiveString_FUN_0040b440(char *string_buffer,char 
 {
   int iVar1;
   
-  if (DAT_007c3038 != 1) {
-    _fprintf(DAT_007c3034,"%s\"%s\"");
+  if (g_INT_007c3038 != 1) {
+    _fprintf(g_FILE_PTR_007c3034,"%s\"%s\"");
     core_actor_cpp_archiveDescription_FUN_0040b110("String",property_type);
     return;
   }
   do {
-    iVar1 = _fgetc(DAT_007c3034);
-  } while (((&DAT_00626114)[(byte)((char)iVar1 + 1)] & 2) != 0);
+    iVar1 = _fgetc(g_FILE_PTR_007c3034);
+  } while ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar1 + 1)] & 2) != 0);
   if (iVar1 != 0x22) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040b090("String",property_type);
   }
-  iVar1 = _fgetc(DAT_007c3034);
+  iVar1 = _fgetc(g_FILE_PTR_007c3034);
   if (iVar1 == 0x22) {
     *string_buffer = '\0';
   }
   else {
-    _ungetc(iVar1,DAT_007c3034);
-    iVar1 = _fscanf(DAT_007c3034,"%[^\"]");
+    _ungetc(iVar1,g_FILE_PTR_007c3034);
+    iVar1 = _fscanf(g_FILE_PTR_007c3034,"%[^\"]");
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b090("String",property_type);
     }
-    iVar1 = _fgetc(DAT_007c3034);
+    iVar1 = _fgetc(g_FILE_PTR_007c3034);
     if (iVar1 != 0x22) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b090("String",property_type);
       core_actor_cpp_archiveDescription_FUN_0040b110("String",property_type);

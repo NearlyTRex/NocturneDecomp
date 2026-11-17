@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00616028
-;   undefined4 DAT_0061602c
+;   int g_INT_00616028 = 0x262
+;   int g_INT_0061602c = 0x1c0
 ;   undefined4 CAlphaBitmap_01caf218.width
 ;   undefined4 CAlphaBitmap_01caf218.height
 ;
@@ -24,11 +24,11 @@ section .text
     PUSH EBP                            ; 004a1d03
     MOV EDX,dword ptr [ESP + 0x14]      ; 004a1d04
     MOV ECX,dword ptr [ESP + 0x18]      ; 004a1d08
-    MOV EBX,dword ptr [0x00616028]      ; 004a1d0c | DAT_00616028
+    MOV EBX,dword ptr [0x00616028]      ; 004a1d0c | g_INT_00616028
     CMP EDX,EBX                         ; 004a1d12
     JL 0x004a1d3a                       ; 004a1d14
         ;   XREF to: 004a1d3a (CONDITIONAL_JUMP)  ; LAB_004a1d3a
-    MOV ESI,dword ptr [0x0061602c]      ; 004a1d16 | DAT_0061602c
+    MOV ESI,dword ptr [0x0061602c]      ; 004a1d16 | g_INT_0061602c
     CMP ECX,ESI                         ; 004a1d1c
     JL 0x004a1d3a                       ; 004a1d1e
         ;   XREF to: 004a1d3a (CONDITIONAL_JUMP)  ; LAB_004a1d3a

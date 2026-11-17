@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_resetTrainSounds_FUN_0057c4e0(void)
 
 {
-  if (&stack0x00000000 == &DAT_02c83374) {
-    _DAT_02c83364 = 0xffffffff;
+  if ((int *)&stack0x00000000 == &g_INT_02c83374) {
+    g_INT_02c83364 = -1;
     return;
   }
-  _DAT_02c83354 = -(g_CDemonSetPtr->active_fog).scroll.x;
-  _DAT_02c83358 = -(g_CDemonSetPtr->active_fog).scroll.y;
-  _DAT_02c8335c = -(g_CDemonSetPtr->active_fog).scroll.z;
-  _DAT_02c83364 = 0xffffffff;
+  g_CVector3f_02c83354.x = -(g_CDemonSetPtr->active_fog).scroll.x;
+  g_CVector3f_02c83354.y = -(g_CDemonSetPtr->active_fog).scroll.y;
+  g_CVector3f_02c83354.z = -(g_CDemonSetPtr->active_fog).scroll.z;
+  g_INT_02c83364 = -1;
   return;
 }

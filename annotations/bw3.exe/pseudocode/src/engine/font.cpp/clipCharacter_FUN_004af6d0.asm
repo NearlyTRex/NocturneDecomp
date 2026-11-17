@@ -15,10 +15,10 @@
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004b1460 at 004b16ae
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5ac
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5ac
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH ESI                            ; 004af6d1
     PUSH EDI                            ; 004af6d2
     PUSH EBP                            ; 004af6d3
-    MOV ESI,dword ptr [0x01c6b5ac]      ; 004af6d4 | DAT_01c6b5ac
-    MOV EDI,dword ptr [0x01c6b5a8]      ; 004af6da | DAT_01c6b5a8
+    MOV ESI,dword ptr [0x01c6b5ac]      ; 004af6d4 | g_INT_01c6b5ac
+    MOV EDI,dword ptr [0x01c6b5a8]      ; 004af6da | g_INT_01c6b5a8
     MOV EBX,dword ptr [ESP + 0x14]      ; 004af6e0
     MOV ECX,dword ptr [ESP + 0x18]      ; 004af6e4
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004af6e8
@@ -51,11 +51,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 004af70c
         ;   Label: LAB_004af70c
     MOV EAX,dword ptr [EAX]             ; 004af710
-    CMP EAX,dword ptr [0x01c6b5b0]      ; 004af712 | DAT_01c6b5b0
+    CMP EAX,dword ptr [0x01c6b5b0]      ; 004af712 | g_INT_01c6b5b0
     JLE 0x004af72e                      ; 004af718
         ;   XREF to: 004af72e (CONDITIONAL_JUMP)  ; LAB_004af72e
     MOV EAX,dword ptr [ECX]             ; 004af71a
-    MOV ECX,dword ptr [0x01c6b5b0]      ; 004af71c | DAT_01c6b5b0
+    MOV ECX,dword ptr [0x01c6b5b0]      ; 004af71c | g_INT_01c6b5b0
     CMP EAX,ECX                         ; 004af722
     JG 0x004af76d                       ; 004af724
         ;   XREF to: 004af76d (CONDITIONAL_JUMP)  ; LAB_004af76d
@@ -76,7 +76,7 @@ section .text
     IMUL EAX,dword ptr [ESP + 0x28]     ; 004af73f
     ADD dword ptr [EBX],EAX             ; 004af744
     MOV dword ptr [EDX],ESI             ; 004af746
-    MOV EBX,dword ptr [0x01c6b5b4]      ; 004af748 | DAT_01c6b5b4
+    MOV EBX,dword ptr [0x01c6b5b4]      ; 004af748 | g_INT_01c6b5b4
         ;   Label: LAB_004af748
     CMP EBX,dword ptr [EBP]             ; 004af74e
     JGE 0x004af75a                      ; 004af751
@@ -87,8 +87,8 @@ section .text
     MOV dword ptr [EBP],EBX             ; 004af757
     XOR EAX,EAX                         ; 004af75a
         ;   Label: LAB_004af75a
-    MOV dword ptr [0x01c6b5a8],EDI      ; 004af75c | DAT_01c6b5a8
-    MOV dword ptr [0x01c6b5ac],ESI      ; 004af762 | DAT_01c6b5ac
+    MOV dword ptr [0x01c6b5a8],EDI      ; 004af75c | g_INT_01c6b5a8
+    MOV dword ptr [0x01c6b5ac],ESI      ; 004af762 | g_INT_01c6b5ac
     POP EBP                             ; 004af768
     POP EDI                             ; 004af769
     POP ESI                             ; 004af76a
@@ -96,8 +96,8 @@ section .text
     RET                                 ; 004af76c
     MOV EAX,0x1                         ; 004af76d
         ;   Label: LAB_004af76d
-    MOV dword ptr [0x01c6b5a8],EDI      ; 004af772 | DAT_01c6b5a8
-    MOV dword ptr [0x01c6b5ac],ESI      ; 004af778 | DAT_01c6b5ac
+    MOV dword ptr [0x01c6b5a8],EDI      ; 004af772 | g_INT_01c6b5a8
+    MOV dword ptr [0x01c6b5ac],ESI      ; 004af778 | g_INT_01c6b5ac
     POP EBP                             ; 004af77e
     POP EDI                             ; 004af77f
     POP ESI                             ; 004af780

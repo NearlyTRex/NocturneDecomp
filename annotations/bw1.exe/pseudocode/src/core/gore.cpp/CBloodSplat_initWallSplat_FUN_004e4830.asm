@@ -13,8 +13,8 @@
 ;   core_gore.cpp_CGore_createWallBloodSplat_FUN_004e6020 at 004e6048
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006016a8
-;   undefined4 DAT_006016ac
+;   float g_FLOAT_006016a8 = 256
+;   float g_FLOAT_006016ac = 65536
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -71,24 +71,24 @@ section .text
     MOV EAX,EBP                         ; 004e489f
     MOV dword ptr [ESI + 0x24],0x0      ; 004e48a1
     FLD float ptr [EAX]                 ; 004e48a8
-    FMUL float ptr [0x006016a8]         ; 004e48aa | DAT_006016a8
+    FMUL float ptr [0x006016a8]         ; 004e48aa | g_FLOAT_006016a8
     FISTP dword ptr [EBX]               ; 004e48b0
     FLD float ptr [EAX + 0x4]           ; 004e48b2
-    FMUL float ptr [0x006016a8]         ; 004e48b5 | DAT_006016a8
+    FMUL float ptr [0x006016a8]         ; 004e48b5 | g_FLOAT_006016a8
     FISTP dword ptr [EBX + 0x4]         ; 004e48bb
     FLD float ptr [EAX + 0x8]           ; 004e48be
-    FMUL float ptr [0x006016a8]         ; 004e48c1 | DAT_006016a8
+    FMUL float ptr [0x006016a8]         ; 004e48c1 | g_FLOAT_006016a8
     FISTP dword ptr [EBX + 0x8]         ; 004e48c7
     LEA EBX,[ESI + 0x38]                ; 004e48ca
     MOV EAX,EDI                         ; 004e48cd
     FLD float ptr [EAX]                 ; 004e48cf
-    FMUL float ptr [0x006016ac]         ; 004e48d1 | DAT_006016ac
+    FMUL float ptr [0x006016ac]         ; 004e48d1 | g_FLOAT_006016ac
     FISTP dword ptr [EBX]               ; 004e48d7
     FLD float ptr [EAX + 0x4]           ; 004e48d9
-    FMUL float ptr [0x006016ac]         ; 004e48dc | DAT_006016ac
+    FMUL float ptr [0x006016ac]         ; 004e48dc | g_FLOAT_006016ac
     FISTP dword ptr [EBX + 0x4]         ; 004e48e2
     FLD float ptr [EAX + 0x8]           ; 004e48e5
-    FMUL float ptr [0x006016ac]         ; 004e48e8 | DAT_006016ac
+    FMUL float ptr [0x006016ac]         ; 004e48e8 | g_FLOAT_006016ac
     FISTP dword ptr [EBX + 0x8]         ; 004e48ee
     MOV EAX,dword ptr [ESP + 0x20]      ; 004e48f1
     MOV dword ptr [ESI],0x0             ; 004e48f5

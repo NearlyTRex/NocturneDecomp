@@ -19,12 +19,12 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005397fc = 00539861
-;   undefined4 DAT_005ed423
-;   undefined4 DAT_005ed42b
-;   undefined4 DAT_005ed433
-;   undefined4 DAT_0061b4d0
+;   double g_DOUBLE_005ed423 = -20
+;   double g_DOUBLE_005ed42b = 10
+;   double g_DOUBLE_005ed433 = 0.0500000000000000
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -82,7 +82,7 @@ section .text
         ;   Label: caseD_0
     ADD EAX,0x3b8                       ; 00539864
     PUSH EAX                            ; 00539869
-    MOV EAX,[0x0061b4d0]                ; 0053986a | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 0053986a | g_CEventList_PTR_0061b4d0
     PUSH EAX                            ; 0053986f
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00539870
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -213,7 +213,7 @@ section .text
         ;   XREF to: 00539dc1 (CONDITIONAL_JUMP)  ; LAB_00539dc1
     MOV EDX,dword ptr [EAX + 0x4bc]     ; 005399e0
     PUSH EDX                            ; 005399e6
-    MOV ECX,dword ptr [0x006236b8]      ; 005399e7 | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 005399e7 | g_CSound_PTR_006236b8
     PUSH ECX                            ; 005399ed
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 005399ee
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -293,7 +293,7 @@ section .text
         ;   Label: caseD_1
     ADD EAX,0x354                       ; 00539afa
     PUSH EAX                            ; 00539aff
-    MOV ESI,dword ptr [0x0061b4d0]      ; 00539b00 | DAT_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 00539b00 | g_CEventList_PTR_0061b4d0
     PUSH ESI                            ; 00539b06
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00539b07
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -322,7 +322,7 @@ section .text
         ;   Label: caseD_2
     ADD EAX,0x3b8                       ; 00539b4b
     PUSH EAX                            ; 00539b50
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00539b51 | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00539b51 | g_CEventList_PTR_0061b4d0
     PUSH EDI                            ; 00539b57
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00539b58
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -347,7 +347,7 @@ section .text
         ;   Label: LAB_00539b8a
     ADD EAX,0x354                       ; 00539b8d
     PUSH EAX                            ; 00539b92
-    MOV EAX,[0x0061b4d0]                ; 00539b93 | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 00539b93 | g_CEventList_PTR_0061b4d0
     PUSH EAX                            ; 00539b98
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00539b99
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -372,7 +372,7 @@ section .text
         ;   Label: caseD_3
     ADD EAX,0x41c                       ; 00539bcf
     PUSH EAX                            ; 00539bd4
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00539bd5 | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00539bd5 | g_CEventList_PTR_0061b4d0
     PUSH EDI                            ; 00539bdb
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00539bdc
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -440,7 +440,7 @@ section .text
         ;   Label: caseD_4
     ADD EAX,0x41c                       ; 00539cb5
     PUSH EAX                            ; 00539cba
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00539cbb | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00539cbb | g_CEventList_PTR_0061b4d0
     PUSH EDI                            ; 00539cc1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00539cc2
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -527,7 +527,7 @@ section .text
         ;   Label: LAB_00539dc1
     MOV ESI,dword ptr [EAX + 0x4bc]     ; 00539dc4
     PUSH ESI                            ; 00539dca
-    MOV EDI,dword ptr [0x006236b8]      ; 00539dcb | DAT_006236b8
+    MOV EDI,dword ptr [0x006236b8]      ; 00539dcb | g_CSound_PTR_006236b8
     PUSH EDI                            ; 00539dd1
     CALL core_sound.cpp_CSound_killSound_FUN_0057d9d0 ; 00539dd2
         ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)
@@ -575,7 +575,7 @@ section .text
     JA 0x0053a14c                       ; 00539e62
         ;   XREF to: 0053a14c (CONDITIONAL_JUMP)  ; LAB_0053a14c
     FLD float ptr [ESP + 0x2a0]         ; 00539e68
-    FADD double ptr [0x005ed423]        ; 00539e6f | DAT_005ed423
+    FADD double ptr [0x005ed423]        ; 00539e6f | g_DOUBLE_005ed423
     FLD float ptr [ESP + 0x2e8]         ; 00539e75
     FCOMPP                              ; 00539e7c
     FNSTSW AX                           ; 00539e7e
@@ -616,14 +616,14 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00539f10
     FLD float ptr [ESP + 0x35c]         ; 00539f11
     FABS                                ; 00539f18
-    FCOMP double ptr [0x005ed42b]       ; 00539f1a | DAT_005ed42b
+    FCOMP double ptr [0x005ed42b]       ; 00539f1a | g_DOUBLE_005ed42b
     FNSTSW AX                           ; 00539f20
     SAHF                                ; 00539f22
     JA 0x0053a14c                       ; 00539f23
         ;   XREF to: 0053a14c (CONDITIONAL_JUMP)  ; LAB_0053a14c
     FLD float ptr [ESP + 0x364]         ; 00539f29
     FABS                                ; 00539f30
-    FCOMP double ptr [0x005ed42b]       ; 00539f32 | DAT_005ed42b
+    FCOMP double ptr [0x005ed42b]       ; 00539f32 | g_DOUBLE_005ed42b
     FNSTSW AX                           ; 00539f38
     SAHF                                ; 00539f3a
     JA 0x0053a14c                       ; 00539f3b
@@ -687,7 +687,7 @@ section .text
     JNC 0x0053a14c                      ; 0053a00b
         ;   XREF to: 0053a14c (CONDITIONAL_JUMP)  ; LAB_0053a14c
     FLD float ptr [ESP + 0x278]         ; 0053a011
-    FADD double ptr [0x005ed433]        ; 0053a018 | DAT_005ed433
+    FADD double ptr [0x005ed433]        ; 0053a018 | g_DOUBLE_005ed433
     FDIV double ptr [ESP]               ; 0053a01e
     FLD float ptr [ESP + 0x35c]         ; 0053a021
     FXCH                                ; 0053a028

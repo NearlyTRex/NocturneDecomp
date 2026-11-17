@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_twigfootstep0_wav_005f0033
 ;   TerminatedCString s_twigswing0_wav_005f0046
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
@@ -37,7 +37,7 @@ section .text
     PUSH EAX                            ; 005a2e4f
     PUSH 0x5f0046                       ; 005a2e50 | = "twigswing0?.wav"
     PUSH EBX                            ; 005a2e55
-    MOV EDX,dword ptr [0x0061c068]      ; 005a2e56 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 005a2e56 | g_CSound_PTR_0061c068
     PUSH EDX                            ; 005a2e5c
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a2e5d
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -56,7 +56,7 @@ section .text
         ;   Label: LAB_005a2e72
     PUSH 0x5f0033                       ; 005a2e73 | = "twigfootstep0?.wav"
     PUSH EBX                            ; 005a2e78
-    MOV ECX,dword ptr [0x0061c068]      ; 005a2e79 | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005a2e79 | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005a2e7f
     JMP 0x005a2e5d                      ; 005a2e80
         ;   XREF to: 005a2e5d (UNCONDITIONAL_JUMP)  ; LAB_005a2e5d

@@ -14,10 +14,10 @@
 ;   undefined1* PTR_caseD_3_00430b60 = 00430bc4
 ;   TerminatedCString s_engine_clipper_c_005cd962
 ;   TerminatedCString s_Ran_out_of_clipped_verts_005cd976
-;   undefined4 DAT_007bfab8
-;   undefined4 DAT_007bfcf8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   SRenderVertex[12] g_SRenderVertex_ARRAY_007bfab8
+;   int g_INT_007bfcf8
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -88,28 +88,28 @@ section .text
     POP ESI                             ; 00430be7
     POP EBX                             ; 00430be8
     RET                                 ; 00430be9
-    CMP dword ptr [0x007bfcf8],0xc      ; 00430bea | DAT_007bfcf8
+    CMP dword ptr [0x007bfcf8],0xc      ; 00430bea | g_INT_007bfcf8
         ;   Label: caseD_1
     JL 0x00430c15                       ; 00430bf1
         ;   XREF to: 00430c15 (CONDITIONAL_JUMP)  ; LAB_00430c15
     MOV ECX,0x5cd962                    ; 00430bf3 | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00430bf8
     PUSH 0x5cd976                       ; 00430bfd | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00430c02 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00430c08 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00430c02 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00430c08 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00430c0d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00430c12
-    MOV EAX,[0x007bfcf8]                ; 00430c15 | DAT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00430c15 | g_INT_007bfcf8
         ;   Label: LAB_00430c15
     IMUL EDX,EAX,0x30                   ; 00430c1a
-    ADD EDX,0x7bfab8                    ; 00430c1d | DAT_007bfab8
+    ADD EDX,0x7bfab8                    ; 00430c1d | g_SRenderVertex_ARRAY_007bfab8
     PUSH EDX                            ; 00430c23
     PUSH ESI                            ; 00430c24
     INC EBX                             ; 00430c25
     INC EAX                             ; 00430c26
     PUSH EDI                            ; 00430c27
-    MOV [0x007bfcf8],EAX                ; 00430c28 | DAT_007bfcf8
+    MOV [0x007bfcf8],EAX                ; 00430c28 | g_INT_007bfcf8
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00430c2d
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_00430650 ; 00430c31
         ;   XREF to: 00430650 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00430650(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
@@ -118,7 +118,7 @@ section .text
         ;   XREF to: 00430bc4 (UNCONDITIONAL_JUMP)  ; caseD_3
     INC EBX                             ; 00430c3b
         ;   Label: caseD_2
-    MOV EAX,[0x007bfcf8]                ; 00430c3c | DAT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00430c3c | g_INT_007bfcf8
     MOV dword ptr [EBP + EBX*0x4 + -0x4],ESI ; 00430c41
     CMP EAX,0xc                         ; 00430c45
     JL 0x00430c6d                       ; 00430c48
@@ -126,21 +126,21 @@ section .text
     MOV EDX,0x5cd962                    ; 00430c4a | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 00430c4f
     PUSH 0x5cd976                       ; 00430c54 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],EDX      ; 00430c59 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00430c5f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00430c59 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00430c5f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00430c65
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00430c6a
-    MOV EAX,[0x007bfcf8]                ; 00430c6d | DAT_007bfcf8
+    MOV EAX,[0x007bfcf8]                ; 00430c6d | g_INT_007bfcf8
         ;   Label: LAB_00430c6d
     IMUL EDX,EAX,0x30                   ; 00430c72
-    ADD EDX,0x7bfab8                    ; 00430c75 | DAT_007bfab8
+    ADD EDX,0x7bfab8                    ; 00430c75 | g_SRenderVertex_ARRAY_007bfab8
     PUSH EDX                            ; 00430c7b
     PUSH EDI                            ; 00430c7c
     INC EBX                             ; 00430c7d
     INC EAX                             ; 00430c7e
     PUSH ESI                            ; 00430c7f
-    MOV [0x007bfcf8],EAX                ; 00430c80 | DAT_007bfcf8
+    MOV [0x007bfcf8],EAX                ; 00430c80 | g_INT_007bfcf8
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00430c85
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_00430650 ; 00430c89
         ;   XREF to: 00430650 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00430650(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,SRenderVertex *v1)
 
 {
@@ -20,26 +18,26 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,S
   SRenderVertex *pSVar7;
   uint uVar8;
   
+  iVar2 = g_INT_02c9eb34;
   iVar6 = (v1->projected_vertex).screen_y >> 0x10;
-  iVar2 = (v0->projected_vertex).screen_y >> 0x10;
-  if (iVar2 != iVar6) {
-    iVar3 = iVar2;
+  iVar3 = (v0->projected_vertex).screen_y >> 0x10;
+  if (iVar3 != iVar6) {
+    iVar4 = iVar3;
     pSVar7 = v0;
     if ((v1->projected_vertex).screen_y < (v0->projected_vertex).screen_y) {
-      iVar3 = iVar6;
-      iVar6 = iVar2;
+      iVar4 = iVar6;
+      iVar6 = iVar3;
       pSVar7 = v1;
       v1 = v0;
     }
-    iVar4 = _DAT_02c9eb34 * 0x50;
-    *(int *)(&DAT_02c9eb38 + iVar4) = iVar3;
-    iVar2 = _DAT_02c9f038;
-    *(int *)(iVar4 + 0x2c9eb3c) = iVar6;
-    if (iVar3 < iVar2) {
-      _DAT_02c9f038 = iVar3;
+    g_SSoftwareEdge_ARRAY_02c9eb38[g_INT_02c9eb34].base.y_min = iVar4;
+    iVar3 = g_INT_02c9f038;
+    g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.y_max = iVar6;
+    if (iVar4 < iVar3) {
+      g_INT_02c9f038 = iVar4;
     }
-    if (_DAT_02c9f03c < iVar6) {
-      _DAT_02c9f03c = iVar6;
+    if (g_INT_02c9f03c < iVar6) {
+      g_INT_02c9f03c = iVar6;
     }
     uVar5 = (v1->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
     if (uVar5 < 0x10000) {
@@ -52,20 +50,22 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,S
     lVar1 = (longlong)iVar6 *
             (longlong)((v1->projected_vertex).screen_x - (pSVar7->projected_vertex).screen_x);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar4 + 0x2c9eb44) = uVar5;
+    g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.x_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    *(uint *)(iVar4 + 0x2c9eb40) =
+    g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.x_current =
          (pSVar7->projected_vertex).screen_x +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar6 *
             (longlong)
             (((v1->projected_vertex).transformed_z - (pSVar7->projected_vertex).transformed_z) *
             0x100);
-    *(uint *)(iVar4 + 0x2c9eb64) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)(int)uVar8 * (longlong)*(int *)(iVar4 + 0x2c9eb64);
-    _DAT_02c9eb34 = _DAT_02c9eb34 + 1;
-    *(uint *)(iVar4 + 0x2c9eb60) =
-         ((pSVar7->projected_vertex).transformed_z * 0x100 - _DAT_01bc0cd0) +
+    g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.depth_gradient =
+         (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    lVar1 = (longlong)(int)uVar8 *
+            (longlong)g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.depth_gradient;
+    g_INT_02c9eb34 = g_INT_02c9eb34 + 1;
+    g_SSoftwareEdge_ARRAY_02c9eb38[iVar2].base.depth_current =
+         ((pSVar7->projected_vertex).transformed_z * 0x100 - g_INT_01bc0cd0) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
   return;

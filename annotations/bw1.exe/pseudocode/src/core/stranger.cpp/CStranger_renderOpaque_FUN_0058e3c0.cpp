@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *this_ptr)
 
@@ -55,7 +54,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *thi
   }
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
                         ((CCharacter *)this_ptr,6);
-  if ((float)_DAT_005f6eb9 < fStack_14) {
+  if ((float)0.98999999999999999 < fStack_14) {
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     pCStack_18 = (CVector3f *)0x0;
     if (pCVar1 != (CDemonActor *)0x0) {
@@ -94,8 +93,8 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *thi
         fStack_1c = 10.0;
       }
       core_fire_cpp_CFireEffect_createLaserPath_FUN_004b6140
-                (0x01C57074,pCStack_18,&CStack_6c,1.0,1.0,&g_CDemonSetPtr->collision_normal,
-                 fStack_1c,0xff,0,0);
+                (g_CFireEffect_PTR_0061c010,pCStack_18,&CStack_6c,1.0,1.0,
+                 &g_CDemonSetPtr->collision_normal,fStack_1c,0xff,0,0);
       core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     }
   }
@@ -103,7 +102,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *thi
   if ((((this_ptr_00 == (CWeapon *)0x0) ||
        (this_ptr_00 == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (this_ptr_00 == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02c83658] == 0))
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_02c83600[0x16]] == 0))
   goto LAB_0058e657;
   (*((this_ptr_00->base).vtable._ub)->renderOpaque)(&this_ptr_00->base);
   if (this_ptr->weapon == (CWeapon *)0x0) {
@@ -137,7 +136,7 @@ switchD_0058e59f_caseD_3:
   }
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
                         ((CCharacter *)this_ptr,iVar3);
-  bVar2 = (float)_DAT_005f6ec1 < fStack_14;
+  bVar2 = (float)0.94999999999999996 < fStack_14;
   if ((this_ptr->weapon->weapon_type == WEAPON_TYPE_SHOTGUN) &&
      ((this_ptr->base).base.layer_action_index == 8)) {
     bVar2 = true;
@@ -157,7 +156,7 @@ LAB_0058e5ef:
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0(this_ptr,0);
 LAB_0058e657:
   if ((((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
-      ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02c83658] != 0)) &&
+      ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_02c83600[0x16]] != 0)) &&
      (apCStack_38[5] = (this_ptr->base).inventory.light_gun_ptr, apCStack_38[5] != (CLightGun *)0x0)
      ) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
@@ -178,7 +177,7 @@ LAB_0058e657:
            apCStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(pCVar4,pCVar7,pCVar8);
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-                (&CStack_18c,pCStack_20 + _DAT_02c83600,(CMatrix3x4f *)&stack0xfffffe44);
+                (&CStack_18c,pCStack_20 + g_INT_ARRAY_02c83600[0],(CMatrix3x4f *)&stack0xfffffe44);
       pCVar4 = (CMatrix3x4f *)&stack0xfffffe44;
     }
     else {
@@ -196,7 +195,7 @@ LAB_0058e657:
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
                 (&CStack_fc,&CStack_9c,pCVar8);
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-                (&CStack_fc,pCStack_20 + _DAT_02c83638,&CStack_12c);
+                (&CStack_fc,pCStack_20 + g_INT_ARRAY_02c83600[0xe],&CStack_12c);
       pCVar4 = &CStack_12c;
     }
     pCVar5 = &CStack_15c;
@@ -218,15 +217,16 @@ LAB_0058e657:
     *(uint *)((int)&CStack_78 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
          *(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-              (DAT_00612560,&CStack_c0,pCVar8);
+              (g_CDemonRenderer_PTR_00612560,&CStack_c0,pCVar8);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&(apCStack_38[5]->base).model,0.0,-1);
     engine_drender_cpp_pop_FUN_004839a0();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   }
-  if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02c83658] == 0) &&
-      (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar3 == 0
-      )) && (0 < (this_ptr->base).base.cloth_list.count)) {
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_02c83600[0x16]] == 0) &&
+      (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                         (g_CDemonRenderer_PTR_00612560), iVar3 == 0)) &&
+     (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_00441d70(&(this_ptr->base).base.cloth_list);
   }
   return 1;

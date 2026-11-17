@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_clipLineGlobal_FUN_00402ca0(int x1,int y1,int x2,int y2)
 
 {
   engine_2d_c_clipAndDrawLine_FUN_00402cf0
-            (x1,y1,x2,y2,_DAT_01c35e48,_DAT_01c35e4c,_DAT_01c35e50,_DAT_01c35e54);
+            (x1,y1,x2,y2,g_INT_01c35e48,g_INT_01c35e4c,g_INT_01c35e50,g_INT_01c35e54);
   return;
 }

@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_setBlendMode_FUN_00406c20(int blend_mode)
 
 {
-  _DAT_01c51d0c = blend_mode;
+  g_INT_01c51d0c = blend_mode;
   return;
 }

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hand_cpp_CHand_processSleepingState_FUN_005a9ff0(CHand *this_ptr,float delta_time)
 
@@ -65,9 +64,9 @@ void __cdecl core_hand_cpp_CHand_processSleepingState_FUN_005a9ff0(CHand *this_p
               (pCVar3->base).location.position.x;
       fVar5 = (this_ptr->base).base.base.base.location.position.z -
               (pCVar3->base).location.position.z;
-      if (SQRT(fVar5 * fVar5 + fVar4 * fVar4) < _DAT_0060088c) {
+      if (SQRT(fVar5 * fVar5 + fVar4 * fVar4) < 5.0f) {
         core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
-                  (&(this_ptr->base).state_machine,"?MeleeAttack" + 1);
+                  (&(this_ptr->base).state_machine,"MeleeAttack");
         return;
       }
     }

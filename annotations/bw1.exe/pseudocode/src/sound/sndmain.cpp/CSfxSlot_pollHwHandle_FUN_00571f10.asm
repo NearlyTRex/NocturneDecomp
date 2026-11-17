@@ -13,9 +13,9 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005f3a66
 ;   TerminatedCString s_SfxSlot_pollHwHandle_no_005f3a7b
 ;   TerminatedCString s_Killing_looped_sfx_s_whi_005f3a9e
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c80650
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   CSoundDevice* g_CSoundDevice_PTR_02c80650
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -34,7 +34,7 @@ section .text
     CMP dword ptr [EBX + 0x60],0x0      ; 00571f16
     JZ 0x00571f91                       ; 00571f1a
         ;   XREF to: 00571f91 (CONDITIONAL_JUMP)  ; LAB_00571f91
-    CMP dword ptr [0x02c80650],0x0      ; 00571f20 | DAT_02c80650
+    CMP dword ptr [0x02c80650],0x0      ; 00571f20 | g_CSoundDevice_PTR_02c80650
     JZ 0x00571f88                       ; 00571f27
         ;   XREF to: 00571f88 (CONDITIONAL_JUMP)  ; LAB_00571f88
     CMP dword ptr [EBX + 0x68],0x0      ; 00571f29
@@ -44,15 +44,15 @@ section .text
     MOV EDI,0x5f3a66                    ; 00571f30 | = "..\\sound\\sndmain.cpp"
     MOV EBP,0xcf9                       ; 00571f35
     PUSH 0x5f3a7b                       ; 00571f3a | = "SfxSlot::pollHwHandle - no sample?"
-    MOV dword ptr [0x01d1d400],EDI      ; 00571f3f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00571f45 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00571f3f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 00571f45 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00571f4b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00571f50
     POP EDI                             ; 00571f53
     PUSH EBX                            ; 00571f54
         ;   Label: LAB_00571f54
-    MOV EAX,[0x02c80650]                ; 00571f55 | DAT_02c80650
+    MOV EAX,[0x02c80650]                ; 00571f55 | g_CSoundDevice_PTR_02c80650
     PUSH EAX                            ; 00571f5a
     MOV EDX,dword ptr [EAX]             ; 00571f5b
     CALL dword ptr [EDX + 0x54]         ; 00571f5d

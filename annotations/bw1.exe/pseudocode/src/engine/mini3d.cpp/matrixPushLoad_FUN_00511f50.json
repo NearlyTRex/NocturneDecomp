@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 90,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 5,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "pointer_truncation",
+      "unrolled_memcpy"
     ],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [],
   "function": {
@@ -39,32 +38,32 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d2257c",
-      "name": "DAT_01d2257c",
-      "type": "undefined4",
+      "name": "g_PTR_01d2257c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d22580",
-      "name": "DAT_01d22580",
-      "type": "undefined4",
+      "name": "g_PTR_01d22580",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d24ffc",
-      "name": "DAT_01d24ffc",
-      "type": "undefined4",
+      "name": "g_INT_01d24ffc",
+      "type": "int",
       "value": null
     }
   ],
@@ -141,32 +140,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Pointer value `g_PTR_01d22580` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)g_PTR_01d22580",
+      "severity": "moderate",
+      "text": "if (9 < (int)g_PTR_01d22580) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01d22584",
-      "severity": "mild",
-      "text": "pfVar3 = (float *)(&DAT_01d22584 + iVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01d22584",
-      "severity": "mild",
-      "text": "_DAT_01d2257c = (float *)(&DAT_01d22584 + iVar1);",
-      "type": "undefined_data"
+      "description": "Pointer value `g_PTR_01d22580` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_PTR_01d22580",
+      "severity": "moderate",
+      "text": "iVar1 = (int)g_PTR_01d22580 * 0xf;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {",

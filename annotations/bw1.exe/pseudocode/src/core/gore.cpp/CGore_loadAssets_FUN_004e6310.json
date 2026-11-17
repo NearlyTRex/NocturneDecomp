@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 173,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
-    "suspect_count": 13,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 119
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -44,74 +42,74 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061dcb4",
-      "name": "DAT_0061dcb4",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_0061dcb4",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "0061dccc",
-      "name": "DAT_0061dccc",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061dccc",
+      "type": "SMRGLTextureBasic[4]",
       "value": null
     },
     {
       "addr": "0061dce4",
-      "name": "DAT_0061dce4",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061dccc[1].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061dd2c",
-      "name": "DAT_0061dd2c",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061dd2c",
+      "type": "SMRGLTextureBasic[64]",
       "value": null
     },
     {
       "addr": "0061dd44",
-      "name": "DAT_0061dd44",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061dd2c[1].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061deac",
-      "name": "DAT_0061deac",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061dd2c[16].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061e32c",
-      "name": "DAT_0061e32c",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061e32c",
+      "type": "SMRGLTextureBasic[116]",
       "value": null
     },
     {
       "addr": "0061e344",
-      "name": "DAT_0061e344",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061e32c[1].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061e5e4",
-      "name": "DAT_0061e5e4",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061e32c[29].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061ee2c",
-      "name": "DAT_0061ee2c",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_0061ee2c",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -207,110 +205,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061dccc",
-      "severity": "mild",
-      "text": "pSVar1 = (SMRGLTextureBasic *)&DAT_0061dccc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061dcb4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061dcb4",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061dcb4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,pSVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_0061dd2c",
-      "severity": "mild",
-      "text": "} while (pSVar1 != (SMRGLTextureBasic *)&DAT_0061dd2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0061deac",
-      "severity": "mild",
-      "text": "pSVar1 = (SMRGLTextureBasic *)&DAT_0061deac;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0061dd2c",
-      "severity": "mild",
-      "text": "pSVar2 = (SMRGLTextureBasic *)(&DAT_0061dd2c + iVar3 * 0x180);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,pSVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_0061e5e4",
-      "severity": "mild",
-      "text": "pSVar1 = (SMRGLTextureBasic *)&DAT_0061e5e4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0061e32c",
-      "severity": "mild",
-      "text": "pSVar2 = (SMRGLTextureBasic *)(&DAT_0061e32c + iVar3 * 0x2b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,pSVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061ee2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0061ee2c",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061ee2c);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

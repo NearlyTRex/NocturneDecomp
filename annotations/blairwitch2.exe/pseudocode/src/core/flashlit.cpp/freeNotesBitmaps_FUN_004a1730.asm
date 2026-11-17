@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00616010
-;   undefined4 DAT_00616040
-;   undefined4 DAT_01caf488
-;   undefined4 DAT_01caf4a0
-;   undefined4 DAT_01caf568
+;   int g_INT_00616010 = 0x1
+;   int g_INT_00616040 = -0x1
+;   int g_INT_01caf488
+;   char g_CHAR_01caf4a0
+;   int g_INT_01caf568
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
@@ -70,13 +70,13 @@ section .text
         ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     MOV EDX,0x1                         ; 004a17c1
     ADD ESP,0x4                         ; 004a17c6
-    MOV dword ptr [0x00616040],EBX      ; 004a17c9 | DAT_00616040
+    MOV dword ptr [0x00616040],EBX      ; 004a17c9 | g_INT_00616040
     XOR ECX,ECX                         ; 004a17cf
     XOR AH,AH                           ; 004a17d1
-    MOV dword ptr [0x00616010],EDX      ; 004a17d3 | DAT_00616010
-    MOV dword ptr [0x01caf488],ECX      ; 004a17d9 | DAT_01caf488
-    MOV byte ptr [0x01caf4a0],AH        ; 004a17df | DAT_01caf4a0
-    MOV dword ptr [0x01caf568],ECX      ; 004a17e5 | DAT_01caf568
+    MOV dword ptr [0x00616010],EDX      ; 004a17d3 | g_INT_00616010
+    MOV dword ptr [0x01caf488],ECX      ; 004a17d9 | g_INT_01caf488
+    MOV byte ptr [0x01caf4a0],AH        ; 004a17df | g_CHAR_01caf4a0
+    MOV dword ptr [0x01caf568],ECX      ; 004a17e5 | g_INT_01caf568
     POP ESI                             ; 004a17eb
     POP EBX                             ; 004a17ec
     RET                                 ; 004a17ed

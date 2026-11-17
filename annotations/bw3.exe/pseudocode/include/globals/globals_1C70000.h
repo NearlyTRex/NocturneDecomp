@@ -4,12 +4,68 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CFireEffect.h"
+#include "types/classes/CFlameCan.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CSmokeParticle.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C70000
 // =============================================================================
 
+// CCharacter*[50]
+extern CCharacter* g_CCharacter_PTR_ARRAY_01c74b6c[50];
+
 // CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
+extern CDemonActorType g_CDemonActorType_01c73618;
+
+// CFireEffect
+extern CFireEffect g_CFireEffect_01c73654;
+
+// CFlameCan*[150]
+extern CFlameCan* g_CFlameCan_PTR_ARRAY_01c74c38[150];
+
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73698;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73814;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73990;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73b0c;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73c88;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c74278;
+
+// CKeyFramedModelInstance[5]
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_ARRAY_01c743fc[5];
+
+// CSmokeParticle[2048]
+extern CSmokeParticle g_CSmokeParticle_ARRAY_01c74ea0[2048];
+
+// CVector3i
+extern CVector3i g_CVector3i_01c73658;
+extern CVector3i g_CVector3i_01c73664;
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c73670;
+
+// char[256]
+extern char g_CHAR_ARRAY_01c734b0[256];
+
+// int
+extern int g_INT_01c734ac;
+extern int g_INT_01c73688;
+extern int g_INT_01c7368c;
+extern int g_INT_01c73690;
+extern int g_INT_01c73694;
+extern int g_INT_01c743f4;
+extern int g_INT_01c743f8;
+extern int g_INT_01c74b68;
+extern int g_INT_01c74c34;
+extern int g_INT_01c74e9c;
+
+// uint[3]
+extern uint g_UINT_ARRAY_01c74e90[3];
 

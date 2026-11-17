@@ -11,7 +11,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasi
 {
   if ((param_2 == 7000) && (this_ptr->bodyfall_sound[0] != '\0')) {
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,this_ptr->bodyfall_sound,
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,this_ptr->bodyfall_sound,
                &(this_ptr->base).base.base.location.position);
     return;
   }

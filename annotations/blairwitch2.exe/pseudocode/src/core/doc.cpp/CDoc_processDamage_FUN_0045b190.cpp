@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_processDamage_FUN_0045b190(CDoc *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -33,7 +31,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_0045b190(CDoc *this_ptr,SDamage
       damage_info->damage_amount = 0.0;
       return;
     }
-    (this_ptr->base).invincibility_timer = _DAT_005f5128;
+    (this_ptr->base).invincibility_timer = 0.5f;
     iVar3 = core_actor_cpp_isOfClass_FUN_0040c840(damage_info->wielder,"CBugs");
     if (iVar3 != 0) {
       (this_ptr->base).invincibility_timer = 0.15;
@@ -94,7 +92,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_0045b190(CDoc *this_ptr,SDamage
             }
             else {
               fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,100.0);
-              iVar3 = (fVar7 <= _DAT_005d05ef) + 0x27;
+              iVar3 = (fVar7 <= 50.0f) + 0x27;
             }
           }
           else {

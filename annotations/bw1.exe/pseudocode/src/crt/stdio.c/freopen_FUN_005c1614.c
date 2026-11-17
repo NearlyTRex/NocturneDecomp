@@ -20,8 +20,8 @@ _FILE * __cdecl _freopen(char *filename,char *mode,_FILE *stream)
   if (iVar2 != 0) {
     iVar1 = stream->_handle;
     (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(iVar1);
-    if (DAT_00626778 != (code *)0x0) {
-      (*DAT_00626778)(iVar1);
+    if (g_PTR_00626778 != (byte *)0x0) {
+      (*(code *)g_PTR_00626778)(iVar1);
     }
     iVar3 = FUN_005c1594(stream);
     p_Var4 = (_FILE *)0x0;

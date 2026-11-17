@@ -11,7 +11,7 @@
 ;   void* PTR_GetLastError_005d05b0 = 001d0f00
 ;   void* PTR_SetLastError_005d0648 = 001d11de
 ;   void* PTR_TlsGetValue_005d0668 = 001d1266
-;   undefined4 DAT_006265f8
+;   int g_INT_006265f8 = -0x1
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ccd50
@@ -28,7 +28,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005cabfc
     PUSH ESI                            ; 005cabfd
     CALL dword ptr CS:[0x5d05b0]        ; 005cabfe | PTR_GetLastError_005d05b0
-    MOV EDX,dword ptr [0x006265f8]      ; 005cac05 | DAT_006265f8
+    MOV EDX,dword ptr [0x006265f8]      ; 005cac05 | g_INT_006265f8
     PUSH EDX                            ; 005cac0b
     MOV ESI,EAX                         ; 005cac0c
     CALL dword ptr CS:[0x5d0668]        ; 005cac0e | PTR_TlsGetValue_005d0668

@@ -7,12 +7,12 @@
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d4fc8
-;   undefined4 DAT_02cf54f0
-;   undefined4 DAT_02cf54f4
-;   undefined4 DAT_02cf54f8
-;   undefined4 DAT_02cf54fc
-;   undefined4 DAT_02cf5500
+;   double g_DOUBLE_005d4fc8 = 0.333333333333333
+;   int g_INT_02cf54f0
+;   int g_INT_02cf54f4
+;   int g_INT_02cf54f8
+;   int g_INT_02cf54fc
+;   int g_INT_02cf5500
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -27,7 +27,7 @@ section .text
         ;   Label: sound_sndwav.cpp_CWavOutDevice_start_FUN_0055d920
     PUSH ESI                            ; 0055d921
     PUSH EDI                            ; 0055d922
-    MOV EDX,dword ptr [0x02cf5500]      ; 0055d923 | DAT_02cf5500
+    MOV EDX,dword ptr [0x02cf5500]      ; 0055d923 | g_INT_02cf5500
     XOR ESI,ESI                         ; 0055d929
     TEST EDX,EDX                        ; 0055d92b
     JLE 0x0055d9a1                      ; 0055d92d
@@ -45,14 +45,14 @@ section .text
     MOV dword ptr [EDX],EAX             ; 0055d94d
     MOV EAX,dword ptr [EBX + 0x2cf5490] ; 0055d94f
     MOV dword ptr [EAX + 0xc],ESI       ; 0055d955
-    MOV EAX,[0x02cf54f0]                ; 0055d958 | DAT_02cf54f0
+    MOV EAX,[0x02cf54f0]                ; 0055d958 | g_INT_02cf54f0
     MOV EDX,EAX                         ; 0055d95d
     SAR EDX,0x1f                        ; 0055d95f
     SHL EDX,0x3                         ; 0055d962
     SBB EAX,EDX                         ; 0055d965
     SAR EAX,0x3                         ; 0055d967
-    IMUL EAX,dword ptr [0x02cf54fc]     ; 0055d96a | DAT_02cf54fc
-    MOV EDX,dword ptr [0x02cf54f4]      ; 0055d971 | DAT_02cf54f4
+    IMUL EAX,dword ptr [0x02cf54fc]     ; 0055d96a | g_INT_02cf54fc
+    MOV EDX,dword ptr [0x02cf54f4]      ; 0055d971 | g_INT_02cf54f4
     IMUL EDX,EAX                        ; 0055d977
     ADD ESP,0xc                         ; 0055d97a
     MOV EAX,dword ptr [EBX + 0x2cf5490] ; 0055d97d
@@ -64,17 +64,17 @@ section .text
     TEST EAX,EAX                        ; 0055d98f
     JZ 0x0055d9d0                       ; 0055d991
         ;   XREF to: 0055d9d0 (CONDITIONAL_JUMP)  ; LAB_0055d9d0
-    MOV ECX,dword ptr [0x02cf5500]      ; 0055d993 | DAT_02cf5500
+    MOV ECX,dword ptr [0x02cf5500]      ; 0055d993 | g_INT_02cf5500
     INC ESI                             ; 0055d999
     ADD EBX,0x4                         ; 0055d99a
     CMP ESI,ECX                         ; 0055d99d
     JL 0x0055d931                       ; 0055d99f
         ;   XREF to: 0055d931 (CONDITIONAL_JUMP)  ; LAB_0055d931
-    FILD dword ptr [0x02cf54fc]         ; 0055d9a1 | DAT_02cf54fc
+    FILD dword ptr [0x02cf54fc]         ; 0055d9a1 | g_INT_02cf54fc
         ;   Label: LAB_0055d9a1
-    FILD dword ptr [0x02cf54f8]         ; 0055d9a7 | DAT_02cf54f8
+    FILD dword ptr [0x02cf54f8]         ; 0055d9a7 | g_INT_02cf54f8
     FDIVP                               ; 0055d9ad
-    FMUL double ptr [0x005d4fc8]        ; 0055d9af | DAT_005d4fc8
+    FMUL double ptr [0x005d4fc8]        ; 0055d9af | g_DOUBLE_005d4fc8
     SUB ESP,0x4                         ; 0055d9b5
     FSTP float ptr [ESP]                ; 0055d9b8
     CALL sound_sndmain.cpp_startSoundThread_FUN_00558d70 ; 0055d9bb

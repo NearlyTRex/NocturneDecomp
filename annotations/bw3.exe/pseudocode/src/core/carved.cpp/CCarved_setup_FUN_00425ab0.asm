@@ -213,7 +213,7 @@ section .text
     JBE 0x00425ce6                      ; 00425cd2
         ;   XREF to: 00425ce6 (CONDITIONAL_JUMP)  ; LAB_00425ce6
     FLD float ptr [EBX + 0x2490]        ; 00425cd4
-    FADD double ptr [0x005b7ab7]        ; 00425cda | DAT_005b7ab7
+    FADD double ptr [0x005b7ab7]        ; 00425cda | g_DOUBLE_005b7ab7
     FSTP float ptr [EBX + 0x3280]       ; 00425ce0
     MOV dword ptr [EBX + 0xd074],0x0    ; 00425ce6
         ;   Label: LAB_00425ce6

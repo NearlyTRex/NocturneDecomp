@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   activate
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -26,7 +26,7 @@ section .text
         ;   XREF to: 0059ad2e (CONDITIONAL_JUMP)  ; LAB_0059ad2e
     POP EBX                             ; 0059ad2c
     RET                                 ; 0059ad2d
-    MOV EAX,[0x006141b8]                ; 0059ad2e | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 0059ad2e | g_INT_006141b8
         ;   Label: LAB_0059ad2e
     SUB EAX,0x14                        ; 0059ad33
     PUSH EAX                            ; 0059ad36
@@ -34,7 +34,7 @@ section .text
     CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 0059ad39
         ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     MOV dword ptr [EBX + 0x4],EAX       ; 0059ad3e
-    MOV EAX,[0x006141bc]                ; 0059ad41 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 0059ad41 | g_INT_006141bc
     ADD ESP,0x8                         ; 0059ad46
     SUB EAX,0x14                        ; 0059ad49
     PUSH EAX                            ; 0059ad4c
@@ -42,7 +42,7 @@ section .text
     CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 0059ad4f
         ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     MOV dword ptr [EBX + 0x8],EAX       ; 0059ad54
-    MOV EAX,[0x006141b8]                ; 0059ad57 | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 0059ad57 | g_INT_006141b8
     ADD ESP,0x8                         ; 0059ad5c
     SUB EAX,0xa                         ; 0059ad5f
     PUSH EAX                            ; 0059ad62
@@ -52,7 +52,7 @@ section .text
     CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 0059ad6a
         ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     MOV dword ptr [EBX + 0xc],EAX       ; 0059ad6f
-    MOV EAX,[0x006141bc]                ; 0059ad72 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 0059ad72 | g_INT_006141bc
     ADD ESP,0x8                         ; 0059ad77
     SUB EAX,0xa                         ; 0059ad7a
     PUSH EAX                            ; 0059ad7d

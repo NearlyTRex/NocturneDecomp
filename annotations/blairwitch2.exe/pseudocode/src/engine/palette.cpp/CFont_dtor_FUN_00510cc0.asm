@@ -11,7 +11,7 @@
 ;   engine_winfont.cpp_CWinFont_dtor_FUN_0058e050 at 0058e072
 ;
 ; Referenced Globals:
-;   undefined1* PTR_engine_palette.cpp_CFont_dtor_FUN_00510cc0_005fa8bc = 00510cc0
+;   void*[5] g_ARRAY_PTR_005fa8bc
 ;
 ; *****************************************************************************
 
@@ -19,6 +19,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00510cc0
         ;   Label: engine_palette.cpp_CFont_dtor_FUN_00510cc0
-    MOV dword ptr [EAX + 0x6a44],0x5fa8bc ; 00510cc4 | PTR_engine_palette.cpp_CFont_dtor_FUN_00510cc0_005fa8bc
+    MOV dword ptr [EAX + 0x6a44],0x5fa8bc ; 00510cc4 | g_ARRAY_PTR_005fa8bc
     RET                                 ; 00510cce
 

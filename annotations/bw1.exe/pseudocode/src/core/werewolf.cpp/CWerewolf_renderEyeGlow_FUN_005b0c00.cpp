@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *this_ptr,CVector3f *eye_position)
 
 {
@@ -63,11 +61,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   float local_14;
   
   bVar1 = 0;
-  local_14 = 0x3E4CCCCD;
-  local_50 = eye_position->x + 0x3E4CCCCD;
-  local_1c = 0x3E4CCCCD;
+  local_14 = 0.2f;
+  local_50 = eye_position->x + 0.2f;
+  local_1c = 0.2f;
   local_48 = eye_position->z;
-  local_4c = eye_position->y + 0x3E4CCCCD;
+  local_4c = eye_position->y + 0.2f;
   local_dc[2] = local_50 * (this_ptr->base).base.size_scale;
   local_dc[3] = local_4c * (this_ptr->base).base.size_scale;
   local_cc = local_48 * (this_ptr->base).base.size_scale;
@@ -76,9 +74,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
     local_100[3] = local_dc[3];
     local_f0 = local_cc;
   }
-  local_110.x = (int)ROUND(local_100[2] * _DAT_00607fb0);
-  local_110.y = (int)ROUND(local_100[3] * _DAT_00607fb0);
-  local_110.z = (int)ROUND(local_f0 * _DAT_00607fb0);
+  local_110.x = (int)ROUND(local_100[2] * 256.0f);
+  local_110.y = (int)ROUND(local_100[3] * 256.0f);
+  local_110.z = (int)ROUND(local_f0 * 256.0f);
   local_c8 = local_dc[2];
   local_c4 = local_dc[3];
   local_c0 = local_cc;
@@ -86,11 +84,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_40[3] = local_4c;
   local_30 = local_48;
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_110);
-  local_18 = 0x3E4CCCCD;
-  local_11c = -0x3E4CCCCD + eye_position->x;
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,&local_110);
+  local_18 = 0.2f;
+  local_11c = -0.2f + eye_position->x;
   local_118[1] = eye_position->z;
-  local_118[0] = eye_position->y + 0x3E4CCCCD;
+  local_118[0] = eye_position->y + 0.2f;
   local_104 = local_11c;
   local_100[(uint)bVar1 * -2] = local_118[(uint)bVar1 * -2];
   local_100[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
@@ -107,14 +105,14 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
     local_100[3] = local_a0;
     local_f0 = local_9c;
   }
-  local_2c.x = (int)ROUND(local_100[2] * _DAT_00607fb0);
-  local_2c.y = (int)ROUND(local_100[3] * _DAT_00607fb0);
-  local_2c.z = (int)ROUND(local_f0 * _DAT_00607fb0);
+  local_2c.x = (int)ROUND(local_100[2] * 256.0f);
+  local_2c.y = (int)ROUND(local_100[3] * 256.0f);
+  local_2c.z = (int)ROUND(local_f0 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_2c);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[1].projected_vertex,&local_2c);
   local_a8 = eye_position->z;
-  local_b8[2] = -0x3E4CCCCD + eye_position->x;
-  local_b8[3] = eye_position->y + -0x3E4CCCCD;
+  local_b8[2] = -0.2f + eye_position->x;
+  local_b8[3] = eye_position->y + -0.2f;
   local_88[2] = local_b8[2];
   local_88[(uint)bVar1 * -2 + 3] = local_b8[(uint)bVar1 * -2 + 3];
   local_88[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4] =
@@ -131,14 +129,14 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
     local_100[3] = local_58;
     local_f0 = local_54;
   }
-  local_ec.x = (int)ROUND(local_100[2] * _DAT_00607fb0);
-  local_ec.y = (int)ROUND(local_100[3] * _DAT_00607fb0);
-  local_ec.z = (int)ROUND(local_f0 * _DAT_00607fb0);
+  local_ec.x = (int)ROUND(local_100[2] * 256.0f);
+  local_ec.y = (int)ROUND(local_100[3] * 256.0f);
+  local_ec.z = (int)ROUND(local_f0 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_ec);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[2].projected_vertex,&local_ec);
   local_dc[1] = eye_position->z;
-  local_e0 = 0x3E4CCCCD + eye_position->x;
-  local_dc[0] = eye_position->y + -0x3E4CCCCD;
+  local_e0 = 0.2f + eye_position->x;
+  local_dc[0] = eye_position->y + -0.2f;
   local_bc = local_e0;
   local_b8[(uint)bVar1 * -2] = local_dc[(uint)bVar1 * -2];
   local_b8[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
@@ -155,13 +153,13 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
     local_100[3] = local_40[0];
     local_f0 = local_40[1];
   }
-  local_98.x = (int)ROUND(local_100[2] * _DAT_00607fb0);
-  local_98.y = (int)ROUND(local_100[3] * _DAT_00607fb0);
-  local_98.z = (int)ROUND(local_f0 * _DAT_00607fb0);
+  local_98.x = (int)ROUND(local_100[2] * 256.0f);
+  local_98.y = (int)ROUND(local_100[3] * 256.0f);
+  local_98.z = (int)ROUND(local_f0 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_98);
-  this_ptr_00 = DAT_00612560;
-  DAT_00612560->vertex_buffer_ptr->r = 0xffff;
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,&local_98);
+  this_ptr_00 = g_CDemonRenderer_PTR_00612560;
+  g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r = 0xffff;
   this_ptr_00->vertex_buffer_ptr->g = 0;
   this_ptr_00->vertex_buffer_ptr->b = 0;
   this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
@@ -195,9 +193,10 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_128 = 1;
   local_124 = 2;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (this_ptr_00,(SMRGLTextureBasic *)&DAT_0062609c);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);
-  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30(DAT_00612560,&SStack_144);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
+            (this_ptr_00,&g_SMRGLTextureBasic_0062609c);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
+            (g_CDemonRenderer_PTR_00612560,&SStack_144);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
   return;
 }

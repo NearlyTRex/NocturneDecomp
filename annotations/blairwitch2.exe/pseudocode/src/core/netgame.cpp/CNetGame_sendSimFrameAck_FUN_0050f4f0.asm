@@ -23,10 +23,10 @@
 ;   TerminatedCString s_CNetGame_sendSimFrameAck_005e1220
 ;   TerminatedCString s_core_netgame_cpp_005e1256
 ;   TerminatedCString s_CNetGame_sendSimFrameAck_005e126a
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01d34e38
-;   undefined4 DAT_01d34e48
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   uint g_UINT_01d34e38
+;   uint g_UINT_01d34e48
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -53,8 +53,8 @@ section .text
     MOV EBP,0x5e11b5                    ; 0050f50a | = "..\\core\\netgame.cpp"
     MOV EAX,0xa2a                       ; 0050f50f
     PUSH 0x5e11c9                       ; 0050f514 | = "CNetGame::sendSimFrameAck - should on..."
-    MOV dword ptr [0x01d046a0],EBP      ; 0050f519 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0050f51f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 0050f519 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0050f51f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f524
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f529
@@ -88,9 +88,9 @@ section .text
     PUSH EBX                            ; 0050f587
     CALL core_netgame.cpp_CNetGame_send_FUN_0050cd90 ; 0050f588
         ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0050cd90(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
-    MOV EAX,[0x01d34e38]                ; 0050f58d | DAT_01d34e38
+    MOV EAX,[0x01d34e38]                ; 0050f58d | g_UINT_01d34e38
     ADD ESP,0xc                         ; 0050f592
-    MOV [0x01d34e48],EAX                ; 0050f595 | DAT_01d34e48
+    MOV [0x01d34e48],EAX                ; 0050f595 | g_UINT_01d34e48
     ADD ESP,0x40                        ; 0050f59a
     POP EBP                             ; 0050f59d
     POP EDI                             ; 0050f59e
@@ -101,8 +101,8 @@ section .text
         ;   Label: LAB_0050f5a2
     MOV ESI,0xa29                       ; 0050f5a7
     PUSH 0x5e1174                       ; 0050f5ac | = "CNetGame::sendSimFrameAck - should on..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0050f5b1 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0050f5b7 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0050f5b1 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0050f5b7 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f5bd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f5c2
@@ -112,8 +112,8 @@ section .text
         ;   Label: LAB_0050f5ca
     MOV ESI,0xa2b                       ; 0050f5cf
     PUSH 0x5e1220                       ; 0050f5d4 | = "CNetGame::sendSimFrameAck - server no..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0050f5d9 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0050f5df | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0050f5d9 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0050f5df | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f5e5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f5ea
@@ -123,8 +123,8 @@ section .text
         ;   Label: LAB_0050f5f2
     MOV EAX,0xa2c                       ; 0050f5f7
     PUSH 0x5e126a                       ; 0050f5fc | = "CNetGame::sendSimFrameAck - I'm not i..."
-    MOV dword ptr [0x01d046a0],EBP      ; 0050f601 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0050f607 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 0050f601 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0050f607 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f60c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f611

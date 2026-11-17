@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_0048f2e0(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position)
 
 {
@@ -51,7 +49,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_0048f2e0(CDemon
        *(float *)((int)&local_80 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   fVar6 = local_58[0] / (this_ptr->adjusted_size).y;
   fVar2 = local_58[1] / (this_ptr->adjusted_size).z;
-  fVar7 = (float)_DAT_005dbb2c;
+  fVar7 = (float)2;
   dVar5 = round
                     ((double)((local_5c / (this_ptr->adjusted_size).x) * fVar7 + 1.0));
   local_30 = (int)ROUND(dVar5);
@@ -75,7 +73,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_0048f2e0(CDemon
           iVar3 = 0;
           if (0 < local_2c) {
             do {
-              fVar1 = (float)_DAT_005dbb34;
+              fVar1 = (float)0.5;
               aCStack_98[0].x = fStack_cc * fVar1 + (float)local_30 * fStack_cc + extent->x;
               aCStack_98[0].y = fVar6 * fVar1 + (float)local_28 * fVar6 + extent->y;
               aCStack_98[0].z = fVar7 * fVar1 + (float)iVar3 * fVar7 + extent->z;

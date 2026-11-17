@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hellhag_cpp_CHag_processDamage_FUN_005ab7d0(CHag *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -16,7 +14,7 @@ void __cdecl core_hellhag_cpp_CHag_processDamage_FUN_005ab7d0(CHag *this_ptr,SDa
   uint uVar3;
   
   if ((this_ptr->base).burn_timer <= 0.0) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f0c96;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.10000000000000001;
   }
   fVar1 = (this_ptr->base).base.base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.base.hit_points = fVar1;
@@ -39,12 +37,12 @@ void __cdecl core_hellhag_cpp_CHag_processDamage_FUN_005ab7d0(CHag *this_ptr,SDa
   else {
     if ((this_ptr->base).death_sound[0] != '\0') {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                (0x0264B290,(CDemonActor *)this_ptr,(this_ptr->base).death_sound,
+                (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,(this_ptr->base).death_sound,
                  &(this_ptr->base).base.base.base.location.position);
     }
     (this_ptr->base).base.base.hit_points = 0.0;
     core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
-              (&(this_ptr->base).state_machine,"@Death" + 1);
+              (&(this_ptr->base).state_machine,"Death");
   }
   return;
 }

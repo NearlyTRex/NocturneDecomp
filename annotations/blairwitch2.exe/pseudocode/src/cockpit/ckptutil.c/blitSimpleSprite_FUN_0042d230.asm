@@ -11,9 +11,9 @@
 ; int              Stack[0x14]:4   height
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
+;   int g_INT_006141c0 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410
@@ -31,8 +31,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 0042d237
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0042d23b
     MOV EDI,dword ptr [ESP + 0x40]      ; 0042d23f
-    MOV EDX,dword ptr [0x01c2a38c]      ; 0042d243 | DAT_01c2a38c
-    MOV EBP,dword ptr [0x01c2a390]      ; 0042d249 | DAT_01c2a390
+    MOV EDX,dword ptr [0x01c2a38c]      ; 0042d243 | g_ARRAY_PTR_01c2a38c
+    MOV EBP,dword ptr [0x01c2a390]      ; 0042d249 | g_ARRAY_PTR_01c2a38c[1]
     SUB EBP,EDX                         ; 0042d24f
     MOV dword ptr [ESP + 0x8],EBP       ; 0042d251
     TEST EBX,EBX                        ; 0042d255
@@ -52,7 +52,7 @@ section .text
         ;   Label: LAB_0042d268
     MOV dword ptr [ESP + 0xc],EAX       ; 0042d26d
     MOV EAX,dword ptr [ESP + 0x38]      ; 0042d271
-    MOV ECX,dword ptr [0x006141c0]      ; 0042d275 | DAT_006141c0
+    MOV ECX,dword ptr [0x006141c0]      ; 0042d275 | g_INT_006141c0
     SHL EAX,0x2                         ; 0042d27b
     CMP ECX,0x8                         ; 0042d27e
     JNZ 0x0042d2c0                      ; 0042d281

@@ -10,7 +10,7 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 005866a5
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_L_Forearm_005f70c8+1
+;   TerminatedCString s_Bip01_L_Forearm_005f70c9
 ;   TerminatedCString s_Bip01_L_Forearm_005f70d9
 ;   TerminatedCString s_Bip01_L_Forearm_005f70e9
 ;   TerminatedCString s_Bip01_L_Forearm_005f70f9
@@ -24,7 +24,7 @@
 ;   TerminatedCString s_Bip01_R_Forearm_005f7179
 ;   TerminatedCString s_Bip01_L_Forearm_005f7189
 ;   TerminatedCString s_Bip01_L_Forearm_005f7199
-;   undefined4 DAT_005f71a9
+;   double g_DOUBLE_005f71a9 = 0.700000000000000
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -69,7 +69,7 @@ section .text
     JNZ 0x0059180b                      ; 005917f3
         ;   XREF to: 0059180b (CONDITIONAL_JUMP)  ; LAB_0059180b
     FLD float ptr [ESI + 0x2c9c]        ; 005917f5
-    FCOMP double ptr [0x005f71a9]       ; 005917fb | DAT_005f71a9
+    FCOMP double ptr [0x005f71a9]       ; 005917fb | g_DOUBLE_005f71a9
     FNSTSW AX                           ; 00591801
     SAHF                                ; 00591803
     JBE 0x0059180b                      ; 00591804
@@ -81,7 +81,7 @@ section .text
     JNZ 0x00591829                      ; 00591814
         ;   XREF to: 00591829 (CONDITIONAL_JUMP)  ; LAB_00591829
     FLD float ptr [ESI + 0x2c9c]        ; 00591816
-    FCOMP double ptr [0x005f71b1]       ; 0059181c | DAT_005f71b1
+    FCOMP double ptr [0x005f71b1]       ; 0059181c | g_DOUBLE_005f71b1
     FNSTSW AX                           ; 00591822
     SAHF                                ; 00591824
     JNC 0x00591829                      ; 00591825
@@ -92,7 +92,7 @@ section .text
     JNZ 0x00591848                      ; 00591830
         ;   XREF to: 00591848 (CONDITIONAL_JUMP)  ; LAB_00591848
     FLD float ptr [ESI + 0x2c9c]        ; 00591832
-    FCOMP double ptr [0x005f71b9]       ; 00591838 | DAT_005f71b9
+    FCOMP double ptr [0x005f71b9]       ; 00591838 | g_DOUBLE_005f71b9
     FNSTSW AX                           ; 0059183e
     SAHF                                ; 00591840
     JBE 0x00591848                      ; 00591841
@@ -103,7 +103,7 @@ section .text
     JNZ 0x00591867                      ; 0059184f
         ;   XREF to: 00591867 (CONDITIONAL_JUMP)  ; LAB_00591867
     FLD float ptr [ESI + 0x2c9c]        ; 00591851
-    FCOMP double ptr [0x005f71b9]       ; 00591857 | DAT_005f71b9
+    FCOMP double ptr [0x005f71b9]       ; 00591857 | g_DOUBLE_005f71b9
     FNSTSW AX                           ; 0059185d
     SAHF                                ; 0059185f
     JNC 0x00591867                      ; 00591860
@@ -114,7 +114,7 @@ section .text
     JNZ 0x00591886                      ; 0059186e
         ;   XREF to: 00591886 (CONDITIONAL_JUMP)  ; LAB_00591886
     FLD float ptr [ESI + 0x2c9c]        ; 00591870
-    FCOMP double ptr [0x005f71c1]       ; 00591876 | DAT_005f71c1
+    FCOMP double ptr [0x005f71c1]       ; 00591876 | g_DOUBLE_005f71c1
     FNSTSW AX                           ; 0059187c
     SAHF                                ; 0059187e
     JNC 0x00591886                      ; 0059187f
@@ -125,7 +125,7 @@ section .text
     JNZ 0x005918a5                      ; 0059188d
         ;   XREF to: 005918a5 (CONDITIONAL_JUMP)  ; LAB_005918a5
     FLD float ptr [ESI + 0x2c9c]        ; 0059188f
-    FCOMP double ptr [0x005f71c9]       ; 00591895 | DAT_005f71c9
+    FCOMP double ptr [0x005f71c9]       ; 00591895 | g_DOUBLE_005f71c9
     FNSTSW AX                           ; 0059189b
     SAHF                                ; 0059189d
     JBE 0x005918a5                      ; 0059189e
@@ -136,7 +136,7 @@ section .text
     JNZ 0x005918c4                      ; 005918ac
         ;   XREF to: 005918c4 (CONDITIONAL_JUMP)  ; LAB_005918c4
     FLD float ptr [ESI + 0x2c9c]        ; 005918ae
-    FCOMP double ptr [0x005f71c1]       ; 005918b4 | DAT_005f71c1
+    FCOMP double ptr [0x005f71c1]       ; 005918b4 | g_DOUBLE_005f71c1
     FNSTSW AX                           ; 005918ba
     SAHF                                ; 005918bc
     JNC 0x005918c4                      ; 005918bd
@@ -148,13 +148,13 @@ section .text
         ;   XREF to: 005918f4 (CONDITIONAL_JUMP)  ; LAB_005918f4
     FLD float ptr [ESI + 0x2c9c]        ; 005918cd
     FST double ptr [ESP]                ; 005918d3
-    FCOMP double ptr [0x005f71b1]       ; 005918d6 | DAT_005f71b1
+    FCOMP double ptr [0x005f71b1]       ; 005918d6 | g_DOUBLE_005f71b1
     FNSTSW AX                           ; 005918dc
     SAHF                                ; 005918de
     JBE 0x005918f4                      ; 005918df
         ;   XREF to: 005918f4 (CONDITIONAL_JUMP)  ; LAB_005918f4
     FLD double ptr [ESP]                ; 005918e1
-    FCOMP double ptr [0x005f71d1]       ; 005918e4 | DAT_005f71d1
+    FCOMP double ptr [0x005f71d1]       ; 005918e4 | g_DOUBLE_005f71d1
     FNSTSW AX                           ; 005918ea
     SAHF                                ; 005918ec
     JNC 0x005918f4                      ; 005918ed
@@ -166,7 +166,7 @@ section .text
     JZ 0x00591a3d                       ; 005918fc
         ;   XREF to: 00591a3d (CONDITIONAL_JUMP)  ; LAB_00591a3d
     PUSH 0x32                           ; 00591902
-    PUSH 0x5f70c9                       ; 00591904 | s_Bip01_L_Forearm_005f70c8+1
+    PUSH 0x5f70c9                       ; 00591904 | = "Bip01 L Forearm"
     PUSH EBX                            ; 00591909
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_00442100 ; 0059190a
         ;   XREF to: 00442100 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_00442100(CCloth * this_ptr, char * bone_name, int vertex_index)

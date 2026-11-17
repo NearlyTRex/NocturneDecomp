@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004fb150(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)
 
 {
@@ -33,12 +31,12 @@ CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeTo
   CVector3f local_18;
   
   bVar2 = 0;
-  local_3c.x = (float)point_a->x * _DAT_005fa1b8;
-  local_3c.y = (float)point_a->y * _DAT_005fa1b8;
-  local_3c.z = (float)point_a->z * _DAT_005fa1b8;
-  local_24.x = (float)point_b->x * _DAT_005fa1bc;
-  local_24.y = (float)point_b->y * _DAT_005fa1bc;
-  local_24.z = (float)point_b->z * _DAT_005fa1bc;
+  local_3c.x = (float)point_a->x * 0.00390625f;
+  local_3c.y = (float)point_a->y * 0.00390625f;
+  local_3c.z = (float)point_a->z * 0.00390625f;
+  local_24.x = (float)point_b->x * 1.525879e-05f;
+  local_24.y = (float)point_b->y * 1.525879e-05f;
+  local_24.z = (float)point_b->z * 1.525879e-05f;
   local_84 = local_24.x + local_3c.x;
   local_80 = local_24.y + local_3c.y;
   local_7c = local_24.z + local_3c.z;
@@ -84,11 +82,11 @@ CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeTo
     local_24.y = local_30.y;
     local_24.z = local_30.z;
   }
-  local_6c = (int)ROUND(local_24.x * _DAT_005fa1b4);
-  local_68[0] = (int)ROUND(local_24.y * _DAT_005fa1b4);
-  local_68[1] = (int)ROUND(local_24.z * _DAT_005fa1b4);
+  local_6c = (int)ROUND(local_24.x * 65536.0f);
+  local_68[0] = (int)ROUND(local_24.y * 65536.0f);
+  local_68[1] = (int)ROUND(local_24.z * 65536.0f);
   piVar1 = (int *)((int)output + (uint)bVar2 * -8 + 4);
-  output->x = (int)ROUND(local_24.x * _DAT_005fa1b4);
+  output->x = (int)ROUND(local_24.x * 65536.0f);
   *piVar1 = local_68[(uint)bVar2 * -2];
   piVar1[(uint)bVar2 * -2 + 1] = local_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   return output;

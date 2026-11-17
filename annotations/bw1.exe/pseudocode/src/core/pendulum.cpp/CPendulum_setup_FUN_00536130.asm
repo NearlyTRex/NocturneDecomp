@@ -7,9 +7,9 @@
 ; CPendulum *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ecc6d
-;   undefined4 DAT_005ecc75
-;   undefined4 DAT_005ecc7d
+;   double g_DOUBLE_005ecc6d = 0.03125
+;   double g_DOUBLE_005ecc75 = 6.28318530700000
+;   float g_FLOAT_005ecc7d = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
@@ -63,9 +63,9 @@ section .text
     FLD float ptr [ESP + 0x40]          ; 005361a4
         ;   Label: LAB_005361a4
     FSUB float ptr [ESP + 0x34]         ; 005361a8
-    FMUL double ptr [0x005ecc6d]        ; 005361ac | DAT_005ecc6d
+    FMUL double ptr [0x005ecc6d]        ; 005361ac | g_DOUBLE_005ecc6d
     FSQRT                               ; 005361b2
-    FMUL double ptr [0x005ecc75]        ; 005361b4 | DAT_005ecc75
+    FMUL double ptr [0x005ecc75]        ; 005361b4 | g_DOUBLE_005ecc75
     LEA EDI,[ESP + 0x60]                ; 005361ba
     LEA ESI,[ESP + 0x48]                ; 005361be
     FSTP float ptr [EBX + 0x3a4]        ; 005361c2
@@ -86,7 +86,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005361f6
     MOVSD ES:EDI,ESI                    ; 005361f7
     MOVSD ES:EDI,ESI                    ; 005361f8
-    FLD float ptr [0x005ecc7d]          ; 005361f9 | DAT_005ecc7d
+    FLD float ptr [0x005ecc7d]          ; 005361f9 | g_FLOAT_005ecc7d
     FLD float ptr [ESP + 0x60]          ; 005361ff
     FMUL ST1                            ; 00536203
     FLD float ptr [ESP + 0x64]          ; 00536205

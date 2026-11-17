@@ -51,14 +51,14 @@
     },
     {
       "addr": "01c51cb0",
-      "name": "DAT_01c51cb0",
-      "type": "undefined4",
+      "name": "g_INT_01c51cb0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cb4",
-      "name": "DAT_01c51cb4",
-      "type": "undefined4",
+      "name": "g_INT_01c51cb4",
+      "type": "int",
       "value": null
     },
     {
@@ -69,50 +69,50 @@
     },
     {
       "addr": "01c51cbc",
-      "name": "DAT_01c51cbc",
-      "type": "undefined4",
+      "name": "g_INT_01c51cbc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cc0",
-      "name": "DAT_01c51cc0",
-      "type": "undefined4",
+      "name": "g_BYTE_01c51cc0",
+      "type": "byte",
       "value": null
     },
     {
       "addr": "01c51cc4",
-      "name": "DAT_01c51cc4",
-      "type": "undefined4",
+      "name": "g_INT_01c51cc4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cc8",
-      "name": "DAT_01c51cc8",
-      "type": "undefined4",
+      "name": "g_INT_01c51cc8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51ccc",
-      "name": "DAT_01c51ccc",
-      "type": "undefined4",
+      "name": "g_INT_01c51ccc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cd4",
-      "name": "DAT_01c51cd4",
-      "type": "undefined4",
+      "name": "g_INT_01c51cd4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cd8",
-      "name": "DAT_01c51cd8",
-      "type": "undefined4",
+      "name": "g_INT_01c51cd8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c9cf0c",
-      "name": "DAT_02c9cf0c",
-      "type": "undefined4",
+      "name": "g_PTR_02c9cf0c",
+      "type": "void*",
       "value": null
     }
   ],
@@ -253,10 +253,10 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 35,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (_DAT_02c9cf0c == (code *)0x0) {",
+      "text": "(*(code *)g_PTR_02c9cf0c)(0,&local_50);",
       "type": "unresolved_funcptr"
     }
   ]

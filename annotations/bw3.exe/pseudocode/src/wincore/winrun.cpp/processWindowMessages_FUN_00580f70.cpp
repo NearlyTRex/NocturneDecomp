@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00580fe7) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_00580f70(void)
 
@@ -20,11 +19,11 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_00580f70(void)
   iVar1 = 0;
   iVar3 = 0;
   do {
-    if (*(int *)(iVar3 + 0x2d21b90) == 1) {
-      (&DAT_01c6cef0)[iVar1] = 0;
+    if (*(int *)((int)g_INT_ARRAY_02d21b90 + iVar3) == 1) {
+      g_CHAR_ARRAY_01c6cef0[iVar1] = '\0';
     }
     iVar1 = iVar1 + 1;
-    *(uint *)(iVar3 + 0x2d21b90) = 0;
+    *(uint *)((int)g_INT_ARRAY_02d21b90 + iVar3) = 0;
     iVar3 = iVar3 + 4;
   } while (iVar1 < 600);
   while( true ) {
@@ -32,9 +31,9 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_00580f70(void)
       TranslateMessage(&local_28);
       DispatchMessageA(&local_28);
     }
-    if ((DAT_00607288 != 0) || (_DAT_02d21b80 != 0)) break;
+    if ((g_INT_00607288 != 0) || (g_INT_02d21b80 != 0)) break;
     Sleep(0x14);
-    if (DAT_0060728c == 0) {
+    if (g_INT_0060728c == 0) {
       return;
     }
   }

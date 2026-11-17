@@ -13,15 +13,15 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdca8
 ;
 ; Referenced Globals:
-;   undefined4 s_Set_state_version_005d08a6+1
-;   undefined4 DAT_005d08bd
+;   TerminatedCString s_Set_state_version_005d08a7
+;   TerminatedCString s_d_005d08bd
 ;   TerminatedCString s_Camera_count_enabled_lis_005d08c1
-;   undefined4 DAT_005d08e0
-;   undefined4 DAT_005d08e4
+;   TerminatedCString s_d_005d08e0
+;   TerminatedCString s_d_005d08e4
 ;   TerminatedCString s_Camera_ambient_light_005d08e8
-;   undefined4 DAT_005d0901
+;   TerminatedCString s_g_005d0901
 ;   TerminatedCString s_Camera_groups_005d0905
-;   undefined4 DAT_005d0917
+;   TerminatedCString s_d_005d0917
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005a3140
@@ -37,13 +37,13 @@ section .text
     PUSH EBP                            ; 0053b6e3
     MOV EBX,dword ptr [ESP + 0x14]      ; 0053b6e4
     MOV ESI,dword ptr [ESP + 0x18]      ; 0053b6e8
-    PUSH 0x5d08a7                       ; 0053b6ec | s_Set_state_version_005d08a6+1
+    PUSH 0x5d08a7                       ; 0053b6ec | = "// Set state version\n"
     PUSH ESI                            ; 0053b6f1
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0053b6f2
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0053b6f7
     PUSH 0x3                            ; 0053b6fa
-    PUSH 0x5d08bd                       ; 0053b6fc | DAT_005d08bd
+    PUSH 0x5d08bd                       ; 0053b6fc | = "%d\n"
     PUSH ESI                            ; 0053b701
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0053b702
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
@@ -55,7 +55,7 @@ section .text
     ADD ESP,0x8                         ; 0053b715
     MOV EDX,dword ptr [EBX]             ; 0053b718
     PUSH EDX                            ; 0053b71a
-    PUSH 0x5d08e0                       ; 0053b71b | DAT_005d08e0
+    PUSH 0x5d08e0                       ; 0053b71b | = "%d\n"
     PUSH ESI                            ; 0053b720
     XOR EBP,EBP                         ; 0053b721
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0053b723
@@ -69,7 +69,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x1a4]     ; 0053b733
         ;   Label: LAB_0053b733
     PUSH EAX                            ; 0053b739
-    PUSH 0x5d08e4                       ; 0053b73a | DAT_005d08e4
+    PUSH 0x5d08e4                       ; 0053b73a | = "%d\n"
     PUSH ESI                            ; 0053b73f
     ADD EDI,0x1a4                       ; 0053b740
     INC EBP                             ; 0053b746
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_0053b778
     FLD float ptr [EBP + 0x14c]         ; 0053b77b
     FSTP double ptr [ESP]               ; 0053b781
-    PUSH 0x5d0901                       ; 0053b784 | DAT_005d0901
+    PUSH 0x5d0901                       ; 0053b784 | = "%g\n"
     PUSH ESI                            ; 0053b789
     ADD EBP,0x1a4                       ; 0053b78a
     INC EDI                             ; 0053b790
@@ -126,7 +126,7 @@ section .text
     MOV ECX,dword ptr [EDI + 0x150]     ; 0053b7b8
         ;   Label: LAB_0053b7b8
     PUSH ECX                            ; 0053b7be
-    PUSH 0x5d0917                       ; 0053b7bf | DAT_005d0917
+    PUSH 0x5d0917                       ; 0053b7bf | = "%d\n"
     PUSH ESI                            ; 0053b7c4
     ADD EDI,0x1a4                       ; 0053b7c5
     INC EBP                             ; 0053b7cb

@@ -10,7 +10,7 @@
 ;   core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0 at 0046c812
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_doc_cpp_005da0fb+1
+;   TerminatedCString s_actionPending_d_doc_cpp_005da0fc
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   undefined4 g_CAmmoBoxClassInfo.name_hash
 ;
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_004707ab
     PUSH 0xe77                          ; 004707ac
     PUSH ECX                            ; 004707b1
-    PUSH 0x5da0fc                       ; 004707b2 | s_actionPending_d_doc_cpp_005da0fb+1
+    PUSH 0x5da0fc                       ; 004707b2 | = "actionPending = %d\ndoc.cpp line %d"
     MOV EDI,dword ptr [0x0061abc0]      ; 004707b7 | g_CEditorToolsPtr
     PUSH EDI                            ; 004707bd
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 004707be

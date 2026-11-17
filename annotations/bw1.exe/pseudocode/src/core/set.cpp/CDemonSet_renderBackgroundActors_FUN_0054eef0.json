@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 244,
+    "complexity_score": 221,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 16,
+    "pseudocode_lines": 51,
+    "suspect_count": 14,
     "suspect_types": [
       "phantom_float_to_int",
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 178
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -89,20 +88,20 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -385,16 +384,8 @@
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 45,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "(*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,in_stack_00000010);",
@@ -402,23 +393,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 46,
       "match": "in_stack_ffffffa0",
       "severity": "moderate",
       "text": "in_stack_ffffffa0 = this_ptr;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + 1;",
@@ -426,7 +409,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + 1;",
@@ -434,7 +417,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 51,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "} while (unaff_EBX < this_ptr->sorted_render_actor_count);",

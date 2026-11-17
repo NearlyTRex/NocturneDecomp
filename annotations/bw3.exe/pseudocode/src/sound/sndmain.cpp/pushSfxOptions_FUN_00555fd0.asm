@@ -20,9 +20,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3706
 ;   TerminatedCString s_pushSfxOptions_stack_ful_005d371b
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02ceb91c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_02ceb91c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -34,13 +34,13 @@ section .text
     PUSH ESI                            ; 00555fd0
         ;   Label: sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
     PUSH EDI                            ; 00555fd1
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555fd2 | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555fd2 | g_INT_02ceb91c
     INC EDX                             ; 00555fd8
-    MOV dword ptr [0x02ceb91c],EDX      ; 00555fd9 | DAT_02ceb91c
+    MOV dword ptr [0x02ceb91c],EDX      ; 00555fd9 | g_INT_02ceb91c
     CMP EDX,0x8                         ; 00555fdf
     JGE 0x0055601b                      ; 00555fe2
         ;   XREF to: 0055601b (CONDITIONAL_JUMP)  ; LAB_0055601b
-    MOV ECX,dword ptr [0x02ceb91c]      ; 00555fe4 | DAT_02ceb91c
+    MOV ECX,dword ptr [0x02ceb91c]      ; 00555fe4 | g_INT_02ceb91c
         ;   Label: LAB_00555fe4
     LEA EDX,[ECX + -0x1]                ; 00555fea
     LEA ESI,[EDX*0x4 + 0x0]             ; 00555fed
@@ -61,8 +61,8 @@ section .text
     MOV EBX,0x5d3706                    ; 0055601c | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xe9b                       ; 00556021
     PUSH 0x5d371b                       ; 00556026 | = "pushSfxOptions - stack full"
-    MOV dword ptr [0x01d71de0],EBX      ; 0055602b | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00556031 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0055602b | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00556031 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00556037
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055603c

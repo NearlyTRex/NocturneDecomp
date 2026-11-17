@@ -14,7 +14,7 @@
 ;   core_weapon.cpp_CWeapon_setup_FUN_00589b50 at 00589b6e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ee53e
+;   float g_FLOAT_005ee53e = 0.5
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0058a379
     MOVSD ES:EDI,ESI                    ; 0058a37a
     MOVSD ES:EDI,ESI                    ; 0058a37b
-    FLD float ptr [0x005ee53e]          ; 0058a37c | DAT_005ee53e
+    FLD float ptr [0x005ee53e]          ; 0058a37c | g_FLOAT_005ee53e
     FLD float ptr [ESP + 0x80]          ; 0058a382
     FMUL ST1                            ; 0058a389
     FLD float ptr [ESP + 0x84]          ; 0058a38b

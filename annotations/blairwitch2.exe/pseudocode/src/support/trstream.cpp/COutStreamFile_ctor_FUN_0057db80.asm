@@ -12,7 +12,7 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029f2
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamFileVTable = 0057dc10
+;   void*[10] g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_0057d860

@@ -4,6 +4,11 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x7B0000
 // =============================================================================
 
+// CDemonActor*
+CDemonActor* g_CDemonActor_PTR_007bbff4 = {};
+CDemonActor* g_CDemonActor_PTR_007bc03c = {};
+CDemonActor* g_CDemonActor_PTR_007bdc98 = {};
+
 // CDemonActorType
 CDemonActorType g_CDemonActorClassInfo = {};
 CDemonActorType g_CAmmoClassInfo = {};
@@ -12,6 +17,7 @@ CDemonActorType g_CAnvilClassInfo = {};
 CDemonActorType g_CArmourClassInfo = {};
 CDemonActorType g_CBackgroundActorClassInfo = {};
 CDemonActorType g_CBaronClassInfo = {};
+CDemonActorType g_CDemonActorType_007bc698 = {};
 CDemonActorType g_CBarrierClassInfo = {};
 CDemonActorType g_CBatClassInfo = {};
 CDemonActorType g_CBatCreatureClassInfo = {};
@@ -22,96 +28,100 @@ CDemonActorType g_CBiggsClassInfo = {};
 CDemonActorType g_CBodyPartClassInfo = {};
 CDemonActorType g_CBoneGuyClassInfo = {};
 CDemonActorType g_CBoxActorClassInfo = {};
+CDemonActorType g_CDemonActorType_007bcc4c = {};
 CDemonActorType g_CBrideClassInfo = {};
 CDemonActorType g_CBugsClassInfo = {};
 CDemonActorType g_CCharacterClassInfo = {};
 
+// CDemonActorType*[200]
+CDemonActorType* g_CDemonActorType_PTR_ARRAY_007bc048[200] = {};
+
+// CDemonCamera*
+CDemonCamera* g_CDemonCamera_PTR_007bda74 = {};
+
 // CDemonFilter[8]
 CDemonFilter CDemonFilter_ARRAY_007bc9ec[8] = {};
 
-// undefined1
-undefined1 DAT_007bcd0c = {};
-undefined1 DAT_007bda80 = {};
-undefined1 DAT_007bda81 = {};
-undefined1 DAT_007bda82 = {};
-undefined1 DAT_007bda83 = {};
-undefined1 DAT_007bdad8 = {};
-undefined1 DAT_007bfd10 = {};
+// CDemonGlobe
+CDemonGlobe g_CDemonGlobe_007bda98 = {};
 
-// undefined4
-undefined4 DAT_007bbff4 = {};
-undefined4 DAT_007bc034 = {};
-undefined4 DAT_007bc038 = {};
-undefined4 DAT_007bc03c = {};
-undefined4 DAT_007bc040 = {};
-undefined4 DAT_007bc044 = {};
-undefined4 DAT_007bc048 = {};
-undefined4 DAT_007bc04c = {};
-undefined4 DAT_007bc368 = {};
-undefined4 DAT_007bc498 = {};
-undefined4 DAT_007bc4cc = {};
-undefined4 DAT_007bc4d0 = {};
-undefined4 DAT_007bc4dc = {};
-undefined4 DAT_007bc74c = {};
-undefined4 DAT_007bc754 = {};
-undefined4 DAT_007bc7b8 = {};
-undefined4 DAT_007bc7c0 = {};
-undefined4 DAT_007bc7dc = {};
-undefined4 DAT_007bc7e4 = {};
-undefined4 DAT_007bc944 = {};
-undefined4 DAT_007bc948 = {};
-undefined4 DAT_007bc94c = {};
-undefined4 DAT_007bc958 = {};
-undefined4 DAT_007bc95c = {};
-undefined4 DAT_007bc968 = {};
-undefined4 DAT_007bc96c = {};
-undefined4 DAT_007bcc84 = {};
-undefined4 DAT_007bccdc = {};
-undefined4 DAT_007bcce0 = {};
-undefined4 DAT_007bcce4 = {};
-undefined4 DAT_007bcce8 = {};
-undefined4 DAT_007bccec = {};
-undefined4 DAT_007bccf0 = {};
-undefined4 DAT_007bccf4 = {};
-undefined4 DAT_007bcd00 = {};
-undefined4 DAT_007bcd08 = {};
-undefined4 DAT_007bcf48 = {};
-undefined4 DAT_007bcf4c = {};
-undefined4 DAT_007bcf50 = {};
-undefined4 DAT_007bda74 = {};
-undefined4 DAT_007bda90 = {};
-undefined4 DAT_007bdc98 = {};
-undefined4 DAT_007bdc9c = {};
-undefined4 DAT_007bdca0 = {};
-undefined4 DAT_007bee30 = {};
-undefined4 DAT_007bee34 = {};
-undefined4 DAT_007bee38 = {};
-undefined4 DAT_007bee3c = {};
-undefined4 DAT_007bee40 = {};
-undefined4 DAT_007bee44 = {};
-undefined4 DAT_007bee64 = {};
-undefined4 DAT_007bee68 = {};
-undefined4 DAT_007bee6c = {};
-undefined4 DAT_007bf434 = {};
-undefined4 DAT_007bf438 = {};
-undefined4 DAT_007bf43c = {};
-undefined4 DAT_007bf440 = {};
-undefined4 DAT_007bf4b4 = {};
-undefined4 DAT_007bf4b8 = {};
-undefined4 DAT_007bf4c0 = {};
-undefined4 DAT_007bf4f0 = {};
-undefined4 DAT_007bf4f4 = {};
-undefined4 DAT_007bf4f8 = {};
-undefined4 DAT_007bfcf8 = {};
-undefined4 DAT_007bfcfc = {};
-undefined4 DAT_007bfd00 = {};
-undefined4 DAT_007bfd04 = {};
-undefined4 DAT_007bfd08 = {};
-undefined4 DAT_007bfd0c = {};
-undefined4 DAT_007bfd14 = {};
-undefined4 DAT_007bfd3c = {};
-undefined4 DAT_007bfd44 = {};
+// CKeyFramedModelInstance
+CKeyFramedModelInstance g_CKeyFramedModelInstance_007bc51c = {};
+CKeyFramedModelInstance g_CKeyFramedModelInstance_007bdadc = {};
 
-// undefined8
-undefined8 DAT_007bf4e8 = {};
+// CVector3f
+CVector3f g_CVector3f_007bcc88 = {};
+CVector3f g_CVector3f_007bcc94 = {};
+
+// SMRGLHeaderPrimitive*[2000]
+SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074[2000] = {};
+
+// SMRGLTextureBasic
+SMRGLTextureBasic g_SMRGLTextureBasic_007bda78 = {};
+
+// SRenderVertex*[16]
+SRenderVertex* g_SRenderVertex_PTR_ARRAY_007bf434[16] = {};
+
+// SRenderVertex[12]
+SRenderVertex g_SRenderVertex_ARRAY_007bfab8[12] = {};
+
+// SRenderVertex[16]
+SRenderVertex g_SRenderVertex_ARRAY_007bee34[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007bf4b8[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007bfd0c[16] = {};
+
+// _FILE*
+_FILE* g_FILE_PTR_007bc034 = {};
+
+// byte
+byte g_BYTE_007bdad8 = {};
+
+// char[52]
+char g_CHAR_ARRAY_007bbfc0[52] = {};
+
+// float
+float g_FLOAT_007bc4dc = {};
+
+// float[100]
+float g_FLOAT_ARRAY_007bdc9c[100] = {};
+
+// float[12]
+float g_FLOAT_ARRAY_007bcd08[12] = {};
+
+// int
+int g_INT_007ba070 = {};
+int g_INT_007bc038 = {};
+int g_INT_007bc040 = {};
+int g_INT_007bc044 = {};
+int g_INT_007bc9ac = {};
+int g_INT_007bda90 = {};
+int g_INT_007bda94 = {};
+int g_INT_007bee2c = {};
+int g_INT_007bee30 = {};
+int g_INT_007bf4b4 = {};
+int g_INT_007bfcf8 = {};
+int g_INT_007bfcfc = {};
+int g_INT_007bfd00 = {};
+int g_INT_007bfd04 = {};
+int g_INT_007bfd08 = {};
+
+// int[11]
+int g_INT_ARRAY_007bc944[11] = {};
+int g_INT_ARRAY_007bccdc[11] = {};
+
+// int[12]
+int g_INT_ARRAY_007bc74c[12] = {};
+int g_INT_ARRAY_007bc7b8[12] = {};
+
+// int[17]
+int g_INT_ARRAY_007bc498[17] = {};
+
+// int[1]
+int g_INT_ARRAY_007bf430[1] = {};
+
+// int[700]
+int g_INT_ARRAY_007bcf48[700] = {};
+
+// uint
+uint g_UINT_007bc368 = {};
 

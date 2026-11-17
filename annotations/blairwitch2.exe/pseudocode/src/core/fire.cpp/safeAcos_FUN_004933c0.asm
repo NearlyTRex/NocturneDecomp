@@ -7,7 +7,7 @@
 ; float            Stack[0x4]:4   value
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5332
+;   double g_DOUBLE_005d5332 = -1
 ;
 ; Called Functions:
 ;   crt_math.c_acos_FUN_005b9924
@@ -23,7 +23,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004933c6
     FLD float ptr [EBP + 0x8]           ; 004933c9
     FST double ptr [ESP]                ; 004933cc
-    FCOMP double ptr [0x005d5332]       ; 004933cf | DAT_005d5332
+    FCOMP double ptr [0x005d5332]       ; 004933cf | g_DOUBLE_005d5332
     FNSTSW AX                           ; 004933d5
     SAHF                                ; 004933d7
     JBE 0x004933f2                      ; 004933d8

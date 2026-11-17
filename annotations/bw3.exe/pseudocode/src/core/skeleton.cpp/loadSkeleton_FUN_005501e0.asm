@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d2297
 ;   TerminatedCString s_Can_t_load_s_because_ske_005d22ac
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cd28bc
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   char[196] g_CHAR_ARRAY_02cd28bc
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -51,7 +51,7 @@ section .text
     CMP EBX,0x28                        ; 0055021b
     JL 0x005501f5                       ; 0055021e
         ;   XREF to: 005501f5 (CONDITIONAL_JUMP)  ; LAB_005501f5
-    MOV EDX,dword ptr [0x02cd28bc]      ; 00550220 | DAT_02cd28bc
+    MOV EDX,dword ptr [0x02cd28bc]      ; 00550220 | g_CHAR_ARRAY_02cd28bc
     XOR EBX,EBX                         ; 00550226
     XOR EAX,EAX                         ; 00550228
     TEST EDX,EDX                        ; 0055022a
@@ -97,7 +97,7 @@ section .text
     MOV ECX,0x1                         ; 00550283
         ;   Label: LAB_00550283
     MOV EAX,EDI                         ; 00550288
-    MOV dword ptr [EBX*0x4 + 0x2cd28bc],ECX ; 0055028a | DAT_02cd28bc
+    MOV dword ptr [EBX*0x4 + 0x2cd28bc],ECX ; 0055028a | g_CHAR_ARRAY_02cd28bc
     POP EBP                             ; 00550291
     POP EDI                             ; 00550292
     POP ESI                             ; 00550293
@@ -109,8 +109,8 @@ section .text
     MOV EAX,0x5d2297                    ; 00550299 | = "..\\core\\skeleton.cpp"
     MOV EDX,0x10ac                      ; 0055029e
     PUSH 0x5d22ac                       ; 005502a3 | = "Can't load %s because skeleton manage..."
-    MOV [0x01d71de0],EAX                ; 005502a8 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 005502ad | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 005502a8 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 005502ad | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005502b3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005502b8

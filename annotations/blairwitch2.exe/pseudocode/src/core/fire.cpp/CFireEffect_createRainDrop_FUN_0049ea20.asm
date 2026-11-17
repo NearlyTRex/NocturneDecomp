@@ -12,7 +12,7 @@
 ;   core_weather.cpp_CWeather_update_FUN_0058a660 at 0058a71c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ca7680
+;   int g_INT_01ca7680
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
     PUSH EBX                            ; 0049ea20
         ;   Label: core_fire.cpp_CFireEffect_createRainDrop_FUN_0049ea20
     PUSH ESI                            ; 0049ea21
-    MOV EBX,dword ptr [0x01ca7680]      ; 0049ea22 | DAT_01ca7680
+    MOV EBX,dword ptr [0x01ca7680]      ; 0049ea22 | g_INT_01ca7680
     MOV ECX,dword ptr [ESP + 0x14]      ; 0049ea28
     MOV ESI,dword ptr [ESP + 0x10]      ; 0049ea2c
     MOV EAX,EBX                         ; 0049ea30
@@ -32,7 +32,7 @@ section .text
     PUSH EAX                            ; 0049ea3c
     MOV EDX,dword ptr [EAX + 0x3c]      ; 0049ea3d
     CALL dword ptr [EDX]                ; 0049ea40
-    MOV EBX,dword ptr [0x01ca7680]      ; 0049ea42 | DAT_01ca7680
+    MOV EBX,dword ptr [0x01ca7680]      ; 0049ea42 | g_INT_01ca7680
     MOV EAX,EBX                         ; 0049ea48
     SHL EAX,0x6                         ; 0049ea4a
     ADD EAX,0x1ca7684                   ; 0049ea4d
@@ -43,7 +43,7 @@ section .text
     JL 0x0049ea67                       ; 0049ea63
         ;   XREF to: 0049ea67 (CONDITIONAL_JUMP)  ; LAB_0049ea67
     XOR EBX,EBX                         ; 0049ea65
-    MOV dword ptr [0x01ca7680],EBX      ; 0049ea67 | DAT_01ca7680
+    MOV dword ptr [0x01ca7680],EBX      ; 0049ea67 | g_INT_01ca7680
         ;   Label: LAB_0049ea67
     POP ESI                             ; 0049ea6d
     POP EBX                             ; 0049ea6e

@@ -11,8 +11,8 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 005336d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d0cbe
-;   undefined4 DAT_005d0cc1
+;   TerminatedCString s_rb_005d0cbe
+;   TerminatedCString s_data_005d0cc1
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
@@ -29,10 +29,10 @@ section .text
         ;   Label: core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00540be0
     PUSH ESI                            ; 00540be1
     MOV ESI,dword ptr [ESP + 0xc]       ; 00540be2
-    PUSH 0x5d0cbe                       ; 00540be6 | DAT_005d0cbe
+    PUSH 0x5d0cbe                       ; 00540be6 | = "rb"
     MOV EDX,dword ptr [ESP + 0x14]      ; 00540beb
     PUSH EDX                            ; 00540bef
-    PUSH 0x5d0cc1                       ; 00540bf0 | DAT_005d0cc1
+    PUSH 0x5d0cc1                       ; 00540bf0 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00540bf5
         ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00540bfa

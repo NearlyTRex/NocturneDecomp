@@ -22,7 +22,7 @@
 ;   core_djien.cpp_CDjien_process_FUN_00460230 at 004603dc
 ;
 ; Referenced Globals:
-;   undefined4 s_djien_die_wav_5_005d8d8f+1
+;   TerminatedCString s_djien_die_wav_5_005d8d90
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -175,7 +175,7 @@ section .text
     CMP ESI,EDI                         ; 00460e4a
     JL 0x00460d22                       ; 00460e4c
         ;   XREF to: 00460d22 (CONDITIONAL_JUMP)  ; LAB_00460d22
-    PUSH 0x5d8d90                       ; 00460e52 | s_djien_die_wav_5_005d8d8f+1
+    PUSH 0x5d8d90                       ; 00460e52 | = "djien-die.wav @ 5"
         ;   Label: LAB_00460e52
     MOV EBX,dword ptr [ESP + 0x50]      ; 00460e57
     MOV EAX,dword ptr [ESP + 0x50]      ; 00460e5b

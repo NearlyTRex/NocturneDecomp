@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndwav_cpp_staticInit_FUN_0055d6a0(void)
 
 {
-  _DAT_02cf567c = &g_CWavInDeviceVTable;
-  _DAT_02cf5678 = &g_CWavOutDeviceVTable;
+  g_CWavInDevice_02cf567c.base.vtable = (CSoundDevice)&g_CWavInDeviceVTable;
+  g_CWavOutDevice_02cf5678.base.vtable = (CSoundDevice)&g_CWavOutDeviceVTable;
   return;
 }

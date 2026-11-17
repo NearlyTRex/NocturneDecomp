@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00479970(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 
 {
@@ -21,8 +19,8 @@ void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00479970(CVector3f *point1_ptr,CV
   dVar1 = (double)fVar2;
   local_28 = SUB84(__BITCAST_UINT64(dVar1),0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
-    _DAT_01d71de0 = "..\\core\\dtri.cpp";
-    _DAT_01d71de4 = 0x457;
+    g_CHAR_PTR_01d71de0 = "..\\core\\dtri.cpp";
+    g_INT_01d71de4 = 0x457;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Bad clip!");
   }
   fVar2 = -(point1_ptr->z * (float)plane_nz +

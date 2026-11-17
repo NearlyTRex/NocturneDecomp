@@ -5,9 +5,12 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CFieldNotes.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SHardwareEdge.h"
 #include "types/structs/STextView.h"
 
 // =============================================================================
@@ -29,6 +32,10 @@ extern CAlphaBitmap CAlphaBitmap_01d19cd8;
 // CAlphaBitmap[6]
 extern CAlphaBitmap CAlphaBitmap_ARRAY_01d19bc0[6];
 
+// CDemonActor*
+extern CDemonActor* g_CDemonActor_PTR_01d1e34c;
+extern CDemonActor* g_CDemonActor_PTR_01d1e350;
+
 // CDemonActorType
 extern CDemonActorType g_CFliesClassInfo;
 extern CDemonActorType g_CFlintlockClassInfo;
@@ -39,6 +46,87 @@ extern CDemonLight g_CDemonLightInstance;
 // CFieldNotes
 extern CFieldNotes g_CFieldNotesInstance;
 
+// CVector3f
+extern CVector3f g_CVector3f_01d1e328;
+
+// SHardwareEdge[16]
+extern SHardwareEdge g_SHardwareEdge_ARRAY_01d1ad7c[16];
+
 // STextView
 extern STextView g_STextViewInstance;
+
+// byte
+extern byte g_BYTE_01d1e35c;
+
+// char
+extern char g_CHAR_01d19f90;
+extern char g_CHAR_01d1a960;
+extern char g_CHAR_01d1b110;
+
+// char[5120]
+extern char g_CHAR_ARRAY_01d1bb20[5120];
+extern char g_CHAR_ARRAY_01d1cf20[5120];
+
+// char[64]
+extern char g_CHAR_ARRAY_01d19cf0[64];
+
+// double
+extern double g_DOUBLE_01d1bb10;
+
+// float
+extern float g_FLOAT_01d1a0a0;
+extern float g_FLOAT_01d1a0ac;
+extern float g_FLOAT_01d1a0b0;
+extern float g_FLOAT_01d1a0b4;
+extern float g_FLOAT_01d1a0b8;
+extern float g_FLOAT_01d1a0bc;
+extern float g_FLOAT_01d1a0c0;
+extern float g_FLOAT_01d1a0c4;
+extern float g_FLOAT_01d1a0c8;
+extern float g_FLOAT_01d1a0cc;
+extern float g_FLOAT_01d1a0d0;
+extern float g_FLOAT_01d1a0d4;
+extern float g_FLOAT_01d1a0d8;
+extern float g_FLOAT_01d1e338;
+extern float g_FLOAT_01d1e33c;
+extern float g_FLOAT_01d1e340;
+extern float g_FLOAT_01d1e344;
+
+// float[64]
+extern float g_FLOAT_ARRAY_01d1a124[64];
+
+// int
+extern int g_INT_01d19ba8;
+extern int g_INT_01d19f78;
+extern int g_INT_01d19f7c;
+extern int g_INT_01d19f80;
+extern int g_INT_01d19f84;
+extern int g_INT_01d19f88;
+extern int g_INT_01d19f8c;
+extern int g_INT_01d1a058;
+extern int g_INT_01d1a0a4;
+extern int g_INT_01d1a0a8;
+extern int g_INT_01d1a0dc;
+extern int g_INT_01d1ad64;
+extern int g_INT_01d1ad68;
+extern int g_INT_01d1ad6c;
+extern int g_INT_01d1ad70;
+extern int g_INT_01d1ad74;
+extern int g_INT_01d1ad78;
+extern int g_INT_01d1b0fc;
+extern int g_INT_01d1b100;
+extern int g_INT_01d1bb18;
+extern int g_INT_01d1e320;
+extern int g_INT_01d1e324;
+extern int g_INT_01d1e334;
+extern int g_INT_01d1e348;
+extern int g_INT_01d1e354;
+extern int g_INT_01d1e358;
+
+// uint
+extern uint g_UINT_01d1a11c;
+extern uint g_UINT_01d1a120;
+
+// ushort
+extern ushort g_USHORT_01d1ad62;
 

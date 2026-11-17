@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_resetDynamicLight_FUN_004ef8f0(void)
 
 {
-  _DAT_01d79784 = 0;
-  if ((_DAT_02cf60fc != (code *)0x0) && (_DAT_01c6cee8 != 0)) {
-    (*_DAT_02cf60fc)();
+  g_INT_01d79784 = 0;
+  if ((g_PTR_02cf60fc != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+    (*(code *)g_PTR_02cf60fc)();
     return;
   }
   return;

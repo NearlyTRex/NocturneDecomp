@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2)
 
@@ -96,7 +95,7 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
   core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850((CCharacter *)this_ptr,param_2 * fVar11)
   ;
   if (iVar5 == 8) {
-    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005d82cf;
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)2;
   }
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660((CCharacter *)this_ptr,param_2);
   if (iVar5 == 0) {
@@ -123,8 +122,8 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
                afStack_98[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
           fStack_2c = afStack_e0[1] * afStack_e0[1] +
                       fStack_e4 * fStack_e4 + afStack_e0[0] * afStack_e0[0];
-          fStack_30 = (float)(((int)fStack_2c >> 1) + _DAT_01d1a0a4);
-          if (fStack_30 < _DAT_005e65e8) {
+          fStack_30 = (float)(((int)fStack_2c >> 1) + g_INT_01d1a0a4);
+          if (fStack_30 < 9.0f) {
             iVar12 = 1;
             iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
             iVar5 = iVar5 + 5;
@@ -136,7 +135,7 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_24,iVar5,iVar12);
           iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
-                            (0x02CF5680,this_ptr->sfx_handle);
+                            (g_CSound_PTR_006045f8,this_ptr->sfx_handle);
           if (iVar5 == 0) {
             uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"dog5.wav");
@@ -147,7 +146,7 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
       else {
         fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(pCStack_24)
         ;
-        if ((float)_DAT_005d82df < fStack_14) {
+        if ((float)0.90000000000000002 < fStack_14) {
           iVar12 = 1;
           iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -173,7 +172,7 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
         else {
           fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                 (&pCVar1->base);
-          if ((float)_DAT_005d82df < fStack_14) {
+          if ((float)0.90000000000000002 < fStack_14) {
             iVar12 = 1;
             iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -195,13 +194,13 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
       fStack_28 = SQRT(afStack_11c[1] * afStack_11c[1] +
                        fStack_120 * fStack_120 + afStack_11c[0] * afStack_11c[0]);
       fStack_18 = fStack_28;
-      if ((((_DAT_005e65e8 < fStack_28) && (iStack_20 == 5)) || (iStack_20 == 6)) ||
+      if ((((9.0f < fStack_28) && (iStack_20 == 5)) || (iStack_20 == 6)) ||
          (iStack_20 == 7)) {
         pCVar1 = &(this_ptr->base).base.model;
-        if ((this_ptr->base).attack_cooldown <= (float)_DAT_005d82d7) {
+        if ((this_ptr->base).attack_cooldown <= (float)0.5) {
           fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                 (&pCVar1->base);
-          if ((float)_DAT_005d82df < fStack_14) {
+          if ((float)0.90000000000000002 < fStack_14) {
             iVar12 = 1;
             iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
             iVar5 = iVar5 + 8;
@@ -211,7 +210,7 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
         else {
           fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                 (&pCVar1->base);
-          if ((float)_DAT_005d82df < fStack_14) {
+          if ((float)0.90000000000000002 < fStack_14) {
             iVar12 = 1;
             iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
             iVar5 = iVar5 + 5;
@@ -221,7 +220,7 @@ LAB_00586c35:
           }
         }
       }
-      if (((_DAT_005d82e7 < fStack_28) && (fStack_28 < _DAT_005d82eb)) &&
+      if (((8.0f < fStack_28) && (fStack_28 < 12.0f)) &&
          (iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,10), iVar5 == 5)) {
         iVar12 = 1;
         iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,1);
@@ -272,7 +271,7 @@ LAB_00586c35:
       fVar11 = 0.7;
       fStack_14 = SStack_15c.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                ((CVector3f *)&DAT_02cfd900,
+                (&g_CVector3f_02cfd900,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[1],&CStack_f0);
       pCVar10 = &CStack_114;
@@ -291,7 +290,8 @@ LAB_00586c35:
       *(uint *)((int)&CStack_6c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
            *(uint *)((int)&CStack_d8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004893f0(&pCVar7->base,pCVar10,fVar11,damage_info);
-      iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0(0x02CF5680,this_ptr->sfx_handle);
+      iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
+                        (g_CSound_PTR_006045f8,this_ptr->sfx_handle);
       if (iVar5 == 0) {
         uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"dog5.wav");
@@ -322,7 +322,7 @@ LAB_00586c35:
         *(uint *)((int)&CStack_a8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
              *(uint *)((int)&CStack_b4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
         core_gore_cpp_CGore_createBloodPool_FUN_004cec40(this_ptr_01,pCVar10,blood_type);
-        this_ptr_00 = 0x01C6E360;
+        this_ptr_00 = g_CEventList_PTR_005fba60;
         (this_ptr->base).pool_me = 1;
         core_event_cpp_CEventList_executeCommands_FUN_0048c150(this_ptr_00,"YowDead");
       }
@@ -335,7 +335,7 @@ LAB_00586c35:
     if (EVar3 == WALK_STATE_WALKING) {
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                             (&pCVar1->base);
-      if ((float)_DAT_005d82df < fStack_14) {
+      if ((float)0.90000000000000002 < fStack_14) {
         iVar12 = 1;
         iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
         iVar5 = iVar5 + 5;
@@ -348,7 +348,7 @@ LAB_00586670:
 LAB_0058685d:
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                             (&(this_ptr->base).base.model.base);
-      if ((float)_DAT_005d82df < fStack_14) {
+      if ((float)0.90000000000000002 < fStack_14) {
         iVar12 = 1;
         iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3);
         goto LAB_00586670;
@@ -357,7 +357,7 @@ LAB_0058685d:
   }
   else if (EVar3 < WALK_STATE_NO_PATH) {
     fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(&pCVar1->base);
-    if ((float)_DAT_005d82df < fStack_14) {
+    if ((float)0.90000000000000002 < fStack_14) {
       iVar12 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
       iVar5 = iVar5 + 8;

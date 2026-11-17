@@ -244,7 +244,7 @@ LAB_0057b03d:
             iVar6 = _strnicmp
                               ((char *)((int)request + 0x810),"Content-length:",0xf);
             if (iVar6 == 0) {
-              sscanf(pcStack_18,&DAT_005ed4bb);
+              sscanf(pcStack_18,"%d");
             }
             *(byte *)((int)request + 0x810) = 0;
             iVar6 = *(int *)((int)request + 0xd28);
@@ -311,7 +311,7 @@ switchD_0057ad33_default:
     _sprintf(status_text,"Receiving %s...");
     return *(int *)((int)request + 0xd28);
   case 5:
-    pcVar8 = &DAT_005ed519;
+    pcVar8 = "Done";
     break;
   default:
     support_trisock_cpp_CSocket_closeSocket_FUN_00579360((CSocket *)((int)request + 0xd2c));

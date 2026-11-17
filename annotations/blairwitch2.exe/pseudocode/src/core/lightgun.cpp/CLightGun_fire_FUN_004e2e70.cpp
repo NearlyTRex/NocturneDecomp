@@ -6,13 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
 
 {
   UOrientationVector *orientation;
   CCharacter *pCVar1;
+  CHero *this_ptr_00;
   bool bVar2;
   EDeathState EVar3;
   CDemonActor *pCVar4;
@@ -67,7 +66,8 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   float afStack_6c [4];
   float fStack_5c;
   float fStack_4c;
-  float afStack_48 [5];
+  float fStack_48;
+  float afStack_44 [4];
   CCharacter *pCStack_34;
   CTrigger *pCStack_30;
   int iStack_2c;
@@ -77,7 +77,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   CCharacter *pCStack_14;
   
   bVar12 = 0;
-  if (this_ptr->charge_level < _DAT_005f95d0) {
+  if (this_ptr->charge_level < 2.0f) {
     return 0;
   }
   fVar6 = (this_ptr->base).bolt_velocity;
@@ -86,15 +86,15 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   CStack_a0.z = fStack_124;
   *(float *)(auStack_94 + (uint)bVar12 * -8) = afStack_120[(uint)bVar12 * -2];
-  *(float *)(auStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4) =
+  afStack_8c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + -1] =
        afStack_120[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-  afStack_8c[0] = afStack_8c[0] + _DAT_005dc0a6;
+  afStack_8c[0] = afStack_8c[0] + -4.0f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
             ((CDemonActor *)this_ptr,(CVector3f *)auStack_94,&CStack_118);
   CStack_e8.x = CStack_118.x;
-  *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + 4) =
+  *(uint *)((int)&CStack_e8 + ((uint)bVar12 * -2 + -1) * 4 + 8) =
        *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + -8);
-  *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
+  *(uint *)((int)&CStack_e8 + ((uint)bVar12 * -2 + (uint)bVar12 * -2) * 4 + 8) =
        *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + -4);
   CStack_130.z = (this_ptr->base).bolt_velocity;
   CStack_130.x = 0.0;
@@ -112,14 +112,14 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   aCStack_10c[0].x = fVar6 + afStack_6c[2];
   *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + 4) =
        *(uint *)(auStack_78 + (uint)bVar12 * -8);
-  *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-       *(uint *)(auStack_78 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4);
+  *(float *)((int)aCStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
+       afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + -2];
   CStack_f4.x = CStack_e8.x;
   *(uint *)((int)&CStack_f4 + (uint)bVar12 * -8 + 4) =
-       *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + 4);
+       *(uint *)((int)&CStack_e8 + ((uint)bVar12 * -2 + -1) * 4 + 8);
   pCVar13 = g_CDemonSetPtr;
   *(uint *)((int)&CStack_f4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-       *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+       *(uint *)((int)&CStack_e8 + ((uint)bVar12 * -2 + (uint)bVar12 * -2) * 4 + 8);
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(pCVar13);
   core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00537ef0(g_CDemonSetPtr,1,0xff,0xff,0xff);
   core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00537df0(g_CDemonSetPtr);
@@ -156,7 +156,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
                         ((CCharacter *)CStack_24.y);
       pCVar13 = g_CDemonSetPtr;
       if ((iVar7 != 0) && (iVar9 == 0)) {
-        this_ptr->charge_level = _DAT_005f95d0;
+        this_ptr->charge_level = 2.0f;
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00537c40(pCVar13);
         core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
         return 0;
@@ -194,8 +194,8 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
     if (g_CDemonSetPtr->character_count <= (int)CStack_24.x) {
       core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                (0x0264B290,(CDemonActor *)this_ptr,"cre-fire.wav",&CStack_e8);
-      sound_sndmain_cpp_setSfxVolume_FUN_00550f20(this_ptr->sfx_handle,0x40000000);
+                (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"cre-fire.wav",&CStack_e8);
+      sound_sndmain_cpp_setSfxVolume_FUN_00550f20(this_ptr->sfx_handle,2.0f);
       this_ptr->fire_flash_pending = 1;
       this_ptr->hit_enemy = 1;
       core_weapon_cpp_CWeapon_fire_FUN_0058a290(&this_ptr->base);
@@ -241,20 +241,22 @@ LAB_004e312d:
                         (&g_CDemonLightInstance.base,&position->position,&orientation->vec,
                          &CStack_16c,&CStack_160);
       if (iVar9 != 0) {
-        dVar14 = __BITCAST_DOUBLE(CONCAT44("?%s in volume\n" + 1,g_CConsolePtr));
-        engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"?%s in volume\n" + 1);
-        pCVar4 = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);
-        fStack_7c = (pCVar4->location).position.x - (position->position).x;
-        auStack_78._0_4_ = (pCVar4->location).position.y - (pCVar5->base).location.position.y;
-        auStack_78._4_4_ = (pCVar4->location).position.z - (pCVar5->base).location.position.z;
+        dVar14 = __BITCAST_DOUBLE(CONCAT44("%s in volume\n",g_CConsolePtr));
+        engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"%s in volume\n");
+        this_ptr_00 = g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
+        fStack_7c = (this_ptr_00->base).base.location.position.x - (position->position).x;
+        auStack_78._0_4_ =
+             (this_ptr_00->base).base.location.position.y - (pCVar5->base).location.position.y;
+        auStack_78._4_4_ =
+             (this_ptr_00->base).base.location.position.z - (pCVar5->base).location.position.z;
         fStack_4c = fStack_7c;
-        afStack_48[(uint)bVar12 * -2] = *(float *)(auStack_78 + (uint)bVar12 * -8);
-        afStack_48[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-             *(float *)(auStack_78 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4);
-        if (SQRT(afStack_48[1] * afStack_48[1] +
-                 fStack_4c * fStack_4c + afStack_48[0] * afStack_48[0]) < (float)_DAT_005dc0b2) {
+        afStack_44[(uint)bVar12 * -2 + -1] = *(float *)(auStack_78 + (uint)bVar12 * -8);
+        afStack_44[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
+             afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + -2];
+        if (SQRT(afStack_44[0] * afStack_44[0] + fStack_4c * fStack_4c + fStack_48 * fStack_48) <
+            (float)4) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
-                    (pCVar4,&position->position,&CStack_c4);
+                    ((CDemonActor *)this_ptr_00,&position->position,&CStack_c4);
           CStack_a0.x = CStack_c4.x;
           *(uint *)(auStack_94 + (uint)bVar12 * -8 + -8) =
                *(uint *)((int)&CStack_c4 + (uint)bVar12 * -8 + 4);
@@ -295,12 +297,12 @@ LAB_004e312d:
         CStack_b8.y = CStack_16c.y + *unaff_retaddr;
         afStack_ac[(uint)bVar12 * -2 + -1] = *(float *)((int)&CStack_24 + (uint)bVar12 * -8 + 4);
         afStack_ac[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
-             *(float *)((int)&CStack_24 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+             *(float *)((int)&CStack_24 + ((uint)bVar12 * -2 + (uint)bVar12 * -2) * 4 + 8);
         core_actor_cpp_CVector3f_ctor_FUN_0040d340(pCVar10);
-        auStack_78._0_4_ = CStack_b8.y * _DAT_005dc0aa;
-        auStack_78._4_4_ = CStack_b8.z * _DAT_005dc0aa;
-        auStack_78._8_4_ = afStack_ac[0] * _DAT_005dc0aa;
-        CStack_d8.x = CStack_b8.y * _DAT_005dc0aa;
+        auStack_78._0_4_ = CStack_b8.y * 0.5f;
+        auStack_78._4_4_ = CStack_b8.z * 0.5f;
+        auStack_78._8_4_ = afStack_ac[0] * 0.5f;
+        CStack_d8.x = CStack_b8.y * 0.5f;
         *(uint *)((int)&CStack_d8 + (uint)bVar12 * -8 + 4) =
              *(uint *)(auStack_78 + (uint)bVar12 * -8 + 4);
         *(float *)((int)&CStack_d8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =

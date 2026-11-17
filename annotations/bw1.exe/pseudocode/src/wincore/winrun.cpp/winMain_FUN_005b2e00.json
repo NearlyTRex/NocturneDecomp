@@ -2,24 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 345,
+    "complexity_score": 334,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 125,
+    "pseudocode_lines": 124,
     "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "undefined_data",
       "unrolled_strcpy",
       "unrolled_strlen",
-      "warning_noreturn",
-      "warning_overlapping_globals"
+      "warning_noreturn"
     ],
-    "total_lines": 340
+    "total_lines": 339
   },
   "cross_references": [
     {
@@ -328,26 +326,26 @@
     },
     {
       "addr": "02c9be68",
-      "name": "DAT_02c9be68",
-      "type": "undefined4",
+      "name": "g_HWND_02c9be68",
+      "type": "HWND",
       "value": null
     },
     {
       "addr": "02c9be6c",
-      "name": "DAT_02c9be6c",
-      "type": "undefined4",
+      "name": "g_INT_02c9be6c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c9be78",
-      "name": "DAT_02c9be78",
-      "type": "undefined4",
+      "name": "g_INT_02c9be78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c9be7c",
-      "name": "DAT_02c9be7c",
-      "type": "undefined4",
+      "name": "g_INT_02c9be7c",
+      "type": "int",
       "value": null
     },
     {
@@ -400,8 +398,8 @@
     },
     {
       "addr": "02c9cb08",
-      "name": "DAT_02c9cb08",
-      "type": "undefined4",
+      "name": "g_INT_02c9cb08",
+      "type": "int",
       "value": null
     }
   ],
@@ -616,16 +614,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Subroutine marked as non-returning",
-      "line": 40,
+      "line": 38,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -633,7 +623,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(WNDCLASSA *)((int)pWVar11",
       "severity": "moderate",
       "text": "pWVar11 = (WNDCLASSA *)((int)pWVar11 + -0x80);",
@@ -641,7 +631,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_02c9ca08",
       "severity": "mild",
       "text": "pcVar12 = &DAT_02c9ca08;",
@@ -649,7 +639,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_02c9ca08",
       "severity": "mild",
       "text": "pcVar12 = &DAT_02c9ca08;",
@@ -657,23 +647,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 59,
       "match": "DAT_02c9ca08",
       "severity": "mild",
       "text": "if (DAT_02c9ca08 != '\\0') {",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 71,
-      "match": "*(char **)(iVar9 + 0x2c9cb0c",
-      "severity": "moderate",
-      "text": "*(char **)(iVar9 + 0x2c9cb0c) = pcVar12;",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 81,
       "match": "DAT_02c9c908",
       "severity": "mild",
       "text": "GetCurrentDirectoryA(0x100,&DAT_02c9c908);",
@@ -681,7 +663,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 82,
       "match": "DAT_02c9c808",
       "severity": "mild",
       "text": "GetModuleFileNameA(hInstance,&DAT_02c9c808,0x100);",
@@ -689,7 +671,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 84,
       "match": "DAT_02c9c808",
       "severity": "mild",
       "text": "pcVar12 = &DAT_02c9c808;",
@@ -697,7 +679,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 99,
       "match": "DAT_02c9c808",
       "severity": "mild",
       "text": "SetCurrentDirectoryA(&DAT_02c9c808);",
@@ -705,7 +687,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 105,
       "match": "DAT_00000065",
       "severity": "mild",
       "text": "local_58.hIcon = LoadIconA(hInstance,&DAT_00000065);",
@@ -713,7 +695,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 106,
       "match": "DAT_00007f00",
       "severity": "mild",
       "text": "local_58.hCursor = LoadCursorA((HINSTANCE)0x0,&DAT_00007f00);",
@@ -721,7 +703,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 127,
+      "line": 125,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -729,7 +711,7 @@
     },
     {
       "description": "Pointer value `pWVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 43,
       "match": "(int)pWVar11",
       "severity": "moderate",
       "text": "pWVar11 = (WNDCLASSA *)((int)pWVar11 + -0x80);",
@@ -737,23 +719,39 @@
     },
     {
       "description": "Pointer value `pWVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)pWVar11",
       "severity": "moderate",
       "text": "} while (iVar9 < (int)pWVar11);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&g_CHAR_PTR_02c9cb0c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)&g_CHAR_PTR_02c9cb0c",
+      "severity": "moderate",
+      "text": "*(char **)((int)&g_CHAR_PTR_02c9cb0c + iVar9) = pcVar12;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 69,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char **)((int)&g_CHAR_PTR_02c9cb0c + iVar9) = pcVar12;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 87,
+      "line": 85,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -9,10 +9,10 @@
 void FUN_005bab17(void)
 
 {
-  if (DAT_0061f648 != 0) {
+  if (g_SHORT_0061f648 != 0) {
     return;
   }
-  DAT_0061f648 = 1;
+  g_SHORT_0061f648 = 1;
   FUN_005bb007("pure virtual function called!",1);
   return;
 }

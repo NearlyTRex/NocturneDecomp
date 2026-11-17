@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_00456340(SIntersectXZCylinder *cylinder)
 
 {
@@ -82,12 +80,12 @@ int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_00456340(SIntersectXZCylinder
     fVar5 = cylinder->intersect_x - cylinder->center_x;
     fVar3 = cylinder->intersect_z - cylinder->center_z;
     fVar1 = cylinder->dir_z * cylinder->dir_z + cylinder->dir_x * cylinder->dir_x;
-    fVar2 = (cylinder->dir_z * fVar3 + cylinder->dir_x * fVar5) * _DAT_005d7aa3;
+    fVar2 = (cylinder->dir_z * fVar3 + cylinder->dir_x * fVar5) * -2.0f;
     fVar5 = fVar2 * fVar2 -
-            fVar1 * _DAT_005d7aa7 *
+            fVar1 * 4.0f *
             ((fVar3 * fVar3 + fVar5 * fVar5) - cylinder->radius * cylinder->radius);
     if (0.0 <= fVar5) {
-      fVar1 = (-fVar2 - SQRT(fVar5)) / (fVar1 * _DAT_005d7aab);
+      fVar1 = (-fVar2 - SQRT(fVar5)) / (fVar1 * 2.0f);
       cylinder->param_t = fVar1;
       if (((0.0 <= fVar1) && (fVar1 <= 1.0)) && (cylinder->param_t < cylinder->closest_t)) {
         return 1;

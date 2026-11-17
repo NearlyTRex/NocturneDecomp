@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 400,
+    "complexity_score": 385,
     "cross_reference_count": 15,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 105,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 302
@@ -160,7 +159,7 @@
   "globals": [
     {
       "addr": "007bdb54",
-      "name": "DAT_007bdb54",
+      "name": "g_CKeyFramedModelInstance_007bdadc.model_name[0]",
       "type": "undefined4",
       "value": null
     }
@@ -557,14 +556,6 @@
       "severity": "moderate",
       "text": "core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_98,in_stack_ffffff38);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_007bdb54",
-      "severity": "mild",
-      "text": "model_name = &DAT_007bdb54;",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

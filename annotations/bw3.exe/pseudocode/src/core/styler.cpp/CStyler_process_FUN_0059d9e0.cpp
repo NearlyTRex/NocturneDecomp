@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_styler_cpp_CStyler_process_FUN_0059d9e0(CStyler *this_ptr,float delta_time)
 
@@ -70,7 +69,7 @@ void __cdecl core_styler_cpp_CStyler_process_FUN_0059d9e0(CStyler *this_ptr,floa
   core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
             ((CCharacter *)this_ptr,delta_time * fVar5);
   if (iVar9 == 4) {
-    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005d9f19;
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)2;
   }
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
@@ -83,11 +82,12 @@ void __cdecl core_styler_cpp_CStyler_process_FUN_0059d9e0(CStyler *this_ptr,floa
     iVar9 = pSVar10->state_index;
     if ((((iVar9 == 0x99) || (iVar9 == 0x9a)) && (iVar9 == 0x9a)) &&
        (((this_ptr->is_morph_partner == 0 &&
-         (fVar5 = delta_time * (float)_DAT_005d9f21 + this_ptr->morph_time,
+         (fVar5 = delta_time * (float)0.5 + this_ptr->morph_time,
          this_ptr->morph_time = fVar5, 1.0 <= fVar5)) && (this_ptr->demon != (CDemonActor *)0x0))))
     {
-      core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,this_ptr->demon);
-      this_ptr_00 = 0x01D81080;
+      core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
+                (g_CDemonMission_PTR_00600530,this_ptr->demon);
+      this_ptr_00 = g_CDemonMission_PTR_00600530;
       this_ptr->demon = (CDemonActor *)0x0;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
                 (this_ptr_00,(CDemonActor *)this_ptr,1);

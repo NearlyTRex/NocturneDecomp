@@ -7,9 +7,9 @@
 ; CLeaf *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df27c
+;   double g_DOUBLE_005df27c = 32767.7000000000
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01c43530
+;   int g_INT_01c43530
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     FADDP                               ; 004af197
     ADD ESP,0x4                         ; 004af199
     FSQRT                               ; 004af19c
-    MOV EAX,[0x01c43530]                ; 004af19e | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004af19e | g_INT_01c43530
     MOV EDX,EAX                         ; 004af1a3
     SAR EDX,0x1f                        ; 004af1a5
     SHL EDX,0x2                         ; 004af1a8
@@ -50,7 +50,7 @@ section .text
     SAR EAX,0x2                         ; 004af1ad
     FST float ptr [ESP + 0x4]           ; 004af1b0
     FST double ptr [ESP + 0x8]          ; 004af1b4
-    FMUL double ptr [0x005df27c]        ; 004af1b8 | DAT_005df27c
+    FMUL double ptr [0x005df27c]        ; 004af1b8 | g_DOUBLE_005df27c
     CALL crt_math.c_round_FUN_005c03a0  ; 004af1be
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004af1c3
@@ -59,7 +59,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004af1cd
     MOV EDX,dword ptr [EBX + 0x44]      ; 004af1d1
     ADD EDX,EAX                         ; 004af1d4
-    MOV EAX,[0x01c43530]                ; 004af1d6 | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004af1d6 | g_INT_01c43530
     MOV dword ptr [EBX + 0x44],EDX      ; 004af1db
     MOV EDX,EAX                         ; 004af1de
     SAR EDX,0x1f                        ; 004af1e0

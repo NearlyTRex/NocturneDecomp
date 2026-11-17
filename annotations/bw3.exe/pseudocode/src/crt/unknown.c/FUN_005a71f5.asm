@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005da800
-;   undefined4 DAT_005da808
-;   undefined4 DAT_005da810
-;   undefined4 DAT_005da818
+;   double g_DOUBLE_005da800 = 3.40282346600000E+38
+;   double g_DOUBLE_005da808 = 1.17549435100000E-38
+;   double g_DOUBLE_005da810 = -3.40282346600000E+38
+;   double g_DOUBLE_005da818 = -1.17549435100000E-38
 ;
 ; *****************************************************************************
 
@@ -44,26 +44,26 @@ section .text
     JNC 0x005a724f                      ; 005a7231
         ;   XREF to: 005a724f (CONDITIONAL_JUMP)  ; LAB_005a724f
     FLD double ptr [ESP]                ; 005a7233
-    FCOMP double ptr [0x005da800]       ; 005a7236 | DAT_005da800
+    FCOMP double ptr [0x005da800]       ; 005a7236 | g_DOUBLE_005da800
     FNSTSW AX                           ; 005a723c
     SAHF                                ; 005a723e
     JA 0x005a724f                       ; 005a723f
         ;   XREF to: 005a724f (CONDITIONAL_JUMP)  ; LAB_005a724f
     FLD double ptr [ESP]                ; 005a7241
-    FCOMP double ptr [0x005da808]       ; 005a7244 | DAT_005da808
+    FCOMP double ptr [0x005da808]       ; 005a7244 | g_DOUBLE_005da808
     FNSTSW AX                           ; 005a724a
     SAHF                                ; 005a724c
     JNC 0x005a721e                      ; 005a724d
         ;   XREF to: 005a721e (CONDITIONAL_JUMP)  ; LAB_005a721e
     FLD double ptr [ESP]                ; 005a724f
         ;   Label: LAB_005a724f
-    FCOMP double ptr [0x005da810]       ; 005a7252 | DAT_005da810
+    FCOMP double ptr [0x005da810]       ; 005a7252 | g_DOUBLE_005da810
     FNSTSW AX                           ; 005a7258
     SAHF                                ; 005a725a
     JC 0x005a726b                       ; 005a725b
         ;   XREF to: 005a726b (CONDITIONAL_JUMP)  ; LAB_005a726b
     FLD double ptr [ESP]                ; 005a725d
-    FCOMP double ptr [0x005da818]       ; 005a7260 | DAT_005da818
+    FCOMP double ptr [0x005da818]       ; 005a7260 | g_DOUBLE_005da818
     FNSTSW AX                           ; 005a7266
     SAHF                                ; 005a7268
     JBE 0x005a721e                      ; 005a7269

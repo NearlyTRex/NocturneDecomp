@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *this_ptr,float delta_time)
 
 {
@@ -27,14 +25,14 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
   bVar4 = 0;
   if (this_ptr->is_armed != 0) {
     if (this_ptr->guns_drawn == 0) {
-      fVar1 = this_ptr->shoot_blend_weight - delta_time * (float)_DAT_005da856;
+      fVar1 = this_ptr->shoot_blend_weight - delta_time * (float)2;
       this_ptr->shoot_blend_weight = fVar1;
       if (fVar1 < 0.0) {
         this_ptr->shoot_blend_weight = 0.0;
       }
     }
     else {
-      fVar1 = delta_time * (float)_DAT_005da856 + this_ptr->shoot_blend_weight;
+      fVar1 = delta_time * (float)2 + this_ptr->shoot_blend_weight;
       this_ptr->shoot_blend_weight = fVar1;
       if (1.0 < fVar1) {
         this_ptr->shoot_blend_weight = 1.0;
@@ -46,13 +44,13 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr_01,motion_name,iVar5);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,_DAT_01cee0f4,
+              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,g_INT_ARRAY_01cee0b4[0x10],
                core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
     this_ptr->aim_pitch =
-         (this_ptr->base).player_input.look_up_down_speed * _DAT_005da85e * (float)_DAT_005da856 *
-         delta_time + this_ptr->aim_pitch;
+         (this_ptr->base).player_input.look_up_down_speed * 3.141593f *
+         (float)2 * delta_time + this_ptr->aim_pitch;
     if ((int)this_ptr->aim_pitch < 0x3f490fdc) {
-      if (this_ptr->aim_pitch < _DAT_005da862) {
+      if (this_ptr->aim_pitch < -0.7853982f) {
         this_ptr->aim_pitch = -0.7853982;
       }
     }
@@ -66,7 +64,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
     puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
-    iVar5 = _DAT_01cee0f4;
+    iVar5 = g_INT_ARRAY_01cee0b4[0x10];
     *puVar3 = *puVar2;
     puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40

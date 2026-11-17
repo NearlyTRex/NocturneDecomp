@@ -2,22 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 822,
-    "complexity_score": 484,
+    "complexity_score": 588,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 264,
-    "suspect_count": 19,
+    "pseudocode_lines": 273,
+    "suspect_count": 28,
     "suspect_types": [
-      "raw_address_pointer_store",
+      "pointer_cast",
+      "raw_address_constant",
       "shadow_pointer_walk",
-      "sub84_truncation",
-      "unknown_field",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "stack_param",
+      "stack_ref",
+      "suspect_float",
+      "unknown_field"
     ],
-    "total_lines": 1086
+    "total_lines": 1095
   },
   "cross_references": [],
   "function": {
@@ -184,26 +185,26 @@
     },
     {
       "addr": "005d4b85",
-      "name": "DAT_005d4b85",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d4b85",
+      "type": "double",
+      "value": "-868.589000000000"
     },
     {
       "addr": "005d4b8d",
-      "name": "DAT_005d4b8d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d4b8d",
+      "type": "double",
+      "value": "868.589000000000"
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -331,155 +332,227 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 50,
-      "match": "*(int **)(iVar4 * 0x24 + 0x2cf5010",
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffecec",
       "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar4 * 0x24 + 0x2cf5010);",
-      "type": "raw_address_pointer_store"
+      "text": "char *in_stack_ffffecec;",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 67,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_ffffecec",
       "severity": "moderate",
-      "text": "(uVar5 = (**(code **)(*piVar2 + 0x4c))",
-      "type": "unresolved_funcptr"
+      "text": "in_stack_ffffecec = (char *)(float)(slot->options).position.y;",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_ffffecec",
       "severity": "moderate",
-      "text": "(uVar5 = (**(code **)(*piVar2 + 0x50))",
-      "type": "unresolved_funcptr"
+      "text": "(DWORD)in_stack_ffffecec,(LPVOID)(float)(slot->options).position.z,1);",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 90,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_ffffecec",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar1 + 0x3c))(piVar1);",
-      "type": "unresolved_funcptr"
+      "text": "in_stack_ffffecec = \"DirectSux: Unable to %s.  (%s)\";",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "in_stack_ffffecec = (char *)(slot->options).velocity.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "((slot->options).current_volume * (float)in_stack_ffffecec),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "(uVar3 = iStack_48 - *(int *)((int)fStack_28 + 0x14), uVar5 = (int)uVar3 >> 0x1f,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 105,
-      "match": "code *",
+      "match": "(int *)((int)fStack_28",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar1 + 0x44))(piVar1);",
-      "type": "unresolved_funcptr"
+      "text": "*(int *)((int)fStack_28 + 0x14) = iStack_48;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "(uVar3 = DStack_44 - *(int *)((int)fStack_28 + 0x1c), uVar5 = (int)uVar3 >> 0x1f,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 120,
-      "match": "code *",
+      "match": "(DWORD *)((int)fStack_28",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar2 + 0x48))(piVar2,iStack_24);",
-      "type": "unresolved_funcptr"
+      "text": "*(DWORD *)((int)fStack_28 + 0x1c) = DStack_44;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(int *)((int)fStack_28",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar2 + 0x44))(piVar2,fStack_28);",
-      "type": "unresolved_funcptr"
+      "text": "if ((update_flags == -1) || (iStack_34 != *(int *)((int)fStack_28 + 0x20))) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 138,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)fStack_30",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar2 + 0x40))(piVar2,uStack_3c,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 149,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar1 + 0x34))(piVar1,(uint)uStack_44);",
-      "type": "unresolved_funcptr"
+      "text": "*(int *)((int)fStack_30 + 0x20) = uStack_40._4_4_;",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 182,
+      "line": 137,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "text": "*(int *)((int)fStack_30 + 0x20) = uStack_40._4_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 182,
-      "match": "SUB84(",
+      "description": "Direct stack address reference",
+      "line": 165,
+      "match": "&stack0xffffecec",
       "severity": "moderate",
-      "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
-      "type": "sub84_truncation"
+      "text": "_sprintf(&stack0xffffecec,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 166,
+      "match": "&stack0xffffecec",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xffffecec,uVar7);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 206,
+      "match": "1.4013e-41",
+      "severity": "mild",
+      "text": "fStack_30 = 1.4013e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "uVar3 = uStack_40._4_4_ - *(int *)((int)fStack_28 + 0x14);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 201,
+      "line": 219,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "text": "uVar3 = uStack_40._4_4_ - *(int *)((int)fStack_28 + 0x14);",
       "type": "unknown_field"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 201,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
-      "type": "sub84_truncation"
+      "description": "Unknown/mangled field access",
+      "line": 221,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uVar3 = (*this_ptr_00->vtable->SetVolume)(this_ptr_00,uStack_40._4_4_);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 213,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 228,
+      "match": "(int *)((int)fStack_28",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar1 + 0x3c))(piVar1);",
-      "type": "unresolved_funcptr"
+      "text": "*(int *)((int)fStack_28 + 0x14) = uStack_40._4_4_;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 225,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar1 + 0x40))(piVar1);",
-      "type": "unresolved_funcptr"
+      "description": "Unknown/mangled field access",
+      "line": 228,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(int *)((int)fStack_28 + 0x14) = uStack_40._4_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 241,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 230,
+      "match": "(int *)((int)fStack_28",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar1 + 0x44))(piVar1);",
-      "type": "unresolved_funcptr"
+      "text": "uVar3 = (int)fStack_30 - *(int *)((int)fStack_28 + 0x18);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 254,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 239,
+      "match": "(float *)((int)fStack_28",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*piVar1 + 0x34))(piVar1,(uint)uStack_44);",
-      "type": "unresolved_funcptr"
+      "text": "*(float *)((int)fStack_28 + 0x18) = fStack_30;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 170,
-      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(int *)((int)fStack_28",
       "severity": "moderate",
-      "text": "pCVar3 = (CSfxSlot *)&(pCVar3->options).position;",
+      "text": "uVar3 = dwFrequency - *(int *)((int)fStack_28 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 255,
+      "match": "(DWORD *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)fStack_28 + 0x1c) = dwFrequency;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex address 0x55c7ab assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 159,
+      "match": "0x55c7ab",
+      "severity": "moderate",
+      "text": "uVar7 = 0x55c7ab;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x55c303 assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 259,
+      "match": "0x55c303",
+      "severity": "moderate",
+      "text": "uVar7 = 0x55c303;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 183,
+      "match": "pCVar1 = (T *)&(pCVar1->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CSfxSlot *)&(pCVar1->options).position;",
       "type": "shadow_pointer_walk"
     }
   ],

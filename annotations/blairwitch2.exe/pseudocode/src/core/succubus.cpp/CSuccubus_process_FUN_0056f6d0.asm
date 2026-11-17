@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_s_confused_while_walking_005ec0e1+1
+;   TerminatedCString s_s_confused_while_walking_005ec0e2
 ;   TerminatedCString s_succubus_morph_wav_005ec10c
 ;   TerminatedCString s_hdwing_cth_005ec11f
 ;   undefined4 s_hdwing_cth_005ec11f+1
@@ -16,12 +16,12 @@
 ;   undefined4 s_hdwing_cth_005ec11f+3
 ;   TerminatedCString s_succubusShutUp_005ec12a
 ;   TerminatedCString s_succubus_horny_wav_005ec139
-;   undefined4 DAT_005fc3c8
-;   undefined4 DAT_005fc3d4
-;   undefined4 DAT_005fc3d8
+;   float g_FLOAT_005fc3c8 = 1.5
+;   float g_FLOAT_005fc3d4 = 15
+;   float g_FLOAT_005fc3d8 = 4
 ;   CConsole* g_CConsolePtr = 007c158c
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_00618170
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CConsole g_CConsoleInstance
 ;   ... and 1 more
 ;
@@ -306,7 +306,7 @@ section .text
     FLD float ptr [EBX + 0x12f74]       ; 0056f996
     FADD float ptr [EBP + 0x92]         ; 0056f99c
     FST float ptr [EBX + 0x12f74]       ; 0056f9a2
-    FCOMP float ptr [0x005fc3d8]        ; 0056f9a8 | DAT_005fc3d8
+    FCOMP float ptr [0x005fc3d8]        ; 0056f9a8 | g_FLOAT_005fc3d8
     FNSTSW AX                           ; 0056f9ae
     SAHF                                ; 0056f9b0
     JBE 0x0056fae7                      ; 0056f9b1
@@ -329,7 +329,7 @@ section .text
     JZ 0x0056fae7                       ; 0056f9d8
         ;   XREF to: 0056fae7 (CONDITIONAL_JUMP)  ; LAB_0056fae7
     PUSH ESI                            ; 0056f9de
-    MOV EDI,dword ptr [0x00618170]      ; 0056f9df | DAT_00618170
+    MOV EDI,dword ptr [0x00618170]      ; 0056f9df | g_CDemonMission_PTR_00618170
     PUSH EDI                            ; 0056f9e5 | DAT_01d182f0
     MOV dword ptr [EBX + 0x70],0x2      ; 0056f9e6
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 0056f9ed
@@ -401,7 +401,7 @@ section .text
     MOV dword ptr [EDX + 0x108],EAX     ; 0056fa9b
     PUSH EDX                            ; 0056faa1
     MOV EAX,dword ptr [EBX + 0x10c]     ; 0056faa2
-    MOV EDI,dword ptr [0x00618170]      ; 0056faa8 | DAT_00618170
+    MOV EDI,dword ptr [0x00618170]      ; 0056faa8 | g_CDemonMission_PTR_00618170
     MOV dword ptr [EDX + 0x10c],EAX     ; 0056faae
     PUSH EDI                            ; 0056fab4 | DAT_01d182f0
     MOV EAX,dword ptr [EBX + 0x110]     ; 0056fab5
@@ -435,7 +435,7 @@ section .text
     ADD ESP,0x18                        ; 0056fb17
     PUSH 0x5ec12a                       ; 0056fb1a | = "succubusShutUp"
         ;   Label: LAB_0056fb1a
-    MOV EDX,dword ptr [0x006141f0]      ; 0056fb1f | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 0056fb1f | g_CEventList_PTR_006141f0
     PUSH EDX                            ; 0056fb25
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0056fb26
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -476,7 +476,7 @@ section .text
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0056fb7d
     PUSH EBX                            ; 0056fb80
-    PUSH 0x5ec0e2                       ; 0056fb81 | s_s_confused_while_walking_005ec0e1+1
+    PUSH 0x5ec0e2                       ; 0056fb81 | = "%s confused while walking to scriptDe..."
     MOV EDX,dword ptr [0x00609ed0]      ; 0056fb86 | g_CConsolePtr
     PUSH EDX                            ; 0056fb8c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0056fb8d
@@ -612,7 +612,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 0056fcda
     MOV EDX,dword ptr [EAX + 0x4]       ; 0056fcdd
     MOV dword ptr [EAX],EDX             ; 0056fce0
-    MOV EAX,[0x005fc3c8]                ; 0056fce2 | DAT_005fc3c8
+    MOV EAX,[0x005fc3c8]                ; 0056fce2 | g_FLOAT_005fc3c8
     MOV dword ptr [EBP + 0x32],ESI      ; 0056fce7
     MOV dword ptr [EBP + 0x3a],EAX      ; 0056fcea
     LEA EAX,[EBP + 0x32]                ; 0056fced
@@ -664,7 +664,7 @@ section .text
     FMUL ST0                            ; 0056fd6b
     FADDP                               ; 0056fd6d
     FSQRT                               ; 0056fd6f
-    FCOMP float ptr [0x005fc3d4]        ; 0056fd71 | DAT_005fc3d4
+    FCOMP float ptr [0x005fc3d4]        ; 0056fd71 | g_FLOAT_005fc3d4
     FNSTSW AX                           ; 0056fd77
     SAHF                                ; 0056fd79
     JNC 0x0056f82c                      ; 0056fd7a

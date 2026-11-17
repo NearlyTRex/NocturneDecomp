@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CRuleList_insert_FUN_004aacd0(CRuleList *this_ptr,int index,char *condition,char *event)
 
 {
@@ -16,13 +14,13 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004aacd0(CRuleList *this_ptr,in
   char (*src_00) [100];
   
   if ((index < 0) || (this_ptr->list_size < index)) {
-    _DAT_01d1d400 = "..\\core\\event.cpp";
-    _DAT_01d1d404 = 0x1030;
+    g_CHAR_PTR_01d1d400 = "..\\core\\event.cpp";
+    g_INT_01d1d404 = 0x1030;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CRuleList::insert - invalid index");
   }
   if (4 < this_ptr->list_size) {
-    _DAT_01d1d400 = "..\\core\\event.cpp";
-    _DAT_01d1d404 = 0x1031;
+    g_CHAR_PTR_01d1d400 = "..\\core\\event.cpp";
+    g_INT_01d1d404 = 0x1031;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CRuleList::insert - list full");
   }
   src = this_ptr->conditions + index;

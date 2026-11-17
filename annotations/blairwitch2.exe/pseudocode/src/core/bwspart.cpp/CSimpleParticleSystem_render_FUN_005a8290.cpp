@@ -13,7 +13,8 @@ void __cdecl core_bwspart_cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleP
   int *particle;
   int iVar2;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
   if (iVar1 == 0) {
     if ((this_ptr->standalone == 0) && (this_ptr->owner == (CDemonActor *)0x0)) {
       return;

@@ -7,8 +7,8 @@
 ; CTeleport *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f76be
-;   undefined4 DAT_005f76c6
+;   double g_DOUBLE_005f76be = 0.5
+;   double g_DOUBLE_005f76c6 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 00595041
     MOV EDX,dword ptr [ESP + 0x20]      ; 00595044
     MOV EAX,ESI                         ; 00595048
-    FLD double ptr [0x005f76be]         ; 0059504a | DAT_005f76be
+    FLD double ptr [0x005f76be]         ; 0059504a | g_DOUBLE_005f76be
     FLD float ptr [EDX + 0x158]         ; 00595050
     FMUL ST1                            ; 00595056
     FLD float ptr [EDX + 0x160]         ; 00595058
@@ -35,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 0059507f
     MOV ESI,ESP                         ; 00595081
     MOV dword ptr [ESP + 0x4],ECX       ; 00595083
-    FADD double ptr [0x005f76c6]        ; 00595087 | DAT_005f76c6
+    FADD double ptr [0x005f76c6]        ; 00595087 | g_DOUBLE_005f76c6
     FXCH ST3                            ; 0059508d
     FSTP float ptr [ESP + 0xc]          ; 0059508f
     FXCH ST2                            ; 00595093

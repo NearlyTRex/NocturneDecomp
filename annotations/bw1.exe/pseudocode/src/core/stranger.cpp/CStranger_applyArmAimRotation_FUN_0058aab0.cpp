@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStranger *this_ptr,int arm_side)
 
@@ -61,8 +60,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStran
   
   bVar6 = 0;
   if (arm_side == 0) {
-    local_24 = _DAT_02c8360c;
-    local_28 = _DAT_02c83614;
+    local_24 = g_INT_ARRAY_02c83600[3];
+    local_28 = g_INT_ARRAY_02c83600[5];
     core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(1.5707964,&local_11c);
     local_1cc.w = local_11c.w;
     puVar3 = (uint *)((int)&local_1cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -76,8 +75,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStran
     pCVar1 = &local_1ac;
   }
   else {
-    local_24 = _DAT_02c83610;
-    local_28 = _DAT_02c83618;
+    local_24 = g_INT_ARRAY_02c83600[4];
+    local_28 = g_INT_ARRAY_02c83600[6];
     core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(-1.5707964,&local_1dc);
     local_1cc.w = local_1dc.w;
     puVar3 = (uint *)((int)&local_1cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -141,8 +140,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStran
          *(uint *)((int)&local_ac + (uint)bVar6 * -8 + 4);
     *puVar3 = *puVar2;
     puVar3[(uint)bVar6 * -2 + 1] = puVar2[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_slerpQuaternion_FUN_005b7940
-              ((CQuaternion4f *)&DAT_006081e0,pCVar1,fVar8,&local_9c);
+    core_xform_cpp_slerpQuaternion_FUN_005b7940(&g_CQuaternion4f_006081e0,pCVar1,fVar8,&local_9c);
     pCVar1 = &local_18c;
     local_15c.w = local_9c.w;
     puVar3 = (uint *)((int)&local_15c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -191,7 +189,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStran
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
               (local_1c,&local_13c,local_1e0,local_28,
                core_skeleton_cpp_blendWeightCallback_FUN_00567360);
-    if ((float)_DAT_005f6b89 < this_ptr->arm_recoil_blend) {
+    if ((float)0.0001 < this_ptr->arm_recoil_blend) {
       core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(1.5707964,&local_5c);
       pCVar1 = &local_fc;
       local_fc.w = local_5c.w;

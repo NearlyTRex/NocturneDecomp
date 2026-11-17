@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr)
 
 {
@@ -155,10 +153,10 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f 
   
   bVar16 = 0;
   local_a4 = 0;
-  if ((float)_DAT_005d68b8 <= floor_y) {
+  if ((float)9999 <= floor_y) {
     floor_y = -9999.0;
   }
-  if (delta_time < (float)_DAT_005d68c0) {
+  if (delta_time < (float)0.01) {
     delta_time = 0.01;
   }
   this_ptr->inv_delta_time = 1.0 / delta_time;
@@ -289,7 +287,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f 
   if (0.0 < local_2e0) {
     local_2e0 = 0.0;
   }
-  local_2e0 = local_2e0 * (float)_DAT_005d68c8;
+  local_2e0 = local_2e0 * (float)-1;
   local_23c = (g_CDemonSetPtr->active_fog).scroll.x * local_2e0;
   local_238 = (g_CDemonSetPtr->active_fog).scroll.y * local_2e0;
   pCVar15 = &local_b0;
@@ -455,7 +453,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f 
         (pSVar10->force).z = (pSVar10->force).z + local_258;
         if ((local_a4 == 0) ||
            (fVar7 = (pSVar10->secondary_velocity).y, fVar2 = (pSVar10->secondary_velocity).z,
-           _DAT_005d68d0 <= SQRT(fVar2 * fVar2 + pCVar15->x * pCVar15->x + fVar7 * fVar7))) {
+           0.1f <= SQRT(fVar2 * fVar2 + pCVar15->x * pCVar15->x + fVar7 * fVar7))) {
           fVar7 = 1.0 / local_28;
           local_224 = (pSVar10->force).x * fVar7;
           local_220 = (pSVar10->force).y * fVar7;
@@ -509,7 +507,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f 
            ((local_a4 == 0 ||
             (fVar7 = (pSVar10->secondary_velocity).y, fVar2 = (pSVar10->secondary_velocity).x,
             fVar3 = (pSVar10->secondary_velocity).z,
-            _DAT_005d68d0 <= SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar7 * fVar7))))) {
+            0.1f <= SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar7 * fVar7))))) {
           core_cloth_cpp_CCloth_applyConstraints_FUN_0043fd50(this_ptr,pSVar10);
         }
         iVar11 = iVar11 + 1;
@@ -551,9 +549,9 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f 
     iVar8 = 0;
     do {
       piVar13 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar8);
-      *piVar13 = (int)ROUND((pSVar10->position).x * _DAT_005fd8d0);
-      piVar13[1] = (int)ROUND((pSVar10->position).y * _DAT_005fd8d0);
-      piVar13[2] = (int)ROUND((pSVar10->position).z * _DAT_005fd8d0);
+      *piVar13 = (int)ROUND((pSVar10->position).x * 256.0f);
+      piVar13[1] = (int)ROUND((pSVar10->position).y * 256.0f);
+      piVar13[2] = (int)ROUND((pSVar10->position).z * 256.0f);
       iVar11 = iVar11 + 1;
       pSVar10 = pSVar10 + 1;
       iVar8 = iVar8 + 0xc;

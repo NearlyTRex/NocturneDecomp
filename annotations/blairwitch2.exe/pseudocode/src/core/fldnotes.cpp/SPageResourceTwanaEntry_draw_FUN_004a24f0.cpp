@@ -33,7 +33,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_draw_FUN_004a24f0(SPageRe
       str1 = pcStack_1c + iVar3 * 0x20;
       iVar2 = _stricmp(str1,str2);
       if (iVar2 != 0) {
-        _sprintf(acStack_120,(char *)0x5d5aab);
+        _sprintf(acStack_120,"sm_%s");
         engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(this_ptr_00,acStack_120,0x23,0x2f);
         do {
           cVar1 = *str1;

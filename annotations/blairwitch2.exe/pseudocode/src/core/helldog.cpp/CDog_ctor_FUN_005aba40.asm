@@ -10,7 +10,7 @@
 ;   core_helldog.cpp_factoryFuncDog_FUN_005aba10 at 005aba23
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600c50
+;   float g_FLOAT_00600c50 = 12
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 005abe90 (UNCONDITIONAL_CALL)  ; void core_helldog.cpp_CDog_processStates_FUN_005abe90(CDog * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005abae0
     PUSH 0x5f0cd0                       ; 005abae3
-    FLD float ptr [0x00600c50]          ; 005abae8 | DAT_00600c50
+    FLD float ptr [0x00600c50]          ; 005abae8 | g_FLOAT_00600c50
     PUSH 0x5f0cd6                       ; 005abaee
     LEA ESI,[EBX + 0x10af8]             ; 005abaf3
     MOV dword ptr [EBX + 0x11398],0x40a00000 ; 005abaf9

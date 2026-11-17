@@ -10,7 +10,7 @@
 ;   core_gabriela.cpp_factoryFuncGabriella_FUN_004ad290 at 004ad2a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f736c
+;   float g_FLOAT_005f736c = 10
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_005adda0
@@ -48,7 +48,7 @@ section .text
     MOV dword ptr [EBX + 0x25670],0x0   ; 004ad33b
     MOV dword ptr [EBX + 0x25668],0x0   ; 004ad345
     MOV dword ptr [EBX + 0x2567c],0x0   ; 004ad34f
-    FLD float ptr [0x005f736c]          ; 004ad359 | DAT_005f736c
+    FLD float ptr [0x005f736c]          ; 004ad359 | g_FLOAT_005f736c
     MOV dword ptr [EBX + 0x25658],0x0   ; 004ad35f
     ADD ESP,0x4                         ; 004ad369
     FSTP float ptr [EBX + 0x601b0]      ; 004ad36c

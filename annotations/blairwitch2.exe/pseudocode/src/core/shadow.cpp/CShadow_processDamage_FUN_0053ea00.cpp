@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *param_2)
 
 {
@@ -29,7 +27,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_pt
   if (param_2->damage_type == DAMAGE_TYPE_BURN) {
     core_shadow_cpp_CShadow_playHitAlertSound_FUN_0053df40(this_ptr);
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(15.0,30.0);
-    param_2->damage_amount = fStack_14 * (float)_DAT_005e6795 * param_2->damage_amount;
+    param_2->damage_amount = fStack_14 * (float)10 * param_2->damage_amount;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
               ((CDemonActor *)this_ptr,&param_2->impact_direction,&CStack_2c);
   }
@@ -43,7 +41,8 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_pt
     if ((((iVar3 != 0xf) && (iVar3 != 0xd)) && (iVar3 != 0x10)) && (iVar3 != 0xe)) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                 ((CDemonActor *)this_ptr,
-                 (CVector3f *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x20),&CStack_44);
+                 &(g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.location.position,
+                 &CStack_44);
       fStack_38 = CStack_44.x;
       afStack_34[(uint)bVar4 * -2] = *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + 4);
       afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =

@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004cf170(CVector3f *src,CVector3i *dst)
 
 {
-  dst->x = (int)ROUND(src->x * _DAT_005e0e1c);
-  dst->y = (int)ROUND(src->y * _DAT_005e0e1c);
-  dst->z = (int)ROUND(src->z * _DAT_005e0e1c);
+  dst->x = (int)ROUND(src->x * 65536.0f);
+  dst->y = (int)ROUND(src->y * 65536.0f);
+  dst->z = (int)ROUND(src->z * 65536.0f);
   return src;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_00414910(CBodyPart *this_ptr,int vertex_count,int tri_count)
 
 {
@@ -28,15 +26,15 @@ void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_00414910(CBodyPart *this_
   this_ptr->face_texture_indices = piVar3;
   if ((0 < this_ptr->vertex_count) &&
      ((this_ptr->vertices == (CVector3i *)0x0 || (this_ptr->normals == (CVector3i *)0x0)))) {
-    _DAT_01d71de0 = "..\\core\\bodypart.cpp";
-    _DAT_01d71de4 = 0xba;
+    g_CHAR_PTR_01d71de0 = "..\\core\\bodypart.cpp";
+    g_INT_01d71de4 = 0xba;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d");
   }
   if ((0 < this_ptr->tri_count) &&
      ((this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0 ||
       (this_ptr->face_texture_indices == (int *)0x0)))) {
-    _DAT_01d71de0 = "..\\core\\bodypart.cpp";
-    _DAT_01d71de4 = 0xbf;
+    g_CHAR_PTR_01d71de0 = "..\\core\\bodypart.cpp";
+    g_INT_01d71de4 = 0xbf;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CBodyPart::setCounts - out of memory for triangles - triCount = %d");
     return;
   }

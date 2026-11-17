@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_union_cpp_CUnion_processAI_FUN_005a4d50(CUnion *this_ptr)
 
@@ -41,8 +40,8 @@ void __cdecl core_union_cpp_CUnion_processAI_FUN_005a4d50(CUnion *this_ptr)
               (this_ptr->base).base.base.base.base.location.position.x,
       fVar3 = (pCVar2->base).location.position.z -
               *(float *)((int)&(this_ptr->base).base.base.base.base.location.position + 8),
-      fVar3 = SQRT(fVar4 * fVar4 + fVar3 * fVar3), fVar3 < _DAT_005ff8f0)) &&
-     (_DAT_005ff8f4 < fVar3)) {
+      fVar3 = SQRT(fVar4 * fVar4 + fVar3 * fVar3), fVar3 < 15.0f)) &&
+     (7.0f < fVar3)) {
     (this_ptr->base).base.attack_range = fVar3;
     return;
   }

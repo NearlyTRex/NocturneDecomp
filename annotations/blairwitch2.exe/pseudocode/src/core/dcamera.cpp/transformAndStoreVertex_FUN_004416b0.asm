@@ -10,8 +10,8 @@
 ; float            Stack[0x10]:4   z
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f4dcc
-;   undefined4 DAT_0060b280
+;   float g_FLOAT_005f4dcc = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
@@ -31,15 +31,15 @@ section .text
     MOV EBX,ESP                         ; 004416c8
     MOV dword ptr [ESP + 0x14],EAX      ; 004416ca
     LEA EAX,[ESP + 0xc]                 ; 004416ce
-    MOV EDX,dword ptr [0x0060b280]      ; 004416d2 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 004416d2 | g_CDemonRenderer_PTR_0060b280
     FLD float ptr [EAX]                 ; 004416d8
-    FMUL float ptr [0x005f4dcc]         ; 004416da | DAT_005f4dcc
+    FMUL float ptr [0x005f4dcc]         ; 004416da | g_FLOAT_005f4dcc
     FISTP dword ptr [EBX]               ; 004416e0
     FLD float ptr [EAX + 0x4]           ; 004416e2
-    FMUL float ptr [0x005f4dcc]         ; 004416e5 | DAT_005f4dcc
+    FMUL float ptr [0x005f4dcc]         ; 004416e5 | g_FLOAT_005f4dcc
     FISTP dword ptr [EBX + 0x4]         ; 004416eb
     FLD float ptr [EAX + 0x8]           ; 004416ee
-    FMUL float ptr [0x005f4dcc]         ; 004416f1 | DAT_005f4dcc
+    FMUL float ptr [0x005f4dcc]         ; 004416f1 | g_FLOAT_005f4dcc
     FISTP dword ptr [EBX + 0x8]         ; 004416f7
     MOV EAX,ESP                         ; 004416fa
     MOV EBX,dword ptr [ESP + 0x20]      ; 004416fc

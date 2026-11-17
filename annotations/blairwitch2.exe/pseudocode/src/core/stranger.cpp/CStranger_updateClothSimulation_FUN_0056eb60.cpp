@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_0056eb60(CStranger *this_ptr)
 
 {
@@ -27,42 +25,42 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_0056eb60(CStr
     bVar3 = false;
     if ((int)EVar4 < 2) {
       if (((this_ptr->base).base.layer_action_index == 0) &&
-         ((float)_DAT_005ebf35 < (this_ptr->base).base.layer_action_t)) {
+         ((float)0.69999999999999996 < (this_ptr->base).base.layer_action_t)) {
         bVar3 = true;
       }
       if (((this_ptr->base).base.layer_action_index == 1) &&
-         ((this_ptr->base).base.layer_action_t < (float)_DAT_005ebf3d)) {
+         ((this_ptr->base).base.layer_action_t < (float)0.29999999999999999)) {
         bVar3 = true;
       }
       if (((this_ptr->base).base.layer_action_index == 2) &&
-         ((float)_DAT_005ebf45 < (this_ptr->base).base.layer_action_t)) {
+         ((float)0.5 < (this_ptr->base).base.layer_action_t)) {
         bVar2 = true;
       }
       if (((this_ptr->base).base.layer_action_index == 3) &&
-         ((this_ptr->base).base.layer_action_t < (float)_DAT_005ebf45)) {
+         ((this_ptr->base).base.layer_action_t < (float)0.5)) {
         bVar2 = true;
       }
       if (((this_ptr->base).base.layer_action_index == 4) &&
-         ((this_ptr->base).base.layer_action_t < (float)_DAT_005ebf4d)) {
+         ((this_ptr->base).base.layer_action_t < (float)0.40000000000000002)) {
         bVar2 = true;
       }
       if (((this_ptr->base).base.layer_action_index == 5) &&
-         ((float)_DAT_005ebf55 < (this_ptr->base).base.layer_action_t)) {
+         ((float)0.59999999999999998 < (this_ptr->base).base.layer_action_t)) {
         bVar2 = true;
       }
       if (((this_ptr->base).base.layer_action_index == 9) &&
-         ((this_ptr->base).base.layer_action_t < (float)_DAT_005ebf4d)) {
+         ((this_ptr->base).base.layer_action_t < (float)0.40000000000000002)) {
         bVar2 = true;
       }
       if ((((this_ptr->base).base.layer_action_index == 0xf) &&
-          (fVar1 = (this_ptr->base).base.layer_action_t, (float)_DAT_005ebf3d < fVar1)) &&
-         ((double)fVar1 < _DAT_005ebf5d)) {
+          (fVar1 = (this_ptr->base).base.layer_action_t, (float)0.29999999999999999 < fVar1)) &&
+         ((double)fVar1 < 0.80000000000000004)) {
         bVar2 = true;
       }
     }
     this_ptr_00 = (this_ptr->base).base.cloth_list.cloths[0];
     if (bVar3) {
-      core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"?Bip01 L Forearm" + 1,0x32);
+      core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"Bip01 L Forearm",0x32);
       core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"Bip01 L Forearm",0x33);
       core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"Bip01 L Forearm",0x34);
       core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"Bip01 L Forearm",0x35);

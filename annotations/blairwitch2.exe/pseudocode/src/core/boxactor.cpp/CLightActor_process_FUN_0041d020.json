@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 301,
+    "complexity_score": 276,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 91,
-    "suspect_count": 17,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,7 +16,6 @@
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 283
@@ -252,22 +251,6 @@
       "severity": "moderate",
       "text": "*(float *)(&stack0xfffffff8 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "(&CStack_94,(CVector3f *)&DAT_0265370c,&(this_ptr->light_orient).vec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "(&CStack_64,(CVector3f *)&DAT_0265370c,&(this_ptr->base).base.orient.vec);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

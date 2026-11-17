@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_ptr,float delta_time)
 
@@ -142,7 +141,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
           fStack_38 = SQRT(CStack_44.z * CStack_44.z +
                            CStack_44.x * CStack_44.x + CStack_44.y * CStack_44.y);
           fStack_28 = fStack_38;
-          if (fStack_38 < 0x40400000) {
+          if (fStack_38 < 3.0f) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_44,&CStack_bc);
             fStack_b0 = CStack_bc.x;
             afStack_ac[(uint)bVar9 * -2] = *(float *)((int)&CStack_bc + (uint)bVar9 * -8 + 4);
@@ -150,13 +149,13 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
                  *(float *)((int)&CStack_bc + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                   (afStack_ac[0] - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS(fStack_14) < (float)_DAT_005d8dd2) {
+            if (ABS(fStack_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,3,1);
             }
           }
           if (fStack_28 < (this_ptr->base).guard_distance) {
             this_ptr_00 = &(this_ptr->base).base.model;
-            if (_DAT_005f75e8 <= fStack_28) {
+            if (10.0f <= fStack_28) {
               iVar4 = core_actor_cpp_randomChance_FUN_0040d060(0.1);
               if (iVar4 == 0) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
@@ -182,7 +181,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
     case 2:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       iVar4 = core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004bfea0(this_ptr);
-      fVar11 = 0x40400000;
+      fVar11 = 3.0f;
       pCStack_1c = &(this_ptr->base).base.model.base;
       if (iVar4 == 0) {
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
@@ -242,7 +241,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
               afStack_4c[0] = 0.0;
               fStack_30 = SQRT(afStack_4c[1] * afStack_4c[1] + fStack_50 * fStack_50);
               fStack_24 = fStack_30;
-              if (_DAT_005f75e8 < fStack_30) {
+              if (10.0f < fStack_30) {
                 iVar4 = core_actor_cpp_randomChance_FUN_0040d060(0.1);
                 if (iVar4 == 0) {
                   iVar4 = 2;
@@ -274,7 +273,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
                      *(float *)((int)&CStack_5c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
                 fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                       (afStack_64[0] - (this_ptr->base).base.base.orient.vec.y);
-                if (ABS(fStack_14) < (float)_DAT_005d8dd2) {
+                if (ABS(fStack_14) < (float)0.52359877558333301) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                             (&(this_ptr->base).base.model.base,3,1);
                   (this_ptr->base).attack_cooldown = 1.0;
@@ -314,9 +313,9 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
       fVar11 = 0.4;
       fStack_14 = SStack_17c.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01cb8128,
-                 &CStack_f8);
+                (&g_CVector3f_0265370c,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_01cb8120[2],&CStack_f8);
       pCVar10 = &CStack_134;
       CStack_134.x = CStack_f8.x;
       *(uint *)((int)&CStack_134 + (uint)bVar9 * -8 + 4) =
@@ -371,7 +370,7 @@ LAB_004c03df:
     if (EVar2 != WALK_STATE_NO_PATH) goto LAB_004c03df;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,0,1);
     engine_console_cpp_CConsole_printf_FUN_00436710
-              (g_CConsolePtr,">%s confused while walking to scriptDest!\n" + 1);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -434,7 +433,7 @@ switchD_004c0a6d_caseD_4:
   iVar4 = (this_ptr->target_scale).x;
   iVar6 = (this_ptr->base).base.base.scale.x;
   if (iVar6 < iVar4) {
-    iVar6 = (this_ptr->base).base.base.scale.x + _DAT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.x + g_INT_01c2a370;
     iVar4 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar6;
     if (iVar4 < iVar6) {
@@ -442,7 +441,7 @@ switchD_004c0a6d_caseD_4:
     }
   }
   else if (iVar4 < iVar6) {
-    iVar6 = (this_ptr->base).base.base.scale.x - _DAT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.x - g_INT_01c2a370;
     iVar4 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar6;
     if (iVar6 < iVar4) {
@@ -452,7 +451,7 @@ switchD_004c0a6d_caseD_4:
   iVar4 = (this_ptr->target_scale).y;
   iVar6 = (this_ptr->base).base.base.scale.y;
   if (iVar6 < iVar4) {
-    iVar6 = (this_ptr->base).base.base.scale.y + _DAT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.y + g_INT_01c2a370;
     iVar4 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar6;
     if (iVar4 < iVar6) {
@@ -460,7 +459,7 @@ switchD_004c0a6d_caseD_4:
     }
   }
   else if (iVar4 < iVar6) {
-    iVar6 = (this_ptr->base).base.base.scale.y - _DAT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.y - g_INT_01c2a370;
     iVar4 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar6;
     if (iVar6 < iVar4) {
@@ -470,7 +469,7 @@ switchD_004c0a6d_caseD_4:
   iVar4 = (this_ptr->target_scale).z;
   iVar6 = (this_ptr->base).base.base.scale.z;
   if (iVar6 < iVar4) {
-    iVar6 = (this_ptr->base).base.base.scale.z + _DAT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.z + g_INT_01c2a370;
     iVar4 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar6;
     if (iVar4 < iVar6) {
@@ -479,7 +478,7 @@ switchD_004c0a6d_caseD_4:
     }
   }
   else if (iVar4 < iVar6) {
-    iVar6 = (this_ptr->base).base.base.scale.z - _DAT_01c2a370;
+    iVar6 = (this_ptr->base).base.base.scale.z - g_INT_01c2a370;
     iVar4 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar6;
     if (iVar6 < iVar4) {

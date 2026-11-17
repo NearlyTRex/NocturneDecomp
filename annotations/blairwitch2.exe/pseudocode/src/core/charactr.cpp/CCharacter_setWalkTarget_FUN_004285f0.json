@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 95,
+    "complexity_score": 79,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 2,
+    "pseudocode_lines": 64,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_truncation",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 191
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -71,8 +70,8 @@
   "globals": [
     {
       "addr": "005ccebe",
-      "name": "s_STAND_005ccebd+1",
-      "type": "undefined4",
+      "name": "s_STAND_005ccebe",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -89,27 +88,27 @@
     },
     {
       "addr": "005cced6",
-      "name": "DAT_005cced6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cced6",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005ccede",
-      "name": "DAT_005ccede",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ccede",
+      "type": "float",
+      "value": "5"
     },
     {
       "addr": "005ccee2",
-      "name": "DAT_005ccee2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ccee2",
+      "type": "float",
+      "value": "60"
     },
     {
       "addr": "005ccee6",
-      "name": "DAT_005ccee6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ccee6",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "02668498",
@@ -261,16 +260,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "(this_ptr_00,state_name,(int)pCVar6);",

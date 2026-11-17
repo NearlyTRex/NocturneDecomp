@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index)
 
 {
@@ -24,16 +22,16 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *filen
     buffer = malloc(uStack_1c);
     if (buffer == (char *)0x0) {
       _sprintf(acStack_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).");
-      _DAT_01d046a4 = 0x7e5;
-      _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
+      g_INT_01d046a4 = 0x7e5;
+      g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
       core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_6c);
     }
   }
-  file = engine_dosio_cpp_getFile_FUN_00460c70((char *)0x5cd754,filename,(char *)0x5cd751);
+  file = engine_dosio_cpp_getFile_FUN_00460c70("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf(acStack_6c,"Unable to open bitmap file (%s).");
-    _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
-    _DAT_01d046a4 = 0x7ee;
+    g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
+    g_INT_01d046a4 = 0x7ee;
     core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_6c);
   }
   uStack_18 = 0;
@@ -47,8 +45,8 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *filen
           if (iStack_14 == -1) {
             _sprintf(acStack_6c,"Unable to read bitmap file (%s).");
             _fclose(file);
-            _DAT_01d046a4 = 0x7fb;
-            _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
+            g_INT_01d046a4 = 0x7fb;
+            g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
             core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_6c);
           }
           uVar1 = uVar1 + 1;

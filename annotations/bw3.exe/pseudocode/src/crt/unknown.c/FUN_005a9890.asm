@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * crt_unknown_c_FUN_005a9890(void)
+; _FILE ** crt_unknown_c_FUN_005a9890(void)
 ;
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_005a4390 at 005a43ae
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00607678
+;   _FILE* g_FILE_PTR_00607678 = 00000000
 ;   undefined1 DAT_00607684
-;   undefined4 DAT_00607692
-;   undefined1 DAT_0060769e
+;   _FILE g_FILE_00607692
+;   undefined4 g_FILE_00607692._flag
 ;   undefined4 DAT_00607880
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079b4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079b8 = 005a7f44
@@ -45,12 +45,12 @@ section .text
     OR DI,0x3                           ; 005a98b6
     JMP 0x005a9909                      ; 005a98ba
         ;   XREF to: 005a9909 (UNCONDITIONAL_JUMP)  ; LAB_005a9909
-    MOV EBX,0x607678                    ; 005a98bc | DAT_00607678
+    MOV EBX,0x607678                    ; 005a98bc | g_FILE_PTR_00607678
         ;   Label: LAB_005a98bc
     CMP EBX,0x607880                    ; 005a98c1 | DAT_00607880
     JNC 0x005a98f1                      ; 005a98c7
         ;   XREF to: 005a98f1 (CONDITIONAL_JUMP)  ; LAB_005a98f1
-    TEST byte ptr [EBX + 0xc],0x3       ; 005a98c9 | DAT_00607684 | DAT_0060769e
+    TEST byte ptr [EBX + 0xc],0x3       ; 005a98c9 | DAT_00607684 | g_FILE_00607692._flag
         ;   Label: LAB_005a98c9
     JNZ 0x005a98e6                      ; 005a98cd
         ;   XREF to: 005a98e6 (CONDITIONAL_JUMP)  ; LAB_005a98e6
@@ -84,7 +84,7 @@ section .text
     PUSH 0x1a                           ; 005a9909
         ;   Label: LAB_005a9909
     PUSH 0x0                            ; 005a990b
-    PUSH EBX                            ; 005a990d | DAT_00607692
+    PUSH EBX                            ; 005a990d | g_FILE_00607692
     CALL crt_memory.c_memset_FUN_005a28f0 ; 005a990e
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0xc],EDI       ; 005a9913

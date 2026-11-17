@@ -20,8 +20,8 @@
 ;   undefined1* switchdataD_0057ee70 = 0057ef2d
 ;   TerminatedCString s_core_turret_cpp_005ed714
 ;   TerminatedCString s_CTurret_getCurFrame_inva_005ed727
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
@@ -83,8 +83,8 @@ section .text
         ;   Label: default
     MOV ESI,0x1c1                       ; 0057ef0f
     PUSH 0x5ed727                       ; 0057ef14 | = "CTurret::getCurFrame - invalid state"
-    MOV dword ptr [0x01d046a0],ECX      ; 0057ef19 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0057ef1f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0057ef19 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0057ef1f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0057ef25
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0057ef2a

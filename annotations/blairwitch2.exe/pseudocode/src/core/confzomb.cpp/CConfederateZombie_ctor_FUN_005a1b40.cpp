@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CConfederateZombie *this_ptr)
 
 {
@@ -32,9 +30,9 @@ CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1
   (this_ptr_01->base).walk_state_3_motion = 0;
   pcVar5 = (this_ptr_01->base).flinch_motion_name;
   (this_ptr_01->base).idle_motion = 0;
-  fVar2 = _DAT_005fef8c;
+  fVar2 = 25.0f;
   (this_ptr_01->base).walk_motion = 1;
-  fVar3 = _DAT_005fef90;
+  fVar3 = 6.0f;
   (this_ptr_01->base).run_motion = 1;
   pcVar4 = "flinch";
   (this_ptr_01->base).can_flinch = 1;

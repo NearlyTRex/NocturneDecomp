@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_clearZBufferNative_FUN_0055b254(void)
 
 {
   bool bVar1;
   int iVar2;
   int iVar3;
-  ulonglong *puVar4;
+  double *pdVar4;
   
-  _DAT_0061c794 = DAT_0061c78c;
-  puVar4 = (ulonglong *)(_DAT_01c2b64c + _DAT_01c35e4c * DAT_006141b8 * 4);
-  iVar2 = ((_DAT_01c35e54 - _DAT_01c35e4c) + 1) * DAT_006141b8;
+  g_DOUBLE_0061c794 = g_DOUBLE_0061c78c;
+  pdVar4 = (double *)(g_UINT_PTR_ARRAY_01c2b64c[0] + g_INT_01c35e4c * g_INT_006141b8);
+  iVar2 = ((g_INT_01c35e54 - g_INT_01c35e4c) + 1) * g_INT_006141b8;
   do {
-    *puVar4 = _DAT_0061c794;
-    puVar4[1] = _DAT_0061c794;
-    puVar4[2] = _DAT_0061c794;
-    puVar4[3] = _DAT_0061c794;
-    puVar4[4] = _DAT_0061c794;
-    puVar4[5] = _DAT_0061c794;
-    puVar4[6] = _DAT_0061c794;
-    puVar4[7] = _DAT_0061c794;
-    puVar4 = puVar4 + 8;
+    *pdVar4 = g_DOUBLE_0061c794;
+    pdVar4[1] = g_DOUBLE_0061c794;
+    pdVar4[2] = g_DOUBLE_0061c794;
+    pdVar4[3] = g_DOUBLE_0061c794;
+    pdVar4[4] = g_DOUBLE_0061c794;
+    pdVar4[5] = g_DOUBLE_0061c794;
+    pdVar4[6] = g_DOUBLE_0061c794;
+    pdVar4[7] = g_DOUBLE_0061c794;
+    pdVar4 = pdVar4 + 8;
     iVar3 = iVar2 + -0x10;
     bVar1 = 0xf < iVar2;
     iVar2 = iVar3;

@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 222,
+    "complexity_score": 174,
     "cross_reference_count": 6,
     "function_call_count": 9,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 142,
-    "suspect_count": 6,
+    "pseudocode_lines": 144,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_alignment_array",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 474
+    "total_lines": 476
   },
   "cross_references": [
     {
@@ -158,67 +156,67 @@
     },
     {
       "addr": "005df5ec",
-      "name": "DAT_005df5ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df5ec",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "005df5f4",
-      "name": "DAT_005df5f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df5f4",
+      "type": "double",
+      "value": "-0.200000000000000"
     },
     {
       "addr": "005df5fc",
-      "name": "DAT_005df5fc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df5fc",
+      "type": "double",
+      "value": "0.0578000000000000"
     },
     {
       "addr": "0061cb70",
-      "name": "DAT_0061cb70",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_0061cb70",
+      "type": "char[60]",
       "value": null
     },
     {
       "addr": "0061cb74",
-      "name": "DAT_0061cb74",
-      "type": "undefined2",
+      "name": "g_CHAR_ARRAY_0061cb70+4",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "006236b8",
-      "name": "DAT_006236b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006236b8",
+      "type": "CSound*",
+      "value": "02c82a60"
     },
     {
       "addr": "01c58a9c",
-      "name": "DAT_01c58a9c",
-      "type": "undefined4",
+      "name": "g_INT_01c58a9c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c58aa0",
-      "name": "DAT_01c58aa0",
-      "type": "undefined4",
+      "name": "g_CSmokeParticle_ARRAY_01c58aa0",
+      "type": "CSmokeParticle[2048]",
       "value": null
     },
     {
       "addr": "01c6eaa0",
-      "name": "DAT_01c6eaa0",
-      "type": "undefined4",
+      "name": "g_INT_01c6eaa0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6eaa8",
-      "name": "DAT_01c6eaa8",
-      "type": "undefined4",
+      "name": "g_CBulletHole_ARRAY_01c6eaa8",
+      "type": "CBulletHole[256]",
       "value": null
     },
     {
       "addr": "01c6eaac",
-      "name": "DAT_01c6eaac",
+      "name": "g_CBulletHole_ARRAY_01c6eaa8[0].position.y",
       "type": "undefined4",
       "value": null
     }
@@ -466,51 +464,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 12,
       "match": "afStackY_1024",
       "severity": "moderate",
       "text": "float afStackY_1024 [996];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_01c6eaa8",
-      "severity": "mild",
-      "text": "local_14 = (float *)&DAT_01c6eaa8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_01c58aa0",
-      "severity": "mild",
-      "text": "((CSmokeParticle *)(&DAT_01c58aa0 + iVar2),impact_pos,0.3,(CVector3f *)0x0,0xffff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_0061cb70",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_0061cb70;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 86,
+      "line": 87,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     }
   ]

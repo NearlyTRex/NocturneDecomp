@@ -11,7 +11,7 @@
 ;   core_thehand.cpp_CTheHand_process_FUN_00599150 at 00599290
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c8ad48
+;   int g_INT_02c8ad48
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
         ;   Label: core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0
     SUB ESP,0x30                        ; 00599be1
     MOV EDX,ESI                         ; 00599be4
-    MOV ECX,dword ptr [0x02c8ad48]      ; 00599be6 | DAT_02c8ad48
+    MOV ECX,dword ptr [0x02c8ad48]      ; 00599be6 | g_INT_02c8ad48
     LEA EAX,[ECX*0x4 + 0x0]             ; 00599bec
     SUB EAX,ECX                         ; 00599bf3
     MOV ECX,dword ptr [ESP + 0x38]      ; 00599bf5

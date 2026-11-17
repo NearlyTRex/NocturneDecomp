@@ -13,8 +13,8 @@ uint FUN_005c39c0(int param_1)
   DWORD DVar2;
   
   (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2a8)(param_1);
-  if (DAT_0061f414 != (code *)0x0) {
-    iVar1 = (*DAT_0061f414)(param_1);
+  if (g_PTR_0061f414 != (byte *)0x0) {
+    iVar1 = (*(code *)g_PTR_0061f414)(param_1);
     if (iVar1 != 0) {
       (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);
       return 1;

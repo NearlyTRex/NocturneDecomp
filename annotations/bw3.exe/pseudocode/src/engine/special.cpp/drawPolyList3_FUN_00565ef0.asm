@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   render_flags
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_01ed3198
-;   undefined4 DAT_02cf6024
-;   undefined4 DAT_02cf6030
+;   int g_INT_01c6cee8
+;   int g_INT_01ed3198
+;   void* g_PTR_02cf6024
+;   void* g_PTR_02cf6030
 ;
 ; *****************************************************************************
 
@@ -28,16 +28,16 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 00565ef7
     MOV EBX,dword ptr [ESP + 0x24]      ; 00565efb
     MOV EBP,dword ptr [ESP + 0x28]      ; 00565eff
-    CMP dword ptr [0x01c6cee8],0x0      ; 00565f03 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 00565f03 | g_INT_01c6cee8
     JZ 0x00565f8d                       ; 00565f0a
         ;   XREF to: 00565f8d (CONDITIONAL_JUMP)  ; LAB_00565f8d
-    MOV EAX,[0x01ed3198]                ; 00565f10 | DAT_01ed3198
-    MOV ECX,dword ptr [0x02cf6030]      ; 00565f15 | DAT_02cf6030
+    MOV EAX,[0x01ed3198]                ; 00565f10 | g_INT_01ed3198
+    MOV ECX,dword ptr [0x02cf6030]      ; 00565f15 | g_PTR_02cf6030
     ADD EAX,EBP                         ; 00565f1b
     TEST ECX,ECX                        ; 00565f1d
     JNZ 0x00565f97                      ; 00565f1f
         ;   XREF to: 00565f97 (CONDITIONAL_JUMP)  ; LAB_00565f97
-    MOV [0x01ed3198],EAX                ; 00565f25 | DAT_01ed3198
+    MOV [0x01ed3198],EAX                ; 00565f25 | g_INT_01ed3198
     XOR ESI,ESI                         ; 00565f2a
     TEST EBP,EBP                        ; 00565f2c
     JLE 0x00565f80                      ; 00565f2e
@@ -65,7 +65,7 @@ section .text
     PUSH EAX                            ; 00565f68
     INC ESI                             ; 00565f69
     MOV dword ptr [ESP + 0x14],EDX      ; 00565f6a
-    CALL dword ptr [0x02cf6024]         ; 00565f6e | DAT_02cf6024
+    CALL dword ptr [0x02cf6024]         ; 00565f6e | g_PTR_02cf6024
     ADD ESP,0xc                         ; 00565f74
     CMP ESI,EBP                         ; 00565f77
     JL 0x00565f30                       ; 00565f79
@@ -94,8 +94,8 @@ section .text
     PUSH EBP                            ; 00565f9c
     PUSH EBX                            ; 00565f9d
     PUSH EDI                            ; 00565f9e
-    MOV [0x01ed3198],EAX                ; 00565f9f | DAT_01ed3198
-    CALL dword ptr [0x02cf6030]         ; 00565fa4 | DAT_02cf6030
+    MOV [0x01ed3198],EAX                ; 00565f9f | g_INT_01ed3198
+    CALL dword ptr [0x02cf6030]         ; 00565fa4 | g_PTR_02cf6030
     ADD ESP,0x10                        ; 00565faa
     ADD ESP,0xc                         ; 00565fad
     POP EBP                             ; 00565fb0

@@ -9,7 +9,8 @@
 int __cdecl core_event_cpp_isValidIdentifierChar_FUN_004aa5e0(int ch)
 
 {
-  if (((((&DAT_00626114)[(byte)((char)ch + 1)] & 0xe0) == 0) && (ch != 0x5f)) && (ch != 0x2d)) {
+  if ((((g_UCHAR_ARRAY_00626114[(byte)((char)ch + 1)] & 0xe0) == 0) && (ch != 0x5f)) && (ch != 0x2d)
+     ) {
     return 0;
   }
   return 1;

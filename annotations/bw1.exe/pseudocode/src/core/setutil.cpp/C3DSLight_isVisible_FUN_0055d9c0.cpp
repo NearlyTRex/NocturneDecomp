@@ -22,7 +22,7 @@ int __cdecl core_setutil_cpp_C3DSLight_isVisible_FUN_0055d9c0(C3DSLight *this_pt
   CStack_18.max.y = CStack_18.max.x;
   CStack_18.max.z = CStack_18.max.x;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (DAT_00612560,&this_ptr->pos);
+            (g_CDemonRenderer_PTR_00612560,&this_ptr->pos);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_18,0);
   return iVar1;
 }

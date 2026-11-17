@@ -329,7 +329,7 @@ section .text
     POP ESI                             ; 0059eb71
     POP EBX                             ; 0059eb72
     RET                                 ; 0059eb73
-    PUSH 0x5ef956                       ; 0059eb74 | DAT_005ef956
+    PUSH 0x5ef956                       ; 0059eb74 | = "Burn"
         ;   Label: LAB_0059eb74
     PUSH EAX                            ; 0059eb79
     CALL core_muzzle.cpp_SStateMachine_addState_FUN_0059d650 ; 0059eb7a
@@ -338,7 +338,7 @@ section .text
     POP ESI                             ; 0059eb82
     POP EBX                             ; 0059eb83
     RET                                 ; 0059eb84
-    PUSH 0x5ef95b                       ; 0059eb85 | DAT_005ef95b
+    PUSH 0x5ef95b                       ; 0059eb85 | = "Burn"
         ;   Label: LAB_0059eb85
     PUSH EAX                            ; 0059eb8a
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 0059eb8b

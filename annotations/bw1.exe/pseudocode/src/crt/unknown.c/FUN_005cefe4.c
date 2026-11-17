@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005cefe4(short *param_1,int param_2)
 
 {
-  uint *puVar1;
+  char **ppcVar1;
   short *psVar2;
-  void *ptr;
-  void *pvVar3;
+  char *ptr;
+  char *pcVar3;
   short sVar4;
   short sVar5;
   byte *puVar6;
   short *psVar7;
   SIZE_T n;
-  uint *dest;
+  char **dest;
   int iVar8;
   short *psVar9;
   
-  dest = _DAT_02c9f6d8;
+  dest = (char **)g_INT_02c9f6d8;
   do {
     psVar7 = (short *)*dest;
     if (psVar7 == (short *)0x0) {
-      return (int)_DAT_02c9f6d8 - (int)dest >> 2;
+      return g_INT_02c9f6d8 - (int)dest >> 2;
     }
     sVar4 = *param_1;
     psVar9 = param_1;
@@ -37,25 +35,25 @@ int FUN_005cefe4(short *param_1,int param_2)
       sVar5 = FUN_005cf2d0(*psVar9);
       if (sVar4 != sVar5) break;
       if (*psVar7 == 0x3d) {
-        iVar8 = (int)dest - (int)_DAT_02c9f6d8 >> 2;
+        iVar8 = (int)dest - g_INT_02c9f6d8 >> 2;
         if (param_2 == 0) {
           return iVar8 + 1;
         }
-        ptr = (void *)*dest;
-        pvVar3 = ptr;
-        while (pvVar3 != (void *)0x0) {
+        ptr = *dest;
+        pcVar3 = ptr;
+        while (pcVar3 != (char *)0x0) {
           *dest = dest[1];
-          puVar1 = dest + 1;
+          ppcVar1 = dest + 1;
           dest = dest + 1;
-          pvVar3 = (void *)*puVar1;
+          pcVar3 = *ppcVar1;
         }
-        if (_DAT_02c9f6d0 != (uint *)0x0) {
-          if (*(char *)(iVar8 + (int)_DAT_02c9f6d0) != '\0') {
+        if (g_CHAR_PTR_PTR_02c9f6d0 != (char **)0x0) {
+          if (*(char *)(iVar8 + (int)g_CHAR_PTR_PTR_02c9f6d0) != '\0') {
             debugFree(ptr);
           }
-          n = (int)dest - (int)_DAT_02c9f6d8 >> 2;
-          memmove(dest,_DAT_02c9f6d0,n);
-          _DAT_02c9f6d0 = dest;
+          n = (int)dest - g_INT_02c9f6d8 >> 2;
+          memmove(dest,g_CHAR_PTR_PTR_02c9f6d0,n);
+          g_CHAR_PTR_PTR_02c9f6d0 = dest;
           if (iVar8 < (int)n) {
             puVar6 = (byte *)(iVar8 + (int)dest);
             do {

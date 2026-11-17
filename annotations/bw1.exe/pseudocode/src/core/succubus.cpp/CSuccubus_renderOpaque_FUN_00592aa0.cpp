@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *this_ptr)
 
 {
@@ -25,7 +23,8 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *thi
   int iStack_c;
   
   bVar5 = 0;
-  iStack_c = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);
+  iStack_c = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180
+                       (g_CDemonRenderer_PTR_00612560);
   if (iStack_c == 0) {
     (this_ptr->base).base.was_rendered_opaque = 0;
   }
@@ -59,7 +58,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *thi
           core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005232d0
                     (this_ptr_00,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0,2);
           core_morph_cpp_CMorph_render_FUN_005237e0
-                    (this_ptr_00,this_ptr->morph_timer / _DAT_00606278);
+                    (this_ptr_00,this_ptr->morph_timer / 4.0f);
         }
       }
       else {
@@ -67,9 +66,9 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *thi
                   (model_ptr,-1,0xffffffff,1,0);
         core_cloth_cpp_CClothList_render_FUN_00441ff0(&this_ptr->hotdemon_cloth_list,model_ptr);
       }
-      if ((_DAT_01d39d34 != 0) &&
-         (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-         iVar1 == 0)) {
+      if ((g_INT_01d39d34 != 0) &&
+         (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                            (g_CDemonRenderer_PTR_00612560), iVar1 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_005254b0
                   (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);

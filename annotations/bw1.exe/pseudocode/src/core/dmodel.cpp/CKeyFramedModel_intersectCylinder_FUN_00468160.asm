@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d964c
 ;   TerminatedCString s_Tried_to_call_CKeyFramed_005d965f
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
@@ -67,8 +67,8 @@ section .text
     MOV EAX,0x5d964c                    ; 004681b0 | = "..\\core\\dmodel.cpp"
     MOV EDX,0x40e                       ; 004681b5
     PUSH 0x5d965f                       ; 004681ba | = "Tried to call CKeyFramedModel::inters..."
-    MOV [0x01d1d400],EAX                ; 004681bf | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 004681c4 | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 004681bf | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 004681c4 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004681ca
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004681cf

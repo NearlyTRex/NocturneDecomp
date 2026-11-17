@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 50,
+    "complexity_score": 19,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 42
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -57,8 +54,8 @@
   "globals": [
     {
       "addr": "01cb82f0",
-      "name": "DAT_01cb82f0",
-      "type": "undefined4",
+      "name": "g_INT_01cb82f0",
+      "type": "int",
       "value": null
     },
     {
@@ -75,38 +72,38 @@
     },
     {
       "addr": "01cbcaf4",
-      "name": "DAT_01cbcaf4",
-      "type": "undefined4",
+      "name": "g_INT_01cbcaf4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cbcaf8",
-      "name": "DAT_01cbcaf8",
-      "type": "undefined4",
+      "name": "g_INT_01cbcaf8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cdde3c",
-      "name": "DAT_01cdde3c",
-      "type": "undefined4",
+      "name": "g_INT_01cdde3c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cdde40",
-      "name": "DAT_01cdde40",
-      "type": "undefined4",
+      "name": "g_INT_01cdde40",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cde344",
-      "name": "DAT_01cde344",
-      "type": "undefined4",
+      "name": "g_INT_01cde344",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cde348",
-      "name": "DAT_01cde348",
-      "type": "undefined4",
+      "name": "g_INT_01cde348",
+      "type": "int",
       "value": null
     }
   ],
@@ -230,22 +227,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01cbcaf4",
-      "severity": "mild",
-      "text": "} while (pCVar2 != (CBloodParticle *)&DAT_01cbcaf4);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

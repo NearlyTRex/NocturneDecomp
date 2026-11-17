@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   edge_list_count
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -53,11 +53,11 @@ section .text
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x4fe                       ; 00436a93
     ADD ESP,0xc                         ; 00436a98
-    MOV [0x01d71de4],EAX                ; 00436a9b | DAT_01d71de4
+    MOV [0x01d71de4],EAX                ; 00436a9b | g_INT_01d71de4
     MOV EAX,ESP                         ; 00436aa0
     MOV EBP,0x5b8b9b                    ; 00436aa2
     PUSH EAX                            ; 00436aa7
-    MOV dword ptr [0x01d71de0],EBP      ; 00436aa8 | DAT_01d71de0
+    MOV dword ptr [0x01d71de0],EBP      ; 00436aa8 | g_CHAR_PTR_01d71de0
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00436aae
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00436ab3
@@ -127,8 +127,8 @@ section .text
         ;   Label: LAB_00436b54
     MOV EDI,0x4f7                       ; 00436b59
     PUSH 0x5b8b57                       ; 00436b5e
-    MOV dword ptr [0x01d71de0],ECX      ; 00436b63 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00436b69 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00436b63 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 00436b69 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00436b6f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00436b74

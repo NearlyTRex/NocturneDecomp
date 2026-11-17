@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 98,
+    "complexity_score": 83,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 82
   },
@@ -86,26 +85,26 @@
     },
     {
       "addr": "005cb0d3",
-      "name": "DAT_005cb0d3",
-      "type": "undefined1",
+      "name": "s_CGun_005cb0d3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cb0d4",
-      "name": "DAT_005cb0d4",
-      "type": "undefined1",
+      "name": "s_Gun_005cb0d3+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cb0d5",
-      "name": "DAT_005cb0d5",
-      "type": "undefined1",
+      "name": "s_un_005cb0d3+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cb0d6",
-      "name": "DAT_005cb0d6",
-      "type": "undefined1",
+      "name": "s_n_005cb0d3+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -254,14 +253,6 @@
       "severity": "mild",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005cb0d3",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005cb0d3;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   void* PTR_ExitProcess_005c8534 = 001c8ce8
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2e0 = 005bce04
-;   undefined4 DAT_0061f2ec
-;   undefined4 DAT_02680170
+;   void* g_PTR_0061f2ec = 00000000
+;   int g_INT_02680170
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bce04
@@ -26,16 +26,16 @@
 
 section .text
 
-    CMP dword ptr [0x02680170],0x0      ; 005bd0d0 | DAT_02680170
+    CMP dword ptr [0x02680170],0x0      ; 005bd0d0 | g_INT_02680170
         ;   Label: crt_unknown.c_FUN_005bd0d0
     JZ 0x005bd0f4                       ; 005bd0d7
         ;   XREF to: 005bd0f4 (CONDITIONAL_JUMP)  ; LAB_005bd0f4
-    CMP dword ptr [0x0061f2ec],0x0      ; 005bd0d9 | DAT_0061f2ec
+    CMP dword ptr [0x0061f2ec],0x0      ; 005bd0d9 | g_PTR_0061f2ec
     JZ 0x005bd10b                       ; 005bd0e0
         ;   XREF to: 005bd10b (CONDITIONAL_JUMP)  ; LAB_005bd10b
     PUSH 0xff                           ; 005bd0e2
     PUSH 0x0                            ; 005bd0e7
-    CALL dword ptr [0x0061f2ec]         ; 005bd0e9 | DAT_0061f2ec
+    CALL dword ptr [0x0061f2ec]         ; 005bd0e9 | g_PTR_0061f2ec
     ADD ESP,0x8                         ; 005bd0ef
     JMP 0x005bd10b                      ; 005bd0f2
         ;   XREF to: 005bd10b (UNCONDITIONAL_JUMP)  ; LAB_005bd10b

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 167,
+    "complexity_score": 353,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 6,
+    "pseudocode_lines": 98,
+    "suspect_count": 24,
     "suspect_types": [
-      "stack_ref",
-      "undefined_data",
-      "unresolved_funcptr",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 325
+    "total_lines": 336
   },
   "cross_references": [],
   "function": {
@@ -131,20 +130,20 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf49c4",
-      "name": "DAT_02cf49c4",
-      "type": "undefined4",
+      "name": "g_IDirectSound_PTR_02cf49c4",
+      "type": "IDirectSound*",
       "value": null
     },
     {
@@ -155,67 +154,67 @@
     },
     {
       "addr": "02cf5030",
-      "name": "DAT_02cf5030",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5054",
-      "name": "DAT_02cf5054",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[18]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5058",
-      "name": "DAT_02cf5058",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[19]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf505c",
-      "name": "DAT_02cf505c",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[20]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5060",
-      "name": "DAT_02cf5060",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[21]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5064",
-      "name": "DAT_02cf5064",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[22]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5068",
-      "name": "DAT_02cf5068",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[23]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf506c",
-      "name": "DAT_02cf506c",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[24]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5070",
-      "name": "DAT_02cf5070",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[25]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5074",
-      "name": "DAT_02cf5074",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[26]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf5078",
-      "name": "DAT_02cf5078",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[27]",
       "type": "undefined4",
       "value": null
     }
@@ -322,44 +321,188 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 34,
-      "match": "DAT_02cf5030",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_02cf5030 + iVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
-      "match": "code *",
+      "match": "(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02cf500c",
       "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*_DAT_02cf49c4 + 0x14))();",
-      "type": "unresolved_funcptr"
+      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02cf500c + iVar2 + 0x24);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 75,
-      "match": "code *",
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 2]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 2]",
       "severity": "moderate",
-      "text": "uVar5 = (*(code *)**(uint **)*piVar6)();",
-      "type": "unresolved_funcptr"
+      "text": "|| ((int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 2] < 1)) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Pointer value `&sfx_handle->vtable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&sfx_handle->vtable",
+      "severity": "moderate",
+      "text": "sfx_handle = (IDirectSoundBuffer *)((int)&sfx_handle->vtable + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02cf500c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02cf500c",
+      "severity": "moderate",
+      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_02cf500c + iVar2 + 0x24);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "if (0x1e < (int)sfx_handle) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "ppDSBufferDuplicate = g_IDirectSoundBuffer_PTR_ARRAY_02cf500c + (int)sfx_handle * 9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pIVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)pIVar1",
+      "severity": "moderate",
+      "text": "(g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)pIVar1 * 9] != *ppIVar4));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pIVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)pIVar1",
+      "severity": "moderate",
+      "text": "pIVar1 = g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)pIVar1 * 9 + 4]) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 2] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 1]",
+      "severity": "moderate",
+      "text": "[(int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 1] * 9 + 3] = sfx_handle;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 72,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 1]",
+      "severity": "moderate",
+      "text": "[(int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[sample_buffer_id * 6 + 1] * 9 + 3] = sfx_handle;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 2] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 3] = (IDirectSoundBuffer *)0x0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 78,
-      "match": "&stack0xfffffcc4",
+      "match": "(int)sfx_handle",
       "severity": "moderate",
-      "text": "_sprintf(&stack0xfffffcc4,\"DirectSux: Unable to %s.  (%s)\");",
-      "type": "stack_ref"
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 4] = pIVar1;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xfffffcc4",
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)sfx_handle",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xfffffcc4);",
-      "type": "stack_ref"
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c + (int)sfx_handle * 9 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 89,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "if (g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 1] ==",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_0055a9f0((int)sfx_handle);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 95,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 7] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 8] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 6] = (IDirectSoundBuffer *)0x0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 100,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[(int)sfx_handle * 9 + 5] = (IDirectSoundBuffer *)0x0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 101,
+      "match": "(int)sfx_handle",
+      "severity": "moderate",
+      "text": "return (int)sfx_handle;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "sfx_handle = (IDirectSoundBuffer *)((int)&sfx_handle->vtable + 1);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

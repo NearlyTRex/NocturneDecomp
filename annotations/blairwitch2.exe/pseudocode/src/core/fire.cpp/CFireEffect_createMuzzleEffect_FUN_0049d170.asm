@@ -13,7 +13,7 @@
 ;   core_union.cpp_CUnion_fireShotgun_FUN_005a5460 at 005a5685
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c8672c
+;   int g_INT_01c8672c
 ;
 ; Called Functions:
 ;   core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360
@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 0049d170
         ;   Label: core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170
     PUSH EDI                            ; 0049d171
-    MOV EDX,dword ptr [0x01c8672c]      ; 0049d172 | DAT_01c8672c
+    MOV EDX,dword ptr [0x01c8672c]      ; 0049d172 | g_INT_01c8672c
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049d178
     SUB EAX,EDX                         ; 0049d17f
     SHL EAX,0x3                         ; 0049d181
@@ -33,13 +33,13 @@ section .text
     SHL EAX,0x2                         ; 0049d186
     INC EDX                             ; 0049d189
     ADD EAX,0x1c86730                   ; 0049d18a
-    MOV dword ptr [0x01c8672c],EDX      ; 0049d18f | DAT_01c8672c
+    MOV dword ptr [0x01c8672c],EDX      ; 0049d18f | g_INT_01c8672c
     CMP EDX,0x14                        ; 0049d195
     JL 0x0049d1a4                       ; 0049d198
         ;   XREF to: 0049d1a4 (CONDITIONAL_JUMP)  ; LAB_0049d1a4
     PUSH EBX                            ; 0049d19a
     XOR EBX,EBX                         ; 0049d19b
-    MOV dword ptr [0x01c8672c],EBX      ; 0049d19d | DAT_01c8672c
+    MOV dword ptr [0x01c8672c],EBX      ; 0049d19d | g_INT_01c8672c
     POP EBX                             ; 0049d1a3
     MOV ESI,dword ptr [ESP + 0x14]      ; 0049d1a4
         ;   Label: LAB_0049d1a4

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c832a8
+;   float g_FLOAT_02c832a8
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00573c50
@@ -37,7 +37,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0057cbc4
     FLD float ptr [ESP + 0x4]           ; 0057cbc8
     ADD ESP,0x4                         ; 0057cbcc
-    FMUL float ptr [0x02c832a8]         ; 0057cbcf | DAT_02c832a8
+    FMUL float ptr [0x02c832a8]         ; 0057cbcf | g_FLOAT_02c832a8
     SUB ESP,0x4                         ; 0057cbd5
     FSTP float ptr [ESP]                ; 0057cbd8
     PUSH 0x3                            ; 0057cbdb

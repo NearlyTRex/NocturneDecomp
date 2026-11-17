@@ -15,7 +15,7 @@
 ;   core_hero.cpp_CHero_findHeroAction_FUN_004eca10 at 004eca95
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e492d
+;   double g_DOUBLE_005e492d = 10
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -52,7 +52,7 @@ section .text
     FLD float ptr [EBX + 0x20]          ; 004ec0d0
     FSUB float ptr [ESI + 0x20]         ; 004ec0d3
     FABS                                ; 004ec0d6
-    FCOMP double ptr [0x005e492d]       ; 004ec0d8 | DAT_005e492d
+    FCOMP double ptr [0x005e492d]       ; 004ec0d8 | g_DOUBLE_005e492d
     FNSTSW AX                           ; 004ec0de
     SAHF                                ; 004ec0e0
     JBE 0x004ec0f9                      ; 004ec0e1
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_004ec0f9
     FSUB float ptr [ESI + 0x24]         ; 004ec0fc
     FABS                                ; 004ec0ff
-    FCOMP double ptr [0x005e492d]       ; 004ec101 | DAT_005e492d
+    FCOMP double ptr [0x005e492d]       ; 004ec101 | g_DOUBLE_005e492d
     FNSTSW AX                           ; 004ec107
     SAHF                                ; 004ec109
     JA 0x004ec0e3                       ; 004ec10a
@@ -78,7 +78,7 @@ section .text
     FLD float ptr [EBX + 0x28]          ; 004ec10c
     FSUB float ptr [ESI + 0x28]         ; 004ec10f
     FABS                                ; 004ec112
-    FCOMP double ptr [0x005e492d]       ; 004ec114 | DAT_005e492d
+    FCOMP double ptr [0x005e492d]       ; 004ec114 | g_DOUBLE_005e492d
     FNSTSW AX                           ; 004ec11a
     SAHF                                ; 004ec11c
     JA 0x004ec0e3                       ; 004ec11d

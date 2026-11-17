@@ -13,17 +13,17 @@
 ;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0 at 0054c912
 ;
 ; Referenced Globals:
-;   undefined4 s_sound_005e02b2+1
+;   TerminatedCString s_sound_005e02b3
 ;   TerminatedCString s_sound_mp3_cpp_005e02b9
 ;   TerminatedCString s_Can_t_open_s_005e02ca
-;   undefined4 DAT_005e02d8
+;   TerminatedCString s_rb_005e02d8
 ;   TerminatedCString s_sound_005e02db
 ;   TerminatedCString s_sound_mp3_cpp_005e02e1
 ;   TerminatedCString s_Can_t_open_s_005e02f2
 ;   TerminatedCString s_sound_mp3_cpp_005e0300
 ;   TerminatedCString s_Error_preparing_to_decod_005e0311
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -43,7 +43,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00509cd4
     MOV ESI,dword ptr [ESP + 0x18]      ; 00509cd8
     PUSH ESI                            ; 00509cdc
-    PUSH 0x5e02b3                       ; 00509cdd | s_sound_005e02b2+1
+    PUSH 0x5e02b3                       ; 00509cdd | = "sound"
     CALL engine_dosio.cpp_getFileSize_FUN_00460aa0 ; 00509ce2
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00460aa0(char * directory, char * filename)
     ADD ESP,0x8                         ; 00509ce7
@@ -51,7 +51,7 @@ section .text
     TEST EAX,EAX                        ; 00509cec
     JLE 0x00509d5a                      ; 00509cee
         ;   XREF to: 00509d5a (CONDITIONAL_JUMP)  ; LAB_00509d5a
-    PUSH 0x5e02d8                       ; 00509cf0 | DAT_005e02d8
+    PUSH 0x5e02d8                       ; 00509cf0 | = "rb"
         ;   Label: LAB_00509cf0
     PUSH ESI                            ; 00509cf5
     PUSH 0x5e02db                       ; 00509cf6 | = "sound"
@@ -66,8 +66,8 @@ section .text
     MOV EAX,0x5e02e1                    ; 00509d0a | = "..\\sound\\mp3.cpp"
     MOV EDX,0xea8                       ; 00509d0f
     PUSH 0x5e02f2                       ; 00509d14 | = "Can't open %s"
-    MOV [0x01d046a0],EAX                ; 00509d19 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00509d1e | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00509d19 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00509d1e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00509d24
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00509d29
@@ -108,8 +108,8 @@ section .text
     MOV EDX,0x5e02b9                    ; 00509d5b | = "..\\sound\\mp3.cpp"
     MOV ECX,0xea3                       ; 00509d60
     PUSH 0x5e02ca                       ; 00509d65 | = "Can't open %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00509d6a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00509d70 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00509d6a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00509d70 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00509d76
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00509d7b
@@ -120,8 +120,8 @@ section .text
     MOV ECX,0x5e0300                    ; 00509d84 | = "..\\sound\\mp3.cpp"
     MOV EBX,0xead                       ; 00509d89
     PUSH 0x5e0311                       ; 00509d8e | = "Error preparing to decode %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00509d93 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00509d99 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00509d93 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00509d99 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00509d9f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00509da4

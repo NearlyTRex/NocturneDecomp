@@ -335,19 +335,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_prye_cpp_005cd497
 ;   TerminatedCString s_Don_t_know_how_to_carry_005cd4a8
-;   undefined4 DAT_005cd4cb
-;   undefined4 DAT_005cd4cf
-;   undefined4 DAT_005cd4d7
+;   float g_FLOAT_005cd4cb = 0.5
+;   double g_DOUBLE_005cd4cf = 0.700000000000000
+;   double g_DOUBLE_005cd4d7 = 0.300000000000000
 ;   undefined4 g_CBindEvilClassInfo.name_hash
-;   undefined4 DAT_007e1a50
+;   undefined4 g_CDemonActorType_007e1a18.name_hash
 ;   undefined4 g_CBurncrossClassInfo.name_hash
 ;   undefined4 g_CDiseaseClassInfo.name_hash
 ;   undefined4 g_CExorcismClassInfo.name_hash
 ;   undefined4 g_CHealClassInfo.name_hash
 ;   undefined4 g_CHolycrossClassInfo.name_hash
 ;   undefined4 g_CLightStaffClassInfo.name_hash
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -1427,7 +1427,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffcf2],EDI ; 00520342
     JMP 0x005201e0                      ; 00520348
         ;   XREF to: 005201e0 (UNCONDITIONAL_JUMP)  ; LAB_005201e0
-    PUSH 0x2cfd900                      ; 0052034d | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 0052034d | g_CVector3f_02cfd900
         ;   Label: LAB_0052034d
     PUSH 0x1ed36cc                      ; 00520352
     LEA EAX,[EBP + 0xffffee32]          ; 00520357
@@ -1606,7 +1606,7 @@ section .text
     LEA ESI,[EBP + 0xfffff402]          ; 005205e7
     JMP 0x0051f652                      ; 005205ed
         ;   XREF to: 0051f652 (UNCONDITIONAL_JUMP)  ; LAB_0051f652
-    PUSH 0x2cfd900                      ; 005205f2 | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 005205f2 | g_CVector3f_02cfd900
         ;   Label: LAB_005205f2
     PUSH 0x1ed36c0                      ; 005205f7
     LEA EAX,[EBP + 0xfffffa92]          ; 005205fc
@@ -1668,7 +1668,7 @@ section .text
     LEA ESI,[EBP + 0xfffffb22]          ; 005206d6
     JMP 0x0051f652                      ; 005206dc
         ;   XREF to: 0051f652 (UNCONDITIONAL_JUMP)  ; LAB_0051f652
-    MOV EDI,dword ptr [0x007e1a50]      ; 005206e1 | DAT_007e1a50
+    MOV EDI,dword ptr [0x007e1a50]      ; 005206e1 | g_CDemonActorType_007e1a18.name_hash
         ;   Label: LAB_005206e1
     MOV dword ptr [EBP + 0xfffffd8e],EAX ; 005206e7
     MOV dword ptr [EBP + 0xfffffd8a],EAX ; 005206ed
@@ -1715,7 +1715,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005207a1
     MOVSD ES:EDI,ESI                    ; 005207a2
     MOVSD ES:EDI,ESI                    ; 005207a3
-    FLD float ptr [0x005cd4cb]          ; 005207a4 | DAT_005cd4cb
+    FLD float ptr [0x005cd4cb]          ; 005207a4 | g_FLOAT_005cd4cb
     FLD float ptr [EBP + 0xfffffbee]    ; 005207aa
     FMUL ST1                            ; 005207b0
     FLD float ptr [EBP + 0xfffffbf2]    ; 005207b2
@@ -2029,9 +2029,9 @@ section .text
     MOV dword ptr [EBP + 0xfffffd8e],EAX ; 00520c2b
     FLD float ptr [EBP + 0xfffffbba]    ; 00520c31
         ;   Label: LAB_00520c31
-    FMUL double ptr [0x005cd4cf]        ; 00520c37 | DAT_005cd4cf
+    FMUL double ptr [0x005cd4cf]        ; 00520c37 | g_DOUBLE_005cd4cf
     FLD float ptr [EBP + 0xfffffbc6]    ; 00520c3d
-    FMUL double ptr [0x005cd4d7]        ; 00520c43 | DAT_005cd4d7
+    FMUL double ptr [0x005cd4d7]        ; 00520c43 | g_DOUBLE_005cd4d7
     FADDP                               ; 00520c49
     FSTP float ptr [EBP + 0xfffffed2]   ; 00520c4b
     JMP 0x0052083a                      ; 00520c51
@@ -2066,8 +2066,8 @@ section .text
     MOV EAX,0x5cd497                    ; 00520ca1 | = "..\\core\\prye.cpp"
     MOV EDX,0x1050                      ; 00520ca6
     PUSH 0x5cd4a8                       ; 00520cab | = "Don't know how to carry light %s"
-    MOV [0x01d71de0],EAX                ; 00520cb0 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00520cb5 | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00520cb0 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 00520cb5 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00520cbb
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00520cc0

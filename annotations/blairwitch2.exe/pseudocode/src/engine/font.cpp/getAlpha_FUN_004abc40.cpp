@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_font_cpp_getAlpha_FUN_004abc40(void)
 
 {
-  return _DAT_01d09860;
+  return (int)g_FLOAT_01d09860;
 }

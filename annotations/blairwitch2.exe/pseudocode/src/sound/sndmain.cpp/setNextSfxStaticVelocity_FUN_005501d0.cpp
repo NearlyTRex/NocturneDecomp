@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxStaticVelocity_FUN_005501d0(float vel_x,float vel_y,float vel_z)
 
 {
   int iVar1;
   
-  iVar1 = _DAT_0264161c * 0x60;
-  *(float *)(iVar1 + 0x2641644) = vel_x;
-  *(float *)(iVar1 + 0x2641648) = vel_y;
-  *(float *)(iVar1 + 0x264164c) = vel_z;
-  *(uint *)(iVar1 + 0x2641650) = 0;
-  *(uint *)(iVar1 + 0x2641654) = 0;
+  iVar1 = g_INT_0264161c;
+  g_CSfxOptions_ARRAY_02641620[g_INT_0264161c].velocity.x = vel_x;
+  g_CSfxOptions_ARRAY_02641620[iVar1].velocity.y = vel_y;
+  g_CSfxOptions_ARRAY_02641620[iVar1].velocity.z = vel_z;
+  g_CSfxOptions_ARRAY_02641620[iVar1].velocity_source_ptr = (void *)0x0;
+  g_CSfxOptions_ARRAY_02641620[iVar1].velocity_format = 0;
   return;
 }

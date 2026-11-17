@@ -9,18 +9,16 @@
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_00578a20(CDirectSoundDevice *this_ptr,int buffer_id)
 
 {
-  int *piVar1;
-  int *piVar2;
+  IDirectSoundBuffer *this_ptr_00;
   
-  piVar2 = (int *)(buffer_id * 0x18 + 0x2c81dc4);
-  piVar1 = (int *)*piVar2;
-  if (piVar1 != (int *)0x0) {
-    (**(code **)(*piVar1 + 8))(piVar1);
-    *piVar2 = 0;
+  this_ptr_00 = g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6];
+  if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
+    (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
+    g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6] = (IDirectSoundBuffer *)0x0;
   }
-  *(uint *)(buffer_id * 0x18 + 0x2c81dcc) = 0;
-  *(uint *)(buffer_id * 0x18 + 0x2c81dd0) = 0;
-  *(uint *)(buffer_id * 0x18 + 0x2c81dd4) = 0;
-  *(uint *)(buffer_id * 0x18 + 0x2c81dd8) = 0;
+  g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6 + 2] = (IDirectSoundBuffer *)0x0;
+  g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6 + 3] = (IDirectSoundBuffer *)0x0;
+  g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6 + 4] = (IDirectSoundBuffer *)0x0;
+  g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6 + 5] = (IDirectSoundBuffer *)0x0;
   return;
 }

@@ -7,8 +7,8 @@
 ; CHostage *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -25,8 +25,8 @@ section .text
     CMP dword ptr [EBX + 0x1fe8c],0x0   ; 004ed805
     JZ 0x004ed845                       ; 004ed80c
         ;   XREF to: 004ed845 (CONDITIONAL_JUMP)  ; LAB_004ed845
-    MOV ECX,dword ptr [0x00612560]      ; 004ed80e | DAT_00612560
-    PUSH ECX                            ; 004ed814 | DAT_01bc120c
+    MOV ECX,dword ptr [0x00612560]      ; 004ed80e | g_CDemonRenderer_PTR_00612560
+    PUSH ECX                            ; 004ed814 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 004ed815
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004ed81a

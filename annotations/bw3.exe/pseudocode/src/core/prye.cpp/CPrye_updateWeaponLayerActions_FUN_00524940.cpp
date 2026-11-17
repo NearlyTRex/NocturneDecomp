@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_CPrye_updateWeaponLayerActions_FUN_00524940(CPrye *this_ptr,float delta_time)
 
 {
@@ -116,11 +114,11 @@ LAB_00524997:
                         ((CCharacter *)this_ptr,6);
       local_1c = 6;
       iVar6 = local_1c;
-      if ((float)_DAT_005cd7d7 < fVar8) {
-        fVar8 = _DAT_005e350c * delta_time + this_ptr->aim_speed_factor;
+      if ((float)0.98999999999999999 < fVar8) {
+        fVar8 = 5.0f * delta_time + this_ptr->aim_speed_factor;
         this_ptr->aim_speed_factor = fVar8;
-        if (0x41A00000 < fVar8) {
-          this_ptr->aim_speed_factor = 0x41A00000;
+        if (20.0f < fVar8) {
+          this_ptr->aim_speed_factor = 20.0f;
         }
         if ((this_ptr->base).player_input.action_state.fire != 0) {
           return;
@@ -306,7 +304,7 @@ switchD_00524f8d_caseD_1:
                         ((CCharacter *)this_ptr,1,&CStack_70);
             }
             (this_ptr->base).action_pending = 0;
-            this_ptr->aim_speed_factor = 0x41200000;
+            this_ptr->aim_speed_factor = 10.0f;
           }
           if (1.0 <= (this_ptr->base).base.layer_action_t) {
             (this_ptr->base).base.layer_action_index = 0;
@@ -338,13 +336,13 @@ switchD_00524f8d_caseD_1:
       }
       else {
         if ((((this_ptr->base).action_pending == 7) &&
-            ((float)_DAT_005cd7e7 <= (this_ptr->base).base.layer_action_t)) &&
+            ((float)0.5 <= (this_ptr->base).base.layer_action_t)) &&
            ((pCVar1 = this_ptr->weapon, pCVar1 != (CWeapon *)0x0 &&
             (iVar6 = (*((pCVar1->base).vtable._ub)->processMeleeHit)(&pCVar1->base,2), iVar6 != 0)))
            ) {
           (this_ptr->base).action_pending = 0;
         }
-        if ((float)_DAT_005cd7d7 < (this_ptr->base).base.layer_action_t) {
+        if ((float)0.98999999999999999 < (this_ptr->base).base.layer_action_t) {
           (this_ptr->base).base.layer_action_t = 1.0;
           (this_ptr->base).action_pending = 0;
           (this_ptr->base).base.layer_action_index = 0xb;
@@ -382,19 +380,19 @@ switchD_00524f8d_caseD_1:
         }
       }
       else if (uVar7 < 0x1a) {
-        if ((float)_DAT_005cd7d7 < (this_ptr->base).base.layer_action_t) {
+        if ((float)0.98999999999999999 < (this_ptr->base).base.layer_action_t) {
           (this_ptr->base).base.layer_action_t = 1.0;
           (this_ptr->base).base.layer_action_index = 0x1a;
         }
       }
-      else if ((this_ptr->base).base.layer_action_t < (float)_DAT_005cd7ef) {
+      else if ((this_ptr->base).base.layer_action_t < (float)0.01) {
         (this_ptr->base).base.layer_action_t = 1.0;
         (this_ptr->base).base.layer_action_index = 1;
       }
     }
     else if (uVar7 < 0x1c) {
       if (((this_ptr->base).action_pending == 0xb) &&
-         ((float)_DAT_005cd7e7 < (this_ptr->base).base.layer_action_t)) {
+         ((float)0.5 < (this_ptr->base).base.layer_action_t)) {
         pCVar2 = (CCharacter *)this_ptr->weapon;
         if ((pCVar2 != (CCharacter *)0x0) &&
            (iVar6 = (*(((pCVar2->base).vtable._uc)->_uc).canBeGrabbed)
@@ -406,7 +404,7 @@ switchD_00524f8d_caseD_1:
         }
         (this_ptr->base).action_pending = 0;
       }
-      if ((float)_DAT_005cd7d7 < (this_ptr->base).base.layer_action_t) {
+      if ((float)0.98999999999999999 < (this_ptr->base).base.layer_action_t) {
         (this_ptr->base).base.layer_action_t = 1.0;
         (this_ptr->base).action_pending = 0;
         (this_ptr->base).base.layer_action_index = 0xb;
@@ -415,7 +413,7 @@ switchD_00524f8d_caseD_1:
     else if (uVar7 < 0x1f) {
       if (uVar7 == 0x1c) {
         if (((this_ptr->base).action_pending == 10) &&
-           ((float)_DAT_005cd7e7 < (this_ptr->base).base.layer_action_t)) {
+           ((float)0.5 < (this_ptr->base).base.layer_action_t)) {
           pCVar2 = (CCharacter *)this_ptr->weapon;
           if ((pCVar2 != (CCharacter *)0x0) &&
              (iVar6 = (*(((pCVar2->base).vtable._uc)->_uc).canBeGrabbed)
@@ -427,7 +425,7 @@ switchD_00524f8d_caseD_1:
           }
           (this_ptr->base).action_pending = 0;
         }
-        if ((float)_DAT_005cd7d7 < (this_ptr->base).base.layer_action_t) {
+        if ((float)0.98999999999999999 < (this_ptr->base).base.layer_action_t) {
           (this_ptr->base).base.layer_action_t = 1.0;
           (this_ptr->base).action_pending = 0;
           (this_ptr->base).base.layer_action_index = 0xb;
@@ -436,7 +434,7 @@ switchD_00524f8d_caseD_1:
     }
     else if (uVar7 < 0x20) {
       if (((this_ptr->base).action_pending == 0xc) &&
-         ((float)_DAT_005cd7e7 < (this_ptr->base).base.layer_action_t)) {
+         ((float)0.5 < (this_ptr->base).base.layer_action_t)) {
         pCVar2 = (CCharacter *)this_ptr->weapon;
         if ((pCVar2 != (CCharacter *)0x0) &&
            (iVar6 = (*(((pCVar2->base).vtable._uc)->_uc).canBeGrabbed)
@@ -448,7 +446,7 @@ switchD_00524f8d_caseD_1:
         }
         (this_ptr->base).action_pending = 0;
       }
-      if ((float)_DAT_005cd7d7 < (this_ptr->base).base.layer_action_t) {
+      if ((float)0.98999999999999999 < (this_ptr->base).base.layer_action_t) {
         (this_ptr->base).base.layer_action_t = 1.0;
         (this_ptr->base).action_pending = 0;
         (this_ptr->base).base.layer_action_index = 0x1d;
@@ -456,7 +454,7 @@ switchD_00524f8d_caseD_1:
     }
     else if (uVar7 == 0x20) {
       if (((this_ptr->base).action_pending == 0xd) &&
-         ((float)_DAT_005cd7df < (this_ptr->base).base.layer_action_t)) {
+         ((float)0.33000000000000002 < (this_ptr->base).base.layer_action_t)) {
         pCVar2 = (CCharacter *)this_ptr->weapon;
         if ((pCVar2 != (CCharacter *)0x0) &&
            (iVar6 = (*(((pCVar2->base).vtable._uc)->_uc).canBeGrabbed)
@@ -468,7 +466,7 @@ switchD_00524f8d_caseD_1:
         }
         (this_ptr->base).action_pending = 0;
       }
-      if ((float)_DAT_005cd7d7 < (this_ptr->base).base.layer_action_t) {
+      if ((float)0.98999999999999999 < (this_ptr->base).base.layer_action_t) {
         (this_ptr->base).base.layer_action_t = 1.0;
         (this_ptr->base).action_pending = 0;
         (this_ptr->base).base.layer_action_index = 0x1e;
@@ -513,9 +511,9 @@ switchD_00525735_caseD_1:
             if (pCVar5 != (CDemonActor *)0x0) {
               in_stack_ffffff60 = "UseSPS";
               in_stack_ffffff58 = 7.557448e-39;
-              in_stack_ffffff5c = (CCharacter *)0x01C6E360;
-              core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,"UseSPS")
-              ;
+              in_stack_ffffff5c = (CCharacter *)g_CEventList_PTR_005fba60;
+              core_event_cpp_CEventList_executeCommands_FUN_0048c150
+                        (g_CEventList_PTR_005fba60,"UseSPS");
             }
             this_ptr->weapon = (CWeapon *)0x0;
           }
@@ -560,8 +558,8 @@ switchD_00525799_caseD_1:
             this_ptr->weapon = local_24;
             pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840(&local_24->base,uVar7);
             if (pCVar5 != (CDemonActor *)0x0) {
-              core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,"UseSPS")
-              ;
+              core_event_cpp_CEventList_executeCommands_FUN_0048c150
+                        (g_CEventList_PTR_005fba60,"UseSPS");
             }
             pCVar2 = (CCharacter *)this_ptr->weapon;
             if (pCVar2 != (CCharacter *)0x0) {
@@ -584,7 +582,8 @@ LAB_00524bde:
                                 (local_54,"CLightActor"), iVar6 != 0)) {
             pCVar11 = pCStack_18;
             for (local_14 = 0; local_14 < pCStack_18->item_count; local_14 = local_14 + 1) {
-              pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar11->items[0],DAT_007e1a50);
+              pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840
+                                 (pCVar11->items[0],g_CDemonActorType_007e1a18.name_hash);
               if (pCVar5 != (CDemonActor *)0x0) {
                 core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
                           ((CCharacter *)this_ptr,0,pCVar5,0.0,(CMatrix3x4f *)0x0);
@@ -602,10 +601,12 @@ LAB_00524bde:
         }
         if (((this_ptr->base).action_pending == 9) && (local_20 == 3)) {
           pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840
-                             ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);
+                             ((this_ptr->base).base.carry_hands[0].carry_actor,
+                              g_CDemonActorType_007e1a18.name_hash);
           if (pCVar5 != (CDemonActor *)0x0) {
             pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840
-                               ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);
+                               ((this_ptr->base).base.carry_hands[0].carry_actor,
+                                g_CDemonActorType_007e1a18.name_hash);
             pCVar5[0x1a].create_event[0x38] = '\0';
             pCVar5[0x1a].create_event[0x39] = '\0';
             pCVar5[0x1a].create_event[0x3a] = '\0';
@@ -620,7 +621,7 @@ LAB_00524bde:
       if ((pCVar5 != (CDemonActor *)0x0) && (local_20 == 3)) {
         core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(local_58,pCVar5,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                  (0x01D81080,(this_ptr->base).target_actor);
+                  (g_CDemonMission_PTR_00600530,(this_ptr->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
                   ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0,(CMatrix3x4f *)0x0);
         iVar6 = core_actor_cpp_isOfClass_FUN_0040c790

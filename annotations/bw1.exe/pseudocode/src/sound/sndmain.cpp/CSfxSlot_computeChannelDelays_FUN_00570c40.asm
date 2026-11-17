@@ -15,13 +15,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f372f
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005f3744
-;   undefined4 DAT_00605af8
-;   undefined4 DAT_006232ec
-;   undefined4 DAT_006232f0
-;   undefined4 DAT_00623304
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c807ec
+;   float g_FLOAT_00605af8 = 1116.400
+;   int g_INT_006232ec = 0x2
+;   int g_INT_006232f0 = 0x5622
+;   float g_FLOAT_00623304 = 1
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_INT_02c807ec
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -36,12 +36,12 @@ section .text
     PUSH ESI                            ; 00570c41
     PUSH EDI                            ; 00570c42
     SUB ESP,0x8                         ; 00570c43
-    MOV ESI,dword ptr [0x006232ec]      ; 00570c46 | DAT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570c46 | g_INT_006232ec
     MOV EDI,dword ptr [ESP + 0x18]      ; 00570c4c
-    CMP dword ptr [0x02c807ec],0x0      ; 00570c50 | DAT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00570c50 | g_INT_02c807ec
     JLE 0x00570c9d                      ; 00570c57
         ;   XREF to: 00570c9d (CONDITIONAL_JUMP)  ; LAB_00570c9d
-    MOV ESI,dword ptr [0x006232ec]      ; 00570c59 | DAT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570c59 | g_INT_006232ec
         ;   Label: LAB_00570c59
     CMP ESI,0x2                         ; 00570c5f
     JL 0x00570cc2                       ; 00570c62
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 00570c72 (CONDITIONAL_JUMP)  ; LAB_00570c72
     LEA EAX,[EAX]                       ; 00570c84
     LEA EDX,[EDX]                       ; 00570c8a
-    MOV dword ptr [0x006232ec],ESI      ; 00570c90 | DAT_006232ec
+    MOV dword ptr [0x006232ec],ESI      ; 00570c90 | g_INT_006232ec
         ;   Label: LAB_00570c90
     ADD ESP,0x8                         ; 00570c96
     POP EDI                             ; 00570c99
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_00570c9d
     MOV EBX,0xa69                       ; 00570ca2
     PUSH 0x5f3744                       ; 00570ca7 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00570cac | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00570cb2 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00570cac | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00570cb2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00570cb8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00570cbd
@@ -87,9 +87,9 @@ section .text
         ;   XREF to: 00570c90 (UNCONDITIONAL_JUMP)  ; LAB_00570c90
     FLD1                                ; 00570cce
         ;   Label: LAB_00570cce
-    FDIV float ptr [0x00605af8]         ; 00570cd0 | DAT_00605af8
-    FMUL float ptr [0x00623304]         ; 00570cd6 | DAT_00623304
-    FILD dword ptr [0x006232f0]         ; 00570cdc | DAT_006232f0
+    FDIV float ptr [0x00605af8]         ; 00570cd0 | g_FLOAT_00605af8
+    FMUL float ptr [0x00623304]         ; 00570cd6 | g_FLOAT_00623304
+    FILD dword ptr [0x006232f0]         ; 00570cdc | g_INT_006232f0
     FMULP                               ; 00570ce2
     MOV EBX,0x1869f                     ; 00570ce4
     XOR ECX,ECX                         ; 00570ce9
@@ -131,7 +131,7 @@ section .text
     CMP EDX,ESI                         ; 00570d39
     JL 0x00570d27                       ; 00570d3b
         ;   XREF to: 00570d27 (CONDITIONAL_JUMP)  ; LAB_00570d27
-    MOV dword ptr [0x006232ec],ESI      ; 00570d3d | DAT_006232ec
+    MOV dword ptr [0x006232ec],ESI      ; 00570d3d | g_INT_006232ec
     ADD ESP,0x8                         ; 00570d43
     POP EDI                             ; 00570d46
     POP ESI                             ; 00570d47

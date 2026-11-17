@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   color_value
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d24f7
+;   float g_FLOAT_005d24f7 = 0.5
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150
@@ -25,7 +25,7 @@ section .text
     MOV EBP,ESP                         ; 00480723
     SUB ESP,0x48                        ; 00480725
     MOV EAX,dword ptr [EBP + 0x14]      ; 00480728
-    FLD float ptr [0x005d24f7]          ; 0048072b | DAT_005d24f7
+    FLD float ptr [0x005d24f7]          ; 0048072b | g_FLOAT_005d24f7
     FLD float ptr [EAX]                 ; 00480731
     FMUL ST1                            ; 00480733
     FLD float ptr [EAX + 0x4]           ; 00480735

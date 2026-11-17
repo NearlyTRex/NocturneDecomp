@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_tawiscara_cpp_CTawiscara_processChainConstraint_FUN_00596380(CTawiscara *this_ptr)
 
@@ -57,7 +56,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_processChainConstraint_FUN_00596380(C
          *(uint *)((int)&local_90 + (uint)bVar2 * -8 + 4);
     *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)((int)&local_90 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-    if (local_98 < (float)_DAT_005d9481) {
+    if (local_98 < (float)2) {
       local_3c.x = local_90.x;
       *(uint *)((int)&local_3c + (uint)bVar2 * -8 + 4) =
            *(uint *)((int)&local_90 + (uint)bVar2 * -8 + 4);

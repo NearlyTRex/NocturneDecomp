@@ -10,7 +10,7 @@
 ;   engine_texture.cpp_renderTextureAtlas_FUN_00597cf0 at 00597cf7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c8a634
+;   undefined4 g_SMRGLTextureBasic_02c8a630.base.count
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_setupTexture_FUN_00597140
@@ -34,7 +34,7 @@ section .text
     LEA EBP,[EAX + 0x8]                 ; 00597919
     MOV ESI,EBP                         ; 0059791c
         ;   Label: LAB_0059791c
-    MOV dword ptr [0x02c8a634],EBX      ; 0059791e | DAT_02c8a634
+    MOV dword ptr [0x02c8a634],EBX      ; 0059791e | g_SMRGLTextureBasic_02c8a630.base.count
     PUSH EDI                            ; 00597924
     MOV AL,byte ptr [ESI]               ; 00597925
         ;   Label: LAB_00597925

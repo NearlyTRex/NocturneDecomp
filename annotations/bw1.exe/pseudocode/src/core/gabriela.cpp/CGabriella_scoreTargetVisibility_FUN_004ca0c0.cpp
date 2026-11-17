@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov)
 
 {
@@ -84,22 +82,22 @@ float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0(CG
       afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
            afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       if (use_wider_fov == 0) {
-        if ((float)_DAT_005e11bc < fStack_154) {
+        if ((float)30 < fStack_154) {
           return -1.0;
         }
         in_stack_fffffea4 = (double)afStack_5c[3];
-        if (afStack_5c[3] < (float)_DAT_005e11c4) {
+        if (afStack_5c[3] < (float)-0.78149070982587099) {
           return -1.0;
         }
-        if (_DAT_005e11cc < in_stack_fffffea4) {
+        if (1.56298141965174 < in_stack_fffffea4) {
           return -1.0;
         }
       }
       else {
-        if ((float)_DAT_005e11d4 < fStack_154) {
+        if ((float)35 < fStack_154) {
           return -1.0;
         }
-        if (afStack_5c[3] < _DAT_005e11dc) {
+        if (afStack_5c[3] < -0.7853982f) {
           return -1.0;
         }
         if (0x3fc90fdb < (int)afStack_5c[3]) {
@@ -123,10 +121,10 @@ float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0(CG
       afStack_84[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
            afStack_84[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
       input_local_point = aCStack_148;
-      fStack_28 = afStack_84[2] * _DAT_005e11e0;
-      CStack_24.x = afStack_84[3] * _DAT_005e11e0;
-      CStack_24.y = fStack_74 * _DAT_005e11e0;
-      fStack_40 = afStack_84[2] * _DAT_005e11e0;
+      fStack_28 = afStack_84[2] * 0.5f;
+      CStack_24.x = afStack_84[3] * 0.5f;
+      CStack_24.y = fStack_74 * 0.5f;
+      fStack_40 = afStack_84[2] * 0.5f;
       afStack_3c[(uint)bVar6 * -2] = *(float *)((int)&CStack_24 + (uint)bVar6 * -8);
       afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
            *(float *)((int)&CStack_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);

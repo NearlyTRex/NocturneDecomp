@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_disease_cpp_staticInit_FUN_0045c160(void)
 
 {
-  _DAT_01b4b6ac = 0;
-  _DAT_01b4b6b0 = 0;
-  _DAT_01b4b6a8 = 0;
+  g_CVector3f_01b4b6a8.y = 0.0;
+  g_CVector3f_01b4b6a8.z = 0.0;
+  g_CVector3f_01b4b6a8.x = 0.0;
   return;
 }

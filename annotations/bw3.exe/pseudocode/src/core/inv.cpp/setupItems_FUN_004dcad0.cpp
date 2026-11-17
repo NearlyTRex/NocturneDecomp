@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_setupItems_FUN_004dcad0(CInventory *this_ptr)
 
 {
@@ -15,8 +13,8 @@ void __cdecl core_inv_cpp_setupItems_FUN_004dcad0(CInventory *this_ptr)
   CInventory *pCVar2;
   
   if (this_ptr->preserve_items != 0) {
-    _DAT_01d71de0 = "..\\core\\inv.cpp";
-    _DAT_01d71de4 = 0x75c;
+    g_CHAR_PTR_01d71de0 = "..\\core\\inv.cpp";
+    g_INT_01d71de4 = 0x75c;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CInventory::setupItems - we should own the items at this point!");
   }
   iVar1 = 0;

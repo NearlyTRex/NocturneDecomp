@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 81,
+    "complexity_score": 50,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 182
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 50,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -192,26 +189,26 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e80",
-      "name": "DAT_02648e80",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02648e80",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "0264901c",
-      "name": "DAT_0264901c",
-      "type": "undefined4",
+      "name": "g_INT_0264901c",
+      "type": "int",
       "value": null
     }
   ],
@@ -413,22 +410,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02648e80 + 0x50))(_DAT_02648e80,this_ptr);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

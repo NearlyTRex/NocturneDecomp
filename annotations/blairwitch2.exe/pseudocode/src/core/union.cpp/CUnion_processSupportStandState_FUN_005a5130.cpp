@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_union_cpp_CUnion_processSupportStandState_FUN_005a5130(CUnion *this_ptr,float delta_time)
 
@@ -55,7 +54,7 @@ LAB_005a5261:
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
               ((CCharacter *)this_ptr,&(((this_ptr->base).base.base.victim)->base).location.position
               );
-    if (_DAT_005f056e < (this_ptr->base).base.base.base.model.base.current_frame_number) {
+    if (35.0f < (this_ptr->base).base.base.base.model.base.current_frame_number) {
       this_ptr->fire_timer = 5.0;
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,3,1);
       core_union_cpp_CUnion_fireShotgun_FUN_005a5460(this_ptr);
@@ -65,7 +64,7 @@ LAB_005a5261:
   }
   else {
     if (uVar1 != 3) goto LAB_005a5261;
-    if (_DAT_005f056a < (this_ptr->base).base.base.base.model.base.current_frame_number) {
+    if (24.0f < (this_ptr->base).base.base.base.model.base.current_frame_number) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
       return;
     }

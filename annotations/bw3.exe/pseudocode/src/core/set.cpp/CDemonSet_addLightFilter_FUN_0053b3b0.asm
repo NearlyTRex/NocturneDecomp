@@ -17,7 +17,7 @@
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052b497
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0203a418
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a418
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 0053b3e4 (UNCONDITIONAL_JUMP)  ; LAB_0053b3e4
     MOV EBX,dword ptr [ESP + 0x24]      ; 0053b42a
         ;   Label: LAB_0053b42a
-    MOV EAX,dword ptr [EDI*0x4 + 0x203a418] ; 0053b42e | DAT_0203a418
+    MOV EAX,dword ptr [EDI*0x4 + 0x203a418] ; 0053b42e | g_CDemonLight_PTR_ARRAY_0203a418
     MOV dword ptr [EBX],EAX             ; 0053b435
     ADD ESP,0x4                         ; 0053b437
     POP EBP                             ; 0053b43a

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_doc_cpp_CDoc_updateLantern_FUN_00455d10(CDoc *this_ptr,float delta_time)
 
@@ -77,7 +76,7 @@ void __cdecl core_doc_cpp_CDoc_updateLantern_FUN_00455d10(CDoc *this_ptr,float d
   float local_14;
   
   bVar9 = 0;
-  local_14 = delta_time * _DAT_005d0277;
+  local_14 = delta_time * 2.0f;
   if (this_ptr->lantern_mode == 0) {
     if (this_ptr->lantern_tween_pct <= 0.0) {
       this_ptr->lantern_tween_pct = 0.0;
@@ -105,9 +104,9 @@ LAB_00455d67:
   else {
     this_ptr->lantern_tween_pct = 1.0;
   }
-  local_20 = _DAT_01b4d268;
-  local_18 = _DAT_01b4d270;
-  local_24 = _DAT_01b4d290;
+  local_20 = g_INT_01b4d268;
+  local_18 = g_INT_01b4d270;
+  local_24 = g_INT_01b4d290;
   core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(-1.0471976,&local_f0);
   pCVar2 = &local_1f0;
   local_1f0.w = local_f0.w;
@@ -183,7 +182,7 @@ LAB_00455d67:
   *puVar6 = *puVar4;
   puVar6[(uint)bVar9 * -2 + 1] = puVar4[(uint)bVar9 * -2 + 1];
   core_xform_cpp_quaternionFromAngleX_FUN_00593fa0
-            (local_1c->target_pitch * (float)_DAT_005d027f,&local_c0);
+            (local_1c->target_pitch * (float)0.5,&local_c0);
   pCVar2 = &local_1c0;
   quat1_inout = &local_210;
   local_1c0.w = local_c0.w;
@@ -195,7 +194,7 @@ LAB_00455d67:
   puVar4[(uint)bVar9 * -2 + 1] = puVar3[(uint)bVar9 * -2 + 1];
   core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(quat1_inout,pCVar2);
   core_xform_cpp_slerpQuaternion_FUN_00593df0
-            ((CQuaternion4f *)&DAT_005fe2f0,&local_230,this_ptr->lantern_tween_pct,&local_b0);
+            (&g_CQuaternion4f_005fe2f0,&local_230,this_ptr->lantern_tween_pct,&local_b0);
   local_230.w = local_b0.w;
   puVar4 = (uint *)((int)&local_230 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
   puVar3 = (uint *)((int)&local_b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
@@ -272,7 +271,7 @@ LAB_00455d67:
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(&local_260,&local_64,pCVar11);
   core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00591860
             (&local_260,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01b4d290);
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_INT_01b4d290);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
             (&local_290,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);

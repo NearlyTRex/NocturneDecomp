@@ -19,8 +19,9 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_0040e510(CAmmoBox *this_pt
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoBoxVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5cb251);
-  pcVar3 = (char *)0x5cb25d;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
+            (this_ptr_00,"ammobag.kfm");
+  pcVar3 = "CGun";
   pCVar4 = this_ptr_00 + 1;
   do {
     cVar1 = *pcVar3;

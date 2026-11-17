@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 631,
-    "complexity_score": 550,
+    "complexity_score": 520,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 305,
-    "suspect_count": 20,
+    "suspect_count": 18,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
       "unrolled_memset",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
     "total_lines": 936
@@ -244,15 +242,15 @@
     },
     {
       "addr": "005d8d68",
-      "name": "DAT_005d8d68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d8d68",
+      "type": "float",
+      "value": "4"
     },
     {
       "addr": "005d8d70",
-      "name": "DAT_005d8d70",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d8d70",
+      "type": "double",
+      "value": "0.950000000000000"
     },
     {
       "addr": "005fea1c",
@@ -268,15 +266,15 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_0061b4d0",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "006236b8",
-      "name": "DAT_006236b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006236b8",
+      "type": "CSound*",
+      "value": "02c82a60"
     },
     {
       "addr": "007db5f0",
@@ -286,8 +284,8 @@
     },
     {
       "addr": "01cc804c",
-      "name": "DAT_01cc804c",
-      "type": "undefined4",
+      "name": "g_INT_01cc804c",
+      "type": "int",
       "value": null
     }
   ],
@@ -375,16 +373,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 25,
+      "line": 24,
       "match": "afStackY_1078",
       "severity": "moderate",
       "text": "float afStackY_1078 [1012];",
@@ -408,7 +398,7 @@
     },
     {
       "description": "Pointer value `pCVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 117,
+      "line": 116,
       "match": "(int)pCVar13",
       "severity": "moderate",
       "text": "this_ptr->walk_target = (int)pCVar13;",
@@ -447,16 +437,8 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x2c82a60 assigned to bare local `this_ptr_01`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_01` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 105,
-      "match": "0x2c82a60",
-      "severity": "moderate",
-      "text": "this_ptr_01 = 0x02C82A60;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -464,7 +446,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 157,
+      "line": 156,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -519,11 +501,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 203,
-      "match": "fStack_20 = (float)(((int)fStack_1c >> 1) + _DAT_01cc804c);",
+      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 202,
+      "match": "fStack_20 = (float)(((int)fStack_1c >> 1) + g_INT_01cc804c);",
       "severity": "moderate",
-      "text": "fStack_20 = (float)(((int)fStack_1c >> 1) + _DAT_01cc804c);",
+      "text": "fStack_20 = (float)(((int)fStack_1c >> 1) + g_INT_01cc804c);",
       "type": "fast_sqrt_inline"
     }
   ],

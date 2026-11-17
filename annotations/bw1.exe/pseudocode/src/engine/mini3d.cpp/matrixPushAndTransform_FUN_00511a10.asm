@@ -8,11 +8,11 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01d2257c
-;   undefined4 DAT_01d22580
-;   undefined4 DAT_01d24ffc
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   void* g_PTR_01d2257c
+;   void* g_PTR_01d22580
+;   int g_INT_01d24ffc
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_sinCos_FUN_0045fd80
@@ -30,21 +30,21 @@ section .text
     SUB ESP,0x4c                        ; 00511a14
     MOV EDI,dword ptr [ESP + 0x60]      ; 00511a17
     MOV ESI,dword ptr [ESP + 0x64]      ; 00511a1b
-    MOV EDX,dword ptr [0x01d22580]      ; 00511a1f | DAT_01d22580
+    MOV EDX,dword ptr [0x01d22580]      ; 00511a1f | g_PTR_01d22580
     INC EDX                             ; 00511a25
-    MOV dword ptr [0x01d22580],EDX      ; 00511a26 | DAT_01d22580
+    MOV dword ptr [0x01d22580],EDX      ; 00511a26 | g_PTR_01d22580
     CMP EDX,0x9                         ; 00511a2c
     JLE 0x00511a54                      ; 00511a2f
         ;   XREF to: 00511a54 (CONDITIONAL_JUMP)  ; LAB_00511a54
     MOV EBX,0x5e8b77                    ; 00511a31
     MOV EBP,0x3df                       ; 00511a36
     PUSH 0x5e8b8c                       ; 00511a3b
-    MOV dword ptr [0x01d1d400],EBX      ; 00511a40 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00511a46 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 00511a40 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 00511a46 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00511a4c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00511a51
-    MOV EAX,[0x01d22580]                ; 00511a54 | DAT_01d22580
+    MOV EAX,[0x01d22580]                ; 00511a54 | g_PTR_01d22580
         ;   Label: LAB_00511a54
     SHL EAX,0x2                         ; 00511a59
     MOV EBX,EAX                         ; 00511a5c
@@ -88,7 +88,7 @@ section .text
     FMUL float ptr [ESP + 0x18]         ; 00511ac4
     FLD ST3                             ; 00511ac8
     FMUL float ptr [ESP + 0xc]          ; 00511aca
-    MOV EAX,[0x01d2257c]                ; 00511ace | DAT_01d2257c
+    MOV EAX,[0x01d2257c]                ; 00511ace | g_PTR_01d2257c
     FLD float ptr [ESP + 0x20]          ; 00511ad3
     FMUL float ptr [ESP + 0x4]          ; 00511ad7
     FLD float ptr [EAX + 0x24]          ; 00511adb
@@ -298,10 +298,10 @@ section .text
     FMUL float ptr [EAX + 0x14]         ; 00511d1c
     FADDP ST2,ST0                       ; 00511d1f
     FMUL float ptr [EAX + 0x20]         ; 00511d21
-    MOV dword ptr [0x01d2257c],EBX      ; 00511d24 | DAT_01d2257c
+    MOV dword ptr [0x01d2257c],EBX      ; 00511d24 | g_PTR_01d2257c
     MOV EAX,0x1                         ; 00511d2a
     FADDP                               ; 00511d2f
-    MOV [0x01d24ffc],EAX                ; 00511d31 | DAT_01d24ffc
+    MOV [0x01d24ffc],EAX                ; 00511d31 | g_INT_01d24ffc
     FSTP float ptr [EBX + 0x20]         ; 00511d36
     ADD ESP,0x4c                        ; 00511d39
     POP EBP                             ; 00511d3c

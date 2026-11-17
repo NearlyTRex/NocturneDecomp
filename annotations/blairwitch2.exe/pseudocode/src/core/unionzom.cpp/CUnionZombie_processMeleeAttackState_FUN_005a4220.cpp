@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_unionzom_cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220(CUnionZombie *this_ptr,float delta_time)
 
@@ -26,15 +25,15 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220
   fVar2 = (this_ptr->base).base.base.base.location.position.z - (pCVar1->base).location.position.z;
   fVar2 = SQRT(fVar3 * fVar3 + fVar2 * fVar2);
   this_ptr_00 = &(this_ptr->base).state_machine;
-  if (_DAT_005ff540 < fVar2) {
-    (this_ptr->base).attack_range = _DAT_005ff540;
+  if (8.0f < fVar2) {
+    (this_ptr->base).attack_range = 8.0f;
     core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
-              (this_ptr_00,"ChaseComplete"," BVanishAttack" + 2);
+              (this_ptr_00,"ChaseComplete","VanishAttack");
     core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_00,0.1);
     core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"Chasing");
   }
-  else if (_DAT_005ff544 + _DAT_005f030e < fVar2) {
-    (this_ptr->base).attack_range = _DAT_005ff544;
+  else if (2.0f + 2.0f < fVar2) {
+    (this_ptr->base).attack_range = 2.0f;
     core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_00,0.1);
     core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"Chasing");
     return;

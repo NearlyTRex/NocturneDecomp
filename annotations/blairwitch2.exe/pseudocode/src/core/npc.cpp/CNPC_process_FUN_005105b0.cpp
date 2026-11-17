@@ -93,7 +93,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005105b0(CNPC *this_ptr,float delta_t
   if (EVar4 < 2) {
     if (EVar4 == WALK_STATE_WALKING) {
 LAB_00510712:
-      pcVar9 = &DAT_005e151e;
+      pcVar9 = "WALK";
     }
     else {
 LAB_005108c0:
@@ -106,7 +106,7 @@ LAB_005108c0:
     pCVar1 = &(this_ptr->base).model;
     if (EVar4 < WALK_STATE_NO_PATH) {
       iVar5 = 0;
-      pcVar9 = &DAT_005e151a;
+      pcVar9 = "RUN";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&pCVar1->base);
       iVar5 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0(this_ptr_00,pcVar9,iVar5);
       if (iVar5 < 0) goto LAB_00510712;

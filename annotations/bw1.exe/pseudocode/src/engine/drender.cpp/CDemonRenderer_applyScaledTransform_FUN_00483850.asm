@@ -26,9 +26,9 @@
 ;   ... and 46 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db384
-;   undefined4 DAT_005db38c
-;   undefined4 DAT_005db394
+;   double g_DOUBLE_005db384 = 256
+;   float g_FLOAT_005db38c = 0.3183099
+;   double g_DOUBLE_005db394 = 32768
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -47,7 +47,7 @@ section .text
     TEST EDX,EDX                        ; 0048385d
     JNZ 0x004838cc                      ; 0048385f
         ;   XREF to: 004838cc (CONDITIONAL_JUMP)  ; LAB_004838cc
-    FLD float ptr [0x005db38c]          ; 00483861 | DAT_005db38c
+    FLD float ptr [0x005db38c]          ; 00483861 | g_FLOAT_005db38c
     FLD float ptr [EAX + 0x4]           ; 00483867
     FMUL ST1                            ; 0048386a
     FLD float ptr [EAX + 0x8]           ; 0048386c
@@ -55,7 +55,7 @@ section .text
     FLD float ptr [EAX]                 ; 00483871
     FMULP ST3                           ; 00483873
     FXCH                                ; 00483875
-    FLD double ptr [0x005db394]         ; 00483877 | DAT_005db394
+    FLD double ptr [0x005db394]         ; 00483877 | g_DOUBLE_005db394
     FXCH                                ; 0048387d
     FMUL ST1                            ; 0048387f
     PUSH EDX                            ; 00483881
@@ -94,14 +94,14 @@ section .text
     PUSH EDI                            ; 004838cc
         ;   Label: LAB_004838cc
     PUSH ESI                            ; 004838cd
-    FLD double ptr [0x005db384]         ; 004838ce | DAT_005db384
+    FLD double ptr [0x005db384]         ; 004838ce | g_DOUBLE_005db384
     FLD float ptr [EDX + 0x8]           ; 004838d4
     FMUL ST1                            ; 004838d7
     FLD float ptr [EDX + 0x4]           ; 004838d9
     FMUL ST2                            ; 004838dc
     FLD float ptr [EDX]                 ; 004838de
     FMULP ST3                           ; 004838e0
-    FLD float ptr [0x005db38c]          ; 004838e2 | DAT_005db38c
+    FLD float ptr [0x005db38c]          ; 004838e2 | g_FLOAT_005db38c
     FLD float ptr [EAX + 0x4]           ; 004838e8
     FMUL ST1                            ; 004838eb
     FLD float ptr [EAX + 0x8]           ; 004838ed
@@ -109,7 +109,7 @@ section .text
     FLD float ptr [EAX]                 ; 004838f2
     FMULP ST3                           ; 004838f4
     FXCH                                ; 004838f6
-    FLD double ptr [0x005db394]         ; 004838f8 | DAT_005db394
+    FLD double ptr [0x005db394]         ; 004838f8 | g_DOUBLE_005db394
     FXCH                                ; 004838fe
     FMUL ST1                            ; 00483900
     FXCH ST2                            ; 00483902

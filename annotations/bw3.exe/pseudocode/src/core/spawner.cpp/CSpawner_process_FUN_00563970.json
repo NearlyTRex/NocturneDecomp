@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 507,
+    "complexity_score": 493,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 207,
-    "suspect_count": 24,
+    "pseudocode_lines": 208,
+    "suspect_count": 23,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -20,10 +20,9 @@
       "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 624
+    "total_lines": 625
   },
   "cross_references": [],
   "function": {
@@ -113,27 +112,27 @@
   "globals": [
     {
       "addr": "005d54b7",
-      "name": "DAT_005d54b7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d54b7",
+      "type": "float",
+      "value": "6"
     },
     {
       "addr": "005d54bb",
-      "name": "DAT_005d54bb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d54bb",
+      "type": "float",
+      "value": "3"
     },
     {
       "addr": "005fc5a0",
-      "name": "DAT_005fc5a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005fc5a0",
+      "type": "CFireEffect*",
+      "value": "01c73654"
     },
     {
       "addr": "00600530",
-      "name": "DAT_00600530",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00600530",
+      "type": "CDemonMission*",
+      "value": "01d81080"
     },
     {
       "addr": "00603b28",
@@ -241,16 +240,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)",
@@ -258,7 +249,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "float in_stack_0000000c;",
@@ -266,7 +257,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "int in_stack_ffffff58;",
@@ -274,7 +265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "this_ptr->reset_timer = this_ptr->reset_timer - param_2;",
@@ -282,7 +273,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 68,
       "match": "(CCharacter *)((int)this_ptr_00",
       "severity": "moderate",
       "text": "pCVar9 = (CCharacter *)((int)this_ptr_00 + (uint)bVar12 * -2 + 1);",
@@ -290,7 +281,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 74,
+      "line": 72,
       "match": "pCVar9[-1].",
       "severity": "mild",
       "text": "pcVar10 = (char *)((int)&pCVar9[-1].walk_immediate_pending + 3);",
@@ -298,7 +289,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 85,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "this_ptr->spawn_timer = this_ptr->spawn_timer - in_stack_0000000c;",
@@ -306,7 +297,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 93,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_50._4_4_ = 0.0;",
@@ -314,7 +305,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 109,
       "match": "&stack0xffffff54",
       "severity": "moderate",
       "text": "puVar11 = (uint *)&stack0xffffff54;",
@@ -322,7 +313,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
+      "line": 115,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "iVar6 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_02,in_stack_ffffff58);",
@@ -330,7 +321,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 197,
+      "line": 196,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_50._4_4_ = fStack_18;",
@@ -338,7 +329,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 199,
+      "line": 198,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_50._0_4_ = fStack_2c;",
@@ -346,7 +337,7 @@
     },
     {
       "description": "Pointer value `this_ptr_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 68,
       "match": "(int)this_ptr_00",
       "severity": "moderate",
       "text": "pCVar9 = (CCharacter *)((int)this_ptr_00 + (uint)bVar12 * -2 + 1);",
@@ -354,7 +345,7 @@
     },
     {
       "description": "Pointer value `&pCVar9[-1].walk_immediate_pending` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
+      "line": 72,
       "match": "(int)&pCVar9[-1].walk_immediate_pending",
       "severity": "moderate",
       "text": "pcVar10 = (char *)((int)&pCVar9[-1].walk_immediate_pending + 3);",
@@ -362,7 +353,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 75,
+      "line": 73,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -370,7 +361,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 144,
+      "line": 142,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -378,7 +369,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 112,
+      "line": 110,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -386,7 +377,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 153,
+      "line": 151,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar4->location).position.x = (this_ptr->base).location.position.x;",
@@ -394,7 +385,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 159,
+      "line": 157,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar4->orient).vec.x = (pUVar1->vec).x;",
@@ -402,7 +393,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 183,
+      "line": 182,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_38.x = (pCVar4->location).position.x;",
@@ -410,7 +401,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 74,
+      "line": 72,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pcVar10 = (char *)((int)&pCVar9[-1].walk_immediate_pending + 3);",
@@ -418,7 +409,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar5`. Replace those `pCVar5->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 151,
+      "line": 149,
       "match": "pCVar5 = (T *)(pCVar5->actor_name + CONST)",
       "severity": "moderate",
       "text": "pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);",
@@ -426,7 +417,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 131,
+      "line": 129,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

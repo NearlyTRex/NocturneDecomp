@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_construc_cpp_CConstructBone_getActorType_FUN_00444540(CConstructBone *this_ptr)
 
 {
-  return (CDemonActorType *)&DAT_007f8edc;
+  return &g_CDemonActorType_007f8edc;
 }

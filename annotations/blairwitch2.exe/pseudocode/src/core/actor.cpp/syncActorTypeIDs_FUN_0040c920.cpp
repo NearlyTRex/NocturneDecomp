@@ -14,14 +14,14 @@ void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040c920(void)
   int iVar3;
   
   iVar2 = 0;
-  if (0 < DAT_007bc044) {
+  if (0 < g_INT_007bc044) {
     iVar3 = 0;
     do {
-      piVar1 = (int *)((int)&DAT_007bc048 + iVar3);
+      piVar1 = (int *)((int)g_CDemonActorType_PTR_ARRAY_007bc048 + iVar3);
       iVar3 = iVar3 + 4;
       iVar2 = iVar2 + 1;
       **(uint **)(*piVar1 + 0x30) = *(uint *)(*piVar1 + 0x34);
-    } while (iVar2 < DAT_007bc044);
+    } while (iVar2 < g_INT_007bc044);
   }
   return;
 }

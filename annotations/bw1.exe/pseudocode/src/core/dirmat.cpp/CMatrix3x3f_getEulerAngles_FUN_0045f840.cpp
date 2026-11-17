@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(CMatrix3x3f *this_ptr,CVector3f *euler_angles)
 
 {
@@ -28,7 +26,7 @@ CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(
   bVar5 = 0;
   fVar2 = -this_ptr->m[1].z;
   local_38 = (double)fVar2;
-  if (fVar2 <= (float)_DAT_005d8a90) {
+  if (fVar2 <= (float)-1) {
     local_28[1] = -1.5707964;
   }
   else if (local_38 < 1.0) {
@@ -47,8 +45,8 @@ CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(
       dVar1 = (double)(this_ptr->m[2].z * fVar3);
       afStack_1014[0x3ec] = SUB84(__BITCAST_UINT64(dVar1),0);
       afStack_1014[0x3ed] = (float)((ulonglong)dVar1 >> 0x20);
-      if ((_DAT_005d8a98 <= dVar8) || (dVar8 <= _DAT_005d8aa0)) {
-        if (_DAT_005d8a90 < dVar1) {
+      if ((0.70699999999999996 <= dVar8) || (dVar8 <= -0.70699999999999996)) {
+        if (-1 < dVar1) {
           if (dVar1 < 1.0) {
             dVar8 = acos(dVar1);
             local_30 = (float)dVar8;
@@ -68,22 +66,22 @@ CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(
         fVar6 = asin((float10)fVar2);
         local_30 = (float)fVar6;
         if (__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3ec],afStack_1014[0x3ed])) < 0.0) {
-          local_30 = (float)_DAT_005d8aa8 - local_30;
+          local_30 = (float)3.1415926535900001 - local_30;
         }
       }
-      if (local_30 < (float)_DAT_005d8ab0) {
-        local_30 = local_30 + _DAT_005d8ab8;
+      if (local_30 < (float)-3.1415926535900001) {
+        local_30 = local_30 + 6.283185f;
       }
-      if ((float)_DAT_005d8aa8 < local_30) {
-        local_30 = local_30 + _DAT_005d8abc;
+      if ((float)3.1415926535900001 < local_30) {
+        local_30 = local_30 + -6.283185f;
       }
       fVar3 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3f2],afStack_1014[0x3f1]));
       fVar2 = this_ptr->m[1].x * fVar3;
       local_28[0] = local_30;
       dVar8 = (double)fVar2;
       dVar1 = (double)(this_ptr->m[1].y * fVar3);
-      if ((_DAT_005d8a98 <= dVar8) || (dVar8 <= _DAT_005d8aa0)) {
-        if (_DAT_005d8a90 < dVar1) {
+      if ((0.70699999999999996 <= dVar8) || (dVar8 <= -0.70699999999999996)) {
+        if (-1 < dVar1) {
           if (dVar1 < 1.0) {
             acos(dVar1);
           }
@@ -101,11 +99,11 @@ CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(
       else {
         asin((float10)fVar2);
       }
-      if (local_38._0_4_ < (float)_DAT_005d8ab0) {
-        local_38._0_4_ = local_38._0_4_ + _DAT_005d8ab8;
+      if (local_38._0_4_ < (float)-3.1415926535900001) {
+        local_38._0_4_ = local_38._0_4_ + 6.283185f;
       }
-      if ((float)_DAT_005d8aa8 < local_38._0_4_) {
-        local_38._0_4_ = local_38._0_4_ + _DAT_005d8abc;
+      if ((float)3.1415926535900001 < local_38._0_4_) {
+        local_38._0_4_ = local_38._0_4_ + -6.283185f;
       }
       local_28[1] = local_38._0_4_;
       pfVar4 = (float *)((int)euler_angles + (uint)bVar5 * -8 + 4);
@@ -122,8 +120,8 @@ CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(
   dVar8 = (double)fVar2;
   dVar1 = (double)this_ptr->m[0].x;
   local_28[2] = 0.0;
-  if ((_DAT_005d8a98 <= dVar8) || (dVar8 < _DAT_005d8aa0)) {
-    if (_DAT_005d8a90 < dVar1) {
+  if ((0.70699999999999996 <= dVar8) || (dVar8 < -0.70699999999999996)) {
+    if (-1 < dVar1) {
       if (dVar1 < 1.0) {
         acos(dVar1);
       }
@@ -141,11 +139,11 @@ CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(
   else {
     asin((float10)fVar2);
   }
-  if (local_30 < (float)_DAT_005d8ab0) {
-    local_30 = local_30 + _DAT_005d8ab8;
+  if (local_30 < (float)-3.1415926535900001) {
+    local_30 = local_30 + 6.283185f;
   }
-  if ((float)_DAT_005d8aa8 < local_30) {
-    local_30 = local_30 + _DAT_005d8abc;
+  if ((float)3.1415926535900001 < local_30) {
+    local_30 = local_30 + -6.283185f;
   }
   local_28[1] = local_30;
   pfVar4 = (float *)((int)euler_angles + (uint)bVar5 * -8 + 4);

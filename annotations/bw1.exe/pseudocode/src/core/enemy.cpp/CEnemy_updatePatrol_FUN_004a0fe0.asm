@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Capture_005dcba3
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;
@@ -42,7 +42,7 @@ section .text
     JNZ 0x004a100b                      ; 004a0ff1
         ;   XREF to: 004a100b (CONDITIONAL_JUMP)  ; LAB_004a100b
     PUSH 0x5dcba3                       ; 004a0ff3 | = "Capture"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004a0ff8 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004a0ff8 | g_CEventList_PTR_0061b4d0
     PUSH ECX                            ; 004a0ffe
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004a0fff
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

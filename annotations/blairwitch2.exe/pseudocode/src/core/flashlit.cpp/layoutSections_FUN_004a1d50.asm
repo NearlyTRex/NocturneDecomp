@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00616014
-;   undefined4 DAT_01cab7f0
-;   undefined4 DAT_01cab9f0
+;   int g_INT_00616014 = 0x1
+;   char[512] g_CHAR_ARRAY_01cab7f0
+;   int g_INT_01cab9f0
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740
@@ -33,10 +33,10 @@ section .text
     XOR ESI,ESI                         ; 004a1d72
     CALL core_fldnotes.cpp_STextView_reset_FUN_004a27e0 ; 004a1d74
         ;   XREF to: 004a27e0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_reset_FUN_004a27e0(STextView * this_ptr)
-    MOV EDX,dword ptr [0x01cab9f0]      ; 004a1d79 | DAT_01cab9f0
+    MOV EDX,dword ptr [0x01cab9f0]      ; 004a1d79 | g_INT_01cab9f0
     XOR AH,AH                           ; 004a1d7f
     ADD ESP,0x4                         ; 004a1d81
-    MOV byte ptr [0x01cab7f0],AH        ; 004a1d84 | DAT_01cab7f0
+    MOV byte ptr [0x01cab7f0],AH        ; 004a1d84 | g_CHAR_ARRAY_01cab7f0
     TEST EDX,EDX                        ; 004a1d8a
     JLE 0x004a1db6                      ; 004a1d8c
         ;   XREF to: 004a1db6 (CONDITIONAL_JUMP)  ; LAB_004a1db6
@@ -50,7 +50,7 @@ section .text
     TEST EAX,EAX                        ; 004a1da1
     JZ 0x004a1dc3                       ; 004a1da3
         ;   XREF to: 004a1dc3 (CONDITIONAL_JUMP)  ; LAB_004a1dc3
-    MOV ECX,dword ptr [0x01cab9f0]      ; 004a1da5 | DAT_01cab9f0
+    MOV ECX,dword ptr [0x01cab9f0]      ; 004a1da5 | g_INT_01cab9f0
     INC ESI                             ; 004a1dab
     ADD EBX,0x2e4                       ; 004a1dac
     CMP ESI,ECX                         ; 004a1db2
@@ -59,7 +59,7 @@ section .text
     XOR EBX,EBX                         ; 004a1db6
         ;   Label: LAB_004a1db6
     MOV EAX,0x1                         ; 004a1db8
-    MOV dword ptr [0x00616014],EBX      ; 004a1dbd | DAT_00616014
+    MOV dword ptr [0x00616014],EBX      ; 004a1dbd | g_INT_00616014
     POP ESI                             ; 004a1dc3
         ;   Label: LAB_004a1dc3
     POP EBX                             ; 004a1dc4

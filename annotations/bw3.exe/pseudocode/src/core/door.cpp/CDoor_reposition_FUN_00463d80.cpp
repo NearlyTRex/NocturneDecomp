@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr)
 
 {
@@ -80,19 +78,19 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr)
     (this_ptr->base).location.position.y = (this_ptr->orig_pos).y;
     (this_ptr->base).location.position.z = (this_ptr->orig_pos).z;
     if (this_ptr->door_swing == DOOR_SWING_CLOCKWISE) {
-      fVar2 = this_ptr->param * (float)_DAT_005bbd73 + (this_ptr->orig_orient).y;
+      fVar2 = this_ptr->param * (float)1.57079632675 + (this_ptr->orig_orient).y;
     }
     else {
-      fVar2 = (this_ptr->orig_orient).y - this_ptr->param * (float)_DAT_005bbd73;
+      fVar2 = (this_ptr->orig_orient).y - this_ptr->param * (float)1.57079632675;
     }
     (this_ptr->base).orient.vec.y = fVar2;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(&this_ptr->base);
     local_150 = (double)fStack_13c;
     if (ABS(fStack_148) <= ABS(fStack_13c)) {
-      fStack_148 = fStack_13c + (float)_DAT_005bbd83;
+      fStack_148 = fStack_13c + (float)-0.29999999999999999;
     }
     else {
-      fStack_148 = fStack_148 + (float)_DAT_005bbd8b;
+      fStack_148 = fStack_148 + (float)0.29999999999999999;
     }
     (this_ptr->open_position).x = fStack_148;
     pCVar8 = &this_ptr->open_position;
@@ -168,7 +166,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr)
     }
     break;
   case DOOR_TYPE_TILT:
-    (this_ptr->base).orient.vec.x = this_ptr->param * (float)_DAT_005bbd73;
+    (this_ptr->base).orient.vec.x = this_ptr->param * (float)1.57079632675;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(&this_ptr->base);
     fStack_94 = fStack_148 + fStack_13c;
     fStack_90 = fStack_144 + local_138;
@@ -178,10 +176,10 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr)
     afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
          afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
     pCVar8 = &CStack_58;
-    fStack_dc = afStack_a8[2] * _DAT_005bbd7b;
-    afStack_d8[0] = afStack_a8[3] * _DAT_005bbd7b;
-    afStack_d8[1] = fStack_98 * _DAT_005bbd7b;
-    CStack_58.x = afStack_a8[2] * _DAT_005bbd7b;
+    fStack_dc = afStack_a8[2] * 0.5f;
+    afStack_d8[0] = afStack_a8[3] * 0.5f;
+    afStack_d8[1] = fStack_98 * 0.5f;
+    CStack_58.x = afStack_a8[2] * 0.5f;
     *(float *)((int)&CStack_58 + (uint)bVar7 * -8 + 4) = afStack_d8[(uint)bVar7 * -2];
     *(float *)((int)&CStack_58 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          afStack_d8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
@@ -197,12 +195,12 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr)
     }
     break;
   default:
-    _DAT_01d71de0 = "..\\core\\door.cpp";
-    _DAT_01d71de4 = 0x117;
+    g_CHAR_PTR_01d71de0 = "..\\core\\door.cpp";
+    g_INT_01d71de4 = 0x117;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDoor::reposition - Unknown type");
   }
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                    (0x01C6E360,this_ptr->shake_me_event);
+                    (g_CEventList_PTR_005fba60,this_ptr->shake_me_event);
   if (iVar4 != 0) {
     this_ptr->swing_range = this_ptr->shake_me_strength;
   }

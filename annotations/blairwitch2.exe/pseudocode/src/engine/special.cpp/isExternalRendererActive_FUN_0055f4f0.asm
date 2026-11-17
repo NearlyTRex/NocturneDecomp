@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264bcdc
+;   int g_INT_0264bcdc
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x0264bcdc]                ; 0055f4f0 | DAT_0264bcdc
+    MOV EAX,[0x0264bcdc]                ; 0055f4f0 | g_INT_0264bcdc
         ;   Label: engine_special.cpp_isExternalRendererActive_FUN_0055f4f0
     RET                                 ; 0055f4f5
 

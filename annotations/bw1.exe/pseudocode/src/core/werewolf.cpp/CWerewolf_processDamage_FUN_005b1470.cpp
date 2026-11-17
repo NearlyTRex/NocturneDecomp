@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -31,7 +29,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
     return;
   }
   if (damage_info->ammo_type == AMMO_TYPE_SILVER) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f9bd2;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
               ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_30);
     iVar4 = 0;
@@ -43,7 +41,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_0061c010,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -57,8 +55,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
       if ((this_ptr->type == WEREWOLF_TYPE_TRAIN) && (g_CDemonSetPtr->last_switch_area_invalid != 0)
          ) {
         fVar1 = (this_ptr->base).base.base.location.position.x;
-        if (fVar1 <= (float)_DAT_005f9bda) {
-          if ((double)fVar1 < _DAT_005f9be2) {
+        if (fVar1 <= (float)5) {
+          if ((double)fVar1 < -5) {
             (this_ptr->base).base.base.orient.vec.y = 1.5707964;
           }
         }

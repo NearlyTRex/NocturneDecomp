@@ -31,7 +31,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->hit_points,"hitPoints");
   if (1 < g_CCharacterClassVersion) {
-    if (DAT_007c3038 == 1) {
+    if (g_INT_007c3038 == 1) {
       core_actor_cpp_archiveInteger_FUN_0040b670(&local_20,"numCarryHands");
       local_14 = 0;
       if (0 < local_20) {

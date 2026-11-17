@@ -38,7 +38,8 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0057bb60(CWeapon *this_pt
   bVar4 = 0;
   core_fire_cpp_SLaserInfo_ctor_FUN_004a2de0(&SStack_b4);
   if ((this_ptr->draw_crosshair != 0) && (g_CGamePtr->show_crosshair != 0)) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                      (g_CDemonRenderer_PTR_005f2afc);
     if (iVar1 == 0) {
       (*(((this_ptr->base).vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
       input_local_point = (CVector3f *)afStack_14;
@@ -118,7 +119,7 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0057bb60(CWeapon *this_pt
       laser_info.reflectivity = (float)in_stack_fffffef4._72_4_;
       laser_info.transparency = fVar10;
       core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20
-                (0x01C73654,&CStack_38,&CStack_20,laser_info,recursion_depth);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_38,&CStack_20,laser_info,recursion_depth);
       core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
       return;
     }

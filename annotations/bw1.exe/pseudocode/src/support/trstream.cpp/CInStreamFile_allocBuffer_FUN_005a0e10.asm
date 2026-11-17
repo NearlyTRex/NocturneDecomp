@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005f88ad
 ;   TerminatedCString s_Out_of_memory_005f88c5
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -58,8 +58,8 @@ section .text
     MOV ECX,0x5f88ad                    ; 005a0e57 | = "..\\support\\trstream.cpp"
     MOV ESI,0x62c                       ; 005a0e5c
     PUSH 0x5f88c5                       ; 005a0e61 | = "Out of memory"
-    MOV dword ptr [0x01d1d400],ECX      ; 005a0e66 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005a0e6c | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 005a0e66 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 005a0e6c | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a0e72
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a0e77

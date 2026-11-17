@@ -13,9 +13,9 @@
 ;   core_exorcism.cpp_CExorcism_setup_FUN_0048b690 at 0048b6d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fd60c
-;   undefined4 DAT_005fd624
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   SMRGLTextureBasic[6] g_SMRGLTextureBasic_ARRAY_005fd60c
+;   undefined4 g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
 ;   undefined4 DAT_005fd7ec
 ;   undefined4 DAT_005fd804
 ;   undefined4 DAT_005fd81c
@@ -24,7 +24,7 @@
 ;   undefined4 DAT_005fd864
 ;   undefined4 DAT_005fd8dc
 ;   undefined4 DAT_005fd8f4
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -57,8 +57,8 @@ section .text
     ADD EAX,EBX                         ; 004a41fa
         ;   Label: LAB_004a41fa
     PUSH EAX                            ; 004a41fc | DAT_005fd7ec | DAT_005fd804 | DAT_005fd864
-    MOV EBP,dword ptr [0x005f2afc]      ; 004a41fd | DAT_005f2afc
-    PUSH EBP                            ; 004a4203 | DAT_01bdd7e4
+    MOV EBP,dword ptr [0x005f2afc]      ; 004a41fd | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBP                            ; 004a4203 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a4204
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
         ;   Label: LAB_004a4204
@@ -111,44 +111,44 @@ section .text
     MOV EAX,0x5fd8dc                    ; 004a4253 | DAT_005fd8dc
     ADD EAX,EBX                         ; 004a4258
     PUSH EAX                            ; 004a425a | DAT_005fd8f4
-    MOV ECX,dword ptr [0x005f2afc]      ; 004a425b | DAT_005f2afc
-    PUSH ECX                            ; 004a4261 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 004a425b | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 004a4261 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4204                      ; 004a4262
         ;   XREF to: 004a4204 (UNCONDITIONAL_JUMP)  ; LAB_004a4204
     MOV EAX,0x5fd804                    ; 004a4264 | DAT_005fd804
         ;   Label: LAB_004a4264
     ADD EAX,EBX                         ; 004a4269
     PUSH EAX                            ; 004a426b | DAT_005fd81c
-    MOV ECX,dword ptr [0x005f2afc]      ; 004a426c | DAT_005f2afc
-    PUSH ECX                            ; 004a4272 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 004a426c | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 004a4272 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4204                      ; 004a4273
         ;   XREF to: 004a4204 (UNCONDITIONAL_JUMP)  ; LAB_004a4204
     MOV EAX,0x5fd81c                    ; 004a4275 | DAT_005fd81c
         ;   Label: LAB_004a4275
     ADD EAX,EBX                         ; 004a427a
     PUSH EAX                            ; 004a427c | DAT_005fd834
-    MOV EDX,dword ptr [0x005f2afc]      ; 004a427d | DAT_005f2afc
-    PUSH EDX                            ; 004a4283 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004a427d | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004a4283 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4204                      ; 004a4284
         ;   XREF to: 004a4204 (UNCONDITIONAL_JUMP)  ; LAB_004a4204
     MOV EAX,0x5fd834                    ; 004a4289 | DAT_005fd834
         ;   Label: LAB_004a4289
     ADD EAX,EBX                         ; 004a428e
     PUSH EAX                            ; 004a4290 | DAT_005fd84c
-    MOV EAX,[0x005f2afc]                ; 004a4291 | DAT_005f2afc
-    PUSH EAX                            ; 004a4296 | DAT_01bdd7e4
+    MOV EAX,[0x005f2afc]                ; 004a4291 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EAX                            ; 004a4296 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4204                      ; 004a4297
         ;   XREF to: 004a4204 (UNCONDITIONAL_JUMP)  ; LAB_004a4204
     MOV EAX,0x5fd84c                    ; 004a429c | DAT_005fd84c
         ;   Label: LAB_004a429c
     JMP 0x004a41fa                      ; 004a42a1
         ;   XREF to: 004a41fa (UNCONDITIONAL_JUMP)  ; LAB_004a41fa
-    MOV EAX,0x5fd60c                    ; 004a42a6 | DAT_005fd60c
+    MOV EAX,0x5fd60c                    ; 004a42a6 | g_SMRGLTextureBasic_ARRAY_005fd60c
         ;   Label: LAB_004a42a6
     ADD EAX,EBX                         ; 004a42ab
-    PUSH EAX                            ; 004a42ad | DAT_005fd624
-    MOV EDX,dword ptr [0x005f2afc]      ; 004a42ae | DAT_005f2afc
-    PUSH EDX                            ; 004a42b4 | DAT_01bdd7e4
+    PUSH EAX                            ; 004a42ad | g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
+    MOV EDX,dword ptr [0x005f2afc]      ; 004a42ae | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004a42b4 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4204                      ; 004a42b5
         ;   XREF to: 004a4204 (UNCONDITIONAL_JUMP)  ; LAB_004a4204
 

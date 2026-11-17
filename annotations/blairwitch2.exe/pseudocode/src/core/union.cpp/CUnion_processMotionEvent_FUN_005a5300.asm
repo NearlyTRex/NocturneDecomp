@@ -13,8 +13,8 @@
 ;   TerminatedCString s_riflebutt01_005f0599
 ;   TerminatedCString s_confedstab01_wav_005f05a5
 ;   TerminatedCString s_confedbutt01_wav_005f05b6
-;   undefined4 DAT_005ff8fc
-;   undefined4 DAT_0061c068
+;   float g_FLOAT_005ff8fc = 2.5
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -59,7 +59,7 @@ section .text
         ;   Label: caseD_206f
     PUSH 0x3f800000                     ; 005a533d
     PUSH ESI                            ; 005a5342
-    PUSH dword ptr [0x005ff8fc]         ; 005a5343 | DAT_005ff8fc
+    PUSH dword ptr [0x005ff8fc]         ; 005a5343 | g_FLOAT_005ff8fc
     PUSH EBX                            ; 005a5349
     CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005a534a
         ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 005a535a
     PUSH 0x5f0582                       ; 005a535b | = "swordimpactflesh0?.wav"
     PUSH EBX                            ; 005a5360
-    MOV EDI,dword ptr [0x0061c068]      ; 005a5361 | DAT_0061c068
+    MOV EDI,dword ptr [0x0061c068]      ; 005a5361 | g_CSound_PTR_0061c068
     PUSH EDI                            ; 005a5367
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a5368
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -92,7 +92,7 @@ section .text
         ;   Label: caseD_2070
     PUSH 0x3f800000                     ; 005a5389
     PUSH EDX                            ; 005a538e
-    PUSH dword ptr [0x005ff8fc]         ; 005a538f | DAT_005ff8fc
+    PUSH dword ptr [0x005ff8fc]         ; 005a538f | g_FLOAT_005ff8fc
     PUSH EBX                            ; 005a5395
     CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005a5396
         ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 005a53a5
     PUSH 0x5f0599                       ; 005a53a6 | = "riflebutt01"
     PUSH EBX                            ; 005a53ab
-    MOV ECX,dword ptr [0x0061c068]      ; 005a53ac | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005a53ac | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005a53b2
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a53b3
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -132,7 +132,7 @@ section .text
     PUSH EAX                            ; 005a53e5
     PUSH 0x5f05a5                       ; 005a53e6 | = "confedstab01.wav"
     PUSH EBX                            ; 005a53eb
-    MOV EAX,[0x0061c068]                ; 005a53ec | DAT_0061c068
+    MOV EAX,[0x0061c068]                ; 005a53ec | g_CSound_PTR_0061c068
     PUSH EAX                            ; 005a53f1
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a53f2
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -152,7 +152,7 @@ section .text
     PUSH EAX                            ; 005a540f
     PUSH 0x5f05b6                       ; 005a5410 | = "confedbutt01.wav"
     PUSH EBX                            ; 005a5415
-    MOV EBP,dword ptr [0x0061c068]      ; 005a5416 | DAT_0061c068
+    MOV EBP,dword ptr [0x0061c068]      ; 005a5416 | g_CSound_PTR_0061c068
     PUSH EBP                            ; 005a541c
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a541d
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
+;   int g_INT_01c50948
 ;
 ; Called Functions:
 ;   engine_special.cpp_clearZBufferNative_FUN_0057dca4
@@ -14,7 +14,7 @@
 
 section .text
 
-    CMP dword ptr [0x01c50948],0x0      ; 005111a0 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 005111a0 | g_INT_01c50948
         ;   Label: engine_mini3d.cpp_clearZBuffer_FUN_005111a0
     JNZ 0x00582940                      ; 005111a7
         ;   XREF to: 00582940 (CONDITIONAL_JUMP)

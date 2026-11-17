@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 287,
-    "complexity_score": 200,
+    "complexity_score": 304,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 80,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 94,
+    "suspect_count": 20,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation",
+      "wrong_global"
     ],
-    "total_lines": 367
+    "total_lines": 381
   },
   "cross_references": [],
   "function": {
@@ -43,32 +43,32 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d2257c",
-      "name": "DAT_01d2257c",
-      "type": "undefined4",
+      "name": "g_PTR_01d2257c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d22580",
-      "name": "DAT_01d22580",
-      "type": "undefined4",
+      "name": "g_PTR_01d22580",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d24ffc",
-      "name": "DAT_01d24ffc",
-      "type": "undefined4",
+      "name": "g_INT_01d24ffc",
+      "type": "int",
       "value": null
     }
   ],
@@ -154,92 +154,164 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01d22584",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d22584 + iVar15) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_01d22588",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d22588 + iVar15) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_FLOAT_01d22584 accessed via (&g_FLOAT_01d22584)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d22588 (at 0x01d22588, +4 bytes).",
       "line": 65,
-      "match": "DAT_01d2258c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d2258c + iVar15) =",
-      "type": "undefined_data"
+      "match": "g_FLOAT_01d22584",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22584)[iVar16] =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_01d22590",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d22590 + iVar15) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01d22588 accessed via (&g_FLOAT_01d22588)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d2258c (at 0x01d2258c, +4 bytes).",
+      "line": 68,
+      "match": "g_FLOAT_01d22588",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22588)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_01d22594",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d22594 + iVar15) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_FLOAT_01d2258c accessed via (&g_FLOAT_01d2258c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d22590 (at 0x01d22590, +4 bytes).",
       "line": 71,
-      "match": "DAT_01d22598",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d22598 + iVar15) =",
-      "type": "undefined_data"
+      "match": "g_FLOAT_01d2258c",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d2258c)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_01d2259c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d2259c + iVar15) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01d22590 accessed via (&g_FLOAT_01d22590)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d22594 (at 0x01d22594, +4 bytes).",
+      "line": 74,
+      "match": "g_FLOAT_01d22590",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22590)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_01d225a0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d225a0 + iVar15) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01d22594 accessed via (&g_FLOAT_01d22594)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d22598 (at 0x01d22598, +4 bytes).",
+      "line": 77,
+      "match": "g_FLOAT_01d22594",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22594)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_01d22584",
-      "severity": "mild",
-      "text": "_DAT_01d2257c = (float *)(&DAT_01d22584 + iVar15);",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01d22598 accessed via (&g_FLOAT_01d22598)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d2259c (at 0x01d2259c, +4 bytes).",
+      "line": 80,
+      "match": "g_FLOAT_01d22598",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22598)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_01d225a4",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01d225a4 + iVar15) = afStack_44[0] * *pfVar3 + fVar14 * *pfVar2 + fVar6 * *pfVar1;",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01d2259c accessed via (&g_FLOAT_01d2259c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d225a0 (at 0x01d225a0, +4 bytes).",
+      "line": 83,
+      "match": "g_FLOAT_01d2259c",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d2259c)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_FLOAT_01d225a0 accessed via (&g_FLOAT_01d225a0)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01d225a4 (at 0x01d225a4, +4 bytes).",
+      "line": 86,
+      "match": "g_FLOAT_01d225a0",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d225a0)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_FLOAT_01d225a4 accessed via (&g_FLOAT_01d225a4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d227dc (at 0x01d227dc, +568 bytes).",
+      "line": 94,
+      "match": "g_FLOAT_01d225a4",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d225a4)[(int)puVar17 * 0xf] =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Pointer value `g_PTR_01d22580` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)g_PTR_01d22580",
+      "severity": "moderate",
+      "text": "if (9 < (int)g_PTR_01d22580) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PTR_01d22580` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)g_PTR_01d22580",
+      "severity": "moderate",
+      "text": "iVar15 = (int)g_PTR_01d22580 * 0x3c;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PTR_01d22580` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)g_PTR_01d22580",
+      "severity": "moderate",
+      "text": "iVar16 = (int)g_PTR_01d22580 * 0xf;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22588)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d2258c)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22590)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22594)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d22598)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d2259c)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d225a0)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)puVar17",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01d225a4)[(int)puVar17 * 0xf] =",
+      "type": "pointer_truncation"
     }
   ]
 }

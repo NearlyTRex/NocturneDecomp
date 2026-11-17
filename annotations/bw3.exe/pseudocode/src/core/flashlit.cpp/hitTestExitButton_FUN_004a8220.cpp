@@ -9,9 +9,9 @@
 int __cdecl core_flashlit_cpp_hitTestExitButton_FUN_004a8220(int x,int y)
 
 {
-  if ((((0x00000262 <= x) && (0x000001C0 <= y)) &&
-      (x < 0x00000262 + CAlphaBitmap_01d19cc4.width)) &&
-     (y < 0x000001C0 + CAlphaBitmap_01d19cc4.height)) {
+  if ((((g_INT_005fe390 <= x) && (g_INT_005fe394 <= y)) &&
+      (x < g_INT_005fe390 + CAlphaBitmap_01d19cc4.width)) &&
+     (y < g_INT_005fe394 + CAlphaBitmap_01d19cc4.height)) {
     return 1;
   }
   return 0;

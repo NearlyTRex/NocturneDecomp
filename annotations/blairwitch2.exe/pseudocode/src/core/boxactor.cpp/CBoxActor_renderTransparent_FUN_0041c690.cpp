@@ -24,9 +24,9 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041c690(CBoxActor
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (0x01BA5C50,&(this_ptr->base).location.position);
+            (g_CDemonRenderer_PTR_0060b27c,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (0x01BA5C50,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_0060b27c,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   puVar3 = auStack_30;
   puVar4 = auStack_20;
@@ -37,7 +37,8 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041c690(CBoxActor
   }
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840
                     ((CBoundingBox3D *)(auStack_20 + 2),unaff_EDI);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+            (g_CDemonRenderer_PTR_0060b280,0xffff);
   if (this_ptr->dont_use_normals != 0) {
     g_CDemonSetPtr->disable_directional_lighting = 1;
   }

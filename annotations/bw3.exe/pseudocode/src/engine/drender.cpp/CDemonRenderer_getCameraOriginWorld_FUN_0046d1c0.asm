@@ -26,7 +26,7 @@
 ;   core_terrain.cpp_CTerrain_render_FUN_005723d0 at 005723fb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bc55b
+;   double g_DOUBLE_005bc55b = 0.00390625
 ;
 ; Called Functions:
 ;   engine_matrix.c_getCameraOrigin_FUN_004e6a90
@@ -50,7 +50,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EAX      ; 0046d1d7
     FILD dword ptr [ESP + 0x18]         ; 0046d1db
     MOV EAX,dword ptr [ESP + 0x4]       ; 0046d1df
-    FLD double ptr [0x005bc55b]         ; 0046d1e3 | DAT_005bc55b
+    FLD double ptr [0x005bc55b]         ; 0046d1e3 | g_DOUBLE_005bc55b
     FXCH                                ; 0046d1e9
     FMUL ST1                            ; 0046d1eb
     MOV dword ptr [ESP + 0x18],EAX      ; 0046d1ed

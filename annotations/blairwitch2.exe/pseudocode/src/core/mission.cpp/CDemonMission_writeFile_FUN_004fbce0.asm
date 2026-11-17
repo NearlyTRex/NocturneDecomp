@@ -17,17 +17,17 @@
 ;   TerminatedCString s_mission_version_actor_ve_005de471
 ;   TerminatedCString s_d_d_005de494
 ;   TerminatedCString s_Root_name_of_mission_005de49b
-;   undefined4 DAT_005de4b4
+;   TerminatedCString s_s_005de4b4
 ;   TerminatedCString s_setList_005de4b8
-;   undefined4 DAT_005de4c4
-;   undefined4 DAT_005de4c8
+;   TerminatedCString s_d_005de4c4
+;   TerminatedCString s_s_005de4c8
 ;   TerminatedCString s_actorTypeList_005de4cc
-;   undefined4 DAT_005de4de
+;   TerminatedCString s_d_005de4de
 ;   TerminatedCString s_s_d_005de4e2
 ;   TerminatedCString s_actor_count_005de4e9
-;   undefined4 DAT_005de4f9
+;   TerminatedCString s_d_005de4f9
 ;   TerminatedCString s_inventory_actor_count_005de4fd
-;   undefined4 DAT_005de517
+;   TerminatedCString s_d_005de517
 ;   TerminatedCString s_actor_name_list_005de51b
 ;   ... and 13 more
 ;
@@ -76,7 +76,7 @@ section .text
     ADD ESP,0x8                         ; 004fbd2d
     LEA EAX,[EBX + 0x1014]              ; 004fbd30
     PUSH EAX                            ; 004fbd36
-    PUSH 0x5de4b4                       ; 004fbd37 | DAT_005de4b4
+    PUSH 0x5de4b4                       ; 004fbd37 | = "%s\n"
     PUSH ESI                            ; 004fbd3c
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fbd3d
         ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x8                         ; 004fbd50
     MOV EDX,dword ptr [EBX + 0x4]       ; 004fbd53
     PUSH EDX                            ; 004fbd56
-    PUSH 0x5de4c4                       ; 004fbd57 | DAT_005de4c4
+    PUSH 0x5de4c4                       ; 004fbd57 | = "%d\n"
     MOV EDI,ESI                         ; 004fbd5c
     PUSH ESI                            ; 004fbd5e
     XOR EDI,ESI                         ; 004fbd5f
@@ -103,7 +103,7 @@ section .text
     LEA ESI,[EBX + 0x8]                 ; 004fbd74
     PUSH ESI                            ; 004fbd77
         ;   Label: LAB_004fbd77
-    PUSH 0x5de4c8                       ; 004fbd78 | DAT_005de4c8
+    PUSH 0x5de4c8                       ; 004fbd78 | = "%s\n"
     PUSH EBP                            ; 004fbd7d
     INC EDI                             ; 004fbd7e
     ADD ESI,0x100                       ; 004fbd7f
@@ -123,9 +123,9 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fbdaa
         ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004fbdaf
-    MOV ECX,dword ptr [0x007bc044]      ; 004fbdb2 | DAT_007bc044
+    MOV ECX,dword ptr [0x007bc044]      ; 004fbdb2 | g_INT_007bc044
     PUSH ECX                            ; 004fbdb8
-    PUSH 0x5de4de                       ; 004fbdb9 | DAT_005de4de
+    PUSH 0x5de4de                       ; 004fbdb9 | = "%d\n"
     MOV ESI,dword ptr [ESP + 0x24]      ; 004fbdbe
     PUSH ESI                            ; 004fbdc2
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fbdc3
@@ -133,13 +133,13 @@ section .text
     ADD ESP,0xc                         ; 004fbdc8
     CALL core_actor.cpp_syncActorTypeIDs_FUN_0040c920 ; 004fbdcb
         ;   XREF to: 0040c920 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_syncActorTypeIDs_FUN_0040c920()
-    MOV EDI,dword ptr [0x007bc044]      ; 004fbdd0 | DAT_007bc044
+    MOV EDI,dword ptr [0x007bc044]      ; 004fbdd0 | g_INT_007bc044
     XOR ESI,ESI                         ; 004fbdd6
     TEST EDI,EDI                        ; 004fbdd8
     JLE 0x004fbe10                      ; 004fbdda
         ;   XREF to: 004fbe10 (CONDITIONAL_JUMP)  ; LAB_004fbe10
     XOR EDI,EDI                         ; 004fbddc
-    MOV EAX,dword ptr [EDI + 0x7bc048]  ; 004fbdde | DAT_007bc048 | DAT_007bc04c
+    MOV EAX,dword ptr [EDI + 0x7bc048]  ; 004fbdde | g_CDemonActorType_PTR_ARRAY_007bc048 | g_CDemonActorType_PTR_ARRAY_007bc048[1]
         ;   Label: LAB_004fbdde
     MOV EBP,dword ptr [EAX + 0x34]      ; 004fbde4
     PUSH EBP                            ; 004fbde7
@@ -151,7 +151,7 @@ section .text
     INC ESI                             ; 004fbdf6
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fbdf7
         ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
-    MOV EDX,dword ptr [0x007bc044]      ; 004fbdfc | DAT_007bc044
+    MOV EDX,dword ptr [0x007bc044]      ; 004fbdfc | g_INT_007bc044
     ADD ESP,0x10                        ; 004fbe02
     CMP ESI,EDX                         ; 004fbe05
     JL 0x004fbdde                       ; 004fbe07
@@ -170,7 +170,7 @@ section .text
         ;   XREF to: 004fc320 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_countActors_FUN_004fc320(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004fbe28
     PUSH EAX                            ; 004fbe2b
-    PUSH 0x5de4f9                       ; 004fbe2c | DAT_005de4f9
+    PUSH 0x5de4f9                       ; 004fbe2c | = "%d\n"
     MOV ESI,dword ptr [ESP + 0x24]      ; 004fbe31
     PUSH ESI                            ; 004fbe35
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fbe36
@@ -205,7 +205,7 @@ section .text
         ;   XREF to: 004fbe58 (CONDITIONAL_JUMP)  ; LAB_004fbe58
     PUSH EDI                            ; 004fbe7e
         ;   Label: LAB_004fbe7e
-    PUSH 0x5de517                       ; 004fbe7f | DAT_005de517
+    PUSH 0x5de517                       ; 004fbe7f | = "%d\n"
     MOV EAX,dword ptr [ESP + 0x24]      ; 004fbe84
     PUSH EAX                            ; 004fbe88
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fbe89
@@ -242,8 +242,8 @@ section .text
     MOV ECX,0x5de538                    ; 004fbee2 | = "..\\core\\mission.cpp"
     MOV EDI,0x1ed                       ; 004fbee7
     PUSH 0x5de54c                       ; 004fbeec | = "Too many actors"
-    MOV dword ptr [0x01d046a0],ECX      ; 004fbef1 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004fbef7 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004fbef1 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 004fbef7 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fbefd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fbf02
@@ -345,8 +345,8 @@ section .text
         ;   Label: LAB_004fc006
     MOV EAX,0x1f8                       ; 004fc00b
     PUSH 0x5de570                       ; 004fc010 | = "Too many actors"
-    MOV dword ptr [0x01d046a0],ECX      ; 004fc015 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004fc01b | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004fc015 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004fc01b | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc020
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fc025

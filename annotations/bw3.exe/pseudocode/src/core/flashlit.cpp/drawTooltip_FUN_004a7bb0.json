@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 87,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 68
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -43,62 +40,62 @@
   "globals": [
     {
       "addr": "005fe3a8",
-      "name": "DAT_005fe3a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fe3a8",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "01549aa4",
-      "name": "DAT_01549aa4",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa4",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d19f78",
-      "name": "DAT_01d19f78",
-      "type": "undefined4",
+      "name": "g_INT_01d19f78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d19f7c",
-      "name": "DAT_01d19f7c",
-      "type": "undefined4",
+      "name": "g_INT_01d19f7c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d19f80",
-      "name": "DAT_01d19f80",
-      "type": "undefined4",
+      "name": "g_INT_01d19f80",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d19f84",
-      "name": "DAT_01d19f84",
-      "type": "undefined4",
+      "name": "g_INT_01d19f84",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d19f88",
-      "name": "DAT_01d19f88",
-      "type": "undefined4",
+      "name": "g_INT_01d19f88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d19f8c",
-      "name": "DAT_01d19f8c",
-      "type": "undefined4",
+      "name": "g_INT_01d19f8c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d19f90",
-      "name": "DAT_01d19f90",
-      "type": "undefined4",
+      "name": "g_CHAR_01d19f90",
+      "type": "char",
       "value": null
     },
     {
       "addr": "01d1a058",
-      "name": "DAT_01d1a058",
-      "type": "undefined4",
+      "name": "g_INT_01d1a058",
+      "type": "int",
       "value": null
     }
   ],
@@ -158,54 +155,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005fe3a8",
-      "severity": "mild",
-      "text": "if (-1 < DAT_005fe3a8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005fe3a8",
-      "severity": "mild",
-      "text": "(DAT_005fe3a8,_DAT_01d19f7c,_DAT_01d19f80 + -1,_DAT_01d19f84 + -1,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_01d19f90",
-      "severity": "mild",
-      "text": "(_DAT_01549aa4,&DAT_01d19f90,_DAT_01d19f88,_DAT_01d19f8c,0xff,-1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01d19f90",
-      "severity": "mild",
-      "text": "DAT_01d19f90 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005fe3a8",
-      "severity": "mild",
-      "text": "DAT_005fe3a8 = -1;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

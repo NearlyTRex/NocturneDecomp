@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 114,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 162
@@ -79,9 +78,9 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     }
   ],
   "param_estimates": {
@@ -175,22 +174,6 @@
       "severity": "moderate",
       "text": "((CBoundingBox3D *)(auStack_2c + 2),in_stack_ffffffc0);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,&(this_ptr->base).base.location.position);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,&(this_ptr->home_orient).vec,(CVector3f *)0x0);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

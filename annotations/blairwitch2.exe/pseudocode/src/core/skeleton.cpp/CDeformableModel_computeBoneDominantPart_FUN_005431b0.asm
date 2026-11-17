@@ -36,9 +36,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e7059
 ;   TerminatedCString s_Out_of_memory_005e706e
-;   undefined4 DAT_005fb9a0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005fb9a0 = 0.00390625
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -97,8 +97,8 @@ section .text
     MOV EAX,0x5e7059                    ; 0054320e | = "..\\core\\skeleton.cpp"
     MOV EDX,0x5ff                       ; 00543213
     PUSH 0x5e706e                       ; 00543218 | = "Out of memory"
-    MOV [0x01d046a0],EAX                ; 0054321d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00543222 | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0054321d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00543222 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00543228
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054322d
@@ -231,13 +231,13 @@ section .text
     LEA EBX,[ESP + 0x1c]                ; 0054338a
     ADD EAX,EDX                         ; 0054338e
     FILD dword ptr [EAX]                ; 00543390
-    FMUL float ptr [0x005fb9a0]         ; 00543392 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 00543392 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX]                ; 00543398
     FILD dword ptr [EAX + 0x4]          ; 0054339a
-    FMUL float ptr [0x005fb9a0]         ; 0054339d | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 0054339d | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x4]          ; 005433a3
     FILD dword ptr [EAX + 0x8]          ; 005433a6
-    FMUL float ptr [0x005fb9a0]         ; 005433a9 | DAT_005fb9a0
+    FMUL float ptr [0x005fb9a0]         ; 005433a9 | g_FLOAT_005fb9a0
     FSTP float ptr [EBX + 0x8]          ; 005433af
     FLD float ptr [ESP + 0x1c]          ; 005433b2
     FSUB float ptr [ESP + 0x4]          ; 005433b6

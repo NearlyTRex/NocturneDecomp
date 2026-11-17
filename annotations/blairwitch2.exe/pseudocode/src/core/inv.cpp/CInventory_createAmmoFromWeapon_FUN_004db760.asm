@@ -8,8 +8,8 @@
 ; CWeapon *        Stack[0x8]:4   weapon
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
@@ -55,8 +55,8 @@ section .text
     MOV ECX,0x5db70a                    ; 004db794
     MOV EDI,0x3b9                       ; 004db799
     PUSH 0x5db71a                       ; 004db79e
-    MOV dword ptr [0x01d046a0],ECX      ; 004db7a3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004db7a9 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004db7a3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 004db7a9 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004db7af
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004db7b4

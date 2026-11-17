@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 66,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 12
@@ -33,15 +32,15 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005bef45",
-    "signature": "void crt_unknown_c_FUN_005bef45(undefined4 *param_1)"
+    "signature": "void crt_unknown_c_FUN_005bef45(WatcomStaticDestructorNode *param_1)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "0061f64c",
-      "name": "DAT_0061f64c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WatcomStaticDestructorNode_PTR_0061f64c",
+      "type": "WatcomStaticDestructorNode*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -117,7 +116,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005bef45(uint *param_1)",
+      "text": "void FUN_005bef45(WatcomStaticDestructorNode *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -125,32 +124,16 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = DAT_0061f64c;",
+      "text": "param_1->next = g_WatcomStaticDestructorNode_PTR_0061f64c;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_0061f64c",
-      "severity": "mild",
-      "text": "*param_1 = DAT_0061f64c;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "DAT_0061f64c = param_1;",
+      "text": "g_WatcomStaticDestructorNode_PTR_0061f64c = param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_0061f64c",
-      "severity": "mild",
-      "text": "DAT_0061f64c = param_1;",
-      "type": "undefined_data"
     }
   ]
 }

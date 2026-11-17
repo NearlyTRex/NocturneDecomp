@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 737,
+    "complexity_score": 652,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 172,
-    "suspect_count": 53,
+    "suspect_count": 45,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_truncation",
-      "undefined_data",
       "undefined_ptr_cast",
       "unknown_field",
       "unnamed_param",
@@ -70,8 +69,8 @@
   "globals": [
     {
       "addr": "00626114",
-      "name": "DAT_00626114",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_00626114",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -312,14 +311,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 2) == 0) break;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
@@ -352,14 +343,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if ((((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0) || (iVar5 == 0x2e)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 49,
       "match": "._0_2_",
@@ -374,14 +357,6 @@
       "severity": "mild",
       "text": "local_1c._2_2_ = 0;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -416,36 +391,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "} while (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = FUN_005c6418(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if ((local_28 == 0) && (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) == 0))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) == 0) break;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -496,28 +447,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) == 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 125,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = FUN_005c6418(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "} while (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

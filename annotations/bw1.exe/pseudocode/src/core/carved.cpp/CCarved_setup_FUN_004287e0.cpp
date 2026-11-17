@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_carved_cpp_CCarved_setup_FUN_004287e0(CCarved *this_ptr)
 
@@ -19,7 +18,7 @@ void __cdecl core_carved_cpp_CCarved_setup_FUN_004287e0(CCarved *this_ptr)
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&(this_ptr->base).base.model);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,"COMBATMODEHARD");
+                    (g_CEventList_PTR_0061b4d0,"COMBATMODEHARD");
   if (iVar1 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }
@@ -87,7 +86,7 @@ void __cdecl core_carved_cpp_CCarved_setup_FUN_004287e0(CCarved *this_ptr)
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   if ((-1 < this_ptr->part_indices[4]) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {
     (this_ptr->base).base.collision_cylinder_top =
-         (this_ptr->base).base.model.bounding_box.max.y + (float)_DAT_005d52d5;
+         (this_ptr->base).base.model.bounding_box.max.y + (float)-0.75;
   }
   this_ptr->is_female = 0;
   this_ptr->sfx_handles[0] = 0;

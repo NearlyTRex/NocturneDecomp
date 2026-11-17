@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_00506360(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3SideInfo *side_info_array,SMpegFrame *frame)
 
 {
@@ -100,8 +98,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_00506360(CMP3Decod
           } while (uVar5 != 0xc);
           iVar10 = side_info_array->channels[local_30].granules[0].block_type;
           if (iVar10 == 0) {
-            _DAT_01d046a0 = "..\\sound\\mp3.cpp";
-            _DAT_01d046a4 = 0x704;
+            g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
+            g_INT_01d046a4 = 0x704;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Side info bad: block_type == 0 in split block.  File: %s");
           }
           else if ((iVar10 == 2) &&
@@ -214,8 +212,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_00506360(CMP3Decod
             iVar10 = *(int *)((int)side_info_array->channels[local_34].granules[0].table_select +
                              local_58 + -8);
             if (iVar10 == 0) {
-              _DAT_01d046a0 = "..\\sound\\mp3.cpp";
-              _DAT_01d046a4 = 0x6d5;
+              g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
+              g_INT_01d046a4 = 0x6d5;
               core_main_c_displayErrorAndQuit_FUN_004e4500("Side info bad: block_type == 0 in split block.  File: %s");
             }
             else if ((iVar10 == 2) &&

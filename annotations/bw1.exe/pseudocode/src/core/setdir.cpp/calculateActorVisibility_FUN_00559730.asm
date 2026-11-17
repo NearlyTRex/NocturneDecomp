@@ -12,14 +12,14 @@
 ; float            Stack[0x18]:4   radius
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0fcd
-;   undefined4 DAT_005f0fd5
-;   undefined4 DAT_00605120
-;   undefined4 DAT_00605138
-;   undefined4 DAT_0060513c
-;   undefined4 DAT_00612560
+;   double g_DOUBLE_005f0fcd = 0.5
+;   double g_DOUBLE_005f0fd5 = 0.0625
+;   float g_FLOAT_00605120 = 256
+;   float g_FLOAT_00605138 = 200
+;   float g_FLOAT_0060513c = 100
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_0268ece8
+;   undefined4 g_FLOAT_ARRAY_0268e900[250]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -69,7 +69,7 @@ section .text
     FADDP ST2,ST0                       ; 00559769
     FSUB float ptr [EBX + 0x28]         ; 0055976b
     FMUL ST0                            ; 0055976e
-    FLD float ptr [0x00605138]          ; 00559770 | DAT_00605138
+    FLD float ptr [0x00605138]          ; 00559770 | g_FLOAT_00605138
     FMUL ST0                            ; 00559776
     FXCH                                ; 00559778
     FADDP ST2,ST0                       ; 0055977a
@@ -115,12 +115,12 @@ section .text
     RET                                 ; 005597d0
     PUSH ESI                            ; 005597d1
         ;   Label: LAB_005597d1
-    MOV EDX,dword ptr [0x00612560]      ; 005597d2 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 005597d2 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 005597d8
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 005597d9
         ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005597de
-    MOV ECX,dword ptr [0x00612560]      ; 005597e1 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 005597e1 | g_CDemonRenderer_PTR_00612560
     PUSH dword ptr [EDI + 0x144]        ; 005597e7
     PUSH ECX                            ; 005597ed
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 005597ee
@@ -128,14 +128,14 @@ section .text
     ADD ESP,0x8                         ; 005597f3
     LEA EAX,[EDI + 0x10c]               ; 005597f6
     PUSH EAX                            ; 005597fc
-    MOV ESI,dword ptr [0x00612560]      ; 005597fd | DAT_00612560
+    MOV ESI,dword ptr [0x00612560]      ; 005597fd | g_CDemonRenderer_PTR_00612560
     PUSH ESI                            ; 00559803
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530 ; 00559804
         ;   XREF to: 00483530 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00559809
     MOV EDI,0x800000ff                  ; 0055980c
     PUSH EBX                            ; 00559811
-    MOV EDX,dword ptr [0x00612560]      ; 00559812 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00559812 | g_CDemonRenderer_PTR_00612560
     XOR EAX,EAX                         ; 00559818
     PUSH EDX                            ; 0055981a
     MOV dword ptr [ESP + 0xb4],EDI      ; 0055981b
@@ -155,14 +155,14 @@ section .text
     MOV dword ptr [ESP + 0x4c],EAX      ; 00559850
     LEA EAX,[ESP + 0x48]                ; 00559854
     PUSH EAX                            ; 00559858
-    MOV ECX,dword ptr [0x00612560]      ; 00559859 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00559859 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 0055985f
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850 ; 00559860
         ;   XREF to: 00483850 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 00559865
     XOR ESI,ESI                         ; 00559868
     MOV EDI,dword ptr [EBP + 0x18]      ; 0055986a
-    MOV EAX,[0x00612560]                ; 0055986d | DAT_00612560
+    MOV EAX,[0x00612560]                ; 0055986d | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_0055986d
     MOV EAX,dword ptr [EAX]             ; 00559872
     PUSH EDI                            ; 00559874
@@ -170,7 +170,7 @@ section .text
     PUSH EAX                            ; 00559877
     CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00559878
         ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x00612560]                ; 0055987d | DAT_00612560
+    MOV EAX,[0x00612560]                ; 0055987d | g_CDemonRenderer_PTR_00612560
     ADD ESI,0x30                        ; 00559882
     ADD ESP,0x8                         ; 00559885
     MOV EAX,dword ptr [EAX]             ; 00559888
@@ -213,7 +213,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0 ; 00559908
         ;   XREF to: 004087f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0055990d
-    MOV ESI,dword ptr [0x00612560]      ; 00559910 | DAT_00612560
+    MOV ESI,dword ptr [0x00612560]      ; 00559910 | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_00559910
     MOV ESI,dword ptr [ESI]             ; 00559916
     ADD ESI,EDI                         ; 00559918
@@ -247,7 +247,7 @@ section .text
     MOV EDX,0x3f800000                  ; 00559959
     XOR EAX,EAX                         ; 0055995e
     MOV dword ptr [ESP],EDX             ; 00559960
-    MOV EDX,dword ptr [0x00612560]      ; 00559963 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00559963 | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_00559963
     MOV EDX,dword ptr [EDX]             ; 00559969
     ADD EDX,EAX                         ; 0055996b
@@ -258,7 +258,7 @@ section .text
     JLE 0x00559d92                      ; 00559977
         ;   XREF to: 00559d92 (CONDITIONAL_JUMP)  ; LAB_00559d92
     FLD float ptr [ESP]                 ; 0055997d
-    FMUL double ptr [0x005f0fcd]        ; 00559980 | DAT_005f0fcd
+    FMUL double ptr [0x005f0fcd]        ; 00559980 | g_DOUBLE_005f0fcd
     FSTP float ptr [ESP]                ; 00559986
         ;   Label: LAB_00559986
     ADD EAX,0x30                        ; 00559989
@@ -267,13 +267,13 @@ section .text
     JNZ 0x00559963                      ; 00559991
         ;   XREF to: 00559963 (CONDITIONAL_JUMP)  ; LAB_00559963
     XOR EBX,EBX                         ; 00559993
-    MOV EDI,dword ptr [0x0268ece8]      ; 00559995 | DAT_0268ece8
+    MOV EDI,dword ptr [0x0268ece8]      ; 00559995 | g_FLOAT_ARRAY_0268e900[250]
     MOV dword ptr [ESP + 0xbc],EBX      ; 0055999b
     MOV dword ptr [ESP + 0xa8],EBX      ; 005599a2
     TEST EDI,EDI                        ; 005599a9
     JLE 0x00559bb8                      ; 005599ab
         ;   XREF to: 00559bb8 (CONDITIONAL_JUMP)  ; LAB_00559bb8
-    FLD float ptr [0x0060513c]          ; 005599b1 | DAT_0060513c
+    FLD float ptr [0x0060513c]          ; 005599b1 | g_FLOAT_0060513c
     FLD ST0                             ; 005599b7
     MOV EDX,dword ptr [EBP + 0x20]      ; 005599b9
     FMULP                               ; 005599bc
@@ -339,18 +339,18 @@ section .text
     LEA ESI,[ESP + 0x58]                ; 00559ab0
     LEA EAX,[ESP + 0x64]                ; 00559ab4
     ADD ESP,0x8                         ; 00559ab8
-    MOV EDX,dword ptr [0x00612560]      ; 00559abb | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00559abb | g_CDemonRenderer_PTR_00612560
     MOVSD ES:EDI,ESI                    ; 00559ac1
     MOVSD ES:EDI,ESI                    ; 00559ac2
     MOVSD ES:EDI,ESI                    ; 00559ac3
     FLD float ptr [EAX]                 ; 00559ac4
-    FMUL float ptr [0x00605120]         ; 00559ac6 | DAT_00605120
+    FMUL float ptr [0x00605120]         ; 00559ac6 | g_FLOAT_00605120
     FISTP dword ptr [EBX]               ; 00559acc
     FLD float ptr [EAX + 0x4]           ; 00559ace
-    FMUL float ptr [0x00605120]         ; 00559ad1 | DAT_00605120
+    FMUL float ptr [0x00605120]         ; 00559ad1 | g_FLOAT_00605120
     FISTP dword ptr [EBX + 0x4]         ; 00559ad7
     FLD float ptr [EAX + 0x8]           ; 00559ada
-    FMUL float ptr [0x00605120]         ; 00559add | DAT_00605120
+    FMUL float ptr [0x00605120]         ; 00559add | g_FLOAT_00605120
     FISTP dword ptr [EBX + 0x8]         ; 00559ae3
     LEA EAX,[ESP + 0x68]                ; 00559ae6
     MOV EDI,dword ptr [ESP + 0xd0]      ; 00559aea
@@ -360,7 +360,7 @@ section .text
     PUSH EAX                            ; 00559af6
     CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00559af7
         ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x00612560]                ; 00559afc | DAT_00612560
+    MOV EAX,[0x00612560]                ; 00559afc | g_CDemonRenderer_PTR_00612560
     ADD ESP,0x8                         ; 00559b01
     MOV EAX,dword ptr [EAX]             ; 00559b04
     MOV ECX,dword ptr [ESP + 0x90]      ; 00559b06
@@ -394,7 +394,7 @@ section .text
         ;   Label: LAB_00559b79
     MOV EDX,dword ptr [ESP + 0xb4]      ; 00559b80
     MOV ECX,dword ptr [ESP + 0xbc]      ; 00559b87
-    MOV EBX,dword ptr [0x0268ece8]      ; 00559b8e | DAT_0268ece8
+    MOV EBX,dword ptr [0x0268ece8]      ; 00559b8e | g_FLOAT_ARRAY_0268e900[250]
     ADD EAX,0x4                         ; 00559b94
     ADD EDX,0x18                        ; 00559b97
     INC ECX                             ; 00559b9a
@@ -406,7 +406,7 @@ section .text
         ;   XREF to: 00559a01 (CONDITIONAL_JUMP)  ; LAB_00559a01
     PUSH 0x0                            ; 00559bb8
         ;   Label: LAB_00559bb8
-    MOV ESI,dword ptr [0x00612560]      ; 00559bba | DAT_00612560
+    MOV ESI,dword ptr [0x00612560]      ; 00559bba | g_CDemonRenderer_PTR_00612560
     PUSH ESI                            ; 00559bc0
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80 ; 00559bc1
         ;   XREF to: 00483d80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80(CDemonRenderer * this_ptr, int state_flag)
@@ -433,7 +433,7 @@ section .text
     LEA EAX,[EAX]                       ; 00559c0d
     PUSH 0x1                            ; 00559c10
         ;   Label: LAB_00559c10
-    MOV EDX,dword ptr [0x00612560]      ; 00559c12 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00559c12 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00559c18
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80 ; 00559c19
         ;   XREF to: 00483d80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80(CDemonRenderer * this_ptr, int state_flag)
@@ -442,7 +442,7 @@ section .text
     SETNZ AL                            ; 00559c29
     AND EAX,0xff                        ; 00559c2c
     PUSH EAX                            ; 00559c31
-    MOV ECX,dword ptr [0x00612560]      ; 00559c32 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00559c32 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 00559c38
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20 ; 00559c39
         ;   XREF to: 00483e20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(CDemonRenderer * this_ptr, int enabled)
@@ -457,7 +457,7 @@ section .text
     MOV EDI,dword ptr [ESP + EBX*0x1 + 0x2c] ; 00559c58
         ;   Label: LAB_00559c58
     PUSH EDI                            ; 00559c5c
-    MOV EAX,[0x00612560]                ; 00559c5d | DAT_00612560
+    MOV EAX,[0x00612560]                ; 00559c5d | g_CDemonRenderer_PTR_00612560
     PUSH EAX                            ; 00559c62
     CALL engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db0 ; 00559c63
         ;   XREF to: 00481db0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
@@ -510,7 +510,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x1c]      ; 00559cfb
     PUSH ESI                            ; 00559cfe
         ;   Label: LAB_00559cfe
-    MOV EDI,dword ptr [0x00612560]      ; 00559cff | DAT_00612560
+    MOV EDI,dword ptr [0x00612560]      ; 00559cff | g_CDemonRenderer_PTR_00612560
     PUSH EDI                            ; 00559d05
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00 ; 00559d06
         ;   XREF to: 00481c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
@@ -524,13 +524,13 @@ section .text
     LEA EAX,[EAX]                       ; 00559d1d
     PUSH 0x1                            ; 00559d20
         ;   Label: LAB_00559d20
-    MOV EDX,dword ptr [0x00612560]      ; 00559d22 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00559d22 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00559d28
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20 ; 00559d29
         ;   XREF to: 00483e20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 00559d2e
     PUSH 0x0                            ; 00559d31
-    MOV ECX,dword ptr [0x00612560]      ; 00559d33 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00559d33 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 00559d39
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80 ; 00559d3a
         ;   XREF to: 00483d80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80(CDemonRenderer * this_ptr, int state_flag)
@@ -564,7 +564,7 @@ section .text
     RET                                 ; 00559d91
     FLD float ptr [ESP]                 ; 00559d92
         ;   Label: LAB_00559d92
-    FMUL double ptr [0x005f0fd5]        ; 00559d95 | DAT_005f0fd5
+    FMUL double ptr [0x005f0fd5]        ; 00559d95 | g_DOUBLE_005f0fd5
     JMP 0x00559986                      ; 00559d9b
         ;   XREF to: 00559986 (UNCONDITIONAL_JUMP)  ; LAB_00559986
     CMP dword ptr [ESP + 0xa8],0x0      ; 00559da0
@@ -594,7 +594,7 @@ section .text
     JNZ 0x00559ddb                      ; 00559def
         ;   XREF to: 00559ddb (CONDITIONAL_JUMP)  ; LAB_00559ddb
     PUSH 0x1                            ; 00559df1
-    MOV ESI,dword ptr [0x00612560]      ; 00559df3 | DAT_00612560
+    MOV ESI,dword ptr [0x00612560]      ; 00559df3 | g_CDemonRenderer_PTR_00612560
     PUSH ESI                            ; 00559df9
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80 ; 00559dfa
         ;   XREF to: 00483d80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80(CDemonRenderer * this_ptr, int state_flag)
@@ -607,7 +607,7 @@ section .text
     SETNZ AL                            ; 00559e15
     AND EAX,0xff                        ; 00559e18
     PUSH EAX                            ; 00559e1d
-    MOV EAX,[0x00612560]                ; 00559e1e | DAT_00612560
+    MOV EAX,[0x00612560]                ; 00559e1e | g_CDemonRenderer_PTR_00612560
     PUSH EAX                            ; 00559e23
     MOV EBX,0xe                         ; 00559e24
     MOV ESI,0xa                         ; 00559e29
@@ -617,7 +617,7 @@ section .text
     MOV ECX,0xc                         ; 00559e38
     LEA EAX,[ESP + 0xc]                 ; 00559e3d
     ADD ESP,0x8                         ; 00559e41
-    MOV EDI,dword ptr [0x00612560]      ; 00559e44 | DAT_00612560
+    MOV EDI,dword ptr [0x00612560]      ; 00559e44 | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [ESP + 0x1c],EDX      ; 00559e4a
     PUSH EAX                            ; 00559e4e
     MOV dword ptr [ESP + 0x24],ECX      ; 00559e4f
@@ -635,7 +635,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00559e7c
     MOV EDI,0x8                         ; 00559e80
     PUSH EAX                            ; 00559e85
-    MOV ESI,dword ptr [0x00612560]      ; 00559e86 | DAT_00612560
+    MOV ESI,dword ptr [0x00612560]      ; 00559e86 | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [ESP + 0x24],EDX      ; 00559e8c
     PUSH ESI                            ; 00559e90
     MOV dword ptr [ESP + 0x2c],ECX      ; 00559e91
@@ -650,7 +650,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00559eb4
     MOV dword ptr [ESP + 0x24],EBX      ; 00559eb8
     PUSH EAX                            ; 00559ebc
-    MOV EBX,dword ptr [0x00612560]      ; 00559ebd | DAT_00612560
+    MOV EBX,dword ptr [0x00612560]      ; 00559ebd | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [ESP + 0x20],EDI      ; 00559ec3
     PUSH EBX                            ; 00559ec7
     MOV dword ptr [ESP + 0x30],ECX      ; 00559ec8
@@ -663,7 +663,7 @@ section .text
     MOV EBX,0x8                         ; 00559ee3
     MOV dword ptr [ESP + 0x24],EAX      ; 00559ee8
     LEA EAX,[ESP + 0x4]                 ; 00559eec
-    MOV ECX,dword ptr [0x00612560]      ; 00559ef0 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00559ef0 | g_CDemonRenderer_PTR_00612560
     PUSH EAX                            ; 00559ef6
     MOV dword ptr [ESP + 0x20],ESI      ; 00559ef7
     MOV dword ptr [ESP + 0x24],EDI      ; 00559efb
@@ -674,7 +674,7 @@ section .text
         ;   XREF to: 00481b80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_00481b80(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EAX,0x9                         ; 00559f0e
     ADD ESP,0x8                         ; 00559f13
-    MOV EDX,dword ptr [0x00612560]      ; 00559f16 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00559f16 | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [ESP + 0x1c],EBX      ; 00559f1c
     MOV dword ptr [ESP + 0x28],EAX      ; 00559f20
     LEA EAX,[ESP + 0x4]                 ; 00559f24
@@ -692,7 +692,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00559f4e
     MOV dword ptr [ESP + 0x1c],ECX      ; 00559f52
     PUSH EAX                            ; 00559f56
-    MOV EAX,[0x00612560]                ; 00559f57 | DAT_00612560
+    MOV EAX,[0x00612560]                ; 00559f57 | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [ESP + 0x24],EBX      ; 00559f5c
     PUSH EAX                            ; 00559f60
     MOV dword ptr [ESP + 0x2c],ESI      ; 00559f61

@@ -20,8 +20,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_007bda98
-;   undefined1 DAT_007bdad8
+;   CDemonGlobe g_CDemonGlobe_007bda98
+;   byte g_BYTE_007bdad8
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -44,13 +44,13 @@ section .text
     PUSH EBP                            ; 004268b3
     SUB ESP,0x30                        ; 004268b4
     MOV EBX,dword ptr [ESP + 0x44]      ; 004268b7
-    MOV AH,byte ptr [0x007bdad8]        ; 004268bb | DAT_007bdad8
+    MOV AH,byte ptr [0x007bdad8]        ; 004268bb | g_BYTE_007bdad8
     TEST AH,0x1                         ; 004268c1
     JNZ 0x004268d1                      ; 004268c4
         ;   XREF to: 004268d1 (CONDITIONAL_JUMP)  ; LAB_004268d1
     MOV DL,AH                           ; 004268c6
     OR DL,0x1                           ; 004268c8
-    MOV byte ptr [0x007bdad8],DL        ; 004268cb | DAT_007bdad8
+    MOV byte ptr [0x007bdad8],DL        ; 004268cb | g_BYTE_007bdad8
     PUSH EBX                            ; 004268d1
         ;   Label: LAB_004268d1
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0 ; 004268d2
@@ -92,7 +92,7 @@ section .text
     TEST EBP,EBP                        ; 00426933
     JZ 0x0042694b                       ; 00426935
         ;   XREF to: 0042694b (CONDITIONAL_JUMP)  ; LAB_0042694b
-    PUSH 0x7bda98                       ; 00426937 | DAT_007bda98
+    PUSH 0x7bda98                       ; 00426937 | g_CDemonGlobe_007bda98
     MOV EDX,dword ptr [0x0061b5a8]      ; 0042693c | g_CDemonSetPtr
     PUSH EDX                            ; 00426942 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0 ; 00426943

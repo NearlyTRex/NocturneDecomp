@@ -29,7 +29,7 @@ int __cdecl FUN_005bfdd4(char *filename,WatcomStat *file_info)
   
   bVar1 = false;
   if ((*filename == '\0') ||
-     (iVar3 = FUN_005c3e70(filename,&DAT_005f1a20), iVar3 != 0)) {
+     (iVar3 = FUN_005c3e70(filename,"*?"), iVar3 != 0)) {
     setErrno(1);
     iVar3 = -1;
   }
@@ -37,7 +37,7 @@ int __cdecl FUN_005bfdd4(char *filename,WatcomStat *file_info)
     FUN_005c0f10((char *)local_124,0x104);
     pcVar4 = _fullpath(&local_228,filename,0x104);
     if ((pcVar4 != (char *)0x0) &&
-       ((((((&DAT_0061ed94)[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&
+       (((((g_UCHAR_ARRAY_0061ed94[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&
          (local_226 == '\\')) && (local_225 == '\0')))) {
       bVar1 = true;
     }

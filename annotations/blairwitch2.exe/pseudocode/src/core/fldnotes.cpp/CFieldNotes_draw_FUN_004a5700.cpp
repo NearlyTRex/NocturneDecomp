@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes *this_ptr)
 
 {
@@ -43,14 +41,14 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes *this_p
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf204);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf218);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf22c);
-    DAT_00616010 = 1;
-    _DAT_01caf488 = 0;
-    DAT_00616040 = 0xffffffff;
-    _DAT_01caf568 = 0;
-    DAT_01caf4a0 = 0;
+    g_INT_00616010 = 1;
+    g_INT_01caf488 = 0;
+    g_INT_00616040 = -1;
+    g_INT_01caf568 = 0;
+    g_CHAR_01caf4a0 = '\0';
     return;
   }
-  if (DAT_00616010 != 0) {
+  if (g_INT_00616010 != 0) {
     pCVar5 = CAlphaBitmap_ARRAY_01caf128;
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf114);
     do {
@@ -65,20 +63,20 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes *this_p
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf204);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf218);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf22c);
-    DAT_00616040 = -1;
-    DAT_00616010 = 1;
-    _DAT_01caf488 = 0;
-    _DAT_01caf568 = 0;
-    DAT_01caf4a0 = 0;
+    g_INT_00616040 = -1;
+    g_INT_00616010 = 1;
+    g_INT_01caf488 = 0;
+    g_INT_01caf568 = 0;
+    g_CHAR_01caf4a0 = '\0';
     engine_dosio_cpp_splitPath_FUN_00461070
-              (&DAT_01cab7a8,(char *)0x0,(char *)0x0,local_420,(char *)0x0);
-    _sprintf(local_320,&DAT_005d59e3);
+              (&g_CHAR_01cab7a8,(char *)0x0,(char *)0x0,local_420,(char *)0x0);
+    _sprintf(local_320,"%s%s");
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(&CAlphaBitmap_01caf114,local_320,0x280,0x1e0)
     ;
     iVar1 = 9;
     iVar4 = 0;
     engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(&CAlphaBitmap_01caf114,0xff);
-    if (0 < _DAT_01cab9f0) {
+    if (0 < g_INT_01cab9f0) {
       pCVar5 = CAlphaBitmap_ARRAY_01caf128;
       do {
         local_20 = iVar4 * 0x2e4;
@@ -86,14 +84,14 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes *this_p
         local_1c = iVar4 * 0x14;
         engine_dosio_cpp_splitPath_FUN_00461070
                   (local_220,(char *)0x0,(char *)0x0,local_120,(char *)0x0);
-        _sprintf(local_520,&DAT_005d59e3);
+        _sprintf(local_520,"%s%s");
         engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(pCVar5,local_520,0x5a,0x36);
         *(uint *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_20 + -0xc) = 0x215;
         *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_20 + -8) = iVar1;
         iVar4 = iVar4 + 1;
         pCVar5 = pCVar5 + 1;
         iVar1 = iVar1 + *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + local_1c) + 10;
-      } while (iVar4 < _DAT_01cab9f0);
+      } while (iVar4 < g_INT_01cab9f0);
     }
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0
               (&CAlphaBitmap_01caf1a0,"pentip",0x20,0x20);
@@ -112,41 +110,41 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes *this_p
     engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(&CAlphaBitmap_01caf218,0xff);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0
               (&CAlphaBitmap_01caf22c,"underline",0x100,8);
-    DAT_00616010 = 0;
+    g_INT_00616010 = 0;
   }
-  if (DAT_00616014 != 0) {
+  if (g_INT_00616014 != 0) {
     core_fldnotes_cpp_STextView_setRect_FUN_004a2890(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
     iVar4 = 0;
     core_fldnotes_cpp_STextView_reset_FUN_004a27e0(&g_STextViewInstance);
-    DAT_01cab7f0 = 0;
-    if (0 < _DAT_01cab9f0) {
+    g_CHAR_ARRAY_01cab7f0[0] = '\0';
+    if (0 < g_INT_01cab9f0) {
       pSVar3 = SNotesSection_ARRAY_01cab9f4;
       do {
         iVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(pSVar3,&g_STextViewInstance);
         if (iVar1 == 0) goto LAB_004a57ae;
         iVar4 = iVar4 + 1;
         pSVar3 = pSVar3 + 1;
-      } while (iVar4 < _DAT_01cab9f0);
+      } while (iVar4 < g_INT_01cab9f0);
     }
-    DAT_00616014 = 0;
+    g_INT_00616014 = 0;
   }
 LAB_004a57ae:
   iVar4 = 0;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(&CAlphaBitmap_01caf114,0,0,0xffff);
-  if (0 < _DAT_01cab9f0) {
+  if (0 < g_INT_01cab9f0) {
     pSVar3 = SNotesSection_ARRAY_01cab9f4;
     do {
-      if ((pSVar3->first_page <= _DAT_01caf110) &&
-         (_DAT_01caf110 < pSVar3->first_page + pSVar3->page_count)) goto LAB_004a5802;
+      if ((pSVar3->first_page <= g_INT_01caf110) &&
+         (g_INT_01caf110 < pSVar3->first_page + pSVar3->page_count)) goto LAB_004a5802;
       iVar4 = iVar4 + 1;
       pSVar3 = pSVar3 + 1;
-    } while (iVar4 < _DAT_01cab9f0);
+    } while (iVar4 < g_INT_01cab9f0);
   }
   iVar4 = -1;
 LAB_004a5802:
   iVar1 = 0;
   local_14 = iVar4;
-  if (0 < _DAT_01cab9f0) {
+  if (0 < g_INT_01cab9f0) {
     pSVar3 = SNotesSection_ARRAY_01cab9f4;
     pCVar5 = CAlphaBitmap_ARRAY_01caf128;
     do {
@@ -163,72 +161,72 @@ LAB_004a5802:
       pCVar5 = pCVar5 + 1;
       iVar1 = iVar1 + 1;
       pSVar3 = pSVar3 + 1;
-    } while (iVar1 < _DAT_01cab9f0);
+    } while (iVar1 < g_INT_01cab9f0);
   }
-  _DAT_01caf568 = 0;
-  core_fldnotes_cpp_STextView_drawPage_FUN_004a3240(&g_STextViewInstance,_DAT_01caf110);
+  g_INT_01caf568 = 0;
+  core_fldnotes_cpp_STextView_drawPage_FUN_004a3240(&g_STextViewInstance,g_INT_01caf110);
   if (g_CGamePtr->letterbox_mode != 0) {
-    DAT_01caf4a0 = 0;
-    DAT_00616040 = 0xffffffff;
-    _DAT_01caf568 = 0;
-    _DAT_01caf488 = 0;
+    g_CHAR_01caf4a0 = '\0';
+    g_INT_00616040 = -1;
+    g_INT_01caf568 = 0;
+    g_INT_01caf488 = 0;
     return;
   }
-  iVar4 = core_flashlit_cpp_hitTestSectionTab_FUN_004a1bb0(_DAT_01c2a37c,_DAT_01c2a380);
+  iVar4 = core_flashlit_cpp_hitTestSectionTab_FUN_004a1bb0(g_INT_01c2a37c,g_INT_01c2a380);
   if (-1 < iVar4) {
     core_flashlit_cpp_updateTooltip_FUN_004a1570(SNotesSection_ARRAY_01cab9f4[iVar4].title);
     local_18 = 1;
   }
-  iVar4 = core_flashlit_cpp_hitTestPageArrows_FUN_004a1c60(_DAT_01c2a37c,_DAT_01c2a380);
+  iVar4 = core_flashlit_cpp_hitTestPageArrows_FUN_004a1c60(g_INT_01c2a37c,g_INT_01c2a380);
   if (iVar4 != 0) {
     local_18 = 1;
   }
   pSVar2 = core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a2730
-                     (g_STextViewInstance.pages + _DAT_01caf110,_DAT_01c2a37c,_DAT_01c2a380);
+                     (g_STextViewInstance.pages + g_INT_01caf110,g_INT_01c2a37c,g_INT_01c2a380);
   if ((pSVar2 != (SPageResource *)0x0) &&
      (iVar4 = (**(code **)((int)pSVar2->vtable + 8))
-                        (pSVar2,0,_DAT_01c2a37c - pSVar2->x,_DAT_01c2a380 - pSVar2->y), iVar4 != 0))
-  {
+                        (pSVar2,0,g_INT_01c2a37c - pSVar2->x,g_INT_01c2a380 - pSVar2->y), iVar4 != 0
+     )) {
     local_18 = 1;
   }
-  if (0 < _DAT_01caf110) {
+  if (0 < g_INT_01caf110) {
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-              (&CAlphaBitmap_01caf1f0,0x0000004A,0x000001AE,0xffff);
+              (&CAlphaBitmap_01caf1f0,g_INT_00616018,g_INT_0061601c,0xffff);
   }
-  if (_DAT_01caf110 < g_STextViewInstance.page_count + -2) {
+  if (g_INT_01caf110 < g_STextViewInstance.page_count + -2) {
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-              (&CAlphaBitmap_01caf204,0x000001F4,0x000001AE,0xffff);
+              (&CAlphaBitmap_01caf204,g_INT_00616020,g_INT_00616024,0xffff);
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-            (&CAlphaBitmap_01caf218,0x00000262,0x000001C0,0xffff);
-  if ((((0x00000262 <= _DAT_01c2a37c) && (0x000001C0 <= _DAT_01c2a380)) &&
-      (_DAT_01c2a37c < 0x00000262 + CAlphaBitmap_01caf218.width)) &&
-     (_DAT_01c2a380 < CAlphaBitmap_01caf218.height + 0x000001C0)) {
-    text = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d645b);
+            (&CAlphaBitmap_01caf218,g_INT_00616028,g_INT_0061602c,0xffff);
+  if ((((g_INT_00616028 <= g_INT_01c2a37c) && (g_INT_0061602c <= g_INT_01c2a380)) &&
+      (g_INT_01c2a37c < g_INT_00616028 + CAlphaBitmap_01caf218.width)) &&
+     (g_INT_01c2a380 < CAlphaBitmap_01caf218.height + g_INT_0061602c)) {
+    text = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Exit");
     core_flashlit_cpp_updateTooltip_FUN_004a1570(text);
     local_18 = 1;
   }
-  if (-1 < DAT_00616040) {
-    if (_DAT_01caf568 == 0) {
-      DAT_01caf4a0 = 0;
-      DAT_00616040 = -1;
-      _DAT_01caf488 = _DAT_01caf568;
+  if (-1 < g_INT_00616040) {
+    if (g_INT_01caf568 == 0) {
+      g_CHAR_01caf4a0 = '\0';
+      g_INT_00616040 = -1;
+      g_INT_01caf488 = g_INT_01caf568;
     }
     else {
       engine_2d_c_fillRectColor_FUN_004031c0
-                (DAT_00616040,_DAT_01caf48c,_DAT_01caf490 + -1,_DAT_01caf494 + -1,0);
+                (g_INT_00616040,g_INT_01caf48c,g_INT_01caf490 + -1,g_INT_01caf494 + -1,0);
       engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-                (_DAT_01511cbc,&DAT_01caf4a0,_DAT_01caf498,_DAT_01caf49c,0xff,-1);
+                (g_CBitFont_PTR_01511cbc,&g_CHAR_01caf4a0,g_INT_01caf498,g_INT_01caf49c,0xff,-1);
     }
   }
   if (local_18 == 0) {
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-              (&CAlphaBitmap_01caf1a0,_DAT_01c2a37c - 0x0000001F,_DAT_01c2a380 - 0x00000001,
+              (&CAlphaBitmap_01caf1a0,g_INT_01c2a37c - 0x0000001F,g_INT_01c2a380 - 0x00000001,
                0xffff);
     return;
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-            (&CAlphaBitmap_01caf1b4,_DAT_01c2a37c - 0x0000001F,_DAT_01c2a380 - 0x00000001,0xffff
-            );
+            (&CAlphaBitmap_01caf1b4,g_INT_01c2a37c - 0x0000001F,g_INT_01c2a380 - 0x00000001,
+             0xffff);
   return;
 }

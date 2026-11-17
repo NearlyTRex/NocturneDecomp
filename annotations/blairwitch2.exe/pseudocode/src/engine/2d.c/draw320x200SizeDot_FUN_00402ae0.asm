@@ -9,13 +9,13 @@
 ; int              Stack[0xc]:4   z_depth
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_01c35e38
-;   undefined4 DAT_01c35e3c
-;   undefined4 DAT_01c35e40
-;   undefined4 DAT_01c35e44
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_006141bc = 0xc8
+;   int g_INT_01c35e38
+;   int g_INT_01c35e3c
+;   int g_INT_01c35e40
+;   int g_INT_01c35e44
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -51,7 +51,7 @@ section .text
     CMP ESI,EDX                         ; 00402b04
     JL 0x00402b31                       ; 00402b06
         ;   XREF to: 00402b31 (CONDITIONAL_JUMP)  ; LAB_00402b31
-    MOV EDI,dword ptr [0x006141bc]      ; 00402b08 | DAT_006141bc
+    MOV EDI,dword ptr [0x006141bc]      ; 00402b08 | g_INT_006141bc
     CMP EDI,0x190                       ; 00402b0e
     JNC 0x00402c24                      ; 00402b14
         ;   XREF to: 00402c24 (CONDITIONAL_JUMP)  ; LAB_00402c24
@@ -70,19 +70,19 @@ section .text
     POP ESI                             ; 00402b33
     POP EBX                             ; 00402b34
     RET                                 ; 00402b35
-    MOV EDX,dword ptr [0x01c35e38]      ; 00402b36 | DAT_01c35e38
+    MOV EDX,dword ptr [0x01c35e38]      ; 00402b36 | g_INT_01c35e38
         ;   Label: LAB_00402b36
     MOV EBX,ECX                         ; 00402b3c
     IMUL EDX                            ; 00402b3e
     IDIV EBX                            ; 00402b40
-    MOV EBX,dword ptr [0x01c35e40]      ; 00402b42 | DAT_01c35e40
-    MOV EDX,dword ptr [0x01c35e3c]      ; 00402b48 | DAT_01c35e3c
+    MOV EBX,dword ptr [0x01c35e40]      ; 00402b42 | g_INT_01c35e40
+    MOV EDX,dword ptr [0x01c35e3c]      ; 00402b48 | g_INT_01c35e3c
     LEA EDI,[EAX + EBX*0x1]             ; 00402b4e
     MOV EBX,ECX                         ; 00402b51
     MOV EAX,ESI                         ; 00402b53
     IMUL EDX                            ; 00402b55
     IDIV EBX                            ; 00402b57
-    MOV ESI,dword ptr [0x01c35e44]      ; 00402b59 | DAT_01c35e44
+    MOV ESI,dword ptr [0x01c35e44]      ; 00402b59 | g_INT_01c35e44
     ADD ESI,EAX                         ; 00402b5f
     SAR EDI,0x10                        ; 00402b61
     SAR ESI,0x10                        ; 00402b64
@@ -114,19 +114,19 @@ section .text
     POP ESI                             ; 00402b96
     POP EBX                             ; 00402b97
     RET                                 ; 00402b98
-    MOV EDX,dword ptr [0x01c35e38]      ; 00402b99 | DAT_01c35e38
+    MOV EDX,dword ptr [0x01c35e38]      ; 00402b99 | g_INT_01c35e38
         ;   Label: LAB_00402b99
     MOV EBX,ECX                         ; 00402b9f
     IMUL EDX                            ; 00402ba1
     IDIV EBX                            ; 00402ba3
-    MOV EDX,dword ptr [0x01c35e40]      ; 00402ba5 | DAT_01c35e40
+    MOV EDX,dword ptr [0x01c35e40]      ; 00402ba5 | g_INT_01c35e40
     MOV EBX,ECX                         ; 00402bab
     LEA EDI,[EAX + EDX*0x1]             ; 00402bad
-    MOV EDX,dword ptr [0x01c35e3c]      ; 00402bb0 | DAT_01c35e3c
+    MOV EDX,dword ptr [0x01c35e3c]      ; 00402bb0 | g_INT_01c35e3c
     MOV EAX,ESI                         ; 00402bb6
     IMUL EDX                            ; 00402bb8
     IDIV EBX                            ; 00402bba
-    MOV ECX,dword ptr [0x01c35e44]      ; 00402bbc | DAT_01c35e44
+    MOV ECX,dword ptr [0x01c35e44]      ; 00402bbc | g_INT_01c35e44
     LEA ESI,[EAX + ECX*0x1]             ; 00402bc2
     SAR EDI,0x10                        ; 00402bc5
     SAR ESI,0x10                        ; 00402bc8
@@ -179,8 +179,8 @@ section .text
         ;   Label: LAB_00402c36
     MOV EBP,0x7c0                       ; 00402c3b
     PUSH 0x5ca0f2                       ; 00402c40
-    MOV dword ptr [0x01d046a0],EDI      ; 00402c45 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00402c4b | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00402c45 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 00402c4b | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00402c51
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00402c56

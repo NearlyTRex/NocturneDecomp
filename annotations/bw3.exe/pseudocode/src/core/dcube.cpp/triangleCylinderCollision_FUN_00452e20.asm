@@ -39,12 +39,12 @@
 ;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004545f0 at 0045461f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ba126
-;   undefined4 DAT_005ba12e
-;   undefined4 DAT_015485dc
-;   undefined4 DAT_015485e0
-;   undefined4 DAT_015485e4
-;   undefined4 DAT_015485e8
+;   double g_DOUBLE_005ba126 = -0.340000000000000
+;   double g_DOUBLE_005ba12e = 0.0100000000000000
+;   CVector3f g_CVector3f_015485dc
+;   undefined4 g_CVector3f_015485dc.y
+;   undefined4 g_CVector3f_015485dc.z
+;   uchar g_UCHAR_015485e8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240
@@ -64,7 +64,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00452e29
     MOV EBX,dword ptr [EBP + 0x14]      ; 00452e2c
     FLD float ptr [EBX + 0x10]          ; 00452e2f
-    FCOMP double ptr [0x005ba126]       ; 00452e32 | DAT_005ba126
+    FCOMP double ptr [0x005ba126]       ; 00452e32 | g_DOUBLE_005ba126
     FNSTSW AX                           ; 00452e38
     SAHF                                ; 00452e3a
     JA 0x00453095                       ; 00452e3b
@@ -252,14 +252,14 @@ section .text
     OR ESI,EAX                          ; 00453026
     FSQRT                               ; 00453028
     ADD ESP,0x10                        ; 0045302a
-    MOV AH,byte ptr [0x015485e8]        ; 0045302d | DAT_015485e8
+    MOV AH,byte ptr [0x015485e8]        ; 0045302d | g_UCHAR_015485e8
     FSTP double ptr [ESP]               ; 00453033
     TEST AH,0x1                         ; 00453036
     JZ 0x0045310f                       ; 00453039
         ;   XREF to: 0045310f (CONDITIONAL_JUMP)  ; LAB_0045310f
     FLD double ptr [ESP]                ; 0045303f
         ;   Label: LAB_0045303f
-    FCOMP double ptr [0x005ba12e]       ; 00453042 | DAT_005ba12e
+    FCOMP double ptr [0x005ba12e]       ; 00453042 | g_DOUBLE_005ba12e
     FNSTSW AX                           ; 00453048
     SAHF                                ; 0045304a
     JNC 0x00453136                      ; 0045304b
@@ -267,7 +267,7 @@ section .text
     TEST ESI,ESI                        ; 00453051
     JNZ 0x0045308c                      ; 00453053
         ;   XREF to: 0045308c (CONDITIONAL_JUMP)  ; LAB_0045308c
-    PUSH 0x15485dc                      ; 00453055 | DAT_015485dc
+    PUSH 0x15485dc                      ; 00453055 | g_CVector3f_015485dc
     MOV EDI,dword ptr [EBP + 0x18]      ; 0045305a
     PUSH EDI                            ; 0045305d
     PUSH EBX                            ; 0045305e
@@ -348,11 +348,11 @@ section .text
         ;   Label: LAB_0045310f
     OR DL,0x1                           ; 00453111
     XOR EAX,EAX                         ; 00453114
-    MOV byte ptr [0x015485e8],DL        ; 00453116 | DAT_015485e8
-    MOV [0x015485dc],EAX                ; 0045311c | DAT_015485dc
+    MOV byte ptr [0x015485e8],DL        ; 00453116 | g_UCHAR_015485e8
+    MOV [0x015485dc],EAX                ; 0045311c | g_CVector3f_015485dc
     MOV EDX,0xc2c80000                  ; 00453121
-    MOV [0x015485e4],EAX                ; 00453126 | DAT_015485e4
-    MOV dword ptr [0x015485e0],EDX      ; 0045312b | DAT_015485e0
+    MOV [0x015485e4],EAX                ; 00453126 | g_CVector3f_015485dc.z
+    MOV dword ptr [0x015485e0],EDX      ; 0045312b | g_CVector3f_015485dc.y
     JMP 0x0045303f                      ; 00453131
         ;   XREF to: 0045303f (UNCONDITIONAL_JUMP)  ; LAB_0045303f
     FLD float ptr [EBX + 0xc]           ; 00453136
@@ -368,7 +368,7 @@ section .text
     FADD float ptr [EAX + 0x8]          ; 0045314f
     FSTP float ptr [ESP + 0x20]         ; 00453152
     MOV EAX,dword ptr [EAX + 0x4]       ; 00453156
-    PUSH 0x15485dc                      ; 00453159 | DAT_015485dc
+    PUSH 0x15485dc                      ; 00453159 | g_CVector3f_015485dc
     MOV dword ptr [ESP + 0x20],EAX      ; 0045315e
     LEA EAX,[ESP + 0x1c]                ; 00453162
     PUSH EAX                            ; 00453166
@@ -386,7 +386,7 @@ section .text
     JA 0x0045308c                       ; 00453189
         ;   XREF to: 0045308c (CONDITIONAL_JUMP)  ; LAB_0045308c
     FLD float ptr [ESP + 0x8]           ; 0045318f
-    FMUL float ptr [0x015485e0]         ; 00453193 | DAT_015485e0
+    FMUL float ptr [0x015485e0]         ; 00453193 | g_CVector3f_015485dc.y
     FADD float ptr [ESP + 0x1c]         ; 00453199
     MOV EAX,dword ptr [EBP + 0x20]      ; 0045319d
     FST float ptr [ESP + 0x70]          ; 004531a0

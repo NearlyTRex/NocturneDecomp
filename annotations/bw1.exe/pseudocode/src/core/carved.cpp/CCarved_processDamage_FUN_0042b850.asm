@@ -8,10 +8,10 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_ShotInvulnerable_005d5654+1
+;   TerminatedCString s_ShotInvulnerable_005d5655
 ;   TerminatedCString s_carved_die_wav_005d5666
 ;   TerminatedCString s_carved_damage_wav_005d5676
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -123,9 +123,9 @@ section .text
     POP EDI                             ; 0042b962
     POP EBX                             ; 0042b963
     RET                                 ; 0042b964
-    PUSH 0x5d5655                       ; 0042b965 | s_ShotInvulnerable_005d5654+1
+    PUSH 0x5d5655                       ; 0042b965 | = "ShotInvulnerable"
         ;   Label: LAB_0042b965
-    MOV EAX,[0x0061b4d0]                ; 0042b96a | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 0042b96a | g_CEventList_PTR_0061b4d0
     PUSH EAX                            ; 0042b96f
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0042b970
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

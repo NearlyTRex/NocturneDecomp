@@ -10,7 +10,7 @@
 ; float            Stack[0x10]:4   max_distance
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7f4e
+;   float g_FLOAT_005e7f4e = 0.05000000
 ;
 ; *****************************************************************************
 
@@ -35,7 +35,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 0054cdb1
     FLD float ptr [ESP + 0xc]           ; 0054cdb5
         ;   Label: LAB_0054cdb5
-    FMUL float ptr [0x005e7f4e]         ; 0054cdb9 | DAT_005e7f4e
+    FMUL float ptr [0x005e7f4e]         ; 0054cdb9 | g_FLOAT_005e7f4e
     FCOMP float ptr [ESP + 0x8]         ; 0054cdbf
     FNSTSW AX                           ; 0054cdc3
     SAHF                                ; 0054cdc5

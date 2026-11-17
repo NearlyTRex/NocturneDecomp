@@ -16,7 +16,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playDeathSound_FUN_0045cf70(CDemnfolk *
   char *pcVar5;
   char *pcVar6;
   
-  pcVar4 = &DAT_005d8308;
+  pcVar4 = "demn_";
   pcVar5 = &DAT_0152c320;
   do {
     cVar1 = *pcVar4;

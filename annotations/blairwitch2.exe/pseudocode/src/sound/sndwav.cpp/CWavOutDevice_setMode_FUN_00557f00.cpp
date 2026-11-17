@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 {
@@ -24,26 +22,26 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *t
   if (iVar1 == 0) {
     return 0;
   }
-  _DAT_0264b0f4 = channels;
-  _DAT_0264b0f8 = sample_rate;
-  _DAT_0264b104 = 4;
-  _DAT_0264b0fc = out_samples_per_block;
+  g_INT_0264b0f4 = channels;
+  g_INT_0264b0f8 = sample_rate;
+  g_INT_0264b104 = 4;
+  g_INT_0264b0fc = (int)out_samples_per_block;
   WStack_24.wFormatTag = 0x7f4a;
   WStack_24.nChannels = 0x55;
   fVar2 = sound_sndmain_cpp_getMaxSwLatency_FUN_00553600();
   WStack_24.wFormatTag = 0x7f67;
   WStack_24.nChannels = 0x55;
   dVar7 = round
-                    ((double)(((float)(int)_DAT_0264b0fc * fVar2) / (float)_DAT_0264b104));
-  _DAT_0264b100 = (uint)ROUND(dVar7);
+                    ((double)(((float)g_INT_0264b0fc * fVar2) / (float)g_INT_0264b104));
+  g_INT_0264b100 = (int)ROUND(dVar7);
   iVar1 = 0;
-  _DAT_0264b100 = _DAT_0264b100 + 0xf & 0xfffffff0;
-  if (0 < _DAT_0264b104) {
+  g_INT_0264b100 = g_INT_0264b100 + 0xfU & 0xfffffff0;
+  if (0 < g_INT_0264b104) {
     iVar6 = 0;
     do {
-      pvVar3 = GlobalAlloc(0x2002,((int)((_DAT_0264b0f4 + ((int)_DAT_0264b0f4 >> 0x1f) * -8) -
-                                        (uint)(((int)_DAT_0264b0f4 >> 0x1f) << 2 < 0)) >> 3) *
-                                  _DAT_0264b100 * _DAT_0264b0f8);
+      pvVar3 = GlobalAlloc(0x2002,((int)((g_INT_0264b0f4 + (g_INT_0264b0f4 >> 0x1f) * -8) -
+                                        (uint)((g_INT_0264b0f4 >> 0x1f) << 2 < 0)) >> 3) *
+                                  g_INT_0264b100 * g_INT_0264b0f8);
       *(HGLOBAL *)(iVar6 + 0x264b0b4) = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_005580ac;
       pvVar4 = GlobalLock(pvVar3);
@@ -56,17 +54,17 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *t
       pvVar4 = GlobalLock(*(HGLOBAL *)(iVar6 + 0x264b074));
       *(LPVOID *)(iVar6 + 0x264b094) = pvVar4;
       iVar6 = iVar6 + 4;
-    } while (iVar1 < _DAT_0264b104);
+    } while (iVar1 < g_INT_0264b104);
   }
-  WStack_24.wBitsPerSample = _DAT_0264b0f4;
-  WStack_24.nChannels = _DAT_0264b0f8;
+  WStack_24.wBitsPerSample = (WORD)g_INT_0264b0f4;
+  WStack_24.nChannels = (WORD)g_INT_0264b0f8;
   WStack_24.wFormatTag = 1;
-  WStack_24.nBlockAlign = (short)((int)(_DAT_0264b0f4 & 0xffff) >> 3) * _DAT_0264b0f8;
-  WStack_24.nSamplesPerSec = (DWORD)_DAT_0264b0fc;
-  WStack_24.nAvgBytesPerSec = (int)_DAT_0264b0fc * (uint)WStack_24.nBlockAlign;
-  MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,&WStack_24,0,0,0);
+  WStack_24.nBlockAlign = (short)((int)(g_INT_0264b0f4 & 0xffffU) >> 3) * (WORD)g_INT_0264b0f8;
+  WStack_24.nSamplesPerSec = g_INT_0264b0fc;
+  WStack_24.nAvgBytesPerSec = g_INT_0264b0fc * (uint)WStack_24.nBlockAlign;
+  MVar5 = waveOutOpen((LPHWAVEOUT)&g_INT_0264b070,g_INT_0061bf84,&WStack_24,0,0,0);
   if (MVar5 == 0) {
-    *out_samples_per_block = _DAT_0264b100;
+    *out_samples_per_block = g_INT_0264b100;
     return 1;
   }
   sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutOpen failed");

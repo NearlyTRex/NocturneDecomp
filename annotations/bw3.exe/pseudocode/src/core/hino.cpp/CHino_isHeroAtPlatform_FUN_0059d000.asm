@@ -24,10 +24,10 @@
 ;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059bfe5
 ;
 ; Referenced Globals:
-;   undefined4 s_Platform_005d9e63+1
+;   TerminatedCString s_Platform_005d9e64
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01d1a0a4
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d1a0a4
+;   int g_INT_01d5ba14
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CWayPointClassInfo.name_hash
@@ -55,7 +55,7 @@ section .text
     CMP EBX,dword ptr [EAX + 0x14d164]  ; 0059d019 | g_CDemonSetInstance.actor_count
     JL 0x0059d045                       ; 0059d01f
         ;   XREF to: 0059d045 (CONDITIONAL_JUMP)  ; LAB_0059d045
-    PUSH 0x5d9e64                       ; 0059d021 | s_Platform_005d9e63+1
+    PUSH 0x5d9e64                       ; 0059d021 | = "Platform"
     MOV ECX,dword ptr [ESP + 0x2c]      ; 0059d026
     PUSH ECX                            ; 0059d02a
     CALL crt_string.c_strstr_FUN_005a4010 ; 0059d02b
@@ -82,7 +82,7 @@ section .text
     TEST EAX,EAX                        ; 0059d05e
     JZ 0x0059d108                       ; 0059d060
         ;   XREF to: 0059d108 (CONDITIONAL_JUMP)  ; LAB_0059d108
-    MOV EDX,dword ptr [0x01d5ba14]      ; 0059d066 | DAT_01d5ba14
+    MOV EDX,dword ptr [0x01d5ba14]      ; 0059d066 | g_INT_01d5ba14
     MOV EDX,dword ptr [EDX*0x4 + 0x1d5ba04] ; 0059d06c
     LEA EDI,[ESP + 0x18]                ; 0059d073
     MOV ESI,ESP                         ; 0059d077
@@ -123,7 +123,7 @@ section .text
     FADDP                               ; 0059d0d7
     FSTP float ptr [ESP + 0x24]         ; 0059d0d9
     MOV EAX,dword ptr [ESP + 0x24]      ; 0059d0dd
-    MOV EDX,dword ptr [0x01d1a0a4]      ; 0059d0e1 | DAT_01d1a0a4
+    MOV EDX,dword ptr [0x01d1a0a4]      ; 0059d0e1 | g_INT_01d1a0a4
     SAR EAX,0x1                         ; 0059d0e7
     ADD EAX,EDX                         ; 0059d0e9
     MOV dword ptr [ESP + 0x30],EAX      ; 0059d0eb

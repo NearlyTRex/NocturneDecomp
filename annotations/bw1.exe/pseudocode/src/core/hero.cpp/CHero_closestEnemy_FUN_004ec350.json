@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 113,
+    "complexity_score": 97,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 3,
+    "pseudocode_lines": 67,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "warning_overlapping_globals"
+      "stack_alignment_array"
     ],
-    "total_lines": 223
+    "total_lines": 222
   },
   "cross_references": [
     {
@@ -88,9 +87,9 @@
   "globals": [
     {
       "addr": "005e493d",
-      "name": "DAT_005e493d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e493d",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005fb430",
@@ -347,16 +346,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 10,
       "match": "afStackY_1030",
       "severity": "moderate",
       "text": "float afStackY_1030 [985];",
@@ -364,7 +355,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(CEnemy **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + local_18);",

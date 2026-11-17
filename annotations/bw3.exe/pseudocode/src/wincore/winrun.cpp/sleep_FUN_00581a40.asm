@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_Sleep_005b3658 = 001b4236
-;   undefined4 DAT_005d7e9b
+;   double g_DOUBLE_005d7e9b = 1000
 ;
 ; Called Functions:
 ;   crt_math.c_ceil_FUN_005a6067
@@ -45,7 +45,7 @@ section .text
     RET                                 ; 00581a5a
     FLD double ptr [ESP + 0xc]          ; 00581a5b
         ;   Label: LAB_00581a5b
-    FMUL double ptr [0x005d7e9b]        ; 00581a5f | DAT_005d7e9b
+    FMUL double ptr [0x005d7e9b]        ; 00581a5f | g_DOUBLE_005d7e9b
     SUB ESP,0x8                         ; 00581a65
     FSTP double ptr [ESP]               ; 00581a68
     CALL crt_math.c_ceil_FUN_005a6067   ; 00581a6b

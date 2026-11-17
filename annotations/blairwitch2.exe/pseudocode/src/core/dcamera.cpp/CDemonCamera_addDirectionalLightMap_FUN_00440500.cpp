@@ -20,8 +20,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500(C
   if (0 < this_ptr->display_height) {
     iVar5 = 0;
     do {
-      pcVar3 = (char *)(iVar5 + 0xae24d8);
-      pcVar2 = (char *)(iVar5 + 0xaf5218);
+      pcVar3 = g_CHAR_ARRAY_00ae24d8 + iVar5;
+      pcVar2 = g_CHAR_ARRAY_00af5218 + iVar5;
       for (iVar4 = this_ptr->display_width; 0 < iVar4; iVar4 = iVar4 + -1) {
         cVar1 = *pcVar3;
         pcVar3 = pcVar3 + 1;

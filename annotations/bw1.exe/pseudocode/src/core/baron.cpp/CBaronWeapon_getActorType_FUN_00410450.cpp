@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_00410450(CBaronWeapon *this_ptr)
 
 {
-  return (CDemonActorType *)&DAT_007c3698;
+  return &g_CDemonActorType_007c3698;
 }

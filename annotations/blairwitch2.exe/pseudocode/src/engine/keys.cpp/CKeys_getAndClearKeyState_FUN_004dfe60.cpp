@@ -11,7 +11,7 @@ int __cdecl engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004dfe60(CKeys *this_p
 {
   byte bVar1;
   
-  bVar1 = (&DAT_01c37790)[key_code];
-  (&DAT_01c37790)[key_code] = 0;
+  bVar1 = g_CHAR_ARRAY_01c37790[key_code];
+  g_CHAR_ARRAY_01c37790[key_code] = '\0';
   return (uint)bVar1;
 }

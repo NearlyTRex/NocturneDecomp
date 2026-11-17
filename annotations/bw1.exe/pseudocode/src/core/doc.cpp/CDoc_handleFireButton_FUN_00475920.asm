@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004758f4 = 00475a12
-;   undefined4 DAT_005da5c4
+;   double g_DOUBLE_005da5c4 = 0.990000000000000
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -111,7 +111,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00475a1e
     FLD float ptr [ESP + 0x8]           ; 00475a22
     ADD ESP,0x8                         ; 00475a26
-    FCOMP double ptr [0x005da5c4]       ; 00475a29 | DAT_005da5c4
+    FCOMP double ptr [0x005da5c4]       ; 00475a29 | g_DOUBLE_005da5c4
     FNSTSW AX                           ; 00475a2f
     SAHF                                ; 00475a31
     JC 0x00475a56                       ; 00475a32

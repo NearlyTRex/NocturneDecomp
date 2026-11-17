@@ -112,9 +112,9 @@ int __cdecl support_trisock_cpp_httpRequestUpdate_FUN_0059e350(void *request,cha
         }
         engine_dosio_cpp_splitPath_FUN_00479580
                   ((char *)((int)request + 0x500),(char *)0x0,(char *)0x0,(char *)0x0,acStack_348);
-        iVar5 = _stricmp(acStack_348,&DAT_005f868f);
+        iVar5 = _stricmp(acStack_348,".cgi");
         if ((iVar5 == 0) ||
-           (iVar5 = _stricmp(acStack_348,&DAT_005f8694), iVar5 == 0)) {
+           (iVar5 = _stricmp(acStack_348,".asp"), iVar5 == 0)) {
           pcVar11 = "Cache-Control: no-cache\r\n";
           pcVar9 = acStack_248;
           do {
@@ -282,7 +282,7 @@ LAB_0059e970:
           }
           iVar5 = _strnicmp(pcStack_14,"Content-length:",0xf);
           if (iVar5 == 0) {
-            sscanf(pcStack_1c,&DAT_005f87d3);
+            sscanf(pcStack_1c,"%d");
           }
           *(byte *)((int)request + 0x810) = 0;
           iVar5 = *(int *)((int)request + 0xd28);
@@ -318,7 +318,7 @@ switchD_0059e373_default:
     _sprintf(status_text,"Receiving %s...");
     return *(int *)((int)request + 0xd28);
   case 5:
-    pcVar9 = &DAT_005f8831;
+    pcVar9 = "Done";
     break;
   default:
     support_trisock_cpp_CSocket_closeSocket_FUN_0059cc40((CSocket *)((int)request + 0xd2c));

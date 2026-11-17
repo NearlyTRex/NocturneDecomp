@@ -6,6 +6,8 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1E70000
@@ -19,4 +21,36 @@ extern CDemonActorType g_CScatClassInfo;
 
 // CDemonPod
 extern CDemonPod g_CDemonPodInstance;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e7d360;
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7d5bc[16];
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7dad0[16];
+
+// char[101]
+extern char g_CHAR_ARRAY_01e7abe8[101];
+
+// char[10]
+extern char g_CHAR_ARRAY_01e7e0a8[10];
+
+// int
+extern int g_INT_01e7abdc;
+extern int g_INT_01e7abe0;
+extern int g_INT_01e7d35c;
+extern int g_INT_01e7d5b8;
+extern int g_INT_01e7dabc;
+extern int g_INT_01e7dac0;
+extern int g_INT_01e7dac8;
+extern int g_INT_01e7dacc;
+extern int g_INT_01e7dfd0;
+extern int g_INT_01e7dfd4;
+extern int g_INT_01e7e0a0;
+
+// int[18]
+extern int g_INT_ARRAY_01e7e014[18];
+
+// uchar
+extern uchar g_UCHAR_01e7abe7;
 

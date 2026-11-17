@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01cd0c90
+;   int g_INT_01cd0c90
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getTime_FUN_005b2420
@@ -24,6 +24,6 @@ section .text
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d7fcf
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_004d7fcf
-    MOV [0x01cd0c90],EAX                ; 004d7fd4 | DAT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d7fd4 | g_INT_01cd0c90
     RET                                 ; 004d7fd9
 

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_shadow_cpp_CShadow_processChainConstraint_FUN_005601c0(CShadow *this_ptr)
 
@@ -57,7 +56,7 @@ void __cdecl core_shadow_cpp_CShadow_processChainConstraint_FUN_005601c0(CShadow
          *(uint *)((int)&CStack_90 + (uint)bVar2 * -8 + 4);
     *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)((int)&CStack_90 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-    if (fStack_98 < (float)_DAT_005f17c5) {
+    if (fStack_98 < (float)2) {
       CStack_3c.x = CStack_90.x;
       *(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + 4) =
            *(uint *)((int)&CStack_90 + (uint)bVar2 * -8 + 4);

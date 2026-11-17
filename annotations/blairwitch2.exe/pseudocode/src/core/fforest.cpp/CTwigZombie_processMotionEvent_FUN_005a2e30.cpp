@@ -20,7 +20,7 @@ void __cdecl core_fforest_cpp_CTwigZombie_processMotionEvent_FUN_005a2e30(CTwigZ
       sound_name = "twigswing0?.wav";
     }
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,sound_name,
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,sound_name,
                &(this_ptr->base).base.base.base.location.position);
   }
 LAB_005a2e65:

@@ -2,21 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 382,
-    "complexity_score": 280,
+    "complexity_score": 141,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 125,
-    "suspect_count": 13,
+    "pseudocode_lines": 126,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "unresolved_funcptr",
-      "unrolled_strchr",
-      "warning_overlapping_globals"
+      "unrolled_strchr"
     ],
-    "total_lines": 507
+    "total_lines": 508
   },
   "cross_references": [
     {
@@ -114,50 +110,50 @@
     },
     {
       "addr": "005e7aac",
-      "name": "DAT_005e7aac",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_005e7aac",
+      "type": "char[2]",
       "value": null
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "0152d244",
-      "name": "DAT_0152d244",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d244",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d248",
-      "name": "DAT_0152d248",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d248",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d1ee8c",
-      "name": "DAT_01d1ee8c",
-      "type": "undefined4",
+      "name": "g_INT_01d1ee8c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1ee9c",
-      "name": "DAT_01d1ee9c",
-      "type": "undefined4",
+      "name": "g_INT_01d1ee9c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d7f1b8",
-      "name": "DAT_01d7f1b8",
-      "type": "undefined4",
+      "name": "g_INT_01d7f1b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -381,102 +377,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005e7aac",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(_DAT_0152d248,&DAT_005e7aac,0x206,399,0xf8,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 95,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 95,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 104,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 104,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 115,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 115,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 120,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 120,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 123,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 123,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "unresolved_funcptr"
-    },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
       "line": 84,

@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_0043e620
@@ -36,8 +36,8 @@ section .text
         ;   Label: LAB_00441e73
     MOV EBX,0x5f1                       ; 00441e78
     PUSH 0x5d69f9                       ; 00441e7d
-    MOV dword ptr [0x01d1d400],ECX      ; 00441e82 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00441e88 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00441e82 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00441e88 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00441e8e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00441e93

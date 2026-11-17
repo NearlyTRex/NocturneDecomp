@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_flushTriangleBatch_FUN_004f0f20(void)
 
 {
@@ -17,10 +15,10 @@ void __cdecl engine_mini3d_cpp_flushTriangleBatch_FUN_004f0f20(void)
   int iVar4;
   int iVar5;
   
-  if ((2 < _DAT_01d7a6d0) && (2 < _DAT_01d7a6cc)) {
-    if ((_DAT_02cf60cc == (code *)0x0) || (_DAT_01c6cee8 == 0)) {
+  if ((2 < (int)g_SHORT_ARRAY_01d7a6d0) && (2 < g_INT_01d7a6cc)) {
+    if ((g_PTR_02cf60cc == (byte *)0x0) || (g_INT_01c6cee8 == 0)) {
       iVar5 = 0;
-      if (0 < _DAT_01d7a6d0) {
+      if (0 < (int)g_SHORT_ARRAY_01d7a6d0) {
         iVar4 = 0;
         do {
           puVar1 = (ushort *)(iVar4 + 0x1d7a6d8);
@@ -29,18 +27,20 @@ void __cdecl engine_mini3d_cpp_flushTriangleBatch_FUN_004f0f20(void)
           iVar4 = iVar4 + 6;
           iVar5 = iVar5 + 3;
           engine_mini3d_cpp_rasterizeTriangle_FUN_004f1830
-                    ((float *)(_DAT_01d76f60 + ((uint)*puVar3 + _DAT_01d7a6c8) * 0x40),
-                     (float *)(((uint)*puVar2 + _DAT_01d7a6c8) * 0x40 + _DAT_01d76f60),
-                     (float *)(((uint)*puVar1 + _DAT_01d7a6c8) * 0x40 + _DAT_01d76f60));
-        } while (iVar5 < _DAT_01d7a6d0);
+                    (g_FLOAT_PTR_01d76f60 + ((uint)*puVar3 + g_INT_01d7a6c8) * 0x10,
+                     g_FLOAT_PTR_01d76f60 + ((uint)*puVar2 + g_INT_01d7a6c8) * 0x10,
+                     g_FLOAT_PTR_01d76f60 + ((uint)*puVar1 + g_INT_01d7a6c8) * 0x10);
+        } while (iVar5 < (int)g_SHORT_ARRAY_01d7a6d0);
       }
     }
     else {
-      (*_DAT_02cf60cc)(_DAT_01d76f60 + _DAT_01d7a6c8 * 0x40,_DAT_01d7a6cc,0x1d7a6d4,
-                       _DAT_01d7a6d0 / 3,_DAT_01c6e2b4);
+      (*(code *)g_PTR_02cf60cc)
+                (g_FLOAT_PTR_01d76f60 + g_INT_01d7a6c8 * 0x10,g_INT_01d7a6cc,0x1d7a6d4,
+                 (int)g_SHORT_ARRAY_01d7a6d0 / 3,g_BIT_INTEGER32_01c6e2b4.dword);
     }
-    _DAT_01d7a6d0 = 0;
-    _DAT_01d7a6cc = 0;
+    g_SHORT_ARRAY_01d7a6d0[0] = 0;
+    g_SHORT_ARRAY_01d7a6d0[1] = 0;
+    g_INT_01d7a6cc = 0;
   }
   return;
 }

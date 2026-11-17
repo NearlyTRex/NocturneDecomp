@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2231c
+;   int g_INT_01c2231c
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x01c2231c]                ; 00479df0 | DAT_01c2231c
+    MOV EAX,[0x01c2231c]                ; 00479df0 | g_INT_01c2231c
         ;   Label: core_dtri.cpp_getClippedVertexCount_FUN_00479df0
     RET                                 ; 00479df5
 

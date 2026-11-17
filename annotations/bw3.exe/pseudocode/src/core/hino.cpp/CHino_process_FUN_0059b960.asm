@@ -619,8 +619,8 @@ section .text
     CALL core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000 ; 0059bfe5
         ;   XREF to: 0059d000 (UNCONDITIONAL_CALL)  ; int core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino * this_ptr)
     MOV dword ptr [EBX + 0xd074],EAX    ; 0059bfea
-    MOV EAX,[0x006071f0]                ; 0059bff0 | DAT_006071f0
-    MOV EDX,dword ptr [EAX]             ; 0059bff5 | DAT_02d0c1a0
+    MOV EAX,[0x006071f0]                ; 0059bff0 | g_CWeather_PTR_006071f0
+    MOV EDX,dword ptr [EAX]             ; 0059bff5 | g_CWeather_02d0c1a0
     ADD ESP,0x4                         ; 0059bff7
     TEST EDX,EDX                        ; 0059bffa
     JNZ 0x0059c0fa                      ; 0059bffc
@@ -660,8 +660,8 @@ section .text
     MOV dword ptr [EBP + 0xfffffe0e],EAX ; 0059c079
     PUSH 0x5                            ; 0059c07f
         ;   Label: LAB_0059c07f
-    MOV ECX,dword ptr [0x006071f0]      ; 0059c081 | DAT_006071f0
-    PUSH ECX                            ; 0059c087 | DAT_02d0c1a0
+    MOV ECX,dword ptr [0x006071f0]      ; 0059c081 | g_CWeather_PTR_006071f0
+    PUSH ECX                            ; 0059c087 | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c088
         ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 0059c08d
@@ -669,8 +669,8 @@ section .text
     PUSH EAX                            ; 0059c096
     LEA EAX,[EBP + 0xfffffe12]          ; 0059c097
     PUSH EAX                            ; 0059c09d
-    MOV ESI,dword ptr [0x006071f0]      ; 0059c09e | DAT_006071f0
-    PUSH ESI                            ; 0059c0a4 | DAT_02d0c1a0
+    MOV ESI,dword ptr [0x006071f0]      ; 0059c09e | g_CWeather_PTR_006071f0
+    PUSH ESI                            ; 0059c0a4 | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 0059c0a5
         ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
     ADD ESP,0xc                         ; 0059c0aa
@@ -700,7 +700,7 @@ section .text
         ;   XREF to: 0059ba81 (UNCONDITIONAL_JUMP)  ; caseD_7
     PUSH 0x5                            ; 0059c0fa
         ;   Label: LAB_0059c0fa
-    PUSH EAX                            ; 0059c0fc | DAT_02d0c1a0
+    PUSH EAX                            ; 0059c0fc | g_CWeather_02d0c1a0
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c0fd
         ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 0059c102
@@ -881,11 +881,11 @@ section .text
     LEA EAX,[EBP + 0xfffffeba]          ; 0059c341
     PUSH 0x41f00000                     ; 0059c347
     PUSH EAX                            ; 0059c34c
-    MOV ESI,dword ptr [0x005fc5a0]      ; 0059c34d | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 0059c34d | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 0059c353
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0059c354
         ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
-    MOV EAX,[0x01d5ba14]                ; 0059c359 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 0059c359 | g_INT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0059c35e
     LEA ESI,[EBP + 0xfffffe4e]          ; 0059c365
     FLD float ptr [EAX + 0x20]          ; 0059c36b
@@ -916,13 +916,13 @@ section .text
     FADDP                               ; 0059c3bc
     FSTP float ptr [EBP + 0x6e]         ; 0059c3be
     MOV EAX,dword ptr [EBP + 0x6e]      ; 0059c3c1
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c3c4 | DAT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c3c4 | g_INT_01d1a0a4
     SAR EAX,0x1                         ; 0059c3ca
     ADD EAX,EDI                         ; 0059c3cc
     MOV dword ptr [EBP + 0x72],EAX      ; 0059c3ce
     ADD ESP,0x14                        ; 0059c3d1
     FLD float ptr [EBP + 0x72]          ; 0059c3d4
-    FCOMP double ptr [0x005d9e5c]       ; 0059c3d7 | DAT_005d9e5c
+    FCOMP double ptr [0x005d9e5c]       ; 0059c3d7 | g_DOUBLE_005d9e5c
     FNSTSW AX                           ; 0059c3dd
     SAHF                                ; 0059c3df
     JA 0x0059c166                       ; 0059c3e0
@@ -937,7 +937,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffd9e],EAX ; 0059c3ff
     MOV dword ptr [EBP + 0xfffffdca],EDX ; 0059c405
     LEA EDX,[EBP + 0xfffffd9a]          ; 0059c40b
-    MOV EAX,[0x01d5ba14]                ; 0059c411 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 0059c411 | g_INT_01d5ba14
     PUSH EDX                            ; 0059c416
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0059c417
     PUSH EAX                            ; 0059c41e
@@ -1033,7 +1033,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffec2],EAX ; 0059c550
     FLD float ptr [EBP + 0xfffffe22]    ; 0059c556
         ;   Label: LAB_0059c556
-    FADD float ptr [0x005d9e28]         ; 0059c55c | DAT_005d9e28
+    FADD float ptr [0x005d9e28]         ; 0059c55c | g_FLOAT_005d9e28
     FSTP float ptr [EBP + 0xfffffe22]   ; 0059c562
     JMP 0x0059c166                      ; 0059c568
         ;   XREF to: 0059c166 (UNCONDITIONAL_JUMP)  ; LAB_0059c166
@@ -1168,11 +1168,11 @@ section .text
     LEA EAX,[EBP + 0xfffffeba]          ; 0059c739
     PUSH 0x41f00000                     ; 0059c73f
     PUSH EAX                            ; 0059c744
-    MOV ESI,dword ptr [0x005fc5a0]      ; 0059c745 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 0059c745 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 0059c74b
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0059c74c
         ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
-    MOV EAX,[0x01d5ba14]                ; 0059c751 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 0059c751 | g_INT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0059c756
     LEA ESI,[EBP + 0xfffffe42]          ; 0059c75d
     FLD float ptr [EAX + 0x20]          ; 0059c763
@@ -1203,13 +1203,13 @@ section .text
     FADDP                               ; 0059c7b4
     FSTP float ptr [EBP + -0x2]         ; 0059c7b6
     MOV EAX,dword ptr [EBP + -0x2]      ; 0059c7b9
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c7bc | DAT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 0059c7bc | g_INT_01d1a0a4
     SAR EAX,0x1                         ; 0059c7c2
     ADD EAX,EDI                         ; 0059c7c4
     MOV dword ptr [EBP + 0x2],EAX       ; 0059c7c6
     ADD ESP,0x14                        ; 0059c7c9
     FLD float ptr [EBP + 0x2]           ; 0059c7cc
-    FCOMP double ptr [0x005d9e54]       ; 0059c7cf | DAT_005d9e54
+    FCOMP double ptr [0x005d9e54]       ; 0059c7cf | g_DOUBLE_005d9e54
     FNSTSW AX                           ; 0059c7d5
     SAHF                                ; 0059c7d7
     JA 0x0059c166                       ; 0059c7d8
@@ -1224,7 +1224,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffd62],EAX ; 0059c7f7
     MOV dword ptr [EBP + 0xfffffd8e],EDX ; 0059c7fd
     LEA EDX,[EBP + 0xfffffd5e]          ; 0059c803
-    MOV EAX,[0x01d5ba14]                ; 0059c809 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 0059c809 | g_INT_01d5ba14
     PUSH EDX                            ; 0059c80e
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0059c80f
     PUSH EAX                            ; 0059c816
@@ -1248,14 +1248,14 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0059c850
     ADD ESP,0x4                         ; 0059c853
     FLD float ptr [EBP + 0x76]          ; 0059c856
-    FCOMP double ptr [0x005d9e4c]       ; 0059c859 | DAT_005d9e4c
+    FCOMP double ptr [0x005d9e4c]       ; 0059c859 | g_DOUBLE_005d9e4c
     FNSTSW AX                           ; 0059c85f
     SAHF                                ; 0059c861
     JBE 0x0059ba81                      ; 0059c862
         ;   XREF to: 0059ba81 (CONDITIONAL_JUMP)  ; caseD_7
     PUSH 0x0                            ; 0059c868
-    MOV EDI,dword ptr [0x006071f0]      ; 0059c86a | DAT_006071f0
-    PUSH EDI                            ; 0059c870 | DAT_02d0c1a0
+    MOV EDI,dword ptr [0x006071f0]      ; 0059c86a | g_CWeather_PTR_006071f0
+    PUSH EDI                            ; 0059c870 | g_CWeather_02d0c1a0
     MOV dword ptr [EBX + 0xd070],0x0    ; 0059c871
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c87b
         ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
@@ -1313,7 +1313,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x6]       ; 0059c915
     FLD float ptr [EBP + 0x6]           ; 0059c918
     MOV dword ptr [EBP + 0x12],EAX      ; 0059c91b
-    FCOMP float ptr [0x005e81ac]        ; 0059c91e | DAT_005e81ac
+    FCOMP float ptr [0x005e81ac]        ; 0059c91e | g_FLOAT_005e81ac
     FNSTSW AX                           ; 0059c924
     SAHF                                ; 0059c926
     JC 0x0059c970                       ; 0059c927
@@ -1365,7 +1365,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 0059c9ab
     FABS                                ; 0059c9ae
     ADD ESP,0x4                         ; 0059c9b0
-    FCOMP double ptr [0x005d9e44]       ; 0059c9b3 | DAT_005d9e44
+    FCOMP double ptr [0x005d9e44]       ; 0059c9b3 | g_DOUBLE_005d9e44
     FNSTSW AX                           ; 0059c9b9
     SAHF                                ; 0059c9bb
     JNC 0x0059c929                      ; 0059c9bc
@@ -1475,13 +1475,13 @@ section .text
     ADD ESP,0xc                         ; 0059cad1
     JMP 0x0059ba81                      ; 0059cad4
         ;   XREF to: 0059ba81 (UNCONDITIONAL_JUMP)  ; caseD_7
-    MOV EAX,[0x005e81ac]                ; 0059cad9 | DAT_005e81ac
+    MOV EAX,[0x005e81ac]                ; 0059cad9 | g_FLOAT_005e81ac
         ;   Label: LAB_0059cad9
     MOV dword ptr [EBP + 0x1a],EAX      ; 0059cade
     LEA EAX,[EBX + 0x249c]              ; 0059cae1
     FLD float ptr [EBP + 0x1a]          ; 0059cae7
     MOV dword ptr [EAX + 0x8],0x0       ; 0059caea
-    FADD double ptr [0x005d9e34]        ; 0059caf1 | DAT_005d9e34
+    FADD double ptr [0x005d9e34]        ; 0059caf1 | g_DOUBLE_005d9e34
     MOV EDX,dword ptr [EAX + 0x8]       ; 0059caf7
     MOV dword ptr [EAX + 0x4],EDX       ; 0059cafa
     MOV EDX,dword ptr [EAX + 0x4]       ; 0059cafd
@@ -1545,13 +1545,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x2a]      ; 0059cbc0
     FLD float ptr [EBP + 0x2a]          ; 0059cbc3
     MOV dword ptr [EBP + 0x22],EAX      ; 0059cbc6
-    FCOMP float ptr [0x005e81b8]        ; 0059cbc9 | DAT_005e81b8
+    FCOMP float ptr [0x005e81b8]        ; 0059cbc9 | g_FLOAT_005e81b8
     FNSTSW AX                           ; 0059cbcf
     SAHF                                ; 0059cbd1
     JBE 0x0059cbfe                      ; 0059cbd2
         ;   XREF to: 0059cbfe (CONDITIONAL_JUMP)  ; LAB_0059cbfe
     FLD float ptr [EBP + 0x2a]          ; 0059cbd4
-    FCOMP double ptr [0x005d9e3c]       ; 0059cbd7 | DAT_005d9e3c
+    FCOMP double ptr [0x005d9e3c]       ; 0059cbd7 | g_DOUBLE_005d9e3c
     FNSTSW AX                           ; 0059cbdd
     SAHF                                ; 0059cbdf
     JNC 0x0059cbfe                      ; 0059cbe0
@@ -1621,7 +1621,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 0059cc90
     FABS                                ; 0059cc93
     ADD ESP,0x4                         ; 0059cc95
-    FCOMP double ptr [0x005d9e44]       ; 0059cc98 | DAT_005d9e44
+    FCOMP double ptr [0x005d9e44]       ; 0059cc98 | g_DOUBLE_005d9e44
     FNSTSW AX                           ; 0059cc9e
     SAHF                                ; 0059cca0
     JNC 0x0059ccd6                      ; 0059cca1
@@ -1646,7 +1646,7 @@ section .text
     MOV dword ptr [EBX + 0xcde0],0x40000000 ; 0059cccc
     FLD float ptr [EBP + 0x22]          ; 0059ccd6
         ;   Label: LAB_0059ccd6
-    FCOMP double ptr [0x005d9e3c]       ; 0059ccd9 | DAT_005d9e3c
+    FCOMP double ptr [0x005d9e3c]       ; 0059ccd9 | g_DOUBLE_005d9e3c
     FNSTSW AX                           ; 0059ccdf
     SAHF                                ; 0059cce1
     JNC 0x0059cd2f                      ; 0059cce2
@@ -1677,7 +1677,7 @@ section .text
     MOV dword ptr [EBX + 0xd064],0x41500000 ; 0059cd25
     FLD float ptr [EBP + 0x22]          ; 0059cd2f
         ;   Label: LAB_0059cd2f
-    FCOMP double ptr [0x005d9e3c]       ; 0059cd32 | DAT_005d9e3c
+    FCOMP double ptr [0x005d9e3c]       ; 0059cd32 | g_DOUBLE_005d9e3c
     FNSTSW AX                           ; 0059cd38
     SAHF                                ; 0059cd3a
     JBE 0x0059ba81                      ; 0059cd3b
@@ -1717,7 +1717,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0059cd9e
     ADD ESP,0x4                         ; 0059cda1
     FLD float ptr [EBP + 0x76]          ; 0059cda4
-    FCOMP double ptr [0x005d9e1c]       ; 0059cda7 | DAT_005d9e1c
+    FCOMP double ptr [0x005d9e1c]       ; 0059cda7 | g_DOUBLE_005d9e1c
     FNSTSW AX                           ; 0059cdad
     SAHF                                ; 0059cdaf
     JC 0x0059cdcb                       ; 0059cdb0
@@ -1745,16 +1745,16 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059cdff
     MOVSD ES:EDI,ESI                    ; 0059ce00
     MOVSD ES:EDI,ESI                    ; 0059ce01
-    FADD float ptr [0x005d9e28]         ; 0059ce02 | DAT_005d9e28
+    FADD float ptr [0x005d9e28]         ; 0059ce02 | g_FLOAT_005d9e28
     FLD float ptr [EBP + -0x46]         ; 0059ce08
     PUSH 0x0                            ; 0059ce0b
     FXCH                                ; 0059ce0d
     FSTP float ptr [EBP + 0xffffff2a]   ; 0059ce0f
     PUSH EAX                            ; 0059ce15
     LEA EAX,[EBP + -0x4a]               ; 0059ce16
-    MOV EDI,dword ptr [0x005fc5a0]      ; 0059ce19 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 0059ce19 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 0059ce1f
-    FADD float ptr [0x005d9e24]         ; 0059ce20 | DAT_005d9e24
+    FADD float ptr [0x005d9e24]         ; 0059ce20 | g_FLOAT_005d9e24
     PUSH EDI                            ; 0059ce26
     FSTP float ptr [EBP + -0x46]        ; 0059ce27
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0059ce2a
@@ -1770,7 +1770,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0059ce40
     ADD ESP,0x4                         ; 0059ce43
     FLD float ptr [EBP + 0x76]          ; 0059ce46
-    FCOMP double ptr [0x005d9e2c]       ; 0059ce49 | DAT_005d9e2c
+    FCOMP double ptr [0x005d9e2c]       ; 0059ce49 | g_DOUBLE_005d9e2c
     FNSTSW AX                           ; 0059ce4f
     SAHF                                ; 0059ce51
     JC 0x0059ce6d                       ; 0059ce52
@@ -1784,7 +1784,7 @@ section .text
         ;   Label: LAB_0059ce6d
     PUSH 0xffff                         ; 0059ce73
     LEA EAX,[EBP + 0xfffffdee]          ; 0059ce78
-    MOV EDX,dword ptr [0x005fc5a0]      ; 0059ce7e | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 0059ce7e | g_CFireEffect_PTR_005fc5a0
     LEA ESI,[EBX + 0x20]                ; 0059ce84
     PUSH 0x3e800000                     ; 0059ce87
     MOVSD ES:EDI,ESI                    ; 0059ce8c
@@ -1796,7 +1796,7 @@ section .text
     PUSH 0x40700000                     ; 0059ce9d
     LEA ESI,[EBX + 0x20]                ; 0059cea2
     PUSH 0x3f400000                     ; 0059cea5
-    FADD float ptr [0x005d9e28]         ; 0059ceaa | DAT_005d9e28
+    FADD float ptr [0x005d9e28]         ; 0059ceaa | g_FLOAT_005d9e28
     MOVSD ES:EDI,ESI                    ; 0059ceb0
     MOVSD ES:EDI,ESI                    ; 0059ceb1
     MOVSD ES:EDI,ESI                    ; 0059ceb2
@@ -1807,7 +1807,7 @@ section .text
     FXCH                                ; 0059cec2
     FSTP float ptr [EBP + 0xfffffdf2]   ; 0059cec4
     PUSH EAX                            ; 0059ceca
-    FADD float ptr [0x005d9e24]         ; 0059cecb | DAT_005d9e24
+    FADD float ptr [0x005d9e24]         ; 0059cecb | g_FLOAT_005d9e24
     PUSH EDX                            ; 0059ced1
     FSTP float ptr [EBP + 0xffffff12]   ; 0059ced2
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0059ced8
@@ -1889,7 +1889,7 @@ section .text
     ADD ESI,0x20                        ; 0059cfa3
     PUSH ESI                            ; 0059cfa6
     PUSH EDI                            ; 0059cfa7
-    MOV EAX,[0x005fc5a0]                ; 0059cfa8 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 0059cfa8 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 0059cfad
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0059cfae
         ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)

@@ -12,12 +12,12 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820(C
   CKeyFramedModel *pCVar1;
   int render_flags;
   
-  if ((*(int *)(0x01D182F0 + 0x1008) == 0) &&
+  if ((g_CDemonMission_PTR_00618170->is_in_editor == 0) &&
      (this_ptr->reflectors[reflector_index].interp_factor <= 0.0)) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,&this_ptr->reflectors[reflector_index].rotation,
+            (g_CDemonRenderer_PTR_0060b280,&this_ptr->reflectors[reflector_index].rotation,
              &this_ptr->reflectors[reflector_index].position);
   render_flags = -1;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20

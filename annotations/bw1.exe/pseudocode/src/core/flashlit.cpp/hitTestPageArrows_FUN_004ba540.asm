@@ -12,11 +12,11 @@
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004be970 at 004beae7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061d2e8
-;   undefined4 DAT_0061d2ec
-;   undefined4 DAT_0061d2f0
-;   undefined4 DAT_0061d2f4
-;   undefined4 DAT_01cc7b90
+;   int g_INT_0061d2e8 = 0x4a
+;   int g_INT_0061d2ec = 0x1ae
+;   int g_INT_0061d2f0 = 0x1f4
+;   int g_INT_0061d2f4 = 0x1ae
+;   int g_INT_01cc7b90
 ;   undefined4 CAlphaBitmap_01cc7c84.width
 ;   undefined4 CAlphaBitmap_01cc7c84.height
 ;   undefined4 CAlphaBitmap_01cc7c98.width
@@ -34,14 +34,14 @@ section .text
     PUSH EBP                            ; 004ba543
     MOV ECX,dword ptr [ESP + 0x14]      ; 004ba544
     MOV EDX,dword ptr [ESP + 0x18]      ; 004ba548
-    CMP dword ptr [0x01cc7b90],0x0      ; 004ba54c | DAT_01cc7b90
+    CMP dword ptr [0x01cc7b90],0x0      ; 004ba54c | g_INT_01cc7b90
     JLE 0x004ba583                      ; 004ba553
         ;   XREF to: 004ba583 (CONDITIONAL_JUMP)  ; LAB_004ba583
-    MOV ESI,dword ptr [0x0061d2e8]      ; 004ba555 | DAT_0061d2e8
+    MOV ESI,dword ptr [0x0061d2e8]      ; 004ba555 | g_INT_0061d2e8
     CMP ECX,ESI                         ; 004ba55b
     JL 0x004ba583                       ; 004ba55d
         ;   XREF to: 004ba583 (CONDITIONAL_JUMP)  ; LAB_004ba583
-    MOV EDI,dword ptr [0x0061d2ec]      ; 004ba55f | DAT_0061d2ec
+    MOV EDI,dword ptr [0x0061d2ec]      ; 004ba55f | g_INT_0061d2ec
     CMP EDX,EDI                         ; 004ba565
     JL 0x004ba583                       ; 004ba567
         ;   XREF to: 004ba583 (CONDITIONAL_JUMP)  ; LAB_004ba583
@@ -57,16 +57,16 @@ section .text
         ;   XREF to: 004ba5cd (CONDITIONAL_JUMP)  ; LAB_004ba5cd
     MOV EAX,[0x01cc7d0c]                ; 004ba583 | g_STextViewInstance.page_count
         ;   Label: LAB_004ba583
-    MOV ESI,dword ptr [0x01cc7b90]      ; 004ba588 | DAT_01cc7b90
+    MOV ESI,dword ptr [0x01cc7b90]      ; 004ba588 | g_INT_01cc7b90
     SUB EAX,0x2                         ; 004ba58e
     CMP EAX,ESI                         ; 004ba591
     JLE 0x004ba5d7                      ; 004ba593
         ;   XREF to: 004ba5d7 (CONDITIONAL_JUMP)  ; LAB_004ba5d7
-    MOV EDI,dword ptr [0x0061d2f0]      ; 004ba595 | DAT_0061d2f0
+    MOV EDI,dword ptr [0x0061d2f0]      ; 004ba595 | g_INT_0061d2f0
     CMP ECX,EDI                         ; 004ba59b
     JL 0x004ba5d7                       ; 004ba59d
         ;   XREF to: 004ba5d7 (CONDITIONAL_JUMP)  ; LAB_004ba5d7
-    MOV EBP,dword ptr [0x0061d2f4]      ; 004ba59f | DAT_0061d2f4
+    MOV EBP,dword ptr [0x0061d2f4]      ; 004ba59f | g_INT_0061d2f4
     CMP EDX,EBP                         ; 004ba5a5
     JL 0x004ba5d7                       ; 004ba5a7
         ;   XREF to: 004ba5d7 (CONDITIONAL_JUMP)  ; LAB_004ba5d7

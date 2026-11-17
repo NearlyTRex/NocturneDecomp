@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860(CDemonCamera *this_ptr)
 
 {
@@ -17,12 +15,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860(CD
   int iVar4;
   int iVar5;
   uint *puVar6;
-  int iVar7;
-  uint *puVar8;
-  byte bVar9;
+  SRGBColorPalette *pSVar7;
+  int iVar8;
+  uint *puVar9;
+  SRGBColorPalette *pSVar10;
+  byte bVar11;
   
-  bVar9 = 0;
-  iVar7 = 0;
+  bVar11 = 0;
+  iVar8 = 0;
   iVar5 = 0;
   do {
     iVar2 = 0;
@@ -31,43 +31,44 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860(CD
       iVar3 = iVar2 >> 0x1f;
       iVar1 = iVar2 + iVar3 * -0x100;
       iVar2 = iVar2 + 0x280;
-      (&DAT_014b3550)[iVar4] =
-           (&DAT_01468550)
+      *(char *)((int)g_UINT_ARRAY_014b3550 + iVar4) =
+           g_CHAR_ARRAY_01468550
            [((int)(iVar1 - (uint)(iVar3 << 7 < 0)) >> 8) +
-            ((int)((iVar7 + (iVar7 >> 0x1f) * -0x100) - (uint)((iVar7 >> 0x1f) << 7 < 0)) >> 8) *
+            ((int)((iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0)) >> 8) *
             0x280];
       iVar4 = iVar4 + 1;
     } while (iVar2 != 0x28000);
     iVar5 = iVar5 + 0x100;
-    iVar7 = iVar7 + 0x1e0;
+    iVar8 = iVar8 + 0x1e0;
   } while (iVar5 != 0x10000);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609ff0);
-  puVar6 = (uint *)&DAT_014b3550;
-  puVar8 = _DAT_01c37770;
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00609ff0);
+  puVar6 = g_UINT_ARRAY_014b3550;
+  puVar9 = (uint *)g_UCHAR_PTR_01c37770;
   for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar8 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
-    puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+    *puVar9 = *puVar6;
+    puVar6 = puVar6 + (uint)bVar11 * -2 + 1;
+    puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
   }
   for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(byte *)puVar8 = *(byte *)puVar6;
-    puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);
-    puVar8 = (uint *)((int)puVar8 + (uint)bVar9 * -2 + 1);
+    *(uchar *)puVar9 = (uchar)*puVar6;
+    puVar6 = (uint *)((int)puVar6 + (uint)bVar11 * -2 + 1);
+    puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
   }
-  puVar6 = (uint *)&DAT_00b65c98;
-  puVar8 = _DAT_01c35210;
+  pSVar7 = &g_SRGBColorPalette_00b65c98;
+  pSVar10 = g_SRGBColorPalette_PTR_01c35210;
   for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar8 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
-    puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+    *(uint *)pSVar10->colors = *(uint *)pSVar7->colors;
+    pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -8 + 4);
+    pSVar10 = (SRGBColorPalette *)((int)pSVar10 + (uint)bVar11 * -8 + 4);
   }
   for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(byte *)puVar8 = *(byte *)puVar6;
-    puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);
-    puVar8 = (uint *)((int)puVar8 + (uint)bVar9 * -2 + 1);
+    pSVar10->colors[0].r = pSVar7->colors[0].r;
+    pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -2 + 1);
+    pSVar10 = (SRGBColorPalette *)((int)pSVar10 + (uint)bVar11 * -2 + 1);
   }
   engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0046cab0
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609ff0,(SRGBColorPalette *)&DAT_00b65c98);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00609ff0,
+             &g_SRGBColorPalette_00b65c98);
   return;
 }

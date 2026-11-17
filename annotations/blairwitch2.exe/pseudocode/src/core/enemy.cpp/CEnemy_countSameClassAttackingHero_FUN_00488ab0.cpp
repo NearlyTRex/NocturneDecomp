@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_00488ab0(CEnemy *this_ptr)
 
 {
@@ -30,8 +28,8 @@ int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_00488ab0(CEnem
     if (iVar1 != 0) {
       EVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if ((EVar2 == DEATH_STATE_ALIVE) &&
-         (*(int *)(this_ptr_00[1].base.actor_name + 0x18) == *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4)
-         )) {
+         (*(CHero **)(this_ptr_00[1].base.actor_name + 0x18) ==
+          g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4])) {
         iVar3 = iVar3 + 1;
       }
     }

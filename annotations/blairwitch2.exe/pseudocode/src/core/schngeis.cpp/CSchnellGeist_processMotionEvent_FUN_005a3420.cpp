@@ -13,11 +13,11 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMotionEvent_FUN_005a3420(CSc
   float damage;
   int bone_index;
   
-  this_ptr_00 = 0x0264B290;
+  this_ptr_00 = g_CSound_PTR_0061c068;
   switch(event_id) {
   case 8000:
     bone_index = this_ptr->tongue_attack_bone;
-    damage = 0x41700000;
+    damage = 15.0f;
     goto LAB_005a344f;
   case 0x1f41:
     this_ptr->breath_state = 1;
@@ -42,27 +42,27 @@ LAB_005a344f:
     break;
   case 0x1f45:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"schnellarm0?.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"schnellarm0?.wav",
                &(this_ptr->base).base.base.base.location.position);
     break;
   case 0x1f46:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"schnellbite01.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"schnellbite01.wav",
                &(this_ptr->base).base.base.base.location.position);
     break;
   case 0x1f47:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"schnellfootsteps0?.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"schnellfootsteps0?.wav",
                &(this_ptr->base).base.base.base.location.position);
     break;
   case 0x1f48:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"schnelljump.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"schnelljump.wav",
                &(this_ptr->base).base.base.base.location.position);
     break;
   case 0x1f49:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"schnelldeath01.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"schnelldeath01.wav",
                &(this_ptr->base).base.base.base.location.position);
   }
   core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(&this_ptr->base,event_id);

@@ -12,13 +12,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005d7673
 ;   TerminatedCString s_CGame_setGameRes_Unable_005d7684
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01511cc4
-;   undefined4 DAT_01c25590
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01d06a74
+;   int g_INT_006141bc = 0xc8
+;   int g_INT_006141c0 = 0x8
+;   CBitFont* g_CBitFont_PTR_01511cc4
+;   CBitFont* g_CBitFont_PTR_01c25590
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_INT_01d06a74
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0043b570
@@ -37,11 +37,11 @@ section .text
     PUSH EDI                            ; 004b5fd2
     PUSH EBP                            ; 004b5fd3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004b5fd4
-    MOV EDX,dword ptr [0x01d06a74]      ; 004b5fd8 | DAT_01d06a74
+    MOV EDX,dword ptr [0x01d06a74]      ; 004b5fd8 | g_INT_01d06a74
     TEST EDX,EDX                        ; 004b5fde
     JNZ 0x004b6088                      ; 004b5fe0
         ;   XREF to: 004b6088 (CONDITIONAL_JUMP)  ; LAB_004b6088
-    MOV EAX,[0x006141bc]                ; 004b5fe6 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 004b5fe6 | g_INT_006141bc
         ;   Label: LAB_004b5fe6
     CMP EAX,dword ptr [EBX + 0x4]       ; 004b5feb
     JZ 0x004b6096                       ; 004b5fee
@@ -82,20 +82,20 @@ section .text
     MOV EBP,0x5d7673                    ; 004b603a | = "..\\core\\game.cpp"
     MOV EAX,0x504                       ; 004b603f
     PUSH 0x5d7684                       ; 004b6044 | = "CGame::setGameRes - Unable to set the..."
-    MOV dword ptr [0x01d046a0],EBP      ; 004b6049 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004b604f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004b6049 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004b604f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b6054
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x10                        ; 004b6059
     CALL engine_2d.c_resetGraphicsSystem_FUN_00402ac0 ; 004b605c
         ;   XREF to: 00402ac0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00402ac0()
         ;   Label: LAB_004b605c
-    MOV EDI,dword ptr [0x006141bc]      ; 004b6061 | DAT_006141bc
+    MOV EDI,dword ptr [0x006141bc]      ; 004b6061 | g_INT_006141bc
     PUSH EDI                            ; 004b6067
     PUSH 0x1fc7838                      ; 004b6068
     CALL core_dcamera.cpp_CDemonCamera_init_FUN_0043b570 ; 004b606d
         ;   XREF to: 0043b570 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_0043b570(CDemonCamera * this_ptr, int screen_height)
-    MOV EBP,dword ptr [0x006141bc]      ; 004b6072 | DAT_006141bc
+    MOV EBP,dword ptr [0x006141bc]      ; 004b6072 | g_INT_006141bc
     ADD ESP,0x8                         ; 004b6078
     CMP EBP,0x180                       ; 004b607b
     JL 0x004b60a7                       ; 004b6081
@@ -112,16 +112,16 @@ section .text
     ADD ESP,0x4                         ; 004b608e
     JMP 0x004b5fe6                      ; 004b6091
         ;   XREF to: 004b5fe6 (UNCONDITIONAL_JUMP)  ; LAB_004b5fe6
-    MOV EDI,dword ptr [0x006141c0]      ; 004b6096 | DAT_006141c0
+    MOV EDI,dword ptr [0x006141c0]      ; 004b6096 | g_INT_006141c0
         ;   Label: LAB_004b6096
     CMP EDI,dword ptr [EBX + 0x8]       ; 004b609c
     JNZ 0x004b5ff4                      ; 004b609f
         ;   XREF to: 004b5ff4 (CONDITIONAL_JUMP)  ; LAB_004b5ff4
     JMP 0x004b605c                      ; 004b60a5
         ;   XREF to: 004b605c (UNCONDITIONAL_JUMP)  ; LAB_004b605c
-    MOV EAX,[0x01511cc4]                ; 004b60a7 | DAT_01511cc4
+    MOV EAX,[0x01511cc4]                ; 004b60a7 | g_CBitFont_PTR_01511cc4
         ;   Label: LAB_004b60a7
-    MOV [0x01c25590],EAX                ; 004b60ac | DAT_01c25590
+    MOV [0x01c25590],EAX                ; 004b60ac | g_CBitFont_PTR_01c25590
     POP EBP                             ; 004b60b1
     POP EDI                             ; 004b60b2
     POP ESI                             ; 004b60b3

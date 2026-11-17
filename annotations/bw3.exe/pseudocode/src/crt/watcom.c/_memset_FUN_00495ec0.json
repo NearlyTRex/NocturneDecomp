@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 318,
+    "complexity_score": 298,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 23,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -69,8 +69,8 @@
   "globals": [
     {
       "addr": "005fbc30",
-      "name": "DAT_005fbc30",
-      "type": "undefined4",
+      "name": "g_ULONGLONG_ARRAY_005fbc30",
+      "type": "ulonglong[256]",
       "value": null
     },
     {
@@ -231,22 +231,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005fbc30",
-      "severity": "mild",
-      "text": "lVar1 = *(longlong *)(&DAT_005fbc30 + (fill_byte & 0xffU) * 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005fbc30",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)(&DAT_005fbc30 + (fill_byte & 0xffU) * 8);",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 18,

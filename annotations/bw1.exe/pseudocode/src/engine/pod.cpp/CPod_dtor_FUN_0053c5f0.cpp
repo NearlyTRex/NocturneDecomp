@@ -16,7 +16,7 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0053c5f0(CPod *this_ptr,uint flags)
     free(ptr);
     return this_ptr;
   }
-  this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_0053c5f0_00604a34;
+  this_ptr->vtable = &g_CPod_vtable_00604a34;
   engine_pod_cpp_CPod_cleanup_FUN_0053c8f0(this_ptr);
   if ((flags & 2) == 0) {
     return this_ptr;

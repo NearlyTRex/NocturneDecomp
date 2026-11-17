@@ -16,7 +16,7 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_004ff770(CLever *this_ptr)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
   pcVar3 = acStack_d4;
-  if (DAT_007c3038 == 1) {
+  if (g_INT_007c3038 == 1) {
     core_actor_cpp_archiveString_FUN_0040b440(acStack_d4,"modelName");
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(&this_ptr->model,acStack_d4);
   }

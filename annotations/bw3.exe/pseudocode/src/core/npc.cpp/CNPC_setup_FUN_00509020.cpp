@@ -24,11 +24,11 @@ void __cdecl core_npc_cpp_CNPC_setup_FUN_00509020(CNPC *this_ptr)
   }
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
                           (&(this_ptr->base).model);
-  _DAT_01dd6a3c =
+  g_INT_01dd6a3c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 L Hand",0);
   _DAT_01dd6a40 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 R Hand",0);
-  iVar1 = _DAT_01dd6a3c;
+  iVar1 = g_INT_01dd6a3c;
   (this_ptr->base).carry_hands[1].bone_index = _DAT_01dd6a40;
   iVar2 = (this_ptr->base).is_spectral;
   (this_ptr->base).carry_hands[0].bone_index = iVar1;
@@ -36,7 +36,7 @@ void __cdecl core_npc_cpp_CNPC_setup_FUN_00509020(CNPC *this_ptr)
     (this_ptr->base).base.is_transparent = 1;
   }
   dVar3 = round
-                    ((double)this_ptr->start_opcode * _DAT_005cb558 * _DAT_005cb560);
+                    ((double)this_ptr->start_opcode * 0.01 * 65536);
   if ((int)ROUND(dVar3) == 0x10000) {
     return;
   }

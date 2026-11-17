@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408b90(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 {
-  _DAT_01d046a0 = "..\\core\\actor.cpp";
-  _DAT_01d046a4 = 0x2e3;
+  g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
+  g_INT_01d046a4 = 0x2e3;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonActor::customRayIntersect should not be called for this base class");
   return 2.0;
 }

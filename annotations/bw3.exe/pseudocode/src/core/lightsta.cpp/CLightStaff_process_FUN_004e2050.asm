@@ -8,19 +8,19 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c6a7e
-;   undefined4 DAT_005c6a82
-;   undefined4 DAT_005c6a86
-;   undefined4 DAT_005c6a8a
-;   undefined4 DAT_005c6a8e
-;   undefined4 DAT_005c6a92
-;   undefined4 DAT_005c6a96
-;   undefined4 DAT_005c6a9a
-;   undefined4 DAT_005c6a9e
-;   undefined4 DAT_005c6aa2
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005c6a7e = -0.7600000
+;   float g_FLOAT_005c6a82 = -0.6300000
+;   float g_FLOAT_005c6a86 = -0.05000000
+;   float g_FLOAT_005c6a8a = 0.7300000
+;   float g_FLOAT_005c6a8e = 0.2800000
+;   float g_FLOAT_005c6a92 = -0.03000000
+;   float g_FLOAT_005c6a96 = 0.3700000
+;   float g_FLOAT_005c6a9a = -0.4000000
+;   float g_FLOAT_005c6a9e = -0.7100000
+;   float g_FLOAT_005c6aa2 = 0.5
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   ... and 2 more
@@ -303,7 +303,7 @@ section .text
     PUSH EAX                            ; 004e2400
     PUSH 0x5c6a3e                       ; 004e2401
     PUSH EBX                            ; 004e2406
-    MOV EAX,[0x006045f8]                ; 004e2407 | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 004e2407 | g_CSound_PTR_006045f8
     PUSH EAX                            ; 004e240c
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004e240d
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -485,7 +485,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e266e
     MOVSD ES:EDI,ESI                    ; 004e266f
     MOVSD ES:EDI,ESI                    ; 004e2670
-    FLD float ptr [0x005c6aa2]          ; 004e2671 | DAT_005c6aa2
+    FLD float ptr [0x005c6aa2]          ; 004e2671 | g_FLOAT_005c6aa2
     FLD float ptr [ESP + 0x2d0]         ; 004e2677
     FMUL ST1                            ; 004e267e
     FLD float ptr [ESP + 0x2d4]         ; 004e2680
@@ -544,7 +544,7 @@ section .text
     MOV dword ptr [ESP + 0x134],EAX     ; 004e277c
     FLD float ptr [ESP + 0x160]         ; 004e2783
         ;   Label: LAB_004e2783
-    FMUL float ptr [0x005c6aa2]         ; 004e278a | DAT_005c6aa2
+    FMUL float ptr [0x005c6aa2]         ; 004e278a | g_FLOAT_005c6aa2
     MOV ESI,dword ptr [ESP + 0x784]     ; 004e2790
     FADD float ptr [ESP + 0x130]        ; 004e2797
     MOV EAX,dword ptr [ESP + 0x784]     ; 004e279e
@@ -634,7 +634,7 @@ section .text
     PUSH EAX                            ; 004e28e5
     LEA ESI,[EBX + 0x5a0]               ; 004e28e6
     PUSH ESI                            ; 004e28ec
-    MOV EDX,dword ptr [0x005fc5a0]      ; 004e28ed | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 004e28ed | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 004e28f3
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 004e28f4
         ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
@@ -642,7 +642,7 @@ section .text
     PUSH ESI                            ; 004e28fc
     PUSH 0x5c6a64                       ; 004e28fd
     PUSH EBX                            ; 004e2902
-    MOV ECX,dword ptr [0x006045f8]      ; 004e2903 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004e2903 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004e2909
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004e290a
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -750,7 +750,7 @@ section .text
     PUSH EAX                            ; 004e2ae5
     LEA EAX,[ESP + 0x518]               ; 004e2ae6
     PUSH EAX                            ; 004e2aed
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004e2aee | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004e2aee | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004e2af4
     INC ESI                             ; 004e2af5
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 004e2af6
@@ -848,11 +848,11 @@ section .text
     LEA EDI,[ESP + 0x298]               ; 004e2c60
     LEA ESI,[ESP + 0x730]               ; 004e2c67
     FXCH ST2                            ; 004e2c6e
-    FADD float ptr [0x005c6a8a]         ; 004e2c70 | DAT_005c6a8a
+    FADD float ptr [0x005c6a8a]         ; 004e2c70 | g_FLOAT_005c6a8a
     FXCH                                ; 004e2c76
-    FADD float ptr [0x005c6a8e]         ; 004e2c78 | DAT_005c6a8e
+    FADD float ptr [0x005c6a8e]         ; 004e2c78 | g_FLOAT_005c6a8e
     FXCH ST2                            ; 004e2c7e
-    FADD float ptr [0x005c6a92]         ; 004e2c80 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e2c80 | g_FLOAT_005c6a92
     FXCH                                ; 004e2c86
     FSTP float ptr [ESP + 0x730]        ; 004e2c88
     FXCH                                ; 004e2c8f
@@ -894,7 +894,7 @@ section .text
     PUSH EAX                            ; 004e2d1e
     LEA EAX,[ESP + 0x214]               ; 004e2d1f
     PUSH EAX                            ; 004e2d26
-    MOV ESI,dword ptr [0x005fc5a0]      ; 004e2d27 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 004e2d27 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 004e2d2d
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 004e2d2e
         ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
@@ -919,7 +919,7 @@ section .text
     PUSH EAX                            ; 004e2edf
     LEA EAX,[ESP + 0x214]               ; 004e2ee0
     PUSH EAX                            ; 004e2ee7
-    MOV EDI,dword ptr [0x005fc5a0]      ; 004e2ee8 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 004e2ee8 | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 004e2eee
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 004e2eef
         ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
@@ -977,11 +977,11 @@ section .text
     LEA EDI,[ESP + 0x6dc]               ; 004e2f97
     LEA ESI,[ESP + 0x3d0]               ; 004e2f9e
     FXCH ST2                            ; 004e2fa5
-    FADD float ptr [0x005c6a8a]         ; 004e2fa7 | DAT_005c6a8a
+    FADD float ptr [0x005c6a8a]         ; 004e2fa7 | g_FLOAT_005c6a8a
     FXCH                                ; 004e2fad
-    FADD float ptr [0x005c6a8e]         ; 004e2faf | DAT_005c6a8e
+    FADD float ptr [0x005c6a8e]         ; 004e2faf | g_FLOAT_005c6a8e
     FXCH ST2                            ; 004e2fb5
-    FADD float ptr [0x005c6a92]         ; 004e2fb7 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e2fb7 | g_FLOAT_005c6a92
     FXCH                                ; 004e2fbd
     FSTP float ptr [ESP + 0x3d0]        ; 004e2fbf
     FXCH                                ; 004e2fc6
@@ -1030,11 +1030,11 @@ section .text
     LEA EDI,[ESP + 0x70c]               ; 004e307b
     LEA ESI,[ESP + 0x1e4]               ; 004e3082
     FXCH ST2                            ; 004e3089
-    FADD float ptr [0x005c6a9e]         ; 004e308b | DAT_005c6a9e
+    FADD float ptr [0x005c6a9e]         ; 004e308b | g_FLOAT_005c6a9e
     FXCH                                ; 004e3091
-    FADD float ptr [0x005c6aa2]         ; 004e3093 | DAT_005c6aa2
+    FADD float ptr [0x005c6aa2]         ; 004e3093 | g_FLOAT_005c6aa2
     FXCH ST2                            ; 004e3099
-    FADD float ptr [0x005c6a92]         ; 004e309b | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e309b | g_FLOAT_005c6a92
     FXCH                                ; 004e30a1
     FSTP float ptr [ESP + 0x1e4]        ; 004e30a3
     FXCH                                ; 004e30aa
@@ -1084,11 +1084,11 @@ section .text
     LEA EDI,[ESP + 0x34c]               ; 004e3161
     LEA ESI,[ESP + 0x46c]               ; 004e3168
     FXCH ST2                            ; 004e316f
-    FADD float ptr [0x005c6a9e]         ; 004e3171 | DAT_005c6a9e
+    FADD float ptr [0x005c6a9e]         ; 004e3171 | g_FLOAT_005c6a9e
     FXCH                                ; 004e3177
-    FADD float ptr [0x005c6aa2]         ; 004e3179 | DAT_005c6aa2
+    FADD float ptr [0x005c6aa2]         ; 004e3179 | g_FLOAT_005c6aa2
     FXCH ST2                            ; 004e317f
-    FADD float ptr [0x005c6a92]         ; 004e3181 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e3181 | g_FLOAT_005c6a92
     FXCH                                ; 004e3187
     FSTP float ptr [ESP + 0x46c]        ; 004e3189
     FXCH                                ; 004e3190
@@ -1137,11 +1137,11 @@ section .text
     LEA EDI,[ESP + 0x388]               ; 004e3245
     LEA ESI,[ESP + 0xd0]                ; 004e324c
     FXCH ST2                            ; 004e3253
-    FADD float ptr [0x005c6a96]         ; 004e3255 | DAT_005c6a96
+    FADD float ptr [0x005c6a96]         ; 004e3255 | g_FLOAT_005c6a96
     FXCH                                ; 004e325b
-    FADD float ptr [0x005c6a9a]         ; 004e325d | DAT_005c6a9a
+    FADD float ptr [0x005c6a9a]         ; 004e325d | g_FLOAT_005c6a9a
     FXCH ST2                            ; 004e3263
-    FADD float ptr [0x005c6a92]         ; 004e3265 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e3265 | g_FLOAT_005c6a92
     FXCH                                ; 004e326b
     FSTP float ptr [ESP + 0xd0]         ; 004e326d
     FXCH                                ; 004e3274
@@ -1191,11 +1191,11 @@ section .text
     LEA EDI,[ESP + 0x3c4]               ; 004e332b
     LEA ESI,[ESP + 0x3b8]               ; 004e3332
     FXCH ST2                            ; 004e3339
-    FADD float ptr [0x005c6a96]         ; 004e333b | DAT_005c6a96
+    FADD float ptr [0x005c6a96]         ; 004e333b | g_FLOAT_005c6a96
     FXCH                                ; 004e3341
-    FADD float ptr [0x005c6a9a]         ; 004e3343 | DAT_005c6a9a
+    FADD float ptr [0x005c6a9a]         ; 004e3343 | g_FLOAT_005c6a9a
     FXCH ST2                            ; 004e3349
-    FADD float ptr [0x005c6a92]         ; 004e334b | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e334b | g_FLOAT_005c6a92
     FXCH                                ; 004e3351
     FSTP float ptr [ESP + 0x3b8]        ; 004e3353
     FXCH                                ; 004e335a
@@ -1244,11 +1244,11 @@ section .text
     LEA EDI,[ESP + 0x6c4]               ; 004e340f
     LEA ESI,[ESP + 0x574]               ; 004e3416
     FXCH ST2                            ; 004e341d
-    FADD float ptr [0x005c6a7e]         ; 004e341f | DAT_005c6a7e
+    FADD float ptr [0x005c6a7e]         ; 004e341f | g_FLOAT_005c6a7e
     FXCH                                ; 004e3425
-    FADD float ptr [0x005c6a82]         ; 004e3427 | DAT_005c6a82
+    FADD float ptr [0x005c6a82]         ; 004e3427 | g_FLOAT_005c6a82
     FXCH ST2                            ; 004e342d
-    FADD float ptr [0x005c6a86]         ; 004e342f | DAT_005c6a86
+    FADD float ptr [0x005c6a86]         ; 004e342f | g_FLOAT_005c6a86
     FXCH                                ; 004e3435
     FSTP float ptr [ESP + 0x574]        ; 004e3437
     FXCH                                ; 004e343e
@@ -1298,11 +1298,11 @@ section .text
     LEA EDI,[ESP + 0x67c]               ; 004e34f5
     LEA ESI,[ESP + 0x37c]               ; 004e34fc
     FXCH ST2                            ; 004e3503
-    FADD float ptr [0x005c6a7e]         ; 004e3505 | DAT_005c6a7e
+    FADD float ptr [0x005c6a7e]         ; 004e3505 | g_FLOAT_005c6a7e
     FXCH                                ; 004e350b
-    FADD float ptr [0x005c6a82]         ; 004e350d | DAT_005c6a82
+    FADD float ptr [0x005c6a82]         ; 004e350d | g_FLOAT_005c6a82
     FXCH ST2                            ; 004e3513
-    FADD float ptr [0x005c6a86]         ; 004e3515 | DAT_005c6a86
+    FADD float ptr [0x005c6a86]         ; 004e3515 | g_FLOAT_005c6a86
     FXCH                                ; 004e351b
     FSTP float ptr [ESP + 0x37c]        ; 004e351d
     FXCH                                ; 004e3524
@@ -1351,11 +1351,11 @@ section .text
     LEA EDI,[ESP + 0x220]               ; 004e35d9
     LEA ESI,[ESP + 0x3dc]               ; 004e35e0
     FXCH ST2                            ; 004e35e7
-    FADD float ptr [0x005c6a8a]         ; 004e35e9 | DAT_005c6a8a
+    FADD float ptr [0x005c6a8a]         ; 004e35e9 | g_FLOAT_005c6a8a
     FXCH                                ; 004e35ef
-    FADD float ptr [0x005c6a8e]         ; 004e35f1 | DAT_005c6a8e
+    FADD float ptr [0x005c6a8e]         ; 004e35f1 | g_FLOAT_005c6a8e
     FXCH ST2                            ; 004e35f7
-    FADD float ptr [0x005c6a92]         ; 004e35f9 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e35f9 | g_FLOAT_005c6a92
     FXCH                                ; 004e35ff
     FSTP float ptr [ESP + 0x3dc]        ; 004e3601
     FXCH                                ; 004e3608
@@ -1405,11 +1405,11 @@ section .text
     LEA EDI,[ESP + 0x208]               ; 004e36bf
     LEA ESI,[ESP + 0x4a8]               ; 004e36c6
     FXCH ST2                            ; 004e36cd
-    FADD float ptr [0x005c6a8a]         ; 004e36cf | DAT_005c6a8a
+    FADD float ptr [0x005c6a8a]         ; 004e36cf | g_FLOAT_005c6a8a
     FXCH                                ; 004e36d5
-    FADD float ptr [0x005c6a8e]         ; 004e36d7 | DAT_005c6a8e
+    FADD float ptr [0x005c6a8e]         ; 004e36d7 | g_FLOAT_005c6a8e
     FXCH ST2                            ; 004e36dd
-    FADD float ptr [0x005c6a92]         ; 004e36df | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e36df | g_FLOAT_005c6a92
     FXCH                                ; 004e36e5
     FSTP float ptr [ESP + 0x4a8]        ; 004e36e7
     FXCH                                ; 004e36ee
@@ -1458,11 +1458,11 @@ section .text
     LEA EDI,[ESP + 0x244]               ; 004e37a3
     LEA ESI,[ESP + 0x2a4]               ; 004e37aa
     FXCH ST2                            ; 004e37b1
-    FADD float ptr [0x005c6a9e]         ; 004e37b3 | DAT_005c6a9e
+    FADD float ptr [0x005c6a9e]         ; 004e37b3 | g_FLOAT_005c6a9e
     FXCH                                ; 004e37b9
-    FADD float ptr [0x005c6aa2]         ; 004e37bb | DAT_005c6aa2
+    FADD float ptr [0x005c6aa2]         ; 004e37bb | g_FLOAT_005c6aa2
     FXCH ST2                            ; 004e37c1
-    FADD float ptr [0x005c6a92]         ; 004e37c3 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e37c3 | g_FLOAT_005c6a92
     FXCH                                ; 004e37c9
     FSTP float ptr [ESP + 0x2a4]        ; 004e37cb
     FXCH                                ; 004e37d2
@@ -1512,11 +1512,11 @@ section .text
     LEA EDI,[ESP + 0x280]               ; 004e3889
     LEA ESI,[ESP + 0x5bc]               ; 004e3890
     FXCH ST2                            ; 004e3897
-    FADD float ptr [0x005c6a9e]         ; 004e3899 | DAT_005c6a9e
+    FADD float ptr [0x005c6a9e]         ; 004e3899 | g_FLOAT_005c6a9e
     FXCH                                ; 004e389f
-    FADD float ptr [0x005c6aa2]         ; 004e38a1 | DAT_005c6aa2
+    FADD float ptr [0x005c6aa2]         ; 004e38a1 | g_FLOAT_005c6aa2
     FXCH ST2                            ; 004e38a7
-    FADD float ptr [0x005c6a92]         ; 004e38a9 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e38a9 | g_FLOAT_005c6a92
     FXCH                                ; 004e38af
     FSTP float ptr [ESP + 0x5bc]        ; 004e38b1
     FXCH                                ; 004e38b8
@@ -1565,11 +1565,11 @@ section .text
     LEA EDI,[ESP + 0x2bc]               ; 004e396d
     LEA ESI,[ESP + 0x580]               ; 004e3974
     FXCH ST2                            ; 004e397b
-    FADD float ptr [0x005c6a96]         ; 004e397d | DAT_005c6a96
+    FADD float ptr [0x005c6a96]         ; 004e397d | g_FLOAT_005c6a96
     FXCH                                ; 004e3983
-    FADD float ptr [0x005c6a9a]         ; 004e3985 | DAT_005c6a9a
+    FADD float ptr [0x005c6a9a]         ; 004e3985 | g_FLOAT_005c6a9a
     FXCH ST2                            ; 004e398b
-    FADD float ptr [0x005c6a92]         ; 004e398d | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e398d | g_FLOAT_005c6a92
     FXCH                                ; 004e3993
     FSTP float ptr [ESP + 0x580]        ; 004e3995
     FXCH                                ; 004e399c
@@ -1619,11 +1619,11 @@ section .text
     LEA EDI,[ESP + 0x6f4]               ; 004e3a53
     LEA ESI,[ESP + 0x3a0]               ; 004e3a5a
     FXCH ST2                            ; 004e3a61
-    FADD float ptr [0x005c6a96]         ; 004e3a63 | DAT_005c6a96
+    FADD float ptr [0x005c6a96]         ; 004e3a63 | g_FLOAT_005c6a96
     FXCH                                ; 004e3a69
-    FADD float ptr [0x005c6a9a]         ; 004e3a6b | DAT_005c6a9a
+    FADD float ptr [0x005c6a9a]         ; 004e3a6b | g_FLOAT_005c6a9a
     FXCH ST2                            ; 004e3a71
-    FADD float ptr [0x005c6a92]         ; 004e3a73 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e3a73 | g_FLOAT_005c6a92
     FXCH                                ; 004e3a79
     FSTP float ptr [ESP + 0x3a0]        ; 004e3a7b
     FXCH                                ; 004e3a82
@@ -1672,11 +1672,11 @@ section .text
     LEA EDI,[ESP + 0x688]               ; 004e3b37
     LEA ESI,[ESP + 0x568]               ; 004e3b3e
     FXCH ST2                            ; 004e3b45
-    FADD float ptr [0x005c6a7e]         ; 004e3b47 | DAT_005c6a7e
+    FADD float ptr [0x005c6a7e]         ; 004e3b47 | g_FLOAT_005c6a7e
     FXCH                                ; 004e3b4d
-    FADD float ptr [0x005c6a82]         ; 004e3b4f | DAT_005c6a82
+    FADD float ptr [0x005c6a82]         ; 004e3b4f | g_FLOAT_005c6a82
     FXCH ST2                            ; 004e3b55
-    FADD float ptr [0x005c6a86]         ; 004e3b57 | DAT_005c6a86
+    FADD float ptr [0x005c6a86]         ; 004e3b57 | g_FLOAT_005c6a86
     FXCH                                ; 004e3b5d
     FSTP float ptr [ESP + 0x568]        ; 004e3b5f
     FXCH                                ; 004e3b66
@@ -1726,11 +1726,11 @@ section .text
     LEA EDI,[ESP + 0x370]               ; 004e3c1d
     LEA ESI,[ESP + 0x538]               ; 004e3c24
     FXCH ST2                            ; 004e3c2b
-    FADD float ptr [0x005c6a7e]         ; 004e3c2d | DAT_005c6a7e
+    FADD float ptr [0x005c6a7e]         ; 004e3c2d | g_FLOAT_005c6a7e
     FXCH                                ; 004e3c33
-    FADD float ptr [0x005c6a82]         ; 004e3c35 | DAT_005c6a82
+    FADD float ptr [0x005c6a82]         ; 004e3c35 | g_FLOAT_005c6a82
     FXCH ST2                            ; 004e3c3b
-    FADD float ptr [0x005c6a86]         ; 004e3c3d | DAT_005c6a86
+    FADD float ptr [0x005c6a86]         ; 004e3c3d | g_FLOAT_005c6a86
     FXCH                                ; 004e3c43
     FSTP float ptr [ESP + 0x538]        ; 004e3c45
     FXCH                                ; 004e3c4c
@@ -1779,11 +1779,11 @@ section .text
     LEA EDI,[ESP + 0x3ac]               ; 004e3d01
     LEA ESI,[ESP + 0x4e4]               ; 004e3d08
     FXCH ST2                            ; 004e3d0f
-    FADD float ptr [0x005c6a8a]         ; 004e3d11 | DAT_005c6a8a
+    FADD float ptr [0x005c6a8a]         ; 004e3d11 | g_FLOAT_005c6a8a
     FXCH                                ; 004e3d17
-    FADD float ptr [0x005c6a8e]         ; 004e3d19 | DAT_005c6a8e
+    FADD float ptr [0x005c6a8e]         ; 004e3d19 | g_FLOAT_005c6a8e
     FXCH ST2                            ; 004e3d1f
-    FADD float ptr [0x005c6a92]         ; 004e3d21 | DAT_005c6a92
+    FADD float ptr [0x005c6a92]         ; 004e3d21 | g_FLOAT_005c6a92
     FXCH                                ; 004e3d27
     FSTP float ptr [ESP + 0x4e4]        ; 004e3d29
     FXCH                                ; 004e3d30

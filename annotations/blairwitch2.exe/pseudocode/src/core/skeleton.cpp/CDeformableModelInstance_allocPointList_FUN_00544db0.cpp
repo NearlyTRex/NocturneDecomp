@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00544db0(CDeformableModelInstance *this_ptr)
 
 {
@@ -22,8 +20,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00544
     this_ptr->cached_skinned_lod_index = -1;
     return;
   }
-  _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-  _DAT_01d046a4 = 0x909;
+  g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+  g_INT_01d046a4 = 0x909;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModelInstance::allocPointList out of memory for %d points!");
   this_ptr->cached_skinned_lod_index = -1;
   return;

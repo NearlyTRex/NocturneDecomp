@@ -7,15 +7,15 @@
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e0d1e
-;   undefined4 DAT_005e0d22
-;   undefined4 DAT_005e0d2a
-;   undefined4 DAT_005e0d32
-;   undefined4 DAT_005e0d3a
-;   undefined4 DAT_005e0d3e
-;   undefined4 DAT_005e0d42
-;   undefined4 DAT_005e0d46
-;   undefined4 DAT_0061f650
+;   float g_FLOAT_005e0d1e = -2000
+;   double g_DOUBLE_005e0d22 = 3
+;   float g_FLOAT_005e0d2a = 0.005000000
+;   double g_DOUBLE_005e0d32 = 200
+;   float g_FLOAT_005e0d3a = 100
+;   float g_FLOAT_005e0d3e = 200
+;   float g_FLOAT_005e0d42 = 99
+;   float g_FLOAT_005e0d46 = -1800
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -39,7 +39,7 @@ section .text
     SUB ESP,0x3c                        ; 004c5a46
     AND ESP,0xfffffff8                  ; 004c5a49
     MOV EBX,dword ptr [EBP + 0x14]      ; 004c5a4c
-    MOV EAX,[0x0061f650]                ; 004c5a4f | DAT_0061f650
+    MOV EAX,[0x0061f650]                ; 004c5a4f | g_CDemonMission_PTR_0061f650
     CMP dword ptr [EAX + 0x1008],0x0    ; 004c5a54
     JZ 0x004c5a77                       ; 004c5a5b
         ;   XREF to: 004c5a77 (CONDITIONAL_JUMP)  ; LAB_004c5a77
@@ -137,7 +137,7 @@ section .text
     JGE 0x004c5b4e                      ; 004c5b3b
         ;   XREF to: 004c5b4e (CONDITIONAL_JUMP)  ; LAB_004c5b4e
     FLD float ptr [EBX + 0x15c]         ; 004c5b3d
-    FADD float ptr [0x005e0d46]         ; 004c5b43 | DAT_005e0d46
+    FADD float ptr [0x005e0d46]         ; 004c5b43 | g_FLOAT_005e0d46
     FSTP float ptr [ESP]                ; 004c5b49
     JMP 0x004c5b05                      ; 004c5b4c
         ;   XREF to: 004c5b05 (UNCONDITIONAL_JUMP)  ; LAB_004c5b05
@@ -150,12 +150,12 @@ section .text
         ;   XREF to: 004c5b05 (UNCONDITIONAL_JUMP)  ; LAB_004c5b05
     FLD float ptr [EBX + 0x15c]         ; 004c5b5f
         ;   Label: LAB_004c5b5f
-    FADD float ptr [0x005e0d1e]         ; 004c5b65 | DAT_005e0d1e
+    FADD float ptr [0x005e0d1e]         ; 004c5b65 | g_FLOAT_005e0d1e
     FLD ST0                             ; 004c5b6b
-    FMUL double ptr [0x005e0d22]        ; 004c5b6d | DAT_005e0d22
+    FMUL double ptr [0x005e0d22]        ; 004c5b6d | g_DOUBLE_005e0d22
     FSTP ST1                            ; 004c5b73
     FST float ptr [ESP]                 ; 004c5b75
-    FMUL float ptr [0x005e0d2a]         ; 004c5b78 | DAT_005e0d2a
+    FMUL float ptr [0x005e0d2a]         ; 004c5b78 | g_FLOAT_005e0d2a
     SUB ESP,0x8                         ; 004c5b7e
     FSTP double ptr [ESP]               ; 004c5b81
     CALL crt_math.c_floor_FUN_005c0880  ; 004c5b84
@@ -163,21 +163,21 @@ section .text
     MOV dword ptr [ESP + 0x3c],EAX      ; 004c5b89
     MOV dword ptr [ESP + 0x40],EDX      ; 004c5b8d
     FLD double ptr [ESP + 0x3c]         ; 004c5b91
-    FMUL double ptr [0x005e0d32]        ; 004c5b95 | DAT_005e0d32
+    FMUL double ptr [0x005e0d32]        ; 004c5b95 | g_DOUBLE_005e0d32
     ADD ESP,0x8                         ; 004c5b9b
     FSUBR float ptr [ESP]               ; 004c5b9e
     FST float ptr [ESP]                 ; 004c5ba1
-    FCOMP float ptr [0x005e0d3a]        ; 004c5ba4 | DAT_005e0d3a
+    FCOMP float ptr [0x005e0d3a]        ; 004c5ba4 | g_FLOAT_005e0d3a
     FNSTSW AX                           ; 004c5baa
     SAHF                                ; 004c5bac
     JBE 0x004c5bbb                      ; 004c5bad
         ;   XREF to: 004c5bbb (CONDITIONAL_JUMP)  ; LAB_004c5bbb
-    FLD float ptr [0x005e0d3e]          ; 004c5baf | DAT_005e0d3e
+    FLD float ptr [0x005e0d3e]          ; 004c5baf | g_FLOAT_005e0d3e
     FSUB float ptr [ESP]                ; 004c5bb5
     FSTP float ptr [ESP]                ; 004c5bb8
     FLD float ptr [ESP]                 ; 004c5bbb
         ;   Label: LAB_004c5bbb
-    FADD float ptr [0x005e0d42]         ; 004c5bbe | DAT_005e0d42
+    FADD float ptr [0x005e0d42]         ; 004c5bbe | g_FLOAT_005e0d42
     FSTP float ptr [ESP]                ; 004c5bc4
     JMP 0x004c5b05                      ; 004c5bc7
         ;   XREF to: 004c5b05 (UNCONDITIONAL_JUMP)  ; LAB_004c5b05

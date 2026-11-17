@@ -15,7 +15,7 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f8fa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cadb64
+;   int g_INT_01cadb64
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
@@ -30,7 +30,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00
     PUSH EBP                            ; 004b5f01
     MOV ECX,dword ptr [ESP + 0x18]      ; 004b5f02
-    MOV EDX,dword ptr [0x01cadb64]      ; 004b5f06 | DAT_01cadb64
+    MOV EDX,dword ptr [0x01cadb64]      ; 004b5f06 | g_INT_01cadb64
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b5f0c
     ADD EAX,EDX                         ; 004b5f13
     SHL EAX,0x2                         ; 004b5f15
@@ -38,7 +38,7 @@ section .text
     ADD EAX,EDX                         ; 004b5f1d
     INC EDX                             ; 004b5f1f
     SHL EAX,0x2                         ; 004b5f20
-    MOV dword ptr [0x01cadb64],EDX      ; 004b5f23 | DAT_01cadb64
+    MOV dword ptr [0x01cadb64],EDX      ; 004b5f23 | g_INT_01cadb64
     ADD EBX,EAX                         ; 004b5f29
     CMP EDX,0x40                        ; 004b5f2b
     JGE 0x004b5f4f                      ; 004b5f2e
@@ -64,7 +64,7 @@ section .text
     PUSH EDI                            ; 004b5f4f
         ;   Label: LAB_004b5f4f
     XOR EDI,EDI                         ; 004b5f50
-    MOV dword ptr [0x01cadb64],EDI      ; 004b5f52 | DAT_01cadb64
+    MOV dword ptr [0x01cadb64],EDI      ; 004b5f52 | g_INT_01cadb64
     POP EDI                             ; 004b5f58
     JMP 0x004b5f30                      ; 004b5f59
         ;   XREF to: 004b5f30 (UNCONDITIONAL_JUMP)  ; LAB_004b5f30

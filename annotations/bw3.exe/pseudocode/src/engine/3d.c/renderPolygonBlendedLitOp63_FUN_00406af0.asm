@@ -7,12 +7,12 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c6b5c8
-;   undefined4 DAT_01c6b5cc
-;   undefined4 DAT_01c6e2a0
-;   undefined4 DAT_01c6e2b4
-;   undefined4 DAT_01c6e2b8
+;   int g_INT_005fba20 = 0x8
+;   int g_INT_01c6b5c8
+;   void* g_PTR_01c6b5cc
+;   int g_INT_01c6e2a0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
+;   int g_INT_01c6e2b8
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_004039d0
@@ -37,25 +37,25 @@ section .text
     TEST EAX,EAX                        ; 00406b05
     JZ 0x00406b69                       ; 00406b07
         ;   XREF to: 00406b69 (CONDITIONAL_JUMP)  ; LAB_00406b69
-    CMP dword ptr [0x01c6e2a0],0x0      ; 00406b09 | DAT_01c6e2a0
+    CMP dword ptr [0x01c6e2a0],0x0      ; 00406b09 | g_INT_01c6e2a0
     JNZ 0x00406b83                      ; 00406b10
         ;   XREF to: 00406b83 (CONDITIONAL_JUMP)  ; LAB_00406b83
-    CMP dword ptr [0x005fba20],0x20     ; 00406b12 | DAT_005fba20
+    CMP dword ptr [0x005fba20],0x20     ; 00406b12 | g_INT_005fba20
     JNZ 0x00406b77                      ; 00406b19
         ;   XREF to: 00406b77 (CONDITIONAL_JUMP)  ; LAB_00406b77
-    MOV dword ptr [0x01c6b5cc],0x562c33 ; 00406b1b | DAT_01c6b5cc
-    CMP dword ptr [0x01c6b5c8],0x0      ; 00406b25 | DAT_01c6b5c8
+    MOV dword ptr [0x01c6b5cc],0x562c33 ; 00406b1b | g_PTR_01c6b5cc
+    CMP dword ptr [0x01c6b5c8],0x0      ; 00406b25 | g_INT_01c6b5c8
         ;   Label: LAB_00406b25
     JZ 0x00406ba4                       ; 00406b2c
         ;   XREF to: 00406ba4 (CONDITIONAL_JUMP)  ; LAB_00406ba4
-    MOV dword ptr [0x01c6e2b4],0x67     ; 00406b32 | DAT_01c6e2b4
+    MOV dword ptr [0x01c6e2b4],0x67     ; 00406b32 | g_BIT_INTEGER32_01c6e2b4
     MOV EDX,0x1                         ; 00406b3c
         ;   Label: LAB_00406b3c
     PUSH EBX                            ; 00406b41
-    MOV dword ptr [0x01c6e2b8],EDX      ; 00406b42 | DAT_01c6e2b8
+    MOV dword ptr [0x01c6e2b8],EDX      ; 00406b42 | g_INT_01c6e2b8
     CALL engine_3d.c_calculatePolygonLighting_FUN_004039d0 ; 00406b48
         ;   XREF to: 004039d0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_004039d0(SMRGLHeaderPrimitive * prim)
-    MOV ECX,dword ptr [0x01c6b5c8]      ; 00406b4d | DAT_01c6b5c8
+    MOV ECX,dword ptr [0x01c6b5c8]      ; 00406b4d | g_INT_01c6b5c8
     ADD ESP,0x4                         ; 00406b53
     TEST ECX,ECX                        ; 00406b56
     JZ 0x00406bb0                       ; 00406b58
@@ -76,22 +76,22 @@ section .text
     POP ESI                             ; 00406b74
     POP EBX                             ; 00406b75
     RET                                 ; 00406b76
-    MOV dword ptr [0x01c6b5cc],0x562e69 ; 00406b77 | DAT_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x562e69 ; 00406b77 | g_PTR_01c6b5cc
         ;   Label: LAB_00406b77
     JMP 0x00406b25                      ; 00406b81
         ;   XREF to: 00406b25 (UNCONDITIONAL_JUMP)  ; LAB_00406b25
-    CMP dword ptr [0x005fba20],0x20     ; 00406b83 | DAT_005fba20
+    CMP dword ptr [0x005fba20],0x20     ; 00406b83 | g_INT_005fba20
         ;   Label: LAB_00406b83
     JNZ 0x00406b98                      ; 00406b8a
         ;   XREF to: 00406b98 (CONDITIONAL_JUMP)  ; LAB_00406b98
-    MOV dword ptr [0x01c6b5cc],0x560f31 ; 00406b8c | DAT_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x560f31 ; 00406b8c | g_PTR_01c6b5cc
     JMP 0x00406b25                      ; 00406b96
         ;   XREF to: 00406b25 (UNCONDITIONAL_JUMP)  ; LAB_00406b25
-    MOV dword ptr [0x01c6b5cc],0x561713 ; 00406b98 | DAT_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x561713 ; 00406b98 | g_PTR_01c6b5cc
         ;   Label: LAB_00406b98
     JMP 0x00406b25                      ; 00406ba2
         ;   XREF to: 00406b25 (UNCONDITIONAL_JUMP)  ; LAB_00406b25
-    MOV dword ptr [0x01c6e2b4],0x267    ; 00406ba4 | DAT_01c6e2b4
+    MOV dword ptr [0x01c6e2b4],0x267    ; 00406ba4 | g_BIT_INTEGER32_01c6e2b4
         ;   Label: LAB_00406ba4
     JMP 0x00406b3c                      ; 00406bae
         ;   XREF to: 00406b3c (UNCONDITIONAL_JUMP)  ; LAB_00406b3c

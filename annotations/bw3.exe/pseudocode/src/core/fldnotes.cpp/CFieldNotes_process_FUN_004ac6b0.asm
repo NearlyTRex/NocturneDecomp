@@ -10,19 +10,19 @@
 ;   core_game.cpp_CGame_process_FUN_004bf4b0 at 004bf896
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fe370
-;   undefined4 DAT_005fe390
-;   undefined4 DAT_005fe394
-;   undefined4 DAT_005fe3a8
+;   int g_INT_005fe370 = 0x1
+;   int g_INT_005fe390 = 0x262
+;   int g_INT_005fe394 = 0x1c0
+;   int g_INT_005fe3a8 = -0x1
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_00600284
-;   undefined4 DAT_01c5fadc
-;   undefined4 DAT_01c5fae0
-;   undefined4 DAT_01c5fae4
-;   undefined4 DAT_01d0e36c
+;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   int g_INT_01c5fadc
+;   int g_INT_01c5fae0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
+;   int g_INT_01d0e36c
 ;   SNotesMap[10] SNotesMap_ARRAY_01d0e370
 ;   undefined4 SNotesMap_ARRAY_01d0e370[1].entry
-;   undefined4 DAT_01d19ba8
+;   int g_INT_01d19ba8
 ;   undefined4 CAlphaBitmap_01d19cc4.width
 ;   undefined4 CAlphaBitmap_01d19cc4.height
 ;   ... and 7 more
@@ -42,7 +42,7 @@ section .text
         ;   Label: core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0
     PUSH ESI                            ; 004ac6b1
     PUSH EBP                            ; 004ac6b2
-    MOV EDX,dword ptr [0x01d0e36c]      ; 004ac6b3 | DAT_01d0e36c
+    MOV EDX,dword ptr [0x01d0e36c]      ; 004ac6b3 | g_INT_01d0e36c
     XOR EBX,EBX                         ; 004ac6b9
     TEST EDX,EDX                        ; 004ac6bb
     JLE 0x004ac6e0                      ; 004ac6bd
@@ -53,7 +53,7 @@ section .text
     CALL core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004aa0b0 ; 004ac6c5
         ;   XREF to: 004aa0b0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004aa0b0(SNotesMap * this_ptr)
     INC EBX                             ; 004ac6ca
-    MOV ECX,dword ptr [0x01d0e36c]      ; 004ac6cb | DAT_01d0e36c
+    MOV ECX,dword ptr [0x01d0e36c]      ; 004ac6cb | g_INT_01d0e36c
     ADD ESP,0x4                         ; 004ac6d1
     ADD ESI,0x126c                      ; 004ac6d4
     CMP EBX,ECX                         ; 004ac6da
@@ -125,32 +125,32 @@ section .text
     MOV EAX,0x1                         ; 004ac78c
     MOV ECX,0xffffffff                  ; 004ac791
     ADD ESP,0x4                         ; 004ac796
-    MOV dword ptr [0x01d1a058],EBX      ; 004ac799 | DAT_01d1a058
+    MOV dword ptr [0x01d1a058],EBX      ; 004ac799 | g_INT_01d1a058
     XOR EDX,EDX                         ; 004ac79f
-    MOV [0x005fe370],EAX                ; 004ac7a1 | DAT_005fe370
-    MOV dword ptr [0x01d19f78],EDX      ; 004ac7a6 | DAT_01d19f78
+    MOV [0x005fe370],EAX                ; 004ac7a1 | g_INT_005fe370
+    MOV dword ptr [0x01d19f78],EDX      ; 004ac7a6 | g_INT_01d19f78
     XOR DH,DH                           ; 004ac7ac
-    MOV dword ptr [0x005fe3a8],ECX      ; 004ac7ae | DAT_005fe3a8
-    MOV byte ptr [0x01d19f90],DH        ; 004ac7b4 | DAT_01d19f90
+    MOV dword ptr [0x005fe3a8],ECX      ; 004ac7ae | g_INT_005fe3a8
+    MOV byte ptr [0x01d19f90],DH        ; 004ac7b4 | g_CHAR_01d19f90
     POP EBP                             ; 004ac7ba
     POP ESI                             ; 004ac7bb
     POP EBX                             ; 004ac7bc
     RET                                 ; 004ac7bd
     PUSH 0x200                          ; 004ac7be
         ;   Label: LAB_004ac7be
-    MOV EAX,[0x00600284]                ; 004ac7c3 | DAT_00600284
-    PUSH EAX                            ; 004ac7c8 | DAT_01d70a78
-    MOV EDX,dword ptr [EAX]             ; 004ac7c9 | DAT_01d70a78
+    MOV EAX,[0x00600284]                ; 004ac7c3 | g_CKeys_PTR_00600284
+    PUSH EAX                            ; 004ac7c8 | g_PTR_01d70a78
+    MOV EDX,dword ptr [EAX]             ; 004ac7c9 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 004ac7cb
-    MOV AH,byte ptr [0x01c5fae4]        ; 004ac7ce | DAT_01c5fae4
+    MOV AH,byte ptr [0x01c5fae4]        ; 004ac7ce | g_BIT_INTEGER32_01c5fae4
     ADD ESP,0x8                         ; 004ac7d4
     TEST AH,0x1                         ; 004ac7d7
     JZ 0x004ac6fc                       ; 004ac7da
         ;   XREF to: 004ac6fc (CONDITIONAL_JUMP)  ; LAB_004ac6fc
     PUSH EDI                            ; 004ac7e0
-    MOV EDI,dword ptr [0x01c5fae0]      ; 004ac7e1 | DAT_01c5fae0
+    MOV EDI,dword ptr [0x01c5fae0]      ; 004ac7e1 | g_INT_01c5fae0
     PUSH EDI                            ; 004ac7e7
-    MOV EBP,dword ptr [0x01c5fadc]      ; 004ac7e8 | DAT_01c5fadc
+    MOV EBP,dword ptr [0x01c5fadc]      ; 004ac7e8 | g_INT_01c5fadc
     PUSH EBP                            ; 004ac7ee
     CALL core_flashlit.cpp_hitTestSectionTab_FUN_004a80d0 ; 004ac7ef
         ;   XREF to: 004a80d0 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestSectionTab_FUN_004a80d0(int x, int y)
@@ -165,32 +165,32 @@ section .text
     SHL EBX,0x2                         ; 004ac809
     MOV EAX,EBX                         ; 004ac80c
     MOV EAX,dword ptr [EAX + EBX*0x4 + 0x1d0d354] ; 004ac80e
-    MOV [0x01d19ba8],EAX                ; 004ac815 | DAT_01d19ba8
-    MOV EAX,[0x01c5fae0]                ; 004ac81a | DAT_01c5fae0
+    MOV [0x01d19ba8],EAX                ; 004ac815 | g_INT_01d19ba8
+    MOV EAX,[0x01c5fae0]                ; 004ac81a | g_INT_01c5fae0
         ;   Label: LAB_004ac81a
     PUSH EAX                            ; 004ac81f
-    MOV EDX,dword ptr [0x01c5fadc]      ; 004ac820 | DAT_01c5fadc
+    MOV EDX,dword ptr [0x01c5fadc]      ; 004ac820 | g_INT_01c5fadc
     PUSH EDX                            ; 004ac826
     CALL core_flashlit.cpp_hitTestPageArrows_FUN_004a8180 ; 004ac827
         ;   XREF to: 004a8180 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestPageArrows_FUN_004a8180(int x, int y)
-    MOV ECX,dword ptr [0x01d19ba8]      ; 004ac82c | DAT_01d19ba8
-    MOV EBX,dword ptr [0x01c5fadc]      ; 004ac832 | DAT_01c5fadc
-    MOV ESI,dword ptr [0x01c5fae0]      ; 004ac838 | DAT_01c5fae0
-    MOV EDI,dword ptr [0x005fe390]      ; 004ac83e | DAT_005fe390
+    MOV ECX,dword ptr [0x01d19ba8]      ; 004ac82c | g_INT_01d19ba8
+    MOV EBX,dword ptr [0x01c5fadc]      ; 004ac832 | g_INT_01c5fadc
+    MOV ESI,dword ptr [0x01c5fae0]      ; 004ac838 | g_INT_01c5fae0
+    MOV EDI,dword ptr [0x005fe390]      ; 004ac83e | g_INT_005fe390
     ADD ECX,EAX                         ; 004ac844
     ADD ESP,0x8                         ; 004ac846
-    MOV dword ptr [0x01d19ba8],ECX      ; 004ac849 | DAT_01d19ba8
+    MOV dword ptr [0x01d19ba8],ECX      ; 004ac849 | g_INT_01d19ba8
     CMP EBX,EDI                         ; 004ac84f
     JGE 0x004ac8ba                      ; 004ac851
         ;   XREF to: 004ac8ba (CONDITIONAL_JUMP)  ; LAB_004ac8ba
-    MOV EBX,dword ptr [0x01c5fae0]      ; 004ac853 | DAT_01c5fae0
+    MOV EBX,dword ptr [0x01c5fae0]      ; 004ac853 | g_INT_01c5fae0
         ;   Label: LAB_004ac853
-    MOV EAX,[0x01d19ba8]                ; 004ac859 | DAT_01d19ba8
+    MOV EAX,[0x01d19ba8]                ; 004ac859 | g_INT_01d19ba8
     PUSH EBX                            ; 004ac85e
     LEA EBX,[EAX*0x4 + 0x0]             ; 004ac85f
     ADD EBX,EAX                         ; 004ac866
     SHL EBX,0x4                         ; 004ac868
-    MOV ESI,dword ptr [0x01c5fadc]      ; 004ac86b | DAT_01c5fadc
+    MOV ESI,dword ptr [0x01c5fadc]      ; 004ac86b | g_INT_01c5fadc
     ADD EBX,EAX                         ; 004ac871
     MOV EAX,[0x01d19d6c]                ; 004ac873 | g_STextViewInstance.pages
     SHL EBX,0x2                         ; 004ac878
@@ -203,9 +203,9 @@ section .text
     TEST EAX,EAX                        ; 004ac887
     JZ 0x004ac8ae                       ; 004ac889
         ;   XREF to: 004ac8ae (CONDITIONAL_JUMP)  ; LAB_004ac8ae
-    MOV EBX,dword ptr [0x01c5fae0]      ; 004ac88b | DAT_01c5fae0
+    MOV EBX,dword ptr [0x01c5fae0]      ; 004ac88b | g_INT_01c5fae0
     MOV EBP,dword ptr [EAX + 0x4]       ; 004ac891
-    MOV EDX,dword ptr [0x01c5fadc]      ; 004ac894 | DAT_01c5fadc
+    MOV EDX,dword ptr [0x01c5fadc]      ; 004ac894 | g_INT_01c5fadc
     SUB EBX,EBP                         ; 004ac89a
     MOV EDI,dword ptr [EAX]             ; 004ac89c
     PUSH EBX                            ; 004ac89e
@@ -216,14 +216,14 @@ section .text
     PUSH EAX                            ; 004ac8a7
     CALL dword ptr [ESI + 0x8]          ; 004ac8a8
     ADD ESP,0x10                        ; 004ac8ab
-    AND byte ptr [0x01c5fae4],0xfe      ; 004ac8ae | DAT_01c5fae4
+    AND byte ptr [0x01c5fae4],0xfe      ; 004ac8ae | g_BIT_INTEGER32_01c5fae4
         ;   Label: LAB_004ac8ae
     POP EDI                             ; 004ac8b5
     POP EBP                             ; 004ac8b6
     POP ESI                             ; 004ac8b7
     POP EBX                             ; 004ac8b8
     RET                                 ; 004ac8b9
-    MOV EBP,dword ptr [0x005fe394]      ; 004ac8ba | DAT_005fe394
+    MOV EBP,dword ptr [0x005fe394]      ; 004ac8ba | g_INT_005fe394
         ;   Label: LAB_004ac8ba
     CMP ESI,EBP                         ; 004ac8c0
     JL 0x004ac853                       ; 004ac8c2

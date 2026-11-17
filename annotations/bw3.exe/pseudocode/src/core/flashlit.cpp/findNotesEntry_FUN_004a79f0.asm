@@ -8,7 +8,7 @@
 ; int *            Stack[0x8]:4   out_section_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0d210
+;   int g_INT_01d0d210
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30
@@ -22,7 +22,7 @@ section .text
     PUSH ESI                            ; 004a79f1
     PUSH EDI                            ; 004a79f2
     MOV EDI,dword ptr [ESP + 0x10]      ; 004a79f3
-    MOV EDX,dword ptr [0x01d0d210]      ; 004a79f7 | DAT_01d0d210
+    MOV EDX,dword ptr [0x01d0d210]      ; 004a79f7 | g_INT_01d0d210
     XOR EBX,EBX                         ; 004a79fd
     TEST EDX,EDX                        ; 004a79ff
     JLE 0x004a7a39                      ; 004a7a01
@@ -49,7 +49,7 @@ section .text
     POP ESI                             ; 004a7a25
     POP EBX                             ; 004a7a26
     RET                                 ; 004a7a27
-    MOV ECX,dword ptr [0x01d0d210]      ; 004a7a28 | DAT_01d0d210
+    MOV ECX,dword ptr [0x01d0d210]      ; 004a7a28 | g_INT_01d0d210
         ;   Label: LAB_004a7a28
     INC EBX                             ; 004a7a2e
     ADD ESI,0x2e4                       ; 004a7a2f

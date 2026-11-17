@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 45,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 110
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 109
   },
   "cross_references": [],
   "function": {
@@ -52,15 +50,15 @@
   "globals": [
     {
       "addr": "005f89e0",
-      "name": "DAT_005f89e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f89e0",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "006074b8",
-      "name": "DAT_006074b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006074b8",
+      "type": "float",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -146,16 +144,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

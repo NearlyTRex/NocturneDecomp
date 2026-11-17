@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_attract_position
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa92c
+;   float g_FLOAT_005fa92c = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -89,7 +89,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005be3e2
     MOVSD ES:EDI,ESI                    ; 005be3e3
     MOVSD ES:EDI,ESI                    ; 005be3e4
-    FLD float ptr [0x005fa92c]          ; 005be3e5 | DAT_005fa92c
+    FLD float ptr [0x005fa92c]          ; 005be3e5 | g_FLOAT_005fa92c
     FLD float ptr [ESP + 0x44]          ; 005be3eb
     FMUL ST1                            ; 005be3ef
     FLD float ptr [ESP + 0x48]          ; 005be3f1

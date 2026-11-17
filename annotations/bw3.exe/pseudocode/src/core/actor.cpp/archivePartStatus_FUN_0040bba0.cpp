@@ -14,41 +14,41 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bba0(CDeformableModelInsta
   int iVar3;
   int local_14;
   
-  if (DAT_007df9b8 != 1) {
-    _fprintf(DAT_007df9b4,"%s{ // %s\n");
+  if (g_INT_007df9b8 != 1) {
+    _fprintf(g_FILE_PTR_007df9b4,"%s{ // %s\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(1);
-    _fprintf(DAT_007df9b4,"%s%d\n");
-    _fprintf(DAT_007df9b4,&DAT_005b5be4);
+    _fprintf(g_FILE_PTR_007df9b4,"%s%d\n");
+    _fprintf(g_FILE_PTR_007df9b4,"%s");
     pCVar1 = model_ptr->bone_origins;
     do {
       model_ptr = (CDeformableModelInstance *)&(model_ptr->base).current_motion_index;
-      _fprintf(DAT_007df9b4,&DAT_005b5be7);
+      _fprintf(g_FILE_PTR_007df9b4,"%d ");
     } while (model_ptr != (CDeformableModelInstance *)&pCVar1[0xc].z);
-    _fprintf(DAT_007df9b4,&DAT_005b5beb);
+    _fprintf(g_FILE_PTR_007df9b4,"\n");
     iVar2 = 0;
-    _fprintf(DAT_007df9b4,&DAT_005b5bed);
+    _fprintf(g_FILE_PTR_007df9b4,"%s");
     do {
       iVar2 = iVar2 + 1;
-      _fprintf(DAT_007df9b4,&DAT_005b5bf0);
+      _fprintf(g_FILE_PTR_007df9b4,"%d ");
     } while (iVar2 < 0x3c);
-    _fprintf(DAT_007df9b4,&DAT_005b5bf4);
+    _fprintf(g_FILE_PTR_007df9b4,"\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(-1);
-    _fprintf(DAT_007df9b4,&DAT_005b5bf6);
+    _fprintf(g_FILE_PTR_007df9b4,"%s}\n");
     return;
   }
   do {
-    iVar2 = _fgetc(DAT_007df9b4);
+    iVar2 = _fgetc(g_FILE_PTR_007df9b4);
     if (iVar2 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0
                 ("part status opening brace",property_name);
     }
   } while (iVar2 != 10);
-  _fscanf(DAT_007df9b4,&DAT_005b5b6a);
+  _fscanf(g_FILE_PTR_007df9b4,"%d");
   core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0054e670(model_ptr);
   iVar2 = 0;
   if (0 < local_14) {
     do {
-      iVar3 = _fscanf(DAT_007df9b4,&DAT_005b5b6d);
+      iVar3 = _fscanf(g_FILE_PTR_007df9b4,"%d");
       if (iVar3 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0
                   ("part status entry","description");
@@ -56,12 +56,12 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bba0(CDeformableModelInsta
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_14);
   }
-  _fscanf(DAT_007df9b4,&DAT_005b5b8e);
+  _fscanf(g_FILE_PTR_007df9b4," ");
   core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0054e690(model_ptr);
   iVar2 = 0;
   if (0 < local_14) {
     do {
-      iVar3 = _fscanf(DAT_007df9b4,&DAT_005b5b90);
+      iVar3 = _fscanf(g_FILE_PTR_007df9b4,"%d");
       if (iVar3 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0
                   ("part texture entry","description");
@@ -69,9 +69,9 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bba0(CDeformableModelInsta
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_14);
   }
-  _fscanf(DAT_007df9b4,&DAT_005b5bb2);
+  _fscanf(g_FILE_PTR_007df9b4," ");
   do {
-    while (iVar2 = _fgetc(DAT_007df9b4), -1 < iVar2) {
+    while (iVar2 = _fgetc(g_FILE_PTR_007df9b4), -1 < iVar2) {
       if (iVar2 == 10) {
         return;
       }

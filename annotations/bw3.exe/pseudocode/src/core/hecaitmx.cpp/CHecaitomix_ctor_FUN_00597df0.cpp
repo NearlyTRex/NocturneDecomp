@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CHecaitomix * __cdecl core_hecaitmx_cpp_CHecaitomix_ctor_FUN_00597df0(CHecaitomix *this_ptr)
 
 {
@@ -19,8 +17,8 @@ CHecaitomix * __cdecl core_hecaitmx_cpp_CHecaitomix_ctor_FUN_00597df0(CHecaitomi
   (pCVar3->base).base.base.vtable._ub = &g_CHecaitomixVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             (&(pCVar3->base).base.model,"shadowscorp.dfm");
-  fVar2 = _DAT_005e7864;
-  fVar1 = _DAT_005e7860;
+  fVar2 = 100.0f;
+  fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_height = 1.75;
   (pCVar3->base).base.collision_cylinder_radius = 3.5;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

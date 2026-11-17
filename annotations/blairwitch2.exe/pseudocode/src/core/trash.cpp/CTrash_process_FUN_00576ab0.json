@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 684,
-    "complexity_score": 693,
+    "complexity_score": 668,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 358,
-    "suspect_count": 29,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "sub84_truncation",
-      "undefined_data",
       "unknown_field",
       "unrolled_memcpy",
       "warning_overlapping_globals",
@@ -86,39 +85,39 @@
   "globals": [
     {
       "addr": "005ecd2e",
-      "name": "DAT_005ecd2e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ecd2e",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "005ecd32",
-      "name": "DAT_005ecd32",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ecd32",
+      "type": "float",
+      "value": "0.07000000"
     },
     {
       "addr": "005ecd36",
-      "name": "DAT_005ecd36",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ecd36",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005ecd3a",
-      "name": "DAT_005ecd3a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ecd3a",
+      "type": "float",
+      "value": "0.8000000"
     },
     {
       "addr": "005ecd3e",
-      "name": "DAT_005ecd3e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ecd3e",
+      "type": "float",
+      "value": "0.1591549"
     },
     {
       "addr": "005ecd46",
-      "name": "DAT_005ecd46",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ecd46",
+      "type": "double",
+      "value": "0.900000000000000"
     },
     {
       "addr": "005ecd4e",
@@ -321,22 +320,6 @@
       "severity": "mild",
       "text": "(this_ptr->acceleration).x = (this_ptr->acceleration).x * (float)\"?333?CTrigger\"._1_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 338,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "(&CStack_260,(CVector3f *)&DAT_0265370c,pCStack_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 340,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "(&CStack_200,(CVector3f *)&DAT_0265370c,&CStack_188);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

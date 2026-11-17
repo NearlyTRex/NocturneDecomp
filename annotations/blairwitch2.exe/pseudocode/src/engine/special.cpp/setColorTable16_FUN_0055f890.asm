@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_0264bc2c
+;   int g_INT_01c37788
+;   void* g_PTR_0264bc2c
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d0d10
@@ -15,7 +15,7 @@
 
 section .text
 
-    CMP dword ptr [0x01c37788],0x0      ; 0055f890 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 0055f890 | g_INT_01c37788
         ;   Label: engine_special.cpp_setColorTable16_FUN_0055f890
     JNZ 0x0055f89c                      ; 0055f897
         ;   XREF to: 0055f89c (CONDITIONAL_JUMP)  ; LAB_0055f89c
@@ -25,7 +25,7 @@ section .text
         ;   Label: LAB_0055f89c
     PUSH 0x1c34910                      ; 0055f89d
     PUSH 0x1c35838                      ; 0055f8a2
-    CALL dword ptr [0x0264bc2c]         ; 0055f8a7 | DAT_0264bc2c
+    CALL dword ptr [0x0264bc2c]         ; 0055f8a7 | g_PTR_0264bc2c
     ADD ESP,0x8                         ; 0055f8ad
     MOV EBX,EAX                         ; 0055f8b0
     TEST EAX,EAX                        ; 0055f8b2

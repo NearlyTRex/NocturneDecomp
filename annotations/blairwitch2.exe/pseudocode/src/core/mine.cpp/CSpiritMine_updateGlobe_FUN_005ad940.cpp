@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mine_cpp_CSpiritMine_updateGlobe_FUN_005ad940(CSpiritMine *this_ptr)
 
 {
@@ -21,7 +19,7 @@ void __cdecl core_mine_cpp_CSpiritMine_updateGlobe_FUN_005ad940(CSpiritMine *thi
   position = (CVector3f *)&this_ptr->globe;
   dVar3 = round
                     ((double)((1.0 - this_ptr->sleep_timer / this_ptr->sleep_time) *
-                             (float)_DAT_005f0ef3));
+                             (float)32768));
   iVar1 = (int)ROUND(dVar3);
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(this_ptr_00,position);
   (this_ptr->globe).intensity_multiplier = iVar1;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004ebce0(char *message_text)
 
 {
@@ -31,8 +29,7 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004ebce0(char *message
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
-                     (">  Press any key to continue." + 1);
+  pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("  Press any key to continue.");
   iVar4 = -1;
   pcVar5 = local_110;
   do {
@@ -53,16 +50,16 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004ebce0(char *message
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01511cc4,0x58);
-  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cc4,local_110);
+  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01511cc4,0x58);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_CBitFont_PTR_01511cc4,local_110);
   engine_special_cpp_clearScreen_FUN_0055b1f0();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(&g_CalibrationBitmap,0,0,0xffff);
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-            (_DAT_01511cc4,local_110,0x140 - iVar3 / 2,iVar4 * -3 + 0x1e0,0xf8,-1);
+            (g_CBitFont_PTR_01511cc4,local_110,0x140 - iVar3 / 2,iVar4 * -3 + 0x1e0,0xf8,-1);
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Monitor calibration");
-  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cc4,pcVar5);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_CBitFont_PTR_01511cc4,pcVar5);
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0
-            (_DAT_01511cc4,pcVar5,0x140 - iVar3 / 2,iVar4 * 2,0xf8,-1);
+            (g_CBitFont_PTR_01511cc4,pcVar5,0x140 - iVar3 / 2,iVar4 * 2,0xf8,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();

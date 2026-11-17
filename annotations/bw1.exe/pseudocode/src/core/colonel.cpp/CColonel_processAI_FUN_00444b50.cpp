@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr,float delta_time)
 
@@ -15,7 +14,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
   EHeroTask EVar2;
-  CEnemy *pCVar3;
+  CHero *pCVar3;
   SMotion *pSVar4;
   CPathMap *this_ptr_01;
   int iVar5;
@@ -42,32 +41,36 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
   float local_40;
   float local_38;
   float local_2c;
-  CEnemy *local_28;
+  CHero *local_28;
   int local_24;
   float local_20;
   float local_1c;
   float local_18;
   
   bVar6 = 0;
-  local_28 = *(CEnemy **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+  local_28 = g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4];
   local_24 = 0;
   local_1c = 0.25;
   local_2c = 0.7853982;
   memset(&(this_ptr->base).player_input,0,0x30);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    iVar5 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
-    local_a8 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar5 + 0x20);
-    local_a4[0] = (this_ptr->base).base.base.location.position.y - *(float *)(iVar5 + 0x24);
-    local_a4[1] = (this_ptr->base).base.base.location.position.z - *(float *)(iVar5 + 0x28);
+    pCVar3 = g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4];
+    local_a8 = (this_ptr->base).base.base.location.position.x -
+               (pCVar3->base).base.location.position.x;
+    local_a4[0] = (this_ptr->base).base.base.location.position.y -
+                  (pCVar3->base).base.location.position.y;
+    local_a4[1] = (this_ptr->base).base.base.location.position.z -
+                  (pCVar3->base).base.location.position.z;
     local_84.x = local_a8;
     *(float *)((int)&local_84 + (uint)bVar6 * -8 + 4) = local_a4[(uint)bVar6 * -2];
     *(float *)((int)&local_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
          local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
     local_44 = SQRT(local_84.z * local_84.z + local_84.x * local_84.x + local_84.y * local_84.y);
-    if (((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_44 < _DAT_005d6cb3)) &&
+    if (((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_44 < 20.0f)) &&
         ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
-       && ((pCVar3 = core_hero_cpp_CHero_closestEnemy_FUN_004ec350(&this_ptr->base,&stack0xffffff20)
-           , pCVar3 != (CEnemy *)0x0 && (local_e0 < (float)_DAT_005d6cb7)))) {
+       && ((pCVar3 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004ec350
+                                        (&this_ptr->base,&stack0xffffff20), pCVar3 != (CHero *)0x0
+           && (local_e0 < (float)20)))) {
       local_28 = pCVar3;
       local_24 = 1;
     }
@@ -88,11 +91,11 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
     }
     local_48 = SQRT(local_84.z * local_84.z + local_84.x * local_84.x + local_84.y * local_84.y);
     local_dc = local_48;
-    if ((float)_DAT_005d6cbf <= local_48) {
+    if ((float)6 <= local_48) {
       this_ptr_01 = (CPathMap *)0x0;
       if (local_24 == 0) {
-        iVar5 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
-        this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x154) + 0xc4))(iVar5);
+        this_ptr_01 = (*((g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base).base.vtable._ub)->
+                        getPathMap)((CDemonActor *)g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
         this_ptr_01 = core_path_cpp_getPathMap_FUN_005351f0(&(local_28->base).base.location);
@@ -103,7 +106,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
       if (iVar5 != 0) {
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                              (local_d8.y - (this_ptr->base).base.base.orient.vec.y);
-        fVar1 = local_18 * _DAT_005d6cc7 * (float)_DAT_005d6ccf;
+        fVar1 = local_18 * 0.3183099f * (float)4;
         local_38 = -local_1c;
         (this_ptr->base).player_input.turn_speed = fVar1;
         if (fVar1 < local_38) {
@@ -112,7 +115,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
         if (local_1c < (this_ptr->base).player_input.turn_speed) {
           (this_ptr->base).player_input.turn_speed = local_1c;
         }
-        if (((float)_DAT_005d6cd7 <= local_dc) || (local_24 == 1)) {
+        if (((float)10 <= local_dc) || (local_24 == 1)) {
           (this_ptr->base).player_input.action_state.run = 1;
           (this_ptr->base).player_input.action_state.walk = 1;
         }
@@ -146,7 +149,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
              *(float *)((int)&local_c0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                              (local_a4[3] - (this_ptr->base).base.base.orient.vec.y);
-        fVar1 = local_18 * _DAT_005d6cc7 * (float)_DAT_005d6ccf;
+        fVar1 = local_18 * 0.3183099f * (float)4;
         local_40 = -local_1c;
         (this_ptr->base).player_input.turn_speed = fVar1;
         if (fVar1 < local_40) {
@@ -156,7 +159,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
           (this_ptr->base).player_input.turn_speed = local_1c;
         }
         fVar1 = (this_ptr->base).player_input.turn_speed;
-        if ((((float)_DAT_005d6cdf < fVar1) && ((double)fVar1 < _DAT_005d6ce7)) &&
+        if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
            ((this_ptr->base).player_input.action_state.fire != 0)) {
           (this_ptr->base).player_input.turn_speed = 0.0;
         }
@@ -197,11 +200,11 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr
       local_b0 = -local_2c;
     }
     local_20 = local_b0 - (this_ptr->head_look_euler).y;
-    if (delta_time * _DAT_005d6cef < local_20) {
-      local_20 = delta_time * _DAT_005d6cef;
+    if (delta_time * 3.141593f < local_20) {
+      local_20 = delta_time * 3.141593f;
     }
-    if (local_20 < delta_time * _DAT_005d6cf3) {
-      local_20 = delta_time * _DAT_005d6cf3;
+    if (local_20 < delta_time * -3.141593f) {
+      local_20 = delta_time * -3.141593f;
     }
     (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + local_20;
   }

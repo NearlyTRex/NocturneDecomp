@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_00481cb0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -28,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_00481cb0(C
       pSVar3 = poly;
       do {
         iVar1 = pSVar3->vertices[0].vertex_index;
-        *(int *)(&DAT_01bc1240 + iVar2) = iVar1;
+        *(int *)((int)g_INT_ARRAY_01bc1240 + iVar2) = iVar1;
         local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         if ((int)(this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x & -0x80000000) != 0)
         {
@@ -45,17 +43,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_00481cb0(C
         this_ptr->face_capture_enabled = local_18;
       }
       if (this_ptr->shadow_pass_active == 0) {
-        _DAT_01c51d14 = 0x90;
-        _DAT_01c51d18 = 6;
-        _DAT_01c4f02c = core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_00486ff2;
+        g_BIT_INTEGER32_01c51d14.dword = 0x90;
+        g_INT_01c51d18 = 6;
+        g_PTR_01c4f02c = core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_00486ff2;
       }
       else {
-        _DAT_01c51d14 = 0;
-        _DAT_01c51d18 = 0;
-        _DAT_01c4f02c = core_dstrendr_cpp_renderDepth16BitConditional_FUN_00486e74;
+        g_BIT_INTEGER32_01c51d14.dword = 0;
+        g_INT_01c51d18 = 0;
+        g_PTR_01c4f02c = core_dstrendr_cpp_renderDepth16BitConditional_FUN_00486e74;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
-                (this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);
+                (this_ptr,(poly->base).base.count,g_INT_ARRAY_01bc1240);
       this_ptr->face_capture_enabled = iVar4;
     }
   }

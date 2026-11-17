@@ -20,12 +20,12 @@
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004d8640 at 004d867b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c56b1
+;   TerminatedCString s_rt_005c56b1
 ;   TerminatedCString s_engine_ini_cpp_005c56b4
 ;   TerminatedCString s_cIni_FindLineNumberOfVar_005c56c6
 ;   TerminatedCString s_s_005c56fb
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -46,7 +46,7 @@ section .text
     PUSH EBP                            ; 004d8473
     SUB ESP,0x204                       ; 004d8474
     MOV EAX,dword ptr [ESP + 0x218]     ; 004d847a
-    PUSH 0x5c56b1                       ; 004d8481 | DAT_005c56b1
+    PUSH 0x5c56b1                       ; 004d8481 | = "rt"
     MOV EDX,dword ptr [ESP + 0x228]     ; 004d8486
     XOR EBX,EBX                         ; 004d848d
     PUSH EDX                            ; 004d848f
@@ -194,8 +194,8 @@ section .text
         ;   Label: LAB_004d85be
     MOV ESI,0xfd                        ; 004d85c3
     PUSH 0x5c56c6                       ; 004d85c8 | = "cIni::FindLineNumberOfVariable: Unabl..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004d85cd | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004d85d3 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004d85cd | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004d85d3 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d85d9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d85de

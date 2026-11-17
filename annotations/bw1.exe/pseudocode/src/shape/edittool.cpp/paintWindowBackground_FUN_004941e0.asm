@@ -14,11 +14,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbd65
 ;   TerminatedCString s_paintWindowBackground_ca_005dbd7b
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c3eb5c
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_0061b4a0 = 0x8
+;   int g_INT_01c3eb5c
+;   void*[1200] g_ARRAY_PTR_01c4354c
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -33,10 +33,10 @@ section .text
     PUSH EDI                            ; 004941e2
     PUSH EBP                            ; 004941e3
     SUB ESP,0x8                         ; 004941e4
-    CMP dword ptr [0x01c3eb5c],0x1      ; 004941e7 | DAT_01c3eb5c
+    CMP dword ptr [0x01c3eb5c],0x1      ; 004941e7 | g_INT_01c3eb5c
     JL 0x00494277                       ; 004941ee
         ;   XREF to: 00494277 (CONDITIONAL_JUMP)  ; LAB_00494277
-    MOV EAX,[0x01c3eb5c]                ; 004941f4 | DAT_01c3eb5c
+    MOV EAX,[0x01c3eb5c]                ; 004941f4 | g_INT_01c3eb5c
         ;   Label: LAB_004941f4
     DEC EAX                             ; 004941f9
     SHL EAX,0x3                         ; 004941fa
@@ -50,7 +50,7 @@ section .text
     TEST EBX,EBX                        ; 00494215
     JZ 0x0049426f                       ; 00494217
         ;   XREF to: 0049426f (CONDITIONAL_JUMP)  ; LAB_0049426f
-    MOV ESI,dword ptr [0x0061b4a0]      ; 00494219 | DAT_0061b4a0
+    MOV ESI,dword ptr [0x0061b4a0]      ; 00494219 | g_INT_0061b4a0
     MOV EDX,dword ptr [EDX + 0x1e4]     ; 0049421f
     IMUL EDX,ESI                        ; 00494225
     MOV EAX,EDX                         ; 00494228
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_00494248
     MOV EDI,dword ptr [EDI + 0x1e0]     ; 0049424c
     ADD EDI,EBP                         ; 00494252
-    MOV EDI,dword ptr [EDI*0x4 + 0x1c4354c] ; 00494254 | DAT_01c4354c
+    MOV EDI,dword ptr [EDI*0x4 + 0x1c4354c] ; 00494254 | g_ARRAY_PTR_01c4354c
     TEST EDI,EDI                        ; 0049425b
     JNZ 0x0049429f                      ; 0049425d
         ;   XREF to: 0049429f (CONDITIONAL_JUMP)  ; LAB_0049429f
@@ -91,8 +91,8 @@ section .text
         ;   Label: LAB_00494277
     MOV EBX,0x3dc                       ; 0049427c
     PUSH 0x5dbd7b                       ; 00494281 | = "paintWindowBackground called but no w..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00494286 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0049428c | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00494286 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 0049428c | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00494292
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00494297
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 004941f4 (UNCONDITIONAL_JUMP)  ; LAB_004941f4
     MOV EDX,dword ptr [ESP + 0x4]       ; 0049429f
         ;   Label: LAB_0049429f
-    MOV ECX,dword ptr [0x0061b4a0]      ; 004942a3 | DAT_0061b4a0
+    MOV ECX,dword ptr [0x0061b4a0]      ; 004942a3 | g_INT_0061b4a0
     MOV EDX,dword ptr [EDX + 0x1dc]     ; 004942a9
     IMUL EDX,ECX                        ; 004942af
     MOV EAX,EDX                         ; 004942b2

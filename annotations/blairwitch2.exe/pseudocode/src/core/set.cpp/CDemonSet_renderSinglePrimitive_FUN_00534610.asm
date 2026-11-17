@@ -13,9 +13,9 @@
 ;   core_dlight.cpp_CDemonLight_testVisibility_FUN_0044d9f0 at 0044da4e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01ba5c68
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   undefined4 g_CDemonRenderer_01ba5c50.advanced_culling_enabled
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004fac90
@@ -27,8 +27,8 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x8]       ; 00534610
         ;   Label: core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610
-    MOV EAX,[0x0060b280]                ; 00534614 | DAT_0060b280
-    MOV EDX,dword ptr [EAX + 0x18]      ; 00534619 | DAT_01ba5c68
+    MOV EAX,[0x0060b280]                ; 00534614 | g_CDemonRenderer_PTR_0060b280
+    MOV EDX,dword ptr [EAX + 0x18]      ; 00534619 | g_CDemonRenderer_01ba5c50.advanced_culling_enabled
     TEST EDX,EDX                        ; 0053461c
     JZ 0x00534635                       ; 0053461e
         ;   XREF to: 00534635 (CONDITIONAL_JUMP)  ; LAB_00534635
@@ -42,7 +42,7 @@ section .text
     RET                                 ; 00534634
     PUSH ECX                            ; 00534635
         ;   Label: LAB_00534635
-    PUSH EAX                            ; 00534636 | DAT_01ba5c50
+    PUSH EAX                            ; 00534636 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0 ; 00534637
         ;   XREF to: 004699a0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0053463c

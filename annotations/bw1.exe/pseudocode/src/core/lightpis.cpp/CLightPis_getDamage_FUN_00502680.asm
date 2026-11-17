@@ -7,7 +7,7 @@
 ; CLightPis *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e701e
+;   float g_FLOAT_005e701e = 2
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.game_control
 ;
@@ -46,7 +46,7 @@ section .text
     JNZ 0x005026db                      ; 005026cb
         ;   XREF to: 005026db (CONDITIONAL_JUMP)  ; LAB_005026db
     FLD float ptr [ESP + 0x4]           ; 005026cd
-    FMUL float ptr [0x005e701e]         ; 005026d1 | DAT_005e701e
+    FMUL float ptr [0x005e701e]         ; 005026d1 | g_FLOAT_005e701e
     FSTP float ptr [ESP + 0x4]          ; 005026d7
     MOV EAX,dword ptr [ESP + 0x4]       ; 005026db
         ;   Label: LAB_005026db

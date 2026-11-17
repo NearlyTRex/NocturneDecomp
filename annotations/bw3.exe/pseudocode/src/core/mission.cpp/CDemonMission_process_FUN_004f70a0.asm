@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   CScript* g_CScriptPtr = 01ed73e0
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01d5ba14
-;   undefined4 DAT_01d88308
+;   int g_INT_01d5ba14
+;   char g_CHAR_01d88308
 ;   undefined4 g_CScriptInstance.focus_actor_changed
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -83,7 +83,7 @@ section .text
     TEST ECX,ECX                        ; 004f7109
     JL 0x004f7177                       ; 004f710b
         ;   XREF to: 004f7177 (CONDITIONAL_JUMP)  ; LAB_004f7177
-    MOV EBX,dword ptr [0x01d5ba14]      ; 004f710d | DAT_01d5ba14
+    MOV EBX,dword ptr [0x01d5ba14]      ; 004f710d | g_INT_01d5ba14
     LEA ESI,[EDI + 0x1444]              ; 004f7113
     MOV EBX,dword ptr [EBX*0x4 + 0x1d5ba04] ; 004f7119
     MOV EAX,dword ptr [ESI]             ; 004f7120
@@ -126,7 +126,7 @@ section .text
     ADD ESP,0x4                         ; 004f7192
     PUSH 0x1e0                          ; 004f7195
     PUSH 0x280                          ; 004f719a
-    PUSH 0x1d88308                      ; 004f719f | DAT_01d88308
+    PUSH 0x1d88308                      ; 004f719f | g_CHAR_01d88308
     LEA EBX,[ESP + 0xc]                 ; 004f71a4
     PUSH EBX                            ; 004f71a8
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460 ; 004f71a9

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGabriella *this_ptr,float delta_time)
 
 {
@@ -63,20 +61,20 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
             (&local_380,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);
   local_14 = (this_ptr->base).inventories;
-  if (this_ptr->draw_blend < _DAT_005f7334) {
+  if (this_ptr->draw_blend < 0.64f) {
     (*(((((CCharacter *)local_14->selected_weapons[(this_ptr->base).inventories[0].current_group])->
         base).vtable._uc)->_uc).kill)
               ((CCharacter *)
                local_14->selected_weapons[(this_ptr->base).inventories[0].current_group],1,
                in_stack_fffffc20,in_stack_fffffc24);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&local_200,(CVector3f *)&DAT_01cb0650,(CVector3f *)&DAT_01cb065c);
+              (&local_200,&g_UVector3_01cb0650.f,&g_UVector3_01cb065c.f);
     pCVar8 = &local_380;
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
               (&local_200,
                (CMatrix3x4f *)
-               (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01cb06a0].m,
-               &local_230);
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices
+               [g_INT_ARRAY_01cb0678[10]].m,&local_230);
     pCVar6 = &local_230;
     pCVar5 = &local_1d0;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -94,8 +92,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
                local_14->selected_weapons[(this_ptr->base).inventories[0].current_group],2,
                in_stack_fffffc20,in_stack_fffffc24);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&local_170,(CVector3f *)&DAT_01cb0644,(CVector3f *)&DAT_0265370c);
-    matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01cb06bc].m;
+              (&local_170,&g_UVector3_01cb0644.f,&g_CVector3f_0265370c);
+    matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices
+               [g_INT_ARRAY_01cb0678[0x11]].m;
     pCVar8 = &local_170;
     core_xform_cpp_buildRotationX_FUN_00593240(1.5707964,&local_140);
     pCVar6 = &local_2c0;
@@ -141,8 +140,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
       pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
     }
     iVar3 = core_actor_cpp_isOfClass_FUN_0040c840
-                      (&local_14->selected_weapons[pCVar1->current_group]->base,
-                       "?CCrossbow" + 1);
+                      (&local_14->selected_weapons[pCVar1->current_group]->base,"CCrossbow"
+                      );
     if (iVar3 != 0) {
       core_xform_cpp_getTranslation_FUN_00592720(&local_320,&local_74);
       local_38.x = local_74.x;

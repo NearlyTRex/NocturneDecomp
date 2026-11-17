@@ -2,20 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 98,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 6,
+    "pseudocode_lines": 17,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 71
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -73,14 +71,14 @@
     },
     {
       "addr": "00626ad8",
-      "name": "DAT_00626ad8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_00626ad8",
+      "type": "uint",
+      "value": "0x1"
     },
     {
       "addr": "02c9f6e0",
-      "name": "DAT_02c9f6e0",
-      "type": "undefined4",
+      "name": "g_INT_02c9f6e0",
+      "type": "int",
       "value": null
     }
   ],
@@ -171,16 +169,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void FUN_005ce990(uint param_1)",
@@ -188,23 +178,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_005c90f0(param_1,local_c);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00626ad8",
-      "severity": "mild",
-      "text": "if (((DAT_00626ad8 == 0x3a4) && (_DAT_02c9f6e0 != 0)) &&",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_005cf100(param_1);",

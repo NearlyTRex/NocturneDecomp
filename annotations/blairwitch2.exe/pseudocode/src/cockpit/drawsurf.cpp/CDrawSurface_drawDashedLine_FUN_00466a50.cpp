@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00466a50(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
@@ -25,18 +23,18 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00466a50(CDraw
   int iStack_24;
   uint uStack_1c;
   
-  if (_DAT_01c2a374 != _DAT_01ba5998) {
-    _DAT_01ba5990 = (float)_DAT_01c2a370 * _DAT_005d12e0 + _DAT_01ba5990;
-    _DAT_01ba5998 = _DAT_01c2a374;
-    if (_DAT_0060b274 < _DAT_01ba5990) {
-      _DAT_01ba5994 = _DAT_01ba5990 / _DAT_0060b274 + _DAT_01ba5994;
-      if ((float)(_DAT_0060b270 * 2) < _DAT_01ba5994) {
-        _DAT_01ba5994 = 0.0;
+  if (g_INT_01c2a374 != g_INT_01ba5998) {
+    g_FLOAT_01ba5990 = (float)g_INT_01c2a370 * 1.525879e-05f + g_FLOAT_01ba5990;
+    g_INT_01ba5998 = g_INT_01c2a374;
+    if (g_FLOAT_0060b274 < g_FLOAT_01ba5990) {
+      g_FLOAT_01ba5994 = g_FLOAT_01ba5990 / g_FLOAT_0060b274 + g_FLOAT_01ba5994;
+      if ((float)(g_INT_0060b270 * 2) < g_FLOAT_01ba5994) {
+        g_FLOAT_01ba5994 = 0.0;
       }
-      _DAT_01ba5990 = 0.0;
+      g_FLOAT_01ba5990 = 0.0;
     }
   }
-  dVar5 = round((double)_DAT_01ba5994);
+  dVar5 = round((double)g_FLOAT_01ba5994);
   uStack_1c = (uint)ROUND(dVar5);
   iStack_2c = 1;
   iVar2 = x1 - this_ptr->x;
@@ -65,7 +63,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00466a50(CDraw
     if (-1 < iVar2) {
       do {
         if ((int)((uStack_1c ^ (int)uStack_1c >> 0x1f) - ((int)uStack_1c >> 0x1f)) %
-            (_DAT_0060b270 * 2) < _DAT_0060b270) {
+            (g_INT_0060b270 * 2) < g_INT_0060b270) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(unaff_retaddr,x,y);
         }
         if (0 < iVar3) {
@@ -85,7 +83,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00466a50(CDraw
     if (-1 < iVar1) {
       do {
         if ((int)((uStack_1c ^ (int)uStack_1c >> 0x1f) - ((int)uStack_1c >> 0x1f)) %
-            (_DAT_0060b270 * 2) < _DAT_0060b270) {
+            (g_INT_0060b270 * 2) < g_INT_0060b270) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(unaff_retaddr,x,y);
         }
         if (0 < iVar3) {

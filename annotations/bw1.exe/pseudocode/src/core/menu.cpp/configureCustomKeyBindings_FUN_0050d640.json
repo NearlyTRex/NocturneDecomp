@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2335,
-    "complexity_score": 1877,
+    "complexity_score": 1558,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 234,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1022,
-    "suspect_count": 83,
+    "pseudocode_lines": 1023,
+    "suspect_count": 51,
     "suspect_types": [
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 3357
+    "total_lines": 3358
   },
   "cross_references": [
     {
@@ -184,8 +184,8 @@
     },
     {
       "addr": "005e8389",
-      "name": "DAT_005e8389",
-      "type": "undefined4",
+      "name": "s_Back_005e8389",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -628,9 +628,9 @@
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "01ccf390",
@@ -670,205 +670,205 @@
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d21458",
-      "name": "DAT_01d21458",
-      "type": "undefined4",
+      "name": "g_INT_01d21458",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d2145c",
-      "name": "DAT_01d2145c",
-      "type": "undefined4",
+      "name": "g_INT_PTR_ARRAY_01d2145c",
+      "type": "int*[31]",
       "value": null
     },
     {
       "addr": "01d21460",
-      "name": "DAT_01d21460",
+      "name": "g_INT_PTR_ARRAY_01d2145c[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21464",
-      "name": "DAT_01d21464",
+      "name": "g_INT_PTR_ARRAY_01d2145c[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21468",
-      "name": "DAT_01d21468",
+      "name": "g_INT_PTR_ARRAY_01d2145c[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2146c",
-      "name": "DAT_01d2146c",
+      "name": "g_INT_PTR_ARRAY_01d2145c[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21470",
-      "name": "DAT_01d21470",
+      "name": "g_INT_PTR_ARRAY_01d2145c[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21474",
-      "name": "DAT_01d21474",
+      "name": "g_INT_PTR_ARRAY_01d2145c[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21478",
-      "name": "DAT_01d21478",
+      "name": "g_INT_PTR_ARRAY_01d2145c[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2147c",
-      "name": "DAT_01d2147c",
+      "name": "g_INT_PTR_ARRAY_01d2145c[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21480",
-      "name": "DAT_01d21480",
+      "name": "g_INT_PTR_ARRAY_01d2145c[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21484",
-      "name": "DAT_01d21484",
+      "name": "g_INT_PTR_ARRAY_01d2145c[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21488",
-      "name": "DAT_01d21488",
+      "name": "g_INT_PTR_ARRAY_01d2145c[11]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2148c",
-      "name": "DAT_01d2148c",
+      "name": "g_INT_PTR_ARRAY_01d2145c[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21490",
-      "name": "DAT_01d21490",
+      "name": "g_INT_PTR_ARRAY_01d2145c[13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21494",
-      "name": "DAT_01d21494",
+      "name": "g_INT_PTR_ARRAY_01d2145c[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21498",
-      "name": "DAT_01d21498",
+      "name": "g_INT_PTR_ARRAY_01d2145c[15]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2149c",
-      "name": "DAT_01d2149c",
+      "name": "g_INT_PTR_ARRAY_01d2145c[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214a0",
-      "name": "DAT_01d214a0",
+      "name": "g_INT_PTR_ARRAY_01d2145c[17]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214a4",
-      "name": "DAT_01d214a4",
+      "name": "g_INT_PTR_ARRAY_01d2145c[18]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214a8",
-      "name": "DAT_01d214a8",
+      "name": "g_INT_PTR_ARRAY_01d2145c[19]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214ac",
-      "name": "DAT_01d214ac",
+      "name": "g_INT_PTR_ARRAY_01d2145c[20]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214b0",
-      "name": "DAT_01d214b0",
+      "name": "g_INT_PTR_ARRAY_01d2145c[21]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214b4",
-      "name": "DAT_01d214b4",
+      "name": "g_INT_PTR_ARRAY_01d2145c[22]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214b8",
-      "name": "DAT_01d214b8",
+      "name": "g_INT_PTR_ARRAY_01d2145c[23]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214bc",
-      "name": "DAT_01d214bc",
+      "name": "g_INT_PTR_ARRAY_01d2145c[24]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214c0",
-      "name": "DAT_01d214c0",
+      "name": "g_INT_PTR_ARRAY_01d2145c[25]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214c4",
-      "name": "DAT_01d214c4",
+      "name": "g_INT_PTR_ARRAY_01d2145c[26]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214c8",
-      "name": "DAT_01d214c8",
+      "name": "g_INT_PTR_ARRAY_01d2145c[27]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214cc",
-      "name": "DAT_01d214cc",
+      "name": "g_INT_PTR_ARRAY_01d2145c[28]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d214d0",
-      "name": "DAT_01d214d0",
+      "name": "g_INT_PTR_ARRAY_01d2145c[29]",
       "type": "undefined4",
       "value": null
     },
@@ -1678,312 +1678,56 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 646,
+      "match": "(EInputCodeType **)((int)g_INT_PTR_ARRAY_01d2145c",
+      "severity": "moderate",
+      "text": "(**(EInputCodeType **)((int)g_INT_PTR_ARRAY_01d2145c + iVar35));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 1014,
+      "match": "(int **)((int)g_INT_PTR_ARRAY_01d2145c",
+      "severity": "moderate",
+      "text": "(**(int **)((int)g_INT_PTR_ARRAY_01d2145c + iVar31) == *g_INT_PTR_ARRAY_01d2145c[iVar35]))",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005e8389",
-      "severity": "mild",
-      "text": "pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e8389);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 126,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 145,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 164,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 202,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 221,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 240,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 259,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 285,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 304,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 323,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 342,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 361,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 380,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 399,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 418,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 437,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 456,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 475,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 494,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 513,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 532,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 551,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 570,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 589,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 608,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 627,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = piVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 647,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "core_menu_cpp_getKeyDisplayName_FUN_0050d220(**(EInputCodeType **)(&DAT_01d2145c + iVar35));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 666,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "switch(**(uint **)(&DAT_01d2145c + iVar35 * 4)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 829,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "**(EInputCodeType **)(&DAT_01d2145c + iVar35 * 4) = EVar33;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1015,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "(**(int **)(&DAT_01d2145c + iVar31) == **(int **)(&DAT_01d2145c + iVar35 * 4))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1015,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "(**(int **)(&DAT_01d2145c + iVar31) == **(int **)(&DAT_01d2145c + iVar35 * 4))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 1016,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "**(int **)(&DAT_01d2145c + iVar31) = 599;",
-      "type": "undefined_data"
+      "match": "(int **)((int)g_INT_PTR_ARRAY_01d2145c",
+      "severity": "moderate",
+      "text": "**(int **)((int)g_INT_PTR_ARRAY_01d2145c + iVar31) = 599;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_INT_PTR_ARRAY_01d2145c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 646,
+      "match": "(int)g_INT_PTR_ARRAY_01d2145c",
+      "severity": "moderate",
+      "text": "(**(EInputCodeType **)((int)g_INT_PTR_ARRAY_01d2145c + iVar35));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_INT_PTR_ARRAY_01d2145c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1014,
+      "match": "(int)g_INT_PTR_ARRAY_01d2145c",
+      "severity": "moderate",
+      "text": "(**(int **)((int)g_INT_PTR_ARRAY_01d2145c + iVar31) == *g_INT_PTR_ARRAY_01d2145c[iVar35]))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_INT_PTR_ARRAY_01d2145c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1016,
+      "match": "(int)g_INT_PTR_ARRAY_01d2145c",
+      "severity": "moderate",
+      "text": "**(int **)((int)g_INT_PTR_ARRAY_01d2145c + iVar31) = 599;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 70,
+      "line": 68,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1991,7 +1735,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 89,
+      "line": 87,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1999,7 +1743,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 108,
+      "line": 106,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2007,7 +1751,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 127,
+      "line": 125,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2015,7 +1759,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 146,
+      "line": 144,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2023,7 +1767,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 165,
+      "line": 163,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2031,7 +1775,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 184,
+      "line": 182,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2039,7 +1783,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 203,
+      "line": 201,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2047,7 +1791,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 222,
+      "line": 220,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2055,7 +1799,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 241,
+      "line": 239,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2063,7 +1807,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 260,
+      "line": 258,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2071,7 +1815,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 286,
+      "line": 284,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2079,7 +1823,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 305,
+      "line": 303,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2087,7 +1831,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 324,
+      "line": 322,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2095,7 +1839,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 343,
+      "line": 341,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2103,7 +1847,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 362,
+      "line": 360,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2111,7 +1855,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 381,
+      "line": 379,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2119,7 +1863,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 400,
+      "line": 398,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2127,7 +1871,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 419,
+      "line": 417,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2135,7 +1879,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 438,
+      "line": 436,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2143,7 +1887,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 457,
+      "line": 455,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2151,7 +1895,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 476,
+      "line": 474,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2159,7 +1903,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 495,
+      "line": 493,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2167,7 +1911,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 514,
+      "line": 512,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2175,7 +1919,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 533,
+      "line": 531,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2183,7 +1927,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 552,
+      "line": 550,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2191,7 +1935,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 571,
+      "line": 569,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2199,7 +1943,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 590,
+      "line": 588,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2207,7 +1951,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 609,
+      "line": 607,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2215,7 +1959,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 628,
+      "line": 626,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2223,7 +1967,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 673,
+      "line": 672,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2231,7 +1975,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 695,
+      "line": 694,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2239,7 +1983,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 711,
+      "line": 710,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2247,7 +1991,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 733,
+      "line": 732,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2255,7 +1999,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 774,
+      "line": 773,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2263,7 +2007,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 795,
+      "line": 794,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2271,7 +2015,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 979,
+      "line": 978,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2279,7 +2023,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 686,
+      "line": 685,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2287,7 +2031,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 724,
+      "line": 723,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2295,7 +2039,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 786,
+      "line": 785,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2303,7 +2047,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 970,
+      "line": 969,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2311,7 +2055,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 686,
+      "line": 685,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -2319,7 +2063,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 724,
+      "line": 723,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -2327,7 +2071,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 786,
+      "line": 785,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -2335,7 +2079,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 970,
+      "line": 969,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

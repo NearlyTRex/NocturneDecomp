@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void * __cdecl engine_mini3d_cpp_allocVertexBuffer_FUN_00514c90(int vertex_count)
 
 {
@@ -20,8 +18,8 @@ void * __cdecl engine_mini3d_cpp_allocVertexBuffer_FUN_00514c90(int vertex_count
     *(char *)((int)pvVar2 + -1) = (char)pvVar2 - (char)pvVar1;
     return pvVar2;
   }
-  _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
-  _DAT_01d1d404 = 0xddf;
+  g_CHAR_PTR_01d1d400 = "..\\engine\\mini3d.cpp";
+  g_INT_01d1d404 = 0xddf;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CMini3D::allocVertexBuffer - Allocation of %d vertex failed");
   uRam0000001f = 0x20;
   return (void *)0x20;

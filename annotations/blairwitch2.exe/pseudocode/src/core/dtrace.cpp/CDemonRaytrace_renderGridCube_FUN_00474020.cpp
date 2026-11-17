@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 
 {
@@ -26,9 +24,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00474020(CDemonRa
   CVector3i CStack_28;
   CVector3i CStack_1c;
   
-  fStack_58 = (this_ptr->cell_size).x * _DAT_005d1b6b;
-  fStack_54 = (this_ptr->cell_size).y * _DAT_005d1b6b;
-  fStack_50 = (this_ptr->cell_size).z * _DAT_005d1b6b;
+  fStack_58 = (this_ptr->cell_size).x * 0.125f;
+  fStack_54 = (this_ptr->cell_size).y * 0.125f;
+  fStack_50 = (this_ptr->cell_size).z * 0.125f;
   if (SStack_e8.vertices + 4 != (SMRGLVertex *)&fStack_4c) {
     SStack_e8.vertices[4].vertex_index = (int)fStack_58;
     SStack_e8.vertices[4].texture_u = (int)fStack_54;
@@ -38,115 +36,122 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00474020(CDemonRa
   fStack_48 = fStack_54;
   fStack_44 = fStack_50;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280
-            (0x01BA5C50,(CVector3i *)0x1c21e68);
-  SStack_e8.vertices[5].vertex_index = (int)ROUND(world_pos->x * _DAT_005f5b10);
-  SStack_e8.vertices[5].texture_u = (int)ROUND(world_pos->y * _DAT_005f5b10);
-  SStack_e8.vertices[5].texture_v = (int)ROUND(world_pos->z * _DAT_005f5b10);
+            (g_CDemonRenderer_PTR_0060b27c,&g_CVector3i_01c21e68);
+  SStack_e8.vertices[5].vertex_index = (int)ROUND(world_pos->x * 256.0f);
+  SStack_e8.vertices[5].texture_u = (int)ROUND(world_pos->y * 256.0f);
+  SStack_e8.vertices[5].texture_v = (int)ROUND(world_pos->z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,
              (CVector3i *)(SStack_e8.vertices + 5));
   SStack_e8.vertices[7].vertex_index =
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
   SStack_e8.vertices[7].texture_v = (int)world_pos->z;
-  CStack_70.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
-  CStack_70.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
-  CStack_70.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  CStack_70.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_70.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
+  CStack_70.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
   SStack_e8.vertices[7].vertex_index =
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_40.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
-  CStack_40.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
-  CStack_40.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  CStack_40.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_40.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
+  CStack_40.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_40);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_40);
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_64.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
-  CStack_64.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
-  CStack_64.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  CStack_64.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_64.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
+  CStack_64.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_64);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_64);
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)world_pos->z;
-  CStack_34.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
-  CStack_34.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
-  CStack_34.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  CStack_34.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_34.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
+  CStack_34.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[4].projected_vertex,&CStack_34);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[4].projected_vertex,&CStack_34);
   SStack_e8.vertices[7].vertex_index =
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)world_pos->z;
   SStack_e8.vertices[6].vertex_index =
-       (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+       (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
   SStack_e8.vertices[6].texture_u =
-       (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+       (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
   SStack_e8.vertices[6].texture_v =
-       (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+       (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[5].projected_vertex,
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[5].projected_vertex,
              (CVector3i *)(SStack_e8.vertices + 6));
   SStack_e8.vertices[7].vertex_index =
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_1c.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
-  CStack_1c.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
-  CStack_1c.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  CStack_1c.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_1c.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
+  CStack_1c.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[6].projected_vertex,&CStack_1c);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[6].projected_vertex,&CStack_1c);
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
-  CStack_28.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
-  CStack_28.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
-  CStack_28.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  CStack_28.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * 256.0f);
+  CStack_28.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * 256.0f);
+  CStack_28.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[7].projected_vertex,&CStack_28);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[7].projected_vertex,&CStack_28);
   uVar1 = rand();
-  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046b7e0(DAT_0060b280,uVar1 & 0xff);
+  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046b7e0
+            (g_CDemonRenderer_PTR_0060b280,uVar1 & 0xff);
   SStack_e8.base.base.count = 4;
   SStack_e8.base.surface_normal.A.i = 0;
   SStack_e8.base.surface_normal.B.i = 0;
   SStack_e8.base.surface_normal.C.i = 0;
   SStack_e8.base.surface_normal.D.i = 0;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(g_CDemonRenderer_PTR_0060b280,1);
   SStack_e8.vertices[3].vertex_index = 0;
   SStack_e8.vertices[2].vertex_index = 1;
   SStack_e8.vertices[0].vertex_index = 4;
   SStack_e8.vertices[1].vertex_index = 5;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
+            (g_CDemonRenderer_PTR_0060b280,&SStack_e8);
   SStack_e8.vertices[3].vertex_index = 2;
   SStack_e8.vertices[2].vertex_index = 3;
   SStack_e8.vertices[1].vertex_index = 7;
   SStack_e8.vertices[0].vertex_index = 6;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
+            (g_CDemonRenderer_PTR_0060b280,&SStack_e8);
   SStack_e8.vertices[1].vertex_index = 7;
   SStack_e8.vertices[3].vertex_index = 0;
   SStack_e8.vertices[2].vertex_index = 4;
   SStack_e8.vertices[0].vertex_index = 3;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
+            (g_CDemonRenderer_PTR_0060b280,&SStack_e8);
   SStack_e8.vertices[3].vertex_index = 1;
   SStack_e8.vertices[2].vertex_index = 2;
   SStack_e8.vertices[1].vertex_index = 6;
   SStack_e8.vertices[0].vertex_index = 5;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
+            (g_CDemonRenderer_PTR_0060b280,&SStack_e8);
   SStack_e8.vertices[1].vertex_index = 6;
   SStack_e8.vertices[3].vertex_index = 4;
   SStack_e8.vertices[2].vertex_index = 5;
   SStack_e8.vertices[0].vertex_index = 7;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
+            (g_CDemonRenderer_PTR_0060b280,&SStack_e8);
   SStack_e8.vertices[2].vertex_index = 2;
   SStack_e8.vertices[1].vertex_index = 1;
   SStack_e8.vertices[3].vertex_index = 3;
   SStack_e8.vertices[0].vertex_index = 0;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
+            (g_CDemonRenderer_PTR_0060b280,&SStack_e8);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(g_CDemonRenderer_PTR_0060b280,0);
   return;
 }

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 425,
+    "complexity_score": 409,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 30,
+    "pseudocode_lines": 104,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 280
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -76,20 +75,20 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d39d30",
-      "name": "DAT_01d39d30",
-      "type": "undefined4",
+      "name": "g_INT_01d39d30",
+      "type": "int",
       "value": null
     }
   ],
@@ -283,16 +282,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->faces->vertices + iVar6 + -0x14) = 3;",
@@ -300,7 +291,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 52,
       "match": "(int *)((int)poly_data",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)poly_data + (uint)bVar14 * -8 + 0x1c);",
@@ -308,7 +299,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(UIntegerFloat *)((int)pSVar8",
       "severity": "moderate",
       "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
@@ -316,7 +307,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 68,
       "match": "(int *)((int)pSVar8",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)pSVar8 + (uint)bVar14 * -8 + 0x1c);",
@@ -324,7 +315,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 74,
       "match": "(UIntegerFloat *)((int)pSVar8",
       "severity": "moderate",
       "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
@@ -332,7 +323,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 83,
       "match": "(int *)((int)pSVar3",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)pSVar3 + (uint)bVar14 * -8 + 0x1c);",
@@ -340,7 +331,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->faces->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)&this_ptr->faces->vertices[0].vertex_index",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
@@ -348,7 +339,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->faces->vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "(int)&this_ptr->faces->vertices[1].vertex_index",
       "severity": "moderate",
       "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
@@ -356,7 +347,7 @@
     },
     {
       "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "(int)pSVar8",
       "severity": "moderate",
       "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
@@ -364,7 +355,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->faces->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 66,
       "match": "(int)&this_ptr->faces->vertices[0].vertex_index",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
@@ -372,7 +363,7 @@
     },
     {
       "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 68,
       "match": "(int)pSVar8",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)pSVar8 + (uint)bVar14 * -8 + 0x1c);",
@@ -380,7 +371,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->faces->vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
+      "line": 72,
       "match": "(int)&this_ptr->faces->vertices[1].vertex_index",
       "severity": "moderate",
       "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
@@ -388,7 +379,7 @@
     },
     {
       "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
+      "line": 74,
       "match": "(int)pSVar8",
       "severity": "moderate",
       "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
@@ -396,7 +387,7 @@
     },
     {
       "description": "Pointer value `&pSVar2->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "(int)&pSVar2->vertices[2].vertex_index",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)&pSVar2->vertices[2].vertex_index + iVar6);",
@@ -404,7 +395,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
+      "line": 83,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)pSVar3 + (uint)bVar14 * -8 + 0x1c);",
@@ -412,7 +403,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->faces->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 91,
+      "line": 89,
       "match": "(int)&this_ptr->faces->vertices[0].vertex_index",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
@@ -420,7 +411,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->faces->vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
+      "line": 91,
       "match": "(int)&this_ptr->faces->vertices[1].vertex_index",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
@@ -428,7 +419,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->faces->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 97,
+      "line": 95,
       "match": "(int)&this_ptr->faces->vertices[2].vertex_index",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar6);",
@@ -436,7 +427,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
@@ -444,7 +435,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
@@ -452,7 +443,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
+      "line": 66,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
@@ -460,7 +451,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 74,
+      "line": 72,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
@@ -468,7 +459,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)&pSVar2->vertices[2].vertex_index + iVar6);",
@@ -476,7 +467,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 91,
+      "line": 89,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
@@ -484,7 +475,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 93,
+      "line": 91,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
@@ -492,7 +483,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 97,
+      "line": 95,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar6);",
@@ -500,7 +491,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 105,
+      "line": 103,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "poly_data = (SMRGLHeaderPrimitive *)((int)&(poly_data->base).type + poly_stride);",
@@ -508,7 +499,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 89,
+      "line": 87,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "*(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.",
@@ -516,7 +507,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 95,
+      "line": 93,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar8 = (SMRGLHeaderPrimitive *)&(pSVar8->surface_normal).B;",

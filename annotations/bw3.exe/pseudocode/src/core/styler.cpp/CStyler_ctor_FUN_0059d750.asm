@@ -10,8 +10,8 @@
 ;   core_styler.cpp_factoryFuncStyler_FUN_0059d720 at 0059d733
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8348
-;   undefined4 DAT_005e834c
+;   float g_FLOAT_005e8348 = 50
+;   float g_FLOAT_005e834c = 100
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_0043c220
@@ -49,9 +49,9 @@ section .text
         ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x326c],0x3f400000 ; 0059d79b
     MOV dword ptr [EBX + 0x3270],0x3fc00000 ; 0059d7a5
-    FLD float ptr [0x005e8348]          ; 0059d7af | DAT_005e8348
+    FLD float ptr [0x005e8348]          ; 0059d7af | g_FLOAT_005e8348
     MOV dword ptr [EBX + 0x47b8c],0x0   ; 0059d7b5
-    FLD float ptr [0x005e834c]          ; 0059d7bf | DAT_005e834c
+    FLD float ptr [0x005e834c]          ; 0059d7bf | g_FLOAT_005e834c
     MOV dword ptr [EBX + 0x47b94],0x0   ; 0059d7c5
     ADD ESP,0x8                         ; 0059d7cf
     MOV dword ptr [EBX + 0x47b90],0x0   ; 0059d7d2

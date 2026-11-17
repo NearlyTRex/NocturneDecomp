@@ -14,8 +14,8 @@
 ;   TerminatedCString s_Actor_variable_name_must_005cdb70
 ;   TerminatedCString s_Actor_variable_name_s_is_005cdb98
 ;   TerminatedCString s_Actor_variable_name_s_is_005cdbbd
-;   undefined4 DAT_006074b8
-;   undefined4 DAT_01ed6810
+;   uchar[257] g_UCHAR_ARRAY_006074b8
+;   char[2048] g_CHAR_ARRAY_01ed6810
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -49,7 +49,7 @@ section .text
     XOR ECX,ECX                         ; 00528717
     INC BL                              ; 00528719
     MOV CL,BL                           ; 0052871b
-    TEST byte ptr [ECX + 0x6074b8],0xe0 ; 0052871d | DAT_006074b8
+    TEST byte ptr [ECX + 0x6074b8],0xe0 ; 0052871d | g_UCHAR_ARRAY_006074b8
     JZ 0x00528757                       ; 00528724
         ;   XREF to: 00528757 (CONDITIONAL_JUMP)  ; LAB_00528757
     INC EDX                             ; 00528726
@@ -59,7 +59,7 @@ section .text
         ;   XREF to: 00528715 (UNCONDITIONAL_JUMP)  ; LAB_00528715
     PUSH 0x5cdb70                       ; 0052872a | = "Actor variable name must begin with '@'"
         ;   Label: LAB_0052872a
-    PUSH 0x1ed6810                      ; 0052872f | DAT_01ed6810
+    PUSH 0x1ed6810                      ; 0052872f | g_CHAR_ARRAY_01ed6810
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00528734
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00528739
@@ -72,7 +72,7 @@ section .text
     PUSH ESI                            ; 00528742
         ;   Label: LAB_00528742
     PUSH 0x5cdb98                       ; 00528743 | = "Actor variable name \"%s\" is too long"
-    PUSH 0x1ed6810                      ; 00528748 | DAT_01ed6810
+    PUSH 0x1ed6810                      ; 00528748 | g_CHAR_ARRAY_01ed6810
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0052874d
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00528752
@@ -97,7 +97,7 @@ section .text
     PUSH ESI                            ; 00528770
         ;   Label: LAB_00528770
     PUSH 0x5cdbbd                       ; 00528771 | = "Actor variable name \"%s\" is not valid"
-    PUSH 0x1ed6810                      ; 00528776 | DAT_01ed6810
+    PUSH 0x1ed6810                      ; 00528776 | g_CHAR_ARRAY_01ed6810
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0052877b
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00528780

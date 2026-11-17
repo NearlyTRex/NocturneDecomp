@@ -21,16 +21,16 @@
 ;   engine_mini3d.cpp_polyListSurface_FUN_004f2490 at 004f254b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c60dac
-;   undefined4 DAT_01c60db0
-;   undefined4 DAT_01d76cf8
-;   undefined4 DAT_01d80844
-;   undefined4 DAT_01d80848
-;   undefined4 DAT_01d80850
+;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   undefined4 g_UINT_PTR_ARRAY_01c60dac[1]
+;   int g_INT_01d76cf8
+;   int g_INT_01d80844
+;   SSoftwareEdge g_SSoftwareEdge_01d80848
+;   undefined4 g_SSoftwareEdge_01d80848.base.x_current
 ;   undefined4 DAT_01d80898
 ;   undefined4 DAT_01d808a0
-;   undefined4 DAT_01d80d48
-;   undefined4 DAT_01d80d4c
+;   int g_INT_01d80d48
+;   int g_INT_01d80d4c
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_setupSurfaceEdge_FUN_004f2610
@@ -45,7 +45,7 @@ section .text
     PUSH EDI                            ; 004f27a2
     PUSH EBP                            ; 004f27a3
     SUB ESP,0x1c                        ; 004f27a4
-    MOV EBX,dword ptr [0x01d80844]      ; 004f27a7 | DAT_01d80844
+    MOV EBX,dword ptr [0x01d80844]      ; 004f27a7 | g_INT_01d80844
     MOV EDI,dword ptr [ESP + 0x30]      ; 004f27ad
     MOV ESI,dword ptr [ESP + 0x34]      ; 004f27b1
     MOV EBP,dword ptr [ESP + 0x38]      ; 004f27b5
@@ -69,7 +69,7 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 004f27eb
     FLD float ptr [ESP + 0x4]           ; 004f27ef
     FMUL float ptr [ESP + 0x10]         ; 004f27f3
-    MOV EDX,dword ptr [0x01d76cf8]      ; 004f27f7 | DAT_01d76cf8
+    MOV EDX,dword ptr [0x01d76cf8]      ; 004f27f7 | g_INT_01d76cf8
     FXCH                                ; 004f27fd
     FSTP float ptr [ESP + 0x8]          ; 004f27ff
     FSTP float ptr [ESP + 0x18]         ; 004f2803
@@ -86,10 +86,10 @@ section .text
         ;   Label: LAB_004f2820
     PUSH ESI                            ; 004f2825
     XOR EBX,EBX                         ; 004f2826
-    MOV dword ptr [0x01d80d48],ECX      ; 004f2828 | DAT_01d80d48
+    MOV dword ptr [0x01d80d48],ECX      ; 004f2828 | g_INT_01d80d48
     PUSH EDI                            ; 004f282e
-    MOV dword ptr [0x01d80d4c],EBX      ; 004f282f | DAT_01d80d4c
-    MOV dword ptr [0x01d80844],EBX      ; 004f2835 | DAT_01d80844
+    MOV dword ptr [0x01d80d4c],EBX      ; 004f282f | g_INT_01d80d4c
+    MOV dword ptr [0x01d80844],EBX      ; 004f2835 | g_INT_01d80844
     CALL engine_mini3d.cpp_setupSurfaceEdge_FUN_004f2610 ; 004f283b
         ;   XREF to: 004f2610 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setupSurfaceEdge_FUN_004f2610(float * v0, float * v1)
     ADD ESP,0x8                         ; 004f2840
@@ -103,14 +103,14 @@ section .text
     CALL engine_mini3d.cpp_setupSurfaceEdge_FUN_004f2610 ; 004f284f
         ;   XREF to: 004f2610 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setupSurfaceEdge_FUN_004f2610(float * v0, float * v1)
     MOV EAX,0x1d80848                   ; 004f2854
-    MOV EBX,dword ptr [0x01d80844]      ; 004f2859 | DAT_01d80844
-    MOV ECX,dword ptr [0x01d80d48]      ; 004f285f | DAT_01d80d48
+    MOV EBX,dword ptr [0x01d80844]      ; 004f2859 | g_INT_01d80844
+    MOV ECX,dword ptr [0x01d80d48]      ; 004f285f | g_INT_01d80d48
     ADD ESP,0x8                         ; 004f2865
     XOR EDX,EDX                         ; 004f2868
     TEST EBX,EBX                        ; 004f286a
     JLE 0x004f29d0                      ; 004f286c
         ;   XREF to: 004f29d0 (CONDITIONAL_JUMP)  ; LAB_004f29d0
-    CMP ECX,dword ptr [EAX]             ; 004f2872 | DAT_01d80848 | DAT_01d80898
+    CMP ECX,dword ptr [EAX]             ; 004f2872 | g_SSoftwareEdge_01d80848 | DAT_01d80898
         ;   Label: LAB_004f2872
     JNZ 0x004f29c4                      ; 004f2874
         ;   XREF to: 004f29c4 (CONDITIONAL_JUMP)  ; LAB_004f29c4
@@ -122,14 +122,14 @@ section .text
     TEST EAX,EAX                        ; 004f2884
     JZ 0x004f29b6                       ; 004f2886
         ;   XREF to: 004f29b6 (CONDITIONAL_JUMP)  ; LAB_004f29b6
-    MOV ECX,dword ptr [0x01d80d48]      ; 004f288c | DAT_01d80d48
+    MOV ECX,dword ptr [0x01d80d48]      ; 004f288c | g_INT_01d80d48
     MOV ESI,EAX                         ; 004f2892
     XOR EDX,EDX                         ; 004f2894
     MOV EAX,0x1d80848                   ; 004f2896
     TEST EBX,EBX                        ; 004f289b
     JLE 0x004f29e3                      ; 004f289d
         ;   XREF to: 004f29e3 (CONDITIONAL_JUMP)  ; LAB_004f29e3
-    CMP ECX,dword ptr [EAX]             ; 004f28a3 | DAT_01d80848 | DAT_01d80898
+    CMP ECX,dword ptr [EAX]             ; 004f28a3 | g_SSoftwareEdge_01d80848 | DAT_01d80898
         ;   Label: LAB_004f28a3
     JNZ 0x004f29d7                      ; 004f28a5
         ;   XREF to: 004f29d7 (CONDITIONAL_JUMP)  ; LAB_004f29d7
@@ -141,7 +141,7 @@ section .text
     TEST EAX,EAX                        ; 004f28b5
     JZ 0x004f29b6                       ; 004f28b7
         ;   XREF to: 004f29b6 (CONDITIONAL_JUMP)  ; LAB_004f29b6
-    MOV EAX,[0x01d80d48]                ; 004f28bd | DAT_01d80d48
+    MOV EAX,[0x01d80d48]                ; 004f28bd | g_INT_01d80d48
     MOV dword ptr [ESP + 0xc],EAX       ; 004f28c2
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f28c6
         ;   Label: LAB_004f28c6
@@ -156,7 +156,7 @@ section .text
     TEST EBX,EBX                        ; 004f28e0
     JLE 0x004f29f6                      ; 004f28e2
         ;   XREF to: 004f29f6 (CONDITIONAL_JUMP)  ; LAB_004f29f6
-    CMP ESI,dword ptr [EAX]             ; 004f28e8 | DAT_01d80848 | DAT_01d80898
+    CMP ESI,dword ptr [EAX]             ; 004f28e8 | g_SSoftwareEdge_01d80848 | DAT_01d80898
         ;   Label: LAB_004f28e8
     JNZ 0x004f29ea                      ; 004f28ea
         ;   XREF to: 004f29ea (CONDITIONAL_JUMP)  ; LAB_004f29ea
@@ -181,7 +181,7 @@ section .text
     TEST EBX,EBX                        ; 004f291d
     JLE 0x004f2a09                      ; 004f291f
         ;   XREF to: 004f2a09 (CONDITIONAL_JUMP)  ; LAB_004f2a09
-    CMP ECX,dword ptr [EAX]             ; 004f2925 | DAT_01d80848 | DAT_01d80898
+    CMP ECX,dword ptr [EAX]             ; 004f2925 | g_SSoftwareEdge_01d80848 | DAT_01d80898
         ;   Label: LAB_004f2925
     JNZ 0x004f29fd                      ; 004f2927
         ;   XREF to: 004f29fd (CONDITIONAL_JUMP)  ; LAB_004f29fd
@@ -193,9 +193,9 @@ section .text
     TEST EAX,EAX                        ; 004f2937
     JZ 0x004f29b6                       ; 004f2939
         ;   XREF to: 004f29b6 (CONDITIONAL_JUMP)  ; LAB_004f29b6
-    MOV EAX,dword ptr [EDI + 0x8]       ; 004f293f | DAT_01d80850
+    MOV EAX,dword ptr [EDI + 0x8]       ; 004f293f | g_SSoftwareEdge_01d80848.base.x_current
         ;   Label: LAB_004f293f
-    MOV ECX,dword ptr [EBP + 0x8]       ; 004f2942 | DAT_01d808a0 | DAT_01d80850
+    MOV ECX,dword ptr [EBP + 0x8]       ; 004f2942 | DAT_01d808a0 | g_SSoftwareEdge_01d80848.base.x_current
     MOV ESI,dword ptr [ESP + 0xc]       ; 004f2945
     CMP EAX,ECX                         ; 004f2949
     JLE 0x004f2953                      ; 004f294b
@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_004f2953
     SAR EAX,0x10                        ; 004f295a
     LEA ESI,[EAX*0x4 + 0x0]             ; 004f295d
-    MOV EDX,dword ptr [EDX + 0x1c5faec] ; 004f2964 | DAT_01c60dac | DAT_01c60db0
+    MOV EDX,dword ptr [EDX + 0x1c5faec] ; 004f2964 | g_UINT_PTR_ARRAY_01c60dac | g_UINT_PTR_ARRAY_01c60dac[1]
     SAR ECX,0x10                        ; 004f296a
     ADD EDX,ESI                         ; 004f296d
     CMP EAX,ECX                         ; 004f296f
@@ -241,7 +241,7 @@ section .text
     SAHF                                ; 004f29af
     JC 0x004f2820                       ; 004f29b0
         ;   XREF to: 004f2820 (CONDITIONAL_JUMP)  ; LAB_004f2820
-    MOV dword ptr [0x01d80844],EBX      ; 004f29b6 | DAT_01d80844
+    MOV dword ptr [0x01d80844],EBX      ; 004f29b6 | g_INT_01d80844
         ;   Label: LAB_004f29b6
     ADD ESP,0x1c                        ; 004f29bc
     POP EBP                             ; 004f29bf

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr,int expire_flag)
 
 {
@@ -32,11 +30,12 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
   uint local_18;
   
   uVar1 = this_ptr->area_id;
-  uVar2 = *(uint *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
+  uVar2 = (g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.location.area_id;
   if (uVar1 == uVar2) {
     CStack_90.x = 0x4cd6d3;
     dVar3 = round
-                      ((double)(this_ptr->age * (float)_DAT_005c4651 + (float)_DAT_005c4659));
+                      ((double)(this_ptr->age * (float)8 + (float)4)
+                      );
     local_18 = (uint)ROUND(dVar3);
     if ((int)local_18 < 0) {
       local_18 = uVar1 ^ uVar2;
@@ -45,105 +44,108 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
       this_ptr->expired = 1;
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-              (DAT_005f2afc,&this_ptr->position);
+              (g_CDemonRenderer_PTR_005f2afc,&this_ptr->position);
     if (this_ptr->is_wall_splat == 1) {
-      _DAT_01d22e58 = 0xffff;
-      _DAT_01d22e50 = 0;
-      _DAT_01d22e54 = 0;
-      _DAT_01d22e5c = 0;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.C.i = 0xffff;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.A.i = 0;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.B.i = 0;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.D.i = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-                (DAT_005f2afc,
-                 (SMRGLTextureBasic *)
-                 (&DAT_005fedac + local_18 * 0x18 + this_ptr->texture_variant * 0x180));
+                (g_CDemonRenderer_PTR_005f2afc,
+                 g_SMRGLTextureBasic_ARRAY_005fedac + this_ptr->texture_variant * 0x10 + local_18);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-                (DAT_005f2afc,&this_ptr->rotation,(CVector3f *)0x0);
+                (g_CDemonRenderer_PTR_005f2afc,&this_ptr->rotation,(CVector3f *)0x0);
       local_6c = 0xbf000000;
       local_64 = 0;
       local_68 = 0xbf000000;
-      local_84.x = (int)ROUND(_DAT_005e0e18 * -0.5);
-      local_84.y = (int)ROUND(_DAT_005e0e18 * -0.5);
-      local_84.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      local_84.x = (int)ROUND(256.0f * -0.5);
+      local_84.y = (int)ROUND(256.0f * -0.5);
+      local_84.z = (int)ROUND(256.0f * 0.0);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_84);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex,&local_84);
       local_6c = 0x3f000000;
       local_68 = 0xbf000000;
       local_64 = 0;
-      local_3c.x = (int)ROUND(_DAT_005e0e18 * 0.5);
-      local_3c.y = (int)ROUND(_DAT_005e0e18 * -0.5);
-      local_3c.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      local_3c.x = (int)ROUND(256.0f * 0.5);
+      local_3c.y = (int)ROUND(256.0f * -0.5);
+      local_3c.z = (int)ROUND(256.0f * 0.0);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_3c);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_3c);
       local_6c = 0x3f000000;
       local_64 = 0;
       local_68 = 0x3f000000;
-      local_78.x = (int)ROUND(_DAT_005e0e18 * 0.5);
-      local_78.y = (int)ROUND(_DAT_005e0e18 * 0.5);
-      local_78.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      local_78.x = (int)ROUND(256.0f * 0.5);
+      local_78.y = (int)ROUND(256.0f * 0.5);
+      local_78.z = (int)ROUND(256.0f * 0.0);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_78);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_78);
       local_6c = 0xbf000000;
       local_68 = 0x3f000000;
       local_64 = 0;
-      local_48.x = (int)ROUND(_DAT_005e0e18 * -0.5);
-      local_48.y = (int)ROUND(_DAT_005e0e18 * 0.5);
-      local_48.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      local_48.x = (int)ROUND(256.0f * -0.5);
+      local_48.y = (int)ROUND(256.0f * 0.5);
+      local_48.z = (int)ROUND(256.0f * 0.0);
       input = &local_48;
     }
     else {
       if (expire_flag != 0) {
         this_ptr->expired = 1;
       }
-      _DAT_01d22e54 = 0xffff;
-      _DAT_01d22e50 = 0;
-      _DAT_01d22e58 = 0;
-      _DAT_01d22e5c = 0;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.B.i = 0xffff;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.A.i = 0;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.C.i = 0;
+      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.D.i = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-                (DAT_005f2afc,
-                 (SMRGLTextureBasic *)(&DAT_005fed4c + this_ptr->texture_variant * 0x18));
+                (g_CDemonRenderer_PTR_005f2afc,
+                 g_SMRGLTextureBasic_ARRAY_005fed4c + this_ptr->texture_variant);
       local_24 = 0xbf000000;
       local_20 = 0;
       local_1c = 0xbf000000;
-      local_54.x = (int)ROUND(_DAT_005e0e18 * -0.5);
-      local_54.y = (int)ROUND(_DAT_005e0e18 * 0.0);
-      local_54.z = (int)ROUND(_DAT_005e0e18 * -0.5);
+      local_54.x = (int)ROUND(256.0f * -0.5);
+      local_54.y = (int)ROUND(256.0f * 0.0);
+      local_54.z = (int)ROUND(256.0f * -0.5);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_54);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex,&local_54);
       local_24 = 0x3f000000;
       local_20 = 0;
       local_1c = 0xbf000000;
-      local_30.x = (int)ROUND(_DAT_005e0e18 * 0.5);
-      local_30.y = (int)ROUND(_DAT_005e0e18 * 0.0);
-      local_30.z = (int)ROUND(_DAT_005e0e18 * -0.5);
+      local_30.x = (int)ROUND(256.0f * 0.5);
+      local_30.y = (int)ROUND(256.0f * 0.0);
+      local_30.z = (int)ROUND(256.0f * -0.5);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_30);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_30);
       local_24 = 0x3f000000;
       local_20 = 0;
       local_1c = 0x3f000000;
-      CStack_90.x = (int)ROUND(_DAT_005e0e18 * 0.5);
-      CStack_90.y = (int)ROUND(_DAT_005e0e18 * 0.0);
-      CStack_90.z = (int)ROUND(_DAT_005e0e18 * 0.5);
+      CStack_90.x = (int)ROUND(256.0f * 0.5);
+      CStack_90.y = (int)ROUND(256.0f * 0.0);
+      CStack_90.z = (int)ROUND(256.0f * 0.5);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_90);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_90);
       local_24 = 0xbf000000;
       local_20 = 0;
       local_1c = 0x3f000000;
-      local_60.x = (int)ROUND(_DAT_005e0e18 * -0.5);
-      local_60.y = (int)ROUND(_DAT_005e0e18 * 0.0);
-      local_60.z = (int)ROUND(_DAT_005e0e18 * 0.5);
+      local_60.x = (int)ROUND(256.0f * -0.5);
+      local_60.y = (int)ROUND(256.0f * 0.0);
+      local_60.z = (int)ROUND(256.0f * 0.5);
       input = &local_60;
     }
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-              (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,input);
+              (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[3].projected_vertex,input);
     core_gore_cpp_getBloodColorParams_FUN_004cc970
-              (this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
+              (this_ptr->blood_type,&g_SRenderVertex_ARRAY_0060b014[0].r,
+               &g_SRenderVertex_ARRAY_0060b014[0].g,&g_SRenderVertex_ARRAY_0060b014[0].b);
     core_gore_cpp_getBloodColorParams_FUN_004cc970
-              (this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
+              (this_ptr->blood_type,&g_SRenderVertex_ARRAY_0060b014[1].r,
+               &g_SRenderVertex_ARRAY_0060b014[1].g,&g_SRenderVertex_ARRAY_0060b014[1].b);
     core_gore_cpp_getBloodColorParams_FUN_004cc970
-              (this_ptr->blood_type,(int *)&DAT_0060b094,(int *)&DAT_0060b098,(int *)&DAT_0060b09c);
+              (this_ptr->blood_type,&g_SRenderVertex_ARRAY_0060b014[2].r,
+               &g_SRenderVertex_ARRAY_0060b014[2].g,&g_SRenderVertex_ARRAY_0060b014[2].b);
     core_gore_cpp_getBloodColorParams_FUN_004cc970
-              (this_ptr->blood_type,(int *)&DAT_0060b0c4,(int *)&DAT_0060b0c8,(int *)&DAT_0060b0cc);
+              (this_ptr->blood_type,&g_SRenderVertex_ARRAY_0060b014[3].r,
+               &g_SRenderVertex_ARRAY_0060b014[3].g,&g_SRenderVertex_ARRAY_0060b014[3].b);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-              (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
+              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01d22e48);
     if (this_ptr->is_wall_splat == 1) {
       engine_drender_cpp_pop_FUN_0046d080();
       return;

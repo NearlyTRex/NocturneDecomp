@@ -16,16 +16,16 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005e5c1a
-;   undefined4 DAT_005e5c22
+;   TerminatedCString s_d_005e5c22
 ;   TerminatedCString s_core_set_cpp_005e5c26
 ;   TerminatedCString s_Set_saveState_info_is_in_005e5c36
 ;   TerminatedCString s_anon_005e5c5f
-;   undefined4 DAT_005e5c67
+;   TerminatedCString s_d_005e5c67
 ;   TerminatedCString s_The_set_has_changed_sinc_005e5c6b
-;   undefined4 DAT_005e5cd1
+;   TerminatedCString s_d_005e5cd1
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -51,7 +51,7 @@ section .text
     ADD ESP,0x8                         ; 00534aaa
     MOV EAX,ESP                         ; 00534aad
     PUSH EAX                            ; 00534aaf
-    PUSH 0x5e5c22                       ; 00534ab0 | DAT_005e5c22
+    PUSH 0x5e5c22                       ; 00534ab0 | = "%d\n"
     PUSH EDI                            ; 00534ab5
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00534ab6
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -68,7 +68,7 @@ section .text
     ADD ESP,0x8                         ; 00534ad5
     LEA EAX,[ESP + 0x4]                 ; 00534ad8
     PUSH EAX                            ; 00534adc
-    PUSH 0x5e5c67                       ; 00534add | DAT_005e5c67
+    PUSH 0x5e5c67                       ; 00534add | = "%d\n"
     PUSH EDI                            ; 00534ae2
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00534ae3
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -93,7 +93,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00534b14
         ;   Label: LAB_00534b14
     PUSH EAX                            ; 00534b18
-    PUSH 0x5e5cd1                       ; 00534b19 | DAT_005e5cd1
+    PUSH 0x5e5cd1                       ; 00534b19 | = "%d\n"
     PUSH EDI                            ; 00534b1e
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00534b1f
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -121,8 +121,8 @@ section .text
     MOV ECX,0x5e5c26                    ; 00534b46 | = "..\\core\\set.cpp"
     MOV EBX,0x147b                      ; 00534b4b
     PUSH 0x5e5c36                       ; 00534b50 | = "Set saveState info is invalid version %d"
-    MOV dword ptr [0x01d046a0],ECX      ; 00534b55 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00534b5b | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00534b55 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00534b5b | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00534b61
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00534b66

@@ -11,13 +11,13 @@
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00525383
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cb80e0
+;   int g_INT_01cb80e0
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01cb80e0]      ; 004bb4e0 | DAT_01cb80e0
+    MOV EDX,dword ptr [0x01cb80e0]      ; 004bb4e0 | g_INT_01cb80e0
         ;   Label: core_game.cpp_CGame_fadeIn_FUN_004bb4e0
     TEST EDX,EDX                        ; 004bb4e6
     JZ 0x004bb4f3                       ; 004bb4e8

@@ -8,8 +8,8 @@
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0 at 0051b3e9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_027902bc
-;   undefined4 DAT_02c5fc1c
+;   char[256] g_CHAR_ARRAY_027902bc
+;   char[188] g_CHAR_ARRAY_02c5fc1c
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_005637d0
@@ -24,7 +24,7 @@ section .text
     PUSH ESI                            ; 0056b861
     MOV ESI,0x26b82bc                   ; 0056b862
     XOR EBX,EBX                         ; 0056b867
-    CMP dword ptr [EBX + 0x27902bc],0x0 ; 0056b869 | DAT_027902bc
+    CMP dword ptr [EBX + 0x27902bc],0x0 ; 0056b869 | g_CHAR_ARRAY_027902bc
         ;   Label: LAB_0056b869
     JZ 0x0056b8a7                       ; 0056b870
         ;   XREF to: 0056b8a7 (CONDITIONAL_JUMP)  ; LAB_0056b8a7
@@ -36,7 +36,7 @@ section .text
         ;   XREF to: 0056b869 (CONDITIONAL_JUMP)  ; LAB_0056b869
     MOV ESI,0x27903bc                   ; 0056b883
     XOR EBX,EBX                         ; 0056b888
-    CMP dword ptr [EBX + 0x2c5fc1c],0x0 ; 0056b88a | DAT_02c5fc1c
+    CMP dword ptr [EBX + 0x2c5fc1c],0x0 ; 0056b88a | g_CHAR_ARRAY_02c5fc1c
         ;   Label: LAB_0056b88a
     JZ 0x0056b8b2                       ; 0056b891
         ;   XREF to: 0056b8b2 (CONDITIONAL_JUMP)  ; LAB_0056b8b2

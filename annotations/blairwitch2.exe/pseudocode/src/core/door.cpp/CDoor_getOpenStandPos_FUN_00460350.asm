@@ -52,8 +52,8 @@
 ;   void* switchdataD_0046033c = 00460399
 ;   TerminatedCString s_core_door_cpp_005d0b9f
 ;   TerminatedCString s_CDoor_getOpenStandPos_in_005d0bb0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
@@ -269,8 +269,8 @@ section .text
         ;   Label: default
     MOV ECX,0x37e                       ; 004605b1
     PUSH 0x5d0bb0                       ; 004605b6 | = "CDoor::getOpenStandPos - invalid door..."
-    MOV dword ptr [0x01d046a0],EDX      ; 004605bb | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004605c1 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004605bb | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004605c1 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004605c7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004605cc

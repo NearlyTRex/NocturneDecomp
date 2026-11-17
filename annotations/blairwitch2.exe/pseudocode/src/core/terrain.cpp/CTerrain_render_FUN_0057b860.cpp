@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_0057b860(CTerrain *this_ptr,int render_pass)
 
 {
@@ -28,10 +26,11 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_0057b860(CTerrain *this_ptr,in
   int local_18;
   
   bVar4 = 0;
-  if (_DAT_02653650 == 0) {
+  if (g_CTerrain_0265364c.initialized == 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0(DAT_0060b280,&local_2c);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0
+            (g_CDemonRenderer_PTR_0060b280,&local_2c);
   local_38 = local_2c.x;
   *(uint *)((int)&stack0xffffffcc + (uint)bVar4 * -8) =
        *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
@@ -42,10 +41,10 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_0057b860(CTerrain *this_ptr,in
   iVar3 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004cb7a0(g_CGroundPtr,0,0x40800);
   iVar2 = local_18;
   iVar1 = local_20;
-  dVar6 = (double)local_34 * _DAT_005ed549;
-  dVar7 = (double)local_30 * _DAT_005ed549;
+  dVar6 = (double)local_34 * 256;
+  dVar7 = (double)local_30 * 256;
   local_1c = iVar3;
-  dVar5 = round((double)local_38 * _DAT_005ed549);
+  dVar5 = round((double)local_38 * 256);
   dVar6 = round(dVar6);
   local_1c = (int)ROUND(dVar6);
   dVar7 = round(dVar7);
@@ -54,9 +53,9 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_0057b860(CTerrain *this_ptr,in
   local_2c.z = (float)((iVar2 + local_20) - this_ptr->animation_counter);
   local_2c.x = (float)(iVar1 + (int)ROUND(dVar5));
   engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0046af90
-            (DAT_0060b280,(CVector3i *)&local_2c);
+            (g_CDemonRenderer_PTR_0060b280,(CVector3i *)&local_2c);
   core_ground_cpp_CGround_render_FUN_004cb700(g_CGroundPtr);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
-            (DAT_0060b280,(CVector3f *)&stack0xffffffbc);
+            (g_CDemonRenderer_PTR_0060b280,(CVector3f *)&stack0xffffffbc);
   return;
 }

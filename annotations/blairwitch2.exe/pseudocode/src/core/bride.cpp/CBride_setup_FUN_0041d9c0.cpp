@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bride_cpp_CBride_setup_FUN_0041d9c0(CBride *this_ptr)
 
 {
@@ -20,27 +18,27 @@ void __cdecl core_bride_cpp_CBride_setup_FUN_0041d9c0(CBride *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
-  DAT_007bccdc = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 Head",1);
-  DAT_007bcce8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 L ForeArm",1);
-  DAT_007bccec = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_007bccf8 =
+  g_INT_ARRAY_007bccdc[0] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
+  g_INT_ARRAY_007bccdc[3] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L ForeArm",1);
+  g_INT_ARRAY_007bccdc[4] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R ForeArm",1);
+  g_INT_ARRAY_007bccdc[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_007bccfc =
+  g_INT_ARRAY_007bccdc[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Foot",1);
-  DAT_007bcce0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 L Hand",1);
-  DAT_007bcce4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 R Hand",1);
-  DAT_007bccf0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 L UpperArm",1);
-  DAT_007bccf4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 R UpperArm",1);
-  DAT_007bcd00 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                           (this_ptr_01,"Bip01 Spine",1);
-  _DAT_007bcd04 =
+  g_INT_ARRAY_007bccdc[1] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Hand",1);
+  g_INT_ARRAY_007bccdc[2] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Hand",1);
+  g_INT_ARRAY_007bccdc[5] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
+  g_INT_ARRAY_007bccdc[6] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
+  g_INT_ARRAY_007bccdc[9] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
+  g_INT_ARRAY_007bccdc[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100

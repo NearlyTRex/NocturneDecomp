@@ -7,9 +7,9 @@
 ; int              Stack[0x4]:4   count
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_020b0258
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   uint*[1200] g_UINT_PTR_ARRAY_020b0258
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -21,7 +21,7 @@ section .text
     PUSH ESI                            ; 00538390
         ;   Label: core_setdir.cpp_restoreZBufferTable_FUN_00538390
     PUSH EDI                            ; 00538391
-    CMP dword ptr [0x020b0258],0x0      ; 00538392 | DAT_020b0258
+    CMP dword ptr [0x020b0258],0x0      ; 00538392 | g_UINT_PTR_ARRAY_020b0258
     JZ 0x005383cb                       ; 00538399
         ;   XREF to: 005383cb (CONDITIONAL_JUMP)  ; LAB_005383cb
     MOV ESI,dword ptr [ESP + 0xc]       ; 0053839b
@@ -41,7 +41,7 @@ section .text
     NOP                                 ; 005383bf
     XOR EDI,EDI                         ; 005383c0
         ;   Label: LAB_005383c0
-    MOV dword ptr [0x020b0258],EDI      ; 005383c2 | DAT_020b0258
+    MOV dword ptr [0x020b0258],EDI      ; 005383c2 | g_UINT_PTR_ARRAY_020b0258
     POP EDI                             ; 005383c8
     POP ESI                             ; 005383c9
     RET                                 ; 005383ca
@@ -50,8 +50,8 @@ section .text
     MOV ECX,0x5e5f92                    ; 005383cc
     MOV EBX,0x70                        ; 005383d1
     PUSH 0x5e5fa5                       ; 005383d6
-    MOV dword ptr [0x01d046a0],ECX      ; 005383db | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005383e1 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005383db | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 005383e1 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005383e7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005383ec

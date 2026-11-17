@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 76,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 3,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 148
   },
   "cross_references": [
@@ -40,91 +37,91 @@
   "globals": [
     {
       "addr": "005d957a",
-      "name": "DAT_005d957a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d957a",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005d9582",
-      "name": "DAT_005d9582",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d9582",
+      "type": "double",
+      "value": "1.33300000000000"
     },
     {
       "addr": "01cbcaf8",
-      "name": "DAT_01cbcaf8",
-      "type": "undefined4",
+      "name": "g_INT_01cbcaf8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cbcb0c",
-      "name": "DAT_01cbcb0c",
+      "name": "g_CBloodSplat_ARRAY_01cbcafc[0].is_wall_splat",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbcb44",
-      "name": "DAT_01cbcb44",
+      "name": "g_CBloodSplat_ARRAY_01cbcafc[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbcb48",
-      "name": "DAT_01cbcb48",
+      "name": "g_CBloodSplat_ARRAY_01cbcafc[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbcb4c",
-      "name": "DAT_01cbcb4c",
+      "name": "g_CBloodSplat_ARRAY_01cbcafc[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbcb50",
-      "name": "DAT_01cbcb50",
+      "name": "g_CBloodSplat_ARRAY_01cbcafc[1].is_wall_splat",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbcb54",
-      "name": "DAT_01cbcb54",
+      "name": "g_CBloodSplat_ARRAY_01cbcafc[1].blood_type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cdde40",
-      "name": "DAT_01cdde40",
-      "type": "undefined4",
+      "name": "g_INT_01cdde40",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cdde4c",
-      "name": "DAT_01cdde4c",
+      "name": "g_CBloodPool_ARRAY_01cdde44[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cdde70",
-      "name": "DAT_01cdde70",
+      "name": "g_CBloodPool_ARRAY_01cdde44[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cdde74",
-      "name": "DAT_01cdde74",
+      "name": "g_CBloodPool_ARRAY_01cdde44[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cdde78",
-      "name": "DAT_01cdde78",
+      "name": "g_CBloodPool_ARRAY_01cdde44[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cdde7c",
-      "name": "DAT_01cdde7c",
+      "name": "g_CBloodPool_ARRAY_01cdde44[1].blood_type",
       "type": "undefined4",
       "value": null
     }
@@ -259,30 +256,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1cdde44 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 12,
-      "match": "0x1cdde44",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1cdde44;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1cbcafc assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 26,
-      "match": "0x1cbcafc",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1cbcafc;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

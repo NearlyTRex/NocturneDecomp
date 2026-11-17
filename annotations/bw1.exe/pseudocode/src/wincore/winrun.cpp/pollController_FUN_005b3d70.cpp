@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_pollController_FUN_005b3d70(int controller_index)
 
 {
@@ -49,9 +47,9 @@ void __cdecl wincore_winrun_cpp_pollController_FUN_005b3d70(int controller_index
     puVar9 = (uint *)((int)puVar9 + 1);
     puVar10 = (uint *)((int)puVar10 + 1);
   }
-  if (_DAT_02c9cf0c == (code *)0x0) {
+  if (g_PTR_02c9cf0c == (byte *)0x0) {
     memset(&jStack_24,0,0x10);
-    MVar5 = joyGetPos(*(UINT *)(controller_index * 4 + 0x2c9d1c4),&jStack_24);
+    MVar5 = joyGetPos(g_INT_ARRAY_02c9d1c4[controller_index],&jStack_24);
     if (MVar5 == 0) {
       iVar6 = controller_index * 0x30;
       *(uint *)(iVar7 + 0x2c9cf18) = 1;
@@ -83,7 +81,7 @@ void __cdecl wincore_winrun_cpp_pollController_FUN_005b3d70(int controller_index
   else {
     memset(&stack0xffffffa8,0,0x34);
     iVar11 = 0x34;
-    iVar6 = (*_DAT_02c9cf0c)(*(uint *)(controller_index * 4 + 0x2c9d1c4),&stack0xffffffa8);
+    iVar6 = (*(code *)g_PTR_02c9cf0c)(g_INT_ARRAY_02c9d1c4[controller_index],&stack0xffffffa8);
     if (iVar6 == 0) {
       iVar6 = controller_index * 0x30;
       *(uint *)(iVar7 + 0x2c9cf18) = 1;
@@ -167,7 +165,7 @@ LAB_005b3f30:
     *(uint *)(iVar7 + 0x2c9cfbc) = 0;
 LAB_005b3f97:
     iVar6 = 0;
-    while (ABS((float)piVar8[8]) <= (float)_DAT_005f9ecf) {
+    while (ABS((float)piVar8[8]) <= (float)0.10000000000000001) {
       iVar6 = iVar6 + 1;
       piVar8 = piVar8 + 1;
       if (3 < iVar6) {

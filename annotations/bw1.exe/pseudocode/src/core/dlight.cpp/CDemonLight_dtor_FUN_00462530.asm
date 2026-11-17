@@ -11,7 +11,7 @@
 ;   core_boxactor.cpp_CLightActor_dtor_FUN_00423720 at 00423735
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_dlight.cpp_CDemonLight_dtor_FUN_00462530_005febf4 = 00462530
+;   CCameraView_vtable g_CCameraView_vtable_005febf4
 ;   WatcomTypeInfo g_CDemonLightTypeInfo
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     JNZ 0x00462566                      ; 0046253a
         ;   XREF to: 00462566 (CONDITIONAL_JUMP)  ; LAB_00462566
     PUSH EBX                            ; 0046253c
-    MOV dword ptr [EBX + 0x3c],0x5febf4 ; 0046253d | PTR_core_dlight.cpp_CDemonLight_dtor_FUN_00462530_005febf4
+    MOV dword ptr [EBX + 0x3c],0x5febf4 ; 0046253d | g_CCameraView_vtable_005febf4
     CALL core_dlight.cpp_CDemonLight_free_FUN_00462670 ; 00462544
         ;   XREF to: 00462670 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_free_FUN_00462670(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00462549

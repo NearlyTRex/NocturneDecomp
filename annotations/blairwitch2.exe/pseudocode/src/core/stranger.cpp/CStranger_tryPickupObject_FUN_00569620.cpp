@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *this_ptr,char *class_name)
 
@@ -103,7 +102,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
   if (((((0.0 < this_ptr->action_timer) ||
         ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0)) ||
        (local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
-                             ((CCharacter *)this_ptr,0), local_18 < (float)_DAT_005eba4d)) ||
+                             ((CCharacter *)this_ptr,0), local_18 < (float)0.98999999999999999)) ||
       ((local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
                              (&(this_ptr->base).base.model.base,0), local_18 < 1.0 ||
        ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0)))) ||
@@ -194,10 +193,10 @@ LAB_0056979e:
           afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
                afStack_d8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
           pCVar9 = &CStack_40;
-          fStack_94 = afStack_90[2] * _DAT_005eba55;
-          afStack_90[0] = afStack_90[3] * _DAT_005eba55;
-          afStack_90[1] = fStack_80 * _DAT_005eba55;
-          CStack_40.x = afStack_90[2] * _DAT_005eba55;
+          fStack_94 = afStack_90[2] * 0.5f;
+          afStack_90[0] = afStack_90[3] * 0.5f;
+          afStack_90[1] = fStack_80 * 0.5f;
+          CStack_40.x = afStack_90[2] * 0.5f;
           *(float *)((int)&CStack_40 + (uint)bVar8 * -8 + 4) = afStack_90[(uint)bVar8 * -2];
           *(float *)((int)&CStack_40 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
                afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
@@ -215,7 +214,7 @@ LAB_0056979e:
           afStack_110[(uint)bVar8 * -2 + -1] = *(float *)((int)&CStack_138 + (uint)bVar8 * -8);
           afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2] =
                *(float *)((int)&CStack_138 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 4);
-          if ((ABS(fStack_114) <= (float)_DAT_005eba75) &&
+          if ((ABS(fStack_114) <= (float)5) &&
              (puStack_14 = (uint *)(fStack_118 * fStack_118 + afStack_110[0] * afStack_110[0])
              , (float)puStack_14 <= (float)local_20)) {
             in_stack_fffffd80 = (char *)0x56994e;
@@ -261,7 +260,7 @@ LAB_00569a2a:
             afStack_1ec[(uint)bVar8 * -2] = *(float *)((int)&CStack_d0 + (uint)bVar8 * -8 + 4);
             afStack_1ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                  *(float *)((int)&CStack_d0 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8);
-            if (ABS(afStack_1ec[0]) <= (float)_DAT_005eba6d) goto LAB_00569a2a;
+            if (ABS(afStack_1ec[0]) <= (float)20) goto LAB_00569a2a;
           }
         }
       }
@@ -298,10 +297,10 @@ LAB_00569a2a:
   afStack_164[(uint)bVar8 * -2 + -1] = afStack_110[(uint)bVar8 * -2 + -1];
   afStack_164[(uint)bVar8 * -2 + (uint)bVar8 * -2] =
        afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2];
-  afStack_f4[0] = fStack_16c * _DAT_005eba55;
-  afStack_f4[1] = fStack_168 * _DAT_005eba55;
-  afStack_f4[2] = afStack_164[0] * _DAT_005eba55;
-  auStack_1d4._8_4_ = fStack_16c * _DAT_005eba55;
+  afStack_f4[0] = fStack_16c * 0.5f;
+  afStack_f4[1] = fStack_168 * 0.5f;
+  afStack_f4[2] = afStack_164[0] * 0.5f;
+  auStack_1d4._8_4_ = fStack_16c * 0.5f;
   afStack_1c8[(uint)bVar8 * -2] = afStack_f4[(uint)bVar8 * -2 + 1];
   afStack_1c8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
        afStack_f4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 2];
@@ -337,17 +336,17 @@ LAB_00569a2a:
     if ((pCVar3 == (CDemonActor *)0x0) ||
        (iVar5 = (*((pCVar3->vtable)._ub)->canPickup)(pCVar3,(CDemonActor *)this_ptr), iVar5 != 4)) {
       pCVar1 = &(this_ptr->base).base.model;
-      if ((this_ptr->carry_object_world_center).y <= (float)_DAT_005eba65) {
+      if ((this_ptr->carry_object_world_center).y <= (float)2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,0x13,1);
         in_stack_fffffd80 = "Picking up %s off ground\n";
         this_ptr_00 = g_CConsolePtr;
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-                  (pCVar1,_DAT_0264be68,&CStack_104);
+                  (pCVar1,g_INT_ARRAY_0264be30[0xe],&CStack_104);
         fStack_74 = CStack_104.x;
         afStack_90[(uint)bVar8 * -2 + 8] = *(float *)((int)&CStack_104 + (uint)bVar8 * -8 + 4);
-        iVar5 = _DAT_0264be40;
+        iVar5 = g_INT_ARRAY_0264be30[4];
         afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 9] =
              *(float *)((int)&CStack_104 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
@@ -372,7 +371,7 @@ LAB_00569a2a:
         afStack_f4[(uint)bVar8 * -2] = afStack_1ec[(uint)bVar8 * -2 + 5];
         afStack_f4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
              *(float *)(auStack_1d4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-        if ((float)_DAT_005eba65 <
+        if ((float)2 <
             ABS(SQRT(fStack_78 * fStack_78 + fVar2 + fStack_7c * fStack_7c) -
                 SQRT(afStack_f4[1] * afStack_f4[1] +
                      fStack_f8 * fStack_f8 + afStack_f4[0] * afStack_f4[0]))) {
@@ -397,7 +396,7 @@ LAB_00569a2a:
       fVar2 = (this_ptr->carry_object_world_center).y;
       pCVar1 = &(this_ptr->base).base.model;
       this_ptr->pickup_facing_reversed = (uint)(0.0 < afStack_154[1]);
-      if (fVar2 <= (float)_DAT_005eba5d) {
+      if (fVar2 <= (float)2.5) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,0x17,1);
         in_stack_fffffd80 = "Picking up heavy %s crate\n";
         this_ptr_00 = g_CConsolePtr;
@@ -416,14 +415,14 @@ LAB_00569a2a:
           (this_ptr->carry_object_world_center).y = fStack_64;
           (this_ptr->carry_object_world_center).z = (float)auStack_60._0_4_;
         }
-        in_stack_fffffd80 = ">Picking up heavy %s shelf\n" + 1;
+        in_stack_fffffd80 = "Picking up heavy %s shelf\n";
         this_ptr_00 = g_CConsolePtr;
       }
     }
     break;
   default:
-    _DAT_01d046a0 = "..\\core\\stranger.cpp";
-    _DAT_01d046a4 = 0xd2d;
+    g_CHAR_PTR_01d046a0 = "..\\core\\stranger.cpp";
+    g_INT_01d046a4 = 0xd2d;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze - invalid pickUpType: %d");
     goto LAB_00569dc5;
   }

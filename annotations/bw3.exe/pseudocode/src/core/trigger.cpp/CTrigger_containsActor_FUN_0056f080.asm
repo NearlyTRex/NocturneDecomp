@@ -18,11 +18,11 @@
 ;   TerminatedCString s_CTrigger_containsActor_i_005d67ab
 ;   TerminatedCString s_core_trigger_cpp_005d67e5
 ;   TerminatedCString s_Hell_froze_005d67f9
-;   undefined4 DAT_005d6807
-;   undefined4 DAT_005d680b
+;   float g_FLOAT_005d6807 = 0.5
+;   double g_DOUBLE_005d680b = 0.25
 ;   undefined4 g_CCharacterClassInfo.name_hash
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -83,7 +83,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0056f10f
     MOVSD ES:EDI,ESI                    ; 0056f110
     MOVSD ES:EDI,ESI                    ; 0056f111
-    FLD float ptr [0x005d6807]          ; 0056f112 | DAT_005d6807
+    FLD float ptr [0x005d6807]          ; 0056f112 | g_FLOAT_005d6807
     FLD float ptr [ESP + 0xb4]          ; 0056f118
     FMUL ST1                            ; 0056f11f
     FLD float ptr [ESP + 0xb8]          ; 0056f121
@@ -196,7 +196,7 @@ section .text
     FADDP                               ; 0056f2ae
     FLD float ptr [EBX + 0x160]         ; 0056f2b0
     FMUL float ptr [EBX + 0x168]        ; 0056f2b6
-    FMUL double ptr [0x005d680b]        ; 0056f2bc | DAT_005d680b
+    FMUL double ptr [0x005d680b]        ; 0056f2bc | g_DOUBLE_005d680b
     FCOMPP                              ; 0056f2c2
     FNSTSW AX                           ; 0056f2c4
     SAHF                                ; 0056f2c6
@@ -288,16 +288,16 @@ section .text
     MOV EDI,0x5d6797                    ; 0056f3ba | = "..\\core\\trigger.cpp"
     MOV EBP,0x38e                       ; 0056f3bf
     PUSH 0x5d67ab                       ; 0056f3c4 | = "CTrigger::containsActor - invalid tri..."
-    MOV dword ptr [0x01d71de0],EDI      ; 0056f3c9 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0056f3cf | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 0056f3c9 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 0056f3cf | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0056f3d5
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0056f3da
     MOV EDX,0x5d67e5                    ; 0056f3dd | = "..\\core\\trigger.cpp"
     MOV ECX,0x394                       ; 0056f3e2
     PUSH 0x5d67f9                       ; 0056f3e7 | = "Hell froze..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0056f3ec | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0056f3f2 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0056f3ec | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0056f3f2 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0056f3f8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0056f3fd

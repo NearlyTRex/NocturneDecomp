@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_addBatchTriangle_FUN_004f6870(float *v0,float *v1,float *v2)
 
 {
@@ -19,10 +17,10 @@ void __cdecl engine_mini3d_cpp_addBatchTriangle_FUN_004f6870(float *v0,float *v1
   
   bVar5 = 0;
   if ((v2[5] - v1[5]) * (v1[6] - v0[6]) < (v1[5] - v0[5]) * (v2[6] - v1[6])) {
-    if ((9999 < _DAT_01d0d2e8 + _DAT_01d0d2ec + 3) || (9999 < _DAT_01d0d2f0 + 3)) {
+    if ((9999 < g_INT_01d0d2e8 + g_INT_01d0d2ec + 3) || (9999 < g_INT_01d0d2f0 + 3)) {
       engine_mini3d_cpp_flushTriangleBatch_FUN_004f6970();
     }
-    pfVar2 = (float *)(_DAT_01d09b7c + (_DAT_01d0d2e8 + _DAT_01d0d2ec) * 0x40);
+    pfVar2 = g_FLOAT_PTR_01d09b7c + (g_INT_01d0d2e8 + g_INT_01d0d2ec) * 0x10;
     pfVar4 = pfVar2;
     for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
       *pfVar4 = *v0;
@@ -35,18 +33,18 @@ void __cdecl engine_mini3d_cpp_addBatchTriangle_FUN_004f6870(float *v0,float *v1
       v1 = v1 + (uint)bVar5 * -2 + 1;
       pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
     }
-    sVar1 = _DAT_01d0d2ec;
+    sVar1 = (short)g_INT_01d0d2ec;
     pfVar4 = pfVar2 + 0x20;
     for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
       *pfVar4 = *v2;
       v2 = v2 + (uint)bVar5 * -2 + 1;
       pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
     }
-    *(short *)(_DAT_01d0d2f0 * 2 + 0x1d0d2f6) = sVar1 + 1;
-    _DAT_01d0d2f0 = _DAT_01d0d2f0 + 3;
-    *(short *)(_DAT_01d0d2f0 * 2 + 0x1d0d2f2) = sVar1 + 2;
-    _DAT_01d0d2ec = _DAT_01d0d2ec + 3;
-    *(short *)(_DAT_01d0d2f0 * 2 + 0x1d0d2ee) = sVar1;
+    g_SHORT_ARRAY_01d0d2f6[g_INT_01d0d2f0] = sVar1 + 1;
+    g_INT_01d0d2f0 = g_INT_01d0d2f0 + 3;
+    *(short *)((int)&g_INT_01d0d2f0 + g_INT_01d0d2f0 * 2 + 2) = sVar1 + 2;
+    g_INT_01d0d2ec = g_INT_01d0d2ec + 3;
+    *(short *)((int)&g_INT_01d0d2ec + g_INT_01d0d2f0 * 2 + 2) = sVar1;
   }
   return;
 }

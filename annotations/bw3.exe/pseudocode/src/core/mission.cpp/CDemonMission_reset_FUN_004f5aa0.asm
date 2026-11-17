@@ -10,12 +10,12 @@
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4b17
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005c8375
-;   undefined1 DAT_005c8376
-;   undefined1 DAT_005c8377
-;   undefined1 DAT_005c8378
-;   undefined4 DAT_01d882a0
-;   undefined4 DAT_01d88308
+;   TerminatedCString s_fangs_005c8375
+;   undefined4 s_angs_005c8375+1
+;   undefined4 s_ngs_005c8375+2
+;   undefined4 s_gs_005c8375+3
+;   char g_CHAR_01d882a0
+;   char g_CHAR_01d88308
 ;   undefined4 DAT_01d88309
 ;   undefined4 DAT_01d8830a
 ;   undefined4 DAT_01d8830b
@@ -33,7 +33,7 @@ section .text
     MOV dword ptr [EDX + 0x1440],0x0    ; 004f5aba
     LEA EAX,[EDX + 0x1444]              ; 004f5ac4
     MOV dword ptr [EDX + 0x1450],0xffffffff ; 004f5aca
-    MOV ESI,0x5c8375                    ; 004f5ad4 | DAT_005c8375
+    MOV ESI,0x5c8375                    ; 004f5ad4 | = "fangs"
     MOV dword ptr [EAX + 0x8],0x0       ; 004f5ad9
     MOV EDI,0x1d88308                   ; 004f5ae0
     MOV ECX,dword ptr [EAX + 0x8]       ; 004f5ae5
@@ -43,15 +43,15 @@ section .text
     MOV byte ptr [EDX + 0x133c],0x0     ; 004f5af0
     XOR AH,AH                           ; 004f5af7
     MOV dword ptr [EDX + 0x1018],0x0    ; 004f5af9
-    MOV byte ptr [0x01d882a0],AH        ; 004f5b03 | DAT_01d882a0
+    MOV byte ptr [0x01d882a0],AH        ; 004f5b03 | g_CHAR_01d882a0
     PUSH EDI                            ; 004f5b09
-    MOV AL,byte ptr [ESI]               ; 004f5b0a | DAT_005c8375 | DAT_005c8377
+    MOV AL,byte ptr [ESI]               ; 004f5b0a | = "fangs" | s_ngs_005c8375+2
         ;   Label: LAB_004f5b0a
-    MOV byte ptr [EDI],AL               ; 004f5b0c | DAT_01d88308 | DAT_01d8830a
+    MOV byte ptr [EDI],AL               ; 004f5b0c | g_CHAR_01d88308 | DAT_01d8830a
     CMP AL,0x0                          ; 004f5b0e
     JZ 0x004f5b22                       ; 004f5b10
         ;   XREF to: 004f5b22 (CONDITIONAL_JUMP)  ; LAB_004f5b22
-    MOV AL,byte ptr [ESI + 0x1]         ; 004f5b12 | DAT_005c8376 | DAT_005c8378
+    MOV AL,byte ptr [ESI + 0x1]         ; 004f5b12 | s_angs_005c8375+1 | s_gs_005c8375+3
     ADD ESI,0x2                         ; 004f5b15
     MOV byte ptr [EDI + 0x1],AL         ; 004f5b18 | DAT_01d88309 | DAT_01d8830b
     ADD EDI,0x2                         ; 004f5b1b

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fire_cpp_CGlassParticle_init_FUN_0049a650(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 
@@ -61,9 +60,9 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_0049a650(CGlassParticle *this
   local_ac = local_88 + triangle_vertices->vertices[2].x;
   local_a8 = local_84 + triangle_vertices->vertices[2].y;
   local_a4 = local_80 + triangle_vertices->vertices[2].z;
-  local_a0 = local_ac * _DAT_005c05d0;
-  local_9c = local_a8 * _DAT_005c05d0;
-  local_98 = local_a4 * _DAT_005c05d0;
+  local_a0 = local_ac * 0.3333333f;
+  local_9c = local_a8 * 0.3333333f;
+  local_98 = local_a4 * 0.3333333f;
   if (&local_70 != (CVector3f *)(local_48 + 2)) {
     local_70.x = local_a0;
     local_70.y = local_9c;
@@ -158,9 +157,9 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_0049a650(CGlassParticle *this
     (this_ptr->base).velocity.z = fVar3 * fVar4;
   }
   pCVar1 = &(this_ptr->base).velocity;
-  fVar2 = (this_ptr->base).velocity.y * _DAT_005c05d4;
-  fVar3 = (this_ptr->base).velocity.z * _DAT_005c05d4;
-  pCVar1->x = pCVar1->x * _DAT_005c05d4;
+  fVar2 = (this_ptr->base).velocity.y * 10.0f;
+  fVar3 = (this_ptr->base).velocity.z * 10.0f;
+  pCVar1->x = pCVar1->x * 10.0f;
   (this_ptr->base).velocity.y = fVar2;
   (this_ptr->base).velocity.z = fVar3;
   core_particle_cpp_CParticle_setup_FUN_00509e40(&this_ptr->base,&local_70,pCVar1);

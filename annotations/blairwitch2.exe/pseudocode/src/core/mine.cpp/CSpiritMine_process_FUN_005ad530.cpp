@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_ptr,float delta_time)
 
 {
@@ -60,9 +58,10 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   core_boxactor_cpp_CBoxActor_process_FUN_0041c090(&this_ptr->base,delta_time);
   core_mine_cpp_CSpiritMine_updateGlobe_FUN_005ad940(this_ptr);
   this_ptr_00 = pCStack_18;
-  iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-  fVar10 = (this_ptr->base).base.location.position.x - *(float *)(iVar2 + 0x20);
-  fVar11 = (this_ptr->base).base.location.position.z - *(float *)(iVar2 + 0x28);
+  fVar10 = (this_ptr->base).base.location.position.x -
+           (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.location.position.x;
+  fVar11 = (this_ptr->base).base.location.position.z -
+           (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.location.position.z;
   fStack_20 = SQRT(fVar11 * fVar11 + fVar10 * fVar10);
   fStack_1c = fStack_20;
   if (this_ptr->effect_timer <= 0.0) {
@@ -96,7 +95,8 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
       SStack_16c.damage_amount = 5.0;
       SStack_16c.attacker = (CDemonActor *)this_ptr;
       SStack_16c.wielder = (CDemonActor *)this_ptr;
-      (**(code **)(*(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2b0) + 0x110))();
+      (*(((g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.vtable._uc)->_uc).processDamage)
+                (&g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base,&SStack_16c);
       this_ptr->emit_timer = 0.0;
       this_ptr->effect_timer = this_ptr->effect_time;
       return;
@@ -166,7 +166,8 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)&stack0xfffffe58);
       pCStack_174 = this_ptr;
       pCStack_170 = this_ptr;
-      (**(code **)(*(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2b0) + 0x110))();
+      (*(((g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.vtable._uc)->_uc).processDamage)
+                (&g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base,(SDamageInfo *)&stack0xfffffe58);
       return;
     }
   }

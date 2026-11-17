@@ -13,7 +13,7 @@
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00594f40 at 00595475
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c38b54
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
 ;
 ; *****************************************************************************
 
@@ -81,7 +81,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x4]       ; 005946e7
     ADD EAX,EDX                         ; 005946ea
     MOV dword ptr [EDI + 0x4],EAX       ; 005946ec
-    MOV AH,byte ptr [0x01c38b54]        ; 005946ef | DAT_01c38b54
+    MOV AH,byte ptr [0x01c38b54]        ; 005946ef | g_BIT_INTEGER32_01c38b54
     MOV dword ptr [EDI + 0x10],0xffffffff ; 005946f5
     TEST AH,0x4                         ; 005946fc
     JNZ 0x00594706                      ; 005946ff

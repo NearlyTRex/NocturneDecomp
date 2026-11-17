@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 475,
-    "complexity_score": 743,
+    "complexity_score": 606,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 218,
-    "suspect_count": 49,
+    "pseudocode_lines": 221,
+    "suspect_count": 36,
     "suspect_types": [
       "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
       "unknown_field",
-      "unknown_type",
-      "warning_overlapping_globals"
+      "unknown_type"
     ],
-    "total_lines": 693
+    "total_lines": 696
   },
   "cross_references": [],
   "function": {
@@ -84,63 +82,63 @@
   "globals": [
     {
       "addr": "005cf4d7",
-      "name": "DAT_005cf4d7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf4d7",
+      "type": "double",
+      "value": "0.0625"
     },
     {
       "addr": "005cf4df",
-      "name": "DAT_005cf4df",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005cf4df",
+      "type": "float",
+      "value": "0.0625"
     },
     {
       "addr": "005cf4e3",
-      "name": "DAT_005cf4e3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005cf4e3",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005cf4e7",
-      "name": "DAT_005cf4e7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf4e7",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005cf4ef",
-      "name": "DAT_005cf4ef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf4ef",
+      "type": "double",
+      "value": "0.00390625"
     },
     {
       "addr": "005cf4f7",
-      "name": "DAT_005cf4f7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005cf4f7",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "005cf4ff",
-      "name": "DAT_005cf4ff",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf4ff",
+      "type": "double",
+      "value": "1024"
     },
     {
       "addr": "005cf507",
-      "name": "DAT_005cf507",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf507",
+      "type": "double",
+      "value": "18"
     },
     {
       "addr": "005f5050",
-      "name": "DAT_005f5050",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f5050",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     }
   ],
   "param_estimates": {
@@ -260,16 +258,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/unresolved type",
-      "line": 18,
+      "line": 16,
       "match": "unkbyte10",
       "severity": "mild",
       "text": "unkbyte10 Var12;",
@@ -277,63 +267,23 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 22,
+      "line": 20,
       "match": "aUStackY_109c",
       "severity": "moderate",
       "text": "UIntegerFloat aUStackY_109c [997];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,&(this_ptr->base).base.position.f);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 66,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_a8._0_4_ = CStack_b4.x;",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "pCVar16 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_0060afc8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_0060afc8",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_0060afc8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 132,
+      "line": 131,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_a8._4_4_ = fStack_38;",
@@ -341,7 +291,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 134,
+      "line": 133,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_a8._4_4_ = fStack_30;",
@@ -349,7 +299,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 136,
+      "line": 135,
       "match": "._4_4_",
       "severity": "mild",
       "text": "CStack_b4.z = (float)auStack_a8._4_4_ * fStack_4c;",
@@ -357,7 +307,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 136,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
@@ -365,35 +315,27 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 136,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 138,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "aCStack_d0[0].y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 139,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "aCStack_d0[0].y = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 140,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "aCStack_d0[0].z = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);",
+      "text": "aCStack_d0[0].z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 142,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_d0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -440,7 +382,7 @@
       "line": 149,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "auStack_a8._8_4_ = (uint)ROUND(CStack_b4.z * _DAT_005f5050);",
+      "text": "auStack_a8._8_4_ = (uint)ROUND(CStack_b4.z * 256.0f);",
       "type": "unknown_field"
     },
     {
@@ -448,7 +390,7 @@
       "line": 150,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "iStack_9c = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);",
+      "text": "iStack_9c = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
       "type": "unknown_field"
     },
     {
@@ -456,16 +398,8 @@
       "line": 151,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "iStack_98 = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);",
+      "text": "iStack_98 = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 153,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -512,7 +446,7 @@
       "line": 162,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "CStack_94.y = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);",
+      "text": "CStack_94.y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
       "type": "unknown_field"
     },
     {
@@ -520,20 +454,12 @@
       "line": 163,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "CStack_94.z = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);",
+      "text": "CStack_94.z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_94);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 167,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_a8._4_4_ = fStack_38;",
@@ -541,7 +467,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 168,
+      "line": 169,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_a8._4_4_ = fStack_34;",
@@ -549,7 +475,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 170,
+      "line": 171,
       "match": "._4_4_",
       "severity": "mild",
       "text": "CStack_b4.z = (float)auStack_a8._4_4_ * fStack_4c;",
@@ -557,7 +483,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 171,
+      "line": 172,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
@@ -565,71 +491,39 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 171,
+      "line": 172,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 173,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "aCStack_88[0].y = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 174,
-      "match": "._4_4_",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "aCStack_88[0].z = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);",
+      "text": "aCStack_88[0].y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 176,
-      "match": "DAT_0060b280",
+      "description": "Unknown/mangled field access",
+      "line": 175,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,aCStack_88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 177,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "pCVar16 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 178,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "DAT_0060b280->vertex_buffer_ptr->a = (int)fStack_40;",
-      "type": "undefined_data"
+      "text": "aCStack_88[0].z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
+      "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 212,
+      "line": 214,
       "match": "&stack0xffffff08",
       "severity": "moderate",
       "text": "(pCVar16,(SMRGLHeaderPrimitive *)&stack0xffffff08);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 218,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Raw hex address 0x44c1c6 assigned to bare local `uStack_100`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_100` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 74,
+      "line": 72,
       "match": "0x44c1c6",
       "severity": "moderate",
       "text": "uStack_100 = 0x44c1c6;",
@@ -637,7 +531,7 @@
     },
     {
       "description": "Raw hex address 0x44c435 assigned to bare local `iVar17`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar17` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 125,
+      "line": 124,
       "match": "0x44c435",
       "severity": "moderate",
       "text": "iVar17 = 0x44c435;",
@@ -645,7 +539,7 @@
     },
     {
       "description": "Raw hex address 0x44c43c assigned to bare local `uStack_100`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_100` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 128,
+      "line": 127,
       "match": "0x44c43c",
       "severity": "moderate",
       "text": "uStack_100 = 0x44c43c;",

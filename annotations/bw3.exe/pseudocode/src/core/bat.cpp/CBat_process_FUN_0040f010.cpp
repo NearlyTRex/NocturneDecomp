@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bat_cpp_CBat_process_FUN_0040f010(CBat *this_ptr,float delta_time)
 
 {
@@ -38,15 +36,15 @@ void __cdecl core_bat_cpp_CBat_process_FUN_0040f010(CBat *this_ptr,float delta_t
        *(uint *)((int)&stack0xffffffc4 + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  fVar5 = (fStack_24 * (float)_DAT_005b62ae) / delta_time + (float)_DAT_005b62b6;
-  if (fVar5 < (float)_DAT_005b62be) {
+  fVar5 = (fStack_24 * (float)4) / delta_time + (float)35;
+  if (fVar5 < (float)10) {
     fVar5 = 10.0;
   }
-  if ((float)_DAT_005b62c6 < fVar5) {
+  if ((float)60 < fVar5) {
     fVar5 = 60.0;
   }
   this_ptr->flap_speed =
-       (fVar5 - this_ptr->flap_speed) * (float)_DAT_005b62ce + this_ptr->flap_speed;
+       (fVar5 - this_ptr->flap_speed) * (float)0.69999999999999996 + this_ptr->flap_speed;
   this_ptr->anim_frame = delta_time * this_ptr->flap_speed * this_ptr->speed + this_ptr->anim_frame;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
   iStack_14 = pCVar1->frame_count;

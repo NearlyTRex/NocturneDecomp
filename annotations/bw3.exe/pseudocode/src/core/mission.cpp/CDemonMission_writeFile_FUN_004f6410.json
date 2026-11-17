@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 315,
-    "complexity_score": 225,
+    "complexity_score": 124,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 12,
+    "pseudocode_lines": 79,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 395
+    "total_lines": 394
   },
   "cross_references": [
     {
@@ -112,8 +110,8 @@
     },
     {
       "addr": "005c87f9",
-      "name": "DAT_005c87f9",
-      "type": "undefined4",
+      "name": "s_s_005c87f9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -124,14 +122,14 @@
     },
     {
       "addr": "005c8809",
-      "name": "DAT_005c8809",
-      "type": "undefined4",
+      "name": "s_d_005c8809",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c880d",
-      "name": "DAT_005c880d",
-      "type": "undefined4",
+      "name": "s_s_005c880d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -142,8 +140,8 @@
     },
     {
       "addr": "005c8823",
-      "name": "DAT_005c8823",
-      "type": "undefined4",
+      "name": "s_d_005c8823",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -160,8 +158,8 @@
     },
     {
       "addr": "005c883e",
-      "name": "DAT_005c883e",
-      "type": "undefined4",
+      "name": "s_d_005c883e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -172,8 +170,8 @@
     },
     {
       "addr": "005c885c",
-      "name": "DAT_005c885c",
-      "type": "undefined4",
+      "name": "s_d_005c885c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -226,19 +224,19 @@
     },
     {
       "addr": "007df9c4",
-      "name": "DAT_007df9c4",
-      "type": "undefined4",
+      "name": "g_INT_007df9c4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007df9c8",
-      "name": "DAT_007df9c8",
-      "type": "undefined4",
+      "name": "g_CDemonActorType_PTR_ARRAY_007df9c8",
+      "type": "CDemonActorType*[200]",
       "value": null
     },
     {
       "addr": "007df9cc",
-      "name": "DAT_007df9cc",
+      "name": "g_CDemonActorType_PTR_ARRAY_007df9c8[1]",
       "type": "undefined4",
       "value": null
     },
@@ -250,14 +248,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -380,80 +378,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005c87f9",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,&DAT_005c87f9);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c8809",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,&DAT_005c8809);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005c880d",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,&DAT_005c880d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005c8823",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,&DAT_005c8823);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_007df9c4",
-      "severity": "mild",
-      "text": "if (0 < DAT_007df9c4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_007df9c4",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_007df9c4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005c883e",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,&DAT_005c883e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005c885c",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,&DAT_005c885c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&pCVar2[0x182].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "(int)&pCVar2[0x182].orient",
       "severity": "moderate",
       "text": "this_ptr_00 = (CInventory *)((int)&pCVar2[0x182].orient + 8);",
@@ -461,7 +387,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr_00 = (CInventory *)((int)&pCVar2[0x182].orient + 8);",
@@ -469,7 +395,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 71,
+      "line": 69,
       "match": "pCVar3 = (T *)&pCVar3->FIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CInventory *)&pCVar3->owner;",

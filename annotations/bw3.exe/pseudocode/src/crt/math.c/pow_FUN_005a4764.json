@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 256,
+    "complexity_score": 241,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 86,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "concat_reconstruction",
       "dropped_fyl2x",
       "extra_output",
       "nan_function_artifact",
-      "register_param",
-      "undefined_data"
+      "register_param"
     ],
     "total_lines": 249
   },
@@ -89,9 +88,9 @@
   "globals": [
     {
       "addr": "00607b5c",
-      "name": "DAT_00607b5c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BYTE_00607b5c",
+      "type": "byte",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -264,14 +263,6 @@
       "severity": "moderate",
       "text": "uVar5 = extraout_EDX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_00607b5c",
-      "severity": "mild",
-      "text": "if ((DAT_00607b5c & 1) == 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

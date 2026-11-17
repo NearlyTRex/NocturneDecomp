@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_resetIrisFade_FUN_004bd470(CGame *this_ptr)
 
 {
-  _DAT_01d22c84 = 0;
+  g_INT_01d22c84 = 0;
   return;
 }

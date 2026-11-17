@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005ad270(void)
 
 {
   int iVar1;
   
-  if ((_DAT_02c83370 != 0) && (_DAT_02c99318 != 0)) {
-    iVar1 = _stricmp(&DAT_006257d0,"trigl.dll");
+  if ((g_INT_02c83370 != 0) && (g_INT_02c99318 != 0)) {
+    iVar1 = _stricmp(g_CHAR_ARRAY_006257d0,"trigl.dll");
     if (iVar1 != 0) {
       engine_special_cpp_restoreVideoMode_FUN_00582310();
     }
-    ShowWindow(_DAT_02c9be68,6);
+    ShowWindow(g_HWND_02c9be68,6);
     return;
   }
   return;

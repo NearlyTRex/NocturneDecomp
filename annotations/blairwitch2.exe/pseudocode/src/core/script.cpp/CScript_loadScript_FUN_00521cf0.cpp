@@ -30,7 +30,7 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00521cf0(CScript *this_ptr,ch
   iVar3 = engine_dosio_cpp_getFileSize_FUN_00460aa0("world",filename);
   if (0 < iVar3) {
     splitpath(filename,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
-    pcVar8 = &DAT_005e2ed4;
+    pcVar8 = ".txt";
     iVar7 = -1;
     pcVar10 = local_118;
     do {
@@ -52,7 +52,7 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00521cf0(CScript *this_ptr,ch
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_00529c10(this_ptr,local_118);
-    file_handle = engine_dosio_cpp_getFile_FUN_00460c70("world",filename,&DAT_005e2ed9);
+    file_handle = engine_dosio_cpp_getFile_FUN_00460c70("world",filename,"rt");
     if (file_handle != (_FILE *)0x0) {
       lVar4 = _ftell(file_handle);
       local_14 = &this_ptr->script_text;

@@ -24,7 +24,7 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 0058682c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d4d60
+;   double g_DOUBLE_005d4d60 = 1.01000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
@@ -128,7 +128,7 @@ section .text
     SAHF                                ; 00422b86
     JBE 0x00422b1f                      ; 00422b87
         ;   XREF to: 00422b1f (CONDITIONAL_JUMP)  ; LAB_00422b1f
-    FLD double ptr [0x005d4d60]         ; 00422b89 | DAT_005d4d60
+    FLD double ptr [0x005d4d60]         ; 00422b89 | g_DOUBLE_005d4d60
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00422b8f
     FSUB double ptr [ESP]               ; 00422b92
     FLD float ptr [EAX]                 ; 00422b95

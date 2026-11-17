@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 580,
+    "complexity_score": 564,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 185,
-    "suspect_count": 35,
+    "pseudocode_lines": 184,
+    "suspect_count": 34,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -17,10 +17,9 @@
       "shadow_pointer_walk",
       "stack_ref",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 545
+    "total_lines": 544
   },
   "cross_references": [],
   "function": {
@@ -60,14 +59,14 @@
   "globals": [
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -159,16 +158,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(CPodDependencyRecord *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -176,7 +167,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 103,
       "match": "(CPodDependencyRecord *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -184,7 +175,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 127,
+      "line": 126,
       "match": "&stack0xfffff55c",
       "severity": "moderate",
       "text": "*(CPodFile **)(&stack0xfffff55c + iVar5) = pCVar2;",
@@ -192,7 +183,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 127,
+      "line": 126,
       "match": "*(CPodFile **)(&stack0xfffff55c",
       "severity": "moderate",
       "text": "*(CPodFile **)(&stack0xfffff55c + iVar5) = pCVar2;",
@@ -200,7 +191,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 151,
+      "line": 150,
       "match": "&stack0xfffff554",
       "severity": "moderate",
       "text": "if (*(CPodFile **)(&stack0xfffff554 + iVar4) == ppCStack_38[1]) {",
@@ -208,7 +199,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 151,
+      "line": 150,
       "match": "*(CPodFile **)(&stack0xfffff554",
       "severity": "moderate",
       "text": "if (*(CPodFile **)(&stack0xfffff554 + iVar4) == ppCStack_38[1]) {",
@@ -216,7 +207,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 152,
+      "line": 151,
       "match": "&stack0xfffff554",
       "severity": "moderate",
       "text": "uVar3 = (uint)*(CPodFile **)(&stack0xfffff554 + iVar4) ^ (uint)ppCStack_38[1];",
@@ -224,7 +215,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 152,
+      "line": 151,
       "match": "*(CPodFile **)(&stack0xfffff554",
       "severity": "moderate",
       "text": "uVar3 = (uint)*(CPodFile **)(&stack0xfffff554 + iVar4) ^ (uint)ppCStack_38[1];",
@@ -232,7 +223,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 181,
+      "line": 180,
       "match": "(CPod *)((int)(pCVar1 + 0xffffffff) +",
       "severity": "moderate",
       "text": "pCVar1 = (CPod *)((int)(pCVar1 + 0xffffffff) + 0x194);",
@@ -240,7 +231,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -248,7 +239,7 @@
     },
     {
       "description": "Pointer value `pCStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 97,
+      "line": 96,
       "match": "(int)pCStack_24",
       "severity": "moderate",
       "text": "iVar5 = (int)pCStack_24 << 3;",
@@ -256,7 +247,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 104,
+      "line": 103,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -264,7 +255,7 @@
     },
     {
       "description": "Pointer value `pCStack_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 119,
+      "line": 118,
       "match": "(int)pCStack_50",
       "severity": "moderate",
       "text": "if ((int)pCStack_50 < 0) {",
@@ -272,7 +263,7 @@
     },
     {
       "description": "Pointer value `&iStack_ab0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 120,
+      "line": 119,
       "match": "(int)&iStack_ab0",
       "severity": "moderate",
       "text": "*(CPodFile **)((int)&iStack_ab0 + iVar5) = pCStack_24;",
@@ -280,7 +271,7 @@
     },
     {
       "description": "Pointer value `&iStack_ab0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 124,
+      "line": 123,
       "match": "(int)&iStack_ab0",
       "severity": "moderate",
       "text": "*(CPodFile **)((int)&iStack_ab0 + iVar5) = this_ptr->pod_files[iVar4];",
@@ -288,7 +279,7 @@
     },
     {
       "description": "Pointer value `pCStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
+      "line": 145,
       "match": "(int)pCStack_24",
       "severity": "moderate",
       "text": "if (0 < (int)pCStack_24) {",
@@ -296,7 +287,7 @@
     },
     {
       "description": "Pointer value `pCStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 149,
+      "line": 148,
       "match": "(int)pCStack_24",
       "severity": "moderate",
       "text": "iStack_1c = (int)pCStack_24 * 8;",
@@ -304,7 +295,7 @@
     },
     {
       "description": "Pointer value `&iStack_ab0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 156,
+      "line": 155,
       "match": "(int)&iStack_ab0",
       "severity": "moderate",
       "text": "if (pCVar1->pod_files[0] == *(CPodFile **)((int)&iStack_ab0 + iVar4)) break;",
@@ -312,7 +303,7 @@
     },
     {
       "description": "Pointer value `pCStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 165,
+      "line": 164,
       "match": "(int)pCStack_24",
       "severity": "moderate",
       "text": "} while (iVar4 < (int)pCStack_24 * 8);",
@@ -320,7 +311,7 @@
     },
     {
       "description": "Pointer value `pCStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 167,
+      "line": 166,
       "match": "(int)pCStack_24",
       "severity": "moderate",
       "text": "if ((int)pCStack_24 <= iStack_14) break;",
@@ -328,7 +319,7 @@
     },
     {
       "description": "Pointer value `(pCVar1 + 0xffffffff)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 181,
+      "line": 180,
       "match": "(int)(pCVar1 + 0xffffffff)",
       "severity": "moderate",
       "text": "pCVar1 = (CPod *)((int)(pCVar1 + 0xffffffff) + 0x194);",
@@ -336,7 +327,7 @@
     },
     {
       "description": "Raw hex address 0x51bd35 assigned to bare local `iStack_ab0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_ab0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 116,
+      "line": 115,
       "match": "0x51bd35",
       "severity": "moderate",
       "text": "iStack_ab0 = 0x51bd35;",
@@ -344,7 +335,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x42; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -352,7 +343,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 102,
+      "line": 101,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x42; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -360,7 +351,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 120,
+      "line": 119,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(CPodFile **)((int)&iStack_ab0 + iVar5) = pCStack_24;",
@@ -368,7 +359,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 124,
+      "line": 123,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(CPodFile **)((int)&iStack_ab0 + iVar5) = this_ptr->pod_files[iVar4];",
@@ -376,7 +367,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 156,
+      "line": 155,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (pCVar1->pod_files[0] == *(CPodFile **)((int)&iStack_ab0 + iVar4)) break;",
@@ -384,7 +375,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_3c` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCStack_3c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 64,
+      "line": 63,
       "match": "pCStack_3c = (T *)pCStack_3c->ARRAY",
       "severity": "moderate",
       "text": "pCStack_3c = (CPod *)pCStack_3c->pod_files;",
@@ -392,7 +383,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 86,
+      "line": 85,
       "match": "pCVar1 = (T *)pCVar1->ARRAY",
       "severity": "moderate",
       "text": "pCVar1 = (CPod *)pCVar1->pod_files;",
@@ -400,7 +391,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_4c` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCStack_4c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 134,
+      "line": 133,
       "match": "pCStack_4c = (T *)pCStack_4c->ARRAY",
       "severity": "moderate",
       "text": "pCStack_4c = (CPod *)pCStack_4c->pod_files;",
@@ -408,7 +399,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 158,
+      "line": 157,
       "match": "pCVar1 = (T *)pCVar1->ARRAY",
       "severity": "moderate",
       "text": "pCVar1 = (CPod *)pCVar1->pod_files;",
@@ -416,7 +407,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via element-arithmetic `(int)(pCVar1 + N) + M`, where `N*sizeof(*pCVar1) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar1->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 181,
+      "line": 180,
       "match": "pCVar1 = (T *)((int)(pCVar1 + N) + M)",
       "severity": "moderate",
       "text": "pCVar1 = (CPod *)((int)(pCVar1 + 0xffffffff) + 0x194);",
@@ -424,7 +415,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_50` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCStack_50->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 185,
+      "line": 184,
       "match": "pCStack_50 = (T *)pCStack_50->ARRAY",
       "severity": "moderate",
       "text": "pCStack_50 = (CPod *)pCStack_50->pod_files;",

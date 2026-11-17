@@ -65,13 +65,13 @@
 ;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00453e77
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d0277
-;   undefined4 DAT_005d027f
-;   undefined4 DAT_005fe2f0
+;   float g_FLOAT_005d0277 = 2
+;   double g_DOUBLE_005d027f = 0.5
+;   CQuaternion4f g_CQuaternion4f_005fe2f0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01b4d268
-;   undefined4 DAT_01b4d270
-;   undefined4 DAT_01b4d290
+;   int g_INT_01b4d268
+;   int g_INT_01b4d270
+;   int g_INT_01b4d290
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
 ;   undefined4 g_CDemonLightInstance.base.base.position+8
@@ -114,7 +114,7 @@ section .text
     SUB EBP,0x82                        ; 00455d1c
     MOV EBX,dword ptr [EBP + 0x96]      ; 00455d22
     FLD float ptr [EBP + 0x9a]          ; 00455d28
-    FMUL float ptr [0x005d0277]         ; 00455d2e | DAT_005d0277
+    FMUL float ptr [0x005d0277]         ; 00455d2e | g_FLOAT_005d0277
     MOV EDX,dword ptr [EBX + 0x25758]   ; 00455d34
     FSTP float ptr [EBP + 0x7e]         ; 00455d3a
     TEST EDX,EDX                        ; 00455d3d
@@ -149,14 +149,14 @@ section .text
     JNC 0x00456276                      ; 00455d8d
         ;   XREF to: 00456276 (CONDITIONAL_JUMP)  ; LAB_00456276
     MOV dword ptr [EBX + 0x259b0],0x3f800000 ; 00455d93
-    MOV EAX,[0x01b4d268]                ; 00455d9d | DAT_01b4d268
+    MOV EAX,[0x01b4d268]                ; 00455d9d | g_INT_01b4d268
         ;   Label: LAB_00455d9d
     PUSH 0xbf860a92                     ; 00455da2
     MOV dword ptr [EBP + 0x72],EAX      ; 00455da7
-    MOV EAX,[0x01b4d270]                ; 00455daa | DAT_01b4d270
+    MOV EAX,[0x01b4d270]                ; 00455daa | g_INT_01b4d270
     LEA ESI,[EBP + -0x5e]               ; 00455daf
     MOV dword ptr [EBP + 0x7a],EAX      ; 00455db2
-    MOV EAX,[0x01b4d290]                ; 00455db5 | DAT_01b4d290
+    MOV EAX,[0x01b4d290]                ; 00455db5 | g_INT_01b4d290
     LEA EDI,[EBP + 0xfffffea2]          ; 00455dba
     MOV dword ptr [EBP + 0x6e],EAX      ; 00455dc0
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00593fe0 ; 00455dc3
@@ -261,7 +261,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00455ee1
     MOV EAX,dword ptr [EBP + 0x76]      ; 00455ee2
     FLD float ptr [EAX + 0x8]           ; 00455ee5
-    FMUL double ptr [0x005d027f]        ; 00455ee8 | DAT_005d027f
+    FMUL double ptr [0x005d027f]        ; 00455ee8 | g_DOUBLE_005d027f
     SUB ESP,0x4                         ; 00455eee
     LEA ESI,[EBP + -0x2e]               ; 00455ef1
     FSTP float ptr [ESP]                ; 00455ef4
@@ -284,7 +284,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe62]          ; 00455f22
     PUSH dword ptr [EBX + 0x259b0]      ; 00455f28
     PUSH EAX                            ; 00455f2e
-    PUSH 0x5fe2f0                       ; 00455f2f | DAT_005fe2f0
+    PUSH 0x5fe2f0                       ; 00455f2f | g_CQuaternion4f_005fe2f0
     LEA ESI,[EBP + -0x1e]               ; 00455f34
     LEA EDI,[EBP + 0xfffffe62]          ; 00455f37
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00455f3d
@@ -417,7 +417,7 @@ section .text
     MOV dword ptr [EBP + 0x36],EDI      ; 004560a5
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004560a8
         ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x01b4d290]      ; 004560ad | DAT_01b4d290
+    MOV ESI,dword ptr [0x01b4d290]      ; 004560ad | g_INT_01b4d290
     LEA EAX,[ESI*0x4 + 0x0]             ; 004560b3
     SUB EAX,ESI                         ; 004560ba
     SHL EAX,0x4                         ; 004560bc

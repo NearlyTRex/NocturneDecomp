@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *this_ptr)
 
 {
@@ -55,8 +53,9 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
   CWayPoint *pCVar7;
   
   bVar4 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
-  if (((iVar1 == 0) && (*(int *)(0x01D182F0 + 0x1008) == 0)) &&
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
+  if (((iVar1 == 0) && (g_CDemonMission_PTR_00618170->is_in_editor == 0)) &&
      (g_CGameHookPtr->debug_waypoint_display != 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,unaff_EBX);
@@ -74,10 +73,10 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
     afStack_24[(uint)bVar4 * -2 + 2] = afStack_24[(uint)bVar4 * -2 + -1];
     afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 3] =
          afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2];
-    CStack_78.y = (int)(afStack_24[1] * _DAT_005ee107);
-    CStack_78.z = (int)(afStack_24[2] * _DAT_005ee107);
-    afStack_6c[0] = afStack_24[3] * _DAT_005ee107;
-    fStack_14 = afStack_24[1] * _DAT_005ee107;
+    CStack_78.y = (int)(afStack_24[1] * 0.5f);
+    CStack_78.z = (int)(afStack_24[2] * 0.5f);
+    afStack_6c[0] = afStack_24[3] * 0.5f;
+    fStack_14 = afStack_24[1] * 0.5f;
     afStack_24[(uint)bVar4 * -2 + 5] = afStack_6c[(uint)bVar4 * -2 + -1];
     afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 6] =
          afStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2];
@@ -86,11 +85,11 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
       CStack_90.z = fStack_10;
       fStack_84 = fStack_c;
     }
-    CStack_c8.x = (int)ROUND(CStack_90.y * _DAT_005fde10);
-    CStack_c8.y = (int)ROUND(CStack_90.z * _DAT_005fde10);
-    CStack_c8.z = (int)ROUND(fStack_84 * _DAT_005fde10);
+    CStack_c8.x = (int)ROUND(CStack_90.y * 256.0f);
+    CStack_c8.y = (int)ROUND(CStack_90.z * 256.0f);
+    CStack_c8.z = (int)ROUND(fStack_84 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-              (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_c8);
+              (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_c8);
     pfVar5 = (float *)0x0;
     if (0 < this_ptr->num_adjacent_waypoints) {
       pfStack_8 = &stack0xffffff2c;
@@ -98,7 +97,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
       do {
         this_ptr_00 = pCVar7->adjacency[0].waypoint;
         if (this_ptr <= this_ptr_00) {
-          _DAT_01c35e60 = 2;
+          g_INT_01c35e60 = 2;
           (*((this_ptr_00->base).base.vtable._ub)->getBoundingBox)
                     ((CDemonActor *)this_ptr_00,unaff_EDI);
           puVar2 = (uint *)&stack0xfffffee0;
@@ -116,10 +115,10 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
           afStack_a4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
                afStack_5c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
           pCVar6 = &CStack_9c;
-          fStack_48 = fStack_a8 * _DAT_005ee107;
-          afStack_44[0] = afStack_a4[0] * _DAT_005ee107;
-          afStack_44[1] = afStack_a4[1] * _DAT_005ee107;
-          CStack_9c.x = fStack_a8 * _DAT_005ee107;
+          fStack_48 = fStack_a8 * 0.5f;
+          afStack_44[0] = afStack_a4[0] * 0.5f;
+          afStack_44[1] = afStack_a4[1] * 0.5f;
+          CStack_9c.x = fStack_a8 * 0.5f;
           *(float *)((int)&CStack_9c + (uint)bVar4 * -8 + 4) = afStack_44[(uint)bVar4 * -2];
           *(float *)((int)&CStack_9c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                afStack_44[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
@@ -142,11 +141,12 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
             fStack_b0 = afStack_44[3];
             fStack_ac = fStack_34;
           }
-          CStack_78.x = (int)ROUND(fStack_b4 * _DAT_005fde10);
-          CStack_78.y = (int)ROUND(fStack_b0 * _DAT_005fde10);
-          CStack_78.z = (int)ROUND(fStack_ac * _DAT_005fde10);
+          CStack_78.x = (int)ROUND(fStack_b4 * 256.0f);
+          CStack_78.y = (int)ROUND(fStack_b0 * 256.0f);
+          CStack_78.z = (int)ROUND(fStack_ac * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_78);
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,
+                     &CStack_78);
           unaff_EDI = (CBoundingBox3D *)0x0;
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,1);
         }

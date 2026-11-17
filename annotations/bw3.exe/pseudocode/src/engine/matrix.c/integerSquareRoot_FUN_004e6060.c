@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_matrix_c_integerSquareRoot_FUN_004e6060(int value)
 
 {
   int iVar1;
   
   if (value < 1) {
-    _DAT_01d71de0 = "..\\engine\\matrix.c";
-    _DAT_01d71de4 = 0x391;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
+    g_INT_01d71de4 = 0x391;
     core_main_c_displayErrorAndQuit_FUN_004e4330("sqrt out of domain!");
   }
   iVar1 = value / 200 + 2;

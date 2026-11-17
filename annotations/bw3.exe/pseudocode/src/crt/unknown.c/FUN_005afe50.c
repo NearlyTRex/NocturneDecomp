@@ -2,13 +2,13 @@
 // Address: 005afe50
 // Address Range: [[005afe50, 005afe5a]]
 // Convention: unknown
-// Signature: undefined4 crt_unknown_c_FUN_005afe50(void)
+// Signature: int crt_unknown_c_FUN_005afe50(void)
 
 #include "nocturne.h"
 
-uint FUN_005afe50(void)
+int FUN_005afe50(void)
 
 {
   FUN_005afddc();
-  return DAT_00607e80;
+  return g_INT_00607e80;
 }

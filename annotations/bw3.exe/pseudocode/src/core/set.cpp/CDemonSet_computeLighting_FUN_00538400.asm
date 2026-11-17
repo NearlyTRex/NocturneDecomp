@@ -21,16 +21,16 @@
 ;   core_weather.cpp_CWeather_renderParticles_FUN_0057c890 at 0057caf1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b014
-;   undefined4 DAT_0060b034
-;   undefined4 DAT_0060b038
-;   undefined4 DAT_0060b03c
-;   undefined4 DAT_0060b064
-;   undefined4 DAT_0060b068
-;   undefined4 DAT_0060b06c
-;   undefined4 DAT_0060b094
-;   undefined4 DAT_0060b098
-;   undefined4 DAT_0060b09c
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_0060b014
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].r
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].g
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].b
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[1].r
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[1].g
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[1].b
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[2].r
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[2].g
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[2].b
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_005380a0
@@ -59,7 +59,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00538425
     LEA EAX,[EDX*0x4 + 0x0]             ; 00538429
     SUB EAX,EDX                         ; 00538430
-    MOV EDX,0x60b014                    ; 00538432 | DAT_0060b014
+    MOV EDX,0x60b014                    ; 00538432 | g_SRenderVertex_ARRAY_0060b014
     SHL EAX,0x4                         ; 00538437
     ADD EDX,EAX                         ; 0053843a
     DEC EBX                             ; 0053843c
@@ -67,15 +67,15 @@ section .text
     TEST EBX,EBX                        ; 00538440
     JLE 0x00538460                      ; 00538442
         ;   XREF to: 00538460 (CONDITIONAL_JUMP)  ; LAB_00538460
-    MOV ECX,dword ptr [EDX + 0x20]      ; 00538444 | DAT_0060b034
+    MOV ECX,dword ptr [EDX + 0x20]      ; 00538444 | g_SRenderVertex_ARRAY_0060b014[0].r
         ;   Label: LAB_00538444
-    MOV dword ptr [EAX + 0x20],ECX      ; 00538447 | DAT_0060b064 | DAT_0060b094
-    MOV ECX,dword ptr [EDX + 0x24]      ; 0053844a | DAT_0060b038
-    MOV dword ptr [EAX + 0x24],ECX      ; 0053844d | DAT_0060b068 | DAT_0060b098
+    MOV dword ptr [EAX + 0x20],ECX      ; 00538447 | g_SRenderVertex_ARRAY_0060b014[1].r | g_SRenderVertex_ARRAY_0060b014[2].r
+    MOV ECX,dword ptr [EDX + 0x24]      ; 0053844a | g_SRenderVertex_ARRAY_0060b014[0].g
+    MOV dword ptr [EAX + 0x24],ECX      ; 0053844d | g_SRenderVertex_ARRAY_0060b014[1].g | g_SRenderVertex_ARRAY_0060b014[2].g
     ADD EAX,0x30                        ; 00538450
-    MOV ECX,dword ptr [EDX + 0x28]      ; 00538453 | DAT_0060b03c
+    MOV ECX,dword ptr [EDX + 0x28]      ; 00538453 | g_SRenderVertex_ARRAY_0060b014[0].b
     DEC EBX                             ; 00538456
-    MOV dword ptr [EAX + -0x8],ECX      ; 00538457 | DAT_0060b06c | DAT_0060b09c
+    MOV dword ptr [EAX + -0x8],ECX      ; 00538457 | g_SRenderVertex_ARRAY_0060b014[1].b | g_SRenderVertex_ARRAY_0060b014[2].b
     TEST EBX,EBX                        ; 0053845a
     JG 0x00538444                       ; 0053845c
         ;   XREF to: 00538444 (CONDITIONAL_JUMP)  ; LAB_00538444

@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005dff86
 ;   TerminatedCString s_hputbuf_Not_Supported_ye_005dff97
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -44,8 +44,8 @@ section .text
     MOV ECX,0x5dff86                    ; 00504e50 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x320                       ; 00504e55
     PUSH 0x5dff97                       ; 00504e5a | = "hputbuf - Not Supported yet!!  File: %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00504e5f | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00504e65 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00504e5f | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00504e65 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00504e6b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00504e70

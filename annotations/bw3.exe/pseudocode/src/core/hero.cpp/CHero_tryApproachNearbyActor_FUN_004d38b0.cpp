@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_ptr)
 
 {
@@ -49,9 +47,9 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_
     *(float *)((int)&local_74 + (uint)bVar3 * -8 + 4) = local_88[(uint)bVar3 * -2];
     *(float *)((int)&local_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          local_88[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    if (((ABS(local_74.y) <= (float)_DAT_005c4db5) &&
+    if (((ABS(local_74.y) <= (float)10) &&
         (local_74.y = 0.0,
-        SQRT(local_74.z * local_74.z + local_74.x * local_74.x) <= (float)_DAT_005c4db5)) &&
+        SQRT(local_74.z * local_74.z + local_74.x * local_74.x) <= (float)10)) &&
        (this_ptr_00 != this_ptr)) {
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_74,&local_50);
       afStack_64[2] = local_50.x;
@@ -60,7 +58,7 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_
            *(float *)((int)&local_50 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
       local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                            (afStack_64[3] - (this_ptr->base).base.orient.vec.y);
-      if (ABS(local_18) <= (float)_DAT_005c4dbd) {
+      if (ABS(local_18) <= (float)1.04719755116667) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                   ((CDemonActor *)this_ptr_00,local_1c,&local_80);
         local_44 = local_80.x;
@@ -83,7 +81,7 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_
                  *(float *)((int)&CStack_98 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
             fVar1 = fStack_68 - ((CVector3f *)&local_1c->x)->x;
             fVar2 = afStack_64[1] - local_1c->z;
-            if (SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)_DAT_005c4dc5) {
+            if (SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5) {
               this_ptr->hero_action_range = 0.0;
               this_ptr->hero_action = 10;
               this_ptr->hero_action_actor = (CDemonActor *)this_ptr_00;

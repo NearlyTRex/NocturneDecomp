@@ -12,7 +12,7 @@
 ;   core_weather.cpp_CWeather_update_FUN_005ae190 at 005ae24c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc010c
+;   int g_INT_01cc010c
 ;   undefined4 g_RainDropPool[0].base.lifetime_remaining
 ;   undefined4 g_RainDropPool[0].base.vtable
 ;
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 004b7320
         ;   Label: core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320
     PUSH ESI                            ; 004b7321
-    MOV EBX,dword ptr [0x01cc010c]      ; 004b7322 | DAT_01cc010c
+    MOV EBX,dword ptr [0x01cc010c]      ; 004b7322 | g_INT_01cc010c
     MOV ECX,dword ptr [ESP + 0x14]      ; 004b7328
     MOV ESI,dword ptr [ESP + 0x10]      ; 004b732c
     MOV EAX,EBX                         ; 004b7330
@@ -34,7 +34,7 @@ section .text
     PUSH EAX                            ; 004b733c
     MOV EDX,dword ptr [EAX + 0x3c]      ; 004b733d | g_RainDropPool[0].base.vtable
     CALL dword ptr [EDX]                ; 004b7340
-    MOV EBX,dword ptr [0x01cc010c]      ; 004b7342 | DAT_01cc010c
+    MOV EBX,dword ptr [0x01cc010c]      ; 004b7342 | g_INT_01cc010c
     MOV EAX,EBX                         ; 004b7348
     SHL EAX,0x6                         ; 004b734a
     ADD EAX,0x1cc0110                   ; 004b734d
@@ -45,7 +45,7 @@ section .text
     JL 0x004b7367                       ; 004b7363
         ;   XREF to: 004b7367 (CONDITIONAL_JUMP)  ; LAB_004b7367
     XOR EBX,EBX                         ; 004b7365
-    MOV dword ptr [0x01cc010c],EBX      ; 004b7367 | DAT_01cc010c
+    MOV dword ptr [0x01cc010c],EBX      ; 004b7367 | g_INT_01cc010c
         ;   Label: LAB_004b7367
     POP ESI                             ; 004b736d
     POP EBX                             ; 004b736e

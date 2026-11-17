@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   controller_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9d294
+;   int g_INT_02c9d294
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_pollControllerWrapper_FUN_005b4450
@@ -27,7 +27,7 @@ section .text
     SUB EAX,ECX                         ; 005b4418
     XOR EDX,EDX                         ; 005b441a
     SHL EAX,0x4                         ; 005b441c
-    MOV dword ptr [0x02c9d294],EDX      ; 005b441f | DAT_02c9d294
+    MOV dword ptr [0x02c9d294],EDX      ; 005b441f | g_INT_02c9d294
     LEA EDX,[EAX + 0x30]                ; 005b4425
     ADD EAX,0xc                         ; 005b4428
         ;   Label: LAB_005b4428

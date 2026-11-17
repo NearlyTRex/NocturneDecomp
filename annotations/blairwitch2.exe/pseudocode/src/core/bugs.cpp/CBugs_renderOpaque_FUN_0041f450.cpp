@@ -32,7 +32,8 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_0041f450(CBugs *this_ptr)
   
   bVar4 = 0;
   if ((this_ptr->base).base.render_active == 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                      (g_CDemonRenderer_PTR_0060b280);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
       (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
@@ -55,7 +56,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_0041f450(CBugs *this_ptr)
           do {
             pSStack_8 = pSStack_c + iVar1;
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                      (DAT_0060b280,euler_angles,translation);
+                      (g_CDemonRenderer_PTR_0060b280,euler_angles,translation);
             fStack_2c = (this_ptr->base).base.base.location.position.x + translation->x;
             afStack_28[0] = (this_ptr->base).base.base.location.position.y + translation->y;
             afStack_28[1] = (this_ptr->base).base.base.location.position.z + translation->z;
@@ -69,7 +70,8 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_0041f450(CBugs *this_ptr)
               CStack_20.z = CStack_38.z;
             }
             core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_005344f0(g_CDemonSetPtr,&CStack_20);
-            engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
+            engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+                      (g_CDemonRenderer_PTR_0060b280,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
                       (pCStack_10 + pSStack_8->model_index,0.0,0x2e7);
             engine_drender_cpp_pop_FUN_0046b4a0();

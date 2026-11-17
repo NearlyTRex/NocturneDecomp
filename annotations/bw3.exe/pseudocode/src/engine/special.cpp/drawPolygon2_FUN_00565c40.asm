@@ -18,14 +18,14 @@
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0 at 00516486
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_02cf6024
+;   int g_INT_01c6cee8
+;   void* g_PTR_02cf6024
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c6cee8],0x0      ; 00565c40 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 00565c40 | g_INT_01c6cee8
         ;   Label: engine_special.cpp_drawPolygon2_FUN_00565c40
     JNZ 0x00565c4c                      ; 00565c47
         ;   XREF to: 00565c4c (CONDITIONAL_JUMP)  ; LAB_00565c4c
@@ -40,7 +40,7 @@ section .text
     PUSH EBX                            ; 00565c57
     MOV ESI,dword ptr [ESP + 0x14]      ; 00565c58
     PUSH ESI                            ; 00565c5c
-    CALL dword ptr [0x02cf6024]         ; 00565c5d | DAT_02cf6024
+    CALL dword ptr [0x02cf6024]         ; 00565c5d | g_PTR_02cf6024
     ADD ESP,0xc                         ; 00565c63
     POP EBX                             ; 00565c66
     POP ESI                             ; 00565c67

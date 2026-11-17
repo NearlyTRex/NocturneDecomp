@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_health_cpp_CHealthItemSmall_getActorType_FUN_004d2170(CHealthItemSmall *this_ptr)
 
 {
-  return (CDemonActorType *)0x1d5b9b8;
+  return &g_CDemonActorType_01d5b9b8;
 }

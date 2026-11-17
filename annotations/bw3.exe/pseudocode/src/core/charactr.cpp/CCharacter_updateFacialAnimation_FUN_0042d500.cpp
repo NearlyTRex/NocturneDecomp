@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042d500(CCharacter *this_ptr)
 
 {
@@ -19,7 +17,8 @@ void __cdecl core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042d500(CCh
   float fVar5;
   uint uVar6;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if ((iVar3 != 0) || (this_ptr->head_part_index == -1)) {
     return;
   }
@@ -27,26 +26,26 @@ void __cdecl core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042d500(CCh
                           (&this_ptr->model);
   if (this_ptr->head_part_index == -2) {
     iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                      (this_ptr_00,&DAT_005b8276,0);
+                      (this_ptr_00,"head",0);
     this_ptr->head_part_index = iVar3;
     if (iVar3 == -1) {
       return;
     }
     iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                      (this_ptr_00,&DAT_005b827b,0);
+                      (this_ptr_00,"m1",0);
     this_ptr->mouth_parts[0] = iVar3;
     if (iVar3 == -1) {
       this_ptr->head_part_index = -1;
       return;
     }
     iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                      (this_ptr_00,&DAT_005b827e,1);
+                      (this_ptr_00,"m2",1);
     this_ptr->mouth_parts[1] = iVar3;
     iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                      (this_ptr_00,&DAT_005b8281,1);
+                      (this_ptr_00,"m3",1);
     this_ptr->mouth_parts[2] = iVar3;
     iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                      (this_ptr_00,&DAT_005b8284,1);
+                      (this_ptr_00,"m4",1);
     this_ptr->mouth_parts[3] = iVar3;
     iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                       (this_ptr_00,"e1_left",0);
@@ -85,7 +84,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042d500(CCh
     pCVar4 = (CCharacter *)((pCVar4->base).actor_name + 4);
     (this_ptr->model).part_data.visibility_flags[*piVar1] = 0;
   } while (pCVar4 != (CCharacter *)((this_ptr->base).actor_name + 0x10));
-  fVar2 = (float)_DAT_01c5fad0 * _DAT_005b82ce;
+  fVar2 = (float)g_INT_01c5fad0 * 1.525879e-05f;
   this_ptr->blink_timer = this_ptr->blink_timer - fVar2;
   if (this_ptr->is_blinking == 1) {
     if (this_ptr->blink_timer <= 0.0) {

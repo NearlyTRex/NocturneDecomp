@@ -32,18 +32,20 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_0041ef50(CBugs *this_ptr)
   this_ptr_00[-0xffffffff00000044].model_name[0x73] = '\0';
   memset(this_ptr_00[-0x44].model_name + 0x74,0,0x6400);
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x3;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5cc90d);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (this_ptr_00 + 1,(char *)0x5cc917);
+            (this_ptr_00,"roach.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (this_ptr_00 + 2,(char *)0x5cc922);
+            (this_ptr_00 + 1,"hroach.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
+            (this_ptr_00 + 2,"mroach.kfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)(this_ptr_00[-0xf6].model_name + 0x60),(char *)0x5cc92d);
+            ((CDeformableModelInstance *)(this_ptr_00[-0xf6].model_name + 0x60),"guul.dfm")
+  ;
   this_ptr_00[5].model_name[0x4c] = '\0';
   this_ptr_00[5].model_name[0x4d] = '\0';
   this_ptr_00[5].model_name[0x4e] = '\0';
   this_ptr_00[5].model_name[0x4f] = '\0';
-  pcVar4 = (char *)0x5cc936;
+  pcVar4 = "true";
   this_ptr_00[5].model_name[0x50] = '\0';
   this_ptr_00[5].model_name[0x51] = '\0';
   this_ptr_00[5].model_name[0x52] = '\0';
@@ -66,7 +68,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_0041ef50(CBugs *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = (char *)0x5cc93b;
+  pcVar4 = "true";
   pcVar5 = this_ptr_00[0x4f].model_name + 0x80;
   this_ptr_00[0x4f].model_name[0x18] = '\0';
   this_ptr_00[0x4f].model_name[0x19] = '\0';

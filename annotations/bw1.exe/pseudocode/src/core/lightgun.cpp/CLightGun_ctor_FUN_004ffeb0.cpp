@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004ffeb0(CLightGun *this_ptr)
 
 {
@@ -28,9 +26,9 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004ffeb0(CLightGun *thi
   (pCVar3->base).bolt_velocity = 32.0;
   (pCVar3->base).fire_cooldown = 0;
   *(uint *)&pCVar3->field_0x58c = 1;
-  fVar1 = _DAT_0060300c;
+  fVar1 = 8.0f;
   (pCVar3->base).can_attach_light = 1;
-  fVar2 = _DAT_00603010;
+  fVar2 = 2.0f;
   pCVar3->hit_enemy = 0;
   pCVar3->charge_ratio = 1.0;
   (pCVar3->base).weight = fVar1;

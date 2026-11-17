@@ -12,7 +12,7 @@
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   blend_callback
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2529
+;   double g_DOUBLE_005f2529 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
@@ -34,7 +34,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0xd4]      ; 00569448
     MOV EBX,dword ptr [ESP + 0xd8]      ; 0056944f
     FLD float ptr [ESP + 0xdc]          ; 00569456
-    FCOMP double ptr [0x005f2529]       ; 0056945d | DAT_005f2529
+    FCOMP double ptr [0x005f2529]       ; 0056945d | g_DOUBLE_005f2529
     FNSTSW AX                           ; 00569463
     SAHF                                ; 00569465
     JA 0x00569471                       ; 00569466

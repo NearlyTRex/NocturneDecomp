@@ -11,7 +11,7 @@
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c287
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cfd798
+;   int g_INT_02cfd798
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
         ;   Label: core_toxhand.cpp_CTheHand_getHandBoneMatrix_FUN_0056cbd0
     SUB ESP,0x30                        ; 0056cbd1
     MOV EDX,ESI                         ; 0056cbd4
-    MOV ECX,dword ptr [0x02cfd798]      ; 0056cbd6 | DAT_02cfd798
+    MOV ECX,dword ptr [0x02cfd798]      ; 0056cbd6 | g_INT_02cfd798
     LEA EAX,[ECX*0x4 + 0x0]             ; 0056cbdc
     SUB EAX,ECX                         ; 0056cbe3
     MOV ECX,dword ptr [ESP + 0x38]      ; 0056cbe5

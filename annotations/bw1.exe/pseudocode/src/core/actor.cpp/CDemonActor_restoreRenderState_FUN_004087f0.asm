@@ -20,8 +20,8 @@
 ;   ... and 56 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   engine_drender.cpp_pop_FUN_004839a0
@@ -30,9 +30,9 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x00612560]      ; 004087f0 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 004087f0 | g_CDemonRenderer_PTR_00612560
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
-    PUSH EDX                            ; 004087f6 | DAT_01bc120c
+    PUSH EDX                            ; 004087f6 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_pop_FUN_004839a0 ; 004087f7
         ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004087fc

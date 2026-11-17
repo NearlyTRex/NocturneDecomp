@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 186,
+    "complexity_score": 74,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 11,
+    "pseudocode_lines": 59,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 214
+    "total_lines": 212
   },
   "cross_references": [
     {
@@ -115,32 +113,32 @@
     },
     {
       "addr": "007bc034",
-      "name": "DAT_007bc034",
-      "type": "undefined4",
+      "name": "g_FILE_PTR_007bc034",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "007bc038",
-      "name": "DAT_007bc038",
-      "type": "undefined4",
+      "name": "g_INT_007bc038",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007bc03c",
-      "name": "DAT_007bc03c",
-      "type": "undefined4",
+      "name": "g_CDemonActor_PTR_007bc03c",
+      "type": "CDemonActor*",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -282,88 +280,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "uVar3 = DAT_007bc03c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "uVar2 = DAT_007bc038;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "local_14 = DAT_007bc034;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "DAT_007bc034 = file_handle;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "DAT_007bc038 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "DAT_007bc03c = this_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "DAT_007bc03c = (CDemonActor *)uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "DAT_007bc038 = uVar2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "DAT_007bc034 = (_FILE *)local_14;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 30,
+      "line": 27,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

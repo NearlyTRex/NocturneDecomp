@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride)
 
 {
   short *psVar1;
   float fVar2;
-  longlong lVar3;
-  int iVar4;
+  int iVar3;
+  longlong lVar4;
   int iVar5;
   int iVar6;
   SMRGLHeaderPrimitive *pSVar7;
@@ -32,17 +30,19 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
   
   bVar10 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_00603e44);
+            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_00603e44);
   if (g_CGamePtr->render_mode == 2) {
-    alpha = DAT_005fba38 << 8;
+    alpha = g_INT_005fba38 << 8;
   }
   else {
-    lVar3 = (longlong)(0xffff - _DAT_01c6e24c) * (longlong)alpha;
+    lVar4 = (longlong)(0xffff - g_INT_01c6e24c) * (longlong)alpha;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-              (DAT_005f2afc,(uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
+              (g_CDemonRenderer_PTR_005f2afc,
+               (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,0);
   }
-  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0(DAT_005f2afc,&local_20);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0
+            (g_CDemonRenderer_PTR_005f2afc,&local_20);
   local_14 = 0;
   if (0 < count) {
     do {
@@ -58,14 +58,15 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
         iVar8 = 0;
         iVar6 = 0;
         do {
-          iVar4 = *(int *)((int)&SStack_f4.vertices[0].vertex_index + iVar8) * 0xc;
+          iVar3 = *(int *)((int)&SStack_f4.vertices[0].vertex_index + iVar8);
           iVar8 = iVar8 + 0xc;
           iVar5 = iVar5 + 1;
-          local_2c = (int)ROUND(*(float *)(&DAT_020d4f70 + iVar4));
-          fVar2 = *(float *)(&DAT_020d4f74 + iVar4);
+          local_2c = (int)ROUND(g_CVector3f_ARRAY_020d4f70[iVar3].x);
+          fVar2 = g_CVector3f_ARRAY_020d4f70[iVar3].y;
           local_28 = (int)ROUND(fVar2);
-          local_24 = (int)ROUND(*(float *)(&DAT_020d4f78 + iVar4));
-          *(int *)((int)&local_6c + iVar6) = (int)ROUND(*(float *)(&DAT_020d4f70 + iVar4)) + 0x8000;
+          local_24 = (int)ROUND(g_CVector3f_ARRAY_020d4f70[iVar3].z);
+          *(int *)((int)&local_6c + iVar6) =
+               (int)ROUND(g_CVector3f_ARRAY_020d4f70[iVar3].x) + 0x8000;
           *(int *)((int)&SStack_f4.vertices[4].vertex_index + iVar6) = 0x8000 - (int)ROUND(fVar2);
           iVar6 = iVar6 + 4;
         } while (iVar5 < SStack_f4.base.base.count);
@@ -108,11 +109,11 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
       }
       if (alpha < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0
-                  (DAT_005f2afc,&SStack_f4);
+                  (g_CDemonRenderer_PTR_005f2afc,&SStack_f4);
       }
       else {
         engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20
-                  (DAT_005f2afc,&SStack_f4);
+                  (g_CDemonRenderer_PTR_005f2afc,&SStack_f4);
       }
       local_14 = local_14 + 1;
       prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);

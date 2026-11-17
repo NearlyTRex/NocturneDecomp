@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046e2d0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 {
   int iVar1;
-  int *piVar2;
+  CDemonRenderer *pCVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
@@ -22,31 +20,31 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046e2d0(SMRGLSkyTexture
   CVector3i *input;
   float local_48;
   
-  piVar2 = DAT_0060b280;
+  pCVar2 = g_CDemonRenderer_PTR_0060b280;
   if (v_coord == 0) {
     local_48 = 0.019634955;
   }
   else {
-    local_48 = (float)v_coord * _DAT_005d1913 * _DAT_005d1903 * (float)_DAT_005d191b;
+    local_48 = (float)v_coord * 0.25f * 3.141593f * (float)0.5;
   }
   fVar3 = (float10)fsin((float10)local_48);
-  fVar4 = (float10)((float)u_coord * _DAT_005d18ff * _DAT_005d1903 * (float)_DAT_005d190b) +
-          (float10)(float)sky_texture[1].base.count;
+  fVar4 = (float10)((float)u_coord * 0.0625f * 3.141593f * (float)2)
+          + (float10)(float)sky_texture[1].base.count;
   fVar5 = (float10)fsin(fVar4);
   fVar6 = (float10)fcos((float10)local_48);
   fVar4 = (float10)fcos(fVar4);
-  fVar7 = (float10)_DAT_0060d1f4;
-  fVar8 = (float10)_DAT_005d1923;
+  fVar7 = (float10)g_FLOAT_0060d1f4;
+  fVar8 = (float10)256;
   round((double)(fVar3 * fVar7 * fVar8));
   round((double)(fVar5 * fVar7 * (float10)(double)fVar6 * fVar8));
   input = (CVector3i *)0x46e3aa;
   round((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            ((SProjectedVertex *)(*piVar2 + vertex_index * 0x30),input);
+            (&pCVar2->vertex_buffer_ptr[vertex_index].projected_vertex,input);
   iVar1 = (sky_texture->base).type;
-  (&DAT_00622034)[vertex_index * 0xc] = iVar1;
-  (&DAT_00622038)[vertex_index * 0xc] = iVar1;
-  (&DAT_0062203c)[vertex_index * 0xc] = iVar1;
-  (&DAT_00622040)[vertex_index * 0xc] = 0;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].r = iVar1;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].g = iVar1;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].b = iVar1;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].a = 0;
   return;
 }

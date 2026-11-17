@@ -15,32 +15,23 @@ CDemonActorType g_CZombieCowClassInfo = {};
 CDemonActorType g_CCrateClassInfo = {};
 CDemonActorType g_CCrossbowClassInfo = {};
 
-// undefined1
-undefined1 DAT_007c0310 = {};
-undefined1 DAT_007c0340 = {};
-undefined1 DAT_007c0f10 = {};
+// SRenderVertex[16]
+SRenderVertex g_SRenderVertex_ARRAY_007c030c[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007c090c[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007c0f0c[16] = {};
 
-// undefined4
-undefined4 DAT_007c030c = {};
-undefined4 DAT_007c0314 = {};
-undefined4 DAT_007c033c = {};
-undefined4 DAT_007c0344 = {};
-undefined4 DAT_007c090c = {};
-undefined4 DAT_007c0910 = {};
-undefined4 DAT_007c0914 = {};
-undefined4 DAT_007c093c = {};
-undefined4 DAT_007c0940 = {};
-undefined4 DAT_007c0944 = {};
-undefined4 DAT_007c0f0c = {};
-undefined4 DAT_007c0f14 = {};
-undefined4 DAT_007c0f40 = {};
-undefined4 DAT_007c0f44 = {};
-undefined4 DAT_007c150c = {};
-undefined4 DAT_007c254c = {};
-undefined4 DAT_007c2554 = {};
-undefined4 DAT_007c2560 = {};
-undefined4 DAT_007c2568 = {};
-undefined4 DAT_007c256c = {};
-undefined4 DAT_007c2578 = {};
-undefined4 DAT_007c2580 = {};
+// char[500000]
+char g_CHAR_ARRAY_007c26b0[500000] = {};
+
+// int
+int g_INT_007c254c = {};
+int g_INT_007c2554 = {};
+int g_INT_007c2560 = {};
+int g_INT_007c2568 = {};
+int g_INT_007c256c = {};
+int g_INT_007c2578 = {};
+int g_INT_007c2580 = {};
+
+// int[17]
+int g_INT_ARRAY_007c150c[17] = {};
 

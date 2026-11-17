@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 72,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 66
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
   },
   "cross_references": [
     {
@@ -45,25 +42,25 @@
   "globals": [
     {
       "addr": "005e3bc0",
-      "name": "DAT_005e3bc0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e3bc0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0060b034",
-      "name": "DAT_0060b034",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b038",
-      "name": "DAT_0060b038",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b03c",
-      "name": "DAT_0060b03c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].b",
       "type": "undefined4",
       "value": null
     }
@@ -198,38 +195,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0060b034",
-      "severity": "mild",
-      "text": "iVar1 = DAT_0060b034;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0060b03c",
-      "severity": "mild",
-      "text": "iVar2 = DAT_0060b03c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0060b038",
-      "severity": "mild",
-      "text": "(this_ptr->mirror_cached_color).g = DAT_0060b038;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

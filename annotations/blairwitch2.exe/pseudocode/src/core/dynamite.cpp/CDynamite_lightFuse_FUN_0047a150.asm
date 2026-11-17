@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fuse_wav_005d1e57
-;   undefined4 DAT_005f5bac
+;   float g_FLOAT_005f5bac = 3.5
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -29,7 +29,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x6c]      ; 0047a154
     PUSH 0x5d1e57                       ; 0047a158 | = "fuse.wav"
     LEA EAX,[ESP + 0x4]                 ; 0047a15d
-    FLD float ptr [0x005f5bac]          ; 0047a161 | DAT_005f5bac
+    FLD float ptr [0x005f5bac]          ; 0047a161 | g_FLOAT_005f5bac
     PUSH EAX                            ; 0047a167
     FSTP float ptr [EBX + 0x6d4]        ; 0047a168
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0047a16e

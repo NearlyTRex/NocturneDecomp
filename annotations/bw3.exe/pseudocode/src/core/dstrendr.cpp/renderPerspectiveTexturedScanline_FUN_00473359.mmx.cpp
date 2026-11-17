@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_00473359(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
@@ -25,44 +23,44 @@ __asm {
         jle LAB_00473440
         lea EBX,[EBX + EAX*0x4]
         shl ECX,0x2
-        mov dword ptr [DAT_005f4ac4],ECX
-        mov dword ptr [DAT_005f4ac0],EBX
+        mov dword ptr [g_INT_005f4ac4],ECX
+        mov dword ptr [g_PTR_005f4ac0],EBX
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c6b5d4]
-        mov dword ptr [DAT_005f4a98],EBX
-        mov dword ptr [DAT_005f4ab4],EDX
+        mov dword ptr [g_UINT_005f4a98],EBX
+        mov dword ptr [g_INT_005f4ab4],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c6b5d4]
-        mov dword ptr [DAT_005f4a9c],EBX
-        mov dword ptr [DAT_005f4ab8],EDX
-        mov ECX,dword ptr [DAT_005f4a98]
-        mov EDX,dword ptr [DAT_005f4a9c]
+        mov dword ptr [g_UINT_005f4a9c],EBX
+        mov dword ptr [g_INT_005f4ab8],EDX
+        mov ECX,dword ptr [g_UINT_005f4a98]
+        mov EDX,dword ptr [g_UINT_005f4a9c]
         mov EDI,0x0
     LAB_004733d5:
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [DAT_00604df8]
-        psrlq MM2,qword ptr [DAT_00604e18]
-        pand MM0,qword ptr [DAT_00604e38]
-        pand MM2,qword ptr [DAT_00604e58]
+        psrlq MM0,qword ptr [g_QWORD_00604df8]
+        psrlq MM2,qword ptr [g_QWORD_00604e18]
+        pand MM0,qword ptr [g_QWORD_00604e38]
+        pand MM2,qword ptr [g_QWORD_00604e58]
         paddd MM0,MM2
         movd EBX,MM0
         shl EBX,0x2
-        add EBX,dword ptr [DAT_01c6ced0]
+        add EBX,dword ptr [g_UCHAR_PTR_01c6ced0]
         movd MM0,dword ptr [EBX]
-        mov EBX,dword ptr [DAT_005f4ac0]
+        mov EBX,dword ptr [g_PTR_005f4ac0]
         add EBX,EDI
         movd dword ptr [EBX],MM0
         add EDI,0x4
-        cmp EDI,dword ptr [DAT_005f4ac4]
+        cmp EDI,dword ptr [g_INT_005f4ac4]
         jnc LAB_00473440
-        add ECX,dword ptr [DAT_005f4ab4]
+        add ECX,dword ptr [g_INT_005f4ab4]
         paddw MM5,MM6
-        add EDX,dword ptr [DAT_005f4ab8]
+        add EDX,dword ptr [g_INT_005f4ab8]
         movq MM0,MM5
         jmp LAB_004733d5
     LAB_00473440:

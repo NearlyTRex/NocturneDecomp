@@ -7,9 +7,9 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d713b
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   double g_DOUBLE_005d713b = 0.900000000000000
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CDynamiteClassInfo.name_hash
 ;
 ; Called Functions:
@@ -66,8 +66,8 @@ section .text
     CALL core_cloth.cpp_CCloth_render_FUN_005b0fe0 ; 004b10ac
         ;   XREF to: 005b0fe0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_005b0fe0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 004b10b1
-    MOV EDX,dword ptr [0x0060b280]      ; 004b10b4 | DAT_0060b280
-    PUSH EDX                            ; 004b10ba | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 004b10b4 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 004b10ba | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 004b10bb
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 004b10c0
@@ -79,7 +79,7 @@ section .text
     CALL dword ptr [EDX + 0x18]         ; 004b10cc
     FLD float ptr [ESI + 0x25648]       ; 004b10cf
     ADD ESP,0x4                         ; 004b10d5
-    FCOMP double ptr [0x005d713b]       ; 004b10d8 | DAT_005d713b
+    FCOMP double ptr [0x005d713b]       ; 004b10d8 | g_DOUBLE_005d713b
     FNSTSW AX                           ; 004b10de
     SAHF                                ; 004b10e0
     JBE 0x004b1093                      ; 004b10e1

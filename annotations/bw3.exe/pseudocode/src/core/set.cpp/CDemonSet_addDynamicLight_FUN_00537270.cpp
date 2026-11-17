@@ -6,30 +6,28 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_00537270(CDemonSet *this_ptr,CDemonLight *light)
 
 {
   int iVar1;
   
   if (light->light_enabled_flag != 0) {
-    if (0 < _DAT_0203ad1c) {
+    if (0 < g_INT_0203ad1c) {
       iVar1 = 0;
       do {
-        if (light == *(CDemonLight **)(iVar1 + 0x203ad20)) {
+        if (light == *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar1)) {
           return;
         }
         iVar1 = iVar1 + 4;
-      } while (iVar1 < _DAT_0203ad1c * 4);
+      } while (iVar1 < g_INT_0203ad1c * 4);
     }
-    if (3 < _DAT_0203ad1c) {
-      _DAT_01d71de0 = "..\\core\\set.cpp";
-      _DAT_01d71de4 = 0x9c5;
+    if (3 < g_INT_0203ad1c) {
+      g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
+      g_INT_01d71de4 = 0x9c5;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Too many dynamic lights!");
     }
-    _DAT_0203ad1c = _DAT_0203ad1c + 1;
-    *(CDemonLight **)(&DAT_0203ad1c + _DAT_0203ad1c * 4) = light;
+    g_INT_0203ad1c = g_INT_0203ad1c + 1;
+    (&g_INT_0203ad1c)[g_INT_0203ad1c] = (int)light;
   }
   return;
 }

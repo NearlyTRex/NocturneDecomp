@@ -11,93 +11,85 @@
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_00555ce0(CDirectSoundDevice *this_ptr,CSampleInfo *sample_info)
 
 {
-  uint uVar1;
-  int iVar2;
+  IDirectSoundBuffer *pIVar1;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  int *piStack_1d8;
-  uint uStack_40;
-  uint uStack_38;
-  uint uStack_34;
-  int iStack_30;
-  ushort *puStack_28;
-  ushort uStack_24;
-  ushort uStack_22;
-  int iStack_20;
-  int iStack_1c;
-  ushort uStack_18;
-  ushort uStack_16;
+  char acStack_1c8 [400];
+  DSBUFFERDESC DStack_38;
+  tWAVEFORMATEX tStack_24;
   
-  if (_DAT_0264a5c4 != (int *)0x0) {
+  if (g_IDirectSound_PTR_0264a5c4 != (IDirectSound *)0x0) {
     iVar5 = 1;
     iVar3 = 0x18;
-    iVar2 = _DAT_0264a60c;
-    while (iVar2 != 0) {
+    pIVar1 = g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[6];
+    while (pIVar1 != (IDirectSoundBuffer *)0x0) {
       iVar5 = iVar5 + 1;
       if (0x617 < iVar3 + 0x18) break;
-      iVar2 = *(int *)(&DAT_0264a60c + iVar3);
+      pIVar1 = *(IDirectSoundBuffer **)((int)g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4 + iVar3 + 0x18)
+      ;
       iVar3 = iVar3 + 0x18;
     }
     if (iVar5 < 0x41) {
-      piStack_1d8 = (int *)0x555d40;
-      memset(&uStack_24,0,0x12);
-      piStack_1d8 = (int *)0x555d59;
-      memset(&uStack_38,0,0x14);
-      uStack_38 = 0x14;
-      uStack_34 = 0xa0;
-      if (_DAT_0264ac0c != 0) {
-        uStack_34 = 0xa8;
+      memset(&tStack_24,0,0x12);
+      memset(&DStack_38,0,0x14);
+      DStack_38.dwSize = 0x14;
+      DStack_38.dwFlags = 0xa0;
+      if (g_INT_0264ac0c != 0) {
+        DStack_38.dwFlags = 0xa8;
       }
       if (_DAT_0264a5d0 == 0) {
-        uStack_34 = uStack_34 | 0x40;
+        DStack_38.dwFlags = DStack_38.dwFlags | 0x40;
       }
       else {
-        uStack_34 = uStack_34 | 0x10;
+        DStack_38.dwFlags = DStack_38.dwFlags | 0x10;
       }
       if (sample_info->streaming_flag == 2) {
-        uStack_24 = 0x20;
-        uStack_22 = (ushort)sample_info->num_channels;
-        iStack_20 = sample_info->sample_rate;
-        iVar2 = (uint)uStack_22 * sample_info->bit_depth;
-        iVar3 = iVar2 >> 0x1f;
-        uVar1 = (int)((iVar2 + iVar3 * -0x10) - (uint)(iVar3 << 3 < 0)) >> 4;
-        uStack_18 = (ushort)uVar1;
-        iStack_1c = sample_info->sample_rate * (uVar1 & 0xffff);
-        uStack_16 = 4;
-        iStack_30 = (sample_info->sample_count * sample_info->num_channels) / 2;
+        tStack_24.wFormatTag = 0x20;
+        tStack_24.nChannels = (WORD)sample_info->num_channels;
+        tStack_24.nSamplesPerSec = sample_info->sample_rate;
+        iVar3 = (uint)tStack_24.nChannels * sample_info->bit_depth;
+        iVar4 = iVar3 >> 0x1f;
+        uVar2 = (int)((iVar3 + iVar4 * -0x10) - (uint)(iVar4 << 3 < 0)) >> 4;
+        tStack_24.nBlockAlign = (WORD)uVar2;
+        tStack_24.nAvgBytesPerSec = sample_info->sample_rate * (uVar2 & 0xffff);
+        tStack_24.wBitsPerSample = 4;
+        DStack_38.dwBufferBytes = (sample_info->sample_count * sample_info->num_channels) / 2;
       }
       else {
-        uStack_24 = 1;
-        uStack_22 = (ushort)sample_info->num_channels;
-        iStack_20 = sample_info->sample_rate;
-        iVar2 = (uint)uStack_22 * sample_info->bit_depth;
-        iVar3 = iVar2 >> 0x1f;
-        uVar1 = (int)((iVar2 + iVar3 * -8) - (uint)(iVar3 << 2 < 0)) >> 3;
-        uStack_18 = (ushort)uVar1;
-        uVar1 = uVar1 & 0xffff;
-        iStack_1c = sample_info->sample_rate * uVar1;
-        uStack_16 = (ushort)sample_info->bit_depth;
-        iStack_30 = sample_info->sample_count * uVar1;
+        tStack_24.wFormatTag = 1;
+        tStack_24.nChannels = (WORD)sample_info->num_channels;
+        tStack_24.nSamplesPerSec = sample_info->sample_rate;
+        iVar3 = (uint)tStack_24.nChannels * sample_info->bit_depth;
+        iVar4 = iVar3 >> 0x1f;
+        uVar2 = (int)((iVar3 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+        tStack_24.nBlockAlign = (WORD)uVar2;
+        uVar2 = uVar2 & 0xffff;
+        tStack_24.nAvgBytesPerSec = sample_info->sample_rate * uVar2;
+        tStack_24.wBitsPerSample = (WORD)sample_info->bit_depth;
+        DStack_38.dwBufferBytes = sample_info->sample_count * uVar2;
       }
-      puStack_28 = &uStack_24;
-      iVar2 = iVar5 * 0x18;
-      piStack_1d8 = _DAT_0264a5c4;
-      uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))();
-      if (uVar1 == 0) {
-        if (*(int *)(iVar2 + 0x264a5f4) != 0) {
+      DStack_38.lpwfxFormat = &tStack_24;
+      uVar2 = (*g_IDirectSound_PTR_0264a5c4->vtable->CreateSoundBuffer)
+                        (g_IDirectSound_PTR_0264a5c4,&DStack_38,
+                         g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4 + iVar5 * 6,(LPUNKNOWN)0x0);
+      if (uVar2 == 0) {
+        if (g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[iVar5 * 6] != (IDirectSoundBuffer *)0x0) {
           iVar3 = sample_info->bit_depth * 0x100 * sample_info->num_channels;
           iVar4 = iVar3 >> 0x1f;
-          *(int *)(iVar2 + 0x264a5fc) = (int)((iVar3 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
-          *(uint *)(iVar2 + 0x264a604) = 0;
-          *(uint *)(iVar2 + 0x264a600) = uStack_40;
+          g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[iVar5 * 6 + 2] =
+               (IDirectSoundBuffer *)((int)((iVar3 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3);
+          g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[iVar5 * 6 + 4] = (IDirectSoundBuffer *)0x0;
+          g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[iVar5 * 6 + 3] =
+               (IDirectSoundBuffer *)DStack_38.dwBufferBytes;
           return iVar5;
         }
       }
       else {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar1);
-        _sprintf((char *)&piStack_1d8,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)&piStack_1d8);
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar2);
+        _sprintf(acStack_1c8,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_1c8);
       }
       sound_sndmain_cpp_logSoundError_FUN_005549c0("DirectSoundDevice::allocateSample - access failed\n");
       return 0;

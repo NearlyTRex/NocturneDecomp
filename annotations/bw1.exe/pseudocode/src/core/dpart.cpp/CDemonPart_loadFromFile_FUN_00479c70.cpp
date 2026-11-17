@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 
 {
@@ -51,31 +49,35 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *thi
   }
   else {
     iVar7 = 0;
-    _fread((void *)0x1b68944,0x48,this_ptr->face_count,file_handle);
+    _fread(g_SMRGLPrimitiveQuad_ARRAY_01b68944,0x48,this_ptr->face_count,file_handle);
     if (0 < this_ptr->face_count) {
       iVar6 = 0;
       iVar5 = 0;
       do {
         *(uint *)((int)&(this_ptr->face_data->plane).A + iVar5) =
-             *(uint *)(iVar6 + 0x1b6894c);
+             *(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices + iVar6 + -0x10);
         *(uint *)((int)&(this_ptr->face_data->plane).B + iVar5) =
-             *(uint *)(iVar6 + 0x1b68950);
+             *(uint *)((int)(g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices + -1) + iVar6);
         *(uint *)((int)&(this_ptr->face_data->plane).C + iVar5) =
-             *(uint *)(iVar6 + 0x1b68954);
+             *(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices + iVar6 + -8);
         *(uint *)((int)&(this_ptr->face_data->plane).D + iVar5) =
-             *(uint *)(iVar6 + 0x1b68958);
+             *(uint *)((int)g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices + iVar6 + -4);
         *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar5) =
-             *(uint *)(iVar6 + 0x1b6895c);
+             *(uint *)
+              ((int)&g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices[0].vertex_index + iVar6);
         *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) =
-             *(uint *)(iVar6 + 0x1b68968);
+             *(uint *)
+              ((int)&g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices[1].vertex_index + iVar6);
         *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) =
-             *(uint *)(iVar6 + 0x1b68974);
-        if (*(int *)(iVar6 + 0x1b68948) == 3) {
+             *(uint *)
+              ((int)&g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices[2].vertex_index + iVar6);
+        if (*(int *)((int)g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices + iVar6 + -0x14) == 3) {
           *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) = 0xffffffff;
         }
         else {
           *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) =
-               *(uint *)(iVar6 + 0x1b68980);
+               *(uint *)
+                ((int)&g_SMRGLPrimitiveQuad_ARRAY_01b68944[0].vertices[3].vertex_index + iVar6);
         }
         iVar5 = iVar5 + 0x20;
         iVar7 = iVar7 + 1;
@@ -84,11 +86,11 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *thi
     }
   }
   if (in_stack_00000010 != (float *)0x0) {
-    dVar9 = (double)in_stack_00000010[1] * _DAT_005dabfd;
-    dVar10 = (double)in_stack_00000010[2] * _DAT_005dabfd;
+    dVar9 = (double)in_stack_00000010[1] * 256;
+    dVar10 = (double)in_stack_00000010[2] * 256;
     iVar7 = this_ptr->vertex_count;
     iVar5 = 0;
-    dVar8 = round((double)*in_stack_00000010 * _DAT_005dabfd);
+    dVar8 = round((double)*in_stack_00000010 * 256);
     dVar9 = round(dVar9);
     dVar10 = round(dVar10);
     if (0 < iVar7) {
@@ -106,7 +108,7 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *thi
     }
   }
   core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0(this_ptr);
-  fVar4 = (float)_DAT_005dac05;
+  fVar4 = (float)0.00390625;
   iVar7 = (this_ptr->bbox3).y;
   iVar5 = (this_ptr->bbox3).z;
   iVar6 = (this_ptr->bbox4).x;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00468250(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector)
 
 {
@@ -23,8 +21,8 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00468250(CKeyFram
     frame_index = 0;
   }
   if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {
-    _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-    _DAT_01d1d404 = 0x43e;
+    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+    g_INT_01d1d404 = 0x43e;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Tried to call CKeyFramedModel::getFloorHeight for model %s but this model does not have a collision triangle list!");
   }
   if ((((this_ptr->transform_vector).x != transform_vector->x) ||

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_00486a80(CEmitter *this_ptr)
 
 {
@@ -51,12 +49,12 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_00486a80(CEmitte
     local_58 = local_64;
     local_54.x = local_60;
   }
-  local_58 = local_58 + _DAT_005d2bae;
+  local_58 = local_58 + 5.0f;
   local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-8.0,8.0);
   local_5c = local_18 + local_5c;
   local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-8.0,8.0);
-  Var4 = fsin((float10)_DAT_005d2bb6);
-  fVar5 = (float10)fptan((float10)_DAT_005d2bc6);
+  Var4 = fsin((float10)-1.30899693895833);
+  fVar5 = (float10)fptan((float10)1.30899693895833);
   fVar6 = (float10)local_18 + (float10)local_54.x;
   local_54.x = (float)fVar6;
   fVar7 = atan2((float10)local_5c,fVar6);
@@ -65,8 +63,8 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_00486a80(CEmitte
   fVar9 = (float10)fsin(fVar7);
   fVar7 = (float10)fcos(fVar7);
   local_48 = (double)fVar1;
-  fStack_24 = fVar1 * (float)_DAT_005d2bbe * fVar1;
-  fVar6 = fVar8 * (float10)_DAT_005d2bce * fVar8 * (fVar6 * (float10)fVar1 - (float10)local_5c);
+  fStack_24 = fVar1 * (float)32 * fVar1;
+  fVar6 = fVar8 * (float10)2.0f * fVar8 * (fVar6 * (float10)fVar1 - (float10)local_5c);
   local_54.y = (float)-fVar5;
   local_54.x = (float)(fVar9 * fVar8);
   local_54.z = (float)(fVar7 * fVar8);
@@ -85,7 +83,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_00486a80(CEmitte
       local_54.z = local_90.z;
     }
     core_fire_cpp_CFireEffect_createFireball_FUN_0049d500
-              (0x01C3DEB4,&(this_ptr->base).location.position,&local_54,0,0);
+              (g_CFireEffect_PTR_00614d30,&(this_ptr->base).location.position,&local_54,0,0);
   }
   return;
 }

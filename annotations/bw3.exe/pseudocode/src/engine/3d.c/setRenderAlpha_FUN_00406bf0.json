@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 134,
+    "complexity_score": 13,
     "cross_reference_count": 25,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 11,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 42
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -183,20 +180,20 @@
   "globals": [
     {
       "addr": "005f07c0",
-      "name": "DAT_005f07c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005f07c0",
+      "type": "int",
+      "value": "0xffffff"
     },
     {
       "addr": "005fba38",
-      "name": "DAT_005fba38",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba38",
+      "type": "int",
+      "value": "0xff"
     },
     {
       "addr": "00730400",
-      "name": "DAT_00730400",
-      "type": "undefined4",
+      "name": "g_INT_00730400",
+      "type": "int",
       "value": null
     }
   ],
@@ -389,94 +386,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "DAT_005fba38 = alpha_color_value >> 8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "if ((int)DAT_005fba38 < 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "DAT_005fba38 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "else if (0xff < (int)DAT_005fba38) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "DAT_005fba38 = 0xff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005f07c0",
-      "severity": "mild",
-      "text": "DAT_005f07c0 = DAT_005fba38 | DAT_005fba38 << 8 | DAT_005fba38 << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "DAT_005f07c0 = DAT_005fba38 | DAT_005fba38 << 8 | DAT_005fba38 << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "DAT_005f07c0 = DAT_005fba38 | DAT_005fba38 << 8 | DAT_005fba38 << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005fba38",
-      "severity": "mild",
-      "text": "DAT_005f07c0 = DAT_005fba38 | DAT_005fba38 << 8 | DAT_005fba38 << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005f07c0",
-      "severity": "mild",
-      "text": "_DAT_00730400 = DAT_005f07c0 ^ 0xffffff;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

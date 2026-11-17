@@ -70,9 +70,9 @@
 ;   core_weapon.cpp_CWeapon_renderAimBeam_FUN_0058a440 at 0058a5c5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d57e6
-;   undefined4 DAT_005d57ea
-;   undefined4 DAT_005d57f2
+;   float g_FLOAT_005d57e6 = 2
+;   double g_DOUBLE_005d57ea = 0.25
+;   double g_DOUBLE_005d57f2 = -1
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
@@ -399,7 +399,7 @@ section .text
     FMUL float ptr [EBX + 0x8]          ; 0049deec
     FADDP                               ; 0049deef
     FST double ptr [ESP]                ; 0049def1
-    FCOMP double ptr [0x005d57f2]       ; 0049def4 | DAT_005d57f2
+    FCOMP double ptr [0x005d57f2]       ; 0049def4 | g_DOUBLE_005d57f2
     FNSTSW AX                           ; 0049defa
     SAHF                                ; 0049defc
     JA 0x0049e30f                       ; 0049defd
@@ -441,7 +441,7 @@ section .text
     FLD float ptr [ESP + 0x128]         ; 0049df73
     FMUL float ptr [EBX + 0x8]          ; 0049df7a
     FADDP                               ; 0049df7d
-    FMUL float ptr [0x005d57e6]         ; 0049df7f | DAT_005d57e6
+    FMUL float ptr [0x005d57e6]         ; 0049df7f | g_FLOAT_005d57e6
     FLD float ptr [ESP + 0x120]         ; 0049df85
     FXCH                                ; 0049df8c
     FSTP float ptr [ESP + 0x150]        ; 0049df8e
@@ -543,7 +543,7 @@ section .text
     FLD float ptr [EBP + 0x70]          ; 0049e0f8
     FLD1                                ; 0049e0fb
     FSUBRP                              ; 0049e0fd
-    FMUL double ptr [0x005d57ea]        ; 0049e0ff | DAT_005d57ea
+    FMUL double ptr [0x005d57ea]        ; 0049e0ff | g_DOUBLE_005d57ea
     FMUL float ptr [ESP + 0x10]         ; 0049e105
     FSTP float ptr [ESP + 0x10]         ; 0049e109
     FLD float ptr [EBP + 0x68]          ; 0049e10d
@@ -601,7 +601,7 @@ section .text
     FLD float ptr [EBP + 0x68]          ; 0049e197
     FLD1                                ; 0049e19a
     FSUBRP                              ; 0049e19c
-    FMUL double ptr [0x005d57ea]        ; 0049e19e | DAT_005d57ea
+    FMUL double ptr [0x005d57ea]        ; 0049e19e | g_DOUBLE_005d57ea
     FMUL float ptr [ESP + 0x10]         ; 0049e1a4
     FSTP float ptr [ESP + 0x10]         ; 0049e1a8
     MOV EDI,dword ptr [EBP + 0x34]      ; 0049e1ac

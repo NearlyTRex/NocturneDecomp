@@ -17,7 +17,7 @@ CHiram * __cdecl core_hiram_cpp_CHiram_ctor_FUN_004d0f30(CHiram *this_ptr)
   pCVar2 = (CHiram *)core_npc_cpp_CNPC_ctor_FUN_00510460(&this_ptr->base);
   (pCVar2->base).base.base.vtable._ub = &g_CHiramVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(pCVar2->base).base.model,(char *)0x5da0df);
+            (&(pCVar2->base).base.model,"hiram.dfm");
   pcVar3 = "killHiram";
   pcVar4 = pCVar2->kill_event;
   do {

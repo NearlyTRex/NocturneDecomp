@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_00522080(CScript *this_ptr)
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
+  CHero *pCVar2;
   CGame *pCVar3;
   int iVar4;
   char *pcVar5;
@@ -27,25 +25,25 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_00522080(CScript *this_ptr)
   this_ptr->cmd_timer = -1.0;
   this_ptr->dialog_wav_time = -1.0;
   this_ptr->mission_ended = 0;
-  iVar4 = _DAT_01cedef4;
+  iVar4 = g_INT_01cedef4;
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
-  pCVar2 = *(CDemonActor **)(iVar4 * 4 + 0x1cedee4);
+  pCVar2 = g_CHero_PTR_ARRAY_01cedee4[iVar4];
   this_ptr->monster_vision_actor = (CCharacter *)0x0;
-  this_ptr->focus_actor = pCVar2;
+  this_ptr->focus_actor = (CDemonActor *)pCVar2;
   pCVar3 = g_CGamePtr;
   this_ptr->focus_actor_changed = 1;
   pCVar3->allow_damage_flag = 1;
   pCVar3->allow_enemy_attack_flag = 1;
   pCVar3->letterbox_mode = 0;
-  _DAT_01e65900 = 0;
+  g_FLOAT_01e65900 = 0.0;
   this_ptr->message_duration = -1.0;
   this_ptr->saved_cmd_index = -1;
   pcVar7 = g_CDemonSetPtr->geometry_filename;
   this_ptr->call_stack_count = 0;
-  _DAT_01e65908 = 0;
+  g_INT_01e65908 = 0;
   this_ptr->focus_actor_locked = 0;
   splitpath(pcVar7,(char *)0x0,(char *)0x0,local_70,(char *)0x0);
-  pcVar5 = &DAT_005e2f9d;
+  pcVar5 = ".wav";
   iVar4 = -1;
   pcVar7 = local_70;
   do {
@@ -68,7 +66,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_00522080(CScript *this_ptr)
   } while (cVar1 != '\0');
   iVar4 = _stricmp(local_70,"smill.wav");
   if (iVar4 == 0) {
-    pcVar5 = &DAT_005e2fac;
+    pcVar5 = "@0.85";
     iVar4 = -1;
     pcVar7 = local_70;
     do {
@@ -92,7 +90,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_00522080(CScript *this_ptr)
   }
   iVar4 = _stricmp(local_70,"town.wav");
   if (iVar4 == 0) {
-    pcVar5 = &DAT_005e2fbb;
+    pcVar5 = "@0.85";
     iVar4 = -1;
     pcVar7 = local_70;
     do {
@@ -114,7 +112,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_00522080(CScript *this_ptr)
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
   }
-  core_sound_cpp_CSound_playAmbientSound_FUN_0055adc0(0x0264B290,local_70);
+  core_sound_cpp_CSound_playAmbientSound_FUN_0055adc0(g_CSound_PTR_0061c068,local_70);
   this_ptr->script_state = 0;
   return;
 }

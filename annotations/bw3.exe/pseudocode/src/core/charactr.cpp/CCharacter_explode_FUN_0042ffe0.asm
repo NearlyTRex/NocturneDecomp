@@ -15,8 +15,8 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430de6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b839a
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005b839a = 0.5
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -62,7 +62,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00430044
     MOVSD ES:EDI,ESI                    ; 00430045
     MOVSD ES:EDI,ESI                    ; 00430046
-    FLD float ptr [0x005b839a]          ; 00430047 | DAT_005b839a
+    FLD float ptr [0x005b839a]          ; 00430047 | g_FLOAT_005b839a
     FLD float ptr [ESP + 0x6c]          ; 0043004d
     FMUL ST1                            ; 00430051
     FLD float ptr [ESP + 0x70]          ; 00430053
@@ -92,7 +92,7 @@ section .text
     PUSH 0x40000000                     ; 0043009a
     LEA EDI,[ESP + 0x4c]                ; 0043009f
     PUSH EAX                            ; 004300a3
-    MOV EDX,dword ptr [0x005fc5a0]      ; 004300a4 | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 004300a4 | g_CFireEffect_PTR_005fc5a0
     LEA ESI,[ESP + 0x5c]                ; 004300aa
     PUSH EDX                            ; 004300ae
     MOVSD ES:EDI,ESI                    ; 004300af

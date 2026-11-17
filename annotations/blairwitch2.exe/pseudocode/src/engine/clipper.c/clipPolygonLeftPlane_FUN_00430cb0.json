@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 205,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
-    "suspect_count": 13,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 188
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 63,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 186
   },
   "cross_references": [],
   "function": {
@@ -43,20 +40,20 @@
   "globals": [
     {
       "addr": "007bfcf8",
-      "name": "DAT_007bfcf8",
-      "type": "undefined4",
+      "name": "g_INT_007bfcf8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -159,110 +156,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "iVar2 = DAT_007bfcf8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "if (0xb < DAT_007bfcf8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "iVar2 = DAT_007bfcf8 * 0x30;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "output_vertices[iVar4] = (SRenderVertex *)(&DAT_007bfab8 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "(v2,v1,(SRenderVertex *)(&DAT_007bfab8 + iVar2));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "iVar2 = DAT_007bfcf8 * 0x30;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "output_vertices[iVar4 + 1] = (SRenderVertex *)(&DAT_007bfab8 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "(v1,v2,(SRenderVertex *)(&DAT_007bfab8 + iVar2));",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

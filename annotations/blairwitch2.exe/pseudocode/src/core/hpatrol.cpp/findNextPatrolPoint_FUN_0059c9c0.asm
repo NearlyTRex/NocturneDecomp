@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0123456789_005ef78e
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d182f0
 ;   undefined4 g_CPatrolPointClassInfo.name_hash
 ;
@@ -187,7 +187,7 @@ section .text
         ;   Label: LAB_0059caf4
     LEA EAX,[ESP + 0x8]                 ; 0059caf5
     PUSH EAX                            ; 0059caf9
-    MOV EDI,dword ptr [0x00618170]      ; 0059cafa | DAT_00618170
+    MOV EDI,dword ptr [0x00618170]      ; 0059cafa | g_CDemonMission_PTR_00618170
     PUSH EDI                            ; 0059cb00 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740 ; 0059cb01
         ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission * this_ptr, char * name)

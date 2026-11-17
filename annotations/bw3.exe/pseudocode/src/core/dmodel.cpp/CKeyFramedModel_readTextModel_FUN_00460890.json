@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 460,
+    "complexity_score": 409,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 130,
-    "suspect_count": 31,
+    "pseudocode_lines": 129,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 712
+    "total_lines": 711
   },
   "cross_references": [
     {
@@ -72,8 +70,8 @@
   "globals": [
     {
       "addr": "005bb6a2",
-      "name": "DAT_005bb6a2",
-      "type": "undefined4",
+      "name": "s_d_005bb6a2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -108,26 +106,26 @@
     },
     {
       "addr": "005bb73e",
-      "name": "DAT_005bb73e",
-      "type": "undefined4",
+      "name": "s_d_005bb73e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005bb742",
-      "name": "DAT_005bb742",
-      "type": "undefined4",
+      "name": "s_d_005bb742",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005bb746",
-      "name": "DAT_005bb746",
-      "type": "undefined4",
+      "name": "s_d_005bb746",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005bb74a",
-      "name": "DAT_005bb74a",
-      "type": "undefined4",
+      "name": "s_d_005bb74a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -150,8 +148,8 @@
     },
     {
       "addr": "005bb769",
-      "name": "DAT_005bb769",
-      "type": "undefined4",
+      "name": "s_anon_005bb769",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -168,8 +166,8 @@
     },
     {
       "addr": "005bb79f",
-      "name": "DAT_005bb79f",
-      "type": "undefined4",
+      "name": "s_d_005bb79f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -198,14 +196,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -611,32 +609,8 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 27,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005bb6a2",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005bb6a2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_005bb73e",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005bb73e);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(int *)((int)pSVar1",
       "severity": "moderate",
       "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
@@ -644,19 +618,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(int *)((int)pSVar1",
       "severity": "moderate",
       "text": "} while (iVar3 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_005bb769",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005bb769);",
-      "type": "undefined_data"
     }
   ]
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi core_lever_cpp_CLever_getHandlePosition_FUN_004ff6b0(CLever *this_ptr,CVector3f *out_position)
 
 {
@@ -35,8 +33,8 @@ CVector3f * __stack_esi core_lever_cpp_CLever_getHandlePosition_FUN_004ff6b0(CLe
   iStack_18 = (int)ROUND(dVar6);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(this_ptr_00);
   iVar3 = this_ptr->end_vertex_index + pCVar2->vertex_count * iStack_18;
-  local_2c = (float)pCVar1[iVar3].y * _DAT_00602ed8;
-  local_28 = (float)pCVar1[iVar3].z * _DAT_00602ed8;
+  local_2c = (float)pCVar1[iVar3].y * 0.00390625f;
+  local_28 = (float)pCVar1[iVar3].z * 0.00390625f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
             (&this_ptr->base,(CVector3f *)&stack0xffffffd0,&local_24);
   puVar4 = (uint *)((int)out_position + (uint)bVar5 * -8 + 4);

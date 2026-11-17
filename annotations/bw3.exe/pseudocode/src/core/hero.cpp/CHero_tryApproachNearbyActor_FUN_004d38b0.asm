@@ -28,9 +28,9 @@
 ;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d4a48
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4db5
-;   undefined4 DAT_005c4dbd
-;   undefined4 DAT_005c4dc5
+;   double g_DOUBLE_005c4db5 = 10
+;   double g_DOUBLE_005c4dbd = 1.04719755116667
+;   double g_DOUBLE_005c4dc5 = 5
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -90,7 +90,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d393b
     FLD float ptr [ESP + 0x48]          ; 004d393c
     FABS                                ; 004d3940
-    FCOMP double ptr [0x005c4db5]       ; 004d3942 | DAT_005c4db5
+    FCOMP double ptr [0x005c4db5]       ; 004d3942 | g_DOUBLE_005c4db5
     FNSTSW AX                           ; 004d3948
     SAHF                                ; 004d394a
     JBE 0x004d3972                      ; 004d394b
@@ -113,7 +113,7 @@ section .text
     FADDP                               ; 004d3980
     MOV dword ptr [ESP + 0x48],EAX      ; 004d3982
     FSQRT                               ; 004d3986
-    FCOMP double ptr [0x005c4db5]       ; 004d3988 | DAT_005c4db5
+    FCOMP double ptr [0x005c4db5]       ; 004d3988 | g_DOUBLE_005c4db5
     FNSTSW AX                           ; 004d398e
     SAHF                                ; 004d3990
     JA 0x004d394d                       ; 004d3991
@@ -143,7 +143,7 @@ section .text
     FLD float ptr [ESP + 0xa4]          ; 004d39d0
     FABS                                ; 004d39d7
     ADD ESP,0x4                         ; 004d39d9
-    FCOMP double ptr [0x005c4dbd]       ; 004d39dc | DAT_005c4dbd
+    FCOMP double ptr [0x005c4dbd]       ; 004d39dc | g_DOUBLE_005c4dbd
     FNSTSW AX                           ; 004d39e2
     SAHF                                ; 004d39e4
     JA 0x004d394d                       ; 004d39e5
@@ -205,7 +205,7 @@ section .text
     FMUL ST0                            ; 004d3a94
     FADDP                               ; 004d3a96
     FSQRT                               ; 004d3a98
-    FCOMP double ptr [0x005c4dc5]       ; 004d3a9a | DAT_005c4dc5
+    FCOMP double ptr [0x005c4dc5]       ; 004d3a9a | g_DOUBLE_005c4dc5
     FNSTSW AX                           ; 004d3aa0
     SAHF                                ; 004d3aa2
     JA 0x004d394d                       ; 004d3aa3

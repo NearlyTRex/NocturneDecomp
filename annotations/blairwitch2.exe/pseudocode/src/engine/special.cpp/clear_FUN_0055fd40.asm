@@ -10,20 +10,20 @@
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0 at 0055b1fb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_0264bc18
+;   int g_INT_01c37788
+;   void* g_PTR_0264bc18
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c37788],0x0      ; 0055fd40 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 0055fd40 | g_INT_01c37788
         ;   Label: engine_special.cpp_clear_FUN_0055fd40
     JNZ 0x0055fd4c                      ; 0055fd47
         ;   XREF to: 0055fd4c (CONDITIONAL_JUMP)  ; LAB_0055fd4c
     XOR EAX,EAX                         ; 0055fd49
     RET                                 ; 0055fd4b
-    CALL dword ptr [0x0264bc18]         ; 0055fd4c | DAT_0264bc18
+    CALL dword ptr [0x0264bc18]         ; 0055fd4c | g_PTR_0264bc18
         ;   Label: LAB_0055fd4c
     RET                                 ; 0055fd52
 

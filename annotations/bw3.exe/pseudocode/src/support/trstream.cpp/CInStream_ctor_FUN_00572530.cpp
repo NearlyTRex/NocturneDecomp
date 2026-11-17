@@ -9,6 +9,6 @@
 CInStream * __cdecl support_trstream_cpp_CInStream_ctor_FUN_00572530(CInStream *this_ptr)
 
 {
-  this_ptr->vtable = &PTR_support_trstream_cpp_CInStream_dtor_FUN_00572540_005e5a54;
+  this_ptr->vtable = "@%W";
   return this_ptr;
 }

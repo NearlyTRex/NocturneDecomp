@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01d06ab4
-;   undefined4 DAT_02026358
+;   int g_INT_01d06ab4
+;   int g_INT_02026358
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
     TEST ECX,ECX                        ; 0054cf4f
     JNZ 0x0054cf77                      ; 0054cf51
         ;   XREF to: 0054cf77 (CONDITIONAL_JUMP)  ; LAB_0054cf77
-    MOV EAX,[0x01d06ab4]                ; 0054cf53 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0054cf53 | g_INT_01d06ab4
     SHL EAX,0x2                         ; 0054cf58
     MOV EBX,dword ptr [EAX + 0x1d06aa4] ; 0054cf5b
     TEST EBX,EBX                        ; 0054cf61
@@ -34,7 +34,7 @@ section .text
     JZ 0x0054cf77                       ; 0054cf6f
         ;   XREF to: 0054cf77 (CONDITIONAL_JUMP)  ; LAB_0054cf77
     MOV EDX,dword ptr [EBX + 0x1ff68]   ; 0054cf71
-    MOV dword ptr [0x02026358],EDX      ; 0054cf77 | DAT_02026358
+    MOV dword ptr [0x02026358],EDX      ; 0054cf77 | g_INT_02026358
         ;   Label: LAB_0054cf77
     POP ESI                             ; 0054cf7d
     POP EBX                             ; 0054cf7e

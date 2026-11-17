@@ -17,8 +17,8 @@
 ;   TerminatedCString s_Bad_key_frame_005dbc1b
 ;   TerminatedCString s_engine_keyframe_c_005dbc29
 ;   TerminatedCString s_Key_frame_vertex_mismatc_005dbc3e
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -104,8 +104,8 @@ section .text
     MOV EDX,0x5dbc06                    ; 004df812 | = "..\\engine\\keyframe.c"
     MOV ECX,0xfd                        ; 004df817
     PUSH 0x5dbc1b                       ; 004df81c | = "Bad key frame"
-    MOV dword ptr [0x01d046a0],EDX      ; 004df821 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004df827 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004df821 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004df827 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004df82d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004df832
@@ -117,8 +117,8 @@ section .text
     MOV ECX,0x5dbc29                    ; 004df83d | = "..\\engine\\keyframe.c"
     MOV EDI,0xfe                        ; 004df842
     PUSH 0x5dbc3e                       ; 004df847 | = "Key frame vertex mismatch"
-    MOV dword ptr [0x01d046a0],ECX      ; 004df84c | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004df852 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004df84c | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 004df852 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004df858
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004df85d

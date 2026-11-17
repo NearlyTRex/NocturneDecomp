@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01cedee0
+;   int g_INT_01cedee0
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
     MOV EBP,dword ptr [0x0061b5a8]      ; 004fc677 | g_CDemonSetPtr
     XOR EDI,EDI                         ; 004fc67d
     PUSH EBP                            ; 004fc67f | g_CDemonSetInstance
-    MOV dword ptr [0x01cedee0],EDI      ; 004fc680 | DAT_01cedee0
+    MOV dword ptr [0x01cedee0],EDI      ; 004fc680 | g_INT_01cedee0
     MOV dword ptr [EBX + 0x1450],0xffffffff ; 004fc686
     CALL core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00538160 ; 004fc690
         ;   XREF to: 00538160 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00538160(CDemonSet * this_ptr)

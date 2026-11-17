@@ -6,110 +6,122 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005570a0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
   int iVar1;
-  int *piVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  char acStack_9a8 [440];
-  char acStack_7f0 [392];
-  char acStack_668 [384];
-  char acStack_4e8 [400];
-  char acStack_358 [392];
-  char acStack_1d0 [424];
-  uint uStack_28;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  IDirectSoundBuffer *dwFrequency;
+  char acStack_af8 [400];
+  char acStack_968 [400];
+  char acStack_7d8 [400];
+  char acStack_648 [400];
+  char acStack_4b8 [400];
+  char acStack_328 [400];
+  char acStack_198 [392];
+  DWORD dwFlags;
   
   iVar1 = slot->hardware_buffer_handle;
-  if (((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 0x24 + 0x264ac10) == 0)) {
-    _DAT_01d046a0 = "..\\sound\\snddx.cpp";
-    _DAT_01d046a4 = 0x61a;
+  if (((iVar1 < 1) || (0x1e < iVar1)) ||
+     (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9] == (IDirectSoundBuffer *)0x0)) {
+    g_CHAR_PTR_01d046a0 = "..\\sound\\snddx.cpp";
+    g_INT_01d046a4 = 0x61a;
     core_main_c_displayErrorAndQuit_FUN_004e4500("DirectSoundDevice::startSfx - invalid handle: %d");
   }
-  iVar3 = (*((this_ptr->base).vtable)->applySfxChanges)(&this_ptr->base,slot,-1);
-  iVar5 = 0;
-  if (iVar3 != 0) {
+  iVar2 = (*((this_ptr->base).vtable)->applySfxChanges)(&this_ptr->base,slot,-1);
+  iVar4 = 0;
+  if (iVar2 != 0) {
+    dwFlags = 0;
     if (slot->sample == (CSfxSample *)0x0) {
-      _DAT_01d046a0 = "..\\sound\\snddx.cpp";
-      _DAT_01d046a4 = 0x624;
+      g_CHAR_PTR_01d046a0 = "..\\sound\\snddx.cpp";
+      g_INT_01d046a4 = 0x624;
       core_main_c_displayErrorAndQuit_FUN_004e4500("DirectSoundDevice::startSfx - no sample??");
     }
     if ((1 < slot->sample->loop_marker_count) || (0 < slot->sample->loop_destinations[0])) {
-      _DAT_01d046a0 = "..\\sound\\snddx.cpp";
-      _DAT_01d046a4 = 0x626;
+      g_CHAR_PTR_01d046a0 = "..\\sound\\snddx.cpp";
+      g_INT_01d046a4 = 0x626;
       core_main_c_displayErrorAndQuit_FUN_004e4500("DirectSoundDevice::startSfx - exotic jump sequences not allowed for hardware mixed sounds");
     }
-    uVar4 = (**(code **)(**(int **)(iVar1 * 0x24 + 0x264ac10) + 0x30))();
-    if (uVar4 == 0x88780064) {
-      piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
-      uVar4 = (**(code **)(*piVar2 + 0x44))(piVar2,0);
-      if (uVar4 != 0) {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar4);
-        _sprintf(acStack_7f0,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_7f0);
+    if ((slot->sample->loop_marker_count == 1) && (-1 < slot->sample->loop_destinations[0])) {
+      dwFlags = 1;
+    }
+    if (slot->sample->streaming_buffer_size != (slot->sample->sample_info).sample_count) {
+      dwFlags = 1;
+    }
+    uVar3 = (*g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9]->vtable->Play)
+                      (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9],0,0,dwFlags);
+    if (uVar3 == 0x88780064) {
+      uVar3 = (*g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9]->vtable->SetFrequency)
+                        (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9],0);
+      if (uVar3 != 0) {
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+        _sprintf(acStack_7d8,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_7d8);
         return 0;
       }
-      piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
-      uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,0xffffd8f0);
-      if (uVar4 != 0) {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar4);
-        _sprintf(acStack_668,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_668);
+      uVar3 = (*g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9]->vtable->SetVolume)
+                        (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9],-10000);
+      if (uVar3 != 0) {
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+        _sprintf(acStack_648,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_648);
         return 0;
       }
-      piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
-      uVar4 = (**(code **)(*piVar2 + 0x30))(piVar2,0,0,uStack_28);
-      if (uVar4 != 0) {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar4);
-        _sprintf(acStack_358,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_358);
+      uVar3 = (*g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9]->vtable->Play)
+                        (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9],0,0,dwFlags);
+      if (uVar3 != 0) {
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+        _sprintf(acStack_328,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_328);
         return 0;
       }
-      iVar5 = iVar1 * 0x24;
-      if (((*(int *)(iVar5 + 0x264ac2c) != -1) &&
-          (*(int *)(iVar5 + 0x264ac2c) != (slot->sample->sample_info).sample_rate)) &&
-         (iVar3 = sound_snddx_cpp_clampDirectSoundFrequency_FUN_00555020
-                            ((float)(slot->sample->sample_info).sample_rate *
-                             (slot->options).base_frequency),
-         1 < (uint)(iVar3 - *(int *)(iVar5 + 0x264ac2c)))) {
-        uVar4 = (**(code **)(**(int **)(iVar5 + 0x264ac10) + 0x44))
-                          (*(int **)(iVar5 + 0x264ac10),iVar3);
-        if (uVar4 != 0) {
-          sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar4);
-          _sprintf(acStack_4e8,"DirectSux: Unable to %s.  (%s)");
-          sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_4e8);
+      if (((g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7] !=
+            (IDirectSoundBuffer *)0xffffffff) &&
+          (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7] !=
+           (IDirectSoundBuffer *)(slot->sample->sample_info).sample_rate)) &&
+         (dwFrequency = (IDirectSoundBuffer *)
+                        sound_snddx_cpp_clampDirectSoundFrequency_FUN_00555020
+                                  ((float)(slot->sample->sample_info).sample_rate *
+                                   (slot->options).base_frequency),
+         1 < (uint)((int)dwFrequency - (int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7]))
+         ) {
+        uVar3 = (*g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9]->vtable->SetFrequency)
+                          (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9],(DWORD)dwFrequency);
+        if (uVar3 != 0) {
+          sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+          _sprintf(acStack_4b8,"DirectSux: Unable to %s.  (%s)");
+          sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_4b8);
         }
-        *(int *)(iVar1 * 0x24 + 0x264ac2c) = iVar3;
+        g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7] = dwFrequency;
       }
-      piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
-      uVar4 = (**(code **)(*piVar2 + 0x34))(piVar2,0);
-      if (uVar4 != 0) {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar4);
-        _sprintf(acStack_1d0,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_1d0);
+      uVar3 = (*g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9]->vtable->SetCurrentPosition)
+                        (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9],0);
+      if (uVar3 != 0) {
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+        _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_198);
         return 0;
       }
-      piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
-      uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,*(uint *)(iVar1 * 0x24 + 0x264ac24));
-      if (uVar4 != 0) {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar4);
-        _sprintf(acStack_9a8,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_9a8);
+      uVar3 = (*g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9]->vtable->SetVolume)
+                        (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9],
+                         (long)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 5]);
+      if (uVar3 != 0) {
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+        _sprintf(acStack_968,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_968);
         return 0;
       }
     }
-    else if (uVar4 != 0) {
-      sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar4);
-      _sprintf(&stack0xfffff4f8,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_logSoundError_FUN_005549c0(&stack0xfffff4f8);
+    else if (uVar3 != 0) {
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+      _sprintf(acStack_af8,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_af8);
       return 0;
     }
-    iVar5 = 1;
+    iVar4 = 1;
     *(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;
   }
-  return iVar5;
+  return iVar4;
 }

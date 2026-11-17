@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_yow_cpp_CYow_processDismemberment_FUN_005b8eb0(CYow *this_ptr,SDamageInfo *damage_info)
 
@@ -91,7 +90,7 @@ switchD_005b8ee6_default:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0) {
         damage_info->damage_amount = 9999.0;
       }
-      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005fa354;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
       if (this_ptr->part_indices[5] < 0) {
         damage_info->damage_amount = 999.0;
         return;

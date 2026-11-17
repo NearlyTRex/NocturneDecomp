@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00498660(CVector3f *start_point,CVector3f *end_point)
 
 {
   SRenderVertex vertex2;
   int iVar1;
   float unaff_EBP;
-  uint *puVar2;
+  SRenderVertex *pSVar2;
   float unaff_EDI;
-  uint *puVar3;
+  int *piVar3;
   byte bVar4;
   float afStackY_1044 [996];
   SRenderVertex in_stack_ffffff4c;
@@ -42,22 +40,22 @@ void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00498660(CVector3f *s
   float fStack_14;
   
   bVar4 = 0;
-  auStack_4c._0_4_ = (uint)ROUND(start_point->x * _DAT_005ff7ec);
-  auStack_4c._4_4_ = (uint)ROUND(start_point->y * _DAT_005ff7ec);
-  auStack_4c._8_4_ = (uint)ROUND(start_point->z * _DAT_005ff7ec);
+  auStack_4c._0_4_ = (uint)ROUND(start_point->x * 256.0f);
+  auStack_4c._4_4_ = (uint)ROUND(start_point->y * 256.0f);
+  auStack_4c._8_4_ = (uint)ROUND(start_point->z * 256.0f);
   uVar6 = 0;
   uVar5 = 0x4986a3;
   engine_matrix_c_transformToCache_FUN_00507b00(0,(CVector3i *)auStack_4c);
-  afStack_34[2] = end_point->x * _DAT_005dc280;
-  afStack_34[3] = end_point->y * _DAT_005dc280;
-  fStack_24 = end_point->z * _DAT_005dc280;
+  afStack_34[2] = end_point->x * 0.2f;
+  afStack_34[3] = end_point->y * 0.2f;
+  fStack_24 = end_point->z * 0.2f;
   fStack_14 = afStack_34[2];
   *(float *)(&stack0xfffffff0 + (uint)bVar4 * -8) = afStack_34[(uint)bVar4 * -2 + 3];
   *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-  fStack_20 = start_point->x * _DAT_005dc284;
-  fStack_1c = start_point->y * _DAT_005dc284;
-  fStack_18 = start_point->z * _DAT_005dc284;
+  fStack_20 = start_point->x * 0.8f;
+  fStack_1c = start_point->y * 0.8f;
+  fStack_18 = start_point->z * 0.8f;
   fStack_50 = fStack_20;
   *(float *)(auStack_4c + (uint)bVar4 * -8) = afStack_34[(uint)bVar4 * -2 + 6];
   *(float *)(auStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4) =
@@ -69,26 +67,26 @@ void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00498660(CVector3f *s
   afStack_34[(uint)bVar4 * -2] = *(float *)(&stack0xffffffa8 + (uint)bVar4 * -8);
   afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        *(float *)((int)&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  auStack_4c._8_4_ = (uint)ROUND(fStack_38 * _DAT_005ff7ec);
-  iStack_40 = (int)ROUND(afStack_34[0] * _DAT_005ff7ec);
-  iStack_3c = (int)ROUND(afStack_34[1] * _DAT_005ff7ec);
+  auStack_4c._8_4_ = (uint)ROUND(fStack_38 * 256.0f);
+  iStack_40 = (int)ROUND(afStack_34[0] * 256.0f);
+  iStack_3c = (int)ROUND(afStack_34[1] * 256.0f);
   inputPoint = (CVector3i *)(auStack_4c + 8);
   uVar8 = 1;
   uVar7 = 0x49876d;
   engine_matrix_c_transformToCache_FUN_00507b00(1,inputPoint);
-  puVar2 = &DAT_00629044;
-  puVar3 = (uint *)&stack0xffffff7c;
+  pSVar2 = g_SRenderVertex_ARRAY_00629014 + 1;
+  piVar3 = (int *)&stack0xffffff7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *piVar3 = (pSVar2->projected_vertex).transformed_x;
+    pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
-  puVar2 = &DAT_00629014;
-  puVar3 = (uint *)&stack0xffffff4c;
+  pSVar2 = g_SRenderVertex_ARRAY_00629014;
+  piVar3 = (int *)&stack0xffffff4c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *piVar3 = (pSVar2->projected_vertex).transformed_x;
+    pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
   vertex2.projected_vertex.screen_y = uVar5;
   vertex2.projected_vertex.transformed_x = in_stack_ffffff7c._0_4_;

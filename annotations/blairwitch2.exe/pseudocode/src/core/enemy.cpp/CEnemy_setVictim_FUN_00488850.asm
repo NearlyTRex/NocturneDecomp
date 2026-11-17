@@ -11,7 +11,7 @@
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00528ae1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6068
+;   float g_FLOAT_005f6068 = NaN
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00488850
         ;   Label: core_enemy.cpp_CEnemy_setVictim_FUN_00488850
     MOV EDX,dword ptr [ESP + 0x8]       ; 00488854
-    MOV ECX,dword ptr [0x005f6068]      ; 00488858 | DAT_005f6068
+    MOV ECX,dword ptr [0x005f6068]      ; 00488858 | g_FLOAT_005f6068
     MOV dword ptr [EAX + 0x10af0],EDX   ; 0048885e
     CMP EDX,ECX                         ; 00488864
     JNZ 0x00488873                      ; 00488866

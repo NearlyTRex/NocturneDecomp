@@ -9,22 +9,23 @@
 void FUN_005c37ec(int param_1)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
+  void *pvVar1;
+  Heap *pHVar2;
+  Heap *pHVar3;
+  int iVar4;
   
-  iVar1 = *(int *)(param_1 + 4);
-  iVar2 = *(int *)(param_1 + 8);
-  iVar3 = FUN_005c378c(param_1);
-  if (iVar3 == 0) {
-    iVar3 = iVar2;
-    if (iVar1 != 0) {
-      *(int *)(iVar1 + 8) = iVar2;
-      iVar3 = DAT_0061eea0;
+  pvVar1 = *(void **)(param_1 + 4);
+  pHVar2 = *(Heap **)(param_1 + 8);
+  iVar4 = FUN_005c378c(param_1);
+  if (iVar4 == 0) {
+    pHVar3 = pHVar2;
+    if (pvVar1 != (void *)0x0) {
+      *(Heap **)((int)pvVar1 + 8) = pHVar2;
+      pHVar3 = g_Heap_PTR_0061eea0;
     }
-    DAT_0061eea0 = iVar3;
-    if (iVar2 != 0) {
-      *(int *)(iVar2 + 4) = iVar1;
+    g_Heap_PTR_0061eea0 = pHVar3;
+    if (pHVar2 != (Heap *)0x0) {
+      pHVar2->heap_base = pvVar1;
     }
   }
   return;

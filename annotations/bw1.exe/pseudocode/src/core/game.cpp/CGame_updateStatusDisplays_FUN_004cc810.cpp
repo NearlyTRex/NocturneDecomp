@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004cc810(CGame *this_ptr)
 
 {
@@ -23,9 +21,9 @@ void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004cc810(CGame *this_p
   if (fVar1 < 0.0) {
     this_ptr->message_timer = 0.0;
   }
-  _DAT_01cd0aec = _DAT_01cd0aec - this_ptr->delta_time_float;
-  if (_DAT_01cd0aec < 0.0) {
-    _DAT_01cd0aec = 0.0;
+  g_FLOAT_01cd0aec = g_FLOAT_01cd0aec - this_ptr->delta_time_float;
+  if (g_FLOAT_01cd0aec < 0.0) {
+    g_FLOAT_01cd0aec = 0.0;
   }
   iVar3 = 0;
   if (0 < this_ptr->status_display_count) {

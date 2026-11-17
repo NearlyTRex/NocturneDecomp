@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0057f0b0(CTurret *this_ptr,float delta_time)
 
 {
@@ -110,12 +108,12 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0057f0b0(CTurret *this_
   pvVar9 = (void *)0x0;
   puStack_14 = auStack_134;
   iStack_18 = 0;
-  CStack_110.min.x = CStack_110.min.x + _DAT_005ed804;
-  CStack_110.min.y = CStack_110.min.y + _DAT_005ed804;
-  CStack_110.min.z = CStack_110.min.z + _DAT_005ed804;
-  CStack_110.max.x = CStack_110.max.x + _DAT_005ed808;
-  CStack_110.max.y = CStack_110.max.y + _DAT_005ed808;
-  CStack_110.max.z = CStack_110.max.z + _DAT_005ed808;
+  CStack_110.min.x = CStack_110.min.x + -15.0f;
+  CStack_110.min.y = CStack_110.min.y + -15.0f;
+  CStack_110.min.z = CStack_110.min.z + -15.0f;
+  CStack_110.max.x = CStack_110.max.x + 15.0f;
+  CStack_110.max.y = CStack_110.max.y + 15.0f;
+  CStack_110.max.z = CStack_110.max.z + 15.0f;
   apcStack_28[2] = this_ptr->allowed_victim_types;
   while( true ) {
     if (g_CDemonSetPtr->actor_count <= (int)pvVar9) break;
@@ -149,10 +147,10 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0057f0b0(CTurret *this_
           afStack_5c[(uint)bVar7 * -2] = *(float *)(auStack_ac + (uint)bVar7 * -8 + 8);
           afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
                (&fStack_a0)[(uint)bVar7 * -2 + (uint)bVar7 * -2];
-          fStack_c0 = fStack_60 * _DAT_005ed80c;
-          afStack_bc[0] = afStack_5c[0] * _DAT_005ed80c;
-          afStack_bc[1] = afStack_5c[1] * _DAT_005ed80c;
-          afStack_bc[2] = fStack_60 * _DAT_005ed80c;
+          fStack_c0 = fStack_60 * 0.5f;
+          afStack_bc[0] = afStack_5c[0] * 0.5f;
+          afStack_bc[1] = afStack_5c[1] * 0.5f;
+          afStack_bc[2] = fStack_60 * 0.5f;
           afStack_bc[(uint)bVar7 * -2 + 3] = afStack_bc[(uint)bVar7 * -2];
           *(float *)(auStack_ac + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
                afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
@@ -195,7 +193,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0057f0b0(CTurret *this_
                *(uint *)((int)&CStack_d8 + (uint)bVar7 * -8 + 4);
           *(uint *)((int)aCStack_80 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 4) =
                *(uint *)((int)&CStack_d8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-          if (((0xBF060A92 <= CStack_8c.z) && (CStack_8c.z <= 0x3F9C61AA)) &&
+          if (((-0.5235988f <= CStack_8c.z) && (CStack_8c.z <= 1.22173f)) &&
              (SQRT(aCStack_80[0].y * aCStack_80[0].y +
                    CStack_8c.z * CStack_8c.z + aCStack_80[0].x * aCStack_80[0].x) <=
               SQRT((float)pCStack_40 * (float)pCStack_40 +

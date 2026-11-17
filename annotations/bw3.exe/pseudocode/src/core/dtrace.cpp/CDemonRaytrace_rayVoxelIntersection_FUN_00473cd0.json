@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 567,
-    "complexity_score": 498,
+    "complexity_score": 482,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 248,
-    "suspect_count": 22,
+    "pseudocode_lines": 247,
+    "suspect_count": 21,
     "suspect_types": [
       "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
       "sub84_truncation",
-      "suspect_float",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 815
+    "total_lines": 814
   },
   "cross_references": [
     {
@@ -101,9 +100,9 @@
   "globals": [
     {
       "addr": "005bca09",
-      "name": "DAT_005bca09",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005bca09",
+      "type": "float",
+      "value": "2.684355E+8"
     }
   ],
   "param_estimates": {
@@ -624,16 +623,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 15,
       "match": "afStackY_1094",
       "severity": "moderate",
       "text": "float afStackY_1094 [996];",
@@ -641,7 +632,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 65,
+      "line": 63,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_7c = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -649,7 +640,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 67,
+      "line": 65,
       "match": "6.542295e-39",
       "severity": "mild",
       "text": "fVar16 = 6.542295e-39;",
@@ -657,7 +648,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 71,
+      "line": 69,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_80 = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -665,7 +656,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 76,
+      "line": 74,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_84 = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -673,7 +664,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 85,
+      "line": 83,
       "match": "6.542462e-39",
       "severity": "mild",
       "text": "fVar14 = 6.542462e-39;",
@@ -681,7 +672,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 91,
+      "line": 89,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_88 = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -689,7 +680,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 93,
+      "line": 91,
       "match": "6.54254e-39",
       "severity": "mild",
       "text": "fVar13 = 6.54254e-39;",
@@ -697,7 +688,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 97,
+      "line": 95,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_8c = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -705,7 +696,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 99,
+      "line": 97,
       "match": "6.542598e-39",
       "severity": "mild",
       "text": "fVar12 = 6.542598e-39;",
@@ -713,7 +704,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 104,
+      "line": 102,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_90 = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -721,7 +712,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 135,
+      "line": 133,
       "match": "6.543082e-39",
       "severity": "mild",
       "text": "fVar10 = 6.543082e-39;",
@@ -729,7 +720,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 153,
+      "line": 151,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fStack_78 = 1.4013e-45;",
@@ -737,7 +728,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 204,
+      "line": 202,
       "match": "&stack0xffffff30",
       "severity": "moderate",
       "text": "(this_ptr_00,ray_start,&local_b8,(CVector3f *)&stack0xffffff30,",
@@ -745,7 +736,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 208,
+      "line": 206,
       "match": "&stack0xffffff30",
       "severity": "moderate",
       "text": "(out_intersection_point != (CVector3f *)&stack0xffffff30)) {",
@@ -753,7 +744,7 @@
     },
     {
       "description": "Raw hex address 0x473e32 assigned to bare local `uStack_e0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 102,
+      "line": 100,
       "match": "0x473e32",
       "severity": "moderate",
       "text": "uStack_e0 = 0x473e32;",
@@ -761,7 +752,7 @@
     },
     {
       "description": "Raw hex address 0x473f82 assigned to bare local `uStack_e0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 139,
+      "line": 137,
       "match": "0x473f82",
       "severity": "moderate",
       "text": "uStack_e0 = 0x473f82;",
@@ -769,7 +760,7 @@
     },
     {
       "description": "Raw hex address 0x473f92 assigned to bare local `uStack_e4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 142,
+      "line": 140,
       "match": "0x473f92",
       "severity": "moderate",
       "text": "uStack_e4 = 0x473f92;",
@@ -777,7 +768,7 @@
     },
     {
       "description": "Raw hex address 0x4740c8 assigned to bare local `uStack_e8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 180,
+      "line": 178,
       "match": "0x4740c8",
       "severity": "moderate",
       "text": "uStack_e8 = 0x4740c8;",
@@ -785,7 +776,7 @@
     },
     {
       "description": "Raw hex address 0x4740da assigned to bare local `uStack_ec`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_ec` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 185,
+      "line": 183,
       "match": "0x4740da",
       "severity": "moderate",
       "text": "uStack_ec = 0x4740da;",
@@ -793,7 +784,7 @@
     },
     {
       "description": "Raw hex address 0x4740ea assigned to bare local `uStack_f0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_f0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 188,
+      "line": 186,
       "match": "0x4740ea",
       "severity": "moderate",
       "text": "uStack_f0 = 0x4740ea;",

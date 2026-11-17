@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart *this_ptr)
 
 {
@@ -57,8 +55,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart 
     afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          afStack_28[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     pCVar5 = &CStack_50;
-    afStack_10[2] = fStack_44 * _DAT_005d452d;
-    CStack_50.x = fStack_44 * _DAT_005d452d;
+    afStack_10[2] = fStack_44 * 0.5f;
+    CStack_50.x = fStack_44 * 0.5f;
     *(uint *)((int)&CStack_50 + (uint)bVar4 * -8 + 4) =
          *(uint *)(&stack0xfffffffc + (uint)bVar4 * -8);
     *(uint *)((int)&CStack_50 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
@@ -87,10 +85,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart 
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00(this_ptr,0,0);
   pCVar5 = &(this_ptr->bounding_box).max;
-  if (pCVar5 != (CVector3f *)&DAT_02c8af28) {
-    pCVar5->x = _DAT_02c8af28;
-    (this_ptr->bounding_box).max.y = _DAT_02c8af2c;
-    (this_ptr->bounding_box).max.z = _DAT_02c8af30;
+  if (pCVar5 != &g_CVector3f_02c8af28) {
+    pCVar5->x = g_CVector3f_02c8af28.x;
+    (this_ptr->bounding_box).max.y = g_CVector3f_02c8af28.y;
+    (this_ptr->bounding_box).max.z = g_CVector3f_02c8af28.z;
   }
   if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar5) {
     (this_ptr->bounding_box).min.x = pCVar5->x;

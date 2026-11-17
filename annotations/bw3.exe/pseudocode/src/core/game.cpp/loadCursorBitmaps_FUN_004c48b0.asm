@@ -8,21 +8,21 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b81ef
 ;
 ; Referenced Globals:
-;   undefined4 s_cursor_005c3c5f+1
+;   TerminatedCString s_cursor_005c3c60
 ;   TerminatedCString s_upwhite_005c3c67
 ;   TerminatedCString s_downwhite_005c3c6f
 ;   TerminatedCString s_leftwhite_005c3c79
 ;   TerminatedCString s_rightwhite_005c3c83
 ;   TerminatedCString s_crosshairsgreen_005c3c8e
 ;   TerminatedCString s_crosshairsred_005c3c9e
-;   undefined4 DAT_005c3cac
-;   undefined4 DAT_01d22bec
-;   undefined4 DAT_01d22bf0
-;   undefined4 DAT_01d22bf4
-;   undefined4 DAT_01d22bf8
-;   undefined4 DAT_01d22bfc
-;   undefined4 DAT_01d22c00
-;   undefined4 DAT_01d22c04
+;   TerminatedCString s_dot_005c3cac
+;   int[16] g_INT_ARRAY_01d22bec
+;   undefined4 g_INT_ARRAY_01d22bec[1]
+;   undefined4 g_INT_ARRAY_01d22bec[2]
+;   undefined4 g_INT_ARRAY_01d22bec[3]
+;   undefined4 g_INT_ARRAY_01d22bec[4]
+;   undefined4 g_INT_ARRAY_01d22bec[5]
+;   undefined4 g_INT_ARRAY_01d22bec[6]
 ;   ... and 9 more
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 004c48be (CONDITIONAL_JUMP)  ; LAB_004c48be
     PUSH 0x10                           ; 004c48ce
     PUSH 0x10                           ; 004c48d0
-    PUSH 0x5c3c60                       ; 004c48d2 | s_cursor_005c3c5f+1
+    PUSH 0x5c3c60                       ; 004c48d2 | = "cursor"
     PUSH 0x1d22b4c                      ; 004c48d7
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460 ; 004c48dc
         ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460(CAlphaBitmap * this_ptr, char * filename, int width, int height)
@@ -99,7 +99,7 @@ section .text
     ADD ESP,0x10                        ; 004c4965
     PUSH 0x10                           ; 004c4968
     PUSH 0x10                           ; 004c496a
-    PUSH 0x5c3cac                       ; 004c496c | DAT_005c3cac
+    PUSH 0x5c3cac                       ; 004c496c | = "dot"
     PUSH 0x1d22bd8                      ; 004c4971
     MOV EBP,0x10                        ; 004c4976
     XOR ESI,ESI                         ; 004c497b
@@ -107,22 +107,22 @@ section .text
         ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     MOV EDX,0x8                         ; 004c4982
     ADD ESP,0x10                        ; 004c4987
-    MOV dword ptr [0x01d22c10],ESI      ; 004c498a | DAT_01d22c10
-    MOV dword ptr [0x01d22c14],EBP      ; 004c4990 | DAT_01d22c14
-    MOV dword ptr [0x01d22bf8],ESI      ; 004c4996 | DAT_01d22bf8
-    MOV dword ptr [0x01d22bfc],EBP      ; 004c499c | DAT_01d22bfc
-    MOV dword ptr [0x01d22bec],EDX      ; 004c49a2 | DAT_01d22bec
-    MOV dword ptr [0x01d22c0c],EDX      ; 004c49a8 | DAT_01d22c0c
-    MOV dword ptr [0x01d22bf0],EDX      ; 004c49ae | DAT_01d22bf0
-    MOV dword ptr [0x01d22bf4],EDX      ; 004c49b4 | DAT_01d22bf4
-    MOV dword ptr [0x01d22c18],EDX      ; 004c49ba | DAT_01d22c18
-    MOV dword ptr [0x01d22c1c],EDX      ; 004c49c0 | DAT_01d22c1c
-    MOV dword ptr [0x01d22c00],EDX      ; 004c49c6 | DAT_01d22c00
-    MOV dword ptr [0x01d22c20],EDX      ; 004c49cc | DAT_01d22c20
-    MOV dword ptr [0x01d22c04],EDX      ; 004c49d2 | DAT_01d22c04
-    MOV dword ptr [0x01d22c24],EDX      ; 004c49d8 | DAT_01d22c24
-    MOV dword ptr [0x01d22c08],EDX      ; 004c49de | DAT_01d22c08
-    MOV dword ptr [0x01d22c28],EDX      ; 004c49e4 | DAT_01d22c28
+    MOV dword ptr [0x01d22c10],ESI      ; 004c498a | g_INT_ARRAY_01d22bec[9]
+    MOV dword ptr [0x01d22c14],EBP      ; 004c4990 | g_INT_ARRAY_01d22bec[10]
+    MOV dword ptr [0x01d22bf8],ESI      ; 004c4996 | g_INT_ARRAY_01d22bec[3]
+    MOV dword ptr [0x01d22bfc],EBP      ; 004c499c | g_INT_ARRAY_01d22bec[4]
+    MOV dword ptr [0x01d22bec],EDX      ; 004c49a2 | g_INT_ARRAY_01d22bec
+    MOV dword ptr [0x01d22c0c],EDX      ; 004c49a8 | g_INT_ARRAY_01d22bec[8]
+    MOV dword ptr [0x01d22bf0],EDX      ; 004c49ae | g_INT_ARRAY_01d22bec[1]
+    MOV dword ptr [0x01d22bf4],EDX      ; 004c49b4 | g_INT_ARRAY_01d22bec[2]
+    MOV dword ptr [0x01d22c18],EDX      ; 004c49ba | g_INT_ARRAY_01d22bec[11]
+    MOV dword ptr [0x01d22c1c],EDX      ; 004c49c0 | g_INT_ARRAY_01d22bec[12]
+    MOV dword ptr [0x01d22c00],EDX      ; 004c49c6 | g_INT_ARRAY_01d22bec[5]
+    MOV dword ptr [0x01d22c20],EDX      ; 004c49cc | g_INT_ARRAY_01d22bec[13]
+    MOV dword ptr [0x01d22c04],EDX      ; 004c49d2 | g_INT_ARRAY_01d22bec[6]
+    MOV dword ptr [0x01d22c24],EDX      ; 004c49d8 | g_INT_ARRAY_01d22bec[14]
+    MOV dword ptr [0x01d22c08],EDX      ; 004c49de | g_INT_ARRAY_01d22bec[7]
+    MOV dword ptr [0x01d22c28],EDX      ; 004c49e4 | g_INT_ARRAY_01d22bec[15]
     POP EBP                             ; 004c49ea
     POP ESI                             ; 004c49eb
     POP EBX                             ; 004c49ec

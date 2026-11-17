@@ -6,76 +6,88 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_00589270(void)
 
 {
-  int iVar1;
-  uint uVar2;
-  uint local_70 [15];
-  uint uStack_34;
-  uint uStack_30;
-  uint uStack_2c;
+  HRESULT HVar1;
+  DDPIXELFORMAT_union2 DVar2;
+  uint uVar3;
+  DDPIXELFORMAT_union3 DVar4;
+  DDPIXELFORMAT_union4 DVar5;
+  DDSURFACEDESC local_70;
   
-  memset(local_70,0,0x6c);
-  local_70[0] = 0x6c;
-  iVar1 = (**(code **)(*_DAT_02661ae8 + 100))(_DAT_02661ae8,0,local_70,1,0);
-  if (iVar1 != 0) {
-    _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01d046a4 = 0x294;
+  memset(&local_70,0,0x6c);
+  local_70.dwSize = 0x6c;
+  HVar1 = (*g_IDirectDrawSurface_PTR_02661ae8->vtable->Lock)
+                    (g_IDirectDrawSurface_PTR_02661ae8,(RECT *)0x0,&local_70,1,(void *)0x0);
+  if (HVar1 != 0) {
+    g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01d046a4 = 0x294;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setColorTable16 - Unable to lock back buffer!");
   }
-  iVar1 = (**(code **)(*_DAT_02661ae8 + 0x80))(_DAT_02661ae8,0);
-  if (iVar1 != 0) {
-    _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01d046a4 = 0x296;
+  HVar1 = (*g_IDirectDrawSurface_PTR_02661ae8->vtable->Unlock)
+                    (g_IDirectDrawSurface_PTR_02661ae8,(void *)0x0);
+  if (HVar1 != 0) {
+    g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01d046a4 = 0x296;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setColorTable16 - Unable to unlock back buffer!");
   }
-  _DAT_01c35814 = 0;
-  for (uVar2 = uStack_34; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1) {
-    _DAT_01c35814 = _DAT_01c35814 + 1;
+  g_BIT_INTEGER32_01c35814.dword = 0;
+  for (DVar2 = local_70.ddpfPixelFormat.dwRedYMask; (DVar2.dwRBitMask & 1) == 0;
+      DVar2.dwRBitMask = DVar2.dwRBitMask >> 1) {
+    g_BIT_INTEGER32_01c35814.dword = g_BIT_INTEGER32_01c35814.dword + 1;
   }
-  _DAT_01c35818 = (uint)(0xff / (ulonglong)(uStack_34 >> ((byte)_DAT_01c35814 & 0x1f)));
-  _DAT_01c3581c = 0;
-  uVar2 = _DAT_01c35818;
-  if (_DAT_01c35818 == 0) {
-    _DAT_01c3581c = 0x20;
-  }
-  else {
-    for (; 1 < uVar2; uVar2 = uVar2 >> 1) {
-      _DAT_01c3581c = _DAT_01c3581c + 1;
-    }
-  }
-  _DAT_01c35820 = 0;
-  for (uVar2 = uStack_30; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1) {
-    _DAT_01c35820 = _DAT_01c35820 + 1;
-  }
-  _DAT_01c35824 = (uint)(0xff / (ulonglong)(uStack_30 >> ((byte)_DAT_01c35820 & 0x1f)));
-  _DAT_01c35828 = 0;
-  uVar2 = _DAT_01c35824;
-  if (_DAT_01c35824 == 0) {
-    _DAT_01c35828 = 0x20;
+  g_INT_01c35818 =
+       (int)(0xff / (ulonglong)
+                    (local_70.ddpfPixelFormat.dwRedYMask.dwRBitMask >>
+                    (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)));
+  g_BIT_INTEGER32_01c3581c.dword = 0;
+  uVar3 = g_INT_01c35818;
+  if (g_INT_01c35818 == 0) {
+    g_BIT_INTEGER32_01c3581c.dword = 0x20;
   }
   else {
-    for (; 1 < uVar2; uVar2 = uVar2 >> 1) {
-      _DAT_01c35828 = _DAT_01c35828 + 1;
+    for (; 1 < uVar3; uVar3 = uVar3 >> 1) {
+      g_BIT_INTEGER32_01c3581c.dword = g_BIT_INTEGER32_01c3581c.dword + 1;
     }
   }
-  _DAT_01c3582c = 0;
-  for (uVar2 = uStack_2c; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1) {
-    _DAT_01c3582c = _DAT_01c3582c + 1;
+  g_BIT_INTEGER32_01c35820.dword = 0;
+  for (DVar4 = local_70.ddpfPixelFormat.dwGreenUMask; (DVar4.dwGBitMask & 1) == 0;
+      DVar4.dwGBitMask = DVar4.dwGBitMask >> 1) {
+    g_BIT_INTEGER32_01c35820.dword = g_BIT_INTEGER32_01c35820.dword + 1;
   }
-  _DAT_01c35830 = (uint)(0xff / (ulonglong)(uStack_2c >> ((byte)_DAT_01c3582c & 0x1f)));
-  _DAT_01c35834 = 0;
-  uVar2 = _DAT_01c35830;
-  if (_DAT_01c35830 == 0) {
-    _DAT_01c35834 = 0x20;
+  g_INT_01c35824 =
+       (int)(0xff / (ulonglong)
+                    (local_70.ddpfPixelFormat.dwGreenUMask.dwGBitMask >>
+                    (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)));
+  g_BIT_INTEGER32_01c35828.dword = 0;
+  uVar3 = g_INT_01c35824;
+  if (g_INT_01c35824 == 0) {
+    g_BIT_INTEGER32_01c35828.dword = 0x20;
+  }
+  else {
+    for (; 1 < uVar3; uVar3 = uVar3 >> 1) {
+      g_BIT_INTEGER32_01c35828.dword = g_BIT_INTEGER32_01c35828.dword + 1;
+    }
+  }
+  g_BIT_INTEGER32_01c3582c.dword = 0;
+  for (DVar5 = local_70.ddpfPixelFormat.dwBlueVMask; (DVar5.dwBBitMask & 1) == 0;
+      DVar5.dwBBitMask = DVar5.dwBBitMask >> 1) {
+    g_BIT_INTEGER32_01c3582c.dword = g_BIT_INTEGER32_01c3582c.dword + 1;
+  }
+  g_INT_01c35830 =
+       (int)(0xff / (ulonglong)
+                    (local_70.ddpfPixelFormat.dwBlueVMask.dwBBitMask >>
+                    (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)));
+  g_BIT_INTEGER32_01c35834.dword = 0;
+  uVar3 = g_INT_01c35830;
+  if (g_INT_01c35830 == 0) {
+    g_BIT_INTEGER32_01c35834.dword = 0x20;
     wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10();
     return;
   }
-  for (; 1 < uVar2; uVar2 = uVar2 >> 1) {
-    _DAT_01c35834 = _DAT_01c35834 + 1;
+  for (; 1 < uVar3; uVar3 = uVar3 >> 1) {
+    g_BIT_INTEGER32_01c35834.dword = g_BIT_INTEGER32_01c35834.dword + 1;
   }
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10();
   return;

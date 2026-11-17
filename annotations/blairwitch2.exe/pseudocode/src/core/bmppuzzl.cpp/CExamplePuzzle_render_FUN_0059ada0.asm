@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_01c35e60
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   engine_2d.c_drawRect_FUN_00403170
@@ -36,7 +36,7 @@ section .text
     MOV EBP,dword ptr [ESI + 0x4]       ; 0059adb9
     MOV EDX,0xff                        ; 0059adbc
     PUSH EBP                            ; 0059adc1
-    MOV dword ptr [0x01c35e60],EDX      ; 0059adc2 | DAT_01c35e60
+    MOV dword ptr [0x01c35e60],EDX      ; 0059adc2 | g_INT_01c35e60
     CALL engine_2d.c_drawRect_FUN_00403170 ; 0059adc8
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawRect_FUN_00403170(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0059adcd

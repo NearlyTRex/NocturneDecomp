@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051f490(CPrye *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix)
 
 {
@@ -686,7 +684,7 @@ CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051
       }
       else if (hand_index == 0) {
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-                  (&local_1250,(CVector3f *)&DAT_01ed36cc,(CVector3f *)&DAT_02cfd900);
+                  (&local_1250,&g_CVector3f_01ed36cc,&g_CVector3f_02cfd900);
         pCVar5 = &local_1250;
         pCVar14 = local_18;
         core_xform_cpp_buildRotationX_FUN_00584f70(1.5707964,&local_1160);
@@ -739,7 +737,7 @@ CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051
                                  (pCVar2,g_CHealClassInfo.name_hash);
               if (pCVar2 == (CDemonActor *)0x0) {
                 core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-                          (&local_5f0,(CVector3f *)&DAT_01ed36c0,(CVector3f *)&DAT_02cfd900);
+                          (&local_5f0,&g_CVector3f_01ed36c0,&g_CVector3f_02cfd900);
                 pCVar5 = &local_5f0;
                 pCVar14 = local_18;
                 core_xform_cpp_buildRotationX_FUN_00584f70(1.5707964,&local_d10);
@@ -869,7 +867,8 @@ CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051
   local_1b8.x = (float)pCVar2;
   local_1b8.y = (float)pCVar2;
   local_1b8.z = (float)pCVar2;
-  local_1c = core_actor_cpp_castToClassHash_FUN_0040c840(carried_actor,DAT_007e1a50);
+  local_1c = core_actor_cpp_castToClassHash_FUN_0040c840
+                       (carried_actor,g_CDemonActorType_007e1a18.name_hash);
   if (local_1c != (CDemonActor *)0x0) {
     (*((carried_actor->vtable)._ub)->getBoundingBox)(carried_actor,in_stack_ffffed50);
     pfVar8 = local_4b8;
@@ -886,10 +885,10 @@ CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051
     local_490[(uint)bVar11 * -2] = local_13c[(uint)bVar11 * -2];
     local_490[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
          local_13c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-    local_470 = (CDemonActor *)(local_494 * _DAT_005cd4cb);
-    local_46c[0] = local_490[0] * _DAT_005cd4cb;
-    local_46c[1] = local_490[1] * _DAT_005cd4cb;
-    local_230.x = local_494 * _DAT_005cd4cb;
+    local_470 = (CDemonActor *)(local_494 * 0.5f);
+    local_46c[0] = local_490[0] * 0.5f;
+    local_46c[1] = local_490[1] * 0.5f;
+    local_230.x = local_494 * 0.5f;
     *(float *)((int)&local_230 + (uint)bVar11 * -8 + 4) = local_46c[(uint)bVar11 * -2];
     *(float *)((int)&local_230 + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 1) * 4 + 4) =
          local_46c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -942,12 +941,12 @@ LAB_00520ba3:
           local_2fc.y = local_8c.y;
           local_2fc.z = local_8c.z;
         }
-        local_1b8.z = local_4bc * (float)_DAT_005cd4d7 + local_4c8 * (float)_DAT_005cd4cf;
+        local_1b8.z = local_4bc * (float)0.29999999999999999 + local_4c8 * (float)0.69999999999999996;
         goto LAB_0052083a;
       }
       if (fVar1 != 4.2039e-45) {
-        _DAT_01d71de0 = "..\\core\\prye.cpp";
-        _DAT_01d71de4 = 0x1050;
+        g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
+        g_INT_01d71de4 = 0x1050;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Don't know how to carry light %s");
         goto LAB_0052083a;
       }

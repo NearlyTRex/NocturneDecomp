@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_time)
 
 {
@@ -50,7 +48,7 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
     bVar1 = true;
   }
   if ((this_ptr->action_pending == 7) || (delta_time_01 = delta_time, bVar1)) {
-    delta_time_01 = delta_time * (float)_DAT_005cfe37;
+    delta_time_01 = delta_time * (float)0.25;
     core_doc_cpp_CDoc_processFrame_FUN_00450c60(this_ptr,delta_time_01);
     core_doc_cpp_CDoc_processFrame_FUN_00450c60(this_ptr,delta_time_01);
     core_doc_cpp_CDoc_processFrame_FUN_00450c60(this_ptr,delta_time_01);

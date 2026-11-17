@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 189,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 109,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "unrolled_strlen"
@@ -57,8 +57,8 @@
     },
     {
       "addr": "00626114",
-      "name": "DAT_00626114",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_00626114",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -221,46 +221,6 @@
       "match": "DAT_005e0aa0",
       "severity": "mild",
       "text": "source_text = &DAT_005e0aa0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "for (; (((&DAT_00626114)[(byte)(*pcVar7 + 1)] & 2) != 0 &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "while ((0 < iVar8 && (((&DAT_00626114)[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(*pcVar7 + 1)] & 2) != 0 &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((&DAT_00626114)[(byte)(cVar1 + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((((&DAT_00626114)[(byte)(cVar1 + 1)] & 2) == 0) && ((flags & 0x10) == 0)) &&",
       "type": "undefined_data"
     },
     {

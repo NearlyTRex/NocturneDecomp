@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(CStrList *this_ptr,int new_capacity)
 
 {
   char **ppcVar1;
   
   if (new_capacity < this_ptr->item_count) {
-    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-    _DAT_01d046a4 = 0xbcc;
+    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+    g_INT_01d046a4 = 0xbcc;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::allocate - Can't shrink list!");
   }
   if (new_capacity < 1) {
-    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-    _DAT_01d046a4 = 0xbcd;
+    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+    g_INT_01d046a4 = 0xbcd;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::allocate - invalid count: %d");
   }
   if (this_ptr->capacity < new_capacity) {
@@ -28,8 +26,8 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(CStrList *this_pt
     ppcVar1 = (char **)realloc(this_ptr->data_array,new_capacity * 4);
     this_ptr->data_array = ppcVar1;
     if (ppcVar1 == (char **)0x0) {
-      _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-      _DAT_01d046a4 = 0xbd1;
+      g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+      g_INT_01d046a4 = 0xbd1;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::insert - out of memory");
       return;
     }

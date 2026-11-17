@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *this_ptr)
 
 {
@@ -34,7 +32,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
     return;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609acc);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00609acc);
   this_ptr_00 = &this_ptr->model;
   if (this_ptr->is_fully_burned != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
@@ -48,20 +46,20 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
   if (0 < pCVar5->bone_count) {
     iVar8 = 0;
     do {
-      *(uint *)((int)&DAT_007bdc9c + iVar8) = 0;
+      *(uint *)((int)g_FLOAT_ARRAY_007bdc9c + iVar8) = 0;
       iVar6 = iVar6 + 1;
       iVar8 = iVar8 + 4;
     } while (iVar6 < pCVar5->bone_count);
   }
-  fVar3 = 0x40400000;
+  fVar3 = 3.0f;
   iVar6 = 0;
   if (0 < this_ptr->fire_count) {
-    fVar2 = (float)_DAT_005ccd9e;
+    fVar2 = (float)65535;
     pCVar9 = this_ptr;
     do {
       iVar8 = pCVar9->fires[0].bone_index;
-      (&DAT_007bdc9c)[iVar8] =
-           (float)(&DAT_007bdc9c)[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar3;
+      g_FLOAT_ARRAY_007bdc9c[iVar8] =
+           g_FLOAT_ARRAY_007bdc9c[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar3;
       iVar6 = iVar6 + 1;
       pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
     } while (iVar6 < this_ptr->fire_count);
@@ -71,7 +69,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
   pCVar12 = local_20;
   if (0 < pCVar5->bone_count) {
     do {
-      if ((float)_DAT_005ccd9e <= (float)(&DAT_007bdc9c)[iVar6]) {
+      if ((float)65535 <= g_FLOAT_ARRAY_007bdc9c[iVar6]) {
         iVar8 = iVar8 + 1;
       }
       if (pCVar12->farthest_child_bone[0] == -1) {
@@ -92,15 +90,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
     local_30 = 0.0;
     puVar7 = puVar11;
     puVar10 = puVar11;
-    for (iVar8 = 0; pCVar4 = DAT_0060b280, iVar8 < (int)(uint)*puVar11; iVar8 = iVar8 + 1) {
+    for (iVar8 = 0; pCVar4 = g_CDemonRenderer_PTR_0060b280, iVar8 < (int)(uint)*puVar11;
+        iVar8 = iVar8 + 1) {
       dVar13 = round
-                         ((double)(*(float *)(puVar7 + 4) * (float)(&DAT_007bdc9c)[puVar10[1]]));
+                         ((double)(*(float *)(puVar7 + 4) * g_FLOAT_ARRAY_007bdc9c[puVar10[1]]));
       local_18 = (int)ROUND(dVar13);
       puVar7 = puVar7 + 4;
       puVar10 = puVar10 + 1;
       local_30 = (float)local_18 + 6.097878e-39;
     }
-    if ((float)_DAT_005ccd9e < local_30) {
+    if ((float)65535 < local_30) {
       local_30 = 65535.0;
     }
     dVar13 = round((double)local_30);

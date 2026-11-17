@@ -7,9 +7,11 @@
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFieldNotes.h"
+#include "types/classes/CLightningBolt.h"
 #include "types/classes/CPopcorn.h"
 #include "types/classes/CRainDrop.h"
 #include "types/classes/CShell.h"
+#include "types/classes/CTrail.h"
 #include "types/structs/SNotesMap.h"
 #include "types/structs/SNotesSection.h"
 #include "types/structs/STextView.h"
@@ -42,6 +44,9 @@ extern CDemonActorType g_CFliesClassInfo;
 // CFieldNotes
 extern CFieldNotes g_CFieldNotesInstance;
 
+// CLightningBolt[10]
+extern CLightningBolt g_CLightningBolt_ARRAY_01ca13ec[10];
+
 // CPopcorn[256]
 extern CPopcorn g_PopcornPool[256];
 
@@ -51,6 +56,9 @@ extern CRainDrop g_RainDropPool[256];
 // CShell[50]
 extern CShell g_ShellPool[50];
 
+// CTrail[100]
+extern CTrail g_CTrail_ARRAY_01ca15a8[100];
+
 // SNotesMap[4]
 extern SNotesMap SNotesMap_ARRAY_01cacb50[4];
 
@@ -59,4 +67,56 @@ extern SNotesSection SNotesSection_ARRAY_01cab9f4[6];
 
 // STextView
 extern STextView g_STextViewInstance;
+
+// char
+extern char g_CHAR_01cab7a8;
+extern char g_CHAR_01caf4a0;
+extern char g_CHAR_01cafe40;
+
+// char[512]
+extern char g_CHAR_ARRAY_01cab7f0[512];
+
+// float
+extern float g_FLOAT_01caf5b0;
+extern float g_FLOAT_01caf5bc;
+extern float g_FLOAT_01caf5c0;
+extern float g_FLOAT_01caf5c4;
+extern float g_FLOAT_01caf5c8;
+extern float g_FLOAT_01caf5cc;
+extern float g_FLOAT_01caf5d0;
+extern float g_FLOAT_01caf5d4;
+extern float g_FLOAT_01caf5d8;
+extern float g_FLOAT_01caf5dc;
+extern float g_FLOAT_01caf5e0;
+extern float g_FLOAT_01caf5e4;
+extern float g_FLOAT_01caf5e8;
+
+// float[64]
+extern float g_FLOAT_ARRAY_01caf634[64];
+
+// int
+extern int g_INT_01ca13e8;
+extern int g_INT_01ca15a4;
+extern int g_INT_01ca23b8;
+extern int g_INT_01ca367c;
+extern int g_INT_01ca7680;
+extern int g_INT_01cab780;
+extern int g_INT_01cab7e8;
+extern int g_INT_01cab9f0;
+extern int g_INT_01cacb4c;
+extern int g_INT_01caf110;
+extern int g_INT_01caf488;
+extern int g_INT_01caf48c;
+extern int g_INT_01caf490;
+extern int g_INT_01caf494;
+extern int g_INT_01caf498;
+extern int g_INT_01caf49c;
+extern int g_INT_01caf568;
+extern int g_INT_01caf5b4;
+extern int g_INT_01caf5b8;
+extern int g_INT_01caf5ec;
+
+// uint
+extern uint g_UINT_01caf62c;
+extern uint g_UINT_01caf630;
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 
 {
@@ -28,14 +26,14 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y
   ushort uVar15;
   uint7 uVar16;
   
-  pcVar7 = (char *)(scanline_y * 0x140 + 0xb2cfc8 + x_start);
+  pcVar7 = g_CHAR_ARRAY_00b2cfc8 + x_start + scanline_y * 0x140;
   pcVar9 = source_entry->lightmap[scanline_y] + x_start;
-  uVar8 = *(uint *)(_DAT_015484c8 + 0x3c) >> 10;
+  uVar8 = (uint)g_CDemonGlobe_PTR_015484c8->intensity_multiplier >> 10;
   uVar16 = (uint7)uVar8 | (uint7)uVar8 << 0x18 | (uint7)uVar8 << 0x10 | (uint7)uVar8 << 8;
   uVar3 = (ushort)(((uVar16 >> 0x18) << 0x30) >> 0x28);
   iVar6 = x_end - x_start;
   while (((uint)pcVar7 & 3) != 0) {
-    *pcVar7 = *pcVar7 + *(char *)((uint)(byte)*pcVar9 * 0x40 + uVar8 + 0x135dab0);
+    *pcVar7 = *pcVar7 + g_CHAR_ARRAY_0135dab0[(uint)(byte)*pcVar9 * 0x40 + uVar8];
     pcVar9 = pcVar9 + 1;
     pcVar7 = pcVar7 + 1;
     iVar5 = iVar6 + -1;
@@ -72,7 +70,7 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y
     return;
   }
   do {
-    *pcVar7 = *pcVar7 + *(char *)((uint)(byte)*pcVar9 * 0x40 + uVar8 + 0x135dab0);
+    *pcVar7 = *pcVar7 + g_CHAR_ARRAY_0135dab0[(uint)(byte)*pcVar9 * 0x40 + uVar8];
     pcVar9 = pcVar9 + 1;
     pcVar7 = pcVar7 + 1;
     iVar5 = iVar6 + -1;

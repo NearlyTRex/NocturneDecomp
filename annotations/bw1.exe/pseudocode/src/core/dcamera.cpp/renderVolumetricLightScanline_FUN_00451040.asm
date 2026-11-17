@@ -12,11 +12,11 @@
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060 at 004656a0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_013238cc
-;   undefined4 DAT_013238d0
-;   undefined4 DAT_01323d00
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
+;   int g_INT_013238cc
+;   int g_INT_013238d0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01323d00
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     SUB ESP,0x1c                        ; 00451046
     MOV EDI,dword ptr [EBP + 0x18]      ; 00451049
     MOV EDX,dword ptr [EBP + 0x14]      ; 0045104c
-    SUB EDX,dword ptr [0x01c4f00c]      ; 0045104f | DAT_01c4f00c
-    MOV ECX,dword ptr [0x01323d00]      ; 00451055 | DAT_01323d00
+    SUB EDX,dword ptr [0x01c4f00c]      ; 0045104f | g_INT_01c4f00c
+    MOV ECX,dword ptr [0x01323d00]      ; 00451055 | g_BIT_INTEGER32_01323d00
     MOV dword ptr [EBP + 0x14],EDX      ; 0045105b
     CMP ECX,0x1                         ; 0045105e
     JNZ 0x0045106d                      ; 00451061
@@ -40,7 +40,7 @@ section .text
     TEST byte ptr [EBP + 0x14],0x1      ; 00451063
     JNZ 0x004511d6                      ; 00451067
         ;   XREF to: 004511d6 (CONDITIONAL_JUMP)  ; LAB_004511d6
-    CMP dword ptr [0x01323d00],0x2      ; 0045106d | DAT_01323d00
+    CMP dword ptr [0x01323d00],0x2      ; 0045106d | g_BIT_INTEGER32_01323d00
         ;   Label: LAB_0045106d
     JNZ 0x00451080                      ; 00451074
         ;   XREF to: 00451080 (CONDITIONAL_JUMP)  ; LAB_00451080
@@ -49,11 +49,11 @@ section .text
         ;   XREF to: 004511d6 (CONDITIONAL_JUMP)  ; LAB_004511d6
     MOV ESI,dword ptr [EBP + 0x14]      ; 00451080
         ;   Label: LAB_00451080
-    MOV CL,byte ptr [0x01323d00]        ; 00451083 | DAT_01323d00
+    MOV CL,byte ptr [0x01323d00]        ; 00451083 | g_BIT_INTEGER32_01323d00
     SAR ESI,CL                          ; 00451089
     MOV dword ptr [EBP + 0x14],ESI      ; 0045108b
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0045108e
-    MOV EAX,[0x01c4f008]                ; 00451091 | DAT_01c4f008
+    MOV EAX,[0x01c4f008]                ; 00451091 | g_INT_01c4f008
     MOV EBX,dword ptr [EDI + 0x8]       ; 00451096
     MOV ESI,dword ptr [ESI + 0x8]       ; 00451099
     SAR EBX,0x10                        ; 0045109c
@@ -112,7 +112,7 @@ section .text
     SAR EDX,0x1f                        ; 0045111b
     IDIV ECX                            ; 0045111e
     MOV dword ptr [EBP + -0x10],EAX     ; 00451120
-    MOV CL,byte ptr [0x01323d00]        ; 00451123 | DAT_01323d00
+    MOV CL,byte ptr [0x01323d00]        ; 00451123 | g_BIT_INTEGER32_01323d00
     MOV EDX,EBX                         ; 00451129
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045112b
     SHL EDX,CL                          ; 0045112e
@@ -133,7 +133,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0xfffffffc] ; 0045115f
     SHL ECX,0x2                         ; 00451165
     MOV ESI,dword ptr [EBP + 0xfffffff8] ; 00451168
-    MOV EDI,dword ptr [0x013238d0]      ; 0045116e | DAT_013238d0
+    MOV EDI,dword ptr [0x013238d0]      ; 0045116e | g_INT_013238d0
     MOV EBX,dword ptr [EBP + 0xffffffe4] ; 00451174
     MOV EDX,dword ptr [EBP + 0xffffffec] ; 0045117a
     MOV EAX,ECX                         ; 00451180
@@ -162,8 +162,8 @@ section .text
     SUB ECX,0x4                         ; 004511c1
     JG 0x00451180                       ; 004511c4
         ;   XREF to: 00451180 (CONDITIONAL_JUMP)  ; LAB_00451180
-    MOV dword ptr [0x013238d0],EDI      ; 004511c6 | DAT_013238d0
-    MOV dword ptr [0x013238cc],0x1      ; 004511cc | DAT_013238cc
+    MOV dword ptr [0x013238d0],EDI      ; 004511c6 | g_INT_013238d0
+    MOV dword ptr [0x013238cc],0x1      ; 004511cc | g_INT_013238cc
     MOV ESP,EBP                         ; 004511d6
         ;   Label: LAB_004511d6
     POP EBP                             ; 004511d8

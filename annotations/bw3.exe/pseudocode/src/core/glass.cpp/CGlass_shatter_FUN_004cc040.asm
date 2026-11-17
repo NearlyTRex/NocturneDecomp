@@ -85,17 +85,17 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 s_s_7YEARS_RAW_005c45bf+1
-;   undefined4 s_s_7YEARS_RAW_005c45bf+2
-;   undefined4 s_s_7YEARS_RAW_005c45bf+3
-;   undefined4 s_s_7YEARS_RAW_005c45bf+4
+;   TerminatedCString s_s_7YEARS_RAW_005c45c0
+;   undefined4 s_s_7YEARS_RAW_005c45c0+1
+;   undefined4 s_s_7YEARS_RAW_005c45c0+2
+;   undefined4 s_s_7YEARS_RAW_005c45c0+3
 ;   TerminatedCString s_glass_1_wav_2_0_005c45cb
-;   undefined4 DAT_005c45e0
+;   double g_DOUBLE_005c45e0 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fba28
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   int g_INT_005fba28 = 0x100
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -133,7 +133,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 004cc082
         ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     FLD float ptr [EBX + 0x158]         ; 004cc087
-    FMUL double ptr [0x005c45e0]        ; 004cc08d | DAT_005c45e0
+    FMUL double ptr [0x005c45e0]        ; 004cc08d | g_DOUBLE_005c45e0
     LEA ESI,[ESP + 0xa4]                ; 004cc093
     XOR EDI,EDI                         ; 004cc09a
     ADD ESP,0xc                         ; 004cc09c
@@ -327,11 +327,11 @@ section .text
     LEA EAX,[EBX + 0x164]               ; 004cc34c
         ;   Label: LAB_004cc34c
     PUSH EAX                            ; 004cc352
-    MOV EDX,dword ptr [0x005f2afc]      ; 004cc353 | DAT_005f2afc
-    PUSH EDX                            ; 004cc359 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004cc353 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004cc359 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004cc35a
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    MOV ECX,dword ptr [0x005fba28]      ; 004cc35f | DAT_005fba28
+    MOV ECX,dword ptr [0x005fba28]      ; 004cc35f | g_INT_005fba28
     ADD ESP,0x8                         ; 004cc365
     CMP ECX,0x40                        ; 004cc368
     JNZ 0x004cc41f                      ; 004cc36b
@@ -374,18 +374,18 @@ section .text
     POP ESI                             ; 004cc3d9
     POP EBX                             ; 004cc3da
     RET                                 ; 004cc3db
-    MOV ESI,0x5c45c0                    ; 004cc3dc | s_s_7YEARS_RAW_005c45bf+1
+    MOV ESI,0x5c45c0                    ; 004cc3dc | = "7YEARS.RAW"
         ;   Label: LAB_004cc3dc
     LEA EDI,[EBX + 0x16c]               ; 004cc3e1
     MOV dword ptr [EBX + 0x1ac],0xffff  ; 004cc3e7
     PUSH EDI                            ; 004cc3f1
-    MOV AL,byte ptr [ESI]               ; 004cc3f2 | s_s_7YEARS_RAW_005c45bf+1 | s_s_7YEARS_RAW_005c45bf+3
+    MOV AL,byte ptr [ESI]               ; 004cc3f2 | = "7YEARS.RAW" | s_s_7YEARS_RAW_005c45c0+2
         ;   Label: LAB_004cc3f2
     MOV byte ptr [EDI],AL               ; 004cc3f4
     CMP AL,0x0                          ; 004cc3f6
     JZ 0x004cc40a                       ; 004cc3f8
         ;   XREF to: 004cc40a (CONDITIONAL_JUMP)  ; LAB_004cc40a
-    MOV AL,byte ptr [ESI + 0x1]         ; 004cc3fa | s_s_7YEARS_RAW_005c45bf+2 | s_s_7YEARS_RAW_005c45bf+4
+    MOV AL,byte ptr [ESI + 0x1]         ; 004cc3fa | s_s_7YEARS_RAW_005c45c0+1 | s_s_7YEARS_RAW_005c45c0+3
     ADD ESI,0x2                         ; 004cc3fd
     MOV byte ptr [EDI + 0x1],AL         ; 004cc400
     ADD EDI,0x2                         ; 004cc403

@@ -11,12 +11,12 @@
 ;   core_skeleton.cpp_loadSkeleton_FUN_005501e0 at 0055026e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d166c
-;   undefined4 DAT_005d166f
+;   TerminatedCString s_rt_005d166c
+;   TerminatedCString s_data_005d166f
 ;   TerminatedCString s_core_skeleton_cpp_005d1674
 ;   TerminatedCString s_CSkeleton_load_Can_t_ope_005d1689
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -34,9 +34,9 @@ section .text
     PUSH EDI                            ; 00547c22
     MOV EDI,dword ptr [ESP + 0x10]      ; 00547c23
     MOV ESI,dword ptr [ESP + 0x14]      ; 00547c27
-    PUSH 0x5d166c                       ; 00547c2b | DAT_005d166c
+    PUSH 0x5d166c                       ; 00547c2b | = "rt"
     PUSH ESI                            ; 00547c30
-    PUSH 0x5d166f                       ; 00547c31 | DAT_005d166f
+    PUSH 0x5d166f                       ; 00547c31 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00547c36
         ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00547c3b
@@ -80,8 +80,8 @@ section .text
     MOV EDX,0x5d1674                    ; 00547c7c | = "..\\core\\skeleton.cpp"
     MOV ECX,0x101                       ; 00547c81
     PUSH 0x5d1689                       ; 00547c86 | = "CSkeleton::load - Can't open %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 00547c8b | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00547c91 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00547c8b | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00547c91 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00547c97
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00547c9c

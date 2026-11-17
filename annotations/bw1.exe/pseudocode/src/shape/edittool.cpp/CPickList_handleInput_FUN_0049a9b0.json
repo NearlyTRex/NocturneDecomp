@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 411,
-    "complexity_score": 199,
+    "complexity_score": 194,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 169,
-    "suspect_count": 2,
+    "pseudocode_lines": 179,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strlen"
     ],
-    "total_lines": 580
+    "total_lines": 590
   },
   "cross_references": [],
   "function": {
@@ -63,20 +62,20 @@
   "globals": [
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "00626114",
-      "name": "DAT_00626114",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_00626114",
+      "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     }
   ],
@@ -165,16 +164,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((&DAT_00626114)[(byte)((char)iVar2 + 1)] & 0xe0) != 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 143,
+      "line": 153,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

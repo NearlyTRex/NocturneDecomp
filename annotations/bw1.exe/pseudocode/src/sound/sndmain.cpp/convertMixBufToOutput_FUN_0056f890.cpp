@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0056f890(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride)
 
 {
@@ -21,8 +19,8 @@ void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0056f890(float *input_s
   local_30 = output_buffer;
   if ((uint)bits_per_sample < 8) {
 LAB_0056f9dd:
-    _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-    _DAT_01d1d404 = 0x617;
+    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+    g_INT_01d1d404 = 0x617;
     core_main_c_displayErrorAndQuit_FUN_005030e0("convertMixBufToOutput - invalid bits: %d");
     return;
   }
@@ -31,11 +29,11 @@ LAB_0056f9dd:
     if (0 < num_samples) {
       do {
         fVar1 = *input_samples;
-        if (fVar1 <= (float)_DAT_005f3248) {
+        if (fVar1 <= (float)-1) {
           *(byte *)local_30 = 0;
         }
         else if (fVar1 < 1.0) {
-          local_28 = (byte)(int)ROUND(fVar1 * _DAT_005f3244 + _DAT_005f3250);
+          local_28 = (byte)(int)ROUND(fVar1 * 127.0f + 128.0f);
           *(byte *)local_30 = local_28;
         }
         else {
@@ -53,11 +51,11 @@ LAB_0056f9dd:
     if (0 < num_samples) {
       do {
         fVar1 = *input_samples;
-        if (fVar1 <= (float)_DAT_005f3248) {
+        if (fVar1 <= (float)-1) {
           *local_30 = 0x8001;
         }
         else if (fVar1 < 1.0) {
-          local_20 = (ushort)(int)ROUND(fVar1 * _DAT_005f3240);
+          local_20 = (ushort)(int)ROUND(fVar1 * 32766.0f);
           *local_30 = local_20;
         }
         else {

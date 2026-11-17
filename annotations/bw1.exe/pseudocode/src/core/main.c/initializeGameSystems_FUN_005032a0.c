@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv)
 
 {
@@ -32,32 +30,32 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   int iStack_14;
   
   bVar12 = 0;
-  _DAT_01c51d10 = 0;
-  _DAT_006258dc = 0x10000;
-  _DAT_006258d0 = 1;
-  file_handle = _fopen("stderr.txt",&DAT_005e70d2);
+  g_INT_01c51d10 = 0;
+  g_INT_006258dc = 0x10000;
+  g_INT_006258d0 = 1;
+  file_handle = _fopen("stderr.txt","rb");
   if (file_handle != (_FILE *)0x0) {
     _fclose(file_handle);
     iVar6 = _chmod("stderr.txt",0x1c0);
     if (iVar6 != 0) {
-      _DAT_01d1d400 = "..\\core\\main.c";
-      _DAT_01d1d404 = 0x3b8;
+      g_CHAR_PTR_01d1d400 = "..\\core\\main.c";
+      g_INT_01d1d404 = 0x3b8;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Please copy Nocturne to your hard drive");
     }
   }
   pcVar11 = &stack0xfffff8d8;
-  _freopen("stderr.txt","wt",(_FILE *)&DAT_00626308);
+  _freopen("stderr.txt","wt",&g_FILE_00626308);
   core_flattn_cpp_doNothing_FUN_004bf770();
   core_inivar_cpp_readIniData_FUN_004f4f50();
-  _DAT_02c8337c = 2;
+  g_INT_02c8337c = 2;
   engine_pod_cpp_CPod_init_FUN_0053c8a0(&g_CDemonPodPtr->base);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(engine_pod_cpp_findFileInPod_FUN_0053d520);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(engine_dosio_cpp_findFileNormally_FUN_00478ef0);
   support_newmsg_cpp_readMessageFile_FUN_00530bf0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_0051c450();
-  if (_DAT_01c51d00 == 0) {
-    _DAT_01d1d400 = "..\\core\\main.c";
-    _DAT_01d1d404 = 0x3dd;
+  if (g_INT_01c51d00 == 0) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\main.c";
+    g_INT_01d1d404 = 0x3dd;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("This CPU does not have an MMX unit.")
     ;
     core_main_c_displayErrorAndQuit_FUN_005030e0(pcVar5);
@@ -69,12 +67,12 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   wincore_winrun_cpp_initJoystick_FUN_005b3aa0();
   iVar6 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(0x280,0x1e0,0x20);
   if (iVar6 == 0) {
-    _DAT_01d1d400 = "..\\core\\main.c";
-    _DAT_01d1d404 = 0x3f5;
+    g_CHAR_PTR_01d1d400 = "..\\core\\main.c";
+    g_INT_01d1d404 = 0x3f5;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_0045e000();
-  if (_DAT_02c9be78 < 0x3c00000) {
+  if (g_INT_02c9be78 < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
     pcVar5 = acStack_528;
     do {
@@ -302,7 +300,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     } while (cVar2 != '\0');
     shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340(g_CEditorToolsPtr,acStack_528);
   }
-  if (_DAT_02c9be7c < 0xc800000) {
+  if (g_INT_02c9be7c < 0xc800000) {
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
     do {
       cVar2 = *pcVar5;
@@ -444,11 +442,11 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340(g_CEditorToolsPtr,&stack0xfffff8d8);
   }
   pCVar4 = g_CGamePtr;
-  if (_DAT_01d06d68 != 0) {
-    _DAT_01d06d68 = 0;
+  if (g_INT_01d06d68 != 0) {
+    g_INT_01d06d68 = 0;
     g_CGamePtr->game_pixx = 0x280;
     pCVar4->game_pixy = 0x1e0;
-    _DAT_02c83370 = 0;
+    g_INT_02c83370 = 0;
     pCVar4->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_0050a9c0();
   }
@@ -465,16 +463,16 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     pcVar11[1] = cVar2;
     pcVar11 = pcVar11 + 2;
   } while (cVar2 != '\0');
-  engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_0152d244,acStack_228);
-  engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_0152d244,0x58);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_CBitFont_PTR_0152d244,acStack_228);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_0152d244,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(&CStack_28);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&CStack_28,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CStack_28,0,0,0x8000);
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&CStack_28,0);
-  core_sound_cpp_CSound_findAllSoundFiles_FUN_0057cb30(0x02C82A60);
+  core_sound_cpp_CSound_findAllSoundFiles_FUN_0057cb30(g_CSound_PTR_006236b8);
   iVar6 = 0;
-  core_mission_cpp_CDemonMission_reset_FUN_0051a2d0(0x01D2C900);
+  core_mission_cpp_CDemonMission_reset_FUN_0051a2d0(g_CDemonMission_PTR_0061f650);
   iStack_14 = 0;
   do {
     puVar1 = (uint *)((int)&g_GlobalFilters + iVar6);
@@ -482,21 +480,21 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     iVar8 = iStack_14 + 1;
     core_dfilter_cpp_CDemonFilter_init_FUN_0045dc30
               ((CDemonFilter *)*puVar1,
-               (float)iStack_14 * (float)_DAT_005e73d5 + (float)_DAT_005e73d5,0);
+               (float)iStack_14 * (float)0.125 + (float)0.125,0);
     iStack_14 = iVar8;
   } while (iVar8 < 8);
   iVar8 = 0;
   iVar6 = 0;
   do {
     **(uint **)((int)&g_PlayerFilters + iVar8) = 0x100;
-    fVar3 = (float)_DAT_005e73dd;
+    fVar3 = (float)0.25;
     *(uint *)(*(int *)((int)&g_PlayerFilters + iVar8) + 4) = 0x100;
     puVar1 = (uint *)((int)&g_PlayerFilters + iVar8);
     iVar8 = iVar8 + 4;
     iVar9 = iVar6 + 1;
     iStack_14 = iVar6;
     core_dfilter_cpp_CDemonFilter_init_FUN_0045dc30
-              ((CDemonFilter *)*puVar1,(float)iVar6 * fVar3 + (float)_DAT_005e73dd,0);
+              ((CDemonFilter *)*puVar1,(float)iVar6 * fVar3 + (float)0.25,0);
     iVar6 = iVar9;
   } while (iVar9 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_005312c0(g_CMousePtr);

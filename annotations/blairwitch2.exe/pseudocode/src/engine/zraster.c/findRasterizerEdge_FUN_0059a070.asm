@@ -8,7 +8,7 @@
 ; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   undefined4 DAT_026672a8
+;   int g_INT_026672a8
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 0059a070
         ;   Label: engine_zraster.c_findRasterizerEdge_FUN_0059a070
     PUSH ESI                            ; 0059a071
-    MOV EBX,dword ptr [0x026672a8]      ; 0059a072 | DAT_026672a8
+    MOV EBX,dword ptr [0x026672a8]      ; 0059a072 | g_INT_026672a8
     MOV ECX,dword ptr [ESP + 0xc]       ; 0059a078
     MOV ESI,dword ptr [ESP + 0x10]      ; 0059a07c
     MOV EAX,0x26672ac                   ; 0059a080
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 0059a08b (CONDITIONAL_JUMP)  ; LAB_0059a08b
     XOR EAX,EAX                         ; 0059a09b
         ;   Label: LAB_0059a09b
-    MOV dword ptr [0x026672a8],EBX      ; 0059a09d | DAT_026672a8
+    MOV dword ptr [0x026672a8],EBX      ; 0059a09d | g_INT_026672a8
         ;   Label: LAB_0059a09d
     POP ESI                             ; 0059a0a3
     POP EBX                             ; 0059a0a4

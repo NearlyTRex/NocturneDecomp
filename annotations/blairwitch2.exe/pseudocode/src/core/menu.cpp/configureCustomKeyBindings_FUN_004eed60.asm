@@ -21,9 +21,9 @@
 ;   TerminatedCString s_core_menu_cpp_005dd2ac
 ;   TerminatedCString s_Too_many_custom_keys_005dd2bd
 ;   TerminatedCString s_Forward_005dd3a2
-;   undefined4 DAT_005dd3aa
-;   undefined4 DAT_005dd3af
-;   undefined4 DAT_005dd3b4
+;   TerminatedCString s_Back_005dd3aa
+;   TerminatedCString s_Walk_005dd3af
+;   TerminatedCString s_Run_005dd3b4
 ;   TerminatedCString s_Strafe_on_005dd3b8
 ;   TerminatedCString s_Strafe_left_005dd3c2
 ;   TerminatedCString s_Strafe_right_005dd3ce
@@ -75,11 +75,11 @@ section .text
     XOR ESI,ESI                         ; 004eed8e
         ;   Label: LAB_004eed8e
     PUSH 0x5dd3a2                       ; 004eed90 | = "Forward"
-    MOV dword ptr [0x01d086f0],ESI      ; 004eed95 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ESI      ; 004eed95 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eed9b
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eeda0 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eeda6 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eeda6 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004eedac
     MOV ESI,EAX                         ; 004eedaf
     ADD EBX,0x28                        ; 004eedb1
@@ -89,16 +89,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004eedb9 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004eedbe
     PUSH 0x5dd2bd                       ; 004eedc3 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004eedc8 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004eedce | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004eedc8 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004eedce | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eedd3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eedd8
-    MOV EAX,[0x01d086f0]                ; 004eeddb | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eeddb | g_INT_01d086f0
         ;   Label: LAB_004eeddb
     IMUL EDI,EAX,0x28                   ; 004eede0
     ADD EDI,0x1d08790                   ; 004eede3
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eede9 | DAT_01d086f4 | g_CGameInstance.key_walk
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eede9 | g_INT_PTR_ARRAY_01d086f4 | g_CGameInstance.key_walk
     PUSH EDI                            ; 004eedf0
     MOV AL,byte ptr [ESI]               ; 004eedf1
         ;   Label: LAB_004eedf1
@@ -115,14 +115,14 @@ section .text
         ;   XREF to: 004eedf1 (CONDITIONAL_JUMP)  ; LAB_004eedf1
     POP EDI                             ; 004eee09
         ;   Label: LAB_004eee09
-    MOV ECX,dword ptr [0x01d086f0]      ; 004eee0a | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004eee0a | g_INT_01d086f0
     INC ECX                             ; 004eee10
-    PUSH 0x5dd3aa                       ; 004eee11 | DAT_005dd3aa
-    MOV dword ptr [0x01d086f0],ECX      ; 004eee16 | DAT_01d086f0
+    PUSH 0x5dd3aa                       ; 004eee11 | = "Back"
+    MOV dword ptr [0x01d086f0],ECX      ; 004eee16 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eee1c
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eee21 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eee27 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eee27 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004eee2d
     MOV ESI,EAX                         ; 004eee30
     ADD EBX,0x2c                        ; 004eee32
@@ -132,16 +132,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004eee3a | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004eee3f
     PUSH 0x5dd2bd                       ; 004eee44 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004eee49 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004eee4f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004eee49 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004eee4f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eee54
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eee59
-    MOV EAX,[0x01d086f0]                ; 004eee5c | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eee5c | g_INT_01d086f0
         ;   Label: LAB_004eee5c
     IMUL EDI,EAX,0x28                   ; 004eee61
     ADD EDI,0x1d08790                   ; 004eee64
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eee6a | DAT_01d086f8 | g_CGameInstance.key_backup
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eee6a | g_INT_PTR_ARRAY_01d086f4[1] | g_CGameInstance.key_backup
     PUSH EDI                            ; 004eee71 | DAT_01d087b8
     MOV AL,byte ptr [ESI]               ; 004eee72
         ;   Label: LAB_004eee72
@@ -158,20 +158,20 @@ section .text
         ;   XREF to: 004eee72 (CONDITIONAL_JUMP)  ; LAB_004eee72
     POP EDI                             ; 004eee8a
         ;   Label: LAB_004eee8a
-    MOV ECX,dword ptr [0x01d086f0]      ; 004eee8b | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004eee8b | g_INT_01d086f0
     MOV EAX,[0x00616494]                ; 004eee91 | g_CGamePtr
     INC ECX                             ; 004eee96
     MOV EBX,dword ptr [EAX + 0xac]      ; 004eee97 | g_CGameInstance.always_run
-    MOV dword ptr [0x01d086f0],ECX      ; 004eee9d | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004eee9d | g_INT_01d086f0
     TEST EBX,EBX                        ; 004eeea3
     JZ 0x004efaff                       ; 004eeea5
         ;   XREF to: 004efaff (CONDITIONAL_JUMP)  ; LAB_004efaff
-    PUSH 0x5dd3af                       ; 004eeeab | DAT_005dd3af
+    PUSH 0x5dd3af                       ; 004eeeab | = "Walk"
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eeeb0
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
         ;   Label: LAB_004eeeb0
     MOV EBX,dword ptr [0x00616494]      ; 004eeeb5 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eeebb | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eeebb | g_INT_01d086f0
     ADD ESP,0x4                         ; 004eeec1
     MOV ESI,EAX                         ; 004eeec4
     ADD EBX,0x30                        ; 004eeec6
@@ -181,16 +181,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004eeece | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004eeed3
     PUSH 0x5dd2bd                       ; 004eeed8 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004eeedd | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004eeee3 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004eeedd | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004eeee3 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eeee8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eeeed
-    MOV EAX,[0x01d086f0]                ; 004eeef0 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eeef0 | g_INT_01d086f0
         ;   Label: LAB_004eeef0
     IMUL EDI,EAX,0x28                   ; 004eeef5
     ADD EDI,0x1d08790                   ; 004eeef8
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeefe | DAT_01d086fc
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeefe | g_INT_PTR_ARRAY_01d086f4[2]
     PUSH EDI                            ; 004eef05 | DAT_01d087e0
     MOV AL,byte ptr [ESI]               ; 004eef06
         ;   Label: LAB_004eef06
@@ -207,12 +207,12 @@ section .text
         ;   XREF to: 004eef06 (CONDITIONAL_JUMP)  ; LAB_004eef06
     POP EDI                             ; 004eef1e
         ;   Label: LAB_004eef1e
-    INC dword ptr [0x01d086f0]          ; 004eef1f | DAT_01d086f0
+    INC dword ptr [0x01d086f0]          ; 004eef1f | g_INT_01d086f0
     PUSH 0x5dd3b8                       ; 004eef25 | = "Strafe on"
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eef2a
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eef2f | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eef35 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eef35 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004eef3b
     MOV ESI,EAX                         ; 004eef3e
     ADD EBX,0x34                        ; 004eef40
@@ -222,16 +222,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004eef48 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004eef4d
     PUSH 0x5dd2bd                       ; 004eef52 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004eef57 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004eef5d | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004eef57 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004eef5d | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eef62
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eef67
-    MOV EAX,[0x01d086f0]                ; 004eef6a | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eef6a | g_INT_01d086f0
         ;   Label: LAB_004eef6a
     IMUL EDI,EAX,0x28                   ; 004eef6f
     ADD EDI,0x1d08790                   ; 004eef72
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eef78 | DAT_01d08700
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eef78 | g_INT_PTR_ARRAY_01d086f4[3]
     PUSH EDI                            ; 004eef7f | DAT_01d08808
     MOV AL,byte ptr [ESI]               ; 004eef80
         ;   Label: LAB_004eef80
@@ -248,14 +248,14 @@ section .text
         ;   XREF to: 004eef80 (CONDITIONAL_JUMP)  ; LAB_004eef80
     POP EDI                             ; 004eef98
         ;   Label: LAB_004eef98
-    MOV ECX,dword ptr [0x01d086f0]      ; 004eef99 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004eef99 | g_INT_01d086f0
     INC ECX                             ; 004eef9f
     PUSH 0x5dd3c2                       ; 004eefa0 | = "Strafe left"
-    MOV dword ptr [0x01d086f0],ECX      ; 004eefa5 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004eefa5 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eefab
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004eefb0 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004eefb6 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004eefb6 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004eefbc
     MOV ESI,EAX                         ; 004eefbf
     ADD EBX,0x38                        ; 004eefc1
@@ -265,16 +265,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004eefc9 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004eefce
     PUSH 0x5dd2bd                       ; 004eefd3 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004eefd8 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004eefde | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004eefd8 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004eefde | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004eefe3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004eefe8
-    MOV EAX,[0x01d086f0]                ; 004eefeb | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004eefeb | g_INT_01d086f0
         ;   Label: LAB_004eefeb
     IMUL EDI,EAX,0x28                   ; 004eeff0
     ADD EDI,0x1d08790                   ; 004eeff3
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeff9 | DAT_01d08704
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004eeff9 | g_INT_PTR_ARRAY_01d086f4[4]
     PUSH EDI                            ; 004ef000 | DAT_01d08830
     MOV AL,byte ptr [ESI]               ; 004ef001
         ;   Label: LAB_004ef001
@@ -291,14 +291,14 @@ section .text
         ;   XREF to: 004ef001 (CONDITIONAL_JUMP)  ; LAB_004ef001
     POP EDI                             ; 004ef019
         ;   Label: LAB_004ef019
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef01a | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef01a | g_INT_01d086f0
     INC ECX                             ; 004ef020
     PUSH 0x5dd3ce                       ; 004ef021 | = "Strafe right"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef026 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef026 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef02c
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef031 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef037 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef037 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef03d
     MOV ESI,EAX                         ; 004ef040
     ADD EBX,0x3c                        ; 004ef042
@@ -308,16 +308,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef04a | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef04f
     PUSH 0x5dd2bd                       ; 004ef054 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef059 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef05f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef059 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef05f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef064
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef069
-    MOV EAX,[0x01d086f0]                ; 004ef06c | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef06c | g_INT_01d086f0
         ;   Label: LAB_004ef06c
     IMUL EDI,EAX,0x28                   ; 004ef071
     ADD EDI,0x1d08790                   ; 004ef074
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef07a | DAT_01d08708
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef07a | g_INT_PTR_ARRAY_01d086f4[5]
     PUSH EDI                            ; 004ef081 | DAT_01d08858
     MOV AL,byte ptr [ESI]               ; 004ef082
         ;   Label: LAB_004ef082
@@ -334,14 +334,14 @@ section .text
         ;   XREF to: 004ef082 (CONDITIONAL_JUMP)  ; LAB_004ef082
     POP EDI                             ; 004ef09a
         ;   Label: LAB_004ef09a
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef09b | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef09b | g_INT_01d086f0
     INC ECX                             ; 004ef0a1
     PUSH 0x5dd3db                       ; 004ef0a2 | = "Turn left"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef0a7 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef0a7 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef0ad
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef0b2 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef0b8 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef0b8 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef0be
     MOV ESI,EAX                         ; 004ef0c1
     ADD EBX,0x44                        ; 004ef0c3
@@ -351,16 +351,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef0cb | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef0d0
     PUSH 0x5dd2bd                       ; 004ef0d5 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef0da | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef0e0 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef0da | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef0e0 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef0e5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef0ea
-    MOV EAX,[0x01d086f0]                ; 004ef0ed | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef0ed | g_INT_01d086f0
         ;   Label: LAB_004ef0ed
     IMUL EDI,EAX,0x28                   ; 004ef0f2
     ADD EDI,0x1d08790                   ; 004ef0f5
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef0fb | DAT_01d0870c
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef0fb | g_INT_PTR_ARRAY_01d086f4[6]
     PUSH EDI                            ; 004ef102 | DAT_01d08880
     MOV AL,byte ptr [ESI]               ; 004ef103
         ;   Label: LAB_004ef103
@@ -377,14 +377,14 @@ section .text
         ;   XREF to: 004ef103 (CONDITIONAL_JUMP)  ; LAB_004ef103
     POP EDI                             ; 004ef11b
         ;   Label: LAB_004ef11b
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef11c | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef11c | g_INT_01d086f0
     INC ECX                             ; 004ef122
     PUSH 0x5dd3e5                       ; 004ef123 | = "Turn right"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef128 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef128 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef12e
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef133 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef139 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef139 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef13f
     MOV ESI,EAX                         ; 004ef142
     ADD EBX,0x40                        ; 004ef144
@@ -394,16 +394,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef14c | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef151
     PUSH 0x5dd2bd                       ; 004ef156 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef15b | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef161 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef15b | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef161 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef166
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef16b
-    MOV EAX,[0x01d086f0]                ; 004ef16e | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef16e | g_INT_01d086f0
         ;   Label: LAB_004ef16e
     IMUL EDI,EAX,0x28                   ; 004ef173
     ADD EDI,0x1d08790                   ; 004ef176
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef17c | DAT_01d08710
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef17c | g_INT_PTR_ARRAY_01d086f4[7]
     PUSH EDI                            ; 004ef183 | DAT_01d088a8
     MOV AL,byte ptr [ESI]               ; 004ef184
         ;   Label: LAB_004ef184
@@ -420,14 +420,14 @@ section .text
         ;   XREF to: 004ef184 (CONDITIONAL_JUMP)  ; LAB_004ef184
     POP EDI                             ; 004ef19c
         ;   Label: LAB_004ef19c
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef19d | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef19d | g_INT_01d086f0
     INC ECX                             ; 004ef1a3
     PUSH 0x5dd3f0                       ; 004ef1a4 | = "Fire Gun/ Action"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef1a9 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef1a9 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef1af
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EDX,dword ptr [0x00616494]      ; 004ef1b4 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef1ba | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef1ba | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef1c0
     MOV ESI,EAX                         ; 004ef1c3
     LEA EBX,[EDX + 0x48]                ; 004ef1c5
@@ -437,16 +437,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef1cd | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef1d2
     PUSH 0x5dd2bd                       ; 004ef1d7 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef1dc | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef1e2 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef1dc | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef1e2 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef1e7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef1ec
-    MOV EAX,[0x01d086f0]                ; 004ef1ef | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef1ef | g_INT_01d086f0
         ;   Label: LAB_004ef1ef
     IMUL EDI,EAX,0x28                   ; 004ef1f4
     ADD EDI,0x1d08790                   ; 004ef1f7
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef1fd | DAT_01d08714
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef1fd | g_INT_PTR_ARRAY_01d086f4[8]
     PUSH EDI                            ; 004ef204 | DAT_01d088d0
     MOV AL,byte ptr [ESI]               ; 004ef205
         ;   Label: LAB_004ef205
@@ -463,14 +463,14 @@ section .text
         ;   XREF to: 004ef205 (CONDITIONAL_JUMP)  ; LAB_004ef205
     POP EDI                             ; 004ef21d
         ;   Label: LAB_004ef21d
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef21e | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef21e | g_INT_01d086f0
     INC ECX                             ; 004ef224
     PUSH 0x5dd401                       ; 004ef225 | = "Use item"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef22a | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef22a | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef230
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef235 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef23b | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef23b | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef241
     MOV ESI,EAX                         ; 004ef244
     ADD EBX,0x4c                        ; 004ef246
@@ -480,16 +480,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef24e | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef253
     PUSH 0x5dd2bd                       ; 004ef258 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef25d | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef263 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef25d | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef263 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef268
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef26d
-    MOV EAX,[0x01d086f0]                ; 004ef270 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef270 | g_INT_01d086f0
         ;   Label: LAB_004ef270
     IMUL EDI,EAX,0x28                   ; 004ef275
     ADD EDI,0x1d08790                   ; 004ef278
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef27e | DAT_01d08718
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef27e | g_INT_PTR_ARRAY_01d086f4[9]
     PUSH EDI                            ; 004ef285 | DAT_01d088f8
     MOV AL,byte ptr [ESI]               ; 004ef286
         ;   Label: LAB_004ef286
@@ -506,14 +506,14 @@ section .text
         ;   XREF to: 004ef286 (CONDITIONAL_JUMP)  ; LAB_004ef286
     POP EDI                             ; 004ef29e
         ;   Label: LAB_004ef29e
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef29f | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef29f | g_INT_01d086f0
     INC ECX                             ; 004ef2a5
     PUSH 0x5dd40a                       ; 004ef2a6 | = "Lantern"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef2ab | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef2ab | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef2b1
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef2b6 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef2bc | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef2bc | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef2c2
     MOV ESI,EAX                         ; 004ef2c5
     ADD EBX,0x50                        ; 004ef2c7
@@ -523,16 +523,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef2cf | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef2d4
     PUSH 0x5dd2bd                       ; 004ef2d9 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef2de | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef2e4 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef2de | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef2e4 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef2e9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef2ee
-    MOV EAX,[0x01d086f0]                ; 004ef2f1 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef2f1 | g_INT_01d086f0
         ;   Label: LAB_004ef2f1
     IMUL EDI,EAX,0x28                   ; 004ef2f6
     ADD EDI,0x1d08790                   ; 004ef2f9
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef2ff | DAT_01d0871c
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef2ff | g_INT_PTR_ARRAY_01d086f4[10]
     PUSH EDI                            ; 004ef306 | DAT_01d08920
     MOV AL,byte ptr [ESI]               ; 004ef307
         ;   Label: LAB_004ef307
@@ -549,14 +549,14 @@ section .text
         ;   XREF to: 004ef307 (CONDITIONAL_JUMP)  ; LAB_004ef307
     POP EDI                             ; 004ef31f
         ;   Label: LAB_004ef31f
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef320 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef320 | g_INT_01d086f0
     INC ECX                             ; 004ef326
     PUSH 0x5dd412                       ; 004ef327 | = "Draw Gun"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef32c | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef32c | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef332
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef337 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef33d | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef33d | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef343
     MOV ESI,EAX                         ; 004ef346
     ADD EBX,0x68                        ; 004ef348
@@ -566,16 +566,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef350 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef355
     PUSH 0x5dd2bd                       ; 004ef35a | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef35f | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef365 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef35f | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef365 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef36a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef36f
-    MOV EAX,[0x01d086f0]                ; 004ef372 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef372 | g_INT_01d086f0
         ;   Label: LAB_004ef372
     IMUL EDI,EAX,0x28                   ; 004ef377
     ADD EDI,0x1d08790                   ; 004ef37a
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef380 | DAT_01d08720
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef380 | g_INT_PTR_ARRAY_01d086f4[11]
     PUSH EDI                            ; 004ef387 | DAT_01d08948
     MOV AL,byte ptr [ESI]               ; 004ef388
         ;   Label: LAB_004ef388
@@ -592,14 +592,14 @@ section .text
         ;   XREF to: 004ef388 (CONDITIONAL_JUMP)  ; LAB_004ef388
     POP EDI                             ; 004ef3a0
         ;   Label: LAB_004ef3a0
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef3a1 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef3a1 | g_INT_01d086f0
     INC ECX                             ; 004ef3a7
     PUSH 0x5dd41b                       ; 004ef3a8 | = "Point up"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef3ad | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef3ad | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef3b3
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef3b8 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef3be | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef3be | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef3c4
     MOV ESI,EAX                         ; 004ef3c7
     ADD EBX,0x74                        ; 004ef3c9
@@ -609,16 +609,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef3d1 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef3d6
     PUSH 0x5dd2bd                       ; 004ef3db | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef3e0 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef3e6 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef3e0 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef3e6 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef3eb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef3f0
-    MOV EAX,[0x01d086f0]                ; 004ef3f3 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef3f3 | g_INT_01d086f0
         ;   Label: LAB_004ef3f3
     IMUL EDI,EAX,0x28                   ; 004ef3f8
     ADD EDI,0x1d08790                   ; 004ef3fb
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef401 | DAT_01d08724
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef401 | g_INT_PTR_ARRAY_01d086f4[12]
     PUSH EDI                            ; 004ef408 | DAT_01d08970
     MOV AL,byte ptr [ESI]               ; 004ef409
         ;   Label: LAB_004ef409
@@ -635,14 +635,14 @@ section .text
         ;   XREF to: 004ef409 (CONDITIONAL_JUMP)  ; LAB_004ef409
     POP EDI                             ; 004ef421
         ;   Label: LAB_004ef421
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef422 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef422 | g_INT_01d086f0
     INC ECX                             ; 004ef428
     PUSH 0x5dd424                       ; 004ef429 | = "Point down"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef42e | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef42e | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef434
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef439 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef43f | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef43f | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef445
     MOV ESI,EAX                         ; 004ef448
     ADD EBX,0x78                        ; 004ef44a
@@ -652,16 +652,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef452 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef457
     PUSH 0x5dd2bd                       ; 004ef45c | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef461 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef467 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef461 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef467 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef46c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef471
-    MOV EAX,[0x01d086f0]                ; 004ef474 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef474 | g_INT_01d086f0
         ;   Label: LAB_004ef474
     IMUL EDI,EAX,0x28                   ; 004ef479
     ADD EDI,0x1d08790                   ; 004ef47c
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef482 | DAT_01d08728
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef482 | g_INT_PTR_ARRAY_01d086f4[13]
     PUSH EDI                            ; 004ef489 | DAT_01d08998
     MOV AL,byte ptr [ESI]               ; 004ef48a
         ;   Label: LAB_004ef48a
@@ -678,14 +678,14 @@ section .text
         ;   XREF to: 004ef48a (CONDITIONAL_JUMP)  ; LAB_004ef48a
     POP EDI                             ; 004ef4a2
         ;   Label: LAB_004ef4a2
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef4a3 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef4a3 | g_INT_01d086f0
     INC ECX                             ; 004ef4a9
     PUSH 0x5dd42f                       ; 004ef4aa | = "Select Revolver"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef4af | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef4af | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef4b5
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef4ba | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef4c0 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef4c0 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef4c6
     MOV ESI,EAX                         ; 004ef4c9
     ADD EBX,0x7c                        ; 004ef4cb
@@ -695,16 +695,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef4d3 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef4d8
     PUSH 0x5dd2bd                       ; 004ef4dd | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef4e2 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef4e8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef4e2 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef4e8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef4ed
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef4f2
-    MOV EAX,[0x01d086f0]                ; 004ef4f5 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef4f5 | g_INT_01d086f0
         ;   Label: LAB_004ef4f5
     IMUL EDI,EAX,0x28                   ; 004ef4fa
     ADD EDI,0x1d08790                   ; 004ef4fd
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef503 | DAT_01d0872c
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef503 | g_INT_PTR_ARRAY_01d086f4[14]
     PUSH EDI                            ; 004ef50a | DAT_01d089c0
     MOV AL,byte ptr [ESI]               ; 004ef50b
         ;   Label: LAB_004ef50b
@@ -721,14 +721,14 @@ section .text
         ;   XREF to: 004ef50b (CONDITIONAL_JUMP)  ; LAB_004ef50b
     POP EDI                             ; 004ef523
         ;   Label: LAB_004ef523
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef524 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef524 | g_INT_01d086f0
     INC ECX                             ; 004ef52a
     PUSH 0x5dd43f                       ; 004ef52b | = "Select Sword / Axe"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef530 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef530 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef536
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef53b | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef541 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef541 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef547
     MOV ESI,EAX                         ; 004ef54a
     ADD EBX,0x80                        ; 004ef54c
@@ -738,16 +738,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef557 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef55c
     PUSH 0x5dd2bd                       ; 004ef561 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef566 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef56c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef566 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef56c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef571
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef576
-    MOV EAX,[0x01d086f0]                ; 004ef579 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef579 | g_INT_01d086f0
         ;   Label: LAB_004ef579
     IMUL EDI,EAX,0x28                   ; 004ef57e
     ADD EDI,0x1d08790                   ; 004ef581
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef587 | DAT_01d08730
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef587 | g_INT_PTR_ARRAY_01d086f4[15]
     PUSH EDI                            ; 004ef58e | DAT_01d089e8
     MOV AL,byte ptr [ESI]               ; 004ef58f
         ;   Label: LAB_004ef58f
@@ -764,14 +764,14 @@ section .text
         ;   XREF to: 004ef58f (CONDITIONAL_JUMP)  ; LAB_004ef58f
     POP EDI                             ; 004ef5a7
         ;   Label: LAB_004ef5a7
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef5a8 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef5a8 | g_INT_01d086f0
     INC ECX                             ; 004ef5ae
     PUSH 0x5dd452                       ; 004ef5af | = "Select Cross"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef5b4 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef5b4 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef5ba
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef5bf | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef5c5 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef5c5 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef5cb
     MOV ESI,EAX                         ; 004ef5ce
     ADD EBX,0x84                        ; 004ef5d0
@@ -781,16 +781,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef5db | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef5e0
     PUSH 0x5dd2bd                       ; 004ef5e5 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef5ea | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef5f0 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef5ea | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef5f0 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef5f5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef5fa
-    MOV EAX,[0x01d086f0]                ; 004ef5fd | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef5fd | g_INT_01d086f0
         ;   Label: LAB_004ef5fd
     IMUL EDI,EAX,0x28                   ; 004ef602
     ADD EDI,0x1d08790                   ; 004ef605
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef60b | DAT_01d08734
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef60b | g_INT_PTR_ARRAY_01d086f4[16]
     PUSH EDI                            ; 004ef612 | DAT_01d08a10
     MOV AL,byte ptr [ESI]               ; 004ef613
         ;   Label: LAB_004ef613
@@ -807,14 +807,14 @@ section .text
         ;   XREF to: 004ef613 (CONDITIONAL_JUMP)  ; LAB_004ef613
     POP EDI                             ; 004ef62b
         ;   Label: LAB_004ef62b
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef62c | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef62c | g_INT_01d086f0
     INC ECX                             ; 004ef632
     PUSH 0x5dd45f                       ; 004ef633 | = "Next weapon"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef638 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef638 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef63e
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EDX,dword ptr [0x00616494]      ; 004ef643 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef649 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef649 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef64f
     MOV ESI,EAX                         ; 004ef652
     LEA EBX,[EDX + 0x90]                ; 004ef654
@@ -824,16 +824,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef65f | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef664
     PUSH 0x5dd2bd                       ; 004ef669 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef66e | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef674 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef66e | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef674 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef679
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef67e
-    MOV EAX,[0x01d086f0]                ; 004ef681 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef681 | g_INT_01d086f0
         ;   Label: LAB_004ef681
     IMUL EDI,EAX,0x28                   ; 004ef686
     ADD EDI,0x1d08790                   ; 004ef689
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef68f | DAT_01d08738
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef68f | g_INT_PTR_ARRAY_01d086f4[17]
     PUSH EDI                            ; 004ef696 | DAT_01d08a38
     MOV AL,byte ptr [ESI]               ; 004ef697
         ;   Label: LAB_004ef697
@@ -850,14 +850,14 @@ section .text
         ;   XREF to: 004ef697 (CONDITIONAL_JUMP)  ; LAB_004ef697
     POP EDI                             ; 004ef6af
         ;   Label: LAB_004ef6af
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef6b0 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef6b0 | g_INT_01d086f0
     INC ECX                             ; 004ef6b6
     PUSH 0x5dd46b                       ; 004ef6b7 | = "Previous weapon"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef6bc | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef6bc | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef6c2
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef6c7 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef6cd | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef6cd | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef6d3
     MOV ESI,EAX                         ; 004ef6d6
     ADD EBX,0x94                        ; 004ef6d8
@@ -867,16 +867,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef6e3 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef6e8
     PUSH 0x5dd2bd                       ; 004ef6ed | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef6f2 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef6f8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef6f2 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef6f8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef6fd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef702
-    MOV EAX,[0x01d086f0]                ; 004ef705 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef705 | g_INT_01d086f0
         ;   Label: LAB_004ef705
     IMUL EDI,EAX,0x28                   ; 004ef70a
     ADD EDI,0x1d08790                   ; 004ef70d
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef713 | DAT_01d0873c
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef713 | g_INT_PTR_ARRAY_01d086f4[18]
     PUSH EDI                            ; 004ef71a | DAT_01d08a60
     MOV AL,byte ptr [ESI]               ; 004ef71b
         ;   Label: LAB_004ef71b
@@ -893,14 +893,14 @@ section .text
         ;   XREF to: 004ef71b (CONDITIONAL_JUMP)  ; LAB_004ef71b
     POP EDI                             ; 004ef733
         ;   Label: LAB_004ef733
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef734 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef734 | g_INT_01d086f0
     INC ECX                             ; 004ef73a
     PUSH 0x5dd47b                       ; 004ef73b | = "Next item"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef740 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef740 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef746
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef74b | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef751 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef751 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef757
     MOV ESI,EAX                         ; 004ef75a
     ADD EBX,0x98                        ; 004ef75c
@@ -910,16 +910,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef767 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef76c
     PUSH 0x5dd2bd                       ; 004ef771 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef776 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef77c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef776 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef77c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef781
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef786
-    MOV EAX,[0x01d086f0]                ; 004ef789 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef789 | g_INT_01d086f0
         ;   Label: LAB_004ef789
     IMUL EDI,EAX,0x28                   ; 004ef78e
     ADD EDI,0x1d08790                   ; 004ef791
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef797 | DAT_01d08740
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef797 | g_INT_PTR_ARRAY_01d086f4[19]
     PUSH EDI                            ; 004ef79e | DAT_01d08a88
     MOV AL,byte ptr [ESI]               ; 004ef79f
         ;   Label: LAB_004ef79f
@@ -936,14 +936,14 @@ section .text
         ;   XREF to: 004ef79f (CONDITIONAL_JUMP)  ; LAB_004ef79f
     POP EDI                             ; 004ef7b7
         ;   Label: LAB_004ef7b7
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef7b8 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef7b8 | g_INT_01d086f0
     INC ECX                             ; 004ef7be
     PUSH 0x5dd485                       ; 004ef7bf | = "Previous item"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef7c4 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef7c4 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef7ca
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef7cf | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef7d5 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef7d5 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef7db
     MOV ESI,EAX                         ; 004ef7de
     ADD EBX,0x9c                        ; 004ef7e0
@@ -953,16 +953,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef7eb | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef7f0
     PUSH 0x5dd2bd                       ; 004ef7f5 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef7fa | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef800 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef7fa | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef800 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef805
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef80a
-    MOV EAX,[0x01d086f0]                ; 004ef80d | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef80d | g_INT_01d086f0
         ;   Label: LAB_004ef80d
     IMUL EDI,EAX,0x28                   ; 004ef812
     ADD EDI,0x1d08790                   ; 004ef815
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef81b | DAT_01d08744
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef81b | g_INT_PTR_ARRAY_01d086f4[20]
     PUSH EDI                            ; 004ef822 | DAT_01d08ab0
     MOV AL,byte ptr [ESI]               ; 004ef823
         ;   Label: LAB_004ef823
@@ -979,14 +979,14 @@ section .text
         ;   XREF to: 004ef823 (CONDITIONAL_JUMP)  ; LAB_004ef823
     POP EDI                             ; 004ef83b
         ;   Label: LAB_004ef83b
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef83c | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef83c | g_INT_01d086f0
     INC ECX                             ; 004ef842
     PUSH 0x5dd493                       ; 004ef843 | = "Item description"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef848 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef848 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef84e
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef853 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef859 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef859 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef85f
     MOV ESI,EAX                         ; 004ef862
     ADD EBX,0xa0                        ; 004ef864
@@ -996,16 +996,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef86f | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef874
     PUSH 0x5dd2bd                       ; 004ef879 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef87e | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef884 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef87e | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef884 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef889
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef88e
-    MOV EAX,[0x01d086f0]                ; 004ef891 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef891 | g_INT_01d086f0
         ;   Label: LAB_004ef891
     IMUL EDI,EAX,0x28                   ; 004ef896
     ADD EDI,0x1d08790                   ; 004ef899
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef89f | DAT_01d08748
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef89f | g_INT_PTR_ARRAY_01d086f4[21]
     PUSH EDI                            ; 004ef8a6 | DAT_01d08ad8
     MOV AL,byte ptr [ESI]               ; 004ef8a7
         ;   Label: LAB_004ef8a7
@@ -1022,14 +1022,14 @@ section .text
         ;   XREF to: 004ef8a7 (CONDITIONAL_JUMP)  ; LAB_004ef8a7
     POP EDI                             ; 004ef8bf
         ;   Label: LAB_004ef8bf
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef8c0 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef8c0 | g_INT_01d086f0
     INC ECX                             ; 004ef8c6
     PUSH 0x5dd4a4                       ; 004ef8c7 | = "Next ammo"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef8cc | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef8cc | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef8d2
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EDX,dword ptr [0x00616494]      ; 004ef8d7 | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef8dd | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef8dd | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef8e3
     MOV ESI,EAX                         ; 004ef8e6
     LEA EBX,[EDX + 0xa4]                ; 004ef8e8
@@ -1039,16 +1039,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef8f3 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef8f8
     PUSH 0x5dd2bd                       ; 004ef8fd | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef902 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef908 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef902 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef908 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef90d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef912
-    MOV EAX,[0x01d086f0]                ; 004ef915 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef915 | g_INT_01d086f0
         ;   Label: LAB_004ef915
     IMUL EDI,EAX,0x28                   ; 004ef91a
     ADD EDI,0x1d08790                   ; 004ef91d
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef923 | DAT_01d0874c
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef923 | g_INT_PTR_ARRAY_01d086f4[22]
     PUSH EDI                            ; 004ef92a | DAT_01d08b00
     MOV AL,byte ptr [ESI]               ; 004ef92b
         ;   Label: LAB_004ef92b
@@ -1065,14 +1065,14 @@ section .text
         ;   XREF to: 004ef92b (CONDITIONAL_JUMP)  ; LAB_004ef92b
     POP EDI                             ; 004ef943
         ;   Label: LAB_004ef943
-    MOV ECX,dword ptr [0x01d086f0]      ; 004ef944 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004ef944 | g_INT_01d086f0
     INC ECX                             ; 004ef94a
     PUSH 0x5dd4ae                       ; 004ef94b | = "Drop item or weapon"
-    MOV dword ptr [0x01d086f0],ECX      ; 004ef950 | DAT_01d086f0
+    MOV dword ptr [0x01d086f0],ECX      ; 004ef950 | g_INT_01d086f0
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ef956
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     MOV EBX,dword ptr [0x00616494]      ; 004ef95b | g_CGamePtr
-    MOV EDI,dword ptr [0x01d086f0]      ; 004ef961 | DAT_01d086f0
+    MOV EDI,dword ptr [0x01d086f0]      ; 004ef961 | g_INT_01d086f0
     ADD ESP,0x4                         ; 004ef967
     MOV ESI,EAX                         ; 004ef96a
     ADD EBX,0xaf0                       ; 004ef96c
@@ -1082,16 +1082,16 @@ section .text
     MOV EBP,0x5dd2ac                    ; 004ef977 | = "..\\core\\menu.cpp"
     MOV EAX,0x907                       ; 004ef97c
     PUSH 0x5dd2bd                       ; 004ef981 | = "Too many custom keys!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004ef986 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ef98c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ef986 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004ef98c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ef991
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ef996
-    MOV EAX,[0x01d086f0]                ; 004ef999 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004ef999 | g_INT_01d086f0
         ;   Label: LAB_004ef999
     IMUL EDI,EAX,0x28                   ; 004ef99e
     ADD EDI,0x1d08790                   ; 004ef9a1
-    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef9a7 | DAT_01d08750
+    MOV dword ptr [EAX*0x4 + 0x1d086f4],EBX ; 004ef9a7 | g_INT_PTR_ARRAY_01d086f4[23]
     PUSH EDI                            ; 004ef9ae | DAT_01d08b28
     MOV AL,byte ptr [ESI]               ; 004ef9af
         ;   Label: LAB_004ef9af
@@ -1108,7 +1108,7 @@ section .text
         ;   XREF to: 004ef9af (CONDITIONAL_JUMP)  ; LAB_004ef9af
     POP EDI                             ; 004ef9c7
         ;   Label: LAB_004ef9c7
-    INC dword ptr [0x01d086f0]          ; 004ef9c8 | DAT_01d086f0
+    INC dword ptr [0x01d086f0]          ; 004ef9c8 | g_INT_01d086f0
     CALL engine_special.cpp_clearScreen_FUN_0055b1f0 ; 004ef9ce
         ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0055b1f0()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004ef9d3
@@ -1128,14 +1128,14 @@ section .text
     XOR EDI,EDI                         ; 004ef9f8
     CALL shape_edittool.cpp_CStrList_add_FUN_00480e70 ; 004ef9fa
         ;   XREF to: 00480e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00480e70(CStrList * this_ptr, char * string_data)
-    MOV EBX,dword ptr [0x01d086f0]      ; 004ef9ff | DAT_01d086f0
+    MOV EBX,dword ptr [0x01d086f0]      ; 004ef9ff | g_INT_01d086f0
     ADD ESP,0x8                         ; 004efa05
     TEST EBX,EBX                        ; 004efa08
     JLE 0x004efa60                      ; 004efa0a
         ;   XREF to: 004efa60 (CONDITIONAL_JUMP)  ; LAB_004efa60
     MOV EBX,0x1d08790                   ; 004efa0c
     XOR ESI,ESI                         ; 004efa11
-    MOV EAX,dword ptr [ESI + 0x1d086f4] ; 004efa13 | DAT_01d086f4 | DAT_01d086f8
+    MOV EAX,dword ptr [ESI + 0x1d086f4] ; 004efa13 | g_INT_PTR_ARRAY_01d086f4 | g_INT_PTR_ARRAY_01d086f4[1]
         ;   Label: LAB_004efa13
     MOV EBP,dword ptr [EAX]             ; 004efa19 | g_CGameInstance.key_walk | g_CGameInstance.key_backup
     PUSH EBP                            ; 004efa1b
@@ -1159,7 +1159,7 @@ section .text
     ADD EBX,0x28                        ; 004efa4c
     CALL shape_edittool.cpp_CStrList_add_FUN_00480e70 ; 004efa4f
         ;   XREF to: 00480e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00480e70(CStrList * this_ptr, char * string_data)
-    MOV EAX,[0x01d086f0]                ; 004efa54 | DAT_01d086f0
+    MOV EAX,[0x01d086f0]                ; 004efa54 | g_INT_01d086f0
     ADD ESP,0x8                         ; 004efa59
     CMP EDI,EAX                         ; 004efa5c
     JL 0x004efa13                       ; 004efa5e
@@ -1225,7 +1225,7 @@ section .text
     POP EBP                             ; 004efafc
     POP EBX                             ; 004efafd
     RET                                 ; 004efafe
-    PUSH 0x5dd3b4                       ; 004efaff | DAT_005dd3b4
+    PUSH 0x5dd3b4                       ; 004efaff | = "Run"
         ;   Label: LAB_004efaff
     JMP 0x004eeeb0                      ; 004efb04
         ;   XREF to: 004eeeb0 (UNCONDITIONAL_JUMP)  ; LAB_004eeeb0
@@ -1357,9 +1357,9 @@ section .text
     XOR EBX,EBX                         ; 004efc24
     PUSH EBX                            ; 004efc26
         ;   Label: LAB_004efc26
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efc27 | DAT_00617dd4
-    PUSH ESI                            ; 004efc2d | DAT_01d02f84
-    MOV EAX,dword ptr [ESI]             ; 004efc2e | DAT_01d02f84
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efc27 | g_CKeys_PTR_00617dd4
+    PUSH ESI                            ; 004efc2d | g_PTR_01d02f84
+    MOV EAX,dword ptr [ESI]             ; 004efc2e | g_PTR_01d02f84
     CALL dword ptr [EAX]                ; 004efc30
     ADD ESP,0x8                         ; 004efc32
     TEST EAX,EAX                        ; 004efc35
@@ -1379,10 +1379,10 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 004efc56
         ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004efc5b
-    MOV EAX,[0x00617dd4]                ; 004efc5e | DAT_00617dd4
+    MOV EAX,[0x00617dd4]                ; 004efc5e | g_CKeys_PTR_00617dd4
     PUSH 0x1                            ; 004efc63
-    MOV EDX,dword ptr [EAX]             ; 004efc65 | DAT_01d02f84
-    PUSH EAX                            ; 004efc67 | DAT_01d02f84
+    MOV EDX,dword ptr [EAX]             ; 004efc65 | g_PTR_01d02f84
+    PUSH EAX                            ; 004efc67 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 004efc68
     ADD ESP,0x8                         ; 004efc6a
     TEST EAX,EAX                        ; 004efc6d
@@ -1409,9 +1409,9 @@ section .text
         ;   XREF to: 004efc41 (CONDITIONAL_JUMP)  ; LAB_004efc41
     PUSH 0x1                            ; 004efc91
         ;   Label: LAB_004efc91
-    MOV EAX,[0x00617dd4]                ; 004efc93 | DAT_00617dd4
-    PUSH EAX                            ; 004efc98 | DAT_01d02f84
-    MOV EDX,dword ptr [EAX]             ; 004efc99 | DAT_01d02f84
+    MOV EAX,[0x00617dd4]                ; 004efc93 | g_CKeys_PTR_00617dd4
+    PUSH EAX                            ; 004efc98 | g_PTR_01d02f84
+    MOV EDX,dword ptr [EAX]             ; 004efc99 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 004efc9b
     ADD ESP,0x8                         ; 004efc9d
     TEST EAX,EAX                        ; 004efca0
@@ -1471,8 +1471,8 @@ section .text
         ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004efd1e
     PUSH 0x1                            ; 004efd21
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efd23 | DAT_00617dd4
-    PUSH ESI                            ; 004efd29 | DAT_01d02f84
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efd23 | g_CKeys_PTR_00617dd4
+    PUSH ESI                            ; 004efd29 | g_PTR_01d02f84
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0 ; 004efd2a
         ;   XREF to: 004dfee0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0(CKeys * this_ptr, int enable_extended)
     ADD ESP,0x8                         ; 004efd2f
@@ -1488,9 +1488,9 @@ section .text
     XOR EBX,EBX                         ; 004efd4e
     PUSH EBX                            ; 004efd50
         ;   Label: LAB_004efd50
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efd51 | DAT_00617dd4
-    PUSH ESI                            ; 004efd57 | DAT_01d02f84
-    MOV EAX,dword ptr [ESI]             ; 004efd58 | DAT_01d02f84
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efd51 | g_CKeys_PTR_00617dd4
+    PUSH ESI                            ; 004efd57 | g_PTR_01d02f84
+    MOV EAX,dword ptr [ESI]             ; 004efd58 | g_PTR_01d02f84
     CALL dword ptr [EAX]                ; 004efd5a
     ADD ESP,0x8                         ; 004efd5c
     TEST EAX,EAX                        ; 004efd5f
@@ -1508,7 +1508,7 @@ section .text
     TEST EDI,EDI                        ; 004efd72
     JL 0x004efd32                       ; 004efd74
         ;   XREF to: 004efd32 (CONDITIONAL_JUMP)  ; LAB_004efd32
-    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efd76 | DAT_01d086f4
+    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efd76 | g_INT_PTR_ARRAY_01d086f4
     PUSH 0x5dd59b                       ; 004efd7d | = "OK - you can release the key now..."
     MOV dword ptr [EAX],EDI             ; 004efd82
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004efd84
@@ -1530,9 +1530,9 @@ section .text
     XOR EBX,EBX                         ; 004efdae
     PUSH EBX                            ; 004efdb0
         ;   Label: LAB_004efdb0
-    MOV ESI,dword ptr [0x00617dd4]      ; 004efdb1 | DAT_00617dd4
-    PUSH ESI                            ; 004efdb7 | DAT_01d02f84
-    MOV EAX,dword ptr [ESI]             ; 004efdb8 | DAT_01d02f84
+    MOV ESI,dword ptr [0x00617dd4]      ; 004efdb1 | g_CKeys_PTR_00617dd4
+    PUSH ESI                            ; 004efdb7 | g_PTR_01d02f84
+    MOV EAX,dword ptr [ESI]             ; 004efdb8 | g_PTR_01d02f84
     CALL dword ptr [EAX]                ; 004efdba
     ADD ESP,0x8                         ; 004efdbc
     TEST EAX,EAX                        ; 004efdbf
@@ -1583,7 +1583,7 @@ section .text
     CMP EDI,-0x1                        ; 004efe14
     JNZ 0x004efdcb                      ; 004efe17
         ;   XREF to: 004efdcb (CONDITIONAL_JUMP)  ; LAB_004efdcb
-    MOV ECX,dword ptr [0x01d086f0]      ; 004efe19 | DAT_01d086f0
+    MOV ECX,dword ptr [0x01d086f0]      ; 004efe19 | g_INT_01d086f0
     XOR EAX,EAX                         ; 004efe1f
     TEST ECX,ECX                        ; 004efe21
     JLE 0x004efe40                      ; 004efe23
@@ -1594,7 +1594,7 @@ section .text
         ;   Label: LAB_004efe2e
     JNZ 0x004efe57                      ; 004efe30
         ;   XREF to: 004efe57 (CONDITIONAL_JUMP)  ; LAB_004efe57
-    MOV ESI,dword ptr [0x01d086f0]      ; 004efe32 | DAT_01d086f0
+    MOV ESI,dword ptr [0x01d086f0]      ; 004efe32 | g_INT_01d086f0
         ;   Label: LAB_004efe32
     INC EAX                             ; 004efe38
     ADD EBX,0x4                         ; 004efe39
@@ -1603,8 +1603,8 @@ section .text
         ;   XREF to: 004efe2e (CONDITIONAL_JUMP)  ; LAB_004efe2e
     PUSH 0x0                            ; 004efe40
         ;   Label: LAB_004efe40
-    MOV EDI,dword ptr [0x00617dd4]      ; 004efe42 | DAT_00617dd4
-    PUSH EDI                            ; 004efe48 | DAT_01d02f84
+    MOV EDI,dword ptr [0x00617dd4]      ; 004efe42 | g_CKeys_PTR_00617dd4
+    PUSH EDI                            ; 004efe48 | g_PTR_01d02f84
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0 ; 004efe49
         ;   XREF to: 004dfee0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0(CKeys * this_ptr, int enable_extended)
     JMP 0x004efb7f                      ; 004efe4e
@@ -1613,9 +1613,9 @@ section .text
         ;   Label: LAB_004efe53
     JMP 0x004efe0b                      ; 004efe55
         ;   XREF to: 004efe0b (UNCONDITIONAL_JUMP)  ; LAB_004efe0b
-    MOV ESI,dword ptr [EBX + 0x1d086f4] ; 004efe57 | DAT_01d086f8
+    MOV ESI,dword ptr [EBX + 0x1d086f4] ; 004efe57 | g_INT_PTR_ARRAY_01d086f4[1]
         ;   Label: LAB_004efe57
-    MOV EDI,dword ptr [ECX + 0x1d086f4] ; 004efe5d | DAT_01d086f4
+    MOV EDI,dword ptr [ECX + 0x1d086f4] ; 004efe5d | g_INT_PTR_ARRAY_01d086f4
     MOV EDX,dword ptr [ESI]             ; 004efe63 | g_CGameInstance.key_backup
     CMP EDX,dword ptr [EDI]             ; 004efe65
     JNZ 0x004efe32                      ; 004efe67
@@ -1626,7 +1626,7 @@ section .text
     MOV dword ptr [ESP + 0xa90],EAX     ; 004efe71
         ;   Label: LAB_004efe71
     LEA EBP,[EAX + -0x1]                ; 004efe78
-    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efe7b | DAT_01d086f4
+    MOV EAX,dword ptr [EBP*0x4 + 0x1d086f4] ; 004efe7b | g_INT_PTR_ARRAY_01d086f4
     MOV EAX,dword ptr [EAX]             ; 004efe82
     SUB EAX,0x251                       ; 004efe84
     CMP EAX,0x5                         ; 004efe89
@@ -1652,7 +1652,7 @@ section .text
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0 ; 004efebf
         ;   XREF to: 004eeba0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004efec4
-    PUSH 0x5dd5c7                       ; 004efec7 | DAT_005dd5c7
+    PUSH 0x5dd5c7                       ; 004efec7 | = "Back"
     MOV EBX,EAX                         ; 004efecc
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004efece
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
@@ -1670,7 +1670,7 @@ section .text
     TEST EDI,EDI                        ; 004efef5
     JZ 0x004f0218                       ; 004efef7
         ;   XREF to: 004f0218 (CONDITIONAL_JUMP)  ; LAB_004f0218
-    PUSH 0x5dd5cc                       ; 004efefd | DAT_005dd5cc
+    PUSH 0x5dd5cc                       ; 004efefd | = "Walk"
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eff02
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
         ;   Label: LAB_004eff02
@@ -1780,7 +1780,7 @@ section .text
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0 ; 004f001e
         ;   XREF to: 004eeba0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004f0023
-    PUSH 0x5dd62c                       ; 004f0026 | DAT_005dd62c
+    PUSH 0x5dd62c                       ; 004f0026 | = "Draw"
     OR EBX,EAX                          ; 004f002b
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004f002d
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
@@ -1954,7 +1954,7 @@ section .text
     POP EBP                             ; 004f0215
     POP EBX                             ; 004f0216
     RET                                 ; 004f0217
-    PUSH 0x5dd5d1                       ; 004f0218 | DAT_005dd5d1
+    PUSH 0x5dd5d1                       ; 004f0218 | = "Run"
         ;   Label: LAB_004f0218
     JMP 0x004eff02                      ; 004f021d
         ;   XREF to: 004eff02 (UNCONDITIONAL_JUMP)  ; LAB_004eff02

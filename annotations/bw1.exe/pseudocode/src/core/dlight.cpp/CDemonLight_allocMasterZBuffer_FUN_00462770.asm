@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005d8f72
 ;   TerminatedCString s_CDemonLight_allocMasterZ_005d8f85
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dlight.cpp_getRestoreMemory_FUN_004626f0
@@ -56,8 +56,8 @@ section .text
     MOV ECX,0x5d8f72                    ; 004627c2 | = "..\\core\\dlight.cpp"
     MOV ESI,0xcd                        ; 004627c7
     PUSH 0x5d8f85                       ; 004627cc | = "CDemonLight::allocMasterZBuffer - We ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004627d1 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004627d7 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004627d1 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 004627d7 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004627dd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004627e2

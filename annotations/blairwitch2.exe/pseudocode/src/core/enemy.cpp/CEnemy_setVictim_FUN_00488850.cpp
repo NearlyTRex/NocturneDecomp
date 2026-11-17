@@ -9,11 +9,11 @@
 void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00488850(CEnemy *this_ptr,CDemonActor *victim)
 
 {
-  CDemonActor *pCVar1;
+  float fVar1;
   
-  pCVar1 = 0xFFFFFFFF;
+  fVar1 = NAN;
   this_ptr->script_victim = (CCharacter *)victim;
-  if (victim == pCVar1) {
+  if (victim == (CDemonActor *)fVar1) {
     this_ptr->victim_search_timer = 0.0;
     return;
   }

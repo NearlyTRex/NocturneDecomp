@@ -15,7 +15,7 @@
 ;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054db79
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f106f
+;   TerminatedCString s_d_005f106f
 ;   TerminatedCString s_d_005f1073
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     ADD ESP,0xc                         ; 0055b911
     LEA EAX,[ESP + 0x100]               ; 0055b914
     PUSH EAX                            ; 0055b91b
-    PUSH 0x5f106f                       ; 0055b91c | DAT_005f106f
+    PUSH 0x5f106f                       ; 0055b91c | = "%d\n"
     PUSH ESI                            ; 0055b921
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055b922
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)

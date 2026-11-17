@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CEventList_setSfxHandle_005c0088
 ;   TerminatedCString s_core_event_cpp_005c00b1
 ;   TerminatedCString s_CEventList_setSfxHandle_005c00c3
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findSfxEntry_FUN_00495230
@@ -54,8 +54,8 @@ section .text
     MOV ECX,0x5c0076                    ; 0049517e | = "..\\core\\event.cpp"
     MOV EDI,0xfaf                       ; 00495183
     PUSH 0x5c0088                       ; 00495188 | = "CEventList::setSfxHandle - too many sfx!"
-    MOV dword ptr [0x01d71de0],ECX      ; 0049518d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00495193 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0049518d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 00495193 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00495199
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0049519e
@@ -114,8 +114,8 @@ section .text
     MOV EAX,0x5c00b1                    ; 0049520a | = "..\\core\\event.cpp"
     MOV EDX,0xfb7                       ; 0049520f
     PUSH 0x5c00c3                       ; 00495214 | = "CEventList::setSfxHandle - sfx handle..."
-    MOV [0x01d71de0],EAX                ; 00495219 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0049521e | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00495219 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 0049521e | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00495224
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00495229

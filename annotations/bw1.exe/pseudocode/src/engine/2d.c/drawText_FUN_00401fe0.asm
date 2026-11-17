@@ -22,9 +22,9 @@
 ;   ... and 9 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061049c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
+;   int g_INT_0061049c = 0x1
+;   int g_INT_01c4f010
+;   int g_INT_01c4f014
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextMultiline_FUN_00401d00
@@ -41,13 +41,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00401fe3
     MOV ECX,dword ptr [ESP + 0x14]      ; 00401fe7
     MOV EDX,dword ptr [ESP + 0x18]      ; 00401feb
-    CMP dword ptr [0x0061049c],0x0      ; 00401fef | DAT_0061049c
+    CMP dword ptr [0x0061049c],0x0      ; 00401fef | g_INT_0061049c
     JZ 0x00402017                       ; 00401ff6
         ;   XREF to: 00402017 (CONDITIONAL_JUMP)  ; LAB_00402017
     PUSH EBX                            ; 00401ff8
-    MOV EBP,dword ptr [0x01c4f014]      ; 00401ff9 | DAT_01c4f014
+    MOV EBP,dword ptr [0x01c4f014]      ; 00401ff9 | g_INT_01c4f014
     PUSH EBP                            ; 00401fff
-    MOV EBX,dword ptr [0x01c4f010]      ; 00402000 | DAT_01c4f010
+    MOV EBX,dword ptr [0x01c4f010]      ; 00402000 | g_INT_01c4f010
     PUSH EBX                            ; 00402006
     PUSH EDX                            ; 00402007
     PUSH ECX                            ; 00402008
@@ -60,10 +60,10 @@ section .text
     POP EDI                             ; 00402014
     POP ESI                             ; 00402015
     RET                                 ; 00402016
-    MOV ESI,dword ptr [0x01c4f014]      ; 00402017 | DAT_01c4f014
+    MOV ESI,dword ptr [0x01c4f014]      ; 00402017 | g_INT_01c4f014
         ;   Label: LAB_00402017
     PUSH ESI                            ; 0040201d
-    MOV EDI,dword ptr [0x01c4f010]      ; 0040201e | DAT_01c4f010
+    MOV EDI,dword ptr [0x01c4f010]      ; 0040201e | g_INT_01c4f010
     PUSH EDI                            ; 00402024
     PUSH EDX                            ; 00402025
     PUSH ECX                            ; 00402026

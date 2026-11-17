@@ -10,7 +10,7 @@
 ;   core_ammo.cpp_factoryFuncAmmoBullet_FUN_0040e3a0 at 0040e3b3
 ;
 ; Referenced Globals:
-;   undefined4 s_ammopouch_kfm_005b6124+1
+;   TerminatedCString s_ammopouch_kfm_005b6125
 ;   CDemonActor_vtable g_CAmmoBulletVTable
 ;
 ; Called Functions:
@@ -28,7 +28,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_ctor_FUN_0040de60 ; 0040e3d6
         ;   XREF to: 0040de60 (UNCONDITIONAL_CALL)  ; CAmmo * core_ammo.cpp_CAmmo_ctor_FUN_0040de60(CAmmo * this_ptr)
     ADD ESP,0x4                         ; 0040e3db
-    PUSH 0x5b6125                       ; 0040e3de | s_ammopouch_kfm_005b6124+1
+    PUSH 0x5b6125                       ; 0040e3de | = "ammopouch.kfm"
     MOV EBX,EAX                         ; 0040e3e3
     ADD EAX,0x158                       ; 0040e3e5
     PUSH EAX                            ; 0040e3ea

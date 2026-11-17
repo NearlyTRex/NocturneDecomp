@@ -13,10 +13,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_generic_005d2fc5
 ;   TerminatedCString s_bullet_005d2fcd
-;   undefined4 DAT_005d2fd4
+;   TerminatedCString s_Fire_005d2fd4
 ;   TerminatedCString s_Blade_005d2fd9
 ;   TerminatedCString s_Stake_005d2fdf
-;   undefined4 DAT_005d2fe5
+;   TerminatedCString s_Gas_005d2fe5
 ;   TerminatedCString s_electrocute_005d2fe9
 ;
 ; Called Functions:
@@ -58,7 +58,7 @@ section .text
     POP ESI                             ; 004892b7
     POP EBX                             ; 004892b8
     RET                                 ; 004892b9
-    PUSH 0x5d2fd4                       ; 004892ba | DAT_005d2fd4
+    PUSH 0x5d2fd4                       ; 004892ba | = "Fire"
         ;   Label: LAB_004892ba
     PUSH ESI                            ; 004892bf
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004892c0
@@ -100,7 +100,7 @@ section .text
     POP ESI                             ; 00489317
     POP EBX                             ; 00489318
     RET                                 ; 00489319
-    PUSH 0x5d2fe5                       ; 0048931a | DAT_005d2fe5
+    PUSH 0x5d2fe5                       ; 0048931a | = "Gas"
         ;   Label: LAB_0048931a
     PUSH ESI                            ; 0048931f
     CALL crt_string.c__stricmp_FUN_005b8130 ; 00489320

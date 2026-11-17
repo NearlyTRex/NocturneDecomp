@@ -10,11 +10,11 @@
 ; int              Stack[0x10]:4   y_offset
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
-;   undefined4 DAT_01c35e60
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
+;   int g_INT_01c35e50
+;   int g_INT_01c35e54
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004011a0
@@ -32,7 +32,7 @@ section .text
     MOV EDX,0xfb                        ; 0042e297
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0042e29c
     XOR EDI,EDI                         ; 0042e2a0
-    MOV dword ptr [0x01c35e60],EDX      ; 0042e2a2 | DAT_01c35e60
+    MOV dword ptr [0x01c35e60],EDX      ; 0042e2a2 | g_INT_01c35e60
     TEST ECX,ECX                        ; 0042e2a8
     JLE 0x0042e36d                      ; 0042e2aa
         ;   XREF to: 0042e36d (CONDITIONAL_JUMP)  ; LAB_0042e36d
@@ -41,13 +41,13 @@ section .text
         ;   Label: LAB_0042e2b4
     MOV EBP,dword ptr [ESP + 0x20]      ; 0042e2b7
     MOVSX ECX,AX                        ; 0042e2bb
-    MOV EAX,[0x01c35e48]                ; 0042e2be | DAT_01c35e48
+    MOV EAX,[0x01c35e48]                ; 0042e2be | g_INT_01c35e48
     ADD ECX,EBP                         ; 0042e2c3
     CMP ECX,EAX                         ; 0042e2c5
     JGE 0x0042e2cb                      ; 0042e2c7
         ;   XREF to: 0042e2cb (CONDITIONAL_JUMP)  ; LAB_0042e2cb
     MOV ECX,EAX                         ; 0042e2c9
-    MOV EDX,dword ptr [0x01c35e50]      ; 0042e2cb | DAT_01c35e50
+    MOV EDX,dword ptr [0x01c35e50]      ; 0042e2cb | g_INT_01c35e50
         ;   Label: LAB_0042e2cb
     CMP ECX,EDX                         ; 0042e2d1
     JL 0x0042e2d7                       ; 0042e2d3
@@ -57,13 +57,13 @@ section .text
         ;   Label: LAB_0042e2d7
     MOV ESI,dword ptr [ESP + 0x24]      ; 0042e2db
     MOVSX EDX,AX                        ; 0042e2df
-    MOV EBP,dword ptr [0x01c35e4c]      ; 0042e2e2 | DAT_01c35e4c
+    MOV EBP,dword ptr [0x01c35e4c]      ; 0042e2e2 | g_INT_01c35e4c
     ADD EDX,ESI                         ; 0042e2e8
     CMP EDX,EBP                         ; 0042e2ea
     JGE 0x0042e2f0                      ; 0042e2ec
         ;   XREF to: 0042e2f0 (CONDITIONAL_JUMP)  ; LAB_0042e2f0
     MOV EDX,EBP                         ; 0042e2ee
-    MOV EAX,[0x01c35e54]                ; 0042e2f0 | DAT_01c35e54
+    MOV EAX,[0x01c35e54]                ; 0042e2f0 | g_INT_01c35e54
         ;   Label: LAB_0042e2f0
     CMP EDX,EAX                         ; 0042e2f5
     JL 0x0042e2fb                       ; 0042e2f7
@@ -73,13 +73,13 @@ section .text
         ;   Label: LAB_0042e2fb
     MOV EBP,dword ptr [ESP + 0x20]      ; 0042e2ff
     MOVSX ESI,AX                        ; 0042e303
-    MOV EAX,[0x01c35e48]                ; 0042e306 | DAT_01c35e48
+    MOV EAX,[0x01c35e48]                ; 0042e306 | g_INT_01c35e48
     ADD ESI,EBP                         ; 0042e30b
     CMP ESI,EAX                         ; 0042e30d
     JGE 0x0042e313                      ; 0042e30f
         ;   XREF to: 0042e313 (CONDITIONAL_JUMP)  ; LAB_0042e313
     MOV ESI,EAX                         ; 0042e311
-    MOV EBP,dword ptr [0x01c35e50]      ; 0042e313 | DAT_01c35e50
+    MOV EBP,dword ptr [0x01c35e50]      ; 0042e313 | g_INT_01c35e50
         ;   Label: LAB_0042e313
     CMP ESI,EBP                         ; 0042e319
     JL 0x0042e31f                       ; 0042e31b
@@ -94,12 +94,12 @@ section .text
     MOV EBP,dword ptr [ESP + 0x24]      ; 0042e330
     SAR EAX,0x10                        ; 0042e334
     ADD EAX,EBP                         ; 0042e337
-    MOV EBP,dword ptr [0x01c35e4c]      ; 0042e339 | DAT_01c35e4c
+    MOV EBP,dword ptr [0x01c35e4c]      ; 0042e339 | g_INT_01c35e4c
     CMP EAX,EBP                         ; 0042e33f
     JGE 0x0042e345                      ; 0042e341
         ;   XREF to: 0042e345 (CONDITIONAL_JUMP)  ; LAB_0042e345
     MOV EAX,EBP                         ; 0042e343
-    MOV EBP,dword ptr [0x01c35e54]      ; 0042e345 | DAT_01c35e54
+    MOV EBP,dword ptr [0x01c35e54]      ; 0042e345 | g_INT_01c35e54
         ;   Label: LAB_0042e345
     CMP EAX,EBP                         ; 0042e34b
     JL 0x0042e351                       ; 0042e34d

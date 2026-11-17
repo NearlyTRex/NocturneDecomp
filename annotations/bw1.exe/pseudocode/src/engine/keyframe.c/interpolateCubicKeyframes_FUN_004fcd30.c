@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004fcd30(SMRGLKeyframeModel *keyframe_model)
 
 {
@@ -65,7 +63,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   iStack_1c = iVar24 + 1;
   iVar28 = (keyframe_model->header).child_count;
   keyframe_model->current_position =
-       _DAT_01c43534 % (int)((keyframe_model->header).child_count * uVar20);
+       g_INT_01c43534 % (int)((keyframe_model->header).child_count * uVar20);
   if (iVar28 <= iStack_1c) {
     iStack_1c = 0;
   }
@@ -79,30 +77,30 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   }
   pSVar21 = keyframe_model->base_keyframes;
   if ((pSVar21->header).child_count != 2) {
-    _DAT_01d1d400 = "..\\engine\\keyframe.c";
-    _DAT_01d1d404 = 0x16b;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
+    g_INT_01d1d404 = 0x16b;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Bad keyframe 1");
   }
-  fVar15 = (float)uVar23 * (float)_DAT_005e6ab3;
+  fVar15 = (float)uVar23 * (float)1.52587890625e-05;
   fVar16 = fVar15 * fVar15;
   fVar9 = fVar16 * fVar15;
-  fVar6 = fVar16 * _DAT_005e6ad3;
-  fVar10 = fVar9 * _DAT_005e6abb;
-  fVar11 = fVar9 * _DAT_005e6acb;
-  fVar8 = fVar9 * _DAT_005e6ad7;
-  fVar15 = fVar15 * _DAT_005e6abf;
-  fVar14 = (float)_DAT_005e6ac3;
-  fVar13 = fVar16 * _DAT_005e6acf;
-  fVar12 = (float)_DAT_005e6ac3;
-  fVar7 = (float)_DAT_005e6ac3;
+  fVar6 = fVar16 * 2.0f;
+  fVar10 = fVar9 * -0.5f;
+  fVar11 = fVar9 * 1.5f;
+  fVar8 = fVar9 * -1.5f;
+  fVar15 = fVar15 * 0.5f;
+  fVar14 = (float)65536;
+  fVar13 = fVar16 * -2.5f;
+  fVar12 = (float)65536;
+  fVar7 = (float)65536;
   pSVar22 = keyframe_model->base_keyframes + 1;
   pSVar25 = keyframe_model->loaded_frames[iVar24] + 1;
   pSVar26 = keyframe_model->loaded_frames[iStack_1c] + 1;
   pSVar27 = keyframe_model->loaded_frames[iVar28] + 1;
   iVar2 = (pSVar21->vertex_header).count;
   dVar29 = round
-                     ((double)((fVar9 * _DAT_005e6abf - fVar16 * _DAT_005e6abf) *
-                              (float)_DAT_005e6ac3));
+                     ((double)((fVar9 * 0.5f - fVar16 * 0.5f) *
+                              (float)65536));
   piStack_28 = (int *)(int)ROUND(dVar29);
   dVar29 = round((double)(((fVar10 + fVar16) - fVar15) * fVar14));
   dVar30 = round((double)((fVar13 + fVar11 + 1.0) * fVar12));
@@ -151,8 +149,8 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
     } while (iStack_2c < *(int *)(uVar23 + 8));
   }
   if ((pSVar22->header).base.type != 0x17) {
-    _DAT_01d1d400 = "..\\engine\\keyframe.c";
-    _DAT_01d1d404 = 0x1a6;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
+    g_INT_01d1d404 = 0x1a6;
     core_main_c_displayErrorAndQuit_FUN_005030e0("ZBP not found!");
   }
   pSVar21 = keyframe_model->base_keyframes;

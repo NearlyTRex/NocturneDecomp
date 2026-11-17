@@ -16,9 +16,9 @@
 ;   TerminatedCString s_DebugWayPointDisplay_005ef73d
 ;   TerminatedCString s_DebugFollowSlotDisplay_005ef752
 ;   TerminatedCString s_Select_Debug_Flag_005ef769
-;   undefined4 DAT_00617dd4
-;   undefined4 DAT_01d02f84
-;   undefined4 DAT_02668128
+;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
+;   void* g_PTR_01d02f84
+;   int g_INT_02668128
 ;
 ; Called Functions:
 ;   core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380
@@ -43,10 +43,10 @@ section .text
     CALL shape_edittool.cpp_CPickList_ctor_FUN_00481fc0 ; 0059c3e4
         ;   XREF to: 00481fc0 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00481fc0(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0059c3e9
-    MOV EAX,[0x00617dd4]                ; 0059c3ec | DAT_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0059c3ec | g_CKeys_PTR_00617dd4
     PUSH 0x1d                           ; 0059c3f1
-    MOV EDX,dword ptr [EAX]             ; 0059c3f3 | DAT_01d02f84
-    PUSH EAX                            ; 0059c3f5 | DAT_01d02f84
+    MOV EDX,dword ptr [EAX]             ; 0059c3f3 | g_PTR_01d02f84
+    PUSH EAX                            ; 0059c3f5 | g_PTR_01d02f84
     CALL dword ptr [EDX]                ; 0059c3f6
     ADD ESP,0x8                         ; 0059c3f8
     TEST EAX,EAX                        ; 0059c3fb
@@ -67,9 +67,9 @@ section .text
     RET                                 ; 0059c418
     PUSH 0x4a                           ; 0059c419
         ;   Label: LAB_0059c419
-    MOV EAX,[0x00617dd4]                ; 0059c41b | DAT_00617dd4
-    PUSH EAX                            ; 0059c420 | DAT_01d02f84
-    MOV EDX,dword ptr [EAX]             ; 0059c421 | DAT_01d02f84
+    MOV EAX,[0x00617dd4]                ; 0059c41b | g_CKeys_PTR_00617dd4
+    PUSH EAX                            ; 0059c420 | g_PTR_01d02f84
+    MOV EDX,dword ptr [EAX]             ; 0059c421 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 0059c423
     ADD ESP,0x8                         ; 0059c426
     TEST EAX,EAX                        ; 0059c429
@@ -140,14 +140,14 @@ section .text
         ;   XREF to: 00480e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00480e70(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0059c4e5
     PUSH 0x0                            ; 0059c4e8
-    MOV EBP,dword ptr [0x02668128]      ; 0059c4ea | DAT_02668128
+    MOV EBP,dword ptr [0x02668128]      ; 0059c4ea | g_INT_02668128
     PUSH EBP                            ; 0059c4f0
     PUSH 0x5ef769                       ; 0059c4f1 | = "-- Select Debug Flag --"
     LEA EAX,[ESP + 0xc]                 ; 0059c4f6
     PUSH EAX                            ; 0059c4fa
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250 ; 0059c4fb
         ;   XREF to: 00482250 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
-    MOV [0x02668128],EAX                ; 0059c500 | DAT_02668128
+    MOV [0x02668128],EAX                ; 0059c500 | g_INT_02668128
     INC EAX                             ; 0059c505
     ADD ESP,0x10                        ; 0059c506
     CMP EAX,0x4                         ; 0059c509
@@ -157,7 +157,7 @@ section .text
         ;   Label: switchD
     XOR EBP,EBP                         ; 0059c519
         ;   Label: caseD_ffffffff
-    MOV dword ptr [0x02668128],EBP      ; 0059c51b | DAT_02668128
+    MOV dword ptr [0x02668128],EBP      ; 0059c51b | g_INT_02668128
     JMP 0x0059c3ff                      ; 0059c521
         ;   XREF to: 0059c3ff (UNCONDITIONAL_JUMP)  ; default
     CMP dword ptr [EBX],0x0             ; 0059c526

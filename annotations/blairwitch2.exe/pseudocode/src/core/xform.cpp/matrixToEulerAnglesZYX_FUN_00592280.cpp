@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x4f *matrix_ptr,CVector3f *euler_out)
 
 {
@@ -57,21 +55,22 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x
     local_24 = 1.0 / local_24;
   }
   fVar1 = -matrix_ptr->m[2].x * local_24;
-  if (_DAT_005eed22 <= fVar1) {
-    if (fVar1 <= _DAT_005eed26) {
+  if (-0.99999f <= fVar1) {
+    if (fVar1 <= 0.99999f) {
       fVar6 = (float10)fVar1;
       fVar7 = asin(fVar6);
       afStack_1044[0x3fb] = (float)fVar7;
       local_34 = (float)SQRT((float10)1 - fVar6 * fVar6);
-      if (fVar7 < (float10)_DAT_005eed2a) {
-        afStack_1044[0x3fb] = (float)fVar7 + _DAT_005eed2e;
+      if (fVar7 < (float10)-3.141593f) {
+        afStack_1044[0x3fb] = (float)fVar7 + 6.283185f;
       }
-      if (_DAT_005eed32 <= local_34) {
+      if (1e-07f <= local_34) {
         local_30 = 1.0 / local_34;
         afStack_1044[0x3fe] = matrix_ptr->m[2].w * local_28 * local_30;
         local_40 = matrix_ptr->m[2].y * local_28 * local_30;
-        if ((_DAT_005eed36 <= afStack_1044[0x3fe]) || (afStack_1044[0x3fe] <= _DAT_005eed3a)) {
-          if (_DAT_005eed3e < local_40) {
+        if ((0.707f <= afStack_1044[0x3fe]) || (afStack_1044[0x3fe] <= -0.707f))
+        {
+          if (-1.0f < local_40) {
             if ((int)local_40 < 0x3f800000) {
               dVar8 = acos((double)local_40);
               local_1c = (float)dVar8;
@@ -91,20 +90,20 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x
           fVar6 = asin((float10)afStack_1044[0x3fe]);
           local_1c = (float)fVar6;
           if (local_44 < 0.0) {
-            local_1c = _DAT_005eed42 - (float)fVar6;
+            local_1c = 3.141593f - (float)fVar6;
           }
         }
-        if (local_1c < _DAT_005eed2a) {
-          local_1c = local_1c + _DAT_005eed2e;
+        if (local_1c < -3.141593f) {
+          local_1c = local_1c + 6.283185f;
         }
-        if (_DAT_005eed42 < local_1c) {
-          local_1c = local_1c + _DAT_005eed46;
+        if (3.141593f < local_1c) {
+          local_1c = local_1c + -6.283185f;
         }
         local_40 = matrix_ptr->m[1].x * local_30 * local_34;
         local_48 = matrix_ptr->m[0].x * local_28 * local_34;
         afStack_1044[0x3fb] = local_1c;
-        if ((_DAT_005eed36 <= local_48) || (local_48 <= _DAT_005eed3a)) {
-          if (_DAT_005eed3e < local_40) {
+        if ((0.707f <= local_48) || (local_48 <= -0.707f)) {
+          if (-1.0f < local_40) {
             if ((int)local_40 < 0x3f800000) {
               dVar8 = acos((double)local_40);
               local_28 = (float)dVar8;
@@ -124,14 +123,14 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x
           fVar6 = asin((float10)local_48);
           local_28 = (float)fVar6;
           if (local_44 < 0.0) {
-            local_28 = _DAT_005eed42 - (float)fVar6;
+            local_28 = 3.141593f - (float)fVar6;
           }
         }
-        if (local_24 < _DAT_005eed2a) {
-          local_24 = local_24 + _DAT_005eed2e;
+        if (local_24 < -3.141593f) {
+          local_24 = local_24 + 6.283185f;
         }
-        if (_DAT_005eed42 < local_24) {
-          local_24 = local_24 + _DAT_005eed46;
+        if (3.141593f < local_24) {
+          local_24 = local_24 + -6.283185f;
         }
         afStack_1044[0x3fc] = local_24;
         pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
@@ -151,8 +150,8 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x
   local_38 = matrix_ptr->m[0].w * local_24;
   local_48 = -matrix_ptr->m[0].y * local_24;
   afStack_1044[0x3fd] = 0.0;
-  if ((_DAT_005eed36 <= local_48) || (local_48 <= _DAT_005eed3a)) {
-    if (_DAT_005eed3e < local_38) {
+  if ((0.707f <= local_48) || (local_48 <= -0.707f)) {
+    if (-1.0f < local_38) {
       if ((int)local_38 < 0x3f800000) {
         dVar8 = acos((double)local_38);
         local_20 = (float)dVar8;
@@ -172,14 +171,14 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x
     fVar6 = asin((float10)local_48);
     local_20 = (float)fVar6;
     if (local_3c < 0.0) {
-      local_20 = _DAT_005eed42 - (float)fVar6;
+      local_20 = 3.141593f - (float)fVar6;
     }
   }
-  if (local_1c < _DAT_005eed2a) {
-    local_1c = local_1c + _DAT_005eed2e;
+  if (local_1c < -3.141593f) {
+    local_1c = local_1c + 6.283185f;
   }
-  if (_DAT_005eed42 < local_1c) {
-    local_1c = local_1c + _DAT_005eed46;
+  if (3.141593f < local_1c) {
+    local_1c = local_1c + -6.283185f;
   }
   afStack_1044[0x3fc] = local_1c;
   pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);

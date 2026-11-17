@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float delta_time)
 
@@ -124,7 +123,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
         }
         fVar11 = (this_ptr->base).speed;
         (this_ptr->base).base.walk_step_speed =
-             delta_time * (this_ptr->base).speed * (float)_DAT_005d4f58;
+             delta_time * (this_ptr->base).speed * (float)3;
         core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
                   ((CCharacter *)this_ptr,delta_time * fVar11);
         if (((((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] ==
@@ -133,7 +132,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
             ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] == 0)
             ) && ((0.0 <= this_ptr->dismember_death_timer &&
                   (fVar11 = this_ptr->dismember_death_timer + delta_time,
-                  this_ptr->dismember_death_timer = fVar11, (float)_DAT_005d4f50 <= fVar11)))) {
+                  this_ptr->dismember_death_timer = fVar11, (float)6 <= fVar11)))) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_27c);
           SStack_27c.damage_amount = 9999.9;
           SStack_27c.attacker = (CDemonActor *)this_ptr;
@@ -154,7 +153,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
           fVar13 = 0.17453292;
           fVar11 = 1.0;
           CStack_168.x = 0.0;
-          CStack_168.z = 0x40200000;
+          CStack_168.z = 2.5f;
           pCVar10 = &CStack_168;
           CStack_168.y = 0.0;
           pCVar2 = (this_ptr->base).victim;
@@ -204,12 +203,12 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                                 (&pCVar1->base);
           dStack_34 = (double)fStack_20;
           fStack_14 = fStack_20;
-          if (fStack_20 <= (float)_DAT_005d4f58) {
-            fStack_1c = 0x40200000;
-            if ((dStack_34 < 1.0) || (_DAT_005d4f40 < dStack_34)) {
+          if (fStack_20 <= (float)3) {
+            fStack_1c = 2.5f;
+            if ((dStack_34 < 1.0) || (2 < dStack_34)) {
               dStack_3c = (double)fStack_20;
-              if (((float)_DAT_005d4f58 <= fStack_20) &&
-                 ((dStack_3c <= _DAT_005d4f60 &&
+              if (((float)3 <= fStack_20) &&
+                 ((dStack_3c <= 4 &&
                   ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]]
                    != 0)))) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_240);
@@ -221,9 +220,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_240.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_005b5080
-                          ((CVector3f *)&DAT_007c5340,
+                          (&g_CVector3f_007c5340,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           DAT_007c538c,&CStack_b4);
+                           g_INT_ARRAY_007c5388[1],&CStack_b4);
                 pCVar10 = &CStack_f0;
                 CStack_f0.x = CStack_b4.x;
                 *(uint *)((int)&CStack_f0 + (uint)bVar8 * -8 + 4) =
@@ -254,9 +253,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
               fVar11 = 0.4;
               fStack_14 = SStack_2b8.damage_amount;
               core_xform_cpp_transformVector3x4_FUN_005b5080
-                        ((CVector3f *)&DAT_007c5340,
+                        (&g_CVector3f_007c5340,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                         DAT_007c5390,&CStack_c0);
+                         g_INT_ARRAY_007c5388[2],&CStack_c0);
               pCVar10 = &CStack_15c;
               CStack_15c.x = CStack_c0.x;
               *(uint *)((int)&CStack_15c + (uint)bVar8 * -8 + 4) =
@@ -296,11 +295,11 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                                 (&pCVar1->base);
           dStack_44 = (double)fStack_18;
           fStack_14 = fStack_18;
-          if (fStack_18 <= (float)_DAT_005d4f38) {
-            fStack_1c = 0x40200000;
-            if (((1.0 <= dStack_44) && (dStack_44 <= _DAT_005d4f40)) ||
-               ((dStack_2c = (double)fStack_18, (float)_DAT_005d4f48 <= fStack_18 &&
-                (dStack_2c <= _DAT_005d4f50)))) {
+          if (fStack_18 <= (float)8) {
+            fStack_1c = 2.5f;
+            if (((1.0 <= dStack_44) && (dStack_44 <= 2)) ||
+               ((dStack_2c = (double)fStack_18, (float)5 <= fStack_18 &&
+                (dStack_2c <= 6)))) {
               if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]]
                   != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_204);
@@ -312,9 +311,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_204.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_005b5080
-                          ((CVector3f *)&DAT_007c5340,
+                          (&g_CVector3f_007c5340,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           DAT_007c5390,&CStack_a8);
+                           g_INT_ARRAY_007c5388[2],&CStack_a8);
                 pCVar10 = &CStack_84;
                 CStack_84.x = CStack_a8.x;
                 *(uint *)((int)&CStack_84 + (uint)bVar8 * -8 + 4) =
@@ -336,9 +335,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
             }
             else {
               dStack_54 = (double)fStack_18;
-              if (((((float)_DAT_005d4f58 <= fStack_18) && (dStack_54 <= _DAT_005d4f60)) ||
-                  ((dStack_4c = (double)fStack_18, (float)_DAT_005d4f68 <= fStack_18 &&
-                   (dStack_4c <= _DAT_005d4f38)))) &&
+              if (((((float)3 <= fStack_18) && (dStack_54 <= 4)) ||
+                  ((dStack_4c = (double)fStack_18, (float)7 <= fStack_18 &&
+                   (dStack_4c <= 8)))) &&
                  ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]]
                   != 0)) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_1c8);
@@ -350,9 +349,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
                 fVar11 = 0.4;
                 fStack_14 = SStack_1c8.damage_amount;
                 core_xform_cpp_transformVector3x4_FUN_005b5080
-                          ((CVector3f *)&DAT_007c5340,
+                          (&g_CVector3f_007c5340,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           DAT_007c538c,&CStack_6c);
+                           g_INT_ARRAY_007c5388[1],&CStack_6c);
                 pCVar10 = &CStack_120;
                 CStack_120.x = CStack_6c.x;
                 *(uint *)((int)&CStack_120 + (uint)bVar8 * -8 + 4) =
@@ -403,7 +402,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
     if (((this_ptr->base).victim != (CCharacter *)0x0) && (0.0 <= fStack_1c)) {
       fVar11 = (this_ptr->base).speed;
       (this_ptr->base).base.walk_step_speed =
-           delta_time * (float)_DAT_005d4f70 * (this_ptr->base).speed;
+           delta_time * (float)2.5 * (this_ptr->base).speed;
       core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
                 ((CCharacter *)this_ptr,delta_time * fVar11);
       fVar13 = 0.5235988;
@@ -473,19 +472,19 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
     core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
     if ((this_ptr->base).pool_me == 0) {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                ((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_007c539c,0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],g_INT_ARRAY_007c5388[5],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_007c5394,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],g_INT_ARRAY_007c5388[3],0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                ((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_007c53a0,0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],g_INT_ARRAY_007c5388[6],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_007c5398,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],g_INT_ARRAY_007c5388[4],0.2);
       }
       core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
-                ((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_007c5388,0.7);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[8],g_INT_ARRAY_007c5388[0],0.7);
       core_charactr_cpp_CCharacter_processDamageDecals_FUN_00430960((CCharacter *)this_ptr);
     }
   }

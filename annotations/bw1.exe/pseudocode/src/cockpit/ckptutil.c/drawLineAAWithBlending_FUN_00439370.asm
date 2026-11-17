@@ -13,11 +13,11 @@
 ; int              Stack[0x1c]:4   blend_mode
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c7550
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
+;   int g_INT_007c7550
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f010
+;   int g_INT_01c4f014
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00439900
@@ -44,17 +44,17 @@ section .text
     CMP ESI,EAX                         ; 00439392
     JG 0x00439410                       ; 00439394
         ;   XREF to: 00439410 (CONDITIONAL_JUMP)  ; LAB_00439410
-    CMP dword ptr [0x007c7550],0x0      ; 0043939a | DAT_007c7550
+    CMP dword ptr [0x007c7550],0x0      ; 0043939a | g_INT_007c7550
     JNZ 0x004393df                      ; 004393a1
         ;   XREF to: 004393df (CONDITIONAL_JUMP)  ; LAB_004393df
-    MOV ECX,dword ptr [0x01c4f008]      ; 004393a3 | DAT_01c4f008
+    MOV ECX,dword ptr [0x01c4f008]      ; 004393a3 | g_INT_01c4f008
     CMP EDI,ECX                         ; 004393a9
     JGE 0x004393b5                      ; 004393ab
         ;   XREF to: 004393b5 (CONDITIONAL_JUMP)  ; LAB_004393b5
     CMP EBX,ECX                         ; 004393ad
     JL 0x00439410                       ; 004393af
         ;   XREF to: 00439410 (CONDITIONAL_JUMP)  ; LAB_00439410
-    MOV ECX,dword ptr [0x01c4f010]      ; 004393b5 | DAT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 004393b5 | g_INT_01c4f010
         ;   Label: LAB_004393b5
     CMP EDI,ECX                         ; 004393bb
     JLE 0x004393c3                      ; 004393bd
@@ -62,7 +62,7 @@ section .text
     CMP EBX,ECX                         ; 004393bf
     JG 0x00439410                       ; 004393c1
         ;   XREF to: 00439410 (CONDITIONAL_JUMP)  ; LAB_00439410
-    MOV ECX,dword ptr [0x01c4f00c]      ; 004393c3 | DAT_01c4f00c
+    MOV ECX,dword ptr [0x01c4f00c]      ; 004393c3 | g_INT_01c4f00c
         ;   Label: LAB_004393c3
     CMP ESI,ECX                         ; 004393c9
     JGE 0x004393d1                      ; 004393cb
@@ -70,7 +70,7 @@ section .text
     CMP EAX,ECX                         ; 004393cd
     JL 0x00439410                       ; 004393cf
         ;   XREF to: 00439410 (CONDITIONAL_JUMP)  ; LAB_00439410
-    MOV ECX,dword ptr [0x01c4f014]      ; 004393d1 | DAT_01c4f014
+    MOV ECX,dword ptr [0x01c4f014]      ; 004393d1 | g_INT_01c4f014
         ;   Label: LAB_004393d1
     CMP ESI,ECX                         ; 004393d7
     JLE 0x004393df                      ; 004393d9

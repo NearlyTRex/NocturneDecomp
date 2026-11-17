@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 195,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 40,
-    "suspect_count": 14,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
     "total_lines": 169
@@ -46,74 +44,74 @@
   "globals": [
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bdd7bc",
-      "name": "DAT_01bdd7bc",
-      "type": "undefined4",
+      "name": "g_INT_01bdd7bc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bdd7c0",
-      "name": "DAT_01bdd7c0",
-      "type": "undefined4",
+      "name": "g_INT_01bdd7c0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bdd7c8",
-      "name": "DAT_01bdd7c8",
-      "type": "undefined4",
+      "name": "g_INT_01bdd7c8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af74",
-      "name": "DAT_01c6af74",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af78",
-      "name": "DAT_01c6af78",
-      "type": "undefined4",
+      "name": "g_INT_01c6af78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af80",
-      "name": "DAT_01c6af80",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af84",
-      "name": "DAT_01c6af84",
-      "type": "undefined4",
+      "name": "g_INT_01c6af84",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af8c",
-      "name": "DAT_01c6af8c",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af90",
-      "name": "DAT_01c6af90",
-      "type": "undefined4",
+      "name": "g_INT_01c6af90",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -280,110 +278,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00467d91) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_01c62070",
-      "severity": "mild",
-      "text": "_DAT_01bdd7c0 = (uint)(byte)(&DAT_01c62070)[iVar4];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 < 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_01c62070",
-      "severity": "mild",
-      "text": "_DAT_01bdd7bc = (uint)(byte)(&DAT_01c62070)[iVar4];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 < 0x11) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01c6af8c",
-      "severity": "mild",
-      "text": "(uVar2 / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01c6af74",
-      "severity": "mild",
-      "text": "uVar1 / _DAT_01c6af78 << (DAT_01c6af74 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c6af80",
-      "severity": "mild",
-      "text": "uVar3 / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) & 0xffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01c6af8c",
-      "severity": "mild",
-      "text": "uVar2 << (DAT_01c6af8c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01c6af74",
-      "severity": "mild",
-      "text": "uVar1 << (DAT_01c6af74 & 0x1f) | uVar3 << (DAT_01c6af80 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01c6af80",
-      "severity": "mild",
-      "text": "uVar1 << (DAT_01c6af74 & 0x1f) | uVar3 << (DAT_01c6af80 & 0x1f);",
-      "type": "undefined_data"
     }
   ]
 }

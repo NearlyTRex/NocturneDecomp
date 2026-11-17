@@ -7,8 +7,8 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
@@ -36,8 +36,8 @@ section .text
     LEA ESI,[EDI + 0x190]               ; 0041936d
     PUSH ESI                            ; 00419373
         ;   Label: LAB_00419373
-    MOV ECX,dword ptr [0x00612560]      ; 00419374 | DAT_00612560
-    PUSH ECX                            ; 0041937a | DAT_01bc120c
+    MOV ECX,dword ptr [0x00612560]      ; 00419374 | g_CDemonRenderer_PTR_00612560
+    PUSH ECX                            ; 0041937a | g_CDemonRenderer_01bc120c
     INC EBX                             ; 0041937b
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 0041937c
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

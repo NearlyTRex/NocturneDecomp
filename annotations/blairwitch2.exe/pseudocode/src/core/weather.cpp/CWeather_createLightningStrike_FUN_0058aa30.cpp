@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeather *this_ptr,float flash_timer,int play_sound)
 
 {
@@ -52,7 +50,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   local_84[(uint)bVar2 * -2] = *(float *)((int)&local_70 + (uint)bVar2 * -8 + 4);
   local_84[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        *(float *)((int)&local_70 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  local_24 = (local_88 - local_64) * (float)_DAT_005ee5b2;
+  local_24 = (local_88 - local_64) * (float)0.5;
   local_1c = 0.0;
   if (0.0 < local_24) {
     local_1c = local_24;
@@ -61,7 +59,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   if (local_1c < local_28) {
     local_1c = local_28;
   }
-  local_20 = (local_84[1] - local_60[1]) * (float)_DAT_005ee5b2;
+  local_20 = (local_84[1] - local_60[1]) * (float)0.5;
   if (local_1c < local_20) {
     local_1c = local_20;
   }
@@ -88,16 +86,16 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   }
   if (play_sound != 0) {
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0049e6e0
-              (0x01C3DEB4,&local_7c,local_1c,0,0.0);
+              (g_CFireEffect_PTR_00614d30,&local_7c,local_1c,0,0.0);
   }
-  this_ptr_00 = 0x01C38BC0;
+  this_ptr_00 = g_CEventList_PTR_006141f0;
   local_18 = (float)g_CDemonCameraInstance.corona_blend_factor;
-  local_c0 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_005ee5ba;
+  local_c0 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05;
   this_ptr->base_ambient = local_c0;
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (this_ptr_00,"BnoLightningFlash" + 1);
+                    (this_ptr_00,"noLightningFlash");
   if (iVar1 == 0) {
-    local_c0 = local_c0 + _DAT_005ee5c2;
+    local_c0 = local_c0 + 0.65f;
     if (1.0 < local_c0) {
       local_c0 = 1.0;
     }
@@ -110,6 +108,6 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
     return;
   }
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-            (0x0264B290,(CDemonActor *)this_ptr,"light?.wav",&local_7c);
+            (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"light?.wav",&local_7c);
   return;
 }

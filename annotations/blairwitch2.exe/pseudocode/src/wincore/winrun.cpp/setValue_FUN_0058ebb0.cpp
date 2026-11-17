@@ -11,6 +11,6 @@
 void __cdecl wincore_winrun_cpp_setValue_FUN_0058ebb0(int val)
 
 {
-  _DAT_02662de4 = val;
+  _g_BYTE_02662de4 = val;
   return;
 }

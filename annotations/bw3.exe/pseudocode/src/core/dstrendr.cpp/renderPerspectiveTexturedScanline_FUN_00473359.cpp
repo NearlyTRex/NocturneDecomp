@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_00473359(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
@@ -30,30 +28,31 @@ void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_00473
   uVar1 = uVar1 >> 0x10;
   iVar2 = (uVar4 >> 0x10) - uVar1;
   if (iVar2 != 0 && uVar1 <= uVar4 >> 0x10) {
-    DAT_005f4ac0 = *(int *)(&DAT_01c5faec + scanline_y * 4) + uVar1 * 4;
-    DAT_005f4ac4 = iVar2 * 4;
+    g_PTR_005f4ac0 = g_ARRAY_PTR_01c5faec[scanline_y] + uVar1 * 4;
+    g_INT_005f4ac4 = iVar2 * 4;
     uVar3 = (pSVar5->base).u_current;
-    _DAT_005f4ab4 =
+    g_INT_005f4ab4 =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).u_current - uVar3) *
-               (longlong)*(int *)(&DAT_01c6b5d4 + DAT_005f4ac4)) >> 0x20);
+               (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar2 + 1]) >> 0x20);
     uVar4 = (pSVar5->base).v_current;
-    _DAT_005f4ab8 =
+    g_INT_005f4ab8 =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar4) *
-               (longlong)*(int *)(&DAT_01c6b5d4 + DAT_005f4ac4)) >> 0x20);
+               (longlong)(int)g_UINT_ARRAY_01c6b5d0[iVar2 + 1]) >> 0x20);
     uVar1 = 0;
-    DAT_005f4a98 = uVar3;
-    DAT_005f4a9c = uVar4;
+    g_UINT_005f4a98 = uVar3;
+    g_UINT_005f4a9c = uVar4;
     while( true ) {
-      *(uint *)(DAT_005f4ac0 + uVar1) =
+      *(uint *)(g_PTR_005f4ac0 + uVar1) =
            *(uint *)
-            (((uVar3 >> _DAT_00604df8 & (uint)_DAT_00604e38) +
-             (uVar4 >> _DAT_00604e18 & (uint)_DAT_00604e58)) * 4 + _DAT_01c6ced0);
+            (g_UCHAR_PTR_01c6ced0 +
+            ((uVar3 >> g_QWORD_00604df8 & (uint)g_QWORD_00604e38) +
+            (uVar4 >> g_QWORD_00604e18 & (uint)g_QWORD_00604e58)) * 4);
       uVar1 = uVar1 + 4;
-      if (DAT_005f4ac4 <= uVar1) break;
-      uVar3 = uVar3 + _DAT_005f4ab4;
-      uVar4 = uVar4 + _DAT_005f4ab8;
+      if ((uint)g_INT_005f4ac4 <= uVar1) break;
+      uVar3 = uVar3 + g_INT_005f4ab4;
+      uVar4 = uVar4 + g_INT_005f4ab8;
     }
   }
   return;

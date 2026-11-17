@@ -10,10 +10,10 @@
 ;   core_firestff.cpp_factoryFuncFirestaff_FUN_004a4aa0 at 004a4ab3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0b05
-;   undefined4 DAT_005c0b0d
-;   undefined4 DAT_005c0b15
-;   undefined4 DAT_005c0b1d
+;   double g_DOUBLE_005c0b05 = 0.100000000000000
+;   float g_FLOAT_005c0b0d = 2
+;   double g_DOUBLE_005c0b15 = 0.0500000000000000
+;   double g_DOUBLE_005c0b1d = 0.5
 ;
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
@@ -96,9 +96,9 @@ section .text
         ;   XREF to: 004a4bec (CONDITIONAL_JUMP)  ; LAB_004a4bec
     MOV EAX,EBX                         ; 004a4c27
     XOR EDX,EDX                         ; 004a4c29
-    FLD float ptr [0x005c0b0d]          ; 004a4c2b | DAT_005c0b0d
-    FLD double ptr [0x005c0b1d]         ; 004a4c31 | DAT_005c0b1d
-    FLD double ptr [0x005c0b05]         ; 004a4c37 | DAT_005c0b05
+    FLD float ptr [0x005c0b0d]          ; 004a4c2b | g_FLOAT_005c0b0d
+    FLD double ptr [0x005c0b1d]         ; 004a4c31 | g_DOUBLE_005c0b1d
+    FLD double ptr [0x005c0b05]         ; 004a4c37 | g_DOUBLE_005c0b05
     MOV dword ptr [ESP + 0x4],EDX       ; 004a4c3d
         ;   Label: LAB_004a4c3d
     FILD dword ptr [ESP + 0x4]          ; 004a4c41
@@ -119,8 +119,8 @@ section .text
     MOV EDX,0x6                         ; 004a4c70
     FSTP ST0                            ; 004a4c75
     LEA EAX,[EBX + 0xfd8]               ; 004a4c77
-    FLD double ptr [0x005c0b1d]         ; 004a4c7d | DAT_005c0b1d
-    FLD double ptr [0x005c0b15]         ; 004a4c83 | DAT_005c0b15
+    FLD double ptr [0x005c0b1d]         ; 004a4c7d | g_DOUBLE_005c0b1d
+    FLD double ptr [0x005c0b15]         ; 004a4c83 | g_DOUBLE_005c0b15
     MOV dword ptr [ESP + 0x4],EDX       ; 004a4c89
         ;   Label: LAB_004a4c89
     FILD dword ptr [ESP + 0x4]          ; 004a4c8d

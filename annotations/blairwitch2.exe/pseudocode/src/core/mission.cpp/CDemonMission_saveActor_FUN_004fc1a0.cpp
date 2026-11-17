@@ -12,16 +12,16 @@ void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004fc1a0(CDemonMission
   char *format;
   
   if (actor_ptr < (CDemonActor *)0xff000000) {
-    format = &DAT_005de65c;
+    format = "\"%s\"";
   }
   else {
-    format = &DAT_005de657;
+    format = "%08x";
   }
   _fprintf(file,format);
   if (description != (char *)0x0) {
     _fprintf(file,"\t\t// %s\n");
     return;
   }
-  _fprintf(file,&DAT_005de66a);
+  _fprintf(file,"\n");
   return;
 }

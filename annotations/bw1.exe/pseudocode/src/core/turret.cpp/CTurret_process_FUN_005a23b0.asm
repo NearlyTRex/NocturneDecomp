@@ -8,14 +8,14 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_turret_ani_wav_005f89e7+1
+;   TerminatedCString s_turret_ani_wav_005f89e8
 ;   TerminatedCString s_turret_ani_wav_005f89f8
 ;   TerminatedCString s_turret_loop_wav_f_005f8a3c
 ;   TerminatedCString s_turret_tail_wav_005f8a51
-;   undefined4 DAT_005f8a68
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   double g_DOUBLE_005f8a68 = 2
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
@@ -67,7 +67,7 @@ section .text
     LEA EAX,[EBX + 0x704]               ; 005a23ff
         ;   Label: LAB_005a23ff
     PUSH EAX                            ; 005a2405
-    MOV EDX,dword ptr [0x0061b4d0]      ; 005a2406 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 005a2406 | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 005a240c
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005a240d
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -83,7 +83,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 005a243a
         ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00573a80(uint sfx_handle)
     ADD ESP,0x4                         ; 005a243f
-    PUSH 0x5f89e8                       ; 005a2442 | s_turret_ani_wav_005f89e7+1
+    PUSH 0x5f89e8                       ; 005a2442 | = "turret-ani?.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 005a2447
         ;   Label: LAB_005a2447
     PUSH EBX                            ; 005a244d
@@ -171,7 +171,7 @@ section .text
         ;   Label: caseD_2
     MOV dword ptr [EBX + 0x2f4],0xff    ; 005a2556
     PUSH EAX                            ; 005a2560
-    MOV EAX,[0x0061b4d0]                ; 005a2561 | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 005a2561 | g_CEventList_PTR_0061b4d0
     MOV dword ptr [EBX + 0x2f8],0x0     ; 005a2566
     PUSH EAX                            ; 005a2570
     MOV dword ptr [EBX + 0x2fc],0x0     ; 005a2571
@@ -199,7 +199,7 @@ section .text
         ;   Label: caseD_3
     MOV dword ptr [EBX + 0x2f4],0x0     ; 005a25c3
     PUSH EAX                            ; 005a25cd
-    MOV ESI,dword ptr [0x0061b4d0]      ; 005a25ce | DAT_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 005a25ce | g_CEventList_PTR_0061b4d0
     MOV dword ptr [EBX + 0x2f8],0xff    ; 005a25d4
     PUSH ESI                            ; 005a25de
     MOV dword ptr [EBX + 0x2fc],0x0     ; 005a25df
@@ -308,7 +308,7 @@ section .text
     FLD float ptr [EBX + 0x77c]         ; 005a2748
     FADD ST0,ST1                        ; 005a274e
     FDIVP                               ; 005a2750
-    FMUL double ptr [0x005f8a68]        ; 005a2752 | DAT_005f8a68
+    FMUL double ptr [0x005f8a68]        ; 005a2752 | g_DOUBLE_005f8a68
     SUB ESP,0x4                         ; 005a2758
     LEA EAX,[ESP + 0x9c]                ; 005a275b
     FSTP float ptr [ESP]                ; 005a2762
@@ -358,8 +358,8 @@ section .text
         ;   Label: default
     MOV ECX,0x15a                       ; 005a27f9
     PUSH 0x5f8a1b                       ; 005a27fe
-    MOV dword ptr [0x01d1d400],EDX      ; 005a2803 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005a2809 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 005a2803 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 005a2809 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a280f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a2814

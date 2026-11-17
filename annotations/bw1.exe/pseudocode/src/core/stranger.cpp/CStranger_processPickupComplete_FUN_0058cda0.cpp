@@ -16,7 +16,7 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0058cda0(CStr
     iVar1 = (this_ptr->base).action_pending;
     if (iVar1 != 4) {
       shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
-                (g_CEditorToolsPtr,"@actionPending = %d\nstranger.cpp line %d" + 1,iVar1,0xdba);
+                (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar1,0xdba);
     }
     this_ptr_00 = (CAmmoBox *)
                   core_actor_cpp_castToClassHash_FUN_0040c600

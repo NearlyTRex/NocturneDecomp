@@ -11,11 +11,11 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00475c0c = 00475c42
-;   undefined4 DAT_005da5cc
-;   undefined4 DAT_005da5d4
-;   undefined4 DAT_005da5dc
-;   undefined4 DAT_005da5e4
-;   undefined4 DAT_005da5ec
+;   double g_DOUBLE_005da5cc = 20
+;   float g_FLOAT_005da5d4 = 0.5
+;   double g_DOUBLE_005da5dc = 5
+;   double g_DOUBLE_005da5e4 = 1.5
+;   double g_DOUBLE_005da5ec = 3.5
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.game_control
 ;
@@ -120,7 +120,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00475d2d
     MOVSD ES:EDI,ESI                    ; 00475d2e
     MOVSD ES:EDI,ESI                    ; 00475d2f
-    FLD float ptr [0x005da5d4]          ; 00475d30 | DAT_005da5d4
+    FLD float ptr [0x005da5d4]          ; 00475d30 | g_FLOAT_005da5d4
     FLD float ptr [ESP + 0xb8]          ; 00475d36
     FMUL ST1                            ; 00475d3d
     FLD float ptr [ESP + 0xbc]          ; 00475d3f
@@ -169,7 +169,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00475de0
     FLD float ptr [ESP + 0x50]          ; 00475de1
     FABS                                ; 00475de5
-    FCOMP double ptr [0x005da5dc]       ; 00475de7 | DAT_005da5dc
+    FCOMP double ptr [0x005da5dc]       ; 00475de7 | g_DOUBLE_005da5dc
     FNSTSW AX                           ; 00475ded
     SAHF                                ; 00475def
     JA 0x00475c52                       ; 00475df0
@@ -187,7 +187,7 @@ section .text
     JNZ 0x00476047                      ; 00475e17
         ;   XREF to: 00476047 (CONDITIONAL_JUMP)  ; LAB_00476047
     FLD float ptr [ESP]                 ; 00475e1d
-    FCOMP double ptr [0x005da5ec]       ; 00475e20 | DAT_005da5ec
+    FCOMP double ptr [0x005da5ec]       ; 00475e20 | g_DOUBLE_005da5ec
     FNSTSW AX                           ; 00475e26
     SAHF                                ; 00475e28
     JA 0x00475c52                       ; 00475e29
@@ -273,7 +273,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00475f1b
     FLD float ptr [ESP + 0xb0]          ; 00475f1c
     FABS                                ; 00475f23
-    FCOMP double ptr [0x005da5cc]       ; 00475f25 | DAT_005da5cc
+    FCOMP double ptr [0x005da5cc]       ; 00475f25 | g_DOUBLE_005da5cc
     FNSTSW AX                           ; 00475f2b
     SAHF                                ; 00475f2d
     JBE 0x00475e5f                      ; 00475f2e
@@ -364,7 +364,7 @@ section .text
         ;   XREF to: 00475fd9 (UNCONDITIONAL_JUMP)  ; LAB_00475fd9
     FLD float ptr [ESP]                 ; 00476047
         ;   Label: LAB_00476047
-    FCOMP double ptr [0x005da5e4]       ; 0047604a | DAT_005da5e4
+    FCOMP double ptr [0x005da5e4]       ; 0047604a | g_DOUBLE_005da5e4
     FNSTSW AX                           ; 00476050
     SAHF                                ; 00476052
     JBE 0x00475e2f                      ; 00476053

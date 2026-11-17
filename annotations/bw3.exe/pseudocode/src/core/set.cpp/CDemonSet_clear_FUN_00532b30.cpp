@@ -17,7 +17,7 @@ void __cdecl core_set_cpp_CDemonSet_clear_FUN_00532b30(CDemonSet *this_ptr)
     core_setutil_cpp_C3DSCamera_free_FUN_00541ac0(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
   } while (this_ptr_00 != (C3DSCamera *)&this_ptr->light_count);
-  core_terrain_cpp_CTerrain_free_FUN_005723b0(0x02CFD8B8);
+  core_terrain_cpp_CTerrain_free_FUN_005723b0(g_CTerrain_PTR_00606aa0);
   core_setdir_cpp_CDemonSet_freeThumbs_FUN_00541a60(this_ptr);
   return;
 }

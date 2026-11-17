@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBlunderbus * __cdecl core_blundrbs_cpp_CBlunderbus_ctor_FUN_004103f0(CBlunderbus *this_ptr)
 
 {
@@ -26,7 +24,7 @@ CBlunderbus * __cdecl core_blundrbs_cpp_CBlunderbus_ctor_FUN_004103f0(CBlunderbu
   (pCVar2->base).bolt_velocity = 15.0;
   (pCVar2->base).ammo_per_shot = 5;
   (pCVar2->base).weapon_class = 0;
-  fVar1 = _DAT_005dbcdc;
+  fVar1 = 8.0f;
   (pCVar2->base).ammo_type = AMMO_TYPE_BULLET;
   (pCVar2->base).number_of_hands_needed = 2;
   (pCVar2->base).weight = fVar1;

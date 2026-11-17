@@ -12,9 +12,9 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400 at 00504453
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e753d
-;   undefined4 DAT_005e7541
-;   undefined4 DAT_0061c010
+;   float g_FLOAT_005e753d = 2
+;   float g_FLOAT_005e7541 = 4
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;
 ; Called Functions:
@@ -132,12 +132,12 @@ section .text
     FSUB float ptr [EBX + 0x5e8]        ; 00505cfe
     FSTP float ptr [ESP + 0x9c]         ; 00505d04
     FLD float ptr [EBX + 0x150c]        ; 00505d0b
-    FMUL float ptr [0x005e753d]         ; 00505d11 | DAT_005e753d
+    FMUL float ptr [0x005e753d]         ; 00505d11 | g_FLOAT_005e753d
     FLD float ptr [ESP + 0x9c]          ; 00505d17
     FXCH                                ; 00505d1e
     FADD float ptr [EBX + 0x5ec]        ; 00505d20
     FXCH                                ; 00505d26
-    FLD float ptr [0x005e7541]          ; 00505d28 | DAT_005e7541
+    FLD float ptr [0x005e7541]          ; 00505d28 | g_FLOAT_005e7541
     FXCH                                ; 00505d2e
     FMUL ST1                            ; 00505d30
     FXCH ST2                            ; 00505d32
@@ -210,7 +210,7 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 00505e26
     MOVSD.REP ES:EDI,ESI                ; 00505e2d
     PUSH EAX                            ; 00505e2f
-    MOV ESI,dword ptr [0x0061c010]      ; 00505e30 | DAT_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 00505e30 | g_CFireEffect_PTR_0061c010
     PUSH ESI                            ; 00505e36
     CALL core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420 ; 00505e37
         ;   XREF to: 004b6420 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo laser_info, ...)

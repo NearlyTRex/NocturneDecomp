@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 304,
-    "complexity_score": 163,
+    "complexity_score": 138,
     "cross_reference_count": 17,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "undefined_data"
+      "unaffected_reg"
     ],
     "total_lines": 417
   },
@@ -262,14 +261,14 @@
     },
     {
       "addr": "005ef956",
-      "name": "DAT_005ef956",
-      "type": "undefined4",
+      "name": "s_Burn_005ef956",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ef95b",
-      "name": "DAT_005ef95b",
-      "type": "undefined4",
+      "name": "s_Burn_005ef95b",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -465,22 +464,6 @@
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,(CDemonActor *)delta_time,unaff_ESI);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_005ef95b",
-      "severity": "mild",
-      "text": "(&this_ptr->state_machine,&DAT_005ef95b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_005ef956",
-      "severity": "mild",
-      "text": "core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,&DAT_005ef956);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_construc_cpp_CConstructRed_getActorType_FUN_004445f0(CConstructRed *this_ptr)
 
 {
-  return (CDemonActorType *)&DAT_007f8f18;
+  return &g_CDemonActorType_007f8f18;
 }

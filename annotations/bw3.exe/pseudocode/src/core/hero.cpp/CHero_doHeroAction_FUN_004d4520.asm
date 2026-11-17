@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004d44e0 = 004d453a
-;   undefined4 s_CHero_doHeroAction_type_005c4e8c+1
+;   TerminatedCString s_CHero_doHeroAction_type_005c4e8d
 ;   TerminatedCString s_CHero_doHeroAction_type_005c4ed2
 ;   TerminatedCString s_CHero_doHeroAction_pull_005c4f1b
 ;   TerminatedCString s_CHero_doHeroAction_type_005c4f3d
@@ -21,7 +21,7 @@
 ;   TerminatedCString s_CHero_doHeroAction_type_005c5088
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CDoorClassInfo.name_hash
@@ -87,7 +87,7 @@ section .text
     POP ESI                             ; 004d457a
     POP EBX                             ; 004d457b
     RET                                 ; 004d457c
-    PUSH 0x5c4e8d                       ; 004d457d | s_CHero_doHeroAction_type_005c4e8c+1
+    PUSH 0x5c4e8d                       ; 004d457d | = "CHero::doHeroAction - type=eHeroActio..."
         ;   Label: LAB_004d457d
     MOV EDI,dword ptr [0x005fb140]      ; 004d4582 | g_CEditorToolsPtr
     PUSH EDI                            ; 004d4588
@@ -315,7 +315,7 @@ section .text
     ADD EAX,0x2698                      ; 004d477e
         ;   Label: LAB_004d477e
     PUSH EAX                            ; 004d4783
-    MOV EBP,dword ptr [0x005fba60]      ; 004d4784 | DAT_005fba60
+    MOV EBP,dword ptr [0x005fba60]      ; 004d4784 | g_CEventList_PTR_005fba60
     PUSH EBP                            ; 004d478a
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004d478b
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

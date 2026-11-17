@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags)
 
 {
@@ -24,30 +22,31 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0
   int color_value;
   char local_360 [520];
   CInputString local_158;
-  uint local_18;
+  int local_18;
   int local_14;
   
   bVar9 = 0;
   if (directory_path == (char *)0x0) {
-    directory_path = &DAT_005dbeaf;
+    directory_path = &g_CHAR_005dbeaf;
   }
-  if (_DAT_01c3eb50 == (CBitFont *)0x0) {
-    _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-    _DAT_01d1d404 = 0xa4;
+  if (g_CBitFont_PTR_01c3eb50 == (CBitFont *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+    g_INT_01d1d404 = 0xa4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
-  _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
+  g_INT_01c3f538 = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
+  ;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00496840
-            (this_ptr,_DAT_01c3f538 * 0x1e,_DAT_01c3f53c * 2,dialog_title,0);
+            (this_ptr,g_INT_01c3f538 * 0x1e,g_INT_01c3f53c * 2,dialog_title,0);
   pcVar8 = output_buffer;
   if ((flags & 1) == 0) {
     pcVar8 = (char *)0x0;
   }
   shape_edittool_cpp_CInputString_init_FUN_00492ec0(&local_158,pcVar8,0x14,0);
   local_14 = 0;
-  local_18 = DAT_0061b4ac;
-  DAT_0061b4ac = 0x7f;
+  local_18 = g_INT_0061b4ac;
+  g_INT_0061b4ac = 0x7f;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(this_ptr);
     strupr(local_158.string_data);
@@ -87,33 +86,34 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0
       engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
       engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
       engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
-                (_DAT_01c3eb50,local_360,_DAT_01c4f008,_DAT_01c4f00c,_DAT_01c3f57c,-1);
+                (g_CBitFont_PTR_01c3eb50,local_360,g_INT_01c4f008,g_INT_01c4f00c,g_INT_01c3f57c,-1);
     }
-    iVar3 = _DAT_01c3f57c;
+    iVar3 = g_INT_01c3f57c;
     if (local_14 != 0) {
-      iVar3 = _DAT_01c3f580;
+      iVar3 = g_INT_01c3f580;
     }
     engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
     color_value = -1;
-    y = _DAT_01c4f00c + _DAT_01c3f53c;
-    iVar4 = _DAT_01c4f008;
+    y = g_INT_01c4f00c + g_INT_01c3f53c;
+    iVar4 = g_INT_01c4f008;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Filename: ");
-    engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(_DAT_01c3eb50,pcVar8,iVar4,y,iVar3,color_value);
+    engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+              (g_CBitFont_PTR_01c3eb50,pcVar8,iVar4,y,iVar3,color_value);
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Filename: ");
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,pcVar8);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_CBitFont_PTR_01c3eb50,pcVar8);
     shape_edittool_cpp_CInputString_draw_FUN_004934b0
-              (&local_158,iVar3 + _DAT_01c4f008,_DAT_01c4f00c + _DAT_01c3f53c);
+              (&local_158,iVar3 + g_INT_01c4f008,g_INT_01c4f00c + g_INT_01c3f53c);
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     if (local_14 != 0) break;
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(), iVar3 != 0) {
-      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004fd260(0x01D1BCA0);
-      if ((iVar3 == 0x1b) || (_DAT_02c9be70 != 0)) {
+      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004fd260(g_CKeys_PTR_0061f2a4);
+      if ((iVar3 == 0x1b) || (g_INT_02c9be70 != 0)) {
         *output_buffer = '\0';
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_004032b0();
         wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
-        DAT_0061b4ac = local_18;
+        g_INT_0061b4ac = local_18;
         return 0;
       }
       if ((iVar3 == 0xd) && (local_158.string_data[0] != '\0')) {
@@ -130,7 +130,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0
 LAB_00495c2e:
         if (pCVar7 == (CInputString *)0x0) {
           if (*file_extension != '.') {
-            pcVar8 = &DAT_005dbed2;
+            pcVar8 = ".";
             iVar4 = -1;
             pCVar6 = &local_158;
             do {
@@ -191,8 +191,8 @@ LAB_00495c2e:
       if (iVar3 == 8) {
         shape_edittool_cpp_CInputString_backspace_FUN_004930c0(&local_158);
       }
-      else if ((((((&DAT_00626114)[(byte)((char)iVar3 + 1)] & 8) != 0) && (iVar3 != 0x5c)) &&
-               (iVar3 != 0x3a)) && (((&DAT_00626114)[(byte)((char)iVar3 + 1)] & 2) == 0)) {
+      else if (((((g_UCHAR_ARRAY_00626114[(byte)((char)iVar3 + 1)] & 8) != 0) && (iVar3 != 0x5c)) &&
+               (iVar3 != 0x3a)) && ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar3 + 1)] & 2) == 0)) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_00493070(&local_158);
         shape_edittool_cpp_CInputString_insertChar_FUN_00492f70(&local_158,(char)iVar3,1);
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_00492f50(&local_158);
@@ -211,6 +211,6 @@ LAB_00495c2e:
     output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(this_ptr);
-  DAT_0061b4ac = local_18;
+  g_INT_0061b4ac = local_18;
   return 1;
 }

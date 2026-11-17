@@ -14,11 +14,11 @@
 ;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_005516c0 at 005518a2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_020af5ac
-;   undefined4 DAT_020af5b8
-;   undefined4 DAT_020af5c4
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   UVector3 g_UVector3_020af5ac
+;   CVector3f g_CVector3f_020af5b8
+;   float g_FLOAT_020af5c4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190
@@ -35,33 +35,33 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590
     PUSH ESI                            ; 00555591
     PUSH EDI                            ; 00555592
-    PUSH 0x20af5ac                      ; 00555593 | DAT_020af5ac
-    MOV EDX,dword ptr [0x00612560]      ; 00555598 | DAT_00612560
-    PUSH EDX                            ; 0055559e | DAT_01bc120c
+    PUSH 0x20af5ac                      ; 00555593 | g_UVector3_020af5ac
+    MOV EDX,dword ptr [0x00612560]      ; 00555598 | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 0055559e | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 0055559f
         ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005555a4
-    MOV ECX,dword ptr [0x00612560]      ; 005555a7 | DAT_00612560
-    PUSH dword ptr [0x020af5c4]         ; 005555ad | DAT_020af5c4
-    PUSH ECX                            ; 005555b3 | DAT_01bc120c
+    MOV ECX,dword ptr [0x00612560]      ; 005555a7 | g_CDemonRenderer_PTR_00612560
+    PUSH dword ptr [0x020af5c4]         ; 005555ad | g_FLOAT_020af5c4
+    PUSH ECX                            ; 005555b3 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 005555b4
         ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 005555b9
-    PUSH 0x20af5b8                      ; 005555bc | DAT_020af5b8
-    MOV EBX,dword ptr [0x00612560]      ; 005555c1 | DAT_00612560
-    PUSH EBX                            ; 005555c7 | DAT_01bc120c
+    PUSH 0x20af5b8                      ; 005555bc | g_CVector3f_020af5b8
+    MOV EBX,dword ptr [0x00612560]      ; 005555c1 | g_CDemonRenderer_PTR_00612560
+    PUSH EBX                            ; 005555c7 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530 ; 005555c8
         ;   XREF to: 00483530 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005555cd
     PUSH 0x0                            ; 005555d0
-    MOV ESI,dword ptr [0x00612560]      ; 005555d2 | DAT_00612560
-    PUSH ESI                            ; 005555d8 | DAT_01bc120c
+    MOV ESI,dword ptr [0x00612560]      ; 005555d2 | g_CDemonRenderer_PTR_00612560
+    PUSH ESI                            ; 005555d8 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190 ; 005555d9
         ;   XREF to: 00484190 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 005555de
     PUSH 0x0                            ; 005555e1
-    MOV EDI,dword ptr [0x00612560]      ; 005555e3 | DAT_00612560
-    PUSH EDI                            ; 005555e9 | DAT_01bc120c
+    MOV EDI,dword ptr [0x00612560]      ; 005555e3 | g_CDemonRenderer_PTR_00612560
+    PUSH EDI                            ; 005555e9 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_00484170 ; 005555ea
         ;   XREF to: 00484170 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_00484170(CDemonRenderer * this_ptr, int alpha_mask)
     ADD ESP,0x8                         ; 005555ef

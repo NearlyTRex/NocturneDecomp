@@ -29,12 +29,12 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 s_ShotInvulnerable_005ccded+1
-;   undefined4 DAT_006141f0
+;   TerminatedCString s_ShotInvulnerable_005ccdee
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -189,7 +189,7 @@ section .text
         ;   Label: LAB_004280e6
     JNZ 0x0042812a                      ; 004280ed
         ;   XREF to: 0042812a (CONDITIONAL_JUMP)  ; LAB_0042812a
-    MOV EAX,[0x01cedef4]                ; 004280ef | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004280ef | g_INT_01cedef4
     CMP EBX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004280f4
     JZ 0x0042812a                       ; 004280fb
         ;   XREF to: 0042812a (CONDITIONAL_JUMP)  ; LAB_0042812a
@@ -220,9 +220,9 @@ section .text
     POP ESI                             ; 00428141
     POP EBX                             ; 00428142
     RET                                 ; 00428143
-    PUSH 0x5ccdee                       ; 00428144 | s_ShotInvulnerable_005ccded+1
+    PUSH 0x5ccdee                       ; 00428144 | = "ShotInvulnerable"
         ;   Label: LAB_00428144
-    MOV EAX,[0x006141f0]                ; 00428149 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 00428149 | g_CEventList_PTR_006141f0
     PUSH EAX                            ; 0042814e
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0042814f
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)

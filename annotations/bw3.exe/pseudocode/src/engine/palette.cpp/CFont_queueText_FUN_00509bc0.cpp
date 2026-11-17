@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_palette_cpp_CFont_queueText_FUN_00509bc0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color)
 
 {
@@ -33,7 +31,7 @@ int __cdecl engine_palette_cpp_CFont_queueText_FUN_00509bc0(CFont *this_ptr,char
     pacVar5 = (char (*) [256])(*pacVar5 + 2);
   } while (cVar1 != '\0');
   iVar4 = this_ptr->queued_text_count;
-  dVar6 = round((double)((float)x * _DAT_01d76cc4));
+  dVar6 = round((double)((float)x * g_FLOAT_01d76cc4));
   this_ptr->queued_x[iVar4] = (int)ROUND(dVar6);
   iVar4 = this_ptr->queued_text_count;
   dVar6 = round((double)((float)x * unaff_EDI));
@@ -44,24 +42,27 @@ int __cdecl engine_palette_cpp_CFont_queueText_FUN_00509bc0(CFont *this_ptr,char
   }
   else {
     iVar2 = foreground_color * 3;
-    if (DAT_005fba20 != 0x10) {
-      if (DAT_005fba20 == 0x20) {
+    if (g_INT_005fba20 != 0x10) {
+      if (g_INT_005fba20 == 0x20) {
         this_ptr->queued_foreground_color[this_ptr->queued_text_count] =
-             (uint)(byte)(&DAT_01c6af9a)[iVar2] << (DAT_01c6af8c & 0x1f) |
-             (uint)(byte)(&DAT_01c6af98)[iVar2] << (DAT_01c6af74 & 0x1f) |
-             (uint)(byte)(&DAT_01c6af99)[iVar2] << (DAT_01c6af80 & 0x1f);
+             (uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 2] << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
+             (uint)g_UCHAR_ARRAY_01c6af98[iVar2] << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+             (uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 1] << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
       }
       else {
         this_ptr->queued_foreground_color[this_ptr->queued_text_count] =
-             (uint)(byte)(&DAT_01c6af99)[iVar2] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar2] << 0x10 |
-             (uint)(byte)(&DAT_01c6af9a)[iVar2];
+             (uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 1] << 8 |
+             (uint)g_UCHAR_ARRAY_01c6af98[iVar2] << 0x10 | (uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 2];
       }
       goto LAB_00509d02;
     }
     iVar4 = this_ptr->queued_text_count;
-    uVar3 = ((byte)(&DAT_01c6af9a)[iVar2] / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f) |
-            (byte)(&DAT_01c6af98)[iVar2] / _DAT_01c6af78 << (DAT_01c6af74 & 0x1f) |
-            (byte)(&DAT_01c6af99)[iVar2] / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) & 0xffff;
+    uVar3 = ((uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 2] / (uint)g_INT_01c6af90 <<
+             (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
+            (uint)g_UCHAR_ARRAY_01c6af98[iVar2] / (uint)g_INT_01c6af78 <<
+            (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+            (uint)g_UCHAR_ARRAY_01c6af98[iVar2 + 1] / (uint)g_INT_01c6af84 <<
+            (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) & 0xffff;
   }
   this_ptr->queued_foreground_color[iVar4] = uVar3;
 LAB_00509d02:

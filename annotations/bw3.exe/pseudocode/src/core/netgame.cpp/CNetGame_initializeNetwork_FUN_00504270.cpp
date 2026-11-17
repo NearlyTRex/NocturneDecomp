@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(CNetGame *this_ptr)
 
 {
@@ -15,7 +13,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(CNetGame *t
   int iVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
-            (g_CEditorToolsPtr,"?Initializing network..." + 1);
+            (g_CEditorToolsPtr,"Initializing network...");
   this_ptr_00 = &this_ptr->socket;
   support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30(this_ptr_00);
   iVar1 = support_trisock_cpp_CSocket_createUDPSocket_FUN_0056f930(this_ptr_00);
@@ -40,9 +38,9 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(CNetGame *t
                     (this_ptr_00,&this_ptr->players[this_ptr->local_player_index].addr);
   if (iVar1 != 0) {
     core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00504c10(this_ptr);
-    _DAT_01da6478 = 1;
-    _DAT_01da6474 = wincore_winrun_cpp_getTime_FUN_005806a0();
-    _DAT_01da6474 = _DAT_01da6474 / 0x12;
+    g_UINT_01da6478 = 1;
+    iVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
+    g_INT_01da6474 = iVar1 / 0x12;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
               (g_CEditorToolsPtr,"Initializing network...OK");
     return 1;

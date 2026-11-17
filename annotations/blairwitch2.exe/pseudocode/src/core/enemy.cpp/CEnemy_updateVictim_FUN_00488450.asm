@@ -8,18 +8,18 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_Capture_005d2dd8+1
+;   TerminatedCString s_Capture_005d2dd9
 ;   TerminatedCString s_s_can_see_hero_005d2de1
-;   undefined4 DAT_005d2df5
-;   undefined4 DAT_005f6068
+;   float g_FLOAT_005d2df5 = 3
+;   float g_FLOAT_005f6068 = NaN
 ;   CConsole* g_CConsolePtr = 007c158c
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_01c264e4
-;   undefined4 DAT_01c28424
+;   CDemonActor*[2000] g_CDemonActor_PTR_ARRAY_01c264e4
+;   float[2000] g_FLOAT_ARRAY_01c28424
 ;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;   undefined4 g_CGameInstance.allow_enemy_attack_flag
 ;   undefined4 g_CDemonSetInstance.character_count
@@ -51,7 +51,7 @@ section .text
     TEST EDX,EDX                        ; 00488471
     JZ 0x004884b2                       ; 00488473
         ;   XREF to: 004884b2 (CONDITIONAL_JUMP)  ; LAB_004884b2
-    CMP EDX,dword ptr [0x005f6068]      ; 00488475 | DAT_005f6068
+    CMP EDX,dword ptr [0x005f6068]      ; 00488475 | g_FLOAT_005f6068
     JNZ 0x004884a5                      ; 0048847b
         ;   XREF to: 004884a5 (CONDITIONAL_JUMP)  ; LAB_004884a5
     MOV dword ptr [EAX + 0x10a78],0x0   ; 0048847d
@@ -91,9 +91,9 @@ section .text
     POP ESI                             ; 004884ee
     POP EBX                             ; 004884ef
     RET                                 ; 004884f0
-    PUSH 0x5d2dd9                       ; 004884f1 | s_Capture_005d2dd8+1
+    PUSH 0x5d2dd9                       ; 004884f1 | = "Capture"
         ;   Label: LAB_004884f1
-    MOV ESI,dword ptr [0x006141f0]      ; 004884f6 | DAT_006141f0
+    MOV ESI,dword ptr [0x006141f0]      ; 004884f6 | g_CEventList_PTR_006141f0
     PUSH ESI                            ; 004884fc
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004884fd
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -186,14 +186,14 @@ section .text
     JLE 0x00488648                      ; 0048861d
         ;   XREF to: 00488648 (CONDITIONAL_JUMP)  ; LAB_00488648
     XOR ECX,ECX                         ; 0048861f
-    FLD float ptr [ECX + 0x1c28424]     ; 00488621 | DAT_01c28424
+    FLD float ptr [ECX + 0x1c28424]     ; 00488621 | g_FLOAT_ARRAY_01c28424
         ;   Label: LAB_00488621
     FCOMP float ptr [ESP + 0x44]        ; 00488627
     FNSTSW AX                           ; 0048862b
     SAHF                                ; 0048862d
     JNC 0x0048863c                      ; 0048862e
         ;   XREF to: 0048863c (CONDITIONAL_JUMP)  ; LAB_0048863c
-    MOV EAX,dword ptr [ECX + 0x1c28424] ; 00488630 | DAT_01c28424
+    MOV EAX,dword ptr [ECX + 0x1c28424] ; 00488630 | g_FLOAT_ARRAY_01c28424
     MOV EBX,EDX                         ; 00488636
     MOV dword ptr [ESP + 0x44],EAX      ; 00488638
     MOV EAX,dword ptr [ESP + 0x40]      ; 0048863c
@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_00488648
     JL 0x0048849e                       ; 0048864a
         ;   XREF to: 0048849e (CONDITIONAL_JUMP)  ; LAB_0048849e
-    MOV ESI,dword ptr [EBX*0x4 + 0x1c264e4] ; 00488650 | DAT_01c264e4 | g_CEnemyClassInfo.name_hash
+    MOV ESI,dword ptr [EBX*0x4 + 0x1c264e4] ; 00488650 | g_CDemonActor_PTR_ARRAY_01c264e4 | g_CEnemyClassInfo.name_hash
     PUSH ESI                            ; 00488657
     MOV EDX,dword ptr [EBP + 0x14]      ; 00488658
     PUSH EDX                            ; 0048865b
@@ -244,7 +244,7 @@ section .text
     CMP EAX,0x1                         ; 004886ab
     JZ 0x0048883d                       ; 004886ae
         ;   XREF to: 0048883d (CONDITIONAL_JUMP)  ; LAB_0048883d
-    MOV dword ptr [EBX*0x4 + 0x1c28424],0x7149f2ca ; 004886b4 | DAT_01c28424
+    MOV dword ptr [EBX*0x4 + 0x1c28424],0x7149f2ca ; 004886b4 | g_FLOAT_ARRAY_01c28424
         ;   Label: LAB_004886b4
     CMP ESI,EDI                         ; 004886bf
     JNZ 0x00488607                      ; 004886c1
@@ -337,9 +337,9 @@ section .text
         ;   XREF to: 004887dc (CONDITIONAL_JUMP)  ; LAB_004887dc
     MOV EAX,dword ptr [ESP + 0x38]      ; 004887b4
     MOV EDX,dword ptr [ESP + 0x38]      ; 004887b8
-    MOV dword ptr [EAX + 0x1c264e4],EBX ; 004887bc | DAT_01c264e4
+    MOV dword ptr [EAX + 0x1c264e4],EBX ; 004887bc | g_CDemonActor_PTR_ARRAY_01c264e4
     MOV EAX,dword ptr [ESP + 0x28]      ; 004887c2
-    MOV dword ptr [EDX + 0x1c28424],EAX ; 004887c6 | DAT_01c28424
+    MOV dword ptr [EDX + 0x1c28424],EAX ; 004887c6 | g_FLOAT_ARRAY_01c28424
     MOV EAX,dword ptr [ESP + 0x40]      ; 004887cc
     LEA EDI,[EDX + 0x4]                 ; 004887d0
     INC EAX                             ; 004887d3
@@ -356,7 +356,7 @@ section .text
         ;   XREF to: 004885d5 (UNCONDITIONAL_JUMP)  ; LAB_004885d5
     FLD float ptr [ESP + 0x14]          ; 004887f5
         ;   Label: LAB_004887f5
-    FMUL float ptr [0x005d2df5]         ; 004887f9 | DAT_005d2df5
+    FMUL float ptr [0x005d2df5]         ; 004887f9 | g_FLOAT_005d2df5
     FSTP float ptr [ESP + 0x14]         ; 004887ff
     JMP 0x00488791                      ; 00488803
         ;   XREF to: 00488791 (UNCONDITIONAL_JUMP)  ; LAB_00488791

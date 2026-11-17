@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_slew_cpp_CSlew_processInput_FUN_005493d0(CSlew *this_ptr)
 
 {
@@ -21,24 +19,25 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005493d0(CSlew *this_ptr)
   float local_28;
   
   local_28 = g_CGamePtr->delta_time_float;
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x38);
-  dVar4 = _DAT_005e7621;
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_LMENU);
+  dVar4 = 0.050000000000000003;
   if ((iVar5 != 0) ||
-     (iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x2a), dVar4 = _DAT_005e7619, iVar5 != 0)) {
+     (iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_LSHIFT),
+     dVar4 = 10, iVar5 != 0)) {
     local_28 = local_28 * (float)dVar4;
   }
-  fVar1 = local_28 * _DAT_005e7629;
-  fVar2 = local_28 * (float)_DAT_005e7631;
-  fVar3 = (float)_DAT_005e7639;
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x4f);
+  fVar1 = local_28 * 3.141593f;
+  fVar2 = local_28 * (float)8;
+  fVar3 = (float)30;
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD1);
   if (iVar5 != 0) {
     (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y - fVar1;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x51);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD3);
   if (iVar5 != 0) {
     (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y + fVar1;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x48);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD8);
   if (iVar5 != 0) {
     fVar6 = (float10)(this_ptr->orientation).vec.y;
     fVar7 = (float10)fcos(fVar6);
@@ -46,7 +45,7 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005493d0(CSlew *this_ptr)
     (this_ptr->position).x = (float)(fVar6 * (float10)fVar2 + (float10)(this_ptr->position).x);
     (this_ptr->position).z = (float)(fVar7 * (float10)fVar2 + (float10)(this_ptr->position).z);
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x50);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD2);
   if (iVar5 != 0) {
     fVar6 = (float10)(this_ptr->orientation).vec.y;
     fVar7 = (float10)fcos(fVar6);
@@ -54,75 +53,75 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005493d0(CSlew *this_ptr)
     (this_ptr->position).x = (float)((float10)(this_ptr->position).x - fVar6 * (float10)fVar2);
     (this_ptr->position).z = (float)((float10)(this_ptr->position).z - fVar7 * (float10)fVar2);
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x4b);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD4);
   if (iVar5 != 0) {
-    fVar7 = (float10)fsin((float10)(this_ptr->orientation).vec.y + (float10)_DAT_005e7641);
-    fVar6 = (float10)fcos((float10)(this_ptr->orientation).vec.y + (float10)_DAT_005e7641);
+    fVar7 = (float10)fsin((float10)(this_ptr->orientation).vec.y + (float10)-1.570796f);
+    fVar6 = (float10)fcos((float10)(this_ptr->orientation).vec.y + (float10)-1.570796f);
     (this_ptr->position).x = (float)(fVar7 * (float10)fVar2 + (float10)(this_ptr->position).x);
     (this_ptr->position).z = (float)(fVar6 * (float10)fVar2 + (float10)(this_ptr->position).z);
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x4d);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD6);
   if (iVar5 != 0) {
-    fVar7 = (float10)fsin((float10)(this_ptr->orientation).vec.y + (float10)_DAT_005e7645);
-    fVar6 = (float10)fcos((float10)(this_ptr->orientation).vec.y + (float10)_DAT_005e7645);
+    fVar7 = (float10)fsin((float10)(this_ptr->orientation).vec.y + (float10)1.570796f);
+    fVar6 = (float10)fcos((float10)(this_ptr->orientation).vec.y + (float10)1.570796f);
     (this_ptr->position).x = (float)(fVar7 * (float10)fVar2 + (float10)(this_ptr->position).x);
     (this_ptr->position).z = (float)(fVar6 * (float10)fVar2 + (float10)(this_ptr->position).z);
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x10);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_Q);
   if (iVar5 != 0) {
     (this_ptr->position).y = (this_ptr->position).y + fVar2;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x1e);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_A);
   if (iVar5 != 0) {
     (this_ptr->position).y = (this_ptr->position).y - fVar2;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x3f);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_F5);
   if (iVar5 != 0) {
     (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x - fVar1;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x42);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_F8);
   if (iVar5 != 0) {
     (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x + fVar1;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x47);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD7);
   if (iVar5 != 0) {
     (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z - fVar1;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x49);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD9);
   if (iVar5 != 0) {
     (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z + fVar1;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0xc);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_MINUS);
   if (iVar5 != 0) {
     this_ptr->slew_rate = this_ptr->slew_rate - local_28 * fVar3;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0xd);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_EQUALS);
   if (iVar5 != 0) {
     this_ptr->slew_rate = this_ptr->slew_rate + local_28 * fVar3;
   }
-  iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x4c);
+  iVar5 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD5);
   if (iVar5 != 0) {
     (this_ptr->orientation).vec.z = 0.0;
     (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.z;
     (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.y;
   }
-  if ((this_ptr->orientation).vec.y < _DAT_005e7649) {
-    (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y + _DAT_005e764d;
+  if ((this_ptr->orientation).vec.y < -3.141593f) {
+    (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y + 6.283185f;
   }
   if (0x40490fdb < (int)(this_ptr->orientation).vec.y) {
-    (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y + _DAT_005e7651;
+    (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y + -6.283185f;
   }
-  if ((this_ptr->orientation).vec.x < _DAT_005e7649) {
-    (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x + _DAT_005e764d;
+  if ((this_ptr->orientation).vec.x < -3.141593f) {
+    (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x + 6.283185f;
   }
   if (0x40490fdb < (int)(this_ptr->orientation).vec.x) {
-    (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x + _DAT_005e7651;
+    (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x + -6.283185f;
   }
-  if ((this_ptr->orientation).vec.z < _DAT_005e7649) {
-    (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z + _DAT_005e764d;
+  if ((this_ptr->orientation).vec.z < -3.141593f) {
+    (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z + 6.283185f;
   }
   if (0x40490fdb < (int)(this_ptr->orientation).vec.z) {
-    (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z + _DAT_005e7651;
+    (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z + -6.283185f;
     return;
   }
   return;

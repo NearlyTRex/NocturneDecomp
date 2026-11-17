@@ -6,87 +6,91 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042ebf0(int x,int y,float alpha,int color)
 
 {
-  int iVar1;
-  ushort uVar2;
+  ushort uVar1;
+  float fVar2;
   float fVar3;
   float fVar4;
-  float fVar5;
-  byte bVar6;
-  byte bVar7;
+  byte uVar5;
+  byte uVar6;
+  uint uVar7;
   uint uVar8;
   uint uVar9;
   uint uVar10;
-  uint uVar11;
-  uint *puVar12;
-  uint uVar13;
+  uint *puVar11;
+  uint uVar12;
+  double dVar13;
   double dVar14;
   double dVar15;
-  double dVar16;
   uint uStack_3c;
   uint uStack_38;
   uint uStack_34;
   uint uStack_2c;
   
-  bVar7 = DAT_01c3581c;
-  bVar6 = DAT_01c35814;
-  if ((((_DAT_01c35e48 <= x) && (x <= _DAT_01c35e50)) && (_DAT_01c35e4c <= y)) &&
-     ((y <= _DAT_01c35e54 && (DAT_006141c0 != 8)))) {
-    if (DAT_006141c0 == 0x10) {
-      uVar2 = *(ushort *)(*(int *)(&DAT_01c2a38c + y * 4) + x * 2);
-      uVar8 = (uint)(uVar2 >> (DAT_01c35814 & 0x1f)) << (DAT_01c3581c & 0x1f);
-      uVar9 = (uint)(uVar2 >> (DAT_01c35820 & 0x1f)) << (DAT_01c35828 & 0x1f);
-      uVar10 = (uint)(uVar2 >> (DAT_01c3582c & 0x1f)) << (DAT_01c35834 & 0x1f);
+  uVar6 = g_BIT_INTEGER32_01c3581c.bytes[0];
+  uVar5 = g_BIT_INTEGER32_01c35814.bytes[0];
+  if ((((g_INT_01c35e48 <= x) && (x <= g_INT_01c35e50)) && (g_INT_01c35e4c <= y)) &&
+     ((y <= g_INT_01c35e54 && (g_INT_006141c0 != 8)))) {
+    if (g_INT_006141c0 == 0x10) {
+      uVar1 = *(ushort *)(g_ARRAY_PTR_01c2a38c[y] + x * 2);
+      uVar7 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)) <<
+              (g_BIT_INTEGER32_01c3581c.bytes[0] & 0x1f);
+      uVar8 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)) <<
+              (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f);
+      uVar9 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)) <<
+              (g_BIT_INTEGER32_01c35834.bytes[0] & 0x1f);
     }
     else {
-      puVar12 = (uint *)(x * 4 + *(int *)(&DAT_01c2a38c + y * 4));
-      uVar8 = *puVar12 >> (DAT_01c35814 & 0x1f);
-      uVar9 = *puVar12 >> (DAT_01c35820 & 0x1f);
-      uVar10 = *puVar12 >> (DAT_01c3582c & 0x1f);
+      puVar11 = (uint *)(g_ARRAY_PTR_01c2a38c[y] + x * 4);
+      uVar7 = *puVar11 >> (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
+      uVar8 = *puVar11 >> (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
+      uVar9 = *puVar11 >> (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f);
     }
-    if (DAT_006141c0 == 0x10) {
-      uVar2 = *(ushort *)(color * 2 + 0x1c35614);
-      uStack_38 = (uint)(uVar2 >> (DAT_01c35814 & 0x1f)) << (DAT_01c3581c & 0x1f);
-      uVar13 = (uint)(uVar2 >> (DAT_01c35820 & 0x1f)) << (DAT_01c35828 & 0x1f);
-      uVar11 = (uint)(uVar2 >> (DAT_01c3582c & 0x1f)) << (DAT_01c35834 & 0x1f);
+    if (g_INT_006141c0 == 0x10) {
+      uVar1 = g_USHORT_ARRAY_01c35614[color];
+      uStack_38 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)) <<
+                  (g_BIT_INTEGER32_01c3581c.bytes[0] & 0x1f);
+      uVar12 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)) <<
+               (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f);
+      uVar10 = (uint)(uVar1 >> (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)) <<
+               (g_BIT_INTEGER32_01c35834.bytes[0] & 0x1f);
     }
     else {
-      iVar1 = color * 4;
-      uStack_38 = *(uint *)(&DAT_01c35214 + iVar1) >> (DAT_01c35814 & 0x1f);
-      uVar13 = *(uint *)(&DAT_01c35214 + iVar1) >> (DAT_01c35820 & 0x1f);
-      uVar11 = *(uint *)(&DAT_01c35214 + iVar1) >> (DAT_01c3582c & 0x1f);
+      uStack_38 = g_UINT_ARRAY_01c35214[color] >> (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
+      uVar12 = g_UINT_ARRAY_01c35214[color] >> (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
+      uVar10 = g_UINT_ARRAY_01c35214[color] >> (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f);
     }
     uStack_38 = uStack_38 & 0xff;
-    fVar3 = 1.0 - alpha;
-    fVar5 = (float)uStack_38 * fVar3 + (float)(uVar8 & 0xff) * alpha;
-    fVar4 = (float)(uVar13 & 0xff) * fVar3 + (float)(uVar9 & 0xff) * alpha;
-    fVar3 = (float)(uVar11 & 0xff) * fVar3 + (float)(uVar10 & 0xff) * alpha;
-    if (DAT_006141c0 != 0x10) {
-      dVar14 = round((double)fVar5);
-      dVar15 = round((double)fVar4);
-      dVar16 = round((double)fVar3);
-      uStack_34 = (uint)(longlong)ROUND(dVar14);
-      uStack_2c = (uint)(longlong)ROUND(dVar16);
-      uStack_3c = (uint)(longlong)ROUND(dVar15);
-      *(uint *)(*(int *)(&DAT_01c2a38c + y * 4) + x * 4) =
-           uStack_3c << (DAT_01c35820 & 0x1f) | uStack_34 << (bVar6 & 0x1f) |
-           uStack_2c << (DAT_01c3582c & 0x1f);
+    fVar2 = 1.0 - alpha;
+    fVar4 = (float)uStack_38 * fVar2 + (float)(uVar7 & 0xff) * alpha;
+    fVar3 = (float)(uVar12 & 0xff) * fVar2 + (float)(uVar8 & 0xff) * alpha;
+    fVar2 = (float)(uVar10 & 0xff) * fVar2 + (float)(uVar9 & 0xff) * alpha;
+    if (g_INT_006141c0 != 0x10) {
+      dVar13 = round((double)fVar4);
+      dVar14 = round((double)fVar3);
+      dVar15 = round((double)fVar2);
+      uStack_34 = (uint)(longlong)ROUND(dVar13);
+      uStack_2c = (uint)(longlong)ROUND(dVar15);
+      uStack_3c = (uint)(longlong)ROUND(dVar14);
+      *(uint *)(g_ARRAY_PTR_01c2a38c[y] + x * 4) =
+           uStack_3c << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f) | uStack_34 << (uVar5 & 0x1f) |
+           uStack_2c << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f);
       return;
     }
-    dVar14 = round((double)fVar5);
-    dVar15 = round((double)fVar4);
-    dVar16 = round((double)fVar3);
-    uStack_2c = (uint)(longlong)ROUND(dVar15);
-    uStack_34 = (uint)(longlong)ROUND(dVar16);
-    uStack_3c = (uint)(longlong)ROUND(dVar14);
-    *(ushort *)(*(int *)(&DAT_01c2a38c + y * 4) + x * 2) =
-         (ushort)((uStack_2c >> (DAT_01c35828 & 0x1f)) << (DAT_01c35820 & 0x1f)) |
-         (ushort)((uStack_3c >> (bVar7 & 0x1f)) << (DAT_01c35814 & 0x1f)) |
-         (ushort)((uStack_34 >> (DAT_01c35834 & 0x1f)) << (DAT_01c3582c & 0x1f));
+    dVar13 = round((double)fVar4);
+    dVar14 = round((double)fVar3);
+    dVar15 = round((double)fVar2);
+    uStack_2c = (uint)(longlong)ROUND(dVar14);
+    uStack_34 = (uint)(longlong)ROUND(dVar15);
+    uStack_3c = (uint)(longlong)ROUND(dVar13);
+    *(ushort *)(g_ARRAY_PTR_01c2a38c[y] + x * 2) =
+         (ushort)((uStack_2c >> (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f)) <<
+                 (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)) |
+         (ushort)((uStack_3c >> (uVar6 & 0x1f)) << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)) |
+         (ushort)((uStack_34 >> (g_BIT_INTEGER32_01c35834.bytes[0] & 0x1f)) <<
+                 (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f));
   }
   return;
 }

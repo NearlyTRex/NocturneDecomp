@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004c51a0(CGargoyle *this_ptr)
 
@@ -53,7 +52,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004c51a0(CGargoyle *this_
       }
       fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                         ((((this_ptr->base).victim)->base).orient.vec.y - local_54.y);
-      if ((fVar6 < _DAT_005c3f28) || (_DAT_005c3f2c < fVar6)) {
+      if ((fVar6 < -0.3141593f) || (0.3141593f < fVar6)) {
         return 1;
       }
     }

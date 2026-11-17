@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D *this_ptr,int skip_shadow_test)
 
 {
@@ -33,7 +31,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D *t
   if ((iVar1 == -1) || (iVar1 == 0)) {
     return 0;
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if (iVar1 == 0) {
     local_54 = (this_ptr->min).x + (this_ptr->max).x;
     local_50[0] = (this_ptr->min).y + (this_ptr->max).y;
@@ -42,10 +41,10 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D *t
     local_20[(uint)bVar2 * -2 + 3] = local_50[(uint)bVar2 * -2];
     local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
          local_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-    local_3c = local_20[2] * _DAT_005b74a9;
-    local_38[0] = local_20[3] * _DAT_005b74a9;
-    local_38[1] = local_10 * _DAT_005b74a9;
-    local_24 = local_20[2] * _DAT_005b74a9;
+    local_3c = local_20[2] * 0.5f;
+    local_38[0] = local_20[3] * 0.5f;
+    local_38[1] = local_10 * 0.5f;
+    local_24 = local_20[2] * 0.5f;
     local_20[(uint)bVar2 * -2] = local_38[(uint)bVar2 * -2];
     local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
          local_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
@@ -54,23 +53,23 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D *t
       local_5c = local_20[0];
       local_58 = local_20[1];
     }
-    local_30.x = (float)DAT_00730408 * _DAT_005dc950;
-    local_30.y = (float)DAT_0073040c * _DAT_005dc950;
-    local_30.z = (float)DAT_00730410 * _DAT_005dc950;
-    local_48.x = (int)ROUND(local_60 * _DAT_005dc948);
-    local_48.y = (int)ROUND(local_5c * _DAT_005dc948);
-    local_48.z = (int)ROUND(local_58 * _DAT_005dc948);
+    local_30.x = (float)g_INT_00730408 * 0.00390625f;
+    local_30.y = (float)g_INT_0073040c * 0.00390625f;
+    local_30.z = (float)g_INT_00730410 * 0.00390625f;
+    local_48.x = (int)ROUND(local_60 * 256.0f);
+    local_48.y = (int)ROUND(local_5c * 256.0f);
+    local_48.z = (int)ROUND(local_58 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3(local_90,&local_48);
     local_30.x = local_30.x + local_60;
     local_30.y = local_30.y + local_5c;
     local_30.z = local_30.z + local_58;
-    if (DAT_007e2a54 == 0) {
-      _DAT_01c6e24c = DAT_007e2a54;
+    if (g_CDemonCamera_PTR_007e2a54 == (CDemonCamera *)0x0) {
+      g_INT_01c6e24c = (int)g_CDemonCamera_PTR_007e2a54;
     }
     else {
       core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580
                 (&g_CDemonCameraInstance,&local_30,local_90);
-      if (65000 < _DAT_01c6e24c) {
+      if (65000 < g_INT_01c6e24c) {
         return 0;
       }
     }

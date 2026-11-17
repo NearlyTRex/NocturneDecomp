@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,int hand_index,float delta_time)
 
 {
@@ -103,13 +100,13 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
   else {
     local_3c = this_ptr->weapon->weapon_type;
   }
-  iVar6 = _DAT_01ed3714;
+  iVar6 = g_INT_ARRAY_01ed36ec[10];
   if (hand_index == 0) {
     local_34->target_pitch = 0.0;
     local_34->aim_pitch = 0.0;
     return;
   }
-  local_1c = _DAT_01ed36ec;
+  local_1c = (float)g_INT_ARRAY_01ed36ec[0];
   if ((local_3c == WEAPON_TYPE_GUN) || (local_3c == WEAPON_TYPE_FLASHLIGHT)) {
     local_44 = 1.3089969;
   }
@@ -117,15 +114,15 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
     local_44 = 0.5235988;
   }
   local_40 = -0.5235988;
-  fVar5 = (this_ptr->base).player_input.look_up_down_speed * _DAT_005cd6a7 * (float)_DAT_005cd6af *
-          delta_time + local_34->aim_pitch;
+  fVar5 = (this_ptr->base).player_input.look_up_down_speed * 3.141593f *
+          (float)2 * delta_time + local_34->aim_pitch;
   local_34->aim_yaw = 0.0;
   local_34->aim_pitch = fVar5;
-  if (fVar5 < 0xBF490FDB) {
-    local_34->aim_pitch = 0xBF490FDB;
+  if (fVar5 < -0.7853982f) {
+    local_34->aim_pitch = -0.7853982f;
   }
-  if (0x3F490FDB < local_34->aim_pitch) {
-    local_34->aim_pitch = 0x3F490FDB;
+  if (0.7853982f < local_34->aim_pitch) {
+    local_34->aim_pitch = 0.7853982f;
   }
   if (local_34->target_yaw < -0.5235988) {
     local_34->target_yaw = -0.5235988;
@@ -238,7 +235,7 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
           *(float *)((int)&CStack_e4 + (uint)bVar7 * -8 + 4) = afStack_188[(uint)bVar7 * -2];
           *(float *)((int)&CStack_e4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
                afStack_188[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-          if ((0.0 < (double)CStack_e4.z) && ((double)CStack_e4.z <= _DAT_005cd6d7)) {
+          if ((0.0 < (double)CStack_e4.z) && ((double)CStack_e4.z <= 30)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_e4,&CStack_f0);
             fVar5 = SQRT(CStack_e4.z * CStack_e4.z +
                          CStack_e4.x * CStack_e4.x + CStack_e4.y * CStack_e4.y);
@@ -246,9 +243,9 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
             afStack_f8[(uint)bVar7 * -2] = *(float *)((int)&CStack_f0 + (uint)bVar7 * -8 + 4);
             afStack_f8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
                  *(float *)((int)&CStack_f0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-            if ((float)_DAT_005cd6cf < fVar5) {
+            if ((float)0.01 < fVar5) {
               fStack_18 = -fStack_168;
-              if ((((float)_DAT_005cd6cf <= fVar5) &&
+              if ((((float)0.01 <= fVar5) &&
                   (dVar8 = (double)(SQRT(fVar5 * fVar5 - fStack_18 * fStack_18) / fVar5),
                   dVar8 < 1.0)) && (0.0 <= dVar8)) {
                 dVar8 = acos(dVar8);
@@ -262,7 +259,7 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
                 fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fStack_fc);
                 fStack_fc = fStack_18;
               }
-              if ((((float)_DAT_005cd6cf <= fVar5) &&
+              if ((((float)0.01 <= fVar5) &&
                   (dVar8 = (double)(SQRT(fVar5 * fVar5 - fStack_164 * fStack_164) / fVar5),
                   dVar8 < 1.0)) && (0.0 <= dVar8)) {
                 dVar8 = acos(dVar8);
@@ -282,10 +279,10 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
             afStack_c8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =
                  afStack_f8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
             if (local_3c == WEAPON_TYPE_SHOTGUN) {
-              fStack_98 = fStack_98 + _DAT_005cd6df;
+              fStack_98 = fStack_98 + 0.1745329f;
             }
             fStack_234 = 0.5235988;
-            if (CStack_e4.z < (float)_DAT_005cd6e7) {
+            if (CStack_e4.z < (float)10) {
               fStack_234 = 1.5707964;
             }
             if (((ABS(fStack_9c) <= fStack_234) && (local_40 <= fStack_98)) &&
@@ -296,8 +293,8 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
               CStack_e4.y = CStack_e4.y * fVar1;
               CStack_e4.x = CStack_e4.x * fVar1;
               CStack_e4.z = CStack_e4.z * fVar1;
-              fVar5 = fVar5 * (float)_DAT_005cd6b7 +
-                      ((float)_DAT_005cd6af -
+              fVar5 = fVar5 * (float)0.033333333333333298 +
+                      ((float)2 -
                       (CStack_e4.z * fStack_a0 + CStack_e4.x * fStack_a8 + CStack_e4.y * fStack_a4))
               ;
               if (fVar5 < fStack_30) {
@@ -326,7 +323,7 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
       iStack_50 = iStack_50 + 4;
     }
   }
-  fVar5 = delta_time * _DAT_005cd6a7 * (float)_DAT_005cd6bf;
+  fVar5 = delta_time * 3.141593f * (float)3.5;
   fStack_58 = fVar5;
   if (0.0 < this_ptr->action_timer) {
     fVar1 = this_ptr->action_timer - delta_time;
@@ -334,7 +331,7 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
     if (fVar1 < 0.0) {
       this_ptr->action_timer = 0.0;
     }
-    fStack_58 = (fVar5 * (float)_DAT_005cd6c7) / this_ptr->action_timer;
+    fStack_58 = (fVar5 * (float)0.25) / this_ptr->action_timer;
     if (fVar5 < fStack_58) {
       fStack_58 = fVar5;
     }
@@ -363,8 +360,8 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
   local_34->target_pitch = fVar5;
   local_34->kickback_factor = 1.0;
   if (((local_34->aim_lock_state == 1) &&
-      (ABS(local_34->target_yaw - fStack_48) < (float)_DAT_005cd6cf)) &&
-     (ABS(local_34->target_pitch - fStack_4c) < (float)_DAT_005cd6cf)) {
+      (ABS(local_34->target_yaw - fStack_48) < (float)0.01)) &&
+     (ABS(local_34->target_pitch - fStack_4c) < (float)0.01)) {
     local_34->aim_lock_state = 2;
     return;
   }

@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     CMP dword ptr [EAX + 0x218],0x0     ; 0053ab20
     JZ 0x0053ab3c                       ; 0053ab27
         ;   XREF to: 0053ab3c (CONDITIONAL_JUMP)  ; LAB_0053ab3c
-    MOV EBX,dword ptr [0x005f2afc]      ; 0053ab29 | DAT_005f2afc
+    MOV EBX,dword ptr [0x005f2afc]      ; 0053ab29 | g_CDemonRenderer_PTR_005f2afc
     PUSH EBX                            ; 0053ab2f
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0053ab30
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
@@ -47,7 +47,7 @@ section .text
     PUSH EDX                            ; 0053ab45
     MOV ECX,dword ptr [ESP + 0x18]      ; 0053ab46
     PUSH ECX                            ; 0053ab4a
-    MOV EBX,dword ptr [0x005f2afc]      ; 0053ab4b | DAT_005f2afc
+    MOV EBX,dword ptr [0x005f2afc]      ; 0053ab4b | g_CDemonRenderer_PTR_005f2afc
     PUSH EBX                            ; 0053ab51
     CALL engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0046d880 ; 0053ab52
         ;   XREF to: 0046d880 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0046d880(CDemonRenderer * this_ptr, SMRGLPrimitiveTriangle * primitive_array, int primitive_count, int render_flags)

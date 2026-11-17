@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520 at 00553566
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf3280
+;   CSoundDevice* g_CSoundDevice_PTR_02cf3280
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     CMP dword ptr [EBX + 0x158],0x0     ; 005535e5
     JZ 0x00553602                       ; 005535ec
         ;   XREF to: 00553602 (CONDITIONAL_JUMP)  ; LAB_00553602
-    MOV ECX,dword ptr [0x02cf3280]      ; 005535ee | DAT_02cf3280
+    MOV ECX,dword ptr [0x02cf3280]      ; 005535ee | g_CSoundDevice_PTR_02cf3280
     TEST ECX,ECX                        ; 005535f4
     JNZ 0x00553604                      ; 005535f6
         ;   XREF to: 00553604 (CONDITIONAL_JUMP)  ; LAB_00553604

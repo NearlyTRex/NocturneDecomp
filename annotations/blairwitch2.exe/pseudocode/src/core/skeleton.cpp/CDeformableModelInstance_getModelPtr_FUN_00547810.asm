@@ -24,8 +24,8 @@
 ;   TerminatedCString s_CDeformableModelInstance_005e740c
 ;   TerminatedCString s_core_skeleton_cpp_005e745a
 ;   TerminatedCString s_Tried_to_do_something_wi_005e746f
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -48,8 +48,8 @@ section .text
     MOV EDI,0x5e73f7                    ; 00547829 | = "..\\core\\skeleton.cpp"
     MOV EBP,0xde0                       ; 0054782e
     PUSH 0x5e740c                       ; 00547833 | = "CDeformableModelInstance::getModelPtr..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00547838 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0054783e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00547838 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0054783e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00547844
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00547849
@@ -66,8 +66,8 @@ section .text
     MOV ECX,0x5e745a                    ; 0054785e | = "..\\core\\skeleton.cpp"
     MOV ESI,0xde2                       ; 00547863
     PUSH 0x5e746f                       ; 00547868 | = "Tried to do something with model %s, ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0054786d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00547873 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0054786d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00547873 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00547879
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054787e

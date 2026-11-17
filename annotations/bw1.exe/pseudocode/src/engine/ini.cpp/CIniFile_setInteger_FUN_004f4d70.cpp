@@ -11,7 +11,7 @@ void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile *this_ptr,
 {
   char local_68 [100];
   
-  _sprintf(local_68,&DAT_005e58ee);
+  _sprintf(local_68,"%d");
   (**(code **)((int)this_ptr->vtable + 8))(this_ptr,key,local_68);
   return;
 }

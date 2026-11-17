@@ -114,6 +114,7 @@ LAB_0059ca8e:
       pcVar8[1] = cVar1;
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
-    local_c = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(0x01D182F0,local_34);
+    local_c = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
+                        (g_CDemonMission_PTR_00618170,local_34);
   } while( true );
 }

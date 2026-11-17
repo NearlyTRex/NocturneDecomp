@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_00503f00(CNetGame *this_ptr)
 
 {
@@ -27,7 +25,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_00503f00(CNetG
   aim_mode = pCVar1->aim_mode;
   hero_number = pCVar1->hero_number;
   name = this_ptr->player_name;
-  support_trisock_cpp_createNetworkAddr_FUN_0056f730(&SStack_14,_DAT_02cfd89c,0x1ddf);
+  support_trisock_cpp_createNetworkAddr_FUN_0056f730
+            (&SStack_14,(uint32_t *)g_UCHAR_ARRAY_02cfd89c,0x1ddf);
   iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(this_ptr,addr,name,hero_number,aim_mode);
   this_ptr->local_player_index = iVar2;
   this_ptr->server_player_index = iVar2;

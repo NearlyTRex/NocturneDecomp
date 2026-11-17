@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission *this_ptr,char *mission_filename,int load_flags)
 
 {
@@ -16,10 +14,10 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission *thi
   int clear_screen;
   
   file_handle = engine_dosio_cpp_getFile_FUN_004659c0
-                          ("world",mission_filename,&DAT_005c837b);
+                          ("world",mission_filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    _DAT_01d71de0 = "..\\core\\mission.cpp";
-    _DAT_01d71de4 = 0xa3;
+    g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
+    g_INT_01d71de4 = 0xa3;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::load - Unable to open file");
   }
   clear_screen = 0;

@@ -47,15 +47,15 @@
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046f044
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005da094
-;   undefined4 DAT_005da09c
-;   undefined4 DAT_005da0a4
-;   undefined4 DAT_005da0ac
-;   undefined4 DAT_006081e0
-;   undefined4 DAT_01b68820
-;   undefined4 DAT_01b68824
-;   undefined4 DAT_01b68848
-;   undefined4 DAT_01b6884c
+;   double g_DOUBLE_005da094 = -0.900000000000000
+;   double g_DOUBLE_005da09c = 10
+;   double g_DOUBLE_005da0a4 = -0.110000000000000
+;   double g_DOUBLE_005da0ac = 0.000100000000000000
+;   CQuaternion4f g_CQuaternion4f_006081e0
+;   int g_INT_01b68820
+;   int g_INT_01b68824
+;   int g_INT_01b68848
+;   int g_INT_01b6884c
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110
@@ -87,10 +87,10 @@ section .text
     JZ 0x0046f4fd                       ; 0046f216
         ;   XREF to: 0046f4fd (CONDITIONAL_JUMP)  ; LAB_0046f4fd
     PUSH 0xbfc90fdb                     ; 0046f21c
-    MOV EAX,[0x01b68824]                ; 0046f221 | DAT_01b68824
+    MOV EAX,[0x01b68824]                ; 0046f221 | g_INT_01b68824
     LEA ESI,[ESP + 0x108]               ; 0046f226
     MOV dword ptr [ESP + 0x1d0],EAX     ; 0046f22d
-    MOV EAX,[0x01b6884c]                ; 0046f234 | DAT_01b6884c
+    MOV EAX,[0x01b6884c]                ; 0046f234 | g_INT_01b6884c
     LEA EDI,[ESP + 0x18]                ; 0046f239
     MOV dword ptr [ESP + 0x1cc],EAX     ; 0046f23d
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005b7b30 ; 0046f244
@@ -115,8 +115,8 @@ section .text
     LEA ESI,[EBX + 0x1ffc0]             ; 0046f274
     FLD float ptr [EBX + 0x2c9c]        ; 0046f27a
         ;   Label: LAB_0046f27a
-    FADD double ptr [0x005da094]        ; 0046f280 | DAT_005da094
-    FMUL double ptr [0x005da09c]        ; 0046f286 | DAT_005da09c
+    FADD double ptr [0x005da094]        ; 0046f280 | g_DOUBLE_005da094
+    FMUL double ptr [0x005da09c]        ; 0046f286 | g_DOUBLE_005da09c
     FST float ptr [ESP]                 ; 0046f28c
     FLDZ                                ; 0046f28f
     FCOMPP                              ; 0046f291
@@ -188,7 +188,7 @@ section .text
     ADD ESP,0x18                        ; 0046f359
     FLD float ptr [ESI + 0x8]           ; 0046f35c
     PUSH dword ptr [ESI + 0xc]          ; 0046f35f
-    FADD double ptr [0x005da0a4]        ; 0046f362 | DAT_005da0a4
+    FADD double ptr [0x005da0a4]        ; 0046f362 | g_DOUBLE_005da0a4
     LEA ESI,[ESP + 0x118]               ; 0046f368
     FSTP float ptr [ESP + 0x1c0]        ; 0046f36f
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005b7b30 ; 0046f376
@@ -227,7 +227,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0046f3e0
     MOVSD ES:EDI,ESI                    ; 0046f3e1
     MOVSD ES:EDI,ESI                    ; 0046f3e2
-    PUSH 0x6081e0                       ; 0046f3e3 | DAT_006081e0
+    PUSH 0x6081e0                       ; 0046f3e3 | g_CQuaternion4f_006081e0
     LEA ESI,[ESP + 0xf0]                ; 0046f3e8
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 0046f3ef
         ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
@@ -308,7 +308,7 @@ section .text
         ;   XREF to: 005695e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
     FLD float ptr [EBX + 0x20060]       ; 0046f4e2
     ADD ESP,0x14                        ; 0046f4e8
-    FCOMP double ptr [0x005da0ac]       ; 0046f4eb | DAT_005da0ac
+    FCOMP double ptr [0x005da0ac]       ; 0046f4eb | g_DOUBLE_005da0ac
     FNSTSW AX                           ; 0046f4f1
     SAHF                                ; 0046f4f3
     JA 0x0046f566                       ; 0046f4f4
@@ -322,10 +322,10 @@ section .text
     RET                                 ; 0046f4fc
     PUSH 0x3fc90fdb                     ; 0046f4fd
         ;   Label: LAB_0046f4fd
-    MOV EAX,[0x01b68820]                ; 0046f502 | DAT_01b68820
+    MOV EAX,[0x01b68820]                ; 0046f502 | g_INT_01b68820
     LEA ESI,[ESP + 0x88]                ; 0046f507
     MOV dword ptr [ESP + 0x1d0],EAX     ; 0046f50e
-    MOV EAX,[0x01b68848]                ; 0046f515 | DAT_01b68848
+    MOV EAX,[0x01b68848]                ; 0046f515 | g_INT_01b68848
     LEA EDI,[ESP + 0x18]                ; 0046f51a
     MOV dword ptr [ESP + 0x1cc],EAX     ; 0046f51e
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005b7b30 ; 0046f525

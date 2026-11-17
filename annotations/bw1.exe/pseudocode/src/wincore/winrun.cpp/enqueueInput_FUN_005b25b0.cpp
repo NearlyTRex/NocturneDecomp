@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005b25b0(int input_value)
 
 {
-  _DAT_02c9a61c = _DAT_02c9a61c + 1;
-  *(int *)(&DAT_02c9a5c4 + _DAT_02c9a61c * 4) = input_value;
-  if (0x13 < _DAT_02c9a61c) {
-    _DAT_02c9a61c = 0;
+  g_INT_02c9a61c = g_INT_02c9a61c + 1;
+  g_INT_ARRAY_02c9a5c4[g_INT_02c9a61c] = input_value;
+  if (0x13 < g_INT_02c9a61c) {
+    g_INT_02c9a61c = 0;
   }
-  if ((_DAT_02c9a61c == _DAT_02c9a618) && (_DAT_02c9a618 = _DAT_02c9a618 + 1, 0x13 < _DAT_02c9a618))
-  {
-    _DAT_02c9a618 = 0;
+  if ((g_INT_02c9a61c == g_INT_02c9a618) &&
+     (g_INT_02c9a618 = g_INT_02c9a618 + 1, 0x13 < g_INT_02c9a618)) {
+    g_INT_02c9a618 = 0;
   }
   return;
 }

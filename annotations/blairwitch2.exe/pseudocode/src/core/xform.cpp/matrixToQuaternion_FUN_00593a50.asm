@@ -17,7 +17,7 @@
 ;   core_xform.cpp_lerpMatrix3x4_FUN_00593770 at 005937e8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eed96
+;   float g_FLOAT_005eed96 = 0.5
 ;
 ; *****************************************************************************
 
@@ -58,7 +58,7 @@ section .text
     FLD1                                ; 00593a9b
     FADDP                               ; 00593a9d
     FSQRT                               ; 00593a9f
-    FLD float ptr [0x005eed96]          ; 00593aa1 | DAT_005eed96
+    FLD float ptr [0x005eed96]          ; 00593aa1 | g_FLOAT_005eed96
     FLD ST0                             ; 00593aa7
     FDIV ST0,ST2                        ; 00593aa9
     FLD ST2                             ; 00593aab
@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_00593af1
     FADD float ptr [ESP + 0x24]         ; 00593af3
     FSQRT                               ; 00593af7
-    FLD float ptr [0x005eed96]          ; 00593af9 | DAT_005eed96
+    FLD float ptr [0x005eed96]          ; 00593af9 | g_FLOAT_005eed96
     FLD ST0                             ; 00593aff
     FDIV ST0,ST2                        ; 00593b01
     FLD ST2                             ; 00593b03
@@ -127,7 +127,7 @@ section .text
     FLD1                                ; 00593b3b
     FADDP                               ; 00593b3d
     FSQRT                               ; 00593b3f
-    FLD float ptr [0x005eed96]          ; 00593b41 | DAT_005eed96
+    FLD float ptr [0x005eed96]          ; 00593b41 | g_FLOAT_005eed96
     FLD ST0                             ; 00593b47
     FDIV ST0,ST2                        ; 00593b49
     FLD ST2                             ; 00593b4b
@@ -174,7 +174,7 @@ section .text
     FLD1                                ; 00593ba4
     FADDP                               ; 00593ba6
     FSQRT                               ; 00593ba8
-    FLD float ptr [0x005eed96]          ; 00593baa | DAT_005eed96
+    FLD float ptr [0x005eed96]          ; 00593baa | g_FLOAT_005eed96
     FLD ST0                             ; 00593bb0
     FDIV ST0,ST2                        ; 00593bb2
     FLD ST2                             ; 00593bb4

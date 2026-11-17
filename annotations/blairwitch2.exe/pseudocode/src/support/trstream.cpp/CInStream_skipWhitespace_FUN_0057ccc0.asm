@@ -10,7 +10,7 @@
 ;   support_trstream.cpp_CInStream_vscanf_FUN_0057bb80 at 0057bd52
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
         ;   Label: LAB_0057ccd8
     INC AL                              ; 0057ccdb
     AND EAX,0xff                        ; 0057ccdd
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0057cce2 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 0057cce2 | g_UCHAR_ARRAY_0061ed94
     JZ 0x0057cd0c                       ; 0057cce9
         ;   XREF to: 0057cd0c (CONDITIONAL_JUMP)  ; LAB_0057cd0c
     PUSH EBX                            ; 0057cceb

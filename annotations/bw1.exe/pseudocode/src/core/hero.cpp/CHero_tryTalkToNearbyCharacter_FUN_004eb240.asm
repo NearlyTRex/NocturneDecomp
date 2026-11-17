@@ -38,8 +38,8 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005936e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4835
-;   undefined4 DAT_005e483d
+;   double g_DOUBLE_005e4835 = 4
+;   double g_DOUBLE_005e483d = 0.349065850388889
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
@@ -129,7 +129,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eb30c
     FLD float ptr [ESP + 0x10]          ; 004eb30d
     FABS                                ; 004eb311
-    FCOMP double ptr [0x005e4835]       ; 004eb313 | DAT_005e4835
+    FCOMP double ptr [0x005e4835]       ; 004eb313 | g_DOUBLE_005e4835
     FNSTSW AX                           ; 004eb319
     SAHF                                ; 004eb31b
     JA 0x004eb2bd                       ; 004eb31c
@@ -173,7 +173,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eb37d
     FLD float ptr [ESP + 0x58]          ; 004eb37e
     FABS                                ; 004eb382
-    FCOMP double ptr [0x005e483d]       ; 004eb384 | DAT_005e483d
+    FCOMP double ptr [0x005e483d]       ; 004eb384 | g_DOUBLE_005e483d
     FNSTSW AX                           ; 004eb38a
     SAHF                                ; 004eb38c
     JA 0x004eb2bd                       ; 004eb38d

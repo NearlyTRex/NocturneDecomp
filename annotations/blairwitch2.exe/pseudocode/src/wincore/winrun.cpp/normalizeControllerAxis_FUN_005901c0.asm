@@ -13,8 +13,8 @@
 ;   wincore_winrun.cpp_pollController_FUN_005902a0 at 00590398
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eeaf5
-;   undefined4 DAT_02665a44
+;   double g_DOUBLE_005eeaf5 = 0.5
+;   int g_INT_02665a44
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     FLD float ptr [ESP + 0x24]          ; 005901dd
         ;   Label: LAB_005901dd
     FADD float ptr [ESP + 0x28]         ; 005901e1
-    FMUL double ptr [0x005eeaf5]        ; 005901e5 | DAT_005eeaf5
-    MOV ESI,dword ptr [0x02665a44]      ; 005901eb | DAT_02665a44
+    FMUL double ptr [0x005eeaf5]        ; 005901e5 | g_DOUBLE_005eeaf5
+    MOV ESI,dword ptr [0x02665a44]      ; 005901eb | g_INT_02665a44
     FSTP float ptr [ESP]                ; 005901f1
     TEST ESI,ESI                        ; 005901f4
     JZ 0x005901fb                       ; 005901f6

@@ -16,12 +16,12 @@
 ;   TerminatedCString s_C3DSCamera_apply_shouldn_005d0e0e
 ;   TerminatedCString s_Ambient_set_low_by_scrip_005d0e51
 ;   TerminatedCString s_Ambient_set_ridiculously_005d0e6c
-;   undefined4 DAT_005d0e92
+;   double g_DOUBLE_005d0e92 = 0.25
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   undefined4 g_CDemonSetInstance.min_ambient_value
 ;
 ; Called Functions:
@@ -100,7 +100,7 @@ section .text
     ADD ESP,0x8                         ; 00542054
     FLD float ptr [EBX + 0x148]         ; 00542057
         ;   Label: LAB_00542057
-    FCOMP double ptr [0x005d0e92]       ; 0054205d | DAT_005d0e92
+    FCOMP double ptr [0x005d0e92]       ; 0054205d | g_DOUBLE_005d0e92
     FNSTSW AX                           ; 00542063
     SAHF                                ; 00542065
     JA 0x00542096                       ; 00542066
@@ -115,8 +115,8 @@ section .text
     MOV ECX,0x5d0dfa                    ; 0054206e | = "..\\core\\setutil.cpp"
     MOV ESI,0xf7                        ; 00542073
     PUSH 0x5d0e0e                       ; 00542078 | = "C3DSCamera::apply - shouldn't ever do..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0054207d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00542083 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0054207d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00542083 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00542089
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0054208e

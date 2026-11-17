@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float delta_time)
 
 {
@@ -80,7 +78,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
   }
   fVar13 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed =
-       (this_ptr->base).base.model.accumulated_root_motion.z * (float)_DAT_005d18a1;
+       (this_ptr->base).base.model.accumulated_root_motion.z * (float)2;
   core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
             ((CCharacter *)this_ptr,delta_time * fVar13);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
@@ -104,7 +102,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
       break;
     case 1:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar13 = 0x40400000;
+      fVar13 = 3.0f;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00488970(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
@@ -112,7 +110,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
         }
       }
       else {
-        fStack_1c = 0x40400000;
+        fStack_1c = 3.0f;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
              (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -154,7 +152,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
       pCStack_20 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       fVar13 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,pCStack_20 + this_ptr->bone_indices[0],&CStack_b4);
+                (&g_CVector3f_0265370c,pCStack_20 + this_ptr->bone_indices[0],&CStack_b4);
       pCVar10 = &CStack_48;
       CStack_48.x = CStack_b4.x;
       *(uint *)((int)&CStack_48 + (uint)bVar9 * -8 + 4) =
@@ -175,7 +173,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
       pSVar12 = (SDamageInfo *)&stack0xfffffebc;
       fVar13 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,pCStack_20 + this_ptr->bone_indices[1],&CStack_78);
+                (&g_CVector3f_0265370c,pCStack_20 + this_ptr->bone_indices[1],&CStack_78);
       pCVar10 = &CStack_f0;
       CStack_f0.x = CStack_78.x;
       *(uint *)((int)&CStack_f0 + (uint)bVar9 * -8 + 4) =

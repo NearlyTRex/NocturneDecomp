@@ -52,7 +52,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
   fVar1 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(this_ptr_01,in_stack_ffffff44);
   in_stack_0000000c[0xc].orient_matrix.m[1].y = fVar1;
   if (fVar1 != 0.0) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+    iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                      (g_CDemonRenderer_PTR_00612560);
     if ((iVar2 == 0) || (g_CGamePtr->goggles_active != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                 ((CKeyFramedModelInstance *)(in_stack_0000000c + 1),0.0,-1);
@@ -65,9 +66,9 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
         translation = (CVector3f *)(in_stack_0000000c[8].actor_name + 0x18);
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-                    (DAT_00612560,(CVector3f *)&pCVar9->y,translation);
+                    (g_CDemonRenderer_PTR_00612560,(CVector3f *)&pCVar9->y,translation);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-                    (DAT_00612560,pCVar3,(CVector3f *)0x0);
+                    (g_CDemonRenderer_PTR_00612560,pCVar3,(CVector3f *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                     (this_ptr_00,0.0,-1);
           engine_drender_cpp_pop_FUN_004839a0();
@@ -94,8 +95,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(in_stack_0000000c);
   if ((in_stack_0000000c[0xc].orient_matrix.m[1].y != 0.0) &&
-     (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar2 == 0)
-     ) {
+     (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                        (g_CDemonRenderer_PTR_00612560), iVar2 == 0)) {
     CStack_40.z = 6.0;
     CStack_28.z = 6.0;
     CStack_40.x = 1.14;

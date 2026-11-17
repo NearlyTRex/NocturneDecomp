@@ -10,7 +10,7 @@
 ;   core_doc.cpp_CDoc_handleActionButton_FUN_0045c960 at 0045c97c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f5134
+;   float g_FLOAT_005f5134 = 10
 ;
 ; *****************************************************************************
 
@@ -33,7 +33,7 @@ section .text
     CMP dword ptr [ECX + 0x43c],0x3     ; 0045d20c
     JNZ 0x0045d24b                      ; 0045d213
         ;   XREF to: 0045d24b (CONDITIONAL_JUMP)  ; LAB_0045d24b
-    FLD float ptr [0x005f5134]          ; 0045d215 | DAT_005f5134
+    FLD float ptr [0x005f5134]          ; 0045d215 | g_FLOAT_005f5134
         ;   Label: LAB_0045d215
     MOV dword ptr [EBX + 0x256a4],0x3   ; 0045d21b
     MOV EAX,0x1                         ; 0045d225

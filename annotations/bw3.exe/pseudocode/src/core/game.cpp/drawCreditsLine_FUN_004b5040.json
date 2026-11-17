@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 55,
+    "complexity_score": 14,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 79
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
   },
   "cross_references": [],
   "function": {
@@ -38,38 +35,38 @@
   "globals": [
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01549aa8",
-      "name": "DAT_01549aa8",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa8",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d22c54",
-      "name": "DAT_01d22c54",
-      "type": "undefined4",
+      "name": "g_INT_01d22c54",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c58",
-      "name": "DAT_01d22c58",
-      "type": "undefined4",
+      "name": "g_INT_01d22c58",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c5c",
-      "name": "DAT_01d22c5c",
-      "type": "undefined4",
+      "name": "g_INT_01d22c5c",
+      "type": "int",
       "value": null
     }
   ],
@@ -159,30 +156,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (_DAT_01d22c58 <= DAT_005fba1c + _DAT_01d22c5c * -4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "_DAT_01d22c54 = _DAT_01d22c54 + DAT_005fba18 / 3;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

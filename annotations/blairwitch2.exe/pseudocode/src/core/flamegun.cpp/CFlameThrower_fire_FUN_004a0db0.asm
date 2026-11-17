@@ -7,8 +7,8 @@
 ; CFlameThrower *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6b50
-;   undefined4 DAT_00614d30
+;   float g_FLOAT_005f6b50 = 4
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -56,7 +56,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 004a0e03
     LEA EDI,[ESP + 0x20]                ; 004a0e07
     PUSH EAX                            ; 004a0e0b
-    MOV ECX,dword ptr [0x00614d30]      ; 004a0e0c | DAT_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 004a0e0c | g_CFireEffect_PTR_00614d30
     LEA ESI,[ESP + 0x18]                ; 004a0e12
     PUSH ECX                            ; 004a0e16
     MOVSD ES:EDI,ESI                    ; 004a0e17
@@ -69,7 +69,7 @@ section .text
     TEST ESI,ESI                        ; 004a0e28
     JNZ 0x004a0e42                      ; 004a0e2a
         ;   XREF to: 004a0e42 (CONDITIONAL_JUMP)  ; LAB_004a0e42
-    FLD float ptr [0x005f6b50]          ; 004a0e2c | DAT_005f6b50
+    FLD float ptr [0x005f6b50]          ; 004a0e2c | g_FLOAT_005f6b50
     FLD1                                ; 004a0e32
     FDIVRP                              ; 004a0e34
     DEC dword ptr [EBX + 0x6c4]         ; 004a0e36

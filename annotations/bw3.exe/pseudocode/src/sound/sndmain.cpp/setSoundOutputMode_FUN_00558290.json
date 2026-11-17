@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 92,
+    "complexity_score": 26,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 97
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -104,38 +100,38 @@
     },
     {
       "addr": "00604228",
-      "name": "DAT_00604228",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00604228",
+      "type": "int",
+      "value": "0x10"
     },
     {
       "addr": "0060422c",
-      "name": "DAT_0060422c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0060422c",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "00604230",
-      "name": "DAT_00604230",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00604230",
+      "type": "int",
+      "value": "0x5622"
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf3280",
-      "name": "DAT_02cf3280",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02cf3280",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -310,46 +306,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00604228",
-      "severity": "mild",
-      "text": "DAT_00604228 = bits_per_sample;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0060422c",
-      "severity": "mild",
-      "text": "DAT_0060422c = channels;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_00604230",
-      "severity": "mild",
-      "text": "DAT_00604230 = sample_rate;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02cf3280 + 0xc))",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

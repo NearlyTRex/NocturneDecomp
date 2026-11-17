@@ -22,8 +22,8 @@
 ;   TerminatedCString s_CMorphModel_addPart_too_005c940d
 ;   TerminatedCString s_core_morph_cpp_005c9434
 ;   TerminatedCString s_CMorphModel_setup_out_of_005c9446
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -123,8 +123,8 @@ section .text
         ;   Label: LAB_004f9b9d
     MOV EBX,0x90                        ; 004f9ba2
     PUSH 0x5c9446                       ; 004f9ba7 | = "CMorphModel::setup - out of memory!"
-    MOV dword ptr [0x01d71de0],ECX      ; 004f9bac | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004f9bb2 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f9bac | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 004f9bb2 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f9bb8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f9bbd
@@ -157,8 +157,8 @@ section .text
         ;   Label: LAB_004f9be6
     MOV EBX,0x77                        ; 004f9beb
     PUSH 0x5c940d                       ; 004f9bf0 | = "CMorphModel::addPart - too many parts!"
-    MOV dword ptr [0x01d71de0],ECX      ; 004f9bf5 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004f9bfb | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f9bf5 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 004f9bfb | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f9c01
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f9c06

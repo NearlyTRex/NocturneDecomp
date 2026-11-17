@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415120(CBiggs *this_ptr)
 
 {
@@ -55,10 +53,12 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415120(CBiggs *this_ptr)
       ;
       core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005b7190
                 (this_ptr_00,1,model_ptr,iVar5,part_index);
-      core_morph_cpp_CMorph_render_FUN_005b76a0(this_ptr_00,this_ptr->morph_timer / 0x40800000);
+      core_morph_cpp_CMorph_render_FUN_005b76a0
+                (this_ptr_00,this_ptr->morph_timer / 4.0f);
     }
-    if (_DAT_01d1cdc8 != 0) {
-      iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+    if (g_INT_01d1cdc8 != 0) {
+      iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                        (g_CDemonRenderer_PTR_0060b280);
       if (iVar5 == 0) {
         core_motion_cpp_CMotionController_render_FUN_005042e0
                   (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);

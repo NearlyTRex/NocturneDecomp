@@ -27,8 +27,8 @@
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0 at 004de284
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c2a38c
+;   int g_INT_006141c0 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c2a38c
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0
@@ -69,7 +69,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 0040daf0
     LEA EDX,[EBX*0x4 + 0x0]             ; 0040daf4
     SHL EAX,0x2                         ; 0040dafb
-    MOV ECX,dword ptr [0x006141c0]      ; 0040dafe | DAT_006141c0
+    MOV ECX,dword ptr [0x006141c0]      ; 0040dafe | g_INT_006141c0
     ADD EDX,EAX                         ; 0040db04
     CMP ECX,0x20                        ; 0040db06
     JNZ 0x0040db68                      ; 0040db09
@@ -90,7 +90,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0040db2b
     PUSH ESI                            ; 0040db2f
     MOV EBX,dword ptr [ESP + 0x14]      ; 0040db30
-    MOV EAX,dword ptr [EAX + 0x1c2a38c] ; 0040db34 | DAT_01c2a38c
+    MOV EAX,dword ptr [EAX + 0x1c2a38c] ; 0040db34 | g_ARRAY_PTR_01c2a38c
     PUSH EDI                            ; 0040db3a
     ADD EAX,EBX                         ; 0040db3b
     PUSH EAX                            ; 0040db3d
@@ -132,7 +132,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 0040db88
     PUSH ESI                            ; 0040db8c
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040db8d
-    MOV EAX,dword ptr [EAX + 0x1c2a38c] ; 0040db91 | DAT_01c2a38c
+    MOV EAX,dword ptr [EAX + 0x1c2a38c] ; 0040db91 | g_ARRAY_PTR_01c2a38c
     PUSH EDI                            ; 0040db97
     ADD EAX,EBX                         ; 0040db98
     PUSH EAX                            ; 0040db9a

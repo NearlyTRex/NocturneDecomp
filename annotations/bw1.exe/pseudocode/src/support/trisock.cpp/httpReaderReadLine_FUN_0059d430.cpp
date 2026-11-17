@@ -18,7 +18,7 @@ int __cdecl support_trisock_cpp_httpReaderReadLine_FUN_0059d430(void *reader,cha
     if (iVar1 < 0) break;
     if (iVar1 != 0xd) {
       if (iVar1 == 10) goto LAB_0059d493;
-      if (((&DAT_00626114)[(byte)((char)iVar1 + 1)] & 2) != 0) {
+      if ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar1 + 1)] & 2) != 0) {
         iVar1 = 0x20;
       }
       if (iVar2 < line_size + -1) {

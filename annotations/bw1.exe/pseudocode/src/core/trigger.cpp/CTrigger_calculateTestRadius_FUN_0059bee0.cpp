@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_0059bee0(CTrigger *this_ptr)
 
 {
@@ -54,7 +52,7 @@ void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_0059bee0(CTrigger
     dVar5 = ceil
                       ((double)(SQRT(fStack_20 * fStack_20 +
                                      fStack_28 * fStack_28 + fStack_24 * fStack_24) +
-                               (float)_DAT_005f821c));
+                               (float)10));
     this_ptr->test_radius = (float)dVar5;
   }
   return;

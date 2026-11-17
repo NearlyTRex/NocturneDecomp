@@ -10,13 +10,13 @@
 ; float            Stack[0x10]:4   radius
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e64ad
-;   undefined4 DAT_005e64b1
-;   undefined4 DAT_005e64b9
-;   undefined4 DAT_005e64c1
-;   undefined4 DAT_005e64c9
-;   undefined4 DAT_005fb3c0
-;   undefined4 DAT_0060b280
+;   float g_FLOAT_005e64ad = 0.0625
+;   float g_FLOAT_005e64b1 = 3.141593
+;   double g_DOUBLE_005e64b9 = 2
+;   float g_FLOAT_005e64c1 = 0.25
+;   double g_DOUBLE_005e64c9 = 0.5
+;   float g_FLOAT_005fb3c0 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
@@ -32,25 +32,25 @@ section .text
     MOV EAX,dword ptr [ESP + 0x48]      ; 0053bd45
     MOV dword ptr [ESP + 0x38],EAX      ; 0053bd49
     FILD dword ptr [ESP + 0x38]         ; 0053bd4d
-    FMUL float ptr [0x005e64ad]         ; 0053bd51 | DAT_005e64ad
-    FLD float ptr [0x005e64b1]          ; 0053bd57 | DAT_005e64b1
+    FMUL float ptr [0x005e64ad]         ; 0053bd51 | g_FLOAT_005e64ad
+    FLD float ptr [0x005e64b1]          ; 0053bd57 | g_FLOAT_005e64b1
     FXCH                                ; 0053bd5d
     FMUL ST1                            ; 0053bd5f
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0053bd61
-    FMUL double ptr [0x005e64b9]        ; 0053bd65 | DAT_005e64b9
+    FMUL double ptr [0x005e64b9]        ; 0053bd65 | g_DOUBLE_005e64b9
     MOV dword ptr [ESP + 0x38],EAX      ; 0053bd6b
     FLD ST0                             ; 0053bd6f
     FSIN                                ; 0053bd71
     FXCH                                ; 0053bd73
     FCOS                                ; 0053bd75
     FILD dword ptr [ESP + 0x38]         ; 0053bd77
-    FMUL float ptr [0x005e64c1]         ; 0053bd7b | DAT_005e64c1
+    FMUL float ptr [0x005e64c1]         ; 0053bd7b | g_FLOAT_005e64c1
     FMULP ST3                           ; 0053bd81
     FLD float ptr [ESP + 0x54]          ; 0053bd83
     FXCH ST2                            ; 0053bd87
     FMUL ST2                            ; 0053bd89
     FXCH ST3                            ; 0053bd8b
-    FMUL double ptr [0x005e64c9]        ; 0053bd8d | DAT_005e64c9
+    FMUL double ptr [0x005e64c9]        ; 0053bd8d | g_DOUBLE_005e64c9
     FLD ST0                             ; 0053bd93
     FCOS                                ; 0053bd95
     FXCH                                ; 0053bd97
@@ -63,7 +63,7 @@ section .text
     FXCH                                ; 0053bda5
     FMULP ST2                           ; 0053bda7
     LEA EBX,[ESP + 0xc]                 ; 0053bda9
-    MOV EDX,dword ptr [0x0060b280]      ; 0053bdad | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 0053bdad | g_CDemonRenderer_PTR_0060b280
     FXCH ST2                            ; 0053bdb3
     FSTP float ptr [ESP + 0x8]          ; 0053bdb5
     MOV EAX,ESP                         ; 0053bdb9
@@ -71,13 +71,13 @@ section .text
     FSTP float ptr [ESP]                ; 0053bdbd
     FSTP float ptr [ESP + 0x4]          ; 0053bdc0
     FLD float ptr [EAX]                 ; 0053bdc4
-    FMUL float ptr [0x005fb3c0]         ; 0053bdc6 | DAT_005fb3c0
+    FMUL float ptr [0x005fb3c0]         ; 0053bdc6 | g_FLOAT_005fb3c0
     FISTP dword ptr [EBX]               ; 0053bdcc
     FLD float ptr [EAX + 0x4]           ; 0053bdce
-    FMUL float ptr [0x005fb3c0]         ; 0053bdd1 | DAT_005fb3c0
+    FMUL float ptr [0x005fb3c0]         ; 0053bdd1 | g_FLOAT_005fb3c0
     FISTP dword ptr [EBX + 0x4]         ; 0053bdd7
     FLD float ptr [EAX + 0x8]           ; 0053bdda
-    FMUL float ptr [0x005fb3c0]         ; 0053bddd | DAT_005fb3c0
+    FMUL float ptr [0x005fb3c0]         ; 0053bddd | g_FLOAT_005fb3c0
     FISTP dword ptr [EBX + 0x8]         ; 0053bde3
     MOV EBX,dword ptr [ESP + 0x50]      ; 0053bde6
     LEA EAX,[ESP + 0xc]                 ; 0053bdea
@@ -90,7 +90,7 @@ section .text
     PUSH EAX                            ; 0053bdff
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0053be00
         ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x0060b280]                ; 0053be05 | DAT_0060b280
+    MOV EAX,[0x0060b280]                ; 0053be05 | g_CDemonRenderer_PTR_0060b280
     MOV EDX,dword ptr [EAX]             ; 0053be0a
     MOV dword ptr [EDX + ESI*0x1 + 0x18],0x800000 ; 0053be0c
     MOV EAX,dword ptr [EAX]             ; 0053be14

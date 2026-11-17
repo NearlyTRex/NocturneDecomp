@@ -12,8 +12,8 @@
 ; float            Stack[0x18]:4   volume
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_updateTransform_FUN_0041de90
@@ -184,8 +184,8 @@ section .text
         ;   Label: LAB_0041de59
     MOV ECX,0x80                        ; 0041de5e
     PUSH 0x5d4a60                       ; 0041de63
-    MOV dword ptr [0x01d1d400],EDX      ; 0041de68 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0041de6e | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0041de68 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0041de6e | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0041de74
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0041de79

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int intensity_target,int intensity_scale,int spark_type,int fade_rate)
 
 {
@@ -15,12 +13,12 @@ void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0(CFireEffect *thi
   int iVar2;
   CSpark *this_ptr_00;
   
-  iVar1 = _DAT_01cb4eb0;
-  iVar2 = _DAT_01cb4eb0 + 1;
-  this_ptr_00 = g_SparkPool + _DAT_01cb4eb0;
-  _DAT_01cb4eb0 = iVar2;
+  iVar1 = g_INT_01cb4eb0;
+  iVar2 = g_INT_01cb4eb0 + 1;
+  this_ptr_00 = g_SparkPool + g_INT_01cb4eb0;
+  g_INT_01cb4eb0 = iVar2;
   if (0xff < iVar2) {
-    _DAT_01cb4eb0 = 0;
+    g_INT_01cb4eb0 = 0;
   }
   (*(g_SparkPool[iVar1].base.vtable)->setup)(&this_ptr_00->base,position,velocity);
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0xc000,0xffff);

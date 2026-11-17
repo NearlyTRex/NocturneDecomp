@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CInStreamFileTypeInfo
-;   undefined1* g_CInStreamFileVTable = 005a0a50
+;   TerminatedCString g_CInStreamFileVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005c030f
@@ -42,7 +42,7 @@ section .text
     JNZ 0x005a0a85                      ; 005a0a5a
         ;   XREF to: 005a0a85 (CONDITIONAL_JUMP)  ; LAB_005a0a85
     PUSH EBX                            ; 005a0a5c
-    MOV dword ptr [EBX],0x607384        ; 005a0a5d | g_CInStreamFileVTable
+    MOV dword ptr [EBX],0x607384        ; 005a0a5d | = "P\nZ"
     CALL support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0 ; 005a0a63
         ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 005a0a68

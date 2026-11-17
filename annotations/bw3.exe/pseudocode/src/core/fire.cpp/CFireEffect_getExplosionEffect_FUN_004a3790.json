@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 65,
+    "complexity_score": 49,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 209
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -45,61 +43,61 @@
   "globals": [
     {
       "addr": "005c0a30",
-      "name": "DAT_005c0a30",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c0a30",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005c0a38",
-      "name": "DAT_005c0a38",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c0a38",
+      "type": "float",
+      "value": "40"
     },
     {
       "addr": "01cf609c",
-      "name": "DAT_01cf609c",
+      "name": "g_CExplosion_ARRAY_01cf6090[0].lifetime",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cf60b0",
-      "name": "DAT_01cf60b0",
+      "name": "g_CExplosion_ARRAY_01cf6090[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cf60b4",
-      "name": "DAT_01cf60b4",
+      "name": "g_CExplosion_ARRAY_01cf6090[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cf60b8",
-      "name": "DAT_01cf60b8",
+      "name": "g_CExplosion_ARRAY_01cf6090[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cf60bc",
-      "name": "DAT_01cf60bc",
+      "name": "g_CExplosion_ARRAY_01cf6090[1].lifetime",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cf60c0",
-      "name": "DAT_01cf60c0",
+      "name": "g_CExplosion_ARRAY_01cf6090[1].scale",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cf60c4",
-      "name": "DAT_01cf60c4",
+      "name": "g_CExplosion_ARRAY_01cf6090[1].gore_multiplier",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cf60cc",
-      "name": "DAT_01cf60cc",
+      "name": "g_CExplosion_ARRAY_01cf6090[1].explosion_type",
       "type": "undefined4",
       "value": null
     }
@@ -471,14 +469,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

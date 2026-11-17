@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_SNotesMap_revealAtHero_FUN_004a3a60(SNotesMap *this_ptr)
 
 {
@@ -18,15 +16,15 @@ void __cdecl core_fldnotes_cpp_SNotesMap_revealAtHero_FUN_004a3a60(SNotesMap *th
   int local_14;
   int local_10 [2];
   
-  if (((*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) != 0) && (this_ptr->entry != (SNotesEntry *)0x0)) &&
-     (this_ptr->entry->kind == 6)) {
+  if (((g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4] != (CHero *)0x0) &&
+      (this_ptr->entry != (SNotesEntry *)0x0)) && (this_ptr->entry->kind == 6)) {
     iVar1 = core_fldnotes_cpp_SNotesMap_worldToMap_FUN_004a3d00
-                      (this_ptr,(CLocation *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x20),
+                      (this_ptr,&(g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.location,
                        local_10,&local_14);
     if (-1 < iVar1) {
       dVar2 = floor
-                        ((double)(this_ptr->sets[iVar1].reveal_scale * (float)_DAT_005d5df8));
-      dVar3 = round(dVar2 + _DAT_005d5e00);
+                        ((double)(this_ptr->sets[iVar1].reveal_scale * (float)20));
+      dVar3 = round(dVar2 + 0.5);
       local_10[0] = (int)ROUND(dVar3);
       if (local_10[0] < 1) {
         local_10[0] = 1;

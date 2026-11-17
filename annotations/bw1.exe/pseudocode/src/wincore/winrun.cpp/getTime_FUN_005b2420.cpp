@@ -15,19 +15,20 @@ int __cdecl wincore_winrun_cpp_getTime_FUN_005b2420(void)
   DWORD DVar2;
   double dVar3;
   
-  if (_DAT_02c9a5c4 == 0) {
-    _DAT_02c9a5a0 = _DAT_02c9a5a8;
-    _DAT_02c9a5a4 = _DAT_02c9a5ac;
-    QueryPerformanceCounter((LARGE_INTEGER *)&DAT_02c9a5a8);
-    iVar1 = _DAT_02c9a5c0;
-    dVar3 = ((((double)_DAT_02c9a5a8 + (double)_DAT_02c9a5ac * _DAT_005f9c2a) -
-             ((double)_DAT_02c9a5a0 + (double)_DAT_02c9a5a4 * _DAT_005f9c2a)) / _DAT_02c9a5b8) *
-            _DAT_005f9c32 * _DAT_005f9c3a;
+  if (g_INT_ARRAY_02c9a5c4[0] == 0) {
+    _DAT_02c9a5a0 = g_struct_19_02c9a5a8.LowPart;
+    g_INT_02c9a5a4 = g_struct_19_02c9a5a8.HighPart;
+    QueryPerformanceCounter((LARGE_INTEGER *)&g_struct_19_02c9a5a8);
+    iVar1 = g_INT_02c9a5c0;
+    dVar3 = ((((double)g_struct_19_02c9a5a8.LowPart +
+              (double)g_struct_19_02c9a5a8.HighPart * 4294967296) -
+             ((double)_DAT_02c9a5a0 + (double)g_INT_02c9a5a4 * 4294967296)) /
+            g_DOUBLE_02c9a5b8) * 65536 * 18;
     if (0.0 < dVar3) {
       dVar3 = round(dVar3);
-      _DAT_02c9a5c0 = iVar1 + (int)ROUND(dVar3);
+      g_INT_02c9a5c0 = iVar1 + (int)ROUND(dVar3);
     }
-    return _DAT_02c9a5c0;
+    return g_INT_02c9a5c0;
   }
   DVar2 = timeGetTime();
   return DVar2 * 0x49c;

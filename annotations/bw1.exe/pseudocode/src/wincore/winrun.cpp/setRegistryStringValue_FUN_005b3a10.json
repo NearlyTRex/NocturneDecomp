@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 78
@@ -73,8 +72,8 @@
     },
     {
       "addr": "005f9e98",
-      "name": "DAT_005f9e98",
-      "type": "undefined4",
+      "name": "s_suck_005f9e98",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -198,14 +197,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005f9e98",
-      "severity": "mild",
-      "text": "LVar2 = RegCreateKeyExA((HKEY)0x80000002,key_path,0,&DAT_005f9e98,0,0x20006,",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 21,

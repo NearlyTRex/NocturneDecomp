@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabriella *this_ptr,float delta_time,int is_holstering)
 
 {
@@ -89,11 +87,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabrie
         this_ptr->target_aim_yaw = this_ptr->aim_pitch;
         this_ptr->target_aim_pitch = this_ptr->target_aim_yaw;
       }
-      fVar6 = delta_time / (_DAT_005f7340 * (float)_DAT_005d7183) + this_ptr->aim_weight;
+      fVar6 = delta_time / (0.3f * (float)0.5) + this_ptr->aim_weight;
     }
     else if (this_ptr->aim_target == (CDemonActor *)0x0) {
       if (0.0 < this_ptr->fire_cooldown_timer) goto LAB_004b15cd;
-      fVar6 = this_ptr->aim_weight - delta_time / _DAT_005f7340;
+      fVar6 = this_ptr->aim_weight - delta_time / 0.3f;
     }
     else {
       __arrinit(&stack0xfffffe64,10,&g_CVectorTypeInfo);
@@ -117,10 +115,10 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabrie
         afStack_a4[(uint)bVar5 * -2 + 3] = afStack_50[(uint)bVar5 * -2 + 3];
         afStack_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
              afStack_50[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-        fStack_3c = afStack_a4[2] * _DAT_005d717f;
-        local_38 = afStack_a4[3] * _DAT_005d717f;
-        local_34 = fStack_94 * _DAT_005d717f;
-        CStack_6c.x = afStack_a4[2] * _DAT_005d717f;
+        fStack_3c = afStack_a4[2] * 0.5f;
+        local_38 = afStack_a4[3] * 0.5f;
+        local_34 = fStack_94 * 0.5f;
+        CStack_6c.x = afStack_a4[2] * 0.5f;
         *(float *)((int)&CStack_6c + (uint)bVar5 * -8 + 4) = afStack_50[(uint)bVar5 * -2 + 6];
         *(float *)((int)&CStack_6c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
              afStack_50[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
@@ -143,7 +141,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabrie
                 ((CDemonActor *)this_ptr,input_world_point,&CStack_84);
       fStack_54 = CStack_84.x;
       afStack_50[(uint)bVar5 * -2] = *(float *)((int)&CStack_84 + (uint)bVar5 * -8 + 4);
-      fVar6 = _DAT_01cb0690;
+      fVar6 = (float)g_INT_ARRAY_01cb0678[6];
       afStack_50[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            *(float *)((int)&CStack_84 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
@@ -161,7 +159,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabrie
       *(float *)((int)&CStack_78 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
            afStack_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_78,&CStack_e4);
-      fVar6 = delta_time / _DAT_005f7340;
+      fVar6 = delta_time / 0.3f;
       afStack_d4[2] = CStack_e4.x;
       afStack_d4[(uint)bVar5 * -2 + 3] = *(float *)((int)&CStack_e4 + (uint)bVar5 * -8 + 4);
       afStack_d4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
@@ -172,17 +170,17 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabrie
     }
   }
   else {
-    fVar6 = (this_ptr->base).player_input.look_up_down_speed * _DAT_005d716b * (float)_DAT_005d7173
-            * delta_time + this_ptr->target_aim_pitch;
+    fVar6 = (this_ptr->base).player_input.look_up_down_speed * 3.141593f *
+            (float)2 * delta_time + this_ptr->target_aim_pitch;
     local_18 = 0x3fc90fdb;
     this_ptr->target_aim_pitch = fVar6;
-    if (fVar6 < _DAT_005d717b) {
+    if (fVar6 < -1.570796f) {
       this_ptr->target_aim_pitch = -1.5707964;
     }
     if (1.5707964 < this_ptr->target_aim_pitch) {
       this_ptr->target_aim_pitch = 1.5707964;
     }
-    fVar6 = delta_time / _DAT_005f7340 + this_ptr->aim_weight;
+    fVar6 = delta_time / 0.3f + this_ptr->aim_weight;
     this_ptr->target_aim_yaw = 0.0;
   }
   this_ptr->aim_weight = fVar6;
@@ -200,7 +198,7 @@ LAB_004b15cd:
                          (this_ptr->target_aim_yaw - this_ptr->aim_yaw);
     local_24 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                          (this_ptr->target_aim_pitch - this_ptr->aim_pitch);
-    fVar6 = delta_time * _DAT_005d716b * (float)_DAT_005d718b;
+    fVar6 = delta_time * 3.141593f * (float)1.5;
     if (local_20 < -fVar6) {
       local_20 = -fVar6;
     }

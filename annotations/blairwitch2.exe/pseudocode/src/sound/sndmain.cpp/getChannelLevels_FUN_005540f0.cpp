@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005540f0(int channel,float *out_peak,float *out_average)
 
 {
@@ -17,7 +15,7 @@ void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005540f0(int channel,float *
   float fStack_20;
   float fStack_1c;
   
-  if ((*(int *)(channel * 4 + 0x2648ec8) == 0) || (_DAT_02648e98 < 1)) {
+  if ((g_FLOAT_PTR_ARRAY_02648ec8[channel] == (float *)0x0) || (g_INT_02648e98 < 1)) {
     if (out_peak != (float *)0x0) {
       *out_peak = 0.0;
     }
@@ -25,12 +23,12 @@ void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005540f0(int channel,float *
       *out_average = 0.0;
     }
   }
-  pfVar3 = *(float **)(channel * 4 + 0x2648ec8);
+  pfVar3 = g_FLOAT_PTR_ARRAY_02648ec8[channel];
   fStack_20 = 0.0;
   fStack_1c = 0.0;
   sound_sndmain_cpp_lockSound_FUN_005532f0();
   iVar2 = 0;
-  if (0 < _DAT_02648e98) {
+  if (0 < g_INT_02648e98) {
     do {
       fVar1 = ABS(*pfVar3);
       pfVar3 = pfVar3 + 1;
@@ -39,10 +37,10 @@ void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005540f0(int channel,float *
         fStack_1c = fVar1;
       }
       iVar2 = iVar2 + 1;
-    } while (iVar2 < _DAT_02648e98);
+    } while (iVar2 < g_INT_02648e98);
   }
   sound_sndmain_cpp_unlockSound_FUN_00551440();
-  fStack_20 = fStack_20 / (float)_DAT_02648e98;
+  fStack_20 = fStack_20 / (float)g_INT_02648e98;
   if (1.0 < fStack_1c) {
     fStack_1c = 1.0;
   }

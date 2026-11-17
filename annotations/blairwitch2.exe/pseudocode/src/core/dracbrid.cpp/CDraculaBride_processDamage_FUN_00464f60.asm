@@ -8,11 +8,11 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_s_4_bride_launch_wav_005d11a2+2
+;   TerminatedCString s_bride_launch_wav_005d11a4
 ;   TerminatedCString s_bride_die_wav_005d11b5
 ;   TerminatedCString s_bride_hurt_wav_005d11c4
-;   undefined4 DAT_005d11d4
-;   undefined4 DAT_00614d30
+;   double g_DOUBLE_005d11d4 = 2
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -135,7 +135,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_00503620 ; 0046505d
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00465062
-    PUSH 0x5d11a4                       ; 00465065 | s_s_4_bride_launch_wav_005d11a2+2
+    PUSH 0x5d11a4                       ; 00465065 | = "bride-launch.wav"
     MOV EAX,dword ptr [EBP + 0x2b0]     ; 0046506a
     PUSH EBP                            ; 00465070
     CALL dword ptr [EAX + 0x38]         ; 00465071
@@ -165,7 +165,7 @@ section .text
         ;   Label: LAB_004650a2
     ADD EAX,0x1c                        ; 004650a5
     FLD ST0                             ; 004650a8
-    FMUL double ptr [0x005d11d4]        ; 004650aa | DAT_005d11d4
+    FMUL double ptr [0x005d11d4]        ; 004650aa | g_DOUBLE_005d11d4
     PUSH EAX                            ; 004650b0
     LEA ESI,[ESP + 0x28]                ; 004650b1
     LEA EDI,[ESP + 0x1c]                ; 004650b5
@@ -189,7 +189,7 @@ section .text
     PUSH 0x0                            ; 004650de
     LEA EAX,[ESP + 0x2c]                ; 004650e0
     PUSH EAX                            ; 004650e4
-    MOV EDI,dword ptr [0x00614d30]      ; 004650e5 | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 004650e5 | g_CFireEffect_PTR_00614d30
     PUSH EDI                            ; 004650eb
     INC EBX                             ; 004650ec
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 004650ed

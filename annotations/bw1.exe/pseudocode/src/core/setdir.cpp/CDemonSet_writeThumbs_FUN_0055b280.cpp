@@ -6,26 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_0055b280(CDemonSet *this_ptr,char *filename)
 
 {
   _FILE *file;
   
-  file = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005f1020,filename,&DAT_005f101d);
+  file = engine_dosio_cpp_getFile_FUN_00479180("data",filename,"wb");
   if (file == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\core\\setdir.cpp";
-    _DAT_01d1d404 = 0x2b5;
+    g_CHAR_PTR_01d1d400 = "..\\core\\setdir.cpp";
+    g_INT_01d1d404 = 0x2b5;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create %s");
   }
-  _fwrite(&DAT_020b28f4,0x3000,this_ptr->camera_count,file);
+  _fwrite(g_CHAR_ARRAY_020b28f4,0x3000,this_ptr->camera_count,file);
   if ((file->_flag & 0x20) == 0) {
     _fclose(file);
     return;
   }
-  _DAT_01d1d400 = "..\\core\\setdir.cpp";
-  _DAT_01d1d404 = 0x2b7;
+  g_CHAR_PTR_01d1d400 = "..\\core\\setdir.cpp";
+  g_INT_01d1d404 = 0x2b7;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Error writing %s");
   _fclose(file);
   return;

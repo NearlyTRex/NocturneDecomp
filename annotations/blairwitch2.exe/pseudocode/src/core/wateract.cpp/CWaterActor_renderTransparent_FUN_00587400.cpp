@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterActor *this_ptr)
 
 {
   SRenderVertex *pSVar1;
   longlong lVar2;
   int iVar3;
-  int *piVar4;
+  CVector3i *pCVar4;
   SWaterVertex *pSVar5;
   SMRGLPrimitivePoly *poly;
   uint *puVar6;
@@ -29,7 +27,8 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterA
   uint auStack_18 [5];
   
   bVar10 = 0;
-  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
@@ -42,33 +41,35 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterA
     }
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_30,unaff_EDI);
     if (iVar3 != 0) {
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,this_ptr->opacity);
-      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+                (g_CDemonRenderer_PTR_0060b280,this_ptr->opacity);
+      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
       iVar7 = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-                (DAT_0060b280,(SMRGLTextureBasic *)(this_ptr->texture_frame * 0x18 + 0x61e704));
+                (g_CDemonRenderer_PTR_0060b280,
+                 (SMRGLTextureBasic *)(this_ptr->texture_frame * 0x18 + 0x61e704));
       if (0 < this_ptr->vertex_count) {
-        piVar4 = (int *)0x265cc48;
+        pCVar4 = &g_CVector3i_0265cc48;
         pSVar5 = this_ptr->vertices;
         do {
-          *piVar4 = (int)ROUND((pSVar5->local_position).x * _DAT_005fdca0);
-          piVar4[1] = (int)ROUND((pSVar5->local_position).y * _DAT_005fdca0);
-          piVar4[2] = (int)ROUND((pSVar5->local_position).z * _DAT_005fdca0);
+          pCVar4->x = (int)ROUND((pSVar5->local_position).x * 256.0f);
+          pCVar4->y = (int)ROUND((pSVar5->local_position).y * 256.0f);
+          pCVar4->z = (int)ROUND((pSVar5->local_position).z * 256.0f);
           iVar7 = iVar7 + 1;
           pSVar5 = pSVar5 + 1;
-          piVar4 = piVar4 + 3;
+          pCVar4 = pCVar4 + 1;
         } while (iVar7 < this_ptr->vertex_count);
       }
       iVar7 = 0;
       core_set_cpp_CDemonSet_rotateVerticies_FUN_00531e90
-                (g_CDemonSetPtr,this_ptr->vertex_count,(CVector3i *)0x265cc48);
+                (g_CDemonSetPtr,this_ptr->vertex_count,&g_CVector3i_0265cc48);
       if (0 < this_ptr->vertex_count) {
         vertex_position = &this_ptr->vertices[0].world_position;
         iVar9 = 0;
         do {
           core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90
-                    (g_CDemonSetPtr,vertex_position,(CVector3f *)&DAT_0265370c,iVar7);
-          pSVar1 = DAT_0060b280->vertex_buffer_ptr;
+                    (g_CDemonSetPtr,vertex_position,&g_CVector3f_0265370c,iVar7);
+          pSVar1 = g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr;
           lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)
           ;
           *(uint *)((int)&pSVar1->r + iVar9) =
@@ -93,7 +94,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterA
           do {
             iVar7 = iVar7 + 1;
             engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
-                      (DAT_0060b280,poly,0x267);
+                      (g_CDemonRenderer_PTR_0060b280,poly,0x267);
             poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
           } while (iVar7 < this_ptr->primitive_count);
         }
@@ -102,7 +103,8 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterA
         core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40
                   (g_CDemonSetPtr,(SMRGLPrimitiveQuad *)poly,this_ptr->primitive_count,-1);
       }
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880
+                (g_CDemonRenderer_PTR_0060b280,0);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);
     return iVar3;

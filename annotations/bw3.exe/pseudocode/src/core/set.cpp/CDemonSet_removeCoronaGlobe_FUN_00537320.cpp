@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00537320(CDemonSet *this_ptr,CDemonGlobe *globe)
 
 {
@@ -16,20 +14,21 @@ void __cdecl core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00537320(CDemonSet *th
   int iVar3;
   
   iVar3 = 0;
-  if (0 < _DAT_0203ad30) {
+  if (0 < g_INT_0203ad30) {
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
-      if (globe == *(CDemonGlobe **)(iVar2 + 0x203ad34)) {
-        _DAT_0203ad30 = _DAT_0203ad30 + -1;
+      if (globe == *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_0203ad34 + iVar2)) {
+        g_INT_0203ad30 = g_INT_0203ad30 + -1;
         memmove
-                  ((void *)(iVar2 + 0x203ad34),(void *)(iVar2 + 0x203ad38),
-                   (_DAT_0203ad30 - iVar3) * 4);
+                  ((void *)((int)g_CDemonGlobe_PTR_ARRAY_0203ad34 + iVar2),
+                   (void *)((int)g_CDemonGlobe_PTR_ARRAY_0203ad34 + iVar2 + 4),
+                   (g_INT_0203ad30 - iVar3) * 4);
         return;
       }
       iVar3 = iVar3 + 1;
       iVar2 = iVar1;
-    } while (iVar1 < _DAT_0203ad30 * 4);
+    } while (iVar1 < g_INT_0203ad30 * 4);
   }
   return;
 }

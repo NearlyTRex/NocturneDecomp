@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_ptr,char *tag)
 
 {
@@ -25,7 +23,7 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
   int local_18;
   int local_14;
   
-  iVar1 = _stricmp(tag,&DAT_005c0ef9);
+  iVar1 = _stricmp(tag,"br");
   if (iVar1 == 0) {
     if ((this_ptr->margin_left != this_ptr->cursor_x) ||
        (this_ptr->margin_top != this_ptr->cursor_y)) {
@@ -34,17 +32,17 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
     iVar1 = 1;
   }
   else {
-    iVar1 = _stricmp(tag,&DAT_005c0efc);
+    iVar1 = _stricmp(tag,"pg");
     if (iVar1 == 0) {
       core_fldnotes_cpp_STextView_newPage_FUN_004a9300(this_ptr);
       return 1;
     }
-    iVar1 = _stricmp(tag,&DAT_005c0eff);
+    iVar1 = _stricmp(tag,"ul");
     if (iVar1 == 0) {
       this_ptr->underline = 1;
       return 1;
     }
-    iVar1 = _stricmp(tag,&DAT_005c0f02);
+    iVar1 = _stricmp(tag,"/ul");
     if (iVar1 == 0) {
       this_ptr->underline = 0;
       return 1;
@@ -56,7 +54,7 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
         local_14 = -1;
         sscanf(tag + 9," %s%n");
         if (local_14 < 3) {
-          _sprintf(&DAT_01d0d010,"Error parsing 'twanachar' parms: '%s'");
+          _sprintf(g_CHAR_ARRAY_01d0d010,"Error parsing 'twanachar' parms: '%s'");
           return -1;
         }
         this_ptr_01 = operator_new(0x4c);
@@ -67,8 +65,8 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
                                   (this_ptr_01,local_220);
         }
         if (resource_00 == (SPageResourceTwanaEntry *)0x0) {
-          _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-          _DAT_01d71de4 = 0x617;
+          g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+          g_INT_01d71de4 = 0x617;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
         }
         iVar1 = core_fldnotes_cpp_STextView_ensureSpace_FUN_004a9710
@@ -86,7 +84,7 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
       else {
         iVar1 = _stricmp(tag,"twanaentry");
         if (iVar1 != 0) {
-          _sprintf(&DAT_01d0d010,"Ignoring unknown markup tag: %s");
+          _sprintf(g_CHAR_ARRAY_01d0d010,"Ignoring unknown markup tag: %s");
           return -1;
         }
         this_ptr_02 = operator_new(0x118);
@@ -95,8 +93,8 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
           resource_00 = core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004a88d0(this_ptr_02);
         }
         if (resource_00 == (SPageResourceTwanaEntry *)0x0) {
-          _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-          _DAT_01d71de4 = 0x62f;
+          g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+          g_INT_01d71de4 = 0x62f;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
         }
         iVar1 = core_fldnotes_cpp_STextView_ensureSpace_FUN_004a9710
@@ -117,7 +115,7 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
     local_18 = -1;
     sscanf(tag + 5,"%s %d %d%n");
     if (local_18 < 3) {
-      _sprintf(&DAT_01d0d010,"Error parsing 'image' tag parms: '%s'");
+      _sprintf(g_CHAR_ARRAY_01d0d010,"Error parsing 'image' tag parms: '%s'");
       return -1;
     }
     iVar2 = core_fldnotes_cpp_STextView_ensureSpace_FUN_004a9710(this_ptr,local_20,local_1c);
@@ -130,8 +128,8 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a9330(STextView *this_p
                              (this_ptr_00,local_120,local_20,local_1c);
       }
       if (resource == (SPageResourceBitmap *)0x0) {
-        _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-        _DAT_01d71de4 = 0x601;
+        g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+        g_INT_01d71de4 = 0x601;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
       }
       (resource->base).x = this_ptr->cursor_x;

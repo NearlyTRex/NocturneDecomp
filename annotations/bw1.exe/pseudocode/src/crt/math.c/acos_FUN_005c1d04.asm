@@ -18,7 +18,7 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0062622c
+;   float10 g_FLOAT10_0062622c = 1.570796326794896558
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_005c1d69
@@ -62,7 +62,7 @@ section .text
     FXCH                                ; 005c1d2f
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005c1d31
         ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
-    FLD extended double ptr [0x0062622c] ; 005c1d36 | DAT_0062622c
+    FLD extended double ptr [0x0062622c] ; 005c1d36 | g_FLOAT10_0062622c
     FSUBRP                              ; 005c1d3c
     POP AX                              ; 005c1d3e
         ;   Label: LAB_005c1d3e

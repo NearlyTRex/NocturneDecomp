@@ -7,7 +7,7 @@
 ; CBurncross *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00425401
     PUSH 0x0                            ; 00425404
-    MOV ECX,dword ptr [0x005fc5a0]      ; 00425406 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 00425406 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 0042540c
     CALL core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0 ; 0042540d
         ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(CFireEffect * this_ptr, int flame_style)

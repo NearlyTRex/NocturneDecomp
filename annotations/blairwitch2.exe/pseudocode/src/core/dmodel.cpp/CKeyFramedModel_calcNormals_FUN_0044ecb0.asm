@@ -19,9 +19,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005cf8c7
 ;   TerminatedCString s_CKeyFramedModel_calcNorm_005cf8da
-;   undefined4 DAT_005cf91f
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005cf91f = 65535
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -163,8 +163,8 @@ section .text
         ;   Label: LAB_0044edef
     MOV ESI,0x2f1                       ; 0044edf4
     PUSH 0x5cf8da                       ; 0044edf9 | = "CKeyFramedModel::calcNormals() - vert..."
-    MOV dword ptr [0x01d046a0],EBX      ; 0044edfe | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0044ee04 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 0044edfe | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0044ee04 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044ee0a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044ee0f
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 0044ecd9 (UNCONDITIONAL_JUMP)  ; LAB_0044ecd9
     FLD double ptr [ESP + 0x8]          ; 0044ee17
         ;   Label: LAB_0044ee17
-    FLD double ptr [0x005cf91f]         ; 0044ee1b | DAT_005cf91f
+    FLD double ptr [0x005cf91f]         ; 0044ee1b | g_DOUBLE_005cf91f
     FDIV double ptr [ESP]               ; 0044ee21
     FXCH                                ; 0044ee24
     FMUL ST1                            ; 0044ee26

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_shadow_cpp_CShadow_processChainConstraint_FUN_00545c80(CShadow *this_ptr)
 
@@ -57,7 +56,7 @@ void __cdecl core_shadow_cpp_CShadow_processChainConstraint_FUN_00545c80(CShadow
          *(uint *)((int)&local_90 + (uint)bVar2 * -8 + 4);
     *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)((int)&local_90 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-    if (local_98 < (float)_DAT_005d13de) {
+    if (local_98 < (float)2) {
       local_3c.x = local_90.x;
       *(uint *)((int)&local_3c + (uint)bVar2 * -8 + 4) =
            *(uint *)((int)&local_90 + (uint)bVar2 * -8 + 4);
@@ -76,8 +75,7 @@ void __cdecl core_shadow_cpp_CShadow_processChainConstraint_FUN_00545c80(CShadow
          local_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
     local_20 = local_44[0] * local_44[0];
     local_28 = SQRT(local_44[1] * local_44[1] + local_48 * local_48 + local_20);
-    engine_console_cpp_CConsole_printf_FUN_00441ff0
-              (g_CConsolePtr,"$@Chain stretched to %f\n" + 2);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Chain stretched to %f\n");
     if ((this_ptr->chain_length < local_28) &&
        (fVar1 = this_ptr->chain_length * this_ptr->chain_length - local_20, local_30 = (double)fVar1
        , 0.0 <= local_30)) {

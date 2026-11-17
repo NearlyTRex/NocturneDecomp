@@ -11,10 +11,11 @@ void __cdecl core_water_cpp_CWater_captureTextures_FUN_00585de0(CWater *this_ptr
 {
   SMRGLTextureBasic *texture;
   
-  texture = (SMRGLTextureBasic *)&DAT_0061e52c;
+  texture = g_SMRGLTextureBasic_ARRAY_0061e52c;
   do {
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
+              (g_CDemonRenderer_PTR_0060b280,texture);
     texture = texture + 1;
-  } while (texture != (SMRGLTextureBasic *)&DAT_0061e6ac);
+  } while (texture != g_SMRGLTextureBasic_ARRAY_0061e52c + sizeof(g_SMRGLTextureBasic_ARRAY_0061e52c) / sizeof(g_SMRGLTextureBasic_ARRAY_0061e52c[0]));
   return;
 }

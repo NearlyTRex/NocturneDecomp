@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *this_ptr)
 
 {
@@ -20,16 +18,16 @@ CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *thi
   char *pcVar7;
   
   pCVar3 = (CDemnfolk *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
-  pcVar6 = (char *)0x5d7d60;
+  pcVar6 = "true";
   (pCVar3->base).base.base.vtable._ub = &g_CDemnfolkVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            (&(pCVar3->base).base.model,"@d_deputy.dfm" + 1);
+            (&(pCVar3->base).base.model,"d_deputy.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.5;
   pcVar7 = pCVar3->rise_from_grave_condition;
   (pCVar3->base).base.collision_cylinder_radius = 1.0;
-  fVar4 = _DAT_005fe69c;
+  fVar4 = 50.0f;
   pCVar3->pickup_target = (CDemonActor *)0x0;
-  fVar2 = _DAT_005fe6a0;
+  fVar2 = 100.0f;
   pCVar3->pickup_approach_progress = 0.0;
   (pCVar3->base).base.ai_detection_range_min = fVar4;
   (pCVar3->base).base.ai_detection_range_max = fVar2;

@@ -20,7 +20,7 @@
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00597165
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9689
+;   double g_DOUBLE_005d9689 = 0.349065850388889
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -89,7 +89,7 @@ section .text
     FLD float ptr [ESP + 0x34]          ; 00597791
     FABS                                ; 00597795
     ADD ESP,0x4                         ; 00597797
-    FCOMP double ptr [0x005d9689]       ; 0059779a | DAT_005d9689
+    FCOMP double ptr [0x005d9689]       ; 0059779a | g_DOUBLE_005d9689
     FNSTSW AX                           ; 005977a0
     SAHF                                ; 005977a2
     JNC 0x005977f8                      ; 005977a3

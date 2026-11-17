@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004a25f0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 
 {
@@ -60,20 +58,20 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004a25f0(CFireEffect *thi
        afStack_3c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_00497ac0
-              (g_StakePool + _DAT_01c8eeac,&CStack_1c,orientation_angles,surface_normal);
+              (g_StakePool + g_INT_01c8eeac,&CStack_1c,orientation_angles,surface_normal);
   }
   else {
     core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
-              (0x02CF5680,(CDemonActor *)this_ptr,"a-wood?.wav",&CStack_1c,0.23);
+              (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"a-wood?.wav",&CStack_1c,0.23);
     core_fire_cpp_CStake_init_FUN_00497a50
-              (g_StakePool + _DAT_01c8eeac,&CStack_1c,orientation_angles);
+              (g_StakePool + g_INT_01c8eeac,&CStack_1c,orientation_angles);
   }
-  _DAT_01c8eeac = _DAT_01c8eeac + 1;
-  if (0xff < _DAT_01c8eeac) {
-    _DAT_01c8eeac = 0;
+  g_INT_01c8eeac = g_INT_01c8eeac + 1;
+  if (0xff < g_INT_01c8eeac) {
+    g_INT_01c8eeac = 0;
   }
-  if (_DAT_01c8eea8 < 0x100) {
-    _DAT_01c8eea8 = _DAT_01c8eea8 + 1;
+  if (g_INT_01c8eea8 < 0x100) {
+    g_INT_01c8eea8 = g_INT_01c8eea8 + 1;
     return;
   }
 switchD_004a2609_caseD_6:

@@ -11,10 +11,10 @@
 ;   core_hostage.cpp_CHostage_processDamage_FUN_004ef300 at 004ef383
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ec7dc
-;   undefined4 DAT_005ec7e0
+;   TerminatedCString s_DIE_005ec7dc
+;   TerminatedCString s_HURT_005ec7e0
 ;   TerminatedCString s_DAMAGE_005ec7e5
-;   undefined4 DAT_005ec7ec
+;   TerminatedCString s_SHOT_005ec7ec
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0
@@ -58,7 +58,7 @@ section .text
     CMP dword ptr [EBX + 0x26fc],0x0    ; 00531dec
     JNZ 0x00531e19                      ; 00531df3
         ;   XREF to: 00531e19 (CONDITIONAL_JUMP)  ; LAB_00531e19
-    PUSH 0x5ec7e0                       ; 00531df5 | DAT_005ec7e0
+    PUSH 0x5ec7e0                       ; 00531df5 | = "HURT"
     PUSH ESI                            ; 00531dfa
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0 ; 00531dfb
         ;   XREF to: 00531cc0 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0(CNPC * this_ptr, char * motion_name)
@@ -96,14 +96,14 @@ section .text
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0 ; 00531e49
         ;   XREF to: 004328c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00531e4e
-    PUSH 0x5ec7dc                       ; 00531e51 | DAT_005ec7dc
+    PUSH 0x5ec7dc                       ; 00531e51 | = "DIE"
     PUSH ESI                            ; 00531e56
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0 ; 00531e57
         ;   XREF to: 00531cc0 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0(CNPC * this_ptr, char * motion_name)
     ADD ESP,0x8                         ; 00531e5c
     JMP 0x00531e19                      ; 00531e5f
         ;   XREF to: 00531e19 (UNCONDITIONAL_JUMP)  ; LAB_00531e19
-    PUSH 0x5ec7ec                       ; 00531e61 | DAT_005ec7ec
+    PUSH 0x5ec7ec                       ; 00531e61 | = "SHOT"
         ;   Label: LAB_00531e61
     PUSH ESI                            ; 00531e66
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0 ; 00531e67

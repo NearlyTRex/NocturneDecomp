@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CShadowsc * __cdecl core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this_ptr)
 
 {
@@ -21,11 +19,11 @@ CShadowsc * __cdecl core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this
   (pCVar3->base).base.base.vtable._ub = &g_CShadowscVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             (&(pCVar3->base).base.model,"shadowscorp.dfm");
-  fVar2 = _DAT_005e4354;
-  fVar1 = _DAT_005e4350;
+  fVar2 = 100.0f;
+  fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_height = 0.75;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  this_ptr_00 = 0x01C6E360;
+  this_ptr_00 = g_CEventList_PTR_005fba60;
   pCVar3->sfx_handle = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;

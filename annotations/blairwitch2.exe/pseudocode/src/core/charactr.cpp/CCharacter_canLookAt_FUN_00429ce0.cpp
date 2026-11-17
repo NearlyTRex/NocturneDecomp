@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00429ce0(CCharacter *this_ptr)
 
 {
@@ -28,7 +26,7 @@ int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00429ce0(CCharacter *this
       if (-1 < iVar2) {
         fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
                           (&(this_ptr->model).base,iVar2);
-        if ((float)_DAT_005cd13e < fVar3) {
+        if ((float)0.94999999999999996 < fVar3) {
           return 0;
         }
       }

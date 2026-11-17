@@ -7,10 +7,10 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35814
-;   undefined4 DAT_01c35820
-;   undefined4 DAT_01c3582c
+;   int g_INT_006141c0 = 0x8
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
     PUSH ESI                            ; 0043e7e1
     PUSH EDI                            ; 0043e7e2
     PUSH EBP                            ; 0043e7e3
-    MOV EBP,dword ptr [0x006141c0]      ; 0043e7e4 | DAT_006141c0
+    MOV EBP,dword ptr [0x006141c0]      ; 0043e7e4 | g_INT_006141c0
     XOR EDX,EDX                         ; 0043e7ea
     XOR EAX,EAX                         ; 0043e7ec
     MOVZX ESI,byte ptr [EAX + 0xb65c99] ; 0043e7ee
@@ -32,11 +32,11 @@ section .text
     CMP EBP,0x20                        ; 0043e804
     JNZ 0x0043e846                      ; 0043e807
         ;   XREF to: 0043e846 (CONDITIONAL_JUMP)  ; LAB_0043e846
-    MOV CL,byte ptr [0x01c35814]        ; 0043e809 | DAT_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 0043e809 | g_BIT_INTEGER32_01c35814
     SHL EDI,CL                          ; 0043e80f
-    MOV CL,byte ptr [0x01c35820]        ; 0043e811 | DAT_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 0043e811 | g_BIT_INTEGER32_01c35820
     SHL ESI,CL                          ; 0043e817
-    MOV CL,byte ptr [0x01c3582c]        ; 0043e819 | DAT_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 0043e819 | g_BIT_INTEGER32_01c3582c
     SHL EBX,CL                          ; 0043e81f
     OR EDI,ESI                          ; 0043e821
     MOV ECX,EBX                         ; 0043e823
@@ -48,7 +48,7 @@ section .text
     CMP EDX,0x400                       ; 0043e833
     JNZ 0x0043e7ee                      ; 0043e839
         ;   XREF to: 0043e7ee (CONDITIONAL_JUMP)  ; LAB_0043e7ee
-    MOV dword ptr [0x006141c0],EBP      ; 0043e83b | DAT_006141c0
+    MOV dword ptr [0x006141c0],EBP      ; 0043e83b | g_INT_006141c0
     POP EBP                             ; 0043e841
     POP EDI                             ; 0043e842
     POP ESI                             ; 0043e843

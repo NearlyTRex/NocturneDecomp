@@ -22,8 +22,8 @@
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426eaf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7ec7
-;   undefined4 DAT_005dcf4c
+;   double g_DOUBLE_005b7ec7 = 0.900000000000000
+;   float g_FLOAT_005dcf4c = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EAX      ; 004290c6
     FLD float ptr [ESP + 0x28]          ; 004290ca
     ADD ESP,0x4                         ; 004290ce
-    FCOMP double ptr [0x005b7ec7]       ; 004290d1 | DAT_005b7ec7
+    FCOMP double ptr [0x005b7ec7]       ; 004290d1 | g_DOUBLE_005b7ec7
     FNSTSW AX                           ; 004290d7
     SAHF                                ; 004290d9
     JBE 0x00429178                      ; 004290da
@@ -98,7 +98,7 @@ section .text
     FMUL ST0                            ; 00429136
     FADDP                               ; 00429138
     FSQRT                               ; 0042913a
-    FCOMP float ptr [0x005dcf4c]        ; 0042913c | DAT_005dcf4c
+    FCOMP float ptr [0x005dcf4c]        ; 0042913c | g_FLOAT_005dcf4c
     FNSTSW AX                           ; 00429142
     SAHF                                ; 00429144
     JNC 0x004291b0                      ; 00429145

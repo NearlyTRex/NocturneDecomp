@@ -9,17 +9,17 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005f4c35
-;   undefined4 s_Create_secondary_buffer_005f4df6+1
+;   TerminatedCString s_Create_secondary_buffer_005f4df7
 ;   TerminatedCString s_DirectSoundDevice_alloca_005f4e0f
-;   undefined4 DAT_02c81d94
+;   IDirectSound* g_IDirectSound_PTR_02c81d94
 ;   undefined4 DAT_02c81da0
-;   undefined4 DAT_02c81ddc
-;   undefined4 DAT_02c81df4
-;   undefined4 DAT_02c81dfc
-;   undefined4 DAT_02c81e00
-;   undefined4 DAT_02c81e04
-;   undefined4 DAT_02c81e0c
-;   undefined4 DAT_02c823dc
+;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[6]
+;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[12]
+;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[14]
+;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[15]
+;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[16]
+;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[18]
+;   int g_INT_02c823dc
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -38,11 +38,11 @@ section .text
     PUSH EBP                            ; 00578713
     SUB ESP,0x1c8                       ; 00578714
     MOV ESI,dword ptr [ESP + 0x1e0]     ; 0057871a
-    CMP dword ptr [0x02c81d94],0x0      ; 00578721 | DAT_02c81d94
+    CMP dword ptr [0x02c81d94],0x0      ; 00578721 | g_IDirectSound_PTR_02c81d94
     JZ 0x005788fd                       ; 00578728
         ;   XREF to: 005788fd (CONDITIONAL_JUMP)  ; LAB_005788fd
     MOV EAX,0x18                        ; 0057872e
-    MOV ECX,dword ptr [0x02c81ddc]      ; 00578733 | DAT_02c81ddc
+    MOV ECX,dword ptr [0x02c81ddc]      ; 00578733 | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[6]
     MOV EBX,0x1                         ; 00578739
     TEST ECX,ECX                        ; 0057873e
     JZ 0x00578756                       ; 00578740
@@ -53,7 +53,7 @@ section .text
     CMP EAX,0x618                       ; 00578746
     JGE 0x00578756                      ; 0057874b
         ;   XREF to: 00578756 (CONDITIONAL_JUMP)  ; LAB_00578756
-    CMP dword ptr [EAX + 0x2c81dc4],0x0 ; 0057874d | DAT_02c81df4 | DAT_02c81e0c
+    CMP dword ptr [EAX + 0x2c81dc4],0x0 ; 0057874d | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[12] | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[18]
     JNZ 0x00578742                      ; 00578754
         ;   XREF to: 00578742 (CONDITIONAL_JUMP)  ; LAB_00578742
     CMP EBX,0x41                        ; 00578756
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     MOV EAX,0xa0                        ; 00578789
     ADD ESP,0xc                         ; 0057878e
-    MOV EDX,dword ptr [0x02c823dc]      ; 00578791 | DAT_02c823dc
+    MOV EDX,dword ptr [0x02c823dc]      ; 00578791 | g_INT_02c823dc
     MOV dword ptr [ESP + 0x190],EBP     ; 00578797
     MOV dword ptr [ESP + 0x194],EAX     ; 0057879e
     TEST EDX,EDX                        ; 005787a5
@@ -131,9 +131,9 @@ section .text
     SHL EDI,0x3                         ; 00578885
     PUSH 0x0                            ; 00578888
     ADD EAX,EDI                         ; 0057888a
-    PUSH EAX                            ; 0057888c | DAT_02c81df4
+    PUSH EAX                            ; 0057888c | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[12]
     LEA EAX,[ESP + 0x198]               ; 0057888d
-    MOV ECX,dword ptr [0x02c81d94]      ; 00578894 | DAT_02c81d94
+    MOV ECX,dword ptr [0x02c81d94]      ; 00578894 | g_IDirectSound_PTR_02c81d94
     PUSH EAX                            ; 0057889a
     MOV EBP,dword ptr [ECX]             ; 0057889b
     PUSH ECX                            ; 0057889d
@@ -141,7 +141,7 @@ section .text
     TEST EAX,EAX                        ; 005788a1
     JNZ 0x00578997                      ; 005788a3
         ;   XREF to: 00578997 (CONDITIONAL_JUMP)  ; LAB_00578997
-    CMP dword ptr [EDI + 0x2c81dc4],0x0 ; 005788a9 | DAT_02c81df4
+    CMP dword ptr [EDI + 0x2c81dc4],0x0 ; 005788a9 | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[12]
     JZ 0x005789c3                       ; 005788b0
         ;   XREF to: 005789c3 (CONDITIONAL_JUMP)  ; LAB_005789c3
     MOV EDX,dword ptr [ESI + 0x104]     ; 005788b6
@@ -154,10 +154,10 @@ section .text
     SBB EAX,EDX                         ; 005788d0
     SAR EAX,0x3                         ; 005788d2
     XOR EDX,EDX                         ; 005788d5
-    MOV dword ptr [EDI + 0x2c81dcc],EAX ; 005788d7 | DAT_02c81dfc
+    MOV dword ptr [EDI + 0x2c81dcc],EAX ; 005788d7 | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[14]
     MOV EAX,dword ptr [ESP + 0x198]     ; 005788dd
-    MOV dword ptr [EDI + 0x2c81dd4],EDX ; 005788e4 | DAT_02c81e04
-    MOV dword ptr [EDI + 0x2c81dd0],EAX ; 005788ea | DAT_02c81e00
+    MOV dword ptr [EDI + 0x2c81dd4],EDX ; 005788e4 | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[16]
+    MOV dword ptr [EDI + 0x2c81dd0],EAX ; 005788ea | g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[15]
     MOV EAX,EBX                         ; 005788f0
     ADD ESP,0x1c8                       ; 005788f2
     POP EBP                             ; 005788f8
@@ -210,7 +210,7 @@ section .text
         ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 0057899d
     PUSH EAX                            ; 005789a0
-    PUSH 0x5f4df7                       ; 005789a1 | s_Create_secondary_buffer_005f4df6+1
+    PUSH 0x5f4df7                       ; 005789a1 | = "Create secondary buffer"
     PUSH 0x5f4c35                       ; 005789a6 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 005789ab
     PUSH EAX                            ; 005789af

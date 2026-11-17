@@ -13,7 +13,7 @@
 ;   void* PTR_waveOutClose_005c8470 = 001c89b6
 ;   void* PTR_GlobalFree_005c85cc = 001c8f9c
 ;   TerminatedCString s_waveOutClose_failed_005ea55e
-;   undefined4 DAT_0264b070
+;   int g_INT_0264b070
 ;
 ; Called Functions:
 ;   GlobalFree
@@ -64,7 +64,7 @@ section .text
     CMP EBX,0x20                        ; 00557d6d
     JNZ 0x00557d2e                      ; 00557d70
         ;   XREF to: 00557d2e (CONDITIONAL_JUMP)  ; LAB_00557d2e
-    MOV EDX,dword ptr [0x0264b070]      ; 00557d72 | DAT_0264b070
+    MOV EDX,dword ptr [0x0264b070]      ; 00557d72 | g_INT_0264b070
     TEST EDX,EDX                        ; 00557d78
     JNZ 0x00557d87                      ; 00557d7a
         ;   XREF to: 00557d87 (CONDITIONAL_JUMP)  ; LAB_00557d87
@@ -91,7 +91,7 @@ section .text
     ADD ESP,0x4                         ; 00557d9f
     XOR EBX,EBX                         ; 00557da2
         ;   Label: LAB_00557da2
-    MOV dword ptr [0x0264b070],EBX      ; 00557da4 | DAT_0264b070
+    MOV dword ptr [0x0264b070],EBX      ; 00557da4 | g_INT_0264b070
     MOV EAX,ESI                         ; 00557daa
     POP EBP                             ; 00557dac
     POP EDI                             ; 00557dad

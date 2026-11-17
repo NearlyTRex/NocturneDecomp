@@ -13,8 +13,8 @@
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00567880 at 00567d0c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eb1a5
-;   undefined4 DAT_005eb1ad
+;   double g_DOUBLE_005eb1a5 = 0.700000000000000
+;   double g_DOUBLE_005eb1ad = 0.400000000000000
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     JNZ 0x005625f0                      ; 005625ce
         ;   XREF to: 005625f0 (CONDITIONAL_JUMP)  ; LAB_005625f0
     FLD float ptr [ESP + 0x10]          ; 005625d0
-    FMUL double ptr [0x005eb1a5]        ; 005625d4 | DAT_005eb1a5
+    FMUL double ptr [0x005eb1a5]        ; 005625d4 | g_DOUBLE_005eb1a5
     FSTP float ptr [ESP]                ; 005625da
         ;   Label: LAB_005625da
     MOV EAX,dword ptr [ESP]             ; 005625dd
@@ -38,7 +38,7 @@ section .text
     RET                                 ; 005625e3
     FLD float ptr [ESP + 0x10]          ; 005625e4
         ;   Label: LAB_005625e4
-    FMUL double ptr [0x005eb1ad]        ; 005625e8 | DAT_005eb1ad
+    FMUL double ptr [0x005eb1ad]        ; 005625e8 | g_DOUBLE_005eb1ad
     JMP 0x005625da                      ; 005625ee
         ;   XREF to: 005625da (UNCONDITIONAL_JUMP)  ; LAB_005625da
     MOV EAX,dword ptr [ESP + 0x10]      ; 005625f0

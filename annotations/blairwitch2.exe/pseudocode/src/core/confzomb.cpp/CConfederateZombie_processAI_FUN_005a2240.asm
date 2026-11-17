@@ -8,21 +8,21 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005efe97
-;   undefined4 DAT_005efe9c
+;   TerminatedCString s_Burn_005efe97
+;   TerminatedCString s_Burn_005efe9c
 ;   TerminatedCString s_Chasing_005efea1
 ;   TerminatedCString s_MeleeAttack_005efea9
 ;   TerminatedCString s_RangeAttack_005efeb5
 ;   TerminatedCString s_Death_005efec1
 ;   TerminatedCString s_Animation_005efec7
-;   undefined4 DAT_005efed1
+;   TerminatedCString s_Burn_005efed1
 ;   TerminatedCString s_Chasing_005efed6
 ;   TerminatedCString s_MeleeAttack_005efede
 ;   TerminatedCString s_ChaseComplete_005efeea
 ;   TerminatedCString s_RangeAttack_005efef8
 ;   TerminatedCString s_ChaseComplete_005eff04
-;   undefined4 DAT_005eff13
-;   undefined4 DAT_005fef90
+;   float g_FLOAT_005eff13 = -1000
+;   float g_FLOAT_005fef90 = 6
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0
@@ -50,7 +50,7 @@ section .text
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a2255
         ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     ADD ESP,0x8                         ; 005a225a
-    PUSH 0x5efe97                       ; 005a225d | DAT_005efe97
+    PUSH 0x5efe97                       ; 005a225d | = "Burn"
     LEA EAX,[EBX + 0x10af8]             ; 005a2262
     PUSH EAX                            ; 005a2268
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a2269
@@ -59,7 +59,7 @@ section .text
     TEST EAX,EAX                        ; 005a2271
     JNZ 0x005a2345                      ; 005a2273
         ;   XREF to: 005a2345 (CONDITIONAL_JUMP)  ; LAB_005a2345
-    PUSH 0x5efe9c                       ; 005a2279 | DAT_005efe9c
+    PUSH 0x5efe9c                       ; 005a2279 | = "Burn"
         ;   Label: LAB_005a2279
     LEA ESI,[EBX + 0x10af8]             ; 005a227e
     PUSH ESI                            ; 005a2284
@@ -89,7 +89,7 @@ section .text
         ;   XREF to: 005a2419 (CONDITIONAL_JUMP)  ; LAB_005a2419
     LEA ESI,[EBX + 0x11354]             ; 005a22cb
         ;   Label: LAB_005a22cb
-    FLD float ptr [0x005eff13]          ; 005a22d1 | DAT_005eff13
+    FLD float ptr [0x005eff13]          ; 005a22d1 | g_FLOAT_005eff13
     FLD float ptr [ESI]                 ; 005a22d7
     FMUL ST1                            ; 005a22d9
     FLD float ptr [ESI + 0x4]           ; 005a22db
@@ -197,7 +197,7 @@ section .text
     TEST EAX,EAX                        ; 005a23e6
     JNZ 0x005a22be                      ; 005a23e8
         ;   XREF to: 005a22be (CONDITIONAL_JUMP)  ; LAB_005a22be
-    PUSH 0x5efed1                       ; 005a23ee | DAT_005efed1
+    PUSH 0x5efed1                       ; 005a23ee | = "Burn"
     PUSH ESI                            ; 005a23f3
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a23f4
         ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
@@ -240,14 +240,14 @@ section .text
     FMUL ST0                            ; 005a2466
     FADDP                               ; 005a2468
     FSQRT                               ; 005a246a
-    FCOMP float ptr [0x005fef90]        ; 005a246c | DAT_005fef90
+    FCOMP float ptr [0x005fef90]        ; 005a246c | g_FLOAT_005fef90
     FNSTSW AX                           ; 005a2472
     SAHF                                ; 005a2474
     JNC 0x005a22cb                      ; 005a2475
         ;   XREF to: 005a22cb (CONDITIONAL_JUMP)  ; LAB_005a22cb
     PUSH 0x5efef8                       ; 005a247b | = "RangeAttack"
     PUSH 0x5eff04                       ; 005a2480 | = "ChaseComplete"
-    FLD float ptr [0x005fef90]          ; 005a2485 | DAT_005fef90
+    FLD float ptr [0x005fef90]          ; 005a2485 | g_FLOAT_005fef90
     PUSH ESI                            ; 005a248b
     FSTP float ptr [EBX + 0x11394]      ; 005a248c
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a2492

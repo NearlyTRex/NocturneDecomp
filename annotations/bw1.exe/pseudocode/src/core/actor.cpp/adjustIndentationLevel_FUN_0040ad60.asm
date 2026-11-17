@@ -18,8 +18,8 @@
 ; Referenced Globals:
 ;   undefined4 DAT_006106be
 ;   undefined1 DAT_006106bf
-;   undefined1 DAT_006106c0
-;   undefined1 DAT_006106c1
+;   char[104] g_CHAR_ARRAY_006106c0
+;   undefined4 g_CHAR_ARRAY_006106c0+1
 ;
 ; *****************************************************************************
 
@@ -27,11 +27,11 @@ section .text
 
     PUSH EDI                            ; 0040ad60
         ;   Label: core_actor.cpp_adjustIndentationLevel_FUN_0040ad60
-    MOV EDI,0x6106c0                    ; 0040ad61 | DAT_006106c0
+    MOV EDI,0x6106c0                    ; 0040ad61 | g_CHAR_ARRAY_006106c0
     SUB ECX,ECX                         ; 0040ad66
     DEC ECX                             ; 0040ad68
     XOR EAX,EAX                         ; 0040ad69
-    SCASB.REPNE ES:EDI                  ; 0040ad6b | DAT_006106c0 | DAT_006106c1
+    SCASB.REPNE ES:EDI                  ; 0040ad6b | g_CHAR_ARRAY_006106c0 | g_CHAR_ARRAY_006106c0+1
     NOT ECX                             ; 0040ad6d
     DEC ECX                             ; 0040ad6f
     MOV EAX,dword ptr [ESP + 0x8]       ; 0040ad70
@@ -41,14 +41,14 @@ section .text
         ;   XREF to: 0040ada2 (CONDITIONAL_JUMP)  ; LAB_0040ada2
     XOR DL,DL                           ; 0040ad7a
         ;   Label: LAB_0040ad7a
-    MOV byte ptr [EAX + 0x6106c0],DL    ; 0040ad7c | DAT_006106c0 | DAT_006106c1
+    MOV byte ptr [EAX + 0x6106c0],DL    ; 0040ad7c | g_CHAR_ARRAY_006106c0 | g_CHAR_ARRAY_006106c0+1
     TEST EAX,EAX                        ; 0040ad82
     JLE 0x0040ada0                      ; 0040ad84
         ;   XREF to: 0040ada0 (CONDITIONAL_JUMP)  ; LAB_0040ada0
     MOV DH,0x9                          ; 0040ad86
     DEC EAX                             ; 0040ad88
         ;   Label: LAB_0040ad88
-    MOV byte ptr [EAX + 0x6106c0],DH    ; 0040ad89 | DAT_006106be | DAT_006106bf | DAT_006106c0
+    MOV byte ptr [EAX + 0x6106c0],DH    ; 0040ad89 | DAT_006106be | DAT_006106bf | g_CHAR_ARRAY_006106c0
     TEST EAX,EAX                        ; 0040ad8f
     JG 0x0040ad88                       ; 0040ad91
         ;   XREF to: 0040ad88 (CONDITIONAL_JUMP)  ; LAB_0040ad88

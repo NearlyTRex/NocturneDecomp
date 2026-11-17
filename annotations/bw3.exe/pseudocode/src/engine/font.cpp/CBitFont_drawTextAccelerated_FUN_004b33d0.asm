@@ -23,15 +23,15 @@
 ;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20 at 004b0a87
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c2100
-;   undefined4 DAT_005c2104
-;   undefined4 DAT_01c6af98
-;   undefined4 DAT_01c6af99
-;   undefined4 DAT_01c6af9a
-;   undefined4 DAT_01d1ad68
-;   undefined4 DAT_01d1ad6c
-;   undefined4 DAT_01d1ad70
-;   undefined4 DAT_01d76c40
+;   float g_FLOAT_005c2100 = 255
+;   float g_FLOAT_005c2104 = -0.5
+;   uchar[768] g_UCHAR_ARRAY_01c6af98
+;   undefined4 g_UCHAR_ARRAY_01c6af98+1
+;   undefined4 g_UCHAR_ARRAY_01c6af98+2
+;   int g_INT_01d1ad68
+;   int g_INT_01d1ad6c
+;   int g_INT_01d1ad70
+;   float g_FLOAT_01d76c40
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -53,16 +53,16 @@ section .text
     CMP EDX,-0x2                        ; 004b33e3
     JNZ 0x004b343f                      ; 004b33e6
         ;   XREF to: 004b343f (CONDITIONAL_JUMP)  ; LAB_004b343f
-    MOV EAX,[0x01d1ad6c]                ; 004b33e8 | DAT_01d1ad6c
-    MOV EDX,dword ptr [0x01d1ad70]      ; 004b33ed | DAT_01d1ad70
-    MOV EBP,dword ptr [0x01d1ad68]      ; 004b33f3 | DAT_01d1ad68
+    MOV EAX,[0x01d1ad6c]                ; 004b33e8 | g_INT_01d1ad6c
+    MOV EDX,dword ptr [0x01d1ad70]      ; 004b33ed | g_INT_01d1ad70
+    MOV EBP,dword ptr [0x01d1ad68]      ; 004b33f3 | g_INT_01d1ad68
     SHL EAX,0x8                         ; 004b33f9
     SHL EBP,0x10                        ; 004b33fc
     OR EAX,EDX                          ; 004b33ff
     OR EBP,EAX                          ; 004b3401
-    FLD float ptr [0x01d76c40]          ; 004b3403 | DAT_01d76c40
+    FLD float ptr [0x01d76c40]          ; 004b3403 | g_FLOAT_01d76c40
         ;   Label: LAB_004b3403
-    FMUL float ptr [0x005c2100]         ; 004b3409 | DAT_005c2100
+    FMUL float ptr [0x005c2100]         ; 004b3409 | g_FLOAT_005c2100
     CALL crt_math.c_round_FUN_005a3120  ; 004b340f
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0xc]         ; 004b3414
@@ -89,11 +89,11 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b3443
     SUB EAX,EDX                         ; 004b344a
     XOR EDX,EDX                         ; 004b344c
-    MOVZX ESI,byte ptr [EAX + 0x1c6af98] ; 004b344e | DAT_01c6af98
-    MOV DL,byte ptr [EAX + 0x1c6af99]   ; 004b3455 | DAT_01c6af99
+    MOVZX ESI,byte ptr [EAX + 0x1c6af98] ; 004b344e | g_UCHAR_ARRAY_01c6af98
+    MOV DL,byte ptr [EAX + 0x1c6af99]   ; 004b3455 | g_UCHAR_ARRAY_01c6af98+1
     SHL ESI,0x10                        ; 004b345b
     SHL EDX,0x8                         ; 004b345e
-    MOVZX EBP,byte ptr [EAX + 0x1c6af9a] ; 004b3461 | DAT_01c6af9a
+    MOVZX EBP,byte ptr [EAX + 0x1c6af9a] ; 004b3461 | g_UCHAR_ARRAY_01c6af98+2
     OR EDX,ESI                          ; 004b3468
     OR EBP,EDX                          ; 004b346a
     JMP 0x004b3403                      ; 004b346c
@@ -148,7 +148,7 @@ section .text
     FILD dword ptr [ESP + 0x1c]         ; 004b34f0
     ADD EAX,EDX                         ; 004b34f4
     LEA EDX,[ESI*0x4 + 0x0]             ; 004b34f6
-    FLD float ptr [0x005c2104]          ; 004b34fd | DAT_005c2104
+    FLD float ptr [0x005c2104]          ; 004b34fd | g_FLOAT_005c2104
     FXCH                                ; 004b3503
     FADD ST0,ST1                        ; 004b3505
     LEA ECX,[EBX + EDX*0x1]             ; 004b3507

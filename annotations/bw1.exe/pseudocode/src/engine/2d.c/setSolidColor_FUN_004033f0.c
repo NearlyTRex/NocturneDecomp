@@ -6,21 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_setSolidColor_FUN_004033f0(int red_component,int green_component,int blue_component)
 
 {
-  _DAT_01c51d24 = green_component;
-  _DAT_01c51d28 = blue_component;
-  _DAT_01c51d20 = red_component;
-  _DAT_01c51d1c = red_component << 0x10 | green_component << 8 | blue_component;
-  if ((DAT_0061b4a0 != 0x10) && (DAT_0061b4a0 == 0x20)) {
-    _DAT_01c51d1c =
-         blue_component << (DAT_01c4e9ec & 0x1f) |
-         red_component << (DAT_01c4e9d4 & 0x1f) | green_component << (DAT_01c4e9e0 & 0x1f);
+  g_INT_01c51d24 = green_component;
+  g_INT_01c51d28 = blue_component;
+  g_INT_01c51d20 = red_component;
+  g_ULONG_01c51d1c = red_component << 0x10 | green_component << 8 | blue_component;
+  if ((g_INT_0061b4a0 != 0x10) && (g_INT_0061b4a0 == 0x20)) {
+    g_ULONG_01c51d1c =
+         blue_component << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
+         red_component << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f) |
+         green_component << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
   }
-  if (_DAT_01c50948 == 0) {
+  if (g_INT_01c50948 == 0) {
     return;
   }
   engine_special_cpp_setFogColor_FUN_005828e0(red_component,green_component,blue_component);

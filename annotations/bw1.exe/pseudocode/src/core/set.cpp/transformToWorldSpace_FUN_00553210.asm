@@ -14,18 +14,18 @@
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00553440 at 005536a0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c51d38
-;   undefined4 DAT_01c51d3c
-;   undefined4 DAT_01c51d40
-;   undefined4 DAT_01d1dd18
-;   undefined4 DAT_01d1dd1c
-;   undefined4 DAT_01d1dd20
-;   undefined4 DAT_01d1dd24
-;   undefined4 DAT_01d1dd28
-;   undefined4 DAT_01d1dd2c
-;   undefined4 DAT_01d1dd30
-;   undefined4 DAT_01d1dd34
-;   undefined4 DAT_01d1dd38
+;   int g_INT_01c51d38
+;   int g_INT_01c51d3c
+;   int g_INT_01c51d40
+;   int g_INT_01d1dd18
+;   int g_INT_01d1dd1c
+;   int g_INT_01d1dd20
+;   int g_INT_01d1dd24
+;   int g_INT_01d1dd28
+;   int g_INT_01d1dd2c
+;   int g_INT_01d1dd30
+;   int g_INT_01d1dd34
+;   int g_INT_01d1dd38
 ;
 ; *****************************************************************************
 
@@ -37,57 +37,57 @@ section .text
     SUB ESP,0xc                         ; 00553212
     MOV ECX,dword ptr [ESP + 0x18]      ; 00553215
     MOV EBX,ESI                         ; 00553219
-    MOV EAX,[0x01d1dd18]                ; 0055321b | DAT_01d1dd18
+    MOV EAX,[0x01d1dd18]                ; 0055321b | g_INT_01d1dd18
     MOV EDX,dword ptr [ECX]             ; 00553220
     IMUL EDX                            ; 00553222
     SHRD EAX,EDX,0x10                   ; 00553224
     MOV ESI,EAX                         ; 00553228
     MOV EDX,dword ptr [ECX + 0x4]       ; 0055322a
-    MOV EAX,[0x01d1dd24]                ; 0055322d | DAT_01d1dd24
+    MOV EAX,[0x01d1dd24]                ; 0055322d | g_INT_01d1dd24
     IMUL EDX                            ; 00553232
     SHRD EAX,EDX,0x10                   ; 00553234
     MOV EDX,dword ptr [ECX + 0x8]       ; 00553238
     ADD ESI,EAX                         ; 0055323b
-    MOV EAX,[0x01d1dd30]                ; 0055323d | DAT_01d1dd30
+    MOV EAX,[0x01d1dd30]                ; 0055323d | g_INT_01d1dd30
     IMUL EDX                            ; 00553242
     SHRD EAX,EDX,0x10                   ; 00553244
-    MOV EDX,dword ptr [0x01c51d38]      ; 00553248 | DAT_01c51d38
+    MOV EDX,dword ptr [0x01c51d38]      ; 00553248 | g_INT_01c51d38
     ADD EAX,ESI                         ; 0055324e
     ADD EDX,EAX                         ; 00553250
-    MOV EAX,[0x01d1dd1c]                ; 00553252 | DAT_01d1dd1c
+    MOV EAX,[0x01d1dd1c]                ; 00553252 | g_INT_01d1dd1c
     MOV dword ptr [ESP],EDX             ; 00553257
     MOV EDX,dword ptr [ECX]             ; 0055325a
     IMUL EDX                            ; 0055325c
     SHRD EAX,EDX,0x10                   ; 0055325e
     MOV ESI,EAX                         ; 00553262
     MOV EDX,dword ptr [ECX + 0x4]       ; 00553264
-    MOV EAX,[0x01d1dd28]                ; 00553267 | DAT_01d1dd28
+    MOV EAX,[0x01d1dd28]                ; 00553267 | g_INT_01d1dd28
     IMUL EDX                            ; 0055326c
     SHRD EAX,EDX,0x10                   ; 0055326e
     MOV EDX,dword ptr [ECX + 0x8]       ; 00553272
     ADD ESI,EAX                         ; 00553275
-    MOV EAX,[0x01d1dd34]                ; 00553277 | DAT_01d1dd34
+    MOV EAX,[0x01d1dd34]                ; 00553277 | g_INT_01d1dd34
     IMUL EDX                            ; 0055327c
     SHRD EAX,EDX,0x10                   ; 0055327e
-    MOV EDX,dword ptr [0x01c51d3c]      ; 00553282 | DAT_01c51d3c
+    MOV EDX,dword ptr [0x01c51d3c]      ; 00553282 | g_INT_01c51d3c
     ADD EAX,ESI                         ; 00553288
     ADD EDX,EAX                         ; 0055328a
-    MOV EAX,[0x01d1dd20]                ; 0055328c | DAT_01d1dd20
+    MOV EAX,[0x01d1dd20]                ; 0055328c | g_INT_01d1dd20
     MOV dword ptr [ESP + 0x4],EDX       ; 00553291
     MOV EDX,dword ptr [ECX]             ; 00553295
     IMUL EDX                            ; 00553297
     SHRD EAX,EDX,0x10                   ; 00553299
     MOV ESI,EAX                         ; 0055329d
     MOV EDX,dword ptr [ECX + 0x4]       ; 0055329f
-    MOV EAX,[0x01d1dd2c]                ; 005532a2 | DAT_01d1dd2c
+    MOV EAX,[0x01d1dd2c]                ; 005532a2 | g_INT_01d1dd2c
     IMUL EDX                            ; 005532a7
     SHRD EAX,EDX,0x10                   ; 005532a9
     MOV EDX,dword ptr [ECX + 0x8]       ; 005532ad
     ADD ESI,EAX                         ; 005532b0
-    MOV EAX,[0x01d1dd38]                ; 005532b2 | DAT_01d1dd38
+    MOV EAX,[0x01d1dd38]                ; 005532b2 | g_INT_01d1dd38
     IMUL EDX                            ; 005532b7
     SHRD EAX,EDX,0x10                   ; 005532b9
-    MOV EDX,dword ptr [0x01c51d40]      ; 005532bd | DAT_01c51d40
+    MOV EDX,dword ptr [0x01c51d40]      ; 005532bd | g_INT_01c51d40
     ADD EAX,ESI                         ; 005532c3
     MOV EDI,EBX                         ; 005532c5
     ADD EDX,EAX                         ; 005532c7

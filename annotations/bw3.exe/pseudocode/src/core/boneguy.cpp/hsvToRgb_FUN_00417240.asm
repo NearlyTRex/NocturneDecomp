@@ -31,8 +31,8 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00417228 = 004172b2
-;   undefined4 DAT_005b6d6a
-;   undefined4 DAT_005b6d72
+;   double g_DOUBLE_005b6d6a = 0.00392156862745098
+;   double g_DOUBLE_005b6d72 = 0.0235294117647059
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005a3600
@@ -138,10 +138,10 @@ section .text
         ;   XREF to: 00417285 (UNCONDITIONAL_JUMP)  ; LAB_00417285
     FLD double ptr [ESP]                ; 0041733f
         ;   Label: LAB_0041733f
-    FMUL double ptr [0x005b6d6a]        ; 00417342 | DAT_005b6d6a
+    FMUL double ptr [0x005b6d6a]        ; 00417342 | g_DOUBLE_005b6d6a
     FLD float ptr [ESP + 0x8]           ; 00417348
     FLD ST0                             ; 0041734c
-    FMUL double ptr [0x005b6d72]        ; 0041734e | DAT_005b6d72
+    FMUL double ptr [0x005b6d72]        ; 0041734e | g_DOUBLE_005b6d72
     FXCH ST2                            ; 00417354
     FSTP float ptr [ESP + 0x30]         ; 00417356
     FXCH                                ; 0041735a

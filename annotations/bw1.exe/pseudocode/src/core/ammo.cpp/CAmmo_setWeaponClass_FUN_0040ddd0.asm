@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040dda4 = 0040de12
-;   undefined4 DAT_005d307c
+;   TerminatedCString s_CGun_005d307c
 ;   TerminatedCString s_gatbullet_kfm_005d3081
 ;   TerminatedCString s_holybullet_kfm_005d308f
 ;   TerminatedCString s_woodbullet_kfm_005d309e
@@ -52,7 +52,7 @@ section .text
     CMP EDI,EBP                         ; 0040dde1
     JNZ 0x0040df3e                      ; 0040dde3
         ;   XREF to: 0040df3e (CONDITIONAL_JUMP)  ; LAB_0040df3e
-    PUSH 0x5d307c                       ; 0040dde9 | DAT_005d307c
+    PUSH 0x5d307c                       ; 0040dde9 | = "CGun"
         ;   Label: LAB_0040dde9
     PUSH EBP                            ; 0040ddee
     CALL crt_string.c__strcmp_FUN_005c0f80 ; 0040ddef

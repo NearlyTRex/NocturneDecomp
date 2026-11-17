@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 145,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 14,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 75,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 301
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 74,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 300
   },
   "cross_references": [
     {
@@ -80,21 +77,21 @@
   "globals": [
     {
       "addr": "005cde18",
-      "name": "DAT_005cde18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005cde18",
+      "type": "float",
+      "value": "0.3500000"
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005fe9dc",
@@ -104,32 +101,32 @@
     },
     {
       "addr": "01549aa0",
-      "name": "DAT_01549aa0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549aa4",
-      "name": "DAT_01549aa4",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa4",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ab4",
-      "name": "DAT_01549ab4",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ab4",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549abc",
-      "name": "DAT_01549abc",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549abc",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c6b5ac",
-      "name": "DAT_01c6b5ac",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
       "value": null
     },
     {
@@ -146,20 +143,20 @@
     },
     {
       "addr": "01dd4890",
-      "name": "DAT_01dd4890",
-      "type": "undefined4",
+      "name": "g_INT_01dd4890",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed3800",
-      "name": "DAT_01ed3800",
-      "type": "undefined4",
+      "name": "g_INT_01ed3800",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed7010",
-      "name": "DAT_01ed7010",
-      "type": "undefined4",
+      "name": "g_FLOAT_01ed7010",
+      "type": "float",
       "value": null
     }
   ],
@@ -320,54 +317,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "iVar7 = DAT_005fba1c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "iVar1 = DAT_005fba18;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (DAT_005fba1c < 0x1e0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr_00 = _DAT_01549abc, _DAT_01dd4890 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 * 9) / 10);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

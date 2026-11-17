@@ -7,7 +7,7 @@
 ; SMRGLAnimatedTexture * Stack[0x4]:4   texture
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5fad0
+;   int g_INT_01c5fad0
 ;
 ; Called Functions:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
@@ -23,7 +23,7 @@ section .text
     PUSH EBP                            ; 00404f13
     SUB ESP,0x18                        ; 00404f14
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00404f17
-    MOV EAX,[0x01c5fad0]                ; 00404f1b | DAT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 00404f1b | g_INT_01c5fad0
     MOV EDX,dword ptr [EBX + 0x14]      ; 00404f20
     ADD EDX,EAX                         ; 00404f23
     MOV ECX,dword ptr [EBX + 0x10]      ; 00404f25

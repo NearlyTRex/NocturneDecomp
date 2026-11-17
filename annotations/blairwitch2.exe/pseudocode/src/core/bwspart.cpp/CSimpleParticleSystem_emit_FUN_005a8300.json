@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 173,
+    "complexity_score": 152,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 8,
+    "pseudocode_lines": 72,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 240
+    "total_lines": 239
   },
   "cross_references": [
     {
@@ -113,19 +111,19 @@
   "globals": [
     {
       "addr": "0265370c",
-      "name": "DAT_0265370c",
-      "type": "undefined4",
+      "name": "g_CVector3f_0265370c",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02653710",
-      "name": "DAT_02653710",
+      "name": "g_CVector3f_0265370c.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02653714",
-      "name": "DAT_02653714",
+      "name": "g_CVector3f_0265370c.z",
       "type": "undefined4",
       "value": null
     }
@@ -443,24 +441,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "if (this_ptr != (CSimpleParticleSystem *)&DAT_0265370c) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)this_ptr->particles + this_ptr->next_particle * 0x60);",
@@ -468,7 +450,15 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 25,
+      "line": 16,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->position).x = g_CVector3f_0265370c.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 23,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->position).x = (pCVar5->location).position.x;",
@@ -476,7 +466,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 55,
+      "line": 53,
       "match": "(CVector3f *)(puVar7 + 0xf)",
       "severity": "moderate",
       "text": "if ((acceleration != (CVector3f *)0x0) && ((CVector3f *)(puVar7 + 0xf) != acceleration)) {",
@@ -484,7 +474,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 56,
+      "line": 54,
       "match": "(CVector3f *)(puVar7 + 0xf)",
       "severity": "moderate",
       "text": "((CVector3f *)(puVar7 + 0xf))->x = acceleration->x;",
@@ -492,7 +482,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 60,
+      "line": 58,
       "match": "(CVector3f *)(puVar7 + 0xc)",
       "severity": "moderate",
       "text": "if ((velocity != (CVector3f *)0x0) && ((CVector3f *)(puVar7 + 0xc) != velocity)) {",
@@ -500,7 +490,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 61,
+      "line": 59,
       "match": "(CVector3f *)(puVar7 + 0xc)",
       "severity": "moderate",
       "text": "((CVector3f *)(puVar7 + 0xc))->x = velocity->x;",

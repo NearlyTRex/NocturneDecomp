@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 107,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 46,
     "suspect_count": 4,
     "suspect_types": [
       "bitcast_double_pair",
+      "signed_shift_global_idiom",
       "sub84_truncation",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 148
+    "total_lines": 147
   },
   "cross_references": [],
   "function": {
@@ -46,9 +46,9 @@
   "globals": [
     {
       "addr": "005df27c",
-      "name": "DAT_005df27c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df27c",
+      "type": "double",
+      "value": "32767.7000000000"
     },
     {
       "addr": "0061d95c",
@@ -58,8 +58,8 @@
     },
     {
       "addr": "01c43530",
-      "name": "DAT_01c43530",
-      "type": "undefined4",
+      "name": "g_INT_01c43530",
+      "type": "int",
       "value": null
     },
     {
@@ -175,16 +175,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 26,
+      "line": 24,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_20 = SUB84(__BITCAST_UINT64((double)fVar2),0);",
@@ -192,7 +184,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 35,
+      "line": 33,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (0.0 < __BITCAST_DOUBLE(CONCAT44(uStack_20,fVar2))) {",
@@ -200,11 +192,19 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).velocity.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 22,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar8 = g_INT_01c43530 >> 0x1f;",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "vtable_info": {

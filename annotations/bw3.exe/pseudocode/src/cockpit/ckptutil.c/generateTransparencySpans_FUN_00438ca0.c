@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00438ca0(void *bitmap_buffer,char *filename,void *span_output,int width,int height,int transparent_color_index)
 
 {
@@ -29,8 +27,8 @@ void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00438ca0(void *bit
   
   if (0xff < (uint)transparent_color_index) {
     _sprintf(acStack_130,"Invalid transparent color index: %d");
-    _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
-    _DAT_01d71de4 = 0x939;
+    g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
+    g_INT_01d71de4 = 0x939;
     core_main_c_displayErrorAndQuit_FUN_004e4330(acStack_130);
   }
   iStack_20 = 0;
@@ -71,8 +69,8 @@ void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00438ca0(void *bit
       }
       if (0xf < iStack_14) {
         _sprintf(acStack_130,"Too many spans: bitmap %s, spans %d, scanline %d");
-        _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
-        _DAT_01d71de4 = 0x969;
+        g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
+        g_INT_01d71de4 = 0x969;
         core_main_c_displayErrorAndQuit_FUN_004e4330(acStack_130);
       }
       if (bVar1) {

@@ -16,8 +16,8 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00532ba9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
 ;
 ; Called Functions:
 ;   engine_2d.c_fillRectColor_FUN_004031c0
@@ -38,7 +38,7 @@ section .text
     CMP dword ptr [ESP + 0x14],0x0      ; 004e000c
     JNZ 0x004e0064                      ; 004e0011
         ;   XREF to: 004e0064 (CONDITIONAL_JUMP)  ; LAB_004e0064
-    CMP dword ptr [0x005fba1c],0x1e0    ; 004e0013 | DAT_005fba1c
+    CMP dword ptr [0x005fba1c],0x1e0    ; 004e0013 | g_INT_005fba1c
         ;   Label: LAB_004e0013
     JNZ 0x004e0061                      ; 004e001d
         ;   XREF to: 004e0061 (CONDITIONAL_JUMP)  ; LAB_004e0061
@@ -73,12 +73,12 @@ section .text
         ;   Label: LAB_004e0061
     POP EBX                             ; 004e0062
     RET                                 ; 004e0063
-    MOV EDX,dword ptr [0x005fba1c]      ; 004e0064 | DAT_005fba1c
+    MOV EDX,dword ptr [0x005fba1c]      ; 004e0064 | g_INT_005fba1c
         ;   Label: LAB_004e0064
     PUSH 0x0                            ; 004e006a
     DEC EDX                             ; 004e006c
     PUSH EDX                            ; 004e006d
-    MOV EDX,dword ptr [0x005fba18]      ; 004e006e | DAT_005fba18
+    MOV EDX,dword ptr [0x005fba18]      ; 004e006e | g_INT_005fba18
     DEC EDX                             ; 004e0074
     PUSH EDX                            ; 004e0075
     PUSH 0x0                            ; 004e0076

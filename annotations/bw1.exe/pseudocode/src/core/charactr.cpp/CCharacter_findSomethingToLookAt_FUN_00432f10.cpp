@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCharacter *this_ptr,float delta_time,int disable_search)
 
@@ -145,7 +144,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
         }
       }
       iStack_2c = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                            (0x01C51D80,"heroCanSee");
+                            (g_CEventList_PTR_0061b4d0,"heroCanSee");
       iStack_24 = 0;
       for (iStack_20 = 0; iStack_20 < g_CDemonSetPtr->character_count; iStack_20 = iStack_20 + 1) {
         pCVar4 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_24);
@@ -172,7 +171,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
               CStack_144.y = (pCVar4->base).location.position.y;
               CStack_144.z = (pCVar4->base).location.position.z;
             }
-            CStack_144.y = CStack_144.y + _DAT_005d5d4f;
+            CStack_144.y = CStack_144.y + 5.5f;
           }
           else {
             core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -221,8 +220,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
             afStack_b0[(uint)bVar8 * -2] = *(float *)((int)&CStack_1bc + (uint)bVar8 * -8 + 4);
             afStack_b0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                  *(float *)((int)&CStack_1bc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-            if ((ABS(afStack_b0[0]) <= (float)_DAT_005d5d77) &&
-               (ABS(fStack_b4) <= (float)_DAT_005d5d7f)) {
+            if ((ABS(afStack_b0[0]) <= (float)1.2217304763611101) &&
+               (ABS(fStack_b4) <= (float)0.87266462597222205)) {
               fStack_248 = 10.0;
               pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
                                  (&pCVar4->base,g_CEnemyClassInfo.name_hash);
@@ -230,19 +229,19 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
                  (fStack_248 = 30.0, (CCharacter *)pCVar3[0x90].validation_magic == this_ptr)) {
                 fStack_248 = 40.0;
               }
-              if ((fStack_248 < (float)_DAT_005d5d87) &&
+              if ((fStack_248 < (float)10) &&
                  (iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(&pCVar4->base,"CHero"),
                  iVar2 != 0)) {
                 fStack_248 = 15.0;
               }
-              fStack_248 = ((float)_DAT_005d5d8f / (SQRT(fStack_244) + (float)_DAT_005d5d8f)) *
-                           fStack_248;
+              fStack_248 = ((float)20 / (SQRT(fStack_244) + (float)20)
+                           ) * fStack_248;
               if (pCVar4 == this_ptr->look_at_candidate) {
-                fStack_248 = fStack_248 * (float)_DAT_005d5d47;
+                fStack_248 = fStack_248 * (float)1.1000000000000001;
               }
               if (((pCVar3 != (CDemonActor *)0x0) &&
                   (pCVar3[0x90].orient_matrix.m[2].x == 1.4013e-45)) ||
-                 (_DAT_005d5d97 <= fStack_248)) {
+                 (-1.0f <= fStack_248)) {
                 core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
                 core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,&this_ptr->base);
                 core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,&pCVar4->base);
@@ -343,7 +342,7 @@ LAB_0043370e:
             fStack_68 = (pCStack_30->base).location.position.y;
             fStack_64 = (pCStack_30->base).location.position.z;
           }
-          fStack_68 = fStack_68 + _DAT_005d5d4f;
+          fStack_68 = fStack_68 + 5.5f;
         }
         else {
           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -413,30 +412,30 @@ LAB_0043370e:
       afStack_1d0[3] = afStack_1d0[0];
       uStack_1c0 = afStack_1d0[1];
     }
-    if ((float)_DAT_005d5d57 < ABS(afStack_1d0[3])) {
+    if ((float)1.3962634015555599 < ABS(afStack_1d0[3])) {
       this_ptr->look_at_candidate = (CCharacter *)0x0;
     }
-    if ((float)_DAT_005d5d5f < ABS(afStack_1d0[2])) {
+    if ((float)0.78539816337500001 < ABS(afStack_1d0[2])) {
       this_ptr->look_at_candidate = (CCharacter *)0x0;
       goto LAB_00432fb1;
     }
   }
   if (this_ptr->look_at_candidate != (CCharacter *)0x0) {
-    fVar6 = delta_time / _DAT_005d5d67 + this_ptr->look_at_weight;
+    fVar6 = delta_time / 0.5f + this_ptr->look_at_weight;
     this_ptr->look_at_weight = fVar6;
     if (1.0 < fVar6) {
       this_ptr->look_at_weight = 1.0;
     }
     fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                           (afStack_1d0[3] - this_ptr->look_at_yaw);
-    this_ptr->look_at_yaw = fStack_18 * (float)_DAT_005d5d6f + this_ptr->look_at_yaw;
+    this_ptr->look_at_yaw = fStack_18 * (float)0.40000000000000002 + this_ptr->look_at_yaw;
     fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_1d0[2] - this_ptr->look_at_pitch)
     ;
-    this_ptr->look_at_pitch = fVar6 * (float)_DAT_005d5d6f + this_ptr->look_at_pitch;
+    this_ptr->look_at_pitch = fVar6 * (float)0.40000000000000002 + this_ptr->look_at_pitch;
     return;
   }
 LAB_00432fb1:
-  fVar6 = this_ptr->look_at_weight - delta_time / _DAT_005d5d67;
+  fVar6 = this_ptr->look_at_weight - delta_time / 0.5f;
   this_ptr->look_at_weight = fVar6;
   if (fVar6 < 0.0) {
     this_ptr->look_at_pitch = 0.0;

@@ -14,16 +14,16 @@ SUMMARY STATISTICS
   Total functions analyzed:          5,183
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     29 ( 0.6%)
-  Functions with type issues:        1,218 (23.5%)
+  Functions with type issues:        1,221 (23.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   4
     Missing register params:           3
-    Wrong calling convention:          156
+    Wrong calling convention:          158
     Undefined types in variables:      974
-    Unresolved stack params:           218
+    Unresolved stack params:           222
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -250,7 +250,7 @@ Missing register parameters (likely wrong calling convention) (3)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (156)
+Wrong calling convention (unaffected register usage) (158)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -637,6 +637,12 @@ Wrong calling convention (unaffected register usage) (156)
     Signature: CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004966f0(CFilmProjector *this_ptr,CBoundingBox3D *out_box)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
+  CFlame_renderTransparent
+    Address: 0x004a6090  File: core/flame.cpp
+    Evidence: unaff_EBP, unaff_EDI, unaff_EDI, unaff_EBP
+    Signature: int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_ptr)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
   CFlameCan_process
     Address: 0x004a7160  File: core/flamecan.cpp
     Evidence: unaff_ESI, unaff_ESI
@@ -671,6 +677,12 @@ Wrong calling convention (unaffected register usage) (156)
     Address: 0x004bfb50  File: core/game.cpp
     Evidence: unaff_EDI, unaff_EDI
     Signature: void __cdecl core_game_cpp_CGame_displayActStats_FUN_004bfb50(CGame *this_ptr)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CGame_processPointAndClickControls
+    Address: 0x004c07b0  File: core/game.cpp
+    Evidence: unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX
+    Signature: void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame *this_ptr,SPlayerInput *player_control)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CGoggles_getBoundingBox
@@ -1190,7 +1202,7 @@ Wrong calling convention (unaffected register usage) (156)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (218)
+Unresolved stack parameters (missing from signature) (222)
 --------------------------------------------------------------------------------
 
   clipAndDrawLine
@@ -1363,7 +1375,7 @@ Unresolved stack parameters (missing from signature) (218)
 
   CCarved_process
     Address: 0x00425da0  File: core/carved.cpp
-    Evidence: in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38
+    Evidence: in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb44, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb44, in_stack_fffffb44, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb44, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb40, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38, in_stack_fffffb38
     Signature: void __cdecl core_carved_cpp_CCarved_process_FUN_00425da0(CCarved *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -1501,7 +1513,7 @@ Unresolved stack parameters (missing from signature) (218)
 
   CDemnfolk_process
     Address: 0x00455080  File: core/demnfolk.cpp
-    Evidence: in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9c4, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc
+    Evidence: in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9c4, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9c4, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc, in_stack_fffff9bc
     Signature: void __cdecl core_demnfolk_cpp_CDemnfolk_process_FUN_00455080(CDemnfolk *this_ptr,float param_2)
     Suggested: Signature is missing stack parameters entirely
 
@@ -1781,6 +1793,12 @@ Unresolved stack parameters (missing from signature) (218)
     Signature: void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *this_ptr,int enable)
     Suggested: Signature is missing stack parameters entirely
 
+  CGame_processHotkeys
+    Address: 0x004ba540  File: core/game.cpp
+    Evidence: in_stack_000000a4, in_stack_000000a4, in_stack_000000a4
+    Signature: void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004ba540(CGame *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
   CGame_beginFadeOut
     Address: 0x004bd660  File: core/game.cpp
     Evidence: in_stack_ffffff54, in_stack_ffffff54
@@ -1795,7 +1813,7 @@ Unresolved stack parameters (missing from signature) (218)
 
   CGame_processPointAndClickControls
     Address: 0x004c07b0  File: core/game.cpp
-    Evidence: in_stack_fffff798, in_stack_fffff798, in_stack_fffff798, in_stack_fffff798, in_stack_fffff798, in_stack_fffff798
+    Evidence: in_stack_fffff7e8, in_stack_fffff7f0, in_stack_fffff7f8, in_stack_fffff7e8, in_stack_fffff7e8, in_stack_fffff7f0, in_stack_fffff7e8, in_stack_fffff7e8, in_stack_fffff7e8, in_stack_fffff7f0, in_stack_fffff7f0, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f0, in_stack_fffff7f0, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f0, in_stack_fffff7f0, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f8, in_stack_fffff7f0, in_stack_fffff7f0, in_stack_fffff7f0, in_stack_fffff7f0
     Signature: void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame *this_ptr,SPlayerInput *player_control)
     Suggested: Signature is missing stack parameters entirely
 
@@ -1807,7 +1825,7 @@ Unresolved stack parameters (missing from signature) (218)
 
   CGhoul_process
     Address: 0x004c6eb0  File: core/ghoul.cpp
-    Evidence: in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb30, in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb30, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28
+    Evidence: in_stack_fffffb28, in_stack_fffffb2c, in_stack_fffffb30, in_stack_fffffb34, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb2c, in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb34, in_stack_fffffb2c, in_stack_fffffb34, in_stack_fffffb30, in_stack_fffffb28, in_stack_fffffb30, in_stack_fffffb2c, in_stack_fffffb2c, in_stack_fffffb28, in_stack_fffffb2c, in_stack_fffffb30, in_stack_fffffb34, in_stack_fffffb30, in_stack_fffffb2c, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb34, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb34, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb2c, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28, in_stack_fffffb28
     Signature: void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004c6eb0(CGhoul *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2141,6 +2159,12 @@ Unresolved stack parameters (missing from signature) (218)
     Signature: void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(CDemonSet *this_ptr,uint dirty_flags_mask)
     Suggested: Signature is missing stack parameters entirely
 
+  CDemonSet_setupMirrorRendering
+    Address: 0x0053adf0  File: core/set.cpp
+    Evidence: in_stack_ffffffbc, in_stack_ffffffbc
+    Signature: void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(CDemonSet *this_ptr,int mirror_index,int enable_flag)
+    Suggested: Signature is missing stack parameters entirely
+
   CDemonSet_buildMirrorList
     Address: 0x0053afa0  File: core/set.cpp
     Evidence: in_stack_ffffffbc, in_stack_ffffffbc, in_stack_ffffffbc
@@ -2235,6 +2259,12 @@ Unresolved stack parameters (missing from signature) (218)
     Address: 0x0055acd0  File: sound/snddx.cpp
     Evidence: in_stack_fffffcd0, in_stack_fffffcd0
     Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_0055acd0(CDirectSoundDevice *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDirectSoundDevice_applySfxChanges
+    Address: 0x0055c0f0  File: sound/snddx.cpp
+    Evidence: in_stack_ffffecec, in_stack_ffffecec, in_stack_ffffecec, in_stack_ffffecec, in_stack_ffffecec, in_stack_ffffecec
+    Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)
     Suggested: Signature is missing stack parameters entirely
 
   CWavInDevice_setMode
@@ -2425,7 +2455,7 @@ Unresolved stack parameters (missing from signature) (218)
 
   CZombie_process
     Address: 0x00588ee0  File: core/zombie.cpp
-    Evidence: in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44
+    Evidence: in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa4c, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44, in_stack_fffffa44
     Signature: void __cdecl core_zombie_cpp_CZombie_process_FUN_00588ee0(CZombie *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2467,7 +2497,7 @@ Unresolved stack parameters (missing from signature) (218)
 
   CMattanntote_process
     Address: 0x00591f30  File: core/mattnntt.cpp
-    Evidence: in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffcec, in_stack_fffffcf0, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce4, in_stack_fffffcec, in_stack_fffffcf0, in_stack_fffffcec, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcec, in_stack_fffffcec, in_stack_fffffcf0, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce4, in_stack_fffffce4, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce0, in_stack_fffffce4
+    Evidence: in_stack_fffffcec, in_stack_fffffcf0, in_stack_fffffcf8, in_stack_fffffcec, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf8, in_stack_fffffcf8, in_stack_fffffcf8, in_stack_fffffcec, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf8, in_stack_fffffcf0, in_stack_fffffcf8, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf8, in_stack_fffffcf8, in_stack_fffffcf0, in_stack_fffffcf8, in_stack_fffffcf8, in_stack_fffffcf8, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf8, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcf0, in_stack_fffffcec, in_stack_fffffcec
     Signature: void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2493,6 +2523,12 @@ Unresolved stack parameters (missing from signature) (218)
     Address: 0x0059d120  File: core/hino.cpp
     Evidence: in_stack_ffffffa0, in_stack_ffffffa0, in_stack_ffffffa0
     Signature: int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CStylerDemon_process
+    Address: 0x0059e600  File: core/styldemo.cpp
+    Evidence: in_stack_fffffcac, in_stack_fffffcb0, in_stack_fffffcb8, in_stack_fffffcac, in_stack_fffffcb0, in_stack_fffffcac, in_stack_fffffcac, in_stack_fffffcb0, in_stack_fffffcb8
+    Signature: void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CAsgaya_renderTransparent

@@ -13,9 +13,9 @@
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00541a60 at 00541b95
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.suppress_set_geometry
 ;   undefined4 g_CGameInstance.render_mode
@@ -39,8 +39,8 @@ section .text
     CMP dword ptr [EAX + 0x210],0x0     ; 00534050 | g_CGameInstance.render_mode
     JZ 0x0053406c                       ; 00534057
         ;   XREF to: 0053406c (CONDITIONAL_JUMP)  ; LAB_0053406c
-    MOV EBX,dword ptr [0x0060b280]      ; 00534059 | DAT_0060b280
-    PUSH EBX                            ; 0053405f | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 00534059 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 0053405f | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00534060
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00534065
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 00534075
     MOV ECX,dword ptr [ESP + 0x18]      ; 00534076
     PUSH ECX                            ; 0053407a
-    MOV EBX,dword ptr [0x0060b280]      ; 0053407b | DAT_0060b280
-    PUSH EBX                            ; 00534081 | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 0053407b | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 00534081 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046bff0 ; 00534082
         ;   XREF to: 0046bff0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)
     ADD ESP,0x10                        ; 00534087

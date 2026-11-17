@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c3da0(CGhoul *this_ptr,CVector3f *out_point)
 
 {
@@ -24,7 +22,7 @@ CVector3f * __stack_esi core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c3da0(CGhoul
   
   bVar5 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
-            (&(this_ptr->base).base.model,_DAT_01cb821c,&CStack_54);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_01cb821c[0],&CStack_54);
   pCVar2 = &CStack_54;
   pCVar3 = &CStack_84;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

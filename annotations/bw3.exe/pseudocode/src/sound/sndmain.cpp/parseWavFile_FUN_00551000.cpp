@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00551000(CInStream *stream,int *file_offset_ptr,CSfxSample *sfx_sample)
 
 {
@@ -91,8 +89,8 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00551000(CInStream *stream,int *f
                   (sfx_sample->sample_info).bit_depth = 4;
                 }
                 else {
-                  _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-                  _DAT_01d71de4 = 0x213;
+                  g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+                  g_INT_01d71de4 = 0x213;
                   core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
                 }
                 goto LAB_005511ed;
@@ -120,8 +118,8 @@ LAB_005511ed:
                     (sfx_sample->sample_info).num_channels = (uint)uStack_22;
                     iVar1 = (sfx_sample->sample_info).streaming_flag;
                     if ((iVar1 != 0) && (iVar1 != 2)) {
-                      _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-                      _DAT_01d71de4 = 0x238;
+                      g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+                      g_INT_01d71de4 = 0x238;
                       core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
                     }
                     (sfx_sample->sample_info).sample_count =

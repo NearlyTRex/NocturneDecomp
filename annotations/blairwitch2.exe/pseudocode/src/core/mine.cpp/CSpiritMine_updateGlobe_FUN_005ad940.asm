@@ -10,8 +10,8 @@
 ;   core_mine.cpp_CSpiritMine_process_FUN_005ad530 at 005ad56d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0eef
-;   undefined4 DAT_005f0ef3
+;   float g_FLOAT_005f0eef = 2
+;   double g_DOUBLE_005f0ef3 = 32768
 ;
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860
@@ -35,7 +35,7 @@ section .text
     FLD float ptr [EDX + 0x4]           ; 005ad955
     MOV dword ptr [ESP],EAX             ; 005ad958
     MOV EAX,dword ptr [EDX + 0x8]       ; 005ad95b
-    FADD float ptr [0x005f0eef]         ; 005ad95e | DAT_005f0eef
+    FADD float ptr [0x005f0eef]         ; 005ad95e | g_FLOAT_005f0eef
     MOV dword ptr [ESP + 0x8],EAX       ; 005ad964
     FSTP float ptr [ESP + 0x4]          ; 005ad968
     MOVSD ES:EDI,ESI                    ; 005ad96c
@@ -48,7 +48,7 @@ section .text
     FLD1                                ; 005ad985
     FSUBRP                              ; 005ad987
     PUSH EAX                            ; 005ad989
-    FMUL double ptr [0x005f0ef3]        ; 005ad98a | DAT_005f0ef3
+    FMUL double ptr [0x005f0ef3]        ; 005ad98a | g_DOUBLE_005f0ef3
     PUSH EBX                            ; 005ad990
     CALL crt_math.c_round_FUN_005b7ff0  ; 005ad991
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)

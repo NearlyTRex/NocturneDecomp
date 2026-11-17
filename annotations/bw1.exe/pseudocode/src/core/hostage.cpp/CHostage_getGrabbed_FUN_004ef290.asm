@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   grab_type
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
@@ -46,7 +46,7 @@ section .text
     ADD ESP,0xc                         ; 004ef2d8
     LEA EAX,[EBX + 0x1fc6c]             ; 004ef2db
     PUSH EAX                            ; 004ef2e1
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004ef2e2 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004ef2e2 | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 004ef2e8
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004ef2e9
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

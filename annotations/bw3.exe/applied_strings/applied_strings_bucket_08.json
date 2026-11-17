@@ -184,20 +184,28 @@
     "value":"..\\core\\actor.cpp"
   },
   {
-    "addr":"005b5618",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":12,
-    "type":"TerminatedCString",
-    "value":"@CHolycross"
-  },
-  {
     "addr":"005b5a78",
     "charset":"US-ASCII",
     "importable":true,
     "len":9,
     "type":"TerminatedCString",
     "value":"%f,%f,%f"
+  },
+  {
+    "addr":"005b5af8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"%s%d"
+  },
+  {
+    "addr":"005b5c48",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"%s}\n"
   },
   {
     "addr":"005b5cb8",
@@ -240,6 +248,14 @@
     "value":"CAlphaBitmap::load - Can't open %s"
   },
   {
+    "addr":"005b6148",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"CGun"
+  },
+  {
     "addr":"005b6188",
     "charset":"US-ASCII",
     "importable":true,
@@ -254,6 +270,14 @@
     "len":12,
     "type":"TerminatedCString",
     "value":"LAND_GROUND"
+  },
+  {
+    "addr":"005b6668",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":7,
+    "type":"TerminatedCString",
+    "value":"pitch2"
   },
   {
     "addr":"005b66f8",
@@ -344,36 +368,12 @@
     "value":"boxListPos"
   },
   {
-    "addr":"005b7508",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":11,
-    "type":"TerminatedCString",
-    "value":"GmodelName"
-  },
-  {
     "addr":"005b7588",
     "charset":"US-ASCII",
     "importable":true,
     "len":11,
     "type":"TerminatedCString",
     "value":"groundType"
-  },
-  {
-    "addr":"005b7668",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":7,
-    "type":"TerminatedCString",
-    "value":"?CHero"
-  },
-  {
-    "addr":"005b7738",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":21,
-    "type":"TerminatedCString",
-    "value":"?wp_disease_loop.wav"
   },
   {
     "addr":"005b7798",
@@ -496,6 +496,14 @@
     "value":"..\\cockpit\\ckptutil.c"
   },
   {
+    "addr":"005b8ed8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"art"
+  },
+  {
     "addr":"005b8f78",
     "charset":"US-ASCII",
     "importable":true,
@@ -560,6 +568,14 @@
     "value":"Bip01 R UpperArm"
   },
   {
+    "addr":"005b9528",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"rarm"
+  },
+  {
     "addr":"005b9778",
     "charset":"US-ASCII",
     "importable":true,
@@ -590,14 +606,6 @@
     "len":13,
     "type":"TerminatedCString",
     "value":"Bip01 Spine2"
-  },
-  {
-    "addr":"005b9ab8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":13,
-    "type":"TerminatedCString",
-    "value":"?curtainSize"
   },
   {
     "addr":"005b9b58",
@@ -696,6 +704,14 @@
     "value":"whatEvent"
   },
   {
+    "addr":"005bac58",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
+  },
+  {
     "addr":"005bada8",
     "charset":"US-ASCII",
     "importable":true,
@@ -776,20 +792,28 @@
     "value":"Invalid bitsPerPixel!"
   },
   {
+    "addr":"005bc3f8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%s"
+  },
+  {
+    "addr":"005bc428",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%s"
+  },
+  {
     "addr":"005bc5e8",
     "charset":"US-ASCII",
     "importable":true,
     "len":22,
     "type":"TerminatedCString",
     "value":"..\\engine\\drender.cpp"
-  },
-  {
-    "addr":"005bc7a8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":13,
-    "type":"TerminatedCString",
-    "value":"ANITESKY.RAW"
   },
   {
     "addr":"005bc888",
@@ -824,6 +848,30 @@
     "value":"paintWindowBackground called but no window was opened!"
   },
   {
+    "addr":"005bce98",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"^No"
+  },
+  {
+    "addr":"005bcef8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"*.*"
+  },
+  {
+    "addr":"005bcfe8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%f"
+  },
+  {
     "addr":"005bd008",
     "charset":"US-ASCII",
     "importable":true,
@@ -832,12 +880,36 @@
     "value":"Please enter a valid integer between %g and %g."
   },
   {
+    "addr":"005bd038",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"%.15g"
+  },
+  {
+    "addr":"005bd288",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":"j"
+  },
+  {
     "addr":"005bd598",
     "charset":"US-ASCII",
     "importable":true,
     "len":30,
     "type":"TerminatedCString",
     "value":"CStrList::set - invalid index"
+  },
+  {
+    "addr":"005bda28",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"none"
   },
   {
     "addr":"005bdaa8",
@@ -886,6 +958,22 @@
     "len":16,
     "type":"TerminatedCString",
     "value":"wp_exorcism.wav"
+  },
+  {
+    "addr":"005bddb8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":"<"
+  },
+  {
+    "addr":"005bddc8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%d"
   },
   {
     "addr":"005bdec8",
@@ -1104,6 +1192,14 @@
     "value":"%s is not a valid boolean actor variable name"
   },
   {
+    "addr":"005bfe98",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%s\n"
+  },
+  {
     "addr":"005bfee8",
     "charset":"US-ASCII",
     "importable":true,
@@ -1184,12 +1280,28 @@
     "value":"wp_disease_loop.wav"
   },
   {
+    "addr":"005c0af8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":12,
+    "type":"TerminatedCString",
+    "value":"f_staff.kfm"
+  },
+  {
     "addr":"005c0c48",
     "charset":"US-ASCII",
     "importable":true,
     "len":10,
     "type":"TerminatedCString",
     "value":"intensity"
+  },
+  {
+    "addr":"005c0cb8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":10,
+    "type":"TerminatedCString",
+    "value":"modelName"
   },
   {
     "addr":"005c1218",
@@ -1224,6 +1336,14 @@
     "value":"%*[^\n]\n"
   },
   {
+    "addr":"005c1838",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"\"\n"
+  },
+  {
     "addr":"005c18b8",
     "charset":"US-ASCII",
     "importable":true,
@@ -1238,6 +1358,14 @@
     "len":21,
     "type":"TerminatedCString",
     "value":"..\\core\\fldnotes.cpp"
+  },
+  {
+    "addr":"005c19a8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%2X"
   },
   {
     "addr":"005c1af8",
@@ -1272,6 +1400,22 @@
     "value":"RIC-DT.WAV"
   },
   {
+    "addr":"005c1de8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"art"
+  },
+  {
+    "addr":"005c1fc8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
+  },
+  {
     "addr":"005c1ff8",
     "charset":"US-ASCII",
     "importable":true,
@@ -1294,6 +1438,14 @@
     "len":33,
     "type":"TerminatedCString",
     "value":"Movie recording active: movie\\%s"
+  },
+  {
+    "addr":"005c2218",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":8,
+    "type":"TerminatedCString",
+    "value":"%d - %s"
   },
   {
     "addr":"005c2248",
@@ -1432,6 +1584,30 @@
     "value":"Gratuitous dismemberment enabled"
   },
   {
+    "addr":"005c3558",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"sav"
+  },
+  {
+    "addr":"005c38a8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"art"
+  },
+  {
+    "addr":"005c39d8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":21,
+    "type":"TerminatedCString",
+    "value":"gFilterFX->process()"
+  },
+  {
     "addr":"005c3a48",
     "charset":"US-ASCII",
     "importable":true,
@@ -1446,6 +1622,14 @@
     "len":21,
     "type":"TerminatedCString",
     "value":"simulate : %3.2f ms\n"
+  },
+  {
+    "addr":"005c3a88",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"sav"
   },
   {
     "addr":"005c3b18",
@@ -1552,6 +1736,30 @@
     "value":"dockwinx.raw"
   },
   {
+    "addr":"005c4548",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":10,
+    "type":"TerminatedCString",
+    "value":"glassSize"
+  },
+  {
+    "addr":"005c45f8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":9,
+    "type":"TerminatedCString",
+    "value":"CGoggles"
+  },
+  {
+    "addr":"005c4878",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"mt"
+  },
+  {
     "addr":"005c48e8",
     "charset":"US-ASCII",
     "importable":true,
@@ -1632,28 +1840,20 @@
     "value":"CGabriella"
   },
   {
+    "addr":"005c5188",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"CDoc"
+  },
+  {
     "addr":"005c52c8",
     "charset":"US-ASCII",
     "importable":true,
     "len":17,
     "type":"TerminatedCString",
     "value":"Bip01 R UpperArm"
-  },
-  {
-    "addr":"005c53d8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":7,
-    "type":"TerminatedCString",
-    "value":"?speed"
-  },
-  {
-    "addr":"005c5428",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":14,
-    "type":"TerminatedCString",
-    "value":"@hotdemon.dfm"
   },
   {
     "addr":"005c5468",
@@ -1696,6 +1896,14 @@
     "value":"head01"
   },
   {
+    "addr":"005c56a8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rt"
+  },
+  {
     "addr":"005c5748",
     "charset":"US-ASCII",
     "importable":true,
@@ -1718,6 +1926,14 @@
     "len":18,
     "type":"TerminatedCString",
     "value":"..\\engine\\ini.cpp"
+  },
+  {
+    "addr":"005c58c8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%lg"
   },
   {
     "addr":"005c59a8",
@@ -1904,6 +2120,14 @@
     "value":"Edit key settings"
   },
   {
+    "addr":"005c7cf8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"Fire"
+  },
+  {
     "addr":"005c7dc8",
     "charset":"US-ASCII",
     "importable":true,
@@ -1944,6 +2168,14 @@
     "value":"CDemonMission::createHeros - too many network players for MAX_HERO"
   },
   {
+    "addr":"005c8f88",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rb"
+  },
+  {
     "addr":"005c91b8",
     "charset":"US-ASCII",
     "importable":true,
@@ -1952,12 +2184,44 @@
     "value":"%s confused while walking to scriptDest!\n"
   },
   {
+    "addr":"005c9808",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%s\n"
+  },
+  {
+    "addr":"005c98a8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
+  },
+  {
     "addr":"005c98d8",
     "charset":"US-ASCII",
     "importable":true,
     "len":54,
     "type":"TerminatedCString",
     "value":"// motion %d: \"name\",fps,state,frameStart,frameCount\n"
+  },
+  {
+    "addr":"005c9a28",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":7,
+    "type":"TerminatedCString",
+    "value":"%d,%g\n"
+  },
+  {
+    "addr":"005c9b58",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%d"
   },
   {
     "addr":"005c9ed8",
@@ -2008,14 +2272,6 @@
     "value":"Connection refused - already in the game"
   },
   {
-    "addr":"005ca5b8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":25,
-    "type":"TerminatedCString",
-    "value":"?Initializing network..."
-  },
-  {
     "addr":"005ca688",
     "charset":"US-ASCII",
     "importable":true,
@@ -2024,12 +2280,12 @@
     "value":"Couldn't contact server to disconnect."
   },
   {
-    "addr":"005ca838",
+    "addr":"005cab98",
     "charset":"US-ASCII",
     "importable":true,
-    "len":31,
+    "len":3,
     "type":"TerminatedCString",
-    "value":"?Received join request from %s"
+    "value":"IP"
   },
   {
     "addr":"005cb078",
@@ -2048,6 +2304,22 @@
     "value":"..\\core\\netgame.cpp"
   },
   {
+    "addr":"005cb568",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":6,
+    "type":"TerminatedCString",
+    "value":"STAND"
+  },
+  {
+    "addr":"005cb598",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"RUN"
+  },
+  {
     "addr":"005cb5b8",
     "charset":"US-ASCII",
     "importable":true,
@@ -2064,12 +2336,28 @@
     "value":"%s_%d"
   },
   {
+    "addr":"005cb648",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"HURT"
+  },
+  {
     "addr":"005cb8d8",
     "charset":"US-ASCII",
     "importable":true,
     "len":16,
     "type":"TerminatedCString",
     "value":"Out of bounds4!"
+  },
+  {
+    "addr":"005cb8e8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%s"
   },
   {
     "addr":"005cba58",
@@ -2086,6 +2374,14 @@
     "len":40,
     "type":"TerminatedCString",
     "value":"saveScreenRaw32 - Unable to open output"
+  },
+  {
+    "addr":"005cbac8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"true"
   },
   {
     "addr":"005cbb88",
@@ -2174,6 +2470,14 @@
     "len":57,
     "type":"TerminatedCString",
     "value":"realloc returns NULL shrinking filenameBlockSize to fit."
+  },
+  {
+    "addr":"005cca38",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
   },
   {
     "addr":"005ccdb8",
@@ -2344,46 +2648,6 @@
     "value":"Script breakpoint reached at line %d"
   },
   {
-    "addr":"005ce688",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":6,
-    "type":"TerminatedCString",
-    "value":"dbSay"
-  },
-  {
-    "addr":"005ce698",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":30,
-    "type":"TerminatedCString",
-    "value":"Error parsing dbSay arguments"
-  },
-  {
-    "addr":"005ce6b8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":28,
-    "type":"TerminatedCString",
-    "value":"[Can't find %s in database]"
-  },
-  {
-    "addr":"005cea38",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":8,
-    "type":"TerminatedCString",
-    "value":", %d %n"
-  },
-  {
-    "addr":"005cec28",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":53,
-    "type":"TerminatedCString",
-    "value":"Undefined label %s used in goto statement on line %d"
-  },
-  {
     "addr":"005ceee8",
     "charset":"US-ASCII",
     "importable":true,
@@ -2424,6 +2688,14 @@
     "value":"setSayTimeOverride"
   },
   {
+    "addr":"005cf828",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":9,
+    "type":"TerminatedCString",
+    "value":"%[^,],%n"
+  },
+  {
     "addr":"005cf918",
     "charset":"US-ASCII",
     "importable":true,
@@ -2448,12 +2720,52 @@
     "value":"..\\core\\script.cpp"
   },
   {
+    "addr":"005cfaa8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"else"
+  },
+  {
+    "addr":"005cfb58",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"rt"
+  },
+  {
+    "addr":"005cfb88",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":2,
+    "type":"TerminatedCString",
+    "value":" "
+  },
+  {
     "addr":"005cfc98",
     "charset":"US-ASCII",
     "importable":true,
     "len":6,
     "type":"TerminatedCString",
     "value":"sound"
+  },
+  {
+    "addr":"005cfec8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%g\n"
+  },
+  {
+    "addr":"005cff18",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
   },
   {
     "addr":"005cffc8",
@@ -2488,12 +2800,28 @@
     "value":"guardDistance"
   },
   {
+    "addr":"005d0168",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%f\n"
+  },
+  {
     "addr":"005d0178",
     "charset":"US-ASCII",
     "importable":true,
     "len":13,
     "type":"TerminatedCString",
     "value":"%f,%f,%f,%f\n"
+  },
+  {
+    "addr":"005d01c8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"ndun"
   },
   {
     "addr":"005d01d8",
@@ -2518,6 +2846,14 @@
     "len":10,
     "type":"TerminatedCString",
     "value":"%f,%f,%f\n"
+  },
+  {
+    "addr":"005d0248",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"ndun"
   },
   {
     "addr":"005d02b8",
@@ -2550,6 +2886,22 @@
     "len":25,
     "type":"TerminatedCString",
     "value":"// Camera ambient light\n"
+  },
+  {
+    "addr":"005d0968",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
+  },
+  {
+    "addr":"005d0d18",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"%d\n"
   },
   {
     "addr":"005d0d38",
@@ -2688,6 +3040,14 @@
     "value":"Invalid length %d in %s line %d"
   },
   {
+    "addr":"005d2858",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"loop"
+  },
+  {
     "addr":"005d2d48",
     "charset":"US-ASCII",
     "importable":true,
@@ -2742,6 +3102,14 @@
     "len":46,
     "type":"TerminatedCString",
     "value":"setNextSfxChannel - invalid channel index: %d"
+  },
+  {
+    "addr":"005d3768",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"%s"
   },
   {
     "addr":"005d3f98",
@@ -2800,6 +3168,14 @@
     "value":"WavOutDevice::poll - NULL pointer??"
   },
   {
+    "addr":"005d5278",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"ext"
+  },
+  {
     "addr":"005d5288",
     "charset":"US-ASCII",
     "importable":true,
@@ -2832,6 +3208,14 @@
     "value":"HALLWAY"
   },
   {
+    "addr":"005d54a8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":7,
+    "type":"TerminatedCString",
+    "value":"_spawn"
+  },
+  {
     "addr":"005d5518",
     "charset":"US-ASCII",
     "importable":true,
@@ -2848,6 +3232,22 @@
     "value":"APIDLLgetVideoMemory"
   },
   {
+    "addr":"005d5b18",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":5,
+    "type":"TerminatedCString",
+    "value":"none"
+  },
+  {
+    "addr":"005d5ca8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":13,
+    "type":"TerminatedCString",
+    "value":"CTempleStone"
+  },
+  {
     "addr":"005d5ed8",
     "charset":"US-ASCII",
     "importable":true,
@@ -2862,6 +3262,14 @@
     "len":22,
     "type":"TerminatedCString",
     "value":"..\\engine\\texture.cpp"
+  },
+  {
+    "addr":"005d62c8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"art"
   },
   {
     "addr":"005d6388",
@@ -3096,6 +3504,14 @@
     "value":"CZombiePriest"
   },
   {
+    "addr":"005d8a08",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":20,
+    "type":"TerminatedCString",
+    "value":"bwp3_zombpriest.dfm"
+  },
+  {
     "addr":"005d8a88",
     "charset":"US-ASCII",
     "importable":true,
@@ -3160,20 +3576,12 @@
     "value":"mann_stand.wav"
   },
   {
-    "addr":"005d93b8",
+    "addr":"005d9408",
     "charset":"US-ASCII",
     "importable":true,
-    "len":7,
+    "len":5,
     "type":"TerminatedCString",
-    "value":"?speed"
-  },
-  {
-    "addr":"005d96a8",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":7,
-    "type":"TerminatedCString",
-    "value":"@speed"
+    "value":"type"
   },
   {
     "addr":"005d9718",
@@ -3208,6 +3616,14 @@
     "value":"STAND"
   },
   {
+    "addr":"005d9958",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"RUN"
+  },
+  {
     "addr":"005d9a48",
     "charset":"US-ASCII",
     "importable":true,
@@ -3224,12 +3640,28 @@
     "value":"STAND"
   },
   {
+    "addr":"005d9aa8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"RUN"
+  },
+  {
     "addr":"005d9af8",
     "charset":"US-ASCII",
     "importable":true,
     "len":12,
     "type":"TerminatedCString",
     "value":"CSpiritBear"
+  },
+  {
+    "addr":"005d9b98",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":10,
+    "type":"TerminatedCString",
+    "value":"modelName"
   },
   {
     "addr":"005d9c88",
@@ -3254,14 +3686,6 @@
     "len":7,
     "type":"TerminatedCString",
     "value":"Bridge"
-  },
-  {
-    "addr":"005d9f28",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":7,
-    "type":"TerminatedCString",
-    "value":"?speed"
   },
   {
     "addr":"005d9fd8",
@@ -3326,6 +3750,14 @@
     "len":30,
     "type":"TerminatedCString",
     "value":"pure virtual function called!"
+  },
+  {
+    "addr":"005da6d8",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"con"
   },
   {
     "addr":"005da728",
@@ -3416,12 +3848,28 @@
     "value":"The instruction at 0x00000000 caused an invalid operation floating point\nexception.\n"
   },
   {
+    "addr":"005dae08",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":4,
+    "type":"TerminatedCString",
+    "value":"log"
+  },
+  {
     "addr":"005dae18",
     "charset":"US-ASCII",
     "importable":true,
     "len":6,
     "type":"TerminatedCString",
     "value":"atan2"
+  },
+  {
+    "addr":"005dae38",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":3,
+    "type":"TerminatedCString",
+    "value":"y1"
   },
   {
     "addr":"005dae48",
@@ -3462,6 +3910,14 @@
     "len":13,
     "type":"TerminatedCString",
     "value":"C_FILE_INFO="
+  },
+  {
+    "addr":"005daf78",
+    "charset":"US-ASCII",
+    "importable":true,
+    "len":9,
+    "type":"TerminatedCString",
+    "value":"__bgnthd"
   },
   {
     "addr":"005f0938",
@@ -3576,28 +4032,12 @@
     "value":"$CCrate$$"
   },
   {
-    "addr":"005f1838",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":12,
-    "type":"TerminatedCString",
-    "value":"BACKGND.RAW"
-  },
-  {
     "addr":"005f1918",
     "charset":"US-ASCII",
     "importable":true,
     "len":13,
     "type":"TerminatedCString",
     "value":"$CFilterFX$$"
-  },
-  {
-    "addr":"005f2848",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":12,
-    "type":"TerminatedCString",
-    "value":"SUNMARK.RAW"
   },
   {
     "addr":"005f2908",
@@ -3654,14 +4094,6 @@
     "len":13,
     "type":"TerminatedCString",
     "value":"spectralFlag"
-  },
-  {
-    "addr":"005fde78",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":10,
-    "type":"TerminatedCString",
-    "value":"GLOW1.RAW"
   },
   {
     "addr":"005fdfc8",
@@ -3936,14 +4368,6 @@
     "value":"$CWater$$"
   },
   {
-    "addr":"00607248",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":13,
-    "type":"TerminatedCString",
-    "value":"REDSPARK.RAW"
-  },
-  {
     "addr":"006072e8",
     "charset":"US-ASCII",
     "importable":true,
@@ -3966,14 +4390,6 @@
     "len":12,
     "type":"TerminatedCString",
     "value":"$CKedward$$"
-  },
-  {
-    "addr":"00607398",
-    "charset":"US-ASCII",
-    "importable":true,
-    "len":13,
-    "type":"TerminatedCString",
-    "value":"REDSPARK.RAW"
   },
   {
     "addr":"006073d8",

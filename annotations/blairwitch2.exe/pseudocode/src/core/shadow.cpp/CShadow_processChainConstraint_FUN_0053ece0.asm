@@ -42,8 +42,8 @@
 ;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053c954
 ;
 ; Referenced Globals:
-;   undefined4 s_Chain_stretched_to_f_005e679b+2
-;   undefined4 DAT_005e67b5
+;   TerminatedCString s_Chain_stretched_to_f_005e679d
+;   double g_DOUBLE_005e67b5 = 2
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
 ;
@@ -117,7 +117,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053ed6d
     ADD ESP,0x8                         ; 0053ed6e
     FLD float ptr [EBP + -0xa]          ; 0053ed71
-    FCOMP double ptr [0x005e67b5]       ; 0053ed74 | DAT_005e67b5
+    FCOMP double ptr [0x005e67b5]       ; 0053ed74 | g_DOUBLE_005e67b5
     FNSTSW AX                           ; 0053ed7a
     SAHF                                ; 0053ed7c
     JC 0x0053eea1                       ; 0053ed7d
@@ -155,7 +155,7 @@ section .text
     SUB ESP,0x8                         ; 0053edcc
     FST float ptr [EBP + 0x66]          ; 0053edcf
     FSTP double ptr [ESP]               ; 0053edd2
-    PUSH 0x5e679d                       ; 0053edd5 | s_Chain_stretched_to_f_005e679b+2
+    PUSH 0x5e679d                       ; 0053edd5 | = "Chain stretched to %f\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 0053edda | g_CConsolePtr
     PUSH EDX                            ; 0053ede0 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0053ede1

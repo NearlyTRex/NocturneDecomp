@@ -22,15 +22,15 @@ void __cdecl shape_edittool_cpp_CStrList_populateRecursive_FUN_00481ca0(CStrList
   char acStack_108 [12];
   char acStack_fc [236];
   
-  engine_dosio_cpp_resolveRelativePath_FUN_00461260(relative_dir,(char *)0x5d2864,acStack_218);
+  engine_dosio_cpp_resolveRelativePath_FUN_00461260(relative_dir,"*",acStack_218);
   engine_dosio_cpp_resolveRelativePath_FUN_00461260(base_path,acStack_20c,acStack_108);
   engine_dosio_cpp_CFileFinder_ctor_FUN_00460e10((CFileFinder *)&stack0xfffffae4);
   engine_dosio_cpp_CFileFinder_openSearch_FUN_00460e50((CFileFinder *)&stack0xfffffae4,acStack_fc);
   cVar2 = (char)in_stack_fffffae4;
   while (cVar2 != '\0') {
-    iVar1 = _strcmp(&stack0xfffffae4,(char *)0x5d2866);
+    iVar1 = _strcmp(&stack0xfffffae4,".");
     if ((iVar1 != 0) &&
-       (iVar1 = _strcmp(&stack0xfffffae4,(char *)0x5d2868), iVar1 != 0)) {
+       (iVar1 = _strcmp(&stack0xfffffae4,".."), iVar1 != 0)) {
       if ((bStack_41c & 4) == 0) {
         iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840(file_pattern,&stack0xfffffae4,0)
         ;

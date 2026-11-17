@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)
 
 {
@@ -30,8 +28,8 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton *this_pt
   if (assert_if_not_found == 0) {
     return -1;
   }
-  _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-  _DAT_01d046a4 = 0x178;
+  g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+  g_INT_01d046a4 = 0x178;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Can't find bone %s in skeleton %s!");
   return -1;
 }

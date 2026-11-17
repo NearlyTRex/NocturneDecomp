@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_004fcfa0(SMpegFrame *frame)
 
 {
@@ -25,7 +23,7 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_004fcfa0(SMpegFrame 
           frame->channel_count;
   iVar4 = frame->sblimit;
   dVar6 = round
-                    (*(double *)(&DAT_006011b8 + pSVar2->sampling_rate_index * 8 + iVar3 * 0x20));
+                    (g_DOUBLE_ARRAY_006011b8[iVar3 * 4 + pSVar2->sampling_rate_index]);
   iVar1 = (int)ROUND(dVar6);
   if (iVar3 == 1) {
     if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {
@@ -50,8 +48,8 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_004fcfa0(SMpegFrame 
   else if (frame->table_index == 4) {
     return iVar4;
   }
-  _DAT_01d71de0 = "..\\sound\\mp3.cpp";
-  _DAT_01d71de4 = 0x1d8;
+  g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
+  g_INT_01d71de4 = 0x1d8;
   core_main_c_displayErrorAndQuit_FUN_004e4330("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
   return iVar4;
 }

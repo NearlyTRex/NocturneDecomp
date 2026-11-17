@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   undefined4 DAT_01d22c40
-;   undefined4 DAT_01d22c44
-;   undefined4 DAT_01d22c4c
+;   int g_INT_01d22c40
+;   int g_INT_01d22c44
+;   int g_INT_01d22c4c
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047ea10
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [0x005fb140]      ; 004b3d8c | g_CEditorToolsPtr
     XOR EDX,EDX                         ; 004b3d92
     PUSH EBX                            ; 004b3d94
-    MOV dword ptr [0x01d22c44],EDX      ; 004b3d95 | DAT_01d22c44
-    MOV dword ptr [0x01d22c4c],EDX      ; 004b3d9b | DAT_01d22c4c
+    MOV dword ptr [0x01d22c44],EDX      ; 004b3d95 | g_INT_01d22c44
+    MOV dword ptr [0x01d22c4c],EDX      ; 004b3d9b | g_INT_01d22c4c
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047ea10 ; 004b3da1
         ;   XREF to: 0047ea10 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047ea10(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004b3da6
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 0047ce80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0047ce80(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 004b3e3a
     ADD ESP,0x8                         ; 004b3e3f
-    MOV dword ptr [0x01d22c40],EDX      ; 004b3e42 | DAT_01d22c40
+    MOV dword ptr [0x01d22c40],EDX      ; 004b3e42 | g_INT_01d22c40
     POP EBP                             ; 004b3e48
     POP EDI                             ; 004b3e49
     POP ESI                             ; 004b3e4a

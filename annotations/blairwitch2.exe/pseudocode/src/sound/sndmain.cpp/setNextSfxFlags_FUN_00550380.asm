@@ -14,13 +14,13 @@
 ;   core_sound.cpp_processTrainSounds_FUN_00559b50 at 00559c55
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264161c
+;   int g_INT_0264161c
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264161c]      ; 00550380 | DAT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 00550380 | g_INT_0264161c
         ;   Label: sound_sndmain.cpp_setNextSfxFlags_FUN_00550380
     LEA EAX,[EDX*0x4 + 0x0]             ; 00550386
     SUB EAX,EDX                         ; 0055038d

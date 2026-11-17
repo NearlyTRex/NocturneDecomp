@@ -8,13 +8,13 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_BVanishAttack_005f02e0+2
+;   TerminatedCString s_VanishAttack_005f02e2
 ;   TerminatedCString s_ChaseComplete_005f02ef
 ;   TerminatedCString s_Chasing_005f02fd
 ;   TerminatedCString s_Chasing_005f0305
-;   undefined4 DAT_005f030e
-;   undefined4 DAT_005ff540
-;   undefined4 DAT_005ff544
+;   float g_FLOAT_005f030e = 2
+;   float g_FLOAT_005ff540 = 8
+;   float g_FLOAT_005ff544 = 2
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -70,13 +70,13 @@ section .text
     FSQRT                               ; 005a428e
     LEA ESI,[EBX + 0x10af8]             ; 005a4290
     FST float ptr [ESP + 0x4]           ; 005a4296
-    FCOMP float ptr [0x005ff540]        ; 005a429a | DAT_005ff540
+    FCOMP float ptr [0x005ff540]        ; 005a429a | g_FLOAT_005ff540
     FNSTSW AX                           ; 005a42a0
     SAHF                                ; 005a42a2
     JA 0x005a42c0                       ; 005a42a3
         ;   XREF to: 005a42c0 (CONDITIONAL_JUMP)  ; LAB_005a42c0
-    FLD float ptr [0x005ff544]          ; 005a42a5 | DAT_005ff544
-    FADD float ptr [0x005f030e]         ; 005a42ab | DAT_005f030e
+    FLD float ptr [0x005ff544]          ; 005a42a5 | g_FLOAT_005ff544
+    FADD float ptr [0x005f030e]         ; 005a42ab | g_FLOAT_005f030e
     FCOMP float ptr [ESP + 0x4]         ; 005a42b1
     FNSTSW AX                           ; 005a42b5
     SAHF                                ; 005a42b7
@@ -88,10 +88,10 @@ section .text
     POP ESI                             ; 005a42bd
     POP EBX                             ; 005a42be
     RET                                 ; 005a42bf
-    PUSH 0x5f02e2                       ; 005a42c0 | s_BVanishAttack_005f02e0+2
+    PUSH 0x5f02e2                       ; 005a42c0 | = "VanishAttack"
         ;   Label: LAB_005a42c0
     PUSH 0x5f02ef                       ; 005a42c5 | = "ChaseComplete"
-    FLD float ptr [0x005ff540]          ; 005a42ca | DAT_005ff540
+    FLD float ptr [0x005ff540]          ; 005a42ca | g_FLOAT_005ff540
     PUSH ESI                            ; 005a42d0
     FSTP float ptr [EBX + 0x11394]      ; 005a42d1
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a42d7
@@ -111,7 +111,7 @@ section .text
         ;   XREF to: 005a42ba (UNCONDITIONAL_JUMP)  ; LAB_005a42ba
     PUSH 0x3dcccccd                     ; 005a42fd
         ;   Label: LAB_005a42fd
-    FLD float ptr [0x005ff544]          ; 005a4302 | DAT_005ff544
+    FLD float ptr [0x005ff544]          ; 005a4302 | g_FLOAT_005ff544
     PUSH ESI                            ; 005a4308
     FSTP float ptr [EBX + 0x11394]      ; 005a4309
     CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005a430f

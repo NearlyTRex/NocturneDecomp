@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
 
 {
@@ -63,31 +61,31 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
       local_7c[1] = 0.0;
       if (((0.0 < SQRT(local_7c[2] * local_7c[2] + local_7c[0] * local_7c[0])) ||
           (local_54[3] < (this_ptr->physics_box).linear_velocity.y)) &&
-         ((float)_DAT_005c0760 < this_ptr->fuse_time - this_ptr->fuse_timer)) {
+         ((float)0.25 < this_ptr->fuse_time - this_ptr->fuse_timer)) {
         iVar5 = this_ptr->toss_type;
         position = &this_ptr->physics_box;
         if (iVar5 == 1) {
           core_fire_cpp_CFireEffect_createRing_FUN_004a3f70
-                    (0x01C73654,&position->position,1,(CCharacter *)0x0);
+                    (g_CFireEffect_PTR_005fc5a0,&position->position,1,(CCharacter *)0x0);
           core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                    (0x02CF5680,(CDemonActor *)this_ptr,"wp_bindevil.wav",
+                    (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_bindevil.wav",
                      &position->position);
           this_ptr->fuse_timer = 0.0;
         }
         else if (iVar5 == 2) {
           core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0
-                    (0x01C73654,&position->position,8.0,100.0,4.0,3);
+                    (g_CFireEffect_PTR_005fc5a0,&position->position,8.0,100.0,4.0,3);
           core_fire_cpp_spawnDiseaseBugs_FUN_0049cca0(&position->position);
           this_ptr->fuse_timer = 0.0;
         }
         else if (iVar5 == 3) {
           iVar5 = 0;
           core_fire_cpp_CFireEffect_createStormEffect_FUN_004a3fd0
-                    (0x01C73654,(this_ptr->physics_box).position);
+                    (g_CFireEffect_PTR_005fc5a0,(this_ptr->physics_box).position);
           do {
             iVar5 = iVar5 + 1;
             core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
-                      (0x01C73654,&position->position,(CVector3f *)0x0);
+                      (g_CFireEffect_PTR_005fc5a0,&position->position,(CVector3f *)0x0);
           } while (iVar5 < 0x10);
           this_ptr->fuse_timer = 0.0;
         }
@@ -97,11 +95,11 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
         return;
       }
       this_ptr_00 = &this_ptr->model;
-      local_70.x = _DAT_02cfd900;
+      local_70.x = g_CVector3f_02cfd900.x;
       *(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4) =
-           *(uint *)(&DAT_02cfd904 + (uint)bVar6 * -8);
+           *(uint *)((int)&g_CVector3f_02cfd900 + (uint)bVar6 * -8 + 4);
       *(uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-           *(uint *)(&DAT_02cfd908 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+           *(uint *)((uint)bVar6 * -8 + 0x2cfd908 + (uint)bVar6 * -8);
       pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr_00);
       local_70.z = local_70.z + (pCVar3->bounds).max.z;
       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
@@ -123,35 +121,35 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
         local_70.z = local_64.z;
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                (0x01C73654,&local_70,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,&local_70,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
       return;
     }
     switch(this_ptr->toss_type) {
     case 0:
       core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0
-                (0x01C73654,&(this_ptr->physics_box).position,16.0,100.0,4.0,0);
+                (g_CFireEffect_PTR_005fc5a0,&(this_ptr->physics_box).position,16.0,100.0,4.0,0);
       sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
       break;
     case 1:
       core_fire_cpp_CFireEffect_createRing_FUN_004a3f70
-                (0x01C73654,&(this_ptr->physics_box).position,1,(CCharacter *)0x0);
+                (g_CFireEffect_PTR_005fc5a0,&(this_ptr->physics_box).position,1,(CCharacter *)0x0);
       core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                (0x02CF5680,(CDemonActor *)this_ptr,"wp_bindevil.wav",
+                (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_bindevil.wav",
                  &(this_ptr->physics_box).position);
       return;
     case 2:
       core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0
-                (0x01C73654,&(this_ptr->physics_box).position,8.0,100.0,4.0,3);
+                (g_CFireEffect_PTR_005fc5a0,&(this_ptr->physics_box).position,8.0,100.0,4.0,3);
       core_fire_cpp_spawnDiseaseBugs_FUN_0049cca0(&(this_ptr->physics_box).position);
       return;
     case 3:
       core_fire_cpp_CFireEffect_createStormEffect_FUN_004a3fd0
-                (0x01C73654,(this_ptr->physics_box).position);
+                (g_CFireEffect_PTR_005fc5a0,(this_ptr->physics_box).position);
       iVar5 = 0;
       do {
         iVar5 = iVar5 + 1;
         core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
-                  (0x01C73654,&(this_ptr->physics_box).position,(CVector3f *)0x0);
+                  (g_CFireEffect_PTR_005fc5a0,&(this_ptr->physics_box).position,(CVector3f *)0x0);
       } while (iVar5 < 0x10);
       return;
     }

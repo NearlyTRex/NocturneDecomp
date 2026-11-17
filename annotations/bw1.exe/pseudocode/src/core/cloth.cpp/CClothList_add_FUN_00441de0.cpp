@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CClothList_add_FUN_00441de0(CClothList *this_ptr,char *filename)
 
 {
@@ -15,8 +13,8 @@ void __cdecl core_cloth_cpp_CClothList_add_FUN_00441de0(CClothList *this_ptr,cha
   char (*pacVar2) [40];
   
   if (9 < this_ptr->count) {
-    _DAT_01d1d400 = "..\\core\\cloth.cpp";
-    _DAT_01d1d404 = 0x5de;
+    g_CHAR_PTR_01d1d400 = "..\\core\\cloth.cpp";
+    g_INT_01d1d404 = 0x5de;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CClothList::add - list is full");
   }
   pacVar2 = this_ptr->filenames + this_ptr->count;

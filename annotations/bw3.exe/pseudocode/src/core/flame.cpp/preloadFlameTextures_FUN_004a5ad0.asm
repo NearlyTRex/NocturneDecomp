@@ -12,9 +12,9 @@
 ;   core_flame.cpp_CFlame_setup_FUN_004a5aa0 at 004a5ab5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   undefined4 DAT_005fde88
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -36,8 +36,8 @@ section .text
     ADD ESI,0xc0                        ; 004a5aeb
     PUSH EBX                            ; 004a5af1
         ;   Label: LAB_004a5af1
-    MOV EDX,dword ptr [0x005f2afc]      ; 004a5af2 | DAT_005f2afc
-    PUSH EDX                            ; 004a5af8 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004a5af2 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004a5af8 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a5af9
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004a5afe

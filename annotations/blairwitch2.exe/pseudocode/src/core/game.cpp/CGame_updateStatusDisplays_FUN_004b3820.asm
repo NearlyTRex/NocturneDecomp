@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b659c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cb807c
+;   float g_FLOAT_01cb807c
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005ba1f0
@@ -46,8 +46,8 @@ section .text
         ;   XREF to: 004b38ff (CONDITIONAL_JUMP)  ; LAB_004b38ff
     FLD float ptr [EBX + 0x284]         ; 004b384e
         ;   Label: LAB_004b384e
-    FSUBR float ptr [0x01cb807c]        ; 004b3854 | DAT_01cb807c
-    FST float ptr [0x01cb807c]          ; 004b385a | DAT_01cb807c
+    FSUBR float ptr [0x01cb807c]        ; 004b3854 | g_FLOAT_01cb807c
+    FST float ptr [0x01cb807c]          ; 004b385a | g_FLOAT_01cb807c
     FLDZ                                ; 004b3860
     FCOMPP                              ; 004b3862
     FNSTSW AX                           ; 004b3864
@@ -55,7 +55,7 @@ section .text
     JBE 0x004b3871                      ; 004b3867
         ;   XREF to: 004b3871 (CONDITIONAL_JUMP)  ; LAB_004b3871
     XOR EDX,EDX                         ; 004b3869
-    MOV dword ptr [0x01cb807c],EDX      ; 004b386b | DAT_01cb807c
+    MOV dword ptr [0x01cb807c],EDX      ; 004b386b | g_FLOAT_01cb807c
     MOV ECX,dword ptr [EBX + 0x3ac]     ; 004b3871
         ;   Label: LAB_004b3871
     XOR ESI,ESI                         ; 004b3877

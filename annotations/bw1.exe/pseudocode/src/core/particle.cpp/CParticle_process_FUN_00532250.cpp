@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_particle_cpp_CParticle_process_FUN_00532250(CParticle *this_ptr)
 
 {
@@ -116,10 +114,10 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00532250(CParticle *this_pt
         afStack_d8[(uint)bVar4 * -2 + 6] = local_9c[(uint)bVar4 * -2];
         afStack_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
              local_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-        local_88.velocity.x = local_c4 * _DAT_005ec7f5;
-        local_88.velocity.y = local_c0 * _DAT_005ec7f5;
-        local_88.velocity.z = local_bc * _DAT_005ec7f5;
-        local_f4 = local_c4 * _DAT_005ec7f5;
+        local_88.velocity.x = local_c4 * 0.8f;
+        local_88.velocity.y = local_c0 * 0.8f;
+        local_88.velocity.z = local_bc * 0.8f;
+        local_f4 = local_c4 * 0.8f;
         local_f0[(uint)bVar4 * -2] = local_48[(uint)bVar4 * -2 + -0xc];
         local_f0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
              local_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -0xb];
@@ -139,7 +137,8 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00532250(CParticle *this_pt
         if (iVar2 == 0) {
           pCVar1 = &this_ptr->velocity;
           fStack_24 = (local_ac.z * (this_ptr->velocity).z +
-                      local_ac.x * pCVar1->x + local_ac.y * (this_ptr->velocity).y) * _DAT_005ec7f9;
+                      local_ac.x * pCVar1->x + local_ac.y * (this_ptr->velocity).y) *
+                      2.0f;
           local_88.lifetime_remaining = local_ac.x * fStack_24;
           local_88.is_in_solid = (int)(local_ac.y * fStack_24);
           local_88.previous_position.x = local_ac.z * fStack_24;
@@ -160,9 +159,9 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00532250(CParticle *this_pt
             (this_ptr->velocity).z = local_88.acceleration.z;
           }
           pCVar1 = &this_ptr->velocity;
-          fStack_118 = pCVar1->x * _DAT_005ec7fd;
-          afStack_114[0] = (this_ptr->velocity).y * _DAT_005ec7fd;
-          afStack_114[1] = (this_ptr->velocity).z * _DAT_005ec7fd;
+          fStack_118 = pCVar1->x * -0.7f;
+          afStack_114[0] = (this_ptr->velocity).y * -0.7f;
+          afStack_114[1] = (this_ptr->velocity).z * -0.7f;
           afStack_d8[2] = fStack_118;
           afStack_d8[(uint)bVar4 * -2 + 3] = afStack_114[(uint)bVar4 * -2];
           afStack_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =

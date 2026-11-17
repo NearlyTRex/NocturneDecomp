@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 99,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memset",
       "unrolled_strcpy"
     ],
@@ -40,38 +39,38 @@
   "globals": [
     {
       "addr": "005c8375",
-      "name": "DAT_005c8375",
-      "type": "undefined1",
+      "name": "s_fangs_005c8375",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c8376",
-      "name": "DAT_005c8376",
-      "type": "undefined1",
+      "name": "s_angs_005c8375+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c8377",
-      "name": "DAT_005c8377",
-      "type": "undefined1",
+      "name": "s_ngs_005c8375+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c8378",
-      "name": "DAT_005c8378",
-      "type": "undefined1",
+      "name": "s_gs_005c8375+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d882a0",
-      "name": "DAT_01d882a0",
-      "type": "undefined4",
+      "name": "g_CHAR_01d882a0",
+      "type": "char",
       "value": null
     },
     {
       "addr": "01d88308",
-      "name": "DAT_01d88308",
-      "type": "undefined4",
+      "name": "g_CHAR_01d88308",
+      "type": "char",
       "value": null
     },
     {
@@ -181,30 +180,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005c8375",
-      "severity": "mild",
-      "text": "pcVar2 = &DAT_005c8375;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01d88308",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_01d88308;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01d882a0",
-      "severity": "mild",
-      "text": "DAT_01d882a0 = 0;",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 21,

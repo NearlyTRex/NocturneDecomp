@@ -2,25 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 526,
+    "complexity_score": 218,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 37,
+    "pseudocode_lines": 113,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
-      "unknown_field",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 384
+    "total_lines": 386
   },
   "cross_references": [],
   "function": {
@@ -100,26 +96,26 @@
   "globals": [
     {
       "addr": "005c0978",
-      "name": "DAT_005c0978",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c0978",
+      "type": "double",
+      "value": "4"
     },
     {
       "addr": "005df8e4",
-      "name": "DAT_005df8e4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005df8e4",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005fdbdc",
-      "name": "DAT_005fdbdc",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_005fdbdc",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
@@ -130,104 +126,104 @@
     },
     {
       "addr": "0060b02c",
-      "name": "DAT_0060b02c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b030",
-      "name": "DAT_0060b030",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b040",
-      "name": "DAT_0060b040",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b05c",
-      "name": "DAT_0060b05c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b060",
-      "name": "DAT_0060b060",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b070",
-      "name": "DAT_0060b070",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b08c",
-      "name": "DAT_0060b08c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b090",
-      "name": "DAT_0060b090",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0a0",
-      "name": "DAT_0060b0a0",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0bc",
-      "name": "DAT_0060b0bc",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0c0",
-      "name": "DAT_0060b0c0",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0d0",
-      "name": "DAT_0060b0d0",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007e2a54",
-      "name": "DAT_007e2a54",
-      "type": "undefined4",
+      "name": "g_CDemonCamera_PTR_007e2a54",
+      "type": "CDemonCamera*",
       "value": null
     },
     {
       "addr": "00800000",
-      "name": "DAT_00800000",
+      "name": "g_CHAR_ARRAY_007fa464+0x5b9c",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c6e24c",
-      "name": "DAT_01c6e24c",
-      "type": "undefined4",
+      "name": "g_INT_01c6e24c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c73664",
-      "name": "DAT_01c73664",
-      "type": "undefined4",
+      "name": "g_CVector3i_01c73664",
+      "type": "CVector3i",
       "value": null
     },
     {
@@ -323,52 +319,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
+      "line": 9,
       "match": "aiStackY_1020",
       "severity": "moderate",
       "text": "int aiStackY_1020 [983];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "vertex_ptr = DAT_005f2afc->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046e6b0(DAT_005f2afc,vertex_ptr);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)this_ptr);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&CStack_20);",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -379,196 +335,20 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3i *)auStack_38,rotation);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_80);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_74);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_44);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fdbdc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_005fdbdc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fdbdc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 84,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))(DAT_007e2a54,this_ptr,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_007e2a54",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))(DAT_007e2a54,this_ptr,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_007e2a54",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))(DAT_007e2a54,this_ptr,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_0060b02c",
-      "severity": "mild",
-      "text": "DAT_0060b02c = 0x800000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_0060b090",
-      "severity": "mild",
-      "text": "DAT_0060b090 = 0x900000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_0060b040",
-      "severity": "mild",
-      "text": "DAT_0060b040 = (int)ROUND(dVar3);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 100,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "auStack_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * _DAT_005df8e4);",
+      "text": "auStack_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_0060b070",
-      "severity": "mild",
-      "text": "DAT_0060b070 = DAT_0060b040;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_0060b040",
-      "severity": "mild",
-      "text": "DAT_0060b070 = DAT_0060b040;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_0060b040",
-      "severity": "mild",
-      "text": "_DAT_0060b0a0 = DAT_0060b040;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_0060b040",
-      "severity": "mild",
-      "text": "_DAT_0060b0d0 = DAT_0060b040;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_0060b040",
-      "severity": "mild",
-      "text": "CStack_20.z = DAT_0060b040;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_01c73664",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,(CVector3i *)(auStack_38 + 8),(CVector3i *)&DAT_01c73664,0,4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 112,
       "match": "&stack0xffffff54",
       "severity": "moderate",
-      "text": "(DAT_005f2afc,(SMRGLHeaderPrimitive *)&stack0xffffff54);",
+      "text": "(g_CDemonRenderer_PTR_005f2afc,(SMRGLHeaderPrimitive *)&stack0xffffff54);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLHeaderPrimitive *)&stack0xffffff54);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&CStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -585,22 +365,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0xdc0000 assigned to bare local `_DAT_0060b030`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b030` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 88,
-      "match": "0xdc0000",
-      "severity": "moderate",
-      "text": "_DAT_0060b030 = 0xdc0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xdc0000 assigned to bare local `_DAT_0060b060`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b060` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 89,
-      "match": "0xdc0000",
-      "severity": "moderate",
-      "text": "_DAT_0060b060 = 0xdc0000;",
-      "type": "raw_address_constant"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

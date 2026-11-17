@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_0049dc70(CEdCheck *this_ptr)
 
 {
@@ -31,12 +29,12 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_0049dc70(CEdCheck *this_ptr)
   iVar3 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_0049dc20(this_ptr);
   text = (char *)(iVar1 + iVar3);
   text_string = this_ptr->checkbox_text;
-  engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50(_DAT_01c3eb50,text_string);
+  engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50(g_CBitFont_PTR_01c3eb50,text_string);
   color_mode = -1;
   iVar3 = this_ptr->text_color_mode;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_0049dc50(this_ptr);
   engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
-            (_DAT_01c3eb50,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);
+            (g_CBitFont_PTR_01c3eb50,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);
   shape_edittool_cpp_draw3DBorder_FUN_0049c500
             (left,iVar1,iVar2,unaff_EBX,this_ptr->border_style_flag);
   if (this_ptr->border_style_flag == 0) {
@@ -48,12 +46,13 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_0049dc70(CEdCheck *this_ptr)
     left = left + 1;
   }
   if (this_ptr->checked_state == 1) {
-    if (_DAT_01c3f544 == 0) {
-      _DAT_01c4f020 = _DAT_01c3f544;
+    if (g_INT_01c3f544 == 0) {
+      g_INT_01c4f020 = g_INT_01c3f544;
     }
     else {
       engine_mini3d_cpp_setColor_FUN_00517d50
-                ((uint)DAT_01c4e9fa | (uint)DAT_01c4e9f9 << 8 | (uint)DAT_01c4e9f8 << 0x10);
+                ((uint)g_UCHAR_ARRAY_01c4e9f8[2] |
+                 (uint)g_UCHAR_ARRAY_01c4e9f8[1] << 8 | (uint)g_UCHAR_ARRAY_01c4e9f8[0] << 0x10);
     }
     engine_2d_c_clipLineGlobal_FUN_00402ca0(left + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);
     engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,left + 1,unaff_EBX + -2);

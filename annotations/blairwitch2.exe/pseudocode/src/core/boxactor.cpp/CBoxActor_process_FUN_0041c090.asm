@@ -14,12 +14,12 @@
 ;   core_necklace.cpp_CNecklace_process_FUN_005adad0 at 005adaec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cc519
-;   undefined4 DAT_005cc51d
-;   undefined4 DAT_005cc521
-;   undefined4 DAT_005cc529
+;   float g_FLOAT_005cc519 = 0.1047198
+;   float g_FLOAT_005cc51d = 0.5
+;   double g_DOUBLE_005cc521 = 3
+;   float g_FLOAT_005cc529 = 0.2000000
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
@@ -116,7 +116,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041c1b5
     MOVSD ES:EDI,ESI                    ; 0041c1b6
     MOVSD ES:EDI,ESI                    ; 0041c1b7
-    FLD float ptr [0x005cc519]          ; 0041c1b8 | DAT_005cc519
+    FLD float ptr [0x005cc519]          ; 0041c1b8 | g_FLOAT_005cc519
     FLD float ptr [ESP + 0xb8]          ; 0041c1be
     FMUL ST1                            ; 0041c1c5
     FLD float ptr [ESP + 0xbc]          ; 0041c1c7
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 0041c29f (CONDITIONAL_JUMP)  ; LAB_0041c29f
     MOV ECX,dword ptr [EBX + 0x458]     ; 0041c285
     PUSH ECX                            ; 0041c28b
-    MOV ESI,dword ptr [0x0061c068]      ; 0041c28c | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 0041c28c | g_CSound_PTR_0061c068
     PUSH ESI                            ; 0041c292
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70 ; 0041c293
         ;   XREF to: 0055af70 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70(CSound * this_ptr, uint sfx_handle)
@@ -293,7 +293,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041c3d6
     MOVSD ES:EDI,ESI                    ; 0041c3d7
     MOVSD ES:EDI,ESI                    ; 0041c3d8
-    FLD float ptr [0x005cc51d]          ; 0041c3d9 | DAT_005cc51d
+    FLD float ptr [0x005cc51d]          ; 0041c3d9 | g_FLOAT_005cc51d
     FLD float ptr [ESP + 0xf4]          ; 0041c3df
     FMUL ST1                            ; 0041c3e6
     FLD float ptr [ESP + 0xf8]          ; 0041c3e8
@@ -378,7 +378,7 @@ section .text
     FADDP                               ; 0041c51c
     FSQRT                               ; 0041c51e
     FST float ptr [ESP]                 ; 0041c520
-    FCOMP double ptr [0x005cc521]       ; 0041c523 | DAT_005cc521
+    FCOMP double ptr [0x005cc521]       ; 0041c523 | g_DOUBLE_005cc521
     FNSTSW AX                           ; 0041c529
     SAHF                                ; 0041c52b
     JBE 0x0041c2b7                      ; 0041c52c
@@ -392,7 +392,7 @@ section .text
     FLD float ptr [ESP]                 ; 0041c543
     FMUL float ptr [EBX + 0x4ec]        ; 0041c546
     PUSH EAX                            ; 0041c54c
-    FMUL float ptr [0x005cc529]         ; 0041c54d | DAT_005cc529
+    FMUL float ptr [0x005cc529]         ; 0041c54d | g_FLOAT_005cc529
     PUSH ESI                            ; 0041c553
     LEA EAX,[ESP + 0x9c]                ; 0041c554
     MOV dword ptr [ESP + 0x40],EBX      ; 0041c55b

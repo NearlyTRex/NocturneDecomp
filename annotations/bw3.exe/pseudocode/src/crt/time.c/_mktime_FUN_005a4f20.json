@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 113,
+    "complexity_score": 58,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 256
   },
   "cross_references": [
@@ -77,27 +75,27 @@
   "globals": [
     {
       "addr": "005e8804",
-      "name": "DAT_005e8804",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SHORT_005e8804",
+      "type": "short",
+      "value": "0x0"
     },
     {
       "addr": "005e881e",
-      "name": "DAT_005e881e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SHORT_005e881e",
+      "type": "short",
+      "value": "0x0"
     },
     {
       "addr": "00607d3c",
-      "name": "DAT_00607d3c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00607d3c",
+      "type": "int",
+      "value": "0x4650"
     },
     {
       "addr": "00607d44",
-      "name": "DAT_00607d44",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00607d44",
+      "type": "int",
+      "value": "0xe10"
     }
   ],
   "param_estimates": {
@@ -241,46 +239,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005e8804",
-      "severity": "mild",
-      "text": "puVar4 = &DAT_005e8804;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005e881e",
-      "severity": "mild",
-      "text": "puVar4 = &DAT_005e881e;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00607d3c",
-      "severity": "mild",
-      "text": "iVar5 = iVar5 + DAT_00607d3c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_00607d44",
-      "severity": "mild",
-      "text": "iVar5 = iVar5 - DAT_00607d44;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_00607d3c",
-      "severity": "mild",
-      "text": "if ((DAT_00607d3c < 1) || (tVar1 < 0)) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

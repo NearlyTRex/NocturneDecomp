@@ -38,7 +38,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_processDamage_FUN_0058f990(CZom
       if (this_ptr->death_sound_played == 0) {
         sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->death_sfx_handle);
         uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                          ((CDemonActor *)this_ptr,"@mobster-die-?.wav" + 1);
+                          ((CDemonActor *)this_ptr,"mobster-die-?.wav");
         this_ptr->death_sound_played = 1;
         this_ptr->death_sfx_handle = uVar5;
         core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);

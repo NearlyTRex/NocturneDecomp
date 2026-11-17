@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keys_cpp_staticInit_FUN_004fd210(void)
 
 {
-  _DAT_01d1bca0 = 0x602bcc;
+  g_PTR_01d1bca0 = (byte *)g_ARRAY_PTR_00602bcc;
   return;
 }

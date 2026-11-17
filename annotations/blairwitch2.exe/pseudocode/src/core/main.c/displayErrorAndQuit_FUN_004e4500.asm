@@ -22,9 +22,9 @@
 ;   ... and 569 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061c068
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a8
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a8
 ;
 ; Called Functions:
 ;   core_sound.cpp_shutdownSoundSystem_FUN_0055a160
@@ -42,7 +42,7 @@ section .text
         ;   Label: core_main.c_displayErrorAndQuit_FUN_004e4500
     PUSH EDI                            ; 004e4501
     SUB ESP,0x4                         ; 004e4502
-    CMP dword ptr [0x01d046a8],0x0      ; 004e4505 | DAT_01d046a8
+    CMP dword ptr [0x01d046a8],0x0      ; 004e4505 | g_INT_01d046a8
     JNZ 0x004e4596                      ; 004e450c
         ;   XREF to: 004e4596 (CONDITIONAL_JUMP)  ; LAB_004e4596
     PUSH EBX                            ; 004e4512
@@ -55,7 +55,7 @@ section .text
     PUSH EBX                            ; 004e4524
     MOV ECX,0x1                         ; 004e4525
     PUSH 0x1d035a0                      ; 004e452a
-    MOV dword ptr [0x01d046a8],ECX      ; 004e452f | DAT_01d046a8
+    MOV dword ptr [0x01d046a8],ECX      ; 004e452f | g_INT_01d046a8
     XOR ESI,ESI                         ; 004e4535
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 004e4537
         ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
@@ -64,7 +64,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ESI       ; 004e4541
     MOV DL,DH                           ; 004e4545
     POP EBX                             ; 004e4547
-    MOV ESI,dword ptr [0x01d046a0]      ; 004e4548 | DAT_01d046a0
+    MOV ESI,dword ptr [0x01d046a0]      ; 004e4548 | g_CHAR_PTR_01d046a0
         ;   Label: LAB_004e4548
     MOV AL,byte ptr [ESI]               ; 004e454e
         ;   Label: LAB_004e454e
@@ -89,7 +89,7 @@ section .text
         ;   Label: LAB_004e4566
     JNZ 0x004e45a0                      ; 004e4568
         ;   XREF to: 004e45a0 (CONDITIONAL_JUMP)  ; LAB_004e45a0
-    MOV EDI,dword ptr [0x0061c068]      ; 004e456a | DAT_0061c068
+    MOV EDI,dword ptr [0x0061c068]      ; 004e456a | g_CSound_PTR_0061c068
     PUSH EDI                            ; 004e4570
     CALL core_sound.cpp_shutdownSoundSystem_FUN_0055a160 ; 004e4571
         ;   XREF to: 0055a160 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_shutdownSoundSystem_FUN_0055a160()
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_004e4596
     JMP 0x004e4512                      ; 004e459b
         ;   XREF to: 004e4512 (UNCONDITIONAL_JUMP)  ; LAB_004e4512
-    MOV ESI,dword ptr [0x01d046a0]      ; 004e45a0 | DAT_01d046a0
+    MOV ESI,dword ptr [0x01d046a0]      ; 004e45a0 | g_CHAR_PTR_01d046a0
         ;   Label: LAB_004e45a0
     MOV AL,byte ptr [ESI]               ; 004e45a6
         ;   Label: LAB_004e45a6
@@ -134,7 +134,7 @@ section .text
         ;   Label: LAB_004e45bc
     INC ESI                             ; 004e45be
         ;   Label: LAB_004e45be
-    MOV dword ptr [0x01d046a0],ESI      ; 004e45bf | DAT_01d046a0
+    MOV dword ptr [0x01d046a0],ESI      ; 004e45bf | g_CHAR_PTR_01d046a0
     JMP 0x004e4548                      ; 004e45c5
         ;   XREF to: 004e4548 (UNCONDITIONAL_JUMP)  ; LAB_004e4548
 

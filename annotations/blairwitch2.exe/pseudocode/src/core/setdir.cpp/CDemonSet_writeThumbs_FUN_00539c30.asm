@@ -15,14 +15,14 @@
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00539860 at 00539892
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e604d
-;   undefined4 DAT_005e6050
+;   TerminatedCString s_wb_005e604d
+;   TerminatedCString s_data_005e6050
 ;   TerminatedCString s_core_setdir_cpp_005e6055
 ;   TerminatedCString s_Can_t_create_s_005e6068
 ;   TerminatedCString s_core_setdir_cpp_005e6078
 ;   TerminatedCString s_Error_writing_s_005e608b
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -40,10 +40,10 @@ section .text
     PUSH EDI                            ; 00539c32
     PUSH EBP                            ; 00539c33
     SUB ESP,0xc                         ; 00539c34
-    PUSH 0x5e604d                       ; 00539c37 | DAT_005e604d
+    PUSH 0x5e604d                       ; 00539c37 | = "wb"
     MOV EDX,dword ptr [ESP + 0x28]      ; 00539c3c
     PUSH EDX                            ; 00539c40
-    PUSH 0x5e6050                       ; 00539c41 | DAT_005e6050
+    PUSH 0x5e6050                       ; 00539c41 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00539c46
         ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00539c4b
@@ -122,8 +122,8 @@ section .text
     MOV ECX,0x5e6055                    ; 00539cf0 | = "..\\core\\setdir.cpp"
     MOV EBX,0x3cc                       ; 00539cf5
     PUSH 0x5e6068                       ; 00539cfa | = "Can't create %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00539cff | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00539d05 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00539cff | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00539d05 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00539d0b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00539d10
@@ -135,8 +135,8 @@ section .text
     MOV EAX,0x5e6078                    ; 00539d1d | = "..\\core\\setdir.cpp"
     MOV EDX,0x3d7                       ; 00539d22
     PUSH 0x5e608b                       ; 00539d27 | = "Error writing %s"
-    MOV [0x01d046a0],EAX                ; 00539d2c | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00539d31 | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00539d2c | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00539d31 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00539d37
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00539d3c

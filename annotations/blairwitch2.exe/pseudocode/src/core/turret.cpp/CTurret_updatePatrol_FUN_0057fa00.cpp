@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0057fa00(CTurret *this_ptr,float delta_time)
 
 {
@@ -39,7 +37,7 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0057fa00(CTurret *this_ptr
     if (this_ptr->guard_zone_box_trigger != (CDemonActor *)0x0) {
       target_pos = &this_ptr->patrol_target;
       iVar4 = core_turret_cpp_CTurret_aimAtTarget_FUN_0057f700
-                        (this_ptr,target_pos,delta_time * (float)_DAT_005ed81c);
+                        (this_ptr,target_pos,delta_time * (float)0.33333333333333298);
       if (iVar4 != 0) {
         (*((this_ptr->guard_zone_box_trigger->vtable)._ub)->getBoundingBox)
                   (this_ptr->guard_zone_box_trigger,(CBoundingBox3D *)in_stack_ffffff80);
@@ -80,7 +78,7 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0057fa00(CTurret *this_ptr
           fVar1 = pCStack_14->x - fStack_30;
           fVar3 = pCStack_14->y - afStack_2c[0];
           fVar2 = pCStack_14->z - afStack_2c[1];
-          if (_DAT_005ed824 < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) break;
+          if (25.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) break;
           iVar4 = iVar4 + 1;
           if (4 < iVar4) {
             return;

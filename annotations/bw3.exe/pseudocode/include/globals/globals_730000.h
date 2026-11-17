@@ -9,20 +9,38 @@
 // GLOBAL VARIABLES - Range 0x730000
 // =============================================================================
 
-// undefined4
-extern undefined4 DAT_007303dc;
-extern undefined4 DAT_007303e0;
-extern undefined4 DAT_007303e8;
-extern undefined4 DAT_007303ec;
-extern undefined4 DAT_007303f0;
-extern undefined4 DAT_007303f4;
-extern undefined4 DAT_007303f8;
-extern undefined4 DAT_007303fc;
-extern undefined4 DAT_00730408;
-extern undefined4 DAT_0073040c;
-extern undefined4 DAT_00730410;
-extern undefined4 DAT_00730418;
-extern undefined4 DAT_0073041c;
-extern undefined4 DAT_00730478;
-extern undefined4 DAT_0073047c;
+// int
+extern int g_INT_007303b8;
+extern int g_INT_007303bc;
+extern int g_INT_007303c0;
+extern int g_INT_007303c4;
+extern int g_INT_007303c8;
+extern int g_INT_007303cc;
+extern int g_INT_007303d0;
+extern int g_INT_007303d8;
+extern int g_INT_007303dc;
+extern int g_INT_007303e8;
+extern int g_INT_007303ec;
+extern int g_INT_007303f0;
+extern int g_INT_007303f4;
+extern int g_INT_007303f8;
+extern int g_INT_007303fc;
+extern int g_INT_00730400;
+extern int g_INT_00730404;
+extern int g_INT_00730408;
+extern int g_INT_0073040c;
+extern int g_INT_00730410;
+extern int g_INT_00730478;
+extern int g_INT_0073047c;
+
+// int[24]
+extern int g_INT_ARRAY_00730418[24];
+
+// uint
+extern uint g_UINT_007303e0;
+extern uint g_UINT_007303e4;
+
+// void*
+extern void* g_PTR_007303d4;
+extern void* g_PTR_00730414;
 

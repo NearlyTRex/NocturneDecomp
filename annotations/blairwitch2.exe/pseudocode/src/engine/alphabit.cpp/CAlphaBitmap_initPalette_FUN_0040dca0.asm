@@ -11,10 +11,10 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0 at 0040dad3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35214
-;   undefined4 DAT_01c35218
-;   undefined4 DAT_01c35219
+;   int g_INT_006141c0 = 0x8
+;   uint[256] g_UINT_ARRAY_01c35214
+;   undefined4 g_UINT_ARRAY_01c35214[1]
+;   undefined4 g_UINT_ARRAY_01c35214[1]+1
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     PUSH ESI                            ; 0040dca0
         ;   Label: engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0
     MOV ESI,dword ptr [ESP + 0x8]       ; 0040dca1
-    CMP dword ptr [0x006141c0],0x10     ; 0040dca5 | DAT_006141c0
+    CMP dword ptr [0x006141c0],0x10     ; 0040dca5 | g_INT_006141c0
     JNZ 0x0040dccf                      ; 0040dcac
         ;   XREF to: 0040dccf (CONDITIONAL_JUMP)  ; LAB_0040dccf
     XOR EDX,EDX                         ; 0040dcae
@@ -47,10 +47,10 @@ section .text
     PUSH EDI                            ; 0040dcdd
     MOV EAX,ECX                         ; 0040dcde
     SHR ECX,0x2                         ; 0040dce0
-    MOVSD.REP ES:EDI,ESI                ; 0040dce3 | DAT_01c35214 | DAT_01c35218
+    MOVSD.REP ES:EDI,ESI                ; 0040dce3 | g_UINT_ARRAY_01c35214 | g_UINT_ARRAY_01c35214[1]
     MOV CL,AL                           ; 0040dce5
     AND CL,0x3                          ; 0040dce7
-    MOVSB.REP ES:EDI,ESI                ; 0040dcea | DAT_01c35218 | DAT_01c35219
+    MOVSB.REP ES:EDI,ESI                ; 0040dcea | g_UINT_ARRAY_01c35214[1] | g_UINT_ARRAY_01c35214[1]+1
     POP EDI                             ; 0040dcec
     POP EDI                             ; 0040dced
     POP ESI                             ; 0040dcee

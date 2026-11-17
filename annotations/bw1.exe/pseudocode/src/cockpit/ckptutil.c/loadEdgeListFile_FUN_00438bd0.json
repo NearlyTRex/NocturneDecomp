@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 191,
+    "complexity_score": 175,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 11,
+    "pseudocode_lines": 70,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 283
+    "total_lines": 282
   },
   "cross_references": [],
   "function": {
@@ -73,14 +72,14 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -180,16 +179,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 18,
+      "line": 16,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "_sprintf(&stack0xffffff98,\"Unable to open edge list file (%s).\");",
@@ -197,7 +188,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 21,
+      "line": 19,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
@@ -205,7 +196,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 23,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "_sprintf(&stack0xffffff98,\"Unable to read number of edge lists (%s).\");",
@@ -213,7 +204,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 26,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
@@ -221,7 +212,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 31,
+      "line": 29,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "_sprintf(&stack0xffffff98,\"Invalid number of edge lists in file (%s).\");",
@@ -229,7 +220,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 32,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
@@ -237,7 +228,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 40,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "_sprintf(&stack0xffffff98,\"Unable to read number of edges (%s).\");",
@@ -245,7 +236,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 43,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
@@ -253,7 +244,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 60,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "_sprintf(&stack0xffffff98,\"Unable to read edge list (%s).\");",
@@ -261,7 +252,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 65,
+      "line": 63,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",

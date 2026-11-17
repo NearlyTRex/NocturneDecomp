@@ -8,10 +8,10 @@
 ; char *           Stack[0x8]:4   message_text
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01511cb8
-;   undefined4 DAT_01c38af0
-;   undefined4 DAT_01c38af4
-;   undefined4 DAT_01c38b00
+;   CBitFont* g_CBitFont_PTR_01511cb8
+;   int g_INT_01c38af0
+;   int g_INT_01c38af4
+;   byte g_BYTE_01c38b00
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0x100                       ; 004eb3d4
     MOV EDX,dword ptr [ESP + 0x114]     ; 004eb3da
     PUSH EDX                            ; 004eb3e1
-    MOV ECX,dword ptr [0x01511cb8]      ; 004eb3e2 | DAT_01511cb8
+    MOV ECX,dword ptr [0x01511cb8]      ; 004eb3e2 | g_CBitFont_PTR_01511cb8
     PUSH ECX                            ; 004eb3e8
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004eb3e9
         ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
@@ -42,7 +42,7 @@ section .text
     SAR EAX,0x1                         ; 004eb3f5
     ADD ESP,0x8                         ; 004eb3f7
     PUSH 0x58                           ; 004eb3fa
-    MOV ESI,dword ptr [0x01511cb8]      ; 004eb3fc | DAT_01511cb8
+    MOV ESI,dword ptr [0x01511cb8]      ; 004eb3fc | g_CBitFont_PTR_01511cb8
     MOV EBX,0x140                       ; 004eb402
     PUSH ESI                            ; 004eb407
     SUB EBX,EAX                         ; 004eb408
@@ -61,16 +61,16 @@ section .text
     PUSH EBX                            ; 004eb427
     MOV EDI,dword ptr [ESP + 0x124]     ; 004eb428
     PUSH EDI                            ; 004eb42f
-    MOV EBP,dword ptr [0x01511cb8]      ; 004eb430 | DAT_01511cb8
+    MOV EBP,dword ptr [0x01511cb8]      ; 004eb430 | g_CBitFont_PTR_01511cb8
     PUSH EBP                            ; 004eb436
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004eb437
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004eb43c
-    MOV EAX,[0x01c38b00]                ; 004eb43f | DAT_01c38b00
+    MOV EAX,[0x01c38b00]                ; 004eb43f | g_BYTE_01c38b00
     PUSH EAX                            ; 004eb444
-    MOV EDX,dword ptr [0x01c38af4]      ; 004eb445 | DAT_01c38af4
+    MOV EDX,dword ptr [0x01c38af4]      ; 004eb445 | g_INT_01c38af4
     PUSH EDX                            ; 004eb44b
-    MOV ECX,dword ptr [0x01c38af0]      ; 004eb44c | DAT_01c38af0
+    MOV ECX,dword ptr [0x01c38af0]      ; 004eb44c | g_INT_01c38af0
     PUSH ECX                            ; 004eb452
     PUSH 0x5dcad1                       ; 004eb453
     LEA EAX,[ESP + 0x10]                ; 004eb458

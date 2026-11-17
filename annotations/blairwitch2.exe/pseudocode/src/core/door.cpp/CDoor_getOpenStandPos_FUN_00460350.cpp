@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00460350(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos)
 
 {
@@ -106,8 +104,8 @@ CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00460350(CDoor 
     }
     break;
   default:
-    _DAT_01d046a0 = "..\\core\\door.cpp";
-    _DAT_01d046a4 = 0x37e;
+    g_CHAR_PTR_01d046a0 = "..\\core\\door.cpp";
+    g_INT_01d046a4 = 0x37e;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDoor::getOpenStandPos - invalid doorType");
   }
   local_90[3] = (this_ptr->base).location.position.y;

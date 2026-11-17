@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004abb5f) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_fldnotes_cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes *this_ptr,char *entry_name)
 
@@ -17,7 +16,7 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes 
   SNotesSection *this_ptr_00;
   
   iVar2 = 0;
-  if (0 < _DAT_01d0d210) {
+  if (0 < g_INT_01d0d210) {
     this_ptr_00 = SNotesSection_ARRAY_01d0d214;
     do {
       pSVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a9c30(this_ptr_00,entry_name);
@@ -29,7 +28,7 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes 
       }
       iVar2 = iVar2 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar2 < _DAT_01d0d210);
+    } while (iVar2 < g_INT_01d0d210);
   }
   return -1;
 }

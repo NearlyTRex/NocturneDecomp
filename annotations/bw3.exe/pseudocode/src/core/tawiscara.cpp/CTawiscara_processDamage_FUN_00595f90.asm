@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_werewolf_die_wav_005d942c
 ;   TerminatedCString s_werewolf_hurt_wav_005d943e
-;   undefined4 DAT_005d9451
-;   undefined4 DAT_005d9459
-;   undefined4 DAT_005d9461
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005d9451 = 2
+;   double g_DOUBLE_005d9459 = 5
+;   double g_DOUBLE_005d9461 = -5
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
@@ -100,7 +100,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00596054
     FLD float ptr [EAX + 0x20]          ; 00596057
     FST double ptr [ESP]                ; 0059605a
-    FCOMP double ptr [0x005d9459]       ; 0059605d | DAT_005d9459
+    FCOMP double ptr [0x005d9459]       ; 0059605d | g_DOUBLE_005d9459
     FNSTSW AX                           ; 00596063
     SAHF                                ; 00596065
     JBE 0x00596167                      ; 00596066
@@ -171,7 +171,7 @@ section .text
         ;   Label: LAB_00596107
     ADD EAX,0x1c                        ; 0059610a
     FLD ST0                             ; 0059610d
-    FMUL double ptr [0x005d9451]        ; 0059610f | DAT_005d9451
+    FMUL double ptr [0x005d9451]        ; 0059610f | g_DOUBLE_005d9451
     PUSH EAX                            ; 00596115
     MOV ESI,dword ptr [EBP + 0x14]      ; 00596116
     LEA EDI,[ESP + 0xc]                 ; 00596119
@@ -196,7 +196,7 @@ section .text
     PUSH 0x0                            ; 00596146
     LEA EAX,[ESP + 0x1c]                ; 00596148
     PUSH EAX                            ; 0059614c
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0059614d | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0059614d | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 00596153
     INC EBX                             ; 00596154
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 00596155
@@ -209,7 +209,7 @@ section .text
         ;   XREF to: 00595fd0 (UNCONDITIONAL_JUMP)  ; LAB_00595fd0
     FLD double ptr [ESP]                ; 00596167
         ;   Label: LAB_00596167
-    FCOMP double ptr [0x005d9461]       ; 0059616a | DAT_005d9461
+    FCOMP double ptr [0x005d9461]       ; 0059616a | g_DOUBLE_005d9461
     FNSTSW AX                           ; 00596170
     SAHF                                ; 00596172
     JNC 0x00596076                      ; 00596173

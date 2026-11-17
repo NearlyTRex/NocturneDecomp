@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(CSfxSample *this_ptr)
 
 {
   CMP3Decoder *ptr;
   
   if (this_ptr->ref_count != 0) {
-    _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d71de4 = 0x85a;
+    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d71de4 = 0x85a;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSample::freeMemory - freeing sample in use!");
   }
   sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00553760(this_ptr);

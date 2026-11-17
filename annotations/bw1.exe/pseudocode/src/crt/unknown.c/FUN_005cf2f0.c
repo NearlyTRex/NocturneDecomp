@@ -13,7 +13,7 @@ byte FUN_005cf2f0(uint param_1)
   
   iVar1 = FUN_005cf340(param_1);
   if (iVar1 == 0) {
-    return (&DAT_00626114)[(byte)((char)param_1 + 1)] & 0x80;
+    return g_UCHAR_ARRAY_00626114[(byte)((char)param_1 + 1)] & 0x80;
   }
   if ((0x8280 < param_1) && (param_1 < 0x829b)) {
     return 1;

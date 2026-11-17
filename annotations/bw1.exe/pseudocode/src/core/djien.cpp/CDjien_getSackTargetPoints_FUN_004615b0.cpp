@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_ptr,CVector3f *out_points,int *out_sack_parts)
 
@@ -151,10 +150,10 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
     afStack_cc[(uint)bVar3 * -2 + 0xf] = *(float *)((int)&stack0xfffffd84 + (uint)bVar3 * -8);
     afStack_cc[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x10] =
          *(float *)((int)&stack0xfffffd88 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    fStack_70 = fStack_94 * _DAT_005d8ee0;
-    afStack_6c[0] = fStack_90 * _DAT_005d8ee0;
-    afStack_6c[1] = fStack_8c * _DAT_005d8ee0;
-    CStack_124.x = fStack_94 * _DAT_005d8ee0;
+    fStack_70 = fStack_94 * 0.5f;
+    afStack_6c[0] = fStack_90 * 0.5f;
+    afStack_6c[1] = fStack_8c * 0.5f;
+    CStack_124.x = fStack_94 * 0.5f;
     afStack_15c[(uint)bVar3 * -2 + 0xf] = afStack_6c[(uint)bVar3 * -2];
     afStack_15c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x10] =
          afStack_6c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
@@ -203,10 +202,10 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
     afStack_fc[(uint)bVar3 * -2 + 6] = afStack_15c[(uint)bVar3 * -2];
     afStack_fc[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
          afStack_15c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    fStack_130 = fStack_e8 * _DAT_005d8ee0;
-    fStack_12c = fStack_e4 * _DAT_005d8ee0;
-    fStack_128 = fStack_e0 * _DAT_005d8ee0;
-    CStack_58.x = fStack_e8 * _DAT_005d8ee0;
+    fStack_130 = fStack_e8 * 0.5f;
+    fStack_12c = fStack_e4 * 0.5f;
+    fStack_128 = fStack_e0 * 0.5f;
+    CStack_58.x = fStack_e8 * 0.5f;
     *(float *)((int)&CStack_58 + (uint)bVar3 * -8 + 4) = afStack_15c[(uint)bVar3 * -2 + 0xc];
     *(float *)((int)&CStack_58 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          afStack_15c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd];
@@ -254,10 +253,10 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
     afStack_1c8[(uint)bVar3 * -2 + 0xf] = afStack_24[(uint)bVar3 * -2 + 3];
     afStack_1c8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x10] =
          afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-    fStack_2a4 = fStack_190 * _DAT_005d8ee0;
-    fStack_2a0 = fStack_18c * _DAT_005d8ee0;
-    fStack_29c = fStack_188 * _DAT_005d8ee0;
-    CStack_1a8.x = fStack_190 * _DAT_005d8ee0;
+    fStack_2a4 = fStack_190 * 0.5f;
+    fStack_2a0 = fStack_18c * 0.5f;
+    fStack_29c = fStack_188 * 0.5f;
+    CStack_1a8.x = fStack_190 * 0.5f;
     afStack_1c8[(uint)bVar3 * -2 + 9] = *(float *)((int)&stack0xfffffd60 + (uint)bVar3 * -8);
     afStack_1c8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10] =
          *(float *)((int)&stack0xfffffd64 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
@@ -306,10 +305,10 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
     afStack_1e0[(uint)bVar3 * -2] = afStack_15c[(uint)bVar3 * -2 + 3];
     afStack_1e0[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
          afStack_15c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-    fStack_298 = fStack_1e4 * _DAT_005d8ee0;
-    fStack_294 = afStack_1e0[0] * _DAT_005d8ee0;
-    fStack_290 = afStack_1e0[1] * _DAT_005d8ee0;
-    CStack_ac.x = fStack_1e4 * _DAT_005d8ee0;
+    fStack_298 = fStack_1e4 * 0.5f;
+    fStack_294 = afStack_1e0[0] * 0.5f;
+    fStack_290 = afStack_1e0[1] * 0.5f;
+    CStack_ac.x = fStack_1e4 * 0.5f;
     afStack_cc[(uint)bVar3 * -2 + 9] = *(float *)((int)&stack0xfffffd6c + (uint)bVar3 * -8);
     afStack_cc[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10] =
          *(float *)((int)&stack0xfffffd70 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
@@ -359,10 +358,10 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
     afStack_240[(uint)bVar3 * -2] = afStack_cc[(uint)bVar3 * -2 + 3];
     afStack_240[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
          afStack_cc[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-    fStack_b8 = fStack_244 * _DAT_005d8ee0;
-    fStack_b4 = afStack_240[0] * _DAT_005d8ee0;
-    fStack_b0 = afStack_240[1] * _DAT_005d8ee0;
-    CStack_220.x = fStack_244 * _DAT_005d8ee0;
+    fStack_b8 = fStack_244 * 0.5f;
+    fStack_b4 = afStack_240[0] * 0.5f;
+    fStack_b0 = afStack_240[1] * 0.5f;
+    CStack_220.x = fStack_244 * 0.5f;
     *(float *)((int)&CStack_220 + (uint)bVar3 * -8 + 4) = afStack_cc[(uint)bVar3 * -2 + 6];
     *(float *)((int)&CStack_220 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          afStack_cc[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
@@ -411,10 +410,10 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
     afStack_15c[(uint)bVar3 * -2 + 9] = afStack_cc[(uint)bVar3 * -2];
     afStack_15c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10] =
          afStack_cc[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    fStack_a0 = fStack_13c * _DAT_005d8ee0;
-    fStack_9c = fStack_138 * _DAT_005d8ee0;
-    fStack_98 = fStack_134 * _DAT_005d8ee0;
-    CStack_1b4.x = fStack_13c * _DAT_005d8ee0;
+    fStack_a0 = fStack_13c * 0.5f;
+    fStack_9c = fStack_138 * 0.5f;
+    fStack_98 = fStack_134 * 0.5f;
+    CStack_1b4.x = fStack_13c * 0.5f;
     afStack_1c8[(uint)bVar3 * -2 + 6] = afStack_cc[(uint)bVar3 * -2 + 0xc];
     afStack_1c8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
          afStack_cc[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd];
@@ -460,7 +459,7 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
     do {
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
                 ((CDemonActor *)this_ptr,out_points,&CStack_40);
-      texture_ptr = (SMRGLTextureBasic *)&DAT_00612258;
+      texture_ptr = &g_SMRGLTextureBasic_00612258;
       lifetime = 1.0;
       alpha = 0.5;
       size = 1.0;
@@ -470,7 +469,7 @@ int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_
       *(uint *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
            *(uint *)((int)&CStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
       core_fire_cpp_CFireEffect_createTrailSegment_FUN_004b70f0
-                (0x01C57074,&CStack_4c,size,alpha,lifetime,texture_ptr);
+                (g_CFireEffect_PTR_0061c010,&CStack_4c,size,alpha,lifetime,texture_ptr);
       out_points = out_points + 1;
       iStack_c = iStack_c + 1;
     } while (iStack_c < (int)EStack_10);

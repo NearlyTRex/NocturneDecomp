@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this_ptr,float delta_time)
 
 {
@@ -96,15 +94,15 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
           fVar5 = (float10)fcos((float10)fStack_180);
           fVar6 = (float10)fsin((float10)fStack_180);
           CStack_e0.y = 0.0;
-          CStack_e0.z = (float)(fVar5 * (float10)_DAT_005f0ea3);
-          CStack_e0.x = (float)(fVar6 * (float10)_DAT_005f0ea3);
+          CStack_e0.z = (float)(fVar5 * (float10)10);
+          CStack_e0.x = (float)(fVar6 * (float10)10);
           fStack_3c = CStack_e0.z;
           fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
-          if (fVar7 <= (float)_DAT_005f0ec3) {
-            if (&stack0x00000000 != (byte *)0x2653870) {
-              CStack_164.x = _DAT_0265370c;
-              CStack_164.y = _DAT_02653710;
-              CStack_164.z = _DAT_02653714;
+          if (fVar7 <= (float)0.5) {
+            if ((int *)&stack0x00000000 != g_INT_ARRAY_026537c0 + 0x2c) {
+              CStack_164.x = g_CVector3f_0265370c.x;
+              CStack_164.y = g_CVector3f_0265370c.y;
+              CStack_164.z = g_CVector3f_0265370c.z;
             }
           }
           else {
@@ -135,7 +133,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
         iVar2 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar2 != 0) {
           CStack_8c.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
-          CStack_8c.z = CStack_8c.z * _DAT_005f0eab;
+          CStack_8c.z = CStack_8c.z * 5.0f;
           CStack_8c.x = 0.0;
           CStack_8c.y = 0.0;
           fStack_3c = CStack_8c.z;
@@ -149,11 +147,11 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
           *(uint *)((int)&CStack_170 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                *(uint *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
           fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar7,fVar8);
-          if (fVar7 <= (float)_DAT_005f0ec3) {
-            if (&stack0x00000000 != (byte *)0x26537e0) {
-              CStack_d4.x = _DAT_0265370c;
-              CStack_d4.y = _DAT_02653710;
-              CStack_d4.z = _DAT_02653714;
+          if (fVar7 <= (float)0.5) {
+            if ((int *)&stack0x00000000 != g_INT_ARRAY_026537c0 + 8) {
+              CStack_d4.x = g_CVector3f_0265370c.x;
+              CStack_d4.y = g_CVector3f_0265370c.y;
+              CStack_d4.z = g_CVector3f_0265370c.z;
             }
           }
           else {
@@ -185,7 +183,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
         iVar3 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar3 != 0) {
           fStack_54 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
-          fStack_3c = fStack_54 * _DAT_005f0eaf;
+          fStack_3c = fStack_54 * 4.75f;
           fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,0.2);
           CStack_a4.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,0.2);
           fStack_50 = fStack_20;
@@ -194,7 +192,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
           fStack_48 = CStack_a4.x;
           core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
                     ((CDemonActor *)this_ptr,&CStack_a4,&CStack_bc);
-          fVar7 = fStack_54 * (float)_DAT_005f0eb3;
+          fVar7 = fStack_54 * (float)0.40000000000000002;
           fVar9 = -0.5;
           fVar8 = 0.3;
           CStack_134.x = CStack_bc.x;
@@ -307,11 +305,11 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
           core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                     (pCStack_1c,fVar8,fVar9,fVar10,fVar7,fVar11,fVar12,green,blue,pCVar15,pCVar14,
                      pCVar13,iVar3);
-          CStack_14c.x = CStack_14c.x * _DAT_005f0ebb;
-          CStack_14c.y = CStack_14c.y * _DAT_005f0ebb;
-          CStack_14c.z = CStack_14c.z * _DAT_005f0ebb;
+          CStack_14c.x = CStack_14c.x * 2.0f;
+          CStack_14c.y = CStack_14c.y * 2.0f;
+          CStack_14c.z = CStack_14c.z * 2.0f;
           fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
-          if ((float)_DAT_005f0ecb < fVar7) {
+          if ((float)0.59999999999999998 < fVar7) {
             core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                       (pCStack_1c,0.5,0.5,0.0,0.2,0.0,0.6,0.6,0.66,&CStack_98,&CStack_14c,&CStack_68
                        ,0);

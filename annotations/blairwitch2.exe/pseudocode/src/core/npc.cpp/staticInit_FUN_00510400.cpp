@@ -10,7 +10,7 @@ void __cdecl core_npc_cpp_staticInit_FUN_00510400(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CNPCClassInfo,(char *)0x5e14b4,core_npc_cpp_factoryFuncNPC_FUN_00510430,
+            (&g_CNPCClassInfo,"CNPC",core_npc_cpp_factoryFuncNPC_FUN_00510430,
              &g_CNPCClassVersion,6,&g_CCharacterClassInfo);
   return;
 }

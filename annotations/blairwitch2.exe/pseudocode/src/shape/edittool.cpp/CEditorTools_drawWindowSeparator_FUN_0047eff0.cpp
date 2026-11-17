@@ -6,69 +6,69 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(CEditorTools *this_ptr,int line_position)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
+  int iVar1;
+  int iVar2;
+  int iVar3;
   int iVar4;
   int iVar5;
-  int x2;
-  int iVar6;
   
-  if (_DAT_01c2559c < 1) {
-    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-    _DAT_01d046a4 = 0x93b;
+  if (g_INT_01c2559c < 1) {
+    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+    g_INT_01d046a4 = 0x93b;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CEditorTools::paintWindow() called but no window was opened!");
   }
-  uVar2 = _DAT_01c35e60;
-  uVar1 = _DAT_01c35e4c;
-  iVar6 = (_DAT_01c2559c + -1) * 0x1f8;
-  _DAT_01c35e4c = *(uint *)(iVar6 + 0x1c255a4);
-  iVar4 = DAT_006141bc / 0x60;
+  iVar3 = g_INT_01c35e60;
+  iVar2 = g_INT_01c35e4c;
+  iVar1 = (g_INT_01c2559c + -1) * 0x1f8;
+  g_INT_01c35e4c = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 4);
+  iVar4 = g_INT_006141bc / 0x60;
   iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
-  iVar4 = *(int *)(iVar6 + 0x1c255ac) - ((line_position + 1) * iVar4 + line_position * iVar5);
-  uVar3 = _DAT_01c2638c;
-  if (_DAT_01c25f84 != 0) {
-    iVar5 = (_DAT_01c2638c & 0xff) * 3;
+  iVar5 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0xc) -
+          ((line_position + 1) * iVar4 + line_position * iVar5);
+  iVar4 = g_INT_01c2638c;
+  if (g_INT_01c25f84 != 0) {
+    iVar4 = (g_INT_01c2638c & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f8e20
-              ((uint)(byte)(&DAT_01c3583a)[iVar5] |
-               (uint)(byte)(&DAT_01c35838)[iVar5] << 0x10 | (uint)(byte)(&DAT_01c35839)[iVar5] << 8)
-    ;
-    uVar3 = _DAT_01c35e60;
+              ((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2] |
+               (uint)g_UCHAR_ARRAY_01c35838[iVar4] << 0x10 |
+               (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] << 8);
+    iVar4 = g_INT_01c35e60;
   }
-  _DAT_01c35e60 = uVar3;
-  iVar5 = *(int *)(iVar6 + 0x1c255a0) + 1;
-  x2 = *(int *)(iVar6 + 0x1c255a8) + -2;
-  if (_DAT_01c25f84 == 0) {
-    engine_2d_c_drawHLine_FUN_00402f30(iVar5,iVar4,x2);
+  g_INT_01c35e60 = iVar4;
+  iVar4 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1) + 1;
+  if (g_INT_01c25f84 == 0) {
+    engine_2d_c_drawHLine_FUN_00402f30(iVar4,iVar5,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2)
+    ;
   }
   else {
-    engine_mini3d_cpp_drawHLine_FUN_004f9390(iVar5,iVar4,x2);
+    engine_mini3d_cpp_drawHLine_FUN_004f9390
+              (iVar4,iVar5,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2);
   }
-  if (_DAT_01c26390 != _DAT_01c2638c) {
-    if (_DAT_01c25f84 == 0) {
-      _DAT_01c35e60 = _DAT_01c26390;
+  if (g_INT_01c26390 != g_INT_01c2638c) {
+    if (g_INT_01c25f84 == 0) {
+      g_INT_01c35e60 = g_INT_01c26390;
     }
     else {
-      iVar5 = (_DAT_01c26390 & 0xff) * 3;
+      iVar4 = (g_INT_01c26390 & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_004f8e20
-                ((uint)(byte)(&DAT_01c35839)[iVar5] << 8 |
-                 (uint)(byte)(&DAT_01c35838)[iVar5] << 0x10 | (uint)(byte)(&DAT_01c3583a)[iVar5]);
+                ((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] << 8 |
+                 (uint)g_UCHAR_ARRAY_01c35838[iVar4] << 0x10 |
+                 (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2]);
     }
-    iVar5 = *(int *)(iVar6 + 0x1c255a0) + 1;
-    iVar6 = *(int *)(iVar6 + 0x1c255a8) + -2;
-    if (_DAT_01c25f84 == 0) {
-      engine_2d_c_drawHLine_FUN_00402f30(iVar5,iVar4 + -1,iVar6);
+    iVar4 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1) + 1;
+    if (g_INT_01c25f84 == 0) {
+      engine_2d_c_drawHLine_FUN_00402f30
+                (iVar4,iVar5 + -1,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2);
     }
     else {
-      engine_mini3d_cpp_drawHLine_FUN_004f9390(iVar5,iVar4 + -1,iVar6);
+      engine_mini3d_cpp_drawHLine_FUN_004f9390
+                (iVar4,iVar5 + -1,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2);
     }
   }
-  _DAT_01c35e60 = uVar2;
-  _DAT_01c35e4c = uVar1;
+  g_INT_01c35e60 = iVar3;
+  g_INT_01c35e4c = iVar2;
   return;
 }

@@ -34,7 +34,7 @@
 ;   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004c61b0 at 004c62a6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b839e
+;   float g_FLOAT_005b839e = 0.5
 ;   CGore* g_CGorePtr = 01d22e44
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;
@@ -111,7 +111,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00430190
     MOVSD ES:EDI,ESI                    ; 00430191
     MOVSD ES:EDI,ESI                    ; 00430192
-    FLD float ptr [0x005b839e]          ; 00430193 | DAT_005b839e
+    FLD float ptr [0x005b839e]          ; 00430193 | g_FLOAT_005b839e
     FLD float ptr [ESP + 0x8c]          ; 00430199
     FMUL ST1                            ; 004301a0
     FLD float ptr [ESP + 0x90]          ; 004301a2

@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 120,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 242
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 59,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 241
   },
   "cross_references": [
     {
@@ -50,80 +47,80 @@
   "globals": [
     {
       "addr": "0152d23c",
-      "name": "DAT_0152d23c",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d23c",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d240",
-      "name": "DAT_0152d240",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d240",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d244",
-      "name": "DAT_0152d244",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d244",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d248",
-      "name": "DAT_0152d248",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d248",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d24c",
-      "name": "DAT_0152d24c",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d24c",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d250",
-      "name": "DAT_0152d250",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d250",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d254",
-      "name": "DAT_0152d254",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d254",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d258",
-      "name": "DAT_0152d258",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_0152d258",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "0152d25c",
-      "name": "DAT_0152d25c",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_0152d25c",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "0152d260",
-      "name": "DAT_0152d260",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_0152d260",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "0152d264",
-      "name": "DAT_0152d264",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_0152d264",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "01c3eb50",
-      "name": "DAT_01c3eb50",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c3eb50",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d7f1b8",
-      "name": "DAT_01d7f1b8",
-      "type": "undefined4",
+      "name": "g_INT_01d7f1b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -207,46 +204,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(_DAT_0152d258 + 0x6a44))(_DAT_0152d258,2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(_DAT_0152d25c + 0x6a44))(_DAT_0152d25c,2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(_DAT_0152d260 + 0x6a44))(_DAT_0152d260,2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(_DAT_0152d264 + 0x6a44))(_DAT_0152d264,2);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

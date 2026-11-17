@@ -20,8 +20,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_004268b0(CCharact
   uint local_28 [6];
   
   bVar4 = 0;
-  if ((DAT_007bdad8 & 1) == 0) {
-    DAT_007bdad8 = DAT_007bdad8 | 1;
+  if ((g_BYTE_007bdad8 & 1) == 0) {
+    g_BYTE_007bdad8 = g_BYTE_007bdad8 | 1;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);

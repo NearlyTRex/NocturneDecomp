@@ -29,13 +29,13 @@
 ;   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_00543d00 at 00543d32
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cc4d5
-;   undefined4 DAT_005cc4d9
-;   undefined4 DAT_005f39d8
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_006141e4
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01c35e3c
+;   float g_FLOAT_005cc4d5 = 0.5
+;   double g_DOUBLE_005cc4d9 = 0.00390625
+;   float g_FLOAT_005f39d8 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   int g_INT_006141e4 = 0x10000
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   int g_INT_01c35e3c
 ;
 ; Called Functions:
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
@@ -73,7 +73,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041ae90
     MOVSD ES:EDI,ESI                    ; 0041ae91
     MOVSD ES:EDI,ESI                    ; 0041ae92
-    FLD float ptr [0x005cc4d5]          ; 0041ae93 | DAT_005cc4d5
+    FLD float ptr [0x005cc4d5]          ; 0041ae93 | g_FLOAT_005cc4d5
     FLD float ptr [ESP + 0x24]          ; 0041ae99
     FMUL ST1                            ; 0041ae9d
     FLD float ptr [ESP + 0x28]          ; 0041ae9f
@@ -81,7 +81,7 @@ section .text
     FLD float ptr [ESP + 0x2c]          ; 0041aea5
     FMULP ST3                           ; 0041aea9
     LEA EBX,[ESP + 0x30]                ; 0041aeab
-    MOV EDX,dword ptr [0x0060b280]      ; 0041aeaf | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 0041aeaf | g_CDemonRenderer_PTR_0060b280
     MOV EAX,ESP                         ; 0041aeb5
     MOV EDI,ESP                         ; 0041aeb7
     LEA ESI,[ESP + 0xc]                 ; 0041aeb9
@@ -93,23 +93,23 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041aecc
     MOVSD ES:EDI,ESI                    ; 0041aecd
     FLD float ptr [EAX]                 ; 0041aece
-    FMUL float ptr [0x005f39d8]         ; 0041aed0 | DAT_005f39d8
+    FMUL float ptr [0x005f39d8]         ; 0041aed0 | g_FLOAT_005f39d8
     FISTP dword ptr [EBX]               ; 0041aed6
     FLD float ptr [EAX + 0x4]           ; 0041aed8
-    FMUL float ptr [0x005f39d8]         ; 0041aedb | DAT_005f39d8
+    FMUL float ptr [0x005f39d8]         ; 0041aedb | g_FLOAT_005f39d8
     FISTP dword ptr [EBX + 0x4]         ; 0041aee1
     FLD float ptr [EAX + 0x8]           ; 0041aee4
-    FMUL float ptr [0x005f39d8]         ; 0041aee7 | DAT_005f39d8
+    FMUL float ptr [0x005f39d8]         ; 0041aee7 | g_FLOAT_005f39d8
     FISTP dword ptr [EBX + 0x8]         ; 0041aeed
     LEA EAX,[ESP + 0x30]                ; 0041aef0
     PUSH EAX                            ; 0041aef4
-    MOV EAX,dword ptr [EDX]             ; 0041aef5 | DAT_01ba5c50
+    MOV EAX,dword ptr [EDX]             ; 0041aef5 | g_CDemonRenderer_01ba5c50
     ADD EAX,0xea5d0                     ; 0041aef7
     PUSH EAX                            ; 0041aefc
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0041aefd
         ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x0060b280]                ; 0041af02 | DAT_0060b280
-    MOV EAX,dword ptr [EAX]             ; 0041af07 | DAT_01ba5c50
+    MOV EAX,[0x0060b280]                ; 0041af02 | g_CDemonRenderer_PTR_0060b280
+    MOV EAX,dword ptr [EAX]             ; 0041af07 | g_CDemonRenderer_01ba5c50
     MOV EAX,dword ptr [EAX + 0xea5d8]   ; 0041af09
     ADD ESP,0x8                         ; 0041af0f
     TEST EAX,EAX                        ; 0041af12
@@ -120,11 +120,11 @@ section .text
     FSUB float ptr [EDX + 0x4]          ; 0041af1c
     MOV dword ptr [ESP + 0x44],EAX      ; 0041af1f
     FILD dword ptr [ESP + 0x44]         ; 0041af23
-    FMUL double ptr [0x005cc4d9]        ; 0041af27 | DAT_005cc4d9
+    FMUL double ptr [0x005cc4d9]        ; 0041af27 | g_DOUBLE_005cc4d9
     FDIVP                               ; 0041af2d
-    FILD dword ptr [0x01c35e3c]         ; 0041af2f | DAT_01c35e3c
+    FILD dword ptr [0x01c35e3c]         ; 0041af2f | g_INT_01c35e3c
     FMULP                               ; 0041af35
-    FILD dword ptr [0x006141e4]         ; 0041af37 | DAT_006141e4
+    FILD dword ptr [0x006141e4]         ; 0041af37 | g_INT_006141e4
     FDIVP                               ; 0041af3d
     FABS                                ; 0041af3f
     FSTP float ptr [ESP + 0x3c]         ; 0041af41

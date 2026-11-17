@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0a9b
-;   undefined4 DAT_0265370c
+;   double g_DOUBLE_005f0a9b = 0.5
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_xform.cpp_transformVector3x4_FUN_00591530
@@ -25,7 +25,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 005aa2e5
     MOV EBX,dword ptr [ESP + 0x28]      ; 005aa2e9
     FLD float ptr [ESI + 0x113c4]       ; 005aa2ed
-    FCOMP double ptr [0x005f0a9b]       ; 005aa2f3 | DAT_005f0a9b
+    FCOMP double ptr [0x005f0a9b]       ; 005aa2f3 | g_DOUBLE_005f0a9b
     FNSTSW AX                           ; 005aa2f9
     SAHF                                ; 005aa2fb
     JNC 0x005aa306                      ; 005aa2fc
@@ -45,7 +45,7 @@ section .text
     LEA EAX,[ESI + 0x1134]              ; 005aa31b
     ADD EAX,EDX                         ; 005aa321
     PUSH EAX                            ; 005aa323
-    PUSH 0x265370c                      ; 005aa324 | DAT_0265370c
+    PUSH 0x265370c                      ; 005aa324 | g_CVector3f_0265370c
     LEA ESI,[ESP + 0xc]                 ; 005aa329
     LEA EDI,[ESP + 0x18]                ; 005aa32d
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005aa331

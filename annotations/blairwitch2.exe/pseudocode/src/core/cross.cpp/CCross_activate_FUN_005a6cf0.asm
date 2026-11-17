@@ -13,13 +13,13 @@
 ;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 at 0045c792
 ;
 ; Referenced Globals:
-;   undefined4 s_crosssmall_wav_005f072b+2
+;   TerminatedCString s_crosssmall_wav_005f072d
 ;   TerminatedCString s_crossfull_wav_005f073c
-;   undefined4 DAT_005f074d
-;   undefined4 DAT_005f0755
-;   undefined4 DAT_005f075d
+;   double g_DOUBLE_005f074d = 0.5
+;   double g_DOUBLE_005f0755 = 15
+;   double g_DOUBLE_005f075d = 5
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -57,7 +57,7 @@ section .text
     LEA EDX,[EAX + 0x20]                ; 005a6d38
     FXCH                                ; 005a6d3b
     FSTP float ptr [EAX + 0x838]        ; 005a6d3d
-    FCOMP double ptr [0x005f074d]       ; 005a6d43 | DAT_005f074d
+    FCOMP double ptr [0x005f074d]       ; 005a6d43 | g_DOUBLE_005f074d
     FNSTSW AX                           ; 005a6d49
     SAHF                                ; 005a6d4b
     JC 0x005a6d92                       ; 005a6d4c
@@ -66,7 +66,7 @@ section .text
     PUSH 0x5f073c                       ; 005a6d4f | = "crossfull.wav"
     MOV EDX,dword ptr [ESP + 0x4c]      ; 005a6d54
     PUSH EDX                            ; 005a6d58
-    MOV ECX,dword ptr [0x0061c068]      ; 005a6d59 | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005a6d59 | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005a6d5f
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a6d60
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -92,10 +92,10 @@ section .text
     RET                                 ; 005a6d91
     PUSH EDX                            ; 005a6d92
         ;   Label: LAB_005a6d92
-    PUSH 0x5f072d                       ; 005a6d93 | s_crosssmall_wav_005f072b+2
+    PUSH 0x5f072d                       ; 005a6d93 | = "crosssmall.wav"
     MOV EBX,dword ptr [ESP + 0x4c]      ; 005a6d98
     PUSH EBX                            ; 005a6d9c
-    MOV ESI,dword ptr [0x0061c068]      ; 005a6d9d | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 005a6d9d | g_CSound_PTR_0061c068
     PUSH ESI                            ; 005a6da3
     JMP 0x005a6d60                      ; 005a6da4
         ;   XREF to: 005a6d60 (UNCONDITIONAL_JUMP)  ; LAB_005a6d60
@@ -136,7 +136,7 @@ section .text
     FXCH                                ; 005a6e0f
     FSQRT                               ; 005a6e11
     FXCH                                ; 005a6e13
-    FMUL double ptr [0x005f0755]        ; 005a6e15 | DAT_005f0755
+    FMUL double ptr [0x005f0755]        ; 005a6e15 | g_DOUBLE_005f0755
     FXCH                                ; 005a6e1b
     FCOMPP                              ; 005a6e1d
     FNSTSW AX                           ; 005a6e1f
@@ -162,7 +162,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a6e56
     MOVSD ES:EDI,ESI                    ; 005a6e57
     FLD float ptr [EDX + 0x838]         ; 005a6e58
-    FMUL double ptr [0x005f075d]        ; 005a6e5e | DAT_005f075d
+    FMUL double ptr [0x005f075d]        ; 005a6e5e | g_DOUBLE_005f075d
     SUB ESP,0x4                         ; 005a6e64
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 005a6e67
     LEA EDX,[ESP + 0x4]                 ; 005a6e6d

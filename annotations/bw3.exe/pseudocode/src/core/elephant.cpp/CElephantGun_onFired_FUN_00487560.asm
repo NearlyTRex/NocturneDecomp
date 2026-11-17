@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shell_kfm_005bd9c4
 ;   TerminatedCString s_sh_cock_wav_005bd9ce
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
@@ -109,7 +109,7 @@ section .text
     PUSH EAX                            ; 00487655
     LEA EAX,[EBX + 0x20]                ; 00487656
     PUSH EAX                            ; 00487659
-    MOV EBP,dword ptr [0x005fc5a0]      ; 0048765a | DAT_005fc5a0
+    MOV EBP,dword ptr [0x005fc5a0]      ; 0048765a | g_CFireEffect_PTR_005fc5a0
     PUSH EBP                            ; 00487660
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004a3e70 ; 00487661
         ;   XREF to: 004a3e70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004a3e70(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)

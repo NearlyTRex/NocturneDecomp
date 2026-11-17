@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flashlit_cpp_loadNotesBitmaps_FUN_004a1870(void)
 
 {
@@ -36,20 +34,20 @@ void __cdecl core_flashlit_cpp_loadNotesBitmaps_FUN_004a1870(void)
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf204);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf218);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf22c);
-  DAT_01caf4a0 = 0;
-  DAT_00616040 = 0xffffffff;
-  DAT_00616010 = 1;
-  _DAT_01caf488 = 0;
-  _DAT_01caf568 = 0;
+  g_CHAR_01caf4a0 = '\0';
+  g_INT_00616040 = -1;
+  g_INT_00616010 = 1;
+  g_INT_01caf488 = 0;
+  g_INT_01caf568 = 0;
   engine_dosio_cpp_splitPath_FUN_00461070
-            (&DAT_01cab7a8,(char *)0x0,(char *)0x0,acStack_518,(char *)0x0);
-  _sprintf(acStack_418,&DAT_005d59e3);
+            (&g_CHAR_01cab7a8,(char *)0x0,(char *)0x0,acStack_518,(char *)0x0);
+  _sprintf(acStack_418,"%s%s");
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(&CAlphaBitmap_01caf114,acStack_418,0x280,0x1e0)
   ;
   iVar3 = 9;
   iVar2 = 0;
   engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(&CAlphaBitmap_01caf114,0xff);
-  if (0 < _DAT_01cab9f0) {
+  if (0 < g_INT_01cab9f0) {
     pCVar1 = CAlphaBitmap_ARRAY_01caf128;
     do {
       iStack_18 = iVar2 * 0x2e4;
@@ -57,14 +55,14 @@ void __cdecl core_flashlit_cpp_loadNotesBitmaps_FUN_004a1870(void)
       iStack_14 = iVar2 * 0x14;
       engine_dosio_cpp_splitPath_FUN_00461070
                 (acStack_318,(char *)0x0,(char *)0x0,acStack_118,(char *)0x0);
-      _sprintf(acStack_218,&DAT_005d59e3);
+      _sprintf(acStack_218,"%s%s");
       engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(pCVar1,acStack_218,0x5a,0x36);
       *(uint *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iStack_18 + -0xc) = 0x215;
       *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iStack_18 + -8) = iVar3;
       iVar2 = iVar2 + 1;
       pCVar1 = pCVar1 + 1;
       iVar3 = iVar3 + *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + iStack_14) + 10;
-    } while (iVar2 < _DAT_01cab9f0);
+    } while (iVar2 < g_INT_01cab9f0);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0
             (&CAlphaBitmap_01caf1a0,"pentip",0x20,0x20);
@@ -83,6 +81,6 @@ void __cdecl core_flashlit_cpp_loadNotesBitmaps_FUN_004a1870(void)
   engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(&CAlphaBitmap_01caf218,0xff);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0
             (&CAlphaBitmap_01caf22c,"underline",0x100,8);
-  DAT_00616010 = 0;
+  g_INT_00616010 = 0;
   return;
 }

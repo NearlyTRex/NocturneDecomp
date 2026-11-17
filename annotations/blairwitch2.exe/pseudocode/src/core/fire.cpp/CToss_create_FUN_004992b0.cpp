@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CToss_create_FUN_004992b0(CToss *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time)
 
 {
@@ -28,12 +26,12 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004992b0(CToss *this_ptr,int toss_ty
   this_ptr->sfx_handle = 0;
   if (this_ptr->toss_type == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-              (&this_ptr->model,"@\\@dynamitestick.kfm" + 3);
+              (&this_ptr->model,"dynamitestick.kfm");
     local_14 = 1.0;
   }
   else {
-    _DAT_01d046a0 = "..\\core\\fire.cpp";
-    _DAT_01d046a4 = 0xd76;
+    g_CHAR_PTR_01d046a0 = "..\\core\\fire.cpp";
+    g_INT_01d046a4 = 0xd76;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CToss::create - invalid toss type.");
   }
   if (this_ptr->fuse_timer <= 0.0) {

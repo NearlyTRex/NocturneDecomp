@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 754,
-    "complexity_score": 331,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 53,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 271,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 1025
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 270,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1024
   },
   "cross_references": [
     {
@@ -290,110 +287,110 @@
     },
     {
       "addr": "006034c0",
-      "name": "DAT_006034c0",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_006034c0",
+      "type": "char[128]",
       "value": null
     },
     {
       "addr": "01549aa0",
-      "name": "DAT_01549aa0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549aa4",
-      "name": "DAT_01549aa4",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa4",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549aa8",
-      "name": "DAT_01549aa8",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa8",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549aac",
-      "name": "DAT_01549aac",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aac",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ab0",
-      "name": "DAT_01549ab0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ab0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ab4",
-      "name": "DAT_01549ab4",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ab4",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ab8",
-      "name": "DAT_01549ab8",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ab8",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549abc",
-      "name": "DAT_01549abc",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549abc",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ac0",
-      "name": "DAT_01549ac0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ac0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ac4",
-      "name": "DAT_01549ac4",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_01549ac4",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "01549ac8",
-      "name": "DAT_01549ac8",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_01549ac8",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "01549acc",
-      "name": "DAT_01549acc",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_01549acc",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "01549ad0",
-      "name": "DAT_01549ad0",
-      "type": "undefined4",
+      "name": "g_CWinFont_PTR_01549ad0",
+      "type": "CWinFont*",
       "value": null
     },
     {
       "addr": "01c5b0e0",
-      "name": "DAT_01c5b0e0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c5b0e0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01dd4890",
-      "name": "DAT_01dd4890",
-      "type": "undefined4",
+      "name": "g_INT_01dd4890",
+      "type": "int",
       "value": null
     }
   ],
@@ -475,46 +472,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 217,
-      "match": "DAT_006034c0",
-      "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,0xe,2,2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 232,
-      "match": "DAT_006034c0",
-      "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,0x12,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 247,
-      "match": "DAT_006034c0",
-      "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,0xc,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 262,
-      "match": "DAT_006034c0",
-      "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,10,0,0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

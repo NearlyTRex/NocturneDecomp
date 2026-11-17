@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004693a8 = 00469465
-;   undefined4 DAT_005d9be4
-;   undefined4 DAT_005d9bec
-;   undefined4 DAT_005fecb4
+;   double g_DOUBLE_005d9be4 = 3.14159265350000
+;   double g_DOUBLE_005d9bec = 0.25
+;   float g_FLOAT_005fecb4 = 0.7850000
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.goggles_active
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 00469537 (CONDITIONAL_JUMP)  ; LAB_00469537
     FLD float ptr [ESP + 0x1c]          ; 00469477
         ;   Label: LAB_00469477
-    FMUL double ptr [0x005d9bec]        ; 0046947b | DAT_005d9bec
+    FMUL double ptr [0x005d9bec]        ; 0046947b | g_DOUBLE_005d9bec
     FSTP float ptr [ESP + 0x4]          ; 00469481
     PUSH dword ptr [ESP + 0x4]          ; 00469485
     PUSH EBX                            ; 00469489
@@ -121,7 +121,7 @@ section .text
     RET                                 ; 004694d2
     PUSH ECX                            ; 004694d3
         ;   Label: LAB_004694d3
-    FLD float ptr [0x005fecb4]          ; 004694d4 | DAT_005fecb4
+    FLD float ptr [0x005fecb4]          ; 004694d4 | g_FLOAT_005fecb4
     LEA EAX,[EBX + 0x158]               ; 004694da
     PUSH 0x75                           ; 004694e0
     FSUBR float ptr [EBX + 0x200dc]     ; 004694e2
@@ -132,7 +132,7 @@ section .text
     FLD float ptr [EBX + 0x200dc]       ; 004694f4
     FABS                                ; 004694fa
     ADD ESP,0xc                         ; 004694fc
-    FCOMP double ptr [0x005d9be4]       ; 004694ff | DAT_005d9be4
+    FCOMP double ptr [0x005d9be4]       ; 004694ff | g_DOUBLE_005d9be4
     FNSTSW AX                           ; 00469505
     SAHF                                ; 00469507
     JBE 0x00469519                      ; 00469508
@@ -142,7 +142,7 @@ section .text
         ;   XREF to: 00469425 (UNCONDITIONAL_JUMP)  ; LAB_00469425
     LEA EAX,[EBX + 0x30]                ; 00469519
         ;   Label: LAB_00469519
-    FLD float ptr [0x005fecb4]          ; 0046951c | DAT_005fecb4
+    FLD float ptr [0x005fecb4]          ; 0046951c | g_FLOAT_005fecb4
     PUSH EAX                            ; 00469522
     FADD float ptr [EBX + 0x34]         ; 00469523
     PUSH EBX                            ; 00469526

@@ -11,7 +11,7 @@
 ;   core_actor.cpp_matchClassExpression_FUN_0040c780 at 0040c7c3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   core_actor.cpp_checkNameHash_FUN_0040c870
@@ -35,7 +35,7 @@ section .text
     MOV DL,byte ptr [EAX]               ; 0040c670
     INC DL                              ; 0040c672
     AND EDX,0xff                        ; 0040c674
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 0040c67a | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 0040c67a | g_UCHAR_ARRAY_0061ed94
     JNZ 0x0040c6b5                      ; 0040c681
         ;   XREF to: 0040c6b5 (CONDITIONAL_JUMP)  ; LAB_0040c6b5
     MOV EDI,dword ptr [EBX]             ; 0040c683
@@ -89,7 +89,7 @@ section .text
     MOV DL,byte ptr [EAX]               ; 0040c6d1
     INC DL                              ; 0040c6d3
     AND EDX,0xff                        ; 0040c6d5
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 0040c6db | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 0040c6db | g_UCHAR_ARRAY_0061ed94
     JZ 0x0040c6f3                       ; 0040c6e2
         ;   XREF to: 0040c6f3 (CONDITIONAL_JUMP)  ; LAB_0040c6f3
     INC EAX                             ; 0040c6e4
@@ -120,7 +120,7 @@ section .text
         ;   Label: LAB_0040c704
     INC AL                              ; 0040c706
     AND EAX,0xff                        ; 0040c708
-    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0040c70d | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0xe0 ; 0040c70d | g_UCHAR_ARRAY_0061ed94
     JZ 0x0040c76a                       ; 0040c714
         ;   XREF to: 0040c76a (CONDITIONAL_JUMP)  ; LAB_0040c76a
     XOR ESI,ESI                         ; 0040c716
@@ -147,7 +147,7 @@ section .text
     MOV ESI,EAX                         ; 0040c744
     INC DL                              ; 0040c746
     AND EDX,0xff                        ; 0040c748
-    TEST byte ptr [EDX + 0x61ed94],0xe0 ; 0040c74e | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0xe0 ; 0040c74e | g_UCHAR_ARRAY_0061ed94
     JNZ 0x0040c718                      ; 0040c755
         ;   XREF to: 0040c718 (CONDITIONAL_JUMP)  ; LAB_0040c718
     PUSH EAX                            ; 0040c757

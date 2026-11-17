@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_fire_cpp_safeAcos_FUN_004abd60(float value)
 
 {
   double dVar1;
   uint uStack_8;
   
-  if (value <= (float)_DAT_005df174) {
+  if (value <= (float)-1) {
     uStack_8 = 3.1415927;
   }
   else {

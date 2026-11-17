@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_initialize_FUN_004da4e0(CInventory *this_ptr)
 
 {
@@ -21,7 +19,8 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004da4e0(CInventory *this_pt
   do {
     iVar1 = rand();
     ppCVar3 = &pCVar2->owner;
-    pCVar2->item_angles[0] = (float)iVar1 * _DAT_005c5f2b * _DAT_005c5f2f * (float)_DAT_005c5f37;
+    pCVar2->item_angles[0] =
+         (float)iVar1 * 3.051851e-05f * 3.141593f * (float)2;
     pCVar2 = (CInventory *)ppCVar3;
   } while (ppCVar3 != this_ptr->items + 0x5f);
   if (this_ptr->ammo_ptr != (CAmmo *)0x0) {

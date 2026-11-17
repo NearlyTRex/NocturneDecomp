@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_demnfolk_cpp_CDemnfolk_processPickup_FUN_0045b560(CDemnfolk *this_ptr,float delta_time)
 
 {
@@ -158,8 +156,8 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_processPickup_FUN_0045b560(CDemnfolk *th
           afStack_54[0] = afStack_54[0] * afStack_54[0] * afStack_54[0] * afStack_54[0];
           fStack_224 = SQRT(afStack_54[1] * afStack_54[1] +
                             fStack_58 * fStack_58 + afStack_54[0] * afStack_54[0]);
-          if (((float)_DAT_005d81a3 <= fStack_224) &&
-             (fStack_224 <= this_ptr->pickup_range_factor * _DAT_005d81b3)) {
+          if (((float)5 <= fStack_224) &&
+             (fStack_224 <= this_ptr->pickup_range_factor * 15.0f)) {
             *(CDemnfolk **)(&stack0xfffffde4 + unaff_ESI) = this_ptr_00;
             *(int *)((int)aiStack_1f4 + unaff_ESI) = local_20;
             unaff_ESI = unaff_ESI + 4;
@@ -186,7 +184,7 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_processPickup_FUN_0045b560(CDemnfolk *th
   pCVar3 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
   if (pCVar3 != (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_00445430
-              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
+              (g_CConsolePtr,"%s can't pick up %s, sombody else beat me to it!\n");
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 0.0;
     core_demnfolk_cpp_CDemnfolk_resetChaseState_FUN_0045d060(this_ptr);
@@ -195,7 +193,8 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_processPickup_FUN_0045b560(CDemnfolk *th
   fVar10 = (pCVar6->position).x - (this_ptr->pickup_target->location).position.x;
   fVar2 = (this_ptr->base).base.base.location.position.z -
           (this_ptr->pickup_target->location).position.z;
-  fVar10 = (float)_DAT_005d81a3 - SQRT(fVar2 * fVar2 + fVar10 * fVar10) * (float)_DAT_005d819b;
+  fVar10 = (float)5 -
+           SQRT(fVar2 * fVar2 + fVar10 * fVar10) * (float)0.33333333333333298;
   if (fVar10 < 1.0) {
     fVar10 = 1.0;
   }
@@ -235,7 +234,7 @@ LAB_0045b7cf:
         afStack_54[(uint)bVar9 * -2 + 3] = *(float *)((int)&CStack_40 + (uint)bVar9 * -8 + 4);
         afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
              *(float *)((int)&CStack_40 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-        fStack_44 = CStack_1cc.z + (float)_DAT_005d81ab;
+        fStack_44 = CStack_1cc.z + (float)0.40000000000000002;
         CStack_e8.x = afStack_54[2];
         *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + 4) = afStack_54[(uint)bVar9 * -2 + 3];
         *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -289,7 +288,7 @@ LAB_0045bb56:
       afStack_90[(uint)bVar9 * -2] = *(float *)((int)&CStack_130 + (uint)bVar9 * -8 + 4);
       afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
            *(float *)((int)&CStack_130 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      afStack_90[1] = CStack_19c.z + (float)_DAT_005d81ab;
+      afStack_90[1] = CStack_19c.z + (float)0.40000000000000002;
       CStack_118.x = fStack_94;
       *(float *)((int)&CStack_118 + (uint)bVar9 * -8 + 4) = afStack_90[(uint)bVar9 * -2];
       *(float *)((int)&CStack_118 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -307,11 +306,11 @@ LAB_0045bb56:
       }
     }
     puVar7 = local_24;
-    CStack_ac.x = _DAT_02c8af28;
+    CStack_ac.x = g_CVector3f_02c8af28.x;
     *(uint *)((int)&CStack_ac + (uint)bVar9 * -8 + 4) =
-         *(uint *)(&DAT_02c8af2c + (uint)bVar9 * -8);
+         *(uint *)((int)&g_CVector3f_02c8af28 + (uint)bVar9 * -8 + 4);
     *(uint *)((int)&CStack_ac + ((uint)bVar9 * -2 + (uint)bVar9 * -2) * 4 + 8) =
-         *(uint *)(&DAT_02c8af30 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+         *(uint *)((uint)bVar9 * -8 + 0x2c8af30 + (uint)bVar9 * -8);
     if (puVar7 == (uint *)0x0) {
       CStack_10c.y = (float)puVar7;
       CStack_10c.z = (float)puVar7;
@@ -351,8 +350,8 @@ LAB_0045bb56:
   if (uVar1 < 2) {
     if (uVar1 != 1) {
 LAB_0045bc3a:
-      _DAT_01d1d400 = "..\\core\\demnfolk.cpp";
-      _DAT_01d1d404 = 0x5d5;
+      g_CHAR_PTR_01d1d400 = "..\\core\\demnfolk.cpp";
+      g_INT_01d1d404 = 0x5d5;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid demon townsfolk object shape!");
       return 1;
     }

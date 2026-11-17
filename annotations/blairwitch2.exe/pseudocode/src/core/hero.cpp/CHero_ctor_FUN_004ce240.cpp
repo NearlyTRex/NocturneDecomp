@@ -23,7 +23,7 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004ce240(CHero *this_ptr)
   pCVar3[-2].owner = (CDemonActor *)this_ptr_00;
   pCVar3[-1].owner = (CDemonActor *)this_ptr_00;
   pCVar3->owner = (CDemonActor *)this_ptr_00;
-  pCVar3[-0x60].items[0x16] = (CDemonActor *)&DAT_005f8274;
+  pCVar3[-0x60].items[0x16] = (CDemonActor *)g_ARRAY_PTR_005f8274;
   pCVar3[1].items[0x10] = (CDemonActor *)0x0;
   memset(pCVar3[-0x35].items + 1,0,0x34);
   pCVar3[-0x35].item_count = 0;

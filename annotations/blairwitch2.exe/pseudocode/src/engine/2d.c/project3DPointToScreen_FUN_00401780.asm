@@ -12,10 +12,10 @@
 ;   engine_2d.c_draw320x200SizeDot_FUN_00402ae0 at 00402b29
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c35e38
-;   undefined4 DAT_01c35e3c
-;   undefined4 DAT_01c35e40
-;   undefined4 DAT_01c35e44
+;   int g_INT_01c35e38
+;   int g_INT_01c35e3c
+;   int g_INT_01c35e40
+;   int g_INT_01c35e44
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
@@ -29,18 +29,18 @@ section .text
     PUSH ESI                            ; 00401781
     MOV EAX,dword ptr [ESP + 0xc]       ; 00401782
     MOV ECX,dword ptr [ESP + 0x14]      ; 00401786
-    MOV EDX,dword ptr [0x01c35e38]      ; 0040178a | DAT_01c35e38
+    MOV EDX,dword ptr [0x01c35e38]      ; 0040178a | g_INT_01c35e38
     MOV EBX,ECX                         ; 00401790
     IMUL EDX                            ; 00401792
     IDIV EBX                            ; 00401794
-    MOV ESI,dword ptr [0x01c35e40]      ; 00401796 | DAT_01c35e40
-    MOV EDX,dword ptr [0x01c35e3c]      ; 0040179c | DAT_01c35e3c
+    MOV ESI,dword ptr [0x01c35e40]      ; 00401796 | g_INT_01c35e40
+    MOV EDX,dword ptr [0x01c35e3c]      ; 0040179c | g_INT_01c35e3c
     MOV EBX,ECX                         ; 004017a2
     ADD ESI,EAX                         ; 004017a4
     MOV EAX,dword ptr [ESP + 0x10]      ; 004017a6
     IMUL EDX                            ; 004017aa
     IDIV EBX                            ; 004017ac
-    ADD EAX,dword ptr [0x01c35e44]      ; 004017ae | DAT_01c35e44
+    ADD EAX,dword ptr [0x01c35e44]      ; 004017ae | g_INT_01c35e44
     SAR EAX,0x10                        ; 004017b4
     PUSH EAX                            ; 004017b7
     SAR ESI,0x10                        ; 004017b8

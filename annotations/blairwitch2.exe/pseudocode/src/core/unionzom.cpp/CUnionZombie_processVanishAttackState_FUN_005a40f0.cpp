@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0(CUnionZombie *this_ptr,float delta_time)
 
@@ -30,7 +29,7 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f
   if (uVar1 < 2) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     if (pSVar2->state_index == 4) {
-      if (_DAT_005f02de <= (this_ptr->base).base.base.model.base.current_frame_number) {
+      if (40.0f <= (this_ptr->base).base.base.model.base.current_frame_number) {
         core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0
                   (&this_ptr->base,(this_ptr->base).fade_val,1.0,0.75);
         core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(&this_ptr->base);
@@ -49,7 +48,7 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     if (pSVar2->state_index == 3) {
       this_ptr_01 = &(this_ptr->base).state_machine;
-      (this_ptr->base).attack_range = _DAT_005ff544;
+      (this_ptr->base).attack_range = 2.0f;
       core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
                 (this_ptr_01,"ChaseComplete","MeleeAttack");
       core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"MeleeAttack");

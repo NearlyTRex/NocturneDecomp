@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
 
 {
@@ -20,7 +18,7 @@ CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
   pCVar3 = (CHino *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
   (pCVar3->base).base.base.vtable._ub = &g_CHinoVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar3->base).base.model,(char *)0x5d9bca);
+            (&(pCVar3->base).base.model,"bwp3_hino.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.6;
   (pCVar3->base).base.collision_cylinder_radius = 0.9;
   (pCVar3->base).base.hit_points = 90.0;
@@ -28,9 +26,9 @@ CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
   pCVar3->attack_cooldown = 0.0;
   pCVar3->vanish_timer = 0.0;
   pCVar3->render_alpha = 0x10000;
-  fVar1 = _DAT_005e81b0;
+  fVar1 = 50.0f;
   pCVar3->vanishing = 0;
-  fVar2 = _DAT_005e81b4;
+  fVar2 = 100.0f;
   pCVar3->platform_check_done = 0;
   pCVar3->near_platform = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

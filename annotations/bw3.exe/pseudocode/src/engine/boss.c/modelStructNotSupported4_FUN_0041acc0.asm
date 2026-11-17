@@ -10,8 +10,8 @@
 ;   engine_model.c_getMRGLBounds_FUN_004f8170 at 004f85da
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -29,8 +29,8 @@ section .text
     MOV EDX,0x5b72db                    ; 0041acc7
     MOV ECX,0x44                        ; 0041accc
     PUSH 0x5b72ec                       ; 0041acd1
-    MOV dword ptr [0x01d71de0],EDX      ; 0041acd6 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0041acdc | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0041acd6 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0041acdc | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0041ace2
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0041ace7

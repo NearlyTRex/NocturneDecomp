@@ -91,7 +91,7 @@ void __cdecl core_bird_cpp_CBird_process_FUN_00415340(CBird *this_ptr,float delt
   EVar2 = (this_ptr->base).walk_state;
   if (EVar2 < 2) {
     if (EVar2 == WALK_STATE_WALKING) {
-      state_name = &DAT_005d3ce9;
+      state_name = "FLY";
     }
     else {
 LAB_00415631:
@@ -115,7 +115,7 @@ LAB_0041549d:
   }
   else {
     if (EVar2 < WALK_STATE_NO_PATH) {
-      state_name = &DAT_005d3ce5;
+      state_name = "FLY";
       goto LAB_0041549d;
     }
     if (EVar2 != WALK_STATE_NO_PATH) goto LAB_00415631;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005203c0(CScat *this_ptr,float delta_time,int is_holstered)
 
 {
@@ -114,10 +112,10 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005203c0(CScat *this_ptr,float
           afStack_84[(uint)bVar7 * -2] = afStack_48[(uint)bVar7 * -2 + 3];
           afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
                afStack_48[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-          fStack_d0 = fStack_88 * _DAT_005e2bcf;
-          afStack_cc[0] = afStack_84[0] * _DAT_005e2bcf;
-          afStack_cc[1] = afStack_84[1] * _DAT_005e2bcf;
-          CStack_c4.x = fStack_88 * _DAT_005e2bcf;
+          fStack_d0 = fStack_88 * 0.5f;
+          afStack_cc[0] = afStack_84[0] * 0.5f;
+          afStack_cc[1] = afStack_84[1] * 0.5f;
+          CStack_c4.x = fStack_88 * 0.5f;
           afStack_cc[(uint)bVar7 * -2 + 3] = afStack_cc[(uint)bVar7 * -2];
           afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
                afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
@@ -143,7 +141,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005203c0(CScat *this_ptr,float
         afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
              *(float *)((int)&CStack_e8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-                  (&(this_ptr->base).base.model,_DAT_01e62080,&CStack_58);
+                  (&(this_ptr->base).base.model,g_INT_ARRAY_01e62068[6],&CStack_58);
         fVar3 = afStack_84[2];
         fStack_ac = CStack_58.x;
         afStack_cc[(uint)bVar7 * -2 + 9] = *(float *)((int)&CStack_58 + (uint)bVar7 * -8 + 4);
@@ -173,10 +171,10 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005203c0(CScat *this_ptr,float
     }
   }
   else {
-    local_1a8 = (this_ptr->base).player_input.look_up_down_speed * _DAT_005e2bbb *
-                (float)_DAT_005e2bc3 * delta_time + local_1a8;
+    local_1a8 = (this_ptr->base).player_input.look_up_down_speed * 3.141593f *
+                (float)2 * delta_time + local_1a8;
     local_34 = 0x3fc90fdb;
-    if (local_1a8 < _DAT_005e2bcb) {
+    if (local_1a8 < -1.570796f) {
       local_1a8 = -1.5707964;
     }
     if (1.5707964 < local_1a8) {
@@ -187,7 +185,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005203c0(CScat *this_ptr,float
   local_1c = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_14 - this_ptr->aim_yaw);
   local_20 = (CDemonActor *)
              core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_198 - this_ptr->aim_pitch);
-  local_18 = delta_time * _DAT_005e2bbb * (float)_DAT_005e2bd3;
+  local_18 = delta_time * 3.141593f * (float)1.5;
   local_28 = -local_18;
   if (local_1c < local_28) {
     local_1c = local_28;
@@ -206,9 +204,9 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005203c0(CScat *this_ptr,float
   this_ptr->aim_yaw = this_ptr->aim_yaw + local_1c;
   if ((this_ptr->aim_target != (CDemonActor *)0x0) && (is_holstered == 0)) {
     fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(this_ptr->aim_yaw - fStack_14);
-    if (((float)_DAT_005e2bdb <= ABS(fVar3)) &&
+    if (((float)0.02 <= ABS(fVar3)) &&
        (fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(this_ptr->aim_yaw - fStack_14),
-       (float)_DAT_005e2bdb <= ABS(fVar3))) {
+       (float)0.02 <= ABS(fVar3))) {
       return;
     }
     this_ptr->aim_converged = 1;

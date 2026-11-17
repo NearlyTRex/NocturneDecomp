@@ -27,15 +27,15 @@
 ;   TerminatedCString s_Cancel_005dbd5b
 ;   TerminatedCString s_OK_005dbd62
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_01c3eb50
-;   undefined4 DAT_01c3f538
-;   undefined4 DAT_01c3f53c
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
-;   undefined4 DAT_01d1d400
+;   int g_INT_0061b49c = 0xc8
+;   CBitFont* g_CBitFont_PTR_01c3eb50
+;   int g_INT_01c3f538
+;   int g_INT_01c3f53c
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f010
+;   int g_INT_01c4f014
+;   char* g_CHAR_PTR_01d1d400
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -67,19 +67,19 @@ section .text
     PUSH EBP                            ; 00493d43
     SUB ESP,0xf8                        ; 00493d44
     MOV ESI,dword ptr [ESP + 0x110]     ; 00493d4a
-    CMP dword ptr [0x01c3eb50],0x0      ; 00493d51 | DAT_01c3eb50
+    CMP dword ptr [0x01c3eb50],0x0      ; 00493d51 | g_CBitFont_PTR_01c3eb50
     JZ 0x00493fcc                       ; 00493d58
         ;   XREF to: 00493fcc (CONDITIONAL_JUMP)  ; LAB_00493fcc
-    MOV EAX,[0x01c3eb50]                ; 00493d5e | DAT_01c3eb50
+    MOV EAX,[0x01c3eb50]                ; 00493d5e | g_CBitFont_PTR_01c3eb50
         ;   Label: LAB_00493d5e
     PUSH 0x6a                           ; 00493d63
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 00493d65
     PUSH EAX                            ; 00493d6b
-    MOV dword ptr [0x01c3f538],EDX      ; 00493d6c | DAT_01c3f538
+    MOV dword ptr [0x01c3f538],EDX      ; 00493d6c | g_INT_01c3f538
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 00493d72
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
-    MOV [0x01c3f53c],EAX                ; 00493d77 | DAT_01c3f53c
-    MOV EAX,[0x0061b49c]                ; 00493d7c | DAT_0061b49c
+    MOV [0x01c3f53c],EAX                ; 00493d77 | g_INT_01c3f53c
+    MOV EAX,[0x0061b49c]                ; 00493d7c | g_INT_0061b49c
     MOV EDX,EAX                         ; 00493d81
     MOV EBX,0x60                        ; 00493d83
     SAR EDX,0x1f                        ; 00493d88
@@ -97,7 +97,7 @@ section .text
     ADD ESP,0x4                         ; 00493dad
     MOV EDI,dword ptr [ESP + 0x10c]     ; 00493db0
     PUSH EDI                            ; 00493db7
-    MOV EBP,dword ptr [0x01c3eb50]      ; 00493db8 | DAT_01c3eb50
+    MOV EBP,dword ptr [0x01c3eb50]      ; 00493db8 | g_CBitFont_PTR_01c3eb50
     ADD EBX,EBX                         ; 00493dbe
     PUSH EBP                            ; 00493dc0
     ADD EBX,EAX                         ; 00493dc1
@@ -107,7 +107,7 @@ section .text
     MOV EBP,EAX                         ; 00493dcb
     PUSH ESI                            ; 00493dcd
     MOV dword ptr [ESP + 0xf8],EAX      ; 00493dce
-    MOV EAX,[0x01c3eb50]                ; 00493dd5 | DAT_01c3eb50
+    MOV EAX,[0x01c3eb50]                ; 00493dd5 | g_CBitFont_PTR_01c3eb50
     PUSH EAX                            ; 00493dda
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 00493ddb
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
@@ -124,7 +124,7 @@ section .text
         ;   XREF to: 00493ff4 (CONDITIONAL_JUMP)  ; LAB_00493ff4
     PUSH ESI                            ; 00493e04
         ;   Label: LAB_00493e04
-    MOV ECX,dword ptr [0x01c3eb50]      ; 00493e05 | DAT_01c3eb50
+    MOV ECX,dword ptr [0x01c3eb50]      ; 00493e05 | g_CBitFont_PTR_01c3eb50
     PUSH ECX                            ; 00493e0b
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50 ; 00493e0c
         ;   XREF to: 004c3f50 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50(CBitFont * this_ptr, char * text_string)
@@ -132,13 +132,13 @@ section .text
     PUSH 0x0                            ; 00493e14
     MOV EDX,dword ptr [ESP + 0x110]     ; 00493e16
     PUSH EDX                            ; 00493e1d
-    MOV EDX,dword ptr [0x01c3f53c]      ; 00493e1e | DAT_01c3f53c
+    MOV EDX,dword ptr [0x01c3f53c]      ; 00493e1e | g_INT_01c3f53c
     ADD EDX,EDX                         ; 00493e24
     MOV EBP,EAX                         ; 00493e26
     ADD EAX,EDX                         ; 00493e28
     ADD EAX,EBX                         ; 00493e2a
     PUSH EAX                            ; 00493e2c
-    MOV EAX,[0x01c3f538]                ; 00493e2d | DAT_01c3f538
+    MOV EAX,[0x01c3f538]                ; 00493e2d | g_INT_01c3f538
     MOV ECX,dword ptr [ESP + 0x100]     ; 00493e32
     SHL EAX,0x2                         ; 00493e39
     ADD EAX,ECX                         ; 00493e3c
@@ -151,10 +151,10 @@ section .text
     PUSH 0x5dbd5b                       ; 00493e4d | = "Cancel"
     CALL shape_edittool.cpp_calculateButtonWidth_FUN_0049d950 ; 00493e52
         ;   XREF to: 0049d950 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonWidth_FUN_0049d950(char * button_text)
-    MOV EDX,dword ptr [0x01c4f010]      ; 00493e57 | DAT_01c4f010
+    MOV EDX,dword ptr [0x01c4f010]      ; 00493e57 | g_INT_01c4f010
     MOV dword ptr [ESP + 0xf0],EAX      ; 00493e5d
     ADD ESP,0x4                         ; 00493e64
-    MOV EAX,[0x01c4f008]                ; 00493e67 | DAT_01c4f008
+    MOV EAX,[0x01c4f008]                ; 00493e67 | g_INT_01c4f008
     MOV ECX,dword ptr [ESP + 0xec]      ; 00493e6c
     ADD EDX,EAX                         ; 00493e73
     SUB EDX,ECX                         ; 00493e75
@@ -167,7 +167,7 @@ section .text
     MOV dword ptr [ESP + 0xe8],EAX      ; 00493e83
     CALL shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0 ; 00493e8a
         ;   XREF to: 0049d9e0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0(char * button_text)
-    MOV EDX,dword ptr [0x01c4f014]      ; 00493e8f | DAT_01c4f014
+    MOV EDX,dword ptr [0x01c4f014]      ; 00493e8f | g_INT_01c4f014
     SUB EDX,EAX                         ; 00493e95
     ADD ESP,0x4                         ; 00493e97
     LEA EAX,[EDX + 0x1]                 ; 00493e9a
@@ -178,7 +178,7 @@ section .text
         ;   XREF to: 0049d480 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_ctor_FUN_0049d480(CEdButton * this_ptr)
     ADD ESP,0x4                         ; 00493eac
     PUSH 0x5dbd62                       ; 00493eaf | = "OK"
-    MOV EAX,[0x01c4f014]                ; 00493eb4 | DAT_01c4f014
+    MOV EAX,[0x01c4f014]                ; 00493eb4 | g_INT_01c4f014
     MOV EDX,dword ptr [ESP + 0xf0]      ; 00493eb9
     PUSH EAX                            ; 00493ec0
     MOV EAX,dword ptr [ESP + 0xec]      ; 00493ec1
@@ -210,7 +210,7 @@ section .text
     TEST EAX,EAX                        ; 00493f06
     JNZ 0x00494000                      ; 00493f08
         ;   XREF to: 00494000 (CONDITIONAL_JUMP)  ; LAB_00494000
-    CMP dword ptr [0x02c9be70],0x0      ; 00493f0e | DAT_02c9be70
+    CMP dword ptr [0x02c9be70],0x0      ; 00493f0e | g_INT_02c9be70
     JNZ 0x00494000                      ; 00493f15
         ;   XREF to: 00494000 (CONDITIONAL_JUMP)  ; LAB_00494000
     MOV ECX,dword ptr [0x0061abc0]      ; 00493f1b | g_CEditorToolsPtr
@@ -234,9 +234,9 @@ section .text
     ADD ESP,0x4                         ; 00493f51
     PUSH -0x1                           ; 00493f54
     MOV EDX,dword ptr [ESP + 0x118]     ; 00493f56
-    MOV ECX,dword ptr [0x01c4f014]      ; 00493f5d | DAT_01c4f014
+    MOV ECX,dword ptr [0x01c4f014]      ; 00493f5d | g_INT_01c4f014
     PUSH EDX                            ; 00493f63
-    MOV EDX,dword ptr [0x01c4f00c]      ; 00493f64 | DAT_01c4f00c
+    MOV EDX,dword ptr [0x01c4f00c]      ; 00493f64 | g_INT_01c4f00c
     ADD EDX,ECX                         ; 00493f6a
     SUB EDX,EBP                         ; 00493f6c
     SUB EDX,EBX                         ; 00493f6e
@@ -244,9 +244,9 @@ section .text
     SAR EDX,0x1f                        ; 00493f72
     SUB EAX,EDX                         ; 00493f75
     SAR EAX,0x1                         ; 00493f77
-    MOV EDX,dword ptr [0x01c4f008]      ; 00493f79 | DAT_01c4f008
+    MOV EDX,dword ptr [0x01c4f008]      ; 00493f79 | g_INT_01c4f008
     PUSH EAX                            ; 00493f7f
-    ADD EDX,dword ptr [0x01c4f010]      ; 00493f80 | DAT_01c4f010
+    ADD EDX,dword ptr [0x01c4f010]      ; 00493f80 | g_INT_01c4f010
     SUB EDX,EDI                         ; 00493f86
     MOV EAX,EDX                         ; 00493f88
     SAR EDX,0x1f                        ; 00493f8a
@@ -254,7 +254,7 @@ section .text
     SAR EAX,0x1                         ; 00493f8f
     PUSH EAX                            ; 00493f91
     PUSH ESI                            ; 00493f92
-    MOV EDX,dword ptr [0x01c3eb50]      ; 00493f93 | DAT_01c3eb50
+    MOV EDX,dword ptr [0x01c3eb50]      ; 00493f93 | g_CBitFont_PTR_01c3eb50
     PUSH EDX                            ; 00493f99
     CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 00493f9a
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -279,8 +279,8 @@ section .text
         ;   Label: LAB_00493fcc
     MOV EBX,0xa4                        ; 00493fd1
     PUSH 0x5dbc7e                       ; 00493fd6 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d1d400],ECX      ; 00493fdb | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00493fe1 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00493fdb | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00493fe1 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00493fe7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00493fec

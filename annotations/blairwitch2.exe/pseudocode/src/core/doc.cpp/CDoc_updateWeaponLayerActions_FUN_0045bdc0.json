@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1079,
-    "complexity_score": 1355,
+    "complexity_score": 1339,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 560,
-    "suspect_count": 75,
+    "pseudocode_lines": 559,
+    "suspect_count": 74,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
@@ -17,10 +17,9 @@
       "stack_param",
       "stack_ref",
       "suspect_float",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1639
+    "total_lines": 1638
   },
   "cross_references": [
     {
@@ -192,45 +191,45 @@
     },
     {
       "addr": "005d064f",
-      "name": "DAT_005d064f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d064f",
+      "type": "double",
+      "value": "25"
     },
     {
       "addr": "005d0657",
-      "name": "DAT_005d0657",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d0657",
+      "type": "double",
+      "value": "0.990000000000000"
     },
     {
       "addr": "005d065f",
-      "name": "DAT_005d065f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d065f",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "005f5134",
-      "name": "DAT_005f5134",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f5134",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "005f5138",
-      "name": "DAT_005f5138",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f5138",
+      "type": "float",
+      "value": "70"
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     },
     {
       "addr": "01c225d8",
@@ -515,16 +514,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
+      "line": 19,
       "match": "afStackY_1060",
       "severity": "moderate",
       "text": "float afStackY_1060 [1013];",
@@ -532,7 +523,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "CDemonActor *in_stack_ffffff88;",
@@ -540,7 +531,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_ffffff8c",
       "severity": "moderate",
       "text": "float in_stack_ffffff8c;",
@@ -548,7 +539,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 185,
+      "line": 184,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -556,119 +547,119 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 186,
+      "line": 185,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 191,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "case 8.40779e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 192,
-      "match": "8.40779e-45",
+      "match": "9.80909e-45",
       "severity": "mild",
-      "text": "case 8.40779e-45:",
+      "text": "case 9.80909e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 193,
-      "match": "9.80909e-45",
+      "match": "1.12104e-44",
       "severity": "mild",
-      "text": "case 9.80909e-45:",
+      "text": "case 1.12104e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 194,
-      "match": "1.12104e-44",
+      "match": "1.26117e-44",
       "severity": "mild",
-      "text": "case 1.12104e-44:",
+      "text": "case 1.26117e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 195,
-      "match": "1.26117e-44",
+      "match": "1.82169e-44",
       "severity": "mild",
-      "text": "case 1.26117e-44:",
+      "text": "case 1.82169e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 196,
-      "match": "1.82169e-44",
+      "line": 211,
+      "match": "7.00649e-45",
       "severity": "mild",
-      "text": "case 1.82169e-44:",
+      "text": "case 7.00649e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 212,
-      "match": "7.00649e-45",
+      "match": "1.68156e-44",
       "severity": "mild",
-      "text": "case 7.00649e-45:",
+      "text": "case 1.68156e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 213,
-      "match": "1.68156e-44",
+      "line": 218,
+      "match": "8.40779e-45",
       "severity": "mild",
-      "text": "case 1.68156e-44:",
+      "text": "case 8.40779e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 219,
-      "match": "8.40779e-45",
+      "match": "9.80909e-45",
       "severity": "mild",
-      "text": "case 8.40779e-45:",
+      "text": "case 9.80909e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 220,
-      "match": "9.80909e-45",
+      "match": "1.12104e-44",
       "severity": "mild",
-      "text": "case 9.80909e-45:",
+      "text": "case 1.12104e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 221,
-      "match": "1.12104e-44",
+      "match": "1.26117e-44",
       "severity": "mild",
-      "text": "case 1.12104e-44:",
+      "text": "case 1.26117e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 222,
-      "match": "1.26117e-44",
+      "match": "1.82169e-44",
       "severity": "mild",
-      "text": "case 1.26117e-44:",
+      "text": "case 1.82169e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 223,
-      "match": "1.82169e-44",
+      "line": 243,
+      "match": "7.00649e-45",
       "severity": "mild",
-      "text": "case 1.82169e-44:",
+      "text": "case 7.00649e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 244,
-      "match": "7.00649e-45",
-      "severity": "mild",
-      "text": "case 7.00649e-45:",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 245,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -676,7 +667,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 251,
+      "line": 250,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -684,7 +675,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 252,
+      "line": 251,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -692,7 +683,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 253,
+      "line": 252,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -700,7 +691,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 254,
+      "line": 253,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -708,7 +699,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 255,
+      "line": 254,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -716,7 +707,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 277,
+      "line": 276,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -724,7 +715,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 278,
+      "line": 277,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -732,7 +723,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 284,
+      "line": 283,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -740,7 +731,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 285,
+      "line": 284,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -748,7 +739,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 286,
+      "line": 285,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -756,7 +747,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 287,
+      "line": 286,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -764,7 +755,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 288,
+      "line": 287,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -772,7 +763,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 383,
+      "line": 382,
       "match": "&stack0xffffff88",
       "severity": "moderate",
       "text": "core_doc_cpp_CDoc_getThrowDirection_FUN_0045bba0(this_ptr,(CVector3f *)&stack0xffffff88);",
@@ -780,7 +771,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 384,
+      "line": 383,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "local_60.x = (float)in_stack_ffffff88;",
@@ -788,7 +779,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 386,
+      "line": 385,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff8c + (uint)bVar10 * -8);",
@@ -796,7 +787,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 388,
+      "line": 387,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
@@ -804,7 +795,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 397,
+      "line": 396,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "(&stack0xffffff98)[(uint)bVar10 * 0xfffffffe] =",
@@ -812,7 +803,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 399,
+      "line": 398,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =",
@@ -820,7 +811,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 402,
+      "line": 401,
       "match": "&stack0xffffff94",
       "severity": "moderate",
       "text": "if (pCVar9 != (CVector3f *)&stack0xffffff94) {",
@@ -828,7 +819,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 407,
+      "line": 406,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "(*(((local_38->base).vtable._uc)->_uc).isGrabbable)(local_38,in_stack_ffffff88);",
@@ -836,7 +827,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 428,
+      "line": 427,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -844,7 +835,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 429,
+      "line": 428,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -852,7 +843,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 435,
+      "line": 434,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -860,7 +851,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 436,
+      "line": 435,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -868,7 +859,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 437,
+      "line": 436,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -876,7 +867,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 438,
+      "line": 437,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -884,7 +875,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 439,
+      "line": 438,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -892,7 +883,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 451,
+      "line": 450,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr->weapon,1,(CVector3f *)in_stack_ffffff88,",
@@ -900,7 +891,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 452,
+      "line": 451,
       "match": "in_stack_ffffff8c",
       "severity": "moderate",
       "text": "in_stack_ffffff8c);",
@@ -908,7 +899,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 464,
+      "line": 463,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -916,7 +907,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 465,
+      "line": 464,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -924,7 +915,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 471,
+      "line": 470,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -932,7 +923,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 472,
+      "line": 471,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -940,7 +931,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 473,
+      "line": 472,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -948,7 +939,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 474,
+      "line": 473,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -956,7 +947,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 475,
+      "line": 474,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -964,7 +955,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 486,
+      "line": 485,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "(local_1c,2,(CVector3f *)in_stack_ffffff88,in_stack_ffffff8c);",
@@ -972,7 +963,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 486,
+      "line": 485,
       "match": "in_stack_ffffff8c",
       "severity": "moderate",
       "text": "(local_1c,2,(CVector3f *)in_stack_ffffff88,in_stack_ffffff8c);",
@@ -980,7 +971,7 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 385,
+      "line": 384,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
@@ -988,7 +979,7 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 387,
+      "line": 386,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -996,7 +987,7 @@
     },
     {
       "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 398,
+      "line": 397,
       "match": "(int)&local_54",
       "severity": "moderate",
       "text": "(float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + 4);",
@@ -1004,7 +995,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 399,
+      "line": 398,
       "match": "(int)&stack0xffffff9c",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =",
@@ -1012,7 +1003,7 @@
     },
     {
       "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 400,
+      "line": 399,
       "match": "(int)&local_54",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
@@ -1020,7 +1011,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 385,
+      "line": 384,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
@@ -1028,7 +1019,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 387,
+      "line": 386,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -1036,7 +1027,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 398,
+      "line": 397,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + 4);",
@@ -1044,7 +1035,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 399,
+      "line": 398,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =",
@@ -1052,7 +1043,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 400,
+      "line": 399,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
@@ -1060,7 +1051,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 335,
+      "line": 334,
       "match": "0x3e999999 < (int)(this_ptr->base).base.layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(this_ptr->base).base.layer_action_t))",
@@ -1068,7 +1059,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3ecccccc is the IEEE 754 bit pattern of 0.4f. Rewrite in a .keep as a plain float compare against 0.4f.",
-      "line": 339,
+      "line": 338,
       "match": "0x3ecccccc < (int)(this_ptr->base).base.layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3ecccccd) && (0x3ecccccc < (int)(this_ptr->base).base.layer_action_t))",
@@ -1076,7 +1067,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3effffff is the IEEE 754 bit pattern of 0.5f. Rewrite in a .keep as a plain float compare against 0.5f.",
-      "line": 343,
+      "line": 342,
       "match": "0x3effffff < (int)(this_ptr->base).base.layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3f000000) && (0x3effffff < (int)(this_ptr->base).base.layer_action_t))",
@@ -1084,7 +1075,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f333332 is the IEEE 754 bit pattern of 0.7f. Rewrite in a .keep as a plain float compare against 0.7f.",
-      "line": 349,
+      "line": 348,
       "match": "0x3f333332 < (int)(this_ptr->base).base.layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3f333333) && (0x3f333332 < (int)(this_ptr->base).base.layer_action_t))",
@@ -1092,7 +1083,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 353,
+      "line": 352,
       "match": "0x3e999999 < (int)(this_ptr->base).base.layer_action_t))",
       "severity": "moderate",
       "text": "if (((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(this_ptr->base).base.layer_action_t))",
@@ -1100,7 +1091,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 360,
+      "line": 359,
       "match": "0x3e999999 < (int)(this_ptr->base).base.layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(this_ptr->base).base.layer_action_t))",

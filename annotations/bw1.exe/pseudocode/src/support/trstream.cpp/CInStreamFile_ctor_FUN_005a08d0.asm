@@ -20,7 +20,7 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   undefined1* g_CInStreamFileVTable = 005a0a50
+;   TerminatedCString g_CInStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStream_ctor_FUN_0059f540
@@ -34,7 +34,7 @@ section .text
     PUSH EDX                            ; 005a08d4
     CALL support_trstream.cpp_CInStream_ctor_FUN_0059f540 ; 005a08d5
         ;   XREF to: 0059f540 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_ctor_FUN_0059f540(CInStream * this_ptr)
-    MOV dword ptr [EAX],0x607384        ; 005a08da | g_CInStreamFileVTable
+    MOV dword ptr [EAX],0x607384        ; 005a08da | = "P\nZ"
     MOV dword ptr [EAX + 0x4],0x0       ; 005a08e0
     MOV dword ptr [EAX + 0x8],0x0       ; 005a08e7
     MOV dword ptr [EAX + 0xc],0x0       ; 005a08ee

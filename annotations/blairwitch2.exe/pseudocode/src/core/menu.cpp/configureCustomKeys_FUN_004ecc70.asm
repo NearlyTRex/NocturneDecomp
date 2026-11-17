@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   void* switchdataD_004ecc34 = 004ecd46
 ;   void* switchdataD_004ecc44 = 004ecfc3
-;   undefined4 s_Control_Keyboard_005dcf1c+1
+;   TerminatedCString s_Control_Keyboard_005dcf1d
 ;   TerminatedCString s_Control_Keyboard_Mouse_005dcf30
 ;   TerminatedCString s_Control_Gamepad_005dcf49
 ;   TerminatedCString s_Control_Mouse_005dcf5b
@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 004ecd67 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x4ecc34]  ; 004ecd3f | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    PUSH 0x5dcf1d                       ; 004ecd46 | s_Control_Keyboard_005dcf1c+1
+    PUSH 0x5dcf1d                       ; 004ecd46 | = "Control : Keyboard"
         ;   Label: caseD_0
     MOV dword ptr [ESI + 0xd0],EBX      ; 004ecd4b | g_CGameInstance.game_control
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ecd51
@@ -222,7 +222,7 @@ section .text
         ;   Label: LAB_004ece6e
     MOV EAX,[0x00616494]                ; 004ece6f | g_CGamePtr
     FILD dword ptr [EAX + 0xb0]         ; 004ece74 | g_CGameInstance.x_mouse_sensitivity
-    FMUL double ptr [0x005dd0ad]        ; 004ece7a | DAT_005dd0ad
+    FMUL double ptr [0x005dd0ad]        ; 004ece7a | g_DOUBLE_005dd0ad
     SUB ESP,0x8                         ; 004ece80
     FSTP double ptr [ESP]               ; 004ece83
     PUSH 0x5dd00f                       ; 004ece86 | = "%5.2f"
@@ -280,7 +280,7 @@ section .text
         ;   Label: LAB_004ecef0
     MOV EAX,[0x00616494]                ; 004ecef1 | g_CGamePtr
     FILD dword ptr [EAX + 0xb4]         ; 004ecef6 | g_CGameInstance.y_mouse_sensitivity
-    FMUL double ptr [0x005dd0ad]        ; 004ecefc | DAT_005dd0ad
+    FMUL double ptr [0x005dd0ad]        ; 004ecefc | g_DOUBLE_005dd0ad
     SUB ESP,0x8                         ; 004ecf02
     FSTP double ptr [ESP]               ; 004ecf05
     PUSH 0x5dd02b                       ; 004ecf08 | = "%5.2f"
@@ -357,7 +357,7 @@ section .text
         ;   XREF to: 004ecfee (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EBX*0x4 + 0x4ecc44]  ; 004ecfbc | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV EDI,dword ptr [0x01d0612c]      ; 004ecfc3 | DAT_01d0612c
+    MOV EDI,dword ptr [0x01d0612c]      ; 004ecfc3 | g_INT_01d0612c
         ;   Label: caseD_0
     CMP EDI,0x1                         ; 004ecfc9
     JNZ 0x004ed0cc                      ; 004ecfcc
@@ -371,9 +371,9 @@ section .text
         ;   XREF to: 004ed0bd (CONDITIONAL_JUMP)  ; LAB_004ed0bd
     PUSH 0x1                            ; 004ecfee
         ;   Label: default
-    MOV EAX,[0x00617dd4]                ; 004ecff0 | DAT_00617dd4
-    PUSH EAX                            ; 004ecff5 | DAT_01d02f84
-    MOV EBX,dword ptr [EAX]             ; 004ecff6 | DAT_01d02f84
+    MOV EAX,[0x00617dd4]                ; 004ecff0 | g_CKeys_PTR_00617dd4
+    PUSH EAX                            ; 004ecff5 | g_PTR_01d02f84
+    MOV EBX,dword ptr [EAX]             ; 004ecff6 | g_PTR_01d02f84
     CALL dword ptr [EBX + 0x4]          ; 004ecff8
     ADD ESP,0x8                         ; 004ecffb
     TEST EAX,EAX                        ; 004ecffe

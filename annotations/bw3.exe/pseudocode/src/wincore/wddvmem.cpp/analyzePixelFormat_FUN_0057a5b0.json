@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 111,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 262
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 84,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 275
   },
   "cross_references": [
     {
@@ -79,74 +76,74 @@
     },
     {
       "addr": "01c6af74",
-      "name": "DAT_01c6af74",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af78",
-      "name": "DAT_01c6af78",
-      "type": "undefined4",
+      "name": "g_INT_01c6af78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af7c",
-      "name": "DAT_01c6af7c",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af7c",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af80",
-      "name": "DAT_01c6af80",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af84",
-      "name": "DAT_01c6af84",
-      "type": "undefined4",
+      "name": "g_INT_01c6af84",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af88",
-      "name": "DAT_01c6af88",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af88",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af8c",
-      "name": "DAT_01c6af8c",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af90",
-      "name": "DAT_01c6af90",
-      "type": "undefined4",
+      "name": "g_INT_01c6af90",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af94",
-      "name": "DAT_01c6af94",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af94",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d0bce8",
-      "name": "DAT_02d0bce8",
-      "type": "undefined4",
+      "name": "g_IDirectDrawSurface_PTR_02d0bce8",
+      "type": "IDirectDrawSurface*",
       "value": null
     }
   ],
@@ -249,30 +246,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02d0bce8 + 100))(_DAT_02d0bce8,0,local_70,1,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02d0bce8 + 0x80))(_DAT_02d0bce8,0);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

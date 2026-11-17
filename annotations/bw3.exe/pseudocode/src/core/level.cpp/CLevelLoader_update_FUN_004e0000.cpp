@@ -13,9 +13,9 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader *this_
   
   if (this_ptr->enabled != 0) {
     if (clear_screen != 0) {
-      engine_2d_c_fillRectColor_FUN_004031c0(0,0,DAT_005fba18 + -1,DAT_005fba1c + -1,0);
+      engine_2d_c_fillRectColor_FUN_004031c0(0,0,g_INT_005fba18 + -1,g_INT_005fba1c + -1,0);
     }
-    if (DAT_005fba1c == 0x1e0) {
+    if (g_INT_005fba1c == 0x1e0) {
       iVar1 = this_ptr->current_frame + 1;
       this_ptr->current_frame = iVar1;
       if (this_ptr->total_frames < iVar1) {

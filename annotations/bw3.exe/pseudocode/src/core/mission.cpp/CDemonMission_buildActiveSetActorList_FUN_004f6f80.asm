@@ -13,13 +13,13 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0 at 004f7308
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c8b57
+;   TerminatedCString s_none_005c8b57
 ;   TerminatedCString s_core_mission_cpp_005c8b5c
 ;   TerminatedCString s_CDemonMission_buildActiv_005c8b70
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -96,8 +96,8 @@ section .text
     MOV ECX,0x5c8b5c                    ; 004f700d | = "..\\core\\mission.cpp"
     MOV ESI,0x497                       ; 004f7012
     PUSH 0x5c8b70                       ; 004f7017 | = "CDemonMission::buildActiveSetActorLis..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004f701c | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f7022 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f701c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004f7022 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f7028
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f702d
@@ -108,7 +108,7 @@ section .text
     INC dword ptr [EAX + 0x14d164]      ; 004f7042 | g_CDemonSetInstance.actor_count
     JMP 0x004f6fa7                      ; 004f7048
         ;   XREF to: 004f6fa7 (UNCONDITIONAL_JUMP)  ; LAB_004f6fa7
-    PUSH 0x5c8b57                       ; 004f704d | DAT_005c8b57
+    PUSH 0x5c8b57                       ; 004f704d | = "none"
         ;   Label: LAB_004f704d
     LEA ESI,[EBX + 0x78]                ; 004f7052
     PUSH ESI                            ; 004f7055
@@ -119,7 +119,7 @@ section .text
     JZ 0x004f6fe2                       ; 004f7060
         ;   XREF to: 004f6fe2 (CONDITIONAL_JUMP)  ; LAB_004f6fe2
     PUSH ESI                            ; 004f7062
-    MOV ESI,dword ptr [0x005fba60]      ; 004f7063 | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004f7063 | g_CEventList_PTR_005fba60
     PUSH ESI                            ; 004f7069
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004f706a
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

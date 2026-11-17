@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero *this_ptr)
 
 {
@@ -87,10 +85,10 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero *this_ptr)
         afStack_74[(uint)bVar7 * -2 + 0xc] = afStack_bc[(uint)bVar7 * -2];
         afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =
              afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-        fStack_3c = fStack_48 * _DAT_005e48c9;
-        fStack_38 = fStack_44 * _DAT_005e48c9;
-        fStack_34 = fStack_40 * _DAT_005e48c9;
-        CStack_24.x = fStack_48 * _DAT_005e48c9;
+        fStack_3c = fStack_48 * 0.5f;
+        fStack_38 = fStack_44 * 0.5f;
+        fStack_34 = fStack_40 * 0.5f;
+        CStack_24.x = fStack_48 * 0.5f;
         *(float *)((int)&CStack_24 + (uint)bVar7 * -8 + 4) = afStack_74[(uint)bVar7 * -2 + 0xf];
         *(float *)((int)&CStack_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
              afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
@@ -119,17 +117,17 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero *this_ptr)
         afStack_bc[(uint)bVar7 * -2 + 3] = afStack_74[(uint)bVar7 * -2 + 9];
         afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
              afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
-        afStack_74[2] = afStack_bc[2] * _DAT_005e48c9;
-        afStack_74[3] = afStack_bc[3] * _DAT_005e48c9;
-        fStack_64 = fStack_ac * _DAT_005e48c9;
-        fStack_60 = afStack_bc[2] * _DAT_005e48c9;
+        afStack_74[2] = afStack_bc[2] * 0.5f;
+        afStack_74[3] = afStack_bc[3] * 0.5f;
+        fStack_64 = fStack_ac * 0.5f;
+        fStack_60 = afStack_bc[2] * 0.5f;
         afStack_74[(uint)bVar7 * -2 + 6] = afStack_74[(uint)bVar7 * -2 + 3];
         afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
              afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
         uStack_5c = 0;
         if (((CStack_9c.z - SQRT(fStack_58 * fStack_58 + fStack_60 * fStack_60) <=
-              (float)_DAT_005e48cd) && (local_f8 = (double)CStack_9c.y, 1.0 <= local_f8)) &&
-           (local_f8 <= _DAT_005e48d5)) {
+              (float)1.2) && (local_f8 = (double)CStack_9c.y, 1.0 <= local_f8)) &&
+           (local_f8 <= 5)) {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_9c,&CStack_84);
           fStack_78 = CStack_84.x;
           afStack_74[(uint)bVar7 * -2] = *(float *)((int)&CStack_84 + (uint)bVar7 * -8 + 4);
@@ -137,7 +135,7 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero *this_ptr)
                *(float *)((int)&CStack_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
           in_stack_ffffff00 = (CHero *)0x4ebba3;
           fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_74[0]);
-          if (ABS(fVar4) <= (float)_DAT_005e48dd) {
+          if (ABS(fVar4) <= (float)0.61086523818055505) {
             this_ptr->pushed_object = this_ptr_01;
             break;
           }

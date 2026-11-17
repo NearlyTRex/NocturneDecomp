@@ -36,8 +36,8 @@ uint FUN_005aa0f0(char *param_1,uint param_2,uint param_3,int *param_4)
   local_28.nLength = 0xc;
   local_28.lpSecurityDescriptor = (LPVOID)0x0;
   local_28.bInheritHandle = (BOOL)((param_2 & 0x80) == 0);
-  if ((DAT_00607b20 == (code *)0x0) ||
-     (iVar2 = _stricmp(param_1,&DAT_005da870), iVar2 != 0)) {
+  if ((g_PTR_00607b20 == (byte *)0x0) ||
+     (iVar2 = _stricmp(param_1,"con"), iVar2 != 0)) {
     if ((param_2 & 0x20) == 0) {
       if ((param_2 & 0x40) == 0) {
 LAB_005aa22b:
@@ -52,7 +52,7 @@ LAB_005aa22b:
       *param_4 = (int)(puVar1 + 1);
       local_14 = *puVar1;
       *param_4 = 0;
-      local_14 = local_14 & ~DAT_00607e18;
+      local_14 = local_14 & ~g_INT_00607e18;
       if (((local_14 & 0x100) != 0) && ((local_14 & 0x80) == 0)) {
         dwFlagsAndAttributes = 1;
       }
@@ -83,7 +83,7 @@ LAB_005aa22b:
     }
     uVar4 = (*(code *)PTR_crt_unknown_c_FUN_005a7f48_006079ac)(hObject);
     uVar5 = 0;
-    if (0x00000014 <= uVar4) {
+    if (g_UINT_00607b84 <= uVar4) {
       CloseHandle(hObject);
       setErrno(5);
       return 0xffffffff;
@@ -97,7 +97,7 @@ LAB_005aa22b:
     uVar3 = FUN_005abbf8();
     uVar4 = (*(code *)PTR_crt_unknown_c_FUN_005a7f48_006079ac)(uVar3);
     uVar5 = 0x2000;
-    (*DAT_00607b20)(0,uVar4,0xffffffff);
+    (*(code *)g_PTR_00607b20)(0,uVar4,0xffffffff);
   }
   if (uVar6 == 2) {
     uVar5 = uVar5 | 3;
@@ -112,7 +112,7 @@ LAB_005aa22b:
     uVar5 = uVar5 | 0x80;
   }
   if ((param_2 & 0x300) == 0) {
-    if (0x00000100 != 0x200) goto LAB_005aa31d;
+    if (g_INT_00607884 != 0x200) goto LAB_005aa31d;
   }
   else if ((param_2 & 0x200) == 0) goto LAB_005aa31d;
   uVar5 = uVar5 | 0x40;

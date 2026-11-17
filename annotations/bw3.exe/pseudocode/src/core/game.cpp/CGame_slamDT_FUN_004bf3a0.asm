@@ -18,10 +18,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005c397e
 ;   TerminatedCString s_CGame_slamDT_invalid_dt_005c398f
-;   undefined4 DAT_005c39ac
-;   undefined4 DAT_01c5fad0
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005c39ac = 65536
+;   int g_INT_01c5fad0
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -45,20 +45,20 @@ section .text
         ;   Label: LAB_004bf3b2
     MOV dword ptr [EBX + 0x314],EAX     ; 004bf3b6
     FLD float ptr [EBX + 0x314]         ; 004bf3bc
-    FMUL float ptr [0x005c39ac]         ; 004bf3c2 | DAT_005c39ac
+    FMUL float ptr [0x005c39ac]         ; 004bf3c2 | g_FLOAT_005c39ac
     CALL crt_math.c_round_FUN_005a3120  ; 004bf3c8
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX + 0x310]       ; 004bf3cd
     MOV EBX,dword ptr [EBX + 0x310]     ; 004bf3d3
-    MOV dword ptr [0x01c5fad0],EBX      ; 004bf3d9 | DAT_01c5fad0
+    MOV dword ptr [0x01c5fad0],EBX      ; 004bf3d9 | g_INT_01c5fad0
     POP EBX                             ; 004bf3df
     RET                                 ; 004bf3e0
     MOV EDX,0x5c397e                    ; 004bf3e1 | = "..\\core\\game.cpp"
         ;   Label: LAB_004bf3e1
     MOV ECX,0x1317                      ; 004bf3e6
     PUSH 0x5c398f                       ; 004bf3eb | = "CGame::slamDT - invalid dt!"
-    MOV dword ptr [0x01d71de0],EDX      ; 004bf3f0 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004bf3f6 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004bf3f0 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004bf3f6 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004bf3fc
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004bf401

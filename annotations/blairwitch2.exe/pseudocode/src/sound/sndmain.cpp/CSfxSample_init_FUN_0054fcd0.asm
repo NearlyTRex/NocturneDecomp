@@ -14,10 +14,10 @@
 ;   sound_sndmain.cpp_CSfxSample_ctor_FUN_0054d7a0 at 0054d7a5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fbc28
-;   undefined4 DAT_005fbc2c
-;   undefined4 DAT_0061bcb8
-;   undefined4 DAT_0263cf10
+;   float g_FLOAT_005fbc28 = 20
+;   float g_FLOAT_005fbc2c = 10000
+;   float g_FLOAT_0061bcb8 = 1
+;   float g_FLOAT_0263cf10
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -34,12 +34,12 @@ section .text
     PUSH EBX                            ; 0054fcdc
     CALL crt_memory.c_memset_FUN_005b77c0 ; 0054fcdd
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
-    FLD float ptr [0x0061bcb8]          ; 0054fce2 | DAT_0061bcb8
-    FLD float ptr [0x005fbc28]          ; 0054fce8 | DAT_005fbc28
+    FLD float ptr [0x0061bcb8]          ; 0054fce2 | g_FLOAT_0061bcb8
+    FLD float ptr [0x005fbc28]          ; 0054fce8 | g_FLOAT_005fbc28
     FMUL ST1                            ; 0054fcee
-    FLD float ptr [0x0263cf10]          ; 0054fcf0 | DAT_0263cf10
+    FLD float ptr [0x0263cf10]          ; 0054fcf0 | g_FLOAT_0263cf10
     FMUL ST2                            ; 0054fcf6
-    FLD float ptr [0x005fbc2c]          ; 0054fcf8 | DAT_005fbc2c
+    FLD float ptr [0x005fbc2c]          ; 0054fcf8 | g_FLOAT_005fbc2c
     FMULP ST3                           ; 0054fcfe
     ADD ESP,0xc                         ; 0054fd00
     MOV EAX,EBX                         ; 0054fd03

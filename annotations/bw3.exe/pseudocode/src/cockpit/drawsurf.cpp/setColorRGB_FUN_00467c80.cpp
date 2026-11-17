@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00467d91) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_00467c80(int red,int green,int blue)
 
@@ -21,31 +20,32 @@ void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_00467c80(int red,int green,int
   uVar3 = green & 0xff;
   uVar2 = blue & 0xff;
   iVar4 = ((int)uVar2 >> 3) + ((int)uVar3 >> 3) * 0x20 + ((int)uVar1 >> 3) * 0x400;
-  _DAT_01bdd7c0 = (uint)(byte)(&DAT_01c62070)[iVar4];
-  _DAT_01bdd7c8 = 0;
-  if (DAT_005fba20 < 0x10) {
-    if (DAT_005fba20 == 8) {
-      _DAT_01bdd7bc = (uint)(byte)(&DAT_01c62070)[iVar4];
+  g_INT_01bdd7c0 = (int)g_UCHAR_ARRAY_01c62070[iVar4];
+  g_INT_01bdd7c8 = 0;
+  if ((uint)g_INT_005fba20 < 0x10) {
+    if (g_INT_005fba20 == 8) {
+      g_INT_01bdd7bc = (uint)g_UCHAR_ARRAY_01c62070[iVar4];
       return;
     }
   }
   else {
-    if (DAT_005fba20 < 0x11) {
-      _DAT_01bdd7bc =
-           (uVar2 / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f) |
-           uVar1 / _DAT_01c6af78 << (DAT_01c6af74 & 0x1f) |
-           uVar3 / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) & 0xffff;
+    if ((uint)g_INT_005fba20 < 0x11) {
+      g_INT_01bdd7bc =
+           (uVar2 / (uint)g_INT_01c6af90 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
+           uVar1 / (uint)g_INT_01c6af78 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+           uVar3 / (uint)g_INT_01c6af84 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) & 0xffff;
       return;
     }
-    if (DAT_005fba20 == 0x20) {
-      _DAT_01bdd7bc =
-           uVar2 << (DAT_01c6af8c & 0x1f) |
-           uVar1 << (DAT_01c6af74 & 0x1f) | uVar3 << (DAT_01c6af80 & 0x1f);
+    if (g_INT_005fba20 == 0x20) {
+      g_INT_01bdd7bc =
+           uVar2 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
+           uVar1 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+           uVar3 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
       return;
     }
   }
-  _DAT_01d71de0 = "..\\cockpit\\drawsurf.cpp";
-  _DAT_01d71de4 = 0x11e;
+  g_CHAR_PTR_01d71de0 = "..\\cockpit\\drawsurf.cpp";
+  g_INT_01d71de4 = 0x11e;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

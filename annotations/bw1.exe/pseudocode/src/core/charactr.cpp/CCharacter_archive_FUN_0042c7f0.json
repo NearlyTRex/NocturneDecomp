@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 342,
+    "complexity_score": 327,
     "cross_reference_count": 5,
     "function_call_count": 13,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 132,
-    "suspect_count": 18,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
     "total_lines": 477
   },
@@ -307,8 +306,8 @@
     },
     {
       "addr": "007c3038",
-      "name": "DAT_007c3038",
-      "type": "undefined4",
+      "name": "g_INT_007c3038",
+      "type": "int",
       "value": null
     }
   ],
@@ -489,14 +488,6 @@
       "severity": "moderate",
       "text": "CVector3f *in_stack_ffffff98;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_007c3038",
-      "severity": "mild",
-      "text": "if (DAT_007c3038 == 1) {",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

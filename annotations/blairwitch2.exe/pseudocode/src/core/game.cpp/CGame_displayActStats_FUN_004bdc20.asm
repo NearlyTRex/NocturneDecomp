@@ -7,12 +7,12 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8993
-;   undefined4 DAT_005d899b
-;   undefined4 DAT_005d89a3
-;   undefined4 DAT_005d89ab
-;   undefined4 DAT_005d89b3
-;   undefined4 DAT_01511cc0
+;   double g_DOUBLE_005d8993 = 0.000277777777777778
+;   double g_DOUBLE_005d899b = 3600
+;   double g_DOUBLE_005d89a3 = 0.0166666666666667
+;   double g_DOUBLE_005d89ab = 60
+;   double g_DOUBLE_005d89b3 = 100
+;   CBitFont* g_CBitFont_PTR_01511cc0
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -70,7 +70,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x26c]     ; 004bdc9d
     MOV EDX,dword ptr [ECX + 0x274]     ; 004bdca3
     FLD ST0                             ; 004bdca9
-    FMUL double ptr [0x005d8993]        ; 004bdcab | DAT_005d8993
+    FMUL double ptr [0x005d8993]        ; 004bdcab | g_DOUBLE_005d8993
     ADD EDX,EAX                         ; 004bdcb1
     CALL crt_math.c_round_FUN_005b7ff0  ; 004bdcb3
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
@@ -78,17 +78,17 @@ section .text
     MOV EAX,dword ptr [ESP + 0x528]     ; 004bdcbf
     MOV dword ptr [ESP + 0x534],EAX     ; 004bdcc6
     FILD dword ptr [ESP + 0x534]        ; 004bdccd
-    FMUL double ptr [0x005d899b]        ; 004bdcd4 | DAT_005d899b
+    FMUL double ptr [0x005d899b]        ; 004bdcd4 | g_DOUBLE_005d899b
     FSUBP                               ; 004bdcda
     FLD ST0                             ; 004bdcdc
-    FMUL double ptr [0x005d89a3]        ; 004bdcde | DAT_005d89a3
+    FMUL double ptr [0x005d89a3]        ; 004bdcde | g_DOUBLE_005d89a3
     CALL crt_math.c_round_FUN_005b7ff0  ; 004bdce4
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x51c]       ; 004bdce9
     MOV EAX,dword ptr [ESP + 0x51c]     ; 004bdcf0
     MOV dword ptr [ESP + 0x534],EAX     ; 004bdcf7
     FILD dword ptr [ESP + 0x534]        ; 004bdcfe
-    FMUL double ptr [0x005d89ab]        ; 004bdd05 | DAT_005d89ab
+    FMUL double ptr [0x005d89ab]        ; 004bdd05 | g_DOUBLE_005d89ab
     FSUBP                               ; 004bdd0b
     FST float ptr [ECX + 0x270]         ; 004bdd0d
     CALL crt_math.c_round_FUN_005b7ff0  ; 004bdd13
@@ -99,7 +99,7 @@ section .text
     FILD dword ptr [ESP + 0x534]        ; 004bdd2d
     FSUBR float ptr [ECX + 0x270]       ; 004bdd34
     FST float ptr [ECX + 0x270]         ; 004bdd3a
-    FMUL double ptr [0x005d89b3]        ; 004bdd40 | DAT_005d89b3
+    FMUL double ptr [0x005d89b3]        ; 004bdd40 | g_DOUBLE_005d89b3
     PUSH 0x5d895d                       ; 004bdd46
     MOV dword ptr [ECX + 0x274],EDX     ; 004bdd4b
     CALL crt_math.c_round_FUN_005b7ff0  ; 004bdd51
@@ -294,7 +294,7 @@ section .text
     POP EDI                             ; 004bdee4
         ;   Label: LAB_004bdee4
     PUSH 0xffff                         ; 004bdee5
-    MOV EBP,dword ptr [0x01511cc0]      ; 004bdeea | DAT_01511cc0
+    MOV EBP,dword ptr [0x01511cc0]      ; 004bdeea | g_CBitFont_PTR_01511cc0
     CALL engine_3d.c_setRenderAlpha_FUN_00406da0 ; 004bdef0
         ;   XREF to: 00406da0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406da0(int alpha_color_value)
     ADD ESP,0x4                         ; 004bdef5

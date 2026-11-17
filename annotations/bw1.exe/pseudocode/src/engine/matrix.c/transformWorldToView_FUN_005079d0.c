@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_005079d0(CVector3i *input_coords,CVector3i *output_coords)
 
 {
@@ -21,22 +19,22 @@ CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_005079d0(CVecto
   int iVar8;
   int iVar9;
   
-  iVar9 = input_coords->x - _DAT_01c51d2c;
-  iVar8 = input_coords->z - _DAT_01c51d34;
-  iVar7 = input_coords->y - _DAT_01c51d30;
-  lVar1 = (longlong)_DAT_01c51d60;
-  lVar2 = (longlong)_DAT_01c51d6c;
-  lVar3 = (longlong)_DAT_01c51d78;
-  lVar4 = (longlong)_DAT_01c51d64;
-  lVar5 = (longlong)_DAT_01c51d70;
-  lVar6 = (longlong)_DAT_01c51d7c;
+  iVar9 = input_coords->x - g_INT_01c51d2c;
+  iVar8 = input_coords->z - g_INT_01c51d34;
+  iVar7 = input_coords->y - g_INT_01c51d30;
+  lVar1 = (longlong)g_INT_01c51d60;
+  lVar2 = (longlong)g_INT_01c51d6c;
+  lVar3 = (longlong)g_INT_01c51d78;
+  lVar4 = (longlong)g_INT_01c51d64;
+  lVar5 = (longlong)g_INT_01c51d70;
+  lVar6 = (longlong)g_INT_01c51d7c;
   output_coords->x =
-       ((uint)((longlong)_DAT_01c51d5c * (longlong)iVar9) >> 0x10 |
-       (int)((ulonglong)((longlong)_DAT_01c51d5c * (longlong)iVar9) >> 0x20) << 0x10) +
-       ((uint)((longlong)_DAT_01c51d68 * (longlong)iVar7) >> 0x10 |
-       (int)((ulonglong)((longlong)_DAT_01c51d68 * (longlong)iVar7) >> 0x20) << 0x10) +
-       ((uint)((longlong)_DAT_01c51d74 * (longlong)iVar8) >> 0x10 |
-       (int)((ulonglong)((longlong)_DAT_01c51d74 * (longlong)iVar8) >> 0x20) << 0x10);
+       ((uint)((longlong)g_INT_01c51d5c * (longlong)iVar9) >> 0x10 |
+       (int)((ulonglong)((longlong)g_INT_01c51d5c * (longlong)iVar9) >> 0x20) << 0x10) +
+       ((uint)((longlong)g_INT_01c51d68 * (longlong)iVar7) >> 0x10 |
+       (int)((ulonglong)((longlong)g_INT_01c51d68 * (longlong)iVar7) >> 0x20) << 0x10) +
+       ((uint)((longlong)g_INT_01c51d74 * (longlong)iVar8) >> 0x10 |
+       (int)((ulonglong)((longlong)g_INT_01c51d74 * (longlong)iVar8) >> 0x20) << 0x10);
   output_coords->y =
        ((uint)(lVar1 * iVar9) >> 0x10 | (int)((ulonglong)(lVar1 * iVar9) >> 0x20) << 0x10) +
        ((uint)(lVar2 * iVar7) >> 0x10 | (int)((ulonglong)(lVar2 * iVar7) >> 0x20) << 0x10) +

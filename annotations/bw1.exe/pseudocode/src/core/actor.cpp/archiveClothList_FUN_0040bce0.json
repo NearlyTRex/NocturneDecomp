@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 168,
+    "complexity_score": 53,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 14,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 11,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 229
   },
   "cross_references": [
@@ -99,8 +97,8 @@
     },
     {
       "addr": "005d2c1a",
-      "name": "DAT_005d2c1a",
-      "type": "undefined4",
+      "name": "s_d_005d2c1a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -153,26 +151,26 @@
     },
     {
       "addr": "005d2c93",
-      "name": "DAT_005d2c93",
-      "type": "undefined4",
+      "name": "s_s_005d2c93",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "006106c0",
-      "name": "DAT_006106c0",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_006106c0",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "007c3034",
-      "name": "DAT_007c3034",
-      "type": "undefined4",
+      "name": "g_FILE_PTR_007c3034",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "007c3038",
-      "name": "DAT_007c3038",
-      "type": "undefined4",
+      "name": "g_INT_007c3038",
+      "type": "int",
       "value": null
     }
   ],
@@ -318,94 +316,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_007c3038",
-      "severity": "mild",
-      "text": "if (DAT_007c3038 != 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007c3034,\"%s{ // %s\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007c3034,\"%s%d // clothCount\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007c3034,\"%s\\\"%s\\\"\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007c3034,&DAT_005d2c93);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005d2c93",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007c3034,&DAT_005d2c93);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_007c3034);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007c3034,&DAT_005d2c1a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005d2c1a",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007c3034,&DAT_005d2c1a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007c3034,\" \\\"%[^\\\"]\\\"\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_007c3034",
-      "severity": "mild",
-      "text": "while (iVar1 = _fgetc(DAT_007c3034), -1 < iVar1) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

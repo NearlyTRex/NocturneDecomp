@@ -12,7 +12,7 @@
 ;   core_chain.cpp_CChain_process_FUN_005b4d30 at 005b5086
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01caf5b4
+;   int g_INT_01caf5b4
 ;
 ; *****************************************************************************
 
@@ -85,7 +85,7 @@ section .text
     FADDP                               ; 005b4b58
     FSTP float ptr [ESP + 0x90]         ; 005b4b5a
     MOV EAX,dword ptr [ESP + 0x90]      ; 005b4b61
-    MOV EDI,dword ptr [0x01caf5b4]      ; 005b4b68 | DAT_01caf5b4
+    MOV EDI,dword ptr [0x01caf5b4]      ; 005b4b68 | g_INT_01caf5b4
     SAR EAX,0x1                         ; 005b4b6e
     ADD EAX,EDI                         ; 005b4b70
     MOV dword ptr [ESP + 0x94],EAX      ; 005b4b72

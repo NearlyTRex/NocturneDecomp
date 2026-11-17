@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_005b43a0(void)
 
 {
   int *piVar1;
   float fStack_4;
   
-  fStack_4 = _DAT_02c9c7e0;
-  if (_DAT_02c9c7e4 < _DAT_02c9c7e0) {
-    fStack_4 = _DAT_02c9c7e4;
+  fStack_4 = g_FLOAT_02c9c7e0;
+  if (g_FLOAT_02c9c7e4 < g_FLOAT_02c9c7e0) {
+    fStack_4 = g_FLOAT_02c9c7e4;
   }
   piVar1 = (int *)0x2c9cf14;
   do {
@@ -24,6 +22,6 @@ float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_005b43a0(void)
       fStack_4 = (float)piVar1[0x2a];
     }
     piVar1 = piVar1 + 0x2b;
-  } while (piVar1 != (int *)0x2c9d1c4);
+  } while (piVar1 != g_INT_ARRAY_02c9d1c4);
   return fStack_4;
 }

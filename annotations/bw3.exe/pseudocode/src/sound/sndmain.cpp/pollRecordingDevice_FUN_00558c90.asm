@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   num_samples
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf3c68
+;   CSoundDevice* g_CSoundDevice_PTR_02cf3c68
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00558b00
@@ -27,7 +27,7 @@ section .text
     TEST EAX,EAX                        ; 00558c9a
     JZ 0x00558ca8                       ; 00558c9c
         ;   XREF to: 00558ca8 (CONDITIONAL_JUMP)  ; LAB_00558ca8
-    MOV EDX,dword ptr [0x02cf3c68]      ; 00558c9e | DAT_02cf3c68
+    MOV EDX,dword ptr [0x02cf3c68]      ; 00558c9e | g_CSoundDevice_PTR_02cf3c68
     TEST EDX,EDX                        ; 00558ca4
     JNZ 0x00558cb3                      ; 00558ca6
         ;   XREF to: 00558cb3 (CONDITIONAL_JUMP)  ; LAB_00558cb3

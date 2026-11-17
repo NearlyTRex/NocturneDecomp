@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 67,
+    "complexity_score": 17,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 12,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 52
   },
   "cross_references": [
@@ -56,74 +53,74 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061c3d4",
-      "name": "DAT_0061c3d4",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_0061c3d4",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c57094",
-      "name": "DAT_01c57094",
+      "name": "g_SMRGLHeaderPrimitive_01c57090.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c57098",
-      "name": "DAT_01c57098",
+      "name": "g_SMRGLHeaderPrimitive_01c57090.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c5709c",
-      "name": "DAT_01c5709c",
+      "name": "g_SMRGLHeaderPrimitive_01c57090.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570a0",
-      "name": "DAT_01c570a0",
+      "name": "g_SMRGLHeaderPrimitive_01c57090.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570a4",
-      "name": "DAT_01c570a4",
+      "name": "g_SMRGLHeaderPrimitive_01c57090.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c570a8",
-      "name": "DAT_01c570a8",
-      "type": "undefined4",
+      "name": "g_INT_01c570a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c570ac",
-      "name": "DAT_01c570ac",
-      "type": "undefined4",
+      "name": "g_INT_01c570ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c570b0",
-      "name": "DAT_01c570b0",
-      "type": "undefined4",
+      "name": "g_INT_01c570b0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c570b4",
-      "name": "DAT_01c570b4",
-      "type": "undefined4",
+      "name": "g_INT_01c570b4",
+      "type": "int",
       "value": null
     }
   ],
@@ -222,38 +219,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061c3d4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0061c3d4",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061c3d4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0x8000);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

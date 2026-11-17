@@ -11,8 +11,8 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0 at 004e57a4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_00618170
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
@@ -37,7 +37,7 @@ section .text
     SHL EAX,0x5                         ; 004e6837
     LEA EBX,[ESI + 0x149c]              ; 004e683a
     ADD EBX,EAX                         ; 004e6840
-    MOV EAX,[0x00618170]                ; 004e6842 | DAT_00618170
+    MOV EAX,[0x00618170]                ; 004e6842 | g_CDemonMission_PTR_00618170
     CMP dword ptr [EAX + 0x1008],0x0    ; 004e6847
     JNZ 0x004e6862                      ; 004e684e
         ;   XREF to: 004e6862 (CONDITIONAL_JUMP)  ; LAB_004e6862
@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 004e6865
     LEA EAX,[EBX + 0x28]                ; 004e6866
     PUSH EAX                            ; 004e6869
-    MOV ECX,dword ptr [0x0060b280]      ; 004e686a | DAT_0060b280
+    MOV ECX,dword ptr [0x0060b280]      ; 004e686a | g_CDemonRenderer_PTR_0060b280
     PUSH ECX                            ; 004e6870
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 004e6871
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
@@ -80,7 +80,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0 ; 004e68a1
         ;   XREF to: 0044fcc0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 004e68a6
-    MOV EBX,dword ptr [0x0060b280]      ; 004e68a9 | DAT_0060b280
+    MOV EBX,dword ptr [0x0060b280]      ; 004e68a9 | g_CDemonRenderer_PTR_0060b280
     PUSH EBX                            ; 004e68af
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 004e68b0
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()

@@ -12,10 +12,10 @@
 ;   void* PTR_CreateFileA_005b3524 = 001b3c7a
 ;   void* PTR_GetFileType_005b35a8 = 001b3ee4
 ;   void* PTR_GetLastError_005b35b0 = 001b3f06
-;   undefined4 DAT_005da874
+;   TerminatedCString s_con_005da874
 ;   TerminatedCString s_conin_005da878
-;   undefined4 DAT_005da880
-;   undefined2 DAT_00607985
+;   TerminatedCString s_EXE_005da880
+;   short g_SHORT_00607985 = 0x0
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -34,7 +34,7 @@ section .text
     PUSH ESI                            ; 005aadc1
     PUSH EDI                            ; 005aadc2
     MOV ESI,dword ptr [ESP + 0x14]      ; 005aadc3
-    MOV DX,word ptr [0x00607985]        ; 005aadc7 | DAT_00607985
+    MOV DX,word ptr [0x00607985]        ; 005aadc7 | g_SHORT_00607985
     XOR EBX,EBX                         ; 005aadce
     CMP DX,0x8000                       ; 005aadd0
     JNC 0x005aadde                      ; 005aadd5
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_005aade3
     JZ 0x005aae67                       ; 005aade7
         ;   XREF to: 005aae67 (CONDITIONAL_JUMP)  ; LAB_005aae67
-    PUSH 0x5da874                       ; 005aaded | DAT_005da874
+    PUSH 0x5da874                       ; 005aaded | = "con"
     PUSH ESI                            ; 005aadf2
     CALL crt_string.c__stricmp_FUN_005a3260 ; 005aadf3
         ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005a3260(char * str1, char * str2)
@@ -92,7 +92,7 @@ section .text
     CALL dword ptr CS:[0x5b3518]        ; 005aae42 | PTR_CloseHandle_005b3518
     JMP 0x005aae67                      ; 005aae49
         ;   XREF to: 005aae67 (UNCONDITIONAL_JUMP)  ; LAB_005aae67
-    CMP word ptr [0x00607985],0x8000    ; 005aae4b | DAT_00607985
+    CMP word ptr [0x00607985],0x8000    ; 005aae4b | g_SHORT_00607985
         ;   Label: LAB_005aae4b
     JNC 0x005aae62                      ; 005aae54
         ;   XREF to: 005aae62 (CONDITIONAL_JUMP)  ; LAB_005aae62
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_005aaea1
     JZ 0x005aaebb                       ; 005aaea3
         ;   XREF to: 005aaebb (CONDITIONAL_JUMP)  ; LAB_005aaebb
-    PUSH 0x5da880                       ; 005aaea5 | DAT_005da880
+    PUSH 0x5da880                       ; 005aaea5 | = "EXE"
     INC ESI                             ; 005aaeaa
     PUSH ESI                            ; 005aaeab
     CALL crt_string.c__strcmp_FUN_005a3d00 ; 005aaeac

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl wincore_winrun_cpp_normalizeControllerAxis_FUN_005901c0(int raw_value,int *axis_calibration,float out_min,float out_max)
 
 {
@@ -22,8 +20,8 @@ float __cdecl wincore_winrun_cpp_normalizeControllerAxis_FUN_005901c0(int raw_va
   if (axis_calibration[1] < raw_value) {
     axis_calibration[1] = raw_value;
   }
-  fVar3 = (out_min + out_max) * (float)_DAT_005eeaf5;
-  if (_DAT_02665a44 != 0) {
+  fVar3 = (out_min + out_max) * (float)0.5;
+  if (g_INT_02665a44 != 0) {
     axis_calibration[2] = raw_value;
   }
   iVar1 = axis_calibration[2];

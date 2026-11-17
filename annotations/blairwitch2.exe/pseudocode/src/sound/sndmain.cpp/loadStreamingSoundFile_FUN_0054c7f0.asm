@@ -15,16 +15,16 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005506b0 at 0055080c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7ef2
-;   undefined4 DAT_005e7ef6
+;   TerminatedCString s_mp3_005e7ef2
+;   TerminatedCString s_mp3_005e7ef6
 ;   TerminatedCString s_sound_005e7efb
 ;   TerminatedCString s_sound_sndmain_cpp_005e7f01
 ;   TerminatedCString s_Out_of_memory_005e7f16
 ;   TerminatedCString s_sound_005e7f25
-;   undefined4 DAT_005fbc30
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_02641920
+;   float g_FLOAT_005fbc30 = 2
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_INT_02641920
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].is_user_sample
@@ -58,7 +58,7 @@ section .text
     PUSH EDI                            ; 0054c7f2
     PUSH EBP                            ; 0054c7f3
     SUB ESP,0x108                       ; 0054c7f4
-    MOV EBX,dword ptr [0x02641920]      ; 0054c7fa | DAT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054c7fa | g_INT_02641920
     MOV ESI,dword ptr [ESP + 0x120]     ; 0054c800
     XOR EDX,EDX                         ; 0054c807
     XOR EBP,EBP                         ; 0054c809
@@ -83,12 +83,12 @@ section .text
     MOV dword ptr [ESP + 0x104],EBP     ; 0054c82b
     MOV EBP,dword ptr [ESP + 0x104]     ; 0054c832
         ;   Label: LAB_0054c832
-    MOV dword ptr [0x02641920],EBX      ; 0054c839 | DAT_02641920
+    MOV dword ptr [0x02641920],EBX      ; 0054c839 | g_INT_02641920
     TEST EBP,EBP                        ; 0054c83f
     JNZ 0x0054c882                      ; 0054c841
         ;   XREF to: 0054c882 (CONDITIONAL_JUMP)  ; LAB_0054c882
     XOR EAX,EAX                         ; 0054c843
-    MOV EBX,dword ptr [0x02641920]      ; 0054c845 | DAT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054c845 | g_INT_02641920
     ADD ESP,0x108                       ; 0054c84b
     POP EBP                             ; 0054c851
     POP EDI                             ; 0054c852
@@ -122,7 +122,7 @@ section .text
     CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 0054c88c
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0054c891
-    PUSH 0x5e7ef2                       ; 0054c894 | DAT_005e7ef2
+    PUSH 0x5e7ef2                       ; 0054c894 | = "mp3"
     LEA EAX,[ESP + 0x4]                 ; 0054c899
     PUSH EAX                            ; 0054c89d
     CALL crt_string.c__stricmp_FUN_005b8130 ; 0054c89e
@@ -159,8 +159,8 @@ section .text
     MOV EAX,0x5e7f01                    ; 0054c8e8 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x461                       ; 0054c8ed
     PUSH 0x5e7f16                       ; 0054c8f2 | = "Out of memory."
-    MOV [0x01d046a0],EAX                ; 0054c8f7 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0054c8fc | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0054c8f7 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 0054c8fc | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054c902
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054c907
@@ -203,7 +203,7 @@ section .text
     MOV dword ptr [EBP + 0x150],0x0     ; 0054c97e
     FILD dword ptr [EBP + 0x10c]        ; 0054c988
     MOV dword ptr [EBP + 0x154],0x0     ; 0054c98e
-    FMUL float ptr [0x005fbc30]         ; 0054c998 | DAT_005fbc30
+    FMUL float ptr [0x005fbc30]         ; 0054c998 | g_FLOAT_005fbc30
     MOV dword ptr [EBP + 0x158],0x0     ; 0054c99e
     ADD ESP,0x4                         ; 0054c9a8
     MOV dword ptr [EBP + 0x15c],0x0     ; 0054c9ab
@@ -236,14 +236,14 @@ section .text
         ;   XREF to: 0054dc50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50(CSfxSample * this_ptr, int playback_position, int dest_buffer_offset)
     ADD ESP,0xc                         ; 0054ca12
     MOV EAX,EBP                         ; 0054ca15
-    MOV EBX,dword ptr [0x02641920]      ; 0054ca17 | DAT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054ca17 | g_INT_02641920
     ADD ESP,0x108                       ; 0054ca1d
     POP EBP                             ; 0054ca23
     POP EDI                             ; 0054ca24
     POP ESI                             ; 0054ca25
     POP EBX                             ; 0054ca26
     RET                                 ; 0054ca27
-    PUSH 0x5e7ef6                       ; 0054ca28 | DAT_005e7ef6
+    PUSH 0x5e7ef6                       ; 0054ca28 | = ".mp3"
         ;   Label: LAB_0054ca28
     LEA EAX,[ESP + 0x4]                 ; 0054ca2d
     PUSH EAX                            ; 0054ca31
@@ -304,7 +304,7 @@ section .text
     MOV dword ptr [EBP + 0x150],0x0     ; 0054cabe
     FILD dword ptr [EBP + 0x10c]        ; 0054cac8
     MOV dword ptr [EBP + 0x154],0x0     ; 0054cace
-    FMUL float ptr [0x005fbc30]         ; 0054cad8 | DAT_005fbc30
+    FMUL float ptr [0x005fbc30]         ; 0054cad8 | g_FLOAT_005fbc30
     MOV dword ptr [EBP + 0x158],0x0     ; 0054cade
     ADD ESP,0x4                         ; 0054cae8
     MOV dword ptr [EBP + 0x15c],0x0     ; 0054caeb
@@ -335,7 +335,7 @@ section .text
         ;   XREF to: 0054d9b0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0054cb4e
     XOR EAX,EAX                         ; 0054cb51
-    MOV EBX,dword ptr [0x02641920]      ; 0054cb53 | DAT_02641920
+    MOV EBX,dword ptr [0x02641920]      ; 0054cb53 | g_INT_02641920
     ADD ESP,0x108                       ; 0054cb59
     POP EBP                             ; 0054cb5f
     POP EDI                             ; 0054cb60

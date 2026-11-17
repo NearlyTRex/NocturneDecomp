@@ -14,11 +14,11 @@
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 00422288
 ;
 ; Referenced Globals:
-;   undefined4 s_s_swarming_on_s_at_LOD_d_005b78b0+1
+;   TerminatedCString s_s_swarming_on_s_at_LOD_d_005b78b1
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   undefined4 DAT_007e1c94
-;   undefined4 DAT_007e1c98
-;   undefined4 DAT_007e1c9c
+;   int[700] g_INT_ARRAY_007e1c94
+;   undefined4 g_INT_ARRAY_007e1c94[1]
+;   undefined4 g_INT_ARRAY_007e1c94[2]
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -110,7 +110,7 @@ section .text
     PUSH EBX                            ; 00423dbf
     MOV EAX,dword ptr [ESP + 0x24]      ; 00423dc0
     PUSH EAX                            ; 00423dc4
-    PUSH 0x5b78b1                       ; 00423dc5 | s_s_swarming_on_s_at_LOD_d_005b78b0+1
+    PUSH 0x5b78b1                       ; 00423dc5 | = "%s swarming on %s at LOD %d\n"
     MOV EDX,dword ptr [0x005f1690]      ; 00423dca | g_CConsolePtr
     PUSH EDX                            ; 00423dd0 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00423dd1
@@ -149,7 +149,7 @@ section .text
         ;   XREF to: 00423e60 (CONDITIONAL_JUMP)  ; LAB_00423e60
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00423e3b
     XOR EDX,EDX                         ; 00423e3f
-    MOV dword ptr [EDX + 0x7e1c94],EAX  ; 00423e41 | DAT_007e1c94 | DAT_007e1c98
+    MOV dword ptr [EDX + 0x7e1c94],EAX  ; 00423e41 | g_INT_ARRAY_007e1c94 | g_INT_ARRAY_007e1c94[1]
         ;   Label: LAB_00423e41
     INC EAX                             ; 00423e47
     MOV EBP,dword ptr [ECX + 0x13858]   ; 00423e48
@@ -175,20 +175,20 @@ section .text
         ;   XREF to: 00423eb9 (CONDITIONAL_JUMP)  ; LAB_00423eb9
     SHL EBP,0x2                         ; 00423e7d
     XOR EAX,EAX                         ; 00423e80
-    IMUL EDX,dword ptr [EAX + 0x7e1c94],0xc ; 00423e82 | DAT_007e1c94 | DAT_007e1c98
+    IMUL EDX,dword ptr [EAX + 0x7e1c94],0xc ; 00423e82 | g_INT_ARRAY_007e1c94 | g_INT_ARRAY_007e1c94[1]
         ;   Label: LAB_00423e82
-    IMUL ECX,dword ptr [EAX + 0x7e1c98],0xc ; 00423e89 | DAT_007e1c98 | DAT_007e1c9c
+    IMUL ECX,dword ptr [EAX + 0x7e1c98],0xc ; 00423e89 | g_INT_ARRAY_007e1c94[1] | g_INT_ARRAY_007e1c94[2]
     MOV EDX,dword ptr [EDX + EBX*0x1 + 0x4] ; 00423e90
     CMP EDX,dword ptr [ECX + EBX*0x1 + 0x4] ; 00423e94
     JLE 0x00423eb2                      ; 00423e98
         ;   XREF to: 00423eb2 (CONDITIONAL_JUMP)  ; LAB_00423eb2
     LEA ECX,[EAX + 0x4]                 ; 00423e9a
-    ADD ECX,0x7e1c94                    ; 00423e9d | DAT_007e1c94
-    MOV EDX,0x7e1c94                    ; 00423ea3 | DAT_007e1c94
-    MOV ESI,dword ptr [ECX]             ; 00423ea8 | DAT_007e1c98
-    MOV EDI,dword ptr [EDX + EAX*0x1]   ; 00423eaa | DAT_007e1c94
-    MOV dword ptr [EDX + EAX*0x1],ESI   ; 00423ead | DAT_007e1c94
-    MOV dword ptr [ECX],EDI             ; 00423eb0 | DAT_007e1c98
+    ADD ECX,0x7e1c94                    ; 00423e9d | g_INT_ARRAY_007e1c94
+    MOV EDX,0x7e1c94                    ; 00423ea3 | g_INT_ARRAY_007e1c94
+    MOV ESI,dword ptr [ECX]             ; 00423ea8 | g_INT_ARRAY_007e1c94[1]
+    MOV EDI,dword ptr [EDX + EAX*0x1]   ; 00423eaa | g_INT_ARRAY_007e1c94
+    MOV dword ptr [EDX + EAX*0x1],ESI   ; 00423ead | g_INT_ARRAY_007e1c94
+    MOV dword ptr [ECX],EDI             ; 00423eb0 | g_INT_ARRAY_007e1c94[1]
     ADD EAX,0x4                         ; 00423eb2
         ;   Label: LAB_00423eb2
     CMP EAX,EBP                         ; 00423eb5
@@ -201,7 +201,7 @@ section .text
     TEST EDX,EDX                        ; 00423ec2
     JGE 0x00423e75                      ; 00423ec4
         ;   XREF to: 00423e75 (CONDITIONAL_JUMP)  ; LAB_00423e75
-    MOV EDX,dword ptr [0x007e1c94]      ; 00423ec6 | DAT_007e1c94
+    MOV EDX,dword ptr [0x007e1c94]      ; 00423ec6 | g_INT_ARRAY_007e1c94
         ;   Label: LAB_00423ec6
     LEA EAX,[EDX*0x4 + 0x0]             ; 00423ecc
     SUB EAX,EDX                         ; 00423ed3
@@ -218,7 +218,7 @@ section .text
     MOV EDI,EAX                         ; 00423ef1
     MOV dword ptr [EDI + 0xd088],0xffffffff ; 00423ef3
         ;   Label: LAB_00423ef3
-    MOV EAX,dword ptr [ESI*0x4 + 0x7e1c94] ; 00423efd | DAT_007e1c94
+    MOV EAX,dword ptr [ESI*0x4 + 0x7e1c94] ; 00423efd | g_INT_ARRAY_007e1c94
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00423f04
     MOV dword ptr [EDI + 0xd08c],EAX    ; 00423f08
     MOV ECX,0xf                         ; 00423f0e
@@ -272,7 +272,7 @@ section .text
     MOV dword ptr [EDX + 0x13820],0x0   ; 00423f8e
     JMP 0x00423f5a                      ; 00423f98
         ;   XREF to: 00423f5a (UNCONDITIONAL_JUMP)  ; LAB_00423f5a
-    IMUL EAX,dword ptr [ESI*0x4 + 0x7e1c94],0xc ; 00423f9a | DAT_007e1c98
+    IMUL EAX,dword ptr [ESI*0x4 + 0x7e1c94],0xc ; 00423f9a | g_INT_ARRAY_007e1c94[1]
         ;   Label: LAB_00423f9a
     MOV ECX,dword ptr [ESP]             ; 00423fa2
     CMP ECX,dword ptr [EBX + EAX*0x1 + 0x4] ; 00423fa5

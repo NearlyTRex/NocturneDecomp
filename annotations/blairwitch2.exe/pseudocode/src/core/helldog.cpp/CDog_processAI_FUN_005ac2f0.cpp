@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_helldog_cpp_CDog_processAI_FUN_005ac2f0(CDog *this_ptr,float delta_time)
 
@@ -33,7 +32,7 @@ void __cdecl core_helldog_cpp_CDog_processAI_FUN_005ac2f0(CDog *this_ptr,float d
     (this_ptr->base).anim_speed_scale = 2.0;
   }
   iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
-                    (&(this_ptr->base).state_machine,"?ChaseFood" + 1);
+                    (&(this_ptr->base).state_machine,"ChaseFood");
   if (iVar5 == 0) {
     this_ptr_00 = &(this_ptr->base).base.base.model;
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
@@ -82,7 +81,7 @@ void __cdecl core_helldog_cpp_CDog_processAI_FUN_005ac2f0(CDog *this_ptr,float d
                   (pCStack_14->location).position.x,
          fVar3 = (this_ptr->base).base.base.base.location.position.z -
                  (pCStack_14->location).position.z,
-         SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= _DAT_00600c54)) {
+         SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= 20.0f)) {
         pSVar8 = &(this_ptr->base).state_machine;
         this_ptr->eat_timer = this_ptr->eat_time;
         this_ptr->food = pCStack_14;

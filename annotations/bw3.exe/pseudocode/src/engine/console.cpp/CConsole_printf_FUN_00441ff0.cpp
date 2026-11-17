@@ -40,9 +40,9 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441ff0(CConsole *this_ptr,
   }
   engine_console_cpp_CConsole_writeChar_FUN_004420c0(this_ptr,'\0');
   if (this_ptr->file_logging_enabled != 0) {
-    file = _fopen("console.txt",&DAT_005b93df);
+    file = _fopen("console.txt","at");
     if (file != (_FILE *)0x0) {
-      _fprintf(file,&DAT_005b93e2);
+      _fprintf(file,"%s");
       _fclose(file);
       return;
     }

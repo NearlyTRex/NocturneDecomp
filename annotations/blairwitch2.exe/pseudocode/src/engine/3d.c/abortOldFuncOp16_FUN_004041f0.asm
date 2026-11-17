@@ -9,9 +9,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Old_func_d_005ca315
 ;   TerminatedCString s_engine_3d_c_005ca323
-;   undefined4 DAT_0070ca84
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_0070ca84
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -37,11 +37,11 @@ section .text
     MOV EAX,ESP                         ; 00404212
     MOV ECX,0x5ca323                    ; 00404214 | = "..\\engine\\3d.c"
     PUSH EAX                            ; 00404219
-    MOV dword ptr [0x01d046a4],EBX      ; 0040421a | DAT_01d046a4
-    MOV dword ptr [0x01d046a0],ECX      ; 00404220 | DAT_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 0040421a | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00404220 | g_CHAR_PTR_01d046a0
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00404226
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
-    MOV EAX,0x70ca84                    ; 0040422b | DAT_0070ca84
+    MOV EAX,0x70ca84                    ; 0040422b | g_INT_0070ca84
     ADD ESP,0x4                         ; 00404230
     ADD ESP,0x50                        ; 00404233
     POP EBX                             ; 00404236

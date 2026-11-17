@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00542b90(CScat *this_ptr,CDemonActor *target,int is_current_target)
 
 {
@@ -82,22 +80,22 @@ float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00542b90(CScat *this_ptr,CD
       afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
            afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       if (is_current_target == 0) {
-        if ((float)_DAT_005edeef < fStack_154) {
+        if ((float)30 < fStack_154) {
           return -1.0;
         }
         in_stack_fffffea4 = (double)afStack_5c[3];
-        if (afStack_5c[3] < (float)_DAT_005edef7) {
+        if (afStack_5c[3] < (float)-0.78149070982587099) {
           return -1.0;
         }
-        if (_DAT_005edeff < in_stack_fffffea4) {
+        if (1.56298141965174 < in_stack_fffffea4) {
           return -1.0;
         }
       }
       else {
-        if ((float)_DAT_005edf07 < fStack_154) {
+        if ((float)35 < fStack_154) {
           return -1.0;
         }
-        if (afStack_5c[3] < _DAT_005edf0f) {
+        if (afStack_5c[3] < -0.7853982f) {
           return -1.0;
         }
         if (0x3fc90fdb < (int)afStack_5c[3]) {
@@ -121,10 +119,10 @@ float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00542b90(CScat *this_ptr,CD
       afStack_84[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
            afStack_84[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
       input_local_point = aCStack_148;
-      fStack_28 = afStack_84[2] * _DAT_005edf13;
-      CStack_24.x = afStack_84[3] * _DAT_005edf13;
-      CStack_24.y = fStack_74 * _DAT_005edf13;
-      fStack_40 = afStack_84[2] * _DAT_005edf13;
+      fStack_28 = afStack_84[2] * 0.5f;
+      CStack_24.x = afStack_84[3] * 0.5f;
+      CStack_24.y = fStack_74 * 0.5f;
+      fStack_40 = afStack_84[2] * 0.5f;
       afStack_3c[(uint)bVar6 * -2] = *(float *)((int)&CStack_24 + (uint)bVar6 * -8);
       afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
            *(float *)((int)&CStack_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);

@@ -10,13 +10,13 @@
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430 at 005545b2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060422c
-;   undefined4 DAT_02cf3340
-;   undefined4 DAT_02cf3348
-;   undefined4 DAT_02cf3380
-;   undefined4 DAT_02cf3388
-;   undefined4 DAT_02cf33c0
-;   undefined4 DAT_02cf33c8
+;   int g_INT_0060422c = 0x2
+;   double[8] g_DOUBLE_ARRAY_02cf3340
+;   undefined4 g_DOUBLE_ARRAY_02cf3340[1]
+;   double[8] g_DOUBLE_ARRAY_02cf3380
+;   undefined4 g_DOUBLE_ARRAY_02cf3380[1]
+;   double[8] g_DOUBLE_ARRAY_02cf33c0
+;   undefined4 g_DOUBLE_ARRAY_02cf33c0[1]
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     PUSH ESI                            ; 005540d1
     PUSH EDI                            ; 005540d2
     SUB ESP,0x18                        ; 005540d3
-    MOV EDI,dword ptr [0x0060422c]      ; 005540d6 | DAT_0060422c
+    MOV EDI,dword ptr [0x0060422c]      ; 005540d6 | g_INT_0060422c
     MOV ESI,dword ptr [ESP + 0x28]      ; 005540dc
     XOR EBX,EBX                         ; 005540e0
     TEST EDI,EDI                        ; 005540e2
@@ -37,15 +37,15 @@ section .text
     XOR EDX,EDX                         ; 005540e8
     FLD double ptr [ESI + 0x4]          ; 005540ea
         ;   Label: LAB_005540ea
-    FSUB double ptr [EDX + 0x2cf3340]   ; 005540ed | DAT_02cf3340 | DAT_02cf3348
+    FSUB double ptr [EDX + 0x2cf3340]   ; 005540ed | g_DOUBLE_ARRAY_02cf3340 | g_DOUBLE_ARRAY_02cf3340[1]
     FMUL ST0                            ; 005540f3
     FLD double ptr [ESI + 0xc]          ; 005540f5
-    FSUB double ptr [EDX + 0x2cf3380]   ; 005540f8 | DAT_02cf3380 | DAT_02cf3388
+    FSUB double ptr [EDX + 0x2cf3380]   ; 005540f8 | g_DOUBLE_ARRAY_02cf3380 | g_DOUBLE_ARRAY_02cf3380[1]
     FMUL ST0                            ; 005540fe
     FLD double ptr [ESI + 0x14]         ; 00554100
     FXCH                                ; 00554103
     FADDP ST2,ST0                       ; 00554105
-    FSUB double ptr [EDX + 0x2cf33c0]   ; 00554107 | DAT_02cf33c0 | DAT_02cf33c8
+    FSUB double ptr [EDX + 0x2cf33c0]   ; 00554107 | g_DOUBLE_ARRAY_02cf33c0 | g_DOUBLE_ARRAY_02cf33c0[1]
     FMUL ST0                            ; 0055410d
     FADDP                               ; 0055410f
     FSQRT                               ; 00554111
@@ -59,7 +59,7 @@ section .text
     LEA EAX,[EAX]                       ; 00554121
     LEA EDX,[EDX]                       ; 00554127
     LEA EAX,[EAX]                       ; 0055412d
-    MOV dword ptr [0x0060422c],EDI      ; 00554130 | DAT_0060422c
+    MOV dword ptr [0x0060422c],EDI      ; 00554130 | g_INT_0060422c
         ;   Label: LAB_00554130
     ADD ESP,0x18                        ; 00554136
     POP EDI                             ; 00554139

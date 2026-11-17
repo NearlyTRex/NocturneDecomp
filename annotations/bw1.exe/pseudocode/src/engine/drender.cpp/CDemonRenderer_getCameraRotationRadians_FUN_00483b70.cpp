@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70(CDemonRenderer *this_ptr,CVector3f *output)
 
 {
@@ -23,8 +21,8 @@ CVector3f * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationRadia
   
   bVar4 = 0;
   engine_matrix_c_getCameraRotation_FUN_00509080(&local_28);
-  fVar2 = (float)_DAT_005db3cc;
-  fVar1 = (float)_DAT_005db3d4;
+  fVar2 = (float)3.0517578125e-05;
+  fVar1 = (float)3.1415926535000001;
   local_1c = (float)local_28.x * fVar2 * fVar1;
   local_10 = local_28.z;
   local_18[1] = (float)local_28.y * fVar2 * fVar1;

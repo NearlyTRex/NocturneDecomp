@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_shadow_cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0(CShadow *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -19,9 +17,9 @@ void __cdecl core_shadow_cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0(CShadow *
     return;
   }
   if ((iVar1 != this_ptr->bone_indices[4]) && (iVar1 != this_ptr->bone_indices[5])) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e6785;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
-  damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e678d;
+  damage_info->damage_amount = damage_info->damage_amount * (float)5;
   return;
 }

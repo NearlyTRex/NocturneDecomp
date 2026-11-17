@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 55,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
     "suspect_types": [
-      "dropped_fyl2x",
-      "warning_overlapping_globals"
+      "dropped_fyl2x"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -51,9 +50,9 @@
   "globals": [
     {
       "addr": "005e9ab1",
-      "name": "DAT_005e9ab1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e9ab1",
+      "type": "double",
+      "value": "868.589000000000"
     }
   ],
   "param_estimates": {
@@ -203,19 +202,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "x87 log constant multiplied by `dVar1` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
-      "line": 17,
-      "match": "dVar1 = floor(dVar1 * 0.6931471805599453 * _DAT_005e9ab1);",
+      "line": 15,
+      "match": "dVar1 = floor(dVar1 * 0.6931471805599453 * 868.58900000000006);",
       "severity": "major",
-      "text": "dVar1 = floor(dVar1 * 0.6931471805599453 * _DAT_005e9ab1);",
+      "text": "dVar1 = floor(dVar1 * 0.6931471805599453 * 868.58900000000006);",
       "type": "dropped_fyl2x"
     }
   ]

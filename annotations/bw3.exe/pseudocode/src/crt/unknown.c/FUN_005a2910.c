@@ -9,9 +9,9 @@
 void FUN_005a2910(void)
 
 {
-  PTR_crt_unknown_c_FUN_005a7d7f_00607928 = FUN_005a71c9;
-  PTR_crt_unknown_c_FUN_005a7d7f_0060792c = FUN_005a71f5;
-  PTR_crt_unknown_c_FUN_005a7d7f_00607930 = FUN_005a73c8;
-  PTR_crt_unknown_c_FUN_005a7d7f_00607934 = FUN_005a7d7a;
+  g_ARRAY_PTR_00607928[0] = FUN_005a71c9;
+  g_ARRAY_PTR_00607928[1] = FUN_005a71f5;
+  g_ARRAY_PTR_00607928[2] = FUN_005a73c8;
+  g_ARRAY_PTR_00607928[3] = FUN_005a7d7a;
   return;
 }

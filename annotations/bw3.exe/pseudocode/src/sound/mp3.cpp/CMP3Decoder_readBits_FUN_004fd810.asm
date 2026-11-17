@@ -20,10 +20,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005c9fc5
 ;   TerminatedCString s_Buffer_overflow_File_s_005c9fd6
-;   undefined4 DAT_00601580
-;   undefined4 DAT_006015a0
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   uint[18] g_UINT_ARRAY_00601580
+;   undefined4 g_UINT_ARRAY_00601580[8]
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -63,7 +63,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x531c]    ; 004fd854
     SUB ESI,EAX                         ; 004fd85a
     AND EDX,0xfff                       ; 004fd85c
-    MOV EBP,dword ptr [ECX*0x4 + 0x601580] ; 004fd862 | DAT_00601580 | DAT_006015a0
+    MOV EBP,dword ptr [ECX*0x4 + 0x601580] ; 004fd862 | g_UINT_ARRAY_00601580 | g_UINT_ARRAY_00601580[8]
     SUB ECX,EAX                         ; 004fd869
     MOV EDX,dword ptr [EBX + EDX*0x4 + 0x131c] ; 004fd86b
     MOV dword ptr [ESP],ECX             ; 004fd872
@@ -100,8 +100,8 @@ section .text
     MOV EBP,0x5c9fc5                    ; 004fd8c1 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x30a                       ; 004fd8c6
     PUSH 0x5c9fd6                       ; 004fd8cb | = "Buffer overflow!!  File: %s"
-    MOV dword ptr [0x01d71de0],EBP      ; 004fd8d0 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004fd8d6 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004fd8d0 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004fd8d6 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd8db
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004fd8e0

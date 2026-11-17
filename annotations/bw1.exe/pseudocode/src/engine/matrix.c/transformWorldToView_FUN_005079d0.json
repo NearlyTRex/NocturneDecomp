@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 53,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 113
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -38,74 +36,74 @@
   "globals": [
     {
       "addr": "01c51d2c",
-      "name": "DAT_01c51d2c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d2c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d30",
-      "name": "DAT_01c51d30",
-      "type": "undefined4",
+      "name": "g_INT_01c51d30",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d34",
-      "name": "DAT_01c51d34",
-      "type": "undefined4",
+      "name": "g_INT_01c51d34",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d5c",
-      "name": "DAT_01c51d5c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d5c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d60",
-      "name": "DAT_01c51d60",
-      "type": "undefined4",
+      "name": "g_INT_01c51d60",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d64",
-      "name": "DAT_01c51d64",
-      "type": "undefined4",
+      "name": "g_INT_01c51d64",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d68",
-      "name": "DAT_01c51d68",
-      "type": "undefined4",
+      "name": "g_INT_01c51d68",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d6c",
-      "name": "DAT_01c51d6c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d6c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d70",
-      "name": "DAT_01c51d70",
-      "type": "undefined4",
+      "name": "g_INT_01c51d70",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d74",
-      "name": "DAT_01c51d74",
-      "type": "undefined4",
+      "name": "g_INT_01c51d74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d78",
-      "name": "DAT_01c51d78",
-      "type": "undefined4",
+      "name": "g_INT_01c51d78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d7c",
-      "name": "DAT_01c51d7c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d7c",
+      "type": "int",
       "value": null
     }
   ],
@@ -222,14 +220,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -16,8 +16,7 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_004254d0(CCameraView
     free(ptr);
     return this_ptr;
   }
-  this_ptr->vtable =
-       (CCameraView_vtable *)&PTR_core_camview_cpp_CCameraView_dtor_FUN_004254d0_005dcef4;
+  this_ptr->vtable = &g_CCameraView_vtable_005dcef4;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

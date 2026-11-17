@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_shotgun_cpp_CShotgun_renderAimBeam_FUN_0053fb10(CShotgun *this_ptr)
 
 {
@@ -38,7 +36,8 @@ void __cdecl core_shotgun_cpp_CShotgun_renderAimBeam_FUN_0053fb10(CShotgun *this
   float fStack_18;
   
   bVar4 = 0;
-  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
   if (iVar3 != 0) {
     return;
   }
@@ -99,8 +98,8 @@ void __cdecl core_shotgun_cpp_CShotgun_renderAimBeam_FUN_0053fb10(CShotgun *this
     afStack_80[4] = afStack_80[4] * fVar1;
   }
   core_fire_cpp_CFireEffect_createLaserCone_FUN_0049d7e0
-            (0x01C3DEB4,&CStack_c0,&CStack_60,1.0,0,0xff,0,
-             this_ptr->spread_angle * _DAT_005e6831 * _DAT_005e6835);
+            (g_CFireEffect_PTR_00614d30,&CStack_c0,&CStack_60,1.0,0,0xff,0,
+             this_ptr->spread_angle * 3.141593f * 0.005555556f);
   this_ptr->muzzle_flash_active = 1;
   fStack_54 = CStack_60.x - CStack_c0.x;
   afStack_50[0] = CStack_60.y - CStack_c0.y;

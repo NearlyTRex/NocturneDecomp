@@ -13,101 +13,90 @@ CAudioRecPuzzle g_CAudioRecPuzzleInstance = {};
 // CChemPuzzle
 CChemPuzzle g_CChemPuzzleInstance = {};
 
+// CDemonActor*
+CDemonActor* g_CDemonActor_PTR_007e2cf0 = {};
+
 // CDemonActorType
 CDemonActorType g_CBodyPartClassInfo = {};
 CDemonActorType g_CBoneGuyClassInfo = {};
+CDemonActorType g_CDemonActorType_007e1688 = {};
+CDemonActorType g_CDemonActorType_007e16c4 = {};
+CDemonActorType g_CDemonActorType_007e1700 = {};
+CDemonActorType g_CDemonActorType_007e173c = {};
 CDemonActorType g_CBoxActorClassInfo = {};
+CDemonActorType g_CDemonActorType_007e1a18 = {};
 CDemonActorType g_CBugsClassInfo = {};
 CDemonActorType g_CBurncrossClassInfo = {};
 CDemonActorType g_CCarvedClassInfo = {};
 CDemonActorType g_CChainClassInfo = {};
 CDemonActorType g_CCharacterClassInfo = {};
 
+// CDemonCamera*
+CDemonCamera* g_CDemonCamera_PTR_007e2a54 = {};
+
 // CDemonFilter[8]
 CDemonFilter CDemonFilter_ARRAY_007e17b8[8] = {};
 
-// undefined1
-undefined1 DAT_007e1a58 = {};
-undefined1 DAT_007e2ad8 = {};
-undefined1 DAT_007e2ad9 = {};
-undefined1 DAT_007e2ada = {};
-undefined1 DAT_007e2adb = {};
-undefined1 DAT_007e2b30 = {};
-undefined1 DAT_007e4d68 = {};
-undefined1 DAT_007e5368 = {};
-undefined1 DAT_007e5398 = {};
-undefined1 DAT_007e5f68 = {};
+// CDemonGlobe
+CDemonGlobe g_CDemonGlobe_007e2af0 = {};
 
-// undefined4
-undefined4 DAT_007e1620 = {};
-undefined4 DAT_007e1624 = {};
-undefined4 DAT_007e1628 = {};
-undefined4 DAT_007e1634 = {};
-undefined4 DAT_007e1638 = {};
-undefined4 DAT_007e1644 = {};
-undefined4 DAT_007e1648 = {};
-undefined4 DAT_007e1774 = {};
-undefined4 DAT_007e1a50 = {};
-undefined4 DAT_007e1a54 = {};
-undefined4 DAT_007e1c94 = {};
-undefined4 DAT_007e1c98 = {};
-undefined4 DAT_007e1c9c = {};
-undefined4 DAT_007e2a54 = {};
-undefined4 DAT_007e2ae8 = {};
-undefined4 DAT_007e2cf0 = {};
-undefined4 DAT_007e2cf4 = {};
-undefined4 DAT_007e2cf8 = {};
-undefined4 DAT_007e3e88 = {};
-undefined4 DAT_007e3e8c = {};
-undefined4 DAT_007e3e90 = {};
-undefined4 DAT_007e3e94 = {};
-undefined4 DAT_007e3e98 = {};
-undefined4 DAT_007e3e9c = {};
-undefined4 DAT_007e3ebc = {};
-undefined4 DAT_007e3ec0 = {};
-undefined4 DAT_007e3ec4 = {};
-undefined4 DAT_007e448c = {};
-undefined4 DAT_007e4490 = {};
-undefined4 DAT_007e4494 = {};
-undefined4 DAT_007e4498 = {};
-undefined4 DAT_007e450c = {};
-undefined4 DAT_007e4510 = {};
-undefined4 DAT_007e4518 = {};
-undefined4 DAT_007e454c = {};
-undefined4 DAT_007e4550 = {};
-undefined4 DAT_007e4578 = {};
-undefined4 DAT_007e4d50 = {};
-undefined4 DAT_007e4d54 = {};
-undefined4 DAT_007e4d58 = {};
-undefined4 DAT_007e4d5c = {};
-undefined4 DAT_007e4d60 = {};
-undefined4 DAT_007e4d64 = {};
-undefined4 DAT_007e4d6c = {};
-undefined4 DAT_007e4d94 = {};
-undefined4 DAT_007e4d9c = {};
-undefined4 DAT_007e5364 = {};
-undefined4 DAT_007e536c = {};
-undefined4 DAT_007e5394 = {};
-undefined4 DAT_007e539c = {};
-undefined4 DAT_007e5964 = {};
-undefined4 DAT_007e5968 = {};
-undefined4 DAT_007e596c = {};
-undefined4 DAT_007e5994 = {};
-undefined4 DAT_007e5998 = {};
-undefined4 DAT_007e599c = {};
-undefined4 DAT_007e5f64 = {};
-undefined4 DAT_007e5f6c = {};
-undefined4 DAT_007e5f98 = {};
-undefined4 DAT_007e5f9c = {};
-undefined4 DAT_007e6568 = {};
-undefined4 DAT_007e657c = {};
-undefined4 DAT_007e6580 = {};
-undefined4 DAT_007e6584 = {};
-undefined4 DAT_007e6588 = {};
-undefined4 DAT_007e658c = {};
-undefined4 DAT_007e6590 = {};
-undefined4 DAT_007e65b0 = {};
+// CKeyFramedModelInstance
+CKeyFramedModelInstance g_CKeyFramedModelInstance_007e2b34 = {};
 
-// undefined8
-undefined8 DAT_007e4540 = {};
+// SMRGLPrimitiveQuad[1000]
+SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_007e6564[1000] = {};
+
+// SMRGLTextureBasic
+SMRGLTextureBasic g_SMRGLTextureBasic_007e2ad0 = {};
+
+// SRenderVertex*[16]
+SRenderVertex* g_SRenderVertex_PTR_ARRAY_007e448c[16] = {};
+
+// SRenderVertex[12]
+SRenderVertex g_SRenderVertex_ARRAY_007e4b10[12] = {};
+
+// SRenderVertex[16]
+SRenderVertex g_SRenderVertex_ARRAY_007e3e8c[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007e4510[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007e4d64[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007e5364[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007e5964[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007e5f64[16] = {};
+
+// byte
+byte g_BYTE_007e2b30 = {};
+
+// float
+float g_FLOAT_007e2cb0 = {};
+
+// float[100]
+float g_FLOAT_ARRAY_007e2cf4[100] = {};
+
+// float[12]
+float g_FLOAT_ARRAY_007e1a54[12] = {};
+
+// int
+int g_INT_007e1620 = {};
+int g_INT_007e1624 = {};
+int g_INT_007e1628 = {};
+int g_INT_007e1634 = {};
+int g_INT_007e1638 = {};
+int g_INT_007e1644 = {};
+int g_INT_007e1648 = {};
+int g_INT_007e1778 = {};
+int g_INT_007e2ae8 = {};
+int g_INT_007e3e84 = {};
+int g_INT_007e3e88 = {};
+int g_INT_007e450c = {};
+int g_INT_007e4d50 = {};
+int g_INT_007e4d54 = {};
+int g_INT_007e4d58 = {};
+int g_INT_007e4d5c = {};
+int g_INT_007e4d60 = {};
+
+// int[1]
+int g_INT_ARRAY_007e4488[1] = {};
+
+// int[700]
+int g_INT_ARRAY_007e1c94[700] = {};
 

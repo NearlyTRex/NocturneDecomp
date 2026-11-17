@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 89,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 127
@@ -45,14 +44,14 @@
   "globals": [
     {
       "addr": "005edf8a",
-      "name": "DAT_005edf8a",
-      "type": "undefined4",
+      "name": "s_anon_005edf8a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00626114",
-      "name": "DAT_00626114",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_00626114",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -155,30 +154,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "while (pcVar3 = output_buffer, ((&DAT_00626114)[(byte)(*input_line + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005edf8a",
-      "severity": "mild",
-      "text": "pcVar2 = strstr(output_buffer,&DAT_005edf8a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "while ((output_buffer < pcVar2 && (((&DAT_00626114)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 13,

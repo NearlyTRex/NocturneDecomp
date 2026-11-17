@@ -10,8 +10,8 @@
 ;   engine_mini3d.cpp_resetTextureCache_FUN_004f3420 at 004f3420
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02652eb0
-;   undefined4 DAT_02652eb4
+;   CTextureCache* g_CTextureCache_PTR_02652eb0
+;   int g_INT_02652eb4
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_freeTextures_FUN_005739b0
@@ -20,14 +20,14 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02652eb0]      ; 00575010 | DAT_02652eb0
+    MOV EDX,dword ptr [0x02652eb0]      ; 00575010 | g_CTextureCache_PTR_02652eb0
         ;   Label: engine_texture.cpp_clearTextureCache_FUN_00575010
     PUSH EDX                            ; 00575016
     CALL engine_texture.cpp_CTextureCache_freeTextures_FUN_005739b0 ; 00575017
         ;   XREF to: 005739b0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_freeTextures_FUN_005739b0(CTextureCache * this_ptr)
     XOR ECX,ECX                         ; 0057501c
     ADD ESP,0x4                         ; 0057501e
-    MOV dword ptr [0x02652eb4],ECX      ; 00575021 | DAT_02652eb4
+    MOV dword ptr [0x02652eb4],ECX      ; 00575021 | g_INT_02652eb4
     LEA EAX,[EAX]                       ; 00575027
     LEA EDX,[EDX]                       ; 0057502d
     RET                                 ; 00575030

@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 784,
-    "complexity_score": 1263,
+    "complexity_score": 1240,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 228,
-    "suspect_count": 101,
+    "pseudocode_lines": 230,
+    "suspect_count": 99,
     "suspect_types": [
       "pointer_cast",
       "preinc_loop_idiom",
       "shadow_pointer_walk",
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 1012
+    "total_lines": 1014
   },
   "cross_references": [],
   "function": {
@@ -51,8 +50,8 @@
   "globals": [
     {
       "addr": "007c397c",
-      "name": "DAT_007c397c",
-      "type": "undefined4",
+      "name": "g_INT_007c397c",
+      "type": "int",
       "value": null
     }
   ],
@@ -126,22 +125,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_007c397c",
-      "severity": "mild",
-      "text": "DAT_007c397c = 0xffffffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_007c397c",
-      "severity": "mild",
-      "text": "DAT_007c397c = 0xffffffff;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 130,
       "match": "(code **)((int)(this_ptr->base).vtable",
@@ -722,7 +705,7 @@
       "line": 202,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x25,0x5d41f5,0x30,0x19,1,8,0xa0,1);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -730,39 +713,23 @@
       "line": 202,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x25,0x5d41f5,0x30,0x19,1,8,0xa0,1);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 204,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x26,0x5d41fc,0x30,0x19,1,0x4f,0x82,1)",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 203,
+      "line": 204,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x26,0x5d41fc,0x30,0x19,1,0x4f,0x82,1)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 205,
-      "match": "(code **)((int)(this_ptr->base).vtable",
-      "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x27,0x5d4203,0x30,0x19,1,0x95,99,1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 205,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x27,0x5d4203,0x30,0x19,1,0x95,99,1);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
@@ -770,7 +737,7 @@
       "line": 206,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x28,0x5d420a,0x30,0x19,1,0xd7,0x44,1)",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -778,7 +745,7 @@
       "line": 206,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x28,0x5d420a,0x30,0x19,1,0xd7,0x44,1)",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
@@ -802,7 +769,7 @@
       "line": 210,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x2a,0x5d4218,0x30,0x19,1,0x156,0xd,1)",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -810,7 +777,7 @@
       "line": 210,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x2a,0x5d4218,0x30,0x19,1,0x156,0xd,1)",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
@@ -840,6 +807,22 @@
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 214,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 216,
+      "match": "(code **)((int)(this_ptr->base).vtable",
+      "severity": "moderate",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 216,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -927,7 +910,7 @@
     },
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar2 = pCVar2;` self-assign, two-var `tmp = &pCVar2->field; pCVar2 = tmp;` ping-pong, or a bare `pCVar2 = pCVar2 + N;` advance followed by a `*pCVar2 =` store \u2014 plus a constant-index store on `pCVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 225,
+      "line": 227,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

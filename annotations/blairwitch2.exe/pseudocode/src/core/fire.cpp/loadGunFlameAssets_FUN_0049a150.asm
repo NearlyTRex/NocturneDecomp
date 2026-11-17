@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fr46_03d_raw_005d56a2
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -40,9 +40,9 @@ section .text
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0049a179
     PUSH EBP                            ; 0049a17c
-    MOV EDX,dword ptr [0x0060b280]      ; 0049a17d | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 0049a17d | g_CDemonRenderer_PTR_0060b280
     INC ESI                             ; 0049a183
-    PUSH EDX                            ; 0049a184 | DAT_01ba5c50
+    PUSH EDX                            ; 0049a184 | g_CDemonRenderer_01ba5c50
     ADD EDI,0x18                        ; 0049a185
     INC EBX                             ; 0049a188
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 0049a189

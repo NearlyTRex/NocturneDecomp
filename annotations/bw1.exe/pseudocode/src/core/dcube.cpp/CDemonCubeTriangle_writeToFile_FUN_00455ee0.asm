@@ -9,9 +9,9 @@
 ; CVector3f *      Stack[0xc]:4   vertex_buffer_base
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152c2cc
-;   undefined4 DAT_0152c2d0
-;   undefined4 DAT_0152c2d4
+;   uint[3] g_UINT_ARRAY_0152c2cc
+;   undefined4 g_UINT_ARRAY_0152c2cc[1]
+;   undefined4 g_UINT_ARRAY_0152c2cc[2]
 ;
 ; Called Functions:
 ;   crt_stdio.c_fwrite_FUN_005c1a70
@@ -30,12 +30,12 @@ section .text
     XOR EDX,EDX                         ; 00455ef1
     SUB EAX,ESI                         ; 00455ef3
     DIV ECX                             ; 00455ef5
-    MOV [0x0152c2cc],EAX                ; 00455ef7 | DAT_0152c2cc
+    MOV [0x0152c2cc],EAX                ; 00455ef7 | g_UINT_ARRAY_0152c2cc
     MOV EAX,dword ptr [EBX + 0x4]       ; 00455efc
     XOR EDX,EDX                         ; 00455eff
     SUB EAX,ESI                         ; 00455f01
     DIV ECX                             ; 00455f03
-    MOV [0x0152c2d0],EAX                ; 00455f05 | DAT_0152c2d0
+    MOV [0x0152c2d0],EAX                ; 00455f05 | g_UINT_ARRAY_0152c2cc[1]
     MOV EAX,dword ptr [EBX + 0x8]       ; 00455f0a
     XOR EDX,EDX                         ; 00455f0d
     SUB EAX,ESI                         ; 00455f0f
@@ -45,7 +45,7 @@ section .text
     PUSH 0x4                            ; 00455f18
     PUSH 0x3                            ; 00455f1a
     PUSH 0x152c2cc                      ; 00455f1c
-    MOV [0x0152c2d4],EAX                ; 00455f21 | DAT_0152c2d4
+    MOV [0x0152c2d4],EAX                ; 00455f21 | g_UINT_ARRAY_0152c2cc[2]
     CALL crt_stdio.c_fwrite_FUN_005c1a70 ; 00455f26
         ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005c1a70(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00455f2b

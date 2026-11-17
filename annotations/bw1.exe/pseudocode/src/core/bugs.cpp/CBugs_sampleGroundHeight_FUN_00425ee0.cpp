@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425ee0(CBugs *this_ptr,float x,float z)
 
 {
@@ -19,7 +17,7 @@ float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425ee0(CBugs *this_pt
   double dVar6;
   int local_18;
   
-  fVar3 = 1.0 / _DAT_005fd228;
+  fVar3 = 1.0 / 0.5f;
   fVar2 = this_ptr->grid_origin_z;
   dVar5 = round((double)((x - this_ptr->grid_origin_x) * fVar3));
   dVar6 = round((double)((z - fVar2) * fVar3));

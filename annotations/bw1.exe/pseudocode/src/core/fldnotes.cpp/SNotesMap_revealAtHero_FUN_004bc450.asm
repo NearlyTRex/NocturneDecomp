@@ -16,9 +16,9 @@
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004be970 at 004be985
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dfc62
-;   undefined4 DAT_005dfc6a
-;   undefined4 DAT_01d06ab4
+;   double g_DOUBLE_005dfc62 = 20
+;   double g_DOUBLE_005dfc6a = 0.5
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004bc5a0
@@ -35,7 +35,7 @@ section .text
     PUSH EBP                            ; 004bc451
     SUB ESP,0x14                        ; 004bc452
     MOV EBX,dword ptr [ESP + 0x20]      ; 004bc455
-    MOV EAX,[0x01d06ab4]                ; 004bc459 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 004bc459 | g_INT_01d06ab4
     SHL EAX,0x2                         ; 004bc45e
     CMP dword ptr [EAX + 0x1d06aa4],0x0 ; 004bc461
     JZ 0x004bc479                       ; 004bc468
@@ -71,7 +71,7 @@ section .text
     SHL EAX,0x4                         ; 004bc4a2
     ADD EAX,EDX                         ; 004bc4a5
     FLD float ptr [EBX + EAX*0x8 + 0x124] ; 004bc4a7
-    FMUL double ptr [0x005dfc62]        ; 004bc4ae | DAT_005dfc62
+    FMUL double ptr [0x005dfc62]        ; 004bc4ae | g_DOUBLE_005dfc62
     SUB ESP,0x8                         ; 004bc4b4
     FSTP double ptr [ESP]               ; 004bc4b7
     CALL crt_math.c_floor_FUN_005c0880  ; 004bc4ba
@@ -79,7 +79,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004bc4bf
     MOV dword ptr [ESP + 0xc],EDX       ; 004bc4c3
     FLD double ptr [ESP + 0x8]          ; 004bc4c7
-    FADD double ptr [0x005dfc6a]        ; 004bc4cb | DAT_005dfc6a
+    FADD double ptr [0x005dfc6a]        ; 004bc4cb | g_DOUBLE_005dfc6a
     ADD ESP,0x8                         ; 004bc4d1
     CALL crt_math.c_round_FUN_005c03a0  ; 004bc4d4
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)

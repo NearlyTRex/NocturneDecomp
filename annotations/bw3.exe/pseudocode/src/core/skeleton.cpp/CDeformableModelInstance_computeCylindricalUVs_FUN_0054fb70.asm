@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d21d8
 ;   TerminatedCString s_CDeformableModelInstance_005d21ed
-;   undefined4 DAT_005d2234
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   double g_DOUBLE_005d2234 = 2670176.85779676
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -99,8 +99,8 @@ section .text
     CMP dword ptr [EDX + 0x8],0x0       ; 0054fc04
     JNZ 0x0054fc8b                      ; 0054fc08
         ;   XREF to: 0054fc8b (CONDITIONAL_JUMP)  ; LAB_0054fc8b
-    MOV EAX,[0x005f2afc]                ; 0054fc0e | DAT_005f2afc
-    MOV EAX,dword ptr [EAX]             ; 0054fc13 | DAT_01bdd7e4
+    MOV EAX,[0x005f2afc]                ; 0054fc0e | g_CDemonRenderer_PTR_005f2afc
+    MOV EAX,dword ptr [EAX]             ; 0054fc13 | g_CDemonRenderer_01bdd7e4
     MOV EBX,dword ptr [ESP + 0x20]      ; 0054fc15
     MOV dword ptr [ECX + EAX*0x1 + 0x18],EBX ; 0054fc19
         ;   Label: LAB_0054fc19
@@ -112,9 +112,9 @@ section .text
     IDIV EBX                            ; 0054fc2b
     MOV EDX,dword ptr [ESP + 0x24]      ; 0054fc2d
     ADD EDX,EAX                         ; 0054fc31
-    MOV EAX,[0x005f2afc]                ; 0054fc33 | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 0054fc33 | g_CDemonRenderer_PTR_005f2afc
     ADD ECX,0x30                        ; 0054fc38
-    MOV EAX,dword ptr [EAX]             ; 0054fc3b | DAT_01bdd7e4
+    MOV EAX,dword ptr [EAX]             ; 0054fc3b | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [ECX + EAX*0x1 + -0x14],EDX ; 0054fc3d
     MOV EAX,dword ptr [ESP + 0x4]       ; 0054fc41
     ADD EDI,0xc                         ; 0054fc45
@@ -132,8 +132,8 @@ section .text
         ;   Label: LAB_0054fc54
     MOV EBX,0xfbd                       ; 0054fc59
     PUSH 0x5d21ed                       ; 0054fc5e | = "CDeformableModelInstance::computeCyli..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0054fc63 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0054fc69 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0054fc63 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0054fc69 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054fc6f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054fc74
@@ -151,7 +151,7 @@ section .text
     FILD dword ptr [EDX]                ; 0054fc8e
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 0054fc90
         ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
-    FMUL double ptr [0x005d2234]        ; 0054fc95 | DAT_005d2234
+    FMUL double ptr [0x005d2234]        ; 0054fc95 | g_DOUBLE_005d2234
     MOV EAX,dword ptr [ESP + 0x20]      ; 0054fc9b
     CALL crt_math.c_round_FUN_005a3120  ; 0054fc9f
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
@@ -159,8 +159,8 @@ section .text
     MOV EBX,dword ptr [ESP]             ; 0054fca7
     ADD EAX,EBX                         ; 0054fcaa
     MOV dword ptr [ESP],EAX             ; 0054fcac
-    MOV EAX,[0x005f2afc]                ; 0054fcaf | DAT_005f2afc
-    MOV EAX,dword ptr [EAX]             ; 0054fcb4 | DAT_01bdd7e4
+    MOV EAX,[0x005f2afc]                ; 0054fcaf | g_CDemonRenderer_PTR_005f2afc
+    MOV EAX,dword ptr [EAX]             ; 0054fcb4 | g_CDemonRenderer_01bdd7e4
     MOV EBX,dword ptr [ESP]             ; 0054fcb6
     JMP 0x0054fc19                      ; 0054fcb9
         ;   XREF to: 0054fc19 (UNCONDITIONAL_JUMP)  ; LAB_0054fc19

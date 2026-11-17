@@ -10,8 +10,8 @@ void __cdecl core_muzzle_cpp_loadMuzzleEffectAssets_FUN_0059d5f0(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)0x26681e0,"gunflash2.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
-            ((CKeyFramedModelInstance *)0x26681e0);
+            (&g_CKeyFramedModelInstance_026681e0,"gunflash2.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_CKeyFramedModelInstance_026681e0)
+  ;
   return;
 }

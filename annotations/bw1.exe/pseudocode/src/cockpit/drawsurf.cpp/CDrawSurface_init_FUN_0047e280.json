@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 90,
+    "complexity_score": 45,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 169
   },
   "cross_references": [
@@ -44,15 +42,15 @@
   "globals": [
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     }
   ],
   "param_estimates": {
@@ -191,38 +189,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "if (DAT_0061b498 <= this_ptr->clip_right) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "this_ptr->clip_right = DAT_0061b498 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "if (this_ptr->clip_bottom < DAT_0061b49c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "this_ptr->clip_bottom = DAT_0061b49c + -1;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -7,7 +7,7 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005bbd92+1
+;   TerminatedCString s_modelName_005bbd93
 ;   TerminatedCString s_doorType_005bbd9d
 ;   TerminatedCString s_doorSide_005bbda6
 ;   TerminatedCString s_doorState_005bbdaf
@@ -45,7 +45,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 00464cd7
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00464cdc
-    PUSH 0x5bbd93                       ; 00464cdf | s_modelName_005bbd92+1
+    PUSH 0x5bbd93                       ; 00464cdf | = "modelName"
     LEA EDI,[EBX + 0x158]               ; 00464ce4
     PUSH EDI                            ; 00464cea
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 00464ceb
@@ -283,16 +283,16 @@ section .text
         ;   XREF to: 00464e9f (UNCONDITIONAL_JUMP)  ; LAB_00464e9f
     PUSH ESI                            ; 00464fc0
         ;   Label: LAB_00464fc0
-    MOV ESI,0x5bbe89                    ; 00464fc1 | DAT_005bbe89
+    MOV ESI,0x5bbe89                    ; 00464fc1 | = "true"
     LEA EDI,[EBX + 0x47c]               ; 00464fc6
     PUSH EDI                            ; 00464fcc
-    MOV AL,byte ptr [ESI]               ; 00464fcd | DAT_005bbe89 | DAT_005bbe8b
+    MOV AL,byte ptr [ESI]               ; 00464fcd | = "true" | s_ue_005bbe89+2
         ;   Label: LAB_00464fcd
     MOV byte ptr [EDI],AL               ; 00464fcf
     CMP AL,0x0                          ; 00464fd1
     JZ 0x00464fe5                       ; 00464fd3
         ;   XREF to: 00464fe5 (CONDITIONAL_JUMP)  ; LAB_00464fe5
-    MOV AL,byte ptr [ESI + 0x1]         ; 00464fd5 | DAT_005bbe8a | DAT_005bbe8c
+    MOV AL,byte ptr [ESI + 0x1]         ; 00464fd5 | s_rue_005bbe89+1 | s_e_005bbe89+3
     ADD ESI,0x2                         ; 00464fd8
     MOV byte ptr [EDI + 0x1],AL         ; 00464fdb
     ADD EDI,0x2                         ; 00464fde

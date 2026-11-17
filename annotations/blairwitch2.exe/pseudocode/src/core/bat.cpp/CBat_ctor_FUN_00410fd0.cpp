@@ -37,7 +37,7 @@ CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_00410fd0(CBat *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5cb667);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,"bat.kfm");
   *(byte *)(this_ptr_00[1].part_visibility_flags + 4) = 0;
   this_ptr_00[1].part_visibility_flags[0x1d] = 0x41700000;
   this_ptr_00[1].model_name[0] = '\0';

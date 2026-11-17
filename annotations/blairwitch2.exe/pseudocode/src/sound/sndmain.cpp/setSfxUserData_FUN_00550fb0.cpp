@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint sfx_handle,int index,void *value)
 
 {
   CSfxSlot *pCVar1;
   
   if ((index < 0) || (1 < index)) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x10cd;
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x10cd;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setSfxUserData - invalid user data index: %d");
   }
   pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_0054d3a0(sfx_handle,1);

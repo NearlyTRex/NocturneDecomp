@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_batcreat_cpp_CBatCreature_processDismemberment_FUN_00412170(CBatCreature *this_ptr,SDamageInfo *damage_info)
 
@@ -99,7 +98,7 @@ switchD_004121a6_default:
     if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] == 0) {
       damage_info->damage_amount = 9999.0;
     }
-    damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005d38a1;
+    damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     return;
   }
   return;

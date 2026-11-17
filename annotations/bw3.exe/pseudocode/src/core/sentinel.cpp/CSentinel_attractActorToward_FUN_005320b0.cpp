@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005320b0(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
@@ -36,17 +35,17 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005320b0(CSentine
     return 0;
   }
   core_xform_cpp_transformVector3x4_FUN_00583260
-            ((CVector3f *)&DAT_02cfd900,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01ed7860,
-             &CStack_1c);
+            (&g_CVector3f_02cfd900,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_01ed785c[1],&CStack_1c);
   fStack_34 = CStack_1c.x;
   afStack_48[(uint)bVar1 * -2 + 6] = *(float *)((int)&CStack_1c + (uint)bVar1 * -8 + 4);
   afStack_48[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 7] =
        *(float *)((int)&CStack_1c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   core_xform_cpp_transformVector3x4_FUN_00583260
-            ((CVector3f *)&DAT_02cfd900,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01ed7864,
-             &CStack_28);
+            (&g_CVector3f_02cfd900,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_01ed785c[2],&CStack_28);
   fStack_10 = CStack_28.x;
   afStack_c[(uint)bVar1 * -2] = *(float *)((int)&CStack_28 + (uint)bVar1 * -8 + 4);
   afStack_c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
@@ -59,14 +58,14 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005320b0(CSentine
   afStack_6c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
        afStack_48[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
   pCVar2 = &CStack_58;
-  afStack_6c[2] = fStack_70 * _DAT_005d00b2;
-  afStack_6c[3] = afStack_6c[0] * _DAT_005d00b2;
-  fStack_5c = afStack_6c[1] * _DAT_005d00b2;
-  CStack_58.x = fStack_70 * _DAT_005d00b2;
+  afStack_6c[2] = fStack_70 * 0.5f;
+  afStack_6c[3] = afStack_6c[0] * 0.5f;
+  fStack_5c = afStack_6c[1] * 0.5f;
+  CStack_58.x = fStack_70 * 0.5f;
   *(float *)((int)&CStack_58 + (uint)bVar1 * -8 + 4) = afStack_6c[(uint)bVar1 * -2 + 3];
   *(float *)((int)&CStack_58 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
        afStack_6c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4];
-  CStack_58.z = CStack_58.z + _DAT_005d00b6;
+  CStack_58.z = CStack_58.z + -0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,pCVar2,&CStack_7c);
   pCVar2 = (CVector3f *)&actor->orient;
@@ -74,7 +73,7 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005320b0(CSentine
   afStack_48[(uint)bVar1 * -2 + 3] = *(float *)((int)&CStack_7c + (uint)bVar1 * -8 + 4);
   afStack_48[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4] =
        *(float *)((int)&CStack_7c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-  CStack_40.y = CStack_40.y + _DAT_005d00ba;
+  CStack_40.y = CStack_40.y + -4.0f;
   (*((actor->vtable)._ub)->setPositionAndOrientation)(actor,(CVector3f *)(afStack_48 + 2),pCVar2);
   return 1;
 }

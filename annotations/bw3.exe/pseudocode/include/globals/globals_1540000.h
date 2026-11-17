@@ -4,14 +4,31 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CFilterFX.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWinFont.h"
+#include "types/structs/SCameraViewportState.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1540000
 // =============================================================================
+
+// CBitFont*
+extern CBitFont* g_CBitFont_PTR_01549aa0;
+extern CBitFont* g_CBitFont_PTR_01549aa4;
+extern CBitFont* g_CBitFont_PTR_01549aa8;
+extern CBitFont* g_CBitFont_PTR_01549aac;
+extern CBitFont* g_CBitFont_PTR_01549ab0;
+extern CBitFont* g_CBitFont_PTR_01549ab4;
+extern CBitFont* g_CBitFont_PTR_01549ab8;
+extern CBitFont* g_CBitFont_PTR_01549abc;
+extern CBitFont* g_CBitFont_PTR_01549ac0;
 
 // CDemonActorType
 extern CDemonActorType g_CDemnfolkClassInfo;
@@ -24,9 +41,91 @@ extern CDemonFilter CDemonFilter_ARRAY_01548e60[4];
 // CDemonFilter[8]
 extern CDemonFilter CDemonFilter_ARRAY_01548c00[8];
 
+// CDemonGlobe*
+extern CDemonGlobe* g_CDemonGlobe_PTR_015484c8;
+
+// CDemonLight*
+extern CDemonLight* g_CDemonLight_PTR_01549b10;
+
 // CFilterCache
 extern CFilterCache g_CFilterCacheInstance;
 
 // CFilterFX
 extern CFilterFX g_CFilterFXInstance;
+
+// CVector3f
+extern CVector3f g_CVector3f_015485dc;
+extern CVector3f g_CVector3f_015485ec;
+
+// CVector3f[16]
+extern CVector3f g_CVector3f_ARRAY_015486c4[16];
+extern CVector3f g_CVector3f_ARRAY_01548788[16];
+extern CVector3f g_CVector3f_ARRAY_0154884c[16];
+extern CVector3f g_CVector3f_ARRAY_01548910[16];
+extern CVector3f g_CVector3f_ARRAY_015489d4[16];
+
+// CWinFont*
+extern CWinFont* g_CWinFont_PTR_01549ac4;
+extern CWinFont* g_CWinFont_PTR_01549ac8;
+extern CWinFont* g_CWinFont_PTR_01549acc;
+extern CWinFont* g_CWinFont_PTR_01549ad0;
+
+// SCameraViewportState
+extern SCameraViewportState g_SCameraViewportState_015484dc;
+
+// char*
+extern char* g_CHAR_PTR_01547204;
+
+// float
+extern float g_FLOAT_01548600;
+extern float g_FLOAT_01548608;
+extern float g_FLOAT_0154860c;
+extern float g_FLOAT_01548614;
+extern float g_FLOAT_01548618;
+extern float g_FLOAT_01548620;
+extern float g_FLOAT_01548a98;
+extern float g_FLOAT_01548aa0;
+extern float g_FLOAT_01548aa4;
+extern float g_FLOAT_01548aac;
+extern float g_FLOAT_01548ab0;
+extern float g_FLOAT_01548ab8;
+extern float g_FLOAT_01548b58;
+extern float g_FLOAT_01548b60;
+extern float g_FLOAT_01548b64;
+extern float g_FLOAT_01548b6c;
+extern float g_FLOAT_01548b70;
+extern float g_FLOAT_01548b78;
+
+// int
+extern int g_INT_01547200;
+extern int g_INT_015484cc;
+extern int g_INT_015484d0;
+extern int g_INT_015484d4;
+extern int g_INT_015484d8;
+extern int g_INT_015485fc;
+extern int g_INT_015486c0;
+extern int g_INT_0154890c;
+extern int g_INT_01548b5c;
+extern int g_INT_01548b68;
+extern int g_INT_01548b74;
+
+// int[240]
+extern int g_INT_ARRAY_01546a80[240];
+extern int g_INT_ARRAY_01546e40[240];
+
+// uchar
+extern uchar g_UCHAR_015485e8;
+extern uchar g_UCHAR_015485f8;
+
+// uchar[6291656]
+extern uchar g_UCHAR_ARRAY_01549b14[6291656];
+
+// uint
+extern uint g_UINT_01548784;
+extern uint g_UINT_01548848;
+extern uint g_UINT_015489d0;
+extern uint g_UINT_01548a94;
+
+// uint[3]
+extern uint g_UINT_ARRAY_01548b7c[3];
 

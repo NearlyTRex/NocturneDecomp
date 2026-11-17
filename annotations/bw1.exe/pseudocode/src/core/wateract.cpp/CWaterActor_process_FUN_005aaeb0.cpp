@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *this_ptr,float delta_time)
 
 {
@@ -19,7 +17,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *thi
   
   iVar2 = this_ptr->texture_anim_accum;
   dVar4 = round
-                    ((double)(delta_time * (float)_DAT_005f9302 * (float)_DAT_005f930a));
+                    ((double)(delta_time * (float)65536 * (float)8));
   iVar2 = iVar2 + (int)ROUND(dVar4);
   this_ptr->texture_anim_accum = iVar2;
   if (0x10000 < iVar2) {
@@ -30,7 +28,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *thi
       this_ptr->texture_frame = 0;
     }
   }
-  this_ptr_00 = 0x01C51D80;
+  this_ptr_00 = g_CEventList_PTR_0061b4d0;
   this_ptr->inv_delta_time = 1.0 / (float)this_ptr;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(this_ptr_00,this_ptr->move_event)
   ;
@@ -38,7 +36,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *thi
     this_ptr->state = WATER_ACTOR_RISING;
   }
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,this_ptr->move_down_event);
+                    (g_CEventList_PTR_0061b4d0,this_ptr->move_down_event);
   if (iVar2 != 0) {
     this_ptr->state = WATER_ACTOR_LOWERING;
   }
@@ -60,8 +58,8 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *thi
     this_ptr->param = 0.0;
     break;
   default:
-    _DAT_01d1d400 = "..\\core\\wateract.cpp";
-    _DAT_01d1d404 = 0x1a5;
+    g_CHAR_PTR_01d1d400 = "..\\core\\wateract.cpp";
+    g_INT_01d1d404 = 0x1a5;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CWaterActor::process - Bad state");
   }
   (this_ptr->base).location.position.y = this_ptr->height_delta * this_ptr->param + this_ptr->base_y

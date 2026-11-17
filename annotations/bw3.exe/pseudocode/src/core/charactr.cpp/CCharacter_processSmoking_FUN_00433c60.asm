@@ -43,14 +43,14 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 s_CZombieDog_005b883d+1
+;   TerminatedCString s_CZombieDog_005b883e
 ;   TerminatedCString s_Bip01_head_005b8849
 ;   TerminatedCString s_Bip01_head_005b8854
-;   undefined4 DAT_005b8866
-;   undefined4 DAT_005b886e
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005b8866 = 32
+;   float g_FLOAT_005b886e = 0.2000000
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_007e2cb0
+;   float g_FLOAT_007e2cb0
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.active_fog.temperature
 ;
@@ -109,7 +109,7 @@ section .text
     AND EAX,0xff                        ; 00433cd0
     MOV dword ptr [EBX + 0x30cc],EAX    ; 00433cd5
     XOR EAX,EAX                         ; 00433cdb
-    MOV [0x007e2cb0],EAX                ; 00433cdd | DAT_007e2cb0
+    MOV [0x007e2cb0],EAX                ; 00433cdd | g_FLOAT_007e2cb0
     LEA ESP,[EBP + 0x7a]                ; 00433ce2
         ;   Label: LAB_00433ce2
     POP EBP                             ; 00433ce5
@@ -141,7 +141,7 @@ section .text
     MOV EAX,[0x00603b28]                ; 00433d20 | g_CDemonSetPtr
         ;   Label: LAB_00433d20
     FLD float ptr [EAX + 0x15ac84]      ; 00433d25 | g_CDemonSetInstance.active_fog.temperature
-    FCOMP double ptr [0x005b8866]       ; 00433d2b | DAT_005b8866
+    FCOMP double ptr [0x005b8866]       ; 00433d2b | g_DOUBLE_005b8866
     FNSTSW AX                           ; 00433d31
     SAHF                                ; 00433d33
     JNC 0x00433e53                      ; 00433d34
@@ -243,7 +243,7 @@ section .text
     POP ESI                             ; 00433e50
     POP EBX                             ; 00433e51
     RET                                 ; 00433e52
-    PUSH 0x5b883e                       ; 00433e53 | s_CZombieDog_005b883d+1
+    PUSH 0x5b883e                       ; 00433e53 | = "CZombieDog"
         ;   Label: LAB_00433e53
     PUSH EBX                            ; 00433e58
     CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 00433e59
@@ -273,7 +273,7 @@ section .text
     MOV ECX,0x3f800000                  ; 00433e9b
     LEA EAX,[EBP + 0x5e]                ; 00433ea0
     LEA ESI,[EBP + 0x6a]                ; 00433ea3
-    FADD float ptr [0x005b886e]         ; 00433ea6 | DAT_005b886e
+    FADD float ptr [0x005b886e]         ; 00433ea6 | g_FLOAT_005b886e
     PUSH EAX                            ; 00433eac
     FSTP float ptr [EBX + 0x30c4]       ; 00433ead
     PUSH EBX                            ; 00433eb3
@@ -341,7 +341,7 @@ section .text
     LEA EAX,[EBP + 0x3a]                ; 00433f56
     LEA EDI,[EBP + 0x3a]                ; 00433f59
     PUSH EAX                            ; 00433f5c
-    MOV EDX,dword ptr [0x005fc5a0]      ; 00433f5d | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 00433f5d | g_CFireEffect_PTR_005fc5a0
     LEA ESI,[EBP + 0x2e]                ; 00433f63
     PUSH EDX                            ; 00433f66
     MOVSD ES:EDI,ESI                    ; 00433f67

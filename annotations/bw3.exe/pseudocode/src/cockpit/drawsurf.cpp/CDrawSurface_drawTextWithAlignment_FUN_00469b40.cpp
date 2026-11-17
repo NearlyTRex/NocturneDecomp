@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
   int iVar5;
   int color;
   int right_x;
@@ -22,23 +20,23 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b4
   int iVar6;
   int left_x;
   
-  uVar4 = _DAT_01c6b5b4;
-  uVar3 = _DAT_01c6b5b0;
-  uVar2 = _DAT_01c6b5ac;
-  uVar1 = _DAT_01c6b5a8;
+  iVar4 = g_INT_01c6b5b4;
+  iVar3 = g_INT_01c6b5b0;
+  iVar2 = g_INT_01c6b5ac;
+  iVar1 = g_INT_01c6b5a8;
   right_x = width + this_ptr->x;
   left_x = x + this_ptr->x;
   y_00 = y + this_ptr->y;
   iVar6 = height + this_ptr->y;
-  _DAT_01c6b5a8 = this_ptr->clip_left;
-  _DAT_01c6b5b0 = this_ptr->clip_right;
-  _DAT_01c6b5ac = this_ptr->clip_top;
-  _DAT_01c6b5b4 = this_ptr->clip_bottom;
-  if (_DAT_01bdd7c4 == (CBitFont *)0x0) {
+  g_INT_01c6b5a8 = this_ptr->clip_left;
+  g_INT_01c6b5b0 = this_ptr->clip_right;
+  g_INT_01c6b5ac = this_ptr->clip_top;
+  g_INT_01c6b5b4 = this_ptr->clip_bottom;
+  if (g_CBitFont_PTR_01bdd7c4 == (CBitFont *)0x0) {
     iVar5 = engine_2d_c_getTextWrapEnabled_FUN_00402800();
     color = engine_2d_c_getTextColor_FUN_00402840();
     engine_2d_c_disableTextWrap_FUN_00402830();
-    engine_2d_c_setTextColor_FUN_00402850(_DAT_01bdd7c0);
+    engine_2d_c_setTextColor_FUN_00402850(g_INT_01bdd7c0);
     switch(alignment_mode) {
     case TEXT_ALIGN_RIGHT:
       engine_2d_c_drawTextRightAlignedColor_FUN_00402540(text,left_x,y_00);
@@ -66,48 +64,52 @@ LAB_00469d57:
     }
     engine_2d_c_setTextColor_FUN_00402850(color);
     engine_2d_c_setTextWrapEnabled_FUN_00402810(iVar5);
-    _DAT_01c6b5a8 = uVar1;
-    _DAT_01c6b5ac = uVar2;
-    _DAT_01c6b5b0 = uVar3;
-    _DAT_01c6b5b4 = uVar4;
+    g_INT_01c6b5a8 = iVar1;
+    g_INT_01c6b5ac = iVar2;
+    g_INT_01c6b5b0 = iVar3;
+    g_INT_01c6b5b4 = iVar4;
     return;
   }
   iVar5 = engine_font_cpp_getDefaultTextColor_FUN_004b12e0();
-  engine_font_cpp_setDefaultTextColor_FUN_004b1300(_DAT_01bdd7bc);
+  engine_font_cpp_setDefaultTextColor_FUN_004b1300(g_INT_01bdd7bc);
   switch(alignment_mode) {
   case TEXT_ALIGN_LEFT:
     goto LAB_00469c0a;
   case TEXT_ALIGN_RIGHT:
-    engine_font_cpp_CBitFont_drawTextRight_FUN_004b0da0(_DAT_01bdd7c4,left_x,y_00,-3,-1,text);
+    engine_font_cpp_CBitFont_drawTextRight_FUN_004b0da0
+              (g_CBitFont_PTR_01bdd7c4,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER:
-    engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0(_DAT_01bdd7c4,left_x,y_00,-3,-1,text);
+    engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0
+              (g_CBitFont_PTR_01bdd7c4,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_VCENTER:
-    y_00 = y_00 - _DAT_01bdd7c4->current_line_height / 2;
+    y_00 = y_00 - g_CBitFont_PTR_01bdd7c4->current_line_height / 2;
     goto LAB_00469c0a;
   case TEXT_ALIGN_CENTER_BOTH:
     engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0
-              (_DAT_01bdd7c4,left_x,y_00 - _DAT_01bdd7c4->current_line_height / 2,-3,-1,text);
+              (g_CBitFont_PTR_01bdd7c4,left_x,
+               y_00 - g_CBitFont_PTR_01bdd7c4->current_line_height / 2,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_BOUNDS:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0
-              (_DAT_01bdd7c4,left_x,right_x,y_00,-3,-1,text);
+              (g_CBitFont_PTR_01bdd7c4,left_x,right_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_IN_AREA:
-    y_00 = ((y_00 + iVar6 + 1) - _DAT_01bdd7c4->current_line_height) / 2;
+    y_00 = ((y_00 + iVar6 + 1) - g_CBitFont_PTR_01bdd7c4->current_line_height) / 2;
 LAB_00469c0a:
-    engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0(_DAT_01bdd7c4,left_x,y_00,-3,-1,text);
+    engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0
+              (g_CBitFont_PTR_01bdd7c4,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_AREA:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0
-              (_DAT_01bdd7c4,left_x,right_x,
-               ((y_00 + iVar6 + 1) - _DAT_01bdd7c4->current_line_height) / 2,-3,-1,text);
+              (g_CBitFont_PTR_01bdd7c4,left_x,right_x,
+               ((y_00 + iVar6 + 1) - g_CBitFont_PTR_01bdd7c4->current_line_height) / 2,-3,-1,text);
   }
   engine_font_cpp_setDefaultTextColor_FUN_004b1300(iVar5);
-  _DAT_01c6b5a8 = uVar1;
-  _DAT_01c6b5b0 = uVar3;
-  _DAT_01c6b5ac = uVar2;
-  _DAT_01c6b5b4 = uVar4;
+  g_INT_01c6b5a8 = iVar1;
+  g_INT_01c6b5b0 = iVar3;
+  g_INT_01c6b5ac = iVar2;
+  g_INT_01c6b5b4 = iVar4;
   return;
 }

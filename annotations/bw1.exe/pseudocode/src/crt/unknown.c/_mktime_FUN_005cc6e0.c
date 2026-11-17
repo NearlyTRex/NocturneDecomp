@@ -12,11 +12,11 @@ time_t __cdecl _mktime(_tm *timeptr)
   time_t tVar1;
   int iVar2;
   int iVar3;
-  byte *puVar4;
+  short *psVar4;
   int iVar5;
   
   iVar3 = timeptr->tm_mon % 0xc;
-  puVar4 = &DAT_0060852c;
+  psVar4 = &g_SHORT_0060852c;
   if (timeptr->tm_year < -0xb04815f) {
     tVar1 = -1;
   }
@@ -30,10 +30,10 @@ time_t __cdecl _mktime(_tm *timeptr)
     }
     iVar2 = FUN_005c9950(iVar5 + 0x76c);
     if (iVar2 != 0) {
-      puVar4 = &DAT_00608546;
+      psVar4 = &g_SHORT_00608546;
     }
     iVar2 = iVar5 + 3 >> 0x1f;
-    iVar3 = (int)*(short *)(puVar4 + iVar3 * 2) +
+    iVar3 = (int)psVar4[iVar3] +
             ((iVar5 * 0x16d + ((int)((iVar5 + 3 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2)) -
             (iVar5 + 99) / 100) + (iVar5 + 299) / 400 + timeptr->tm_mday;
     for (iVar5 = timeptr->tm_sec + (timeptr->tm_min + timeptr->tm_hour * 0x3c) * 0x3c;
@@ -41,12 +41,12 @@ time_t __cdecl _mktime(_tm *timeptr)
     }
     FUN_005c97c0(iVar3,iVar5,0,timeptr);
     FUN_005c9428();
-    iVar5 = iVar5 + DAT_00626998;
+    iVar5 = iVar5 + g_INT_00626998;
     if (timeptr->tm_isdst < 0) {
       FUN_005c9ae4(timeptr);
     }
     if (0 < timeptr->tm_isdst) {
-      iVar5 = iVar5 - DAT_006269a0;
+      iVar5 = iVar5 - g_INT_006269a0;
     }
     for (; iVar5 < 0; iVar5 = iVar5 + 0x15180) {
       iVar3 = iVar3 + -1;
@@ -56,7 +56,7 @@ time_t __cdecl _mktime(_tm *timeptr)
     }
     if (iVar3 == 0x63de) {
       tVar1 = iVar5 + -0x15180;
-      if ((DAT_00626998 < 1) || (tVar1 < 0)) {
+      if ((g_INT_00626998 < 1) || (tVar1 < 0)) {
         return -1;
       }
     }

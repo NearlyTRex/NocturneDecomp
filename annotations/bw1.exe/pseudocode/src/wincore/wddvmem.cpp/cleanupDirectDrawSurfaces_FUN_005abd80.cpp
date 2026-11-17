@@ -6,23 +6,23 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_005abd80(void)
 
 {
-  if (_DAT_02c9930c != (int *)0x0) {
-    (**(code **)(*_DAT_02c9930c + 8))(_DAT_02c9930c);
-    _DAT_02c9930c = (int *)0x0;
+  if (g_IUnknown_PTR_02c9930c != (IUnknown *)0x0) {
+    (*g_IUnknown_PTR_02c9930c->vtable->Release)(g_IUnknown_PTR_02c9930c);
+    g_IUnknown_PTR_02c9930c = (IUnknown *)0x0;
   }
-  if (_DAT_02c99308 != (int *)0x0) {
-    (**(code **)(*_DAT_02c99308 + 8))(_DAT_02c99308);
-    _DAT_02c99308 = (int *)0x0;
+  if (g_IDirectDrawSurface_PTR_02c99308 != (IDirectDrawSurface *)0x0) {
+    (*g_IDirectDrawSurface_PTR_02c99308->vtable->Release)
+              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99308);
+    g_IDirectDrawSurface_PTR_02c99308 = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02c99304 == (int *)0x0) {
+  if (g_IDirectDrawSurface_PTR_02c99304 == (IDirectDrawSurface *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02c99304 + 8))(_DAT_02c99304);
-  _DAT_02c99304 = (int *)0x0;
+  (*g_IDirectDrawSurface_PTR_02c99304->vtable->Release)
+            ((IUnknown *)g_IDirectDrawSurface_PTR_02c99304);
+  g_IDirectDrawSurface_PTR_02c99304 = (IDirectDrawSurface *)0x0;
   return;
 }

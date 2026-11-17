@@ -14,7 +14,7 @@
 ;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d497c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4d01
+;   float g_FLOAT_005c4d01 = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -64,7 +64,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d2d59
     MOVSD ES:EDI,ESI                    ; 004d2d5a
     MOVSD ES:EDI,ESI                    ; 004d2d5b
-    FLD float ptr [0x005c4d01]          ; 004d2d5c | DAT_005c4d01
+    FLD float ptr [0x005c4d01]          ; 004d2d5c | g_FLOAT_005c4d01
     FLD float ptr [ESP + 0x40]          ; 004d2d62
     FMUL ST1                            ; 004d2d66
     FLD float ptr [ESP + 0x44]          ; 004d2d68

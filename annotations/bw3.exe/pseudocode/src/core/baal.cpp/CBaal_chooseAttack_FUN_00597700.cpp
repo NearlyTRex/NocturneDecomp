@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_baal_cpp_CBaal_chooseAttack_FUN_00597700(CBaal *this_ptr)
 
@@ -45,7 +44,7 @@ void __cdecl core_baal_cpp_CBaal_chooseAttack_FUN_00597700(CBaal *this_ptr)
          *(uint *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                          (local_40 - (this_ptr->base).base.base.orient.vec.y);
-    if (ABS(local_14) < (float)_DAT_005d9689) {
+    if (ABS(local_14) < (float)0.34906585038888899) {
       iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
       if (iVar2 < 0x19) {
         iVar2 = 3;

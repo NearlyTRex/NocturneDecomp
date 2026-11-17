@@ -14,8 +14,8 @@
 ;   TerminatedCString s_Out_of_memory_005e27d5
 ;   TerminatedCString s_engine_pod_cpp_005e27e4
 ;   TerminatedCString s_Can_t_mount_s_005e27f6
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -57,8 +57,8 @@ section .text
     MOV EBP,0x5e27c3                    ; 0051b145 | = "..\\engine\\pod.cpp"
     MOV EAX,0x3f1                       ; 0051b14a
     PUSH 0x5e27d5                       ; 0051b14f | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],EBP      ; 0051b154 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0051b15a | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 0051b154 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0051b15a | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b15f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051b164
@@ -83,8 +83,8 @@ section .text
         ;   Label: LAB_0051b185
     MOV ESI,0x3eb                       ; 0051b18a
     PUSH 0x5e27a6                       ; 0051b18f | = "Too many .POD files at once!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0051b194 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0051b19a | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0051b194 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0051b19a | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b1a0
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051b1a5
@@ -97,8 +97,8 @@ section .text
     MOV ESI,0x5e27e4                    ; 0051b1b3 | = "..\\engine\\pod.cpp"
     MOV EDI,0x3f2                       ; 0051b1b8
     PUSH 0x5e27f6                       ; 0051b1bd | = "Can't mount %s"
-    MOV dword ptr [0x01d046a0],ESI      ; 0051b1c2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051b1c8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0051b1c2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0051b1c8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b1ce
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0051b1d3

@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 156,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 248
   },
@@ -62,33 +61,33 @@
   "globals": [
     {
       "addr": "005ee5d2",
-      "name": "DAT_005ee5d2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ee5d2",
+      "type": "double",
+      "value": "100"
     },
     {
       "addr": "005ee5da",
-      "name": "DAT_005ee5da",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ee5da",
+      "type": "double",
+      "value": "0.785398163375000"
     },
     {
       "addr": "005ee5e2",
-      "name": "DAT_005ee5e2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ee5e2",
+      "type": "double",
+      "value": "-0.785398163375000"
     },
     {
       "addr": "005ee5ea",
-      "name": "DAT_005ee5ea",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ee5ea",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005ee5ee",
-      "name": "DAT_005ee5ee",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ee5ee",
+      "type": "float",
+      "value": "-50"
     },
     {
       "addr": "0061b5a8",
@@ -104,19 +103,19 @@
     },
     {
       "addr": "02661fb8",
-      "name": "DAT_02661fb8",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_02661fb8",
+      "type": "CVector3f[200]",
       "value": null
     },
     {
       "addr": "02661fbc",
-      "name": "DAT_02661fbc",
+      "name": "g_CVector3f_ARRAY_02661fb8[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02661fc0",
-      "name": "DAT_02661fc0",
+      "name": "g_CVector3f_ARRAY_02661fb8[0].z",
       "type": "undefined4",
       "value": null
     }
@@ -346,24 +345,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_02661fb8",
-      "severity": "mild",
-      "text": "pCVar2 = (CVector3f *)&DAT_02661fb8;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(float *)((int)g_FLOAT_ARRAY_02662918",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_FLOAT_ARRAY_02662918 + iVar3) = fVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 20,
+      "line": 18,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->direction).x = direction->x;",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 25,
+      "line": 23,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->rotation).x = rotation->x;",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 43,
+      "line": 42,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_50.x = local_38.x;",
@@ -387,7 +378,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 48,
+      "line": 47,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_44.x = local_38.x;",
@@ -395,7 +386,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 64,
+      "line": 63,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar2->x = local_38.x;",

@@ -15,8 +15,8 @@
 ;   TerminatedCString s_CDemonCube_allocMemory_O_005d7ae1
 ;   TerminatedCString s_core_dcube_cpp_005d7b0f
 ;   TerminatedCString s_CDemonCube_allocMemory_O_005d7b21
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -43,8 +43,8 @@ section .text
     MOV ECX,0x5d7acf                    ; 00457bd9 | = "..\\core\\dcube.cpp"
     MOV ESI,0x5f3                       ; 00457bde
     PUSH 0x5d7ae1                       ; 00457be3 | = "CDemonCube::allocMemory - Out of voxe..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00457be8 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00457bee | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00457be8 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00457bee | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00457bf4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00457bf9
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_00457c13
     MOV EAX,0x5f5                       ; 00457c18
     PUSH 0x5d7b21                       ; 00457c1d | = "CDemonCube::allocMemory - Out of voxe..."
-    MOV dword ptr [0x01d1d400],EBP      ; 00457c22 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00457c28 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 00457c22 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00457c28 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00457c2d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00457c32

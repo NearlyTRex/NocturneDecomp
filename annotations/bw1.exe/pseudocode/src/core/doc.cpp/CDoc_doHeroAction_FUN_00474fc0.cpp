@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
 
 {
@@ -143,10 +141,10 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
       afStack_58[(uint)bVar11 * -2 + 5] = afStack_20[(uint)bVar11 * -2 + 3];
       afStack_58[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6] =
            *(float *)(&stack0xfffffff0 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-      afStack_58[1] = fStack_48 * _DAT_005da59c;
-      afStack_58[2] = fStack_44 * _DAT_005da59c;
-      afStack_58[3] = fStack_40 * _DAT_005da59c;
-      CStack_3c.x = fStack_48 * _DAT_005da59c;
+      afStack_58[1] = fStack_48 * 0.5f;
+      afStack_58[2] = fStack_44 * 0.5f;
+      afStack_58[3] = fStack_40 * 0.5f;
+      CStack_3c.x = fStack_48 * 0.5f;
       *(float *)((int)&CStack_3c + (uint)bVar11 * -8 + 4) = afStack_58[(uint)bVar11 * -2 + 2];
       *(float *)((int)&CStack_3c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
            afStack_58[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3];
@@ -182,16 +180,16 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
            (iVar6 = (*((pCVar3->vtable)._ub)->canPickup)(pCVar3,(CDemonActor *)this_ptr_00),
            iVar6 != 4)) {
           pCVar1 = &(this_ptr_00->base).base.model;
-          if ((this_ptr_00->carry_object_world_center).y <= (float)_DAT_005da5ac) {
+          if ((this_ptr_00->carry_object_world_center).y <= (float)2) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x16,1);
             in_stack_ffffff28 = "Picking up %s off ground\n";
             this_ptr_01 = g_CConsolePtr;
           }
           else {
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                      (pCVar1,_DAT_01b6884c,&CStack_94);
+                      (pCVar1,g_INT_01b6884c,&CStack_94);
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                      (pCVar1,_DAT_01b68824,(CVector3f *)auStack_28);
+                      (pCVar1,g_INT_01b68824,(CVector3f *)auStack_28);
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x18,1);
             in_stack_ffffff28 = "Picking up %s waist level\n";
             this_ptr_01 = g_CConsolePtr;
@@ -208,7 +206,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
           fVar2 = (this_ptr_00->carry_object_world_center).y;
           pCVar1 = &(this_ptr_00->base).base.model;
           this_ptr_00->pickup_facing_reversed = (uint)(0.0 < CStack_84.y);
-          if (fVar2 <= (float)_DAT_005da5a4) {
+          if (fVar2 <= (float)2.5) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x1a,1);
             in_stack_ffffff28 = "Picking up heavy %s crate\n";
             this_ptr_01 = g_CConsolePtr;
@@ -247,7 +245,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
     break;
   case 7:
     engine_console_cpp_CConsole_printf_FUN_00445430
-              (g_CConsolePtr,"?CDoc::doHeroAction - pull lever\n" + 1);
+              (g_CConsolePtr,"CDoc::doHeroAction - pull lever\n");
     uVar4 = g_CLeverClassInfo.name_hash;
     pCVar3 = (this_ptr_00->base).hero_action_actor;
     (this_ptr_00->base).player_input.action_state.fire = 0;

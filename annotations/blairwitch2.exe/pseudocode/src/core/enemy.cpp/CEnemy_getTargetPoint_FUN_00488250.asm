@@ -7,8 +7,8 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2dc9
-;   undefined4 DAT_005d2dd1
+;   float g_FLOAT_005d2dc9 = 0.5
+;   double g_DOUBLE_005d2dd1 = 0.166666666666667
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 0048827e
     FLD float ptr [ESP + 0x28]          ; 00488280
     FSUB float ptr [ESP + 0x1c]         ; 00488284
-    FMUL double ptr [0x005d2dd1]        ; 00488288 | DAT_005d2dd1
+    FMUL double ptr [0x005d2dd1]        ; 00488288 | g_DOUBLE_005d2dd1
     FLD float ptr [ESP + 0x18]          ; 0048828e
     FLD float ptr [ESP + 0x1c]          ; 00488292
     FLD float ptr [ESP + 0x20]          ; 00488296
@@ -54,7 +54,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004882c4
     MOVSD ES:EDI,ESI                    ; 004882c5
     MOVSD ES:EDI,ESI                    ; 004882c6
-    FLD float ptr [0x005d2dc9]          ; 004882c7 | DAT_005d2dc9
+    FLD float ptr [0x005d2dc9]          ; 004882c7 | g_FLOAT_005d2dc9
     FLD float ptr [ESP + 0x48]          ; 004882cd
     FMUL ST1                            ; 004882d1
     FLD float ptr [ESP + 0x4c]          ; 004882d3

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(CGlass *this_ptr)
 
 {
@@ -43,29 +41,32 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(CGlass *this_p
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(in_stack_0000000c);
     return;
   }
-  iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar2 == 0) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (DAT_00612560,(SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c));
+              (g_CDemonRenderer_PTR_00612560,
+               (SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c));
   }
   else {
-    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(DAT_00612560,0);
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(g_CDemonRenderer_PTR_00612560,0);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (DAT_00612560,(SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c));
-    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(DAT_00612560,1);
+              (g_CDemonRenderer_PTR_00612560,
+               (SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c));
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(g_CDemonRenderer_PTR_00612560,1);
   }
   iVar2 = 0;
   if (0 < (int)in_stack_0000000c[8].create_prob) {
     ppCVar7 = &in_stack_0000000c[2].standing_platform;
     iVar4 = 0;
     do {
-      iStack_10 = (int)ROUND((float)*ppCVar7 * _DAT_00601450);
+      iStack_10 = (int)ROUND((float)*ppCVar7 * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 ((SProjectedVertex *)
-                 ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar4),
-                 (CVector3i *)&iStack_10);
-      pCVar1 = DAT_00612560;
-      *(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar4) = 0xffff;
+                 ((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iVar4),(CVector3i *)&iStack_10);
+      pCVar1 = g_CDemonRenderer_PTR_00612560;
+      *(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + iVar4) = 0xffff;
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar4) = 0xffff;
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar4) = 0xffff;
       iVar2 = iVar2 + 1;
@@ -74,7 +75,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(CGlass *this_p
     } while (iVar2 < (int)in_stack_0000000c[8].create_prob);
   }
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
-            (DAT_00612560,(int)in_stack_0000000c[1].location.position.y);
+            (g_CDemonRenderer_PTR_00612560,(int)in_stack_0000000c[1].location.position.y);
   iVar2 = 0;
   if (0 < *(int *)in_stack_0000000c[8].create_event) {
     poly = (SMRGLPrimitivePoly *)&in_stack_0000000c[4].next_actor;
@@ -82,7 +83,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(CGlass *this_p
     do {
       pCVar5[4].vtable._ub = (CDemonActor_vtable *)0x0;
       pCVar5[5].actor_name[0] = '\0';
-      pCVar1 = DAT_00612560;
+      pCVar1 = g_CDemonRenderer_PTR_00612560;
       pCVar5[5].actor_name[1] = '\0';
       pCVar5[5].actor_name[2] = '\0';
       pCVar5[5].actor_name[3] = '\0';

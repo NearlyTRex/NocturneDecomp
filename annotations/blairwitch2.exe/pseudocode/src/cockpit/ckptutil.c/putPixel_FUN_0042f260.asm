@@ -13,11 +13,11 @@
 ;   cockpit_ckptutil.c_drawLineAA_FUN_0042e930 at 0042e9b0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
+;   int g_INT_006141c0 = 0x8
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
+;   int g_INT_01c35e50
+;   int g_INT_01c35e54
 ;
 ; *****************************************************************************
 
@@ -28,19 +28,19 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 0042f261
     MOV EDX,dword ptr [ESP + 0xc]       ; 0042f265
     MOV EBX,dword ptr [ESP + 0x10]      ; 0042f269
-    CMP ECX,dword ptr [0x01c35e48]      ; 0042f26d | DAT_01c35e48
+    CMP ECX,dword ptr [0x01c35e48]      ; 0042f26d | g_INT_01c35e48
     JL 0x0042f29f                       ; 0042f273
         ;   XREF to: 0042f29f (CONDITIONAL_JUMP)  ; LAB_0042f29f
-    CMP ECX,dword ptr [0x01c35e50]      ; 0042f275 | DAT_01c35e50
+    CMP ECX,dword ptr [0x01c35e50]      ; 0042f275 | g_INT_01c35e50
     JG 0x0042f29f                       ; 0042f27b
         ;   XREF to: 0042f29f (CONDITIONAL_JUMP)  ; LAB_0042f29f
-    CMP EDX,dword ptr [0x01c35e4c]      ; 0042f27d | DAT_01c35e4c
+    CMP EDX,dword ptr [0x01c35e4c]      ; 0042f27d | g_INT_01c35e4c
     JL 0x0042f29f                       ; 0042f283
         ;   XREF to: 0042f29f (CONDITIONAL_JUMP)  ; LAB_0042f29f
-    CMP EDX,dword ptr [0x01c35e54]      ; 0042f285 | DAT_01c35e54
+    CMP EDX,dword ptr [0x01c35e54]      ; 0042f285 | g_INT_01c35e54
     JG 0x0042f29f                       ; 0042f28b
         ;   XREF to: 0042f29f (CONDITIONAL_JUMP)  ; LAB_0042f29f
-    MOV EAX,[0x006141c0]                ; 0042f28d | DAT_006141c0
+    MOV EAX,[0x006141c0]                ; 0042f28d | g_INT_006141c0
     SHL EDX,0x2                         ; 0042f292
     CMP EAX,0x10                        ; 0042f295
     JNC 0x0042f2d9                      ; 0042f298

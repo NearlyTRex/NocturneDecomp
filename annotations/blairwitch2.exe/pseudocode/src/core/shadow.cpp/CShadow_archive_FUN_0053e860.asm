@@ -14,7 +14,7 @@
 ;   TerminatedCString s_lightUpEyes_005e673a
 ;   TerminatedCString s_chainAnchor_005e6746
 ;   TerminatedCString s_chainLength_005e6752
-;   undefined4 DAT_005e675e
+;   TerminatedCString s_type_005e675e
 ;   TerminatedCString s_phase_005e6763
 ;   TerminatedCString s_phaseTimer_005e6769
 ;   TerminatedCString s_alpha1_005e6774
@@ -93,7 +93,7 @@ section .text
         ;   Label: LAB_0053e909
     JL 0x0053e926                       ; 0053e910
         ;   XREF to: 0053e926 (CONDITIONAL_JUMP)  ; LAB_0053e926
-    PUSH 0x5e675e                       ; 0053e912 | DAT_005e675e
+    PUSH 0x5e675e                       ; 0053e912 | = "type"
     LEA EAX,[EBX + 0x10af8]             ; 0053e917
     PUSH EAX                            ; 0053e91d
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 0053e91e

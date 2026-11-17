@@ -23,8 +23,8 @@
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dcb42
-;   undefined4 DAT_005dcb4a
+;   double g_DOUBLE_005dcb42 = 1.20000000000000
+;   double g_DOUBLE_005dcb4a = 0.25
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
@@ -77,8 +77,8 @@ section .text
     JNC 0x004a078c                      ; 004a07c0
         ;   XREF to: 004a078c (CONDITIONAL_JUMP)  ; LAB_004a078c
     FLD double ptr [ESP]                ; 004a07c2
-    FMUL double ptr [0x005dcb42]        ; 004a07c5 | DAT_005dcb42
-    FMUL double ptr [0x005dcb4a]        ; 004a07cb | DAT_005dcb4a
+    FMUL double ptr [0x005dcb42]        ; 004a07c5 | g_DOUBLE_005dcb42
+    FMUL double ptr [0x005dcb4a]        ; 004a07cb | g_DOUBLE_005dcb4a
     PUSH 0x0                            ; 004a07d1
     CALL crt_math.c_round_FUN_005c03a0  ; 004a07d3
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)

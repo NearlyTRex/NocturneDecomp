@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60(CDemonSet *this_ptr,int light_index)
 
 {
@@ -53,15 +51,15 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60(CDemo
   
   bVar13 = 0;
   CStack_54.y_min = 0;
-  bVar12 = _DAT_0203a414 == 0;
+  bVar12 = g_INT_0203a414 == 0;
   if (bVar12) {
     core_set_cpp_CDemonSet_initScene_FUN_00534420(this_ptr);
   }
   CStack_54.y_min = (int)bVar12;
-  _DAT_0203ad1c = 0;
-  _DAT_0203b3e8 = 0;
+  g_INT_0203ad1c = 0;
+  g_INT_0203b3e8 = 0;
   iStack_20 = 0;
-  _DAT_0203a598 = 0;
+  g_INT_0203a598 = 0;
   if (0 < this_ptr->camera_count) {
     pCStack_38 = this_ptr->lights;
     iStack_44 = light_index + 1;
@@ -119,23 +117,24 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60(CDemo
           iVar4 = iStack_20;
           if (this_ptr->lights[iStack_14].light_type == 0) {
             iVar4 = 0;
-            if (0 < _DAT_0203a414) {
+            if (0 < g_INT_0203a414) {
               pCVar2 = pCStack_34 + iStack_14;
               iVar6 = 0;
               do {
                 iVar3 = _strcmp
-                                  ((char *)(*(int *)(&DAT_0203a418 + iVar6) + 0x40),pCVar2->name);
+                                  ((char *)(*(int *)((int)g_CDemonLight_PTR_ARRAY_0203a418 + iVar6)
+                                           + 0x40),pCVar2->name);
                 if (iVar3 == 0) break;
                 iVar4 = iVar4 + 1;
                 iVar6 = iVar6 + 4;
-              } while (iVar4 < _DAT_0203a414);
+              } while (iVar4 < g_INT_0203a414);
             }
-            if (iVar4 == _DAT_0203a414) {
-              _DAT_01d71de0 = "..\\core\\set.cpp";
-              _DAT_01d71de4 = 0x36a;
+            if (iVar4 == g_INT_0203a414) {
+              g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
+              g_INT_01d71de4 = 0x36a;
               core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::precomuputeLightVisibility - Unable to find light in master list");
             }
-            light_source = *(CDemonLight **)(&DAT_0203a418 + iVar4 * 4);
+            light_source = g_CDemonLight_PTR_ARRAY_0203a418[iVar4];
             if (pCStack_28->cameras[0].is_panning == 0) {
               core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20
                         (&g_CDemonCameraInstance,light_source,(CRect *)0x0);

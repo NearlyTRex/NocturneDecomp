@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 205,
+    "complexity_score": 189,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
-    "suspect_count": 8,
+    "pseudocode_lines": 94,
+    "suspect_count": 7,
     "suspect_types": [
       "bit_int_float_compare",
       "stack_alignment_array",
       "stack_ref",
       "unaffected_reg",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 280
+    "total_lines": 279
   },
   "cross_references": [],
   "function": {
@@ -74,21 +73,21 @@
     },
     {
       "addr": "005c4a3f",
-      "name": "DAT_005c4a3f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c4a3f",
+      "type": "float",
+      "value": "25"
     },
     {
       "addr": "005fc5a0",
-      "name": "DAT_005fc5a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005fc5a0",
+      "type": "CFireEffect*",
+      "value": "01c73654"
     },
     {
       "addr": "006045f8",
-      "name": "DAT_006045f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006045f8",
+      "type": "CSound*",
+      "value": "02cf5680"
     },
     {
       "addr": "01d5ba70",
@@ -98,19 +97,19 @@
     },
     {
       "addr": "02cfd900",
-      "name": "DAT_02cfd900",
-      "type": "undefined4",
+      "name": "g_CVector3f_02cfd900",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02cfd904",
-      "name": "DAT_02cfd904",
+      "name": "g_CVector3f_02cfd900.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cfd908",
-      "name": "DAT_02cfd908",
+      "name": "g_CVector3f_02cfd900.z",
       "type": "undefined4",
       "value": null
     }
@@ -177,16 +176,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "CBoundingBox3D *unaff_EBX;",
@@ -194,7 +185,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 11,
       "match": "afStackY_102c",
       "severity": "moderate",
       "text": "float afStackY_102c [995];",
@@ -202,7 +193,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 53,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,unaff_EBX);",
@@ -210,7 +201,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 54,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "puVar2 = (uint *)&stack0xffffff98;",
@@ -218,7 +209,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 55,
       "match": "&stack0xffffff78",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffff78;",
@@ -226,7 +217,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -234,7 +225,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 47,
+      "line": 45,
       "match": "0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y)",
       "severity": "moderate",
       "text": "if (0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y) {",

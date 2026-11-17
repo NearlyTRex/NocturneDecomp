@@ -46,7 +46,7 @@ LAB_005b0470:
     }
     in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;
   }
-  if (DAT_006075c1 != '\0') {
+  if (g_BYTE_006075c1 != 0) {
     dVar1 = __BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) + __BITCAST_DOUBLE(CONCAT44(uVar6,unaff_EBX));
     if ((int)((ulonglong)dVar1 >> 0x20) == -0x80000000) {
       dVar1 = 0.0;

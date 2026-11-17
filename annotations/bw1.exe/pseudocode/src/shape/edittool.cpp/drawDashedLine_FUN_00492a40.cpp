@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_drawDashedLine_FUN_00492a40(int x1,int y1,int x2,int y2,int dash_length)
 
 {
@@ -29,7 +27,7 @@ void __cdecl shape_edittool_cpp_drawDashedLine_FUN_00492a40(int x1,int y1,int x2
     iVar2 = x1;
     do {
       if (iVar1 % (dash_length * 2) < dash_length) {
-        if (_DAT_01c3f544 == 0) {
+        if (g_INT_01c3f544 == 0) {
           engine_2d_c_plotPixel_FUN_00401130(iVar2,y1);
         }
         else {
@@ -44,7 +42,7 @@ void __cdecl shape_edittool_cpp_drawDashedLine_FUN_00492a40(int x1,int y1,int x2
     iVar2 = y1;
     do {
       if (iVar1 % (dash_length * 2) < dash_length) {
-        if (_DAT_01c3f544 == 0) {
+        if (g_INT_01c3f544 == 0) {
           engine_2d_c_plotPixel_FUN_00401130(x2,iVar2);
         }
         else {
@@ -58,7 +56,7 @@ void __cdecl shape_edittool_cpp_drawDashedLine_FUN_00492a40(int x1,int y1,int x2
   if (x1 < x2) {
     do {
       if (iVar1 % (dash_length * 2) < dash_length) {
-        if (_DAT_01c3f544 == 0) {
+        if (g_INT_01c3f544 == 0) {
           engine_2d_c_plotPixel_FUN_00401130(x2,y2);
         }
         else {
@@ -72,7 +70,7 @@ void __cdecl shape_edittool_cpp_drawDashedLine_FUN_00492a40(int x1,int y1,int x2
   if (y1 < y2) {
     do {
       if (iVar1 % (dash_length * 2) < dash_length) {
-        if (_DAT_01c3f544 == 0) {
+        if (g_INT_01c3f544 == 0) {
           engine_2d_c_plotPixel_FUN_00401130(x1,y2);
         }
         else {

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_loadCursorBitmaps_FUN_004dc040(void)
 
 {
@@ -17,9 +15,9 @@ void __cdecl core_game_cpp_loadCursorBitmaps_FUN_004dc040(void)
   do {
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(this_ptr);
     this_ptr = this_ptr + 1;
-  } while (this_ptr != (CAlphaBitmap *)&DAT_01cd0be4);
+  } while (this_ptr != (CAlphaBitmap *)g_INT_ARRAY_01cd0be4);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (CAlphaBitmap_ARRAY_01cd0b44,"@cursor" + 1,0x10,0x10);
+            (CAlphaBitmap_ARRAY_01cd0b44,"cursor",0x10,0x10);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
             (CAlphaBitmap_ARRAY_01cd0b44 + 1,"upwhite",0x10,0x10);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
@@ -33,22 +31,22 @@ void __cdecl core_game_cpp_loadCursorBitmaps_FUN_004dc040(void)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
             (CAlphaBitmap_ARRAY_01cd0b44 + 6,"crosshairsred",0x10,0x10);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (CAlphaBitmap_ARRAY_01cd0b44 + 7,&DAT_005e36a0,0x10,0x10);
-  _DAT_01cd0c08 = 0;
-  _DAT_01cd0c0c = 0x10;
-  _DAT_01cd0bf0 = 0;
-  _DAT_01cd0bf4 = 0x10;
-  _DAT_01cd0be4 = 8;
-  _DAT_01cd0c04 = 8;
-  _DAT_01cd0be8 = 8;
-  _DAT_01cd0bec = 8;
-  _DAT_01cd0c10 = 8;
-  _DAT_01cd0c14 = 8;
-  _DAT_01cd0bf8 = 8;
-  _DAT_01cd0c18 = 8;
-  _DAT_01cd0bfc = 8;
-  _DAT_01cd0c1c = 8;
-  _DAT_01cd0c00 = 8;
-  _DAT_01cd0c20 = 8;
+            (CAlphaBitmap_ARRAY_01cd0b44 + 7,"dot",0x10,0x10);
+  g_INT_ARRAY_01cd0be4[9] = 0;
+  g_INT_ARRAY_01cd0be4[10] = 0x10;
+  g_INT_ARRAY_01cd0be4[3] = 0;
+  g_INT_ARRAY_01cd0be4[4] = 0x10;
+  g_INT_ARRAY_01cd0be4[0] = 8;
+  g_INT_ARRAY_01cd0be4[8] = 8;
+  g_INT_ARRAY_01cd0be4[1] = 8;
+  g_INT_ARRAY_01cd0be4[2] = 8;
+  g_INT_ARRAY_01cd0be4[0xb] = 8;
+  g_INT_ARRAY_01cd0be4[0xc] = 8;
+  g_INT_ARRAY_01cd0be4[5] = 8;
+  g_INT_ARRAY_01cd0be4[0xd] = 8;
+  g_INT_ARRAY_01cd0be4[6] = 8;
+  g_INT_ARRAY_01cd0be4[0xe] = 8;
+  g_INT_ARRAY_01cd0be4[7] = 8;
+  g_INT_ARRAY_01cd0be4[0xf] = 8;
   return;
 }

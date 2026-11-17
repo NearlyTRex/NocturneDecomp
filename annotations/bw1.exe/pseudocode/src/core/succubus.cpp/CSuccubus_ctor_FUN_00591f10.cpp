@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_00591f10(CSuccubus *this_ptr)
 
 {
   CSuccubus *pCVar1;
   char cVar2;
   SMRGLTextureModel *pSVar3;
-  uint uVar4;
-  uint uVar5;
+  float fVar4;
+  float fVar5;
   CEnemy *pCVar6;
   CDeformableModelInstance *pCVar7;
   CClothList *pCVar8;
@@ -41,19 +39,19 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_00591f10(CSuccubus *thi
              "hotdemon.dfm");
   pSVar3 = pCVar9[-0x10].models[1].textures;
   pSVar3[0xf].texture_name[0x24] = -0x66;
-  uVar4 = _DAT_0060626c;
+  fVar4 = 50.0f;
   pSVar3[0xf].texture_name[0x25] = -0x67;
   pSVar3[0xf].texture_name[0x26] = '\x19';
   pSVar3[0xf].texture_name[0x27] = '?';
   pSVar3 = pCVar9[-0x10].models[1].textures;
   pSVar3[0xf].texture_name[0x28] = 'f';
-  uVar5 = _DAT_00606270;
+  fVar5 = 100.0f;
   pSVar3[0xf].texture_name[0x29] = 'f';
   pSVar3[0xf].texture_name[0x2a] = 'f';
   pSVar3[0xf].texture_name[0x2b] = '?';
   pCVar9[-1].models[1].textures[0xe].base.type = 1;
-  *(uint *)(pCVar9[-0x10].models[1].textures[0xf].texture_name + 0x2c) = uVar4;
-  *(uint *)(pCVar9[-0x10].models[1].textures[0xf].texture_name + 0x30) = uVar5;
+  *(float *)(pCVar9[-0x10].models[1].textures[0xf].texture_name + 0x2c) = fVar4;
+  *(float *)(pCVar9[-0x10].models[1].textures[0xf].texture_name + 0x30) = fVar5;
   do {
     cVar2 = *pcVar10;
     *(char *)piVar11 = cVar2;

@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 185,
+    "complexity_score": 169,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 9,
+    "pseudocode_lines": 69,
+    "suspect_count": 8,
     "suspect_types": [
       "bit_int_float_compare",
       "derived_field_index_pun",
       "stack_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 221
+    "total_lines": 220
   },
   "cross_references": [],
   "function": {
@@ -72,57 +71,57 @@
   "globals": [
     {
       "addr": "005d6ca5",
-      "name": "DAT_005d6ca5",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d6ca5",
+      "type": "float",
+      "value": "-2000"
     },
     {
       "addr": "005d6ca9",
-      "name": "DAT_005d6ca9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d6ca9",
+      "type": "double",
+      "value": "3"
     },
     {
       "addr": "005d6cb1",
-      "name": "DAT_005d6cb1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d6cb1",
+      "type": "float",
+      "value": "0.005000000"
     },
     {
       "addr": "005d6cb9",
-      "name": "DAT_005d6cb9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d6cb9",
+      "type": "double",
+      "value": "200"
     },
     {
       "addr": "005d6cc1",
-      "name": "DAT_005d6cc1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d6cc1",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "005d6cc5",
-      "name": "DAT_005d6cc5",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d6cc5",
+      "type": "float",
+      "value": "200"
     },
     {
       "addr": "005d6cc9",
-      "name": "DAT_005d6cc9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d6cc9",
+      "type": "float",
+      "value": "99"
     },
     {
       "addr": "005d6ccd",
-      "name": "DAT_005d6ccd",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d6ccd",
+      "type": "float",
+      "value": "-1800"
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     }
   ],
   "param_estimates": {
@@ -229,16 +228,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "ulonglong in_stack_ffffffb0;",
@@ -246,7 +237,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "iVar3 = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);",
@@ -254,7 +245,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -262,7 +253,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x4400c000 is the IEEE 754 bit pattern of 515f. Rewrite in a .keep as a plain float compare against 515f.",
-      "line": 44,
+      "line": 42,
       "match": "(int)fVar1 < 0x4400c000",
       "severity": "moderate",
       "text": "if ((int)fVar1 < 0x4400c000) {",
@@ -270,7 +261,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
-      "line": 47,
+      "line": 45,
       "match": "(int)fVar1 < 0x44e10000",
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44e10000) {",
@@ -278,7 +269,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ed8000 is the IEEE 754 bit pattern of 1900f. Rewrite in a .keep as a plain float compare against 1900f.",
-      "line": 50,
+      "line": 48,
       "match": "(int)fVar1 < 0x44ed8000",
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44ed8000) {",
@@ -286,7 +277,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44fa0000 is the IEEE 754 bit pattern of 2000f. Rewrite in a .keep as a plain float compare against 2000f.",
-      "line": 53,
+      "line": 51,
       "match": "(int)fVar1 < 0x44fa0000",
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44fa0000) {",
@@ -294,7 +285,7 @@
     },
     {
       "description": "'pCVar2[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x4 = 0x2b8, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBackgroundActor::model, CBat::course_filename[4], CBodyPart::bounding_box also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 26,
+      "line": 24,
       "severity": "moderate",
       "text": "this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);",
       "type": "derived_field_index_pun"

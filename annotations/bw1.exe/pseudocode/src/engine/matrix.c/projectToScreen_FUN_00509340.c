@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_matrix_c_projectToScreen_FUN_00509340(int input_value)
 
 {
@@ -33,8 +31,8 @@ int __cdecl engine_matrix_c_projectToScreen_FUN_00509340(int input_value)
     iStack_1c = input_value;
     iStack_18 = CStack_50.z;
     dVar2 = round
-                      (((-(double)input_value * (double)_DAT_01c4effc) / (double)CStack_50.z) /
-                       (double)DAT_0061b4c4);
+                      (((-(double)input_value * (double)g_INT_01c4effc) / (double)CStack_50.z) /
+                       (double)g_INT_0061b4c4);
     return (int)ROUND(dVar2);
   }
   return -1;

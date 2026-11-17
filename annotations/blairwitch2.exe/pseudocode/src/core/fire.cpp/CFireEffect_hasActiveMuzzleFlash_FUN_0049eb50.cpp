@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50(CFireEffect *this_ptr)
 
 {
@@ -15,12 +13,12 @@ int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50(CFireEff
   int iVar2;
   
   iVar2 = 0;
-  iVar1 = _DAT_01c85ffc;
+  iVar1 = g_CMuzzleFlash_01c85ffc.frames_remaining;
   while( true ) {
     if (iVar1 == 1) {
       return 1;
     }
-    if (*(int *)(&DAT_01c86730 + iVar2) == 1) break;
+    if (*(int *)((int)&g_CMuzzleFlash_ARRAY_01c86730[0].frames_remaining + iVar2) == 1) break;
     if (0x72f < iVar2 + 0x5c) {
       return 0;
     }

@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 176,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 9,
+    "pseudocode_lines": 70,
+    "suspect_count": 3,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 262
+    "total_lines": 261
   },
   "cross_references": [
     {
@@ -62,8 +60,8 @@
     },
     {
       "addr": "005d0923",
-      "name": "DAT_005d0923",
-      "type": "undefined4",
+      "name": "s_d_005d0923",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -86,8 +84,8 @@
     },
     {
       "addr": "005d0968",
-      "name": "DAT_005d0968",
-      "type": "undefined4",
+      "name": "s_d_005d0968",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -98,8 +96,8 @@
     },
     {
       "addr": "005d09d2",
-      "name": "DAT_005d09d2",
-      "type": "undefined4",
+      "name": "s_d_005d09d2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -110,8 +108,8 @@
     },
     {
       "addr": "005d09de",
-      "name": "DAT_005d09de",
-      "type": "undefined4",
+      "name": "s_f_005d09de",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -122,8 +120,8 @@
     },
     {
       "addr": "005d09ea",
-      "name": "DAT_005d09ea",
-      "type": "undefined4",
+      "name": "s_d_005d09ea",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -134,14 +132,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -279,56 +277,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005d0923",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d0923);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005d0968",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d0968);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005d09d2",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d09d2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005d09de",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d09de);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_005d09ea",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d09ea);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 37,
+      "line": 35,
       "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
@@ -336,7 +286,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 52,
+      "line": 50,
       "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
@@ -344,7 +294,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 69,
+      "line": 67,
       "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",

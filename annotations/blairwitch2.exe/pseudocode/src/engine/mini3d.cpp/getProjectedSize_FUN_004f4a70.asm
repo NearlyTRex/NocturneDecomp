@@ -8,11 +8,11 @@
 ; CVector3f *      Stack[0x8]:4   point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dde38
-;   undefined4 DAT_01d09870
-;   undefined4 DAT_01d09878
-;   undefined4 DAT_01d098c8
-;   undefined4 DAT_01d09918
+;   float g_FLOAT_005dde38 = 240
+;   float g_FLOAT_01d09870
+;   float g_FLOAT_01d09878
+;   float g_FLOAT_01d098c8
+;   void* g_PTR_01d09918
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
     TEST EDX,EDX                        ; 004f4a77
     JZ 0x004f4ac2                       ; 004f4a79
         ;   XREF to: 004f4ac2 (CONDITIONAL_JUMP)  ; LAB_004f4ac2
-    MOV EAX,[0x01d09918]                ; 004f4a7b | DAT_01d09918
+    MOV EAX,[0x01d09918]                ; 004f4a7b | g_PTR_01d09918
     FLD float ptr [EDX + 0x4]           ; 004f4a80
     FSUB float ptr [EAX + 0x28]         ; 004f4a83
     FMUL float ptr [EAX + 0x14]         ; 004f4a86
@@ -41,13 +41,13 @@ section .text
     CMP dword ptr [ESP + 0x4],0x3f800000 ; 004f4aa2
     JGE 0x004f4ae1                      ; 004f4aaa
         ;   XREF to: 004f4ae1 (CONDITIONAL_JUMP)  ; LAB_004f4ae1
-    FLD float ptr [0x01d09878]          ; 004f4aac | DAT_01d09878
-    FSUB float ptr [0x01d09870]         ; 004f4ab2 | DAT_01d09870
+    FLD float ptr [0x01d09878]          ; 004f4aac | g_FLOAT_01d09878
+    FSUB float ptr [0x01d09870]         ; 004f4ab2 | g_FLOAT_01d09870
     FSTP float ptr [ESP]                ; 004f4ab8
     MOV EAX,dword ptr [ESP]             ; 004f4abb
     ADD ESP,0x8                         ; 004f4abe
     RET                                 ; 004f4ac1
-    MOV EAX,[0x01d09918]                ; 004f4ac2 | DAT_01d09918
+    MOV EAX,[0x01d09918]                ; 004f4ac2 | g_PTR_01d09918
         ;   Label: LAB_004f4ac2
     FLD float ptr [EAX + 0x24]          ; 004f4ac7
     FCHS                                ; 004f4aca
@@ -63,8 +63,8 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 004f4ae1
         ;   Label: LAB_004f4ae1
     FDIV float ptr [ESP + 0x4]          ; 004f4ae5
-    FMUL float ptr [0x005dde38]         ; 004f4ae9 | DAT_005dde38
-    FMUL float ptr [0x01d098c8]         ; 004f4aef | DAT_01d098c8
+    FMUL float ptr [0x005dde38]         ; 004f4ae9 | g_FLOAT_005dde38
+    FMUL float ptr [0x01d098c8]         ; 004f4aef | g_FLOAT_01d098c8
     FSTP float ptr [ESP]                ; 004f4af5
     MOV EAX,dword ptr [ESP]             ; 004f4af8
     ADD ESP,0x8                         ; 004f4afb

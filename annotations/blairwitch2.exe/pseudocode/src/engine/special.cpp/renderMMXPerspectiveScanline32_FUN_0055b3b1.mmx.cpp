@@ -20,19 +20,19 @@ __asm {
     LAB_0055b3c1:
         shr ECX,0x10
         shr EAX,0x10
-        mov EBP,dword ptr [DAT_01c2b64c + EBX*0x4]
-        mov EBX,dword ptr [DAT_01c2a38c + EBX*0x4]
+        mov EBP,dword ptr [g_UINT_PTR_ARRAY_01c2b64c + EBX*0x4]
+        mov EBX,dword ptr [g_ARRAY_PTR_01c2a38c + EBX*0x4]
         sub ECX,EAX
         jle LAB_0055b860
         lea EBX,[EBX + EAX*0x4]
         shl ECX,0x2
         lea EBP,[EBP + EAX*0x4]
-        mov dword ptr [DAT_0061c314],ECX
-        mov dword ptr [DAT_0061c378],EBX
-        mov dword ptr [DAT_0061c37c],EBP
-        cmp dword ptr [DAT_01c38b54],0x80
+        mov dword ptr [g_INT_0061c314],ECX
+        mov dword ptr [g_INT_PTR_0061c378],EBX
+        mov dword ptr [g_INT_PTR_0061c37c],EBP
+        cmp dword ptr [g_BIT_INTEGER32_01c38b54],0x80
         jz LAB_0055bb50
-        cmp dword ptr [DAT_01c38b58],0x5
+        cmp dword ptr [g_INT_01c38b58],0x5
         jnz LAB_0055b482
         mov EAX,dword ptr [ESI + 0x18]
         mov EBX,dword ptr [ESI + 0x28]
@@ -40,68 +40,68 @@ __asm {
         shld EDX,EAX,0x18
         shl EAX,0x18
         idiv EBX
-        mov [DAT_0061c350],EAX
+        mov [g_INT_0061c350],EAX
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [EDI + 0x28]
         cdq
         shld EDX,EAX,0x18
         shl EAX,0x18
         idiv EBX
-        sub EAX,dword ptr [DAT_0061c350]
-        imul dword ptr [DAT_01c35e74 + ECX]
-        mov dword ptr [DAT_0061c780],EDX
+        sub EAX,dword ptr [g_INT_0061c350]
+        imul dword ptr [ECX + 0x1c35e74]
+        mov dword ptr [g_INT_0061c780],EDX
         mov EAX,dword ptr [ESI + 0x20]
         mov EBX,dword ptr [ESI + 0x28]
         cdq
         shld EDX,EAX,0x18
         shl EAX,0x18
         idiv EBX
-        mov [DAT_0061c354],EAX
+        mov [g_INT_0061c354],EAX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [EDI + 0x28]
         cdq
         shld EDX,EAX,0x18
         shl EAX,0x18
         idiv EBX
-        sub EAX,dword ptr [DAT_0061c354]
-        imul dword ptr [DAT_01c35e74 + ECX]
-        mov dword ptr [DAT_0061c784],EDX
+        sub EAX,dword ptr [g_INT_0061c354]
+        imul dword ptr [ECX + 0x1c35e74]
+        mov dword ptr [g_INT_0061c784],EDX
         jmp LAB_0055b4b6
     LAB_0055b482:
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
-        mov dword ptr [DAT_0061c350],EBX
-        mov dword ptr [DAT_0061c780],EDX
+        imul dword ptr [ECX + 0x1c35e74]
+        mov dword ptr [g_INT_0061c350],EBX
+        mov dword ptr [g_INT_0061c780],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
-        mov dword ptr [DAT_0061c354],EBX
-        mov dword ptr [DAT_0061c784],EDX
+        imul dword ptr [ECX + 0x1c35e74]
+        mov dword ptr [g_INT_0061c354],EBX
+        mov dword ptr [g_INT_0061c784],EDX
     LAB_0055b4b6:
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
-        mov dword ptr [DAT_0061c35c],EBX
-        mov dword ptr [DAT_0061c788],EDX
+        imul dword ptr [ECX + 0x1c35e74]
+        mov dword ptr [g_INT_0061c35c],EBX
+        mov dword ptr [g_INT_0061c788],EDX
         mov EAX,dword ptr [EDI + 0x30]
         mov EBX,dword ptr [ESI + 0x30]
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
-        mov dword ptr [DAT_0061c840],EBX
-        mov dword ptr [DAT_0061c848],EDX
-        mov EBP,dword ptr [DAT_0061c840]
+        imul dword ptr [ECX + 0x1c35e74]
+        mov dword ptr [g_INT_0061c840],EBX
+        mov dword ptr [g_INT_0061c848],EDX
+        mov EBP,dword ptr [g_INT_0061c840]
         pxor MM7,MM7
-        test dword ptr [DAT_01c38b54],0x200
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x200
         jnz LAB_0055b540
-        test dword ptr [DAT_01c38b54],0x4
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x4
         jnz LAB_0055b600
-        test dword ptr [DAT_01c38b54],0x10
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x10
         jnz LAB_0055b690
-        movq MM5,qword ptr [DAT_0061d978]
+        movq MM5,qword ptr [0x0061d978]
         psllw MM5,0x7
         pxor MM6,MM6
         jmp LAB_0055b6c0
@@ -111,41 +111,41 @@ __asm {
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
+        imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [DAT_0061c800],EBX
-        mov dword ptr [DAT_0061c820],EDX
+        mov dword ptr [g_QWORD_0061c800],EBX
+        mov dword ptr [g_QWORD_0061c820],EDX
         mov EAX,dword ptr [EDI + 0x38]
         mov EBX,dword ptr [ESI + 0x38]
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
+        imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [DAT_0061c808],EBX
-        mov dword ptr [DAT_0061c828],EDX
+        mov dword ptr [g_INT_0061c808],EBX
+        mov dword ptr [g_INT_0061c828],EDX
         mov EAX,dword ptr [EDI + 0x40]
         mov EBX,dword ptr [ESI + 0x40]
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
+        imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [DAT_0061c810],EBX
-        mov dword ptr [DAT_0061c830],EDX
-        movq MM5,qword ptr [DAT_0061c800]
-        movq MM6,qword ptr [DAT_0061c820]
+        mov dword ptr [g_INT_0061c810],EBX
+        mov dword ptr [g_INT_0061c830],EDX
+        movq MM5,qword ptr [g_QWORD_0061c800]
+        movq MM6,qword ptr [g_QWORD_0061c820]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [DAT_0061c808]
-        por MM6,qword ptr [DAT_0061c828]
+        por MM5,qword ptr [g_INT_0061c808]
+        por MM6,qword ptr [g_INT_0061c828]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [DAT_0061c810]
-        por MM6,qword ptr [DAT_0061c830]
+        por MM5,qword ptr [g_INT_0061c810]
+        por MM6,qword ptr [g_INT_0061c830]
         jmp LAB_0055b6c0
     LAB_0055b600:
         mov EAX,dword ptr [EDI + 0x10]
@@ -163,80 +163,80 @@ __asm {
         shl EAX,0x3
         shl EBX,0x3
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
+        imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [DAT_0061c800],EBX
-        mov dword ptr [DAT_0061c820],EDX
-        movq MM5,qword ptr [DAT_0061c800]
-        movq MM6,qword ptr [DAT_0061c820]
+        mov dword ptr [g_QWORD_0061c800],EBX
+        mov dword ptr [g_QWORD_0061c820],EDX
+        movq MM5,qword ptr [g_QWORD_0061c800]
+        movq MM6,qword ptr [g_QWORD_0061c820]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [DAT_0061c800]
-        por MM6,qword ptr [DAT_0061c820]
+        por MM5,qword ptr [g_QWORD_0061c800]
+        por MM6,qword ptr [g_QWORD_0061c820]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [DAT_0061c800]
-        por MM6,qword ptr [DAT_0061c820]
+        por MM5,qword ptr [g_QWORD_0061c800]
+        por MM6,qword ptr [g_QWORD_0061c820]
         jmp LAB_0055b6c0
     LAB_0055b690:
-        mov EAX,[DAT_01c35e64]
+        mov EAX,[g_INT_01c35e64]
         sub EAX,0x100
         shr EAX,0x4
         cmp EAX,0xff
         jc LAB_0055b6a9
         mov EAX,0xff
     LAB_0055b6a9:
-        movq MM5,qword ptr [DAT_0061d180 + EAX*0x8]
+        movq MM5,qword ptr [g_QWORD_ARRAY_0061d180 + EAX*0x8]
         psllw MM5,0x7
         pxor MM6,MM6
         jmp LAB_0055b6c0
     LAB_0055b6c0:
-        mov ECX,dword ptr [DAT_0061c350]
-        mov EDX,dword ptr [DAT_0061c354]
-        mov ESI,dword ptr [DAT_0061c35c]
+        mov ECX,dword ptr [g_INT_0061c350]
+        mov EDX,dword ptr [g_INT_0061c354]
+        mov ESI,dword ptr [g_INT_0061c35c]
         mov EDI,0x0
-        cmp dword ptr [DAT_01c37774],0x0
+        cmp dword ptr [g_UCHAR_PTR_01c37774],0x0
         jnz LAB_0055b6f0
-        test dword ptr [DAT_01c38b54],0x2
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x2
         jz LAB_0055b9e6
     LAB_0055b6f0:
-        test dword ptr [DAT_01c38b54],0x100
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x100
         jnz LAB_0055b70f
-        mov EBP,dword ptr [DAT_006141d8]
+        mov EBP,dword ptr [g_INT_006141d8]
         shl EBP,0x8
-        mov dword ptr [DAT_0061c848],0x0
+        mov dword ptr [g_INT_0061c848],0x0
     LAB_0055b70f:
-        cmp dword ptr [DAT_01c37774],0x0
+        cmp dword ptr [g_UCHAR_PTR_01c37774],0x0
         jnz LAB_0055b870
     LAB_0055b71c:
-        test dword ptr [DAT_01c38b54],0x40
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x40
         jz LAB_0055b738
         lea EAX,[EDI]
-        add EAX,dword ptr [DAT_0061c37c]
+        add EAX,dword ptr [g_INT_PTR_0061c37c]
         cmp ESI,dword ptr [EAX]
         jl LAB_0055b822
     LAB_0055b738:
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [DAT_0061c868]
-        psrlq MM2,qword ptr [DAT_0061c888]
-        pand MM0,qword ptr [DAT_0061c8a8]
-        pand MM2,qword ptr [DAT_0061c8c8]
+        psrlq MM0,qword ptr [g_QWORD_0061c868]
+        psrlq MM2,qword ptr [g_QWORD_0061c888]
+        pand MM0,qword ptr [g_QWORD_0061c8a8]
+        pand MM2,qword ptr [g_QWORD_0061c8c8]
         paddd MM0,MM2
         movd EBX,MM0
-        add EBX,dword ptr [DAT_01c37770]
+        add EBX,dword ptr [g_UCHAR_PTR_01c37770]
         movzx EAX,byte ptr [EBX]
-        mov EAX,dword ptr [DAT_01c35214 + EAX*0x4]
+        mov EAX,dword ptr [g_UINT_ARRAY_01c35214 + EAX*0x4]
         cmp EAX,0x0
         jz LAB_0055b822
         movd MM0,EAX
         punpcklbw MM0,MM7
         pxor MM4,MM4
-        test dword ptr [DAT_01c38b54],0x20
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x20
         jz LAB_0055b79c
         mov EBX,EDI
-        add EBX,dword ptr [DAT_0061c378]
+        add EBX,dword ptr [g_INT_PTR_0061c378]
         movd MM4,dword ptr [EBX]
         punpcklbw MM4,MM7
     LAB_0055b79c:
@@ -246,13 +246,13 @@ __asm {
         psrlw MM7,0x3
         sar EAX,0x8
         pmulhw MM0,MM7
-        movq MM2,qword ptr [DAT_0061d180 + EAX*0x8]
+        movq MM2,qword ptr [g_QWORD_ARRAY_0061d180 + EAX*0x8]
         pxor MM7,MM7
         movq MM3,MM2
         packuswb MM0,MM7
-        pxor MM3,qword ptr [DAT_0061d978]
+        pxor MM3,qword ptr [0x0061d978]
         punpcklbw MM0,MM7
-        cmp dword ptr [DAT_01c38b4c],0x0
+        cmp dword ptr [g_INT_01c38b4c],0x0
         jnz LAB_0055b7f0
         pmullw MM4,MM3
         pmullw MM0,MM2
@@ -268,24 +268,24 @@ __asm {
         packuswb MM0,MM7
     LAB_0055b801:
         mov EBX,EDI
-        add EBX,dword ptr [DAT_0061c378]
+        add EBX,dword ptr [g_INT_PTR_0061c378]
         movd dword ptr [EBX],MM0
-        test dword ptr [DAT_01c38b54],0x80
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x80
         jz LAB_0055b822
         mov EAX,EDI
-        add EAX,dword ptr [DAT_0061c37c]
+        add EAX,dword ptr [g_INT_PTR_0061c37c]
         mov dword ptr [EAX],ESI
     LAB_0055b822:
         add EDI,0x4
-        cmp EDI,dword ptr [DAT_0061c314]
+        cmp EDI,dword ptr [g_INT_0061c314]
         jnc LAB_0055b860
-        add ECX,dword ptr [DAT_0061c780]
+        add ECX,dword ptr [g_INT_0061c780]
         paddw MM5,MM6
-        add EDX,dword ptr [DAT_0061c784]
+        add EDX,dword ptr [g_INT_0061c784]
         movq MM0,MM5
-        add ESI,dword ptr [DAT_0061c788]
-        pcmpgtw MM5,qword ptr [DAT_0061c78c]
-        add EBP,dword ptr [DAT_0061c848]
+        add ESI,dword ptr [g_INT_0061c788]
+        pcmpgtw MM5,qword ptr [g_DOUBLE_0061c78c]
+        add EBP,dword ptr [g_INT_0061c848]
         pand MM5,MM0
         jmp LAB_0055b71c
     LAB_0055b860:
@@ -295,32 +295,32 @@ __asm {
         pop ESI
         ret
     LAB_0055b870:
-        test dword ptr [DAT_01c38b54],0x40
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x40
         jz LAB_0055b88c
         lea EAX,[EDI]
-        add EAX,dword ptr [DAT_0061c37c]
+        add EAX,dword ptr [g_INT_PTR_0061c37c]
         cmp ESI,dword ptr [EAX]
         jl LAB_0055b9a2
     LAB_0055b88c:
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [DAT_0061c868]
-        psrlq MM2,qword ptr [DAT_0061c888]
-        pand MM0,qword ptr [DAT_0061c8a8]
-        pand MM2,qword ptr [DAT_0061c8c8]
+        psrlq MM0,qword ptr [g_QWORD_0061c868]
+        psrlq MM2,qword ptr [g_QWORD_0061c888]
+        pand MM0,qword ptr [g_QWORD_0061c8a8]
+        pand MM2,qword ptr [g_QWORD_0061c8c8]
         paddd MM0,MM2
         movd EBX,MM0
-        add EBX,dword ptr [DAT_01c37770]
+        add EBX,dword ptr [g_UCHAR_PTR_01c37770]
         movzx EAX,byte ptr [EBX]
-        movd MM0,dword ptr [DAT_01c35214 + EAX*0x4]
+        movd MM0,dword ptr [g_UINT_ARRAY_01c35214 + EAX*0x4]
         punpcklbw MM0,MM7
-        sub EBX,dword ptr [DAT_01c37770]
-        add EBX,dword ptr [DAT_01c37774]
+        sub EBX,dword ptr [g_UCHAR_PTR_01c37770]
+        add EBX,dword ptr [g_UCHAR_PTR_01c37774]
         movzx EAX,byte ptr [EBX]
         test EAX,0xffffffff
         jz LAB_0055b9a2
         mov EBX,EDI
-        add EBX,dword ptr [DAT_0061c378]
+        add EBX,dword ptr [g_INT_PTR_0061c378]
         movd MM4,dword ptr [EBX]
         punpcklbw MM4,MM7
         psllw MM0,0x4
@@ -329,13 +329,13 @@ __asm {
         psrlw MM7,0x3
         shr EAX,0x10
         pmulhw MM0,MM7
-        movq MM2,qword ptr [DAT_0061d180 + EAX*0x8]
+        movq MM2,qword ptr [g_QWORD_ARRAY_0061d180 + EAX*0x8]
         pxor MM7,MM7
         movq MM3,MM2
         packuswb MM0,MM7
-        pxor MM3,qword ptr [DAT_0061d978]
+        pxor MM3,qword ptr [0x0061d978]
         punpcklbw MM0,MM7
-        cmp dword ptr [DAT_01c38b4c],0x0
+        cmp dword ptr [g_INT_01c38b4c],0x0
         jnz LAB_0055b970
         pmullw MM4,MM3
         pmullw MM0,MM2
@@ -351,24 +351,24 @@ __asm {
         packuswb MM0,MM7
     LAB_0055b981:
         mov EBX,EDI
-        add EBX,dword ptr [DAT_0061c378]
+        add EBX,dword ptr [g_INT_PTR_0061c378]
         movd dword ptr [EBX],MM0
-        test dword ptr [DAT_01c38b54],0x80
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x80
         jz LAB_0055b9a2
         mov EAX,EDI
-        add EAX,dword ptr [DAT_0061c37c]
+        add EAX,dword ptr [g_INT_PTR_0061c37c]
         mov dword ptr [EAX],ESI
     LAB_0055b9a2:
         add EDI,0x4
-        cmp EDI,dword ptr [DAT_0061c314]
+        cmp EDI,dword ptr [g_INT_0061c314]
         jnc LAB_0055b9e0
-        add ECX,dword ptr [DAT_0061c780]
+        add ECX,dword ptr [g_INT_0061c780]
         paddw MM5,MM6
-        add EDX,dword ptr [DAT_0061c784]
+        add EDX,dword ptr [g_INT_0061c784]
         movq MM0,MM5
-        add ESI,dword ptr [DAT_0061c788]
-        pcmpgtw MM5,qword ptr [DAT_0061c78c]
-        add EBP,dword ptr [DAT_0061c848]
+        add ESI,dword ptr [g_INT_0061c788]
+        pcmpgtw MM5,qword ptr [g_DOUBLE_0061c78c]
+        add EBP,dword ptr [g_INT_0061c848]
         pand MM5,MM0
         jmp LAB_0055b870
     LAB_0055b9e0:
@@ -378,33 +378,33 @@ __asm {
         pop ESI
         ret
     LAB_0055b9e6:
-        movq MM1,qword ptr [DAT_01c38b5c]
+        movq MM1,qword ptr [g_ULONG_01c38b5c]
         punpcklbw MM1,MM7
-        test dword ptr [DAT_01c38b54],0x8
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x8
         jnz LAB_0055ba0b
         mov EBP,0x0
-        mov dword ptr [DAT_0061c848],0x0
+        mov dword ptr [g_INT_0061c848],0x0
     LAB_0055ba0b:
-        test dword ptr [DAT_01c38b54],0x40
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x40
         jz LAB_0055ba27
         lea EAX,[EDI]
-        add EAX,dword ptr [DAT_0061c37c]
+        add EAX,dword ptr [g_INT_PTR_0061c37c]
         cmp ESI,dword ptr [EAX]
         jl LAB_0055badd
     LAB_0055ba27:
-        test dword ptr [DAT_01c38b54],0x1
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x1
         jz LAB_0055bb26
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [DAT_0061c868]
-        psrlq MM2,qword ptr [DAT_0061c888]
-        pand MM0,qword ptr [DAT_0061c8a8]
-        pand MM2,qword ptr [DAT_0061c8c8]
+        psrlq MM0,qword ptr [g_QWORD_0061c868]
+        psrlq MM2,qword ptr [g_QWORD_0061c888]
+        pand MM0,qword ptr [g_QWORD_0061c8a8]
+        pand MM2,qword ptr [g_QWORD_0061c8c8]
         paddd MM0,MM2
         movd EBX,MM0
-        add EBX,dword ptr [DAT_01c37770]
+        add EBX,dword ptr [g_UCHAR_PTR_01c37770]
         movzx EAX,byte ptr [EBX]
-        movd MM0,dword ptr [DAT_01c35214 + EAX*0x4]
+        movd MM0,dword ptr [g_UINT_ARRAY_01c35214 + EAX*0x4]
     LAB_0055ba70:
         movq MM3,MM5
         punpcklbw MM0,MM7
@@ -412,61 +412,61 @@ __asm {
         psllw MM0,0x4
         pmulhw MM0,MM3
         packuswb MM0,MM7
-        test dword ptr [DAT_01c38b54],0x8
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x8
         jz LAB_0055babd
         mov EAX,EBP
         sar EAX,0x8
-        movq MM3,qword ptr [DAT_0061d180 + EAX*0x8]
+        movq MM3,qword ptr [g_QWORD_ARRAY_0061d180 + EAX*0x8]
         movq MM4,MM1
         movq MM2,MM3
         pmullw MM4,MM3
-        pxor MM2,qword ptr [DAT_0061d978]
+        pxor MM2,qword ptr [0x0061d978]
         punpcklbw MM0,MM7
         pmullw MM0,MM2
         paddw MM0,MM4
         psrlw MM0,0x8
         packuswb MM0,MM7
     LAB_0055babd:
-        mov EBX,dword ptr [DAT_0061c378]
+        mov EBX,dword ptr [g_INT_PTR_0061c378]
         add EBX,EDI
         movd dword ptr [EBX],MM0
-        test dword ptr [DAT_01c38b54],0x80
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x80
         jz LAB_0055badd
-        mov EAX,[DAT_0061c37c]
+        mov EAX,[g_INT_PTR_0061c37c]
         add EAX,EDI
         mov dword ptr [EAX],ESI
     LAB_0055badd:
         add EDI,0x4
-        cmp EDI,dword ptr [DAT_0061c314]
+        cmp EDI,dword ptr [g_INT_0061c314]
         jnc LAB_0055b860
-        add ECX,dword ptr [DAT_0061c780]
+        add ECX,dword ptr [g_INT_0061c780]
         paddw MM5,MM6
-        add EDX,dword ptr [DAT_0061c784]
+        add EDX,dword ptr [g_INT_0061c784]
         movq MM0,MM5
-        add ESI,dword ptr [DAT_0061c788]
-        pcmpgtw MM5,qword ptr [DAT_0061c78c]
-        add EBP,dword ptr [DAT_0061c848]
+        add ESI,dword ptr [g_INT_0061c788]
+        pcmpgtw MM5,qword ptr [g_DOUBLE_0061c78c]
+        add EBP,dword ptr [g_INT_0061c848]
         pand MM5,MM0
         jmp LAB_0055ba0b
     LAB_0055bb26:
-        test dword ptr [DAT_01c38b54],0x200
+        test dword ptr [g_BIT_INTEGER32_01c38b54],0x200
         jnz LAB_0055bb40
-        movd MM0,dword ptr [DAT_01c35e60]
+        movd MM0,dword ptr [g_INT_01c35e60]
         jmp LAB_0055ba70
     LAB_0055bb40:
-        movd MM0,dword ptr [DAT_0061c978]
+        movd MM0,dword ptr [g_INT_0061c978]
         jmp LAB_0055ba70
     LAB_0055bb50:
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
-        imul dword ptr [DAT_01c35e74 + ECX]
-        mov dword ptr [DAT_0061c35c],EBX
-        mov dword ptr [DAT_0061c788],EDX
-        mov EAX,[DAT_0061c35c]
-        mov EBX,dword ptr [DAT_0061c788]
-        mov ESI,dword ptr [DAT_0061c37c]
-        mov ECX,dword ptr [DAT_0061c314]
+        imul dword ptr [ECX + 0x1c35e74]
+        mov dword ptr [g_INT_0061c35c],EBX
+        mov dword ptr [g_INT_0061c788],EDX
+        mov EAX,[g_INT_0061c35c]
+        mov EBX,dword ptr [g_INT_0061c788]
+        mov ESI,dword ptr [g_INT_PTR_0061c37c]
+        mov ECX,dword ptr [g_INT_0061c314]
     LAB_0055bb81:
         mov dword ptr [ESI],EAX
         add EAX,EBX

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005552a0(CDirectSoundDevice *this_ptr)
 
 {
@@ -19,8 +17,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005552a0(CDirectSoundDe
   char acStack_198 [400];
   
   iVar4 = 1;
-  if (_DAT_0264a5cc != (int *)0x0) {
-    uVar2 = (**(code **)(*_DAT_0264a5cc + 0x48))(_DAT_0264a5cc);
+  if (g_IDirectSoundBuffer_PTR_0264a5cc != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_IDirectSoundBuffer_PTR_0264a5cc->vtable->Stop)(g_IDirectSoundBuffer_PTR_0264a5cc);
     if (uVar2 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar2);
       _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)");
@@ -28,8 +26,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005552a0(CDirectSoundDe
       sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_198);
     }
   }
-  if (_DAT_0264a5c8 != (int *)0x0) {
-    uVar2 = (**(code **)(*_DAT_0264a5c8 + 0x48))(_DAT_0264a5c8);
+  if (g_IDirectSoundBuffer_PTR_0264a5c8 != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_IDirectSoundBuffer_PTR_0264a5c8->vtable->Stop)(g_IDirectSoundBuffer_PTR_0264a5c8);
     if (uVar2 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar2);
       _sprintf(acStack_328,"DirectSux: Unable to %s.  (%s)");

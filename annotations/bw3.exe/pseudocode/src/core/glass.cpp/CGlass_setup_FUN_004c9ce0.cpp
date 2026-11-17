@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
 
 {
@@ -64,11 +61,11 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
   bVar11 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (DAT_005f2afc,(SMRGLTextureBasic *)&this_ptr->glass_texture);
+            (g_CDemonRenderer_PTR_005f2afc,(SMRGLTextureBasic *)&this_ptr->glass_texture);
   if (this_ptr->mirror_flag != 0) {
     CStack_48.z = 0.0;
     CStack_48.y = 0.0;
-    CStack_48.x = (this_ptr->glass_size).x * _DAT_005c4518;
+    CStack_48.x = (this_ptr->glass_size).x * 0.5f;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
               (&(this_ptr->base).orient_matrix,&CStack_48,aCStack_3c);
     fStack_e4 = aCStack_3c[0].x;
@@ -148,13 +145,15 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
               (&this_ptr->mirror,&CStack_f0,&CStack_9c,&CStack_108,&CStack_114);
   }
   CStack_12c.y = 7.035886e-39;
-  dVar12 = round((double)((this_ptr->glass_size).x * (float)_DAT_005c4520));
+  dVar12 = round
+                     ((double)((this_ptr->glass_size).x * (float)0.5));
   this_ptr->grid_cols = (int)ROUND(dVar12) + 1;
   if (4 < (int)ROUND(dVar12) + 1) {
     this_ptr->grid_cols = 4;
   }
   CStack_12c.x = 7.03596e-39;
-  dVar12 = round((double)((this_ptr->glass_size).y * (float)_DAT_005c4520));
+  dVar12 = round
+                     ((double)((this_ptr->glass_size).y * (float)0.5));
   this_ptr->grid_rows = (int)ROUND(dVar12) + 1;
   if (4 < (int)ROUND(dVar12) + 1) {
     this_ptr->grid_rows = 4;
@@ -163,8 +162,8 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
   this_ptr->broken_vertex_count = (this_ptr->grid_cols + 1) * (this_ptr->grid_rows + 1);
   this_ptr->broken_polygon_count = iVar4;
   if ((0x19 < this_ptr->broken_vertex_count) || (0x10 < iVar4)) {
-    _DAT_01d71de0 = "..\\core\\glass.cpp";
-    _DAT_01d71de4 = 0x86;
+    g_CHAR_PTR_01d71de0 = "..\\core\\glass.cpp";
+    g_INT_01d71de4 = 0x86;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CGlass::setup - Too many verticies(%d) or faces(%d)!");
   }
   fStack_14 = (this_ptr->glass_size).x / (float)this_ptr->grid_cols;
@@ -175,7 +174,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
   CStack_84.z = 0.0;
   pCStack_20 = this_ptr->broken_vertices;
   for (iVar4 = 0; iVar4 < this_ptr->grid_rows + 1; iVar4 = iVar4 + 1) {
-    CStack_84.x = -(this_ptr->glass_size).x * (float)_DAT_005c4520;
+    CStack_84.x = -(this_ptr->glass_size).x * (float)0.5;
     pCVar6 = pCStack_20 + iVar9;
     pcVar10 = (this_ptr->base).actor_name + iVar9 * 4;
     for (iVar7 = 0; iVar7 < this_ptr->grid_cols + 1; iVar7 = iVar7 + 1) {
@@ -184,11 +183,11 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
         pCVar6->y = CStack_84.y;
         pCVar6->z = CStack_84.z;
       }
-      dVar3 = _DAT_005c4530;
-      dVar12 = _DAT_005c4528;
+      dVar3 = 131072;
+      dVar12 = 16515072;
       dVar13 = round
-                         (((double)iVar7 / (double)this_ptr->grid_cols) * _DAT_005c4528 +
-                          _DAT_005c4530);
+                         (((double)iVar7 / (double)this_ptr->grid_cols) * 16515072 +
+                          131072);
       *(int *)(pcVar10 + 0x614) = (int)ROUND(dVar13);
       CStack_12c.x = 7.037709e-39;
       dVar12 = round
@@ -240,7 +239,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
     } while (iVar4 < this_ptr->grid_rows);
   }
   (this_ptr->base).is_transparent = (uint)(this_ptr->opacity < 0xfde9);
-  iVar4 = _stricmp(this_ptr->break_event,(char *)0x5c44a3);
+  iVar4 = _stricmp(this_ptr->break_event,"none");
   if (iVar4 == 0) {
     this_ptr->break_event[0] = '\0';
   }

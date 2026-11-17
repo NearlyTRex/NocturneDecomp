@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 005ad56c
     CALL core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940 ; 005ad56d
         ;   XREF to: 005ad940 (UNCONDITIONAL_CALL)  ; void core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940(CSpiritMine * this_ptr)
-    MOV ESI,dword ptr [0x01cedef4]      ; 005ad572 | DAT_01cedef4
+    MOV ESI,dword ptr [0x01cedef4]      ; 005ad572 | g_INT_01cedef4
     LEA EAX,[EBX + 0x20]                ; 005ad578
     MOV ESI,dword ptr [ESI*0x4 + 0x1cedee4] ; 005ad57b
     FLD float ptr [EAX]                 ; 005ad582
@@ -222,7 +222,7 @@ section .text
         ;   XREF to: 004222d0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInfo * this_ptr)
     FLD float ptr [EBX + 0x7e4]         ; 005ad75f
     FMUL float ptr [EBP + 0x92]         ; 005ad765
-    MOV EAX,[0x01cedef4]                ; 005ad76b | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005ad76b | g_INT_01cedef4
     ADD ESP,0x4                         ; 005ad770
     MOV dword ptr [EBP + 0xffffff16],EBX ; 005ad773
     MOV dword ptr [EBP + 0xffffff1a],EBX ; 005ad779
@@ -266,7 +266,7 @@ section .text
     MOV ESI,0x40a00000                  ; 005ad7de
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0 ; 005ad7e3
         ;   XREF to: 004222d0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInfo * this_ptr)
-    MOV EAX,[0x01cedef4]                ; 005ad7e8 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005ad7e8 | g_INT_01cedef4
     ADD ESP,0x4                         ; 005ad7ed
     MOV dword ptr [EBP + 0xffffff22],ESI ; 005ad7f0
     MOV dword ptr [EBP + 0xffffff52],EBX ; 005ad7f6

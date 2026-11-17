@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00517a60(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)
 
 {
@@ -23,19 +21,19 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00517a60(CPackedBi
   _FILE *p_Stack_14;
   
   p_Stack_14 = engine_dosio_cpp_getFile_FUN_00460c70
-                         ((char *)0x5e20a0,this_ptr->filename,(char *)0x5e209d);
+                         ("art",this_ptr->filename,"rb");
   if (p_Stack_14 == (_FILE *)0x0) {
     _sprintf(acStack_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW");
-    _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
-    _DAT_01d046a4 = 0x108;
+    g_CHAR_PTR_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01d046a4 = 0x108;
     core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_e4);
   }
   size = this_ptr->width * this_ptr->height;
   puStack_18 = (uchar *)malloc(size);
   if (puStack_18 == (uchar *)0x0) {
     _sprintf(acStack_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW");
-    _DAT_01d046a4 = 0x115;
-    _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01d046a4 = 0x115;
+    g_CHAR_PTR_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_148);
   }
   iVar2 = 0;
@@ -47,8 +45,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00517a60(CPackedBi
         SVar1 = _fread(puStack_18,size,1,p_Stack_14);
         if (SVar1 != 1) {
           _sprintf(acStack_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW");
-          _DAT_01d046a4 = 0x128;
-          _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
+          g_INT_01d046a4 = 0x128;
+          g_CHAR_PTR_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
           core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_80);
         }
         cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_005169b0

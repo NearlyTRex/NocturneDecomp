@@ -13,7 +13,7 @@ int __cdecl core_thehand_cpp_CTheHand_shouldIgnoreForTargeting_FUN_00599ba0(CThe
   int iVar1;
   char *str2;
   
-  str2 = "@stand" + 1;
+  str2 = "stand";
   str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                    (&(this_ptr->base).base.model.base);
   iVar1 = _stricmp(str1->motion_name,str2);

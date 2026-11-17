@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_00516750(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
 
 {
@@ -48,8 +46,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_00516750(CPackedB
       goto LAB_005167a0;
     }
   }
-  _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
-  _DAT_01d046a4 = 0x2a0;
+  g_CHAR_PTR_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
+  g_INT_01d046a4 = 0x2a0;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CPackedBitmap::copyNoClip - invalid destBitsPerPixel: %d");
 LAB_005167a0:
   iStack_1c = 0;

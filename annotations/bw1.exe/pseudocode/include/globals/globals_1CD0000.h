@@ -6,10 +6,15 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBloodParticle.h"
+#include "types/classes/CBloodSplat.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CGore.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CPickList.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CD0000
@@ -20,6 +25,9 @@ extern CAlphaBitmap CAlphaBitmap_ARRAY_01cd0b44[8];
 
 // CBloodParticle[256]
 extern CBloodParticle g_BloodParticles[256];
+
+// CBloodSplat[2000]
+extern CBloodSplat g_CBloodSplat_ARRAY_01cd56b4[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CGargoyleClassInfo;
@@ -34,6 +42,78 @@ extern CDemonFilter CDemonFilter_01cd0af0;
 // CGore
 extern CGore g_CGoreInstance;
 
+// CHero*[4]
+extern CHero* g_CHero_PTR_ARRAY_01cd0c60[4];
+
 // CPickList
 extern CPickList g_CPickList;
+
+// CVector3f
+extern CVector3f g_CVector3f_01cd0d44;
+extern CVector3f g_CVector3f_01cd0d50;
+
+// CVector3i
+extern CVector3i g_CVector3i_01cd0e68;
+extern CVector3i g_CVector3i_01cd0e74;
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cd0e40;
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cd0e80;
+
+// char[256]
+extern char g_CHAR_ARRAY_01cd05c0[256];
+extern char g_CHAR_ARRAY_01cd09e8[256];
+
+// float
+extern float g_FLOAT_01cd0aec;
+extern float g_FLOAT_01cd0c28;
+extern float g_FLOAT_01cd0c2c;
+extern float g_FLOAT_01cd0c30;
+extern float g_FLOAT_01cd0c80;
+
+// int
+extern int g_INT_01cd01f0;
+extern int g_INT_01cd01f4;
+extern int g_INT_01cd01f8;
+extern int g_INT_01cd06c0;
+extern int g_INT_01cd0ae8;
+extern int g_INT_01cd0b3c;
+extern int g_INT_01cd0b40;
+extern int g_INT_01cd0c24;
+extern int g_INT_01cd0c34;
+extern int g_INT_01cd0c38;
+extern int g_INT_01cd0c3c;
+extern int g_INT_01cd0c40;
+extern int g_INT_01cd0c44;
+extern int g_INT_01cd0c48;
+extern int g_INT_01cd0c4c;
+extern int g_INT_01cd0c50;
+extern int g_INT_01cd0c54;
+extern int g_INT_01cd0c58;
+extern int g_INT_01cd0c5c;
+extern int g_INT_01cd0c7c;
+extern int g_INT_01cd0c84;
+extern int g_INT_01cd0c88;
+extern int g_INT_01cd0c8c;
+extern int g_INT_01cd0c90;
+extern int g_INT_01cd0c94;
+extern int g_INT_01cd0e58;
+extern int g_INT_01cd0e5c;
+extern int g_INT_01cd0e60;
+extern int g_INT_01cd0e64;
+extern int g_INT_01cd0ea8;
+extern int g_INT_01cd56ac;
+extern int g_INT_01cd56b0;
+
+// int[11]
+extern int g_INT_ARRAY_01cd0d98[11];
+
+// int[12]
+extern int g_INT_ARRAY_01cd0c9c[12];
+
+// int[16]
+extern int g_INT_ARRAY_01cd0be4[16];
+
+// int[201]
+extern int g_INT_ARRAY_01cd06c4[201];
 

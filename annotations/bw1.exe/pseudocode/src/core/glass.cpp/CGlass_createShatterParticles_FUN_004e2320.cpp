@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level)
 
 {
@@ -225,10 +223,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x7e] = local_30c[(uint)bVar3 * -2 + 0x6f];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x7f] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x70];
-    local_1e4 = local_118 * _DAT_005e3fac;
-    local_1e0 = local_114 * _DAT_005e3fac;
-    local_1dc = local_110 * _DAT_005e3fac;
-    local_19c = local_118 * _DAT_005e3fac;
+    local_1e4 = local_118 * 0.5f;
+    local_1e0 = local_114 * 0.5f;
+    local_1dc = local_110 * 0.5f;
+    local_19c = local_118 * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0x5d] = local_30c[(uint)bVar3 * -2 + 0x4b];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x5e] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x4c];
@@ -258,10 +256,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0xb4] = local_30c[(uint)bVar3 * -2 + 6];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xb5] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
-    local_1c0 = local_40 * _DAT_005e3fb0;
-    local_1bc = local_3c * _DAT_005e3fb0;
-    local_1b8 = local_38 * _DAT_005e3fb0;
-    local_16c = local_40 * _DAT_005e3fb0;
+    local_1c0 = local_40 * 0.25f;
+    local_1bc = local_3c * 0.25f;
+    local_1b8 = local_38 * 0.25f;
+    local_16c = local_40 * 0.25f;
     local_30c[(uint)bVar3 * -2 + 0x69] = local_30c[(uint)bVar3 * -2 + 0x54];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x6a] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x55];
@@ -277,10 +275,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x1e] = local_30c[(uint)bVar3 * -2 + 0x51];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x1f] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x52];
-    local_a0 = local_298 * _DAT_005e3fac;
-    local_9c = local_294 * _DAT_005e3fac;
-    local_98 = local_290 * _DAT_005e3fac;
-    local_130 = local_298 * _DAT_005e3fac;
+    local_a0 = local_298 * 0.5f;
+    local_9c = local_294 * 0.5f;
+    local_98 = local_290 * 0.5f;
+    local_130 = local_298 * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0x78] = local_30c[(uint)bVar3 * -2 + 0x9c];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x79] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x9d];
@@ -310,10 +308,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x93] = local_30c[(uint)bVar3 * -2 + 0xa5];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x94] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xa6];
-    local_2ec = local_c4 * _DAT_005e3fac;
-    local_2e8 = local_c0 * _DAT_005e3fac;
-    local_2e4 = local_bc * _DAT_005e3fac;
-    local_208 = local_c4 * _DAT_005e3fac;
+    local_2ec = local_c4 * 0.5f;
+    local_2e8 = local_c0 * 0.5f;
+    local_2e4 = local_bc * 0.5f;
+    local_208 = local_c4 * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0x42] = local_30c[(uint)bVar3 * -2 + 9];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x43] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
@@ -334,10 +332,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x5a] = local_30c[(uint)bVar3 * -2 + 0x15];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x5b] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x16];
-    local_268 = local_1a8 * _DAT_005e3fac;
-    local_264 = local_1a4 * _DAT_005e3fac;
-    local_260 = local_1a0 * _DAT_005e3fac;
-    local_f4 = local_1a8 * _DAT_005e3fac;
+    local_268 = local_1a8 * 0.5f;
+    local_264 = local_1a4 * 0.5f;
+    local_260 = local_1a0 * 0.5f;
+    local_f4 = local_1a8 * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0x87] = local_30c[(uint)bVar3 * -2 + 0x2a];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x88] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x2b];
@@ -367,10 +365,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0xf] = local_30c[(uint)bVar3 * -2 + 0x36];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x10] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x37];
-    local_184 = local_2d4 * _DAT_005e3fb0;
-    local_180 = local_2d0 * _DAT_005e3fb0;
-    local_17c = local_2cc * _DAT_005e3fb0;
-    local_2a4 = local_2d4 * _DAT_005e3fb0;
+    local_184 = local_2d4 * 0.25f;
+    local_180 = local_2d0 * 0.25f;
+    local_17c = local_2cc * 0.25f;
+    local_2a4 = local_2d4 * 0.25f;
     local_30c[(uint)bVar3 * -2 + 0x1b] = local_30c[(uint)bVar3 * -2 + 99];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x1c] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 100];
@@ -414,10 +412,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x8a] = local_30c[(uint)bVar3 * -2 + 0xa2];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x8b] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xa3];
-    local_214 = local_e8 * _DAT_005e3fb0;
-    local_210 = local_e4 * _DAT_005e3fb0;
-    local_20c = local_e0 * _DAT_005e3fb0;
-    local_10c = local_e8 * _DAT_005e3fb0;
+    local_214 = local_e8 * 0.25f;
+    local_210 = local_e4 * 0.25f;
+    local_20c = local_e0 * 0.25f;
+    local_10c = local_e8 * 0.25f;
     local_30c[(uint)bVar3 * -2 + 0x81] = local_30c[(uint)bVar3 * -2 + 0x3f];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x82] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x40];
@@ -433,10 +431,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x48] = local_30c[(uint)bVar3 * -2 + 0x90];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x49] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x91];
-    local_2e0 = local_1f0 * _DAT_005e3fac;
-    local_2dc = local_1ec * _DAT_005e3fac;
-    local_2d8 = local_1e8 * _DAT_005e3fac;
-    local_25c = local_1f0 * _DAT_005e3fac;
+    local_2e0 = local_1f0 * 0.5f;
+    local_2dc = local_1ec * 0.5f;
+    local_2d8 = local_1e8 * 0.5f;
+    local_25c = local_1f0 * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0x2d] = local_30c[(uint)bVar3 * -2 + 0xc];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x2e] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd];
@@ -457,10 +455,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x39] = local_30c[(uint)bVar3 * -2 + 0xbd];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x3a] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xbe];
-    local_64 = local_22c * _DAT_005e3fac;
-    local_60 = local_228 * _DAT_005e3fac;
-    local_5c = local_224 * _DAT_005e3fac;
-    local_220 = local_22c * _DAT_005e3fac;
+    local_64 = local_22c * 0.5f;
+    local_60 = local_228 * 0.5f;
+    local_5c = local_224 * 0.5f;
+    local_220 = local_22c * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0x3c] = local_30c[(uint)bVar3 * -2 + 0xab];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x3d] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xac];
@@ -490,10 +488,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x72] = local_30c[(uint)bVar3 * -2 + 0x45];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x73] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x46];
-    local_70 = local_148 * _DAT_005e3fac;
-    local_6c = local_144 * _DAT_005e3fac;
-    local_68 = local_140 * _DAT_005e3fac;
-    local_1d8 = local_148 * _DAT_005e3fac;
+    local_70 = local_148 * 0.5f;
+    local_6c = local_144 * 0.5f;
+    local_68 = local_140 * 0.5f;
+    local_1d8 = local_148 * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0x4e] = local_30c[(uint)bVar3 * -2 + 0xa8];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x4f] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xa9];
@@ -523,10 +521,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0x75] = local_30c[(uint)bVar3 * -2 + 3];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x76] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-    local_100 = local_13c * _DAT_005e3fb0;
-    local_fc = local_138 * _DAT_005e3fb0;
-    local_f8 = local_134 * _DAT_005e3fb0;
-    local_1b4 = local_13c * _DAT_005e3fb0;
+    local_100 = local_13c * 0.25f;
+    local_fc = local_138 * 0.25f;
+    local_f8 = local_134 * 0.25f;
+    local_1b4 = local_13c * 0.25f;
     local_30c[(uint)bVar3 * -2 + 0x57] = local_30c[(uint)bVar3 * -2 + 0x84];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x58] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x85];
@@ -542,10 +540,10 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
     local_30c[(uint)bVar3 * -2 + 0xb7] = local_30c[(uint)bVar3 * -2];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xb8] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    local_190 = local_34 * _DAT_005e3fac;
-    local_18c = local_30 * _DAT_005e3fac;
-    local_188 = local_2c * _DAT_005e3fac;
-    local_4c = local_34 * _DAT_005e3fac;
+    local_190 = local_34 * 0.5f;
+    local_18c = local_30 * 0.5f;
+    local_188 = local_2c * 0.5f;
+    local_4c = local_34 * 0.5f;
     local_30c[(uint)bVar3 * -2 + 0xb1] = local_30c[(uint)bVar3 * -2 + 0x60];
     local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xb2] =
          local_30c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x61];
@@ -597,7 +595,7 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
   local_320.y = quad_uv_v->y;
   local_320.z = quad_uv_v->z;
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-            (0x01C57074,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
+            (g_CFireEffect_PTR_0061c010,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
              (CVector3i *)&local_320,&this_ptr->glass_texture,this_ptr->opacity);
   if (local_360.vertices + 1 != quad_vertices->vertices + 2) {
     local_360.vertices[1].x = quad_vertices->vertices[2].x;
@@ -614,7 +612,7 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *t
   local_320.y = quad_uv_v->z;
   local_320.z = quad_uv_v->w;
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-            (0x01C57074,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
+            (g_CFireEffect_PTR_0061c010,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
              (CVector3i *)&local_320,&this_ptr->glass_texture,this_ptr->opacity);
   return;
 }

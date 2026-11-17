@@ -12,9 +12,9 @@
 ;   engine_texture.cpp_updateTextureWithPalette_FUN_00575040 at 0057505a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_0264bbe4
-;   undefined4 DAT_0264bbec
+;   int g_INT_01c37788
+;   void* g_PTR_0264bbe4
+;   void* g_PTR_0264bbec
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
     PUSH EDI                            ; 00574a81
     PUSH EBP                            ; 00574a82
     MOV ECX,dword ptr [ESP + 0x14]      ; 00574a83
-    CMP dword ptr [0x01c37788],0x0      ; 00574a87 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 00574a87 | g_INT_01c37788
     JZ 0x00574aca                       ; 00574a8e
         ;   XREF to: 00574aca (CONDITIONAL_JUMP)  ; LAB_00574aca
     MOV EDX,dword ptr [ECX + 0x4]       ; 00574a90
@@ -49,7 +49,7 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 00574abc
     PUSH ESI                            ; 00574abe
     PUSH ECX                            ; 00574abf
-    CALL dword ptr [0x0264bbe4]         ; 00574ac0 | DAT_0264bbe4
+    CALL dword ptr [0x0264bbe4]         ; 00574ac0 | g_PTR_0264bbe4
     ADD ESP,0x14                        ; 00574ac6
     POP ESI                             ; 00574ac9
     POP EBP                             ; 00574aca
@@ -62,7 +62,7 @@ section .text
     MOV EDI,dword ptr [EAX]             ; 00574acf
     PUSH EDI                            ; 00574ad1
     PUSH ECX                            ; 00574ad2
-    CALL dword ptr [0x0264bbec]         ; 00574ad3 | DAT_0264bbec
+    CALL dword ptr [0x0264bbec]         ; 00574ad3 | g_PTR_0264bbec
     ADD ESP,0xc                         ; 00574ad9
     POP EBP                             ; 00574adc
     POP EDI                             ; 00574add

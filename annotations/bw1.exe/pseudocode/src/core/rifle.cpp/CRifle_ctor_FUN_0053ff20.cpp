@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CRifle * __cdecl core_rifle_cpp_CRifle_ctor_FUN_0053ff20(CRifle *this_ptr)
 
 {
@@ -24,7 +22,7 @@ CRifle * __cdecl core_rifle_cpp_CRifle_ctor_FUN_0053ff20(CRifle *this_ptr)
   (pCVar2->base).weapon_type = WEAPON_TYPE_BARON|WEAPON_TYPE_SHOTGUN;
   (pCVar2->base).can_penetrate = 1;
   (pCVar2->base).bolt_velocity = 35.0;
-  fVar1 = _DAT_00604afc;
+  fVar1 = 8.0f;
   (pCVar2->base).fire_cooldown = 0;
   pCVar2->processed = 0;
   (pCVar2->base).weight = fVar1;

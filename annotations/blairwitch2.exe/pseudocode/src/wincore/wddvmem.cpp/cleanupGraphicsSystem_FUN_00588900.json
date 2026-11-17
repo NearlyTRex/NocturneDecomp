@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 147,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 10,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 117
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -51,44 +47,44 @@
   "globals": [
     {
       "addr": "00622010",
-      "name": "DAT_00622010",
-      "type": "undefined4",
+      "name": "g_PTR_00622010",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "0070c62c",
-      "name": "DAT_0070c62c",
-      "type": "undefined4",
+      "name": "g_PTR_0070c62c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02661ae0",
-      "name": "DAT_02661ae0",
-      "type": "undefined4",
+      "name": "g_IDirectDraw_PTR_02661ae0",
+      "type": "IDirectDraw*",
       "value": null
     },
     {
       "addr": "02661ae4",
-      "name": "DAT_02661ae4",
-      "type": "undefined4",
+      "name": "g_IDirectDrawSurface_PTR_02661ae4",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02661ae8",
-      "name": "DAT_02661ae8",
-      "type": "undefined4",
+      "name": "g_IDirectDrawSurface_PTR_02661ae8",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02661aec",
-      "name": "DAT_02661aec",
-      "type": "undefined4",
+      "name": "g_IUnknown_PTR_02661aec",
+      "type": "IUnknown*",
       "value": null
     },
     {
       "addr": "02661af0",
-      "name": "DAT_02661af0",
-      "type": "undefined4",
+      "name": "g_PTR_02661af0",
+      "type": "void*",
       "value": null
     }
   ],
@@ -172,86 +168,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00622010",
-      "severity": "mild",
-      "text": "if (DAT_00622010 != (void *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_00622010",
-      "severity": "mild",
-      "text": "debugFree(DAT_00622010);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_00622010",
-      "severity": "mild",
-      "text": "DAT_00622010 = (void *)0x0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0070c62c",
-      "severity": "mild",
-      "text": "DAT_0070c62c = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02661aec + 8))(_DAT_02661aec);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02661ae8 + 8))(_DAT_02661ae8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02661ae4 + 8))(_DAT_02661ae4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02661ae0 + 0x4c))(_DAT_02661ae0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 32,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02661ae0 + 8))(_DAT_02661ae0);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

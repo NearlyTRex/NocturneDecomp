@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004a7600(CFlashlight *this_ptr,CVector3f *out_point)
 
 {
@@ -36,9 +34,9 @@ CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004a7600(CF
     pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
     pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
-  fStack_14 = fStack_20 * _DAT_005c0d03;
+  fStack_14 = fStack_20 * 0.5f;
   afStack_10[1] = (float)uStack_18;
-  afStack_10[0] = fStack_1c + (float)_DAT_005c0d07;
+  afStack_10[0] = fStack_1c + (float)-0.20000000000000001;
   core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80(&CStack_23d0,0);
   pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
   unaff_ESI->x = fStack_14;

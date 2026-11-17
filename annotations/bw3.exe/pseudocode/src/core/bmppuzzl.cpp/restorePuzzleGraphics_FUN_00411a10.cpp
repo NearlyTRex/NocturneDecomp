@@ -14,14 +14,14 @@ void __cdecl core_bmppuzzl_cpp_restorePuzzleGraphics_FUN_00411a10(void)
   int iVar3;
   
   iVar2 = 0;
-  if (0 < DAT_007dff88) {
+  if (0 < g_INT_ARRAY_007dff88[0]) {
     iVar3 = 0;
     do {
       puVar1 = (uint *)((int)&DAT_007dff8c + iVar3);
       iVar3 = iVar3 + 4;
       iVar2 = iVar2 + 1;
       (**(code **)(*(int *)*puVar1 + 0xc))((int *)*puVar1);
-    } while (iVar2 < DAT_007dff88);
+    } while (iVar2 < g_INT_ARRAY_007dff88[0]);
   }
   return;
 }

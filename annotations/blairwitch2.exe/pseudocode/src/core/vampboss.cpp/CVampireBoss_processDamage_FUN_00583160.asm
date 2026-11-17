@@ -11,12 +11,12 @@
 ;   TerminatedCString s_voicuhurt_wav_005edb30
 ;   TerminatedCString s_VampireBossBitesIt_005edb3e
 ;   TerminatedCString s_voicudeath_wav_2_5_005edb51
-;   undefined4 DAT_005edb6c
-;   undefined4 DAT_005edb74
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_00614d30
-;   undefined4 DAT_00618170
-;   undefined4 DAT_0061c068
+;   double g_DOUBLE_005edb6c = 2
+;   double g_DOUBLE_005edb74 = 25
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   undefined4 g_CMeleeClassInfo.name_hash
 ;   undefined4 DAT_01d182f0
@@ -68,7 +68,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 005831ab
     FSUBR float ptr [EBP + 0x25a8]      ; 005831ae
     FST float ptr [EBP + 0x25a8]        ; 005831b4
-    FCOMP double ptr [0x005edb74]       ; 005831ba | DAT_005edb74
+    FCOMP double ptr [0x005edb74]       ; 005831ba | g_DOUBLE_005edb74
     FNSTSW AX                           ; 005831c0
     SAHF                                ; 005831c2
     JNC 0x005831cf                      ; 005831c3
@@ -114,7 +114,7 @@ section .text
         ;   Label: LAB_0058321d
     ADD EAX,0x1c                        ; 00583220
     FLD ST0                             ; 00583223
-    FMUL double ptr [0x005edb6c]        ; 00583225 | DAT_005edb6c
+    FMUL double ptr [0x005edb6c]        ; 00583225 | g_DOUBLE_005edb6c
     PUSH EAX                            ; 0058322b
     LEA ESI,[ESP + 0x10]                ; 0058322c
     LEA EDI,[ESP + 0x4]                 ; 00583230
@@ -139,7 +139,7 @@ section .text
     PUSH ESI                            ; 0058325a
     LEA EAX,[ESP + 0x14]                ; 0058325b
     PUSH EAX                            ; 0058325f
-    MOV EAX,[0x00614d30]                ; 00583260 | DAT_00614d30
+    MOV EAX,[0x00614d30]                ; 00583260 | g_CFireEffect_PTR_00614d30
     PUSH EAX                            ; 00583265
     INC EBX                             ; 00583266
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 00583267
@@ -238,7 +238,7 @@ section .text
         ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 0058334b
     PUSH EBX                            ; 0058334e
-    MOV EDX,dword ptr [0x00618170]      ; 0058334f | DAT_00618170
+    MOV EDX,dword ptr [0x00618170]      ; 0058334f | g_CDemonMission_PTR_00618170
     PUSH EDX                            ; 00583355 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 00583356
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)
@@ -253,7 +253,7 @@ section .text
         ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 0058336e
     PUSH 0x5edb3e                       ; 00583371 | = "VampireBossBitesIt"
-    MOV ECX,dword ptr [0x006141f0]      ; 00583376 | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 00583376 | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 0058337c
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0058337d
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -265,7 +265,7 @@ section .text
     ADD ESP,0x4                         ; 00583391
     PUSH 0x5edb51                       ; 00583394 | = "voicudeath.wav @ 2.5"
     PUSH EBP                            ; 00583399
-    MOV ESI,dword ptr [0x0061c068]      ; 0058339a | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 0058339a | g_CSound_PTR_0061c068
     PUSH ESI                            ; 005833a0
     CALL core_sound.cpp_CSound_playSound_FUN_0055ae30 ; 005833a1
         ;   XREF to: 0055ae30 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0055ae30(CSound * this_ptr, void * user_data, char * sound_name)

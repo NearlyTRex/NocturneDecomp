@@ -45,6 +45,7 @@ section .text
     POP EBX                             ; 00440829
     LEA EAX,[EAX]                       ; 0044082a
     RET                                 ; 00440830
+        ;   Label: LAB_00440830
     PUSH 0x5dd580                       ; 00440831 | g_CCodecTypeInfo
         ;   Label: LAB_00440831
     PUSH EBX                            ; 00440836

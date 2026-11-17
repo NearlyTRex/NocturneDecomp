@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004fc190(CMotionController *this_ptr,SMotionTransition *transition)
 
 {
@@ -18,7 +16,7 @@ void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004fc190(CMot
   float local_18;
   
   local_18 = transition->to_frame_number;
-  if (local_18 == _DAT_005c9d00) {
+  if (local_18 == -1.0f) {
     iVar3 = (*this_ptr->vtable->findPatchToFrame)
                       (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
                        transition->to_motion_number);

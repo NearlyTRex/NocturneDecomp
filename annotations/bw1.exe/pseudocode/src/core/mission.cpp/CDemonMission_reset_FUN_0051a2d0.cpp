@@ -19,12 +19,12 @@ void __cdecl core_mission_cpp_CDemonMission_reset_FUN_0051a2d0(CDemonMission *th
   (this_ptr->pending_teleport).area_id = -1;
   pcVar2 = "fangs";
   (this_ptr->pending_teleport).position.z = 0.0;
-  pcVar3 = &DAT_01d33b88;
+  pcVar3 = &g_CHAR_01d33b88;
   (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
   (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
   this_ptr->mission_name[0] = '\0';
   this_ptr->delete_queue_count = 0;
-  DAT_01d33b20 = 0;
+  g_CHAR_01d33b20 = '\0';
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

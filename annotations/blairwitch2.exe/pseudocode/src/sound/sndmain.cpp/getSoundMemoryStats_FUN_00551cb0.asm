@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000
-;   undefined4 DAT_0061bcc0
+;   int g_INT_0061bcc0 = 0x400000
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].is_user_sample
@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_00551d1b
     JZ 0x00551d2e                       ; 00551d1d
         ;   XREF to: 00551d2e (CONDITIONAL_JUMP)  ; LAB_00551d2e
-    MOV EAX,[0x0061bcc0]                ; 00551d1f | DAT_0061bcc0
+    MOV EAX,[0x0061bcc0]                ; 00551d1f | g_INT_0061bcc0
     ADD EBX,ESI                         ; 00551d24
     SUB EAX,EBX                         ; 00551d26 | IMAGE_DOS_HEADER_00400000
     MOV dword ptr [EDI],EAX             ; 00551d28 | IMAGE_DOS_HEADER_00400000

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *this_ptr,float delta_time)
 
 {
@@ -60,21 +58,21 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
       if (0 < pCVar4->bone_count) {
         iVar8 = 0;
         do {
-          *(uint *)((int)&DAT_007e2cf4 + iVar8) = 0;
+          *(uint *)((int)g_FLOAT_ARRAY_007e2cf4 + iVar8) = 0;
           iVar6 = iVar6 + 1;
           iVar8 = iVar8 + 4;
         } while (iVar6 < local_3c->bone_count);
       }
-      fVar1 = 0x40400000;
+      fVar1 = 3.0f;
       iVar6 = 0;
       if (0 < this_ptr->fire_count) {
-        fVar2 = (float)_DAT_005b833e;
+        fVar2 = (float)65535;
         pCVar9 = this_ptr;
         do {
           iVar8 = pCVar9->fires[0].bone_index;
           iVar6 = iVar6 + 1;
-          (&DAT_007e2cf4)[iVar8] =
-               (float)(&DAT_007e2cf4)[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar1;
+          g_FLOAT_ARRAY_007e2cf4[iVar8] =
+               g_FLOAT_ARRAY_007e2cf4[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar1;
           pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
         } while (iVar6 < this_ptr->fire_count);
       }
@@ -85,7 +83,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
         iVar8 = 0;
         local_38 = pCVar5;
         do {
-          if ((float)_DAT_005b833e <= *(float *)((int)&DAT_007e2cf4 + iVar8)) {
+          if ((float)65535 <= *(float *)((int)g_FLOAT_ARRAY_007e2cf4 + iVar8)) {
             iVar6 = iVar6 + 1;
           }
           if (local_38->farthest_child_bone[0] == -1) {
@@ -105,8 +103,8 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
         this_ptr->burn_alpha = 1.0;
         this_ptr->is_fully_burned = 1;
       }
-      local_50 = (float)this_ptr->fire_count * (float)_DAT_005b8346 * (float)_DAT_005b834e +
-                 (float)_DAT_005b8356;
+      local_50 = (float)this_ptr->fire_count * (float)0.59999999999999998 * (float)0.02 +
+                 (float)0.40000000000000002;
       iVar6 = sound_sndmain_cpp_setSfxVolume_FUN_00556ab0(this_ptr->sfx_handle,local_50);
       if (iVar6 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
@@ -124,7 +122,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
     if (fVar1 < 0.0) {
       sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
       (*((this_ptr->base).vtable._ub)->playSound)
-                (&this_ptr->base,"?character-onfire-fallapart.wav" + 1);
+                (&this_ptr->base,"character-onfire-fallapart.wav");
       core_charactr_cpp_CCharacter_dismember_FUN_004300e0(this_ptr,(CVector3f *)0x0,-1.0,1);
     }
   }
@@ -157,7 +155,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
         (local_24->position).x = local_84;
         (local_24->position).y = local_80[0];
         (local_24->position).z = local_80[1];
-        fVar1 = (float)_DAT_005b835e;
+        fVar1 = (float)0.5;
         local_28->flames[0].flame_size.x = local_20->size * fVar1;
         local_28->flames[0].flame_size.y = local_20->size;
         local_28->flames[0].flame_size.z = fVar1 * local_20->size;
@@ -172,7 +170,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
   }
   if ((this_ptr->is_ethereal == 0) && (iStack_30 = 0, 0 < this_ptr->fire_count)) {
     pSStack_1c = this_ptr->fires;
-    fStack_40 = delta_time * _DAT_005dd22c;
+    fStack_40 = delta_time * 2.0f;
     iStack_30 = 0;
     do {
       pSStack_18 = pSStack_1c;
@@ -187,8 +185,8 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
         if (pSStack_1c->size <= 0.0) {
           pSStack_1c->size = 0.0;
         }
-        if (0x40400000 < pSStack_1c->size) {
-          pSStack_1c->size = 0x40400000;
+        if (3.0f < pSStack_1c->size) {
+          pSStack_1c->size = 3.0f;
           iVar6 = 0;
           pCVar4 = local_14;
           if (0 < local_14->bone_count) {
@@ -252,7 +250,7 @@ LAB_0042ec67:
      ((0x40a00000 < (int)this_ptr->hit_points || (this_ptr->hit_points <= 0.0)))) {
     this_ptr->on_fire_time = this_ptr->on_fire_time - delta_time;
     core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_c0);
-    SStack_c0.damage_amount = delta_time * (float)_DAT_005b8366;
+    SStack_c0.damage_amount = delta_time * (float)2.5;
     SStack_c0.damage_type = DAMAGE_TYPE_ATTACK_FIRE;
     (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&SStack_c0);
     if (this_ptr->on_fire_time < 0.0) {

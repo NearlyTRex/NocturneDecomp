@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *this_ptr,float delta_time)
 
 {
@@ -26,7 +24,7 @@ void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *thi
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
   iVar2 = pSVar4->state_index;
   fVar5 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar1->base);
-  if ((iVar2 == 3) && (fVar5 < (float)_DAT_005f0df6)) {
+  if ((iVar2 == 3) && (fVar5 < (float)0.29999999999999999)) {
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
               ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
   }
@@ -37,7 +35,7 @@ void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *thi
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,0,1);
   this_ptr_00 = &(this_ptr->base).state_machine;
-  (this_ptr->base).attack_range = _DAT_00600c50;
+  (this_ptr->base).attack_range = 12.0f;
   core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
             (this_ptr_00,"ChaseComplete","MeleeAttack");
   core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"Chasing");

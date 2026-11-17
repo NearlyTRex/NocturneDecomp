@@ -15,9 +15,9 @@
 ;   TerminatedCString s_art_005d205c
 ;   TerminatedCString s_engine_2d_c_005d2060
 ;   TerminatedCString s_Unable_to_open_VGA_palet_005d206f
-;   undefined4 DAT_01c4e9f8
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   uchar[768] g_UCHAR_ARRAY_01c4e9f8
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 004015f0 (CONDITIONAL_JUMP)  ; LAB_004015f0
     PUSH 0x300                          ; 004015bb
         ;   Label: LAB_004015bb
-    PUSH 0x1c4e9f8                      ; 004015c0 | DAT_01c4e9f8
+    PUSH 0x1c4e9f8                      ; 004015c0 | g_UCHAR_ARRAY_01c4e9f8
     LEA EAX,[ESP + 0x8]                 ; 004015c5
     PUSH EAX                            ; 004015c9
     CALL support_trstream.cpp_CInStreamFile_read_FUN_005a0c10 ; 004015ca
@@ -76,8 +76,8 @@ section .text
     MOV ECX,0x5d2060                    ; 004015f1 | = "..\\engine\\2d.c"
     MOV EBX,0x29b                       ; 004015f6
     PUSH 0x5d206f                       ; 004015fb | = "Unable to open VGA palette"
-    MOV dword ptr [0x01d1d400],ECX      ; 00401600 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00401606 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00401600 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00401606 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040160c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00401611

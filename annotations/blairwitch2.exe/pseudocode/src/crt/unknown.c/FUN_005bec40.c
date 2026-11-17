@@ -14,14 +14,15 @@ uint FUN_005bec40(uint param_1)
   int iVar2;
   BOOL BVar3;
   
-  if (((int)param_1 < 0) || (0x00000014 < param_1)) {
+  if (((int)param_1 < 0) || (g_UINT_0061f480 < param_1)) {
     setErrno(4);
     uVar1 = 0xffffffff;
   }
   else {
     hObject = *(HANDLE *)(DAT_0061f4d8 + param_1 * 4);
     uVar1 = 0;
-    if ((DAT_0061f420 == (code *)0x0) || (iVar2 = (*DAT_0061f414)(param_1), iVar2 == 0)) {
+    if ((g_PTR_0061f420 == (byte *)0x0) ||
+       (iVar2 = (*(code *)g_PTR_0061f414)(param_1), iVar2 == 0)) {
       BVar3 = CloseHandle(hObject);
       if (BVar3 == 0) {
         setErrno(4);
@@ -29,8 +30,8 @@ uint FUN_005bec40(uint param_1)
       }
     }
     else {
-      (*DAT_0061f418)(param_1);
-      (*DAT_0061f420)(iVar2);
+      (*(code *)g_PTR_0061f418)(param_1);
+      (*(code *)g_PTR_0061f420)(iVar2);
     }
     FUN_005c0878(param_1,0);
   }

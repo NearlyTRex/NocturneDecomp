@@ -15,15 +15,15 @@ uint FUN_005cb9c0(uint param_1)
   byte local_8 [4];
   
   local_8[0] = (byte)param_1;
-  if (DAT_006267b0 == (code *)0x0) {
+  if (g_PTR_006267b0 == (byte *)0x0) {
     (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(1);
     hConsoleOutput = (HANDLE)FUN_005cd0cc();
     WriteConsoleA(hConsoleOutput,local_8,1,&DStack_c,(LPVOID)0x0);
     (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(1);
   }
   else {
-    uVar1 = (*DAT_00626774)(1);
-    (*DAT_006267b0)(uVar1,param_1);
+    uVar1 = (*(code *)g_PTR_00626774)(1);
+    (*(code *)g_PTR_006267b0)(uVar1,param_1);
   }
   return param_1;
 }

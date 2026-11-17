@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042ccf0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 
 {
@@ -101,18 +99,18 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042ccf0(CCharacter *th
     local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_b8[0] - local_d0[0]);
     local_1a0 = ABS(local_18);
   }
-  if (((local_19c < min_distance + (float)_DAT_005d58cf) &&
-      (local_1a0 < max_distance + (float)_DAT_005d58cf)) && (ABS(local_e0.y) < (float)_DAT_005d58d7)
-     ) {
+  if (((local_19c < min_distance + (float)0.01) &&
+      (local_1a0 < max_distance + (float)0.01)) &&
+     (ABS(local_e0.y) < (float)5)) {
     local_3c = 1;
   }
   (this_ptr->model).accumulated_root_motion.z = 0.0;
   (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;
   (this_ptr->model).accumulated_root_motion.x = (this_ptr->model).accumulated_root_motion.y;
-  local_74 = local_194 * (float)_DAT_005d58ef + (float)_DAT_005d58f7 +
-             ABS(local_198) * (float)_DAT_005d58df * (float)_DAT_005d58e7;
+  local_74 = local_194 * (float)1.5 + (float)0.5 +
+             ABS(local_198) * (float)0.31830988619288902 * (float)2;
   if ((this_ptr->is_spectral != 0) || ((local_190 < local_74 && (ABS(local_e0.y) <= 1.0)))) {
-    if (local_18c * (float)_DAT_005d58ff + local_194 <= local_190) {
+    if (local_18c * (float)4 + local_194 <= local_190) {
       pfVar2 = &(this_ptr->position_delta).z;
       local_6c = -local_18c;
       local_38 = local_190 - local_194;

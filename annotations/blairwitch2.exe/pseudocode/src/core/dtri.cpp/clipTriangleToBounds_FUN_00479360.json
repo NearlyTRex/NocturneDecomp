@@ -2,18 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 973,
-    "complexity_score": 1269,
+    "complexity_score": 534,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 62,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 379,
-    "suspect_count": 88,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 374,
+    "suspect_count": 13,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
-      "warning_overlapping_globals"
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "wrong_global"
     ],
-    "total_lines": 1352
+    "total_lines": 1347
   },
   "cross_references": [],
   "function": {
@@ -111,14 +115,14 @@
     },
     {
       "addr": "01c21e84",
-      "name": "DAT_01c21e84",
-      "type": "undefined4",
+      "name": "g_INT_01c21e84",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c21e88",
-      "name": "DAT_01c21e88",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c21e88",
+      "type": "float",
       "value": null
     },
     {
@@ -129,14 +133,14 @@
     },
     {
       "addr": "01c21e90",
-      "name": "DAT_01c21e90",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c21e90",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01c21e94",
-      "name": "DAT_01c21e94",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c21e94",
+      "type": "float",
       "value": null
     },
     {
@@ -147,14 +151,14 @@
     },
     {
       "addr": "01c21e9c",
-      "name": "DAT_01c21e9c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c21e9c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01c21ea0",
-      "name": "DAT_01c21ea0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c21ea0",
+      "type": "float",
       "value": null
     },
     {
@@ -165,200 +169,200 @@
     },
     {
       "addr": "01c21ea8",
-      "name": "DAT_01c21ea8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c21ea8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01c21f48",
-      "name": "DAT_01c21f48",
-      "type": "undefined4",
+      "name": "g_INT_01c21f48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c21f4c",
-      "name": "DAT_01c21f4c",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_01c21f4c",
+      "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01c21f50",
-      "name": "DAT_01c21f50",
+      "name": "g_CVector3f_ARRAY_01c21f4c[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c21f54",
-      "name": "DAT_01c21f54",
+      "name": "g_CVector3f_ARRAY_01c21f4c[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c21f5c",
-      "name": "DAT_01c21f5c",
+      "name": "g_CVector3f_ARRAY_01c21f4c[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c21f68",
-      "name": "DAT_01c21f68",
+      "name": "g_CVector3f_ARRAY_01c21f4c[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c2200c",
-      "name": "DAT_01c2200c",
-      "type": "undefined4",
+      "name": "g_INT_01c2200c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c22010",
-      "name": "DAT_01c22010",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_01c22010",
+      "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01c22014",
-      "name": "DAT_01c22014",
+      "name": "g_CVector3f_ARRAY_01c22010[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c22018",
-      "name": "DAT_01c22018",
+      "name": "g_CVector3f_ARRAY_01c22010[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c2201c",
-      "name": "DAT_01c2201c",
+      "name": "g_CVector3f_ARRAY_01c22010[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c22028",
-      "name": "DAT_01c22028",
+      "name": "g_CVector3f_ARRAY_01c22010[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c220d0",
-      "name": "DAT_01c220d0",
-      "type": "undefined4",
+      "name": "g_INT_01c220d0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c220d4",
-      "name": "DAT_01c220d4",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_01c220d4",
+      "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01c220d8",
-      "name": "DAT_01c220d8",
+      "name": "g_CVector3f_ARRAY_01c220d4[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c220dc",
-      "name": "DAT_01c220dc",
+      "name": "g_CVector3f_ARRAY_01c220d4[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c220e0",
-      "name": "DAT_01c220e0",
+      "name": "g_CVector3f_ARRAY_01c220d4[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c220ec",
-      "name": "DAT_01c220ec",
+      "name": "g_CVector3f_ARRAY_01c220d4[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c22194",
-      "name": "DAT_01c22194",
-      "type": "undefined4",
+      "name": "g_INT_01c22194",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c22198",
-      "name": "DAT_01c22198",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_01c22198",
+      "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01c2219c",
-      "name": "DAT_01c2219c",
+      "name": "g_CVector3f_ARRAY_01c22198[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c221a0",
-      "name": "DAT_01c221a0",
+      "name": "g_CVector3f_ARRAY_01c22198[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c221ac",
-      "name": "DAT_01c221ac",
+      "name": "g_CVector3f_ARRAY_01c22198[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c221b8",
-      "name": "DAT_01c221b8",
+      "name": "g_CVector3f_ARRAY_01c22198[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c22258",
-      "name": "DAT_01c22258",
-      "type": "undefined4",
+      "name": "g_INT_01c22258",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c2225c",
-      "name": "DAT_01c2225c",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_01c2225c",
+      "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01c22260",
-      "name": "DAT_01c22260",
+      "name": "g_CVector3f_ARRAY_01c2225c[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c22264",
-      "name": "DAT_01c22264",
+      "name": "g_CVector3f_ARRAY_01c2225c[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c22270",
-      "name": "DAT_01c22270",
+      "name": "g_CVector3f_ARRAY_01c2225c[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c2227c",
-      "name": "DAT_01c2227c",
+      "name": "g_CVector3f_ARRAY_01c2225c[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c2231c",
-      "name": "DAT_01c2231c",
-      "type": "undefined4",
+      "name": "g_INT_01c2231c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c22320",
-      "name": "DAT_01c22320",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c22320",
+      "type": "float",
       "value": null
     },
     {
@@ -369,14 +373,14 @@
     },
     {
       "addr": "01c22328",
-      "name": "DAT_01c22328",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c22328",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01c2232c",
-      "name": "DAT_01c2232c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c2232c",
+      "type": "float",
       "value": null
     },
     {
@@ -387,14 +391,14 @@
     },
     {
       "addr": "01c22334",
-      "name": "DAT_01c22334",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c22334",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01c22338",
-      "name": "DAT_01c22338",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c22338",
+      "type": "float",
       "value": null
     },
     {
@@ -405,8 +409,8 @@
     },
     {
       "addr": "01c22340",
-      "name": "DAT_01c22340",
-      "type": "undefined4",
+      "name": "g_FLOAT_01c22340",
+      "type": "float",
       "value": null
     }
   ],
@@ -543,699 +547,99 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01c21e88",
-      "severity": "mild",
-      "text": "if (triangle_vertices != (CVector3f *)&DAT_01c21e88) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01c21e94",
-      "severity": "mild",
-      "text": "if (triangle_vertices + 1 != (CVector3f *)&DAT_01c21e94) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01c21ea0",
-      "severity": "mild",
-      "text": "if (triangle_vertices + 2 != (CVector3f *)&DAT_01c21ea0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01c21e88",
-      "severity": "mild",
-      "text": "pfVar6 = (float *)&DAT_01c21e88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_01c22320",
-      "severity": "mild",
-      "text": "if (triangle_vertices != (CVector3f *)&DAT_01c22320) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_01c2232c",
-      "severity": "mild",
-      "text": "if (triangle_vertices + 1 != (CVector3f *)&DAT_01c2232c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_01c22338",
-      "severity": "mild",
-      "text": "if (triangle_vertices + 2 != (CVector3f *)&DAT_01c22338) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_01c21e88",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3f *)&DAT_01c21e88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
+      "line": 97,
       "match": "DAT_01c21e8c",
       "severity": "mild",
-      "text": "if (fVar1 < *(float *)(&DAT_01c21e8c + uVar3 * 0xc)) {",
+      "text": "if (fVar1 < *(float *)(&DAT_01c21e8c + uVar4 * 0xc)) {",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(float *)((int)pfVar7",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)pfVar7 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 101,
-      "match": "DAT_01c21f4c",
+      "line": 338,
+      "match": "DAT_01c22324",
       "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c21f4c + iVar4) != pCVar8) {",
+      "text": "*(float *)(&DAT_01c22324 + iVar5) = pCVar9->y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_01c21f4c",
+      "line": 354,
+      "match": "DAT_01c22324",
       "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c21f4c + iVar4))->x = pCVar8->x;",
+      "text": "*(float *)(&DAT_01c22324 + iVar5) = pCVar9->y;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_FLOAT_01c22328 accessed via (&g_FLOAT_01c22328)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c2232c (at 0x01c2232c, +4 bytes).",
+      "line": 339,
+      "match": "g_FLOAT_01c22328",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01c22328)[iVar2 * 3] = pCVar9->z;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_FLOAT_01c22328 accessed via (&g_FLOAT_01c22328)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c2232c (at 0x01c2232c, +4 bytes).",
+      "line": 355,
+      "match": "g_FLOAT_01c22328",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01c22328)[iVar2 * 3] = pCVar9->z;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Pointer value `pfVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 128,
+      "match": "(int)pfVar7",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)pfVar7 + 0xc);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 103,
-      "match": "DAT_01c21f50",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c21f50 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01c21f4c[g_INT_01c21f48].x = ((CVector3f *)pfVar7)->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_01c21f54",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c21f54 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_01c21e88",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c21e88 + uVar3 * 0xc),pCVar8,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_01c21f4c",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c21f4c + _DAT_01c21f48 * 0xc),0.0,1.0,0.0,(double)-fVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_01c21f4c",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c21f4c + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_01c21f4c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c21f4c + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_01c21f50",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c21f50 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_01c21f54",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c21f54 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_01c21e88",
-      "severity": "mild",
-      "text": "(pCVar8,(CVector3f *)(&DAT_01c21e88 + uVar3 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_01c21f4c",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c21f4c + _DAT_01c21f48 * 0xc),0.0,1.0,0.0,(double)-fVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_01c21f4c",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3f *)&DAT_01c21f4c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_01c21f50",
-      "severity": "mild",
-      "text": "if (*(float *)(&DAT_01c21f50 + uVar3 * 0xc) < fVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 147,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c22010 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 148,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22010 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01c22010[g_INT_01c2200c].x = pCVar9->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 149,
-      "match": "DAT_01c22014",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22014 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 195,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01c220d4[g_INT_01c220d0].x = pCVar9->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 150,
-      "match": "DAT_01c22018",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22018 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 242,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01c22198[g_INT_01c22194].x = pCVar9->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_01c21f4c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c21f4c + uVar3 * 0xc),pCVar8,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c22010 + _DAT_01c2200c * 0xc),0.0,-1.0,0.0,(double)fVar1",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 163,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c22010 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 164,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22010 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_01c22014",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22014 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 166,
-      "match": "DAT_01c22018",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22018 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 170,
-      "match": "DAT_01c21f4c",
-      "severity": "mild",
-      "text": "(pCVar8,(CVector3f *)(&DAT_01c21f4c + uVar3 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 171,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c22010 + _DAT_01c2200c * 0xc),0.0,-1.0,0.0,(double)fVar1",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3f *)&DAT_01c22010;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 189,
-      "match": "DAT_01c22010",
-      "severity": "mild",
-      "text": "pCVar10 = (CVector3f *)(&DAT_01c22010 + uVar3 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 197,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c220d4 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 198,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c220d4 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 199,
-      "match": "DAT_01c220d8",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c220d8 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 200,
-      "match": "DAT_01c220dc",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c220dc + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 206,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "(pCVar10,pCVar8,(CVector3f *)(&DAT_01c220d4 + _DAT_01c220d0 * 0xc),1.0,0.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 212,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c220d4 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 213,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c220d4 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 214,
-      "match": "DAT_01c220d8",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c220d8 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 215,
-      "match": "DAT_01c220dc",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c220dc + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 219,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "(pCVar8,pCVar10,(CVector3f *)(&DAT_01c220d4 + _DAT_01c220d0 * 0xc),1.0,0.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 231,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3f *)&DAT_01c220d4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 237,
-      "match": "DAT_01c220d4",
-      "severity": "mild",
-      "text": "pCVar10 = (CVector3f *)(&DAT_01c220d4 + uVar3 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 245,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c22198 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 246,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22198 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 247,
-      "match": "DAT_01c2219c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c2219c + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 248,
-      "match": "DAT_01c221a0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c221a0 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 254,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "(pCVar10,pCVar8,(CVector3f *)(&DAT_01c22198 + _DAT_01c22194 * 0xc),-1.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 260,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c22198 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 261,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22198 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 262,
-      "match": "DAT_01c2219c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c2219c + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 263,
-      "match": "DAT_01c221a0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c221a0 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 267,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "(pCVar8,pCVar10,(CVector3f *)(&DAT_01c22198 + _DAT_01c22194 * 0xc),-1.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 279,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3f *)&DAT_01c22198;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 286,
-      "match": "DAT_01c221a0",
-      "severity": "mild",
-      "text": "if (*(float *)(&DAT_01c221a0 + uVar3 * 0xc) < fVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 292,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c2225c + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 293,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c2225c + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 294,
-      "match": "DAT_01c22260",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22260 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 295,
-      "match": "DAT_01c22264",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22264 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 301,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22198 + uVar3 * 0xc),pCVar8,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 302,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c2225c + _DAT_01c22258 * 0xc),0.0,0.0,-1.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 308,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c2225c + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 309,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c2225c + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 310,
-      "match": "DAT_01c22260",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22260 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 311,
-      "match": "DAT_01c22264",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22264 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 315,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "(pCVar8,(CVector3f *)(&DAT_01c22198 + uVar3 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 316,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c2225c + _DAT_01c22258 * 0xc),0.0,0.0,-1.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 328,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3f *)&DAT_01c2225c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 335,
-      "match": "DAT_01c22264",
-      "severity": "mild",
-      "text": "if (fVar1 < *(float *)(&DAT_01c22264 + uVar3 * 0xc)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 341,
-      "match": "DAT_01c22320",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c22320 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 342,
-      "match": "DAT_01c22320",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22320 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 343,
-      "match": "DAT_01c22324",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22324 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 344,
-      "match": "DAT_01c22328",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22328 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 350,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c2225c + uVar3 * 0xc),pCVar8,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 351,
-      "match": "DAT_01c22320",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c22320 + _DAT_01c2231c * 0xc),0.0,0.0,-1.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 357,
-      "match": "DAT_01c22320",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c22320 + iVar4) != pCVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 358,
-      "match": "DAT_01c22320",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22320 + iVar4))->x = pCVar8->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 359,
-      "match": "DAT_01c22324",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22324 + iVar4) = pCVar8->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 360,
-      "match": "DAT_01c22328",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22328 + iVar4) = pCVar8->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 364,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "(pCVar8,(CVector3f *)(&DAT_01c2225c + uVar3 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 365,
-      "match": "DAT_01c22320",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c22320 + _DAT_01c2231c * 0xc),0.0,0.0,-1.0,",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 288,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01c2225c[g_INT_01c22258].x = pCVar9->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

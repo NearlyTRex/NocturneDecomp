@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 55,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
-    "suspect_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 36
+    "total_lines": 35
   },
   "cross_references": [],
   "function": {
@@ -33,20 +31,20 @@
   "globals": [
     {
       "addr": "005fba28",
-      "name": "DAT_005fba28",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba28",
+      "type": "int",
+      "value": "0x100"
     },
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf6018",
-      "name": "DAT_02cf6018",
-      "type": "undefined4",
+      "name": "g_PTR_02cf6018",
+      "type": "void*",
       "value": null
     }
   ],
@@ -129,28 +127,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
+      "line": 8,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_01c6cee8 != 0) && (_DAT_02cf6018 != (code *)0x0)) {",
+      "text": "iVar1 = (*(code *)g_PTR_02cf6018)(texture_info,g_INT_005fba28,flags);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005fba28",
-      "severity": "mild",
-      "text": "iVar1 = (*_DAT_02cf6018)(texture_info,DAT_005fba28,flags);",
-      "type": "undefined_data"
     }
   ]
 }

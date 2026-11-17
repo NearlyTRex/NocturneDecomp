@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   world_position
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f64e4
+;   float g_FLOAT_005f64e4 = 256
 ;
 ; Called Functions:
 ;   engine_special.cpp_transformPoint_FUN_0055d9ec
@@ -24,13 +24,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0049eb94
     MOV EBX,ESP                         ; 0049eb98
     FLD float ptr [EAX]                 ; 0049eb9a
-    FMUL float ptr [0x005f64e4]         ; 0049eb9c | DAT_005f64e4
+    FMUL float ptr [0x005f64e4]         ; 0049eb9c | g_FLOAT_005f64e4
     FISTP dword ptr [EBX]               ; 0049eba2
     FLD float ptr [EAX + 0x4]           ; 0049eba4
-    FMUL float ptr [0x005f64e4]         ; 0049eba7 | DAT_005f64e4
+    FMUL float ptr [0x005f64e4]         ; 0049eba7 | g_FLOAT_005f64e4
     FISTP dword ptr [EBX + 0x4]         ; 0049ebad
     FLD float ptr [EAX + 0x8]           ; 0049ebb0
-    FMUL float ptr [0x005f64e4]         ; 0049ebb3 | DAT_005f64e4
+    FMUL float ptr [0x005f64e4]         ; 0049ebb3 | g_FLOAT_005f64e4
     FISTP dword ptr [EBX + 0x8]         ; 0049ebb9
     MOV EBX,ESP                         ; 0049ebbc
     PUSH EBX                            ; 0049ebbe

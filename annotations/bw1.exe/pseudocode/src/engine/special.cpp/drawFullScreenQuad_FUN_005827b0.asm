@@ -10,12 +10,12 @@
 ;   engine_special.cpp_clearScreenRegion_FUN_0057dd07 at 0057dd18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006258dc
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
-;   undefined4 DAT_01c4f020
+;   int g_INT_006258dc = 0x3c000
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f010
+;   int g_INT_01c4f014
+;   int g_INT_01c4f020
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -33,28 +33,28 @@ section .text
     PUSH EAX                            ; 005827c1
     CALL crt_memory.c_memset_FUN_005bfb70 ; 005827c2
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
-    MOV EAX,[0x01c4f008]                ; 005827c7 | DAT_01c4f008
+    MOV EAX,[0x01c4f008]                ; 005827c7 | g_INT_01c4f008
     ADD ESP,0xc                         ; 005827cc
     SHL EAX,0x10                        ; 005827cf
     MOV dword ptr [ESP + 0x10],EAX      ; 005827d2
-    MOV EAX,[0x01c4f00c]                ; 005827d6 | DAT_01c4f00c
+    MOV EAX,[0x01c4f00c]                ; 005827d6 | g_INT_01c4f00c
     SHL EAX,0x10                        ; 005827db
     MOV dword ptr [ESP + 0x14],EAX      ; 005827de
-    MOV EAX,[0x01c4f010]                ; 005827e2 | DAT_01c4f010
+    MOV EAX,[0x01c4f010]                ; 005827e2 | g_INT_01c4f010
     SHL EAX,0x10                        ; 005827e7
     MOV dword ptr [ESP + 0x40],EAX      ; 005827ea
     MOV EAX,dword ptr [ESP + 0x14]      ; 005827ee
     MOV dword ptr [ESP + 0x44],EAX      ; 005827f2
     MOV EAX,dword ptr [ESP + 0x40]      ; 005827f6
     MOV dword ptr [ESP + 0x70],EAX      ; 005827fa
-    MOV EAX,[0x01c4f014]                ; 005827fe | DAT_01c4f014
+    MOV EAX,[0x01c4f014]                ; 005827fe | g_INT_01c4f014
     SHL EAX,0x10                        ; 00582803
     MOV dword ptr [ESP + 0x74],EAX      ; 00582806
     MOV EAX,dword ptr [ESP + 0x10]      ; 0058280a
     MOV dword ptr [ESP + 0xa0],EAX      ; 0058280e
     MOV EAX,dword ptr [ESP + 0x74]      ; 00582815
     MOV dword ptr [ESP + 0xa4],EAX      ; 00582819
-    MOV EAX,[0x006258dc]                ; 00582820 | DAT_006258dc
+    MOV EAX,[0x006258dc]                ; 00582820 | g_INT_006258dc
     PUSH 0x10                           ; 00582825
     MOV dword ptr [ESP + 0xc],EAX       ; 00582827
     MOV dword ptr [ESP + 0x3c],EAX      ; 0058282b
@@ -62,7 +62,7 @@ section .text
     MOV dword ptr [ESP + 0x9c],EAX      ; 00582833
     MOV EAX,dword ptr [ESP + 0xc8]      ; 0058283a
     PUSH 0x4                            ; 00582841
-    MOV [0x01c4f020],EAX                ; 00582843 | DAT_01c4f020
+    MOV [0x01c4f020],EAX                ; 00582843 | g_INT_01c4f020
     LEA EAX,[ESP + 0x8]                 ; 00582848
     PUSH EAX                            ; 0058284c
     CALL engine_special.cpp_drawPolygon_FUN_00582340 ; 0058284d

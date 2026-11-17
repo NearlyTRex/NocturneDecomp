@@ -8,13 +8,13 @@
 ; int              Stack[0x8]:4   light_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01fe4cb4
-;   undefined4 DAT_01fe4e38
-;   undefined4 DAT_01fe55bc
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_INT_01fe4cb4
+;   int g_INT_01fe4e38
+;   int g_INT_01fe55bc
 ;   CDemonRaytrace g_CDemonRaytraceInstance
-;   undefined4 DAT_01fe5c88
+;   int g_INT_01fe5c88
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 0054e6a3
     SUB ESP,0x17c                       ; 0054e6a4
     XOR EDX,EDX                         ; 0054e6aa
-    MOV ECX,dword ptr [0x01fe4cb4]      ; 0054e6ac | DAT_01fe4cb4
+    MOV ECX,dword ptr [0x01fe4cb4]      ; 0054e6ac | g_INT_01fe4cb4
     MOV dword ptr [ESP + 0x140],EDX     ; 0054e6b2
     TEST ECX,ECX                        ; 0054e6b9
     JZ 0x0054e95f                       ; 0054e6bb
@@ -53,11 +53,11 @@ section .text
     XOR EDI,EDI                         ; 0054e6c1
         ;   Label: LAB_0054e6c1
     MOV EAX,dword ptr [ESP + 0x190]     ; 0054e6c3
-    MOV dword ptr [0x01fe55bc],EDI      ; 0054e6ca | DAT_01fe55bc
-    MOV dword ptr [0x01fe5c88],EDI      ; 0054e6d0 | DAT_01fe5c88
+    MOV dword ptr [0x01fe55bc],EDI      ; 0054e6ca | g_INT_01fe55bc
+    MOV dword ptr [0x01fe5c88],EDI      ; 0054e6d0 | g_INT_01fe5c88
     MOV dword ptr [ESP + 0x16c],EDI     ; 0054e6d6
     MOV ECX,dword ptr [EAX]             ; 0054e6dd
-    MOV dword ptr [0x01fe4e38],EDI      ; 0054e6df | DAT_01fe4e38
+    MOV dword ptr [0x01fe4e38],EDI      ; 0054e6df | g_INT_01fe4e38
     TEST ECX,ECX                        ; 0054e6e5
     JLE 0x0054e93e                      ; 0054e6e7
         ;   XREF to: 0054e93e (CONDITIONAL_JUMP)  ; LAB_0054e93e
@@ -121,7 +121,7 @@ section .text
     CMP dword ptr [EBX + 0x19a30],0x0   ; 0054e810
     JNZ 0x0054eba2                      ; 0054e817
         ;   XREF to: 0054eba2 (CONDITIONAL_JUMP)  ; LAB_0054eba2
-    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054e81d | DAT_01fe4cb4
+    MOV EDX,dword ptr [0x01fe4cb4]      ; 0054e81d | g_INT_01fe4cb4
     XOR EBX,EBX                         ; 0054e823
     TEST EDX,EDX                        ; 0054e825
     JLE 0x0054e850                      ; 0054e827
@@ -140,15 +140,15 @@ section .text
     TEST EAX,EAX                        ; 0054e848
     JNZ 0x0054eacb                      ; 0054e84a
         ;   XREF to: 0054eacb (CONDITIONAL_JUMP)  ; LAB_0054eacb
-    CMP EBX,dword ptr [0x01fe4cb4]      ; 0054e850 | DAT_01fe4cb4
+    CMP EBX,dword ptr [0x01fe4cb4]      ; 0054e850 | g_INT_01fe4cb4
         ;   Label: LAB_0054e850
     JNZ 0x0054e87b                      ; 0054e856
         ;   XREF to: 0054e87b (CONDITIONAL_JUMP)  ; LAB_0054e87b
     MOV EDX,0x5f068f                    ; 0054e858
     MOV ECX,0x35c                       ; 0054e85d
     PUSH 0x5f069f                       ; 0054e862
-    MOV dword ptr [0x01d1d400],EDX      ; 0054e867 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0054e86d | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0054e867 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0054e86d | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054e873
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0054e878
@@ -323,7 +323,7 @@ section .text
     ADD ESP,0xc                         ; 0054eac3
     JMP 0x0054e755                      ; 0054eac6
         ;   XREF to: 0054e755 (UNCONDITIONAL_JUMP)  ; LAB_0054e755
-    MOV ECX,dword ptr [0x01fe4cb4]      ; 0054eacb | DAT_01fe4cb4
+    MOV ECX,dword ptr [0x01fe4cb4]      ; 0054eacb | g_INT_01fe4cb4
         ;   Label: LAB_0054eacb
     INC EBX                             ; 0054ead1
     ADD ESI,0x4                         ; 0054ead2

@@ -11,7 +11,7 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00564df1
 ;
 ; Referenced Globals:
-;   undefined4 s_N_CHealthItem_005d9d52+2
+;   TerminatedCString s_CHealthItem_005d9d54
 ;   TerminatedCString s_CAmmo_005d9d60
 ;   TerminatedCString s_CBoxActor_005d9d66
 ;
@@ -40,7 +40,7 @@ section .text
     POP ESI                             ; 004cfca0
     POP EBX                             ; 004cfca1
     RET                                 ; 004cfca2
-    PUSH 0x5d9d54                       ; 004cfca3 | s_N_CHealthItem_005d9d52+2
+    PUSH 0x5d9d54                       ; 004cfca3 | = "CHealthItem"
         ;   Label: LAB_004cfca3
     PUSH EAX                            ; 004cfca8
     CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004cfca9

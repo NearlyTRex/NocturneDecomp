@@ -19,7 +19,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004820b0(CPickList *th
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable._us = (CStrList_vtable *)&g_CPickListVTable;
+  (this_ptr->base).vtable._us = &g_CPickListVTable._us;
   shape_edittool_cpp_CPickList_clear_FUN_00483d10(this_ptr);
   pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_00484e50(&this_ptr->cancel_button,0);
   pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_00484e50(pCVar1 + -1,0);

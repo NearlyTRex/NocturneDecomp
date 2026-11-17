@@ -7,3 +7,7 @@
 // CStake[256]
 CStake g_StakePool[256] = {};
 
+// int
+int g_INT_01c726a8 = {};
+int g_INT_01c726ac = {};
+

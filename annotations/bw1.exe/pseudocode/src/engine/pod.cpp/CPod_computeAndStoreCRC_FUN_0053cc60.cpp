@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_0053cc60(CPod *this_ptr,char *pod_filename)
 
 {
@@ -27,8 +25,8 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_0053cc60(CPod *this_ptr,
   engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(&CStack_44c);
   iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0053b250(&CStack_44c,pod_filename,(char *)0x0);
   if (iVar1 == 0) {
-    _DAT_01d1d400 = "..\\engine\\pod.cpp";
-    _DAT_01d1d404 = 0x55e;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
+    g_INT_01d1d404 = 0x55e;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't mount %s to check version");
   }
   engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(&CStack_44c);
@@ -41,13 +39,13 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_0053cc60(CPod *this_ptr,
   }
   else {
     if (CStack_44c.pod_format_version == 100) goto LAB_0053cde2;
-    _DAT_01d1d400 = "..\\engine\\pod.cpp";
-    _DAT_01d1d404 = 0x56f;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
+    g_INT_01d1d404 = 0x56f;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid pod version for %s: %d");
   }
-  iStack_1c = engine_dosio_cpp_getFileSize_FUN_00478fb0((char *)0x5ed65e,pod_filename);
+  iStack_1c = engine_dosio_cpp_getFileSize_FUN_00478fb0(&g_CHAR_005ed65e,pod_filename);
   iStack_1c = iStack_1c - iStack_18;
-  p_Var2 = _fopen(pod_filename,(char *)0x5ed65f);
+  p_Var2 = _fopen(pod_filename,"rb");
   p_Stack_14 = p_Var2;
   _fseek(p_Var2,iStack_18,0);
   iVar1 = iStack_1c;

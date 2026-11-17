@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBaron_005d3573
-;   undefined4 DAT_0061f650
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CBaronClassInfo.name_hash
 ;   undefined4 DAT_01d2c900
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004106a1
     PUSH EAX                            ; 004106a4
-    MOV EBP,dword ptr [0x0061f650]      ; 004106a5 | DAT_0061f650
+    MOV EBP,dword ptr [0x0061f650]      ; 004106a5 | g_CDemonMission_PTR_0061f650
     PUSH EBP                            ; 004106ab | DAT_01d2c900
     MOV dword ptr [EDI + 0x578],EAX     ; 004106ac
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60 ; 004106b2
@@ -93,7 +93,7 @@ section .text
     ADD ESP,0x4                         ; 004106c9
     MOV EAX,dword ptr [EDI + 0x578]     ; 004106cc
     PUSH EAX                            ; 004106d2
-    MOV EDX,dword ptr [0x0061f650]      ; 004106d3 | DAT_0061f650
+    MOV EDX,dword ptr [0x0061f650]      ; 004106d3 | g_CDemonMission_PTR_0061f650
     PUSH EDX                            ; 004106d9 | DAT_01d2c900
     LEA ESI,[EDI + 0x30]                ; 004106da
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160 ; 004106dd

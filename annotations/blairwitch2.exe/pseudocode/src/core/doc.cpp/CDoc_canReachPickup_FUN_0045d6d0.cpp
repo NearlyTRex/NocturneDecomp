@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance)
 
 {
@@ -122,7 +120,7 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
            *(uint *)((int)&CStack_80 + (uint)bVar5 * -8 + 4);
       *(uint *)((int)&CStack_f4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
            *(uint *)((int)&CStack_80 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-      if ((float)_DAT_005d0807 < ABS(CStack_f4.x)) {
+      if ((float)20 < ABS(CStack_f4.x)) {
         return 0;
       }
     }
@@ -160,10 +158,10 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
   afStack_58[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
   input_local_point = (CVector3f *)auStack_c8;
-  fStack_8c = fStack_5c * _DAT_005d080f;
-  afStack_88[0] = afStack_58[0] * _DAT_005d080f;
-  afStack_88[1] = afStack_58[1] * _DAT_005d080f;
-  auStack_c8._0_4_ = fStack_5c * _DAT_005d080f;
+  fStack_8c = fStack_5c * 0.5f;
+  afStack_88[0] = afStack_58[0] * 0.5f;
+  afStack_88[1] = afStack_58[1] * 0.5f;
+  auStack_c8._0_4_ = fStack_5c * 0.5f;
   afStack_c0[(uint)bVar5 * -2 + -1] = afStack_88[(uint)bVar5 * -2];
   afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
        afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
@@ -179,9 +177,9 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
   afStack_dc[(uint)bVar5 * -2] = afStack_dc[(uint)bVar5 * -2 + 3];
   afStack_dc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        afStack_dc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  if ((ABS(afStack_dc[0]) <= (float)_DAT_005d0817) &&
+  if ((ABS(afStack_dc[0]) <= (float)5) &&
      (fVar1 = SQRT(fStack_e0 * fStack_e0 + afStack_dc[1] * afStack_dc[1]),
-     fVar1 <= (float)_DAT_005d081f)) {
+     fVar1 <= (float)1.5)) {
     if (*best_distance < fVar1) {
       return 0;
     }

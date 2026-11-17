@@ -27,12 +27,12 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
     }
     if ((this_ptr->allow_chase == 0) &&
        (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (0x01C6E360,this_ptr->allow_chase_event), iVar2 != 0)) {
+                          (g_CEventList_PTR_005fba60,this_ptr->allow_chase_event), iVar2 != 0)) {
       this_ptr->allow_chase = 1;
     }
     if ((this_ptr->allow_swarm == 0) &&
        (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (0x01C6E360,this_ptr->allow_swarm_event), iVar2 != 0)) {
+                          (g_CEventList_PTR_005fba60,this_ptr->allow_swarm_event), iVar2 != 0)) {
       this_ptr->allow_swarm = 1;
     }
     switch(this_ptr->state) {
@@ -40,7 +40,8 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->loop_sfx_handle);
       if (iVar2 == 0) {
         uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                          (0x02CF5680,(CDemonActor *)this_ptr,"?wp_disease_loop.wav" + 1,
+                          (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,
+                           "wp_disease_loop.wav",
                            &(this_ptr->base).base.base.location.position);
         this_ptr->loop_sfx_handle = uVar3;
       }
@@ -55,7 +56,8 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->munch_sfx_handle);
       if (iVar2 == 0) {
         uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                          (0x02CF5680,(CDemonActor *)this_ptr,"wp_disease_munch.wav",
+                          (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,
+                           "wp_disease_munch.wav",
                            &(this_ptr->base).base.base.location.position);
         this_ptr->munch_sfx_handle = uVar3;
       }
@@ -75,7 +77,7 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
       this_ptr->remove_bug_timer = 0.1;
       this_ptr->count = this_ptr->count + -3;
     }
-    this_ptr_00 = 0x01D81080;
+    this_ptr_00 = g_CDemonMission_PTR_00600530;
     if (this_ptr->count < 1) {
       this_ptr->count = 0;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10

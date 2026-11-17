@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wp_nomana_wav_005d5cd9
-;   undefined4 DAT_005fc5a0
-;   undefined4 DAT_006045f8
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_00568ba3
     PUSH 0x5d5cd9                       ; 00568ba4 | = "wp_nomana.wav"
     PUSH EBX                            ; 00568ba9
-    MOV EDX,dword ptr [0x006045f8]      ; 00568baa | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 00568baa | g_CSound_PTR_006045f8
     PUSH EDX                            ; 00568bb0
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 00568bb1
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -88,7 +88,7 @@ section .text
     ADD EAX,0x30                        ; 00568bf5
     PUSH EAX                            ; 00568bf8
     PUSH EBP                            ; 00568bf9
-    MOV ECX,dword ptr [0x005fc5a0]      ; 00568bfa | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 00568bfa | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 00568c00
     CALL core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00 ; 00568c01
         ;   XREF to: 004a3a00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity)

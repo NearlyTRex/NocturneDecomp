@@ -9,11 +9,11 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00518a74 = 00518bf8
-;   undefined4 DAT_005cd00b
-;   undefined4 DAT_005cd00f
-;   undefined4 DAT_005cd017
-;   undefined4 DAT_005cd01f
-;   undefined4 DAT_005e3504
+;   float g_FLOAT_005cd00b = 5
+;   double g_DOUBLE_005cd00f = 5
+;   double g_DOUBLE_005cd017 = -3.14000000000000
+;   double g_DOUBLE_005cd01f = 0.25
+;   float g_FLOAT_005e3504 = 1
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.goggles_active
@@ -59,7 +59,7 @@ section .text
     JZ 0x00518b08                       ; 00518af0
         ;   XREF to: 00518b08 (CONDITIONAL_JUMP)  ; LAB_00518b08
     FLD float ptr [ESP + 0x54]          ; 00518af2
-    FMUL float ptr [0x005cd00b]         ; 00518af6 | DAT_005cd00b
+    FMUL float ptr [0x005cd00b]         ; 00518af6 | g_FLOAT_005cd00b
     FADD float ptr [EBX + 0x20b90]      ; 00518afc
     FSTP float ptr [EBX + 0x20b90]      ; 00518b02
     PUSH ESI                            ; 00518b08
@@ -79,7 +79,7 @@ section .text
         ;   XREF to: 0042abb0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00518b29
     FLD float ptr [ESP + 0x58]          ; 00518b2c
-    FMUL double ptr [0x005cd00f]        ; 00518b30 | DAT_005cd00f
+    FMUL double ptr [0x005cd00f]        ; 00518b30 | g_DOUBLE_005cd00f
     LEA EAX,[ESP + 0x4]                 ; 00518b36
     MOV EBP,0x69                        ; 00518b3a
     PUSH EAX                            ; 00518b3f
@@ -99,7 +99,7 @@ section .text
     JNZ 0x00518bb8                      ; 00518b73
         ;   XREF to: 00518bb8 (CONDITIONAL_JUMP)  ; LAB_00518bb8
     PUSH ECX                            ; 00518b75
-    FLD float ptr [0x005e3504]          ; 00518b76 | DAT_005e3504
+    FLD float ptr [0x005e3504]          ; 00518b76 | g_FLOAT_005e3504
     LEA EAX,[EBX + 0x158]               ; 00518b7c
     PUSH 0x7a                           ; 00518b82
     FSUBR float ptr [EBX + 0x20cfc]     ; 00518b84
@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 004fc0d0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     FLD float ptr [EBX + 0x20cfc]       ; 00518b96
     ADD ESP,0xc                         ; 00518b9c
-    FCOMP double ptr [0x005cd017]       ; 00518b9f | DAT_005cd017
+    FCOMP double ptr [0x005cd017]       ; 00518b9f | g_DOUBLE_005cd017
     FNSTSW AX                           ; 00518ba5
     SAHF                                ; 00518ba7
     JNC 0x00518c9f                      ; 00518ba8
@@ -146,7 +146,7 @@ section .text
         ;   XREF to: 00518cbd (CONDITIONAL_JUMP)  ; LAB_00518cbd
     FLD float ptr [ESP + 0x58]          ; 00518c0a
         ;   Label: LAB_00518c0a
-    FMUL double ptr [0x005cd01f]        ; 00518c0e | DAT_005cd01f
+    FMUL double ptr [0x005cd01f]        ; 00518c0e | g_DOUBLE_005cd01f
     FSTP float ptr [ESP + 0x40]         ; 00518c14
     PUSH dword ptr [ESP + 0x40]         ; 00518c18
     PUSH EBX                            ; 00518c1c
@@ -204,7 +204,7 @@ section .text
         ;   XREF to: 00518ae9 (UNCONDITIONAL_JUMP)  ; LAB_00518ae9
     LEA EAX,[EBX + 0x30]                ; 00518c9f
         ;   Label: LAB_00518c9f
-    FLD float ptr [0x005e3504]          ; 00518ca2 | DAT_005e3504
+    FLD float ptr [0x005e3504]          ; 00518ca2 | g_FLOAT_005e3504
     PUSH EAX                            ; 00518ca8
     FADD float ptr [EBX + 0x34]         ; 00518ca9
     PUSH EBX                            ; 00518cac

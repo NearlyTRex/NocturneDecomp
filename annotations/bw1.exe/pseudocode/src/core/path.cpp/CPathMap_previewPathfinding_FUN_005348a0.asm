@@ -7,11 +7,11 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_01e6c16c
-;   undefined4 DAT_01e6c170
-;   undefined4 DAT_01e6c174
-;   undefined4 DAT_01e6c178
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_01e6c16c
+;   int g_INT_01e6c170
+;   int g_INT_01e6c174
+;   int g_INT_01e6c178
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -47,27 +47,27 @@ section .text
     PUSH EAX                            ; 005348f1
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005348f2
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
-    MOV ECX,dword ptr [0x01e6c16c]      ; 005348f7 | DAT_01e6c16c
+    MOV ECX,dword ptr [0x01e6c16c]      ; 005348f7 | g_INT_01e6c16c
     ADD ESP,0xc                         ; 005348fd
     CMP EBX,ECX                         ; 00534900
     JNZ 0x00534910                      ; 00534902
         ;   XREF to: 00534910 (CONDITIONAL_JUMP)  ; LAB_00534910
-    CMP EBP,dword ptr [0x01e6c170]      ; 00534904 | DAT_01e6c170
+    CMP EBP,dword ptr [0x01e6c170]      ; 00534904 | g_INT_01e6c170
     JNZ 0x00534910                      ; 0053490a
         ;   XREF to: 00534910 (CONDITIONAL_JUMP)  ; LAB_00534910
     MOV byte ptr [ESP],0x73             ; 0053490c
-    CMP EBX,dword ptr [0x01e6c174]      ; 00534910 | DAT_01e6c174
+    CMP EBX,dword ptr [0x01e6c174]      ; 00534910 | g_INT_01e6c174
         ;   Label: LAB_00534910
     JNZ 0x00534924                      ; 00534916
         ;   XREF to: 00534924 (CONDITIONAL_JUMP)  ; LAB_00534924
-    CMP EBP,dword ptr [0x01e6c178]      ; 00534918 | DAT_01e6c178
+    CMP EBP,dword ptr [0x01e6c178]      ; 00534918 | g_INT_01e6c178
     JNZ 0x00534924                      ; 0053491e
         ;   XREF to: 00534924 (CONDITIONAL_JUMP)  ; LAB_00534924
     MOV byte ptr [ESP],0x64             ; 00534920
     MOV EAX,dword ptr [ESP + 0x100]     ; 00534924
         ;   Label: LAB_00534924
     PUSH EAX                            ; 0053492b
-    MOV EAX,[0x0061b498]                ; 0053492c | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 0053492c | g_INT_0061b498
     MOV EDX,EAX                         ; 00534931
     SAR EDX,0x1f                        ; 00534933
     SUB EAX,EDX                         ; 00534936

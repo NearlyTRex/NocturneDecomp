@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_turret_cpp_CTurret_fire_FUN_0057fc20(CTurret *this_ptr)
 
 {
@@ -129,7 +127,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0057fc20(CTurret *this_ptr)
         if (pCStack_20 == (CCrate *)0x0) {
           if (this_ptr_02 == (CFlameCan *)0x0) {
             core_fire_cpp_CFireEffect_createBulletImpact_FUN_0049cd50
-                      (0x01C3DEB4,&g_CDemonSetPtr->collision_impact_position,
+                      (g_CFireEffect_PTR_00614d30,&g_CDemonSetPtr->collision_impact_position,
                        &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                        g_CDemonSetPtr->collision_actor);
             break;
@@ -163,7 +161,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0057fc20(CTurret *this_ptr)
       afStack_5c[(uint)bVar3 * -2] = *(float *)((int)&CStack_6c + (uint)bVar3 * -8 + 4);
       afStack_5c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
            *(float *)((int)&CStack_6c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-      fVar1 = (float)_DAT_005ed82c /
+      fVar1 = (float)10 /
               SQRT(fStack_4c * fStack_4c +
                    afStack_5c[2] * afStack_5c[2] + afStack_5c[3] * afStack_5c[3]);
       aCStack_48[0].x = afStack_5c[2] * fVar1;
@@ -208,8 +206,9 @@ LAB_00580072:
   *(float *)((int)&CStack_6c + (uint)bVar3 * -8 + 4) = afStack_98[(uint)bVar3 * -2 + 3];
   *(float *)((int)&CStack_6c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        afStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-  CStack_6c.y = CStack_6c.y + _DAT_005ed828;
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120(0x01C3DEB4,&CStack_6c,rotation_matrix);
+  CStack_6c.y = CStack_6c.y + -0.125f;
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120
+            (g_CFireEffect_PTR_00614d30,&CStack_6c,rotation_matrix);
   this_ptr->fire_sound_frames = 2;
   (this_ptr->base).fire_cooldown_timer = this_ptr->fire_delay_time;
   return 1;

@@ -11,13 +11,13 @@
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610 at 00453958
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01342221
-;   undefined4 DAT_01342222
-;   undefined4 DAT_01342360
-;   undefined4 DAT_01342361
-;   undefined4 DAT_01342362
-;   undefined4 DAT_013424a1
-;   undefined4 DAT_01354f60
+;   undefined4 g_CHAR_ARRAY_01342220+1
+;   undefined4 g_CHAR_ARRAY_01342220+2
+;   undefined4 g_CHAR_ARRAY_01342220+0x140
+;   undefined4 g_CHAR_ARRAY_01342220+0x141
+;   undefined4 g_CHAR_ARRAY_01342220+0x142
+;   undefined4 g_CHAR_ARRAY_01342220+0x281
+;   undefined4 g_CHAR_ARRAY_01354e20+0x140
 ;
 ; *****************************************************************************
 
@@ -55,7 +55,7 @@ section .text
     JGE 0x00453cf1                      ; 00453cde
         ;   XREF to: 00453cf1 (CONDITIONAL_JUMP)  ; LAB_00453cf1
     INC EDX                             ; 00453ce0
-    MOV BL,byte ptr [EAX + 0x1342220]   ; 00453ce1 | DAT_01342361 | DAT_01342362 | DAT_013424a1
+    MOV BL,byte ptr [EAX + 0x1342220]   ; 00453ce1 | g_CHAR_ARRAY_01342220+0x141 | g_CHAR_ARRAY_01342220+0x142 | g_CHAR_ARRAY_01342220+0x281
     INC EAX                             ; 00453ce7
     INC ECX                             ; 00453ce8
     MOV byte ptr [EDX + 0x1354e1f],BL   ; 00453ce9
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_00453d1f
     ADD EAX,EDX                         ; 00453d26
     SHL EAX,0x6                         ; 00453d28
-    MOV BL,byte ptr [EAX + 0x1342220]   ; 00453d2b | DAT_01342360
-    MOV byte ptr [ECX + 0x1354e20],BL   ; 00453d31 | DAT_01354f60
+    MOV BL,byte ptr [EAX + 0x1342220]   ; 00453d2b | g_CHAR_ARRAY_01342220+0x140
+    MOV byte ptr [ECX + 0x1354e20],BL   ; 00453d31 | g_CHAR_ARRAY_01354e20+0x140
     MOV EBX,dword ptr [ESI + 0x150]     ; 00453d37
     MOV AL,byte ptr [EBX + EAX*0x1 + 0x134221f] ; 00453d3d
     MOV byte ptr [ECX + EBX*0x1 + 0x1354e1f],AL ; 00453d44
@@ -112,7 +112,7 @@ section .text
     CMP EAX,EDX                         ; 00453d86
     JGE 0x00453bf4                      ; 00453d88
         ;   XREF to: 00453bf4 (CONDITIONAL_JUMP)  ; LAB_00453bf4
-    MOV DL,byte ptr [EAX + 0x1342220]   ; 00453d8e | DAT_01342221 | DAT_01342222
+    MOV DL,byte ptr [EAX + 0x1342220]   ; 00453d8e | g_CHAR_ARRAY_01342220+1 | g_CHAR_ARRAY_01342220+2
     MOV byte ptr [ECX + 0x1354e20],DL   ; 00453d94
     MOV EDX,dword ptr [ESI + 0x154]     ; 00453d9a
     DEC EDX                             ; 00453da0
@@ -121,7 +121,7 @@ section .text
     ADD EDX,EBP                         ; 00453daa
     LEA EDI,[EDX + EAX*0x1]             ; 00453dac
     INC ECX                             ; 00453daf
-    MOV DL,byte ptr [EBX + 0x1342220]   ; 00453db0 | DAT_01342221 | DAT_01342222
+    MOV DL,byte ptr [EBX + 0x1342220]   ; 00453db0 | g_CHAR_ARRAY_01342220+1 | g_CHAR_ARRAY_01342220+2
     INC EAX                             ; 00453db6
     MOV byte ptr [EDI + 0x1354e20],DL   ; 00453db7
     JMP 0x00453d7f                      ; 00453dbd

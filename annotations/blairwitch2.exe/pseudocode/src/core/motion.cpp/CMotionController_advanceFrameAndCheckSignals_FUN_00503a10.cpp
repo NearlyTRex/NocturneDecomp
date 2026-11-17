@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor)
 
 {
@@ -27,16 +25,16 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00
   if (0 < pSVar1->signal_count) {
     do {
       iVar2 = pSVar4->signals[0].frame_number;
-      if ((*inout_frame_number <= (float)iVar2) && ((float)iVar2 <= local_20 + (float)_DAT_005dfd10)
-         ) {
-        local_20 = (float)iVar2 + (float)_DAT_005dfd10;
+      if ((*inout_frame_number <= (float)iVar2) &&
+         ((float)iVar2 <= local_20 + (float)0.001)) {
+        local_20 = (float)iVar2 + (float)0.001;
         iVar5 = pSVar4->signals[0].value;
       }
       iVar3 = iVar3 + 1;
       pSVar4 = (SMotion *)(pSVar4->motion_name + 8);
     } while (iVar3 < pSVar1->signal_count);
   }
-  if ((double)local_20 < (double)pSVar1->frame_count + _DAT_005dfd00) {
+  if ((double)local_20 < (double)pSVar1->frame_count + -0.0001) {
     (*this_ptr->vtable->accumulateScaledRootMotion)
               (this_ptr,(float)pSVar1->frame_start + *inout_frame_number,
                (float)pSVar1->frame_start + local_20,scale_factor);
@@ -55,7 +53,7 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00
     return iVar5;
   }
   fStack_18 = pSVar1->exit_forward_to_frame;
-  if (fStack_18 == _DAT_005dfd08) {
+  if (fStack_18 == -1.0f) {
     iVar3 = (*this_ptr->vtable->findPatchToFrame)
                       (this_ptr,*inout_motion_index,(float)(pSVar1->frame_count + -1),
                        pSVar1->exit_forward_to_motion);

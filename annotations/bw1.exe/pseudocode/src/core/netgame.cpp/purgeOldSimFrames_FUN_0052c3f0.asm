@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   min_sequence
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d715a8
+;   int g_INT_01d715a8
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -21,7 +21,7 @@ section .text
     PUSH ESI                            ; 0052c3f1
     PUSH EDI                            ; 0052c3f2
     PUSH EBP                            ; 0052c3f3
-    MOV EBP,dword ptr [0x01d715a8]      ; 0052c3f4 | DAT_01d715a8
+    MOV EBP,dword ptr [0x01d715a8]      ; 0052c3f4 | g_INT_01d715a8
     XOR EBX,EBX                         ; 0052c3fa
     TEST EBP,EBP                        ; 0052c3fc
     JLE 0x0052c421                      ; 0052c3fe
@@ -40,7 +40,7 @@ section .text
     CMP EBX,EBP                         ; 0052c41d
     JL 0x0052c40a                       ; 0052c41f
         ;   XREF to: 0052c40a (CONDITIONAL_JUMP)  ; LAB_0052c40a
-    MOV dword ptr [0x01d715a8],EBP      ; 0052c421 | DAT_01d715a8
+    MOV dword ptr [0x01d715a8],EBP      ; 0052c421 | g_INT_01d715a8
         ;   Label: LAB_0052c421
     POP EBP                             ; 0052c427
     POP EDI                             ; 0052c428
@@ -57,15 +57,15 @@ section .text
     PUSH EDI                            ; 0052c43a
     ADD EAX,ESI                         ; 0052c43b
     PUSH EAX                            ; 0052c43d
-    MOV dword ptr [0x01d715a8],EBP      ; 0052c43e | DAT_01d715a8
+    MOV dword ptr [0x01d715a8],EBP      ; 0052c43e | g_INT_01d715a8
     CALL crt_string.c_memmove_FUN_005c25d0 ; 0052c444
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
-    MOV EBP,dword ptr [0x01d715a8]      ; 0052c449 | DAT_01d715a8
+    MOV EBP,dword ptr [0x01d715a8]      ; 0052c449 | g_INT_01d715a8
     ADD ESP,0xc                         ; 0052c44f
     CMP EBX,EBP                         ; 0052c452
     JL 0x0052c40a                       ; 0052c454
         ;   XREF to: 0052c40a (CONDITIONAL_JUMP)  ; LAB_0052c40a
-    MOV dword ptr [0x01d715a8],EBP      ; 0052c456 | DAT_01d715a8
+    MOV dword ptr [0x01d715a8],EBP      ; 0052c456 | g_INT_01d715a8
     POP EBP                             ; 0052c45c
     POP EDI                             ; 0052c45d
     POP ESI                             ; 0052c45e

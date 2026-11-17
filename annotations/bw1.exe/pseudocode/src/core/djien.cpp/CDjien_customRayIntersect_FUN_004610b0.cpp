@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 {
@@ -95,7 +93,7 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
                 afStack_50[2] * fStack_54 + afStack_50[3] * afStack_50[0];
         fVar1 = afStack_50[2] * afStack_50[2] + afStack_50[3] * afStack_50[3] +
                 fStack_40 * fStack_40;
-        if (0.0 < _DAT_005d8e68 - (fVar1 - fVar2 * fVar2)) {
+        if (0.0 < 4.0f - (fVar1 - fVar2 * fVar2)) {
           iStack_20 = iVar4;
           fStack_24 = SQRT(fVar1);
         }

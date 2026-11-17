@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 156,
+    "complexity_score": 115,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 6,
+    "pseudocode_lines": 70,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_stride_bytecount",
-      "undefined_data",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 237
+    "total_lines": 236
   },
   "cross_references": [
     {
@@ -90,8 +88,8 @@
   "globals": [
     {
       "addr": "005deb4e",
-      "name": "DAT_005deb4e",
-      "type": "undefined4",
+      "name": "s_wt_005deb4e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -102,8 +100,8 @@
     },
     {
       "addr": "005deb5c",
-      "name": "DAT_005deb5c",
-      "type": "undefined4",
+      "name": "s_s_005deb5c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -132,14 +130,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -354,32 +352,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005deb4e",
-      "severity": "mild",
-      "text": "file = _fopen(\"events.txt\",&DAT_005deb4e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005deb5c",
-      "severity": "mild",
-      "text": "_fprintf(file,&DAT_005deb5c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -387,7 +361,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 48,
+      "line": 46,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -395,7 +369,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((iVar6 - iVar2) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 23,
+      "line": 21,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

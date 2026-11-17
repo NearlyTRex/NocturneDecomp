@@ -9,6 +9,6 @@
 CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00509bb0(CFont *this_ptr,uint flags)
 
 {
-  this_ptr->vtable = (CFont_vtable *)&PTR_engine_palette_cpp_CFont_dtor_FUN_00509bb0_005e2f74;
+  this_ptr->vtable = (CFont_vtable *)g_ARRAY_PTR_005e2f74;
   return this_ptr;
 }

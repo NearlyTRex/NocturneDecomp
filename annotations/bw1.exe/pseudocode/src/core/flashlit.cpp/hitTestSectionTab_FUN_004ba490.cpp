@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flashlit_cpp_hitTestSectionTab_FUN_004ba490(int x,int y)
 
 {
@@ -18,14 +16,14 @@ int __cdecl core_flashlit_cpp_hitTestSectionTab_FUN_004ba490(int x,int y)
   int iVar5;
   
   iVar3 = 0;
-  if (0 < _DAT_01cc4470) {
+  if (0 < g_INT_01cc4470) {
     pSVar1 = SNotesSection_ARRAY_01cc4474;
     iVar2 = 0;
     do {
       iVar4 = SNotesSection_ARRAY_01cc4474[iVar3].tab_x;
       iVar5 = *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].width + iVar2) + iVar4;
-      if ((_DAT_01cc7b90 < pSVar1->first_page) ||
-         (pSVar1->first_page + pSVar1->page_count <= _DAT_01cc7b90)) {
+      if ((g_INT_01cc7b90 < pSVar1->first_page) ||
+         (pSVar1->first_page + pSVar1->page_count <= g_INT_01cc7b90)) {
         iVar4 = 0x246;
       }
       if ((((iVar4 <= x) && (SNotesSection_ARRAY_01cc4474[iVar3].tab_y <= y)) && (x < iVar5)) &&
@@ -36,7 +34,7 @@ int __cdecl core_flashlit_cpp_hitTestSectionTab_FUN_004ba490(int x,int y)
       pSVar1 = pSVar1 + 1;
       iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 0x14;
-    } while (iVar3 < _DAT_01cc4470);
+    } while (iVar3 < g_INT_01cc4470);
   }
   return -1;
 }

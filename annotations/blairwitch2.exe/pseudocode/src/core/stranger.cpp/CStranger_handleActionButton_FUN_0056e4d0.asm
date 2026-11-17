@@ -14,12 +14,12 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0056e4b0 = 0056e559
-;   undefined4 s_eDoorMoveNone_returned_b_005ebdac+1
+;   TerminatedCString s_eDoorMoveNone_returned_b_005ebdad
 ;   TerminatedCString s_eDoorMoveNone_returned_b_005ebdea
 ;   TerminatedCString s_CBodyPart_005ebe27
 ;   TerminatedCString s_CBodyPart_005ebe32
-;   undefined4 DAT_005ebe3d
-;   undefined4 DAT_005ebe45
+;   double g_DOUBLE_005ebe3d = 0.999900000000000
+;   double g_DOUBLE_005ebe45 = 0.990000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 0056e529
     ADD ESP,0x8                         ; 0056e52d
     FADD float ptr [ESP]                ; 0056e530
-    FCOMP double ptr [0x005ebe3d]       ; 0056e533 | DAT_005ebe3d
+    FCOMP double ptr [0x005ebe3d]       ; 0056e533 | g_DOUBLE_005ebe3d
     FNSTSW AX                           ; 0056e539
     SAHF                                ; 0056e53b
     JBE 0x0056e578                      ; 0056e53c
@@ -142,7 +142,7 @@ section .text
     RET                                 ; 0056e5b4
     PUSH EDI                            ; 0056e5b5
         ;   Label: LAB_0056e5b5
-    PUSH 0x5ebdad                       ; 0056e5b6 | s_eDoorMoveNone_returned_b_005ebdac+1
+    PUSH 0x5ebdad                       ; 0056e5b6 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV EAX,[0x006138e0]                ; 0056e5bb | g_CEditorToolsPtr
     PUSH EAX                            ; 0056e5c0
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0056e5c1
@@ -284,7 +284,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0056e70d
     FLD float ptr [ESP + 0xc]           ; 0056e711
     ADD ESP,0x8                         ; 0056e715
-    FCOMP double ptr [0x005ebe45]       ; 0056e718 | DAT_005ebe45
+    FCOMP double ptr [0x005ebe45]       ; 0056e718 | g_DOUBLE_005ebe45
     FNSTSW AX                           ; 0056e71e
     SAHF                                ; 0056e720
     JBE 0x0056e6e1                      ; 0056e721

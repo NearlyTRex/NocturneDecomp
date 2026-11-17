@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00(CPickList *this_ptr,char *dialog_title,uint window_flags)
 
 {
@@ -35,14 +33,15 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   uint local_18;
   int local_14;
   
-  if (_DAT_01c25590 == (CBitFont *)0x0) {
-    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-    _DAT_01d046a4 = 0xa0;
+  if (g_CBitFont_PTR_01c25590 == (CBitFont *)0x0) {
+    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+    g_INT_01d046a4 = 0xa0;
     core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
-  _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
-  this_ptr->row_height = _DAT_01c25f7c + 1;
+  g_INT_01c25f78 = g_CBitFont_PTR_01c25590->max_char_width;
+  g_INT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(g_CBitFont_PTR_01c25590,0x6a)
+  ;
+  this_ptr->row_height = g_INT_01c25f7c + 1;
   this_ptr->column_padding = 8;
   this_ptr->tab_column_count = 1;
   memset(this_ptr->tab_column_widths,0,0x40);
@@ -63,7 +62,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
           pcVar2 = pcVar3;
         }
         *pcVar7 = '\0';
-        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,local_160);
+        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00
+                          (g_CBitFont_PTR_01c25590,local_160);
         if (pCVar8->tab_column_widths[0] < iVar4) {
           pCVar8->tab_column_widths[0] = iVar4;
         }
@@ -71,8 +71,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
         pCVar8 = (CPickList *)&(pCVar8->base).capacity;
         if (*pcVar3 == '\0') break;
         if (0xf < iVar10) {
-          _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-          _DAT_01d046a4 = 0xf9a;
+          g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+          g_INT_01d046a4 = 0xf9a;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Too many picklist columns!");
         }
       }
@@ -84,7 +84,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   }
   pCVar8 = this_ptr;
   for (iVar10 = 0; iVar10 < this_ptr->tab_column_count + -1; iVar10 = iVar10 + 1) {
-    pCVar8->tab_column_widths[0] = pCVar8->tab_column_widths[0] + DAT_006141b8 / 0x28;
+    pCVar8->tab_column_widths[0] = pCVar8->tab_column_widths[0] + g_INT_006141b8 / 0x28;
     pCVar8 = (CPickList *)&(pCVar8->base).capacity;
   }
   this_ptr->column_width = 0;
@@ -98,7 +98,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     } while (iVar10 < this_ptr->tab_column_count);
   }
   this_ptr->column_width = this_ptr->column_width + this_ptr->column_padding * 2;
-  iVar10 = (DAT_006141bc + _DAT_01c25f7c * -4) / this_ptr->row_height;
+  iVar10 = (g_INT_006141bc + g_INT_01c25f7c * -4) / this_ptr->row_height;
   this_ptr->rows_per_column = iVar10;
   if (iVar10 < 1) {
     this_ptr->rows_per_column = 1;
@@ -107,8 +107,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   if (iVar10 < this_ptr->rows_per_column) {
     this_ptr->rows_per_column = iVar10;
   }
-  iVar10 = DAT_006141b8 * 7 >> 0x1f;
-  iVar10 = ((int)((DAT_006141b8 * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) /
+  iVar10 = g_INT_006141b8 * 7 >> 0x1f;
+  iVar10 = ((int)((g_INT_006141b8 * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) /
            this_ptr->column_width;
   this_ptr->column_count = iVar10;
   if (iVar10 < 1) {
@@ -142,9 +142,9 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   else if (this_ptr->scroll_mode == 2) {
     iVar4 = iVar4 + local_2c;
   }
-  local_34 = (int)((DAT_006141b8 + (DAT_006141b8 >> 0x1f) * -0x80) -
-                  (uint)((DAT_006141b8 >> 0x1f) << 6 < 0)) >> 7;
-  local_28 = DAT_006141bc / 0x60;
+  local_34 = (int)((g_INT_006141b8 + (g_INT_006141b8 >> 0x1f) * -0x80) -
+                  (uint)((g_INT_006141b8 >> 0x1f) << 6 < 0)) >> 7;
+  local_28 = g_INT_006141bc / 0x60;
   iVar9 = 0;
   iVar5 = 0;
   local_20 = 0;
@@ -180,34 +180,34 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
             (g_CEditorToolsPtr,iVar10,iVar4,dialog_title,window_flags);
-  iVar10 = (_DAT_01c35e50 - _DAT_01c35e48) + 1;
-  iVar4 = (_DAT_01c35e54 - _DAT_01c35e4c) + 1;
+  iVar10 = (g_INT_01c35e50 - g_INT_01c35e48) + 1;
+  iVar4 = (g_INT_01c35e54 - g_INT_01c35e4c) + 1;
   if (this_ptr->scroll_mode == 1) {
     iVar10 = iVar10 - local_30;
-    bottom_pos = (_DAT_01c35e54 - local_1c) - local_28;
-    iVar6 = (_DAT_01c35e50 - local_30) + 1;
-    top_pos = _DAT_01c35e4c;
+    bottom_pos = (g_INT_01c35e54 - local_1c) - local_28;
+    iVar6 = (g_INT_01c35e50 - local_30) + 1;
+    top_pos = g_INT_01c35e4c;
   }
   else {
     if (this_ptr->scroll_mode != 2) goto LAB_00482f8c;
     iVar4 = iVar4 - local_2c;
-    bottom_pos = _DAT_01c35e54 - iVar9;
-    top_pos = ((_DAT_01c35e54 - local_2c) - iVar9) + 1;
-    iVar6 = _DAT_01c35e48;
+    bottom_pos = g_INT_01c35e54 - iVar9;
+    top_pos = ((g_INT_01c35e54 - local_2c) - iVar9) + 1;
+    iVar6 = g_INT_01c35e48;
   }
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_00484390
-            (&this_ptr->scrollbar,iVar6,top_pos,_DAT_01c35e50,bottom_pos);
+            (&this_ptr->scrollbar,iVar6,top_pos,g_INT_01c35e50,bottom_pos);
 LAB_00482f8c:
   if (0 < (int)local_18) {
-    local_24 = (_DAT_01c35e54 - local_1c) + 1;
+    local_24 = (g_INT_01c35e54 - local_1c) + 1;
     if (this_ptr->ok_button_text[0] != '\0') {
-      iVar6 = (_DAT_01c35e50 + 1) - local_20;
+      iVar6 = (g_INT_01c35e50 + 1) - local_20;
       shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_00484ed0
                 (&this_ptr->ok_button,iVar6,local_24,iVar6 + -1 + iVar5,local_24 + local_1c + -1,
                  this_ptr->ok_button_text);
     }
     if (this_ptr->cancel_button_text[0] != '\0') {
-      iVar6 = (_DAT_01c35e50 + 1) - iVar5;
+      iVar6 = (g_INT_01c35e50 + 1) - iVar5;
       shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_00484ed0
                 (&this_ptr->cancel_button,iVar6,local_24,iVar6 + -1 + iVar5,local_24 + local_1c + -1
                  ,this_ptr->cancel_button_text);
@@ -229,7 +229,7 @@ LAB_00482f8c:
   this_ptr->column_width = iVar10 / this_ptr->column_count;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   this_ptr->search_text_buffer[0] = '\0';
-  _DAT_01c2640c = 0xffffffff;
+  g_INT_01c2640c = -1;
   this_ptr->confirmed_flag = 0;
   return;
 }

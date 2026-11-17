@@ -9,8 +9,7 @@
 int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr)
 
 {
-  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"@CHero::toggleLeverNow\n" + 1)
-  ;
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"CHero::toggleLeverNow\n");
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&(this_ptr->base).model.base);
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  current motion is %s\n");
   if (this_ptr->lever_to_pull != (CLever *)0x0) {

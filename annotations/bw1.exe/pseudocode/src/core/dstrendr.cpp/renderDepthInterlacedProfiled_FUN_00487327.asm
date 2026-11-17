@@ -8,11 +8,11 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0 at 00481f76
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612564
-;   undefined4 DAT_01bc1238
-;   undefined4 DAT_01bc123c
-;   undefined4 DAT_01c4480c
-;   undefined4 DAT_01c4f030
+;   int g_INT_00612564 = 0x1
+;   int g_INT_01bc1238
+;   int g_INT_01bc123c
+;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
+;   uint[1600] g_UINT_ARRAY_01c4f030
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     SHR EAX,0x10                        ; 00487342
         ;   Label: LAB_00487342
     SHR ECX,0x10                        ; 00487345
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c4480c] ; 00487348 | DAT_01c4480c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c4480c] ; 00487348 | g_UINT_PTR_ARRAY_01c4480c
     SUB ECX,EAX                         ; 0048734f
     JLE 0x00487380                      ; 00487351
         ;   XREF to: 00487380 (CONDITIONAL_JUMP)  ; LAB_00487380
@@ -48,7 +48,7 @@ section .text
     INC ECX                             ; 00487358
     MOV EAX,dword ptr [EDI + 0x28]      ; 00487359
     SUB EAX,dword ptr [ESI + 0x28]      ; 0048735c
-    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 0048735f | DAT_01c4f030
+    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 0048735f | g_UINT_ARRAY_01c4f030
     MOV EBX,EBP                         ; 00487366
     DEC ECX                             ; 00487368
     MOV ESI,dword ptr [ESI + 0x28]      ; 00487369
@@ -69,14 +69,14 @@ section .text
     POP EDI                             ; 00487381
     POP ESI                             ; 00487382
     RET                                 ; 00487383
-    MOV EAX,[0x01bc1238]                ; 00487384 | DAT_01bc1238
+    MOV EAX,[0x01bc1238]                ; 00487384 | g_INT_01bc1238
         ;   Label: LAB_00487384
     INC EAX                             ; 00487389
-    MOV [0x01bc1238],EAX                ; 0048738a | DAT_01bc1238
-    CMP EAX,dword ptr [0x00612564]      ; 0048738f | DAT_00612564
+    MOV [0x01bc1238],EAX                ; 0048738a | g_INT_01bc1238
+    CMP EAX,dword ptr [0x00612564]      ; 0048738f | g_INT_00612564
     JC 0x00487375                       ; 00487395
         ;   XREF to: 00487375 (CONDITIONAL_JUMP)  ; LAB_00487375
-    MOV dword ptr [0x01bc123c],0x1      ; 00487397 | DAT_01bc123c
+    MOV dword ptr [0x01bc123c],0x1      ; 00487397 | g_INT_01bc123c
     POP EBP                             ; 004873a1
     POP EDI                             ; 004873a2
     POP ESI                             ; 004873a3

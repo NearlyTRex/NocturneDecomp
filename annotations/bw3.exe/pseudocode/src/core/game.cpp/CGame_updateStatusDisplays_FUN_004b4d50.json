@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 114,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 5,
+    "pseudocode_lines": 48,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_stride_bytecount",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 183
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -47,8 +46,8 @@
   "globals": [
     {
       "addr": "01d22af4",
-      "name": "DAT_01d22af4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22af4",
+      "type": "float",
       "value": null
     }
   ],
@@ -214,16 +213,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 47,
+      "line": 45,
       "match": "pCVar4 = (T *)&pCVar4->FIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CGame *)&pCVar4->game_pixy;",
@@ -231,7 +222,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((iVar2 - iVar3) * 0x100) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 35,
+      "line": 33,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove(local_18,local_1c,(iVar2 - iVar3) * 0x100);",
@@ -239,7 +230,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((this_ptr->status_display_count - iVar3) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 36,
+      "line": 34,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",
@@ -247,7 +238,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((this_ptr->status_display_count - iVar3) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 39,
+      "line": 37,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

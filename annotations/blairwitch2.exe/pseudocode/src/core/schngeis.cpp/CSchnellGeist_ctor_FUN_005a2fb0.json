@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 123,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 4,
+    "pseudocode_lines": 72,
+    "suspect_count": 3,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -70,15 +69,15 @@
   "globals": [
     {
       "addr": "005ff34c",
-      "name": "DAT_005ff34c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ff34c",
+      "type": "float",
+      "value": "25"
     },
     {
       "addr": "005ff350",
-      "name": "DAT_005ff350",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ff350",
+      "type": "float",
+      "value": "5"
     }
   ],
   "param_estimates": {
@@ -145,16 +144,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -162,7 +153,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 54,
+      "line": 52,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -170,7 +161,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 65,
+      "line": 63,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

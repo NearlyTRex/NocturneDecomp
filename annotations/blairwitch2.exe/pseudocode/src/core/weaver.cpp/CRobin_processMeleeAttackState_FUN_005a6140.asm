@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f068b
-;   undefined4 DAT_005ffc9c
+;   float g_FLOAT_005ffc9c = 7
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -45,7 +45,7 @@ section .text
     FADDP                               ; 005a6174
     FSQRT                               ; 005a6176
     ADD EDX,0x20                        ; 005a6178
-    FCOMP float ptr [0x005ffc9c]        ; 005a617b | DAT_005ffc9c
+    FCOMP float ptr [0x005ffc9c]        ; 005a617b | g_FLOAT_005ffc9c
     FNSTSW AX                           ; 005a6181
     SAHF                                ; 005a6183
     JA 0x005a61b9                       ; 005a6184

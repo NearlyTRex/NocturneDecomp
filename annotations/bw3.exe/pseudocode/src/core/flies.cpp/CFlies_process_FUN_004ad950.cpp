@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flies_cpp_CFlies_process_FUN_004ad950(CFlies *this_ptr,float delta_time)
 
 {
@@ -60,10 +57,10 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004ad950(CFlies *this_ptr,float d
         afStack_64[(uint)bVar8 * -2] = *(float *)((int)&CStack_38 + (uint)bVar8 * -8 + 4);
         afStack_64[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
              *(float *)((int)&CStack_38 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-        fStack_2c = fStack_68 * _DAT_005c1c41;
-        afStack_28[0] = afStack_64[0] * _DAT_005c1c41;
-        afStack_28[1] = afStack_64[1] * _DAT_005c1c41;
-        CStack_74.x = fStack_68 * _DAT_005c1c41;
+        fStack_2c = fStack_68 * 0.5f;
+        afStack_28[0] = afStack_64[0] * 0.5f;
+        afStack_28[1] = afStack_64[1] * 0.5f;
+        CStack_74.x = fStack_68 * 0.5f;
         *(float *)((int)&CStack_74 + (uint)bVar8 * -8 + 4) = afStack_28[(uint)bVar8 * -2];
         *(float *)((int)&CStack_74 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
              afStack_28[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
@@ -117,7 +114,7 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004ad950(CFlies *this_ptr,float d
         this_ptr->gather_count = 0;
       }
     }
-    fVar1 = (float)_DAT_005c1c49;
+    fVar1 = (float)2;
     iStack_18 = 0;
     if (0 < this_ptr->fly_count) {
       pSVar7 = this_ptr->flies;

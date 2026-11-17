@@ -7,7 +7,7 @@
 ; CBride *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c5388
+;   int[11] g_INT_ARRAY_007c5388
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00568e30
@@ -24,7 +24,7 @@ section .text
     MOV EBP,ESP                         ; 00424e23
     SUB ESP,0x78                        ; 00424e25
     MOV EBX,ESI                         ; 00424e28
-    MOV EDX,dword ptr [0x007c5388]      ; 00424e2a | DAT_007c5388
+    MOV EDX,dword ptr [0x007c5388]      ; 00424e2a | g_INT_ARRAY_007c5388
     MOV ESI,dword ptr [EBP + 0x10]      ; 00424e30
     PUSH EDX                            ; 00424e33
     ADD ESI,0x158                       ; 00424e34

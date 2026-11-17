@@ -10,11 +10,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_005e8962
 ;   TerminatedCString s_CMimic_setup_can_t_use_m_005e8974
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;   CNetGame* g_CNetGamePtr = 01d51c20
-;   undefined4 DAT_01d06ab4
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_01d06ab4
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 0050f63b | g_CNetGameInstance
     JNZ 0x0050f6c6                      ; 0050f63e
         ;   XREF to: 0050f6c6 (CONDITIONAL_JUMP)  ; LAB_0050f6c6
-    MOV EAX,[0x01d06ab4]                ; 0050f644 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0050f644 | g_INT_01d06ab4
         ;   Label: LAB_0050f644
     MOV EDX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0050f649
     MOV EDX,dword ptr [EDX + 0x108]     ; 0050f650
@@ -89,8 +89,8 @@ section .text
     MOV ECX,0x5e8962                    ; 0050f6c7 | = "..\\core\\mimic.cpp"
     MOV ESI,0x130                       ; 0050f6cc
     PUSH 0x5e8974                       ; 0050f6d1 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0050f6d6 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0050f6dc | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0050f6d6 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0050f6dc | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050f6e2
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050f6e7
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_0050f700
     LEA EAX,[EBX + 0xc2cc]              ; 0050f702
     PUSH EAX                            ; 0050f708
-    MOV EAX,[0x0061b4d0]                ; 0050f709 | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 0050f709 | g_CEventList_PTR_0061b4d0
     PUSH EAX                            ; 0050f70e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0050f70f
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -123,7 +123,7 @@ section .text
     LEA EAX,[EBX + 0xc268]              ; 0050f725
         ;   Label: LAB_0050f725
     PUSH EAX                            ; 0050f72b
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0050f72c | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0050f72c | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 0050f732
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0050f733
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -139,7 +139,7 @@ section .text
     CMP ECX,0x1                         ; 0050f752
     JNZ 0x0050f6ba                      ; 0050f755
         ;   XREF to: 0050f6ba (CONDITIONAL_JUMP)  ; LAB_0050f6ba
-    MOV EAX,[0x01d06ab4]                ; 0050f75b | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0050f75b | g_INT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0050f760
     ADD EAX,0x158                       ; 0050f767
     PUSH EAX                            ; 0050f76c

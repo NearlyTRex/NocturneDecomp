@@ -14,9 +14,9 @@
 ;   core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417050 at 00417063
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6d92
-;   undefined4 DAT_005dc13c
-;   undefined4 DAT_005dc140
+;   float g_FLOAT_005b6d92 = 256
+;   float g_FLOAT_005dc13c = 50
+;   float g_FLOAT_005dc140 = 100
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -62,9 +62,9 @@ section .text
     MOV dword ptr [EBX + 0xfc],0x1      ; 00417462
     LEA EDI,[EBX + 0xd07c]              ; 0041746c
     MOV dword ptr [EBX + 0xd0e4],0x0    ; 00417472
-    FLD float ptr [0x005dc13c]          ; 0041747c | DAT_005dc13c
+    FLD float ptr [0x005dc13c]          ; 0041747c | g_FLOAT_005dc13c
     MOV dword ptr [EBX + 0x27a0],0x3    ; 00417482
-    FLD float ptr [0x005dc140]          ; 0041748c | DAT_005dc140
+    FLD float ptr [0x005dc140]          ; 0041748c | g_FLOAT_005dc140
     MOV dword ptr [EBX + 0xd0e0],0x41200000 ; 00417492
     ADD ESP,0x8                         ; 0041749c
     FXCH                                ; 0041749f
@@ -142,7 +142,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004175ad
     MOVSD ES:EDI,ESI                    ; 004175ae
     MOVSD ES:EDI,ESI                    ; 004175af
-    FLD float ptr [0x005b6d92]          ; 004175b0 | DAT_005b6d92
+    FLD float ptr [0x005b6d92]          ; 004175b0 | g_FLOAT_005b6d92
     FLD float ptr [ESP]                 ; 004175b6
     FMUL ST1                            ; 004175b9
     FLD float ptr [ESP + 0x4]           ; 004175bb

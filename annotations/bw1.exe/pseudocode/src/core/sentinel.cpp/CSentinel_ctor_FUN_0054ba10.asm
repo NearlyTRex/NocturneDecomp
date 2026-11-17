@@ -10,8 +10,8 @@
 ;   core_sentinel.cpp_factoryFuncSentinel_FUN_0054b9e0 at 0054b9f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00604e4c
-;   undefined4 DAT_00604e50
+;   float g_FLOAT_00604e4c = 50
+;   float g_FLOAT_00604e50 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -35,9 +35,9 @@ section .text
     MOV dword ptr [EAX + -0x4],0x604e64 ; 0054ba2b
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 0054ba32
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x00604e4c]          ; 0054ba37 | DAT_00604e4c
+    FLD float ptr [0x00604e4c]          ; 0054ba37 | g_FLOAT_00604e4c
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 0054ba3d
-    FLD float ptr [0x00604e50]          ; 0054ba47 | DAT_00604e50
+    FLD float ptr [0x00604e50]          ; 0054ba47 | g_FLOAT_00604e50
     MOV dword ptr [EBX + 0x2ff0],0x40000000 ; 0054ba4d
     ADD ESP,0x8                         ; 0054ba57
     MOV dword ptr [EBX + 0xc26c],0x0    ; 0054ba5a

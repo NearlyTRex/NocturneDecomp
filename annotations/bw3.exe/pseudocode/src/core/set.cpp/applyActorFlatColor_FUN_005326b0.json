@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 62,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "pseudocode_lines": 31,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 125
+    "total_lines": 124
   },
   "cross_references": [],
   "function": {
@@ -49,20 +48,20 @@
     },
     {
       "addr": "0207bab8",
-      "name": "DAT_0207bab8",
-      "type": "undefined4",
+      "name": "g_INT_0207bab8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0207babc",
-      "name": "DAT_0207babc",
-      "type": "undefined4",
+      "name": "g_INT_0207babc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0207bac0",
-      "name": "DAT_0207bac0",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207bac0",
+      "type": "float",
       "value": null
     }
   ],
@@ -142,16 +141,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Raw hex address 0x532734 assigned to bare local `iStack_28`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_28` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 28,
+      "line": 26,
       "match": "0x532734",
       "severity": "moderate",
       "text": "iStack_28 = 0x532734;",

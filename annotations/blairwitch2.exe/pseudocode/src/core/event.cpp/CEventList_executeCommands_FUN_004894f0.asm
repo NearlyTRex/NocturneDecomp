@@ -21,7 +21,7 @@
 ;   ... and 15 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c3dd0c
+;   int g_INT_01c3dd0c
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommandString_FUN_00489510
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004894f6
     XOR EDX,EDX                         ; 004894fa
     PUSH EBX                            ; 004894fc
-    MOV dword ptr [0x01c3dd0c],EDX      ; 004894fd | DAT_01c3dd0c
+    MOV dword ptr [0x01c3dd0c],EDX      ; 004894fd | g_INT_01c3dd0c
     CALL core_event.cpp_CEventList_executeCommandString_FUN_00489510 ; 00489503
         ;   XREF to: 00489510 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommandString_FUN_00489510(CEventList * this_ptr, char * command_string)
     ADD ESP,0x8                         ; 00489508

@@ -16,41 +16,41 @@
 ;   shape_edittool.cpp_restoreScreen_FUN_00494110 at 00494150
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_02c833a8
-;   undefined4 DAT_02c834c4
-;   undefined4 DAT_02c834cc
-;   undefined4 DAT_02c834d0
+;   int g_INT_0061b4a0 = 0x8
+;   int g_INT_01c50948
+;   void* g_PTR_02c833a8
+;   int g_INT_02c834c4
+;   int g_INT_02c834cc
+;   int g_INT_02c834d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01c50948]      ; 00581f50 | DAT_01c50948
+    MOV EDX,dword ptr [0x01c50948]      ; 00581f50 | g_INT_01c50948
         ;   Label: engine_special.cpp_lockFrame_FUN_00581f50
     TEST EDX,EDX                        ; 00581f56
     JNZ 0x00581f63                      ; 00581f58
         ;   XREF to: 00581f63 (CONDITIONAL_JUMP)  ; LAB_00581f63
-    MOV dword ptr [0x02c834d0],EDX      ; 00581f5a | DAT_02c834d0
+    MOV dword ptr [0x02c834d0],EDX      ; 00581f5a | g_INT_02c834d0
     XOR EAX,EAX                         ; 00581f60
         ;   Label: LAB_00581f60
     RET                                 ; 00581f62
         ;   Label: LAB_00581f62
-    CALL dword ptr [0x02c833a8]         ; 00581f63 | DAT_02c833a8
+    CALL dword ptr [0x02c833a8]         ; 00581f63 | g_PTR_02c833a8
         ;   Label: LAB_00581f63
     TEST EAX,EAX                        ; 00581f69
     JZ 0x00581f62                       ; 00581f6b
         ;   XREF to: 00581f62 (CONDITIONAL_JUMP)  ; LAB_00581f62
     PUSH EBX                            ; 00581f6d
     MOV ECX,0x1                         ; 00581f6e
-    MOV EAX,[0x0061b4a0]                ; 00581f73 | DAT_0061b4a0
+    MOV EAX,[0x0061b4a0]                ; 00581f73 | g_INT_0061b4a0
     XOR EBX,EBX                         ; 00581f78
-    MOV [0x02c834cc],EAX                ; 00581f7a | DAT_02c834cc
-    MOV dword ptr [0x02c834d0],ECX      ; 00581f7f | DAT_02c834d0
-    MOV EAX,[0x02c834c4]                ; 00581f85 | DAT_02c834c4
-    MOV dword ptr [0x01c50948],EBX      ; 00581f8a | DAT_01c50948
-    MOV [0x0061b4a0],EAX                ; 00581f90 | DAT_0061b4a0
+    MOV [0x02c834cc],EAX                ; 00581f7a | g_INT_02c834cc
+    MOV dword ptr [0x02c834d0],ECX      ; 00581f7f | g_INT_02c834d0
+    MOV EAX,[0x02c834c4]                ; 00581f85 | g_INT_02c834c4
+    MOV dword ptr [0x01c50948],EBX      ; 00581f8a | g_INT_01c50948
+    MOV [0x0061b4a0],EAX                ; 00581f90 | g_INT_0061b4a0
     MOV EAX,ECX                         ; 00581f95
     POP EBX                             ; 00581f97
     RET                                 ; 00581f98

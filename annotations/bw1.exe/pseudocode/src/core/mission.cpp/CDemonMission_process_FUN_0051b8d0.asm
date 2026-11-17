@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   CScript* g_CScriptPtr = 01e81c80
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01d06ab4
+;   int g_INT_01d06ab4
 ;   undefined4 g_CScriptInstance.focus_actor_changed
 ;
 ; Called Functions:
@@ -81,7 +81,7 @@ section .text
     TEST ECX,ECX                        ; 0051b939
     JL 0x0051b9a7                       ; 0051b93b
         ;   XREF to: 0051b9a7 (CONDITIONAL_JUMP)  ; LAB_0051b9a7
-    MOV EBX,dword ptr [0x01d06ab4]      ; 0051b93d | DAT_01d06ab4
+    MOV EBX,dword ptr [0x01d06ab4]      ; 0051b93d | g_INT_01d06ab4
     LEA ESI,[EDI + 0x1120]              ; 0051b943
     MOV EBX,dword ptr [EBX*0x4 + 0x1d06aa4] ; 0051b949
     MOV EAX,dword ptr [ESI]             ; 0051b950

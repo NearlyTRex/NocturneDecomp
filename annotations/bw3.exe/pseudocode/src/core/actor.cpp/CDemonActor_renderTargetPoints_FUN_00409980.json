@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 370,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 27,
+    "pseudocode_lines": 90,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 360
+    "total_lines": 370
   },
   "cross_references": [],
   "function": {
@@ -50,9 +48,9 @@
   "globals": [
     {
       "addr": "005dafd0",
-      "name": "DAT_005dafd0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dafd0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005db0f0",
@@ -62,38 +60,38 @@
     },
     {
       "addr": "005f2af8",
-      "name": "DAT_005f2af8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2af8",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c69c70",
-      "name": "DAT_01c69c70",
+      "name": "g_UCHAR_ARRAY_01c62070+0x7c00",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5c0",
-      "name": "DAT_01c6b5c0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5c0",
+      "type": "int",
       "value": null
     }
   ],
@@ -202,219 +200,59 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01c69c70",
-      "severity": "mild",
-      "text": "uStack_14 = (uint)DAT_01c69c70;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(float *)((int)pCVar7",
+      "severity": "moderate",
+      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(float *)((int)pCVar6",
+      "match": "(float *)((int)pCVar7",
       "severity": "moderate",
-      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005dafd0);",
+      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(float *)((int)pCVar6",
+      "line": 89,
+      "match": "(CVector3f *)((int)pCVar7",
       "severity": "moderate",
-      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005dafd0);",
+      "text": "pCVar7 = (CVector3f *)((int)pCVar7 + 0xc);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && (iVar3 < DAT_005fba18)) && (iVar5 < DAT_005fba1c)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && (iVar3 < DAT_005fba18)) && (iVar5 < DAT_005fba1c)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005fba18)) && (iVar2 < DAT_005fba1c)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005fba18)) && (iVar2 < DAT_005fba1c)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005fba18)) && (iVar2 < DAT_005fba1c)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005fba18)) && (iVar2 < DAT_005fba1c)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005fba18 && (iVar2 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(CVector3f *)((int)pCVar6",
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)pCVar7",
       "severity": "moderate",
-      "text": "pCVar6 = (CVector3f *)((int)pCVar6 + 0xc);",
-      "type": "pointer_cast"
+      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 26,
-      "match": "(int)pCVar6",
+      "match": "(int)pCVar7",
       "severity": "moderate",
-      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005dafd0);",
+      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
-      "match": "(int)pCVar6",
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 89,
+      "match": "(int)pCVar7",
       "severity": "moderate",
-      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005dafd0);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 80,
-      "match": "(int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CVector3f *)((int)pCVar6 + 0xc);",
+      "text": "pCVar7 = (CVector3f *)((int)pCVar7 + 0xc);",
       "type": "pointer_truncation"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 80,
-      "match": "(CVector3f *)((int)pCVar6 + 0xc)",
+      "line": 89,
+      "match": "(CVector3f *)((int)pCVar7 + 0xc)",
       "severity": "moderate",
-      "text": "pCVar6 = (CVector3f *)((int)pCVar6 + 0xc);",
+      "text": "pCVar7 = (CVector3f *)((int)pCVar7 + 0xc);",
       "type": "pointer_cast"
     }
   ],

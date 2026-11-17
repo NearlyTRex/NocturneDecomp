@@ -18,8 +18,8 @@
 ;   TerminatedCString s_CFilterCache_getFilter_T_005ceabc
 ;   TerminatedCString s_core_dfilter_cpp_005ceae7
 ;   TerminatedCString s_CFilterCache_getFilter_O_005ceafb
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_ctor_FUN_004477f0
@@ -111,8 +111,8 @@ section .text
     MOV ESI,0x5ceae7                    ; 004476f9 | = "..\\core\\dfilter.cpp"
     MOV EDI,0x59                        ; 004476fe
     PUSH 0x5ceafb                       ; 00447703 | = "CFilterCache::getFilter - Out of memory"
-    MOV dword ptr [0x01d046a0],ESI      ; 00447708 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0044770e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00447708 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0044770e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447714
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00447719
@@ -155,8 +155,8 @@ section .text
         ;   Label: LAB_00447772
     MOV EAX,0x55                        ; 00447777
     PUSH 0x5ceabc                       ; 0044777c | = "CFilterCache::getFilter - Too many fi..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00447781 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00447787 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00447781 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00447787 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044778c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00447791

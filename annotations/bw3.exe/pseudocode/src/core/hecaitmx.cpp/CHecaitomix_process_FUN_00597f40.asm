@@ -12,8 +12,8 @@
 ;   TerminatedCString s_s_confused_while_walking_005d974b
 ;   TerminatedCString s_Zone_f_005d9775
 ;   TerminatedCString s_s_gave_up_chase_I_m_conf_005d977f
-;   undefined4 DAT_005d97a7
-;   undefined4 DAT_005d97af
+;   double g_DOUBLE_005d97a7 = 0.920000000000000
+;   double g_DOUBLE_005d97af = 0.900000000000000
 ;   undefined4 DAT_005e785c
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CConsole g_CConsoleInstance
@@ -160,7 +160,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0059807c
     ADD ESP,0x4                         ; 0059807f
     FLD float ptr [EBP + 0x76]          ; 00598082
-    FCOMP double ptr [0x005d97af]       ; 00598085 | DAT_005d97af
+    FCOMP double ptr [0x005d97af]       ; 00598085 | g_DOUBLE_005d97af
     FNSTSW AX                           ; 0059808b
     SAHF                                ; 0059808d
     JBE 0x005980a3                      ; 0059808e
@@ -319,7 +319,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0059821d
     ADD ESP,0x4                         ; 00598220
     FLD float ptr [EBP + 0x76]          ; 00598223
-    FCOMP double ptr [0x005d97af]       ; 00598226 | DAT_005d97af
+    FCOMP double ptr [0x005d97af]       ; 00598226 | g_DOUBLE_005d97af
     FNSTSW AX                           ; 0059822c
     SAHF                                ; 0059822e
     JBE 0x005980a3                      ; 0059822f
@@ -343,7 +343,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00598252
     ADD ESP,0x4                         ; 00598255
     FLD float ptr [EBP + 0x76]          ; 00598258
-    FCOMP double ptr [0x005d97af]       ; 0059825b | DAT_005d97af
+    FCOMP double ptr [0x005d97af]       ; 0059825b | g_DOUBLE_005d97af
     FNSTSW AX                           ; 00598261
     SAHF                                ; 00598263
     JBE 0x005980a3                      ; 00598264
@@ -373,7 +373,7 @@ section .text
         ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     FLD double ptr [EBP + 0x6a]         ; 005982a5
     ADD ESP,0x10                        ; 005982a8
-    FCOMP double ptr [0x005d97a7]       ; 005982ab | DAT_005d97a7
+    FCOMP double ptr [0x005d97a7]       ; 005982ab | g_DOUBLE_005d97a7
     FNSTSW AX                           ; 005982b1
     SAHF                                ; 005982b3
     JBE 0x005980bb                      ; 005982b4
@@ -442,7 +442,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00598365
     ADD ESP,0x4                         ; 00598368
     FLD float ptr [EBP + 0x76]          ; 0059836b
-    FCOMP double ptr [0x005d97af]       ; 0059836e | DAT_005d97af
+    FCOMP double ptr [0x005d97af]       ; 0059836e | g_DOUBLE_005d97af
     FNSTSW AX                           ; 00598374
     SAHF                                ; 00598376
     JBE 0x005980bb                      ; 00598377

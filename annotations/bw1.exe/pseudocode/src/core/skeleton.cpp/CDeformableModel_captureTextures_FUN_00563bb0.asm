@@ -13,8 +13,8 @@
 ;   core_skeleton.cpp_getDeformableModel_FUN_0056b520 at 0056b5aa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00565730
@@ -58,8 +58,8 @@ section .text
     MOV ESI,dword ptr [ESP]             ; 00563bf5
     PUSH ESI                            ; 00563bf8
         ;   Label: LAB_00563bf8
-    MOV EAX,[0x00612560]                ; 00563bf9 | DAT_00612560
-    PUSH EAX                            ; 00563bfe | DAT_01bc120c
+    MOV EAX,[0x00612560]                ; 00563bf9 | g_CDemonRenderer_PTR_00612560
+    PUSH EAX                            ; 00563bfe | g_CDemonRenderer_01bc120c
     INC EBX                             ; 00563bff
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 00563c00
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

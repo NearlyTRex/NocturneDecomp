@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_drawPolygon2_FUN_00582370(SRenderVertex **vertex_array,int vertex_count,int render_flags)
 
 {
   int iVar1;
   
-  if (_DAT_01c50948 == 0) {
+  if (g_INT_01c50948 == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02c833c8)(vertex_array,vertex_count,render_flags);
+  iVar1 = (*(code *)g_PTR_02c833c8)(vertex_array,vertex_count,render_flags);
   return iVar1;
 }

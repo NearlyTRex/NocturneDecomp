@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry *this_ptr)
 
 {
@@ -24,16 +22,16 @@ SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor
   memset((void *)((int)pvVar3 + -0xc4),0,0x60);
   memset((void *)((int)pvVar3 + -0x60),0,0x60);
   *(uint *)((int)pvVar3 + -100) = 0;
-  iVar2 = (int)_DAT_01cc4200;
+  iVar2 = g_INT_01cc4200;
   *(uint *)((int)pvVar3 + -0xd4) = 0x69;
   *(uint *)((int)pvVar3 + -0xd0) = 0x2f;
   if (iVar2 == 0) {
-    _DAT_01cc4200 = pSVar1;
+    g_INT_01cc4200 = (int)pSVar1;
     return pSVar1;
   }
-  _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
-  _DAT_01d1d404 = 0x40b;
+  g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
+  g_INT_01d1d404 = 0x40b;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Can't have more than one twana entry right now");
-  _DAT_01cc4200 = pSVar1;
+  g_INT_01cc4200 = (int)pSVar1;
   return pSVar1;
 }

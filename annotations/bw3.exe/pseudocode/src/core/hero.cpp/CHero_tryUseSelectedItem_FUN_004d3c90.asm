@@ -10,12 +10,12 @@
 ;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 0051ae1b
 ;
 ; Referenced Globals:
-;   undefined4 s_N_CHealthItem_005c4deb+2
+;   TerminatedCString s_CHealthItem_005c4ded
 ;   TerminatedCString s_journal_kfm_005c4df9
 ;   TerminatedCString s_lantern_kfm_005c4e05
 ;   TerminatedCString s_voodoo_d_kfm_005c4e11
 ;   TerminatedCString s_UseSPS_005c4e1e
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;   CFieldNotes* g_CFieldNotesPtr = 01d1a05c
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CFieldNotesInstance.is_displayed
@@ -49,7 +49,7 @@ section .text
     POP ESI                             ; 004d3cab
     POP EBX                             ; 004d3cac
     RET                                 ; 004d3cad
-    PUSH 0x5c4ded                       ; 004d3cae | s_N_CHealthItem_005c4deb+2
+    PUSH 0x5c4ded                       ; 004d3cae | = "CHealthItem"
         ;   Label: LAB_004d3cae
     PUSH EAX                            ; 004d3cb3
     CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004d3cb4
@@ -169,7 +169,7 @@ section .text
     RET                                 ; 004d3dc9
     PUSH 0x5c4e1e                       ; 004d3dca | = "UseSPS"
         ;   Label: LAB_004d3dca
-    MOV EDI,dword ptr [0x005fba60]      ; 004d3dcf | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 004d3dcf | g_CEventList_PTR_005fba60
     PUSH EDI                            ; 004d3dd5
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004d3dd6
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

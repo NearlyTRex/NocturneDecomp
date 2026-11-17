@@ -13,10 +13,10 @@
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535c63
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
 ;   undefined4 g_BloodParticles[0].base.lifetime_remaining
@@ -50,9 +50,9 @@ section .text
     POP ESI                             ; 004ce5c6
     POP EBX                             ; 004ce5c7
     RET                                 ; 004ce5c8
-    MOV ECX,dword ptr [0x005f2afc]      ; 004ce5c9 | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 004ce5c9 | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_004ce5c9
-    PUSH ECX                            ; 004ce5cf | DAT_01bdd7e4
+    PUSH ECX                            ; 004ce5cf | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 004ce5d0
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004ce5d5

@@ -62,9 +62,9 @@
 ;   core_fire.cpp_CSpark_process_FUN_004945b0 at 00494608
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e159a
-;   undefined4 DAT_005e159e
-;   undefined4 DAT_005e15a2
+;   float g_FLOAT_005e159a = 0.8000000
+;   float g_FLOAT_005e159e = 2
+;   float g_FLOAT_005e15a2 = -0.7000000
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   CDemonRaytrace g_CDemonRaytraceInstance
@@ -252,7 +252,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00511121
     MOVSD ES:EDI,ESI                    ; 00511122
     MOVSD ES:EDI,ESI                    ; 00511123
-    FLD float ptr [0x005e159a]          ; 00511124 | DAT_005e159a
+    FLD float ptr [0x005e159a]          ; 00511124 | g_FLOAT_005e159a
     FLD float ptr [ESP + 0x6c]          ; 0051112a
     FMUL ST1                            ; 0051112e
     FLD float ptr [ESP + 0x70]          ; 00511130
@@ -339,7 +339,7 @@ section .text
     FLD float ptr [ESP + 0x8c]          ; 0051122b
     FMUL float ptr [EDX + 0x8]          ; 00511232
     FADDP                               ; 00511235
-    FMUL float ptr [0x005e159e]         ; 00511237 | DAT_005e159e
+    FMUL float ptr [0x005e159e]         ; 00511237 | g_FLOAT_005e159e
     FLD float ptr [ESP + 0x84]          ; 0051123d
     FXCH                                ; 00511244
     FSTP float ptr [ESP + 0x10c]        ; 00511246
@@ -388,7 +388,7 @@ section .text
     MOV dword ptr [EDX + 0x8],EAX       ; 005112fe
     LEA EDX,[EBX + 0xc]                 ; 00511301
         ;   Label: LAB_00511301
-    FLD float ptr [0x005e15a2]          ; 00511304 | DAT_005e15a2
+    FLD float ptr [0x005e15a2]          ; 00511304 | g_FLOAT_005e15a2
     FLD float ptr [EDX]                 ; 0051130a
     FMUL ST1                            ; 0051130c
     FLD float ptr [EDX + 0x4]           ; 0051130e

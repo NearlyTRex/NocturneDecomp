@@ -14,7 +14,7 @@ uint * FUN_005c1500(int param_1,uint param_2,int param_3,uint *param_4)
   int iVar3;
   uint uVar4;
   uint uVar5;
-  byte *local_14;
+  short *local_14;
   
   if ((param_2 < 0xa8c0) && (0 < param_3)) {
     param_2 = (param_2 + 0x15180) - param_3;
@@ -39,17 +39,17 @@ uint * FUN_005c1500(int param_1,uint param_2,int param_3,uint *param_4)
   }
   param_4[5] = uVar2;
   param_4[7] = uVar4;
-  local_14 = &DAT_006013f4;
+  local_14 = &g_SHORT_006013f4;
   iVar3 = FUN_005c1690(uVar2 + 0x76c);
   if (iVar3 != 0) {
-    local_14 = &DAT_0060140e;
+    local_14 = &g_SHORT_0060140e;
   }
   uVar2 = uVar4 / 0x1f;
-  if ((uint)(*(int *)(local_14 + uVar2 * 2) >> 0x10) <= uVar4) {
+  if ((uint)(*(int *)(local_14 + uVar2) >> 0x10) <= uVar4) {
     uVar2 = uVar2 + 1;
   }
   param_4[4] = uVar2;
-  param_4[3] = (uVar4 - (int)*(short *)(local_14 + uVar2 * 2)) + 1;
+  param_4[3] = (uVar4 - (int)local_14[uVar2]) + 1;
   param_4[6] = (uVar5 + 1) % 7;
   return param_4;
 }

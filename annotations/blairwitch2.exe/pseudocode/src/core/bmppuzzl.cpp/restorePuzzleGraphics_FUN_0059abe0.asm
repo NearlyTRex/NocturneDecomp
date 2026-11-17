@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_026677b4
+;   int[1] g_INT_ARRAY_026677b4
 ;
 ; *****************************************************************************
 
@@ -13,7 +13,7 @@ section .text
 
     PUSH EBX                            ; 0059abe0
         ;   Label: core_bmppuzzl.cpp_restorePuzzleGraphics_FUN_0059abe0
-    MOV EDX,dword ptr [0x026677b4]      ; 0059abe1 | DAT_026677b4
+    MOV EDX,dword ptr [0x026677b4]      ; 0059abe1 | g_INT_ARRAY_026677b4
     XOR EBX,EBX                         ; 0059abe7
     TEST EDX,EDX                        ; 0059abe9
     JLE 0x0059ac0e                      ; 0059abeb
@@ -27,7 +27,7 @@ section .text
     ADD ESI,0x4                         ; 0059abf9
     INC EBX                             ; 0059abfc
     CALL dword ptr [EDX + 0xc]          ; 0059abfd
-    MOV ECX,dword ptr [0x026677b4]      ; 0059ac00 | DAT_026677b4
+    MOV ECX,dword ptr [0x026677b4]      ; 0059ac00 | g_INT_ARRAY_026677b4
     ADD ESP,0x4                         ; 0059ac06
     CMP EBX,ECX                         ; 0059ac09
     JL 0x0059abf0                       ; 0059ac0b

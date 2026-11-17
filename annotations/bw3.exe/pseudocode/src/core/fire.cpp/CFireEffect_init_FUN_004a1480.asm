@@ -14,21 +14,21 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b866b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c74e9c
-;   undefined4 DAT_01c74ea0
-;   undefined4 DAT_01c74ecc
-;   undefined4 DAT_01c8aea0
-;   undefined4 DAT_01c8aea4
-;   undefined4 DAT_01c8eea8
-;   undefined4 DAT_01c8eeac
-;   undefined4 DAT_01cb4eb0
+;   int g_INT_01c74e9c
+;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c74ea0
+;   undefined4 g_CSmokeParticle_ARRAY_01c74ea0[1].active
+;   int g_INT_01c8aea0
+;   int g_INT_01c8aea4
+;   int g_INT_01c8eea8
+;   int g_INT_01c8eeac
+;   int g_INT_01cb4eb0
 ;   undefined4 g_SparkPool[0].base.lifetime_remaining
 ;   undefined4 g_SparkPool[1].base.lifetime_remaining
-;   undefined4 DAT_01cba2b4
+;   int g_INT_01cba2b4
 ;   undefined4 CFirefly_ARRAY_01cba2b8[0].base.lifetime_remaining
 ;   undefined4 CFirefly_ARRAY_01cba2b8[1].base.lifetime_remaining
-;   undefined4 DAT_01cbb9bc
-;   undefined4 DAT_01cbba18
+;   CMuzzleFlash[20] g_CMuzzleFlash_ARRAY_01cbb9bc
+;   undefined4 g_CMuzzleFlash_ARRAY_01cbb9bc[1].frames_remaining
 ;   ... and 31 more
 ;
 ; Called Functions:
@@ -51,8 +51,8 @@ section .text
     MOV EBX,0x1c74ea0                   ; 004a1483
     XOR EDX,EDX                         ; 004a1488
     LEA ESI,[EBX + 0x16000]             ; 004a148a
-    MOV dword ptr [0x01c74e9c],EDX      ; 004a1490 | DAT_01c74e9c
-    PUSH EBX                            ; 004a1496 | DAT_01c74ea0 | DAT_01c74ecc
+    MOV dword ptr [0x01c74e9c],EDX      ; 004a1490 | g_INT_01c74e9c
+    PUSH EBX                            ; 004a1496 | g_CSmokeParticle_ARRAY_01c74ea0 | g_CSmokeParticle_ARRAY_01c74ea0[1].active
         ;   Label: LAB_004a1496
     CALL core_fire.cpp_CSmokeParticle_reset_FUN_00496d50 ; 004a1497
         ;   XREF to: 00496d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_reset_FUN_00496d50(CSmokeParticle * this_ptr)
@@ -63,10 +63,10 @@ section .text
         ;   XREF to: 004a1496 (CONDITIONAL_JUMP)  ; LAB_004a1496
     XOR ECX,ECX                         ; 004a14a6
     XOR EBX,ESI                         ; 004a14a8
-    MOV dword ptr [0x01c8aea4],ECX      ; 004a14aa | DAT_01c8aea4
-    MOV dword ptr [0x01c8aea0],EBX      ; 004a14b0 | DAT_01c8aea0
+    MOV dword ptr [0x01c8aea4],ECX      ; 004a14aa | g_INT_01c8aea4
+    MOV dword ptr [0x01c8aea0],EBX      ; 004a14b0 | g_INT_01c8aea0
     MOV EBX,0x1cb4eb4                   ; 004a14b6
-    MOV dword ptr [0x01cb4eb0],ECX      ; 004a14bb | DAT_01cb4eb0
+    MOV dword ptr [0x01cb4eb0],ECX      ; 004a14bb | g_INT_01cb4eb0
     LEA EAX,[EBX + 0x5400]              ; 004a14c1
     ADD EBX,0x54                        ; 004a14c7
         ;   Label: LAB_004a14c7
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 004a14e0 (CONDITIONAL_JUMP)  ; LAB_004a14e0
     MOV EBX,0x1cbb9bc                   ; 004a14ee
     LEA EAX,[EBX + 0x730]               ; 004a14f3
-    MOV dword ptr [EBX],0x0             ; 004a14f9 | DAT_01cbb9bc | DAT_01cbba18
+    MOV dword ptr [EBX],0x0             ; 004a14f9 | g_CMuzzleFlash_ARRAY_01cbb9bc | g_CMuzzleFlash_ARRAY_01cbb9bc[1].frames_remaining
         ;   Label: LAB_004a14f9
     ADD EBX,0x5c                        ; 004a14ff
     CMP EBX,EAX                         ; 004a1502
@@ -93,9 +93,9 @@ section .text
     PUSH EDI                            ; 004a1506
     XOR EDI,EDI                         ; 004a1507
     MOV EBX,0x1cbc0f0                   ; 004a1509
-    MOV dword ptr [0x01c8eea8],EDI      ; 004a150e | DAT_01c8eea8
-    MOV dword ptr [0x01c8eeac],EDI      ; 004a1514 | DAT_01c8eeac
-    MOV dword ptr [0x01cbc0ec],EDI      ; 004a151a | DAT_01cbc0ec
+    MOV dword ptr [0x01c8eea8],EDI      ; 004a150e | g_INT_01c8eea8
+    MOV dword ptr [0x01c8eeac],EDI      ; 004a1514 | g_INT_01c8eeac
+    MOV dword ptr [0x01cbc0ec],EDI      ; 004a151a | g_INT_01cbc0ec
     LEA EAX,[EBX + 0x33c20]             ; 004a1520
     ADD EBX,0xd4                        ; 004a1526
         ;   Label: LAB_004a1526
@@ -107,13 +107,13 @@ section .text
     LEA EAX,[EBX + 0x168]               ; 004a153f
     ADD EBX,0x24                        ; 004a1545
         ;   Label: LAB_004a1545
-    MOV dword ptr [EBX + -0x4],0x0      ; 004a1548 | DAT_01cefd34 | DAT_01cefd58
+    MOV dword ptr [EBX + -0x4],0x0      ; 004a1548 | g_CBulletTrail_ARRAY_01cefd14[0].frames_remaining | g_CBulletTrail_ARRAY_01cefd14[1].frames_remaining
     CMP EBX,EAX                         ; 004a154f
     JNZ 0x004a1545                      ; 004a1551
         ;   XREF to: 004a1545 (CONDITIONAL_JUMP)  ; LAB_004a1545
     XOR EDX,EDX                         ; 004a1553
     MOV EBX,0x1cefe80                   ; 004a1555
-    MOV dword ptr [0x01cefe7c],EDX      ; 004a155a | DAT_01cefe7c
+    MOV dword ptr [0x01cefe7c],EDX      ; 004a155a | g_INT_01cefe7c
     LEA EAX,[EBX + 0x2900]              ; 004a1560
     ADD EBX,0xa4                        ; 004a1566
         ;   Label: LAB_004a1566
@@ -123,7 +123,7 @@ section .text
         ;   XREF to: 004a1566 (CONDITIONAL_JUMP)  ; LAB_004a1566
     XOR ECX,ECX                         ; 004a1577
     MOV EBX,0x1cf2784                   ; 004a1579
-    MOV dword ptr [0x01cf2780],ECX      ; 004a157e | DAT_01cf2780
+    MOV dword ptr [0x01cf2780],ECX      ; 004a157e | g_INT_01cf2780
     LEA EAX,[EBX + 0x1400]              ; 004a1584
     ADD EBX,0x50                        ; 004a158a
         ;   Label: LAB_004a158a
@@ -132,7 +132,7 @@ section .text
     JNZ 0x004a158a                      ; 004a1596
         ;   XREF to: 004a158a (CONDITIONAL_JUMP)  ; LAB_004a158a
     XOR EBX,EAX                         ; 004a1598
-    MOV dword ptr [0x01cf3b84],EBX      ; 004a159a | DAT_01cf3b84
+    MOV dword ptr [0x01cf3b84],EBX      ; 004a159a | g_INT_01cf3b84
     MOV EBX,0x1cf3b88                   ; 004a15a0
     LEA EAX,[EBX + 0x1500]              ; 004a15a5
     ADD EBX,0x54                        ; 004a15ab
@@ -143,7 +143,7 @@ section .text
         ;   XREF to: 004a15ab (CONDITIONAL_JUMP)  ; LAB_004a15ab
     XOR ESI,ESI                         ; 004a15b9
     MOV EBX,0x1cba2b8                   ; 004a15bb
-    MOV dword ptr [0x01cba2b4],ESI      ; 004a15c0 | DAT_01cba2b4
+    MOV dword ptr [0x01cba2b4],ESI      ; 004a15c0 | g_INT_01cba2b4
     LEA EAX,[EBX + 0x1700]              ; 004a15c6
     ADD EBX,0x5c                        ; 004a15cc
         ;   Label: LAB_004a15cc
@@ -154,7 +154,7 @@ section .text
     MOV EBX,0x1cf6090                   ; 004a15da
     XOR EDI,EDI                         ; 004a15df
     LEA ESI,[EBX + 0x140]               ; 004a15e1
-    MOV dword ptr [0x01cf608c],EDI      ; 004a15e7 | DAT_01cf608c
+    MOV dword ptr [0x01cf608c],EDI      ; 004a15e7 | g_INT_01cf608c
     PUSH EBX                            ; 004a15ed
         ;   Label: LAB_004a15ed
     CALL core_fire.cpp_CExplosion_ctor_FUN_0049c670 ; 004a15ee
@@ -167,7 +167,7 @@ section .text
     MOV EBX,0x1cf61d4                   ; 004a15fd
     XOR EBP,EBP                         ; 004a1602
     LEA ESI,[EBX + 0x4e20]              ; 004a1604
-    MOV dword ptr [0x01cf61d0],EBP      ; 004a160a | DAT_01cf61d0
+    MOV dword ptr [0x01cf61d0],EBP      ; 004a160a | g_INT_01cf61d0
     PUSH EBX                            ; 004a1610
         ;   Label: LAB_004a1610
     CALL core_fire.cpp_CToss_reset_FUN_0049cec0 ; 004a1611
@@ -180,7 +180,7 @@ section .text
     MOV EBX,0x1cfaff8                   ; 004a1623
     XOR EAX,EAX                         ; 004a1628
     LEA ESI,[EBX + 0x8c0]               ; 004a162a
-    MOV [0x01cfaff4],EAX                ; 004a1630 | DAT_01cfaff4
+    MOV [0x01cfaff4],EAX                ; 004a1630 | g_INT_01cfaff4
     PUSH EBX                            ; 004a1635
         ;   Label: LAB_004a1635
     CALL core_fire.cpp_CCrater_reset_FUN_0049d570 ; 004a1636
@@ -193,7 +193,7 @@ section .text
     MOV EBX,0x1cfb8bc                   ; 004a1645
     XOR EDX,EDX                         ; 004a164a
     LEA ESI,[EBX + 0x55f0]              ; 004a164c
-    MOV dword ptr [0x01cfb8b8],EDX      ; 004a1652 | DAT_01cfb8b8
+    MOV dword ptr [0x01cfb8b8],EDX      ; 004a1652 | g_INT_01cfb8b8
     PUSH EBX                            ; 004a1658
         ;   Label: LAB_004a1658
     CALL core_fire.cpp_CExplosion_ctor_FUN_0049c670 ; 004a1659
@@ -206,7 +206,7 @@ section .text
     MOV EBX,0x1d00eb0                   ; 004a1668
     XOR ECX,ECX                         ; 004a166d
     LEA ESI,[EBX + 0xc00]               ; 004a166f
-    MOV dword ptr [0x01d00eac],ECX      ; 004a1675 | DAT_01d00eac
+    MOV dword ptr [0x01d00eac],ECX      ; 004a1675 | g_INT_01d00eac
     PUSH EBX                            ; 004a167b
         ;   Label: LAB_004a167b
     CALL core_fire.cpp_CLightningBolt_reset_FUN_0049f410 ; 004a167c
@@ -217,7 +217,7 @@ section .text
     JNZ 0x004a167b                      ; 004a1689
         ;   XREF to: 004a167b (CONDITIONAL_JUMP)  ; LAB_004a167b
     XOR EBX,ESI                         ; 004a168b
-    MOV dword ptr [0x01d01ab0],EBX      ; 004a168d | DAT_01d01ab0
+    MOV dword ptr [0x01d01ab0],EBX      ; 004a168d | g_INT_01d01ab0
     MOV EBX,0x1d01ab4                   ; 004a1693
     LEA ESI,[EBX + 0xe10]               ; 004a1698
     PUSH EBX                            ; 004a169e
@@ -231,7 +231,7 @@ section .text
         ;   XREF to: 004a169e (CONDITIONAL_JUMP)  ; LAB_004a169e
     XOR ESI,ESI                         ; 004a16ae
     MOV EBX,0x1d028c8                   ; 004a16b0
-    MOV dword ptr [0x01d028c4],ESI      ; 004a16b5 | DAT_01d028c4
+    MOV dword ptr [0x01d028c4],ESI      ; 004a16b5 | g_INT_01d028c4
     LEA EAX,[EBX + 0x12c0]              ; 004a16bb
     ADD EBX,0x60                        ; 004a16c1
         ;   Label: LAB_004a16c1
@@ -241,7 +241,7 @@ section .text
         ;   XREF to: 004a16c1 (CONDITIONAL_JUMP)  ; LAB_004a16c1
     XOR EDI,EDI                         ; 004a16cf
     MOV EBX,0x1d03b8c                   ; 004a16d1
-    MOV dword ptr [0x01d03b88],EDI      ; 004a16d6 | DAT_01d03b88
+    MOV dword ptr [0x01d03b88],EDI      ; 004a16d6 | g_INT_01d03b88
     LEA EAX,[EBX + 0x4000]              ; 004a16dc
     POP EDI                             ; 004a16e2
     ADD EBX,0x40                        ; 004a16e3
@@ -252,7 +252,7 @@ section .text
         ;   XREF to: 004a16e3 (CONDITIONAL_JUMP)  ; LAB_004a16e3
     XOR EBP,EBP                         ; 004a16f1
     MOV EBX,0x1d07b90                   ; 004a16f3
-    MOV dword ptr [0x01d07b8c],EBP      ; 004a16f8 | DAT_01d07b8c
+    MOV dword ptr [0x01d07b8c],EBP      ; 004a16f8 | g_INT_01d07b8c
     LEA EAX,[EBX + 0x4000]              ; 004a16fe
     ADD EBX,0x40                        ; 004a1704
         ;   Label: LAB_004a1704
@@ -263,7 +263,7 @@ section .text
     MOV EBX,0x1d0bb94                   ; 004a1712
     XOR EAX,EAX                         ; 004a1717
     LEA ESI,[EBX + 0x12e8]              ; 004a1719
-    MOV [0x01d0bb90],EAX                ; 004a171f | DAT_01d0bb90
+    MOV [0x01d0bb90],EAX                ; 004a171f | g_INT_01d0bb90
     PUSH EBX                            ; 004a1724
         ;   Label: LAB_004a1724
     CALL core_fire.cpp_CLightningBolt_reset_FUN_0049f410 ; 004a1725
@@ -276,7 +276,7 @@ section .text
     MOV EBX,0x1d0ce80                   ; 004a1737
     XOR EDX,EDX                         ; 004a173c
     LEA ESI,[EBX + 0x30]                ; 004a173e
-    MOV dword ptr [0x01d0ce7c],EDX      ; 004a1741 | DAT_01d0ce7c
+    MOV dword ptr [0x01d0ce7c],EDX      ; 004a1741 | g_INT_01d0ce7c
     PUSH EBX                            ; 004a1747
         ;   Label: LAB_004a1747
     CALL core_fire.cpp_CStormEffect_reset_FUN_004a0470 ; 004a1748

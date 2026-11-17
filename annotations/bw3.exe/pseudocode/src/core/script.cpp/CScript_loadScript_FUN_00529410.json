@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 189,
-    "complexity_score": 155,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen"
@@ -113,32 +112,32 @@
     },
     {
       "addr": "005cde39",
-      "name": "DAT_005cde39",
-      "type": "undefined1",
+      "name": "s_txt_005cde39",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cde3a",
-      "name": "DAT_005cde3a",
-      "type": "undefined1",
+      "name": "s_txt_005cde39+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cde3b",
-      "name": "DAT_005cde3b",
-      "type": "undefined1",
+      "name": "s_txt_005cde39+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cde3c",
-      "name": "DAT_005cde3c",
-      "type": "undefined1",
+      "name": "s_txt_005cde39+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cde3e",
-      "name": "DAT_005cde3e",
-      "type": "undefined4",
+      "name": "s_rt_005cde3e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -289,22 +288,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005cde39",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_005cde39;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005cde3e",
-      "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_getFile_FUN_004659c0(\"world\",filename,&DAT_005cde3e);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 38,

@@ -10,9 +10,9 @@
 ;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0 at 004fad71
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6078
+;   TerminatedCString s_rt_005e6078
 ;   TerminatedCString s_invsize_txt_005e607b
-;   undefined4 DAT_005e6087
+;   TerminatedCString s_data_005e6087
 ;   TerminatedCString s_d_d_005e608c
 ;   TerminatedCString s_invback_005e6093
 ;   TerminatedCString s_invback2_005e609b
@@ -45,11 +45,11 @@ section .text
     PUSH ESI                            ; 004f70e1
     PUSH EDI                            ; 004f70e2
     PUSH EBP                            ; 004f70e3
-    PUSH 0x5e6078                       ; 004f70e4 | DAT_005e6078
+    PUSH 0x5e6078                       ; 004f70e4 | = "rt"
     PUSH 0x5e607b                       ; 004f70e9 | = "invsize.txt"
-    MOV EAX,[0x0061b49c]                ; 004f70ee | DAT_0061b49c
-    PUSH 0x5e6087                       ; 004f70f3 | DAT_005e6087
-    MOV [0x01d1bc5c],EAX                ; 004f70f8 | DAT_01d1bc5c
+    MOV EAX,[0x0061b49c]                ; 004f70ee | g_INT_0061b49c
+    PUSH 0x5e6087                       ; 004f70f3 | = "data"
+    MOV [0x01d1bc5c],EAX                ; 004f70f8 | g_INT_01d1bc5c
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 004f70fd
         ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004f7102
@@ -57,17 +57,17 @@ section .text
     TEST EAX,EAX                        ; 004f7107
     JNZ 0x004f7567                      ; 004f7109
         ;   XREF to: 004f7567 (CONDITIONAL_JUMP)  ; LAB_004f7567
-    MOV EDX,dword ptr [0x0061f1a4]      ; 004f710f | DAT_0061f1a4
+    MOV EDX,dword ptr [0x0061f1a4]      ; 004f710f | g_INT_0061f1a4
         ;   Label: LAB_004f710f
     PUSH EDX                            ; 004f7115
-    MOV ECX,dword ptr [0x0061f1a0]      ; 004f7116 | DAT_0061f1a0
+    MOV ECX,dword ptr [0x0061f1a0]      ; 004f7116 | g_INT_0061f1a0
     PUSH ECX                            ; 004f711c
     PUSH 0x5e6093                       ; 004f711d | = "invback"
     PUSH 0x1d08d78                      ; 004f7122
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220 ; 004f7127
         ;   XREF to: 0040d220 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004f712c
-    MOV EBX,dword ptr [0x0061f1a4]      ; 004f712f | DAT_0061f1a4
+    MOV EBX,dword ptr [0x0061f1a4]      ; 004f712f | g_INT_0061f1a4
     PUSH EBX                            ; 004f7135
     PUSH EBX                            ; 004f7136
     PUSH 0x5e609b                       ; 004f7137 | = "invback2"
@@ -75,16 +75,16 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220 ; 004f7141
         ;   XREF to: 0040d220 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004f7146
-    MOV EDI,dword ptr [0x0061f1a4]      ; 004f7149 | DAT_0061f1a4
+    MOV EDI,dword ptr [0x0061f1a4]      ; 004f7149 | g_INT_0061f1a4
     PUSH EDI                            ; 004f714f
-    MOV EBP,dword ptr [0x0061f1a0]      ; 004f7150 | DAT_0061f1a0
+    MOV EBP,dword ptr [0x0061f1a0]      ; 004f7150 | g_INT_0061f1a0
     PUSH EBP                            ; 004f7156
     PUSH 0x5e60a4                       ; 004f7157 | = "weapback"
     PUSH 0x1d08da0                      ; 004f715c
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220 ; 004f7161
         ;   XREF to: 0040d220 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004f7166
-    MOV EAX,[0x0061f1a4]                ; 004f7169 | DAT_0061f1a4
+    MOV EAX,[0x0061f1a4]                ; 004f7169 | g_INT_0061f1a4
     PUSH EAX                            ; 004f716e
     PUSH EAX                            ; 004f716f
     PUSH 0x5e60ad                       ; 004f7170 | = "weapback2"
@@ -293,13 +293,13 @@ section .text
     PUSH EDI                            ; 004f73f4
     MOV AL,byte ptr [ESI]               ; 004f73f5 | = "compass_arrow.raw" | s_compass_arrow_raw_005e61b4+2
         ;   Label: LAB_004f73f5
-    MOV byte ptr [EDI],AL               ; 004f73f7 | DAT_01d1bab4 | DAT_01d1bab6
+    MOV byte ptr [EDI],AL               ; 004f73f7 | g_SMRGLTextureBasic_01d1baac.texture_name[0] | g_SMRGLTextureBasic_01d1baac.texture_name[2]
     CMP AL,0x0                          ; 004f73f9
     JZ 0x004f740d                       ; 004f73fb
         ;   XREF to: 004f740d (CONDITIONAL_JUMP)  ; LAB_004f740d
     MOV AL,byte ptr [ESI + 0x1]         ; 004f73fd | s_compass_arrow_raw_005e61b4+1 | s_compass_arrow_raw_005e61b4+3
     ADD ESI,0x2                         ; 004f7400
-    MOV byte ptr [EDI + 0x1],AL         ; 004f7403 | DAT_01d1bab5 | DAT_01d1bab7
+    MOV byte ptr [EDI + 0x1],AL         ; 004f7403 | g_SMRGLTextureBasic_01d1baac.texture_name[1] | g_SMRGLTextureBasic_01d1baac.texture_name[3]
     ADD EDI,0x2                         ; 004f7406
     CMP AL,0x0                          ; 004f7409
     JNZ 0x004f73f5                      ; 004f740b
@@ -313,7 +313,7 @@ section .text
     MOV ECX,0xffffffff                  ; 004f741d
     ADD ESP,0x4                         ; 004f7422
     MOV EBX,dword ptr [EAX + 0x4]       ; 004f7425 | g_CGameInstance.game_pixy
-    MOV dword ptr [0x01d1bc48],ECX      ; 004f7428 | DAT_01d1bc48
+    MOV dword ptr [0x01d1bc48],ECX      ; 004f7428 | g_INT_01d1bc48
     CMP EBX,0x180                       ; 004f742e
     JGE 0x004f7517                      ; 004f7434
         ;   XREF to: 004f7517 (CONDITIONAL_JUMP)  ; LAB_004f7517
@@ -395,12 +395,12 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040d840 ; 004f750f
         ;   XREF to: 0040d840 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040d840(CAlphaBitmap * this_ptr, int scaleFactorX, int scaleFactorY)
     ADD ESP,0xc                         ; 004f7514
-    PUSH 0x5e61c6                       ; 004f7517 | DAT_005e61c6
+    PUSH 0x5e61c6                       ; 004f7517 | = "rt"
         ;   Label: LAB_004f7517
     PUSH 0x5e61c9                       ; 004f751c | = "itemlist.txt"
     XOR ESI,ESI                         ; 004f7521
-    PUSH 0x5e61d6                       ; 004f7523 | DAT_005e61d6
-    MOV dword ptr [0x01d08dc8],ESI      ; 004f7528 | DAT_01d08dc8
+    PUSH 0x5e61d6                       ; 004f7523 | g_CHAR_005e61d6
+    MOV dword ptr [0x01d08dc8],ESI      ; 004f7528 | g_INT_01d08dc8
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 004f752e
         ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004f7533
@@ -412,7 +412,7 @@ section .text
         ;   Label: LAB_004f753c
     JNZ 0x004f758d                      ; 004f7540
         ;   XREF to: 004f758d (CONDITIONAL_JUMP)  ; LAB_004f758d
-    IMUL EAX,dword ptr [0x01d08dc8],0x300 ; 004f7542 | DAT_01d08dc8
+    IMUL EAX,dword ptr [0x01d08dc8],0x300 ; 004f7542 | g_INT_01d08dc8
     PUSH EBX                            ; 004f754c
     ADD EAX,0x1d08dd0                   ; 004f754d
     PUSH EAX                            ; 004f7552
@@ -422,12 +422,12 @@ section .text
     TEST EAX,EAX                        ; 004f755b
     JZ 0x004f758d                       ; 004f755d
         ;   XREF to: 004f758d (CONDITIONAL_JUMP)  ; LAB_004f758d
-    INC dword ptr [0x01d08dc8]          ; 004f755f | DAT_01d08dc8
+    INC dword ptr [0x01d08dc8]          ; 004f755f | g_INT_01d08dc8
     JMP 0x004f753c                      ; 004f7565
         ;   XREF to: 004f753c (UNCONDITIONAL_JUMP)  ; LAB_004f753c
-    PUSH 0x61f1a4                       ; 004f7567 | DAT_0061f1a4
+    PUSH 0x61f1a4                       ; 004f7567 | g_INT_0061f1a4
         ;   Label: LAB_004f7567
-    PUSH 0x61f1a0                       ; 004f756c | DAT_0061f1a0
+    PUSH 0x61f1a0                       ; 004f756c | g_INT_0061f1a0
     PUSH 0x5e608c                       ; 004f7571 | = "%d,%d\n"
     PUSH EAX                            ; 004f7576
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004f7577

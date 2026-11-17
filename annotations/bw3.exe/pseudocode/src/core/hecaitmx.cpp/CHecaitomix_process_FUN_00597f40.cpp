@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hecaitmx_cpp_CHecaitomix_process_FUN_00597f40(CHecaitomix *this_ptr,float delta_time)
 
 {
@@ -80,7 +78,7 @@ void __cdecl core_hecaitmx_cpp_CHecaitomix_process_FUN_00597f40(CHecaitomix *thi
       if (EVar3 == WALK_STATE_WALKING) {
         fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                               (&pCVar1->base);
-        if ((float)_DAT_005d97af < fStack_14) {
+        if ((float)0.90000000000000002 < fStack_14) {
           iVar4 = 2;
 LAB_0059809b:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -91,7 +89,7 @@ LAB_0059809b:
 LAB_00598246:
         fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                               (&(this_ptr->base).base.model.base);
-        if ((float)_DAT_005d97af < fStack_14) {
+        if ((float)0.90000000000000002 < fStack_14) {
           iVar4 = 1;
           goto LAB_0059809b;
         }
@@ -100,7 +98,7 @@ LAB_00598246:
     else if (EVar3 < WALK_STATE_NO_PATH) {
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                             (&pCVar1->base);
-      if ((float)_DAT_005d97af < fStack_14) {
+      if ((float)0.90000000000000002 < fStack_14) {
         iVar4 = 2;
         goto LAB_0059809b;
       }
@@ -163,7 +161,7 @@ LAB_00598246:
     if (iVar4 != 0) {
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                             (&pCVar1->base);
-      if ((float)_DAT_005d97af < fStack_14) {
+      if ((float)0.90000000000000002 < fStack_14) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,2,1);
       }
       goto switchD_00598471_caseD_1;
@@ -176,7 +174,7 @@ LAB_00598246:
                           (&(this_ptr->base).base.model.base);
     dStack_20 = (double)fStack_14;
     engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Zone: %f\n");
-    if (dStack_20 <= _DAT_005d97a7) goto switchD_00598471_caseD_1;
+    if (dStack_20 <= 0.92000000000000004) goto switchD_00598471_caseD_1;
     break;
   case 7:
     if (((this_ptr->base).pool_me == 0) &&

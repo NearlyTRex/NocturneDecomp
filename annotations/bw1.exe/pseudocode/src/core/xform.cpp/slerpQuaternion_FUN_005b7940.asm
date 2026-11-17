@@ -36,7 +36,7 @@
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa178
+;   float g_FLOAT_005fa178 = 0.9999900
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_005c1d69
@@ -98,7 +98,7 @@ section .text
     FLD float ptr [ESP]                 ; 005b79bf
     FXCH                                ; 005b79c2
     FSTP float ptr [ESP + 0x48]         ; 005b79c4
-    FCOMP float ptr [0x005fa178]        ; 005b79c8 | DAT_005fa178
+    FCOMP float ptr [0x005fa178]        ; 005b79c8 | g_FLOAT_005fa178
     FNSTSW AX                           ; 005b79ce
     SAHF                                ; 005b79d0
     JBE 0x005b7aa8                      ; 005b79d1

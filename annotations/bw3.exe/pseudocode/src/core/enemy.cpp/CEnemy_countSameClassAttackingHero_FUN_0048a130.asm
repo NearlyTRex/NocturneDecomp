@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
@@ -63,7 +63,7 @@ section .text
     TEST EAX,EAX                        ; 0048a18c
     JNZ 0x0048a1a6                      ; 0048a18e
         ;   XREF to: 0048a1a6 (CONDITIONAL_JUMP)  ; LAB_0048a1a6
-    MOV EDX,dword ptr [0x01d5ba14]      ; 0048a190 | DAT_01d5ba14
+    MOV EDX,dword ptr [0x01d5ba14]      ; 0048a190 | g_INT_01d5ba14
     MOV EAX,dword ptr [EBX + 0xcde4]    ; 0048a196
     CMP EAX,dword ptr [EDX*0x4 + 0x1d5ba04] ; 0048a19c
     JNZ 0x0048a1a6                      ; 0048a1a3

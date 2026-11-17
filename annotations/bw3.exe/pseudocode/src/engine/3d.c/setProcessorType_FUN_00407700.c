@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_setProcessorType_FUN_00407700(int processor_type)
 
 {
-  _DAT_01c6e2b0 = processor_type;
+  g_INT_01c6e2b0 = processor_type;
   return;
 }

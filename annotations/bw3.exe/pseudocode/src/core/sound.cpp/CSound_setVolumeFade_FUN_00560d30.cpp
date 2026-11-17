@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_00560d30(CSound *this_ptr,float target_volume,float fade_time)
 
 {
-  _DAT_02cf5ecc = target_volume;
-  _DAT_02cf5ed0 = fade_time;
+  g_FLOAT_02cf5ecc = target_volume;
+  g_FLOAT_02cf5ed0 = fade_time;
   return;
 }

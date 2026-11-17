@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_ve_found_005e61d7
-;   undefined4 DAT_005e61e7
+;   TerminatedCString s_d_005e61e7
 ;   TerminatedCString s_CHealthItem_005e61eb
 ;   TerminatedCString s_Press_005e61f7
 ;   TerminatedCString s_and_005e61fe
@@ -104,7 +104,7 @@ section .text
     PUSH ESI                            ; 004f7707
     CALL dword ptr [EAX + 0x88]         ; 004f7708
     ADD ESP,0x8                         ; 004f770e
-    MOV EBX,dword ptr [0x01d06ab4]      ; 004f7711 | DAT_01d06ab4
+    MOV EBX,dword ptr [0x01d06ab4]      ; 004f7711 | g_INT_01d06ab4
         ;   Label: LAB_004f7711
     MOV EAX,dword ptr [EBP + 0x4]       ; 004f7717
     CMP EAX,dword ptr [EBX*0x4 + 0x1d06aa4] ; 004f771a
@@ -162,7 +162,7 @@ section .text
         ;   XREF to: 004f77f6 (CONDITIONAL_JUMP)  ; LAB_004f77f6
     MOV EAX,dword ptr [EBX + 0x314]     ; 004f77af
     PUSH EAX                            ; 004f77b5
-    PUSH 0x5e61e7                       ; 004f77b6 | DAT_005e61e7
+    PUSH 0x5e61e7                       ; 004f77b6 | = "%d "
     LEA EAX,[ESP + 0x108]               ; 004f77bb
     PUSH EAX                            ; 004f77c2
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004f77c3
@@ -1341,7 +1341,7 @@ section .text
         ;   XREF to: 004f8189 (CONDITIONAL_JUMP)  ; LAB_004f8189
     POP EDI                             ; 004f81a1
         ;   Label: LAB_004f81a1
-    PUSH 0x5e63f3                       ; 004f81a2 | DAT_005e63f3
+    PUSH 0x5e63f3                       ; 004f81a2 | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 004f81a7
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 004f81ac
@@ -1554,7 +1554,7 @@ section .text
         ;   XREF to: 004f8358 (CONDITIONAL_JUMP)  ; LAB_004f8358
     POP EDI                             ; 004f8370
         ;   Label: LAB_004f8370
-    PUSH 0x5e6417                       ; 004f8371 | DAT_005e6417
+    PUSH 0x5e6417                       ; 004f8371 | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 004f8376
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 004f837b
@@ -1610,14 +1610,14 @@ section .text
     POP EDI                             ; 004f83e8
         ;   Label: LAB_004f83e8
     PUSH EBX                            ; 004f83e9
-    MOV ESI,dword ptr [0x0152d248]      ; 004f83ea | DAT_0152d248
+    MOV ESI,dword ptr [0x0152d248]      ; 004f83ea | g_CBitFont_PTR_0152d248
     PUSH ESI                            ; 004f83f0
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 004f83f1
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004f83f6
     MOV dword ptr [ESP + 0x320],EAX     ; 004f83f9
     FILD dword ptr [ESP + 0x320]        ; 004f8400
-    FMUL double ptr [0x005e6540]        ; 004f8407 | DAT_005e6540
+    FMUL double ptr [0x005e6540]        ; 004f8407 | g_DOUBLE_005e6540
     FSTP float ptr [EBP + 0x34c]        ; 004f840d
     MOV EDI,dword ptr [0x007c33a4]      ; 004f8413 | g_CAmmoClassInfo.name_hash
         ;   Label: LAB_004f8413
@@ -1731,7 +1731,7 @@ section .text
         ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004f8528
     PUSH EAX                            ; 004f852b
-    MOV EDI,dword ptr [0x0061f650]      ; 004f852c | DAT_0061f650
+    MOV EDI,dword ptr [0x0061f650]      ; 004f852c | g_CDemonMission_PTR_0061f650
     PUSH EDI                            ; 004f8532 | DAT_01d2c900
     MOV EBX,EAX                         ; 004f8533
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60 ; 004f8535
@@ -1759,7 +1759,7 @@ section .text
     MOV dword ptr [EBP + EAX*0x4 + 0x14],EBX ; 004f858f
     PUSH ECX                            ; 004f8593
     MOV ESI,dword ptr [EBP + 0x10]      ; 004f8594
-    MOV EBX,dword ptr [0x0061f650]      ; 004f8597 | DAT_0061f650
+    MOV EBX,dword ptr [0x0061f650]      ; 004f8597 | g_CDemonMission_PTR_0061f650
     INC ESI                             ; 004f859d
     PUSH EBX                            ; 004f859e | DAT_01d2c900
     MOV dword ptr [EBP + 0x10],ESI      ; 004f859f
@@ -1808,7 +1808,7 @@ section .text
     PUSH 0x1                            ; 004f8632
     MOV ESI,dword ptr [ESP + 0x340]     ; 004f8634
     PUSH ESI                            ; 004f863b
-    MOV EDI,dword ptr [0x0061f650]      ; 004f863c | DAT_0061f650
+    MOV EDI,dword ptr [0x0061f650]      ; 004f863c | g_CDemonMission_PTR_0061f650
     PUSH EDI                            ; 004f8642 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004f8643
         ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -1875,7 +1875,7 @@ section .text
         ;   Label: LAB_004f86f4
     MOV EAX,dword ptr [ESP + 0x340]     ; 004f86f6
     PUSH EAX                            ; 004f86fd
-    MOV EDX,dword ptr [0x0061f650]      ; 004f86fe | DAT_0061f650
+    MOV EDX,dword ptr [0x0061f650]      ; 004f86fe | g_CDemonMission_PTR_0061f650
     PUSH EDX                            ; 004f8704 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004f8705
         ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -1947,7 +1947,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x33c]     ; 004f87c2
         ;   Label: LAB_004f87c2
     PUSH EAX                            ; 004f87c9
-    MOV EDX,dword ptr [0x0061f650]      ; 004f87ca | DAT_0061f650
+    MOV EDX,dword ptr [0x0061f650]      ; 004f87ca | g_CDemonMission_PTR_0061f650
     PUSH EDX                            ; 004f87d0 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0 ; 004f87d1
         ;   XREF to: 0051b1d0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
@@ -1987,7 +1987,7 @@ section .text
         ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004f882b
     PUSH EAX                            ; 004f882e
-    MOV ECX,dword ptr [0x0061f650]      ; 004f882f | DAT_0061f650
+    MOV ECX,dword ptr [0x0061f650]      ; 004f882f | g_CDemonMission_PTR_0061f650
     PUSH ECX                            ; 004f8835 | DAT_01d2c900
     MOV EBX,EAX                         ; 004f8836
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60 ; 004f8838
@@ -2106,7 +2106,7 @@ section .text
         ;   XREF to: 004f8768 (CONDITIONAL_JUMP)  ; LAB_004f8768
     PUSH 0x1                            ; 004f8980
     PUSH EDI                            ; 004f8982
-    MOV ECX,dword ptr [0x0061f650]      ; 004f8983 | DAT_0061f650
+    MOV ECX,dword ptr [0x0061f650]      ; 004f8983 | g_CDemonMission_PTR_0061f650
     PUSH ECX                            ; 004f8989 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004f898a
         ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -2124,7 +2124,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 004f89ab
     PUSH EDX                            ; 004f89ae
     MOV dword ptr [EBP + EAX*0x4 + 0x14],EDX ; 004f89af
-    MOV ESI,dword ptr [0x0061f650]      ; 004f89b3 | DAT_0061f650
+    MOV ESI,dword ptr [0x0061f650]      ; 004f89b3 | g_CDemonMission_PTR_0061f650
     MOV EDI,dword ptr [EBP + 0x10]      ; 004f89b9
     PUSH ESI                            ; 004f89bc | DAT_01d2c900
     INC EDI                             ; 004f89bd
@@ -2195,7 +2195,7 @@ section .text
     PUSH 0x1                            ; 004f8a74
     MOV EDX,dword ptr [ESP + 0x340]     ; 004f8a76
     PUSH EDX                            ; 004f8a7d
-    MOV ECX,dword ptr [0x0061f650]      ; 004f8a7e | DAT_0061f650
+    MOV ECX,dword ptr [0x0061f650]      ; 004f8a7e | g_CDemonMission_PTR_0061f650
     PUSH ECX                            ; 004f8a84 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004f8a85
         ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -2230,7 +2230,7 @@ section .text
         ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004f8acd
     PUSH EAX                            ; 004f8ad0
-    MOV ECX,dword ptr [0x0061f650]      ; 004f8ad1 | DAT_0061f650
+    MOV ECX,dword ptr [0x0061f650]      ; 004f8ad1 | g_CDemonMission_PTR_0061f650
     PUSH ECX                            ; 004f8ad7 | DAT_01d2c900
     MOV EBX,EAX                         ; 004f8ad8
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60 ; 004f8ada

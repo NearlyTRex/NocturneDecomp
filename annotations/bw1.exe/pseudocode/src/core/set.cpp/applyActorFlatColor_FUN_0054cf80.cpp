@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_applyActorFlatColor_FUN_0054cf80(CDemonActor *actor)
 
 {
@@ -18,7 +16,7 @@ void __cdecl core_set_cpp_applyActorFlatColor_FUN_0054cf80(CDemonActor *actor)
   color_scale = (actor->scale).y;
   fog_scale = (actor->scale).z;
   light_scale = (actor->scale).x;
-  if (actor == _DAT_02026358) {
+  if (actor == (CDemonActor *)g_INT_02026358) {
     light_scale = (light_scale * 3) / 2;
     color_scale = (color_scale * 3) / 2;
     fog_scale = (fog_scale * 3) / 2;

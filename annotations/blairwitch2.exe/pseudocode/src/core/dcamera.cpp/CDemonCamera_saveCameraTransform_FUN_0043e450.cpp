@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0043e450(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix)
 
 {
@@ -62,9 +60,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0043e450(CDem
     (this_ptr->base).position.f.y = afStack_24[0];
     (this_ptr->base).position.f.z = afStack_24[1];
   }
-  (this_ptr->camera_origin).x = (int)ROUND((this_ptr->base).position.f.x * _DAT_005f4dcc);
-  (this_ptr->camera_origin).y = (int)ROUND((this_ptr->base).position.f.y * _DAT_005f4dcc);
-  (this_ptr->camera_origin).z = (int)ROUND((this_ptr->base).position.f.z * _DAT_005f4dcc);
+  (this_ptr->camera_origin).x = (int)ROUND((this_ptr->base).position.f.x * 256.0f);
+  (this_ptr->camera_origin).y = (int)ROUND((this_ptr->base).position.f.y * 256.0f);
+  (this_ptr->camera_origin).z = (int)ROUND((this_ptr->base).position.f.z * 256.0f);
   iVar3 = (this_ptr->transform_state).saved_source_matrix.m[0].x;
   dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[0].z *

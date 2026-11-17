@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float delta_time)
 
 {
@@ -26,7 +24,7 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float d
   if ((0 < this_ptr->blood_spurt_count) &&
      (fVar2 = this_ptr->blood_spurt_timer - in_stack_00000010, this_ptr->blood_spurt_timer = fVar2,
      fVar2 <= 0.0)) {
-    fVar2 = this_ptr->blood_spurt_interval * (float)_DAT_005c7162;
+    fVar2 = this_ptr->blood_spurt_interval * (float)1.1499999999999999;
     pCVar1 = (this_ptr->base).base.vtable._uc;
     this_ptr->blood_spurt_count = this_ptr->blood_spurt_count + -1;
     this_ptr->blood_spurt_interval = fVar2;
@@ -45,7 +43,7 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float d
     *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          *(uint *)((int)&CStack_10 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004ce8a0
-              (g_CGorePtr,&CStack_28,(CVector3f *)&DAT_02cfd900,this_ptr->blood_gore_type);
+              (g_CGorePtr,&CStack_28,&g_CVector3f_02cfd900,this_ptr->blood_gore_type);
     return;
   }
   return;

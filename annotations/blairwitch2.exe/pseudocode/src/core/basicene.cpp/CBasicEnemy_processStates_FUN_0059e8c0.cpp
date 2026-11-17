@@ -110,7 +110,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnem
   if (mode != 0) {
     if (mode == 1) {
       iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
-                        (&this_ptr->state_machine,&DAT_005ef95b);
+                        (&this_ptr->state_machine,"Burn");
       if (iVar1 != 0) {
         (*(((this_ptr->base).base.base.vtable._uh)->_uh).reset)((CHero *)this_ptr);
         return;
@@ -118,6 +118,6 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnem
     }
     return;
   }
-  core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,&DAT_005ef956);
+  core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,"Burn");
   return;
 }

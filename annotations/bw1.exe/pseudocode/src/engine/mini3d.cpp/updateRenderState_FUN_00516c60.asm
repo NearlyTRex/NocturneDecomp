@@ -14,42 +14,42 @@
 ;   engine_mini3d.cpp_polyList_FUN_005126d0 at 00512712
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c51d0c
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d18
-;   undefined4 DAT_01d224b8
-;   undefined4 DAT_01d224bc
-;   undefined4 DAT_01d224c4
-;   undefined4 DAT_01d224c8
+;   int g_INT_01c51d0c
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   int g_INT_01c51d18
+;   int g_INT_01d224b8
+;   int g_INT_01d224bc
+;   int g_INT_01d224c4
+;   int g_INT_01d224c8
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x01d224b8]                ; 00516c60 | DAT_01d224b8
+    MOV EAX,[0x01d224b8]                ; 00516c60 | g_INT_01d224b8
         ;   Label: engine_mini3d.cpp_updateRenderState_FUN_00516c60
-    MOV ECX,dword ptr [0x01d224c8]      ; 00516c65 | DAT_01d224c8
+    MOV ECX,dword ptr [0x01d224c8]      ; 00516c65 | g_INT_01d224c8
     XOR EDX,EDX                         ; 00516c6b
     OR AX,0x205                         ; 00516c6d
-    MOV dword ptr [0x01c51d18],EDX      ; 00516c71 | DAT_01c51d18
-    MOV [0x01c51d14],EAX                ; 00516c77 | DAT_01c51d14
+    MOV dword ptr [0x01c51d18],EDX      ; 00516c71 | g_INT_01c51d18
+    MOV [0x01c51d14],EAX                ; 00516c77 | g_BIT_INTEGER32_01c51d14
     TEST ECX,ECX                        ; 00516c7c
     JNZ 0x00516c94                      ; 00516c7e
         ;   XREF to: 00516c94 (CONDITIONAL_JUMP)  ; LAB_00516c94
-    CMP dword ptr [0x01d224c4],0x0      ; 00516c80 | DAT_01d224c4
+    CMP dword ptr [0x01d224c4],0x0      ; 00516c80 | g_INT_01d224c4
         ;   Label: LAB_00516c80
     JNZ 0x00516c9d                      ; 00516c87
         ;   XREF to: 00516c9d (CONDITIONAL_JUMP)  ; LAB_00516c9d
-    MOV EAX,[0x01d224bc]                ; 00516c89 | DAT_01d224bc
-    MOV [0x01c51d0c],EAX                ; 00516c8e | DAT_01c51d0c
+    MOV EAX,[0x01d224bc]                ; 00516c89 | g_INT_01d224bc
+    MOV [0x01c51d0c],EAX                ; 00516c8e | g_INT_01c51d0c
     RET                                 ; 00516c93
-    OR byte ptr [0x01c51d14],0x8        ; 00516c94 | DAT_01c51d14
+    OR byte ptr [0x01c51d14],0x8        ; 00516c94 | g_BIT_INTEGER32_01c51d14
         ;   Label: LAB_00516c94
     JMP 0x00516c80                      ; 00516c9b
         ;   XREF to: 00516c80 (UNCONDITIONAL_JUMP)  ; LAB_00516c80
-    OR word ptr [0x01c51d14],0x122      ; 00516c9d | DAT_01c51d14
+    OR word ptr [0x01c51d14],0x122      ; 00516c9d | g_BIT_INTEGER32_01c51d14
         ;   Label: LAB_00516c9d
-    MOV EAX,[0x01d224bc]                ; 00516ca6 | DAT_01d224bc
-    MOV [0x01c51d0c],EAX                ; 00516cab | DAT_01c51d0c
+    MOV EAX,[0x01d224bc]                ; 00516ca6 | g_INT_01d224bc
+    MOV [0x01c51d0c],EAX                ; 00516cab | g_INT_01c51d0c
     RET                                 ; 00516cb0
 

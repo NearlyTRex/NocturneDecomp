@@ -16,7 +16,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_004050c0(SMRGLHe
   iVar1 = 0;
   if (0 < mrgl->child_count) {
     do {
-      (&DAT_0060b02c)[((mrgl->base).count + iVar1) * 0xc] = (pSVar2->base).type << 0x10;
+      g_SRenderVertex_ARRAY_0060b014[(mrgl->base).count + iVar1].u = (pSVar2->base).type << 0x10;
       iVar1 = iVar1 + 1;
       pSVar2 = (SMRGLHeaderExtended *)&(pSVar2->base).count;
     } while (iVar1 < mrgl->child_count);

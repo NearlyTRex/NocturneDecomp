@@ -43,7 +43,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chain_stretched_to_f_005ee812
-;   undefined4 DAT_005ee82a
+;   double g_DOUBLE_005ee82a = 2
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
 ;
@@ -117,7 +117,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0058dd8d
     ADD ESP,0x8                         ; 0058dd8e
     FLD float ptr [EBP + -0xa]          ; 0058dd91
-    FCOMP double ptr [0x005ee82a]       ; 0058dd94 | DAT_005ee82a
+    FCOMP double ptr [0x005ee82a]       ; 0058dd94 | g_DOUBLE_005ee82a
     FNSTSW AX                           ; 0058dd9a
     SAHF                                ; 0058dd9c
     JC 0x0058dec1                       ; 0058dd9d

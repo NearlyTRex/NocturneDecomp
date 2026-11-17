@@ -17,7 +17,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_0050a450(CPassenger *t
   int *piVar6;
   
   pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00508f40(&this_ptr->base);
-  pcVar4 = (char *)0x5cb6a5;
+  pcVar4 = "wolfbrn.dfm";
   pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].base.base.scale.y);
   piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;
   *(CCharacter_full_vtable **)(pCVar3[-0x2b].models[0].textures[0xf].texture_name + 0x3c) =

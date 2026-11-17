@@ -10,8 +10,8 @@
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bdc5f
-;   undefined4 DAT_005bdc67
+;   double g_DOUBLE_005bdc5f = 1.20000000000000
+;   double g_DOUBLE_005bdc67 = 0.25
 ;   CGore* g_CGorePtr = 01d22e44
 ;
 ; Called Functions:
@@ -67,8 +67,8 @@ section .text
     JNC 0x004894a9                      ; 004894e6
         ;   XREF to: 004894a9 (CONDITIONAL_JUMP)  ; LAB_004894a9
     FLD double ptr [ESP]                ; 004894e8
-    FMUL double ptr [0x005bdc5f]        ; 004894eb | DAT_005bdc5f
-    FMUL double ptr [0x005bdc67]        ; 004894f1 | DAT_005bdc67
+    FMUL double ptr [0x005bdc5f]        ; 004894eb | g_DOUBLE_005bdc5f
+    FMUL double ptr [0x005bdc67]        ; 004894f1 | g_DOUBLE_005bdc67
     PUSH 0x0                            ; 004894f7
     CALL crt_math.c_round_FUN_005a3120  ; 004894f9
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)

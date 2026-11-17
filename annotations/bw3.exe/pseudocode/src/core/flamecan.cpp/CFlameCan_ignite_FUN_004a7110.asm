@@ -18,7 +18,7 @@
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_0056b410 at 0056b9a6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
@@ -42,7 +42,7 @@ section .text
     PUSH 0x4000                         ; 004a7135
     PUSH 0x0                            ; 004a713a
     PUSH ESI                            ; 004a713c
-    MOV EDX,dword ptr [0x005fc5a0]      ; 004a713d | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 004a713d | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 004a7143
     INC EBX                             ; 004a7144
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 004a7145

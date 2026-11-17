@@ -12,14 +12,14 @@
 ;   TerminatedCString s_s_confused_while_walking_005e5169
 ;   TerminatedCString s_hotdemon_attack_wav_005e5193
 ;   TerminatedCString s_hotdemon_attack_wav_005e51a7
-;   undefined4 DAT_005e51c2
-;   undefined4 DAT_006022fc
-;   undefined4 DAT_00602308
+;   double g_DOUBLE_005e51c2 = 0.523598775583333
+;   float g_FLOAT_006022fc = 2
+;   float g_FLOAT_00602308 = 10
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01d06bd4
-;   undefined4 DAT_02c8af28
+;   undefined4 g_INT_ARRAY_01d06bcc[2]
+;   CVector3f g_CVector3f_02c8af28
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -340,7 +340,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004effc2
     ADD ESP,0x8                         ; 004effc5
     LEA EAX,[EBP + 0xfffffeea]          ; 004effc8
-    MOV EDX,dword ptr [0x01d06bd4]      ; 004effce | DAT_01d06bd4
+    MOV EDX,dword ptr [0x01d06bd4]      ; 004effce | g_INT_ARRAY_01d06bcc[2]
     PUSH EAX                            ; 004effd4
     LEA EAX,[EDX*0x4 + 0x0]             ; 004effd5
     MOV dword ptr [EBP + 0xffffff1e],EBX ; 004effdc
@@ -353,7 +353,7 @@ section .text
     LEA EDI,[EBP + -0x7a]               ; 004efffa
     PUSH EAX                            ; 004efffd
     FLD float ptr [EBP + 0x76]          ; 004efffe
-    PUSH 0x2c8af28                      ; 004f0001 | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 004f0001 | g_CVector3f_02c8af28
     FSTP float ptr [EBP + 0xfffffeee]   ; 004f0006
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 004f000c
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -428,7 +428,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x52]      ; 004f00d1
     FLD float ptr [EBP + 0x52]          ; 004f00d4
     MOV dword ptr [EBP + 0x5e],EAX      ; 004f00d7
-    FCOMP float ptr [0x006022fc]        ; 004f00da | DAT_006022fc
+    FCOMP float ptr [0x006022fc]        ; 004f00da | g_FLOAT_006022fc
     FNSTSW AX                           ; 004f00e0
     SAHF                                ; 004f00e2
     JC 0x004f012b                       ; 004f00e3
@@ -442,7 +442,7 @@ section .text
         ;   XREF to: 004efd89 (CONDITIONAL_JUMP)  ; caseD_e
     FLD float ptr [EBP + 0x5e]          ; 004f00f7
     LEA EDX,[EBX + 0x158]               ; 004f00fa
-    FCOMP float ptr [0x00602308]        ; 004f0100 | DAT_00602308
+    FCOMP float ptr [0x00602308]        ; 004f0100 | g_FLOAT_00602308
     FNSTSW AX                           ; 004f0106
     SAHF                                ; 004f0108
     JNC 0x004f01c5                      ; 004f0109
@@ -478,7 +478,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004f015a
     FABS                                ; 004f015d
     ADD ESP,0x4                         ; 004f015f
-    FCOMP double ptr [0x005e51c2]       ; 004f0162 | DAT_005e51c2
+    FCOMP double ptr [0x005e51c2]       ; 004f0162 | g_DOUBLE_005e51c2
     FNSTSW AX                           ; 004f0168
     SAHF                                ; 004f016a
     JNC 0x004f00e5                      ; 004f016b
@@ -598,7 +598,7 @@ section .text
     ADD ESP,0xc                         ; 004f0286
     JMP 0x004efd89                      ; 004f0289
         ;   XREF to: 004efd89 (UNCONDITIONAL_JUMP)  ; caseD_e
-    MOV EAX,[0x006022fc]                ; 004f028e | DAT_006022fc
+    MOV EAX,[0x006022fc]                ; 004f028e | g_FLOAT_006022fc
         ;   Label: LAB_004f028e
     MOV dword ptr [EBP + 0x62],EAX      ; 004f0293
     LEA EAX,[EBX + 0x249c]              ; 004f0296
@@ -665,7 +665,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x72]      ; 004f036c
     FLD float ptr [EBP + 0x72]          ; 004f036f
     MOV dword ptr [EBP + 0x5a],EAX      ; 004f0372
-    FCOMP float ptr [0x00602308]        ; 004f0375 | DAT_00602308
+    FCOMP float ptr [0x00602308]        ; 004f0375 | g_FLOAT_00602308
     FNSTSW AX                           ; 004f037b
     SAHF                                ; 004f037d
     JBE 0x004f039c                      ; 004f037e
@@ -735,7 +735,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004f041c
     FABS                                ; 004f041f
     ADD ESP,0x4                         ; 004f0421
-    FCOMP double ptr [0x005e51c2]       ; 004f0424 | DAT_005e51c2
+    FCOMP double ptr [0x005e51c2]       ; 004f0424 | g_DOUBLE_005e51c2
     FNSTSW AX                           ; 004f042a
     SAHF                                ; 004f042c
     JNC 0x004f0467                      ; 004f042d

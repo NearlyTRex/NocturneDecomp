@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 80,
+    "complexity_score": 64,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 3,
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "unknown_param",
-      "warning_overlapping_globals"
+      "unknown_param"
     ],
-    "total_lines": 99
+    "total_lines": 98
   },
   "cross_references": [
     {
@@ -87,8 +86,8 @@
   "globals": [
     {
       "addr": "01549ac0",
-      "name": "DAT_01549ac0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ac0",
+      "type": "CBitFont*",
       "value": null
     }
   ],
@@ -237,16 +236,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 15,
       "match": "(STextPage *)((int)this_ptr",
       "severity": "moderate",
       "text": "((STextPage *)((int)this_ptr->pages->resources + iVar1 + -4));",
@@ -254,7 +245,7 @@
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 25,
+      "line": 23,
       "match": "unknown_0x30",
       "severity": "mild",
       "text": "this_ptr->unknown_0x30 = 0;",

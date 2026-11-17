@@ -21,7 +21,7 @@
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141e0
+;   uint g_UINT_006141e0 = 0x1
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046b920
         ;   Label: engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
     MOV EDX,dword ptr [ESP + 0x4]       ; 0046b924
-    MOV [0x006141e0],EAX                ; 0046b928 | DAT_006141e0
+    MOV [0x006141e0],EAX                ; 0046b928 | g_UINT_006141e0
     MOV dword ptr [EDX + 0x10],EAX      ; 0046b92d
     RET                                 ; 0046b930
 

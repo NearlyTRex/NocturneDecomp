@@ -21,10 +21,10 @@
 ;   core_set.cpp_CDemonSet_renderLightDebugView_FUN_005307a0 at 005307d6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 DAT_01c2a38c
+;   void*[1200] g_ARRAY_PTR_01c2a38c
 ;   undefined4 g_CGameInstance.camera_debug_enabled
 ;
 ; Called Functions:
@@ -50,12 +50,12 @@ section .text
     JL 0x0044ab23                       ; 0044a94d
         ;   XREF to: 0044ab23 (CONDITIONAL_JUMP)  ; LAB_0044ab23
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0044a953
-    MOV EDI,dword ptr [0x006141b8]      ; 0044a957 | DAT_006141b8
+    MOV EDI,dword ptr [0x006141b8]      ; 0044a957 | g_INT_006141b8
     LEA EAX,[EDX + ESI*0x1]             ; 0044a95d
     CMP EAX,EDI                         ; 0044a960
     JG 0x0044ab23                       ; 0044a962
         ;   XREF to: 0044ab23 (CONDITIONAL_JUMP)  ; LAB_0044ab23
-    MOV EDX,dword ptr [0x006141bc]      ; 0044a968 | DAT_006141bc
+    MOV EDX,dword ptr [0x006141bc]      ; 0044a968 | g_INT_006141bc
     LEA EAX,[ECX + ESI*0x1]             ; 0044a96e
     CMP EAX,EDX                         ; 0044a971
     JG 0x0044ab23                       ; 0044a973
@@ -206,7 +206,7 @@ section .text
     ADD EDX,EAX                         ; 0044aae6
     MOV EAX,dword ptr [ESP]             ; 0044aae8
     SHL EDX,0x2                         ; 0044aaeb
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0044aaee | DAT_01c2a38c
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0044aaee | g_ARRAY_PTR_01c2a38c
     ADD EDX,EAX                         ; 0044aaf5
     MOV EAX,ESI                         ; 0044aaf7
     SHL EAX,0x8                         ; 0044aaf9

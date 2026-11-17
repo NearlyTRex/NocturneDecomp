@@ -9,6 +9,6 @@
 void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys *this_ptr,EInputCodeType key_code)
 
 {
-  (&DAT_01c50950)[key_code] = 1;
+  g_CHAR_ARRAY_01c50950[key_code] = '\x01';
   return;
 }

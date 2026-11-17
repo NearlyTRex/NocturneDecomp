@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl engine_mini3d_cpp_getZoom_FUN_004ecf90(void)
 
 {
-  return _DAT_01d76ca8 * _DAT_005c7e6d;
+  return g_FLOAT_01d76ca8 * 0.05555556f;
 }

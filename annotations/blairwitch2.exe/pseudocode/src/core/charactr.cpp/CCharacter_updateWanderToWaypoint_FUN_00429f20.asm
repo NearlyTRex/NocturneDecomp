@@ -14,8 +14,8 @@
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_00488970 at 004889a2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cd146
-;   undefined4 DAT_0265370c
+;   double g_DOUBLE_005cd146 = 4
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -67,7 +67,7 @@ section .text
     FMUL ST0                            ; 00429f87
     FADDP                               ; 00429f89
     FSQRT                               ; 00429f8b
-    FCOMP double ptr [0x005cd146]       ; 00429f8d | DAT_005cd146
+    FCOMP double ptr [0x005cd146]       ; 00429f8d | g_DOUBLE_005cd146
     FNSTSW AX                           ; 00429f93
     SAHF                                ; 00429f95
     JNC 0x0042a025                      ; 00429f96
@@ -135,7 +135,7 @@ section .text
     PUSH 0x0                            ; 0042a058
         ;   Label: LAB_0042a058
     PUSH 0x0                            ; 0042a05a
-    PUSH 0x265370c                      ; 0042a05c | DAT_0265370c
+    PUSH 0x265370c                      ; 0042a05c | g_CVector3f_0265370c
     MOV EAX,EDX                         ; 0042a061
     MOV EDX,dword ptr [EDX + 0x2b0]     ; 0042a063
     PUSH EAX                            ; 0042a069

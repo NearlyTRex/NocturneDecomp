@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_MeleeAttack_005f0be5+1
+;   TerminatedCString s_MeleeAttack_005f0be6
 ;   TerminatedCString s_Chasing_005f0bf2
-;   undefined4 DAT_005f0bfe
-;   undefined4 DAT_005f0c06
-;   undefined4 DAT_00600a6c
+;   double g_DOUBLE_005f0bfe = 25
+;   double g_DOUBLE_005f0c06 = 100
+;   float g_FLOAT_00600a6c = 6
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 005aacd1
     FLD float ptr [ESP + 0x1c]          ; 005aacd4
-    FMUL double ptr [0x005f0bfe]        ; 005aacd8 | DAT_005f0bfe
+    FMUL double ptr [0x005f0bfe]        ; 005aacd8 | g_DOUBLE_005f0bfe
     FLD float ptr [EBX + 0x25a8]        ; 005aacde
     FXCH                                ; 005aace4
     FADD ST0,ST1                        ; 005aace6
@@ -65,21 +65,21 @@ section .text
     FMUL ST0                            ; 005aad0a
     FADDP                               ; 005aad0c
     FSQRT                               ; 005aad0e
-    FCOMP float ptr [0x00600a6c]        ; 005aad10 | DAT_00600a6c
+    FCOMP float ptr [0x00600a6c]        ; 005aad10 | g_FLOAT_00600a6c
     FNSTSW AX                           ; 005aad16
     SAHF                                ; 005aad18
     JC 0x005aad51                       ; 005aad19
         ;   XREF to: 005aad51 (CONDITIONAL_JUMP)  ; LAB_005aad51
     FLD float ptr [EBX + 0x25a8]        ; 005aad1b
         ;   Label: LAB_005aad1b
-    FCOMP double ptr [0x005f0c06]       ; 005aad21 | DAT_005f0c06
+    FCOMP double ptr [0x005f0c06]       ; 005aad21 | g_DOUBLE_005f0c06
     FNSTSW AX                           ; 005aad27
     SAHF                                ; 005aad29
     JC 0x005aacbc                       ; 005aad2a
         ;   XREF to: 005aacbc (CONDITIONAL_JUMP)  ; LAB_005aacbc
     PUSH 0x5f0bf2                       ; 005aad2c | = "Chasing"
     ADD EBX,0x10af8                     ; 005aad31
-    FLD float ptr [0x00600a6c]          ; 005aad37 | DAT_00600a6c
+    FLD float ptr [0x00600a6c]          ; 005aad37 | g_FLOAT_00600a6c
     PUSH EBX                            ; 005aad3d
     FSTP float ptr [EBX + 0x89c]        ; 005aad3e
     CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aad44
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x10                        ; 005aad4c
     POP EBX                             ; 005aad4f
     RET                                 ; 005aad50
-    PUSH 0x5f0be6                       ; 005aad51 | s_MeleeAttack_005f0be5+1
+    PUSH 0x5f0be6                       ; 005aad51 | = "MeleeAttack"
         ;   Label: LAB_005aad51
     ADD EBX,0x10af8                     ; 005aad56
     PUSH EBX                            ; 005aad5c

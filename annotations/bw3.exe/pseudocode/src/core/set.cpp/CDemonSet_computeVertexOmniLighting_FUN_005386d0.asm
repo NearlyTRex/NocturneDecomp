@@ -13,9 +13,9 @@
 ;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005787f0 at 00578951
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d06af
-;   undefined4 DAT_01d1a0a4
-;   undefined4 DAT_0203b3e8
+;   double g_DOUBLE_005d06af = 255
+;   int g_INT_01d1a0a4
+;   int g_INT_0203b3e8
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -56,7 +56,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00538716
     MOVSD ES:EDI,ESI                    ; 00538717
     MOV dword ptr [ESP + 0x8],ECX       ; 00538718
-    MOV EDI,dword ptr [0x0203b3e8]      ; 0053871c | DAT_0203b3e8
+    MOV EDI,dword ptr [0x0203b3e8]      ; 0053871c | g_INT_0203b3e8
     MOV dword ptr [ESP + 0x4],ECX       ; 00538722
     TEST EDI,EDI                        ; 00538726
     JLE 0x0053874e                      ; 00538728
@@ -72,7 +72,7 @@ section .text
     CMP ECX,EBX                         ; 0053874a
     JL 0x00538731                       ; 0053874c
         ;   XREF to: 00538731 (CONDITIONAL_JUMP)  ; LAB_00538731
-    CMP dword ptr [0x0203b3e8],0x0      ; 0053874e | DAT_0203b3e8
+    CMP dword ptr [0x0203b3e8],0x0      ; 0053874e | g_INT_0203b3e8
         ;   Label: LAB_0053874e
     JNZ 0x00538767                      ; 00538755
         ;   XREF to: 00538767 (CONDITIONAL_JUMP)  ; LAB_00538767
@@ -88,7 +88,7 @@ section .text
     SHL EAX,0x4                         ; 00538778
     FLD float ptr [ESP + 0x4]           ; 0053877b
     ADD EBX,EAX                         ; 0053877f
-    FCOMP double ptr [0x005d06af]       ; 00538781 | DAT_005d06af
+    FCOMP double ptr [0x005d06af]       ; 00538781 | g_DOUBLE_005d06af
     FNSTSW AX                           ; 00538787
     SAHF                                ; 00538789
     JBE 0x00538794                      ; 0053878a
@@ -96,7 +96,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x437f0000 ; 0053878c
     FLD float ptr [ESP]                 ; 00538794
         ;   Label: LAB_00538794
-    FCOMP double ptr [0x005d06af]       ; 00538797 | DAT_005d06af
+    FCOMP double ptr [0x005d06af]       ; 00538797 | g_DOUBLE_005d06af
     FNSTSW AX                           ; 0053879d
     SAHF                                ; 0053879f
     JBE 0x005387a9                      ; 005387a0
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [ESP],0x437f0000      ; 005387a2
     FLD float ptr [ESP + 0x8]           ; 005387a9
         ;   Label: LAB_005387a9
-    FCOMP double ptr [0x005d06af]       ; 005387ad | DAT_005d06af
+    FCOMP double ptr [0x005d06af]       ; 005387ad | g_DOUBLE_005d06af
     FNSTSW AX                           ; 005387b3
     SAHF                                ; 005387b5
     JA 0x005388ce                       ; 005387b6
@@ -169,7 +169,7 @@ section .text
     FADDP                               ; 00538858
     FSTP float ptr [ESP + 0x48]         ; 0053885a
     MOV EAX,dword ptr [ESP + 0x48]      ; 0053885e
-    MOV EDI,dword ptr [0x01d1a0a4]      ; 00538862 | DAT_01d1a0a4
+    MOV EDI,dword ptr [0x01d1a0a4]      ; 00538862 | g_INT_01d1a0a4
     SAR EAX,0x1                         ; 00538868
     ADD EAX,EDI                         ; 0053886a
     MOV dword ptr [ESP + 0x44],EAX      ; 0053886c

@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hero_cpp_initializeColorMasks_FUN_004d0b40(void)
 
 {
   byte *pbVar1;
-  byte *pbVar2;
-  byte *pbVar3;
+  int iVar2;
+  int iVar3;
   uint uVar4;
   int iVar5;
   uint uVar6;
@@ -24,28 +22,33 @@ void __cdecl core_hero_cpp_initializeColorMasks_FUN_004d0b40(void)
   iVar5 = 0;
   iVar7 = 0;
   do {
-    pbVar1 = &DAT_01c35838 + iVar5;
-    pbVar2 = &DAT_01c35839 + iVar5;
-    pbVar3 = &DAT_01c3583a + iVar5;
+    pbVar1 = g_UCHAR_ARRAY_01c35838 + iVar5;
+    iVar2 = iVar5 + 1;
+    iVar3 = iVar5 + 2;
     iVar8 = iVar7 + 2;
     iVar5 = iVar5 + 3;
-    *(ushort *)(&DAT_01c34910 + iVar7) =
-         (ushort)(*pbVar3 / _DAT_01c35830 << (DAT_01c3582c & 0x1f)) |
-         (ushort)(*pbVar2 / _DAT_01c35824 << (DAT_01c35820 & 0x1f)) |
-         (ushort)(*pbVar1 / _DAT_01c35818 << (DAT_01c35814 & 0x1f));
+    *(ushort *)((int)g_USHORT_ARRAY_01c34910 + iVar7) =
+         (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar3] / (uint)g_INT_01c35830 <<
+                 (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)) |
+         (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar2] / (uint)g_INT_01c35824 <<
+                 (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)) |
+         (ushort)((uint)*pbVar1 / (uint)g_INT_01c35818 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)
+                 );
     iVar7 = iVar8;
   } while (iVar8 != 0x200);
-  uVar9 = 0xff >> (DAT_01c3581c & 0x1f);
-  DAT_0061c8d0 = uVar9 << ((byte)_DAT_01c35814 & 0x1f);
-  uVar6 = 0xff >> (DAT_01c35828 & 0x1f);
-  DAT_0061c8d8 = uVar6 << ((byte)_DAT_01c35820 & 0x1f);
-  uVar4 = 0xff >> (DAT_01c35834 & 0x1f);
-  DAT_0061c8e0 = uVar4 << ((byte)_DAT_01c3582c & 0x1f);
-  _DAT_0061c928 = uVar4 << (DAT_01c35834 & 0x1f);
-  _DAT_0061c8e8 = (uVar9 << (DAT_01c3581c & 0x1f)) << 0x10;
-  _DAT_0061c908 = (uVar6 << (DAT_01c35828 & 0x1f)) << 8;
-  _DAT_0061c930 = _DAT_01c3581c + _DAT_01c35828 + _DAT_01c35834;
-  _DAT_0061c970 = _DAT_01c35834;
-  _DAT_0061c950 = _DAT_01c35828 + _DAT_01c35834;
+  uVar9 = 0xff >> (g_BIT_INTEGER32_01c3581c.bytes[0] & 0x1f);
+  g_INT_0061c8d0 = uVar9 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
+  uVar6 = 0xff >> (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f);
+  g_INT_0061c8d8 = uVar6 << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
+  uVar4 = 0xff >> (g_BIT_INTEGER32_01c35834.bytes[0] & 0x1f);
+  g_INT_0061c8e0 = uVar4 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f);
+  g_QWORD_0061c928._0_4_ = uVar4 << (g_BIT_INTEGER32_01c35834.bytes[0] & 0x1f);
+  g_QWORD_0061c8e8._0_4_ = (uVar9 << (g_BIT_INTEGER32_01c3581c.bytes[0] & 0x1f)) << 0x10;
+  g_QWORD_0061c908._0_4_ = (uVar6 << (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f)) << 8;
+  g_QWORD_0061c930._0_4_ =
+       g_BIT_INTEGER32_01c3581c.dword + g_BIT_INTEGER32_01c35828.dword +
+       g_BIT_INTEGER32_01c35834.dword;
+  g_QWORD_0061c970._0_4_ = g_BIT_INTEGER32_01c35834;
+  g_QWORD_0061c950._0_4_ = g_BIT_INTEGER32_01c35828.dword + g_BIT_INTEGER32_01c35834.dword;
   return;
 }

@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 119,
+    "complexity_score": 53,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 5,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 223
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 222
   },
   "cross_references": [
     {
@@ -194,32 +190,32 @@
     },
     {
       "addr": "01d5ba00",
-      "name": "DAT_01d5ba00",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba00",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d882a0",
-      "name": "DAT_01d882a0",
-      "type": "undefined4",
+      "name": "g_CHAR_01d882a0",
+      "type": "char",
       "value": null
     }
   ],
@@ -337,46 +333,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01d882a0",
-      "severity": "mild",
-      "text": "DAT_01d882a0 = '\\0';",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 27,
-      "match": "*(CHero **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CHero **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01d882a0",
-      "severity": "mild",
-      "text": "if ((iVar1 == 0) || (DAT_01d882a0 == '\\0')) break;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01d882a0",
-      "severity": "mild",
-      "text": "core_mission_cpp_CDemonMission_load_FUN_004f5bc0(this_ptr,&DAT_01d882a0,0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

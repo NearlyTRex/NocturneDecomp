@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_resetAllPathMaps_FUN_0050cf60(void)
 
 {
@@ -16,19 +14,19 @@ void __cdecl core_path_cpp_resetAllPathMaps_FUN_0050cf60(void)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < _DAT_01ec1518) {
+  if (0 < g_INT_01ec1518) {
     iVar2 = 0;
     do {
-      if (*(int *)(iVar2 + 0x1ec151c) == 0) {
-        _DAT_01d71de0 = "..\\core\\path.cpp";
-        _DAT_01d71de4 = 0x6a2;
+      if (*(int *)((int)g_CPathMap_PTR_ARRAY_01ec151c + iVar2) == 0) {
+        g_CHAR_PTR_01d71de0 = "..\\core\\path.cpp";
+        g_INT_01d71de4 = 0x6a2;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Global pathmap list corruption");
       }
-      puVar1 = (uint *)(iVar2 + 0x1ec151c);
+      puVar1 = (uint *)((int)g_CPathMap_PTR_ARRAY_01ec151c + iVar2);
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
       core_path_cpp_CPathMap_reset_FUN_0050cee0((CPathMap *)*puVar1);
-    } while (iVar3 < _DAT_01ec1518);
+    } while (iVar3 < g_INT_01ec1518);
   }
   return;
 }

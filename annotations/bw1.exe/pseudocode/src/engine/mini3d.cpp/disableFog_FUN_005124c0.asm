@@ -8,7 +8,7 @@
 ;   engine_font.cpp_CBitFont_flushAccelBatch_FUN_004c2750 at 004c27b9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d224c8
+;   int g_INT_01d224c8
 ;
 ; *****************************************************************************
 
@@ -16,6 +16,6 @@ section .text
 
     XOR EDX,EDX                         ; 005124c0
         ;   Label: engine_mini3d.cpp_disableFog_FUN_005124c0
-    MOV dword ptr [0x01d224c8],EDX      ; 005124c2 | DAT_01d224c8
+    MOV dword ptr [0x01d224c8],EDX      ; 005124c2 | g_INT_01d224c8
     RET                                 ; 005124c8
 

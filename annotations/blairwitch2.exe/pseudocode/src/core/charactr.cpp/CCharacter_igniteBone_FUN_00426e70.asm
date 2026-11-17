@@ -22,7 +22,7 @@
 ;   core_flame.cpp_CFlame_process_FUN_0049f2e0 at 0049f5d4
 ;
 ; Referenced Globals:
-;   undefined4 s_KCHero_005ccda9+1
+;   TerminatedCString s_CHero_005ccdaa
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c840
@@ -58,7 +58,7 @@ section .text
     POP ESI                             ; 00426e9b
     POP EBX                             ; 00426e9c
     RET                                 ; 00426e9d
-    PUSH 0x5ccdaa                       ; 00426e9e | s_KCHero_005ccda9+1
+    PUSH 0x5ccdaa                       ; 00426e9e | = "CHero"
         ;   Label: LAB_00426e9e
     PUSH EBX                            ; 00426ea3
     CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 00426ea4

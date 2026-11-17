@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 93,
+    "complexity_score": 78,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 38
@@ -71,9 +70,9 @@
     },
     {
       "addr": "00626ad8",
-      "name": "DAT_00626ad8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_00626ad8",
+      "type": "uint",
+      "value": "0x1"
     }
   ],
   "param_estimates": {
@@ -259,7 +258,7 @@
       "line": 10,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "iVar1 = WideCharToMultiByte(DAT_00626ad8,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,(LPCSTR)0x0,",
+      "text": "iVar1 = WideCharToMultiByte(g_UINT_00626ad8,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,",
       "type": "stack_ref"
     },
     {
@@ -267,16 +266,8 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = WideCharToMultiByte(DAT_00626ad8,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,(LPCSTR)0x0,",
+      "text": "iVar1 = WideCharToMultiByte(g_UINT_00626ad8,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00626ad8",
-      "severity": "mild",
-      "text": "iVar1 = WideCharToMultiByte(DAT_00626ad8,0x200,(LPCWSTR)&stack0x00000008,1,param_1,2,(LPCSTR)0x0,",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 7,

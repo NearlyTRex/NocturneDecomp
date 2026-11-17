@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureModel *texture_list,int *texture_index_list)
 
 {
@@ -19,8 +17,8 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090(CMorphMo
   SMRGLHeaderPrimitive *pSVar6;
   
   if (4 < this_ptr->part_count) {
-    _DAT_01d046a0 = "..\\core\\morph.cpp";
-    _DAT_01d046a4 = 0x77;
+    g_CHAR_PTR_01d046a0 = "..\\core\\morph.cpp";
+    g_INT_01d046a4 = 0x77;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMorphModel::addPart - too many parts!");
   }
   iVar5 = 0;
@@ -43,8 +41,8 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090(CMorphMo
   this_ptr->part_count = this_ptr->part_count + 1;
   if ((this_ptr->points == (SMorphPoint *)0x0) || (this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0)
      ) {
-    _DAT_01d046a0 = "..\\core\\morph.cpp";
-    _DAT_01d046a4 = 0x90;
+    g_CHAR_PTR_01d046a0 = "..\\core\\morph.cpp";
+    g_INT_01d046a4 = 0x90;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMorphModel::setup - out of memory!");
   }
   if (vertex_data != (CVector3i *)0x0) {

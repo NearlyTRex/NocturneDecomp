@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_005348a0(CPathMap *this_ptr)
 
 {
@@ -28,14 +26,14 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_005348a0(CPathMap *th
     iVar1 = 0;
     iStack_1c = iStack_14;
     do {
-      _sprintf(acStack_11c,(char *)0x5eca80);
-      if ((iVar1 == _DAT_01e6c16c) && (iVar2 == _DAT_01e6c170)) {
+      _sprintf(acStack_11c,"%s");
+      if ((iVar1 == g_INT_01e6c16c) && (iVar2 == g_INT_01e6c170)) {
         acStack_11c[0] = 's';
       }
-      if ((iVar1 == _DAT_01e6c174) && (iVar2 == _DAT_01e6c178)) {
+      if ((iVar1 == g_INT_01e6c174) && (iVar2 == g_INT_01e6c178)) {
         acStack_11c[0] = 'd';
       }
-      x = DAT_0061b498 / 2 + iVar3;
+      x = g_INT_0061b498 / 2 + iVar3;
       iVar1 = iVar1 + 1;
       iVar3 = iVar3 + 0xe;
       engine_2d_c_drawText_FUN_00401fe0(acStack_11c,x,iStack_1c);

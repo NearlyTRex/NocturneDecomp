@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0(CDemonSet *this_ptr)
 
 {
@@ -41,8 +39,7 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0(CDemonS
   if (this_ptr_00 != (CCharacter *)0x0) {
     this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
                             (&this_ptr_00->model);
-    iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
-                      (this_ptr_01,"?Bip01 Head" + 1,0);
+    iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",0);
     local_24.y = 0.338;
     local_18 = (this_ptr_00->model).bone_transform.bone_model_matrices + iVar3;
     local_24.z = 0.75;
@@ -69,7 +66,7 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0(CDemonS
     *(float *)(&stack0xffffff90 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
          local_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
     g_CDemonLightInstance.volumetric_enabled = 0;
-    local_60.x = local_78 + (float)_DAT_005e5922;
+    local_60.x = local_78 + (float)0.261799387791667;
     local_60.y = local_74 + (this_ptr_00->base).orient.vec.y;
     if (&stack0x00000000 != g_CDemonLightInstance.base.camera_name + 0x18) {
       g_CDemonLightInstance.base.base.position.f.x = local_54;
@@ -87,10 +84,10 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0(CDemonS
       g_CDemonCameraInstance.base.position.f.z = local_50[1];
     }
     core_dlight_cpp_CDemonLight_beginScene_FUN_0044a020(local_14,0);
-    DAT_0061b5b8 = 0;
+    g_INT_0061b5b8 = 0;
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
               (this_ptr,(local_14->base).max_distance,0);
-    DAT_0061b5b8 = 1;
+    g_INT_0061b5b8 = 1;
     core_set_cpp_CDemonSet_buildDisplayList_FUN_005332f0(this_ptr,0xffffffff);
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10(this_ptr,1);
     core_set_cpp_CDemonSet_buildDisplayList_FUN_005332f0(this_ptr,1);
@@ -100,24 +97,25 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0(CDemonS
       do {
         (*((pCVar5->sorted_render_actors[0]->vtable)._ub)->renderOpaque)
                   (pCVar5->sorted_render_actors[0]);
-        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);
+        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
+                  (g_CDemonRenderer_PTR_0060b280,1);
         iVar3 = iVar3 + 1;
         pCVar5 = (CDemonSet *)pCVar5->cameras;
       } while (iVar3 < this_ptr->sorted_render_actor_count);
     }
     core_gore_cpp_CGore_renderParticles_FUN_004c9440(g_CGorePtr);
-    core_fire_cpp_CFireEffect_render_FUN_0049c780(0x01C3DEB4);
+    core_fire_cpp_CFireEffect_render_FUN_0049c780(g_CFireEffect_PTR_00614d30);
     core_dlight_cpp_CDemonLight_endScene_FUN_0044a2d0(local_14,1);
-    local_3c.x = (int)ROUND(local_54 * _DAT_005fb210);
-    local_3c.y = (int)ROUND(local_50[0] * _DAT_005fb210);
-    local_3c.z = (int)ROUND(local_50[1] * _DAT_005fb210);
+    local_3c.x = (int)ROUND(local_54 * 256.0f);
+    local_3c.y = (int)ROUND(local_50[0] * 256.0f);
+    local_3c.z = (int)ROUND(local_50[1] * 256.0f);
     core_set_cpp_CDemonSet_setLightingParameters_FUN_00530980
               (this_ptr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,(CVector3f *)0x0
                ,(CMatrix3x3f *)0x0);
     iVar3 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_005311e0
                       (this_ptr,&local_3c,(CVector3i *)0x0);
-    iVar4 = core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50(0x01C3DEB4);
-    if (DAT_006141bc < 0xf1) {
+    iVar4 = core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50(g_CFireEffect_PTR_00614d30);
+    if (g_INT_006141bc < 0xf1) {
       iVar1 = -local_14->shadow_map_width;
       iVar2 = -local_14->shadow_map_height;
     }
@@ -126,9 +124,9 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0(CDemonS
       iVar2 = local_14->shadow_map_height * -2;
     }
     core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0044d600
-              (local_14,(DAT_006141b8 + iVar1) / 2,(DAT_006141bc + iVar2) / 2,
+              (local_14,(g_INT_006141b8 + iVar1) / 2,(g_INT_006141bc + iVar2) / 2,
                ((int)((iVar3 + (iVar3 >> 0x1f) * -0x80) - (uint)((iVar3 >> 0x1f) << 6 < 0)) >> 7) +
-               iVar4 * 0x80 + *(int *)(0x02661F80 + 0x24) * 0x8000);
+               iVar4 * 0x80 + g_CWeather_PTR_0061e8f4->lightning_active * 0x8000);
     return;
   }
   return;

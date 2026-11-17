@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01cd0c24
-;   undefined4 DAT_01cd0c64
-;   undefined4 DAT_01cd0c94
+;   int g_INT_01cd0c24
+;   undefined4 g_CHero_PTR_ARRAY_01cd0c60[1]
+;   int g_INT_01cd0c94
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -33,12 +33,12 @@ section .text
     MOV EDX,0x1                         ; 004dc013
     PUSH EBX                            ; 004dc018 | g_CDemonSetInstance
     XOR ESI,ESI                         ; 004dc019
-    MOV dword ptr [0x01cd0c94],EDX      ; 004dc01b | DAT_01cd0c94
+    MOV dword ptr [0x01cd0c94],EDX      ; 004dc01b | g_INT_01cd0c94
     CALL core_set.cpp_CDemonSet_setGamma_FUN_00555830 ; 004dc021
         ;   XREF to: 00555830 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setGamma_FUN_00555830(CDemonSet * this_ptr, int gamma)
     ADD ESP,0x8                         ; 004dc026
-    MOV dword ptr [0x01cd0c24],ESI      ; 004dc029 | DAT_01cd0c24
-    MOV dword ptr [0x01cd0c64],ESI      ; 004dc02f | DAT_01cd0c64
+    MOV dword ptr [0x01cd0c24],ESI      ; 004dc029 | g_INT_01cd0c24
+    MOV dword ptr [0x01cd0c64],ESI      ; 004dc02f | g_CHero_PTR_ARRAY_01cd0c60[1]
     POP ESI                             ; 004dc035
     POP EBX                             ; 004dc036
     RET                                 ; 004dc037

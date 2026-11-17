@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 56,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 89
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
   },
   "cross_references": [],
   "function": {
@@ -58,38 +55,38 @@
   "globals": [
     {
       "addr": "00623320",
-      "name": "DAT_00623320",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00623320",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "00623324",
-      "name": "DAT_00623324",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00623324",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "00623328",
-      "name": "DAT_00623328",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00623328",
+      "type": "int",
+      "value": "0x2b11"
     },
     {
       "addr": "02c81038",
-      "name": "DAT_02c81038",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02c81038",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02c8103c",
-      "name": "DAT_02c8103c",
-      "type": "undefined4",
+      "name": "g_INT_02c8103c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81040",
-      "name": "DAT_02c81040",
-      "type": "undefined4",
+      "name": "g_INT_02c81040",
+      "type": "int",
       "value": null
     }
   ],
@@ -154,22 +151,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02c81038 + 4))();",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_adjustAimAngleForOffset_FUN_00459db0(float *angle,float distance,float offset)
 
 {
   float fVar1;
   double dVar2;
   
-  if ((((float)_DAT_005d0517 <= distance) &&
+  if ((((float)0.01 <= distance) &&
       (dVar2 = (double)(SQRT(distance * distance - offset * offset) / distance), dVar2 < 1.0)) &&
      (0.0 <= dVar2)) {
     dVar2 = acos(dVar2);

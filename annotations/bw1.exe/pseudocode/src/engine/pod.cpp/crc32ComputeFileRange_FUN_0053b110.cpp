@@ -15,8 +15,8 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0053b110(char *filename,in
   int iVar3;
   uint current_crc;
   
-  iVar1 = engine_dosio_cpp_getFileSize_FUN_00478fb0((char *)0x5ed65e,filename);
-  file = _fopen(filename,(char *)0x5ed65f);
+  iVar1 = engine_dosio_cpp_getFileSize_FUN_00478fb0(&g_CHAR_005ed65e,filename);
+  file = _fopen(filename,"rb");
   _fseek(file,start_offset,0);
   iVar3 = 0;
   current_crc = 0xffffffff;

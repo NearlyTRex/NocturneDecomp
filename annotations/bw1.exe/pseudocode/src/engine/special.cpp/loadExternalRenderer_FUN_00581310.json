@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 900,
-    "complexity_score": 734,
+    "complexity_score": 500,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 181,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 409,
-    "suspect_count": 31,
+    "pseudocode_lines": 435,
+    "suspect_count": 5,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 1309
+    "total_lines": 1335
   },
   "cross_references": [
     {
@@ -538,21 +538,21 @@
     },
     {
       "addr": "0061b4a4",
-      "name": "DAT_0061b4a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a4",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "0061b4a8",
-      "name": "DAT_0061b4a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a8",
+      "type": "int",
+      "value": "0x100"
     },
     {
       "addr": "0061b4b8",
-      "name": "DAT_0061b4b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4b8",
+      "type": "int",
+      "value": "0xff"
     },
     {
       "addr": "0061b4bc",
@@ -562,15 +562,15 @@
     },
     {
       "addr": "006257d0",
-      "name": "DAT_006257d0",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_006257d0",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "006258d0",
-      "name": "DAT_006258d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006258d0",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "006258d4",
@@ -586,596 +586,596 @@
     },
     {
       "addr": "006258dc",
-      "name": "DAT_006258dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006258dc",
+      "type": "int",
+      "value": "0x3c000"
     },
     {
       "addr": "006258e0",
-      "name": "DAT_006258e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PTR_006258e0",
+      "type": "void*",
+      "value": "02c83384"
     },
     {
       "addr": "01c4e9d4",
-      "name": "DAT_01c4e9d4",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c4e9d4",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9d8",
-      "name": "DAT_01c4e9d8",
-      "type": "undefined4",
+      "name": "g_INT_01c4e9d8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4e9dc",
-      "name": "DAT_01c4e9dc",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c4e9dc",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9e0",
-      "name": "DAT_01c4e9e0",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c4e9e0",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9e4",
-      "name": "DAT_01c4e9e4",
-      "type": "undefined4",
+      "name": "g_INT_01c4e9e4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4e9e8",
-      "name": "DAT_01c4e9e8",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c4e9e8",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9ec",
-      "name": "DAT_01c4e9ec",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c4e9ec",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9f0",
-      "name": "DAT_01c4e9f0",
-      "type": "undefined4",
+      "name": "g_INT_01c4e9f0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4e9f4",
-      "name": "DAT_01c4e9f4",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c4e9f4",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4f008",
-      "name": "DAT_01c4f008",
-      "type": "undefined4",
+      "name": "g_INT_01c4f008",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f00c",
-      "name": "DAT_01c4f00c",
-      "type": "undefined4",
+      "name": "g_INT_01c4f00c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f010",
-      "name": "DAT_01c4f010",
-      "type": "undefined4",
+      "name": "g_INT_01c4f010",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f014",
-      "name": "DAT_01c4f014",
-      "type": "undefined4",
+      "name": "g_INT_01c4f014",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f020",
-      "name": "DAT_01c4f020",
-      "type": "undefined4",
+      "name": "g_INT_01c4f020",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c50940",
-      "name": "DAT_01c50940",
-      "type": "undefined4",
+      "name": "g_INT_01c50940",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d0c",
-      "name": "DAT_01c51d0c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d0c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d10",
-      "name": "DAT_01c51d10",
-      "type": "undefined4",
+      "name": "g_INT_01c51d10",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83370",
-      "name": "DAT_02c83370",
-      "type": "undefined4",
+      "name": "g_INT_02c83370",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83374",
-      "name": "DAT_02c83374",
-      "type": "undefined4",
+      "name": "g_INT_02c83374",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8337c",
-      "name": "DAT_02c8337c",
-      "type": "undefined4",
+      "name": "g_INT_02c8337c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83388",
-      "name": "DAT_02c83388",
-      "type": "undefined4",
+      "name": "g_PTR_02c83388",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8338c",
-      "name": "DAT_02c8338c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8338c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83390",
-      "name": "DAT_02c83390",
-      "type": "undefined4",
+      "name": "g_PTR_02c83390",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83394",
-      "name": "DAT_02c83394",
-      "type": "undefined4",
+      "name": "g_INT_02c83394",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83398",
-      "name": "DAT_02c83398",
-      "type": "undefined4",
+      "name": "g_PTR_02c83398",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8339c",
-      "name": "DAT_02c8339c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8339c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833a0",
-      "name": "DAT_02c833a0",
-      "type": "undefined4",
+      "name": "g_PTR_02c833a0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833a4",
-      "name": "DAT_02c833a4",
-      "type": "undefined4",
+      "name": "g_PTR_02c833a4",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833a8",
-      "name": "DAT_02c833a8",
-      "type": "undefined4",
+      "name": "g_PTR_02c833a8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833ac",
-      "name": "DAT_02c833ac",
-      "type": "undefined4",
+      "name": "g_PTR_02c833ac",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833b0",
-      "name": "DAT_02c833b0",
-      "type": "undefined4",
+      "name": "g_PTR_02c833b0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833b4",
-      "name": "DAT_02c833b4",
-      "type": "undefined4",
+      "name": "g_PTR_02c833b4",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833b8",
-      "name": "DAT_02c833b8",
-      "type": "undefined4",
+      "name": "g_PTR_02c833b8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833bc",
-      "name": "DAT_02c833bc",
-      "type": "undefined4",
+      "name": "g_PTR_02c833bc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833c0",
-      "name": "DAT_02c833c0",
-      "type": "undefined4",
+      "name": "g_PTR_02c833c0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833c4",
-      "name": "DAT_02c833c4",
-      "type": "undefined4",
+      "name": "g_PTR_02c833c4",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833c8",
-      "name": "DAT_02c833c8",
-      "type": "undefined4",
+      "name": "g_PTR_02c833c8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833cc",
-      "name": "DAT_02c833cc",
-      "type": "undefined4",
+      "name": "g_PTR_02c833cc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833d0",
-      "name": "DAT_02c833d0",
-      "type": "undefined4",
+      "name": "g_PTR_02c833d0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833d4",
-      "name": "DAT_02c833d4",
-      "type": "undefined4",
+      "name": "g_PTR_02c833d4",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833d8",
-      "name": "DAT_02c833d8",
-      "type": "undefined4",
+      "name": "g_PTR_02c833d8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833dc",
-      "name": "DAT_02c833dc",
-      "type": "undefined4",
+      "name": "g_PTR_02c833dc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833e0",
-      "name": "DAT_02c833e0",
-      "type": "undefined4",
+      "name": "g_PTR_02c833e0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833e4",
-      "name": "DAT_02c833e4",
-      "type": "undefined4",
+      "name": "g_PTR_02c833e4",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833e8",
-      "name": "DAT_02c833e8",
-      "type": "undefined4",
+      "name": "g_PTR_02c833e8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833ec",
-      "name": "DAT_02c833ec",
-      "type": "undefined4",
+      "name": "g_PTR_02c833ec",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833f0",
-      "name": "DAT_02c833f0",
-      "type": "undefined4",
+      "name": "g_PTR_02c833f0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833f4",
-      "name": "DAT_02c833f4",
-      "type": "undefined4",
+      "name": "g_PTR_02c833f4",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833f8",
-      "name": "DAT_02c833f8",
-      "type": "undefined4",
+      "name": "g_PTR_02c833f8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833fc",
-      "name": "DAT_02c833fc",
-      "type": "undefined4",
+      "name": "g_PTR_02c833fc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83400",
-      "name": "DAT_02c83400",
-      "type": "undefined4",
+      "name": "g_INT_02c83400",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83404",
-      "name": "DAT_02c83404",
-      "type": "undefined4",
+      "name": "g_INT_02c83404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83408",
-      "name": "DAT_02c83408",
-      "type": "undefined4",
+      "name": "g_PTR_02c83408",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8340c",
-      "name": "DAT_02c8340c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8340c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83410",
-      "name": "DAT_02c83410",
-      "type": "undefined4",
+      "name": "g_PTR_02c83410",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83414",
-      "name": "DAT_02c83414",
-      "type": "undefined4",
+      "name": "g_PTR_02c83414",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83418",
-      "name": "DAT_02c83418",
-      "type": "undefined4",
+      "name": "g_PTR_02c83418",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8341c",
-      "name": "DAT_02c8341c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8341c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83420",
-      "name": "DAT_02c83420",
-      "type": "undefined4",
+      "name": "g_PTR_02c83420",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83424",
-      "name": "DAT_02c83424",
-      "type": "undefined4",
+      "name": "g_PTR_02c83424",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83428",
-      "name": "DAT_02c83428",
-      "type": "undefined4",
+      "name": "g_PTR_02c83428",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8342c",
-      "name": "DAT_02c8342c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8342c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83430",
-      "name": "DAT_02c83430",
-      "type": "undefined4",
+      "name": "g_PTR_02c83430",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83434",
-      "name": "DAT_02c83434",
-      "type": "undefined4",
+      "name": "g_INT_02c83434",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83438",
-      "name": "DAT_02c83438",
-      "type": "undefined4",
+      "name": "g_PTR_02c83438",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8343c",
-      "name": "DAT_02c8343c",
-      "type": "undefined4",
+      "name": "g_INT_02c8343c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83440",
-      "name": "DAT_02c83440",
-      "type": "undefined4",
+      "name": "g_PTR_02c83440",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83444",
-      "name": "DAT_02c83444",
-      "type": "undefined4",
+      "name": "g_PTR_02c83444",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83448",
-      "name": "DAT_02c83448",
-      "type": "undefined4",
+      "name": "g_PTR_02c83448",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8344c",
-      "name": "DAT_02c8344c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8344c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83450",
-      "name": "DAT_02c83450",
-      "type": "undefined4",
+      "name": "g_PTR_02c83450",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83454",
-      "name": "DAT_02c83454",
-      "type": "undefined4",
+      "name": "g_PTR_02c83454",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83458",
-      "name": "DAT_02c83458",
-      "type": "undefined4",
+      "name": "g_PTR_02c83458",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8345c",
-      "name": "DAT_02c8345c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8345c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83460",
-      "name": "DAT_02c83460",
-      "type": "undefined4",
+      "name": "g_PTR_02c83460",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83464",
-      "name": "DAT_02c83464",
-      "type": "undefined4",
+      "name": "g_PTR_02c83464",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83468",
-      "name": "DAT_02c83468",
-      "type": "undefined4",
+      "name": "g_PTR_02c83468",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8346c",
-      "name": "DAT_02c8346c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8346c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83470",
-      "name": "DAT_02c83470",
-      "type": "undefined4",
+      "name": "g_PTR_02c83470",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83474",
-      "name": "DAT_02c83474",
-      "type": "undefined4",
+      "name": "g_INT_02c83474",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83478",
-      "name": "DAT_02c83478",
-      "type": "undefined4",
+      "name": "g_INT_02c83478",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8347c",
-      "name": "DAT_02c8347c",
-      "type": "undefined4",
+      "name": "g_INT_02c8347c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83480",
-      "name": "DAT_02c83480",
-      "type": "undefined4",
+      "name": "g_PTR_02c83480",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83484",
-      "name": "DAT_02c83484",
-      "type": "undefined4",
+      "name": "g_PTR_02c83484",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83488",
-      "name": "DAT_02c83488",
-      "type": "undefined4",
+      "name": "g_PTR_02c83488",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8348c",
-      "name": "DAT_02c8348c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8348c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83490",
-      "name": "DAT_02c83490",
-      "type": "undefined4",
+      "name": "g_INT_02c83490",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83494",
-      "name": "DAT_02c83494",
-      "type": "undefined4",
+      "name": "g_PTR_02c83494",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c83498",
-      "name": "DAT_02c83498",
-      "type": "undefined4",
+      "name": "g_PTR_02c83498",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c8349c",
-      "name": "DAT_02c8349c",
-      "type": "undefined4",
+      "name": "g_PTR_02c8349c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c834a0",
-      "name": "DAT_02c834a0",
-      "type": "undefined4",
+      "name": "g_PTR_02c834a0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c834a4",
-      "name": "DAT_02c834a4",
-      "type": "undefined4",
+      "name": "g_PTR_02c834a4",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c834a8",
-      "name": "DAT_02c834a8",
-      "type": "undefined4",
+      "name": "g_PTR_02c834a8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c834ac",
-      "name": "DAT_02c834ac",
-      "type": "undefined4",
+      "name": "g_INT_02c834ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c834b0",
-      "name": "DAT_02c834b0",
-      "type": "undefined4",
+      "name": "g_HMODULE_02c834b0",
+      "type": "HMODULE",
       "value": null
     },
     {
       "addr": "02c834c0",
-      "name": "DAT_02c834c0",
-      "type": "undefined4",
+      "name": "g_HWND_02c834c0",
+      "type": "HWND",
       "value": null
     },
     {
       "addr": "02c834c8",
-      "name": "DAT_02c834c8",
-      "type": "undefined4",
+      "name": "g_INT_02c834c8",
+      "type": "int",
       "value": null
     }
   ],
@@ -1250,192 +1250,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_006257d0",
-      "severity": "mild",
-      "text": "_DAT_02c834b0 = wincore_wddvmem_cpp_loadLibrary_FUN_005ad460(&DAT_006257d0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 366,
-      "match": "DAT_01c4e9d4",
-      "severity": "mild",
-      "text": "puStack_a0 = &DAT_01c4e9d4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 367,
-      "match": "DAT_01c4e9d8",
-      "severity": "mild",
-      "text": "puStack_9c = &DAT_01c4e9d8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 368,
-      "match": "DAT_01c4e9dc",
-      "severity": "mild",
-      "text": "puStack_98 = &DAT_01c4e9dc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 369,
-      "match": "DAT_01c4e9e0",
-      "severity": "mild",
-      "text": "puStack_94 = &DAT_01c4e9e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 370,
-      "match": "DAT_01c4e9e4",
-      "severity": "mild",
-      "text": "puStack_90 = &DAT_01c4e9e4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 371,
-      "match": "DAT_01c4e9e8",
-      "severity": "mild",
-      "text": "puStack_8c = &DAT_01c4e9e8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 372,
-      "match": "DAT_01c4e9ec",
-      "severity": "mild",
-      "text": "puStack_88 = &DAT_01c4e9ec;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 373,
-      "match": "DAT_01c4e9f0",
-      "severity": "mild",
-      "text": "puStack_84 = &DAT_01c4e9f0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 374,
-      "match": "DAT_01c4e9f4",
-      "severity": "mild",
-      "text": "puStack_80 = &DAT_01c4e9f4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 375,
-      "match": "DAT_01c51d0c",
-      "severity": "mild",
-      "text": "puStack_7c = &DAT_01c51d0c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 376,
-      "match": "DAT_01c4f024",
-      "severity": "mild",
-      "text": "puStack_78 = &DAT_01c4f024;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 377,
-      "match": "DAT_0061b4b8",
-      "severity": "mild",
-      "text": "puStack_74 = &DAT_0061b4b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 378,
-      "match": "DAT_01c4f020",
-      "severity": "mild",
-      "text": "puStack_70 = &DAT_01c4f020;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 379,
-      "match": "DAT_01c4f008",
-      "severity": "mild",
-      "text": "puStack_6c = &DAT_01c4f008;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 380,
-      "match": "DAT_01c4f00c",
-      "severity": "mild",
-      "text": "puStack_68 = &DAT_01c4f00c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 381,
-      "match": "DAT_01c4f010",
-      "severity": "mild",
-      "text": "puStack_64 = &DAT_01c4f010;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 382,
-      "match": "DAT_01c4f014",
-      "severity": "mild",
-      "text": "puStack_60 = &DAT_01c4f014;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 383,
-      "match": "DAT_0061b4a4",
-      "severity": "mild",
-      "text": "puStack_5c = &DAT_0061b4a4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 384,
-      "match": "DAT_0061b4a8",
-      "severity": "mild",
-      "text": "puStack_58 = &DAT_0061b4a8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 385,
-      "match": "DAT_01c50940",
-      "severity": "mild",
-      "text": "puStack_54 = &DAT_01c50940;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 386,
-      "match": "DAT_006258dc",
-      "severity": "mild",
-      "text": "puStack_50 = &DAT_006258dc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 387,
+      "line": 412,
       "match": "DAT_006258d4",
       "severity": "mild",
       "text": "puStack_4c = &DAT_006258d4;",
@@ -1443,7 +1259,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 388,
+      "line": 413,
       "match": "DAT_006258d8",
       "severity": "mild",
       "text": "puStack_48 = &DAT_006258d8;",
@@ -1451,50 +1267,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 390,
-      "match": "DAT_006258d0",
-      "severity": "mild",
-      "text": "puStack_40 = &DAT_006258d0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 391,
-      "match": "DAT_02c8337c",
-      "severity": "mild",
-      "text": "puStack_3c = &DAT_02c8337c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 392,
-      "match": "DAT_01c51d10",
-      "severity": "mild",
-      "text": "puStack_38 = &DAT_01c51d10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 393,
+      "line": 418,
       "match": "DAT_0061b4bc",
       "severity": "mild",
       "text": "puStack_34 = &DAT_0061b4bc;",
       "type": "undefined_data"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 427,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (*(code *)g_PTR_02c83388)(pHVar1,&p_Stack_a0);",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Raw hex address 0x2c83378 assigned to bare local `uStack_44`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_44` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 389,
+      "line": 414,
       "match": "0x2c83378",
       "severity": "moderate",
       "text": "uStack_44 = 0x2c83378;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x2c83384 assigned to bare local `uStack_14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 398,
-      "match": "0x2c83384",
-      "severity": "moderate",
-      "text": "uStack_14 = 0x02C83384;",
       "type": "raw_address_constant"
     }
   ]

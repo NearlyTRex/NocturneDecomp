@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hellhag_cpp_CHag_processAI_FUN_005ab260(CHag *this_ptr,float delta_time)
 
 {
@@ -67,7 +65,7 @@ void __cdecl core_hellhag_cpp_CHag_processAI_FUN_005ab260(CHag *this_ptr,float d
   if (iVar1 == 0) {
     iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar5,"Animation");
     if (iVar1 == 0) {
-      iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar5,&DAT_005f0c52);
+      iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar5,"Burn");
       if (iVar1 == 0) {
         (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
       }
@@ -101,11 +99,11 @@ void __cdecl core_hellhag_cpp_CHag_processAI_FUN_005ab260(CHag *this_ptr,float d
     pSVar5 = &(this_ptr->base).state_machine;
     iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar5,"Death");
     if (iVar1 == 0) {
-      iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar5,&DAT_005f0c5d);
+      iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar5,"Burn");
       if (iVar1 == 0) {
         uVar3 = this_ptr->sfx_handle;
         (this_ptr->base).base.base.hit_points =
-             delta_time * (float)_DAT_005f0c76 + (this_ptr->base).base.base.hit_points;
+             delta_time * (float)15 + (this_ptr->base).base.base.hit_points;
         iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(uVar3);
         if (iVar1 == 0) {
           sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
@@ -171,10 +169,10 @@ void __cdecl core_hellhag_cpp_CHag_processAI_FUN_005ab260(CHag *this_ptr,float d
                    afStack_54[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
               acceleration = &CStack_70;
               texture_index = 0.0;
-              fStack_94 = fStack_40 * _DAT_005f0c7e;
-              afStack_90[0] = afStack_3c[0] * _DAT_005f0c7e;
-              afStack_90[1] = afStack_3c[1] * _DAT_005f0c7e;
-              CStack_88.x = fStack_40 * _DAT_005f0c7e;
+              fStack_94 = fStack_40 * 0.1f;
+              afStack_90[0] = afStack_3c[0] * 0.1f;
+              afStack_90[1] = afStack_3c[1] * 0.1f;
+              CStack_88.x = fStack_40 * 0.1f;
               *(float *)((int)&CStack_88 + (uint)bVar10 * -8 + 4) = afStack_90[(uint)bVar10 * -2];
               *(float *)((int)&CStack_88 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4 + 8) =
                    afStack_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
@@ -182,10 +180,10 @@ void __cdecl core_hellhag_cpp_CHag_processAI_FUN_005ab260(CHag *this_ptr,float d
               position_offset = &CStack_4c;
               max_value = 1.0;
               fVar13 = 0.5;
-              fStack_c4 = CStack_88.x * _DAT_005f0c82;
-              afStack_c0[0] = CStack_88.y * _DAT_005f0c82;
-              afStack_c0[1] = CStack_88.z * _DAT_005f0c82;
-              CStack_70.x = CStack_88.x * _DAT_005f0c82;
+              fStack_c4 = CStack_88.x * 2.0f;
+              afStack_c0[0] = CStack_88.y * 2.0f;
+              afStack_c0[1] = CStack_88.z * 2.0f;
+              CStack_70.x = CStack_88.x * 2.0f;
               *(float *)((int)&CStack_70 + (uint)bVar10 * -8 + 4) = afStack_c0[(uint)bVar10 * -2];
               *(float *)((int)&CStack_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
                    afStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
@@ -202,9 +200,9 @@ void __cdecl core_hellhag_cpp_CHag_processAI_FUN_005ab260(CHag *this_ptr,float d
             fVar11 = (float10)fcos((float10)fStack_14);
             fVar12 = (float10)fsin((float10)fStack_14);
             dStack_34 = (double)fVar12;
-            fStack_2c = (float)(fVar11 * (float10)_DAT_005f0c86);
+            fStack_2c = (float)(fVar11 * (float10)2);
             CStack_b8.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(1.0,6.0);
-            CStack_b8.x = (float)((float10)dStack_34 * (float10)_DAT_005f0c86);
+            CStack_b8.x = (float)((float10)dStack_34 * (float10)2);
             CStack_b8.z = fStack_2c;
             CStack_a0.y = 1.0;
             CStack_ac.x = 0.0;

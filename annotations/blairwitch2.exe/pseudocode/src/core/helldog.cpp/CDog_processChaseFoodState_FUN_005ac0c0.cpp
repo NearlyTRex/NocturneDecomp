@@ -18,8 +18,7 @@ void __cdecl core_helldog_cpp_CDog_processChaseFoodState_FUN_005ac0c0(CDog *this
   
   pSVar4 = &(this_ptr->base).state_machine;
   if (this_ptr->food == (CDemonActor *)0x0) {
-    core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880
-              (pSVar4,"?ChaseFoodComplete" + 1);
+    core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880(pSVar4,"ChaseFoodComplete");
     return;
   }
   pCVar1 = (CDog *)this_ptr->food[1].particle_systems[1].fade_end;
@@ -45,7 +44,8 @@ void __cdecl core_helldog_cpp_CDog_processChaseFoodState_FUN_005ac0c0(CDog *this
     return;
   }
   (*((this_ptr->food->vtable)._ub)->onDropped)(this_ptr->food,(CVector3f *)0x0);
-  core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,this_ptr->food,1);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
+            (g_CDemonMission_PTR_00618170,this_ptr->food,1);
   pSVar4 = &(this_ptr->base).state_machine;
   state_name = core_muzzle_cpp_SStateMachine_getInitialStateName_FUN_0059db90(pSVar4);
   core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(pSVar4,state_name);

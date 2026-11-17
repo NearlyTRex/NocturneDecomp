@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(double trigger_time,int trigger_id)
 
 {
   int iVar1;
   
-  iVar1 = _DAT_02ceb91c * 0x60;
-  *(double *)(iVar1 + 0x2ceb970) = trigger_time;
-  *(int *)(iVar1 + 0x2ceb978) = trigger_id;
+  iVar1 = g_INT_02ceb91c;
+  g_CSfxOptions_ARRAY_02ceb920[g_INT_02ceb91c].playback_position = trigger_time;
+  g_CSfxOptions_ARRAY_02ceb920[iVar1].playback_position_type = trigger_id;
   return;
 }

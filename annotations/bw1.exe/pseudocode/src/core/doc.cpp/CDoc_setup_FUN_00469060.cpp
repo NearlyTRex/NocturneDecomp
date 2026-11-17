@@ -28,23 +28,23 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004eaa10(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_00);
-  _DAT_01b68814 =
+  g_INT_01b68814 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 head",1);
-  _DAT_01b68818 =
+  g_INT_01b68818 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Clavicle",1);
-  _DAT_01b6881c =
+  g_INT_01b6881c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Clavicle",1);
-  _DAT_01b68820 =
+  g_INT_01b68820 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01b68824 =
+  g_INT_01b68824 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01b68828 =
+  g_INT_01b68828 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L ForeArm",1);
-  _DAT_01b6882c =
+  g_INT_01b6882c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_01b68830 =
+  g_INT_01b68830 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_01b68834 =
+  g_INT_01b68834 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Foot",1);
   _DAT_01b68838 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Thigh",1);
@@ -52,17 +52,17 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Thigh",1);
   _DAT_01b68840 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Calf",1);
-  _DAT_01b68844 =
+  g_INT_01b68844 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Calf",1);
-  _DAT_01b68848 =
+  g_INT_01b68848 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_01b6884c =
+  g_INT_01b6884c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Hand",1);
   _DAT_01b68850 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Neck",1);
-  _DAT_01b68854 =
+  g_INT_01b68854 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine2",1);
-  _DAT_01b68858 =
+  g_INT_01b68858 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine1",1);
   _DAT_01b6885c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine",1);
@@ -70,14 +70,14 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Pelvis",1);
   iVar4 = 1;
   pcVar3 = "turnlstart";
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01b68848;
-  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_01b6884c;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_01b68848;
+  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_01b6884c;
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
-  _DAT_01b68864 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
+  g_INT_01b68864 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "turnrstart";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
-  _DAT_01b68868 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
+  g_INT_01b68868 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "pickup";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
@@ -85,7 +85,7 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_005675f0
             (this_ptr_00,iVar4,22.0);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-            (this_ptr_00,_DAT_01b6884c,&CStack_40);
+            (this_ptr_00,g_INT_01b6884c,&CStack_40);
   fStack_28 = CStack_40.x;
   afStack_24[(uint)bVar2 * -2] = *(float *)((int)&CStack_40 + (uint)bVar2 * -8 + 4);
   afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
@@ -96,7 +96,7 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
     (this_ptr->ref_r_hand_bone_pos).z = afStack_24[1];
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-            (&(this_ptr->base).base.model,_DAT_01b68824,&CStack_34);
+            (&(this_ptr->base).base.model,g_INT_01b68824,&CStack_34);
   afStack_24[2] = CStack_34.x;
   afStack_24[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_34 + (uint)bVar2 * -8 + 4);
   afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
@@ -116,7 +116,7 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
   this_ptr->goggle_sfx_handles[1] = 0;
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(&(this_ptr->base).base.model);
   this_ptr->quick_turn_active = 0;
-  _DAT_01b6886c = 0;
+  g_INT_01b6886c = 0;
   this_ptr->quick_turn_angle = 0.0;
   return;
 }

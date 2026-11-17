@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0045dc30(CDemonFilter *this_ptr,float init_value,int flags)
 
 {
@@ -38,7 +36,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0045dc30(CDemonFilter *this_
           }
           fVar1 = (1.0 - local_28) * init_value;
           if (flags == 0) {
-            fVar1 = fVar1 * (float)_DAT_005d85a1 * (float)_DAT_005d85a9;
+            fVar1 = fVar1 * (float)256 * (float)0.25;
           }
           else {
             fVar1 = (float)this_ptr->data_buffer[this_ptr->size * iVar5 + iVar4] * fVar1;

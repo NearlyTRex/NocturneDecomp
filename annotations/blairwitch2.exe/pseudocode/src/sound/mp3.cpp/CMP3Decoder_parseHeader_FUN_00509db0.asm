@@ -22,10 +22,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005dfee2
 ;   TerminatedCString s_Out_of_memory_File_s_005dfef3
-;   undefined4 DAT_005e0333
-;   undefined4 DAT_00618e88
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005e0333 = 1000
+;   double[2] g_DOUBLE_ARRAY_00618e88
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -138,8 +138,8 @@ section .text
     MOV EBX,dword ptr [ESP]             ; 00509eaf
     MOV EAX,dword ptr [ESP + 0x10]      ; 00509eb2
     SHL EBX,0x5                         ; 00509eb6
-    FLD double ptr [EBX + EAX*0x8 + 0x618e88] ; 00509eb9 | DAT_00618e88
-    FMUL double ptr [0x005e0333]        ; 00509ec0 | DAT_005e0333
+    FLD double ptr [EBX + EAX*0x8 + 0x618e88] ; 00509eb9 | g_DOUBLE_ARRAY_00618e88
+    FMUL double ptr [0x005e0333]        ; 00509ec0 | g_DOUBLE_005e0333
     PUSH 0x0                            ; 00509ec6
     CALL crt_math.c_round_FUN_005b7ff0  ; 00509ec8
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
@@ -169,8 +169,8 @@ section .text
     MOV EDX,0x5dfee2                    ; 00509f07 | = "..\\sound\\mp3.cpp"
     MOV ECX,0x23d                       ; 00509f0c
     PUSH 0x5dfef3                       ; 00509f11 | = "Out of memory.  File: %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00509f16 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00509f1c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00509f16 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00509f1c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00509f22
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00509f27

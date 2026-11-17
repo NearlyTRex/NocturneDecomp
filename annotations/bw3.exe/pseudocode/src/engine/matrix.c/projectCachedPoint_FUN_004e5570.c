@@ -10,6 +10,6 @@ void __cdecl engine_matrix_c_projectCachedPoint_FUN_004e5570(int cacheIndex)
 
 {
   engine_matrix_c_projectTransformedPoint_FUN_004e5590
-            ((SProjectedVertex *)(&DAT_0060b014 + cacheIndex * 0xc));
+            (&g_SRenderVertex_ARRAY_0060b014[cacheIndex].projected_vertex);
   return;
 }

@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_00479df0(void)
 
 {
-  return _DAT_01c2231c;
+  return g_INT_01c2231c;
 }

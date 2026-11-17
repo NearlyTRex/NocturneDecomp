@@ -8,13 +8,13 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 004681fb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060936c
+;   int g_INT_0060936c = 0x1
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x0060936c]                ; 00402800 | DAT_0060936c
+    MOV EAX,[0x0060936c]                ; 00402800 | g_INT_0060936c
         ;   Label: engine_2d.c_getTextWrapEnabled_FUN_00402800
     RET                                 ; 00402805
 

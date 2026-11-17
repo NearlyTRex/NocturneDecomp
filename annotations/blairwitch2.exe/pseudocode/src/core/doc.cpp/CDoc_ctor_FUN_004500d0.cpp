@@ -15,7 +15,7 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   uint uVar2;
   uint uVar3;
   char cVar4;
-  EBoxActorPickupType EVar5;
+  float fVar5;
   CHero *pCVar6;
   CBoxActor *pCVar7;
   float *pfVar8;
@@ -86,12 +86,12 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   pCVar7[-0xffffffff00000001].push_sound[0x42] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x43] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x44] = '\0';
-  EVar5 = 0x41200000;
+  fVar5 = 10.0f;
   pCVar7[-0xffffffff00000001].push_sound[0x45] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x46] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x47] = '\0';
   pCVar7[-1].physics_box.linear_velocity.z = -1e+30;
-  pCVar7[-1].pickup_type = EVar5;
+  pCVar7[-1].pickup_type = (EBoxActorPickupType)fVar5;
   pCVar7[-1].physics_box.rotation_matrix.m[2].x = -1e+30;
   pCVar7[-1].cam_orientation.heading = 0.0;
   this_ptr_01 = (CDeformableModelInstance *)(pCVar7[-0x4d].model.model_name + 0x98);
@@ -101,7 +101,7 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   pCVar7[-1].can_be_pushed = (int)pCVar7[-1].carrier_actor;
   *(uint *)(pCVar7[-1].push_sound + 0x18) = uVar2;
   *(uint *)(pCVar7[-1].push_sound + 0x10) = uVar3;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_01,(char *)0x5cfb87);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_01,"Laz86.dfm");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_01);
   pCVar7[-0x48].physics_box.scrape_points[6].transformed_position.z = 0.0;
   pCVar7[-0xffffffff00000001].push_sound[0x30] = '\0';

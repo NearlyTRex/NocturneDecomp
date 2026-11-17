@@ -6,21 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)
 
 {
-  int iVar1;
+  CBulletHole *pCVar1;
+  int iVar2;
   
-  iVar1 = _DAT_01c6eaa4 * 0x3c;
-  _DAT_01c6eaa4 = _DAT_01c6eaa4 + 1;
-  if (0xff < _DAT_01c6eaa4) {
-    _DAT_01c6eaa4 = 0;
+  iVar2 = g_INT_01c6eaa4 + 1;
+  pCVar1 = g_CBulletHole_ARRAY_01c6eaa8 + g_INT_01c6eaa4;
+  if (0xff < iVar2) {
+    iVar2 = 0;
   }
-  _DAT_01c6eaa0 = _DAT_01c6eaa0 + 1;
-  if (0x100 < _DAT_01c6eaa0) {
-    _DAT_01c6eaa0 = 0x100;
+  g_INT_01c6eaa0 = g_INT_01c6eaa0 + 1;
+  if (0x100 < g_INT_01c6eaa0) {
+    g_INT_01c6eaa0 = 0x100;
   }
-  return (CBulletHole *)(&DAT_01c6eaa8 + iVar1);
+  g_INT_01c6eaa4 = iVar2;
+  return pCVar1;
 }

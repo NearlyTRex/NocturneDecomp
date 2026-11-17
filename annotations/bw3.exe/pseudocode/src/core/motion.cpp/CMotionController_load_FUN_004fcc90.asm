@@ -11,13 +11,13 @@
 ;   core_actor.cpp_archiveMotionState_FUN_0040bab0 at 0040bae9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c9d9c
+;   TerminatedCString s_anon_005c9d9c
 ;   TerminatedCString s_d_f_005c9d9e
 ;   TerminatedCString s_f_005c9da4
 ;   TerminatedCString s_core_motion_cpp_005c9db1
 ;   TerminatedCString s_CMotionController_load_e_005c9dc4
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -34,7 +34,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fcc92
     MOV EDI,dword ptr [ESP + 0x10]      ; 004fcc96
     PUSH ESI                            ; 004fcc9a
-    PUSH 0x5c9d9c                       ; 004fcc9b | DAT_005c9d9c
+    PUSH 0x5c9d9c                       ; 004fcc9b | = " "
     PUSH EDI                            ; 004fcca0
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004fcca1
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -86,8 +86,8 @@ section .text
     MOV EDX,0x5c9db1                    ; 004fccff | = "..\\core\\motion.cpp"
     MOV ECX,0x583                       ; 004fcd04
     PUSH 0x5c9dc4                       ; 004fcd09 | = "CMotionController::load - error parsi..."
-    MOV dword ptr [0x01d71de0],EDX      ; 004fcd0e | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004fcd14 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004fcd0e | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004fcd14 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fcd1a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fcd1f

@@ -21,9 +21,9 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bc533
-;   undefined4 DAT_005bc53b
-;   undefined4 DAT_005fba44
+;   double g_DOUBLE_005bc533 = 18
+;   double g_DOUBLE_005bc53b = 65536
+;   int g_INT_005fba44 = 0x10000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -34,10 +34,10 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 0046d090
         ;   Label: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
-    FDIVR double ptr [0x005bc533]       ; 0046d094 | DAT_005bc533
-    FMUL double ptr [0x005bc53b]        ; 0046d09a | DAT_005bc53b
+    FDIVR double ptr [0x005bc533]       ; 0046d094 | g_DOUBLE_005bc533
+    FMUL double ptr [0x005bc53b]        ; 0046d09a | g_DOUBLE_005bc53b
     CALL crt_math.c_round_FUN_005a3120  ; 0046d0a0
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
-    FISTP dword ptr [0x005fba44]        ; 0046d0a5 | DAT_005fba44
+    FISTP dword ptr [0x005fba44]        ; 0046d0a5 | g_INT_005fba44
     RET                                 ; 0046d0ab
 

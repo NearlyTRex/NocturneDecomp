@@ -22,13 +22,13 @@
 ;   undefined4 DAT_005e8841
 ;   undefined4 DAT_005e8842
 ;   undefined4 DAT_005e8843
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5ac
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
+;   int g_INT_005fba20 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c5faec
+;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5ac
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
 ;
 ; *****************************************************************************
 
@@ -49,28 +49,28 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0040163f
     ADD EAX,0x5e8840                    ; 00401643 | DAT_005e8840
     XOR EDX,EDX                         ; 00401648
-    MOV EBX,dword ptr [0x01c6b5a8]      ; 0040164a | DAT_01c6b5a8
+    MOV EBX,dword ptr [0x01c6b5a8]      ; 0040164a | g_INT_01c6b5a8
     MOV DL,byte ptr [EAX]               ; 00401650 | DAT_005e8840
     CMP ECX,EBX                         ; 00401652
     JL 0x004016fb                       ; 00401654
         ;   XREF to: 004016fb (CONDITIONAL_JUMP)  ; LAB_004016fb
-    CMP EDI,dword ptr [0x01c6b5ac]      ; 0040165a | DAT_01c6b5ac
+    CMP EDI,dword ptr [0x01c6b5ac]      ; 0040165a | g_INT_01c6b5ac
     JL 0x004016fb                       ; 00401660
         ;   XREF to: 004016fb (CONDITIONAL_JUMP)  ; LAB_004016fb
-    MOV ECX,dword ptr [0x01c6b5b0]      ; 00401666 | DAT_01c6b5b0
+    MOV ECX,dword ptr [0x01c6b5b0]      ; 00401666 | g_INT_01c6b5b0
     INC ECX                             ; 0040166c
     MOV EBP,dword ptr [ESP + 0x24]      ; 0040166d
     SUB ECX,EDX                         ; 00401671
     CMP ECX,EBP                         ; 00401673
     JL 0x004016fb                       ; 00401675
         ;   XREF to: 004016fb (CONDITIONAL_JUMP)  ; LAB_004016fb
-    MOV ECX,dword ptr [0x01c6b5b4]      ; 0040167b | DAT_01c6b5b4
+    MOV ECX,dword ptr [0x01c6b5b4]      ; 0040167b | g_INT_01c6b5b4
     SUB ECX,0xa                         ; 00401681
     CMP EDI,ECX                         ; 00401684
     JG 0x004016fb                       ; 00401686
         ;   XREF to: 004016fb (CONDITIONAL_JUMP)  ; LAB_004016fb
     PUSH ESI                            ; 0040168c
-    MOV ECX,dword ptr [0x005fba20]      ; 0040168d | DAT_005fba20
+    MOV ECX,dword ptr [0x005fba20]      ; 0040168d | g_INT_005fba20
     SHL EDI,0x2                         ; 00401693
     INC EAX                             ; 00401696
     LEA EBP,[EDI + 0x2c]                ; 00401697
@@ -85,7 +85,7 @@ section .text
     MOV dword ptr [ESP + 0x10],ECX      ; 004016ae
     MOV dword ptr [ESP + 0x8],EBP       ; 004016b2
     MOV EBP,dword ptr [ESP + 0x10]      ; 004016b6
-    MOV ECX,dword ptr [EDI + 0x1c5faec] ; 004016ba | DAT_01c5faec | DAT_01c5faf0
+    MOV ECX,dword ptr [EDI + 0x1c5faec] ; 004016ba | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
         ;   Label: LAB_004016ba
     XOR EBX,EBX                         ; 004016c0
     ADD ECX,EBP                         ; 004016c2
@@ -126,7 +126,7 @@ section .text
         ;   Label: LAB_004016ff
     MOV EBX,dword ptr [ESP + 0x28]      ; 00401703
         ;   Label: LAB_00401703
-    MOV ECX,dword ptr [EDI + 0x1c5faec] ; 00401707 | DAT_01c5faec | DAT_01c5faf0
+    MOV ECX,dword ptr [EDI + 0x1c5faec] ; 00401707 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
     XOR ESI,ESI                         ; 0040170d
     ADD ECX,EBX                         ; 0040170f
     TEST EDX,EDX                        ; 00401711
@@ -156,7 +156,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 00401738
     MOV ESI,dword ptr [ESP + 0x4]       ; 0040173c
         ;   Label: LAB_0040173c
-    MOV ECX,dword ptr [EDI + 0x1c5faec] ; 00401740 | DAT_01c5faec | DAT_01c5faf0
+    MOV ECX,dword ptr [EDI + 0x1c5faec] ; 00401740 | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
     XOR EBX,EBX                         ; 00401746
     ADD ECX,ESI                         ; 00401748
     TEST EDX,EDX                        ; 0040174a

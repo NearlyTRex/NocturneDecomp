@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 293,
+    "complexity_score": 243,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 16,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
     "total_lines": 361
   },
@@ -52,56 +50,56 @@
   "globals": [
     {
       "addr": "005c2100",
-      "name": "DAT_005c2100",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c2100",
+      "type": "float",
+      "value": "255"
     },
     {
       "addr": "005c2104",
-      "name": "DAT_005c2104",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c2104",
+      "type": "float",
+      "value": "-0.5"
     },
     {
       "addr": "01c6af98",
-      "name": "DAT_01c6af98",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_01c6af98",
+      "type": "uchar[768]",
       "value": null
     },
     {
       "addr": "01c6af99",
-      "name": "DAT_01c6af99",
+      "name": "g_UCHAR_ARRAY_01c6af98+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6af9a",
-      "name": "DAT_01c6af9a",
+      "name": "g_UCHAR_ARRAY_01c6af98+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1ad68",
-      "name": "DAT_01d1ad68",
-      "type": "undefined4",
+      "name": "g_INT_01d1ad68",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1ad6c",
-      "name": "DAT_01d1ad6c",
-      "type": "undefined4",
+      "name": "g_INT_01d1ad6c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1ad70",
-      "name": "DAT_01d1ad70",
-      "type": "undefined4",
+      "name": "g_INT_01d1ad70",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d76c40",
-      "name": "DAT_01d76c40",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d76c40",
+      "type": "float",
       "value": null
     }
   ],
@@ -280,40 +278,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01c6af9a",
-      "severity": "mild",
-      "text": "uVar11 = (uint)(byte)(&DAT_01c6af9a)[iVar13] |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01c6af99",
-      "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar13] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar13] << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01c6af98",
-      "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar13] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar13] << 0x10;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(float *)(this_ptr_00->accel_vertex_count * 0x20 + (int)this_ptr_00",
       "severity": "moderate",
       "text": "pfVar9 = (float *)(this_ptr_00->accel_vertex_count * 0x20 + (int)this_ptr_00->accel_vertices);",
@@ -321,7 +287,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 99,
       "match": "(short *)(this_ptr_00->accel_index_count * 2 + (int)this_ptr_00",
       "severity": "moderate",
       "text": "psVar10 = (short *)(this_ptr_00->accel_index_count * 2 + (int)this_ptr_00->accel_indices);",
@@ -329,7 +295,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 40,
       "match": "(int)&this_ptr->bitmap_count",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -337,7 +303,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "(int)&this_ptr->bitmap_count",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -345,7 +311,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "(int)&this_ptr->bitmap_count",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -353,7 +319,7 @@
     },
     {
       "description": "Pointer value `this_ptr_00->accel_vertices` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "(int)this_ptr_00->accel_vertices",
       "severity": "moderate",
       "text": "pfVar9 = (float *)(this_ptr_00->accel_vertex_count * 0x20 + (int)this_ptr_00->accel_vertices);",
@@ -361,7 +327,7 @@
     },
     {
       "description": "Pointer value `this_ptr_00->accel_indices` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
+      "line": 99,
       "match": "(int)this_ptr_00->accel_indices",
       "severity": "moderate",
       "text": "psVar10 = (short *)(this_ptr_00->accel_index_count * 2 + (int)this_ptr_00->accel_indices);",
@@ -369,7 +335,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 113,
+      "line": 112,
       "match": "(int)&this_ptr->bitmap_count",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -377,7 +343,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
+      "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -385,7 +351,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -393,7 +359,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -401,7 +367,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 113,
+      "line": 112,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",

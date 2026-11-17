@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Unable to track spacebase fully for stack */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void FUN_005b17a0(uint *param_1)
 
@@ -19,9 +18,9 @@ void FUN_005b17a0(uint *param_1)
   code *local_20;
   
   local_20 = (code *)*param_1;
-  if (_DAT_02d252b0 == 0) {
-    iVar1 = -(0x000000F4 + 3U & 0xfffffffc);
-    *(int *)(&stack0xffffffd4 + iVar1) = 0x000000F4;
+  if (g_INT_02d252b0 == 0) {
+    iVar1 = -(g_ULONG_00607e78 + 3 & 0xfffffffc);
+    *(ulong *)(&stack0xffffffd4 + iVar1) = g_ULONG_00607e78;
     *(uint *)((int)aiStackY_34 + iVar1 + 4) = 0;
     *(byte **)((int)aiStackY_34 + iVar1) = local_28 + iVar1;
     *(uint *)((int)&uStackY_38 + iVar1) = 0x5b17df;
@@ -29,7 +28,7 @@ void FUN_005b17a0(uint *param_1)
               (*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),
                *(ulong *)(&stack0xffffffd4 + iVar1));
     *(byte **)(&stack0xffffffd4 + iVar1) = local_28 + iVar1;
-    *(int *)(&stack0x000000c8 + iVar1) = 0x000000F4;
+    *(ulong *)(&stack0x000000c8 + iVar1) = g_ULONG_00607e78;
     *(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x5b17f3;
     iVar1 = FUN_005adb48();
     if (iVar1 == 0) {

@@ -18,7 +18,7 @@ CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_005b4720(CChain *this_ptr)
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
   pvVar3 = __arrinit
                      (&pCVar2->particle_systems[4].fade_end,0x14,&g_SChainVertexTypeInfo);
-  *(byte **)((int)pvVar3 + -0x138) = &g_CChainVTable;
+  *(byte ***)((int)pvVar3 + -0x138) = g_CChainVTable;
   *(uint *)((int)pvVar3 + -0x134) = 10;
   *(uint *)((int)pvVar3 + -0x130) = 0x40a00000;
   *(uint *)((int)pvVar3 + 0x2d0) = 0x3f800000;

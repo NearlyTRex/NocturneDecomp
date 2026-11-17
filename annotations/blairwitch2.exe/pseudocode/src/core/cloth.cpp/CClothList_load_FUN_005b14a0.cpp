@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CClothList_load_FUN_005b14a0(CClothList *this_ptr)
 
 {
@@ -34,8 +32,8 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_005b14a0(CClothList *this_ptr)
       }
       pCVar3->cloths[0] = pCVar2;
       if (pCVar2 == (CCloth *)0x0) {
-        _DAT_01d046a0 = "..\\core\\cloth.cpp";
-        _DAT_01d046a4 = 0x5b6;
+        g_CHAR_PTR_01d046a0 = "..\\core\\cloth.cpp";
+        g_INT_01d046a4 = 0x5b6;
         core_main_c_displayErrorAndQuit_FUN_004e4500("CClothList::load - out of memory for CCloth object.");
       }
       ppCVar1 = pCVar3->cloths;

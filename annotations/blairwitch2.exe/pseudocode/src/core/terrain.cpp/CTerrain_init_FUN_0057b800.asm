@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_junk_jnk_005ed539
 ;   CGround* g_CGroundPtr = 01cedd88
-;   undefined4 DAT_02653650
+;   undefined4 g_CTerrain_0265364c.initialized
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_init_FUN_004ca9c0
@@ -38,7 +38,7 @@ section .text
     CALL core_ground.cpp_CGround_load_FUN_004caac0 ; 0057b82b
         ;   XREF to: 004caac0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_load_FUN_004caac0(CGround * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0057b830
-    MOV dword ptr [0x02653650],EBX      ; 0057b833 | DAT_02653650
+    MOV dword ptr [0x02653650],EBX      ; 0057b833 | g_CTerrain_0265364c.initialized
     POP EBX                             ; 0057b839
     RET                                 ; 0057b83a
 

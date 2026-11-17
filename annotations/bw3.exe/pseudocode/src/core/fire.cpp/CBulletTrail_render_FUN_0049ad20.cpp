@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_ptr)
 
 {
@@ -98,8 +96,8 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_p
       do {
         local_20 = (float)local_24;
         local_1c = iStack_30;
-        local_d8 = ((float)local_24 * _DAT_005c05d8) / (float)iStack_30;
-        if ((float)_DAT_005c05e0 < local_d8) {
+        local_d8 = ((float)local_24 * 0.2f) / (float)iStack_30;
+        if ((float)0.01 < local_d8) {
           world_position = &local_68;
           local_58[2] = fStack_5c * local_20;
           local_58[3] = local_58[0] * local_20;
@@ -113,7 +111,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_p
           local_7c[1] = (this_ptr->start_position).z + local_3c;
           local_68.x = local_80;
           *(float *)((int)&local_68 + (uint)bVar4 * -8 + 4) = local_7c[(uint)bVar4 * -2];
-          this_ptr_00 = DAT_005f2afc;
+          this_ptr_00 = g_CDemonRenderer_PTR_005f2afc;
           *(float *)((int)&local_68 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                local_7c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
@@ -122,7 +120,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_p
           local_d4.y = 0.0;
           local_d4.z = 0.0;
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-                    (DAT_005f2afc,&local_98,&local_d4);
+                    (g_CDemonRenderer_PTR_005f2afc,&local_98,&local_d4);
           dVar5 = round((double)local_d8);
           local_20 = (float)(int)ROUND(dVar5);
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00460f20

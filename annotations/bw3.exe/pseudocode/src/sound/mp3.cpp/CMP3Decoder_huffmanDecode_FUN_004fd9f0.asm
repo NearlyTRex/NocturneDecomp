@@ -19,9 +19,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005ca02b
 ;   TerminatedCString s_Illegal_Huffman_code_in_005ca03c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d954bc
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   undefined4 g_SHuffmanTable_ARRAY_01d94c98[0].table_size
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -203,7 +203,7 @@ section .text
     TEST EDI,EDI                        ; 004fdb6f
     JNZ 0x004fda27                      ; 004fdb71
         ;   XREF to: 004fda27 (CONDITIONAL_JUMP)  ; LAB_004fda27
-    CMP EBX,dword ptr [0x01d954bc]      ; 004fdb77 | DAT_01d954bc
+    CMP EBX,dword ptr [0x01d954bc]      ; 004fdb77 | g_SHuffmanTable_ARRAY_01d94c98[0].table_size
     JC 0x004fda27                       ; 004fdb7d
         ;   XREF to: 004fda27 (CONDITIONAL_JUMP)  ; LAB_004fda27
     CMP dword ptr [ESP],0x0             ; 004fdb83
@@ -213,8 +213,8 @@ section .text
     MOV ECX,0x5ca02b                    ; 004fdb92 | = "..\\sound\\mp3.cpp"
     MOV EBX,0x36f                       ; 004fdb97
     PUSH 0x5ca03c                       ; 004fdb9c | = "Illegal Huffman code in data.  File: %s"
-    MOV dword ptr [0x01d71de0],ECX      ; 004fdba1 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004fdba7 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004fdba1 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 004fdba7 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fdbad
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004fdbb2

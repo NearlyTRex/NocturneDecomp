@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd340
@@ -16,7 +16,7 @@
 
 section .text
 
-    MOV EAX,[0x01d5ba14]                ; 004bd8f0 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004bd8f0 | g_INT_01d5ba14
         ;   Label: core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004bd8f0
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004bd8f5
     PUSH 0x0                            ; 004bd8fc

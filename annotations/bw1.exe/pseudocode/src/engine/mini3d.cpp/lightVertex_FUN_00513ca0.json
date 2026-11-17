@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 182,
+    "complexity_score": 169,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 7,
+    "pseudocode_lines": 99,
+    "suspect_count": 6,
     "suspect_types": [
       "bit_int_float_compare",
-      "fast_sqrt_inline",
-      "warning_overlapping_globals"
+      "fast_sqrt_inline"
     ],
-    "total_lines": 448
+    "total_lines": 450
   },
   "cross_references": [
     {
@@ -53,110 +52,110 @@
   "globals": [
     {
       "addr": "01cc804c",
-      "name": "DAT_01cc804c",
-      "type": "undefined4",
+      "name": "g_INT_01cc804c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d224c0",
-      "name": "DAT_01d224c0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d224c0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d22548",
-      "name": "DAT_01d22548",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22548",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d22554",
-      "name": "DAT_01d22554",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22554",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2257c",
-      "name": "DAT_01d2257c",
-      "type": "undefined4",
+      "name": "g_PTR_01d2257c",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d25004",
-      "name": "DAT_01d25004",
-      "type": "undefined4",
+      "name": "g_INT_01d25004",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d2ad78",
-      "name": "DAT_01d2ad78",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad78",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ad7c",
-      "name": "DAT_01d2ad7c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad7c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ad80",
-      "name": "DAT_01d2ad80",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad80",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ad88",
-      "name": "DAT_01d2ad88",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad88",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ad8c",
-      "name": "DAT_01d2ad8c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad8c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ad90",
-      "name": "DAT_01d2ad90",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad90",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ad98",
-      "name": "DAT_01d2ad98",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad98",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ad9c",
-      "name": "DAT_01d2ad9c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ad9c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ada0",
-      "name": "DAT_01d2ada0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ada0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2ada8",
-      "name": "DAT_01d2ada8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2ada8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2adac",
-      "name": "DAT_01d2adac",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2adac",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2adb0",
-      "name": "DAT_01d2adb0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d2adb0",
+      "type": "float",
       "value": null
     }
   ],
@@ -301,24 +300,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 74,
-      "match": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01cc804c)) * _DAT_01d22548 * fSt",
+      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 75,
+      "match": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_INT_01cc804c)) * g_FLOAT_01d22548 *",
       "severity": "moderate",
-      "text": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01cc804c)) * _DAT_01d22548 * fStack_2c * (1.0 - fVar2 / pfVar6[0xd]);",
+      "text": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_INT_01cc804c)) * g_FLOAT_01d22548 * fStack_2c * (1.0 - fVar2 / pfVar6[0xd])",
       "type": "fast_sqrt_inline"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 25,
+      "line": 23,
       "match": "0x3f800000 < (int)fStack_78)",
       "severity": "moderate",
       "text": "if (0x3f800000 < (int)fStack_78) {",
@@ -326,7 +317,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 34,
+      "line": 32,
       "match": "0x3f800000 < (int)fStack_78)",
       "severity": "moderate",
       "text": "if (0x3f800000 < (int)fStack_78) {",
@@ -334,7 +325,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 73,
+      "line": 74,
       "match": "(int)fVar1 < 0x3f800000",
       "severity": "moderate",
       "text": "fVar1 = fVar1 * fVar1 + fVar5 * fVar5, (int)fVar1 < 0x3f800000)))) {",
@@ -342,7 +333,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 92,
+      "line": 93,
       "match": "0x3f800000 < (int)out_color[1])",
       "severity": "moderate",
       "text": "if (0x3f800000 < (int)out_color[1]) {",
@@ -350,7 +341,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 96,
+      "line": 97,
       "match": "0x3f800000 < (int)out_color[2])",
       "severity": "moderate",
       "text": "if (0x3f800000 < (int)out_color[2]) {",

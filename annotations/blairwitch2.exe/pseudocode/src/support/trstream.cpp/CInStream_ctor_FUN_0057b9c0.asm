@@ -17,7 +17,7 @@
 ;   support_trstream.cpp_CInStreamMemory_ctor_FUN_0057d4f0 at 0057d4f5
 ;
 ; Referenced Globals:
-;   undefined1* PTR_support_trstream.cpp_CInStream_dtor_FUN_0057b9d0_005fd3b4 = 0057b9d0
+;   void*[9] g_ARRAY_PTR_005fd3b4
 ;
 ; *****************************************************************************
 
@@ -25,6 +25,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0057b9c0
         ;   Label: support_trstream.cpp_CInStream_ctor_FUN_0057b9c0
-    MOV dword ptr [EAX],0x5fd3b4        ; 0057b9c4 | PTR_support_trstream.cpp_CInStream_dtor_FUN_0057b9d0_005fd3b4
+    MOV dword ptr [EAX],0x5fd3b4        ; 0057b9c4 | g_ARRAY_PTR_005fd3b4
     RET                                 ; 0057b9ca
 

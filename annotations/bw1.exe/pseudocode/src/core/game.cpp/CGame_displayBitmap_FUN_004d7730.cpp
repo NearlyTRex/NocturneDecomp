@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *filename,int width,int height,float display_time)
 
 {
@@ -15,8 +13,8 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char
   char *pcVar2;
   
   if (this_ptr->bitmap_filename[0] != '\0') {
-    _DAT_01d1d400 = "..\\core\\game.cpp";
-    _DAT_01d1d404 = 0x11f4;
+    g_CHAR_PTR_01d1d400 = "..\\core\\game.cpp";
+    g_INT_01d1d404 = 0x11f4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CGame::displayBitmap - tried to queue %s, but %s already queued!");
   }
   pcVar2 = this_ptr->bitmap_filename;
@@ -32,6 +30,6 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char
   this_ptr->bitmap_width = width;
   this_ptr->bitmap_height = height;
   this_ptr->bitmap_display_time = display_time;
-  _DAT_01cd0b3c = (uint)(ABS(display_time) == 0.0);
+  g_INT_01cd0b3c = (uint)(ABS(display_time) == 0.0);
   return;
 }

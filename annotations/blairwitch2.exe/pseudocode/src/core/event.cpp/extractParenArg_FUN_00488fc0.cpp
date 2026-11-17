@@ -17,7 +17,7 @@ char * __cdecl core_event_cpp_extractParenArg_FUN_00488fc0(char **cursor,char *o
   int iVar5;
   
   pcVar2 = *cursor;
-  while (((&DAT_0061ed94)[(byte)(*pcVar2 + 1)] & 2) != 0) {
+  while ((g_UCHAR_ARRAY_0061ed94[(byte)(*pcVar2 + 1)] & 2) != 0) {
     pcVar2 = pcVar2 + 1;
   }
   *cursor = pcVar2;
@@ -66,18 +66,18 @@ code_r0x00489069:
   if (0 < (int)n) {
     pcVar2 = out_buf + n;
     do {
-      if (((&DAT_0061ed94)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
+      if ((g_UCHAR_ARRAY_0061ed94[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
       n = n - 1;
       pcVar2 = pcVar2 + -1;
     } while (0 < (int)n);
   }
   out_buf[n] = '\0';
-  while (((&DAT_0061ed94)[(byte)(*out_buf + 1)] & 2) != 0) {
+  while ((g_UCHAR_ARRAY_0061ed94[(byte)(*out_buf + 1)] & 2) != 0) {
     memmove(out_buf,out_buf + 1,n);
     n = n - 1;
   }
   pcVar2 = *cursor;
-  while (((&DAT_0061ed94)[(byte)(*pcVar2 + 1)] & 2) != 0) {
+  while ((g_UCHAR_ARRAY_0061ed94[(byte)(*pcVar2 + 1)] & 2) != 0) {
     pcVar2 = pcVar2 + 1;
   }
   *cursor = pcVar2;

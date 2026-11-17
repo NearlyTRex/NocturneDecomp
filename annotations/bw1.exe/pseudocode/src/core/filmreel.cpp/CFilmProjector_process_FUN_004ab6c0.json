@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 82,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "derived_field_index_pun",
-      "warning_overlapping_globals"
+      "derived_field_index_pun"
     ],
     "total_lines": 185
   },
@@ -68,9 +67,9 @@
   "globals": [
     {
       "addr": "005df15f",
-      "name": "DAT_005df15f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005df15f",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "0061135c",
@@ -80,9 +79,9 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_0061b4d0",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "01c57034",
@@ -92,14 +91,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -192,16 +191,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "'(char *)&pCVar3[2].location.position.z' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.z) (0x28) + 0x0 = 0x2d8, which is exactly offsetof(CAmmo, weapon_class_name[4]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar3)->weapon_class_name[4] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[4], CAnvil::drop_condition[4], CBackgroundActor::collide_with_me also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 35,
+      "line": 33,
       "severity": "moderate",
       "text": "(g_CFilterFXPtr,(char *)&pCVar3[2].location.position.z);",
       "type": "derived_field_index_pun"

@@ -23,7 +23,7 @@
 ;   engine_ini.cpp_getProfileString_FUN_004d8800 at 004d8827
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dab81
+;   TerminatedCString s_rt_005dab81
 ;   TerminatedCString s_s_005dab84
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     PUSH EBP                            ; 004d8183
     SUB ESP,0x204                       ; 004d8184
     MOV EDI,dword ptr [ESP + 0x220]     ; 004d818a
-    PUSH 0x5dab81                       ; 004d8191 | DAT_005dab81
+    PUSH 0x5dab81                       ; 004d8191 | = "rt"
     MOV ECX,dword ptr [ESP + 0x234]     ; 004d8196
     XOR EDX,EDX                         ; 004d819d
     PUSH ECX                            ; 004d819f

@@ -7,9 +7,9 @@
 ; CHand *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0adf
+;   TerminatedCString s_rise_005f0adf
 ;   TerminatedCString s_sleep_005f0ae4
-;   undefined4 DAT_005f0aea
+;   TerminatedCString s_die_005f0aea
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 005aa564 (CONDITIONAL_JUMP)  ; LAB_005aa564
     MOV dword ptr [EBX + 0x113c4],0x0   ; 005aa4cf
         ;   Label: LAB_005aa4cf
-    PUSH 0x5f0adf                       ; 005aa4d9 | DAT_005f0adf
+    PUSH 0x5f0adf                       ; 005aa4d9 | = "rise"
         ;   Label: LAB_005aa4d9
     LEA ESI,[EBX + 0x2b4]               ; 005aa4de
     PUSH ESI                            ; 005aa4e4
@@ -75,7 +75,7 @@ section .text
     TEST EAX,EAX                        ; 005aa52c
     JZ 0x005aa57e                       ; 005aa52e
         ;   XREF to: 005aa57e (CONDITIONAL_JUMP)  ; LAB_005aa57e
-    PUSH 0x5f0aea                       ; 005aa530 | DAT_005f0aea
+    PUSH 0x5f0aea                       ; 005aa530 | = "die"
     PUSH ESI                            ; 005aa535
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005aa536
         ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)

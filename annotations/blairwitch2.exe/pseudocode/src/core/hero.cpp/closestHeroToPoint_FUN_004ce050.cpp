@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004ce050(CLocation *location)
 
 {
@@ -21,10 +19,10 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004ce050(CLocation *locatio
   
   pCVar6 = (CHero *)0x0;
   local_1c = 1e+30;
-  if (0 < _DAT_01cedee0) {
+  if (0 < g_INT_01cedee0) {
     iVar5 = 0;
     do {
-      pCVar1 = *(CHero **)(iVar5 + 0x1cedee4);
+      pCVar1 = *(CHero **)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar5);
       if ((pCVar1 != (CHero *)0x0) &&
          (fVar2 = (pCVar1->base).base.location.position.x - (location->position).x,
          fVar4 = (pCVar1->base).base.location.position.y - (location->position).y,
@@ -34,13 +32,13 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004ce050(CLocation *locatio
         local_1c = fVar2;
       }
       iVar5 = iVar5 + 4;
-    } while (iVar5 < _DAT_01cedee0 * 4);
+    } while (iVar5 < g_INT_01cedee0 * 4);
   }
   if (pCVar6 != (CHero *)0x0) {
     return pCVar6;
   }
-  _DAT_01d046a0 = "..\\core\\hero.cpp";
-  _DAT_01d046a4 = 0x3a;
+  g_CHAR_PTR_01d046a0 = "..\\core\\hero.cpp";
+  g_INT_01d046a4 = 0x3a;
   core_main_c_displayErrorAndQuit_FUN_004e4500("closestHeroToPoint - no heros!");
   return (CHero *)0x0;
 }

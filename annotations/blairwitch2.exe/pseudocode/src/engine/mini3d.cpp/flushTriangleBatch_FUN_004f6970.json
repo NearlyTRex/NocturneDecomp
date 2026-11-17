@@ -10,8 +10,8 @@
     "pseudocode_lines": 35,
     "suspect_count": 2,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "unresolved_funcptr"
     ],
     "total_lines": 125
   },
@@ -51,44 +51,44 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c38b54",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d09b7c",
-      "name": "DAT_01d09b7c",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d09b7c",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d0d2e8",
-      "name": "DAT_01d0d2e8",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2e8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0d2ec",
-      "name": "DAT_01d0d2ec",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2ec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0d2f0",
-      "name": "DAT_01d0d2f0",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2f0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bca0",
-      "name": "DAT_0264bca0",
-      "type": "undefined4",
+      "name": "g_PTR_0264bca0",
+      "type": "void*",
       "value": null
     }
   ],
@@ -154,19 +154,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(ushort *)((int)g_SHORT_ARRAY_01d0d2f6",
+      "severity": "moderate",
+      "text": "puVar2 = (ushort *)((int)g_SHORT_ARRAY_01d0d2f6 + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 30,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bca0 == (code *)0x0) || (_DAT_01c37788 == 0)) {",
+      "text": "(*(code *)g_PTR_0264bca0)",
       "type": "unresolved_funcptr"
     }
   ]

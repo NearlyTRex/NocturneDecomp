@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CToss_process_FUN_004b1d90(CToss *this_ptr)
 
 {
@@ -38,11 +36,11 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004b1d90(CToss *this_ptr)
         return;
       }
       this_ptr_01 = &this_ptr->model;
-      local_40.x = _DAT_02c8af28;
+      local_40.x = g_CVector3f_02c8af28.x;
       *(uint *)((int)&local_40 + (uint)bVar3 * -8 + 4) =
-           *(uint *)(&DAT_02c8af2c + (uint)bVar3 * -8);
+           *(uint *)((int)&g_CVector3f_02c8af28 + (uint)bVar3 * -8 + 4);
       *(uint *)((int)&local_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-           *(uint *)(&DAT_02c8af30 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+           *(uint *)((uint)bVar3 * -8 + 0x2c8af30 + (uint)bVar3 * -8);
       pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(this_ptr_01);
       local_40.z = local_40.z + (pCVar2->bounds).max.z;
       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
@@ -65,12 +63,12 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004b1d90(CToss *this_ptr)
         local_40.z = local_34.z;
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,&local_40,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffect_PTR_0061c010,&local_40,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
       return;
     }
     if (this_ptr->toss_type == 0) {
       core_fire_cpp_CFireEffect_createExplosion_FUN_004b6c60
-                (0x01C57074,&this_ptr_00->position,16.0,100.0,4.0);
+                (g_CFireEffect_PTR_0061c010,&this_ptr_00->position,16.0,100.0,4.0);
       sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
       return;
     }

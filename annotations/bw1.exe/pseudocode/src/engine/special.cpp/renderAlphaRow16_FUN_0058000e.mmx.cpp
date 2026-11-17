@@ -21,10 +21,10 @@ __asm {
         shr EBP,0x8
     LAB_00580027:
         movzx EAX,byte ptr [ESI]
-        movd MM0,dword ptr [DAT_01c4e3d4 + EAX*0x4]
+        movd MM0,dword ptr [g_UINT_ARRAY_01c4e3d4 + EAX*0x4]
         movzx EAX,byte ptr [EBX]
         imul EAX,EBP
-        cmp dword ptr [DAT_01c51d0c],0x1
+        cmp dword ptr [g_INT_01c51d0c],0x1
         jz LAB_00580057
         cmp EAX,0xfde8
         jge LAB_005800da
@@ -33,23 +33,23 @@ __asm {
     LAB_00580057:
         shr EAX,0x8
         punpcklbw MM0,MM7
-        movq MM1,qword ptr [DAT_006247d0 + EAX*0x8]
+        movq MM1,qword ptr [g_QWORD_ARRAY_006247d0 + EAX*0x8]
         movq MM2,MM1
-        pxor MM2,qword ptr [DAT_00624fc8]
+        pxor MM2,qword ptr [0x00624fc8]
         movzx EAX,word ptr [EDI]
         movd MM3,EAX
-        pand MM3,qword ptr [DAT_00623f30]
-        psllq MM3,qword ptr [DAT_00623fc0]
+        pand MM3,qword ptr [g_INT_00623f30]
+        psllq MM3,qword ptr [g_QWORD_00623fc0]
         movd MM4,EAX
-        pand MM4,qword ptr [DAT_00623f28]
-        psllq MM4,qword ptr [DAT_00623fa0]
+        pand MM4,qword ptr [g_INT_00623f28]
+        psllq MM4,qword ptr [g_QWORD_00623fa0]
         por MM3,MM4
         movd MM5,EAX
-        pand MM5,qword ptr [DAT_00623f20]
-        psllq MM5,qword ptr [DAT_00623f80]
+        pand MM5,qword ptr [g_INT_00623f20]
+        psllq MM5,qword ptr [g_QWORD_00623f80]
         por MM3,MM5
         punpcklbw MM3,MM7
-        cmp dword ptr [DAT_01c51d0c],0x1
+        cmp dword ptr [g_INT_01c51d0c],0x1
         jz LAB_005800c9
         pmullw MM0,MM1
         pmullw MM3,MM2
@@ -66,12 +66,12 @@ __asm {
     LAB_005800da:
         movq MM2,MM0
         movq MM4,MM0
-        pand MM0,qword ptr [DAT_00623f78]
-        pand MM2,qword ptr [DAT_00623f58]
-        pand MM4,qword ptr [DAT_00623f38]
-        psrlq MM0,qword ptr [DAT_00623fc0]
-        psrlq MM2,qword ptr [DAT_00623fa0]
-        psrlq MM4,qword ptr [DAT_00623f80]
+        pand MM0,qword ptr [g_QWORD_00623f78]
+        pand MM2,qword ptr [g_QWORD_00623f58]
+        pand MM4,qword ptr [g_QWORD_00623f38]
+        psrlq MM0,qword ptr [g_QWORD_00623fc0]
+        psrlq MM2,qword ptr [g_QWORD_00623fa0]
+        psrlq MM4,qword ptr [g_QWORD_00623f80]
         por MM0,MM2
         por MM0,MM4
         movd EAX,MM0

@@ -6,24 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(EInputCodeType key_code,char *action_name)
 
 {
   char acStack_110 [256];
   
   core_menu_cpp_getKeyDisplayName_FUN_004eaa60(key_code);
-  _sprintf(acStack_110,"?%s = %s" + 1);
+  _sprintf(acStack_110,"%s = %s");
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
-            (_DAT_01549aa8,acStack_110,_DAT_01d22c54 + 2,_DAT_01d22c58 + 2,0,-1);
+            (g_CBitFont_PTR_01549aa8,acStack_110,g_INT_01d22c54 + 2,g_INT_01d22c58 + 2,0,-1);
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
-            (_DAT_01549aa8,acStack_110,_DAT_01d22c54,_DAT_01d22c58,7,-1);
-  _DAT_01d22c58 = _DAT_01d22c58 + _DAT_01d22c5c;
-  if (_DAT_01d22c58 <= DAT_005fba1c + _DAT_01d22c5c * -4) {
+            (g_CBitFont_PTR_01549aa8,acStack_110,g_INT_01d22c54,g_INT_01d22c58,7,-1);
+  g_INT_01d22c58 = g_INT_01d22c58 + g_INT_01d22c5c;
+  if (g_INT_01d22c58 <= g_INT_005fba1c + g_INT_01d22c5c * -4) {
     return;
   }
-  _DAT_01d22c58 = _DAT_01d22c5c * 6;
-  _DAT_01d22c54 = _DAT_01d22c54 + DAT_005fba18 / 3;
+  g_INT_01d22c58 = g_INT_01d22c5c * 6;
+  g_INT_01d22c54 = g_INT_01d22c54 + g_INT_005fba18 / 3;
   return;
 }

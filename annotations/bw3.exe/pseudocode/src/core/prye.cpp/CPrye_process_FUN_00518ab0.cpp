@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delta_time)
 
 {
@@ -33,23 +31,23 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
     }
     if ((this_ptr->base).aim_target_actor != (CDemonActor *)0x0) {
       (this_ptr->base).aim_target_pulse =
-           delta_time * _DAT_005cd00b + (this_ptr->base).aim_target_pulse;
+           delta_time * 5.0f + (this_ptr->base).aim_target_pulse;
     }
     if ((0.0 < (this_ptr->base).base.bind_time) && ((this_ptr->base).base.bind_type == 3)) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_4c);
-      SStack_4c.damage_amount = delta_time * (float)_DAT_005cd00f;
+      SStack_4c.damage_amount = delta_time * (float)5;
       SStack_4c.damage_type = DAMAGE_TYPE_ATTACK_GAS;
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
                 ((CCharacter *)this_ptr,&SStack_4c);
     }
     iVar2 = g_CGamePtr->goggles_active;
     if (this_ptr->quick_turn_active == 1) {
-      this_ptr->quick_turn_angle = this_ptr->quick_turn_angle - _DAT_005e3504;
+      this_ptr->quick_turn_angle = this_ptr->quick_turn_angle - 1.0f;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                 (&(this_ptr->base).base.model.base,0x7a,1);
-      if ((float)_DAT_005cd017 <= this_ptr->quick_turn_angle) {
+      if ((float)-3.1400000000000001 <= this_ptr->quick_turn_angle) {
         (this_ptr->base).base.base.orient.vec.y =
-             _DAT_005e3504 + (this_ptr->base).base.base.orient.vec.y;
+             1.0f + (this_ptr->base).base.base.orient.vec.y;
         core_charactr_cpp_CCharacter_setOrientation_FUN_00433220
                   ((CCharacter *)this_ptr,&(this_ptr->base).base.base.orient);
       }
@@ -78,7 +76,7 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
       bVar1 = true;
     }
     if (((this_ptr->base).action_pending == 7) || (bVar1)) {
-      fStack_10 = delta_time * (float)_DAT_005cd01f;
+      fStack_10 = delta_time * (float)0.25;
       core_prye_cpp_CPrye_processFrame_FUN_00518cd0(this_ptr,fStack_10);
       core_prye_cpp_CPrye_processFrame_FUN_00518cd0(this_ptr,fStack_10);
       core_prye_cpp_CPrye_processFrame_FUN_00518cd0(this_ptr,fStack_10);

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 196,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 16,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 65
@@ -33,20 +32,20 @@
   "globals": [
     {
       "addr": "01c6af74",
-      "name": "DAT_01c6af74",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af80",
-      "name": "DAT_01c6af80",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af8c",
-      "name": "DAT_01c6af8c",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
       "value": null
     }
   ],
@@ -148,14 +147,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_01c6af8c",
-      "severity": "mild",
-      "text": "bVar3 = DAT_01c6af8c;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 10,
       "match": "param_2",
@@ -228,28 +219,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01c6af80",
-      "severity": "mild",
-      "text": "bVar2 = DAT_01c6af80 & 0x1f;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x20) = (uVar1 >> (DAT_01c6af74 & 0x1f) & 0xff) << 8;",
+      "text": "*(uint *)(param_2 + 0x20) = (uVar1 >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) & 0xff) << 8;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c6af74",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x20) = (uVar1 >> (DAT_01c6af74 & 0x1f) & 0xff) << 8;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -264,7 +239,7 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x28) = (uVar1 >> (bVar3 & 0x1f) & 0xff) << 8;",
+      "text": "*(uint *)(param_2 + 0x28) = (uVar1 >> (uVar3 & 0x1f) & 0xff) << 8;",
       "type": "unnamed_param"
     }
   ]

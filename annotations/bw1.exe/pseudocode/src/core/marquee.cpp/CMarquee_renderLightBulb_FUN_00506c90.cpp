@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_00506c90(CMarquee *this_ptr,CVector3f *position)
 
 {
@@ -25,14 +23,14 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_00506c90(CMarquee *th
   CVector3i CStack_1c;
   
   bVar5 = 0;
-  CStack_1c.x = (int)ROUND(position->x * _DAT_006036b0);
-  CStack_1c.y = (int)ROUND(position->y * _DAT_006036b0);
-  CStack_1c.z = (int)ROUND(position->z * _DAT_006036b0);
+  CStack_1c.x = (int)ROUND(position->x * 256.0f);
+  CStack_1c.y = (int)ROUND(position->y * 256.0f);
+  CStack_1c.z = (int)ROUND(position->z * 256.0f);
   engine_special_cpp_transformPoint_FUN_0058043c
-            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_1c);
-  this_ptr_00 = DAT_00612560;
-  pSVar3 = DAT_00612560->vertex_buffer_ptr;
-  pSVar4 = DAT_00612560->vertex_buffer_ptr + 1;
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,&CStack_1c);
+  this_ptr_00 = g_CDemonRenderer_PTR_00612560;
+  pSVar3 = g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr;
+  pSVar4 = g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr + 1;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);

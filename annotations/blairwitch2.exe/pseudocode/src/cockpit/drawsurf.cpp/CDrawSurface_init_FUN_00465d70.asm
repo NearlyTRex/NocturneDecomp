@@ -16,8 +16,8 @@
 ;   core_dracbrid.cpp_CDrawSurface_ctor_FUN_00465d00 at 00465d1a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
 ;
 ; *****************************************************************************
 
@@ -63,14 +63,14 @@ section .text
         ;   Label: LAB_00465dc8
     JL 0x00465e7c                       ; 00465dcc
         ;   XREF to: 00465e7c (CONDITIONAL_JUMP)  ; LAB_00465e7c
-    MOV EBX,dword ptr [0x006141b8]      ; 00465dd2 | DAT_006141b8
+    MOV EBX,dword ptr [0x006141b8]      ; 00465dd2 | g_INT_006141b8
         ;   Label: LAB_00465dd2
     CMP EBX,dword ptr [EAX + 0x18]      ; 00465dd8
     JG 0x00465de3                       ; 00465ddb
         ;   XREF to: 00465de3 (CONDITIONAL_JUMP)  ; LAB_00465de3
     LEA EDX,[EBX + -0x1]                ; 00465ddd
     MOV dword ptr [EAX + 0x18],EDX      ; 00465de0
-    MOV ESI,dword ptr [0x006141bc]      ; 00465de3 | DAT_006141bc
+    MOV ESI,dword ptr [0x006141bc]      ; 00465de3 | g_INT_006141bc
         ;   Label: LAB_00465de3
     CMP ESI,dword ptr [EAX + 0x1c]      ; 00465de9
     JLE 0x00465e88                      ; 00465dec

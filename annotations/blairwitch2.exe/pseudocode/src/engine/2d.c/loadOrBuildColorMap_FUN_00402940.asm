@@ -17,15 +17,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_005ca094
 ;   TerminatedCString s_hose_005ca0a3
-;   undefined4 DAT_005ca0a9
-;   undefined4 DAT_005ca0ae
-;   undefined4 DAT_005ca0b2
-;   undefined4 DAT_005ca0b5
+;   TerminatedCString s_map_005ca0a9
+;   TerminatedCString s_fog_005ca0ae
+;   TerminatedCString s_wb_005ca0b2
+;   TerminatedCString s_fog_005ca0b5
 ;   TerminatedCString s_engine_2d_c_005ca0b9
 ;   TerminatedCString s_Unable_to_write_quick_ma_005ca0c8
-;   undefined4 DAT_01c2c910
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   uchar[32768] g_UCHAR_ARRAY_01c2c910
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -102,12 +102,12 @@ section .text
     MOV EDX,0x5ca094                    ; 0040299a | = "..\\engine\\2d.c"
     MOV ECX,0x74f                       ; 0040299f
     PUSH 0x5ca0a3                       ; 004029a4 | = "hose!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004029a9 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004029af | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004029a9 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004029af | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004029b5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004029ba
-    PUSH 0x5ca0a9                       ; 004029bd | DAT_005ca0a9
+    PUSH 0x5ca0a9                       ; 004029bd | = ".map"
         ;   Label: LAB_004029bd
     PUSH EDI                            ; 004029c2
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004029c3
@@ -115,7 +115,7 @@ section .text
     ADD ESP,0x8                         ; 004029c8
     MOV EAX,ESP                         ; 004029cb
     PUSH EAX                            ; 004029cd
-    PUSH 0x5ca0ae                       ; 004029ce | DAT_005ca0ae
+    PUSH 0x5ca0ae                       ; 004029ce | = "fog"
     LEA EAX,[ESP + 0x58]                ; 004029d3
     PUSH EAX                            ; 004029d7
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 004029d8
@@ -131,10 +131,10 @@ section .text
     CALL support_trstream.cpp_COutStreamFile_ctor_FUN_0057db80 ; 004029f2
         ;   XREF to: 0057db80 (UNCONDITIONAL_CALL)  ; COutStreamFile * support_trstream.cpp_COutStreamFile_ctor_FUN_0057db80(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004029f7
-    PUSH 0x5ca0b2                       ; 004029fa | DAT_005ca0b2
+    PUSH 0x5ca0b2                       ; 004029fa | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 004029ff
     PUSH EAX                            ; 00402a03
-    PUSH 0x5ca0b5                       ; 00402a04 | DAT_005ca0b5
+    PUSH 0x5ca0b5                       ; 00402a04 | = "fog"
     LEA EAX,[ESP + 0x84]                ; 00402a09
     PUSH EAX                            ; 00402a10
     CALL support_trstream.cpp_COutStreamFile_openInDirectory_FUN_0057ddd0 ; 00402a11
@@ -147,15 +147,15 @@ section .text
     MOV EBX,0x5ca0b9                    ; 00402a1e | = "..\\engine\\2d.c"
     MOV ESI,0x756                       ; 00402a23
     PUSH 0x5ca0c8                       ; 00402a28 | = "Unable to write quick map!"
-    MOV dword ptr [0x01d046a0],EBX      ; 00402a2d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00402a33 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00402a2d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00402a33 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00402a39
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00402a3e
     POP EBX                             ; 00402a41
     PUSH 0x8000                         ; 00402a42
         ;   Label: LAB_00402a42
-    PUSH 0x1c2c910                      ; 00402a47 | DAT_01c2c910
+    PUSH 0x1c2c910                      ; 00402a47 | g_UCHAR_ARRAY_01c2c910
     LEA EAX,[ESP + 0x80]                ; 00402a4c
     PUSH EAX                            ; 00402a53
     CALL support_trstream.cpp_COutStreamFile_write_FUN_0057dca0 ; 00402a54
@@ -185,7 +185,7 @@ section .text
     RET                                 ; 00402a8f
     PUSH 0x8000                         ; 00402a90
         ;   Label: LAB_00402a90
-    PUSH 0x1c2c910                      ; 00402a95 | DAT_01c2c910
+    PUSH 0x1c2c910                      ; 00402a95 | g_UCHAR_ARRAY_01c2c910
     LEA EAX,[ESP + 0x58]                ; 00402a9a
     PUSH EAX                            ; 00402a9e
     CALL support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0 ; 00402a9f

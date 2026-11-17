@@ -23,8 +23,8 @@ void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0057f8e0(CTurret *th
   interaction_info->yaw_max = 6.2831855;
   interaction_info->yaw_min = -6.2831855;
   interaction_info->interacting_actor = pCVar2;
-  fVar3 = 0xBF060A92;
-  interaction_info->pitch_max = 0x3F9C61AA - (this_ptr->base).base.orient.vec.x;
+  fVar3 = -0.5235988f;
+  interaction_info->pitch_max = 1.22173f - (this_ptr->base).base.orient.vec.x;
   fVar1 = (this_ptr->base).base.orient.vec.x;
   interaction_info->approach_offset = -4.0;
   interaction_info->pitch_min = fVar3 - fVar1;

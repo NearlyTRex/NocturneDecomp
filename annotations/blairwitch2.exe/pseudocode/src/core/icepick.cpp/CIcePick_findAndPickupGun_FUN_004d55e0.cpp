@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004d55e0(CIcePick *this_ptr)
 
@@ -59,7 +58,7 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004d55e0(CIcePick *th
              *(uint *)((int)&stack0xffffffa4 + (uint)bVar2 * -8);
         *(uint *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
              *(uint *)((int)&stack0xffffffa8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-        if ((ABS(fStack_50) <= (float)_DAT_005da866) &&
+        if ((ABS(fStack_50) <= (float)2) &&
            (fStack_18 = fStack_54 * fStack_54 + fStack_4c * fStack_4c, fStack_18 <= afStack_2c[2]))
         {
           this_ptr->pending_pickup_target = this_ptr_00;

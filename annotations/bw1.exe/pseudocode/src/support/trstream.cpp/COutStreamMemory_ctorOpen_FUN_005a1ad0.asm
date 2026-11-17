@@ -14,7 +14,7 @@
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020 at 0044405a
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamMemoryVTable = 005a1b60
+;   void*[7] g_COutStreamMemoryVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_005a14b0

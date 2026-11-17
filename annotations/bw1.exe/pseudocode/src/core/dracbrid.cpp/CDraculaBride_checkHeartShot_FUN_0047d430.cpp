@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0047d430(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -17,7 +15,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0047d430(CDracul
   if (((damage_info->damage_type != DAMAGE_TYPE_BURN) &&
       (damage_info->hit_part_index == this_ptr->part_indices[6])) &&
      (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE)) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005daf95;
+    damage_info->damage_amount = damage_info->damage_amount * (float)20;
     engine_console_cpp_CConsole_printf_FUN_00445430(this_ptr_00,"Shot thru the heart\n");
     return;
   }

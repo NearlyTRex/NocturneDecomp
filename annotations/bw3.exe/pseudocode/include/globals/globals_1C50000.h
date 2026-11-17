@@ -4,12 +4,20 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CEditorTools.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C50000
 // =============================================================================
+
+// CBitFont*
+extern CBitFont* g_CBitFont_PTR_01c5b0e0;
 
 // CDemonActorType
 extern CDemonActorType g_CDynamiteClassInfo;
@@ -17,6 +25,123 @@ extern CDemonActorType g_CElephantGunClassInfo;
 extern CDemonActorType g_CEmitterClassInfo;
 extern CDemonActorType g_CEnemyClassInfo;
 
+// CDemonTriangle[8]
+extern CDemonTriangle g_CDemonTriangle_ARRAY_01c59f38[8];
+
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
+
+// CVector3f
+extern CVector3f g_CVector3f_01c599cc;
+extern CVector3f g_CVector3f_01c59e78;
+extern CVector3f g_CVector3f_01c5a134;
+
+// CVector3f[16]
+extern CVector3f g_CVector3f_ARRAY_01c59aa4[16];
+extern CVector3f g_CVector3f_ARRAY_01c59b68[16];
+extern CVector3f g_CVector3f_ARRAY_01c59c2c[16];
+extern CVector3f g_CVector3f_ARRAY_01c59cf0[16];
+extern CVector3f g_CVector3f_ARRAY_01c59db4[16];
+
+// CVector3i
+extern CVector3i g_CVector3i_01c599c0;
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4;
+
+// byte
+extern byte g_BYTE_01c599d8;
+
+// char*
+extern char* g_CHAR_PTR_01c5b0e8;
+
+// char[4000]
+extern char g_CHAR_ARRAY_01c5a140[4000];
+
+// char[492]
+extern char g_CHAR_ARRAY_01c5b108[492];
+
+// float
+extern float g_FLOAT_01c599e0;
+extern float g_FLOAT_01c599e8;
+extern float g_FLOAT_01c599ec;
+extern float g_FLOAT_01c599f4;
+extern float g_FLOAT_01c599f8;
+extern float g_FLOAT_01c59a00;
+extern float g_FLOAT_01c59e84;
+extern float g_FLOAT_01c59e8c;
+extern float g_FLOAT_01c59e90;
+extern float g_FLOAT_01c59e98;
+
+// float[2001]
+extern float g_FLOAT_ARRAY_01c5db8c[2001];
+
+// int
+extern int g_INT_01c599bc;
+extern int g_INT_01c599dc;
+extern int g_INT_01c59aa0;
+extern int g_INT_01c59b64;
+extern int g_INT_01c59c28;
+extern int g_INT_01c59cec;
+extern int g_INT_01c59db0;
+extern int g_INT_01c59e74;
+extern int g_INT_01c5b104;
+extern int g_INT_01c5bae0;
+extern int g_INT_01c5bae4;
+extern int g_INT_01c5bae8;
+extern int g_INT_01c5baec;
+extern int g_INT_01c5baf0;
+extern int g_INT_01c5baf4;
+extern int g_INT_01c5baf8;
+extern int g_INT_01c5bafc;
+extern int g_INT_01c5bb00;
+extern int g_INT_01c5bb04;
+extern int g_INT_01c5bb08;
+extern int g_INT_01c5bb0c;
+extern int g_INT_01c5bb10;
+extern int g_INT_01c5bb14;
+extern int g_INT_01c5bb18;
+extern int g_INT_01c5bb1c;
+extern int g_INT_01c5bb20;
+extern int g_INT_01c5bb24;
+extern int g_INT_01c5bb28;
+extern int g_INT_01c5bb2c;
+extern int g_INT_01c5bb30;
+extern int g_INT_01c5bb34;
+extern int g_INT_01c5bb38;
+extern int g_INT_01c5bb3c;
+extern int g_INT_01c5bb40;
+extern int g_INT_01c5bb44;
+extern int g_INT_01c5bb48;
+extern int g_INT_01c5bb4c;
+extern int g_INT_01c5bb50;
+extern int g_INT_01c5bb54;
+extern int g_INT_01c5bb58;
+extern int g_INT_01c5bb5c;
+extern int g_INT_01c5bb60;
+extern int g_INT_01c5bb64;
+extern int g_INT_01c5bb68;
+extern int g_INT_01c5bb6c;
+extern int g_INT_01c5bb70;
+extern int g_INT_01c5bb74;
+extern int g_INT_01c5bb7c;
+extern int g_INT_01c5bb80;
+extern int g_INT_01c5bb84;
+extern int g_INT_01c5bb88;
+extern int g_INT_01c5bb8c;
+extern int g_INT_01c5bb90;
+extern int g_INT_01c5bb94;
+extern int g_INT_01c5fad0;
+extern int g_INT_01c5fad4;
+extern int g_INT_01c5fadc;
+extern int g_INT_01c5fae0;
+
+// int[2000]
+extern int g_INT_ARRAY_01c5bc4c[2000];
+
+// void*
+extern void* g_PTR_01c5bb78;
+
+// void*[1200]
+extern void* g_ARRAY_PTR_01c5faec[1200];
 

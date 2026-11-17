@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   v
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01caf5b4
+;   int g_INT_01caf5b4
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     FADDP                               ; 005b1b27
     FSTP float ptr [ESP]                ; 005b1b29
     MOV EAX,dword ptr [ESP]             ; 005b1b2c
-    MOV EDX,dword ptr [0x01caf5b4]      ; 005b1b2f | DAT_01caf5b4
+    MOV EDX,dword ptr [0x01caf5b4]      ; 005b1b2f | g_INT_01caf5b4
     SAR EAX,0x1                         ; 005b1b35
     ADD EAX,EDX                         ; 005b1b37
     ADD ESP,0x4                         ; 005b1b39

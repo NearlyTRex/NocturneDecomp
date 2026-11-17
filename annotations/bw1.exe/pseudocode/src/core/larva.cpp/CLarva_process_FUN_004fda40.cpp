@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004fe396) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float delta_time)
 
@@ -124,12 +123,12 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
         fStack_f8 = afStack_d4[0];
         fStack_f4 = afStack_d4[1];
       }
-      fStack_f8 = fStack_f8 + _DAT_005e6c4b;
+      fStack_f8 = fStack_f8 + 2.0f;
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-2.0,2.0);
       fStack_fc = fStack_14 + fStack_fc;
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-2.0,2.0);
-      Var9 = fsin((float10)_DAT_005e6c53);
-      fVar14 = (float10)fptan((float10)_DAT_005e6c5b);
+      Var9 = fsin((float10)-0.52359877558333301);
+      fVar14 = (float10)fptan((float10)0.52359877558333301);
       fVar12 = (float10)fStack_14 + (float10)fStack_f4;
       fStack_f4 = (float)fVar12;
       fVar13 = atan2((float10)fStack_fc,fVar12);
@@ -138,8 +137,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
       fVar11 = (float10)fsin(fVar13);
       fVar13 = (float10)fcos(fVar13);
       dStack_64 = (double)fVar1;
-      fStack_2c = fVar1 * (float)_DAT_005e6c43 * fVar1;
-      fVar12 = fVar10 * (float10)_DAT_005e6c4b * fVar10 *
+      fStack_2c = fVar1 * (float)32 * fVar1;
+      fVar12 = fVar10 * (float10)2.0f * fVar10 *
                (fVar12 * (float10)fVar1 - (float10)fStack_f8);
       CStack_150.y = (float)-fVar14;
       fStack_28 = (float)fVar12;
@@ -171,7 +170,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
         CStack_120.x = CStack_144.x;
         *(uint *)((int)&CStack_120 + (uint)bVar8 * -8 + 4) =
              *(uint *)((int)&CStack_144 + (uint)bVar8 * -8 + 4);
-        this_ptr_00 = 0x01C57074;
+        this_ptr_00 = g_CFireEffect_PTR_0061c010;
         *(uint *)((int)&CStack_120 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
              *(uint *)((int)&CStack_144 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         core_fire_cpp_CFireEffect_createFireball_FUN_004b5e00
@@ -210,7 +209,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
              afStack_134[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
         fStack_1c = CStack_108.z * CStack_108.z +
                     CStack_108.x * CStack_108.x + CStack_108.y * CStack_108.y;
-        fStack_38 = (float)(((int)fStack_1c >> 1) + _DAT_01cc804c);
+        fStack_38 = (float)(((int)fStack_1c >> 1) + g_INT_01cc804c);
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_108,&CStack_cc);
         fStack_180 = CStack_cc.x;
         afStack_194[(uint)bVar8 * -2 + 6] = *(float *)((int)&CStack_cc + (uint)bVar8 * -8 + 4);
@@ -218,7 +217,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
              *(float *)((int)&CStack_cc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                               (fStack_17c - (this_ptr->base).base.base.orient.vec.y);
-        if (((float)_DAT_005e6c2b <= ABS(fStack_14)) || ((float)_DAT_005e6c33 < fStack_38)) {
+        if (((float)0.39269908168750001 <= ABS(fStack_14)) || ((float)12 < fStack_38))
+        {
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                     (&(this_ptr->base).base.model.base,1,1);
         }
@@ -231,7 +231,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
     }
     else if (uVar7 < 2) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar1 = 0x41A00000;
+      fVar1 = 20.0f;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a0fe0(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
@@ -240,7 +240,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
       }
       else {
         min_distance = 0.17453292;
-        fStack_18 = 0x41A00000;
+        fStack_18 = 20.0f;
         pCVar16 = (CVector3f *)0x3f000000;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -275,7 +275,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
                afStack_194[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
           fStack_4c = CStack_1a4.z * CStack_1a4.z +
                       CStack_1a4.x * CStack_1a4.x + CStack_1a4.y * CStack_1a4.y;
-          fStack_48 = (float)(((int)fStack_4c >> 1) + _DAT_01cc804c);
+          fStack_48 = (float)(((int)fStack_4c >> 1) + g_INT_01cc804c);
           if (fStack_48 < (this_ptr->base).guard_distance) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_1a4,&CStack_9c)
             ;
@@ -294,7 +294,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                                   ((this_ptr->base).base.base.orient.vec.y);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_34 - fStack_14);
-            if (ABS(fStack_14) < (float)_DAT_005e6c2b) {
+            if (ABS(fStack_14) < (float)0.39269908168750001) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                         (&(this_ptr->base).base.model.base,2,1);
               (this_ptr->base).attack_cooldown = 6.0;
@@ -363,7 +363,7 @@ LAB_004fdb45:
       fVar14 = (float10)1;
       fVar12 = (float10)1.4426950408889634 *
                (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
-               (float10)_DAT_005e6c3b;
+               (float10)-0.20000000000000001;
       fVar13 = (float10)f2xm1(fVar12 - (fVar12 / fVar14) * fVar14);
       fVar14 = (float10)fscale(fVar13 + fVar14,fVar12);
       dStack_6c = (double)fVar14;

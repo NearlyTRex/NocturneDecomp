@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_updateTurnBlending_FUN_00455270(CDoc *this_ptr,float delta_time)
 
 {
@@ -31,7 +29,7 @@ void __cdecl core_doc_cpp_CDoc_updateTurnBlending_FUN_00455270(CDoc *this_ptr,fl
     return;
   }
   if (fVar4 < 1.0) {
-    fVar4 = (1.0 - fVar4) * delta_time * (float)_DAT_005d01df;
+    fVar4 = (1.0 - fVar4) * delta_time * (float)10;
     if (fVar4 <= ABS(this_ptr->turn_angle)) {
       if (0.0 <= this_ptr->turn_angle) {
         this_ptr->turn_angle = this_ptr->turn_angle - fVar4;
@@ -45,22 +43,23 @@ void __cdecl core_doc_cpp_CDoc_updateTurnBlending_FUN_00455270(CDoc *this_ptr,fl
     }
   }
   iVar1 = this_ptr->turn_motion_index;
-  this_ptr->turn_motion_index = _DAT_01b4d2a8;
+  this_ptr->turn_motion_index = g_INT_01b4d2a8;
   if (this_ptr->turn_angle < 0.0) {
-    this_ptr->turn_motion_index = _DAT_01b4d2ac;
+    this_ptr->turn_motion_index = g_INT_01b4d2ac;
   }
-  if (this_ptr->turn_blend_weight <= (float)_DAT_005d01e7) {
+  if (this_ptr->turn_blend_weight <= (float)0.20000000000000001) {
     this_ptr->turn_elapsed = 0.0;
   }
   else {
     this_ptr->turn_elapsed = this_ptr->turn_elapsed + delta_time;
   }
   if ((this_ptr->turn_blend_timer <= 0.0) &&
-     (((float)_DAT_005d01ef <= this_ptr->turn_blend_weight || (1.0 < this_ptr->turn_elapsed)))) {
+     (((float)0.5 <= this_ptr->turn_blend_weight || (1.0 < this_ptr->turn_elapsed))))
+  {
     this_ptr->turn_blend_timer = (1.0 - this_ptr->turn_blend_weight) * 1.6;
   }
   if (this_ptr->turn_blend_timer <= 0.0) {
-    local_2c = ABS(this_ptr->turn_angle * _DAT_005d01f7);
+    local_2c = ABS(this_ptr->turn_angle * 0.3183099f);
     if (iVar1 != this_ptr->turn_motion_index) {
       local_2c = 0.0;
     }
@@ -69,7 +68,7 @@ void __cdecl core_doc_cpp_CDoc_updateTurnBlending_FUN_00455270(CDoc *this_ptr,fl
     }
     fVar4 = (local_2c - this_ptr->turn_blend_weight) + this_ptr->turn_blend_weight;
     this_ptr->turn_blend_weight = fVar4;
-    if ((float)_DAT_005d01ff < fVar4) {
+    if ((float)0.001 < fVar4) {
       this_ptr->turn_motion_index = iVar1;
       return;
     }

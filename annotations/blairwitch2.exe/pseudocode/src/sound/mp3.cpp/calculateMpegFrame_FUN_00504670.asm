@@ -22,11 +22,11 @@
 ;   TerminatedCString s_sound_mp3_cpp_005dfea5
 ;   TerminatedCString s_js_bound_bad_layer_modex_005dfeb6
 ;   undefined4 s_CMotionController_0061847c+0x14
-;   undefined4 DAT_00618e88
+;   double[2] g_DOUBLE_ARRAY_00618e88
 ;   undefined4 DAT_00618ec8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01d23558
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   char[256] g_CHAR_ARRAY_01d23558
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -68,15 +68,15 @@ section .text
     CMP EDI,0x3                         ; 005046b5
     JLE 0x00504804                      ; 005046b8
         ;   XREF to: 00504804 (CONDITIONAL_JUMP)  ; LAB_00504804
-    PUSH 0x1d23558                      ; 005046be | DAT_01d23558
+    PUSH 0x1d23558                      ; 005046be | g_CHAR_ARRAY_01d23558
         ;   Label: LAB_005046be
     PUSH ESI                            ; 005046c3
     PUSH EDI                            ; 005046c4
     MOV EBP,0x5dfea5                    ; 005046c5 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x1ea                       ; 005046ca
     PUSH 0x5dfeb6                       ; 005046cf | = "js_bound bad layer/modext (%d/%d)  Fi..."
-    MOV dword ptr [0x01d046a0],EBP      ; 005046d4 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 005046da | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 005046d4 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 005046da | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005046df
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x10                        ; 005046e4
@@ -125,7 +125,7 @@ section .text
     MOV ECX,EDI                         ; 0050475a
     SHL ECX,0x5                         ; 0050475c
     MOV dword ptr [ESP + 0x8],EBX       ; 0050475f
-    FLD double ptr [ECX + EAX*0x8 + 0x618e88] ; 00504763 | DAT_00618e88
+    FLD double ptr [ECX + EAX*0x8 + 0x618e88] ; 00504763 | g_DOUBLE_ARRAY_00618e88
     CALL crt_math.c_round_FUN_005b7ff0  ; 0050476a
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 0050476f
@@ -145,12 +145,12 @@ section .text
     CMP EAX,dword ptr [EDX + 0xc]       ; 0050478e
     JZ 0x005047ba                       ; 00504791
         ;   XREF to: 005047ba (CONDITIONAL_JUMP)  ; LAB_005047ba
-    PUSH 0x1d23558                      ; 00504793 | DAT_01d23558
+    PUSH 0x1d23558                      ; 00504793 | g_CHAR_ARRAY_01d23558
     MOV EAX,0x5dfe5b                    ; 00504798 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1d8                       ; 0050479d
     PUSH 0x5dfe6c                       ; 005047a2 | = "MPEG Layer 2 - pick_table - can't loa..."
-    MOV [0x01d046a0],EAX                ; 005047a7 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 005047ac | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 005047a7 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 005047ac | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005047b2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005047b7

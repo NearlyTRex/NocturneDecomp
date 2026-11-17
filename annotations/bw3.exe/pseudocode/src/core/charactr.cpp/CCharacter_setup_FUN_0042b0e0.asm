@@ -22,10 +22,10 @@
 ;   TerminatedCString s_s_is_carrying_s_but_s_th_005b7fcf
 ;   TerminatedCString s_bip01_head_005b800a
 ;   TerminatedCString s_shadow_dfm_005b8015
-;   undefined4 DAT_005dd234
-;   undefined4 DAT_007e2b34
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005dd234 = 9999
+;   CKeyFramedModelInstance g_CKeyFramedModelInstance_007e2b34
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
@@ -63,15 +63,15 @@ section .text
     ADD ESP,0x4                         ; 0042b0f2
     MOV EAX,dword ptr [EBP + 0x14]      ; 0042b0f5
     PUSH 0x5b7fae                       ; 0042b0f8 | = "stake_b.kfm"
-    FLD float ptr [0x005dd234]          ; 0042b0fd | DAT_005dd234
-    PUSH 0x7e2b34                       ; 0042b103 | DAT_007e2b34
+    FLD float ptr [0x005dd234]          ; 0042b0fd | g_FLOAT_005dd234
+    PUSH 0x7e2b34                       ; 0042b103 | g_CKeyFramedModelInstance_007e2b34
     FSTP float ptr [EAX + 0x2504]       ; 0042b108
     MOV dword ptr [EAX + 0x3284],0x0    ; 0042b10e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0 ; 0042b118
         ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0042b11d
     MOV ESI,dword ptr [EBP + 0x14]      ; 0042b120
-    PUSH 0x7e2b34                       ; 0042b123 | DAT_007e2b34
+    PUSH 0x7e2b34                       ; 0042b123 | g_CKeyFramedModelInstance_007e2b34
     LEA EDI,[ESI + 0xf0]                ; 0042b128
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580 ; 0042b12e
         ;   XREF to: 00462580 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580(CKeyFramedModelInstance * this_ptr)
@@ -307,8 +307,8 @@ section .text
     MOV EDX,0x5b7fba                    ; 0042b3bd | = "..\\core\\charactr.cpp"
     MOV ECX,0x145                       ; 0042b3c2
     PUSH 0x5b7fcf                       ; 0042b3c7 | = "%s is carrying %s, but %s thinks it i..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0042b3cc | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0042b3d2 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0042b3cc | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0042b3d2 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0042b3d8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x14                        ; 0042b3dd

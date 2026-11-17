@@ -14,7 +14,7 @@ int FUN_005aba00(int param_1)
   
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d4)();
   iVar2 = 0;
-  if (0 < DAT_00607be0) {
+  if (0 < g_INT_00607be0) {
     iVar1 = 0;
     do {
       if (*(int *)((int)DAT_00607bdc + iVar1) == 0) {
@@ -24,12 +24,12 @@ int FUN_005aba00(int param_1)
       }
       iVar1 = iVar1 + 4;
       iVar2 = iVar2 + 1;
-    } while (iVar1 < DAT_00607be0 * 4);
+    } while (iVar1 < g_INT_00607be0 * 4);
   }
-  DAT_00607bdc = realloc(DAT_00607bdc,(DAT_00607be0 + 1) * 4);
-  iVar2 = DAT_00607be0 * 4;
-  DAT_00607be0 = DAT_00607be0 + 1;
+  DAT_00607bdc = realloc(DAT_00607bdc,(g_INT_00607be0 + 1) * 4);
+  iVar2 = g_INT_00607be0 * 4;
+  g_INT_00607be0 = g_INT_00607be0 + 1;
   *(int *)((int)DAT_00607bdc + iVar2) = param_1;
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d8)();
-  return DAT_00607be0 + -1;
+  return g_INT_00607be0 + -1;
 }

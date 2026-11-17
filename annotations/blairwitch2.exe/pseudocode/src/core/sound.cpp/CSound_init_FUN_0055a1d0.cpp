@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr)
 
 {
@@ -15,23 +13,23 @@ void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr)
   byte bVar2;
   float afStackY_100c [1015];
   float local_24;
-  uint local_20;
-  uint local_1c;
+  float local_20;
+  float local_1c;
   float local_18;
   float local_14;
   float local_10;
   float local_c;
   
   bVar2 = 0;
-  _DAT_0264b2a8 = 0;
-  _DAT_0264b2ac = 0;
-  _DAT_0264b2b0 = 0;
-  _DAT_0264b29c = 0x501502f9;
-  _DAT_0264b2a0 = 0x501502f9;
-  _DAT_0264b2a4 = 0x501502f9;
+  g_FLOAT_0264b2a8 = 0.0;
+  g_FLOAT_0264b2ac = 0.0;
+  g_FLOAT_0264b2b0 = 0.0;
+  g_FLOAT_0264b29c = 1e+10;
+  g_FLOAT_0264b2a0 = 1e+10;
+  g_FLOAT_0264b2a4 = 1e+10;
   sound_sndmain_cpp_set3DListenerVelocity_FUN_00551570(0.0,0.0,0.0);
   core_sound_cpp_updateListeners_FUN_00558d50();
-  _DAT_0264b2ac = 0;
+  g_FLOAT_0264b2ac = 0.0;
   sound_sndmain_cpp_setReverb_FUN_00552cc0
             (g_SoundReverb.volume,g_SoundReverb.decay_time,g_SoundReverb.damping);
   sound_sndmain_cpp_enableSoundSystem_FUN_005524b0();
@@ -39,9 +37,9 @@ void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr)
   if (iVar1 == 0) {
     return;
   }
-  _DAT_0264bad8 = 1.0;
-  _DAT_0264badc = 0x3f800000;
-  _DAT_0264bae0 = 0;
+  g_FLOAT_0264bad8 = 1.0;
+  g_FLOAT_0264badc = 1.0;
+  g_FLOAT_0264bae0 = 0.0;
   iVar1 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(0);
   if (iVar1 == 0) {
     sound_sndmain_cpp_enableSfxChannel_FUN_00551220(3,0);
@@ -49,7 +47,7 @@ void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr)
   else {
     sound_sndmain_cpp_enableSfxChannel_FUN_00551220(3,1);
     local_c = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(0);
-    sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(3,local_c * _DAT_0264bad8);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(3,local_c * g_FLOAT_0264bad8);
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
   sound_sndmain_cpp_setNextSfxChannel_FUN_00550310(3);
@@ -64,13 +62,13 @@ void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr)
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
     if (&stack0x00000000 != (byte *)0x264bba8) {
-      _DAT_0264bb84 = local_24;
-      _DAT_0264bb88 = local_20;
-      _DAT_0264bb8c = local_1c;
+      g_CVector3f_0264bb84.x = local_24;
+      g_CVector3f_0264bb84.y = local_20;
+      g_CVector3f_0264bb84.z = local_1c;
     }
-    _DAT_0264bb94 = 0xffffffff;
+    g_INT_0264bb94 = -1;
   }
-  core_event_cpp_CEventList_restartSfxEntries_FUN_00491be0(0x01C38BC0);
-  _DAT_0264bad4 = 1;
+  core_event_cpp_CEventList_restartSfxEntries_FUN_00491be0(g_CEventList_PTR_006141f0);
+  g_INT_0264bad4 = 1;
   return;
 }

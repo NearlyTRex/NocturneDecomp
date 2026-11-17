@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 601,
+    "complexity_score": 581,
     "cross_reference_count": 43,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 50,
+    "suspect_count": 48,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -307,50 +307,50 @@
   "globals": [
     {
       "addr": "005b53cd",
-      "name": "DAT_005b53cd",
-      "type": "undefined1",
+      "name": "s_none_005b53cd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005b53ce",
-      "name": "DAT_005b53ce",
-      "type": "undefined1",
+      "name": "s_one_005b53cd+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b53cf",
-      "name": "DAT_005b53cf",
-      "type": "undefined1",
+      "name": "s_ne_005b53cd+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b53d0",
-      "name": "DAT_005b53d0",
-      "type": "undefined1",
+      "name": "s_e_005b53cd+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b53d2",
-      "name": "DAT_005b53d2",
-      "type": "undefined1",
+      "name": "s_str_005b53d2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005b53d3",
-      "name": "DAT_005b53d3",
-      "type": "undefined1",
+      "name": "s_tr_005b53d2+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b53d4",
-      "name": "DAT_005b53d4",
-      "type": "undefined1",
+      "name": "s_r_005b53d2+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b53d5",
-      "name": "DAT_005b53d5",
-      "type": "undefined1",
+      "name": "s__005b53d2+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -602,14 +602,6 @@
       "type": "negative_offset"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005b53cd",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005b53cd;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "pCVar2[-9].",
@@ -848,14 +840,6 @@
       "severity": "mild",
       "text": "pCVar2[-2].orientation.vec.y = 0.0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005b53d2",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005b53d2;",
-      "type": "undefined_data"
     },
     {
       "description": "Negative struct offset (wrong base type)",

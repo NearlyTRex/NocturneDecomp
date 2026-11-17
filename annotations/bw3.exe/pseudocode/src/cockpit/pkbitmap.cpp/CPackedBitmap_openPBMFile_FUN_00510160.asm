@@ -13,8 +13,8 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70 at 00510cec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0050fd90
@@ -67,8 +67,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005101b2
     MOV ECX,0x5cbe45                    ; 005101b6
     PUSH EAX                            ; 005101bb
-    MOV dword ptr [0x01d71de4],EDI      ; 005101bc | DAT_01d71de4
-    MOV dword ptr [0x01d71de0],ECX      ; 005101c2 | DAT_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 005101bc | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005101c2 | g_CHAR_PTR_01d71de0
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005101c8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005101cd

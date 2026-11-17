@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_WaitForSingleObject_005b3680 = 001b42d2
-;   undefined4 DAT_005d7e93
+;   double g_DOUBLE_005d7e93 = 1000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -36,7 +36,7 @@ section .text
     RET                                 ; 00581960
     FLD double ptr [ESP + 0x10]         ; 00581961
         ;   Label: LAB_00581961
-    FMUL double ptr [0x005d7e93]        ; 00581965 | DAT_005d7e93
+    FMUL double ptr [0x005d7e93]        ; 00581965 | g_DOUBLE_005d7e93
     CALL crt_math.c_round_FUN_005a3120  ; 0058196b
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP qword ptr [ESP]               ; 00581970

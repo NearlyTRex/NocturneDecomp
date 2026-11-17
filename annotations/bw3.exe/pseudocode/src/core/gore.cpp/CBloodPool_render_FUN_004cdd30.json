@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 303,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 22,
+    "pseudocode_lines": 72,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 272
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -71,110 +69,110 @@
   "globals": [
     {
       "addr": "005c46d9",
-      "name": "DAT_005c46d9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c46d9",
+      "type": "double",
+      "value": "8"
     },
     {
       "addr": "005e0e18",
-      "name": "DAT_005e0e18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e0e18",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005ff3ac",
-      "name": "DAT_005ff3ac",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_ARRAY_005ff3ac",
+      "type": "SMRGLTextureBasic[116]",
       "value": null
     },
     {
       "addr": "0060b034",
-      "name": "DAT_0060b034",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b038",
-      "name": "DAT_0060b038",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b03c",
-      "name": "DAT_0060b03c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b064",
-      "name": "DAT_0060b064",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b068",
-      "name": "DAT_0060b068",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b06c",
-      "name": "DAT_0060b06c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b094",
-      "name": "DAT_0060b094",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b098",
-      "name": "DAT_0060b098",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b09c",
-      "name": "DAT_0060b09c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0c4",
-      "name": "DAT_0060b0c4",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0c8",
-      "name": "DAT_0060b0c8",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0cc",
-      "name": "DAT_0060b0cc",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     }
   ],
@@ -410,180 +408,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&this_ptr->position);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005ff3ac",
-      "severity": "mild",
-      "text": "(&DAT_005ff3ac + local_10 * 0x18 + this_ptr->texture_variant * 0x2b8));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_34);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 42,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffffb4);",
+      "text": "(CVector3i *)&stack0xffffffb4);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffffb4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_0060b034",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_0060b038",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_0060b03c",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_0060b064",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_0060b068",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_0060b06c",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_0060b094",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,(int *)&DAT_0060b094,(int *)&DAT_0060b098,(int *)&DAT_0060b09c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_0060b098",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,(int *)&DAT_0060b094,(int *)&DAT_0060b098,(int *)&DAT_0060b09c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_0060b09c",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,(int *)&DAT_0060b094,(int *)&DAT_0060b098,(int *)&DAT_0060b09c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_0060b0c4",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,(int *)&DAT_0060b0c4,(int *)&DAT_0060b0c8,(int *)&DAT_0060b0cc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_0060b0c8",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,(int *)&DAT_0060b0c4,(int *)&DAT_0060b0c8,(int *)&DAT_0060b0cc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_0060b0cc",
-      "severity": "mild",
-      "text": "(this_ptr->blood_type,(int *)&DAT_0060b0c4,(int *)&DAT_0060b0c8,(int *)&DAT_0060b0cc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);",
-      "type": "undefined_data"
     }
   ]
 }

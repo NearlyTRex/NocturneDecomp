@@ -23,9 +23,9 @@ int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_0040ec10(CAnvil *this_ptr)
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,&(this_ptr->base).location.position);
+            (g_CDemonRenderer_PTR_0060b280,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_0060b280,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   puVar2 = auStack_14;
   puVar3 = auStack_34;

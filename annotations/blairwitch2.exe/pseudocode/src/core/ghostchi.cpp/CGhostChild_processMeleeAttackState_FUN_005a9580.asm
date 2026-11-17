@@ -12,11 +12,11 @@
 ;   TerminatedCString s_Alert_005f093c
 ;   TerminatedCString s_SleepComplete_005f0942
 ;   TerminatedCString s_Sleep_005f0950
-;   undefined4 DAT_006006ac
-;   undefined4 DAT_006006b0
-;   undefined4 DAT_006006b4
+;   float g_FLOAT_006006ac = 3
+;   float g_FLOAT_006006b0 = 0.4000000
+;   float g_FLOAT_006006b4 = 0.5
 ;   undefined4 DAT_006006b8
-;   undefined4 DAT_0265370c
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -58,7 +58,7 @@ section .text
     FADDP                               ; 005a95bc
     FSQRT                               ; 005a95be
     ADD EDX,0x20                        ; 005a95c0
-    FCOMP float ptr [0x006006ac]        ; 005a95c3 | DAT_006006ac
+    FCOMP float ptr [0x006006ac]        ; 005a95c3 | g_FLOAT_006006ac
     FNSTSW AX                           ; 005a95c9
     SAHF                                ; 005a95cb
     JA 0x005a964b                       ; 005a95cc
@@ -90,13 +90,13 @@ section .text
     FLD float ptr [ESP + 0x7c]          ; 005a960a
     ADD ESP,0x4                         ; 005a960e
     FST float ptr [ESP + 0x74]          ; 005a9611
-    FCOMP float ptr [0x006006b0]        ; 005a9615 | DAT_006006b0
+    FCOMP float ptr [0x006006b0]        ; 005a9615 | g_FLOAT_006006b0
     FNSTSW AX                           ; 005a961b
     SAHF                                ; 005a961d
     JC 0x005a9638                       ; 005a961e
         ;   XREF to: 005a9638 (CONDITIONAL_JUMP)  ; LAB_005a9638
     FLD float ptr [ESP + 0x74]          ; 005a9620
-    FCOMP float ptr [0x006006b4]        ; 005a9624 | DAT_006006b4
+    FCOMP float ptr [0x006006b4]        ; 005a9624 | g_FLOAT_006006b4
     FNSTSW AX                           ; 005a962a
     SAHF                                ; 005a962c
     JA 0x005a9638                       ; 005a962d
@@ -116,7 +116,7 @@ section .text
     PUSH 0x3f000000                     ; 005a964b
         ;   Label: LAB_005a964b
     ADD EBX,0x10af8                     ; 005a9650
-    FLD float ptr [0x006006ac]          ; 005a9656 | DAT_006006ac
+    FLD float ptr [0x006006ac]          ; 005a9656 | g_FLOAT_006006ac
     MOV dword ptr [EBX + 0x8a0],0x0     ; 005a965c
     PUSH EBX                            ; 005a9666
     FSTP float ptr [EBX + 0x89c]        ; 005a9667
@@ -142,7 +142,7 @@ section .text
     PUSH EAX                            ; 005a96a6
     LEA ESI,[ESP + 0x44]                ; 005a96a7
     INC ECX                             ; 005a96ab
-    PUSH 0x265370c                      ; 005a96ac | DAT_0265370c
+    PUSH 0x265370c                      ; 005a96ac | g_CVector3f_0265370c
     MOV dword ptr [EBX + 0x1185c],ECX   ; 005a96b1
     LEA EDI,[ESP + 0x60]                ; 005a96b7
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a96bb

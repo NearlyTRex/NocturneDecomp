@@ -9,8 +9,8 @@
 ; float            Stack[0xc]:4   volume
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005caeda
-;   undefined4 DAT_005caede
+;   float g_FLOAT_005caeda = 10000
+;   double g_DOUBLE_005caede = -1
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.ground_type
@@ -68,7 +68,7 @@ section .text
     FSUB float ptr [ESP + 0x8]          ; 0040ca97
     FMUL ST0                            ; 0040ca9b
     FADDP                               ; 0040ca9d
-    FCOMP float ptr [0x005caeda]        ; 0040ca9f | DAT_005caeda
+    FCOMP float ptr [0x005caeda]        ; 0040ca9f | g_FLOAT_005caeda
     FNSTSW AX                           ; 0040caa5
     SAHF                                ; 0040caa7
     JBE 0x0040cab3                      ; 0040caa8
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 00537e00 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00537e00(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040cb17
     FLD float ptr [ESP + 0x34]          ; 0040cb1a
-    FADD double ptr [0x005caede]        ; 0040cb1e | DAT_005caede
+    FADD double ptr [0x005caede]        ; 0040cb1e | g_DOUBLE_005caede
     FLD float ptr [ESP + 0x30]          ; 0040cb24
     FCOMPP                              ; 0040cb28
     FNSTSW AX                           ; 0040cb2a

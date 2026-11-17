@@ -7,11 +7,11 @@
 ; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7b4f
-;   undefined4 DAT_005d7b53
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_02cfd900
+;   float g_FLOAT_005d7b4f = -1
+;   double g_DOUBLE_005d7b53 = 0.800000000000000
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   CVector3f g_CVector3f_02cfd900
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 0057f584 (CONDITIONAL_JUMP)  ; LAB_0057f584
     FLD float ptr [EBX + 0xd098]        ; 0057f476
         ;   Label: LAB_0057f476
-    FCOMP double ptr [0x005d7b53]       ; 0057f47c | DAT_005d7b53
+    FCOMP double ptr [0x005d7b53]       ; 0057f47c | g_DOUBLE_005d7b53
     FNSTSW AX                           ; 0057f482
     SAHF                                ; 0057f484
     JA 0x0057f59b                       ; 0057f485
@@ -92,17 +92,17 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0057f501
     MOVSD ES:EDI,ESI                    ; 0057f502
     MOVSD ES:EDI,ESI                    ; 0057f503
-    PUSH 0x2cfd900                      ; 0057f504 | DAT_02cfd900
-    MOV EDI,dword ptr [0x005f2afc]      ; 0057f509 | DAT_005f2afc
-    PUSH EDI                            ; 0057f50f | DAT_01bdd7e4
+    PUSH 0x2cfd900                      ; 0057f504 | g_CVector3f_02cfd900
+    MOV EDI,dword ptr [0x005f2afc]      ; 0057f509 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDI                            ; 0057f50f | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30 ; 0057f510
         ;   XREF to: 0046cf30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0057f515
     PUSH 0x0                            ; 0057f518
     LEA EAX,[ESP + 0x48]                ; 0057f51a
     PUSH EAX                            ; 0057f51e
-    MOV EBP,dword ptr [0x005f2afc]      ; 0057f51f | DAT_005f2afc
-    PUSH EBP                            ; 0057f525 | DAT_01bdd7e4
+    MOV EBP,dword ptr [0x005f2afc]      ; 0057f51f | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBP                            ; 0057f525 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30 ; 0057f526
         ;   XREF to: 0046cf30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0057f52b
@@ -148,7 +148,7 @@ section .text
     RET                                 ; 0057f583
     FLD float ptr [EBX + 0xd098]        ; 0057f584
         ;   Label: LAB_0057f584
-    FADD float ptr [0x005d7b4f]         ; 0057f58a | DAT_005d7b4f
+    FADD float ptr [0x005d7b4f]         ; 0057f58a | g_FLOAT_005d7b4f
     FSTP float ptr [EBX + 0xd098]       ; 0057f590
     JMP 0x0057f476                      ; 0057f596
         ;   XREF to: 0057f476 (UNCONDITIONAL_JUMP)  ; LAB_0057f476

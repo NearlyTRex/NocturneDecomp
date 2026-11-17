@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_004f1cf0(CMimic *this_ptr,SCollisionInfo *collision_info)
 
@@ -21,8 +20,8 @@ ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_004f1cf0(CMimi
   collision_info->cylinder_radius = 1.0;
   if (iVar1 == 1) {
     collision_info->cylinder_bottom_y = -0.1;
-    fVar2 = (float)_DAT_005dd9f9;
-    collision_info->cylinder_top_y = collision_info->cylinder_top_y + _DAT_005dda01;
+    fVar2 = (float)1.3;
+    collision_info->cylinder_top_y = collision_info->cylinder_top_y + 0.5f;
     collision_info->cylinder_radius = collision_info->cylinder_radius * fVar2;
   }
   else {

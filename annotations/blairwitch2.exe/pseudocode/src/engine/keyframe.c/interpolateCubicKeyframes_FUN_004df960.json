@@ -2,19 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 232,
+    "complexity_score": 216,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 167,
-    "suspect_count": 5,
+    "pseudocode_lines": 166,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 528
+    "total_lines": 527
   },
   "cross_references": [],
   "function": {
@@ -94,68 +93,68 @@
     },
     {
       "addr": "005dbca6",
-      "name": "DAT_005dbca6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbca6",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005dbcae",
-      "name": "DAT_005dbcae",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbcae",
+      "type": "float",
+      "value": "-0.5"
     },
     {
       "addr": "005dbcb2",
-      "name": "DAT_005dbcb2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbcb2",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005dbcb6",
-      "name": "DAT_005dbcb6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbcb6",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "005dbcbe",
-      "name": "DAT_005dbcbe",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbcbe",
+      "type": "float",
+      "value": "1.5"
     },
     {
       "addr": "005dbcc2",
-      "name": "DAT_005dbcc2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbcc2",
+      "type": "float",
+      "value": "-2.5"
     },
     {
       "addr": "005dbcc6",
-      "name": "DAT_005dbcc6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbcc6",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005dbcca",
-      "name": "DAT_005dbcca",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dbcca",
+      "type": "float",
+      "value": "-1.5"
     },
     {
       "addr": "01c2a374",
-      "name": "DAT_01c2a374",
-      "type": "undefined4",
+      "name": "g_INT_01c2a374",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -276,16 +275,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 166,
+      "line": 164,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +",
@@ -293,7 +284,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar27` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar27->owner`). Replace `pSVar27->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 129,
+      "line": 127,
       "match": "pSVar27 = (T *)&pSVar27->FIELD",
       "severity": "moderate",
       "text": "pSVar27 = (SMRGLKeyframe *)&pSVar27->vertex_header;",
@@ -301,7 +292,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar25` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar25->owner`). Replace `pSVar25->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 130,
+      "line": 128,
       "match": "pSVar25 = (T *)&pSVar25->FIELD",
       "severity": "moderate",
       "text": "pSVar25 = (SMRGLKeyframe *)&pSVar25->vertex_header;",
@@ -309,7 +300,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar26` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar26->owner`). Replace `pSVar26->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 132,
+      "line": 130,
       "match": "pSVar26 = (T *)&pSVar26->FIELD",
       "severity": "moderate",
       "text": "pSVar26 = (SMRGLKeyframe *)&pSVar26->vertex_header;",

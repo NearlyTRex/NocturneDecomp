@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_L_Foot_005b6383
 ;   TerminatedCString s_Bip01_R_Foot_005b6390
-;   undefined4 DAT_007dff08
+;   int g_INT_007dff08
 ;   undefined4 DAT_007dff0c
 ;
 ; Called Functions:
@@ -44,10 +44,10 @@ section .text
     PUSH 0x0                            ; 0040faf0
     PUSH 0x5b6390                       ; 0040faf2 | = "Bip01 R Foot"
     PUSH ESI                            ; 0040faf7
-    MOV [0x007dff08],EAX                ; 0040faf8 | DAT_007dff08
+    MOV [0x007dff08],EAX                ; 0040faf8 | g_INT_007dff08
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 0040fafd
         ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
-    MOV ESI,dword ptr [0x007dff08]      ; 0040fb02 | DAT_007dff08
+    MOV ESI,dword ptr [0x007dff08]      ; 0040fb02 | g_INT_007dff08
     ADD ESP,0xc                         ; 0040fb08
     MOV dword ptr [EBX + 0x2620],EAX    ; 0040fb0b
     MOV [0x007dff0c],EAX                ; 0040fb11 | DAT_007dff0c

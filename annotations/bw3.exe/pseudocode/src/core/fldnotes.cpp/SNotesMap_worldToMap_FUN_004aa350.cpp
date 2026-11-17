@@ -18,12 +18,13 @@ int __cdecl core_fldnotes_cpp_SNotesMap_worldToMap_FUN_004aa350(SNotesMap *this_
   double dVar6;
   float fStack_20;
   
-  if (((-1 < location->area_id) && (location->area_id < *(int *)(0x01D81080 + 4))) &&
+  if (((-1 < location->area_id) && (location->area_id < g_CDemonMission_PTR_00600530->num_sets)) &&
      (iVar5 = 0, 0 < this_ptr->set_count)) {
     str2 = this_ptr->sets;
     do {
       iVar4 = _stricmp
-                        ((char *)(0x01D81080 + 8 + location->area_id * 0x100),str2->level_name);
+                        (g_CDemonMission_PTR_00600530->set_names[location->area_id],str2->level_name
+                        );
       if (iVar4 == 0) {
         fVar1 = str2->world_x1 - str2->world_x0;
         fVar3 = str2->world_z1 - str2->world_z0;

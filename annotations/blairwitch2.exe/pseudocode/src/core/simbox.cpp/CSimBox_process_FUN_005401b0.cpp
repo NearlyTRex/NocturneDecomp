@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,float delta_time)
 
@@ -27,7 +26,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,floa
   bVar5 = 0;
   if ((this_ptr->type == 1) && ((this_ptr->physics_box).is_valid == 0)) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (0x01C38BC0,this_ptr->trigger_event);
+                      (g_CEventList_PTR_006141f0,this_ptr->trigger_event);
     if (iVar3 != 0) {
       pCVar4 = &(this_ptr->physics_box).linear_velocity_local;
       (this_ptr->physics_box).is_valid = 1;
@@ -59,21 +58,22 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,floa
     }
   }
   if (this_ptr->type == 0) {
-    iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,0x13);
+    iVar3 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)(g_CKeys_PTR_00617dd4,DIK_R);
     if (iVar3 != 0) {
       (this_ptr->base).location.position.x = (this_ptr->spawn_position).x;
       (this_ptr->base).location.position.y = (this_ptr->spawn_position).y;
       (this_ptr->base).location.position.z = (this_ptr->spawn_position).z;
       iStack_10 = rand();
       (this_ptr->base).orient.vec.x =
-           ((float)iStack_10 * _DAT_005e6895 + (float)_DAT_005e6899) * (float)_DAT_005e68a1;
+           ((float)iStack_10 * 3.051851e-05f + (float)-0.5) *
+           (float)3.1415926535000001;
       iStack_10 = rand();
       (this_ptr->base).orient.vec.z =
-           (float)iStack_10 * _DAT_005e6895 * _DAT_005e68a9 * (float)_DAT_005e68b1;
+           (float)iStack_10 * 3.051851e-05f * 3.141593f * (float)2;
       iStack_10 = rand();
       pCVar2 = (this_ptr->base).vtable._ub;
       (this_ptr->base).orient.vec.y =
-           (float)iStack_10 * _DAT_005e6895 * _DAT_005e68a9 * (float)_DAT_005e68b1;
+           (float)iStack_10 * 3.051851e-05f * 3.141593f * (float)2;
       (*pCVar2->setup)(&this_ptr->base);
     }
   }

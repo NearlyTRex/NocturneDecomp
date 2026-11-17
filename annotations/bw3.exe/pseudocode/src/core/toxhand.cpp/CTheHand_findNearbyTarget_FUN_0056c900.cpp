@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_toxhand_cpp_CTheHand_findNearbyTarget_FUN_0056c900(CTheHand *this_ptr,char *class_name)
 
@@ -46,7 +45,7 @@ int __cdecl core_toxhand_cpp_CTheHand_findNearbyTarget_FUN_0056c900(CTheHand *th
              *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8);
         *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
              *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-        fStack_3c = fStack_3c * (float)_DAT_005d6553;
+        fStack_3c = fStack_3c * (float)3;
         if (SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <
             (this_ptr->base).guard_distance) {
           (this_ptr->base).victim = (CCharacter *)actor_ptr;

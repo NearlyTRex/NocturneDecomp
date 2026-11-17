@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CColor3f * __stack_esi core_boneguy_cpp_hsvToRgb_FUN_00418110(CColor3f *in_hsv,CColor3f *out_rgb)
 
 {
@@ -36,8 +34,8 @@ CColor3f * __stack_esi core_boneguy_cpp_hsvToRgb_FUN_00418110(CColor3f *in_hsv,C
   fStack_14 = in_hsv->b;
   dVar1 = (double)in_hsv->g;
   if (0.0 < dVar1) {
-    fStack_30 = in_hsv->g * (float)_DAT_005cc012;
-    fVar2 = in_hsv->r * (float)_DAT_005cc01a;
+    fStack_30 = in_hsv->g * (float)0.0039215686274509803;
+    fVar2 = in_hsv->r * (float)0.023529411764705899;
     dStack_40 = floor((double)fVar2);
     dVar5 = round(dStack_40);
     iStack_38 = (int)ROUND(dVar5);

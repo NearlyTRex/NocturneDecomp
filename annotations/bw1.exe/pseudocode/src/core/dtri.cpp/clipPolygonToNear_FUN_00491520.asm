@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00491514 = 004915d4
 ;   undefined1* PTR_caseD_3_0049151c = 004915b9
-;   undefined4 DAT_01c3d750
-;   undefined4 DAT_01c3d814
+;   int g_INT_01c3d750
+;   int g_INT_01c3d814
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00490df0
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 00491524
     SUB ESP,0x8                         ; 00491526
     AND ESP,0xfffffff8                  ; 00491529
-    MOV EBX,dword ptr [0x01c3d814]      ; 0049152c | DAT_01c3d814
+    MOV EBX,dword ptr [0x01c3d814]      ; 0049152c | g_INT_01c3d814
     MOV EDX,dword ptr [EBP + 0x14]      ; 00491532
     MOV dword ptr [ESP],EDX             ; 00491535
-    MOV EDX,dword ptr [0x01c3d750]      ; 00491538 | DAT_01c3d750
+    MOV EDX,dword ptr [0x01c3d750]      ; 00491538 | g_INT_01c3d750
     XOR EDI,EDI                         ; 0049153e
     TEST EDX,EDX                        ; 00491540
     JLE 0x004915c7                      ; 00491542
         ;   XREF to: 004915c7 (CONDITIONAL_JUMP)  ; LAB_004915c7
     MOV ESI,0x1c3d754                   ; 00491548
-    MOV EAX,[0x01c3d750]                ; 0049154d | DAT_01c3d750
+    MOV EAX,[0x01c3d750]                ; 0049154d | g_INT_01c3d750
         ;   Label: LAB_0049154d
     LEA ECX,[EDI + 0x1]                 ; 00491552
     CMP ECX,EAX                         ; 00491555
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 004915b5
     INC EBX                             ; 004915b8
         ;   Label: LAB_004915b8
-    MOV ECX,dword ptr [0x01c3d750]      ; 004915b9 | DAT_01c3d750
+    MOV ECX,dword ptr [0x01c3d750]      ; 004915b9 | g_INT_01c3d750
         ;   Label: caseD_3
     INC EDI                             ; 004915bf
     ADD ESI,0xc                         ; 004915c0
     CMP EDI,ECX                         ; 004915c3
     JL 0x0049154d                       ; 004915c5
         ;   XREF to: 0049154d (CONDITIONAL_JUMP)  ; LAB_0049154d
-    MOV dword ptr [0x01c3d814],EBX      ; 004915c7 | DAT_01c3d814
+    MOV dword ptr [0x01c3d814],EBX      ; 004915c7 | g_INT_01c3d814
         ;   Label: LAB_004915c7
     MOV ESP,EBP                         ; 004915cd
     POP EBP                             ; 004915cf
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 004915f6
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004915f7
     PUSH EAX                            ; 004915fb
-    MOV dword ptr [0x01c3d814],EBX      ; 004915fc | DAT_01c3d814
+    MOV dword ptr [0x01c3d814],EBX      ; 004915fc | g_INT_01c3d814
     CALL core_dtri.cpp_clipLineToPlane_FUN_00490df0 ; 00491602
         ;   XREF to: 00490df0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00490df0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c3d814]      ; 00491607 | DAT_01c3d814
+    MOV EBX,dword ptr [0x01c3d814]      ; 00491607 | g_INT_01c3d814
     ADD ESP,0x2c                        ; 0049160d
     JMP 0x004915b8                      ; 00491610
         ;   XREF to: 004915b8 (UNCONDITIONAL_JUMP)  ; LAB_004915b8
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00491652
     PUSH ECX                            ; 00491656
     PUSH EDX                            ; 00491657
-    MOV dword ptr [0x01c3d814],EBX      ; 00491658 | DAT_01c3d814
+    MOV dword ptr [0x01c3d814],EBX      ; 00491658 | g_INT_01c3d814
     CALL core_dtri.cpp_clipLineToPlane_FUN_00490df0 ; 0049165e
         ;   XREF to: 00490df0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00490df0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c3d814]      ; 00491663 | DAT_01c3d814
+    MOV EBX,dword ptr [0x01c3d814]      ; 00491663 | g_INT_01c3d814
     ADD ESP,0x2c                        ; 00491669
     JMP 0x004915b8                      ; 0049166c
         ;   XREF to: 004915b8 (UNCONDITIONAL_JUMP)  ; LAB_004915b8

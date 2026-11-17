@@ -12,7 +12,7 @@ DWORD FUN_005bebb0(uint param_1,int param_2,DWORD param_3)
   uint uVar1;
   DWORD DVar2;
   
-  if ((-1 < (int)param_1) && (param_1 <= 0x00000014)) {
+  if ((-1 < (int)param_1) && (param_1 <= g_UINT_0061f480)) {
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2a8)(param_1);
     uVar1 = FUN_005c0820(param_1);
     if ((0 < param_2) && ((uVar1 & 0x80) == 0)) {

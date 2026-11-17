@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 144,
+    "complexity_score": 33,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 10,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 128
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -107,38 +104,38 @@
     },
     {
       "addr": "00609590",
-      "name": "DAT_00609590",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_00609590",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "007bc034",
-      "name": "DAT_007bc034",
-      "type": "undefined4",
+      "name": "g_FILE_PTR_007bc034",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "007bc038",
-      "name": "DAT_007bc038",
-      "type": "undefined4",
+      "name": "g_INT_007bc038",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007bc03c",
-      "name": "DAT_007bc03c",
-      "type": "undefined4",
+      "name": "g_CDemonActor_PTR_007bc03c",
+      "type": "CDemonActor*",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -263,86 +260,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "uVar3 = DAT_007bc03c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "uVar2 = DAT_007bc038;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "uVar1 = DAT_007bc034;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "DAT_007bc034 = file_handle;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "DAT_007bc03c = this_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "DAT_007bc038 = 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "DAT_007bc034 = (_FILE *)uVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "DAT_007bc03c = (CDemonActor *)uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "DAT_007bc038 = uVar2;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

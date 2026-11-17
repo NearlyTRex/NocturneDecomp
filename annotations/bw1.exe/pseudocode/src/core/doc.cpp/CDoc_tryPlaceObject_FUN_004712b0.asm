@@ -59,11 +59,11 @@
 ;   core_doc.cpp_CDoc_handleActionButton_FUN_00474ef0 at 00474f31
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_doc_cpp_005da1ab+1
-;   undefined4 DAT_005da1d4
-;   undefined4 DAT_005da1dc
-;   undefined4 DAT_005da1e4
-;   undefined4 DAT_005da1ec
+;   TerminatedCString s_actionPending_d_doc_cpp_005da1ac
+;   double g_DOUBLE_005da1d4 = 0.990000000000000
+;   double g_DOUBLE_005da1dc = 3
+;   double g_DOUBLE_005da1e4 = 2
+;   double g_DOUBLE_005da1ec = 4
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CCrateClassInfo.name_hash
@@ -117,7 +117,7 @@ section .text
     MOV dword ptr [ESP + 0x10c],EAX     ; 004712ed
     FLD float ptr [ESP + 0x10c]         ; 004712f4
     ADD ESP,0x8                         ; 004712fb
-    FCOMP double ptr [0x005da1d4]       ; 004712fe | DAT_005da1d4
+    FCOMP double ptr [0x005da1d4]       ; 004712fe | g_DOUBLE_005da1d4
     FNSTSW AX                           ; 00471304
     SAHF                                ; 00471306
     JC 0x004713ad                       ; 00471307
@@ -243,14 +243,14 @@ section .text
     JNC 0x0047138b                      ; 00471468
         ;   XREF to: 0047138b (CONDITIONAL_JUMP)  ; LAB_0047138b
     FLD float ptr [ESP + 0x1c]          ; 0047146e
-    FCOMP double ptr [0x005da1dc]       ; 00471472 | DAT_005da1dc
+    FCOMP double ptr [0x005da1dc]       ; 00471472 | g_DOUBLE_005da1dc
     FNSTSW AX                           ; 00471478
     SAHF                                ; 0047147a
     JNC 0x0047138b                      ; 0047147b
         ;   XREF to: 0047138b (CONDITIONAL_JUMP)  ; LAB_0047138b
     FLD float ptr [ESP + 0x14]          ; 00471481
     FABS                                ; 00471485
-    FCOMP double ptr [0x005da1e4]       ; 00471487 | DAT_005da1e4
+    FCOMP double ptr [0x005da1e4]       ; 00471487 | g_DOUBLE_005da1e4
     FNSTSW AX                           ; 0047148d
     SAHF                                ; 0047148f
     JNC 0x0047138b                      ; 00471490
@@ -265,7 +265,7 @@ section .text
     JNC 0x0047138b                      ; 004714a7
         ;   XREF to: 0047138b (CONDITIONAL_JUMP)  ; LAB_0047138b
     FLD double ptr [ESP]                ; 004714ad
-    FCOMP double ptr [0x005da1ec]       ; 004714b0 | DAT_005da1ec
+    FCOMP double ptr [0x005da1ec]       ; 004714b0 | g_DOUBLE_005da1ec
     FNSTSW AX                           ; 004714b6
     SAHF                                ; 004714b8
     JNC 0x0047138b                      ; 004714b9
@@ -292,7 +292,7 @@ section .text
         ;   XREF to: 0047150b (CONDITIONAL_JUMP)  ; LAB_0047150b
     PUSH 0xfa1                          ; 004714f2
     PUSH ESI                            ; 004714f7
-    PUSH 0x5da1ac                       ; 004714f8 | s_actionPending_d_doc_cpp_005da1ab+1
+    PUSH 0x5da1ac                       ; 004714f8 | = "actionPending = %d\ndoc.cpp line %d"
     MOV EAX,[0x0061abc0]                ; 004714fd | g_CEditorToolsPtr
     PUSH EAX                            ; 00471502
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 00471503
@@ -628,7 +628,7 @@ section .text
     FMUL ST0                            ; 0047191c
     FADDP                               ; 0047191e
     FSQRT                               ; 00471920
-    FCOMP double ptr [0x005da1e4]       ; 00471922 | DAT_005da1e4
+    FCOMP double ptr [0x005da1e4]       ; 00471922 | g_DOUBLE_005da1e4
     FNSTSW AX                           ; 00471928
     SAHF                                ; 0047192a
     JNC 0x00471891                      ; 0047192b

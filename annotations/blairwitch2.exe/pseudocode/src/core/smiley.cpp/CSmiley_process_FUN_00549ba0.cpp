@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,float delta_time)
 
@@ -168,7 +167,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
     switch(iVar6) {
     case 1:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (0x01C38BC0,"Capture");
+                        (g_CEventList_PTR_006141f0,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
@@ -186,7 +185,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
           fStack_28 = SQRT(CStack_108.z * CStack_108.z +
                            CStack_108.x * CStack_108.x + CStack_108.y * CStack_108.y);
           fStack_18 = fStack_28;
-          if (fStack_28 < 0x40200000 + 1.0) {
+          if (fStack_28 < 2.5f + 1.0) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_108,&CStack_90)
             ;
             fStack_144 = CStack_90.x;
@@ -196,7 +195,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
             pCStack_14 = (CVector3f *)
                          core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                    (afStack_140[0] - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS((float)pCStack_14) < (float)_DAT_005e77fd) {
+            if (ABS((float)pCStack_14) < (float)0.52359877558333301) {
               this_ptr->attack_hit_count = 0;
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,9,1);
             }
@@ -210,7 +209,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
       break;
     case 2:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (0x01C38BC0,"Capture");
+                        (g_CEventList_PTR_006141f0,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
@@ -221,8 +220,8 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
           if (this_ptr == (CSmiley *)pCVar3->grabbed_by) {
             (*(((pCVar3->base).vtable._uc)->_uc).releaseFromGrab)(pCVar3);
           }
-          CStack_3c.z = 0x40200000;
-          fStack_20 = 0x40200000;
+          CStack_3c.z = 2.5f;
+          fStack_20 = 2.5f;
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
           (this_ptr->base).base.model.accumulated_root_motion.y =
                (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -281,9 +280,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
         fVar12 = 1.0;
         pCStack_14 = (CVector3f *)SStack_1ec.damage_amount;
         core_xform_cpp_transformVector3x4_FUN_00591530
-                  ((CVector3f *)&DAT_0265370c,
-                   (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02628618,
-                   &CStack_114);
+                  (&g_CVector3f_0265370c,
+                   (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                   g_INT_ARRAY_02628610[2],&CStack_114);
         pCVar11 = &CStack_fc;
         CStack_fc.x = CStack_114.x;
         *(uint *)((int)&CStack_fc + (uint)bVar10 * -8 + 4) =
@@ -344,9 +343,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
           fVar12 = 1.0;
           pCStack_14 = (CVector3f *)SStack_1b0.damage_amount;
           core_xform_cpp_transformVector3x4_FUN_00591530
-                    ((CVector3f *)&DAT_0265370c,
-                     (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02628618,
-                     &CStack_c0);
+                    (&g_CVector3f_0265370c,
+                     (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                     g_INT_ARRAY_02628610[2],&CStack_c0);
           pCVar11 = &CStack_54;
           CStack_54.x = CStack_c0.x;
           *(uint *)((int)&CStack_54 + (uint)bVar10 * -8 + 4) =

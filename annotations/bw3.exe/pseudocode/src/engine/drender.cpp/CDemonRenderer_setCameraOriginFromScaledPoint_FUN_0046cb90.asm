@@ -24,7 +24,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bc4f3
+;   double g_DOUBLE_005bc4f3 = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
     SUB ESP,0x8                         ; 0046cb91
     MOV EAX,dword ptr [ESP + 0x14]      ; 0046cb94
-    FLD double ptr [0x005bc4f3]         ; 0046cb98 | DAT_005bc4f3
+    FLD double ptr [0x005bc4f3]         ; 0046cb98 | g_DOUBLE_005bc4f3
     FLD float ptr [EAX + 0x8]           ; 0046cb9e
     FMUL ST1                            ; 0046cba1
     FLD float ptr [EAX + 0x4]           ; 0046cba3

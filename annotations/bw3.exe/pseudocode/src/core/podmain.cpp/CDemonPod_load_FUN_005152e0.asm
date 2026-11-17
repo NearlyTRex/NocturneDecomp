@@ -7,17 +7,17 @@
 ; CDemonPod *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cca00
+;   TerminatedCString s_rt_005cca00
 ;   TerminatedCString s_pod_ini_005cca03
 ;   TerminatedCString s_pod_005cca0b
 ;   TerminatedCString s_core_podmain_cpp_005cca11
 ;   TerminatedCString s_Can_t_mount_s_s_005cca25
-;   undefined4 DAT_005cca38
-;   undefined4 DAT_005cca3c
+;   TerminatedCString s_d_005cca38
+;   TerminatedCString s_s_005cca3c
 ;   TerminatedCString s_core_podmain_cpp_005cca40
 ;   TerminatedCString s_Can_t_mount_s_s_005cca54
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -41,7 +41,7 @@ section .text
     PUSH EBP                            ; 005152e3
     SUB ESP,0x318                       ; 005152e4
     MOV EBX,dword ptr [ESP + 0x32c]     ; 005152ea
-    PUSH 0x5cca00                       ; 005152f1 | DAT_005cca00
+    PUSH 0x5cca00                       ; 005152f1 | = "rt"
     PUSH 0x5cca03                       ; 005152f6 | = "pod.ini"
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 005152fb
         ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
@@ -111,8 +111,8 @@ section .text
     MOV EDX,0x5cca11                    ; 00515391 | = "..\\core\\podmain.cpp"
     MOV ECX,0x39                        ; 00515396
     PUSH 0x5cca25                       ; 0051539b | = "Can't mount %s: %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 005153a0 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 005153a6 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 005153a0 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 005153a6 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005153ac
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005153b1
@@ -121,7 +121,7 @@ section .text
     LEA EDX,[ESP + 0x314]               ; 005153b6
         ;   Label: LAB_005153b6
     PUSH EDX                            ; 005153bd
-    PUSH 0x5cca38                       ; 005153be | DAT_005cca38
+    PUSH 0x5cca38                       ; 005153be | = "%d\n"
     PUSH EAX                            ; 005153c3
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 005153c4
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -135,7 +135,7 @@ section .text
     LEA EAX,[ESP + 0x114]               ; 005153de
         ;   Label: LAB_005153de
     PUSH EAX                            ; 005153e5
-    PUSH 0x5cca3c                       ; 005153e6 | DAT_005cca3c
+    PUSH 0x5cca3c                       ; 005153e6 | = "%s\n"
     PUSH EDI                            ; 005153eb
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 005153ec
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -168,14 +168,14 @@ section .text
     POP ESI                             ; 00515432
     POP EBX                             ; 00515433
     RET                                 ; 00515434
-    MOV dword ptr [0x01d71de4],0x45     ; 00515435 | DAT_01d71de4
+    MOV dword ptr [0x01d71de4],0x45     ; 00515435 | g_INT_01d71de4
         ;   Label: LAB_00515435
     LEA EAX,[ESP + 0x214]               ; 0051543f
     PUSH EAX                            ; 00515446
     LEA EAX,[ESP + 0x118]               ; 00515447
     PUSH EAX                            ; 0051544e
     PUSH 0x5cca54                       ; 0051544f | = "Can't mount %s: %s"
-    MOV dword ptr [0x01d71de0],EBP      ; 00515454 | DAT_01d71de0
+    MOV dword ptr [0x01d71de0],EBP      ; 00515454 | g_CHAR_PTR_01d71de0
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0051545a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0051545f

@@ -7,10 +7,10 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cc949
-;   undefined4 DAT_005cc94d
-;   undefined4 DAT_005cc951
-;   undefined4 DAT_005f3e28
+;   float g_FLOAT_005cc949 = 12
+;   float g_FLOAT_005cc94d = -12
+;   double g_DOUBLE_005cc951 = 0.5
+;   float g_FLOAT_005f3e28 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -106,11 +106,11 @@ section .text
     CMP dword ptr [EAX + 0x10afc],0x0   ; 0041f1dc
     JLE 0x0041f323                      ; 0041f1e3
         ;   XREF to: 0041f323 (CONDITIONAL_JUMP)  ; LAB_0041f323
-    FLD float ptr [0x005f3e28]          ; 0041f1e9 | DAT_005f3e28
+    FLD float ptr [0x005f3e28]          ; 0041f1e9 | g_FLOAT_005f3e28
     FLD ST0                             ; 0041f1ef
-    FMUL float ptr [0x005cc949]         ; 0041f1f1 | DAT_005cc949
+    FMUL float ptr [0x005cc949]         ; 0041f1f1 | g_FLOAT_005cc949
     FXCH                                ; 0041f1f7
-    FMUL float ptr [0x005cc94d]         ; 0041f1f9 | DAT_005cc94d
+    FMUL float ptr [0x005cc94d]         ; 0041f1f9 | g_FLOAT_005cc94d
     MOV EDI,dword ptr [EBP + 0x14]      ; 0041f1ff
     ADD EAX,0x10b00                     ; 0041f202
     MOV EBX,dword ptr [EBP + 0x14]      ; 0041f207
@@ -137,7 +137,7 @@ section .text
     CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 0041f24f
         ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 0041f254
-    FLD double ptr [0x005cc951]         ; 0041f257 | DAT_005cc951
+    FLD double ptr [0x005cc951]         ; 0041f257 | g_DOUBLE_005cc951
     FLD float ptr [ESP]                 ; 0041f25d
     FMUL ST1                            ; 0041f260
     FLD float ptr [ESP + 0x4]           ; 0041f262

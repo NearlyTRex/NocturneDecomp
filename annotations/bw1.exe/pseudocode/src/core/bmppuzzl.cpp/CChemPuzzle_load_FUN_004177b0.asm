@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   activate
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c397c
+;   int g_INT_007c397c
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [EBX + 0x34],0x0      ; 0041785e
     MOV EAX,EBX                         ; 00417865
     MOV dword ptr [EBX + 0x908],0x1e    ; 00417867
-    MOV dword ptr [0x007c397c],ECX      ; 00417871 | DAT_007c397c
+    MOV dword ptr [0x007c397c],ECX      ; 00417871 | g_INT_007c397c
     MOV dword ptr [EBX + 0x930],ECX     ; 00417877
     ADD EAX,0x4                         ; 0041787d
         ;   Label: LAB_0041787d
@@ -796,7 +796,7 @@ section .text
     MOV dword ptr [EBX + 0x34],0x0      ; 00418094
     MOV EAX,0xffffffff                  ; 0041809b
     MOV dword ptr [EBX + 0x18],0x0      ; 004180a0
-    MOV [0x007c397c],EAX                ; 004180a7 | DAT_007c397c
+    MOV [0x007c397c],EAX                ; 004180a7 | g_INT_007c397c
     MOV dword ptr [EBX + 0x930],EAX     ; 004180ac
     POP EBP                             ; 004180b2
     POP EDI                             ; 004180b3

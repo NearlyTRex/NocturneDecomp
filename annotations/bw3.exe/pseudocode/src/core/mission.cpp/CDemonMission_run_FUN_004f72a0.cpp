@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_004f72a0(CDemonMission *this_ptr)
 
 {
@@ -16,27 +14,27 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004f72a0(CDemonMission *this
   int image_variant;
   
   while( true ) {
-    if (_DAT_01d5ba00 < 1) {
-      _DAT_01d71de0 = "..\\core\\mission.cpp";
-      _DAT_01d71de4 = 0x520;
+    if (g_INT_01d5ba00 < 1) {
+      g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
+      g_INT_01d71de4 = 0x520;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::run - hero list empty");
     }
-    if (*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) == 0) {
-      _DAT_01d71de0 = "..\\core\\mission.cpp";
-      _DAT_01d71de4 = 0x521;
+    if (g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14] == (CHero *)0x0) {
+      g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
+      g_INT_01d71de4 = 0x521;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::run - no gLocalHero");
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_004f6de0
-              (this_ptr,*(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c));
-    DAT_01d882a0 = '\0';
+              (this_ptr,(g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.location.area_id);
+    g_CHAR_01d882a0 = '\0';
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004b7f90(g_CGamePtr);
-    this_ptr_00 = *(CHero **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
+    this_ptr_00 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_004f69a0
               (this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
     core_mission_cpp_CDemonMission_clearMissionData_FUN_004f5b80(this_ptr);
-    if ((iVar1 == 0) || (DAT_01d882a0 == '\0')) break;
+    if ((iVar1 == 0) || (g_CHAR_01d882a0 == '\0')) break;
     iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     if (iVar1 != 0) {
       core_game_cpp_CGame_displayActStats_FUN_004bfb50(g_CGamePtr);
@@ -47,7 +45,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004f72a0(CDemonMission *this
     }
     core_level_cpp_CLevelLoader_show_FUN_004dfc50
               (g_CLevelLoaderPtr,9,(uint)(iVar1 != 0),image_variant);
-    core_mission_cpp_CDemonMission_load_FUN_004f5bc0(this_ptr,&DAT_01d882a0,0);
+    core_mission_cpp_CDemonMission_load_FUN_004f5bc0(this_ptr,&g_CHAR_01d882a0,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_004f7880(this_ptr,&this_ptr_00->base);
     if ((iVar1 == 0) ||
        (iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_004f7590(this_ptr), iVar1 == 0))

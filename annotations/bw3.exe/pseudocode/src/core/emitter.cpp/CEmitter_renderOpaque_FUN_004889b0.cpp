@@ -32,7 +32,8 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004889b0(CEmitter *this_p
   CVector3f CStack_1c;
   
   bVar4 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if (((iVar1 == 0) && (this_ptr->emitter_type == EMITTER_TYPE_LASER)) &&
      (this_ptr->emitter_state != 0)) {
     core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
@@ -64,7 +65,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004889b0(CEmitter *this_p
     CStack_1c.x = CStack_34.x;
     *(uint *)((int)&CStack_1c + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
-    this_ptr_00 = 0x01C73654;
+    this_ptr_00 = g_CFireEffect_PTR_005fc5a0;
     *(uint *)((int)&CStack_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     laser_info.stored_angle = (float)uVar9;

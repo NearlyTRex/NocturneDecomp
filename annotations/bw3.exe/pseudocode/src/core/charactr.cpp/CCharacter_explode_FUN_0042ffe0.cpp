@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042ffe0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
 
 {
@@ -57,10 +55,10 @@ void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042ffe0(CCharacter *this_
   *(float *)(&stack0xfffffff8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   pCVar5 = &CStack_4c;
-  afStack_24[2] = fStack_10 * _DAT_005b839a;
-  afStack_24[3] = unaff_EDI * _DAT_005b839a;
-  fStack_14 = unaff_ESI * _DAT_005b839a;
-  CStack_4c.x = fStack_10 * _DAT_005b839a;
+  afStack_24[2] = fStack_10 * 0.5f;
+  afStack_24[3] = unaff_EDI * 0.5f;
+  fStack_14 = unaff_ESI * 0.5f;
+  CStack_4c.x = fStack_10 * 0.5f;
   *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + 4) = afStack_24[(uint)bVar4 * -2 + 3];
   *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
@@ -73,7 +71,7 @@ void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042ffe0(CCharacter *this_
   CStack_40.x = CStack_34.x;
   *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
        *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
-  this_ptr_00 = 0x01C73654;
+  this_ptr_00 = g_CFireEffect_PTR_005fc5a0;
   *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0

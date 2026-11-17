@@ -17,7 +17,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004e6f90(CMelee *this_ptr)
   pCVar2 = (CMelee *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CMeleeVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            (&(pCVar2->base).model,(char *)0x5c7051);
+            (&(pCVar2->base).model,"melee.kfm");
   (pCVar2->base).weapon_type = WEAPON_TYPE_MELEE;
   pCVar2->ammo_type = AMMO_TYPE_NONE;
   (pCVar2->base).ammo_count = 0;
@@ -46,7 +46,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004e6f90(CMelee *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5c7067;
+  pcVar3 = "shvl-f?.wav";
   pcVar4 = pCVar2->swing_hit_character_sound;
   do {
     cVar1 = *pcVar3;
@@ -57,7 +57,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004e6f90(CMelee *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5c7073;
+  pcVar3 = "shvl-s?.wav";
   pcVar4 = pCVar2->hit_other_sound;
   do {
     cVar1 = *pcVar3;

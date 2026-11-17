@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_00482390(CDemonRenderer *this_ptr,SInputFace *face,int render_flags)
 
 {
@@ -33,24 +31,24 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_00482390(C
       this_ptr->vertex_buffer_ptr[uVar2].v = (uint)*puVar1 << 8;
     } while (pSVar3 != (SInputFace *)&face->u_coord_0);
   }
-  _DAT_01bc1240 = (uint)(face->vertex_indices).vertex_index_0;
-  _DAT_01bc1244 = (uint)(face->vertex_indices).vertex_index_1;
-  _DAT_01bc1248 = (uint)(face->vertex_indices).vertex_index_2;
+  g_INT_ARRAY_01bc1240[0] = (int)(face->vertex_indices).vertex_index_0;
+  g_INT_ARRAY_01bc1240[1] = (int)(face->vertex_indices).vertex_index_1;
+  g_INT_ARRAY_01bc1240[2] = (int)(face->vertex_indices).vertex_index_2;
   if (this_ptr->shadow_pass_active == 0) {
-    if (DAT_0061b4a0 == 0x20) {
-      _DAT_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
+    if (g_INT_0061b4a0 == 0x20) {
+      g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
     }
     else {
-      _DAT_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
+      g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
     }
-    _DAT_01c51d14 = render_flags;
-    _DAT_01c51d18 = 6;
-    engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(this_ptr,3,(int *)&DAT_01bc1240);
+    g_BIT_INTEGER32_01c51d14.dword = render_flags;
+    g_INT_01c51d18 = 6;
+    engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(this_ptr,3,g_INT_ARRAY_01bc1240);
     return;
   }
-  _DAT_01c51d14 = 0;
-  _DAT_01c51d18 = 0;
-  _DAT_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
-  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(this_ptr,3,(int *)&DAT_01bc1240);
+  g_BIT_INTEGER32_01c51d14.dword = 0;
+  g_INT_01c51d18 = 0;
+  g_PTR_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
+  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(this_ptr,3,g_INT_ARRAY_01bc1240);
   return;
 }

@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   grid_z
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1b6f
+;   float g_FLOAT_005d1b6f = 0.125
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00474020
@@ -84,7 +84,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EBX      ; 004745ff
     FILD dword ptr [ESP + 0x2c]         ; 00474603
     FMUL float ptr [ESI + 0x28]         ; 00474607
-    FLD float ptr [0x005d1b6f]          ; 0047460a | DAT_005d1b6f
+    FLD float ptr [0x005d1b6f]          ; 0047460a | g_FLOAT_005d1b6f
     FXCH                                ; 00474610
     FMUL ST1                            ; 00474612
     MOV dword ptr [ESP + 0x2c],EDI      ; 00474614

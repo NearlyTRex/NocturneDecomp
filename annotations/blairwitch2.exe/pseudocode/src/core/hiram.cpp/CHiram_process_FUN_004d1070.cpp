@@ -26,12 +26,12 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004d1070(CHiram *this_ptr,float d
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
   if (pSVar3->state_index != 1) {
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (0x01C38BC0,this_ptr->kill_event);
+                      (g_CEventList_PTR_006141f0,this_ptr->kill_event);
     if (iVar2 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,1,1);
       class_name_hash = g_CGlassClassInfo.name_hash;
       actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
-                            (0x01D182F0,"GlassHiram");
+                            (g_CDemonMission_PTR_00618170,"GlassHiram");
       this_ptr_00 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c8f0(actor_ptr,class_name_hash)
       ;
       if (this_ptr_00 != (CGlass *)0x0) {
@@ -51,7 +51,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004d1070(CHiram *this_ptr,float d
     iVar2 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&pCVar1->base,afStack_18);
     if (iVar2 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
-                (0x01D182F0,(CDemonActor *)this_ptr,1);
+                (g_CDemonMission_PTR_00618170,(CDemonActor *)this_ptr,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar2);

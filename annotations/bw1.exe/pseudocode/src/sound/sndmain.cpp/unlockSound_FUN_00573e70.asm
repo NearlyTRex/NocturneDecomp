@@ -20,10 +20,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f442b
 ;   TerminatedCString s_unlockSound_sound_was_no_005f4440
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c807e8
-;   undefined4 DAT_02c807ec
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   HANDLE g_HANDLE_02c807e8
+;   int g_INT_02c807ec
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -37,19 +37,19 @@ section .text
     PUSH EDI                            ; 00573e70
         ;   Label: sound_sndmain.cpp_unlockSound_FUN_00573e70
     PUSH EBP                            ; 00573e71
-    CMP dword ptr [0x02c807ec],0x1      ; 00573e72 | DAT_02c807ec
+    CMP dword ptr [0x02c807ec],0x1      ; 00573e72 | g_INT_02c807ec
     JL 0x00575f71                       ; 00573e79
         ;   XREF to: 00575f71 (CONDITIONAL_JUMP)  ; LAB_00575f71
-    CMP dword ptr [0x02c807ec],0x1      ; 00573e7f | DAT_02c807ec
+    CMP dword ptr [0x02c807ec],0x1      ; 00573e7f | g_INT_02c807ec
         ;   Label: LAB_00573e7f
     JZ 0x00575f9b                       ; 00573e86
         ;   XREF to: 00575f9b (CONDITIONAL_JUMP)  ; LAB_00575f9b
-    MOV EBP,dword ptr [0x02c807ec]      ; 00573e8c | DAT_02c807ec
+    MOV EBP,dword ptr [0x02c807ec]      ; 00573e8c | g_INT_02c807ec
         ;   Label: LAB_00573e8c
-    MOV EDI,dword ptr [0x02c807e8]      ; 00573e92 | DAT_02c807e8
+    MOV EDI,dword ptr [0x02c807e8]      ; 00573e92 | g_HANDLE_02c807e8
     DEC EBP                             ; 00573e98
     PUSH EDI                            ; 00573e99
-    MOV dword ptr [0x02c807ec],EBP      ; 00573e9a | DAT_02c807ec
+    MOV dword ptr [0x02c807ec],EBP      ; 00573e9a | g_INT_02c807ec
     CALL wincore_winrun.cpp_releaseMutex_FUN_005b37b0 ; 00573ea0
         ;   XREF to: 005b37b0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_releaseMutex_FUN_005b37b0(HANDLE mutex_handle)
     ADD ESP,0x4                         ; 00573ea5
@@ -61,8 +61,8 @@ section .text
     MOV ECX,0x5f442b                    ; 00575f72 | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x183c                      ; 00575f77
     PUSH 0x5f4440                       ; 00575f7c | = "unlockSound - sound was not locked!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00575f81 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00575f87 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00575f81 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00575f87 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00575f8d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575f92

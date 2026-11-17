@@ -10,8 +10,8 @@
 ;   core_lightpis.cpp_factoryFuncLightPis_FUN_005015e0 at 005015f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060316c
-;   undefined4 DAT_00603170
+;   float g_FLOAT_0060316c = 8
+;   float g_FLOAT_00603170 = 1.5
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
@@ -44,9 +44,9 @@ section .text
     MOV dword ptr [EBX + 0x2e8],0x42000000 ; 00501673
     MOV dword ptr [EBX + 0x2ec],0x0     ; 0050167d
     MOV dword ptr [EBX + 0x58c],0x1     ; 00501687
-    FLD float ptr [0x0060316c]          ; 00501691 | DAT_0060316c
+    FLD float ptr [0x0060316c]          ; 00501691 | g_FLOAT_0060316c
     MOV dword ptr [EBX + 0x2f0],0x1     ; 00501697
-    FLD float ptr [0x00603170]          ; 005016a1 | DAT_00603170
+    FLD float ptr [0x00603170]          ; 005016a1 | g_FLOAT_00603170
     MOV dword ptr [EBX + 0x588],0x0     ; 005016a7
     ADD ESP,0x8                         ; 005016b1
     MOV dword ptr [EBX + 0x584],0x3f800000 ; 005016b4

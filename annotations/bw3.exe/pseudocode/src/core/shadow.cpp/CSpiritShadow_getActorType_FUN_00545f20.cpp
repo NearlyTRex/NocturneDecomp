@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_shadow_cpp_CSpiritShadow_getActorType_FUN_00545f20(CSpiritShadow *this_ptr)
 
 {
-  return (CDemonActorType *)0x270f890;
+  return &g_CDemonActorType_0270f890;
 }

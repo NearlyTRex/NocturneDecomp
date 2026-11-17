@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00571700(CSvetlana *this_ptr)
 
@@ -32,8 +31,9 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00571700(CSvetlana *thi
     iVar4 = iVar3;
   } while (iVar3 < 0x1e);
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
-  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
-  if ((iVar3 == 0) && (_DAT_01c38aec < 0x4000)) {
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
+  if ((iVar3 == 0) && (g_INT_01c38aec < 0x4000)) {
     pCVar5 = this_ptr;
     do {
       pCVar6 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
@@ -41,12 +41,13 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00571700(CSvetlana *thi
       pCVar5 = pCVar6;
     } while (pCVar6 != (CSvetlana *)(this_ptr->base).base.base.create_event);
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] = 1;
-    this_ptr_00 = DAT_0060b280;
+    this_ptr_00 = g_CDemonRenderer_PTR_0060b280;
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] = 1;
     iVar3 = g_CGamePtr->render_mode;
     g_CGamePtr->render_mode = 2;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(this_ptr_00,0);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,48000);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+              (g_CDemonRenderer_PTR_0060b280,48000);
     if (iVar4 != 0) {
       core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
     }

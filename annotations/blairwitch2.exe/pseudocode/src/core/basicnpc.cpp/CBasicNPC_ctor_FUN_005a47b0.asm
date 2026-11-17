@@ -16,7 +16,7 @@
 ;   core_weaver.cpp_CRobin_ctor_FUN_005a5e70 at 005a5e77
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ff71c
+;   float g_FLOAT_005ff71c = 5
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x8                         ; 005a480e
     MOV dword ptr [EBX + 0x1138c],0x1   ; 005a4811
     PUSH 0x0                            ; 005a481b
-    FLD float ptr [0x005ff71c]          ; 005a481d | DAT_005ff71c
+    FLD float ptr [0x005ff71c]          ; 005a481d | g_FLOAT_005ff71c
     MOV dword ptr [EBX + 0x11394],0x0   ; 005a4823
     PUSH 0x0                            ; 005a482d
     MOV dword ptr [EBX + 0x11344],0x2   ; 005a482f

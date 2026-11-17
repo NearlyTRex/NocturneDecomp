@@ -14,10 +14,10 @@
 ;   core_actor.cpp_archiveActor_FUN_0040b9e0 at 0040ba52
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005de657
-;   undefined4 DAT_005de65c
+;   TerminatedCString s_s_08x_005de657
+;   TerminatedCString s_s_005de65c
 ;   TerminatedCString s_s_005de661
-;   undefined4 DAT_005de66a
+;   TerminatedCString s_anon_005de66a
 ;   TerminatedCString s_none_006182b0
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV EAX,EDX                         ; 004fc1ba
     PUSH EAX                            ; 004fc1bc | = "(none)"
         ;   Label: LAB_004fc1bc
-    PUSH 0x5de65c                       ; 004fc1bd | DAT_005de65c
+    PUSH 0x5de65c                       ; 004fc1bd | = "\"%s\""
     PUSH EBX                            ; 004fc1c2
         ;   Label: LAB_004fc1c2
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fc1c3
@@ -61,10 +61,10 @@ section .text
     RET                                 ; 004fc1e3
     PUSH EDX                            ; 004fc1e4
         ;   Label: LAB_004fc1e4
-    PUSH 0x5de657                       ; 004fc1e5 | DAT_005de657
+    PUSH 0x5de657                       ; 004fc1e5 | = "%08x"
     JMP 0x004fc1c2                      ; 004fc1ea
         ;   XREF to: 004fc1c2 (UNCONDITIONAL_JUMP)  ; LAB_004fc1c2
-    PUSH 0x5de66a                       ; 004fc1ec | DAT_005de66a
+    PUSH 0x5de66a                       ; 004fc1ec | = "\n"
         ;   Label: LAB_004fc1ec
     PUSH EBX                            ; 004fc1f1
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004fc1f2

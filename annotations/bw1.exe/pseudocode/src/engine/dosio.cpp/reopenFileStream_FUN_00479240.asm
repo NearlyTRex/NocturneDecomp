@@ -10,7 +10,7 @@
 ; ifstream *       Stack[0x10]:4   file_stream
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00608528
+;   int g_INT_00608528 = 0x1a4
 ;
 ; Called Functions:
 ;   crt_unknown.c_fflush_FUN_005c1f9c
@@ -62,7 +62,7 @@ section .text
     CALL crt_watcom.c__mkdir_FUN_005c2000 ; 00479297
         ;   XREF to: 005c2000 (UNCONDITIONAL_CALL)  ; int crt_watcom.c__mkdir_FUN_005c2000(char * path)
     ADD ESP,0x4                         ; 0047929c
-    MOV EAX,[0x00608528]                ; 0047929f | DAT_00608528
+    MOV EAX,[0x00608528]                ; 0047929f | g_INT_00608528
         ;   Label: LAB_0047929f
     PUSH EAX                            ; 004792a4
     MOV EBP,dword ptr [ESP + 0x230]     ; 004792a5
@@ -88,7 +88,7 @@ section .text
     TEST EAX,EAX                        ; 004792d0
     JZ 0x004792bb                       ; 004792d2
         ;   XREF to: 004792bb (CONDITIONAL_JUMP)  ; LAB_004792bb
-    MOV EAX,[0x00608528]                ; 004792d4 | DAT_00608528
+    MOV EAX,[0x00608528]                ; 004792d4 | g_INT_00608528
     PUSH EAX                            ; 004792d9
     MOV ECX,dword ptr [ESP + 0x230]     ; 004792da
     PUSH ECX                            ; 004792e1

@@ -53,11 +53,16 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_0059af30(CAudioRecPuzzle
             (this_ptr,3,"playstop",0x2d,0x4c,2,0x128,0x8a,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,4,"playforward",0x2d,0x4c,2,0x128,0x8a,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,5,0x5ef4a6,0x16,0x20,3,0x171,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,6,0x5ef4ad,0x16,0x20,3,0x195,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,7,0x5ef4b4,0x16,0x20,3,0x1bd,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,8,0x5ef4bb,0x16,0x20,3,0x1e3,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,9,0x5ef4c2,0x16,0x20,3,0x20a,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,5,"pitch1",0x16,0x20,3,0x171,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,6,"pitch2",0x16,0x20,3,0x195,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,7,"pitch3",0x16,0x20,3,0x1bd,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,8,"pitch4",0x16,0x20,3,0x1e3,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,9,"pitch5",0x16,0x20,3,0x20a,0x12e,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,10,"lighton",0x14,0x15,0,0x135,0x62,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))

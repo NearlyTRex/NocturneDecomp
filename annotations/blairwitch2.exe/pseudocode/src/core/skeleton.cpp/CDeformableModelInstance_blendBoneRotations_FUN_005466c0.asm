@@ -27,7 +27,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7327
+;   double g_DOUBLE_005e7327 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 005466c3
     SUB ESP,0x1c                        ; 005466c4
     FLD float ptr [ESP + 0x38]          ; 005466c7
-    FCOMP double ptr [0x005e7327]       ; 005466cb | DAT_005e7327
+    FCOMP double ptr [0x005e7327]       ; 005466cb | g_DOUBLE_005e7327
     FNSTSW AX                           ; 005466d1
     SAHF                                ; 005466d3
     JA 0x005466de                       ; 005466d4

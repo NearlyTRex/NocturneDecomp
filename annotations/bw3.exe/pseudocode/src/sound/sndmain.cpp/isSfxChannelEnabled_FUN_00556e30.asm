@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3959
 ;   TerminatedCString s_isSfxChannelEnabled_inva_005d396e
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -47,8 +47,8 @@ section .text
     MOV EDX,0x5d3959                    ; 00556e48 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0x1147                      ; 00556e4d
     PUSH 0x5d396e                       ; 00556e52 | = "isSfxChannelEnabled - invalid channel..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00556e57 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00556e5d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00556e57 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00556e5d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00556e63
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00556e68

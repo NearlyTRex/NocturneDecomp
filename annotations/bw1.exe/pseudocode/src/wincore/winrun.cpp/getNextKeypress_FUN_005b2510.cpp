@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005b2510(void)
 
 {
@@ -16,19 +14,19 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005b2510(void)
   byte uVar3;
   
   uVar3 = 0;
-  if (_DAT_02c9a618 == _DAT_02c9a61c) {
+  if (g_INT_02c9a618 == g_INT_02c9a61c) {
     do {
-      if (_DAT_02c9be70 != 0) break;
+      if (g_INT_02c9be70 != 0) break;
       wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
-    } while (_DAT_02c9a618 == _DAT_02c9a61c);
+    } while (g_INT_02c9a618 == g_INT_02c9a61c);
   }
-  uVar2 = (undefined3)((uint)_DAT_02c9a618 >> 8);
-  if (_DAT_02c9a618 != _DAT_02c9a61c) {
-    iVar1 = _DAT_02c9a618 + 1;
-    uVar3 = (byte)*(uint *)(_DAT_02c9a618 * 4 + 0x2c9a5c8);
-    _DAT_02c9a618 = iVar1;
+  uVar2 = (undefined3)((uint)g_INT_02c9a618 >> 8);
+  if (g_INT_02c9a618 != g_INT_02c9a61c) {
+    iVar1 = g_INT_02c9a618 + 1;
+    uVar3 = (byte)g_INT_ARRAY_02c9a5c8[g_INT_02c9a618];
+    g_INT_02c9a618 = iVar1;
     if (0x13 < iVar1) {
-      _DAT_02c9a618 = 0;
+      g_INT_02c9a618 = 0;
       return CONCAT31(uVar2,uVar3);
     }
   }

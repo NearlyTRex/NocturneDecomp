@@ -14,7 +14,7 @@
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00533640 at 005336bd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ab68
+;   uchar[8] g_UCHAR_ARRAY_0061ab68
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
@@ -102,7 +102,7 @@ section .text
     MOV ECX,dword ptr [ESP]             ; 0048f1cf
     MOV DL,byte ptr [EAX]               ; 0048f1d2
     XOR EAX,EAX                         ; 0048f1d4
-    MOV AL,byte ptr [ECX + 0x61ab68]    ; 0048f1d6 | DAT_0061ab68
+    MOV AL,byte ptr [ECX + 0x61ab68]    ; 0048f1d6 | g_UCHAR_ARRAY_0061ab68
     TEST EDX,EAX                        ; 0048f1dc
     JNZ 0x0048f1fe                      ; 0048f1de
         ;   XREF to: 0048f1fe (CONDITIONAL_JUMP)  ; LAB_0048f1fe

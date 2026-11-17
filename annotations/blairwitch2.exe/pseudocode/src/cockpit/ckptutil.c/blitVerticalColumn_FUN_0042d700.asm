@@ -12,8 +12,8 @@
 ; int              Stack[0x18]:4   end_y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141c0
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141c0 = 0x8
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410
@@ -51,7 +51,7 @@ section .text
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410 ; 0042d738
         ;   XREF to: 0042c410 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410()
         ;   Label: LAB_0042d738
-    MOV ECX,dword ptr [0x006141c0]      ; 0042d73d | DAT_006141c0
+    MOV ECX,dword ptr [0x006141c0]      ; 0042d73d | g_INT_006141c0
     MOV dword ptr [ESP + 0x8],EAX       ; 0042d743
     LEA EAX,[ESI*0x4 + 0x0]             ; 0042d747
     CMP ECX,0x8                         ; 0042d74e
@@ -62,7 +62,7 @@ section .text
     JGE 0x0042d730                      ; 0042d757
         ;   XREF to: 0042d730 (CONDITIONAL_JUMP)  ; LAB_0042d730
     MOV ESI,EAX                         ; 0042d759
-    MOV EAX,[0x006141b8]                ; 0042d75b | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 0042d75b | g_INT_006141b8
         ;   Label: LAB_0042d75b
     IMUL EAX,EBX                        ; 0042d760
     MOV EDX,dword ptr [ESP + 0x20]      ; 0042d763
@@ -95,7 +95,7 @@ section .text
     LEA EDX,[EDI + EDI*0x1]             ; 0042d797
     MOV ESI,EAX                         ; 0042d79a
     MOV dword ptr [ESP],EDX             ; 0042d79c
-    MOV EAX,[0x006141b8]                ; 0042d79f | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 0042d79f | g_INT_006141b8
         ;   Label: LAB_0042d79f
     IMUL EAX,EBX                        ; 0042d7a4
     MOV EDX,dword ptr [ESP + 0x20]      ; 0042d7a7

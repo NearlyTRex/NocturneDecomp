@@ -11,7 +11,7 @@
 ;   engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0 at 00484fba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c8a680
+;   CTextureCache* g_CTextureCache_PTR_02c8a680
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_uploadTexture_FUN_005976a0
@@ -30,7 +30,7 @@ section .text
     ADD ESP,0x4                         ; 00597c9b
     MOV ECX,dword ptr [ESP + 0x8]       ; 00597c9e
     PUSH ECX                            ; 00597ca2
-    MOV EBX,dword ptr [0x02c8a680]      ; 00597ca3 | DAT_02c8a680
+    MOV EBX,dword ptr [0x02c8a680]      ; 00597ca3 | g_CTextureCache_PTR_02c8a680
     PUSH EBX                            ; 00597ca9
     CALL engine_texture.cpp_CTextureCache_uploadTexture_FUN_005976a0 ; 00597caa
         ;   XREF to: 005976a0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_uploadTexture_FUN_005976a0(CTextureCache * this_ptr, SMRGLTextureBasic * texture)

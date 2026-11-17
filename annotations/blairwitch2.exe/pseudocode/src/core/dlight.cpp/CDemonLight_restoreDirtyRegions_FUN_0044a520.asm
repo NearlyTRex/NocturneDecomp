@@ -23,9 +23,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005cf3f7
 ;   TerminatedCString s_CDemonLight_blitZBuffer_005cf40a
-;   undefined4 DAT_01b13078
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01b13078
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044a210
@@ -135,7 +135,7 @@ section .text
         ;   Label: LAB_0044a60d
     MOV ESI,dword ptr [EBP + 0x1d0]     ; 0044a60f
     MOV dword ptr [ESP + 0x18],ECX      ; 0044a615
-    MOV dword ptr [0x01b13078],ECX      ; 0044a619 | DAT_01b13078
+    MOV dword ptr [0x01b13078],ECX      ; 0044a619 | g_INT_01b13078
     TEST ESI,ESI                        ; 0044a61f
     JLE 0x0044a6af                      ; 0044a621
         ;   XREF to: 0044a6af (CONDITIONAL_JUMP)  ; LAB_0044a6af
@@ -151,7 +151,7 @@ section .text
     CMP EAX,dword ptr [EDI + 0xc]       ; 0044a63c
     JG 0x0044a699                       ; 0044a63f
         ;   XREF to: 0044a699 (CONDITIONAL_JUMP)  ; LAB_0044a699
-    MOV EBX,dword ptr [0x01b13078]      ; 0044a641 | DAT_01b13078
+    MOV EBX,dword ptr [0x01b13078]      ; 0044a641 | g_INT_01b13078
     XOR ECX,ECX                         ; 0044a647
     TEST EBX,EBX                        ; 0044a649
     JLE 0x0044a66c                      ; 0044a64b
@@ -178,10 +178,10 @@ section .text
     MOV EAX,dword ptr [EDX + 0x4]       ; 0044a67c
     LEA EDX,[ECX + 0x4]                 ; 0044a67f
     MOV dword ptr [ECX + 0x1b1347c],EAX ; 0044a682
-    MOV ECX,dword ptr [0x01b13078]      ; 0044a688 | DAT_01b13078
+    MOV ECX,dword ptr [0x01b13078]      ; 0044a688 | g_INT_01b13078
     INC ECX                             ; 0044a68e
     MOV dword ptr [ESP + 0x20],EDX      ; 0044a68f
-    MOV dword ptr [0x01b13078],ECX      ; 0044a693 | DAT_01b13078
+    MOV dword ptr [0x01b13078],ECX      ; 0044a693 | g_INT_01b13078
     MOV EAX,dword ptr [ESP + 0x18]      ; 0044a699
         ;   Label: LAB_0044a699
     ADD EDI,0x10                        ; 0044a69d
@@ -191,7 +191,7 @@ section .text
     CMP EAX,EDX                         ; 0044a6ab
     JL 0x0044a62f                       ; 0044a6ad
         ;   XREF to: 0044a62f (CONDITIONAL_JUMP)  ; LAB_0044a62f
-    MOV ECX,dword ptr [0x01b13078]      ; 0044a6af | DAT_01b13078
+    MOV ECX,dword ptr [0x01b13078]      ; 0044a6af | g_INT_01b13078
         ;   Label: LAB_0044a6af
     XOR EDI,EDI                         ; 0044a6b5
     TEST ECX,ECX                        ; 0044a6b7
@@ -220,7 +220,7 @@ section .text
     INC EDI                             ; 0044a6fb
     CALL core_dstrendr.cpp_memcpyMMX_FUN_00470201 ; 0044a6fc
         ;   XREF to: 00470201 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00470201(void * dest, void * src, int byte_count)
-    MOV EAX,[0x01b13078]                ; 0044a701 | DAT_01b13078
+    MOV EAX,[0x01b13078]                ; 0044a701 | g_INT_01b13078
     ADD ESP,0xc                         ; 0044a706
     CMP EDI,EAX                         ; 0044a709
     JL 0x0044a6bd                       ; 0044a70b
@@ -268,8 +268,8 @@ section .text
         ;   Label: LAB_0044a771
     MOV EDI,0x203                       ; 0044a776
     PUSH 0x5cf40a                       ; 0044a77b | = "CDemonLight::blitZBuffer - No master ..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0044a780 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0044a786 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0044a780 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0044a786 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a78c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a791

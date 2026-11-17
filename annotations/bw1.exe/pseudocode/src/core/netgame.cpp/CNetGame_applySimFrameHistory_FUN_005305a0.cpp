@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0(CNetGame *this_ptr,SSimFrame *sim_frame)
 
 {
@@ -21,8 +19,8 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0(CNetGam
   
   bVar7 = 0;
   if (this_ptr->local_player_index < 0) {
-    _DAT_01d1d400 = "..\\core\\netgame.cpp";
-    _DAT_01d1d404 = 0x9cd;
+    g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
+    g_INT_01d1d404 = 0x9cd;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
   this_ptr->random_seed = sim_frame->random_seed;
@@ -32,7 +30,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0(CNetGam
     iVar4 = 0;
     pSVar1 = sim_frame;
     do {
-      piVar6 = (int *)(iVar4 + 0x1d06aa4);
+      piVar6 = (int *)((int)g_CHero_PTR_ARRAY_01d06aa4 + iVar4);
       iVar4 = iVar4 + 4;
       pSVar5 = pSVar1->player_input;
       piVar6 = (int *)(*piVar6 + 0xc1d8);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_model_c_byteswapMRGLData_FUN_004f7ea0(SMRGLHeaderExtended *mrgl_data,int data_size)
 
 {
@@ -90,8 +88,8 @@ joined_r0x004f7ead:
     case 0x40:
       goto switchD_004f7ec6_caseD_d;
     default:
-      _DAT_01d71de0 = "..\\engine\\model.c";
-      _DAT_01d71de4 = 0xce;
+      g_CHAR_PTR_01d71de0 = "..\\engine\\model.c";
+      g_INT_01d71de4 = 0xce;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Need a new byteswap!");
       data_size = data_size - uVar1;
       mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);

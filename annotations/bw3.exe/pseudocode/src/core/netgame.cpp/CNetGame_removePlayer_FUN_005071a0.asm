@@ -18,9 +18,9 @@
 ;   TerminatedCString s_CNetGame_removePlayer_in_005cada4
 ;   TerminatedCString s_core_netgame_cpp_005cadd2
 ;   TerminatedCString s_CNetGame_removePlayer_tr_005cade6
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01dc2690
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01dc2690
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_005071b8
     MOV ESI,0x862                       ; 005071bd
     PUSH 0x5cada4                       ; 005071c2 | = "CNetGame::removePlayer - invalid play..."
-    MOV dword ptr [0x01d71de0],EBX      ; 005071c7 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 005071cd | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 005071c7 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 005071cd | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005071d3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005071d8
@@ -62,8 +62,8 @@ section .text
     MOV EBP,0x5cadd2                    ; 005071eb | = "..\\core\\netgame.cpp"
     MOV EAX,0x869                       ; 005071f0
     PUSH 0x5cade6                       ; 005071f5 | = "CNetGame::removePlayer - tried to rem..."
-    MOV dword ptr [0x01d71de0],EBP      ; 005071fa | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00507200 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 005071fa | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00507200 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00507205
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050720a
@@ -103,7 +103,7 @@ section .text
     XOR EDI,EDI                         ; 00507270
     CALL crt_string.c_memmove_FUN_005a54c0 ; 00507272
         ;   XREF to: 005a54c0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005a54c0(void * dest, void * src, SIZE_T n)
-    MOV EBP,dword ptr [0x01dc2690]      ; 00507277 | DAT_01dc2690
+    MOV EBP,dword ptr [0x01dc2690]      ; 00507277 | g_INT_01dc2690
     ADD ESP,0xc                         ; 0050727d
     TEST EBP,EBP                        ; 00507280
     JLE 0x00507320                      ; 00507282
@@ -150,7 +150,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00507301
     ADD EBP,0x114                       ; 00507304
     ADD EDX,0x114                       ; 0050730a
-    MOV ECX,dword ptr [0x01dc2690]      ; 00507310 | DAT_01dc2690
+    MOV ECX,dword ptr [0x01dc2690]      ; 00507310 | g_INT_01dc2690
     MOV dword ptr [ESP],EDX             ; 00507316
     CMP EDI,ECX                         ; 00507319
     JL 0x005072bd                       ; 0050731b

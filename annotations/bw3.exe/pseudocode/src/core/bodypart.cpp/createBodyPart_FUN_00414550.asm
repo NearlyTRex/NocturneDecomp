@@ -31,10 +31,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_005b6a2a
 ;   TerminatedCString s_Can_t_create_body_part_005b6a3f
-;   undefined4 DAT_005b6a5a
-;   undefined4 DAT_00600530
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005b6a5a = 10
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   undefined4 DAT_01d81080
 ;
 ; Called Functions:
@@ -74,8 +74,8 @@ section .text
     MOV EDX,0x5b6a2a                    ; 0041457e | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00414583
     PUSH 0x5b6a3f                       ; 00414588 | = "Can't create body part!"
-    MOV dword ptr [0x01d71de0],EDX      ; 0041458d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00414593 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0041458d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00414593 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00414599
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0041459e
@@ -124,13 +124,13 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00414606
     PUSH EBX                            ; 00414609
         ;   Label: LAB_00414609
-    MOV EDI,dword ptr [0x00600530]      ; 0041460a | DAT_00600530
+    MOV EDI,dword ptr [0x00600530]      ; 0041460a | g_CDemonMission_PTR_00600530
     PUSH EDI                            ; 00414610 | DAT_01d81080
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530 ; 00414611
         ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00414616
     PUSH EBX                            ; 00414619
-    MOV EBP,dword ptr [0x00600530]      ; 0041461a | DAT_00600530
+    MOV EBP,dword ptr [0x00600530]      ; 0041461a | g_CDemonMission_PTR_00600530
     PUSH EBP                            ; 00414620 | DAT_01d81080
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 00414621
         ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
@@ -160,7 +160,7 @@ section .text
     ADD ESP,0x4                         ; 00414665
     JMP 0x00414578                      ; 00414668
         ;   XREF to: 00414578 (UNCONDITIONAL_JUMP)  ; LAB_00414578
-    MOV EAX,[0x00600530]                ; 0041466d | DAT_00600530
+    MOV EAX,[0x00600530]                ; 0041466d | g_CDemonMission_PTR_00600530
         ;   Label: LAB_0041466d
     MOV EAX,dword ptr [EAX]             ; 00414672 | DAT_01d81080
     JMP 0x004145e4                      ; 00414674
@@ -191,7 +191,7 @@ section .text
     FXCH                                ; 004146be
     FSIN                                ; 004146c0
     FXCH ST2                            ; 004146c2
-    FLD float ptr [0x005b6a5a]          ; 004146c4 | DAT_005b6a5a
+    FLD float ptr [0x005b6a5a]          ; 004146c4 | g_FLOAT_005b6a5a
     FXCH                                ; 004146ca
     FMUL ST1                            ; 004146cc
     FXCH ST2                            ; 004146ce

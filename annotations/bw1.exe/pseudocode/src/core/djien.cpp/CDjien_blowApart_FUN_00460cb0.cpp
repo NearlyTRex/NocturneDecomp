@@ -91,6 +91,6 @@ void __cdecl core_djien_cpp_CDjien_blowApart_FUN_00460cb0(CDjien *this_ptr)
     } while (local_18 < local_28->num_parts);
   }
   (*((this_ptr->base).base.base.vtable._ub)->playSound)
-            ((CDemonActor *)this_ptr,"?djien-die.wav @ 5" + 1);
+            ((CDemonActor *)this_ptr,"djien-die.wav @ 5");
   return;
 }

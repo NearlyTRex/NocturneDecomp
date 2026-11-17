@@ -15,8 +15,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170 at 005471c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50
@@ -32,8 +32,8 @@ section .text
     PUSH EBP                            ; 00543d01
     SUB ESP,0x8                         ; 00543d02
     MOV EBX,dword ptr [ESP + 0x14]      ; 00543d05
-    MOV EDX,dword ptr [0x0060b280]      ; 00543d09 | DAT_0060b280
-    PUSH EDX                            ; 00543d0f | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 00543d09 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 00543d0f | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00543d10
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00543d15

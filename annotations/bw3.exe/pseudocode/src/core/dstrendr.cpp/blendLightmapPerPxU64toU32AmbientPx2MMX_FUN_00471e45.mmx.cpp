@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dstrendr_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00471e45(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
@@ -17,7 +15,7 @@ __asm {
         mov EBX,dword ptr [EBP + 0x10]
         mov EBP,dword ptr [EBP + 0x14]
         pxor MM7,MM7
-        movd MM5,dword ptr [DAT_01c6e2bc]
+        movd MM5,dword ptr [g_ULONG_01c6e2bc]
         punpcklbw MM5,MM7
         psllw MM5,0x6
         mov EAX,dword ptr [ESI]
@@ -103,21 +101,21 @@ __asm {
     LAB_0047203e:
         movzx EDX,byte ptr [EBX]
         movq MM0,qword ptr [ESI]
-        movd MM2,dword ptr [DAT_00b9e14c + EDX*0x4]
+        movd MM2,dword ptr [g_UINT_ARRAY_00b9e14c + EDX*0x4]
         movzx EAX,byte ptr [EBP]
         punpcklbw MM0,MM7
         shr EDX,0x1
         punpcklbw MM2,MM7
         add EAX,EDX
         pmullw MM0,MM2
-        movq MM3,qword ptr [DAT_005fa0e0 + EAX*0x8]
+        movq MM3,qword ptr [g_USHORT_ARRAY_005fa0e0 + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [DAT_005fa8d8]
+        pxor MM2,qword ptr [0x005fa8d8]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
-        paddw MM0,qword ptr [DAT_005f8b78]
+        paddw MM0,qword ptr [g_QWORD_005f8b78]
         psrlw MM0,0x4
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0
@@ -127,21 +125,21 @@ __asm {
         add EDI,0x4
         movzx EDX,byte ptr [EBX]
         movq MM0,qword ptr [ESI]
-        movd MM2,dword ptr [DAT_00b9e14c + EDX*0x4]
+        movd MM2,dword ptr [g_UINT_ARRAY_00b9e14c + EDX*0x4]
         movzx EAX,byte ptr [EBP]
         punpcklbw MM0,MM7
         shr EDX,0x1
         punpcklbw MM2,MM7
         add EAX,EDX
         pmullw MM0,MM2
-        movq MM3,qword ptr [DAT_005fa0e0 + EAX*0x8]
+        movq MM3,qword ptr [g_USHORT_ARRAY_005fa0e0 + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [DAT_005fa8d8]
+        pxor MM2,qword ptr [0x005fa8d8]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
-        paddw MM0,qword ptr [DAT_005f8b80]
+        paddw MM0,qword ptr [g_QWORD_005f8b80]
         psrlw MM0,0x4
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004faaf0(CInventory *this_ptr)
 
 {
@@ -23,36 +21,36 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004faaf0(CInventory
   int local_20;
   
   if ((g_CGamePtr->letterbox_mode == 0) &&
-     (this_ptr->owner == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4))) {
-    if (DAT_0061b49c != _DAT_01d1bc5c) {
+     ((CHero *)this_ptr->owner == g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4])) {
+    if (g_INT_0061b49c != g_INT_01d1bc5c) {
       iStack_40 = 0x4fad76;
       core_inv_cpp_loadAssets_FUN_004f70e0();
     }
     if ((this_ptr->selected_weapon != (CWeapon *)0x0) && (0.0 < this_ptr->weapon_highlight_timer)) {
       iVar6 = 0x50;
-      iVar5 = 0x00000060;
-      iVar4 = 0x000000D0;
-      if ((DAT_0061b49c < 0x180) && (this_ptr->render_mode_flag == 0)) {
-        iVar4 = 0x000000D0 / 2;
-        iVar5 = 0x00000060 / 2;
+      iVar5 = g_INT_0061f1a4;
+      iVar4 = g_INT_0061f1a0;
+      if ((g_INT_0061b49c < 0x180) && (this_ptr->render_mode_flag == 0)) {
+        iVar4 = g_INT_0061f1a0 / 2;
+        iVar5 = g_INT_0061f1a4 / 2;
         iVar6 = 0x28;
       }
       if (this_ptr->weapon_highlight_timer < 1.0) {
         iStack_40 = 0x4fabca;
         dVar7 = round
-                          ((double)(this_ptr->weapon_highlight_timer * _DAT_005e6890));
+                          ((double)(this_ptr->weapon_highlight_timer * 65535.0f));
         local_20 = (int)ROUND(dVar7);
       }
       iVar1 = (local_20 * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_004fa770
-                  (DAT_0061b498 - iVar5,DAT_0061b49c - iVar5,DAT_0061b498 + -1,DAT_0061b49c + -1,
-                   iVar1);
+                  (g_INT_0061b498 - iVar5,g_INT_0061b49c - iVar5,g_INT_0061b498 + -1,
+                   g_INT_0061b49c + -1,iVar1);
       }
       else {
         core_inv_cpp_drawItemIconBackground_FUN_004fa930
-                  (DAT_0061b498 - iVar4,DAT_0061b49c - iVar5,DAT_0061b498 + -1,DAT_0061b49c + -1,
-                   iVar1);
+                  (g_INT_0061b498 - iVar4,g_INT_0061b49c - iVar5,g_INT_0061b498 + -1,
+                   g_INT_0061b49c + -1,iVar1);
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004f90d0
                 (this_ptr,&this_ptr->selected_weapon->base,iStack_40,local_34,iVar6,1.5707964,
@@ -61,28 +59,28 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004faaf0(CInventory
     if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
       iVar6 = 0x10;
       iVar1 = 0x40;
-      iVar5 = 0x00000060;
-      iVar4 = 0x000000D0;
-      if ((DAT_0061b49c < 0x180) && (this_ptr->render_mode_flag == 0)) {
-        iVar4 = 0x000000D0 / 2;
-        iVar5 = 0x00000060 / 2;
+      iVar5 = g_INT_0061f1a4;
+      iVar4 = g_INT_0061f1a0;
+      if ((g_INT_0061b49c < 0x180) && (this_ptr->render_mode_flag == 0)) {
+        iVar4 = g_INT_0061f1a0 / 2;
+        iVar5 = g_INT_0061f1a4 / 2;
         iVar1 = 0x20;
         iVar6 = 8;
       }
-      iVar2 = DAT_0061b498 - iVar1;
-      iVar3 = DAT_0061b49c - iVar1;
+      iVar2 = g_INT_0061b498 - iVar1;
+      iVar3 = g_INT_0061b49c - iVar1;
       if (this_ptr->item_highlight_timer < 1.0) {
-        round((double)(this_ptr->item_highlight_timer * _DAT_005e6890));
+        round((double)(this_ptr->item_highlight_timer * 65535.0f));
       }
       if (this_ptr->render_mode_flag == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_004fa770
-                  (DAT_0061b498 - iVar5,DAT_0061b49c - iVar5,DAT_0061b498 + -1,DAT_0061b49c + -1,
-                   0xaaaa);
+                  (g_INT_0061b498 - iVar5,g_INT_0061b49c - iVar5,g_INT_0061b498 + -1,
+                   g_INT_0061b49c + -1,0xaaaa);
       }
       else {
         core_inv_cpp_drawItemIconBackground_FUN_004fa930
-                  (DAT_0061b498 - iVar4,DAT_0061b49c - iVar5,DAT_0061b498 + -1,DAT_0061b49c + -1,
-                   0xaaaa);
+                  (g_INT_0061b498 - iVar4,g_INT_0061b49c - iVar5,g_INT_0061b498 + -1,
+                   g_INT_0061b49c + -1,0xaaaa);
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004f90d0
                 (this_ptr,this_ptr->selected_item,iVar2 - iVar6,iVar3 - iVar6,iVar1,0.0,0xffff);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_004784a0(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 {
@@ -48,15 +46,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_004784a0(CDemo
     this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00473b60
                             (this_ptr,local_40,local_3c,local_38);
     if (this_ptr_00 == (CDemonCube *)0x0) {
-      _DAT_01d71de0 = "..\\core\\dtrace.cpp";
-      _DAT_01d71de4 = 0xb19;
+      g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
+      g_INT_01d71de4 = 0xb19;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Parity Check 999");
     }
     if (this_ptr_00->voxel_buffer1 == (SVoxelGrid *)0x0) {
       core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00453d10(this_ptr_00);
     }
     puVar1 = this_ptr_00->voxel_buffer1->voxels[local_2c] + local_30;
-    *puVar1 = *puVar1 | (&DAT_005fb0e8)[local_34];
+    *puVar1 = *puVar1 | g_UCHAR_ARRAY_005fb0e8[local_34];
     return;
   }
   return;

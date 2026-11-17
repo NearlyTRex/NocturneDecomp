@@ -21,7 +21,7 @@
 ;   ... and 30 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5907
+;   float g_FLOAT_005d5907 = -32
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     RET                                 ; 0042d72f
     FLD float ptr [ESP + 0x8]           ; 0042d730
         ;   Label: LAB_0042d730
-    FMUL float ptr [0x005d5907]         ; 0042d734 | DAT_005d5907
+    FMUL float ptr [0x005d5907]         ; 0042d734 | g_FLOAT_005d5907
     FADD float ptr [EAX + 0x251c]       ; 0042d73a
     FSTP float ptr [EAX + 0x251c]       ; 0042d740
     RET                                 ; 0042d746

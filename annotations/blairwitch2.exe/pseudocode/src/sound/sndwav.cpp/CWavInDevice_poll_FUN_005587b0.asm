@@ -10,18 +10,18 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_WavInDevice_poll_queueWa_005ea69a
-;   undefined4 DAT_0264b1fc
-;   undefined4 DAT_0264b24c
-;   undefined4 DAT_0264b250
-;   undefined4 DAT_0264b254
-;   undefined4 DAT_0264b25c
-;   undefined4 DAT_0264b260
-;   undefined4 DAT_0264b264
-;   undefined4 DAT_0264b268
-;   undefined4 DAT_0264b26c
-;   undefined4 DAT_0264b270
-;   undefined4 DAT_0264b274
-;   undefined4 DAT_0264b278
+;   int[20] g_INT_ARRAY_0264b1fc
+;   int g_INT_0264b24c
+;   int g_INT_0264b250
+;   int g_INT_0264b254
+;   int g_INT_0264b25c
+;   int g_INT_0264b260
+;   int g_INT_0264b264
+;   int g_INT_0264b268
+;   int g_INT_0264b26c
+;   int g_INT_0264b270
+;   int g_INT_0264b274
+;   int g_INT_0264b278
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
@@ -40,33 +40,33 @@ section .text
     SUB ESP,0xc                         ; 005587b4
     MOV EDI,dword ptr [ESP + 0x24]      ; 005587b7
     MOV ESI,dword ptr [ESP + 0x28]      ; 005587bb
-    MOV EAX,[0x0264b24c]                ; 005587bf | DAT_0264b24c
+    MOV EAX,[0x0264b24c]                ; 005587bf | g_INT_0264b24c
     MOV EDX,EAX                         ; 005587c4
     SAR EDX,0x1f                        ; 005587c6
     SHL EDX,0x3                         ; 005587c9
     SBB EAX,EDX                         ; 005587cc
     SAR EAX,0x3                         ; 005587ce
-    MOV EDX,dword ptr [0x0264b250]      ; 005587d1 | DAT_0264b250
+    MOV EDX,dword ptr [0x0264b250]      ; 005587d1 | g_INT_0264b250
     IMUL EDX,EAX                        ; 005587d7
     MOV dword ptr [ESP + 0x8],EDX       ; 005587da
     MOV dword ptr [ESP],EDX             ; 005587de
-    MOV EDX,dword ptr [0x0264b24c]      ; 005587e1 | DAT_0264b24c
+    MOV EDX,dword ptr [0x0264b24c]      ; 005587e1 | g_INT_0264b24c
     XOR EBP,EBP                         ; 005587e7
     CMP EDX,0x10                        ; 005587e9
     SETZ AL                             ; 005587ec
     AND EAX,0xff                        ; 005587ef
     MOV dword ptr [ESP + 0x4],EAX       ; 005587f4
-    MOV EAX,[0x0264b274]                ; 005587f8 | DAT_0264b274
+    MOV EAX,[0x0264b274]                ; 005587f8 | g_INT_0264b274
         ;   Label: LAB_005587f8
-    CMP dword ptr [EAX*0x4 + 0x264b1fc],0x0 ; 005587fd | DAT_0264b1fc
+    CMP dword ptr [EAX*0x4 + 0x264b1fc],0x0 ; 005587fd | g_INT_ARRAY_0264b1fc
     JZ 0x005588ff                       ; 00558805
         ;   XREF to: 005588ff (CONDITIONAL_JUMP)  ; LAB_005588ff
-    MOV EBX,dword ptr [0x0264b278]      ; 0055880b | DAT_0264b278
-    MOV EDX,dword ptr [0x0264b25c]      ; 00558811 | DAT_0264b25c
-    MOV EAX,[0x0264b26c]                ; 00558817 | DAT_0264b26c
+    MOV EBX,dword ptr [0x0264b278]      ; 0055880b | g_INT_0264b278
+    MOV EDX,dword ptr [0x0264b25c]      ; 00558811 | g_INT_0264b25c
+    MOV EAX,[0x0264b26c]                ; 00558817 | g_INT_0264b26c
     SUB EDX,EBX                         ; 0055881c
     IMUL EDX,EAX                        ; 0055881e
-    MOV ECX,dword ptr [0x0264b254]      ; 00558821 | DAT_0264b254
+    MOV ECX,dword ptr [0x0264b254]      ; 00558821 | g_INT_0264b254
     MOV EAX,EDX                         ; 00558827
     SAR EDX,0x1f                        ; 00558829
     IDIV ECX                            ; 0055882c
@@ -81,52 +81,52 @@ section .text
         ;   XREF to: 005588c7 (CONDITIONAL_JUMP)  ; LAB_005588c7
     PUSH EBX                            ; 0055883e
     PUSH EDI                            ; 0055883f
-    MOV EAX,[0x0264b270]                ; 00558840 | DAT_0264b270
+    MOV EAX,[0x0264b270]                ; 00558840 | g_INT_0264b270
     PUSH EAX                            ; 00558845
-    MOV EDX,dword ptr [0x0264b26c]      ; 00558846 | DAT_0264b26c
+    MOV EDX,dword ptr [0x0264b26c]      ; 00558846 | g_INT_0264b26c
     PUSH EDX                            ; 0055884c
-    MOV ECX,dword ptr [0x0264b268]      ; 0055884d | DAT_0264b268
+    MOV ECX,dword ptr [0x0264b268]      ; 0055884d | g_INT_0264b268
     PUSH ECX                            ; 00558853
-    MOV EAX,[0x0264b264]                ; 00558854 | DAT_0264b264
+    MOV EAX,[0x0264b264]                ; 00558854 | g_INT_0264b264
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00558859
     PUSH EAX                            ; 0055885d
-    MOV EAX,[0x0264b278]                ; 0055885e | DAT_0264b278
+    MOV EAX,[0x0264b278]                ; 0055885e | g_INT_0264b278
     IMUL EAX,ECX                        ; 00558863
-    MOV EDX,dword ptr [0x0264b274]      ; 00558866 | DAT_0264b274
+    MOV EDX,dword ptr [0x0264b274]      ; 00558866 | g_INT_0264b274
     MOV EDX,dword ptr [EDX*0x4 + 0x264b1fc] ; 0055886c
     ADD EAX,EDX                         ; 00558873
     PUSH EAX                            ; 00558875
     MOV EAX,dword ptr [ESP + 0x20]      ; 00558876
     PUSH EAX                            ; 0055887a
-    MOV EDX,dword ptr [0x0264b254]      ; 0055887b | DAT_0264b254
+    MOV EDX,dword ptr [0x0264b254]      ; 0055887b | g_INT_0264b254
     PUSH EDX                            ; 00558881
-    MOV ECX,dword ptr [0x0264b250]      ; 00558882 | DAT_0264b250
+    MOV ECX,dword ptr [0x0264b250]      ; 00558882 | g_INT_0264b250
     PUSH ECX                            ; 00558888
-    MOV EAX,[0x0264b24c]                ; 00558889 | DAT_0264b24c
+    MOV EAX,[0x0264b24c]                ; 00558889 | g_INT_0264b24c
     PUSH EAX                            ; 0055888e
     CALL sound_sndmain.cpp_resampleAndConvertAudio_FUN_00551dc0 ; 0055888f
         ;   XREF to: 00551dc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_resampleAndConvertAudio_FUN_00551dc0(int src_bit_depth, int src_channels, int src_sample_rate, int src_signed, ...)
-    MOV EDX,dword ptr [0x0264b254]      ; 00558894 | DAT_0264b254
+    MOV EDX,dword ptr [0x0264b254]      ; 00558894 | g_INT_0264b254
     IMUL EDX,EBX                        ; 0055889a
     ADD ESP,0x2c                        ; 0055889d
     MOV EAX,dword ptr [ESP]             ; 005588a0
     IMUL EAX,EBX                        ; 005588a3
-    MOV ECX,dword ptr [0x0264b26c]      ; 005588a6 | DAT_0264b26c
+    MOV ECX,dword ptr [0x0264b26c]      ; 005588a6 | g_INT_0264b26c
     ADD EDI,EAX                         ; 005588ac
     MOV EAX,EDX                         ; 005588ae
     SAR EDX,0x1f                        ; 005588b0
     IDIV ECX                            ; 005588b3
-    MOV EDX,dword ptr [0x0264b278]      ; 005588b5 | DAT_0264b278
+    MOV EDX,dword ptr [0x0264b278]      ; 005588b5 | g_INT_0264b278
     SUB ESI,EBX                         ; 005588bb
     ADD EDX,EAX                         ; 005588bd
     ADD EBP,EBX                         ; 005588bf
-    MOV dword ptr [0x0264b278],EDX      ; 005588c1 | DAT_0264b278
+    MOV dword ptr [0x0264b278],EDX      ; 005588c1 | g_INT_0264b278
     TEST ESI,ESI                        ; 005588c7
         ;   Label: LAB_005588c7
     JLE 0x005588f5                      ; 005588c9
         ;   XREF to: 005588f5 (CONDITIONAL_JUMP)  ; LAB_005588f5
-    MOV EBX,dword ptr [0x0264b274]      ; 005588cb | DAT_0264b274
-    MOV ECX,dword ptr [0x0264b260]      ; 005588d1 | DAT_0264b260
+    MOV EBX,dword ptr [0x0264b274]      ; 005588cb | g_INT_0264b274
+    MOV ECX,dword ptr [0x0264b260]      ; 005588d1 | g_INT_0264b260
     INC EBX                             ; 005588d7
     CMP EBX,ECX                         ; 005588d8
     JL 0x005588de                       ; 005588da
@@ -163,8 +163,8 @@ section .text
     JZ 0x00558926                       ; 00558911
         ;   XREF to: 00558926 (CONDITIONAL_JUMP)  ; LAB_00558926
     XOR ECX,ECX                         ; 00558913
-    MOV dword ptr [0x0264b274],EBX      ; 00558915 | DAT_0264b274
-    MOV dword ptr [0x0264b278],ECX      ; 0055891b | DAT_0264b278
+    MOV dword ptr [0x0264b274],EBX      ; 00558915 | g_INT_0264b274
+    MOV dword ptr [0x0264b278],ECX      ; 0055891b | g_INT_0264b278
     JMP 0x005587f8                      ; 00558921
         ;   XREF to: 005587f8 (UNCONDITIONAL_JUMP)  ; LAB_005587f8
     PUSH 0x5ea69a                       ; 00558926 | = "WavInDevice::poll - queueWavInBuffer ..."

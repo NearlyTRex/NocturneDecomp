@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045d6b4 = 0045d6f2
-;   undefined4 DAT_005d0807
-;   undefined4 DAT_005d080f
-;   undefined4 DAT_005d0817
-;   undefined4 DAT_005d081f
+;   double g_DOUBLE_005d0807 = 20
+;   float g_FLOAT_005d080f = 0.5
+;   double g_DOUBLE_005d0817 = 5
+;   double g_DOUBLE_005d081f = 1.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -117,7 +117,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0045d7f2
     MOVSD ES:EDI,ESI                    ; 0045d7f3
     MOVSD ES:EDI,ESI                    ; 0045d7f4
-    FLD float ptr [0x005d080f]          ; 0045d7f5 | DAT_005d080f
+    FLD float ptr [0x005d080f]          ; 0045d7f5 | g_FLOAT_005d080f
     FLD float ptr [ESP + 0xdc]          ; 0045d7fb
     FMUL ST1                            ; 0045d802
     FLD float ptr [ESP + 0xe0]          ; 0045d804
@@ -166,7 +166,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0045d8a5
     FLD float ptr [ESP + 0x5c]          ; 0045d8a6
     FABS                                ; 0045d8aa
-    FCOMP double ptr [0x005d0817]       ; 0045d8ac | DAT_005d0817
+    FCOMP double ptr [0x005d0817]       ; 0045d8ac | g_DOUBLE_005d0817
     FNSTSW AX                           ; 0045d8b2
     SAHF                                ; 0045d8b4
     JA 0x0045d702                       ; 0045d8b5
@@ -178,7 +178,7 @@ section .text
     FADDP                               ; 0045d8c7
     FSQRT                               ; 0045d8c9
     FST float ptr [ESP]                 ; 0045d8cb
-    FCOMP double ptr [0x005d081f]       ; 0045d8ce | DAT_005d081f
+    FCOMP double ptr [0x005d081f]       ; 0045d8ce | g_DOUBLE_005d081f
     FNSTSW AX                           ; 0045d8d4
     SAHF                                ; 0045d8d6
     JA 0x0045d702                       ; 0045d8d7
@@ -271,7 +271,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0045d9e8
     FLD float ptr [ESP + 0x44]          ; 0045d9e9
     FABS                                ; 0045d9ed
-    FCOMP double ptr [0x005d0807]       ; 0045d9ef | DAT_005d0807
+    FCOMP double ptr [0x005d0807]       ; 0045d9ef | g_DOUBLE_005d0807
     FNSTSW AX                           ; 0045d9f5
     SAHF                                ; 0045d9f7
     JBE 0x0045d90d                      ; 0045d9f8

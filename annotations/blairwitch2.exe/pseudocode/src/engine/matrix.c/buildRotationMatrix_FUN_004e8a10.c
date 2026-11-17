@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e8a10(int pitch,int yaw,int roll)
 
 {
@@ -38,10 +36,10 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e8a10(int pitch,int yaw,
           (int)((uint)((longlong)iVar9 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar9 * (longlong)iVar6) >> 0x20) << 0x10) *
           (longlong)iVar10;
-  _DAT_01c38ba4 =
+  g_INT_01c38ba4 =
        (uint)((longlong)iVar7 * (longlong)iVar10) >> 0x10 |
        (int)((ulonglong)((longlong)iVar7 * (longlong)iVar10) >> 0x20) << 0x10;
-  _DAT_01c38bb0 = -iVar6;
+  g_INT_01c38bb0 = -iVar6;
   lVar3 = (longlong)
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *
@@ -50,23 +48,23 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e8a10(int pitch,int yaw,
           (int)((uint)((longlong)iVar9 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar9 * (longlong)iVar6) >> 0x20) << 0x10) *
           (longlong)iVar11;
-  _DAT_01c38bbc =
+  g_INT_01c38bbc =
        (uint)((longlong)iVar7 * (longlong)iVar11) >> 0x10 |
        (int)((ulonglong)((longlong)iVar7 * (longlong)iVar11) >> 0x20) << 0x10;
-  if (199 < DAT_006141bc) {
-    if (DAT_006141bc < 0xc9) {
-      _DAT_01d05010 = 0x15555;
+  if (199 < (uint)g_INT_006141bc) {
+    if ((uint)g_INT_006141bc < 0xc9) {
+      g_INT_01d05010 = 0x15555;
       goto LAB_004e8b8c;
     }
-    if (DAT_006141bc == 400) {
-      _DAT_01d05010 = 0xaaaa;
+    if (g_INT_006141bc == 400) {
+      g_INT_01d05010 = 0xaaaa;
       goto LAB_004e8b8c;
     }
   }
-  _DAT_01d05010 = 0x10000;
+  g_INT_01d05010 = 0x10000;
 LAB_004e8b8c:
-  iVar6 = (DAT_006141b8 * -(int)(((longlong)_DAT_01c35e3c * 0x10000) / (longlong)_DAT_01c35e38) * 3)
-          / (int)(DAT_006141bc << 2);
+  iVar6 = (g_INT_006141b8 * -(int)(((longlong)g_INT_01c35e3c * 0x10000) / (longlong)g_INT_01c35e38)
+          * 3) / (g_INT_006141bc << 2);
   lVar1 = (longlong)iVar6 *
           (longlong)
           (int)(((uint)((longlong)iVar9 * (longlong)iVar11) >> 0x10 |
@@ -81,42 +79,36 @@ LAB_004e8b8c:
           (int)(((uint)((longlong)iVar9 * (longlong)-iVar10) >> 0x10 |
                 (int)((ulonglong)((longlong)iVar9 * (longlong)-iVar10) >> 0x20) << 0x10) +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10));
-  iVar6 = ((((_DAT_01c35e50 - _DAT_01c35e48) * 0x280) / DAT_006141b8) * 0x30000) /
-          (((_DAT_01c35e54 - _DAT_01c35e4c) * 0x1e0) / (int)DAT_006141bc);
+  iVar6 = ((((g_INT_01c35e50 - g_INT_01c35e48) * 0x280) / g_INT_006141b8) * 0x30000) /
+          (((g_INT_01c35e54 - g_INT_01c35e4c) * 0x1e0) / g_INT_006141bc);
   iVar12 = iVar6 >> 0x1f;
   iVar6 = (int)((iVar6 + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2;
-  _DAT_01c38b9c =
-       (uint)
-       (((longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_006141e4);
-  _DAT_01c38ba0 =
-       (uint)
-       (((longlong)
-         (int)(((uint)((longlong)iVar8 * (longlong)-iVar11) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar8 * (longlong)-iVar11) >> 0x20) << 0x10) +
-              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10)) * (longlong)iVar6) /
-       (longlong)DAT_006141e4);
-  _DAT_01c38ba8 =
-       (uint)
-       (((longlong)(int)((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_006141e4);
-  _DAT_01c38bac =
-       (uint)
-       (((longlong)
-         (int)((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_006141e4);
-  _DAT_01c38bb4 =
-       (uint)
-       (((longlong)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_006141e4);
-  _DAT_01c38bb8 =
-       (uint)
-       (((longlong)
-         (int)(((uint)((longlong)iVar10 * (longlong)iVar8) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar10 * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10)) * (longlong)iVar6) /
-       (longlong)DAT_006141e4);
+  g_INT_01c38b9c =
+       (int)(((longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)g_INT_006141e4);
+  g_INT_01c38ba0 =
+       (int)(((longlong)
+              (int)(((uint)((longlong)iVar8 * (longlong)-iVar11) >> 0x10 |
+                    (int)((ulonglong)((longlong)iVar8 * (longlong)-iVar11) >> 0x20) << 0x10) +
+                   ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10)) *
+             (longlong)iVar6) / (longlong)g_INT_006141e4);
+  g_INT_01c38ba8 =
+       (int)(((longlong)(int)((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)g_INT_006141e4);
+  g_INT_01c38bac =
+       (int)(((longlong)
+              (int)((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
+                   (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)g_INT_006141e4);
+  g_INT_01c38bb4 =
+       (int)(((longlong)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)g_INT_006141e4);
+  g_INT_01c38bb8 =
+       (int)(((longlong)
+              (int)(((uint)((longlong)iVar10 * (longlong)iVar8) >> 0x10 |
+                    (int)((ulonglong)((longlong)iVar10 * (longlong)iVar8) >> 0x20) << 0x10) +
+                   ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10)) *
+             (longlong)iVar6) / (longlong)g_INT_006141e4);
   engine_matrix_c_invertTransformMatrix_FUN_004e8730();
   return;
 }

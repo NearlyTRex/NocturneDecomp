@@ -19,9 +19,9 @@
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00592aa0 at 00592c2a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.collision_render_enabled
 ;
@@ -46,9 +46,9 @@ section .text
     CMP dword ptr [EBX + 0xb9e8],0x0    ; 0042e966
     JZ 0x0042e9c5                       ; 0042e96d
         ;   XREF to: 0042e9c5 (CONDITIONAL_JUMP)  ; LAB_0042e9c5
-    MOV ECX,dword ptr [0x00612560]      ; 0042e96f | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 0042e96f | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_0042e96f
-    PUSH ECX                            ; 0042e975 | DAT_01bc120c
+    PUSH ECX                            ; 0042e975 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0042e976
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0042e97b

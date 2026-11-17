@@ -12,7 +12,7 @@
 ;   core_stranger.cpp_CStranger_processDamage_FUN_0056d060 at 0056d2b1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004dd2f0
@@ -21,7 +21,7 @@
 
 section .text
 
-    MOV EAX,[0x01cedef4]                ; 004bb8b0 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004bb8b0 | g_INT_01cedef4
         ;   Label: core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bb8b0
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004bb8b5
     ADD EAX,0x2437c                     ; 004bb8bc

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004df440(SMRGLPrimitiveTriangle *primitive_list)
 
 {
@@ -33,13 +31,13 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004df440(SMRGLPrimit
     iVar1 = (primitive_list->base).base.type;
   }
   if (vertex_data == (CVector3i *)0x0) {
-    _DAT_01d71de0 = "..\\engine\\keyframe.c";
-    _DAT_01d71de4 = 0x1f5;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\keyframe.c";
+    g_INT_01d71de4 = 0x1f5;
     core_main_c_displayErrorAndQuit_FUN_004e4330("recomputeKeyFrameNormals: Cannot find vptr");
   }
   if (pSVar3 == (SMRGLPrimitiveTriangle *)0x0) {
-    _DAT_01d71de0 = "..\\engine\\keyframe.c";
-    _DAT_01d71de4 = 0x1f6;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\keyframe.c";
+    g_INT_01d71de4 = 0x1f6;
     core_main_c_displayErrorAndQuit_FUN_004e4330("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {

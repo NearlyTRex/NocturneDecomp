@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0(void)
 
 {
@@ -64,10 +62,10 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0(void)
     *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
          afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     input_local_point = &CStack_44;
-    fStack_50 = fStack_14 * _DAT_005c3540;
-    afStack_4c[0] = unaff_EBP * _DAT_005c3540;
-    afStack_4c[1] = unaff_EDI * _DAT_005c3540;
-    CStack_44.x = fStack_14 * _DAT_005c3540;
+    fStack_50 = fStack_14 * 0.5f;
+    afStack_4c[0] = unaff_EBP * 0.5f;
+    afStack_4c[1] = unaff_EDI * 0.5f;
+    CStack_44.x = fStack_14 * 0.5f;
     *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + 4) = afStack_4c[(uint)bVar4 * -2];
     *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
@@ -77,9 +75,9 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0(void)
     afStack_64[(uint)bVar4 * -2] = *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
     afStack_64[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    CStack_74.x = (int)ROUND(fStack_68 * _DAT_005e06dc);
-    CStack_74.y = (int)ROUND(afStack_64[0] * _DAT_005e06dc);
-    CStack_74.z = (int)ROUND(afStack_64[1] * _DAT_005e06dc);
+    CStack_74.x = (int)ROUND(fStack_68 * 256.0f);
+    CStack_74.y = (int)ROUND(afStack_64[0] * 256.0f);
+    CStack_74.z = (int)ROUND(afStack_64[1] * 256.0f);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
               (&g_CDemonCameraInstance,&CStack_74,&CStack_20);
     iStack_5c = CStack_20.x;
@@ -87,15 +85,15 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0(void)
     aiStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(int *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     if (aiStack_58[1] != 0) {
-      _DAT_01d22c8c =
+      g_INT_01d22c8c =
            (int)((iStack_5c + (iStack_5c >> 0x1f) * -0x10000) -
                 (uint)((iStack_5c >> 0x1f) << 0xf < 0)) >> 0x10;
-      _DAT_01d22c90 =
+      g_INT_01d22c90 =
            (int)((aiStack_58[0] + (aiStack_58[0] >> 0x1f) * -0x10000) -
                 (uint)((aiStack_58[0] >> 0x1f) << 0xf < 0)) >> 0x10;
-      if (0x1e0 < DAT_005fba1c) {
-        _DAT_01d22c8c = (_DAT_01d22c8c * DAT_005fba18) / 0x280;
-        _DAT_01d22c90 = (_DAT_01d22c90 * DAT_005fba1c) / 0x1e0;
+      if (0x1e0 < g_INT_005fba1c) {
+        g_INT_01d22c8c = (g_INT_01d22c8c * g_INT_005fba18) / 0x280;
+        g_INT_01d22c90 = (g_INT_01d22c90 * g_INT_005fba1c) / 0x1e0;
         return;
       }
     }

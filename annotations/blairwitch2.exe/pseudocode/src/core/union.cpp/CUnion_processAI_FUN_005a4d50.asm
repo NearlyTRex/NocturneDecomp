@@ -12,8 +12,8 @@
 ;   TerminatedCString s_Chasing_005f04e9
 ;   TerminatedCString s_RangeAttack_005f04f1
 ;   TerminatedCString s_ChaseComplete_005f04fd
-;   undefined4 DAT_005ff8f0
-;   undefined4 DAT_005ff8f4
+;   float g_FLOAT_005ff8f0 = 15
+;   float g_FLOAT_005ff8f4 = 7
 ;
 ; Called Functions:
 ;   core_muzzle.cpp_SStateMachine_isRefStateTarget_FUN_0059dae0
@@ -110,13 +110,13 @@ section .text
     FADD float ptr [ESP + 0x10]         ; 005a4e1b
     FSQRT                               ; 005a4e1f
     FST float ptr [ESP + 0xc]           ; 005a4e21
-    FCOMP float ptr [0x005ff8f0]        ; 005a4e25 | DAT_005ff8f0
+    FCOMP float ptr [0x005ff8f0]        ; 005a4e25 | g_FLOAT_005ff8f0
     FNSTSW AX                           ; 005a4e2b
     SAHF                                ; 005a4e2d
     JNC 0x005a4d7f                      ; 005a4e2e
         ;   XREF to: 005a4d7f (CONDITIONAL_JUMP)  ; LAB_005a4d7f
     FLD float ptr [ESP + 0xc]           ; 005a4e34
-    FCOMP float ptr [0x005ff8f4]        ; 005a4e38 | DAT_005ff8f4
+    FCOMP float ptr [0x005ff8f4]        ; 005a4e38 | g_FLOAT_005ff8f4
     FNSTSW AX                           ; 005a4e3e
     SAHF                                ; 005a4e40
     JBE 0x005a4d7f                      ; 005a4e41

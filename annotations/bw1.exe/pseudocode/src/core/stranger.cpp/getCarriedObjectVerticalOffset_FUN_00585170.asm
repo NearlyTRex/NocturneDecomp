@@ -16,7 +16,7 @@
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0 at 005899eb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f63b9
+;   double g_DOUBLE_005f63b9 = 0.00390625
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CCryptVesselClassInfo.name_hash
 ;
@@ -120,7 +120,7 @@ section .text
     SUB ESI,EBP                         ; 0058521a
     MOV dword ptr [ESP + 0xc],ESI       ; 0058521c
     FILD dword ptr [ESP + 0xc]          ; 00585220
-    FMUL double ptr [0x005f63b9]        ; 00585224 | DAT_005f63b9
+    FMUL double ptr [0x005f63b9]        ; 00585224 | g_DOUBLE_005f63b9
     FSTP float ptr [ESP + 0x4]          ; 0058522a
     POP EDI                             ; 0058522e
     MOV EAX,dword ptr [ESP]             ; 0058522f

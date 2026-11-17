@@ -7,7 +7,7 @@
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;
 ; Called Functions:
@@ -31,13 +31,13 @@ section .text
     SUB ESP,0x48                        ; 00479f64
     MOV EDI,dword ptr [ESP + 0x5c]      ; 00479f67
     PUSH 0x0                            ; 00479f6b
-    MOV EDX,dword ptr [0x00612560]      ; 00479f6d | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00479f6d | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00479f73
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80 ; 00479f74
         ;   XREF to: 00483d80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 00479f79
     PUSH 0x0                            ; 00479f7c
-    MOV ECX,dword ptr [0x00612560]      ; 00479f7e | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00479f7e | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 00479f84
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70 ; 00479f85
         ;   XREF to: 00483d70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(CDemonRenderer * this_ptr, int enabled)
@@ -61,7 +61,7 @@ section .text
     PUSH ESI                            ; 00479fbe
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_00553140 ; 00479fbf
         ;   XREF to: 00553140 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_00553140(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
-    MOV EAX,[0x00612560]                ; 00479fc4 | DAT_00612560
+    MOV EAX,[0x00612560]                ; 00479fc4 | g_CDemonRenderer_PTR_00612560
     MOV EDX,dword ptr [EAX + 0x18]      ; 00479fc9
     ADD ESP,0xc                         ; 00479fcc
     TEST EDX,EDX                        ; 00479fcf
@@ -92,13 +92,13 @@ section .text
         ;   XREF to: 00479fe4 (CONDITIONAL_JUMP)  ; LAB_00479fe4
     PUSH 0x1                            ; 00479ffc
         ;   Label: LAB_00479ffc
-    MOV ECX,dword ptr [0x00612560]      ; 00479ffe | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00479ffe | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 0047a004
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70 ; 0047a005
         ;   XREF to: 00483d70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0047a00a
     PUSH 0x1                            ; 0047a00d
-    MOV EBX,dword ptr [0x00612560]      ; 0047a00f | DAT_00612560
+    MOV EBX,dword ptr [0x00612560]      ; 0047a00f | g_CDemonRenderer_PTR_00612560
     PUSH EBX                            ; 0047a015
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20 ; 0047a016
         ;   XREF to: 00483e20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(CDemonRenderer * this_ptr, int enabled)
@@ -123,7 +123,7 @@ section .text
     ADD EAX,0x80                        ; 0047a038
     NEG EAX                             ; 0047a03d
     PUSH EAX                            ; 0047a03f
-    MOV EDX,dword ptr [0x00612560]      ; 0047a040 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 0047a040 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 0047a046
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0 ; 0047a047
         ;   XREF to: 00483ce0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0(CDemonRenderer * this_ptr, int color)

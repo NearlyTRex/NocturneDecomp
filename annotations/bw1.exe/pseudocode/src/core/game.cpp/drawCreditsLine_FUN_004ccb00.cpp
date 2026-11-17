@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_drawCreditsLine_FUN_004ccb00(char *text_string)
 
 {
   engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
-            (_DAT_0152d244,text_string,_DAT_01cd0c4c,_DAT_01cd0c50,7,-1);
-  _DAT_01cd0c50 = _DAT_01cd0c50 + _DAT_01cd0c54;
-  if (_DAT_01cd0c50 <= DAT_0061b49c + _DAT_01cd0c54 * -4) {
+            (g_CBitFont_PTR_0152d244,text_string,g_INT_01cd0c4c,g_INT_01cd0c50,7,-1);
+  g_INT_01cd0c50 = g_INT_01cd0c50 + g_INT_01cd0c54;
+  if (g_INT_01cd0c50 <= g_INT_0061b49c + g_INT_01cd0c54 * -4) {
     return;
   }
-  _DAT_01cd0c50 = _DAT_01cd0c54 * 6;
-  _DAT_01cd0c4c = _DAT_01cd0c4c + DAT_0061b498 / 3;
+  g_INT_01cd0c50 = g_INT_01cd0c54 * 6;
+  g_INT_01cd0c4c = g_INT_01cd0c4c + g_INT_0061b498 / 3;
   return;
 }

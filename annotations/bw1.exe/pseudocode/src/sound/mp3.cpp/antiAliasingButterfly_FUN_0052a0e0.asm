@@ -23,9 +23,9 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450 at 0052bd64
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0062029c
-;   undefined8 DAT_006202a0
-;   undefined8 DAT_006202a8
+;   int g_INT_0062029c = 0x1
+;   double[8] g_DOUBLE_ARRAY_006202a0
+;   undefined4 g_DOUBLE_ARRAY_006202a0[1]
 ;
 ; *****************************************************************************
 
@@ -40,11 +40,11 @@ section .text
     SUB ESP,0x38                        ; 0052a0e6
     AND ESP,0xfffffff8                  ; 0052a0e9
     MOV EDI,dword ptr [EBP + 0x1c]      ; 0052a0ec
-    CMP dword ptr [0x0062029c],0x0      ; 0052a0ef | DAT_0062029c
+    CMP dword ptr [0x0062029c],0x0      ; 0052a0ef | g_INT_0062029c
     JZ 0x0052a143                       ; 0052a0f6
         ;   XREF to: 0052a143 (CONDITIONAL_JUMP)  ; LAB_0052a143
     XOR EDX,EDX                         ; 0052a0f8
-    FLD double ptr [EDX + 0x6202a0]     ; 0052a0fa | DAT_006202a0 | DAT_006202a8
+    FLD double ptr [EDX + 0x6202a0]     ; 0052a0fa | g_DOUBLE_ARRAY_006202a0 | g_DOUBLE_ARRAY_006202a0[1]
         ;   Label: LAB_0052a0fa
     FMUL ST0                            ; 0052a100
     FLD1                                ; 0052a102
@@ -52,7 +52,7 @@ section .text
     FSQRT                               ; 0052a106
     FLD1                                ; 0052a108
     FDIVRP                              ; 0052a10a
-    FLD double ptr [EDX + 0x6202a0]     ; 0052a10c | DAT_006202a0 | DAT_006202a8
+    FLD double ptr [EDX + 0x6202a0]     ; 0052a10c | g_DOUBLE_ARRAY_006202a0 | g_DOUBLE_ARRAY_006202a0[1]
     ADD EDX,0x8                         ; 0052a112
     FXCH                                ; 0052a115
     FSTP double ptr [ESP]               ; 0052a117
@@ -66,7 +66,7 @@ section .text
     JNZ 0x0052a0fa                      ; 0052a139
         ;   XREF to: 0052a0fa (CONDITIONAL_JUMP)  ; LAB_0052a0fa
     XOR ECX,ECX                         ; 0052a13b
-    MOV dword ptr [0x0062029c],ECX      ; 0052a13d | DAT_0062029c
+    MOV dword ptr [0x0062029c],ECX      ; 0052a13d | g_INT_0062029c
     MOV ESI,dword ptr [EBP + 0x14]      ; 0052a143
         ;   Label: LAB_0052a143
     MOV EAX,dword ptr [EBP + 0x18]      ; 0052a146

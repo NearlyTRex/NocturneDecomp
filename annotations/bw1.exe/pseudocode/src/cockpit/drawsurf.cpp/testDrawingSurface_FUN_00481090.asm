@@ -7,9 +7,9 @@
 ; CBitFont *       Stack[0x4]:4   test_font
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612558
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
+;   TerminatedCString s_A_A_00612558
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_0047fcf0
@@ -38,11 +38,11 @@ section .text
     PUSH EBP                            ; 00481091
     SUB ESP,0xbc                        ; 00481092
     MOV ESI,dword ptr [ESP + 0xc8]      ; 00481098
-    MOV EDX,dword ptr [0x0061b498]      ; 0048109f | DAT_0061b498
+    MOV EDX,dword ptr [0x0061b498]      ; 0048109f | g_INT_0061b498
     CMP EDX,0x280                       ; 004810a5
     JL 0x004810bb                       ; 004810ab
         ;   XREF to: 004810bb (CONDITIONAL_JUMP)  ; LAB_004810bb
-    MOV ECX,dword ptr [0x0061b49c]      ; 004810ad | DAT_0061b49c
+    MOV ECX,dword ptr [0x0061b49c]      ; 004810ad | g_INT_0061b49c
     CMP ECX,0x1e0                       ; 004810b3
     JGE 0x004810c4                      ; 004810b9
         ;   XREF to: 004810c4 (CONDITIONAL_JUMP)  ; LAB_004810c4
@@ -382,21 +382,21 @@ section .text
     PUSH EAX                            ; 00481434
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0047ed30 ; 00481435
         ;   XREF to: 0047ed30 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0047ed30(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-    MOV EAX,[0x00612558]                ; 0048143a | DAT_00612558
+    MOV EAX,[0x00612558]                ; 0048143a | = "A+A"
     ADD ESP,0x14                        ; 0048143f
     MOV dword ptr [ESP + 0xa8],EAX      ; 00481442
-    MOV EAX,[0x0061b498]                ; 00481449 | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 00481449 | g_INT_0061b498
     MOV EDX,EAX                         ; 0048144e
     SAR EDX,0x1f                        ; 00481450
     SUB EAX,EDX                         ; 00481453
     SAR EAX,0x1                         ; 00481455
     MOV EBP,EAX                         ; 00481457
-    MOV EAX,[0x0061b49c]                ; 00481459 | DAT_0061b49c
+    MOV EAX,[0x0061b49c]                ; 00481459 | g_INT_0061b49c
     MOV EDX,EAX                         ; 0048145e
     SAR EDX,0x1f                        ; 00481460
     SUB EAX,EDX                         ; 00481463
     SAR EAX,0x1                         ; 00481465
-    MOV EDX,dword ptr [0x0061b49c]      ; 00481467 | DAT_0061b49c
+    MOV EDX,dword ptr [0x0061b49c]      ; 00481467 | g_INT_0061b49c
     ADD EAX,0x66                        ; 0048146d
     DEC EDX                             ; 00481470
     SUB EDX,EAX                         ; 00481471
@@ -617,18 +617,18 @@ section .text
     PUSH EAX                            ; 0048173b
     CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0047e870 ; 0048173c
         ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0047e870(CDrawSurface * this_ptr, int x, int y)
-    MOV EAX,[0x0061b498]                ; 00481741 | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 00481741 | g_INT_0061b498
     MOV EDX,EAX                         ; 00481746
     SAR EDX,0x1f                        ; 00481748
     SUB EAX,EDX                         ; 0048174b
     SAR EAX,0x1                         ; 0048174d
     LEA ECX,[EAX + 0xffffff36]          ; 0048174f
-    MOV EAX,[0x0061b49c]                ; 00481755 | DAT_0061b49c
+    MOV EAX,[0x0061b49c]                ; 00481755 | g_INT_0061b49c
     MOV EDX,EAX                         ; 0048175a
     SAR EDX,0x1f                        ; 0048175c
     SUB EAX,EDX                         ; 0048175f
     SAR EAX,0x1                         ; 00481761
-    MOV EDX,dword ptr [0x0061b49c]      ; 00481763 | DAT_0061b49c
+    MOV EDX,dword ptr [0x0061b49c]      ; 00481763 | g_INT_0061b49c
     ADD EAX,0x66                        ; 00481769
     DEC EDX                             ; 0048176c
     ADD ESP,0xc                         ; 0048176d

@@ -26,22 +26,24 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_0055ac00(CDirectSoundDe
     (**(code **)(*_DAT_02cf49d0 + 8))(_DAT_02cf49d0);
     _DAT_02cf49d0 = (int *)0x0;
   }
-  if (_DAT_02cf49cc != (int *)0x0) {
-    (**(code **)(*_DAT_02cf49cc + 8))(_DAT_02cf49cc);
-    _DAT_02cf49cc = (int *)0x0;
+  if (g_IDirectSoundBuffer_PTR_02cf49cc != (IDirectSoundBuffer *)0x0) {
+    (*g_IDirectSoundBuffer_PTR_02cf49cc->vtable->Release)
+              ((IUnknown *)g_IDirectSoundBuffer_PTR_02cf49cc);
+    g_IDirectSoundBuffer_PTR_02cf49cc = (IDirectSoundBuffer *)0x0;
   }
   if (_DAT_02cf49d4 != (int *)0x0) {
     (**(code **)(*_DAT_02cf49d4 + 8))(_DAT_02cf49d4);
     _DAT_02cf49d4 = (int *)0x0;
   }
-  if (_DAT_02cf49c8 != (int *)0x0) {
-    (**(code **)(*_DAT_02cf49c8 + 8))(_DAT_02cf49c8);
-    _DAT_02cf49c8 = (int *)0x0;
+  if (g_IDirectSoundBuffer_PTR_02cf49c8 != (IDirectSoundBuffer *)0x0) {
+    (*g_IDirectSoundBuffer_PTR_02cf49c8->vtable->Release)
+              ((IUnknown *)g_IDirectSoundBuffer_PTR_02cf49c8);
+    g_IDirectSoundBuffer_PTR_02cf49c8 = (IDirectSoundBuffer *)0x0;
   }
-  if (_DAT_02cf49c4 == (int *)0x0) {
+  if (g_IDirectSound_PTR_02cf49c4 == (IDirectSound *)0x0) {
     return (uint)(iVar1 != 0);
   }
-  (**(code **)(*_DAT_02cf49c4 + 8))(_DAT_02cf49c4);
-  _DAT_02cf49c4 = (int *)0x0;
+  (*g_IDirectSound_PTR_02cf49c4->vtable->Release)((IUnknown *)g_IDirectSound_PTR_02cf49c4);
+  g_IDirectSound_PTR_02cf49c4 = (IDirectSound *)0x0;
   return (uint)(iVar1 != 0);
 }

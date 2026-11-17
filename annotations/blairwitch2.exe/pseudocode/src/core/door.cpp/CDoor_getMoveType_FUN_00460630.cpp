@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener,int ignore_lock)
 
 {
@@ -67,8 +65,8 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonA
   case DOOR_TYPE_TILT:
     return 1;
   default:
-    _DAT_01d046a0 = "..\\core\\door.cpp";
-    _DAT_01d046a4 = 0x3de;
+    g_CHAR_PTR_01d046a0 = "..\\core\\door.cpp";
+    g_INT_01d046a4 = 0x3de;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDoor::getMoveType - invalid door!");
     return 0;
   }

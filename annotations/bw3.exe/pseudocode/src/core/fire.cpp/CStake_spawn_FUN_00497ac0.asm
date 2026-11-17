@@ -60,7 +60,7 @@
 ;   core_fire.cpp_CFireEffect_createStake_FUN_004a25f0 at 004a26ca
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0514
+;   float g_FLOAT_005c0514 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -114,7 +114,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 00497b3b
     FMUL float ptr [ESP + 0x78]         ; 00497b3e
     FADDP                               ; 00497b42
-    FMUL float ptr [0x005c0514]         ; 00497b44 | DAT_005c0514
+    FMUL float ptr [0x005c0514]         ; 00497b44 | g_FLOAT_005c0514
     FLD float ptr [EBX]                 ; 00497b4a
     FXCH                                ; 00497b4c
     FSTP float ptr [ESP + 0xdc]         ; 00497b4e

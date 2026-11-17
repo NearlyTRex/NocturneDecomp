@@ -14,35 +14,35 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_004fb6b0(CMotionList *this_ptr
   SMotion *pSStack_14;
   
   _fprintf(file_handle,"// motion list version\n");
-  _fprintf(file_handle,(char *)0x5c98a8);
+  _fprintf(file_handle,"%d\n");
   _fprintf(file_handle,"// state list\n");
-  _fprintf(file_handle,(char *)0x5c98bb);
+  _fprintf(file_handle,"%d\n");
   iVar1 = 0;
   if (0 < this_ptr->state_count) {
     do {
-      _fprintf(file_handle,(char *)0x5c98bf);
+      _fprintf(file_handle,"%s\n");
       iVar1 = iVar1 + 1;
     } while (iVar1 < this_ptr->state_count);
   }
   _fprintf(file_handle,"// motion count\n");
-  _fprintf(file_handle,(char *)0x5c98d4);
+  _fprintf(file_handle,"%d\n");
   iStack_18 = 0;
   if (0 < this_ptr->motion_count) {
     pSStack_14 = this_ptr->motions;
     do {
       _fprintf(file_handle,"// motion %d: \"name\",fps,state,frameStart,frameCount\n");
-      _fprintf(file_handle,(char *)0x5c990e);
+      _fprintf(file_handle,"\"%s\",%g,%d,%d,%d\n");
       _fprintf(file_handle,"// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\n");
-      _fprintf(file_handle,(char *)0x5c997d);
+      _fprintf(file_handle,"%d,%d,%g\n");
       _fprintf(file_handle,"// motion %d: exitForwardCmd,exitForwardTweenTime,exitForwardsetNewStateAsDesired\n");
-      _fprintf(file_handle,(char *)0x5c99da);
+      _fprintf(file_handle,"%d,%g,%d\n");
       _fprintf(file_handle,"// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\n");
-      _fprintf(file_handle,(char *)0x5c9a28);
+      _fprintf(file_handle,"%d,%g\n");
       _fprintf(file_handle,"// motion %d: frameResolution, storedFrameCount\n");
-      _fprintf(file_handle,(char *)0x5c9a60);
+      _fprintf(file_handle,"%d,%d\n");
       _fprintf(file_handle,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n");
       iVar1 = 0;
-      _fprintf(file_handle,(char *)0x5c9adf);
+      _fprintf(file_handle,"%d\n");
       if (0 < pSStack_14->transition_count) {
         do {
           iVar1 = iVar1 + 1;
@@ -51,23 +51,23 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_004fb6b0(CMotionList *this_ptr
       }
       _fprintf(file_handle,"// motion %d signal count, list: frameNumber, value\n");
       iVar1 = 0;
-      _fprintf(file_handle,(char *)0x5c9b2b);
+      _fprintf(file_handle,"%d\n");
       if (0 < pSStack_14->signal_count) {
         do {
           iVar1 = iVar1 + 1;
-          _fprintf(file_handle,(char *)0x5c9b2f);
+          _fprintf(file_handle," %d,%d\n");
         } while (iVar1 < pSStack_14->signal_count);
       }
       _fprintf(file_handle,"// motion %d marker count, list\n");
       iVar1 = 0;
-      _fprintf(file_handle,(char *)0x5c9b58);
+      _fprintf(file_handle,"%d");
       if (0 < pSStack_14->marker_count) {
         do {
           iVar1 = iVar1 + 1;
-          _fprintf(file_handle,(char *)0x5c9b5b);
+          _fprintf(file_handle," %d");
         } while (iVar1 < pSStack_14->marker_count);
       }
-      _fprintf(file_handle,(char *)0x5c9b5f);
+      _fprintf(file_handle,"\n");
       pSStack_14 = pSStack_14 + 1;
       iStack_18 = iStack_18 + 1;
     } while (iStack_18 < this_ptr->motion_count);

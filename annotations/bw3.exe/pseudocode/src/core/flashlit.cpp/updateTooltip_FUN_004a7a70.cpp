@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flashlit_cpp_updateTooltip_FUN_004a7a70(char *text)
 
 {
@@ -17,16 +15,16 @@ void __cdecl core_flashlit_cpp_updateTooltip_FUN_004a7a70(char *text)
   char *pcVar4;
   char *pcVar5;
   
-  _DAT_01d1a058 = 1;
-  iVar2 = _strcmp(text,&DAT_01d19f90);
+  g_INT_01d1a058 = 1;
+  iVar2 = _strcmp(text,&g_CHAR_01d19f90);
   if (iVar2 == 0) {
-    if (-1 < DAT_005fe3a8) {
+    if (-1 < g_INT_005fe3a8) {
       return;
     }
   }
   else {
-    pcVar5 = &DAT_01d19f90;
-    _DAT_01d19f78 = 0;
+    pcVar5 = &g_CHAR_01d19f90;
+    g_INT_01d19f78 = 0;
     pcVar4 = text;
     do {
       cVar1 = *pcVar4;
@@ -37,27 +35,27 @@ void __cdecl core_flashlit_cpp_updateTooltip_FUN_004a7a70(char *text)
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
-    DAT_005fe3a8 = -1;
+    g_INT_005fe3a8 = -1;
   }
-  _DAT_01d19f78 = _DAT_01d19f78 + _DAT_01c5fad0;
-  if (_DAT_01d19f78 < 0x10000) {
+  g_INT_01d19f78 = g_INT_01d19f78 + g_INT_01c5fad0;
+  if (g_INT_01d19f78 < 0x10000) {
     return;
   }
-  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549aa4,text);
-  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01549aa4,text);
-  _DAT_01d19f7c = _DAT_01c5fae0 + 0x40;
-  _DAT_01d19f80 = _DAT_01c5fadc + iVar2 + 8;
-  _DAT_01d19f84 = _DAT_01d19f7c + iVar3 + 6;
-  DAT_005fe3a8 = _DAT_01c5fadc;
-  if (DAT_005fba18 < _DAT_01d19f80) {
-    DAT_005fe3a8 = DAT_005fba18 - (iVar2 + 8);
-    _DAT_01d19f80 = DAT_005fba18;
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_CBitFont_PTR_01549aa4,text);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(g_CBitFont_PTR_01549aa4,text);
+  g_INT_01d19f7c = g_INT_01c5fae0 + 0x40;
+  g_INT_01d19f80 = g_INT_01c5fadc + iVar2 + 8;
+  g_INT_01d19f84 = g_INT_01d19f7c + iVar3 + 6;
+  g_INT_005fe3a8 = g_INT_01c5fadc;
+  if (g_INT_005fba18 < g_INT_01d19f80) {
+    g_INT_005fe3a8 = g_INT_005fba18 - (iVar2 + 8);
+    g_INT_01d19f80 = g_INT_005fba18;
   }
-  if (DAT_005fba1c < _DAT_01d19f84) {
-    _DAT_01d19f84 = _DAT_01c5fae0 + -0x14;
-    _DAT_01d19f7c = _DAT_01d19f84 - (iVar3 + 6);
+  if (g_INT_005fba1c < g_INT_01d19f84) {
+    g_INT_01d19f84 = g_INT_01c5fae0 + -0x14;
+    g_INT_01d19f7c = g_INT_01d19f84 - (iVar3 + 6);
   }
-  _DAT_01d19f88 = ((DAT_005fe3a8 + _DAT_01d19f80) - iVar2) / 2;
-  _DAT_01d19f8c = ((_DAT_01d19f7c + _DAT_01d19f84) - iVar3) / 2;
+  g_INT_01d19f88 = ((g_INT_005fe3a8 + g_INT_01d19f80) - iVar2) / 2;
+  g_INT_01d19f8c = ((g_INT_01d19f7c + g_INT_01d19f84) - iVar3) / 2;
   return;
 }

@@ -6,65 +6,58 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcube_cpp_clipPolygonAgainstMinY_FUN_004518b0(float min_y_plane)
 
 {
-  CVector3f *vertex2;
   byte bVar1;
   uint uVar2;
-  int iVar3;
   CVector3f *vertex1;
-  int iVar4;
+  int iVar3;
   
-  iVar4 = 0;
-  if (0 < (int)_DAT_015486c0) {
-    vertex1 = (CVector3f *)0x15486c4;
+  iVar3 = 0;
+  if (0 < g_INT_015486c0) {
+    vertex1 = g_CVector3f_ARRAY_015486c4;
     do {
-      uVar2 = iVar4 + 1;
-      if (uVar2 == _DAT_015486c0) {
-        uVar2 = uVar2 ^ _DAT_015486c0;
+      uVar2 = iVar3 + 1;
+      if (uVar2 == g_INT_015486c0) {
+        uVar2 = uVar2 ^ g_INT_015486c0;
       }
-      vertex2 = (CVector3f *)(uVar2 * 0xc + 0x15486c4);
       bVar1 = vertex1->y < min_y_plane;
-      if (*(float *)(uVar2 * 0xc + 0x15486c8) < min_y_plane) {
+      if (g_CVector3f_ARRAY_015486c4[uVar2].y < min_y_plane) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
-        iVar3 = _DAT_01548784 * 0xc;
-        if ((CVector3f *)(iVar3 + 0x1548788) != vertex1) {
-          ((CVector3f *)(iVar3 + 0x1548788))->x = vertex1->x;
-          *(float *)(iVar3 + 0x154878c) = vertex1->y;
-          *(float *)(iVar3 + 0x1548790) = vertex1->z;
+        if (g_CVector3f_ARRAY_01548788 + g_UINT_01548784 != vertex1) {
+          g_CVector3f_ARRAY_01548788[g_UINT_01548784].x = vertex1->x;
+          g_CVector3f_ARRAY_01548788[g_UINT_01548784].y = vertex1->y;
+          g_CVector3f_ARRAY_01548788[g_UINT_01548784].z = vertex1->z;
         }
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                  (vertex2,vertex1,(CVector3f *)(_DAT_01548784 * 0xc + 0x1548788),0.0,-1.0,0.0,
-                   (double)min_y_plane);
+                  (g_CVector3f_ARRAY_015486c4 + uVar2,vertex1,
+                   g_CVector3f_ARRAY_01548788 + g_UINT_01548784,0.0,-1.0,0.0,(double)min_y_plane);
         break;
       case 2:
-        iVar3 = _DAT_01548784 * 0xc;
-        if ((CVector3f *)(iVar3 + 0x1548788) != vertex1) {
-          ((CVector3f *)(iVar3 + 0x1548788))->x = vertex1->x;
-          *(float *)(iVar3 + 0x154878c) = vertex1->y;
-          *(float *)(iVar3 + 0x1548790) = vertex1->z;
+        if (g_CVector3f_ARRAY_01548788 + g_UINT_01548784 != vertex1) {
+          g_CVector3f_ARRAY_01548788[g_UINT_01548784].x = vertex1->x;
+          g_CVector3f_ARRAY_01548788[g_UINT_01548784].y = vertex1->y;
+          g_CVector3f_ARRAY_01548788[g_UINT_01548784].z = vertex1->z;
         }
-        _DAT_01548784 = _DAT_01548784 + 1;
+        g_UINT_01548784 = g_UINT_01548784 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                  (vertex1,vertex2,(CVector3f *)(_DAT_01548784 * 0xc + 0x1548788),0.0,-1.0,0.0,
-                   (double)min_y_plane);
+                  (vertex1,g_CVector3f_ARRAY_015486c4 + uVar2,
+                   g_CVector3f_ARRAY_01548788 + g_UINT_01548784,0.0,-1.0,0.0,(double)min_y_plane);
         break;
       default:
         goto switchD_00451924_caseD_3;
       }
-      _DAT_01548784 = _DAT_01548784 + 1;
+      g_UINT_01548784 = g_UINT_01548784 + 1;
 switchD_00451924_caseD_3:
-      iVar4 = iVar4 + 1;
+      iVar3 = iVar3 + 1;
       vertex1 = vertex1 + 1;
-    } while (iVar4 < (int)_DAT_015486c0);
+    } while (iVar3 < g_INT_015486c0);
   }
   return;
 }

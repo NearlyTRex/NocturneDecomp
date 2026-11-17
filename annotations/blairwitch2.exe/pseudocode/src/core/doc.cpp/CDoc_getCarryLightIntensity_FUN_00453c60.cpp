@@ -13,7 +13,8 @@ float __cdecl core_doc_cpp_CDoc_getCarryLightIntensity_FUN_00453c60(CDoc *this_p
   CDemonActor *pCVar2;
   
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                     ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007bcc84);
+                     ((this_ptr->base).base.carry_hands[0].carry_actor,
+                      g_CDemonActorType_007bcc4c.name_hash);
   if ((pCVar2 != (CDemonActor *)0x0) &&
      ((fVar1 = pCVar2[2].particle_systems[4].position.z, fVar1 == 2.8026e-45 ||
       (fVar1 == 4.2039e-45)))) {

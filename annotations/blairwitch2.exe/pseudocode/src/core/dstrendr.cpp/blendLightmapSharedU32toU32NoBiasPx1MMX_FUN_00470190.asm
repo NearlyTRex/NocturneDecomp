@@ -13,10 +13,10 @@
 ;   core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_004432c0 at 00443345
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612880
-;   undefined4 DAT_00613078
-;   undefined4 DAT_00b6639c
-;   undefined4 DAT_01c38b5c
+;   ushort[2048] g_USHORT_ARRAY_00612880
+;   undefined4 g_USHORT_ARRAY_00612880[1020]
+;   uint[256] g_UINT_ARRAY_00b6639c
+;   ulong g_ULONG_01c38b5c
 ;
 ; *****************************************************************************
 
@@ -33,22 +33,22 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 0047019c
     MOV EBP,dword ptr [EBP + 0x14]      ; 0047019f
     PXOR MM7,MM7                        ; 004701a2
-    MOVD MM5,dword ptr [0x01c38b5c]     ; 004701a5 | DAT_01c38b5c
+    MOVD MM5,dword ptr [0x01c38b5c]     ; 004701a5 | g_ULONG_01c38b5c
     PUNPCKLBW MM5,MM7                   ; 004701ac
     PSLLW MM5,0x6                       ; 004701af
     MOVZX EDX,byte ptr [EBX]            ; 004701b3
     MOVD MM0,dword ptr [ESI]            ; 004701b6
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 004701b9 | DAT_00b6639c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 004701b9 | g_UINT_ARRAY_00b6639c
     MOVZX EAX,byte ptr [EBP]            ; 004701c1
     PUNPCKLBW MM0,MM7                   ; 004701c5
     SHR EDX,0x1                         ; 004701c8
     PUNPCKLBW MM2,MM7                   ; 004701ca
     ADD EAX,EDX                         ; 004701cd
     PMULLW MM0,MM2                      ; 004701cf
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 004701d2 | DAT_00612880
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 004701d2 | g_USHORT_ARRAY_00612880
     MOVQ MM2,MM3                        ; 004701da
     MOVQ MM4,MM5                        ; 004701dd
-    PXOR MM2,qword ptr [0x00613078]     ; 004701e0 | DAT_00613078
+    PXOR MM2,qword ptr [0x00613078]     ; 004701e0 | g_USHORT_ARRAY_00612880[1020]
     PMULHW MM0,MM2                      ; 004701e7
     PMULHW MM4,MM3                      ; 004701ea
     PADDW MM0,MM4                       ; 004701ed

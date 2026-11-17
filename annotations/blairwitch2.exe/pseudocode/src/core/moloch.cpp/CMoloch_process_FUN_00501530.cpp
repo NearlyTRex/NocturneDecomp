@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_moloch_cpp_CMoloch_process_FUN_00501530(CMoloch *this_ptr,float delta_time)
 
 {
@@ -190,13 +187,13 @@ LAB_0050161d:
     pCStack_14 = (CCharacter_full_vtable *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(afStack_74[3]);
     fStack_18 = (float)pCStack_14;
-    if ((float)pCStack_14 < _DAT_005df235) {
-      fStack_18 = (float)pCStack_14 + _DAT_005df239;
+    if ((float)pCStack_14 < -1.570796f) {
+      fStack_18 = (float)pCStack_14 + 3.141593f;
     }
-    if (_DAT_005df23d < fStack_18) {
-      fStack_18 = fStack_18 + _DAT_005df241;
+    if (1.570796f < fStack_18) {
+      fStack_18 = fStack_18 + -3.141593f;
     }
-    fStack_1c = delta_time * _DAT_005df239;
+    fStack_1c = delta_time * 3.141593f;
     fStack_20 = -fStack_1c;
     if (fStack_18 < fStack_20) {
       fStack_18 = fStack_20;
@@ -240,7 +237,7 @@ LAB_005017f4:
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
       iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (0x01C38BC0,this_ptr->demon_to_human_condition);
+                        (g_CEventList_PTR_006141f0,this_ptr->demon_to_human_condition);
       if (iVar8 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_00502280(this_ptr);
         return;
@@ -248,7 +245,7 @@ LAB_005017f4:
     }
     else {
       iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (0x01C38BC0,this_ptr->human_to_demon_condition);
+                        (g_CEventList_PTR_006141f0,this_ptr->human_to_demon_condition);
       if (iVar8 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_00502280(this_ptr);
         return;
@@ -264,7 +261,7 @@ LAB_005017f4:
               (&this_ptr->model);
     fVar6 = this_ptr->morph_timer + delta_time;
     this_ptr->morph_timer = fVar6;
-    if (_DAT_005fa3d8 < fVar6) {
+    if (2.0f < fVar6) {
       if (this_ptr->in_human_form == 0) {
         model_name = "moloch_h.dfm";
         this_ptr->in_human_form = 1;

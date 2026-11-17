@@ -7,6 +7,9 @@
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CIni.h"
+#include "types/structs/SInventoryItemInfo.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D00000
@@ -24,6 +27,7 @@ extern CDemonActorType g_CGunClassInfo;
 extern CDemonActorType g_CHaystackClassInfo;
 extern CDemonActorType g_CHealthItemClassInfo;
 extern CDemonActorType g_CHeroClassInfo;
+extern CDemonActorType g_CDemonActorType_01d06b14;
 extern CDemonActorType g_CHiramClassInfo;
 extern CDemonActorType g_CHostageClassInfo;
 extern CDemonActorType g_CHotDemonClassInfo;
@@ -33,4 +37,42 @@ extern CDemonActorType g_CImpClassInfo;
 
 // CGround
 extern CGround g_CGroundInstance;
+
+// CHero*[4]
+extern CHero* g_CHero_PTR_ARRAY_01d06aa4[4];
+
+// CIni
+extern CIni g_CIni_01d06d64;
+
+// SInventoryItemInfo[100]
+extern SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01d08dd0[100];
+
+// char
+extern char g_CHAR_01d06f78;
+extern char g_CHAR_01d07978;
+extern char g_CHAR_01d08378;
+
+// char[256]
+extern char g_CHAR_ARRAY_01d06d70[256];
+extern char g_CHAR_ARRAY_01d06e70[256];
+
+// float
+extern float g_FLOAT_01d06f70;
+
+// int
+extern int g_INT_01d06aa0;
+extern int g_INT_01d06ab4;
+extern int g_INT_01d06b8c;
+extern int g_INT_01d06d68;
+extern int g_INT_01d08dc8;
+
+// int[12]
+extern int g_INT_ARRAY_01d06bcc[12];
+extern int g_INT_ARRAY_01d06cf8[12];
+
+// int[17]
+extern int g_INT_ARRAY_01d069d8[17];
+
+// int[18]
+extern int g_INT_ARRAY_01d06c74[18];
 

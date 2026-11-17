@@ -14,10 +14,10 @@
 ; int              Stack[0x20]:4   src_stride
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c43550
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b4a0 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c4354c
+;   undefined4 g_ARRAY_PTR_01c4354c[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
@@ -38,9 +38,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 004382e3
     SUB EAX,ESI                         ; 004382e7
     INC EAX                             ; 004382e9
-    MOV EDX,dword ptr [0x01c4354c]      ; 004382ea | DAT_01c4354c
+    MOV EDX,dword ptr [0x01c4354c]      ; 004382ea | g_ARRAY_PTR_01c4354c
     MOV dword ptr [ESP + 0x14],EAX      ; 004382f0
-    MOV EAX,[0x01c43550]                ; 004382f4 | DAT_01c43550
+    MOV EAX,[0x01c43550]                ; 004382f4 | g_ARRAY_PTR_01c4354c[1]
     SUB EAX,EDX                         ; 004382f9
     MOV dword ptr [ESP + 0x10],EAX      ; 004382fb
     TEST EBX,EBX                        ; 004382ff
@@ -62,7 +62,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x34]      ; 0043831d
     MOV EBP,EAX                         ; 00438321
     IMUL ECX,dword ptr [ESP + 0x48]     ; 00438323
-    MOV EAX,[0x0061b498]                ; 00438328 | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 00438328 | g_INT_0061b498
     MOV EDX,EAX                         ; 0043832d
     SAR EDX,0x1f                        ; 0043832f
     SUB EAX,EDX                         ; 00438332
@@ -70,7 +70,7 @@ section .text
     ADD ECX,EBX                         ; 00438336
     ADD EAX,ECX                         ; 00438338
     LEA EBX,[EAX + ESI*0x1]             ; 0043833a
-    MOV EDX,dword ptr [0x0061b4a0]      ; 0043833d | DAT_0061b4a0
+    MOV EDX,dword ptr [0x0061b4a0]      ; 0043833d | g_INT_0061b4a0
     MOV EAX,dword ptr [ESP + 0x34]      ; 00438343
     MOV ECX,dword ptr [ESP + 0x3c]      ; 00438347
     ADD EAX,EDI                         ; 0043834b

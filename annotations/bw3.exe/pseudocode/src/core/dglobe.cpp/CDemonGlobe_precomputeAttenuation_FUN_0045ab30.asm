@@ -24,8 +24,8 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bafd9
-;   undefined4 DAT_005bafe1
+;   float g_FLOAT_005bafd9 = 256
+;   double g_DOUBLE_005bafe1 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -40,10 +40,10 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 0045ab37
     FMUL ST0                            ; 0045ab3b
     FLD float ptr [ESP + 0x10]          ; 0045ab3d
-    FMUL float ptr [0x005bafd9]         ; 0045ab41 | DAT_005bafd9
+    FMUL float ptr [0x005bafd9]         ; 0045ab41 | g_FLOAT_005bafd9
     MOV EAX,dword ptr [ESP + 0x10]      ; 0045ab47
     FXCH                                ; 0045ab4b
-    FMUL double ptr [0x005bafe1]        ; 0045ab4d | DAT_005bafe1
+    FMUL double ptr [0x005bafe1]        ; 0045ab4d | g_DOUBLE_005bafe1
     MOV dword ptr [EDX + 0x30],EAX      ; 0045ab53
     FXCH                                ; 0045ab56
     CALL crt_math.c_round_FUN_005a3120  ; 0045ab58
@@ -74,7 +74,7 @@ section .text
     MOV EAX,dword ptr [EDX + 0x10]      ; 0045ab95
     FILD word ptr [ESP + 0x4]           ; 0045ab98
     SAR EAX,0x10                        ; 0045ab9c
-    FMUL double ptr [0x005bafe1]        ; 0045ab9f | DAT_005bafe1
+    FMUL double ptr [0x005bafe1]        ; 0045ab9f | g_DOUBLE_005bafe1
     MOV dword ptr [ESP],EAX             ; 0045aba5
     FILD dword ptr [ESP]                ; 0045aba8
     FDIVP                               ; 0045abab

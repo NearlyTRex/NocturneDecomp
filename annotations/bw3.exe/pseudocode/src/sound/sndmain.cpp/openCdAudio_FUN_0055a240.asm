@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ce7214
-;   undefined4 DAT_02ce7218
+;   int g_INT_02ce7214
+;   int g_INT_02ce7218
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -22,7 +22,7 @@ section .text
     PUSH EDI                            ; 0055a242
     PUSH EBP                            ; 0055a243
     SUB ESP,0x20                        ; 0055a244
-    MOV EDX,dword ptr [0x02ce7214]      ; 0055a247 | DAT_02ce7214
+    MOV EDX,dword ptr [0x02ce7214]      ; 0055a247 | g_INT_02ce7214
     TEST EDX,EDX                        ; 0055a24d
     JZ 0x0055a25e                       ; 0055a24f
         ;   XREF to: 0055a25e (CONDITIONAL_JUMP)  ; LAB_0055a25e
@@ -75,8 +75,8 @@ section .text
         ;   XREF to: 0055a303 (CONDITIONAL_JUMP)  ; LAB_0055a303
     MOV EAX,dword ptr [ESP + 0x4]       ; 0055a2ce
     MOV EBP,0x1                         ; 0055a2d2
-    MOV [0x02ce7218],EAX                ; 0055a2d7 | DAT_02ce7218
-    MOV dword ptr [0x02ce7214],EBP      ; 0055a2dc | DAT_02ce7214
+    MOV [0x02ce7218],EAX                ; 0055a2d7 | g_INT_02ce7218
+    MOV dword ptr [0x02ce7214],EBP      ; 0055a2dc | g_INT_02ce7214
     MOV EAX,EBP                         ; 0055a2e2
     ADD ESP,0x20                        ; 0055a2e4
     POP EBP                             ; 0055a2e7

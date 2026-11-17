@@ -18,8 +18,8 @@
 ;   TerminatedCString s_Tried_to_save_motion_con_005c9e04
 ;   TerminatedCString s_s_s_g_current_motion_nam_005c9e4f
 ;   TerminatedCString s_s_s_g_current_motion_nam_005c9e81
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -45,8 +45,8 @@ section .text
     MOV EDI,0x5c9df1                    ; 004fcd43 | = "..\\core\\motion.cpp"
     MOV EAX,0x59b                       ; 004fcd48
     PUSH 0x5c9e04                       ; 004fcd4d | = "Tried to save motion controller state..."
-    MOV dword ptr [0x01d71de0],EDI      ; 004fcd52 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004fcd58 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 004fcd52 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004fcd58 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fcd5d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fcd62

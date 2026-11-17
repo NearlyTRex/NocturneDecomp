@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance)
 
 {
@@ -116,7 +114,7 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
       afStack_88[(uint)bVar5 * -2] = *(float *)((int)&CStack_68 + (uint)bVar5 * -8 + 4);
       afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            *(float *)((int)&CStack_68 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-      if ((float)_DAT_005da5cc < ABS(afStack_88[0])) {
+      if ((float)20 < ABS(afStack_88[0])) {
         return 0;
       }
     }
@@ -154,10 +152,10 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
   afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
        afStack_4c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   input_local_point = &CStack_5c;
-  fStack_b0 = afStack_88[2] * _DAT_005da5d4;
-  afStack_ac[0] = CStack_7c.x * _DAT_005da5d4;
-  afStack_ac[1] = CStack_7c.y * _DAT_005da5d4;
-  CStack_5c.x = afStack_88[2] * _DAT_005da5d4;
+  fStack_b0 = afStack_88[2] * 0.5f;
+  afStack_ac[0] = CStack_7c.x * 0.5f;
+  afStack_ac[1] = CStack_7c.y * 0.5f;
+  CStack_5c.x = afStack_88[2] * 0.5f;
   *(float *)((int)&CStack_5c + (uint)bVar5 * -8 + 4) = afStack_ac[(uint)bVar5 * -2];
   *(float *)((int)&CStack_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_ac[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
@@ -174,14 +172,14 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
   afStack_e8[(uint)bVar5 * -2] = *(float *)((int)&CStack_100 + (uint)bVar5 * -8);
   afStack_e8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        *(float *)((int)&CStack_100 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
-  if (ABS(afStack_e8[0]) <= (float)_DAT_005da5dc) {
+  if (ABS(afStack_e8[0]) <= (float)5) {
     fVar1 = SQRT(fStack_ec * fStack_ec + afStack_e8[1] * afStack_e8[1]);
     if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
-      if ((float)_DAT_005da5ec < fVar1) {
+      if ((float)3.5 < fVar1) {
         return 0;
       }
     }
-    else if ((float)_DAT_005da5e4 < fVar1) {
+    else if ((float)1.5 < fVar1) {
       return 0;
     }
     if (*best_distance < fVar1) {

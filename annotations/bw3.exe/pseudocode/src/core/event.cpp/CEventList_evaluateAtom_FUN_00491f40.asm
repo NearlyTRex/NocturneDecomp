@@ -136,13 +136,13 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00491f1c = 004923db
-;   undefined4 DAT_005bddb8
-;   undefined4 DAT_005bddba
-;   undefined4 DAT_005bddbd
-;   undefined4 DAT_005bddc0
-;   undefined4 DAT_005bddc3
-;   undefined4 DAT_005bddc5
-;   undefined4 DAT_005bddc8
+;   TerminatedCString s_anon_005bddb8
+;   TerminatedCString s_anon_005bddba
+;   TerminatedCString s_anon_005bddbd
+;   TerminatedCString s_anon_005bddc0
+;   TerminatedCString s_anon_005bddc3
+;   TerminatedCString s_anon_005bddc5
+;   TerminatedCString s_d_005bddc8
 ;   TerminatedCString s_Unexpected_end_of_string_005bf51f
 ;   undefined4 s_nexpected_end_of_string_005bf51f+1
 ;   undefined4 s_expected_end_of_string_005bf51f+2
@@ -190,7 +190,7 @@ section .text
     MOV DL,byte ptr [EDX + ESI*0x1]     ; 00491f59
     INC DL                              ; 00491f5c
     AND EDX,0xff                        ; 00491f5e
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00491f64 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00491f64 | g_UCHAR_ARRAY_006074b8
     JNZ 0x00491fc2                      ; 00491f6b
         ;   XREF to: 00491fc2 (CONDITIONAL_JUMP)  ; LAB_00491fc2
     MOV EAX,dword ptr [EBP + 0x18]      ; 00491f6d
@@ -245,16 +245,16 @@ section .text
     MOV ESI,0x5bf51f                    ; 00491fc6 | = "Unexpected end of string"
         ;   Label: LAB_00491fc6
     MOV EDI,0x1c734b0                   ; 00491fcb
-    PUSH EDI                            ; 00491fd0 | DAT_01c734b0
+    PUSH EDI                            ; 00491fd0 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00491fd1 | = "Unexpected end of string" | s_expected_end_of_string_005bf51f+2
         ;   Label: LAB_00491fd1
-    MOV byte ptr [EDI],AL               ; 00491fd3 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00491fd3 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00491fd5
     JZ 0x00491fe9                       ; 00491fd7
         ;   XREF to: 00491fe9 (CONDITIONAL_JUMP)  ; LAB_00491fe9
     MOV AL,byte ptr [ESI + 0x1]         ; 00491fd9 | s_nexpected_end_of_string_005bf51f+1 | s_xpected_end_of_string_005bf51f+3
     ADD ESI,0x2                         ; 00491fdc
-    MOV byte ptr [EDI + 0x1],AL         ; 00491fdf | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00491fdf | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00491fe2
     CMP AL,0x0                          ; 00491fe5
     JNZ 0x00491fd1                      ; 00491fe7
@@ -295,7 +295,7 @@ section .text
     MOV DL,byte ptr [EDX + EDI*0x1]     ; 00492025
     INC DL                              ; 00492028
     AND EDX,0xff                        ; 0049202a
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492030 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492030 | g_UCHAR_ARRAY_006074b8
     JZ 0x0049206d                       ; 00492037
         ;   XREF to: 0049206d (CONDITIONAL_JUMP)  ; LAB_0049206d
     INC dword ptr [EAX]                 ; 00492039
@@ -304,16 +304,16 @@ section .text
     MOV ESI,0x5bf538                    ; 0049203d | = "Matching ')' is missing"
         ;   Label: LAB_0049203d
     MOV EDI,0x1c734b0                   ; 00492042
-    PUSH EDI                            ; 00492047 | DAT_01c734b0
+    PUSH EDI                            ; 00492047 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492048 | = "Matching ')' is missing" | s_Matching_is_missing_005bf538+2
         ;   Label: LAB_00492048
-    MOV byte ptr [EDI],AL               ; 0049204a | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 0049204a | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 0049204c
     JZ 0x00492060                       ; 0049204e
         ;   XREF to: 00492060 (CONDITIONAL_JUMP)  ; LAB_00492060
     MOV AL,byte ptr [ESI + 0x1]         ; 00492050 | s_Matching_is_missing_005bf538+1 | s_Matching_is_missing_005bf538+3
     ADD ESI,0x2                         ; 00492053
-    MOV byte ptr [EDI + 0x1],AL         ; 00492056 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492056 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492059
     CMP AL,0x0                          ; 0049205c
     JNZ 0x00492048                      ; 0049205e
@@ -379,7 +379,7 @@ section .text
     MOV DL,byte ptr [EDX + EDI*0x1]     ; 004920cd
     INC DL                              ; 004920d0
     AND EDX,0xff                        ; 004920d2
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004920d8 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004920d8 | g_UCHAR_ARRAY_006074b8
     JZ 0x00492115                       ; 004920df
         ;   XREF to: 00492115 (CONDITIONAL_JUMP)  ; LAB_00492115
     INC dword ptr [EAX]                 ; 004920e1
@@ -388,16 +388,16 @@ section .text
     MOV ESI,0x5bf550                    ; 004920e5 | = "Syntax error"
         ;   Label: LAB_004920e5
     MOV EDI,0x1c734b0                   ; 004920ea
-    PUSH EDI                            ; 004920ef | DAT_01c734b0
+    PUSH EDI                            ; 004920ef | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 004920f0 | = "Syntax error" | s_ntax_error_005bf550+2
         ;   Label: LAB_004920f0
-    MOV byte ptr [EDI],AL               ; 004920f2 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 004920f2 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 004920f4
     JZ 0x00492108                       ; 004920f6
         ;   XREF to: 00492108 (CONDITIONAL_JUMP)  ; LAB_00492108
     MOV AL,byte ptr [ESI + 0x1]         ; 004920f8 | s_yntax_error_005bf550+1 | s_tax_error_005bf550+3
     ADD ESI,0x2                         ; 004920fb
-    MOV byte ptr [EDI + 0x1],AL         ; 004920fe | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 004920fe | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492101
     CMP AL,0x0                          ; 00492104
     JNZ 0x004920f0                      ; 00492106
@@ -425,7 +425,7 @@ section .text
     POP ESI                             ; 0049212d
     POP EBX                             ; 0049212e
     RET                                 ; 0049212f
-    PUSH 0x5bf55d                       ; 00492130 | DAT_005bf55d
+    PUSH 0x5bf55d                       ; 00492130 | = "cmp"
         ;   Label: LAB_00492130
     LEA EAX,[ESP + 0xf38]               ; 00492135
     MOV ECX,0xffffffff                  ; 0049213c
@@ -476,7 +476,7 @@ section .text
         ;   Label: LAB_004921c1
     INC DL                              ; 004921c4
     AND EDX,0xff                        ; 004921c6
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004921cc | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004921cc | g_UCHAR_ARRAY_006074b8
     JNZ 0x0049223c                      ; 004921d3
         ;   XREF to: 0049223c (CONDITIONAL_JUMP)  ; LAB_0049223c
     LEA EAX,[ESI + EDI*0x1]             ; 004921d5
@@ -488,7 +488,7 @@ section .text
         ;   Label: LAB_004921e5
     INC AL                              ; 004921e7
     AND EAX,0xff                        ; 004921e9
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004921ee | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004921ee | g_UCHAR_ARRAY_006074b8
     JZ 0x00492248                       ; 004921f5
         ;   XREF to: 00492248 (CONDITIONAL_JUMP)  ; LAB_00492248
     PUSH EDI                            ; 004921f7
@@ -504,16 +504,16 @@ section .text
     MOV ESI,0x5bf575                    ; 0049220c | = "Error parsing cmp parameters."
         ;   Label: LAB_0049220c
     MOV EDI,0x1c734b0                   ; 00492211
-    PUSH EDI                            ; 00492216 | DAT_01c734b0
+    PUSH EDI                            ; 00492216 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492217 | = "Error parsing cmp parameters." | s_Error_parsing_cmp_parame_005bf575+2
         ;   Label: LAB_00492217
-    MOV byte ptr [EDI],AL               ; 00492219 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492219 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 0049221b
     JZ 0x0049222f                       ; 0049221d
         ;   XREF to: 0049222f (CONDITIONAL_JUMP)  ; LAB_0049222f
     MOV AL,byte ptr [ESI + 0x1]         ; 0049221f | s_Error_parsing_cmp_parame_005bf575+1 | s_Error_parsing_cmp_parame_005bf575+3
     ADD ESI,0x2                         ; 00492222
-    MOV byte ptr [EDI + 0x1],AL         ; 00492225 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492225 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492228
     CMP AL,0x0                          ; 0049222b
     JNZ 0x00492217                      ; 0049222d
@@ -554,7 +554,7 @@ section .text
         ;   Label: LAB_0049226f
     INC DL                              ; 00492272
     AND EDX,0xff                        ; 00492274
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049227a | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049227a | g_UCHAR_ARRAY_006074b8
     JNZ 0x004922ba                      ; 00492281
         ;   XREF to: 004922ba (CONDITIONAL_JUMP)  ; LAB_004922ba
     LEA EAX,[ESI + EDI*0x1]             ; 00492283
@@ -566,7 +566,7 @@ section .text
         ;   Label: LAB_00492293
     INC AL                              ; 00492295
     AND EAX,0xff                        ; 00492297
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0049229c | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0049229c | g_UCHAR_ARRAY_006074b8
     JZ 0x004922c2                       ; 004922a3
         ;   XREF to: 004922c2 (CONDITIONAL_JUMP)  ; LAB_004922c2
     PUSH EDI                            ; 004922a5
@@ -606,7 +606,7 @@ section .text
         ;   Label: LAB_004922e9
     INC DL                              ; 004922ec
     AND EDX,0xff                        ; 004922ee
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004922f4 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004922f4 | g_UCHAR_ARRAY_006074b8
     JNZ 0x00492334                      ; 004922fb
         ;   XREF to: 00492334 (CONDITIONAL_JUMP)  ; LAB_00492334
     LEA EAX,[ESI + EDI*0x1]             ; 004922fd
@@ -618,7 +618,7 @@ section .text
         ;   Label: LAB_0049230d
     INC AL                              ; 0049230f
     AND EAX,0xff                        ; 00492311
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492316 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492316 | g_UCHAR_ARRAY_006074b8
     JZ 0x0049233c                       ; 0049231d
         ;   XREF to: 0049233c (CONDITIONAL_JUMP)  ; LAB_0049233c
     PUSH EDI                            ; 0049231f
@@ -639,7 +639,7 @@ section .text
         ;   XREF to: 004922e9 (CONDITIONAL_JUMP)  ; LAB_004922e9
     JMP 0x004922fd                      ; 0049233a
         ;   XREF to: 004922fd (UNCONDITIONAL_JUMP)  ; LAB_004922fd
-    PUSH 0x5bddb8                       ; 0049233c | DAT_005bddb8
+    PUSH 0x5bddb8                       ; 0049233c | = "<"
         ;   Label: LAB_0049233c
     LEA EAX,[ESP + 0x7cc]               ; 00492341
     PUSH EAX                            ; 00492348
@@ -659,7 +659,7 @@ section .text
     ADD ECX,EAX                         ; 0049236d
     LEA EAX,[ESP + 0xfd8]               ; 0049236f
     PUSH EAX                            ; 00492376
-    PUSH 0x5bddc8                       ; 00492377 | DAT_005bddc8
+    PUSH 0x5bddc8                       ; 00492377 | = "%d"
     LEA EAX,[ESP + 0xed8]               ; 0049237c
     PUSH EAX                            ; 00492383
     MOV dword ptr [EBX],ECX             ; 00492384
@@ -673,7 +673,7 @@ section .text
     LEA EAX,[ESP + 0x102c]              ; 0049239e
         ;   Label: LAB_0049239e
     PUSH EAX                            ; 004923a5
-    PUSH 0x5bddc8                       ; 004923a6 | DAT_005bddc8
+    PUSH 0x5bddc8                       ; 004923a6 | = "%d"
     LEA EAX,[ESP + 0xaf0]               ; 004923ab
     PUSH EAX                            ; 004923b2
     CALL crt_stdio.c_sscanf_FUN_005a5b9c ; 004923b3
@@ -702,13 +702,13 @@ section .text
     MOV AL,byte ptr [EDX + EAX*0x1]     ; 004923f1
     INC AL                              ; 004923f4
     AND EAX,0xff                        ; 004923f6
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004923fb | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004923fb | g_UCHAR_ARRAY_006074b8
     JZ 0x00494619                       ; 00492402
         ;   XREF to: 00494619 (CONDITIONAL_JUMP)  ; LAB_00494619
     INC dword ptr [EBX]                 ; 00492408
     JMP 0x004923ef                      ; 0049240a
         ;   XREF to: 004923ef (UNCONDITIONAL_JUMP)  ; LAB_004923ef
-    PUSH 0x5bddba                       ; 0049240c | DAT_005bddba
+    PUSH 0x5bddba                       ; 0049240c | = "<="
         ;   Label: LAB_0049240c
     LEA EAX,[ESP + 0x7cc]               ; 00492411
     PUSH EAX                            ; 00492418
@@ -721,7 +721,7 @@ section .text
     MOV EAX,0x1                         ; 00492425
     JMP 0x00492359                      ; 0049242a
         ;   XREF to: 00492359 (UNCONDITIONAL_JUMP)  ; LAB_00492359
-    PUSH 0x5bddbd                       ; 0049242f | DAT_005bddbd
+    PUSH 0x5bddbd                       ; 0049242f | = "=="
         ;   Label: LAB_0049242f
     LEA EAX,[ESP + 0x7cc]               ; 00492434
     PUSH EAX                            ; 0049243b
@@ -734,7 +734,7 @@ section .text
     MOV EAX,0x2                         ; 00492448
     JMP 0x00492359                      ; 0049244d
         ;   XREF to: 00492359 (UNCONDITIONAL_JUMP)  ; LAB_00492359
-    PUSH 0x5bddc0                       ; 00492452 | DAT_005bddc0
+    PUSH 0x5bddc0                       ; 00492452 | = "!="
         ;   Label: LAB_00492452
     LEA EAX,[ESP + 0x7cc]               ; 00492457
     PUSH EAX                            ; 0049245e
@@ -747,7 +747,7 @@ section .text
     MOV EAX,0x3                         ; 0049246b
     JMP 0x00492359                      ; 00492470
         ;   XREF to: 00492359 (UNCONDITIONAL_JUMP)  ; LAB_00492359
-    PUSH 0x5bddc3                       ; 00492475 | DAT_005bddc3
+    PUSH 0x5bddc3                       ; 00492475 | = ">"
         ;   Label: LAB_00492475
     LEA EAX,[ESP + 0x7cc]               ; 0049247a
     PUSH EAX                            ; 00492481
@@ -760,7 +760,7 @@ section .text
     MOV EAX,0x5                         ; 0049248e
     JMP 0x00492359                      ; 00492493
         ;   XREF to: 00492359 (UNCONDITIONAL_JUMP)  ; LAB_00492359
-    PUSH 0x5bddc5                       ; 00492498 | DAT_005bddc5
+    PUSH 0x5bddc5                       ; 00492498 | = ">="
         ;   Label: LAB_00492498
     LEA EAX,[ESP + 0x7cc]               ; 0049249d
     PUSH EAX                            ; 004924a4
@@ -780,16 +780,16 @@ section .text
     MOV ESI,0x5bf593                    ; 004924c5 | = "Invalid relational operator in cmp st..."
         ;   Label: LAB_004924c5
     MOV EDI,0x1c734b0                   ; 004924ca
-    PUSH EDI                            ; 004924cf | DAT_01c734b0
+    PUSH EDI                            ; 004924cf | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 004924d0 | = "Invalid relational operator in cmp st..." | s_Invalid_relational_opera_005bf593+2
         ;   Label: LAB_004924d0
-    MOV byte ptr [EDI],AL               ; 004924d2 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 004924d2 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 004924d4
     JZ 0x004924e8                       ; 004924d6
         ;   XREF to: 004924e8 (CONDITIONAL_JUMP)  ; LAB_004924e8
     MOV AL,byte ptr [ESI + 0x1]         ; 004924d8 | s_Invalid_relational_opera_005bf593+1 | s_Invalid_relational_opera_005bf593+3
     ADD ESI,0x2                         ; 004924db
-    MOV byte ptr [EDI + 0x1],AL         ; 004924de | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 004924de | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 004924e1
     CMP AL,0x0                          ; 004924e4
     JNZ 0x004924d0                      ; 004924e6
@@ -806,7 +806,7 @@ section .text
     LEA EAX,[ESP + 0xed0]               ; 004924f5
         ;   Label: LAB_004924f5
     PUSH EAX                            ; 004924fc
-    MOV ESI,dword ptr [0x005fba60]      ; 004924fd | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004924fd | g_CEventList_PTR_005fba60
     PUSH ESI                            ; 00492503
     CALL core_event.cpp_CEventList_getCounterValue_FUN_00494d00 ; 00492504
         ;   XREF to: 00494d00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_getCounterValue_FUN_00494d00(CEventList * this_ptr, char * str)
@@ -817,7 +817,7 @@ section .text
     LEA EAX,[ESP + 0xae8]               ; 00492513
         ;   Label: LAB_00492513
     PUSH EAX                            ; 0049251a
-    MOV EAX,[0x005fba60]                ; 0049251b | DAT_005fba60
+    MOV EAX,[0x005fba60]                ; 0049251b | g_CEventList_PTR_005fba60
     PUSH EAX                            ; 00492520
     CALL core_event.cpp_CEventList_getCounterValue_FUN_00494d00 ; 00492521
         ;   XREF to: 00494d00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_getCounterValue_FUN_00494d00(CEventList * this_ptr, char * str)
@@ -856,8 +856,8 @@ section .text
         ;   Label: default
     MOV ECX,0xad9                       ; 0049256c
     PUSH 0x5bf5d2                       ; 00492571 | = "Hell froze."
-    MOV dword ptr [0x01d71de0],EDX      ; 00492576 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0049257c | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00492576 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0049257c | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00492582
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00492587
@@ -908,7 +908,7 @@ section .text
         ;   Label: LAB_00492604
     INC DL                              ; 00492607
     AND EDX,0xff                        ; 00492609
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049260f | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049260f | g_UCHAR_ARRAY_006074b8
     JNZ 0x0049267f                      ; 00492616
         ;   XREF to: 0049267f (CONDITIONAL_JUMP)  ; LAB_0049267f
     LEA EAX,[ESI + EDI*0x1]             ; 00492618
@@ -920,7 +920,7 @@ section .text
         ;   Label: LAB_00492628
     INC AL                              ; 0049262a
     AND EAX,0xff                        ; 0049262c
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492631 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492631 | g_UCHAR_ARRAY_006074b8
     JZ 0x0049268b                       ; 00492638
         ;   XREF to: 0049268b (CONDITIONAL_JUMP)  ; LAB_0049268b
     PUSH EDI                            ; 0049263a
@@ -936,16 +936,16 @@ section .text
     MOV ESI,0x5bf5f3                    ; 0049264f | = "Error parsing exists parameters."
         ;   Label: LAB_0049264f
     MOV EDI,0x1c734b0                   ; 00492654
-    PUSH EDI                            ; 00492659 | DAT_01c734b0
+    PUSH EDI                            ; 00492659 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 0049265a | = "Error parsing exists parameters." | s_Error_parsing_exists_par_005bf5f3+2
         ;   Label: LAB_0049265a
-    MOV byte ptr [EDI],AL               ; 0049265c | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 0049265c | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 0049265e
     JZ 0x00492672                       ; 00492660
         ;   XREF to: 00492672 (CONDITIONAL_JUMP)  ; LAB_00492672
     MOV AL,byte ptr [ESI + 0x1]         ; 00492662 | s_Error_parsing_exists_par_005bf5f3+1 | s_Error_parsing_exists_par_005bf5f3+3
     ADD ESI,0x2                         ; 00492665
-    MOV byte ptr [EDI + 0x1],AL         ; 00492668 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492668 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 0049266b
     CMP AL,0x0                          ; 0049266e
     JNZ 0x0049265a                      ; 00492670
@@ -979,7 +979,7 @@ section .text
     TEST EAX,EAX                        ; 004926a7
     JZ 0x004926d1                       ; 004926a9
         ;   XREF to: 004926d1 (CONDITIONAL_JUMP)  ; LAB_004926d1
-    CMP EAX,dword ptr [0x005df604]      ; 004926ab | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 004926ab | g_CDemonActor_PTR_005df604
     JZ 0x004926d1                       ; 004926b1
         ;   XREF to: 004926d1 (CONDITIONAL_JUMP)  ; LAB_004926d1
     MOV EAX,0x1                         ; 004926b3
@@ -1032,16 +1032,16 @@ section .text
     MOV ESI,0x5bf62f                    ; 00492741 | = "Error parsing fieldNotesDisplayed con..."
         ;   Label: LAB_00492741
     MOV EDI,0x1c734b0                   ; 00492746
-    PUSH EDI                            ; 0049274b | DAT_01c734b0
+    PUSH EDI                            ; 0049274b | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 0049274c | = "Error parsing fieldNotesDisplayed con..." | s_Error_parsing_fieldNotes_005bf62f+2
         ;   Label: LAB_0049274c
-    MOV byte ptr [EDI],AL               ; 0049274e | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 0049274e | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492750
     JZ 0x00492764                       ; 00492752
         ;   XREF to: 00492764 (CONDITIONAL_JUMP)  ; LAB_00492764
     MOV AL,byte ptr [ESI + 0x1]         ; 00492754 | s_Error_parsing_fieldNotes_005bf62f+1 | s_Error_parsing_fieldNotes_005bf62f+3
     ADD ESI,0x2                         ; 00492757
-    MOV byte ptr [EDI + 0x1],AL         ; 0049275a | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 0049275a | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 0049275d
     CMP AL,0x0                          ; 00492760
     JNZ 0x0049274c                      ; 00492762
@@ -1104,7 +1104,7 @@ section .text
         ;   Label: LAB_004927f8
     INC DL                              ; 004927fb
     AND EDX,0xff                        ; 004927fd
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492803 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492803 | g_UCHAR_ARRAY_006074b8
     JNZ 0x004928ab                      ; 0049280a
         ;   XREF to: 004928ab (CONDITIONAL_JUMP)  ; LAB_004928ab
     LEA EAX,[ESI + EDI*0x1]             ; 00492810
@@ -1116,7 +1116,7 @@ section .text
         ;   Label: LAB_00492820
     INC AL                              ; 00492822
     AND EAX,0xff                        ; 00492824
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492829 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492829 | g_UCHAR_ARRAY_006074b8
     JZ 0x004928ba                       ; 00492830
         ;   XREF to: 004928ba (CONDITIONAL_JUMP)  ; LAB_004928ba
     PUSH EDI                            ; 00492836
@@ -1132,16 +1132,16 @@ section .text
     MOV ESI,0x5bf664                    ; 0049284b | = "Can't use hasItem condition in multi-..."
         ;   Label: LAB_0049284b
     MOV EDI,0x1c734b0                   ; 00492850
-    PUSH EDI                            ; 00492855 | DAT_01c734b0
+    PUSH EDI                            ; 00492855 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492856 | = "Can't use hasItem condition in multi-..." | s_Can_t_use_hasItem_condit_005bf664+2
         ;   Label: LAB_00492856
-    MOV byte ptr [EDI],AL               ; 00492858 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492858 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 0049285a
     JZ 0x0049286e                       ; 0049285c
         ;   XREF to: 0049286e (CONDITIONAL_JUMP)  ; LAB_0049286e
     MOV AL,byte ptr [ESI + 0x1]         ; 0049285e | s_Can_t_use_hasItem_condit_005bf664+1 | s_Can_t_use_hasItem_condit_005bf664+3
     ADD ESI,0x2                         ; 00492861
-    MOV byte ptr [EDI + 0x1],AL         ; 00492864 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492864 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492867
     CMP AL,0x0                          ; 0049286a
     JNZ 0x00492856                      ; 0049286c
@@ -1158,16 +1158,16 @@ section .text
     MOV ESI,0x5bf69b                    ; 0049287b | = "Error parsing hasItem parameters."
         ;   Label: LAB_0049287b
     MOV EDI,0x1c734b0                   ; 00492880
-    PUSH EDI                            ; 00492885 | DAT_01c734b0
+    PUSH EDI                            ; 00492885 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492886 | = "Error parsing hasItem parameters." | s_Error_parsing_hasItem_pa_005bf69b+2
         ;   Label: LAB_00492886
-    MOV byte ptr [EDI],AL               ; 00492888 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492888 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 0049288a
     JZ 0x0049289e                       ; 0049288c
         ;   XREF to: 0049289e (CONDITIONAL_JUMP)  ; LAB_0049289e
     MOV AL,byte ptr [ESI + 0x1]         ; 0049288e | s_Error_parsing_hasItem_pa_005bf69b+1 | s_Error_parsing_hasItem_pa_005bf69b+3
     ADD ESI,0x2                         ; 00492891
-    MOV byte ptr [EDI + 0x1],AL         ; 00492894 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492894 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492897
     CMP AL,0x0                          ; 0049289a
     JNZ 0x00492886                      ; 0049289c
@@ -1189,7 +1189,7 @@ section .text
         ;   XREF to: 004927f8 (CONDITIONAL_JUMP)  ; LAB_004927f8
     JMP 0x00492810                      ; 004928b5
         ;   XREF to: 00492810 (UNCONDITIONAL_JUMP)  ; LAB_00492810
-    MOV EAX,[0x01d5ba14]                ; 004928ba | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004928ba | g_INT_01d5ba14
         ;   Label: LAB_004928ba
     SHL EAX,0x2                         ; 004928bf
     XOR ESI,ESI                         ; 004928c2
@@ -1261,7 +1261,7 @@ section .text
         ;   Label: LAB_00492986
     INC DL                              ; 00492989
     AND EDX,0xff                        ; 0049298b
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492991 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492991 | g_UCHAR_ARRAY_006074b8
     JNZ 0x00492a01                      ; 00492998
         ;   XREF to: 00492a01 (CONDITIONAL_JUMP)  ; LAB_00492a01
     LEA EAX,[ESI + EDI*0x1]             ; 0049299a
@@ -1273,7 +1273,7 @@ section .text
         ;   Label: LAB_004929aa
     INC AL                              ; 004929ac
     AND EAX,0xff                        ; 004929ae
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004929b3 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004929b3 | g_UCHAR_ARRAY_006074b8
     JZ 0x00492a0d                       ; 004929ba
         ;   XREF to: 00492a0d (CONDITIONAL_JUMP)  ; LAB_00492a0d
     PUSH EDI                            ; 004929bc
@@ -1289,16 +1289,16 @@ section .text
     MOV ESI,0x5bf6dc                    ; 004929d1 | = "Error parsing hasItemType parameters."
         ;   Label: LAB_004929d1
     MOV EDI,0x1c734b0                   ; 004929d6
-    PUSH EDI                            ; 004929db | DAT_01c734b0
+    PUSH EDI                            ; 004929db | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 004929dc | = "Error parsing hasItemType parameters." | s_Error_parsing_hasItemTyp_005bf6dc+2
         ;   Label: LAB_004929dc
-    MOV byte ptr [EDI],AL               ; 004929de | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 004929de | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 004929e0
     JZ 0x004929f4                       ; 004929e2
         ;   XREF to: 004929f4 (CONDITIONAL_JUMP)  ; LAB_004929f4
     MOV AL,byte ptr [ESI + 0x1]         ; 004929e4 | s_Error_parsing_hasItemTyp_005bf6dc+1 | s_Error_parsing_hasItemTyp_005bf6dc+3
     ADD ESI,0x2                         ; 004929e7
-    MOV byte ptr [EDI + 0x1],AL         ; 004929ea | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 004929ea | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 004929ed
     CMP AL,0x0                          ; 004929f0
     JNZ 0x004929dc                      ; 004929f2
@@ -1340,7 +1340,7 @@ section .text
         ;   Label: LAB_00492a34
     INC DL                              ; 00492a37
     AND EDX,0xff                        ; 00492a39
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492a3f | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492a3f | g_UCHAR_ARRAY_006074b8
     JNZ 0x00492a7f                      ; 00492a46
         ;   XREF to: 00492a7f (CONDITIONAL_JUMP)  ; LAB_00492a7f
     LEA EAX,[ESI + EDI*0x1]             ; 00492a48
@@ -1352,7 +1352,7 @@ section .text
         ;   Label: LAB_00492a58
     INC AL                              ; 00492a5a
     AND EAX,0xff                        ; 00492a5c
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492a61 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492a61 | g_UCHAR_ARRAY_006074b8
     JZ 0x00492a87                       ; 00492a68
         ;   XREF to: 00492a87 (CONDITIONAL_JUMP)  ; LAB_00492a87
     PUSH EDI                            ; 00492a6a
@@ -1385,7 +1385,7 @@ section .text
     TEST EAX,EAX                        ; 00492aa3
     JZ 0x004929f5                       ; 00492aa5
         ;   XREF to: 004929f5 (CONDITIONAL_JUMP)  ; LAB_004929f5
-    CMP EAX,dword ptr [0x005df604]      ; 00492aab | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 00492aab | g_CDemonActor_PTR_005df604
     JNZ 0x00492aca                      ; 00492ab1
         ;   XREF to: 00492aca (CONDITIONAL_JUMP)  ; LAB_00492aca
     XOR EDI,EDI                         ; 00492ab3
@@ -1448,7 +1448,7 @@ section .text
     TEST EAX,EDX                        ; 00492b77
     JNZ 0x00492c56                      ; 00492b79
         ;   XREF to: 00492c56 (CONDITIONAL_JUMP)  ; LAB_00492c56
-    MOV EAX,[0x01d5ba14]                ; 00492b7f | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 00492b7f | g_INT_01d5ba14
     XOR ECX,ECX                         ; 00492b84
     MOV ESI,dword ptr [EAX*0x4 + 0x1d5ba04] ; 00492b86
     MOV dword ptr [ESP + 0xfbc],ECX     ; 00492b8d
@@ -1474,16 +1474,16 @@ section .text
     MOV ESI,0x5bf70d                    ; 00492bc6 | = "Can't use hasKeyMask condition in mul..."
         ;   Label: LAB_00492bc6
     MOV EDI,0x1c734b0                   ; 00492bcb
-    PUSH EDI                            ; 00492bd0 | DAT_01c734b0
+    PUSH EDI                            ; 00492bd0 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492bd1 | = "Can't use hasKeyMask condition in mul..." | s_Can_t_use_hasKeyMask_con_005bf70d+2
         ;   Label: LAB_00492bd1
-    MOV byte ptr [EDI],AL               ; 00492bd3 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492bd3 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492bd5
     JZ 0x00492be9                       ; 00492bd7
         ;   XREF to: 00492be9 (CONDITIONAL_JUMP)  ; LAB_00492be9
     MOV AL,byte ptr [ESI + 0x1]         ; 00492bd9 | s_Can_t_use_hasKeyMask_con_005bf70d+1 | s_Can_t_use_hasKeyMask_con_005bf70d+3
     ADD ESI,0x2                         ; 00492bdc
-    MOV byte ptr [EDI + 0x1],AL         ; 00492bdf | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492bdf | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492be2
     CMP AL,0x0                          ; 00492be5
     JNZ 0x00492bd1                      ; 00492be7
@@ -1500,16 +1500,16 @@ section .text
     MOV ESI,0x5bf746                    ; 00492bf6 | = "Error parsing hasKeyMask parameters."
         ;   Label: LAB_00492bf6
     MOV EDI,0x1c734b0                   ; 00492bfb
-    PUSH EDI                            ; 00492c00 | DAT_01c734b0
+    PUSH EDI                            ; 00492c00 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492c01 | = "Error parsing hasKeyMask parameters." | s_Error_parsing_hasKeyMask_005bf746+2
         ;   Label: LAB_00492c01
-    MOV byte ptr [EDI],AL               ; 00492c03 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492c03 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492c05
     JZ 0x00492c19                       ; 00492c07
         ;   XREF to: 00492c19 (CONDITIONAL_JUMP)  ; LAB_00492c19
     MOV AL,byte ptr [ESI + 0x1]         ; 00492c09 | s_Error_parsing_hasKeyMask_005bf746+1 | s_Error_parsing_hasKeyMask_005bf746+3
     ADD ESI,0x2                         ; 00492c0c
-    MOV byte ptr [EDI + 0x1],AL         ; 00492c0f | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492c0f | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492c12
     CMP AL,0x0                          ; 00492c15
     JNZ 0x00492c01                      ; 00492c17
@@ -1526,16 +1526,16 @@ section .text
     MOV ESI,0x5bf76b                    ; 00492c26 | = "hasKeyMask(0) always returns false!"
         ;   Label: LAB_00492c26
     MOV EDI,0x1c734b0                   ; 00492c2b
-    PUSH EDI                            ; 00492c30 | DAT_01c734b0
+    PUSH EDI                            ; 00492c30 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492c31 | = "hasKeyMask(0) always returns false!" | s_hasKeyMask_0_always_retu_005bf76b+2
         ;   Label: LAB_00492c31
-    MOV byte ptr [EDI],AL               ; 00492c33 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492c33 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492c35
     JZ 0x00492c49                       ; 00492c37
         ;   XREF to: 00492c49 (CONDITIONAL_JUMP)  ; LAB_00492c49
     MOV AL,byte ptr [ESI + 0x1]         ; 00492c39 | s_hasKeyMask_0_always_retu_005bf76b+1 | s_hasKeyMask_0_always_retu_005bf76b+3
     ADD ESI,0x2                         ; 00492c3c
-    MOV byte ptr [EDI + 0x1],AL         ; 00492c3f | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492c3f | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492c42
     CMP AL,0x0                          ; 00492c45
     JNZ 0x00492c31                      ; 00492c47
@@ -1552,16 +1552,16 @@ section .text
     MOV ESI,0x5bf78f                    ; 00492c56 | = "mask value must be a power of 2.\n(To..."
         ;   Label: LAB_00492c56
     MOV EDI,0x1c734b0                   ; 00492c5b
-    PUSH EDI                            ; 00492c60 | DAT_01c734b0
+    PUSH EDI                            ; 00492c60 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492c61 | = "mask value must be a power of 2.\n(To..." | s_mask_value_must_be_a_pow_005bf78f+2
         ;   Label: LAB_00492c61
-    MOV byte ptr [EDI],AL               ; 00492c63 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492c63 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492c65
     JZ 0x00492c79                       ; 00492c67
         ;   XREF to: 00492c79 (CONDITIONAL_JUMP)  ; LAB_00492c79
     MOV AL,byte ptr [ESI + 0x1]         ; 00492c69 | s_mask_value_must_be_a_pow_005bf78f+1 | s_mask_value_must_be_a_pow_005bf78f+3
     ADD ESI,0x2                         ; 00492c6c
-    MOV byte ptr [EDI + 0x1],AL         ; 00492c6f | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492c6f | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492c72
     CMP AL,0x0                          ; 00492c75
     JNZ 0x00492c61                      ; 00492c77
@@ -1620,7 +1620,7 @@ section .text
         ;   Label: LAB_00492cfb
     INC DL                              ; 00492cfe
     AND EDX,0xff                        ; 00492d00
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492d06 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00492d06 | g_UCHAR_ARRAY_006074b8
     JNZ 0x00492d76                      ; 00492d0d
         ;   XREF to: 00492d76 (CONDITIONAL_JUMP)  ; LAB_00492d76
     LEA EAX,[ESI + EDI*0x1]             ; 00492d0f
@@ -1632,7 +1632,7 @@ section .text
         ;   Label: LAB_00492d1f
     INC AL                              ; 00492d21
     AND EAX,0xff                        ; 00492d23
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492d28 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00492d28 | g_UCHAR_ARRAY_006074b8
     JZ 0x00492d82                       ; 00492d2f
         ;   XREF to: 00492d82 (CONDITIONAL_JUMP)  ; LAB_00492d82
     PUSH EDI                            ; 00492d31
@@ -1648,16 +1648,16 @@ section .text
     MOV ESI,0x5bf801                    ; 00492d46 | = "Error parsing isBroken parameters."
         ;   Label: LAB_00492d46
     MOV EDI,0x1c734b0                   ; 00492d4b
-    PUSH EDI                            ; 00492d50 | DAT_01c734b0
+    PUSH EDI                            ; 00492d50 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492d51 | = "Error parsing isBroken parameters." | s_Error_parsing_isBroken_p_005bf801+2
         ;   Label: LAB_00492d51
-    MOV byte ptr [EDI],AL               ; 00492d53 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492d53 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492d55
     JZ 0x00492d69                       ; 00492d57
         ;   XREF to: 00492d69 (CONDITIONAL_JUMP)  ; LAB_00492d69
     MOV AL,byte ptr [ESI + 0x1]         ; 00492d59 | s_Error_parsing_isBroken_p_005bf801+1 | s_Error_parsing_isBroken_p_005bf801+3
     ADD ESI,0x2                         ; 00492d5c
-    MOV byte ptr [EDI + 0x1],AL         ; 00492d5f | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492d5f | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492d62
     CMP AL,0x0                          ; 00492d65
     JNZ 0x00492d51                      ; 00492d67
@@ -1692,7 +1692,7 @@ section .text
     TEST EAX,EAX                        ; 00492d9e
     JZ 0x00492d6a                       ; 00492da0
         ;   XREF to: 00492d6a (CONDITIONAL_JUMP)  ; LAB_00492d6a
-    CMP EAX,dword ptr [0x005df604]      ; 00492da2 | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 00492da2 | g_CDemonActor_PTR_005df604
     JNZ 0x00492dc1                      ; 00492da8
         ;   XREF to: 00492dc1 (CONDITIONAL_JUMP)  ; LAB_00492dc1
     XOR ECX,ECX                         ; 00492daa
@@ -1767,16 +1767,16 @@ section .text
     MOV ESI,0x5bf842                    ; 00492e95 | = "Error parsing isCurrentCamera paramet..."
         ;   Label: LAB_00492e95
     MOV EDI,0x1c734b0                   ; 00492e9a
-    PUSH EDI                            ; 00492e9f | DAT_01c734b0
+    PUSH EDI                            ; 00492e9f | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492ea0 | = "Error parsing isCurrentCamera paramet..." | s_Error_parsing_isCurrentC_005bf842+2
         ;   Label: LAB_00492ea0
-    MOV byte ptr [EDI],AL               ; 00492ea2 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492ea2 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492ea4
     JZ 0x00492eb8                       ; 00492ea6
         ;   XREF to: 00492eb8 (CONDITIONAL_JUMP)  ; LAB_00492eb8
     MOV AL,byte ptr [ESI + 0x1]         ; 00492ea8 | s_Error_parsing_isCurrentC_005bf842+1 | s_Error_parsing_isCurrentC_005bf842+3
     ADD ESI,0x2                         ; 00492eab
-    MOV byte ptr [EDI + 0x1],AL         ; 00492eae | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492eae | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492eb1
     CMP AL,0x0                          ; 00492eb4
     JNZ 0x00492ea0                      ; 00492eb6
@@ -1817,7 +1817,7 @@ section .text
     CMP dword ptr [ESP + 0x1008],0x3    ; 00492f13
     JL 0x00492fa8                       ; 00492f1b
         ;   XREF to: 00492fa8 (CONDITIONAL_JUMP)  ; LAB_00492fa8
-    MOV EAX,[0x00600530]                ; 00492f21 | DAT_00600530
+    MOV EAX,[0x00600530]                ; 00492f21 | g_CDemonMission_PTR_00600530
     XOR ESI,ESI                         ; 00492f26
     MOV EDI,dword ptr [EAX]             ; 00492f28 | DAT_01d81080
     MOV dword ptr [ESP + 0xfbc],ESI     ; 00492f2a
@@ -1837,7 +1837,7 @@ section .text
     PUSH ESI                            ; 00492f50
     LEA EAX,[ESP + 0x110]               ; 00492f51
     PUSH EAX                            ; 00492f58
-    MOV EAX,[0x00600530]                ; 00492f59 | DAT_00600530
+    MOV EAX,[0x00600530]                ; 00492f59 | g_CDemonMission_PTR_00600530
     PUSH ESI                            ; 00492f5e
     MOV EDX,dword ptr [EAX]             ; 00492f5f | DAT_01d81080
     ADD EAX,0x8                         ; 00492f61
@@ -1867,16 +1867,16 @@ section .text
     MOV ESI,0x5bf887                    ; 00492fa8 | = "Error parsing isCurrentSet parameters."
         ;   Label: LAB_00492fa8
     MOV EDI,0x1c734b0                   ; 00492fad
-    PUSH EDI                            ; 00492fb2 | DAT_01c734b0
+    PUSH EDI                            ; 00492fb2 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00492fb3 | = "Error parsing isCurrentSet parameters." | s_Error_parsing_isCurrentS_005bf887+2
         ;   Label: LAB_00492fb3
-    MOV byte ptr [EDI],AL               ; 00492fb5 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00492fb5 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00492fb7
     JZ 0x00492fcb                       ; 00492fb9
         ;   XREF to: 00492fcb (CONDITIONAL_JUMP)  ; LAB_00492fcb
     MOV AL,byte ptr [ESI + 0x1]         ; 00492fbb | s_Error_parsing_isCurrentS_005bf887+1 | s_Error_parsing_isCurrentS_005bf887+3
     ADD ESI,0x2                         ; 00492fbe
-    MOV byte ptr [EDI + 0x1],AL         ; 00492fc1 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00492fc1 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00492fc4
     CMP AL,0x0                          ; 00492fc7
     JNZ 0x00492fb3                      ; 00492fc9
@@ -1930,7 +1930,7 @@ section .text
     TEST EAX,EAX                        ; 0049304e
     JZ 0x004930a1                       ; 00493050
         ;   XREF to: 004930a1 (CONDITIONAL_JUMP)  ; LAB_004930a1
-    CMP EAX,dword ptr [0x005df604]      ; 00493052 | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 00493052 | g_CDemonActor_PTR_005df604
     JNZ 0x004930ad                      ; 00493058
         ;   XREF to: 004930ad (CONDITIONAL_JUMP)  ; LAB_004930ad
     XOR ESI,ESI                         ; 0049305a
@@ -1942,16 +1942,16 @@ section .text
     MOV ESI,0x5bf8c3                    ; 00493071 | = "Error parsing isDead parameters."
         ;   Label: LAB_00493071
     MOV EDI,0x1c734b0                   ; 00493076
-    PUSH EDI                            ; 0049307b | DAT_01c734b0
+    PUSH EDI                            ; 0049307b | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 0049307c | = "Error parsing isDead parameters." | s_Error_parsing_isDead_par_005bf8c3+2
         ;   Label: LAB_0049307c
-    MOV byte ptr [EDI],AL               ; 0049307e | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 0049307e | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493080
     JZ 0x00493094                       ; 00493082
         ;   XREF to: 00493094 (CONDITIONAL_JUMP)  ; LAB_00493094
     MOV AL,byte ptr [ESI + 0x1]         ; 00493084 | s_Error_parsing_isDead_par_005bf8c3+1 | s_Error_parsing_isDead_par_005bf8c3+3
     ADD ESI,0x2                         ; 00493087
-    MOV byte ptr [EDI + 0x1],AL         ; 0049308a | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 0049308a | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 0049308d
     CMP AL,0x0                          ; 00493090
     JNZ 0x0049307c                      ; 00493092
@@ -2026,16 +2026,16 @@ section .text
     MOV ESI,0x5bf8fa                    ; 0049314a | = "Error parsing isFadeFinished function."
         ;   Label: LAB_0049314a
     MOV EDI,0x1c734b0                   ; 0049314f
-    PUSH EDI                            ; 00493154 | DAT_01c734b0
+    PUSH EDI                            ; 00493154 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493155 | = "Error parsing isFadeFinished function." | s_Error_parsing_isFadeFini_005bf8fa+2
         ;   Label: LAB_00493155
-    MOV byte ptr [EDI],AL               ; 00493157 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493157 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493159
     JZ 0x0049316d                       ; 0049315b
         ;   XREF to: 0049316d (CONDITIONAL_JUMP)  ; LAB_0049316d
     MOV AL,byte ptr [ESI + 0x1]         ; 0049315d | s_Error_parsing_isFadeFini_005bf8fa+1 | s_Error_parsing_isFadeFini_005bf8fa+3
     ADD ESI,0x2                         ; 00493160
-    MOV byte ptr [EDI + 0x1],AL         ; 00493163 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493163 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493166
     CMP AL,0x0                          ; 00493169
     JNZ 0x00493155                      ; 0049316b
@@ -2101,16 +2101,16 @@ section .text
     MOV ESI,0x5bf931                    ; 004931fa | = "Error parsing isInRange parameters."
         ;   Label: LAB_004931fa
     MOV EDI,0x1c734b0                   ; 004931ff
-    PUSH EDI                            ; 00493204 | DAT_01c734b0
+    PUSH EDI                            ; 00493204 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493205 | = "Error parsing isInRange parameters." | s_Error_parsing_isInRange_005bf931+2
         ;   Label: LAB_00493205
-    MOV byte ptr [EDI],AL               ; 00493207 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493207 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493209
     JZ 0x0049321d                       ; 0049320b
         ;   XREF to: 0049321d (CONDITIONAL_JUMP)  ; LAB_0049321d
     MOV AL,byte ptr [ESI + 0x1]         ; 0049320d | s_Error_parsing_isInRange_005bf931+1 | s_Error_parsing_isInRange_005bf931+3
     ADD ESI,0x2                         ; 00493210
-    MOV byte ptr [EDI + 0x1],AL         ; 00493213 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493213 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493216
     CMP AL,0x0                          ; 00493219
     JNZ 0x00493205                      ; 0049321b
@@ -2204,16 +2204,16 @@ section .text
     MOV ESI,0x5bf95b                    ; 00493326 | = "Error parsing isInRange parameters."
         ;   Label: LAB_00493326
     MOV EDI,0x1c734b0                   ; 0049332b
-    PUSH EDI                            ; 00493330 | DAT_01c734b0
+    PUSH EDI                            ; 00493330 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493331 | = "Error parsing isInRange parameters." | s_Error_parsing_isInRange_005bf95b+2
         ;   Label: LAB_00493331
-    MOV byte ptr [EDI],AL               ; 00493333 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493333 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493335
     JZ 0x00493349                       ; 00493337
         ;   XREF to: 00493349 (CONDITIONAL_JUMP)  ; LAB_00493349
     MOV AL,byte ptr [ESI + 0x1]         ; 00493339 | s_Error_parsing_isInRange_005bf95b+1 | s_Error_parsing_isInRange_005bf95b+3
     ADD ESI,0x2                         ; 0049333c
-    MOV byte ptr [EDI + 0x1],AL         ; 0049333f | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 0049333f | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493342
     CMP AL,0x0                          ; 00493345
     JNZ 0x00493331                      ; 00493347
@@ -2231,16 +2231,16 @@ section .text
     MOV ESI,0x5bf989                    ; 00493356 | = "Error parsing isInRange parameters."
         ;   Label: LAB_00493356
     MOV EDI,0x1c734b0                   ; 0049335b
-    PUSH EDI                            ; 00493360 | DAT_01c734b0
+    PUSH EDI                            ; 00493360 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493361 | = "Error parsing isInRange parameters." | s_Error_parsing_isInRange_005bf989+2
         ;   Label: LAB_00493361
-    MOV byte ptr [EDI],AL               ; 00493363 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493363 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493365
     JZ 0x00493379                       ; 00493367
         ;   XREF to: 00493379 (CONDITIONAL_JUMP)  ; LAB_00493379
     MOV AL,byte ptr [ESI + 0x1]         ; 00493369 | s_Error_parsing_isInRange_005bf989+1 | s_Error_parsing_isInRange_005bf989+3
     ADD ESI,0x2                         ; 0049336c
-    MOV byte ptr [EDI + 0x1],AL         ; 0049336f | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 0049336f | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493372
     CMP AL,0x0                          ; 00493375
     JNZ 0x00493361                      ; 00493377
@@ -2306,7 +2306,7 @@ section .text
         ;   Label: LAB_00493411
     INC DL                              ; 00493414
     AND EDX,0xff                        ; 00493416
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049341c | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049341c | g_UCHAR_ARRAY_006074b8
     JNZ 0x0049348c                      ; 00493423
         ;   XREF to: 0049348c (CONDITIONAL_JUMP)  ; LAB_0049348c
     LEA EAX,[ESI + EDI*0x1]             ; 00493425
@@ -2318,7 +2318,7 @@ section .text
         ;   Label: LAB_00493435
     INC AL                              ; 00493437
     AND EAX,0xff                        ; 00493439
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0049343e | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 0049343e | g_UCHAR_ARRAY_006074b8
     JZ 0x00493498                       ; 00493445
         ;   XREF to: 00493498 (CONDITIONAL_JUMP)  ; LAB_00493498
     PUSH EDI                            ; 00493447
@@ -2334,16 +2334,16 @@ section .text
     MOV ESI,0x5bf9cd                    ; 0049345c | = "Error parsing isOfType parameters."
         ;   Label: LAB_0049345c
     MOV EDI,0x1c734b0                   ; 00493461
-    PUSH EDI                            ; 00493466 | DAT_01c734b0
+    PUSH EDI                            ; 00493466 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493467 | = "Error parsing isOfType parameters." | s_Error_parsing_isOfType_p_005bf9cd+2
         ;   Label: LAB_00493467
-    MOV byte ptr [EDI],AL               ; 00493469 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493469 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 0049346b
     JZ 0x0049347f                       ; 0049346d
         ;   XREF to: 0049347f (CONDITIONAL_JUMP)  ; LAB_0049347f
     MOV AL,byte ptr [ESI + 0x1]         ; 0049346f | s_Error_parsing_isOfType_p_005bf9cd+1 | s_Error_parsing_isOfType_p_005bf9cd+3
     ADD ESI,0x2                         ; 00493472
-    MOV byte ptr [EDI + 0x1],AL         ; 00493475 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493475 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493478
     CMP AL,0x0                          ; 0049347b
     JNZ 0x00493467                      ; 0049347d
@@ -2385,7 +2385,7 @@ section .text
         ;   Label: LAB_004934bf
     INC DL                              ; 004934c2
     AND EDX,0xff                        ; 004934c4
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004934ca | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004934ca | g_UCHAR_ARRAY_006074b8
     JNZ 0x0049350a                      ; 004934d1
         ;   XREF to: 0049350a (CONDITIONAL_JUMP)  ; LAB_0049350a
     LEA EAX,[ESI + EDI*0x1]             ; 004934d3
@@ -2397,7 +2397,7 @@ section .text
         ;   Label: LAB_004934e3
     INC AL                              ; 004934e5
     AND EAX,0xff                        ; 004934e7
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004934ec | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004934ec | g_UCHAR_ARRAY_006074b8
     JZ 0x00493512                       ; 004934f3
         ;   XREF to: 00493512 (CONDITIONAL_JUMP)  ; LAB_00493512
     PUSH EDI                            ; 004934f5
@@ -2430,7 +2430,7 @@ section .text
     TEST EAX,EAX                        ; 0049352e
     JZ 0x00493480                       ; 00493530
         ;   XREF to: 00493480 (CONDITIONAL_JUMP)  ; LAB_00493480
-    CMP EAX,dword ptr [0x005df604]      ; 00493536 | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 00493536 | g_CDemonActor_PTR_005df604
     JNZ 0x00493555                      ; 0049353c
         ;   XREF to: 00493555 (CONDITIONAL_JUMP)  ; LAB_00493555
     XOR EDI,EDI                         ; 0049353e
@@ -2498,7 +2498,7 @@ section .text
         ;   Label: LAB_004935f8
     INC DL                              ; 004935fb
     AND EDX,0xff                        ; 004935fd
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00493603 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00493603 | g_UCHAR_ARRAY_006074b8
     JNZ 0x00493673                      ; 0049360a
         ;   XREF to: 00493673 (CONDITIONAL_JUMP)  ; LAB_00493673
     LEA EAX,[ESI + EDI*0x1]             ; 0049360c
@@ -2510,7 +2510,7 @@ section .text
         ;   Label: LAB_0049361c
     INC AL                              ; 0049361e
     AND EAX,0xff                        ; 00493620
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00493625 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00493625 | g_UCHAR_ARRAY_006074b8
     JZ 0x0049367f                       ; 0049362c
         ;   XREF to: 0049367f (CONDITIONAL_JUMP)  ; LAB_0049367f
     PUSH EDI                            ; 0049362e
@@ -2526,16 +2526,16 @@ section .text
     MOV ESI,0x5bfa0b                    ; 00493643 | = "Error parsing isFacing parameters."
         ;   Label: LAB_00493643
     MOV EDI,0x1c734b0                   ; 00493648
-    PUSH EDI                            ; 0049364d | DAT_01c734b0
+    PUSH EDI                            ; 0049364d | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 0049364e | = "Error parsing isFacing parameters." | s_Error_parsing_isFacing_p_005bfa0b+2
         ;   Label: LAB_0049364e
-    MOV byte ptr [EDI],AL               ; 00493650 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493650 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493652
     JZ 0x00493666                       ; 00493654
         ;   XREF to: 00493666 (CONDITIONAL_JUMP)  ; LAB_00493666
     MOV AL,byte ptr [ESI + 0x1]         ; 00493656 | s_Error_parsing_isFacing_p_005bfa0b+1 | s_Error_parsing_isFacing_p_005bfa0b+3
     ADD ESI,0x2                         ; 00493659
-    MOV byte ptr [EDI + 0x1],AL         ; 0049365c | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 0049365c | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 0049365f
     CMP AL,0x0                          ; 00493662
     JNZ 0x0049364e                      ; 00493664
@@ -2577,7 +2577,7 @@ section .text
         ;   Label: LAB_004936ad
     INC DL                              ; 004936b0
     AND EDX,0xff                        ; 004936b2
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004936b8 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004936b8 | g_UCHAR_ARRAY_006074b8
     JNZ 0x004936fd                      ; 004936bf
         ;   XREF to: 004936fd (CONDITIONAL_JUMP)  ; LAB_004936fd
     MOV EAX,dword ptr [ESP + 0x1040]    ; 004936c1
@@ -2589,7 +2589,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 004936d6
     INC AL                              ; 004936d8
     AND EAX,0xff                        ; 004936da
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004936df | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004936df | g_UCHAR_ARRAY_006074b8
     JZ 0x00493705                       ; 004936e6
         ;   XREF to: 00493705 (CONDITIONAL_JUMP)  ; LAB_00493705
     PUSH ESI                            ; 004936e8
@@ -2663,7 +2663,7 @@ section .text
     JNZ 0x00493868                      ; 0049377f
         ;   XREF to: 00493868 (CONDITIONAL_JUMP)  ; LAB_00493868
     LEA EAX,[ECX + 0x1]                 ; 00493785
-    MOV EDX,dword ptr [0x005df604]      ; 00493788 | DAT_005df604
+    MOV EDX,dword ptr [0x005df604]      ; 00493788 | g_CDemonActor_PTR_005df604
     MOV dword ptr [EBX],EAX             ; 0049378e
     CMP EDI,EDX                         ; 00493790
     JNZ 0x00493898                      ; 00493792
@@ -2702,7 +2702,7 @@ section .text
     JA 0x00493838                       ; 004937f1
         ;   XREF to: 00493838 (CONDITIONAL_JUMP)  ; LAB_00493838
     FLD double ptr [ESP]                ; 004937f3
-    FCOMP double ptr [0x005bfdd0]       ; 004937f6 | DAT_005bfdd0
+    FCOMP double ptr [0x005bfdd0]       ; 004937f6 | g_DOUBLE_005bfdd0
     FNSTSW AX                           ; 004937fc
     SAHF                                ; 004937fe
     JA 0x00493838                       ; 004937ff
@@ -2713,16 +2713,16 @@ section .text
     MOV ESI,0x5bfa35                    ; 00493808 | = "Error parsing isFacing parameters."
         ;   Label: LAB_00493808
     MOV EDI,0x1c734b0                   ; 0049380d
-    PUSH EDI                            ; 00493812 | DAT_01c734b0
+    PUSH EDI                            ; 00493812 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493813 | = "Error parsing isFacing parameters." | s_Error_parsing_isFacing_p_005bfa35+2
         ;   Label: LAB_00493813
-    MOV byte ptr [EDI],AL               ; 00493815 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493815 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493817
     JZ 0x0049382b                       ; 00493819
         ;   XREF to: 0049382b (CONDITIONAL_JUMP)  ; LAB_0049382b
     MOV AL,byte ptr [ESI + 0x1]         ; 0049381b | s_Error_parsing_isFacing_p_005bfa35+1 | s_Error_parsing_isFacing_p_005bfa35+3
     ADD ESI,0x2                         ; 0049381e
-    MOV byte ptr [EDI + 0x1],AL         ; 00493821 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493821 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493824
     CMP AL,0x0                          ; 00493827
     JNZ 0x00493813                      ; 00493829
@@ -2739,16 +2739,16 @@ section .text
     MOV ESI,0x5bfa58                    ; 00493838 | = "isFacing() angle must be in range 0....."
         ;   Label: LAB_00493838
     MOV EDI,0x1c734b0                   ; 0049383d
-    PUSH EDI                            ; 00493842 | DAT_01c734b0
+    PUSH EDI                            ; 00493842 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493843 | = "isFacing() angle must be in range 0....." | s_isFacing_angle_must_be_i_005bfa58+2
         ;   Label: LAB_00493843
-    MOV byte ptr [EDI],AL               ; 00493845 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493845 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493847
     JZ 0x0049385b                       ; 00493849
         ;   XREF to: 0049385b (CONDITIONAL_JUMP)  ; LAB_0049385b
     MOV AL,byte ptr [ESI + 0x1]         ; 0049384b | s_isFacing_angle_must_be_i_005bfa58+1 | s_isFacing_angle_must_be_i_005bfa58+3
     ADD ESI,0x2                         ; 0049384e
-    MOV byte ptr [EDI + 0x1],AL         ; 00493851 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493851 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493854
     CMP AL,0x0                          ; 00493857
     JNZ 0x00493843                      ; 00493859
@@ -2765,16 +2765,16 @@ section .text
     MOV ESI,0x5bfa82                    ; 00493868 | = "Error parsing isFacing parameters."
         ;   Label: LAB_00493868
     MOV EDI,0x1c734b0                   ; 0049386d
-    PUSH EDI                            ; 00493872 | DAT_01c734b0
+    PUSH EDI                            ; 00493872 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493873 | = "Error parsing isFacing parameters." | s_Error_parsing_isFacing_p_005bfa82+2
         ;   Label: LAB_00493873
-    MOV byte ptr [EDI],AL               ; 00493875 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493875 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493877
     JZ 0x0049388b                       ; 00493879
         ;   XREF to: 0049388b (CONDITIONAL_JUMP)  ; LAB_0049388b
     MOV AL,byte ptr [ESI + 0x1]         ; 0049387b | s_Error_parsing_isFacing_p_005bfa82+1 | s_Error_parsing_isFacing_p_005bfa82+3
     ADD ESI,0x2                         ; 0049387e
-    MOV byte ptr [EDI + 0x1],AL         ; 00493881 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493881 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493884
     CMP AL,0x0                          ; 00493887
     JNZ 0x00493873                      ; 00493889
@@ -2820,8 +2820,8 @@ section .text
     FLD float ptr [ESP + 0xf78]         ; 004938f6
     FABS                                ; 004938fd
     FLD float ptr [ESP + 0x8]           ; 004938ff
-    FMUL float ptr [0x005bfdd8]         ; 00493903 | DAT_005bfdd8
-    FMUL double ptr [0x005bfde0]        ; 00493909 | DAT_005bfde0
+    FMUL float ptr [0x005bfdd8]         ; 00493903 | g_FLOAT_005bfdd8
+    FMUL double ptr [0x005bfde0]        ; 00493909 | g_DOUBLE_005bfde0
     FCOMPP                              ; 0049390f
     FNSTSW AX                           ; 00493911
     SAHF                                ; 00493913
@@ -2889,16 +2889,16 @@ section .text
     MOV ESI,0x5bfabd                    ; 004939df | = "Error parsing isLightOn parameters."
         ;   Label: LAB_004939df
     MOV EDI,0x1c734b0                   ; 004939e4
-    PUSH EDI                            ; 004939e9 | DAT_01c734b0
+    PUSH EDI                            ; 004939e9 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 004939ea | = "Error parsing isLightOn parameters." | s_Error_parsing_isLightOn_005bfabd+2
         ;   Label: LAB_004939ea
-    MOV byte ptr [EDI],AL               ; 004939ec | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 004939ec | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 004939ee
     JZ 0x00493a02                       ; 004939f0
         ;   XREF to: 00493a02 (CONDITIONAL_JUMP)  ; LAB_00493a02
     MOV AL,byte ptr [ESI + 0x1]         ; 004939f2 | s_Error_parsing_isLightOn_005bfabd+1 | s_Error_parsing_isLightOn_005bfabd+3
     ADD ESI,0x2                         ; 004939f5
-    MOV byte ptr [EDI + 0x1],AL         ; 004939f8 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 004939f8 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 004939fb
     CMP AL,0x0                          ; 004939fe
     JNZ 0x004939ea                      ; 00493a00
@@ -2924,16 +2924,16 @@ section .text
     ADD ESP,0xc                         ; 00493a2a
     LEA ESI,[ESP + 0x20c]               ; 00493a2d
     MOV EDI,0x1c734b0                   ; 00493a34
-    PUSH EDI                            ; 00493a39 | DAT_01c734b0
+    PUSH EDI                            ; 00493a39 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493a3a
         ;   Label: LAB_00493a3a
-    MOV byte ptr [EDI],AL               ; 00493a3c | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493a3c | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493a3e
     JZ 0x00493a52                       ; 00493a40
         ;   XREF to: 00493a52 (CONDITIONAL_JUMP)  ; LAB_00493a52
     MOV AL,byte ptr [ESI + 0x1]         ; 00493a42
     ADD ESI,0x2                         ; 00493a45
-    MOV byte ptr [EDI + 0x1],AL         ; 00493a48 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493a48 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493a4b
     CMP AL,0x0                          ; 00493a4e
     JNZ 0x00493a3a                      ; 00493a50
@@ -2986,16 +2986,16 @@ section .text
     MOV ESI,0x5bfb14                    ; 00493ad4 | = "Error parsing isNudityEnabled()."
         ;   Label: LAB_00493ad4
     MOV EDI,0x1c734b0                   ; 00493ad9
-    PUSH EDI                            ; 00493ade | DAT_01c734b0
+    PUSH EDI                            ; 00493ade | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493adf | = "Error parsing isNudityEnabled()." | s_Error_parsing_isNudityEn_005bfb14+2
         ;   Label: LAB_00493adf
-    MOV byte ptr [EDI],AL               ; 00493ae1 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493ae1 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493ae3
     JZ 0x00493af7                       ; 00493ae5
         ;   XREF to: 00493af7 (CONDITIONAL_JUMP)  ; LAB_00493af7
     MOV AL,byte ptr [ESI + 0x1]         ; 00493ae7 | s_Error_parsing_isNudityEn_005bfb14+1 | s_Error_parsing_isNudityEn_005bfb14+3
     ADD ESI,0x2                         ; 00493aea
-    MOV byte ptr [EDI + 0x1],AL         ; 00493aed | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493aed | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493af0
     CMP AL,0x0                          ; 00493af3
     JNZ 0x00493adf                      ; 00493af5
@@ -3054,7 +3054,7 @@ section .text
         ;   Label: LAB_00493b79
     INC DL                              ; 00493b7c
     AND EDX,0xff                        ; 00493b7e
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00493b84 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 00493b84 | g_UCHAR_ARRAY_006074b8
     JNZ 0x00493bf4                      ; 00493b8b
         ;   XREF to: 00493bf4 (CONDITIONAL_JUMP)  ; LAB_00493bf4
     LEA EAX,[ESI + EDI*0x1]             ; 00493b8d
@@ -3066,7 +3066,7 @@ section .text
         ;   Label: LAB_00493b9d
     INC AL                              ; 00493b9f
     AND EAX,0xff                        ; 00493ba1
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00493ba6 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00493ba6 | g_UCHAR_ARRAY_006074b8
     JZ 0x00493c00                       ; 00493bad
         ;   XREF to: 00493c00 (CONDITIONAL_JUMP)  ; LAB_00493c00
     PUSH EDI                            ; 00493baf
@@ -3082,16 +3082,16 @@ section .text
     MOV ESI,0x5bfb4f                    ; 00493bc4 | = "Error parsing isSfxActive parameters."
         ;   Label: LAB_00493bc4
     MOV EDI,0x1c734b0                   ; 00493bc9
-    PUSH EDI                            ; 00493bce | DAT_01c734b0
+    PUSH EDI                            ; 00493bce | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493bcf | = "Error parsing isSfxActive parameters." | s_Error_parsing_isSfxActiv_005bfb4f+2
         ;   Label: LAB_00493bcf
-    MOV byte ptr [EDI],AL               ; 00493bd1 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493bd1 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493bd3
     JZ 0x00493be7                       ; 00493bd5
         ;   XREF to: 00493be7 (CONDITIONAL_JUMP)  ; LAB_00493be7
     MOV AL,byte ptr [ESI + 0x1]         ; 00493bd7 | s_Error_parsing_isSfxActiv_005bfb4f+1 | s_Error_parsing_isSfxActiv_005bfb4f+3
     ADD ESI,0x2                         ; 00493bda
-    MOV byte ptr [EDI + 0x1],AL         ; 00493bdd | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493bdd | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493be0
     CMP AL,0x0                          ; 00493be3
     JNZ 0x00493bcf                      ; 00493be5
@@ -3172,7 +3172,7 @@ section .text
     TEST EAX,EAX                        ; 00493cb0
     JZ 0x00493d05                       ; 00493cb2
         ;   XREF to: 00493d05 (CONDITIONAL_JUMP)  ; LAB_00493d05
-    MOV EDI,dword ptr [0x005df604]      ; 00493cb4 | DAT_005df604
+    MOV EDI,dword ptr [0x005df604]      ; 00493cb4 | g_CDemonActor_PTR_005df604
     CMP EAX,EDI                         ; 00493cba
     JNZ 0x00493d0e                      ; 00493cbc
         ;   XREF to: 00493d0e (CONDITIONAL_JUMP)  ; LAB_00493d0e
@@ -3186,16 +3186,16 @@ section .text
     MOV ESI,0x5bfb8d                    ; 00493cd5 | = "Error parsing isTalking parameters."
         ;   Label: LAB_00493cd5
     MOV EDI,0x1c734b0                   ; 00493cda
-    PUSH EDI                            ; 00493cdf | DAT_01c734b0
+    PUSH EDI                            ; 00493cdf | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493ce0 | = "Error parsing isTalking parameters." | s_Error_parsing_isTalking_005bfb8d+2
         ;   Label: LAB_00493ce0
-    MOV byte ptr [EDI],AL               ; 00493ce2 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493ce2 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493ce4
     JZ 0x00493cf8                       ; 00493ce6
         ;   XREF to: 00493cf8 (CONDITIONAL_JUMP)  ; LAB_00493cf8
     MOV AL,byte ptr [ESI + 0x1]         ; 00493ce8 | s_Error_parsing_isTalking_005bfb8d+1 | s_Error_parsing_isTalking_005bfb8d+3
     ADD ESI,0x2                         ; 00493ceb
-    MOV byte ptr [EDI + 0x1],AL         ; 00493cee | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493cee | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493cf1
     CMP AL,0x0                          ; 00493cf4
     JNZ 0x00493ce0                      ; 00493cf6
@@ -3274,7 +3274,7 @@ section .text
     JZ 0x00493e46                       ; 00493daa
         ;   XREF to: 00493e46 (CONDITIONAL_JUMP)  ; LAB_00493e46
     XOR ECX,ECX                         ; 00493db0
-    MOV ESI,dword ptr [0x005df604]      ; 00493db2 | DAT_005df604
+    MOV ESI,dword ptr [0x005df604]      ; 00493db2 | g_CDemonActor_PTR_005df604
     MOV dword ptr [ESP + 0xfbc],ECX     ; 00493db8
     CMP EAX,ESI                         ; 00493dbf
     JZ 0x00493eb7                       ; 00493dc1
@@ -3305,16 +3305,16 @@ section .text
     MOV ESI,0x5bfbc8                    ; 00493e22 | = "Error parsing isVictim parameters."
         ;   Label: LAB_00493e22
     MOV EDI,0x1c734b0                   ; 00493e27
-    PUSH EDI                            ; 00493e2c | DAT_01c734b0
+    PUSH EDI                            ; 00493e2c | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493e2d | = "Error parsing isVictim parameters." | s_Error_parsing_isVictim_p_005bfbc8+2
         ;   Label: LAB_00493e2d
-    MOV byte ptr [EDI],AL               ; 00493e2f | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493e2f | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493e31
     JZ 0x00493e45                       ; 00493e33
         ;   XREF to: 00493e45 (CONDITIONAL_JUMP)  ; LAB_00493e45
     MOV AL,byte ptr [ESI + 0x1]         ; 00493e35 | s_Error_parsing_isVictim_p_005bfbc8+1 | s_Error_parsing_isVictim_p_005bfbc8+3
     ADD ESI,0x2                         ; 00493e38
-    MOV byte ptr [EDI + 0x1],AL         ; 00493e3b | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493e3b | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493e3e
     CMP AL,0x0                          ; 00493e41
     JNZ 0x00493e2d                      ; 00493e43
@@ -3358,7 +3358,7 @@ section .text
     FMUL ST0                            ; 00493e97
     FADDP                               ; 00493e99
     FSQRT                               ; 00493e9b
-    FCOMP double ptr [0x005bfde8]       ; 00493e9d | DAT_005bfde8
+    FCOMP double ptr [0x005bfde8]       ; 00493e9d | g_DOUBLE_005bfde8
     FNSTSW AX                           ; 00493ea3
     SAHF                                ; 00493ea5
     JA 0x00493e0e                       ; 00493ea6
@@ -3408,7 +3408,7 @@ section .text
     TEST EAX,EAX                        ; 00493f3a
     JZ 0x00493f83                       ; 00493f3c
         ;   XREF to: 00493f83 (CONDITIONAL_JUMP)  ; LAB_00493f83
-    MOV EDI,dword ptr [0x005df604]      ; 00493f3e | DAT_005df604
+    MOV EDI,dword ptr [0x005df604]      ; 00493f3e | g_CDemonActor_PTR_005df604
     CMP EAX,EDI                         ; 00493f44
     JNZ 0x00493f8f                      ; 00493f46
         ;   XREF to: 00493f8f (CONDITIONAL_JUMP)  ; LAB_00493f8f
@@ -3422,16 +3422,16 @@ section .text
     MOV ESI,0x5bfc07                    ; 00493f5f | = "Error parsing isWeaponDrawn parameters."
         ;   Label: LAB_00493f5f
     MOV EDI,0x1c734b0                   ; 00493f64
-    PUSH EDI                            ; 00493f69 | DAT_01c734b0
+    PUSH EDI                            ; 00493f69 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00493f6a | = "Error parsing isWeaponDrawn parameters." | s_Error_parsing_isWeaponDr_005bfc07+2
         ;   Label: LAB_00493f6a
-    MOV byte ptr [EDI],AL               ; 00493f6c | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00493f6c | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00493f6e
     JZ 0x00493f82                       ; 00493f70
         ;   XREF to: 00493f82 (CONDITIONAL_JUMP)  ; LAB_00493f82
     MOV AL,byte ptr [ESI + 0x1]         ; 00493f72 | s_Error_parsing_isWeaponDr_005bfc07+1 | s_Error_parsing_isWeaponDr_005bfc07+3
     ADD ESI,0x2                         ; 00493f75
-    MOV byte ptr [EDI + 0x1],AL         ; 00493f78 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00493f78 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00493f7b
     CMP AL,0x0                          ; 00493f7e
     JNZ 0x00493f6a                      ; 00493f80
@@ -3493,7 +3493,7 @@ section .text
     TEST EAX,EAX                        ; 00494017
     JZ 0x0049405e                       ; 00494019
         ;   XREF to: 0049405e (CONDITIONAL_JUMP)  ; LAB_0049405e
-    CMP EAX,dword ptr [0x005df604]      ; 0049401b | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 0049401b | g_CDemonActor_PTR_005df604
     JNZ 0x0049406a                      ; 00494021
         ;   XREF to: 0049406a (CONDITIONAL_JUMP)  ; LAB_0049406a
     XOR ESI,ESI                         ; 00494023
@@ -3505,16 +3505,16 @@ section .text
     MOV ESI,0x5bfc4e                    ; 0049403a | = "Error parsing isWearingGasMask parame..."
         ;   Label: LAB_0049403a
     MOV EDI,0x1c734b0                   ; 0049403f
-    PUSH EDI                            ; 00494044 | DAT_01c734b0
+    PUSH EDI                            ; 00494044 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00494045 | = "Error parsing isWearingGasMask parame..." | s_Error_parsing_isWearingG_005bfc4e+2
         ;   Label: LAB_00494045
-    MOV byte ptr [EDI],AL               ; 00494047 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00494047 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00494049
     JZ 0x0049405d                       ; 0049404b
         ;   XREF to: 0049405d (CONDITIONAL_JUMP)  ; LAB_0049405d
     MOV AL,byte ptr [ESI + 0x1]         ; 0049404d | s_Error_parsing_isWearingG_005bfc4e+1 | s_Error_parsing_isWearingG_005bfc4e+3
     ADD ESI,0x2                         ; 00494050
-    MOV byte ptr [EDI + 0x1],AL         ; 00494053 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00494053 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00494056
     CMP AL,0x0                          ; 00494059
     JNZ 0x00494045                      ; 0049405b
@@ -3566,7 +3566,7 @@ section .text
     CMP dword ptr [ESP + 0x1088],0x3    ; 004940da
     JL 0x00494163                       ; 004940e2
         ;   XREF to: 00494163 (CONDITIONAL_JUMP)  ; LAB_00494163
-    MOV EAX,[0x007dff88]                ; 004940e8 | DAT_007dff88
+    MOV EAX,[0x007dff88]                ; 004940e8 | g_INT_ARRAY_007dff88
     XOR ESI,ESI                         ; 004940ed
     XOR EDI,EDI                         ; 004940ef
     MOV dword ptr [ESP + 0x108c],ESI    ; 004940f1
@@ -3596,7 +3596,7 @@ section .text
     JZ 0x0049418b                       ; 00494135
         ;   XREF to: 0049418b (CONDITIONAL_JUMP)  ; LAB_0049418b
     XOR ECX,ECX                         ; 00494137
-    MOV ESI,dword ptr [0x007dffb4]      ; 00494139 | DAT_007dffb4
+    MOV ESI,dword ptr [0x007dffb4]      ; 00494139 | g_CPuzzle_PTR_007dffb4
     MOV dword ptr [ESP + 0xfbc],ECX     ; 0049413f
     TEST ESI,ESI                        ; 00494146
     JZ 0x00494155                       ; 00494148
@@ -3619,7 +3619,7 @@ section .text
     POP ESI                             ; 00494175
     POP EBX                             ; 00494176
     RET                                 ; 00494177
-    MOV EAX,[0x007dff88]                ; 00494178 | DAT_007dff88
+    MOV EAX,[0x007dff88]                ; 00494178 | g_INT_ARRAY_007dff88
         ;   Label: LAB_00494178
     INC EDI                             ; 0049417d
     ADD ESI,0x4                         ; 0049417e
@@ -3683,16 +3683,16 @@ section .text
     MOV ESI,0x5bfcde                    ; 00494225 | = "Error parsing randBool parameters."
         ;   Label: LAB_00494225
     MOV EDI,0x1c734b0                   ; 0049422a
-    PUSH EDI                            ; 0049422f | DAT_01c734b0
+    PUSH EDI                            ; 0049422f | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00494230 | = "Error parsing randBool parameters." | s_Error_parsing_randBool_p_005bfcde+2
         ;   Label: LAB_00494230
-    MOV byte ptr [EDI],AL               ; 00494232 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00494232 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00494234
     JZ 0x00494248                       ; 00494236
         ;   XREF to: 00494248 (CONDITIONAL_JUMP)  ; LAB_00494248
     MOV AL,byte ptr [ESI + 0x1]         ; 00494238 | s_Error_parsing_randBool_p_005bfcde+1 | s_Error_parsing_randBool_p_005bfcde+3
     ADD ESI,0x2                         ; 0049423b
-    MOV byte ptr [EDI + 0x1],AL         ; 0049423e | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 0049423e | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00494241
     CMP AL,0x0                          ; 00494244
     JNZ 0x00494230                      ; 00494246
@@ -3745,7 +3745,7 @@ section .text
     TEST EAX,EAX                        ; 004942ca
     JZ 0x00494311                       ; 004942cc
         ;   XREF to: 00494311 (CONDITIONAL_JUMP)  ; LAB_00494311
-    CMP EAX,dword ptr [0x005df604]      ; 004942ce | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 004942ce | g_CDemonActor_PTR_005df604
     JNZ 0x0049431d                      ; 004942d4
         ;   XREF to: 0049431d (CONDITIONAL_JUMP)  ; LAB_0049431d
     XOR ECX,ECX                         ; 004942d6
@@ -3757,16 +3757,16 @@ section .text
     MOV ESI,0x5bfd1b                    ; 004942ed | = "Error parsing reachedDest parameters."
         ;   Label: LAB_004942ed
     MOV EDI,0x1c734b0                   ; 004942f2
-    PUSH EDI                            ; 004942f7 | DAT_01c734b0
+    PUSH EDI                            ; 004942f7 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 004942f8 | = "Error parsing reachedDest parameters." | s_Error_parsing_reachedDes_005bfd1b+2
         ;   Label: LAB_004942f8
-    MOV byte ptr [EDI],AL               ; 004942fa | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 004942fa | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 004942fc
     JZ 0x00494310                       ; 004942fe
         ;   XREF to: 00494310 (CONDITIONAL_JUMP)  ; LAB_00494310
     MOV AL,byte ptr [ESI + 0x1]         ; 00494300 | s_Error_parsing_reachedDes_005bfd1b+1 | s_Error_parsing_reachedDes_005bfd1b+3
     ADD ESI,0x2                         ; 00494303
-    MOV byte ptr [EDI + 0x1],AL         ; 00494306 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00494306 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00494309
     CMP AL,0x0                          ; 0049430c
     JNZ 0x004942f8                      ; 0049430e
@@ -3842,7 +3842,7 @@ section .text
         ;   Label: LAB_004943da
     INC DL                              ; 004943dd
     AND EDX,0xff                        ; 004943df
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004943e5 | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 004943e5 | g_UCHAR_ARRAY_006074b8
     JNZ 0x00494455                      ; 004943ec
         ;   XREF to: 00494455 (CONDITIONAL_JUMP)  ; LAB_00494455
     LEA EAX,[ESI + EDI*0x1]             ; 004943ee
@@ -3854,7 +3854,7 @@ section .text
         ;   Label: LAB_004943fe
     INC AL                              ; 00494400
     AND EAX,0xff                        ; 00494402
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00494407 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 00494407 | g_UCHAR_ARRAY_006074b8
     JZ 0x00494461                       ; 0049440e
         ;   XREF to: 00494461 (CONDITIONAL_JUMP)  ; LAB_00494461
     PUSH EDI                            ; 00494410
@@ -3870,16 +3870,16 @@ section .text
     MOV ESI,0x5bfd60                    ; 00494425 | = "Error parsing testActorBool parameters."
         ;   Label: LAB_00494425
     MOV EDI,0x1c734b0                   ; 0049442a
-    PUSH EDI                            ; 0049442f | DAT_01c734b0
+    PUSH EDI                            ; 0049442f | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 00494430 | = "Error parsing testActorBool parameters." | s_Error_parsing_testActorB_005bfd60+2
         ;   Label: LAB_00494430
-    MOV byte ptr [EDI],AL               ; 00494432 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 00494432 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 00494434
     JZ 0x00494448                       ; 00494436
         ;   XREF to: 00494448 (CONDITIONAL_JUMP)  ; LAB_00494448
     MOV AL,byte ptr [ESI + 0x1]         ; 00494438 | s_Error_parsing_testActorB_005bfd60+1 | s_Error_parsing_testActorB_005bfd60+3
     ADD ESI,0x2                         ; 0049443b
-    MOV byte ptr [EDI + 0x1],AL         ; 0049443e | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 0049443e | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00494441
     CMP AL,0x0                          ; 00494444
     JNZ 0x00494430                      ; 00494446
@@ -3921,7 +3921,7 @@ section .text
         ;   Label: LAB_0049448f
     INC DL                              ; 00494492
     AND EDX,0xff                        ; 00494494
-    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049449a | DAT_006074b8
+    TEST byte ptr [EDX + 0x6074b8],0x2  ; 0049449a | g_UCHAR_ARRAY_006074b8
     JNZ 0x004944df                      ; 004944a1
         ;   XREF to: 004944df (CONDITIONAL_JUMP)  ; LAB_004944df
     MOV EAX,dword ptr [ESP + 0x10a4]    ; 004944a3
@@ -3933,7 +3933,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 004944b8
     INC AL                              ; 004944ba
     AND EAX,0xff                        ; 004944bc
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004944c1 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 004944c1 | g_UCHAR_ARRAY_006074b8
     JZ 0x004944e7                       ; 004944c8
         ;   XREF to: 004944e7 (CONDITIONAL_JUMP)  ; LAB_004944e7
     PUSH ESI                            ; 004944ca
@@ -3954,7 +3954,7 @@ section .text
         ;   XREF to: 0049448f (CONDITIONAL_JUMP)  ; LAB_0049448f
     JMP 0x004944a3                      ; 004944e5
         ;   XREF to: 004944a3 (UNCONDITIONAL_JUMP)  ; LAB_004944a3
-    MOV ESI,dword ptr [0x005fbaf4]      ; 004944e7 | DAT_005fbaf4
+    MOV ESI,dword ptr [0x005fbaf4]      ; 004944e7 | g_INT_005fbaf4
         ;   Label: LAB_004944e7
     XOR ECX,ECX                         ; 004944ed
     XOR EDI,EDI                         ; 004944ef
@@ -3999,14 +3999,14 @@ section .text
     TEST EAX,EAX                        ; 00494562
     JZ 0x004945d3                       ; 00494564
         ;   XREF to: 004945d3 (CONDITIONAL_JUMP)  ; LAB_004945d3
-    CMP EAX,dword ptr [0x005df604]      ; 00494566 | DAT_005df604
+    CMP EAX,dword ptr [0x005df604]      ; 00494566 | g_CDemonActor_PTR_005df604
     JNZ 0x004945df                      ; 0049456c
         ;   XREF to: 004945df (CONDITIONAL_JUMP)  ; LAB_004945df
     XOR ESI,ESI                         ; 0049456e
     MOV dword ptr [ESP + 0xfbc],ESI     ; 00494570
     JMP 0x004923ec                      ; 00494577
         ;   XREF to: 004923ec (UNCONDITIONAL_JUMP)  ; LAB_004923ec
-    MOV EDX,dword ptr [0x005fbaf4]      ; 0049457c | DAT_005fbaf4
+    MOV EDX,dword ptr [0x005fbaf4]      ; 0049457c | g_INT_005fbaf4
         ;   Label: LAB_0049457c
     INC EDI                             ; 00494582
     ADD ESI,0x48                        ; 00494583
@@ -4026,16 +4026,16 @@ section .text
     ADD ESP,0xc                         ; 004945aa
     LEA ESI,[ESP + 0x30c]               ; 004945ad
     MOV EDI,0x1c734b0                   ; 004945b4
-    PUSH EDI                            ; 004945b9 | DAT_01c734b0
+    PUSH EDI                            ; 004945b9 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 004945ba
         ;   Label: LAB_004945ba
-    MOV byte ptr [EDI],AL               ; 004945bc | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 004945bc | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 004945be
     JZ 0x004945d2                       ; 004945c0
         ;   XREF to: 004945d2 (CONDITIONAL_JUMP)  ; LAB_004945d2
     MOV AL,byte ptr [ESI + 0x1]         ; 004945c2
     ADD ESI,0x2                         ; 004945c5
-    MOV byte ptr [EDI + 0x1],AL         ; 004945c8 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 004945c8 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 004945cb
     CMP AL,0x0                          ; 004945ce
     JNZ 0x004945ba                      ; 004945d0
@@ -4058,16 +4058,16 @@ section .text
     MOV ESI,0x5bfdb6                    ; 004945e9 | = "Invalid meta-function"
         ;   Label: LAB_004945e9
     MOV EDI,0x1c734b0                   ; 004945ee
-    PUSH EDI                            ; 004945f3 | DAT_01c734b0
+    PUSH EDI                            ; 004945f3 | g_CHAR_ARRAY_01c734b0
     MOV AL,byte ptr [ESI]               ; 004945f4 | = "Invalid meta-function" | s_Invalid_meta_function_005bfdb6+2
         ;   Label: LAB_004945f4
-    MOV byte ptr [EDI],AL               ; 004945f6 | DAT_01c734b0 | DAT_01c734b2
+    MOV byte ptr [EDI],AL               ; 004945f6 | g_CHAR_ARRAY_01c734b0 | g_CHAR_ARRAY_01c734b0+2
     CMP AL,0x0                          ; 004945f8
     JZ 0x0049460c                       ; 004945fa
         ;   XREF to: 0049460c (CONDITIONAL_JUMP)  ; LAB_0049460c
     MOV AL,byte ptr [ESI + 0x1]         ; 004945fc | s_Invalid_meta_function_005bfdb6+1 | s_Invalid_meta_function_005bfdb6+3
     ADD ESI,0x2                         ; 004945ff
-    MOV byte ptr [EDI + 0x1],AL         ; 00494602 | DAT_01c734b1 | DAT_01c734b3
+    MOV byte ptr [EDI + 0x1],AL         ; 00494602 | g_CHAR_ARRAY_01c734b0+1 | g_CHAR_ARRAY_01c734b0+3
     ADD EDI,0x2                         ; 00494605
     CMP AL,0x0                          ; 00494608
     JNZ 0x004945f4                      ; 0049460a

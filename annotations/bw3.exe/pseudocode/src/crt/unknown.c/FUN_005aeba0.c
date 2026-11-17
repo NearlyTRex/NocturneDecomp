@@ -13,16 +13,16 @@ void FUN_005aeba0(void)
   char cVar2;
   char cVar3;
   
-  cVar3 = SBORROW1(DAT_006075c1,'\x03');
-  cVar2 = (char)(DAT_006075c1 - 3) < '\0';
-  uVar1 = DAT_006075c1 == 3;
-  if (2 < DAT_006075c1) {
+  cVar3 = SBORROW1(g_BYTE_006075c1,'\x03');
+  cVar2 = (char)(g_BYTE_006075c1 - 3) < '\0';
+  uVar1 = g_BYTE_006075c1 == 3;
+  if (2 < g_BYTE_006075c1) {
     FUN_005b024e(0x80000000,0x4147ffff,0xc0000000,0x4150017e);
     ldexp();
     FUN_005b0454();
     FUN_005b07ae();
     if (!(bool)uVar1 && cVar3 == cVar2) {
-      DAT_00607b5c = DAT_00607b5c | 1;
+      g_BYTE_00607b5c = g_BYTE_00607b5c | 1;
     }
   }
   return;

@@ -13,8 +13,8 @@
 ;   TerminatedCString s_hit_points_3_2f_005ebd06
 ;   TerminatedCString s_stranger_die_wav_005ebd19
 ;   TerminatedCString s_stranger_hit_wav_005ebd2c
-;   undefined4 DAT_005ebd41
-;   undefined4 DAT_005fc1c8
+;   float g_FLOAT_005ebd41 = 50
+;   float g_FLOAT_005fc1c8 = 2
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
@@ -84,7 +84,7 @@ section .text
     CMP dword ptr [ESI + 0x30],0xb      ; 0056d0b9
     JG 0x0056d2d2                       ; 0056d0bd
         ;   XREF to: 0056d2d2 (CONDITIONAL_JUMP)  ; LAB_0056d2d2
-    FLD float ptr [0x005fc1c8]          ; 0056d0c3 | DAT_005fc1c8
+    FLD float ptr [0x005fc1c8]          ; 0056d0c3 | g_FLOAT_005fc1c8
         ;   Label: LAB_0056d0c3
     PUSH 0x5ebced                       ; 0056d0c9 | = "CBugs"
     FSTP float ptr [EBX + 0x10a60]      ; 0056d0ce
@@ -291,7 +291,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 0056d30c
     ADD ESP,0x8                         ; 0056d30f
     FLD float ptr [EBP + -0x4]          ; 0056d312
-    FCOMP float ptr [0x005ebd41]        ; 0056d315 | DAT_005ebd41
+    FCOMP float ptr [0x005ebd41]        ; 0056d315 | g_FLOAT_005ebd41
     FNSTSW AX                           ; 0056d31b
     SAHF                                ; 0056d31d
     SETBE AL                            ; 0056d31e

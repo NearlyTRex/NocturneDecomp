@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00460fa0(CFileFinder *this_ptr,byte *param_2)
 
 {
@@ -29,8 +27,8 @@ void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00460fa0(CFileFinder
     *(byte *)&this_ptr->attributes = (byte)this_ptr->attributes | 8;
   }
   if ((*(int *)(param_2 + 0x1c) != 0) || (0x7fffffff < *(uint *)(param_2 + 0x20))) {
-    _DAT_01d046a0 = "..\\engine\\dosio.c";
-    _DAT_01d046a4 = 0x2ff;
+    g_CHAR_PTR_01d046a0 = "..\\engine\\dosio.c";
+    g_INT_01d046a4 = 0x2ff;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CFileFinder::convertStruct - file too big!");
   }
   this_ptr->file_size = *(uint *)(param_2 + 0x20);

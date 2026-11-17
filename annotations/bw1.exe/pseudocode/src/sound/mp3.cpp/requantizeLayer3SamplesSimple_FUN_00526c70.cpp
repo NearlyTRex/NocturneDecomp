@@ -63,11 +63,9 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_00526c70(int *scale
               iVar4 = 1 << (bVar2 - 1 & 0x1f);
               *local_18 = (float)(iVar4 - 1U & *local_30) / (float)iVar4 + *local_18;
               *local_18 = *local_18 +
-                          (float)*(double *)
-                                  (&DAT_0061f9b8 + local_58[*local_20].requantization_index * 8);
+                          (float)g_DOUBLE_ARRAY_0061f9b8[local_58[*local_20].requantization_index];
               *local_18 = *local_18 *
-                          (float)*(double *)
-                                  (&DAT_0061f930 + local_58[*local_20].requantization_index * 8);
+                          (float)g_DOUBLE_ARRAY_0061f930[local_58[*local_20].requantization_index];
             }
             local_28 = local_28 + 0x20;
             local_34 = local_34 + 0x60;

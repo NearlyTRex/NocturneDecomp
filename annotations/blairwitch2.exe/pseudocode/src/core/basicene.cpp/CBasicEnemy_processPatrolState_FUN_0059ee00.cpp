@@ -27,7 +27,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processPatrolState_FUN_0059ee00(CBasi
   if ((CWayPoint *)this_ptr->patrol_goal == (CWayPoint *)0x0) {
     class_name_hash = g_CPatrolPointClassInfo.name_hash;
     pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
-                       (0x01D182F0,(this_ptr->base).patrol_name_pattern);
+                       (g_CDemonMission_PTR_00618170,(this_ptr->base).patrol_name_pattern);
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar3,class_name_hash);
     this_ptr->patrol_goal = pCVar3;
     if (pCVar3 == (CDemonActor *)0x0) {

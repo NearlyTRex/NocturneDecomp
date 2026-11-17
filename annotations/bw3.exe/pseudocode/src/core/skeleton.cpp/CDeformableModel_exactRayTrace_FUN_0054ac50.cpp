@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0054ac50(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags)
 
 {
   ushort *puVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   int iVar3;
   int iVar4;
   byte bVar5;
@@ -20,7 +18,7 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0054ac50(CDef
   CDemonTriangle local_84;
   float local_4c;
   float local_48 [4];
-  uint local_38;
+  float local_38;
   int local_34;
   byte *local_30;
   int local_2c;
@@ -31,24 +29,24 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0054ac50(CDef
   float local_18;
   
   bVar5 = 0;
-  if ((DAT_0272229c & 1) == 0) {
-    DAT_0272229c = DAT_0272229c | 1;
-    __arrinit(&DAT_0271383c,5000,&g_CVectorTypeInfo);
+  if ((g_UCHAR_0272229c & 1) == 0) {
+    g_UCHAR_0272229c = g_UCHAR_0272229c | 1;
+    __arrinit(g_CVector3f_ARRAY_0271383c,5000,&g_CVectorTypeInfo);
   }
   if (5000 < this_ptr->vertex_count[lod_index]) {
-    _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-    _DAT_01d71de4 = 0x6e2;
+    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+    g_INT_01d71de4 = 0x6e2;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::exactRayTrace - too many vertices!");
   }
-  pfVar2 = (float *)&DAT_0271383c;
+  pCVar2 = g_CVector3f_ARRAY_0271383c;
   iVar4 = 0;
   if (0 < this_ptr->vertex_count[lod_index]) {
     do {
-      *pfVar2 = (float)skinned_vertices->x * _DAT_005e4760;
-      pfVar2[1] = (float)skinned_vertices->y * _DAT_005e4760;
-      pfVar2[2] = (float)skinned_vertices->z * _DAT_005e4760;
+      pCVar2->x = (float)skinned_vertices->x * 0.00390625f;
+      pCVar2->y = (float)skinned_vertices->y * 0.00390625f;
+      pCVar2->z = (float)skinned_vertices->z * 0.00390625f;
       iVar4 = iVar4 + 1;
-      pfVar2 = pfVar2 + 3;
+      pCVar2 = pCVar2 + 1;
       skinned_vertices = skinned_vertices + 1;
     } while (iVar4 < this_ptr->vertex_count[lod_index]);
   }
@@ -68,9 +66,8 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0054ac50(CDef
         do {
           puVar1 = (ushort *)(*(int *)(local_2c + 0x7c) + local_1c);
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_00478a50
-                    (&local_84,(CVector3f *)(&DAT_0271383c + (uint)*puVar1 * 0xc),
-                     (CVector3f *)(&DAT_0271383c + (uint)puVar1[1] * 0xc),
-                     (CVector3f *)(&DAT_0271383c + (uint)puVar1[2] * 0xc));
+                    (&local_84,g_CVector3f_ARRAY_0271383c + *puVar1,
+                     g_CVector3f_ARRAY_0271383c + puVar1[1],g_CVector3f_ARRAY_0271383c + puVar1[2]);
           local_18 = core_dtri_cpp_rayTriangleIntersection_FUN_00478ac0
                                (&local_84,ray_origin,ray_direction);
           if (((local_18 < local_20) && (0.0 <= local_18)) && (local_18 <= 1.0)) {
@@ -83,13 +80,13 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0054ac50(CDef
             local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
                  local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
             if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count) {
-              _DAT_0272af48 = local_48[2];
-              _DAT_0272af4c = local_48[3];
-              _DAT_0272af50 = local_38;
+              g_CVector3f_0272af48.x = local_48[2];
+              g_CVector3f_0272af48.y = local_48[3];
+              g_CVector3f_0272af48.z = local_38;
             }
-            _DAT_0272af44 = local_24;
-            _DAT_0272af54 = lod_index;
-            _DAT_0272af58 = iVar3;
+            g_INT_0272af44 = local_24;
+            g_INT_0272af54 = lod_index;
+            g_INT_0272af58 = iVar3;
           }
           local_1c = local_1c + 0x12;
           iVar3 = iVar3 + 1;

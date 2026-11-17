@@ -14,9 +14,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005e5e9c
 ;   TerminatedCString s_CDemonSet_popRaytraceSta_005e5eb1
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_02093614
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_INT_02093614
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -30,13 +30,13 @@ section .text
     PUSH ESI                            ; 00537c41
     PUSH EDI                            ; 00537c42
     MOV EBX,dword ptr [ESP + 0x10]      ; 00537c43
-    CMP dword ptr [0x02093614],0x1      ; 00537c47 | DAT_02093614
+    CMP dword ptr [0x02093614],0x1      ; 00537c47 | g_INT_02093614
     JL 0x00537db5                       ; 00537c4e
         ;   XREF to: 00537db5 (CONDITIONAL_JUMP)  ; LAB_00537db5
-    MOV EDI,dword ptr [0x02093614]      ; 00537c54 | DAT_02093614
+    MOV EDI,dword ptr [0x02093614]      ; 00537c54 | g_INT_02093614
         ;   Label: LAB_00537c54
     DEC EDI                             ; 00537c5a
-    MOV dword ptr [0x02093614],EDI      ; 00537c5b | DAT_02093614
+    MOV dword ptr [0x02093614],EDI      ; 00537c5b | g_INT_02093614
     LEA EAX,[EDI*0x4 + 0x0]             ; 00537c61
     ADD EAX,EDI                         ; 00537c68
     MOV EDI,0x2093618                   ; 00537c6a
@@ -152,8 +152,8 @@ section .text
         ;   Label: LAB_00537db5
     MOV ESI,0x42a                       ; 00537dba
     PUSH 0x5e5eb1                       ; 00537dbf | = "CDemonSet::popRaytraceState - stack e..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00537dc4 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00537dca | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00537dc4 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00537dca | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00537dd0
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00537dd5

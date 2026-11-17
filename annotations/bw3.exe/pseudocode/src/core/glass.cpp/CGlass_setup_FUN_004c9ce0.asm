@@ -7,13 +7,13 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4518
-;   undefined4 DAT_005c4520
-;   undefined4 DAT_005c4528
-;   undefined4 DAT_005c4530
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005c4518 = 0.5
+;   double g_DOUBLE_005c4520 = 0.5
+;   double g_DOUBLE_005c4528 = 16515072
+;   double g_DOUBLE_005c4530 = 131072
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
@@ -44,7 +44,7 @@ section .text
     ADD ESP,0x4                         ; 004c9cf8
     LEA EAX,[EBX + 0x164]               ; 004c9cfb
     PUSH EAX                            ; 004c9d01
-    MOV EDX,dword ptr [0x005f2afc]      ; 004c9d02 | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 004c9d02 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004c9d08
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004c9d09
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 004c9ec1 (CONDITIONAL_JUMP)  ; LAB_004c9ec1
     FLD float ptr [EBX + 0x158]         ; 004c9d1f
         ;   Label: LAB_004c9d1f
-    FMUL double ptr [0x005c4520]        ; 004c9d25 | DAT_005c4520
+    FMUL double ptr [0x005c4520]        ; 004c9d25 | g_DOUBLE_005c4520
     CALL crt_math.c_round_FUN_005a3120  ; 004c9d2b
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x124]       ; 004c9d30
@@ -68,7 +68,7 @@ section .text
     MOV dword ptr [EBX + 0xb5c],0x4     ; 004c9d4a
     FLD float ptr [EBX + 0x15c]         ; 004c9d54
         ;   Label: LAB_004c9d54
-    FMUL double ptr [0x005c4520]        ; 004c9d5a | DAT_005c4520
+    FMUL double ptr [0x005c4520]        ; 004c9d5a | g_DOUBLE_005c4520
     CALL crt_math.c_round_FUN_005a3120  ; 004c9d60
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x124]       ; 004c9d65
@@ -102,8 +102,8 @@ section .text
     MOV EDX,0x5c445c                    ; 004c9dd2
     MOV ECX,0x86                        ; 004c9dd7
     PUSH 0x5c446e                       ; 004c9ddc
-    MOV dword ptr [0x01d71de0],EDX      ; 004c9de1 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004c9de7 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004c9de1 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004c9de7 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004c9ded
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004c9df2
@@ -133,7 +133,7 @@ section .text
     IMUL EDX,EDI,0xc                    ; 004c9e60
     FLD float ptr [EBX + 0x158]         ; 004c9e63
     FCHS                                ; 004c9e69
-    FMUL double ptr [0x005c4520]        ; 004c9e6b | DAT_005c4520
+    FMUL double ptr [0x005c4520]        ; 004c9e6b | g_DOUBLE_005c4520
     MOV EAX,dword ptr [ESP + 0x10c]     ; 004c9e71
     XOR ESI,ESI                         ; 004c9e78
     FSTP float ptr [ESP + 0xa8]         ; 004c9e7a
@@ -160,7 +160,7 @@ section .text
     MOV dword ptr [ESP + 0xf4],ESI      ; 004c9eca
     MOV dword ptr [ESP + 0xf0],ESI      ; 004c9ed1
     FLD float ptr [EBX + 0x158]         ; 004c9ed8
-    FMUL float ptr [0x005c4518]         ; 004c9ede | DAT_005c4518
+    FMUL float ptr [0x005c4518]         ; 004c9ede | g_FLOAT_005c4518
     LEA EAX,[ESP + 0xf0]                ; 004c9ee4
     LEA EDI,[ESP + 0x54]                ; 004c9eeb
     PUSH EAX                            ; 004c9eef
@@ -377,10 +377,10 @@ section .text
     FILD dword ptr [EBX + 0xb5c]        ; 004ca1da
     FILD dword ptr [ESP + 0x124]        ; 004ca1e0
     FDIVRP                              ; 004ca1e7
-    FLD double ptr [0x005c4528]         ; 004ca1e9 | DAT_005c4528
+    FLD double ptr [0x005c4528]         ; 004ca1e9 | g_DOUBLE_005c4528
     FXCH                                ; 004ca1ef
     FMUL ST1                            ; 004ca1f1
-    FLD double ptr [0x005c4530]         ; 004ca1f3 | DAT_005c4530
+    FLD double ptr [0x005c4530]         ; 004ca1f3 | g_DOUBLE_005c4530
     FXCH                                ; 004ca1f9
     FADD ST0,ST1                        ; 004ca1fb
     CALL crt_math.c_round_FUN_005a3120  ; 004ca1fd

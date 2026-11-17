@@ -18,10 +18,10 @@
 ;   TerminatedCString s_f_f_f_n_005dcc7f
 ;   TerminatedCString s_n_005dcc91
 ;   TerminatedCString s_Error_parsing_vector_loc_005dcc9f
-;   undefined4 DAT_005ffcb8
+;   CDemonActor* g_CDemonActor_PTR_005ffcb8 = 0fffffff
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   undefined4 g_CDemonActorClassInfo.name_hash
-;   undefined4 DAT_01c56ed0
+;   char[256] g_CHAR_ARRAY_01c56ed0
 ;
 ; Called Functions:
 ;   core_event.cpp_resolveActorByName_FUN_004a1370
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 004a159d (CONDITIONAL_JUMP)  ; LAB_004a159d
     MOV EAX,dword ptr [ESP + 0x64]      ; 004a154c
     ADD dword ptr [ESI],EAX             ; 004a1550
-    CMP EDX,dword ptr [0x005ffcb8]      ; 004a1552 | DAT_005ffcb8
+    CMP EDX,dword ptr [0x005ffcb8]      ; 004a1552 | g_CDemonActor_PTR_005ffcb8
     JZ 0x004a15aa                       ; 004a1558
         ;   XREF to: 004a15aa (CONDITIONAL_JUMP)  ; LAB_004a15aa
     ADD EDX,0x20                        ; 004a155a
@@ -125,7 +125,7 @@ section .text
     RET                                 ; 004a157d
     PUSH 0x5dcc9f                       ; 004a157e | = "Error parsing vector location"
         ;   Label: LAB_004a157e
-    PUSH 0x1c56ed0                      ; 004a1583 | DAT_01c56ed0
+    PUSH 0x1c56ed0                      ; 004a1583 | g_CHAR_ARRAY_01c56ed0
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004a1588
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004a158d

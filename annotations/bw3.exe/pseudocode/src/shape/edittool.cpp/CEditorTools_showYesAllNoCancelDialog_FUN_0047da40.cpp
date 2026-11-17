@@ -18,9 +18,9 @@ int __cdecl shape_edittool_cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0047da4
   _vsprintf((char *)aCStack_418,format,(va_list_t)&puStack_8);
   puStack_8 = (byte *)0x0;
   shape_edittool_cpp_CStrList_ctor_FUN_00481f20(&CStack_18);
-  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,(char *)0x5bcea5);
+  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,"^Yes");
   shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,"Yes to ^All");
-  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,(char *)0x5bceb6);
+  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,"^No");
   shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,"^Cancel");
   iVar1 = shape_edittool_cpp_showMultiChoiceDialog_FUN_0047d230(aCStack_418,(char *)&CStack_18,0);
   if (iVar1 == 0) {

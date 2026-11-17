@@ -21,7 +21,7 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005b38c0(char *buffer
   DStack_10 = 0x100;
   GetUserNameA(buffer,&DStack_10);
   if ((buffer[0x100] == '\0') &&
-     (pcVar2 = getenv("@COMPUTERNAME" + 1), pcVar2 != (char *)0x0)) {
+     (pcVar2 = getenv("COMPUTERNAME"), pcVar2 != (char *)0x0)) {
     do {
       cVar1 = *pcVar2;
       *lpBuffer = cVar1;

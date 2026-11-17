@@ -18,10 +18,10 @@
 ;   engine_mini3d.cpp_userClipPolyList_FUN_00517660 at 00517bae
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01d227e0
-;   undefined4 DAT_02c83470
+;   int g_INT_01c50948
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   float* g_FLOAT_PTR_01d227e0
+;   void* g_PTR_02c83470
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_beginTriangleBatch_FUN_005155d0
@@ -43,10 +43,10 @@ section .text
     CMP dword ptr [ESP + 0x20],0x0      ; 00515aef
     JNZ 0x00515b71                      ; 00515af4
         ;   XREF to: 00515b71 (CONDITIONAL_JUMP)  ; LAB_00515b71
-    CMP dword ptr [0x02c83470],0x0      ; 00515afa | DAT_02c83470
+    CMP dword ptr [0x02c83470],0x0      ; 00515afa | g_PTR_02c83470
     JZ 0x00515b0c                       ; 00515b01
         ;   XREF to: 00515b0c (CONDITIONAL_JUMP)  ; LAB_00515b0c
-    CMP dword ptr [0x01c50948],0x0      ; 00515b03 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 00515b03 | g_INT_01c50948
     JNZ 0x00515b54                      ; 00515b0a
         ;   XREF to: 00515b54 (CONDITIONAL_JUMP)  ; LAB_00515b54
     XOR ESI,ESI                         ; 00515b0c
@@ -58,7 +58,7 @@ section .text
         ;   Label: LAB_00515b12
     MOV AX,word ptr [EBX + 0x4]         ; 00515b14
     MOV EDX,EAX                         ; 00515b18
-    MOV EAX,[0x01d227e0]                ; 00515b1a | DAT_01d227e0
+    MOV EAX,[0x01d227e0]                ; 00515b1a | g_FLOAT_PTR_01d227e0
     SHL EDX,0x6                         ; 00515b1f
     ADD EDX,EAX                         ; 00515b22
     PUSH EDX                            ; 00515b24
@@ -86,15 +86,15 @@ section .text
     POP ESI                             ; 00515b51
     POP EBX                             ; 00515b52
     RET                                 ; 00515b53
-    MOV EAX,[0x01c51d14]                ; 00515b54 | DAT_01c51d14
+    MOV EAX,[0x01c51d14]                ; 00515b54 | g_BIT_INTEGER32_01c51d14
         ;   Label: LAB_00515b54
     PUSH EAX                            ; 00515b59
     PUSH EDI                            ; 00515b5a
     PUSH EBX                            ; 00515b5b
     PUSH ESI                            ; 00515b5c
-    MOV EDX,dword ptr [0x01d227e0]      ; 00515b5d | DAT_01d227e0
+    MOV EDX,dword ptr [0x01d227e0]      ; 00515b5d | g_FLOAT_PTR_01d227e0
     PUSH EDX                            ; 00515b63
-    CALL dword ptr [0x02c83470]         ; 00515b64 | DAT_02c83470
+    CALL dword ptr [0x02c83470]         ; 00515b64 | g_PTR_02c83470
     ADD ESP,0x14                        ; 00515b6a
     POP EDI                             ; 00515b6d
     POP ESI                             ; 00515b6e
@@ -113,7 +113,7 @@ section .text
         ;   Label: LAB_00515b80
     MOV AX,word ptr [EBX + 0x4]         ; 00515b82
     MOV EDX,EAX                         ; 00515b86
-    MOV EAX,[0x01d227e0]                ; 00515b88 | DAT_01d227e0
+    MOV EAX,[0x01d227e0]                ; 00515b88 | g_FLOAT_PTR_01d227e0
     SHL EDX,0x6                         ; 00515b8d
     ADD EDX,EAX                         ; 00515b90
     PUSH EDX                            ; 00515b92

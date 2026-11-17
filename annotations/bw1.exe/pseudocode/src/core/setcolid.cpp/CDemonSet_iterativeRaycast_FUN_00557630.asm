@@ -59,8 +59,8 @@
 ;   core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0 at 0058e4d1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0e25
-;   undefined4 DAT_005f0e29
+;   float g_FLOAT_005f0e25 = 0.1000000
+;   float g_FLOAT_005f0e29 = -32
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00557300
@@ -95,7 +95,7 @@ section .text
     MOV ESI,0xbe23d70a                  ; 0055766a
     MOV dword ptr [ESP + 0xa0],EDX      ; 0055766f
     MOV dword ptr [ESP + 0x9c],ESI      ; 00557676
-    FLD float ptr [0x005f0e25]          ; 0055767d | DAT_005f0e25
+    FLD float ptr [0x005f0e25]          ; 0055767d | g_FLOAT_005f0e25
         ;   Label: LAB_0055767d
     FLD float ptr [ESP + 0x90]          ; 00557683
     FMUL ST1                            ; 0055768a
@@ -208,7 +208,7 @@ section .text
     FXCH                                ; 005577ea
     FMUL ST1                            ; 005577ec
     FLD ST1                             ; 005577ee
-    FMUL float ptr [0x005f0e29]         ; 005577f0 | DAT_005f0e29
+    FMUL float ptr [0x005f0e29]         ; 005577f0 | g_FLOAT_005f0e29
     FLD float ptr [ESP + 0x90]          ; 005577f6
     FLD float ptr [ESP + 0x94]          ; 005577fd
     FLD float ptr [ESP + 0x98]          ; 00557804
@@ -252,7 +252,7 @@ section .text
     RET                                 ; 00557889
     FLD float ptr [ESP + 0x8]           ; 0055788a
         ;   Label: LAB_0055788a
-    FMUL float ptr [0x005f0e25]         ; 0055788e | DAT_005f0e25
+    FMUL float ptr [0x005f0e25]         ; 0055788e | g_FLOAT_005f0e25
     FADD float ptr [ESP + 0xac]         ; 00557894
     FSTP float ptr [ESP + 0xa4]         ; 0055789b
     MOV EAX,dword ptr [ESP + 0xa4]      ; 005578a2

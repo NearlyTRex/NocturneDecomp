@@ -11,9 +11,9 @@
 ;   support_trisock.cpp_dnsRequestCancel_FUN_0059de90 at 0059de97
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c8ae58
-;   undefined4 DAT_02c8ae5c
-;   undefined4 DAT_02c8ae60
+;   HANDLE g_HANDLE_02c8ae58
+;   void* g_PTR_02c8ae5c
+;   void* g_PTR_02c8ae60
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_releaseMutex_FUN_005b37b0
@@ -27,34 +27,34 @@ section .text
         ;   Label: support_trisock.cpp_dnsRequestUnlink_FUN_0059dfc0
     PUSH EBP                            ; 0059dfc1
     MOV EBX,dword ptr [ESP + 0xc]       ; 0059dfc2
-    MOV EDX,dword ptr [0x02c8ae58]      ; 0059dfc6 | DAT_02c8ae58
+    MOV EDX,dword ptr [0x02c8ae58]      ; 0059dfc6 | g_HANDLE_02c8ae58
     TEST EDX,EDX                        ; 0059dfcc
     JNZ 0x0059e016                      ; 0059dfce
         ;   XREF to: 0059e016 (CONDITIONAL_JUMP)  ; LAB_0059e016
-    CMP EBX,dword ptr [0x02c8ae60]      ; 0059dfd0 | DAT_02c8ae60
+    CMP EBX,dword ptr [0x02c8ae60]      ; 0059dfd0 | g_PTR_02c8ae60
         ;   Label: LAB_0059dfd0
     JNZ 0x0059dfe2                      ; 0059dfd6
         ;   XREF to: 0059dfe2 (CONDITIONAL_JUMP)  ; LAB_0059dfe2
     PUSH EDI                            ; 0059dfd8
     XOR EDI,EDI                         ; 0059dfd9
-    MOV dword ptr [0x02c8ae60],EDI      ; 0059dfdb | DAT_02c8ae60
+    MOV dword ptr [0x02c8ae60],EDI      ; 0059dfdb | g_PTR_02c8ae60
     POP EDI                             ; 0059dfe1
-    MOV EBP,dword ptr [0x02c8ae5c]      ; 0059dfe2 | DAT_02c8ae5c
+    MOV EBP,dword ptr [0x02c8ae5c]      ; 0059dfe2 | g_PTR_02c8ae5c
         ;   Label: LAB_0059dfe2
-    MOV EAX,0x2c8ae5c                   ; 0059dfe8 | DAT_02c8ae5c
+    MOV EAX,0x2c8ae5c                   ; 0059dfe8 | g_PTR_02c8ae5c
     TEST EBP,EBP                        ; 0059dfed
     JZ 0x0059dfff                       ; 0059dfef
         ;   XREF to: 0059dfff (CONDITIONAL_JUMP)  ; LAB_0059dfff
-    MOV ECX,dword ptr [EAX]             ; 0059dff1 | DAT_02c8ae5c
+    MOV ECX,dword ptr [EAX]             ; 0059dff1 | g_PTR_02c8ae5c
         ;   Label: LAB_0059dff1
     CMP EBX,ECX                         ; 0059dff3
     JNZ 0x0059e021                      ; 0059dff5
         ;   XREF to: 0059e021 (CONDITIONAL_JUMP)  ; LAB_0059e021
     MOV EDX,dword ptr [ECX + 0x3c0]     ; 0059dff7
-    MOV dword ptr [EAX],EDX             ; 0059dffd | DAT_02c8ae5c
+    MOV dword ptr [EAX],EDX             ; 0059dffd | g_PTR_02c8ae5c
     MOV dword ptr [EBX + 0x3c0],0x0     ; 0059dfff
         ;   Label: LAB_0059dfff
-    MOV EBX,dword ptr [0x02c8ae58]      ; 0059e009 | DAT_02c8ae58
+    MOV EBX,dword ptr [0x02c8ae58]      ; 0059e009 | g_HANDLE_02c8ae58
     TEST EBX,EBX                        ; 0059e00f
     JNZ 0x0059e034                      ; 0059e011
         ;   XREF to: 0059e034 (CONDITIONAL_JUMP)  ; LAB_0059e034
@@ -68,7 +68,7 @@ section .text
     ADD ESP,0x4                         ; 0059e01c
     JMP 0x0059dfd0                      ; 0059e01f
         ;   XREF to: 0059dfd0 (UNCONDITIONAL_JUMP)  ; LAB_0059dfd0
-    MOV EAX,dword ptr [EAX]             ; 0059e021 | DAT_02c8ae5c
+    MOV EAX,dword ptr [EAX]             ; 0059e021 | g_PTR_02c8ae5c
         ;   Label: LAB_0059e021
     MOV EDX,dword ptr [EAX + 0x3c0]     ; 0059e023
     ADD EAX,0x3c0                       ; 0059e029

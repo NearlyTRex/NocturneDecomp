@@ -7,13 +7,13 @@
 ; CConstructBone * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007f8edc
+;   CDemonActorType g_CDemonActorType_007f8edc
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x7f8edc                    ; 00444540 | DAT_007f8edc
+    MOV EAX,0x7f8edc                    ; 00444540 | g_CDemonActorType_007f8edc
         ;   Label: core_construc.cpp_CConstructBone_getActorType_FUN_00444540
     RET                                 ; 00444545
 

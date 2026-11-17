@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   depth_reciprocal
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152bc1c
-;   undefined4 DAT_0152bc20
-;   undefined4 DAT_0152bc24
-;   undefined4 DAT_0152bc28
+;   int g_INT_0152bc1c
+;   int g_INT_0152bc20
+;   int g_INT_0152bc24
+;   int g_INT_0152bc28
 ;
 ; *****************************************************************************
 
@@ -23,16 +23,16 @@ section .text
     PUSH EBP                            ; 00451eb1
     SUB ESP,0x10                        ; 00451eb2
     MOV ESI,dword ptr [ESP + 0x24]      ; 00451eb5
-    CMP dword ptr [0x0152bc1c],0x0      ; 00451eb9 | DAT_0152bc1c
+    CMP dword ptr [0x0152bc1c],0x0      ; 00451eb9 | g_INT_0152bc1c
     JZ 0x00451f76                       ; 00451ec0
         ;   XREF to: 00451f76 (CONDITIONAL_JUMP)  ; LAB_00451f76
     PUSH EDI                            ; 00451ec6
     PUSH EBX                            ; 00451ec7
-    MOV EDI,dword ptr [0x0152bc20]      ; 00451ec8 | DAT_0152bc20
+    MOV EDI,dword ptr [0x0152bc20]      ; 00451ec8 | g_INT_0152bc20
     XOR ECX,ECX                         ; 00451ece
-    MOV EBX,dword ptr [0x0152bc28]      ; 00451ed0 | DAT_0152bc28
+    MOV EBX,dword ptr [0x0152bc28]      ; 00451ed0 | g_INT_0152bc28
     MOV dword ptr [ESP + 0x8],ECX       ; 00451ed6
-    MOV ECX,dword ptr [0x0152bc24]      ; 00451eda | DAT_0152bc24
+    MOV ECX,dword ptr [0x0152bc24]      ; 00451eda | g_INT_0152bc24
     TEST ESI,ESI                        ; 00451ee0
     JZ 0x00451f7d                       ; 00451ee2
         ;   XREF to: 00451f7d (CONDITIONAL_JUMP)  ; LAB_00451f7d

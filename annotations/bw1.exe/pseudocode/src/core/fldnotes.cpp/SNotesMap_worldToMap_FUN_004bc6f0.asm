@@ -18,7 +18,7 @@
 ;   core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004bc450 at 004bc494
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f650
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   undefined4 DAT_01d2c904
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     TEST EDX,EDX                        ; 004bc702
     JL 0x004bc751                       ; 004bc704
         ;   XREF to: 004bc751 (CONDITIONAL_JUMP)  ; LAB_004bc751
-    MOV EAX,[0x0061f650]                ; 004bc706 | DAT_0061f650
+    MOV EAX,[0x0061f650]                ; 004bc706 | g_CDemonMission_PTR_0061f650
     CMP EDX,dword ptr [EAX + 0x4]       ; 004bc70b | DAT_01d2c904
     JGE 0x004bc751                      ; 004bc70e
         ;   XREF to: 004bc751 (CONDITIONAL_JUMP)  ; LAB_004bc751
@@ -53,7 +53,7 @@ section .text
     LEA EBX,[EBP + 0xa0]                ; 004bc71c
     MOV EDX,dword ptr [EDI + 0xc]       ; 004bc722
         ;   Label: LAB_004bc722
-    MOV EAX,[0x0061f650]                ; 004bc725 | DAT_0061f650
+    MOV EAX,[0x0061f650]                ; 004bc725 | g_CDemonMission_PTR_0061f650
     SHL EDX,0x8                         ; 004bc72a
     ADD EAX,0x8                         ; 004bc72d
     PUSH EBX                            ; 004bc730

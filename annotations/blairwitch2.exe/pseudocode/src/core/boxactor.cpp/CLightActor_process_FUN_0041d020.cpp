@@ -66,9 +66,9 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041d020(CLightActor *thi
       (this_ptr->light).base.base.position.f.z = afStack_18[1];
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&CStack_94,(CVector3f *)&DAT_0265370c,&(this_ptr->light_orient).vec);
+              (&CStack_94,&g_CVector3f_0265370c,&(this_ptr->light_orient).vec);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&CStack_64,(CVector3f *)&DAT_0265370c,&(this_ptr->base).base.orient.vec);
+              (&CStack_64,&g_CVector3f_0265370c,&(this_ptr->base).base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&CStack_94,&CStack_64,&CStack_f4);
     pCVar5 = &CStack_f4;
     pCVar6 = &CStack_c4;

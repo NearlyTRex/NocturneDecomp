@@ -30,21 +30,21 @@
 ;   engine_matrix.c_buildRotationMatrix_FUN_004e8a10 at 004e8cf4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dc78e
-;   undefined4 DAT_005dc796
-;   undefined4 DAT_01c38b9c
-;   undefined4 DAT_01c38ba0
-;   undefined4 DAT_01c38ba4
-;   undefined4 DAT_01c38ba8
-;   undefined4 DAT_01c38bac
-;   undefined4 DAT_01c38bb0
-;   undefined4 DAT_01c38bb4
-;   undefined4 DAT_01c38bb8
-;   undefined4 DAT_01c38bbc
-;   undefined4 DAT_01d04fb8
-;   undefined4 DAT_01d04fbc
-;   undefined4 DAT_01d04fc0
-;   undefined4 DAT_01d04fc4
+;   double g_DOUBLE_005dc78e = 0.0000152587890625
+;   double g_DOUBLE_005dc796 = 65536
+;   int g_INT_01c38b9c
+;   int g_INT_01c38ba0
+;   int g_INT_01c38ba4
+;   int g_INT_01c38ba8
+;   int g_INT_01c38bac
+;   int g_INT_01c38bb0
+;   int g_INT_01c38bb4
+;   int g_INT_01c38bb8
+;   int g_INT_01c38bbc
+;   int g_INT_01d04fb8
+;   int g_INT_01d04fbc
+;   int g_INT_01d04fc0
+;   int g_INT_01d04fc4
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -59,28 +59,28 @@ section .text
     MOV EBP,ESP                         ; 004e8731
     SUB ESP,0x54                        ; 004e8733
     AND ESP,0xfffffff8                  ; 004e8736
-    FILD dword ptr [0x01c38b9c]         ; 004e8739 | DAT_01c38b9c
-    FMUL double ptr [0x005dc78e]        ; 004e873f | DAT_005dc78e
-    FILD dword ptr [0x01c38ba0]         ; 004e8745 | DAT_01c38ba0
-    FMUL double ptr [0x005dc78e]        ; 004e874b | DAT_005dc78e
-    FILD dword ptr [0x01c38ba4]         ; 004e8751 | DAT_01c38ba4
-    FMUL double ptr [0x005dc78e]        ; 004e8757 | DAT_005dc78e
-    FILD dword ptr [0x01c38ba8]         ; 004e875d | DAT_01c38ba8
-    FMUL double ptr [0x005dc78e]        ; 004e8763 | DAT_005dc78e
-    FILD dword ptr [0x01c38bac]         ; 004e8769 | DAT_01c38bac
-    FMUL double ptr [0x005dc78e]        ; 004e876f | DAT_005dc78e
-    FILD dword ptr [0x01c38bb0]         ; 004e8775 | DAT_01c38bb0
-    FMUL double ptr [0x005dc78e]        ; 004e877b | DAT_005dc78e
-    FILD dword ptr [0x01c38bb4]         ; 004e8781 | DAT_01c38bb4
-    FMUL double ptr [0x005dc78e]        ; 004e8787 | DAT_005dc78e
+    FILD dword ptr [0x01c38b9c]         ; 004e8739 | g_INT_01c38b9c
+    FMUL double ptr [0x005dc78e]        ; 004e873f | g_DOUBLE_005dc78e
+    FILD dword ptr [0x01c38ba0]         ; 004e8745 | g_INT_01c38ba0
+    FMUL double ptr [0x005dc78e]        ; 004e874b | g_DOUBLE_005dc78e
+    FILD dword ptr [0x01c38ba4]         ; 004e8751 | g_INT_01c38ba4
+    FMUL double ptr [0x005dc78e]        ; 004e8757 | g_DOUBLE_005dc78e
+    FILD dword ptr [0x01c38ba8]         ; 004e875d | g_INT_01c38ba8
+    FMUL double ptr [0x005dc78e]        ; 004e8763 | g_DOUBLE_005dc78e
+    FILD dword ptr [0x01c38bac]         ; 004e8769 | g_INT_01c38bac
+    FMUL double ptr [0x005dc78e]        ; 004e876f | g_DOUBLE_005dc78e
+    FILD dword ptr [0x01c38bb0]         ; 004e8775 | g_INT_01c38bb0
+    FMUL double ptr [0x005dc78e]        ; 004e877b | g_DOUBLE_005dc78e
+    FILD dword ptr [0x01c38bb4]         ; 004e8781 | g_INT_01c38bb4
+    FMUL double ptr [0x005dc78e]        ; 004e8787 | g_DOUBLE_005dc78e
     FXCH ST6                            ; 004e878d
     FSTP float ptr [ESP + 0x48]         ; 004e878f
-    FILD dword ptr [0x01c38bb8]         ; 004e8793 | DAT_01c38bb8
-    FMUL double ptr [0x005dc78e]        ; 004e8799 | DAT_005dc78e
+    FILD dword ptr [0x01c38bb8]         ; 004e8793 | g_INT_01c38bb8
+    FMUL double ptr [0x005dc78e]        ; 004e8799 | g_DOUBLE_005dc78e
     FXCH ST2                            ; 004e879f
     FSTP float ptr [ESP + 0x3c]         ; 004e87a1
-    FILD dword ptr [0x01c38bbc]         ; 004e87a5 | DAT_01c38bbc
-    FMUL double ptr [0x005dc78e]        ; 004e87ab | DAT_005dc78e
+    FILD dword ptr [0x01c38bbc]         ; 004e87a5 | g_INT_01c38bbc
+    FMUL double ptr [0x005dc78e]        ; 004e87ab | g_DOUBLE_005dc78e
     FXCH                                ; 004e87b1
     FSTP float ptr [ESP + 0x34]         ; 004e87b3
     FLD float ptr [ESP + 0x3c]          ; 004e87b7
@@ -119,52 +119,52 @@ section .text
     FMUL float ptr [ESP + 0x38]         ; 004e8829
     FXCH                                ; 004e882d
     FSUBP ST6,ST0                       ; 004e882f
-    MOV EAX,[0x01c38b9c]                ; 004e8831 | DAT_01c38b9c
+    MOV EAX,[0x01c38b9c]                ; 004e8831 | g_INT_01c38b9c
     FLD float ptr [ESP + 0x50]          ; 004e8836
     FMUL ST6                            ; 004e883a
-    MOV [0x01d04fe0],EAX                ; 004e883c | DAT_01d04fe0
+    MOV [0x01d04fe0],EAX                ; 004e883c | g_CMatrix3x3i_01d04fe0
     FSUBP ST3,ST0                       ; 004e8841
-    MOV EAX,[0x01c38ba0]                ; 004e8843 | DAT_01c38ba0
+    MOV EAX,[0x01c38ba0]                ; 004e8843 | g_INT_01c38ba0
     FLD float ptr [ESP + 0x44]          ; 004e8848
     FMUL float ptr [ESP + 0x40]         ; 004e884c
-    MOV [0x01d04fe4],EAX                ; 004e8850 | DAT_01d04fe4
-    MOV EAX,[0x01c38ba4]                ; 004e8855 | DAT_01c38ba4
+    MOV [0x01d04fe4],EAX                ; 004e8850 | g_CMatrix3x3i_01d04fe0.m[0].y
+    MOV EAX,[0x01c38ba4]                ; 004e8855 | g_INT_01c38ba4
     FSTP float ptr [ESP + 0x18]         ; 004e885a
     FLD float ptr [ESP + 0x3c]          ; 004e885e
     FMUL float ptr [ESP + 0x38]         ; 004e8862
-    MOV [0x01d04fe8],EAX                ; 004e8866 | DAT_01d04fe8
+    MOV [0x01d04fe8],EAX                ; 004e8866 | g_CMatrix3x3i_01d04fe0.m[0].z
     FSUBR float ptr [ESP + 0x18]        ; 004e886b
-    MOV EAX,[0x01c38ba8]                ; 004e886f | DAT_01c38ba8
+    MOV EAX,[0x01c38ba8]                ; 004e886f | g_INT_01c38ba8
     FSTP float ptr [ESP + 0x30]         ; 004e8874
     FLD float ptr [ESP + 0x4c]          ; 004e8878
     FMUL float ptr [ESP + 0x30]         ; 004e887c
-    MOV [0x01d04fec],EAX                ; 004e8880 | DAT_01d04fec
+    MOV [0x01d04fec],EAX                ; 004e8880 | g_CMatrix3x3i_01d04fe0.m[1].x
     FXCH ST2                            ; 004e8885
     FSUBP ST4,ST0                       ; 004e8887
-    MOV EAX,[0x01c38bac]                ; 004e8889 | DAT_01c38bac
+    MOV EAX,[0x01c38bac]                ; 004e8889 | g_INT_01c38bac
     FSUBP ST4,ST0                       ; 004e888e
-    MOV [0x01d04ff0],EAX                ; 004e8890 | DAT_01d04ff0
-    MOV EAX,[0x01c38bb0]                ; 004e8895 | DAT_01c38bb0
+    MOV [0x01d04ff0],EAX                ; 004e8890 | g_CMatrix3x3i_01d04fe0.m[1].y
+    MOV EAX,[0x01c38bb0]                ; 004e8895 | g_INT_01c38bb0
     FXCH ST2                            ; 004e889a
     FCHS                                ; 004e889c
-    MOV [0x01d04ff4],EAX                ; 004e889e | DAT_01d04ff4
-    MOV EAX,[0x01c38bb4]                ; 004e88a3 | DAT_01c38bb4
+    MOV [0x01d04ff4],EAX                ; 004e889e | g_CMatrix3x3i_01d04fe0.m[1].z
+    MOV EAX,[0x01c38bb4]                ; 004e88a3 | g_INT_01c38bb4
     FXCH ST3                            ; 004e88a8
     FSTP float ptr [ESP + 0x28]         ; 004e88aa
-    MOV [0x01d04ff8],EAX                ; 004e88ae | DAT_01d04ff8
-    MOV EAX,[0x01c38bb8]                ; 004e88b3 | DAT_01c38bb8
+    MOV [0x01d04ff8],EAX                ; 004e88ae | g_CMatrix3x3i_01d04fe0.m[2].x
+    MOV EAX,[0x01c38bb8]                ; 004e88b3 | g_INT_01c38bb8
     FXCH ST2                            ; 004e88b8
     FSTP float ptr [ESP + 0x24]         ; 004e88ba
-    MOV [0x01d04ffc],EAX                ; 004e88be | DAT_01d04ffc
+    MOV [0x01d04ffc],EAX                ; 004e88be | g_CMatrix3x3i_01d04fe0.m[2].y
     FXCH ST2                            ; 004e88c3
     FCHS                                ; 004e88c5
     FSTP float ptr [ESP + 0x20]         ; 004e88c7
-    MOV EAX,[0x01c38bbc]                ; 004e88cb | DAT_01c38bbc
+    MOV EAX,[0x01c38bbc]                ; 004e88cb | g_INT_01c38bbc
     FADDP                               ; 004e88d0
-    MOV [0x01d05000],EAX                ; 004e88d2 | DAT_01d05000
+    MOV [0x01d05000],EAX                ; 004e88d2 | g_CMatrix3x3i_01d04fe0.m[2].z
     FSTP float ptr [ESP]                ; 004e88d7
     FLD float ptr [ESP]                 ; 004e88da
-    FDIVR double ptr [0x005dc796]       ; 004e88dd | DAT_005dc796
+    FDIVR double ptr [0x005dc796]       ; 004e88dd | g_DOUBLE_005dc796
     FLD float ptr [ESP + 0x48]          ; 004e88e3
     FLD ST0                             ; 004e88e7
     FMUL float ptr [ESP + 0x40]         ; 004e88e9
@@ -219,13 +219,13 @@ section .text
     FXCH ST6                            ; 004e8979
     CALL crt_math.c_round_FUN_005b7ff0  ; 004e897b
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
-    FISTP dword ptr [0x01d04fb8]        ; 004e8980 | DAT_01d04fb8
+    FISTP dword ptr [0x01d04fb8]        ; 004e8980 | g_INT_01d04fb8
     FLD float ptr [ESP + 0x8]           ; 004e8986
     FMUL float ptr [ESP]                ; 004e898a
     FXCH ST3                            ; 004e898d
     CALL crt_math.c_round_FUN_005b7ff0  ; 004e898f
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
-    FISTP dword ptr [0x01d04fbc]        ; 004e8994 | DAT_01d04fbc
+    FISTP dword ptr [0x01d04fbc]        ; 004e8994 | g_INT_01d04fbc
     FLD float ptr [ESP + 0x10]          ; 004e899a
     FMUL float ptr [ESP]                ; 004e899e
     FXCH ST2                            ; 004e89a1
@@ -250,17 +250,17 @@ section .text
     CALL crt_math.c_round_FUN_005b7ff0  ; 004e89cd
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST4                            ; 004e89d2
-    FISTP dword ptr [0x01d04fc0]        ; 004e89d4 | DAT_01d04fc0
+    FISTP dword ptr [0x01d04fc0]        ; 004e89d4 | g_INT_01d04fc0
     FXCH ST4                            ; 004e89da
-    FISTP dword ptr [0x01d04fc4]        ; 004e89dc | DAT_01d04fc4
+    FISTP dword ptr [0x01d04fc4]        ; 004e89dc | g_INT_01d04fc4
     FXCH ST3                            ; 004e89e2
-    FISTP dword ptr [0x01d04fc8]        ; 004e89e4 | DAT_01d04fc8
+    FISTP dword ptr [0x01d04fc8]        ; 004e89e4 | g_INT_01d04fc8
     FXCH ST3                            ; 004e89ea
-    FISTP dword ptr [0x01d04fcc]        ; 004e89ec | DAT_01d04fcc
+    FISTP dword ptr [0x01d04fcc]        ; 004e89ec | g_INT_01d04fcc
     FXCH ST2                            ; 004e89f2
-    FISTP dword ptr [0x01d04fd0]        ; 004e89f4 | DAT_01d04fd0
-    FISTP dword ptr [0x01d04fd4]        ; 004e89fa | DAT_01d04fd4
-    FISTP dword ptr [0x01d04fd8]        ; 004e8a00 | DAT_01d04fd8
+    FISTP dword ptr [0x01d04fd0]        ; 004e89f4 | g_INT_01d04fd0
+    FISTP dword ptr [0x01d04fd4]        ; 004e89fa | g_INT_01d04fd4
+    FISTP dword ptr [0x01d04fd8]        ; 004e8a00 | g_INT_01d04fd8
     MOV ESP,EBP                         ; 004e8a06
     POP EBP                             ; 004e8a08
     RET                                 ; 004e8a09

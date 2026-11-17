@@ -13,9 +13,9 @@ void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004e25c0(int light_level)
     if (0xffff < light_level) {
       light_level = 0xffff;
     }
-    DAT_00617e40 = light_level;
+    g_INT_00617e40 = light_level;
     return;
   }
-  DAT_00617e40 = 0;
+  g_INT_00617e40 = 0;
   return;
 }

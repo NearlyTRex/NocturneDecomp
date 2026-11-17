@@ -14,15 +14,15 @@
 ;   core_styldemo.cpp_CStylerDemon_processDamage_FUN_005a0330 at 005a03f0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bfdf0
+;   TerminatedCString s_wt_005bfdf0
 ;   TerminatedCString s_events_txt_005bfdf3
-;   undefined4 DAT_005bfdfe
+;   TerminatedCString s_s_005bfdfe
 ;   TerminatedCString s_core_event_cpp_005bfe02
 ;   TerminatedCString s_Too_many_persistent_even_005bfe14
 ;   TerminatedCString s_core_event_cpp_005bfe42
 ;   TerminatedCString s_Event_name_s_too_long_005bfe54
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findPersistentEvent_FUN_00494d30
@@ -90,8 +90,8 @@ section .text
     MOV EDI,0x5bfe42                    ; 00494753 | = "..\\core\\event.cpp"
     MOV EAX,0xdf0                       ; 00494758
     PUSH 0x5bfe54                       ; 0049475d | = "Event name %s too long!"
-    MOV dword ptr [0x01d71de0],EDI      ; 00494762 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00494768 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00494762 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00494768 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0049476d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00494772
@@ -132,7 +132,7 @@ section .text
     POP ESI                             ; 004947c7
     POP EBX                             ; 004947c8
     RET                                 ; 004947c9
-    PUSH 0x5bfdf0                       ; 004947ca | DAT_005bfdf0
+    PUSH 0x5bfdf0                       ; 004947ca | = "wt"
         ;   Label: LAB_004947ca
     PUSH 0x5bfdf3                       ; 004947cf | = "events.txt"
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 004947d4
@@ -149,7 +149,7 @@ section .text
         ;   XREF to: 00494810 (CONDITIONAL_JUMP)  ; LAB_00494810
     PUSH ESI                            ; 004947ee
         ;   Label: LAB_004947ee
-    PUSH 0x5bfdfe                       ; 004947ef | DAT_005bfdfe
+    PUSH 0x5bfdfe                       ; 004947ef | = "%s\n"
     PUSH EDI                            ; 004947f4
     INC EBX                             ; 004947f5
     ADD ESI,0x20                        ; 004947f6
@@ -171,8 +171,8 @@ section .text
         ;   Label: LAB_00494819
     MOV ESI,0xdea                       ; 0049481e
     PUSH 0x5bfe14                       ; 00494823 | = "Too many persistent events - check ev..."
-    MOV dword ptr [0x01d71de0],EBX      ; 00494828 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0049482e | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 00494828 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0049482e | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00494834
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00494839

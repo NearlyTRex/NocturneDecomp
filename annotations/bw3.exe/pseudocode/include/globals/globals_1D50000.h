@@ -6,6 +6,9 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CIni.h"
+#include "types/structs/SInventoryItemInfo.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D50000
@@ -16,11 +19,47 @@ extern CDemonActorType g_CGraveClassInfo;
 extern CDemonActorType g_CGunClassInfo;
 extern CDemonActorType g_CHealClassInfo;
 extern CDemonActorType g_CHealthItemClassInfo;
+extern CDemonActorType g_CDemonActorType_01d5b9b8;
 extern CDemonActorType g_CHeroClassInfo;
+extern CDemonActorType g_CDemonActorType_01d5ba74;
 extern CDemonActorType g_CHolycrossClassInfo;
 extern CDemonActorType g_CHotDemonClassInfo;
+extern CDemonActorType g_CDemonActorType_01d5bb58;
+extern CDemonActorType g_CDemonActorType_01d5bb94;
+extern CDemonActorType g_CDemonActorType_01d5bbd0;
 extern CDemonActorType g_CImpClassInfo;
 
 // CGround
 extern CGround g_CGroundInstance;
+
+// CHero*[4]
+extern CHero* g_CHero_PTR_ARRAY_01d5ba04[4];
+
+// CIni
+extern CIni g_CIni_01d5bc78;
+
+// SInventoryItemInfo[100]
+extern SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01d5dc90[100];
+
+// char
+extern char g_CHAR_01d5be88;
+extern char g_CHAR_01d5c888;
+extern char g_CHAR_01d5d288;
+
+// char[256]
+extern char g_CHAR_ARRAY_01d5bc80[256];
+extern char g_CHAR_ARRAY_01d5bd80[256];
+
+// float
+extern float g_FLOAT_01d5be80;
+
+// int
+extern int g_INT_01d5ba00;
+extern int g_INT_01d5ba14;
+extern int g_INT_01d5bc7c;
+extern int g_INT_01d5dc88;
+
+// int[12]
+extern int g_INT_ARRAY_01d5baec[12];
+extern int g_INT_ARRAY_01d5bc0c[12];
 

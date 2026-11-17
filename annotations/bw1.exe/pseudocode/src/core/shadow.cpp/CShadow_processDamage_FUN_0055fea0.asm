@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ShotShadowWithLead_005f178f
 ;   TerminatedCString s_ShadowDead_005f17a2
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_01d06ab4
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -136,7 +136,7 @@ section .text
     CMP EAX,0x10                        ; 0055ffbf
     JZ 0x00560025                       ; 0055ffc2
         ;   XREF to: 00560025 (CONDITIONAL_JUMP)  ; LAB_00560025
-    MOV EAX,[0x01d06ab4]                ; 0055ffc4 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0055ffc4 | g_INT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0055ffc9
     ADD EAX,0x20                        ; 0055ffd0
     PUSH EAX                            ; 0055ffd3
@@ -169,7 +169,7 @@ section .text
         ;   XREF to: 0055f540 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540(CShadow * this_ptr)
     ADD ESP,0x4                         ; 0056000e
     PUSH 0x5f17a2                       ; 00560011 | = "ShadowDead"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00560016 | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00560016 | g_CEventList_PTR_0061b4d0
     PUSH EDI                            ; 0056001c
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0056001d
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -189,7 +189,7 @@ section .text
     RET                                 ; 00560036
     PUSH 0x5f178f                       ; 00560037 | = "ShotShadowWithLead"
         ;   Label: LAB_00560037
-    MOV EAX,[0x0061b4d0]                ; 0056003c | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 0056003c | g_CEventList_PTR_0061b4d0
     PUSH EAX                            ; 00560041
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00560042
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

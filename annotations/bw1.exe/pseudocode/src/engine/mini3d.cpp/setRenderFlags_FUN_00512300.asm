@@ -10,7 +10,7 @@
 ;   engine_font.cpp_CBitFont_flushAccelBatch_FUN_004c2750 at 004c27ac
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d224b8
+;   int g_INT_01d224b8
 ;
 ; *****************************************************************************
 
@@ -18,6 +18,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00512300
         ;   Label: engine_mini3d.cpp_setRenderFlags_FUN_00512300
-    MOV [0x01d224b8],EAX                ; 00512304 | DAT_01d224b8
+    MOV [0x01d224b8],EAX                ; 00512304 | g_INT_01d224b8
     RET                                 ; 00512309
 

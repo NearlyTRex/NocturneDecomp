@@ -7,7 +7,7 @@
 ; CSpotView *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
@@ -26,7 +26,7 @@ section .text
     PUSH EDI                            ; 00561d92
     SUB ESP,0x7c                        ; 00561d93
     MOV EBX,dword ptr [ESP + 0x8c]      ; 00561d96
-    MOV EDX,dword ptr [0x0060b280]      ; 00561d9d | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 00561d9d | g_CDemonRenderer_PTR_0060b280
     PUSH 0x41e00000                     ; 00561da3
     PUSH EDX                            ; 00561da8
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 00561da9
@@ -78,7 +78,7 @@ section .text
     FLD float ptr [EBX + 0x18]          ; 00561e32
     LEA EDI,[ESP + 0x2c]                ; 00561e35
     LEA ESI,[ESP + 0x68]                ; 00561e39
-    MOV EBX,dword ptr [0x0060b280]      ; 00561e3d | DAT_0060b280
+    MOV EBX,dword ptr [0x0060b280]      ; 00561e3d | g_CDemonRenderer_PTR_0060b280
     FADD float ptr [ESP + 0x50]         ; 00561e43
     FXCH ST2                            ; 00561e47
     FADD float ptr [ESP + 0x54]         ; 00561e49
@@ -97,7 +97,7 @@ section .text
     ADD ESP,0x8                         ; 00561e6a
     LEA EAX,[ESP + 0x34]                ; 00561e6d
     PUSH EAX                            ; 00561e71
-    MOV ESI,dword ptr [0x0060b280]      ; 00561e72 | DAT_0060b280
+    MOV ESI,dword ptr [0x0060b280]      ; 00561e72 | g_CDemonRenderer_PTR_0060b280
     PUSH ESI                            ; 00561e78
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030 ; 00561e79
         ;   XREF to: 0046b030 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030(CDemonRenderer * this_ptr, CVector3f * euler_angles)

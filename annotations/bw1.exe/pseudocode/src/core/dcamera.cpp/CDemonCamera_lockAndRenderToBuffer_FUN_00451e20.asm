@@ -12,10 +12,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_005d7897
 ;   TerminatedCString s_Unable_to_lock_hold_buff_005d78ab
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c83370
+;   int g_INT_0061b49c = 0xc8
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_INT_02c83370
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0
@@ -33,7 +33,7 @@ section .text
     PUSH ESI                            ; 00451e20
         ;   Label: core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20
     PUSH EDI                            ; 00451e21
-    CMP dword ptr [0x0061b49c],0x1e0    ; 00451e22 | DAT_0061b49c
+    CMP dword ptr [0x0061b49c],0x1e0    ; 00451e22 | g_INT_0061b49c
     JG 0x00451e61                       ; 00451e2c
         ;   XREF to: 00451e61 (CONDITIONAL_JUMP)  ; LAB_00451e61
     CALL engine_special.cpp_lockFrame_FUN_00581f50 ; 00451e2e
@@ -43,14 +43,14 @@ section .text
     PUSH ESI                            ; 00451e37
     CALL core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0 ; 00451e38
         ;   XREF to: 00453ed0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0(CDemonCamera * this_ptr)
-    MOV EDI,dword ptr [0x0061b49c]      ; 00451e3d | DAT_0061b49c
+    MOV EDI,dword ptr [0x0061b49c]      ; 00451e3d | g_INT_0061b49c
     ADD ESP,0x4                         ; 00451e43
     CMP EDI,0x1e0                       ; 00451e46
     JLE 0x00451e91                      ; 00451e4c
         ;   XREF to: 00451e91 (CONDITIONAL_JUMP)  ; LAB_00451e91
     CALL engine_special.cpp_unlockHoldBuffer_FUN_00582b90 ; 00451e4e
         ;   XREF to: 00582b90 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockHoldBuffer_FUN_00582b90()
-    CMP dword ptr [0x02c83370],0x0      ; 00451e53 | DAT_02c83370
+    CMP dword ptr [0x02c83370],0x0      ; 00451e53 | g_INT_02c83370
     JNZ 0x00451ea7                      ; 00451e5a
         ;   XREF to: 00451ea7 (CONDITIONAL_JUMP)  ; LAB_00451ea7
     POP EDI                             ; 00451e5c
@@ -67,8 +67,8 @@ section .text
     MOV ECX,0x5d7897                    ; 00451e6b | = "..\\core\\dcamera.cpp"
     MOV EBX,0xe84                       ; 00451e70
     PUSH 0x5d78ab                       ; 00451e75 | = "Unable to lock hold buffer.   Please ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00451e7a | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00451e80 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00451e7a | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00451e80 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00451e86
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00451e8b
@@ -80,7 +80,7 @@ section .text
     CALL engine_special.cpp_unlockFrame_FUN_00581fa0 ; 00451e93
         ;   XREF to: 00581fa0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00581fa0(int clear_lock_flag)
     ADD ESP,0x4                         ; 00451e98
-    CMP dword ptr [0x02c83370],0x0      ; 00451e9b | DAT_02c83370
+    CMP dword ptr [0x02c83370],0x0      ; 00451e9b | g_INT_02c83370
     JNZ 0x00451ea7                      ; 00451ea2
         ;   XREF to: 00451ea7 (CONDITIONAL_JUMP)  ; LAB_00451ea7
     POP EDI                             ; 00451ea4

@@ -11,10 +11,10 @@
 ;   core_game.cpp_CGame_renderAlphaFade_FUN_004bb620 at 004bb872
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35e6c
-;   undefined4 DAT_01c38b54
-;   undefined4 DAT_01c38b58
+;   int g_INT_006141c0 = 0x8
+;   void* g_PTR_01c35e6c
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   int g_INT_01c38b58
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
@@ -67,9 +67,9 @@ section .text
         ;   XREF to: 0046ae03 (CONDITIONAL_JUMP)  ; LAB_0046ae03
     XOR EDX,EDX                         ; 0046adc3
     MOV EAX,0x46e936                    ; 0046adc5
-    MOV dword ptr [0x01c38b54],EDX      ; 0046adca | DAT_01c38b54
-    MOV dword ptr [0x01c38b58],EDX      ; 0046add0 | DAT_01c38b58
-    MOV [0x01c35e6c],EAX                ; 0046add6 | DAT_01c35e6c
+    MOV dword ptr [0x01c38b54],EDX      ; 0046adca | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x01c38b58],EDX      ; 0046add0 | g_INT_01c38b58
+    MOV [0x01c35e6c],EAX                ; 0046add6 | g_PTR_01c35e6c
     LEA EAX,[ESI + 0x18]                ; 0046addb
         ;   Label: LAB_0046addb
     PUSH EAX                            ; 0046adde
@@ -96,19 +96,19 @@ section .text
         ;   XREF to: 0046adec (CONDITIONAL_JUMP)  ; LAB_0046adec
     JMP 0x0046ad86                      ; 0046ae01
         ;   XREF to: 0046ad86 (UNCONDITIONAL_JUMP)  ; LAB_0046ad86
-    CMP dword ptr [0x006141c0],0x20     ; 0046ae03 | DAT_006141c0
+    CMP dword ptr [0x006141c0],0x20     ; 0046ae03 | g_INT_006141c0
         ;   Label: LAB_0046ae03
     JNZ 0x0046ae2b                      ; 0046ae0a
         ;   XREF to: 0046ae2b (CONDITIONAL_JUMP)  ; LAB_0046ae2b
-    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046ae0c | DAT_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046ae0c | g_PTR_01c35e6c
     XOR EDI,EDI                         ; 0046ae16
         ;   Label: LAB_0046ae16
     MOV EBX,0x327                       ; 0046ae18
-    MOV dword ptr [0x01c38b58],EDI      ; 0046ae1d | DAT_01c38b58
-    MOV dword ptr [0x01c38b54],EBX      ; 0046ae23 | DAT_01c38b54
+    MOV dword ptr [0x01c38b58],EDI      ; 0046ae1d | g_INT_01c38b58
+    MOV dword ptr [0x01c38b54],EBX      ; 0046ae23 | g_BIT_INTEGER32_01c38b54
     JMP 0x0046addb                      ; 0046ae29
         ;   XREF to: 0046addb (UNCONDITIONAL_JUMP)  ; LAB_0046addb
-    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046ae2b | DAT_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046ae2b | g_PTR_01c35e6c
         ;   Label: LAB_0046ae2b
     JMP 0x0046ae16                      ; 0046ae35
         ;   XREF to: 0046ae16 (UNCONDITIONAL_JUMP)  ; LAB_0046ae16

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004ce8a0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type)
 
 {
@@ -15,11 +13,11 @@ void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004ce8a0(CGore *this_pt
   int iVar1;
   
   if (blood_type != BLOOD_TYPE_NONE) {
-    iVar1 = _DAT_01d22eb0 + 1;
-    this_ptr_00 = g_BloodParticles + _DAT_01d22eb0;
-    _DAT_01d22eb0 = iVar1;
+    iVar1 = g_INT_01d22eb0 + 1;
+    this_ptr_00 = g_BloodParticles + g_INT_01d22eb0;
+    g_INT_01d22eb0 = iVar1;
     if (0xff < iVar1) {
-      _DAT_01d22eb0 = 0;
+      g_INT_01d22eb0 = 0;
     }
     core_gore_cpp_CBloodParticle_setup_FUN_004ccac0(this_ptr_00,position,velocity,blood_type);
   }

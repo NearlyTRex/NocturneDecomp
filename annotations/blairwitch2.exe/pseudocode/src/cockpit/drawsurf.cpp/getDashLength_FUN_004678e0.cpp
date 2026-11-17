@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl cockpit_drawsurf_cpp_getDashLength_FUN_004678e0(void)
 
 {
-  return _DAT_0060b270;
+  return g_INT_0060b270;
 }

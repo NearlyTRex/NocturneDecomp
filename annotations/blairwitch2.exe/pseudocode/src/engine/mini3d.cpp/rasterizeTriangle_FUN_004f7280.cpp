@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_rasterizeTriangle_FUN_004f7280(float *v0,float *v1,float *v2)
 
 {
@@ -48,53 +46,53 @@ void __cdecl engine_mini3d_cpp_rasterizeTriangle_FUN_004f7280(float *v0,float *v
   SSoftwareEdge *local_14;
   
   if ((v2[5] - v1[5]) * (v1[6] - v0[6]) < (v1[5] - v0[5]) * (v2[6] - v1[6])) {
-    if (_DAT_01c37788 == 0) {
-      _DAT_01d17fbc = _DAT_01c37788;
-      _DAT_01d17ab4 = _DAT_01c37788;
-      _DAT_01d17fb8 = 0x4b0;
+    if (g_INT_01c37788 == 0) {
+      g_INT_01d17fbc = g_INT_01c37788;
+      g_INT_01d17ab4 = g_INT_01c37788;
+      g_INT_01d17fb8 = 0x4b0;
       engine_mini3d_cpp_setupScanEdge_FUN_004f6df0(v0,v1);
       engine_mini3d_cpp_setupScanEdge_FUN_004f6df0(v1,v2);
       engine_mini3d_cpp_setupScanEdge_FUN_004f6df0(v2,v0);
-      right_vertex = (SSoftwareEdge *)&DAT_01d17ab8;
+      right_vertex = &g_SSoftwareEdge_01d17ab8;
       iVar5 = 0;
-      if (0 < _DAT_01d17ab4) {
+      if (0 < g_INT_01d17ab4) {
         do {
-          if ((_DAT_01d17fb8 == (right_vertex->base).y_min) &&
+          if ((g_INT_01d17fb8 == (right_vertex->base).y_min) &&
              (right_vertex != (SSoftwareEdge *)0x0)) goto LAB_004f7794;
           iVar5 = iVar5 + 1;
           right_vertex = right_vertex + 1;
-        } while (iVar5 < _DAT_01d17ab4);
+        } while (iVar5 < g_INT_01d17ab4);
       }
       right_vertex = (SSoftwareEdge *)0x0;
 LAB_004f7794:
       if (right_vertex != (SSoftwareEdge *)0x0) {
         iVar5 = 0;
-        local_14 = (SSoftwareEdge *)&DAT_01d17ab8;
-        if (0 < _DAT_01d17ab4) {
+        local_14 = &g_SSoftwareEdge_01d17ab8;
+        if (0 < g_INT_01d17ab4) {
           do {
-            if ((_DAT_01d17fb8 == (local_14->base).y_min) && (local_14 != right_vertex))
+            if ((g_INT_01d17fb8 == (local_14->base).y_min) && (local_14 != right_vertex))
             goto LAB_004f77d1;
             iVar5 = iVar5 + 1;
             local_14 = local_14 + 1;
-          } while (iVar5 < _DAT_01d17ab4);
+          } while (iVar5 < g_INT_01d17ab4);
         }
         local_14 = (SSoftwareEdge *)0x0;
 LAB_004f77d1:
         if (local_14 != (SSoftwareEdge *)0x0) {
-          local_18 = _DAT_01d17fb8;
+          local_18 = g_INT_01d17fb8;
           do {
-            iVar5 = _DAT_01d17ab4;
+            iVar5 = g_INT_01d17ab4;
             if ((right_vertex->base).y_max <= local_18) {
               (right_vertex->base).y_min = -1;
               iVar6 = 0;
-              right_vertex = (SSoftwareEdge *)&DAT_01d17ab8;
+              right_vertex = &g_SSoftwareEdge_01d17ab8;
               if (0 < iVar5) {
                 do {
                   if ((local_18 == (right_vertex->base).y_min) && (right_vertex != local_14))
                   goto LAB_004f7833;
                   iVar6 = iVar6 + 1;
                   right_vertex = right_vertex + 1;
-                } while (iVar6 < _DAT_01d17ab4);
+                } while (iVar6 < g_INT_01d17ab4);
               }
               right_vertex = (SSoftwareEdge *)0x0;
 LAB_004f7833:
@@ -102,10 +100,10 @@ LAB_004f7833:
                 return;
               }
             }
-            iVar5 = _DAT_01d17ab4;
+            iVar5 = g_INT_01d17ab4;
             if ((local_14->base).y_max <= local_18) {
               (local_14->base).y_min = -1;
-              local_14 = (SSoftwareEdge *)&DAT_01d17ab8;
+              local_14 = &g_SSoftwareEdge_01d17ab8;
               iVar6 = 0;
               if (0 < iVar5) {
                 do {
@@ -113,7 +111,7 @@ LAB_004f7833:
                   goto LAB_004f7885;
                   iVar6 = iVar6 + 1;
                   local_14 = local_14 + 1;
-                } while (iVar6 < _DAT_01d17ab4);
+                } while (iVar6 < g_INT_01d17ab4);
               }
               local_14 = (SSoftwareEdge *)0x0;
 LAB_004f7885:
@@ -121,8 +119,8 @@ LAB_004f7885:
                 return;
               }
             }
-            if (_DAT_01c38b40 == 0) {
-              if (DAT_006141c0 == 0x20) {
+            if (g_INT_01c38b40 == 0) {
+              if (g_INT_006141c0 == 0x20) {
                 engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3
                           (local_14,right_vertex,local_18);
               }
@@ -131,7 +129,7 @@ LAB_004f7885:
                           (local_14,right_vertex,local_18);
               }
             }
-            else if (DAT_006141c0 == 0x20) {
+            else if (g_INT_006141c0 == 0x20) {
               engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c
                         (local_14,right_vertex,local_18);
             }
@@ -175,68 +173,72 @@ LAB_004f7885:
     }
     else {
       local_b4.projected_vertex.transformed_x =
-           engine_mini3d_cpp_roundFloat_FUN_004f7260(*v0 * _DAT_005ddee4);
+           engine_mini3d_cpp_roundFloat_FUN_004f7260(*v0 * 256.0f);
       local_b4.projected_vertex.transformed_y =
-           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[1] * _DAT_005ddee4);
+           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[1] * 256.0f);
       local_b4.projected_vertex.transformed_z =
-           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[2] * _DAT_005ddee4);
+           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[2] * 256.0f);
       local_b4.projected_vertex.inv_z =
-           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[3] * _DAT_005ddee8);
+           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[3] * 8388607.0f);
       local_b4.projected_vertex.screen_x =
-           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[5] * _DAT_005ddeec);
+           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[5] * 65536.0f);
       local_b4.projected_vertex.screen_y =
-           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[6] * _DAT_005ddeec);
-      local_b4.u = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[7] * _DAT_005ddee4 * _DAT_005ddeec);
-      local_b4.v = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[8] * _DAT_005ddee4 * _DAT_005ddeec);
-      local_b4.r = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[0xb] * _DAT_005ddef0);
-      local_b4.g = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[10] * _DAT_005ddef0);
-      local_b4.b = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[9] * _DAT_005ddef0);
-      if ((DAT_01d09858 & 8) == 0) {
+           engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[6] * 65536.0f);
+      local_b4.u = engine_mini3d_cpp_roundFloat_FUN_004f7260
+                             (v0[7] * 256.0f * 65536.0f);
+      local_b4.v = engine_mini3d_cpp_roundFloat_FUN_004f7260
+                             (v0[8] * 256.0f * 65536.0f);
+      local_b4.r = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[0xb] * 65535.0f);
+      local_b4.g = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[10] * 65535.0f);
+      local_b4.b = engine_mini3d_cpp_roundFloat_FUN_004f7260(v0[9] * 65535.0f);
+      if (((byte)g_INT_01d09858 & 8) == 0) {
         fVar1 = v0[0xc];
       }
       else {
         fVar1 = v0[0xd];
       }
-      local_b4.a = engine_mini3d_cpp_roundFloat_FUN_004f7260(fVar1 * _DAT_005ddef0);
-      local_84 = engine_mini3d_cpp_roundFloat_FUN_004f7260(*v1 * _DAT_005ddee4);
-      local_80 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[1] * _DAT_005ddee4);
-      local_7c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[2] * _DAT_005ddee4);
-      local_78 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[3] * _DAT_005ddee8);
-      local_74 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[5] * _DAT_005ddeec);
-      local_70 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[6] * _DAT_005ddeec);
-      local_6c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[7] * _DAT_005ddee4 * _DAT_005ddeec);
-      local_68 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[8] * _DAT_005ddee4 * _DAT_005ddeec);
-      local_64 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[0xb] * _DAT_005ddef0);
-      local_60 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[10] * _DAT_005ddef0);
-      local_5c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[9] * _DAT_005ddef0);
-      if ((DAT_01d09858 & 8) == 0) {
+      local_b4.a = engine_mini3d_cpp_roundFloat_FUN_004f7260(fVar1 * 65535.0f);
+      local_84 = engine_mini3d_cpp_roundFloat_FUN_004f7260(*v1 * 256.0f);
+      local_80 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[1] * 256.0f);
+      local_7c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[2] * 256.0f);
+      local_78 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[3] * 8388607.0f);
+      local_74 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[5] * 65536.0f);
+      local_70 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[6] * 65536.0f);
+      local_6c = engine_mini3d_cpp_roundFloat_FUN_004f7260
+                           (v1[7] * 256.0f * 65536.0f);
+      local_68 = engine_mini3d_cpp_roundFloat_FUN_004f7260
+                           (v1[8] * 256.0f * 65536.0f);
+      local_64 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[0xb] * 65535.0f);
+      local_60 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[10] * 65535.0f);
+      local_5c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v1[9] * 65535.0f);
+      if (((byte)g_INT_01d09858 & 8) == 0) {
         fVar1 = v1[0xc];
       }
       else {
         fVar1 = v1[0xd];
       }
-      local_58 = engine_mini3d_cpp_roundFloat_FUN_004f7260(fVar1 * _DAT_005ddef0);
-      local_54 = engine_mini3d_cpp_roundFloat_FUN_004f7260(*v2 * _DAT_005ddee4);
-      local_50 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[1] * _DAT_005ddee4);
-      local_4c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[2] * _DAT_005ddee4);
-      local_48 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[3] * _DAT_005ddee8);
-      local_44 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[5] * _DAT_005ddeec);
-      local_40 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[6] * _DAT_005ddeec);
+      local_58 = engine_mini3d_cpp_roundFloat_FUN_004f7260(fVar1 * 65535.0f);
+      local_54 = engine_mini3d_cpp_roundFloat_FUN_004f7260(*v2 * 256.0f);
+      local_50 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[1] * 256.0f);
+      local_4c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[2] * 256.0f);
+      local_48 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[3] * 8388607.0f);
+      local_44 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[5] * 65536.0f);
+      local_40 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[6] * 65536.0f);
       local_3c = engine_mini3d_cpp_roundFloat_FUN_004f7260
-                           (v2[7] * (float)_DAT_005ddef4 * (float)_DAT_005ddefc);
+                           (v2[7] * (float)256 * (float)65536);
       local_38 = engine_mini3d_cpp_roundFloat_FUN_004f7260
-                           (v2[8] * (float)_DAT_005ddef4 * (float)_DAT_005ddefc);
-      local_34 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[0xb] * _DAT_005ddef0);
-      local_30 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[10] * _DAT_005ddef0);
-      local_2c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[9] * _DAT_005ddef0);
-      if ((DAT_01d09858 & 8) == 0) {
+                           (v2[8] * (float)256 * (float)65536);
+      local_34 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[0xb] * 65535.0f);
+      local_30 = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[10] * 65535.0f);
+      local_2c = engine_mini3d_cpp_roundFloat_FUN_004f7260(v2[9] * 65535.0f);
+      if (((byte)g_INT_01d09858 & 8) == 0) {
         fVar1 = v2[0xc];
       }
       else {
         fVar1 = v2[0xd];
       }
-      local_28 = engine_mini3d_cpp_roundFloat_FUN_004f7260(fVar1 * _DAT_005ddef0);
-      engine_special_cpp_drawPolygon_FUN_0055f8f0(&local_b4,3,_DAT_01c38b54);
+      local_28 = engine_mini3d_cpp_roundFloat_FUN_004f7260(fVar1 * 65535.0f);
+      engine_special_cpp_drawPolygon_FUN_0055f8f0(&local_b4,3,g_BIT_INTEGER32_01c38b54.dword);
     }
   }
   return;

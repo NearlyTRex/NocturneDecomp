@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   pressed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70
@@ -43,7 +43,7 @@ section .text
     RET                                 ; 0059ae12
     PUSH 0x5ef3fc                       ; 0059ae13
         ;   Label: LAB_0059ae13
-    MOV EAX,[0x006141f0]                ; 0059ae18 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 0059ae18 | g_CEventList_PTR_006141f0
     PUSH EAX                            ; 0059ae1d
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0059ae1e
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)

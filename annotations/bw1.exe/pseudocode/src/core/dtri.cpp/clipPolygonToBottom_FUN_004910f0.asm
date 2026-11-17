@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_004910e4 = 004911a4
 ;   undefined1* PTR_caseD_3_004910ec = 00491189
-;   undefined4 DAT_01c3d504
-;   undefined4 DAT_01c3d5c8
+;   int g_INT_01c3d504
+;   int g_INT_01c3d5c8
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00490df0
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 004910f4
     SUB ESP,0x8                         ; 004910f6
     AND ESP,0xfffffff8                  ; 004910f9
-    MOV EBX,dword ptr [0x01c3d5c8]      ; 004910fc | DAT_01c3d5c8
+    MOV EBX,dword ptr [0x01c3d5c8]      ; 004910fc | g_INT_01c3d5c8
     MOV EDX,dword ptr [EBP + 0x14]      ; 00491102
     MOV dword ptr [ESP],EDX             ; 00491105
-    MOV EDX,dword ptr [0x01c3d504]      ; 00491108 | DAT_01c3d504
+    MOV EDX,dword ptr [0x01c3d504]      ; 00491108 | g_INT_01c3d504
     XOR EDI,EDI                         ; 0049110e
     TEST EDX,EDX                        ; 00491110
     JLE 0x00491197                      ; 00491112
         ;   XREF to: 00491197 (CONDITIONAL_JUMP)  ; LAB_00491197
     MOV ESI,0x1c3d508                   ; 00491118
-    MOV EAX,[0x01c3d504]                ; 0049111d | DAT_01c3d504
+    MOV EAX,[0x01c3d504]                ; 0049111d | g_INT_01c3d504
         ;   Label: LAB_0049111d
     LEA ECX,[EDI + 0x1]                 ; 00491122
     CMP ECX,EAX                         ; 00491125
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00491185
     INC EBX                             ; 00491188
         ;   Label: LAB_00491188
-    MOV ECX,dword ptr [0x01c3d504]      ; 00491189 | DAT_01c3d504
+    MOV ECX,dword ptr [0x01c3d504]      ; 00491189 | g_INT_01c3d504
         ;   Label: caseD_3
     INC EDI                             ; 0049118f
     ADD ESI,0xc                         ; 00491190
     CMP EDI,ECX                         ; 00491193
     JL 0x0049111d                       ; 00491195
         ;   XREF to: 0049111d (CONDITIONAL_JUMP)  ; LAB_0049111d
-    MOV dword ptr [0x01c3d5c8],EBX      ; 00491197 | DAT_01c3d5c8
+    MOV dword ptr [0x01c3d5c8],EBX      ; 00491197 | g_INT_01c3d5c8
         ;   Label: LAB_00491197
     MOV ESP,EBP                         ; 0049119d
     POP EBP                             ; 0049119f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 004911c6
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004911c7
     PUSH EAX                            ; 004911cb
-    MOV dword ptr [0x01c3d5c8],EBX      ; 004911cc | DAT_01c3d5c8
+    MOV dword ptr [0x01c3d5c8],EBX      ; 004911cc | g_INT_01c3d5c8
     CALL core_dtri.cpp_clipLineToPlane_FUN_00490df0 ; 004911d2
         ;   XREF to: 00490df0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00490df0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c3d5c8]      ; 004911d7 | DAT_01c3d5c8
+    MOV EBX,dword ptr [0x01c3d5c8]      ; 004911d7 | g_INT_01c3d5c8
     ADD ESP,0x2c                        ; 004911dd
     JMP 0x00491188                      ; 004911e0
         ;   XREF to: 00491188 (UNCONDITIONAL_JUMP)  ; LAB_00491188
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00491222
     PUSH ECX                            ; 00491226
     PUSH EDX                            ; 00491227
-    MOV dword ptr [0x01c3d5c8],EBX      ; 00491228 | DAT_01c3d5c8
+    MOV dword ptr [0x01c3d5c8],EBX      ; 00491228 | g_INT_01c3d5c8
     CALL core_dtri.cpp_clipLineToPlane_FUN_00490df0 ; 0049122e
         ;   XREF to: 00490df0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00490df0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c3d5c8]      ; 00491233 | DAT_01c3d5c8
+    MOV EBX,dword ptr [0x01c3d5c8]      ; 00491233 | g_INT_01c3d5c8
     ADD ESP,0x2c                        ; 00491239
     JMP 0x00491188                      ; 0049123c
         ;   XREF to: 00491188 (UNCONDITIONAL_JUMP)  ; LAB_00491188

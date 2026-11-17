@@ -14,12 +14,12 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005910fc = 005911a9
-;   undefined4 s_eDoorMoveNone_returned_b_005f7020+1
+;   TerminatedCString s_eDoorMoveNone_returned_b_005f7021
 ;   TerminatedCString s_eDoorMoveNone_returned_b_005f705e
 ;   TerminatedCString s_CBodyPart_005f709b
 ;   TerminatedCString s_CBodyPart_005f70a6
-;   undefined4 DAT_005f70b1
-;   undefined4 DAT_005f70b9
+;   double g_DOUBLE_005f70b1 = 0.999900000000000
+;   double g_DOUBLE_005f70b9 = 0.990000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 00591179
     ADD ESP,0x8                         ; 0059117d
     FADD float ptr [ESP]                ; 00591180
-    FCOMP double ptr [0x005f70b1]       ; 00591183 | DAT_005f70b1
+    FCOMP double ptr [0x005f70b1]       ; 00591183 | g_DOUBLE_005f70b1
     FNSTSW AX                           ; 00591189
     SAHF                                ; 0059118b
     JBE 0x005911c8                      ; 0059118c
@@ -142,7 +142,7 @@ section .text
     RET                                 ; 00591204
     PUSH EDI                            ; 00591205
         ;   Label: LAB_00591205
-    PUSH 0x5f7021                       ; 00591206 | s_eDoorMoveNone_returned_b_005f7020+1
+    PUSH 0x5f7021                       ; 00591206 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV EAX,[0x0061abc0]                ; 0059120b | g_CEditorToolsPtr
     PUSH EAX                            ; 00591210
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00591211
@@ -284,7 +284,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0059135d
     FLD float ptr [ESP + 0xc]           ; 00591361
     ADD ESP,0x8                         ; 00591365
-    FCOMP double ptr [0x005f70b9]       ; 00591368 | DAT_005f70b9
+    FCOMP double ptr [0x005f70b9]       ; 00591368 | g_DOUBLE_005f70b9
     FNSTSW AX                           ; 0059136e
     SAHF                                ; 00591370
     JBE 0x00591331                      ; 00591371

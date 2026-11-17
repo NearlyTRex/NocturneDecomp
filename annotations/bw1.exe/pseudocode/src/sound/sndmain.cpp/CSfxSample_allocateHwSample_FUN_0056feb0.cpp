@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(CSfxSample *this_ptr)
 
 {
@@ -17,17 +15,17 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(CSfxSampl
   int iVar4;
   CSfxSample *pCVar5;
   uint *puVar6;
-  uint *puVar7;
+  CSampleInfo *pCVar7;
   byte bVar8;
   uint auStack_2b0 [68];
   int local_1a0;
-  uint local_160 [84];
+  CSampleInfo local_160;
   
   bVar8 = 0;
   sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_005700e0(this_ptr);
   sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_00570130(this_ptr);
   if ((this_ptr->sample_info).streaming_flag == 2) {
-    sound_sndmain_cpp_logSoundError_FUN_005773f0("Atried to use Yamaha WAV on non-CE platform." + 1);
+    sound_sndmain_cpp_logSoundError_FUN_005773f0("tried to use Yamaha WAV on non-CE platform.");
   }
   else {
     uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_00575560();
@@ -49,18 +47,19 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(CSfxSampl
       }
       local_1a0 = this_ptr->streaming_buffer_size;
       puVar6 = auStack_2b0;
-      puVar7 = local_160;
+      pCVar7 = &local_160;
       for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar7 = *puVar6;
+        *(uint *)pCVar7->name = *puVar6;
         puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-        puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+        pCVar7 = (CSampleInfo *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
       }
-      if (_DAT_02c80650 != (int *)0x0) {
+      if (g_CSoundDevice_PTR_02c80650 != (CSoundDevice *)0x0) {
         do {
-          iVar3 = (**(code **)(*_DAT_02c80650 + 0x30))(_DAT_02c80650,local_160);
+          iVar3 = (*g_CSoundDevice_PTR_02c80650->vtable->allocateSample)
+                            (g_CSoundDevice_PTR_02c80650,&local_160);
           if (iVar3 != 0) goto LAB_0056ff7a;
           iVar4 = 0;
-          iVar3 = _DAT_02c78ff0;
+          iVar3 = g_INT_02c78ff0;
           do {
             iVar3 = iVar3 + 1;
             if (0x3f < iVar3) {
@@ -69,14 +68,14 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(CSfxSampl
             if ((((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].buffer_id != 0)) &&
                 (g_SfxSamples[iVar3].taken == 0)) &&
                ((g_SfxSamples[iVar3].is_user_sample == 0 &&
-                (g_SfxSamples[_DAT_02c78ff0].locked_length == 0)))) {
+                (g_SfxSamples[g_INT_02c78ff0].locked_length == 0)))) {
               sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00570020(g_SfxSamples + iVar3);
               break;
             }
             iVar4 = iVar4 + 1;
           } while (iVar4 < 0x40);
         } while (iVar4 < 0x40);
-        sound_sndmain_cpp_logSoundError_FUN_005773f0("?allocateHwSample - failed\n" + 1);
+        sound_sndmain_cpp_logSoundError_FUN_005773f0("allocateHwSample - failed\n");
       }
       iVar3 = 0;
 LAB_0056ff7a:

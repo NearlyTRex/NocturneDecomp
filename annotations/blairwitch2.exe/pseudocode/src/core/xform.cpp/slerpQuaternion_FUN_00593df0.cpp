@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 
 {
@@ -52,7 +50,7 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_00593df0(CQuater
       afStack_183c[0x5f7] = -afStack_183c[0x5f7];
     }
     local_18 = 1.0 - t;
-    if (afStack_183c[0x5f7] <= _DAT_005eeda6) {
+    if (afStack_183c[0x5f7] <= 0.99999f) {
       x = (float10)afStack_183c[0x5f7];
       fVar5 = atan2(SQRT((float10)1 - x * x),x);
       fVar6 = (float10)fsin((float10)local_1c * fVar5);

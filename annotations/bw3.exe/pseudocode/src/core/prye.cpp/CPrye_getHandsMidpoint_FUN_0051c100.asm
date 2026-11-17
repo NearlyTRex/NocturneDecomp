@@ -28,9 +28,9 @@
 ;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00518f15
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cd317
-;   undefined4 DAT_01ed3710
-;   undefined4 DAT_01ed3714
+;   float g_FLOAT_005cd317 = 0.5
+;   undefined4 g_INT_ARRAY_01ed36ec[9]
+;   undefined4 g_INT_ARRAY_01ed36ec[10]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 0051c102
     SUB ESP,0x54                        ; 0051c103
     MOV EBX,ESI                         ; 0051c106
-    MOV EDX,dword ptr [0x01ed3714]      ; 0051c108 | DAT_01ed3714
+    MOV EDX,dword ptr [0x01ed3714]      ; 0051c108 | g_INT_ARRAY_01ed36ec[10]
     MOV EBP,dword ptr [ESP + 0x64]      ; 0051c10e
     PUSH EDX                            ; 0051c112
     ADD EBP,0x158                       ; 0051c113
@@ -55,7 +55,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 0051c122
         ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0051c127
-    MOV ECX,dword ptr [0x01ed3710]      ; 0051c12a | DAT_01ed3710
+    MOV ECX,dword ptr [0x01ed3710]      ; 0051c12a | g_INT_ARRAY_01ed36ec[9]
     LEA ESI,[ESP + 0x18]                ; 0051c130
     PUSH ECX                            ; 0051c134
     MOVSD ES:EDI,ESI                    ; 0051c135
@@ -90,7 +90,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0051c185
     MOVSD ES:EDI,ESI                    ; 0051c186
     MOVSD ES:EDI,ESI                    ; 0051c187
-    FLD float ptr [0x005cd317]          ; 0051c188 | DAT_005cd317
+    FLD float ptr [0x005cd317]          ; 0051c188 | g_FLOAT_005cd317
     FLD float ptr [ESP + 0x3c]          ; 0051c18e
     FMUL ST1                            ; 0051c192
     FLD float ptr [ESP + 0x40]          ; 0051c194

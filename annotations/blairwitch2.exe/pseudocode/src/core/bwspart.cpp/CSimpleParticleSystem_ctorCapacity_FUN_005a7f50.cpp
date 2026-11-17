@@ -13,7 +13,7 @@ CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapac
   int iVar2;
   int iVar3;
   
-  this_ptr->vtable = (void *)0x6002e4;
+  this_ptr->vtable = &g_PTR_006002e4;
   this_ptr->next_particle = 0;
   this_ptr->owner = (CDemonActor *)0x0;
   this_ptr->particles = (void *)0x0;

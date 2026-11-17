@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset)
 
 {
@@ -27,8 +25,8 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter 
   bVar5 = 0;
   pSVar2 = this_ptr->carry_hands + hand_index;
   if (pSVar2->bone_index < 0) {
-    _DAT_01d046a0 = "..\\core\\charactr.cpp";
-    _DAT_01d046a4 = 0xe32;
+    g_CHAR_PTR_01d046a0 = "..\\core\\charactr.cpp";
+    g_INT_01d046a4 = 0xe32;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CCharacter::computePickup - invalid hand!  Character is %s, hand is %d");
   }
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0

@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter *this_ptr,CVector3f *velocity)
 
 {
@@ -74,7 +71,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
   float local_14;
   
   bVar15 = 0;
-  DAT_007e2cf0 = (CDemonActor *)0x0;
+  g_CDemonActor_PTR_007e2cf0 = (CDemonActor *)0x0;
   if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
@@ -202,7 +199,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
     }
     fVar3 = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
     if (local_34 < fVar3) {
-      local_34 = this_ptr->size_scale * (float)_DAT_005b822e + fVar3;
+      local_34 = this_ptr->size_scale * (float)0.5 + fVar3;
     }
     local_104 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10
                           (g_CDemonSetPtr,(this_ptr->base).location.position.x,
@@ -213,24 +210,24 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
                            (this_ptr->base).location.position.y + local_34);
     pCVar1 = local_20;
     local_14 = local_104;
-    if (DAT_007e2cf0 == (CDemonActor *)0x0) {
-      DAT_007e2cf0 = g_CDemonSetPtr->collision_actor;
+    if (g_CDemonActor_PTR_007e2cf0 == (CDemonActor *)0x0) {
+      g_CDemonActor_PTR_007e2cf0 = g_CDemonSetPtr->collision_actor;
     }
     pCVar9 = local_48 + local_38 * 3;
-    if (pCVar9 != (CVector3f *)&DAT_01548b58) {
-      pCVar9->x = _DAT_01548b58;
-      pCVar9->y = _DAT_01548b5c;
-      pCVar9->z = _DAT_01548b60;
+    if (pCVar9 != (CVector3f *)&g_FLOAT_01548b58) {
+      pCVar9->x = g_FLOAT_01548b58;
+      pCVar9->y = (float)g_INT_01548b5c;
+      pCVar9->z = g_FLOAT_01548b60;
     }
-    if (local_28 != (CVector3f *)&DAT_01548b64) {
-      local_28->x = _DAT_01548b64;
-      local_28->y = _DAT_01548b68;
-      local_28->z = _DAT_01548b6c;
+    if (local_28 != (CVector3f *)&g_FLOAT_01548b64) {
+      local_28->x = g_FLOAT_01548b64;
+      local_28->y = (float)g_INT_01548b68;
+      local_28->z = g_FLOAT_01548b6c;
     }
-    if (local_30 != (CVector3f *)&DAT_01548b70) {
-      local_30->x = _DAT_01548b70;
-      local_30->y = _DAT_01548b74;
-      local_30->z = _DAT_01548b78;
+    if (local_30 != (CVector3f *)&g_FLOAT_01548b70) {
+      local_30->x = g_FLOAT_01548b70;
+      local_30->y = (float)g_INT_01548b74;
+      local_30->z = g_FLOAT_01548b78;
     }
     pCVar16 = g_CDemonSetPtr;
     if (0.0 <= local_104) {
@@ -258,20 +255,20 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
       bVar5 = false;
       pCVar9 = local_3c + local_38 * 3;
       this_ptr->closest_distance_threshold = local_14;
-      if (pCVar9 != (CVector3f *)&DAT_01548b58) {
-        pCVar9->x = _DAT_01548b58;
-        pCVar9->y = _DAT_01548b5c;
-        pCVar9->z = _DAT_01548b60;
+      if (pCVar9 != (CVector3f *)&g_FLOAT_01548b58) {
+        pCVar9->x = g_FLOAT_01548b58;
+        pCVar9->y = (float)g_INT_01548b5c;
+        pCVar9->z = g_FLOAT_01548b60;
       }
-      if (local_24 != (CVector3f *)&DAT_01548b64) {
-        local_24->x = _DAT_01548b64;
-        local_24->y = _DAT_01548b68;
-        local_24->z = _DAT_01548b6c;
+      if (local_24 != (CVector3f *)&g_FLOAT_01548b64) {
+        local_24->x = g_FLOAT_01548b64;
+        local_24->y = (float)g_INT_01548b68;
+        local_24->z = g_FLOAT_01548b6c;
       }
-      if (local_2c != (CVector3f *)&DAT_01548b70) {
-        local_2c->x = _DAT_01548b70;
-        local_2c->y = _DAT_01548b74;
-        local_2c->z = _DAT_01548b78;
+      if (local_2c != (CVector3f *)&g_FLOAT_01548b70) {
+        local_2c->x = g_FLOAT_01548b70;
+        local_2c->y = (float)g_INT_01548b74;
+        local_2c->z = g_FLOAT_01548b78;
       }
       if (afStack_e0[0] < this_ptr->closest_distance_threshold) {
         if ((CVector3f *)(afStack_a4 + 5) != &local_f0) {
@@ -292,7 +289,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
           CStack_90.y = CStack_90.y * fVar3;
           CStack_90.z = CStack_90.z * fVar3;
         }
-        if (CStack_90.y < (float)_DAT_005b823e) {
+        if (CStack_90.y < (float)0.29999999999999999) {
           (this_ptr->base).location.position.x = local_e4;
           (this_ptr->base).location.position.y = afStack_e0[0];
           (this_ptr->base).location.position.z = afStack_e0[1];
@@ -306,7 +303,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
         (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
         afStack_e0[0] = (this_ptr->base).location.position.y;
       }
-      if ((float)_DAT_005b8246 < local_104) break;
+      if ((float)0.90000000000000002 < local_104) break;
       fVar3 = SQRT(local_c0.z * local_c0.z + local_c0.x * local_c0.x);
       local_c0.y = 0.0;
       if (0.0 < fVar3) {
@@ -315,14 +312,14 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
         local_c0.y = fStack_1c * 0.0;
         local_c0.z = local_c0.z * fStack_1c;
       }
-      local_104 = (float)_DAT_005b8246 - local_104;
+      local_104 = (float)0.90000000000000002 - local_104;
       fStack_44 = local_104;
       fVar3 = local_f8 * local_104;
       local_f8 = fVar3;
       local_f4 = local_f4 * local_104;
       fVar4 = local_c0.z * local_f4 + local_c0.x * local_fc * local_104 + local_c0.y * fVar3;
       if (0.0 <= fVar4) break;
-      fVar4 = fVar4 * (float)_DAT_005b8236;
+      fVar4 = fVar4 * (float)1.2;
       afStack_e0[2] = local_c0.x * fVar4;
       afStack_e0[3] = local_c0.y * fVar4;
       fStack_d0 = local_c0.z * fVar4;
@@ -335,7 +332,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
       local_f4 = local_f4 - fStack_c4;
     }
     else {
-      local_40 = local_104 + (float)_DAT_005b824e;
+      local_40 = local_104 + (float)-0.01;
       afStack_a4[2] = (g_CDemonSetPtr->collision_normal).x * local_40;
       afStack_a4[3] = (g_CDemonSetPtr->collision_normal).y * local_40;
       local_94 = (g_CDemonSetPtr->collision_normal).z * local_40;
@@ -364,7 +361,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter
   if (this_ptr->closest_distance_threshold <= fVar3) {
     if ((this_ptr->is_on_ground != 0) &&
        ((this_ptr->base).location.position.y <
-        this_ptr->closest_distance_threshold + (float)_DAT_005b822e)) {
+        this_ptr->closest_distance_threshold + (float)0.5)) {
       (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
       afStack_e0[0] = (this_ptr->base).location.position.y;
     }

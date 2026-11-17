@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_werewolf_die_wav_005d7bce
 ;   TerminatedCString s_werewolf_hurt_wav_005d7be0
-;   undefined4 DAT_005d7bf3
-;   undefined4 DAT_005d7bfb
-;   undefined4 DAT_005d7c03
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005d7bf3 = 2
+;   double g_DOUBLE_005d7bfb = 5
+;   double g_DOUBLE_005d7c03 = -5
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
@@ -99,7 +99,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057f7aa
     FLD float ptr [EAX + 0x20]          ; 0057f7ad
     FST double ptr [ESP]                ; 0057f7b0
-    FCOMP double ptr [0x005d7bfb]       ; 0057f7b3 | DAT_005d7bfb
+    FCOMP double ptr [0x005d7bfb]       ; 0057f7b3 | g_DOUBLE_005d7bfb
     FNSTSW AX                           ; 0057f7b9
     SAHF                                ; 0057f7bb
     JBE 0x0057f8bd                      ; 0057f7bc
@@ -170,7 +170,7 @@ section .text
         ;   Label: LAB_0057f85d
     ADD EAX,0x1c                        ; 0057f860
     FLD ST0                             ; 0057f863
-    FMUL double ptr [0x005d7bf3]        ; 0057f865 | DAT_005d7bf3
+    FMUL double ptr [0x005d7bf3]        ; 0057f865 | g_DOUBLE_005d7bf3
     PUSH EAX                            ; 0057f86b
     MOV ESI,dword ptr [EBP + 0x14]      ; 0057f86c
     LEA EDI,[ESP + 0x18]                ; 0057f86f
@@ -195,7 +195,7 @@ section .text
     PUSH 0x0                            ; 0057f89c
     LEA EAX,[ESP + 0x28]                ; 0057f89e
     PUSH EAX                            ; 0057f8a2
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0057f8a3 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0057f8a3 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 0057f8a9
     INC EBX                             ; 0057f8aa
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 0057f8ab
@@ -208,7 +208,7 @@ section .text
         ;   XREF to: 0057f730 (UNCONDITIONAL_JUMP)  ; LAB_0057f730
     FLD double ptr [ESP]                ; 0057f8bd
         ;   Label: LAB_0057f8bd
-    FCOMP double ptr [0x005d7c03]       ; 0057f8c0 | DAT_005d7c03
+    FCOMP double ptr [0x005d7c03]       ; 0057f8c0 | g_DOUBLE_005d7c03
     FNSTSW AX                           ; 0057f8c6
     SAHF                                ; 0057f8c8
     JNC 0x0057f7cc                      ; 0057f8c9

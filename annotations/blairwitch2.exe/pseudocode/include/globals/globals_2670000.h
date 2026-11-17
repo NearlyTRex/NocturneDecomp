@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2670000
@@ -12,4 +13,7 @@
 
 // CDemonActorType
 extern CDemonActorType g_CChainClassInfo;
+
+// CVector3i[2000]
+extern CVector3i g_CVector3i_ARRAY_0267a38c[2000];
 

@@ -12,7 +12,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004e4c70(void)
   core_bmppuzzl_cpp_resetAllPuzzles_FUN_004119e0();
   core_netgame_cpp_CNetGame_shutdown_FUN_00503ed0(g_CNetGamePtr);
   engine_ncursfx_cpp_CMouse_reset_FUN_00508c70(g_CMousePtr);
-  core_mission_cpp_CDemonMission_clearMission_FUN_004f5b70(0x01D81080);
+  core_mission_cpp_CDemonMission_clearMission_FUN_004f5b70(g_CDemonMission_PTR_00600530);
   core_sound_cpp_shutdownSoundSystem_FUN_0055fcc0();
   core_dmodel_cpp_freeAllModels_FUN_004624d0();
   core_skeleton_cpp_freeAllModels_FUN_005501a0();

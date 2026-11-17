@@ -24,8 +24,8 @@
 ;   TerminatedCString s_xplode_wav_6_0_005c09f8
 ;   TerminatedCString s_wp_bindevil_wav_005c0a0a
 ;   TerminatedCString s_wp_disease_wav_005c0a1a
-;   undefined4 DAT_006045f8
-;   undefined4 DAT_01cf608c
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
+;   int g_INT_01cf608c
 ;
 ; Called Functions:
 ;   core_fire.cpp_CExplosion_activate_FUN_0049c730
@@ -46,7 +46,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 004a36ec
     PUSH EBX                            ; 004a36f0
     PUSH dword ptr [ESP + 0x24]         ; 004a36f1
-    MOV EAX,[0x01cf608c]                ; 004a36f5 | DAT_01cf608c
+    MOV EAX,[0x01cf608c]                ; 004a36f5 | g_INT_01cf608c
     PUSH dword ptr [ESP + 0x24]         ; 004a36fa
     SHL EAX,0x5                         ; 004a36fe
     PUSH ESI                            ; 004a3701
@@ -54,10 +54,10 @@ section .text
     PUSH EAX                            ; 004a3707
     CALL core_fire.cpp_CExplosion_activate_FUN_0049c730 ; 004a3708
         ;   XREF to: 0049c730 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_0049c730(CExplosion * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
-    MOV EDX,dword ptr [0x01cf608c]      ; 004a370d | DAT_01cf608c
+    MOV EDX,dword ptr [0x01cf608c]      ; 004a370d | g_INT_01cf608c
     INC EDX                             ; 004a3713
     ADD ESP,0x14                        ; 004a3714
-    MOV dword ptr [0x01cf608c],EDX      ; 004a3717 | DAT_01cf608c
+    MOV dword ptr [0x01cf608c],EDX      ; 004a3717 | g_INT_01cf608c
     CMP EDX,0xa                         ; 004a371d
     JGE 0x004a3745                      ; 004a3720
         ;   XREF to: 004a3745 (CONDITIONAL_JUMP)  ; LAB_004a3745
@@ -68,7 +68,7 @@ section .text
     PUSH ESI                            ; 004a3726
     PUSH 0x5c09f8                       ; 004a3727 | = "xplode?.wav @ 6.0"
     PUSH EDI                            ; 004a372c
-    MOV ECX,dword ptr [0x006045f8]      ; 004a372d | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004a372d | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004a3733
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004a3734
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -85,7 +85,7 @@ section .text
     RET                                 ; 004a3744
     XOR EBP,EBP                         ; 004a3745
         ;   Label: LAB_004a3745
-    MOV dword ptr [0x01cf608c],EBP      ; 004a3747 | DAT_01cf608c
+    MOV dword ptr [0x01cf608c],EBP      ; 004a3747 | g_INT_01cf608c
     JMP 0x004a3722                      ; 004a374d
         ;   XREF to: 004a3722 (UNCONDITIONAL_JUMP)  ; LAB_004a3722
     CMP EBX,0x1                         ; 004a374f
@@ -98,7 +98,7 @@ section .text
     PUSH ESI                            ; 004a3759
     PUSH 0x5c0a1a                       ; 004a375a | = "wp_disease.wav"
     PUSH EDI                            ; 004a375f
-    MOV EAX,[0x006045f8]                ; 004a3760 | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 004a3760 | g_CSound_PTR_006045f8
     PUSH EAX                            ; 004a3765
     JMP 0x004a3734                      ; 004a3766
         ;   XREF to: 004a3734 (UNCONDITIONAL_JUMP)  ; LAB_004a3734
@@ -106,7 +106,7 @@ section .text
         ;   Label: LAB_004a3768
     PUSH 0x5c0a0a                       ; 004a3769 | = "wp_bindevil.wav"
     PUSH EDI                            ; 004a376e
-    MOV EDX,dword ptr [0x006045f8]      ; 004a376f | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 004a376f | g_CSound_PTR_006045f8
     PUSH EDX                            ; 004a3775
     JMP 0x004a3734                      ; 004a3776
         ;   XREF to: 004a3734 (UNCONDITIONAL_JUMP)  ; LAB_004a3734

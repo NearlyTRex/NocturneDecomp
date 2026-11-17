@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this_ptr)
 
 {
@@ -17,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this
   uint *puVar3;
   byte bVar4;
   CBoundingBox3D *this_ptr_01;
-  int in_stack_ffffffbc;
+  CDemonRenderer *in_stack_ffffffbc;
   CBoundingBox3D CStack_40;
   uint auStack_28 [4];
   CDemonSet *local_18;
@@ -44,18 +42,19 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this
           puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
           puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
         }
-        iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_01,in_stack_ffffffbc);
+        iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840
+                          (this_ptr_01,(int)in_stack_ffffffbc);
         if (iVar1 != 0) {
           this_ptr->mirror_glass_actors[this_ptr->mirror_glass_actor_count] = this_ptr_00;
           iVar1 = this_ptr->mirror_glass_actor_count + 1;
           this_ptr->mirror_glass_actor_count = iVar1;
           if (99 < iVar1) {
-            _DAT_01d046a0 = "..\\core\\set.cpp";
-            _DAT_01d046a4 = 0x12d6;
+            g_CHAR_PTR_01d046a0 = "..\\core\\set.cpp";
+            g_INT_01d046a4 = 0x12d6;
             core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonSet::buildMirrorList - Too many mirrors");
           }
         }
-        in_stack_ffffffbc = DAT_0060b280;
+        in_stack_ffffffbc = g_CDemonRenderer_PTR_0060b280;
         engine_drender_cpp_pop_FUN_0046b4a0();
       }
       local_18 = (CDemonSet *)local_18->cameras;

@@ -16,7 +16,7 @@
 ;   core_fldnotes.cpp_STextView_dtor_FUN_004bb1a0 at 004bb1a6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152d254
+;   CBitFont* g_CBitFont_PTR_0152d254
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_STextPage_clear_FUN_004bb080
@@ -81,7 +81,7 @@ section .text
     MOV dword ptr [EBX + 0x14],EAX      ; 004bb244
     MOV EAX,dword ptr [EBX + 0x20]      ; 004bb247
     MOV dword ptr [EBX + 0x18],EAX      ; 004bb24a
-    MOV EAX,[0x0152d254]                ; 004bb24d | DAT_0152d254
+    MOV EAX,[0x0152d254]                ; 004bb24d | g_CBitFont_PTR_0152d254
     MOV dword ptr [EBX + 0x2c],EAX      ; 004bb252
     MOV EAX,dword ptr [EBX + 0x1c]      ; 004bb255
     MOV dword ptr [EBX + 0x40],EAX      ; 004bb258

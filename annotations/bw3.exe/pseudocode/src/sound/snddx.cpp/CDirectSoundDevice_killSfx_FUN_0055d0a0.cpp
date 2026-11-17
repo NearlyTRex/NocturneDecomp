@@ -12,7 +12,8 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0055d0a0(CDirectSoun
   int sfx_handle;
   
   sfx_handle = slot->hardware_buffer_handle;
-  if (((0 < sfx_handle) && (sfx_handle < 0x1f)) && (*(int *)(sfx_handle * 0x24 + 0x2cf500c) != 0)) {
+  if (((0 < sfx_handle) && (sfx_handle < 0x1f)) &&
+     (g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[sfx_handle * 9] != (IDirectSoundBuffer *)0x0)) {
     sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_0055a9f0(sfx_handle);
     return;
   }

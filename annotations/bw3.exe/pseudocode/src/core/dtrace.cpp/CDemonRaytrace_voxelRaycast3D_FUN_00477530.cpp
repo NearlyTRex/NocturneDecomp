@@ -9,7 +9,6 @@
 /* WARNING: Removing unreachable block (ram,0x00477962) */
 /* WARNING: Removing unreachable block (ram,0x00477934) */
 /* WARNING: Removing unreachable block (ram,0x00477990) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position)
 
@@ -45,8 +44,8 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRay
   int local_54;
   float local_2c;
   
-  fVar8 = (this_ptr->cell_size).y * _DAT_005bcbdd;
-  fVar9 = (this_ptr->cell_size).z * _DAT_005bcbdd;
+  fVar8 = (this_ptr->cell_size).y * 0.125f;
+  fVar9 = (this_ptr->cell_size).z * 0.125f;
   fVar2 = end_position->z;
   fVar3 = end_position->y;
   fVar4 = (this_ptr->bbox_min).y;
@@ -57,7 +56,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRay
   local_80 = end_position->z - start_position->z;
   dVar14 = round
                      ((double)((end_position->x - (this_ptr->bbox_min).x) *
-                              (1.0 / ((this_ptr->cell_size).x * _DAT_005bcbdd))));
+                              (1.0 / ((this_ptr->cell_size).x * 0.125f))));
   dVar15 = round((double)((fVar3 - fVar4) * (1.0 / fVar8)));
   dVar16 = round((double)((fVar2 - fVar5) * (1.0 / fVar9)));
   local_70 = (int)ROUND(dVar14);
@@ -73,7 +72,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRay
     if (fVar3 <= 0.0) {
       return 0;
     }
-    fVar3 = _DAT_005bcbe1 / fVar3;
+    fVar3 = 2.684355e+08f / fVar3;
     dVar14 = round((double)(fVar3 * 6.562632e-39));
     iVar1 = (int)ROUND(dVar14);
     dVar14 = round((double)(fVar3 * 6.562623e-39));
@@ -109,7 +108,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRay
     if (pCVar11 != (CDemonCube *)0x0) {
       if ((pCVar11->voxel_buffer1 != (SVoxelGrid *)0x0) &&
          ((pCVar11->voxel_buffer1->voxels[local_5c % 8][local_64 % 8] &
-          (&DAT_005fb0e8)[local_68 % 8]) != 0)) {
+          g_UCHAR_ARRAY_005fb0e8[local_68 % 8]) != 0)) {
         return 1;
       }
     }

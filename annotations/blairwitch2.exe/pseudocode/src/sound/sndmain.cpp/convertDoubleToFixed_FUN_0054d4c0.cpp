@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_0054d4c0(double input,int *out_integer_part,int *out_fractional_part)
 
 {
@@ -18,7 +16,7 @@ void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_0054d4c0(double input,in
   dVar1 = floor(input);
   dVar2 = round(dVar1);
   dVar1 = (__BITCAST_DOUBLE(CONCAT44(input._0_4_,unaff_retaddr)) -
-          (double)((longlong)ROUND(dVar2) & 0xffffffff)) * _DAT_005e8096;
+          (double)((longlong)ROUND(dVar2) & 0xffffffff)) * 4294967296;
   *input._4_4_ = (int)(longlong)ROUND(dVar2);
   dVar1 = round(dVar1);
   *out_integer_part = (int)(longlong)ROUND(dVar1);

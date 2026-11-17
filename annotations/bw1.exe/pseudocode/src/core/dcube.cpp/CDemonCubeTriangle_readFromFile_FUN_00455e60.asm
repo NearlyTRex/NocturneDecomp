@@ -12,9 +12,9 @@
 ;   core_dcube.cpp_CDemonCube_load_FUN_00457e50 at 00457ed1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152c2cc
-;   undefined4 DAT_0152c2d0
-;   undefined4 DAT_0152c2d4
+;   uint[3] g_UINT_ARRAY_0152c2cc
+;   undefined4 g_UINT_ARRAY_0152c2cc[1]
+;   undefined4 g_UINT_ARRAY_0152c2cc[2]
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005c0b10
@@ -32,16 +32,16 @@ section .text
     PUSH EDX                            ; 00455e6e
     PUSH 0x4                            ; 00455e6f
     PUSH 0x3                            ; 00455e71
-    PUSH 0x152c2cc                      ; 00455e73 | DAT_0152c2cc
+    PUSH 0x152c2cc                      ; 00455e73 | g_UINT_ARRAY_0152c2cc
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 00455e78
         ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
-    MOV EDX,dword ptr [0x0152c2cc]      ; 00455e7d | DAT_0152c2cc
+    MOV EDX,dword ptr [0x0152c2cc]      ; 00455e7d | g_UINT_ARRAY_0152c2cc
     LEA EAX,[EDX*0x4 + 0x0]             ; 00455e83
     SUB EAX,EDX                         ; 00455e8a
     SHL EAX,0x2                         ; 00455e8c
     LEA EDX,[ESI + EAX*0x1]             ; 00455e8f
     MOV dword ptr [EBX],EDX             ; 00455e92
-    MOV EDX,dword ptr [0x0152c2d0]      ; 00455e94 | DAT_0152c2d0
+    MOV EDX,dword ptr [0x0152c2d0]      ; 00455e94 | g_UINT_ARRAY_0152c2cc[1]
     LEA EAX,[EDX*0x4 + 0x0]             ; 00455e9a
     SUB EAX,EDX                         ; 00455ea1
     SHL EAX,0x2                         ; 00455ea3
@@ -49,7 +49,7 @@ section .text
     ADD ESP,0x10                        ; 00455ea9
     MOV dword ptr [EBX + 0x4],EDX       ; 00455eac
     MOV ECX,dword ptr [ESP + 0x10]      ; 00455eaf
-    MOV EDX,dword ptr [0x0152c2d4]      ; 00455eb3 | DAT_0152c2d4
+    MOV EDX,dword ptr [0x0152c2d4]      ; 00455eb3 | g_UINT_ARRAY_0152c2cc[2]
     PUSH ECX                            ; 00455eb9
     LEA EAX,[EDX*0x4 + 0x0]             ; 00455eba
     PUSH 0x1                            ; 00455ec1

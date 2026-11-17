@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00585170(CDemonActor *object)
 
 {
@@ -47,7 +45,7 @@ float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00585170(CDem
       }
       iVar4 = iVar4 + 0xc;
     }
-    return (float)(iVar6 - local_14) * (float)_DAT_005f63b9;
+    return (float)(iVar6 - local_14) * (float)0.00390625;
   }
   return 0.0;
 }

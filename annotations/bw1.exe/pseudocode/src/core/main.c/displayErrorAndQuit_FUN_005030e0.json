@@ -2,19 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 92,
+    "complexity_score": 76,
     "cross_reference_count": 572,
     "function_call_count": 6,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 3,
+    "pseudocode_lines": 46,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
-      "unrolled_strchr",
-      "warning_overlapping_globals"
+      "unrolled_strchr"
     ],
-    "total_lines": 146
+    "total_lines": 145
   },
   "cross_references": [
     {
@@ -3497,20 +3496,20 @@
   "globals": [
     {
       "addr": "006236b8",
-      "name": "DAT_006236b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006236b8",
+      "type": "CSound*",
+      "value": "02c82a60"
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d408",
-      "name": "DAT_01d1d408",
-      "type": "undefined4",
+      "name": "g_INT_01d1d408",
+      "type": "int",
       "value": null
     }
   ],
@@ -3591,16 +3590,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 14,
+      "line": 12,
       "match": "&stack0x00000008",
       "severity": "moderate",
       "text": "local_c = &stack0x00000008;",
@@ -3608,7 +3599,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

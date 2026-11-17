@@ -10,7 +10,7 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005780e0(CTrigger *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
-  core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->trigger_state,"?triggerState" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->trigger_state,"triggerState");
   core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->trigger_size,"triggerSize");
   core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->event_type,"triggerType");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->on_event,"onName");

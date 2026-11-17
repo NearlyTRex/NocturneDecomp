@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_type,int *out_light,int *out_color,int *out_fog)
 
 {
@@ -49,7 +47,7 @@ void __cdecl core_gore_cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_typ
   local_3c.b = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(106.0,256.0);
   local_c = local_3c.b;
   core_boneguy_cpp_hsvToRgb_FUN_00417240(&local_3c,&local_30);
-  fVar1 = _DAT_005c4621;
+  fVar1 = 256.0f;
   local_24 = local_30.r;
   local_20[(uint)bVar2 * -2] = *(float *)((int)&local_30 + (uint)bVar2 * -8 + 4);
   local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
@@ -59,7 +57,7 @@ void __cdecl core_gore_cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_typ
     local_20[3] = local_20[0];
     local_10 = local_20[1];
   }
-  dVar3 = round((double)(local_20[2] * _DAT_005c4621));
+  dVar3 = round((double)(local_20[2] * 256.0f));
   *out_light = (int)ROUND(dVar3);
   dVar3 = round((double)(local_20[2] * fVar1));
   *out_color = (int)ROUND(dVar3);

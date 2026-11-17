@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_004933e0(CInputString *this_ptr,int char_index)
 
 {
@@ -17,7 +15,7 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_004933e0(CInputString *thi
   char local_40c [1024];
   uint local_c;
   
-  this_ptr_00 = _DAT_01c3eb50;
+  this_ptr_00 = g_CBitFont_PTR_01c3eb50;
   if (char_index < 0) {
     iVar1 = 0;
   }
@@ -34,13 +32,13 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_004933e0(CInputString *thi
       return iVar1;
     }
     if (0x3ff < (uint)char_index) {
-      _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-      _DAT_01d1d404 = 0x20e;
+      g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+      g_INT_01d1d404 = 0x20e;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CInputString::calcX - string too big for hidden text!");
     }
     memset(local_40c,0x2a,char_index);
     local_40c[char_index] = '\0';
-    iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,local_40c);
+    iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_CBitFont_PTR_01c3eb50,local_40c);
   }
   return iVar1;
 }

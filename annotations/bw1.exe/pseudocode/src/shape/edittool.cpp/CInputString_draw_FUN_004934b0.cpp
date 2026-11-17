@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00493638) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *this_ptr,int x_pos,int y_pos)
 
@@ -23,7 +22,7 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *thi
   int local_18;
   int local_14;
   
-  y2 = _DAT_01c3f53c + y_pos;
+  y2 = g_INT_01c3f53c + y_pos;
   if (this_ptr->selection_start != this_ptr->cursor_position) {
     iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(this_ptr,this_ptr->selection_start);
     iVar2 = x_pos + iVar2;
@@ -37,14 +36,15 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *thi
     }
     local_14 = y_pos;
     local_20 = y2;
-    if (_DAT_01c3f544 == 0) {
-      engine_2d_c_fillRectColor_FUN_004031c0(local_1c,y_pos,local_18,y2,_DAT_01c3f568);
+    if (g_INT_01c3f544 == 0) {
+      engine_2d_c_fillRectColor_FUN_004031c0(local_1c,y_pos,local_18,y2,g_INT_01c3f568);
     }
     else {
-      iVar2 = (_DAT_01c3f568 & 0xff) * 3;
+      iVar2 = (g_INT_01c3f568 & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_00517d50
-                ((uint)(byte)(&DAT_01c4e9f8)[iVar2] << 0x10 |
-                 (uint)(byte)(&DAT_01c4e9f9)[iVar2] << 8 | (uint)(byte)(&DAT_01c4e9fa)[iVar2]);
+                ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] << 0x10 |
+                 (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 1] << 8 |
+                 (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 2]);
       engine_mini3d_cpp_fillRect_FUN_00518010(local_1c,local_14,local_18,local_20);
     }
   }
@@ -53,8 +53,8 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *thi
   text = this_ptr;
   if (this_ptr->mask_mode != 0) {
     if (0x3ff < (uint)this_ptr->current_length) {
-      _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-      _DAT_01d1d404 = 0x22e;
+      g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+      g_INT_01d1d404 = 0x22e;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CInputString::draw - string too big for hidden text!");
     }
     memset(local_420,0x2a,this_ptr->current_length);
@@ -62,18 +62,18 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *thi
     text = local_420;
   }
   engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
-            (_DAT_01c3eb50,text->string_data,x_pos,y_pos,_DAT_01c3f56c,-1);
+            (g_CBitFont_PTR_01c3eb50,text->string_data,x_pos,y_pos,g_INT_01c3f56c,-1);
   uVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
   if ((uVar1 & 0x40000) != 0) {
-    if (_DAT_01c3f544 == 0) {
-      _DAT_01c4f020 = _DAT_01c3f570;
+    if (g_INT_01c3f544 == 0) {
+      g_INT_01c4f020 = g_INT_01c3f570;
     }
     else {
-      iVar2 = (_DAT_01c3f570 & 0xff) * 3;
+      iVar2 = (g_INT_01c3f570 & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_00517d50
-                ((uint)(byte)(&DAT_01c4e9fa)[iVar2] |
-                 (uint)(byte)(&DAT_01c4e9f8)[iVar2] << 0x10 |
-                 (uint)(byte)(&DAT_01c4e9f9)[iVar2] << 8);
+                ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 2] |
+                 (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2] << 0x10 |
+                 (uint)g_UCHAR_ARRAY_01c4e9f8[iVar2 + 1] << 8);
     }
     iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(this_ptr,this_ptr->cursor_position);
     engine_2d_c_drawLine_FUN_004011a0(iVar2 + x_pos,y_pos,iVar2 + x_pos,y2);

@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   euler_angles
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa1c0
+;   float g_FLOAT_005fa1c0 = 0.5
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_sinCos_FUN_0045fd80
@@ -24,7 +24,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x48]      ; 005b7ff7
     FLD float ptr [ESI]                 ; 005b7ffb
     LEA EAX,[ESP + 0x24]                ; 005b7ffd
-    FMUL float ptr [0x005fa1c0]         ; 005b8001 | DAT_005fa1c0
+    FMUL float ptr [0x005fa1c0]         ; 005b8001 | g_FLOAT_005fa1c0
     PUSH EAX                            ; 005b8007
     LEA EAX,[ESP + 0x20]                ; 005b8008
     PUSH EAX                            ; 005b800c
@@ -36,7 +36,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 005b801b
     LEA EAX,[ESP + 0x34]                ; 005b801e
     ADD ESP,0xc                         ; 005b8022
-    FMUL float ptr [0x005fa1c0]         ; 005b8025 | DAT_005fa1c0
+    FMUL float ptr [0x005fa1c0]         ; 005b8025 | g_FLOAT_005fa1c0
     PUSH EAX                            ; 005b802b
     LEA EAX,[ESP + 0x38]                ; 005b802c
     PUSH EAX                            ; 005b8030
@@ -48,7 +48,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 005b803f
     LEA EAX,[ESP + 0x38]                ; 005b8042
     ADD ESP,0xc                         ; 005b8046
-    FMUL float ptr [0x005fa1c0]         ; 005b8049 | DAT_005fa1c0
+    FMUL float ptr [0x005fa1c0]         ; 005b8049 | g_FLOAT_005fa1c0
     PUSH EAX                            ; 005b804f
     LEA EAX,[ESP + 0x24]                ; 005b8050
     PUSH EAX                            ; 005b8054

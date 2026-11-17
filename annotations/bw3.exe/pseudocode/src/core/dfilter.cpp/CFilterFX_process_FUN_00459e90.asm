@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_movscrn_raw_005bac92
-;   undefined4 DAT_005baca2
+;   double g_DOUBLE_005baca2 = 30
 ;   CFilterCache* g_CFilterCachePtr = 01548f90
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.delta_time_float
@@ -47,7 +47,7 @@ section .text
     PUSH ESI                            ; 00459eb9
     MOV ESI,dword ptr [0x005fe9dc]      ; 00459eba | g_CGamePtr
     FLD float ptr [ESI + 0x314]         ; 00459ec0 | g_CGameInstance.delta_time_float
-    FMUL double ptr [0x005baca2]        ; 00459ec6 | DAT_005baca2
+    FMUL double ptr [0x005baca2]        ; 00459ec6 | g_DOUBLE_005baca2
     LEA EAX,[EBX + 0x8]                 ; 00459ecc
     FADD float ptr [EAX]                ; 00459ecf
     FSTP float ptr [EAX]                ; 00459ed1

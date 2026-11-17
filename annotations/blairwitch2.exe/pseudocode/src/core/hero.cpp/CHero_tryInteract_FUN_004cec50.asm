@@ -19,7 +19,7 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 00570a77
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9c64
+;   float g_FLOAT_005d9c64 = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -72,7 +72,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cecb9
     MOVSD ES:EDI,ESI                    ; 004cecba
     MOVSD ES:EDI,ESI                    ; 004cecbb
-    FLD float ptr [0x005d9c64]          ; 004cecbc | DAT_005d9c64
+    FLD float ptr [0x005d9c64]          ; 004cecbc | g_FLOAT_005d9c64
     FLD float ptr [ESP + 0x40]          ; 004cecc2
     FMUL ST1                            ; 004cecc6
     FLD float ptr [ESP + 0x44]          ; 004cecc8

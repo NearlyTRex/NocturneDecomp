@@ -7,8 +7,8 @@
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f8fd3
-;   undefined4 DAT_005f8fdb
+;   double g_DOUBLE_005f8fd3 = 0.03125
+;   double g_DOUBLE_005f8fdb = 0.0833333333333333
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
@@ -96,7 +96,7 @@ section .text
     MOV dword ptr [EDX + 0x8],EAX       ; 005a7937
     FLD float ptr [EBX + 0x918]         ; 005a793a
         ;   Label: LAB_005a793a
-    FMUL double ptr [0x005f8fd3]        ; 005a7940 | DAT_005f8fd3
+    FMUL double ptr [0x005f8fd3]        ; 005a7940 | g_DOUBLE_005f8fd3
     FLD float ptr [EBX + 0x930]         ; 005a7946
     FMUL ST0                            ; 005a794c
     FLD float ptr [EBX + 0x92c]         ; 005a794e
@@ -113,7 +113,7 @@ section .text
     FADDP ST5,ST0                       ; 005a7978
     FXCH ST5                            ; 005a797a
     FST float ptr [EBX + 0x91c]         ; 005a797c
-    FLD double ptr [0x005f8fdb]         ; 005a7982 | DAT_005f8fdb
+    FLD double ptr [0x005f8fdb]         ; 005a7982 | g_DOUBLE_005f8fdb
     FXCH                                ; 005a7988
     FMUL ST1                            ; 005a798a
     FXCH ST6                            ; 005a798c

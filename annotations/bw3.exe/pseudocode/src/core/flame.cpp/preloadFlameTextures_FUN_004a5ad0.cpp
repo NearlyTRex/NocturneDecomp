@@ -13,7 +13,8 @@ void __cdecl core_flame_cpp_preloadFlameTextures_FUN_004a5ad0(int flame_type)
   
   texture = (SMRGLTextureBasic *)(&DAT_005fde88 + flame_type * 0xc0);
   do {
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+              (g_CDemonRenderer_PTR_005f2afc,texture);
     texture = texture + 1;
   } while (texture != (SMRGLTextureBasic *)(flame_type * 0xc0 + 0x5fdf48));
   return;

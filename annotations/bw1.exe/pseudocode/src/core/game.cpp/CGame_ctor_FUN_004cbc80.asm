@@ -10,7 +10,7 @@
 ;   core_game.cpp_staticInit_FUN_004cb7d0 at 004cb7f9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cd05c0
+;   char[256] g_CHAR_ARRAY_01cd05c0
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004d0400
@@ -91,7 +91,7 @@ section .text
     MOV dword ptr [EBX + 0x3b8],0x0     ; 004cbed5
     XOR AH,AH                           ; 004cbedf
     MOV dword ptr [EBX + 0x288],0x1     ; 004cbee1
-    MOV byte ptr [0x01cd05c0],AH        ; 004cbeeb | DAT_01cd05c0
+    MOV byte ptr [0x01cd05c0],AH        ; 004cbeeb | g_CHAR_ARRAY_01cd05c0
     MOV byte ptr [EBX + 0x9fc],AH       ; 004cbef1
     MOV EAX,EBX                         ; 004cbef7
     POP EBX                             ; 004cbef9

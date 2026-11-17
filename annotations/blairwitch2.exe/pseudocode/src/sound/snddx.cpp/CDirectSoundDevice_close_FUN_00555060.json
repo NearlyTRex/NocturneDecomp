@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 106,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 6,
+    "pseudocode_lines": 38,
+    "suspect_count": 3,
     "suspect_types": [
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 130
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -39,20 +39,20 @@
   "globals": [
     {
       "addr": "0264a5c4",
-      "name": "DAT_0264a5c4",
-      "type": "undefined4",
+      "name": "g_IDirectSound_PTR_0264a5c4",
+      "type": "IDirectSound*",
       "value": null
     },
     {
       "addr": "0264a5c8",
-      "name": "DAT_0264a5c8",
-      "type": "undefined4",
+      "name": "g_IDirectSoundBuffer_PTR_0264a5c8",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "0264a5cc",
-      "name": "DAT_0264a5cc",
-      "type": "undefined4",
+      "name": "g_IDirectSoundBuffer_PTR_0264a5cc",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
@@ -188,34 +188,10 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5cc + 8))(_DAT_0264a5cc);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5d4 + 8))(_DAT_0264a5d4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5c8 + 8))(_DAT_0264a5c8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5c4 + 8))(_DAT_0264a5c4);",
       "type": "unresolved_funcptr"
     }
   ],

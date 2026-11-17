@@ -15,7 +15,7 @@ CParticleBox * __cdecl core_hpbox_cpp_CParticleBox_ctor_FUN_005ac7a0(CParticleBo
   (pCVar1->base).base.vtable._ub = &g_CParticleBoxVTable;
   (pCVar1->base).base.is_transparent = 1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (&(pCVar1->base).model,(char *)0x5f0e98);
+            (&(pCVar1->base).model,"null.kfm");
   (pCVar1->base).collision_flag = 0;
   return pCVar1;
 }

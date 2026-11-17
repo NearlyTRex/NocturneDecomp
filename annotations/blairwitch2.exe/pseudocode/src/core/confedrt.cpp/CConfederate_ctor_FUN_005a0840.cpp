@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CConfederate * __cdecl core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)
 
 {
@@ -32,9 +30,9 @@ CConfederate * __cdecl core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfede
   (this_ptr_01->base).idle_motion = 0;
   pcVar5 = (this_ptr_01->base).flinch_motion_name;
   (this_ptr_01->base).walk_motion = 1;
-  fVar2 = _DAT_005fedac;
+  fVar2 = 25.0f;
   (this_ptr_01->base).run_motion = 4;
-  fVar3 = _DAT_005fedb0;
+  fVar3 = 15.0f;
   (this_ptr_01->base).run_distance = 5.0;
   pcVar4 = "flinch";
   (this_ptr_01->base).can_flinch = 1;

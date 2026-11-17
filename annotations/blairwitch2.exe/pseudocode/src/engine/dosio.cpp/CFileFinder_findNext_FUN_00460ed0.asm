@@ -18,8 +18,8 @@
 ;   void* PTR_FindNextFileA_005c854c = 001c8d54
 ;   TerminatedCString s_engine_dosio_c_005d0c5c
 ;   TerminatedCString s_CFileFinder_open_search_005d0c6e
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -43,8 +43,8 @@ section .text
     MOV ECX,0x5d0c5c                    ; 00460ee9 | = "..\\engine\\dosio.c"
     MOV ESI,0x28e                       ; 00460eee
     PUSH 0x5d0c6e                       ; 00460ef3 | = "CFileFinder::open - search not opened!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00460ef8 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00460efe | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00460ef8 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00460efe | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00460f04
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00460f09

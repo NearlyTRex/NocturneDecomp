@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 104,
+    "complexity_score": 78,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 4,
+    "pseudocode_lines": 48,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 153
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -74,50 +73,50 @@
     },
     {
       "addr": "01bdd810",
-      "name": "DAT_01bdd810",
-      "type": "undefined4",
+      "name": "g_INT_01bdd810",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bdd818",
-      "name": "DAT_01bdd818",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_01bdd818",
+      "type": "int[16]",
       "value": null
     },
     {
       "addr": "01bdd81c",
-      "name": "DAT_01bdd81c",
+      "name": "g_INT_ARRAY_01bdd818[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "DAT_01c6b5cc",
-      "type": "undefined4",
+      "name": "g_PTR_01c6b5cc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_INT_01c6e2b8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -242,32 +241,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_01bdd818",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bdd818 + iVar2) = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_01bdd818",
-      "severity": "mild",
-      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)((int)g_INT_ARRAY_01bdd818",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01bdd818 + iVar2) = iVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
+      "line": 23,
       "match": "pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;",

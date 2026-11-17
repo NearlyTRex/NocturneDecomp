@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inivar_cpp_writeIniData_FUN_004d95c0(void)
 
 {
@@ -21,22 +19,23 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004d95c0(void)
             (&local_214,"gamePIXY",g_CGamePtr->game_pixy);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
             (&local_214,"gameBPP",g_CGamePtr->game_bpp);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"useDirect3D",_DAT_02cf5fcc);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"useAGPFlag",_DAT_02cf5fd8);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"useDirect3D",g_INT_02cf5fcc);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"useAGPFlag",g_INT_02cf5fd8);
   engine_ini_cpp_CIniFile_setString_FUN_004d8bb0
-            (&local_214,"rendererDLLPath",&DAT_00606730);
+            (&local_214,"rendererDLLPath",g_CHAR_ARRAY_00606730);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"gamma",g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
             (&local_214,"heroNumber",g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
             (&local_214,"haloMode",g_CGamePtr->halo_mode);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"firstTimeFlag",_DAT_01d5bc7c)
-  ;
+  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
+            (&local_214,"firstTimeFlag",g_INT_01d5bc7c);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
             (&local_214,"subtitleMode",g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
             (&local_214,"bloodFlag",g_CGamePtr->blood_flag);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"currentBoard",_DAT_01d74020);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(&local_214,"currentBoard",g_INT_01d74020)
+  ;
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_214,"Sound");
   sound_sndmain_cpp_writeIni_FUN_00559520(&local_214);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_214,"Control");

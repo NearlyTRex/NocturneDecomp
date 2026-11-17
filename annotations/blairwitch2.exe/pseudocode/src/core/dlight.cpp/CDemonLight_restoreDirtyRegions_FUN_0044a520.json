@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 165,
+    "complexity_score": 281,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 135,
-    "suspect_count": 2,
+    "pseudocode_lines": 136,
+    "suspect_count": 14,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 415
+    "total_lines": 416
   },
   "cross_references": [
     {
@@ -73,20 +72,20 @@
     },
     {
       "addr": "01b13078",
-      "name": "DAT_01b13078",
-      "type": "undefined4",
+      "name": "g_INT_01b13078",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -283,12 +282,108 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(int *)((int)g_INT_ARRAY_01b1307c",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_INT_ARRAY_01b1307c + iVar7) <= pCVar4->x_max) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(int *)((int)g_INT_ARRAY_01b1347c",
+      "severity": "moderate",
+      "text": "(pCVar4->x_min <= *(int *)((int)g_INT_ARRAY_01b1347c + iVar7))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)g_INT_ARRAY_01b1307c",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_INT_ARRAY_01b1307c + iVar7) <= pCVar4->x_min) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(int *)((int)g_INT_ARRAY_01b1347c",
+      "severity": "moderate",
+      "text": "(pCVar4->x_max <= *(int *)((int)g_INT_ARRAY_01b1347c + iVar7)))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(int *)((int)g_INT_ARRAY_01b1307c",
+      "severity": "moderate",
+      "text": "if (pCVar4->x_min < *(int *)((int)g_INT_ARRAY_01b1307c + iVar7)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(int *)((int)g_INT_ARRAY_01b1307c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01b1307c + iVar7) = pCVar4->x_min;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(int *)((int)g_INT_ARRAY_01b1347c",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_INT_ARRAY_01b1347c + iVar7) < pCVar4->x_max) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(int *)((int)g_INT_ARRAY_01b1347c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01b1347c + iVar7) = pCVar4->x_max;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)g_INT_ARRAY_01b1307c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01b1307c + local_14) = pCVar4->x_min;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)g_INT_ARRAY_01b1347c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01b1347c + local_14) = pCVar4->x_max;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(int *)((int)g_INT_ARRAY_01b1307c",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_INT_ARRAY_01b1307c + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)((int)g_INT_ARRAY_01b1307c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01b1307c + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)((int)g_INT_ARRAY_01b1347c",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)g_INT_ARRAY_01b1347c + iVar7);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

@@ -13,7 +13,7 @@
 ;   support_codec.cpp_CCodec_processFromBuffer_FUN_00440970 at 00440988
 ;
 ; Referenced Globals:
-;   undefined1* g_CInStreamMemoryVTable = 005741d0
+;   void*[12] g_CInStreamMemoryVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStream_ctor_FUN_00572530

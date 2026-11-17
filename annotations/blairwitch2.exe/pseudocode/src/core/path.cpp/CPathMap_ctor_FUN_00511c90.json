@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 48,
+    "complexity_score": 17,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 56
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
   },
   "cross_references": [
     {
@@ -56,20 +53,20 @@
   "globals": [
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e4fed8",
-      "name": "DAT_01e4fed8",
-      "type": "undefined4",
+      "name": "g_INT_01e4fed8",
+      "type": "int",
       "value": null
     }
   ],
@@ -172,24 +169,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 19,
-      "match": "*(CPathMap **)(_DAT_01e4fed8 * 4 + 0x1e4fedc",
-      "severity": "moderate",
-      "text": "*(CPathMap **)(_DAT_01e4fed8 * 4 + 0x1e4fedc) = this_ptr;",
-      "type": "raw_address_pointer_store"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

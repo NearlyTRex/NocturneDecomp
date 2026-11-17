@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_handleFireButton_FUN_0045d2c0(CDoc *this_ptr,float delta_time)
 
 {
@@ -69,11 +67,11 @@ LAB_0045d323:
 LAB_0045d483:
               if (uVar10 != 0) {
                 (this_ptr->base).base.layer_action_index = this_ptr->melee_attack_index + 4;
-                this_ptr_00 = 0x0264B290;
+                this_ptr_00 = g_CSound_PTR_0061c068;
                 (this_ptr->base).base.layer_action_t = 0.0;
                 this_ptr->action_pending = 7;
                 core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                          (this_ptr_00,(CDemonActor *)this_ptr,"?swordswing0?.wav" + 1,
+                          (this_ptr_00,(CDemonActor *)this_ptr,"swordswing0?.wav",
                            &(this_ptr->base).base.base.location.position);
                 return;
               }
@@ -158,9 +156,9 @@ switchD_0045d3bc_caseD_3:
   }
   fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                     ((CCharacter *)this_ptr,iVar5);
-  if (((((float)_DAT_005d07f7 <= fVar3) &&
+  if (((((float)0.98999999999999999 <= fVar3) &&
        (fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
-                          ((CCharacter *)this_ptr,0x12), fVar3 <= (float)_DAT_005d07ff)) &&
+                          ((CCharacter *)this_ptr,0x12), fVar3 <= (float)0.10000000000000001)) &&
       (1.0 <= (this_ptr->left_arm_aim).kickback_factor)) &&
      (((this_ptr->left_arm_aim).recoil_timer <= 0.0 &&
       (iVar5 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canBeGrabbed)

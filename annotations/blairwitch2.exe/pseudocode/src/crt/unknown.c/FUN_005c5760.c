@@ -12,8 +12,8 @@ void FUN_005c5760(int param_1,uint param_2)
   _FILE *file;
   
   file = (_FILE *)FUN_005c5e20(2);
-  FUN_005c5e50(*(uint *)(&DAT_0061f7d0 + param_1 * 4),file);
-  FUN_005c5e50(&DAT_005f20f1,file);
+  FUN_005c5e50(g_CHAR_PTR_ARRAY_0061f7d0[param_1],file);
+  FUN_005c5e50(&g_CHAR_005f20f1,file);
   FUN_005c5e50(param_2,file);
   _fputc(10,file);
   return;

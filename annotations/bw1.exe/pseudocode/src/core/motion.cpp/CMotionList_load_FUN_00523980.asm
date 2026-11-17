@@ -18,20 +18,20 @@
 ;   core_skeleton.cpp_CSkeleton_loadStream_FUN_00563090 at 00563366
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ea93b
+;   TerminatedCString s_d_005ea93b
 ;   TerminatedCString s_core_motion_cpp_005ea93f
 ;   TerminatedCString s_Error_reading_motion_lis_005ea952
 ;   TerminatedCString s_core_motion_cpp_005ea96d
 ;   TerminatedCString s_Can_t_read_motion_list_i_005ea980
-;   undefined4 DAT_005ea9f3
-;   undefined4 DAT_005ea9f7
-;   undefined4 DAT_005ea9fb
+;   TerminatedCString s_d_005ea9f3
+;   TerminatedCString s_s_005ea9f7
+;   TerminatedCString s_d_005ea9fb
 ;   TerminatedCString s_f_d_d_d_005ea9ff
 ;   TerminatedCString s_d_d_f_005eaa14
 ;   TerminatedCString s_d_f_d_005eaa1e
 ;   TerminatedCString s_d_f_005eaa28
 ;   TerminatedCString s_d_d_005eaa2f
-;   undefined4 DAT_005eaa36
+;   TerminatedCString s_d_005eaa36
 ;   TerminatedCString s_core_motion_cpp_005eaa3a
 ;   ... and 8 more
 ;
@@ -75,7 +75,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005239b5
         ;   Label: LAB_005239b5
     PUSH EAX                            ; 005239b9
-    PUSH 0x5ea93b                       ; 005239ba | DAT_005ea93b
+    PUSH 0x5ea93b                       ; 005239ba | = "%d\n"
     PUSH EDI                            ; 005239bf
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 005239c0
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -104,7 +104,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 005239f4
         ;   Label: LAB_005239f4
     PUSH ESI                            ; 005239f8
-    PUSH 0x5ea9f3                       ; 005239f9 | DAT_005ea9f3
+    PUSH 0x5ea9f3                       ; 005239f9 | = "%d\n"
     PUSH EDI                            ; 005239fe
     XOR EBX,EBX                         ; 005239ff
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00523a01
@@ -117,7 +117,7 @@ section .text
     ADD ESI,0x4                         ; 00523a0f
     PUSH ESI                            ; 00523a12
         ;   Label: LAB_00523a12
-    PUSH 0x5ea9f7                       ; 00523a13 | DAT_005ea9f7
+    PUSH 0x5ea9f7                       ; 00523a13 | = "%s\n"
     PUSH EDI                            ; 00523a18
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00523a19
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -147,7 +147,7 @@ section .text
         ;   Label: LAB_00523a44
     ADD EAX,0x1c24                      ; 00523a48
     PUSH EAX                            ; 00523a4d
-    PUSH 0x5ea9fb                       ; 00523a4e | DAT_005ea9fb
+    PUSH 0x5ea9fb                       ; 00523a4e | = "%d\n"
     PUSH EDI                            ; 00523a53
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00523a54
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -303,7 +303,7 @@ section .text
     LEA EAX,[ESI + 0x70]                ; 00523b8a
         ;   Label: LAB_00523b8a
     PUSH EAX                            ; 00523b8d
-    PUSH 0x5eaa36                       ; 00523b8e | DAT_005eaa36
+    PUSH 0x5eaa36                       ; 00523b8e | = "%d\n"
     PUSH EDI                            ; 00523b93
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00523b94
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -324,8 +324,8 @@ section .text
     MOV EDX,0x5eaa3a                    ; 00523bba | = "..\\core\\motion.cpp"
     MOV ECX,0xc0                        ; 00523bbf
     PUSH 0x5eaa4d                       ; 00523bc4 | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EDX      ; 00523bc9 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00523bcf | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00523bc9 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00523bcf | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00523bd5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00523bda
@@ -382,7 +382,7 @@ section .text
     LEA EAX,[ESI + 0x78]                ; 00523c42
         ;   Label: LAB_00523c42
     PUSH EAX                            ; 00523c45
-    PUSH 0x5eaa6e                       ; 00523c46 | DAT_005eaa6e
+    PUSH 0x5eaa6e                       ; 00523c46 | = "%d\n"
     PUSH EDI                            ; 00523c4b
     XOR EBX,EBX                         ; 00523c4c
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00523c4e
@@ -431,7 +431,7 @@ section .text
     LEA EAX,[ESI + 0xf4]                ; 00523cb1
         ;   Label: LAB_00523cb1
     PUSH EAX                            ; 00523cb7
-    PUSH 0x5eaa79                       ; 00523cb8 | DAT_005eaa79
+    PUSH 0x5eaa79                       ; 00523cb8 | = "%d"
     PUSH EDI                            ; 00523cbd
     XOR EBX,EBX                         ; 00523cbe
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00523cc0
@@ -444,7 +444,7 @@ section .text
     LEA EBP,[ESI + 0xf8]                ; 00523cd2
     PUSH EBP                            ; 00523cd8
         ;   Label: LAB_00523cd8
-    PUSH 0x5eaa7c                       ; 00523cd9 | DAT_005eaa7c
+    PUSH 0x5eaa7c                       ; 00523cd9 | = "%d"
     PUSH EDI                            ; 00523cde
     INC EBX                             ; 00523cdf
     ADD EBP,0x4                         ; 00523ce0
@@ -491,8 +491,8 @@ section .text
         ;   Label: LAB_00523d3a
     MOV EBP,0x81                        ; 00523d3f
     PUSH 0x5ea952                       ; 00523d44 | = "Error reading motion list."
-    MOV dword ptr [0x01d1d400],ESI      ; 00523d49 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00523d4f | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00523d49 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 00523d4f | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00523d55
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00523d5a
@@ -504,8 +504,8 @@ section .text
     MOV EDX,0x5ea96d                    ; 00523d65 | = "..\\core\\motion.cpp"
     MOV ECX,0x83                        ; 00523d6a
     PUSH 0x5ea980                       ; 00523d6f | = "Can't read motion list - it's version..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00523d74 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00523d7a | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00523d74 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00523d7a | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00523d80
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00523d85

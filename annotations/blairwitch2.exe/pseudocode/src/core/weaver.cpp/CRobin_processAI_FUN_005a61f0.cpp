@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weaver_cpp_CRobin_processAI_FUN_005a61f0(CRobin *this_ptr,float delta_time)
 
 {
@@ -116,10 +114,10 @@ void __cdecl core_weaver_cpp_CRobin_processAI_FUN_005a61f0(CRobin *this_ptr,floa
     afStack_ec[(uint)bVar8 * -2] = afStack_ec[(uint)bVar8 * -2 + 3];
     afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
          afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-    fStack_cc = fStack_f0 * _DAT_005f06a6;
-    fStack_c8 = afStack_ec[0] * _DAT_005f06a6;
-    fStack_c4 = afStack_ec[1] * _DAT_005f06a6;
-    fStack_d8 = fStack_f0 * _DAT_005f06a6;
+    fStack_cc = fStack_f0 * 0.5f;
+    fStack_c8 = afStack_ec[0] * 0.5f;
+    fStack_c4 = afStack_ec[1] * 0.5f;
+    fStack_d8 = fStack_f0 * 0.5f;
     afStack_ec[(uint)bVar8 * -2 + 6] = afStack_ec[(uint)bVar8 * -2 + 9];
     afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
          afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
@@ -242,11 +240,11 @@ void __cdecl core_weaver_cpp_CRobin_processAI_FUN_005a61f0(CRobin *this_ptr,floa
         fVar9 = (float10)fcos((float10)fVar11);
         fVar10 = (float10)fsin((float10)fVar11);
         CStack_3c.y = 0.0;
-        CStack_3c.z = (float)(fVar9 * (float10)_DAT_005f06ae);
-        CStack_3c.x = (float)(fVar10 * (float10)_DAT_005f06ae);
+        CStack_3c.z = (float)(fVar9 * (float10)10);
+        CStack_3c.x = (float)(fVar10 * (float10)10);
         fStack_14 = CStack_3c.z;
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
-        if ((float)_DAT_005f06b6 < fStack_14) {
+        if ((float)0.5 < fStack_14) {
           CStack_90.y = 0.5;
           CStack_90.z = 0.0;
           CStack_90.x = 0.0;
@@ -257,9 +255,9 @@ void __cdecl core_weaver_cpp_CRobin_processAI_FUN_005a61f0(CRobin *this_ptr,floa
           }
         }
         else if ((CDemonActorType *)&stack0x00000000 != &g_CCryptVesselClassInfo) {
-          CStack_48.x = _DAT_0265370c;
-          CStack_48.y = _DAT_02653710;
-          CStack_48.z = _DAT_02653714;
+          CStack_48.x = g_CVector3f_0265370c.x;
+          CStack_48.y = g_CVector3f_0265370c.y;
+          CStack_48.z = g_CVector3f_0265370c.z;
         }
         CStack_6c.y = 1.5;
         iVar1 = iVar1 + 1;

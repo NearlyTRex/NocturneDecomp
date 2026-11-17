@@ -19,8 +19,8 @@
 ;   TerminatedCString s_CAlphaBitmap_allocate_Ou_005cafbb
 ;   TerminatedCString s_engine_alphabit_cpp_005cafe2
 ;   TerminatedCString s_CAlphaBitmap_allocate_Ou_005caff9
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -69,8 +69,8 @@ section .text
     MOV EDX,0x5cafa4                    ; 0040d4a8 | = "..\\engine\\alphabit.cpp"
     MOV ECX,0xb3                        ; 0040d4ad
     PUSH 0x5cafbb                       ; 0040d4b2 | = "CAlphaBitmap::allocate - Out of memory"
-    MOV dword ptr [0x01d046a0],EDX      ; 0040d4b7 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0040d4bd | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0040d4b7 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0040d4bd | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d4c3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040d4c8
@@ -92,8 +92,8 @@ section .text
         ;   Label: LAB_0040d4e4
     MOV EBP,0xb0                        ; 0040d4e9
     PUSH 0x5caf7d                       ; 0040d4ee | = "CAlphaBitmap::allocate - Out of memory"
-    MOV dword ptr [0x01d046a0],ECX      ; 0040d4f3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0040d4f9 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0040d4f3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0040d4f9 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d4ff
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040d504
@@ -103,8 +103,8 @@ section .text
         ;   Label: LAB_0040d509
     MOV EBP,0xb6                        ; 0040d50e
     PUSH 0x5caff9                       ; 0040d513 | = "CAlphaBitmap::allocate - Out of memory"
-    MOV dword ptr [0x01d046a0],EDI      ; 0040d518 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0040d51e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0040d518 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0040d51e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d524
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040d529

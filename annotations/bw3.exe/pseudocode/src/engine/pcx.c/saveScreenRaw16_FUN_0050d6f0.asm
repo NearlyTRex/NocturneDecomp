@@ -20,19 +20,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pcx_c_005cb9b2
 ;   TerminatedCString s_saveScreenRaw16_No_ext_f_005cb9c2
-;   undefined1 DAT_005cb9e1
-;   undefined1 DAT_005cb9e2
-;   undefined1 DAT_005cb9e3
-;   undefined1 DAT_005cb9e4
-;   undefined4 DAT_005cb9e6
+;   TerminatedCString s_RAW_005cb9e1
+;   undefined4 s_RAW_005cb9e1+1
+;   undefined4 s_RAW_005cb9e1+2
+;   undefined4 s_RAW_005cb9e1+3
+;   TerminatedCString s_wb_005cb9e6
 ;   TerminatedCString s_engine_pcx_c_005cb9e9
 ;   TerminatedCString s_saveScreenRaw16_Unable_t_005cb9f9
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
-;   undefined4 DAT_01c6af74
-;   undefined4 DAT_01c6af78
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
+;   void*[1200] g_ARRAY_PTR_01c5faec
+;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
+;   int g_INT_01c6af78
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -95,16 +95,16 @@ section .text
     TEST ESI,ESI                        ; 0050d735
     JZ 0x0050d887                       ; 0050d737
         ;   XREF to: 0050d887 (CONDITIONAL_JUMP)  ; LAB_0050d887
-    MOV ESI,0x5cb9e1                    ; 0050d73d | DAT_005cb9e1
+    MOV ESI,0x5cb9e1                    ; 0050d73d | = ".RAW"
         ;   Label: LAB_0050d73d
     PUSH EDI                            ; 0050d742
-    MOV AL,byte ptr [ESI]               ; 0050d743 | DAT_005cb9e1 | DAT_005cb9e3
+    MOV AL,byte ptr [ESI]               ; 0050d743 | = ".RAW" | s_RAW_005cb9e1+2
         ;   Label: LAB_0050d743
     MOV byte ptr [EDI],AL               ; 0050d745
     CMP AL,0x0                          ; 0050d747
     JZ 0x0050d75b                       ; 0050d749
         ;   XREF to: 0050d75b (CONDITIONAL_JUMP)  ; LAB_0050d75b
-    MOV AL,byte ptr [ESI + 0x1]         ; 0050d74b | DAT_005cb9e2 | DAT_005cb9e4
+    MOV AL,byte ptr [ESI + 0x1]         ; 0050d74b | s_RAW_005cb9e1+1 | s_RAW_005cb9e1+3
     ADD ESI,0x2                         ; 0050d74e
     MOV byte ptr [EDI + 0x1],AL         ; 0050d751
     ADD EDI,0x2                         ; 0050d754
@@ -113,7 +113,7 @@ section .text
         ;   XREF to: 0050d743 (CONDITIONAL_JUMP)  ; LAB_0050d743
     POP EDI                             ; 0050d75b
         ;   Label: LAB_0050d75b
-    PUSH 0x5cb9e6                       ; 0050d75c | DAT_005cb9e6
+    PUSH 0x5cb9e6                       ; 0050d75c | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 0050d761
     PUSH EAX                            ; 0050d765
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 0050d766
@@ -126,14 +126,14 @@ section .text
     MOV EBX,0x5cb9e9                    ; 0050d774 | = "..\\engine\\pcx.c"
     MOV ESI,0x6d                        ; 0050d779
     PUSH 0x5cb9f9                       ; 0050d77e | = "saveScreenRaw16 - Unable to open output"
-    MOV dword ptr [0x01d71de0],EBX      ; 0050d783 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0050d789 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0050d783 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0050d789 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050d78f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050d794
     XOR EBP,EBP                         ; 0050d797
         ;   Label: LAB_0050d797
-    MOV EAX,[0x005fba1c]                ; 0050d799 | DAT_005fba1c
+    MOV EAX,[0x005fba1c]                ; 0050d799 | g_INT_005fba1c
     MOV dword ptr [ESP + 0x5c],EBP      ; 0050d79e
     TEST EAX,EAX                        ; 0050d7a2
     JLE 0x0050d876                      ; 0050d7a4
@@ -141,32 +141,32 @@ section .text
     MOV dword ptr [ESP + 0x58],EBP      ; 0050d7aa
     MOV ESI,dword ptr [ESP + 0x58]      ; 0050d7ae
         ;   Label: LAB_0050d7ae
-    MOV EBP,dword ptr [0x005fba18]      ; 0050d7b2 | DAT_005fba18
+    MOV EBP,dword ptr [0x005fba18]      ; 0050d7b2 | g_INT_005fba18
     XOR EBX,EBX                         ; 0050d7b8
-    MOV ESI,dword ptr [ESI + 0x1c5faec] ; 0050d7ba | DAT_01c5faec | DAT_01c5faf0
+    MOV ESI,dword ptr [ESI + 0x1c5faec] ; 0050d7ba | g_ARRAY_PTR_01c5faec | g_ARRAY_PTR_01c5faec[1]
     TEST EBP,EBP                        ; 0050d7c0
     JLE 0x0050d854                      ; 0050d7c2
         ;   XREF to: 0050d854 (CONDITIONAL_JUMP)  ; LAB_0050d854
     XOR EAX,EAX                         ; 0050d7c8
         ;   Label: LAB_0050d7c8
     MOV AX,word ptr [ESI]               ; 0050d7ca
-    MOV CL,byte ptr [0x01c6af74]        ; 0050d7cd | DAT_01c6af74
+    MOV CL,byte ptr [0x01c6af74]        ; 0050d7cd | g_BIT_INTEGER32_01c6af74
     MOV EDX,EAX                         ; 0050d7d3
     SHR EDX,CL                          ; 0050d7d5
-    IMUL EDX,dword ptr [0x01c6af78]     ; 0050d7d7 | DAT_01c6af78
+    IMUL EDX,dword ptr [0x01c6af78]     ; 0050d7d7 | g_INT_01c6af78
     AND EDX,0xff                        ; 0050d7de
-    MOV CL,byte ptr [0x01c6af80]        ; 0050d7e4 | DAT_01c6af80
+    MOV CL,byte ptr [0x01c6af80]        ; 0050d7e4 | g_BIT_INTEGER32_01c6af80
     MOV dword ptr [ESP + 0x50],EDX      ; 0050d7ea
     MOV EDX,EAX                         ; 0050d7ee
-    MOV EBP,dword ptr [0x01c6af84]      ; 0050d7f0 | DAT_01c6af84
+    MOV EBP,dword ptr [0x01c6af84]      ; 0050d7f0 | g_INT_01c6af84
     SHR EDX,CL                          ; 0050d7f6
     IMUL EDX,EBP                        ; 0050d7f8
-    MOV CL,byte ptr [0x01c6af8c]        ; 0050d7fb | DAT_01c6af8c
+    MOV CL,byte ptr [0x01c6af8c]        ; 0050d7fb | g_BIT_INTEGER32_01c6af8c
     AND EDX,0xff                        ; 0050d801
     MOV EBP,EAX                         ; 0050d807
     MOV dword ptr [ESP + 0x54],EDX      ; 0050d809
     SHR EBP,CL                          ; 0050d80d
-    IMUL EBP,dword ptr [0x01c6af90]     ; 0050d80f | DAT_01c6af90
+    IMUL EBP,dword ptr [0x01c6af90]     ; 0050d80f | g_INT_01c6af90
     PUSH EDI                            ; 0050d816
     MOV ECX,dword ptr [ESP + 0x54]      ; 0050d817
     PUSH ECX                            ; 0050d81b
@@ -186,7 +186,7 @@ section .text
     INC EBX                             ; 0050d83d
     CALL crt_stdio.c_fputc_FUN_005a5d70 ; 0050d83e
         ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005a5d70(int character, _FILE * file)
-    MOV EDX,dword ptr [0x005fba18]      ; 0050d843 | DAT_005fba18
+    MOV EDX,dword ptr [0x005fba18]      ; 0050d843 | g_INT_005fba18
     ADD ESP,0x8                         ; 0050d849
     CMP EBX,EDX                         ; 0050d84c
     JL 0x0050d7c8                       ; 0050d84e
@@ -194,7 +194,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x58]      ; 0050d854
         ;   Label: LAB_0050d854
     MOV ECX,dword ptr [ESP + 0x5c]      ; 0050d858
-    MOV EBX,dword ptr [0x005fba1c]      ; 0050d85c | DAT_005fba1c
+    MOV EBX,dword ptr [0x005fba1c]      ; 0050d85c | g_INT_005fba1c
     ADD EDX,0x4                         ; 0050d862
     INC ECX                             ; 0050d865
     MOV dword ptr [ESP + 0x58],EDX      ; 0050d866
@@ -217,8 +217,8 @@ section .text
         ;   Label: LAB_0050d887
     MOV ECX,0x67                        ; 0050d88c
     PUSH 0x5cb9c2                       ; 0050d891 | = "saveScreenRaw16 - No ext found"
-    MOV dword ptr [0x01d71de0],EDX      ; 0050d896 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0050d89c | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0050d896 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0050d89c | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050d8a2
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050d8a7

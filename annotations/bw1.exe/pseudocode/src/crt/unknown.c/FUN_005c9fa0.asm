@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_006262e0
-;   undefined4 DAT_00626315
+;   undefined4 g_FILE_00626308._flag+1
 ;   undefined4 DAT_02c9f050
 ;   undefined4 DAT_02c9f054
 ;
@@ -22,12 +22,12 @@ section .text
     PUSH EBX                            ; 005c9fa0
         ;   Label: crt_unknown.c_FUN_005c9fa0
     PUSH ESI                            ; 005c9fa1
-    MOV AH,byte ptr [0x00626315]        ; 005c9fa2 | DAT_00626315
+    MOV AH,byte ptr [0x00626315]        ; 005c9fa2 | g_FILE_00626308._flag+1
     AND AH,0xf8                         ; 005c9fa8
     MOV DL,AH                           ; 005c9fab
-    MOV byte ptr [0x00626315],AH        ; 005c9fad | DAT_00626315
+    MOV byte ptr [0x00626315],AH        ; 005c9fad | g_FILE_00626308._flag+1
     OR DL,0x4                           ; 005c9fb3
-    MOV byte ptr [0x00626315],DL        ; 005c9fb6 | DAT_00626315
+    MOV byte ptr [0x00626315],DL        ; 005c9fb6 | g_FILE_00626308._flag+1
     MOV EDX,dword ptr [0x006262e0]      ; 005c9fbc | DAT_006262e0
     MOV EBX,0x6262d4                    ; 005c9fc2
     TEST EDX,EDX                        ; 005c9fc7

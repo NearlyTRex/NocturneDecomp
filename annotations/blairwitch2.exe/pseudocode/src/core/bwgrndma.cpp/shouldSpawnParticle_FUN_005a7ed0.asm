@@ -16,7 +16,7 @@
 ;   core_weaver.cpp_CRobin_processAI_FUN_005a61f0 at 005a6353
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ec60
+;   int g_INT_0061ec60 = 0xffff
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -30,7 +30,7 @@ section .text
     PUSH 0x0                            ; 005a7ed5
     CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 005a7ed7
         ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
-    MOV EDX,dword ptr [0x0061ec60]      ; 005a7edc | DAT_0061ec60
+    MOV EDX,dword ptr [0x0061ec60]      ; 005a7edc | g_INT_0061ec60
     ADD ESP,0x8                         ; 005a7ee2
     CMP EAX,EDX                         ; 005a7ee5
     SETL AL                             ; 005a7ee7

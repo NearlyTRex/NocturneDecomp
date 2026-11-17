@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 71,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 88
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -60,14 +57,14 @@
   "globals": [
     {
       "addr": "005d0cc6",
-      "name": "DAT_005d0cc6",
-      "type": "undefined4",
+      "name": "s_wb_005d0cc6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d0cc9",
-      "name": "DAT_005d0cc9",
-      "type": "undefined4",
+      "name": "s_data_005d0cc9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -96,14 +93,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -199,38 +196,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005d0cc9",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d0cc9,filename,&DAT_005d0cc6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005d0cc6",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d0cc9,filename,&DAT_005d0cc6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_0212551c",
-      "severity": "mild",
-      "text": "_fwrite(&DAT_0212551c,0x3000,this_ptr->camera_count,file);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

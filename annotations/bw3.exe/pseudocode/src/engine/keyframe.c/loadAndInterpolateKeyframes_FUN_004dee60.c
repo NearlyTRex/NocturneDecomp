@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004dee60(SMRGLKeyframeModel *keyframe_model)
 
 {
@@ -57,13 +55,13 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004dee60(SMRGLKey
     do {
       pSVar1 = pSVar11->loaded_frames[0];
       if ((pSVar1->header).child_count != 2) {
-        _DAT_01d71de0 = "..\\engine\\keyframe.c";
-        _DAT_01d71de4 = 0xfd;
+        g_CHAR_PTR_01d71de0 = "..\\engine\\keyframe.c";
+        g_INT_01d71de4 = 0xfd;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Bad key frame");
       }
       if ((pSVar1->vertex_header).count != (pSVar6->vertex_header).count) {
-        _DAT_01d71de0 = "..\\engine\\keyframe.c";
-        _DAT_01d71de4 = 0xfe;
+        g_CHAR_PTR_01d71de0 = "..\\engine\\keyframe.c";
+        g_INT_01d71de4 = 0xfe;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Key frame vertex mismatch");
       }
       iVar4 = iVar4 + 1;

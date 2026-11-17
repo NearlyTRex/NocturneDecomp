@@ -67,15 +67,15 @@ switchD_005ae270_caseD_c000008e:
     break;
   default:
 switchD_005ae270_default:
-    if (DAT_00607df4 != (code *)0x0) {
+    if (g_PTR_00607df4 != (byte *)0x0) {
       iVar4 = 1;
       do {
-        iVar2 = (*DAT_00607df0)(iVar4,param_1->ExceptionCode);
+        iVar2 = (*(code *)g_PTR_00607df0)(iVar4,param_1->ExceptionCode);
         if (iVar2 != 0) {
           if (((iVar2 == 1) || (iVar2 == 2)) || (iVar2 == 3)) break;
-          DAT_02d261c4 = '\x01';
-          (*DAT_00607df4)(iVar4);
-          if (DAT_02d261c4 != '\0') {
+          g_BYTE_02d261c4 = 1;
+          (*(code *)g_PTR_00607df4)(iVar4);
+          if (g_BYTE_02d261c4 != 0) {
             return 0;
           }
         }
@@ -84,10 +84,10 @@ switchD_005ae270_default:
     }
     goto LAB_005ae3eb;
   }
-  DAT_02d261c4 = '\x01';
+  g_BYTE_02d261c4 = 1;
   FUN_005afe70();
   iVar4 = FUN_005b0048(iVar4);
-  if ((iVar4 != -1) && (DAT_02d261c4 != '\0')) {
+  if ((iVar4 != -1) && (g_BYTE_02d261c4 != 0)) {
     *(ushort *)&(param_3->FloatSave).StatusWord =
          ((ushort)(param_3->FloatSave).StatusWord >> 8 & 0x7f) << 8;
     return 0;

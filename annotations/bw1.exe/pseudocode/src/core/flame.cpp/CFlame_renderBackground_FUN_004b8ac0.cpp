@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004b8ac0(CFlame *this_ptr,int layer_flag)
 
 {
@@ -32,7 +30,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004b8ac0(CFlame *this_pt
   int iStack_18;
   CLocation *pCStack_14;
   
-  this_ptr_00 = DAT_00612560;
+  this_ptr_00 = g_CDemonRenderer_PTR_00612560;
   bVar9 = 0;
   this_ptr->render_corona = 0;
   this_ptr->do_visibility_check = 0;
@@ -71,8 +69,8 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004b8ac0(CFlame *this_pt
           afStack_2c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
                afStack_2c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
           if ((SQRT(afStack_2c[1] * afStack_2c[1] +
-                    fStack_30 * fStack_30 + afStack_2c[0] * afStack_2c[0]) < (float)_DAT_005df6df)
-             && (pCVar5[1].render_needs_update == 1)) {
+                    fStack_30 * fStack_30 + afStack_2c[0] * afStack_2c[0]) <
+               (float)5) && (pCVar5[1].render_needs_update == 1)) {
             return;
           }
         }

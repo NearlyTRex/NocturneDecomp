@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit)
 
 {
@@ -82,7 +80,7 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
       }
     }
     if (0.0 < (double)damage_info->damage_amount) {
-      dVar4 = round((double)damage_info->damage_amount * _DAT_005d5a6f);
+      dVar4 = round((double)damage_info->damage_amount * 0.40000000000000002);
       iStack_28 = (int)ROUND(dVar4);
       iStack_20 = (int)ROUND(dVar4) + 1;
       CStack_c0.z = end->x - start->x;
@@ -105,9 +103,9 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
         fStack_d4 = fStack_d4 * fVar1;
       }
       pCVar5 = (CVector3f *)(auStack_78 + 8);
-      fStack_f0 = fStack_d8 * _DAT_005d5a77;
-      fStack_ec = fStack_d4 * _DAT_005d5a77;
-      CStack_34.x = fStack_dc * _DAT_005d5a77;
+      fStack_f0 = fStack_d8 * 10.0f;
+      fStack_ec = fStack_d4 * 10.0f;
+      CStack_34.x = fStack_dc * 10.0f;
       *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + 4) =
            *(uint *)((int)&stack0xffffff10 + (uint)bVar3 * -8);
       *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
@@ -128,10 +126,10 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
     afStack_48[(uint)bVar3 * -2] = *(float *)((int)&stack0xffffff34 + (uint)bVar3 * -8);
     afStack_48[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
          *(float *)((int)&stack0xffffff38 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    fStack_e8 = CStack_54.z * _DAT_005d5a7b;
-    fStack_e4 = afStack_48[0] * _DAT_005d5a7b;
-    fStack_e0 = afStack_48[1] * _DAT_005d5a7b;
-    afStack_9c[2] = CStack_54.z * _DAT_005d5a7b;
+    fStack_e8 = CStack_54.z * 0.5f;
+    fStack_e4 = afStack_48[0] * 0.5f;
+    fStack_e0 = afStack_48[1] * 0.5f;
+    afStack_9c[2] = CStack_54.z * 0.5f;
     afStack_9c[(uint)bVar3 * -2 + 3] = *(float *)((int)&stack0xffffff1c + (uint)bVar3 * -8);
     afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
          *(float *)((int)&stack0xffffff20 + (uint)bVar3 * -8 + (uint)bVar3 * -8);

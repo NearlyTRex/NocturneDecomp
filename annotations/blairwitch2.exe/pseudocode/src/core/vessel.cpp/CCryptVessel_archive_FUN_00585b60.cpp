@@ -11,7 +11,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_00585b60(CCryptVessel *thi
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60(&this_ptr->model,"modelName");
-  core_actor_cpp_archiveActor_FUN_0040b9e0((CDemonActor **)&this_ptr->prey,&DAT_005ede2e);
+  core_actor_cpp_archiveActor_FUN_0040b9e0((CDemonActor **)&this_ptr->prey,"prey");
   core_actor_cpp_archiveActor_FUN_0040b9e0((CDemonActor **)&this_ptr->neutral,"neutral");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->destroyed_event,"destroyedEvent");
   core_actor_cpp_archiveActor_FUN_0040b9e0((CDemonActor **)&this_ptr->start_loc,"startLoc")

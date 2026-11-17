@@ -6,21 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_polyListD3DL2_FUN_00512bd0(float *vertices,int vertex_count,ushort *indices,int triangle_count)
 
 {
-  _DAT_01e7dac8 = _DAT_01e7dac8 + triangle_count;
-  _DAT_01d224b4 = _DAT_01d224b4 + vertex_count;
+  g_INT_01e7dac8 = g_INT_01e7dac8 + triangle_count;
+  g_INT_01d224b4 = g_INT_01d224b4 + vertex_count;
   engine_mini3d_cpp_updateTransform_FUN_005124f0();
   engine_mini3d_cpp_updateRenderState_FUN_00516c60();
-  if ((_DAT_02c83468 != (code *)0x0) && (_DAT_01c50948 != 0)) {
-    (*_DAT_02c83468)(vertices,vertex_count,indices,triangle_count,_DAT_01c51d14);
+  if ((g_PTR_02c83468 != (byte *)0x0) && (g_INT_01c50948 != 0)) {
+    (*(code *)g_PTR_02c83468)
+              (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c51d14.dword);
     return;
   }
-  _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
-  _DAT_01d1d404 = 0x7a9;
+  g_CHAR_PTR_01d1d400 = "..\\engine\\mini3d.cpp";
+  g_INT_01d1d404 = 0x7a9;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CMini3D::polyList - Software does not suport multitexture");
   return;
 }

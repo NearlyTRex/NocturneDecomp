@@ -5,8 +5,11 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonCamera.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonRaytrace.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CRect.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2030000
@@ -15,9 +18,40 @@
 // CDemonCamera
 extern CDemonCamera g_CDemonCameraInstance;
 
+// CDemonGlobe*[100]
+extern CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_0203ad34[100];
+extern CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_0203aec8[100];
+extern CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_0203b1ec[100];
+
+// CDemonLight*[4]
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_0203ad20[4];
+
+// CDemonLight*[96]
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_0203a418[96];
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_0203a59c[96];
+
 // CDemonRaytrace
 extern CDemonRaytrace g_CDemonRaytraceInstance;
 
 // CKeyFramedModel
 extern CKeyFramedModel g_CKeyFramedModelInstance;
+
+// CRect[96]
+extern CRect g_CRect_ARRAY_0203a71c[96];
+
+// int
+extern int g_INT_0203a414;
+extern int g_INT_0203a598;
+extern int g_INT_0203ad1c;
+extern int g_INT_0203ad30;
+extern int g_INT_0203aec4;
+extern int g_INT_0203b1e8;
+extern int g_INT_0203b3e8;
+extern int g_INT_0203b3ec;
+
+// int[100]
+extern int g_INT_ARRAY_0203b058[100];
+
+// int[65536]
+extern int g_INT_ARRAY_0203baa4[65536];
 

@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0057ba4c = 0057bdf0
 ;   undefined1* switchdataD_0057baa8 = 0057bd43
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005b8e40
@@ -52,7 +52,7 @@ section .text
     XOR ECX,ECX                         ; 0057bbc2
     INC AL                              ; 0057bbc4
     MOV CL,AL                           ; 0057bbc6
-    MOV DH,byte ptr [ECX + 0x61ed94]    ; 0057bbc8 | DAT_0061ed94
+    MOV DH,byte ptr [ECX + 0x61ed94]    ; 0057bbc8 | g_UCHAR_ARRAY_0061ed94
     LEA EAX,[EBX + 0x1]                 ; 0057bbce
     TEST DH,0x2                         ; 0057bbd1
     JZ 0x0057bc3b                       ; 0057bbd4
@@ -178,7 +178,7 @@ section .text
         ;   Label: LAB_0057bcf8
     INC CL                              ; 0057bcfa
     AND ECX,0xff                        ; 0057bcfc
-    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057bd02 | DAT_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057bd02 | g_UCHAR_ARRAY_0061ed94
     JZ 0x0057bd24                       ; 0057bd09
         ;   XREF to: 0057bd24 (CONDITIONAL_JUMP)  ; LAB_0057bd24
     SUB EAX,0x30                        ; 0057bd0b
@@ -1155,7 +1155,7 @@ section .text
     MOV CL,byte ptr [ESP + 0xa4]        ; 0057c78d
     INC CL                              ; 0057c794
     AND ECX,0xff                        ; 0057c796
-    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057c79c | DAT_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057c79c | g_UCHAR_ARRAY_0061ed94
     JZ 0x0057c9f6                       ; 0057c7a3
         ;   XREF to: 0057c9f6 (CONDITIONAL_JUMP)  ; LAB_0057c9f6
     MOV ECX,0x1                         ; 0057c7a9
@@ -1237,7 +1237,7 @@ section .text
     MOV CL,byte ptr [ESP + 0xa4]        ; 0057c889
     INC CL                              ; 0057c890
     AND ECX,0xff                        ; 0057c892
-    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057c898 | DAT_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057c898 | g_UCHAR_ARRAY_0061ed94
     JZ 0x0057ca2a                       ; 0057c89f
         ;   XREF to: 0057ca2a (CONDITIONAL_JUMP)  ; LAB_0057ca2a
     MOV AL,byte ptr [ESP + 0xa4]        ; 0057c8a5
@@ -1332,7 +1332,7 @@ section .text
     MOV CL,byte ptr [ESP + 0xa4]        ; 0057c9c5
     INC CL                              ; 0057c9cc
     AND ECX,0xff                        ; 0057c9ce
-    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057c9d4 | DAT_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x20 ; 0057c9d4 | g_UCHAR_ARRAY_0061ed94
     JZ 0x0057cb42                       ; 0057c9db
         ;   XREF to: 0057cb42 (CONDITIONAL_JUMP)  ; LAB_0057cb42
     MOV AL,byte ptr [ESP + 0xa4]        ; 0057c9e1

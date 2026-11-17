@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004eb660(CHero *this_ptr)
 
 {
@@ -44,8 +42,9 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004eb660(CHero *this_ptr)
            *(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);
       *(uint *)((int)&local_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
            *(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-      if ((((ABS(local_40.y) <= (float)_DAT_005e485d) && (0.0 <= (double)local_40.z)) &&
-          ((double)local_40.z <= _DAT_005e4865)) && (ABS(local_40.x) <= (float)_DAT_005e4865)) {
+      if ((((ABS(local_40.y) <= (float)5) && (0.0 <= (double)local_40.z)) &&
+          ((double)local_40.z <= 3)) &&
+         (ABS(local_40.x) <= (float)3)) {
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_40,&local_58);
         local_4c = local_58.x;
         local_48[(uint)bVar2 * -2] = *(float *)((int)&local_58 + (uint)bVar2 * -8 + 4);

@@ -2,23 +2,23 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 792,
+    "complexity_score": 784,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 67,
+    "pseudocode_lines": 89,
+    "suspect_count": 66,
     "suspect_types": [
+      "negative_offset",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "register_param",
       "unaffected_reg",
-      "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 288
+    "total_lines": 290
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005a9e88",
-    "signature": "undefined4 crt_unknown_c_FUN_005a9e88(short param_1,int *param_2,uint param_3,uint *param_4)"
+    "signature": "undefined4 crt_unknown_c_FUN_005a9e88(short param_1,Heap *param_2,uint param_3,uint *param_4)"
   },
   "function_calls": [
     {
@@ -50,13 +50,13 @@
   "globals": [
     {
       "addr": "006075c4",
-      "name": "DAT_006075c4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Heap_PTR_006075c4",
+      "type": "Heap*",
+      "value": "00000000"
     },
     {
       "addr": "02d258e1",
-      "name": "DAT_02d258e1",
+      "name": "g_CHAR_ARRAY_02d258e0+1",
       "type": "undefined4",
       "value": null
     }
@@ -177,7 +177,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_005a9e88(short param_1,int *param_2,uint param_3,uint *param_4)",
+      "text": "uint FUN_005a9e88(short param_1,Heap *param_2,uint param_3,uint *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -185,7 +185,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint FUN_005a9e88(short param_1,int *param_2,uint param_3,uint *param_4)",
+      "text": "uint FUN_005a9e88(short param_1,Heap *param_2,uint param_3,uint *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -193,7 +193,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint FUN_005a9e88(short param_1,int *param_2,uint param_3,uint *param_4)",
+      "text": "uint FUN_005a9e88(short param_1,Heap *param_2,uint param_3,uint *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -201,7 +201,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "uint FUN_005a9e88(short param_1,int *param_2,uint param_3,uint *param_4)",
+      "text": "uint FUN_005a9e88(short param_1,Heap *param_2,uint param_3,uint *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -209,7 +209,7 @@
       "line": 12,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "int *unaff_EBX;",
+      "text": "Heap *unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
@@ -237,11 +237,19 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "param_2[-1].",
+      "severity": "mild",
+      "text": "ppHVar1 = &param_2[-1].next_heap_block;",
+      "type": "negative_offset"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(param_2 + -1);",
+      "text": "ppHVar1 = &param_2[-1].next_heap_block;",
       "type": "unnamed_param"
     },
     {
@@ -255,9 +263,9 @@
     {
       "description": "Complex pointer cast",
       "line": 27,
-      "match": "(uint *)((int)puVar1",
+      "match": "(uint *)((int)ppHVar1",
       "severity": "moderate",
-      "text": "for (puVar8 = (uint *)((int)puVar1 + uVar7); uVar4 = *puVar8, uVar4 != 0xffffffff;",
+      "text": "for (puVar8 = (uint *)((int)ppHVar1 + uVar7); uVar4 = *puVar8, uVar4 != 0xffffffff;",
       "type": "pointer_cast"
     },
     {
@@ -285,35 +293,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_006075c4",
-      "severity": "mild",
-      "text": "iVar3 = DAT_006075c4[2];",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 36,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = DAT_006075c4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_006075c4",
-      "severity": "mild",
-      "text": "unaff_EBX = DAT_006075c4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
+      "text": "unaff_EBX = g_Heap_PTR_006075c4;",
       "type": "unaffected_reg"
     },
     {
@@ -321,39 +305,15 @@
       "line": 38,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
+      "text": "((param_2 < unaff_EBX ||",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)(*unaff_EBX + (int)unaff_EBX",
-      "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
+      "text": "((param_2 < unaff_EBX ||",
       "type": "unnamed_param"
     },
     {
@@ -361,7 +321,7 @@
       "line": 39,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = (int *)unaff_EBX[2];",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
       "type": "unaffected_reg"
     },
     {
@@ -369,7 +329,23 @@
       "line": 39,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = (int *)unaff_EBX[2];",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX->next_heap_block;",
       "type": "unaffected_reg"
     },
     {
@@ -377,23 +353,15 @@
       "line": 40,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "iVar3 = unaff_EBX[2];",
+      "text": "unaff_EBX = unaff_EBX->next_heap_block;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 41,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "if (puVar8 == (uint *)unaff_EBX[3]) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 44,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX[3] = ((uint *)unaff_EBX[3])[1];",
+      "text": "pHVar3 = unaff_EBX->next_heap_block;",
       "type": "unaffected_reg"
     },
     {
@@ -401,12 +369,28 @@
       "line": 44,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX[3] = ((uint *)unaff_EBX[3])[1];",
+      "text": "if (puVar8 == (uint *)unaff_EBX[1].heap_size) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1].heap_size = ((uint *)unaff_EBX[1].heap_size)[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1].heap_size = ((uint *)unaff_EBX[1].heap_size)[1];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_4",
       "severity": "mild",
       "text": "if (*param_4 <= uVar4) {",
@@ -414,7 +398,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 48,
       "match": "param_4",
       "severity": "mild",
       "text": "uVar6 = uVar4 - *param_4;",
@@ -422,7 +406,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(uint *)((int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + *param_4);",
@@ -430,7 +414,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_4",
       "severity": "mild",
       "text": "puVar8 = (uint *)((int)puVar8 + *param_4);",
@@ -438,47 +422,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 56,
       "match": "param_4",
       "severity": "mild",
-      "text": "*puVar1 = *puVar1 + *param_4;",
+      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *param_4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_02d258e1",
-      "severity": "mild",
-      "text": "DAT_02d258e1 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX[7] = unaff_EBX[7] + -1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX[7] = unaff_EBX[7] + -1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 64,
-      "match": "DAT_02d258e1",
-      "severity": "mild",
-      "text": "DAT_02d258e1 = 0;",
-      "type": "undefined_data"
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].heap_base = (void *)((int)unaff_EBX[2].heap_base + -1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].heap_base = (void *)((int)unaff_EBX[2].heap_base + -1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(void *)((int)unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].heap_base = (void *)((int)unaff_EBX[2].heap_base + -1);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 66,
       "match": "param_4",
       "severity": "mild",
       "text": "if (*param_4 <= uVar4) goto LAB_005aa038;",
@@ -486,7 +462,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_4",
       "severity": "mild",
       "text": "*param_4 = *param_4 - uVar4;",
@@ -494,7 +470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_4",
       "severity": "mild",
       "text": "*param_4 = *param_4 - uVar4;",
@@ -502,15 +478,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(uint *)(uVar4 + (int)puVar1",
+      "line": 74,
+      "match": "(uint *)(uVar4 + (int)ppHVar1",
       "severity": "moderate",
-      "text": "*(uint *)(uVar4 + (int)puVar1) = uVar7 - uVar4 | 1;",
+      "text": "*(uint *)(uVar4 + (int)ppHVar1) = uVar7 - uVar4 | 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 74,
+      "line": 75,
       "match": "in_DS",
       "severity": "mild",
       "text": "if (in_DS == param_1) {",
@@ -518,90 +494,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "if (in_DS == param_1) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_006075c4",
-      "severity": "mild",
-      "text": "iVar3 = DAT_006075c4[2];",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 76,
+      "line": 77,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = DAT_006075c4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_006075c4",
-      "severity": "mild",
-      "text": "unaff_EBX = DAT_006075c4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(int *)(*unaff_EBX + (int)unaff_EBX",
-      "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 79,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX = (int *)unaff_EBX[2];",
+      "text": "unaff_EBX = g_Heap_PTR_006075c4;",
       "type": "unaffected_reg"
     },
     {
@@ -609,7 +513,23 @@
       "line": 79,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = (int *)unaff_EBX[2];",
+      "text": "((param_2 < unaff_EBX ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((param_2 < unaff_EBX ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 80,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
       "type": "unaffected_reg"
     },
     {
@@ -617,39 +537,71 @@
       "line": 80,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "iVar3 = unaff_EBX[2];",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX->next_heap_block;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 83,
+      "line": 81,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX[6] = unaff_EBX[6] + 1;",
+      "text": "unaff_EBX = unaff_EBX->next_heap_block;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 83,
+      "line": 82,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX[6] = unaff_EBX[6] + 1;",
+      "text": "pHVar3 = unaff_EBX->next_heap_block;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].heap_size = unaff_EBX[2].heap_size + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].heap_size = unaff_EBX[2].heap_size + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(uint *)(uVar4 + (int)puVar1",
+      "line": 86,
+      "match": "(uint *)(uVar4 + (int)ppHVar1",
       "severity": "moderate",
-      "text": "FUN_005a3780((uint *)(uVar4 + (int)puVar1) + 1);",
+      "text": "FUN_005a3780((uint *)(uVar4 + (int)ppHVar1) + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `ppHVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "(int)puVar1",
+      "match": "(int)ppHVar1",
       "severity": "moderate",
-      "text": "for (puVar8 = (uint *)((int)puVar1 + uVar7); uVar4 = *puVar8, uVar4 != 0xffffffff;",
+      "text": "for (puVar8 = (uint *)((int)ppHVar1 + uVar7); uVar4 = *puVar8, uVar4 != 0xffffffff;",
       "type": "pointer_truncation"
     },
     {
@@ -661,44 +613,84 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `unaff_EBX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
-      "match": "(int)unaff_EBX",
+      "description": "Pointer value `&unaff_EBX->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)&unaff_EBX->heap_size",
       "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
+      "line": 50,
       "match": "(int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + *param_4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
-      "match": "(int)puVar1",
+      "description": "Pointer value `unaff_EBX[2].heap_base` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)unaff_EBX[2].heap_base",
       "severity": "moderate",
-      "text": "*(uint *)(uVar4 + (int)puVar1) = uVar7 - uVar4 | 1;",
+      "text": "unaff_EBX[2].heap_base = (void *)((int)unaff_EBX[2].heap_base + -1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `unaff_EBX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
-      "match": "(int)unaff_EBX",
+      "description": "Pointer value `ppHVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)ppHVar1",
       "severity": "moderate",
-      "text": "((param_2 < unaff_EBX || ((int *)(*unaff_EBX + (int)unaff_EBX) <= param_2))))) {",
+      "text": "*(uint *)(uVar4 + (int)ppHVar1) = uVar7 - uVar4 | 1;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 84,
-      "match": "(int)puVar1",
+      "description": "Pointer value `&unaff_EBX->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)&unaff_EBX->heap_size",
       "severity": "moderate",
-      "text": "FUN_005a3780((uint *)(uVar4 + (int)puVar1) + 1);",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppHVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(int)ppHVar1",
+      "severity": "moderate",
+      "text": "FUN_005a3780((uint *)(uVar4 + (int)ppHVar1) + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *param_4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 63,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 80,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((Heap *)((int)&unaff_EBX->heap_size + unaff_EBX->heap_size) <= param_2))))) {",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

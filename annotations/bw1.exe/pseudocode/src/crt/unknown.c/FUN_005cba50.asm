@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005caecc at 005caf10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626220
+;   Heap* g_Heap_PTR_00626220 = 00000000
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626618 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626620 = 005c50d4
 ;
@@ -25,7 +25,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005cba50
     PUSH ESI                            ; 005cba51
     CALL dword ptr [0x00626618]         ; 005cba52 | PTR_crt_unknown.c_FUN_005c50d4_00626618
-    MOV EAX,[0x00626220]                ; 005cba58 | DAT_00626220
+    MOV EAX,[0x00626220]                ; 005cba58 | g_Heap_PTR_00626220
     TEST EAX,EAX                        ; 005cba5d
     JZ 0x005cba81                       ; 005cba5f
         ;   XREF to: 005cba81 (CONDITIONAL_JUMP)  ; LAB_005cba81

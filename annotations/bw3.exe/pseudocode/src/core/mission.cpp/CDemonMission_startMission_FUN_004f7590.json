@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 83,
+    "complexity_score": 52,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 3,
+    "pseudocode_lines": 37,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 133
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -133,9 +131,9 @@
     },
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005fba60",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "005fe9dc",
@@ -175,14 +173,14 @@
     },
     {
       "addr": "01d5ba00",
-      "name": "DAT_01d5ba00",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba00",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
@@ -335,24 +333,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1c6e360 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 19,
-      "match": "0x1c6e360",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01C6E360;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 20,
+      "line": 18,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_teleport).position.z = 0.0;",

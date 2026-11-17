@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 35,
+    "complexity_score": 19,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 5,
-    "suspect_count": 2,
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "fast_sqrt_inline",
-      "warning_overlapping_globals"
+      "fast_sqrt_inline"
     ],
-    "total_lines": 23
+    "total_lines": 22
   },
   "cross_references": [],
   "function": {
@@ -32,8 +31,8 @@
   "globals": [
     {
       "addr": "01caf5b4",
-      "name": "DAT_01caf5b4",
-      "type": "undefined4",
+      "name": "g_INT_01caf5b4",
+      "type": "int",
       "value": null
     }
   ],
@@ -116,19 +115,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 7,
-      "match": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + _DAT_01ca",
+      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 5,
+      "match": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_INT_01c",
       "severity": "moderate",
-      "text": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + _DAT_01caf5b4);",
+      "text": "return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_INT_01caf5b4);",
       "type": "fast_sqrt_inline"
     }
   ]

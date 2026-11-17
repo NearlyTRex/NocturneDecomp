@@ -7,12 +7,12 @@
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c25590
-;   undefined4 DAT_01c25f84
-;   undefined4 DAT_01c35838
-;   undefined4 DAT_01c35839
-;   undefined4 DAT_01c3583a
-;   undefined4 DAT_01c35e60
+;   CBitFont* g_CBitFont_PTR_01c25590
+;   int g_INT_01c25f84
+;   uchar[768] g_UCHAR_ARRAY_01c35838
+;   undefined4 g_UCHAR_ARRAY_01c35838+1
+;   undefined4 g_UCHAR_ARRAY_01c35838+2
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   engine_2d.c_clipLineGlobal_FUN_00402ca0
@@ -64,7 +64,7 @@ section .text
     LEA EAX,[EBX + 0x24]                ; 00485657
     PUSH EAX                            ; 0048565a
     MOV dword ptr [ESP + 0x8],EDX       ; 0048565b
-    MOV EDX,dword ptr [0x01c25590]      ; 0048565f | DAT_01c25590
+    MOV EDX,dword ptr [0x01c25590]      ; 0048565f | g_CBitFont_PTR_01c25590
     PUSH EDX                            ; 00485665
     MOV dword ptr [ESP + 0x8],EAX       ; 00485666
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0 ; 0048566a
@@ -89,7 +89,7 @@ section .text
     PUSH EAX                            ; 00485695
     MOV EAX,dword ptr [ESP + 0x10]      ; 00485696
     PUSH EAX                            ; 0048569a
-    MOV EDX,dword ptr [0x01c25590]      ; 0048569b | DAT_01c25590
+    MOV EDX,dword ptr [0x01c25590]      ; 0048569b | g_CBitFont_PTR_01c25590
     PUSH EDX                            ; 004856a1
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004856a2
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -114,11 +114,11 @@ section .text
         ;   Label: LAB_004856c7
     JNZ 0x00485701                      ; 004856cb
         ;   XREF to: 00485701 (CONDITIONAL_JUMP)  ; LAB_00485701
-    MOV EDX,dword ptr [0x01c25f84]      ; 004856cd | DAT_01c25f84
+    MOV EDX,dword ptr [0x01c25f84]      ; 004856cd | g_INT_01c25f84
     TEST EDX,EDX                        ; 004856d3
     JNZ 0x00485715                      ; 004856d5
         ;   XREF to: 00485715 (CONDITIONAL_JUMP)  ; LAB_00485715
-    MOV dword ptr [0x01c35e60],EDX      ; 004856d7 | DAT_01c35e60
+    MOV dword ptr [0x01c35e60],EDX      ; 004856d7 | g_INT_01c35e60
     MOV EBX,dword ptr [ESP + 0x4]       ; 004856dd
         ;   Label: LAB_004856dd
     SUB EBX,0x2                         ; 004856e1
@@ -156,13 +156,13 @@ section .text
     XOR EDX,EDX                         ; 00485715
         ;   Label: LAB_00485715
     XOR EAX,EAX                         ; 00485717
-    MOV DL,byte ptr [0x01c35839]        ; 00485719 | DAT_01c35839
-    MOV AL,[0x01c35838]                 ; 0048571f | DAT_01c35838
+    MOV DL,byte ptr [0x01c35839]        ; 00485719 | g_UCHAR_ARRAY_01c35838+1
+    MOV AL,[0x01c35838]                 ; 0048571f | g_UCHAR_ARRAY_01c35838
     SHL EDX,0x8                         ; 00485724
     SHL EAX,0x10                        ; 00485727
     OR EDX,EAX                          ; 0048572a
     XOR EAX,EAX                         ; 0048572c
-    MOV AL,[0x01c3583a]                 ; 0048572e | DAT_01c3583a
+    MOV AL,[0x01c3583a]                 ; 0048572e | g_UCHAR_ARRAY_01c35838+2
     OR EAX,EDX                          ; 00485733
     PUSH EAX                            ; 00485735
     CALL engine_mini3d.cpp_setColor_FUN_004f8e20 ; 00485736

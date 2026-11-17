@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Spine2_005ea33d
 ;   TerminatedCString s_Bip01_Head_005ea34a
-;   undefined4 DAT_005ea355
+;   TerminatedCString s_head_005ea355
 ;   TerminatedCString s_lforearm_005ea35a
 ;   TerminatedCString s_rforearm_005ea363
 ;   TerminatedCString s_lshin_005ea36c
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 00569eb0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005213cc
     PUSH 0x1                            ; 005213cf
-    PUSH 0x5ea355                       ; 005213d1 | DAT_005ea355
+    PUSH 0x5ea355                       ; 005213d1 | = "head"
     PUSH EAX                            ; 005213d6
     MOV ESI,EAX                         ; 005213d7
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780 ; 005213d9

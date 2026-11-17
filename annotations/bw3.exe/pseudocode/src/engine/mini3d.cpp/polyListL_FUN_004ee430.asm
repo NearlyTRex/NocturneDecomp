@@ -10,16 +10,16 @@
 ; int              Stack[0x10]:4   triangle_count
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_01c6e2b4
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d76c34
-;   undefined4 DAT_01d76f60
-;   undefined4 DAT_01d7a694
-;   undefined4 DAT_01d7a698
-;   undefined4 DAT_01ed3198
-;   undefined4 DAT_02cf60bc
+;   int g_INT_01c6cee8
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01d76c34
+;   float* g_FLOAT_PTR_01d76f60
+;   int g_INT_01d7a694
+;   int g_INT_01d7a698
+;   int g_INT_01ed3198
+;   void* g_PTR_02cf60bc
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -43,21 +43,21 @@ section .text
     PUSH EBP                            ; 004ee433
     MOV ESI,dword ptr [ESP + 0x14]      ; 004ee434
     MOV EBX,dword ptr [ESP + 0x20]      ; 004ee438
-    MOV EDX,dword ptr [0x01ed3198]      ; 004ee43c | DAT_01ed3198
-    MOV ECX,dword ptr [0x01d76c34]      ; 004ee442 | DAT_01d76c34
+    MOV EDX,dword ptr [0x01ed3198]      ; 004ee43c | g_INT_01ed3198
+    MOV ECX,dword ptr [0x01d76c34]      ; 004ee442 | g_INT_01d76c34
     ADD EDX,EBX                         ; 004ee448
     MOV EBX,dword ptr [ESP + 0x18]      ; 004ee44a
-    MOV dword ptr [0x01ed3198],EDX      ; 004ee44e | DAT_01ed3198
+    MOV dword ptr [0x01ed3198],EDX      ; 004ee44e | g_INT_01ed3198
     ADD ECX,EBX                         ; 004ee454
-    MOV EBX,dword ptr [0x01d7a694]      ; 004ee456 | DAT_01d7a694
-    MOV dword ptr [0x01d76c34],ECX      ; 004ee45c | DAT_01d76c34
+    MOV EBX,dword ptr [0x01d7a694]      ; 004ee456 | g_INT_01d7a694
+    MOV dword ptr [0x01d76c34],ECX      ; 004ee45c | g_INT_01d76c34
     TEST EBX,EBX                        ; 004ee462
     JNZ 0x004ee54c                      ; 004ee464
         ;   XREF to: 004ee54c (CONDITIONAL_JUMP)  ; LAB_004ee54c
-    CMP dword ptr [0x02cf60bc],0x0      ; 004ee46a | DAT_02cf60bc
+    CMP dword ptr [0x02cf60bc],0x0      ; 004ee46a | g_PTR_02cf60bc
     JZ 0x004ee480                       ; 004ee471
         ;   XREF to: 004ee480 (CONDITIONAL_JUMP)  ; LAB_004ee480
-    CMP dword ptr [0x01c6cee8],0x0      ; 004ee473 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 004ee473 | g_INT_01c6cee8
     JNZ 0x004ee563                      ; 004ee47a
         ;   XREF to: 004ee563 (CONDITIONAL_JUMP)  ; LAB_004ee563
     CALL engine_mini3d.cpp_updateTransform_FUN_004edcc0 ; 004ee480
@@ -75,14 +75,14 @@ section .text
     MOV EDX,0x5c80f8                    ; 004ee49b
     MOV ECX,0x7e6                       ; 004ee4a0
     PUSH 0x5c810d                       ; 004ee4a5
-    MOV dword ptr [0x01d71de0],EDX      ; 004ee4aa | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004ee4b0 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004ee4aa | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004ee4b0 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ee4b6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004ee4bb
     MOV EAX,dword ptr [ESP + 0x18]      ; 004ee4be
         ;   Label: LAB_004ee4be
-    MOV EBX,dword ptr [0x01d76f60]      ; 004ee4c2 | DAT_01d76f60
+    MOV EBX,dword ptr [0x01d76f60]      ; 004ee4c2 | g_FLOAT_PTR_01d76f60
     XOR EDI,EDI                         ; 004ee4c8
     XOR EBP,EBP                         ; 004ee4ca
     TEST EAX,EAX                        ; 004ee4cc
@@ -121,7 +121,7 @@ section .text
         ;   XREF to: 004ee4d0 (CONDITIONAL_JUMP)  ; LAB_004ee4d0
     LEA EAX,[EAX]                       ; 004ee51b
     MOV ECX,ECX                         ; 004ee51e
-    CMP dword ptr [0x01d7a698],0x0      ; 004ee520 | DAT_01d7a698
+    CMP dword ptr [0x01d7a698],0x0      ; 004ee520 | g_INT_01d7a698
         ;   Label: LAB_004ee520
     JZ 0x004ee588                       ; 004ee527
         ;   XREF to: 004ee588 (CONDITIONAL_JUMP)  ; LAB_004ee588
@@ -131,7 +131,7 @@ section .text
     PUSH EAX                            ; 004ee532
     MOV EDX,dword ptr [ESP + 0x20]      ; 004ee533
     PUSH EDX                            ; 004ee537
-    MOV ECX,dword ptr [0x01d76f60]      ; 004ee538 | DAT_01d76f60
+    MOV ECX,dword ptr [0x01d76f60]      ; 004ee538 | g_FLOAT_PTR_01d76f60
     PUSH ECX                            ; 004ee53e
     CALL engine_mini3d.cpp_userClipPolyList_FUN_004f2e30 ; 004ee53f
         ;   XREF to: 004f2e30 (UNCONDITIONAL_CALL)  ; int engine_mini3d.cpp_userClipPolyList_FUN_004f2e30(float * vertices, int vertex_count, ushort * indices, int triangle_count)
@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 004f2490 (UNCONDITIONAL_CALL)  ; int engine_mini3d.cpp_polyListSurface_FUN_004f2490(float * vertices, int vertex_count, ushort * indices, int triangle_count)
     JMP 0x004ee544                      ; 004ee561
         ;   XREF to: 004ee544 (UNCONDITIONAL_JUMP)  ; LAB_004ee544
-    MOV EDX,dword ptr [0x01c6e2b4]      ; 004ee563 | DAT_01c6e2b4
+    MOV EDX,dword ptr [0x01c6e2b4]      ; 004ee563 | g_BIT_INTEGER32_01c6e2b4
         ;   Label: LAB_004ee563
     PUSH EDX                            ; 004ee569
     MOV ECX,dword ptr [ESP + 0x24]      ; 004ee56a
@@ -164,7 +164,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 004ee574
     PUSH EDI                            ; 004ee578
     PUSH ESI                            ; 004ee579
-    CALL dword ptr [0x02cf60bc]         ; 004ee57a | DAT_02cf60bc
+    CALL dword ptr [0x02cf60bc]         ; 004ee57a | g_PTR_02cf60bc
     ADD ESP,0x14                        ; 004ee580
     POP EBP                             ; 004ee583
     POP EDI                             ; 004ee584
@@ -179,7 +179,7 @@ section .text
     PUSH EBX                            ; 004ee592
     MOV ESI,dword ptr [ESP + 0x24]      ; 004ee593
     PUSH ESI                            ; 004ee597
-    MOV EDI,dword ptr [0x01d76f60]      ; 004ee598 | DAT_01d76f60
+    MOV EDI,dword ptr [0x01d76f60]      ; 004ee598 | g_FLOAT_PTR_01d76f60
     PUSH EDI                            ; 004ee59e
     CALL engine_mini3d.cpp_drawTransformedList_FUN_004f12b0 ; 004ee59f
         ;   XREF to: 004f12b0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawTransformedList_FUN_004f12b0(float * vertices, int vertex_count, ushort * indices, int triangle_count, ...)

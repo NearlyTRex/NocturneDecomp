@@ -7,9 +7,9 @@
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01d39d34
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   int g_INT_01d39d34
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -99,13 +99,13 @@ section .text
     PUSH EBX                            ; 005a6baa
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 ; 005a6bab
         ;   XREF to: 0042f3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0(CCharacter * this_ptr)
-    MOV EBP,dword ptr [0x01d39d34]      ; 005a6bb0 | DAT_01d39d34
+    MOV EBP,dword ptr [0x01d39d34]      ; 005a6bb0 | g_INT_01d39d34
     ADD ESP,0x4                         ; 005a6bb6
     TEST EBP,EBP                        ; 005a6bb9
     JZ 0x005a6bdf                       ; 005a6bbb
         ;   XREF to: 005a6bdf (CONDITIONAL_JUMP)  ; LAB_005a6bdf
-    MOV EAX,[0x00612560]                ; 005a6bbd | DAT_00612560
-    PUSH EAX                            ; 005a6bc2 | DAT_01bc120c
+    MOV EAX,[0x00612560]                ; 005a6bbd | g_CDemonRenderer_PTR_00612560
+    PUSH EAX                            ; 005a6bc2 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 005a6bc3
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005a6bc8

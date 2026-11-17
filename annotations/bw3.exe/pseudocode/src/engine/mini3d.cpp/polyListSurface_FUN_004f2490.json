@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 173,
+    "complexity_score": 144,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 8,
+    "pseudocode_lines": 74,
+    "suspect_count": 6,
     "suspect_types": [
       "extra_output",
-      "pointer_cast",
-      "suspect_float",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 230
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -102,38 +100,38 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d76c34",
-      "name": "DAT_01d76c34",
-      "type": "undefined4",
+      "name": "g_INT_01d76c34",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d76f64",
-      "name": "DAT_01d76f64",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d76f64",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d7a694",
-      "name": "DAT_01d7a694",
-      "type": "undefined4",
+      "name": "g_INT_01d7a694",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed3198",
-      "name": "DAT_01ed3198",
-      "type": "undefined4",
+      "name": "g_INT_01ed3198",
+      "type": "int",
       "value": null
     }
   ],
@@ -283,16 +281,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 6,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "float extraout_EAX;",
@@ -300,23 +290,15 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 7,
       "match": "extraout_EAX_00",
       "severity": "moderate",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 25,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (_DAT_01d7a694 == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "vertices = &((CVector3f *)((int)vertices + 0x18))->z;",
@@ -324,7 +306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "vertices = &((CVector3f *)((int)vertices + 0x18))->z;",
@@ -332,7 +314,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
+      "line": 44,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "fVar1 = extraout_EAX;",

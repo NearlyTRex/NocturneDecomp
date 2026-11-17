@@ -15,7 +15,7 @@ int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004fa540(CInventory *
     return 1;
   }
   if ((weapon_category == 0) &&
-     (iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(weapon_actor,&DAT_005e6818), iVar1 != 0)) {
+     (iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(weapon_actor,"CGun"), iVar1 != 0)) {
     return 1;
   }
   if (weapon_category == 1) {

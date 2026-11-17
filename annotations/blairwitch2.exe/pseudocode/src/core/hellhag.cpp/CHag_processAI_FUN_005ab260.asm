@@ -10,14 +10,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Death_005f0c42
 ;   TerminatedCString s_Animation_005f0c48
-;   undefined4 DAT_005f0c52
+;   TerminatedCString s_Burn_005f0c52
 ;   TerminatedCString s_Death_005f0c57
-;   undefined4 DAT_005f0c5d
+;   TerminatedCString s_Burn_005f0c5d
 ;   TerminatedCString s_hagheal01L_wav_005f0c62
-;   undefined4 DAT_005f0c76
-;   undefined4 DAT_005f0c7e
-;   undefined4 DAT_005f0c82
-;   undefined4 DAT_005f0c86
+;   double g_DOUBLE_005f0c76 = 15
+;   float g_FLOAT_005f0c7e = 0.1000000
+;   float g_FLOAT_005f0c82 = 2
+;   double g_DOUBLE_005f0c86 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -131,7 +131,7 @@ section .text
     POP ESI                             ; 005ab378
     POP EBX                             ; 005ab379
     RET                                 ; 005ab37a
-    PUSH 0x5f0c52                       ; 005ab37b | DAT_005f0c52
+    PUSH 0x5f0c52                       ; 005ab37b | = "Burn"
         ;   Label: LAB_005ab37b
     PUSH EBX                            ; 005ab380
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005ab381
@@ -176,7 +176,7 @@ section .text
     TEST EAX,EAX                        ; 005ab3f4
     JNZ 0x005ab373                      ; 005ab3f6
         ;   XREF to: 005ab373 (CONDITIONAL_JUMP)  ; LAB_005ab373
-    PUSH 0x5f0c5d                       ; 005ab3fc | DAT_005f0c5d
+    PUSH 0x5f0c5d                       ; 005ab3fc | = "Burn"
     PUSH EBX                            ; 005ab401
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005ab402
         ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
@@ -186,7 +186,7 @@ section .text
         ;   XREF to: 005ab373 (CONDITIONAL_JUMP)  ; LAB_005ab373
     FLD float ptr [EBP + 0x92]          ; 005ab412
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005ab418
-    FMUL double ptr [0x005f0c76]        ; 005ab41e | DAT_005f0c76
+    FMUL double ptr [0x005f0c76]        ; 005ab41e | g_DOUBLE_005f0c76
     MOV EDI,dword ptr [EAX + 0x1185c]   ; 005ab424
     FLD float ptr [EAX + 0x25a8]        ; 005ab42a
     FXCH                                ; 005ab430
@@ -266,7 +266,7 @@ section .text
     FSIN                                ; 005ab4fc
     ADD ESP,0x8                         ; 005ab4fe
     FSTP double ptr [EBP + 0x56]        ; 005ab501
-    FMUL double ptr [0x005f0c86]        ; 005ab504 | DAT_005f0c86
+    FMUL double ptr [0x005f0c86]        ; 005ab504 | g_DOUBLE_005f0c86
     PUSH 0x40c00000                     ; 005ab50a
     PUSH 0x3f800000                     ; 005ab50f
     FSTP float ptr [EBP + 0x5e]         ; 005ab514
@@ -275,7 +275,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab51c
     FLD float ptr [EBP + 0x76]          ; 005ab51f
     FLD double ptr [EBP + 0x56]         ; 005ab522
-    FMUL double ptr [0x005f0c86]        ; 005ab525 | DAT_005f0c86
+    FMUL double ptr [0x005f0c86]        ; 005ab525 | g_DOUBLE_005f0c86
     ADD ESP,0x8                         ; 005ab52b
     FSTP float ptr [EBP + 0x76]         ; 005ab52e
     MOV EAX,dword ptr [EBP + 0x76]      ; 005ab531
@@ -410,7 +410,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005ab6a1
     MOVSD ES:EDI,ESI                    ; 005ab6a2
     MOVSD ES:EDI,ESI                    ; 005ab6a3
-    FLD float ptr [0x005f0c7e]          ; 005ab6a4 | DAT_005f0c7e
+    FLD float ptr [0x005f0c7e]          ; 005ab6a4 | g_FLOAT_005f0c7e
     FLD float ptr [EBP + 0x4a]          ; 005ab6aa
     FMUL ST1                            ; 005ab6ad
     FLD float ptr [EBP + 0x4e]          ; 005ab6af
@@ -431,7 +431,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005ab6d4
     MOVSD ES:EDI,ESI                    ; 005ab6d5
     LEA EAX,[EBP + 0x2]                 ; 005ab6d6
-    FLD float ptr [0x005f0c82]          ; 005ab6d9 | DAT_005f0c82
+    FLD float ptr [0x005f0c82]          ; 005ab6d9 | g_FLOAT_005f0c82
     FLD float ptr [EBP + 0x2]           ; 005ab6df
     FMUL ST1                            ; 005ab6e2
     PUSH EAX                            ; 005ab6e4

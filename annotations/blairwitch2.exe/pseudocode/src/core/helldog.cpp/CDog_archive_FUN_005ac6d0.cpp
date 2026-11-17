@@ -13,7 +13,7 @@ void __cdecl core_helldog_cpp_CDog_archive_FUN_005ac6d0(CDog *this_ptr)
   if (g_CDogClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->food,&DAT_005f0e7e);
+  core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->food,"Food");
   core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->eat_time,"EatTime");
   return;
 }

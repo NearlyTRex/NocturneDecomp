@@ -14,8 +14,8 @@
 ;   void* PTR_SetEvent_005d0638 = 001d119c
 ;   void* PTR_crt_unknown.c_FUN_005c50cc_006265fc = 005c50cc
 ;   void* PTR_crt_unknown.c_FUN_005c50f8_0062663c = 005c50f8
-;   undefined4 DAT_00626ad4
-;   undefined4 DAT_02c9f060
+;   ulong g_ULONG_00626ad4 = 0xf4
+;   int g_INT_02c9f060
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -41,26 +41,26 @@ section .text
     MOV EBP,ESP                         ; 005cea19
     SUB ESP,0xc                         ; 005cea1b
     MOV ESI,dword ptr [EBP + 0x20]      ; 005cea1e
-    MOV EDX,dword ptr [0x02c9f060]      ; 005cea21 | DAT_02c9f060
+    MOV EDX,dword ptr [0x02c9f060]      ; 005cea21 | g_INT_02c9f060
     MOV EAX,dword ptr [ESI]             ; 005cea27
     MOV EDI,dword ptr [ESI + 0x4]       ; 005cea29
     MOV dword ptr [EBP + -0x4],EAX      ; 005cea2c
     TEST EDX,EDX                        ; 005cea2f
     JNZ 0x005cea6a                      ; 005cea31
         ;   XREF to: 005cea6a (CONDITIONAL_JUMP)  ; LAB_005cea6a
-    MOV EAX,[0x00626ad4]                ; 005cea33 | DAT_00626ad4
+    MOV EAX,[0x00626ad4]                ; 005cea33 | g_ULONG_00626ad4
     ADD EAX,0x3                         ; 005cea38
     AND AL,0xfc                         ; 005cea3b
     SUB ESP,EAX                         ; 005cea3d
     MOV EBX,ESP                         ; 005cea3f
-    MOV ECX,dword ptr [0x00626ad4]      ; 005cea41 | DAT_00626ad4
+    MOV ECX,dword ptr [0x00626ad4]      ; 005cea41 | g_ULONG_00626ad4
     PUSH ECX                            ; 005cea47
     PUSH EDX                            ; 005cea48
     PUSH EBX                            ; 005cea49
     CALL crt_memory.c_memset_FUN_005bfb70 ; 005cea4a
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005cea4f
-    MOV EAX,[0x00626ad4]                ; 005cea52 | DAT_00626ad4
+    MOV EAX,[0x00626ad4]                ; 005cea52 | g_ULONG_00626ad4
     PUSH EBX                            ; 005cea57
     MOV dword ptr [EBX + 0xf0],EAX      ; 005cea58
     CALL crt_unknown.c_FUN_005cacd8     ; 005cea5e

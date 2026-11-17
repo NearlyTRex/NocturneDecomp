@@ -42,9 +42,9 @@
 ;   core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0053cca0 at 0053ccaf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bcbdd
-;   undefined4 DAT_005bcbe1
-;   undefined4 DAT_005fb0e8
+;   float g_FLOAT_005bcbdd = 0.125
+;   float g_FLOAT_005bcbe1 = 2.684355E+8
+;   uchar[8] g_UCHAR_ARRAY_005fb0e8
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00473b60
@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 00477545
     FLD float ptr [EDX]                 ; 00477548
     FSUB float ptr [ECX + 0x10]         ; 0047754a
-    FLD float ptr [0x005bcbdd]          ; 0047754d | DAT_005bcbdd
+    FLD float ptr [0x005bcbdd]          ; 0047754d | g_FLOAT_005bcbdd
     FLD float ptr [ECX + 0x28]          ; 00477553
     FMUL ST1                            ; 00477556
     FLD1                                ; 00477558
@@ -189,7 +189,7 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 00477689
     FLD ST0                             ; 0047768d
     FABS                                ; 0047768f
-    FLD float ptr [0x005bcbe1]          ; 00477691 | DAT_005bcbe1
+    FLD float ptr [0x005bcbe1]          ; 00477691 | g_FLOAT_005bcbe1
     FDIV float ptr [ESP]                ; 00477697
     FXCH                                ; 0047769a
     FMUL ST1                            ; 0047769c
@@ -364,7 +364,7 @@ section .text
     XOR EDX,EDX                         ; 0047789a
     MOV DL,byte ptr [EAX]               ; 0047789c
     XOR EAX,EAX                         ; 0047789e
-    MOV AL,byte ptr [EDI + 0x5fb0e8]    ; 004778a0 | DAT_005fb0e8
+    MOV AL,byte ptr [EDI + 0x5fb0e8]    ; 004778a0 | g_UCHAR_ARRAY_005fb0e8
     TEST EDX,EAX                        ; 004778a6
     JNZ 0x004779be                      ; 004778a8
         ;   XREF to: 004779be (CONDITIONAL_JUMP)  ; LAB_004779be

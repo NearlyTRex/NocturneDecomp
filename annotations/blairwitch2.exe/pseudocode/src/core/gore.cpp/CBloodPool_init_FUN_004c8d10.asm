@@ -14,8 +14,8 @@
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004c9ad0 at 004c9af2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d94ea
-;   undefined4 DAT_005f7ba8
+;   float g_FLOAT_005d94ea = 0.1000000
+;   float g_FLOAT_005f7ba8 = 256
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -56,17 +56,17 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 004c8d54
     MOV dword ptr [ESI + 0xc],EDX       ; 004c8d57
     MOV dword ptr [ESI + 0x18],0x0      ; 004c8d5a
-    FADD float ptr [0x005d94ea]         ; 004c8d61 | DAT_005d94ea
+    FADD float ptr [0x005d94ea]         ; 004c8d61 | g_FLOAT_005d94ea
     LEA EBX,[ESI + 0x1c]                ; 004c8d67
     FSTP float ptr [ESI + 0x8]          ; 004c8d6a
     FLD float ptr [EAX]                 ; 004c8d6d
-    FMUL float ptr [0x005f7ba8]         ; 004c8d6f | DAT_005f7ba8
+    FMUL float ptr [0x005f7ba8]         ; 004c8d6f | g_FLOAT_005f7ba8
     FISTP dword ptr [EBX]               ; 004c8d75
     FLD float ptr [EAX + 0x4]           ; 004c8d77
-    FMUL float ptr [0x005f7ba8]         ; 004c8d7a | DAT_005f7ba8
+    FMUL float ptr [0x005f7ba8]         ; 004c8d7a | g_FLOAT_005f7ba8
     FISTP dword ptr [EBX + 0x4]         ; 004c8d80
     FLD float ptr [EAX + 0x8]           ; 004c8d83
-    FMUL float ptr [0x005f7ba8]         ; 004c8d86 | DAT_005f7ba8
+    FMUL float ptr [0x005f7ba8]         ; 004c8d86 | g_FLOAT_005f7ba8
     FISTP dword ptr [EBX + 0x8]         ; 004c8d8c
     MOV EAX,dword ptr [ESP + 0x18]      ; 004c8d8f
     MOV dword ptr [ESI + 0x10],EAX      ; 004c8d93

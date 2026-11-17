@@ -7,11 +7,11 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_01ec183c
-;   undefined4 DAT_01ec1840
-;   undefined4 DAT_01ec1844
-;   undefined4 DAT_01ec1848
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_01ec183c
+;   int g_INT_01ec1840
+;   int g_INT_01ec1844
+;   int g_INT_01ec1848
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -47,27 +47,27 @@ section .text
     PUSH EAX                            ; 0050c5d1
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0050c5d2
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
-    MOV ECX,dword ptr [0x01ec183c]      ; 0050c5d7 | DAT_01ec183c
+    MOV ECX,dword ptr [0x01ec183c]      ; 0050c5d7 | g_INT_01ec183c
     ADD ESP,0xc                         ; 0050c5dd
     CMP EBX,ECX                         ; 0050c5e0
     JNZ 0x0050c5f0                      ; 0050c5e2
         ;   XREF to: 0050c5f0 (CONDITIONAL_JUMP)  ; LAB_0050c5f0
-    CMP EBP,dword ptr [0x01ec1840]      ; 0050c5e4 | DAT_01ec1840
+    CMP EBP,dword ptr [0x01ec1840]      ; 0050c5e4 | g_INT_01ec1840
     JNZ 0x0050c5f0                      ; 0050c5ea
         ;   XREF to: 0050c5f0 (CONDITIONAL_JUMP)  ; LAB_0050c5f0
     MOV byte ptr [ESP],0x73             ; 0050c5ec
-    CMP EBX,dword ptr [0x01ec1844]      ; 0050c5f0 | DAT_01ec1844
+    CMP EBX,dword ptr [0x01ec1844]      ; 0050c5f0 | g_INT_01ec1844
         ;   Label: LAB_0050c5f0
     JNZ 0x0050c604                      ; 0050c5f6
         ;   XREF to: 0050c604 (CONDITIONAL_JUMP)  ; LAB_0050c604
-    CMP EBP,dword ptr [0x01ec1848]      ; 0050c5f8 | DAT_01ec1848
+    CMP EBP,dword ptr [0x01ec1848]      ; 0050c5f8 | g_INT_01ec1848
     JNZ 0x0050c604                      ; 0050c5fe
         ;   XREF to: 0050c604 (CONDITIONAL_JUMP)  ; LAB_0050c604
     MOV byte ptr [ESP],0x64             ; 0050c600
     MOV EAX,dword ptr [ESP + 0x100]     ; 0050c604
         ;   Label: LAB_0050c604
     PUSH EAX                            ; 0050c60b
-    MOV EAX,[0x005fba18]                ; 0050c60c | DAT_005fba18
+    MOV EAX,[0x005fba18]                ; 0050c60c | g_INT_005fba18
     MOV EDX,EAX                         ; 0050c611
     SAR EDX,0x1f                        ; 0050c613
     SUB EAX,EDX                         ; 0050c616

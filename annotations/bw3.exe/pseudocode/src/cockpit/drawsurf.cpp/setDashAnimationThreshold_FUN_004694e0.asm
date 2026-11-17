@@ -7,7 +7,7 @@
 ; float            Stack[0x4]:4   threshold
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2af0
+;   float g_FLOAT_005f2af0 = 0.1000000
 ;
 ; *****************************************************************************
 
@@ -15,6 +15,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004694e0
         ;   Label: cockpit_drawsurf.cpp_setDashAnimationThreshold_FUN_004694e0
-    MOV [0x005f2af0],EAX                ; 004694e4 | DAT_005f2af0
+    MOV [0x005f2af0],EAX                ; 004694e4 | g_FLOAT_005f2af0
     RET                                 ; 004694e9
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00510230(int total_entries,_FILE *file_header)
 
 {
@@ -33,8 +31,8 @@ void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00510230(int total_entries,
   if ((file_header->_flag & 0x20) == 0) {
     return;
   }
-  _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
-  _DAT_01d71de4 = 0x558;
+  g_CHAR_PTR_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
+  g_INT_01d71de4 = 0x558;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Error writing PBG header");
   return;
 }

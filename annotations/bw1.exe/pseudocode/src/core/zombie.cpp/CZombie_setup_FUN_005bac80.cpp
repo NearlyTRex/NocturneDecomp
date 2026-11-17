@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_zombie_cpp_CZombie_setup_FUN_005bac80(CZombie *this_ptr)
 
@@ -95,7 +94,7 @@ void __cdecl core_zombie_cpp_CZombie_setup_FUN_005bac80(CZombie *this_ptr)
   this_ptr->rise_delay = fVar2;
   if ((-1 < iVar1) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {
     (this_ptr->base).base.collision_cylinder_top =
-         (this_ptr->base).base.model.bounding_box.max.y + (float)_DAT_005fa534;
+         (this_ptr->base).base.model.bounding_box.max.y + (float)-0.75;
   }
   str1 = (this_ptr->base).base.model.model_name;
   this_ptr->bleedout_timer = 0.0;

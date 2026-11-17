@@ -14,15 +14,15 @@
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560 at 00589648
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
-;   undefined4 DAT_01c2a391
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_0264bbc0
-;   undefined4 DAT_0264bd00
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
+;   int g_INT_006141c0 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]+1
+;   int g_INT_01c37788
+;   void* g_PTR_0264bbc0
+;   int g_INT_0264bd00
 ;
 ; Called Functions:
 ;   engine_special.cpp_lockFrame_FUN_0055f500
@@ -37,14 +37,14 @@ section .text
     PUSH EBP                            ; 0055ff40
         ;   Label: engine_special.cpp_presentToExternalRenderer_FUN_0055ff40
     SUB ESP,0x12c0                      ; 0055ff41
-    CMP dword ptr [0x01c37788],0x0      ; 0055ff47 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 0055ff47 | g_INT_01c37788
     JZ 0x00560018                       ; 0055ff4e
         ;   XREF to: 00560018 (CONDITIONAL_JUMP)  ; LAB_00560018
     PUSH EBX                            ; 0055ff54
     CMP dword ptr [ESP + 0x12cc],0x0    ; 0055ff55
     JNZ 0x00560001                      ; 0055ff5d
         ;   XREF to: 00560001 (CONDITIONAL_JUMP)  ; LAB_00560001
-    MOV EBX,dword ptr [0x0264bd00]      ; 0055ff63 | DAT_0264bd00
+    MOV EBX,dword ptr [0x0264bd00]      ; 0055ff63 | g_INT_0264bd00
     TEST EBX,EBX                        ; 0055ff69
     JNZ 0x00560001                      ; 0055ff6b
         ;   XREF to: 00560001 (CONDITIONAL_JUMP)  ; LAB_00560001
@@ -56,13 +56,13 @@ section .text
     PUSH EDI                            ; 0055ff81
     MOV EAX,ECX                         ; 0055ff82
     SHR ECX,0x2                         ; 0055ff84
-    MOVSD.REP ES:EDI,ESI                ; 0055ff87 | DAT_01c2a38c | DAT_01c2a390
+    MOVSD.REP ES:EDI,ESI                ; 0055ff87 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     MOV CL,AL                           ; 0055ff89
     AND CL,0x3                          ; 0055ff8b
-    MOVSB.REP ES:EDI,ESI                ; 0055ff8e | DAT_01c2a390 | DAT_01c2a391
+    MOVSB.REP ES:EDI,ESI                ; 0055ff8e | g_ARRAY_PTR_01c2a38c[1] | g_ARRAY_PTR_01c2a38c[1]+1
     POP EDI                             ; 0055ff90
-    MOV EDX,dword ptr [0x006141b8]      ; 0055ff91 | DAT_006141b8
-    MOV ESI,dword ptr [0x006141c0]      ; 0055ff97 | DAT_006141c0
+    MOV EDX,dword ptr [0x006141b8]      ; 0055ff91 | g_INT_006141b8
+    MOV ESI,dword ptr [0x006141c0]      ; 0055ff97 | g_INT_006141c0
     IMUL EDX,ESI                        ; 0055ff9d
     MOV EAX,EDX                         ; 0055ffa0
     SAR EDX,0x1f                        ; 0055ffa2
@@ -74,14 +74,14 @@ section .text
         ;   XREF to: 005890c0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0()
     CALL engine_special.cpp_lockFrame_FUN_0055f500 ; 0055ffb4
         ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_0055f500()
-    CMP dword ptr [0x006141bc],0x0      ; 0055ffb9 | DAT_006141bc
+    CMP dword ptr [0x006141bc],0x0      ; 0055ffb9 | g_INT_006141bc
     JLE 0x0055fff0                      ; 0055ffc0
         ;   XREF to: 0055fff0 (CONDITIONAL_JUMP)  ; LAB_0055fff0
     XOR EDX,EDX                         ; 0055ffc2
     MOV ECX,EBP                         ; 0055ffc4
         ;   Label: LAB_0055ffc4
     MOV ESI,dword ptr [ESP + EDX*0x1 + 0xc] ; 0055ffc6
-    MOV EDI,dword ptr [EDX + 0x1c2a38c] ; 0055ffca | DAT_01c2a38c | DAT_01c2a390
+    MOV EDI,dword ptr [EDX + 0x1c2a38c] ; 0055ffca | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     PUSH EDI                            ; 0055ffd0
     MOV EAX,ECX                         ; 0055ffd1
     SHR ECX,0x2                         ; 0055ffd3
@@ -91,7 +91,7 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 0055ffdd
     POP EDI                             ; 0055ffdf
     INC EBX                             ; 0055ffe0
-    MOV EAX,[0x006141bc]                ; 0055ffe1 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 0055ffe1 | g_INT_006141bc
     ADD EDX,0x4                         ; 0055ffe6
     CMP EBX,EAX                         ; 0055ffe9
     JL 0x0055ffc4                       ; 0055ffeb
@@ -108,8 +108,8 @@ section .text
     POP EDI                             ; 00560000
     XOR EDX,EDX                         ; 00560001
         ;   Label: LAB_00560001
-    MOV dword ptr [0x0264bd00],EDX      ; 00560003 | DAT_0264bd00
-    CALL dword ptr [0x0264bbc0]         ; 00560009 | DAT_0264bbc0
+    MOV dword ptr [0x0264bd00],EDX      ; 00560003 | g_INT_0264bd00
+    CALL dword ptr [0x0264bbc0]         ; 00560009 | g_PTR_0264bbc0
     POP EBX                             ; 0056000f
     ADD ESP,0x12c0                      ; 00560010
     POP EBP                             ; 00560016

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30(CDemonLight *this_ptr)
 
 {
@@ -36,8 +34,8 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30(CDemon
       return;
     }
     if (this_ptr->master_zbuffer == (void *)0x0) {
-      _DAT_01d71de0 = "..\\core\\dlight.cpp";
-      _DAT_01d71de4 = 0x202;
+      g_CHAR_PTR_01d71de0 = "..\\core\\dlight.cpp";
+      g_INT_01d71de4 = 0x202;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonLight::blitZBuffer - No master Z buffer");
     }
     iVar6 = 0;
@@ -82,27 +80,28 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30(CDemon
       local_24 = (this_ptr->base).rect_array;
       do {
         local_1c = 0;
-        _DAT_01b4aea4 = 0;
+        g_INT_01b4aea4 = 0;
         if (0 < (this_ptr->base).rect_array_count) {
           local_14 = 0;
           pCVar4 = local_24;
           do {
             if ((pCVar4->y_min <= local_18) && (local_18 <= pCVar4->y_max)) {
               bVar3 = false;
-              if (0 < _DAT_01b4aea4) {
-                iVar6 = _DAT_01b4aea4 * 4;
+              if (0 < g_INT_01b4aea4) {
+                iVar6 = g_INT_01b4aea4 * 4;
                 iVar7 = 0;
                 do {
-                  if ((*(int *)(iVar7 + 0x1b4aea8) <= pCVar4->x_max) &&
-                     (pCVar4->x_min <= *(int *)(iVar7 + 0x1b4b2a8))) {
-                    if ((*(int *)(iVar7 + 0x1b4aea8) <= pCVar4->x_min) &&
-                       (pCVar4->x_max <= *(int *)(iVar7 + 0x1b4b2a8))) goto LAB_0045cba9;
-                    if (pCVar4->x_min < *(int *)(iVar7 + 0x1b4aea8)) {
+                  if ((*(int *)((int)g_INT_ARRAY_01b4aea8 + iVar7) <= pCVar4->x_max) &&
+                     (pCVar4->x_min <= *(int *)((int)g_INT_ARRAY_01b4b2a8 + iVar7))) {
+                    if ((*(int *)((int)g_INT_ARRAY_01b4aea8 + iVar7) <= pCVar4->x_min) &&
+                       (pCVar4->x_max <= *(int *)((int)g_INT_ARRAY_01b4b2a8 + iVar7)))
+                    goto LAB_0045cba9;
+                    if (pCVar4->x_min < *(int *)((int)g_INT_ARRAY_01b4aea8 + iVar7)) {
                       bVar3 = true;
-                      *(int *)(iVar7 + 0x1b4aea8) = pCVar4->x_min;
+                      *(int *)((int)g_INT_ARRAY_01b4aea8 + iVar7) = pCVar4->x_min;
                     }
-                    if (*(int *)(iVar7 + 0x1b4b2a8) < pCVar4->x_max) {
-                      *(int *)(iVar7 + 0x1b4b2a8) = pCVar4->x_max;
+                    if (*(int *)((int)g_INT_ARRAY_01b4b2a8 + iVar7) < pCVar4->x_max) {
+                      *(int *)((int)g_INT_ARRAY_01b4b2a8 + iVar7) = pCVar4->x_max;
                       goto LAB_0045cba9;
                     }
                     if (bVar3) break;
@@ -111,9 +110,9 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30(CDemon
                 } while (iVar7 < iVar6);
               }
               if (!bVar3) {
-                *(int *)(local_14 + 0x1b4aea8) = pCVar4->x_min;
-                *(int *)(local_14 + 0x1b4b2a8) = pCVar4->x_max;
-                _DAT_01b4aea4 = _DAT_01b4aea4 + 1;
+                *(int *)((int)g_INT_ARRAY_01b4aea8 + local_14) = pCVar4->x_min;
+                *(int *)((int)g_INT_ARRAY_01b4b2a8 + local_14) = pCVar4->x_max;
+                g_INT_01b4aea4 = g_INT_01b4aea4 + 1;
                 local_14 = local_14 + 4;
               }
             }
@@ -123,19 +122,20 @@ LAB_0045cba9:
           } while (local_1c < (this_ptr->base).rect_array_count);
         }
         iVar6 = 0;
-        if (0 < _DAT_01b4aea4) {
+        if (0 < g_INT_01b4aea4) {
           iVar7 = 0;
           do {
-            piVar1 = (int *)(iVar7 + 0x1b4aea8);
-            iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)(iVar7 + 0x1b4aea8);
-            piVar2 = (int *)(iVar7 + 0x1b4b2a8);
+            piVar1 = (int *)((int)g_INT_ARRAY_01b4aea8 + iVar7);
+            iVar5 = local_18 * this_ptr->shadow_map_width +
+                    *(int *)((int)g_INT_ARRAY_01b4aea8 + iVar7);
+            piVar2 = (int *)((int)g_INT_ARRAY_01b4b2a8 + iVar7);
             iVar7 = iVar7 + 4;
             iVar6 = iVar6 + 1;
             core_dstrendr_cpp_memcpyMMX_FUN_00471271
                       (this_ptr->shadow_depth_buffer + iVar5,
                        (void *)((int)this_ptr->master_zbuffer + iVar5 * 2),
                        (*piVar2 - *piVar1) * 2 + 2);
-          } while (iVar6 < _DAT_01b4aea4);
+          } while (iVar6 < g_INT_01b4aea4);
         }
         local_18 = local_18 + 1;
       } while (local_18 <= local_20);

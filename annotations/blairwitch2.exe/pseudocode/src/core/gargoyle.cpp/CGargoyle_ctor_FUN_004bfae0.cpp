@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004bfae0(CGargoyle *this_ptr)
 
 {
@@ -33,9 +31,9 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004bfae0(CGargoyle *thi
   pCVar3->stone_green = 0x80;
   pCVar3->stone_blue = 0x80;
   pCVar3->home_base = (CDemonActor *)0x0;
-  fVar1 = _DAT_005f75e0;
+  fVar1 = 50.0f;
   pCVar3->returning_home = 0;
-  fVar2 = _DAT_005f75e4;
+  fVar2 = 100.0f;
   pCVar3->petrify_timer = 0.0;
   (pCVar3->base).base.gun_flame_ignitable = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

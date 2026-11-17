@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_polling_hw_playbac_005f3ac3
-;   undefined4 DAT_02c80650
+;   CSoundDevice* g_CSoundDevice_PTR_02c80650
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030
@@ -33,7 +33,7 @@ section .text
     CMP dword ptr [EBX + 0x60],0x0      ; 00571fae
     JZ 0x00571fc4                       ; 00571fb2
         ;   XREF to: 00571fc4 (CONDITIONAL_JUMP)  ; LAB_00571fc4
-    MOV ECX,dword ptr [0x02c80650]      ; 00571fb4 | DAT_02c80650
+    MOV ECX,dword ptr [0x02c80650]      ; 00571fb4 | g_CSoundDevice_PTR_02c80650
     TEST ECX,ECX                        ; 00571fba
     JZ 0x00571fc4                       ; 00571fbc
         ;   XREF to: 00571fc4 (CONDITIONAL_JUMP)  ; LAB_00571fc4

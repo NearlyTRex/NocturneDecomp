@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl support_trstream_cpp_COutStreamDebug_tell_FUN_0057e360(COutStreamDebug *this_ptr)
 
 {
-  _DAT_01d046a0 = "..\\support\\trstream.cpp";
-  _DAT_01d046a4 = 0xa8d;
+  g_CHAR_PTR_01d046a0 = "..\\support\\trstream.cpp";
+  g_INT_01d046a4 = 0xa8d;
   core_main_c_displayErrorAndQuit_FUN_004e4500("COutStreamDebug::tell - invalid operation");
   return -1;
 }

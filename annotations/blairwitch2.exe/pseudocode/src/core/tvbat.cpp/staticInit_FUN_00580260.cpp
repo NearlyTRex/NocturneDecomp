@@ -10,7 +10,7 @@ void __cdecl core_tvbat_cpp_staticInit_FUN_00580260(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CTVBatClassInfo,(char *)0x5ed834,core_tvbat_cpp_factoryFuncTVBat_FUN_00580290,
+            (&g_CTVBatClassInfo,"CTVBat",core_tvbat_cpp_factoryFuncTVBat_FUN_00580290,
              &g_CTVBatClassVersion,5,&g_CEnemyClassInfo);
   return;
 }

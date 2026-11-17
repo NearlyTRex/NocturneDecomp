@@ -18,13 +18,13 @@
 ;   void* switchdataD_0045f01c = 0045f078
 ;   TerminatedCString s_core_door_cpp_005d09ce
 ;   TerminatedCString s_CDoor_reposition_Unknown_005d09df
-;   undefined4 DAT_005d0a00
-;   undefined4 DAT_005d0a08
-;   undefined4 DAT_005d0a10
-;   undefined4 DAT_005d0a18
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005d0a00 = 1.57079632675000
+;   float g_FLOAT_005d0a08 = 0.5
+;   double g_DOUBLE_005d0a10 = -0.300000000000000
+;   double g_DOUBLE_005d0a18 = 0.300000000000000
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -78,7 +78,7 @@ section .text
     JNZ 0x0045f1a8                      ; 0045f0a6
         ;   XREF to: 0045f1a8 (CONDITIONAL_JUMP)  ; LAB_0045f1a8
     FLD float ptr [EBX + 0xb08]         ; 0045f0ac
-    FMUL double ptr [0x005d0a00]        ; 0045f0b2 | DAT_005d0a00
+    FMUL double ptr [0x005d0a00]        ; 0045f0b2 | g_DOUBLE_005d0a00
     FADD float ptr [EBX + 0xb00]        ; 0045f0b8
     FSTP float ptr [EBX + 0x34]         ; 0045f0be
         ;   Label: LAB_0045f0be
@@ -98,7 +98,7 @@ section .text
     JBE 0x0045f1bf                      ; 0045f0e2
         ;   XREF to: 0045f1bf (CONDITIONAL_JUMP)  ; LAB_0045f1bf
     FLD double ptr [ESP]                ; 0045f0e8
-    FADD double ptr [0x005d0a18]        ; 0045f0eb | DAT_005d0a18
+    FADD double ptr [0x005d0a18]        ; 0045f0eb | g_DOUBLE_005d0a18
     FSTP float ptr [EBX + 0xb18]        ; 0045f0f1
         ;   Label: LAB_0045f0f1
     LEA EAX,[EBX + 0xb18]               ; 0045f0f7
@@ -130,7 +130,7 @@ section .text
     LEA EAX,[EBX + 0xb40]               ; 0045f169
         ;   Label: LAB_0045f169
     PUSH EAX                            ; 0045f16f
-    MOV EAX,[0x006141f0]                ; 0045f170 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 0045f170 | g_CEventList_PTR_006141f0
     PUSH EAX                            ; 0045f175
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0045f176
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -156,13 +156,13 @@ section .text
     RET                                 ; 0045f1a7
     FLD float ptr [EBX + 0xb08]         ; 0045f1a8
         ;   Label: LAB_0045f1a8
-    FMUL double ptr [0x005d0a00]        ; 0045f1ae | DAT_005d0a00
+    FMUL double ptr [0x005d0a00]        ; 0045f1ae | g_DOUBLE_005d0a00
     FSUBR float ptr [EBX + 0xb00]       ; 0045f1b4
     JMP 0x0045f0be                      ; 0045f1ba
         ;   XREF to: 0045f0be (UNCONDITIONAL_JUMP)  ; LAB_0045f0be
     FLD double ptr [ESP + 0x8]          ; 0045f1bf
         ;   Label: LAB_0045f1bf
-    FADD double ptr [0x005d0a10]        ; 0045f1c3 | DAT_005d0a10
+    FADD double ptr [0x005d0a10]        ; 0045f1c3 | g_DOUBLE_005d0a10
     JMP 0x0045f0f1                      ; 0045f1c9
         ;   XREF to: 0045f0f1 (UNCONDITIONAL_JUMP)  ; LAB_0045f0f1
     FLD float ptr [EBX + 0xaf4]         ; 0045f1ce
@@ -287,7 +287,7 @@ section .text
         ;   XREF to: 0045f272 (UNCONDITIONAL_JUMP)  ; LAB_0045f272
     FLD float ptr [EBX + 0xb08]         ; 0045f38b
         ;   Label: caseD_3
-    FMUL double ptr [0x005d0a00]        ; 0045f391 | DAT_005d0a00
+    FMUL double ptr [0x005d0a00]        ; 0045f391 | g_DOUBLE_005d0a00
     LEA EDI,[ESP + 0xb8]                ; 0045f397
     PUSH EBX                            ; 0045f39e
     FSTP float ptr [EBX + 0x30]         ; 0045f39f
@@ -312,7 +312,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0045f3e8
     MOVSD ES:EDI,ESI                    ; 0045f3e9
     MOVSD ES:EDI,ESI                    ; 0045f3ea
-    FLD float ptr [0x005d0a08]          ; 0045f3eb | DAT_005d0a08
+    FLD float ptr [0x005d0a08]          ; 0045f3eb | g_FLOAT_005d0a08
     FLD float ptr [ESP + 0xb8]          ; 0045f3f1
     FMUL ST1                            ; 0045f3f8
     FLD float ptr [ESP + 0xbc]          ; 0045f3fa
@@ -357,8 +357,8 @@ section .text
         ;   Label: default
     MOV ECX,0x117                       ; 0045f499
     PUSH 0x5d09df                       ; 0045f49e | = "CDoor::reposition - Unknown type"
-    MOV dword ptr [0x01d046a0],EDX      ; 0045f4a3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0045f4a9 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0045f4a3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0045f4a9 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0045f4af
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0045f4b4

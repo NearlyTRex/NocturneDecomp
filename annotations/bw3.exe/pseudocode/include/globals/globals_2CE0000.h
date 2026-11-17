@@ -4,12 +4,33 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSfxOptions.h"
 #include "types/classes/CSfxSample.h"
+#include "types/classes/CSfxSlot.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2CE0000
 // =============================================================================
 
+// CSfxOptions[8]
+extern CSfxOptions g_CSfxOptions_ARRAY_02ceb920[8];
+
 // CSfxSample[64]
 extern CSfxSample g_SfxSamples[64];
+
+// CSfxSlot[64]
+extern CSfxSlot g_CSfxSlot_ARRAY_02ce721c[64];
+
+// byte
+extern byte g_BYTE_02ce71e8;
+
+// float
+extern float g_FLOAT_02ce7210;
+
+// int
+extern int g_INT_02ce71ec;
+extern int g_INT_02ce7214;
+extern int g_INT_02ce7218;
+extern int g_INT_02ceb91c;
+extern int g_INT_02cebc20;
 

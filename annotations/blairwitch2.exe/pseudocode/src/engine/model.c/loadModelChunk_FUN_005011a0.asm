@@ -13,7 +13,7 @@
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004df770 at 004df7c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df0cd
+;   TerminatedCString s_rb_005df0cd
 ;   TerminatedCString s_models_005df0d0
 ;   TerminatedCString s_Unable_to_open_model_s_005df0d7
 ;   TerminatedCString s_engine_model_c_005df0f0
@@ -23,8 +23,8 @@
 ;   TerminatedCString s_Model_read_hose_005df144
 ;   TerminatedCString s_engine_model_c_005df154
 ;   TerminatedCString s_Bad_model_005df166
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -46,7 +46,7 @@ section .text
     SUB ESP,0x50                        ; 005011a4
     MOV EBP,dword ptr [ESP + 0x64]      ; 005011a7
     MOV EDI,dword ptr [ESP + 0x68]      ; 005011ab
-    PUSH 0x5df0cd                       ; 005011af | DAT_005df0cd
+    PUSH 0x5df0cd                       ; 005011af | = "rb"
     PUSH EBP                            ; 005011b4
     PUSH 0x5df0d0                       ; 005011b5 | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 005011ba
@@ -74,11 +74,11 @@ section .text
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x2ef                       ; 005011ee
     ADD ESP,0xc                         ; 005011f3
-    MOV [0x01d046a4],EAX                ; 005011f6 | DAT_01d046a4
+    MOV [0x01d046a4],EAX                ; 005011f6 | g_INT_01d046a4
     MOV EAX,ESP                         ; 005011fb
     MOV EBP,0x5df120                    ; 005011fd | = "..\\engine\\model.c"
     PUSH EAX                            ; 00501202
-    MOV dword ptr [0x01d046a0],EBP      ; 00501203 | DAT_01d046a0
+    MOV dword ptr [0x01d046a0],EBP      ; 00501203 | g_CHAR_PTR_01d046a0
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00501209
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050120e
@@ -96,8 +96,8 @@ section .text
     MOV EDX,0x5df132                    ; 00501222 | = "..\\engine\\model.c"
     MOV ECX,0x2f4                       ; 00501227
     PUSH 0x5df144                       ; 0050122c | = "Model read hose"
-    MOV dword ptr [0x01d046a0],EDX      ; 00501231 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00501237 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00501231 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00501237 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050123d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00501242
@@ -135,8 +135,8 @@ section .text
     MOV EAX,ESP                         ; 00501285
     MOV ECX,0x2e4                       ; 00501287
     PUSH EAX                            ; 0050128c
-    MOV dword ptr [0x01d046a0],EDX      ; 0050128d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00501293 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0050128d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00501293 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00501299
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050129e
@@ -146,8 +146,8 @@ section .text
         ;   Label: LAB_005012a6
     MOV EBP,0x2f8                       ; 005012ab
     PUSH 0x5df166                       ; 005012b0 | = "Bad model!"
-    MOV dword ptr [0x01d046a0],ESI      ; 005012b5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 005012bb | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 005012b5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 005012bb | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005012c1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005012c6

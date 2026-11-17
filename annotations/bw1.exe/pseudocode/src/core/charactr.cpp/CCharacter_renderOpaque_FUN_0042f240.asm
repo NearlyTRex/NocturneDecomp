@@ -23,9 +23,9 @@
 ;   ... and 10 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01d39d34
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   int g_INT_01d39d34
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -45,8 +45,8 @@ section .text
     PUSH EBP                            ; 0042f241
     SUB ESP,0x30                        ; 0042f242
     MOV EBX,dword ptr [ESP + 0x3c]      ; 0042f245
-    MOV EDX,dword ptr [0x00612560]      ; 0042f249 | DAT_00612560
-    PUSH EDX                            ; 0042f24f | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 0042f249 | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 0042f24f | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180 ; 0042f250
         ;   XREF to: 00484180 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0042f255
@@ -86,13 +86,13 @@ section .text
     MOV dword ptr [EBX + 0x27bc],0x1    ; 0042f2ae
     CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960 ; 0042f2b8
         ;   XREF to: 0042e960 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960(CCharacter * this_ptr)
-    MOV EDI,dword ptr [0x01d39d34]      ; 0042f2bd | DAT_01d39d34
+    MOV EDI,dword ptr [0x01d39d34]      ; 0042f2bd | g_INT_01d39d34
     ADD ESP,0x4                         ; 0042f2c3
     TEST EDI,EDI                        ; 0042f2c6
     JZ 0x0042f2fa                       ; 0042f2c8
         ;   XREF to: 0042f2fa (CONDITIONAL_JUMP)  ; LAB_0042f2fa
-    MOV EBP,dword ptr [0x00612560]      ; 0042f2ca | DAT_00612560
-    PUSH EBP                            ; 0042f2d0 | DAT_01bc120c
+    MOV EBP,dword ptr [0x00612560]      ; 0042f2ca | g_CDemonRenderer_PTR_00612560
+    PUSH EBP                            ; 0042f2d0 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0042f2d1
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0042f2d6

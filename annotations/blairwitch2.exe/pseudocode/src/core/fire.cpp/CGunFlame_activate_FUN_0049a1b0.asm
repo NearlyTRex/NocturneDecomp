@@ -33,7 +33,7 @@
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_0049e680 at 0049e6b0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6500
+;   float g_FLOAT_005f6500 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x80],EAX      ; 0049a1f1
     FLD float ptr [ESP + 0x80]          ; 0049a1f8
-    FLD float ptr [0x005f6500]          ; 0049a1ff | DAT_005f6500
+    FLD float ptr [0x005f6500]          ; 0049a1ff | g_FLOAT_005f6500
     ADD ESP,0x8                         ; 0049a205
     FMULP                               ; 0049a208
     PUSH 0x41980000                     ; 0049a20a

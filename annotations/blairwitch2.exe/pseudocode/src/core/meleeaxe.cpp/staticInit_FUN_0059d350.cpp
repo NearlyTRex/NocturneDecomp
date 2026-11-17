@@ -9,6 +9,6 @@
 void __cdecl core_meleeaxe_cpp_staticInit_FUN_0059d350(void)
 
 {
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80((CKeyFramedModelInstance *)0x26681e0);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80(&g_CKeyFramedModelInstance_026681e0);
   return;
 }

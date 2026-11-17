@@ -7,8 +7,8 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -42,8 +42,8 @@ section .text
     MOV EDI,0x5d194b                    ; 00472497
     MOV EBP,0x88                        ; 0047249c
     PUSH 0x5d195e                       ; 004724a1
-    MOV dword ptr [0x01d046a0],EDI      ; 004724a6 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004724ac | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004724a6 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 004724ac | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004724b2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004724b7

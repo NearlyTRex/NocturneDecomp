@@ -16,7 +16,7 @@ void __cdecl core_prye_cpp_CPrye_processPickupComplete_FUN_00520d20(CPrye *this_
     iVar1 = (this_ptr->base).action_pending;
     if (iVar1 != 4) {
       shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0
-                (g_CEditorToolsPtr,"?actionPending = %d\nprye.cpp line %d" + 1,iVar1,0x108a);
+                (g_CEditorToolsPtr,"actionPending = %d\nprye.cpp line %d",iVar1,0x108a);
     }
     this_ptr_00 = (CAmmoBox *)
                   core_actor_cpp_castToClassHash_FUN_0040c840

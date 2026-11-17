@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   input_value
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4c4
-;   undefined4 DAT_01c4effc
+;   int g_INT_0061b4c4 = 0x10000
+;   int g_INT_01c4effc
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -47,7 +47,7 @@ section .text
     JLE 0x005093b8                      ; 0050937b
         ;   XREF to: 005093b8 (CONDITIONAL_JUMP)  ; LAB_005093b8
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050937d
-    FILD dword ptr [0x01c4effc]         ; 00509380 | DAT_01c4effc
+    FILD dword ptr [0x01c4effc]         ; 00509380 | g_INT_01c4effc
     MOV dword ptr [ESP + 0x34],EAX      ; 00509386
     MOV dword ptr [ESP + 0x38],EBX      ; 0050938a
     FILD dword ptr [ESP + 0x34]         ; 0050938e
@@ -55,7 +55,7 @@ section .text
     FMULP                               ; 00509394
     FILD dword ptr [ESP + 0x38]         ; 00509396
     FDIVP                               ; 0050939a
-    FILD dword ptr [0x0061b4c4]         ; 0050939c | DAT_0061b4c4
+    FILD dword ptr [0x0061b4c4]         ; 0050939c | g_INT_0061b4c4
     FDIVP                               ; 005093a2
     CALL crt_math.c_round_FUN_005c03a0  ; 005093a4
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)

@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052ded0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b11db0
+;   uint g_UINT_01b11db0
 ;
 ; *****************************************************************************
 
@@ -18,6 +18,6 @@ section .text
 
     XOR EDX,EDX                         ; 00449f60
         ;   Label: core_dlight.cpp_resetRestoreMemoryAllocator_FUN_00449f60
-    MOV dword ptr [0x01b11db0],EDX      ; 00449f62 | DAT_01b11db0
+    MOV dword ptr [0x01b11db0],EDX      ; 00449f62 | g_UINT_01b11db0
     RET                                 ; 00449f68
 

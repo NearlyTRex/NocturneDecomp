@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_burncrss_cpp_CBurncross_process_FUN_00424e30(CBurncross *this_ptr,float delta_time)
 
 {
@@ -62,7 +60,7 @@ LAB_00424e53:
   iVar3 = (int)&(this_ptr->base).base + iVar2 * 0x2a4;
 LAB_00424e66:
   do {
-    fVar1 = fVar5 * _DAT_005b7936;
+    fVar1 = fVar5 * 2.0f;
     *(float *)(iVar3 + 0x700) = fVar5 * this_ptr->flame_intensity;
     *(float *)(iVar3 + 0x704) = fVar1 * this_ptr->flame_intensity;
     iVar2 = iVar2 + 1;
@@ -182,7 +180,8 @@ LAB_00424e66:
         this_ptr->flame_intensity = 0.0;
       }
       else {
-        this_ptr->flame_intensity = in_stack_00000010 * _DAT_005b7936 + this_ptr->flame_intensity;
+        this_ptr->flame_intensity = in_stack_00000010 * 2.0f + this_ptr->flame_intensity
+        ;
         if (0x3f800000 < (int)this_ptr->flame_intensity) {
           this_ptr->flame_intensity = 1.0;
           goto LAB_00425278;

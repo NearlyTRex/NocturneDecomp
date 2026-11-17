@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void)
 
 {
@@ -24,10 +22,10 @@ void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void)
   uint uVar5;
   
   if (unaff_EDI < in_EAX) {
-    _DAT_01ba56cc = unaff_EDI;
+    g_INT_01ba56cc = unaff_EDI;
   }
-  if (_DAT_01ba56d0 < unaff_EBX) {
-    _DAT_01ba56d0 = unaff_EBX;
+  if (g_INT_01ba56d0 < unaff_EBX) {
+    g_INT_01ba56d0 = unaff_EBX;
   }
   uVar3 = *(int *)(unaff_EBP + 0x14) - *(int *)(unaff_ESI + 0x14);
   if (uVar3 < 0x10000) {
@@ -67,7 +65,7 @@ void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void)
   lVar1 = (longlong)(int)uVar5 * (longlong)(int)uVar3;
   *(uint *)(in_ECX + 0x30) =
        *(int *)(unaff_ESI + 0x2c) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  if (DAT_0070ca74 == 0) {
+  if (g_INT_0070ca74 == 0) {
     lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0xc) - *(int *)(unaff_ESI + 0xc));
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     *(uint *)(in_ECX + 0x2c) = uVar3;
@@ -84,7 +82,7 @@ void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void)
     iVar2 = *(int *)(unaff_ESI + 8);
   }
   *(uint *)(in_ECX + 0x28) = iVar2 + uVar3;
-  if ((DAT_01c38b55 & 2) != 0) {
+  if ((g_BIT_INTEGER32_01c38b54.bytes[1] & 2) != 0) {
     lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x24) - *(int *)(unaff_ESI + 0x24));
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     *(uint *)(in_ECX + 0x3c) = uVar3;
@@ -100,6 +98,6 @@ void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void)
          *(int *)(unaff_ESI + 0x28) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
-  _DAT_01ba51c8 = _DAT_01ba51c8 + 1;
+  g_INT_01ba51c8 = g_INT_01ba51c8 + 1;
   return;
 }

@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 249,
+    "complexity_score": 168,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
-    "suspect_count": 10,
+    "pseudocode_lines": 128,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 461
+    "total_lines": 460
   },
   "cross_references": [
     {
@@ -120,50 +118,50 @@
   "globals": [
     {
       "addr": "01c5b0e0",
-      "name": "DAT_01c5b0e0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c5b0e0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c5baec",
-      "name": "DAT_01c5baec",
-      "type": "undefined4",
+      "name": "g_INT_01c5baec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5bb60",
-      "name": "DAT_01c5bb60",
-      "type": "undefined4",
+      "name": "g_INT_01c5bb60",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af98",
-      "name": "DAT_01c6af98",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_01c6af98",
+      "type": "uchar[768]",
       "value": null
     },
     {
       "addr": "01c6af99",
-      "name": "DAT_01c6af99",
+      "name": "g_UCHAR_ARRAY_01c6af98+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6af9a",
-      "name": "DAT_01c6af9a",
+      "name": "g_UCHAR_ARRAY_01c6af98+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5ac",
-      "name": "DAT_01c6b5ac",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5c0",
-      "name": "DAT_01c6b5c0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5c0",
+      "type": "int",
       "value": null
     }
   ],
@@ -386,64 +384,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c6af9a",
-      "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c6af9a)[iVar4] |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01c6af99",
-      "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar4] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01c6af98",
-      "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar4] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_01c6af9a",
-      "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c6af9a)[iVar4] |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_01c6af99",
-      "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar4] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_01c6af98",
-      "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar4] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10)",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 52,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -451,7 +393,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 94,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -459,7 +401,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 68,
+      "line": 65,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

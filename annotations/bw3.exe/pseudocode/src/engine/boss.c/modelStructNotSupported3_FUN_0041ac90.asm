@@ -10,8 +10,8 @@
 ;   engine_model.c_freeMRGLData_FUN_004f80f0 at 004f810a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -24,8 +24,8 @@ section .text
         ;   Label: engine_boss.c_modelStructNotSupported3_FUN_0041ac90
     MOV ECX,0x3f                        ; 0041ac95
     PUSH 0x5b72c1                       ; 0041ac9a
-    MOV dword ptr [0x01d71de0],EDX      ; 0041ac9f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0041aca5 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0041ac9f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0041aca5 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0041acab
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0041acb0

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   preserve_scale
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d817b
+;   double g_DOUBLE_005d817b = 0.5
 ;
 ; *****************************************************************************
 
@@ -156,7 +156,7 @@ section .text
     FXCH ST2                            ; 00584b72
     FSUBP ST5,ST0                       ; 00584b74
     FSUBP ST3,ST0                       ; 00584b76
-    FLD double ptr [0x005d817b]         ; 00584b78 | DAT_005d817b
+    FLD double ptr [0x005d817b]         ; 00584b78 | g_DOUBLE_005d817b
     FLD double ptr [ESP]                ; 00584b7e
     FMUL ST1                            ; 00584b81
     FLD double ptr [ESP + 0x60]         ; 00584b83

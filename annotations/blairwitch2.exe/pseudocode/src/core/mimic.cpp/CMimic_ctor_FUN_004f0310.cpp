@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004f0310(CMimic *this_ptr)
 
 {
   char cVar1;
   SMRGLTextureModel *pSVar2;
-  uint uVar3;
-  uint uVar4;
+  float fVar3;
+  float fVar4;
   CEnemy *pCVar5;
   CCloth *pCVar6;
   CMorph *pCVar7;
@@ -32,18 +30,18 @@ CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004f0310(CMimic *this_ptr)
   pSVar2[3].texture_name[0x1d] = '\0';
   pSVar2[3].texture_name[0x1e] = '\0';
   pSVar2[3].texture_name[0x1f] = '?';
-  pcVar8 = (char *)0x5dd748;
+  pcVar8 = "CGhoul";
   pSVar2 = pCVar7[-0x5f].models[0].textures;
   pSVar2[3].texture_name[0x20] = '\0';
-  uVar3 = _DAT_005f9e7c;
+  fVar3 = 50.0f;
   pSVar2[3].texture_name[0x21] = '\0';
   pSVar2[3].texture_name[0x22] = -0x80;
   pSVar2[3].texture_name[0x23] = '?';
   *(byte *)&pCVar7[-0x4e].models[1].textures[10].base.type = 0;
-  uVar4 = _DAT_005f9e80;
+  fVar4 = 100.0f;
   pCVar7[-0x4e].models[1].textures[0xb].texture_name[0x14] = '\0';
-  *(uint *)(pCVar7[-0x5f].models[0].textures[3].texture_name + 0x24) = uVar3;
-  *(uint *)(pCVar7[-0x5f].models[0].textures[3].texture_name + 0x28) = uVar4;
+  *(float *)(pCVar7[-0x5f].models[0].textures[3].texture_name + 0x24) = fVar3;
+  *(float *)(pCVar7[-0x5f].models[0].textures[3].texture_name + 0x28) = fVar4;
   pSVar2 = pCVar7[-1].models[1].textures;
   pSVar2[0x13].texture_name[0x2c] = '\0';
   pSVar2[0x13].texture_name[0x2d] = '\0';

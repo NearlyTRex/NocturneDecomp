@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1B40000
@@ -12,4 +13,26 @@
 
 // CKeyFramedModel[256]
 extern CKeyFramedModel g_CKeyFramedModelPool[256];
+
+// CVector3f
+extern CVector3f g_CVector3f_01b4b6a8;
+
+// int
+extern int g_INT_01b49be0;
+extern int g_INT_01b4aea4;
+extern int g_INT_01b4b6b4;
+extern int g_INT_01b4b848;
+
+// int[100]
+extern int g_INT_ARRAY_01b4b6b8[100];
+
+// int[256]
+extern int g_INT_ARRAY_01b4aea8[256];
+extern int g_INT_ARRAY_01b4b2a8[256];
+
+// uint
+extern uint g_UINT_01b49bdc;
+
+// void*[1200]
+extern void* g_ARRAY_PTR_01b49be4[1200];
 

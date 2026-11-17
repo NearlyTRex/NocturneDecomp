@@ -9,24 +9,24 @@
 void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00504c10(CNetGame *this_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   
   iVar2 = support_trisock_cpp_CSocket_isSocketValid_FUN_0056f960(&this_ptr->socket);
-  uVar1 = DAT_0060728c;
+  iVar1 = g_INT_0060728c;
   if (iVar2 == 0) {
     return;
   }
-  DAT_0060728c = 0;
+  g_INT_0060728c = 0;
   do {
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     iVar2 = 0;
     do {
       iVar3 = support_trisock_cpp_CSocket_receiveSocketData_FUN_0056fb10
-                        (&this_ptr->socket,&DAT_01dd4488,0x405,(SNetworkAddr *)0x0);
+                        (&this_ptr->socket,g_UNetPacket_01dd4488.raw,0x405,(SNetworkAddr *)0x0);
       if (iVar3 < 1) {
-        DAT_0060728c = uVar1;
+        g_INT_0060728c = iVar1;
         return;
       }
       iVar2 = iVar2 + 1;

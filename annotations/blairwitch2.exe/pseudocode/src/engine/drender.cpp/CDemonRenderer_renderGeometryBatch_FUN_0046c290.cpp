@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(CDemonRenderer *this_ptr,ushort *vertex_indices,int face_count,int vertices_per_face ,int render_mode)
 
 {
@@ -23,26 +21,26 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
     render_mode = 0x2cd;
   }
   if (this_ptr->texture_capture_enabled != 0) {
-    _DAT_01d046a0 = "..\\engine\\drender.cpp";
-    _DAT_01d046a4 = 0xa6a;
+    g_CHAR_PTR_01d046a0 = "..\\engine\\drender.cpp";
+    g_INT_01d046a4 = 0xa6a;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Can't capture this type of face!");
   }
   if (this_ptr->shadow_pass_active == 0) {
     if (render_mode == 0xc0) {
-      _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyReversed_FUN_0046e8f0;
+      g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyReversed_FUN_0046e8f0;
     }
-    else if (DAT_006141c0 == 0x20) {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+    else if (g_INT_006141c0 == 0x20) {
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
     }
     else {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
     }
-    _DAT_01c38b58 = 6;
-    _DAT_01c38b54 = render_mode;
+    g_INT_01c38b58 = 6;
+    g_BIT_INTEGER32_01c38b54 = (_BIT_INTEGER32)render_mode;
     if (0 < face_count) {
       iStack_14 = vertices_per_face * 2;
       do {
-        while ((DAT_0070ca7c != 0 &&
+        while ((g_INT_0070ca7c != 0 &&
                (pSVar4 = this_ptr->vertex_buffer_ptr + vertex_indices[1],
                iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
                                  (this_ptr->vertex_buffer_ptr + *vertex_indices,pSVar4,pSVar4),
@@ -66,15 +64,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
           } while (iVar3 < vertices_per_face);
         }
         if ((this_ptr->face_capture_enabled == 0) &&
-           (((this_ptr->shadow_pass_active != 0 && ((_DAT_01c38b54 & 1) == 0)) ||
-            ((_DAT_01c38b54 & 5) == 0)))) {
+           (((this_ptr->shadow_pass_active != 0 && ((g_BIT_INTEGER32_01c38b54.dword & 1) == 0)) ||
+            ((g_BIT_INTEGER32_01c38b54.dword & 5) == 0)))) {
           core_xform_cpp_transformAndClipGeometry_FUN_00594f40(iVar3,&aCStack_68[0].x);
-          if (2 < DAT_007bee30) {
+          if (2 < g_INT_007bee30) {
             engine_zraster_c_rasterizeTriangle_FUN_0059a0b0
-                      ((SRenderVertex *)&DAT_007bee34,DAT_007bee30);
+                      (g_SRenderVertex_ARRAY_007bee34,g_INT_007bee30);
           }
         }
-        else if ((_DAT_01c38b54 & 0x200) == 0) {
+        else if ((g_BIT_INTEGER32_01c38b54.dword & 0x200) == 0) {
           engine_clipper_c_clipAndRasterize_FUN_00431d90(iVar3,&aCStack_68[0].x);
         }
         else {
@@ -89,13 +87,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
     }
   }
   else {
-    _DAT_01c38b54 = 0;
-    _DAT_01c38b58 = 0;
-    _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
+    g_BIT_INTEGER32_01c38b54.dword = 0;
+    g_INT_01c38b58 = 0;
+    g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
     if (0 < face_count) {
       iStack_18 = vertices_per_face * 2;
       do {
-        if ((DAT_0070ca7c == 0) ||
+        if ((g_INT_0070ca7c == 0) ||
            (pSVar4 = this_ptr->vertex_buffer_ptr + vertex_indices[1],
            iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
                              (this_ptr->vertex_buffer_ptr + *vertex_indices,pSVar4,pSVar4),
@@ -117,9 +115,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
           }
           else {
             core_xform_cpp_transformAndClipGeometry_FUN_00594f40(iVar3,&aCStack_68[0].x);
-            if (2 < DAT_007bee30) {
+            if (2 < g_INT_007bee30) {
               engine_zraster_c_rasterizeTriangle_FUN_0059a0b0
-                        ((SRenderVertex *)&DAT_007bee34,DAT_007bee30);
+                        (g_SRenderVertex_ARRAY_007bee34,g_INT_007bee30);
             }
           }
         }

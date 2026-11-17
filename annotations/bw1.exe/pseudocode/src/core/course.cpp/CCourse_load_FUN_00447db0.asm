@@ -17,15 +17,15 @@
 ;   core_vehicle.cpp_CVehicle_setup_FUN_005a7870 at 005a7b12
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7185
-;   undefined4 DAT_005d7188
+;   TerminatedCString s_rt_005d7185
+;   TerminatedCString s_data_005d7188
 ;   TerminatedCString s_core_course_cpp_005d718d
 ;   TerminatedCString s_CCourse_load_can_t_open_005d71a0
-;   undefined4 DAT_005d71c3
+;   TerminatedCString s_d_005d71c3
 ;   TerminatedCString s_d_d_005d71c7
 ;   TerminatedCString s_f_f_f_f_f_f_f_005d71ce
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_00447d50
@@ -52,9 +52,9 @@ section .text
     CALL core_course.cpp_CCourse_free_FUN_00447ee0 ; 00447dc0
         ;   XREF to: 00447ee0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00447ee0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00447dc5
-    PUSH 0x5d7185                       ; 00447dc8 | DAT_005d7185
+    PUSH 0x5d7185                       ; 00447dc8 | = "rt"
     PUSH EBX                            ; 00447dcd
-    PUSH 0x5d7188                       ; 00447dce | DAT_005d7188
+    PUSH 0x5d7188                       ; 00447dce | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 00447dd3
         ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00447dd8
@@ -78,7 +78,7 @@ section .text
     MOV EAX,ESP                         ; 00447df9
         ;   Label: LAB_00447df9
     PUSH EAX                            ; 00447dfb
-    PUSH 0x5d71c3                       ; 00447dfc | DAT_005d71c3
+    PUSH 0x5d71c3                       ; 00447dfc | = "%d\n"
     PUSH EBP                            ; 00447e01
     MOV EBX,EBP                         ; 00447e02
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00447e04
@@ -175,8 +175,8 @@ section .text
     MOV EDX,0x5d718d                    ; 00447eb2 | = "..\\core\\course.cpp"
     MOV ECX,0x7c                        ; 00447eb7
     PUSH 0x5d71a0                       ; 00447ebc | = "CCourse::load - can't open data\\%s"
-    MOV dword ptr [0x01d1d400],EDX      ; 00447ec1 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00447ec7 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00447ec1 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00447ec7 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00447ecd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00447ed2

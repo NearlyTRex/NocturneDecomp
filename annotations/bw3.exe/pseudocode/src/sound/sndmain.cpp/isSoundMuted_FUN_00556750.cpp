@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_isSoundMuted_FUN_00556750(void)
 
 {
-  return _DAT_02cf3290;
+  return g_INT_02cf3290;
 }

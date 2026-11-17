@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_main_c_displayErrorAndQuit_FUN_004e4330(char *format)
 
 {
@@ -15,14 +13,14 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_004e4330(char *format)
   char *pcVar2;
   byte *local_c;
   
-  if (_DAT_01d71de8 != 0) {
+  if (g_INT_01d71de8 != 0) {
     notifyAbnormalTermination();
   }
   local_c = &stack0x00000008;
-  _DAT_01d71de8 = 1;
-  _vsprintf((char *)0x1d70ce0,format,(va_list_t)&local_c);
+  g_INT_01d71de8 = 1;
+  _vsprintf(g_CHAR_ARRAY_01d70ce0,format,(va_list_t)&local_c);
   local_c = (byte *)0x0;
-  pcVar2 = _DAT_01d71de0;
+  pcVar2 = g_CHAR_PTR_01d71de0;
   do {
     pcVar1 = pcVar2;
     if (*pcVar2 == '\\') goto LAB_004e4396;
@@ -38,21 +36,21 @@ LAB_004e4396:
         core_sound_cpp_shutdownSoundSystem_FUN_0055fcc0();
         engine_2d_c_cleanupGraphicsSystem_FUN_00401120();
         wincore_winrun_cpp_endPeriod_FUN_00580690();
-        wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00581300((char *)0x1d70ce0);
+        wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00581300(g_CHAR_ARRAY_01d70ce0);
         return;
       }
       do {
-        pcVar2 = _DAT_01d71de0;
-        if (*_DAT_01d71de0 == '\\') goto LAB_004e43ee;
-        if (*_DAT_01d71de0 == '\0') break;
-        pcVar2 = _DAT_01d71de0 + 1;
+        pcVar2 = g_CHAR_PTR_01d71de0;
+        if (*g_CHAR_PTR_01d71de0 == '\\') goto LAB_004e43ee;
+        if (*g_CHAR_PTR_01d71de0 == '\0') break;
+        pcVar2 = g_CHAR_PTR_01d71de0 + 1;
         if (*pcVar2 == '\\') goto LAB_004e43ee;
-        _DAT_01d71de0 = _DAT_01d71de0 + 2;
+        g_CHAR_PTR_01d71de0 = g_CHAR_PTR_01d71de0 + 2;
       } while (*pcVar2 != '\0');
       pcVar2 = (char *)0x0;
 LAB_004e43ee:
       pcVar2 = pcVar2 + 1;
-      _DAT_01d71de0 = pcVar2;
+      g_CHAR_PTR_01d71de0 = pcVar2;
     }
   } while( true );
 }

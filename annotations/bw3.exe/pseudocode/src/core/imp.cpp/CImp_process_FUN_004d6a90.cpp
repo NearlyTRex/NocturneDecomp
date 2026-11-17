@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_imp_cpp_CImp_process_FUN_004d6a90(CImp *this_ptr,float delta_time)
 
@@ -138,10 +137,10 @@ LAB_004d6b03:
             iVar5 = (*(((pCVar2->base).vtable._uc)->_uc).canBeGrabbed)
                               (pCVar2,(CDemonActor *)this_ptr,0), iVar5 != 0)))) {
           if (iStack_18 != 0) {
-            afStack_58[2] = 0x40000000;
+            afStack_58[2] = 2.0f;
             CStack_bc.x = 0.0;
             CStack_bc.y = 0.0;
-            CStack_bc.z = 0x40000000;
+            CStack_bc.z = 2.0f;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
                       ((CDemonActor *)this_ptr,&CStack_bc,&CStack_c8);
             afStack_154[2] = CStack_c8.x;
@@ -152,10 +151,10 @@ LAB_004d6b03:
             pCVar2 = (this_ptr->base).victim;
             fVar16 = afStack_154[2] - (pCVar2->base).location.position.x;
             fVar17 = fStack_144 - (pCVar2->base).location.position.z;
-            if ((float)_DAT_005c5630 < SQRT(fVar17 * fVar17 + fVar16 * fVar16)) {
+            if ((float)0.80000000000000004 < SQRT(fVar17 * fVar17 + fVar16 * fVar16)) {
               iStack_18 = 0;
             }
-            if ((float)_DAT_005c5638 <
+            if ((float)4 <
                 ABS(afStack_154[3] - (((this_ptr->base).victim)->base).location.position.y))
             goto LAB_004d6b7a;
           }
@@ -178,7 +177,7 @@ LAB_004d6b7a:
         }
         else {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-                    (pCStack_1c,_DAT_01d5bc0c,&CStack_1c4);
+                    (pCStack_1c,g_INT_ARRAY_01d5bc0c[0],&CStack_1c4);
           pCVar14 = &CStack_74;
           CStack_74.x = CStack_1c4.x;
           *(uint *)((int)&CStack_74 + (uint)bVar12 * -8 + 4) =
@@ -205,8 +204,8 @@ LAB_004d6b7a:
           (*(((pCVar2->base).vtable._uc)->_uc).processDamage)(pCVar2,&SStack_284);
           EVar15 = 0x4d6d9c;
           dVar13 = round
-                             ((double)(SStack_284.damage_amount * (float)_DAT_005c5620 *
-                                      (float)_DAT_005c5628));
+                             ((double)(SStack_284.damage_amount * (float)2.5 *
+                                      (float)0.25));
           iStack_4c = (int)ROUND(dVar13);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
                     (g_CGorePtr,&CStack_a4,(CVector3f *)0x0,iStack_4c,EVar15);
@@ -242,9 +241,9 @@ LAB_004d6b7a:
   if (iVar10 == 0) {
     switch(iVar5) {
     case 0:
-      iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x10c))(iVar5);
-      if (iVar5 == 0) {
+      EVar8 = (*(((g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.vtable._uc)->_uc).
+                getDeathState)(&g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base);
+      if (EVar8 == DEATH_STATE_ALIVE) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar2 = (this_ptr->base).victim;
         if (pCVar2 == (CCharacter *)0x0) {
@@ -267,7 +266,7 @@ LAB_004d6b7a:
           fStack_40 = SQRT(CStack_1b8.z * CStack_1b8.z +
                            CStack_1b8.x * CStack_1b8.x + CStack_1b8.y * CStack_1b8.y);
           fStack_34 = fStack_40;
-          if (fStack_40 < 0x40000000) {
+          if (fStack_40 < 2.0f) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_1b8,&CStack_e0)
             ;
             fStack_ec = CStack_e0.x;
@@ -276,13 +275,13 @@ LAB_004d6b7a:
                  *(float *)((int)&CStack_e0 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                   (afStack_e8[0] - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS(fStack_14) < (float)_DAT_005c5618) {
+            if (ABS(fStack_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCStack_20->base,4,1);
             }
           }
           if (fStack_34 < (this_ptr->base).guard_distance) {
             this_ptr_00 = &(this_ptr->base).base.model;
-            if (_DAT_005e1ef8 <= fStack_34) {
+            if (10.0f <= fStack_34) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,2,1)
               ;
             }
@@ -307,7 +306,7 @@ LAB_004d6b7a:
     case 1:
     case 2:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar16 = 0x40000000;
+      fVar16 = 2.0f;
       pCStack_24 = &(this_ptr->base).base.model.base;
       pCVar2 = (this_ptr->base).victim;
       if (pCVar2 == (CCharacter *)0x0) {
@@ -322,7 +321,7 @@ LAB_004d6b7a:
       else {
         pCVar7 = pCVar2->grabbed_by;
         if (pCVar7 == (CDemonActor *)0x0) {
-          fStack_30 = 0x40000000;
+          fStack_30 = 2.0f;
           max_distance = 0.17453292;
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
           fVar17 = 0.5;
@@ -357,10 +356,10 @@ LAB_004d6b7a:
             fStack_3c = SQRT(afStack_1a8[1] * afStack_1a8[1] + fStack_1ac * fStack_1ac);
             afStack_1a8[0] = 0.0;
             fStack_28 = fStack_3c;
-            if ((_DAT_005e1ef8 < fStack_3c) && (iStack_2c == 1)) {
+            if ((10.0f < fStack_3c) && (iStack_2c == 1)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_24,2,1);
             }
-            if (((fStack_28 < _DAT_005e1efc) &&
+            if (((fStack_28 < 4.0f) &&
                 (pCVar2 = (this_ptr->base).victim,
                 pCVar7 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
                 pCVar7 == (CDemonActor *)0x0)) &&
@@ -389,7 +388,7 @@ LAB_004d6b7a:
                    *(float *)((int)&CStack_98 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
               fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                     (afStack_1d8[3] - (this_ptr->base).base.base.orient.vec.y);
-              if ((ABS(fStack_14) < (float)_DAT_005c5618) &&
+              if ((ABS(fStack_14) < (float)0.52359877558333301) &&
                  (iVar5 = core_actor_cpp_randomChance_FUN_0040cf40(0.1), iVar5 != 0)) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                           (&(this_ptr->base).base.model.base,8,1);
@@ -424,7 +423,7 @@ LAB_004d6b7a:
                    *(float *)((int)&CStack_1e8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
               fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                     (fStack_1f0 - (this_ptr->base).base.base.orient.vec.y);
-              if (ABS(fStack_14) < (float)_DAT_005c5618) {
+              if (ABS(fStack_14) < (float)0.52359877558333301) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                           (&(this_ptr->base).base.model.base,4,1);
                 (this_ptr->base).attack_cooldown = 4.0;
@@ -457,7 +456,7 @@ LAB_004d6b7a:
       }
       break;
     case 3:
-      fVar16 = this_ptr->laugh_timer - delta_time * _DAT_005c5610;
+      fVar16 = this_ptr->laugh_timer - delta_time * 4.0f;
       this_ptr->laugh_timer = fVar16;
       if (fVar16 < 0.0) {
         this_ptr->laugh_timer = 0.0;
@@ -482,9 +481,9 @@ LAB_004d6b7a:
       fVar16 = 0.4;
       fStack_14 = SStack_248.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                ((CVector3f *)&DAT_02cfd900,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d5bc14,
-                 &CStack_188);
+                (&g_CVector3f_02cfd900,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_01d5bc0c[2],&CStack_188);
       pCVar14 = &CStack_170;
       CStack_170.x = CStack_188.x;
       *(uint *)((int)&CStack_170 + (uint)bVar12 * -8 + 4) =
@@ -559,7 +558,7 @@ LAB_004d6b7a:
           pCVar2 = (this_ptr->base).victim;
           pCVar11 = (CImp *)pCVar2->grabbed_by;
           if (this_ptr == pCVar11) {
-            fVar16 = (float)_DAT_005c5608;
+            fVar16 = (float)0.75;
             pCVar4 = (pCVar11->base).victim;
             (pCVar11->base).base.base.location.position.x =
                  (pCVar2->base).location.position.x -

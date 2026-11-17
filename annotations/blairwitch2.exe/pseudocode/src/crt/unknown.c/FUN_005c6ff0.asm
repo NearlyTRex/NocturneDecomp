@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c6e00 at 005c6e06
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c7040
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_005c701d
     INC AL                              ; 005c701f
     AND EAX,0xff                        ; 005c7021
-    MOV AL,byte ptr [EAX + 0x61ed94]    ; 005c7026 | DAT_0061ed94
+    MOV AL,byte ptr [EAX + 0x61ed94]    ; 005c7026 | g_UCHAR_ARRAY_0061ed94
     AND AL,0x80                         ; 005c702c
     AND EAX,0xff                        ; 005c702e
     POP EBX                             ; 005c7033

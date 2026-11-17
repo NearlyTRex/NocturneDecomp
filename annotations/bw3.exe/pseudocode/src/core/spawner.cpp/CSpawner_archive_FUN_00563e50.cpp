@@ -10,7 +10,7 @@ void __cdecl core_spawner_cpp_CSpawner_archive_FUN_00563e50(CSpawner *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
-  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->spawn_name,"@@spawn_name" + 2);
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->spawn_name,"spawn_name");
   core_actor_cpp_archiveString_FUN_0040b680(this_ptr->actor_class_name,"actor_class_name");
   core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->spawn_timer,"spawn_timer");
   core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->spawn_time,"spawn_time");

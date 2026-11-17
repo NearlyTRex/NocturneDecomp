@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004d6140(CIcePick *this_ptr,float delta_time)
 
 {
@@ -28,10 +26,10 @@ void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004d6140(CIcePick
       }
       break;
     case 0x65:
-      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004d6230(this_ptr,_DAT_01cee0e8);
+      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004d6230(this_ptr,g_INT_ARRAY_01cee0b4[0xd]);
       break;
     case 0x66:
-      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004d6230(this_ptr,_DAT_01cee0ec);
+      core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004d6230(this_ptr,g_INT_ARRAY_01cee0b4[0xe]);
       break;
     case 0x67:
       uVar2 = rand();

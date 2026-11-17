@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setColor3f_FUN_00517bd0(float red,float green,float blue)
 
 {
@@ -18,20 +16,20 @@ void __cdecl engine_mini3d_cpp_setColor3f_FUN_00517bd0(float red,float green,flo
   double dVar5;
   double dVar6;
   double dVar7;
-  uint unaff_retaddr;
+  float unaff_retaddr;
   uint uStack_4;
   
-  fVar1 = green * _DAT_005e902b;
-  fVar2 = blue * _DAT_005e902b;
-  fVar3 = _DAT_01d224c0 * _DAT_005e902b;
-  _DAT_01d25f38 = red;
-  dVar4 = round((double)(red * _DAT_005e902b));
+  fVar1 = green * 255.0f;
+  fVar2 = blue * 255.0f;
+  fVar3 = g_FLOAT_01d224c0 * 255.0f;
+  g_FLOAT_01d25f38 = red;
+  dVar4 = round((double)(red * 255.0f));
   dVar5 = round((double)fVar1);
   dVar6 = round((double)fVar3);
-  _DAT_01d25f3c = uStack_4;
-  _DAT_01d25f40 = unaff_retaddr;
+  g_FLOAT_01d25f3c = uStack_4;
+  g_FLOAT_01d25f40 = unaff_retaddr;
   dVar7 = round((double)fVar2);
-  _DAT_01d25f44 =
+  g_INT_01d25f44 =
        (int)ROUND(dVar7) |
        (int)ROUND(dVar5) << 8 | (int)ROUND(dVar6) << 0x18 | (int)ROUND(dVar4) << 0x10;
   return;

@@ -7,13 +7,13 @@
 ; CDoc *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d059f
-;   undefined4 DAT_005f515c
-;   undefined4 DAT_005f5160
+;   double g_DOUBLE_005d059f = 0.0100000000000000
+;   float g_FLOAT_005f515c = -1.047198
+;   float g_FLOAT_005f5160 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01b4d264
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01b4d264
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -55,7 +55,7 @@ section .text
     LEA EAX,[EBX + 0x25674]             ; 0045ab7c
     LEA EDI,[ESP + 0x58]                ; 0045ab82
     MOV dword ptr [ESP + 0x158],EAX     ; 0045ab86
-    MOV EAX,[0x01b4d264]                ; 0045ab8d | DAT_01b4d264
+    MOV EAX,[0x01b4d264]                ; 0045ab8d | g_INT_01b4d264
     LEA ESI,[ESP + 0x10c]               ; 0045ab92
     MOV dword ptr [ESP + 0x14c],EAX     ; 0045ab99
     MOV EAX,0x3f060a92                  ; 0045aba0
@@ -282,7 +282,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x30]      ; 0045aedd
     FST double ptr [ESP + 0x10]         ; 0045aee1
     MOV dword ptr [ESP + 0x2c],EAX      ; 0045aee5
-    FCOMP double ptr [0x005d059f]       ; 0045aee9 | DAT_005d059f
+    FCOMP double ptr [0x005d059f]       ; 0045aee9 | g_DOUBLE_005d059f
     FNSTSW AX                           ; 0045aeef
     SAHF                                ; 0045aef1
     JBE 0x0045af1e                      ; 0045aef2
@@ -295,7 +295,7 @@ section .text
     FLD float ptr [ESP + 0x2c]          ; 0045af07
         ;   Label: LAB_0045af07
     FST double ptr [ESP + 0x8]          ; 0045af0b
-    FCOMP double ptr [0x005d059f]       ; 0045af0f | DAT_005d059f
+    FCOMP double ptr [0x005d059f]       ; 0045af0f | g_DOUBLE_005d059f
     FNSTSW AX                           ; 0045af15
     SAHF                                ; 0045af17
     JNC 0x0045b0d4                      ; 0045af18
@@ -311,21 +311,21 @@ section .text
     MOV EAX,dword ptr [ESP + 0x70]      ; 0045af37
     FLD float ptr [ESP + 0x70]          ; 0045af3b
     MOV dword ptr [ESP + 0x154],EAX     ; 0045af3f
-    FCOMP float ptr [0x005f515c]        ; 0045af46 | DAT_005f515c
+    FCOMP float ptr [0x005f515c]        ; 0045af46 | g_FLOAT_005f515c
     FNSTSW AX                           ; 0045af4c
     SAHF                                ; 0045af4e
     JNC 0x0045af5d                      ; 0045af4f
         ;   XREF to: 0045af5d (CONDITIONAL_JUMP)  ; LAB_0045af5d
-    MOV EAX,[0x005f515c]                ; 0045af51 | DAT_005f515c
+    MOV EAX,[0x005f515c]                ; 0045af51 | g_FLOAT_005f515c
     MOV dword ptr [ESP + 0x154],EAX     ; 0045af56
     FLD float ptr [ESP + 0x154]         ; 0045af5d
         ;   Label: LAB_0045af5d
-    FCOMP float ptr [0x005f5160]        ; 0045af64 | DAT_005f5160
+    FCOMP float ptr [0x005f5160]        ; 0045af64 | g_FLOAT_005f5160
     FNSTSW AX                           ; 0045af6a
     SAHF                                ; 0045af6c
     JBE 0x0045af7b                      ; 0045af6d
         ;   XREF to: 0045af7b (CONDITIONAL_JUMP)  ; LAB_0045af7b
-    MOV EAX,[0x005f5160]                ; 0045af6f | DAT_005f5160
+    MOV EAX,[0x005f5160]                ; 0045af6f | g_FLOAT_005f5160
     MOV dword ptr [ESP + 0x154],EAX     ; 0045af74
     FLD float ptr [ESP + 0x15c]         ; 0045af7b
         ;   Label: LAB_0045af7b
@@ -364,8 +364,8 @@ section .text
         ;   Label: LAB_0045afef
     MOV ESI,0x12a4                      ; 0045aff4
     PUSH 0x5d0577                       ; 0045aff9
-    MOV dword ptr [0x01d046a0],ECX      ; 0045affe | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0045b004 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0045affe | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0045b004 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0045b00a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0045b00f

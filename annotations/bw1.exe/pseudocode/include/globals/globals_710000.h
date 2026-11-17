@@ -9,30 +9,42 @@
 // GLOBAL VARIABLES - Range 0x710000
 // =============================================================================
 
+// int
+extern int g_INT_00713a38;
+extern int g_INT_00713a3c;
+extern int g_INT_00713a40;
+extern int g_INT_00713a44;
+extern int g_INT_00713a48;
+extern int g_INT_00713a4c;
+extern int g_INT_00713a50;
+extern int g_INT_00713a58;
+extern int g_INT_00713a5c;
+extern int g_INT_00713a68;
+extern int g_INT_00713a6c;
+extern int g_INT_00713a70;
+extern int g_INT_00713a74;
+extern int g_INT_00713a78;
+extern int g_INT_00713a7c;
+extern int g_INT_00713a80;
+extern int g_INT_00713a84;
+extern int g_INT_00713a88;
+extern int g_INT_00713a8c;
+extern int g_INT_00713a90;
+extern int g_INT_00713af8;
+extern int g_INT_00713afc;
+
+// int[24]
+extern int g_INT_ARRAY_00713a98[24];
+
+// uint
+extern uint g_UINT_00713a60;
+extern uint g_UINT_00713a64;
+
 // undefined4
-extern undefined4 DAT_007135b4;
-extern undefined4 DAT_007135b8;
-extern undefined4 DAT_007135c4;
-extern undefined4 DAT_007135c8;
-extern undefined4 DAT_007135e4;
-extern undefined4 DAT_007135e8;
-extern undefined4 DAT_007135f4;
-extern undefined4 DAT_007135f8;
-extern undefined4 DAT_0071362c;
 extern undefined4 DAT_00713638;
-extern undefined4 DAT_00713a5c;
-extern undefined4 DAT_00713a60;
-extern undefined4 DAT_00713a68;
-extern undefined4 DAT_00713a6c;
-extern undefined4 DAT_00713a70;
-extern undefined4 DAT_00713a74;
-extern undefined4 DAT_00713a78;
-extern undefined4 DAT_00713a7c;
-extern undefined4 DAT_00713a88;
-extern undefined4 DAT_00713a8c;
-extern undefined4 DAT_00713a90;
-extern undefined4 DAT_00713a98;
-extern undefined4 DAT_00713a9c;
-extern undefined4 DAT_00713af8;
-extern undefined4 DAT_00713afc;
+
+// void*
+extern void* g_PTR_0071362c;
+extern void* g_PTR_00713a54;
+extern void* g_PTR_00713a94;
 

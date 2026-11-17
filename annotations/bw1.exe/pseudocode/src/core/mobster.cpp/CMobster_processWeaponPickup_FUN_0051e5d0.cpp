@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_0051e5d0(CMobster *this_ptr,float delta_time)
 
 {
@@ -88,7 +86,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_0051e5d0(CMobster 
               afStack_90[0] = afStack_90[0] * afStack_90[0] * afStack_90[0] * afStack_90[0];
               fVar9 = SQRT(afStack_90[1] * afStack_90[1] +
                            CStack_9c.z * CStack_9c.z + afStack_90[0] * afStack_90[0]);
-              if (((float)_DAT_005e9e8a <= fVar9) && ((int)fVar9 < 0x41700001)) {
+              if (((float)5 <= fVar9) && ((int)fVar9 < 0x41700001)) {
                 *(CDemonActor **)(&stack0xfffffefc + (int)local_18) = pCVar2;
                 local_18 = (float)((int)local_18 + 4);
                 CStack_30.z = (float)((int)&((CVector3f *)CStack_30.z)->x + 1);
@@ -121,8 +119,8 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_0051e5d0(CMobster 
           fVar9 = (pCVar5->position).x - (this_ptr->target_weapon->location).position.x;
           fVar11 = (this_ptr->base).base.base.location.position.z -
                    (this_ptr->target_weapon->location).position.z;
-          fVar9 = (float)_DAT_005e9e8a -
-                  SQRT(fVar11 * fVar11 + fVar9 * fVar9) * (float)_DAT_005e9e82;
+          fVar9 = (float)5 -
+                  SQRT(fVar11 * fVar11 + fVar9 * fVar9) * (float)0.33333333333333298;
           if (fVar9 < 1.0) {
             fVar9 = 1.0;
           }
@@ -154,7 +152,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_0051e5d0(CMobster 
             afStack_90[(uint)bVar8 * -2 + 1] = *(float *)((int)&CStack_54 + (uint)bVar8 * -8 + 4);
             afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 2] =
                  *(float *)((int)&CStack_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-            afStack_90[2] = CStack_cc.z + (float)_DAT_005e9e92;
+            afStack_90[2] = CStack_cc.z + (float)0.40000000000000002;
             CStack_30.x = afStack_90[0];
             *(float *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) = afStack_90[(uint)bVar8 * -2 + 1];
             *(float *)((int)&CStack_30 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8) =

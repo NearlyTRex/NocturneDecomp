@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004e63e0(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size)
 
 {
@@ -22,15 +20,15 @@ CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004e63e0(CGore *this_ptr,CVe
     this_ptr_01 = core_flies_cpp_CFlies_ctor_FUN_004bfa60(this_ptr_00);
   }
   if (this_ptr_01 == (CFlies *)0x0) {
-    _DAT_01d1d400 = "..\\core\\gore.cpp";
-    _DAT_01d1d404 = 0x67d;
+    g_CHAR_PTR_01d1d400 = "..\\core\\gore.cpp";
+    g_INT_01d1d404 = 0x67d;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create flies!");
   }
-  fVar2 = (float)_DAT_005e4155;
+  fVar2 = (float)60;
   (this_ptr_01->base).location.position.x = position->x;
   (this_ptr_01->base).location.position.y = position->y;
   (this_ptr_01->base).location.position.z = position->z;
-  iVar1 = 0x01D2C900->current_set_index;
+  iVar1 = g_CDemonMission_PTR_0061f650->current_set_index;
   this_ptr_01->fly_count = 0;
   (this_ptr_01->base).location.area_id = iVar1;
   this_ptr_01->gather_count = gather_count;
@@ -41,7 +39,9 @@ CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004e63e0(CGore *this_ptr,CVe
     (this_ptr_01->box_size).z = box_size->z;
   }
   (*((this_ptr_01->base).vtable._ub)->setup)(&this_ptr_01->base);
-  core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60(0x01D2C900,&this_ptr_01->base);
-  core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,&this_ptr_01->base);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60
+            (g_CDemonMission_PTR_0061f650,&this_ptr_01->base);
+  core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
+            (g_CDemonMission_PTR_0061f650,&this_ptr_01->base);
   return this_ptr_01;
 }

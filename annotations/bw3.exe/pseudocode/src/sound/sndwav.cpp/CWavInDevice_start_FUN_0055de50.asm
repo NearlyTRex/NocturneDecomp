@@ -9,13 +9,13 @@
 ; Referenced Globals:
 ;   void* PTR_waveInStart_005b3474 = 001b39a8
 ;   TerminatedCString s_waveInStart_failed_005d508f
-;   undefined4 DAT_02cf5504
-;   undefined4 DAT_02cf5648
-;   undefined4 DAT_02cf564c
-;   undefined4 DAT_02cf5658
-;   undefined4 DAT_02cf565c
-;   undefined4 DAT_02cf5670
-;   undefined4 DAT_02cf5674
+;   int g_INT_02cf5504
+;   int g_INT_02cf5648
+;   int g_INT_02cf564c
+;   int g_INT_02cf5658
+;   int g_INT_02cf565c
+;   int g_INT_02cf5670
+;   int g_INT_02cf5674
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 0055de52
     PUSH EBP                            ; 0055de53
     MOV EDI,dword ptr [ESP + 0x14]      ; 0055de54
-    MOV EDX,dword ptr [0x02cf565c]      ; 0055de58 | DAT_02cf565c
+    MOV EDX,dword ptr [0x02cf565c]      ; 0055de58 | g_INT_02cf565c
     XOR ESI,ESI                         ; 0055de5e
     TEST EDX,EDX                        ; 0055de60
     JLE 0x0055ded4                      ; 0055de62
@@ -51,14 +51,14 @@ section .text
     MOV dword ptr [EDX],EAX             ; 0055de82
     MOV EAX,dword ptr [EBX + 0x2cf5558] ; 0055de84
     MOV dword ptr [EAX + 0xc],ESI       ; 0055de8a
-    MOV EAX,[0x02cf5648]                ; 0055de8d | DAT_02cf5648
+    MOV EAX,[0x02cf5648]                ; 0055de8d | g_INT_02cf5648
     MOV EDX,EAX                         ; 0055de92
     SAR EDX,0x1f                        ; 0055de94
     SHL EDX,0x3                         ; 0055de97
     SBB EAX,EDX                         ; 0055de9a
     SAR EAX,0x3                         ; 0055de9c
-    IMUL EAX,dword ptr [0x02cf5658]     ; 0055de9f | DAT_02cf5658
-    IMUL EAX,dword ptr [0x02cf564c]     ; 0055dea6 | DAT_02cf564c
+    IMUL EAX,dword ptr [0x02cf5658]     ; 0055de9f | g_INT_02cf5658
+    IMUL EAX,dword ptr [0x02cf564c]     ; 0055dea6 | g_INT_02cf564c
     ADD ESP,0xc                         ; 0055dead
     MOV EDX,dword ptr [EBX + 0x2cf5558] ; 0055deb0
     PUSH ESI                            ; 0055deb6
@@ -69,20 +69,20 @@ section .text
     TEST EAX,EAX                        ; 0055dec2
     JZ 0x0055df05                       ; 0055dec4
         ;   XREF to: 0055df05 (CONDITIONAL_JUMP)  ; LAB_0055df05
-    MOV ECX,dword ptr [0x02cf565c]      ; 0055dec6 | DAT_02cf565c
+    MOV ECX,dword ptr [0x02cf565c]      ; 0055dec6 | g_INT_02cf565c
     INC ESI                             ; 0055decc
     ADD EBX,0x4                         ; 0055decd
     CMP ESI,ECX                         ; 0055ded0
     JL 0x0055de66                       ; 0055ded2
         ;   XREF to: 0055de66 (CONDITIONAL_JUMP)  ; LAB_0055de66
-    MOV EAX,[0x02cf565c]                ; 0055ded4 | DAT_02cf565c
+    MOV EAX,[0x02cf565c]                ; 0055ded4 | g_INT_02cf565c
         ;   Label: LAB_0055ded4
     DEC EAX                             ; 0055ded9
-    MOV EBX,dword ptr [0x02cf5504]      ; 0055deda | DAT_02cf5504
-    MOV [0x02cf5670],EAX                ; 0055dee0 | DAT_02cf5670
-    MOV EAX,[0x02cf5658]                ; 0055dee5 | DAT_02cf5658
+    MOV EBX,dword ptr [0x02cf5504]      ; 0055deda | g_INT_02cf5504
+    MOV [0x02cf5670],EAX                ; 0055dee0 | g_INT_02cf5670
+    MOV EAX,[0x02cf5658]                ; 0055dee5 | g_INT_02cf5658
     PUSH EBX                            ; 0055deea
-    MOV [0x02cf5674],EAX                ; 0055deeb | DAT_02cf5674
+    MOV [0x02cf5674],EAX                ; 0055deeb | g_INT_02cf5674
     CALL dword ptr CS:[0x5b3474]        ; 0055def0 | PTR_waveInStart_005b3474
     TEST EAX,EAX                        ; 0055def7
     JNZ 0x0055df15                      ; 0055def9

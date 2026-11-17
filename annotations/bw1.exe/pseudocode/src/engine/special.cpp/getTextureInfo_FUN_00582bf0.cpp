@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_getTextureInfo_FUN_00582bf0(int texture_size)
 
 {
   int iVar1;
   
-  if (_DAT_01c50948 == 0) {
+  if (g_INT_01c50948 == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02c8342c)(texture_size);
+  iVar1 = (*(code *)g_PTR_02c8342c)(texture_size);
   return iVar1;
 }

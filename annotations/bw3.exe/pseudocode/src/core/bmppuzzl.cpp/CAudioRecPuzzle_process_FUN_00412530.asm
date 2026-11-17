@@ -8,16 +8,16 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_ExitFromPuzzle_005b6795+1
+;   TerminatedCString s_ExitFromPuzzle_005b6796
 ;   TerminatedCString s_AudioPuzzleSuccess_005b67a5
-;   undefined4 DAT_005b67be
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_00600284
-;   undefined4 DAT_007dffb8
-;   undefined4 DAT_01c5fadc
-;   undefined4 DAT_01c5fae0
-;   undefined4 DAT_01c5fae4
-;   undefined4 DAT_01d70a78
+;   double g_DOUBLE_005b67be = 10
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   int g_INT_007dffb8
+;   int g_INT_01c5fadc
+;   int g_INT_01c5fae0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
+;   void* g_PTR_01d70a78
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0
@@ -42,23 +42,23 @@ section .text
     CMP dword ptr [EBX + 0xc28],0x1     ; 00412541
     JNZ 0x00412583                      ; 00412548
         ;   XREF to: 00412583 (CONDITIONAL_JUMP)  ; LAB_00412583
-    PUSH 0x5b6796                       ; 0041254a | s_ExitFromPuzzle_005b6795+1
+    PUSH 0x5b6796                       ; 0041254a | = "ExitFromPuzzle"
         ;   Label: LAB_0041254a
-    MOV ESI,dword ptr [0x005fba60]      ; 0041254f | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 0041254f | g_CEventList_PTR_005fba60
     PUSH ESI                            ; 00412555
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00412556
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0041255b
-    MOV EAX,[0x00600284]                ; 0041255e | DAT_00600284
+    MOV EAX,[0x00600284]                ; 0041255e | g_CKeys_PTR_00600284
     PUSH 0x200                          ; 00412563
-    MOV EDX,dword ptr [EAX]             ; 00412568 | DAT_01d70a78
-    PUSH EAX                            ; 0041256a | DAT_01d70a78
+    MOV EDX,dword ptr [EAX]             ; 00412568 | g_PTR_01d70a78
+    PUSH EAX                            ; 0041256a | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 0041256b
     ADD ESP,0x8                         ; 0041256e
     XOR EDI,EDI                         ; 00412571
     PUSH EDI                            ; 00412573
     PUSH EBX                            ; 00412574
-    MOV dword ptr [0x01c5fae4],EDI      ; 00412575 | DAT_01c5fae4
+    MOV dword ptr [0x01c5fae4],EDI      ; 00412575 | g_BIT_INTEGER32_01c5fae4
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 ; 0041257b
         ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 00412580
@@ -82,19 +82,19 @@ section .text
     CMP ESI,0x2                         ; 004125b2
     JNZ 0x0041268b                      ; 004125b5
         ;   XREF to: 0041268b (CONDITIONAL_JUMP)  ; LAB_0041268b
-    CMP dword ptr [0x007dffb8],-0x1     ; 004125bb | DAT_007dffb8
+    CMP dword ptr [0x007dffb8],-0x1     ; 004125bb | g_INT_007dffb8
     JNZ 0x004125ce                      ; 004125c2
         ;   XREF to: 004125ce (CONDITIONAL_JUMP)  ; LAB_004125ce
-    MOV EAX,[0x01c5fadc]                ; 004125c4 | DAT_01c5fadc
-    MOV [0x007dffb8],EAX                ; 004125c9 | DAT_007dffb8
-    MOV EAX,[0x01c5fadc]                ; 004125ce | DAT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 004125c4 | g_INT_01c5fadc
+    MOV [0x007dffb8],EAX                ; 004125c9 | g_INT_007dffb8
+    MOV EAX,[0x01c5fadc]                ; 004125ce | g_INT_01c5fadc
         ;   Label: LAB_004125ce
-    MOV EDX,dword ptr [0x007dffb8]      ; 004125d3 | DAT_007dffb8
+    MOV EDX,dword ptr [0x007dffb8]      ; 004125d3 | g_INT_007dffb8
     SUB EAX,EDX                         ; 004125d9
     MOV dword ptr [ESP + 0xc],EAX       ; 004125db
     FILD dword ptr [ESP + 0xc]          ; 004125df
     FABS                                ; 004125e3
-    FCOMP double ptr [0x005b67be]       ; 004125e5 | DAT_005b67be
+    FCOMP double ptr [0x005b67be]       ; 004125e5 | g_DOUBLE_005b67be
     FNSTSW AX                           ; 004125eb
     SAHF                                ; 004125ed
     JBE 0x00412610                      ; 004125ee
@@ -130,10 +130,10 @@ section .text
     MOV dword ptr [EDI + 0x50],0x0      ; 00412624
     JMP 0x00412614                      ; 0041262b
         ;   XREF to: 00412614 (UNCONDITIONAL_JUMP)  ; LAB_00412614
-    MOV EDI,dword ptr [0x01c5fae0]      ; 0041262d | DAT_01c5fae0
+    MOV EDI,dword ptr [0x01c5fae0]      ; 0041262d | g_INT_01c5fae0
         ;   Label: LAB_0041262d
     PUSH EDI                            ; 00412633
-    MOV EBP,dword ptr [0x01c5fadc]      ; 00412634 | DAT_01c5fadc
+    MOV EBP,dword ptr [0x01c5fadc]      ; 00412634 | g_INT_01c5fadc
     PUSH EBP                            ; 0041263a
     MOV EAX,dword ptr [EBX]             ; 0041263b
     PUSH EBX                            ; 0041263d
@@ -158,7 +158,7 @@ section .text
     MOV dword ptr [EBX + 0x4c],ESI      ; 0041266f
     JMP 0x00412610                      ; 00412672
         ;   XREF to: 00412610 (UNCONDITIONAL_JUMP)  ; LAB_00412610
-    MOV dword ptr [0x007dffb8],0xffffffff ; 00412674 | DAT_007dffb8
+    MOV dword ptr [0x007dffb8],0xffffffff ; 00412674 | g_INT_007dffb8
         ;   Label: LAB_00412674
     ADD ESP,0x10                        ; 0041267e
         ;   Label: LAB_0041267e
@@ -257,7 +257,7 @@ section .text
     MOV ECX,0xffffffff                  ; 00412735
         ;   Label: LAB_00412735
     MOV dword ptr [EBX + 0x20],0xffffffff ; 0041273a
-    MOV dword ptr [0x007dffb8],ECX      ; 00412741 | DAT_007dffb8
+    MOV dword ptr [0x007dffb8],ECX      ; 00412741 | g_INT_007dffb8
     JMP 0x0041270d                      ; 00412747
         ;   XREF to: 0041270d (UNCONDITIONAL_JUMP)  ; LAB_0041270d
     MOV EAX,dword ptr [EDI + 0x68]      ; 00412749
@@ -473,7 +473,7 @@ section .text
     JNZ 0x0041267e                      ; 00412965
         ;   XREF to: 0041267e (CONDITIONAL_JUMP)  ; LAB_0041267e
     PUSH 0x5b67a5                       ; 0041296b | = "AudioPuzzleSuccess"
-    MOV ECX,dword ptr [0x005fba60]      ; 00412970 | DAT_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00412970 | g_CEventList_PTR_005fba60
     PUSH ECX                            ; 00412976
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00412977
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

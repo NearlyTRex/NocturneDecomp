@@ -19,8 +19,9 @@ CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_00496170(CFilmReel *thi
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CFilmReelVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,(char *)0x5c03dc);
-  pcVar3 = (char *)0x5c03e9;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
+            (this_ptr_00,"filmreel.kfm");
+  pcVar3 = "movie3";
   piVar4 = this_ptr_00[1].part_visibility_flags + 1;
   do {
     cVar1 = *pcVar3;

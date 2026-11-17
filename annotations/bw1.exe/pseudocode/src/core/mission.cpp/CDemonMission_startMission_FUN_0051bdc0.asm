@@ -17,14 +17,14 @@
 ;   TerminatedCString s_Can_t_run_mission_no_loc_005e995d
 ;   TerminatedCString s_Loading_script_005e997f
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CLevelLoader* g_CLevelLoaderPtr = 01d1bd1c
 ;   CScript* g_CScriptPtr = 01e81c80
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01d06aa0
-;   undefined4 DAT_01d06ab4
+;   int g_INT_01d06aa0
+;   int g_INT_01d06ab4
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -48,10 +48,10 @@ section .text
     PUSH ESI                            ; 0051bdc1
     PUSH EBP                            ; 0051bdc2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0051bdc3
-    CMP dword ptr [0x01d06aa0],0x1      ; 0051bdc7 | DAT_01d06aa0
+    CMP dword ptr [0x01d06aa0],0x1      ; 0051bdc7 | g_INT_01d06aa0
     JL 0x0051bdf9                       ; 0051bdce
         ;   XREF to: 0051bdf9 (CONDITIONAL_JUMP)  ; LAB_0051bdf9
-    MOV EAX,[0x01d06ab4]                ; 0051bdd0 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0051bdd0 | g_INT_01d06ab4
     CMP dword ptr [EAX*0x4 + 0x1d06aa4],0x0 ; 0051bdd5
     JNZ 0x0051be07                      ; 0051bddd
         ;   XREF to: 0051be07 (CONDITIONAL_JUMP)  ; LAB_0051be07
@@ -81,7 +81,7 @@ section .text
     ADD ESP,0x4                         ; 0051be0e
     LEA EAX,[EBX + 0x1120]              ; 0051be11
     MOV dword ptr [EBX + 0x112c],0xffffffff ; 0051be17
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0051be21 | DAT_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0051be21 | g_CEventList_PTR_0061b4d0
     MOV dword ptr [EAX + 0x8],0x0       ; 0051be27
     PUSH ESI                            ; 0051be2e
     MOV EDX,dword ptr [EAX + 0x8]       ; 0051be2f
@@ -92,7 +92,7 @@ section .text
         ;   XREF to: 004a19f0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_004a19f0(CEventList * this_ptr)
     MOV EAX,[0x0061d95c]                ; 0051be3f | g_CGamePtr
     MOV dword ptr [EAX + 0x244],0x0     ; 0051be44 | g_CGameInstance.letterbox_mode
-    MOV EAX,[0x01d06ab4]                ; 0051be4e | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0051be4e | g_INT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051be53
     ADD ESP,0x4                         ; 0051be5a
     MOV EDI,dword ptr [EAX + 0x2c]      ; 0051be5d

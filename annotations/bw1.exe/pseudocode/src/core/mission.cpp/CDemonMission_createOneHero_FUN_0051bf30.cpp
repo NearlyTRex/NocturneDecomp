@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
@@ -15,14 +13,14 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMiss
   CHeroPlaceholder *this_ptr_00;
   CHero *local_14;
   
-  if (_DAT_01d06aa0 <= index) {
-    _DAT_01d1d400 = "..\\core\\mission.cpp";
-    _DAT_01d1d404 = 0x64f;
+  if (g_INT_01d06aa0 <= index) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
+    g_INT_01d1d404 = 0x64f;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::createOneHero - too many heros!");
   }
-  if (*(int *)(index * 4 + 0x1d06aa4) != 0) {
-    _DAT_01d1d400 = "..\\core\\mission.cpp";
-    _DAT_01d1d404 = 0x650;
+  if (g_CHero_PTR_ARRAY_01d06aa4[index] != (CHero *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
+    g_INT_01d1d404 = 0x650;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::createOneHero - hero already created!");
   }
   actor_ptr = this_ptr->first_actor;
@@ -35,15 +33,16 @@ LAB_0051bfaa:
                   (g_CEditorToolsPtr,"Can't find hero placeholder for hero %d");
         return 0;
       }
-      *(CHero **)(index * 4 + 0x1d06aa4) = local_14;
+      g_CHero_PTR_ARRAY_01d06aa4[index] = local_14;
       return 1;
     }
     this_ptr_00 = (CHeroPlaceholder *)
-                  core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,_DAT_01d06b4c);
+                  core_actor_cpp_castToClassHash_FUN_0040c600
+                            (actor_ptr,g_CDemonActorType_01d06b14.name_hash);
     if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (index == this_ptr_00->index)) {
       if (existing_actor == (CCharacter *)0x0) {
         local_14 = core_hero_cpp_CHeroPlaceholder_createHero_FUN_004ecca0
-                             (this_ptr_00,(EHeroType)(&PTR_s_CGabriella_0061ef2c)[hero_type]);
+                             (this_ptr_00,(EHeroType)g_CHAR_PTR_ARRAY_0061ef2c[hero_type]);
       }
       else {
         local_14 = (CHero *)existing_actor;
@@ -58,7 +57,7 @@ LAB_0051bfaa:
                   (existing_actor,(CDemonActor *)0x0,0.0,0.0);
       }
       core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
-                (0x01D2C900,(CDemonActor *)local_14);
+                (g_CDemonMission_PTR_0061f650,(CDemonActor *)local_14);
       goto LAB_0051bfaa;
     }
     actor_ptr = actor_ptr->next_actor;

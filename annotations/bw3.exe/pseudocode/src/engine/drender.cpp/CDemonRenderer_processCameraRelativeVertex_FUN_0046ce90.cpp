@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer *this_ptr,CVector3f *world_position)
 
 {
@@ -15,9 +13,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0
   double dVar2;
   SMRGLPoint SStack_18;
   
-  dVar2 = _DAT_005bc513;
+  dVar2 = 256;
   SStack_18.point.x = 0x46cea6;
-  dVar1 = round((double)world_position->x * _DAT_005bc513);
+  dVar1 = round((double)world_position->x * 256);
   SStack_18.point.y = (int)ROUND(dVar1);
   SStack_18.type = 0x46ceb4;
   dVar1 = round((double)world_position->y * dVar2);

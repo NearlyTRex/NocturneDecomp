@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00491678 = 00491744
 ;   undefined1* PTR_caseD_3_00491680 = 00491729
-;   undefined4 DAT_01c3d814
-;   undefined4 DAT_01c3d8d8
+;   int g_INT_01c3d814
+;   int g_INT_01c3d8d8
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00490df0
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 00491694
     SUB ESP,0x8                         ; 00491696
     AND ESP,0xfffffff8                  ; 00491699
-    MOV EBX,dword ptr [0x01c3d8d8]      ; 0049169c | DAT_01c3d8d8
+    MOV EBX,dword ptr [0x01c3d8d8]      ; 0049169c | g_INT_01c3d8d8
     MOV EDX,dword ptr [EBP + 0x14]      ; 004916a2
     MOV dword ptr [ESP],EDX             ; 004916a5
-    MOV EDX,dword ptr [0x01c3d814]      ; 004916a8 | DAT_01c3d814
+    MOV EDX,dword ptr [0x01c3d814]      ; 004916a8 | g_INT_01c3d814
     XOR EDI,EDI                         ; 004916ae
     TEST EDX,EDX                        ; 004916b0
     JLE 0x00491737                      ; 004916b2
         ;   XREF to: 00491737 (CONDITIONAL_JUMP)  ; LAB_00491737
     MOV ESI,0x1c3d818                   ; 004916b8
-    MOV EAX,[0x01c3d814]                ; 004916bd | DAT_01c3d814
+    MOV EAX,[0x01c3d814]                ; 004916bd | g_INT_01c3d814
         ;   Label: LAB_004916bd
     LEA ECX,[EDI + 0x1]                 ; 004916c2
     CMP ECX,EAX                         ; 004916c5
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00491725
     INC EBX                             ; 00491728
         ;   Label: LAB_00491728
-    MOV ECX,dword ptr [0x01c3d814]      ; 00491729 | DAT_01c3d814
+    MOV ECX,dword ptr [0x01c3d814]      ; 00491729 | g_INT_01c3d814
         ;   Label: caseD_3
     INC EDI                             ; 0049172f
     ADD ESI,0xc                         ; 00491730
     CMP EDI,ECX                         ; 00491733
     JL 0x004916bd                       ; 00491735
         ;   XREF to: 004916bd (CONDITIONAL_JUMP)  ; LAB_004916bd
-    MOV dword ptr [0x01c3d8d8],EBX      ; 00491737 | DAT_01c3d8d8
+    MOV dword ptr [0x01c3d8d8],EBX      ; 00491737 | g_INT_01c3d8d8
         ;   Label: LAB_00491737
     MOV ESP,EBP                         ; 0049173d
     POP EBP                             ; 0049173f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00491766
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00491767
     PUSH EAX                            ; 0049176b
-    MOV dword ptr [0x01c3d8d8],EBX      ; 0049176c | DAT_01c3d8d8
+    MOV dword ptr [0x01c3d8d8],EBX      ; 0049176c | g_INT_01c3d8d8
     CALL core_dtri.cpp_clipLineToPlane_FUN_00490df0 ; 00491772
         ;   XREF to: 00490df0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00490df0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c3d8d8]      ; 00491777 | DAT_01c3d8d8
+    MOV EBX,dword ptr [0x01c3d8d8]      ; 00491777 | g_INT_01c3d8d8
     ADD ESP,0x2c                        ; 0049177d
     JMP 0x00491728                      ; 00491780
         ;   XREF to: 00491728 (UNCONDITIONAL_JUMP)  ; LAB_00491728
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 004917c2
     PUSH ECX                            ; 004917c6
     PUSH EDX                            ; 004917c7
-    MOV dword ptr [0x01c3d8d8],EBX      ; 004917c8 | DAT_01c3d8d8
+    MOV dword ptr [0x01c3d8d8],EBX      ; 004917c8 | g_INT_01c3d8d8
     CALL core_dtri.cpp_clipLineToPlane_FUN_00490df0 ; 004917ce
         ;   XREF to: 00490df0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00490df0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c3d8d8]      ; 004917d3 | DAT_01c3d8d8
+    MOV EBX,dword ptr [0x01c3d8d8]      ; 004917d3 | g_INT_01c3d8d8
     ADD ESP,0x2c                        ; 004917d9
     JMP 0x00491728                      ; 004917dc
         ;   XREF to: 00491728 (UNCONDITIONAL_JUMP)  ; LAB_00491728

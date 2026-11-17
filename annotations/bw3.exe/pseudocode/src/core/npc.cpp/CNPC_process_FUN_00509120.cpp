@@ -111,7 +111,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   if (EVar4 < 2) {
     if (EVar4 == WALK_STATE_WALKING) {
 LAB_0050929a:
-      pcVar9 = &DAT_005cb59c;
+      pcVar9 = "WALK";
     }
     else {
 LAB_0050947c:
@@ -122,7 +122,7 @@ LAB_0050947c:
   }
   else if (EVar4 < WALK_STATE_NO_PATH) {
     iVar5 = 0;
-    pcVar9 = &DAT_005cb598;
+    pcVar9 = "RUN";
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&pCVar1->base);
     iVar5 = core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(this_ptr_00,pcVar9,iVar5);
     if (iVar5 < 0) goto LAB_0050929a;
@@ -131,7 +131,7 @@ LAB_0050947c:
   else {
     if (EVar4 != WALK_STATE_NO_PATH) goto LAB_0050947c;
     core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004fc160
-              (&pCVar1->base,"@STAND" + 1,1);
+              (&pCVar1->base,"STAND",1);
     engine_console_cpp_CConsole_printf_FUN_00441ff0
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }

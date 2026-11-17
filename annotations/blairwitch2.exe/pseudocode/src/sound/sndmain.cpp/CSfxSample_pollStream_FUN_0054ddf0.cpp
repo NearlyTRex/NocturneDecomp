@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_0054ddf0(CSfxSample *this_ptr,float time_window,float update_interval)
 
 {
@@ -16,17 +14,15 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_0054ddf0(CSfxSample *thi
   bool bVar2;
   bool bVar3;
   int iVar4;
-  uint *puVar5;
-  uint uVar6;
+  uint uVar5;
   undefined3 extraout_var;
-  int iVar7;
-  uint uVar8;
+  int iVar6;
+  uint uVar7;
   ulong count;
-  short *output_buffer;
-  uint *puVar9;
+  char *pcVar8;
+  char *pcVar9;
   byte bVar10;
   double dVar11;
-  char *format;
   int iVar12;
   int local_38;
   int local_28;
@@ -35,31 +31,31 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_0054ddf0(CSfxSample *thi
   int local_18;
   
   bVar10 = 0;
-  if (_DAT_0264901c < 1) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x90a;
+  if (g_INT_0264901c < 1) {
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x90a;
     core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::pollStream - must be locked!");
   }
-  if (-1 < this_ptr->streaming_slot_index) {
-    iVar12 = this_ptr->streaming_slot_index * 0x11c;
-    if ((*(int *)(&DAT_0263cf80 + iVar12) == 0) ||
-       (this_ptr != *(CSfxSample **)(&DAT_0263cf84 + iVar12))) {
-      _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-      _DAT_01d046a4 = 0x918;
+  iVar12 = this_ptr->streaming_slot_index;
+  if (-1 < iVar12) {
+    if ((g_CSfxSlot_ARRAY_0263cf1c[iVar12].playback_state == 0) ||
+       (this_ptr != g_CSfxSlot_ARRAY_0263cf1c[iVar12].sample)) {
+      g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+      g_INT_01d046a4 = 0x918;
       core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSample::pollStream - my sfx isn't active with me!");
     }
-    if (_DAT_02648e80 == 0) {
+    if (g_CSoundDevice_PTR_02648e80 == (CSoundDevice *)0x0) {
       sound_sndmain_cpp_logSoundError_FUN_005549c0("SfxSample::pollStream - no sound device?\n");
       goto LAB_0054e0a3;
     }
     if (this_ptr->loop_marker_count != 1) {
-      _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-      _DAT_01d046a4 = 0x929;
+      g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+      g_INT_01d046a4 = 0x929;
       core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSample::pollStream - cannot stream sample with exotic loop points: %s");
     }
-    if (*(int *)(&DAT_0263cf7c + iVar12) != 0) {
+    if (g_CSfxSlot_ARRAY_0263cf1c[iVar12].hardware_buffer_handle != 0) {
       iVar4 = sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_0054f930
-                        ((CSfxSlot *)(iVar12 + 0x263cf1c));
+                        (g_CSfxSlot_ARRAY_0263cf1c + iVar12);
       if (iVar4 == 0) {
         sound_sndmain_cpp_logSoundError_FUN_005549c0("SfxSample::pollStream - error querrying hw playback position\n");
 LAB_0054e0a3:
@@ -69,8 +65,8 @@ LAB_0054e0a3:
       }
       iVar4 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00550010(this_ptr);
       if (((iVar4 == 0) && (-1 < (this_ptr->sample_info).sample_count)) &&
-         ((double)(this_ptr->sample_info).sample_count <= *(double *)(iVar12 + 0x263cf6c)))
-      goto LAB_0054e0a3;
+         ((double)(this_ptr->sample_info).sample_count <=
+          g_CSfxSlot_ARRAY_0263cf1c[iVar12].options.playback_position)) goto LAB_0054e0a3;
     }
     iVar12 = this_ptr->streaming_buffer_size;
     dVar11 = round
@@ -102,8 +98,8 @@ LAB_0054e0a3:
         do {
           if ((this_ptr->stream_write_position < 0) ||
              (this_ptr->streaming_buffer_size <= this_ptr->stream_write_position)) {
-            _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-            _DAT_01d046a4 = 0x96e;
+            g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+            g_INT_01d046a4 = 0x96e;
             core_main_c_displayErrorAndQuit_FUN_004e4500("nextLoadSampleDest = %d, allocLength = %d");
           }
           iVar12 = this_ptr->streaming_buffer_size - this_ptr->stream_write_position;
@@ -138,55 +134,54 @@ LAB_0054e0a3:
               }
             }
           }
-          output_buffer = (short *)&DAT_02630cb8;
+          pcVar8 = g_CHAR_ARRAY_02630cb8;
           bVar1 = false;
           bVar2 = true;
           if (this_ptr->buffer_id == 0) {
-            output_buffer =
-                 sound_sndmain_cpp_CSfxSample_lock_FUN_0054daf0
-                           (this_ptr,this_ptr->stream_write_position,iVar12);
-            if (output_buffer != (short *)0x0) {
+            pcVar8 = sound_sndmain_cpp_CSfxSample_lock_FUN_0054daf0
+                               (this_ptr,this_ptr->stream_write_position,iVar12);
+            if ((short *)pcVar8 != (short *)0x0) {
               bVar2 = false;
               bVar1 = true;
               goto LAB_0054e179;
             }
-            format = "Error locking %s while streaming\n";
+            pcVar8 = "Error locking %s while streaming\n";
 LAB_0054e09b:
-            sound_sndmain_cpp_logSoundError_FUN_005549c0(format,this_ptr);
+            sound_sndmain_cpp_logSoundError_FUN_005549c0(pcVar8,this_ptr);
             goto LAB_0054e0a3;
           }
 LAB_0054e179:
           local_24 = iVar12;
           if (bVar3) {
             count = (local_20->sample->sample_info).num_channels * iVar12;
-            uVar6 = (local_20->sample->sample_info).bit_depth;
-            if (uVar6 < 8) {
+            uVar5 = (local_20->sample->sample_info).bit_depth;
+            if (uVar5 < 8) {
 LAB_0054e1a0:
-              _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-              _DAT_01d046a4 = 0x689;
+              g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+              g_INT_01d046a4 = 0x689;
               core_main_c_displayErrorAndQuit_FUN_004e4500("generateSilence - invalid bit depth!");
             }
-            else if (uVar6 < 9) {
-              memset(output_buffer,0x80,count);
+            else if (uVar5 < 9) {
+              memset(pcVar8,0x80,count);
             }
             else {
-              if (uVar6 != 0x10) goto LAB_0054e1a0;
-              memset(output_buffer,0,count * 2);
+              if (uVar5 != 0x10) goto LAB_0054e1a0;
+              memset(pcVar8,0,count * 2);
             }
           }
           else if (this_ptr->mp3_data == (CMP3Decoder *)0x0) {
             bVar3 = support_trstream_cpp_CInStreamFile_isOpen_FUN_0057d130(&this_ptr->file_stream);
             if (CONCAT31(extraout_var,bVar3) == 0) {
-              _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-              _DAT_01d046a4 = 0x9c0;
+              g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+              g_INT_01d046a4 = 0x9c0;
               core_main_c_displayErrorAndQuit_FUN_004e4500("Can't stream unless we have mp3 decoder or open wav file!");
             }
             iVar4 = sound_sndmain_cpp_CSfxSample_framesToBytes_FUN_0054fd90(this_ptr,iVar12);
-            iVar7 = support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
-                              (&this_ptr->file_stream,output_buffer,iVar4);
-            if (iVar7 != iVar4) {
+            iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
+                              (&this_ptr->file_stream,pcVar8,iVar4);
+            if (iVar6 != iVar4) {
               sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0(this_ptr);
-              format = "Error reading %s while streaming\n";
+              pcVar8 = "Error reading %s while streaming\n";
               goto LAB_0054e09b;
             }
             if ((local_20->sample->sample_info).bit_depth == 0x10) {
@@ -197,34 +192,34 @@ LAB_0054e1a0:
           }
           else {
             local_24 = sound_mp3_cpp_CMP3Decoder_read_FUN_00509fa0
-                                 (this_ptr->mp3_data,output_buffer,iVar12);
+                                 (this_ptr->mp3_data,(short *)pcVar8,iVar12);
           }
           if ((bVar2) && (0 < local_24)) {
-            puVar5 = sound_sndmain_cpp_CSfxSample_lock_FUN_0054daf0
+            pcVar8 = sound_sndmain_cpp_CSfxSample_lock_FUN_0054daf0
                                (this_ptr,this_ptr->stream_write_position,local_24);
-            if (puVar5 == (uint *)0x0) {
-              format = "Error locking %s while streaming\n";
+            if (pcVar8 == (char *)0x0) {
+              pcVar8 = "Error locking %s while streaming\n";
               goto LAB_0054e09b;
             }
-            uVar6 = sound_sndmain_cpp_CSfxSample_framesToBytes_FUN_0054fd90(this_ptr,local_24);
-            puVar9 = (uint *)&DAT_02630cb8;
-            for (uVar8 = uVar6 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *puVar5 = *puVar9;
-              puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
-              puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
+            uVar5 = sound_sndmain_cpp_CSfxSample_framesToBytes_FUN_0054fd90(this_ptr,local_24);
+            pcVar9 = g_CHAR_ARRAY_02630cb8;
+            for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+              *(uint *)pcVar8 = *(uint *)pcVar9;
+              pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
+              pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
             }
-            for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-              *(byte *)puVar5 = *(byte *)puVar9;
-              puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);
-              puVar5 = (uint *)((int)puVar5 + (uint)bVar10 * -2 + 1);
+            for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+              *pcVar8 = *pcVar9;
+              pcVar9 = pcVar9 + (uint)bVar10 * -2 + 1;
+              pcVar8 = pcVar8 + (uint)bVar10 * -2 + 1;
             }
 LAB_0054e21d:
             sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0(this_ptr);
           }
           else if (bVar1) goto LAB_0054e21d;
           if (iVar12 < local_24) {
-            _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-            _DAT_01d046a4 = 0x9f3;
+            g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+            g_INT_01d046a4 = 0x9f3;
             core_main_c_displayErrorAndQuit_FUN_004e4500("MP3 decoded more than batch: r = %d, batch = %d");
           }
           if (iVar12 != local_24) {

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046a270(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -29,7 +27,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046a270(CDem
             this_ptr->vertex_buffer_ptr[iVar1].u = pSVar3->vertices[0].texture_u;
             this_ptr->vertex_buffer_ptr[iVar1].v = pSVar3->vertices[0].texture_v;
           }
-          *(int *)(&DAT_01ba5c84 + iVar4) = iVar1;
+          *(int *)((int)g_INT_ARRAY_01ba5c84 + iVar4) = iVar1;
           pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
           iVar2 = iVar2 + 1;
           iVar4 = iVar4 + 4;
@@ -42,7 +40,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046a270(CDem
         iVar4 = 0;
         pSVar3 = poly;
         do {
-          *(int *)(&DAT_01ba5c84 + iVar4) = pSVar3->vertices[0].vertex_index;
+          *(int *)((int)g_INT_ARRAY_01ba5c84 + iVar4) = pSVar3->vertices[0].vertex_index;
           iVar4 = iVar4 + 4;
           iVar2 = iVar2 + 1;
           pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
@@ -50,17 +48,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046a270(CDem
       }
     }
     if (this_ptr->shadow_pass_active == 0) {
-      _DAT_01c38b54 = 0x41;
-      _DAT_01c38b58 = 6;
-      _DAT_01c35e6c = core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_0046f89d;
+      g_BIT_INTEGER32_01c38b54.dword = 0x41;
+      g_INT_01c38b58 = 6;
+      g_PTR_01c35e6c = core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_0046f89d;
     }
     else {
-      _DAT_01c38b54 = 0;
-      _DAT_01c38b58 = 0;
-      _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
+      g_BIT_INTEGER32_01c38b54.dword = 0;
+      g_INT_01c38b58 = 0;
+      g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
-              (this_ptr,(poly->base).base.count,(int *)&DAT_01ba5c84);
+              (this_ptr,(poly->base).base.count,g_INT_ARRAY_01ba5c84);
   }
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
 
 {
@@ -64,10 +62,11 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
   dVar13 = round((double)this_ptr->anim_frame);
   fStack_2c = (float)(int)ROUND(dVar13);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (DAT_00612560,(SMRGLTextureBasic *)((int)fStack_2c * 0x18 + 0x1c58588));
+            (g_CDemonRenderer_PTR_00612560,g_SMRGLTextureBasic_ARRAY_01c58588 + (int)fStack_2c);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (DAT_00612560,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70(DAT_00612560,&local_7c);
+            (g_CDemonRenderer_PTR_00612560,&this_ptr->position);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70
+            (g_CDemonRenderer_PTR_00612560,&local_7c);
   translation = (CVector3f *)0x0;
   CStack_94.x = local_7c.x;
   *(uint *)((int)&CStack_94 + (uint)bVar8 * -8 + 4) =
@@ -76,13 +75,15 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
        *(uint *)((int)&local_7c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
   uStack_114 = 0x4b2f4b;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,&CStack_94,translation);
-  fVar12 = ((float10)_DAT_005fffb0 - (float10)this_ptr->lifetime) / (float10)_DAT_005fffb0;
+            (g_CDemonRenderer_PTR_00612560,&CStack_94,translation);
+  fVar12 = ((float10)2.0f - (float10)this_ptr->lifetime) / (float10)2.0f;
   SStack_fc.surface_normal.B.f = (float)fVar12;
-  SStack_fc.base.count = (int)(float)(fVar12 * (float10)_DAT_005df514 + (float10)_DAT_005df51c);
+  SStack_fc.base.count =
+       (int)(float)(fVar12 * (float10)4 + (float10)0.40000000000000002);
   SStack_fc.surface_normal.A.f = (float)SStack_fc.base.count;
-  if ((float10)(double)fVar12 < (float10)_DAT_005df51c) {
-    engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0(DAT_00612560,&local_a0);
+  if ((float10)(double)fVar12 < (float10)0.40000000000000002) {
+    engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0
+              (g_CDemonRenderer_PTR_00612560,&local_a0);
     local_58 = local_a0.x;
     local_54[(uint)bVar8 * -2] = *(float *)((int)&local_a0 + (uint)bVar8 * -8 + 4);
     local_54[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
@@ -97,7 +98,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
     fVar9 = (float10)(this_ptr->velocity).y;
     fVar10 = (float10)(this_ptr->velocity).x;
     fVar11 = (float10)(this_ptr->velocity).z;
-    fVar12 = ((float10)1 - (float10)(double)fVar12 * (float10)_DAT_005df524) *
+    fVar12 = ((float10)1 - (float10)(double)fVar12 * (float10)2.5) *
              ((float10)1 -
              (float10)ABS(local_84[1] * (this_ptr->velocity).z +
                           fStack_88 * (this_ptr->velocity).x + local_84[0] * (this_ptr->velocity).y)
@@ -107,47 +108,47 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
                     (float10)local_84[0] * (float10)local_84[0])));
     SStack_fc.base.type = (int)(float)fVar12;
     SStack_fc.base.count =
-         (int)(float)(((float10)1 + fVar12 * (float10)_DAT_005df52c) *
+         (int)(float)(((float10)1 + fVar12 * (float10)2) *
                      (float10)SStack_fc.surface_normal.A.f);
   }
-  local_a8 = SStack_fc.surface_normal.A.f * _DAT_005df534 * (float)_DAT_005df53c;
-  local_ac = -(float)SStack_fc.base.count * _DAT_005df534 * (float)_DAT_005df53c;
+  local_a8 = SStack_fc.surface_normal.A.f * 128.0f * (float)0.00390625;
+  local_ac = -(float)SStack_fc.base.count * 128.0f * (float)0.00390625;
   local_a4 = 0.0;
-  local_4c.x = (int)ROUND(local_ac * _DAT_005fff94);
-  local_4c.y = (int)ROUND(local_a8 * _DAT_005fff94);
-  local_4c.z = (int)ROUND(_DAT_005fff94 * 0.0);
+  local_4c.x = (int)ROUND(local_ac * 256.0f);
+  local_4c.y = (int)ROUND(local_a8 * 256.0f);
+  local_4c.z = (int)ROUND(256.0f * 0.0);
   fStack_2c = local_ac;
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_4c);
-  local_ac = (float)SStack_fc.base.count * (float)_DAT_005df544 * (float)_DAT_005df53c;
-  CStack_70.x = (int)ROUND(local_ac * _DAT_005fff94);
-  CStack_70.y = (int)ROUND(local_a8 * _DAT_005fff94);
-  CStack_70.z = (int)ROUND(local_a4 * _DAT_005fff94);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,&local_4c);
+  local_ac = (float)SStack_fc.base.count * (float)128 * (float)0.00390625;
+  CStack_70.x = (int)ROUND(local_ac * 256.0f);
+  CStack_70.y = (int)ROUND(local_a8 * 256.0f);
+  CStack_70.z = (int)ROUND(local_a4 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
-  local_a8 = -SStack_fc.surface_normal.A.f * (float)_DAT_005df544 * (float)_DAT_005df53c;
-  local_b8.x = (int)ROUND(local_ac * _DAT_005fff94);
-  local_b8.y = (int)ROUND(local_a8 * _DAT_005fff94);
-  local_b8.z = (int)ROUND(local_a4 * _DAT_005fff94);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
+  local_a8 = -SStack_fc.surface_normal.A.f * (float)128 * (float)0.00390625;
+  local_b8.x = (int)ROUND(local_ac * 256.0f);
+  local_b8.y = (int)ROUND(local_a8 * 256.0f);
+  local_b8.z = (int)ROUND(local_a4 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_b8);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[2].projected_vertex,&local_b8);
   local_ac = fStack_2c;
-  local_64.x = (int)ROUND(fStack_2c * _DAT_005fff94);
-  local_64.y = (int)ROUND(local_a8 * _DAT_005fff94);
-  local_64.z = (int)ROUND(local_a4 * _DAT_005fff94);
+  local_64.x = (int)ROUND(fStack_2c * 256.0f);
+  local_64.y = (int)ROUND(local_a8 * 256.0f);
+  local_64.z = (int)ROUND(local_a4 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_64);
-  this_ptr_00 = DAT_00612560;
-  fVar2 = (_DAT_005df550 - SStack_fc.surface_normal.B.f) * SStack_fc.surface_normal.B.f;
-  fVar6 = (1.0 - SStack_fc.surface_normal.B.f) * _DAT_005df54c;
-  fVar3 = fVar2 * _DAT_005df558;
-  fVar4 = fVar2 * _DAT_005df560;
-  fVar5 = fVar2 * _DAT_005df564;
-  DAT_00612560->vertex_buffer_ptr->u = 0x20000;
-  fVar2 = (1.0 - fVar2) * _DAT_005df554;
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,&local_64);
+  this_ptr_00 = g_CDemonRenderer_PTR_00612560;
+  fVar2 = (2.0f - SStack_fc.surface_normal.B.f) * SStack_fc.surface_normal.B.f;
+  fVar6 = (1.0 - SStack_fc.surface_normal.B.f) * 32768.0f;
+  fVar3 = fVar2 * 200.0f;
+  fVar4 = fVar2 * 150.0f;
+  fVar5 = fVar2 * 50.0f;
+  g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->u = 0x20000;
+  fVar2 = (1.0 - fVar2) * 255.0f;
   this_ptr_00->vertex_buffer_ptr->v = 0x20000;
-  fVar7 = _DAT_005df55c;
-  fVar3 = (fVar3 + fVar2) * _DAT_005df55c;
+  fVar7 = 256.0f;
+  fVar3 = (fVar3 + fVar2) * 256.0f;
   this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;
   this_ptr_00->vertex_buffer_ptr[1].v = 0x20000;
   this_ptr_00->vertex_buffer_ptr[2].u = 0xfe0000;
@@ -191,8 +192,9 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
   local_d8 = 3;
   local_e0 = 1;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(this_ptr_00,1);
-  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30(DAT_00612560,&SStack_fc);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
+            (g_CDemonRenderer_PTR_00612560,&SStack_fc);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
   engine_drender_cpp_pop_FUN_004839a0();
   return;
 }

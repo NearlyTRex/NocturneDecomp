@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   sound_name
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0
@@ -24,7 +24,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x1d70a24] ; 004d9fc3
         ;   Label: LAB_004d9fc3
     PUSH EDX                            ; 004d9fc9
-    MOV ECX,dword ptr [0x006045f8]      ; 004d9fca | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004d9fca | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004d9fd0
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 004d9fd1
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
@@ -45,7 +45,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 004d9feb
     PUSH ESI                            ; 004d9fef
     PUSH EAX                            ; 004d9ff0
-    MOV EDI,dword ptr [0x006045f8]      ; 004d9ff1 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 004d9ff1 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 004d9ff7
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 004d9ff8
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)

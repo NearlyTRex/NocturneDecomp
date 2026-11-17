@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00549a60(CDeformableModel *this_ptr,_FILE *file_handle)
 
 {
@@ -46,17 +44,17 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00549a60(CDeforma
     iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  iVar2 = _fscanf(file_handle,&DAT_005d1b5a);
+  iVar2 = _fscanf(file_handle,"%d\n");
   if (iVar2 == 1) goto LAB_00549ac4;
 LAB_00549aa1:
   do {
-    _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-    _DAT_01d71de4 = 0x4d7;
+    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+    g_INT_01d71de4 = 0x4d7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Deformable model file is corrupt");
 LAB_00549ac4:
-    if (0x00000007 < local_64) {
-      _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-      _DAT_01d71de4 = 0x4da;
+    if (g_INT_00604174 < local_64) {
+      g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+      g_INT_01d71de4 = 0x4da;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Can't load model of version %d, this .exe can only handle up to version %d");
     }
     if (local_64 < 3) {
@@ -116,7 +114,7 @@ LAB_00549ac4:
         iVar3 = _fscanf(file_handle,"\"%[^\"]\",%d,%d,%d\n");
         if (iVar3 != 4) goto LAB_00549aa1;
         for (iVar3 = 0; iVar3 < this_ptr->parts[iVar2].adj_part_count; iVar3 = iVar3 + 1) {
-          iVar4 = _fscanf(file_handle,&DAT_005d1c76);
+          iVar4 = _fscanf(file_handle,"%d\n");
           if (iVar4 != 1) goto LAB_00549aa1;
         }
       }
@@ -130,7 +128,7 @@ LAB_00549ac4:
           _fscanf(file_handle,"\"%[^\"]\", %d, %d\n");
         }
         for (iVar3 = 0; iVar3 < this_ptr->parts[iVar2].adj_part_count; iVar3 = iVar3 + 1) {
-          _fscanf(file_handle,&DAT_005d1c59);
+          _fscanf(file_handle,"%d\n");
         }
         for (iVar3 = 0; iVar3 < this_ptr->num_lods; iVar3 = iVar3 + 1) {
           _fscanf(file_handle,"%d,%d\n");
@@ -144,7 +142,7 @@ LAB_00549ac4:
     for (local_20 = 0; local_20 < this_ptr->num_lods; local_20 = local_20 + 1) {
       for (local_18 = 0; local_18 < this_ptr->vertex_count[local_20]; local_18 = local_18 + 1) {
         pSVar5 = this_ptr->vertex_data_ptr[local_20] + local_18;
-        iVar2 = _fscanf(file_handle,&DAT_005d1c7a);
+        iVar2 = _fscanf(file_handle,"%d\n");
         if (iVar2 != 1) goto LAB_00549aa1;
         pSVar5->num_bone_influences = local_30;
         for (iVar2 = 0; iVar2 < (int)(uint)pSVar5->num_bone_influences; iVar2 = iVar2 + 1) {
@@ -184,7 +182,7 @@ LAB_00549ac4:
     } while (iVar2 != 10);
     for (iVar2 = 0; iVar2 < this_ptr->num_lods; iVar2 = iVar2 + 1) {
       for (iVar3 = 0; iVar3 < this_ptr->cap_tri_count[iVar2]; iVar3 = iVar3 + 1) {
-        iVar4 = _fscanf(file_handle,&DAT_005d1cad);
+        iVar4 = _fscanf(file_handle,"%d\n");
         if (iVar4 != 1) goto LAB_00549aa1;
       }
     }
@@ -236,15 +234,15 @@ LAB_00549ac4:
       if (iVar2 < 0) break;
     } while (iVar2 != 10);
     for (iVar2 = 0; iVar2 < local_60; iVar2 = iVar2 + 1) {
-      _fscanf(file_handle,&DAT_005d1cd6);
+      _fscanf(file_handle,"%d\n");
     }
   }
   if (local_64 < 7) {
     core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0(this_ptr);
   }
   if ((file_handle->_flag & 0x20) != 0) {
-    _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-    _DAT_01d71de4 = 0x5a6;
+    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+    g_INT_01d71de4 = 0x5a6;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::loadStream - error reading file!");
     return;
   }

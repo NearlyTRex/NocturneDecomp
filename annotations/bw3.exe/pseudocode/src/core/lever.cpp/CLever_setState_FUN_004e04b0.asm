@@ -13,8 +13,8 @@
 ;   core_lever.cpp_CLever_process_FUN_004e0250 at 004e045c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_00600530
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 DAT_01d82088
@@ -43,7 +43,7 @@ section .text
     SAHF                                ; 004e04c8
     JZ 0x004e050e                       ; 004e04c9
         ;   XREF to: 004e050e (CONDITIONAL_JUMP)  ; LAB_004e050e
-    MOV EAX,[0x00600530]                ; 004e04cb | DAT_00600530
+    MOV EAX,[0x00600530]                ; 004e04cb | g_CDemonMission_PTR_00600530
     CMP dword ptr [EAX + 0x1008],0x0    ; 004e04d0 | DAT_01d82088
     JZ 0x004e0513                       ; 004e04d7
         ;   XREF to: 004e0513 (CONDITIONAL_JUMP)  ; LAB_004e0513
@@ -89,7 +89,7 @@ section .text
         ;   XREF to: 004e0545 (CONDITIONAL_JUMP)  ; LAB_004e0545
     LEA EAX,[EDI + 0x344]               ; 004e052f
     PUSH EAX                            ; 004e0535
-    MOV ECX,dword ptr [0x005fba60]      ; 004e0536 | DAT_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 004e0536 | g_CEventList_PTR_005fba60
     PUSH ECX                            ; 004e053c
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004e053d
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -111,7 +111,7 @@ section .text
         ;   XREF to: 004e04d9 (CONDITIONAL_JUMP)  ; LAB_004e04d9
     LEA EAX,[EDI + 0x2e0]               ; 004e0565
     PUSH EAX                            ; 004e056b
-    MOV EBX,dword ptr [0x005fba60]      ; 004e056c | DAT_005fba60
+    MOV EBX,dword ptr [0x005fba60]      ; 004e056c | g_CEventList_PTR_005fba60
     PUSH EBX                            ; 004e0572
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004e0573
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

@@ -6,28 +6,29 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_storeTrueColorTexture_FUN_00574f60(SMRGLTextureBasic *texture,int dimension,uchar *true_color_data)
 
 {
   int iVar1;
   
-  if ((DAT_0070ca74 == 0) && (texture->texture_name[0] != '\0')) {
+  if ((g_INT_0070ca74 == 0) && (texture->texture_name[0] != '\0')) {
     iVar1 = engine_texture_cpp_CTextureCache_findTexture_FUN_00574490
-                      (_DAT_02652eb0,(texture->base).count & 0xffff,texture->texture_name);
+                      (g_CTextureCache_PTR_02652eb0,(texture->base).count & 0xffff,
+                       texture->texture_name);
     if (iVar1 == -1) {
       iVar1 = engine_texture_cpp_CTextureCache_addTrueColorTexture_FUN_005742b0
-                        (_DAT_02652eb0,texture->texture_name,dimension,true_color_data);
+                        (g_CTextureCache_PTR_02652eb0,texture->texture_name,dimension,
+                         true_color_data);
       (texture->base).count = iVar1;
     }
     else {
       (texture->base).count = iVar1;
       engine_texture_cpp_CTextureCache_replaceTrueColorTexture_FUN_005743e0
-                (_DAT_02652eb0,texture,dimension,true_color_data);
+                (g_CTextureCache_PTR_02652eb0,texture,dimension,true_color_data);
     }
-    _DAT_02652eac = iVar1;
-    engine_texture_cpp_CTextureCache_setupTexture_FUN_00574520(_DAT_02652eb0,texture,2);
+    g_INT_02652eac = iVar1;
+    engine_texture_cpp_CTextureCache_setupTexture_FUN_00574520
+              (g_CTextureCache_PTR_02652eb0,texture,2);
     return;
   }
   return;

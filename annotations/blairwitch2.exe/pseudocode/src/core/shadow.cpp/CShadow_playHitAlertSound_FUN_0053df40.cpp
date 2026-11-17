@@ -17,7 +17,7 @@ void __cdecl core_shadow_cpp_CShadow_playHitAlertSound_FUN_0053df40(CShadow *thi
     return;
   }
   uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                    ((CDemonActor *)this_ptr,"@@shb_alert??.wav" + 2);
+                    ((CDemonActor *)this_ptr,"shb_alert??.wav");
   this_ptr->howl_cooldown = 20.0;
   this_ptr->sfx_handle = uVar2;
   return;

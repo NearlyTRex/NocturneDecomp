@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,float delta_time)
 
 {
@@ -46,7 +44,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
   if (pCVar1 == (CCharacter *)0x0) {
     if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (0x01C6E360,"?Capture" + 1), iVar3 != 0)) {
+                          (g_CEventList_PTR_005fba60,"Capture"), iVar3 != 0)) {
       this_ptr->is_in_combat = 0;
       this_ptr->victim_search_timer = 0.0;
       this_ptr->victim = (CCharacter *)0x0;
@@ -85,11 +83,11 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
           *(float *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
                afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
           if (ABS(fStack_58) <= fStack_60) {
-            fStack_58 = fStack_58 * _DAT_005bdc9b;
+            fStack_58 = fStack_58 * 3.0f;
             fStack_30 = fStack_54 * fStack_54 + fStack_5c * fStack_5c + fStack_58 * fStack_58;
             if (fStack_30 <= fStack_34) {
-              *(CEnemy **)(&DAT_01c5bc4c + iStack_24) = this_ptr_00;
-              *(float *)(&DAT_01c5db8c + iStack_24) = fStack_30;
+              *(CEnemy **)((int)g_INT_ARRAY_01c5bc4c + iStack_24) = this_ptr_00;
+              *(float *)((int)g_FLOAT_ARRAY_01c5db8c + iStack_24) = fStack_30;
               iStack_24 = iStack_24 + 4;
               iStack_1c = iStack_1c + 1;
             }
@@ -107,8 +105,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
         if (0 < iStack_1c) {
           iVar5 = 0;
           do {
-            if (*(float *)(&DAT_01c5db8c + iVar5) < fStack_18) {
-              fStack_18 = *(float *)(&DAT_01c5db8c + iVar5);
+            if (*(float *)((int)g_FLOAT_ARRAY_01c5db8c + iVar5) < fStack_18) {
+              fStack_18 = *(float *)((int)g_FLOAT_ARRAY_01c5db8c + iVar5);
               iVar3 = iVar6;
             }
             iVar6 = iVar6 + 1;
@@ -116,15 +114,15 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
           } while (iVar6 < iStack_1c);
         }
         if (iVar3 < 0) break;
-        target = *(CCharacter **)(&DAT_01c5bc4c + iVar3 * 4);
-        iVar6 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00489600(this_ptr,&target->base);
+        target = (CCharacter *)g_INT_ARRAY_01c5bc4c[iVar3];
+        iVar6 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00489600(this_ptr,(CDemonActor *)target);
         if (iVar6 != 0) {
           this_ptr->victim = target;
           engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s can see hero\n");
           return;
         }
         if ((((this_ptr->allow_pathfind_to_new_targets != 0) || (target == pCVar1)) &&
-            (this_ptr_01 = (*((target->base).vtable._ub)->getPathMap)(&target->base),
+            (this_ptr_01 = (*((target->base).vtable._ub)->getPathMap)((CDemonActor *)target),
             this_ptr_01 != (CPathMap *)0x0)) &&
            (iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_0050c680
                               (this_ptr_01,pCStack_38,&CStack_50,
@@ -132,7 +130,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
           this_ptr->victim = target;
           return;
         }
-        *(uint *)(&DAT_01c5db8c + iVar3 * 4) = 0x7149f2ca;
+        g_FLOAT_ARRAY_01c5db8c[iVar3] = 1e+30;
         if (target == pCVar1) {
           this_ptr->victim = pCVar1;
         }

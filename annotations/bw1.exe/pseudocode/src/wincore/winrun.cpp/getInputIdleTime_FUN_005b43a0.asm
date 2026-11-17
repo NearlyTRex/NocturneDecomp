@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9c7e0
-;   undefined4 DAT_02c9c7e4
+;   float g_FLOAT_02c9c7e0
+;   float g_FLOAT_02c9c7e4
 ;
 ; *****************************************************************************
 
@@ -14,9 +14,9 @@ section .text
 
     SUB ESP,0x4                         ; 005b43a0
         ;   Label: wincore_winrun.cpp_getInputIdleTime_FUN_005b43a0
-    MOV EAX,[0x02c9c7e0]                ; 005b43a3 | DAT_02c9c7e0
+    MOV EAX,[0x02c9c7e0]                ; 005b43a3 | g_FLOAT_02c9c7e0
     MOV dword ptr [ESP],EAX             ; 005b43a8
-    FLD float ptr [0x02c9c7e4]          ; 005b43ab | DAT_02c9c7e4
+    FLD float ptr [0x02c9c7e4]          ; 005b43ab | g_FLOAT_02c9c7e4
     FCOMP float ptr [ESP]               ; 005b43b1
     FNSTSW AX                           ; 005b43b4
     SAHF                                ; 005b43b6
@@ -37,7 +37,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 005b43d3
     ADD ESP,0x4                         ; 005b43d6
     RET                                 ; 005b43d9
-    MOV EAX,[0x02c9c7e4]                ; 005b43da | DAT_02c9c7e4
+    MOV EAX,[0x02c9c7e4]                ; 005b43da | g_FLOAT_02c9c7e4
         ;   Label: LAB_005b43da
     MOV dword ptr [ESP],EAX             ; 005b43df
     JMP 0x005b43b9                      ; 005b43e2

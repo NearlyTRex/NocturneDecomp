@@ -16,10 +16,10 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0041e888 = 0041e8e0
 ;   TerminatedCString s_limb_wav_005cc8ad
-;   undefined4 DAT_005cc8b9
-;   undefined4 DAT_005cc8c1
-;   undefined4 DAT_005cc8c9
-;   undefined4 DAT_005cc8d1
+;   double g_DOUBLE_005cc8b9 = 0.333000000000000
+;   double g_DOUBLE_005cc8c1 = 7
+;   double g_DOUBLE_005cc8c9 = 0.5
+;   double g_DOUBLE_005cc8d1 = 2.5
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.blood_flag
 ;   undefined4 g_CGameInstance.gratuitous_dismemberment
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 0041e918 (CONDITIONAL_JUMP)  ; LAB_0041e918
     FLD float ptr [ESP]                 ; 0041e908
     FLD ST0                             ; 0041e90b
-    FMUL double ptr [0x005cc8b9]        ; 0041e90d | DAT_005cc8b9
+    FMUL double ptr [0x005cc8b9]        ; 0041e90d | g_DOUBLE_005cc8b9
     FSTP ST1                            ; 0041e913
     FSTP float ptr [ESP]                ; 0041e915
     MOV EAX,[0x00616494]                ; 0041e918 | g_CGamePtr
@@ -179,7 +179,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 0041e9ef
         ;   Label: LAB_0041e9ef
     FLD ST0                             ; 0041e9f2
-    FMUL double ptr [0x005cc8c1]        ; 0041e9f4 | DAT_005cc8c1
+    FMUL double ptr [0x005cc8c1]        ; 0041e9f4 | g_DOUBLE_005cc8c1
     FSTP ST1                            ; 0041e9fa
     FSTP float ptr [EBX + 0x8]          ; 0041e9fc
     MOV EDX,dword ptr [ESI + 0x10b18]   ; 0041e9ff
@@ -241,7 +241,7 @@ section .text
     FLD float ptr [EBX + 0x4]           ; 0041ea9d
         ;   Label: LAB_0041ea9d
     FLD ST0                             ; 0041eaa0
-    FMUL double ptr [0x005cc8d1]        ; 0041eaa2 | DAT_005cc8d1
+    FMUL double ptr [0x005cc8d1]        ; 0041eaa2 | g_DOUBLE_005cc8d1
     FSTP ST1                            ; 0041eaa8
     FSTP float ptr [EBX + 0x4]          ; 0041eaaa
     MOV ESP,EBP                         ; 0041eaad
@@ -253,7 +253,7 @@ section .text
     FLD float ptr [EBX + 0x4]           ; 0041eab4
         ;   Label: LAB_0041eab4
     FLD ST0                             ; 0041eab7
-    FMUL double ptr [0x005cc8c9]        ; 0041eab9 | DAT_005cc8c9
+    FMUL double ptr [0x005cc8c9]        ; 0041eab9 | g_DOUBLE_005cc8c9
     FSTP ST1                            ; 0041eabf
     FSTP float ptr [EBX + 0x4]          ; 0041eac1
     MOV ESP,EBP                         ; 0041eac4

@@ -7,7 +7,7 @@
 ; CLightStaff *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_charactr.cpp_preloadEtherealTextures_FUN_0042f280
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004e3eee
     PUSH 0x3                            ; 004e3ef1
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004e3ef3 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004e3ef3 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004e3ef9
     CALL core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130 ; 004e3efa
         ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(CFireEffect * this_ptr, int bolt_style)

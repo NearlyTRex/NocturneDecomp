@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,float delta_time)
 
@@ -65,7 +64,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
     iStack_1c = 0;
     pCVar4 = &(this_ptr->base).burn_direction;
     pfVar3 = &(this_ptr->base).burn_timer;
-    SStack_10c.attacker = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);
+    SStack_10c.attacker = (CDemonActor *)g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
     pCStack_18 = (this_ptr->base).base.base.base.particle_systems + 4;
     pCStack_24 = (this_ptr->base).base.base.model.bone_transform.bone_model_matrices;
     (this_ptr->base).flinch_active = 0;
@@ -78,7 +77,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
                             "Bip01");
         if (pcVar2 != (char *)0x0) {
           core_xform_cpp_transformVector3x4_FUN_00591530
-                    ((CVector3f *)&DAT_0265370c,pCStack_24,&CStack_94);
+                    (&g_CVector3f_0265370c,pCStack_24,&CStack_94);
           CStack_64.x = CStack_94.x;
           *(uint *)((int)&CStack_64 + (uint)bVar5 * -8 + 4) =
                *(uint *)((int)&CStack_94 + (uint)bVar5 * -8 + 4);
@@ -98,9 +97,9 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
           afStack_cc[(uint)bVar5 * -2 + 6] = afStack_cc[(uint)bVar5 * -2 + 3];
           afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
                afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-          fStack_ac = fStack_b8 * _DAT_005f0c3e;
-          fStack_a8 = fStack_b4 * _DAT_005f0c3e;
-          fStack_a4 = fStack_b0 * _DAT_005f0c3e;
+          fStack_ac = fStack_b8 * 0.5f;
+          fStack_a8 = fStack_b4 * 0.5f;
+          fStack_a4 = fStack_b0 * 0.5f;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.8,1.5);
           fStack_4c = fStack_ac;
           afStack_48[(uint)bVar5 * -2] = afStack_cc[(uint)bVar5 * -2 + 9];
@@ -108,7 +107,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
                afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
           iVar1 = 2;
           fStack_34 = fStack_4c;
-          acceleration = (CVector3f *)&DAT_0265370c;
+          acceleration = &g_CVector3f_0265370c;
           afStack_30[1] = afStack_48[1];
           pCVar8 = &CStack_7c;
           position_offset = &CStack_70;

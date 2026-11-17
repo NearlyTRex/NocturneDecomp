@@ -46,7 +46,7 @@
 ;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd971
 ;
 ; Referenced Globals:
-;   undefined4 s_Enter_Movie_FPS_005d7216+1
+;   TerminatedCString s_Enter_Movie_FPS_005d7217
 ;   TerminatedCString s_Enter_number_of_frames_t_005d7227
 ;   TerminatedCString s_Enter_image_width_005d7271
 ;   TerminatedCString s_Enter_image_height_005d7283
@@ -54,13 +54,13 @@
 ;   TerminatedCString s_headOfHorror_005d7a56
 ;   TerminatedCString s_The_horror_has_been_unle_005d7a63
 ;   TerminatedCString s_Enter_cheat_code_005d7a82
-;   undefined4 DAT_005d7a93
-;   undefined4 DAT_005d7ac7
-;   undefined4 DAT_005d7b01
-;   undefined4 DAT_005d7b05
+;   char[54] g_CHAR_ARRAY_005d7a93
+;   undefined4 g_CHAR_ARRAY_005d7a93+0x34
+;   TerminatedCString s_anon_005d7b01
+;   char g_CHAR_005d7b05 = \x01
 ;   TerminatedCString s_FPS_3_2lf_005d7b39
-;   undefined4 DAT_005d7b45
-;   undefined4 DAT_005d7b7a
+;   char g_CHAR_005d7b45 = @
+;   char[51] g_CHAR_ARRAY_005d7b7a
 ;   ... and 102 more
 ;
 ; Called Functions:
@@ -93,7 +93,7 @@ section .text
     MOV EBP,ESP                         ; 004b90d4
     SUB ESP,0x354                       ; 004b90d6
     AND ESP,0xfffffff8                  ; 004b90dc
-    CMP dword ptr [0x01cb7788],0x0      ; 004b90df | DAT_01cb7788
+    CMP dword ptr [0x01cb7788],0x0      ; 004b90df | g_INT_01cb7788
     JZ 0x004b90ef                       ; 004b90e6
         ;   XREF to: 004b90ef (CONDITIONAL_JUMP)  ; LAB_004b90ef
     MOV ESP,EBP                         ; 004b90e8
@@ -105,7 +105,7 @@ section .text
     RET                                 ; 004b90ee
     PUSH 0x5d7a56                       ; 004b90ef | = "headOfHorror"
         ;   Label: LAB_004b90ef
-    MOV ECX,dword ptr [0x006141f0]      ; 004b90f4 | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 004b90f4 | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 004b90fa
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004b90fb
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -148,8 +148,8 @@ section .text
     TEST EAX,EAX                        ; 004b9174
     JZ 0x004b90e8                       ; 004b9176
         ;   XREF to: 004b90e8 (CONDITIONAL_JUMP)  ; LAB_004b90e8
-    MOV EDX,dword ptr [0x00617dd4]      ; 004b917c | DAT_00617dd4
-    PUSH EDX                            ; 004b9182 | DAT_01d02f84
+    MOV EDX,dword ptr [0x00617dd4]      ; 004b917c | g_CKeys_PTR_00617dd4
+    PUSH EDX                            ; 004b9182 | g_PTR_01d02f84
     MOV EBX,0x13                        ; 004b9183
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0 ; 004b9188
         ;   XREF to: 004dfea0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0(CKeys * this_ptr)
@@ -162,8 +162,8 @@ section .text
     TEST EBX,EBX                        ; 004b919f
     JG 0x004b9192                       ; 004b91a1
         ;   XREF to: 004b9192 (CONDITIONAL_JUMP)  ; LAB_004b9192
-    PUSH 0x5d7a93                       ; 004b91a3 | DAT_005d7a93
-    MOV byte ptr [0x01cb80f8],AH        ; 004b91a8 | DAT_01cb80f8
+    PUSH 0x5d7a93                       ; 004b91a3 | g_CHAR_ARRAY_005d7a93
+    MOV byte ptr [0x01cb80f8],AH        ; 004b91a8 | g_BYTE_01cb80f8
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b91ae
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b91b3
@@ -187,7 +187,7 @@ section .text
     MOV dword ptr [ESP + 0x2c0],ECX     ; 004b91d9
     XOR EAX,EAX                         ; 004b91e0
         ;   Label: LAB_004b91e0
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b91e2 | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b91e2 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004b91e8
     XOR EAX,EAX                         ; 004b91ef
     MOV AL,byte ptr [EBX]               ; 004b91f1
@@ -211,10 +211,10 @@ section .text
     JNZ 0x004b9f13                      ; 004b921a
         ;   XREF to: 004b9f13 (CONDITIONAL_JUMP)  ; LAB_004b9f13
     XOR DH,DH                           ; 004b9220
-    MOV byte ptr [0x01cb80f8],DH        ; 004b9222 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],DH        ; 004b9222 | g_BYTE_01cb80f8
     PUSH 0x40a00000                     ; 004b9228
         ;   Label: LAB_004b9228
-    PUSH 0x5d7b01                       ; 004b922d | DAT_005d7b01
+    PUSH 0x5d7b01                       ; 004b922d | = "<!>"
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004b9232
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 004b9237
@@ -230,7 +230,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b9254
     AND EAX,0xff                        ; 004b9257
     MOV dword ptr [EBX + 0x22c],EAX     ; 004b925c
-    PUSH 0x5d7b05                       ; 004b9262 | DAT_005d7b05
+    PUSH 0x5d7b05                       ; 004b9262 | g_CHAR_005d7b05
         ;   Label: LAB_004b9262
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9267
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -255,7 +255,7 @@ section .text
     MOV dword ptr [ESP + 0x2c8],ECX     ; 004b9292
     XOR EAX,EAX                         ; 004b9299
         ;   Label: LAB_004b9299
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b929b | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b929b | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004b92a1
     XOR EAX,EAX                         ; 004b92a8
     MOV AL,byte ptr [EBX]               ; 004b92aa
@@ -281,7 +281,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b92d5
     XOR BH,BH                           ; 004b92d8
     MOV ESI,dword ptr [EAX + 0x224]     ; 004b92da
-    MOV byte ptr [0x01cb80f8],BH        ; 004b92e0 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BH        ; 004b92e0 | g_BYTE_01cb80f8
     TEST ESI,ESI                        ; 004b92e6
     JNZ 0x004b9fa0                      ; 004b92e8
         ;   XREF to: 004b9fa0 (CONDITIONAL_JUMP)  ; LAB_004b9fa0
@@ -296,7 +296,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b930f
     JZ 0x004b93bf                       ; 004b9316
         ;   XREF to: 004b93bf (CONDITIONAL_JUMP)  ; LAB_004b93bf
-    PUSH 0x5d7b45                       ; 004b931c | DAT_005d7b45
+    PUSH 0x5d7b45                       ; 004b931c | g_CHAR_005d7b45
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9321
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9326
@@ -324,7 +324,7 @@ section .text
         ;   Label: LAB_004b935c
     MOV AL,byte ptr [ESI]               ; 004b935e
     PUSH EAX                            ; 004b9360
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9361 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9361 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b9368
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b936d
@@ -348,7 +348,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x228]     ; 004b939b
     XOR CL,CL                           ; 004b93a1
     INC ESI                             ; 004b93a3
-    MOV byte ptr [0x01cb80f8],CL        ; 004b93a4 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CL        ; 004b93a4 | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0x228],ESI     ; 004b93aa
     CMP ESI,0x2                         ; 004b93b0
     JLE 0x004b93bf                      ; 004b93b3
@@ -359,7 +359,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b93c2
     JZ 0x004b9490                       ; 004b93c9
         ;   XREF to: 004b9490 (CONDITIONAL_JUMP)  ; LAB_004b9490
-    PUSH 0x5d7b7a                       ; 004b93cf | DAT_005d7b7a
+    PUSH 0x5d7b7a                       ; 004b93cf | g_CHAR_ARRAY_005d7b7a
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b93d4
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b93d9
@@ -387,7 +387,7 @@ section .text
         ;   Label: LAB_004b940f
     MOV AL,byte ptr [ESI]               ; 004b9411
     PUSH EAX                            ; 004b9413
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9414 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9414 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b941b
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b9420
@@ -409,7 +409,7 @@ section .text
         ;   XREF to: 004b9490 (CONDITIONAL_JUMP)  ; LAB_004b9490
     XOR CH,CH                           ; 004b944b
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b944d
-    MOV byte ptr [0x01cb80f8],CH        ; 004b9450 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CH        ; 004b9450 | g_BYTE_01cb80f8
     CMP dword ptr [EAX + 0x1f4],0x0     ; 004b9456
     SETZ AL                             ; 004b945d
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b9460
@@ -433,7 +433,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9493
     JZ 0x004b9584                       ; 004b949a
         ;   XREF to: 004b9584 (CONDITIONAL_JUMP)  ; LAB_004b9584
-    PUSH 0x5d7bcc                       ; 004b94a0 | DAT_005d7bcc
+    PUSH 0x5d7bcc                       ; 004b94a0 | g_CHAR_ARRAY_005d7bcc
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b94a5
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b94aa
@@ -461,7 +461,7 @@ section .text
         ;   Label: LAB_004b94e0
     MOV AL,byte ptr [ESI]               ; 004b94e2
     PUSH EAX                            ; 004b94e4
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b94e5 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b94e5 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b94ec
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b94f1
@@ -483,7 +483,7 @@ section .text
     JNZ 0x004b9584                      ; 004b951c
         ;   XREF to: 004b9584 (CONDITIONAL_JUMP)  ; LAB_004b9584
     XOR AL,DL                           ; 004b951e
-    MOV [0x01cb80f8],AL                 ; 004b9520 | DAT_01cb80f8
+    MOV [0x01cb80f8],AL                 ; 004b9520 | g_BYTE_01cb80f8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9525
     CMP dword ptr [EAX + 0x1f8],0x0     ; 004b9528
     SETZ AL                             ; 004b952f
@@ -517,7 +517,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9587
     JZ 0x004b9657                       ; 004b958e
         ;   XREF to: 004b9657 (CONDITIONAL_JUMP)  ; LAB_004b9657
-    PUSH 0x5d7c21                       ; 004b9594 | DAT_005d7c21
+    PUSH 0x5d7c21                       ; 004b9594 | g_CHAR_ARRAY_005d7c21
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9599
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b959e
@@ -545,7 +545,7 @@ section .text
         ;   Label: LAB_004b95d4
     MOV AL,byte ptr [ESI]               ; 004b95d6
     PUSH EAX                            ; 004b95d8
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b95d9 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b95d9 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b95e0
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b95e5
@@ -567,7 +567,7 @@ section .text
     JNZ 0x004b9657                      ; 004b9610
         ;   XREF to: 004b9657 (CONDITIONAL_JUMP)  ; LAB_004b9657
     XOR AH,DH                           ; 004b9612
-    MOV byte ptr [0x01cb80f8],AH        ; 004b9614 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],AH        ; 004b9614 | g_BYTE_01cb80f8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b961a
     CMP dword ptr [EAX + 0x214],0x0     ; 004b961d
     SETZ AL                             ; 004b9624
@@ -587,7 +587,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b964f
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004b9654
-    PUSH 0x5d7c7e                       ; 004b9657 | DAT_005d7c7e
+    PUSH 0x5d7c7e                       ; 004b9657 | g_CHAR_005d7c7e
         ;   Label: LAB_004b9657
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b965c
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -612,7 +612,7 @@ section .text
     MOV dword ptr [ESP + 0x2dc],ECX     ; 004b9687
     XOR EAX,EAX                         ; 004b968e
         ;   Label: LAB_004b968e
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9690 | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9690 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004b9696
     XOR EAX,EAX                         ; 004b969d
     MOV AL,byte ptr [EBX]               ; 004b969f
@@ -639,7 +639,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b96cf
     XOR DL,DL                           ; 004b96d2
     PUSH 0x5d7cb2                       ; 004b96d4 | = "Manual aim enabled"
-    MOV byte ptr [0x01cb80f8],DL        ; 004b96d9 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],DL        ; 004b96d9 | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0xd8],0x2      ; 004b96df
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004b96e9
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
@@ -649,13 +649,13 @@ section .text
     PUSH EBX                            ; 004b96f5
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b96f6
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01cedef4]                ; 004b96fb | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b96fb | g_INT_01cedef4
     ADD ESP,0xc                         ; 004b9700
     MOV EBX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b9703
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b970a
     MOV EAX,dword ptr [EAX + 0xd8]      ; 004b970d
     MOV dword ptr [EBX + 0x24378],EAX   ; 004b9713
-    PUSH 0x5d7cc5                       ; 004b9719 | DAT_005d7cc5
+    PUSH 0x5d7cc5                       ; 004b9719 | g_CHAR_ARRAY_005d7cc5
         ;   Label: LAB_004b9719
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b971e
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -680,7 +680,7 @@ section .text
     MOV dword ptr [ESP + 0x2e0],ECX     ; 004b9749
     XOR EAX,EAX                         ; 004b9750
         ;   Label: LAB_004b9750
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9752 | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9752 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004b9758
     XOR EAX,EAX                         ; 004b975f
     MOV AL,byte ptr [EBX]               ; 004b9761
@@ -706,8 +706,8 @@ section .text
     PUSH 0x40a00000                     ; 004b978c
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9791
     XOR DH,DH                           ; 004b9794
-    PUSH 0x5d7cf7                       ; 004b9796 | = "Auto aim enabled"
-    MOV byte ptr [0x01cb80f8],DH        ; 004b979b | DAT_01cb80f8
+    PUSH 0x5d7cf7                       ; 004b9796 | g_CHAR_ARRAY_005d7cc5+0x32
+    MOV byte ptr [0x01cb80f8],DH        ; 004b979b | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0xd8],0x0      ; 004b97a1
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004b97ab
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
@@ -717,7 +717,7 @@ section .text
     PUSH ESI                            ; 004b97b7
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b97b8
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01cedef4]                ; 004b97bd | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b97bd | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b97c2
     MOV EBX,dword ptr [ESI + 0xd8]      ; 004b97c9
     ADD ESP,0xc                         ; 004b97cf
@@ -727,7 +727,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b97db
     JZ 0x004b9942                       ; 004b97e2
         ;   XREF to: 004b9942 (CONDITIONAL_JUMP)  ; LAB_004b9942
-    PUSH 0x5d7d08                       ; 004b97e8 | DAT_005d7d08
+    PUSH 0x5d7d08                       ; 004b97e8 | g_CHAR_005d7d08
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b97ed
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b97f2
@@ -755,7 +755,7 @@ section .text
         ;   Label: LAB_004b9828
     MOV AL,byte ptr [ESI]               ; 004b982a
     PUSH EAX                            ; 004b982c
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b982d | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b982d | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b9834
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b9839
@@ -779,15 +779,15 @@ section .text
     PUSH 0x43700000                     ; 004b986a
     PUSH 0x3e800000                     ; 004b986f
     PUSH 0x1                            ; 004b9874
-    PUSH 0x6164a0                       ; 004b9876 | DAT_006164a0
+    PUSH 0x6164a0                       ; 004b9876 | g_FLOAT_006164a0
     MOV EAX,[0x006138e0]                ; 004b987b | g_CEditorToolsPtr
     XOR BL,BL                           ; 004b9880
-    PUSH 0x5d7217                       ; 004b9882 | s_Enter_Movie_FPS_005d7216+1
+    PUSH 0x5d7217                       ; 004b9882 | = "Enter Movie FPS"
     XOR ESI,ESI                         ; 004b9887
-    MOV byte ptr [0x01cb80f8],BL        ; 004b9889 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BL        ; 004b9889 | g_BYTE_01cb80f8
     PUSH EAX                            ; 004b988f
-    MOV dword ptr [0x01cb80d4],ESI      ; 004b9890 | DAT_01cb80d4
-    MOV dword ptr [0x01cb80dc],ESI      ; 004b9896 | DAT_01cb80dc
+    MOV dword ptr [0x01cb80d4],ESI      ; 004b9890 | g_INT_01cb80d4
+    MOV dword ptr [0x01cb80dc],ESI      ; 004b9896 | g_INT_01cb80dc
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800 ; 004b989c
         ;   XREF to: 0047d800 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004b98a1
@@ -798,7 +798,7 @@ section .text
     PUSH 0x1869f                        ; 004b98ae
     PUSH ESI                            ; 004b98b3
     PUSH 0x1                            ; 004b98b4
-    PUSH 0x1cb80d8                      ; 004b98b6 | DAT_01cb80d8
+    PUSH 0x1cb80d8                      ; 004b98b6 | g_INT_01cb80d8
     PUSH 0x5d7227                       ; 004b98bb | = "Enter number of frames to record (or ..."
     MOV EDX,dword ptr [0x006138e0]      ; 004b98c0 | g_CEditorToolsPtr
     PUSH EDX                            ; 004b98c6
@@ -812,7 +812,7 @@ section .text
     PUSH 0x270f                         ; 004b98d5
     PUSH 0x1                            ; 004b98da
     PUSH 0x1                            ; 004b98dc
-    PUSH 0x6164a4                       ; 004b98de | DAT_006164a4
+    PUSH 0x6164a4                       ; 004b98de | g_INT_006164a4
     PUSH 0x5d7271                       ; 004b98e3 | = "Enter image width"
     MOV ECX,dword ptr [0x006138e0]      ; 004b98e8 | g_CEditorToolsPtr
     PUSH ECX                            ; 004b98ee
@@ -826,7 +826,7 @@ section .text
     PUSH 0x270f                         ; 004b98fd
     PUSH 0x1                            ; 004b9902
     PUSH 0x1                            ; 004b9904
-    PUSH 0x6164a8                       ; 004b9906 | DAT_006164a8
+    PUSH 0x6164a8                       ; 004b9906 | g_INT_006164a8
     PUSH 0x5d7283                       ; 004b990b | = "Enter image height"
     MOV EBX,dword ptr [0x006138e0]      ; 004b9910 | g_CEditorToolsPtr
     PUSH EBX                            ; 004b9916
@@ -843,13 +843,13 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0 ; 004b9934
         ;   XREF to: 0047bda0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b9939
-    MOV dword ptr [0x01cb80d0],EDI      ; 004b993c | DAT_01cb80d0
+    MOV dword ptr [0x01cb80d0],EDI      ; 004b993c | g_INT_01cb80d0
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9942
         ;   Label: LAB_004b9942
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9945
     JZ 0x004b99f2                       ; 004b994c
         ;   XREF to: 004b99f2 (CONDITIONAL_JUMP)  ; LAB_004b99f2
-    PUSH 0x5d7d3b                       ; 004b9952 | DAT_005d7d3b
+    PUSH 0x5d7d3b                       ; 004b9952 | g_CHAR_ARRAY_005d7d3b
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9957
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b995c
@@ -877,7 +877,7 @@ section .text
         ;   Label: LAB_004b9992
     MOV AL,byte ptr [ESI]               ; 004b9994
     PUSH EAX                            ; 004b9996
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9997 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9997 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b999e
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b99a3
@@ -900,13 +900,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b99ce
     XOR BH,BH                           ; 004b99d1
     MOV ECX,dword ptr [EAX + 0x238]     ; 004b99d3
-    MOV byte ptr [0x01cb80f8],BH        ; 004b99d9 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BH        ; 004b99d9 | g_BYTE_01cb80f8
     TEST ECX,ECX                        ; 004b99df
     SETZ AL                             ; 004b99e1
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b99e4
     AND EAX,0xff                        ; 004b99e7
     MOV dword ptr [EBX + 0x238],EAX     ; 004b99ec
-    PUSH 0x5d7d72                       ; 004b99f2 | DAT_005d7d72
+    PUSH 0x5d7d72                       ; 004b99f2 | g_CHAR_ARRAY_005d7d72
         ;   Label: LAB_004b99f2
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b99f7
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -931,7 +931,7 @@ section .text
     MOV dword ptr [ESP + 0x2ec],ECX     ; 004b9a22
     XOR EAX,EAX                         ; 004b9a29
         ;   Label: LAB_004b9a29
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9a2b | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9a2b | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004b9a31
     XOR EAX,EAX                         ; 004b9a38
     MOV AL,byte ptr [ESI]               ; 004b9a3a
@@ -954,13 +954,13 @@ section .text
         ;   Label: LAB_004b9a5c
     JNZ 0x004b9b1d                      ; 004b9a63
         ;   XREF to: 004b9b1d (CONDITIONAL_JUMP)  ; LAB_004b9b1d
-    MOV EAX,[0x01cedef4]                ; 004b9a69 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b9a69 | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b9a6e
     PUSH 0x5d7dab                       ; 004b9a75 | = "Skeleton_key"
     ADD EAX,0x2437c                     ; 004b9a7a
     XOR CL,CL                           ; 004b9a7f
     PUSH EAX                            ; 004b9a81
-    MOV byte ptr [0x01cb80f8],CL        ; 004b9a82 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CL        ; 004b9a82 | g_BYTE_01cb80f8
     CALL core_inv.cpp_CInventory_findItemByName_FUN_004db830 ; 004b9a88
         ;   XREF to: 004db830 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004db830(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 004b9a8d
@@ -996,7 +996,7 @@ section .text
     POP EDI                             ; 004b9ade
         ;   Label: LAB_004b9ade
     PUSH 0x0                            ; 004b9adf
-    MOV EAX,[0x01cedef4]                ; 004b9ae1 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b9ae1 | g_INT_01cedef4
     PUSH 0x1                            ; 004b9ae6
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b9ae8
     PUSH EBX                            ; 004b9aef
@@ -1016,7 +1016,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b9b15
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004b9b1a
-    PUSH 0x5d7de9                       ; 004b9b1d | DAT_005d7de9
+    PUSH 0x5d7de9                       ; 004b9b1d | g_CHAR_ARRAY_005d7de9
         ;   Label: LAB_004b9b1d
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9b22
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1041,7 +1041,7 @@ section .text
     MOV dword ptr [ESP + 0x2f0],ECX     ; 004b9b4d
     XOR EAX,EAX                         ; 004b9b54
         ;   Label: LAB_004b9b54
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9b56 | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004b9b56 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004b9b5c
     XOR EAX,EAX                         ; 004b9b63
     MOV AL,byte ptr [EBX]               ; 004b9b65
@@ -1067,7 +1067,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9b90
     XOR CH,CH                           ; 004b9b93
     MOV ESI,dword ptr [EAX + 0x1ec]     ; 004b9b95
-    MOV byte ptr [0x01cb80f8],CH        ; 004b9b9b | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CH        ; 004b9b9b | g_BYTE_01cb80f8
     TEST ESI,ESI                        ; 004b9ba1
     SETZ AL                             ; 004b9ba3
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b9ba6
@@ -1084,11 +1084,11 @@ section .text
     PUSH EBX                            ; 004b9bcd
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b9bce
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01cedef4]                ; 004b9bd3 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b9bd3 | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b9bd8
     ADD ESP,0xc                         ; 004b9bdf
     MOV dword ptr [EAX + 0x25a8],0x42c80000 ; 004b9be2
-    PUSH 0x5d7e42                       ; 004b9bec | DAT_005d7e42
+    PUSH 0x5d7e42                       ; 004b9bec | g_CHAR_005d7e42
         ;   Label: LAB_004b9bec
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9bf1
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1116,7 +1116,7 @@ section .text
         ;   Label: LAB_004b9c2a
     MOV AL,byte ptr [EBX]               ; 004b9c2c
     PUSH EAX                            ; 004b9c2e
-    MOVZX ESI,byte ptr [EDI + 0x1cb80f7] ; 004b9c2f | DAT_01cb80f8
+    MOVZX ESI,byte ptr [EDI + 0x1cb80f7] ; 004b9c2f | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b9c36
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b9c3b
@@ -1138,7 +1138,7 @@ section .text
     JNZ 0x004b9cac                      ; 004b9c66
         ;   XREF to: 004b9cac (CONDITIONAL_JUMP)  ; LAB_004b9cac
     XOR AL,BL                           ; 004b9c68
-    MOV [0x01cb80f8],AL                 ; 004b9c6a | DAT_01cb80f8
+    MOV [0x01cb80f8],AL                 ; 004b9c6a | g_BYTE_01cb80f8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9c6f
     CMP dword ptr [EAX + 0x1f0],0x0     ; 004b9c72
     SETZ AL                             ; 004b9c79
@@ -1158,7 +1158,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004b9ca4
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004b9ca9
-    PUSH 0x5d7e95                       ; 004b9cac | DAT_005d7e95
+    PUSH 0x5d7e95                       ; 004b9cac | g_CHAR_ARRAY_005d7e95
         ;   Label: LAB_004b9cac
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9cb1
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1186,7 +1186,7 @@ section .text
         ;   Label: LAB_004b9cea
     MOV AL,byte ptr [EBX]               ; 004b9cec
     PUSH EAX                            ; 004b9cee
-    MOVZX ESI,byte ptr [EDI + 0x1cb80f7] ; 004b9cef | DAT_01cb80f8
+    MOVZX ESI,byte ptr [EDI + 0x1cb80f7] ; 004b9cef | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b9cf6
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b9cfb
@@ -1209,8 +1209,8 @@ section .text
         ;   XREF to: 004b9db1 (CONDITIONAL_JUMP)  ; LAB_004b9db1
     PUSH 0x0                            ; 004b9d2c
     XOR AH,DH                           ; 004b9d2e
-    PUSH 0x5d7ecb                       ; 004b9d30 | DAT_005d7ecb
-    MOV byte ptr [0x01cb80f8],AH        ; 004b9d35 | DAT_01cb80f8
+    PUSH 0x5d7ecb                       ; 004b9d30 | = "CGun"
+    MOV byte ptr [0x01cb80f8],AH        ; 004b9d35 | g_BYTE_01cb80f8
     CALL core_game.cpp_giveHeroWeapon_FUN_004b8e10 ; 004b9d3b
         ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004b8e10(char * class_name, char * item_name)
     ADD ESP,0x8                         ; 004b9d40
@@ -1235,7 +1235,7 @@ section .text
         ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004b8e10(char * class_name, char * item_name)
     ADD ESP,0x8                         ; 004b9d7f
     PUSH 0x47c                          ; 004b9d82
-    MOV EDI,0x5d7efa                    ; 004b9d87 | DAT_005d7efa
+    MOV EDI,0x5d7efa                    ; 004b9d87 | = "CGun"
     XOR ESI,ESI                         ; 004b9d8c
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004b9d8e
         ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
@@ -1257,7 +1257,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b9db4
     JZ 0x004ba142                       ; 004b9dbb
         ;   XREF to: 004ba142 (CONDITIONAL_JUMP)  ; LAB_004ba142
-    PUSH 0x5d7eff                       ; 004b9dc1 | DAT_005d7eff
+    PUSH 0x5d7eff                       ; 004b9dc1 | g_CHAR_ARRAY_005d7eff
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9dc6
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9dcb
@@ -1285,7 +1285,7 @@ section .text
         ;   Label: LAB_004b9e01
     MOV AL,byte ptr [ESI]               ; 004b9e03
     PUSH EAX                            ; 004b9e05
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9e06 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9e06 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b9e0d
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b9e12
@@ -1306,14 +1306,14 @@ section .text
     JNZ 0x004ba117                      ; 004b9e3b
         ;   XREF to: 004ba117 (CONDITIONAL_JUMP)  ; LAB_004ba117
     XOR DL,DL                           ; 004b9e41
-    MOV byte ptr [0x01cb80f8],DL        ; 004b9e43 | DAT_01cb80f8
-    MOV EBX,0x616430                    ; 004b9e49 | DAT_00616430
+    MOV byte ptr [0x01cb80f8],DL        ; 004b9e43 | g_BYTE_01cb80f8
+    MOV EBX,0x616430                    ; 004b9e49 | g_CHAR_ARRAY_00616430
         ;   Label: LAB_004b9e49
     PUSH 0x1                            ; 004b9e4e
         ;   Label: LAB_004b9e4e
     PUSH 0x64                           ; 004b9e50
-    PUSH EBX                            ; 004b9e52 | DAT_00616430
-    PUSH 0x5d7f32                       ; 004b9e53 | = "Raise an event"
+    PUSH EBX                            ; 004b9e52 | g_CHAR_ARRAY_00616430
+    PUSH 0x5d7f32                       ; 004b9e53 | g_CHAR_ARRAY_005d7eff+0x33
     MOV EAX,[0x006138e0]                ; 004b9e58 | g_CEditorToolsPtr
     PUSH EAX                            ; 004b9e5d
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0 ; 004b9e5e
@@ -1322,8 +1322,8 @@ section .text
     TEST EAX,EAX                        ; 004b9e66
     JZ 0x004ba142                       ; 004b9e68
         ;   XREF to: 004ba142 (CONDITIONAL_JUMP)  ; LAB_004ba142
-    PUSH EBX                            ; 004b9e6e | DAT_00616430
-    MOV EDX,dword ptr [0x006141f0]      ; 004b9e6f | DAT_006141f0
+    PUSH EBX                            ; 004b9e6e | g_CHAR_ARRAY_00616430
+    MOV EDX,dword ptr [0x006141f0]      ; 004b9e6f | g_CEventList_PTR_006141f0
     PUSH EDX                            ; 004b9e75
     CALL core_event.cpp_CEventList_validateCommands_FUN_0048e3e0 ; 004b9e76
         ;   XREF to: 0048e3e0 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCommands_FUN_0048e3e0(CEventList * this_ptr, char * commands)
@@ -1341,9 +1341,9 @@ section .text
         ;   XREF to: 004b9e4e (UNCONDITIONAL_JUMP)  ; LAB_004b9e4e
     PUSH 0x44                           ; 004b9e98
         ;   Label: LAB_004b9e98
-    MOV EAX,[0x00617dd4]                ; 004b9e9a | DAT_00617dd4
-    PUSH EAX                            ; 004b9e9f | DAT_01d02f84
-    MOV EBX,dword ptr [EAX]             ; 004b9ea0 | DAT_01d02f84
+    MOV EAX,[0x00617dd4]                ; 004b9e9a | g_CKeys_PTR_00617dd4
+    PUSH EAX                            ; 004b9e9f | g_PTR_01d02f84
+    MOV EBX,dword ptr [EAX]             ; 004b9ea0 | g_PTR_01d02f84
     CALL dword ptr [EBX + 0x4]          ; 004b9ea2
     ADD ESP,0x8                         ; 004b9ea5
     TEST EAX,EAX                        ; 004b9ea8
@@ -1385,7 +1385,7 @@ section .text
         ;   XREF to: 004b9ef0 (CONDITIONAL_JUMP)  ; LAB_004b9ef0
     JMP 0x004b9160                      ; 004b9f0e
         ;   XREF to: 004b9160 (UNCONDITIONAL_JUMP)  ; LAB_004b9160
-    PUSH 0x5d7ac7                       ; 004b9f13 | DAT_005d7ac7
+    PUSH 0x5d7ac7                       ; 004b9f13 | g_CHAR_ARRAY_005d7a93+0x34
         ;   Label: LAB_004b9f13
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9f18
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1414,7 +1414,7 @@ section .text
         ;   Label: LAB_004b9f53
     MOV AL,byte ptr [ESI]               ; 004b9f55
     PUSH EAX                            ; 004b9f57
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9f58 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004b9f58 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004b9f5f
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004b9f64
@@ -1435,7 +1435,7 @@ section .text
     JNZ 0x004b9262                      ; 004b9f8d
         ;   XREF to: 004b9262 (CONDITIONAL_JUMP)  ; LAB_004b9262
     XOR BL,BL                           ; 004b9f93
-    MOV byte ptr [0x01cb80f8],BL        ; 004b9f95 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BL        ; 004b9f95 | g_BYTE_01cb80f8
     JMP 0x004b9228                      ; 004b9f9b
         ;   XREF to: 004b9228 (UNCONDITIONAL_JUMP)  ; LAB_004b9228
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b9fa0
@@ -1446,10 +1446,10 @@ section .text
     SUB EAX,EDI                         ; 004b9fae
     MOV dword ptr [ESP + 0x350],EAX     ; 004b9fb0
     FILD dword ptr [ESP + 0x350]        ; 004b9fb7
-    FMUL double ptr [0x005d83d3]        ; 004b9fbe | DAT_005d83d3
+    FMUL double ptr [0x005d83d3]        ; 004b9fbe | g_DOUBLE_005d83d3
     MOV dword ptr [EBX + 0x224],0x0     ; 004b9fc4
     MOV EAX,EBX                         ; 004b9fce
-    FMUL double ptr [0x005d83db]        ; 004b9fd0 | DAT_005d83db
+    FMUL double ptr [0x005d83db]        ; 004b9fd0 | g_DOUBLE_005d83db
     FILD dword ptr [EAX + 0x28c]        ; 004b9fd6
     FXCH                                ; 004b9fdc
     FSTP double ptr [ESP + 0x1b8]       ; 004b9fde
@@ -1490,7 +1490,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004ba04e
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004ba053
-    MOV EDI,dword ptr [0x006141bc]      ; 004ba056 | DAT_006141bc
+    MOV EDI,dword ptr [0x006141bc]      ; 004ba056 | g_INT_006141bc
     PUSH EDI                            ; 004ba05c
     PUSH 0x0                            ; 004ba05d
     PUSH 0x0                            ; 004ba05f
@@ -1528,7 +1528,7 @@ section .text
         ;   XREF to: 004b9da9 (UNCONDITIONAL_JUMP)  ; LAB_004b9da9
     PUSH EBX                            ; 004ba0bc
         ;   Label: LAB_004ba0bc
-    MOV ECX,dword ptr [0x00618170]      ; 004ba0bd | DAT_00618170
+    MOV ECX,dword ptr [0x00618170]      ; 004ba0bd | g_CDemonMission_PTR_00618170
     PUSH ECX                            ; 004ba0c3
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 004ba0c4
         ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission * this_ptr, CDemonActor * actor)
@@ -1537,14 +1537,14 @@ section .text
     PUSH EBX                            ; 004ba0d2
     CALL dword ptr [EAX + 0x8]          ; 004ba0d3
     ADD ESP,0x4                         ; 004ba0d6
-    PUSH EDI                            ; 004ba0d9 | DAT_005d7efa
+    PUSH EDI                            ; 004ba0d9 | = "CGun"
     PUSH EBX                            ; 004ba0da
     MOV dword ptr [EBX + 0x474],ESI     ; 004ba0db
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240 ; 004ba0e1
         ;   XREF to: 0040e240 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004ba0e6
     PUSH 0x0                            ; 004ba0e9
-    MOV EAX,[0x01cedef4]                ; 004ba0eb | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004ba0eb | g_INT_01cedef4
     MOV dword ptr [EBX + 0x470],0x1f4   ; 004ba0f0
     PUSH 0x1                            ; 004ba0fa
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004ba0fc
@@ -1558,24 +1558,24 @@ section .text
         ;   XREF to: 004b9db1 (UNCONDITIONAL_JUMP)  ; LAB_004b9db1
     PUSH 0x1d                           ; 004ba117
         ;   Label: LAB_004ba117
-    MOV EAX,[0x00617dd4]                ; 004ba119 | DAT_00617dd4
-    PUSH EAX                            ; 004ba11e | DAT_01d02f84
-    MOV EBX,dword ptr [EAX]             ; 004ba11f | DAT_01d02f84
+    MOV EAX,[0x00617dd4]                ; 004ba119 | g_CKeys_PTR_00617dd4
+    PUSH EAX                            ; 004ba11e | g_PTR_01d02f84
+    MOV EBX,dword ptr [EAX]             ; 004ba11f | g_PTR_01d02f84
     CALL dword ptr [EBX]                ; 004ba121
     ADD ESP,0x8                         ; 004ba123
     TEST EAX,EAX                        ; 004ba126
     JZ 0x004ba142                       ; 004ba128
         ;   XREF to: 004ba142 (CONDITIONAL_JUMP)  ; LAB_004ba142
     PUSH 0x13                           ; 004ba12a
-    MOV EAX,[0x00617dd4]                ; 004ba12c | DAT_00617dd4
-    PUSH EAX                            ; 004ba131 | DAT_01d02f84
-    MOV EBX,dword ptr [EAX]             ; 004ba132 | DAT_01d02f84
+    MOV EAX,[0x00617dd4]                ; 004ba12c | g_CKeys_PTR_00617dd4
+    PUSH EAX                            ; 004ba131 | g_PTR_01d02f84
+    MOV EBX,dword ptr [EAX]             ; 004ba132 | g_PTR_01d02f84
     CALL dword ptr [EBX + 0x4]          ; 004ba134
     ADD ESP,0x8                         ; 004ba137
     TEST EAX,EAX                        ; 004ba13a
     JNZ 0x004b9e49                      ; 004ba13c
         ;   XREF to: 004b9e49 (CONDITIONAL_JUMP)  ; LAB_004b9e49
-    PUSH 0x5d7f41                       ; 004ba142 | DAT_005d7f41
+    PUSH 0x5d7f41                       ; 004ba142 | g_CHAR_ARRAY_005d7f41
         ;   Label: LAB_004ba142
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba147
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1604,7 +1604,7 @@ section .text
         ;   Label: LAB_004ba182
     MOV AL,byte ptr [ESI]               ; 004ba184
     PUSH EAX                            ; 004ba186
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba187 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba187 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004ba18e
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004ba193
@@ -1626,7 +1626,7 @@ section .text
         ;   XREF to: 004ba2e5 (CONDITIONAL_JUMP)  ; LAB_004ba2e5
     XOR DH,DH                           ; 004ba1c2
     XOR ECX,ECX                         ; 004ba1c4
-    MOV byte ptr [0x01cb80f8],DH        ; 004ba1c6 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],DH        ; 004ba1c6 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x34c],ECX     ; 004ba1cc
     MOV dword ptr [ESP + 0x304],ECX     ; 004ba1d3
     MOV EAX,[0x0061b5a8]                ; 004ba1da | g_CDemonSetPtr
@@ -1637,7 +1637,7 @@ section .text
         ;   XREF to: 004ba2e5 (CONDITIONAL_JUMP)  ; LAB_004ba2e5
     ADD EAX,dword ptr [ESP + 0x304]     ; 004ba1f2
     MOV EBX,dword ptr [EAX + 0x150ff0]  ; 004ba1f9
-    MOV EAX,[0x01cedef4]                ; 004ba1ff | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004ba1ff | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004ba204
     LEA ESI,[EBX + 0x20]                ; 004ba20b
     FLD float ptr [EAX + 0x20]          ; 004ba20e
@@ -1663,7 +1663,7 @@ section .text
     FMUL ST0                            ; 004ba260
     FADDP                               ; 004ba262
     FSQRT                               ; 004ba264
-    FCOMP double ptr [0x005d83e3]       ; 004ba266 | DAT_005d83e3
+    FCOMP double ptr [0x005d83e3]       ; 004ba266 | g_DOUBLE_005d83e3
     FNSTSW AX                           ; 004ba26c
     SAHF                                ; 004ba26e
     JBE 0x004ba2af                      ; 004ba26f
@@ -1677,9 +1677,9 @@ section .text
     MOV dword ptr [ESP + 0x304],EDI     ; 004ba28a
     JMP 0x004ba1da                      ; 004ba291
         ;   XREF to: 004ba1da (UNCONDITIONAL_JUMP)  ; LAB_004ba1da
-    PUSH 0x616430                       ; 004ba296 | DAT_00616430
+    PUSH 0x616430                       ; 004ba296 | g_CHAR_ARRAY_00616430
         ;   Label: LAB_004ba296
-    MOV EBX,dword ptr [0x006141f0]      ; 004ba29b | DAT_006141f0
+    MOV EBX,dword ptr [0x006141f0]      ; 004ba29b | g_CEventList_PTR_006141f0
     PUSH EBX                            ; 004ba2a1
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 004ba2a2
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -1702,7 +1702,7 @@ section .text
     ADD ESP,0x8                         ; 004ba2e0
     JMP 0x004ba271                      ; 004ba2e3
         ;   XREF to: 004ba271 (UNCONDITIONAL_JUMP)  ; LAB_004ba271
-    PUSH 0x5d7f76                       ; 004ba2e5 | DAT_005d7f76
+    PUSH 0x5d7f76                       ; 004ba2e5 | g_CHAR_ARRAY_005d7f76
         ;   Label: LAB_004ba2e5
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba2ea
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1727,7 +1727,7 @@ section .text
     MOV dword ptr [ESP + 0x308],ECX     ; 004ba315
     XOR EAX,EAX                         ; 004ba31c
         ;   Label: LAB_004ba31c
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba31e | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba31e | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004ba324
     XOR EAX,EAX                         ; 004ba32b
     MOV AL,byte ptr [EBX]               ; 004ba32d
@@ -1752,7 +1752,7 @@ section .text
         ;   XREF to: 004ba39d (CONDITIONAL_JUMP)  ; LAB_004ba39d
     XOR BL,BL                           ; 004ba358
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ba35a
-    MOV byte ptr [0x01cb80f8],BL        ; 004ba35d | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BL        ; 004ba35d | g_BYTE_01cb80f8
     CMP dword ptr [EAX + 0x1fc],0x0     ; 004ba363
     SETZ AL                             ; 004ba36a
     MOV EBX,dword ptr [EBP + 0x14]      ; 004ba36d
@@ -1776,7 +1776,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba3a0
     JZ 0x004ba45b                       ; 004ba3a7
         ;   XREF to: 004ba45b (CONDITIONAL_JUMP)  ; LAB_004ba45b
-    PUSH 0x5d7fef                       ; 004ba3ad | DAT_005d7fef
+    PUSH 0x5d7fef                       ; 004ba3ad | g_CHAR_ARRAY_005d7fef
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba3b2
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004ba3b7
@@ -1804,7 +1804,7 @@ section .text
         ;   Label: LAB_004ba3ed
     MOV AL,byte ptr [ESI]               ; 004ba3ef
     PUSH EAX                            ; 004ba3f1
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba3f2 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba3f2 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004ba3f9
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004ba3fe
@@ -1834,11 +1834,11 @@ section .text
     MOV EDI,dword ptr [0x006138e0]      ; 004ba444 | g_CEditorToolsPtr
     XOR BH,BH                           ; 004ba44a
     PUSH EDI                            ; 004ba44c
-    MOV byte ptr [0x01cb80f8],BH        ; 004ba44d | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BH        ; 004ba44d | g_BYTE_01cb80f8
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800 ; 004ba453
         ;   XREF to: 0047d800 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004ba458
-    PUSH 0x5d8033                       ; 004ba45b | DAT_005d8033
+    PUSH 0x5d8033                       ; 004ba45b | g_CHAR_ARRAY_005d8033
         ;   Label: LAB_004ba45b
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba460
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1863,7 +1863,7 @@ section .text
     MOV dword ptr [ESP + 0x310],ECX     ; 004ba48b
     XOR EAX,EAX                         ; 004ba492
         ;   Label: LAB_004ba492
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba494 | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba494 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004ba49a
     XOR EAX,EAX                         ; 004ba4a1
     MOV AL,byte ptr [EBX]               ; 004ba4a3
@@ -1889,13 +1889,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ba4ce
     XOR CL,CL                           ; 004ba4d1
     MOV EBX,dword ptr [EAX + 0x20c]     ; 004ba4d3
-    MOV byte ptr [0x01cb80f8],CL        ; 004ba4d9 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CL        ; 004ba4d9 | g_BYTE_01cb80f8
     TEST EBX,EBX                        ; 004ba4df
     SETZ AL                             ; 004ba4e1
     MOV EBX,dword ptr [EBP + 0x14]      ; 004ba4e4
     AND EAX,0xff                        ; 004ba4e7
     MOV dword ptr [EBX + 0x20c],EAX     ; 004ba4ec
-    PUSH 0x5d8066                       ; 004ba4f2 | DAT_005d8066
+    PUSH 0x5d8066                       ; 004ba4f2 | g_CHAR_005d8066
         ;   Label: LAB_004ba4f2
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba4f7
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1920,7 +1920,7 @@ section .text
     MOV dword ptr [ESP + 0x314],ECX     ; 004ba522
     XOR EAX,EAX                         ; 004ba529
         ;   Label: LAB_004ba529
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba52b | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba52b | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004ba531
     XOR EAX,EAX                         ; 004ba538
     MOV AL,byte ptr [EBX]               ; 004ba53a
@@ -1946,13 +1946,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ba565
     XOR CH,CH                           ; 004ba568
     MOV ESI,dword ptr [EAX + 0x210]     ; 004ba56a
-    MOV byte ptr [0x01cb80f8],CH        ; 004ba570 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CH        ; 004ba570 | g_BYTE_01cb80f8
     TEST ESI,ESI                        ; 004ba576
     SETZ AL                             ; 004ba578
     MOV EBX,dword ptr [EBP + 0x14]      ; 004ba57b
     AND EAX,0xff                        ; 004ba57e
     MOV dword ptr [EBX + 0x210],EAX     ; 004ba583
-    PUSH 0x5d8099                       ; 004ba589 | DAT_005d8099
+    PUSH 0x5d8099                       ; 004ba589 | g_CHAR_ARRAY_005d8099
         ;   Label: LAB_004ba589
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba58e
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -1980,7 +1980,7 @@ section .text
         ;   Label: LAB_004ba5c7
     MOV AL,byte ptr [EBX]               ; 004ba5c9
     PUSH EAX                            ; 004ba5cb
-    MOVZX ESI,byte ptr [EDI + 0x1cb80f7] ; 004ba5cc | DAT_01cb80f8
+    MOVZX ESI,byte ptr [EDI + 0x1cb80f7] ; 004ba5cc | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004ba5d3
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004ba5d8
@@ -2002,8 +2002,8 @@ section .text
     JNZ 0x004ba65f                      ; 004ba603
         ;   XREF to: 004ba65f (CONDITIONAL_JUMP)  ; LAB_004ba65f
     XOR AL,BL                           ; 004ba605
-    MOV [0x01cb80f8],AL                 ; 004ba607 | DAT_01cb80f8
-    MOV EAX,[0x01cedef4]                ; 004ba60c | DAT_01cedef4
+    MOV [0x01cb80f8],AL                 ; 004ba607 | g_BYTE_01cb80f8
+    MOV EAX,[0x01cedef4]                ; 004ba60c | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004ba611
     MOV EBX,dword ptr [EAX + 0x247e4]   ; 004ba618
     MOV EBX,dword ptr [EAX + EBX*0x4 + 0x2498c] ; 004ba61e
@@ -2031,7 +2031,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba662
     JZ 0x004ba705                       ; 004ba669
         ;   XREF to: 004ba705 (CONDITIONAL_JUMP)  ; LAB_004ba705
-    PUSH 0x5d8138                       ; 004ba66f | DAT_005d8138
+    PUSH 0x5d8138                       ; 004ba66f | g_CHAR_ARRAY_005d8138
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba674
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR EBX,EBX                         ; 004ba679
@@ -2058,7 +2058,7 @@ section .text
         ;   Label: LAB_004ba6ad
     MOV AL,byte ptr [ESI]               ; 004ba6af
     PUSH EAX                            ; 004ba6b1
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba6b2 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba6b2 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004ba6b9
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004ba6be
@@ -2082,7 +2082,7 @@ section .text
     PUSH 0xff00ff                       ; 004ba6eb
     XOR AH,DH                           ; 004ba6f0
     PUSH 0x1fc7838                      ; 004ba6f2
-    MOV byte ptr [0x01cb80f8],AH        ; 004ba6f7 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],AH        ; 004ba6f7 | g_BYTE_01cb80f8
     CALL core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00443240 ; 004ba6fd
         ;   XREF to: 00443240 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00443240(CDemonCamera * this_ptr, int clear_color)
     ADD ESP,0x8                         ; 004ba702
@@ -2091,7 +2091,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba708
     JZ 0x004ba7b7                       ; 004ba70f
         ;   XREF to: 004ba7b7 (CONDITIONAL_JUMP)  ; LAB_004ba7b7
-    PUSH 0x5d816b                       ; 004ba715 | DAT_005d816b
+    PUSH 0x5d816b                       ; 004ba715 | g_CHAR_ARRAY_005d816b
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba71a
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba71f
@@ -2119,7 +2119,7 @@ section .text
         ;   Label: LAB_004ba755
     MOV AL,byte ptr [ESI]               ; 004ba757
     PUSH EAX                            ; 004ba759
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba75a | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba75a | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004ba761
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004ba766
@@ -2143,7 +2143,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004ba793 | g_CDemonSetPtr
     XOR DL,DL                           ; 004ba798
     PUSH 0x1fc7838                      ; 004ba79a
-    MOV byte ptr [0x01cb80f8],DL        ; 004ba79f | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],DL        ; 004ba79f | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0x14d150],0x0  ; 004ba7a5 | g_CDemonSetInstance.min_ambient_value
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80 ; 004ba7af
         ;   XREF to: 00441e80 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(CDemonCamera * this_ptr, float intensity)
@@ -2153,7 +2153,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004ba7ba
     JZ 0x004ba889                       ; 004ba7c1
         ;   XREF to: 004ba889 (CONDITIONAL_JUMP)  ; LAB_004ba889
-    PUSH 0x5d819d                       ; 004ba7c7 | DAT_005d819d
+    PUSH 0x5d819d                       ; 004ba7c7 | g_CHAR_ARRAY_005d819d
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba7cc
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba7d1
@@ -2181,7 +2181,7 @@ section .text
         ;   Label: LAB_004ba807
     MOV AL,byte ptr [ESI]               ; 004ba809
     PUSH EAX                            ; 004ba80b
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba80c | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004ba80c | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004ba813
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004ba818
@@ -2204,7 +2204,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ba843
     XOR DH,DH                           ; 004ba846
     MOV ECX,dword ptr [EAX + 0x21c]     ; 004ba848
-    MOV byte ptr [0x01cb80f8],DH        ; 004ba84e | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],DH        ; 004ba84e | g_BYTE_01cb80f8
     TEST ECX,ECX                        ; 004ba854
     SETZ AL                             ; 004ba856
     MOV EBX,dword ptr [EBP + 0x14]      ; 004ba859
@@ -2223,7 +2223,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004ba881
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004ba886
-    PUSH 0x5d81f8                       ; 004ba889 | DAT_005d81f8
+    PUSH 0x5d81f8                       ; 004ba889 | g_CHAR_ARRAY_005d81f8
         ;   Label: LAB_004ba889
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba88e
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2248,7 +2248,7 @@ section .text
     MOV dword ptr [ESP + 0x328],ECX     ; 004ba8b9
     XOR EAX,EAX                         ; 004ba8c0
         ;   Label: LAB_004ba8c0
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba8c2 | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba8c2 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004ba8c8
     XOR EAX,EAX                         ; 004ba8cf
     MOV AL,byte ptr [EBX]               ; 004ba8d1
@@ -2271,12 +2271,12 @@ section .text
         ;   Label: LAB_004ba8f3
     JNZ 0x004ba939                      ; 004ba8fa
         ;   XREF to: 004ba939 (CONDITIONAL_JUMP)  ; LAB_004ba939
-    MOV EAX,[0x01cedef4]                ; 004ba8fc | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004ba8fc | g_INT_01cedef4
     PUSH 0x40a00000                     ; 004ba901
     XOR BL,BL                           ; 004ba906
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004ba908
     PUSH 0x5d822e                       ; 004ba90f | = "Flashlight battery restored"
-    MOV byte ptr [0x01cb80f8],BL        ; 004ba914 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BL        ; 004ba914 | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0x2437c],0x42c80000 ; 004ba91a
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ba924
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
@@ -2287,7 +2287,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004ba931
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004ba936
-    PUSH 0x5d824a                       ; 004ba939 | DAT_005d824a
+    PUSH 0x5d824a                       ; 004ba939 | g_CHAR_005d824a
         ;   Label: LAB_004ba939
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba93e
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2312,7 +2312,7 @@ section .text
     MOV dword ptr [ESP + 0x32c],ECX     ; 004ba969
     XOR EAX,EAX                         ; 004ba970
         ;   Label: LAB_004ba970
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba972 | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba972 | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004ba978
     XOR EAX,EAX                         ; 004ba97f
     MOV AL,byte ptr [EBX]               ; 004ba981
@@ -2336,14 +2336,14 @@ section .text
     JNZ 0x004ba9c5                      ; 004ba9aa
         ;   XREF to: 004ba9c5 (CONDITIONAL_JUMP)  ; LAB_004ba9c5
     PUSH 0x1                            ; 004ba9ac
-    MOV ESI,dword ptr [0x0061e8f4]      ; 004ba9ae | DAT_0061e8f4
+    MOV ESI,dword ptr [0x0061e8f4]      ; 004ba9ae | g_CWeather_PTR_0061e8f4
     XOR BH,BH                           ; 004ba9b4
     PUSH ESI                            ; 004ba9b6
-    MOV byte ptr [0x01cb80f8],BH        ; 004ba9b7 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],BH        ; 004ba9b7 | g_BYTE_01cb80f8
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0058b470 ; 004ba9bd
         ;   XREF to: 0058b470 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0058b470(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004ba9c2
-    PUSH 0x5d8284                       ; 004ba9c5 | DAT_005d8284
+    PUSH 0x5d8284                       ; 004ba9c5 | g_CHAR_005d8284
         ;   Label: LAB_004ba9c5
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba9ca
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2368,7 +2368,7 @@ section .text
     MOV dword ptr [ESP + 0x330],ECX     ; 004ba9f5
     XOR EAX,EAX                         ; 004ba9fc
         ;   Label: LAB_004ba9fc
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba9fe | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004ba9fe | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004baa04
     XOR EAX,EAX                         ; 004baa0b
     MOV AL,byte ptr [EBX]               ; 004baa0d
@@ -2392,14 +2392,14 @@ section .text
     JNZ 0x004baa51                      ; 004baa36
         ;   XREF to: 004baa51 (CONDITIONAL_JUMP)  ; LAB_004baa51
     PUSH 0x2                            ; 004baa38
-    MOV ESI,dword ptr [0x0061e8f4]      ; 004baa3a | DAT_0061e8f4
+    MOV ESI,dword ptr [0x0061e8f4]      ; 004baa3a | g_CWeather_PTR_0061e8f4
     XOR CL,CL                           ; 004baa40
     PUSH ESI                            ; 004baa42
-    MOV byte ptr [0x01cb80f8],CL        ; 004baa43 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CL        ; 004baa43 | g_BYTE_01cb80f8
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_0058b470 ; 004baa49
         ;   XREF to: 0058b470 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0058b470(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004baa4e
-    PUSH 0x5d82bb                       ; 004baa51 | DAT_005d82bb
+    PUSH 0x5d82bb                       ; 004baa51 | g_CHAR_ARRAY_005d82bb
         ;   Label: LAB_004baa51
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004baa56
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2428,7 +2428,7 @@ section .text
         ;   Label: LAB_004baa91
     MOV AL,byte ptr [ESI]               ; 004baa93
     PUSH EAX                            ; 004baa95
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004baa96 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004baa96 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004baa9d
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004baaa2
@@ -2451,7 +2451,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004baad1
     XOR CH,CH                           ; 004baad4
     MOV ESI,dword ptr [EAX + 0x220]     ; 004baad6
-    MOV byte ptr [0x01cb80f8],CH        ; 004baadc | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],CH        ; 004baadc | g_BYTE_01cb80f8
     TEST ESI,ESI                        ; 004baae2
     SETZ AL                             ; 004baae4
     MOV EDI,0x3e800000                  ; 004baae7
@@ -2461,9 +2461,9 @@ section .text
     MOV dword ptr [EBX + 0x220],EAX     ; 004baafb
     JZ 0x004bac0d                       ; 004bab01
         ;   XREF to: 004bac0d (CONDITIONAL_JUMP)  ; LAB_004bac0d
-    PUSH 0x5d82f0                       ; 004bab07 | = "burp2.wav"
+    PUSH 0x5d82f0                       ; 004bab07 | g_CHAR_ARRAY_005d82bb+0x35
     PUSH 0x0                            ; 004bab0c
-    MOV ESI,dword ptr [0x0061c068]      ; 004bab0e | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 004bab0e | g_CSound_PTR_0061c068
     MOV EBX,0x40800000                  ; 004bab14
     PUSH ESI                            ; 004bab19
     MOV dword ptr [ESP + 0x288],EBX     ; 004bab1a
@@ -2541,7 +2541,7 @@ section .text
     PUSH 0x5d82fa                       ; 004bac0d | = "burp1.wav"
         ;   Label: LAB_004bac0d
     PUSH EAX                            ; 004bac12
-    MOV ECX,dword ptr [0x0061c068]      ; 004bac13 | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 004bac13 | g_CSound_PTR_0061c068
     PUSH ECX                            ; 004bac19
     JMP 0x004bab21                      ; 004bac1a
         ;   XREF to: 004bab21 (UNCONDITIONAL_JUMP)  ; LAB_004bab21
@@ -2703,7 +2703,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004bae37
     JZ 0x004baee4                       ; 004bae3e
         ;   XREF to: 004baee4 (CONDITIONAL_JUMP)  ; LAB_004baee4
-    PUSH 0x5d8323                       ; 004bae44 | DAT_005d8323
+    PUSH 0x5d8323                       ; 004bae44 | g_CHAR_ARRAY_005d8323
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004bae49
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004bae4e
@@ -2731,7 +2731,7 @@ section .text
         ;   Label: LAB_004bae84
     MOV AL,byte ptr [ESI]               ; 004bae86
     PUSH EAX                            ; 004bae88
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004bae89 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004bae89 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004bae90
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004bae95
@@ -2754,13 +2754,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004baec0
     XOR DH,DH                           ; 004baec3
     MOV EBX,dword ptr [EAX + 0x234]     ; 004baec5
-    MOV byte ptr [0x01cb80f8],DH        ; 004baecb | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],DH        ; 004baecb | g_BYTE_01cb80f8
     TEST EBX,EBX                        ; 004baed1
     SETZ AL                             ; 004baed3
     MOV EBX,dword ptr [EBP + 0x14]      ; 004baed6
     AND EAX,0xff                        ; 004baed9
     MOV dword ptr [EBX + 0x234],EAX     ; 004baede
-    PUSH 0x5d8357                       ; 004baee4 | DAT_005d8357
+    PUSH 0x5d8357                       ; 004baee4 | g_CHAR_ARRAY_005d8357
         ;   Label: LAB_004baee4
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004baee9
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
@@ -2785,7 +2785,7 @@ section .text
     MOV dword ptr [ESP + 0x340],ECX     ; 004baf14
     XOR EAX,EAX                         ; 004baf1b
         ;   Label: LAB_004baf1b
-    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004baf1d | DAT_01cb80f8
+    MOV AL,byte ptr [EDI + 0x1cb80f7]   ; 004baf1d | g_BYTE_01cb80f8
     MOV dword ptr [ESP + 0x350],EAX     ; 004baf23
     XOR EAX,EAX                         ; 004baf2a
     MOV AL,byte ptr [EBX]               ; 004baf2c
@@ -2808,12 +2808,12 @@ section .text
         ;   Label: LAB_004baf4e
     JNZ 0x004baf94                      ; 004baf55
         ;   XREF to: 004baf94 (CONDITIONAL_JUMP)  ; LAB_004baf94
-    MOV EAX,[0x01cedef4]                ; 004baf57 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004baf57 | g_INT_01cedef4
     PUSH 0x40a00000                     ; 004baf5c
     XOR BL,BL                           ; 004baf61
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004baf63
-    PUSH 0x5d838b                       ; 004baf6a | = "Health restored."
-    MOV byte ptr [0x01cb80f8],BL        ; 004baf6f | DAT_01cb80f8
+    PUSH 0x5d838b                       ; 004baf6a | g_CHAR_ARRAY_005d8357+0x34
+    MOV byte ptr [0x01cb80f8],BL        ; 004baf6f | g_BYTE_01cb80f8
     MOV dword ptr [EAX + 0x25a8],0x42c80000 ; 004baf75
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004baf7f
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
@@ -2829,7 +2829,7 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004baf97
     JZ 0x004b916f                       ; 004baf9e
         ;   XREF to: 004b916f (CONDITIONAL_JUMP)  ; LAB_004b916f
-    PUSH 0x5d839c                       ; 004bafa4 | DAT_005d839c
+    PUSH 0x5d839c                       ; 004bafa4 | g_CHAR_ARRAY_005d839c
     CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004bafa9
         ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004bafae
@@ -2857,7 +2857,7 @@ section .text
         ;   Label: LAB_004bafe4
     MOV AL,byte ptr [ESI]               ; 004bafe6
     PUSH EAX                            ; 004bafe8
-    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004bafe9 | DAT_01cb80f8
+    MOVZX EDI,byte ptr [EBX + 0x1cb80f7] ; 004bafe9 | g_BYTE_01cb80f8
     CALL crt_ctype.c_toupper_FUN_005b8e40 ; 004baff0
         ;   XREF to: 005b8e40 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005b8e40(int c)
     ADD ESP,0x4                         ; 004baff5
@@ -2877,12 +2877,12 @@ section .text
     JNZ 0x004b916f                      ; 004bb017
         ;   XREF to: 004b916f (CONDITIONAL_JUMP)  ; LAB_004b916f
     XOR BH,BH                           ; 004bb01d
-    MOV ESI,dword ptr [0x01cb80e4]      ; 004bb01f | DAT_01cb80e4
-    MOV byte ptr [0x01cb80f8],BH        ; 004bb025 | DAT_01cb80f8
+    MOV ESI,dword ptr [0x01cb80e4]      ; 004bb01f | g_INT_01cb80e4
+    MOV byte ptr [0x01cb80f8],BH        ; 004bb025 | g_BYTE_01cb80f8
     TEST ESI,ESI                        ; 004bb02b
     SETZ AL                             ; 004bb02d
     AND EAX,0xff                        ; 004bb030
-    MOV [0x01cb80e4],EAX                ; 004bb035 | DAT_01cb80e4
+    MOV [0x01cb80e4],EAX                ; 004bb035 | g_INT_01cb80e4
     JMP 0x004b916f                      ; 004bb03a
         ;   XREF to: 004b916f (UNCONDITIONAL_JUMP)  ; LAB_004b916f
     INC dword ptr [ESP + 0x2bc]         ; 004bb03f

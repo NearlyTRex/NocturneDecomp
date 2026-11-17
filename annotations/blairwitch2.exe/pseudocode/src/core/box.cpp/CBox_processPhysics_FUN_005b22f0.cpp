@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float delta_time)
 
 {
@@ -266,7 +264,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
     local_2d8._8_4_ = (this_ptr->position).z;
   }
   local_548._4_4_ = (float)local_548._4_4_ + 1.0;
-  local_2d8._4_4_ = (float)local_2d8._4_4_ + _DAT_005f12e8;
+  local_2d8._4_4_ = (float)local_2d8._4_4_ + -100.0f;
   local_2c = (SScrape *)
              core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
                        (&g_CDemonRaytraceInstance,(CVector3f *)local_548,(CVector3f *)local_2d8,
@@ -292,7 +290,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
   } while (pCVar5 != (CVector3f *)&this_ptr[1].position.z);
   local_5a8.z = 0.0;
   local_5a8.x = 0.0;
-  local_5a8.y = -this_ptr->mass * (float)_DAT_005f12f0;
+  local_5a8.y = -this_ptr->mass * (float)32;
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
             (&this_ptr->rotation_matrix,&local_5a8,(CVector3f *)(local_2d8 + 0x3c));
   pCVar5 = &this_ptr->linear_momentum;
@@ -377,8 +375,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
   (this_ptr->angular_velocity).z = fVar2;
   local_18 = SQRT(fVar2 * (this_ptr->angular_velocity).z +
                   pCVar5->x * pCVar5->x + fVar1 * (this_ptr->angular_velocity).y);
-  if (_DAT_005f12f8 < local_18) {
-    local_9c = _DAT_005f12f8 / local_18;
+  if (25.13274f < local_18) {
+    local_9c = 25.13274f / local_18;
     pCVar5->x = pCVar5->x * local_9c;
     (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).y * local_9c;
     (this_ptr->angular_velocity).z = (this_ptr->angular_velocity).z * local_9c;
@@ -492,7 +490,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
         local_268[(uint)bVar15 * -2 + 0xc] = local_388[(uint)bVar15 * -2 + 3];
         local_268[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0xd] =
              local_388[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
-        if ((float)_DAT_005f1328 <
+        if ((float)0.01 <
             SQRT(local_234 * local_234 + local_23c * local_23c + local_238 * local_238)) {
           local_2c = (SScrape *)
                      core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
@@ -514,7 +512,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
         }
         fVar1 = local_48->scrape_points[0].transformed_position.y;
         local_48->scrape_points[0].previous_position.y =
-             this_ptr[1].position.x + (float)_DAT_005f1330;
+             this_ptr[1].position.x + (float)0.5;
         fVar2 = local_48->scrape_points[0].previous_position.y;
         fVar3 = this_ptr[1].position.x;
         fVar4 = local_48->scrape_points[0].previous_position.y;
@@ -546,7 +544,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
     iVar13 = local_20;
     *(float *)(local_2d8 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x38) =
          local_598[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7];
-    local_60 = (1.0 - this_ptr->scrape_points[iVar7].raytrace_intersection) * (float)_DAT_005f1300;
+    local_60 = (1.0 - this_ptr->scrape_points[iVar7].raytrace_intersection) *
+               (float)1.01;
     local_254 = (float)local_2d8._48_4_ * local_60;
     local_250 = (float)local_2d8._52_4_ * local_60;
     local_24c = (float)local_2d8._56_4_ * local_60;
@@ -566,7 +565,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
          *(uint *)((int)&local_1f4 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
     local_8c = ((float)local_548._20_4_ * (this_ptr->linear_velocity_local).z +
                (float)local_548._12_4_ * (this_ptr->linear_velocity_local).x +
-               (float)local_548._16_4_ * (this_ptr->linear_velocity_local).y) * _DAT_005f1308;
+               (float)local_548._16_4_ * (this_ptr->linear_velocity_local).y) * 2.0f;
     local_bc = (float)local_548._12_4_ * local_8c;
     local_b8 = (float)local_548._16_4_ * local_8c;
     local_b4 = (float)local_548._20_4_ * local_8c;
@@ -586,9 +585,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
       local_548._64_4_ = local_1c0;
       local_548._68_4_ = local_1bc;
     }
-    local_548._60_4_ = (float)local_548._60_4_ * _DAT_005f130c * _DAT_005f1310;
-    local_548._64_4_ = (float)local_548._64_4_ * _DAT_005f130c * _DAT_005f1310;
-    local_548._68_4_ = (float)local_548._68_4_ * _DAT_005f130c * _DAT_005f1310;
+    local_548._60_4_ = (float)local_548._60_4_ * -1.0f * 0.5f;
+    local_548._64_4_ = (float)local_548._64_4_ * -1.0f * 0.5f;
+    local_548._68_4_ = (float)local_548._68_4_ * -1.0f * 0.5f;
     fVar1 = 1.0 / delta_time;
     local_548._312_4_ = (float)local_548._60_4_ - (this_ptr->linear_velocity_local).x;
     local_548._316_4_ = (float)local_548._64_4_ - (this_ptr->linear_velocity_local).y;
@@ -629,10 +628,10 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
     *(float *)(local_548 + (uint)bVar15 * -8 + 0x148) = local_61c[(uint)bVar15 * -2 + 9];
     *(float *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x14c) =
          local_61c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 10];
-    local_2d8._12_4_ = (float)local_548._324_4_ * _DAT_005f1314;
-    local_2d8._16_4_ = (float)local_548._328_4_ * _DAT_005f1314;
-    local_2d8._20_4_ = (float)local_548._332_4_ * _DAT_005f1314;
-    local_548._24_4_ = (float)local_548._324_4_ * _DAT_005f1314;
+    local_2d8._12_4_ = (float)local_548._324_4_ * 0.1f;
+    local_2d8._16_4_ = (float)local_548._328_4_ * 0.1f;
+    local_2d8._20_4_ = (float)local_548._332_4_ * 0.1f;
+    local_548._24_4_ = (float)local_548._324_4_ * 0.1f;
     *(uint *)(local_548 + (uint)bVar15 * -8 + 0x1c) =
          *(uint *)(local_2d8 + (uint)bVar15 * -8 + 0x10);
     *(uint *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x20) =
@@ -646,7 +645,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
     local_dc[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7] = pfVar10[(uint)bVar15 * -2 + 1];
     local_35c.x = 0.0;
     local_35c.z = 0.0;
-    local_35c.y = this_ptr->mass * (float)_DAT_005f12f0;
+    local_35c.y = this_ptr->mass * (float)32;
     core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
               (&this_ptr->rotation_matrix,&local_35c,&local_278);
     local_314.x = local_278.x;
@@ -683,7 +682,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
   *(float *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0xb0) =
        local_334[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
   local_14 = (1.0 - this_ptr->scrape_points[aiStack_650[1]].raytrace_intersection) *
-             (float)_DAT_005f1318;
+             (float)-1.01;
   local_28 = aiStack_650[2];
   local_2f0 = (float)local_548._168_4_ * local_14;
   local_2ec = (float)local_548._172_4_ * local_14;
@@ -709,7 +708,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
   local_334[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x16] =
        afStack_298[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
   local_70 = (1.0 - this_ptr->scrape_points[aiStack_650[2]].raytrace_intersection) *
-             (float)_DAT_005f1318;
+             (float)-1.01;
   local_230 = local_2e4 * local_70;
   local_22c = local_2e0 * local_70;
   local_228 = local_2dc * local_70;
@@ -757,7 +756,7 @@ LAB_005b349b:
   }
   local_90 = (local_180 * (this_ptr->linear_velocity_local).z +
              local_188 * (this_ptr->linear_velocity_local).x +
-             local_184 * (this_ptr->linear_velocity_local).y) * _DAT_005f1308;
+             local_184 * (this_ptr->linear_velocity_local).y) * 2.0f;
   local_548._156_4_ = local_188 * local_90;
   local_548._160_4_ = local_184 * local_90;
   local_548._164_4_ = local_180 * local_90;
@@ -777,9 +776,9 @@ LAB_005b349b:
     local_100 = (float)local_548._76_4_;
     local_fc = (float)local_548._80_4_;
   }
-  local_104 = local_104 * _DAT_005f130c * _DAT_005f1320;
-  local_100 = local_100 * _DAT_005f130c * _DAT_005f1320;
-  local_fc = local_fc * _DAT_005f130c * _DAT_005f1320;
+  local_104 = local_104 * -1.0f * 0.25f;
+  local_100 = local_100 * -1.0f * 0.25f;
+  local_fc = local_fc * -1.0f * 0.25f;
   fVar1 = 1.0 / delta_time;
   local_548._276_4_ = local_104 - (this_ptr->linear_velocity_local).x;
   local_548._280_4_ = local_100 - (this_ptr->linear_velocity_local).y;
@@ -824,10 +823,10 @@ LAB_005b349b:
   local_61c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x19] =
        *(float *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x5c);
   pCVar5 = &this_ptr->angular_momentum;
-  local_548._180_4_ = local_5c0 * _DAT_005f1314;
-  local_548._184_4_ = local_5bc * _DAT_005f1314;
-  local_548._188_4_ = local_5b8 * _DAT_005f1314;
-  local_548._48_4_ = local_5c0 * _DAT_005f1314;
+  local_548._180_4_ = local_5c0 * 0.1f;
+  local_548._184_4_ = local_5bc * 0.1f;
+  local_548._188_4_ = local_5b8 * 0.1f;
+  local_548._48_4_ = local_5c0 * 0.1f;
   *(uint *)(local_548 + (uint)bVar15 * -8 + 0x34) =
        *(uint *)(local_548 + (uint)bVar15 * -8 + 0xb8);
   *(uint *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x38) =
@@ -845,10 +844,10 @@ LAB_005b349b:
   local_178[(uint)bVar15 * -2 + 0xf] = *(float *)(local_548 + (uint)bVar15 * -8 + 0x100);
   local_178[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x10] =
        *(float *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x104);
-  local_548._360_4_ = local_140 * _DAT_005f1314;
-  local_548._364_4_ = local_13c * _DAT_005f1314;
-  local_548._368_4_ = local_138 * _DAT_005f1314;
-  local_218 = local_140 * _DAT_005f1314;
+  local_548._360_4_ = local_140 * 0.1f;
+  local_548._364_4_ = local_13c * 0.1f;
+  local_548._368_4_ = local_138 * 0.1f;
+  local_218 = local_140 * 0.1f;
   local_268[(uint)bVar15 * -2 + 0x15] = *(float *)(local_548 + (uint)bVar15 * -8 + 0x16c);
   local_268[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x16] =
        *(float *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x170);
@@ -868,10 +867,10 @@ LAB_005b349b:
        puVar12[(uint)bVar15 * -2 + 1];
   local_194.x = 0.0;
   local_194.z = 0.0;
-  local_194.y = this_ptr->mass * (float)_DAT_005f12f0;
+  local_194.y = this_ptr->mass * (float)32;
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
             (&this_ptr->rotation_matrix,&local_194,&local_374);
-  fVar1 = _DAT_005f1310;
+  fVar1 = 0.5f;
   local_170.x = local_374.x;
   local_178[(uint)bVar15 * -2 + 3] = *(float *)((int)&local_374 + (uint)bVar15 * -8 + 4);
   local_178[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4] =
@@ -881,10 +880,10 @@ LAB_005b349b:
     local_194.y = local_170.y;
     local_194.z = local_170.z;
   }
-  local_368 = local_194.x * _DAT_005f1310;
-  local_364[0] = local_194.y * _DAT_005f1310;
-  local_364[1] = local_194.z * _DAT_005f1310;
-  local_134 = local_194.x * _DAT_005f1310;
+  local_368 = local_194.x * 0.5f;
+  local_364[0] = local_194.y * 0.5f;
+  local_364[1] = local_194.z * 0.5f;
+  local_134 = local_194.x * 0.5f;
   local_178[(uint)bVar15 * -2 + 0x12] = local_364[(uint)bVar15 * -2];
   local_178[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x13] =
        local_364[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
@@ -937,7 +936,7 @@ LAB_005b3bd3:
         *(float *)(local_548 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x98) =
              local_61c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x16];
         local_6c = (1.0 - this_ptr->scrape_points[iVar13].raytrace_intersection) *
-                   (float)_DAT_005f1318;
+                   (float)-1.01;
         local_128 = (float)local_548._144_4_ * local_6c;
         local_124 = (float)local_548._148_4_ * local_6c;
         local_120 = (float)local_548._152_4_ * local_6c;
@@ -969,7 +968,7 @@ LAB_005b3bd3:
          *(float *)((int)&local_1ac + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
     local_74 = (local_300 * (this_ptr->linear_velocity_local).z +
                local_308 * (this_ptr->linear_velocity_local).x +
-               local_304 * (this_ptr->linear_velocity_local).y) * _DAT_005f1308;
+               local_304 * (this_ptr->linear_velocity_local).y) * 2.0f;
     local_548._264_4_ = local_308 * local_74;
     local_548._268_4_ = local_304 * local_74;
     local_548._272_4_ = local_300 * local_74;
@@ -990,9 +989,9 @@ LAB_005b3bd3:
       local_1b4 = local_118;
       local_1b0 = local_114;
     }
-    local_1b8 = local_1b8 * _DAT_005f130c * _DAT_005f1324;
-    local_1b4 = local_1b4 * _DAT_005f130c * _DAT_005f1324;
-    local_1b0 = local_1b0 * _DAT_005f130c * _DAT_005f1324;
+    local_1b8 = local_1b8 * -1.0f * 0.2f;
+    local_1b4 = local_1b4 * -1.0f * 0.2f;
+    local_1b0 = local_1b0 * -1.0f * 0.2f;
     fVar1 = 1.0 / delta_time;
     local_268[2] = local_1b8 - (this_ptr->linear_velocity_local).x;
     local_268[3] = local_1b4 - (this_ptr->linear_velocity_local).y;
@@ -1033,7 +1032,7 @@ LAB_005b3bd3:
     if (0 < this_ptr->scrape_point_count) {
       do {
         if (ABS(pCVar8->scrape_points[0].transformed_position.y - this_ptr[1].position.x) <
-            (float)_DAT_005f1338) {
+            (float)0.10000000000000001) {
           iVar13 = iVar13 + 1;
         }
         iVar7 = iVar7 + 1;

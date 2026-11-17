@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_004387f0(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output,int num_height_rows,int transparency_color)
 
 {
@@ -24,14 +22,14 @@ void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_004387f0(void *bitma
   
   if (bitmap_data != (void *)0x0) {
     if (num_height_rows < (end_x - bitmap_height) + 1) {
-      _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
-      _DAT_01d1d404 = 0x3d7;
+      g_CHAR_PTR_01d1d400 = "..\\cockpit\\ckptutil.c";
+      g_INT_01d1d404 = 0x3d7;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid height array size.");
     }
     ptr = operator_new_array(bitmap_height * 4);
     if (ptr == (int *)0x0) {
-      _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
-      _DAT_01d1d404 = 0x3dd;
+      g_CHAR_PTR_01d1d400 = "..\\cockpit\\ckptutil.c";
+      g_INT_01d1d404 = 0x3dd;
       core_main_c_displayErrorAndQuit_FUN_005030e0("No room for scroll bitmap height table.");
     }
     iVar5 = 0;

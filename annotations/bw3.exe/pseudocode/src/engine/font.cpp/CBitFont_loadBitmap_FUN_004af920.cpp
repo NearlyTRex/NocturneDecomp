@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
 
 {
@@ -25,8 +23,8 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
   CInStreamFile local_3c;
   
   if (3 < this_ptr->bitmap_count) {
-    _DAT_01d71de0 = "..\\engine\\font.cpp";
-    _DAT_01d71de4 = 0xfa;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
+    g_INT_01d71de4 = 0xfa;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Too many bitmaps");
   }
   pacVar6 = this_ptr->bitmap_files + this_ptr->bitmap_count;
@@ -43,31 +41,31 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
   strupr(this_ptr->bitmap_files[this_ptr->bitmap_count]);
   size = width * height;
   this_ptr->bitmap_widths[this_ptr->bitmap_count] = width;
-  iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005c1de8,filename);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0("art",filename);
   if (iVar2 < (int)size) {
     _sprintf(local_468,"Invalid font file size (%s).");
-    _DAT_01d71de0 = "..\\engine\\font.cpp";
-    _DAT_01d71de4 = 0x10f;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
+    g_INT_01d71de4 = 0x10f;
     core_main_c_displayErrorAndQuit_FUN_004e4330(local_468);
   }
   pvVar3 = operator_new_array(size);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
   if (this_ptr->bitmap_data[this_ptr->bitmap_count] == (void *)0x0) {
     _sprintf(local_468,"Unable to allocate memory for font bitmap (%s).");
-    _DAT_01d71de4 = 0x117;
-    _DAT_01d71de0 = "..\\engine\\font.cpp";
+    g_INT_01d71de4 = 0x117;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
     core_main_c_displayErrorAndQuit_FUN_004e4330(local_468);
   }
   cockpit_ckptutil_c_readBitmapFile_FUN_00438ef0
             (filename,this_ptr->bitmap_data[this_ptr->bitmap_count],size);
   engine_dosio_cpp_splitPath_FUN_00465e50(filename,(char *)0x0,local_23c,local_13c,(char *)0x0);
-  engine_dosio_cpp_makePath_FUN_00465e80(local_33c,(char *)0x0,local_23c,local_13c,&DAT_005c1e5f);
+  engine_dosio_cpp_makePath_FUN_00465e80(local_33c,(char *)0x0,local_23c,local_13c,"act");
   support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
-                    (&local_3c,&DAT_005c1e63,local_33c,1);
+                    (&local_3c,"art",local_33c,1);
   if (iVar2 == 0) {
-    _DAT_01d71de0 = "..\\engine\\font.cpp";
-    _DAT_01d71de4 = 0x128;
+    g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
+    g_INT_01d71de4 = 0x128;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CBitFont::addBitmap - File not found : %s");
   }
   else {

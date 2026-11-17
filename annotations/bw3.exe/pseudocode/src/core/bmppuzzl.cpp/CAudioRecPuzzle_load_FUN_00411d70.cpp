@@ -36,7 +36,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle
     this_ptr->click_handled = 0;
     this_ptr->reel_angle = 0.0;
     this_ptr->solved = 0;
-    DAT_007dffb8 = 0xffffffff;
+    g_INT_007dffb8 = -1;
     return;
   }
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&this_ptr->reel_model);
@@ -64,11 +64,16 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle
             (this_ptr,3,"playstop",0x2d,0x4c,2,0x128,0x8a,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,4,"playforward",0x2d,0x4c,2,0x128,0x8a,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,5,0x5b6661,0x16,0x20,3,0x171,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,6,0x5b6668,0x16,0x20,3,0x195,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,7,0x5b666f,0x16,0x20,3,0x1bd,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,8,0x5b6676,0x16,0x20,3,0x1e3,0x12e,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,9,0x5b667d,0x16,0x20,3,0x20a,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,5,"pitch1",0x16,0x20,3,0x171,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,6,"pitch2",0x16,0x20,3,0x195,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,7,"pitch3",0x16,0x20,3,0x1bd,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,8,"pitch4",0x16,0x20,3,0x1e3,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,9,"pitch5",0x16,0x20,3,0x20a,0x12e,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,10,"lighton",0x14,0x15,0,0x135,0x62,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
@@ -104,10 +109,10 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x1a,"knobArrow5",0x27,0x27,2,0x111,0x1a3,0);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                    (0x01C6E360,"AudioPuzzleTelOsMah");
+                    (g_CEventList_PTR_005fba60,"AudioPuzzleTelOsMah");
   if (iVar1 == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (0x01C6E360,"AudioPuzzleMary");
+                      (g_CEventList_PTR_005fba60,"AudioPuzzleMary");
     if (iVar1 != 0) {
       this_ptr->solution[1] = 1;
       this_ptr->solution[2] = 4;

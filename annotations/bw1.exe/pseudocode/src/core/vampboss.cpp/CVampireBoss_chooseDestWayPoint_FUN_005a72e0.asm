@@ -15,9 +15,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_vampboss_cpp_005f8f2e
 ;   TerminatedCString s_CVampireBoss_chooseDestW_005f8f43
-;   undefined4 DAT_01d06ab4
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_01d06ab4
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_005a7305
     JZ 0x005a7395                       ; 005a730c
         ;   XREF to: 005a7395 (CONDITIONAL_JUMP)  ; LAB_005a7395
-    MOV EAX,[0x01d06ab4]                ; 005a7312 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 005a7312 | g_INT_01d06ab4
         ;   Label: LAB_005a7312
     MOV EDX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 005a7317
     MOV EAX,dword ptr [ESI + 0xbf3e8]   ; 005a731e
@@ -100,8 +100,8 @@ section .text
     MOV EAX,0x5f8f2e                    ; 005a7396 | = "..\\core\\vampboss.cpp"
     MOV EDX,0x428                       ; 005a739b
     PUSH 0x5f8f43                       ; 005a73a0 | = "CVampireBoss::chooseDestWayPoint - wa..."
-    MOV [0x01d1d400],EAX                ; 005a73a5 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 005a73aa | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 005a73a5 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 005a73aa | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a73b0
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 005a73b5

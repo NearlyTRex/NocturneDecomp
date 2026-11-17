@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ae40(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -26,7 +24,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ae40(CD
       pSVar4 = poly;
       do {
         iVar1 = pSVar4->vertices[0].vertex_index;
-        *(int *)(&DAT_01ba5c84 + iVar2) = iVar1;
+        *(int *)((int)g_INT_ARRAY_01ba5c84 + iVar2) = iVar1;
         iVar2 = iVar2 + 4;
         uStack_14 = uStack_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;
@@ -35,19 +33,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ae40(CD
     }
     if (((uStack_14 & 0x80000000) == 0) || ((uStack_14 & 0x1f) == 0)) {
       if (this_ptr->shadow_pass_active == 0) {
-        if (DAT_006141c0 == 0x20) {
-          _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+        if (g_INT_006141c0 == 0x20) {
+          g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
         }
         else {
-          _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+          g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
         }
-        _DAT_01c38b58 = 0;
-        _DAT_01c38b54 = 0x327;
+        g_INT_01c38b58 = 0;
+        g_BIT_INTEGER32_01c38b54.dword = 0x327;
         if ((this_ptr->skip_uv_extraction == 0) && (iVar3 = 0, 0 < (poly->base).base.count)) {
           iVar2 = 0;
           pSVar4 = poly;
           do {
-            iVar1 = *(int *)(&DAT_01ba5c84 + iVar2);
+            iVar1 = *(int *)((int)g_INT_ARRAY_01ba5c84 + iVar2);
             this_ptr->vertex_buffer_ptr[iVar1].u = pSVar4->vertices[0].texture_u;
             this_ptr->vertex_buffer_ptr[iVar1].v = pSVar4->vertices[0].texture_v;
             pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;
@@ -57,12 +55,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ae40(CD
         }
       }
       else {
-        _DAT_01c38b54 = 0;
-        _DAT_01c38b58 = 0;
-        _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
+        g_BIT_INTEGER32_01c38b54.dword = 0;
+        g_INT_01c38b58 = 0;
+        g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
-                (this_ptr,(poly->base).base.count,(int *)&DAT_01ba5c84);
+                (this_ptr,(poly->base).base.count,g_INT_ARRAY_01ba5c84);
     }
   }
   return;

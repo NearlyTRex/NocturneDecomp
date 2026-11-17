@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl support_codec_cpp_CInStreamPipe_seek_FUN_00435120(CInStreamPipe *this_ptr,int offset,int origin)
 
 {
-  _DAT_01d046a0 = "..\\support\\codec.cpp";
-  _DAT_01d046a4 = 0x823;
+  g_CHAR_PTR_01d046a0 = "..\\support\\codec.cpp";
+  g_INT_01d046a4 = 0x823;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CInStreamPipe::seek - not allowed");
   return 0;
 }

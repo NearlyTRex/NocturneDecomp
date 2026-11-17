@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01cd0c64
+;   undefined4 g_CHero_PTR_ARRAY_01cd0c60[1]
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0
@@ -37,7 +37,7 @@ section .text
     MOV EAX,[0x00622c18]                ; 004d177f | g_CDemonSetPtr
         ;   Label: LAB_004d177f
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004d1784
-    MOV [0x01cd0c64],EAX                ; 004d178a | DAT_01cd0c64
+    MOV [0x01cd0c64],EAX                ; 004d178a | g_CHero_PTR_ARRAY_01cd0c60[1]
     MOV dword ptr [ECX + 0x25c],EDX     ; 004d178f
     JZ 0x004d1799                       ; 004d1795
         ;   XREF to: 004d1799 (CONDITIONAL_JUMP)  ; LAB_004d1799
@@ -45,7 +45,7 @@ section .text
     RET                                 ; 004d1798
     PUSH EDI                            ; 004d1799
         ;   Label: LAB_004d1799
-    MOV EDI,dword ptr [0x01cd0c64]      ; 004d179a | DAT_01cd0c64
+    MOV EDI,dword ptr [0x01cd0c64]      ; 004d179a | g_CHero_PTR_ARRAY_01cd0c60[1]
     PUSH EDI                            ; 004d17a0
     MOV EBP,dword ptr [0x00622c18]      ; 004d17a1 | g_CDemonSetPtr
     PUSH EBP                            ; 004d17a7

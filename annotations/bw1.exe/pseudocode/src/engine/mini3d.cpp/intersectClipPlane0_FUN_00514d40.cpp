@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_intersectClipPlane0_FUN_00514d40(float *from,float *to,float *out)
 
 {
@@ -19,7 +17,7 @@ void __cdecl engine_mini3d_cpp_intersectClipPlane0_FUN_00514d40(float *from,floa
   fVar2 = (to[2] - from[2]) * fVar1 + from[2];
   out[2] = fVar2;
   *out = fVar2;
-  iVar3 = _DAT_01d25f14;
+  iVar3 = g_INT_01d25f14;
   out[1] = (to[1] - from[1]) * fVar1 + from[1];
   if (iVar3 != 0) {
     return;

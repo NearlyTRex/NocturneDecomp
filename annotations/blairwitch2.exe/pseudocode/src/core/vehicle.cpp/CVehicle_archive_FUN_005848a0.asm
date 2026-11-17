@@ -7,7 +7,7 @@
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005edd35+2
+;   TerminatedCString s_modelName_005edd37
 ;   TerminatedCString s_tireCount_005edd41
 ;   TerminatedCString s_static_bpos_005edd4b
 ;   TerminatedCString s_radius_005edd57
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005848af
     MOV EAX,dword ptr [ESP + 0x14]      ; 005848b2
-    PUSH 0x5edd37                       ; 005848b6 | s_modelName_005edd35+2
+    PUSH 0x5edd37                       ; 005848b6 | = "modelName"
     ADD EAX,0x2b4                       ; 005848bb
     PUSH EAX                            ; 005848c0
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 005848c1

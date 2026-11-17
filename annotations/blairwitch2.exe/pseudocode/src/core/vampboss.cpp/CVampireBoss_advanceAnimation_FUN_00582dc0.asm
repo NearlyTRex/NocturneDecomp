@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_wing_wav_f_005eda9c
 ;   TerminatedCString s_wing_wav_1_5_1_2_005edaaa
-;   undefined4 DAT_005edac4
+;   double g_DOUBLE_005edac4 = 2.5
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
@@ -86,7 +86,7 @@ section .text
     JNC 0x00582e86                      ; 00582e51
         ;   XREF to: 00582e86 (CONDITIONAL_JUMP)  ; LAB_00582e86
     FLD double ptr [ESP]                ; 00582e53
-    FMUL double ptr [0x005edac4]        ; 00582e56 | DAT_005edac4
+    FMUL double ptr [0x005edac4]        ; 00582e56 | g_DOUBLE_005edac4
     SUB ESP,0x8                         ; 00582e5c
     FSTP double ptr [ESP]               ; 00582e5f
     PUSH 0x5eda9c                       ; 00582e62 | = "wing?.wav @%f"

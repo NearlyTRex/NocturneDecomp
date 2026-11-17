@@ -36,9 +36,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f24f9
 ;   TerminatedCString s_Write_me_005f250e
-;   undefined4 DAT_005f2519
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   double g_DOUBLE_005f2519 = 0.00100000000000000
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -59,7 +59,7 @@ section .text
     PUSH EBP                            ; 00568863
     SUB ESP,0xf8                        ; 00568864
     FLD float ptr [ESP + 0x118]         ; 0056886a
-    FCOMP double ptr [0x005f2519]       ; 00568871 | DAT_005f2519
+    FCOMP double ptr [0x005f2519]       ; 00568871 | g_DOUBLE_005f2519
     FNSTSW AX                           ; 00568877
     SAHF                                ; 00568879
     JA 0x00568887                       ; 0056887a
@@ -361,8 +361,8 @@ section .text
         ;   Label: LAB_00568cbb
     MOV EAX,0xaf4                       ; 00568cc0
     PUSH 0x5f250e                       ; 00568cc5 | = "Write me!"
-    MOV dword ptr [0x01d1d400],EBP      ; 00568cca | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00568cd0 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 00568cca | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00568cd0 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00568cd5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00568cda

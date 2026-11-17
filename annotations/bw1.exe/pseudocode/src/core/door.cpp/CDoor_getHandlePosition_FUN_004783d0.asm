@@ -17,7 +17,7 @@
 ;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046cbd7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ff018
+;   float g_FLOAT_005ff018 = 0.00390625
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -67,13 +67,13 @@ section .text
     MOV EBX,ESP                         ; 00478440
     ADD EAX,EDI                         ; 00478442
     FILD dword ptr [EAX]                ; 00478444
-    FMUL float ptr [0x005ff018]         ; 00478446 | DAT_005ff018
+    FMUL float ptr [0x005ff018]         ; 00478446 | g_FLOAT_005ff018
     FSTP float ptr [EBX]                ; 0047844c
     FILD dword ptr [EAX + 0x4]          ; 0047844e
-    FMUL float ptr [0x005ff018]         ; 00478451 | DAT_005ff018
+    FMUL float ptr [0x005ff018]         ; 00478451 | g_FLOAT_005ff018
     FSTP float ptr [EBX + 0x4]          ; 00478457
     FILD dword ptr [EAX + 0x8]          ; 0047845a
-    FMUL float ptr [0x005ff018]         ; 0047845d | DAT_005ff018
+    FMUL float ptr [0x005ff018]         ; 0047845d | g_FLOAT_005ff018
     FSTP float ptr [EBX + 0x8]          ; 00478463
     MOV EAX,ESP                         ; 00478466
     PUSH EAX                            ; 00478468

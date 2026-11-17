@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004f6d70(CDemonMission *this_ptr)
 
 {
@@ -21,7 +19,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004f6d70(CDemonM
   }
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(this_ptr);
   this_ptr_00 = g_CDemonSetPtr;
-  _DAT_01d5ba00 = 0;
+  g_INT_01d5ba00 = 0;
   this_ptr->prepared_set_index = -1;
   core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_0053ef40(this_ptr_00);
   this_ptr->delete_queue_count = 0;

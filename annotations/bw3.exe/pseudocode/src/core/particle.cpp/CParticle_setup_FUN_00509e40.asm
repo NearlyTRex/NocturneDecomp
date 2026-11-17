@@ -19,7 +19,7 @@
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004ccac0 at 004ccae6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cb659
+;   float g_FLOAT_005cb659 = 10
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -98,7 +98,7 @@ section .text
     FXCH                                ; 00509ef0
     FSIN                                ; 00509ef2
     FXCH ST2                            ; 00509ef4
-    FLD float ptr [0x005cb659]          ; 00509ef6 | DAT_005cb659
+    FLD float ptr [0x005cb659]          ; 00509ef6 | g_FLOAT_005cb659
     FXCH                                ; 00509efc
     FMUL ST1                            ; 00509efe
     FXCH ST2                            ; 00509f00

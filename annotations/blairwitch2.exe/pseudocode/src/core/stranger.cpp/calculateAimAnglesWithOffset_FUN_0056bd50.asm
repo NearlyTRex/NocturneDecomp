@@ -8,7 +8,7 @@
 ; float *          Stack[0x8]:4   offset_pair
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ebc5d
+;   double g_DOUBLE_005ebc5d = 0.0100000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
@@ -51,7 +51,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 0056bd92
     FST double ptr [ESP + 0x18]         ; 0056bd96
     MOV dword ptr [ESP + 0x20],EBX      ; 0056bd9a
-    FCOMP double ptr [0x005ebc5d]       ; 0056bd9e | DAT_005ebc5d
+    FCOMP double ptr [0x005ebc5d]       ; 0056bd9e | g_DOUBLE_005ebc5d
     FNSTSW AX                           ; 0056bda4
     SAHF                                ; 0056bda6
     JBE 0x0056be4e                      ; 0056bda7
@@ -69,7 +69,7 @@ section .text
     MOV EBX,dword ptr [EBX + 0x4]       ; 0056bdc8
     FLD double ptr [ESP]                ; 0056bdcb
     MOV dword ptr [ESP + 0x48],EBX      ; 0056bdce
-    FCOMP double ptr [0x005ebc5d]       ; 0056bdd2 | DAT_005ebc5d
+    FCOMP double ptr [0x005ebc5d]       ; 0056bdd2 | g_DOUBLE_005ebc5d
     FNSTSW AX                           ; 0056bdd8
     SAHF                                ; 0056bdda
     JC 0x0056be4e                       ; 0056bddb

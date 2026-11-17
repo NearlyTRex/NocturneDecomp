@@ -10,14 +10,14 @@
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004cec40 at 004cec4f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d4a93c
-;   undefined4 DAT_01d4a940
+;   int g_INT_01d4a93c
+;   int g_INT_01d4a940
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV ECX,dword ptr [0x01d4a93c]      ; 004cebf0 | DAT_01d4a93c
+    MOV ECX,dword ptr [0x01d4a93c]      ; 004cebf0 | g_INT_01d4a93c
         ;   Label: core_gore.cpp_CGore_allocateBloodPool_FUN_004cebf0
     LEA EAX,[ECX*0x4 + 0x0]             ; 004cebf6
     SUB EAX,ECX                         ; 004cebfd
@@ -30,18 +30,18 @@ section .text
     JL 0x004cec14                       ; 004cec10
         ;   XREF to: 004cec14 (CONDITIONAL_JUMP)  ; LAB_004cec14
     XOR ECX,ECX                         ; 004cec12
-    MOV EDX,dword ptr [0x01d4a940]      ; 004cec14 | DAT_01d4a940
+    MOV EDX,dword ptr [0x01d4a940]      ; 004cec14 | g_INT_01d4a940
         ;   Label: LAB_004cec14
     CMP EDX,0x20                        ; 004cec1a
     JL 0x004cec26                       ; 004cec1d
         ;   XREF to: 004cec26 (CONDITIONAL_JUMP)  ; LAB_004cec26
-    MOV dword ptr [0x01d4a93c],ECX      ; 004cec1f | DAT_01d4a93c
+    MOV dword ptr [0x01d4a93c],ECX      ; 004cec1f | g_INT_01d4a93c
     RET                                 ; 004cec25
     PUSH EBX                            ; 004cec26
         ;   Label: LAB_004cec26
     LEA EBX,[EDX + 0x1]                 ; 004cec27
-    MOV dword ptr [0x01d4a940],EBX      ; 004cec2a | DAT_01d4a940
+    MOV dword ptr [0x01d4a940],EBX      ; 004cec2a | g_INT_01d4a940
     POP EBX                             ; 004cec30
-    MOV dword ptr [0x01d4a93c],ECX      ; 004cec31 | DAT_01d4a93c
+    MOV dword ptr [0x01d4a93c],ECX      ; 004cec31 | g_INT_01d4a93c
     RET                                 ; 004cec37
 

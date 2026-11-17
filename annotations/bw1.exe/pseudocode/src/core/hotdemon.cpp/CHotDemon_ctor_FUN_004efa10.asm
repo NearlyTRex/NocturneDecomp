@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hotdemon_dfm_005e5054
-;   undefined4 DAT_00602300
-;   undefined4 DAT_00602304
+;   float g_FLOAT_00602300 = 50
+;   float g_FLOAT_00602304 = 100
 ;   CEnemy_full_vtable g_CHotDemonVTable
 ;
 ; Called Functions:
@@ -38,8 +38,8 @@ section .text
     MOV dword ptr [EAX + -0x4],0x602314 ; 004efa2b | g_CHotDemonVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004efa32
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x00602300]          ; 004efa37 | DAT_00602300
-    FLD float ptr [0x00602304]          ; 004efa3d | DAT_00602304
+    FLD float ptr [0x00602300]          ; 004efa37 | g_FLOAT_00602300
+    FLD float ptr [0x00602304]          ; 004efa3d | g_FLOAT_00602304
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 004efa43
     ADD ESP,0x8                         ; 004efa4d
     MOV dword ptr [EBX + 0x2ff0],0x3f666666 ; 004efa50

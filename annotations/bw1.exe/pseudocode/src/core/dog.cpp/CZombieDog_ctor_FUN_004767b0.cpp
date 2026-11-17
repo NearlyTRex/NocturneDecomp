@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_004767b0(CZombieDog *this_ptr)
 
 {
@@ -19,9 +17,9 @@ CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_004767b0(CZombieDog *this_
   (pCVar3->base).base.base.vtable._ub = &g_CZombieDogVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar3->base).base.model,"blackdog.dfm");
-  fVar1 = _DAT_005fee8c;
+  fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_height = 0.75;
-  fVar2 = _DAT_005fee90;
+  fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
   pCVar3->sfx_handle = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

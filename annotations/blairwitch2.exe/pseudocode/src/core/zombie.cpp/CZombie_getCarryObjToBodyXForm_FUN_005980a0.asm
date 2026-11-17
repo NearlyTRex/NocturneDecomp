@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ef1c2
-;   undefined4 DAT_005ef1c6
-;   undefined4 DAT_005ef1ca
-;   undefined4 DAT_0265370c
+;   TerminatedCString s_new_005ef1c2
+;   float g_FLOAT_005ef1c6 = 0.5
+;   double g_DOUBLE_005ef1ca = 0.400000000000000
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d340
@@ -51,7 +51,7 @@ section .text
     PUSH 0x3                            ; 005980ec
         ;   Label: LAB_005980ec
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005980ee
-    PUSH 0x5ef1c2                       ; 005980f4 | DAT_005ef1c2
+    PUSH 0x5ef1c2                       ; 005980f4 | = "new"
     ADD EAX,0x2514                      ; 005980f9
     PUSH EAX                            ; 005980fe
     CALL crt_string.c__strnicmp_FUN_005b8da0 ; 005980ff
@@ -69,7 +69,7 @@ section .text
     LEA EAX,[EBP + -0x22]               ; 00598127
         ;   Label: LAB_00598127
     PUSH EAX                            ; 0059812a
-    PUSH 0x265370c                      ; 0059812b | DAT_0265370c
+    PUSH 0x265370c                      ; 0059812b | g_CVector3f_0265370c
     LEA EAX,[EBP + 0xfffffee2]          ; 00598130
     PUSH EAX                            ; 00598136
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 00598137
@@ -112,7 +112,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005981b7
     CALL core_actor.cpp_CVector3f_ctor_FUN_0040d340 ; 005981b8
         ;   XREF to: 0040d340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040d340(CVector3f * this_ptr)
-    FLD float ptr [0x005ef1c6]          ; 005981bd | DAT_005ef1c6
+    FLD float ptr [0x005ef1c6]          ; 005981bd | g_FLOAT_005ef1c6
     FLD float ptr [EBP + 0xffffff72]    ; 005981c3
     FMUL ST1                            ; 005981c9
     FLD float ptr [EBP + 0xffffff76]    ; 005981cb
@@ -133,7 +133,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005981fd
     MOVSD ES:EDI,ESI                    ; 005981fe
     MOVSD ES:EDI,ESI                    ; 005981ff
-    FADD double ptr [0x005ef1ca]        ; 00598200 | DAT_005ef1ca
+    FADD double ptr [0x005ef1ca]        ; 00598200 | g_DOUBLE_005ef1ca
     LEA EDI,[EBP + 0x56]                ; 00598206
     LEA ESI,[EBP + -0x6a]               ; 00598209
     FSTP float ptr [EBP + -0x62]        ; 0059820c
@@ -310,7 +310,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059840c
     MOVSD ES:EDI,ESI                    ; 0059840d
     MOVSD ES:EDI,ESI                    ; 0059840e
-    FLD float ptr [0x005ef1c6]          ; 0059840f | DAT_005ef1c6
+    FLD float ptr [0x005ef1c6]          ; 0059840f | g_FLOAT_005ef1c6
     FLD float ptr [EBP + 0xe]           ; 00598415
     FMUL ST1                            ; 00598418
     FLD float ptr [EBP + 0x12]          ; 0059841a

@@ -11,7 +11,7 @@
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0043b460 at 0043b47f
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_camview.cpp_CCameraView_dtor_FUN_00422220_005f4024 = 00422220
+;   CCameraView_vtable g_CCameraView_vtable_005f4024
 ;   WatcomTypeInfo g_CCameraViewTypeInfo
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     TEST AL,0x4                         ; 00422229
     JNZ 0x00422241                      ; 0042222b
         ;   XREF to: 00422241 (CONDITIONAL_JUMP)  ; LAB_00422241
-    MOV dword ptr [EBX + 0x3c],0x5f4024 ; 0042222d | PTR_core_camview.cpp_CCameraView_dtor_FUN_00422220_005f4024
+    MOV dword ptr [EBX + 0x3c],0x5f4024 ; 0042222d | g_CCameraView_vtable_005f4024
     TEST AL,0x2                         ; 00422234
     JNZ 0x0042225c                      ; 00422236
         ;   XREF to: 0042225c (CONDITIONAL_JUMP)  ; LAB_0042225c

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr)
 
 {
@@ -69,7 +67,7 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr)
   bVar17 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (DAT_005f2afc,&this_ptr->curtain_texture);
+            (g_CDemonRenderer_PTR_005f2afc,&this_ptr->curtain_texture);
   while( true ) {
     fVar3 = 1.0 / this_ptr->patch_size;
     fVar1 = (this_ptr->curtain_size).y;
@@ -85,7 +83,7 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr)
     (this_ptr->mesh).grid_rows = (int)puVar15;
     this_ptr->vertex_count = (int)pSStack_44 * (int)puStack_78;
     if ((int)pSStack_44 * (int)puStack_78 < 0x3e9) break;
-    this_ptr->patch_size = this_ptr->patch_size * (float)_DAT_005b9a49;
+    this_ptr->patch_size = this_ptr->patch_size * (float)2;
     puStack_20 = puVar15;
   }
   puStack_20 = puVar9;
@@ -105,7 +103,7 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr)
     pSStack_80 = this_ptr->vertices;
     do {
       puVar9 = (byte *)0x0;
-      fStack_30 = -(this_ptr->curtain_size).x * (float)_DAT_005b9a51;
+      fStack_30 = -(this_ptr->curtain_size).x * (float)0.5;
       if (0 < iStack_3c) {
         puStack_20 = puStack_78 + iStack_28 * 0x74;
         fStack_2c = (float)(iStack_28 - iStack_3c);
@@ -150,12 +148,12 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr)
             *(int *)(iStack_18 + 0x44) = *(int *)(iStack_18 + 0x44) + 1;
           }
           fVar1 = (this_ptr->curtain_size).x;
-          fVar4 = (float)_DAT_005b9a59;
-          fVar3 = (float)_DAT_005b9a61;
+          fVar4 = (float)252;
+          fVar3 = (float)65536;
           fStack_9c = 6.28181e-39;
           dVar18 = round
-                             ((double)(((fVar1 * (float)_DAT_005b9a51 + *(float *)(iStack_18 + 0xc))
-                                       / fVar1) * fVar4 * fVar3));
+                             ((double)(((fVar1 * (float)0.5 +
+                                        *(float *)(iStack_18 + 0xc)) / fVar1) * fVar4 * fVar3));
           iStack_18 = (int)ROUND(dVar18);
           *(int *)(iVar7 + 0x18) = iStack_18 + 0x20000;
           puVar9 = puVar9 + 1;

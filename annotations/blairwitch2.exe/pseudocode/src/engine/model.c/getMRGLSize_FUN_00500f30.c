@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_model_c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended *header)
 
 {
@@ -68,8 +66,8 @@ int __cdecl engine_model_c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended *header)
     return 0x14;
   default:
     _sprintf(local_100,"MRGLSize: Bad type : %d");
-    _DAT_01d046a0 = "..\\engine\\model.c";
-    _DAT_01d046a4 = 0x25c;
+    g_CHAR_PTR_01d046a0 = "..\\engine\\model.c";
+    g_INT_01d046a4 = 0x25c;
     core_main_c_displayErrorAndQuit_FUN_004e4500(local_100);
     return 4;
   case 0x16:

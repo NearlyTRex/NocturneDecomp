@@ -50,8 +50,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419130(CBodyPart
       iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_2c,unaff_EDI);
       if ((iVar2 != 0) &&
          ((this_ptr->transparent_geometry_flag == 0 ||
-          (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-          iVar1 != 0)))) {
+          (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                             (g_CDemonRenderer_PTR_00612560), iVar1 != 0)))) {
         core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00418e50(this_ptr,-1);
       }
       engine_drender_cpp_pop_FUN_004839a0();

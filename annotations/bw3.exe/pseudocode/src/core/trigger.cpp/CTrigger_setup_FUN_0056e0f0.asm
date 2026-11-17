@@ -10,7 +10,7 @@
 ;   core_waypoint.cpp_CWayPoint_setup_FUN_005792b0 at 005792ba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
@@ -26,7 +26,7 @@ section .text
     PUSH EBX                            ; 0056e0f5
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 0056e0f6
         ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408890(CDemonActor * this_ptr)
-    MOV EAX,[0x00600530]                ; 0056e0fb | DAT_00600530
+    MOV EAX,[0x00600530]                ; 0056e0fb | g_CDemonMission_PTR_00600530
     MOV dword ptr [EBX + 0xf8],0x0      ; 0056e100
     MOV EAX,dword ptr [EAX + 0x1008]    ; 0056e10a
     MOV dword ptr [EBX + 0x100],0x1     ; 0056e110

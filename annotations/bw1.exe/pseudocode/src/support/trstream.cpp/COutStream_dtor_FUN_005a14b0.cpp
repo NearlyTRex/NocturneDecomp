@@ -9,6 +9,6 @@
 COutStream * __cdecl support_trstream_cpp_COutStream_dtor_FUN_005a14b0(COutStream *this_ptr,uint flags)
 
 {
-  this_ptr->vtable = &PTR_support_trstream_cpp_COutStream_dtor_FUN_005a14b0_00607404;
+  this_ptr->vtable = g_ARRAY_PTR_00607404;
   return this_ptr;
 }

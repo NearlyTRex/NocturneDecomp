@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4850
-;   undefined4 DAT_005e4854
-;   undefined4 DAT_02ce7210
+;   float g_FLOAT_005e4850 = 4
+;   float g_FLOAT_005e4854 = 20
+;   float g_FLOAT_02ce7210
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005a30d7
@@ -17,13 +17,13 @@
 
 section .text
 
-    FLD float ptr [0x005e4854]          ; 00550980 | DAT_005e4854
+    FLD float ptr [0x005e4854]          ; 00550980 | g_FLOAT_005e4854
         ;   Label: sound_sndmain.cpp_staticInit_FUN_00550980
-    FDIV float ptr [0x005e4850]         ; 00550986 | DAT_005e4850
+    FDIV float ptr [0x005e4850]         ; 00550986 | g_FLOAT_005e4850
     PUSH 0x5e4860                       ; 0055098c
     PUSH 0x40                           ; 00550991
     PUSH 0x2ce721c                      ; 00550993
-    FSTP float ptr [0x02ce7210]         ; 00550998 | DAT_02ce7210
+    FSTP float ptr [0x02ce7210]         ; 00550998 | g_FLOAT_02ce7210
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0055099e
         ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005509a3

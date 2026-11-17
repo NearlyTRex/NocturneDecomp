@@ -10,11 +10,11 @@
 ; int              Stack[0x10]:4   y_offset
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
-;   undefined4 DAT_01c4f020
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f010
+;   int g_INT_01c4f014
+;   int g_INT_01c4f020
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004011a0
@@ -32,7 +32,7 @@ section .text
     MOV EDX,0xfb                        ; 00438fa7
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00438fac
     XOR EDI,EDI                         ; 00438fb0
-    MOV dword ptr [0x01c4f020],EDX      ; 00438fb2 | DAT_01c4f020
+    MOV dword ptr [0x01c4f020],EDX      ; 00438fb2 | g_INT_01c4f020
     TEST ECX,ECX                        ; 00438fb8
     JLE 0x0043907d                      ; 00438fba
         ;   XREF to: 0043907d (CONDITIONAL_JUMP)  ; LAB_0043907d
@@ -41,13 +41,13 @@ section .text
         ;   Label: LAB_00438fc4
     MOV EBP,dword ptr [ESP + 0x20]      ; 00438fc7
     MOVSX ECX,AX                        ; 00438fcb
-    MOV EAX,[0x01c4f008]                ; 00438fce | DAT_01c4f008
+    MOV EAX,[0x01c4f008]                ; 00438fce | g_INT_01c4f008
     ADD ECX,EBP                         ; 00438fd3
     CMP ECX,EAX                         ; 00438fd5
     JGE 0x00438fdb                      ; 00438fd7
         ;   XREF to: 00438fdb (CONDITIONAL_JUMP)  ; LAB_00438fdb
     MOV ECX,EAX                         ; 00438fd9
-    MOV EDX,dword ptr [0x01c4f010]      ; 00438fdb | DAT_01c4f010
+    MOV EDX,dword ptr [0x01c4f010]      ; 00438fdb | g_INT_01c4f010
         ;   Label: LAB_00438fdb
     CMP ECX,EDX                         ; 00438fe1
     JL 0x00438fe7                       ; 00438fe3
@@ -57,13 +57,13 @@ section .text
         ;   Label: LAB_00438fe7
     MOV ESI,dword ptr [ESP + 0x24]      ; 00438feb
     MOVSX EDX,AX                        ; 00438fef
-    MOV EBP,dword ptr [0x01c4f00c]      ; 00438ff2 | DAT_01c4f00c
+    MOV EBP,dword ptr [0x01c4f00c]      ; 00438ff2 | g_INT_01c4f00c
     ADD EDX,ESI                         ; 00438ff8
     CMP EDX,EBP                         ; 00438ffa
     JGE 0x00439000                      ; 00438ffc
         ;   XREF to: 00439000 (CONDITIONAL_JUMP)  ; LAB_00439000
     MOV EDX,EBP                         ; 00438ffe
-    MOV EAX,[0x01c4f014]                ; 00439000 | DAT_01c4f014
+    MOV EAX,[0x01c4f014]                ; 00439000 | g_INT_01c4f014
         ;   Label: LAB_00439000
     CMP EDX,EAX                         ; 00439005
     JL 0x0043900b                       ; 00439007
@@ -73,13 +73,13 @@ section .text
         ;   Label: LAB_0043900b
     MOV EBP,dword ptr [ESP + 0x20]      ; 0043900f
     MOVSX ESI,AX                        ; 00439013
-    MOV EAX,[0x01c4f008]                ; 00439016 | DAT_01c4f008
+    MOV EAX,[0x01c4f008]                ; 00439016 | g_INT_01c4f008
     ADD ESI,EBP                         ; 0043901b
     CMP ESI,EAX                         ; 0043901d
     JGE 0x00439023                      ; 0043901f
         ;   XREF to: 00439023 (CONDITIONAL_JUMP)  ; LAB_00439023
     MOV ESI,EAX                         ; 00439021
-    MOV EBP,dword ptr [0x01c4f010]      ; 00439023 | DAT_01c4f010
+    MOV EBP,dword ptr [0x01c4f010]      ; 00439023 | g_INT_01c4f010
         ;   Label: LAB_00439023
     CMP ESI,EBP                         ; 00439029
     JL 0x0043902f                       ; 0043902b
@@ -94,12 +94,12 @@ section .text
     MOV EBP,dword ptr [ESP + 0x24]      ; 00439040
     SAR EAX,0x10                        ; 00439044
     ADD EAX,EBP                         ; 00439047
-    MOV EBP,dword ptr [0x01c4f00c]      ; 00439049 | DAT_01c4f00c
+    MOV EBP,dword ptr [0x01c4f00c]      ; 00439049 | g_INT_01c4f00c
     CMP EAX,EBP                         ; 0043904f
     JGE 0x00439055                      ; 00439051
         ;   XREF to: 00439055 (CONDITIONAL_JUMP)  ; LAB_00439055
     MOV EAX,EBP                         ; 00439053
-    MOV EBP,dword ptr [0x01c4f014]      ; 00439055 | DAT_01c4f014
+    MOV EBP,dword ptr [0x01c4f014]      ; 00439055 | g_INT_01c4f014
         ;   Label: LAB_00439055
     CMP EAX,EBP                         ; 0043905b
     JL 0x00439061                       ; 0043905d

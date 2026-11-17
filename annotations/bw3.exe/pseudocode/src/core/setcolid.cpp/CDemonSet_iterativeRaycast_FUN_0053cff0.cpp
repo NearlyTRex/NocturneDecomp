@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0053cff0(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
 
 {
@@ -69,13 +67,13 @@ float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0053cff0(CDemonSe
     fVar4 = local_a4.z;
     fVar3 = local_a4.y;
     fVar2 = local_a4.x;
-    fVar1 = local_30 * _DAT_005d0ace;
+    fVar1 = local_30 * 0.1f;
     local_20 = 0.1;
     local_5c = local_18;
     local_58[0] = local_2c;
-    local_94[2] = local_38 * _DAT_005d0ace;
+    local_94[2] = local_38 * 0.1f;
     local_58[1] = (float)local_28;
-    local_94[3] = local_34 * _DAT_005d0ace;
+    local_94[3] = local_34 * 0.1f;
     local_44 = local_18;
     local_58[(uint)bVar6 * -2 + 6] = local_58[(uint)bVar6 * -2];
     local_58[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
@@ -104,7 +102,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0053cff0(CDemonSe
          local_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
     local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0(this_ptr_00,ray_origin,ray_target);
     if ((0.0 <= local_14) && (local_14 <= 1.0)) {
-      return local_14 * _DAT_005d0ace + local_1c;
+      return local_14 * 0.1f + local_1c;
     }
     if (&local_a4 != &local_68) {
       local_a4.x = local_68.x;
@@ -115,7 +113,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0053cff0(CDemonSe
     iVar5 = iVar5 + 1;
     local_80 = fVar1;
     local_78 = fVar1;
-    local_7c = local_20 * _DAT_005d0ad2;
+    local_7c = local_20 * -32.0f;
     *(float *)((int)&stack0xffffff48 + (uint)bVar6 * -8) = local_94[(uint)bVar6 * -2 + 6];
     *(float *)((int)&stack0xffffff4c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
          local_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];

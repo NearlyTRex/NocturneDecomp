@@ -21,9 +21,9 @@
 ;   TerminatedCString s_f_f_f_f_005cab0b
 ;   TerminatedCString s_s_g_g_g_g_005cab17
 ;   TerminatedCString s_Quaternion_00609548
-;   undefined1 DAT_00609590
-;   undefined4 DAT_007bc034
-;   undefined4 DAT_007bc038
+;   char[104] g_CHAR_ARRAY_00609590
+;   _FILE* g_FILE_PTR_007bc034
+;   int g_INT_007bc038
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040b400
@@ -39,7 +39,7 @@ section .text
         ;   Label: core_actor.cpp_archiveQuaternion_FUN_0040b690
     PUSH EDI                            ; 0040b691
     MOV EAX,dword ptr [ESP + 0xc]       ; 0040b692
-    CMP dword ptr [0x007bc038],0x1      ; 0040b696 | DAT_007bc038
+    CMP dword ptr [0x007bc038],0x1      ; 0040b696 | g_INT_007bc038
     JNZ 0x0040b6f0                      ; 0040b69d
         ;   XREF to: 0040b6f0 (CONDITIONAL_JUMP)  ; LAB_0040b6f0
     LEA EDX,[EAX + 0xc]                 ; 0040b69f
@@ -50,7 +50,7 @@ section .text
     PUSH EDX                            ; 0040b6aa
     PUSH EAX                            ; 0040b6ab
     PUSH 0x5cab0b                       ; 0040b6ac | = "%f,%f,%f,%f"
-    MOV EBX,dword ptr [0x007bc034]      ; 0040b6b1 | DAT_007bc034
+    MOV EBX,dword ptr [0x007bc034]      ; 0040b6b1 | g_FILE_PTR_007bc034
     PUSH EBX                            ; 0040b6b7
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b6b8
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -92,9 +92,9 @@ section .text
     SUB ESP,0x8                         ; 0040b70b
     FLD float ptr [EAX]                 ; 0040b70e
     FSTP double ptr [ESP]               ; 0040b710
-    PUSH 0x609590                       ; 0040b713 | DAT_00609590
+    PUSH 0x609590                       ; 0040b713 | g_CHAR_ARRAY_00609590
     PUSH 0x5cab17                       ; 0040b718 | = "%s%g,%g,%g,%g"
-    MOV ECX,dword ptr [0x007bc034]      ; 0040b71d | DAT_007bc034
+    MOV ECX,dword ptr [0x007bc034]      ; 0040b71d | g_FILE_PTR_007bc034
     PUSH ECX                            ; 0040b723
     CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0040b724
         ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504ee0(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
@@ -26,7 +24,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504
   
   bVar3 = 0;
   iStack_14 = panel_index;
-  fVar1 = ((float)panel_index + this_ptr->panels[panel_index].anim_progress) * _DAT_0060343c;
+  fVar1 = ((float)panel_index + this_ptr->panels[panel_index].anim_progress) * 0.5235988f;
   this_ptr->panels[panel_index].rotation.x = 0.0;
   this_ptr_00 = &this_ptr->panels[panel_index].rotation_matrix;
   this_ptr->panels[panel_index].rotation.z = 0.0;

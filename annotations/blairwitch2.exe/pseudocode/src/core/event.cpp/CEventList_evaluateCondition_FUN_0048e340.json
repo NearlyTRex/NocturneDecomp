@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 63,
+    "complexity_score": 22,
     "cross_reference_count": 57,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 67
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -391,14 +388,14 @@
   "globals": [
     {
       "addr": "005d4390",
-      "name": "DAT_005d4390",
-      "type": "undefined4",
+      "name": "s_none_005d4390",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d4395",
-      "name": "DAT_005d4395",
-      "type": "undefined4",
+      "name": "s_s_005d4395",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -415,14 +412,14 @@
     },
     {
       "addr": "01c3dd0c",
-      "name": "DAT_01c3dd0c",
-      "type": "undefined4",
+      "name": "g_INT_01c3dd0c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3dd10",
-      "name": "DAT_01c3dd10",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01c3dd10",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -620,30 +617,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005d4390",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(condition_expression,&DAT_005d4390);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005d4395",
-      "severity": "mild",
-      "text": "engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d4395);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

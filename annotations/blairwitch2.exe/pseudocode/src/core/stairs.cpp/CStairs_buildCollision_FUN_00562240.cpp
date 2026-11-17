@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00562240(CStairs *this_ptr)
 
 {
@@ -26,8 +24,8 @@ void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00562240(CStairs *this_p
   float fStack_14;
   int iStack_10;
   
-  fStack_18 = this_ptr->width * (float)_DAT_005eb170;
-  fStack_14 = -this_ptr->width * (float)_DAT_005eb170;
+  fStack_18 = this_ptr->width * (float)0.5;
+  fStack_14 = -this_ptr->width * (float)0.5;
   iVar1 = 0;
   if (0 < this_ptr->stair_count) {
     this_ptr_01 = this_ptr->collision_triangles;

@@ -15,9 +15,9 @@
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5c85
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0c74
-;   undefined4 DAT_005c0c7c
-;   undefined4 DAT_005c0c84
+;   double g_DOUBLE_005c0c74 = 0.5
+;   double g_DOUBLE_005c0c7c = 65535
+;   double g_DOUBLE_005c0c84 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -45,7 +45,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004a6de6
     MOV EAX,ESP                         ; 004a6de7
     FLD float ptr [EBX + 0x15c]         ; 004a6de9
-    FMUL double ptr [0x005c0c74]        ; 004a6def | DAT_005c0c74
+    FMUL double ptr [0x005c0c74]        ; 004a6def | g_DOUBLE_005c0c74
     PUSH EAX                            ; 004a6df5
     LEA ESI,[EBX + 0x168]               ; 004a6df6
     FLD float ptr [ESP + 0x8]           ; 004a6dfc
@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004a6e2c
     FLD float ptr [ESP + 0x1c]          ; 004a6e30
     FADD float ptr [EBX + 0x280]        ; 004a6e34
-    FMUL double ptr [0x005c0c7c]        ; 004a6e3a | DAT_005c0c7c
+    FMUL double ptr [0x005c0c7c]        ; 004a6e3a | g_DOUBLE_005c0c7c
     ADD ESP,0x8                         ; 004a6e40
     CALL crt_math.c_round_FUN_005a3120  ; 004a6e43
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
@@ -87,7 +87,7 @@ section .text
     MOV byte ptr [ESI + 0x1c],AL        ; 004a6e6d
     FLD float ptr [EBX + 0x15c]         ; 004a6e70
     FMUL float ptr [EBX + 0x1ac]        ; 004a6e76
-    FMUL double ptr [0x005c0c84]        ; 004a6e7c | DAT_005c0c84
+    FMUL double ptr [0x005c0c84]        ; 004a6e7c | g_DOUBLE_005c0c84
     SUB ESP,0x4                         ; 004a6e82
     FSTP float ptr [ESP]                ; 004a6e85
     PUSH ESI                            ; 004a6e88

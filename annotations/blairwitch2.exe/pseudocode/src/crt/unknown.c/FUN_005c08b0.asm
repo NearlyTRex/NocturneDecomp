@@ -8,9 +8,9 @@
 ;   crt_unknown.c_FUN_005befc0 at 005befcb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f480
+;   uint g_UINT_0061f480 = 0x14
 ;   undefined4 DAT_0061f4d8
-;   undefined4 DAT_0061f4dc
+;   int g_INT_0061f4dc = 0x0
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH EBX                            ; 005c08b0
         ;   Label: crt_unknown.c_FUN_005c08b0
     MOV ECX,dword ptr [0x0061f4d8]      ; 005c08b1 | DAT_0061f4d8
-    MOV EAX,[0x0061f4dc]                ; 005c08b7 | DAT_0061f4dc
-    CMP EAX,dword ptr [0x0061f480]      ; 005c08bc | DAT_0061f480
+    MOV EAX,[0x0061f4dc]                ; 005c08b7 | g_INT_0061f4dc
+    CMP EAX,dword ptr [0x0061f480]      ; 005c08bc | g_UINT_0061f480
     JNC 0x005c08c8                      ; 005c08c2
         ;   XREF to: 005c08c8 (CONDITIONAL_JUMP)  ; LAB_005c08c8
     XOR EAX,EAX                         ; 005c08c4
@@ -30,7 +30,7 @@ section .text
         ;   Label: LAB_005c08c8
     JLE 0x005c08f0                      ; 005c08ca
         ;   XREF to: 005c08f0 (CONDITIONAL_JUMP)  ; LAB_005c08f0
-    MOV EBX,dword ptr [0x0061f4dc]      ; 005c08cc | DAT_0061f4dc
+    MOV EBX,dword ptr [0x0061f4dc]      ; 005c08cc | g_INT_0061f4dc
     MOV EDX,ECX                         ; 005c08d2
     XOR EAX,EAX                         ; 005c08d4
     SHL EBX,0x2                         ; 005c08d6

@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_004839f0(CDemonRenderer *this_ptr,float intensity)
 
 {
   double dVar1;
   
-  dVar1 = round((double)(intensity * (float)_DAT_005db3b4));
+  dVar1 = round((double)(intensity * (float)65536));
   engine_light_cpp_setAmbientLightLevel_FUN_004ffa50((int)ROUND(dVar1));
   return;
 }

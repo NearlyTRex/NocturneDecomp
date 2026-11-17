@@ -25,7 +25,7 @@ ushort FUN_005cd438(void)
          *(uint *)(iVar2 + 0x626ae8 + (uint)bVar4 * -8);
     iVar2 = iVar3;
   } while (iVar3 != 0x68);
-  DAT_00626a4c = &UNK_005cd18c;
-  DAT_00626a50 = processSignal;
+  g_PTR_00626a4c = &UNK_005cd18c;
+  g_PTR_00626a50 = processSignal;
   return in_DS;
 }

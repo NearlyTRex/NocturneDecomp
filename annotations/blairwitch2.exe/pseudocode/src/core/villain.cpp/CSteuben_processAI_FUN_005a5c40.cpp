@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_villain_cpp_CSteuben_processAI_FUN_005a5c40(CSteuben *this_ptr,float delta_time)
 
@@ -37,9 +36,9 @@ void __cdecl core_villain_cpp_CSteuben_processAI_FUN_005a5c40(CSteuben *this_ptr
       (*(this_ptr->base).base.base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
     }
   }
-  fStack_30 = (this_ptr->base).base.move_velocity.x * _DAT_005f0622;
-  fStack_2c = (this_ptr->base).base.move_velocity.y * _DAT_005f0622;
-  fStack_28 = (this_ptr->base).base.move_velocity.z * _DAT_005f0622;
+  fStack_30 = (this_ptr->base).base.move_velocity.x * -1000.0f;
+  fStack_2c = (this_ptr->base).base.move_velocity.y * -1000.0f;
+  fStack_28 = (this_ptr->base).base.move_velocity.z * -1000.0f;
   fStack_3c = fStack_30;
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8) =
        *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8);

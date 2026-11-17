@@ -18,8 +18,8 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c35e74
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_UINT_ARRAY_01c35e70[1]
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     SHR EAX,0x10                        ; 0046e945
         ;   Label: LAB_0046e945
     SHR ECX,0x10                        ; 0046e948
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046e94b | DAT_01c2a38c
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046e94b | g_ARRAY_PTR_01c2a38c
     SUB ECX,EAX                         ; 0046e952
     JLE 0x0046e981                      ; 0046e954
         ;   XREF to: 0046e981 (CONDITIONAL_JUMP)  ; LAB_0046e981
@@ -46,7 +46,7 @@ section .text
     ADD EBX,EAX                         ; 0046e958
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046e95a
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046e95d
-    IMUL dword ptr [ECX*0x4 + 0x1c35e74] ; 0046e960 | DAT_01c35e74
+    IMUL dword ptr [ECX*0x4 + 0x1c35e74] ; 0046e960 | g_UINT_ARRAY_01c35e70[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046e967
     MOV EAX,ESI                         ; 0046e96a
         ;   Label: LAB_0046e96a

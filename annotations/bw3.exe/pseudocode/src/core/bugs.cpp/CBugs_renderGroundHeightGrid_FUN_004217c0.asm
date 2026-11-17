@@ -7,10 +7,10 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7769
-;   undefined4 DAT_005dcbb0
-;   undefined4 DAT_005dcbc8
-;   undefined4 DAT_005f2afc
+;   double g_DOUBLE_005b7769 = 0.25
+;   float g_FLOAT_005dcbb0 = 256
+;   float g_FLOAT_005dcbc8 = 0.25
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550
@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_004217d9
     MOV dword ptr [ESP + 0x30],EAX      ; 004217dd
     FILD dword ptr [ESP + 0x30]         ; 004217e1
-    FMUL float ptr [0x005dcbc8]         ; 004217e5 | DAT_005dcbc8
+    FMUL float ptr [0x005dcbc8]         ; 004217e5 | g_FLOAT_005dcbc8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004217eb
     MOV ECX,dword ptr [ESP + 0x20]      ; 004217ee
     FADD float ptr [EAX + 0x1be88]      ; 004217f2
@@ -49,24 +49,24 @@ section .text
     MOV dword ptr [ESP + 0x30],ESI      ; 00421808
         ;   Label: LAB_00421808
     FILD dword ptr [ESP + 0x30]         ; 0042180c
-    FMUL float ptr [0x005dcbc8]         ; 00421810 | DAT_005dcbc8
+    FMUL float ptr [0x005dcbc8]         ; 00421810 | g_FLOAT_005dcbc8
     MOV EAX,dword ptr [EBP + 0x14]      ; 00421816
     LEA EBX,[ESP + 0xc]                 ; 00421819
     FADD float ptr [EAX + 0x1be8c]      ; 0042181d
-    MOV EDX,dword ptr [0x005f2afc]      ; 00421823 | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 00421823 | g_CDemonRenderer_PTR_005f2afc
     FSTP float ptr [ESP + 0x8]          ; 00421829
     FLD float ptr [EDI + 0x135dc]       ; 0042182d
-    FADD double ptr [0x005b7769]        ; 00421833 | DAT_005b7769
+    FADD double ptr [0x005b7769]        ; 00421833 | g_DOUBLE_005b7769
     MOV EAX,ESP                         ; 00421839
     FSTP float ptr [ESP + 0x4]          ; 0042183b
     FLD float ptr [EAX]                 ; 0042183f
-    FMUL float ptr [0x005dcbb0]         ; 00421841 | DAT_005dcbb0
+    FMUL float ptr [0x005dcbb0]         ; 00421841 | g_FLOAT_005dcbb0
     FISTP dword ptr [EBX]               ; 00421847
     FLD float ptr [EAX + 0x4]           ; 00421849
-    FMUL float ptr [0x005dcbb0]         ; 0042184c | DAT_005dcbb0
+    FMUL float ptr [0x005dcbb0]         ; 0042184c | g_FLOAT_005dcbb0
     FISTP dword ptr [EBX + 0x4]         ; 00421852
     FLD float ptr [EAX + 0x8]           ; 00421855
-    FMUL float ptr [0x005dcbb0]         ; 00421858 | DAT_005dcbb0
+    FMUL float ptr [0x005dcbb0]         ; 00421858 | g_FLOAT_005dcbb0
     FISTP dword ptr [EBX + 0x8]         ; 0042185e
     LEA EAX,[ESP + 0xc]                 ; 00421861
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00421865
@@ -95,7 +95,7 @@ section .text
     JL 0x004217d9                       ; 004218a8
         ;   XREF to: 004217d9 (CONDITIONAL_JUMP)  ; LAB_004217d9
     PUSH -0x1                           ; 004218ae
-    MOV ESI,dword ptr [0x005f2afc]      ; 004218b0 | DAT_005f2afc
+    MOV ESI,dword ptr [0x005f2afc]      ; 004218b0 | g_CDemonRenderer_PTR_005f2afc
     PUSH ESI                            ; 004218b6
     MOV EDI,0xc                         ; 004218b7
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0 ; 004218bc
@@ -113,7 +113,7 @@ section .text
     PUSH EBX                            ; 004218de
     ADD EAX,ESI                         ; 004218df
     PUSH EAX                            ; 004218e1
-    MOV EDX,dword ptr [0x005f2afc]      ; 004218e2 | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 004218e2 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 004218e8
     MOV dword ptr [ESP + 0x24],EAX      ; 004218e9
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550 ; 004218ed
@@ -122,7 +122,7 @@ section .text
     PUSH EDI                            ; 004218f5
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004218f6
     PUSH ECX                            ; 004218fa
-    MOV EAX,[0x005f2afc]                ; 004218fb | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 004218fb | g_CDemonRenderer_PTR_005f2afc
     INC EBX                             ; 00421900
     PUSH EAX                            ; 00421901
     INC ESI                             ; 00421902

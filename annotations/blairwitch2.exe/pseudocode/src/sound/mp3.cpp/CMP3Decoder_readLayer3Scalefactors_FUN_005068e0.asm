@@ -38,14 +38,14 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0050a280 at 0050aa40
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00619298
-;   undefined4 DAT_0061929c
-;   undefined4 DAT_006192a0
-;   undefined4 DAT_006192ac
-;   undefined4 DAT_006192b0
-;   undefined4 DAT_006192b4
-;   undefined4 DAT_006192b8
-;   undefined4 DAT_006192f8
+;   int[5] g_INT_ARRAY_00619298
+;   undefined4 g_INT_ARRAY_00619298[1]
+;   undefined4 g_INT_ARRAY_00619298[2]
+;   int[3] g_INT_ARRAY_006192ac
+;   undefined4 g_INT_ARRAY_006192ac[1]
+;   undefined4 g_INT_ARRAY_006192ac[2]
+;   int[2] g_INT_ARRAY_006192b8
+;   int[16] g_INT_ARRAY_006192f8
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30
@@ -109,11 +109,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 00506978
     MOV ECX,dword ptr [ESP + 0x4]       ; 0050697c
     MOV dword ptr [ESP + 0x38],EAX      ; 00506980
-    MOV EBX,dword ptr [EBX + 0x619298]  ; 00506984 | DAT_00619298 | DAT_0061929c
+    MOV EBX,dword ptr [EBX + 0x619298]  ; 00506984 | g_INT_ARRAY_00619298 | g_INT_ARRAY_00619298[1]
     CMP EDX,0x2                         ; 0050698a
     SETGE byte ptr [ESP + 0x54]         ; 0050698d
     LEA EBP,[EBX*0x4 + 0x0]             ; 00506992
-    MOV EDX,dword ptr [EAX + 0x61929c]  ; 00506999 | DAT_0061929c | DAT_006192a0
+    MOV EDX,dword ptr [EAX + 0x61929c]  ; 00506999 | g_INT_ARRAY_00619298[1] | g_INT_ARRAY_00619298[2]
     ADD EBP,ECX                         ; 0050699f
     CMP EBX,EDX                         ; 005069a1
     JGE 0x005069d9                      ; 005069a3
@@ -124,7 +124,7 @@ section .text
     MOV EDX,EAX                         ; 005069ab
     SHL EDX,0x6                         ; 005069ad
     MOV EAX,dword ptr [ESI + 0xc]       ; 005069b0
-    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x6192b8] ; 005069b3 | DAT_006192b8
+    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x6192b8] ; 005069b3 | g_INT_ARRAY_006192b8
     PUSH ECX                            ; 005069ba
     PUSH EDI                            ; 005069bb
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30 ; 005069bc
@@ -133,7 +133,7 @@ section .text
     MOV dword ptr [EBP],EAX             ; 005069c4
     MOV EAX,dword ptr [ESP + 0x38]      ; 005069c7
     INC EBX                             ; 005069cb
-    MOV EDX,dword ptr [EAX + 0x61929c]  ; 005069cc | DAT_0061929c
+    MOV EDX,dword ptr [EAX + 0x61929c]  ; 005069cc | g_INT_ARRAY_00619298[1]
     ADD EBP,0x4                         ; 005069d2
     CMP EBX,EDX                         ; 005069d5
     JL 0x005069a5                       ; 005069d7
@@ -180,7 +180,7 @@ section .text
     ADD EBP,0x20                        ; 00506a43
     MOV EAX,dword ptr [ESI + 0xc]       ; 00506a46
         ;   Label: LAB_00506a46
-    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506a49 | DAT_006192b8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506a49 | g_INT_ARRAY_006192b8
     PUSH EDX                            ; 00506a50
     PUSH EDI                            ; 00506a51
     ADD EBX,0x4                         ; 00506a52
@@ -214,7 +214,7 @@ section .text
     ADD EBX,EAX                         ; 00506aa7
     MOV EAX,dword ptr [ESI + 0xc]       ; 00506aa9
         ;   Label: LAB_00506aa9
-    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506aac | DAT_006192b8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506aac | g_INT_ARRAY_006192b8
     PUSH EDX                            ; 00506ab3
     PUSH EDI                            ; 00506ab4
     ADD EBX,0x34                        ; 00506ab5
@@ -257,7 +257,7 @@ section .text
     ADD EBX,ECX                         ; 00506b24
     MOV EAX,dword ptr [ESI + 0xc]       ; 00506b26
         ;   Label: LAB_00506b26
-    MOV EDX,dword ptr [EAX*0x4 + 0x6192f8] ; 00506b29 | DAT_006192f8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6192f8] ; 00506b29 | g_INT_ARRAY_006192f8
     PUSH EDX                            ; 00506b30
     PUSH EDI                            ; 00506b31
     ADD EBX,0x34                        ; 00506b32
@@ -305,8 +305,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 00506b9c
         ;   Label: LAB_00506b9c
     MOV EBP,dword ptr [ESP + 0x34]      ; 00506ba0
-    MOV EAX,dword ptr [EAX + 0x6192ac]  ; 00506ba4 | DAT_006192ac | DAT_006192b0
-    MOV ECX,dword ptr [EBP + 0x6192b0]  ; 00506baa | DAT_006192b0 | DAT_006192b4
+    MOV EAX,dword ptr [EAX + 0x6192ac]  ; 00506ba4 | g_INT_ARRAY_006192ac | g_INT_ARRAY_006192ac[1]
+    MOV ECX,dword ptr [EBP + 0x6192b0]  ; 00506baa | g_INT_ARRAY_006192ac[1] | g_INT_ARRAY_006192ac[2]
     MOV dword ptr [ESP + 0x4c],EAX      ; 00506bb0
     MOV EAX,dword ptr [ESP + 0x20]      ; 00506bb4
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00506bb8
@@ -332,7 +332,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x50]      ; 00506bf6
     SHL EAX,0x2                         ; 00506bfa
     ADD EAX,EDX                         ; 00506bfd
-    MOV ECX,dword ptr [EAX + 0x6192b8]  ; 00506bff | DAT_006192b8
+    MOV ECX,dword ptr [EAX + 0x6192b8]  ; 00506bff | g_INT_ARRAY_006192b8
     PUSH ECX                            ; 00506c05
     PUSH EDI                            ; 00506c06
     ADD EBX,0x34                        ; 00506c07
@@ -350,7 +350,7 @@ section .text
     ADD EBX,0x4                         ; 00506c29
     ADD EBP,0x4                         ; 00506c2c
     INC EAX                             ; 00506c2f
-    MOV ECX,dword ptr [EDX + 0x6192b0]  ; 00506c30 | DAT_006192b0
+    MOV ECX,dword ptr [EDX + 0x6192b0]  ; 00506c30 | g_INT_ARRAY_006192ac[1]
     MOV dword ptr [ESP + 0x44],EBX      ; 00506c36
     MOV dword ptr [ESP + 0x48],EBP      ; 00506c3a
     MOV dword ptr [ESP + 0x4c],EAX      ; 00506c3e

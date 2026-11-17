@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_CInStreamPipeVTable = 00434f40
+;   TerminatedCString g_CInStreamPipeVTable
 ;   WatcomTypeInfo g_CInStreamPipeTypeInfo
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     JNZ 0x00434f75                      ; 00434f4a
         ;   XREF to: 00434f75 (CONDITIONAL_JUMP)  ; LAB_00434f75
     PUSH EBX                            ; 00434f4c
-    MOV dword ptr [EBX],0x5f4344        ; 00434f4d | g_CInStreamPipeVTable
+    MOV dword ptr [EBX],0x5f4344        ; 00434f4d | = "@OC"
     CALL support_codec.cpp_CInStreamPipe_close_FUN_004351e0 ; 00434f53
         ;   XREF to: 004351e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CInStreamPipe_close_FUN_004351e0(CInStreamPipe * this_ptr)
     ADD ESP,0x4                         ; 00434f58

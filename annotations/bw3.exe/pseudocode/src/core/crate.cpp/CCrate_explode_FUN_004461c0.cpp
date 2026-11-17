@@ -23,7 +23,7 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_004461c0(CCrate *this_ptr)
   if ((this_ptr->base).lifecycle_state != ACTOR_CREATED) {
     return;
   }
-  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"?%s exploding!\n" + 1);
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s exploding!\n");
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
   pCVar1 = &(this_ptr->base).location;
   puVar3 = auStack_38;
@@ -37,8 +37,9 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_004461c0(CCrate *this_ptr)
     fStack_8 = (pCVar1->position).x;
   }
   core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0
-            (0x01C73654,(CVector3f *)&fStack_8,32.0,1500.0,4.0,0);
-  core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,&this_ptr->base,1);
+            (g_CFireEffect_PTR_005fc5a0,(CVector3f *)&fStack_8,32.0,1500.0,4.0,0);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+            (g_CDemonMission_PTR_00600530,&this_ptr->base,1);
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   return;
 }

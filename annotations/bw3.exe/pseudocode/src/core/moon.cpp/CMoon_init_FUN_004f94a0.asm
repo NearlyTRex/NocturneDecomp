@@ -13,10 +13,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_bwp3_menu_scroll_005c9245
 ;   TerminatedCString s_bwp3_hand_005c9256
-;   undefined4 s_BWP3_mainmenu_005c9283+2
+;   TerminatedCString s_BWP3_mainmenu_005c9285
 ;   TerminatedCString s_blair_00000_005c9293
 ;   TerminatedCString s_blair_00001_005c929f
-;   void* PTR_s_BWP3_mainmenu_005c9283+2_006006f8 = 005c9285
+;   void* PTR_s_BWP3_mainmenu_006006f8 = 005c9285
 ;   void* PTR_s_blair_00000_006006fc = 005c9293
 ;   undefined1* PTR_s_blair_00001_00600700 = 005c929f
 ;
@@ -49,8 +49,8 @@ section .text
     ADD ESP,0x10                        ; 004f94c9
     PUSH 0x1e0                          ; 004f94cc
     PUSH 0x280                          ; 004f94d1
-    MOV ECX,dword ptr [0x006006f8]      ; 004f94d6 | PTR_s_BWP3_mainmenu_005c9283+2_006006f8
-    PUSH ECX                            ; 004f94dc | s_BWP3_mainmenu_005c9283+2
+    MOV ECX,dword ptr [0x006006f8]      ; 004f94d6 | PTR_s_BWP3_mainmenu_006006f8
+    PUSH ECX                            ; 004f94dc | = "BWP3_mainmenu"
     PUSH 0x1d88614                      ; 004f94dd
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460 ; 004f94e2
         ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460(CAlphaBitmap * this_ptr, char * filename, int width, int height)

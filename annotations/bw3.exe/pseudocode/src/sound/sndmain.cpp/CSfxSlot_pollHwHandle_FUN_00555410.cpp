@@ -6,21 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_00555410(CSfxSlot *this_ptr)
 
 {
   int iVar1;
   
   if (this_ptr->hardware_buffer_handle != 0) {
-    if (_DAT_02cf3280 != (int *)0x0) {
+    if (g_CSoundDevice_PTR_02cf3280 != (CSoundDevice *)0x0) {
       if (this_ptr->sample == (CSfxSample *)0x0) {
-        _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-        _DAT_01d71de4 = 0xcfb;
+        g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+        g_INT_01d71de4 = 0xcfb;
         core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::pollHwHandle - no sample?");
       }
-      iVar1 = (**(code **)(*_DAT_02cf3280 + 0x54))(_DAT_02cf3280,this_ptr);
+      iVar1 = (*g_CSoundDevice_PTR_02cf3280->vtable->isSfxPlaying)
+                        (g_CSoundDevice_PTR_02cf3280,this_ptr);
       if (iVar1 != 0) {
         return;
       }

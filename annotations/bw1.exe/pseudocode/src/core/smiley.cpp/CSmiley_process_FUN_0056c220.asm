@@ -12,16 +12,16 @@
 ;   TerminatedCString s_s_confused_while_walking_005f29bc
 ;   TerminatedCString s_Capture_005f29e6
 ;   TerminatedCString s_Capture_005f29ee
-;   undefined4 DAT_005f29f7
-;   undefined4 DAT_00605948
+;   double g_DOUBLE_005f29f7 = 0.523598775583333
+;   float g_FLOAT_00605948 = 2.5
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02c5fce0
-;   undefined4 DAT_02c8af28
+;   undefined4 g_INT_ARRAY_02c5fcd8[2]
+;   CVector3f g_CVector3f_02c8af28
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -421,7 +421,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0056c636
     ADD ESP,0x8                         ; 0056c639
     LEA EAX,[EBP + 0xfffffe9e]          ; 0056c63c
-    MOV EDX,dword ptr [0x02c5fce0]      ; 0056c642 | DAT_02c5fce0
+    MOV EDX,dword ptr [0x02c5fce0]      ; 0056c642 | g_INT_ARRAY_02c5fcd8[2]
     PUSH EAX                            ; 0056c648
     LEA EAX,[EDX*0x4 + 0x0]             ; 0056c649
     MOV dword ptr [EBP + 0xfffffed2],EBX ; 0056c650
@@ -434,7 +434,7 @@ section .text
     LEA EDI,[EBP + -0x72]               ; 0056c66e
     PUSH EAX                            ; 0056c671
     FLD float ptr [EBP + 0x76]          ; 0056c672
-    PUSH 0x2c8af28                      ; 0056c675 | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 0056c675 | g_CVector3f_02c8af28
     FSTP float ptr [EBP + 0xfffffea2]   ; 0056c67a
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0056c680
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -527,7 +527,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0056c75f
     ADD ESP,0x8                         ; 0056c762
     LEA EAX,[EBP + 0xfffffeda]          ; 0056c765
-    MOV EDX,dword ptr [0x02c5fce0]      ; 0056c76b | DAT_02c5fce0
+    MOV EDX,dword ptr [0x02c5fce0]      ; 0056c76b | g_INT_ARRAY_02c5fcd8[2]
     PUSH EAX                            ; 0056c771
     LEA EAX,[EDX*0x4 + 0x0]             ; 0056c772
     LEA ESI,[EBP + -0x36]               ; 0056c779
@@ -542,7 +542,7 @@ section .text
     LEA EDI,[EBP + 0x36]                ; 0056c79c
     PUSH EAX                            ; 0056c79f
     FLD float ptr [EBP + 0x76]          ; 0056c7a0
-    PUSH 0x2c8af28                      ; 0056c7a3 | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 0056c7a3 | g_CVector3f_02c8af28
     FSTP float ptr [EBP + 0xfffffede]   ; 0056c7a8
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0056c7ae
         ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
@@ -639,7 +639,7 @@ section .text
         ;   XREF to: 0056c4e4 (UNCONDITIONAL_JUMP)  ; caseD_7
     PUSH 0x5f29e6                       ; 0056c8b3 | = "Capture"
         ;   Label: caseD_1
-    MOV EDI,dword ptr [0x0061b4d0]      ; 0056c8b8 | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 0056c8b8 | g_CEventList_PTR_0061b4d0
     PUSH EDI                            ; 0056c8be
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0056c8bf
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -686,7 +686,7 @@ section .text
     FMUL ST0                            ; 0056c934
     FADDP                               ; 0056c936
     FSQRT                               ; 0056c938
-    FLD float ptr [0x00605948]          ; 0056c93a | DAT_00605948
+    FLD float ptr [0x00605948]          ; 0056c93a | g_FLOAT_00605948
     FLD1                                ; 0056c940
     FADDP                               ; 0056c942
     FXCH                                ; 0056c944
@@ -737,7 +737,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 0056c9b5
     FABS                                ; 0056c9b8
     ADD ESP,0x4                         ; 0056c9ba
-    FCOMP double ptr [0x005f29f7]       ; 0056c9bd | DAT_005f29f7
+    FCOMP double ptr [0x005f29f7]       ; 0056c9bd | g_DOUBLE_005f29f7
     FNSTSW AX                           ; 0056c9c3
     SAHF                                ; 0056c9c5
     JNC 0x0056c959                      ; 0056c9c6
@@ -754,7 +754,7 @@ section .text
         ;   XREF to: 0056c959 (UNCONDITIONAL_JUMP)  ; LAB_0056c959
     PUSH 0x5f29ee                       ; 0056c9e7 | = "Capture"
         ;   Label: caseD_2
-    MOV ECX,dword ptr [0x0061b4d0]      ; 0056c9ec | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 0056c9ec | g_CEventList_PTR_0061b4d0
     PUSH ECX                            ; 0056c9f2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0056c9f3
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -790,7 +790,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x154]     ; 0056ca45
     CALL dword ptr [EDX + 0xf0]         ; 0056ca4b
     ADD ESP,0x4                         ; 0056ca51
-    MOV EAX,[0x00605948]                ; 0056ca54 | DAT_00605948
+    MOV EAX,[0x00605948]                ; 0056ca54 | g_FLOAT_00605948
         ;   Label: LAB_0056ca54
     MOV dword ptr [EBP + 0x6a],EAX      ; 0056ca59
     LEA EAX,[EBX + 0x249c]              ; 0056ca5c

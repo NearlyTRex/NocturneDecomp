@@ -13,10 +13,10 @@
 ;   engine_matrix.c_projectCachedPoint_FUN_004e5570 at 004e5586
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6b598
-;   undefined4 DAT_01c6b59c
-;   undefined4 DAT_01c6b5a0
-;   undefined4 DAT_01c6b5a4
+;   int g_INT_01c6b598
+;   int g_INT_01c6b59c
+;   int g_INT_01c6b5a0
+;   int g_INT_01c6b5a4
 ;
 ; *****************************************************************************
 
@@ -74,20 +74,20 @@ section .text
     SAR EDX,0x1f                        ; 004e55e4
     IDIV ECX                            ; 004e55e7
     MOV EBX,ECX                         ; 004e55e9
-    MOV EDX,dword ptr [0x01c6b598]      ; 004e55eb | DAT_01c6b598
+    MOV EDX,dword ptr [0x01c6b598]      ; 004e55eb | g_INT_01c6b598
     MOV dword ptr [ESI + 0xc],EAX       ; 004e55f1
     MOV EAX,EDI                         ; 004e55f4
     IMUL EDX                            ; 004e55f6
     IDIV EBX                            ; 004e55f8
-    MOV EDX,dword ptr [0x01c6b5a0]      ; 004e55fa | DAT_01c6b5a0
+    MOV EDX,dword ptr [0x01c6b5a0]      ; 004e55fa | g_INT_01c6b5a0
     MOV EBX,ECX                         ; 004e5600
     ADD EAX,EDX                         ; 004e5602
-    MOV EDX,dword ptr [0x01c6b59c]      ; 004e5604 | DAT_01c6b59c
+    MOV EDX,dword ptr [0x01c6b59c]      ; 004e5604 | g_INT_01c6b59c
     MOV dword ptr [ESI + 0x10],EAX      ; 004e560a
     MOV EAX,EBP                         ; 004e560d
     IMUL EDX                            ; 004e560f
     IDIV EBX                            ; 004e5611
-    MOV EDX,dword ptr [0x01c6b5a4]      ; 004e5613 | DAT_01c6b5a4
+    MOV EDX,dword ptr [0x01c6b5a4]      ; 004e5613 | g_INT_01c6b5a4
     ADD EAX,EDX                         ; 004e5619
     MOV dword ptr [ESI + 0x14],EAX      ; 004e561b
     POP EBX                             ; 004e561e

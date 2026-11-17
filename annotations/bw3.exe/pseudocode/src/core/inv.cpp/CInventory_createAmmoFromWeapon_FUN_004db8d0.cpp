@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0(CInventory *this_ptr,CWeapon *weapon)
 
 {
@@ -25,8 +23,8 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0(CInventor
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040de60(pCVar2);
   }
   if (this_ptr_00 == (CAmmo *)0x0) {
-    _DAT_01d71de0 = "..\\core\\inv.cpp";
-    _DAT_01d71de4 = 0x498;
+    g_CHAR_PTR_01d71de0 = "..\\core\\inv.cpp";
+    g_INT_01d71de4 = 0x498;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
   }
   this_ptr_00->ammo_count = weapon->ammo_count;

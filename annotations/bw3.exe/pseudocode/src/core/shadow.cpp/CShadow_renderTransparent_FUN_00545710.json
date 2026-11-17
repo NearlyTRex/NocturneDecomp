@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 234,
+    "complexity_score": 180,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 11,
+    "pseudocode_lines": 95,
+    "suspect_count": 6,
     "suspect_types": [
       "fast_sqrt_inline",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 271
+    "total_lines": 277
   },
   "cross_references": [],
   "function": {
@@ -103,38 +101,38 @@
   "globals": [
     {
       "addr": "005d1366",
-      "name": "DAT_005d1366",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d1366",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01d1a0a4",
-      "name": "DAT_01d1a0a4",
-      "type": "undefined4",
+      "name": "g_INT_01d1a0a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d8e40c",
-      "name": "DAT_01d8e40c",
-      "type": "undefined4",
+      "name": "g_INT_01d8e40c",
+      "type": "int",
       "value": null
     }
   ],
@@ -224,16 +222,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 14,
       "match": "afStackY_101c",
       "severity": "moderate",
       "text": "float afStackY_101c [1002];",
@@ -241,7 +231,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_ffffff9c",
       "severity": "moderate",
       "text": "int in_stack_ffffff9c;",
@@ -249,7 +239,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
+      "line": 63,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "puVar5 = (uint *)&stack0xffffff98;",
@@ -257,58 +247,26 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 69,
       "match": "in_stack_ffffff9c",
       "severity": "moderate",
       "text": "iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_02,in_stack_ffffff9c);",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "this_ptr_01 = DAT_005f2afc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 62,
+      "line": 64,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `iVar1`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `iVar1` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 45,
-      "match": "fStack_1c = (float)(((int)fStack_14 >> 1) + iVar1);",
+      "description": "Inlined fast sqrt bit-trick (bias `iVar3`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `iVar3` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 46,
+      "match": "fStack_1c = (float)(((int)fStack_14 >> 1) + iVar3);",
       "severity": "moderate",
-      "text": "fStack_1c = (float)(((int)fStack_14 >> 1) + iVar1);",
+      "text": "fStack_1c = (float)(((int)fStack_14 >> 1) + iVar3);",
       "type": "fast_sqrt_inline"
     }
   ],

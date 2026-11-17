@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005ad2c0_00607d78 = 005ad2c0
-;   undefined4 DAT_02d252b0
+;   int g_INT_02d252b0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ad2c0
@@ -23,7 +23,7 @@ section .text
 
     CALL dword ptr [0x00607d78]         ; 005ad2c4 | PTR_crt_unknown.c_FUN_005ad2c0_00607d78
         ;   Label: crt_unknown.c_FUN_005ad2c4
-    CMP byte ptr [0x02d252b0],0x0       ; 005ad2ca | DAT_02d252b0
+    CMP byte ptr [0x02d252b0],0x0       ; 005ad2ca | g_INT_02d252b0
     JNZ 0x005ad2e2                      ; 005ad2d1
         ;   XREF to: 005ad2e2 (CONDITIONAL_JUMP)  ; LAB_005ad2e2
     MOV EDX,0xff                        ; 005ad2d3

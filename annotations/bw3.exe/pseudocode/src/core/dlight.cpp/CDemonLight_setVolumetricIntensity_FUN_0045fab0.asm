@@ -18,8 +18,8 @@
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0 at 0057b771
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bb5b4
-;   undefined4 DAT_005bb5bc
+;   double g_DOUBLE_005bb5b4 = 7
+;   double g_DOUBLE_005bb5bc = 3
 ;   CDemonFilter* g_GlobalFilters = 01548c00
 ;   CDemonFilter* g_PlayerFilters = 01548c00
 ;
@@ -42,7 +42,7 @@ section .text
     PUSH EBX                            ; 0045facd
     FLD float ptr [EAX + 0x2fa8]        ; 0045face
     PUSH 0x0                            ; 0045fad4
-    FMUL double ptr [0x005bb5bc]        ; 0045fad6 | DAT_005bb5bc
+    FMUL double ptr [0x005bb5bc]        ; 0045fad6 | g_DOUBLE_005bb5bc
     PUSH 0x0                            ; 0045fadc
     CALL crt_math.c_round_FUN_005a3120  ; 0045fade
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
@@ -61,7 +61,7 @@ section .text
     FLD float ptr [EAX + 0x2fa8]        ; 0045fb03
         ;   Label: LAB_0045fb03
     PUSH 0x0                            ; 0045fb09
-    FMUL double ptr [0x005bb5b4]        ; 0045fb0b | DAT_005bb5b4
+    FMUL double ptr [0x005bb5b4]        ; 0045fb0b | g_DOUBLE_005bb5b4
     PUSH 0x0                            ; 0045fb11
     CALL crt_math.c_round_FUN_005a3120  ; 0045fb13
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)

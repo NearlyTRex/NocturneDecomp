@@ -17,7 +17,7 @@ CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *thi
   pCVar2 = core_melee_cpp_CMelee_ctor_FUN_004ea8b0(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CMeleeAxeVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (&(pCVar2->base).model,(char *)0x5ef7fb);
+            (&(pCVar2->base).model,"ax2.kfm");
   (pCVar2->base).weapon_type = WEAPON_TYPE_BARON;
   pCVar2->strength_lo = 25.0;
   pcVar3 = "axeimpactflesh0?.wav";

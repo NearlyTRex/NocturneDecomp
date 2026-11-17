@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f1d31
 ;   TerminatedCString s_Can_t_find_bone_s_in_ske_005f1d46
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -87,8 +87,8 @@ section .text
     MOV ESI,0x5f1d31                    ; 0056354a | = "..\\core\\skeleton.cpp"
     MOV EAX,0x182                       ; 0056354f
     PUSH 0x5f1d46                       ; 00563554 | = "Can't find bone %s in skeleton %s!"
-    MOV dword ptr [0x01d1d400],ESI      ; 00563559 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0056355f | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00563559 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0056355f | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563564
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00563569

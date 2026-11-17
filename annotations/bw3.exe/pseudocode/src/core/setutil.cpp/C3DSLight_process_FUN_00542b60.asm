@@ -16,10 +16,10 @@
 ;   TerminatedCString s_C3DSLight_process_NULL_C_005d0fce
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01c5fad0
+;   int g_INT_01c5fad0
 ;   undefined4 g_CGameInstance.delta_time_float
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   undefined4 g_CDemonSetInstance.camera_enabled_flag
 ;
 ; Called Functions:
@@ -77,7 +77,7 @@ section .text
     JL 0x00542bfc                       ; 00542bf0
         ;   XREF to: 00542bfc (CONDITIONAL_JUMP)  ; LAB_00542bfc
     MOV dword ptr [EBX + 0x1890],0x0    ; 00542bf2
-    MOV EAX,[0x01c5fad0]                ; 00542bfc | DAT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 00542bfc | g_INT_01c5fad0
         ;   Label: LAB_00542bfc
     MOV EDX,dword ptr [EBX + 0x17f8]    ; 00542c01
     IMUL EDX                            ; 00542c07
@@ -85,7 +85,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1800]    ; 00542c0d
     MOV EDX,dword ptr [EBX + 0x17fc]    ; 00542c13
     ADD ECX,EAX                         ; 00542c19
-    MOV EAX,[0x01c5fad0]                ; 00542c1b | DAT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 00542c1b | g_INT_01c5fad0
     MOV dword ptr [EBX + 0x1800],ECX    ; 00542c20
     IMUL EDX                            ; 00542c26
     SHRD EAX,EDX,0x10                   ; 00542c28
@@ -153,8 +153,8 @@ section .text
         ;   Label: LAB_00542ce0
     MOV ECX,0x351                       ; 00542ce5
     PUSH 0x5d0fce                       ; 00542cea | = "C3DSLight::process - NULL CDemonLight..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00542cef | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00542cf5 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00542cef | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00542cf5 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00542cfb
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00542d00

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Death_005f0612
 ;   TerminatedCString s_Animation_005f0618
-;   undefined4 DAT_005f0622
+;   float g_FLOAT_005f0622 = -1000
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_setWindVelocity_FUN_005b1890
@@ -45,7 +45,7 @@ section .text
         ;   XREF to: 005a5cee (CONDITIONAL_JUMP)  ; LAB_005a5cee
     LEA EAX,[EBX + 0x11354]             ; 005a5c74
         ;   Label: LAB_005a5c74
-    FLD float ptr [0x005f0622]          ; 005a5c7a | DAT_005f0622
+    FLD float ptr [0x005f0622]          ; 005a5c7a | g_FLOAT_005f0622
     FLD float ptr [EAX]                 ; 005a5c80
     FMUL ST1                            ; 005a5c82
     FLD float ptr [EAX + 0x4]           ; 005a5c84

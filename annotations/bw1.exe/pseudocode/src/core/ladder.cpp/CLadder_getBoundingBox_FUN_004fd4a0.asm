@@ -8,8 +8,8 @@
 ; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6b73
-;   undefined4 DAT_005e6b7b
+;   double g_DOUBLE_005e6b73 = 0.5
+;   double g_DOUBLE_005e6b7b = 0.100000000000000
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
@@ -33,7 +33,7 @@ section .text
     CMP EDX,0x1                         ; 004fd4c0
     JGE 0x004fd53f                      ; 004fd4c3
         ;   XREF to: 004fd53f (CONDITIONAL_JUMP)  ; LAB_004fd53f
-    FLD double ptr [0x005e6b73]         ; 004fd4c5 | DAT_005e6b73
+    FLD double ptr [0x005e6b73]         ; 004fd4c5 | g_DOUBLE_005e6b73
     FLD float ptr [ESI + 0x2d4]         ; 004fd4cb
     FMUL ST1                            ; 004fd4d1
     FLD float ptr [ESI + 0x2dc]         ; 004fd4d3
@@ -49,7 +49,7 @@ section .text
     LEA EDI,[ESP + 0x18]                ; 004fd4fa
     MOV ESI,ESP                         ; 004fd4fe
     MOV dword ptr [ESP + 0x4],ECX       ; 004fd500
-    FADD double ptr [0x005e6b7b]        ; 004fd504 | DAT_005e6b7b
+    FADD double ptr [0x005e6b7b]        ; 004fd504 | g_DOUBLE_005e6b7b
     FXCH ST3                            ; 004fd50a
     FSTP float ptr [ESP + 0xc]          ; 004fd50c
     FXCH ST2                            ; 004fd510

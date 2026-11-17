@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_004876d0(CElephantGun *this_ptr)
 
 {
@@ -38,7 +36,8 @@ void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_004876d0(CElephant
   float fStack_18;
   
   bVar4 = 0;
-  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if (iVar3 != 0) {
     return;
   }
@@ -99,8 +98,8 @@ void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_004876d0(CElephant
     afStack_80[4] = afStack_80[4] * fVar1;
   }
   core_fire_cpp_CFireEffect_createLaserCone_FUN_004a2b10
-            (0x01C73654,&CStack_c0,&CStack_60,1.0,0,0xff,0,
-             this_ptr->spread_angle * _DAT_005bd9dc * _DAT_005bd9e0);
+            (g_CFireEffect_PTR_005fc5a0,&CStack_c0,&CStack_60,1.0,0,0xff,0,
+             this_ptr->spread_angle * 3.141593f * 0.005555556f);
   this_ptr->muzzle_flash_active = 1;
   fStack_54 = CStack_60.x - CStack_c0.x;
   afStack_50[0] = CStack_60.y - CStack_c0.y;

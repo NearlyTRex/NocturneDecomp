@@ -20,7 +20,7 @@
 ;   core_svetlana.cpp_CSvetlana_dtor_FUN_00571a30 at 00571a66
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f8274
+;   void*[92] g_ARRAY_PTR_005f8274
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
@@ -38,7 +38,7 @@ section .text
     PUSH EBX                            ; 004ce3d0
         ;   Label: core_hero.cpp_CHero_dtor_FUN_004ce3d0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004ce3d1
-    MOV dword ptr [EDX + 0x2b0],0x5f8274 ; 004ce3d5 | DAT_005f8274
+    MOV dword ptr [EDX + 0x2b0],0x5f8274 ; 004ce3d5 | g_ARRAY_PTR_005f8274
     XOR EAX,EAX                         ; 004ce3df
     CMP EDX,dword ptr [EAX + 0x1cedee4] ; 004ce3e1
         ;   Label: LAB_004ce3e1

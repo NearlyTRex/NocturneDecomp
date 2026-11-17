@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df6df
-;   undefined4 DAT_00612560
+;   double g_DOUBLE_005df6df = 5
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   undefined4 g_CFlameClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -37,9 +37,9 @@ section .text
     SUB ESP,0x54                        ; 004b8ac6
     AND ESP,0xfffffff8                  ; 004b8ac9
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b8acc
-    MOV EDX,dword ptr [0x00612560]      ; 004b8acf | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 004b8acf | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [EAX + 0x2a0],0x0     ; 004b8ad5
-    PUSH EDX                            ; 004b8adf | DAT_01bc120c
+    PUSH EDX                            ; 004b8adf | g_CDemonRenderer_01bc120c
     MOV dword ptr [EAX + 0x298],0x0     ; 004b8ae0
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 004b8aea
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
@@ -183,7 +183,7 @@ section .text
     FADDP                               ; 004b8c58
     ADD EAX,0x20                        ; 004b8c5a
     FSQRT                               ; 004b8c5d
-    FCOMP double ptr [0x005df6df]       ; 004b8c5f | DAT_005df6df
+    FCOMP double ptr [0x005df6df]       ; 004b8c5f | g_DOUBLE_005df6df
     FNSTSW AX                           ; 004b8c65
     SAHF                                ; 004b8c67
     JNC 0x004b8be7                      ; 004b8c68

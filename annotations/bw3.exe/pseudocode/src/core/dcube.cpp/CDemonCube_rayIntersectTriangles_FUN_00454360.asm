@@ -28,15 +28,15 @@
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0 at 004742f1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01548b58
-;   undefined4 DAT_01548b5c
-;   undefined4 DAT_01548b60
-;   undefined4 DAT_01548b64
-;   undefined4 DAT_01548b68
-;   undefined4 DAT_01548b6c
-;   undefined4 DAT_01548b70
-;   undefined4 DAT_01548b74
-;   undefined4 DAT_01548b78
+;   float g_FLOAT_01548b58
+;   int g_INT_01548b5c
+;   float g_FLOAT_01548b60
+;   float g_FLOAT_01548b64
+;   int g_INT_01548b68
+;   float g_FLOAT_01548b6c
+;   float g_FLOAT_01548b70
+;   int g_INT_01548b74
+;   float g_FLOAT_01548b78
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240
@@ -158,9 +158,9 @@ section .text
     FLD float ptr [EAX]                 ; 0045446a
     FLD float ptr [EAX + 0x8]           ; 0045446c
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045446f
-    MOV dword ptr [0x01548b5c],EDX      ; 00454472 | DAT_01548b5c
-    FSTP float ptr [0x01548b60]         ; 00454478 | DAT_01548b60
-    FSTP float ptr [0x01548b58]         ; 0045447e | DAT_01548b58
+    MOV dword ptr [0x01548b5c],EDX      ; 00454472 | g_INT_01548b5c
+    FSTP float ptr [0x01548b60]         ; 00454478 | g_FLOAT_01548b60
+    FSTP float ptr [0x01548b58]         ; 0045447e | g_FLOAT_01548b58
     MOV EAX,dword ptr [ESP + 0x24]      ; 00454484
         ;   Label: LAB_00454484
     MOV ESI,dword ptr [EBX + 0x2c]      ; 00454488
@@ -172,9 +172,9 @@ section .text
     FLD float ptr [EAX]                 ; 00454499
     FLD float ptr [EAX + 0x8]           ; 0045449b
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045449e
-    MOV dword ptr [0x01548b68],EDX      ; 004544a1 | DAT_01548b68
-    FSTP float ptr [0x01548b6c]         ; 004544a7 | DAT_01548b6c
-    FSTP float ptr [0x01548b64]         ; 004544ad | DAT_01548b64
+    MOV dword ptr [0x01548b68],EDX      ; 004544a1 | g_INT_01548b68
+    FSTP float ptr [0x01548b6c]         ; 004544a7 | g_FLOAT_01548b6c
+    FSTP float ptr [0x01548b64]         ; 004544ad | g_FLOAT_01548b64
     MOV EAX,dword ptr [ESP + 0x24]      ; 004544b3
         ;   Label: LAB_004544b3
     MOV EBX,dword ptr [EBX + 0x2c]      ; 004544b7
@@ -204,9 +204,9 @@ section .text
         ;   Label: LAB_004544ec
     FLD float ptr [EAX + 0x8]           ; 004544ee
     MOV EDX,dword ptr [EAX + 0x4]       ; 004544f1
-    MOV dword ptr [0x01548b74],EDX      ; 004544f4 | DAT_01548b74
-    FSTP float ptr [0x01548b78]         ; 004544fa | DAT_01548b78
-    FSTP float ptr [0x01548b70]         ; 00454500 | DAT_01548b70
+    MOV dword ptr [0x01548b74],EDX      ; 004544f4 | g_INT_01548b74
+    FSTP float ptr [0x01548b78]         ; 004544fa | g_FLOAT_01548b78
+    FSTP float ptr [0x01548b70]         ; 00454500 | g_FLOAT_01548b70
     MOV EAX,dword ptr [ESP + 0x28]      ; 00454506
     MOV ESP,EBP                         ; 0045450a
     POP EBP                             ; 0045450c

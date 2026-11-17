@@ -7,12 +7,12 @@
 ; char *           Stack[0x4]:4   timer_name
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e33bc
-;   undefined4 DAT_005e33c4
-;   undefined4 DAT_005e33cc
+;   double g_DOUBLE_005e33bc = 0.0555555555555556
+;   double g_DOUBLE_005e33c4 = 0.0000152587890625
+;   double g_DOUBLE_005e33cc = 1000
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01cd0c90
+;   int g_INT_01cd0c90
 ;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
@@ -35,16 +35,16 @@ section .text
     PUSH EBX                            ; 004d7ff6
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d7ff7
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d7ffc | DAT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d7ffc | g_INT_01cd0c90
     SUB EAX,ECX                         ; 004d8002
     MOV dword ptr [ESP + 0x10],EAX      ; 004d8004
     FILD dword ptr [ESP + 0x10]         ; 004d8008
-    FMUL double ptr [0x005e33bc]        ; 004d800c | DAT_005e33bc
+    FMUL double ptr [0x005e33bc]        ; 004d800c | g_DOUBLE_005e33bc
     MOV EAX,[0x0061d95c]                ; 004d8012 | g_CGamePtr
-    FMUL double ptr [0x005e33c4]        ; 004d8017 | DAT_005e33c4
+    FMUL double ptr [0x005e33c4]        ; 004d8017 | g_DOUBLE_005e33c4
     FLD float ptr [EAX + 0x294]         ; 004d801d
     FXCH                                ; 004d8023
-    FMUL double ptr [0x005e33cc]        ; 004d8025 | DAT_005e33cc
+    FMUL double ptr [0x005e33cc]        ; 004d8025 | g_DOUBLE_005e33cc
     FDIVRP                              ; 004d802b
     SUB ESP,0x8                         ; 004d802d
     MOV EBX,dword ptr [ESP + 0x20]      ; 004d8030

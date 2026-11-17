@@ -13,7 +13,7 @@
 ;   core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_0045f490 at 0045f4ba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fbc30
+;   ulonglong[256] g_ULONGLONG_ARRAY_005fbc30
 ;   void* switchdataD_005fc430 = 00495efc
 ;   undefined4 DAT_005fc470
 ;
@@ -24,9 +24,9 @@ section .text
     AND EDX,0xff                        ; 00495ec0
         ;   Label: crt_watcom.c__memset_FUN_00495ec0
     MOV EAX,dword ptr [ESP + 0x4]       ; 00495ec6
-    FILD qword ptr [EDX*0x8 + 0x5fbc30] ; 00495eca | DAT_005fbc30
+    FILD qword ptr [EDX*0x8 + 0x5fbc30] ; 00495eca | g_ULONGLONG_ARRAY_005fbc30
     PUSH EBX                            ; 00495ed1
-    MOV EDX,dword ptr [EDX*0x8 + 0x5fbc30] ; 00495ed2 | DAT_005fbc30
+    MOV EDX,dword ptr [EDX*0x8 + 0x5fbc30] ; 00495ed2 | g_ULONGLONG_ARRAY_005fbc30
     SUB EAX,0x8                         ; 00495ed9
     JBE 0x00495f08                      ; 00495edc
         ;   XREF to: 00495f08 (CONDITIONAL_JUMP)  ; LAB_00495f08

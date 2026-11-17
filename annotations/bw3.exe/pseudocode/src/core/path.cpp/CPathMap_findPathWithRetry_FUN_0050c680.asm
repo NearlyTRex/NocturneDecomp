@@ -19,7 +19,7 @@
 ;   core_waypoint.cpp_CWayPoint_isReachable_FUN_00579130 at 00579217
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ec1514
+;   int g_INT_01ec1514
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0
@@ -51,7 +51,7 @@ section .text
     MOV EDX,0x1                         ; 0050c6a9
         ;   Label: LAB_0050c6a9
     LEA EDI,[EBX + 0x138cc]             ; 0050c6ae
-    MOV dword ptr [0x01ec1514],EDX      ; 0050c6b4 | DAT_01ec1514
+    MOV dword ptr [0x01ec1514],EDX      ; 0050c6b4 | g_INT_01ec1514
     PUSH EBP                            ; 0050c6ba
         ;   Label: LAB_0050c6ba
     PUSH EDI                            ; 0050c6bb
@@ -100,10 +100,10 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 0050c70f
     JMP 0x0050c6a9                      ; 0050c712
         ;   XREF to: 0050c6a9 (UNCONDITIONAL_JUMP)  ; LAB_0050c6a9
-    MOV EAX,[0x01ec1514]                ; 0050c714 | DAT_01ec1514
+    MOV EAX,[0x01ec1514]                ; 0050c714 | g_INT_01ec1514
         ;   Label: LAB_0050c714
     INC EAX                             ; 0050c719
-    MOV [0x01ec1514],EAX                ; 0050c71a | DAT_01ec1514
+    MOV [0x01ec1514],EAX                ; 0050c71a | g_INT_01ec1514
     CMP EAX,0x3                         ; 0050c71f
     JLE 0x0050c6ba                      ; 0050c722
         ;   XREF to: 0050c6ba (CONDITIONAL_JUMP)  ; LAB_0050c6ba

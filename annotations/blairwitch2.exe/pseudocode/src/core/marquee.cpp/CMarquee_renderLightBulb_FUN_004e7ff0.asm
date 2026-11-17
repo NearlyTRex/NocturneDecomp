@@ -11,8 +11,8 @@
 ;   core_marquee.cpp_CMarquee_renderTransparent_FUN_004e8180 at 004e828f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f9b50
-;   undefined4 DAT_0060b280
+;   float g_FLOAT_005f9b50 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
@@ -29,24 +29,24 @@ section .text
     PUSH EBP                            ; 004e7ff3
     SUB ESP,0x34                        ; 004e7ff4
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004e7ff7
-    MOV ESI,dword ptr [0x0060b280]      ; 004e7ffb | DAT_0060b280
+    MOV ESI,dword ptr [0x0060b280]      ; 004e7ffb | g_CDemonRenderer_PTR_0060b280
     LEA EBX,[ESP + 0x28]                ; 004e8001
     MOV ESI,dword ptr [ESI]             ; 004e8005
     FLD float ptr [EAX]                 ; 004e8007
-    FMUL float ptr [0x005f9b50]         ; 004e8009 | DAT_005f9b50
+    FMUL float ptr [0x005f9b50]         ; 004e8009 | g_FLOAT_005f9b50
     FISTP dword ptr [EBX]               ; 004e800f
     FLD float ptr [EAX + 0x4]           ; 004e8011
-    FMUL float ptr [0x005f9b50]         ; 004e8014 | DAT_005f9b50
+    FMUL float ptr [0x005f9b50]         ; 004e8014 | g_FLOAT_005f9b50
     FISTP dword ptr [EBX + 0x4]         ; 004e801a
     FLD float ptr [EAX + 0x8]           ; 004e801d
-    FMUL float ptr [0x005f9b50]         ; 004e8020 | DAT_005f9b50
+    FMUL float ptr [0x005f9b50]         ; 004e8020 | g_FLOAT_005f9b50
     FISTP dword ptr [EBX + 0x8]         ; 004e8026
     LEA EAX,[ESP + 0x28]                ; 004e8029
     PUSH EAX                            ; 004e802d
     PUSH ESI                            ; 004e802e
     CALL engine_special.cpp_transformPoint_FUN_0055d9ec ; 004e802f
         ;   XREF to: 0055d9ec (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0055d9ec(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x0060b280]                ; 004e8034 | DAT_0060b280
+    MOV EAX,[0x0060b280]                ; 004e8034 | g_CDemonRenderer_PTR_0060b280
     MOV ESI,dword ptr [EAX]             ; 004e8039
     MOV ECX,0xc                         ; 004e803b
     LEA EDI,[ESI + 0x30]                ; 004e8040

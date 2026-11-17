@@ -9,13 +9,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_disableBodyPartDamage_005cbf18
-;   undefined4 DAT_005cbf32
-;   undefined4 DAT_006141f0
+;   double g_DOUBLE_005cbf32 = 3
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0265370c
-;   undefined4 DAT_02653710
-;   undefined4 DAT_02653714
+;   CVector3f g_CVector3f_0265370c
+;   undefined4 g_CVector3f_0265370c.y
+;   undefined4 g_CVector3f_0265370c.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
@@ -104,11 +104,11 @@ section .text
     CMP EAX,0x265370c                   ; 0041635e
     JZ 0x0041637f                       ; 00416363
         ;   XREF to: 0041637f (CONDITIONAL_JUMP)  ; LAB_0041637f
-    MOV EDX,dword ptr [0x0265370c]      ; 00416365 | DAT_0265370c
+    MOV EDX,dword ptr [0x0265370c]      ; 00416365 | g_CVector3f_0265370c
     MOV dword ptr [EAX],EDX             ; 0041636b
-    MOV EDX,dword ptr [0x02653710]      ; 0041636d | DAT_02653710
+    MOV EDX,dword ptr [0x02653710]      ; 0041636d | g_CVector3f_0265370c.y
     MOV dword ptr [EAX + 0x4],EDX       ; 00416373
-    MOV EDX,dword ptr [0x02653714]      ; 00416376 | DAT_02653714
+    MOV EDX,dword ptr [0x02653714]      ; 00416376 | g_CVector3f_0265370c.z
     MOV dword ptr [EAX + 0x8],EDX       ; 0041637c
     ADD EBX,0x2b8                       ; 0041637f
         ;   Label: LAB_0041637f
@@ -178,13 +178,13 @@ section .text
     FADDP                               ; 0041641a
     ADD ESP,0x4                         ; 0041641c
     FSQRT                               ; 0041641f
-    FCOMP double ptr [0x005cbf32]       ; 00416421 | DAT_005cbf32
+    FCOMP double ptr [0x005cbf32]       ; 00416421 | g_DOUBLE_005cbf32
     FNSTSW AX                           ; 00416427
     SAHF                                ; 00416429
     JBE 0x0041632f                      ; 0041642a
         ;   XREF to: 0041632f (CONDITIONAL_JUMP)  ; LAB_0041632f
     PUSH 0x5cbf18                       ; 00416430 | = "disableBodyPartDamage"
-    MOV ESI,dword ptr [0x006141f0]      ; 00416435 | DAT_006141f0
+    MOV ESI,dword ptr [0x006141f0]      ; 00416435 | g_CEventList_PTR_006141f0
     PUSH ESI                            ; 0041643b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0041643c
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

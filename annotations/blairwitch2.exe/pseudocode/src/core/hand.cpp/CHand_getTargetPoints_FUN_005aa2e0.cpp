@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_hand_cpp_CHand_getTargetPoints_FUN_005aa2e0(CHand *this_ptr,CVector3f *out_points_array)
 
@@ -18,11 +17,11 @@ int __cdecl core_hand_cpp_CHand_getTargetPoints_FUN_005aa2e0(CHand *this_ptr,CVe
   CVector3f CStack_14;
   
   bVar1 = 0;
-  if ((this_ptr->base).fade_val < (float)_DAT_005f0a9b) {
+  if ((this_ptr->base).fade_val < (float)0.5) {
     return 0;
   }
   core_xform_cpp_transformVector3x4_FUN_00591530
-            ((CVector3f *)&DAT_0265370c,
+            (&g_CVector3f_0265370c,
              (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
              this_ptr->hand_bone,&CStack_20);
   CStack_14.x = CStack_20.x;

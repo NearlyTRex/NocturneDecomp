@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_editorPlotPixel_FUN_00492940(int x,int y)
 
 {
-  if (_DAT_01c3f544 != 0) {
+  if (g_INT_01c3f544 != 0) {
     engine_mini3d_cpp_drawPixel_FUN_00517f10(x,y);
     return;
   }

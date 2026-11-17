@@ -22,11 +22,11 @@
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004d6030 at 004d5f87
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01483a40
-;   undefined4 DAT_01483a44
-;   undefined4 DAT_01483a48
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CVector3i g_CVector3i_01483a40
+;   undefined4 g_CVector3i_01483a40.y
+;   undefined4 g_CVector3i_01483a40.z
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180
@@ -43,8 +43,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 0044e2a6
     MOV EBP,ESI                         ; 0044e2aa
     MOV ESI,dword ptr [ESP + 0x34]      ; 0044e2ac
-    MOV EDX,dword ptr [0x00612560]      ; 0044e2b0 | DAT_00612560
-    PUSH EDX                            ; 0044e2b6 | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 0044e2b0 | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 0044e2b6 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180 ; 0044e2b7
         ;   XREF to: 00484180 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180(CDemonRenderer * this_ptr)
     MOV ECX,EAX                         ; 0044e2bc
@@ -85,9 +85,9 @@ section .text
     MOV EDI,ESP                         ; 0044e331
         ;   Label: LAB_0044e331
     MOV ESI,0x1483a40                   ; 0044e333
-    MOVSD ES:EDI,ESI                    ; 0044e338 | DAT_01483a40
-    MOVSD ES:EDI,ESI                    ; 0044e339 | DAT_01483a44
-    MOVSD ES:EDI,ESI                    ; 0044e33a | DAT_01483a48
+    MOVSD ES:EDI,ESI                    ; 0044e338 | g_CVector3i_01483a40
+    MOVSD ES:EDI,ESI                    ; 0044e339 | g_CVector3i_01483a40.y
+    MOVSD ES:EDI,ESI                    ; 0044e33a | g_CVector3i_01483a40.z
     MOV ESI,ESP                         ; 0044e33b
     MOV EDI,EBP                         ; 0044e33d
     MOVSD ES:EDI,ESI                    ; 0044e33f

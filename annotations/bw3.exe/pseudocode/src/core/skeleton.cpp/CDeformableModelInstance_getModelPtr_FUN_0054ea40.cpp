@@ -6,20 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(CDeformableModelInstance *this_ptr)
 
 {
   if (this_ptr->model_ptr == (CDeformableModel *)0x0) {
     if (this_ptr->model_name[0] != '\0') {
-      _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-      _DAT_01d71de4 = 0xde9;
+      g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+      g_INT_01d71de4 = 0xde9;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.");
       return this_ptr->model_ptr;
     }
-    _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-    _DAT_01d71de4 = 0xde7;
+    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+    g_INT_01d71de4 = 0xde7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.");
   }
   return this_ptr->model_ptr;

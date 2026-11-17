@@ -7,9 +7,9 @@
 ; CMouse *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c43530
-;   undefined4 DAT_01c4353c
-;   undefined4 DAT_01c43540
+;   int g_INT_01c43530
+;   int g_INT_01c4353c
+;   int g_INT_01c43540
 ;
 ; Called Functions:
 ;   engine_3d.c_setBlendMode_FUN_00406c20
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_ncursfx.cpp_CMouse_render_FUN_00531460
     PUSH EDI                            ; 00531461
     MOV EBX,dword ptr [ESP + 0xc]       ; 00531462
-    MOV EDX,dword ptr [0x01c43540]      ; 00531466 | DAT_01c43540
-    MOV EAX,[0x01c4353c]                ; 0053146c | DAT_01c4353c
+    MOV EDX,dword ptr [0x01c43540]      ; 00531466 | g_INT_01c43540
+    MOV EAX,[0x01c4353c]                ; 0053146c | g_INT_01c4353c
     MOV ECX,dword ptr [EBX + 0x25c]     ; 00531471
     SUB EDX,0xc                         ; 00531477
     SUB EAX,0xd                         ; 0053147a
@@ -62,7 +62,7 @@ section .text
     CMP EDI,0x2                         ; 005314ce
     JNZ 0x00531551                      ; 005314d1
         ;   XREF to: 00531551 (CONDITIONAL_JUMP)  ; LAB_00531551
-    MOV EAX,[0x01c43530]                ; 005314d7 | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 005314d7 | g_INT_01c43530
         ;   Label: LAB_005314d7
     MOV EDX,dword ptr [EBX + 0x258]     ; 005314dc
     SHL EAX,0x5                         ; 005314e2
@@ -112,11 +112,11 @@ section .text
     CALL engine_3d.c_setBlendMode_FUN_00406c20 ; 00531553
         ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406c20(int blend_mode)
     ADD ESP,0x4                         ; 00531558
-    MOV EAX,[0x01c43540]                ; 0053155b | DAT_01c43540
+    MOV EAX,[0x01c43540]                ; 0053155b | g_INT_01c43540
     PUSH 0x8000                         ; 00531560
     SUB EAX,0xc                         ; 00531565
     PUSH EAX                            ; 00531568
-    MOV EAX,[0x01c4353c]                ; 00531569 | DAT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 00531569 | g_INT_01c4353c
     SUB EAX,0xd                         ; 0053156e
     PUSH EAX                            ; 00531571
     MOV EAX,dword ptr [EBX + 0x258]     ; 00531572

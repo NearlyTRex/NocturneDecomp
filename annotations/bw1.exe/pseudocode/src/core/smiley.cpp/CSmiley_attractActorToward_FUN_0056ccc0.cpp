@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0056ccc0(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
@@ -31,9 +30,9 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0056ccc0(CSmiley *thi
     return 1;
   }
   core_xform_cpp_transformVector3x4_FUN_005b5080
-            ((CVector3f *)&DAT_02c8af28,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02c5fce0,
-             &CStack_14);
+            (&g_CVector3f_02c8af28,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_02c5fcd8[2],&CStack_14);
   pCVar3 = &CStack_2c;
   CStack_2c.x = CStack_14.x;
   *(uint *)((int)&CStack_2c + (uint)bVar2 * -8 + 4) =
@@ -48,7 +47,7 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0056ccc0(CSmiley *thi
        *(uint *)((int)&CStack_38 + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        *(uint *)((int)&CStack_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  CStack_20.y = CStack_20.y + _DAT_005f29ff;
+  CStack_20.y = CStack_20.y + -4.0f;
   (*((actor->vtable)._ub)->setPositionAndOrientation)(actor,&CStack_20,pCVar3);
   return 1;
 }

@@ -10,8 +10,8 @@
 ;   core_zombiepriest.cpp_factoryFuncZombiePriest_FUN_0058d4b0 at 0058d4c3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7050
-;   undefined4 DAT_005e7054
+;   float g_FLOAT_005e7050 = 50
+;   float g_FLOAT_005e7054 = 100
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -38,10 +38,10 @@ section .text
     MOV dword ptr [EAX + -0x4],0x5e7064 ; 0058d4fd
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0058d504
         ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x005e7050]          ; 0058d509 | DAT_005e7050
+    FLD float ptr [0x005e7050]          ; 0058d509 | g_FLOAT_005e7050
     ADD ESP,0x8                         ; 0058d50f
     MOV dword ptr [EBX + 0x326c],0x3f19999a ; 0058d512
-    FLD float ptr [0x005e7054]          ; 0058d51c | DAT_005e7054
+    FLD float ptr [0x005e7054]          ; 0058d51c | g_FLOAT_005e7054
     MOV dword ptr [EBX + 0x3270],0x3f666666 ; 0058d522
     PUSH 0xff                           ; 0058d52c
     FXCH                                ; 0058d531

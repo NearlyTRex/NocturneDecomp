@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_path_cpp_CPathMap_getDirection_FUN_00511df0(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position)
 
 {
@@ -52,10 +50,10 @@ float __cdecl core_path_cpp_CPathMap_getDirection_FUN_00511df0(CPathMap *this_pt
        *(uint *)((int)&local_48 + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  local_3c = local_90 * _DAT_005e1759;
-  local_38[0] = local_8c * _DAT_005e1759;
-  local_38[1] = local_88 * _DAT_005e1759;
-  local_84 = local_90 * _DAT_005e1759;
+  local_3c = local_90 * 0.01f;
+  local_38[0] = local_8c * 0.01f;
+  local_38[1] = local_88 * 0.01f;
+  local_84 = local_90 * 0.01f;
   *(float *)((int)&stack0xffffff80 + (uint)bVar2 * -8) = local_38[(uint)bVar2 * -2];
   *(float *)(&stack0xffffff84 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        local_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
@@ -75,7 +73,7 @@ switchD_00511ebf_caseD_1:
       goto LAB_00511ecc;
     case 2:
 switchD_00511ebf_caseD_2:
-      local_64 = local_64 + _DAT_005e175d;
+      local_64 = local_64 + -1.0f;
 LAB_00511ecc:
       local_18 = 2;
       break;
@@ -87,7 +85,7 @@ switchD_00511ebf_caseD_3:
     case 4:
 switchD_00511ebf_caseD_4:
       local_18 = 2;
-      local_6c = local_6c + _DAT_005e175d;
+      local_6c = local_6c + -1.0f;
     }
     break;
   case 2:
@@ -138,22 +136,22 @@ switchD_00511ebf_caseD_4:
     case 1:
       return local_80;
     case 2:
-      return local_80 + _DAT_005e1791;
+      return local_80 + 3.141593f;
     case 3:
-      return local_80 + (float)_DAT_005e1789;
+      return local_80 + (float)1.57079632675;
     case 4:
-      return local_80 + (float)_DAT_005e1781;
+      return local_80 + (float)-1.57079632675;
     case 5:
-      return local_80 + (float)_DAT_005e1779;
+      return local_80 + (float)0.78539816337500001;
     case 6:
-      return local_80 + (float)_DAT_005e1771;
+      return local_80 + (float)-0.78539816337500001;
     case 7:
-      return local_80 + (float)_DAT_005e1769;
+      return local_80 + (float)2.356194490125;
     case 8:
-      return local_80 + (float)_DAT_005e1761;
+      return local_80 + (float)-2.356194490125;
     default:
-      _DAT_01d046a0 = "..\\core\\path.cpp";
-      _DAT_01d046a4 = 0x183;
+      g_CHAR_PTR_01d046a0 = "..\\core\\path.cpp";
+      g_INT_01d046a4 = 0x183;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CPathMap::getDirection - Should never get here either");
     }
   }
@@ -164,7 +162,7 @@ switchD_00511ebf_caseD_4:
     local_64 = local_64 + 1.0;
     goto LAB_005120d5;
   case 2:
-    local_64 = local_64 + _DAT_005e175d;
+    local_64 = local_64 + -1.0f;
 LAB_005120d5:
     local_18 = local_18 + 1;
     break;
@@ -174,7 +172,7 @@ LAB_005120d5:
     break;
   case 4:
     local_18 = local_18 + 1;
-    local_6c = local_6c + _DAT_005e175d;
+    local_6c = local_6c + -1.0f;
   }
 switchD_005120c8_default:
   local_24 = (float)local_18;

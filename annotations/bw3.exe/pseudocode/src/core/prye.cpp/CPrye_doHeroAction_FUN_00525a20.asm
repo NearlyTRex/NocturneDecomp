@@ -10,7 +10,7 @@
 ;   undefined1* switchdataD_005259b8 = 00525b60
 ;   undefined1* switchdataD_005259d0 = 00525e3b
 ;   undefined1* switchdataD_005259e0 = 00525a43
-;   undefined4 s_CPrye_doHeroAction_pull_005cd7f6+1
+;   TerminatedCString s_CPrye_doHeroAction_pull_005cd7f7
 ;   TerminatedCString s_CPrye_doHeroAction_type_005cd819
 ;   TerminatedCString s_lever_s_005cd86d
 ;   TerminatedCString s_CHero_doHeroAction_type_005cd87b
@@ -19,9 +19,9 @@
 ;   TerminatedCString s_Picking_up_s_waist_level_005cd903
 ;   TerminatedCString s_Picking_up_s_off_ground_005cd91e
 ;   TerminatedCString s_Rummaging_s_005cd938
-;   undefined4 DAT_005cd947
-;   undefined4 DAT_005cd94f
-;   undefined4 DAT_005cd957
+;   float g_FLOAT_005cd947 = 0.5
+;   double g_DOUBLE_005cd94f = 2.5
+;   double g_DOUBLE_005cd957 = 2
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -65,7 +65,7 @@ section .text
     POP ESI                             ; 00525a54
     POP EBX                             ; 00525a55
     RET                                 ; 00525a56
-    PUSH 0x5cd7f7                       ; 00525a57 | s_CPrye_doHeroAction_pull_005cd7f6+1
+    PUSH 0x5cd7f7                       ; 00525a57 | = "CPrye::doHeroAction - pull lever\n"
         ;   Label: caseD_8
     MOV EDX,dword ptr [0x005f1690]      ; 00525a5c | g_CConsolePtr
     PUSH EDX                            ; 00525a62 | g_CConsoleInstance
@@ -358,7 +358,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00525d68
     MOVSD ES:EDI,ESI                    ; 00525d69
     MOVSD ES:EDI,ESI                    ; 00525d6a
-    FLD float ptr [0x005cd947]          ; 00525d6b | DAT_005cd947
+    FLD float ptr [0x005cd947]          ; 00525d6b | g_FLOAT_005cd947
     FLD float ptr [ESP + 0x90]          ; 00525d71
     FMUL ST1                            ; 00525d78
     FLD float ptr [ESP + 0x94]          ; 00525d7a
@@ -465,19 +465,19 @@ section .text
     FLD float ptr [EBX + 0x20c90]       ; 00525eb7
         ;   Label: LAB_00525eb7
     LEA EDI,[EBX + 0x158]               ; 00525ebd
-    FCOMP double ptr [0x005cd957]       ; 00525ec3 | DAT_005cd957
+    FCOMP double ptr [0x005cd957]       ; 00525ec3 | g_DOUBLE_005cd957
     FNSTSW AX                           ; 00525ec9
     SAHF                                ; 00525ecb
     JBE 0x00526033                      ; 00525ecc
         ;   XREF to: 00526033 (CONDITIONAL_JUMP)  ; LAB_00526033
-    MOV ESI,dword ptr [0x01ed3714]      ; 00525ed2 | DAT_01ed3714
+    MOV ESI,dword ptr [0x01ed3714]      ; 00525ed2 | g_INT_ARRAY_01ed36ec[10]
     PUSH ESI                            ; 00525ed8
     PUSH EDI                            ; 00525ed9
     LEA ESI,[ESP + 0x44]                ; 00525eda
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00525ede
         ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00525ee3
-    MOV EBP,dword ptr [0x01ed36ec]      ; 00525ee6 | DAT_01ed36ec
+    MOV EBP,dword ptr [0x01ed36ec]      ; 00525ee6 | g_INT_ARRAY_01ed36ec
     PUSH EBP                            ; 00525eec
     PUSH EDI                            ; 00525eed
     LEA ESI,[ESP + 0xb0]                ; 00525eee
@@ -533,7 +533,7 @@ section .text
         ;   Label: LAB_00525f7c
     LEA EDX,[EBX + 0x158]               ; 00525f82
     MOV dword ptr [EBX + 0x20c7c],EAX   ; 00525f88
-    FCOMP double ptr [0x005cd94f]       ; 00525f8e | DAT_005cd94f
+    FCOMP double ptr [0x005cd94f]       ; 00525f8e | g_DOUBLE_005cd94f
     FNSTSW AX                           ; 00525f94
     SAHF                                ; 00525f96
     JBE 0x0052600e                      ; 00525f97

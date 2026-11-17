@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setColor_FUN_004f3520(uint rgb)
 
 {
@@ -16,13 +14,13 @@ void __cdecl engine_mini3d_cpp_setColor_FUN_004f3520(uint rgb)
   float fVar3;
   double dVar4;
   
-  fVar3 = (float)(rgb >> 0x10 & 0xff) * _DAT_005c8335;
-  fVar1 = (float)(rgb >> 8 & 0xff) * _DAT_005c8335;
-  fVar2 = (float)(rgb & 0xff) * _DAT_005c8335;
-  dVar4 = round((double)(_DAT_01d76c40 * _DAT_005c8339));
-  _DAT_01d7a6b8 = fVar3;
-  _DAT_01d7a6bc = fVar1;
-  _DAT_01d7a6c0 = fVar2;
-  _DAT_01d7a6c4 = rgb & 0xffffff | (int)ROUND(dVar4) << 0x18;
+  fVar3 = (float)(rgb >> 0x10 & 0xff) * 0.003921569f;
+  fVar1 = (float)(rgb >> 8 & 0xff) * 0.003921569f;
+  fVar2 = (float)(rgb & 0xff) * 0.003921569f;
+  dVar4 = round((double)(g_FLOAT_01d76c40 * 255.0f));
+  g_FLOAT_01d7a6b8 = fVar3;
+  g_FLOAT_01d7a6bc = fVar1;
+  g_FLOAT_01d7a6c0 = fVar2;
+  g_INT_01d7a6c4 = rgb & 0xffffff | (int)ROUND(dVar4) << 0x18;
   return;
 }

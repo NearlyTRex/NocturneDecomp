@@ -12,7 +12,7 @@
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d8 = 005a7f44
 ;   undefined4 DAT_00607bdc
-;   undefined4 DAT_00607be0
+;   int g_INT_00607be0 = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f44
@@ -28,7 +28,7 @@ section .text
     TEST EBX,EBX                        ; 005abb6f
     JLE 0x005abb88                      ; 005abb71
         ;   XREF to: 005abb88 (CONDITIONAL_JUMP)  ; LAB_005abb88
-    CMP EBX,dword ptr [0x00607be0]      ; 005abb73 | DAT_00607be0
+    CMP EBX,dword ptr [0x00607be0]      ; 005abb73 | g_INT_00607be0
     JGE 0x005abb88                      ; 005abb79
         ;   XREF to: 005abb88 (CONDITIONAL_JUMP)  ; LAB_005abb88
     MOV EDX,dword ptr [0x00607bdc]      ; 005abb7b | DAT_00607bdc

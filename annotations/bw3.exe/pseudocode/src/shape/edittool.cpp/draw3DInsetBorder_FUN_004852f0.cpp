@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(int left,int top,int right,int bottom,int pressed_offset,int direction)
 
 {
@@ -17,15 +15,15 @@ void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(int left,int top,
   int iVar4;
   int iVar5;
   
-  if (_DAT_01c5baec == 0) {
-    _DAT_01c6b5c0 = _DAT_01c5bb64;
+  if (g_INT_01c5baec == 0) {
+    g_INT_01c6b5c0 = g_INT_01c5bb64;
   }
   else {
-    iVar3 = (_DAT_01c5bb64 & 0xff) * 3;
+    iVar3 = (g_INT_01c5bb64 & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f3520
-              ((uint)(byte)(&DAT_01c6af9a)[iVar3] |
-               (uint)(byte)(&DAT_01c6af99)[iVar3] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10)
-    ;
+              ((uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 2] |
+               (uint)g_UCHAR_ARRAY_01c6af98[iVar3 + 1] << 8 |
+               (uint)g_UCHAR_ARRAY_01c6af98[iVar3] << 0x10);
   }
   if ((direction == 0) || (direction == 1)) {
     iVar3 = (left + right + -1) / 2 + pressed_offset;
@@ -36,7 +34,7 @@ void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(int left,int top,
       iVar5 = iVar3;
       if (0 < iVar2) {
         do {
-          while (_DAT_01c5baec != 0) {
+          while (g_INT_01c5baec != 0) {
             engine_mini3d_cpp_drawHLine_FUN_004f3ab0(iVar5,iVar4,iVar3);
             iVar3 = iVar3 + 1;
             iVar4 = iVar4 + 1;
@@ -57,7 +55,7 @@ void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(int left,int top,
       iVar4 = iVar3;
       if (0 < iVar2) {
         do {
-          while (_DAT_01c5baec == 0) {
+          while (g_INT_01c5baec == 0) {
             engine_2d_c_drawHLine_FUN_00402f30(iVar4,iVar5,iVar3);
             iVar4 = iVar4 + -1;
             iVar3 = iVar3 + 1;
@@ -83,7 +81,7 @@ void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(int left,int top,
       iVar5 = iVar3;
       if (0 < iVar2) {
         do {
-          while (_DAT_01c5baec == 0) {
+          while (g_INT_01c5baec == 0) {
             engine_2d_c_drawVLine_FUN_00403040(iVar4,iVar5,iVar3);
             iVar4 = iVar4 + 1;
             iVar3 = iVar3 + 1;
@@ -104,7 +102,7 @@ void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004852f0(int left,int top,
       iVar5 = iVar3;
       if (0 < iVar2) {
         do {
-          while (_DAT_01c5baec == 0) {
+          while (g_INT_01c5baec == 0) {
             engine_2d_c_drawVLine_FUN_00403040(iVar4,iVar5,iVar3);
             iVar4 = iVar4 + -1;
             iVar3 = iVar3 + 1;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_00510430(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index)
 
 {
@@ -20,12 +18,11 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_00510430(CPackedBit
   uchar auStack_15c [228];
   char acStack_78 [104];
   
-  file_handle = engine_dosio_cpp_getFile_FUN_004659c0
-                          ((char *)0x5cbf44,pbg_filename,(char *)0x5cbf41);
+  file_handle = engine_dosio_cpp_getFile_FUN_004659c0("art",pbg_filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(acStack_78,"Unable to open PBG file %s");
-    _DAT_01d71de4 = 0x5b6;
-    _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
+    g_INT_01d71de4 = 0x5b6;
+    g_CHAR_PTR_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_displayErrorAndQuit_FUN_004e4330(acStack_78);
   }
   pCVar1 = cockpit_pkbitmap_cpp_parsePBGFile_FUN_005102b0

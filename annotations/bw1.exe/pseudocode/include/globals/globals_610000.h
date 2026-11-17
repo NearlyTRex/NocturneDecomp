@@ -7,15 +7,24 @@
 #include "system/watcom.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CDemonMission.h"
+#include "types/classes/CDemonRenderer.h"
 #include "types/classes/CEditorTools.h"
+#include "types/classes/CEventList.h"
 #include "types/classes/CFieldNotes.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CFilterFX.h"
+#include "types/classes/CFireEffect.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CKeys.h"
 #include "types/classes/CLevelLoader.h"
 #include "types/classes/CMini3D.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLSkyTexture.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x610000
@@ -28,8 +37,18 @@ extern CConsole* g_CConsolePtr;
 extern CDemonFilter* g_GlobalFilters;
 extern CDemonFilter* g_PlayerFilters;
 
+// CDemonMission*
+extern CDemonMission* g_CDemonMission_PTR_0061f650;
+
+// CDemonRenderer*
+extern CDemonRenderer* g_CDemonRenderer_PTR_0061255c;
+extern CDemonRenderer* g_CDemonRenderer_PTR_00612560;
+
 // CEditorTools*
 extern CEditorTools* g_CEditorToolsPtr;
+
+// CEventList*
+extern CEventList* g_CEventList_PTR_0061b4d0;
 
 // CFieldNotes*
 extern CFieldNotes* g_CFieldNotesPtr;
@@ -40,6 +59,9 @@ extern CFilterCache* g_CFilterCachePtr;
 // CFilterFX*
 extern CFilterFX* g_CFilterFXPtr;
 
+// CFireEffect*
+extern CFireEffect* g_CFireEffect_PTR_0061c010;
+
 // CGame*
 extern CGame* g_CGamePtr;
 
@@ -49,11 +71,77 @@ extern CGore* g_CGorePtr;
 // CGround*
 extern CGround* g_CGroundPtr;
 
+// CKeys*
+extern CKeys* g_CKeys_PTR_0061f2a4;
+
 // CLevelLoader*
 extern CLevelLoader* g_CLevelLoaderPtr;
 
 // CMini3D*
 extern CMini3D* g_CMini3DPtr;
+
+// CVector3i[62]
+extern CVector3i g_CVector3i_ARRAY_006113a0[62];
+
+// SMRGLPrimitiveQuad*[2000]
+extern SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_00612568[2000];
+
+// SMRGLSkyTexture*
+extern SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_006144d0;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00610914;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00610cdc;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00611130;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061127c;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00611388;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00612258;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_006122a8;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_006122c0;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_006122d8;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c3d4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c3ec;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c404;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c41c;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c44c;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4ac;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4c4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4dc;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c4f4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c50c;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061ca94;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061cb3c;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061cb54;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061cda8;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061d828;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061dcb4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061ee2c;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061f274;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061f2e4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0061f414;
+
+// SMRGLTextureBasic[116]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061e32c[116];
+
+// SMRGLTextureBasic[40]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061c014[40];
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061cdc0[40];
+
+// SMRGLTextureBasic[4]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061dccc[4];
+
+// SMRGLTextureBasic[54]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061c524[54];
+
+// SMRGLTextureBasic[64]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061dd2c[64];
+
+// SMRGLTextureBasic[6]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00610c20[6];
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061caac[6];
+
+// SMRGLTextureBasic[8]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_0061f4b0[8];
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode DAT_00610A05;
@@ -136,7 +224,43 @@ extern WatcomStaticDestructorNode DAT_0061F800;
 extern WatcomStaticDestructorNode DAT_0061F810;
 extern WatcomStaticDestructorNode DAT_0061F820;
 
+// byte
+extern byte g_BYTE_0061f7bb;
+
+// char[100]
+extern char g_CHAR_ARRAY_0061d8f0[100];
+extern char g_CHAR_ARRAY_0061db70[100];
+extern char g_CHAR_ARRAY_0061f210[100];
+
+// char[104]
+extern char g_CHAR_ARRAY_006106c0[104];
+extern char g_CHAR_ARRAY_0061f1a8[104];
+extern char g_CHAR_ARRAY_0061f6c0[104];
+extern char g_CHAR_ARRAY_0061f728[104];
+
+// char[260]
+extern char g_CHAR_ARRAY_0061b2e8[260];
+
+// char[300]
+extern char g_CHAR_ARRAY_00610728[300];
+
+// char[512]
+extern char g_CHAR_ARRAY_0061aee8[512];
+extern char g_CHAR_ARRAY_0061b0e8[512];
+
+// char[60]
+extern char g_CHAR_ARRAY_0061cb70[60];
+
+// float
+extern float g_FLOAT_00612554;
+extern float g_FLOAT_006144d4;
+extern float g_FLOAT_0061d954;
+
 // int
+extern int g_INT_0061049c;
+extern int g_INT_006104a0;
+extern int g_INT_006104ec;
+extern int g_INT_006104f0;
 extern int g_CDemonActorClassVersion;
 extern int g_CAmmoClassVersion;
 extern int g_CAmmoBoxClassVersion;
@@ -144,6 +268,7 @@ extern int g_CAnvilClassVersion;
 extern int g_CArmourClassVersion;
 extern int g_CBackgroundActorClassVersion;
 extern int g_CBaronClassVersion;
+extern int g_INT_0061092c;
 extern int g_CBarrierClassVersion;
 extern int g_CBatClassVersion;
 extern int g_CBatCreatureClassVersion;
@@ -155,11 +280,14 @@ extern int g_CBirdClassVersion;
 extern int g_CBodyPartClassVersion;
 extern int g_CBoneGuyClassVersion;
 extern int g_CBoxActorClassVersion;
+extern int g_INT_00610b60;
 extern int g_CBrideClassVersion;
 extern int g_CBugsClassVersion;
 extern int g_CCarvedClassVersion;
 extern int g_CCharacterClassVersion;
 extern int g_CChainClassVersion;
+extern int g_INT_00610d40;
+extern int g_INT_00610d44;
 extern int g_CColonelClassVersion;
 extern int g_CConstructClassVersion;
 extern int g_CConveyorClassVersion;
@@ -167,27 +295,68 @@ extern int g_CZombieCowClassVersion;
 extern int g_CCrateClassVersion;
 extern int g_CCrossbowClassVersion;
 extern int g_CCurtainClassVersion;
+extern int g_INT_00611224;
+extern int g_INT_00611228;
+extern int g_INT_0061122c;
+extern int g_INT_00611230;
+extern int g_INT_00611234;
+extern int g_INT_00611238;
+extern int g_INT_00611294;
 extern int g_CDemnfolkClassVersion;
 extern int g_CActorDestinationClassVersion;
+extern int g_INT_00612270;
 extern int g_CDjienClassVersion;
 extern int g_CDocClassVersion;
 extern int g_CZombieDogClassVersion;
 extern int g_CDoorClassVersion;
 extern int g_CDraculaBrideClassVersion;
+extern int g_INT_00612550;
+extern int g_INT_00612564;
 extern int g_CDripClassVersion;
 extern int g_CDroneClassVersion;
+extern int g_INT_00614534;
+extern int g_INT_00614538;
+extern int g_INT_0061453c;
+extern int g_INT_00614544;
+extern int g_INT_006185a8;
+extern int g_INT_0061ab60;
 extern int g_CDynamiteClassVersion;
+extern int g_INT_0061abc4;
+extern int g_INT_0061abc8;
 extern int g_CElephantGunClassVersion;
 extern int g_CEmitterClassVersion;
 extern int g_CEnemyClassVersion;
+extern int g_INT_0061b498;
+extern int g_INT_0061b49c;
+extern int g_INT_0061b4a0;
+extern int g_INT_0061b4a4;
+extern int g_INT_0061b4a8;
+extern int g_INT_0061b4ac;
+extern int g_INT_0061b4b0;
+extern int g_INT_0061b4b8;
+extern int g_INT_0061b4c4;
+extern int g_INT_0061b564;
+extern int g_INT_0061bf24;
 extern int g_CFilmReelClassVersion;
+extern int g_INT_0061bf2c;
 extern int g_CFlameClassVersion;
 extern int g_CFlameCanClassVersion;
 extern int g_CFlameThrowerClassVersion;
 extern int g_CFlashlightClassVersion;
+extern int g_INT_0061d2e0;
+extern int g_INT_0061d2e4;
+extern int g_INT_0061d2e8;
+extern int g_INT_0061d2ec;
+extern int g_INT_0061d2f0;
+extern int g_INT_0061d2f4;
+extern int g_INT_0061d2f8;
+extern int g_INT_0061d2fc;
+extern int g_INT_0061d310;
 extern int g_CFliesClassVersion;
 extern int g_CFrankenstienMachineClassVersion;
 extern int g_CGabriellaClassVersion;
+extern int g_INT_0061d96c;
+extern int g_INT_0061d970;
 extern int g_CGargoyleClassVersion;
 extern int g_CGasMaskClassVersion;
 extern int g_CGhoulClassVersion;
@@ -198,83 +367,85 @@ extern int g_CGunClassVersion;
 extern int g_CHaystackClassVersion;
 extern int g_CHealthItemClassVersion;
 extern int g_CHeroClassVersion;
+extern int g_INT_0061ef24;
 extern int g_CHiramClassVersion;
 extern int g_CHostageClassVersion;
 extern int g_CHotDemonClassVersion;
 extern int g_CHighPriestOfGardathClassVersion;
 extern int g_CIcePickClassVersion;
 extern int g_CImpClassVersion;
+extern int g_INT_0061f1a0;
+extern int g_INT_0061f1a4;
 extern int g_CKeyActorClassVersion;
 extern int g_CLadderClassVersion;
 extern int g_CLarvaClassVersion;
 extern int g_CLeverClassVersion;
+extern int g_INT_0061f310;
+extern int g_INT_0061f314;
+extern int g_INT_0061f318;
+extern int g_INT_0061f31c;
 extern int g_CLightGunClassVersion;
 extern int g_CLightPisClassVersion;
 extern int g_CLightConeClassVersion;
 extern int g_CMansionPuzzleCircleClassVersion;
+extern int g_INT_0061f3ac;
 extern int g_CMarqueeClassVersion;
 extern int g_CMeleeClassVersion;
 extern int g_CMimicClassVersion;
 extern int g_CMineCarClassVersion;
+extern int g_INT_0061f7b0;
+extern int g_INT_0061f7b4;
 extern int g_CMobsterClassVersion;
 extern int g_CMolochClassVersion;
 extern int g_CMooCowClassVersion;
+extern int g_INT_0061f8ac;
+extern int g_INT_0061f8b0;
+extern int g_INT_0061f8b4;
+
+// int[16]
+extern int g_INT_ARRAY_00610600[16];
+
+// int[5]
+extern int g_INT_ARRAY_0061db5c[5];
+
+// int[8]
+extern int g_INT_ARRAY_0061123c[8];
+extern int g_INT_ARRAY_0061125c[8];
+
+// qword
+extern qword g_QWORD_006185e8;
+extern qword g_QWORD_006185f0;
+extern qword g_QWORD_006185f8;
+extern qword g_QWORD_00618600;
+
+// uchar
+extern uchar g_UCHAR_0061f7b8;
+extern uchar g_UCHAR_0061f7b9;
+extern uchar g_UCHAR_0061f7ba;
+extern uchar g_UCHAR_0061f7bc;
+extern uchar g_UCHAR_0061f7c1;
+
+// uint
+extern uint g_UINT_00614518;
+extern uint g_UINT_0061451c;
+extern uint g_UINT_00614524;
+extern uint g_UINT_0061b4b4;
+extern uint g_UINT_0061b4c0;
+extern uint g_UINT_0061f7bd;
+
+// uint*
+extern uint* g_UINT_PTR_00614548;
+
+// ulonglong[256]
+extern ulonglong g_ULONGLONG_ARRAY_0061b6a0[256];
 
 // undefined1
 extern undefined1 DAT_006106bf;
-extern undefined1 DAT_006106c0;
-extern undefined1 DAT_006106c1;
-extern undefined1 DAT_0061f7b8;
-extern undefined1 DAT_0061f7bc;
-extern undefined1 DAT_0061f7c1;
-
-// undefined2
-extern undefined2 DAT_0061cb74;
 
 // undefined4
-extern undefined4 DAT_0061049c;
-extern undefined4 DAT_006104a0;
-extern undefined4 DAT_006104f0;
-extern undefined4 DAT_00610728;
-extern undefined4 DAT_0061072c;
-extern undefined4 DAT_00610d44;
-extern undefined4 DAT_00611224;
-extern undefined4 DAT_00611228;
-extern undefined4 DAT_0061122c;
-extern undefined4 DAT_00611230;
-extern undefined4 DAT_00611234;
-extern undefined4 DAT_00611238;
-extern undefined4 DAT_0061123c;
-extern undefined4 DAT_006113a0;
-extern undefined4 DAT_006113a8;
 extern undefined4 DAT_006116a4;
 extern undefined4 DAT_006116a8;
 extern undefined4 DAT_006116c8;
-extern undefined4 DAT_00612560;
-extern undefined4 DAT_00612564;
-extern undefined4 DAT_00614518;
-extern undefined4 DAT_0061451c;
-extern undefined4 DAT_00614524;
-extern undefined4 DAT_00614540;
-extern undefined4 DAT_00614544;
-extern undefined4 DAT_00614548;
-extern undefined4 DAT_00619b60;
-extern undefined4 DAT_0061abc4;
-extern undefined4 DAT_0061abc8;
-extern undefined4 DAT_0061aee8;
-extern undefined4 DAT_0061aeec;
-extern undefined4 DAT_0061b0e8;
-extern undefined4 DAT_0061b0ec;
-extern undefined4 DAT_0061b2e8;
-extern undefined4 DAT_0061b2ec;
-extern undefined4 DAT_0061b498;
-extern undefined4 DAT_0061b49c;
-extern undefined4 DAT_0061b4a0;
-extern undefined4 DAT_0061b4a8;
-extern undefined4 DAT_0061b4ac;
-extern undefined4 DAT_0061b4b8;
-extern undefined4 DAT_0061b4c0;
-extern undefined4 DAT_0061b4c4;
 extern undefined4 DAT_0061b4d4;
 extern undefined4 DAT_0061b514;
 extern undefined4 DAT_0061b518;
@@ -283,35 +454,23 @@ extern undefined4 DAT_0061b568;
 extern undefined4 DAT_0061b56c;
 extern undefined4 DAT_0061b630;
 extern undefined4 DAT_0061b634;
-extern undefined4 DAT_0061cb70;
-extern undefined4 DAT_0061d2e0;
-extern undefined4 DAT_0061d2e4;
-extern undefined4 DAT_0061d310;
 extern undefined4 DAT_0061d420;
 extern undefined4 DAT_0061d424;
-extern undefined4 DAT_0061f1a8;
-extern undefined4 DAT_0061f1ac;
-extern undefined4 DAT_0061f210;
-extern undefined4 DAT_0061f214;
-extern undefined4 DAT_0061f310;
-extern undefined4 DAT_0061f314;
-extern undefined4 DAT_0061f318;
-extern undefined4 DAT_0061f31c;
-extern undefined4 DAT_0061f6c0;
-extern undefined4 DAT_0061f6c4;
-extern undefined4 DAT_0061f728;
-extern undefined4 DAT_0061f72c;
-extern undefined4 DAT_0061f7bd;
-extern undefined4 DAT_0061f8ac;
-extern undefined4 DAT_0061f8b0;
-extern undefined4 DAT_0061f8b4;
 
 // undefined8
-extern undefined8 DAT_006185a8;
-extern undefined8 DAT_006185e8;
 extern undefined8 DAT_00618608;
 
+// ushort
+extern ushort g_USHORT_0061f5d8;
+
+// ushort[2048]
+extern ushort g_USHORT_ARRAY_00619b60[2048];
+
 // void*
+extern void* g_PTR_00614540;
 extern void* switchdataD_0061bea0;
 extern void* switchdataD_0061bee4;
+
+// void*[67]
+extern void* g_ARRAY_PTR_006104f4[67];
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_exorcism_cpp_CExorcism_fire_FUN_0048b020(CExorcism *this_ptr)
 
 {
@@ -66,7 +64,7 @@ int __cdecl core_exorcism_cpp_CExorcism_fire_FUN_0048b020(CExorcism *this_ptr)
     iVar3 = core_weapon_cpp_CWeapon_fire_FUN_0057b880(&this_ptr->base);
     if (iVar3 == 0) {
       core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                (0x02CF5680,(CDemonActor *)this_ptr,"@@wp_nomana.wav" + 2,&CStack_98);
+                (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_nomana.wav",&CStack_98);
       (this_ptr->base).fire_cooldown_timer = 1.0;
       return 0;
     }
@@ -76,11 +74,12 @@ int __cdecl core_exorcism_cpp_CExorcism_fire_FUN_0048b020(CExorcism *this_ptr)
   if ((this_ptr->was_firing_prev_frame != 0) && (this_ptr->target != (CCharacter *)0x0)) {
     return 1;
   }
-  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(_DAT_01c6e35c);
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(g_UINT_01c6e35c);
   if (iVar3 == 0) {
-    _DAT_01c6e35c =
+    g_UINT_01c6e35c =
          core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                   (0x02CF5680,(CDemonActor *)this_ptr,"wp_exorcism.wav @ .5",&CStack_98);
+                   (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_exorcism.wav @ .5",
+                    &CStack_98);
   }
   this_ptr->target = (CCharacter *)0x0;
   pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840
@@ -108,7 +107,7 @@ int __cdecl core_exorcism_cpp_CExorcism_fire_FUN_0048b020(CExorcism *this_ptr)
   *(float *)((int)&CStack_a4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        afStack_64[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
   fVar1 = CStack_98.x;
-  afStack_28[2] = (float)_DAT_005bdd8e / (this_ptr->base).bolt_velocity;
+  afStack_28[2] = (float)1.5 / (this_ptr->base).bolt_velocity;
   fVar5 = fStack_50 * afStack_28[2];
   fStack_68 = fVar5;
   afStack_64[0] = fStack_4c * afStack_28[2];

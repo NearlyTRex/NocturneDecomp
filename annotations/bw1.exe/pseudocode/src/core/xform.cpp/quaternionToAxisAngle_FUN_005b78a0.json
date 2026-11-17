@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 79,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 3,
+    "pseudocode_lines": 33,
+    "suspect_count": 2,
     "suspect_types": [
       "bit_int_float_compare",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 111
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -47,15 +46,15 @@
   "globals": [
     {
       "addr": "005fa16c",
-      "name": "DAT_005fa16c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa16c",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "005fa170",
-      "name": "DAT_005fa170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005fa170",
+      "type": "double",
+      "value": "2"
     }
   ],
   "param_estimates": {
@@ -198,16 +197,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "axis_out->z = 0.0;",
@@ -215,7 +206,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 12,
+      "line": 10,
       "match": "(int)quat_in->w < 0x3f800000",
       "severity": "moderate",
       "text": "if ((int)quat_in->w < 0x3f800000) {",

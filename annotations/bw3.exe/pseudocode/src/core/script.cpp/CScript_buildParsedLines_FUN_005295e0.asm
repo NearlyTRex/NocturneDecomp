@@ -16,12 +16,12 @@
 ;   TerminatedCString s_Out_of_memory_loading_sc_005cde9f
 ;   TerminatedCString s_core_script_cpp_005cdec7
 ;   TerminatedCString s_Out_of_memory_loading_sc_005cdeda
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01ed6008
-;   undefined4 DAT_01ed6009
-;   undefined4 DAT_01ed600a
-;   undefined4 DAT_01ed600b
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   char[2048] g_CHAR_ARRAY_01ed6008
+;   undefined4 g_CHAR_ARRAY_01ed6008+1
+;   undefined4 g_CHAR_ARRAY_01ed6008+2
+;   undefined4 g_CHAR_ARRAY_01ed6008+3
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -65,7 +65,7 @@ section .text
     POP ESI                             ; 00529611
     POP EBX                             ; 00529612
     RET                                 ; 00529613
-    PUSH 0x1ed6008                      ; 00529614 | DAT_01ed6008
+    PUSH 0x1ed6008                      ; 00529614 | g_CHAR_ARRAY_01ed6008
         ;   Label: LAB_00529614
     PUSH EBP                            ; 00529619
     MOV ECX,dword ptr [ESP + 0x8]       ; 0052961a
@@ -76,7 +76,7 @@ section .text
     PUSH EAX                            ; 00529627
     CALL core_script.cpp_trimLine_FUN_00528790 ; 00529628
         ;   XREF to: 00528790 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimLine_FUN_00528790(char * input_line, char * output_buffer)
-    MOV AH,byte ptr [0x01ed6008]        ; 0052962d | DAT_01ed6008
+    MOV AH,byte ptr [0x01ed6008]        ; 0052962d | g_CHAR_ARRAY_01ed6008
     ADD ESP,0x8                         ; 00529633
     TEST AH,AH                          ; 00529636
     JZ 0x00529704                       ; 00529638
@@ -94,12 +94,12 @@ section .text
     TEST EAX,EAX                        ; 00529655
     JNZ 0x0052967f                      ; 00529657
         ;   XREF to: 0052967f (CONDITIONAL_JUMP)  ; LAB_0052967f
-    MOV dword ptr [0x01d71de0],0x5cde8c ; 00529659 | DAT_01d71de0 | = "..\\core\\script.cpp"
+    MOV dword ptr [0x01d71de0],0x5cde8c ; 00529659 | g_CHAR_PTR_01d71de0 | = "..\\core\\script.cpp"
     LEA EAX,[EBP + 0x1]                 ; 00529663
     PUSH EAX                            ; 00529666
     MOV EDX,0x3a4                       ; 00529667
     PUSH 0x5cde9f                       ; 0052966c | = "Out of memory loading script at line %d"
-    MOV dword ptr [0x01d71de4],EDX      ; 00529671 | DAT_01d71de4
+    MOV dword ptr [0x01d71de4],EDX      ; 00529671 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00529677
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0052967c
@@ -112,7 +112,7 @@ section .text
     SUB ECX,ECX                         ; 00529690
     DEC ECX                             ; 00529692
     XOR EAX,EAX                         ; 00529693
-    SCASB.REPNE ES:EDI                  ; 00529695 | DAT_01ed6008 | DAT_01ed6009
+    SCASB.REPNE ES:EDI                  ; 00529695 | g_CHAR_ARRAY_01ed6008 | g_CHAR_ARRAY_01ed6008+1
     NOT ECX                             ; 00529697
     DEC ECX                             ; 00529699
     INC ECX                             ; 0052969a
@@ -131,8 +131,8 @@ section .text
     MOV EDI,0x5cdec7                    ; 005296b6 | = "..\\core\\script.cpp"
     MOV EAX,0x3a7                       ; 005296bb
     PUSH 0x5cdeda                       ; 005296c0 | = "Out of memory loading script at line %d"
-    MOV dword ptr [0x01d71de0],EDI      ; 005296c5 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 005296cb | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 005296c5 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 005296cb | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005296d0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005296d5
@@ -142,13 +142,13 @@ section .text
     MOV ESI,0x1ed6008                   ; 005296de
     MOV EDI,dword ptr [EAX + EDI*0x8 + 0x4] ; 005296e3
     PUSH EDI                            ; 005296e7
-    MOV AL,byte ptr [ESI]               ; 005296e8 | DAT_01ed6008 | DAT_01ed600a
+    MOV AL,byte ptr [ESI]               ; 005296e8 | g_CHAR_ARRAY_01ed6008 | g_CHAR_ARRAY_01ed6008+2
         ;   Label: LAB_005296e8
     MOV byte ptr [EDI],AL               ; 005296ea
     CMP AL,0x0                          ; 005296ec
     JZ 0x00529700                       ; 005296ee
         ;   XREF to: 00529700 (CONDITIONAL_JUMP)  ; LAB_00529700
-    MOV AL,byte ptr [ESI + 0x1]         ; 005296f0 | DAT_01ed6009 | DAT_01ed600b
+    MOV AL,byte ptr [ESI + 0x1]         ; 005296f0 | g_CHAR_ARRAY_01ed6008+1 | g_CHAR_ARRAY_01ed6008+3
     ADD ESI,0x2                         ; 005296f3
     MOV byte ptr [EDI + 0x1],AL         ; 005296f6
     ADD EDI,0x2                         ; 005296f9

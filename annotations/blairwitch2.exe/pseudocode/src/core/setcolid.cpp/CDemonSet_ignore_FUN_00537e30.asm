@@ -23,8 +23,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005e5edb
 ;   TerminatedCString s_CDemonSet_ignore_ignore_005e5ef0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -61,8 +61,8 @@ section .text
     MOV EDI,0x5e5edb                    ; 00537e67 | = "..\\core\\setcolid.cpp"
     MOV EBP,0x473                       ; 00537e6c
     PUSH 0x5e5ef0                       ; 00537e71 | = "CDemonSet::ignore - ignore list is full"
-    MOV dword ptr [0x01d046a0],EDI      ; 00537e76 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00537e7c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00537e76 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 00537e7c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00537e82
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00537e87

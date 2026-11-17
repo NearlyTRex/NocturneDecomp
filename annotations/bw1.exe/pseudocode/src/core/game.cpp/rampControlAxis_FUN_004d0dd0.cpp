@@ -12,8 +12,8 @@ void __cdecl core_game_cpp_rampControlAxis_FUN_004d0dd0(int negative_key,int pos
   float fVar1;
   float fVar2;
   
-  if ((&DAT_01c50950)[negative_key] == '\0') {
-    if ((((&DAT_01c50950)[positive_key] != '\0') && (*axis_value < max_value)) &&
+  if (g_CHAR_ARRAY_01c50950[negative_key] == '\0') {
+    if (((g_CHAR_ARRAY_01c50950[positive_key] != '\0') && (*axis_value < max_value)) &&
        (fVar1 = (g_CGamePtr->delta_time_float * max_value) / ramp_time + *axis_value,
        *axis_value = fVar1, max_value < fVar1)) {
       *axis_value = max_value;

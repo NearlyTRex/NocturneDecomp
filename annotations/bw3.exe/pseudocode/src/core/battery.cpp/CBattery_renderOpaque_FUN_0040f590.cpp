@@ -20,9 +20,9 @@ int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_0040f590(CBattery *this_p
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-            (DAT_005f2afc,&(this_ptr->base).location.position);
+            (g_CDemonRenderer_PTR_005f2afc,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-            (DAT_005f2afc,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005f2afc,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   this_ptr_00 = &CStack_34;
   puVar2 = auStack_1c;

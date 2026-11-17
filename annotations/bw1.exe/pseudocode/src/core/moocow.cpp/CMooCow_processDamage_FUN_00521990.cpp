@@ -27,7 +27,8 @@ void __cdecl core_moocow_cpp_CMooCow_processDamage_FUN_00521990(CMooCow *this_pt
       (*((this_ptr->base).base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
     }
   }
-  iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
+  iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                    (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
   if (iVar3 != 0) {
     core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(&this_ptr->base,damage_info);
     return;

@@ -80,11 +80,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005e033b
 ;   TerminatedCString s_Not_enough_main_data_to_005e034c
-;   undefined4 DAT_00618e88
+;   double[2] g_DOUBLE_ARRAY_00618e88
 ;   undefined4 DAT_00618ec8
-;   undefined4 DAT_00619030
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double[64] g_DOUBLE_ARRAY_00619030
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -228,7 +228,7 @@ section .text
         ;   Label: LAB_0050a3fa
     MOV ESI,dword ptr [EBX]             ; 0050a3fc
     FLD ST0                             ; 0050a3fe
-    FMUL double ptr [ESI*0x8 + 0x619030] ; 0050a400 | DAT_00619030
+    FMUL double ptr [ESI*0x8 + 0x619030] ; 0050a400 | g_DOUBLE_ARRAY_00619030
     ADD EBX,0x180                       ; 0050a407
     ADD EDX,0x180                       ; 0050a40d
     INC ECX                             ; 0050a413
@@ -304,7 +304,7 @@ section .text
     MOV dword ptr [ESP + 0x6010],ECX    ; 0050a4f8
     MOV dword ptr [ESP + 0x600c],EDX    ; 0050a4ff
     FILD qword ptr [ESP + 0x600c]       ; 0050a506
-    FDIV double ptr [EAX + 0x618e88]    ; 0050a50d | DAT_00618e88
+    FDIV double ptr [EAX + 0x618e88]    ; 0050a50d | g_DOUBLE_ARRAY_00618e88
     FMULP                               ; 0050a513
     MOV EAX,dword ptr [ESP + 0x4]       ; 0050a515
     MOV dword ptr [ESP + 0x6010],ECX    ; 0050a519
@@ -658,8 +658,8 @@ section .text
     MOV EDX,0x5e033b                    ; 0050a96f | = "..\\sound\\mp3.cpp"
     MOV ECX,0x1029                      ; 0050a974
     PUSH 0x5e034c                       ; 0050a979 | = "Not enough main data to decode frame %d."
-    MOV dword ptr [0x01d046a0],EDX      ; 0050a97e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0050a984 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0050a97e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0050a984 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050a98a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050a98f

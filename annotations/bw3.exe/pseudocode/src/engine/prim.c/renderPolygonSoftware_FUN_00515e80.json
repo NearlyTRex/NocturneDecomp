@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 514,
-    "complexity_score": 334,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 219,
-    "suspect_count": 10,
+    "suspect_count": 2,
     "suspect_types": [
-      "sign_compare_idiom",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "sign_compare_idiom"
     ],
     "total_lines": 733
   },
@@ -87,98 +85,98 @@
     },
     {
       "addr": "005fba40",
-      "name": "DAT_005fba40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_005fba40",
+      "type": "uint",
+      "value": "0x1"
     },
     {
       "addr": "00603974",
-      "name": "DAT_00603974",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00603974",
+      "type": "int",
+      "value": "0x4b0"
     },
     {
       "addr": "007303f4",
-      "name": "DAT_007303f4",
-      "type": "undefined4",
+      "name": "g_INT_007303f4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007303fc",
-      "name": "DAT_007303fc",
-      "type": "undefined4",
+      "name": "g_INT_007303fc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b598",
-      "name": "DAT_01c6b598",
-      "type": "undefined4",
+      "name": "g_INT_01c6b598",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b59c",
-      "name": "DAT_01c6b59c",
-      "type": "undefined4",
+      "name": "g_INT_01c6b59c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a0",
-      "name": "DAT_01c6b5a0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a4",
-      "name": "DAT_01c6b5a4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_INT_01c6e2b8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed2c88",
-      "name": "DAT_01ed2c88",
-      "type": "undefined4",
+      "name": "g_INT_01ed2c88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed2c8c",
-      "name": "DAT_01ed2c8c",
-      "type": "undefined4",
+      "name": "g_SSoftwareEdge_ARRAY_01ed2c8c",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "01ed318c",
-      "name": "DAT_01ed318c",
-      "type": "undefined4",
+      "name": "g_INT_01ed318c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed3190",
-      "name": "DAT_01ed3190",
-      "type": "undefined4",
+      "name": "g_INT_01ed3190",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed3198",
-      "name": "DAT_01ed3198",
-      "type": "undefined4",
+      "name": "g_INT_01ed3198",
+      "type": "int",
       "value": null
     }
   ],
@@ -330,80 +328,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005fba40",
-      "severity": "mild",
-      "text": "if ((DAT_005fba40 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_007303fc",
-      "severity": "mild",
-      "text": "if (DAT_007303fc != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_007303f4",
-      "severity": "mild",
-      "text": "if ((_DAT_01c6cee8 != 0) && (DAT_007303f4 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_01ed2c8c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ed2c8c + iVar3) = iVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_00603974",
-      "severity": "mild",
-      "text": "iVar6 = _DAT_01ed318c - DAT_00603974;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 184,
+      "line": 183,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar12 = SBORROW4(_DAT_01ed318c,DAT_00603974);",
+      "text": "bVar12 = SBORROW4(g_INT_01ed318c,g_INT_00603974);",
       "type": "sign_compare_idiom"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 184,
-      "match": "DAT_00603974",
-      "severity": "mild",
-      "text": "bVar12 = SBORROW4(_DAT_01ed318c,DAT_00603974);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 215,
-      "match": "DAT_00603974",
-      "severity": "mild",
-      "text": "iVar8 = DAT_00603974;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 219,
+      "line": 218,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar12 = SBORROW4(local_1c,iVar8);",

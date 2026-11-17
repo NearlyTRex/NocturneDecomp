@@ -19,7 +19,7 @@
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 004847df
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5baec
+;   int g_INT_01c5baec
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
@@ -67,7 +67,7 @@ section .text
     CMP EDX,EDI                         ; 0047b630
     JGE 0x0047b64f                      ; 0047b632
         ;   XREF to: 0047b64f (CONDITIONAL_JUMP)  ; LAB_0047b64f
-    CMP dword ptr [0x01c5baec],0x0      ; 0047b634 | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 0047b634 | g_INT_01c5baec
     JZ 0x0047b72f                       ; 0047b63b
         ;   XREF to: 0047b72f (CONDITIONAL_JUMP)  ; LAB_0047b72f
     MOV ECX,dword ptr [ESP + 0x24]      ; 0047b641
@@ -100,7 +100,7 @@ section .text
     CMP EDX,EDI                         ; 0047b675
     JGE 0x0047b694                      ; 0047b677
         ;   XREF to: 0047b694 (CONDITIONAL_JUMP)  ; LAB_0047b694
-    CMP dword ptr [0x01c5baec],0x0      ; 0047b679 | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 0047b679 | g_INT_01c5baec
     JZ 0x0047b73f                       ; 0047b680
         ;   XREF to: 0047b73f (CONDITIONAL_JUMP)  ; LAB_0047b73f
     PUSH ESI                            ; 0047b686
@@ -133,7 +133,7 @@ section .text
     CMP EDX,EDI                         ; 0047b6ba
     JGE 0x0047b6d5                      ; 0047b6bc
         ;   XREF to: 0047b6d5 (CONDITIONAL_JUMP)  ; LAB_0047b6d5
-    CMP dword ptr [0x01c5baec],0x0      ; 0047b6be | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 0047b6be | g_INT_01c5baec
     JZ 0x0047b74f                       ; 0047b6c5
         ;   XREF to: 0047b74f (CONDITIONAL_JUMP)  ; LAB_0047b74f
     PUSH EBP                            ; 0047b6cb
@@ -164,7 +164,7 @@ section .text
     CMP EDX,EDI                         ; 0047b6f5
     JGE 0x0047b710                      ; 0047b6f7
         ;   XREF to: 0047b710 (CONDITIONAL_JUMP)  ; LAB_0047b710
-    CMP dword ptr [0x01c5baec],0x0      ; 0047b6f9 | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 0047b6f9 | g_INT_01c5baec
     JZ 0x0047b75b                       ; 0047b700
         ;   XREF to: 0047b75b (CONDITIONAL_JUMP)  ; LAB_0047b75b
     PUSH ESI                            ; 0047b702

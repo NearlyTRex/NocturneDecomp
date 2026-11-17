@@ -7,10 +7,10 @@
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_0061c010
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -33,8 +33,8 @@ section .text
     MOV EBP,ESP                         ; 0049fdf4
     SUB ESP,0x78                        ; 0049fdf6
     MOV EBX,dword ptr [EBP + 0x14]      ; 0049fdf9
-    MOV EDX,dword ptr [0x00612560]      ; 0049fdfc | DAT_00612560
-    PUSH EDX                            ; 0049fe02 | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 0049fdfc | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 0049fe02 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0049fe03
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0049fe08
@@ -108,7 +108,7 @@ section .text
     ADD EBX,0x20                        ; 0049febc
     LEA EDI,[EBP + -0xc]                ; 0049febf
     PUSH EBX                            ; 0049fec2
-    MOV ECX,dword ptr [0x0061c010]      ; 0049fec3 | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 0049fec3 | g_CFireEffect_PTR_0061c010
     LEA ESI,[EBP + -0x24]               ; 0049fec9
     PUSH ECX                            ; 0049fecc
     MOVSD ES:EDI,ESI                    ; 0049fecd

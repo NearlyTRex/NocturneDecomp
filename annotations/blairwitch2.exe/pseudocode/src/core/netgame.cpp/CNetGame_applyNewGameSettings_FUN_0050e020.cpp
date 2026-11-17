@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_0050e020(CNetGame *this_ptr,UNetPacket *packet)
 
 {
@@ -78,8 +76,8 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_0050e020(CNetGame
   bVar17 = 0;
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {
-    _DAT_01d046a0 = "..\\core\\netgame.cpp";
-    _DAT_01d046a4 = 0x7e6;
+    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
+    g_INT_01d046a4 = 0x7e6;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
   }
   piVar12 = (int *)&stack0xfffffe88;
@@ -141,8 +139,8 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_0050e020(CNetGame
       }
       if (iVar5 == local_11b) {
         if (local_24 == this_ptr->local_player_index) {
-          _DAT_01d046a0 = "..\\core\\netgame.cpp";
-          _DAT_01d046a4 = 0x811;
+          g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
+          g_INT_01d046a4 = 0x811;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze");
         }
         core_netgame_cpp_CNetGame_removePlayer_FUN_0050e6c0(this_ptr,local_24);
@@ -152,16 +150,16 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_0050e020(CNetGame
         pcVar7 = local_117 + iVar5 * 0x28;
         pSVar10 = local_28;
         if (local_24 == this_ptr->local_player_index) {
-          DAT_0061b124 = local_24 ^ this_ptr->local_player_index;
+          g_INT_0061b124 = local_24 ^ this_ptr->local_player_index;
           iVar13 = _strcmp(local_28->name,pcVar7);
           if (iVar13 != 0) {
-            DAT_0061b124 = 1;
+            g_INT_0061b124 = 1;
           }
           if (local_2c->players[0].ready_flag == aEStack_fb[iVar5 * 10 + 2]) {
-            if (DAT_0061b124 == 0) goto LAB_0050e59e;
+            if (g_INT_0061b124 == 0) goto LAB_0050e59e;
           }
           else {
-            DAT_0061b124 = 1;
+            g_INT_0061b124 = 1;
           }
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_0050eb80(this_ptr);
         }

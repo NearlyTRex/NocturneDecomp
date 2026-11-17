@@ -17,8 +17,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_bmppuzzl_cpp_005b675e
 ;   TerminatedCString s_Too_damn_many_buttons_005b6773
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -78,8 +78,8 @@ section .text
         ;   Label: LAB_00412396
     MOV EDX,0x290                       ; 0041239b
     PUSH 0x5b6773                       ; 004123a0 | = "Too damn many buttons"
-    MOV [0x01d71de0],EAX                ; 004123a5 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004123aa | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004123a5 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 004123aa | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004123b0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004123b5

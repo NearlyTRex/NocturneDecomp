@@ -22,14 +22,14 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004807c0 = 0048081c
-;   undefined4 s_Blocks_d_Total_1fk_Max_1_005d24fa+1
+;   TerminatedCString s_Blocks_d_Total_1fk_Max_1_005d24fb
 ;   TerminatedCString s_Heap_is_empty_005d251e
 ;   undefined4 s_Heap_is_empty_005d251e+1
 ;   undefined4 s_Heap_is_empty_005d251e+2
 ;   undefined4 s_Heap_is_empty_005d251e+3
 ;   TerminatedCString s_Memory_corruption_detect_005d252d
 ;   undefined4 s_Memory_corruption_detect_005d252d+1
-;   undefined4 DAT_005d254f
+;   double g_DOUBLE_005d254f = 0.0009765625
 ;
 ; Called Functions:
 ;   crt_heap.c__heapwalk_FUN_005ba900
@@ -115,7 +115,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 00480863
     SUB ESP,0x8                         ; 00480867
     MOV dword ptr [ESP + 0x18],EDI      ; 0048086a
-    FLD double ptr [0x005d254f]         ; 0048086e | DAT_005d254f
+    FLD double ptr [0x005d254f]         ; 0048086e | g_DOUBLE_005d254f
     FXCH                                ; 00480874
     FMUL ST1                            ; 00480876
     FILD dword ptr [ESP + 0x18]         ; 00480878
@@ -124,7 +124,7 @@ section .text
     SUB ESP,0x8                         ; 00480881
     FSTP double ptr [ESP]               ; 00480884
     PUSH EBX                            ; 00480887
-    PUSH 0x5d24fb                       ; 00480888 | s_Blocks_d_Total_1fk_Max_1_005d24fa+1
+    PUSH 0x5d24fb                       ; 00480888 | = "Blocks: %d Total: %.1fk Max: %.1fk"
     MOV ECX,dword ptr [EBP + 0x18]      ; 0048088d
     PUSH ECX                            ; 00480890
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00480891

@@ -8,16 +8,16 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8e6c
+;   TerminatedCString s_CGun_005d8e6c
 ;   TerminatedCString s_ShotDjienWithPistol_005d8e71
 ;   TerminatedCString s_CRifle_005d8e85
 ;   TerminatedCString s_ShotDjienWithRifle_005d8e8c
 ;   TerminatedCString s_CLightgun_005d8e9f
 ;   TerminatedCString s_ShotDjienWithLightgun_005d8ea9
 ;   TerminatedCString s_DjienInvulnerable_005d8ebf
-;   undefined4 DAT_005d8ed8
-;   undefined4 DAT_005fea28
-;   undefined4 DAT_0061b4d0
+;   double g_DOUBLE_005d8ed8 = 0.950000000000000
+;   float g_FLOAT_005fea28 = 3.666000
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -52,7 +52,7 @@ section .text
     CMP ESI,0x12                        ; 004613df
     JNZ 0x00461463                      ; 004613e2
         ;   XREF to: 00461463 (CONDITIONAL_JUMP)  ; LAB_00461463
-    PUSH 0x5d8e6c                       ; 004613e8 | DAT_005d8e6c
+    PUSH 0x5d8e6c                       ; 004613e8 | = "CGun"
     MOV ECX,dword ptr [EDI + 0x34]      ; 004613ed
     PUSH ECX                            ; 004613f0
     CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 004613f1
@@ -62,7 +62,7 @@ section .text
     JZ 0x00461411                       ; 004613fb
         ;   XREF to: 00461411 (CONDITIONAL_JUMP)  ; LAB_00461411
     PUSH 0x5d8e71                       ; 004613fd | = "ShotDjienWithPistol"
-    MOV EBX,dword ptr [0x0061b4d0]      ; 00461402 | DAT_0061b4d0
+    MOV EBX,dword ptr [0x0061b4d0]      ; 00461402 | g_CEventList_PTR_0061b4d0
     PUSH EBX                            ; 00461408
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00461409
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -78,7 +78,7 @@ section .text
     JZ 0x0046143a                       ; 00461424
         ;   XREF to: 0046143a (CONDITIONAL_JUMP)  ; LAB_0046143a
     PUSH 0x5d8e8c                       ; 00461426 | = "ShotDjienWithRifle"
-    MOV EBP,dword ptr [0x0061b4d0]      ; 0046142b | DAT_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 0046142b | g_CEventList_PTR_0061b4d0
     PUSH EBP                            ; 00461431
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00461432
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -94,14 +94,14 @@ section .text
     JZ 0x00461463                       ; 0046144d
         ;   XREF to: 00461463 (CONDITIONAL_JUMP)  ; LAB_00461463
     PUSH 0x5d8ea9                       ; 0046144f | = "ShotDjienWithLightgun"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00461454 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00461454 | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 0046145a
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0046145b
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00461460
     PUSH 0x5d8ebf                       ; 00461463 | = "DjienInvulnerable"
         ;   Label: LAB_00461463
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00461468 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00461468 | g_CEventList_PTR_0061b4d0
     PUSH ECX                            ; 0046146e
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0046146f
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -122,7 +122,7 @@ section .text
     JC 0x00461477                       ; 0046148c
         ;   XREF to: 00461477 (CONDITIONAL_JUMP)  ; LAB_00461477
     PUSH EDI                            ; 0046148e
-    FLD float ptr [0x005fea28]          ; 0046148f | DAT_005fea28
+    FLD float ptr [0x005fea28]          ; 0046148f | g_FLOAT_005fea28
     MOV EAX,dword ptr [EBX + 0x154]     ; 00461495
     PUSH EBX                            ; 0046149b
     FSTP float ptr [EBX + 0xc1e4]       ; 0046149c
@@ -145,7 +145,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 004614c6
     FLD float ptr [ESP + 0x4]           ; 004614ca
     ADD ESP,0x4                         ; 004614ce
-    FCOMP double ptr [0x005d8ed8]       ; 004614d1 | DAT_005d8ed8
+    FCOMP double ptr [0x005d8ed8]       ; 004614d1 | g_DOUBLE_005d8ed8
     FNSTSW AX                           ; 004614d7
     SAHF                                ; 004614d9
     JBE 0x00461477                      ; 004614da

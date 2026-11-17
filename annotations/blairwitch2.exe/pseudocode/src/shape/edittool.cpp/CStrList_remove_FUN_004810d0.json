@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 72,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 3,
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_stride_bytecount",
-      "warning_overlapping_globals"
+      "pointer_stride_bytecount"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -68,14 +67,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -169,16 +168,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(void **)((int)this_ptr",
       "severity": "moderate",
       "text": "ptr = *(void **)((int)this_ptr->data_array + iVar1);",
@@ -186,7 +177,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((iVar1 - start_index) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 27,
+      "line": 25,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

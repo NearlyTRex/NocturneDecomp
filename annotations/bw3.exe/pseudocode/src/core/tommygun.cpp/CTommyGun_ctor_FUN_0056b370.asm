@@ -10,7 +10,7 @@
 ;   core_tommygun.cpp_factoryFuncTommyGun_FUN_0056b340 at 0056b353
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e53bc
+;   float g_FLOAT_005e53bc = 8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
@@ -41,7 +41,7 @@ section .text
     MOV dword ptr [EBX + 0x2e8],0x42c80000 ; 0056b3bf
     MOV dword ptr [EBX + 0x2ec],0x1     ; 0056b3c9
     MOV dword ptr [EBX + 0x598],0x0     ; 0056b3d3
-    FLD float ptr [0x005e53bc]          ; 0056b3dd | DAT_005e53bc
+    FLD float ptr [0x005e53bc]          ; 0056b3dd | g_FLOAT_005e53bc
     MOV dword ptr [EBX + 0x59c],0x0     ; 0056b3e3
     ADD ESP,0x8                         ; 0056b3ed
     MOV dword ptr [EBX + 0x594],0x0     ; 0056b3f0

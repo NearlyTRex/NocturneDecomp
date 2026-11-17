@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_0054f9c0(CSfxSlot *this_ptr,double hardware_playback_pos)
 
 {
@@ -18,14 +16,14 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_0054f9c0(CSfxSlot 
   double local_28;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0xd34;
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0xd34;
     core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::updatePlaybackPos - no samplePtr");
   }
   if ((hardware_playback_pos < 0.0) ||
      ((double)this_ptr->sample->streaming_buffer_size < hardware_playback_pos)) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0xd3a;
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0xd3a;
     core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::updatePlaybackPos - invalid buffer position");
   }
   local_28 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
@@ -33,9 +31,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_0054f9c0(CSfxSlot 
     local_28 = (double)this_ptr->sample->streaming_buffer_size + local_28;
   }
   if ((local_28 < 0.0) ||
-     ((double)this_ptr->sample->streaming_buffer_size + _DAT_005e89d6 < local_28)) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0xd48;
+     ((double)this_ptr->sample->streaming_buffer_size + 0.001 < local_28)) {
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0xd48;
     core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)");
   }
   if (((this_ptr->options).playback_position != this_ptr->prev_hardware_playback_pos) ||

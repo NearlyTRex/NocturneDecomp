@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 87,
+    "complexity_score": 71,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 3,
+    "pseudocode_lines": 41,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 143
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -63,9 +62,9 @@
   "globals": [
     {
       "addr": "005f63b9",
-      "name": "DAT_005f63b9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f63b9",
+      "type": "double",
+      "value": "0.00390625"
     },
     {
       "addr": "007c5094",
@@ -212,16 +211,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Pointer value `&pCVar5->vertex_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "(int)&pCVar5->vertex_list->x",
       "severity": "moderate",
       "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",
@@ -229,7 +220,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",

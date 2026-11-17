@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_COMBATMODEHARD_005e43eb
-;   undefined4 DAT_005e43fb
-;   undefined4 DAT_0061b4d0
+;   float g_FLOAT_005e43fb = 2
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.game_control
 ;
@@ -37,7 +37,7 @@ section .text
     PUSH EBX                            ; 004e8f0e
         ;   Label: LAB_004e8f0e
     PUSH 0x5e43eb                       ; 004e8f0f | = "COMBATMODEHARD"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004e8f14 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004e8f14 | g_CEventList_PTR_0061b4d0
     PUSH ECX                            ; 004e8f1a
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004e8f1b
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -56,7 +56,7 @@ section .text
     JNZ 0x004e8f5f                      ; 004e8f4f
         ;   XREF to: 004e8f5f (CONDITIONAL_JUMP)  ; LAB_004e8f5f
     FLD float ptr [ESP + 0x8]           ; 004e8f51
-    FMUL float ptr [0x005e43fb]         ; 004e8f55 | DAT_005e43fb
+    FMUL float ptr [0x005e43fb]         ; 004e8f55 | g_FLOAT_005e43fb
     FSTP float ptr [ESP + 0x8]          ; 004e8f5b
     MOV EAX,dword ptr [ESP + 0x8]       ; 004e8f5f
         ;   Label: LAB_004e8f5f

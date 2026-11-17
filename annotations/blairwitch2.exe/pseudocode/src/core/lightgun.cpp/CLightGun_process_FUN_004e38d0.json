@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 95,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 3,
+    "pseudocode_lines": 54,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "warning_overlapping_globals"
+      "stack_param"
     ],
-    "total_lines": 217
+    "total_lines": 216
   },
   "cross_references": [],
   "function": {
@@ -118,33 +117,33 @@
   "globals": [
     {
       "addr": "005f95d0",
-      "name": "DAT_005f95d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f95d0",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005f95d8",
-      "name": "DAT_005f95d8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f95d8",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005f95dc",
-      "name": "DAT_005f95dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f95dc",
+      "type": "float",
+      "value": "2.5"
     },
     {
       "addr": "005f95e0",
-      "name": "DAT_005f95e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f95e0",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005f95e4",
-      "name": "DAT_005f95e4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f95e4",
+      "type": "float",
+      "value": "2.5"
     },
     {
       "addr": "0060a0b4",
@@ -160,9 +159,9 @@
     },
     {
       "addr": "0061e8f4",
-      "name": "DAT_0061e8f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWeather_PTR_0061e8f4",
+      "type": "CWeather*",
+      "value": "02661f80"
     },
     {
       "addr": "01cb5620",
@@ -172,8 +171,8 @@
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     }
   ],
@@ -270,16 +269,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "float in_stack_00000018;",
@@ -287,10 +278,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "fVar2 = (_DAT_005f95d0 / fVar2) * in_stack_00000018 + this_ptr->charge_level;",
+      "text": "fVar2 = (2.0f / fVar2) * in_stack_00000018 + this_ptr->charge_level;",
       "type": "stack_param"
     }
   ],

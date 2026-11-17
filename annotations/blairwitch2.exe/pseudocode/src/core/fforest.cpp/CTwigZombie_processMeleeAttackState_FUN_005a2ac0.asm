@@ -11,12 +11,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f0013
-;   undefined4 DAT_005f001b
-;   undefined4 DAT_005f001f
-;   undefined4 DAT_005ff170
-;   undefined4 DAT_005ff174
-;   undefined4 DAT_005ff178
-;   undefined4 DAT_0265370c
+;   float g_FLOAT_005f001b = 10
+;   float g_FLOAT_005f001f = 0.5
+;   float g_FLOAT_005ff170 = 3
+;   float g_FLOAT_005ff174 = 0.1500000
+;   float g_FLOAT_005ff178 = 0.2000000
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -84,13 +84,13 @@ section .text
     JNZ 0x005a2da5                      ; 005a2b33
         ;   XREF to: 005a2da5 (CONDITIONAL_JUMP)  ; LAB_005a2da5
     FLD float ptr [ESP + 0xa8]          ; 005a2b39
-    FCOMP float ptr [0x005ff174]        ; 005a2b40 | DAT_005ff174
+    FCOMP float ptr [0x005ff174]        ; 005a2b40 | g_FLOAT_005ff174
     FNSTSW AX                           ; 005a2b46
     SAHF                                ; 005a2b48
     JC 0x005a2d3b                       ; 005a2b49
         ;   XREF to: 005a2d3b (CONDITIONAL_JUMP)  ; LAB_005a2d3b
     FLD float ptr [ESP + 0xa8]          ; 005a2b4f
-    FCOMP float ptr [0x005ff178]        ; 005a2b56 | DAT_005ff178
+    FCOMP float ptr [0x005ff178]        ; 005a2b56 | g_FLOAT_005ff178
     FNSTSW AX                           ; 005a2b5c
     SAHF                                ; 005a2b5e
     JA 0x005a2d3b                       ; 005a2b5f
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 004222d0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInfo * this_ptr)
     FLD float ptr [EBX + 0x2824]        ; 005a2b77
     ADD ESP,0x4                         ; 005a2b7d
-    FMUL float ptr [0x005f001b]         ; 005a2b80 | DAT_005f001b
+    FMUL float ptr [0x005f001b]         ; 005a2b80 | g_FLOAT_005f001b
     MOV dword ptr [ESP + 0x34],EBX      ; 005a2b86
     MOV dword ptr [ESP + 0x38],EBX      ; 005a2b8a
     PUSH EBX                            ; 005a2b8e
@@ -118,7 +118,7 @@ section .text
     ADD EAX,ESI                         ; 005a2bb3
     PUSH EAX                            ; 005a2bb5
     MOV dword ptr [ESP + 0xb0],ESI      ; 005a2bb6
-    PUSH 0x265370c                      ; 005a2bbd | DAT_0265370c
+    PUSH 0x265370c                      ; 005a2bbd | g_CVector3f_0265370c
     LEA ESI,[ESP + 0x98]                ; 005a2bc2
     LEA EDI,[ESP + 0x8c]                ; 005a2bc9
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a2bd0
@@ -135,7 +135,7 @@ section .text
     SHL EAX,0x4                         ; 005a2bf8
     ADD EAX,ECX                         ; 005a2bfb
     PUSH EAX                            ; 005a2bfd
-    PUSH 0x265370c                      ; 005a2bfe | DAT_0265370c
+    PUSH 0x265370c                      ; 005a2bfe | g_CVector3f_0265370c
     LEA ESI,[ESP + 0x74]                ; 005a2c03
     LEA EDI,[ESP + 0x80]                ; 005a2c07
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a2c0e
@@ -164,7 +164,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a2c5f
     MOVSD ES:EDI,ESI                    ; 005a2c60
     MOVSD ES:EDI,ESI                    ; 005a2c61
-    FLD float ptr [0x005f001f]          ; 005a2c62 | DAT_005f001f
+    FLD float ptr [0x005f001f]          ; 005a2c62 | g_FLOAT_005f001f
     FLD float ptr [ESP + 0x3c]          ; 005a2c68
     FMUL ST1                            ; 005a2c6c
     FLD float ptr [ESP + 0x40]          ; 005a2c6e
@@ -240,7 +240,7 @@ section .text
     RET                                 ; 005a2d3a
     FLD float ptr [ESP + 0xa8]          ; 005a2d3b
         ;   Label: LAB_005a2d3b
-    FCOMP float ptr [0x005ff178]        ; 005a2d42 | DAT_005ff178
+    FCOMP float ptr [0x005ff178]        ; 005a2d42 | g_FLOAT_005ff178
     FNSTSW AX                           ; 005a2d48
     SAHF                                ; 005a2d4a
     JBE 0x005a2ae6                      ; 005a2d4b
@@ -255,7 +255,7 @@ section .text
     FMUL ST0                            ; 005a2d67
     FADDP                               ; 005a2d69
     FSQRT                               ; 005a2d6b
-    FCOMP float ptr [0x005ff170]        ; 005a2d6d | DAT_005ff170
+    FCOMP float ptr [0x005ff170]        ; 005a2d6d | g_FLOAT_005ff170
     FNSTSW AX                           ; 005a2d73
     SAHF                                ; 005a2d75
     JBE 0x005a2ae6                      ; 005a2d76

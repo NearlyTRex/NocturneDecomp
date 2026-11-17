@@ -15,10 +15,9 @@ void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407720(SMRGLHeaderExtended
     do {
       iVar1 = (chain->base).type;
       if (((iVar1 == 0) || (iVar1 < 0)) || (0x42 < iVar1)) break;
-      chain = (SMRGLHeaderExtended *)
-              (*(code *)(&PTR_engine_3d_c_badMRGLStruct_FUN_004037b0_005f07c4)[iVar1])(chain);
+      chain = (SMRGLHeaderExtended *)(*(code *)g_ARRAY_PTR_005f07c4[iVar1])(chain);
     } while (chain != (SMRGLHeaderExtended *)0x0);
-    DAT_005fba40 = 1;
+    g_UINT_005fba40 = 1;
   }
   return;
 }

@@ -36,10 +36,10 @@ void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride256_FUN_00470385(ulonglo
   uVar11 = input_buffer[-0x20];
   uVar1 = *input_buffer;
   uVar2 = input_buffer[0x20];
-  uVar7 = (byte)((uint)(uint)DAT_006112c8 >> 0x18);
-  uVar6 = (byte)((uint)(uint)DAT_006112c8 >> 0x10);
-  uVar5 = (byte)((uint)(uint)DAT_006112c8 >> 8);
-  uVar4 = (byte)(uint)DAT_006112c8;
+  uVar7 = (byte)((uint)g_INT_006112c8 >> 0x18);
+  uVar6 = (byte)((uint)g_INT_006112c8 >> 0x10);
+  uVar5 = (byte)((uint)g_INT_006112c8 >> 8);
+  uVar4 = (byte)g_INT_006112c8;
   uVar12 = CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar1 >> 0x18)),uVar6)
                                                ,(char)(uVar1 >> 0x10)),uVar5),(char)(uVar1 >> 8)),
                     CONCAT11(uVar4,(char)uVar1));
@@ -54,10 +54,10 @@ void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride256_FUN_00470385(ulonglo
   uVar11 = input_buffer[-0x21];
   uVar1 = input_buffer[-1];
   uVar2 = input_buffer[0x1f];
-  uVar4 = (byte)DAT_006112c8._4_4_;
-  uVar5 = (byte)((uint)DAT_006112c8._4_4_ >> 8);
-  uVar6 = (byte)((uint)DAT_006112c8._4_4_ >> 0x10);
-  uVar7 = (byte)((uint)DAT_006112c8._4_4_ >> 0x18);
+  uVar4 = (byte)uRam006112cc;
+  uVar5 = (byte)((uint)uRam006112cc >> 8);
+  uVar6 = (byte)((uint)uRam006112cc >> 0x10);
+  uVar7 = (byte)((uint)uRam006112cc >> 0x18);
   uVar12 = CONCAT17(uVar7,CONCAT16((char)(uVar1 >> 0x38),
                                    CONCAT15(uVar6,CONCAT14((char)(uVar1 >> 0x30),
                                                            CONCAT13(uVar5,CONCAT12((char)(uVar1 >> 
@@ -81,10 +81,10 @@ void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride256_FUN_00470385(ulonglo
     uVar11 = input_buffer[-0x20];
     uVar1 = *input_buffer;
     uVar2 = input_buffer[0x20];
-    uVar4 = (byte)DAT_006112c8._4_4_;
-    uVar5 = (byte)((uint)DAT_006112c8._4_4_ >> 8);
-    uVar6 = (byte)((uint)DAT_006112c8._4_4_ >> 0x10);
-    uVar7 = (byte)((uint)DAT_006112c8._4_4_ >> 0x18);
+    uVar4 = (byte)uRam006112cc;
+    uVar5 = (byte)((uint)uRam006112cc >> 8);
+    uVar6 = (byte)((uint)uRam006112cc >> 0x10);
+    uVar7 = (byte)((uint)uRam006112cc >> 0x18);
     uVar12 = CONCAT17(uVar7,CONCAT16((char)(uVar1 >> 0x38),
                                      CONCAT15(uVar6,CONCAT14((char)(uVar1 >> 0x30),
                                                              CONCAT13(uVar5,CONCAT12((char)(uVar1 >>
@@ -111,10 +111,10 @@ void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride256_FUN_00470385(ulonglo
     uVar1 = input_buffer[-0x1f];
     uVar2 = input_buffer[1];
     uVar10 = input_buffer[0x21];
-    uVar7 = (byte)((uint)(uint)DAT_006112c8 >> 0x18);
-    uVar6 = (byte)((uint)(uint)DAT_006112c8 >> 0x10);
-    uVar5 = (byte)((uint)(uint)DAT_006112c8 >> 8);
-    uVar4 = (byte)(uint)DAT_006112c8;
+    uVar7 = (byte)((uint)g_INT_006112c8 >> 0x18);
+    uVar6 = (byte)((uint)g_INT_006112c8 >> 0x10);
+    uVar5 = (byte)((uint)g_INT_006112c8 >> 8);
+    uVar4 = (byte)g_INT_006112c8;
     uVar12 = CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar2 >> 0x18)),
                                                           uVar6),(char)(uVar2 >> 0x10)),uVar5),
                                (char)(uVar2 >> 8)),CONCAT11(uVar4,(char)uVar2));

@@ -8,7 +8,7 @@
 ; float *          Stack[0x8]:4   out_distance
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4e85
+;   double g_DOUBLE_005c4e85 = 2
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
@@ -107,7 +107,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d4342
     FLD float ptr [ESP + 0x88]          ; 004d4343
     FLD ST0                             ; 004d434a
-    FMUL double ptr [0x005c4e85]        ; 004d434c | DAT_005c4e85
+    FMUL double ptr [0x005c4e85]        ; 004d434c | g_DOUBLE_005c4e85
     FSTP ST1                            ; 004d4352
     FST float ptr [ESP + 0x88]          ; 004d4354
     FMUL float ptr [ESP + 0x88]         ; 004d435b

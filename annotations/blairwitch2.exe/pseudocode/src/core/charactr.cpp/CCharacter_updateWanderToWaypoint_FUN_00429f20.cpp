@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20(CCharacter *this_ptr,float delta_time,char *pattern)
 
 {
@@ -33,7 +31,7 @@ int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20(CCh
      (fVar4 = (pCVar2->base).base.location.position.x - (this_ptr->base).location.position.x,
      fVar1 = (pCVar2->base).base.location.position.y - (this_ptr->base).location.position.y,
      fVar5 = (pCVar2->base).base.location.position.z - (this_ptr->base).location.position.z,
-     (float)_DAT_005cd146 <= SQRT(fVar5 * fVar5 + fVar1 * fVar1 + fVar4 * fVar4))) {
+     (float)4 <= SQRT(fVar5 * fVar5 + fVar1 * fVar1 + fVar4 * fVar4))) {
     if (this_ptr->wander_nearest_waypoint == (CWayPoint *)0x0) goto LAB_00429fa6;
     if (this_ptr->wander_target == (CWayPoint *)0x0) goto LAB_00429fb0;
     pCVar2 = core_charactr_cpp_CCharacter_findNearestReachableWaypoint_FUN_0042b420
@@ -65,7 +63,7 @@ LAB_00429ff3:
   }
   fVar5 = 0.0;
   fVar4 = 0.0;
-  direction = (CVector3f *)&DAT_0265370c;
+  direction = &g_CVector3f_0265370c;
   path_map = (*((pCVar2->base).base.vtable._ub)->getPathMap)((CDemonActor *)pCVar2);
   iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                     (this_ptr,&(this_ptr->wander_nearest_waypoint->base).base.location.position,

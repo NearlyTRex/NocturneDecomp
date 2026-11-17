@@ -14,8 +14,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170 at 0054e1aa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8197
-;   undefined4 DAT_005d819b
+;   float g_FLOAT_005d8197 = -1
+;   double g_DOUBLE_005d819b = 2
 ;
 ; Called Functions:
 ;   crt_math.c_acos_FUN_005a4b74
@@ -37,7 +37,7 @@ section .text
     JZ 0x00585aaa                       ; 00585a95
         ;   XREF to: 00585aaa (CONDITIONAL_JUMP)  ; LAB_00585aaa
     FLD float ptr [ECX]                 ; 00585a97
-    FCOMP float ptr [0x005d8197]        ; 00585a99 | DAT_005d8197
+    FCOMP float ptr [0x005d8197]        ; 00585a99 | g_FLOAT_005d8197
     FNSTSW AX                           ; 00585a9f
     SAHF                                ; 00585aa1
     JA 0x00585adc                       ; 00585aa2
@@ -80,7 +80,7 @@ section .text
         ;   Label: LAB_00585aec
     CALL crt_math.c_acos_FUN_005a4b74   ; 00585aee
         ;   XREF to: 005a4b74 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005a4b74(double x)
-    FMUL double ptr [0x005d819b]        ; 00585af3 | DAT_005d819b
+    FMUL double ptr [0x005d819b]        ; 00585af3 | g_DOUBLE_005d819b
     FSTP float ptr [EBX]                ; 00585af9
     JMP 0x00585aaa                      ; 00585afb
         ;   XREF to: 00585aaa (UNCONDITIONAL_JUMP)  ; LAB_00585aaa

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CVector3f * __stack2_esi core_flies_cpp_CFlies_generateRandomPoint_FUN_004a7660(CFlies *this_ptr,CVector3f *reference_point,CVector3f *out_point)
 
@@ -69,11 +68,11 @@ CVector3f * __stack2_esi core_flies_cpp_CFlies_generateRandomPoint_FUN_004a7660(
   fStack_c0 = fStack_14 * fStack_14 * (this_ptr->box_size).y;
   fVar1 = (this_ptr->box_size).x;
   fStack_c4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
-                        (fVar1 * (float)_DAT_005d6719,fVar1 * (float)_DAT_005d6711);
+                        (fVar1 * (float)-0.5,fVar1 * (float)0.5);
   fVar1 = (this_ptr->box_size).z;
   fStack_14 = fStack_c4;
   fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
-                        (fVar1 * (float)_DAT_005d6719,fVar1 * (float)_DAT_005d6711);
+                        (fVar1 * (float)-0.5,fVar1 * (float)0.5);
   fStack_bc = fStack_14;
   if (reference_point != (CVector3f *)0x0) {
     fStack_64 = fStack_c4 - reference_point->x;
@@ -85,16 +84,16 @@ CVector3f * __stack2_esi core_flies_cpp_CFlies_generateRandomPoint_FUN_004a7660(
     *(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
          *(uint *)((int)&stack0xffffffa4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
     fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-    if ((float)_DAT_005d6721 < fVar1) {
-      fStack_4c = fStack_34 * _DAT_005d6729;
-      fStack_48 = fStack_30 * _DAT_005d6729;
-      fStack_44 = fStack_2c * _DAT_005d6729;
+    if ((float)4 < fVar1) {
+      fStack_4c = fStack_34 * 4.0f;
+      fStack_48 = fStack_30 * 4.0f;
+      fStack_44 = fStack_2c * 4.0f;
       *(uint *)((int)&stack0xffffff28 + (uint)bVar3 * -8) =
            *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8);
       *(uint *)((int)&stack0xffffff2c + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
            *(uint *)((int)&stack0xffffffbc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
       fVar1 = 1.0 / fVar1;
-      fStack_88 = fStack_34 * _DAT_005d6729 * fVar1;
+      fStack_88 = fStack_34 * 4.0f * fVar1;
       fStack_84 = fStack_d8 * fVar1;
       fStack_80 = fStack_d4 * fVar1;
       fStack_b8 = fStack_88;

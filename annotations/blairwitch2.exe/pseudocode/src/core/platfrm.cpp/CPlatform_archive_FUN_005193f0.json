@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 213,
+    "complexity_score": 181,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
-    "suspect_count": 8,
+    "pseudocode_lines": 111,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 440
+    "total_lines": 438
   },
   "cross_references": [
     {
@@ -87,8 +85,8 @@
   "globals": [
     {
       "addr": "005e21e0",
-      "name": "s_modelName_005e21df+1",
-      "type": "undefined4",
+      "name": "s_modelName_005e21e0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -291,20 +289,20 @@
     },
     {
       "addr": "007bc038",
-      "name": "DAT_007bc038",
-      "type": "undefined4",
+      "name": "g_INT_007bc038",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -425,24 +423,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 == 1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 79,
+      "line": 76,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
@@ -450,7 +432,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 90,
+      "line": 87,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
@@ -458,7 +440,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 101,
+      "line": 98,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
@@ -466,7 +448,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 79,
+      "line": 76,
       "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
@@ -474,7 +456,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 90,
+      "line": 87,
       "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
@@ -482,7 +464,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 101,
+      "line": 98,
       "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",

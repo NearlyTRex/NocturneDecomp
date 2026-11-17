@@ -28,7 +28,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00408790(CDemonActor *
   *(uint *)((int)pvVar3 + -0x130) = *(uint *)((int)pvVar3 + -300);
   *(uint *)((int)pvVar3 + -0x134) = *(uint *)((int)pvVar3 + -0x130);
   *(uint *)((int)pvVar3 + -0x128) = 0;
-  pcVar4 = &DAT_005ca42a;
+  pcVar4 = "none";
   *(uint *)((int)pvVar3 + -0x11c) = 0;
   *(uint *)((int)pvVar3 + -0x120) = *(uint *)((int)pvVar3 + -0x11c);
   *(uint *)((int)pvVar3 + -0x124) = *(uint *)((int)pvVar3 + -0x120);
@@ -60,7 +60,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00408790(CDemonActor *
   *(uint *)((int)pvVar3 + -0x40) = 0;
   *(uint *)((int)pvVar3 + -0x54) = 0;
   *(uint *)((int)pvVar3 + -0x50) = 0;
-  pcVar4 = &DAT_005ca42f;
+  pcVar4 = "str";
   *(uint *)((int)pvVar3 + -0xf0) = 100;
   pcVar5 = (char *)((int)pvVar3 + -0x34);
   *(byte **)((int)pvVar3 + -0xec) = &DAT_0078a123;

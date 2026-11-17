@@ -39,7 +39,7 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a6402
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5a57
+;   float g_FLOAT_005d5a57 = 0.5
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
@@ -160,7 +160,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00430ead
     MOVSD ES:EDI,ESI                    ; 00430eae
     MOVSD ES:EDI,ESI                    ; 00430eaf
-    FLD float ptr [0x005d5a57]          ; 00430eb0 | DAT_005d5a57
+    FLD float ptr [0x005d5a57]          ; 00430eb0 | g_FLOAT_005d5a57
     FLD float ptr [ESP + 0x74]          ; 00430eb6
     FMUL ST1                            ; 00430eba
     FLD float ptr [ESP + 0x78]          ; 00430ebc

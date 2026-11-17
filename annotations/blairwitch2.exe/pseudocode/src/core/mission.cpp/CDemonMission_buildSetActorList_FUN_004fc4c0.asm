@@ -15,8 +15,8 @@
 ;   TerminatedCString s_core_mission_cpp_005de6b4
 ;   TerminatedCString s_CDemonMission_buildSetAc_005de6c8
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -76,8 +76,8 @@ section .text
     JL 0x004fc549                       ; 004fc52e
         ;   XREF to: 004fc549 (CONDITIONAL_JUMP)  ; LAB_004fc549
     PUSH 0x5de6c8                       ; 004fc530 | = "CDemonMission::buildSetActorList - To..."
-    MOV dword ptr [0x01d046a0],EDI      ; 004fc535 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004fc53b | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004fc535 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 004fc53b | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc541
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fc546

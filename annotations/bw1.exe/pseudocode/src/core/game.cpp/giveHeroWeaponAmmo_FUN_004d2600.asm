@@ -8,8 +8,8 @@
 ; EAmmoType        Stack[0x8]:4   ammo_type
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f650
-;   undefined4 DAT_01d06ab4
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0
@@ -50,7 +50,7 @@ section .text
     RET                                 ; 004d262a
     PUSH EBX                            ; 004d262b
         ;   Label: LAB_004d262b
-    MOV EDX,dword ptr [0x0061f650]      ; 004d262c | DAT_0061f650
+    MOV EDX,dword ptr [0x0061f650]      ; 004d262c | g_CDemonMission_PTR_0061f650
     PUSH EDX                            ; 004d2632
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60 ; 004d2633
         ;   XREF to: 0051bd60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60(CDemonMission * this_ptr, CDemonActor * actor)
@@ -70,7 +70,7 @@ section .text
     PUSH 0x1                            ; 004d265f
     MOV dword ptr [EBX + 0x314],0x1f4   ; 004d2661
     PUSH EBX                            ; 004d266b
-    MOV EBX,dword ptr [0x01d06ab4]      ; 004d266c | DAT_01d06ab4
+    MOV EBX,dword ptr [0x01d06ab4]      ; 004d266c | g_INT_01d06ab4
     MOV EBX,dword ptr [EBX*0x4 + 0x1d06aa4] ; 004d2672
     ADD EBX,0x1fae8                     ; 004d2679
     PUSH EBX                            ; 004d267f

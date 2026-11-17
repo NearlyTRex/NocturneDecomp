@@ -9,6 +9,6 @@
 void __cdecl core_podmain_cpp_setMaxViewportScanline_FUN_005154f0(int max)
 
 {
-  DAT_00603974 = max;
+  g_INT_00603974 = max;
   return;
 }

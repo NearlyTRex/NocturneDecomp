@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   enable
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5b0e0
-;   undefined4 DAT_01c5baec
+;   CBitFont* g_CBitFont_PTR_01c5b0e0
+;   int g_INT_01c5baec
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_setAcceleration_FUN_004afbf0
@@ -20,8 +20,8 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 00481f00
         ;   Label: shape_edittool.cpp_CEditorTools_setMini3DMode_FUN_00481f00
-    MOV EDX,dword ptr [0x01c5b0e0]      ; 00481f04 | DAT_01c5b0e0
-    MOV [0x01c5baec],EAX                ; 00481f0a | DAT_01c5baec
+    MOV EDX,dword ptr [0x01c5b0e0]      ; 00481f04 | g_CBitFont_PTR_01c5b0e0
+    MOV [0x01c5baec],EAX                ; 00481f0a | g_INT_01c5baec
     TEST EDX,EDX                        ; 00481f0f
     JNZ 0x00481f14                      ; 00481f11
         ;   XREF to: 00481f14 (CONDITIONAL_JUMP)  ; LAB_00481f14

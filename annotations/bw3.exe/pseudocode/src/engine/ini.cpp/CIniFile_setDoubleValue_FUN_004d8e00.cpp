@@ -11,7 +11,7 @@ void __cdecl engine_ini_cpp_CIniFile_setDoubleValue_FUN_004d8e00(CIniFile *this_
 {
   char acStack_6c [100];
   
-  _sprintf(acStack_6c,(char *)0x5c58c8);
+  _sprintf(acStack_6c,"%lg");
   (**(code **)((int)this_ptr->vtable + 8))(this_ptr,key,acStack_6c);
   return;
 }

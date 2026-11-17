@@ -4,6 +4,53 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2680000
 // =============================================================================
 
+// CVector3i
+CVector3i g_CVector3i_026810c0 = {};
+
+// WCHAR*
+WCHAR* g_WCHAR_PTR_02680178 = {};
+
+// byte
+byte g_BYTE_02681084 = {};
+
+// char*
+char* g_CHAR_PTR_02680174 = {};
+
+// char**
+char** g_CHAR_PTR_PTR_026807e0 = {};
+char** g_CHAR_PTR_PTR_026807e4 = {};
+
+// char[16]
+char g_CHAR_ARRAY_026807a0[16] = {};
+
+// char[1]
+char g_CHAR_ARRAY_02680800[1] = {};
+
+// char[256]
+char g_CHAR_ARRAY_02680801[256] = {};
+
+// char[260]
+char g_CHAR_ARRAY_02680180[260] = {};
+char g_CHAR_ARRAY_0268048c[260] = {};
+
+// int
+int g_INT_0268014c = {};
+int g_INT_02680150 = {};
+int g_INT_02680170 = {};
+int g_INT_026807e8 = {};
+int g_INT_026807f0 = {};
+int g_INT_02681070 = {};
+int g_INT_02681074 = {};
+int g_INT_02681090 = {};
+int g_INT_02681094 = {};
+int g_INT_02681098 = {};
+
+// void*
+void* g_PTR_0268017c = {};
+void* g_PTR_02681078 = {};
+void* g_PTR_026810a0 = {};
+void* g_PTR_026810b0 = {};
+
 // word
 word DAT_026820D6 = 0;
 word DAT_0268285E = 0;

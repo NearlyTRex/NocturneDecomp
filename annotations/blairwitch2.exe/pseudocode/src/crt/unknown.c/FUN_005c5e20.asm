@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * crt_unknown_c_FUN_005c5e20(uint param_1)
+; int crt_unknown_c_FUN_005c5e20(uint param_1)
 ;
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_005c5760 at 005c5766
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ef54
+;   _FILE* g_FILE_PTR_0061ef54 = 00000000
 ;
 ; *****************************************************************************
 
@@ -27,6 +27,6 @@ section .text
     SHL EAX,0x2                         ; 005c5e35
     ADD EAX,EDX                         ; 005c5e38
     ADD EAX,EAX                         ; 005c5e3a
-    ADD EAX,0x61ef54                    ; 005c5e3c | DAT_0061ef54
+    ADD EAX,0x61ef54                    ; 005c5e3c | g_FILE_PTR_0061ef54
     RET                                 ; 005c5e41
 

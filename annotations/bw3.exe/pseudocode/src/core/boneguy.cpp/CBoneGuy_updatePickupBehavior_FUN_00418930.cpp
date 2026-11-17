@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00418930(CBoneGuy *this_ptr,float delta_time)
 
 {
@@ -77,7 +75,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00418930(CBoneGuy
         pCVar2 = (*((pCVar2->vtable)._ub)->getCarrier)(pCVar2);
         if (pCVar2 != (CDemonActor *)0x0) {
           engine_console_cpp_CConsole_printf_FUN_00441ff0
-                    (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
+                    (g_CConsolePtr,"%s can't pick up %s, sombody else beat me to it!\n");
           this_ptr->pickup_target = (CDemonActor *)0x0;
           this_ptr->pickup_cooldown = 0.0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -112,7 +110,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00418930(CBoneGuy
             afStack_78[(uint)bVar9 * -2] = *(float *)((int)&CStack_4c + (uint)bVar9 * -8 + 4);
             afStack_78[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
                  *(float *)((int)&CStack_4c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-            afStack_78[1] = CStack_e8.z + (float)_DAT_005b703a;
+            afStack_78[1] = CStack_e8.z + (float)0.40000000000000002;
             CStack_70.x = fStack_7c;
             *(float *)((int)&CStack_70 + (uint)bVar9 * -8 + 4) = afStack_78[(uint)bVar9 * -2];
             *(float *)((int)&CStack_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -181,8 +179,8 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00418930(CBoneGuy
             afStack_b4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
                  afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
             if ((((fStack_b8 < 1.0) && (afStack_b4[0] < 1.0)) &&
-                ((float)_DAT_005b7042 < afStack_b4[1])) && ((double)afStack_b4[1] < _DAT_005b704a))
-            {
+                ((float)2 < afStack_b4[1])) &&
+               ((double)afStack_b4[1] < 6)) {
               in_stack_fffffeac = pCVar2;
               iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(pCVar2,"CBodyPart");
               if (iVar4 == 0) {
@@ -196,7 +194,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00418930(CBoneGuy
                 afStack_b4[3] = afStack_b4[3] * afStack_b4[3] * afStack_b4[3] * afStack_b4[3];
                 fVar10 = SQRT(fStack_a4 * fStack_a4 +
                               afStack_b4[2] * afStack_b4[2] + afStack_b4[3] * afStack_b4[3]);
-                if (((float)_DAT_005b7032 <= fVar10) && ((int)fVar10 < 0x41700001)) {
+                if (((float)5 <= fVar10) && ((int)fVar10 < 0x41700001)) {
                   *(CDemonActor **)(&stack0xfffffec0 + unaff_ESI) = pCVar2;
                   unaff_ESI = unaff_ESI + 4;
                   if (0x27 < unaff_ESI) break;

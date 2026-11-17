@@ -12,7 +12,7 @@
 ;   TerminatedCString s_BurnComplete_005f096a
 ;   TerminatedCString s_Death_005f0977
 ;   TerminatedCString s_Animation_005f097d
-;   undefined4 DAT_005f0987
+;   TerminatedCString s_Burn_005f0987
 ;
 ; Called Functions:
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
@@ -110,7 +110,7 @@ section .text
     TEST EAX,EAX                        ; 005a9953
     JNZ 0x005a98f1                      ; 005a9955
         ;   XREF to: 005a98f1 (CONDITIONAL_JUMP)  ; LAB_005a98f1
-    PUSH 0x5f0987                       ; 005a9957 | DAT_005f0987
+    PUSH 0x5f0987                       ; 005a9957 | = "Burn"
     PUSH ESI                            ; 005a995c
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a995d
         ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)

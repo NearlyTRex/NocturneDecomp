@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_resetChatCounts_FUN_0050b060(void)
 
 {
-  _DAT_01d51050 = 0;
-  _DAT_01d34e4c = 0;
+  g_INT_01d51050 = 0;
+  g_INT_01d34e4c = 0;
   return;
 }

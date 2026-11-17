@@ -8,9 +8,9 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d06bcc
-;   undefined4 DAT_01d06bf0
-;   undefined4 DAT_01d06bf8
+;   int[12] g_INT_ARRAY_01d06bcc
+;   undefined4 g_INT_ARRAY_01d06bcc[9]
+;   undefined4 g_INT_ARRAY_01d06bcc[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -26,7 +26,7 @@ section .text
     PUSH EBP                            ; 004f0783
     SUB ESP,0x48                        ; 004f0784
     MOV EBX,dword ptr [ESP + 0x60]      ; 004f0787
-    MOV EDX,dword ptr [0x01d06bcc]      ; 004f078b | DAT_01d06bcc
+    MOV EDX,dword ptr [0x01d06bcc]      ; 004f078b | g_INT_ARRAY_01d06bcc
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004f0791
     PUSH EDX                            ; 004f0795
     ADD EAX,0x158                       ; 004f0796
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [EBX + 0x4],EAX       ; 004f07ca
     MOV EAX,dword ptr [ESP + 0x38]      ; 004f07cd
     MOV dword ptr [EBX + 0x8],EAX       ; 004f07d1
-    MOV ECX,dword ptr [0x01d06bf0]      ; 004f07d4 | DAT_01d06bf0
+    MOV ECX,dword ptr [0x01d06bf0]      ; 004f07d4 | g_INT_ARRAY_01d06bcc[9]
         ;   Label: LAB_004f07d4
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004f07da
     PUSH ECX                            ; 004f07de
@@ -77,7 +77,7 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 004f0811
     MOV EAX,dword ptr [ESP + 0x20]      ; 004f0814
     MOV dword ptr [EDX + 0x8],EAX       ; 004f0818
-    MOV ESI,dword ptr [0x01d06bf8]      ; 004f081b | DAT_01d06bf8
+    MOV ESI,dword ptr [0x01d06bf8]      ; 004f081b | g_INT_ARRAY_01d06bcc[11]
         ;   Label: LAB_004f081b
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004f0821
     PUSH ESI                            ; 004f0825

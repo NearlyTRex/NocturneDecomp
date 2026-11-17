@@ -7,11 +7,11 @@
 ; CShotgun *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f1a03
-;   undefined4 DAT_005f1a07
-;   undefined4 DAT_00612560
-;   undefined4 DAT_0061c010
-;   undefined4 DAT_01bc120c
+;   float g_FLOAT_005f1a03 = 3.141593
+;   float g_FLOAT_005f1a07 = 0.005555556
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -32,8 +32,8 @@ section .text
     SUB ESP,0xb0                        ; 00562106
     AND ESP,0xfffffff8                  ; 0056210c
     MOV EBX,dword ptr [EBP + 0x14]      ; 0056210f
-    MOV EDX,dword ptr [0x00612560]      ; 00562112 | DAT_00612560
-    PUSH EDX                            ; 00562118 | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 00562112 | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 00562118 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00562119
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0056211e
@@ -169,8 +169,8 @@ section .text
     FSTP float ptr [ESP + 0x50]         ; 0056229f
     FLD float ptr [EBX + 0x578]         ; 005622a3
         ;   Label: LAB_005622a3
-    FMUL float ptr [0x005f1a03]         ; 005622a9 | DAT_005f1a03
-    FMUL float ptr [0x005f1a07]         ; 005622af | DAT_005f1a07
+    FMUL float ptr [0x005f1a03]         ; 005622a9 | g_FLOAT_005f1a03
+    FMUL float ptr [0x005f1a07]         ; 005622af | g_FLOAT_005f1a07
     SUB ESP,0x4                         ; 005622b5
     FSTP float ptr [ESP]                ; 005622b8
     PUSH 0x0                            ; 005622bb
@@ -181,7 +181,7 @@ section .text
     PUSH EAX                            ; 005622cd
     LEA EAX,[ESP + 0x18]                ; 005622ce
     PUSH EAX                            ; 005622d2
-    MOV ECX,dword ptr [0x0061c010]      ; 005622d3 | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 005622d3 | g_CFireEffect_PTR_0061c010
     PUSH ECX                            ; 005622d9
     LEA EDI,[ESP + 0x38]                ; 005622da
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0 ; 005622de

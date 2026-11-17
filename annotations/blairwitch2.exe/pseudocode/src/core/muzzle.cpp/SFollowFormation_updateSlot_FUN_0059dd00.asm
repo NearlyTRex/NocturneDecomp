@@ -32,7 +32,7 @@
 ;   core_muzzle.cpp_SFollowFormation_process_FUN_0059e110 at 0059e2fa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ef84f
+;   double g_DOUBLE_005ef84f = 2
 ;
 ; Called Functions:
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
@@ -195,7 +195,7 @@ section .text
     FDIVR float ptr [EBX + 0x28]        ; 0059de8b
     CALL crt_math.c_asin_FUN_005b98f6   ; 0059de8e
         ;   XREF to: 005b98f6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_005b98f6(float10 sine_value)
-    FMUL double ptr [0x005ef84f]        ; 0059de93 | DAT_005ef84f
+    FMUL double ptr [0x005ef84f]        ; 0059de93 | g_DOUBLE_005ef84f
     FSTP float ptr [EBX + 0x24]         ; 0059de99
     MOV ESP,EBP                         ; 0059de9c
         ;   Label: LAB_0059de9c

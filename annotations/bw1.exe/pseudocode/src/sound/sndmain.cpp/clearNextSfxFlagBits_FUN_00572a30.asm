@@ -7,13 +7,13 @@
 ; uint             Stack[0x4]:4   flag_mask
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c78cec
+;   int g_INT_02c78cec
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c78cec]      ; 00572a30 | DAT_02c78cec
+    MOV EDX,dword ptr [0x02c78cec]      ; 00572a30 | g_INT_02c78cec
         ;   Label: sound_sndmain.cpp_clearNextSfxFlagBits_FUN_00572a30
     LEA EAX,[EDX*0x4 + 0x0]             ; 00572a36
     SUB EAX,EDX                         ; 00572a3d

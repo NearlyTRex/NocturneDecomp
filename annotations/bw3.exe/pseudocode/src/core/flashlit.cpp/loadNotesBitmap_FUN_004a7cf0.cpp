@@ -13,7 +13,7 @@ void __cdecl core_flashlit_cpp_loadNotesBitmap_FUN_004a7cf0(CAlphaBitmap *bitmap
   char acStack_108 [256];
   
   engine_dosio_cpp_splitPath_FUN_00465e50(filename,(char *)0x0,(char *)0x0,acStack_208,(char *)0x0);
-  _sprintf(acStack_108,&DAT_005c0d12);
+  _sprintf(acStack_108,"%s%s");
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(bitmap,acStack_108,width,height);
   return;
 }

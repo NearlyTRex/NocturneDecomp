@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   undefined1 DAT_005d6a27
 ;   TerminatedCString s_engine_font_cpp_005d6a28
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_004ab0cf
     INC AL                              ; 004ab0d1
     AND EAX,0xff                        ; 004ab0d3
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab0d8 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab0d8 | g_UCHAR_ARRAY_0061ed94
     JNZ 0x004ab15c                      ; 004ab0df
         ;   XREF to: 004ab15c (CONDITIONAL_JUMP)  ; LAB_004ab15c
     MOV EBP,dword ptr [ESP + 0x30]      ; 004ab0e5
@@ -95,7 +95,7 @@ section .text
     MOV AL,byte ptr [ESI + -0x1]        ; 004ab12c
     INC AL                              ; 004ab12f
     AND EAX,0xff                        ; 004ab131
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab136 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab136 | g_UCHAR_ARRAY_0061ed94
     JZ 0x004ab251                       ; 004ab13d
         ;   XREF to: 004ab251 (CONDITIONAL_JUMP)  ; LAB_004ab251
     DEC EDI                             ; 004ab143
@@ -164,7 +164,7 @@ section .text
         ;   Label: LAB_004ab1bf
     INC AL                              ; 004ab1c3
     AND EAX,0xff                        ; 004ab1c5
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab1ca | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab1ca | g_UCHAR_ARRAY_0061ed94
     JNZ 0x004ab113                      ; 004ab1d1
         ;   XREF to: 004ab113 (CONDITIONAL_JUMP)  ; LAB_004ab113
     MOV CL,byte ptr [ESP + 0x38]        ; 004ab1d7
@@ -205,7 +205,7 @@ section .text
     MOV byte ptr [EBP + -0x1],AL        ; 004ab22e
     INC AL                              ; 004ab231
     AND EAX,0xff                        ; 004ab233
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab238 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab238 | g_UCHAR_ARRAY_0061ed94
     JZ 0x004ab101                       ; 004ab23f
         ;   XREF to: 004ab101 (CONDITIONAL_JUMP)  ; LAB_004ab101
     MOV dword ptr [ESP + 0x4],EDI       ; 004ab245
@@ -226,7 +226,7 @@ section .text
         ;   Label: LAB_004ab26b
     INC AL                              ; 004ab26d
     AND EAX,0xff                        ; 004ab26f
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab274 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004ab274 | g_UCHAR_ARRAY_0061ed94
     JZ 0x004ab28b                       ; 004ab27b
         ;   XREF to: 004ab28b (CONDITIONAL_JUMP)  ; LAB_004ab28b
     TEST CH,0x8                         ; 004ab27d

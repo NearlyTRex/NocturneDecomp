@@ -9,5 +9,5 @@
 int __cdecl engine_2d_c_getTextColor_FUN_00402840(void)
 
 {
-  return DAT_00609370;
+  return g_INT_00609370;
 }

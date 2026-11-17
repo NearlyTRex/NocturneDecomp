@@ -15,9 +15,9 @@
 ;   cockpit_ckptutil.c_blitFullScreen_FUN_0042d820 at 0042d83e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
+;   int g_INT_006141c0 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410
@@ -33,8 +33,8 @@ section .text
     PUSH EBP                            ; 0042d393
     SUB ESP,0x28                        ; 0042d394
     MOV EDI,dword ptr [ESP + 0x3c]      ; 0042d397
-    MOV EDX,dword ptr [0x01c2a38c]      ; 0042d39b | DAT_01c2a38c
-    MOV EAX,[0x01c2a390]                ; 0042d3a1 | DAT_01c2a390
+    MOV EDX,dword ptr [0x01c2a38c]      ; 0042d39b | g_ARRAY_PTR_01c2a38c
+    MOV EAX,[0x01c2a390]                ; 0042d3a1 | g_ARRAY_PTR_01c2a38c[1]
     SUB EAX,EDX                         ; 0042d3a6
     MOV dword ptr [ESP + 0xc],EAX       ; 0042d3a8
     TEST EDI,EDI                        ; 0042d3ac
@@ -53,7 +53,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x50]      ; 0042d3bd
     MOV ESI,dword ptr [ESP + 0x48]      ; 0042d3c1
     MOV EBX,EDX                         ; 0042d3c5
-    MOV ECX,dword ptr [0x006141c0]      ; 0042d3c7 | DAT_006141c0
+    MOV ECX,dword ptr [0x006141c0]      ; 0042d3c7 | g_INT_006141c0
     SHL EBX,0x5                         ; 0042d3cd
     MOV EBP,EAX                         ; 0042d3d0
     ADD EBX,EDX                         ; 0042d3d2

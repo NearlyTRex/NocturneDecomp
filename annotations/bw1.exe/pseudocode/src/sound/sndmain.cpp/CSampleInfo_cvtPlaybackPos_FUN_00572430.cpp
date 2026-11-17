@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
 
 {
@@ -18,8 +16,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
       }
       else if (input_type == 2) {
         if (this_ptr->sample_count < 1) {
-          _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-          _DAT_01d1d404 = 0xdbc;
+          g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+          g_INT_01d1d404 = 0xdbc;
           core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
           position = (double)this_ptr->sample_count * position;
         }
@@ -28,8 +26,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
         }
       }
       else {
-        _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-        _DAT_01d1d404 = 0xdc1;
+        g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+        g_INT_01d1d404 = 0xdc1;
         core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }
@@ -39,8 +37,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
       }
       else if (output_type == 2) {
         if (this_ptr->sample_count < 1) {
-          _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-          _DAT_01d1d404 = 0xdcf;
+          g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+          g_INT_01d1d404 = 0xdcf;
           core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
           position = position / (double)this_ptr->sample_count;
         }
@@ -49,8 +47,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
         }
       }
       else {
-        _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-        _DAT_01d1d404 = 0xdd4;
+        g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+        g_INT_01d1d404 = 0xdd4;
         core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }

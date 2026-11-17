@@ -12,14 +12,14 @@
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ebfc0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264bc40
-;   undefined4 DAT_0264bcdc
+;   void* g_PTR_0264bc40
+;   int g_INT_0264bcdc
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x0264bcdc],0x0      ; 00560090 | DAT_0264bcdc
+    CMP dword ptr [0x0264bcdc],0x0      ; 00560090 | g_INT_0264bcdc
         ;   Label: engine_special.cpp_getVideoMemory_FUN_00560090
     JNZ 0x0056009c                      ; 00560097
         ;   XREF to: 0056009c (CONDITIONAL_JUMP)  ; LAB_0056009c
@@ -34,7 +34,7 @@ section .text
     PUSH EBX                            ; 005600a7
     MOV ESI,dword ptr [ESP + 0x14]      ; 005600a8
     PUSH ESI                            ; 005600ac
-    CALL dword ptr [0x0264bc40]         ; 005600ad | DAT_0264bc40
+    CALL dword ptr [0x0264bc40]         ; 005600ad | g_PTR_0264bc40
     ADD ESP,0xc                         ; 005600b3
     POP EBX                             ; 005600b6
     POP ESI                             ; 005600b7

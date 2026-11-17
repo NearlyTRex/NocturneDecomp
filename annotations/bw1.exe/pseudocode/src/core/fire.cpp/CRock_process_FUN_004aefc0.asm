@@ -7,8 +7,8 @@
 ; CRock *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df264
-;   undefined4 DAT_01c43530
+;   double g_DOUBLE_005df264 = 32767.7000000000
+;   int g_INT_01c43530
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_process_FUN_00532250
@@ -39,13 +39,13 @@ section .text
     FADDP                               ; 004aefe6
     ADD ESP,0x4                         ; 004aefe8
     FSQRT                               ; 004aefeb
-    MOV EAX,[0x01c43530]                ; 004aefed | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004aefed | g_INT_01c43530
     MOV EDX,EAX                         ; 004aeff2
     SAR EDX,0x1f                        ; 004aeff4
     SHL EDX,0x2                         ; 004aeff7
     SBB EAX,EDX                         ; 004aeffa
     SAR EAX,0x2                         ; 004aeffc
-    FMUL double ptr [0x005df264]        ; 004aefff | DAT_005df264
+    FMUL double ptr [0x005df264]        ; 004aefff | g_DOUBLE_005df264
     CALL crt_math.c_round_FUN_005c03a0  ; 004af005
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 004af00a
@@ -54,7 +54,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004af012
     MOV EDX,dword ptr [EBX + 0x40]      ; 004af016
     ADD EDX,EAX                         ; 004af019
-    MOV EAX,[0x01c43530]                ; 004af01b | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004af01b | g_INT_01c43530
     MOV dword ptr [EBX + 0x40],EDX      ; 004af020
     MOV EDX,EAX                         ; 004af023
     SAR EDX,0x1f                        ; 004af025

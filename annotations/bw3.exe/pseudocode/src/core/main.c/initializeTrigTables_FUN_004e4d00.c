@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_main_c_initializeTrigTables_FUN_004e4d00(void)
 
 {
@@ -21,9 +19,9 @@ void __cdecl core_main_c_initializeTrigTables_FUN_004e4d00(void)
   double dVar8;
   
   iVar2 = 0;
-  fVar3 = (float10)_DAT_005c6ec2;
-  fVar4 = (float10)_DAT_005c6ebe;
-  fVar5 = (float10)_DAT_005c6eba;
+  fVar3 = (float10)65536;
+  fVar4 = (float10)0.0078125f;
+  fVar5 = (float10)3.141593f;
   iVar1 = 0;
   do {
     fVar6 = (float10)iVar2 * fVar5 * fVar4;
@@ -31,9 +29,9 @@ void __cdecl core_main_c_initializeTrigTables_FUN_004e4d00(void)
     fVar6 = (float10)fcos(fVar6);
     round((double)(fVar7 * fVar3));
     dVar8 = round((double)(fVar6 * fVar3));
-    *(uint *)(iVar1 + 0x1d71e3c) = 0x4e4d48;
+    *(uint *)((int)g_INT_ARRAY_01d71e3c + iVar1) = 0x4e4d48;
     iVar2 = iVar2 + 1;
-    *(int *)(iVar1 + 0x1d72240) = (int)ROUND(dVar8);
+    *(int *)((int)g_INT_ARRAY_01d72240 + iVar1) = (int)ROUND(dVar8);
     iVar1 = iVar1 + 4;
   } while (iVar2 < 0x101);
   return;

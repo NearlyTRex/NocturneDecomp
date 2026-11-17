@@ -16,13 +16,13 @@
 ;   core_tommygun.cpp_CTommyGun_process_FUN_00598d50 at 00598f30
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c78cec
+;   int g_INT_02c78cec
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c78cec]      ; 00572a50 | DAT_02c78cec
+    MOV EDX,dword ptr [0x02c78cec]      ; 00572a50 | g_INT_02c78cec
         ;   Label: sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50
     LEA EAX,[EDX*0x4 + 0x0]             ; 00572a56
     SUB EAX,EDX                         ; 00572a5d

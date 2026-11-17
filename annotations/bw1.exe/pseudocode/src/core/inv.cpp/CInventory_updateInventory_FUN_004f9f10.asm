@@ -31,15 +31,15 @@
 ;   TerminatedCString s_sps_med_wav_3_005e5fe2
 ;   TerminatedCString s_sps_long_wav_3_005e5ff4
 ;   TerminatedCString s_sps_full_wav_3_005e6007
-;   undefined4 DAT_005e67f8
-;   undefined4 DAT_005e6800
-;   undefined4 DAT_005e6808
-;   undefined4 DAT_005e6810
+;   double g_DOUBLE_005e67f8 = 1600
+;   double g_DOUBLE_005e6800 = 900
+;   double g_DOUBLE_005e6808 = 400
+;   double g_DOUBLE_005e6810 = 100
 ;   CFieldNotes* g_CFieldNotesPtr = 01cc8004
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_006236b8
-;   undefined4 DAT_007c3978
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
+;   CPuzzle* g_CPuzzle_PTR_007c3978
 ;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   ... and 10 more
 ;
@@ -216,11 +216,11 @@ section .text
         ;   XREF to: 004fa12d (CONDITIONAL_JUMP)  ; LAB_004fa12d
     MOV EAX,[0x0061d95c]                ; 004fa103 | g_CGamePtr
     FLD float ptr [EAX + 0x294]         ; 004fa108 | g_CGameInstance.delta_time_float
-    FSUBR float ptr [0x01d06f70]        ; 004fa10e | DAT_01d06f70
+    FSUBR float ptr [0x01d06f70]        ; 004fa10e | g_FLOAT_01d06f70
     FLDZ                                ; 004fa114
     FXCH                                ; 004fa116
-    FSTP float ptr [0x01d06f70]         ; 004fa118 | DAT_01d06f70
-    FCOMP float ptr [0x01d06f70]        ; 004fa11e | DAT_01d06f70
+    FSTP float ptr [0x01d06f70]         ; 004fa118 | g_FLOAT_01d06f70
+    FCOMP float ptr [0x01d06f70]        ; 004fa11e | g_FLOAT_01d06f70
     FNSTSW AX                           ; 004fa124
     SAHF                                ; 004fa126
     JNC 0x004fa1c7                      ; 004fa127
@@ -268,7 +268,7 @@ section .text
     CMP dword ptr [EDX + 0x40],0x0      ; 004fa19e | g_CFieldNotesInstance.is_displayed
     JNZ 0x004f9fd3                      ; 004fa1a2
         ;   XREF to: 004f9fd3 (CONDITIONAL_JUMP)  ; LAB_004f9fd3
-    CMP dword ptr [0x007c3978],0x0      ; 004fa1a8 | DAT_007c3978
+    CMP dword ptr [0x007c3978],0x0      ; 004fa1a8 | g_CPuzzle_PTR_007c3978
     JNZ 0x004f9fd3                      ; 004fa1af
         ;   XREF to: 004f9fd3 (CONDITIONAL_JUMP)  ; LAB_004f9fd3
     CMP dword ptr [EAX + 0x244],0x0     ; 004fa1b5 | g_CGameInstance.letterbox_mode
@@ -285,9 +285,9 @@ section .text
     XOR EDI,EDI                         ; 004fa1db
     XOR ESI,ESI                         ; 004fa1dd
     MOV dword ptr [ESP + 0x40],EAX      ; 004fa1df
-    MOV dword ptr [0x01d1bc48],EBX      ; 004fa1e3 | DAT_01d1bc48
+    MOV dword ptr [0x01d1bc48],EBX      ; 004fa1e3 | g_INT_01d1bc48
     MOV EAX,dword ptr [ESP + 0x40]      ; 004fa1e9
-    MOV [0x01d06f70],EAX                ; 004fa1ed | DAT_01d06f70
+    MOV [0x01d06f70],EAX                ; 004fa1ed | g_FLOAT_01d06f70
     ADD ESP,0x8                         ; 004fa1f2
     MOV EAX,[0x00622c18]                ; 004fa1f5 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004fa1f5
@@ -314,7 +314,7 @@ section .text
         ;   XREF to: 004fa216 (CONDITIONAL_JUMP)  ; LAB_004fa216
     MOV EAX,dword ptr [EBX + 0x27ac]    ; 004fa22e
     PUSH EAX                            ; 004fa234
-    MOV EDX,dword ptr [0x006236b8]      ; 004fa235 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 004fa235 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 004fa23b
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004fa23c
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -322,7 +322,7 @@ section .text
     TEST EAX,EAX                        ; 004fa244
     JNZ 0x004fa216                      ; 004fa246
         ;   XREF to: 004fa216 (CONDITIONAL_JUMP)  ; LAB_004fa216
-    MOV EAX,[0x01d06ab4]                ; 004fa248 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 004fa248 | g_INT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 004fa24d
     LEA EDX,[EBX + 0x20]                ; 004fa254
     FLD float ptr [EAX + 0x20]          ; 004fa257
@@ -338,13 +338,13 @@ section .text
     FMUL ST0                            ; 004fa270
     FADDP                               ; 004fa272
     FST double ptr [ESP]                ; 004fa274
-    FCOMP double ptr [0x005e67f8]       ; 004fa277 | DAT_005e67f8
+    FCOMP double ptr [0x005e67f8]       ; 004fa277 | g_DOUBLE_005e67f8
     FNSTSW AX                           ; 004fa27d
     SAHF                                ; 004fa27f
     JA 0x004fa216                       ; 004fa280
         ;   XREF to: 004fa216 (CONDITIONAL_JUMP)  ; LAB_004fa216
     FLD double ptr [ESP]                ; 004fa282
-    FCOMP double ptr [0x005e6800]       ; 004fa285 | DAT_005e6800
+    FCOMP double ptr [0x005e6800]       ; 004fa285 | g_DOUBLE_005e6800
     FNSTSW AX                           ; 004fa28b
     SAHF                                ; 004fa28d
     JBE 0x004fa2ff                      ; 004fa28e
@@ -353,12 +353,12 @@ section .text
     MOV EAX,0x3                         ; 004fa295
     MOV dword ptr [ESP + 0x24],EBX      ; 004fa29a
     MOV dword ptr [ESP + 0x18],EDX      ; 004fa29e | = "sps_short?.wav @ .3"
-    MOV [0x01d1bc48],EAX                ; 004fa2a2 | DAT_01d1bc48
+    MOV [0x01d1bc48],EAX                ; 004fa2a2 | g_INT_01d1bc48
     XOR EBX,EBX                         ; 004fa2a7
     MOV ECX,dword ptr [EBX + 0x1d1bc4c] ; 004fa2a9
         ;   Label: LAB_004fa2a9
     PUSH ECX                            ; 004fa2af
-    MOV EAX,[0x006236b8]                ; 004fa2b0 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 004fa2b0 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 004fa2b5
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004fa2b6
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -380,7 +380,7 @@ section .text
         ;   Label: LAB_004fa2d1
     PUSH EDX                            ; 004fa2d5 | = "sps_short?.wav @ .3"
     PUSH EAX                            ; 004fa2d6
-    MOV ECX,dword ptr [0x006236b8]      ; 004fa2d7 | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 004fa2d7 | g_CSound_PTR_006236b8
     PUSH ECX                            ; 004fa2dd
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 004fa2de
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)
@@ -394,7 +394,7 @@ section .text
         ;   XREF to: 004fa1f5 (UNCONDITIONAL_JUMP)  ; LAB_004fa1f5
     FLD double ptr [ESP]                ; 004fa2ff
         ;   Label: LAB_004fa2ff
-    FCOMP double ptr [0x005e6808]       ; 004fa302 | DAT_005e6808
+    FCOMP double ptr [0x005e6808]       ; 004fa302 | g_DOUBLE_005e6808
     FNSTSW AX                           ; 004fa308
     SAHF                                ; 004fa30a
     JBE 0x004fa37f                      ; 004fa30b
@@ -402,13 +402,13 @@ section .text
     MOV ECX,0x2                         ; 004fa30d
     MOV dword ptr [ESP + 0x28],EBX      ; 004fa312
     MOV EBX,0x5e5fe2                    ; 004fa316 | = "sps_med?.wav @ .3"
-    MOV dword ptr [0x01d1bc48],ECX      ; 004fa31b | DAT_01d1bc48
+    MOV dword ptr [0x01d1bc48],ECX      ; 004fa31b | g_INT_01d1bc48
     MOV dword ptr [ESP + 0x1c],EBX      ; 004fa321 | = "sps_med?.wav @ .3"
     XOR EBX,EBX                         ; 004fa325
     MOV EDX,dword ptr [EBX + 0x1d1bc4c] ; 004fa327
         ;   Label: LAB_004fa327
     PUSH EDX                            ; 004fa32d
-    MOV ECX,dword ptr [0x006236b8]      ; 004fa32e | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 004fa32e | g_CSound_PTR_006236b8
     PUSH ECX                            ; 004fa334
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004fa335
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -430,7 +430,7 @@ section .text
         ;   Label: LAB_004fa350
     PUSH EAX                            ; 004fa354 | = "sps_med?.wav @ .3"
     PUSH 0x0                            ; 004fa355
-    MOV EDX,dword ptr [0x006236b8]      ; 004fa357 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 004fa357 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 004fa35d
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 004fa35e
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)
@@ -444,7 +444,7 @@ section .text
         ;   XREF to: 004fa1f5 (UNCONDITIONAL_JUMP)  ; LAB_004fa1f5
     FLD double ptr [ESP]                ; 004fa37f
         ;   Label: LAB_004fa37f
-    FCOMP double ptr [0x005e6810]       ; 004fa382 | DAT_005e6810
+    FCOMP double ptr [0x005e6810]       ; 004fa382 | g_DOUBLE_005e6810
     FNSTSW AX                           ; 004fa388
     SAHF                                ; 004fa38a
     JBE 0x004fa3fc                      ; 004fa38b
@@ -453,12 +453,12 @@ section .text
     MOV EAX,0x1                         ; 004fa392
     MOV dword ptr [ESP + 0x30],EBX      ; 004fa397
     MOV dword ptr [ESP + 0x20],EDX      ; 004fa39b | = "sps_long?.wav @ .3"
-    MOV [0x01d1bc48],EAX                ; 004fa39f | DAT_01d1bc48
+    MOV [0x01d1bc48],EAX                ; 004fa39f | g_INT_01d1bc48
     XOR EBX,EBX                         ; 004fa3a4
     MOV EAX,dword ptr [EBX + 0x1d1bc4c] ; 004fa3a6
         ;   Label: LAB_004fa3a6
     PUSH EAX                            ; 004fa3ac
-    MOV EDX,dword ptr [0x006236b8]      ; 004fa3ad | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 004fa3ad | g_CSound_PTR_006236b8
     PUSH EDX                            ; 004fa3b3
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004fa3b4
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -480,7 +480,7 @@ section .text
         ;   Label: LAB_004fa3cf
     PUSH ECX                            ; 004fa3d3 | = "sps_long?.wav @ .3"
     PUSH EAX                            ; 004fa3d4
-    MOV EAX,[0x006236b8]                ; 004fa3d5 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 004fa3d5 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 004fa3da
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 004fa3db
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)
@@ -496,13 +496,13 @@ section .text
         ;   Label: LAB_004fa3fc
     XOR ECX,ECX                         ; 004fa400
     MOV EBX,0x5e6007                    ; 004fa402 | = "sps_full?.wav @ .3"
-    MOV dword ptr [0x01d1bc48],ECX      ; 004fa407 | DAT_01d1bc48
+    MOV dword ptr [0x01d1bc48],ECX      ; 004fa407 | g_INT_01d1bc48
     MOV dword ptr [ESP + 0x14],EBX      ; 004fa40d | = "sps_full?.wav @ .3"
     XOR EBX,EBX                         ; 004fa411
     MOV ECX,dword ptr [EBX + 0x1d1bc4c] ; 004fa413
         ;   Label: LAB_004fa413
     PUSH ECX                            ; 004fa419
-    MOV EAX,[0x006236b8]                ; 004fa41a | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 004fa41a | g_CSound_PTR_006236b8
     PUSH EAX                            ; 004fa41f
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004fa420
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -524,7 +524,7 @@ section .text
         ;   Label: LAB_004fa43b
     PUSH EDX                            ; 004fa43f | = "sps_full?.wav @ .3"
     PUSH EAX                            ; 004fa440
-    MOV ECX,dword ptr [0x006236b8]      ; 004fa441 | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 004fa441 | g_CSound_PTR_006236b8
     PUSH ECX                            ; 004fa447
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 004fa448
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)

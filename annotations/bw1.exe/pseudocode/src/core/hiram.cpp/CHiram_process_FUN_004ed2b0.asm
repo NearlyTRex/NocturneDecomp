@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_GlassHiram_005e4c54
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_0061f650
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   undefined4 DAT_01d2c900
 ;
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 004ed3b1 (CONDITIONAL_JUMP)  ; LAB_004ed3b1
     PUSH 0x1                            ; 004ed338
     PUSH EBX                            ; 004ed33a
-    MOV EDI,dword ptr [0x0061f650]      ; 004ed33b | DAT_0061f650
+    MOV EDI,dword ptr [0x0061f650]      ; 004ed33b | g_CDemonMission_PTR_0061f650
     PUSH EDI                            ; 004ed341 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004ed342
         ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -105,7 +105,7 @@ section .text
     LEA EAX,[EBX + 0x1fab8]             ; 004ed34c
         ;   Label: LAB_004ed34c
     PUSH EAX                            ; 004ed352
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004ed353 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004ed353 | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 004ed359
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004ed35a
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -122,7 +122,7 @@ section .text
     MOV ECX,dword ptr [0x01cd0dfc]      ; 004ed373 | g_CGlassClassInfo.name_hash
     PUSH ECX                            ; 004ed379
     PUSH 0x5e4c54                       ; 004ed37a | = "GlassHiram"
-    MOV ESI,dword ptr [0x0061f650]      ; 004ed37f | DAT_0061f650
+    MOV ESI,dword ptr [0x0061f650]      ; 004ed37f | g_CDemonMission_PTR_0061f650
     PUSH ESI                            ; 004ed385 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0 ; 004ed386
         ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission * this_ptr, char * name)

@@ -15,7 +15,7 @@
 ;   sound_sndmain.cpp_writeIni_FUN_00559520 at 0055963b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c58bd
+;   TerminatedCString s_g_005c58bd
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -30,7 +30,7 @@ section .text
     FLD float ptr [ESP + 0x74]          ; 004d8d44
     SUB ESP,0x8                         ; 004d8d48
     FSTP double ptr [ESP]               ; 004d8d4b
-    PUSH 0x5c58bd                       ; 004d8d4e | DAT_005c58bd
+    PUSH 0x5c58bd                       ; 004d8d4e | = "%g"
     LEA EAX,[ESP + 0xc]                 ; 004d8d53
     PUSH EAX                            ; 004d8d57
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d8d58

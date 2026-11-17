@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004c9500(CGabriella *this_ptr)
 
@@ -130,7 +129,7 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004c9500(
             fStack_78 = fStack_78 * fVar2;
             fStack_74 = fStack_74 * fVar2;
           }
-          if (fStack_74 <= (float)_DAT_005e112c) goto LAB_004c970f;
+          if (fStack_74 <= (float)-0.80000000000000004) goto LAB_004c970f;
         }
       }
       else if (((uStack_20 < 3) || (uStack_20 == 3)) &&
@@ -144,7 +143,7 @@ LAB_004c970f:
         afStack_90[(uint)bVar5 * -2 + 3] = afStack_90[(uint)bVar5 * -2];
         afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
              afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-        if (ABS(afStack_90[3]) <= (float)_DAT_005e1134) {
+        if (ABS(afStack_90[3]) <= (float)2) {
           fStack_24 = afStack_90[2] * afStack_90[2] + fStack_80 * fStack_80;
           if (fStack_24 <= local_28) {
             (this_ptr->base).object_to_pick_up = pCVar1;
@@ -169,8 +168,8 @@ LAB_004c970f:
   if (local_3c[2] < 2) {
     if (local_3c[2] != 1) {
 LAB_004c9956:
-      _DAT_01d1d400 = "..\\core\\gabriela.cpp";
-      _DAT_01d1d404 = 0x637;
+      g_CHAR_PTR_01d1d400 = "..\\core\\gabriela.cpp";
+      g_INT_01d1d404 = 0x637;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze - invalid pickUpType: %d");
       return 1;
     }

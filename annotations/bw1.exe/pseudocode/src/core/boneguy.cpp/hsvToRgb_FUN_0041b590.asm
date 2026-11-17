@@ -10,8 +10,8 @@
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041b750 at 0041b8dd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d4589
-;   undefined4 DAT_005d4591
+;   double g_DOUBLE_005d4589 = 0.00392156862745098
+;   double g_DOUBLE_005d4591 = 0.0235294117647059
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005c0880
@@ -117,10 +117,10 @@ section .text
         ;   XREF to: 0041b5d5 (UNCONDITIONAL_JUMP)  ; LAB_0041b5d5
     FLD double ptr [ESP]                ; 0041b68f
         ;   Label: LAB_0041b68f
-    FMUL double ptr [0x005d4589]        ; 0041b692 | DAT_005d4589
+    FMUL double ptr [0x005d4589]        ; 0041b692 | g_DOUBLE_005d4589
     FLD float ptr [ESP + 0x8]           ; 0041b698
     FLD ST0                             ; 0041b69c
-    FMUL double ptr [0x005d4591]        ; 0041b69e | DAT_005d4591
+    FMUL double ptr [0x005d4591]        ; 0041b69e | g_DOUBLE_005d4591
     FXCH ST2                            ; 0041b6a4
     FSTP float ptr [ESP + 0x30]         ; 0041b6a6
     FXCH                                ; 0041b6aa

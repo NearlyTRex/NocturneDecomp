@@ -11,7 +11,7 @@ void __cdecl core_flashlit_cpp_stripCommentAndTrim_FUN_004a7920(char *line)
 {
   char *pcVar1;
   
-  pcVar1 = strstr(line,&DAT_005c0d0f);
+  pcVar1 = strstr(line,"//");
   if (pcVar1 != (char *)0x0) {
     *pcVar1 = '\0';
   }

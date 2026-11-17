@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *param_2)
 
@@ -71,8 +70,10 @@ int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float 
           afStack_84[3] = fStack_3c;
           fStack_74 = fStack_38;
         }
-        afStack_84[3] = afStack_54[0] * (float)_DAT_005fa3bc + afStack_84[3] * (float)_DAT_005fa3b4;
-        afStack_84[2] = fStack_58 * (float)_DAT_005fa3ac + afStack_84[2] * (float)_DAT_005fa3ac;
+        afStack_84[3] =
+             afStack_54[0] * (float)0.29999999999999999 + afStack_84[3] * (float)0.69999999999999996;
+        afStack_84[2] =
+             fStack_58 * (float)0.5 + afStack_84[2] * (float)0.5;
 LAB_005b93d6:
         pfVar3 = param_2 + iStack_14 * 3;
         if (pfVar3 != afStack_84 + 2) {
@@ -98,8 +99,10 @@ LAB_005b93f2:
           afStack_84[3] = afStack_84[0];
           fStack_74 = afStack_84[1];
         }
-        afStack_84[3] = afStack_54[0] * (float)_DAT_005fa3bc + afStack_84[3] * (float)_DAT_005fa3b4;
-        afStack_84[2] = fStack_58 * (float)_DAT_005fa3ac + afStack_84[2] * (float)_DAT_005fa3ac;
+        afStack_84[3] =
+             afStack_54[0] * (float)0.29999999999999999 + afStack_84[3] * (float)0.69999999999999996;
+        afStack_84[2] =
+             fStack_58 * (float)0.5 + afStack_84[2] * (float)0.5;
         goto LAB_005b93d6;
       }
       break;

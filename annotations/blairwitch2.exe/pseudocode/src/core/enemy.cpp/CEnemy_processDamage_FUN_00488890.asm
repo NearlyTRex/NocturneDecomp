@@ -21,8 +21,8 @@
 ;   ... and 18 more
 ;
 ; Referenced Globals:
-;   undefined4 s_ShotInvulnerable_005d2df7+2
-;   undefined4 DAT_006141f0
+;   TerminatedCString s_ShotInvulnerable_005d2df9
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
@@ -66,9 +66,9 @@ section .text
     POP ESI                             ; 004888cd
     POP EBX                             ; 004888ce
     RET                                 ; 004888cf
-    PUSH 0x5d2df9                       ; 004888d0 | s_ShotInvulnerable_005d2df7+2
+    PUSH 0x5d2df9                       ; 004888d0 | = "ShotInvulnerable"
         ;   Label: LAB_004888d0
-    MOV EDX,dword ptr [0x006141f0]      ; 004888d5 | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004888d5 | g_CEventList_PTR_006141f0
     PUSH EDX                            ; 004888db
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 004888dc
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)

@@ -11,8 +11,8 @@
 ;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00437400 at 00437414
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -157,8 +157,8 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0043758d
     MOV ECX,0x119                       ; 00437591
     PUSH EAX                            ; 00437596
-    MOV dword ptr [0x01d1d400],EDX      ; 00437597 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0043759d | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00437597 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0043759d | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004375a3
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004375a8

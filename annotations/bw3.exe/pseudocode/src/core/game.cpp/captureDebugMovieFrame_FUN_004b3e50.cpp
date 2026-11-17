@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void)
 
 {
@@ -31,42 +29,42 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void)
   int iStack_18;
   int iStack_14;
   
-  if (_DAT_01d22c40 != 0) {
-    iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,0x1d);
+  if (g_INT_01d22c40 != 0) {
+    iVar2 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_LCONTROL);
     if (iVar2 != 0) {
-      iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x2f);
+      iVar2 = (*g_CKeys_PTR_00600284->vtable->getAndClearKeyState)(g_CKeys_PTR_00600284,DIK_V);
       if (iVar2 != 0) {
-        iVar2 = _DAT_01d22c44;
-        if (_DAT_01d22c44 == 0) {
-          _DAT_01d22c44 = 1;
-          _DAT_01d22c4c = iVar2;
+        iVar2 = g_INT_01d22c44;
+        if (g_INT_01d22c44 == 0) {
+          g_INT_01d22c44 = 1;
+          g_INT_01d22c4c = iVar2;
         }
         else {
-          _DAT_01d22c44 = 0;
+          g_INT_01d22c44 = 0;
         }
       }
     }
-    if ((0 < _DAT_01d22c48) && (_DAT_01d22c48 <= _DAT_01d22c4c)) {
-      _DAT_01d22c44 = 0;
+    if ((0 < g_INT_01d22c48) && (g_INT_01d22c48 <= g_INT_01d22c4c)) {
+      g_INT_01d22c44 = 0;
       return;
     }
-    if (_DAT_01d22c44 != 0) {
+    if (g_INT_01d22c44 != 0) {
       _sprintf(acStack_98,"noc%05d.raw");
       _sprintf(acStack_160,"Movie recording active: movie\\%s");
-      p_Stack_2c = engine_dosio_cpp_getFile_FUN_004659c0("movie",acStack_98,&DAT_005c21d9);
+      p_Stack_2c = engine_dosio_cpp_getFile_FUN_004659c0("movie",acStack_98,"wb");
       if (p_Stack_2c != (_FILE *)0x0) {
         iStack_30 = 0;
-        if (0 < 0x00000040) {
+        if (0 < g_INT_005fe9f0) {
           do {
             iStack_28 = 0;
-            if (0 < 0x00000040) {
+            if (0 < g_INT_005fe9ec) {
               iStack_34 = iStack_30 + 1;
               do {
                 file = p_Stack_2c;
-                iStack_20 = (iStack_28 * DAT_005fba18) / 0x00000040;
-                iStack_18 = ((iStack_28 + 1) * DAT_005fba18) / 0x00000040;
-                iVar2 = (iStack_30 * DAT_005fba1c) / 0x00000040;
-                iVar3 = (iStack_34 * DAT_005fba1c) / 0x00000040;
+                iStack_20 = (iStack_28 * g_INT_005fba18) / g_INT_005fe9ec;
+                iStack_18 = ((iStack_28 + 1) * g_INT_005fba18) / g_INT_005fe9ec;
+                iVar2 = (iStack_30 * g_INT_005fba1c) / g_INT_005fe9f0;
+                iVar3 = (iStack_34 * g_INT_005fba1c) / g_INT_005fe9f0;
                 iVar7 = 0;
                 iVar5 = 0;
                 iVar6 = 0;
@@ -76,7 +74,8 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void)
                   iStack_24 = iVar3 << 2;
                   do {
                     if (iStack_20 < iStack_18) {
-                      puVar4 = (uint *)(iStack_20 * 4 + *(int *)(&DAT_01c5faec + iStack_1c));
+                      puVar4 = (uint *)(iStack_20 * 4 +
+                                       *(int *)((int)g_ARRAY_PTR_01c5faec + iStack_1c));
                       iVar2 = iStack_20;
                       do {
                         uVar1 = *puVar4;
@@ -97,14 +96,14 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void)
                 _fputc(iVar6,file);
                 _fputc(iVar7,file);
                 iStack_28 = iStack_28 + 1;
-              } while (iStack_28 < 0x00000040);
+              } while (iStack_28 < g_INT_005fe9ec);
             }
             iStack_30 = iStack_30 + 1;
-          } while (iStack_30 < 0x00000040);
+          } while (iStack_30 < g_INT_005fe9f0);
         }
         _fclose(p_Stack_2c);
         engine_2d_c_drawText_FUN_00401fe0(acStack_160,0,0);
-        _DAT_01d22c4c = _DAT_01d22c4c + 1;
+        g_INT_01d22c4c = g_INT_01d22c4c + 1;
         return;
       }
     }

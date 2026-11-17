@@ -36,13 +36,13 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 0057058a
 ;
 ; Referenced Globals:
-;   undefined4 s_CZombieDog_005cd23d+1
+;   TerminatedCString s_CZombieDog_005cd23e
 ;   TerminatedCString s_Bip01_head_005cd249
 ;   TerminatedCString s_Bip01_head_005cd254
-;   undefined4 DAT_005cd266
-;   undefined4 DAT_005cd26e
-;   undefined4 DAT_005cd272
-;   undefined4 DAT_00614d30
+;   double g_DOUBLE_005cd266 = 32
+;   float g_FLOAT_005cd26e = 0.2000000
+;   float g_FLOAT_005cd272 = 1.5
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.active_fog.temperature
@@ -80,7 +80,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 0042a7c8 | g_CDemonSetPtr
         ;   Label: LAB_0042a7c8
     FLD float ptr [EAX + 0x15ac84]      ; 0042a7cd | g_CDemonSetInstance.active_fog.temperature
-    FCOMP double ptr [0x005cd266]       ; 0042a7d3 | DAT_005cd266
+    FCOMP double ptr [0x005cd266]       ; 0042a7d3 | g_DOUBLE_005cd266
     FNSTSW AX                           ; 0042a7d9
     SAHF                                ; 0042a7db
     JNC 0x0042a815                      ; 0042a7dc
@@ -113,7 +113,7 @@ section .text
         ;   XREF to: 0042a7c8 (CONDITIONAL_JUMP)  ; LAB_0042a7c8
     JMP 0x0042a807                      ; 0042a813
         ;   XREF to: 0042a807 (UNCONDITIONAL_JUMP)  ; LAB_0042a807
-    PUSH 0x5cd23e                       ; 0042a815 | s_CZombieDog_005cd23d+1
+    PUSH 0x5cd23e                       ; 0042a815 | = "CZombieDog"
         ;   Label: LAB_0042a815
     PUSH EBX                            ; 0042a81a
     CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 0042a81b
@@ -139,7 +139,7 @@ section .text
     MOV ECX,0x3f800000                  ; 0042a84f
     LEA EAX,[EBP + -0x16]               ; 0042a854
     LEA ESI,[EBP + 0x62]                ; 0042a857
-    FADD float ptr [0x005cd26e]         ; 0042a85a | DAT_005cd26e
+    FADD float ptr [0x005cd26e]         ; 0042a85a | g_FLOAT_005cd26e
     PUSH EAX                            ; 0042a860
     FSTP float ptr [EBX + 0x2ec8]       ; 0042a861
     PUSH EBX                            ; 0042a867
@@ -207,7 +207,7 @@ section .text
     LEA EAX,[EBP + 0x4a]                ; 0042a90a
     LEA EDI,[EBP + 0x4a]                ; 0042a90d
     PUSH EAX                            ; 0042a910
-    MOV EDX,dword ptr [0x00614d30]      ; 0042a911 | DAT_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 0042a911 | g_CFireEffect_PTR_00614d30
     LEA ESI,[EBP + 0x32]                ; 0042a917
     PUSH EDX                            ; 0042a91a
     MOVSD ES:EDI,ESI                    ; 0042a91b
@@ -221,7 +221,7 @@ section .text
     FLD float ptr [EBX + 0x2ecc]        ; 0042a92b
         ;   Label: LAB_0042a92b
     LEA EAX,[EBX + 0x2b4]               ; 0042a931
-    FADD float ptr [0x005cd272]         ; 0042a937 | DAT_005cd272
+    FADD float ptr [0x005cd272]         ; 0042a937 | g_FLOAT_005cd272
     PUSH EAX                            ; 0042a93d
     FSTP float ptr [EBX + 0x2ecc]       ; 0042a93e
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890 ; 0042a944

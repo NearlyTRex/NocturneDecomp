@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_drip_cpp_CDrip_process_FUN_0046d110(CDrip *this_ptr,float delta_time)
 
 {
@@ -42,7 +40,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046d110(CDrip *this_ptr,float delt
   if (this_ptr->is_ground_cached == 0) {
     aCStack_54[0].x = (this_ptr->home_pos).x;
     aCStack_54[0].z = (this_ptr->home_pos).z;
-    aCStack_54[0].y = (this_ptr->home_pos).y + _DAT_005d1801;
+    aCStack_54[0].y = (this_ptr->home_pos).y + -5000.0f;
     core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00472b50
               (&g_CDemonRaytraceInstance,&this_ptr->home_pos,aCStack_54,&CStack_6c);
     fStack_60 = CStack_6c.x;
@@ -53,7 +51,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046d110(CDrip *this_ptr,float delt
     this_ptr->ground_y = afStack_5c[0];
   }
   if (ABS(this_ptr->drip_timer) == 0.0) {
-    fVar3 = (this_ptr->vel).y - delta_time * (float)_DAT_005d1805;
+    fVar3 = (this_ptr->vel).y - delta_time * (float)32;
     (this_ptr->vel).y = fVar3;
     pCVar1 = (this_ptr->base).vtable._ub;
     (this_ptr->base).location.position.y = fVar3 * delta_time + (this_ptr->base).location.position.y
@@ -67,7 +65,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046d110(CDrip *this_ptr,float delt
       puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
     }
     if ((this_ptr->base).location.position.y <
-        this_ptr->ground_y - (CStack_6c.x - fStack_78) * (float)_DAT_005d180d) {
+        this_ptr->ground_y - (CStack_6c.x - fStack_78) * (float)0.84999999999999998) {
       if (this_ptr->is_visible != 0) {
         core_set_cpp_CDemonSet_initCameraShake_FUN_00534800(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->hit_sound);
@@ -85,21 +83,21 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046d110(CDrip *this_ptr,float delt
           aCStack_2c[0].y = aCStack_2c[0].y + (this_ptr->base).location.position.y;
           aCStack_2c[0].z = aCStack_2c[0].z + (this_ptr->base).location.position.z;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-                    (0x01C3DEB4,aCStack_2c,0.5,(CVector3f *)0x0,0xffff);
+                    (g_CFireEffect_PTR_00614d30,aCStack_2c,0.5,(CVector3f *)0x0,0xffff);
           fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.7853982,1.5707964);
           fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
           fVar10 = (float10)fcos((float10)fVar4);
           fVar11 = (float10)fcos((float10)fVar3);
           fVar12 = (float10)fsin((float10)fVar4);
           fVar13 = (float10)fsin((float10)fVar3);
-          CStack_38.y = (float)(fVar13 * (float10)_DAT_005d1815);
-          CStack_38.x = (float)(fVar10 * (float10)_DAT_005d1815 * (float10)(float)fVar11);
-          CStack_38.z = (float)(fVar12 * (float10)_DAT_005d1815 * (float10)(float)fVar11);
+          CStack_38.y = (float)(fVar13 * (float10)20.0f);
+          CStack_38.x = (float)(fVar10 * (float10)20.0f * (float10)(float)fVar11);
+          CStack_38.z = (float)(fVar12 * (float10)20.0f * (float10)(float)fVar11);
           model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-                                ((CKeyFramedModelInstance *)0x1bd3848);
+                                (&g_CKeyFramedModelInstance_01bd3848);
           iVar5 = iVar5 + 1;
           core_fire_cpp_CFireEffect_createRock_FUN_0049d5b0
-                    (0x01C3DEB4,&position->position,&CStack_38,model_ptr);
+                    (g_CFireEffect_PTR_00614d30,&position->position,&CStack_38,model_ptr);
         } while (iVar5 < 10);
       }
       (this_ptr->base).location.position.y = (this_ptr->home_pos).y;

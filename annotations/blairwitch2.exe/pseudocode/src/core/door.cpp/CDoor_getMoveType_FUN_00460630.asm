@@ -22,8 +22,8 @@
 ;   TerminatedCString s_CDoor_getMoveType_invali_005d0c02
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
@@ -246,8 +246,8 @@ section .text
         ;   Label: default
     MOV ECX,0x3de                       ; 004607d8
     PUSH 0x5d0c02                       ; 004607dd | = "CDoor::getMoveType - invalid door!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004607e2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004607e8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004607e2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004607e8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004607ee
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004607f3

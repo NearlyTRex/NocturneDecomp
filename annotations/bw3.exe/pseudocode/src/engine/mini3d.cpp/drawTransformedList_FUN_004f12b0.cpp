@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_004f12b0(float *vertices,int vertex_count,ushort *indices,int triangle_count,int clip_flags)
 
 {
@@ -27,16 +25,18 @@ void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_004f12b0(float *vertices,
         indices = indices + 3;
         iVar4 = iVar4 + 1;
         engine_mini3d_cpp_clipBatchTriangle_FUN_004f1020
-                  ((float *)(_DAT_01d76f60 + (uint)uVar3 * 0x40),
-                   (float *)((uint)*puVar2 * 0x40 + _DAT_01d76f60),
-                   (float *)((uint)*puVar1 * 0x40 + _DAT_01d76f60));
+                  (g_FLOAT_PTR_01d76f60 + (uint)uVar3 * 0x10,
+                   g_FLOAT_PTR_01d76f60 + (uint)*puVar2 * 0x10,
+                   g_FLOAT_PTR_01d76f60 + (uint)*puVar1 * 0x10);
       } while (iVar4 < triangle_count);
     }
     engine_mini3d_cpp_flushTriangleBatch_FUN_004f0f20();
     return;
   }
-  if ((_DAT_02cf60cc != (code *)0x0) && (_DAT_01c6cee8 != 0)) {
-    (*_DAT_02cf60cc)(_DAT_01d76f60,vertex_count,indices,triangle_count,_DAT_01c6e2b4);
+  if ((g_PTR_02cf60cc != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+    (*(code *)g_PTR_02cf60cc)
+              (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,
+               g_BIT_INTEGER32_01c6e2b4.dword);
     return;
   }
   iVar4 = 0;
@@ -48,9 +48,9 @@ void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_004f12b0(float *vertices,
       indices = indices + 3;
       iVar4 = iVar4 + 1;
       engine_mini3d_cpp_rasterizeTriangle_FUN_004f1830
-                ((float *)(_DAT_01d76f60 + (uint)uVar3 * 0x40),
-                 (float *)((uint)*puVar2 * 0x40 + _DAT_01d76f60),
-                 (float *)((uint)*puVar1 * 0x40 + _DAT_01d76f60));
+                (g_FLOAT_PTR_01d76f60 + (uint)uVar3 * 0x10,
+                 g_FLOAT_PTR_01d76f60 + (uint)*puVar2 * 0x10,
+                 g_FLOAT_PTR_01d76f60 + (uint)*puVar1 * 0x10);
     } while (iVar4 < triangle_count);
   }
   return;

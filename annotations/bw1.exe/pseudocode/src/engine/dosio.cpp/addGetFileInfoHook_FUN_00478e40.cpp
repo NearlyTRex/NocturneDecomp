@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(FileSearchHandlerFunc *handler)
 
 {
-  if (4 < _DAT_01b6892c) {
-    _DAT_01d1d400 = "..\\engine\\dosio.c";
-    _DAT_01d1d404 = 0x6a;
+  if (4 < g_INT_01b6892c) {
+    g_CHAR_PTR_01d1d400 = "..\\engine\\dosio.c";
+    g_INT_01d1d404 = 0x6a;
     core_main_c_displayErrorAndQuit_FUN_005030e0("addGetFileInfoHook - too many!");
   }
-  *(FileSearchHandlerFunc **)(_DAT_01b6892c * 4 + 0x1b68930) = handler;
-  _DAT_01b6892c = _DAT_01b6892c + 1;
+  g_FileSearchHandlerFunc_PTR_ARRAY_01b68930[g_INT_01b6892c] = handler;
+  g_INT_01b6892c = g_INT_01b6892c + 1;
   return;
 }

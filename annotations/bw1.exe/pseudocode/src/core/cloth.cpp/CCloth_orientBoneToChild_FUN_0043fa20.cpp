@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043fa20(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 {
@@ -52,8 +50,8 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043fa20(CCloth *this_p
     } while (iVar1 < local_1c->bone_count);
   }
   if (local_18 < 0) {
-    _DAT_01d1d400 = "..\\core\\cloth.cpp";
-    _DAT_01d1d404 = 0x2bf;
+    g_CHAR_PTR_01d1d400 = "..\\core\\cloth.cpp";
+    g_INT_01d1d404 = 0x2bf;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't orient bone with no children!");
   }
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520

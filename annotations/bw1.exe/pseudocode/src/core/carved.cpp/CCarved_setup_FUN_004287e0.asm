@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004287f3
     PUSH 0x5d51f4                       ; 004287f6 | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004287fb | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004287fb | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 00428801
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00428802
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -240,7 +240,7 @@ section .text
         ;   XREF to: 0042881c (UNCONDITIONAL_JUMP)  ; LAB_0042881c
     FLD float ptr [EBX + 0x2490]        ; 00428a6b
         ;   Label: LAB_00428a6b
-    FADD double ptr [0x005d52d5]        ; 00428a71 | DAT_005d52d5
+    FADD double ptr [0x005d52d5]        ; 00428a71 | g_DOUBLE_005d52d5
     FSTP float ptr [EBX + 0x3000]       ; 00428a77
     JMP 0x00428a30                      ; 00428a7d
         ;   XREF to: 00428a30 (UNCONDITIONAL_JUMP)  ; LAB_00428a30

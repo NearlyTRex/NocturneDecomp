@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_00592c90(CMatrix3x3f *matrix,int preserve_scale)
 
 {
@@ -78,15 +76,15 @@ void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_00592c90(CMatrix3x3f *ma
   dStack_d0 = (double)fVar9 * dStack_d0;
   iVar16 = 0;
   do {
-    dVar10 = dStack_f0 * _DAT_005eed7e + (dStack_e0 * dStack_d0 - dStack_c8 * dStack_d8);
-    dVar15 = dStack_90 * _DAT_005eed7e + (dStack_c8 * dStack_c0 - dStack_b8 * dStack_d0);
-    dVar11 = dStack_e8 * _DAT_005eed7e + (dStack_b8 * dStack_d8 - dStack_c0 * dStack_e0);
-    dVar14 = dStack_b8 * _DAT_005eed7e + (dStack_d8 * dStack_e8 - dStack_d0 * dStack_90);
-    dVar13 = dStack_e0 * _DAT_005eed7e + (dStack_d0 * dStack_f0 - dStack_c0 * dStack_e8);
-    dVar12 = dStack_c8 * _DAT_005eed7e + (dStack_c0 * dStack_90 - dStack_d8 * dStack_f0);
-    dStack_c0 = dStack_c0 * _DAT_005eed7e + (dStack_90 * dStack_c8 - dStack_e8 * dStack_e0);
-    dStack_d8 = dStack_d8 * _DAT_005eed7e + (dStack_e8 * dStack_b8 - dStack_f0 * dStack_c8);
-    dStack_d0 = dStack_d0 * _DAT_005eed7e + (dStack_f0 * dStack_e0 - dStack_90 * dStack_b8);
+    dVar10 = dStack_f0 * 0.5 + (dStack_e0 * dStack_d0 - dStack_c8 * dStack_d8);
+    dVar15 = dStack_90 * 0.5 + (dStack_c8 * dStack_c0 - dStack_b8 * dStack_d0);
+    dVar11 = dStack_e8 * 0.5 + (dStack_b8 * dStack_d8 - dStack_c0 * dStack_e0);
+    dVar14 = dStack_b8 * 0.5 + (dStack_d8 * dStack_e8 - dStack_d0 * dStack_90);
+    dVar13 = dStack_e0 * 0.5 + (dStack_d0 * dStack_f0 - dStack_c0 * dStack_e8);
+    dVar12 = dStack_c8 * 0.5 + (dStack_c0 * dStack_90 - dStack_d8 * dStack_f0);
+    dStack_c0 = dStack_c0 * 0.5 + (dStack_90 * dStack_c8 - dStack_e8 * dStack_e0);
+    dStack_d8 = dStack_d8 * 0.5 + (dStack_e8 * dStack_b8 - dStack_f0 * dStack_c8);
+    dStack_d0 = dStack_d0 * 0.5 + (dStack_f0 * dStack_e0 - dStack_90 * dStack_b8);
     dStack_c8 = 1.0 / SQRT(dVar12 * dVar12 + dVar13 * dVar13 + dVar14 * dVar14);
     dStack_e8 = 1.0 / SQRT(dVar11 * dVar11 + dVar15 * dVar15 + dVar10 * dVar10);
     dStack_f0 = dVar10 * dStack_e8;

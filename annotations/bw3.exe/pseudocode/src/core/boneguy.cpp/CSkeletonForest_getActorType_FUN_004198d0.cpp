@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_boneguy_cpp_CSkeletonForest_getActorType_FUN_004198d0(CSkeletonForest *this_ptr)
 
 {
-  return (CDemonActorType *)&DAT_007e1688;
+  return &g_CDemonActorType_007e1688;
 }

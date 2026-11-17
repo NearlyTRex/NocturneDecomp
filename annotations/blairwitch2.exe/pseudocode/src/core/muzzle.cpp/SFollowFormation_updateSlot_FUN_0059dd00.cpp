@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_muzzle_cpp_SFollowFormation_updateSlot_FUN_0059dd00(SFollowFormation *this_ptr,SFollowSlotStruct *slot)
 
 {
@@ -95,7 +93,7 @@ void __cdecl core_muzzle_cpp_SFollowFormation_updateSlot_FUN_0059dd00(SFollowFor
     fVar6 = asin
                       ((float10)slot->follower_radius /
                        SQRT(fVar8 * fVar8 + fVar7 * fVar7 + fVar6 * fVar6));
-    slot->spread_angle = (float)(fVar6 * (float10)_DAT_005ef84f);
+    slot->spread_angle = (float)(fVar6 * (float10)2);
   }
   return;
 }

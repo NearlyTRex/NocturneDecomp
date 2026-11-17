@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0053b250(CPodFile *this_ptr,char *pod_filename,char *out_error_message)
 
 {
@@ -106,9 +104,9 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0053b250(CPodFile *this_pt
     else {
       engine_dosio_cpp_splitPath_FUN_00479580
                 (pod_filename,(char *)0x0,(char *)0x0,(char *)0x0,local_288);
-      iVar6 = _stricmp(local_288,&DAT_005ed68a);
+      iVar6 = _stricmp(local_288,"epd");
       if ((iVar6 == 0) ||
-         (iVar6 = _stricmp(local_288,&DAT_005ed68e), iVar6 == 0)) {
+         (iVar6 = _stricmp(local_288,".epd"), iVar6 == 0)) {
         iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_84,local_398,0x110);
         if (iVar6 == 0x110) {
           pcVar11 = local_394;
@@ -188,8 +186,8 @@ LAB_0053b65d:
               pcVar2 = (char *)realloc(this_ptr->file_data_buffer,uVar9);
               this_ptr->file_data_buffer = pcVar2;
               if (pcVar2 == (char *)0x0) {
-                _DAT_01d1d400 = "..\\engine\\pod.cpp";
-                _DAT_01d1d404 = 0x2d5;
+                g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
+                g_INT_01d1d404 = 0x2d5;
                 core_main_c_displayErrorAndQuit_FUN_005030e0("realloc returns NULL shrinking filenameBlockSize to fit.");
               }
             }

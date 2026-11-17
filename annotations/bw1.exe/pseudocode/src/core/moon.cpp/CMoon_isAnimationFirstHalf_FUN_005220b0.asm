@@ -10,16 +10,16 @@
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20 at 00509eaa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ea46b
-;   undefined4 DAT_01d33f6c
+;   double g_DOUBLE_005ea46b = 30
+;   float g_FLOAT_01d33f6c
 ;
 ; *****************************************************************************
 
 section .text
 
-    FLD float ptr [0x01d33f6c]          ; 005220b0 | DAT_01d33f6c
+    FLD float ptr [0x01d33f6c]          ; 005220b0 | g_FLOAT_01d33f6c
         ;   Label: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_005220b0
-    FCOMP double ptr [0x005ea46b]       ; 005220b6 | DAT_005ea46b
+    FCOMP double ptr [0x005ea46b]       ; 005220b6 | g_DOUBLE_005ea46b
     FNSTSW AX                           ; 005220bc
     SAHF                                ; 005220be
     JC 0x005220c4                       ; 005220bf

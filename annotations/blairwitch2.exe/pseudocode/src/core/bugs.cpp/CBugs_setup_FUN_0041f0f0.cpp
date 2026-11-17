@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bugs_cpp_CBugs_setup_FUN_0041f0f0(CBugs *this_ptr)
 
 {
@@ -61,8 +59,8 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_0041f0f0(CBugs *this_ptr)
   }
   iStack_28 = 0;
   if (0 < this_ptr->count) {
-    fVar1 = _DAT_005f3e28 * _DAT_005cc949;
-    fVar2 = _DAT_005f3e28 * _DAT_005cc94d;
+    fVar1 = 0.5f * 12.0f;
+    fVar2 = 0.5f * -12.0f;
     pCVar10 = &this_ptr->bugs[0].dest_position;
     pCVar7 = &this_ptr->bugs[0].orientation;
     pCStack_2c = &this_ptr->bugs[0].position;
@@ -70,8 +68,8 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_0041f0f0(CBugs *this_ptr)
       pSVar8 = this_ptr->bugs + iStack_28;
       pSVar8->state = 0;
       iVar6 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,this_ptr->model_count + -1);
-      fVar4 = fVar1 * (float)_DAT_005cc951;
-      min_value = fVar2 * (float)_DAT_005cc951;
+      fVar4 = fVar1 * (float)0.5;
+      min_value = fVar2 * (float)0.5;
       pSVar8->model_index = iVar6;
       fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(min_value,fVar4);
       (pSVar8->position).y = 0.0;

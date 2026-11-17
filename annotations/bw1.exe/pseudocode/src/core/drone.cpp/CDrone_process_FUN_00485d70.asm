@@ -13,14 +13,14 @@
 ;   TerminatedCString s_s_gave_up_chase_I_m_conf_005db65b
 ;   TerminatedCString s_drone_attack_wav_005db67c
 ;   TerminatedCString s_slime_wav_005db68e
-;   undefined4 DAT_005db69a
-;   undefined4 DAT_005ff488
+;   double g_DOUBLE_005db69a = 2
+;   float g_FLOAT_005ff488 = 3
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02c8af28
+;   CVector3f g_CVector3f_02c8af28
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -80,7 +80,7 @@ section .text
     JC 0x00486048                       ; 00485dd3
         ;   XREF to: 00486048 (CONDITIONAL_JUMP)  ; LAB_00486048
     FLD float ptr [EBX + 0x24a4]        ; 00485dd9
-    FMUL double ptr [0x005db69a]        ; 00485ddf | DAT_005db69a
+    FMUL double ptr [0x005db69a]        ; 00485ddf | g_DOUBLE_005db69a
     FLD float ptr [EBP + 0x92]          ; 00485de5
     FMUL float ptr [EBX + 0xc1d0]       ; 00485deb
     SUB ESP,0x4                         ; 00485df1
@@ -383,7 +383,7 @@ section .text
     PUSH 0x3ecccccd                     ; 00486115
     PUSH EAX                            ; 0048611a
     LEA ESI,[EBP + -0x2a]               ; 0048611b
-    PUSH 0x2c8af28                      ; 0048611e | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 0048611e | g_CVector3f_02c8af28
     LEA EDI,[EBP + 0x42]                ; 00486123
     MOV dword ptr [EBP + 0x6a],EDX      ; 00486126
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00486129
@@ -431,7 +431,7 @@ section .text
     ADD EAX,ESI                         ; 004861a3
     PUSH 0x3ecccccd                     ; 004861a5
     PUSH EAX                            ; 004861aa
-    PUSH 0x2c8af28                      ; 004861ab | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 004861ab | g_CVector3f_02c8af28
     LEA ESI,[EBP + 0x12]                ; 004861b0
     LEA EDI,[EBP + -0x66]               ; 004861b3
     CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 004861b6
@@ -564,7 +564,7 @@ section .text
     ADD ESP,0xc                         ; 004862f8
     JMP 0x00485e71                      ; 004862fb
         ;   XREF to: 00485e71 (UNCONDITIONAL_JUMP)  ; caseD_7
-    MOV EAX,[0x005ff488]                ; 00486300 | DAT_005ff488
+    MOV EAX,[0x005ff488]                ; 00486300 | g_FLOAT_005ff488
         ;   Label: LAB_00486300
     MOV dword ptr [EBP + 0x6e],EAX      ; 00486305
     LEA EAX,[EBX + 0x249c]              ; 00486308

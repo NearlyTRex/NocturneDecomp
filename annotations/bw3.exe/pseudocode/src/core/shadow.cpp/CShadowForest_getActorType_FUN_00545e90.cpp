@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_shadow_cpp_CShadowForest_getActorType_FUN_00545e90(CShadowForest *this_ptr)
 
 {
-  return (CDemonActorType *)0x270f854;
+  return &g_CDemonActorType_0270f854;
 }

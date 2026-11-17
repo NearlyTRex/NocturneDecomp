@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_confzomb_cpp_CConfederateZombie_getTargetPoints_FUN_005a2600(CConfederateZombie *this_ptr,CVector3f *out_points_array)
 
 {
   int iVar1;
   
-  if ((this_ptr->base).fade_val < (float)_DAT_005eff67) {
+  if ((this_ptr->base).fade_val < (float)0.5) {
     return 0;
   }
   iVar1 = core_enemy_cpp_CEnemy_getTargetPoints_FUN_00488020((CEnemy *)this_ptr,out_points_array);

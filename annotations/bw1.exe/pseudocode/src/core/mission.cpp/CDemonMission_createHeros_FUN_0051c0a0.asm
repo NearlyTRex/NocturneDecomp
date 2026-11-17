@@ -20,10 +20,10 @@
 ;   CNetGame* g_CNetGamePtr = 01d51c20
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 g_CGameInstance.aim_mode
-;   undefined4 DAT_01d06aa0
-;   undefined4 DAT_01d06ab4
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_01d06aa0
+;   int g_INT_01d06ab4
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   CNetGame g_CNetGameInstance
 ;   undefined4 g_CNetGameInstance.player_count
 ;   undefined4 g_CNetGameInstance.players[0].aim_mode
@@ -60,11 +60,11 @@ section .text
     JZ 0x0051c1ad                       ; 0051c0c3
         ;   XREF to: 0051c1ad (CONDITIONAL_JUMP)  ; LAB_0051c1ad
     MOV EAX,dword ptr [EAX + 0x1c]      ; 0051c0c9 | g_CNetGameInstance.player_count
-    MOV [0x01d06aa0],EAX                ; 0051c0cc | DAT_01d06aa0
+    MOV [0x01d06aa0],EAX                ; 0051c0cc | g_INT_01d06aa0
     CMP EAX,0x4                         ; 0051c0d1
     JGE 0x0051c200                      ; 0051c0d4
         ;   XREF to: 0051c200 (CONDITIONAL_JUMP)  ; LAB_0051c200
-    MOV EAX,[0x01d06aa0]                ; 0051c0da | DAT_01d06aa0
+    MOV EAX,[0x01d06aa0]                ; 0051c0da | g_INT_01d06aa0
         ;   Label: LAB_0051c0da
     XOR EDI,EDI                         ; 0051c0df
     TEST EAX,EAX                        ; 0051c0e1
@@ -94,7 +94,7 @@ section .text
     MOV EDX,dword ptr [EDX + 0x38]      ; 0051c128 | g_CNetGameInstance.players[0].aim_mode
     INC EDI                             ; 0051c12b
     MOV dword ptr [EAX + 0x1fae4],EDX   ; 0051c12c
-    MOV EAX,[0x01d06aa0]                ; 0051c132 | DAT_01d06aa0
+    MOV EAX,[0x01d06aa0]                ; 0051c132 | g_INT_01d06aa0
     ADD ESI,0x7c                        ; 0051c137
     CMP EDI,EAX                         ; 0051c13a
     JL 0x0051c0e9                       ; 0051c13c
@@ -102,8 +102,8 @@ section .text
     MOV EAX,[0x00622580]                ; 0051c13e | g_CNetGamePtr
         ;   Label: LAB_0051c13e
     MOV EAX,dword ptr [EAX + 0x11c]     ; 0051c143 | g_CNetGameInstance.local_player_index
-    MOV [0x01d06ab4],EAX                ; 0051c149 | DAT_01d06ab4
-    MOV EAX,[0x01d06ab4]                ; 0051c14e | DAT_01d06ab4
+    MOV [0x01d06ab4],EAX                ; 0051c149 | g_INT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0051c14e | g_INT_01d06ab4
         ;   Label: LAB_0051c14e
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051c153
     MOV dword ptr [EAX + 0xc1d4],0x0    ; 0051c15a
@@ -152,15 +152,15 @@ section .text
     PUSH ECX                            ; 0051c1be
     MOV EDX,0x1                         ; 0051c1bf
     PUSH EBP                            ; 0051c1c4
-    MOV dword ptr [0x01d06ab4],ECX      ; 0051c1c5 | DAT_01d06ab4
-    MOV dword ptr [0x01d06aa0],EDX      ; 0051c1cb | DAT_01d06aa0
+    MOV dword ptr [0x01d06ab4],ECX      ; 0051c1c5 | g_INT_01d06ab4
+    MOV dword ptr [0x01d06aa0],EDX      ; 0051c1cb | g_INT_01d06aa0
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30 ; 0051c1d1
         ;   XREF to: 0051bf30 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMission * this_ptr, int index, int hero_type, CCharacter * existing_actor)
     ADD ESP,0x10                        ; 0051c1d6
     TEST EAX,EAX                        ; 0051c1d9
     JZ 0x0051c1a8                       ; 0051c1db
         ;   XREF to: 0051c1a8 (CONDITIONAL_JUMP)  ; LAB_0051c1a8
-    MOV EAX,[0x01d06ab4]                ; 0051c1dd | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0051c1dd | g_INT_01d06ab4
     MOV EDX,dword ptr [0x0061d95c]      ; 0051c1e2 | g_CGamePtr
     MOV EBX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051c1e8
     MOV EAX,dword ptr [EDX + 0xd8]      ; 0051c1ef | g_CGameInstance.aim_mode
@@ -171,8 +171,8 @@ section .text
         ;   Label: LAB_0051c200
     MOV EDI,0x698                       ; 0051c205
     PUSH 0x5e9a56                       ; 0051c20a | = "CDemonMission::createHeros - too many..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0051c20f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0051c215 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0051c20f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0051c215 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051c21b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051c220

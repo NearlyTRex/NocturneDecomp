@@ -17,10 +17,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db4e5
 ;   TerminatedCString s_CDR_captureFace_too_many_005db4fb
-;   undefined4 DAT_01bc1280
-;   undefined4 DAT_01bc1284
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_01bc1280
+;   int g_INT_01bc1284
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -70,23 +70,23 @@ section .text
         ;   XREF to: 00484d4a (CONDITIONAL_JUMP)  ; LAB_00484d4a
     PUSH EDI                            ; 00484c90
         ;   Label: LAB_00484c90
-    CMP dword ptr [0x01bc1280],0x1388   ; 00484c91 | DAT_01bc1280
+    CMP dword ptr [0x01bc1280],0x1388   ; 00484c91 | g_INT_01bc1280
     JL 0x00484cbf                       ; 00484c9b
         ;   XREF to: 00484cbf (CONDITIONAL_JUMP)  ; LAB_00484cbf
     MOV EDI,0x5db4e5                    ; 00484c9d | = "..\\engine\\drender.cpp"
     MOV EAX,0xb78                       ; 00484ca2
     PUSH 0x5db4fb                       ; 00484ca7 | = "CDR::captureFace - too many faces cap..."
-    MOV dword ptr [0x01d1d400],EDI      ; 00484cac | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00484cb2 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00484cac | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00484cb2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00484cb7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00484cbc
-    MOV EDX,dword ptr [0x01bc1280]      ; 00484cbf | DAT_01bc1280
+    MOV EDX,dword ptr [0x01bc1280]      ; 00484cbf | g_INT_01bc1280
         ;   Label: LAB_00484cbf
     SHL EDX,0x5                         ; 00484cc5
     MOV ESI,EBX                         ; 00484cc8
     LEA EDI,[EDX + 0x1bc1294]           ; 00484cca
-    MOV EAX,[0x01bc1284]                ; 00484cd0 | DAT_01bc1284
+    MOV EAX,[0x01bc1284]                ; 00484cd0 | g_INT_01bc1284
     MOVSD ES:EDI,ESI                    ; 00484cd5
     MOVSD ES:EDI,ESI                    ; 00484cd6
     MOVSD ES:EDI,ESI                    ; 00484cd7
@@ -122,7 +122,7 @@ section .text
     JGE 0x00484d63                      ; 00484d3b
         ;   XREF to: 00484d63 (CONDITIONAL_JUMP)  ; LAB_00484d63
     MOV dword ptr [EDX + 0x1bc1290],ESI ; 00484d3d
-    INC dword ptr [0x01bc1280]          ; 00484d43 | DAT_01bc1280
+    INC dword ptr [0x01bc1280]          ; 00484d43 | g_INT_01bc1280
     POP EDI                             ; 00484d49
     POP EBP                             ; 00484d4a
         ;   Label: LAB_00484d4a
@@ -141,14 +141,14 @@ section .text
     POP ESI                             ; 00484d60
     POP EBX                             ; 00484d61
     RET                                 ; 00484d62
-    MOV EDX,dword ptr [0x01bc1280]      ; 00484d63 | DAT_01bc1280
+    MOV EDX,dword ptr [0x01bc1280]      ; 00484d63 | g_INT_01bc1280
         ;   Label: LAB_00484d63
     SHL EDX,0x5                         ; 00484d69
     CMP EDI,EAX                         ; 00484d6c
     JGE 0x00484d81                      ; 00484d6e
         ;   XREF to: 00484d81 (CONDITIONAL_JUMP)  ; LAB_00484d81
     MOV dword ptr [EDX + 0x1bc1290],EDI ; 00484d70
-    INC dword ptr [0x01bc1280]          ; 00484d76 | DAT_01bc1280
+    INC dword ptr [0x01bc1280]          ; 00484d76 | g_INT_01bc1280
     POP EDI                             ; 00484d7c
     POP EBP                             ; 00484d7d
     POP ESI                             ; 00484d7e
@@ -156,7 +156,7 @@ section .text
     RET                                 ; 00484d80
     MOV dword ptr [EDX + 0x1bc1290],EAX ; 00484d81
         ;   Label: LAB_00484d81
-    INC dword ptr [0x01bc1280]          ; 00484d87 | DAT_01bc1280
+    INC dword ptr [0x01bc1280]          ; 00484d87 | g_INT_01bc1280
     POP EDI                             ; 00484d8d
     POP EBP                             ; 00484d8e
     POP ESI                             ; 00484d8f

@@ -41,7 +41,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d4520(CHero *this_ptr)
       return;
     }
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
-              (0x01C6E360,(char *)&pCVar2[0x1c].is_renderable);
+              (g_CEventList_PTR_005fba60,(char *)&pCVar2[0x1c].is_renderable);
     core_hero_cpp_CHero_clearHeroAction_FUN_004d3210(this_ptr);
     return;
   case 3:
@@ -70,7 +70,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d4520(CHero *this_ptr)
     pCVar2 = this_ptr->hero_action_actor;
     if (pCVar2 == (CDemonActor *)0x0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
-                (g_CEditorToolsPtr,"@CHero::doHeroAction - type=eHeroActionPlaceObject, but actor is NULL" + 1);
+                (g_CEditorToolsPtr,"CHero::doHeroAction - type=eHeroActionPlaceObject, but actor is NULL");
       core_hero_cpp_CHero_clearHeroAction_FUN_004d3210(this_ptr);
       return;
     }

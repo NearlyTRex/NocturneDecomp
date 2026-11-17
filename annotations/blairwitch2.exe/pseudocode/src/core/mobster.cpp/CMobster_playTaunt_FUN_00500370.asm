@@ -17,10 +17,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mobster_cheese_c_c_d_wav_005def19
-;   undefined4 DAT_005def35
+;   float g_FLOAT_005def35 = 5
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   undefined4 g_CGameInstance.foul_language_flag
 ;   undefined4 g_CMobsterClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.enemy_count
@@ -107,7 +107,7 @@ section .text
     ADD ESP,0x14                        ; 00500403
     MOV EAX,ESP                         ; 00500406
     PUSH EAX                            ; 00500408
-    MOV EDX,dword ptr [0x0061c068]      ; 00500409 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 00500409 | g_CSound_PTR_0061c068
     PUSH EDX                            ; 0050040f
     CALL core_sound.cpp_CSound_getSoundDuration_FUN_0055af90 ; 00500410
         ;   XREF to: 0055af90 (UNCONDITIONAL_CALL)  ; float core_sound.cpp_CSound_getSoundDuration_FUN_0055af90(CSound * this_ptr, char * sound_name)
@@ -129,7 +129,7 @@ section .text
     FLD float ptr [ESI + 0x10b10]       ; 0050043f
         ;   Label: LAB_0050043f
     MOV EBX,dword ptr [ESI + 0x10b98]   ; 00500445
-    FADD float ptr [0x005def35]         ; 0050044b | DAT_005def35
+    FADD float ptr [0x005def35]         ; 0050044b | g_FLOAT_005def35
     PUSH EBX                            ; 00500451
     FSTP float ptr [ESI + 0x10b10]      ; 00500452
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 00500458

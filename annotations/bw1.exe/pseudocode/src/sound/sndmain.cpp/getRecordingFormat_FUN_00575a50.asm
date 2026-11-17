@@ -10,10 +10,10 @@
 ; int *            Stack[0x10]:4   out_signed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00623320
-;   undefined4 DAT_00623324
-;   undefined4 DAT_00623328
-;   undefined4 DAT_02c81040
+;   int g_INT_00623320 = 0x8
+;   int g_INT_00623324 = 0x1
+;   int g_INT_00623328 = 0x2b11
+;   int g_INT_02c81040
 ;
 ; *****************************************************************************
 
@@ -32,13 +32,13 @@ section .text
     TEST EBX,EBX                        ; 00575a65
     JZ 0x00575a70                       ; 00575a67
         ;   XREF to: 00575a70 (CONDITIONAL_JUMP)  ; LAB_00575a70
-    MOV EAX,[0x00623324]                ; 00575a69 | DAT_00623324
+    MOV EAX,[0x00623324]                ; 00575a69 | g_INT_00623324
     MOV dword ptr [EBX],EAX             ; 00575a6e
     TEST ECX,ECX                        ; 00575a70
         ;   Label: LAB_00575a70
     JZ 0x00575a7b                       ; 00575a72
         ;   XREF to: 00575a7b (CONDITIONAL_JUMP)  ; LAB_00575a7b
-    MOV EAX,[0x00623328]                ; 00575a74 | DAT_00623328
+    MOV EAX,[0x00623328]                ; 00575a74 | g_INT_00623328
     MOV dword ptr [ECX],EAX             ; 00575a79
     TEST EDX,EDX                        ; 00575a7b
         ;   Label: LAB_00575a7b
@@ -46,12 +46,12 @@ section .text
         ;   XREF to: 00575a8a (CONDITIONAL_JUMP)  ; LAB_00575a8a
     POP EBX                             ; 00575a7f
     RET                                 ; 00575a80
-    MOV EAX,[0x00623320]                ; 00575a81 | DAT_00623320
+    MOV EAX,[0x00623320]                ; 00575a81 | g_INT_00623320
         ;   Label: LAB_00575a81
     MOV dword ptr [EBX],EAX             ; 00575a86
     JMP 0x00575a61                      ; 00575a88
         ;   XREF to: 00575a61 (UNCONDITIONAL_JUMP)  ; LAB_00575a61
-    MOV EAX,[0x02c81040]                ; 00575a8a | DAT_02c81040
+    MOV EAX,[0x02c81040]                ; 00575a8a | g_INT_02c81040
         ;   Label: LAB_00575a8a
     MOV dword ptr [EDX],EAX             ; 00575a8f
     POP EBX                             ; 00575a91

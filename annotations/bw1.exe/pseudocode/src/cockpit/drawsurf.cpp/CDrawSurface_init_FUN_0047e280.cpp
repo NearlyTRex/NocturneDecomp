@@ -43,12 +43,12 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0047e280(CDrawSurface *t
   if (this_ptr->clip_top < 0) {
     this_ptr->clip_top = 0;
   }
-  if (DAT_0061b498 <= this_ptr->clip_right) {
-    this_ptr->clip_right = DAT_0061b498 + -1;
+  if (g_INT_0061b498 <= this_ptr->clip_right) {
+    this_ptr->clip_right = g_INT_0061b498 + -1;
   }
-  if (this_ptr->clip_bottom < DAT_0061b49c) {
+  if (this_ptr->clip_bottom < g_INT_0061b49c) {
     return;
   }
-  this_ptr->clip_bottom = DAT_0061b49c + -1;
+  this_ptr->clip_bottom = g_INT_0061b49c + -1;
   return;
 }

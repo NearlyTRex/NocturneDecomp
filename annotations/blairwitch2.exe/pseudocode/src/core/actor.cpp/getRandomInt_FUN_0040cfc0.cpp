@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_actor_cpp_getRandomInt_FUN_0040cfc0(int min_value,int max_value)
 
 {
@@ -16,14 +14,14 @@ int __cdecl core_actor_cpp_getRandomInt_FUN_0040cfc0(int min_value,int max_value
   uint uVar3;
   double dVar4;
   
-  dVar4 = (double)(max_value - min_value) + _DAT_005caf26;
+  dVar4 = (double)(max_value - min_value) + 0.99999000000000005;
   if (g_CGamePtr->is_processing == 0) {
     iVar2 = rand();
-    fVar1 = (float)iVar2 * _DAT_005caf2e;
+    fVar1 = (float)iVar2 * 3.051851e-05f;
   }
   else {
     uVar3 = core_actor_cpp_generateRandomValue_FUN_0040cef0();
-    fVar1 = (float)(int)uVar3 * _DAT_005caf32;
+    fVar1 = (float)(int)uVar3 * 5.960465e-08f;
   }
   dVar4 = round((double)((float)min_value + fVar1 * (float)dVar4));
   iVar2 = (int)ROUND(dVar4);

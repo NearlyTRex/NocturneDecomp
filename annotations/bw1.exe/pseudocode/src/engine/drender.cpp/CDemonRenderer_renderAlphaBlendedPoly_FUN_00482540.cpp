@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_00482540(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -29,7 +27,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_004825
             this_ptr->vertex_buffer_ptr[iVar1].u = pSVar3->vertices[0].texture_u;
             this_ptr->vertex_buffer_ptr[iVar1].v = pSVar3->vertices[0].texture_v;
           }
-          *(int *)(&DAT_01bc1240 + iVar2) = iVar1;
+          *(int *)((int)g_INT_ARRAY_01bc1240 + iVar2) = iVar1;
           pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
           iVar4 = iVar4 + 1;
           iVar2 = iVar2 + 4;
@@ -42,7 +40,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_004825
         iVar2 = 0;
         pSVar3 = poly;
         do {
-          *(int *)(&DAT_01bc1240 + iVar2) = pSVar3->vertices[0].vertex_index;
+          *(int *)((int)g_INT_ARRAY_01bc1240 + iVar2) = pSVar3->vertices[0].vertex_index;
           iVar2 = iVar2 + 4;
           iVar4 = iVar4 + 1;
           pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
@@ -50,22 +48,22 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_004825
       }
     }
     if (this_ptr->shadow_pass_active == 0) {
-      if (DAT_0061b4a0 == 0x20) {
-        _DAT_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
+      if (g_INT_0061b4a0 == 0x20) {
+        g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
       }
       else {
-        _DAT_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
+        g_PTR_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
       }
-      _DAT_01c51d18 = 6;
-      _DAT_01c51d14 = 0x2cd;
+      g_INT_01c51d18 = 6;
+      g_BIT_INTEGER32_01c51d14.dword = 0x2cd;
     }
     else {
-      _DAT_01c51d14 = 0;
-      _DAT_01c51d18 = 0;
-      _DAT_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
+      g_BIT_INTEGER32_01c51d14.dword = 0;
+      g_INT_01c51d18 = 0;
+      g_PTR_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
-              (this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);
+              (this_ptr,(poly->base).base.count,g_INT_ARRAY_01bc1240);
   }
   return;
 }

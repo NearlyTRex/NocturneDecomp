@@ -19,8 +19,8 @@
 ;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440 at 005a9555
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bc1280
-;   undefined4 DAT_01bc1284
+;   int g_INT_01bc1280
+;   int g_INT_01bc1284
 ;
 ; *****************************************************************************
 
@@ -40,9 +40,9 @@ section .text
     SETNZ AL                            ; 00484a59
     MOV EDI,0xffffffff                  ; 00484a5c
     AND EAX,0xff                        ; 00484a61
-    MOV dword ptr [0x01bc1280],ECX      ; 00484a66 | DAT_01bc1280
+    MOV dword ptr [0x01bc1280],ECX      ; 00484a66 | g_INT_01bc1280
     INC EAX                             ; 00484a6c
-    MOV dword ptr [0x01bc1284],EDI      ; 00484a6d | DAT_01bc1284
+    MOV dword ptr [0x01bc1284],EDI      ; 00484a6d | g_INT_01bc1284
     MOV dword ptr [EDX + 0x1c],EAX      ; 00484a73
     POP EDI                             ; 00484a76
     RET                                 ; 00484a77

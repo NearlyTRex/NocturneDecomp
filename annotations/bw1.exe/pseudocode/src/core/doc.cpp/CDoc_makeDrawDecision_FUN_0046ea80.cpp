@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_0046ea80(CDoc *this_ptr)
 
@@ -54,8 +53,8 @@ void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_0046ea80(CDoc *this_ptr)
   bVar10 = 0;
   iVar14 = (this_ptr->base).base.layer_action_index;
   if ((iVar14 < 0) || (0x15 < iVar14)) {
-    _DAT_01d1d400 = "..\\core\\doc.cpp";
-    _DAT_01d1d404 = 0xc50;
+    g_CHAR_PTR_01d1d400 = "..\\core\\doc.cpp";
+    g_INT_01d1d404 = 0xc50;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDoc::makeDrawDecision - draw motion out of range!");
   }
   local_f0 = 1.0;
@@ -100,12 +99,12 @@ void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_0046ea80(CDoc *this_ptr)
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar11->base);
   iVar14 = pSVar2->state_index;
   if ((iVar14 == 0x1a) || (iVar14 == 0x1b)) {
-    fVar1 = fVar1 + (float)_DAT_005da07c;
+    fVar1 = fVar1 + (float)-0.75;
 LAB_0046ec9a:
-    local_1c = fVar1 * (float)_DAT_005da074;
+    local_1c = fVar1 * (float)4;
   }
   else if ((iVar14 == 0x1c) || (iVar14 == 0x1d)) {
-    fVar1 = (float)_DAT_005da06c - fVar1;
+    fVar1 = (float)0.25 - fVar1;
     goto LAB_0046ec9a;
   }
   if ((int)local_1c < 0x3f800001) {
@@ -118,7 +117,7 @@ LAB_0046ec9a:
   }
   local_f0 = local_f0 * local_1c;
 LAB_0046ecd2:
-  if ((float)_DAT_005da084 < local_f0) {
+  if ((float)0.0001 < local_f0) {
     if (1.0 < local_f0) {
       local_f0 = 1.0;
     }
@@ -146,18 +145,18 @@ LAB_0046ecd2:
     }
     local_28 = local_18;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
-              (&(this_ptr->base).base.model,local_24,local_18,local_f0,_DAT_01b68858,
+              (&(this_ptr->base).base.model,local_24,local_18,local_f0,g_INT_01b68858,
                core_skeleton_cpp_blendWeightCallback_FUN_00567360);
     if ((this_ptr->base).base.layer_action_index == 0) {
       local_30 = (CDeformableModelInstance *)
                  (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations;
       core_xform_cpp_slerpQuaternion_FUN_005b7940
-                ((CQuaternion4f *)((int)local_30 + _DAT_01b6884c * 0x10),
-                 (CQuaternion4f *)((int)local_30 + _DAT_01b6882c * 0x10),
+                ((CQuaternion4f *)((int)local_30 + g_INT_01b6884c * 0x10),
+                 (CQuaternion4f *)((int)local_30 + g_INT_01b6882c * 0x10),
                  (this_ptr->base).base.layer_action_t,&local_50);
-      iVar14 = _DAT_01b68828;
-      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01b6884c].w
-      ;
+      iVar14 = g_INT_01b68828;
+      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[g_INT_01b6884c].
+                w;
       pfVar8 = pfVar4 + (uint)bVar10 * -2 + 1;
       *pfVar4 = local_50.w;
       pfVar4 = (float *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -165,11 +164,11 @@ LAB_0046ecd2:
       pfVar8[(uint)bVar10 * -2 + 1] = *pfVar4;
       (pfVar8 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] = pfVar4[(uint)bVar10 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005b7940
-                ((CQuaternion4f *)((int)local_30 + _DAT_01b68848 * 0x10),
+                ((CQuaternion4f *)((int)local_30 + g_INT_01b68848 * 0x10),
                  (CQuaternion4f *)((int)local_30 + iVar14 * 0x10),
                  (this_ptr->base).base.layer_action_t,&local_d0);
-      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01b68848].w
-      ;
+      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[g_INT_01b68848].
+                w;
       pfVar8 = pfVar4 + (uint)bVar10 * -2 + 1;
       *pfVar4 = local_d0.w;
       pfVar4 = (float *)((int)&local_d0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -184,17 +183,18 @@ LAB_0046ecd2:
       local_20 = 0x3e860a92;
       local_2c = 0x3f19999a;
       if (fVar1 < 0.0) {
-        local_ec = ((fVar1 + _DAT_005da08c) / (0xBF860A92 + _DAT_005da08c)) * _DAT_005da090;
+        local_ec = ((fVar1 + 0.3490658f) / (-1.047198f + 0.3490658f)) *
+                   0.6f;
       }
       if (0.0 < fVar1) {
-        local_ec = ((fVar1 - 0.2617994) / (0x3F9C61AA - 0.2617994)) * 0.6;
+        local_ec = ((fVar1 - 0.2617994) / (1.22173f - 0.2617994)) * 0.6;
       }
       local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
                            ((CCharacter *)this_ptr,3);
       local_ec = (1.0 - local_18) * local_f0 * local_ec;
       if (0.0 < local_ec) {
         pcVar15 = core_doc_cpp_blendWeightCallback_FUN_00468a20;
-        iVar14 = _DAT_01b68858;
+        iVar14 = g_INT_01b68858;
         core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(fVar1,&local_70);
         pCVar12 = &local_80;
         pCVar11 = &(this_ptr->base).base.model;
@@ -222,17 +222,17 @@ LAB_0046ecd2:
       puVar7 = (uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       *(uint *)((int)&local_b0 + (uint)bVar10 * -8 + 4) =
            *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4);
-      iVar14 = _DAT_01b68858;
+      iVar14 = g_INT_01b68858;
       *puVar6 = *puVar7;
       puVar6[(uint)bVar10 * -2 + 1] = puVar7[(uint)bVar10 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
                 (pCVar11,pCVar12,fVar1,iVar14,pcVar15);
       core_doc_cpp_CDoc_applyArmAimRotation_FUN_0046f200(this_ptr,1);
-      iVar14 = _DAT_01b68828;
-      puVar7 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01b6884c].w
-      ;
-      puVar6 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01b6882c].w
-      ;
+      iVar14 = g_INT_01b68828;
+      puVar7 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[g_INT_01b6884c].
+                w;
+      puVar6 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[g_INT_01b6882c].
+                w;
       puVar9 = puVar7 + (uint)bVar10 * -2 + 1;
       puVar5 = puVar6 + (uint)bVar10 * -2 + 1;
       *puVar7 = *puVar6;
@@ -240,8 +240,8 @@ LAB_0046ecd2:
       puVar9[(uint)bVar10 * -2 + 1] = puVar5[(uint)bVar10 * -2 + 1];
       (puVar9 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] =
            (puVar5 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
-      puVar7 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01b68848].w
-      ;
+      puVar7 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[g_INT_01b68848].
+                w;
       puVar5 = puVar7 + (uint)bVar10 * -2 + 1;
       puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar14 * 0x10 + 0x80c);
       *puVar7 = (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[iVar14].w;
@@ -270,7 +270,7 @@ LAB_0046ecd2:
       *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) =
            *(uint *)((int)&local_c0 + (uint)bVar10 * -8 + 4);
       this_ptr_00 = pCVar11;
-      iVar14 = _DAT_01b68858;
+      iVar14 = g_INT_01b68858;
       *puVar6 = *puVar7;
       puVar6[(uint)bVar10 * -2 + 1] = puVar7[(uint)bVar10 * -2 + 1];
       local_30 = pCVar11;
@@ -287,7 +287,7 @@ LAB_0046ecd2:
       puVar7 = (uint *)((int)&local_a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       *(uint *)((int)&local_e0 + (uint)bVar10 * -8 + 4) =
            *(uint *)((int)&local_a0 + (uint)bVar10 * -8 + 4);
-      iVar14 = _DAT_01b68858;
+      iVar14 = g_INT_01b68858;
       *puVar6 = *puVar7;
       puVar6[(uint)bVar10 * -2 + 1] = puVar7[(uint)bVar10 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0

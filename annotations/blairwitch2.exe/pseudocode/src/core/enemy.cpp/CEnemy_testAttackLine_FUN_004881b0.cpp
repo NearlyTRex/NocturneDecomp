@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_004881b0(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info)
 
 {
@@ -24,7 +22,8 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_004881b0(CEnemy *this_ptr,C
     auStack_28 = (byte  [8])(double)damage_info->damage_amount;
     if (0.0 < (double)auStack_28) {
       blood_type = 0x48821e;
-      dVar1 = round((double)auStack_28 * _DAT_005d2db9 * _DAT_005d2dc1);
+      dVar1 = round
+                        ((double)auStack_28 * 1.2 * 0.25);
       local_20.z = (float)(int)ROUND(dVar1);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
                 (g_CGorePtr,(CVector3f *)(auStack_28 + 4),(CVector3f *)0x0,(int)local_20.z,

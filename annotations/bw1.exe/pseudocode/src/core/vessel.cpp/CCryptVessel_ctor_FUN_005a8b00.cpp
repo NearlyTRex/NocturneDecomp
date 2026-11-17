@@ -22,7 +22,7 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005a8b00(CCryptVess
   pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)(pCVar3[1].model_name + 0x78));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
                      ((CKeyFramedModelInstance *)(pCVar4[1].base.actor_name + 4));
-  pcVar5 = (char *)0x5f9118;
+  pcVar5 = "none";
   *(CDemonActor_vtable **)(pCVar3[-4].model_name + 0x60) = &g_CCryptVesselVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
             ((CKeyFramedModelInstance *)(pCVar3[-4].model_name + 100),"vsslbase.kfm");
@@ -50,7 +50,7 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005a8b00(CCryptVess
   } while (cVar1 != '\0');
   pCVar3[-2].part_visibility_flags[0xd] = 0;
   pCVar3[-2].part_visibility_flags[0xe] = 0;
-  pcVar5 = (char *)0x5f911d;
+  pcVar5 = "none";
   pCVar3[-2].part_visibility_flags[0x12] = 0;
   pcVar6 = pCVar3[-3].model_name + 0xd4;
   pCVar3[-2].part_visibility_flags[0x11] = 0;
@@ -67,7 +67,7 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005a8b00(CCryptVess
   pCVar3[-2].part_visibility_flags[0x13] = 1;
   pCVar3[-2].part_visibility_flags[0x10] = 0;
   pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(pCVar3,(char *)0x5f9122);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(pCVar3,"vsslorb.kfm");
   pCVar3[1].part_visibility_flags[0] = 1;
   pCVar3[-0xffffffff00000004].model_name[8] = '\x01';
   pCVar3[-0xffffffff00000004].model_name[9] = '\0';

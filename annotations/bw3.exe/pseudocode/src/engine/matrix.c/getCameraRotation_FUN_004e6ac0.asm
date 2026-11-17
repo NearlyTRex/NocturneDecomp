@@ -13,9 +13,9 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250 at 0046d25f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6e2e4
-;   undefined4 DAT_01c6e2e8
-;   undefined4 DAT_01c6e2ec
+;   int g_INT_01c6e2e4
+;   int g_INT_01c6e2e8
+;   int g_INT_01c6e2ec
 ;
 ; *****************************************************************************
 
@@ -25,12 +25,12 @@ section .text
         ;   Label: engine_matrix.c_getCameraRotation_FUN_004e6ac0
     SUB ESP,0xc                         ; 004e6ac1
     MOV EAX,ESI                         ; 004e6ac4
-    MOV EDX,dword ptr [0x01c6e2e4]      ; 004e6ac6 | DAT_01c6e2e4
+    MOV EDX,dword ptr [0x01c6e2e4]      ; 004e6ac6 | g_INT_01c6e2e4
     MOV dword ptr [ESP],EDX             ; 004e6acc
-    MOV EDX,dword ptr [0x01c6e2e8]      ; 004e6acf | DAT_01c6e2e8
+    MOV EDX,dword ptr [0x01c6e2e8]      ; 004e6acf | g_INT_01c6e2e8
     MOV EDI,ESI                         ; 004e6ad5
     MOV dword ptr [ESP + 0x4],EDX       ; 004e6ad7
-    MOV EDX,dword ptr [0x01c6e2ec]      ; 004e6adb | DAT_01c6e2ec
+    MOV EDX,dword ptr [0x01c6e2ec]      ; 004e6adb | g_INT_01c6e2ec
     MOV ESI,ESP                         ; 004e6ae1
     MOV dword ptr [ESP + 0x8],EDX       ; 004e6ae3
     MOVSD ES:EDI,ESI                    ; 004e6ae7

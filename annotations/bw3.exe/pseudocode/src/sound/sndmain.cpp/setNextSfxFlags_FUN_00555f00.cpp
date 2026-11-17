@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxFlags_FUN_00555f00(uint flags)
 
 {
-  *(uint *)(_DAT_02ceb91c * 0x60 + 0x2ceb96c) = flags;
+  g_CSfxOptions_ARRAY_02ceb920[g_INT_02ceb91c].flags = flags;
   return;
 }

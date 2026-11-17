@@ -8,11 +8,11 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046b580 at 0046b646
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2b00
-;   undefined4 DAT_01bdd810
-;   undefined4 DAT_01bdd814
-;   undefined4 DAT_01c60dac
-;   undefined4 DAT_01c6b5d0
+;   int g_INT_005f2b00 = 0x1
+;   int g_INT_01bdd810
+;   int g_INT_01bdd814
+;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   uint[1600] g_UINT_ARRAY_01c6b5d0
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     SHR EAX,0x10                        ; 0046fec2
         ;   Label: LAB_0046fec2
     SHR ECX,0x10                        ; 0046fec5
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c60dac] ; 0046fec8 | DAT_01c60dac
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c60dac] ; 0046fec8 | g_UINT_PTR_ARRAY_01c60dac
     SUB ECX,EAX                         ; 0046fecf
     JLE 0x0046ff00                      ; 0046fed1
         ;   XREF to: 0046ff00 (CONDITIONAL_JUMP)  ; LAB_0046ff00
@@ -48,7 +48,7 @@ section .text
     INC ECX                             ; 0046fed8
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046fed9
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046fedc
-    IMUL dword ptr [ECX*0x4 + 0x1c6b5d0] ; 0046fedf | DAT_01c6b5d0
+    IMUL dword ptr [ECX*0x4 + 0x1c6b5d0] ; 0046fedf | g_UINT_ARRAY_01c6b5d0
     MOV EBX,EBP                         ; 0046fee6
     DEC ECX                             ; 0046fee8
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046fee9
@@ -69,14 +69,14 @@ section .text
     POP EDI                             ; 0046ff01
     POP ESI                             ; 0046ff02
     RET                                 ; 0046ff03
-    MOV EAX,[0x01bdd810]                ; 0046ff04 | DAT_01bdd810
+    MOV EAX,[0x01bdd810]                ; 0046ff04 | g_INT_01bdd810
         ;   Label: LAB_0046ff04
     INC EAX                             ; 0046ff09
-    MOV [0x01bdd810],EAX                ; 0046ff0a | DAT_01bdd810
-    CMP EAX,dword ptr [0x005f2b00]      ; 0046ff0f | DAT_005f2b00
+    MOV [0x01bdd810],EAX                ; 0046ff0a | g_INT_01bdd810
+    CMP EAX,dword ptr [0x005f2b00]      ; 0046ff0f | g_INT_005f2b00
     JC 0x0046fef5                       ; 0046ff15
         ;   XREF to: 0046fef5 (CONDITIONAL_JUMP)  ; LAB_0046fef5
-    MOV dword ptr [0x01bdd814],0x1      ; 0046ff17 | DAT_01bdd814
+    MOV dword ptr [0x01bdd814],0x1      ; 0046ff17 | g_INT_01bdd814
     POP EBP                             ; 0046ff21
     POP EDI                             ; 0046ff22
     POP ESI                             ; 0046ff23

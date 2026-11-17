@@ -31,9 +31,9 @@
 ;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004b1e00 at 004b1f85
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d71b7
-;   undefined4 DAT_005d71bb
-;   undefined4 DAT_005f7348
+;   float g_FLOAT_005d71b7 = -0.3000000
+;   double g_DOUBLE_005d71bb = 0.5
+;   float g_FLOAT_005f7348 = 0.05000000
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -84,14 +84,14 @@ section .text
     PUSH EAX                            ; 004b2125
     FLD float ptr [ESP + 0x1b5c]        ; 004b2126
     LEA ESI,[ESP + 0x1b34]              ; 004b212d
-    FADD float ptr [0x005d71b7]         ; 004b2134 | DAT_005d71b7
+    FADD float ptr [0x005d71b7]         ; 004b2134 | g_FLOAT_005d71b7
     PUSH ECX                            ; 004b213a
     FSTP float ptr [ESP + 0x1b60]       ; 004b213b
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004b2142
         ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004b2147
     FLD float ptr [EBP + 0x18]          ; 004b214a
-    FDIV float ptr [0x005f7348]         ; 004b214d | DAT_005f7348
+    FDIV float ptr [0x005f7348]         ; 004b214d | g_FLOAT_005f7348
     LEA EDI,[ESP + 0x1b48]              ; 004b2153
     LEA ESI,[ESP + 0x1b30]              ; 004b215a
     MOV EAX,dword ptr [EBP + 0x1c]      ; 004b2161
@@ -190,7 +190,7 @@ section .text
     FLD float ptr [ESP + 0x1b60]        ; 004b227b
         ;   Label: LAB_004b227b
     FADD float ptr [ESP]                ; 004b2282
-    FMUL double ptr [0x005d71bb]        ; 004b2285 | DAT_005d71bb
+    FMUL double ptr [0x005d71bb]        ; 004b2285 | g_DOUBLE_005d71bb
     MOV EAX,dword ptr [EBP + 0x1c]      ; 004b228b
     INC EBX                             ; 004b228e
     FSTP float ptr [EAX]                ; 004b228f

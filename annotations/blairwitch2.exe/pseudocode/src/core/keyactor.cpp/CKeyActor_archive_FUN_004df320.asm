@@ -7,7 +7,7 @@
 ; CKeyActor *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005dbbcd+1
+;   TerminatedCString s_modelName_005dbbce
 ;   TerminatedCString s_keyMask_005dbbd8
 ;   TerminatedCString s_descriptiveName_005dbbe0
 ;   int g_CKeyActorClassVersion = 0x3
@@ -30,7 +30,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 004df32f
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004df334
-    PUSH 0x5dbbce                       ; 004df337 | s_modelName_005dbbcd+1
+    PUSH 0x5dbbce                       ; 004df337 | = "modelName"
     LEA EAX,[EBX + 0x2b4]               ; 004df33c
     PUSH EAX                            ; 004df342
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 004df343

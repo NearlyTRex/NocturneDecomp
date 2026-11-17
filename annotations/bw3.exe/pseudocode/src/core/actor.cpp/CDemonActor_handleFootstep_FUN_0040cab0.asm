@@ -15,12 +15,12 @@
 ;   TerminatedCString s_twig_wav_005b5eaa
 ;   TerminatedCString s_CShadow_005b5eb4
 ;   TerminatedCString s_footstep_s_s_wav_f_005b5ebc
-;   undefined4 DAT_005b5ed9
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005b5ed9 = 10000
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonCameraInstance.base.position
 ;   undefined4 g_CDemonCameraInstance.base.position+4
@@ -74,7 +74,7 @@ section .text
     FSUB float ptr [ESP + 0x84]         ; 0040cb00
     FMUL ST0                            ; 0040cb07
     FADDP                               ; 0040cb09
-    FCOMP float ptr [0x005b5ed9]        ; 0040cb0b | DAT_005b5ed9
+    FCOMP float ptr [0x005b5ed9]        ; 0040cb0b | g_FLOAT_005b5ed9
     FNSTSW AX                           ; 0040cb11
     SAHF                                ; 0040cb13
     JBE 0x0040cb23                      ; 0040cb14
@@ -107,7 +107,7 @@ section .text
     JZ 0x0040cb69                       ; 0040cb53
         ;   XREF to: 0040cb69 (CONDITIONAL_JUMP)  ; LAB_0040cb69
     PUSH 0x5b5e9f                       ; 0040cb55 | = "FeetAreWet"
-    MOV ESI,dword ptr [0x005fba60]      ; 0040cb5a | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 0040cb5a | g_CEventList_PTR_005fba60
     PUSH ESI                            ; 0040cb60
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 0040cb61
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -159,7 +159,7 @@ section .text
     PUSH EBX                            ; 0040cbee
     PUSH 0x5b5eaa                       ; 0040cbef | = "twig?.wav"
     PUSH EBP                            ; 0040cbf4
-    MOV EDI,dword ptr [0x006045f8]      ; 0040cbf5 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0040cbf5 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0040cbfb
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0040cbfc
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -229,7 +229,7 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 0040ccd2
     PUSH EAX                            ; 0040ccd6
     PUSH EBX                            ; 0040ccd7
-    MOV EDX,dword ptr [0x005fc5a0]      ; 0040ccd8 | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 0040ccd8 | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 0040ccde
     INC ESI                             ; 0040ccdf
     CALL core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930 ; 0040cce0
@@ -261,7 +261,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0040cd2e
     PUSH EAX                            ; 0040cd32
     PUSH EBP                            ; 0040cd33
-    MOV ECX,dword ptr [0x006045f8]      ; 0040cd34 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 0040cd34 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 0040cd3a
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0040cd3b
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

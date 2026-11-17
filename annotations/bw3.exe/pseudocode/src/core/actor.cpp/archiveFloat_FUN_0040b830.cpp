@@ -11,15 +11,15 @@ void __cdecl core_actor_cpp_archiveFloat_FUN_0040b830(float *float_ptr,char *pro
 {
   int iVar1;
   
-  if (DAT_007df9b8 == 1) {
-    iVar1 = _fscanf(DAT_007df9b4,&DAT_005b5aed);
+  if (g_INT_007df9b8 == 1) {
+    iVar1 = _fscanf(g_FILE_PTR_007df9b4,"%f");
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0
                 ("Floating point value",property_name);
     }
   }
   else {
-    _fprintf(DAT_007df9b4,&DAT_005b5af0);
+    _fprintf(g_FILE_PTR_007df9b4,"%s%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b350("Floating point value",property_name);
   return;

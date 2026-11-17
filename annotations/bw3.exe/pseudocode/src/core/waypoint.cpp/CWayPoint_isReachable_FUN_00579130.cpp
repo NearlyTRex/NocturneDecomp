@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_00579130(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds,int skip_path_check )
 
 {
@@ -26,13 +24,13 @@ int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_00579130(CWayPoint *this
   local_24 = *(float *)((this_ptr->base).base.actor_name + 4) - (from_location->position).y;
   local_20 = *(float *)((this_ptr->base).base.actor_name + 8) - (from_location->position).z;
   if (use_tight_bounds == 0) {
-    if ((((float)_DAT_005d7374 < ABS(local_24)) || ((float)_DAT_005d737c < ABS(local_28))) ||
-       ((float)_DAT_005d737c < ABS(local_20))) {
+    if ((((float)10 < ABS(local_24)) || ((float)30 < ABS(local_28)))
+       || ((float)30 < ABS(local_20))) {
       return 0;
     }
   }
-  else if ((((float)_DAT_005d7384 < ABS(local_24)) || ((float)_DAT_005d738c < ABS(local_28))) ||
-          ((float)_DAT_005d738c < ABS(local_20))) {
+  else if ((((float)8 < ABS(local_24)) || ((float)25 < ABS(local_28))
+           ) || ((float)25 < ABS(local_20))) {
     return 0;
   }
   if (skip_path_check != 0) {

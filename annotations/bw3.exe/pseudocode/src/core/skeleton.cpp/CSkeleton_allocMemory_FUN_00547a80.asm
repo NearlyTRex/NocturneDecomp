@@ -16,8 +16,8 @@
 ;   TerminatedCString s_Too_bony_005d1609
 ;   TerminatedCString s_core_skeleton_cpp_005d1613
 ;   TerminatedCString s_Out_of_hunk_in_CSkeleton_005d1628
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -44,8 +44,8 @@ section .text
     MOV ECX,0x5d15f4                    ; 00547a99 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xc8                        ; 00547a9e
     PUSH 0x5d1609                       ; 00547aa3 | = "Too bony!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00547aa8 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00547aae | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00547aa8 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00547aae | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00547ab4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00547ab9
@@ -103,8 +103,8 @@ section .text
     MOV ECX,0x5d1613                    ; 00547b60 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xdc                        ; 00547b65
     PUSH 0x5d1628                       ; 00547b6a | = "Out of hunk in CSkeleton::allocMemory..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00547b6f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00547b75 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00547b6f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00547b75 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00547b7b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00547b80

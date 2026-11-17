@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   param_2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c35814
-;   undefined4 DAT_01c35820
-;   undefined4 DAT_01c3582c
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c
 ;
 ; *****************************************************************************
 
@@ -40,15 +40,15 @@ section .text
     ADD EDX,ECX                         ; 00442ea7
     MOV ECX,dword ptr [EBX + 0x158]     ; 00442ea9
     MOV EDX,dword ptr [ECX + EDX*0x4]   ; 00442eaf
-    MOV CL,byte ptr [0x01c35814]        ; 00442eb2 | DAT_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 00442eb2 | g_BIT_INTEGER32_01c35814
     MOV EBX,EDX                         ; 00442eb8
     SHR EBX,CL                          ; 00442eba
     MOV ESI,EDX                         ; 00442ebc
     AND EBX,0xff                        ; 00442ebe
-    MOV CL,byte ptr [0x01c35820]        ; 00442ec4 | DAT_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 00442ec4 | g_BIT_INTEGER32_01c35820
     SHL EBX,0x8                         ; 00442eca
     SHR ESI,CL                          ; 00442ecd
-    MOV CL,byte ptr [0x01c3582c]        ; 00442ecf | DAT_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 00442ecf | g_BIT_INTEGER32_01c3582c
     AND ESI,0xff                        ; 00442ed5
     MOV dword ptr [EAX + 0x20],EBX      ; 00442edb
     SHR EDX,CL                          ; 00442ede

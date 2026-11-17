@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005992b0(CZombie *this_ptr,CVector3f *out_attract_position)
 
 {
@@ -62,10 +60,10 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005992b0(CZombie *this_pt
   afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        afStack_14[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   input_local_point = &CStack_6c;
-  fStack_78 = fStack_48 * _DAT_005ef35a;
-  fStack_74 = afStack_44[0] * _DAT_005ef35a;
-  fStack_70 = afStack_44[1] * _DAT_005ef35a;
-  CStack_6c.x = fStack_48 * _DAT_005ef35a;
+  fStack_78 = fStack_48 * 0.5f;
+  fStack_74 = afStack_44[0] * 0.5f;
+  fStack_70 = afStack_44[1] * 0.5f;
+  CStack_6c.x = fStack_48 * 0.5f;
   *(uint *)((int)&CStack_6c + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&stack0xffffff8c + (uint)bVar2 * -8);
   *(uint *)((int)&CStack_6c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =

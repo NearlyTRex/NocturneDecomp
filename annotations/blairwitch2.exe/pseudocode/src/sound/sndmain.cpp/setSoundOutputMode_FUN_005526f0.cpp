@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005526f0(int bits_per_sample,int channels,int sample_rate)
 
 {
@@ -16,16 +14,16 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005526f0(int bits_per_sampl
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00552b20();
   if (iVar1 != 0) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x1482;
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x1482;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setSoundOutputMode - can't do this while sound active!");
   }
-  DAT_0061bc98 = bits_per_sample;
-  DAT_0061bc9c = channels;
-  DAT_0061bca0 = sample_rate;
-  if (_DAT_02648e80 != (int *)0x0) {
-    iVar1 = (**(code **)(*_DAT_02648e80 + 0xc))
-                      (_DAT_02648e80,bits_per_sample,channels,sample_rate,&iStack_10);
+  g_INT_0061bc98 = bits_per_sample;
+  g_INT_0061bc9c = channels;
+  g_INT_0061bca0 = sample_rate;
+  if (g_CSoundDevice_PTR_02648e80 != (CSoundDevice *)0x0) {
+    iVar1 = (*g_CSoundDevice_PTR_02648e80->vtable->setMode)
+                      (g_CSoundDevice_PTR_02648e80,bits_per_sample,channels,sample_rate,&iStack_10);
     if (iVar1 == 0) {
       return 0;
     }

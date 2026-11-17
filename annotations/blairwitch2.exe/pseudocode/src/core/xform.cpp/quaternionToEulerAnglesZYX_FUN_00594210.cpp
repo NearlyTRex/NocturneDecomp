@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00594210(CQuaternion4f *quat_in,CVector3f *vector_out)
 
 {
@@ -22,13 +20,13 @@ CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00594210(C
   float afStack_1010 [1025];
   
   bVar2 = 0;
-  afStack_1010[0x3fc] = (-quat_in->w * quat_in->x - quat_in->y * quat_in->z) * _DAT_005eedd2;
-  if (afStack_1010[0x3fc] < _DAT_005eedd6) {
+  afStack_1010[0x3fc] = (-quat_in->w * quat_in->x - quat_in->y * quat_in->z) * 2.0f;
+  if (afStack_1010[0x3fc] < -0.99999f) {
     afStack_1010[0x3fb] = 8.1974e-39;
     fVar3 = atan2
                       (-(float10)quat_in->x * (float10)quat_in->z -
                        (float10)quat_in->w * (float10)quat_in->y,
-                       ((float10)_DAT_005eede6 - (float10)quat_in->y * (float10)quat_in->y) -
+                       ((float10)0.5f - (float10)quat_in->y * (float10)quat_in->y) -
                        (float10)quat_in->z * (float10)quat_in->z);
     afStack_1010[0x3fc] = -1.5707964;
     afStack_1010[0x3fd] = (float)fVar3;
@@ -39,14 +37,14 @@ CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00594210(C
     pfVar1[(uint)bVar2 * -2 + 1] = afStack_1010[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fe];
     return extraout_ECX_00;
   }
-  if (afStack_1010[0x3fc] <= _DAT_005eedda) {
+  if (afStack_1010[0x3fc] <= 0.99999f) {
     afStack_1010[0x3fb] = 8.197171e-39;
     fVar3 = asin((float10)afStack_1010[0x3fc]);
     afStack_1010[0x3fc] = (float)fVar3;
-    if (fVar3 < (float10)_DAT_005eedde) {
-      afStack_1010[0x3fc] = afStack_1010[0x3fc] + _DAT_005eede2;
+    if (fVar3 < (float10)-3.141593f) {
+      afStack_1010[0x3fc] = afStack_1010[0x3fc] + 6.283185f;
     }
-    fVar3 = ((float10)_DAT_005eede6 - (float10)quat_in->x * (float10)quat_in->x) -
+    fVar3 = ((float10)0.5f - (float10)quat_in->x * (float10)quat_in->x) -
             (float10)quat_in->y * (float10)quat_in->y;
     atan2
               ((float10)quat_in->x * (float10)quat_in->z - (float10)quat_in->w * (float10)quat_in->y
@@ -67,7 +65,7 @@ CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00594210(C
   fVar3 = atan2
                     (-(float10)quat_in->x * (float10)quat_in->z -
                      (float10)quat_in->w * (float10)quat_in->y,
-                     ((float10)_DAT_005eede6 - (float10)quat_in->y * (float10)quat_in->y) -
+                     ((float10)0.5f - (float10)quat_in->y * (float10)quat_in->y) -
                      (float10)quat_in->z * (float10)quat_in->z);
   afStack_1010[0x3fc] = 1.5707964;
   afStack_1010[0x3fe] = 0.0;

@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02662d04
-;   undefined4 DAT_02662d08
-;   undefined4 DAT_02662d0c
-;   undefined4 DAT_02662d10
-;   undefined4 DAT_02662d14
-;   undefined4 DAT_02662d18
+;   CVector3f g_CVector3f_02662d04
+;   undefined4 g_CVector3f_02662d04.y
+;   undefined4 g_CVector3f_02662d04.z
+;   CVector3f g_CVector3f_02662d10
+;   undefined4 g_CVector3f_02662d10.y
+;   undefined4 g_CVector3f_02662d10.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c450
@@ -30,14 +30,14 @@ section .text
     MOV EBX,0x3f19999a                  ; 0058b708
     MOV ESI,0x3eb33333                  ; 0058b70d
     PUSH 0x58b750                       ; 0058b712
-    MOV dword ptr [0x02662d04],EDX      ; 0058b717 | DAT_02662d04
-    MOV dword ptr [0x02662d08],ECX      ; 0058b71d | DAT_02662d08
+    MOV dword ptr [0x02662d04],EDX      ; 0058b717 | g_CVector3f_02662d04
+    MOV dword ptr [0x02662d08],ECX      ; 0058b71d | g_CVector3f_02662d04.y
     PUSH 0x5ee5f2                       ; 0058b723
-    MOV dword ptr [0x02662d0c],EBX      ; 0058b728 | DAT_02662d0c
-    MOV dword ptr [0x02662d10],ESI      ; 0058b72e | DAT_02662d10
+    MOV dword ptr [0x02662d0c],EBX      ; 0058b728 | g_CVector3f_02662d04.z
+    MOV dword ptr [0x02662d10],ESI      ; 0058b72e | g_CVector3f_02662d10
     PUSH 0x2662d1c                      ; 0058b734
-    MOV dword ptr [0x02662d14],ECX      ; 0058b739 | DAT_02662d14
-    MOV dword ptr [0x02662d18],EBX      ; 0058b73f | DAT_02662d18
+    MOV dword ptr [0x02662d14],ECX      ; 0058b739 | g_CVector3f_02662d10.y
+    MOV dword ptr [0x02662d18],EBX      ; 0058b73f | g_CVector3f_02662d10.z
     CALL core_actor.cpp_registerActorClass_FUN_0040c450 ; 0058b745
         ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c450(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factory_func, int * max_version, ...)
     ADD ESP,0x18                        ; 0058b74a

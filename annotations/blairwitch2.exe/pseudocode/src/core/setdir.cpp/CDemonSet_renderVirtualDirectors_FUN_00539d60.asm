@@ -22,11 +22,11 @@
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f8d7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e609c
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_020b1528
-;   undefined4 DAT_020b152c
+;   TerminatedCString s_g_005e609c
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
+;   undefined4 g_INT_ARRAY_020b1524[1]
+;   undefined4 g_INT_ARRAY_020b1524[2]
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_render_FUN_00538a60
@@ -50,7 +50,7 @@ section .text
     JLE 0x00539d90                      ; 00539d77
         ;   XREF to: 00539d90 (CONDITIONAL_JUMP)  ; LAB_00539d90
     XOR EBP,EBP                         ; 00539d79
-    MOV dword ptr [EBP + 0x20b1524],EAX ; 00539d7b | DAT_020b1528
+    MOV dword ptr [EBP + 0x20b1524],EAX ; 00539d7b | g_INT_ARRAY_020b1524[1]
         ;   Label: LAB_00539d7b
     INC EAX                             ; 00539d81
     MOV ECX,dword ptr [EDI]             ; 00539d82
@@ -75,19 +75,19 @@ section .text
         ;   XREF to: 00539df0 (CONDITIONAL_JUMP)  ; LAB_00539df0
     MOV EBX,dword ptr [ESP + 0x70]      ; 00539da4
     LEA EDX,[ECX*0x4 + 0x0]             ; 00539da8
-    MOV EAX,dword ptr [EBX + 0x20b1524] ; 00539daf | DAT_020b1528
+    MOV EAX,dword ptr [EBX + 0x20b1524] ; 00539daf | g_INT_ARRAY_020b1524[1]
         ;   Label: LAB_00539daf
-    MOV ESI,dword ptr [EDX + 0x20b1524] ; 00539db5 | DAT_020b1528 | DAT_020b152c
+    MOV ESI,dword ptr [EDX + 0x20b1524] ; 00539db5 | g_INT_ARRAY_020b1524[1] | g_INT_ARRAY_020b1524[2]
     FLD float ptr [EAX*0x4 + 0x209394c] ; 00539dbb
     FCOMP float ptr [ESI*0x4 + 0x209394c] ; 00539dc2
     FNSTSW AX                           ; 00539dc9
     SAHF                                ; 00539dcb
     JNC 0x00539de6                      ; 00539dcc
         ;   XREF to: 00539de6 (CONDITIONAL_JUMP)  ; LAB_00539de6
-    MOV EAX,dword ptr [EDX + 0x20b1524] ; 00539dce | DAT_020b1528 | DAT_020b152c
+    MOV EAX,dword ptr [EDX + 0x20b1524] ; 00539dce | g_INT_ARRAY_020b1524[1] | g_INT_ARRAY_020b1524[2]
     MOV ESI,dword ptr [EBX + 0x20b1524] ; 00539dd4
     MOV dword ptr [EBX + 0x20b1524],EAX ; 00539dda
-    MOV dword ptr [EDX + 0x20b1524],ESI ; 00539de0 | DAT_020b1528 | DAT_020b152c
+    MOV dword ptr [EDX + 0x20b1524],ESI ; 00539de0 | g_INT_ARRAY_020b1524[1] | g_INT_ARRAY_020b1524[2]
     INC ECX                             ; 00539de6
         ;   Label: LAB_00539de6
     MOV EAX,dword ptr [EDI]             ; 00539de7
@@ -105,7 +105,7 @@ section .text
     MOV EBX,0x2                         ; 00539dfe
         ;   Label: LAB_00539dfe
     MOV ECX,0x9                         ; 00539e03
-    MOV ESI,dword ptr [0x006141bc]      ; 00539e08 | DAT_006141bc
+    MOV ESI,dword ptr [0x006141bc]      ; 00539e08 | g_INT_006141bc
     MOV EBP,dword ptr [EDI]             ; 00539e0e
     SUB ESI,0xb2                        ; 00539e10
     CMP EBP,ECX                         ; 00539e16
@@ -128,7 +128,7 @@ section .text
     MOV dword ptr [ESP + 0x74],EAX      ; 00539e45
     MOV EAX,dword ptr [ESP + 0x7c]      ; 00539e49
         ;   Label: LAB_00539e49
-    MOV EAX,dword ptr [EAX + 0x20b1524] ; 00539e4d | DAT_020b1528
+    MOV EAX,dword ptr [EAX + 0x20b1524] ; 00539e4d | g_INT_ARRAY_020b1524[1]
     MOV ECX,EAX                         ; 00539e53
     MOV dword ptr [ESP + 0x84],EAX      ; 00539e55
     IMUL EAX,EAX,0x1a4                  ; 00539e5c
@@ -156,7 +156,7 @@ section .text
     SUB ESP,0x8                         ; 00539ead
     FLD float ptr [EAX*0x4 + 0x209394c] ; 00539eb0
     FSTP double ptr [ESP]               ; 00539eb7
-    PUSH 0x5e609c                       ; 00539eba | DAT_005e609c
+    PUSH 0x5e609c                       ; 00539eba | = "%g"
     LEA EAX,[ESP + 0xc]                 ; 00539ebf
     PUSH EAX                            ; 00539ec3
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00539ec4
@@ -183,7 +183,7 @@ section .text
     PUSH EAX                            ; 00539f0d
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 00539f0e
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
-    MOV EBP,dword ptr [0x006141b8]      ; 00539f13 | DAT_006141b8
+    MOV EBP,dword ptr [0x006141b8]      ; 00539f13 | g_INT_006141b8
     LEA EAX,[EBX + 0x42]                ; 00539f19
     ADD ESP,0xc                         ; 00539f1c
     ADD EBX,0x2                         ; 00539f1f
@@ -193,7 +193,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x74]      ; 00539f26
     MOV EDX,dword ptr [ESP + 0x78]      ; 00539f2a
     MOV EBX,0x2                         ; 00539f2e
-    MOV EBP,dword ptr [0x006141bc]      ; 00539f33 | DAT_006141bc
+    MOV EBP,dword ptr [0x006141bc]      ; 00539f33 | g_INT_006141bc
     ADD ESI,0x58                        ; 00539f39
     ADD EDX,0x58                        ; 00539f3c
     LEA ECX,[EAX + 0x58]                ; 00539f3f

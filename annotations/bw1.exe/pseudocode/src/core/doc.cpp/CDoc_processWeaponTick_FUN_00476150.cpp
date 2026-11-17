@@ -30,7 +30,7 @@ void __cdecl core_doc_cpp_CDoc_processWeaponTick_FUN_00476150(CDoc *this_ptr,flo
         (*(((this_ptr_01->base).vtable._uc)->_uc).isGrabbable)(this_ptr_01,unaff_EBX);
         this_ptr->weapon = (CWeapon *)0x0;
         (this_ptr->base).base.layer_action_index = 0;
-        fVar1 = 0x41200000;
+        fVar1 = 10.0f;
         (this_ptr->base).base.layer_action_t = 0.0;
         iVar2 = (this_ptr->base).action_pending;
         this_ptr->aim_speed_factor = fVar1;

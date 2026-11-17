@@ -20,7 +20,7 @@
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 at 0049e1de
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c965dc
+;   int g_INT_01c965dc
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLaserBeam_init_FUN_00497660
@@ -31,7 +31,7 @@ section .text
 
     PUSH EBP                            ; 0049d770
         ;   Label: core_fire.cpp_CFireEffect_createLaserSegment_FUN_0049d770
-    MOV EDX,dword ptr [0x01c965dc]      ; 0049d771 | DAT_01c965dc
+    MOV EDX,dword ptr [0x01c965dc]      ; 0049d771 | g_INT_01c965dc
     CMP EDX,0x40                        ; 0049d777
     JL 0x0049d77e                       ; 0049d77a
         ;   XREF to: 0049d77e (CONDITIONAL_JUMP)  ; LAB_0049d77e
@@ -63,10 +63,10 @@ section .text
     PUSH EAX                            ; 0049d7b7
     CALL core_fire.cpp_CLaserBeam_init_FUN_00497660 ; 0049d7b8
         ;   XREF to: 00497660 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_init_FUN_00497660(CLaserBeam * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
-    MOV EDX,dword ptr [0x01c965dc]      ; 0049d7bd | DAT_01c965dc
+    MOV EDX,dword ptr [0x01c965dc]      ; 0049d7bd | g_INT_01c965dc
     INC EDX                             ; 0049d7c3
     ADD ESP,0x2c                        ; 0049d7c4
-    MOV dword ptr [0x01c965dc],EDX      ; 0049d7c7 | DAT_01c965dc
+    MOV dword ptr [0x01c965dc],EDX      ; 0049d7c7 | g_INT_01c965dc
     POP EBX                             ; 0049d7cd
     POP ESI                             ; 0049d7ce
     POP EDI                             ; 0049d7cf

@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0044a0c0(CCrossbow *this_ptr)
 
 {
-  return ((float)_DAT_005d73aa - (this_ptr->base).fire_cooldown_timer) * (float)_DAT_005d73b2 *
-         (float)_DAT_005d73ba;
+  return ((float)0.66600000000000004 - (this_ptr->base).fire_cooldown_timer) *
+         (float)1.5015015015015001 * (float)11;
 }

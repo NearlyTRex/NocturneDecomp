@@ -6,31 +6,25 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401280(int x_coord,int y_coord,uint depth_value)
 
 {
   int iVar1;
-  int iVar2;
-  uint *puVar3;
   
-  iVar1 = DAT_0061b4a0;
-  iVar2 = y_coord * 4;
-  puVar3 = (uint *)(*(int *)(&DAT_01c4480c + iVar2) + x_coord * 4);
-  if (*puVar3 < depth_value) {
-    *puVar3 = depth_value;
+  iVar1 = g_INT_0061b4a0;
+  if (g_UINT_PTR_ARRAY_01c4480c[y_coord][x_coord] < depth_value) {
+    g_UINT_PTR_ARRAY_01c4480c[y_coord][x_coord] = depth_value;
     if (iVar1 == 8) {
-      *(byte *)(*(int *)(&DAT_01c4354c + iVar2) + x_coord) = DAT_01c4f020;
+      g_ARRAY_PTR_01c4354c[y_coord][x_coord] = (byte)g_INT_01c4f020;
       return;
     }
     if (iVar1 != 0x10) {
-      *(uint *)(x_coord * 4 + *(int *)(&DAT_01c4354c + iVar2)) =
-           *(uint *)((_DAT_01c4f020 & 0xff) * 4 + 0x1c4dcd0);
+      *(uint *)(g_ARRAY_PTR_01c4354c[y_coord] + x_coord * 4) =
+           g_UINT_ARRAY_01c4dcd0[g_INT_01c4f020 & 0xffU];
       return;
     }
-    *(ushort *)(x_coord * 2 + *(int *)(&DAT_01c4354c + iVar2)) =
-         *(ushort *)(&DAT_01c4dad0 + (_DAT_01c4f020 & 0xff) * 2);
+    *(ushort *)(g_ARRAY_PTR_01c4354c[y_coord] + x_coord * 2) =
+         g_USHORT_ARRAY_01c4dad0[g_INT_01c4f020 & 0xffU];
   }
   return;
 }

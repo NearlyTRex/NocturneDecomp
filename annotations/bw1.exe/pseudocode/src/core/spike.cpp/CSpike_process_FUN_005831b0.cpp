@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_spike_cpp_CSpike_process_FUN_005831b0(CSpike *this_ptr,float delta_time)
 
 {
@@ -37,12 +35,12 @@ void __cdecl core_spike_cpp_CSpike_process_FUN_005831b0(CSpike *this_ptr,float d
   if ((this_ptr->spike_type == SPIKE_TYPE_PERIODIC) || (this_ptr->spike_type == SPIKE_TYPE_RANDOM))
   {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->start_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->start_event);
     if (iVar3 != 0) {
       this_ptr->are_we_active = 1;
     }
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->stop_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->stop_event);
     if (iVar3 == 0) goto LAB_00583399;
     this_ptr->are_we_active = 0;
 LAB_00583219:
@@ -55,12 +53,12 @@ LAB_00583219:
   }
   else {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->extend_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->extend_event);
     if (iVar3 != 0) {
       this_ptr->are_we_active = 1;
     }
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->retract_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->retract_event);
     if (iVar3 == 0) {
 LAB_00583399:
       if (this_ptr->are_we_active == 0) goto LAB_00583219;
@@ -146,7 +144,7 @@ LAB_0058327b:
   fStack_4c = fStack_4c - (this_ptr->base).location.position.y;
   (this_ptr->base).location.position.z = fStack_54;
   fStack_48 = fStack_48 - (this_ptr->base).location.position.z;
-  if (fStack_48 * fStack_48 + fStack_4c * fStack_4c + fVar4 * fVar4 <= (float)_DAT_005f6210) {
+  if (fStack_48 * fStack_48 + fStack_4c * fStack_4c + fVar4 * fVar4 <= (float)1.0000000000000001e-05) {
     return;
   }
   core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00583700(this_ptr);

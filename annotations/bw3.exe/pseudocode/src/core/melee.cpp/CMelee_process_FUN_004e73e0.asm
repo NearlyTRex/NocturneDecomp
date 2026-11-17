@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c7162
+;   double g_DOUBLE_005c7162 = 1.15000000000000
 ;   CGore* g_CGorePtr = 01d22e44
 ;
 ; Called Functions:
@@ -51,7 +51,7 @@ section .text
     PUSH ESI                            ; 004e741e
     FLD float ptr [EBX + 0x5b4]         ; 004e741f
     FLD ST0                             ; 004e7425
-    FMUL double ptr [0x005c7162]        ; 004e7427 | DAT_005c7162
+    FMUL double ptr [0x005c7162]        ; 004e7427 | g_DOUBLE_005c7162
     LEA ESI,[ESP + 0x8]                 ; 004e742d
     LEA EDI,[ESP + 0x20]                ; 004e7431
     MOV ECX,dword ptr [EBX + 0x5ac]     ; 004e7435

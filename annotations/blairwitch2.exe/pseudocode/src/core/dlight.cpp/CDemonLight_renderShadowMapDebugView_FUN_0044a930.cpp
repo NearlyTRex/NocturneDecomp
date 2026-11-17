@@ -18,7 +18,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_0044a930(C
   uint local_14;
   
   if ((-1 < screen_x) && (-1 < screen_y)) {
-    if ((screen_x + display_size <= DAT_006141b8) && (screen_y + display_size <= DAT_006141bc)) {
+    if ((screen_x + display_size <= g_INT_006141b8) && (screen_y + display_size <= g_INT_006141bc))
+    {
       iVar1 = (this_ptr->shadow_map_width << 8) / display_size;
       local_14 = 0x20000;
       uVar4 = 0;
@@ -58,9 +59,8 @@ LAB_0044aa57:
                                (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) * this_ptr->shadow_map_width]
           ;
           if ((uVar2 < 0xffff) && (uVar2 != 0)) {
-            *(int *)((screen_x + iVar3 / iVar1) * 4 +
-                    *(int *)(&DAT_01c2a38c + (screen_y + iVar5 / iVar1) * 4)) =
-                 ((int)((uVar2 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
+            *(int *)(g_ARRAY_PTR_01c2a38c[screen_y + iVar5 / iVar1] + (screen_x + iVar3 / iVar1) * 4
+                    ) = ((int)((uVar2 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
           }
         }
       }

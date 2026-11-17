@@ -7,15 +7,15 @@
 ; CExorcism *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_wp_nomana_wav_005bdd64+2
+;   TerminatedCString s_wp_nomana_wav_005bdd66
 ;   TerminatedCString s_wp_exorcism_wav_5_005bdd74
-;   undefined4 DAT_005bdd8e
+;   double g_DOUBLE_005bdd8e = 1.5
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_01c6e35c
+;   uint g_UINT_01c6e35c
 ;   undefined4 g_CFlameCanClassInfo.name_hash
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -96,7 +96,7 @@ section .text
     CMP dword ptr [EAX + 0x59c],0x0     ; 0048b0ab
     JNZ 0x0048b484                      ; 0048b0b2
         ;   XREF to: 0048b484 (CONDITIONAL_JUMP)  ; LAB_0048b484
-    MOV EBX,dword ptr [0x01c6e35c]      ; 0048b0b8 | DAT_01c6e35c
+    MOV EBX,dword ptr [0x01c6e35c]      ; 0048b0b8 | g_UINT_01c6e35c
         ;   Label: LAB_0048b0b8
     PUSH EBX                            ; 0048b0be
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 0048b0bf
@@ -163,7 +163,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0048b178
     MOVSD ES:EDI,ESI                    ; 0048b179
     FLD float ptr [EAX + 0x2e8]         ; 0048b17a
-    FDIVR double ptr [0x005bdd8e]       ; 0048b180 | DAT_005bdd8e
+    FDIVR double ptr [0x005bdd8e]       ; 0048b180 | g_DOUBLE_005bdd8e
     FLD float ptr [ESP + 0x74]          ; 0048b186
     FXCH                                ; 0048b18a
     FSTP float ptr [ESP + 0xa4]         ; 0048b18c
@@ -401,9 +401,9 @@ section .text
     LEA EAX,[ESP + 0x2c]                ; 0048b455
         ;   Label: LAB_0048b455
     PUSH EAX                            ; 0048b459
-    PUSH 0x5bdd66                       ; 0048b45a | s_wp_nomana_wav_005bdd64+2
+    PUSH 0x5bdd66                       ; 0048b45a | = "wp_nomana.wav"
     PUSH EBX                            ; 0048b45f
-    MOV EDI,dword ptr [0x006045f8]      ; 0048b460 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0048b460 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0048b466
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0048b467
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -431,12 +431,12 @@ section .text
     PUSH 0x5bdd74                       ; 0048b495 | = "wp_exorcism.wav @ .5"
     MOV ESI,dword ptr [EBP + 0x14]      ; 0048b49a
     PUSH ESI                            ; 0048b49d
-    MOV EDI,dword ptr [0x006045f8]      ; 0048b49e | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0048b49e | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0048b4a4
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0048b4a5
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0048b4aa
-    MOV [0x01c6e35c],EAX                ; 0048b4ad | DAT_01c6e35c
+    MOV [0x01c6e35c],EAX                ; 0048b4ad | g_UINT_01c6e35c
     JMP 0x0048b0cf                      ; 0048b4b2
         ;   XREF to: 0048b0cf (UNCONDITIONAL_JUMP)  ; LAB_0048b0cf
     PUSH ESI                            ; 0048b4b7

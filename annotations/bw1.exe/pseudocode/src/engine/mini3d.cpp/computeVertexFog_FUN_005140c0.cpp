@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_computeVertexFog_FUN_005140c0(float *vertex)
 
 {
   float fStack_4;
   
-  if (_DAT_01d224c8 != 0) {
-    fStack_4 = (vertex[2] - _DAT_01d22570) * _DAT_01d2adb8;
+  if (g_INT_01d224c8 != 0) {
+    fStack_4 = (vertex[2] - g_FLOAT_01d22570) * g_FLOAT_01d2adb8;
     if (fStack_4 < 0.0) {
       fStack_4 = 0.0;
     }

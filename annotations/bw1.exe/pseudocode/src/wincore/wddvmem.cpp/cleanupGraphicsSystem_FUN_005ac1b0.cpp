@@ -6,37 +6,37 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ac1b0(void)
 
 {
-  if (DAT_00629010 != (void *)0x0) {
-    debugFree(DAT_00629010);
-    DAT_00629010 = (void *)0x0;
+  if (g_PTR_00629010 != (byte *)0x0) {
+    debugFree(g_PTR_00629010);
+    g_PTR_00629010 = (byte *)0x0;
   }
-  if (_DAT_02c99310 != (void *)0x0) {
-    debugFree(_DAT_02c99310);
-    DAT_0071362c = 0;
+  if (g_PTR_02c99310 != (byte *)0x0) {
+    debugFree(g_PTR_02c99310);
+    g_PTR_0071362c = (byte *)0x0;
   }
   engine_special_cpp_kill_FUN_00581f20();
-  if (_DAT_02c9930c != (int *)0x0) {
-    (**(code **)(*_DAT_02c9930c + 8))(_DAT_02c9930c);
-    _DAT_02c9930c = (int *)0x0;
+  if (g_IUnknown_PTR_02c9930c != (IUnknown *)0x0) {
+    (*g_IUnknown_PTR_02c9930c->vtable->Release)(g_IUnknown_PTR_02c9930c);
+    g_IUnknown_PTR_02c9930c = (IUnknown *)0x0;
   }
-  if (_DAT_02c99308 != (int *)0x0) {
-    (**(code **)(*_DAT_02c99308 + 8))(_DAT_02c99308);
-    _DAT_02c99308 = (int *)0x0;
+  if (g_IDirectDrawSurface_PTR_02c99308 != (IDirectDrawSurface *)0x0) {
+    (*g_IDirectDrawSurface_PTR_02c99308->vtable->Release)
+              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99308);
+    g_IDirectDrawSurface_PTR_02c99308 = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02c99304 != (int *)0x0) {
-    (**(code **)(*_DAT_02c99304 + 8))(_DAT_02c99304);
-    _DAT_02c99304 = (int *)0x0;
+  if (g_IDirectDrawSurface_PTR_02c99304 != (IDirectDrawSurface *)0x0) {
+    (*g_IDirectDrawSurface_PTR_02c99304->vtable->Release)
+              ((IUnknown *)g_IDirectDrawSurface_PTR_02c99304);
+    g_IDirectDrawSurface_PTR_02c99304 = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02c99300 == (int *)0x0) {
+  if (g_IDirectDraw_PTR_02c99300 == (IDirectDraw *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02c99300 + 0x4c))(_DAT_02c99300);
-  (**(code **)(*_DAT_02c99300 + 8))(_DAT_02c99300);
-  _DAT_02c99300 = (int *)0x0;
+  (*g_IDirectDraw_PTR_02c99300->vtable->RestoreDisplayMode)(g_IDirectDraw_PTR_02c99300);
+  (*g_IDirectDraw_PTR_02c99300->vtable->Release)((IUnknown *)g_IDirectDraw_PTR_02c99300);
+  g_IDirectDraw_PTR_02c99300 = (IDirectDraw *)0x0;
   return;
 }

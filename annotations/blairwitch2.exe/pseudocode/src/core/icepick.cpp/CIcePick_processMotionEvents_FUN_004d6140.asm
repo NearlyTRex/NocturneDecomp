@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004d6128 = 004d6174
-;   undefined4 DAT_01cee0e8
-;   undefined4 DAT_01cee0ec
+;   undefined4 g_INT_ARRAY_01cee0b4[13]
+;   undefined4 g_INT_ARRAY_01cee0b4[14]
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
@@ -72,7 +72,7 @@ section .text
     POP ESI                             ; 004d61a0
     POP EBX                             ; 004d61a1
     RET                                 ; 004d61a2
-    MOV EDI,dword ptr [0x01cee0e8]      ; 004d61a3 | DAT_01cee0e8
+    MOV EDI,dword ptr [0x01cee0e8]      ; 004d61a3 | g_INT_ARRAY_01cee0b4[13]
         ;   Label: caseD_65
     PUSH EDI                            ; 004d61a9
     PUSH EBX                            ; 004d61aa
@@ -81,7 +81,7 @@ section .text
     ADD ESP,0x8                         ; 004d61b0
     JMP 0x004d6190                      ; 004d61b3
         ;   XREF to: 004d6190 (UNCONDITIONAL_JUMP)  ; LAB_004d6190
-    MOV ECX,dword ptr [0x01cee0ec]      ; 004d61b5 | DAT_01cee0ec
+    MOV ECX,dword ptr [0x01cee0ec]      ; 004d61b5 | g_INT_ARRAY_01cee0b4[14]
         ;   Label: caseD_66
     PUSH ECX                            ; 004d61bb
     PUSH EBX                            ; 004d61bc

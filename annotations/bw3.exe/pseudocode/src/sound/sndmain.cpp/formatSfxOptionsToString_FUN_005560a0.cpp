@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005560a0(char *outpu
     *output_buffer = '\0';
   }
   else {
-    iVar1 = _sprintf(output_buffer,(char *)0x5d3768);
+    iVar1 = _sprintf(output_buffer,"%s");
     output_buffer = output_buffer + iVar1;
   }
   if ((format_flags & 1) != 0) {
@@ -24,7 +24,7 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005560a0(char *outpu
   }
   if ((format_flags & 2) != 0) {
     if (options->position_format == 0) {
-      iVar1 = _sprintf(output_buffer,(char *)0x5d3779);
+      iVar1 = _sprintf(output_buffer," pos=%lg,%lg,%lg");
       output_buffer = output_buffer + iVar1;
     }
     if (options->position_format == 1) {
@@ -38,7 +38,7 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005560a0(char *outpu
   }
   if ((format_flags & 4) != 0) {
     if (options->velocity_format == 0) {
-      iVar1 = _sprintf(output_buffer,(char *)0x5d37ab);
+      iVar1 = _sprintf(output_buffer," vel=%lg,%lg,%lg");
       output_buffer = output_buffer + iVar1;
     }
     if (options->velocity_format == 1) {
@@ -51,11 +51,11 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005560a0(char *outpu
     }
   }
   if ((format_flags & 8) != 0) {
-    iVar1 = _sprintf(output_buffer,(char *)0x5d37dd);
+    iVar1 = _sprintf(output_buffer," vol=%g");
     output_buffer = output_buffer + iVar1;
   }
   if ((format_flags & 0x10) != 0) {
-    iVar1 = _sprintf(output_buffer,(char *)0x5d37e5);
+    iVar1 = _sprintf(output_buffer," freq=%g");
     output_buffer = output_buffer + iVar1;
   }
   if ((format_flags & 0x20) == 0) {

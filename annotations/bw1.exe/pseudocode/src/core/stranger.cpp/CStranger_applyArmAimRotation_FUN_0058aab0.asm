@@ -47,12 +47,12 @@
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_0058a360 at 0058a83b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6b89
-;   undefined4 DAT_006081e0
-;   undefined4 DAT_02c8360c
-;   undefined4 DAT_02c83610
-;   undefined4 DAT_02c83614
-;   undefined4 DAT_02c83618
+;   double g_DOUBLE_005f6b89 = 0.000100000000000000
+;   CQuaternion4f g_CQuaternion4f_006081e0
+;   undefined4 g_INT_ARRAY_02c83600[3]
+;   undefined4 g_INT_ARRAY_02c83600[4]
+;   undefined4 g_INT_ARRAY_02c83600[5]
+;   undefined4 g_INT_ARRAY_02c83600[6]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110
@@ -83,10 +83,10 @@ section .text
     JZ 0x0058adad                       ; 0058aac6
         ;   XREF to: 0058adad (CONDITIONAL_JUMP)  ; LAB_0058adad
     PUSH 0xbfc90fdb                     ; 0058aacc
-    MOV EAX,[0x02c83610]                ; 0058aad1 | DAT_02c83610
+    MOV EAX,[0x02c83610]                ; 0058aad1 | g_INT_ARRAY_02c83600[4]
     LEA ESI,[ESP + 0x8]                 ; 0058aad6
     MOV dword ptr [ESP + 0x1c0],EAX     ; 0058aada
-    MOV EAX,[0x02c83618]                ; 0058aae1 | DAT_02c83618
+    MOV EAX,[0x02c83618]                ; 0058aae1 | g_INT_ARRAY_02c83600[6]
     LEA EDI,[ESP + 0x18]                ; 0058aae6
     MOV dword ptr [ESP + 0x1bc],EAX     ; 0058aaea
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005b7b30 ; 0058aaf1
@@ -212,7 +212,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0058ac6b
     MOVSD ES:EDI,ESI                    ; 0058ac6c
     MOVSD ES:EDI,ESI                    ; 0058ac6d
-    PUSH 0x6081e0                       ; 0058ac6e | DAT_006081e0
+    PUSH 0x6081e0                       ; 0058ac6e | g_CQuaternion4f_006081e0
     LEA ESI,[ESP + 0x150]               ; 0058ac73
     LEA EDI,[ESP + 0x90]                ; 0058ac7a
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 0058ac81
@@ -299,7 +299,7 @@ section .text
         ;   XREF to: 00568d60 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, float blend_weight, int bone_index, ...)
     FLD float ptr [EBX + 0x20060]       ; 0058ad92
     ADD ESP,0x14                        ; 0058ad98
-    FCOMP double ptr [0x005f6b89]       ; 0058ad9b | DAT_005f6b89
+    FCOMP double ptr [0x005f6b89]       ; 0058ad9b | g_DOUBLE_005f6b89
     FNSTSW AX                           ; 0058ada1
     SAHF                                ; 0058ada3
     JA 0x0058ae0c                       ; 0058ada4
@@ -313,10 +313,10 @@ section .text
     RET                                 ; 0058adac
     PUSH 0x3fc90fdb                     ; 0058adad
         ;   Label: LAB_0058adad
-    MOV EAX,[0x02c8360c]                ; 0058adb2 | DAT_02c8360c
+    MOV EAX,[0x02c8360c]                ; 0058adb2 | g_INT_ARRAY_02c83600[3]
     LEA ESI,[ESP + 0xc8]                ; 0058adb7
     MOV dword ptr [ESP + 0x1c0],EAX     ; 0058adbe
-    MOV EAX,[0x02c83614]                ; 0058adc5 | DAT_02c83614
+    MOV EAX,[0x02c83614]                ; 0058adc5 | g_INT_ARRAY_02c83600[5]
     LEA EDI,[ESP + 0x18]                ; 0058adca
     MOV dword ptr [ESP + 0x1bc],EAX     ; 0058adce
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005b7b30 ; 0058add5

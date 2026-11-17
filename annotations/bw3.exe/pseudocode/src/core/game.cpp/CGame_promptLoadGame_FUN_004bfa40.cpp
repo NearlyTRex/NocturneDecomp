@@ -22,12 +22,13 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004bfa40(CGame *this_ptr)
   
   this_ptr->need_chapter_reload = 0;
   this_ptr->chapter_reload_filename[0] = '\0';
-  splitpath(&DAT_01d225c8,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
-  iVar2 = _stricmp(local_10c,&DAT_005c3a88);
+  splitpath
+            (g_CHAR_ARRAY_01d225c8,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
+  iVar2 = _stricmp(local_10c,"sav");
   if ((iVar2 == 0) ||
-     (iVar2 = _stricmp(local_10c,&DAT_005c3a8c), iVar2 == 0)) {
+     (iVar2 = _stricmp(local_10c,".sav"), iVar2 == 0)) {
     pcVar4 = local_210;
-    pcVar3 = &DAT_01d225c8;
+    pcVar3 = g_CHAR_ARRAY_01d225c8;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;
@@ -45,7 +46,7 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004bfa40(CGame *this_ptr)
   pcVar3 = local_210;
   flags = 1;
   file_pattern = "*.sav";
-  search_directory = &DAT_005c3a97;
+  search_directory = "save";
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Select file to load");
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70
                     (g_CEditorToolsPtr,pcVar4,search_directory,file_pattern,output_filename,flags);

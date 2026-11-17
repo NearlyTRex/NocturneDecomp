@@ -23,8 +23,8 @@
 ;   core_dcube.cpp_triangleCylinderCollision_FUN_00456cd0 at 00456e8f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7aaf
-;   undefined4 DAT_005d7ab7
+;   double g_DOUBLE_005d7aaf = 2
+;   double g_DOUBLE_005d7ab7 = 4
 ;
 ; *****************************************************************************
 
@@ -65,7 +65,7 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 00456bb2
     FMUL ST0                            ; 00456bb5
     FLD double ptr [ESP + 0x40]         ; 00456bb7
-    FMUL double ptr [0x005d7ab7]        ; 00456bbb | DAT_005d7ab7
+    FMUL double ptr [0x005d7ab7]        ; 00456bbb | g_DOUBLE_005d7ab7
     FLD float ptr [EDX]                 ; 00456bc1
     FMUL ST0                            ; 00456bc3
     FLD float ptr [EDX]                 ; 00456bc5
@@ -76,7 +76,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 00456bd1
     FMUL ST0                            ; 00456bd4
     FXCH ST3                            ; 00456bd6
-    FMUL double ptr [0x005d7aaf]        ; 00456bd8 | DAT_005d7aaf
+    FMUL double ptr [0x005d7aaf]        ; 00456bd8 | g_DOUBLE_005d7aaf
     FXCH ST3                            ; 00456bde
     FSUBP ST2,ST0                       ; 00456be0
     FMULP                               ; 00456be2
@@ -98,7 +98,7 @@ section .text
     FSQRT                               ; 00456c0f
     FSUBP                               ; 00456c11
     FLD double ptr [ESP + 0x40]         ; 00456c13
-    FMUL double ptr [0x005d7aaf]        ; 00456c17 | DAT_005d7aaf
+    FMUL double ptr [0x005d7aaf]        ; 00456c17 | g_DOUBLE_005d7aaf
     FDIVP                               ; 00456c1d
     FLDZ                                ; 00456c1f
     XOR ECX,ECX                         ; 00456c21
@@ -135,7 +135,7 @@ section .text
     FSQRT                               ; 00456c6a
     FSUB double ptr [ESP + 0x38]        ; 00456c6c
     FLD double ptr [ESP + 0x40]         ; 00456c70
-    FMUL double ptr [0x005d7aaf]        ; 00456c74 | DAT_005d7aaf
+    FMUL double ptr [0x005d7aaf]        ; 00456c74 | g_DOUBLE_005d7aaf
     FDIVP                               ; 00456c7a
     FLDZ                                ; 00456c7c
     FXCH                                ; 00456c7e

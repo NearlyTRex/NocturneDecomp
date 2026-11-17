@@ -19,12 +19,12 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004944c0(CStake *this_ptr)
   
   bVar5 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,&(this_ptr->physics_box).position);
+            (g_CDemonRenderer_PTR_0060b280,&(this_ptr->physics_box).position);
   orientation = &(this_ptr->physics_box).orientation;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,orientation,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_0060b280,orientation,(CVector3f *)0x0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-                     ((CKeyFramedModelInstance *)0x1c3def8);
+                     (&g_CKeyFramedModelInstance_01c3def8);
   pCVar3 = &pCVar1->bounds;
   pCVar4 = &local_28;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -38,7 +38,7 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004944c0(CStake *this_ptr)
               (g_CDemonSetPtr,&(this_ptr->physics_box).position,(UOrientationVector *)orientation,
                &local_28.min,&local_28.max,&(this_ptr->physics_box).rotation_matrix);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-              ((CKeyFramedModelInstance *)0x1c3def8,0.0,-1);
+              (&g_CKeyFramedModelInstance_01c3def8,0.0,-1);
   }
   engine_drender_cpp_pop_FUN_0046b4a0();
   return;

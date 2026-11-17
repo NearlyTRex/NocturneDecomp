@@ -9,14 +9,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_noammo_wav_005f19a4
 ;   TerminatedCString s_shotgun_wav_005f19b7
-;   undefined4 DAT_005f19c3
-;   undefined4 DAT_005f19c7
-;   undefined4 DAT_005f19cf
-;   undefined4 DAT_005f19d7
-;   undefined4 DAT_005f19df
-;   undefined4 DAT_0061c010
+;   float g_FLOAT_005f19c3 = 3.141593
+;   double g_DOUBLE_005f19c7 = 0.00555555555555555
+;   float g_FLOAT_005f19cf = -0.125
+;   double g_DOUBLE_005f19d7 = 1.5
+;   double g_DOUBLE_005f19df = 10
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CFlameCanClassInfo.name_hash
@@ -85,8 +85,8 @@ section .text
     JZ 0x00561b0b                       ; 005617ce
         ;   XREF to: 00561b0b (CONDITIONAL_JUMP)  ; LAB_00561b0b
     FLD float ptr [EBX + 0x578]         ; 005617d4
-    FMUL float ptr [0x005f19c3]         ; 005617da | DAT_005f19c3
-    FMUL double ptr [0x005f19c7]        ; 005617e0 | DAT_005f19c7
+    FMUL float ptr [0x005f19c3]         ; 005617da | g_FLOAT_005f19c3
+    FMUL double ptr [0x005f19c7]        ; 005617e0 | g_DOUBLE_005f19c7
     FPTAN                               ; 005617e6
     FSTP ST0                            ; 005617e8
     PUSH 0xf                            ; 005617ea
@@ -175,7 +175,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00561932
     MOVSD ES:EDI,ESI                    ; 00561933
     FLD float ptr [EBX + 0x2e8]         ; 00561934
-    FDIVR double ptr [0x005f19d7]       ; 0056193a | DAT_005f19d7
+    FDIVR double ptr [0x005f19d7]       ; 0056193a | g_DOUBLE_005f19d7
     FLD float ptr [ESP + 0x108]         ; 00561940
     FXCH                                ; 00561947
     FSTP float ptr [ESP + 0x154]        ; 00561949
@@ -274,7 +274,7 @@ section .text
         ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00559220(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00561aa3
     LEA EAX,[EBX + 0x3c]                ; 00561aa6
-    MOV EDX,dword ptr [0x0061c010]      ; 00561aa9 | DAT_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 00561aa9 | g_CFireEffect_PTR_0061c010
     PUSH EAX                            ; 00561aaf
     MOVSD ES:EDI,ESI                    ; 00561ab0
     MOVSD ES:EDI,ESI                    ; 00561ab1
@@ -282,7 +282,7 @@ section .text
     LEA EAX,[ESP + 0xe8]                ; 00561ab3
     FLD float ptr [ESP + 0xec]          ; 00561aba
     PUSH EAX                            ; 00561ac1
-    FADD float ptr [0x005f19cf]         ; 00561ac2 | DAT_005f19cf
+    FADD float ptr [0x005f19cf]         ; 00561ac2 | g_FLOAT_005f19cf
     PUSH EDX                            ; 00561ac8
     FSTP float ptr [ESP + 0xf4]         ; 00561ac9
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70 ; 00561ad0
@@ -292,7 +292,7 @@ section .text
     PUSH EAX                            ; 00561adf
     PUSH 0x5f19b7                       ; 00561ae0 | = "shotgun.wav"
     PUSH EBX                            ; 00561ae5
-    MOV ECX,dword ptr [0x006236b8]      ; 00561ae6 | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 00561ae6 | g_CSound_PTR_006236b8
     PUSH ECX                            ; 00561aec
     CALL core_sound.cpp_CSound_playActorSound_FUN_0057d8a0 ; 00561aed
         ;   XREF to: 0057d8a0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0057d8a0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -310,7 +310,7 @@ section .text
     PUSH EAX                            ; 00561b12
     PUSH 0x5f19a4                       ; 00561b13 | = "shotgun-noammo.wav"
     PUSH EBX                            ; 00561b18
-    MOV EDX,dword ptr [0x006236b8]      ; 00561b19 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 00561b19 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 00561b1f
     CALL core_sound.cpp_CSound_playActorSound_FUN_0057d8a0 ; 00561b20
         ;   XREF to: 0057d8a0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0057d8a0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -497,7 +497,7 @@ section .text
     FMUL ST0                            ; 00561d71
     FADDP                               ; 00561d73
     FSQRT                               ; 00561d75
-    FDIVR double ptr [0x005f19df]       ; 00561d77 | DAT_005f19df
+    FDIVR double ptr [0x005f19df]       ; 00561d77 | g_DOUBLE_005f19df
     FLD float ptr [ESP + 0xd8]          ; 00561d7d
     FXCH                                ; 00561d84
     FSTP float ptr [ESP + 0x174]        ; 00561d86
@@ -642,7 +642,7 @@ section .text
     PUSH ESI                            ; 00561f5f | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 00561f60
     PUSH EAX                            ; 00561f65 | g_CDemonSetInstance.collision_impact_position.x
-    MOV ESI,dword ptr [0x0061c010]      ; 00561f66 | DAT_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 00561f66 | g_CFireEffect_PTR_0061c010
     PUSH ESI                            ; 00561f6c
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 ; 00561f6d
         ;   XREF to: 004b56a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)

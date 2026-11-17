@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(CGhostChild *this_ptr,float delta_time)
 
@@ -34,14 +33,14 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
   
   bVar8 = 0;
   pCVar5 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
-  fVar4 = _DAT_006006ac;
+  fVar4 = 3.0f;
   if (pCVar5 == (CDemonActor *)0x0) {
     return;
   }
   pCVar1 = (this_ptr->base).base.victim;
   fVar2 = (pCVar1->base).location.position.x - (this_ptr->base).base.base.base.location.position.x;
   fVar3 = (pCVar1->base).location.position.z - (this_ptr->base).base.base.base.location.position.z;
-  if (SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= _DAT_006006ac) {
+  if (SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= 3.0f) {
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
               ((CCharacter *)this_ptr,&(pCVar1->base).location.position);
     this_ptr_00 = &(this_ptr->base).base.base.model;
@@ -50,7 +49,7 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
     if ((((pSVar6->state_index != 5) ||
          (fStack_10 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
                                 (&this_ptr_00->base), fStack_c = fStack_10,
-         fStack_10 < _DAT_006006b0)) || (_DAT_006006b4 < fStack_10)) ||
+         fStack_10 < 0.4f)) || (0.5f < fStack_10)) ||
        ((this_ptr->base).flinch_active != 0)) {
       if (this_ptr->hit_count < 3) {
         return;
@@ -59,7 +58,7 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
     else {
       this_ptr->hit_count = this_ptr->hit_count + 1;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,
+                (&g_CVector3f_0265370c,
                  (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
                  this_ptr->hand_bone,&CStack_48);
       input_local_point = &CStack_30;

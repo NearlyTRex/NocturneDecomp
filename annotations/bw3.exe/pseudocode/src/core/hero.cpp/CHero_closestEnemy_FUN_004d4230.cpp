@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004d4230(CHero *this_ptr,float *out_distance)
 
 {
@@ -50,7 +48,7 @@ CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004d4230(CHero *this_ptr,f
           afStack_44[(uint)bVar3 * -2 + 3] = afStack_44[(uint)bVar3 * -2];
           afStack_44[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
                afStack_44[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-          afStack_44[3] = afStack_44[3] * (float)_DAT_005c4e85;
+          afStack_44[3] = afStack_44[3] * (float)2;
           fStack_24 = fStack_34 * fStack_34 +
                       afStack_44[2] * afStack_44[2] + afStack_44[3] * afStack_44[3];
           if (fStack_24 < *out_distance) {

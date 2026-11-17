@@ -17,7 +17,7 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 00570ad1
 ;
 ; Referenced Globals:
-;   undefined4 s_CHero_toggleLeverNow_005d9ca3+1
+;   TerminatedCString s_CHero_toggleLeverNow_005d9ca4
 ;   TerminatedCString s_current_motion_is_s_005d9cbb
 ;   TerminatedCString s_toggling_lever_s_005d9cd3
 ;   TerminatedCString s_but_no_lever_set_005d9ce8
@@ -39,7 +39,7 @@ section .text
     PUSH EDI                            ; 004cf442
     PUSH EBP                            ; 004cf443
     MOV EBX,dword ptr [ESP + 0x14]      ; 004cf444
-    PUSH 0x5d9ca4                       ; 004cf448 | s_CHero_toggleLeverNow_005d9ca3+1
+    PUSH 0x5d9ca4                       ; 004cf448 | = "CHero::toggleLeverNow\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 004cf44d | g_CConsolePtr
     PUSH EDX                            ; 004cf453 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 004cf454

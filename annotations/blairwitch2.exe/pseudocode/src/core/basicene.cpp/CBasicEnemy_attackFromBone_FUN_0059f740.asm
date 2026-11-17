@@ -29,7 +29,7 @@
 ;   core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600 at 005a4631
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0265370c
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -72,7 +72,7 @@ section .text
     LEA EAX,[EBX + 0x1134]              ; 0059f78f
     ADD EAX,EDX                         ; 0059f795
     PUSH EAX                            ; 0059f797
-    PUSH 0x265370c                      ; 0059f798 | DAT_0265370c
+    PUSH 0x265370c                      ; 0059f798 | g_CVector3f_0265370c
     LEA ESI,[ESP + 0x64]                ; 0059f79d
     LEA EDI,[ESP + 0x70]                ; 0059f7a1
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0059f7a5

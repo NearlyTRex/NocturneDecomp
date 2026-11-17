@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,float delta_time)
 
@@ -93,7 +92,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,f
   core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
             ((CCharacter *)this_ptr,delta_time * fVar11);
   if (iVar5 == 2) {
-    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005da708;
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)2;
   }
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
@@ -118,8 +117,8 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,f
                afStack_88[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
           fStack_2c = afStack_100[1] * afStack_100[1] +
                       fStack_104 * fStack_104 + afStack_100[0] * afStack_100[0];
-          fStack_28 = (float)(((int)fStack_2c >> 1) + _DAT_01cc804c);
-          if (fStack_28 < _DAT_005fee94) {
+          fStack_28 = (float)(((int)fStack_2c >> 1) + g_INT_01cc804c);
+          if (fStack_28 < 8.0f) {
             iVar5 = 1;
           }
           else {
@@ -127,7 +126,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,f
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_1c,iVar5,1);
           iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
-                            (0x02C82A60,this_ptr->sfx_handle);
+                            (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
           if (iVar5 == 0) {
             uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"dog5.wav");
@@ -164,7 +163,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,f
         afStack_100[(uint)bVar9 * -2 + 3] = afStack_d0[(uint)bVar9 * -2];
         afStack_100[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
              afStack_d0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-        if ((_DAT_005fee94 <
+        if ((8.0f <
              SQRT(fStack_f0 * fStack_f0 +
                   afStack_100[2] * afStack_100[2] + afStack_100[3] * afStack_100[3])) &&
            (iStack_18 == 1)) {
@@ -196,7 +195,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,f
         }
         else if ((0 < iVar5) && ((this_ptr->base).attack_cooldown <= 0.0)) {
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
-          if ((float)_DAT_005da710 < fStack_14) {
+          if ((float)0.5 < fStack_14) {
             iVar5 = 3;
           }
           else {
@@ -217,7 +216,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,f
       fVar11 = 0.7;
       fStack_14 = SStack_158.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                ((CVector3f *)&DAT_02c8af28,
+                (&g_CVector3f_02c8af28,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[1],&CStack_110);
       pCVar10 = &CStack_44;
@@ -236,7 +235,8 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004768a0(CZombieDog *this_ptr,f
       *(uint *)((int)&CStack_b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
            *(uint *)((int)&CStack_68 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(&pCVar7->base,pCVar10,fVar11,damage_info);
-      iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
+      iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                        (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
       if (iVar5 == 0) {
         uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"dog5.wav");

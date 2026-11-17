@@ -18,16 +18,16 @@
 ;   void* PTR_SetCursor_005b34f8 = 001b3bd8
 ;   void* PTR_GetCurrentProcess_005b3588 = 001b3e46
 ;   void* PTR_SetThreadPriority_005b3650 = 001b4204
-;   undefined4 DAT_005fba2c
-;   undefined4 DAT_00607288
-;   undefined4 DAT_00607290
-;   undefined4 DAT_01c5fadc
-;   undefined4 DAT_01c5fae0
-;   undefined4 DAT_01c5fae4
-;   undefined4 DAT_01c6cef0
-;   undefined4 DAT_01c6d0f0
-;   undefined4 DAT_01c6d0f1
-;   undefined4 DAT_01c6d0fc
+;   int g_INT_005fba2c = 0x7f
+;   int g_INT_00607288 = -0x1
+;   int g_INT_00607290 = -0x1
+;   int g_INT_01c5fadc
+;   int g_INT_01c5fae0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
+;   char[4952] g_CHAR_ARRAY_01c6cef0
+;   undefined4 g_CHAR_ARRAY_01c6cef0+0x200
+;   undefined4 g_CHAR_ARRAY_01c6cef0+0x201
+;   undefined4 g_CHAR_ARRAY_01c6cef0+0x20c
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -54,10 +54,10 @@ section .text
     PUSH EBP                            ; 00580a53
     MOV EBP,dword ptr [ESP + 0x14]      ; 00580a54
     MOV EDI,dword ptr [ESP + 0x18]      ; 00580a58
-    CMP EBP,dword ptr [0x02d21b78]      ; 00580a5c | DAT_02d21b78
+    CMP EBP,dword ptr [0x02d21b78]      ; 00580a5c | g_HWND_02d21b78
     JNZ 0x00580af2                      ; 00580a62
         ;   XREF to: 00580af2 (CONDITIONAL_JUMP)  ; LAB_00580af2
-    MOV ECX,dword ptr [0x02d224f8]      ; 00580a68 | DAT_02d224f8
+    MOV ECX,dword ptr [0x02d224f8]      ; 00580a68 | g_INT_02d224f8
     XOR ESI,ESI                         ; 00580a6e
     TEST ECX,ECX                        ; 00580a70
     JLE 0x00580a9e                      ; 00580a72
@@ -76,7 +76,7 @@ section .text
     TEST EAX,EAX                        ; 00580a8d
     JNZ 0x00580afe                      ; 00580a8f
         ;   XREF to: 00580afe (CONDITIONAL_JUMP)  ; LAB_00580afe
-    MOV EAX,[0x02d224f8]                ; 00580a91 | DAT_02d224f8
+    MOV EAX,[0x02d224f8]                ; 00580a91 | g_INT_02d224f8
     INC ESI                             ; 00580a96
     ADD EBX,0x4                         ; 00580a97
     CMP ESI,EAX                         ; 00580a9a
@@ -98,7 +98,7 @@ section .text
     PUSH 0x0                            ; 00580ac0
     MOV EBX,0x1                         ; 00580ac2
     CALL dword ptr CS:[0x5b34e8]        ; 00580ac7 | PTR_PostQuitMessage_005b34e8
-    MOV dword ptr [0x02d21b80],EBX      ; 00580ace | DAT_02d21b80
+    MOV dword ptr [0x02d21b80],EBX      ; 00580ace | g_INT_02d21b80
     MOV ESI,dword ptr [ESP + 0x20]      ; 00580ad4
         ;   Label: LAB_00580ad4
     PUSH ESI                            ; 00580ad8
@@ -142,17 +142,17 @@ section .text
         ;   XREF to: 00580afe (CONDITIONAL_JUMP)  ; LAB_00580afe
     JMP 0x00580ad4                      ; 00580b1d
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4
-    MOV EAX,[0x00607288]                ; 00580b1f | DAT_00607288
+    MOV EAX,[0x00607288]                ; 00580b1f | g_INT_00607288
         ;   Label: LAB_00580b1f
-    MOV [0x00607290],EAX                ; 00580b24 | DAT_00607290
+    MOV [0x00607290],EAX                ; 00580b24 | g_INT_00607290
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00580b29
-    MOV [0x00607288],EAX                ; 00580b2d | DAT_00607288
-    MOV EAX,[0x00607290]                ; 00580b32 | DAT_00607290
-    CMP EAX,dword ptr [0x00607288]      ; 00580b37 | DAT_00607288
+    MOV [0x00607288],EAX                ; 00580b2d | g_INT_00607288
+    MOV EAX,[0x00607290]                ; 00580b32 | g_INT_00607290
+    CMP EAX,dword ptr [0x00607288]      ; 00580b37 | g_INT_00607288
     JZ 0x00580ad4                       ; 00580b3d
         ;   XREF to: 00580ad4 (CONDITIONAL_JUMP)  ; LAB_00580ad4
     CALL dword ptr CS:[0x5b3588]        ; 00580b3f | PTR_GetCurrentProcess_005b3588
-    MOV ESI,dword ptr [0x00607288]      ; 00580b46 | DAT_00607288
+    MOV ESI,dword ptr [0x00607288]      ; 00580b46 | g_INT_00607288
     MOV EBX,EAX                         ; 00580b4c
     TEST ESI,ESI                        ; 00580b4e
     JZ 0x00580b82                       ; 00580b50
@@ -162,12 +162,12 @@ section .text
     CALL dword ptr CS:[0x5b3650]        ; 00580b55 | PTR_SetThreadPriority_005b3650
     CALL wincore_wddvmem.cpp_videoRestore_FUN_0057ab70 ; 00580b5c
         ;   XREF to: 0057ab70 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_0057ab70()
-    CMP dword ptr [0x00607290],-0x1     ; 00580b61 | DAT_00607290
+    CMP dword ptr [0x00607290],-0x1     ; 00580b61 | g_INT_00607290
     JZ 0x00580ad4                       ; 00580b68
         ;   XREF to: 00580ad4 (CONDITIONAL_JUMP)  ; LAB_00580ad4
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 00580b6e
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
-    MOV dword ptr [0x02d21b84],0x1      ; 00580b73 | DAT_02d21b84
+    MOV dword ptr [0x02d21b84],0x1      ; 00580b73 | g_INT_02d21b84
     JMP 0x00580ad4                      ; 00580b7d
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4
     CALL wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_0057ab20 ; 00580b82
@@ -176,7 +176,7 @@ section .text
     PUSH -0xf                           ; 00580b87
     PUSH EBX                            ; 00580b89
     CALL dword ptr CS:[0x5b3650]        ; 00580b8a | PTR_SetThreadPriority_005b3650
-    MOV dword ptr [0x02d21b84],ESI      ; 00580b91 | DAT_02d21b84
+    MOV dword ptr [0x02d21b84],ESI      ; 00580b91 | g_INT_02d21b84
     JMP 0x00580ad4                      ; 00580b97
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4
     PUSH 0x0                            ; 00580b9c
@@ -205,13 +205,13 @@ section .text
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4
     MOV EAX,dword ptr [ESP + 0x20]      ; 00580bd1
         ;   Label: LAB_00580bd1
-    MOV EDX,dword ptr [0x005fba2c]      ; 00580bd5 | DAT_005fba2c
+    MOV EDX,dword ptr [0x005fba2c]      ; 00580bd5 | g_INT_005fba2c
     SAR EAX,0x10                        ; 00580bdb
     XOR ECX,ECX                         ; 00580bde
     AND EAX,EDX                         ; 00580be0
     MOV DL,0x1                          ; 00580be2
-    MOV dword ptr [0x02d224f0],ECX      ; 00580be4 | DAT_02d224f0
-    MOV byte ptr [EAX + 0x1c6cef0],DL   ; 00580bea | DAT_01c6cef0
+    MOV dword ptr [0x02d224f0],ECX      ; 00580be4 | g_FLOAT_02d224f0
+    MOV byte ptr [EAX + 0x1c6cef0],DL   ; 00580bea | g_CHAR_ARRAY_01c6cef0
     CMP EAX,0x3e                        ; 00580bf0
     JNZ 0x00580ad4                      ; 00580bf3
         ;   XREF to: 00580ad4 (CONDITIONAL_JUMP)  ; LAB_00580ad4
@@ -238,23 +238,23 @@ section .text
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4
     MOV EAX,dword ptr [ESP + 0x20]      ; 00580c25
         ;   Label: LAB_00580c25
-    MOV EBX,dword ptr [0x005fba2c]      ; 00580c29 | DAT_005fba2c
+    MOV EBX,dword ptr [0x005fba2c]      ; 00580c29 | g_INT_005fba2c
     SAR EAX,0x10                        ; 00580c2f
     AND EAX,EBX                         ; 00580c32
     MOV dword ptr [EAX*0x4 + 0x2d21b90],0x1 ; 00580c34
     XOR EAX,EAX                         ; 00580c3f
-    MOV [0x02d224f0],EAX                ; 00580c41 | DAT_02d224f0
+    MOV [0x02d224f0],EAX                ; 00580c41 | g_FLOAT_02d224f0
     JMP 0x00580ad4                      ; 00580c46
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4
     XOR EBX,EBX                         ; 00580c4b
         ;   Label: LAB_00580c4b
     MOV BX,word ptr [ESP + 0x20]        ; 00580c4d
-    MOV dword ptr [0x01c5fadc],EBX      ; 00580c52 | DAT_01c5fadc
+    MOV dword ptr [0x01c5fadc],EBX      ; 00580c52 | g_INT_01c5fadc
     AND EAX,0xffff                      ; 00580c58
     XOR EBP,EBP                         ; 00580c5d
     XOR EDI,EDI                         ; 00580c5f
-    MOV [0x01c5fae0],EAX                ; 00580c61 | DAT_01c5fae0
-    MOV dword ptr [0x02d224f4],EBP      ; 00580c66 | DAT_02d224f4
+    MOV [0x01c5fae0],EAX                ; 00580c61 | g_INT_01c5fae0
+    MOV dword ptr [0x02d224f4],EBP      ; 00580c66 | g_FLOAT_02d224f4
     MOV EAX,EDI                         ; 00580c6c
     POP EBP                             ; 00580c6e
     POP EDI                             ; 00580c6f
@@ -264,16 +264,16 @@ section .text
     XOR EBX,EBX                         ; 00580c75
         ;   Label: LAB_00580c75
     MOV BX,word ptr [ESP + 0x20]        ; 00580c77
-    MOV dword ptr [0x01c5fadc],EBX      ; 00580c7c | DAT_01c5fadc
+    MOV dword ptr [0x01c5fadc],EBX      ; 00580c7c | g_INT_01c5fadc
     AND EAX,0xffff                      ; 00580c82
-    MOV [0x01c5fae0],EAX                ; 00580c87 | DAT_01c5fae0
-    MOV AL,[0x01c5fae4]                 ; 00580c8c | DAT_01c5fae4
+    MOV [0x01c5fae0],EAX                ; 00580c87 | g_INT_01c5fae0
+    MOV AL,[0x01c5fae4]                 ; 00580c8c | g_BIT_INTEGER32_01c5fae4
     OR AL,0x1                           ; 00580c91
     XOR EDI,EDI                         ; 00580c93
-    MOV [0x01c5fae4],AL                 ; 00580c95 | DAT_01c5fae4
+    MOV [0x01c5fae4],AL                 ; 00580c95 | g_BIT_INTEGER32_01c5fae4
     MOV AH,0x1                          ; 00580c9a
-    MOV dword ptr [0x02d224f4],EDI      ; 00580c9c | DAT_02d224f4
-    MOV byte ptr [0x01c6d0f0],AH        ; 00580ca2 | DAT_01c6d0f0
+    MOV dword ptr [0x02d224f4],EDI      ; 00580c9c | g_FLOAT_02d224f4
+    MOV byte ptr [0x01c6d0f0],AH        ; 00580ca2 | g_CHAR_ARRAY_01c6cef0+0x200
     MOV EAX,EDI                         ; 00580ca8
     POP EBP                             ; 00580caa
     POP EDI                             ; 00580cab
@@ -283,17 +283,17 @@ section .text
     XOR EBX,EBX                         ; 00580cb1
         ;   Label: LAB_00580cb1
     MOV BX,word ptr [ESP + 0x20]        ; 00580cb3
-    MOV dword ptr [0x01c5fadc],EBX      ; 00580cb8 | DAT_01c5fadc
+    MOV dword ptr [0x01c5fadc],EBX      ; 00580cb8 | g_INT_01c5fadc
     MOV EBX,0x1                         ; 00580cbe
-    MOV CH,byte ptr [0x01c5fae4]        ; 00580cc3 | DAT_01c5fae4
+    MOV CH,byte ptr [0x01c5fae4]        ; 00580cc3 | g_BIT_INTEGER32_01c5fae4
     AND EAX,0xffff                      ; 00580cc9
     XOR ESI,ESI                         ; 00580cce
     XOR EDI,EDI                         ; 00580cd0
-    MOV [0x01c5fae0],EAX                ; 00580cd2 | DAT_01c5fae0
+    MOV [0x01c5fae0],EAX                ; 00580cd2 | g_INT_01c5fae0
     AND CH,0xfe                         ; 00580cd7
-    MOV dword ptr [0x02d22390],EBX      ; 00580cda | DAT_02d22390
-    MOV dword ptr [0x02d224f4],ESI      ; 00580ce0 | DAT_02d224f4
-    MOV byte ptr [0x01c5fae4],CH        ; 00580ce6 | DAT_01c5fae4
+    MOV dword ptr [0x02d22390],EBX      ; 00580cda | g_INT_ARRAY_02d21b90[512]
+    MOV dword ptr [0x02d224f4],ESI      ; 00580ce0 | g_FLOAT_02d224f4
+    MOV byte ptr [0x01c5fae4],CH        ; 00580ce6 | g_BIT_INTEGER32_01c5fae4
     MOV EAX,EDI                         ; 00580cec
     POP EBP                             ; 00580cee
     POP EDI                             ; 00580cef
@@ -303,17 +303,17 @@ section .text
     XOR EBX,EBX                         ; 00580cf5
         ;   Label: LAB_00580cf5
     MOV BX,word ptr [ESP + 0x20]        ; 00580cf7
-    MOV dword ptr [0x01c5fadc],EBX      ; 00580cfc | DAT_01c5fadc
+    MOV dword ptr [0x01c5fadc],EBX      ; 00580cfc | g_INT_01c5fadc
     MOV CL,0x1                          ; 00580d02
-    MOV BH,byte ptr [0x01c5fae4]        ; 00580d04 | DAT_01c5fae4
+    MOV BH,byte ptr [0x01c5fae4]        ; 00580d04 | g_BIT_INTEGER32_01c5fae4
     AND EAX,0xffff                      ; 00580d0a
     XOR EDI,EDI                         ; 00580d0f
-    MOV [0x01c5fae0],EAX                ; 00580d11 | DAT_01c5fae0
+    MOV [0x01c5fae0],EAX                ; 00580d11 | g_INT_01c5fae0
     OR BH,0x2                           ; 00580d16
-    MOV byte ptr [0x01c6d0f1],CL        ; 00580d19 | DAT_01c6d0f1
+    MOV byte ptr [0x01c6d0f1],CL        ; 00580d19 | g_CHAR_ARRAY_01c6cef0+0x201
     XOR ECX,ECX                         ; 00580d1f
-    MOV byte ptr [0x01c5fae4],BH        ; 00580d21 | DAT_01c5fae4
-    MOV dword ptr [0x02d224f4],ECX      ; 00580d27 | DAT_02d224f4
+    MOV byte ptr [0x01c5fae4],BH        ; 00580d21 | g_BIT_INTEGER32_01c5fae4
+    MOV dword ptr [0x02d224f4],ECX      ; 00580d27 | g_FLOAT_02d224f4
     MOV EAX,EDI                         ; 00580d2d
     POP EBP                             ; 00580d2f
     POP EDI                             ; 00580d30
@@ -323,17 +323,17 @@ section .text
     XOR EBX,EBX                         ; 00580d36
         ;   Label: LAB_00580d36
     MOV BX,word ptr [ESP + 0x20]        ; 00580d38
-    MOV dword ptr [0x01c5fadc],EBX      ; 00580d3d | DAT_01c5fadc
-    MOV BL,byte ptr [0x01c5fae4]        ; 00580d43 | DAT_01c5fae4
+    MOV dword ptr [0x01c5fadc],EBX      ; 00580d3d | g_INT_01c5fadc
+    MOV BL,byte ptr [0x01c5fae4]        ; 00580d43 | g_BIT_INTEGER32_01c5fae4
     AND EAX,0xffff                      ; 00580d49
     XOR EDX,EDX                         ; 00580d4e
     XOR EDI,EDI                         ; 00580d50
-    MOV [0x01c5fae0],EAX                ; 00580d52 | DAT_01c5fae0
+    MOV [0x01c5fae0],EAX                ; 00580d52 | g_INT_01c5fae0
     AND BL,0xfd                         ; 00580d57
-    MOV dword ptr [0x02d224f4],EDX      ; 00580d5a | DAT_02d224f4
+    MOV dword ptr [0x02d224f4],EDX      ; 00580d5a | g_FLOAT_02d224f4
     MOV EAX,0x1                         ; 00580d60
-    MOV byte ptr [0x01c5fae4],BL        ; 00580d65 | DAT_01c5fae4
-    MOV [0x02d22394],EAX                ; 00580d6b | DAT_02d22394
+    MOV byte ptr [0x01c5fae4],BL        ; 00580d65 | g_BIT_INTEGER32_01c5fae4
+    MOV [0x02d22394],EAX                ; 00580d6b | g_INT_ARRAY_02d21b90[513]
     MOV EAX,EDI                         ; 00580d70
     POP EBP                             ; 00580d72
     POP EDI                             ; 00580d73
@@ -343,17 +343,17 @@ section .text
     XOR EBX,EBX                         ; 00580d79
         ;   Label: LAB_00580d79
     MOV BX,word ptr [ESP + 0x20]        ; 00580d7b
-    MOV dword ptr [0x01c5fadc],EBX      ; 00580d80 | DAT_01c5fadc
-    MOV DL,byte ptr [0x01c5fae4]        ; 00580d86 | DAT_01c5fae4
+    MOV dword ptr [0x01c5fadc],EBX      ; 00580d80 | g_INT_01c5fadc
+    MOV DL,byte ptr [0x01c5fae4]        ; 00580d86 | g_BIT_INTEGER32_01c5fae4
     AND EAX,0xffff                      ; 00580d8c
     XOR EBP,EBP                         ; 00580d91
     XOR EDI,EDI                         ; 00580d93
     OR DL,0x4                           ; 00580d95
-    MOV [0x01c5fae0],EAX                ; 00580d98 | DAT_01c5fae0
-    MOV byte ptr [0x01c5fae4],DL        ; 00580d9d | DAT_01c5fae4
+    MOV [0x01c5fae0],EAX                ; 00580d98 | g_INT_01c5fae0
+    MOV byte ptr [0x01c5fae4],DL        ; 00580d9d | g_BIT_INTEGER32_01c5fae4
     MOV DH,0x1                          ; 00580da3
-    MOV dword ptr [0x02d224f4],EBP      ; 00580da5 | DAT_02d224f4
-    MOV byte ptr [0x01c6d0fc],DH        ; 00580dab | DAT_01c6d0fc
+    MOV dword ptr [0x02d224f4],EBP      ; 00580da5 | g_FLOAT_02d224f4
+    MOV byte ptr [0x01c6d0fc],DH        ; 00580dab | g_CHAR_ARRAY_01c6cef0+0x20c
     MOV EAX,EDI                         ; 00580db1
     POP EBP                             ; 00580db3
     POP EDI                             ; 00580db4
@@ -363,23 +363,23 @@ section .text
     XOR EBX,EBX                         ; 00580dba
         ;   Label: LAB_00580dba
     MOV BX,word ptr [ESP + 0x20]        ; 00580dbc
-    MOV dword ptr [0x01c5fadc],EBX      ; 00580dc1 | DAT_01c5fadc
+    MOV dword ptr [0x01c5fadc],EBX      ; 00580dc1 | g_INT_01c5fadc
     MOV ESI,0x1                         ; 00580dc7
     AND EAX,0xffff                      ; 00580dcc
     XOR EDI,EDI                         ; 00580dd1
-    MOV [0x01c5fae0],EAX                ; 00580dd3 | DAT_01c5fae0
-    MOV AH,byte ptr [0x01c5fae4]        ; 00580dd8 | DAT_01c5fae4
-    MOV dword ptr [0x02d223c0],ESI      ; 00580dde | DAT_02d223c0
+    MOV [0x01c5fae0],EAX                ; 00580dd3 | g_INT_01c5fae0
+    MOV AH,byte ptr [0x01c5fae4]        ; 00580dd8 | g_BIT_INTEGER32_01c5fae4
+    MOV dword ptr [0x02d223c0],ESI      ; 00580dde | g_INT_ARRAY_02d21b90[524]
     AND AH,0xfb                         ; 00580de4
-    MOV dword ptr [0x02d224f4],EDI      ; 00580de7 | DAT_02d224f4
-    MOV byte ptr [0x01c5fae4],AH        ; 00580ded | DAT_01c5fae4
+    MOV dword ptr [0x02d224f4],EDI      ; 00580de7 | g_FLOAT_02d224f4
+    MOV byte ptr [0x01c5fae4],AH        ; 00580ded | g_BIT_INTEGER32_01c5fae4
     MOV EAX,EDI                         ; 00580df3
     POP EBP                             ; 00580df5
     POP EDI                             ; 00580df6
     POP ESI                             ; 00580df7
     POP EBX                             ; 00580df8
     RET 0x10                            ; 00580df9
-    MOV EDX,dword ptr [0x02d21b78]      ; 00580dfc | DAT_02d21b78
+    MOV EDX,dword ptr [0x02d21b78]      ; 00580dfc | g_HWND_02d21b78
         ;   Label: LAB_00580dfc
     PUSH EDX                            ; 00580e02
     CALL wincore_winvideo.cpp_closeMovie_FUN_00582b60 ; 00580e03

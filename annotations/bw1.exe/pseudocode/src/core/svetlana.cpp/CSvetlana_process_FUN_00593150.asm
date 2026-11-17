@@ -10,15 +10,15 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0059311c = 005935b6
 ;   TerminatedCString s_s_confused_while_walking_005f7541
-;   undefined4 DAT_005f756f
-;   undefined4 DAT_005f7577
-;   undefined4 DAT_005f757f
-;   undefined4 DAT_005f7583
-;   undefined4 DAT_005f7587
-;   undefined4 DAT_005f758b
+;   double g_DOUBLE_005f756f = 100
+;   double g_DOUBLE_005f7577 = 3
+;   float g_FLOAT_005f757f = -1.570796
+;   float g_FLOAT_005f7583 = 3.141593
+;   float g_FLOAT_005f7587 = 1.570796
+;   float g_FLOAT_005f758b = -3.141593
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_02c83708
+;   int[19] g_INT_ARRAY_02c83708
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
@@ -50,7 +50,7 @@ section .text
     SUB ESP,0xc0                        ; 00593154
     MOV EBX,dword ptr [ESP + 0xd4]      ; 0059315a
     FLD float ptr [EBX + 0x2538]        ; 00593161
-    FCOMP double ptr [0x005f756f]       ; 00593167 | DAT_005f756f
+    FCOMP double ptr [0x005f756f]       ; 00593167 | g_DOUBLE_005f756f
     FNSTSW AX                           ; 0059316d
     SAHF                                ; 0059316f
     JNC 0x0059319a                      ; 00593170
@@ -58,7 +58,7 @@ section .text
     FLD float ptr [EBX + 0x2538]        ; 00593172
     FADD float ptr [ESP + 0xd8]         ; 00593178
     FST float ptr [EBX + 0x2538]        ; 0059317f
-    FCOMP double ptr [0x005f756f]       ; 00593185 | DAT_005f756f
+    FCOMP double ptr [0x005f756f]       ; 00593185 | g_DOUBLE_005f756f
     FNSTSW AX                           ; 0059318b
     SAHF                                ; 0059318d
     JBE 0x0059319a                      ; 0059318e
@@ -199,27 +199,27 @@ section .text
     FLD float ptr [ESP + 0xc0]          ; 00593314
     ADD ESP,0x4                         ; 0059331b
     FST float ptr [ESP + 0xb8]          ; 0059331e
-    FCOMP float ptr [0x005f757f]        ; 00593325 | DAT_005f757f
+    FCOMP float ptr [0x005f757f]        ; 00593325 | g_FLOAT_005f757f
     FNSTSW AX                           ; 0059332b
     SAHF                                ; 0059332d
     JNC 0x00593344                      ; 0059332e
         ;   XREF to: 00593344 (CONDITIONAL_JUMP)  ; LAB_00593344
     FLD float ptr [ESP + 0xb8]          ; 00593330
-    FADD float ptr [0x005f7583]         ; 00593337 | DAT_005f7583
+    FADD float ptr [0x005f7583]         ; 00593337 | g_FLOAT_005f7583
     FSTP float ptr [ESP + 0xb8]         ; 0059333d
     FLD float ptr [ESP + 0xb8]          ; 00593344
         ;   Label: LAB_00593344
-    FCOMP float ptr [0x005f7587]        ; 0059334b | DAT_005f7587
+    FCOMP float ptr [0x005f7587]        ; 0059334b | g_FLOAT_005f7587
     FNSTSW AX                           ; 00593351
     SAHF                                ; 00593353
     JBE 0x0059336a                      ; 00593354
         ;   XREF to: 0059336a (CONDITIONAL_JUMP)  ; LAB_0059336a
     FLD float ptr [ESP + 0xb8]          ; 00593356
-    FADD float ptr [0x005f758b]         ; 0059335d | DAT_005f758b
+    FADD float ptr [0x005f758b]         ; 0059335d | g_FLOAT_005f758b
     FSTP float ptr [ESP + 0xb8]         ; 00593363
     FLD float ptr [ESP + 0xd8]          ; 0059336a
         ;   Label: LAB_0059336a
-    FMUL float ptr [0x005f7583]         ; 00593371 | DAT_005f7583
+    FMUL float ptr [0x005f7583]         ; 00593371 | g_FLOAT_005f7583
     FLD float ptr [ESP + 0xb8]          ; 00593377
     FXCH                                ; 0059337e
     FST float ptr [ESP + 0xb4]          ; 00593380
@@ -307,7 +307,7 @@ section .text
     JNZ 0x005934d2                      ; 00593491
         ;   XREF to: 005934d2 (CONDITIONAL_JUMP)  ; LAB_005934d2
     PUSH 0x567360                       ; 00593493
-    MOV EDX,dword ptr [0x02c83708]      ; 00593498 | DAT_02c83708
+    MOV EDX,dword ptr [0x02c83708]      ; 00593498 | g_INT_ARRAY_02c83708
     PUSH EDX                            ; 0059349e
     LEA EAX,[EBX + 0x95618]             ; 0059349f
     PUSH dword ptr [EBX + 0x95624]      ; 005934a5
@@ -696,7 +696,7 @@ section .text
     JNZ 0x00593467                      ; 0059389a
         ;   XREF to: 00593467 (CONDITIONAL_JUMP)  ; LAB_00593467
     FLD float ptr [ESP + 0xd8]          ; 005938a0
-    FMUL double ptr [0x005f7577]        ; 005938a7 | DAT_005f7577
+    FMUL double ptr [0x005f7577]        ; 005938a7 | g_DOUBLE_005f7577
     FADD float ptr [EBX + 0x24]         ; 005938ad
     FSTP float ptr [EBX + 0x24]         ; 005938b0
     JMP 0x00593467                      ; 005938b3

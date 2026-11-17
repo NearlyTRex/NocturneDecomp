@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(CSfxSlot *this_ptr,float delta_time)
 
 {
@@ -21,9 +19,9 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(CSfxSlot *this_ptr,f
   float10 fVar8;
   float local_28;
   
-  if (_DAT_0264901c < 1) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0xade;
+  if (g_INT_0264901c < 1) {
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0xade;
     core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::compute - must be locked!");
   }
   if (this_ptr->sample == (CSfxSample *)0x0) {
@@ -49,14 +47,14 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(CSfxSlot *this_ptr,f
       *(byte *)&this_ptr->changed_flags = (byte)this_ptr->changed_flags | 8;
     }
     sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_0054e3d0(this_ptr);
-    _DAT_026484b8 =
+    g_INT_026484b8 =
          sound_sndmain_cpp_getNearestListener_FUN_00551650
                    ((this_ptr->options).position.x,(this_ptr->options).position.y,
                     (this_ptr->options).position.z);
-    if (_DAT_026484bc != 0) {
+    if (g_INT_026484bc != 0) {
       sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0054cb70();
     }
-    if ((this_ptr->options).delay_remaining == _DAT_005fbc14) {
+    if ((this_ptr->options).delay_remaining == -1.0f) {
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00436710
                   (g_CConsolePtr,"  auto computing delay...\n");
@@ -73,34 +71,37 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(CSfxSlot *this_ptr,f
     }
     if (((this_ptr->options).flags & 1) == 0) {
       fVar6 = (float10)(this_ptr->options).position.x -
-              (float10)*(double *)(&DAT_02648428 + _DAT_026484b8 * 8);
+              (float10)(&g_DOUBLE_02648428)[g_INT_026484b8];
       fVar7 = (float10)(this_ptr->options).position.y -
-              (float10)*(double *)(&DAT_02648438 + _DAT_026484b8 * 8);
+              (float10)(&g_DOUBLE_02648438)[g_INT_026484b8];
       fVar8 = (float10)(this_ptr->options).position.z -
-              (float10)*(double *)(&DAT_02648448 + _DAT_026484b8 * 8);
+              (float10)(&g_DOUBLE_02648448)[g_INT_026484b8];
       fVar1 = (float)SQRT(fVar8 * (float10)(double)fVar8 +
                           fVar7 * (float10)(double)fVar7 + fVar6 * (float10)(double)fVar6);
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  distToEar = %7.2fs\n");
       }
-      fVar2 = *(float *)(_DAT_026484b8 * 4 + 0x2648458) - (this_ptr->options).velocity.x;
-      fVar3 = *(float *)(_DAT_026484b8 * 4 + 0x2648460) - (this_ptr->options).velocity.y;
-      fVar4 = *(float *)(_DAT_026484b8 * 4 + 0x2648468) - (this_ptr->options).velocity.z;
+      fVar2 = *(float *)((int)&g_CVector3d_02648458.x + g_INT_026484b8 * 4) -
+              (this_ptr->options).velocity.x;
+      fVar3 = *(float *)((int)&g_CVector3d_02648458.y + g_INT_026484b8 * 4) -
+              (this_ptr->options).velocity.y;
+      fVar4 = *(float *)((int)&g_CVector3d_02648458.z + g_INT_026484b8 * 4) -
+              (this_ptr->options).velocity.z;
       if (fVar1 <= 0.0) {
         fVar1 = SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2);
       }
       else {
         fVar1 = (fVar4 * (float)fVar8 + fVar3 * (float)fVar7 + fVar2 * (float)fVar6) / fVar1;
       }
-      local_28 = (fVar1 * DAT_0061bcb4 + _DAT_005fbc18) / _DAT_005fbc18;
+      local_28 = (fVar1 * g_FLOAT_0061bcb4 + 1116.4f) / 1116.4f;
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  doppler = %5.2f\n");
       }
-      if (local_28 < 1.0 / 0x40800000) {
-        local_28 = 1.0 / 0x40800000;
+      if (local_28 < 1.0 / 4.0f) {
+        local_28 = 1.0 / 4.0f;
       }
-      if (0x40800000 < local_28) {
-        local_28 = 0x40800000;
+      if (4.0f < local_28) {
+        local_28 = 4.0f;
       }
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00436710
@@ -117,17 +118,17 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(CSfxSlot *this_ptr,f
       engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  vol = %5.2f\n");
     }
     sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_0054e6e0(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar5 = 0, 0 < DAT_0061bc9c)) {
+    if ((this_ptr->is_active == 1) && (iVar5 = 0, 0 < g_INT_0061bc9c)) {
       do {
         iVar5 = iVar5 + 1;
         engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  channelVol[%d] = %5.2f\n");
-      } while (iVar5 < DAT_0061bc9c);
+      } while (iVar5 < g_INT_0061bc9c);
     }
-    if (this_ptr->effective_frequency < 1.0 / 0x41A00000) {
-      this_ptr->effective_frequency = 1.0 / 0x41A00000;
+    if (this_ptr->effective_frequency < 1.0 / 20.0f) {
+      this_ptr->effective_frequency = 1.0 / 20.0f;
     }
-    if (0x41A00000 < this_ptr->effective_frequency) {
-      this_ptr->effective_frequency = 0x41A00000;
+    if (20.0f < this_ptr->effective_frequency) {
+      this_ptr->effective_frequency = 20.0f;
     }
     if (this_ptr->is_active == 1) {
       engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  effFreq = %5.2f\n");

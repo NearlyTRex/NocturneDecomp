@@ -6,31 +6,29 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_pop_FUN_004e5ef0(void)
 
 {
-  _DAT_01d726a0 = _DAT_01d726a0 + -1;
-  if (_DAT_01d726a0 < 0) {
-    _DAT_01d71de0 = "..\\engine\\matrix.c";
-    _DAT_01d71de4 = 0x358;
+  g_INT_01d726a0 = g_INT_01d726a0 + -1;
+  if (g_INT_01d726a0 < 0) {
+    g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
+    g_INT_01d71de4 = 0x358;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Matrix unbalance2");
   }
-  _DAT_01c6e2fc = *(uint *)(_DAT_01d726a0 * 4 + 0x1d726a4);
-  _DAT_01c6e300 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d726cc);
-  _DAT_01c6e304 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d726f4);
-  _DAT_01c6e308 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d7271c);
-  _DAT_01c6e30c = *(uint *)(_DAT_01d726a0 * 4 + 0x1d72744);
-  _DAT_01c6e310 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d7276c);
-  _DAT_01c6e314 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d72794);
-  _DAT_01c6e318 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d727bc);
-  _DAT_01c6e31c = *(uint *)(_DAT_01d726a0 * 4 + 0x1d727e4);
-  _DAT_01c6e2cc = *(uint *)(_DAT_01d726a0 * 4 + 0x1d7280c);
-  _DAT_01c6e2d0 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d72834);
-  _DAT_01c6e2d4 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d7285c);
-  _DAT_01c6e2f0 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d72884);
-  _DAT_01c6e2f4 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d728ac);
-  _DAT_01c6e2f8 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d728d4);
+  g_INT_01c6e2fc = g_INT_ARRAY_01d726a4[g_INT_01d726a0];
+  g_INT_01c6e300 = g_INT_ARRAY_01d726cc[g_INT_01d726a0];
+  g_INT_01c6e304 = g_INT_ARRAY_01d726f4[g_INT_01d726a0];
+  g_INT_01c6e308 = g_INT_ARRAY_01d7271c[g_INT_01d726a0];
+  g_INT_01c6e30c = g_INT_ARRAY_01d72744[g_INT_01d726a0];
+  g_INT_01c6e310 = g_INT_ARRAY_01d7276c[g_INT_01d726a0];
+  g_INT_01c6e314 = g_INT_ARRAY_01d72794[g_INT_01d726a0];
+  g_INT_01c6e318 = g_INT_ARRAY_01d727bc[g_INT_01d726a0];
+  g_INT_01c6e31c = g_INT_ARRAY_01d727e4[g_INT_01d726a0];
+  g_INT_01c6e2cc = g_INT_ARRAY_01d7280c[g_INT_01d726a0];
+  g_INT_01c6e2d0 = g_INT_ARRAY_01d72834[g_INT_01d726a0];
+  g_INT_01c6e2d4 = g_INT_ARRAY_01d7285c[g_INT_01d726a0];
+  g_INT_01c6e2f0 = g_INT_ARRAY_01d72884[g_INT_01d726a0];
+  g_INT_01c6e2f4 = g_INT_ARRAY_01d728ac[g_INT_01d726a0];
+  g_INT_01c6e2f8 = g_INT_ARRAY_01d728d4[g_INT_01d726a0];
   return;
 }

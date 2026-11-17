@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 164,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 9,
+    "pseudocode_lines": 67,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 236
+    "total_lines": 239
   },
   "cross_references": [],
   "function": {
@@ -88,25 +87,25 @@
   "globals": [
     {
       "addr": "005d70cf",
-      "name": "s_MENUCLD2_RAW_005d70ce+1",
-      "type": "undefined4",
+      "name": "s_MENUCLD2_RAW_005d70cf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d70d0",
-      "name": "s_MENUCLD2_RAW_005d70ce+2",
+      "name": "s_MENUCLD2_RAW_005d70cf+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d70d1",
-      "name": "s_MENUCLD2_RAW_005d70ce+3",
+      "name": "s_MENUCLD2_RAW_005d70cf+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d70d2",
-      "name": "s_MENUCLD2_RAW_005d70ce+4",
+      "name": "s_MENUCLD2_RAW_005d70cf+3",
       "type": "undefined4",
       "value": null
     },
@@ -118,14 +117,14 @@
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -211,72 +210,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&(this_ptr->base).location.position);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&(this_ptr->base).orient.vec,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&CStack_20,&CStack_2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,48000);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0x4000);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 45,
+      "line": 47,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

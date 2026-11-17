@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004b7150(CFireEffect *this_ptr,CVector3f *start_point,CVector3f *end_point,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)
 
 {
@@ -37,7 +35,7 @@ void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004b7150(CFireE
   local_1c = local_28;
   dVar6 = round
                     ((double)((SQRT(local_28 * local_28 + local_30 * local_30 + local_2c * local_2c)
-                              * (float)_DAT_005df66c) / size + 1.0));
+                              * (float)8) / size + 1.0));
   iVar1 = (int)ROUND(dVar6);
   fVar2 = 1.0 / (float)iVar1;
   iVar3 = 0;

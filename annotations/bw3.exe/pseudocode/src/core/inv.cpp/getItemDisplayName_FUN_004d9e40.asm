@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Add_to_dict_s_005c5e84
-;   undefined4 DAT_01d5dc88
+;   int g_INT_01d5dc88
 ;
 ; Called Functions:
 ;   core_inv.cpp_getItemModel_FUN_004d9d20
@@ -36,7 +36,7 @@ section .text
     XOR ESI,ESI                         ; 004d9e4f
     CALL core_inv.cpp_getItemModel_FUN_004d9d20 ; 004d9e51
         ;   XREF to: 004d9d20 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004d9d20(CDemonActor * actor_ptr)
-    MOV ECX,dword ptr [0x01d5dc88]      ; 004d9e56 | DAT_01d5dc88
+    MOV ECX,dword ptr [0x01d5dc88]      ; 004d9e56 | g_INT_01d5dc88
     ADD ESP,0x4                         ; 004d9e5c
     LEA EDI,[EAX + 0x78]                ; 004d9e5f
     TEST ECX,ECX                        ; 004d9e62
@@ -51,7 +51,7 @@ section .text
     TEST EAX,EAX                        ; 004d9e70
     JZ 0x004d9ea1                       ; 004d9e72
         ;   XREF to: 004d9ea1 (CONDITIONAL_JUMP)  ; LAB_004d9ea1
-    MOV EAX,[0x01d5dc88]                ; 004d9e74 | DAT_01d5dc88
+    MOV EAX,[0x01d5dc88]                ; 004d9e74 | g_INT_01d5dc88
     INC ESI                             ; 004d9e79
     ADD EBX,0x300                       ; 004d9e7a
     CMP ESI,EAX                         ; 004d9e80

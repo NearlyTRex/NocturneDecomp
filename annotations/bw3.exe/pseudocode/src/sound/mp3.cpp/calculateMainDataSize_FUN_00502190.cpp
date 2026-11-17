@@ -17,10 +17,9 @@ int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00502190(SMpegFrame frame_in
                     ((double)(*(int *)(&DAT_00601270 +
                                       (frame_info.header)->bitrate_index * 4 +
                                       (frame_info.header)->mpeg_version * 0xb4) * 0x90) /
-                     *(double *)
-                      (&DAT_006011b8 +
-                      (frame_info.header)->sampling_rate_index * 8 +
-                      (frame_info.header)->mpeg_version * 0x20));
+                     g_DOUBLE_ARRAY_006011b8
+                     [(frame_info.header)->mpeg_version * 4 +
+                      (frame_info.header)->sampling_rate_index]);
   iStack_14 = (int)ROUND(dVar1);
   if ((frame_info.header)->mpeg_version == 0) {
     if (frame_info.table_index == 1) {

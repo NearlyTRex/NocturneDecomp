@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_beginProfileTimer_FUN_004bf410(void)
 
 {
   if (g_CGamePtr->profile_mode != 1) {
     return;
   }
-  _DAT_01d22c98 = wincore_winrun_cpp_getTime_FUN_005806a0();
+  g_INT_01d22c98 = wincore_winrun_cpp_getTime_FUN_005806a0();
   return;
 }

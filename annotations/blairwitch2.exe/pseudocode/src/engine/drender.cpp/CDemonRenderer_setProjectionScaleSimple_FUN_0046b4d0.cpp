@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0046b4d0(CDemonRenderer *this_ptr,float scale_factor)
 
 {
   double dVar1;
   
-  dVar1 = round((double)((float)_DAT_005d15b3 / scale_factor));
-  DAT_006141e4 = (int)ROUND(dVar1);
+  dVar1 = round((double)((float)65536 / scale_factor));
+  g_INT_006141e4 = (int)ROUND(dVar1);
   return;
 }

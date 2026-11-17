@@ -46,7 +46,7 @@ section .text
     MOV EDX,dword ptr [0x0061d95c]      ; 0050d227 | g_CGamePtr
     MOV EDX,dword ptr [EDX + 0xd0]      ; 0050d22d | g_CGameInstance.game_control
     XOR ESI,ESI                         ; 0050d233
-    MOV dword ptr [0x01d1ee90],EDX      ; 0050d235 | DAT_01d1ee90
+    MOV dword ptr [0x01d1ee90],EDX      ; 0050d235 | g_INT_01d1ee90
     CMP EBX,0x257                       ; 0050d23b
     JZ 0x0050d44a                       ; 0050d241
         ;   XREF to: 0050d44a (CONDITIONAL_JUMP)  ; LAB_0050d44a
@@ -225,18 +225,18 @@ section .text
         ;   Label: LAB_0050d3fc
     JZ 0x0050d45e                       ; 0050d3fe
         ;   XREF to: 0050d45e (CONDITIONAL_JUMP)  ; LAB_0050d45e
-    MOV EDX,dword ptr [0x01d219e0]      ; 0050d400 | DAT_01d219e0
+    MOV EDX,dword ptr [0x01d219e0]      ; 0050d400 | g_INT_01d219e0
         ;   Label: LAB_0050d400
     INC EDX                             ; 0050d406
     MOV ECX,0xa                         ; 0050d407
     MOV EAX,EDX                         ; 0050d40c
     SAR EDX,0x1f                        ; 0050d40e
     IDIV ECX                            ; 0050d411
-    MOV EBX,dword ptr [0x01d219e0]      ; 0050d413 | DAT_01d219e0
+    MOV EBX,dword ptr [0x01d219e0]      ; 0050d413 | g_INT_01d219e0
     SHL EBX,0x8                         ; 0050d419
     ADD EBX,0x1d219e8                   ; 0050d41c
     MOV EDI,EBX                         ; 0050d422
-    MOV dword ptr [0x01d219e0],EDX      ; 0050d424 | DAT_01d219e0
+    MOV dword ptr [0x01d219e0],EDX      ; 0050d424 | g_INT_01d219e0
     PUSH EDI                            ; 0050d42a
     MOV AL,byte ptr [ESI]               ; 0050d42b
         ;   Label: LAB_0050d42b

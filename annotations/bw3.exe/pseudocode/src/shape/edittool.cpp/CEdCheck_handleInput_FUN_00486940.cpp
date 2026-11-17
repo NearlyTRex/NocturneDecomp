@@ -6,27 +6,25 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_00486940(CEdCheck *this_ptr)
 
 {
-  byte bVar1;
+  byte uVar1;
   int iVar2;
   
-  bVar1 = DAT_01c5fae4;
-  if ((((this_ptr->interactive_flag == 0) && (this_ptr->x_position <= _DAT_01c5fadc)) &&
-      (this_ptr->y_position <= _DAT_01c5fae0)) &&
-     ((_DAT_01c5fadc < this_ptr->total_width && (_DAT_01c5fae0 < this_ptr->right_boundary)))) {
+  uVar1 = g_BIT_INTEGER32_01c5fae4.bytes[0];
+  if ((((this_ptr->interactive_flag == 0) && (this_ptr->x_position <= g_INT_01c5fadc)) &&
+      (this_ptr->y_position <= g_INT_01c5fae0)) &&
+     ((g_INT_01c5fadc < this_ptr->total_width && (g_INT_01c5fae0 < this_ptr->right_boundary)))) {
     iVar2 = 1;
   }
   else {
     iVar2 = 0;
   }
-  if (_DAT_01c5bb78 == this_ptr) {
+  if ((CEdCheck *)g_PTR_01c5bb78 == this_ptr) {
     this_ptr->border_style_flag = iVar2;
-    if (((bVar1 & 1) == 0) &&
-       (_DAT_01c5bb78 = (CEdCheck *)((uint)_DAT_01c5bb78 ^ (uint)this_ptr), iVar2 != 0)) {
+    if (((uVar1 & 1) == 0) &&
+       (g_PTR_01c5bb78 = (byte *)((uint)g_PTR_01c5bb78 ^ (uint)this_ptr), iVar2 != 0)) {
       this_ptr->border_style_flag = 0;
       if (this_ptr->checkbox_mode == CHECKBOX_MODE_TRI_STATE) {
         iVar2 = this_ptr->checked_state + 1;
@@ -43,9 +41,10 @@ int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_00486940(CEdCheck *this_
     }
     return 0;
   }
-  if (((_DAT_01c5bb78 == (CEdCheck *)0x0) && ((DAT_01c5fae4 & 1) != 0)) && (iVar2 != 0)) {
+  if (((g_PTR_01c5bb78 == (byte *)0x0) && ((g_BIT_INTEGER32_01c5fae4.bytes[0] & 1) != 0)) &&
+     (iVar2 != 0)) {
     this_ptr->border_style_flag = 1;
-    _DAT_01c5bb78 = this_ptr;
+    g_PTR_01c5bb78 = (byte *)this_ptr;
     return 0;
   }
   return 0;

@@ -15,7 +15,7 @@
 ;   core_weather.cpp_CWeather_preloadAssets_FUN_0057d420 at 0057d4a9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   undefined4 DAT_005fd8f4
 ;   undefined4 DAT_005fd90c
 ;   undefined4 DAT_005fd984
@@ -26,7 +26,7 @@
 ;   undefined4 DAT_005fdabc
 ;   undefined4 DAT_005fdb34
 ;   undefined4 DAT_005fdb4c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -54,8 +54,8 @@ section .text
     MOV EAX,0x5fd984                    ; 004a4149 | DAT_005fd984
     ADD EAX,EBX                         ; 004a414e
     PUSH EAX                            ; 004a4150 | DAT_005fd984 | DAT_005fd99c
-    MOV EDX,dword ptr [0x005f2afc]      ; 004a4151 | DAT_005f2afc
-    PUSH EDX                            ; 004a4157 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004a4151 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004a4157 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a4158
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
         ;   Label: LAB_004a4158
@@ -73,8 +73,8 @@ section .text
     RET                                 ; 004a4172
     PUSH EDI                            ; 004a4173 | DAT_005fd90c
         ;   Label: LAB_004a4173
-    MOV EDX,dword ptr [0x005f2afc]      ; 004a4174 | DAT_005f2afc
-    PUSH EDX                            ; 004a417a | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004a4174 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004a417a | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a417b
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004a4180
@@ -93,24 +93,24 @@ section .text
     MOV EAX,0x5fdb34                    ; 004a4194 | DAT_005fdb34
     ADD EAX,EBX                         ; 004a4199
     PUSH EAX                            ; 004a419b | DAT_005fdb4c
-    MOV ECX,dword ptr [0x005f2afc]      ; 004a419c | DAT_005f2afc
-    PUSH ECX                            ; 004a41a2 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 004a419c | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 004a41a2 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4158                      ; 004a41a3
         ;   XREF to: 004a4158 (UNCONDITIONAL_JUMP)  ; LAB_004a4158
     MOV EAX,0x5fda14                    ; 004a41a5 | DAT_005fda14
         ;   Label: LAB_004a41a5
     ADD EAX,EBX                         ; 004a41aa
     PUSH EAX                            ; 004a41ac | DAT_005fda2c
-    MOV EAX,[0x005f2afc]                ; 004a41ad | DAT_005f2afc
-    PUSH EAX                            ; 004a41b2 | DAT_01bdd7e4
+    MOV EAX,[0x005f2afc]                ; 004a41ad | g_CDemonRenderer_PTR_005f2afc
+    PUSH EAX                            ; 004a41b2 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4158                      ; 004a41b3
         ;   XREF to: 004a4158 (UNCONDITIONAL_JUMP)  ; LAB_004a4158
     MOV EAX,0x5fdaa4                    ; 004a41b5 | DAT_005fdaa4
         ;   Label: LAB_004a41b5
     ADD EAX,EBX                         ; 004a41ba
     PUSH EAX                            ; 004a41bc | DAT_005fdabc
-    MOV EBP,dword ptr [0x005f2afc]      ; 004a41bd | DAT_005f2afc
-    PUSH EBP                            ; 004a41c3 | DAT_01bdd7e4
+    MOV EBP,dword ptr [0x005f2afc]      ; 004a41bd | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBP                            ; 004a41c3 | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4158                      ; 004a41c4
         ;   XREF to: 004a4158 (UNCONDITIONAL_JUMP)  ; LAB_004a4158
 

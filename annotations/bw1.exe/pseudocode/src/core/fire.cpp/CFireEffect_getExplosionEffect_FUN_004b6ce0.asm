@@ -40,15 +40,15 @@
 ;   core_trigger.cpp_CTrigger_process_FUN_0059b240 at 0059b69e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df654
-;   undefined4 DAT_005df65c
-;   undefined4 DAT_01cb007c
-;   undefined4 DAT_01cb008c
-;   undefined4 DAT_01cb0090
-;   undefined4 DAT_01cb0094
-;   undefined4 DAT_01cb0098
-;   undefined4 DAT_01cb009c
-;   undefined4 DAT_01cb00a0
+;   double g_DOUBLE_005df654 = 0.5
+;   float g_FLOAT_005df65c = 40
+;   undefined4 g_CExplosion_ARRAY_01cb0070[0].lifetime
+;   undefined4 g_CExplosion_ARRAY_01cb0070[1].position.x
+;   undefined4 g_CExplosion_ARRAY_01cb0070[1].position.y
+;   undefined4 g_CExplosion_ARRAY_01cb0070[1].position.z
+;   undefined4 g_CExplosion_ARRAY_01cb0070[1].lifetime
+;   undefined4 g_CExplosion_ARRAY_01cb0070[1].scale
+;   undefined4 g_CExplosion_ARRAY_01cb0070[1].gore_multiplier
 ;
 ; *****************************************************************************
 
@@ -67,10 +67,10 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004b6cf2
     MOV EDX,0x1cb0070                   ; 004b6cf5
     XOR ECX,ECX                         ; 004b6cfa
-    FLD float ptr [EDX + 0xc]           ; 004b6cfc | DAT_01cb007c | DAT_01cb0098
+    FLD float ptr [EDX + 0xc]           ; 004b6cfc | g_CExplosion_ARRAY_01cb0070[0].lifetime | g_CExplosion_ARRAY_01cb0070[1].lifetime
         ;   Label: LAB_004b6cfc
     MOV dword ptr [ESP + 0x60],EDX      ; 004b6cff
-    FCOMP double ptr [0x005df654]       ; 004b6d03 | DAT_005df654
+    FCOMP double ptr [0x005df654]       ; 004b6d03 | g_DOUBLE_005df654
     FNSTSW AX                           ; 004b6d09
     SAHF                                ; 004b6d0b
     JA 0x004b6d20                       ; 004b6d0c
@@ -95,11 +95,11 @@ section .text
     LEA EDI,[ESP + 0x20]                ; 004b6d28
     LEA ESI,[ESP + 0x14]                ; 004b6d2c
     FXCH ST2                            ; 004b6d30
-    FSUB float ptr [EDX]                ; 004b6d32 | DAT_01cb008c
+    FSUB float ptr [EDX]                ; 004b6d32 | g_CExplosion_ARRAY_01cb0070[1].position.x
     FXCH                                ; 004b6d34
-    FSUB float ptr [EDX + 0x4]          ; 004b6d36 | DAT_01cb0090
+    FSUB float ptr [EDX + 0x4]          ; 004b6d36 | g_CExplosion_ARRAY_01cb0070[1].position.y
     FXCH ST2                            ; 004b6d39
-    FSUB float ptr [EDX + 0x8]          ; 004b6d3b | DAT_01cb0094
+    FSUB float ptr [EDX + 0x8]          ; 004b6d3b | g_CExplosion_ARRAY_01cb0070[1].position.z
     FXCH ST2                            ; 004b6d3e
     FSTP float ptr [ESP + 0x18]         ; 004b6d40
     FXCH                                ; 004b6d44
@@ -130,8 +130,8 @@ section .text
     FADDP                               ; 004b6d89
     FSQRT                               ; 004b6d8b
     MOV EAX,dword ptr [ESP + 0x60]      ; 004b6d8d
-    FLD float ptr [EAX + 0x10]          ; 004b6d91 | DAT_01cb009c
-    FMUL double ptr [0x005df654]        ; 004b6d94 | DAT_005df654
+    FLD float ptr [EAX + 0x10]          ; 004b6d91 | g_CExplosion_ARRAY_01cb0070[1].scale
+    FMUL double ptr [0x005df654]        ; 004b6d94 | g_DOUBLE_005df654
     FADD float ptr [ESP]                ; 004b6d9a
     FXCH                                ; 004b6d9d
     FST float ptr [ESP + 0x4]           ; 004b6d9f
@@ -163,7 +163,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b6deb
     MOVSD ES:EDI,ESI                    ; 004b6dec
     MOVSD ES:EDI,ESI                    ; 004b6ded
-    FLD float ptr [0x005df65c]          ; 004b6dee | DAT_005df65c
+    FLD float ptr [0x005df65c]          ; 004b6dee | g_FLOAT_005df65c
     FLD float ptr [ESP + 0x38]          ; 004b6df4
     FMUL ST1                            ; 004b6df8
     FLD float ptr [ESP + 0x3c]          ; 004b6dfa
@@ -195,7 +195,7 @@ section .text
     JZ 0x004b6e4b                       ; 004b6e40
         ;   XREF to: 004b6e4b (CONDITIONAL_JUMP)  ; LAB_004b6e4b
     MOV EAX,dword ptr [ESP + 0x60]      ; 004b6e42
-    MOV EDX,dword ptr [EAX + 0x14]      ; 004b6e46 | DAT_01cb00a0
+    MOV EDX,dword ptr [EAX + 0x14]      ; 004b6e46 | g_CExplosion_ARRAY_01cb0070[1].gore_multiplier
     MOV dword ptr [EBX],EDX             ; 004b6e49
     MOV EAX,0x1                         ; 004b6e4b
         ;   Label: LAB_004b6e4b

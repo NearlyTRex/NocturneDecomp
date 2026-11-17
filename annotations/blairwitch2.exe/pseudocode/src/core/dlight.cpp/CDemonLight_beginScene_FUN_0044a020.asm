@@ -17,16 +17,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005cf29f
 ;   TerminatedCString s_CDemonLight_beginScene_S_005cf2b2
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5714
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
-;   undefined4 DAT_01c38ba0
-;   undefined4 DAT_01c38bac
-;   undefined4 DAT_01c38bb8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   int g_INT_01ba5714
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   void*[1200] g_ARRAY_PTR_01c2a38c
+;   undefined4 g_ARRAY_PTR_01c2a38c[1]
+;   int g_INT_01c38ba0
+;   int g_INT_01c38bac
+;   int g_INT_01c38bb8
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0043b7a0
@@ -68,8 +68,8 @@ section .text
     PUSH EAX                            ; 0044a05c
     PUSH 0x0                            ; 0044a05d
     PUSH 0x0                            ; 0044a05f
-    MOV EBP,dword ptr [0x0060b280]      ; 0044a061 | DAT_0060b280
-    PUSH EBP                            ; 0044a067 | DAT_01ba5c50
+    MOV EBP,dword ptr [0x0060b280]      ; 0044a061 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBP                            ; 0044a067 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710 ; 0044a068
         ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     MOV EAX,dword ptr [EBX + 0x1cc0]    ; 0044a06d
@@ -83,41 +83,41 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 0044a094
     MOV dword ptr [EBX + 0x11d8],0x0    ; 0044a097
     PUSH EAX                            ; 0044a0a1
-    MOV EAX,[0x0060b280]                ; 0044a0a2 | DAT_0060b280
+    MOV EAX,[0x0060b280]                ; 0044a0a2 | g_CDemonRenderer_PTR_0060b280
     MOV dword ptr [EBX + 0x1d0],0x0     ; 0044a0a7
-    PUSH EAX                            ; 0044a0b1 | DAT_01ba5c50
+    PUSH EAX                            ; 0044a0b1 | g_CDemonRenderer_01ba5c50
     MOV dword ptr [EBX + 0x168],EDI     ; 0044a0b2
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0 ; 0044a0b8
         ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0044a0bd
-    MOV EDX,dword ptr [0x0060b280]      ; 0044a0c0 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 0044a0c0 | g_CDemonRenderer_PTR_0060b280
     PUSH dword ptr [EBX + 0x38]         ; 0044a0c6
-    PUSH EDX                            ; 0044a0c9 | DAT_01ba5c50
+    PUSH EDX                            ; 0044a0c9 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 0044a0ca
         ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 0044a0cf
     LEA EAX,[EBX + 0x10]                ; 0044a0d2
     PUSH EAX                            ; 0044a0d5
-    MOV ECX,dword ptr [0x0060b280]      ; 0044a0d6 | DAT_0060b280
-    PUSH ECX                            ; 0044a0dc | DAT_01ba5c50
+    MOV ECX,dword ptr [0x0060b280]      ; 0044a0d6 | g_CDemonRenderer_PTR_0060b280
+    PUSH ECX                            ; 0044a0dc | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060 ; 0044a0dd
         ;   XREF to: 0046b060 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 0044a0e2
-    MOV EDX,dword ptr [0x01c38ba0]      ; 0044a0e5 | DAT_01c38ba0
+    MOV EDX,dword ptr [0x01c38ba0]      ; 0044a0e5 | g_INT_01c38ba0
     MOV EAX,dword ptr [EBX + 0x2fa4]    ; 0044a0eb
     IMUL EDX                            ; 0044a0f1
     SHRD EAX,EDX,0x10                   ; 0044a0f3
-    MOV EDX,dword ptr [0x01c38bac]      ; 0044a0f7 | DAT_01c38bac
-    MOV [0x01c38ba0],EAX                ; 0044a0fd | DAT_01c38ba0
+    MOV EDX,dword ptr [0x01c38bac]      ; 0044a0f7 | g_INT_01c38bac
+    MOV [0x01c38ba0],EAX                ; 0044a0fd | g_INT_01c38ba0
     MOV EAX,dword ptr [EBX + 0x2fa4]    ; 0044a102
     IMUL EDX                            ; 0044a108
     SHRD EAX,EDX,0x10                   ; 0044a10a
-    MOV EDX,dword ptr [0x01c38bb8]      ; 0044a10e | DAT_01c38bb8
-    MOV [0x01c38bac],EAX                ; 0044a114 | DAT_01c38bac
+    MOV EDX,dword ptr [0x01c38bb8]      ; 0044a10e | g_INT_01c38bb8
+    MOV [0x01c38bac],EAX                ; 0044a114 | g_INT_01c38bac
     MOV EAX,dword ptr [EBX + 0x2fa4]    ; 0044a119
     IMUL EDX                            ; 0044a11f
     SHRD EAX,EDX,0x10                   ; 0044a121
-    MOV [0x01c38bb8],EAX                ; 0044a125 | DAT_01c38bb8
+    MOV [0x01c38bb8],EAX                ; 0044a125 | g_INT_01c38bb8
     TEST EDI,EDI                        ; 0044a12a
     JZ 0x0044a1d9                       ; 0044a12c
         ;   XREF to: 0044a1d9 (CONDITIONAL_JUMP)  ; LAB_0044a1d9
@@ -128,7 +128,7 @@ section .text
     JLE 0x0044a180                      ; 0044a13c
         ;   XREF to: 0044a180 (CONDITIONAL_JUMP)  ; LAB_0044a180
     MOV EDX,EBX                         ; 0044a13e
-    MOV ESI,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0044a140 | DAT_01c2a38c | DAT_01c2a390
+    MOV ESI,dword ptr [EAX*0x4 + 0x1c2a38c] ; 0044a140 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
         ;   Label: LAB_0044a140
     MOV dword ptr [EDX + 0x1cd4],ESI    ; 0044a147
     MOV ESI,dword ptr [EBX + 0x1cc0]    ; 0044a14d
@@ -136,7 +136,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2f94]    ; 0044a156
     ADD ESI,ESI                         ; 0044a15c
     ADD ESI,EDI                         ; 0044a15e
-    MOV dword ptr [EAX*0x4 + 0x1c2a38c],ESI ; 0044a160 | DAT_01c2a38c | DAT_01c2a390
+    MOV dword ptr [EAX*0x4 + 0x1c2a38c],ESI ; 0044a160 | g_ARRAY_PTR_01c2a38c | g_ARRAY_PTR_01c2a38c[1]
     INC EAX                             ; 0044a167
     MOV ECX,dword ptr [EBX + 0x1cc4]    ; 0044a168
     ADD EDX,0x4                         ; 0044a16e
@@ -152,8 +152,8 @@ section .text
         ;   XREF to: 0043c5d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0043c5d0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0044a186
     PUSH 0x1                            ; 0044a189
-    MOV EBX,dword ptr [0x0060b280]      ; 0044a18b | DAT_0060b280
-    PUSH EBX                            ; 0044a191 | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 0044a18b | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 0044a191 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 0044a192
         ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044a197
@@ -161,7 +161,7 @@ section .text
     TEST ESI,ESI                        ; 0044a19e
     JZ 0x0044a1fe                       ; 0044a1a0
         ;   XREF to: 0044a1fe (CONDITIONAL_JUMP)  ; LAB_0044a1fe
-    MOV dword ptr [0x01ba5714],0x8000   ; 0044a1a2 | DAT_01ba5714
+    MOV dword ptr [0x01ba5714],0x8000   ; 0044a1a2 | g_INT_01ba5714
     POP EBP                             ; 0044a1ac
     POP EDI                             ; 0044a1ad
     POP ESI                             ; 0044a1ae
@@ -171,8 +171,8 @@ section .text
         ;   Label: LAB_0044a1b1
     MOV ESI,0xf4                        ; 0044a1b6
     PUSH 0x5cf2b2                       ; 0044a1bb | = "CDemonLight::beginScene - Scene alrea..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0044a1c0 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0044a1c6 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044a1c0 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0044a1c6 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a1cc
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a1d1
@@ -189,7 +189,7 @@ section .text
         ;   XREF to: 00492670 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_00492670(void * dest, int fill_byte, uint size)
     JMP 0x0044a132                      ; 0044a1f9
         ;   XREF to: 0044a132 (UNCONDITIONAL_JUMP)  ; LAB_0044a132
-    MOV dword ptr [0x01ba5714],ESI      ; 0044a1fe | DAT_01ba5714
+    MOV dword ptr [0x01ba5714],ESI      ; 0044a1fe | g_INT_01ba5714
         ;   Label: LAB_0044a1fe
     POP EBP                             ; 0044a204
     POP EDI                             ; 0044a205

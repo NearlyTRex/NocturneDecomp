@@ -21,28 +21,28 @@
 ;   ... and 61 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061c7d8
-;   undefined4 DAT_0061c7dc
-;   undefined4 DAT_0061c7e0
-;   undefined4 DAT_0061c7e8
-;   undefined4 DAT_0061c7ec
-;   undefined4 DAT_0061c7f0
-;   undefined4 DAT_01c35e38
-;   undefined4 DAT_01c35e3c
-;   undefined4 DAT_01c35e40
-;   undefined4 DAT_01c35e44
-;   undefined4 DAT_01c38b40
-;   undefined4 DAT_01c38b6c
-;   undefined4 DAT_01c38b70
-;   undefined4 DAT_01c38b74
-;   undefined4 DAT_01c38b9c
+;   int g_INT_0061c7d8 = 0x0
+;   int g_INT_0061c7dc = 0x0
+;   int g_INT_0061c7e0 = 0x0
+;   int g_INT_0061c7e8 = 0x0
+;   int g_INT_0061c7ec = 0x0
+;   int g_INT_0061c7f0 = 0x0
+;   int g_INT_01c35e38
+;   int g_INT_01c35e3c
+;   int g_INT_01c35e40
+;   int g_INT_01c35e44
+;   int g_INT_01c38b40
+;   int g_INT_01c38b6c
+;   int g_INT_01c38b70
+;   int g_INT_01c38b74
+;   int g_INT_01c38b9c
 ;   ... and 8 more
 ;
 ; *****************************************************************************
 
 section .text
 
-    TEST dword ptr [0x01c38b40],0xffffffff ; 0055d723 | DAT_01c38b40
+    TEST dword ptr [0x01c38b40],0xffffffff ; 0055d723 | g_INT_01c38b40
         ;   Label: engine_special.cpp_transformAndProjectPoint_FUN_0055d723
     JZ 0x0055d871                       ; 0055d72d
         ;   XREF to: 0055d871 (CONDITIONAL_JUMP)  ; LAB_0055d871
@@ -50,49 +50,49 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0055d737
     MOV ECX,dword ptr [EBX + 0x4]       ; 0055d739
     MOV EDX,dword ptr [EBX + 0x8]       ; 0055d73c
-    SUB EAX,dword ptr [0x01c38b6c]      ; 0055d73f | DAT_01c38b6c
-    SUB ECX,dword ptr [0x01c38b70]      ; 0055d745 | DAT_01c38b70
-    SUB EDX,dword ptr [0x01c38b74]      ; 0055d74b | DAT_01c38b74
+    SUB EAX,dword ptr [0x01c38b6c]      ; 0055d73f | g_INT_01c38b6c
+    SUB ECX,dword ptr [0x01c38b70]      ; 0055d745 | g_INT_01c38b70
+    SUB EDX,dword ptr [0x01c38b74]      ; 0055d74b | g_INT_01c38b74
     MOVD MM0,EAX                        ; 0055d751
     MOVD MM1,ECX                        ; 0055d754
     MOVD MM2,EDX                        ; 0055d757
-    IMUL dword ptr [0x01c38b9c]         ; 0055d75a | DAT_01c38b9c
+    IMUL dword ptr [0x01c38b9c]         ; 0055d75a | g_INT_01c38b9c
     MOV EBX,EAX                         ; 0055d760
     MOV ECX,EDX                         ; 0055d762
     MOVD EAX,MM1                        ; 0055d764
-    IMUL dword ptr [0x01c38ba8]         ; 0055d767 | DAT_01c38ba8
+    IMUL dword ptr [0x01c38ba8]         ; 0055d767 | g_INT_01c38ba8
     ADD EBX,EAX                         ; 0055d76d
     ADC ECX,EDX                         ; 0055d76f
     MOVD EAX,MM2                        ; 0055d771
-    IMUL dword ptr [0x01c38bb4]         ; 0055d774 | DAT_01c38bb4
+    IMUL dword ptr [0x01c38bb4]         ; 0055d774 | g_INT_01c38bb4
     ADD EAX,EBX                         ; 0055d77a
     ADC EDX,ECX                         ; 0055d77c
     SHRD EAX,EDX,0x10                   ; 0055d77e
     MOVD MM4,EAX                        ; 0055d782
     MOVD EAX,MM0                        ; 0055d785
-    IMUL dword ptr [0x01c38ba0]         ; 0055d788 | DAT_01c38ba0
+    IMUL dword ptr [0x01c38ba0]         ; 0055d788 | g_INT_01c38ba0
     MOV EBX,EAX                         ; 0055d78e
     MOV ECX,EDX                         ; 0055d790
     MOVD EAX,MM1                        ; 0055d792
-    IMUL dword ptr [0x01c38bac]         ; 0055d795 | DAT_01c38bac
+    IMUL dword ptr [0x01c38bac]         ; 0055d795 | g_INT_01c38bac
     ADD EBX,EAX                         ; 0055d79b
     ADC ECX,EDX                         ; 0055d79d
     MOVD EAX,MM2                        ; 0055d79f
-    IMUL dword ptr [0x01c38bb8]         ; 0055d7a2 | DAT_01c38bb8
+    IMUL dword ptr [0x01c38bb8]         ; 0055d7a2 | g_INT_01c38bb8
     ADD EAX,EBX                         ; 0055d7a8
     ADC EDX,ECX                         ; 0055d7aa
     SHRD EAX,EDX,0x10                   ; 0055d7ac
     MOVD MM5,EAX                        ; 0055d7b0
     MOVD EAX,MM0                        ; 0055d7b3
-    IMUL dword ptr [0x01c38ba4]         ; 0055d7b6 | DAT_01c38ba4
+    IMUL dword ptr [0x01c38ba4]         ; 0055d7b6 | g_INT_01c38ba4
     MOV EBX,EAX                         ; 0055d7bc
     MOV ECX,EDX                         ; 0055d7be
     MOVD EAX,MM1                        ; 0055d7c0
-    IMUL dword ptr [0x01c38bb0]         ; 0055d7c3 | DAT_01c38bb0
+    IMUL dword ptr [0x01c38bb0]         ; 0055d7c3 | g_INT_01c38bb0
     ADD EBX,EAX                         ; 0055d7c9
     ADC ECX,EDX                         ; 0055d7cb
     MOVD EAX,MM2                        ; 0055d7cd
-    IMUL dword ptr [0x01c38bbc]         ; 0055d7d0 | DAT_01c38bbc
+    IMUL dword ptr [0x01c38bbc]         ; 0055d7d0 | g_INT_01c38bbc
     ADD EAX,EBX                         ; 0055d7d6
     ADC EDX,ECX                         ; 0055d7d8
     SHRD EAX,EDX,0x10                   ; 0055d7da
@@ -140,14 +140,14 @@ section .text
     IDIV ECX                            ; 0055d83b
     MOV dword ptr [EBX + 0xc],EAX       ; 0055d83d
     MOVD EAX,MM4                        ; 0055d840
-    IMUL dword ptr [0x01c35e38]         ; 0055d843 | DAT_01c35e38
+    IMUL dword ptr [0x01c35e38]         ; 0055d843 | g_INT_01c35e38
     IDIV ECX                            ; 0055d849
-    ADD EAX,dword ptr [0x01c35e40]      ; 0055d84b | DAT_01c35e40
+    ADD EAX,dword ptr [0x01c35e40]      ; 0055d84b | g_INT_01c35e40
     MOV dword ptr [EBX + 0x10],EAX      ; 0055d851
     MOVD EAX,MM5                        ; 0055d854
-    IMUL dword ptr [0x01c35e3c]         ; 0055d857 | DAT_01c35e3c
+    IMUL dword ptr [0x01c35e3c]         ; 0055d857 | g_INT_01c35e3c
     IDIV ECX                            ; 0055d85d
-    ADD EAX,dword ptr [0x01c35e44]      ; 0055d85f | DAT_01c35e44
+    ADD EAX,dword ptr [0x01c35e44]      ; 0055d85f | g_INT_01c35e44
     MOV dword ptr [EBX + 0x14],EAX      ; 0055d865
     EMMS                                ; 0055d868
     RET                                 ; 0055d86a
@@ -163,58 +163,58 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 0055d87b
     MOV EBX,dword ptr [ESI + 0x4]       ; 0055d87d
     MOV ECX,dword ptr [ESI + 0x8]       ; 0055d880
-    SUB EAX,dword ptr [0x01c38b6c]      ; 0055d883 | DAT_01c38b6c
-    SUB EBX,dword ptr [0x01c38b70]      ; 0055d889 | DAT_01c38b70
-    SUB ECX,dword ptr [0x01c38b74]      ; 0055d88f | DAT_01c38b74
-    MOV [0x0061c7d8],EAX                ; 0055d895 | DAT_0061c7d8
-    MOV dword ptr [0x0061c7dc],EBX      ; 0055d89a | DAT_0061c7dc
-    MOV dword ptr [0x0061c7e0],ECX      ; 0055d8a0 | DAT_0061c7e0
-    IMUL dword ptr [0x01c38b9c]         ; 0055d8a6 | DAT_01c38b9c
+    SUB EAX,dword ptr [0x01c38b6c]      ; 0055d883 | g_INT_01c38b6c
+    SUB EBX,dword ptr [0x01c38b70]      ; 0055d889 | g_INT_01c38b70
+    SUB ECX,dword ptr [0x01c38b74]      ; 0055d88f | g_INT_01c38b74
+    MOV [0x0061c7d8],EAX                ; 0055d895 | g_INT_0061c7d8
+    MOV dword ptr [0x0061c7dc],EBX      ; 0055d89a | g_INT_0061c7dc
+    MOV dword ptr [0x0061c7e0],ECX      ; 0055d8a0 | g_INT_0061c7e0
+    IMUL dword ptr [0x01c38b9c]         ; 0055d8a6 | g_INT_01c38b9c
     MOV EBX,EAX                         ; 0055d8ac
     MOV ECX,EDX                         ; 0055d8ae
-    MOV EAX,[0x0061c7dc]                ; 0055d8b0 | DAT_0061c7dc
-    IMUL dword ptr [0x01c38ba8]         ; 0055d8b5 | DAT_01c38ba8
+    MOV EAX,[0x0061c7dc]                ; 0055d8b0 | g_INT_0061c7dc
+    IMUL dword ptr [0x01c38ba8]         ; 0055d8b5 | g_INT_01c38ba8
     ADD EBX,EAX                         ; 0055d8bb
     ADC ECX,EDX                         ; 0055d8bd
-    MOV EAX,[0x0061c7e0]                ; 0055d8bf | DAT_0061c7e0
-    IMUL dword ptr [0x01c38bb4]         ; 0055d8c4 | DAT_01c38bb4
+    MOV EAX,[0x0061c7e0]                ; 0055d8bf | g_INT_0061c7e0
+    IMUL dword ptr [0x01c38bb4]         ; 0055d8c4 | g_INT_01c38bb4
     ADD EAX,EBX                         ; 0055d8ca
     ADC EDX,ECX                         ; 0055d8cc
     SHRD EAX,EDX,0x10                   ; 0055d8ce
-    MOV [0x0061c7e8],EAX                ; 0055d8d2 | DAT_0061c7e8
-    MOV EAX,[0x0061c7d8]                ; 0055d8d7 | DAT_0061c7d8
-    IMUL dword ptr [0x01c38ba0]         ; 0055d8dc | DAT_01c38ba0
+    MOV [0x0061c7e8],EAX                ; 0055d8d2 | g_INT_0061c7e8
+    MOV EAX,[0x0061c7d8]                ; 0055d8d7 | g_INT_0061c7d8
+    IMUL dword ptr [0x01c38ba0]         ; 0055d8dc | g_INT_01c38ba0
     MOV EBX,EAX                         ; 0055d8e2
     MOV ECX,EDX                         ; 0055d8e4
-    MOV EAX,[0x0061c7dc]                ; 0055d8e6 | DAT_0061c7dc
-    IMUL dword ptr [0x01c38bac]         ; 0055d8eb | DAT_01c38bac
+    MOV EAX,[0x0061c7dc]                ; 0055d8e6 | g_INT_0061c7dc
+    IMUL dword ptr [0x01c38bac]         ; 0055d8eb | g_INT_01c38bac
     ADD EBX,EAX                         ; 0055d8f1
     ADC ECX,EDX                         ; 0055d8f3
-    MOV EAX,[0x0061c7e0]                ; 0055d8f5 | DAT_0061c7e0
-    IMUL dword ptr [0x01c38bb8]         ; 0055d8fa | DAT_01c38bb8
+    MOV EAX,[0x0061c7e0]                ; 0055d8f5 | g_INT_0061c7e0
+    IMUL dword ptr [0x01c38bb8]         ; 0055d8fa | g_INT_01c38bb8
     ADD EAX,EBX                         ; 0055d900
     ADC EDX,ECX                         ; 0055d902
     SHRD EAX,EDX,0x10                   ; 0055d904
-    MOV [0x0061c7ec],EAX                ; 0055d908 | DAT_0061c7ec
-    MOV EAX,[0x0061c7d8]                ; 0055d90d | DAT_0061c7d8
-    IMUL dword ptr [0x01c38ba4]         ; 0055d912 | DAT_01c38ba4
+    MOV [0x0061c7ec],EAX                ; 0055d908 | g_INT_0061c7ec
+    MOV EAX,[0x0061c7d8]                ; 0055d90d | g_INT_0061c7d8
+    IMUL dword ptr [0x01c38ba4]         ; 0055d912 | g_INT_01c38ba4
     MOV EBX,EAX                         ; 0055d918
     MOV ECX,EDX                         ; 0055d91a
-    MOV EAX,[0x0061c7dc]                ; 0055d91c | DAT_0061c7dc
-    IMUL dword ptr [0x01c38bb0]         ; 0055d921 | DAT_01c38bb0
+    MOV EAX,[0x0061c7dc]                ; 0055d91c | g_INT_0061c7dc
+    IMUL dword ptr [0x01c38bb0]         ; 0055d921 | g_INT_01c38bb0
     ADD EBX,EAX                         ; 0055d927
     ADC ECX,EDX                         ; 0055d929
-    MOV EAX,[0x0061c7e0]                ; 0055d92b | DAT_0061c7e0
-    IMUL dword ptr [0x01c38bbc]         ; 0055d930 | DAT_01c38bbc
+    MOV EAX,[0x0061c7e0]                ; 0055d92b | g_INT_0061c7e0
+    IMUL dword ptr [0x01c38bbc]         ; 0055d930 | g_INT_01c38bbc
     ADD EAX,EBX                         ; 0055d936
     ADC EDX,ECX                         ; 0055d938
     SHRD EAX,EDX,0x10                   ; 0055d93a
-    MOV [0x0061c7f0],EAX                ; 0055d93e | DAT_0061c7f0
+    MOV [0x0061c7f0],EAX                ; 0055d93e | g_INT_0061c7f0
     NEG EAX                             ; 0055d943
     MOV EDX,EAX                         ; 0055d945
     XOR EAX,EAX                         ; 0055d947
-    MOV EBX,dword ptr [0x0061c7e8]      ; 0055d949 | DAT_0061c7e8
-    MOV ECX,dword ptr [0x0061c7f0]      ; 0055d94f | DAT_0061c7f0
+    MOV EBX,dword ptr [0x0061c7e8]      ; 0055d949 | g_INT_0061c7e8
+    MOV ECX,dword ptr [0x0061c7f0]      ; 0055d94f | g_INT_0061c7f0
     CMP EBX,ECX                         ; 0055d955
     JLE 0x0055d95e                      ; 0055d957
         ;   XREF to: 0055d95e (CONDITIONAL_JUMP)  ; LAB_0055d95e
@@ -224,7 +224,7 @@ section .text
     JGE 0x0055d967                      ; 0055d960
         ;   XREF to: 0055d967 (CONDITIONAL_JUMP)  ; LAB_0055d967
     OR EAX,0x80000002                   ; 0055d962
-    MOV EBX,dword ptr [0x0061c7ec]      ; 0055d967 | DAT_0061c7ec
+    MOV EBX,dword ptr [0x0061c7ec]      ; 0055d967 | g_INT_0061c7ec
         ;   Label: LAB_0055d967
     CMP EBX,ECX                         ; 0055d96d
     JLE 0x0055d976                      ; 0055d96f
@@ -244,7 +244,7 @@ section .text
         ;   Label: LAB_0055d989
     JNZ 0x0055d9d8                      ; 0055d98e
         ;   XREF to: 0055d9d8 (CONDITIONAL_JUMP)  ; LAB_0055d9d8
-    MOV EAX,[0x0061c7e8]                ; 0055d990 | DAT_0061c7e8
+    MOV EAX,[0x0061c7e8]                ; 0055d990 | g_INT_0061c7e8
     MOV dword ptr [EDI],EAX             ; 0055d995
     MOV dword ptr [EDI + 0x4],EBX       ; 0055d997
     MOV dword ptr [EDI + 0x8],ECX       ; 0055d99a
@@ -252,20 +252,20 @@ section .text
     XOR EDX,EDX                         ; 0055d9a2
     IDIV ECX                            ; 0055d9a4
     MOV dword ptr [EDI + 0xc],EAX       ; 0055d9a6
-    MOV EAX,[0x0061c7e8]                ; 0055d9a9 | DAT_0061c7e8
-    IMUL dword ptr [0x01c35e38]         ; 0055d9ae | DAT_01c35e38
+    MOV EAX,[0x0061c7e8]                ; 0055d9a9 | g_INT_0061c7e8
+    IMUL dword ptr [0x01c35e38]         ; 0055d9ae | g_INT_01c35e38
     IDIV ECX                            ; 0055d9b4
-    ADD EAX,dword ptr [0x01c35e40]      ; 0055d9b6 | DAT_01c35e40
+    ADD EAX,dword ptr [0x01c35e40]      ; 0055d9b6 | g_INT_01c35e40
     MOV dword ptr [EDI + 0x10],EAX      ; 0055d9bc
-    MOV EAX,[0x0061c7ec]                ; 0055d9bf | DAT_0061c7ec
-    IMUL dword ptr [0x01c35e3c]         ; 0055d9c4 | DAT_01c35e3c
+    MOV EAX,[0x0061c7ec]                ; 0055d9bf | g_INT_0061c7ec
+    IMUL dword ptr [0x01c35e3c]         ; 0055d9c4 | g_INT_01c35e3c
     IDIV ECX                            ; 0055d9ca
-    ADD EAX,dword ptr [0x01c35e44]      ; 0055d9cc | DAT_01c35e44
+    ADD EAX,dword ptr [0x01c35e44]      ; 0055d9cc | g_INT_01c35e44
     MOV dword ptr [EDI + 0x14],EAX      ; 0055d9d2
     POP EDI                             ; 0055d9d5
     POP ESI                             ; 0055d9d6
     RET                                 ; 0055d9d7
-    MOV EDX,dword ptr [0x0061c7e8]      ; 0055d9d8 | DAT_0061c7e8
+    MOV EDX,dword ptr [0x0061c7e8]      ; 0055d9d8 | g_INT_0061c7e8
         ;   Label: LAB_0055d9d8
     MOV dword ptr [EDI],EDX             ; 0055d9de
     MOV dword ptr [EDI + 0x4],EBX       ; 0055d9e0

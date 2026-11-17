@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr,float delta_time)
 
 {
@@ -158,8 +156,8 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
           afStack_54[0] = afStack_54[0] * afStack_54[0] * afStack_54[0] * afStack_54[0];
           fStack_224 = SQRT(afStack_54[1] * afStack_54[1] +
                             fStack_58 * fStack_58 + afStack_54[0] * afStack_54[0]);
-          if (((float)_DAT_005ef2aa <= fStack_224) &&
-             (fStack_224 <= this_ptr->pickup_range_factor * _DAT_005ef2ba)) {
+          if (((float)5 <= fStack_224) &&
+             (fStack_224 <= this_ptr->pickup_range_factor * 15.0f)) {
             *(CZombie **)(&stack0xfffffde4 + unaff_ESI) = this_ptr_00;
             *(int *)((int)aiStack_1f4 + unaff_ESI) = local_20;
             unaff_ESI = unaff_ESI + 4;
@@ -186,7 +184,7 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
   pCVar3 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
   if (pCVar3 != (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_00436710
-              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
+              (g_CConsolePtr,"%s can't pick up %s, sombody else beat me to it!\n");
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 0.0;
     core_zombie_cpp_CZombie_resetChaseState_FUN_00599d00(this_ptr);
@@ -195,7 +193,8 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
   fVar10 = (pCVar6->position).x - (this_ptr->pickup_target->location).position.x;
   fVar2 = (this_ptr->base).base.base.location.position.z -
           (this_ptr->pickup_target->location).position.z;
-  fVar10 = (float)_DAT_005ef2aa - SQRT(fVar2 * fVar2 + fVar10 * fVar10) * (float)_DAT_005ef2a2;
+  fVar10 = (float)5 -
+           SQRT(fVar2 * fVar2 + fVar10 * fVar10) * (float)0.33333333333333298;
   if (fVar10 < 1.0) {
     fVar10 = 1.0;
   }
@@ -235,7 +234,7 @@ LAB_0059874f:
         afStack_54[(uint)bVar9 * -2 + 3] = *(float *)((int)&CStack_40 + (uint)bVar9 * -8 + 4);
         afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
              *(float *)((int)&CStack_40 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-        fStack_44 = CStack_1cc.z + (float)_DAT_005ef2b2;
+        fStack_44 = CStack_1cc.z + (float)0.40000000000000002;
         CStack_e8.x = afStack_54[2];
         *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + 4) = afStack_54[(uint)bVar9 * -2 + 3];
         *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -289,7 +288,7 @@ LAB_00598ad6:
       afStack_90[(uint)bVar9 * -2] = *(float *)((int)&CStack_130 + (uint)bVar9 * -8 + 4);
       afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
            *(float *)((int)&CStack_130 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      afStack_90[1] = CStack_19c.z + (float)_DAT_005ef2b2;
+      afStack_90[1] = CStack_19c.z + (float)0.40000000000000002;
       CStack_118.x = fStack_94;
       *(float *)((int)&CStack_118 + (uint)bVar9 * -8 + 4) = afStack_90[(uint)bVar9 * -2];
       *(float *)((int)&CStack_118 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -307,11 +306,11 @@ LAB_00598ad6:
       }
     }
     puVar7 = local_24;
-    CStack_ac.x = _DAT_0265370c;
+    CStack_ac.x = g_CVector3f_0265370c.x;
     *(uint *)((int)&CStack_ac + (uint)bVar9 * -8 + 4) =
-         *(uint *)(&DAT_02653710 + (uint)bVar9 * -8);
+         *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);
     *(uint *)((int)&CStack_ac + ((uint)bVar9 * -2 + (uint)bVar9 * -2) * 4 + 8) =
-         *(uint *)(&DAT_02653714 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+         *(uint *)((uint)bVar9 * -8 + 0x2653714 + (uint)bVar9 * -8);
     if (puVar7 == (uint *)0x0) {
       CStack_10c.y = (float)puVar7;
       CStack_10c.z = (float)puVar7;
@@ -351,8 +350,8 @@ LAB_00598ad6:
   if (uVar1 < 2) {
     if (uVar1 != 1) {
 LAB_00598bba:
-      _DAT_01d046a0 = "..\\core\\zombie.cpp";
-      _DAT_01d046a4 = 0x5d1;
+      g_CHAR_PTR_01d046a0 = "..\\core\\zombie.cpp";
+      g_INT_01d046a4 = 0x5d1;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid zombie object shape!");
       return 1;
     }

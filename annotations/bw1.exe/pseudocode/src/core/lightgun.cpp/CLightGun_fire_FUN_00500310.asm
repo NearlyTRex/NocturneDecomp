@@ -16,11 +16,11 @@
 ;   TerminatedCString s_shotgun_noammo_wav_005e6e9a
 ;   TerminatedCString s_s_in_volume_005e6ead
 ;   TerminatedCString s_cre_fire_wav_005e6ebb
-;   undefined4 DAT_005e6eca
-;   undefined4 DAT_005e6ece
-;   undefined4 DAT_005e6ed2
-;   undefined4 DAT_00603010
-;   undefined4 DAT_00603018
+;   float g_FLOAT_005e6eca = -4
+;   float g_FLOAT_005e6ece = 0.5
+;   double g_DOUBLE_005e6ed2 = 4
+;   float g_FLOAT_00603010 = 2
+;   float g_FLOAT_00603018 = 2
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   ... and 11 more
 ;
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 0050034c (CONDITIONAL_JUMP)  ; LAB_0050034c
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050032f
     FLD float ptr [EAX + 0x580]         ; 00500332
-    FCOMP float ptr [0x00603010]        ; 00500338 | DAT_00603010
+    FCOMP float ptr [0x00603010]        ; 00500338 | g_FLOAT_00603010
     FNSTSW AX                           ; 0050033e
     SAHF                                ; 00500340
     JNC 0x00500376                      ; 00500341
@@ -77,7 +77,7 @@ section .text
     POP ESI                             ; 00500349
     POP EBX                             ; 0050034a
     RET                                 ; 0050034b
-    MOV EAX,[0x01d06ab4]                ; 0050034c | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0050034c | g_INT_01d06ab4
         ;   Label: LAB_0050034c
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 00500351
     ADD EAX,0x20                        ; 00500358
@@ -85,7 +85,7 @@ section .text
     PUSH 0x5e6e9a                       ; 0050035c | = "shotgun-noammo.wav"
     MOV ECX,dword ptr [EBP + 0x14]      ; 00500361
     PUSH ECX                            ; 00500364
-    MOV EBX,dword ptr [0x006236b8]      ; 00500365 | DAT_006236b8
+    MOV EBX,dword ptr [0x006236b8]      ; 00500365 | g_CSound_PTR_006236b8
     PUSH EBX                            ; 0050036b
     CALL core_sound.cpp_CSound_playActorSound_FUN_0057d8a0 ; 0050036c
         ;   XREF to: 0057d8a0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0057d8a0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -113,7 +113,7 @@ section .text
     FLD float ptr [ESP + 0x168]         ; 005003c2
     MOV EDI,dword ptr [EBP + 0x14]      ; 005003c9
     LEA ESI,[ESP + 0xe8]                ; 005003cc
-    FADD float ptr [0x005e6eca]         ; 005003d3 | DAT_005e6eca
+    FADD float ptr [0x005e6eca]         ; 005003d3 | g_FLOAT_005e6eca
     PUSH EDI                            ; 005003d9
     FSTP float ptr [ESP + 0x16c]        ; 005003da
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005003e1
@@ -359,7 +359,7 @@ section .text
         ;   XREF to: 00500575 (CONDITIONAL_JUMP)  ; LAB_00500575
     MOV EAX,dword ptr [EBP + 0x14]      ; 00500727
     MOV ECX,dword ptr [0x00622c18]      ; 0050072a | g_CDemonSetPtr
-    FLD float ptr [0x00603010]          ; 00500730 | DAT_00603010
+    FLD float ptr [0x00603010]          ; 00500730 | g_FLOAT_00603010
     PUSH ECX                            ; 00500736 | g_CDemonSetInstance
     FSTP float ptr [EAX + 0x580]        ; 00500737
     CALL core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00559060 ; 0050073d
@@ -479,7 +479,7 @@ section .text
     PUSH EDI                            ; 00500880 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00500881
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
-    MOV EDX,dword ptr [0x01d06ab4]      ; 00500886 | DAT_01d06ab4
+    MOV EDX,dword ptr [0x01d06ab4]      ; 00500886 | g_INT_01d06ab4
     MOV EDX,dword ptr [EDX*0x4 + 0x1d06aa4] ; 0050088c
     LEA ESI,[ESP + 0x15c]               ; 00500893
     LEA EAX,[EDX + 0x20]                ; 0050089a
@@ -511,7 +511,7 @@ section .text
     FMUL ST0                            ; 005008f4
     FADDP                               ; 005008f6
     FSQRT                               ; 005008f8
-    FCOMP double ptr [0x005e6ed2]       ; 005008fa | DAT_005e6ed2
+    FCOMP double ptr [0x005e6ed2]       ; 005008fa | g_DOUBLE_005e6ed2
     FNSTSW AX                           ; 00500900
     SAHF                                ; 00500902
     JC 0x00500baf                       ; 00500903
@@ -564,7 +564,7 @@ section .text
     CALL core_actor.cpp_CVector3f_ctor_FUN_0040cfe0 ; 005009d1
         ;   XREF to: 0040cfe0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040cfe0(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 005009d6
-    FLD float ptr [0x005e6ece]          ; 005009d9 | DAT_005e6ece
+    FLD float ptr [0x005e6ece]          ; 005009d9 | g_FLOAT_005e6ece
     FLD float ptr [ESP + 0x1bc]         ; 005009df
     FMUL ST1                            ; 005009e6
     FLD float ptr [ESP + 0x1c0]         ; 005009e8
@@ -795,17 +795,17 @@ section .text
     PUSH 0x5e6ebb                       ; 00500cc3 | = "cre-fire.wav"
     MOV EBX,dword ptr [EBP + 0x14]      ; 00500cc8
     PUSH EBX                            ; 00500ccb
-    MOV ESI,dword ptr [0x006236b8]      ; 00500ccc | DAT_006236b8
+    MOV ESI,dword ptr [0x006236b8]      ; 00500ccc | g_CSound_PTR_006236b8
     PUSH ESI                            ; 00500cd2
     CALL core_sound.cpp_CSound_playActorSound_FUN_0057d8a0 ; 00500cd3
         ;   XREF to: 0057d8a0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0057d8a0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 00500cd8
     MOV EDI,dword ptr [EBX + 0x57c]     ; 00500cdb
-    PUSH dword ptr [0x00603018]         ; 00500ce1 | DAT_00603018
+    PUSH dword ptr [0x00603018]         ; 00500ce1 | g_FLOAT_00603018
     PUSH EDI                            ; 00500ce7
     CALL sound_sndmain.cpp_setSfxVolume_FUN_00573950 ; 00500ce8
         ;   XREF to: 00573950 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00573950(uint sfx_handle, float volume)
-    FLD float ptr [0x00603010]          ; 00500ced | DAT_00603010
+    FLD float ptr [0x00603010]          ; 00500ced | g_FLOAT_00603010
     MOV dword ptr [EBX + 0x578],0x1     ; 00500cf3
     MOV EAX,0x1                         ; 00500cfd
     MOV dword ptr [EBX + 0x588],0x1     ; 00500d02

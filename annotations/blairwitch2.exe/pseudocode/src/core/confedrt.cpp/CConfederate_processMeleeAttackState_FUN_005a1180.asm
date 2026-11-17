@@ -11,9 +11,9 @@
 ;   core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20 at 005a0bb9
 ;
 ; Referenced Globals:
-;   undefined4 s_BChasing_005efcc2+1
-;   undefined4 DAT_005efccf
-;   undefined4 DAT_005fedb4
+;   TerminatedCString s_Chasing_005efcc3
+;   double g_DOUBLE_005efccf = 0.900000000000000
+;   float g_FLOAT_005fedb4 = 7
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -52,7 +52,7 @@ section .text
     FADDP                               ; 005a11ba
     FSQRT                               ; 005a11bc
     ADD ESI,0x20                        ; 005a11be
-    FCOMP float ptr [0x005fedb4]        ; 005a11c1 | DAT_005fedb4
+    FCOMP float ptr [0x005fedb4]        ; 005a11c1 | g_FLOAT_005fedb4
     FNSTSW AX                           ; 005a11c7
     SAHF                                ; 005a11c9
     JA 0x005a1261                       ; 005a11ca
@@ -92,7 +92,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 005a121b
     FLD float ptr [ESP + 0xc]           ; 005a121f
     ADD ESP,0x4                         ; 005a1223
-    FCOMP double ptr [0x005efccf]       ; 005a1226 | DAT_005efccf
+    FCOMP double ptr [0x005efccf]       ; 005a1226 | g_DOUBLE_005efccf
     FNSTSW AX                           ; 005a122c
     SAHF                                ; 005a122e
     JBE 0x005a1243                      ; 005a122f
@@ -126,7 +126,7 @@ section .text
     CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005a126d
         ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(SStateMachine * this_ptr, float delay)
     ADD ESP,0x8                         ; 005a1272
-    PUSH 0x5efcc3                       ; 005a1275 | s_BChasing_005efcc2+1
+    PUSH 0x5efcc3                       ; 005a1275 | = "Chasing"
     PUSH EBX                            ; 005a127a
     CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a127b
         ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
@@ -144,7 +144,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 005a1295
     FLD float ptr [ESP + 0xc]           ; 005a1299
     ADD ESP,0x4                         ; 005a129d
-    FCOMP double ptr [0x005efccf]       ; 005a12a0 | DAT_005efccf
+    FCOMP double ptr [0x005efccf]       ; 005a12a0 | g_DOUBLE_005efccf
     FNSTSW AX                           ; 005a12a6
     SAHF                                ; 005a12a8
     JBE 0x005a125a                      ; 005a12a9

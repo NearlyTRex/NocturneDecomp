@@ -27,15 +27,15 @@
 ;   core_scat.cpp_CScat_process_FUN_00540df0 at 005411c4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005edec7
-;   undefined4 DAT_005edecf
-;   undefined4 DAT_005eded7
-;   undefined4 DAT_005ededb
-;   undefined4 DAT_005ededf
-;   undefined4 DAT_005edee7
+;   float g_FLOAT_005edec7 = 3.141593
+;   double g_DOUBLE_005edecf = 2
+;   float g_FLOAT_005eded7 = -1.570796
+;   float g_FLOAT_005ededb = 0.5
+;   double g_DOUBLE_005ededf = 1.5
+;   double g_DOUBLE_005edee7 = 0.0200000000000000
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01e7e02c
+;   undefined4 g_INT_ARRAY_01e7e014[6]
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -125,8 +125,8 @@ section .text
     FLD float ptr [ESP + 0x194]         ; 005425ef
     ADD ESP,0x4                         ; 005425f6
     FLD float ptr [EBP + 0x18]          ; 005425f9
-    FMUL float ptr [0x005edec7]         ; 005425fc | DAT_005edec7
-    FMUL double ptr [0x005ededf]        ; 00542602 | DAT_005ededf
+    FMUL float ptr [0x005edec7]         ; 005425fc | g_FLOAT_005edec7
+    FMUL double ptr [0x005ededf]        ; 00542602 | g_DOUBLE_005ededf
     FLD float ptr [ESP + 0x17c]         ; 00542608
     FXCH ST2                            ; 0054260f
     FSTP float ptr [ESP + 0x178]        ; 00542611
@@ -212,8 +212,8 @@ section .text
     JZ 0x00542543                       ; 0054272a
         ;   XREF to: 00542543 (CONDITIONAL_JUMP)  ; LAB_00542543
     FLD float ptr [EAX + 0xc204]        ; 00542730
-    FMUL float ptr [0x005edec7]         ; 00542736 | DAT_005edec7
-    FMUL double ptr [0x005edecf]        ; 0054273c | DAT_005edecf
+    FMUL float ptr [0x005edec7]         ; 00542736 | g_FLOAT_005edec7
+    FMUL double ptr [0x005edecf]        ; 0054273c | g_DOUBLE_005edecf
     FMUL float ptr [EBP + 0x18]         ; 00542742
     MOV EDI,0x3fc90fdb                  ; 00542745
     FLD float ptr [ESP]                 ; 0054274a
@@ -222,7 +222,7 @@ section .text
     MOV dword ptr [ESP + 0x174],EDI     ; 00542751
     FSTP ST1                            ; 00542758
     FST float ptr [ESP]                 ; 0054275a
-    FCOMP float ptr [0x005eded7]        ; 0054275d | DAT_005eded7
+    FCOMP float ptr [0x005eded7]        ; 0054275d | g_FLOAT_005eded7
     FNSTSW AX                           ; 00542763
     SAHF                                ; 00542765
     JNC 0x0054276f                      ; 00542766
@@ -366,7 +366,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00542920
     MOVSD ES:EDI,ESI                    ; 00542921
     MOVSD ES:EDI,ESI                    ; 00542922
-    MOV EDI,dword ptr [0x01e7e02c]      ; 00542923 | DAT_01e7e02c
+    MOV EDI,dword ptr [0x01e7e02c]      ; 00542923 | g_INT_ARRAY_01e7e014[6]
     MOV EAX,dword ptr [EBP + 0x14]      ; 00542929
     PUSH EDI                            ; 0054292c
     ADD EAX,0x158                       ; 0054292d
@@ -448,7 +448,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00542a76
     MOVSD ES:EDI,ESI                    ; 00542a77
     MOVSD ES:EDI,ESI                    ; 00542a78
-    FLD float ptr [0x005ededb]          ; 00542a79 | DAT_005ededb
+    FLD float ptr [0x005ededb]          ; 00542a79 | g_FLOAT_005ededb
     FLD float ptr [ESP + 0x110]         ; 00542a7f
     FMUL ST1                            ; 00542a86
     FLD float ptr [ESP + 0x114]         ; 00542a88
@@ -487,7 +487,7 @@ section .text
     FLD float ptr [ESP + 0x194]         ; 00542b1f
     FABS                                ; 00542b26
     ADD ESP,0x4                         ; 00542b28
-    FCOMP double ptr [0x005edee7]       ; 00542b2b | DAT_005edee7
+    FCOMP double ptr [0x005edee7]       ; 00542b2b | g_DOUBLE_005edee7
     FNSTSW AX                           ; 00542b31
     SAHF                                ; 00542b33
     JNC 0x00542b4a                      ; 00542b34
@@ -513,7 +513,7 @@ section .text
     FLD float ptr [ESP + 0x194]         ; 00542b6c
     FABS                                ; 00542b73
     ADD ESP,0x4                         ; 00542b75
-    FCOMP double ptr [0x005edee7]       ; 00542b78 | DAT_005edee7
+    FCOMP double ptr [0x005edee7]       ; 00542b78 | g_DOUBLE_005edee7
     FNSTSW AX                           ; 00542b7e
     SAHF                                ; 00542b80
     JC 0x00542b36                       ; 00542b81

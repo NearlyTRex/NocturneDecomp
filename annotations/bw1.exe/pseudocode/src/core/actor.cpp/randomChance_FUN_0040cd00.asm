@@ -23,8 +23,8 @@
 ;   ... and 49 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2eb1
-;   undefined4 DAT_005d2eb5
+;   float g_FLOAT_005d2eb1 = 0.00003051851
+;   float g_FLOAT_005d2eb5 = 5.960465E-8
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.is_processing
 ;
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 0040cb90 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040cb90()
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd16
     FILD dword ptr [ESP + 0x4]          ; 0040cd1a
-    FMUL float ptr [0x005d2eb5]         ; 0040cd1e | DAT_005d2eb5
+    FMUL float ptr [0x005d2eb5]         ; 0040cd1e | g_FLOAT_005d2eb5
     FSTP float ptr [ESP]                ; 0040cd24
         ;   Label: LAB_0040cd24
     FLD float ptr [ESP]                 ; 0040cd27
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_0040cd3d
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd42
     FILD dword ptr [ESP + 0x4]          ; 0040cd46
-    FMUL float ptr [0x005d2eb1]         ; 0040cd4a | DAT_005d2eb1
+    FMUL float ptr [0x005d2eb1]         ; 0040cd4a | g_FLOAT_005d2eb1
     JMP 0x0040cd24                      ; 0040cd50
         ;   XREF to: 0040cd24 (UNCONDITIONAL_JUMP)  ; LAB_0040cd24
 

@@ -14,7 +14,7 @@ void __cdecl core_holycrss_cpp_CHolycross_playAttackHitEffects_FUN_004d5260(CHol
   pCVar1 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c840(victim,g_CCharacterClassInfo.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     (*((this_ptr->base).base.vtable._ub)->playSound)
-              ((CDemonActor *)this_ptr,"@@IMPCT-KICK1.WAV" + 2);
+              ((CDemonActor *)this_ptr,"IMPCT-KICK1.WAV");
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
               (g_CGorePtr,&(this_ptr->base).base.location.position,(CVector3f *)0x0,4,
                *(EBloodType *)(pCVar1[0x1d].create_event + 0x30));

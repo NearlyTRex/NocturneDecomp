@@ -23,7 +23,7 @@ void __cdecl core_scat_cpp_CScat_processDamage_FUN_0051fb40(CScat *this_ptr,SDam
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).invincibility_timer = 0x3F000000;
+  (this_ptr->base).invincibility_timer = 0.5f;
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
@@ -57,7 +57,7 @@ void __cdecl core_scat_cpp_CScat_processDamage_FUN_0051fb40(CScat *this_ptr,SDam
     }
   }
   (*((this_ptr->base).base.base.vtable._ub)->playSound)
-            ((CDemonActor *)this_ptr,"?scat-die-?.wav" + 1);
+            ((CDemonActor *)this_ptr,"scat-die-?.wav");
   core_charactr_cpp_CCharacter_processDamage_FUN_00427fb0((CCharacter *)this_ptr,damage_info);
   return;
 }

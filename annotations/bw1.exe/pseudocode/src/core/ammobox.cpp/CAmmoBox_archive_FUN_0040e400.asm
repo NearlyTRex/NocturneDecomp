@@ -11,7 +11,7 @@
 ;   TerminatedCString s_weaponClassName_005d3212
 ;   TerminatedCString s_ammoCount_005d3222
 ;   TerminatedCString s_ammoType_005d322c
-;   undefined4 DAT_005d3235
+;   TerminatedCString s_item_005d3235
 ;   TerminatedCString s_hasCollision_005d323a
 ;   TerminatedCString s_openSound_005d3247
 ;   int g_CAmmoBoxClassVersion = 0x4
@@ -85,7 +85,7 @@ section .text
         ;   XREF to: 0040e4b8 (CONDITIONAL_JUMP)  ; LAB_0040e4b8
     POP EBX                             ; 0040e4a0
     RET                                 ; 0040e4a1
-    PUSH 0x5d3235                       ; 0040e4a2 | DAT_005d3235
+    PUSH 0x5d3235                       ; 0040e4a2 | = "item"
         ;   Label: LAB_0040e4a2
     LEA EAX,[EBX + 0x320]               ; 0040e4a7
     PUSH EAX                            ; 0040e4ad

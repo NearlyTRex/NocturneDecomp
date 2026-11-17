@@ -10,9 +10,9 @@
 ;   core_ghoul.cpp_factoryFuncGhoul_FUN_004ddd30 at 004ddd43
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e3a51
-;   undefined4 DAT_006012d0
-;   undefined4 DAT_006012d4
+;   double g_DOUBLE_005e3a51 = 65536
+;   float g_FLOAT_006012d0 = 50
+;   float g_FLOAT_006012d4 = 100
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -48,7 +48,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004ddd9c
     FLD float ptr [ESP + 0x8]           ; 004ddda0
     ADD ESP,0x8                         ; 004ddda4
-    FMUL double ptr [0x005e3a51]        ; 004ddda7 | DAT_005e3a51
+    FMUL double ptr [0x005e3a51]        ; 004ddda7 | g_DOUBLE_005e3a51
     PUSH 0x41200000                     ; 004dddad
     PUSH 0x40800000                     ; 004dddb2
     CALL crt_math.c_round_FUN_005c03a0  ; 004dddb7
@@ -60,7 +60,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004dddd1
     MOV dword ptr [EBX + 0xc278],0xffffffff ; 004dddd5
     FLD float ptr [ESP + 0x8]           ; 004ddddf
-    FMUL double ptr [0x005e3a51]        ; 004ddde3 | DAT_005e3a51
+    FMUL double ptr [0x005e3a51]        ; 004ddde3 | g_DOUBLE_005e3a51
     MOV dword ptr [EBX + 0xc27c],0x0    ; 004ddde9
     ADD ESP,0x8                         ; 004dddf3
     MOV dword ptr [EBX + 0xc288],0x2    ; 004dddf6
@@ -78,9 +78,9 @@ section .text
     MOV dword ptr [EBX + 0xc2cc],0x0    ; 004dde3c
     MOV dword ptr [EBX + 0xc2d0],0x0    ; 004dde46
     MOV dword ptr [EBX + 0xc2d4],0x0    ; 004dde50
-    FLD float ptr [0x006012d0]          ; 004dde5a | DAT_006012d0
+    FLD float ptr [0x006012d0]          ; 004dde5a | g_FLOAT_006012d0
     MOV dword ptr [EBX + 0x252c],0x3fc90fdb ; 004dde60
-    FLD float ptr [0x006012d4]          ; 004dde6a | DAT_006012d4
+    FLD float ptr [0x006012d4]          ; 004dde6a | g_FLOAT_006012d4
     MOV dword ptr [EBX + 0xc284],EAX    ; 004dde70
     ADD ESP,0x8                         ; 004dde76
     FXCH                                ; 004dde79

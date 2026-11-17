@@ -8,19 +8,19 @@
 ;   core_main.c_finalizeGameSystems_FUN_00503a30 at 00503a97
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152d23c
-;   undefined4 DAT_0152d240
-;   undefined4 DAT_0152d244
-;   undefined4 DAT_0152d248
-;   undefined4 DAT_0152d24c
-;   undefined4 DAT_0152d250
-;   undefined4 DAT_0152d254
-;   undefined4 DAT_0152d258
-;   undefined4 DAT_0152d25c
-;   undefined4 DAT_0152d260
-;   undefined4 DAT_0152d264
-;   undefined4 DAT_01c3eb50
-;   undefined4 DAT_01d7f1b8
+;   CBitFont* g_CBitFont_PTR_0152d23c
+;   CBitFont* g_CBitFont_PTR_0152d240
+;   CBitFont* g_CBitFont_PTR_0152d244
+;   CBitFont* g_CBitFont_PTR_0152d248
+;   CBitFont* g_CBitFont_PTR_0152d24c
+;   CBitFont* g_CBitFont_PTR_0152d250
+;   CBitFont* g_CBitFont_PTR_0152d254
+;   CWinFont* g_CWinFont_PTR_0152d258
+;   CWinFont* g_CWinFont_PTR_0152d25c
+;   CWinFont* g_CWinFont_PTR_0152d260
+;   CWinFont* g_CWinFont_PTR_0152d264
+;   CBitFont* g_CBitFont_PTR_01c3eb50
+;   int g_INT_01d7f1b8
 ;
 ; Called Functions:
 ;   crt_unknown.c_debugFreeChecked_FUN_005c0344
@@ -35,14 +35,14 @@ section .text
     PUSH ESI                            ; 0045e7a1
     PUSH EDI                            ; 0045e7a2
     PUSH EBP                            ; 0045e7a3
-    MOV EDX,dword ptr [0x0152d23c]      ; 0045e7a4 | DAT_0152d23c
+    MOV EDX,dword ptr [0x0152d23c]      ; 0045e7a4 | g_CBitFont_PTR_0152d23c
     TEST EDX,EDX                        ; 0045e7aa
     JNZ 0x0045e925                      ; 0045e7ac
         ;   XREF to: 0045e925 (CONDITIONAL_JUMP)  ; LAB_0045e925
     XOR EBX,EBX                         ; 0045e7b2
         ;   Label: LAB_0045e7b2
-    MOV ESI,dword ptr [0x0152d240]      ; 0045e7b4 | DAT_0152d240
-    MOV dword ptr [0x0152d23c],EBX      ; 0045e7ba | DAT_0152d23c
+    MOV ESI,dword ptr [0x0152d240]      ; 0045e7b4 | g_CBitFont_PTR_0152d240
+    MOV dword ptr [0x0152d23c],EBX      ; 0045e7ba | g_CBitFont_PTR_0152d23c
     TEST ESI,ESI                        ; 0045e7c0
     JZ 0x0045e7d7                       ; 0045e7c2
         ;   XREF to: 0045e7d7 (CONDITIONAL_JUMP)  ; LAB_0045e7d7
@@ -57,8 +57,8 @@ section .text
     ADD ESP,0x4                         ; 0045e7d4
     XOR EBP,EBP                         ; 0045e7d7
         ;   Label: LAB_0045e7d7
-    MOV EAX,[0x0152d244]                ; 0045e7d9 | DAT_0152d244
-    MOV dword ptr [0x0152d240],EBP      ; 0045e7de | DAT_0152d240
+    MOV EAX,[0x0152d244]                ; 0045e7d9 | g_CBitFont_PTR_0152d244
+    MOV dword ptr [0x0152d240],EBP      ; 0045e7de | g_CBitFont_PTR_0152d240
     TEST EAX,EAX                        ; 0045e7e4
     JZ 0x0045e7fb                       ; 0045e7e6
         ;   XREF to: 0045e7fb (CONDITIONAL_JUMP)  ; LAB_0045e7fb
@@ -73,8 +73,8 @@ section .text
     ADD ESP,0x4                         ; 0045e7f8
     XOR ECX,ECX                         ; 0045e7fb
         ;   Label: LAB_0045e7fb
-    MOV EBX,dword ptr [0x0152d248]      ; 0045e7fd | DAT_0152d248
-    MOV dword ptr [0x0152d244],ECX      ; 0045e803 | DAT_0152d244
+    MOV EBX,dword ptr [0x0152d248]      ; 0045e7fd | g_CBitFont_PTR_0152d248
+    MOV dword ptr [0x0152d244],ECX      ; 0045e803 | g_CBitFont_PTR_0152d244
     TEST EBX,EBX                        ; 0045e809
     JZ 0x0045e820                       ; 0045e80b
         ;   XREF to: 0045e820 (CONDITIONAL_JUMP)  ; LAB_0045e820
@@ -89,8 +89,8 @@ section .text
     ADD ESP,0x4                         ; 0045e81d
     XOR EDI,EDI                         ; 0045e820
         ;   Label: LAB_0045e820
-    MOV EBP,dword ptr [0x0152d24c]      ; 0045e822 | DAT_0152d24c
-    MOV dword ptr [0x0152d248],EDI      ; 0045e828 | DAT_0152d248
+    MOV EBP,dword ptr [0x0152d24c]      ; 0045e822 | g_CBitFont_PTR_0152d24c
+    MOV dword ptr [0x0152d248],EDI      ; 0045e828 | g_CBitFont_PTR_0152d248
     TEST EBP,EBP                        ; 0045e82e
     JZ 0x0045e845                       ; 0045e830
         ;   XREF to: 0045e845 (CONDITIONAL_JUMP)  ; LAB_0045e845
@@ -105,9 +105,9 @@ section .text
     ADD ESP,0x4                         ; 0045e842
     XOR EDX,EDX                         ; 0045e845
         ;   Label: LAB_0045e845
-    MOV EBX,dword ptr [0x0152d250]      ; 0045e847 | DAT_0152d250
-    MOV dword ptr [0x01c3eb50],EDX      ; 0045e84d | DAT_01c3eb50
-    MOV dword ptr [0x0152d24c],EDX      ; 0045e853 | DAT_0152d24c
+    MOV EBX,dword ptr [0x0152d250]      ; 0045e847 | g_CBitFont_PTR_0152d250
+    MOV dword ptr [0x01c3eb50],EDX      ; 0045e84d | g_CBitFont_PTR_01c3eb50
+    MOV dword ptr [0x0152d24c],EDX      ; 0045e853 | g_CBitFont_PTR_0152d24c
     TEST EBX,EBX                        ; 0045e859
     JZ 0x0045e870                       ; 0045e85b
         ;   XREF to: 0045e870 (CONDITIONAL_JUMP)  ; LAB_0045e870
@@ -122,8 +122,8 @@ section .text
     ADD ESP,0x4                         ; 0045e86d
     XOR EDI,EDI                         ; 0045e870
         ;   Label: LAB_0045e870
-    MOV EBP,dword ptr [0x0152d254]      ; 0045e872 | DAT_0152d254
-    MOV dword ptr [0x0152d250],EDI      ; 0045e878 | DAT_0152d250
+    MOV EBP,dword ptr [0x0152d254]      ; 0045e872 | g_CBitFont_PTR_0152d254
+    MOV dword ptr [0x0152d250],EDI      ; 0045e878 | g_CBitFont_PTR_0152d250
     TEST EBP,EBP                        ; 0045e87e
     JZ 0x0045e895                       ; 0045e880
         ;   XREF to: 0045e895 (CONDITIONAL_JUMP)  ; LAB_0045e895
@@ -138,19 +138,19 @@ section .text
     ADD ESP,0x4                         ; 0045e892
     XOR EDX,EDX                         ; 0045e895
         ;   Label: LAB_0045e895
-    MOV ECX,dword ptr [0x01d7f1b8]      ; 0045e897 | DAT_01d7f1b8
-    MOV dword ptr [0x0152d254],EDX      ; 0045e89d | DAT_0152d254
+    MOV ECX,dword ptr [0x01d7f1b8]      ; 0045e897 | g_INT_01d7f1b8
+    MOV dword ptr [0x0152d254],EDX      ; 0045e89d | g_CBitFont_PTR_0152d254
     TEST ECX,ECX                        ; 0045e8a3
     JZ 0x0045e920                       ; 0045e8a5
         ;   XREF to: 0045e920 (CONDITIONAL_JUMP)  ; LAB_0045e920
-    MOV EBX,dword ptr [0x0152d258]      ; 0045e8ab | DAT_0152d258
+    MOV EBX,dword ptr [0x0152d258]      ; 0045e8ab | g_CWinFont_PTR_0152d258
     TEST EBX,EBX                        ; 0045e8b1
     JNZ 0x0045e93e                      ; 0045e8b3
         ;   XREF to: 0045e93e (CONDITIONAL_JUMP)  ; LAB_0045e93e
     XOR ESI,ESI                         ; 0045e8b9
         ;   Label: LAB_0045e8b9
-    MOV EDI,dword ptr [0x0152d25c]      ; 0045e8bb | DAT_0152d25c
-    MOV dword ptr [0x0152d258],ESI      ; 0045e8c1 | DAT_0152d258
+    MOV EDI,dword ptr [0x0152d25c]      ; 0045e8bb | g_CWinFont_PTR_0152d25c
+    MOV dword ptr [0x0152d258],ESI      ; 0045e8c1 | g_CWinFont_PTR_0152d258
     TEST EDI,EDI                        ; 0045e8c7
     JZ 0x0045e8d9                       ; 0045e8c9
         ;   XREF to: 0045e8d9 (CONDITIONAL_JUMP)  ; LAB_0045e8d9
@@ -161,8 +161,8 @@ section .text
     ADD ESP,0x8                         ; 0045e8d6
     XOR EBP,EBP                         ; 0045e8d9
         ;   Label: LAB_0045e8d9
-    MOV EAX,[0x0152d260]                ; 0045e8db | DAT_0152d260
-    MOV dword ptr [0x0152d25c],EBP      ; 0045e8e0 | DAT_0152d25c
+    MOV EAX,[0x0152d260]                ; 0045e8db | g_CWinFont_PTR_0152d260
+    MOV dword ptr [0x0152d25c],EBP      ; 0045e8e0 | g_CWinFont_PTR_0152d25c
     TEST EAX,EAX                        ; 0045e8e6
     JZ 0x0045e8f8                       ; 0045e8e8
         ;   XREF to: 0045e8f8 (CONDITIONAL_JUMP)  ; LAB_0045e8f8
@@ -173,8 +173,8 @@ section .text
     ADD ESP,0x8                         ; 0045e8f5
     XOR EDX,EDX                         ; 0045e8f8
         ;   Label: LAB_0045e8f8
-    MOV ECX,dword ptr [0x0152d264]      ; 0045e8fa | DAT_0152d264
-    MOV dword ptr [0x0152d260],EDX      ; 0045e900 | DAT_0152d260
+    MOV ECX,dword ptr [0x0152d264]      ; 0045e8fa | g_CWinFont_PTR_0152d264
+    MOV dword ptr [0x0152d260],EDX      ; 0045e900 | g_CWinFont_PTR_0152d260
     TEST ECX,ECX                        ; 0045e906
     JZ 0x0045e918                       ; 0045e908
         ;   XREF to: 0045e918 (CONDITIONAL_JUMP)  ; LAB_0045e918
@@ -185,7 +185,7 @@ section .text
     ADD ESP,0x8                         ; 0045e915
     XOR EBX,EBX                         ; 0045e918
         ;   Label: LAB_0045e918
-    MOV dword ptr [0x0152d264],EBX      ; 0045e91a | DAT_0152d264
+    MOV dword ptr [0x0152d264],EBX      ; 0045e91a | g_CWinFont_PTR_0152d264
     POP EBP                             ; 0045e920
         ;   Label: LAB_0045e920
     POP EDI                             ; 0045e921

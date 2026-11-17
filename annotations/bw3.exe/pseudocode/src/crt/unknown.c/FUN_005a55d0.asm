@@ -8,8 +8,8 @@
 ;   crt_time.c__localtime_FUN_005a5628 at 005a5637
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00607d3c
-;   undefined4 DAT_00607d44
+;   int g_INT_00607d3c = 0x4650
+;   int g_INT_00607d44 = 0xe10
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005abf84
@@ -27,7 +27,7 @@ section .text
     CALL crt_unknown.c_FUN_005ac558     ; 005a55d6
         ;   XREF to: 005ac558 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ac558()
     PUSH EBX                            ; 005a55db
-    MOV EDX,dword ptr [0x00607d3c]      ; 005a55dc | DAT_00607d3c
+    MOV EDX,dword ptr [0x00607d3c]      ; 005a55dc | g_INT_00607d3c
     MOV ESI,dword ptr [ESP + 0x10]      ; 005a55e2
     PUSH EDX                            ; 005a55e6
     MOV ESI,dword ptr [ESI]             ; 005a55e7
@@ -43,8 +43,8 @@ section .text
     TEST EAX,EAX                        ; 005a5600
     JZ 0x005a5621                       ; 005a5602
         ;   XREF to: 005a5621 (CONDITIONAL_JUMP)  ; LAB_005a5621
-    MOV EAX,[0x00607d3c]                ; 005a5604 | DAT_00607d3c
-    MOV ECX,dword ptr [0x00607d44]      ; 005a5609 | DAT_00607d44
+    MOV EAX,[0x00607d3c]                ; 005a5604 | g_INT_00607d3c
+    MOV ECX,dword ptr [0x00607d44]      ; 005a5609 | g_INT_00607d44
     PUSH EBX                            ; 005a560f
     SUB EAX,ECX                         ; 005a5610
     PUSH EAX                            ; 005a5612

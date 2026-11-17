@@ -10,7 +10,7 @@
 ;   core_rifle.cpp_factoryFuncRifle_FUN_0053fef0 at 0053ff03
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00604afc
+;   float g_FLOAT_00604afc = 8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
@@ -40,7 +40,7 @@ section .text
     MOV dword ptr [EBX + 0x2e0],0x9     ; 0053ff65
     MOV dword ptr [EBX + 0x2e4],0x1     ; 0053ff6f
     MOV dword ptr [EBX + 0x2e8],0x420c0000 ; 0053ff79
-    FLD float ptr [0x00604afc]          ; 0053ff83 | DAT_00604afc
+    FLD float ptr [0x00604afc]          ; 0053ff83 | g_FLOAT_00604afc
     MOV dword ptr [EBX + 0x2ec],0x0     ; 0053ff89
     ADD ESP,0x8                         ; 0053ff93
     MOV dword ptr [EBX + 0x57c],0x0     ; 0053ff96

@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   void* PTR_waveOutReset_005c8480 = 001c8a02
 ;   void* PTR_waveOutUnprepareHeader_005c8484 = 001c8a12
-;   undefined4 s_waveOutReset_failed_005ea57c+1
-;   undefined4 DAT_0264b070
+;   TerminatedCString s_waveOutReset_failed_005ea57d
+;   int g_INT_0264b070
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSoundThread_FUN_00553270
@@ -26,7 +26,7 @@ section .text
         ;   Label: sound_sndwav.cpp_CWavOutDevice_reset_FUN_00557e90
     PUSH ESI                            ; 00557e91
     PUSH EDI                            ; 00557e92
-    MOV EDX,dword ptr [0x0264b070]      ; 00557e93 | DAT_0264b070
+    MOV EDX,dword ptr [0x0264b070]      ; 00557e93 | g_INT_0264b070
     MOV ESI,0x1                         ; 00557e99
     TEST EDX,EDX                        ; 00557e9e
     JNZ 0x00557ed5                      ; 00557ea0
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00557ebe (CONDITIONAL_JUMP)  ; LAB_00557ebe
     PUSH 0x20                           ; 00557eae
     PUSH EDI                            ; 00557eb0
-    MOV EAX,[0x0264b070]                ; 00557eb1 | DAT_0264b070
+    MOV EAX,[0x0264b070]                ; 00557eb1 | g_INT_0264b070
     PUSH EAX                            ; 00557eb6
     CALL dword ptr CS:[0x5c8484]        ; 00557eb7 | PTR_waveOutUnprepareHeader_005c8484
     ADD EBX,0x4                         ; 00557ebe
@@ -64,7 +64,7 @@ section .text
     TEST EAX,EAX                        ; 00557edd
     JZ 0x00557ea2                       ; 00557edf
         ;   XREF to: 00557ea2 (CONDITIONAL_JUMP)  ; LAB_00557ea2
-    PUSH 0x5ea57d                       ; 00557ee1 | s_waveOutReset_failed_005ea57c+1
+    PUSH 0x5ea57d                       ; 00557ee1 | = "waveOutReset failed!"
     CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00557ee6
         ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     XOR ESI,ESI                         ; 00557eeb

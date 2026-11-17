@@ -14,11 +14,11 @@
 ;   TerminatedCString s_MeleeAttack_005efe31
 ;   TerminatedCString s_ChaseComplete_005efe3d
 ;   TerminatedCString s_MeleeAttack_005efe4b
-;   undefined4 DAT_005efe57
-;   undefined4 DAT_005efe5f
-;   undefined4 DAT_005efe63
-;   undefined4 DAT_005fef90
-;   undefined4 DAT_005fef94
+;   double g_DOUBLE_005efe57 = 0.100000000000000
+;   float g_FLOAT_005efe5f = 70
+;   float g_FLOAT_005efe63 = 74
+;   float g_FLOAT_005fef90 = 6
+;   float g_FLOAT_005fef94 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
@@ -53,7 +53,7 @@ section .text
     JNZ 0x005a2067                      ; 005a1f64
         ;   XREF to: 005a2067 (CONDITIONAL_JUMP)  ; LAB_005a2067
     FLD float ptr [ESI + 0x8]           ; 005a1f6a
-    FCOMP float ptr [0x005efe5f]        ; 005a1f6d | DAT_005efe5f
+    FCOMP float ptr [0x005efe5f]        ; 005a1f6d | g_FLOAT_005efe5f
     FNSTSW AX                           ; 005a1f73
     SAHF                                ; 005a1f75
     JC 0x005a201b                       ; 005a1f76
@@ -61,7 +61,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 005a1f7c
         ;   Label: LAB_005a1f7c
     FLD float ptr [EAX + 0x8]           ; 005a1f82
-    FCOMP float ptr [0x005efe63]        ; 005a1f85 | DAT_005efe63
+    FCOMP float ptr [0x005efe63]        ; 005a1f85 | g_FLOAT_005efe63
     FNSTSW AX                           ; 005a1f8b
     SAHF                                ; 005a1f8d
     JBE 0x005a2014                      ; 005a1f8e
@@ -83,14 +83,14 @@ section .text
     FADDP                               ; 005a1fc4
     FSQRT                               ; 005a1fc6
     LEA ESI,[EBX + 0x10af8]             ; 005a1fc8
-    FCOMP float ptr [0x005fef90]        ; 005a1fce | DAT_005fef90
+    FCOMP float ptr [0x005fef90]        ; 005a1fce | g_FLOAT_005fef90
     FNSTSW AX                           ; 005a1fd4
     SAHF                                ; 005a1fd6
     JBE 0x005a2033                      ; 005a1fd7
         ;   XREF to: 005a2033 (CONDITIONAL_JUMP)  ; LAB_005a2033
     PUSH 0x5efe0f                       ; 005a1fd9 | = "RangeAttack"
     PUSH 0x5efe1b                       ; 005a1fde | = "ChaseComplete"
-    FLD float ptr [0x005fef90]          ; 005a1fe3 | DAT_005fef90
+    FLD float ptr [0x005fef90]          ; 005a1fe3 | g_FLOAT_005fef90
     PUSH ESI                            ; 005a1fe9
     FSTP float ptr [EBX + 0x11394]      ; 005a1fea
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a1ff0
@@ -126,7 +126,7 @@ section .text
     PUSH 0x5efe31                       ; 005a2033 | = "MeleeAttack"
         ;   Label: LAB_005a2033
     PUSH 0x5efe3d                       ; 005a2038 | = "ChaseComplete"
-    FLD float ptr [0x005fef94]          ; 005a203d | DAT_005fef94
+    FLD float ptr [0x005fef94]          ; 005a203d | g_FLOAT_005fef94
     PUSH ESI                            ; 005a2043
     FSTP float ptr [EBX + 0x11394]      ; 005a2044
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a204a
@@ -181,7 +181,7 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 005a20c5
     FLD float ptr [ESP + 0x1c]          ; 005a20c9
         ;   Label: LAB_005a20c9
-    FCOMP double ptr [0x005efe57]       ; 005a20cd | DAT_005efe57
+    FCOMP double ptr [0x005efe57]       ; 005a20cd | g_DOUBLE_005efe57
     FNSTSW AX                           ; 005a20d3
     SAHF                                ; 005a20d5
     JBE 0x005a210a                      ; 005a20d6

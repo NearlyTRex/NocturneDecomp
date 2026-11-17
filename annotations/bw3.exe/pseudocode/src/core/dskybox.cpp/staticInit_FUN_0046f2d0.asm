@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c0b798
-;   undefined4 DAT_01c0b79c
-;   undefined4 DAT_01c0b7a0
+;   CVector3f g_CVector3f_01c0b798
+;   undefined4 g_CVector3f_01c0b798.y
+;   undefined4 g_CVector3f_01c0b798.z
 ;
 ; Called Functions:
 ;   core_dskybox.cpp_initializeSkyboxTexture_FUN_0046f300
@@ -22,8 +22,8 @@ section .text
         ;   XREF to: 0046f300 (UNCONDITIONAL_CALL)  ; SMRGLSkyTexture * core_dskybox.cpp_initializeSkyboxTexture_FUN_0046f300(SMRGLSkyTexture * texture)
     XOR EDX,EDX                         ; 0046f2da
     ADD ESP,0x4                         ; 0046f2dc
-    MOV dword ptr [0x01c0b798],EDX      ; 0046f2df | DAT_01c0b798
-    MOV dword ptr [0x01c0b79c],EDX      ; 0046f2e5 | DAT_01c0b79c
-    MOV dword ptr [0x01c0b7a0],EDX      ; 0046f2eb | DAT_01c0b7a0
+    MOV dword ptr [0x01c0b798],EDX      ; 0046f2df | g_CVector3f_01c0b798
+    MOV dword ptr [0x01c0b79c],EDX      ; 0046f2e5 | g_CVector3f_01c0b798.y
+    MOV dword ptr [0x01c0b7a0],EDX      ; 0046f2eb | g_CVector3f_01c0b798.z
     RET                                 ; 0046f2f1
 

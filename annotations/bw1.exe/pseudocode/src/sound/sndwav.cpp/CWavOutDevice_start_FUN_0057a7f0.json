@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 115,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 6,
+    "pseudocode_lines": 34,
+    "suspect_count": 7,
     "suspect_types": [
       "bitcast_double_pair",
       "raw_address_pointer_store",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom",
+      "unaffected_reg"
     ],
-    "total_lines": 112
+    "total_lines": 111
   },
   "cross_references": [],
   "function": {
@@ -50,38 +50,38 @@
   "globals": [
     {
       "addr": "005f576f",
-      "name": "DAT_005f576f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f576f",
+      "type": "double",
+      "value": "0.333333333333333"
     },
     {
       "addr": "02c828c4",
-      "name": "DAT_02c828c4",
-      "type": "undefined4",
+      "name": "g_INT_02c828c4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c828c8",
-      "name": "DAT_02c828c8",
-      "type": "undefined4",
+      "name": "g_INT_02c828c8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c828cc",
-      "name": "DAT_02c828cc",
-      "type": "undefined4",
+      "name": "g_INT_02c828cc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c828d0",
-      "name": "DAT_02c828d0",
-      "type": "undefined4",
+      "name": "g_INT_02c828d0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c828d4",
-      "name": "DAT_02c828d4",
-      "type": "undefined4",
+      "name": "g_INT_02c828d4",
+      "type": "int",
       "value": null
     }
   ],
@@ -178,16 +178,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "uint unaff_EDI;",
@@ -195,7 +187,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
+      "line": 14,
       "match": "*(void **)(iVar2 + 0x2c82864",
       "severity": "moderate",
       "text": "memset(*(void **)(iVar2 + 0x2c82864),0,0x20);",
@@ -203,7 +195,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 17,
+      "line": 15,
       "match": "*(uint **)(iVar2 + 0x2c82864",
       "severity": "moderate",
       "text": "**(uint **)(iVar2 + 0x2c82864) = *(uint *)(iVar2 + 0x2c828a4);",
@@ -211,7 +203,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 28,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(unaff_EDI,",
@@ -219,11 +211,27 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 30,
+      "line": 28,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(unaff_EDI,",
       "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 19,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_INT_02c828c4 + (g_INT_02c828c4 >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 20,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_INT_02c828c4 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c828d0;",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "vtable_info": {

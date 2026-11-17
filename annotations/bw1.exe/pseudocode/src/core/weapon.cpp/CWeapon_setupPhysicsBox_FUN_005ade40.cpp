@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon *this_ptr)
 
 {
@@ -54,10 +52,10 @@ void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon *this_
     afStack_1c[(uint)bVar4 * -2 + 3] = afStack_34[(uint)bVar4 * -2];
     afStack_1c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
          afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    fStack_20 = afStack_1c[2] * _DAT_005f9916;
-    afStack_1c[0] = afStack_1c[3] * _DAT_005f9916;
-    afStack_1c[1] = fStack_c * _DAT_005f9916;
-    fStack_8 = afStack_1c[2] * _DAT_005f9916;
+    fStack_20 = afStack_1c[2] * 0.5f;
+    afStack_1c[0] = afStack_1c[3] * 0.5f;
+    afStack_1c[1] = fStack_c * 0.5f;
+    fStack_8 = afStack_1c[2] * 0.5f;
     *(float *)(&stack0xfffffffc + (uint)bVar4 * -8) = afStack_1c[(uint)bVar4 * -2];
     *(float *)(&stack0x00000000 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
          afStack_1c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];

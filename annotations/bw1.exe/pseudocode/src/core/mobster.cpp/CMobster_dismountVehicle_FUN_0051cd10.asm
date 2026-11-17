@@ -24,8 +24,8 @@
 ;   core_mobster.cpp_CMobster_process_FUN_0051ce40 at 0051d8c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e9dba
-;   undefined4 DAT_005e9dbe
+;   float g_FLOAT_005e9dba = 1.570796
+;   float g_FLOAT_005e9dbe = -1.570796
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc28c]    ; 0051cd57
         ;   Label: LAB_0051cd57
     FLD float ptr [EAX + 0x34]          ; 0051cd5d
-    FADD float ptr [0x005e9dbe]         ; 0051cd60 | DAT_005e9dbe
+    FADD float ptr [0x005e9dbe]         ; 0051cd60 | g_FLOAT_005e9dbe
     FSTP float ptr [EBX + 0x34]         ; 0051cd66
         ;   Label: LAB_0051cd66
     LEA EAX,[ESP + 0x18]                ; 0051cd69
@@ -115,7 +115,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc28c]    ; 0051cdfa
         ;   Label: LAB_0051cdfa
     FLD float ptr [EAX + 0x34]          ; 0051ce00
-    FADD float ptr [0x005e9dba]         ; 0051ce03 | DAT_005e9dba
+    FADD float ptr [0x005e9dba]         ; 0051ce03 | g_FLOAT_005e9dba
     JMP 0x0051cd66                      ; 0051ce09
         ;   XREF to: 0051cd66 (UNCONDITIONAL_JUMP)  ; LAB_0051cd66
 

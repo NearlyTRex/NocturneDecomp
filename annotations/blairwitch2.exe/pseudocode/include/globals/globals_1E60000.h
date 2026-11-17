@@ -9,6 +9,8 @@
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CPickList.h"
 #include "types/classes/CScript.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1E60000
@@ -31,4 +33,42 @@ extern CPickList g_ScriptPickList;
 
 // CScript
 extern CScript g_CScriptInstance;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e613f0;
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e6164c[16];
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e61b60[16];
+
+// char[10]
+extern char g_CHAR_ARRAY_01e620f8[10];
+
+// char[2048]
+extern char g_CHAR_ARRAY_01e648f8[2048];
+extern char g_CHAR_ARRAY_01e65100[2048];
+
+// float
+extern float g_FLOAT_01e65900;
+
+// int
+extern int g_INT_01e613ec;
+extern int g_INT_01e61648;
+extern int g_INT_01e61b4c;
+extern int g_INT_01e61b50;
+extern int g_INT_01e61b58;
+extern int g_INT_01e61b5c;
+extern int g_INT_01e62060;
+extern int g_INT_01e62064;
+extern int g_INT_01e620f0;
+extern int g_INT_01e650f8;
+extern int g_INT_01e65904;
+extern int g_INT_01e65908;
+extern int g_INT_01e6590c;
+
+// int[12]
+extern int g_INT_ARRAY_01e6614c[12];
+
+// int[18]
+extern int g_INT_ARRAY_01e62068[18];
 

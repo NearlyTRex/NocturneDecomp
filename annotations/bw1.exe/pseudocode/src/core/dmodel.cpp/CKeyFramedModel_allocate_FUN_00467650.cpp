@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00467650(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)
 
 {
@@ -23,13 +21,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00467650(CKeyFramedMod
   this_ptr->part_count = part_count;
   this_ptr->frame_count = frame_count;
   if (4 < this_ptr->texture_count) {
-    _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-    _DAT_01d1d404 = 0x2c0;
+    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+    g_INT_01d1d404 = 0x2c0;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Too many materials!");
   }
   if (0x1e < this_ptr->part_count) {
-    _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-    _DAT_01d1d404 = 0x2c1;
+    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+    g_INT_01d1d404 = 0x2c1;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Too many parts!");
   }
   pCVar1 = operator_new_array
@@ -46,8 +44,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00467650(CKeyFramedMod
       ((0 < this_ptr->poly_count && (this_ptr->poly_texture_index_list == (int *)0x0)))) ||
      (this_ptr->frame_bounds == (CBoundingBox3D *)0x0)) {
     core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr);
-    _DAT_01d1d404 = 0x2d3;
-    _DAT_01d1d400 = "..\\core\\dmodel.cpp";
+    g_INT_01d1d404 = 0x2d3;
+    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
     core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d");
     if (this_ptr->frame_count != 1) {
       return;
@@ -61,8 +59,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00467650(CKeyFramedMod
   if (pCVar1 != (CVector3i *)0x0) {
     return;
   }
-  _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-  _DAT_01d1d404 = 0x2db;
+  g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+  g_INT_01d1d404 = 0x2db;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d");
   return;
 }

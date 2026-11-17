@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBoundingBox3D * __stack_esi core_curtain_cpp_CCurtain_getBoundingBox_FUN_004483a0(CCurtain *this_ptr,CBoundingBox3D *out_box)
 
 {
@@ -19,10 +17,10 @@ CBoundingBox3D * __stack_esi core_curtain_cpp_CCurtain_getBoundingBox_FUN_004483
   float fStack_c;
   float fStack_8;
   
-  fVar1 = (float)_DAT_005b9aa9;
+  fVar1 = (float)0.5;
   afStack_1c[1] = -0.1;
   afStack_1c[3] = (this_ptr->curtain_size).x * fVar1;
-  fStack_c = (this_ptr->curtain_size).y + (float)_DAT_005b9ab1;
+  fStack_c = (this_ptr->curtain_size).y + (float)0.10000000000000001;
   fStack_8 = (this_ptr->curtain_size).z * fVar1;
   afStack_1c[2] = -(this_ptr->curtain_size).z * fVar1;
   afStack_1c[0] = -(this_ptr->curtain_size).x * fVar1;

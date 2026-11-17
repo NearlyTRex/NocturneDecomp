@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00485b00(CEdScrollBar *this_ptr)
 
 {
@@ -17,79 +15,79 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00485b00(CEdScrollB
   
   shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_00485ec0(this_ptr);
   shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_004859e0(this_ptr);
-  if (this_ptr != _DAT_01c5bb78) {
-    if (_DAT_01c5bb78 != (CEdScrollBar *)0x0) {
+  if (this_ptr != (CEdScrollBar *)g_PTR_01c5bb78) {
+    if (g_PTR_01c5bb78 != (byte *)0x0) {
       return;
     }
-    if ((DAT_01c5fae4 & 1) == 0) {
+    if ((g_BIT_INTEGER32_01c5fae4.bytes[0] & 1) == 0) {
       return;
     }
-    if (_DAT_01c5fadc < this_ptr->bounds_left) {
+    if (g_INT_01c5fadc < this_ptr->bounds_left) {
       return;
     }
-    if (_DAT_01c5fae0 < this_ptr->bounds_top) {
+    if (g_INT_01c5fae0 < this_ptr->bounds_top) {
       return;
     }
-    if (this_ptr->bounds_right <= _DAT_01c5fadc) {
+    if (this_ptr->bounds_right <= g_INT_01c5fadc) {
       return;
     }
-    if (this_ptr->bounds_bottom <= _DAT_01c5fae0) {
+    if (this_ptr->bounds_bottom <= g_INT_01c5fae0) {
       return;
     }
-    _DAT_01c5bb88 = _DAT_01c5fadc;
-    _DAT_01c5bb8c = _DAT_01c5fae0;
-    _DAT_01c5bb90 = this_ptr->scroll_position;
-    _DAT_01c5bb78 = this_ptr;
-    _DAT_01c5bb94 = this_ptr->thumb_start;
-    iVar1 = _DAT_01c5fae0;
+    g_INT_01c5bb88 = g_INT_01c5fadc;
+    g_INT_01c5bb8c = g_INT_01c5fae0;
+    g_INT_01c5bb90 = this_ptr->scroll_position;
+    g_PTR_01c5bb78 = (byte *)this_ptr;
+    g_INT_01c5bb94 = this_ptr->thumb_start;
+    iVar1 = g_INT_01c5fae0;
     if (this_ptr->orientation != 0) {
-      iVar1 = _DAT_01c5fadc;
+      iVar1 = g_INT_01c5fadc;
     }
     if (iVar1 < this_ptr->track_start) {
-      _DAT_01c5bb7c = 1;
+      g_INT_01c5bb7c = 1;
       this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->scroll_increment;
     }
     else if (iVar1 < this_ptr->track_end) {
       if (iVar1 < this_ptr->thumb_start) {
-        _DAT_01c5bb7c = 3;
+        g_INT_01c5bb7c = 3;
         this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->page_size;
       }
       else if (iVar1 < this_ptr->thumb_end) {
-        _DAT_01c5bb7c = 0;
+        g_INT_01c5bb7c = 0;
       }
       else {
-        _DAT_01c5bb7c = 4;
+        g_INT_01c5bb7c = 4;
         this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->page_size;
       }
     }
     else {
-      _DAT_01c5bb7c = 2;
+      g_INT_01c5bb7c = 2;
       this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->scroll_increment;
     }
-    _DAT_01c5bb80 = wincore_winrun_cpp_getTime_FUN_005806a0();
-    _DAT_01c5bb84 = 0x48000;
+    g_INT_01c5bb80 = wincore_winrun_cpp_getTime_FUN_005806a0();
+    g_INT_01c5bb84 = 0x48000;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00485b00(this_ptr);
     return;
   }
-  if ((DAT_01c5fae4 & 1) == 0) {
-    _DAT_01c5bb78 = (CEdScrollBar *)0x0;
+  if ((g_BIT_INTEGER32_01c5fae4.bytes[0] & 1) == 0) {
+    g_PTR_01c5bb78 = (byte *)0x0;
     return;
   }
-  if (_DAT_01c5bb7c != 0) {
+  if (g_INT_01c5bb7c != 0) {
     iVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
-    _DAT_01c5bb80 = iVar1 - _DAT_01c5bb80;
-    if (_DAT_01c5bb80 < 0) {
-      _DAT_01c5bb80 = 0;
+    iVar3 = iVar1 - g_INT_01c5bb80;
+    if (iVar3 < 0) {
+      iVar3 = 0;
     }
-    _DAT_01c5bb84 = _DAT_01c5bb84 - _DAT_01c5bb80;
-    _DAT_01c5bb80 = iVar1;
-    if (_DAT_01c5bb84 < 1) {
-      _DAT_01c5bb84 = 0x9999;
-      iVar1 = _DAT_01c5fae0;
+    g_INT_01c5bb84 = g_INT_01c5bb84 - iVar3;
+    g_INT_01c5bb80 = iVar1;
+    if (g_INT_01c5bb84 < 1) {
+      g_INT_01c5bb84 = 0x9999;
+      iVar1 = g_INT_01c5fae0;
       if (this_ptr->orientation != 0) {
-        iVar1 = _DAT_01c5fadc;
+        iVar1 = g_INT_01c5fadc;
       }
-      switch(_DAT_01c5bb7c) {
+      switch(g_INT_01c5bb7c) {
       case 1:
         this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->scroll_increment;
         break;
@@ -101,8 +99,8 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00485b00(CEdScrollB
           this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->page_size;
         }
         else {
-          DAT_01c5fae4 = DAT_01c5fae4 & 0xfe;
-          _DAT_01c5bb78 = (CEdScrollBar *)0x0;
+          g_BIT_INTEGER32_01c5fae4.bytes[0] = g_BIT_INTEGER32_01c5fae4.bytes[0] & 0xfe;
+          g_PTR_01c5bb78 = (byte *)0x0;
         }
         break;
       case 4:
@@ -110,47 +108,47 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00485b00(CEdScrollB
           this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->page_size;
         }
         else {
-          DAT_01c5fae4 = DAT_01c5fae4 & 0xfe;
-          _DAT_01c5bb78 = (CEdScrollBar *)0x0;
+          g_BIT_INTEGER32_01c5fae4.bytes[0] = g_BIT_INTEGER32_01c5fae4.bytes[0] & 0xfe;
+          g_PTR_01c5bb78 = (byte *)0x0;
         }
       }
     }
-    wincore_winrun_cpp_setCursorPosition_FUN_005809d0(_DAT_01c5bb88,_DAT_01c5bb8c);
+    wincore_winrun_cpp_setCursorPosition_FUN_005809d0(g_INT_01c5bb88,g_INT_01c5bb8c);
     goto LAB_00485bc3;
   }
   if (this_ptr->orientation == 0) {
-    iVar3 = (this_ptr->track_start + _DAT_01c5bb8c) - _DAT_01c5bb94;
-    iVar1 = _DAT_01c5fae0;
-    if (_DAT_01c5fae0 < iVar3) {
+    iVar3 = (this_ptr->track_start + g_INT_01c5bb8c) - g_INT_01c5bb94;
+    iVar1 = g_INT_01c5fae0;
+    if (g_INT_01c5fae0 < iVar3) {
       iVar1 = iVar3;
     }
-    iVar3 = (this_ptr->track_end + _DAT_01c5bb8c) -
-            ((_DAT_01c5bb94 + this_ptr->thumb_end) - this_ptr->thumb_start);
+    iVar3 = (this_ptr->track_end + g_INT_01c5bb8c) -
+            ((g_INT_01c5bb94 + this_ptr->thumb_end) - this_ptr->thumb_start);
     if (iVar3 < iVar1) {
       iVar1 = iVar3;
     }
-    iVar2 = iVar1 - _DAT_01c5bb8c;
-    iVar3 = _DAT_01c5bb88;
+    iVar2 = iVar1 - g_INT_01c5bb8c;
+    iVar3 = g_INT_01c5bb88;
   }
   else {
-    iVar1 = (this_ptr->track_start + _DAT_01c5bb88) - _DAT_01c5bb94;
-    iVar3 = _DAT_01c5fadc;
-    if (_DAT_01c5fadc < iVar1) {
+    iVar1 = (this_ptr->track_start + g_INT_01c5bb88) - g_INT_01c5bb94;
+    iVar3 = g_INT_01c5fadc;
+    if (g_INT_01c5fadc < iVar1) {
       iVar3 = iVar1;
     }
-    iVar1 = (this_ptr->track_end + _DAT_01c5bb88) -
-            ((this_ptr->thumb_end + _DAT_01c5bb94) - this_ptr->thumb_start);
+    iVar1 = (this_ptr->track_end + g_INT_01c5bb88) -
+            ((this_ptr->thumb_end + g_INT_01c5bb94) - this_ptr->thumb_start);
     if (iVar1 < iVar3) {
       iVar3 = iVar1;
     }
-    iVar2 = iVar3 - _DAT_01c5bb88;
-    iVar1 = _DAT_01c5bb8c;
+    iVar2 = iVar3 - g_INT_01c5bb88;
+    iVar1 = g_INT_01c5bb8c;
   }
-  iVar2 = iVar2 + _DAT_01c5bb94;
+  iVar2 = iVar2 + g_INT_01c5bb94;
   wincore_winrun_cpp_setCursorPosition_FUN_005809d0(iVar3,iVar1);
   if ((this_ptr->page_size < this_ptr->item_count) && (0 < this_ptr->item_count)) {
-    if (iVar2 == _DAT_01c5bb94) {
-      this_ptr->scroll_position = _DAT_01c5bb90;
+    if (iVar2 == g_INT_01c5bb94) {
+      this_ptr->scroll_position = g_INT_01c5bb90;
       goto LAB_00485bc3;
     }
     if (this_ptr->track_start < iVar2) {

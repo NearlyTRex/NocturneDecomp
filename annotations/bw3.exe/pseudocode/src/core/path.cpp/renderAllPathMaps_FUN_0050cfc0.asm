@@ -10,9 +10,9 @@
 ; int              Stack[0x10]:4   fog
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01ec1518
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01ec1518
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -29,7 +29,7 @@ section .text
     PUSH EBP                            ; 0050cfc3
     MOV EBP,dword ptr [ESP + 0x14]      ; 0050cfc4
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0050cfc8
-    MOV EDX,dword ptr [0x01ec1518]      ; 0050cfcc | DAT_01ec1518
+    MOV EDX,dword ptr [0x01ec1518]      ; 0050cfcc | g_INT_01ec1518
     XOR ESI,ESI                         ; 0050cfd2
     TEST EDX,EDX                        ; 0050cfd4
     JLE 0x0050d003                      ; 0050cfd6
@@ -44,7 +44,7 @@ section .text
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 0050cfe9
     JLE 0x0050d02d                      ; 0050cff3
         ;   XREF to: 0050d02d (CONDITIONAL_JUMP)  ; LAB_0050d02d
-    MOV ECX,dword ptr [0x01ec1518]      ; 0050cff5 | DAT_01ec1518
+    MOV ECX,dword ptr [0x01ec1518]      ; 0050cff5 | g_INT_01ec1518
         ;   Label: LAB_0050cff5
     INC ESI                             ; 0050cffb
     ADD EBX,0x4                         ; 0050cffc
@@ -61,8 +61,8 @@ section .text
         ;   Label: LAB_0050d008
     MOV ECX,0x6a9                       ; 0050d00d
     PUSH 0x5cb94d                       ; 0050d012
-    MOV dword ptr [0x01d71de0],EDX      ; 0050d017 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0050d01d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0050d017 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0050d01d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050d023
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050d028

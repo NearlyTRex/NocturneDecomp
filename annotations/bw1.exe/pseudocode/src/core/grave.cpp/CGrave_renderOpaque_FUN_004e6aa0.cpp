@@ -19,7 +19,7 @@ int __cdecl core_grave_cpp_CGrave_renderOpaque_FUN_004e6aa0(CGrave *this_ptr)
   
   bVar4 = 0;
   if ((this_ptr->animation_started == 0) &&
-     (((*(int *)(0x01D2C900 + 0x1008) != 0 || (this_ptr->hide_on_first_frame == 0)) ||
+     (((g_CDemonMission_PTR_0061f650->is_in_editor != 0 || (this_ptr->hide_on_first_frame == 0)) ||
       (this_ptr->grave_state != 0)))) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);

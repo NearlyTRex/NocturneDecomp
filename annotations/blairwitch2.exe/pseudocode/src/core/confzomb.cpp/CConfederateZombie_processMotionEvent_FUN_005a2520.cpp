@@ -18,11 +18,11 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processMotionEvent_FUN_005a252
   case 0x1fa4:
     iVar1 = this_ptr->right_finger_bone;
     radius = 2.0;
-    damage = 0x41C80000;
+    damage = 25.0f;
     break;
   case 0x1fa5:
     iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
-                      (&this_ptr->base,0x40A00000,this_ptr->right_finger_bone,1.0);
+                      (&this_ptr->base,5.0f,this_ptr->right_finger_bone,1.0);
     if (iVar1 == 0) {
       return;
     }
@@ -30,16 +30,16 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processMotionEvent_FUN_005a252
   case 0x1fa6:
     iVar1 = this_ptr->left_finger_bone;
     radius = 1.0;
-    damage = 0x40A00000;
+    damage = 5.0f;
     break;
   case 0x1fa7:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"phantomhandswing0?.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"phantomhandswing0?.wav",
                &(this_ptr->base).base.base.base.location.position);
     return;
   case 0x1fa8:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"phantomteleport0?.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"phantomteleport0?.wav",
                &(this_ptr->base).base.base.base.location.position);
     return;
   default:
@@ -53,7 +53,7 @@ switchD_005a2537_default:
   }
 LAB_005a25e4:
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-            (0x0264B290,(CDemonActor *)this_ptr,"phandslap0?.wav",
+            (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"phandslap0?.wav",
              &(this_ptr->base).base.base.base.location.position);
   return;
 }

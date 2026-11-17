@@ -51,9 +51,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_00425aa0(CCha
         *(CMatrix3x4f **)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
              apCStack_1c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                  (DAT_0060b280,&local_38,translation);
+                  (g_CDemonRenderer_PTR_0060b280,&local_38,translation);
         core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-                  ((CKeyFramedModelInstance *)&DAT_007bdadc,0.0,-1);
+                  (&g_CKeyFramedModelInstance_007bdadc,0.0,-1);
         engine_drender_cpp_pop_FUN_0046b4a0();
       }
       iVar3 = iVar3 + 1;

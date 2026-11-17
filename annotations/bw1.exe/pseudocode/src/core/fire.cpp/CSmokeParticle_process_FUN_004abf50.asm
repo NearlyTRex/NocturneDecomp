@@ -25,7 +25,7 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_004b4dd0 at 004b50f1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df184
+;   float g_FLOAT_005df184 = 30
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CGameInstance.delta_time_float
@@ -48,7 +48,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x294]     ; 004abf5d | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x30],EAX      ; 004abf63
     FLD float ptr [ESP + 0x30]          ; 004abf67
-    FMUL float ptr [0x005df184]         ; 004abf6b | DAT_005df184
+    FMUL float ptr [0x005df184]         ; 004abf6b | g_FLOAT_005df184
     FADD float ptr [EBX + 0x18]         ; 004abf71
     FSTP float ptr [EBX + 0x18]         ; 004abf74
     CMP dword ptr [EBX + 0x18],0x42200000 ; 004abf77

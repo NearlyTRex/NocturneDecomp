@@ -6,11 +6,15 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBloodParticle.h"
+#include "types/classes/CBloodSplat.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D20000
@@ -21,6 +25,9 @@ extern CAlphaBitmap CAlphaBitmap_ARRAY_01d22b4c[8];
 
 // CBloodParticle[256]
 extern CBloodParticle g_BloodParticles[256];
+
+// CBloodSplat[2000]
+extern CBloodSplat g_CBloodSplat_ARRAY_01d276bc[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CGargoyleClassInfo;
@@ -40,4 +47,82 @@ extern CGore g_CGoreInstance;
 
 // CPickList
 extern CPickList g_CPickList;
+
+// CVector3f
+extern CVector3f g_CVector3f_01d22d4c;
+extern CVector3f g_CVector3f_01d22d58;
+
+// CVector3i
+extern CVector3i g_CVector3i_01d22e70;
+extern CVector3i g_CVector3i_01d22e7c;
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d22e48;
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d22e88;
+
+// char[20]
+extern char g_CHAR_ARRAY_01d22c6f[20];
+
+// char[256]
+extern char g_CHAR_ARRAY_01d21ea0[256];
+extern char g_CHAR_ARRAY_01d225c8[256];
+extern char g_CHAR_ARRAY_01d229f0[256];
+
+// char[600]
+extern char g_CHAR_ARRAY_01d21fa0[600];
+
+// float
+extern float g_FLOAT_01d22af4;
+extern float g_FLOAT_01d22c30;
+extern float g_FLOAT_01d22c34;
+extern float g_FLOAT_01d22c38;
+extern float g_FLOAT_01d22c88;
+
+// int
+extern int g_INT_01d21e9c;
+extern int g_INT_01d221f8;
+extern int g_INT_01d221fc;
+extern int g_INT_01d22200;
+extern int g_INT_01d226c8;
+extern int g_INT_01d22af0;
+extern int g_INT_01d22b44;
+extern int g_INT_01d22b48;
+extern int g_INT_01d22c2c;
+extern int g_INT_01d22c3c;
+extern int g_INT_01d22c40;
+extern int g_INT_01d22c44;
+extern int g_INT_01d22c48;
+extern int g_INT_01d22c4c;
+extern int g_INT_01d22c50;
+extern int g_INT_01d22c54;
+extern int g_INT_01d22c58;
+extern int g_INT_01d22c5c;
+extern int g_INT_01d22c60;
+extern int g_INT_01d22c64;
+extern int g_INT_01d22c68;
+extern int g_INT_01d22c84;
+extern int g_INT_01d22c8c;
+extern int g_INT_01d22c90;
+extern int g_INT_01d22c94;
+extern int g_INT_01d22c98;
+extern int g_INT_01d22c9c;
+extern int g_INT_01d22e60;
+extern int g_INT_01d22e64;
+extern int g_INT_01d22e68;
+extern int g_INT_01d22e6c;
+extern int g_INT_01d22eb0;
+extern int g_INT_01d276b4;
+extern int g_INT_01d276b8;
+
+// int[11]
+extern int g_INT_ARRAY_01d22da0[11];
+
+// int[12]
+extern int g_INT_ARRAY_01d22ca4[12];
+
+// int[16]
+extern int g_INT_ARRAY_01d22bec[16];
+
+// int[201]
+extern int g_INT_ARRAY_01d226cc[201];
 

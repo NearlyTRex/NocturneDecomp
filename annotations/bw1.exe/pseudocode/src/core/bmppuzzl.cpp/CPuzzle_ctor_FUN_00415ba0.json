@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 67,
+    "complexity_score": 22,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 7,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "displaced_global_access",
-      "undefined_data"
+      "displaced_global_access"
     ],
     "total_lines": 15
   },
@@ -45,8 +44,8 @@
   "globals": [
     {
       "addr": "007c394c",
-      "name": "DAT_007c394c",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_007c394c",
+      "type": "int[1]",
       "value": null
     }
   ],
@@ -132,40 +131,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_007c394c",
-      "severity": "mild",
-      "text": "DAT_007c394c = DAT_007c394c + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_007c394c",
-      "severity": "mild",
-      "text": "DAT_007c394c = DAT_007c394c + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_007c394c",
-      "severity": "mild",
-      "text": "(&DAT_007c394c)[DAT_007c394c] = (int)this_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_007c394c",
-      "severity": "mild",
-      "text": "(&DAT_007c394c)[DAT_007c394c] = (int)this_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Compiler displaced index base: [reg*4 + 0x7c394c] lands in DAT_007c394c but intended target is DAT_007c3950 at 0x7c3950 (displaced by 4 bytes)",
-      "displaced_from": "DAT_007c394c",
+      "description": "Compiler displaced index base: [reg*4 + 0x7c394c] lands in g_INT_ARRAY_007c394c but intended target is DAT_007c3950 at 0x7c3950 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_ARRAY_007c394c",
       "displacement": "0x7c394c",
       "instruction_address": "",
       "intended_global": "DAT_007c3950",

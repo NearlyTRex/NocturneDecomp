@@ -86,13 +86,13 @@
 ;   core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60 at 0057bcf4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c09e4
-;   undefined4 DAT_005c09e8
-;   undefined4 DAT_005c09f0
+;   float g_FLOAT_005c09e4 = 2
+;   double g_DOUBLE_005c09e8 = 0.25
+;   double g_DOUBLE_005c09f0 = -1
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.collision_normal.x
 ;   undefined4 g_CDemonSetInstance.collision_normal.y
@@ -260,7 +260,7 @@ section .text
         ;   Label: LAB_004a2ffe
     MOV EAX,dword ptr [EAX + 0x14d144]  ; 004a3003 | g_CDemonSetInstance.collision_actor
     MOV dword ptr [ESP + 0x160],EAX     ; 004a3009
-    MOV EAX,[0x01d5ba14]                ; 004a3010 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004a3010 | g_INT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004a3015
     XOR EDX,EDX                         ; 004a301c
     MOV EDI,dword ptr [ESP + 0x160]     ; 004a301e
@@ -298,7 +298,7 @@ section .text
     FLD float ptr [ESP + 0x8c]          ; 004a3086
     FMUL float ptr [EBX + 0x8]          ; 004a308d
     FADDP                               ; 004a3090
-    FMUL float ptr [0x005c09e4]         ; 004a3092 | DAT_005c09e4
+    FMUL float ptr [0x005c09e4]         ; 004a3092 | g_FLOAT_005c09e4
     FLD float ptr [ESP + 0x84]          ; 004a3098
     FXCH                                ; 004a309f
     FSTP float ptr [ESP + 0x158]        ; 004a30a1
@@ -400,7 +400,7 @@ section .text
     FLD float ptr [EBP + 0x70]          ; 004a321b
     FLD1                                ; 004a321e
     FSUBRP                              ; 004a3220
-    FMUL double ptr [0x005c09e8]        ; 004a3222 | DAT_005c09e8
+    FMUL double ptr [0x005c09e8]        ; 004a3222 | g_DOUBLE_005c09e8
     FMUL float ptr [ESP + 0x10]         ; 004a3228
     FSTP float ptr [ESP + 0x10]         ; 004a322c
     FLD float ptr [EBP + 0x68]          ; 004a3230
@@ -458,7 +458,7 @@ section .text
     FLD float ptr [EBP + 0x68]          ; 004a32ba
     FLD1                                ; 004a32bd
     FSUBRP                              ; 004a32bf
-    FMUL double ptr [0x005c09e8]        ; 004a32c1 | DAT_005c09e8
+    FMUL double ptr [0x005c09e8]        ; 004a32c1 | g_DOUBLE_005c09e8
     FMUL float ptr [ESP + 0x10]         ; 004a32c7
     FSTP float ptr [ESP + 0x10]         ; 004a32cb
     MOV EDX,dword ptr [EBP + 0x34]      ; 004a32cf
@@ -732,7 +732,7 @@ section .text
     FMUL float ptr [EBX + 0x8]          ; 004a35f3
     FADDP                               ; 004a35f6
     FST double ptr [ESP + 0x8]          ; 004a35f8
-    FCOMP double ptr [0x005c09f0]       ; 004a35fc | DAT_005c09f0
+    FCOMP double ptr [0x005c09f0]       ; 004a35fc | g_DOUBLE_005c09f0
     FNSTSW AX                           ; 004a3602
     SAHF                                ; 004a3604
     JA 0x004a3697                       ; 004a3605
@@ -751,7 +751,7 @@ section .text
     ADD ESP,0x8                         ; 004a363f
     JMP 0x004a304d                      ; 004a3642
         ;   XREF to: 004a304d (UNCONDITIONAL_JUMP)  ; LAB_004a304d
-    MOV EAX,[0x01d5ba14]                ; 004a3647 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004a3647 | g_INT_01d5ba14
         ;   Label: LAB_004a3647
     MOV EBX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004a364c
     MOV dword ptr [EBX + 0x20b8c],ESI   ; 004a3653

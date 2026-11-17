@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_positionMovieWindow_FUN_00590c90(HWND parent_window)
 
 {
@@ -19,7 +17,7 @@ void __cdecl wincore_winrun_cpp_positionMovieWindow_FUN_00590c90(HWND parent_win
   tagRECT tStack_24;
   tagRECT tStack_14;
   
-  if (_DAT_02665a50 == 0) {
+  if (g_INT_02665a50 == 0) {
     return;
   }
   GetClientRect(parent_window,&tStack_24);
@@ -51,7 +49,7 @@ void __cdecl wincore_winrun_cpp_positionMovieWindow_FUN_00590c90(HWND parent_win
     tStack_14.right = tStack_14.right * 2;
     tStack_14.bottom = tStack_14.bottom * 2;
   }
-  MoveWindow(_DAT_02665a48,tStack_24.right / 2 - tStack_14.right / 2,
+  MoveWindow((HWND)g_INT_02665a48,tStack_24.right / 2 - tStack_14.right / 2,
              tStack_24.bottom / 2 - tStack_14.bottom / 2,tStack_14.right,tStack_14.bottom,1);
   return;
 }

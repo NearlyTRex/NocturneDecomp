@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d0a40(CHeroPlaceholder *this_ptr,EHeroType hero_type)
 
 {
@@ -21,11 +19,12 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d0a40(CHeroPlac
   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c5a0(this_ptr->hero_name);
   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c8f0(actor_ptr,class_name_hash);
   if (actor == (CHero *)0x0) {
-    _DAT_01d046a0 = "..\\core\\hero.cpp";
-    _DAT_01d046a4 = 0x747;
+    g_CHAR_PTR_01d046a0 = "..\\core\\hero.cpp";
+    g_INT_01d046a4 = 0x747;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CHeroPlaceholder::createHero - failed.");
   }
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(0x01D182F0,(CDemonActor *)actor);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0
+            (g_CDemonMission_PTR_00618170,(CDemonActor *)actor);
   (actor->base).base.location.position.x = (this_ptr->base).location.position.x;
   (actor->base).base.location.position.y = (this_ptr->base).location.position.y;
   (actor->base).base.location.position.z = (this_ptr->base).location.position.z;

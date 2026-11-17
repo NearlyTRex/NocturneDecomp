@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429420(CCharacter *this_ptr,float delta_time,int disable_search)
 
 {
@@ -211,7 +209,7 @@ LAB_00429762:
             fStack_1ac = (pCStack_20->base).location.position.y;
             fStack_1a8 = (pCStack_20->base).location.position.z;
           }
-          fStack_1ac = fStack_1ac + _DAT_005cd0ba;
+          fStack_1ac = fStack_1ac + 5.5f;
         }
         else {
           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
@@ -282,30 +280,30 @@ LAB_00429762:
       afStack_194[3] = afStack_170[0];
       uStack_184 = afStack_170[1];
     }
-    if ((float)_DAT_005cd0be < ABS(afStack_194[3])) {
+    if ((float)1.3962634015555599 < ABS(afStack_194[3])) {
       this_ptr->look_at_candidate = (CCharacter *)0x0;
     }
-    if ((float)_DAT_005cd0c6 < ABS(afStack_194[2])) {
+    if ((float)0.78539816337500001 < ABS(afStack_194[2])) {
       this_ptr->look_at_candidate = (CCharacter *)0x0;
       goto LAB_004294b3;
     }
   }
   if (this_ptr->look_at_candidate != (CCharacter *)0x0) {
-    fVar4 = delta_time / _DAT_005cd0ce + this_ptr->look_at_weight;
+    fVar4 = delta_time / 0.5f + this_ptr->look_at_weight;
     this_ptr->look_at_weight = fVar4;
     if (1.0 < fVar4) {
       this_ptr->look_at_weight = 1.0;
     }
     fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                           (afStack_194[3] - this_ptr->look_at_yaw);
-    this_ptr->look_at_yaw = fStack_18 * (float)_DAT_005cd0d6 + this_ptr->look_at_yaw;
+    this_ptr->look_at_yaw = fStack_18 * (float)0.40000000000000002 + this_ptr->look_at_yaw;
     fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(afStack_194[2] - this_ptr->look_at_pitch)
     ;
-    this_ptr->look_at_pitch = fVar4 * (float)_DAT_005cd0d6 + this_ptr->look_at_pitch;
+    this_ptr->look_at_pitch = fVar4 * (float)0.40000000000000002 + this_ptr->look_at_pitch;
     return;
   }
 LAB_004294b3:
-  fVar4 = this_ptr->look_at_weight - delta_time / _DAT_005cd0ce;
+  fVar4 = this_ptr->look_at_weight - delta_time / 0.5f;
   this_ptr->look_at_weight = fVar4;
   if (fVar4 < 0.0) {
     this_ptr->look_at_pitch = 0.0;

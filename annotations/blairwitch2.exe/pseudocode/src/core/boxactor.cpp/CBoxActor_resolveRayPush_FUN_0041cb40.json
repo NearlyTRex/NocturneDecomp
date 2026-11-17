@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 229,
+    "complexity_score": 213,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 12,
+    "pseudocode_lines": 73,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
       "unknown_field",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 214
+    "total_lines": 213
   },
   "cross_references": [
     {
@@ -83,9 +82,9 @@
   "globals": [
     {
       "addr": "005cc671",
-      "name": "DAT_005cc671",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cc671",
+      "type": "double",
+      "value": "1.01000000000000"
     }
   ],
   "param_estimates": {
@@ -309,16 +308,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 12,
       "match": "afStackY_1058",
       "severity": "moderate",
       "text": "float afStackY_1058 [1002];",
@@ -326,7 +317,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff58;",
@@ -334,7 +325,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 34,
+      "line": 32,
       "match": "._4_4_",
       "severity": "mild",
       "text": "afStack_54[2] = (float)auStack_5c._4_4_;",
@@ -342,7 +333,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 41,
+      "line": 39,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_70 = (float)local_44._4_4_;",
@@ -350,7 +341,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 45,
+      "line": 43,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (local_68.x * (float)local_44._0_4_ + local_70 * afStack_54[2] + local_6c * afStack_54[3] < 0.0",
@@ -358,7 +349,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 45,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff58);",
@@ -366,7 +357,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 51,
       "match": "(CBoundingBox3D *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
@@ -374,7 +365,7 @@
     },
     {
       "description": "Pointer value `&local_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&local_68",
       "severity": "moderate",
       "text": "*(float *)((int)&local_68 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
@@ -382,7 +373,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -398,7 +389,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_68 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",

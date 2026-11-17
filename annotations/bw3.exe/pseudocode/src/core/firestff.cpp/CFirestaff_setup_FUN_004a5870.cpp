@@ -13,7 +13,7 @@ void __cdecl core_firestff_cpp_CFirestaff_setup_FUN_004a5870(CFirestaff *this_pt
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_nomana.wav");
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_firestaff.wav");
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_firestaff_loop.wav");
-  core_fire_cpp_CFireEffect_preloadRingAssets_FUN_004a42c0(0x01C73654,0);
+  core_fire_cpp_CFireEffect_preloadRingAssets_FUN_004a42c0(g_CFireEffect_PTR_005fc5a0,0);
   core_flame_cpp_preloadFlameTextures_FUN_004a5ad0(0);
   return;
 }

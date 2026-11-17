@@ -15,9 +15,9 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 at 0054e3f8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CGameInstance.letterbox_mode
 ;
 ; Called Functions:
@@ -33,8 +33,8 @@ section .text
         ;   Label: core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0054af10
     SUB ESP,0x8                         ; 0054af11
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054af14
-    MOV EDX,dword ptr [0x005f2afc]      ; 0054af18 | DAT_005f2afc
-    PUSH EDX                            ; 0054af1e | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 0054af18 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 0054af1e | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0054af1f
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0054af24

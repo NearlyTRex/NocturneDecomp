@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00570c40(CSfxSlot *this_ptr)
 
 {
@@ -20,22 +18,22 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00570c40(CSfxSl
   CSfxSlot *pCVar7;
   double dVar8;
   
-  if (_DAT_02c807ec < 1) {
-    _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-    _DAT_01d1d404 = 0xa69;
+  if (g_INT_02c807ec < 1) {
+    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+    g_INT_01d1d404 = 0xa69;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::kill - must be locked!");
   }
-  iVar4 = DAT_006232ec;
-  if (DAT_006232ec < 2) {
+  iVar4 = g_INT_006232ec;
+  if (g_INT_006232ec < 2) {
     this_ptr->channel_target_buffer_offsets[0] = 0;
   }
   else if (((this_ptr->options).flags & 1) == 0) {
-    fVar2 = (1.0 / _DAT_00605af8) * DAT_00623304;
-    fVar3 = (float)DAT_006232f0;
+    fVar2 = (1.0 / 1116.4f) * g_FLOAT_00623304;
+    fVar3 = (float)g_INT_006232f0;
     iVar6 = 99999;
     iVar5 = 0;
     pCVar7 = this_ptr;
-    if (0 < DAT_006232ec) {
+    if (0 < g_INT_006232ec) {
       do {
         dVar8 = round
                           ((double)(pCVar7->distance_to_speakers[0] * fVar3 * fVar2));
@@ -56,20 +54,20 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00570c40(CSfxSl
              this_ptr->channel_target_buffer_offsets[0] - iVar6;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
       } while (iVar5 < iVar4);
-      DAT_006232ec = iVar4;
+      g_INT_006232ec = iVar4;
       return;
     }
   }
   else {
     iVar6 = 0;
-    if (0 < DAT_006232ec) {
+    if (0 < g_INT_006232ec) {
       do {
         iVar6 = iVar6 + 1;
         this_ptr->channel_target_buffer_offsets[0] = 0;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar6 < DAT_006232ec);
+      } while (iVar6 < g_INT_006232ec);
     }
   }
-  DAT_006232ec = iVar4;
+  g_INT_006232ec = iVar4;
   return;
 }

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 68,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 53,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 249
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 248
   },
   "cross_references": [
     {
@@ -55,50 +53,50 @@
   "globals": [
     {
       "addr": "005d13b0",
-      "name": "DAT_005d13b0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d13b0",
+      "type": "float",
+      "value": "0.00001525879"
     },
     {
       "addr": "0060b270",
-      "name": "DAT_0060b270",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0060b270",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "0060b274",
-      "name": "DAT_0060b274",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0060b274",
+      "type": "float",
+      "value": "0.1000000"
     },
     {
       "addr": "01ba599c",
-      "name": "DAT_01ba599c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01ba599c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01ba59a0",
-      "name": "DAT_01ba59a0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01ba59a0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01ba59a4",
-      "name": "DAT_01ba59a4",
-      "type": "undefined4",
+      "name": "g_INT_01ba59a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c2a370",
-      "name": "DAT_01c2a370",
-      "type": "undefined4",
+      "name": "g_INT_01c2a370",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c2a374",
-      "name": "DAT_01c2a374",
-      "type": "undefined4",
+      "name": "g_INT_01c2a374",
+      "type": "int",
       "value": null
     }
   ],
@@ -251,14 +249,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

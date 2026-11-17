@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0043b570(CDemonCamera *this_ptr,int screen_height)
 
 {
@@ -15,8 +13,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0043b570(CDemonCamera *this_
   void *pvVar2;
   
   core_dcamera_cpp_CDemonCamera_free_FUN_0043b730(this_ptr);
-  _DAT_0146694c = (screen_height * 4) / 3;
-  _DAT_01466950 = screen_height;
+  g_INT_0146694c = (screen_height * 4) / 3;
+  g_INT_01466950 = screen_height;
   if (0x1e0 < screen_height) {
     screen_height = 0x1e0;
   }
@@ -24,12 +22,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0043b570(CDemonCamera *this_
   this_ptr->scale_factor = 1;
   this_ptr->framebuffer_width = (screen_height * 4) / 3;
   this_ptr->display_width = this_ptr->framebuffer_width;
-  _DAT_01308800 = 0;
+  g_BIT_INTEGER32_01308800.dword = 0;
   iVar1 = this_ptr->display_width;
   this_ptr->display_height = this_ptr->framebuffer_height;
   while (0x140 < iVar1) {
     this_ptr->display_width = this_ptr->display_width / 2;
-    _DAT_01308800 = _DAT_01308800 + 1;
+    g_BIT_INTEGER32_01308800.dword = g_BIT_INTEGER32_01308800.dword + 1;
     this_ptr->scale_factor = this_ptr->scale_factor * 2;
     iVar1 = this_ptr->display_width;
     this_ptr->display_height = this_ptr->display_height / 2;
@@ -38,16 +36,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0043b570(CDemonCamera *this_
                      (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);
   this_ptr->framebuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\core\\dcamera.cpp";
-    _DAT_01d046a4 = 0x246;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dcamera.cpp";
+    g_INT_01d046a4 = 0x246;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCamera::init - Unable to alloc frame buffer");
   }
   pvVar2 = malloc
                      (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);
   this_ptr->zbuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\core\\dcamera.cpp";
-    _DAT_01d046a4 = 0x24b;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dcamera.cpp";
+    g_INT_01d046a4 = 0x24b;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCamera::init - Unable to alloc z buffer");
   }
   this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 444,
-    "complexity_score": 369,
+    "complexity_score": 354,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 179,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_many",
       "pointer_cast",
       "pointer_truncation",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
     "total_lines": 623
   },
@@ -55,63 +54,63 @@
   "globals": [
     {
       "addr": "005d811f",
-      "name": "DAT_005d811f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d811f",
+      "type": "float",
+      "value": "-0.9999900"
     },
     {
       "addr": "005d8123",
-      "name": "DAT_005d8123",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d8123",
+      "type": "float",
+      "value": "0.9999900"
     },
     {
       "addr": "005d8127",
-      "name": "DAT_005d8127",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d8127",
+      "type": "float",
+      "value": "-3.141593"
     },
     {
       "addr": "005d812b",
-      "name": "DAT_005d812b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d812b",
+      "type": "float",
+      "value": "6.283185"
     },
     {
       "addr": "005d812f",
-      "name": "DAT_005d812f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d812f",
+      "type": "float",
+      "value": "1.000000E-7"
     },
     {
       "addr": "005d8133",
-      "name": "DAT_005d8133",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d8133",
+      "type": "float",
+      "value": "0.7070000"
     },
     {
       "addr": "005d8137",
-      "name": "DAT_005d8137",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d8137",
+      "type": "float",
+      "value": "-0.7070000"
     },
     {
       "addr": "005d813b",
-      "name": "DAT_005d813b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d813b",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "005d813f",
-      "name": "DAT_005d813f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d813f",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005d8143",
-      "name": "DAT_005d8143",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d8143",
+      "type": "float",
+      "value": "-6.283185"
     }
   ],
   "param_estimates": {
@@ -412,16 +411,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CVector3f *unaff_ESI;",
@@ -429,7 +420,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 130,
+      "line": 129,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -437,7 +428,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 129,
       "match": "(float *)((int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -445,7 +436,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 131,
+      "line": 130,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI->x = afStack_1044[0x3fa];",
@@ -453,7 +444,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 134,
+      "line": 133,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -461,7 +452,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 178,
+      "line": 177,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -469,7 +460,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 177,
       "match": "(float *)((int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -477,7 +468,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 179,
+      "line": 178,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI->x = afStack_1044[0x3fb];",
@@ -485,7 +476,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 182,
+      "line": 181,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -493,7 +484,7 @@
     },
     {
       "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
+      "line": 129,
       "match": "(int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -501,7 +492,7 @@
     },
     {
       "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 178,
+      "line": 177,
       "match": "(int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
@@ -509,7 +500,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 68,
+      "line": 67,
       "match": "(int)local_40 < 0x3f800000",
       "severity": "moderate",
       "text": "if ((int)local_40 < 0x3f800000) {",
@@ -517,7 +508,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 101,
+      "line": 100,
       "match": "(int)local_40 < 0x3f800000",
       "severity": "moderate",
       "text": "if ((int)local_40 < 0x3f800000) {",
@@ -525,7 +516,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 149,
+      "line": 148,
       "match": "(int)local_38 < 0x3f800000",
       "severity": "moderate",
       "text": "if ((int)local_38 < 0x3f800000) {",

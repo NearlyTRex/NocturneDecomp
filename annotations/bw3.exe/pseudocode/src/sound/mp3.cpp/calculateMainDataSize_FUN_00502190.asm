@@ -13,7 +13,7 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 0050332b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006011b8
+;   double[2] g_DOUBLE_ARRAY_006011b8
 ;   undefined4 DAT_00601270
 ;
 ; Called Functions:
@@ -48,7 +48,7 @@ section .text
     SHL EDX,0x5                         ; 005021d4
     MOV EAX,dword ptr [EAX + 0x10]      ; 005021d7
     FILD dword ptr [ESP + 0x4]          ; 005021da
-    FDIV double ptr [EDX + EAX*0x8 + 0x6011b8] ; 005021de | DAT_006011b8
+    FDIV double ptr [EDX + EAX*0x8 + 0x6011b8] ; 005021de | g_DOUBLE_ARRAY_006011b8
     MOV EAX,dword ptr [ESP + 0x14]      ; 005021e5
     CALL crt_math.c_round_FUN_005a3120  ; 005021e9
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)

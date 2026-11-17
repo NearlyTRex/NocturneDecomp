@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -64,8 +64,8 @@ section .text
     MOV ESI,0x5e287e                    ; 0051b72b
     MOV EDI,0x4ee                       ; 0051b730
     PUSH 0x5e2890                       ; 0051b735
-    MOV dword ptr [0x01d046a0],ESI      ; 0051b73a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051b740 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0051b73a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0051b740 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b746
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0051b74b
@@ -193,8 +193,8 @@ section .text
     MOV EDX,0x5e28b0                    ; 0051b8a2
     MOV ECX,0x4ff                       ; 0051b8a7
     PUSH 0x5e28c2                       ; 0051b8ac
-    MOV dword ptr [0x01d046a0],EDX      ; 0051b8b1 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0051b8b7 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0051b8b1 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0051b8b7 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b8bd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0051b8c2

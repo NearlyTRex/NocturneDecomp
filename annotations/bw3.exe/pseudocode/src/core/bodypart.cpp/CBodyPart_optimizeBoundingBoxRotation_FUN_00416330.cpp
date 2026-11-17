@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00416330(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max)
 
 {
@@ -79,24 +77,24 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041633
     local_3c = 0;
     do {
       local_14 = local_44;
-      local_6c.x = (float)local_3c * _DAT_005b6c8e * _DAT_005b6c92;
-      local_6c.y = (float)local_44 * _DAT_005b6c8e * _DAT_005b6c92;
+      local_6c.x = (float)local_3c * 3.141593f * 0.08333334f;
+      local_6c.y = (float)local_44 * 3.141593f * 0.08333334f;
       local_6c.z = 0.0;
       uStack_c4 = 0x4163b4;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
                 ((CMatrix3x3f *)local_b8,&local_6c);
-      fVar12 = (float)local_b8._4_4_ * _DAT_005b6c96;
-      fVar5 = (float)local_b8._8_4_ * _DAT_005b6c96;
-      fVar6 = (float)local_b8._12_4_ * _DAT_005b6c96;
-      fVar7 = (float)local_b8._16_4_ * _DAT_005b6c96;
-      fVar8 = (float)local_b8._20_4_ * _DAT_005b6c96;
-      fVar9 = (float)local_b8._24_4_ * _DAT_005b6c96;
-      dVar17 = round((double)((float)local_b8._0_4_ * _DAT_005b6c96));
+      fVar12 = (float)local_b8._4_4_ * 65536.0f;
+      fVar5 = (float)local_b8._8_4_ * 65536.0f;
+      fVar6 = (float)local_b8._12_4_ * 65536.0f;
+      fVar7 = (float)local_b8._16_4_ * 65536.0f;
+      fVar8 = (float)local_b8._20_4_ * 65536.0f;
+      fVar9 = (float)local_b8._24_4_ * 65536.0f;
+      dVar17 = round((double)((float)local_b8._0_4_ * 65536.0f));
       local_24 = (int)ROUND(dVar17);
-      fVar10 = (float)local_b8._24_4_ * _DAT_005b6c96;
+      fVar10 = (float)local_b8._24_4_ * 65536.0f;
       dVar17 = round((double)fVar12);
       local_24 = (int)ROUND(dVar17);
-      fVar12 = (float)local_b8._24_4_ * _DAT_005b6c96;
+      fVar12 = (float)local_b8._24_4_ * 65536.0f;
       iVar13 = 0;
       local_60 = 0x7fffffff;
       local_6c.z = NAN;

@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CMP3Decoder.h"
+#include "types/classes/CSfxSlot.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2630000
@@ -12,4 +13,25 @@
 
 // CMP3Decoder
 extern CMP3Decoder g_CMP3DecoderInstanceOther;
+
+// CSfxSlot[64]
+extern CSfxSlot g_CSfxSlot_ARRAY_0263cf1c[64];
+
+// byte
+extern byte g_BYTE_02630cb0;
+extern byte g_BYTE_0263cee8;
+
+// char[15360]
+extern char g_CHAR_ARRAY_02630cb8[15360];
+
+// float
+extern float g_FLOAT_0263cf10;
+
+// int
+extern int g_INT_0263ceec;
+extern int g_INT_0263cf14;
+extern int g_INT_0263cf18;
+
+// int[8]
+extern int g_INT_ARRAY_0263cef0[8];
 

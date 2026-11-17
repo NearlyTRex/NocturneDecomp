@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 55,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 67
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -38,26 +37,26 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c74650",
-      "name": "DAT_02c74650",
+      "name": "g_CSfxSlot_ARRAY_02c745ec[0].playback_state",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c807ec",
-      "name": "DAT_02c807ec",
-      "type": "undefined4",
+      "name": "g_INT_02c807ec",
+      "type": "int",
       "value": null
     }
   ],
@@ -134,20 +133,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_02c7476c",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_02c7476c + iVar2);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02c745ec",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CSfxSlot_ARRAY_02c745ec[1].distance_to_speakers + iVar2 + -0xc);",
+      "type": "pointer_cast"
     }
   ]
 }

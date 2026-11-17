@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_updateDT_FUN_004b3010(CGame *this_ptr)
 
 {
@@ -25,16 +23,17 @@ void __cdecl core_game_cpp_CGame_updateDT_FUN_004b3010(CGame *this_ptr)
   if (0x4000 < this_ptr->delta_time_int) {
     this_ptr->delta_time_int = 0x4000;
   }
-  iVar1 = _DAT_01cb80d4;
+  iVar1 = g_INT_01cb80d4;
   dVar3 = round
                     ((double)((float)this_ptr->delta_time_int * this_ptr->time_scale_factor));
   this_ptr->delta_time_int = (int)ROUND(dVar3);
   if (iVar1 != 0) {
     dVar3 = round
-                      ((double)((_DAT_005d72ef / _DAT_006164a0) * this_ptr->time_scale_factor));
+                      ((double)((65536.0f / 30.0f) * this_ptr->time_scale_factor)
+                      );
     this_ptr->delta_time_int = (int)ROUND(dVar3);
   }
-  _DAT_01c2a370 = this_ptr->delta_time_int;
-  this_ptr->delta_time_float = (float)this_ptr->delta_time_int * (float)_DAT_005d72f3;
+  g_INT_01c2a370 = this_ptr->delta_time_int;
+  this_ptr->delta_time_float = (float)this_ptr->delta_time_int * (float)1.52587890625e-05;
   return;
 }

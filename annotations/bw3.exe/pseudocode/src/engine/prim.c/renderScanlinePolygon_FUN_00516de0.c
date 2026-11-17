@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00516de0(SRenderVertex *vertices,int vertex_count)
 
 {
@@ -26,23 +24,23 @@ void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00516de0(SRenderVertex *ver
   int local_1c;
   SSoftwareEdge *local_14;
   
-  if ((DAT_005fba40 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {
+  if ((g_UINT_005fba40 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {
     do {
       if ((int)((pSVar4->projected_vertex).screen_x & -0x80000000) != 0) {
         (pSVar4->projected_vertex).inv_z =
              (int)(0x7fffffff / (longlong)(pSVar4->projected_vertex).transformed_z);
         (pSVar4->projected_vertex).screen_x =
-             (int)(((longlong)(pSVar4->projected_vertex).transformed_x * (longlong)_DAT_01c6b598) /
-                  (longlong)(pSVar4->projected_vertex).transformed_z) + _DAT_01c6b5a0;
+             (int)(((longlong)(pSVar4->projected_vertex).transformed_x * (longlong)g_INT_01c6b598) /
+                  (longlong)(pSVar4->projected_vertex).transformed_z) + g_INT_01c6b5a0;
         (pSVar4->projected_vertex).screen_y =
-             (int)(((longlong)(pSVar4->projected_vertex).transformed_y * (longlong)_DAT_01c6b59c) /
-                  (longlong)(pSVar4->projected_vertex).transformed_z) + _DAT_01c6b5a4;
+             (int)(((longlong)(pSVar4->projected_vertex).transformed_y * (longlong)g_INT_01c6b59c) /
+                  (longlong)(pSVar4->projected_vertex).transformed_z) + g_INT_01c6b5a4;
       }
       iVar9 = iVar9 + 1;
       pSVar4 = pSVar4 + 1;
     } while (iVar9 < vertex_count);
   }
-  if (DAT_007303fc != 0) {
+  if (g_INT_007303fc != 0) {
     pSVar4 = vertices + 1;
     pSVar6 = vertices + 2;
     if (vertex_count < 4) {
@@ -71,13 +69,14 @@ void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00516de0(SRenderVertex *ver
       }
     }
   }
-  if ((_DAT_01c6cee8 != 0) && (DAT_007303f4 == 0)) {
-    engine_special_cpp_drawPolygon_FUN_00565c10(vertices,vertex_count,_DAT_01c6e2b4);
-    _DAT_01ed3198 = _DAT_01ed3198 + vertex_count + -2;
+  if ((g_INT_01c6cee8 != 0) && (g_INT_007303f4 == 0)) {
+    engine_special_cpp_drawPolygon_FUN_00565c10
+              (vertices,vertex_count,g_BIT_INTEGER32_01c6e2b4.dword);
+    g_INT_01ed3198 = g_INT_01ed3198 + vertex_count + -2;
     return;
   }
-  _DAT_01ed3198 = _DAT_01ed3198 + 1;
-  switch(_DAT_01c6e2b8) {
+  g_INT_01ed3198 = g_INT_01ed3198 + 1;
+  switch(g_INT_01c6e2b8) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_00515920(vertices,vertex_count);
     break;
@@ -93,145 +92,145 @@ void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00516de0(SRenderVertex *ver
   case 6:
     engine_prim_c_replaceWWithDepth_FUN_00515a80(vertices,vertex_count);
   }
-  _DAT_01ed36a4 = 0;
-  _DAT_01ed319c = 0;
+  g_INT_01ed36a4 = 0;
+  g_INT_01ed319c = 0;
   local_1c = 0;
-  _DAT_01ed36a0 = 0x4b0;
+  g_INT_01ed36a0 = 0x4b0;
   if (0 < vertex_count) {
     do {
-      iVar9 = local_1c + 1;
-      if (vertex_count <= iVar9) {
-        iVar9 = 0;
+      iVar9 = g_INT_01ed319c;
+      iVar8 = local_1c + 1;
+      if (vertex_count <= iVar8) {
+        iVar8 = 0;
       }
-      pSVar4 = vertices + iVar9;
+      pSVar4 = vertices + iVar8;
       pSVar6 = vertices + local_1c;
-      iVar9 = (pSVar6->projected_vertex).screen_y >> 0x10;
-      iVar8 = (pSVar4->projected_vertex).screen_y >> 0x10;
-      if (iVar9 != iVar8) {
-        iVar10 = iVar8;
+      iVar8 = (pSVar6->projected_vertex).screen_y >> 0x10;
+      iVar10 = (pSVar4->projected_vertex).screen_y >> 0x10;
+      if (iVar8 != iVar10) {
+        iVar3 = iVar10;
         pSVar7 = pSVar6;
         if ((pSVar4->projected_vertex).screen_y < (pSVar6->projected_vertex).screen_y) {
-          iVar10 = iVar9;
-          iVar9 = iVar8;
+          iVar3 = iVar8;
+          iVar8 = iVar10;
           pSVar7 = pSVar4;
           pSVar4 = pSVar6;
         }
-        iVar3 = _DAT_01ed319c * 0x50;
-        *(int *)(&DAT_01ed31a0 + iVar3) = iVar9;
-        iVar8 = _DAT_01ed36a0;
-        *(int *)(iVar3 + 0x1ed31a4) = iVar10;
-        if (iVar9 < iVar8) {
-          _DAT_01ed36a0 = iVar9;
+        g_SSoftwareEdge_ARRAY_01ed31a0[g_INT_01ed319c].base.y_min = iVar8;
+        iVar10 = g_INT_01ed36a0;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.y_max = iVar3;
+        if (iVar8 < iVar10) {
+          g_INT_01ed36a0 = iVar8;
         }
-        if (_DAT_01ed36a4 < iVar10) {
-          _DAT_01ed36a4 = iVar10;
+        if (g_INT_01ed36a4 < iVar3) {
+          g_INT_01ed36a4 = iVar3;
         }
         uVar5 = (pSVar4->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
         if (uVar5 < 0x10000) {
-          iVar9 = 0;
+          iVar8 = 0;
         }
         else {
-          iVar9 = (int)(0xffffffff / (ulonglong)uVar5);
+          iVar8 = (int)(0xffffffff / (ulonglong)uVar5);
         }
         uVar11 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);
-        lVar2 = (longlong)iVar9 *
+        lVar2 = (longlong)iVar8 *
                 (longlong)
                 ((pSVar4->projected_vertex).screen_x - (pSVar7->projected_vertex).screen_x);
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31ac) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.x_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31a8) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.x_current =
              (pSVar7->projected_vertex).screen_x +
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar2 = (longlong)iVar9 * (longlong)(pSVar4->u - pSVar7->u);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->u - pSVar7->u);
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31bc) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.u_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31b8) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.u_current =
              pSVar7->u + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar2 = (longlong)iVar9 * (longlong)(pSVar4->v - pSVar7->v);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->v - pSVar7->v);
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31c4) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.v_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31c0) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.v_current =
              pSVar7->v + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar2 = (longlong)iVar9 * (longlong)(pSVar4->r - pSVar7->r);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->r - pSVar7->r);
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31b4) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.red_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31b0) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.red_current =
              pSVar7->r + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar2 = (longlong)iVar9 * (longlong)(pSVar4->a - pSVar7->a);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->a - pSVar7->a);
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31d4) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.alpha_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31d0) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.alpha_current =
              pSVar7->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar2 = (longlong)iVar9 *
+        lVar2 = (longlong)iVar8 *
                 (longlong)
                 ((pSVar4->projected_vertex).transformed_z - (pSVar7->projected_vertex).transformed_z
                 );
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31cc) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.depth_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31c8) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].base.depth_current =
              (pSVar7->projected_vertex).transformed_z +
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar2 = (longlong)iVar9 * (longlong)(pSVar4->g - pSVar7->g);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->g - pSVar7->g);
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31dc) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].green_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31d8) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].green_current =
              pSVar7->g + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar2 = (longlong)iVar9 * (longlong)(pSVar4->b - pSVar7->b);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->b - pSVar7->b);
         uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        *(uint *)(iVar3 + 0x1ed31e4) = uVar5;
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].blue_gradient = uVar5;
         lVar2 = (longlong)(int)uVar11 * (longlong)(int)uVar5;
-        *(uint *)(iVar3 + 0x1ed31e0) =
+        g_SSoftwareEdge_ARRAY_01ed31a0[iVar9].blue_current =
              pSVar7->b + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        _DAT_01ed319c = _DAT_01ed319c + 1;
+        g_INT_01ed319c = g_INT_01ed319c + 1;
       }
       local_1c = local_1c + 1;
     } while (local_1c < vertex_count);
   }
-  iVar9 = _DAT_01ed36a0;
-  right = (SSoftwareEdge *)&DAT_01ed31a0;
+  iVar9 = g_INT_01ed36a0;
+  right = g_SSoftwareEdge_ARRAY_01ed31a0;
   iVar8 = 0;
-  if (0 < _DAT_01ed319c) {
+  if (0 < g_INT_01ed319c) {
     do {
-      if ((_DAT_01ed36a0 == (right->base).y_min) && (right != (SSoftwareEdge *)0x0))
+      if ((g_INT_01ed36a0 == (right->base).y_min) && (right != (SSoftwareEdge *)0x0))
       goto LAB_00516f8f;
       iVar8 = iVar8 + 1;
       right = right + 1;
-    } while (iVar8 < _DAT_01ed319c);
+    } while (iVar8 < g_INT_01ed319c);
   }
   right = (SSoftwareEdge *)0x0;
 LAB_00516f8f:
   if (right != (SSoftwareEdge *)0x0) {
     iVar8 = 0;
-    local_14 = (SSoftwareEdge *)&DAT_01ed31a0;
-    if (0 < _DAT_01ed319c) {
+    local_14 = g_SSoftwareEdge_ARRAY_01ed31a0;
+    if (0 < g_INT_01ed319c) {
       do {
-        if ((_DAT_01ed36a0 == (local_14->base).y_min) && (local_14 != right)) goto LAB_00516fcc;
+        if ((g_INT_01ed36a0 == (local_14->base).y_min) && (local_14 != right)) goto LAB_00516fcc;
         iVar8 = iVar8 + 1;
         local_14 = local_14 + 1;
-      } while (iVar8 < _DAT_01ed319c);
+      } while (iVar8 < g_INT_01ed319c);
     }
     local_14 = (SSoftwareEdge *)0x0;
 LAB_00516fcc:
     if (local_14 != (SSoftwareEdge *)0x0) {
       do {
-        iVar8 = _DAT_01ed319c;
+        iVar8 = g_INT_01ed319c;
         if ((right->base).y_max <= iVar9) {
           (right->base).y_min = -1;
           iVar10 = 0;
-          right = (SSoftwareEdge *)&DAT_01ed31a0;
+          right = g_SSoftwareEdge_ARRAY_01ed31a0;
           if (0 < iVar8) {
             do {
               if ((iVar9 == (right->base).y_min) && (right != local_14)) goto LAB_00517022;
               iVar10 = iVar10 + 1;
               right = right + 1;
-            } while (iVar10 < _DAT_01ed319c);
+            } while (iVar10 < g_INT_01ed319c);
           }
           right = (SSoftwareEdge *)0x0;
 LAB_00517022:
@@ -239,10 +238,10 @@ LAB_00517022:
             return;
           }
         }
-        iVar8 = _DAT_01ed319c;
+        iVar8 = g_INT_01ed319c;
         if ((local_14->base).y_max <= iVar9) {
           (local_14->base).y_min = -1;
-          local_14 = (SSoftwareEdge *)&DAT_01ed31a0;
+          local_14 = g_SSoftwareEdge_ARRAY_01ed31a0;
           iVar10 = 0;
           if (iVar8 < 1) {
             return;
@@ -250,7 +249,7 @@ LAB_00517022:
           while ((iVar9 != (local_14->base).y_min || (local_14 == right))) {
             iVar10 = iVar10 + 1;
             local_14 = local_14 + 1;
-            if (_DAT_01ed319c <= iVar10) {
+            if (g_INT_01ed319c <= iVar10) {
               return;
             }
           }

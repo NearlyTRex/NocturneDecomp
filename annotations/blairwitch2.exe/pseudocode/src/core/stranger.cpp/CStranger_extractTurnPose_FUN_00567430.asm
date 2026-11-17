@@ -19,8 +19,8 @@
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 005660a1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eb865
-;   undefined4 DAT_0264be30
+;   double g_DOUBLE_005eb865 = 40
+;   int[23] g_INT_ARRAY_0264be30
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
@@ -49,7 +49,7 @@ section .text
     ADD ESP,0x8                         ; 0056744f
     FLD float ptr [ESI + 0x256c0]       ; 00567452
     PUSH -0x1                           ; 00567458
-    FMUL double ptr [0x005eb865]        ; 0056745a | DAT_005eb865
+    FMUL double ptr [0x005eb865]        ; 0056745a | g_DOUBLE_005eb865
     SUB ESP,0x4                         ; 00567460
     FSTP float ptr [ESP]                ; 00567463
     MOV EDX,dword ptr [ESI + 0x256f0]   ; 00567466
@@ -57,7 +57,7 @@ section .text
     PUSH EBX                            ; 0056746d
     CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 ; 0056746e
         ;   XREF to: 00544f80 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
-    MOV EAX,[0x0264be30]                ; 00567473 | DAT_0264be30
+    MOV EAX,[0x0264be30]                ; 00567473 | g_INT_ARRAY_0264be30
     ADD ESI,0x964                       ; 00567478
     SHL EAX,0x4                         ; 0056747e
     ADD ESP,0x10                        ; 00567481

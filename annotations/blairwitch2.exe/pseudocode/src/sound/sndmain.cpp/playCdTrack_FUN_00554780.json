@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 246,
+    "complexity_score": 236,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "bitcast_double",
       "bitcast_double_pair",
@@ -59,15 +59,15 @@
   "globals": [
     {
       "addr": "005e9496",
-      "name": "DAT_005e9496",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e9496",
+      "type": "float",
+      "value": "0.01666667"
     },
     {
       "addr": "005e949a",
-      "name": "DAT_005e949a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e949a",
+      "type": "float",
+      "value": "60"
     },
     {
       "addr": "005e949e",
@@ -77,14 +77,14 @@
     },
     {
       "addr": "0263cf14",
-      "name": "DAT_0263cf14",
-      "type": "undefined4",
+      "name": "g_INT_0263cf14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0263cf18",
-      "name": "DAT_0263cf18",
-      "type": "undefined4",
+      "name": "g_INT_0263cf18",
+      "type": "int",
       "value": null
     }
   ],
@@ -241,14 +241,6 @@
       "match": "0x5547d7",
       "severity": "moderate",
       "text": "uVar4 = 0x5547d7;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x5e943e assigned to bare local `uStack_5c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_5c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 71,
-      "match": "0x5e943e",
-      "severity": "moderate",
-      "text": "uStack_5c = 0x5e943e;",
       "type": "raw_address_constant"
     },
     {

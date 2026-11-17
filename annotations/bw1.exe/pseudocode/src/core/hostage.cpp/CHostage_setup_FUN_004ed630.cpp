@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hostage_cpp_CHostage_setup_FUN_004ed630(CHostage *this_ptr)
 
 {
@@ -69,7 +67,7 @@ void __cdecl core_hostage_cpp_CHostage_setup_FUN_004ed630(CHostage *this_ptr)
   iVar1 = this_ptr->hostage_type;
   (this_ptr->base).base.gesture_branch_root = iVar2;
   if (iVar1 == 1) {
-    _DAT_01d06b8c =
+    g_INT_01d06b8c =
          core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(this_ptr_02,"gunup",1);
   }
   core_npc_cpp_CNPC_setup_FUN_00531720(&this_ptr->base);

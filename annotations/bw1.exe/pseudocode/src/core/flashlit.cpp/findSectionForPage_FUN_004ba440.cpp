@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flashlit_cpp_findSectionForPage_FUN_004ba440(int page)
 
 {
@@ -15,7 +13,7 @@ int __cdecl core_flashlit_cpp_findSectionForPage_FUN_004ba440(int page)
   int iVar2;
   
   iVar2 = 0;
-  if (0 < _DAT_01cc4470) {
+  if (0 < g_INT_01cc4470) {
     pSVar1 = SNotesSection_ARRAY_01cc4474;
     do {
       if ((pSVar1->first_page <= page) && (page < pSVar1->first_page + pSVar1->page_count)) {
@@ -23,7 +21,7 @@ int __cdecl core_flashlit_cpp_findSectionForPage_FUN_004ba440(int page)
       }
       iVar2 = iVar2 + 1;
       pSVar1 = pSVar1 + 1;
-    } while (iVar2 < _DAT_01cc4470);
+    } while (iVar2 < g_INT_01cc4470);
   }
   return -1;
 }

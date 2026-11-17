@@ -8,9 +8,9 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_gargoyle_shatter_wav_005e39f3+1
+;   TerminatedCString s_gargoyle_shatter_wav_005e39f4
 ;   TerminatedCString s_gargoyle_hurt_wav_005e3a09
-;   undefined4 DAT_0061c010
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -57,7 +57,7 @@ section .text
     PUSH ESI                            ; 004dd66f
     LEA EAX,[ESP + 0x14]                ; 004dd670
     PUSH EAX                            ; 004dd674
-    MOV EDX,dword ptr [0x0061c010]      ; 004dd675 | DAT_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004dd675 | g_CFireEffect_PTR_0061c010
     PUSH EDX                            ; 004dd67b
     INC EBX                             ; 004dd67c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004dd67d
@@ -111,7 +111,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0 ; 004dd702
         ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004dd707
-    PUSH 0x5e39f4                       ; 004dd70a | s_gargoyle_shatter_wav_005e39f3+1
+    PUSH 0x5e39f4                       ; 004dd70a | = "gargoyle-shatter.wav"
     MOV EAX,dword ptr [EBP + 0x154]     ; 004dd70f
     PUSH EBP                            ; 004dd715
     CALL dword ptr [EAX + 0x2c]         ; 004dd716

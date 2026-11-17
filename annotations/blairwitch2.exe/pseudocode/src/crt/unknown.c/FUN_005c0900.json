@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 270,
+    "complexity_score": 200,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 22,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -83,9 +83,9 @@
     },
     {
       "addr": "0061f4dc",
-      "name": "DAT_0061f4dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061f4dc",
+      "type": "int",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -230,14 +230,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_0061f4dc",
-      "severity": "mild",
-      "text": "if (0 < DAT_0061f4dc) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 13,
       "match": "(int *)((int)DAT_0061f4d8",
@@ -287,10 +279,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_0061f4dc",
+      "line": 22,
+      "match": "DAT_0061f4d8",
       "severity": "mild",
-      "text": "} while (iVar1 < DAT_0061f4dc * 4);",
+      "text": "DAT_0061f4d8 = realloc(DAT_0061f4d8,(g_INT_0061f4dc + 1) * 4);",
       "type": "undefined_data"
     },
     {
@@ -298,47 +290,7 @@
       "line": 22,
       "match": "DAT_0061f4d8",
       "severity": "mild",
-      "text": "DAT_0061f4d8 = realloc(DAT_0061f4d8,(DAT_0061f4dc + 1) * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0061f4d8",
-      "severity": "mild",
-      "text": "DAT_0061f4d8 = realloc(DAT_0061f4d8,(DAT_0061f4dc + 1) * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0061f4dc",
-      "severity": "mild",
-      "text": "DAT_0061f4d8 = realloc(DAT_0061f4d8,(DAT_0061f4dc + 1) * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_0061f4dc",
-      "severity": "mild",
-      "text": "iVar2 = DAT_0061f4dc * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061f4dc",
-      "severity": "mild",
-      "text": "DAT_0061f4dc = DAT_0061f4dc + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061f4dc",
-      "severity": "mild",
-      "text": "DAT_0061f4dc = DAT_0061f4dc + 1;",
+      "text": "DAT_0061f4d8 = realloc(DAT_0061f4d8,(g_INT_0061f4dc + 1) * 4);",
       "type": "undefined_data"
     },
     {
@@ -372,14 +324,6 @@
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2dc)();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0061f4dc",
-      "severity": "mild",
-      "text": "return DAT_0061f4dc + -1;",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 5,

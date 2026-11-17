@@ -20,7 +20,7 @@ void __cdecl core_carved_cpp_CCarved_processDamage_FUN_00428a80(CCarved *this_pt
   
   if ((this_ptr->base).base.is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
-              (0x01C6E360,"@ShotInvulnerable" + 1);
+              (g_CEventList_PTR_005fba60,"ShotInvulnerable");
     return;
   }
   core_carved_cpp_CCarved_processDismemberment_FUN_00428810(this_ptr,damage_info);

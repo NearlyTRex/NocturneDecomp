@@ -9,22 +9,22 @@
 ;   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_0058e110 at 0058e303
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01cb0242
-;   undefined4 DAT_01cb0244
+;   int g_INT_006141c0 = 0x8
+;   ushort g_USHORT_01cb0242
+;   int g_INT_01cb0244
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x006141c0],0x10     ; 004a96e0 | DAT_006141c0
+    CMP dword ptr [0x006141c0],0x10     ; 004a96e0 | g_INT_006141c0
         ;   Label: engine_font.cpp_getDefaultTextColor_FUN_004a96e0
     JNZ 0x004a96f2                      ; 004a96e7
         ;   XREF to: 004a96f2 (CONDITIONAL_JUMP)  ; LAB_004a96f2
     XOR EAX,EAX                         ; 004a96e9
-    MOV AX,[0x01cb0242]                 ; 004a96eb | DAT_01cb0242
+    MOV AX,[0x01cb0242]                 ; 004a96eb | g_USHORT_01cb0242
     RET                                 ; 004a96f1
-    MOV EAX,[0x01cb0244]                ; 004a96f2 | DAT_01cb0244
+    MOV EAX,[0x01cb0244]                ; 004a96f2 | g_INT_01cb0244
         ;   Label: LAB_004a96f2
     RET                                 ; 004a96f7
 

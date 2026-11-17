@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004c8dd0(CGhoul *this_ptr,CVector3f *out_attract_position)
 
 {
@@ -72,10 +70,10 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004c8dd0(CGhoul *this_ptr,C
     return 0;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
-            (this_ptr_00,_DAT_01d22da4,&CStack_a8);
+            (this_ptr_00,g_INT_ARRAY_01d22da0[1],&CStack_a8);
   afStack_d4[2] = CStack_a8.x;
   afStack_d4[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_a8 + (uint)bVar2 * -8 + 4);
-  bone_index = _DAT_01d22dac;
+  bone_index = g_INT_ARRAY_01d22da0[3];
   afStack_d4[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
        *(float *)((int)&CStack_a8 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
@@ -91,21 +89,21 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004c8dd0(CGhoul *this_ptr,C
   afStack_d4[(uint)bVar2 * -2 + 6] = afStack_ec[(uint)bVar2 * -2];
   afStack_d4[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7] =
        afStack_ec[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  fStack_6c = fStack_c0 * _DAT_005c439d;
-  afStack_68[0] = fStack_bc * _DAT_005c439d;
-  afStack_68[1] = fStack_b8 * _DAT_005c439d;
-  fStack_108 = fStack_c0 * _DAT_005c439d;
+  fStack_6c = fStack_c0 * 0.5f;
+  afStack_68[0] = fStack_bc * 0.5f;
+  afStack_68[1] = fStack_b8 * 0.5f;
+  fStack_108 = fStack_c0 * 0.5f;
   *(float *)((int)&stack0xfffffefc + (uint)bVar2 * -8) = afStack_68[(uint)bVar2 * -2];
   *(float *)((int)&stack0xffffff00 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
-            (this_ptr_00,_DAT_01d22da8,&CStack_90);
+            (this_ptr_00,g_INT_ARRAY_01d22da0[2],&CStack_90);
   fStack_b4 = CStack_90.x;
   afStack_d4[(uint)bVar2 * -2 + 9] = *(float *)((int)&CStack_90 + (uint)bVar2 * -8 + 4);
   afStack_d4[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 10] =
        *(float *)((int)&CStack_90 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
-            (this_ptr_00,_DAT_01d22db0,&CStack_84);
+            (this_ptr_00,g_INT_ARRAY_01d22da0[4],&CStack_84);
   fStack_114 = CStack_84.x;
   *(uint *)((int)&stack0xfffffef0 + (uint)bVar2 * -8) =
        *(uint *)((int)&CStack_84 + (uint)bVar2 * -8 + 4);
@@ -119,10 +117,10 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004c8dd0(CGhoul *this_ptr,C
   afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 10] =
        afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7];
   fVar1 = fStack_108;
-  fStack_18 = fStack_48 * _DAT_005c439d;
-  fStack_14 = fStack_44 * _DAT_005c439d;
-  fStack_10 = fStack_40 * _DAT_005c439d;
-  fStack_24 = fStack_48 * _DAT_005c439d;
+  fStack_18 = fStack_48 * 0.5f;
+  fStack_14 = fStack_44 * 0.5f;
+  fStack_10 = fStack_40 * 0.5f;
+  fStack_24 = fStack_48 * 0.5f;
   afStack_68[(uint)bVar2 * -2 + 0x12] = afStack_68[(uint)bVar2 * -2 + 0x15];
   afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x13] =
        afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x16];
@@ -134,10 +132,10 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004c8dd0(CGhoul *this_ptr,C
   afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0xd] =
        afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x10];
   input_local_point = &CStack_fc;
-  afStack_68[2] = fStack_3c * _DAT_005c439d;
-  afStack_68[3] = fStack_38 * _DAT_005c439d;
-  fStack_58 = fStack_34 * _DAT_005c439d;
-  CStack_fc.x = fStack_3c * _DAT_005c439d;
+  afStack_68[2] = fStack_3c * 0.5f;
+  afStack_68[3] = fStack_38 * 0.5f;
+  fStack_58 = fStack_34 * 0.5f;
+  CStack_fc.x = fStack_3c * 0.5f;
   *(float *)((int)&CStack_fc + (uint)bVar2 * -8 + 4) = afStack_68[(uint)bVar2 * -2 + 3];
   *(float *)((int)&CStack_fc + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        afStack_68[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];

@@ -95,11 +95,11 @@ LAB_0047dd7a:
       pcVar7 = pcVar7 + ((uint)bVar8 * -2 + 1) * 4;
     }
     _getcwd(acStack_17dc,0x104);
-    _sprintf(acStack_1b20,(char *)0x5bcef2);
+    _sprintf(acStack_1b20,"%s\n%s");
     shape_edittool_cpp_CPickList_ctor_FUN_004831c0((CPickList *)&stack0xffffe120);
     engine_dosio_cpp_CFileFinder_ctor_FUN_00465b60((CFileFinder *)auStack_18f0);
     if (search_pattern == (char *)0x0) {
-      search_pattern = (char *)0x5bcef8;
+      search_pattern = "*.*";
     }
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00465ba0((CFileFinder *)auStack_18f0,search_pattern)
     ;
@@ -120,7 +120,7 @@ LAB_0047dd7a:
         }
         time_ptr = _localtime(atStack_17e8);
         _strftime(acStack_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
-        _sprintf(acStack_fc,(char *)0x5bcf12);
+        _sprintf(acStack_fc,"%s\t%s\t%d%s");
         strupr(acStack_fc);
         shape_edittool_cpp_CStrList_add_FUN_00482070((CStrList *)&stack0xffffe120,acStack_fc);
       }
@@ -150,15 +150,15 @@ LAB_0047dd7a:
       acStack_12c8[0] = '\0';
     }
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00465ba0
-              ((CFileFinder *)auStack_18f0,(char *)0x5bcf1d);
+              ((CFileFinder *)auStack_18f0,"*.*");
     while (auStack_18f0[0] != '\0') {
       if ((bStack_17f0 & 4) != 0) {
-        iVar3 = _strcmp(auStack_18f0,(char *)0x5bcf21);
+        iVar3 = _strcmp(auStack_18f0,"..");
         if (iVar3 == 0) {
-          pcVar2 = (char *)0x5bcf24;
+          pcVar2 = "..\t\t(DIR)";
         }
         else {
-          iVar3 = _strcmp(auStack_18f0,(char *)0x5bcf2e);
+          iVar3 = _strcmp(auStack_18f0,".");
           if (iVar3 == 0) goto LAB_0047df4e;
           engine_dosio_cpp_splitPath_FUN_00465e50
                     (auStack_18f0,(char *)0x0,(char *)0x0,acStack_ac4,&cStack_6c4);
@@ -173,7 +173,7 @@ LAB_0047dd7a:
             } while (cVar1 != '\0');
             memmove(&cStack_6c4,auStack_6c3,~uVar5 - 1);
           }
-          _sprintf(acStack_1c4,(char *)0x5bcf30);
+          _sprintf(acStack_1c4,"%s\t%s\t(DIR)");
           strupr(acStack_1c4);
           pcVar2 = acStack_1c4;
         }

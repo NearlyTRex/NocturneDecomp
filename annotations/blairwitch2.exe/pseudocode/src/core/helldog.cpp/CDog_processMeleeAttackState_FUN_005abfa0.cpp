@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *this_ptr,float delta_time)
 
@@ -39,7 +38,7 @@ void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *th
   afStack_20[3] = SQRT(fVar3 * fVar3 + fVar2 * fVar2);
   this_ptr_00 = &(this_ptr->base).base.base.model;
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
-  if (_DAT_00600c4c < afStack_20[3]) {
+  if (6.0f < afStack_20[3]) {
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
               ((CDemonActor *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position,
                &CStack_48);
@@ -55,11 +54,11 @@ void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *th
     afStack_20[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
          *(float *)((int)&CStack_3c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     this_ptr_01 = &(this_ptr->base).state_machine;
-    if (ABS(afStack_20[0]) < (float)_DAT_005f0da6) {
+    if (ABS(afStack_20[0]) < (float)0.261799387791667) {
       core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"LeapAttack");
       return;
     }
-    (this_ptr->base).attack_range = _DAT_00600c4c;
+    (this_ptr->base).attack_range = 6.0f;
     core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
     return;
   }

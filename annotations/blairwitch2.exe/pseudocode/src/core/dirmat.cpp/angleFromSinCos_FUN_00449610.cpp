@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_00449610(double y,double x)
 
 {
@@ -15,8 +13,8 @@ float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_00449610(double y,double x)
   double dVar2;
   float fStack_c;
   
-  if ((_DAT_005cf167 <= y) || (y <= _DAT_005cf16f)) {
-    if ((_DAT_005cf177 < x) && (x < 1.0)) {
+  if ((0.70699999999999996 <= y) || (y <= -0.70699999999999996)) {
+    if ((-1 < x) && (x < 1.0)) {
       dVar2 = acos(x);
       fStack_c = (float)dVar2;
     }
@@ -28,14 +26,14 @@ float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_00449610(double y,double x)
     fVar1 = asin((float10)y);
     fStack_c = (float)fVar1;
     if (x < 0.0) {
-      fStack_c = (float)_DAT_005cf17f - fStack_c;
+      fStack_c = (float)3.1415926535900001 - fStack_c;
     }
   }
-  if (fStack_c < (float)_DAT_005cf187) {
-    fStack_c = fStack_c + _DAT_005cf18f;
+  if (fStack_c < (float)-3.1415926535900001) {
+    fStack_c = fStack_c + 6.283185f;
   }
-  if ((float)_DAT_005cf17f < fStack_c) {
-    return fStack_c + _DAT_005cf193;
+  if ((float)3.1415926535900001 < fStack_c) {
+    return fStack_c + -6.283185f;
   }
   return fStack_c;
 }

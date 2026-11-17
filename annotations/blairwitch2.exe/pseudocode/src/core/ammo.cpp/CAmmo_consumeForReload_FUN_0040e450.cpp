@@ -13,7 +13,7 @@ int __cdecl core_ammo_cpp_CAmmo_consumeForReload_FUN_0040e450(CAmmo *this_ptr,CD
   
   if (0 < this_ptr->ammo_count) {
     iVar1 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004db880
-                      ((hero->base).inventories,&DAT_005cb23d);
+                      ((hero->base).inventories,"CGun");
     if (iVar1 != 0) {
       this_ptr->ammo_count = this_ptr->ammo_count + -1;
       return 1;

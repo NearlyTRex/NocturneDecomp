@@ -14,12 +14,12 @@
 ;   core_event.cpp_CEventList_validateCommands_FUN_004a6cd0 at 004a6cf1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dcd8e
+;   TerminatedCString s_s_005dcd8e
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   undefined4 DAT_00626114
+;   uchar[257] g_UCHAR_ARRAY_00626114
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01c56ecc
-;   undefined4 DAT_01c56ed0
+;   int g_INT_01c56ecc
+;   char[256] g_CHAR_ARRAY_01c56ed0
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_004a1ba8
     INC AL                              ; 004a1baa
     AND EAX,0xff                        ; 004a1bac
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004a1bb1 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004a1bb1 | g_UCHAR_ARRAY_00626114
     JZ 0x004a1bbd                       ; 004a1bb8
         ;   XREF to: 004a1bbd (CONDITIONAL_JUMP)  ; LAB_004a1bbd
     INC EDX                             ; 004a1bba
@@ -74,7 +74,7 @@ section .text
     MOV DL,byte ptr [EAX + -0x1]        ; 004a1be3
     INC DL                              ; 004a1be6
     AND EDX,0xff                        ; 004a1be8
-    TEST byte ptr [EDX + 0x626114],0x2  ; 004a1bee | DAT_00626114
+    TEST byte ptr [EDX + 0x626114],0x2  ; 004a1bee | g_UCHAR_ARRAY_00626114
     JZ 0x004a1c02                       ; 004a1bf5
         ;   XREF to: 004a1c02 (CONDITIONAL_JUMP)  ; LAB_004a1c02
     DEC EAX                             ; 004a1bf7
@@ -102,16 +102,16 @@ section .text
     TEST EAX,EAX                        ; 004a1c15
     JNZ 0x004a1ba6                      ; 004a1c17
         ;   XREF to: 004a1ba6 (CONDITIONAL_JUMP)  ; LAB_004a1ba6
-    CMP dword ptr [0x01c56ecc],0x0      ; 004a1c19 | DAT_01c56ecc
+    CMP dword ptr [0x01c56ecc],0x0      ; 004a1c19 | g_INT_01c56ecc
     JZ 0x004a1c2b                       ; 004a1c20
         ;   XREF to: 004a1c2b (CONDITIONAL_JUMP)  ; LAB_004a1c2b
     ADD ESP,0x200                       ; 004a1c22
     POP ESI                             ; 004a1c28
     POP EBX                             ; 004a1c29
     RET                                 ; 004a1c2a
-    PUSH 0x1c56ed0                      ; 004a1c2b | DAT_01c56ed0
+    PUSH 0x1c56ed0                      ; 004a1c2b | g_CHAR_ARRAY_01c56ed0
         ;   Label: LAB_004a1c2b
-    PUSH 0x5dcd8e                       ; 004a1c30 | DAT_005dcd8e
+    PUSH 0x5dcd8e                       ; 004a1c30 | = "%s\n"
     MOV ECX,dword ptr [0x00611100]      ; 004a1c35 | g_CConsolePtr
     PUSH ECX                            ; 004a1c3b | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004a1c3c

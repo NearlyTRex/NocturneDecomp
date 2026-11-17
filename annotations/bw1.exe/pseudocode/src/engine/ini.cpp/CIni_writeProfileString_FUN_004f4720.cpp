@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004f4720(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 {
@@ -33,8 +31,8 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004f4720(CIni *this_ptr,c
   }
   stream = _fopen(filename,"rt");
   if (stream == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\ini.cpp";
-    _DAT_01d1d404 = 0x18b;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\ini.cpp";
+    g_INT_01d1d404 = 0x18b;
     core_main_c_displayErrorAndQuit_FUN_005030e0("cIni::writeProfileString: Unable to open input");
   }
   pcVar3 = acStack_216;
@@ -59,8 +57,8 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004f4720(CIni *this_ptr,c
   acStack_216[~uVar4] = 'x';
   file = _fopen(acStack_216 + 2,"wt");
   if (file == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\ini.cpp";
-    _DAT_01d1d404 = 399;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\ini.cpp";
+    g_INT_01d1d404 = 399;
     core_main_c_displayErrorAndQuit_FUN_005030e0("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {

@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 59,
+    "complexity_score": 43,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 2,
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 90
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -87,8 +86,8 @@
   "globals": [
     {
       "addr": "026807e4",
-      "name": "DAT_026807e4",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_PTR_026807e4",
+      "type": "char**",
       "value": null
     }
   ],
@@ -285,16 +284,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 18,
+      "line": 15,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

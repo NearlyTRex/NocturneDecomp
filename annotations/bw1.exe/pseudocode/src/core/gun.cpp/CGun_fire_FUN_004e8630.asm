@@ -10,12 +10,12 @@
 ;   TerminatedCString s_s_45_dry_wav_005e43b0
 ;   TerminatedCString s_s_45_wav_005e43bd
 ;   TerminatedCString s_gatbullet_kfm_005e43c4
-;   undefined4 DAT_005e43d3
-;   undefined4 DAT_005e43db
-;   undefined4 DAT_005e43e3
-;   undefined4 DAT_0061c010
+;   double g_DOUBLE_005e43d3 = 1.5
+;   float g_FLOAT_005e43db = -0.125
+;   double g_DOUBLE_005e43e3 = 10
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CFlameCanClassInfo.name_hash
@@ -121,7 +121,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e8730
     MOVSD ES:EDI,ESI                    ; 004e8731
     FLD float ptr [EBX + 0x2e8]         ; 004e8732
-    FDIVR double ptr [0x005e43d3]       ; 004e8738 | DAT_005e43d3
+    FDIVR double ptr [0x005e43d3]       ; 004e8738 | g_DOUBLE_005e43d3
     FLD float ptr [ESP + 0x138]         ; 004e873e
     FXCH                                ; 004e8745
     FSTP float ptr [ESP + 0x1a4]        ; 004e8747
@@ -218,8 +218,8 @@ section .text
     LEA EAX,[ESP + 0x118]               ; 004e889d
     FLD float ptr [ESP + 0x11c]         ; 004e88a4
     PUSH EAX                            ; 004e88ab
-    MOV EAX,[0x0061c010]                ; 004e88ac | DAT_0061c010
-    FADD float ptr [0x005e43db]         ; 004e88b1 | DAT_005e43db
+    MOV EAX,[0x0061c010]                ; 004e88ac | g_CFireEffect_PTR_0061c010
+    FADD float ptr [0x005e43db]         ; 004e88b1 | g_FLOAT_005e43db
     PUSH EAX                            ; 004e88b7
     FSTP float ptr [ESP + 0x124]        ; 004e88b8
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70 ; 004e88bf
@@ -229,7 +229,7 @@ section .text
     PUSH EAX                            ; 004e88ce
     PUSH 0x5e43bd                       ; 004e88cf | = "45.wav"
     PUSH EBX                            ; 004e88d4
-    MOV EDX,dword ptr [0x006236b8]      ; 004e88d5 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 004e88d5 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 004e88db
     CALL core_sound.cpp_CSound_playActorSound_FUN_0057d8a0 ; 004e88dc
         ;   XREF to: 0057d8a0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0057d8a0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -313,7 +313,7 @@ section .text
     PUSH EAX                            ; 004e8a24
     ADD EBX,0x20                        ; 004e8a25
     PUSH EBX                            ; 004e8a28
-    MOV EDX,dword ptr [0x0061c010]      ; 004e8a29 | DAT_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004e8a29 | g_CFireEffect_PTR_0061c010
     PUSH EDX                            ; 004e8a2f
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004b7270 ; 004e8a30
         ;   XREF to: 004b7270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004b7270(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
@@ -330,7 +330,7 @@ section .text
     PUSH EAX                            ; 004e8a4b
     PUSH 0x5e43b0                       ; 004e8a4c | = "45-dry-!.wav"
     PUSH EBX                            ; 004e8a51
-    MOV EDX,dword ptr [0x006236b8]      ; 004e8a52 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 004e8a52 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 004e8a58
     CALL core_sound.cpp_CSound_playActorSound_FUN_0057d8a0 ; 004e8a59
         ;   XREF to: 0057d8a0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0057d8a0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -513,7 +513,7 @@ section .text
     FMUL ST0                            ; 004e8c8b
     FADDP                               ; 004e8c8d
     FSQRT                               ; 004e8c8f
-    FDIVR double ptr [0x005e43e3]       ; 004e8c91 | DAT_005e43e3
+    FDIVR double ptr [0x005e43e3]       ; 004e8c91 | g_DOUBLE_005e43e3
     FLD float ptr [ESP + 0xe4]          ; 004e8c97
     FXCH                                ; 004e8c9e
     FSTP float ptr [ESP + 0x1b4]        ; 004e8ca0
@@ -678,7 +678,7 @@ section .text
     PUSH ESI                            ; 004e8ec6 | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 004e8ec7
     PUSH EAX                            ; 004e8ecc | g_CDemonSetInstance.collision_impact_position.x
-    MOV ECX,dword ptr [0x0061c010]      ; 004e8ecd | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 004e8ecd | g_CFireEffect_PTR_0061c010
     PUSH ECX                            ; 004e8ed3
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 ; 004e8ed4
         ;   XREF to: 004b56a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)

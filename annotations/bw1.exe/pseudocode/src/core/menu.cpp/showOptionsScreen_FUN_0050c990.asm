@@ -24,9 +24,9 @@
 ;   TerminatedCString s_Credits_005e822c
 ;   TerminatedCString s_Option_Menu_005e8234
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_0061f2a4
+;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CGameInstance.game_control
 ;   ... and 7 more
 ;
@@ -197,9 +197,9 @@ section .text
         ;   Label: caseD_0
     PUSH EDI                            ; 0050cb43
         ;   Label: caseD_3
-    MOV EAX,[0x0061f2a4]                ; 0050cb44 | DAT_0061f2a4
-    PUSH EAX                            ; 0050cb49 | DAT_01d1bca0
-    MOV EBX,dword ptr [EAX]             ; 0050cb4a | DAT_01d1bca0
+    MOV EAX,[0x0061f2a4]                ; 0050cb44 | g_CKeys_PTR_0061f2a4
+    PUSH EAX                            ; 0050cb49 | g_PTR_01d1bca0
+    MOV EBX,dword ptr [EAX]             ; 0050cb4a | g_PTR_01d1bca0
     CALL dword ptr [EBX + 0x4]          ; 0050cb4c
     ADD ESP,0x8                         ; 0050cb4f
     TEST EAX,EAX                        ; 0050cb52
@@ -216,7 +216,7 @@ section .text
     POP ESI                             ; 0050cb6f
     POP EBX                             ; 0050cb70
     RET                                 ; 0050cb71
-    MOV EBX,dword ptr [0x006236b8]      ; 0050cb72 | DAT_006236b8
+    MOV EBX,dword ptr [0x006236b8]      ; 0050cb72 | g_CSound_PTR_006236b8
         ;   Label: LAB_0050cb72
     PUSH EBX                            ; 0050cb78
     CALL core_sound.cpp_CSound_configure_FUN_0057d6a0 ; 0050cb79
@@ -264,11 +264,11 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050cbf3 | g_CGamePtr
         ;   Label: caseD_2
     MOV EAX,dword ptr [EAX + 0xd0]      ; 0050cbf8 | g_CGameInstance.game_control
-    MOV [0x01d1ee90],EAX                ; 0050cbfe | DAT_01d1ee90
+    MOV [0x01d1ee90],EAX                ; 0050cbfe | g_INT_01d1ee90
     CALL core_menu.cpp_configureCustomKeys_FUN_0050b470 ; 0050cc03
         ;   XREF to: 0050b470 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_configureCustomKeys_FUN_0050b470()
     MOV EBX,dword ptr [0x0061d95c]      ; 0050cc08 | g_CGamePtr
-    MOV EAX,[0x01d1ee90]                ; 0050cc0e | DAT_01d1ee90
+    MOV EAX,[0x01d1ee90]                ; 0050cc0e | g_INT_01d1ee90
     CMP EAX,dword ptr [EBX + 0xd0]      ; 0050cc13 | g_CGameInstance.game_control
     JZ 0x0050cb43                       ; 0050cc19
         ;   XREF to: 0050cb43 (CONDITIONAL_JUMP)  ; caseD_4
@@ -282,7 +282,7 @@ section .text
     CALL core_game.cpp_CGame_rollCredits_FUN_004d8e50 ; 0050cc30
         ;   XREF to: 004d8e50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_rollCredits_FUN_004d8e50(CGame * this_ptr)
     ADD ESP,0x4                         ; 0050cc35
-    MOV EBP,dword ptr [0x006236b8]      ; 0050cc38 | DAT_006236b8
+    MOV EBP,dword ptr [0x006236b8]      ; 0050cc38 | g_CSound_PTR_006236b8
     PUSH EBP                            ; 0050cc3e
     CALL core_sound.cpp_CSound_configure_FUN_0057d6a0 ; 0050cc3f
         ;   XREF to: 0057d6a0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0057d6a0(CSound * this_ptr)
@@ -294,7 +294,7 @@ section .text
     CALL core_moon.cpp_CMoon_free_FUN_00521d50 ; 0050cc51
         ;   XREF to: 00521d50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_00521d50(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050cc56
-    MOV EBX,dword ptr [0x006236b8]      ; 0050cc59 | DAT_006236b8
+    MOV EBX,dword ptr [0x006236b8]      ; 0050cc59 | g_CSound_PTR_006236b8
     PUSH EBX                            ; 0050cc5f
     CALL core_sound.cpp_CSound_reset_FUN_0057d800 ; 0050cc60
         ;   XREF to: 0057d800 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0057d800(CSound * this_ptr)

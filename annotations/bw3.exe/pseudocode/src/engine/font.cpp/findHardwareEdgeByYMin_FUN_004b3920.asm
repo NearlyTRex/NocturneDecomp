@@ -8,7 +8,7 @@
 ; SHardwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1ad78
+;   int g_INT_01d1ad78
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 004b3920
         ;   Label: engine_font.cpp_findHardwareEdgeByYMin_FUN_004b3920
     PUSH ESI                            ; 004b3921
-    MOV EBX,dword ptr [0x01d1ad78]      ; 004b3922 | DAT_01d1ad78
+    MOV EBX,dword ptr [0x01d1ad78]      ; 004b3922 | g_INT_01d1ad78
     MOV ECX,dword ptr [ESP + 0xc]       ; 004b3928
     MOV ESI,dword ptr [ESP + 0x10]      ; 004b392c
     MOV EAX,0x1d1ad7c                   ; 004b3930
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 004b393b (CONDITIONAL_JUMP)  ; LAB_004b393b
     XOR EAX,EAX                         ; 004b394b
         ;   Label: LAB_004b394b
-    MOV dword ptr [0x01d1ad78],EBX      ; 004b394d | DAT_01d1ad78
+    MOV dword ptr [0x01d1ad78],EBX      ; 004b394d | g_INT_01d1ad78
         ;   Label: LAB_004b394d
     POP ESI                             ; 004b3953
     POP EBX                             ; 004b3954

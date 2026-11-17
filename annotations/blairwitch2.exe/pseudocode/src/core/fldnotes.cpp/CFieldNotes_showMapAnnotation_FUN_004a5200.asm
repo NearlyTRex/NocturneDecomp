@@ -16,7 +16,7 @@
 ;   TerminatedCString s_No_such_entry_s_005d62d9
 ;   TerminatedCString s_s_is_not_a_map_005d62ec
 ;   TerminatedCString s_No_such_annotion_s_found_005d62fe
-;   undefined4 DAT_01cab9f0
+;   int g_INT_01cab9f0
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004a3b50
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 004a5202
     PUSH EBP                            ; 004a5203
     MOV EDI,dword ptr [ESP + 0x18]      ; 004a5204
-    MOV EDX,dword ptr [0x01cab9f0]      ; 004a5208 | DAT_01cab9f0
+    MOV EDX,dword ptr [0x01cab9f0]      ; 004a5208 | g_INT_01cab9f0
     XOR EBP,EBP                         ; 004a520e
     XOR EBX,EBX                         ; 004a5210
     TEST EDX,EDX                        ; 004a5212
@@ -86,7 +86,7 @@ section .text
     POP ESI                             ; 004a5276
     POP EBX                             ; 004a5277
     RET                                 ; 004a5278
-    MOV ECX,dword ptr [0x01cab9f0]      ; 004a5279 | DAT_01cab9f0
+    MOV ECX,dword ptr [0x01cab9f0]      ; 004a5279 | g_INT_01cab9f0
         ;   Label: LAB_004a5279
     INC EBX                             ; 004a527f
     ADD ESI,0x2e4                       ; 004a5280

@@ -8,13 +8,13 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6895
-;   undefined4 DAT_005e6899
-;   undefined4 DAT_005e68a1
-;   undefined4 DAT_005e68a9
-;   undefined4 DAT_005e68b1
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_00617dd4
+;   float g_FLOAT_005e6895 = 0.00003051851
+;   double g_DOUBLE_005e6899 = -0.5
+;   double g_DOUBLE_005e68a1 = 3.14159265350000
+;   float g_FLOAT_005e68a9 = 3.141593
+;   double g_DOUBLE_005e68b1 = 2
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CKeys* g_CKeys_PTR_00617dd4 = 01d02f84
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_005b2290
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00540280 (CONDITIONAL_JUMP)  ; LAB_00540280
     LEA EAX,[EBX + 0x438]               ; 005401d4
     PUSH EAX                            ; 005401da
-    MOV ESI,dword ptr [0x006141f0]      ; 005401db | DAT_006141f0
+    MOV ESI,dword ptr [0x006141f0]      ; 005401db | g_CEventList_PTR_006141f0
     PUSH ESI                            ; 005401e1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 005401e2
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -102,7 +102,7 @@ section .text
     JNZ 0x00540330                      ; 00540287
         ;   XREF to: 00540330 (CONDITIONAL_JUMP)  ; LAB_00540330
     PUSH 0x13                           ; 0054028d
-    MOV EAX,[0x00617dd4]                ; 0054028f | DAT_00617dd4
+    MOV EAX,[0x00617dd4]                ; 0054028f | g_CKeys_PTR_00617dd4
     PUSH EAX                            ; 00540294
     MOV ESI,dword ptr [EAX]             ; 00540295
     CALL dword ptr [ESI]                ; 00540297
@@ -122,25 +122,25 @@ section .text
         ;   XREF to: 005b849c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005b849c()
     MOV dword ptr [ESP + 0x18],EAX      ; 005402c2
     FILD dword ptr [ESP + 0x18]         ; 005402c6
-    FMUL float ptr [0x005e6895]         ; 005402ca | DAT_005e6895
-    FADD double ptr [0x005e6899]        ; 005402d0 | DAT_005e6899
-    FMUL double ptr [0x005e68a1]        ; 005402d6 | DAT_005e68a1
+    FMUL float ptr [0x005e6895]         ; 005402ca | g_FLOAT_005e6895
+    FADD double ptr [0x005e6899]        ; 005402d0 | g_DOUBLE_005e6899
+    FMUL double ptr [0x005e68a1]        ; 005402d6 | g_DOUBLE_005e68a1
     FSTP float ptr [EBX + 0x30]         ; 005402dc
     CALL crt_stdlib.c_rand_FUN_005b849c ; 005402df
         ;   XREF to: 005b849c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005b849c()
     MOV dword ptr [ESP + 0x18],EAX      ; 005402e4
     FILD dword ptr [ESP + 0x18]         ; 005402e8
-    FMUL float ptr [0x005e6895]         ; 005402ec | DAT_005e6895
-    FMUL float ptr [0x005e68a9]         ; 005402f2 | DAT_005e68a9
-    FMUL double ptr [0x005e68b1]        ; 005402f8 | DAT_005e68b1
+    FMUL float ptr [0x005e6895]         ; 005402ec | g_FLOAT_005e6895
+    FMUL float ptr [0x005e68a9]         ; 005402f2 | g_FLOAT_005e68a9
+    FMUL double ptr [0x005e68b1]        ; 005402f8 | g_DOUBLE_005e68b1
     FSTP float ptr [EBX + 0x38]         ; 005402fe
     CALL crt_stdlib.c_rand_FUN_005b849c ; 00540301
         ;   XREF to: 005b849c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005b849c()
     MOV dword ptr [ESP + 0x18],EAX      ; 00540306
     FILD dword ptr [ESP + 0x18]         ; 0054030a
-    FMUL float ptr [0x005e6895]         ; 0054030e | DAT_005e6895
-    FMUL float ptr [0x005e68a9]         ; 00540314 | DAT_005e68a9
-    FMUL double ptr [0x005e68b1]        ; 0054031a | DAT_005e68b1
+    FMUL float ptr [0x005e6895]         ; 0054030e | g_FLOAT_005e6895
+    FMUL float ptr [0x005e68a9]         ; 00540314 | g_FLOAT_005e68a9
+    FMUL double ptr [0x005e68b1]        ; 0054031a | g_DOUBLE_005e68b1
     PUSH EBX                            ; 00540320
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00540321
     FSTP float ptr [EBX + 0x34]         ; 00540327

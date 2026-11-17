@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 151,
+    "complexity_score": 136,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 149
@@ -121,8 +120,8 @@
   "globals": [
     {
       "addr": "005d286c",
-      "name": "DAT_005d286c",
-      "type": "undefined4",
+      "name": "s_OK_005d286c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -134,8 +133,8 @@
     {
       "addr": "005f5d34",
       "name": "g_CPickListVTable",
-      "type": "undefined1*",
-      "value": "004820b0"
+      "type": "CPickList_full_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -330,16 +329,8 @@
       "line": 16,
       "match": "pCVar4[-4].",
       "severity": "mild",
-      "text": "*(byte ***)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;",
+      "text": "*(CPickList_full_vtable **)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005d286c",
-      "severity": "mild",
-      "text": "pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d286c);",
-      "type": "undefined_data"
     },
     {
       "description": "Negative struct offset (wrong base type)",

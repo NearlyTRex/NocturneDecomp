@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 49,
+    "complexity_score": 14,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
@@ -62,21 +60,21 @@
   "globals": [
     {
       "addr": "00604228",
-      "name": "DAT_00604228",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00604228",
+      "type": "int",
+      "value": "0x10"
     },
     {
       "addr": "0060422c",
-      "name": "DAT_0060422c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0060422c",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "00604230",
-      "name": "DAT_00604230",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00604230",
+      "type": "int",
+      "value": "0x5622"
     }
   ],
   "param_estimates": {
@@ -220,30 +218,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_00604228",
-      "severity": "mild",
-      "text": "*bits_per_sample = DAT_00604228;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0060422c",
-      "severity": "mild",
-      "text": "*channels = DAT_0060422c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00604230",
-      "severity": "mild",
-      "text": "*sample_rate = DAT_00604230;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

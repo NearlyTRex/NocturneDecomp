@@ -24,10 +24,10 @@
 ;   ... and 25 more
 ;
 ; Referenced Globals:
-;   undefined4 s_s_can_t_figure_out_next_005ccee9+1
+;   TerminatedCString s_s_can_t_figure_out_next_005cceea
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_0265370c
+;   CVector3f g_CVector3f_0265370c
 ;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
@@ -120,7 +120,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004288b0
     MOVSD ES:EDI,ESI                    ; 004288b1
     MOVSD ES:EDI,ESI                    ; 004288b2
-    PUSH 0x265370c                      ; 004288b3 | DAT_0265370c
+    PUSH 0x265370c                      ; 004288b3 | g_CVector3f_0265370c
     MOV EAX,dword ptr [EBX + 0x27b0]    ; 004288b8
     PUSH EAX                            ; 004288be
     MOV ESI,dword ptr [EAX + 0x2b0]     ; 004288bf
@@ -293,7 +293,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2774]    ; 00428a7c
     PUSH EAX                            ; 00428a82
     PUSH EBX                            ; 00428a83
-    PUSH 0x5cceea                       ; 00428a84 | s_s_can_t_figure_out_next_005ccee9+1
+    PUSH 0x5cceea                       ; 00428a84 | = "%s can't figure out next waypoint try..."
     MOV EDX,dword ptr [0x00609ed0]      ; 00428a89 | g_CConsolePtr
     PUSH EDX                            ; 00428a8f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00428a90

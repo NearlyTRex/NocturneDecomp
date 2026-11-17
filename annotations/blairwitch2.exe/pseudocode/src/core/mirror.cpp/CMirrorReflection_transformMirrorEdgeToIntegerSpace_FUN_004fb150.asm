@@ -42,9 +42,9 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_005311e0 at 00531437
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa1b4
-;   undefined4 DAT_005fa1b8
-;   undefined4 DAT_005fa1bc
+;   float g_FLOAT_005fa1b4 = 65536
+;   float g_FLOAT_005fa1b8 = 0.00390625
+;   float g_FLOAT_005fa1bc = 0.00001525879
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004fa9d0
@@ -63,25 +63,25 @@ section .text
     MOV ESI,dword ptr [ESP + 0x9c]      ; 004fb162
     LEA EBX,[ESP + 0x54]                ; 004fb169
     FILD dword ptr [EAX]                ; 004fb16d
-    FMUL float ptr [0x005fa1b8]         ; 004fb16f | DAT_005fa1b8
+    FMUL float ptr [0x005fa1b8]         ; 004fb16f | g_FLOAT_005fa1b8
     FSTP float ptr [EBX]                ; 004fb175
     FILD dword ptr [EAX + 0x4]          ; 004fb177
-    FMUL float ptr [0x005fa1b8]         ; 004fb17a | DAT_005fa1b8
+    FMUL float ptr [0x005fa1b8]         ; 004fb17a | g_FLOAT_005fa1b8
     FSTP float ptr [EBX + 0x4]          ; 004fb180
     FILD dword ptr [EAX + 0x8]          ; 004fb183
-    FMUL float ptr [0x005fa1b8]         ; 004fb186 | DAT_005fa1b8
+    FMUL float ptr [0x005fa1b8]         ; 004fb186 | g_FLOAT_005fa1b8
     FSTP float ptr [EBX + 0x8]          ; 004fb18c
     LEA EBX,[ESP + 0x6c]                ; 004fb18f
     MOV EAX,ESI                         ; 004fb193
     LEA EDI,[ESP + 0x3c]                ; 004fb195
     FILD dword ptr [EAX]                ; 004fb199
-    FMUL float ptr [0x005fa1bc]         ; 004fb19b | DAT_005fa1bc
+    FMUL float ptr [0x005fa1bc]         ; 004fb19b | g_FLOAT_005fa1bc
     FSTP float ptr [EBX]                ; 004fb1a1
     FILD dword ptr [EAX + 0x4]          ; 004fb1a3
-    FMUL float ptr [0x005fa1bc]         ; 004fb1a6 | DAT_005fa1bc
+    FMUL float ptr [0x005fa1bc]         ; 004fb1a6 | g_FLOAT_005fa1bc
     FSTP float ptr [EBX + 0x4]          ; 004fb1ac
     FILD dword ptr [EAX + 0x8]          ; 004fb1af
-    FMUL float ptr [0x005fa1bc]         ; 004fb1b2 | DAT_005fa1bc
+    FMUL float ptr [0x005fa1bc]         ; 004fb1b2 | g_FLOAT_005fa1bc
     FSTP float ptr [EBX + 0x8]          ; 004fb1b8
     FLD float ptr [ESP + 0x6c]          ; 004fb1bb
     FLD float ptr [ESP + 0x70]          ; 004fb1bf
@@ -199,13 +199,13 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 004fb309
     MOV EDI,EBP                         ; 004fb30d
     FLD float ptr [EAX]                 ; 004fb30f
-    FMUL float ptr [0x005fa1b4]         ; 004fb311 | DAT_005fa1b4
+    FMUL float ptr [0x005fa1b4]         ; 004fb311 | g_FLOAT_005fa1b4
     FISTP dword ptr [EBX]               ; 004fb317
     FLD float ptr [EAX + 0x4]           ; 004fb319
-    FMUL float ptr [0x005fa1b4]         ; 004fb31c | DAT_005fa1b4
+    FMUL float ptr [0x005fa1b4]         ; 004fb31c | g_FLOAT_005fa1b4
     FISTP dword ptr [EBX + 0x4]         ; 004fb322
     FLD float ptr [EAX + 0x8]           ; 004fb325
-    FMUL float ptr [0x005fa1b4]         ; 004fb328 | DAT_005fa1b4
+    FMUL float ptr [0x005fa1b4]         ; 004fb328 | g_FLOAT_005fa1b4
     FISTP dword ptr [EBX + 0x8]         ; 004fb32e
     MOVSD ES:EDI,ESI                    ; 004fb331
     MOVSD ES:EDI,ESI                    ; 004fb332

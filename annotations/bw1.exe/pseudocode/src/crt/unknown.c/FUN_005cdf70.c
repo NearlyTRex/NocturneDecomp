@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005cdf70(byte *param_1,byte *param_2)
 
 {
   if (*param_1 != *param_2) {
     return (uint)*param_1 - (uint)*param_2;
   }
-  if ((_DAT_02c9f6e0 != 0) && ((*(byte *)(*param_1 + 0x2c9f6f1) & 1) != 0)) {
+  if ((g_INT_02c9f6e0 != 0) && ((g_CHAR_ARRAY_02c9f6f1[*param_1] & 1U) != 0)) {
     if (param_1[1] != param_2[1]) {
       return (uint)param_1[1] - (uint)param_2[1];
     }

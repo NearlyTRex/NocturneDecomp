@@ -11,10 +11,10 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0 at 0051a6ee
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626114
-;   undefined4 DAT_007c3044
-;   undefined4 DAT_007c3048
-;   undefined4 DAT_007c304c
+;   uchar[257] g_UCHAR_ARRAY_00626114
+;   int g_INT_007c3044
+;   CDemonActorType*[200] g_CDemonActorType_PTR_ARRAY_007c3048
+;   undefined4 g_CDemonActorType_PTR_ARRAY_007c3048[1]
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005c0820
@@ -35,13 +35,13 @@ section .text
     TEST EAX,EAX                        ; 0040c24d
     JNZ 0x0040c277                      ; 0040c24f
         ;   XREF to: 0040c277 (CONDITIONAL_JUMP)  ; LAB_0040c277
-    MOV EDX,dword ptr [0x007c3044]      ; 0040c251 | DAT_007c3044
+    MOV EDX,dword ptr [0x007c3044]      ; 0040c251 | g_INT_007c3044
     MOV ESI,EBX                         ; 0040c257
     TEST EDX,EDX                        ; 0040c259
     JLE 0x0040c272                      ; 0040c25b
         ;   XREF to: 0040c272 (CONDITIONAL_JUMP)  ; LAB_0040c272
     SHL EDX,0x2                         ; 0040c25d
-    MOV EBX,dword ptr [EAX + 0x7c3048]  ; 0040c260 | DAT_007c3048 | DAT_007c304c
+    MOV EBX,dword ptr [EAX + 0x7c3048]  ; 0040c260 | g_CDemonActorType_PTR_ARRAY_007c3048 | g_CDemonActorType_PTR_ARRAY_007c3048[1]
         ;   Label: LAB_0040c260
     CMP ESI,dword ptr [EBX + 0x38]      ; 0040c266
     JZ 0x0040c2a8                       ; 0040c269
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_0040c277
     INC DL                              ; 0040c279
     AND EDX,0xff                        ; 0040c27b
-    TEST byte ptr [EDX + 0x626114],0xe0 ; 0040c281 | DAT_00626114
+    TEST byte ptr [EDX + 0x626114],0xe0 ; 0040c281 | g_UCHAR_ARRAY_00626114
     JZ 0x0040c248                       ; 0040c288
         ;   XREF to: 0040c248 (CONDITIONAL_JUMP)  ; LAB_0040c248
     PUSH EAX                            ; 0040c28a

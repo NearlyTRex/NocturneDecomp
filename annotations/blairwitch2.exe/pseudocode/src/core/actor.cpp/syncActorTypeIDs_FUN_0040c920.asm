@@ -9,9 +9,9 @@
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0 at 004fbdcb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007bc044
-;   undefined4 DAT_007bc048
-;   undefined4 DAT_007bc04c
+;   int g_INT_007bc044
+;   CDemonActorType*[200] g_CDemonActorType_PTR_ARRAY_007bc048
+;   undefined4 g_CDemonActorType_PTR_ARRAY_007bc048[1]
 ;
 ; *****************************************************************************
 
@@ -19,14 +19,14 @@ section .text
 
     PUSH ESI                            ; 0040c920
         ;   Label: core_actor.cpp_syncActorTypeIDs_FUN_0040c920
-    MOV ESI,dword ptr [0x007bc044]      ; 0040c921 | DAT_007bc044
+    MOV ESI,dword ptr [0x007bc044]      ; 0040c921 | g_INT_007bc044
     XOR EAX,EAX                         ; 0040c927
     TEST ESI,ESI                        ; 0040c929
     JLE 0x0040c947                      ; 0040c92b
         ;   XREF to: 0040c947 (CONDITIONAL_JUMP)  ; LAB_0040c947
     PUSH EBX                            ; 0040c92d
     XOR EDX,EDX                         ; 0040c92e
-    MOV ECX,dword ptr [EDX + 0x7bc048]  ; 0040c930 | DAT_007bc048 | DAT_007bc04c
+    MOV ECX,dword ptr [EDX + 0x7bc048]  ; 0040c930 | g_CDemonActorType_PTR_ARRAY_007bc048 | g_CDemonActorType_PTR_ARRAY_007bc048[1]
         ;   Label: LAB_0040c930
     ADD EDX,0x4                         ; 0040c936
     MOV EBX,dword ptr [ECX + 0x30]      ; 0040c939
@@ -37,7 +37,7 @@ section .text
     JL 0x0040c930                       ; 0040c944
         ;   XREF to: 0040c930 (CONDITIONAL_JUMP)  ; LAB_0040c930
     POP EBX                             ; 0040c946
-    MOV dword ptr [0x007bc044],ESI      ; 0040c947 | DAT_007bc044
+    MOV dword ptr [0x007bc044],ESI      ; 0040c947 | g_INT_007bc044
         ;   Label: LAB_0040c947
     POP ESI                             ; 0040c94d
     RET                                 ; 0040c94e

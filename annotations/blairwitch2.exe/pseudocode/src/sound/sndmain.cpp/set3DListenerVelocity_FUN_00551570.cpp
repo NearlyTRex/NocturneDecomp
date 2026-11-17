@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_set3DListenerVelocity_FUN_00551570(float velocity_x,float velocity_y,float velocity_z)
 
 {
   int iVar1;
   
   sound_sndmain_cpp_lockSound_FUN_005532f0();
-  iVar1 = _DAT_026484b8;
-  *(float *)(_DAT_026484b8 * 4 + 0x2648458) = velocity_x;
-  *(float *)(iVar1 * 4 + 0x2648460) = velocity_y;
-  *(float *)(iVar1 * 4 + 0x2648468) = velocity_z;
-  DAT_02649024 = DAT_02649024 | 4;
+  iVar1 = g_INT_026484b8;
+  *(float *)((int)&g_CVector3d_02648458.x + g_INT_026484b8 * 4) = velocity_x;
+  *(float *)((int)&g_CVector3d_02648458.y + iVar1 * 4) = velocity_y;
+  *(float *)((int)&g_CVector3d_02648458.z + iVar1 * 4) = velocity_z;
+  g_BYTE_02649024 = g_BYTE_02649024 | 4;
   sound_sndmain_cpp_unlockSound_FUN_00551440();
   return;
 }

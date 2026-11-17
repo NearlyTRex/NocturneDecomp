@@ -10,6 +10,6 @@ CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_00531eb0(CFont *this_ptr)
 
 {
   this_ptr->queued_text_count = 0;
-  this_ptr->vtable = (CFont_vtable *)&PTR_engine_palette_cpp_CFont_dtor_FUN_00531ed0_006045b0;
+  this_ptr->vtable = (CFont_vtable *)g_ARRAY_PTR_006045b0;
   return this_ptr;
 }

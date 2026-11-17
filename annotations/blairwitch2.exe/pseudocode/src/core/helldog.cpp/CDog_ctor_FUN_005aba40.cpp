@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CDog * __cdecl core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
 
@@ -53,7 +52,7 @@ CDog * __cdecl core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
   (this_ptr_01->base).run_motion = 2;
   (this_ptr_01->base).animation_state = 0;
   core_helldog_cpp_CDog_processStates_FUN_005abe90(this_ptr_01,0.0,0);
-  fVar2 = _DAT_00600c50;
+  fVar2 = 12.0f;
   this_ptr_00 = &(this_ptr_01->base).state_machine;
   (this_ptr_01->base).run_distance = 5.0;
   (this_ptr_01->base).attack_range = fVar2;
@@ -115,7 +114,7 @@ CDog * __cdecl core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
     (this_ptr_01->base).base.base.eye_glow_right_angles.y = fStack_34;
     (this_ptr_01->base).base.base.eye_glow_right_angles.z = fStack_30;
   }
-  pcVar4 = (char *)0x5f0d08;
+  pcVar4 = "doghit0?.wav";
   pcVar5 = (this_ptr_01->base).hit_sound;
   do {
     cVar1 = *pcVar4;
@@ -137,7 +136,7 @@ CDog * __cdecl core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = (char *)0x5f0d24;
+  pcVar4 = "dogamb0?.wav";
   pcVar5 = (this_ptr_01->base).idle_sound;
   do {
     cVar1 = *pcVar4;

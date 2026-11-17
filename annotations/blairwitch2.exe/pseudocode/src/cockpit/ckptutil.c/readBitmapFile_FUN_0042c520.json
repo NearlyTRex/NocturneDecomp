@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 66,
+    "complexity_score": 35,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 162
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -92,8 +89,8 @@
   "globals": [
     {
       "addr": "005cd346",
-      "name": "s_Unable_to_allocate_u_byt_005cd345+1",
-      "type": "undefined4",
+      "name": "s_Unable_to_allocate_u_byt_005cd346",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -104,8 +101,8 @@
     },
     {
       "addr": "005cd38e",
-      "name": "DAT_005cd38e",
-      "type": "undefined4",
+      "name": "s_art_005cd38e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -134,14 +131,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -283,22 +280,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005cd38e",
-      "severity": "mild",
-      "text": "(&local_38,&DAT_005cd38e,filename);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

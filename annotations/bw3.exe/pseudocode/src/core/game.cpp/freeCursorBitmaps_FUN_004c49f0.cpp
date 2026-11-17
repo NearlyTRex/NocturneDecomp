@@ -15,6 +15,6 @@ void __cdecl core_game_cpp_freeCursorBitmaps_FUN_004c49f0(void)
   do {
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(this_ptr);
     this_ptr = this_ptr + 1;
-  } while (this_ptr != (CAlphaBitmap *)&DAT_01d22bec);
+  } while (this_ptr != (CAlphaBitmap *)g_INT_ARRAY_01d22bec);
   return;
 }

@@ -10,8 +10,8 @@
 ;   core_demnfolk.cpp_factoryFuncDemnfolk_FUN_004589e0 at 004589f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fe69c
-;   undefined4 DAT_005fe6a0
+;   float g_FLOAT_005fe69c = 50
+;   float g_FLOAT_005fe6a0 = 100
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -44,9 +44,9 @@ section .text
     MOV dword ptr [EBX + 0x2fec],0x3f000000 ; 00458a41
     LEA EDI,[EBX + 0xc288]              ; 00458a4b
     MOV dword ptr [EBX + 0x2ff0],0x3f800000 ; 00458a51
-    FLD float ptr [0x005fe69c]          ; 00458a5b | DAT_005fe69c
+    FLD float ptr [0x005fe69c]          ; 00458a5b | g_FLOAT_005fe69c
     MOV dword ptr [EBX + 0xc278],0x0    ; 00458a61
-    FLD float ptr [0x005fe6a0]          ; 00458a6b | DAT_005fe6a0
+    FLD float ptr [0x005fe6a0]          ; 00458a6b | g_FLOAT_005fe6a0
     MOV dword ptr [EBX + 0xc274],0x0    ; 00458a71
     ADD ESP,0x8                         ; 00458a7b
     FXCH                                ; 00458a7e

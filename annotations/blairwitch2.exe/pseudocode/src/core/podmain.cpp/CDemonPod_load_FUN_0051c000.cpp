@@ -15,7 +15,7 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_0051c000(CDemonPod *this_ptr)
   char acStack_5c [80];
   int iStack_c;
   
-  file = _fopen("pod.ini",&DAT_005e2992);
+  file = _fopen("pod.ini","rt");
   if (file == (_FILE *)0x0) {
     engine_dosio_cpp_CFileFinder_ctor_FUN_00460e10(&CStack_170);
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00460e50(&CStack_170,"*.pod");
@@ -27,11 +27,11 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_0051c000(CDemonPod *this_ptr)
     engine_dosio_cpp_CFileFinder_dtor_FUN_00460e30(&CStack_170,0);
     return;
   }
-  _fscanf(file,&DAT_005e29a3);
+  _fscanf(file,"%d\n");
   iVar1 = 0;
   if (0 < iStack_c) {
     do {
-      _fscanf(file,&DAT_005e29a7);
+      _fscanf(file,"%s\n");
       (*((this_ptr->base).vtable)->mount)(&this_ptr->base,acStack_5c);
       iVar1 = iVar1 + 1;
     } while (iVar1 < iStack_c);

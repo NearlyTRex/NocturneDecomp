@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005af040(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation)
 
 {
@@ -34,13 +32,14 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005af040(CWeathe
     (this_ptr->rotation).z = rotation->z;
   }
   if (this_ptr->weather_type != WEATHER_TYPE_NONE) {
-    pCVar2 = (CVector3f *)&DAT_02c997f8;
+    pCVar2 = g_CVector3f_ARRAY_02c997f8;
     iVar3 = 0;
     do {
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(5.0,50.0);
       local_14 = local_18;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00
-                           (rotation->y + (float)_DAT_005f99ba,rotation->y + (float)_DAT_005f99b2);
+                           (rotation->y + (float)-0.78539816337500001,
+                            rotation->y + (float)0.78539816337500001);
       fVar4 = (float10)fsin((float10)local_14);
       fVar5 = (float10)fcos((float10)local_14);
       local_38.x = (float)(fVar4 * (float10)local_18 + (float10)direction->x);
@@ -56,17 +55,17 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005af040(CWeathe
         local_44.y = local_38.y;
         local_44.z = local_38.z;
       }
-      local_50.y = local_50.y + _DAT_005f99c2;
-      local_44.y = local_44.y + _DAT_005f99c6;
+      local_50.y = local_50.y + 50.0f;
+      local_44.y = local_44.y + -50.0f;
       core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005592b0(g_CDemonSetPtr);
       local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00557300
                            (g_CDemonSetPtr,&local_50,&local_44);
       fVar1 = (local_44.y - local_50.y) * local_14 + local_50.y;
-      *(float *)(iVar3 + 0x2c9a158) = fVar1;
+      *(float *)((int)g_FLOAT_ARRAY_02c9a158 + iVar3) = fVar1;
       local_24 = (double)fVar1;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
-      local_38.y = local_14 * (float)_DAT_005f99aa + (float)local_24;
+      local_38.y = local_14 * (float)100 + (float)local_24;
       if (pCVar2 != &local_38) {
         pCVar2->x = local_38.x;
         pCVar2->y = local_38.y;

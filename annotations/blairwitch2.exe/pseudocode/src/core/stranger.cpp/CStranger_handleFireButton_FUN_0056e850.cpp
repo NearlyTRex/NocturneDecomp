@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_0056e850(CStranger *this_ptr,float delta_time)
 
 {
@@ -121,7 +119,7 @@ switchD_0056e93d_caseD_3:
   grabber = (CDemonActor *)
             core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                       ((CCharacter *)this_ptr,iVar5);
-  if ((float)_DAT_005ebe4d <= (float)grabber) {
+  if ((float)0.98999999999999999 <= (float)grabber) {
     pSVar6 = &this_ptr->right_arm_aim;
     if ((this_ptr->dual_wield_side != 0) && (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN)) {
       pSVar6 = &this_ptr->left_arm_aim;

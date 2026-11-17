@@ -15,7 +15,7 @@ CSteuben * __cdecl core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_pt
   this_ptr_01 = core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(&this_ptr->base);
   (this_ptr_01->base).base.base.base.vtable._ub = &g_CSteubenVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(this_ptr_01->base).base.base.model,(char *)0x5f05eb);
+            (&(this_ptr_01->base).base.base.model,"steuben.dfm");
   (this_ptr_01->base).base.base.collision_cylinder_radius = 1.0;
   (this_ptr_01->base).anim_speed_scale = 1.5;
   (this_ptr_01->base).walk_state_3_motion = 0;

@@ -42,7 +42,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f4d0(CBaron *this_ptr,float d
   pCVar7 = &(this_ptr->base).base.model;
   if (this_ptr->summoned == 0) {
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->summon_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->summon_event);
     if (iVar2 != 0) {
       this_ptr->summoned = 1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar7->base,6,1);
@@ -51,7 +51,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f4d0(CBaron *this_ptr,float d
   }
   else {
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->go_away_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->go_away_event);
     if (iVar2 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar7->base,7,1);
     }
@@ -114,9 +114,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f4d0(CBaron *this_ptr,float d
       goto LAB_0040f63a;
     case 4:
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                ((CVector3f *)&DAT_02c8af28,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007c34cc,
-                 &CStack_2c);
+                (&g_CVector3f_02c8af28,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_007c3498[0xd],&CStack_2c);
       pCVar9 = &CStack_38;
       CStack_38.x = CStack_2c.x;
       *(uint *)((int)&CStack_38 + (uint)bVar6 * -8 + 4) =
@@ -136,9 +136,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f4d0(CBaron *this_ptr,float d
         CStack_44.z = CStack_98.z;
       }
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                ((CVector3f *)&DAT_02c8af28,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007c34d0,
-                 &CStack_80);
+                (&g_CVector3f_02c8af28,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_007c3498[0xe],&CStack_80);
       pCVar9 = &CStack_50;
       CStack_50.x = CStack_80.x;
       *(uint *)((int)&CStack_50 + (uint)bVar6 * -8 + 4) =
@@ -159,11 +159,11 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f4d0(CBaron *this_ptr,float d
       }
       if (this_ptr->new_attack == 0) {
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004b7150
-                  (0x01C57074,&CStack_44,&this_ptr->left_hand_pos,2.0,0.5,0.5,
-                   (SMRGLTextureBasic *)&DAT_00610914);
+                  (g_CFireEffect_PTR_0061c010,&CStack_44,&this_ptr->left_hand_pos,2.0,0.5,0.5,
+                   &g_SMRGLTextureBasic_00610914);
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004b7150
-                  (0x01C57074,&CStack_20,&this_ptr->right_hand_pos,2.0,0.5,0.5,
-                   (SMRGLTextureBasic *)&DAT_00610914);
+                  (g_CFireEffect_PTR_0061c010,&CStack_20,&this_ptr->right_hand_pos,2.0,0.5,0.5,
+                   &g_SMRGLTextureBasic_00610914);
       }
       if (&this_ptr->left_hand_pos != &CStack_44) {
         (this_ptr->left_hand_pos).x = CStack_44.x;
@@ -212,7 +212,7 @@ switchD_0040fa5f_default:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(pCVar7);
   blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
   fVar8 = this_ptr->head_blend_weight;
-  iVar2 = DAT_007c3498;
+  iVar2 = g_INT_ARRAY_007c3498[0];
   core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(&this_ptr->head_rotation,&CStack_b8);
   source_quaternions = &CStack_a8;
   CStack_a8.w = CStack_b8.w;
@@ -236,8 +236,8 @@ switchD_0040fa5f_default:
     CStack_68.y = CStack_68.y + (this_ptr->base).base.base.location.position.y;
     CStack_68.z = fStack_14 + (this_ptr->base).base.base.location.position.z;
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-              (0x01C57074,&CStack_68,2.0,(CVector3f *)0x0,0xffff);
+              (g_CFireEffect_PTR_0061c010,&CStack_68,2.0,(CVector3f *)0x0,0xffff);
   } while (iVar2 < 2);
-  DAT_007c34dc = DAT_007c34dc + delta_time;
+  g_FLOAT_007c34dc = g_FLOAT_007c34dc + delta_time;
   return;
 }

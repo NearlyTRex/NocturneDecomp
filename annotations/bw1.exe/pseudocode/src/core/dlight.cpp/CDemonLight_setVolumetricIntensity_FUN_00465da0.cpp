@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(CDemonLight *this_ptr,float intensity)
 
 {
@@ -20,7 +18,7 @@ void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(CDe
     iVar3 = 0;
     iVar2 = 0x465dd3;
     dVar1 = round
-                      ((double)(this_ptr->volumetric_intensity * (float)_DAT_005d92a4));
+                      ((double)(this_ptr->volumetric_intensity * (float)3));
     core_dlight_cpp_CDemonLight_applyFilter_FUN_00463e30
               (this_ptr,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);
     return;
@@ -28,7 +26,7 @@ void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(CDe
   iVar3 = 0;
   iVar2 = 0x465e08;
   dVar1 = round
-                    ((double)(this_ptr->volumetric_intensity * (float)_DAT_005d929c));
+                    ((double)(this_ptr->volumetric_intensity * (float)7));
   core_dlight_cpp_CDemonLight_applyFilter_FUN_00463e30
             (this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);
   return;

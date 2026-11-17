@@ -21,12 +21,12 @@
 ;   TerminatedCString s_s_s_s_005d2861
 ;   TerminatedCString s_core_actor_cpp_005d286e
 ;   TerminatedCString s_IO_Error_after_writing_a_005d2880
-;   undefined1 DAT_006106c0
-;   undefined4 DAT_007c3034
-;   undefined4 DAT_007c3038
-;   undefined4 DAT_007c303c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char[104] g_CHAR_ARRAY_006106c0
+;   _FILE* g_FILE_PTR_007c3034
+;   int g_INT_007c3038
+;   CDemonActor* g_CDemonActor_PTR_007c303c
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040ad60
@@ -62,30 +62,30 @@ section .text
     MOV EDX,0x5d2801                    ; 0040add6 | = "..\\core\\actor.cpp"
     MOV ECX,0x7cf                       ; 0040addb
     PUSH 0x5d2813                       ; 0040ade0 | = "CDemonActor::save - tried to save act..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0040ade5 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040adeb | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040ade5 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0040adeb | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040adf1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040adf6
     PUSH EBX                            ; 0040adf9
         ;   Label: LAB_0040adf9
     PUSH ESI                            ; 0040adfa
-    PUSH 0x6106c0                       ; 0040adfb | DAT_006106c0
+    PUSH 0x6106c0                       ; 0040adfb | g_CHAR_ARRAY_006106c0
     PUSH 0x5d2854                       ; 0040ae00 | = "%s{ %s \"%s\"\n"
     PUSH EDI                            ; 0040ae05
     CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040ae06
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040ae0b
-    MOV EAX,[0x007c3034]                ; 0040ae0e | DAT_007c3034
-    MOV EBP,dword ptr [0x007c303c]      ; 0040ae13 | DAT_007c303c
+    MOV EAX,[0x007c3034]                ; 0040ae0e | g_FILE_PTR_007c3034
+    MOV EBP,dword ptr [0x007c303c]      ; 0040ae13 | g_CDemonActor_PTR_007c303c
     PUSH 0x1                            ; 0040ae19
     MOV dword ptr [ESP + 0x8],EAX       ; 0040ae1b
-    MOV EAX,[0x007c3038]                ; 0040ae1f | DAT_007c3038
-    MOV dword ptr [0x007c3034],EDI      ; 0040ae24 | DAT_007c3034
+    MOV EAX,[0x007c3038]                ; 0040ae1f | g_INT_007c3038
+    MOV dword ptr [0x007c3034],EDI      ; 0040ae24 | g_FILE_PTR_007c3034
     MOV dword ptr [ESP + 0x4],EAX       ; 0040ae2a
     MOV EAX,0x2                         ; 0040ae2e
-    MOV dword ptr [0x007c303c],EBX      ; 0040ae33 | DAT_007c303c
-    MOV [0x007c3038],EAX                ; 0040ae39 | DAT_007c3038
+    MOV dword ptr [0x007c303c],EBX      ; 0040ae33 | g_CDemonActor_PTR_007c303c
+    MOV [0x007c3038],EAX                ; 0040ae39 | g_INT_007c3038
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040ad60 ; 0040ae3e
         ;   XREF to: 0040ad60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040ad60(int indent_delta)
     ADD ESP,0x4                         ; 0040ae43
@@ -99,7 +99,7 @@ section .text
     ADD ESP,0x4                         ; 0040ae5d
     PUSH EBX                            ; 0040ae60
     PUSH ESI                            ; 0040ae61
-    PUSH 0x6106c0                       ; 0040ae62 | DAT_006106c0
+    PUSH 0x6106c0                       ; 0040ae62 | g_CHAR_ARRAY_006106c0
     PUSH 0x5d2861                       ; 0040ae67 | = "%s} %s \"%s\"\n"
     PUSH EDI                            ; 0040ae6c
     CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040ae6d
@@ -111,10 +111,10 @@ section .text
         ;   XREF to: 0040ae9c (CONDITIONAL_JUMP)  ; LAB_0040ae9c
     MOV EAX,dword ptr [ESP + 0x4]       ; 0040ae7d
         ;   Label: LAB_0040ae7d
-    MOV [0x007c3034],EAX                ; 0040ae81 | DAT_007c3034
+    MOV [0x007c3034],EAX                ; 0040ae81 | g_FILE_PTR_007c3034
     MOV EAX,dword ptr [ESP]             ; 0040ae86
-    MOV dword ptr [0x007c303c],EBP      ; 0040ae89 | DAT_007c303c
-    MOV [0x007c3038],EAX                ; 0040ae8f | DAT_007c3038
+    MOV dword ptr [0x007c303c],EBP      ; 0040ae89 | g_CDemonActor_PTR_007c303c
+    MOV [0x007c3038],EAX                ; 0040ae8f | g_INT_007c3038
     ADD ESP,0x8                         ; 0040ae94
     POP EBP                             ; 0040ae97
     POP EDI                             ; 0040ae98
@@ -126,8 +126,8 @@ section .text
     MOV EDX,0x5d286e                    ; 0040ae9d | = "..\\core\\actor.cpp"
     MOV ECX,0x7f1                       ; 0040aea2
     PUSH 0x5d2880                       ; 0040aea7 | = "IO Error after writing actor of type %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0040aeac | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040aeb2 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040aeac | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0040aeb2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040aeb8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040aebd

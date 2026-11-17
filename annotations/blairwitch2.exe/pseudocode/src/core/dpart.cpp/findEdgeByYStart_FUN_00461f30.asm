@@ -8,7 +8,7 @@
 ; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ba51c8
+;   int g_INT_01ba51c8
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 00461f30
         ;   Label: core_dpart.cpp_findEdgeByYStart_FUN_00461f30
     PUSH ESI                            ; 00461f31
-    MOV EBX,dword ptr [0x01ba51c8]      ; 00461f32 | DAT_01ba51c8
+    MOV EBX,dword ptr [0x01ba51c8]      ; 00461f32 | g_INT_01ba51c8
     MOV ECX,dword ptr [ESP + 0xc]       ; 00461f38
     MOV ESI,dword ptr [ESP + 0x10]      ; 00461f3c
     MOV EAX,0x1ba51cc                   ; 00461f40
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00461f4b (CONDITIONAL_JUMP)  ; LAB_00461f4b
     XOR EAX,EAX                         ; 00461f5b
         ;   Label: LAB_00461f5b
-    MOV dword ptr [0x01ba51c8],EBX      ; 00461f5d | DAT_01ba51c8
+    MOV dword ptr [0x01ba51c8],EBX      ; 00461f5d | g_INT_01ba51c8
         ;   Label: LAB_00461f5d
     POP ESI                             ; 00461f63
     POP EBX                             ; 00461f64

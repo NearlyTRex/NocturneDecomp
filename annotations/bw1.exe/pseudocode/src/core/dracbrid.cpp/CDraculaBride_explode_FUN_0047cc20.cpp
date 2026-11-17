@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background)
 
 {
@@ -113,10 +111,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride 
   *(uint *)((int)&local_64 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
        *(uint *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
   pCVar6 = &CStack_74;
-  fStack_44 = fStack_68 * _DAT_005daeb5;
-  afStack_40[0] = local_64.x * _DAT_005daeb5;
-  afStack_40[1] = local_64.y * _DAT_005daeb5;
-  CStack_74.x = fStack_68 * _DAT_005daeb5;
+  fStack_44 = fStack_68 * 0.5f;
+  afStack_40[0] = local_64.x * 0.5f;
+  afStack_40[1] = local_64.y * 0.5f;
+  CStack_74.x = fStack_68 * 0.5f;
   *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + 4) = afStack_40[(uint)bVar5 * -2];
   *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];

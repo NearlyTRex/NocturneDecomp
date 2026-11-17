@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00443f90(CInStreamPipe *this_ptr,CCodec *codec,void *source,int owns_streams,int buffer_size)
 
 {
@@ -21,8 +19,8 @@ void __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00443f90(CInStreamPipe *th
   pcVar1 = (char *)malloc(buffer_size);
   this_ptr->buffer = pcVar1;
   if (pcVar1 == (char *)0x0) {
-    _DAT_01d1d400 = "..\\support\\codec.cpp";
-    _DAT_01d1d404 = 0x881;
+    g_CHAR_PTR_01d1d400 = "..\\support\\codec.cpp";
+    g_INT_01d1d404 = 0x881;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CInStreamPipe::open - out of memory for %d byte buffer");
   }
   this_ptr->buffer_length = 0;

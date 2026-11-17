@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 117,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 3,
+    "pseudocode_lines": 73,
+    "suspect_count": 2,
     "suspect_types": [
       "bit_int_float_compare",
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 289
+    "total_lines": 290
   },
   "cross_references": [],
   "function": {
@@ -50,27 +49,27 @@
   "globals": [
     {
       "addr": "005e6d42",
-      "name": "DAT_005e6d42",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e6d42",
+      "type": "double",
+      "value": "6"
     },
     {
       "addr": "005e6d4a",
-      "name": "DAT_005e6d4a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e6d4a",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "005e6d52",
-      "name": "DAT_005e6d52",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e6d52",
+      "type": "double",
+      "value": "0.900000000000000"
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_0061b4d0",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "00622c18",
@@ -203,16 +202,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 51,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4),",
@@ -220,7 +211,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 42,
+      "line": 40,
       "match": "(int)this_ptr->param < 0x3f800000",
       "severity": "moderate",
       "text": "(((int)this_ptr->param < 0x3f800000 && (1.0 <= fVar1)))) {",

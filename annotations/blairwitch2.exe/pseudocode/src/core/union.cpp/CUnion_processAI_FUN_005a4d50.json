@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 84,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 3,
+    "pseudocode_lines": 38,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 144
+    "total_lines": 143
   },
   "cross_references": [],
   "function": {
@@ -75,15 +74,15 @@
     },
     {
       "addr": "005ff8f0",
-      "name": "DAT_005ff8f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ff8f0",
+      "type": "float",
+      "value": "15"
     },
     {
       "addr": "005ff8f4",
-      "name": "DAT_005ff8f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ff8f4",
+      "type": "float",
+      "value": "7"
     }
   ],
   "param_estimates": {
@@ -176,16 +175,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
+      "line": 35,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&(this_ptr->base).base.base.base.base.location.position + 8),",

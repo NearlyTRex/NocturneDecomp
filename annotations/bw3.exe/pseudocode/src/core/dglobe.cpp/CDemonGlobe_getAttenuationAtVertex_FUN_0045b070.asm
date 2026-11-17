@@ -30,9 +30,9 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00537e20 at 00537eff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005de388
-;   undefined4 DAT_005de38c
-;   undefined4 DAT_01d1a0a8
+;   float g_FLOAT_005de388 = 0.00390625
+;   float g_FLOAT_005de38c = 0.00001525879
+;   int g_INT_01d1a0a8
 ;
 ; *****************************************************************************
 
@@ -52,13 +52,13 @@ section .text
     LEA EDI,[EBP + -0x2c]               ; 0045b085
     LEA ESI,[EBP + -0x44]               ; 0045b088
     FILD dword ptr [EAX]                ; 0045b08b
-    FMUL float ptr [0x005de388]         ; 0045b08d | DAT_005de388
+    FMUL float ptr [0x005de388]         ; 0045b08d | g_FLOAT_005de388
     FSTP float ptr [EBX]                ; 0045b093
     FILD dword ptr [EAX + 0x4]          ; 0045b095
-    FMUL float ptr [0x005de388]         ; 0045b098 | DAT_005de388
+    FMUL float ptr [0x005de388]         ; 0045b098 | g_FLOAT_005de388
     FSTP float ptr [EBX + 0x4]          ; 0045b09e
     FILD dword ptr [EAX + 0x8]          ; 0045b0a1
-    FMUL float ptr [0x005de388]         ; 0045b0a4 | DAT_005de388
+    FMUL float ptr [0x005de388]         ; 0045b0a4 | g_FLOAT_005de388
     FSTP float ptr [EBX + 0x8]          ; 0045b0aa
     FLD float ptr [EBP + -0x20]         ; 0045b0ad
     FLD float ptr [EBP + -0x1c]         ; 0045b0b0
@@ -108,7 +108,7 @@ section .text
     JZ 0x0045b1a1                       ; 0045b11a
         ;   XREF to: 0045b1a1 (CONDITIONAL_JUMP)  ; LAB_0045b1a1
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045b120
-    MOV EDX,dword ptr [0x01d1a0a8]      ; 0045b123 | DAT_01d1a0a8
+    MOV EDX,dword ptr [0x01d1a0a8]      ; 0045b123 | g_INT_01d1a0a8
     SAR EAX,0x1                         ; 0045b129
     SUB EDX,EAX                         ; 0045b12b
     MOV dword ptr [EBP + -0xc],EDX      ; 0045b12d
@@ -125,13 +125,13 @@ section .text
     FSTP float ptr [EBP + -0x1c]        ; 0045b14c
     FSTP float ptr [EBP + -0x18]        ; 0045b14f
     FILD dword ptr [EAX]                ; 0045b152
-    FMUL float ptr [0x005de38c]         ; 0045b154 | DAT_005de38c
+    FMUL float ptr [0x005de38c]         ; 0045b154 | g_FLOAT_005de38c
     FSTP float ptr [EBX]                ; 0045b15a
     FILD dword ptr [EAX + 0x4]          ; 0045b15c
-    FMUL float ptr [0x005de38c]         ; 0045b15f | DAT_005de38c
+    FMUL float ptr [0x005de38c]         ; 0045b15f | g_FLOAT_005de38c
     FSTP float ptr [EBX + 0x4]          ; 0045b165
     FILD dword ptr [EAX + 0x8]          ; 0045b168
-    FMUL float ptr [0x005de38c]         ; 0045b16b | DAT_005de38c
+    FMUL float ptr [0x005de38c]         ; 0045b16b | g_FLOAT_005de38c
     FSTP float ptr [EBX + 0x8]          ; 0045b171
     FLD float ptr [EBP + -0x1c]         ; 0045b174
     FMUL float ptr [EBP + -0x34]        ; 0045b177

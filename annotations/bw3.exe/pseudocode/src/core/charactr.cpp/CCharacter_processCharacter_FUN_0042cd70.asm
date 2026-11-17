@@ -39,11 +39,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wp_bindevil_loop_wav_005b8256
-;   undefined4 DAT_005b826e
-;   undefined4 DAT_005dd234
+;   double g_DOUBLE_005b826e = 0.0100000000000000
+;   float g_FLOAT_005dd234 = 9999
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CScript* g_CScriptPtr = 01ed73e0
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   CGame g_CGameInstance
 ;   CScript g_CScriptInstance
 ;
@@ -254,7 +254,7 @@ section .text
     PUSH EAX                            ; 0042cfed
     PUSH 0x5b8256                       ; 0042cfee | = "wp_bindevil_loop.wav"
     PUSH EBX                            ; 0042cff3
-    MOV ESI,dword ptr [0x006045f8]      ; 0042cff4 | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 0042cff4 | g_CSound_PTR_006045f8
     PUSH ESI                            ; 0042cffa
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0042cffb
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -363,7 +363,7 @@ section .text
     JNZ 0x0042d2bd                      ; 0042d148
         ;   XREF to: 0042d2bd (CONDITIONAL_JUMP)  ; LAB_0042d2bd
     FLD float ptr [EBX + 0x2504]        ; 0042d14e
-    FCOMP float ptr [0x005dd234]        ; 0042d154 | DAT_005dd234
+    FCOMP float ptr [0x005dd234]        ; 0042d154 | g_FLOAT_005dd234
     FNSTSW AX                           ; 0042d15a
     SAHF                                ; 0042d15c
     JZ 0x0042d2ca                       ; 0042d15d
@@ -375,7 +375,7 @@ section .text
     FLD float ptr [EBX + 0x2504]        ; 0042d176
     FXCH                                ; 0042d17c
     FSTP float ptr [EBX + 0x24]         ; 0042d17e
-    FCOMP float ptr [0x005dd234]        ; 0042d181 | DAT_005dd234
+    FCOMP float ptr [0x005dd234]        ; 0042d181 | g_FLOAT_005dd234
     FNSTSW AX                           ; 0042d187
     SAHF                                ; 0042d189
     JZ 0x0042d195                       ; 0042d18a
@@ -395,7 +395,7 @@ section .text
     ADD ESP,0xc                         ; 0042d1bb
     FLD float ptr [EBX + 0x2504]        ; 0042d1be
         ;   Label: LAB_0042d1be
-    FADD double ptr [0x005b826e]        ; 0042d1c4 | DAT_005b826e
+    FADD double ptr [0x005b826e]        ; 0042d1c4 | g_DOUBLE_005b826e
     FLD float ptr [EBX + 0x24]          ; 0042d1ca
     FCOMPP                              ; 0042d1cd
     FNSTSW AX                           ; 0042d1cf

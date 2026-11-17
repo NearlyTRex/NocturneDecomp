@@ -6,26 +6,25 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420dc0(CBoundingBox3D *this_ptr)
 
 {
+  int iVar1;
   CVector3i local_28 [2];
   
   local_28[0].x =
-       (int)ROUND(((this_ptr->min).x + (this_ptr->max).x) * _DAT_005d4bc4 * _DAT_005fce08);
+       (int)ROUND(((this_ptr->min).x + (this_ptr->max).x) * 0.5f * 256.0f);
   local_28[0].y =
-       (int)ROUND(((this_ptr->min).y + (this_ptr->max).y) * _DAT_005d4bc4 * _DAT_005fce08);
+       (int)ROUND(((this_ptr->min).y + (this_ptr->max).y) * 0.5f * 256.0f);
   local_28[0].z =
-       (int)ROUND(((this_ptr->min).z + (this_ptr->max).z) * _DAT_005d4bc4 * _DAT_005fce08);
+       (int)ROUND(((this_ptr->min).z + (this_ptr->max).z) * 0.5f * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            ((SProjectedVertex *)(*DAT_00612560 + 0xea5d0),local_28);
-  if (0 < *(int *)(*DAT_00612560 + 0xea5d8)) {
-    return ABS(((float)_DAT_01c4effc *
-               (((this_ptr->max).y - (this_ptr->min).y) /
-               ((float)*(int *)(*DAT_00612560 + 0xea5d8) * (float)_DAT_005d4bc8))) /
-               (float)DAT_0061b4c4);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[19999].projected_vertex,local_28);
+  iVar1 = g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[19999].projected_vertex.transformed_z;
+  if (0 < iVar1) {
+    return ABS(((float)g_INT_01c4effc *
+               (((this_ptr->max).y - (this_ptr->min).y) / ((float)iVar1 * (float)0.00390625))
+               ) / (float)g_INT_0061b4c4);
   }
   return 99999.0;
 }

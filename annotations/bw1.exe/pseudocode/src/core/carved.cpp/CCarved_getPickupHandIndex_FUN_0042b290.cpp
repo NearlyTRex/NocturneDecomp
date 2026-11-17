@@ -17,7 +17,7 @@ int __cdecl core_carved_cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved *thi
     return -1;
   }
   iVar1 = _strnicmp
-                    ((this_ptr->base).base.model.model_name,&DAT_005d55ea,3);
+                    ((this_ptr->base).base.model.model_name,"new",3);
   if (iVar1 == 0) {
     if ((uint)object_shape_type < 2) {
       if (object_shape_type != 1) {

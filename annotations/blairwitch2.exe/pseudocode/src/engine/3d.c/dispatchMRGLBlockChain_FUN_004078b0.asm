@@ -11,8 +11,8 @@
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004df960 at 004dfce1
 ;
 ; Referenced Globals:
-;   undefined1* PTR_engine_3d.c_badMRGLStruct_FUN_00403800_006093c4 = 00403800
-;   undefined4 DAT_006141e0
+;   void*[67] g_ARRAY_PTR_006093c4
+;   uint g_UINT_006141e0 = 0x1
 ;
 ; *****************************************************************************
 
@@ -34,13 +34,13 @@ section .text
     CMP EAX,0x43                        ; 004078c2
     JL 0x004078d2                       ; 004078c5
         ;   XREF to: 004078d2 (CONDITIONAL_JUMP)  ; LAB_004078d2
-    MOV dword ptr [0x006141e0],0x1      ; 004078c7 | DAT_006141e0
+    MOV dword ptr [0x006141e0],0x1      ; 004078c7 | g_UINT_006141e0
         ;   Label: LAB_004078c7
     RET                                 ; 004078d1
         ;   Label: LAB_004078d1
     PUSH EDX                            ; 004078d2
         ;   Label: LAB_004078d2
-    CALL dword ptr [EAX*0x4 + 0x6093c4] ; 004078d3 | PTR_engine_3d.c_badMRGLStruct_FUN_00403800_006093c4
+    CALL dword ptr [EAX*0x4 + 0x6093c4] ; 004078d3 | g_ARRAY_PTR_006093c4
     ADD ESP,0x4                         ; 004078da
     MOV EDX,EAX                         ; 004078dd
     JMP 0x004078ba                      ; 004078df

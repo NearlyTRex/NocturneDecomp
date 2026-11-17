@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 78,
+    "complexity_score": 27,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 94
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -73,26 +70,26 @@
   "globals": [
     {
       "addr": "007e3e88",
-      "name": "DAT_007e3e88",
-      "type": "undefined4",
+      "name": "g_INT_007e3e88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007e3e8c",
-      "name": "DAT_007e3e8c",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_007e3e8c",
+      "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6e2b4",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_INT_01c6e2b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -243,38 +240,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_007e3e88",
-      "severity": "mild",
-      "text": "if (DAT_007e3e88 < 3) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_007e3e8c",
-      "severity": "mild",
-      "text": "((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_007e3e88",
-      "severity": "mild",
-      "text": "((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

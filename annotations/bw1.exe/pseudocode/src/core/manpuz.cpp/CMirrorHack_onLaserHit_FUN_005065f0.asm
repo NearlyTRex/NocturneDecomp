@@ -8,7 +8,7 @@
 ; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e768d
+;   double g_DOUBLE_005e768d = -0.0100000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680
@@ -27,7 +27,7 @@ section .text
         ;   XREF to: 00409680 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor * this_ptr, SLaserInfo * laser_info)
     FLD float ptr [EBX + 0x34]          ; 00506600
     ADD ESP,0x8                         ; 00506603
-    FCOMP double ptr [0x005e768d]       ; 00506606 | DAT_005e768d
+    FCOMP double ptr [0x005e768d]       ; 00506606 | g_DOUBLE_005e768d
     FNSTSW AX                           ; 0050660c
     SAHF                                ; 0050660e
     JA 0x00506613                       ; 0050660f

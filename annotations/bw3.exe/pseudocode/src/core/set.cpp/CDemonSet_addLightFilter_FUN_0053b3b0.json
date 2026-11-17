@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 96
   },
   "cross_references": [
@@ -56,8 +54,8 @@
   "globals": [
     {
       "addr": "0203a418",
-      "name": "DAT_0203a418",
-      "type": "undefined4",
+      "name": "g_CDemonLight_PTR_ARRAY_0203a418",
+      "type": "CDemonLight*[96]",
       "value": null
     }
   ],
@@ -213,14 +211,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0203a418",
-      "severity": "mild",
-      "text": "*out_master_light = *(CDemonLight **)(&DAT_0203a418 + iVar5 * 4);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

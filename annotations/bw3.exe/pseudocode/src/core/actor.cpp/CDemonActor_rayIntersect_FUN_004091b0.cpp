@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004091b0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
 
 {
@@ -147,8 +145,8 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004091b0(CDemonActor *
       goto LAB_004093ad;
     }
   }
-  _DAT_01d71de0 = "..\\core\\actor.cpp";
-  _DAT_01d71de4 = 0x4ac;
+  g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+  g_INT_01d71de4 = 0x4ac;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonActor::rayIntersect - Invalid collision type!");
 LAB_004093ad:
   dStack_110 = (double)fStack_108;
@@ -185,20 +183,20 @@ LAB_004093ad:
       if (1.0 < fStack_108) {
         return 2.0;
       }
-      out_hit->part_index = _DAT_0272af44;
-      out_hit->lod_index = _DAT_0272af54;
-      triangle_index = _DAT_0272af58;
-      iVar1 = _DAT_0272af54;
-      out_hit->triangle_index = _DAT_0272af58;
+      out_hit->part_index = g_INT_0272af44;
+      out_hit->lod_index = g_INT_0272af54;
+      triangle_index = g_INT_0272af58;
+      iVar1 = g_INT_0272af54;
+      out_hit->triangle_index = g_INT_0272af58;
       this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
                               (collision_info->deformable_model);
       iVar1 = core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0054bde0
                         (this_ptr_01,iVar1,triangle_index);
       out_hit->bone_index = iVar1;
       if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 4) {
-        local_3c._4_4_ = _DAT_0272af48;
-        afStack_34[0] = _DAT_0272af4c;
-        afStack_34[1] = _DAT_0272af50;
+        local_3c._4_4_ = g_CVector3f_0272af48.x;
+        afStack_34[0] = g_CVector3f_0272af48.y;
+        afStack_34[1] = g_CVector3f_0272af48.z;
       }
     }
   }

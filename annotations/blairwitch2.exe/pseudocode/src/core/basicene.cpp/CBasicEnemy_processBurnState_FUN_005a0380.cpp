@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicEnemy *this_ptr,float delta_time)
 
 {
@@ -59,7 +57,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
     this_ptr->burn_timer = this_ptr->burn_timer - delta_time;
     core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_110);
     SStack_110.damage_amount = this_ptr->burn_damage_rate * delta_time;
-    SStack_110.attacker = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);
+    SStack_110.attacker = (CDemonActor *)g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
     SStack_110.wielder = SStack_110.attacker;
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
               ((CCharacter *)this_ptr,&SStack_110);
@@ -78,9 +76,9 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
         ;
         if (pcVar2 != (char *)0x0) {
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
-          if ((float)_DAT_005efb87 < fStack_14) {
+          if ((float)0.20000000000000001 < fStack_14) {
             core_xform_cpp_transformVector3x4_FUN_00591530
-                      ((CVector3f *)&DAT_0265370c,pCStack_1c,&CStack_5c);
+                      (&g_CVector3f_0265370c,pCStack_1c,&CStack_5c);
             CStack_74.x = CStack_5c.x;
             *(uint *)((int)&CStack_74 + (uint)bVar4 * -8 + 4) =
                  *(uint *)((int)&CStack_5c + (uint)bVar4 * -8 + 4);
@@ -101,9 +99,9 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
             afStack_c4[(uint)bVar4 * -2] = afStack_4c[(uint)bVar4 * -2];
             afStack_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
                  afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-            fStack_b0 = fStack_c8 * _DAT_005efb7f;
-            fStack_ac = afStack_c4[0] * _DAT_005efb7f;
-            fStack_a8 = afStack_c4[1] * _DAT_005efb7f;
+            fStack_b0 = fStack_c8 * 0.5f;
+            fStack_ac = afStack_c4[0] * 0.5f;
+            fStack_a8 = afStack_c4[1] * 0.5f;
             fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.8,1.5);
             afStack_c4[2] = fStack_b0;
             afStack_c4[(uint)bVar4 * -2 + 3] = afStack_c4[(uint)bVar4 * -2 + 6];
@@ -111,7 +109,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
                  afStack_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
             iVar1 = 2;
             fStack_68 = afStack_c4[2];
-            acceleration = (CVector3f *)&DAT_0265370c;
+            acceleration = &g_CVector3f_0265370c;
             afStack_64[1] = (float)uStack_b4;
             pCVar7 = &CStack_a4;
             position_offset = &CStack_80;

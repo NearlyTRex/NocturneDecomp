@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430(CDemonCamera *this_ptr)
 
 {
@@ -28,13 +26,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430(
   int local_18;
   int local_14;
   
-  if (_DAT_01c6cee8 != 0) {
-    engine_special_cpp_restoreZBuffer_FUN_00566370(0,0,0,DAT_005fba18 + -1,DAT_005fba1c + -1);
+  if (g_INT_01c6cee8 != 0) {
+    engine_special_cpp_restoreZBuffer_FUN_00566370(0,0,0,g_INT_005fba18 + -1,g_INT_005fba1c + -1);
     return;
   }
   if (0x100 < this_ptr->rect_array_count) {
-    local_34.x_min = _DAT_01c6cee8;
-    local_34.y_min = _DAT_01c6cee8;
+    local_34.x_min = g_INT_01c6cee8;
+    local_34.y_min = g_INT_01c6cee8;
     local_34.x_max = this_ptr->framebuffer_width + -1;
     local_34.y_max = this_ptr->framebuffer_height + -1;
     core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00449350(this_ptr,&local_34);
@@ -82,27 +80,28 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430(
     do {
       iVar8 = local_20;
       local_18 = 0;
-      _DAT_0149e704 = 0;
+      g_INT_0149e704 = 0;
       if (0 < this_ptr->rect_array_count) {
         iVar9 = 0;
         pCVar6 = local_24;
         do {
           if ((pCVar6->y_min <= local_14) && (local_14 <= pCVar6->y_max)) {
             bVar5 = false;
-            if (0 < _DAT_0149e704) {
-              iVar10 = _DAT_0149e704 * 4;
+            if (0 < g_INT_0149e704) {
+              iVar10 = g_INT_0149e704 * 4;
               iVar7 = 0;
               do {
-                if ((*(int *)(iVar7 + 0x149e708) <= pCVar6->x_max) &&
-                   (pCVar6->x_min <= *(int *)(iVar7 + 0x149eb08))) {
-                  if ((*(int *)(iVar7 + 0x149e708) <= pCVar6->x_min) &&
-                     (pCVar6->x_max <= *(int *)(iVar7 + 0x149eb08))) goto LAB_004495b6;
-                  if (pCVar6->x_min < *(int *)(iVar7 + 0x149e708)) {
+                if ((*(int *)((int)g_INT_ARRAY_0149e708 + iVar7) <= pCVar6->x_max) &&
+                   (pCVar6->x_min <= *(int *)((int)g_INT_ARRAY_0149eb08 + iVar7))) {
+                  if ((*(int *)((int)g_INT_ARRAY_0149e708 + iVar7) <= pCVar6->x_min) &&
+                     (pCVar6->x_max <= *(int *)((int)g_INT_ARRAY_0149eb08 + iVar7)))
+                  goto LAB_004495b6;
+                  if (pCVar6->x_min < *(int *)((int)g_INT_ARRAY_0149e708 + iVar7)) {
                     bVar5 = true;
-                    *(int *)(iVar7 + 0x149e708) = pCVar6->x_min;
+                    *(int *)((int)g_INT_ARRAY_0149e708 + iVar7) = pCVar6->x_min;
                   }
-                  if (*(int *)(iVar7 + 0x149eb08) < pCVar6->x_max) {
-                    *(int *)(iVar7 + 0x149eb08) = pCVar6->x_max;
+                  if (*(int *)((int)g_INT_ARRAY_0149eb08 + iVar7) < pCVar6->x_max) {
+                    *(int *)((int)g_INT_ARRAY_0149eb08 + iVar7) = pCVar6->x_max;
                     goto LAB_004495b6;
                   }
                   if (bVar5) break;
@@ -111,9 +110,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430(
               } while (iVar7 < iVar10);
             }
             if (!bVar5) {
-              *(int *)(iVar9 + 0x149e708) = pCVar6->x_min;
-              _DAT_0149e704 = _DAT_0149e704 + 1;
-              *(int *)(iVar9 + 0x149eb08) = pCVar6->x_max;
+              *(int *)((int)g_INT_ARRAY_0149e708 + iVar9) = pCVar6->x_min;
+              g_INT_0149e704 = g_INT_0149e704 + 1;
+              *(int *)((int)g_INT_ARRAY_0149eb08 + iVar9) = pCVar6->x_max;
               iVar9 = iVar9 + 4;
             }
           }
@@ -123,20 +122,20 @@ LAB_004495b6:
         } while (local_18 < this_ptr->rect_array_count);
       }
       iVar9 = 0;
-      if (0 < _DAT_0149e704) {
+      if (0 < g_INT_0149e704) {
         iVar10 = 0;
         do {
-          piVar1 = (int *)(iVar10 + 0x149e708);
-          piVar2 = (int *)(iVar10 + 0x149e708);
-          piVar3 = (int *)(iVar10 + 0x149e708);
-          piVar4 = (int *)(iVar10 + 0x149eb08);
+          piVar1 = (int *)((int)g_INT_ARRAY_0149e708 + iVar10);
+          piVar2 = (int *)((int)g_INT_ARRAY_0149e708 + iVar10);
+          piVar3 = (int *)((int)g_INT_ARRAY_0149e708 + iVar10);
+          piVar4 = (int *)((int)g_INT_ARRAY_0149eb08 + iVar10);
           iVar10 = iVar10 + 4;
           iVar9 = iVar9 + 1;
           core_dstrendr_cpp_memcpyMMX_FUN_00471271
-                    ((void *)(*(int *)(&DAT_01c60dac + iVar8) + *piVar1 * 4),
+                    ((void *)(*(int *)((int)g_UINT_PTR_ARRAY_01c60dac + iVar8) + *piVar1 * 4),
                      (void *)((local_14 * this_ptr->framebuffer_width + *piVar2) * 4 +
                              (int)this_ptr->zbuffer_aligned),(*piVar4 - *piVar3) * 4 + 4);
-        } while (iVar9 < _DAT_0149e704);
+        } while (iVar9 < g_INT_0149e704);
       }
       local_20 = local_20 + 4;
       local_14 = local_14 + 1;

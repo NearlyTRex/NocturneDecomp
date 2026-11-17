@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 97,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 209
@@ -71,9 +70,9 @@
   "globals": [
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005fba60",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "005fe3a0",
@@ -89,14 +88,14 @@
     },
     {
       "addr": "01549abc",
-      "name": "DAT_01549abc",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549abc",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     }
   ],
@@ -206,14 +205,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01d19cf0",
-      "severity": "mild",
-      "text": "_strncpy(&DAT_01d19cf0,this_ptr->entry->title + 1,0x40);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

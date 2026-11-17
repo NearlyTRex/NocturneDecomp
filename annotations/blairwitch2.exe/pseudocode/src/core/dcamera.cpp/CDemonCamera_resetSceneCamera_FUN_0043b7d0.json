@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 31,
+    "complexity_score": 6,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 11
   },
   "cross_references": [
@@ -44,14 +42,14 @@
   "globals": [
     {
       "addr": "007bda74",
-      "name": "DAT_007bda74",
-      "type": "undefined4",
+      "name": "g_CDemonCamera_PTR_007bda74",
+      "type": "CDemonCamera*",
       "value": null
     },
     {
       "addr": "0083c7d0",
-      "name": "DAT_0083c7d0",
-      "type": "undefined4",
+      "name": "g_CDemonCamera_PTR_0083c7d0",
+      "type": "CDemonCamera*",
       "value": null
     }
   ],
@@ -145,22 +143,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_0083c7d0",
-      "severity": "mild",
-      "text": "DAT_0083c7d0 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_007bda74",
-      "severity": "mild",
-      "text": "DAT_007bda74 = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

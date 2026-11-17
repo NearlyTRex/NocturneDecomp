@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005884f0(CDemonActor *actor)
 
 {
@@ -51,5 +49,5 @@ float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005884f0(CDemonActor *act
        *(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8);
   *(uint *)(&stack0xfffffffc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  return unaff_ESI * (float)_DAT_005d8397 + 1.0;
+  return unaff_ESI * (float)0.5 + 1.0;
 }

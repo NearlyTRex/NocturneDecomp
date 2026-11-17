@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 69,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 4,
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_stride_bytecount",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 73
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -44,20 +43,20 @@
   "globals": [
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d51050",
-      "name": "DAT_01d51050",
-      "type": "undefined4",
+      "name": "g_INT_01d51050",
+      "type": "int",
       "value": null
     }
   ],
@@ -143,16 +142,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_01d51054",
       "severity": "mild",
       "text": "(&DAT_01d51054 + index * 0x114,&DAT_01d51054 + (index + 1) * 0x114,",
@@ -160,15 +151,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_01d51054",
       "severity": "mild",
       "text": "(&DAT_01d51054 + index * 0x114,&DAT_01d51054 + (index + 1) * 0x114,",
       "type": "undefined_data"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((_DAT_01d51050 - index) * 0x114) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 13,
+      "description": "mem* byte count hardcodes an element stride ((g_INT_01d51050 - index) * 0x114) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 11,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

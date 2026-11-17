@@ -20,13 +20,13 @@ void __cdecl core_basicene_cpp_CBasicEnemy_startBurn_FUN_005a0270(CBasicEnemy *t
     return;
   }
   this_ptr_00 = &this_ptr->state_machine;
-  iVar4 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,&DAT_005efb55);
+  iVar4 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Burn");
   if (iVar4 == 0) {
     state_name = core_muzzle_cpp_SStateMachine_getStateName_FUN_0059db70(this_ptr_00);
     core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
               (this_ptr_00,"BurnComplete",state_name);
   }
-  core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(&this_ptr->state_machine,&DAT_005efb67);
+  core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(&this_ptr->state_machine,"Burn");
   this_ptr->burn_timer = strength;
   if (&this_ptr->burn_direction != direction) {
     (this_ptr->burn_direction).x = direction->x;

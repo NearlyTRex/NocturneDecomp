@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_00557570(CSfxSample *out_sample)
 
 {
@@ -59,12 +57,12 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_00557570(CSfxSample *out_sample)
     } while (cVar1 != '\0');
     memmove(&local_140,local_13f,~uVar3 - 1);
   }
-  iVar4 = _stricmp(&local_140,&DAT_005d3a0f);
+  iVar4 = _stricmp(&local_140,"wav");
   if (iVar4 != 0) {
-    iVar4 = _stricmp(&local_140,&DAT_005d3a19);
+    iVar4 = _stricmp(&local_140,"mp3");
     if (iVar4 == 0) {
-      if ((DAT_02ce71e8 & 1) == 0) {
-        DAT_02ce71e8 = DAT_02ce71e8 | 1;
+      if ((g_BYTE_02ce71e8 & 1) == 0) {
+        g_BYTE_02ce71e8 = g_BYTE_02ce71e8 | 1;
         sound_mp3_cpp_CMP3Decoder_ctor_FUN_00502750(&g_CMP3DecoderInstanceOther);
         _atexit(&g_CMP3DecoderDestructorNode2);
       }
@@ -78,8 +76,8 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_00557570(CSfxSample *out_sample)
       sound_mp3_cpp_CMP3Decoder_free_FUN_00502a10(&g_CMP3DecoderInstanceOther);
     }
     else {
-      _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-      _DAT_01d71de4 = 0x12d1;
+      g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+      g_INT_01d71de4 = 0x12d1;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Unknown sample file format extension: %s");
     }
 LAB_005576c8:
@@ -87,8 +85,8 @@ LAB_005576c8:
     if (0 < (out_sample->sample_info).sample_count) {
       return 1;
     }
-    _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d71de4 = 0x12dc;
+    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d71de4 = 0x12dc;
     core_main_c_displayErrorAndQuit_FUN_004e4330("getSampleInfo - can't determine length for %s");
     return 1;
   }

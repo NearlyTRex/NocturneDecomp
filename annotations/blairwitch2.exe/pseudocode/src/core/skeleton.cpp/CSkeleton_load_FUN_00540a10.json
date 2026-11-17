@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 81,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 85
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -61,14 +59,14 @@
   "globals": [
     {
       "addr": "005e696f",
-      "name": "DAT_005e696f",
-      "type": "undefined4",
+      "name": "s_rt_005e696f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e6972",
-      "name": "DAT_005e6972",
-      "type": "undefined4",
+      "name": "s_data_005e6972",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -85,14 +83,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -193,32 +191,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005e6972",
-      "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00460c70(&DAT_005e6972,filename,&DAT_005e696f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005e696f",
-      "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00460c70(&DAT_005e6972,filename,&DAT_005e696f);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -40,11 +40,11 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0050a280 at 0050aa9f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e0213
-;   undefined4 DAT_005e021b
-;   undefined4 DAT_005e0223
-;   undefined4 DAT_00618df4
-;   undefined4 DAT_0061933c
+;   double g_DOUBLE_005e0213 = 0.25
+;   double g_DOUBLE_005e021b = 1.33333333333333
+;   double g_DOUBLE_005e0223 = 2
+;   undefined4 g_INT_ARRAY_00618de4[4]
+;   int[1] g_INT_ARRAY_0061933c
 ;   undefined4 DAT_00619340
 ;   undefined4 DAT_0061934c
 ;   undefined4 DAT_00619358
@@ -53,7 +53,7 @@
 ;   undefined4 DAT_006193a0
 ;   undefined4 DAT_006193a4
 ;   undefined4 DAT_006193a8
-;   undefined4 DAT_01d1edd4
+;   int g_INT_01d1edd4
 ;
 ; Called Functions:
 ;   crt_math.c_pow_FUN_005b9484
@@ -95,10 +95,10 @@ section .text
     TEST EAX,EAX                        ; 00507960
     JZ 0x00507b45                       ; 00507962
         ;   XREF to: 00507b45 (CONDITIONAL_JUMP)  ; LAB_00507b45
-    MOV EAX,dword ptr [EDX + 0x61933c]  ; 00507968 | DAT_0061933c
+    MOV EAX,dword ptr [EDX + 0x61933c]  ; 00507968 | g_INT_ARRAY_0061933c
     MOV dword ptr [ESP + 0x5c],EAX      ; 0050796e
         ;   Label: LAB_0050796e
-    MOV EDX,dword ptr [0x01d1edd4]      ; 00507972 | DAT_01d1edd4
+    MOV EDX,dword ptr [0x01d1edd4]      ; 00507972 | g_INT_01d1edd4
         ;   Label: LAB_00507972
     TEST EDX,EDX                        ; 00507978
     JZ 0x00507b89                       ; 0050797a
@@ -262,12 +262,12 @@ section .text
     ADD EAX,EDI                         ; 00507b76
     SHL EAX,0x2                         ; 00507b78
     ADD EAX,EDI                         ; 00507b7b
-    MOV EAX,dword ptr [EAX*0x4 + 0x61933c] ; 00507b7d | DAT_0061933c
+    MOV EAX,dword ptr [EAX*0x4 + 0x61933c] ; 00507b7d | g_INT_ARRAY_0061933c
     JMP 0x0050796e                      ; 00507b84
         ;   XREF to: 0050796e (UNCONDITIONAL_JUMP)  ; LAB_0050796e
     XOR EBX,EBX                         ; 00507b89
         ;   Label: LAB_00507b89
-    FLD double ptr [0x005e021b]         ; 00507b8b | DAT_005e021b
+    FLD double ptr [0x005e021b]         ; 00507b8b | g_DOUBLE_005e021b
     MOV dword ptr [ESP + 0x64],EDX      ; 00507b91
         ;   Label: LAB_00507b91
     FLD ST0                             ; 00507b95
@@ -283,8 +283,8 @@ section .text
     FSTP ST0                            ; 00507bb2
     XOR EDX,EDX                         ; 00507bb4
     XOR EBX,EBX                         ; 00507bb6
-    FLD double ptr [0x005e0223]         ; 00507bb8 | DAT_005e0223
-    FLD double ptr [0x005e0213]         ; 00507bbe | DAT_005e0213
+    FLD double ptr [0x005e0223]         ; 00507bb8 | g_DOUBLE_005e0223
+    FLD double ptr [0x005e0213]         ; 00507bbe | g_DOUBLE_005e0213
     MOV EAX,EDX                         ; 00507bc4
         ;   Label: LAB_00507bc4
     NEG EAX                             ; 00507bc6
@@ -303,7 +303,7 @@ section .text
     FSTP ST0                            ; 00507beb
     MOV EBX,0x1                         ; 00507bed
     FSTP ST0                            ; 00507bf2
-    MOV dword ptr [0x01d1edd4],EBX      ; 00507bf4 | DAT_01d1edd4
+    MOV dword ptr [0x01d1edd4],EBX      ; 00507bf4 | g_INT_01d1edd4
     JMP 0x00507980                      ; 00507bfa
         ;   XREF to: 00507980 (UNCONDITIONAL_JUMP)  ; LAB_00507980
     JGE 0x00507c10                      ; 00507bff
@@ -376,8 +376,8 @@ section .text
     MOV dword ptr [ESP + 0x64],EBX      ; 00507cc8
         ;   Label: LAB_00507cc8
     FILD dword ptr [ESP + 0x64]         ; 00507ccc
-    FMUL double ptr [0x005e0213]        ; 00507cd0 | DAT_005e0213
-    FLD double ptr [0x005e0223]         ; 00507cd6 | DAT_005e0223
+    FMUL double ptr [0x005e0213]        ; 00507cd0 | g_DOUBLE_005e0213
+    FLD double ptr [0x005e0223]         ; 00507cd6 | g_DOUBLE_005e0223
     CALL crt_math.c_pow_FUN_005b9484    ; 00507cdc
         ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
     MOV EAX,dword ptr [ESP + 0x44]      ; 00507ce1
@@ -392,7 +392,7 @@ section .text
     JL 0x00507da5                       ; 00507cf7
         ;   XREF to: 00507da5 (CONDITIONAL_JUMP)  ; LAB_00507da5
     MOV dword ptr [ESP + 0x64],EAX      ; 00507cfd
-    FLD double ptr [0x005e021b]         ; 00507d01 | DAT_005e021b
+    FLD double ptr [0x005e021b]         ; 00507d01 | g_DOUBLE_005e021b
     FILD dword ptr [ESP + 0x64]         ; 00507d07
     CALL crt_math.c_pow_FUN_005b9484    ; 00507d0b
         ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
@@ -423,7 +423,7 @@ section .text
     MOV EDX,dword ptr [ECX + 0x3c]      ; 00507d4e
         ;   Label: LAB_00507d4e
     LEA EAX,[ESI*0x4 + 0x0]             ; 00507d51
-    IMUL EDX,dword ptr [EAX + 0x618de4] ; 00507d58 | DAT_00618df4
+    IMUL EDX,dword ptr [EAX + 0x618de4] ; 00507d58 | g_INT_ARRAY_00618de4[4]
     MOV dword ptr [ESP + 0x64],EDX      ; 00507d5f
     ADD EAX,dword ptr [ESP + 0x18]      ; 00507d63
     MOV EDX,dword ptr [ESP + 0x64]      ; 00507d67

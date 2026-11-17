@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 102,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 2,
+    "pseudocode_lines": 71,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 241
+    "total_lines": 240
   },
   "cross_references": [],
   "function": {
@@ -53,15 +52,15 @@
   "globals": [
     {
       "addr": "005f0a5b",
-      "name": "s_MeleeAttack_005f0a5a+1",
-      "type": "undefined4",
+      "name": "s_MeleeAttack_005f0a5b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0060088c",
-      "name": "DAT_0060088c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0060088c",
+      "type": "float",
+      "value": "5"
     }
   ],
   "param_estimates": {
@@ -144,14 +143,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
     }
   ],
   "vtable_info": {

@@ -7,7 +7,7 @@
 ; CStairs *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5c78
+;   double g_DOUBLE_005d5c78 = 0.5
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
     SUB ESP,0x1c                        ; 00568461
     MOV EDX,dword ptr [ESP + 0x24]      ; 00568464
     MOV EAX,ESI                         ; 00568468
-    FLD double ptr [0x005d5c78]         ; 0056846a | DAT_005d5c78
+    FLD double ptr [0x005d5c78]         ; 0056846a | g_DOUBLE_005d5c78
     FLD float ptr [EDX + 0x160]         ; 00568470
     FMUL ST1                            ; 00568476
     FILD dword ptr [EDX + 0x16c]        ; 00568478

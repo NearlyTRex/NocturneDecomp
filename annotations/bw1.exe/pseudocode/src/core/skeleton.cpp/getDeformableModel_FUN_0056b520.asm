@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f2739
 ;   TerminatedCString s_Can_t_load_s_because_def_005f274e
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_027902bc
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   char[256] g_CHAR_ARRAY_027902bc
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -54,7 +54,7 @@ section .text
     CMP EBX,0x40                        ; 0056b55c
     JL 0x0056b533                       ; 0056b55f
         ;   XREF to: 0056b533 (CONDITIONAL_JUMP)  ; LAB_0056b533
-    MOV ECX,dword ptr [0x027902bc]      ; 0056b561 | DAT_027902bc
+    MOV ECX,dword ptr [0x027902bc]      ; 0056b561 | g_CHAR_ARRAY_027902bc
     XOR EBX,EBX                         ; 0056b567
     XOR EAX,EAX                         ; 0056b569
     TEST ECX,ECX                        ; 0056b56b
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0056b5cf
     MOV EAX,EDI                         ; 0056b5d2
-    MOV dword ptr [EBX*0x4 + 0x27902bc],ESI ; 0056b5d4 | DAT_027902bc
+    MOV dword ptr [EBX*0x4 + 0x27902bc],ESI ; 0056b5d4 | g_CHAR_ARRAY_027902bc
     POP EBP                             ; 0056b5db
     POP EDI                             ; 0056b5dc
     POP ESI                             ; 0056b5dd
@@ -117,8 +117,8 @@ section .text
     MOV EBX,0x5f2739                    ; 0056b5e6 | = "..\\core\\skeleton.cpp"
     MOV ESI,0x1086                      ; 0056b5eb
     PUSH 0x5f274e                       ; 0056b5f0 | = "Can't load %s because deformable mode..."
-    MOV dword ptr [0x01d1d400],EBX      ; 0056b5f5 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056b5fb | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 0056b5f5 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0056b5fb | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056b601
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0056b606

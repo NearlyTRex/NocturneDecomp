@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_00582dc0(CVampireBoss *this_ptr,float delta_time)
 
 {

@@ -10,7 +10,7 @@
 ; CMatrix3x3f *    Stack[0x10]:4   transform_matrix
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fe5fc
+;   float g_FLOAT_005fe5fc = 256
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
@@ -108,13 +108,13 @@ section .text
         ;   Label: LAB_0044fc24
     LEA EBX,[EBP + 0x16c]               ; 0044fc27
     FLD float ptr [EAX]                 ; 0044fc2d
-    FMUL float ptr [0x005fe5fc]         ; 0044fc2f | DAT_005fe5fc
+    FMUL float ptr [0x005fe5fc]         ; 0044fc2f | g_FLOAT_005fe5fc
     FISTP dword ptr [EBX]               ; 0044fc35
     FLD float ptr [EAX + 0x4]           ; 0044fc37
-    FMUL float ptr [0x005fe5fc]         ; 0044fc3a | DAT_005fe5fc
+    FMUL float ptr [0x005fe5fc]         ; 0044fc3a | g_FLOAT_005fe5fc
     FISTP dword ptr [EBX + 0x4]         ; 0044fc40
     FLD float ptr [EAX + 0x8]           ; 0044fc43
-    FMUL float ptr [0x005fe5fc]         ; 0044fc46 | DAT_005fe5fc
+    FMUL float ptr [0x005fe5fc]         ; 0044fc46 | g_FLOAT_005fe5fc
     FISTP dword ptr [EBX + 0x8]         ; 0044fc4c
     POP EBX                             ; 0044fc4f
     POP ESI                             ; 0044fc50

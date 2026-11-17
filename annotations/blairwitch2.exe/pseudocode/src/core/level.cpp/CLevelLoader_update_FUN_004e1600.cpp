@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_ptr,char *text,int clear_screen)
 
 {
@@ -33,12 +31,12 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
   
   if (this_ptr->enabled != 0) {
     if (clear_screen != 0) {
-      engine_2d_c_fillRectColor_FUN_004031c0(0,0,DAT_006141b8 + -1,DAT_006141bc + -1,0);
+      engine_2d_c_fillRectColor_FUN_004031c0(0,0,g_INT_006141b8 + -1,g_INT_006141bc + -1,0);
     }
     local_1c = (float)this_ptr->current_frame / (float)this_ptr->total_frames;
-    engine_2d_c_fillRectColor_FUN_004031c0(0,0,DAT_006141b8,0x14,0);
-    engine_2d_c_fillRectColor_FUN_004031c0(1,1,DAT_006141b8 + -1,0x13,0);
-    local_c = DAT_006141b8 + -2;
+    engine_2d_c_fillRectColor_FUN_004031c0(0,0,g_INT_006141b8,0x14,0);
+    engine_2d_c_fillRectColor_FUN_004031c0(1,1,g_INT_006141b8 + -1,0x13,0);
+    local_c = g_INT_006141b8 + -2;
     iVar7 = 0x12;
     iVar6 = 0x4e1676;
     dVar5 = round((double)((float)local_c * local_1c));
@@ -46,23 +44,24 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
     engine_2d_c_fillRectColor_FUN_004031c0(2,2,local_10,iVar6,iVar7);
     if (this_ptr->use_custom_viewport != 0) {
       engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046b710
-                (DAT_0060b280,this_ptr->viewport_x,this_ptr->viewport_y,this_ptr->viewport_width,
-                 this_ptr->viewport_height);
+                (g_CDemonRenderer_PTR_0060b280,this_ptr->viewport_x,this_ptr->viewport_y,
+                 this_ptr->viewport_width,this_ptr->viewport_height);
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
-              (DAT_0060b280,(CVector3f *)&DAT_0265370c);
+              (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
     local_1c = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
       local_1c = 84.0;
     }
-    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(DAT_0060b280,local_1c);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
+              (g_CDemonRenderer_PTR_0060b280,local_1c);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
-              (DAT_0060b280,(CVector3f *)&DAT_0265370c);
+              (g_CDemonRenderer_PTR_0060b280,&g_CVector3f_0265370c);
     local_44.x = 0.0;
     local_44.y = 0.0;
     local_44.z = 36.0;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-              (DAT_0060b280,&local_44);
+              (g_CDemonRenderer_PTR_0060b280,&local_44);
     g_CDemonSetPtr->rendering_mode = 1;
     iVar7 = 0x8000 - (this_ptr->current_frame << 0xf) / this_ptr->total_frames;
     iVar6 = engine_matrix_c_interpolatedSin_FUN_004e86b0(iVar7);
@@ -82,28 +81,29 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
     local_24 = 0.0;
     local_2c = 7.25;
     local_28 = 7.25;
-    local_5c.x = (int)ROUND(_DAT_005f945c * 7.25);
-    local_5c.y = (int)ROUND(_DAT_005f945c * 7.25);
-    local_5c.z = (int)ROUND(_DAT_005f945c * 0.0);
+    local_5c.x = (int)ROUND(256.0f * 7.25);
+    local_5c.y = (int)ROUND(256.0f * 7.25);
+    local_5c.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-              (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_5c);
+              (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,&local_5c);
     local_2c = -local_2c;
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-              (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffff98);
+              (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,
+               (CVector3i *)&stack0xffffff98);
     local_28 = -local_28;
-    local_38.x = (int)ROUND(local_2c * _DAT_005f945c);
-    local_38.y = (int)ROUND(local_28 * _DAT_005f945c);
-    local_38.z = (int)ROUND(local_24 * _DAT_005f945c);
+    local_38.x = (int)ROUND(local_2c * 256.0f);
+    local_38.y = (int)ROUND(local_28 * 256.0f);
+    local_38.z = (int)ROUND(local_24 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-              (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_38);
+              (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_38);
     local_2c = -local_2c;
-    local_50.x = (int)ROUND(local_2c * _DAT_005f945c);
-    local_50.y = (int)ROUND(local_28 * _DAT_005f945c);
-    local_50.z = (int)ROUND(local_24 * _DAT_005f945c);
+    local_50.x = (int)ROUND(local_2c * 256.0f);
+    local_50.y = (int)ROUND(local_28 * 256.0f);
+    local_50.z = (int)ROUND(local_24 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-              (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_50);
-    pCVar1 = DAT_0060b280;
-    DAT_0060b280->vertex_buffer_ptr->u = 0x1000000;
+              (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_50);
+    pCVar1 = g_CDemonRenderer_PTR_0060b280;
+    g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->u = 0x1000000;
     pCVar1->vertex_buffer_ptr->v = 0;
     pCVar1->vertex_buffer_ptr[1].u = 0;
     pCVar1->vertex_buffer_ptr[1].v = 0;
@@ -111,19 +111,20 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
     pCVar1->vertex_buffer_ptr[2].v = 0x1000000;
     pCVar1->vertex_buffer_ptr[3].u = 0x1000000;
     pCVar1->vertex_buffer_ptr[3].v = 0x1000000;
-    pCVar1 = DAT_0060b280;
+    pCVar1 = g_CDemonRenderer_PTR_0060b280;
     iVar6 = (this_ptr->current_frame * 0xffff) / this_ptr->total_frames;
     if (0xffff < iVar6) {
       iVar6 = 0xffff;
     }
-    DAT_0060b280->vertex_buffer_ptr->a = 0;
+    g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a = 0;
     pCVar1->vertex_buffer_ptr[1].a = iVar6;
     pCVar1->vertex_buffer_ptr[2].a = 0;
     pCVar1->vertex_buffer_ptr[3].a = 0;
     iVar6 = 0;
     do {
-      pCVar1 = DAT_0060b280;
-      *(int *)((int)&DAT_0060b280->vertex_buffer_ptr->r + iVar6) = (this_ptr->color).r << 8;
+      pCVar1 = g_CDemonRenderer_PTR_0060b280;
+      *(int *)((int)&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->r + iVar6) =
+           (this_ptr->color).r << 8;
       *(int *)((int)&pCVar1->vertex_buffer_ptr->g + iVar6) = (this_ptr->color).g << 8;
       iVar7 = iVar6 + 0x30;
       *(int *)((int)&pCVar1->vertex_buffer_ptr->b + iVar6) = (this_ptr->color).b << 8;
@@ -133,11 +134,11 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
       engine_drender_cpp_popViewport_FUN_0046b740();
     }
     g_CDemonSetPtr->rendering_mode = 0;
-    local_18 = _DAT_01511cc0;
-    iVar6 = (DAT_006141b8 * 0x240) / 0x280;
-    iVar7 = (DAT_006141bc * 0x18) / 0x1e0;
-    iVar3 = (DAT_006141b8 << 5) / 0x280;
-    local_14 = (DAT_006141bc * 0x1c0) / 0x1e0;
+    local_18 = g_CBitFont_PTR_01511cc0;
+    iVar6 = (g_INT_006141b8 * 0x240) / 0x280;
+    iVar7 = (g_INT_006141bc * 0x18) / 0x1e0;
+    iVar3 = (g_INT_006141b8 << 5) / 0x280;
+    local_14 = (g_INT_006141bc * 0x1c0) / 0x1e0;
     iVar4 = this_ptr->current_frame + 1;
     this_ptr->current_frame = iVar4;
     if (this_ptr->total_frames < iVar4) {

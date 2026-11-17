@@ -8,11 +8,11 @@
 ;   wincore_winrun.cpp_winMain_FUN_00581080 at 005812d7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CNetGame* g_CNetGamePtr = 01da62f0
 ;   CMouse* g_CMousePtr = 01dd67dc
 ;   CDemonPod* g_CDemonPodPtr = 01ed2af0
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
@@ -53,12 +53,12 @@ section .text
     CALL engine_ncursfx.cpp_CMouse_reset_FUN_00508c70 ; 004e4c8e
         ;   XREF to: 00508c70 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_reset_FUN_00508c70(CMouse * this_ptr)
     ADD ESP,0x4                         ; 004e4c93
-    MOV EBX,dword ptr [0x00600530]      ; 004e4c96 | DAT_00600530
+    MOV EBX,dword ptr [0x00600530]      ; 004e4c96 | g_CDemonMission_PTR_00600530
     PUSH EBX                            ; 004e4c9c
     CALL core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70 ; 004e4c9d
         ;   XREF to: 004f5b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004e4ca2
-    MOV ESI,dword ptr [0x006045f8]      ; 004e4ca5 | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 004e4ca5 | g_CSound_PTR_006045f8
     PUSH ESI                            ; 004e4cab
     CALL core_sound.cpp_shutdownSoundSystem_FUN_0055fcc0 ; 004e4cac
         ;   XREF to: 0055fcc0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_shutdownSoundSystem_FUN_0055fcc0()

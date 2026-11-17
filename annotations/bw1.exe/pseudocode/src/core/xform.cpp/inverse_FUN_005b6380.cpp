@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005b6380(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
 
 {
@@ -41,8 +39,8 @@ CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005b6380(CMatrix3x4f *matri
   local_3c = core_xform_cpp_determinant_FUN_005b6330(matrix_in);
   local_10 = (float)local_3c;
   if (ABS(local_10) == 0.0) {
-    _DAT_01d1d400 = "..\\core\\xform.cpp";
-    _DAT_01d1d404 = 0x23d;
+    g_CHAR_PTR_01d1d400 = "..\\core\\xform.cpp";
+    g_INT_01d1d404 = 0x23d;
     core_main_c_displayErrorAndQuit_FUN_005030e0("inverse() - Singular matrix");
   }
   local_14 = matrix_in->m[1].x * matrix_in->m[2].y - matrix_in->m[1].y * matrix_in->m[2].x;

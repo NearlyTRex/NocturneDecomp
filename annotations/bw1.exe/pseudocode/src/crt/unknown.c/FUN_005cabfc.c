@@ -13,7 +13,7 @@ LPVOID FUN_005cabfc(void)
   LPVOID pvVar1;
   
   dwErrCode = GetLastError();
-  pvVar1 = TlsGetValue(DAT_006265f8);
+  pvVar1 = TlsGetValue(g_INT_006265f8);
   if (pvVar1 == (LPVOID)0x0) {
     pvVar1 = (LPVOID)FUN_005ccd50();
   }

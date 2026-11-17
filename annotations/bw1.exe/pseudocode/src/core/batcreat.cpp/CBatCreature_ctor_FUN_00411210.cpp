@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
 
 {
@@ -19,9 +17,9 @@ CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCrea
   (pCVar3->base).base.base.vtable._ub = &g_CBatCreatureVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar3->base).base.model,"batcreat.dfm");
-  fVar1 = _DAT_005fbfd0;
+  fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_height = 0.6;
-  fVar2 = _DAT_005fbfd4;
+  fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
   pCVar3->dismember_death_timer = 0.0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this_ptr,short *pcm_output)
 
 {
@@ -134,7 +132,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
               iVar4 = *piVar7;
               piVar7 = piVar7 + 0x60;
               iVar2 = iVar2 + 1;
-              *pfVar6 = *pfVar6 * (float)*(double *)(&DAT_00601360 + iVar4 * 8);
+              *pfVar6 = *pfVar6 * (float)g_DOUBLE_ARRAY_00601360[iVar4];
               pfVar6 = pfVar6 + 0x60;
             } while (iVar2 < local_c0.sampling_rate_index);
           }
@@ -294,8 +292,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
     iVar2 = sound_mp3_cpp_calculateMainDataSize_FUN_00502190(frame_info_00);
     this_ptr->main_data_offset = this_ptr->main_data_offset + iVar2;
     if (local_78 < 0) {
-      _DAT_01d71de0 = "..\\sound\\mp3.cpp";
-      _DAT_01d71de4 = 0x1029;
+      g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
+      g_INT_01d71de4 = 0x1029;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Not enough main data to decode frame %d.");
     }
     while (iVar2 = local_78, 0 < local_78) {
@@ -431,9 +429,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
     local_c0.channel_mode = local_60ac;
     dVar15 = round
                        ((((double)local_60b0 /
-                         *(double *)
-                          (&DAT_006011b8 +
-                          local_f0.mpeg_version * 0x20 + local_f0.sampling_rate_index * 8)) *
+                         g_DOUBLE_ARRAY_006011b8
+                         [local_f0.sampling_rate_index + local_f0.mpeg_version * 4]) *
                         (double)*(int *)(&DAT_006011f8 +
                                         local_f0.bitrate_index * 4 +
                                         (local_f0.layer - 1U) * 0x3c + local_f0.mpeg_version * 0xb4)

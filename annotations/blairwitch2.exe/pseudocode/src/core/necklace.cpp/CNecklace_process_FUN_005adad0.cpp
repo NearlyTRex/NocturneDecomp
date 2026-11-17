@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_ptr,float delta_time)
 
 {
@@ -79,9 +77,9 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   afStack_38[(uint)bVar9 * -2] = afStack_38[(uint)bVar9 * -2 + 3];
   afStack_38[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
        afStack_38[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-  fStack_60 = fStack_3c * _DAT_005f0f37;
-  afStack_5c[0] = afStack_38[0] * _DAT_005f0f37;
-  afStack_5c[1] = afStack_38[1] * _DAT_005f0f37;
+  fStack_60 = fStack_3c * 0.5f;
+  afStack_5c[0] = afStack_38[0] * 0.5f;
+  afStack_5c[1] = afStack_38[1] * 0.5f;
   fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
   fStack_14 = fStack_24;
   fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
@@ -129,11 +127,11 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   *(float *)((int)&CStack_48 + (uint)bVar9 * -8 + 4) = afStack_5c[(uint)bVar9 * -2 + 3];
   *(float *)((int)&CStack_48 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-  CStack_6c.x = _DAT_0265370c;
+  CStack_6c.x = g_CVector3f_0265370c.x;
   *(uint *)((int)&CStack_6c + (uint)bVar9 * -8 + 4) =
-       *(uint *)(&DAT_02653710 + (uint)bVar9 * -8);
+       *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);
   *(uint *)((int)&CStack_6c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-       *(uint *)(&DAT_02653714 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+       *(uint *)((uint)bVar9 * -8 + 0x2653714 + (uint)bVar9 * -8);
   CStack_b4.x = 0.0;
   CStack_b4.y = 1.0;
   CStack_b4.z = 0.0;

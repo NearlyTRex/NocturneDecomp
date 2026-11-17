@@ -22,7 +22,7 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
   double dVar4;
   
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                    (0x01C6E360,"COMBATMODEHARD");
+                    (g_CEventList_PTR_005fba60,"COMBATMODEHARD");
   if (iVar2 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }
@@ -35,10 +35,10 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
   dVar4 = round((double)(this_ptr->base).base.hit_points);
   this_ptr->initial_hit_points = (int)ROUND(dVar4);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
-  DAT_007f8e64 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 Head",1);
-  DAT_007f8e68 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Dummy05",1)
-  ;
+  g_INT_007f8e64 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
+  g_INT_007f8e68 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Dummy05",1);
   _DAT_007f8e7c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Forearm",1);
   _DAT_007f8e80 =
@@ -51,21 +51,21 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Foot",1);
   _DAT_007f8e90 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Foot",1);
-  DAT_007f8e6c = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 L Hand",1);
+  g_INT_007f8e6c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Hand",1);
   _DAT_007f8e70 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
-  DAT_007f8e74 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 R Finger0",1);
+  g_INT_007f8e74 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Finger0",1);
   _DAT_007f8e78 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Finger0",1);
-  DAT_007f8e94 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                           (this_ptr_01,"Bip01 Spine",1);
+  g_INT_007f8e94 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
   _DAT_007f8e98 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine1",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                    (this_ptr_02,&DAT_005b9506,1);
+                    (this_ptr_02,"head",1);
   this_ptr->part_indices[0] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"torso",1);
@@ -74,13 +74,13 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
                     (this_ptr_02,"lforearm",1);
   this_ptr->part_indices[2] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                    (this_ptr_02,&DAT_005b951a,1);
+                    (this_ptr_02,"larm",1);
   this_ptr->part_indices[3] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"rforearm",1);
   this_ptr->part_indices[4] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                    (this_ptr_02,&DAT_005b9528,1);
+                    (this_ptr_02,"rarm",1);
   this_ptr->part_indices[5] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"waist",1);

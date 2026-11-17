@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 58,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 13,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 147
   },
   "cross_references": [],
@@ -62,8 +60,8 @@
   "globals": [
     {
       "addr": "005b7771",
-      "name": "s_count_005b7770+1",
-      "type": "undefined4",
+      "name": "s_count_005b7771",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -74,9 +72,9 @@
     },
     {
       "addr": "005b7782",
-      "name": "DAT_005b7782",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005b7782",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "005b7783",
@@ -134,8 +132,8 @@
     },
     {
       "addr": "007df9b8",
-      "name": "DAT_007df9b8",
-      "type": "undefined4",
+      "name": "g_INT_007df9b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -217,24 +215,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_007df9b8",
-      "severity": "mild",
-      "text": "if (DAT_007df9b8 == 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7782",
-      "severity": "mild",
-      "text": "(this_ptr->models,&DAT_005b7782);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

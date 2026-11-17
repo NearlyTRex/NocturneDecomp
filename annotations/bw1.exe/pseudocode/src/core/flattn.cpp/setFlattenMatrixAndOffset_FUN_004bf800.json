@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 32,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 53
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
   },
   "cross_references": [],
   "function": {
@@ -31,74 +29,74 @@
   "globals": [
     {
       "addr": "01cc8054",
-      "name": "DAT_01cc8054",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8054",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8058",
-      "name": "DAT_01cc8058",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8058",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc805c",
-      "name": "DAT_01cc805c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc805c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8060",
-      "name": "DAT_01cc8060",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8060",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8064",
-      "name": "DAT_01cc8064",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8064",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8068",
-      "name": "DAT_01cc8068",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8068",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc806c",
-      "name": "DAT_01cc806c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc806c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8070",
-      "name": "DAT_01cc8070",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8070",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8074",
-      "name": "DAT_01cc8074",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8074",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8078",
-      "name": "DAT_01cc8078",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8078",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc807c",
-      "name": "DAT_01cc807c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc807c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01cc8080",
-      "name": "DAT_01cc8080",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cc8080",
+      "type": "float",
       "value": null
     }
   ],
@@ -160,14 +158,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

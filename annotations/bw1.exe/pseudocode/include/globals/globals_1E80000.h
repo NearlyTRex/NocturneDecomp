@@ -25,3 +25,19 @@ extern CPickList g_ScriptPickList;
 // CScript
 extern CScript g_CScriptInstance;
 
+// char[2048]
+extern char g_CHAR_ARRAY_01e808a8[2048];
+extern char g_CHAR_ARRAY_01e810b0[2048];
+
+// float
+extern float g_FLOAT_01e818b0;
+
+// int
+extern int g_INT_01e810a8;
+extern int g_INT_01e818b4;
+extern int g_INT_01e818b8;
+extern int g_INT_01e818bc;
+
+// int[12]
+extern int g_INT_ARRAY_01e820fc[12];
+

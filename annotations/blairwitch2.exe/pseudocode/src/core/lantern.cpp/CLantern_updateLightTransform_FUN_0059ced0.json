@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 205,
+    "complexity_score": 190,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 168
@@ -145,14 +144,6 @@
       "severity": "moderate",
       "text": "float afStackY_1030 [1006];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&DAT_0265370c,&CStack_18);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&CStack_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

@@ -23,9 +23,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005d172d
 ;   TerminatedCString s_CDR_texture_Too_many_cap_005d1743
-;   undefined4 DAT_01ba5cc8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01ba5cc8
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -48,21 +48,21 @@ section .text
     JZ 0x0046ca90                       ; 0046ca17
         ;   XREF to: 0046ca90 (CONDITIONAL_JUMP)  ; LAB_0046ca90
     PUSH EDI                            ; 0046ca19
-    MOV ECX,dword ptr [0x01ba5cc8]      ; 0046ca1a | DAT_01ba5cc8
+    MOV ECX,dword ptr [0x01ba5cc8]      ; 0046ca1a | g_INT_01ba5cc8
     INC ECX                             ; 0046ca20
-    MOV dword ptr [0x01ba5cc8],ECX      ; 0046ca21 | DAT_01ba5cc8
+    MOV dword ptr [0x01ba5cc8],ECX      ; 0046ca21 | g_INT_01ba5cc8
     CMP ECX,0x64                        ; 0046ca27
     JLE 0x0046ca4f                      ; 0046ca2a
         ;   XREF to: 0046ca4f (CONDITIONAL_JUMP)  ; LAB_0046ca4f
     MOV EDI,0x5d172d                    ; 0046ca2c | = "..\\engine\\drender.cpp"
     MOV EBP,0xbf3                       ; 0046ca31
     PUSH 0x5d1743                       ; 0046ca36 | = "CDR::texture - Too many captured text..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0046ca3b | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0046ca41 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0046ca3b | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0046ca41 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0046ca47
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0046ca4c
-    MOV EDX,dword ptr [0x01ba5cc8]      ; 0046ca4f | DAT_01ba5cc8
+    MOV EDX,dword ptr [0x01ba5cc8]      ; 0046ca4f | g_INT_01ba5cc8
         ;   Label: LAB_0046ca4f
     LEA EAX,[EDX*0x8 + 0x0]             ; 0046ca55
     ADD EAX,EDX                         ; 0046ca5c

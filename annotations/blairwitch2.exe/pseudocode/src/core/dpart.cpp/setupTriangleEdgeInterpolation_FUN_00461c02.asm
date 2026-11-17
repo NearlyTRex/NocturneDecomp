@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0070ca74
-;   undefined4 DAT_01ba51c8
-;   undefined4 DAT_01ba56cc
-;   undefined4 DAT_01ba56d0
-;   undefined4 DAT_01c38b55
+;   int g_INT_0070ca74
+;   int g_INT_01ba51c8
+;   int g_INT_01ba56cc
+;   int g_INT_01ba56d0
+;   undefined4 g_BIT_INTEGER32_01c38b54+1
 ;
 ; *****************************************************************************
 
@@ -21,12 +21,12 @@ section .text
     CMP EDI,EAX                         ; 00461c08
     JGE 0x00461c12                      ; 00461c0a
         ;   XREF to: 00461c12 (CONDITIONAL_JUMP)  ; LAB_00461c12
-    MOV dword ptr [0x01ba56cc],EDI      ; 00461c0c | DAT_01ba56cc
-    CMP EBX,dword ptr [0x01ba56d0]      ; 00461c12 | DAT_01ba56d0
+    MOV dword ptr [0x01ba56cc],EDI      ; 00461c0c | g_INT_01ba56cc
+    CMP EBX,dword ptr [0x01ba56d0]      ; 00461c12 | g_INT_01ba56d0
         ;   Label: LAB_00461c12
     JLE 0x00461c20                      ; 00461c18
         ;   XREF to: 00461c20 (CONDITIONAL_JUMP)  ; LAB_00461c20
-    MOV dword ptr [0x01ba56d0],EBX      ; 00461c1a | DAT_01ba56d0
+    MOV dword ptr [0x01ba56d0],EBX      ; 00461c1a | g_INT_01ba56d0
     MOV EDI,dword ptr [ESI + 0x14]      ; 00461c20
         ;   Label: LAB_00461c20
     MOV EBX,dword ptr [EBP + 0x14]      ; 00461c23
@@ -124,7 +124,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00461d1c
     ADD EAX,EDX                         ; 00461d1f
     MOV dword ptr [ECX + 0x30],EAX      ; 00461d21
-    CMP dword ptr [0x0070ca74],0x0      ; 00461d24 | DAT_0070ca74
+    CMP dword ptr [0x0070ca74],0x0      ; 00461d24 | g_INT_0070ca74
     JZ 0x00461dd7                       ; 00461d2b
         ;   XREF to: 00461dd7 (CONDITIONAL_JUMP)  ; LAB_00461dd7
     MOV EAX,dword ptr [EBP + 0x8]       ; 00461d31
@@ -145,7 +145,7 @@ section .text
     ADD EAX,EDX                         ; 00461d59
         ;   Label: LAB_00461d59
     MOV dword ptr [ECX + 0x28],EAX      ; 00461d5b
-    TEST byte ptr [0x01c38b55],0x2      ; 00461d5e | DAT_01c38b55
+    TEST byte ptr [0x01c38b55],0x2      ; 00461d5e | g_BIT_INTEGER32_01c38b54+1
     JZ 0x00461db9                       ; 00461d65
         ;   XREF to: 00461db9 (CONDITIONAL_JUMP)  ; LAB_00461db9
     MOV EAX,dword ptr [EBP + 0x24]      ; 00461d67
@@ -179,7 +179,7 @@ section .text
     MOV EBX,dword ptr [ESI + 0x28]      ; 00461db1
     ADD EBX,EAX                         ; 00461db4
     MOV dword ptr [ECX + 0x40],EBX      ; 00461db6
-    INC dword ptr [0x01ba51c8]          ; 00461db9 | DAT_01ba51c8
+    INC dword ptr [0x01ba51c8]          ; 00461db9 | g_INT_01ba51c8
         ;   Label: LAB_00461db9
     ADD ESP,0x4                         ; 00461dbf
     POP EBP                             ; 00461dc2

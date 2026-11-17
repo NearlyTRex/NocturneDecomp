@@ -23,7 +23,7 @@
 ;   core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0 at 0058ebde
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d81ab
+;   float g_FLOAT_005d81ab = 0.5
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x18                        ; 00585d11
     MOV EDX,ESI                         ; 00585d14
     FLD float ptr [ESP + 0x20]          ; 00585d16
-    FMUL float ptr [0x005d81ab]         ; 00585d1a | DAT_005d81ab
+    FMUL float ptr [0x005d81ab]         ; 00585d1a | g_FLOAT_005d81ab
     FLD ST0                             ; 00585d20
     FCOS                                ; 00585d22
     FXCH                                ; 00585d24

@@ -2,21 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 262,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 117,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
       "derived_field_index_pun",
-      "raw_address_pointer_store",
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
     "total_lines": 370
   },
@@ -148,8 +145,8 @@
     },
     {
       "addr": "005c65c5",
-      "name": "DAT_005c65c5",
-      "type": "undefined4",
+      "name": "s_anon_005c65c5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -160,15 +157,15 @@
     },
     {
       "addr": "005c65d7",
-      "name": "DAT_005c65d7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c65d7",
+      "type": "double",
+      "value": "98"
     },
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005fba60",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "005fe9dc",
@@ -202,20 +199,20 @@
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -390,32 +387,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_005c65c5",
-      "severity": "mild",
-      "text": "pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c65c5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 103,
-      "match": "*(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
-      "severity": "moderate",
-      "text": "(local_14,*(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04));",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -423,7 +396,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -431,7 +404,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 92,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -439,7 +412,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 62,
+      "line": 61,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -447,7 +420,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 83,
+      "line": 82,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -455,7 +428,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 62,
+      "line": 61,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -463,7 +436,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 83,
+      "line": 82,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -471,9 +444,9 @@
     },
     {
       "description": "'pCVar3[4].create_event + 0x28' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x28 = 0x600, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CWaterActor::vertices[27] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 32,
+      "line": 30,
       "severity": "moderate",
-      "text": "(0x01C6E360,pCVar3[4].create_event + 0x28);",
+      "text": "(g_CEventList_PTR_005fba60,pCVar3[4].create_event + 0x28);",
       "type": "derived_field_index_pun"
     }
   ]

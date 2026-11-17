@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 31
   },
   "cross_references": [
@@ -49,8 +47,8 @@
   "globals": [
     {
       "addr": "005de46d",
-      "name": "DAT_005de46d",
-      "type": "undefined4",
+      "name": "s_scr_005de46d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -152,14 +150,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005de46d",
-      "severity": "mild",
-      "text": "(local_104,(char *)0x0,(char *)0x0,this_ptr->mission_name,&DAT_005de46d);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

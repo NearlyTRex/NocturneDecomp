@@ -23,13 +23,13 @@ void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_005b44a0(CIniFile *in
   iStack_20 = 0;
   iStack_1c = 0;
   do {
-    _sprintf(acStack_120,"7Controller_%d_type" + 1);
+    _sprintf(acStack_120,"Controller_%d_type");
     engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(ini,acStack_120,*(int *)(iStack_18 + 0x2c9cf14))
     ;
     if (*(int *)(iStack_18 + 0x2c9cf14) != 0) {
       _sprintf(acStack_120,"Controller_%d_pc_stick");
       engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
-                (ini,acStack_120,*(int *)(iStack_1c + 0x2c9d1c4));
+                (ini,acStack_120,*(int *)((int)g_INT_ARRAY_02c9d1c4 + iStack_1c));
       iVar1 = 0;
       iStack_14 = iStack_18;
       iVar2 = iStack_20;

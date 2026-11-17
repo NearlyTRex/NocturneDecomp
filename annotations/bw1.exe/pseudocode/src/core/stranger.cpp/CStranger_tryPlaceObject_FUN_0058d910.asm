@@ -64,12 +64,12 @@
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 005911c9
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_stranger_005f6da8+1
+;   TerminatedCString s_actionPending_d_stranger_005f6da9
 ;   TerminatedCString s_Delta_to_dest_3_2f_3_2f_005f6dd1
-;   undefined4 DAT_005f6df9
-;   undefined4 DAT_005f6e01
-;   undefined4 DAT_005f6e09
-;   undefined4 DAT_005f6e11
+;   double g_DOUBLE_005f6df9 = 0.990000000000000
+;   double g_DOUBLE_005f6e01 = 3
+;   double g_DOUBLE_005f6e09 = 2
+;   double g_DOUBLE_005f6e11 = 4
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
@@ -126,7 +126,7 @@ section .text
     MOV dword ptr [ESP + 0x18c],EAX     ; 0058d94d
     FLD float ptr [ESP + 0x18c]         ; 0058d954
     ADD ESP,0x8                         ; 0058d95b
-    FCOMP double ptr [0x005f6df9]       ; 0058d95e | DAT_005f6df9
+    FCOMP double ptr [0x005f6df9]       ; 0058d95e | g_DOUBLE_005f6df9
     FNSTSW AX                           ; 0058d964
     SAHF                                ; 0058d966
     JC 0x0058e201                       ; 0058d967
@@ -290,14 +290,14 @@ section .text
     JNC 0x0058daa1                      ; 0058db90
         ;   XREF to: 0058daa1 (CONDITIONAL_JUMP)  ; LAB_0058daa1
     FLD float ptr [ESP + 0x34]          ; 0058db96
-    FCOMP double ptr [0x005f6e01]       ; 0058db9a | DAT_005f6e01
+    FCOMP double ptr [0x005f6e01]       ; 0058db9a | g_DOUBLE_005f6e01
     FNSTSW AX                           ; 0058dba0
     SAHF                                ; 0058dba2
     JNC 0x0058daa1                      ; 0058dba3
         ;   XREF to: 0058daa1 (CONDITIONAL_JUMP)  ; LAB_0058daa1
     FLD float ptr [ESP + 0x2c]          ; 0058dba9
     FABS                                ; 0058dbad
-    FCOMP double ptr [0x005f6e09]       ; 0058dbaf | DAT_005f6e09
+    FCOMP double ptr [0x005f6e09]       ; 0058dbaf | g_DOUBLE_005f6e09
     FNSTSW AX                           ; 0058dbb5
     SAHF                                ; 0058dbb7
     JNC 0x0058daa1                      ; 0058dbb8
@@ -312,7 +312,7 @@ section .text
     JNC 0x0058daa1                      ; 0058dbcf
         ;   XREF to: 0058daa1 (CONDITIONAL_JUMP)  ; LAB_0058daa1
     FLD double ptr [ESP]                ; 0058dbd5
-    FCOMP double ptr [0x005f6e11]       ; 0058dbd8 | DAT_005f6e11
+    FCOMP double ptr [0x005f6e11]       ; 0058dbd8 | g_DOUBLE_005f6e11
     FNSTSW AX                           ; 0058dbde
     SAHF                                ; 0058dbe0
     JNC 0x0058daa1                      ; 0058dbe1
@@ -367,7 +367,7 @@ section .text
         ;   XREF to: 0058dca3 (CONDITIONAL_JUMP)  ; LAB_0058dca3
     PUSH 0xee0                          ; 0058dc89
     PUSH EAX                            ; 0058dc8e
-    PUSH 0x5f6da9                       ; 0058dc8f | s_actionPending_d_stranger_005f6da8+1
+    PUSH 0x5f6da9                       ; 0058dc8f | = "actionPending = %d\nstranger.cpp line %d"
     MOV ECX,dword ptr [0x0061abc0]      ; 0058dc94 | g_CEditorToolsPtr
     PUSH ECX                            ; 0058dc9a
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 0058dc9b
@@ -495,14 +495,14 @@ section .text
     JNC 0x0058da04                      ; 0058de29
         ;   XREF to: 0058da04 (CONDITIONAL_JUMP)  ; LAB_0058da04
     FLD double ptr [ESP + 0x8]          ; 0058de2f
-    FCOMP double ptr [0x005f6e01]       ; 0058de33 | DAT_005f6e01
+    FCOMP double ptr [0x005f6e01]       ; 0058de33 | g_DOUBLE_005f6e01
     FNSTSW AX                           ; 0058de39
     SAHF                                ; 0058de3b
     JNC 0x0058da04                      ; 0058de3c
         ;   XREF to: 0058da04 (CONDITIONAL_JUMP)  ; LAB_0058da04
     FLD double ptr [ESP + 0x10]         ; 0058de42
     FABS                                ; 0058de46
-    FCOMP double ptr [0x005f6e09]       ; 0058de48 | DAT_005f6e09
+    FCOMP double ptr [0x005f6e09]       ; 0058de48 | g_DOUBLE_005f6e09
     FNSTSW AX                           ; 0058de4e
     SAHF                                ; 0058de50
     JNC 0x0058da04                      ; 0058de51
@@ -514,7 +514,7 @@ section .text
     JNC 0x0058da04                      ; 0058de60
         ;   XREF to: 0058da04 (CONDITIONAL_JUMP)  ; LAB_0058da04
     FLD double ptr [ESP + 0x18]         ; 0058de66
-    FCOMP double ptr [0x005f6e11]       ; 0058de6a | DAT_005f6e11
+    FCOMP double ptr [0x005f6e11]       ; 0058de6a | g_DOUBLE_005f6e11
     FNSTSW AX                           ; 0058de70
     SAHF                                ; 0058de72
     JNC 0x0058da04                      ; 0058de73
@@ -782,7 +782,7 @@ section .text
     FMUL ST0                            ; 0058e1ec
     FADDP                               ; 0058e1ee
     FSQRT                               ; 0058e1f0
-    FCOMP double ptr [0x005f6e09]       ; 0058e1f2 | DAT_005f6e09
+    FCOMP double ptr [0x005f6e09]       ; 0058e1f2 | g_DOUBLE_005f6e09
     FNSTSW AX                           ; 0058e1f8
     SAHF                                ; 0058e1fa
     JNC 0x0058e150                      ; 0058e1fb

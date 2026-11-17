@@ -13,9 +13,9 @@
 ; int              Stack[0x1c]:4   alpha
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eca84
-;   undefined4 DAT_005eca8c
-;   undefined4 DAT_00612560
+;   float g_FLOAT_005eca84 = 256
+;   double g_DOUBLE_005eca8c = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   undefined4 g_CDemonRaytraceInstance.bbox_min.y
 ;   undefined4 g_CDemonRaytraceInstance.adjusted_size.x
 ;   undefined4 g_CDemonRaytraceInstance.adjusted_size.y
@@ -37,14 +37,14 @@ section .text
     PUSH EDI                            ; 00534a78
     PUSH ESI                            ; 00534a79
     PUSH EBX                            ; 00534a7a
-    FLD float ptr [0x005eca84]          ; 00534a7b | DAT_005eca84
+    FLD float ptr [0x005eca84]          ; 00534a7b | g_FLOAT_005eca84
     FLD float ptr [0x01fe5c50]          ; 00534a81 | g_CDemonRaytraceInstance.adjusted_size.x
     FMUL ST1                            ; 00534a87
     FLD float ptr [0x01fe5c54]          ; 00534a89 | g_CDemonRaytraceInstance.adjusted_size.y
     FMUL ST2                            ; 00534a8f
     FLD float ptr [0x01fe5c58]          ; 00534a91 | g_CDemonRaytraceInstance.adjusted_size.z
     FMULP ST3                           ; 00534a97
-    FLD double ptr [0x005eca8c]         ; 00534a99 | DAT_005eca8c
+    FLD double ptr [0x005eca8c]         ; 00534a99 | g_DOUBLE_005eca8c
     FLD float ptr [0x01fe5c30]          ; 00534a9f | g_CDemonRaytraceInstance.bbox_min.y
     FMUL ST1                            ; 00534aa5
     LEA EDI,[ESP + 0xc]                 ; 00534aa7
@@ -68,7 +68,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x54]      ; 00534ae0
     MOV EBX,dword ptr [ESP + 0x58]      ; 00534ae4
     SHL EDX,0x8                         ; 00534ae8
-    MOV EAX,[0x00612560]                ; 00534aeb | DAT_00612560
+    MOV EAX,[0x00612560]                ; 00534aeb | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [ESP + 0x50],EDX      ; 00534af0
     LEA EDX,[ESP + 0x24]                ; 00534af4
     SHL ECX,0x8                         ; 00534af8
@@ -98,7 +98,7 @@ section .text
     ADD ESP,0x8                         ; 00534b36
     MOV EAX,dword ptr [ESP + 0x24]      ; 00534b39
     MOV dword ptr [ESP + 0x38],EAX      ; 00534b3d
-    MOV EDX,dword ptr [0x00612560]      ; 00534b41 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00534b41 | g_CDemonRenderer_PTR_00612560
     FILD dword ptr [ESP + 0x38]         ; 00534b47
     LEA EAX,[ESP + 0x24]                ; 00534b4b
     FLD ST0                             ; 00534b4f
@@ -116,7 +116,7 @@ section .text
     ADD ESP,0x8                         ; 00534b6c
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00534b6f
     MOV dword ptr [ESP + 0x38],EAX      ; 00534b73
-    MOV EDX,dword ptr [0x00612560]      ; 00534b77 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00534b77 | g_CDemonRenderer_PTR_00612560
     FILD dword ptr [ESP + 0x38]         ; 00534b7d
     LEA EAX,[ESP + 0x24]                ; 00534b81
     FLD ST0                             ; 00534b85
@@ -134,7 +134,7 @@ section .text
     ADD ESP,0x8                         ; 00534ba2
     MOV EAX,dword ptr [ESP + 0x24]      ; 00534ba5
     MOV dword ptr [ESP + 0x38],EAX      ; 00534ba9
-    MOV EDX,dword ptr [0x00612560]      ; 00534bad | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00534bad | g_CDemonRenderer_PTR_00612560
     FILD dword ptr [ESP + 0x38]         ; 00534bb3
     LEA EAX,[ESP + 0x24]                ; 00534bb7
     FLD ST0                             ; 00534bbb
@@ -154,7 +154,7 @@ section .text
     POP EBX                             ; 00534be0
     POP ESI                             ; 00534be1
     POP EDI                             ; 00534be2
-    MOV EAX,[0x00612560]                ; 00534be3 | DAT_00612560
+    MOV EAX,[0x00612560]                ; 00534be3 | g_CDemonRenderer_PTR_00612560
     MOV EDX,dword ptr [EAX]             ; 00534be8
     MOV ECX,dword ptr [ESP + 0x44]      ; 00534bea
     MOV dword ptr [EDX + 0x20],ECX      ; 00534bee

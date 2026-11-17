@@ -26,8 +26,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b90e9
 ;   TerminatedCString s_Can_t_orient_bone_with_n_005b90fb
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -101,8 +101,8 @@ section .text
     MOV ESI,0x5b90e9                    ; 0043d71d | = "..\\core\\cloth.cpp"
     MOV EDI,0x2bf                       ; 0043d722
     PUSH 0x5b90fb                       ; 0043d727 | = "Can't orient bone with no children!"
-    MOV dword ptr [0x01d71de0],ESI      ; 0043d72c | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0043d732 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0043d72c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 0043d732 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043d738
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0043d73d

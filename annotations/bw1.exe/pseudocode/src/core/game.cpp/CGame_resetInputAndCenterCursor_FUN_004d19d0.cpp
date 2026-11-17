@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame *this_ptr)
 
 {
@@ -19,18 +17,18 @@ void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame *t
   value = 0;
   dest = core_netgame_cpp_CNetGame_getMyControls_FUN_00530660(g_CNetGamePtr);
   memset(dest,value,count);
-  memset(&DAT_01ccff98,0,600);
-  _DAT_01cd01f4 = g_CDemonSetPtr->selected_camera_index;
-  if ((g_CFieldNotesPtr->is_displayed == 0) && (DAT_007c3978 == 0)) {
-    _DAT_01cd01f0 = g_CFieldNotesPtr->is_displayed;
-    wincore_winrun_cpp_setCursorPosition_FUN_005b2750(DAT_0061b498 / 2,DAT_0061b49c / 2);
+  memset(g_CHAR_ARRAY_01ccff98,0,600);
+  g_INT_01cd01f4 = g_CDemonSetPtr->selected_camera_index;
+  if ((g_CFieldNotesPtr->is_displayed == 0) && (g_CPuzzle_PTR_007c3978 == (CPuzzle *)0x0)) {
+    g_INT_01cd01f0 = g_CFieldNotesPtr->is_displayed;
+    wincore_winrun_cpp_setCursorPosition_FUN_005b2750(g_INT_0061b498 / 2,g_INT_0061b49c / 2);
   }
   if (g_CFieldNotesPtr->is_displayed != 0) {
-    _DAT_01cd0b40 = 0xffffffff;
+    g_INT_01cd0b40 = -1;
   }
-  if (DAT_007c3978 == 0) {
+  if (g_CPuzzle_PTR_007c3978 == (CPuzzle *)0x0) {
     return;
   }
-  _DAT_01cd0b40 = 0xffffffff;
+  g_INT_01cd0b40 = -1;
   return;
 }

@@ -9,7 +9,7 @@
 ; int *            Stack[0x10]:4   out_fractional_part
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8096
+;   double g_DOUBLE_005e8096 = 4294967296
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005b84d0
@@ -42,7 +42,7 @@ section .text
     FILD qword ptr [ESP]                ; 0054d4f6
     FSUBR double ptr [ESP + 0x10]       ; 0054d4f9
     MOV EDX,dword ptr [ESP + 0x18]      ; 0054d4fd
-    FMUL double ptr [0x005e8096]        ; 0054d501 | DAT_005e8096
+    FMUL double ptr [0x005e8096]        ; 0054d501 | g_DOUBLE_005e8096
     MOV dword ptr [EDX],EAX             ; 0054d507
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0054d509
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054d50d

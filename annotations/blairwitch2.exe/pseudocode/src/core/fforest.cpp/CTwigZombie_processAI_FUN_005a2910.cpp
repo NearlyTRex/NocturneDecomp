@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fforest_cpp_CTwigZombie_processAI_FUN_005a2910(CTwigZombie *this_ptr,float delta_time)
 
 {
@@ -62,9 +60,9 @@ void __cdecl core_fforest_cpp_CTwigZombie_processAI_FUN_005a2910(CTwigZombie *th
   else {
     sound_sndmain_cpp_killSfx_FUN_00551050((this_ptr->base).idle_sfx_handle);
   }
-  fStack_30 = (this_ptr->base).move_velocity.x * _DAT_005f000f;
-  fStack_2c = (this_ptr->base).move_velocity.y * _DAT_005f000f;
-  fStack_28 = (this_ptr->base).move_velocity.z * _DAT_005f000f;
+  fStack_30 = (this_ptr->base).move_velocity.x * -4000.0f;
+  fStack_2c = (this_ptr->base).move_velocity.y * -4000.0f;
+  fStack_28 = (this_ptr->base).move_velocity.z * -4000.0f;
   fStack_3c = fStack_30;
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar6 * -8) =
        *(uint *)((int)&stack0xffffffd4 + (uint)bVar6 * -8);

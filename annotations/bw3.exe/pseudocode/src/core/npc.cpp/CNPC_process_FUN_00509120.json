@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 548,
+    "complexity_score": 523,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 178,
-    "suspect_count": 34,
+    "suspect_count": 32,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
       "unrolled_memset"
     ],
     "total_lines": 553
@@ -148,8 +147,8 @@
   "globals": [
     {
       "addr": "005cb568",
-      "name": "s_STAND_005cb567+1",
-      "type": "undefined4",
+      "name": "s_STAND_005cb568",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -160,14 +159,14 @@
     },
     {
       "addr": "005cb598",
-      "name": "DAT_005cb598",
-      "type": "undefined4",
+      "name": "s_RUN_005cb598",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cb59c",
-      "name": "DAT_005cb59c",
-      "type": "undefined4",
+      "name": "s_WALK_005cb59c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -340,22 +339,6 @@
       "severity": "moderate",
       "text": "iVar5 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar1->base,&stack0xffffff70);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_005cb59c",
-      "severity": "mild",
-      "text": "pcVar9 = &DAT_005cb59c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_005cb598",
-      "severity": "mild",
-      "text": "pcVar9 = &DAT_005cb598;",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

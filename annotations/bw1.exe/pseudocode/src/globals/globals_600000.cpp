@@ -694,6 +694,9 @@ CCharacter_full_vtable g_CDrummerVTable = {
     }
 };
 
+// CDemonActor*
+CDemonActor* g_CDemonActor_PTR_00604e00 = (CDemonActor*)0xFFFFFFFF;
+
 // CDemonActor_vtable
 CDemonActor_vtable g_CFlameVTable = {
     .setup = (CDemonActor_setup *)core_flame_cpp_CFlame_setup_FUN_004b7b20,
@@ -4025,6 +4028,15 @@ CEnemy_full_vtable g_CZombieVTable = {
     ._ue = {.getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a08b0, .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0}
 };
 
+// CFont_vtable
+CFont_vtable g_CFont_vtable_00608164 = {
+    .ctor = (void *)engine_winfont_cpp_CWinFont_dtor_FUN_005b1b90,
+    .drawText = (void *)engine_winfont_cpp_CWinFont_drawText_FUN_005b1c00,
+    .getStringWidth = (void *)engine_winfont_cpp_CWinFont_getStringWidth_FUN_005b2100,
+    .getStringHeight = (void *)engine_winfont_cpp_CWinFont_getStringHeight_FUN_005b2160,
+    .getLineSpacing = (void *)engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005b21d0
+};
+
 // CHero_full_vtable
 CHero_full_vtable g_CGabriellaVTable = {
     ._ub = {
@@ -4787,6 +4799,68 @@ CMobster_full_vtable g_CMobsterVTable = {
     },
     ._ue = {.getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a08b0, .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0},
     ._um = {.reset = (CMobster_reset *)core_mobster_cpp_CMobster_reset_FUN_0051ec60}
+};
+
+// CParticle_vtable
+CParticle_vtable g_CShellVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_fire_cpp_CShell_process_FUN_004b4190,
+    .render = (CParticle_render *)core_fire_cpp_CShell_render_FUN_004b4090,
+    .onCollision = (CParticle_onCollision *)core_fire_cpp_CShell_onCollision_FUN_004b4230
+};
+CParticle_vtable g_CGlassParticleVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_fire_cpp_CGlassParticle_process_FUN_004afbf0,
+    .render = (CParticle_render *)core_fire_cpp_CGlassParticle_render_FUN_004af9f0,
+    .onCollision = (CParticle_onCollision *)core_fire_cpp_CGlassParticle_onCollision_FUN_004afc60
+};
+CParticle_vtable g_CRockVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_fire_cpp_CRock_process_FUN_004aefc0,
+    .render = (CParticle_render *)core_fire_cpp_CRock_render_FUN_004af040,
+    .onCollision = (CParticle_onCollision *)core_fire_cpp_CSpark_onCollision_FUN_004ad850
+};
+CParticle_vtable g_CFireballVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_fire_cpp_CFireball_process_FUN_004ae300,
+    .render = (CParticle_render *)core_fire_cpp_CFireball_render_FUN_004ae640,
+    .onCollision = (CParticle_onCollision *)core_fire_cpp_CFireball_onCollision_FUN_004aee60
+};
+CParticle_vtable g_CSparkVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_fire_cpp_CSpark_process_FUN_004acf50,
+    .render = (CParticle_render *)core_fire_cpp_CSpark_render_FUN_004ad140,
+    .onCollision = (CParticle_onCollision *)core_fire_cpp_CSpark_onCollision_FUN_004ad850
+};
+CParticle_vtable g_CBloodParticleVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_particle_cpp_CParticle_process_FUN_00532250,
+    .render = (CParticle_render *)core_gore_cpp_CBloodParticle_render_FUN_004e3f40,
+    .onCollision = (CParticle_onCollision *)core_gore_cpp_CBloodParticle_onCollision_FUN_004e4730
+};
+CParticle_vtable g_CParticle_vtable_006045e0 = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_particle_cpp_CParticle_process_FUN_00532250,
+    .render = (CParticle_render *)core_particle_cpp_CParticle_render_FUN_005326d0,
+    .onCollision = (CParticle_onCollision *)core_particle_cpp_CParticle_onCollision_FUN_00532700
+};
+
+// CPod_vtable
+CPod_vtable g_CPod_vtable_00604a34 = {
+    .dtor = (void *)engine_pod_cpp_CPod_dtor_FUN_0053c5f0,
+    .load = (CPod_load *)0x0053C620,
+    .findFile = (CPod_findFile *)engine_pod_cpp_CPod_findFile_FUN_0053cf50,
+    .mount = (CPod_mount *)engine_pod_cpp_CPod_mount_FUN_0053c650,
+    .dismount = (CPod_dismount *)engine_pod_cpp_CPod_dismount_FUN_0053c800,
+    .remount = (CPod_remount *)engine_pod_cpp_CPod_remount_FUN_0053c750
+};
+
+// CQuaternion4f
+CQuaternion4f g_CQuaternion4f_006081e0 = {
+    .w = 1.0f,
+    .x = 0.0f,
+    .y = 0.0f,
+    .z = 0.0f
 };
 
 // CSmiley_full_vtable
@@ -5755,6 +5829,11 @@ CWeapon_full_vtable g_CWeaponVTable = {
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20
     }
 };
+
+// TerminatedCString
+TerminatedCString g_CLeafVTable = "`!S";
+TerminatedCString g_CFireflyVTable = "`!S";
+TerminatedCString g_CInStreamFileVTable = "P\nZ";
 
 // WatcomDestructorCall
 WatcomDestructorCall DAT_00600850 = {
@@ -7426,24 +7505,14 @@ WatcomTypeInfo g_CZombieTypeInfo = {
     .class_name = (char *)s_CZombie_00626108
 };
 
-// undefined1*
-undefined1* g_CShellVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CGlassParticleVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CLeafVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CRockVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CFireballVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CFireflyVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CSparkVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CBloodParticleVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CDemonPodVTable = (undefined1*)core_podmain_cpp_CDemonPod_dtor_FUN_0053d730;
-undefined1* g_CInStreamFileVTable = (undefined1*)support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50;
-undefined1* g_CInStreamMemoryVTable = (undefined1*)support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0;
-undefined1* g_COutStreamFileVTable = (undefined1*)support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860;
-undefined1* g_COutStreamMemoryVTable = (undefined1*)support_trstream_cpp_COutStreamMemory_dtor_FUN_005a1b60;
-undefined1* g_COutStreamDebugVTable = (undefined1*)support_trstream_cpp_COutStreamDebug_dtor_FUN_005a1e30;
+// int
+int g_INT_00608528 = 0x1A4;
+int g_INT_0060852e = 0x3B001F;
 
-// undefined4
-undefined4 DAT_00608560 = 0x00000000;
+// short
+short g_SHORT_0060852c = 0;
+short g_SHORT_00608544 = 0x16D;
+short g_SHORT_00608546 = 0;
 
 // void*
 void* g_SPageResourceVTable = (void*)core_fldnotes_cpp_SPageResource_dtor_FUN_004ba760;
@@ -7453,4 +7522,57 @@ void* g_SPageResourceTwanaCharacterVTable = (void*)core_fldnotes_cpp_SPageResour
 void* g_SPageResourceTwanaEntryVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004bad40;
 void* g_SPageResourceMapVTable = (void*)core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670;
 void* g_CDeformableModelInstanceVTable = (void*)core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0;
+
+// void*[10]
+void* g_COutStreamFileVTable[10] = {
+    (void*)support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860, (void*)support_trstream_cpp_COutStreamFile_putChar_FUN_005a18c0, (void*)support_trstream_cpp_COutStreamFile_write_FUN_005a18f0, (void*)support_trstream_cpp_COutStreamFile_seek_FUN_005a1940,
+    (void*)support_trstream_cpp_COutStreamFile_tell_FUN_005a1970, (void*)support_trstream_cpp_COutStreamFile_isOpen_FUN_005a1990, (void*)support_trstream_cpp_COutStreamFile_close_FUN_005a19b0, (void*)support_trstream_cpp_COutStreamFile_open_FUN_005a19e0,
+    (void*)support_trstream_cpp_COutStreamFile_openInDirectory_FUN_005a1a20, (void*)support_trstream_cpp_COutStreamFile_attach_FUN_005a1a70
+};
+
+// void*[12]
+void* g_CInStreamMemoryVTable[12] = {
+    (void*)support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0, (void*)support_trstream_cpp_CInStreamMemory_getChar_FUN_005a1240, (void*)support_trstream_cpp_CInStreamMemory_ungetChar_FUN_005a1290, (void*)support_trstream_cpp_CInStreamMemory_peekChar_FUN_005a12d0,
+    (void*)support_trstream_cpp_CInStreamMemory_read_FUN_005a1300, (void*)support_trstream_cpp_CInStreamMemory_seek_FUN_005a1360, (void*)support_trstream_cpp_CInStreamMemory_tell_FUN_005a13b0, (void*)support_trstream_cpp_CInStreamFile_isOpen_FUN_005a0d70,
+    (void*)support_trstream_cpp_CInStreamMemory_isEof_FUN_005a13d0, (void*)support_trstream_cpp_CInStreamMemory_close_FUN_005a1400, (void*)support_trstream_cpp_CInStreamMemory_open_FUN_005a1450, (void*)support_trstream_cpp_CInStreamMemory_openOwned_FUN_005a1480
+};
+
+// void*[2]
+void* g_ARRAY_PTR_00600f94[2] = {(void*)core_game_cpp_CGame_setGogglesActive_FUN_004d1760, (void*)core_game_cpp_CGame_setSpecialViewActive_FUN_004d17c0};
+
+// void*[3]
+void* g_ARRAY_PTR_00602bcc[3] = {(void*)engine_keys_cpp_CKeys_getKeyState_FUN_004fd220, (void*)engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004fd230, (void*)engine_keys_cpp_clearKeypresses_FUN_004fd250};
+
+// void*[5]
+void* g_ARRAY_PTR_006045b0[5] = {
+    (void*)engine_palette_cpp_CFont_dtor_FUN_00531ed0, (void*)crt_unknown_c_FUN_005c10a1, (void*)crt_unknown_c_FUN_005c10a1, (void*)crt_unknown_c_FUN_005c10a1,
+    (void*)engine_palette_cpp_CFont_getLineSpacing_FUN_00532120
+};
+void* g_ARRAY_PTR_00607404[5] = {
+    (void*)support_trstream_cpp_COutStream_dtor_FUN_005a14b0, (void*)crt_unknown_c_FUN_005c10a1, (void*)crt_unknown_c_FUN_005c10a1, (void*)support_trstream_cpp_COutStream_seek_FUN_005a1390,
+    (void*)support_trstream_cpp_COutStream_tell_FUN_005a13c0
+};
+void* g_COutStreamDebugVTable[5] = {
+    (void*)support_trstream_cpp_COutStreamDebug_dtor_FUN_005a1e30, (void*)support_trstream_cpp_COutStreamDebug_putChar_FUN_005a1e90, (void*)support_trstream_cpp_COutStreamDebug_write_FUN_005a1ec0, (void*)support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80,
+    (void*)support_trstream_cpp_COutStreamDebug_tell_FUN_005a1fb0
+};
+
+// void*[6]
+void* g_CDemonPodVTable[6] = {
+    (void*)core_podmain_cpp_CDemonPod_dtor_FUN_0053d730, (void*)core_podmain_cpp_CDemonPod_load_FUN_0053d580, (void*)engine_pod_cpp_CPod_findFile_FUN_0053cf50, (void*)engine_pod_cpp_CPod_mount_FUN_0053c650,
+    (void*)engine_pod_cpp_CPod_dismount_FUN_0053c800, (void*)engine_pod_cpp_CPod_remount_FUN_0053c750
+};
+
+// void*[7]
+void* g_COutStreamMemoryVTable[7] = {
+    (void*)support_trstream_cpp_COutStreamMemory_dtor_FUN_005a1b60, (void*)support_trstream_cpp_COutStreamMemory_putChar_FUN_005a1bc0, (void*)support_trstream_cpp_COutStreamMemory_write_FUN_005a1c30, (void*)support_trstream_cpp_COutStreamMemory_seek_FUN_005a1cc0,
+    (void*)support_trstream_cpp_COutStreamMemory_tell_FUN_005a1d10, (void*)support_trstream_cpp_COutStreamMemory_close_FUN_005a1d20, (void*)support_trstream_cpp_COutStreamMemory_open_FUN_005a1d60
+};
+
+// void*[9]
+void* g_ARRAY_PTR_00607354[9] = {
+    (void*)support_trstream_cpp_CInStream_dtor_FUN_0059f550, (void*)crt_unknown_c_FUN_005c10a1, (void*)support_trstream_cpp_CInStream_ungetChar_FUN_0059f580, (void*)crt_unknown_c_FUN_005c10a1,
+    (void*)crt_unknown_c_FUN_005c10a1, (void*)support_trstream_cpp_CInStream_ungetChar_FUN_0059f580, (void*)support_trstream_cpp_CInStream_tell_FUN_0059f590, (void*)crt_unknown_c_FUN_005c10a1,
+    (void*)crt_unknown_c_FUN_005c10a1
+};
 

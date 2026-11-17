@@ -25,7 +25,7 @@ CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004ca540(CGrav
   float fStack_10;
   
   bVar6 = 0;
-  if (*(int *)(0x01D182F0 + 0x1008) == 0) {
+  if (g_CDemonMission_PTR_00618170->is_in_editor == 0) {
     dVar7 = round((double)this_ptr->cur_frame);
     fStack_10 = (float)(int)ROUND(dVar7);
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->model);

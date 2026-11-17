@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004d6070(CGame *this_ptr)
 
 {
@@ -46,10 +44,10 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004d6070(CGame *this_ptr)
   float fStack_14;
   
   bVar4 = 0;
-  _DAT_01cd0c7c = 3;
-  _DAT_01cd0c84 = DAT_0061b498 / 2;
-  _DAT_01cd0c88 = DAT_0061b49c / 2;
-  _DAT_01cd0c80 = (float)DAT_0061b498;
+  g_INT_01cd0c7c = 3;
+  g_INT_01cd0c84 = g_INT_0061b498 / 2;
+  g_INT_01cd0c88 = g_INT_0061b49c / 2;
+  g_FLOAT_01cd0c80 = (float)g_INT_0061b498;
   this_ptr_00 = g_CScriptPtr->focus_actor;
   if (this_ptr_00 != (CDemonActor *)0x0) {
     (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_ffffff54);
@@ -68,10 +66,10 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004d6070(CGame *this_ptr)
     *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
          afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     input_local_point = &CStack_44;
-    fStack_50 = fStack_14 * _DAT_005e2e94;
-    afStack_4c[0] = unaff_EBP * _DAT_005e2e94;
-    afStack_4c[1] = unaff_EDI * _DAT_005e2e94;
-    CStack_44.x = fStack_14 * _DAT_005e2e94;
+    fStack_50 = fStack_14 * 0.5f;
+    afStack_4c[0] = unaff_EBP * 0.5f;
+    afStack_4c[1] = unaff_EDI * 0.5f;
+    CStack_44.x = fStack_14 * 0.5f;
     *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + 4) = afStack_4c[(uint)bVar4 * -2];
     *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
@@ -81,9 +79,9 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004d6070(CGame *this_ptr)
     afStack_64[(uint)bVar4 * -2] = *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
     afStack_64[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    CStack_74.x = (int)ROUND(fStack_68 * _DAT_00600f6c);
-    CStack_74.y = (int)ROUND(afStack_64[0] * _DAT_00600f6c);
-    CStack_74.z = (int)ROUND(afStack_64[1] * _DAT_00600f6c);
+    CStack_74.x = (int)ROUND(fStack_68 * 256.0f);
+    CStack_74.y = (int)ROUND(afStack_64[0] * 256.0f);
+    CStack_74.z = (int)ROUND(afStack_64[1] * 256.0f);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0
               (&g_CDemonCameraInstance,&CStack_74,&CStack_20);
     iStack_5c = CStack_20.x;
@@ -91,15 +89,15 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004d6070(CGame *this_ptr)
     aiStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(int *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     if (aiStack_58[1] != 0) {
-      _DAT_01cd0c84 =
+      g_INT_01cd0c84 =
            (int)((iStack_5c + (iStack_5c >> 0x1f) * -0x10000) -
                 (uint)((iStack_5c >> 0x1f) << 0xf < 0)) >> 0x10;
-      _DAT_01cd0c88 =
+      g_INT_01cd0c88 =
            (int)((aiStack_58[0] + (aiStack_58[0] >> 0x1f) * -0x10000) -
                 (uint)((aiStack_58[0] >> 0x1f) << 0xf < 0)) >> 0x10;
-      if (0x1e0 < DAT_0061b49c) {
-        _DAT_01cd0c84 = (_DAT_01cd0c84 * DAT_0061b498) / 0x280;
-        _DAT_01cd0c88 = (_DAT_01cd0c88 * DAT_0061b49c) / 0x1e0;
+      if (0x1e0 < g_INT_0061b49c) {
+        g_INT_01cd0c84 = (g_INT_01cd0c84 * g_INT_0061b498) / 0x280;
+        g_INT_01cd0c88 = (g_INT_01cd0c88 * g_INT_0061b49c) / 0x1e0;
         return;
       }
     }

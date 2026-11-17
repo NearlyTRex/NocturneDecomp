@@ -10,7 +10,7 @@
 ;   core_baron.cpp_CBaronWeapon_renderOpaque_FUN_00410500 at 00410505
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -64,7 +64,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0 ; 005ad6dc
         ;   XREF to: 004087f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005ad6e1
-    MOV EDX,dword ptr [0x00612560]      ; 005ad6e4 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 005ad6e4 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 005ad6ea
     MOV dword ptr [EBX + 0x574],0x0     ; 005ad6eb
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 005ad6f5

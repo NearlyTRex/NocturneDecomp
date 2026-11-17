@@ -17,7 +17,7 @@ int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_0058bd50(CZombie *thi
     return -1;
   }
   iVar1 = _strnicmp
-                    ((this_ptr->base).base.model.model_name,&DAT_005d8844,3);
+                    ((this_ptr->base).base.model.model_name,"new",3);
   if (iVar1 == 0) {
     if ((uint)object_shape_type < 2) {
       if (object_shape_type != 1) {

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b80(int char_code,int x_pos,int y_pos)
 
 {
@@ -21,18 +19,18 @@ int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b80(int char_code,int 
   
   iVar5 = (char_code + -0x20) * 0x91;
   uVar6 = (uint)(byte)(&DAT_00601440)[iVar5];
-  if ((((x_pos < _DAT_01c35e48) || (y_pos < _DAT_01c35e4c)) ||
-      ((int)((_DAT_01c35e50 + 1) - uVar6) < x_pos)) || (_DAT_01c35e54 + -10 < y_pos)) {
+  if ((((x_pos < g_INT_01c35e48) || (y_pos < g_INT_01c35e4c)) ||
+      ((int)((g_INT_01c35e50 + 1) - uVar6) < x_pos)) || (g_INT_01c35e54 + -10 < y_pos)) {
     iVar5 = 0;
   }
   else {
     iVar7 = y_pos * 4;
     pcVar1 = &DAT_00601441 + iVar5;
     iVar5 = iVar7 + 0x2c;
-    if (DAT_006141c0 == 8) {
+    if (g_INT_006141c0 == 8) {
       do {
         iVar2 = 0;
-        puVar3 = (byte *)(*(int *)(&DAT_01c2a38c + iVar7) + x_pos);
+        puVar3 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar7) + x_pos);
         if (uVar6 != 0) {
           do {
             if (*pcVar1 != '\0') {
@@ -49,11 +47,11 @@ int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b80(int char_code,int 
     else {
       do {
         iVar2 = 0;
-        puVar4 = (ushort *)(*(int *)(&DAT_01c2a38c + iVar7) + x_pos * 2);
+        puVar4 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar7) + x_pos * 2);
         if (uVar6 != 0) {
           do {
             if (*pcVar1 != '\0') {
-              *puVar4 = _DAT_01c34b0e;
+              *puVar4 = g_USHORT_ARRAY_01c34910[0xff];
             }
             pcVar1 = pcVar1 + 1;
             iVar2 = iVar2 + 1;

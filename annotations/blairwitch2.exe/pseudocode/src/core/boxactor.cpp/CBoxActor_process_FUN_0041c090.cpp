@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_ptr,float delta_time)
 
 {
@@ -94,10 +92,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
   afStack_98[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
        *(float *)((int)&CStack_c8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 4);
   pUVar1 = &(this_ptr->base).orient;
-  fStack_e4 = fStack_9c * _DAT_005cc519;
-  afStack_e0[0] = afStack_98[0] * _DAT_005cc519;
-  afStack_e0[1] = afStack_98[1] * _DAT_005cc519;
-  fStack_b4 = fStack_9c * _DAT_005cc519;
+  fStack_e4 = fStack_9c * 0.1047198f;
+  afStack_e0[0] = afStack_98[0] * 0.1047198f;
+  afStack_e0[1] = afStack_98[1] * 0.1047198f;
+  fStack_b4 = fStack_9c * 0.1047198f;
   *(float *)((int)&CStack_b0 + (uint)bVar13 * -8) = afStack_e0[(uint)bVar13 * -2];
   *(float *)((int)&CStack_b0 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 4) =
        afStack_e0[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
@@ -116,7 +114,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
   cVar5 = this_ptr->loop_wav_name[0];
   (this_ptr->base).orient.vec.y = afStack_24[2];
   if (cVar5 != '\0') {
-    iVar8 = core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70(0x0264B290,this_ptr->sfx_handle);
+    iVar8 = core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70
+                      (g_CSound_PTR_0061c068,this_ptr->sfx_handle);
     if (iVar8 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
       iVar8 = 2;
@@ -159,10 +158,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
     afStack_4c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
          afStack_4c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4];
     pCVar15 = &CStack_c8;
-    fStack_68 = fStack_50 * _DAT_005cc51d;
-    fStack_64 = afStack_4c[0] * _DAT_005cc51d;
-    fStack_60 = afStack_4c[1] * _DAT_005cc51d;
-    fStack_38 = fStack_50 * _DAT_005cc51d;
+    fStack_68 = fStack_50 * 0.5f;
+    fStack_64 = afStack_4c[0] * 0.5f;
+    fStack_60 = afStack_4c[1] * 0.5f;
+    fStack_38 = fStack_50 * 0.5f;
     afStack_4c[(uint)bVar13 * -2 + 6] = afStack_7c[(uint)bVar13 * -2 + 6];
     afStack_4c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7] =
          afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7];
@@ -193,9 +192,9 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
     fVar3 = (this_ptr->physics_box).linear_velocity.x;
     fVar4 = (this_ptr->physics_box).linear_velocity.z;
     fStack_144 = SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2);
-    if ((float)_DAT_005cc521 < fStack_144) {
+    if ((float)3 < fStack_144) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_140);
-      SStack_140.damage_amount = fStack_144 * this_ptr->weight_in_pounds * _DAT_005cc529;
+      SStack_140.damage_amount = fStack_144 * this_ptr->weight_in_pounds * 0.2f;
       SStack_140.attacker = &this_ptr->base;
       SStack_140.wielder = &this_ptr->base;
       core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00537f30

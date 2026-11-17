@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_00504f10(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out,int *w_out)
 
 {
@@ -49,9 +47,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_00504f10(CMP3Decoder *th
       } while (0xf9 < (byte)huffman_table->huffman_data[iVar1 + 1]);
     }
     uVar4 = uVar4 >> 1;
-  } while ((uVar4 != 0) || (uVar3 < _DAT_01d23e7c));
-  _DAT_01d046a0 = "..\\sound\\mp3.cpp";
-  _DAT_01d046a4 = 0x36f;
+  } while ((uVar4 != 0) || (uVar3 < (uint)g_SHuffmanTable_ARRAY_01d23658[0].table_size));
+  g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
+  g_INT_01d046a4 = 0x36f;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Illegal Huffman code in data.  File: %s");
 LAB_00504f79:
   if ((huffman_table->table_id[0] == '3') &&

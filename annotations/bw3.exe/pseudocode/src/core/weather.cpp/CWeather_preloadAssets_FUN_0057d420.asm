@@ -11,8 +11,8 @@
 ;   core_storm.cpp_CStorm_setup_FUN_00568c10 at 00568c41
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fc5a0
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130
@@ -32,13 +32,13 @@ section .text
         ;   Label: LAB_0057d428
     PUSH EBX                            ; 0057d429
     PUSH 0x6071f4                       ; 0057d42a
-    MOV ECX,dword ptr [0x005f2afc]      ; 0057d42f | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 0057d42f | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 0057d435
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0057d436
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0057d43b
     PUSH 0x60720c                       ; 0057d43e
-    MOV EBX,dword ptr [0x005f2afc]      ; 0057d443 | DAT_005f2afc
+    MOV EBX,dword ptr [0x005f2afc]      ; 0057d443 | g_CDemonRenderer_PTR_005f2afc
     PUSH EBX                            ; 0057d449
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0057d44a
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d49d
     PUSH 0x1                            ; 0057d4a0
-    MOV ESI,dword ptr [0x005fc5a0]      ; 0057d4a2 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 0057d4a2 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 0057d4a8
     CALL core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130 ; 0057d4a9
         ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(CFireEffect * this_ptr, int bolt_style)

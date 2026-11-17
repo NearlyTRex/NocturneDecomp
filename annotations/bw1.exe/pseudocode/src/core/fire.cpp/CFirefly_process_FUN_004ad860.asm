@@ -7,10 +7,10 @@
 ; CFirefly *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df1f4
-;   undefined4 DAT_005df1fc
+;   double g_DOUBLE_005df1f4 = 0.0000152587890625
+;   float g_FLOAT_005df1fc = 2
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01c43530
+;   int g_INT_01c43530
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -36,14 +36,14 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004ad87b | g_CGamePtr
         ;   Label: LAB_004ad87b
     MOV EAX,dword ptr [EAX + 0x294]     ; 004ad880 | g_CGameInstance.delta_time_float
-    MOV EDX,dword ptr [0x01c43530]      ; 004ad886 | DAT_01c43530
+    MOV EDX,dword ptr [0x01c43530]      ; 004ad886 | g_INT_01c43530
     MOV dword ptr [ESP + 0xc],EAX       ; 004ad88c
     MOV EAX,dword ptr [EBX + 0x58]      ; 004ad890
     IMUL EDX                            ; 004ad893
     SHRD EAX,EDX,0x10                   ; 004ad895
     MOV dword ptr [ESP + 0x10],EAX      ; 004ad899
     FILD dword ptr [ESP + 0x10]         ; 004ad89d
-    FMUL double ptr [0x005df1f4]        ; 004ad8a1 | DAT_005df1f4
+    FMUL double ptr [0x005df1f4]        ; 004ad8a1 | g_DOUBLE_005df1f4
     SUB ESP,0x4                         ; 004ad8a7
     MOV EDI,dword ptr [0x0061d95c]      ; 004ad8aa | g_CGamePtr
     FSTP float ptr [ESP]                ; 004ad8b0
@@ -56,7 +56,7 @@ section .text
         ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00532250(CParticle * this_ptr)
     FLD float ptr [EBX + 0x48]          ; 004ad8c2
     ADD ESP,0x4                         ; 004ad8c5
-    FMUL float ptr [0x005df1fc]         ; 004ad8c8 | DAT_005df1fc
+    FMUL float ptr [0x005df1fc]         ; 004ad8c8 | g_FLOAT_005df1fc
     SUB ESP,0x4                         ; 004ad8ce
     FSTP float ptr [ESP]                ; 004ad8d1
     PUSH 0x0                            ; 004ad8d4
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     FLD float ptr [EBX + 0x48]          ; 004ad8db
     MOV dword ptr [ESP + 0x18],EAX      ; 004ad8de
-    FMUL float ptr [0x005df1fc]         ; 004ad8e2 | DAT_005df1fc
+    FMUL float ptr [0x005df1fc]         ; 004ad8e2 | g_FLOAT_005df1fc
     FLD float ptr [ESP + 0x18]          ; 004ad8e8
     FSUB float ptr [EBX + 0x48]         ; 004ad8ec
     ADD ESP,0x8                         ; 004ad8ef
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     FLD float ptr [EBX + 0x48]          ; 004ad903
     MOV dword ptr [ESP + 0x18],EAX      ; 004ad906
-    FMUL float ptr [0x005df1fc]         ; 004ad90a | DAT_005df1fc
+    FMUL float ptr [0x005df1fc]         ; 004ad90a | g_FLOAT_005df1fc
     FLD float ptr [ESP + 0x18]          ; 004ad910
     FSUB float ptr [EBX + 0x48]         ; 004ad914
     ADD ESP,0x8                         ; 004ad917
@@ -113,7 +113,7 @@ section .text
     POP EDI                             ; 004ad972
     POP EBX                             ; 004ad973
     RET                                 ; 004ad974
-    MOV EAX,[0x01c43530]                ; 004ad975 | DAT_01c43530
+    MOV EAX,[0x01c43530]                ; 004ad975 | g_INT_01c43530
         ;   Label: LAB_004ad975
     MOV EDX,dword ptr [EBX + 0x58]      ; 004ad97a
     MOV ECX,dword ptr [EBX + 0x44]      ; 004ad97d

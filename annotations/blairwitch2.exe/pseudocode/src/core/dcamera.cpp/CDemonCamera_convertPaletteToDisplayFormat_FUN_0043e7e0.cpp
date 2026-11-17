@@ -13,22 +13,26 @@ void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_004
   uint uVar2;
   int iVar3;
   int iVar4;
+  uint uVar5;
+  uint uVar6;
   
   iVar1 = 0;
   iVar3 = 0;
   do {
-    if (DAT_006141c0 == 0x20) {
-      uVar2 = (uint)*(byte *)(iVar1 + 0xb65c9a) << (DAT_01c3582c & 0x1f) |
-              (uint)(byte)(&DAT_00b65c98)[iVar1] << (DAT_01c35814 & 0x1f) |
-              (uint)*(byte *)(iVar1 + 0xb65c99) << (DAT_01c35820 & 0x1f);
+    uVar5 = (uint)(&g_SRGBColorPalette_00b65c98.colors[0].g)[iVar1];
+    uVar6 = (uint)(&g_SRGBColorPalette_00b65c98.colors[0].r)[iVar1];
+    uVar2 = (uint)(&g_SRGBColorPalette_00b65c98.colors[0].b)[iVar1];
+    if (g_INT_006141c0 == 0x20) {
+      uVar2 = uVar2 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) |
+              uVar6 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f) |
+              uVar5 << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
     }
     else {
-      uVar2 = (uint)(byte)(&DAT_00b65c98)[iVar1] << 0x10 | (uint)*(byte *)(iVar1 + 0xb65c99) << 8 |
-              (uint)*(byte *)(iVar1 + 0xb65c9a);
+      uVar2 = uVar6 << 0x10 | uVar5 << 8 | uVar2;
     }
     iVar4 = iVar3 + 4;
     iVar1 = iVar1 + 3;
-    *(uint *)(iVar3 + 0xb65f9c) = uVar2;
+    *(uint *)((int)g_UINT_ARRAY_00b65f9c + iVar3) = uVar2;
     iVar3 = iVar4;
   } while (iVar4 != 0x400);
   return;

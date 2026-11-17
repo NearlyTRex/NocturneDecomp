@@ -48,10 +48,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3212
 ;   TerminatedCString s_SfxSlot_mix_must_be_lock_005d3227
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cf32ac
-;   undefined4 DAT_02cf341c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   undefined4 g_FLOAT_PTR_ARRAY_02cf32a8[1]
+;   int g_INT_02cf341c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -76,7 +76,7 @@ section .text
     SUB ESP,0xcc                        ; 00554926
     AND ESP,0xfffffff8                  ; 0055492c
     MOV EDI,dword ptr [EBP + 0x14]      ; 0055492f
-    CMP dword ptr [0x02cf341c],0x0      ; 00554932 | DAT_02cf341c
+    CMP dword ptr [0x02cf341c],0x0      ; 00554932 | g_INT_02cf341c
     JLE 0x00554ac4                      ; 00554939
         ;   XREF to: 00554ac4 (CONDITIONAL_JUMP)  ; LAB_00554ac4
     CMP dword ptr [EDI + 0x64],0x0      ; 0055493f
@@ -133,7 +133,7 @@ section .text
         ;   XREF to: 00554b0f (CONDITIONAL_JUMP)  ; LAB_00554b0f
     MOV EAX,dword ptr [ECX + EBP*0x1 + 0x18] ; 005549d8
     MOV dword ptr [ESP + ECX*0x1 + 0x1c],EAX ; 005549dc
-    MOV EAX,dword ptr [ECX + 0x2cf32a8] ; 005549e0 | DAT_02cf32ac
+    MOV EAX,dword ptr [ECX + 0x2cf32a8] ; 005549e0 | g_FLOAT_PTR_ARRAY_02cf32a8[1]
     MOV dword ptr [ECX + EBP*0x1 + 0x18],EAX ; 005549e6
     MOV EAX,dword ptr [EBP + 0x38]      ; 005549ea
     SHL EAX,0x2                         ; 005549ed
@@ -224,8 +224,8 @@ section .text
         ;   Label: LAB_00554ac4
     MOV EBX,0xb9f                       ; 00554ac9
     PUSH 0x5d3227                       ; 00554ace | = "SfxSlot::mix - must be locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00554ad3 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00554ad9 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00554ad3 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00554ad9 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00554adf
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00554ae4

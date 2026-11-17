@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_carved_cpp_CCarved_resetChaseState_FUN_0042be20(CCarved *this_ptr)
 
@@ -45,8 +44,8 @@ void __cdecl core_carved_cpp_CCarved_resetChaseState_FUN_0042be20(CCarved *this_
     local_20 = local_38;
     local_1c = local_34;
     local_18 = local_30;
-    if ((_DAT_005fd46c <= SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28)) ||
-       (iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3), iVar2 != 1)) {
+    if ((5.0f <= SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28))
+       || (iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3), iVar2 != 1)) {
       iVar2 = 1;
       iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
       iVar3 = iVar3 + 7;

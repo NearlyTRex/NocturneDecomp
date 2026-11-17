@@ -13,7 +13,7 @@
 ;   core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420 at 005a345e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
@@ -38,7 +38,7 @@ section .text
     LEA EDX,[EAX + 0x11642]             ; 0059e89c
     PUSH EDX                            ; 0059e8a2
     PUSH EAX                            ; 0059e8a3
-    MOV ECX,dword ptr [0x0061c068]      ; 0059e8a4 | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 0059e8a4 | g_CSound_PTR_0061c068
     PUSH ECX                            ; 0059e8aa
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 0059e8ab
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

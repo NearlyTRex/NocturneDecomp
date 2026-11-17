@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0045ddb0(CFilterFX *this_ptr,char *filename)
 
 {
@@ -19,22 +17,22 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0045ddb0(CFilterFX *this_p
   
   core_dfilter_cpp_CFilterFX_free_FUN_0045dd90(this_ptr);
   if (filename != (char *)0x0) {
-    _sprintf(acStack_108,(char *)0x5d85c9);
-    p_Var1 = engine_dosio_cpp_getFile_FUN_00479180(filename,acStack_108,(char *)0x5d85d0);
+    _sprintf(acStack_108,"%s.txt");
+    p_Var1 = engine_dosio_cpp_getFile_FUN_00479180(filename,acStack_108,"rt");
     if (p_Var1 == (_FILE *)0x0) {
-      _DAT_01d1d400 = "..\\core\\dfilter.cpp";
-      _DAT_01d1d404 = 0x15a;
+      g_CHAR_PTR_01d1d400 = "..\\core\\dfilter.cpp";
+      g_INT_01d1d404 = 0x15a;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open movie %s.txt");
     }
-    _fscanf(p_Var1,(char *)0x5d85ff);
+    _fscanf(p_Var1,"%d\n");
     _fclose(p_Var1);
     pSVar2 = (SMovieFrame *)malloc(this_ptr->frame_count << 0xd);
     this_ptr->movie_data = pSVar2;
-    _sprintf(acStack_108,(char *)0x5d8603);
-    p_Var1 = engine_dosio_cpp_getFile_FUN_00479180(filename,acStack_108,(char *)0x5d860a);
+    _sprintf(acStack_108,"%s.mov");
+    p_Var1 = engine_dosio_cpp_getFile_FUN_00479180(filename,acStack_108,"rb");
     if (p_Var1 == (_FILE *)0x0) {
-      _DAT_01d1d400 = "..\\core\\dfilter.cpp";
-      _DAT_01d1d404 = 0x166;
+      g_CHAR_PTR_01d1d400 = "..\\core\\dfilter.cpp";
+      g_INT_01d1d404 = 0x166;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open movie %s.mov");
     }
     _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,p_Var1);
@@ -47,7 +45,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0045ddb0(CFilterFX *this_p
     return;
   }
   this_ptr_00 = core_dfilter_cpp_CFilterCache_findFilter_FUN_0045d900
-                          (g_CFilterCachePtr,"?movscrn.raw" + 1);
+                          (g_CFilterCachePtr,"movscrn.raw");
   core_dfilter_cpp_CDemonFilter_load_FUN_0045da30(this_ptr_00,"movscrn.raw");
   return;
 }

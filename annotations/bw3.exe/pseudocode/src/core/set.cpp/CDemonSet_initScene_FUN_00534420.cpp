@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr)
   core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,text,iVar6);
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0045c470();
   core_dfilter_cpp_CFilterCache_free_FUN_004596c0(g_CFilterCachePtr);
-  _DAT_0203ad1c = 0;
+  g_INT_0203ad1c = 0;
   this_ptr->mirror_glass_actor_count = 0;
   core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_00448ca0(&g_CDemonCameraInstance);
   core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004503f0
@@ -46,26 +44,26 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr)
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680
             (&g_CDemonCameraInstance,this_ptr->min_ambient_value);
   do {
-    if (*(int *)(&DAT_0203a418 + iVar6) != 0) {
-      _DAT_01d71de0 = "..\\core\\set.cpp";
-      _DAT_01d71de4 = 0x3f1;
+    if (*(int *)((int)g_CDemonLight_PTR_ARRAY_0203a418 + iVar6) != 0) {
+      g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
+      g_INT_01d71de4 = 0x3f1;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::initScene - Memory leakage detected in masterSpotList");
     }
     iVar6 = iVar6 + 4;
   } while (iVar6 != 0x180);
   iVar6 = 0;
-  _DAT_0203a414 = 0;
+  g_INT_0203a414 = 0;
   pCVar5 = this_ptr;
   if (0 < this_ptr->light_count) {
     do {
       if (pCVar5->lights[0].light_type == 0) {
         pCVar1 = core_setutil_cpp_C3DSLight_create_FUN_00542940(this_ptr->lights + iVar6);
-        *(CDemonLight **)(&DAT_0203a418 + _DAT_0203a414 * 4) = pCVar1;
+        g_CDemonLight_PTR_ARRAY_0203a418[g_INT_0203a414] = pCVar1;
         core_setutil_cpp_C3DSLight_apply_FUN_00542aa0(this_ptr->lights + iVar6,pCVar1);
-        _DAT_0203a414 = _DAT_0203a414 + 1;
-        if (0x60 < _DAT_0203a414) {
-          _DAT_01d71de0 = "..\\core\\set.cpp";
-          _DAT_01d71de4 = 0x408;
+        g_INT_0203a414 = g_INT_0203a414 + 1;
+        if (0x60 < g_INT_0203a414) {
+          g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
+          g_INT_01d71de4 = 0x408;
           core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::initScene - Too many spotlights!");
         }
       }
@@ -74,25 +72,25 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr)
     } while (iVar6 < this_ptr->light_count);
   }
   iVar6 = 0;
-  if (0 < _DAT_0203a414) {
+  if (0 < g_INT_0203a414) {
     iVar2 = 0;
     do {
-      pCVar1 = *(CDemonLight **)(&DAT_0203a418 + iVar2);
+      pCVar1 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203a418 + iVar2);
       core_dlight_cpp_CDemonLight_beginScene_FUN_0045c530(pCVar1,0);
       core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0045d070(pCVar1);
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(this_ptr,9999.9,0);
       iVar2 = iVar2 + 4;
       iVar6 = iVar6 + 1;
       core_dlight_cpp_CDemonLight_endScene_FUN_0045c7e0(pCVar1,0);
-    } while (iVar6 < _DAT_0203a414);
+    } while (iVar6 < g_INT_0203a414);
   }
   this_ptr->selected_camera_index = -1;
   this_ptr->previous_best_camera_index = -1;
   iVar6 = 0;
-  _DAT_0203a598 = 0;
-  _DAT_0203b3e8 = 0;
-  _DAT_0203ad30 = 0;
-  _DAT_0203aec4 = 0;
+  g_INT_0203a598 = 0;
+  g_INT_0203b3e8 = 0;
+  g_INT_0203ad30 = 0;
+  g_INT_0203aec4 = 0;
   this_ptr->previous_best_camera_timer = 0.0;
   core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0(this_ptr);
   if (0 < this_ptr->camera_count) {
@@ -106,6 +104,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr)
       pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;
     } while (iVar6 < this_ptr->camera_count);
   }
-  core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(0x02D0C1A0,this_ptr->weather_type);
+  core_weather_cpp_CWeather_setWeatherType_FUN_0057d050
+            (g_CWeather_PTR_006071f0,this_ptr->weather_type);
   return;
 }

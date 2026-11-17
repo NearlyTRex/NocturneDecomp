@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController *this_ptr,int desired_state_index,int force_immediate)
 
 {
@@ -16,8 +14,8 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(CMot
     return;
   }
   if (this_ptr->motion_list_ptr->state_count <= desired_state_index) {
-    _DAT_01d1d400 = "..\\core\\motion.cpp";
-    _DAT_01d1d404 = 0x2b8;
+    g_CHAR_PTR_01d1d400 = "..\\core\\motion.cpp";
+    g_INT_01d1d404 = 0x2b8;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CMotionController::setDesiredState - invalid state index");
   }
   if (desired_state_index != this_ptr->state_index) {

@@ -13,36 +13,36 @@ void __cdecl engine_mini3d_cpp_updateTransform_FUN_004f3740(void)
 {
   float fVar1;
   
-  if (_DAT_01d0c398 != 0) {
-    _DAT_01d167ac = *_DAT_01d09918 * _DAT_01d098d4;
-    _DAT_01d167b0 = _DAT_01d09918[1] * _DAT_01d098d8;
-    _DAT_01d167bc = _DAT_01d09918[3] * _DAT_01d098d4;
-    _DAT_01d167c0 = _DAT_01d09918[4] * _DAT_01d098d8;
-    _DAT_01d167cc = _DAT_01d09918[6] * _DAT_01d098d4;
-    _DAT_01d167d0 = _DAT_01d09918[7] * _DAT_01d098d8;
-    _DAT_01d167b4 = _DAT_01d09918[2];
-    fVar1 = -_DAT_01d09918[9];
-    _DAT_01d167c4 = _DAT_01d09918[5];
-    _DAT_01d167d4 = _DAT_01d09918[8];
+  if (g_INT_01d0c398 != 0) {
+    g_FLOAT_01d167ac = *(float *)g_PTR_01d09918 * g_FLOAT_01d098d4;
+    g_FLOAT_01d167b0 = *(float *)(g_PTR_01d09918 + 4) * g_FLOAT_01d098d8;
+    g_FLOAT_01d167bc = *(float *)(g_PTR_01d09918 + 0xc) * g_FLOAT_01d098d4;
+    g_FLOAT_01d167c0 = *(float *)(g_PTR_01d09918 + 0x10) * g_FLOAT_01d098d8;
+    g_FLOAT_01d167cc = *(float *)(g_PTR_01d09918 + 0x18) * g_FLOAT_01d098d4;
+    g_FLOAT_01d167d0 = *(float *)(g_PTR_01d09918 + 0x1c) * g_FLOAT_01d098d8;
+    g_FLOAT_01d167b4 = *(float *)(g_PTR_01d09918 + 8);
+    fVar1 = -*(float *)(g_PTR_01d09918 + 0x24);
+    g_FLOAT_01d167c4 = *(float *)(g_PTR_01d09918 + 0x14);
+    g_FLOAT_01d167d4 = *(float *)(g_PTR_01d09918 + 0x20);
     _DAT_01d167b8 = 0;
     _DAT_01d167c8 = 0;
     _DAT_01d167d8 = 0;
-    _DAT_01d167dc =
-         (fVar1 * _DAT_01d167ac - _DAT_01d09918[10] * _DAT_01d167bc) -
-         _DAT_01d09918[0xb] * _DAT_01d167cc;
+    g_FLOAT_01d167dc =
+         (fVar1 * g_FLOAT_01d167ac - *(float *)(g_PTR_01d09918 + 0x28) * g_FLOAT_01d167bc) -
+         *(float *)(g_PTR_01d09918 + 0x2c) * g_FLOAT_01d167cc;
     _DAT_01d167e8 = 0x3f800000;
-    _DAT_01d167e0 =
-         (fVar1 * _DAT_01d167b0 - _DAT_01d09918[10] * _DAT_01d167c0) -
-         _DAT_01d09918[0xb] * _DAT_01d167d0;
-    _DAT_01d167e4 =
-         (fVar1 * _DAT_01d167b4 - _DAT_01d09918[10] * _DAT_01d167c4) -
-         _DAT_01d09918[0xb] * _DAT_01d167d4;
-    if ((_DAT_0264bc84 != (code *)0x0) && (_DAT_01c37788 != 0)) {
-      (*_DAT_0264bc84)(&DAT_01d167ac,_DAT_01d098cc,_DAT_01d098d0);
-      _DAT_01d0c398 = 0;
+    g_FLOAT_01d167e0 =
+         (fVar1 * g_FLOAT_01d167b0 - *(float *)(g_PTR_01d09918 + 0x28) * g_FLOAT_01d167c0) -
+         *(float *)(g_PTR_01d09918 + 0x2c) * g_FLOAT_01d167d0;
+    g_FLOAT_01d167e4 =
+         (fVar1 * g_FLOAT_01d167b4 - *(float *)(g_PTR_01d09918 + 0x28) * g_FLOAT_01d167c4) -
+         *(float *)(g_PTR_01d09918 + 0x2c) * g_FLOAT_01d167d4;
+    if ((g_PTR_0264bc84 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+      (*(code *)g_PTR_0264bc84)(&g_FLOAT_01d167ac,g_FLOAT_01d098cc,g_FLOAT_01d098d0);
+      g_INT_01d0c398 = 0;
       return;
     }
-    _DAT_01d0c398 = 0;
+    g_INT_01d0c398 = 0;
   }
   return;
 }

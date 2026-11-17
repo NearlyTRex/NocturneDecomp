@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0057f700(CTurret *this_ptr,CVector3f *target_pos,float delta_time)
 
 {
@@ -40,18 +38,18 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0057f700(CTurret *this_ptr,C
   local_34[(uint)bVar2 * -2] = *(float *)((int)&local_2c + (uint)bVar2 * -8 + 4);
   local_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        *(float *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  if (local_38 < 0xBF060A92) {
-    local_38 = 0xBF060A92;
+  if (local_38 < -0.5235988f) {
+    local_38 = -0.5235988f;
   }
-  if (0x3F9C61AA < local_38) {
-    local_38 = 0x3F9C61AA;
+  if (1.22173f < local_38) {
+    local_38 = 1.22173f;
   }
   local_54 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                        (local_34[0] - (this_ptr->base).base.orient.vec.y);
   local_14 = local_54;
   local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                        (local_38 - (this_ptr->base).base.orient.vec.x);
-  local_18 = this_ptr->rotate_deg_per_sec * _DAT_005ed810 * delta_time;
+  local_18 = this_ptr->rotate_deg_per_sec * 0.01745329f * delta_time;
   local_1c = -local_18;
   if (local_54 < local_1c) {
     local_54 = local_1c;
@@ -71,8 +69,8 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0057f700(CTurret *this_ptr,C
   (this_ptr->base).base.orient.vec.y = (this_ptr->base).base.orient.vec.y + local_54;
   (this_ptr->base).base.orient.vec.x = fVar1 + local_58;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0((CDemonActor *)this_ptr);
-  if (((float10)0 != ABS((float10)(local_54 < (float)_DAT_005ed814))) &&
-     ((float10)0 != ABS((float10)(local_58 < (float)_DAT_005ed814)))) {
+  if (((float10)0 != ABS((float10)(local_54 < (float)0.001))) &&
+     ((float10)0 != ABS((float10)(local_58 < (float)0.001)))) {
     return 1;
   }
   return 0;

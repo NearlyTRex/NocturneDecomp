@@ -18,19 +18,20 @@ CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040c480(char *
     bVar1 = *className;
     className = className + 1;
     if (bVar1 == 0) break;
-    if (((&DAT_006074b8)[(byte)(bVar1 + 1)] & 0xe0) != 0) {
+    if ((g_UCHAR_ARRAY_006074b8[(byte)(bVar1 + 1)] & 0xe0) != 0) {
       iVar2 = tolower((uint)bVar1);
       uVar3 = iVar2 * 0x20001 + uVar3 * 0x80 + (uVar3 >> 0x19);
     }
   }
-  if (0 < DAT_007df9c4) {
+  if (0 < g_INT_007df9c4) {
     iVar2 = 0;
     do {
-      if (uVar3 == (*(CDemonActorType **)((int)&DAT_007df9c8 + iVar2))->name_hash) {
-        return *(CDemonActorType **)((int)&DAT_007df9c8 + iVar2);
+      if (uVar3 == (*(CDemonActorType **)((int)g_CDemonActorType_PTR_ARRAY_007df9c8 + iVar2))->
+                   name_hash) {
+        return *(CDemonActorType **)((int)g_CDemonActorType_PTR_ARRAY_007df9c8 + iVar2);
       }
       iVar2 = iVar2 + 4;
-    } while (iVar2 < DAT_007df9c4 * 4);
+    } while (iVar2 < g_INT_007df9c4 * 4);
   }
   return (CDemonActorType *)0x0;
 }

@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_ChaseFoodComplete_005f0dad+1
+;   TerminatedCString s_ChaseFoodComplete_005f0dae
 ;   TerminatedCString s_ChaseFoodComplete_005f0dc0
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d182f0
 ;
 ; Called Functions:
@@ -86,7 +86,7 @@ section .text
     POP ESI                             ; 005ac16c
     POP EBX                             ; 005ac16d
     RET                                 ; 005ac16e
-    PUSH 0x5f0dae                       ; 005ac16f | s_ChaseFoodComplete_005f0dad+1
+    PUSH 0x5f0dae                       ; 005ac16f | = "ChaseFoodComplete"
         ;   Label: LAB_005ac16f
     PUSH ESI                            ; 005ac174
     CALL core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880 ; 005ac175
@@ -128,7 +128,7 @@ section .text
     PUSH 0x1                            ; 005ac1c6
     MOV EBP,dword ptr [EBX + 0x1185c]   ; 005ac1c8
     PUSH EBP                            ; 005ac1ce
-    MOV EAX,[0x00618170]                ; 005ac1cf | DAT_00618170
+    MOV EAX,[0x00618170]                ; 005ac1cf | g_CDemonMission_PTR_00618170
     PUSH EAX                            ; 005ac1d4 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 005ac1d5
         ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)

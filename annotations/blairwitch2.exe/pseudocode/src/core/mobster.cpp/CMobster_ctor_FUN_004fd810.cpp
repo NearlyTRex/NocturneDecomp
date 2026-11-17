@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004fd810(CMobster *this_ptr)
 
 {
@@ -22,10 +20,10 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004fd810(CMobster *this_pt
   pCVar4 = (CMobster *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
   (pCVar4->base).base.base.vtable._ub = &g_CMobsterVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(pCVar4->base).base.model,"?mobster1.dfm" + 1);
-  fVar2 = _DAT_005fa230;
+            (&(pCVar4->base).base.model,"mobster1.dfm");
+  fVar2 = 50.0f;
   (pCVar4->base).base.collision_cylinder_height = 0.6;
-  fVar3 = _DAT_005fa234;
+  fVar3 = 100.0f;
   (pCVar4->base).base.collision_cylinder_radius = 0.9;
   (pCVar4->base).base.ai_detection_range_min = fVar2;
   (pCVar4->base).base.ai_detection_range_max = fVar3;
@@ -43,7 +41,7 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004fd810(CMobster *this_pt
   pCVar4->post_mode = 0;
   pCVar4->our_post = (CDemonActor *)0x0;
   pCVar4->vehicle = (CDemonActor *)0x0;
-  pcVar6 = &DAT_005dec1a;
+  pcVar6 = "none";
   pCVar4->side_of_car = 0;
   pCVar4->hold_pos_flag = 0;
   pcVar7 = pCVar4->hold_pos_condition;

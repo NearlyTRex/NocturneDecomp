@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b93e0 at 004b9422
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6cef0
+;   char[4952] g_CHAR_ARRAY_01c6cef0
 ;
 ; *****************************************************************************
 
@@ -19,6 +19,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 004df5b0
         ;   Label: engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004df5b0
-    MOV byte ptr [EAX + 0x1c6cef0],0x1  ; 004df5b4 | DAT_01c6cef0
+    MOV byte ptr [EAX + 0x1c6cef0],0x1  ; 004df5b4 | g_CHAR_ARRAY_01c6cef0
     RET                                 ; 004df5bb
 

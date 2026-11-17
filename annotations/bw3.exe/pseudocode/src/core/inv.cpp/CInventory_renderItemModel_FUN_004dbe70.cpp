@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)
 
 {
@@ -52,22 +50,22 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
   pCVar1 = g_CDemonSetPtr;
   bVar8 = 0;
   if (item != (CDemonActor *)0x0) {
-    if (0x280 < DAT_005fba18) {
-      viewport_x = (viewport_x * 0x280) / DAT_005fba18;
-      viewport_y = (viewport_y * 0x1e0) / DAT_005fba1c;
-      viewport_size = (viewport_size * 0x280) / DAT_005fba18;
+    if (0x280 < g_INT_005fba18) {
+      viewport_x = (viewport_x * 0x280) / g_INT_005fba18;
+      viewport_y = (viewport_y * 0x1e0) / g_INT_005fba1c;
+      viewport_size = (viewport_size * 0x280) / g_INT_005fba18;
     }
     g_CDemonSetPtr->rendering_mode = 1;
     (pCVar1->light_direction).x = -0x482b;
     (pCVar1->light_direction).y = -0x482b;
     (pCVar1->light_direction).z = 0x482b;
     pCVar1->ambient_base_quick = 32000;
-    _DAT_01d70a38 =
-         _DAT_01d70a38 +
-         ((int)((_DAT_01c5fad0 + (_DAT_01c5fad0 >> 0x1f) * -4) -
-               (uint)((_DAT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);
-    iVar2 = engine_matrix_c_interpolatedSin_FUN_004e4d90(_DAT_01d70a38);
-    iVar3 = engine_matrix_c_interpolatedCos_FUN_004e4dd0(_DAT_01d70a38);
+    g_INT_01d70a38 =
+         g_INT_01d70a38 +
+         ((int)((g_INT_01c5fad0 + (g_INT_01c5fad0 >> 0x1f) * -4) -
+               (uint)((g_INT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);
+    iVar2 = engine_matrix_c_interpolatedSin_FUN_004e4d90(g_INT_01d70a38);
+    iVar3 = engine_matrix_c_interpolatedCos_FUN_004e4dd0(g_INT_01d70a38);
     (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar2 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar2 * 0x482b) >> 0x20) << 0x10;
@@ -75,7 +73,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
          (uint)((longlong)iVar3 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 0x482b) >> 0x20) << 0x10;
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
-              (DAT_005f2afc,viewport_x,viewport_y,viewport_size,viewport_size);
+              (g_CDemonRenderer_PTR_005f2afc,viewport_x,viewport_y,viewport_size,viewport_size);
     local_18 = core_inv_cpp_getItemModel_FUN_004d9d20(item);
     pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(local_18);
     pCVar6 = pCVar4->frame_bounds;
@@ -92,10 +90,10 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     local_8c[(uint)bVar8 * -2 + 3] = local_50[(uint)bVar8 * -2 + 6];
     local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
          local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
-    local_50[2] = local_8c[2] * _DAT_005c63a7;
-    local_50[3] = local_8c[3] * _DAT_005c63a7;
-    local_40 = local_7c * _DAT_005c63a7;
-    local_90 = local_8c[2] * _DAT_005c63a7;
+    local_50[2] = local_8c[2] * 0.5f;
+    local_50[3] = local_8c[3] * 0.5f;
+    local_40 = local_7c * 0.5f;
+    local_90 = local_8c[2] * 0.5f;
     local_8c[(uint)bVar8 * -2] = local_50[(uint)bVar8 * -2 + 3];
     local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
          local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
@@ -106,28 +104,29 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CLightstaff");
     if ((iVar2 != 0) ||
        (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CFirestaff"), iVar2 != 0)) {
-      local_14 = local_14 * (float)_DAT_005c63af;
+      local_14 = local_14 * (float)0.5;
     }
-    iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,&DAT_005c62e2);
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CGun");
     if (((iVar2 != 0) ||
         (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CKeyActor"), iVar2 != 0)) ||
        ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CExorcism"), iVar2 != 0 ||
-        ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,&DAT_005c62fb), iVar2 != 0 ||
+        ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CSps"), iVar2 != 0 ||
          (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CBindEvil"), iVar2 != 0))))))
     {
-      local_14 = local_14 * (float)_DAT_005c63b7;
+      local_14 = local_14 * (float)2;
     }
-    local_9c.z = -local_14 * (float)_DAT_005c63b7;
+    local_9c.z = -local_14 * (float)2;
     local_9c.x = 0.0;
     local_9c.y = 0.0;
     local_1c = local_9c.z;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
-              (DAT_005f2afc,&local_9c);
-    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(DAT_005f2afc,36.0);
+              (g_CDemonRenderer_PTR_005f2afc,&local_9c);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
+              (g_CDemonRenderer_PTR_005f2afc,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
-              (DAT_005f2afc,(CVector3f *)&DAT_02cfd900);
+              (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_02cfd900);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-              (DAT_005f2afc,(CVector3f *)&DAT_02cfd900);
+              (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_02cfd900);
     local_78 = local_b4 + local_a8;
     local_74 = local_b0 + local_a4;
     local_70 = local_ac + local_a0;
@@ -136,11 +135,11 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
          local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
     class_name = "CLightstaff";
-    _DAT_01c6e24c = 0;
-    local_6c = local_54 * _DAT_005c63bf;
-    local_68 = local_50[0] * _DAT_005c63bf;
-    local_64 = local_50[1] * _DAT_005c63bf;
-    local_60.x = local_54 * _DAT_005c63bf;
+    g_INT_01c6e24c = 0;
+    local_6c = local_54 * -0.5f;
+    local_68 = local_50[0] * -0.5f;
+    local_64 = local_50[1] * -0.5f;
+    local_60.x = local_54 * -0.5f;
     *(float *)((int)&local_60 + (uint)bVar8 * -8 + 4) = local_8c[(uint)bVar8 * -2 + 9];
     pCVar5 = item;
     *(float *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
@@ -148,7 +147,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(pCVar5,class_name);
     if ((iVar2 != 0) ||
        (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CFirestaff"), iVar2 != 0)) {
-      local_60.y = local_60.y - local_a4 * _DAT_005c63a7;
+      local_60.y = local_60.y - local_a4 * 0.5f;
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CBurncross");
     if (((((iVar2 != 0) ||
@@ -157,7 +156,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
         ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CExorcism"), iVar2 != 0 ||
          (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CHolycross"), iVar2 != 0))))
        || ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CLightstaff"), iVar2 != 0
-           || (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,&DAT_005c635e), iVar2 != 0)))) {
+           || (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CSps"), iVar2 != 0)))) {
       rotation_y = 0.0;
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CBoxActor");
@@ -170,9 +169,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
       pCVar5 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(item,g_CBoxActorClassInfo.name_hash);
       iVar2 = _strcmp(pCVar5[1].create_event,"journal.kfm");
       if (iVar2 == 0) {
-        local_30.x = local_30.x + _DAT_005c63c3;
-        local_30.y = local_30.y + _DAT_005c63c7;
-        local_30.z = local_30.z + _DAT_005c63c7;
+        local_30.x = local_30.x + 4.712389f;
+        local_30.y = local_30.y + 1.570796f;
+        local_30.z = local_30.z + 1.570796f;
       }
       else if (&local_30 != (CVector3f *)(pCVar5[5].actor_name + 0x18)) {
         local_30.x = ((CVector3f *)(pCVar5[5].actor_name + 0x18))->x;
@@ -182,39 +181,42 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CBindEvil");
     if (iVar2 != 0) {
-      local_30.x = local_30.x + _DAT_005c63cb;
+      local_30.x = local_30.x + 5.497787f;
       local_30.y = 0.3926991;
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CExorcism");
     if (iVar2 != 0) {
-      local_30.x = local_30.x + _DAT_005c63c7;
+      local_30.x = local_30.x + 1.570796f;
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,"CKeyActor");
     if (iVar2 != 0) {
-      local_30.x = local_30.x + _DAT_005c63c3;
+      local_30.x = local_30.x + 4.712389f;
     }
     pCVar5 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(item,g_CMeleeClassInfo.name_hash);
     if (pCVar5 != (CDemonActor *)0x0) {
       iVar2 = _stricmp(pCVar5[1].create_event,"axe1.kfm");
       if (iVar2 == 0) {
-        local_30.x = local_30.x + _DAT_005c63cf;
-        local_30.z = local_30.z + _DAT_005c63cf;
+        local_30.x = local_30.x + -1.570796f;
+        local_30.z = local_30.z + -1.570796f;
       }
       iVar2 = _stricmp(pCVar5[1].create_event,"ax.kfm");
       if (iVar2 == 0) {
-        local_30.x = local_30.x + _DAT_005c63cf;
-        local_30.z = local_30.z + _DAT_005c63cf;
+        local_30.x = local_30.x + -1.570796f;
+        local_30.z = local_30.z + -1.570796f;
       }
     }
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-              (DAT_005f2afc,&local_30,(CVector3f *)0x0);
+              (g_CDemonRenderer_PTR_005f2afc,&local_30,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-              (DAT_005f2afc,(CVector3f *)&DAT_02cfd900,&local_60);
+              (g_CDemonRenderer_PTR_005f2afc,&g_CVector3f_02cfd900,&local_60);
     if (alpha < 65000) {
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,alpha);
-      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
+                (g_CDemonRenderer_PTR_005f2afc,alpha);
+      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120
+                (g_CDemonRenderer_PTR_005f2afc,1);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(local_18,0.0,0x2e7);
-      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
+      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
+                (g_CDemonRenderer_PTR_005f2afc);
     }
     else {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(local_18,0.0,-1);

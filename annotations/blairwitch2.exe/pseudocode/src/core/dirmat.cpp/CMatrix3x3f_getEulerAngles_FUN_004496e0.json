@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 377,
-    "complexity_score": 330,
+    "complexity_score": 314,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 16,
+    "pseudocode_lines": 144,
+    "suspect_count": 15,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast",
       "sub84_truncation",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 522
+    "total_lines": 521
   },
   "cross_references": [
     {
@@ -114,45 +113,45 @@
   "globals": [
     {
       "addr": "005cf197",
-      "name": "DAT_005cf197",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf197",
+      "type": "double",
+      "value": "-1"
     },
     {
       "addr": "005cf19f",
-      "name": "DAT_005cf19f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf19f",
+      "type": "double",
+      "value": "0.707000000000000"
     },
     {
       "addr": "005cf1a7",
-      "name": "DAT_005cf1a7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf1a7",
+      "type": "double",
+      "value": "-0.707000000000000"
     },
     {
       "addr": "005cf1af",
-      "name": "DAT_005cf1af",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf1af",
+      "type": "double",
+      "value": "3.14159265359000"
     },
     {
       "addr": "005cf1b7",
-      "name": "DAT_005cf1b7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf1b7",
+      "type": "double",
+      "value": "-3.14159265359000"
     },
     {
       "addr": "005cf1bf",
-      "name": "DAT_005cf1bf",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005cf1bf",
+      "type": "float",
+      "value": "6.283185"
     },
     {
       "addr": "005cf1c3",
-      "name": "DAT_005cf1c3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005cf1c3",
+      "type": "float",
+      "value": "-6.283185"
     }
   ],
   "param_estimates": {
@@ -537,16 +536,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 33,
+      "line": 31,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "afStack_1014[0x3f2] = SUB84(__BITCAST_UINT64(dVar8),0);",
@@ -554,7 +545,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 38,
+      "line": 36,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "afStack_1014[0x3de] = SUB84(__BITCAST_UINT64(dVar8),0);",
@@ -562,7 +553,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 41,
+      "line": 39,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "afStack_1014[0x3ec] = SUB84(__BITCAST_UINT64(dVar1),0);",
@@ -570,7 +561,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 56,
+      "line": 54,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3de],afStack_1014[0x3df])) < 0.0) {",
@@ -578,7 +569,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 63,
+      "line": 61,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3ec],afStack_1014[0x3ed])) < 0.0) {",
@@ -586,7 +577,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 73,
+      "line": 71,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "fVar3 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3f2],afStack_1014[0x3f1]));",
@@ -594,10 +585,26 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 97,
+      "line": 95,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "if (local_38._0_4_ < (float)_DAT_005cf1b7) {",
+      "text": "if (local_38._0_4_ < (float)-3.1415926535900001) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_38._0_4_ = local_38._0_4_ + 6.283185f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_38._0_4_ = local_38._0_4_ + 6.283185f;",
       "type": "unknown_field"
     },
     {
@@ -605,44 +612,28 @@
       "line": 98,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_38._0_4_ = local_38._0_4_ + _DAT_005cf1bf;",
+      "text": "if ((float)3.1415926535900001 < local_38._0_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 99,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_38._0_4_ = local_38._0_4_ + _DAT_005cf1bf;",
+      "text": "local_38._0_4_ = local_38._0_4_ + -6.283185f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 99,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "if ((float)_DAT_005cf1af < local_38._0_4_) {",
+      "text": "local_38._0_4_ = local_38._0_4_ + -6.283185f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 101,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_38._0_4_ = local_38._0_4_ + _DAT_005cf1c3;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 101,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_38._0_4_ = local_38._0_4_ + _DAT_005cf1c3;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 103,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_28[1] = local_38._0_4_;",
@@ -650,7 +641,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 102,
       "match": "(float *)((int)euler_angles",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)euler_angles + (uint)bVar5 * -8 + 4);",
@@ -658,7 +649,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 142,
       "match": "(float *)((int)euler_angles",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)euler_angles + (uint)bVar5 * -8 + 4);",

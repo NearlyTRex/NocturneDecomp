@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_smiley_die_wav_005e785c+1
+;   TerminatedCString s_smiley_die_wav_005e785d
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
@@ -89,7 +89,7 @@ section .text
     PUSH EBX                            ; 0054ab14
     CALL dword ptr [EAX + 0x130]        ; 0054ab15
     ADD ESP,0xc                         ; 0054ab1b
-    PUSH 0x5e785d                       ; 0054ab1e | s_smiley_die_wav_005e785c+1
+    PUSH 0x5e785d                       ; 0054ab1e | = "smiley_die??.wav"
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 0054ab23
     PUSH EBX                            ; 0054ab29
     CALL dword ptr [EAX + 0x34]         ; 0054ab2a

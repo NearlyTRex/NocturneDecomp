@@ -7,16 +7,16 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_count_005d504f+1
+;   TerminatedCString s_count_005d5050
 ;   TerminatedCString s_modelCount_005d5056
-;   undefined4 DAT_005d5061
+;   char g_CHAR_005d5061 = \x00
 ;   TerminatedCString s_modelName_005d5062
 ;   TerminatedCString s_allowChase_005d506c
 ;   TerminatedCString s_allowSwarm_005d5077
 ;   TerminatedCString s_allowChaseEvent_005d5082
 ;   TerminatedCString s_allowSwarmEvent_005d5092
 ;   TerminatedCString s_animateEvent_005d50a2
-;   undefined4 DAT_007c3038
+;   int g_INT_007c3038
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
@@ -39,7 +39,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004a0520 ; 004257f9
         ;   XREF to: 004a0520 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004a0520(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004257fe
-    PUSH 0x5d5050                       ; 00425801 | s_count_005d504f+1
+    PUSH 0x5d5050                       ; 00425801 | = "count"
     LEA EBX,[EDI + 0xc26c]              ; 00425806
     PUSH EBX                            ; 0042580c
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 0042580d
@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 00425820
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 00425821
         ;   XREF to: 0040b670 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b670(int * int_ptr, char * property_name)
-    MOV EDX,dword ptr [0x007c3038]      ; 00425826 | DAT_007c3038
+    MOV EDX,dword ptr [0x007c3038]      ; 00425826 | g_INT_007c3038
     ADD ESP,0x8                         ; 0042582c
     CMP EDX,0x1                         ; 0042582f
     JNZ 0x00425860                      ; 00425832
@@ -58,7 +58,7 @@ section .text
     LEA ESI,[EDI + 0x12674]             ; 00425834
     MOV EBX,ESI                         ; 0042583a
     ADD ESI,0x5f0                       ; 0042583c
-    PUSH 0x5d5061                       ; 00425842 | DAT_005d5061
+    PUSH 0x5d5061                       ; 00425842 | g_CHAR_005d5061
         ;   Label: LAB_00425842
     PUSH EBX                            ; 00425847
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950 ; 00425848

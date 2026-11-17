@@ -14,7 +14,7 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d7234
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df674
+;   TerminatedCString s_d_005df674
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_load_FUN_004b2600
@@ -48,7 +48,7 @@ section .text
     ADD ESP,0xc                         ; 004b73a9
     LEA EBX,[ESP + 0x100]               ; 004b73ac
     PUSH EBX                            ; 004b73b3
-    PUSH 0x5df674                       ; 004b73b4 | DAT_005df674
+    PUSH 0x5df674                       ; 004b73b4 | = "%d\n"
     PUSH EDI                            ; 004b73b9
     MOV EBX,0x1cb4f60                   ; 004b73ba
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004b73bf

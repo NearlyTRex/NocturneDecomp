@@ -32,8 +32,8 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004b2ef0(CBitFont *this_ptr,ch
   if (0 < max_lines) {
     pcStack_1c = dest_buffer;
     do {
-      for (; (((&DAT_006074b8)[(byte)(*source_text + 1)] & 2) != 0 && (*source_text != '\n'));
-          source_text = source_text + 1) {
+      for (; ((g_UCHAR_ARRAY_006074b8[(byte)(*source_text + 1)] & 2) != 0 && (*source_text != '\n'))
+          ; source_text = source_text + 1) {
       }
       if (*source_text == '\0') {
         return iStack_14;
@@ -45,25 +45,25 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004b2ef0(CBitFont *this_ptr,ch
       while( true ) {
         cVar1 = *pcVar4;
         if ((cVar1 == '\n') || (cVar1 == '\0')) goto LAB_004b2fa8;
-        if (((&DAT_006074b8)[(byte)(cVar1 + 1)] & 2) != 0) {
+        if ((g_UCHAR_ARRAY_006074b8[(byte)(cVar1 + 1)] & 2) != 0) {
           uStack_18 = uVar8;
         }
         bVar3 = false;
         if ((int)uVar8 < line_width + -1) {
-          *(byte *)(uVar8 + 0x1d1a960) = 0;
+          (&g_CHAR_01d1a960)[uVar8] = '\0';
           if ((iStack_14 < 2) && (indent_first_line == 0)) {
-            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr,(char *)0x1d1a960);
+            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr,&g_CHAR_01d1a960);
           }
           else {
             iVar2 = this_ptr->char_widths[0x20];
-            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr,(char *)0x1d1a960);
+            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr,&g_CHAR_01d1a960);
             iVar5 = iVar5 + iVar2 * indent_chars;
           }
           if (iVar5 <= max_pixel_width) {
             bVar3 = true;
           }
         }
-        *(char *)(uVar8 + 0x1d1a960) = cVar1;
+        (&g_CHAR_01d1a960)[uVar8] = cVar1;
         if (!bVar3) break;
         uVar8 = uVar8 + 1;
         pcVar4 = pcVar4 + 1;
@@ -76,7 +76,7 @@ LAB_004b2fa8:
       if (0 < (int)uVar8) {
         pcVar4 = source_text + uVar8;
         do {
-          if (((&DAT_006074b8)[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
+          if ((g_UCHAR_ARRAY_006074b8[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
           uVar7 = uVar7 - 1;
           pcVar4 = pcVar4 + -1;
         } while (0 < (int)uVar7);

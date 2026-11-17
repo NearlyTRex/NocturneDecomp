@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004d4390(CHotDemon *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004d4390(CHotDemon *t
   bVar4 = 0;
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[0]);
   if (damage_info->ammo_type == AMMO_TYPE_MERCURY) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005da6b1;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
               ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_1c);
     iVar5 = 0;
@@ -36,7 +34,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004d4390(CHotDemon *t
     do {
       iVar5 = iVar5 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                (0x01C3DEB4,&CStack_28,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_00614d30,&CStack_28,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar5 < 5);
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;

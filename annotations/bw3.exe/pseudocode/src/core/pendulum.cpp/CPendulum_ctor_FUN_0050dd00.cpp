@@ -20,8 +20,9 @@ CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_0050dd00(CPendulum *thi
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CPendulumVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,(char *)0x5cbabf);
-  pcVar3 = (char *)0x5cbac8;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,"pend.kfm")
+  ;
+  pcVar3 = "true";
   pCVar4 = this_ptr_00 + 1;
   do {
     cVar1 = *pcVar3;
@@ -32,7 +33,7 @@ CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_0050dd00(CPendulum *thi
     *(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;
     pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5cbacd;
+  pcVar3 = "none";
   piVar5 = this_ptr_00[1].part_visibility_flags + 0x19;
   do {
     cVar1 = *pcVar3;

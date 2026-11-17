@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delta_time)
 
 {
@@ -83,9 +81,9 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   afStack_58[(uint)bVar9 * -2 + 3] = afStack_a0[(uint)bVar9 * -2];
   afStack_58[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
        afStack_a0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-  fStack_8c = afStack_58[2] * _DAT_005cb0da;
-  afStack_88[0] = afStack_58[3] * _DAT_005cb0da;
-  afStack_88[1] = fStack_48 * _DAT_005cb0da;
+  fStack_8c = afStack_58[2] * 0.5f;
+  afStack_88[0] = afStack_58[3] * 0.5f;
+  afStack_88[1] = fStack_48 * 0.5f;
   fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
   fStack_14 = fStack_1c;
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
@@ -140,11 +138,11 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   green = 1.0;
   red = 1.0;
   fVar2 = 0.0;
-  CStack_98.x = _DAT_0265370c;
+  CStack_98.x = g_CVector3f_0265370c.x;
   *(uint *)((int)&CStack_98 + (uint)bVar9 * -8 + 4) =
-       *(uint *)(&DAT_02653710 + (uint)bVar9 * -8);
+       *(uint *)((int)&g_CVector3f_0265370c + (uint)bVar9 * -8 + 4);
   *(uint *)((int)&CStack_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-       *(uint *)(&DAT_02653714 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+       *(uint *)((uint)bVar9 * -8 + 0x2653714 + (uint)bVar9 * -8);
   CStack_68.x = CStack_68.x + (this_ptr->base).location.position.x;
   CStack_68.y = CStack_68.y + (this_ptr->base).location.position.y;
   CStack_68.z = CStack_68.z + (this_ptr->base).location.position.z;

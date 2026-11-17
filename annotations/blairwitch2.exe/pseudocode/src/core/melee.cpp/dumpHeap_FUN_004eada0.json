@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 64,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 39,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 153
   },
   "cross_references": [],
@@ -140,22 +138,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex address 0x5dca46 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 16,
-      "match": "0x5dca46",
-      "severity": "moderate",
-      "text": "uVar2 = 0x5dca46;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x5dca41 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 19,
-      "match": "0x5dca41",
-      "severity": "moderate",
-      "text": "uVar2 = 0x5dca41;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

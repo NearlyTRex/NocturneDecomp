@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_demnfolk_cpp_CDemnfolk_canBeAttracted_FUN_00458530(CDemnfolk *this_ptr,CDemonActor *grabber)
 
 {
@@ -64,10 +62,10 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_canBeAttracted_FUN_00458530(CDemnfolk *t
   afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        afStack_14[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   input_local_point = &CStack_6c;
-  fStack_78 = fStack_48 * _DAT_005ba8de;
-  fStack_74 = afStack_44[0] * _DAT_005ba8de;
-  fStack_70 = afStack_44[1] * _DAT_005ba8de;
-  CStack_6c.x = fStack_48 * _DAT_005ba8de;
+  fStack_78 = fStack_48 * 0.5f;
+  fStack_74 = afStack_44[0] * 0.5f;
+  fStack_70 = afStack_44[1] * 0.5f;
+  CStack_6c.x = fStack_48 * 0.5f;
   *(uint *)((int)&CStack_6c + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&stack0xffffff8c + (uint)bVar2 * -8);
   *(uint *)((int)&CStack_6c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =

@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 560,
+    "complexity_score": 487,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 265,
-    "suspect_count": 25,
+    "pseudocode_lines": 267,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
       "sign_compare_idiom",
       "stack_alignment_array",
       "undefined_data",
-      "warning_overlapping_globals"
+      "wrong_global"
     ],
-    "total_lines": 939
+    "total_lines": 941
   },
   "cross_references": [
     {
@@ -62,9 +61,9 @@
   "globals": [
     {
       "addr": "0060a008",
-      "name": "DAT_0060a008",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0060a008",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "00616494",
@@ -128,50 +127,50 @@
     },
     {
       "addr": "0126e7a8",
-      "name": "DAT_0126e7a8",
-      "type": "undefined4",
+      "name": "g_INT_0126e7a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01308800",
-      "name": "DAT_01308800",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01308800",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01510718",
-      "name": "DAT_01510718",
-      "type": "undefined4",
+      "name": "g_CDemonGlobe_PTR_01510718",
+      "type": "CDemonGlobe*",
       "value": null
     },
     {
       "addr": "0151071c",
-      "name": "DAT_0151071c",
-      "type": "undefined4",
+      "name": "g_INT_0151071c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01510720",
-      "name": "DAT_01510720",
-      "type": "undefined4",
+      "name": "g_INT_01510720",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01510724",
-      "name": "DAT_01510724",
-      "type": "undefined4",
+      "name": "g_INT_01510724",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01510728",
-      "name": "DAT_01510728",
-      "type": "undefined4",
+      "name": "g_INT_01510728",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c2b64c",
-      "name": "DAT_01c2b64c",
-      "type": "undefined4",
+      "name": "g_UINT_PTR_ARRAY_01c2b64c",
+      "type": "uint*[1200]",
       "value": null
     },
     {
@@ -550,48 +549,40 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
+      "line": 19,
       "match": "aiStackY_107c",
       "severity": "moderate",
       "text": "int aiStackY_107c [1014];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_01510724",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01510724 + (uint)bVar1 * -8) =",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)g_INT_ARRAY_014c3550",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_014c3550 + iVar3) = this_ptr->framebuffer_width;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_01510728",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01510728 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(uint *)((int)g_INT_ARRAY_014c3910",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_INT_ARRAY_014c3910 + iVar3) = 0;",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 88,
-      "match": "*(CDemonGlobe **)(iVar5 + 0x126e7ac",
+      "line": 86,
+      "match": "*(CDemonGlobe **)(iVar6 + 0x126e7ac",
       "severity": "moderate",
-      "text": "if (globe == *(CDemonGlobe **)(iVar5 + 0x126e7ac)) {",
+      "text": "if (globe == *(CDemonGlobe **)(iVar6 + 0x126e7ac)) {",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 115,
       "match": "DAT_0083c7d4",
       "severity": "mild",
       "text": "local_68 = &DAT_0083c7d4;",
@@ -599,151 +590,103 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_01c2b64c",
-      "severity": "mild",
-      "text": "local_24 = (uint *)(*(int *)(&DAT_01c2b64c + (local_54 << (DAT_01308800 & 0x1f)) * 4)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_01308800",
-      "severity": "mild",
-      "text": "local_24 = (uint *)(*(int *)(&DAT_01c2b64c + (local_54 << (DAT_01308800 & 0x1f)) * 4)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_01308800",
-      "severity": "mild",
-      "text": "+ (local_88 << (DAT_01308800 & 0x1f)) * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 177,
-      "match": "DAT_01308800",
-      "severity": "mild",
-      "text": "bVar1 = DAT_01308800;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 221,
+      "line": 220,
       "match": "DAT_0083c7d4",
       "severity": "mild",
       "text": "local_74 = &DAT_0083c7d4;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 229,
-      "match": "DAT_01c2b64c",
-      "severity": "mild",
-      "text": "local_38 = (uint *)(*(int *)(&DAT_01c2b64c + (local_64 << (DAT_01308800 & 0x1f)) * 4) +",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 222,
+      "match": "(int *)((int)g_INT_ARRAY_014c3550",
+      "severity": "moderate",
+      "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_INT_ARRAY_014c3550 + local_58)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 229,
-      "match": "DAT_01308800",
-      "severity": "mild",
-      "text": "local_38 = (uint *)(*(int *)(&DAT_01c2b64c + (local_64 << (DAT_01308800 & 0x1f)) * 4) +",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(int *)((int)g_INT_ARRAY_014c3550",
+      "severity": "moderate",
+      "text": "local_28 = *(int *)((int)g_INT_ARRAY_014c3550 + local_58);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 230,
-      "match": "DAT_01308800",
-      "severity": "mild",
-      "text": "(local_28 << (DAT_01308800 & 0x1f)) * 4);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(int *)((int)g_INT_ARRAY_014c3910",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_INT_ARRAY_014c3910 + local_58);",
+      "type": "pointer_cast"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
       "line": 232,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "while (SBORROW4(local_28,iVar5) != iVar2 < 0) {",
+      "text": "while (SBORROW4(local_28,iVar6) != iVar3 < 0) {",
       "type": "sign_compare_idiom"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 255,
-      "match": "DAT_01308800",
-      "severity": "mild",
-      "text": "local_38 = local_38 + (1 << (DAT_01308800 & 0x1f));",
-      "type": "undefined_data"
+      "description": "Scalar global g_INT_01510724 accessed via (&g_INT_01510724)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01510728 (at 0x01510728, +4 bytes).",
+      "line": 56,
+      "match": "g_INT_01510724",
+      "severity": "moderate",
+      "text": "(&g_INT_01510724)[(uint)bVar2 * -2] = *(int *)((int)&local_94 + (uint)bVar2 * -8 + 4);",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_INT_01510728 accessed via (&g_INT_01510728)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SCameraViewportState_0151072c (at 0x0151072c, +4 bytes).",
+      "line": 57,
+      "match": "g_INT_01510728",
+      "severity": "moderate",
+      "text": "(&g_INT_01510728)[(uint)bVar2 * -2 + (uint)bVar2 * -2] =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)&local_94",
+      "severity": "moderate",
+      "text": "(&g_INT_01510724)[(uint)bVar2 * -2] = *(int *)((int)&local_94 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 58,
       "match": "(int)&local_94",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + 4);",
+      "text": "*(int *)((int)&local_94 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
-      "match": "(int)&local_94",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x14c3cd0 assigned to bare local `local_70`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_70` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 118,
-      "match": "0x14c3cd0",
-      "severity": "moderate",
-      "text": "local_70 = 0x14c3cd0;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x14c3cd0 assigned to bare local `local_78`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_78` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 219,
-      "match": "0x14c3cd0",
-      "severity": "moderate",
-      "text": "local_78 = 0x14c3cd0;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xaf5218 assigned to bare local `local_7c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_7c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 220,
-      "match": "0xaf5218",
-      "severity": "moderate",
-      "text": "local_7c = 0xaf5218;",
-      "type": "raw_address_constant"
+      "text": "(&g_INT_01510724)[(uint)bVar2 * -2] = *(int *)((int)&local_94 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + 4);",
+      "text": "*(int *)((int)&local_94 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 100,
+      "match": "pSVar9 = (T *)pSVar9->ARRAY",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 102,
-      "match": "pSVar8 = (T *)pSVar8->ARRAY",
-      "severity": "moderate",
-      "text": "pSVar8 = (SCoronaLightEntry *)pSVar8->left_extents;",
+      "text": "pSVar9 = (SCoronaLightEntry *)pSVar9->left_extents;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_60` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_60->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 207,
+      "line": 206,
       "match": "local_60 = (T *)local_60->ARRAY",
       "severity": "moderate",
       "text": "local_60 = (SCoronaLightEntry *)local_60->left_extents;",

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045aae0(CDemonGlobe *this_ptr,CVector3f *position)
 
 {
@@ -19,8 +17,8 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045aae0(CDemonGlobe *t
     (this_ptr->position).y = position->y;
     (this_ptr->position).z = position->z;
   }
-  dVar2 = _DAT_005bafd1;
-  dVar1 = round((double)position->x * _DAT_005bafd1);
+  dVar2 = 256;
+  dVar1 = round((double)position->x * 256);
   (this_ptr->position_scaled).x = (int)ROUND(dVar1);
   dVar1 = round((double)position->y * dVar2);
   (this_ptr->position_scaled).y = (int)ROUND(dVar1);

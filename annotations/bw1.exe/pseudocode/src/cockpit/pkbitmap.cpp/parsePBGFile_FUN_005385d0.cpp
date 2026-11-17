@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005385d0(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index)
 
 {
@@ -97,16 +95,16 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005385d0(CPackedBi
       }
     }
     else {
-      _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
-      _DAT_01d1d404 = 0x573;
+      g_CHAR_PTR_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
+      g_INT_01d1d404 = 0x573;
       core_main_c_displayErrorAndQuit_FUN_005030e0("IO error reading PBG (possibly corrupt file).");
 LAB_00538613:
-      _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
-      _DAT_01d1d404 = 0x574;
+      g_CHAR_PTR_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
+      g_INT_01d1d404 = 0x574;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Corrupt data detected reading PBG.");
     }
-    _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
-    _DAT_01d1d404 = 0x575;
+    g_CHAR_PTR_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
+    g_INT_01d1d404 = 0x575;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory reading PBG");
   } while( true );
 }

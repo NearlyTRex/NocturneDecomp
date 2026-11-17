@@ -12,14 +12,15 @@ int __cdecl core_shadow_cpp_CShadow_renderOpaque_FUN_0055fbf0(CShadow *this_ptr)
   int iVar1;
   
   if ((this_ptr->is_opaque == 0) &&
-     (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar1 != 0)
-     ) {
+     (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                        (g_CDemonRenderer_PTR_00612560), iVar1 != 0)) {
     return 0;
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if ((iVar1 != 0) &&
      (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (0x01C51D80,"heroCanSee"), iVar1 == 0)) {
+                        (g_CEventList_PTR_0061b4d0,"heroCanSee"), iVar1 == 0)) {
     return 0;
   }
   iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240((CCharacter *)this_ptr);

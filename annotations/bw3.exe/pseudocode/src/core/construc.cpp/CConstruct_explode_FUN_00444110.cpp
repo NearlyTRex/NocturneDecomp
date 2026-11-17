@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_ptr)
 
@@ -44,8 +43,8 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_
   iVar5 = local_20->num_parts;
   this_ptr->box_count = iVar5;
   if (0x18 < iVar5) {
-    _DAT_01d71de0 = "..\\core\\construc.cpp";
-    _DAT_01d71de4 = 0x357;
+    g_CHAR_PTR_01d71de0 = "..\\core\\construc.cpp";
+    g_INT_01d71de4 = 0x357;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CConstruct::explode - Not enough containers");
   }
   iVar5 = 0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -69,7 +67,8 @@ CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_F
   CStack_a8.x = 0.0;
   afStack_b0[1] = 0.0;
   afStack_b0[0] = 0.0;
-  CStack_18.z = (float)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,DAT_007c5330);
+  CStack_18.z = (float)core_actor_cpp_castToClassHash_FUN_0040c600
+                                 (actor_ptr,g_CDemonActorType_007c52f8.name_hash);
   if ((CDemonActor *)CStack_18.z == (CDemonActor *)0x0) goto LAB_004cb25f;
   (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,in_stack_fffffe18);
   puVar2 = auStack_f0;
@@ -86,10 +85,10 @@ CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_F
   afStack_8c[(uint)bVar6 * -2 + 0xc] = afStack_8c[(uint)bVar6 * -2 + 0xf];
   afStack_8c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd] =
        afStack_8c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10];
-  fStack_6c = fStack_60 * _DAT_005e1274;
-  fStack_68 = fStack_5c * _DAT_005e1274;
-  fStack_64 = fStack_58 * _DAT_005e1274;
-  CStack_48.x = fStack_60 * _DAT_005e1274;
+  fStack_6c = fStack_60 * 0.5f;
+  fStack_68 = fStack_5c * 0.5f;
+  fStack_64 = fStack_58 * 0.5f;
+  CStack_48.x = fStack_60 * 0.5f;
   afStack_8c[(uint)bVar6 * -2 + 0x12] = afStack_8c[(uint)bVar6 * -2 + 9];
   afStack_8c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13] =
        afStack_8c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
@@ -108,8 +107,8 @@ CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_F
       CStack_a8.y = fStack_c8;
     }
     else {
-      _DAT_01d1d400 = "..\\core\\gabriela.cpp";
-      _DAT_01d1d404 = 0x944;
+      g_CHAR_PTR_01d1d400 = "..\\core\\gabriela.cpp";
+      g_INT_01d1d404 = 0x944;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Don't know how to carry light %s");
     }
     goto LAB_004cb25f;
@@ -155,7 +154,7 @@ LAB_004cb547:
     CStack_c0.y = CStack_78.y;
     CStack_c0.z = CStack_78.z;
   }
-  CStack_a8.z = fStack_c4 * (float)_DAT_005e1284 + fStack_d0 * (float)_DAT_005e127c;
+  CStack_a8.z = fStack_c4 * (float)0.29999999999999999 + fStack_d0 * (float)0.69999999999999996;
 LAB_004cb25f:
   if (hand_index == 0) {
     CStack_30.y = (float)hand_index;

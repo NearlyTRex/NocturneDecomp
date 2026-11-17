@@ -16,19 +16,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_005d3a09
-;   undefined4 DAT_005d3a0f
+;   TerminatedCString s_wav_005d3a0f
 ;   TerminatedCString s_sound_005d3a13
-;   undefined4 DAT_005d3a19
+;   TerminatedCString s_mp3_005d3a19
 ;   TerminatedCString s_sound_sndmain_cpp_005d3a1d
 ;   TerminatedCString s_Unknown_sample_file_form_005d3a32
 ;   TerminatedCString s_sound_sndmain_cpp_005d3a5b
 ;   TerminatedCString s_getSampleInfo_can_t_dete_005d3a70
 ;   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   undefined4 g_CMP3DecoderInstanceOther.sample_rate
 ;   undefined4 g_CMP3DecoderInstanceOther.num_channels
-;   undefined4 DAT_02ce71e8
+;   byte g_BYTE_02ce71e8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -138,7 +138,7 @@ section .text
     CALL crt_string.c_memmove_FUN_005a54c0 ; 00557620
         ;   XREF to: 005a54c0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005a54c0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00557625
-    PUSH 0x5d3a0f                       ; 00557628 | DAT_005d3a0f
+    PUSH 0x5d3a0f                       ; 00557628 | = "wav"
         ;   Label: LAB_00557628
     LEA EAX,[ESP + 0x4]                 ; 0055762d
     PUSH EAX                            ; 00557631
@@ -225,7 +225,7 @@ section .text
     POP ESI                             ; 0055770e
     POP EBX                             ; 0055770f
     RET                                 ; 00557710
-    PUSH 0x5d3a19                       ; 00557711 | DAT_005d3a19
+    PUSH 0x5d3a19                       ; 00557711 | = "mp3"
         ;   Label: LAB_00557711
     LEA EAX,[ESP + 0x4]                 ; 00557716
     PUSH EAX                            ; 0055771a
@@ -235,14 +235,14 @@ section .text
     TEST EAX,EAX                        ; 00557723
     JNZ 0x005577a5                      ; 00557725
         ;   XREF to: 005577a5 (CONDITIONAL_JUMP)  ; LAB_005577a5
-    MOV DL,byte ptr [0x02ce71e8]        ; 0055772b | DAT_02ce71e8
+    MOV DL,byte ptr [0x02ce71e8]        ; 0055772b | g_BYTE_02ce71e8
     TEST DL,0x1                         ; 00557731
     JNZ 0x0055775b                      ; 00557734
         ;   XREF to: 0055775b (CONDITIONAL_JUMP)  ; LAB_0055775b
     MOV DH,DL                           ; 00557736
     OR DH,0x1                           ; 00557738
     PUSH 0x2cdebb8                      ; 0055773b
-    MOV byte ptr [0x02ce71e8],DH        ; 00557740 | DAT_02ce71e8
+    MOV byte ptr [0x02ce71e8],DH        ; 00557740 | g_BYTE_02ce71e8
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_00502750 ; 00557746
         ;   XREF to: 00502750 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_00502750(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 0055774b
@@ -273,8 +273,8 @@ section .text
     MOV ECX,0x5d3a1d                    ; 005577a6 | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x12d1                      ; 005577ab
     PUSH 0x5d3a32                       ; 005577b0 | = "Unknown sample file format extension: %s"
-    MOV dword ptr [0x01d71de0],ECX      ; 005577b5 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 005577bb | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005577b5 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 005577bb | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005577c1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     JMP 0x005576c5                      ; 005577c6
@@ -284,8 +284,8 @@ section .text
     MOV EDI,0x5d3a5b                    ; 005577cc | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x12dc                      ; 005577d1
     PUSH 0x5d3a70                       ; 005577d6 | = "getSampleInfo - can't determine lengt..."
-    MOV dword ptr [0x01d71de0],EDI      ; 005577db | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 005577e1 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 005577db | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 005577e1 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005577e6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005577eb

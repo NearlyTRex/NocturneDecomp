@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacter *this_ptr,float delta_time)
 
 {
@@ -50,7 +48,7 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
                ,2.0);
   }
   if (this_ptr->render_active == 0) {
-    if (this_ptr->closest_distance_threshold == _DAT_005fd614) {
+    if (this_ptr->closest_distance_threshold == 9999.0f) {
       iVar4 = 0;
       pCVar5 = this_ptr;
       do {
@@ -67,14 +65,14 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
     (this_ptr->base).platform_position_delta.y = 0.0;
     fVar1 = this_ptr->closest_distance_threshold;
     (this_ptr->base).location.position.y = fVar3 + (this_ptr->base).location.position.y;
-    if ((fVar1 == _DAT_005fd614) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
+    if ((fVar1 == 9999.0f) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
       fVar3 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
                         (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
       this_ptr->closest_distance_threshold = fVar3;
     }
     this_ptr->is_on_ground =
          (uint)((this_ptr->base).location.position.y <
-               this_ptr->closest_distance_threshold + (float)_DAT_005d592f);
+               this_ptr->closest_distance_threshold + (float)0.01);
     (this_ptr->position_delta).z = 0.0;
     (this_ptr->position_delta).y = (this_ptr->position_delta).z;
     (this_ptr->position_delta).x = (this_ptr->position_delta).y;

@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_clearTextureCache_FUN_00575010(void)
 
 {
-  engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(_DAT_02652eb0);
-  _DAT_02652eb4 = 0;
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(g_CTextureCache_PTR_02652eb0);
+  g_INT_02652eb4 = 0;
   return;
 }

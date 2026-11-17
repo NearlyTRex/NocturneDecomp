@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_trigger_cpp_CTrigger_process_FUN_0056e230(CTrigger *this_ptr,float delta_time)
 
 {
@@ -59,26 +57,26 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_0056e230(CTrigger *this_ptr,f
     if (iVar6 != 0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);
       iVar6 = 0;
-      if (0 < _DAT_01d5ba00) {
+      if (0 < g_INT_01d5ba00) {
         iVar10 = 0;
         do {
           iVar7 = core_trigger_cpp_CTrigger_containsActor_FUN_0056f080
-                            (this_ptr,*(CDemonActor **)(iVar10 + 0x1d5ba04));
+                            (this_ptr,*(CDemonActor **)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar10));
           if (iVar7 != 0) {
-            pCVar5 = *(CDemonActor **)(iVar10 + 0x1d5ba04);
+            pCVar5 = *(CDemonActor **)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar10);
             pcStack_1c = (char *)0x1;
             goto LAB_0056e2d5;
           }
           iVar6 = iVar6 + 1;
           iVar10 = iVar10 + 4;
-        } while (iVar6 < _DAT_01d5ba00);
+        } while (iVar6 < g_INT_01d5ba00);
       }
     }
     break;
   case TRIGGER_CAUSE_ACTOR:
     if (this_ptr->cached_actor == (CDemonActor *)0x0) {
       pCVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90
-                         (0x01D81080,this_ptr->actor_name);
+                         (g_CDemonMission_PTR_00600530,this_ptr->actor_name);
       this_ptr->cached_actor = pCVar5;
     }
     pCVar5 = this_ptr->cached_actor;
@@ -115,10 +113,10 @@ LAB_0056e2d5:
       afStack_7c[(uint)bVar11 * -2] = afStack_58[(uint)bVar11 * -2];
       afStack_7c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
            afStack_58[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-      afStack_7c[2] = fStack_80 * _DAT_005d660b;
-      afStack_7c[3] = afStack_7c[0] * _DAT_005d660b;
-      fStack_6c = afStack_7c[1] * _DAT_005d660b;
-      CStack_68.x = fStack_80 * _DAT_005d660b;
+      afStack_7c[2] = fStack_80 * 0.5f;
+      afStack_7c[3] = afStack_7c[0] * 0.5f;
+      fStack_6c = afStack_7c[1] * 0.5f;
+      CStack_68.x = fStack_80 * 0.5f;
       *(float *)((int)&CStack_68 + (uint)bVar11 * -8 + 4) = afStack_7c[(uint)bVar11 * -2 + 3];
       *(float *)((int)&CStack_68 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
            afStack_7c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
@@ -133,13 +131,13 @@ LAB_0056e2d5:
         fStack_94 = afStack_40[0];
         fStack_90 = afStack_40[1];
       }
-      CStack_8c.x = (int)ROUND(fStack_98 * _DAT_005e58b0);
-      CStack_8c.y = (int)ROUND(fStack_94 * _DAT_005e58b0);
-      CStack_8c.z = (int)ROUND(fStack_90 * _DAT_005e58b0);
+      CStack_8c.x = (int)ROUND(fStack_98 * 256.0f);
+      CStack_8c.y = (int)ROUND(fStack_94 * 256.0f);
+      CStack_8c.z = (int)ROUND(fStack_90 * 256.0f);
       iVar6 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00537e20
                         (g_CDemonSetPtr,&CStack_8c,(CVector3i *)0x0);
-      if ((this_ptr->light_min * (float)_DAT_005d6613 <= (float)iVar6) &&
-         ((float)iVar6 <= this_ptr->light_max * (float)_DAT_005d6613)) {
+      if ((this_ptr->light_min * (float)65536 <= (float)iVar6) &&
+         ((float)iVar6 <= this_ptr->light_max * (float)65536)) {
         pcStack_1c = (char *)0x1;
       }
     }
@@ -160,8 +158,8 @@ LAB_0056e2d5:
       fVar4 = (this_ptr->trigger_size).z;
       afStack_40[3] = fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2;
       iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790
-                            (0x01C73654,&pCVar1->position,
-                             (float)(((int)afStack_40[3] >> 1) + _DAT_01d1a0a4),(CVector3f *)0x0,
+                            (g_CFireEffect_PTR_005fc5a0,&pCVar1->position,
+                             (float)(((int)afStack_40[3] >> 1) + g_INT_01d1a0a4),(CVector3f *)0x0,
                              (float *)0x0,(int *)0x0);
     }
     break;
@@ -253,10 +251,12 @@ LAB_0056e84c:
 switchD_0056e2e9_default:
   this_ptr->prev_triggered = iStack_24;
   if (this_ptr->trigger_state == 0) {
-    core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,this_ptr->off_event);
+    core_event_cpp_CEventList_executeCommands_FUN_0048c150
+              (g_CEventList_PTR_005fba60,this_ptr->off_event);
     this_ptr->triggering_actor = (CDemonActor *)0x0;
     return;
   }
-  core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,this_ptr->on_event);
+  core_event_cpp_CEventList_executeCommands_FUN_0048c150
+            (g_CEventList_PTR_005fba60,this_ptr->on_event);
   return;
 }

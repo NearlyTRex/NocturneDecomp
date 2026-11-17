@@ -2,15 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 203,
+    "complexity_score": 103,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 14,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
+      "pointer_truncation",
       "unresolved_funcptr"
     ],
     "total_lines": 175
@@ -72,21 +72,21 @@
   "globals": [
     {
       "addr": "0061eea0",
-      "name": "DAT_0061eea0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Heap_PTR_0061eea0",
+      "type": "Heap*",
+      "value": "00000000"
     },
     {
       "addr": "0061eea4",
-      "name": "DAT_0061eea4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Heap_PTR_0061eea4",
+      "type": "Heap*",
+      "value": "00000000"
     },
     {
       "addr": "0061eea8",
-      "name": "DAT_0061eea8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061eea8",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061f2c0",
@@ -102,8 +102,8 @@
     },
     {
       "addr": "026807a0",
-      "name": "DAT_026807a0",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_026807a0",
+      "type": "char[16]",
       "value": null
     }
   ],
@@ -194,108 +194,28 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061eea8",
-      "severity": "mild",
-      "text": "if (DAT_0061eea8 < local_24) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0061eea4",
-      "severity": "mild",
-      "text": "uVar4 = DAT_0061eea4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_0061eea4",
-      "severity": "mild",
-      "text": "if (DAT_0061eea4 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0061eea8",
-      "severity": "mild",
-      "text": "DAT_0061eea8 = DAT_0061eea4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0061eea4",
-      "severity": "mild",
-      "text": "DAT_0061eea8 = DAT_0061eea4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_0061eea0",
-      "severity": "mild",
-      "text": "uVar4 = DAT_0061eea0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_0061eea8",
-      "severity": "mild",
-      "text": "DAT_0061eea8 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0061eea0",
-      "severity": "mild",
-      "text": "uVar4 = DAT_0061eea0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0061eea4",
-      "severity": "mild",
-      "text": "DAT_0061eea4 = uVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_0061eea8",
-      "severity": "mild",
-      "text": "if (DAT_0061eea8 < uVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0061eea8",
-      "severity": "mild",
-      "text": "DAT_0061eea8 = uVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_026807a0",
-      "severity": "mild",
-      "text": "DAT_026807a0 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 54,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2c8)();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `g_Heap_PTR_0061eea4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)g_Heap_PTR_0061eea4",
+      "severity": "moderate",
+      "text": "g_INT_0061eea8 = (int)g_Heap_PTR_0061eea4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pHVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)pHVar1",
+      "severity": "moderate",
+      "text": "g_INT_0061eea8 = (int)pHVar1;",
+      "type": "pointer_truncation"
     }
   ]
 }

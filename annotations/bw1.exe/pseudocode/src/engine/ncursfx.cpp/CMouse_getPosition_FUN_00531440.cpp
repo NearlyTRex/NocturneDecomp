@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_00531440(CMouse *this_ptr,int *out_x,int *out_y)
 
 {
-  *out_x = _DAT_01c4353c;
-  *out_y = _DAT_01c43540;
+  *out_x = g_INT_01c4353c;
+  *out_y = g_INT_01c43540;
   return;
 }

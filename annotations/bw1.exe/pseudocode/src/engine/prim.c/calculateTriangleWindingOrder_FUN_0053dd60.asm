@@ -28,7 +28,7 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00713a7c
+;   int g_INT_00713a7c
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0053dd69
     MOV EAX,dword ptr [EBP + 0x18]      ; 0053dd6c
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0053dd6f
-    CMP dword ptr [0x00713a7c],0x1      ; 0053dd72 | DAT_00713a7c
+    CMP dword ptr [0x00713a7c],0x1      ; 0053dd72 | g_INT_00713a7c
     JNZ 0x0053dde3                      ; 0053dd79
         ;   XREF to: 0053dde3 (CONDITIONAL_JUMP)  ; LAB_0053dde3
     MOV EDI,dword ptr [EBX + 0x10]      ; 0053dd7b

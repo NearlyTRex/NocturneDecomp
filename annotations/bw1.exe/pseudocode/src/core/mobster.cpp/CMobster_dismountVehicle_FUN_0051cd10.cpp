@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_0051cd10(CMobster *this_ptr)
 
@@ -32,7 +31,7 @@ void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_0051cd10(CMobster *th
       local_30.z = -1.6;
       local_30.x = 4.2;
     }
-    fVar1 = (this_ptr->vehicle->orient).vec.y + _DAT_005e9dba;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + 1.570796f;
   }
   else {
     local_48.y = -2.35;
@@ -43,7 +42,7 @@ void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_0051cd10(CMobster *th
       local_30.z = -1.6;
       local_30.x = -4.2;
     }
-    fVar1 = (this_ptr->vehicle->orient).vec.y + _DAT_005e9dbe;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + -1.570796f;
   }
   (this_ptr->base).base.base.orient.vec.y = fVar1;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40(this_ptr->vehicle,&local_30,&local_18);

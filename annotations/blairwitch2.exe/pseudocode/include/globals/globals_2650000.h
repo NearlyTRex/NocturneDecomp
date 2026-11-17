@@ -4,9 +4,16 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/COutStreamDebug.h"
+#include "types/classes/CTerrain.h"
+#include "types/classes/CTextureCache.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/classes/CWater.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2650000
@@ -27,6 +34,71 @@ extern CDemonActorType g_CWaterActorClassInfo;
 // COutStreamDebug
 extern COutStreamDebug g_COutStreamDebugInstance;
 
+// CTerrain
+extern CTerrain g_CTerrain_0265364c;
+
+// CTextureCache*
+extern CTextureCache* g_CTextureCache_PTR_02652eb0;
+
+// CVector3f
+extern CVector3f g_CVector3f_0265370c;
+
+// CVector3i
+extern CVector3i g_CVector3i_0265cc48;
+
 // CWater
 extern CWater g_CWaterInstance;
+
+// HANDLE
+extern HANDLE g_HANDLE_0265363c;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_02652e60;
+
+// SMRGLTextureModel
+extern SMRGLTextureModel g_SMRGLTextureModel_026534f4;
+
+// char[4]
+extern char g_CHAR_ARRAY_0265fb64[4];
+
+// char[516]
+extern char g_CHAR_ARRAY_02652eb8[516];
+
+// char[532]
+extern char g_CHAR_ARRAY_026530cc[532];
+extern char g_CHAR_ARRAY_026532e0[532];
+
+// float
+extern float g_FLOAT_026537a0;
+extern float g_FLOAT_026537a4;
+extern float g_FLOAT_026537a8;
+extern float g_FLOAT_026537ac;
+extern float g_FLOAT_026537b0;
+extern float g_FLOAT_0265b7e8;
+
+// int
+extern int g_INT_02652eac;
+extern int g_INT_02652eb4;
+extern int g_INT_02653648;
+extern int g_INT_026537b4;
+extern int g_INT_026537b8;
+extern int g_INT_026537bc;
+extern int g_INT_0265b7e4;
+extern int g_INT_0265b7ec;
+extern int g_INT_0265b7f0;
+
+// int[4096]
+extern int g_INT_ARRAY_026537c0[4096];
+extern int g_INT_ARRAY_026577c0[4096];
+
+// uchar[4]
+extern uchar g_UCHAR_ARRAY_0265362c[4];
+extern uchar g_UCHAR_ARRAY_02653630[4];
+
+// ulong
+extern ulong g_ULONG_026530bc;
+
+// void*
+extern void* g_PTR_02653640;
+extern void* g_PTR_02653644;
 

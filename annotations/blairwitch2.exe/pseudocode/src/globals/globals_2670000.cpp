@@ -7,3 +7,6 @@
 // CDemonActorType
 CDemonActorType g_CChainClassInfo = {};
 
+// CVector3i[2000]
+CVector3i g_CVector3i_ARRAY_0267a38c[2000] = {};
+

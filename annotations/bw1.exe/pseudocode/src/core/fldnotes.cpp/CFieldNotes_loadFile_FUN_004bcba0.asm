@@ -39,10 +39,10 @@
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00547f2b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df822
+;   TerminatedCString s_anon_005df822
 ;   TerminatedCString s_world_005dfce8
 ;   TerminatedCString s_Can_t_open_field_notes_f_005dfcee
-;   undefined4 DAT_005dfd0d
+;   TerminatedCString s_rt_005dfd0d
 ;   TerminatedCString s_world_005dfd10
 ;   TerminatedCString s_core_fldnotes_cpp_005dfd16
 ;   TerminatedCString s_Can_t_open_field_notes_f_005dfd2b
@@ -111,11 +111,11 @@ section .text
     POP EDI                             ; 004bcbec
         ;   Label: LAB_004bcbec
     MOV ESI,dword ptr [ESP + 0x5c0]     ; 004bcbed
-    MOV dword ptr [0x01cc4268],EBX      ; 004bcbf4 | DAT_01cc4268
+    MOV dword ptr [0x01cc4268],EBX      ; 004bcbf4 | g_INT_01cc4268
     TEST ESI,ESI                        ; 004bcbfa
     JZ 0x004bcc08                       ; 004bcbfc
         ;   XREF to: 004bcc08 (CONDITIONAL_JUMP)  ; LAB_004bcc08
-    MOV dword ptr [0x01cc4268],0x1      ; 004bcbfe | DAT_01cc4268
+    MOV dword ptr [0x01cc4268],0x1      ; 004bcbfe | g_INT_01cc4268
     MOV EBP,dword ptr [ESP + 0x5b8]     ; 004bcc08
         ;   Label: LAB_004bcc08
     PUSH EBP                            ; 004bcc0f
@@ -127,7 +127,7 @@ section .text
     TEST EAX,EAX                        ; 004bcc24
     JL 0x004bcda8                       ; 004bcc26
         ;   XREF to: 004bcda8 (CONDITIONAL_JUMP)  ; LAB_004bcda8
-    PUSH 0x5dfd0d                       ; 004bcc2c | DAT_005dfd0d
+    PUSH 0x5dfd0d                       ; 004bcc2c | = "rt"
     PUSH EBP                            ; 004bcc31
     PUSH 0x5dfd10                       ; 004bcc32 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 004bcc37
@@ -178,7 +178,7 @@ section .text
         ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bcccc
     XOR EDX,EDX                         ; 004bcccf
-    MOV ECX,dword ptr [0x01cc55cc]      ; 004bccd1 | DAT_01cc55cc
+    MOV ECX,dword ptr [0x01cc55cc]      ; 004bccd1 | g_INT_01cc55cc
     MOV dword ptr [ESP + 0x564],EDX     ; 004bccd7
     TEST ECX,ECX                        ; 004bccde
     JLE 0x004bcd10                      ; 004bcce0
@@ -189,7 +189,7 @@ section .text
     CALL core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0 ; 004bcce8
         ;   XREF to: 004bc2d0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0(SNotesMap * this_ptr)
     INC ESI                             ; 004bcced
-    MOV EDI,dword ptr [0x01cc55cc]      ; 004bccee | DAT_01cc55cc
+    MOV EDI,dword ptr [0x01cc55cc]      ; 004bccee | g_INT_01cc55cc
     ADD ESP,0x4                         ; 004bccf4
     ADD EBX,0x970                       ; 004bccf7
     CMP ESI,EDI                         ; 004bccfd
@@ -201,8 +201,8 @@ section .text
     MOV EBP,0x1                         ; 004bcd10
         ;   Label: LAB_004bcd10
     MOV EDX,dword ptr [ESP + 0x5c0]     ; 004bcd15
-    MOV dword ptr [0x0061d2e4],EBP      ; 004bcd1c | DAT_0061d2e4
-    MOV dword ptr [0x0061d2e0],EBP      ; 004bcd22 | DAT_0061d2e0
+    MOV dword ptr [0x0061d2e4],EBP      ; 004bcd1c | g_INT_0061d2e4
+    MOV dword ptr [0x0061d2e0],EBP      ; 004bcd22 | g_INT_0061d2e0
     TEST EDX,EDX                        ; 004bcd28
     JZ 0x004bcd98                       ; 004bcd2a
         ;   XREF to: 004bcd98 (CONDITIONAL_JUMP)  ; LAB_004bcd98
@@ -220,10 +220,10 @@ section .text
     CALL core_fldnotes.cpp_STextView_reset_FUN_004bb1c0 ; 004bcd50
         ;   XREF to: 004bb1c0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_reset_FUN_004bb1c0(STextView * this_ptr)
     ADD ESP,0x4                         ; 004bcd55
-    MOV byte ptr [0x01cc4270],BL        ; 004bcd58 | DAT_01cc4270
+    MOV byte ptr [0x01cc4270],BL        ; 004bcd58 | g_CHAR_ARRAY_01cc4270
     XOR ECX,ECX                         ; 004bcd5e
-    MOV EBX,dword ptr [0x01cc4470]      ; 004bcd60 | DAT_01cc4470
-    MOV dword ptr [0x0061d2e4],ECX      ; 004bcd66 | DAT_0061d2e4
+    MOV EBX,dword ptr [0x01cc4470]      ; 004bcd60 | g_INT_01cc4470
+    MOV dword ptr [0x0061d2e4],ECX      ; 004bcd66 | g_INT_0061d2e4
     TEST EBX,EBX                        ; 004bcd6c
     JLE 0x004bcd98                      ; 004bcd6e
         ;   XREF to: 004bcd98 (CONDITIONAL_JUMP)  ; LAB_004bcd98
@@ -237,7 +237,7 @@ section .text
     TEST EAX,EAX                        ; 004bcd83
     JZ 0x004bcdbb                       ; 004bcd85
         ;   XREF to: 004bcdbb (CONDITIONAL_JUMP)  ; LAB_004bcdbb
-    MOV EDI,dword ptr [0x01cc4470]      ; 004bcd87 | DAT_01cc4470
+    MOV EDI,dword ptr [0x01cc4470]      ; 004bcd87 | g_INT_01cc4470
     INC ESI                             ; 004bcd8d
     ADD EBX,0x2e4                       ; 004bcd8e
     CMP ESI,EDI                         ; 004bcd94
@@ -254,7 +254,7 @@ section .text
     PUSH EBP                            ; 004bcda8
         ;   Label: LAB_004bcda8
     PUSH 0x5dfcee                       ; 004bcda9 | = "Can't open field notes file %s"
-    PUSH 0x1cc4270                      ; 004bcdae | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bcdae | g_CHAR_ARRAY_01cc4270
         ;   Label: LAB_004bcdae
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bcdb3
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
@@ -273,7 +273,7 @@ section .text
     TEST EDX,EDX                        ; 004bcdd6
     JNZ 0x004bce0b                      ; 004bcdd8
         ;   XREF to: 004bce0b (CONDITIONAL_JUMP)  ; LAB_004bce0b
-    PUSH 0x1cc4270                      ; 004bcdda | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bcdda | g_CHAR_ARRAY_01cc4270
     MOV ECX,dword ptr [0x0061abc0]      ; 004bcddf | g_CEditorToolsPtr
     PUSH ECX                            ; 004bcde5
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004bcde6
@@ -296,13 +296,13 @@ section .text
         ;   Label: LAB_004bce0b
     MOV EDI,EDX                         ; 004bce10
     PUSH EDI                            ; 004bce12
-    MOV AL,byte ptr [ESI]               ; 004bce13 | DAT_01cc4270 | DAT_01cc4272
+    MOV AL,byte ptr [ESI]               ; 004bce13 | g_CHAR_ARRAY_01cc4270 | g_CHAR_ARRAY_01cc4270+2
         ;   Label: LAB_004bce13
     MOV byte ptr [EDI],AL               ; 004bce15
     CMP AL,0x0                          ; 004bce17
     JZ 0x004bce2b                       ; 004bce19
         ;   XREF to: 004bce2b (CONDITIONAL_JUMP)  ; LAB_004bce2b
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bce1b | DAT_01cc4271 | DAT_01cc4273
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bce1b | g_CHAR_ARRAY_01cc4270+1 | g_CHAR_ARRAY_01cc4270+3
     ADD ESI,0x2                         ; 004bce1e
     MOV byte ptr [EDI + 0x1],AL         ; 004bce21
     ADD EDI,0x2                         ; 004bce24
@@ -318,14 +318,14 @@ section .text
     MOV EDX,0x5dfd16                    ; 004bce2f | = "..\\core\\fldnotes.cpp"
     MOV ECX,0x8ee                       ; 004bce34
     PUSH 0x5dfd2b                       ; 004bce39 | = "Can't open field notes file %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 004bce3e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004bce44 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004bce3e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004bce44 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bce4a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004bce4f
     JMP 0x004bcc4e                      ; 004bce52
         ;   XREF to: 004bcc4e (UNCONDITIONAL_JUMP)  ; LAB_004bcc4e
-    PUSH 0x5df822                       ; 004bce57 | DAT_005df822
+    PUSH 0x5df822                       ; 004bce57 | = "//"
         ;   Label: LAB_004bce57
     PUSH EBX                            ; 004bce5c
     CALL crt_string.c_strstr_FUN_005c2dc0 ; 004bce5d
@@ -353,7 +353,7 @@ section .text
         ;   Label: LAB_004bce96
     INC AL                              ; 004bce98
     MOVZX EDI,AL                        ; 004bce9a
-    MOV DL,byte ptr [EDI + 0x626114]    ; 004bce9d | DAT_00626114
+    MOV DL,byte ptr [EDI + 0x626114]    ; 004bce9d | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bcea3
     TEST DL,0x2                         ; 004bcea6
     JZ 0x004bceaf                       ; 004bcea9
@@ -374,7 +374,7 @@ section .text
         ;   Label: LAB_004bcec9
     INC AL                              ; 004bcecb
     MOVZX EDI,AL                        ; 004bcecd
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bced0 | DAT_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bced0 | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bced6
     TEST DH,0x2                         ; 004bced9
     JZ 0x004bcfca                       ; 004bcedc
@@ -415,7 +415,7 @@ section .text
         ;   Label: LAB_004bcf17
     INC AL                              ; 004bcf19
     AND EAX,0xff                        ; 004bcf1b
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bcf20 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bcf20 | g_UCHAR_ARRAY_00626114
     JZ 0x004bcf2c                       ; 004bcf27
         ;   XREF to: 004bcf2c (CONDITIONAL_JUMP)  ; LAB_004bcf2c
     INC ESI                             ; 004bcf29
@@ -439,7 +439,7 @@ section .text
         ;   XREF to: 004bcf34 (CONDITIONAL_JUMP)  ; LAB_004bcf34
     POP EDI                             ; 004bcf4c
         ;   Label: LAB_004bcf4c
-    MOV EDI,dword ptr [0x01cc4470]      ; 004bcf4d | DAT_01cc4470
+    MOV EDI,dword ptr [0x01cc4470]      ; 004bcf4d | g_INT_01cc4470
     CMP EDI,0x6                         ; 004bcf53
     JGE 0x004bcfaa                      ; 004bcf56
         ;   XREF to: 004bcfaa (CONDITIONAL_JUMP)  ; LAB_004bcfaa
@@ -465,11 +465,11 @@ section .text
         ;   XREF to: 004bcf71 (CONDITIONAL_JUMP)  ; LAB_004bcf71
     POP EDI                             ; 004bcf89
         ;   Label: LAB_004bcf89
-    MOV EBX,dword ptr [0x01cc4470]      ; 004bcf8a | DAT_01cc4470
+    MOV EBX,dword ptr [0x01cc4470]      ; 004bcf8a | g_INT_01cc4470
     MOV dword ptr [ESP + 0x570],ECX     ; 004bcf90
     INC EBX                             ; 004bcf97
     MOV dword ptr [ESP + 0x56c],EDX     ; 004bcf98
-    MOV dword ptr [0x01cc4470],EBX      ; 004bcf9f | DAT_01cc4470
+    MOV dword ptr [0x01cc4470],EBX      ; 004bcf9f | g_INT_01cc4470
     JMP 0x004bcc7e                      ; 004bcfa5
         ;   XREF to: 004bcc7e (UNCONDITIONAL_JUMP)  ; LAB_004bcc7e
     PUSH EBP                            ; 004bcfaa
@@ -477,7 +477,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x5bc]     ; 004bcfab
     PUSH ESI                            ; 004bcfb2
     PUSH 0x5dfd52                       ; 004bcfb3 | = "Too many field notes sections in %s, ..."
-    PUSH 0x1cc4270                      ; 004bcfb8 | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bcfb8 | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bcfbd
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bcfc2
@@ -496,7 +496,7 @@ section .text
         ;   Label: LAB_004bcfe4
     INC AL                              ; 004bcfe6
     MOVZX EDI,AL                        ; 004bcfe8
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bcfeb | DAT_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bcfeb | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bcff1
     TEST DH,0x2                         ; 004bcff4
     JZ 0x004bd0f0                       ; 004bcff7
@@ -537,7 +537,7 @@ section .text
         ;   Label: LAB_004bd032
     INC AL                              ; 004bd034
     AND EAX,0xff                        ; 004bd036
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd03b | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd03b | g_UCHAR_ARRAY_00626114
     JZ 0x004bd047                       ; 004bd042
         ;   XREF to: 004bd047 (CONDITIONAL_JUMP)  ; LAB_004bd047
     INC ESI                             ; 004bd044
@@ -615,7 +615,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x5bc]     ; 004bd0d1
     PUSH EDX                            ; 004bd0d8
     PUSH 0x5dfd85                       ; 004bd0d9 | = "Didn't expect '\\title' in %s, line %d"
-    PUSH 0x1cc4270                      ; 004bd0de | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd0de | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd0e3
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd0e8
@@ -625,7 +625,7 @@ section .text
         ;   Label: LAB_004bd0f0
     JZ 0x004bd127                       ; 004bd0f3
         ;   XREF to: 004bd127 (CONDITIONAL_JUMP)  ; LAB_004bd127
-    MOV EBX,0x5dfdf2                    ; 004bd0f5 | DAT_005dfdf2
+    MOV EBX,0x5dfdf2                    ; 004bd0f5 | = "task"
         ;   Label: LAB_004bd0f5
     LEA EAX,[ESP + 0x400]               ; 004bd0fa
     MOV ESI,ESP                         ; 004bd101
@@ -634,7 +634,7 @@ section .text
         ;   Label: LAB_004bd10a
     INC AL                              ; 004bd10c
     MOVZX EDI,AL                        ; 004bd10e
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd111 | DAT_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd111 | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bd117
     TEST DH,0x2                         ; 004bd11a
     JZ 0x004bd258                       ; 004bd11d
@@ -675,7 +675,7 @@ section .text
         ;   Label: LAB_004bd158
     INC AL                              ; 004bd15a
     AND EAX,0xff                        ; 004bd15c
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd161 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd161 | g_UCHAR_ARRAY_00626114
     JZ 0x004bd16d                       ; 004bd168
         ;   XREF to: 004bd16d (CONDITIONAL_JUMP)  ; LAB_004bd16d
     INC ESI                             ; 004bd16a
@@ -705,7 +705,7 @@ section .text
         ;   XREF to: 004bd1ff (CONDITIONAL_JUMP)  ; LAB_004bd1ff
     LEA EDI,[ESP + 0x400]               ; 004bd199
     XOR EBX,EBX                         ; 004bd1a0
-    MOV ESI,dword ptr [0x01cc4470]      ; 004bd1a2 | DAT_01cc4470
+    MOV ESI,dword ptr [0x01cc4470]      ; 004bd1a2 | g_INT_01cc4470
     MOV dword ptr [ESP + 0x580],EBX     ; 004bd1a8
     TEST ESI,ESI                        ; 004bd1af
     JLE 0x004bd1d9                      ; 004bd1b1
@@ -747,13 +747,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0x5bc]     ; 004bd200
     PUSH EDI                            ; 004bd207
     PUSH 0x5dfdb1                       ; 004bd208 | = "Didn't expect '\\entry' in %s, line %d"
-    PUSH 0x1cc4270                      ; 004bd20d | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd20d | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd212
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd217
     JMP 0x004bcdbb                      ; 004bd21a
         ;   XREF to: 004bcdbb (UNCONDITIONAL_JUMP)  ; LAB_004bcdbb
-    MOV EAX,[0x01cc4470]                ; 004bd21f | DAT_01cc4470
+    MOV EAX,[0x01cc4470]                ; 004bd21f | g_INT_01cc4470
         ;   Label: LAB_004bd21f
     INC EBX                             ; 004bd224
     ADD ESI,0x2e4                       ; 004bd225
@@ -768,7 +768,7 @@ section .text
     LEA EAX,[ESP + 0x404]               ; 004bd239
     PUSH EAX                            ; 004bd240
     PUSH 0x5dfdd7                       ; 004bd241 | = "Duplicate entry '%s' in %s"
-    PUSH 0x1cc4270                      ; 004bd246 | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd246 | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd24b
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd250
@@ -778,7 +778,7 @@ section .text
         ;   Label: LAB_004bd258
     JZ 0x004bd28f                       ; 004bd25b
         ;   XREF to: 004bd28f (CONDITIONAL_JUMP)  ; LAB_004bd28f
-    MOV EBX,0x5dfe37                    ; 004bd25d | DAT_005dfe37
+    MOV EBX,0x5dfe37                    ; 004bd25d | = "map"
         ;   Label: LAB_004bd25d
     LEA EAX,[ESP + 0x400]               ; 004bd262
     MOV ESI,ESP                         ; 004bd269
@@ -787,7 +787,7 @@ section .text
         ;   Label: LAB_004bd272
     INC AL                              ; 004bd274
     MOVZX EDI,AL                        ; 004bd276
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd279 | DAT_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd279 | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bd27f
     TEST DH,0x2                         ; 004bd282
     JZ 0x004bd3d4                       ; 004bd285
@@ -795,7 +795,7 @@ section .text
     MOV ESI,EAX                         ; 004bd28b
     JMP 0x004bd272                      ; 004bd28d
         ;   XREF to: 004bd272 (UNCONDITIONAL_JUMP)  ; LAB_004bd272
-    MOV CH,byte ptr [EBX]               ; 004bd28f | DAT_005dfdf2
+    MOV CH,byte ptr [EBX]               ; 004bd28f | = "task"
         ;   Label: LAB_004bd28f
     MOV ESI,EAX                         ; 004bd291
     TEST CH,CH                          ; 004bd293
@@ -810,7 +810,7 @@ section .text
     MOV EDI,EAX                         ; 004bd2a1
     XOR EAX,EAX                         ; 004bd2a3
     ADD ESP,0x4                         ; 004bd2a5
-    MOV AL,byte ptr [EBX]               ; 004bd2a8 | DAT_005dfdf2
+    MOV AL,byte ptr [EBX]               ; 004bd2a8 | = "task"
     PUSH EAX                            ; 004bd2aa
     CALL crt_ctype.c_toupper_FUN_005c12b0 ; 004bd2ab
         ;   XREF to: 005c12b0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005c12b0(int c)
@@ -818,7 +818,7 @@ section .text
     CMP EDI,EAX                         ; 004bd2b3
     JNZ 0x004bd25d                      ; 004bd2b5
         ;   XREF to: 004bd25d (CONDITIONAL_JUMP)  ; LAB_004bd25d
-    MOV AL,byte ptr [EBX + 0x1]         ; 004bd2b7 | DAT_005dfdf3
+    MOV AL,byte ptr [EBX + 0x1]         ; 004bd2b7 | s_ask_005dfdf2+1
     INC EBX                             ; 004bd2ba
     INC ESI                             ; 004bd2bb
     TEST AL,AL                          ; 004bd2bc
@@ -828,7 +828,7 @@ section .text
         ;   Label: LAB_004bd2c0
     INC AL                              ; 004bd2c2
     AND EAX,0xff                        ; 004bd2c4
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd2c9 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd2c9 | g_UCHAR_ARRAY_00626114
     JZ 0x004bd2d5                       ; 004bd2d0
         ;   XREF to: 004bd2d5 (CONDITIONAL_JUMP)  ; LAB_004bd2d5
     INC ESI                             ; 004bd2d2
@@ -856,7 +856,7 @@ section .text
     JZ 0x004bd37a                       ; 004bd2fe
         ;   XREF to: 004bd37a (CONDITIONAL_JUMP)  ; LAB_004bd37a
     LEA EAX,[ESP + 0x400]               ; 004bd304
-    MOV EDX,dword ptr [0x01cc4470]      ; 004bd30b | DAT_01cc4470
+    MOV EDX,dword ptr [0x01cc4470]      ; 004bd30b | g_INT_01cc4470
     MOV dword ptr [ESP + 0x588],EAX     ; 004bd311
     XOR EAX,EAX                         ; 004bd318
     XOR EBX,EBX                         ; 004bd31a
@@ -902,13 +902,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x5bc]     ; 004bd37b
     PUSH ECX                            ; 004bd382
     PUSH 0x5dfdf7                       ; 004bd383 | = "Didn't expect '\\task' in %s, line %d"
-    PUSH 0x1cc4270                      ; 004bd388 | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd388 | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd38d
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd392
     JMP 0x004bcdbb                      ; 004bd395
         ;   XREF to: 004bcdbb (UNCONDITIONAL_JUMP)  ; LAB_004bcdbb
-    MOV EDI,dword ptr [0x01cc4470]      ; 004bd39a | DAT_01cc4470
+    MOV EDI,dword ptr [0x01cc4470]      ; 004bd39a | g_INT_01cc4470
         ;   Label: LAB_004bd39a
     INC EBX                             ; 004bd3a0
     ADD ESI,0x2e4                       ; 004bd3a1
@@ -923,7 +923,7 @@ section .text
     LEA EAX,[ESP + 0x404]               ; 004bd3b5
     PUSH EAX                            ; 004bd3bc
     PUSH 0x5dfe1c                       ; 004bd3bd | = "Duplicate entry '%s' in %s"
-    PUSH 0x1cc4270                      ; 004bd3c2 | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd3c2 | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd3c7
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd3cc
@@ -942,7 +942,7 @@ section .text
         ;   Label: LAB_004bd3ee
     INC AL                              ; 004bd3f0
     MOVZX EDI,AL                        ; 004bd3f2
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd3f5 | DAT_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd3f5 | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bd3fb
     TEST DH,0x2                         ; 004bd3fe
     JZ 0x004bd4fe                       ; 004bd401
@@ -950,7 +950,7 @@ section .text
     MOV ESI,EAX                         ; 004bd407
     JMP 0x004bd3ee                      ; 004bd409
         ;   XREF to: 004bd3ee (UNCONDITIONAL_JUMP)  ; LAB_004bd3ee
-    MOV CH,byte ptr [EBX]               ; 004bd40b | DAT_005dfe37
+    MOV CH,byte ptr [EBX]               ; 004bd40b | = "map"
         ;   Label: LAB_004bd40b
     MOV ESI,EAX                         ; 004bd40d
     TEST CH,CH                          ; 004bd40f
@@ -965,7 +965,7 @@ section .text
     MOV EDI,EAX                         ; 004bd41d
     XOR EAX,EAX                         ; 004bd41f
     ADD ESP,0x4                         ; 004bd421
-    MOV AL,byte ptr [EBX]               ; 004bd424 | DAT_005dfe37
+    MOV AL,byte ptr [EBX]               ; 004bd424 | = "map"
     PUSH EAX                            ; 004bd426
     CALL crt_ctype.c_toupper_FUN_005c12b0 ; 004bd427
         ;   XREF to: 005c12b0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005c12b0(int c)
@@ -973,7 +973,7 @@ section .text
     CMP EDI,EAX                         ; 004bd42f
     JNZ 0x004bd3d9                      ; 004bd431
         ;   XREF to: 004bd3d9 (CONDITIONAL_JUMP)  ; LAB_004bd3d9
-    MOV AL,byte ptr [EBX + 0x1]         ; 004bd433 | DAT_005dfe38
+    MOV AL,byte ptr [EBX + 0x1]         ; 004bd433 | s_ap_005dfe37+1
     INC EBX                             ; 004bd436
     INC ESI                             ; 004bd437
     TEST AL,AL                          ; 004bd438
@@ -983,7 +983,7 @@ section .text
         ;   Label: LAB_004bd43c
     INC AL                              ; 004bd43e
     AND EAX,0xff                        ; 004bd440
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd445 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd445 | g_UCHAR_ARRAY_00626114
     JZ 0x004bd451                       ; 004bd44c
         ;   XREF to: 004bd451 (CONDITIONAL_JUMP)  ; LAB_004bd451
     INC ESI                             ; 004bd44e
@@ -1011,7 +1011,7 @@ section .text
     TEST ESI,ESI                        ; 004bd479
     JZ 0x004bd4d2                       ; 004bd47b
         ;   XREF to: 004bd4d2 (CONDITIONAL_JUMP)  ; LAB_004bd4d2
-    CMP dword ptr [0x01cc55cc],0x4      ; 004bd47d | DAT_01cc55cc
+    CMP dword ptr [0x01cc55cc],0x4      ; 004bd47d | g_INT_01cc55cc
     JGE 0x004bd4f2                      ; 004bd484
         ;   XREF to: 004bd4f2 (CONDITIONAL_JUMP)  ; LAB_004bd4f2
     PUSH 0x5                            ; 004bd486
@@ -1020,7 +1020,7 @@ section .text
     PUSH ESI                            ; 004bd490
     CALL core_fldnotes.cpp_SNotesSection_addEntry_FUN_004bc020 ; 004bd491
         ;   XREF to: 004bc020 (UNCONDITIONAL_CALL)  ; SNotesEntry * core_fldnotes.cpp_SNotesSection_addEntry_FUN_004bc020(SNotesSection * this_ptr, char * name, int kind)
-    MOV EDX,dword ptr [0x01cc55cc]      ; 004bd496 | DAT_01cc55cc
+    MOV EDX,dword ptr [0x01cc55cc]      ; 004bd496 | g_INT_01cc55cc
     MOV EBX,EDX                         ; 004bd49c
     MOV dword ptr [EAX + 0x158],EDX     ; 004bd49e
     IMUL EDX,EDX,0x970                  ; 004bd4a4
@@ -1029,7 +1029,7 @@ section .text
     MOV dword ptr [ESP + 0x570],EAX     ; 004bd4b3
     INC EBX                             ; 004bd4ba
     MOV dword ptr [EDX + 0x2c0],0x0     ; 004bd4bb
-    MOV dword ptr [0x01cc55cc],EBX      ; 004bd4c5 | DAT_01cc55cc
+    MOV dword ptr [0x01cc55cc],EBX      ; 004bd4c5 | g_INT_01cc55cc
     MOV dword ptr [EDX],EAX             ; 004bd4cb
     JMP 0x004bcc7e                      ; 004bd4cd
         ;   XREF to: 004bcc7e (UNCONDITIONAL_JUMP)  ; LAB_004bcc7e
@@ -1038,7 +1038,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x5bc]     ; 004bd4d3
     PUSH ESI                            ; 004bd4da
     PUSH 0x5dfe3b                       ; 004bd4db | = "Didn't expect '\\map' in %s, line %d"
-    PUSH 0x1cc4270                      ; 004bd4e0 | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd4e0 | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd4e5
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd4ea
@@ -1053,7 +1053,7 @@ section .text
         ;   Label: LAB_004bd4fe
     JZ 0x004bd535                       ; 004bd501
         ;   XREF to: 004bd535 (CONDITIONAL_JUMP)  ; LAB_004bd535
-    MOV EBX,0x5dff53                    ; 004bd503 | DAT_005dff53
+    MOV EBX,0x5dff53                    ; 004bd503 | = "set"
         ;   Label: LAB_004bd503
     LEA EAX,[ESP + 0x400]               ; 004bd508
     MOV ESI,ESP                         ; 004bd50f
@@ -1062,7 +1062,7 @@ section .text
         ;   Label: LAB_004bd518
     INC AL                              ; 004bd51a
     MOVZX EDI,AL                        ; 004bd51c
-    MOV CL,byte ptr [EDI + 0x626114]    ; 004bd51f | DAT_00626114
+    MOV CL,byte ptr [EDI + 0x626114]    ; 004bd51f | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bd525
     TEST CL,0x2                         ; 004bd528
     JZ 0x004bd67c                       ; 004bd52b
@@ -1103,7 +1103,7 @@ section .text
         ;   Label: LAB_004bd566
     INC AL                              ; 004bd568
     AND EAX,0xff                        ; 004bd56a
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd56f | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd56f | g_UCHAR_ARRAY_00626114
     JZ 0x004bd57b                       ; 004bd576
         ;   XREF to: 004bd57b (CONDITIONAL_JUMP)  ; LAB_004bd57b
     INC ESI                             ; 004bd578
@@ -1134,18 +1134,18 @@ section .text
     CMP dword ptr [EDI + 0x140],0x5     ; 004bd5ab
     JNZ 0x004bd646                      ; 004bd5b2
         ;   XREF to: 004bd646 (CONDITIONAL_JUMP)  ; LAB_004bd646
-    CMP dword ptr [0x01cc55cc],0x1      ; 004bd5b8 | DAT_01cc55cc
+    CMP dword ptr [0x01cc55cc],0x1      ; 004bd5b8 | g_INT_01cc55cc
     JGE 0x004bd5e4                      ; 004bd5bf
         ;   XREF to: 004bd5e4 (CONDITIONAL_JUMP)  ; LAB_004bd5e4
     MOV EBX,0x5dfed1                    ; 004bd5c1 | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x969                       ; 004bd5c6
     PUSH 0x5dfee6                       ; 004bd5cb | = "Hell froze!"
-    MOV dword ptr [0x01d1d400],EBX      ; 004bd5d0 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004bd5d6 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 004bd5d0 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 004bd5d6 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bd5dc
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bd5e1
-    MOV EAX,[0x01cc55cc]                ; 004bd5e4 | DAT_01cc55cc
+    MOV EAX,[0x01cc55cc]                ; 004bd5e4 | g_INT_01cc55cc
         ;   Label: LAB_004bd5e4
     DEC EAX                             ; 004bd5e9
     IMUL EAX,EAX,0x970                  ; 004bd5ea
@@ -1196,7 +1196,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x574]     ; 004bd65d
     PUSH EDI                            ; 004bd664
     PUSH 0x5dff23                       ; 004bd665 | = "Multiple \\image tags found in map %s..."
-    PUSH 0x1cc4270                      ; 004bd66a | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd66a | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd66f
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd674
@@ -1215,7 +1215,7 @@ section .text
         ;   Label: LAB_004bd696
     INC AL                              ; 004bd698
     MOVZX EDI,AL                        ; 004bd69a
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd69d | DAT_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd69d | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bd6a3
     TEST DH,0x2                         ; 004bd6a6
     JZ 0x004bd81b                       ; 004bd6a9
@@ -1225,7 +1225,7 @@ section .text
         ;   XREF to: 004bd696 (UNCONDITIONAL_JUMP)  ; LAB_004bd696
     MOV ESI,EAX                         ; 004bd6b3
         ;   Label: LAB_004bd6b3
-    CMP byte ptr [EBX],0x0              ; 004bd6b5 | DAT_005dff53
+    CMP byte ptr [EBX],0x0              ; 004bd6b5 | = "set"
     JZ 0x004bd6e3                       ; 004bd6b8
         ;   XREF to: 004bd6e3 (CONDITIONAL_JUMP)  ; LAB_004bd6e3
     XOR EAX,EAX                         ; 004bd6ba
@@ -1237,7 +1237,7 @@ section .text
     MOV EDI,EAX                         ; 004bd6c4
     XOR EAX,EAX                         ; 004bd6c6
     ADD ESP,0x4                         ; 004bd6c8
-    MOV AL,byte ptr [EBX]               ; 004bd6cb | DAT_005dff53
+    MOV AL,byte ptr [EBX]               ; 004bd6cb | = "set"
     PUSH EAX                            ; 004bd6cd
     CALL crt_ctype.c_toupper_FUN_005c12b0 ; 004bd6ce
         ;   XREF to: 005c12b0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005c12b0(int c)
@@ -1245,7 +1245,7 @@ section .text
     CMP EDI,EAX                         ; 004bd6d6
     JNZ 0x004bd681                      ; 004bd6d8
         ;   XREF to: 004bd681 (CONDITIONAL_JUMP)  ; LAB_004bd681
-    MOV AH,byte ptr [EBX + 0x1]         ; 004bd6da | DAT_005dff54
+    MOV AH,byte ptr [EBX + 0x1]         ; 004bd6da | s_et_005dff53+1
     INC EBX                             ; 004bd6dd
     INC ESI                             ; 004bd6de
     TEST AH,AH                          ; 004bd6df
@@ -1255,7 +1255,7 @@ section .text
         ;   Label: LAB_004bd6e3
     INC AL                              ; 004bd6e5
     AND EAX,0xff                        ; 004bd6e7
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd6ec | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd6ec | g_UCHAR_ARRAY_00626114
     JZ 0x004bd6f8                       ; 004bd6f3
         ;   XREF to: 004bd6f8 (CONDITIONAL_JUMP)  ; LAB_004bd6f8
     INC ESI                             ; 004bd6f5
@@ -1286,18 +1286,18 @@ section .text
     CMP dword ptr [EAX + 0x140],0x5     ; 004bd728
     JNZ 0x004bd7e5                      ; 004bd72f
         ;   XREF to: 004bd7e5 (CONDITIONAL_JUMP)  ; LAB_004bd7e5
-    CMP dword ptr [0x01cc55cc],0x1      ; 004bd735 | DAT_01cc55cc
+    CMP dword ptr [0x01cc55cc],0x1      ; 004bd735 | g_INT_01cc55cc
     JGE 0x004bd761                      ; 004bd73c
         ;   XREF to: 004bd761 (CONDITIONAL_JUMP)  ; LAB_004bd761
     MOV EBX,0x5dff85                    ; 004bd73e | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x98d                       ; 004bd743
     PUSH 0x5dff9a                       ; 004bd748 | = "Hell froze!"
-    MOV dword ptr [0x01d1d400],EBX      ; 004bd74d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004bd753 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 004bd74d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 004bd753 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bd759
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bd75e
-    MOV EAX,[0x01cc55cc]                ; 004bd761 | DAT_01cc55cc
+    MOV EAX,[0x01cc55cc]                ; 004bd761 | g_INT_01cc55cc
         ;   Label: LAB_004bd761
     DEC EAX                             ; 004bd766
     IMUL EAX,EAX,0x970                  ; 004bd767
@@ -1337,7 +1337,7 @@ section .text
     CMP EAX,0x9                         ; 004bd7cd
     JNZ 0x004bd810                      ; 004bd7d0
         ;   XREF to: 004bd810 (CONDITIONAL_JUMP)  ; LAB_004bd810
-    PUSH 0x5e001c                       ; 004bd7d2 | DAT_005e001c
+    PUSH 0x5e001c                       ; 004bd7d2 | = ".set"
     PUSH EBX                            ; 004bd7d7
     CALL engine_dosio.cpp_changeFileExtension_FUN_004796b0 ; 004bd7d8
         ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_changeFileExtension_FUN_004796b0(char * path, char * new_extension)
@@ -1354,7 +1354,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x574]     ; 004bd7f1
     PUSH EDI                            ; 004bd7f8
     PUSH 0x5dffa6                       ; 004bd7f9 | = "Too many \\sets in map %s at line %d."
-    PUSH 0x1cc4270                      ; 004bd7fe | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd7fe | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd803
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd808
@@ -1369,7 +1369,7 @@ section .text
         ;   Label: LAB_004bd81b
     JZ 0x004bd852                       ; 004bd81e
         ;   XREF to: 004bd852 (CONDITIONAL_JUMP)  ; LAB_004bd852
-    MOV EBX,0x5e00f4                    ; 004bd820 | DAT_005e00f4
+    MOV EBX,0x5e00f4                    ; 004bd820 | = "end"
         ;   Label: LAB_004bd820
     LEA EAX,[ESP + 0x400]               ; 004bd825
     MOV ESI,ESP                         ; 004bd82c
@@ -1378,7 +1378,7 @@ section .text
         ;   Label: LAB_004bd835
     INC AL                              ; 004bd837
     MOVZX EDI,AL                        ; 004bd839
-    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd83c | DAT_00626114
+    MOV DH,byte ptr [EDI + 0x626114]    ; 004bd83c | g_UCHAR_ARRAY_00626114
     LEA EAX,[ESI + 0x1]                 ; 004bd842
     TEST DH,0x2                         ; 004bd845
     JZ 0x004bd9b8                       ; 004bd848
@@ -1419,7 +1419,7 @@ section .text
         ;   Label: LAB_004bd883
     INC AL                              ; 004bd885
     AND EAX,0xff                        ; 004bd887
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd88c | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bd88c | g_UCHAR_ARRAY_00626114
     JZ 0x004bd898                       ; 004bd893
         ;   XREF to: 004bd898 (CONDITIONAL_JUMP)  ; LAB_004bd898
     INC ESI                             ; 004bd895
@@ -1450,18 +1450,18 @@ section .text
     CMP dword ptr [EAX + 0x140],0x5     ; 004bd8c8
     JNZ 0x004bd982                      ; 004bd8cf
         ;   XREF to: 004bd982 (CONDITIONAL_JUMP)  ; LAB_004bd982
-    CMP dword ptr [0x01cc55cc],0x1      ; 004bd8d5 | DAT_01cc55cc
+    CMP dword ptr [0x01cc55cc],0x1      ; 004bd8d5 | g_INT_01cc55cc
     JGE 0x004bd901                      ; 004bd8dc
         ;   XREF to: 004bd901 (CONDITIONAL_JUMP)  ; LAB_004bd901
     MOV EBX,0x5e0061                    ; 004bd8de | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x9b9                       ; 004bd8e3
     PUSH 0x5e0076                       ; 004bd8e8 | = "Hell froze!"
-    MOV dword ptr [0x01d1d400],EBX      ; 004bd8ed | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004bd8f3 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 004bd8ed | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 004bd8f3 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bd8f9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bd8fe
-    MOV EAX,[0x01cc55cc]                ; 004bd901 | DAT_01cc55cc
+    MOV EAX,[0x01cc55cc]                ; 004bd901 | g_INT_01cc55cc
         ;   Label: LAB_004bd901
     DEC EAX                             ; 004bd906
     IMUL EAX,EAX,0x970                  ; 004bd907
@@ -1512,7 +1512,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x574]     ; 004bd98e
     PUSH EBX                            ; 004bd995
     PUSH 0x5e0082                       ; 004bd996 | = "Too many \\annotations in map %s at l..."
-    PUSH 0x1cc4270                      ; 004bd99b | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bd99b | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bd9a0
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bd9a5
@@ -1544,7 +1544,7 @@ section .text
     ADD ESP,0x8                         ; 004bd9e5
     JMP 0x004bcc7e                      ; 004bd9e8
         ;   XREF to: 004bcc7e (UNCONDITIONAL_JUMP)  ; LAB_004bcc7e
-    MOV CH,byte ptr [EBX]               ; 004bd9ed | DAT_005e00f4
+    MOV CH,byte ptr [EBX]               ; 004bd9ed | = "end"
         ;   Label: LAB_004bd9ed
     MOV ESI,EAX                         ; 004bd9ef
     TEST CH,CH                          ; 004bd9f1
@@ -1559,7 +1559,7 @@ section .text
     MOV EDI,EAX                         ; 004bd9ff
     XOR EAX,EAX                         ; 004bda01
     ADD ESP,0x4                         ; 004bda03
-    MOV AL,byte ptr [EBX]               ; 004bda06 | DAT_005e00f4
+    MOV AL,byte ptr [EBX]               ; 004bda06 | = "end"
     PUSH EAX                            ; 004bda08
     CALL crt_ctype.c_toupper_FUN_005c12b0 ; 004bda09
         ;   XREF to: 005c12b0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005c12b0(int c)
@@ -1567,7 +1567,7 @@ section .text
     CMP EDI,EAX                         ; 004bda11
     JNZ 0x004bd9bd                      ; 004bda13
         ;   XREF to: 004bd9bd (CONDITIONAL_JUMP)  ; LAB_004bd9bd
-    MOV AL,byte ptr [EBX + 0x1]         ; 004bda15 | DAT_005e00f5
+    MOV AL,byte ptr [EBX + 0x1]         ; 004bda15 | s_nd_005e00f4+1
     INC EBX                             ; 004bda18
     INC ESI                             ; 004bda19
     TEST AL,AL                          ; 004bda1a
@@ -1577,7 +1577,7 @@ section .text
         ;   Label: LAB_004bda1e
     INC AL                              ; 004bda20
     AND EAX,0xff                        ; 004bda22
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004bda27 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004bda27 | g_UCHAR_ARRAY_00626114
     JZ 0x004bda33                       ; 004bda2e
         ;   XREF to: 004bda33 (CONDITIONAL_JUMP)  ; LAB_004bda33
     INC ESI                             ; 004bda30
@@ -1610,7 +1610,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004bda62
     PUSH EAX                            ; 004bda66
     PUSH 0x5e00f8                       ; 004bda67 | = "Unknown tag: '%s' in %s, line %d"
-    PUSH 0x1cc4270                      ; 004bda6c | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bda6c | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bda71
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x14                        ; 004bda76
@@ -1621,7 +1621,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x5bc]     ; 004bda7f
     PUSH EDI                            ; 004bda86
     PUSH 0x5e0119                       ; 004bda87 | = "No entry started in %s, line %d"
-    PUSH 0x1cc4270                      ; 004bda8c | DAT_01cc4270
+    PUSH 0x1cc4270                      ; 004bda8c | g_CHAR_ARRAY_01cc4270
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bda91
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bda96

@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Already_have_max_bullets_005c4e25
 ;   TerminatedCString s_Already_have_max_mana_005c4e3f
 ;   TerminatedCString s_Already_have_max_health_005c4e56
-;   undefined4 DAT_005c4e75
+;   double g_DOUBLE_005c4e75 = 10
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CAmmoClassInfo.name_hash
@@ -63,7 +63,7 @@ section .text
     FLD float ptr [EBX + 0x20]          ; 004d3e74
     FSUB float ptr [ESI + 0x20]         ; 004d3e77
     FABS                                ; 004d3e7a
-    FCOMP double ptr [0x005c4e75]       ; 004d3e7c | DAT_005c4e75
+    FCOMP double ptr [0x005c4e75]       ; 004d3e7c | g_DOUBLE_005c4e75
     FNSTSW AX                           ; 004d3e82
     SAHF                                ; 004d3e84
     JA 0x004d3e9a                       ; 004d3e85
@@ -71,7 +71,7 @@ section .text
     FLD float ptr [EBX + 0x24]          ; 004d3e87
     FSUB float ptr [ESI + 0x24]         ; 004d3e8a
     FABS                                ; 004d3e8d
-    FCOMP double ptr [0x005c4e75]       ; 004d3e8f | DAT_005c4e75
+    FCOMP double ptr [0x005c4e75]       ; 004d3e8f | g_DOUBLE_005c4e75
     FNSTSW AX                           ; 004d3e95
     SAHF                                ; 004d3e97
     JBE 0x004d3eb5                      ; 004d3e98
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_004d3eb5
     FSUB float ptr [ESI + 0x28]         ; 004d3eb8
     FABS                                ; 004d3ebb
-    FCOMP double ptr [0x005c4e75]       ; 004d3ebd | DAT_005c4e75
+    FCOMP double ptr [0x005c4e75]       ; 004d3ebd | g_DOUBLE_005c4e75
     FNSTSW AX                           ; 004d3ec3
     SAHF                                ; 004d3ec5
     JA 0x004d3e9a                       ; 004d3ec6

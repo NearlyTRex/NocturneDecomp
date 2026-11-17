@@ -9,13 +9,13 @@
 ; int              Stack[0xc]:4   x_end
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00b6679c
-;   undefined4 DAT_00b667a0
-;   undefined4 DAT_013087d4
-;   undefined4 DAT_013087e0
-;   undefined4 DAT_013087ec
-;   undefined4 DAT_013087f8
-;   undefined4 DAT_01308800
+;   int g_INT_00b6679c
+;   int g_INT_00b667a0
+;   CDemonLight* g_CDemonLight_PTR_013087d4
+;   undefined4 g_CMatrix3x3i_013087d8.m[0].z
+;   undefined4 g_CMatrix3x3i_013087d8.m[1].z
+;   undefined4 g_CMatrix3x3i_013087d8.m[2].z
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01308800
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0043cbe0
@@ -59,7 +59,7 @@ section .text
     ADD EAX,0x14c3cd0                   ; 0043fd3c
     MOV dword ptr [ESP + 0x1c],ECX      ; 0043fd41
     ADD EAX,EDX                         ; 0043fd45
-    MOV CL,byte ptr [0x01308800]        ; 0043fd47 | DAT_01308800
+    MOV CL,byte ptr [0x01308800]        ; 0043fd47 | g_BIT_INTEGER32_01308800
     MOV dword ptr [ESP + 0x24],EAX      ; 0043fd4d
     MOV EDX,EDI                         ; 0043fd51
     MOV EAX,dword ptr [EBP + 0x18]      ; 0043fd53
@@ -84,12 +84,12 @@ section .text
     JBE 0x0043fe8e                      ; 0043fd8c
         ;   XREF to: 0043fe8e (CONDITIONAL_JUMP)  ; LAB_0043fe8e
     FLD float ptr [EBX + 0x4]           ; 0043fd92
-    FMUL float ptr [0x013087ec]         ; 0043fd95 | DAT_013087ec
+    FMUL float ptr [0x013087ec]         ; 0043fd95 | g_CMatrix3x3i_013087d8.m[1].z
     FLD float ptr [EBX]                 ; 0043fd9b
-    FMUL float ptr [0x013087e0]         ; 0043fd9d | DAT_013087e0
+    FMUL float ptr [0x013087e0]         ; 0043fd9d | g_CMatrix3x3i_013087d8.m[0].z
     FADDP                               ; 0043fda3
     FLD float ptr [EBX + 0x8]           ; 0043fda5
-    FMUL float ptr [0x013087f8]         ; 0043fda8 | DAT_013087f8
+    FMUL float ptr [0x013087f8]         ; 0043fda8 | g_CMatrix3x3i_013087d8.m[2].z
     FADDP                               ; 0043fdae
     FLDZ                                ; 0043fdb0
     FCOMPP                              ; 0043fdb2
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 0043fe8e (CONDITIONAL_JUMP)  ; LAB_0043fe8e
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0043fdbd
     PUSH EDI                            ; 0043fdc1
-    MOV EAX,[0x013087d4]                ; 0043fdc2 | DAT_013087d4
+    MOV EAX,[0x013087d4]                ; 0043fdc2 | g_CDemonLight_PTR_013087d4
     PUSH EAX                            ; 0043fdc7
     LEA ESI,[ESP + 0x14]                ; 0043fdc8
     LEA EDI,[ESP + 0x8]                 ; 0043fdcc
@@ -114,7 +114,7 @@ section .text
     JLE 0x0043fe8e                      ; 0043fde4
         ;   XREF to: 0043fe8e (CONDITIONAL_JUMP)  ; LAB_0043fe8e
     MOV ESI,dword ptr [ESP + 0x4]       ; 0043fdea
-    MOV EAX,[0x013087d4]                ; 0043fdee | DAT_013087d4
+    MOV EAX,[0x013087d4]                ; 0043fdee | g_CDemonLight_PTR_013087d4
     SAR ESI,0x10                        ; 0043fdf3
     IMUL ESI,dword ptr [EAX + 0x1cc0]   ; 0043fdf6
     MOV EDX,dword ptr [ESP]             ; 0043fdfd
@@ -122,7 +122,7 @@ section .text
     ADD EDX,ESI                         ; 0043fe03
     MOV ESI,dword ptr [EAX + 0x2f94]    ; 0043fe05
     MOV DX,word ptr [ESI + EDX*0x2]     ; 0043fe0b
-    MOV ESI,dword ptr [0x00b6679c]      ; 0043fe0f | DAT_00b6679c
+    MOV ESI,dword ptr [0x00b6679c]      ; 0043fe0f | g_INT_00b6679c
     AND EDX,0xffff                      ; 0043fe15
     CMP EDX,ESI                         ; 0043fe1b
     JGE 0x0043fe8e                      ; 0043fe1d
@@ -148,11 +148,11 @@ section .text
     MOV EAX,dword ptr [EAX + 0x1c54]    ; 0043fe62
     ADD ESI,EDI                         ; 0043fe68
     MOVZX ESI,byte ptr [ESI + EAX*0x1]  ; 0043fe6a
-    MOV EAX,[0x00b6679c]                ; 0043fe6e | DAT_00b6679c
+    MOV EAX,[0x00b6679c]                ; 0043fe6e | g_INT_00b6679c
     SUB EAX,EDX                         ; 0043fe73
     MOV EDX,EAX                         ; 0043fe75
     IMUL EDX,ESI                        ; 0043fe77
-    MOV CL,byte ptr [0x00b667a0]        ; 0043fe7a | DAT_00b667a0
+    MOV CL,byte ptr [0x00b667a0]        ; 0043fe7a | g_INT_00b667a0
     SAR EDX,CL                          ; 0043fe80
     MOV ECX,dword ptr [ESP + 0x28]      ; 0043fe82
     XOR EAX,EAX                         ; 0043fe86
@@ -164,7 +164,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 0043fe93
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0043fe97
     MOV EDX,dword ptr [EBP + 0x18]      ; 0043fe9b
-    MOV CL,byte ptr [0x01308800]        ; 0043fe9e | DAT_01308800
+    MOV CL,byte ptr [0x01308800]        ; 0043fe9e | g_BIT_INTEGER32_01308800
     ADD EBX,0xc                         ; 0043fea4
     ADD ESI,0x4                         ; 0043fea7
     ADD EDI,0xc                         ; 0043feaa

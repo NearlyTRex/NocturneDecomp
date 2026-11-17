@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi core_carved_cpp_getObjectGrabPointLocal_FUN_00425620(CDemonActor *actor,CVector3f *out_point)
 
 {
@@ -52,15 +50,15 @@ CVector3f * __stack_esi core_carved_cpp_getObjectGrabPointLocal_FUN_00425620(CDe
        *(uint *)((int)&stack0xffffffcc + (uint)bVar4 * -8);
   *(uint *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  fStack_20 = fStack_14 * _DAT_005b798f;
-  fStack_1c = fStack_10 * _DAT_005b798f;
-  fStack_18 = unaff_EBP * _DAT_005b798f;
-  fStack_2c = fStack_14 * _DAT_005b798f;
+  fStack_20 = fStack_14 * 0.5f;
+  fStack_1c = fStack_10 * 0.5f;
+  fStack_18 = unaff_EBP * 0.5f;
+  fStack_2c = fStack_14 * 0.5f;
   *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffffe4 + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffffe8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  fStack_24 = fStack_60 + (float)_DAT_005b7997;
+  fStack_24 = fStack_60 + (float)0.40000000000000002;
   puVar3 = (uint *)((int)out_point + (uint)bVar4 * -8 + 4);
   out_point->x = fStack_2c;
   *puVar3 = *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);

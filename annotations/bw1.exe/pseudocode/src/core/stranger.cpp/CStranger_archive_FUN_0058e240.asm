@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_objectToPickUp_005f6e18+1
+;   TerminatedCString s_objectToPickUp_005f6e19
 ;   TerminatedCString s_doorToOpen_005f6e28
 ;   TerminatedCString s_leverToPull_005f6e33
 ;   TerminatedCString s_ladderToClimb_005f6e3f
@@ -45,7 +45,7 @@ section .text
     CMP EDX,0x4                         ; 0058e259
     JG 0x0058e2ae                       ; 0058e25c
         ;   XREF to: 0058e2ae (CONDITIONAL_JUMP)  ; LAB_0058e2ae
-    PUSH 0x5f6e19                       ; 0058e25e | s_objectToPickUp_005f6e18+1
+    PUSH 0x5f6e19                       ; 0058e25e | = "objectToPickUp"
     LEA EAX,[EBX + 0x1ff78]             ; 0058e263
     PUSH EAX                            ; 0058e269
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 0058e26a

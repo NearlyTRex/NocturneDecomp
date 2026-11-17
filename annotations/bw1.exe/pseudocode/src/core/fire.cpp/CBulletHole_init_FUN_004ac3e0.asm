@@ -42,7 +42,7 @@
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 at 004b5879
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df1c8
+;   float g_FLOAT_005df1c8 = 0.1000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
@@ -70,7 +70,7 @@ section .text
     CMP EBX,EAX                         ; 004ac3ff
     JNZ 0x004ac518                      ; 004ac401
         ;   XREF to: 004ac518 (CONDITIONAL_JUMP)  ; LAB_004ac518
-    FLD float ptr [0x005df1c8]          ; 004ac407 | DAT_005df1c8
+    FLD float ptr [0x005df1c8]          ; 004ac407 | g_FLOAT_005df1c8
         ;   Label: LAB_004ac407
     FLD float ptr [EBP]                 ; 004ac40d
     FMUL ST1                            ; 004ac410

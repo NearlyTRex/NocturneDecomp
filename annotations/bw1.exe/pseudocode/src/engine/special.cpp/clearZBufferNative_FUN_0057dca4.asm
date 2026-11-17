@@ -11,12 +11,12 @@
 ;   engine_mini3d.cpp_clearZBuffer_FUN_005111a0 at 005111ae
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined8 DAT_00623ddc
-;   undefined4 DAT_00623de4
-;   undefined4 DAT_01c4480c
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f014
+;   int g_INT_0061b498 = 0x140
+;   double g_DOUBLE_00623ddc = 0.0
+;   double g_DOUBLE_00623de4 = 0.0
+;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f014
 ;
 ; *****************************************************************************
 
@@ -29,19 +29,19 @@ section .text
     CLD                                 ; 0057dca7
     PUSH DS                             ; 0057dca8
     POP ES                              ; 0057dca9
-    MOV EDI,dword ptr [0x01c4480c]      ; 0057dcaa | DAT_01c4480c
-    MOV EAX,[0x01c4f00c]                ; 0057dcb0 | DAT_01c4f00c
-    MOV ECX,dword ptr [0x0061b498]      ; 0057dcb5 | DAT_0061b498
+    MOV EDI,dword ptr [0x01c4480c]      ; 0057dcaa | g_UINT_PTR_ARRAY_01c4480c
+    MOV EAX,[0x01c4f00c]                ; 0057dcb0 | g_INT_01c4f00c
+    MOV ECX,dword ptr [0x0061b498]      ; 0057dcb5 | g_INT_0061b498
     MUL ECX                             ; 0057dcbb
     SHL EAX,0x2                         ; 0057dcbd
     ADD EDI,EAX                         ; 0057dcc0
-    MOV EAX,[0x01c4f014]                ; 0057dcc2 | DAT_01c4f014
-    SUB EAX,dword ptr [0x01c4f00c]      ; 0057dcc7 | DAT_01c4f00c
+    MOV EAX,[0x01c4f014]                ; 0057dcc2 | g_INT_01c4f014
+    SUB EAX,dword ptr [0x01c4f00c]      ; 0057dcc7 | g_INT_01c4f00c
     INC EAX                             ; 0057dccd
-    MOV ECX,dword ptr [0x0061b498]      ; 0057dcce | DAT_0061b498
+    MOV ECX,dword ptr [0x0061b498]      ; 0057dcce | g_INT_0061b498
     MUL ECX                             ; 0057dcd4
     MOV ECX,EAX                         ; 0057dcd6
-    FLD double ptr [0x00623ddc]         ; 0057dcd8 | DAT_00623ddc
+    FLD double ptr [0x00623ddc]         ; 0057dcd8 | g_DOUBLE_00623ddc
     FST double ptr [EDI]                ; 0057dcde
         ;   Label: LAB_0057dcde
     FST double ptr [EDI + 0x8]          ; 0057dce0
@@ -55,7 +55,7 @@ section .text
     SUB ECX,0x10                        ; 0057dcf8
     JG 0x0057dcde                       ; 0057dcfb
         ;   XREF to: 0057dcde (CONDITIONAL_JUMP)  ; LAB_0057dcde
-    FSTP double ptr [0x00623de4]        ; 0057dcfd | DAT_00623de4
+    FSTP double ptr [0x00623de4]        ; 0057dcfd | g_DOUBLE_00623de4
     POPAD                               ; 0057dd03
     POP EDI                             ; 0057dd04
     POP ESI                             ; 0057dd05

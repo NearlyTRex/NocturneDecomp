@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_005b8737
-;   undefined4 DAT_005b873e
+;   double g_DOUBLE_005b873e = 0.950000000000000
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
@@ -68,7 +68,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00433201
     FLD float ptr [ESP + 0x8]           ; 00433205
     ADD ESP,0x8                         ; 00433209
-    FCOMP double ptr [0x005b873e]       ; 0043320c | DAT_005b873e
+    FCOMP double ptr [0x005b873e]       ; 0043320c | g_DOUBLE_005b873e
     FNSTSW AX                           ; 00433212
     SAHF                                ; 00433214
     JBE 0x004331ce                      ; 00433215

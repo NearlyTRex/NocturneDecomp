@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00554390(CSfxSlot *this_ptr)
 
 {
@@ -15,23 +13,20 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00554390(CSfx
   float10 fVar2;
   float10 fVar3;
   
-  if (_DAT_02cf341c < 1) {
-    _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d71de4 = 0xab8;
+  if (g_INT_02cf341c < 1) {
+    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d71de4 = 0xab8;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::autoCalcDelayRemaining - must be locked!");
   }
   if (((this_ptr->options).flags & 1) != 0) {
     (this_ptr->options).delay_remaining = 0.0;
     return;
   }
-  fVar1 = (float10)(this_ptr->options).position.x -
-          (float10)*(double *)(&DAT_02cf2828 + _DAT_02cf28b8 * 8);
-  fVar2 = (float10)(this_ptr->options).position.y -
-          (float10)*(double *)(&DAT_02cf2838 + _DAT_02cf28b8 * 8);
-  fVar3 = (float10)(this_ptr->options).position.z -
-          (float10)*(double *)(&DAT_02cf2848 + _DAT_02cf28b8 * 8);
+  fVar1 = (float10)(this_ptr->options).position.x - (float10)(&g_DOUBLE_02cf2828)[g_INT_02cf28b8];
+  fVar2 = (float10)(this_ptr->options).position.y - (float10)(&g_DOUBLE_02cf2838)[g_INT_02cf28b8];
+  fVar3 = (float10)(this_ptr->options).position.z - (float10)(&g_DOUBLE_02cf2848)[g_INT_02cf28b8];
   (this_ptr->options).delay_remaining =
-       (float)(((float10)1 / (float10)_DAT_005e4844) *
-              SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) * (float10)DAT_00604240);
+       (float)(((float10)1 / (float10)1116.4f) *
+              SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) * (float10)g_FLOAT_00604240);
   return;
 }

@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   light_direction
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d15c3
+;   double g_DOUBLE_005d15c3 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -22,7 +22,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046b540
     SUB ESP,0x8                         ; 0046b541
     MOV EAX,dword ptr [ESP + 0x14]      ; 0046b544
-    FLD double ptr [0x005d15c3]         ; 0046b548 | DAT_005d15c3
+    FLD double ptr [0x005d15c3]         ; 0046b548 | g_DOUBLE_005d15c3
     FLD float ptr [EAX + 0x8]           ; 0046b54e
     FMUL ST1                            ; 0046b551
     FLD float ptr [EAX + 0x4]           ; 0046b553

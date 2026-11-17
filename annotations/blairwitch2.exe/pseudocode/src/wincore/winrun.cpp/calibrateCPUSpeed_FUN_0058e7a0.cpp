@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0(void)
 
 {
@@ -19,19 +17,21 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0(void)
   int local_18;
   int local_14;
   
-  BVar1 = QueryPerformanceFrequency((LARGE_INTEGER *)&DAT_02662d70);
+  BVar1 = QueryPerformanceFrequency((LARGE_INTEGER *)&g_struct_19_02662d70);
   if (BVar1 == 1) {
-    _DAT_02662d78 = (double)_DAT_02662d70 + (double)_DAT_02662d74 * _DAT_005ee84a;
-    QueryPerformanceCounter((LARGE_INTEGER *)&DAT_02662d68);
+    g_DOUBLE_02662d78 =
+         (double)g_struct_19_02662d70.LowPart +
+         (double)g_struct_19_02662d70.HighPart * 4294967296;
+    QueryPerformanceCounter((LARGE_INTEGER *)&g_struct_19_02662d68);
   }
   else {
-    _DAT_02662d84 = 1;
+    g_INT_ARRAY_02662d84[0] = 1;
     MVar4 = timeBeginPeriod(1);
     if (MVar4 != 0) {
-      iVar2 = MessageBoxA(_DAT_02664628,"@Unable to set timer" + 1,
-                          PTR_s_Coffin_Rock_0061e988,0x31);
+      iVar2 = MessageBoxA(g_HWND_02664628,"Unable to set timer",PTR_s_Coffin_Rock_0061e988,
+                          0x31);
       if (iVar2 == 2) {
-        _DAT_02664630 = 1;
+        g_INT_02664630 = 1;
       }
     }
   }
@@ -47,6 +47,6 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0(void)
     local_18 = local_18 + 0x7080000U / (uint)(iVar3 - iVar2);
     local_14 = local_14 + 1;
   } while (local_14 < 5);
-  _DAT_01c38b48 = local_18 / 5;
+  g_INT_01c38b48 = local_18 / 5;
   return;
 }

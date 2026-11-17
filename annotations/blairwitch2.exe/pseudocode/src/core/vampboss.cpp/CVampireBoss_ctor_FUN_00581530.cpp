@@ -25,7 +25,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_00581530(CVampire
        &g_CVampireBossVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             ((CDeformableModelInstance *)
-             (pCVar4[-0x101].models[1].textures[0x12].texture_name + 0x18),(char *)0x5ed991);
+             (pCVar4[-0x101].models[1].textures[0x12].texture_name + 0x18),"nosfer.dfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             ((CDeformableModelInstance *)(pCVar4[-0xeb].models[1].textures[5].texture_name + 0x3c),
              "batboss.dfm");

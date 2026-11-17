@@ -28,14 +28,14 @@
 ;   core_actor.cpp_archiveBox_FUN_0040bbf0 at 0040bc29
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d4b00
+;   TerminatedCString s_d_005d4b00
 ;   TerminatedCString s_f_f_f_005d4b05
 ;   TerminatedCString s_f_f_f_005d4b10
 ;   TerminatedCString s_f_f_f_005d4b1b
-;   undefined4 DAT_005d4b26
+;   TerminatedCString s_f_005d4b26
 ;   TerminatedCString s_f_f_f_005d4b2b
 ;   TerminatedCString s_f_f_f_005d4b36
-;   undefined4 DAT_005d4b41
+;   TerminatedCString s_d_005d4b41
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dac0
@@ -63,7 +63,7 @@ section .text
     ADD ESP,0xc                         ; 00420167
     LEA EAX,[ESP + 0x13c]               ; 0042016a
     PUSH EAX                            ; 00420171
-    PUSH 0x5d4b00                       ; 00420172 | DAT_005d4b00
+    PUSH 0x5d4b00                       ; 00420172 | = " %d\n"
     PUSH ESI                            ; 00420177
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00420178
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -110,7 +110,7 @@ section .text
     ADD ESP,0x14                        ; 00420202
     LEA EAX,[ESP + 0x140]               ; 00420205
     PUSH EAX                            ; 0042020c
-    PUSH 0x5d4b26                       ; 0042020d | DAT_005d4b26
+    PUSH 0x5d4b26                       ; 0042020d | = " %f\n"
     PUSH ESI                            ; 00420212
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00420213
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -150,7 +150,7 @@ section .text
     ADD ESP,0x14                        ; 00420274
     LEA EAX,[EBX + 0x254]               ; 00420277
     PUSH EAX                            ; 0042027d
-    PUSH 0x5d4b41                       ; 0042027e | DAT_005d4b41
+    PUSH 0x5d4b41                       ; 0042027e | = " %d\n"
     PUSH ESI                            ; 00420283
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00420284
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)

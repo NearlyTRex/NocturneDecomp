@@ -13,7 +13,7 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdd95
 ;
 ; Referenced Globals:
-;   undefined1* PTR_support_codec.cpp_CLZWCompress_dtor_FUN_00441ed0_005dd464 = 00441ed0
+;   void*[9] g_ARRAY_PTR_005dd464
 ;
 ; Called Functions:
 ;   support_codec.cpp_CCodec_ctor_FUN_00440800
@@ -41,7 +41,7 @@ section .text
     MOV dword ptr [EAX + 0x24],EDX      ; 00441117
     MOV EDX,0xffffffff                  ; 0044111a
     MOV CL,byte ptr [EAX + 0x24]        ; 0044111f
-    MOV dword ptr [EAX],0x5dd464        ; 00441122 | PTR_support_codec.cpp_CLZWCompress_dtor_FUN_00441ed0_005dd464
+    MOV dword ptr [EAX],0x5dd464        ; 00441122 | g_ARRAY_PTR_005dd464
     SHL EDX,CL                          ; 00441128
     MOV dword ptr [EAX + 0x28],EDX      ; 0044112a
     NOT EDX                             ; 0044112d

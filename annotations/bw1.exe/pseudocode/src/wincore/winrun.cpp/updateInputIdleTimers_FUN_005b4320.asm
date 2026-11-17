@@ -10,16 +10,16 @@
 ;   wincore_winrun.cpp_pollAllControllers_FUN_005b4190 at 005b41b4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9c7e0
-;   undefined4 DAT_02c9c7e4
+;   float g_FLOAT_02c9c7e0
+;   float g_FLOAT_02c9c7e4
 ;
 ; *****************************************************************************
 
 section .text
 
-    FLD float ptr [0x02c9c7e0]          ; 005b4320 | DAT_02c9c7e0
+    FLD float ptr [0x02c9c7e0]          ; 005b4320 | g_FLOAT_02c9c7e0
         ;   Label: wincore_winrun.cpp_updateInputIdleTimers_FUN_005b4320
-    FLD float ptr [0x02c9c7e4]          ; 005b4326 | DAT_02c9c7e4
+    FLD float ptr [0x02c9c7e4]          ; 005b4326 | g_FLOAT_02c9c7e4
     MOV EAX,0x2c9cf14                   ; 005b432c
     FXCH                                ; 005b4331
     FLD float ptr [ESP + 0x4]           ; 005b4333
@@ -28,8 +28,8 @@ section .text
     FXCH ST2                            ; 005b433b
     FADDP                               ; 005b433d
     LEA EDX,[EAX + 0x2b0]               ; 005b433f
-    FSTP float ptr [0x02c9c7e4]         ; 005b4345 | DAT_02c9c7e4
-    FSTP float ptr [0x02c9c7e0]         ; 005b434b | DAT_02c9c7e0
+    FSTP float ptr [0x02c9c7e4]         ; 005b4345 | g_FLOAT_02c9c7e4
+    FSTP float ptr [0x02c9c7e0]         ; 005b434b | g_FLOAT_02c9c7e0
     MOV ECX,dword ptr [EAX]             ; 005b4351
         ;   Label: LAB_005b4351
     TEST ECX,ECX                        ; 005b4353
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_005b4361
     JNZ 0x005b437c                      ; 005b4364
         ;   XREF to: 005b437c (CONDITIONAL_JUMP)  ; LAB_005b437c
-    MOV ECX,dword ptr [0x02c9c7e0]      ; 005b4366 | DAT_02c9c7e0
+    MOV ECX,dword ptr [0x02c9c7e0]      ; 005b4366 | g_FLOAT_02c9c7e0
     MOV dword ptr [EAX + 0xa8],ECX      ; 005b436c
     ADD EAX,0xac                        ; 005b4372
     CMP EAX,EDX                         ; 005b4377

@@ -7,9 +7,9 @@
 ; CRifle *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_rifbullet_kfm_005cdb4f+2
+;   TerminatedCString s_rifbullet_kfm_005cdb51
 ;   TerminatedCString s_shotgun_cock_wav_005cdb5f
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
@@ -105,7 +105,7 @@ section .text
     MOV dword ptr [ESP + 0x40],EAX      ; 005285be
     MOV EAX,dword ptr [ESP + 0x68]      ; 005285c2
     MOV dword ptr [ESP + 0x44],EAX      ; 005285c6
-    PUSH 0x5cdb51                       ; 005285ca | s_rifbullet_kfm_005cdb4f+2
+    PUSH 0x5cdb51                       ; 005285ca | = "rifbullet.kfm"
         ;   Label: LAB_005285ca
     CALL core_dmodel.cpp_loadModel_FUN_00462420 ; 005285cf
         ;   XREF to: 00462420 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00462420(char * filename)
@@ -117,7 +117,7 @@ section .text
     PUSH EAX                            ; 005285e0
     LEA EAX,[EBX + 0x20]                ; 005285e1
     PUSH EAX                            ; 005285e4
-    MOV EAX,[0x005fc5a0]                ; 005285e5 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 005285e5 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 005285ea
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004a3e70 ; 005285eb
         ;   XREF to: 004a3e70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004a3e70(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)

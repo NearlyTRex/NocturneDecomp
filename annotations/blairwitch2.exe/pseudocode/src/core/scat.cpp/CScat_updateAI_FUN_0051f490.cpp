@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float delta_time)
 
@@ -15,7 +14,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float del
   EHeroTask EVar1;
   CWeapon *pCVar2;
   float fVar3;
-  CEnemy *pCVar4;
+  CHero *pCVar4;
   SMotion *pSVar5;
   CPathMap *this_ptr_00;
   int iVar6;
@@ -42,22 +41,25 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float del
   float local_28;
   float local_24;
   float local_20;
-  CEnemy *local_1c;
+  CHero *local_1c;
   float local_18;
   float local_14;
   
   bVar7 = 0;
   local_24 = 0.25;
-  local_1c = *(CEnemy **)(_DAT_01cedef4 * 4 + 0x1cedee4);
+  local_1c = g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
   local_28 = 0.7853982;
   if ((this_ptr->base).ai_task == HERO_TASK_STAND) {
     return;
   }
   memset(&(this_ptr->base).player_input,0,0x34);
-  iVar6 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-  local_9c = (this_ptr->base).base.base.location.position.x - *(float *)(iVar6 + 0x20);
-  local_98 = (this_ptr->base).base.base.location.position.y - *(float *)(iVar6 + 0x24);
-  local_94 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar6 + 0x28);
+  pCVar4 = g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
+  local_9c = (this_ptr->base).base.base.location.position.x -
+             (pCVar4->base).base.location.position.x;
+  local_98 = (this_ptr->base).base.base.location.position.y -
+             (pCVar4->base).base.location.position.y;
+  local_94 = (this_ptr->base).base.base.location.position.z -
+             (pCVar4->base).base.location.position.z;
   local_54.x = local_9c;
   *(uint *)((int)aCStack_48 + (uint)bVar7 * -8 + -8) =
        *(uint *)((int)&stack0xffffff68 + (uint)bVar7 * -8);
@@ -70,8 +72,8 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float del
                 [(this_ptr->base).inventories[0].current_group], pCVar2 != (CWeapon *)0x0)) &&
      (0 < pCVar2->ammo_count)) {
     local_18 = 9999.9;
-    pCVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004d00c0(&this_ptr->base,&local_18);
-    if ((pCVar4 != (CEnemy *)0x0) && ((int)local_18 < 0x41f00000)) {
+    pCVar4 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004d00c0(&this_ptr->base,&local_18);
+    if ((pCVar4 != (CHero *)0x0) && ((int)local_18 < 0x41f00000)) {
       local_1c = pCVar4;
       local_2c = 1;
     }
@@ -100,7 +102,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float del
   }
   if (this_ptr->weapon_actor != (CWeapon *)0x0) {
     if (this_ptr->weapon_actor->weapon_type == (WEAPON_TYPE_BARON|WEAPON_TYPE_SHOTGUN)) {
-      if (local_b8 < (float)_DAT_005e2b63) {
+      if (local_b8 < (float)8) {
         pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
                            (&(this_ptr->base).base.model.base);
         if ((pSVar5->state_index == 7) && (this_ptr->guns_drawn != 0)) {
@@ -109,9 +111,9 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float del
         goto LAB_0051f79a;
       }
     }
-    else if (local_b8 < (float)_DAT_005e2b53) {
+    else if (local_b8 < (float)15) {
       if ((this_ptr->guns_drawn != 0) && (local_2c != 0)) {
-        if (((float)_DAT_005e2b5b < (this_ptr->base).base.layer_action_t) &&
+        if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) &&
            (this_ptr->aim_converged != 0)) {
           (this_ptr->base).player_input.action_state.fire = 1;
         }
@@ -132,7 +134,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float del
     if (iVar6 != 0) {
       local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                            (aCStack_48[0].y - (this_ptr->base).base.base.orient.vec.y);
-      fVar3 = local_14 * _DAT_005e2b6b * (float)_DAT_005e2b73;
+      fVar3 = local_14 * 0.3183099f * (float)4;
       fStack_30 = -local_24;
       (this_ptr->base).player_input.turn_speed = fVar3;
       if (fVar3 < fStack_30) {
@@ -141,7 +143,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_0051f490(CScat *this_ptr,float del
       if (local_24 < (this_ptr->base).player_input.turn_speed) {
         (this_ptr->base).player_input.turn_speed = local_24;
       }
-      if ((float)_DAT_005e2b7b <= local_b8) {
+      if ((float)10 <= local_b8) {
         (this_ptr->base).player_input.action_state.run = 1;
       }
       (this_ptr->base).player_input.action_state.walk = 1;
@@ -184,11 +186,11 @@ LAB_0051f79a:
     local_a4 = -local_28;
   }
   local_20 = local_a4 - (this_ptr->head_euler_angles).y;
-  if (delta_time * _DAT_005e2b83 < local_20) {
-    local_20 = delta_time * _DAT_005e2b83;
+  if (delta_time * 3.141593f < local_20) {
+    local_20 = delta_time * 3.141593f;
   }
-  if (local_20 < delta_time * _DAT_005e2b87) {
-    local_20 = delta_time * _DAT_005e2b87;
+  if (local_20 < delta_time * -3.141593f) {
+    local_20 = delta_time * -3.141593f;
   }
   (this_ptr->head_euler_angles).y = (this_ptr->head_euler_angles).y + local_20;
   return;

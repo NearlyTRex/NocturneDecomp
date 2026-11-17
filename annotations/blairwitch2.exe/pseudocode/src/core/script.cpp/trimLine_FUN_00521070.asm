@@ -11,8 +11,8 @@
 ;   core_script.cpp_CScript_buildParsedLines_FUN_00521ec0 at 00521f08
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e2c7e
-;   undefined4 DAT_0061ed94
+;   TerminatedCString s_anon_005e2c7e
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   crt_string.c_strstr_FUN_005ba9e0
@@ -32,7 +32,7 @@ section .text
         ;   Label: LAB_0052107e
     INC AL                              ; 00521080
     AND EAX,0xff                        ; 00521082
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00521087 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00521087 | g_UCHAR_ARRAY_0061ed94
     JZ 0x00521093                       ; 0052108e
         ;   XREF to: 00521093 (CONDITIONAL_JUMP)  ; LAB_00521093
     INC ESI                             ; 00521090
@@ -56,7 +56,7 @@ section .text
         ;   XREF to: 00521096 (CONDITIONAL_JUMP)  ; LAB_00521096
     POP EDI                             ; 005210ae
         ;   Label: LAB_005210ae
-    PUSH 0x5e2c7e                       ; 005210af | DAT_005e2c7e
+    PUSH 0x5e2c7e                       ; 005210af | = "//"
     PUSH EBX                            ; 005210b4
     CALL crt_string.c_strstr_FUN_005ba9e0 ; 005210b5
         ;   XREF to: 005ba9e0 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strstr_FUN_005ba9e0(char * haystack_str, char * needle_str)
@@ -96,7 +96,7 @@ section .text
         ;   Label: LAB_005210e6
     INC DL                              ; 005210e9
     MOVZX ESI,DL                        ; 005210eb
-    TEST byte ptr [ESI + 0x61ed94],0x2  ; 005210ee | DAT_0061ed94
+    TEST byte ptr [ESI + 0x61ed94],0x2  ; 005210ee | g_UCHAR_ARRAY_0061ed94
     JZ 0x005210ff                       ; 005210f5
         ;   XREF to: 005210ff (CONDITIONAL_JUMP)  ; LAB_005210ff
     DEC EAX                             ; 005210f7

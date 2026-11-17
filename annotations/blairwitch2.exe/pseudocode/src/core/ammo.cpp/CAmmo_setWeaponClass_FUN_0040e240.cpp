@@ -27,7 +27,7 @@ void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo *this_ptr,cha
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
-  iVar2 = _strcmp(weapon_class_name,&DAT_005cb10b);
+  iVar2 = _strcmp(weapon_class_name,"CGun");
   if (iVar2 == 0) {
     switch(this_ptr->ammo_type) {
     case AMMO_TYPE_HOLY:

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00553610(float latency)
 
 {
@@ -15,17 +13,17 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00553610(float latency)
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00552b20();
   if (iVar1 != 0) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x1877;
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x1877;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setMaxSwSoundLatency - can't do this while sound is active");
   }
-  if (latency < (float)_DAT_005e92be) {
+  if (latency < (float)0.050000000000000003) {
     latency = 0.05;
   }
-  if (latency <= (float)_DAT_005e92c6) {
-    DAT_0061bcc4 = latency;
+  if (latency <= (float)2) {
+    g_FLOAT_0061bcc4 = latency;
     return;
   }
-  DAT_0061bcc4 = 2.0;
+  g_FLOAT_0061bcc4 = 2.0;
   return;
 }

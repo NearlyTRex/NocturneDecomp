@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004287f4 = 0042884d
 ;   TerminatedCString s_limb_wav_005b7e27
-;   undefined4 DAT_005b7e37
+;   double g_DOUBLE_005b7e37 = 7
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.blood_flag
 ;   undefined4 g_CGameInstance.gratuitous_dismemberment
@@ -270,7 +270,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 00428a4b
         ;   Label: LAB_00428a4b
     FLD ST0                             ; 00428a4e
-    FMUL double ptr [0x005b7e37]        ; 00428a50 | DAT_005b7e37
+    FMUL double ptr [0x005b7e37]        ; 00428a50 | g_DOUBLE_005b7e37
     FSTP ST1                            ; 00428a56
     FSTP float ptr [ESI + 0x8]          ; 00428a58
     CMP dword ptr [EBX + 0xd0b4],0x0    ; 00428a5b

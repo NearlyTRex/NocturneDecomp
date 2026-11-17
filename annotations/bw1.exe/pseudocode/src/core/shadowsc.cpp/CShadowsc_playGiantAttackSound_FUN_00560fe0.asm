@@ -10,7 +10,7 @@
 ;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 00560c75
 ;
 ; Referenced Globals:
-;   undefined4 s_Gscorp_attack_wav_4_005f18d0+1
+;   TerminatedCString s_scorp_attack_wav_4_005f18d1
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 00560ffa (CONDITIONAL_JUMP)  ; LAB_00560ffa
     POP EBX                             ; 00560ff8
     RET                                 ; 00560ff9
-    PUSH 0x5f18d1                       ; 00560ffa | s_Gscorp_attack_wav_4_005f18d0+1
+    PUSH 0x5f18d1                       ; 00560ffa | = "scorp-attack?.wav @ 4"
         ;   Label: LAB_00560ffa
     MOV EAX,dword ptr [EBX + 0x154]     ; 00560fff
     PUSH EBX                            ; 00561005

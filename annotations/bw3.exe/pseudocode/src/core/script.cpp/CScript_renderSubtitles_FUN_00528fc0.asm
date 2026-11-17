@@ -18,20 +18,20 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b73b6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cde18
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
+;   float g_FLOAT_005cde18 = 0.3500000
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01549aa0
-;   undefined4 DAT_01549aa4
-;   undefined4 DAT_01549ab4
-;   undefined4 DAT_01549abc
-;   undefined4 DAT_01c6b5ac
+;   CBitFont* g_CBitFont_PTR_01549aa0
+;   CBitFont* g_CBitFont_PTR_01549aa4
+;   CBitFont* g_CBitFont_PTR_01549ab4
+;   CBitFont* g_CBitFont_PTR_01549abc
+;   int g_INT_01c6b5ac
 ;   undefined4 g_CGameInstance.subtitle_mode
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01dd4890
-;   undefined4 DAT_01ed3800
-;   undefined4 DAT_01ed7010
+;   int g_INT_01dd4890
+;   int g_INT_01ed3800
+;   float g_FLOAT_01ed7010
 ;
 ; Called Functions:
 ;   core_charactr.cpp_getGameDeltaTime_FUN_00434b00
@@ -64,12 +64,12 @@ section .text
         ;   XREF to: 00434b00 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_00434b00(CGame * game_ptr)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00528fe4
     FLD float ptr [ESP + 0x1c]          ; 00528fe8
-    FDIV float ptr [0x005cde18]         ; 00528fec | DAT_005cde18
-    FSUBR float ptr [0x01ed7010]        ; 00528ff2 | DAT_01ed7010
+    FDIV float ptr [0x005cde18]         ; 00528fec | g_FLOAT_005cde18
+    FSUBR float ptr [0x01ed7010]        ; 00528ff2 | g_FLOAT_01ed7010
     ADD ESP,0x4                         ; 00528ff8
         ;   Label: LAB_00528ff8
-    FSTP float ptr [0x01ed7010]         ; 00528ffb | DAT_01ed7010
-    FLD float ptr [0x01ed7010]          ; 00529001 | DAT_01ed7010
+    FSTP float ptr [0x01ed7010]         ; 00528ffb | g_FLOAT_01ed7010
+    FLD float ptr [0x01ed7010]          ; 00529001 | g_FLOAT_01ed7010
     FLDZ                                ; 00529007
     FCOMPP                              ; 00529009
     FNSTSW AX                           ; 0052900b
@@ -77,8 +77,8 @@ section .text
     JBE 0x00529018                      ; 0052900e
         ;   XREF to: 00529018 (CONDITIONAL_JUMP)  ; LAB_00529018
     XOR ECX,ECX                         ; 00529010
-    MOV dword ptr [0x01ed7010],ECX      ; 00529012 | DAT_01ed7010
-    FLD float ptr [0x01ed7010]          ; 00529018 | DAT_01ed7010
+    MOV dword ptr [0x01ed7010],ECX      ; 00529012 | g_FLOAT_01ed7010
+    FLD float ptr [0x01ed7010]          ; 00529018 | g_FLOAT_01ed7010
         ;   Label: LAB_00529018
     FLD1                                ; 0052901e
     FCOMPP                              ; 00529020
@@ -86,10 +86,10 @@ section .text
     SAHF                                ; 00529024
     JNC 0x00529031                      ; 00529025
         ;   XREF to: 00529031 (CONDITIONAL_JUMP)  ; LAB_00529031
-    MOV dword ptr [0x01ed7010],0x3f800000 ; 00529027 | DAT_01ed7010
-    MOV EAX,[0x005fba18]                ; 00529031 | DAT_005fba18
+    MOV dword ptr [0x01ed7010],0x3f800000 ; 00529027 | g_FLOAT_01ed7010
+    MOV EAX,[0x005fba18]                ; 00529031 | g_INT_005fba18
         ;   Label: LAB_00529031
-    MOV EBX,dword ptr [0x005fba1c]      ; 00529036 | DAT_005fba1c
+    MOV EBX,dword ptr [0x005fba1c]      ; 00529036 | g_INT_005fba1c
     PUSH EDI                            ; 0052903c
     XOR ESI,ESI                         ; 0052903d
     MOV dword ptr [ESP + 0xc],EAX       ; 0052903f
@@ -101,7 +101,7 @@ section .text
     TEST EAX,EAX                        ; 00529051
     JLE 0x00529092                      ; 00529053
         ;   XREF to: 00529092 (CONDITIONAL_JUMP)  ; LAB_00529092
-    CMP dword ptr [0x01ed3800],0x2      ; 00529055 | DAT_01ed3800
+    CMP dword ptr [0x01ed3800],0x2      ; 00529055 | g_INT_01ed3800
     JZ 0x00529074                       ; 0052905c
         ;   XREF to: 00529074 (CONDITIONAL_JUMP)  ; LAB_00529074
     PUSH 0x0                            ; 0052905e
@@ -130,7 +130,7 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_004031c0 ; 0052908a
         ;   XREF to: 004031c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_004031c0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0052908f
-    MOV EAX,[0x01c6b5ac]                ; 00529092 | DAT_01c6b5ac
+    MOV EAX,[0x01c6b5ac]                ; 00529092 | g_INT_01c6b5ac
         ;   Label: LAB_00529092
     MOV dword ptr [ESP],EAX             ; 00529097
     MOV EAX,EBX                         ; 0052909a
@@ -143,21 +143,21 @@ section .text
     CMP dword ptr [EAX + 0x10],0x0      ; 005290af | g_CGameInstance.subtitle_mode
     JZ 0x005291d0                       ; 005290b3
         ;   XREF to: 005291d0 (CONDITIONAL_JUMP)  ; LAB_005291d0
-    MOV ECX,dword ptr [0x005fba1c]      ; 005290b9 | DAT_005fba1c
-    MOV EBP,dword ptr [0x01549aa0]      ; 005290bf | DAT_01549aa0
+    MOV ECX,dword ptr [0x005fba1c]      ; 005290b9 | g_INT_005fba1c
+    MOV EBP,dword ptr [0x01549aa0]      ; 005290bf | g_CBitFont_PTR_01549aa0
     CMP ECX,0x1e0                       ; 005290c5
     JGE 0x005290d3                      ; 005290cb
         ;   XREF to: 005290d3 (CONDITIONAL_JUMP)  ; LAB_005290d3
-    MOV EBP,dword ptr [0x01549aa4]      ; 005290cd | DAT_01549aa4
-    CMP dword ptr [0x005fba1c],0x180    ; 005290d3 | DAT_005fba1c
+    MOV EBP,dword ptr [0x01549aa4]      ; 005290cd | g_CBitFont_PTR_01549aa4
+    CMP dword ptr [0x005fba1c],0x180    ; 005290d3 | g_INT_005fba1c
         ;   Label: LAB_005290d3
     JGE 0x005290f2                      ; 005290dd
         ;   XREF to: 005290f2 (CONDITIONAL_JUMP)  ; LAB_005290f2
-    CMP dword ptr [0x01dd4890],0x0      ; 005290df | DAT_01dd4890
+    CMP dword ptr [0x01dd4890],0x0      ; 005290df | g_INT_01dd4890
     JZ 0x00529205                       ; 005290e6
         ;   XREF to: 00529205 (CONDITIONAL_JUMP)  ; LAB_00529205
-    MOV EBP,dword ptr [0x01549ab4]      ; 005290ec | DAT_01549ab4
-    MOV EDX,dword ptr [0x005fba18]      ; 005290f2 | DAT_005fba18
+    MOV EBP,dword ptr [0x01549ab4]      ; 005290ec | g_CBitFont_PTR_01549ab4
+    MOV EDX,dword ptr [0x005fba18]      ; 005290f2 | g_INT_005fba18
         ;   Label: LAB_005290f2
     LEA EAX,[EDX*0x8 + 0x0]             ; 005290f8
     ADD EDX,EAX                         ; 005290ff
@@ -251,7 +251,7 @@ section .text
     LEA EAX,[EAX]                       ; 005291cd
     MOV EAX,dword ptr [ESP]             ; 005291d0
         ;   Label: LAB_005291d0
-    MOV [0x01c6b5ac],EAX                ; 005291d3 | DAT_01c6b5ac
+    MOV [0x01c6b5ac],EAX                ; 005291d3 | g_INT_01c6b5ac
     ADD ESP,0x1c                        ; 005291d8
     POP EBP                             ; 005291db
     POP EDI                             ; 005291dc
@@ -260,16 +260,16 @@ section .text
     RET                                 ; 005291df
     PUSH EAX                            ; 005291e0
         ;   Label: LAB_005291e0
-    MOV dword ptr [0x01ed3800],EDX      ; 005291e1 | DAT_01ed3800
+    MOV dword ptr [0x01ed3800],EDX      ; 005291e1 | g_INT_01ed3800
     CALL core_charactr.cpp_getGameDeltaTime_FUN_00434b00 ; 005291e7
         ;   XREF to: 00434b00 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_00434b00(CGame * game_ptr)
     MOV dword ptr [ESP + 0x1c],EAX      ; 005291ec
     FLD float ptr [ESP + 0x1c]          ; 005291f0
-    FDIV float ptr [0x005cde18]         ; 005291f4 | DAT_005cde18
-    FADD float ptr [0x01ed7010]         ; 005291fa | DAT_01ed7010
+    FDIV float ptr [0x005cde18]         ; 005291f4 | g_FLOAT_005cde18
+    FADD float ptr [0x01ed7010]         ; 005291fa | g_FLOAT_01ed7010
     JMP 0x00528ff8                      ; 00529200
         ;   XREF to: 00528ff8 (UNCONDITIONAL_JUMP)  ; LAB_00528ff8
-    MOV EBP,dword ptr [0x01549abc]      ; 00529205 | DAT_01549abc
+    MOV EBP,dword ptr [0x01549abc]      ; 00529205 | g_CBitFont_PTR_01549abc
         ;   Label: LAB_00529205
     JMP 0x005290f2                      ; 0052920b
         ;   XREF to: 005290f2 (UNCONDITIONAL_JUMP)  ; LAB_005290f2

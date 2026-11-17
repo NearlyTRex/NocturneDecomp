@@ -15,19 +15,19 @@
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0 at 0045deeb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8462
-;   undefined4 DAT_005d8465
+;   TerminatedCString s_rb_005d8462
+;   TerminatedCString s_art_005d8465
 ;   TerminatedCString s_core_dfilter_cpp_005d8469
 ;   TerminatedCString s_CDemonFilter_load_Bad_fi_005d847d
-;   undefined4 DAT_005d84a4
+;   TerminatedCString s_art_005d84a4
 ;   TerminatedCString s_core_dfilter_cpp_005d84a8
 ;   TerminatedCString s_CDemonFilter_load_Non_sq_005d84bc
 ;   TerminatedCString s_core_dfilter_cpp_005d84e9
 ;   TerminatedCString s_CDemonFilter_load_Bad_fi_005d84fd
 ;   TerminatedCString s_core_dfilter_cpp_005d8525
 ;   TerminatedCString s_CDemonFilter_load_Bad_fi_005d8539
-;   undefined4 DAT_005d8561
-;   undefined4 DAT_005d8564
+;   TerminatedCString s_rb_005d8561
+;   TerminatedCString s_art_005d8564
 ;   TerminatedCString s_core_dfilter_cpp_005d8568
 ;   TerminatedCString s_CDemonFilter_load_Bad_fi_005d857c
 ;   ... and 2 more
@@ -53,9 +53,9 @@ section .text
     SUB ESP,0x4                         ; 0045da34
     MOV EBX,dword ptr [ESP + 0x18]      ; 0045da37
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0045da3b
-    PUSH 0x5d8462                       ; 0045da3f | DAT_005d8462
+    PUSH 0x5d8462                       ; 0045da3f | = "rb"
     PUSH EDI                            ; 0045da44
-    PUSH 0x5d8465                       ; 0045da45 | DAT_005d8465
+    PUSH 0x5d8465                       ; 0045da45 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0045da4a
         ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0045da4f
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0045da62
     PUSH EDI                            ; 0045da65
-    PUSH 0x5d84a4                       ; 0045da66 | DAT_005d84a4
+    PUSH 0x5d84a4                       ; 0045da66 | = "art"
     CALL engine_dosio.cpp_getFileSize_FUN_00478fb0 ; 0045da6b
         ;   XREF to: 00478fb0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00478fb0(char * directory, char * filename)
     ADD ESP,0x8                         ; 0045da70
@@ -96,8 +96,8 @@ section .text
     MOV EBP,0x5d84a8                    ; 0045da9d | = "..\\core\\dfilter.cpp"
     MOV EAX,0xb7                        ; 0045daa2
     PUSH 0x5d84bc                       ; 0045daa7 | = "CDemonFilter::load - Non-square filte..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0045daac | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0045dab2 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0045daac | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0045dab2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045dab7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0045dabc
@@ -112,8 +112,8 @@ section .text
     MOV EAX,0x5d84e9                    ; 0045dacd | = "..\\core\\dfilter.cpp"
     MOV EDX,0xb9                        ; 0045dad2
     PUSH 0x5d84fd                       ; 0045dad7 | = "CDemonFilter::load - Bad filter size %d"
-    MOV [0x01d1d400],EAX                ; 0045dadc | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0045dae1 | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0045dadc | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0045dae1 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045dae7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0045daec
@@ -128,8 +128,8 @@ section .text
     MOV EAX,0x5d8525                    ; 0045daff | = "..\\core\\dfilter.cpp"
     MOV EDX,0xbc                        ; 0045db04
     PUSH 0x5d8539                       ; 0045db09 | = "CDemonFilter::load - Bad filter size %d"
-    MOV [0x01d1d400],EAX                ; 0045db0e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0045db13 | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0045db0e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0045db13 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045db19
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0045db1e
@@ -138,9 +138,9 @@ section .text
     CALL core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0045d9c0 ; 0045db22
         ;   XREF to: 0045d9c0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0045d9c0(CDemonFilter * this_ptr)
     ADD ESP,0x4                         ; 0045db27
-    PUSH 0x5d8561                       ; 0045db2a | DAT_005d8561
+    PUSH 0x5d8561                       ; 0045db2a | = "rb"
     PUSH EDI                            ; 0045db2f
-    PUSH 0x5d8564                       ; 0045db30 | DAT_005d8564
+    PUSH 0x5d8564                       ; 0045db30 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0045db35
         ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0045db3a
@@ -188,8 +188,8 @@ section .text
     MOV EDX,0x5d8469                    ; 0045db93 | = "..\\core\\dfilter.cpp"
     MOV ECX,0xab                        ; 0045db98
     PUSH 0x5d847d                       ; 0045db9d | = "CDemonFilter::load - Bad filename : %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0045dba2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0045dba8 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0045dba2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0045dba8 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045dbae
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0045dbb3
@@ -211,8 +211,8 @@ section .text
         ;   Label: LAB_0045dbdd
     MOV EAX,0xc6                        ; 0045dbe2
     PUSH 0x5d857c                       ; 0045dbe7 | = "CDemonFilter::load - Bad filename"
-    MOV dword ptr [0x01d1d400],EBP      ; 0045dbec | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0045dbf2 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0045dbec | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0045dbf2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045dbf7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0045dbfc

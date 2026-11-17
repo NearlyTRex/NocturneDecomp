@@ -23,8 +23,8 @@
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_00478550 at 004786f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1de3
-;   undefined4 DAT_005d1deb
+;   double g_DOUBLE_005d1de3 = 2
+;   double g_DOUBLE_005d1deb = 4
 ;
 ; *****************************************************************************
 
@@ -65,7 +65,7 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 00478432
     FMUL ST0                            ; 00478435
     FLD double ptr [ESP + 0x40]         ; 00478437
-    FMUL double ptr [0x005d1deb]        ; 0047843b | DAT_005d1deb
+    FMUL double ptr [0x005d1deb]        ; 0047843b | g_DOUBLE_005d1deb
     FLD float ptr [EDX]                 ; 00478441
     FMUL ST0                            ; 00478443
     FLD float ptr [EDX]                 ; 00478445
@@ -76,7 +76,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 00478451
     FMUL ST0                            ; 00478454
     FXCH ST3                            ; 00478456
-    FMUL double ptr [0x005d1de3]        ; 00478458 | DAT_005d1de3
+    FMUL double ptr [0x005d1de3]        ; 00478458 | g_DOUBLE_005d1de3
     FXCH ST3                            ; 0047845e
     FSUBP ST2,ST0                       ; 00478460
     FMULP                               ; 00478462
@@ -98,7 +98,7 @@ section .text
     FSQRT                               ; 0047848f
     FSUBP                               ; 00478491
     FLD double ptr [ESP + 0x40]         ; 00478493
-    FMUL double ptr [0x005d1de3]        ; 00478497 | DAT_005d1de3
+    FMUL double ptr [0x005d1de3]        ; 00478497 | g_DOUBLE_005d1de3
     FDIVP                               ; 0047849d
     FLDZ                                ; 0047849f
     XOR ECX,ECX                         ; 004784a1
@@ -135,7 +135,7 @@ section .text
     FSQRT                               ; 004784ea
     FSUB double ptr [ESP + 0x38]        ; 004784ec
     FLD double ptr [ESP + 0x40]         ; 004784f0
-    FMUL double ptr [0x005d1de3]        ; 004784f4 | DAT_005d1de3
+    FMUL double ptr [0x005d1de3]        ; 004784f4 | g_DOUBLE_005d1de3
     FDIVP                               ; 004784fa
     FLDZ                                ; 004784fc
     FXCH                                ; 004784fe

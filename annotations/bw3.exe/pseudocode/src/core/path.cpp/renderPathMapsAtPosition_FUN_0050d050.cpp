@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_0050d050(CVector3f *position,int depth,int red,int green,int fog)
 
 {
@@ -30,15 +28,15 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_0050d050(CVector3f *posi
   *(uint *)((int)&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   iVar2 = 0;
-  if (0 < _DAT_01ec1518) {
+  if (0 < g_INT_01ec1518) {
     iVar1 = 0;
     do {
-      if (*(int *)(iVar1 + 0x1ec151c) == 0) {
-        _DAT_01d71de0 = "..\\core\\path.cpp";
-        _DAT_01d71de4 = 0x6b6;
+      if (*(int *)((int)g_CPathMap_PTR_ARRAY_01ec151c + iVar1) == 0) {
+        g_CHAR_PTR_01d71de0 = "..\\core\\path.cpp";
+        g_INT_01d71de4 = 0x6b6;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Global pathmap list corruption");
       }
-      this_ptr = *(CPathMap **)(iVar1 + 0x1ec151c);
+      this_ptr = *(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01ec151c + iVar1);
       if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&
            (iStack_28 == (this_ptr->voxel_coords).x)) && (iStack_24 == (this_ptr->voxel_coords).y))
          && (iStack_20 == (this_ptr->voxel_coords).z)) {
@@ -46,7 +44,7 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_0050d050(CVector3f *posi
       }
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 4;
-    } while (iVar2 < _DAT_01ec1518);
+    } while (iVar2 < g_INT_01ec1518);
   }
   return;
 }

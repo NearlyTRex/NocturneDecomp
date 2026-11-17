@@ -12,8 +12,8 @@
 ;   shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470 at 004854f8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004855c0
@@ -28,7 +28,7 @@ section .text
     PUSH EDX                            ; 00485585
     CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004855c0 ; 00485586
         ;   XREF to: 004855c0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(CEdCheck * this_ptr)
-    IMUL EAX,dword ptr [0x006141b8]     ; 0048558b | DAT_006141b8
+    IMUL EAX,dword ptr [0x006141b8]     ; 0048558b | g_INT_006141b8
     LEA EDX,[EAX*0x4 + 0x0]             ; 00485592
     SUB EDX,EAX                         ; 00485599
     MOV EAX,EDX                         ; 0048559b
@@ -37,7 +37,7 @@ section .text
     SBB EAX,EDX                         ; 004855a3
     SAR EAX,0x2                         ; 004855a5
     MOV EDX,EAX                         ; 004855a8
-    MOV EBX,dword ptr [0x006141bc]      ; 004855aa | DAT_006141bc
+    MOV EBX,dword ptr [0x006141bc]      ; 004855aa | g_INT_006141bc
     SAR EDX,0x1f                        ; 004855b0
     ADD ESP,0x4                         ; 004855b3
     IDIV EBX                            ; 004855b6

@@ -29,7 +29,8 @@ void __cdecl core_fire_cpp_loadLightningBoltAssets_FUN_0049f380(int bolt_style)
     else {
       texture = (SMRGLTextureBasic *)(&DAT_005fd8f4 + iVar1);
     }
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+              (g_CDemonRenderer_PTR_005f2afc,texture);
     iVar1 = iVar1 + 0x18;
   } while (iVar1 != 0x90);
   return;

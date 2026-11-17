@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.waypoint_count
-;   undefined4 DAT_02c97384
+;   char[4] g_CHAR_ARRAY_02c97384
 ;
 ; Called Functions:
 ;   core_waypoint.cpp_CWayPoint_isReachable_FUN_005ab880
@@ -83,15 +83,15 @@ section .text
     RET                                 ; 005abbea
     MOV ESI,0x1                         ; 005abbeb
         ;   Label: LAB_005abbeb
-    MOV dword ptr [0x02c97384],EBX      ; 005abbf0 | DAT_02c97384
+    MOV dword ptr [0x02c97384],EBX      ; 005abbf0 | g_CHAR_ARRAY_02c97384
     MOV dword ptr [EBX + 0x558],0x0     ; 005abbf6
     DEC ESI                             ; 005abc00
         ;   Label: LAB_005abc00
     LEA EBX,[ESI*0x4 + 0x0]             ; 005abc01
     PUSH EBX                            ; 005abc08
     PUSH 0x2c97388                      ; 005abc09
-    MOV EAX,[0x02c97384]                ; 005abc0e | DAT_02c97384
-    PUSH 0x2c97384                      ; 005abc13 | DAT_02c97384
+    MOV EAX,[0x02c97384]                ; 005abc0e | g_CHAR_ARRAY_02c97384
+    PUSH 0x2c97384                      ; 005abc13 | g_CHAR_ARRAY_02c97384
     MOV dword ptr [ESP + 0x18],EAX      ; 005abc18
     CALL crt_string.c_memmove_FUN_005c25d0 ; 005abc1c
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
@@ -124,7 +124,7 @@ section .text
         ;   XREF to: 005abc86 (CONDITIONAL_JUMP)  ; LAB_005abc86
     LEA EBX,[ESI*0x4 + 0x0]             ; 005abc75
     XOR EAX,EAX                         ; 005abc7c
-    CMP ECX,dword ptr [EAX + 0x2c97384] ; 005abc7e | DAT_02c97384
+    CMP ECX,dword ptr [EAX + 0x2c97384] ; 005abc7e | g_CHAR_ARRAY_02c97384
         ;   Label: LAB_005abc7e
     JNZ 0x005abcee                      ; 005abc84
         ;   XREF to: 005abcee (CONDITIONAL_JUMP)  ; LAB_005abcee
@@ -134,7 +134,7 @@ section .text
         ;   XREF to: 005abc94 (CONDITIONAL_JUMP)  ; LAB_005abc94
     ADD EBP,0x4                         ; 005abc8a
     INC ESI                             ; 005abc8d
-    MOV dword ptr [EBP + 0x2c97380],ECX ; 005abc8e | DAT_02c97384
+    MOV dword ptr [EBP + 0x2c97380],ECX ; 005abc8e | g_CHAR_ARRAY_02c97384
     MOV ECX,dword ptr [ESP + 0x14]      ; 005abc94
         ;   Label: LAB_005abc94
     MOV EDX,dword ptr [ESP + 0xc]       ; 005abc98

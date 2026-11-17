@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out)
 
 {
@@ -50,14 +48,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20(CD
   
   local_4c = pos->x;
   local_44 = pos->z;
-  local_48 = pos->y + _DAT_005d1b63;
+  local_48 = pos->y + 2.0f;
   local_58.x = pos->x;
   local_58.z = pos->z;
   fVar9 = 1.0 / (this_ptr->cell_size).y;
   local_3c = local_4c - (this_ptr->bbox_min).x;
   fVar1 = local_3c - radius;
   fVar3 = 1.0 / (this_ptr->cell_size).x;
-  local_58.y = pos->y + _DAT_005d1b67;
+  local_58.y = pos->y + -10.0f;
   local_38 = local_44 - (this_ptr->bbox_min).z;
   local_30 = 1.0 / (this_ptr->cell_size).z;
   fVar5 = local_58.y - (this_ptr->bbox_min).y;

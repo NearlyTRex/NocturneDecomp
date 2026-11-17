@@ -20,7 +20,7 @@
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f13a4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e53c7
+;   double g_DOUBLE_005e53c7 = 2
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -127,7 +127,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004f18d7
     FLD float ptr [ESP + 0x10]          ; 004f18d8
     FABS                                ; 004f18dc
-    FCOMP double ptr [0x005e53c7]       ; 004f18de | DAT_005e53c7
+    FCOMP double ptr [0x005e53c7]       ; 004f18de | g_DOUBLE_005e53c7
     FNSTSW AX                           ; 004f18e4
     SAHF                                ; 004f18e6
     JA 0x004f1915                       ; 004f18e7

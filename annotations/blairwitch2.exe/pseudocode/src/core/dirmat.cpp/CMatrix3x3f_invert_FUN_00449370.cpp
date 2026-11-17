@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00449370(CMatrix3x3f *this_ptr)
 
 {
@@ -49,8 +47,8 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00449370(CMatrix3x3f *this_p
            (this_ptr->m[1].x * this_ptr->m[2].z - this_ptr->m[1].z * this_ptr->m[2].x) *
            this_ptr->m[0].y);
   if (ABS(fVar30) == 0.0) {
-    _DAT_01d046a0 = "..\\core\\dirmat.cpp";
-    _DAT_01d046a4 = 0x6c;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dirmat.cpp";
+    g_INT_01d046a4 = 0x6c;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMatrix::invert - Singular matrix");
   }
   fVar1 = this_ptr->m[1].x;

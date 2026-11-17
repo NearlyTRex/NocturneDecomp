@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3b6c
 ;   TerminatedCString s_enableHwSoundMixing_Can_005d3b81
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cf328c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_02cf328c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -32,18 +32,18 @@ section .text
     JNZ 0x00558703                      ; 005586f7
         ;   XREF to: 00558703 (CONDITIONAL_JUMP)  ; LAB_00558703
     MOV EAX,dword ptr [ESP + 0x4]       ; 005586f9
-    MOV [0x02cf328c],EAX                ; 005586fd | DAT_02cf328c
+    MOV [0x02cf328c],EAX                ; 005586fd | g_INT_02cf328c
     RET                                 ; 00558702
     MOV EDX,0x5d3b6c                    ; 00558703 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_00558703
     MOV ECX,0x15a2                      ; 00558708
     PUSH 0x5d3b81                       ; 0055870d | = "enableHwSoundMixing - Can't do this w..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00558712 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00558718 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00558712 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00558718 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055871e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00558723
     MOV EAX,dword ptr [ESP + 0x4]       ; 00558726
-    MOV [0x02cf328c],EAX                ; 0055872a | DAT_02cf328c
+    MOV [0x02cf328c],EAX                ; 0055872a | g_INT_02cf328c
     RET                                 ; 0055872f
 

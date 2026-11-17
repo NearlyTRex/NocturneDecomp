@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 361,
+    "complexity_score": 280,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 29,
+    "pseudocode_lines": 45,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 159
+    "total_lines": 158
   },
   "cross_references": [],
   "function": {
@@ -61,21 +59,21 @@
   "globals": [
     {
       "addr": "005cf01a",
-      "name": "DAT_005cf01a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf01a",
+      "type": "double",
+      "value": "0.00390625"
     },
     {
       "addr": "005f5020",
-      "name": "DAT_005f5020",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f5020",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0060b27c",
-      "name": "DAT_0060b27c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b27c",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     }
   ],
   "param_estimates": {
@@ -162,88 +160,48 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0060a0fc",
-      "severity": "mild",
-      "text": "CStack_1c.x = (int)ROUND((float)*(int *)((int)&DAT_0060a0fc + iVar4) * (float)_DAT_005cf01a *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0060a100",
-      "severity": "mild",
-      "text": "CStack_1c.y = (int)ROUND((float)*(int *)((int)&DAT_0060a100 + iVar4) * (float)_DAT_005cf01a *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_0060a104",
-      "severity": "mild",
-      "text": "CStack_1c.z = (int)ROUND((float)*(int *)((int)&DAT_0060a104 + iVar4) * (float)_DAT_005cf01a *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0060b27c",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_0060b27c->vertex_buffer_ptr->u + iVar3) = 0x800000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_0060a3f4",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&DAT_0060a3f4 + iVar3);",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `&DAT_0060a0fc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CVector3i_ARRAY_0060a0fc[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&g_CVector3i_ARRAY_0060a0fc[0].x",
+      "severity": "moderate",
+      "text": "CStack_1c.x = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].x + iVar4) *",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3i_ARRAY_0060a0fc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 19,
-      "match": "(int)&DAT_0060a0fc",
+      "match": "(int)&g_CVector3i_ARRAY_0060a0fc[0].y",
       "severity": "moderate",
-      "text": "CStack_1c.x = (int)ROUND((float)*(int *)((int)&DAT_0060a0fc + iVar4) * (float)_DAT_005cf01a *",
+      "text": "CStack_1c.y = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].y + iVar4) *",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_0060a100` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CVector3i_ARRAY_0060a0fc[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 21,
-      "match": "(int)&DAT_0060a100",
+      "match": "(int)&g_CVector3i_ARRAY_0060a0fc[0].z",
       "severity": "moderate",
-      "text": "CStack_1c.y = (int)ROUND((float)*(int *)((int)&DAT_0060a100 + iVar4) * (float)_DAT_005cf01a *",
+      "text": "CStack_1c.z = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].z + iVar4) *",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_0060a104` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
-      "match": "(int)&DAT_0060a104",
+      "description": "Pointer value `&g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->u` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->u",
       "severity": "moderate",
-      "text": "CStack_1c.z = (int)ROUND((float)*(int *)((int)&DAT_0060a104 + iVar4) * (float)_DAT_005cf01a *",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&DAT_0060b27c->vertex_buffer_ptr->u` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
-      "match": "(int)&DAT_0060b27c->vertex_buffer_ptr->u",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_0060b27c->vertex_buffer_ptr->u + iVar3) = 0x800000;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->u + iVar3) = 0x800000;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "(int)&pCVar2->vertex_buffer_ptr->v",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;",
@@ -251,7 +209,7 @@
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "(int)&pCVar2->vertex_buffer_ptr->a",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->a + iVar3) = 0x8000;",
@@ -259,7 +217,7 @@
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "(int)&pCVar2->vertex_buffer_ptr->r",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->r + iVar3) = 0xffff;",
@@ -267,7 +225,7 @@
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 32,
       "match": "(int)&pCVar2->vertex_buffer_ptr->g",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0xffff;",
@@ -275,7 +233,7 @@
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 34,
       "match": "(int)&pCVar2->vertex_buffer_ptr->b",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0xffff;",
@@ -283,34 +241,26 @@
     },
     {
       "description": "Pointer value `&DAT_0060a3f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&DAT_0060a3f4",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&DAT_0060a3f4 + iVar3);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1ba5c50 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 29,
-      "match": "0x1ba5c50",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar2 = 0x01BA5C50;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1ba5c50 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 42,
-      "match": "0x1ba5c50",
-      "severity": "moderate",
-      "text": "pCVar2 = 0x01BA5C50;",
-      "type": "raw_address_constant"
+      "text": "CStack_1c.x = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].x + iVar4) *",
+      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 19,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "CStack_1c.x = (int)ROUND((float)*(int *)((int)&DAT_0060a0fc + iVar4) * (float)_DAT_005cf01a *",
+      "text": "CStack_1c.y = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].y + iVar4) *",
       "type": "pointer_cast"
     },
     {
@@ -318,36 +268,20 @@
       "line": 21,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "CStack_1c.y = (int)ROUND((float)*(int *)((int)&DAT_0060a100 + iVar4) * (float)_DAT_005cf01a *",
+      "text": "CStack_1c.z = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].z + iVar4) *",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 23,
+      "line": 28,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "CStack_1c.z = (int)ROUND((float)*(int *)((int)&DAT_0060a104 + iVar4) * (float)_DAT_005cf01a *",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->u + iVar3) = 0x800000;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 27,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(0x01BA5C50->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_0060b27c->vertex_buffer_ptr->u + iVar3) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;",
@@ -355,7 +289,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->a + iVar3) = 0x8000;",
@@ -363,7 +297,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->r + iVar3) = 0xffff;",
@@ -371,7 +305,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 34,
+      "line": 32,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0xffff;",
@@ -379,7 +313,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
+      "line": 34,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0xffff;",
@@ -387,10 +321,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&DAT_0060a3f4 + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     }
   ]

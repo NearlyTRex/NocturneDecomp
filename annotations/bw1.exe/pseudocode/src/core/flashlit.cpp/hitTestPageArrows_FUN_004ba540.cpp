@@ -6,20 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flashlit_cpp_hitTestPageArrows_FUN_004ba540(int x,int y)
 
 {
-  if ((((0 < _DAT_01cc7b90) && (0x0000004A <= x)) && (0x000001AE <= y)) &&
-     ((x < 0x0000004A + CAlphaBitmap_01cc7c84.width &&
-      (y < 0x000001AE + CAlphaBitmap_01cc7c84.height)))) {
+  if ((((0 < g_INT_01cc7b90) && (g_INT_0061d2e8 <= x)) && (g_INT_0061d2ec <= y)) &&
+     ((x < g_INT_0061d2e8 + CAlphaBitmap_01cc7c84.width &&
+      (y < g_INT_0061d2ec + CAlphaBitmap_01cc7c84.height)))) {
     return -1;
   }
-  if (((_DAT_01cc7b90 < g_STextViewInstance.page_count + -2) && (0x000001F4 <= x)) &&
-     ((0x000001AE <= y &&
-      ((x < 0x000001F4 + CAlphaBitmap_01cc7c98.width &&
-       (y < CAlphaBitmap_01cc7c98.height + 0x000001AE)))))) {
+  if (((g_INT_01cc7b90 < g_STextViewInstance.page_count + -2) && (g_INT_0061d2f0 <= x)) &&
+     ((g_INT_0061d2f4 <= y &&
+      ((x < g_INT_0061d2f0 + CAlphaBitmap_01cc7c98.width &&
+       (y < CAlphaBitmap_01cc7c98.height + g_INT_0061d2f4)))))) {
     return 1;
   }
   return 0;

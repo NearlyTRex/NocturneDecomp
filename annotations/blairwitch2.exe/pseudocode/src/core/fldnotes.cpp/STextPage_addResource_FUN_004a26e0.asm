@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005d5ab1
 ;   TerminatedCString s_TextPage_addResource_too_005d5ac6
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -40,8 +40,8 @@ section .text
     MOV ECX,0x5d5ab1                    ; 004a26f9 | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x450                       ; 004a26fe
     PUSH 0x5d5ac6                       ; 004a2703 | = "TextPage::addResource - too many reso..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004a2708 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004a270e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004a2708 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004a270e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a2714
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2719

@@ -19,10 +19,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b87d8
 ;   TerminatedCString s_CCharacter_chooseNextLay_005b87ed
-;   undefined4 DAT_005b882e
-;   undefined4 DAT_005b8836
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   double g_DOUBLE_005b882e = 0.0000100000000000000
+;   double g_DOUBLE_005b8836 = 0.999990000000000
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -52,15 +52,15 @@ section .text
         ;   Label: LAB_00433b04
     MOV EAX,0x131d                      ; 00433b09
     PUSH 0x5b87ed                       ; 00433b0e | = "CCharacter::chooseNextLayerAction - i..."
-    MOV dword ptr [0x01d71de0],EDI      ; 00433b13 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00433b19 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00433b13 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00433b19 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00433b1e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00433b23
     FLD float ptr [EBX + 0x2f04]        ; 00433b26
         ;   Label: LAB_00433b26
     FST double ptr [ESP]                ; 00433b2c
-    FCOMP double ptr [0x005b882e]       ; 00433b2f | DAT_005b882e
+    FCOMP double ptr [0x005b882e]       ; 00433b2f | g_DOUBLE_005b882e
     FNSTSW AX                           ; 00433b35
     SAHF                                ; 00433b37
     JNC 0x00433bad                      ; 00433b38
@@ -115,7 +115,7 @@ section .text
     RET                                 ; 00433bac
     FLD double ptr [ESP]                ; 00433bad
         ;   Label: LAB_00433bad
-    FCOMP double ptr [0x005b8836]       ; 00433bb0 | DAT_005b8836
+    FCOMP double ptr [0x005b8836]       ; 00433bb0 | g_DOUBLE_005b8836
     FNSTSW AX                           ; 00433bb6
     SAHF                                ; 00433bb8
     JBE 0x00433ba6                      ; 00433bb9

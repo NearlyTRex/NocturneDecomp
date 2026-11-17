@@ -17,14 +17,14 @@ void __cdecl core_mission_cpp_CDemonMission_reset_FUN_004fb380(CDemonMission *th
   this_ptr->first_actor = (CDemonActor *)0x0;
   this_ptr->last_actor = (CDemonActor *)0x0;
   (this_ptr->pending_teleport).area_id = -1;
-  pcVar2 = ">test_logo" + 1;
+  pcVar2 = "test_logo";
   (this_ptr->pending_teleport).position.z = 0.0;
   pcVar3 = &DAT_01d1c698;
   (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
   (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
   this_ptr->mission_name[0] = '\0';
   this_ptr->delete_queue_count = 0;
-  DAT_01d1c630 = 0;
+  g_CHAR_01d1c630 = '\0';
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

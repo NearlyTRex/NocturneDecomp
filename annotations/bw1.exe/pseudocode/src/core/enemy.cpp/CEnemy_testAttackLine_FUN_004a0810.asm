@@ -15,8 +15,8 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c4d6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dcb52
-;   undefined4 DAT_005dcb5a
+;   double g_DOUBLE_005dcb52 = 1.20000000000000
+;   double g_DOUBLE_005dcb5a = 0.25
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
@@ -72,8 +72,8 @@ section .text
     JNC 0x004a0829                      ; 004a0866
         ;   XREF to: 004a0829 (CONDITIONAL_JUMP)  ; LAB_004a0829
     FLD double ptr [ESP]                ; 004a0868
-    FMUL double ptr [0x005dcb52]        ; 004a086b | DAT_005dcb52
-    FMUL double ptr [0x005dcb5a]        ; 004a0871 | DAT_005dcb5a
+    FMUL double ptr [0x005dcb52]        ; 004a086b | g_DOUBLE_005dcb52
+    FMUL double ptr [0x005dcb5a]        ; 004a0871 | g_DOUBLE_005dcb5a
     PUSH 0x0                            ; 004a0877
     CALL crt_math.c_round_FUN_005c03a0  ; 004a0879
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)

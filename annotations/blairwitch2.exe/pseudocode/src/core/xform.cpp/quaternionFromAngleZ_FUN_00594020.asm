@@ -23,7 +23,7 @@
 ;   core_weaver.cpp_CRobin_processAI_FUN_005a61f0 at 005a63b7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eedb2
+;   float g_FLOAT_005eedb2 = 0.5
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x18                        ; 00594021
     MOV EDX,ESI                         ; 00594024
     FLD float ptr [ESP + 0x20]          ; 00594026
-    FMUL float ptr [0x005eedb2]         ; 0059402a | DAT_005eedb2
+    FMUL float ptr [0x005eedb2]         ; 0059402a | g_FLOAT_005eedb2
     FLD ST0                             ; 00594030
     FCOS                                ; 00594032
     FXCH                                ; 00594034

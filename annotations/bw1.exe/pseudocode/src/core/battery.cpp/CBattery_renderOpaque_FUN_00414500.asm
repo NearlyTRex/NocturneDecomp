@@ -7,7 +7,7 @@
 ; CBattery *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
@@ -28,7 +28,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x40]      ; 00414506
     LEA EAX,[EBX + 0x20]                ; 0041450a
     PUSH EAX                            ; 0041450d
-    MOV EDX,dword ptr [0x00612560]      ; 0041450e | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 0041450e | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00414514
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0 ; 00414515
         ;   XREF to: 004837b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -36,7 +36,7 @@ section .text
     PUSH 0x0                            ; 0041451d
     LEA EAX,[EBX + 0x30]                ; 0041451f
     PUSH EAX                            ; 00414522
-    MOV ECX,dword ptr [0x00612560]      ; 00414523 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00414523 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 00414529
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850 ; 0041452a
         ;   XREF to: 00483850 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
@@ -60,7 +60,7 @@ section .text
     TEST EAX,EAX                        ; 00414563
     JNZ 0x0041457f                      ; 00414565
         ;   XREF to: 0041457f (CONDITIONAL_JUMP)  ; LAB_0041457f
-    MOV EBX,dword ptr [0x00612560]      ; 00414567 | DAT_00612560
+    MOV EBX,dword ptr [0x00612560]      ; 00414567 | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_00414567
     PUSH EBX                            ; 0041456d
     CALL engine_drender.cpp_pop_FUN_004839a0 ; 0041456e

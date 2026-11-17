@@ -94,6 +94,29 @@ CBoneGuy_full_vtable g_CBoneGuyVTable = {
     ._ug = {.reset = (CBoneGuy_reset *)core_boneguy_cpp_CBoneGuy_reset_FUN_0041d320}
 };
 
+// CCameraView_vtable
+CCameraView_vtable g_CCameraView_vtable_005fd414 = {
+    .dtor = (CCameraView_dtor *)core_camview_cpp_CCameraView_dtor_FUN_00428240,
+    .setupPerspectiveAndFog = (CCameraView_setupPerspectiveAndFog *)0x00428260,
+    .getFogValueAtPosition = (CCameraView_getFogValueAtPosition *)core_camview_cpp_CCameraView_getFogValueAtPosition_FUN_00428290,
+    .testVisibility = (CCameraView_testVisibility *)core_camview_cpp_CCameraView_testVisibility_FUN_004282a0,
+    .saveAlphaTransform = (CCameraView_saveAlphaTransform *)0x004282B0
+};
+CCameraView_vtable g_CDemonCameraVTable = {
+    .dtor = (CCameraView_dtor *)core_dcamera_cpp_CDemonCamera_dtor_FUN_0044cb00,
+    .setupPerspectiveAndFog = (CCameraView_setupPerspectiveAndFog *)core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430,
+    .getFogValueAtPosition = (CCameraView_getFogValueAtPosition *)core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00454360,
+    .testVisibility = (CCameraView_testVisibility *)core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004551a0,
+    .saveAlphaTransform = (CCameraView_saveAlphaTransform *)core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0
+};
+CCameraView_vtable g_CCameraView_vtable_005febf4 = {
+    .dtor = (CCameraView_dtor *)core_dlight_cpp_CDemonLight_dtor_FUN_00462530,
+    .setupPerspectiveAndFog = (CCameraView_setupPerspectiveAndFog *)core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430,
+    .getFogValueAtPosition = (CCameraView_getFogValueAtPosition *)core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00454360,
+    .testVisibility = (CCameraView_testVisibility *)core_dlight_cpp_CDemonLight_testVisibility_FUN_004665c0,
+    .saveAlphaTransform = (CCameraView_saveAlphaTransform *)core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0
+};
+
 // CCharacter_full_vtable
 CCharacter_full_vtable g_CBirdVTable = {
     ._ub = {
@@ -452,6 +475,9 @@ CDemnfolk_full_vtable g_CDemnfolkVTable = {
         .playFeedingSound = (CDemnfolk_playFeedingSound *)core_demnfolk_cpp_CDemnfolk_playFeedingSound_FUN_0045d020
     }
 };
+
+// CDemonActor*
+CDemonActor* g_CDemonActor_PTR_005ffcb8 = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
 
 // CDemonActor_vtable
 CDemonActor_vtable g_CDemonActorVTable = {
@@ -3148,6 +3174,43 @@ CHero_full_vtable g_CDocVTable = {
     }
 };
 
+// CParticle_vtable
+CParticle_vtable g_CRainDropVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_particle_cpp_CParticle_process_FUN_00532250,
+    .render = (CParticle_render *)core_fire_cpp_CRainDrop_render_FUN_004b46e0,
+    .onCollision = (CParticle_onCollision *)core_fire_cpp_CRainDrop_onCollision_FUN_004b4360
+};
+CParticle_vtable g_CPopcornVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00532160,
+    .process = (CParticle_process *)core_particle_cpp_CParticle_process_FUN_00532250,
+    .render = (CParticle_render *)core_fire_cpp_CPopcorn_render_FUN_004b4370,
+    .onCollision = (CParticle_onCollision *)core_fire_cpp_CRainDrop_onCollision_FUN_004b4360
+};
+
+// CPickList_full_vtable
+CPickList_full_vtable g_CPickListVTable = {
+    ._us = {
+        .dtor = (CStrList_dtor *)shape_edittool_cpp_CPickList_dtor_FUN_0049a710,
+        .remove = (CStrList_remove *)shape_edittool_cpp_CPickList_remove_FUN_0049c310,
+        .sort = (CStrList_sort *)shape_edittool_cpp_CPickList_sort_FUN_0049c3e0,
+        .insert = (CStrList_insert *)shape_edittool_cpp_CPickList_insert_FUN_0049c290,
+        .swap = (CStrList_swap *)shape_edittool_cpp_CPickList_swap_FUN_0049c470,
+        .clear = (CStrList_clear *)shape_edittool_cpp_CPickList_clear_FUN_0049c370
+    },
+    ._up = {.handleInput = (CPickList_handleInput *)shape_edittool_cpp_CPickList_handleInput_FUN_0049a9b0}
+};
+
+// CStrList_vtable
+CStrList_vtable g_CStrListVTable = {
+    .dtor = (CStrList_dtor *)shape_edittool_cpp_CStrList_dtor_FUN_004993a0,
+    .remove = (CStrList_remove *)shape_edittool_cpp_CStrList_remove_FUN_00499730,
+    .sort = (CStrList_sort *)shape_edittool_cpp_CStrList_sort_FUN_00499830,
+    .insert = (CStrList_insert *)shape_edittool_cpp_CStrList_insert_FUN_00499510,
+    .swap = (CStrList_swap *)shape_edittool_cpp_CStrList_swap_FUN_00499b20,
+    .clear = (CStrList_clear *)shape_edittool_cpp_CStrList_clear_FUN_00499470
+};
+
 // CWeapon_full_vtable
 CWeapon_full_vtable g_CBaronWeaponVTable = {
     ._ub = {
@@ -3421,6 +3484,11 @@ CWeapon_full_vtable g_CElephantGunVTable = {
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20
     }
 };
+
+// TerminatedCString
+TerminatedCString g_CChemPuzzleVTable = "0vA";
+TerminatedCString g_CAsciiUnarmorVTable = "pAD";
+TerminatedCString g_CInStreamPipeVTable = "`<D";
 
 // WatcomDestructorCall
 WatcomDestructorCall DAT_005FC8F0 = {
@@ -4298,18 +4366,46 @@ WatcomTypeInfo g_CFilmProjectorTypeInfo = {
     .class_name = (char *)s_CFilmProjector_0061bf34
 };
 
-// undefined1
-undefined1 DAT_005fb2c4 = 0x00;
+// char
+char g_CHAR_005fb299 = ' ';
 
-// undefined1*
-undefined1* g_CAudioRecPuzzleVTable = (undefined1*)core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0;
-undefined1* g_CChemPuzzleVTable = (undefined1*)core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630;
-undefined1* g_CAsciiArmorVTable = (undefined1*)support_codec_cpp_CAsciiArmor_dtor_FUN_004441c0;
-undefined1* g_CAsciiUnarmorVTable = (undefined1*)support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170;
-undefined1* g_CInStreamPipeVTable = (undefined1*)support_codec_cpp_CInStreamPipe_dtor_FUN_00443c60;
-undefined1* g_CDemonCameraVTable = (undefined1*)core_dcamera_cpp_CDemonCamera_dtor_FUN_0044cb00;
-undefined1* g_CStrListVTable = (undefined1*)shape_edittool_cpp_CStrList_dtor_FUN_004993a0;
-undefined1* g_CPickListVTable = (undefined1*)shape_edittool_cpp_CPickList_dtor_FUN_0049a710;
-undefined1* g_CRainDropVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
-undefined1* g_CPopcornVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
+// int
+int g_INT_005faaf4 = 0xA;
+int g_INT_005fab04 = 0x4D41;
+int g_INT_005fab08 = 0x4D50;
+int g_INT_005fab0c = 0x9;
+int g_INT_005fd468 = 0x3FB9999A;
+int g_INT_005fe698 = 0x3FA66666;
+
+// void*[10]
+void* g_ARRAY_PTR_005fc944[10] = {
+    (void*)core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0, (void*)crt_unknown_c_FUN_005c10a1, (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0, (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0,
+    (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0, (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0, (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0, (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0,
+    (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0, (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0
+};
+
+// void*[23]
+void* g_CAudioRecPuzzleVTable[23] = {
+    (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_getName_FUN_00418830, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_reset_FUN_00415e70, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_restoreGraphics_FUN_00415fb0,
+    (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_00416620, (void*)core_bmppuzzl_cpp_CPuzzle_reset_FUN_00415bd0,
+    (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00416790, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_onMouse_FUN_00416f80, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_00416f10,
+    (void*)core_bmppuzzl_cpp_doNothing_FUN_00416d50, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00416d60, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0,
+    (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_getKnob0Position_FUN_004175a0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_getKnob1Position_FUN_004175b0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_getKnob2Position_FUN_004175c0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_getSpeedSetting_FUN_004175d0,
+    (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_getTransportState_FUN_004175e0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_00416cf0, (void*)core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230
+};
+
+// void*[3]
+void* g_ARRAY_PTR_005fca94[3] = {(void*)core_bmppuzzl_cpp_SButtonStruct_ctorChem_FUN_00418850, (void*)crt_cpp_c_pureVirtualStub_FUN_005bfae6, (void*)core_bmppuzzl_cpp_SButtonStruct_dtorChem_FUN_00418860};
+
+// void*[9]
+void* g_ARRAY_PTR_005fd9b4[9] = {
+    (void*)support_codec_cpp_CLZWDecompress_dtor_FUN_00444210, (void*)support_codec_cpp_CLZWDecompress_init_FUN_004436f0, (void*)support_codec_cpp_CLZWDecompress_process_FUN_00443730, (void*)support_codec_cpp_CLZWDecompress_finalize_FUN_00443790,
+    (void*)support_codec_cpp_CCodec_processToBuffer_FUN_00442c80, (void*)support_codec_cpp_CCodec_processFromBuffer_FUN_00442d10, (void*)support_codec_cpp_CCodec_processBuffer_FUN_00442d90, (void*)support_codec_cpp_CCodec_processFiles_FUN_00442e10,
+    (void*)support_codec_cpp_CCodec_finalizeBuffer_FUN_00442f00
+};
+void* g_CAsciiArmorVTable[9] = {
+    (void*)support_codec_cpp_CAsciiArmor_dtor_FUN_004441c0, (void*)support_codec_cpp_CAsciiArmor_init_FUN_004438b0, (void*)support_codec_cpp_CAsciiArmor_encode_FUN_004438d0, (void*)support_codec_cpp_CAsciiArmor_flush_FUN_00443920,
+    (void*)support_codec_cpp_CCodec_processToBuffer_FUN_00442c80, (void*)support_codec_cpp_CCodec_processFromBuffer_FUN_00442d10, (void*)support_codec_cpp_CCodec_processBuffer_FUN_00442d90, (void*)support_codec_cpp_CCodec_processFiles_FUN_00442e10,
+    (void*)support_codec_cpp_CCodec_finalizeBuffer_FUN_00442f00
+};
 

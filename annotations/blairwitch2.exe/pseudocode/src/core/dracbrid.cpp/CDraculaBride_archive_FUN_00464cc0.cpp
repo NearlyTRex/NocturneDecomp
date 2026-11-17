@@ -17,7 +17,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00464cc0(CDraculaBride 
   
   core_enemy_cpp_CEnemy_archive_FUN_00487ec0(&this_ptr->base);
   if (g_CDraculaBrideClassVersion < 2) {
-    core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).speed,"?speed" + 1);
+    core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).speed,"speed");
   }
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0
             (&(this_ptr->base).base.model,"modelName");
@@ -29,7 +29,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00464cc0(CDraculaBride 
       (core_actor_cpp_archiveString_FUN_0040b730(this_ptr->rise_event,"riseEvent"),
       g_CDraculaBrideClassVersion < 4)) &&
      (core_actor_cpp_archiveInteger_FUN_0040b960(&iStack_14,"initialState"),
-     DAT_007bc038 == 1)) {
+     g_INT_007bc038 == 1)) {
     if (iStack_14 == 1) {
       motion_name = "vincoffin";
     }

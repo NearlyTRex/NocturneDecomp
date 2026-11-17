@@ -14,10 +14,10 @@
 ; int              Stack[0x20]:4   src_stride
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba20 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c5faec
+;   undefined4 g_ARRAY_PTR_01c5faec[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80
@@ -38,9 +38,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 00435ef3
     SUB EAX,ESI                         ; 00435ef7
     INC EAX                             ; 00435ef9
-    MOV EDX,dword ptr [0x01c5faec]      ; 00435efa | DAT_01c5faec
+    MOV EDX,dword ptr [0x01c5faec]      ; 00435efa | g_ARRAY_PTR_01c5faec
     MOV dword ptr [ESP + 0x14],EAX      ; 00435f00
-    MOV EAX,[0x01c5faf0]                ; 00435f04 | DAT_01c5faf0
+    MOV EAX,[0x01c5faf0]                ; 00435f04 | g_ARRAY_PTR_01c5faec[1]
     SUB EAX,EDX                         ; 00435f09
     MOV dword ptr [ESP + 0x10],EAX      ; 00435f0b
     TEST EBX,EBX                        ; 00435f0f
@@ -62,7 +62,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x34]      ; 00435f2d
     MOV EBP,EAX                         ; 00435f31
     IMUL ECX,dword ptr [ESP + 0x48]     ; 00435f33
-    MOV EAX,[0x005fba18]                ; 00435f38 | DAT_005fba18
+    MOV EAX,[0x005fba18]                ; 00435f38 | g_INT_005fba18
     MOV EDX,EAX                         ; 00435f3d
     SAR EDX,0x1f                        ; 00435f3f
     SUB EAX,EDX                         ; 00435f42
@@ -70,7 +70,7 @@ section .text
     ADD ECX,EBX                         ; 00435f46
     ADD EAX,ECX                         ; 00435f48
     LEA EBX,[EAX + ESI*0x1]             ; 00435f4a
-    MOV EDX,dword ptr [0x005fba20]      ; 00435f4d | DAT_005fba20
+    MOV EDX,dword ptr [0x005fba20]      ; 00435f4d | g_INT_005fba20
     MOV EAX,dword ptr [ESP + 0x34]      ; 00435f53
     MOV ECX,dword ptr [ESP + 0x3c]      ; 00435f57
     ADD EAX,EDI                         ; 00435f5b

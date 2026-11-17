@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_0042f320(int disabled)
 
 {
-  _DAT_00609b30 = disabled;
+  g_INT_00609b30 = disabled;
   return;
 }

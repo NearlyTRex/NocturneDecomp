@@ -37,7 +37,7 @@ int FUN_005c5c78(int param_1,int *param_2)
   local_24 = 0;
   while( true ) {
     iVar5 = FUN_005c5430(param_1);
-    if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 2) == 0) break;
+    if ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 2) == 0) break;
     local_24 = local_24 + 1;
   }
   if ((*(byte *)(param_1 + 0x10) & 2) != 0) goto LAB_005c5ead;
@@ -52,11 +52,11 @@ int FUN_005c5c78(int param_1,int *param_2)
       iVar5 = FUN_005c6418(param_1);
       if (iVar5 == -1) goto LAB_005c5ead;
     }
-    if ((((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0) || (iVar5 == 0x2e)) {
+    if (((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 0x20) != 0) || (iVar5 == 0x2e)) {
       local_1c._0_2_ = 0;
       local_1c._2_2_ = 0;
       local_28 = 0;
-      if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0) {
+      if ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 0x20) != 0) {
         local_28 = 1;
         do {
           *pcVar9 = (char)iVar5;
@@ -67,7 +67,7 @@ int FUN_005c5c78(int param_1,int *param_2)
           iVar10 = iVar10 + 1;
           iVar5 = FUN_005c6418(param_1);
           if (iVar5 == -1) goto LAB_005c5ead;
-        } while (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0);
+        } while ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 0x20) != 0);
       }
       pcVar7 = pcVar9;
       iVar11 = iVar10;
@@ -76,11 +76,11 @@ int FUN_005c5c78(int param_1,int *param_2)
         pcVar9 = pcVar9 + 1;
         iVar5 = FUN_005c6418(param_1);
         if (iVar5 == -1) goto LAB_005c5ead;
-        if ((local_28 == 0) && (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) == 0))
+        if ((local_28 == 0) && ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 0x20) == 0))
         goto LAB_005c5ea3;
         iVar10 = iVar10 + 1;
         do {
-          if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) == 0) break;
+          if ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 0x20) == 0) break;
           iVar10 = iVar10 + 1;
           *pcVar9 = (char)iVar5;
           pcVar9 = pcVar9 + 1;
@@ -121,7 +121,7 @@ int FUN_005c5c78(int param_1,int *param_2)
           iVar5 = FUN_005c6418(param_1);
           if (iVar5 == -1) goto LAB_005c5ead;
         }
-        if (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) == 0) {
+        if ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 0x20) == 0) {
           iVar10 = 0;
         }
         else {
@@ -131,7 +131,7 @@ int FUN_005c5c78(int param_1,int *param_2)
             pcVar9 = pcVar9 + 1;
             iVar5 = FUN_005c6418(param_1);
             if (iVar5 == -1) goto LAB_005c5ead;
-          } while (((&DAT_00626114)[(byte)((char)iVar5 + 1)] & 0x20) != 0);
+          } while ((g_UCHAR_ARRAY_00626114[(byte)((char)iVar5 + 1)] & 0x20) != 0);
         }
       }
     }

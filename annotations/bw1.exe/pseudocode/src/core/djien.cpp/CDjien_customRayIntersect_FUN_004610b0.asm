@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   out_normal
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8e68
+;   float g_FLOAT_005d8e68 = 4
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
@@ -189,7 +189,7 @@ section .text
     FXCH                                ; 004612e9
     FST float ptr [ESP + 0x8]           ; 004612eb
     FSUBRP                              ; 004612ef
-    FSUBR float ptr [0x005d8e68]        ; 004612f1 | DAT_005d8e68
+    FSUBR float ptr [0x005d8e68]        ; 004612f1 | g_FLOAT_005d8e68
     FLDZ                                ; 004612f7
     FCOMPP                              ; 004612f9
     FNSTSW AX                           ; 004612fb

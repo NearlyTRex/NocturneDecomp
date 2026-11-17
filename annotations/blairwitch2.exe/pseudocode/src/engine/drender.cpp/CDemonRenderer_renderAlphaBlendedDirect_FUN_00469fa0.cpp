@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_00469fa0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
@@ -16,19 +14,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0046
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(&prim->surface_normal), iVar1 != 0)) {
     if (this_ptr->shadow_pass_active == 0) {
-      if (DAT_006141c0 == 0x20) {
-        _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+      if (g_INT_006141c0 == 0x20) {
+        g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
       }
       else {
-        _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+        g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
       }
-      _DAT_01c38b58 = 6;
-      _DAT_01c38b54 = 0x2cd;
+      g_INT_01c38b58 = 6;
+      g_BIT_INTEGER32_01c38b54.dword = 0x2cd;
     }
     else {
-      _DAT_01c38b54 = 0;
-      _DAT_01c38b58 = 0;
-      _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
+      g_BIT_INTEGER32_01c38b54.dword = 0;
+      g_INT_01c38b58 = 0;
+      g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
               (this_ptr,(prim->base).count,(int *)(prim + 1));

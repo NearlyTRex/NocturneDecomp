@@ -14,118 +14,128 @@ void __cdecl engine_clipper_c_clipPolygonFarPlane_FUN_0043bed0(void)
 {
   longlong lVar1;
   longlong lVar2;
-  byte bVar3;
-  int iVar4;
-  uint uVar5;
-  int iVar6;
+  int iVar3;
+  byte bVar4;
+  int iVar5;
+  uint uVar6;
+  int iVar7;
   SRenderVertex *v1;
-  longlong *plVar7;
-  SRenderVertex *pSVar8;
-  longlong *plVar9;
-  byte bVar10;
+  int *piVar8;
+  SRenderVertex *pSVar9;
+  int *piVar10;
+  SRenderVertex *pSVar11;
+  byte bVar12;
   
-  bVar10 = 0;
-  iVar6 = 0;
-  if (DAT_00610d44 != 0) {
-    if (0 < (int)DAT_007c7554) {
-      iVar4 = 0;
+  bVar12 = 0;
+  iVar7 = 0;
+  if (g_INT_00610d44 != 0) {
+    if (0 < g_INT_007c7554) {
+      iVar5 = 0;
       do {
-        if (iVar6 < *(int *)((int)&DAT_007c7560 + iVar4)) {
-          iVar6 = *(int *)((int)&DAT_007c7560 + iVar4);
+        iVar3 = *(int *)((int)&g_SRenderVertex_ARRAY_007c7558[0].projected_vertex.transformed_z +
+                        iVar5);
+        if (iVar7 < iVar3) {
+          iVar7 = iVar3;
         }
-        iVar4 = iVar4 + 0x30;
-      } while (iVar4 < (int)(DAT_007c7554 * 0x30));
+        iVar5 = iVar5 + 0x30;
+      } while (iVar5 < g_INT_007c7554 * 0x30);
     }
-    if (DAT_00610d44 <= iVar6) {
-      DAT_007c7bd8 = DAT_007c7554;
-      iVar4 = 0;
-      plVar9 = &DAT_007c7be0;
-      plVar7 = (longlong *)&DAT_007c755c;
-      DAT_007c7bdc = DAT_007c7558;
-      iVar6 = DAT_007c7554 * 0x30 + -4;
-      if (iVar6 != 0 && 3 < (int)(DAT_007c7554 * 0x30)) {
-        while (7 < iVar6) {
-          lVar1 = *plVar7;
-          plVar7 = plVar7 + 1;
-          *plVar9 = (longlong)ROUND((float10)lVar1);
-          plVar9 = plVar9 + 1;
-          iVar6 = iVar6 + -8;
+    if (g_INT_00610d44 <= iVar7) {
+      g_INT_007c7bd8 = g_INT_007c7554;
+      iVar5 = 0;
+      piVar10 = &g_SRenderVertex_ARRAY_007c7bdc[0].projected_vertex.transformed_y;
+      piVar8 = &g_SRenderVertex_ARRAY_007c7558[0].projected_vertex.transformed_y;
+      g_SRenderVertex_ARRAY_007c7bdc[0].projected_vertex.transformed_x =
+           g_SRenderVertex_ARRAY_007c7558[0].projected_vertex.transformed_x;
+      iVar7 = g_INT_007c7554 * 0x30 + -4;
+      if (iVar7 != 0 && 3 < g_INT_007c7554 * 0x30) {
+        while (7 < iVar7) {
+          lVar1 = *(longlong *)piVar8;
+          piVar8 = piVar8 + 2;
+          *(longlong *)piVar10 = (longlong)ROUND((float10)lVar1);
+          piVar10 = piVar10 + 2;
+          iVar7 = iVar7 + -8;
         }
-        if (iVar6 != 0 && -9 < iVar6 + -8) {
-          *(int *)plVar9 = (int)*plVar7;
-          if (4 < iVar6) {
-            *(uint *)((int)plVar9 + 4) = *(uint *)((int)plVar7 + 4);
+        if (iVar7 != 0 && -9 < iVar7 + -8) {
+          *piVar10 = *piVar8;
+          if (4 < iVar7) {
+            piVar10[1] = piVar8[1];
           }
         }
       }
-      DAT_007c7554 = 0;
-      if (0 < (int)DAT_007c7bd8) {
-        v1 = (SRenderVertex *)&DAT_007c7bdc;
+      g_INT_007c7554 = 0;
+      if (0 < g_INT_007c7bd8) {
+        v1 = g_SRenderVertex_ARRAY_007c7bdc;
         do {
-          uVar5 = iVar4 + 1;
-          if (uVar5 == DAT_007c7bd8) {
-            uVar5 = uVar5 ^ DAT_007c7bd8;
+          uVar6 = iVar5 + 1;
+          if (uVar6 == g_INT_007c7bd8) {
+            uVar6 = uVar6 ^ g_INT_007c7bd8;
           }
-          bVar3 = DAT_00610d44 <= (v1->projected_vertex).transformed_z;
-          if (DAT_00610d44 <= *(int *)((int)&DAT_007c7be0 + uVar5 * 0x30 + 4)) {
-            bVar3 = bVar3 | 2;
+          bVar4 = g_INT_00610d44 <= (v1->projected_vertex).transformed_z;
+          if (g_INT_00610d44 <= g_SRenderVertex_ARRAY_007c7bdc[uVar6].projected_vertex.transformed_z
+             ) {
+            bVar4 = bVar4 | 2;
           }
-          switch(bVar3) {
+          switch(bVar4) {
           case 0:
-            plVar7 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
-            iVar6 = 0x30;
-            pSVar8 = v1;
-            while (7 < iVar6) {
-              lVar2._0_4_ = (pSVar8->projected_vertex).transformed_x;
-              lVar2._4_4_ = (pSVar8->projected_vertex).transformed_y;
-              pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
-              *plVar7 = (longlong)ROUND((float10)lVar2);
-              plVar7 = plVar7 + 1;
-              iVar6 = iVar6 + -8;
+            pSVar11 = g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554;
+            iVar7 = 0x30;
+            pSVar9 = v1;
+            while (7 < iVar7) {
+              lVar2._0_4_ = (pSVar9->projected_vertex).transformed_x;
+              lVar2._4_4_ = (pSVar9->projected_vertex).transformed_y;
+              pSVar9 = (SRenderVertex *)&(pSVar9->projected_vertex).transformed_z;
+              (pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);
+              (pSVar11->projected_vertex).transformed_y =
+                   (int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);
+              pSVar11 = (SRenderVertex *)&(pSVar11->projected_vertex).transformed_z;
+              iVar7 = iVar7 + -8;
             }
-            if (iVar6 != 0 && -9 < iVar6 + -8) {
-              *(int *)plVar7 = (pSVar8->projected_vertex).transformed_x;
-              if (4 < iVar6) {
-                *(uint *)((int)plVar7 + (uint)bVar10 * -8 + 4) =
-                     *(uint *)((int)pSVar8 + (uint)bVar10 * -8 + 4);
+            if (iVar7 != 0 && -9 < iVar7 + -8) {
+              (pSVar11->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
+              if (4 < iVar7) {
+                *(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =
+                     *(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);
               }
             }
-            DAT_007c7554 = DAT_007c7554 + 1;
+            g_INT_007c7554 = g_INT_007c7554 + 1;
             break;
           case 1:
             engine_clipper_c_interpolateVertexFarClip_FUN_0043b8b0
-                      ((SRenderVertex *)(&DAT_007c7bdc + uVar5 * 0xc),v1,
-                       (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
-            DAT_007c7554 = DAT_007c7554 + 1;
+                      (g_SRenderVertex_ARRAY_007c7bdc + uVar6,v1,
+                       g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554);
+            g_INT_007c7554 = g_INT_007c7554 + 1;
             break;
           case 2:
-            plVar7 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
-            iVar6 = 0x30;
-            pSVar8 = v1;
-            while (7 < iVar6) {
-              lVar1._0_4_ = (pSVar8->projected_vertex).transformed_x;
-              lVar1._4_4_ = (pSVar8->projected_vertex).transformed_y;
-              pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
-              *plVar7 = (longlong)ROUND((float10)lVar1);
-              plVar7 = plVar7 + 1;
-              iVar6 = iVar6 + -8;
+            pSVar11 = g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554;
+            iVar7 = 0x30;
+            pSVar9 = v1;
+            while (7 < iVar7) {
+              lVar1._0_4_ = (pSVar9->projected_vertex).transformed_x;
+              lVar1._4_4_ = (pSVar9->projected_vertex).transformed_y;
+              pSVar9 = (SRenderVertex *)&(pSVar9->projected_vertex).transformed_z;
+              (pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);
+              (pSVar11->projected_vertex).transformed_y =
+                   (int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);
+              pSVar11 = (SRenderVertex *)&(pSVar11->projected_vertex).transformed_z;
+              iVar7 = iVar7 + -8;
             }
-            if (iVar6 != 0 && -9 < iVar6 + -8) {
-              *(int *)plVar7 = (pSVar8->projected_vertex).transformed_x;
-              if (4 < iVar6) {
-                *(uint *)((int)plVar7 + (uint)bVar10 * -8 + 4) =
-                     *(uint *)((int)pSVar8 + (uint)bVar10 * -8 + 4);
+            if (iVar7 != 0 && -9 < iVar7 + -8) {
+              (pSVar11->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
+              if (4 < iVar7) {
+                *(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =
+                     *(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);
               }
             }
-            DAT_007c7554 = DAT_007c7554 + 1;
+            g_INT_007c7554 = g_INT_007c7554 + 1;
             engine_clipper_c_interpolateVertexFarClip_FUN_0043b8b0
-                      (v1,(SRenderVertex *)(&DAT_007c7bdc + uVar5 * 0xc),
-                       (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
-            DAT_007c7554 = DAT_007c7554 + 1;
+                      (v1,g_SRenderVertex_ARRAY_007c7bdc + uVar6,
+                       g_SRenderVertex_ARRAY_007c7558 + g_INT_007c7554);
+            g_INT_007c7554 = g_INT_007c7554 + 1;
           }
-          iVar4 = iVar4 + 1;
+          iVar5 = iVar5 + 1;
           v1 = v1 + 1;
-        } while (iVar4 < (int)DAT_007c7bd8);
+        } while (iVar5 < g_INT_007c7bd8);
       }
     }
   }

@@ -236,13 +236,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_doc_cpp_005da0b4
 ;   TerminatedCString s_Don_t_know_how_to_carry_005da0c4
-;   undefined4 DAT_005da0e8
-;   undefined4 DAT_005da0ec
-;   undefined4 DAT_005da0f4
-;   undefined4 DAT_007c5330
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c8af28
+;   float g_FLOAT_005da0e8 = 0.5
+;   double g_DOUBLE_005da0ec = 0.700000000000000
+;   double g_DOUBLE_005da0f4 = 0.300000000000000
+;   undefined4 g_CDemonActorType_007c52f8.name_hash
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   CVector3f g_CVector3f_02c8af28
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -323,7 +323,7 @@ section .text
     CMP dword ptr [EBP + 0x8e],0x0      ; 0046f7f5
     JNZ 0x00470055                      ; 0046f7fc
         ;   XREF to: 00470055 (CONDITIONAL_JUMP)  ; LAB_00470055
-    PUSH 0x2c8af28                      ; 0046f802 | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 0046f802 | g_CVector3f_02c8af28
     PUSH 0x1b68804                      ; 0046f807
     LEA EAX,[EBP + 0xfffff472]          ; 0046f80c
     PUSH EAX                            ; 0046f812
@@ -911,7 +911,7 @@ section .text
     LEA ESI,[EBP + 0xfffff442]          ; 0047004a
     JMP 0x0046f8e9                      ; 00470050
         ;   XREF to: 0046f8e9 (UNCONDITIONAL_JUMP)  ; LAB_0046f8e9
-    PUSH 0x2c8af28                      ; 00470055 | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 00470055 | g_CVector3f_02c8af28
         ;   Label: LAB_00470055
     PUSH 0x1b687f8                      ; 0047005a
     LEA EAX,[EBP + 0xfffff652]          ; 0047005f
@@ -972,7 +972,7 @@ section .text
     LEA ESI,[EBP + 0xfffff802]          ; 00470136
     JMP 0x0046f8e9                      ; 0047013c
         ;   XREF to: 0046f8e9 (UNCONDITIONAL_JUMP)  ; LAB_0046f8e9
-    MOV EDI,dword ptr [0x007c5330]      ; 00470141 | DAT_007c5330
+    MOV EDI,dword ptr [0x007c5330]      ; 00470141 | g_CDemonActorType_007c52f8.name_hash
         ;   Label: LAB_00470141
     MOV dword ptr [EBP + 0xfffffe5e],EAX ; 00470147
     MOV dword ptr [EBP + 0xfffffe5a],EAX ; 0047014d
@@ -1016,7 +1016,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004701e0
     MOVSD ES:EDI,ESI                    ; 004701e1
     MOVSD ES:EDI,ESI                    ; 004701e2
-    FLD float ptr [0x005da0e8]          ; 004701e3 | DAT_005da0e8
+    FLD float ptr [0x005da0e8]          ; 004701e3 | g_FLOAT_005da0e8
     FLD float ptr [EBP + -0x42]         ; 004701e9
     FMUL ST1                            ; 004701ec
     FLD float ptr [EBP + -0x3e]         ; 004701ee
@@ -1332,9 +1332,9 @@ section .text
     MOV dword ptr [EBP + 0xfffffe5e],EAX ; 0047065c
     FLD float ptr [EBP + 0xfffffd92]    ; 00470662
         ;   Label: LAB_00470662
-    FMUL double ptr [0x005da0ec]        ; 00470668 | DAT_005da0ec
+    FMUL double ptr [0x005da0ec]        ; 00470668 | g_DOUBLE_005da0ec
     FLD float ptr [EBP + 0xfffffd9e]    ; 0047066e
-    FMUL double ptr [0x005da0f4]        ; 00470674 | DAT_005da0f4
+    FMUL double ptr [0x005da0f4]        ; 00470674 | g_DOUBLE_005da0f4
     FADDP                               ; 0047067a
     FSTP float ptr [EBP + 0xfffffeb2]   ; 0047067c
     JMP 0x00470270                      ; 00470682
@@ -1369,8 +1369,8 @@ section .text
     MOV EDI,0x5da0b4                    ; 004706d2 | = "..\\core\\doc.cpp"
     MOV EAX,0xe3d                       ; 004706d7
     PUSH 0x5da0c4                       ; 004706dc | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01d1d400],EDI      ; 004706e1 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 004706e7 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 004706e1 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 004706e7 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004706ec
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004706f1

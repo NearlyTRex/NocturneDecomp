@@ -20,9 +20,9 @@ int __cdecl core_goggles_cpp_CGoggles_renderOpaque_FUN_004e3bd0(CGoggles *this_p
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (DAT_00612560,&(this_ptr->base).location.position);
+            (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   this_ptr_00 = &CStack_34;
   puVar2 = auStack_1c;

@@ -15,9 +15,9 @@
 ;   core_script.cpp_CScript_renderSubtitles_FUN_005218a0 at 00521923
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_01e65900
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
+;   float g_FLOAT_01e65900
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -29,7 +29,7 @@ section .text
     PUSH EBX                            ; 00521840
         ;   Label: core_script.cpp_CScript_getLetterboxHeight_FUN_00521840
     SUB ESP,0x8                         ; 00521841
-    MOV EDX,dword ptr [0x006141b8]      ; 00521844 | DAT_006141b8
+    MOV EDX,dword ptr [0x006141b8]      ; 00521844 | g_INT_006141b8
     LEA EAX,[EDX*0x4 + 0x0]             ; 0052184a
     SUB EAX,EDX                         ; 00521851
     SHL EAX,0x3                         ; 00521853
@@ -39,7 +39,7 @@ section .text
     MOV EAX,EDX                         ; 00521860
     SAR EDX,0x1f                        ; 00521862
     IDIV EBX                            ; 00521865
-    MOV ECX,dword ptr [0x006141bc]      ; 00521867 | DAT_006141bc
+    MOV ECX,dword ptr [0x006141bc]      ; 00521867 | g_INT_006141bc
     MOV EDX,ECX                         ; 0052186d
     SUB EDX,EAX                         ; 0052186f
     MOV EAX,EDX                         ; 00521871
@@ -48,7 +48,7 @@ section .text
     SAR EAX,0x1                         ; 00521878
     MOV dword ptr [ESP + 0x4],EAX       ; 0052187a
     FILD dword ptr [ESP + 0x4]          ; 0052187e
-    FMUL float ptr [0x01e65900]         ; 00521882 | DAT_01e65900
+    FMUL float ptr [0x01e65900]         ; 00521882 | g_FLOAT_01e65900
     CALL crt_math.c_round_FUN_005b7ff0  ; 00521888
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP]               ; 0052188d

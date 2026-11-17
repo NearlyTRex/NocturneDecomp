@@ -7,7 +7,7 @@
 ; CPendulum *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005eccf4+1
+;   TerminatedCString s_modelName_005eccf5
 ;   TerminatedCString s_startEvent_005eccff
 ;   TerminatedCString s_moving_005ecd0a
 ;   TerminatedCString s_param_005ecd11
@@ -42,7 +42,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 00537256
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0053725b
-    PUSH 0x5eccf5                       ; 0053725e | s_modelName_005eccf4+1
+    PUSH 0x5eccf5                       ; 0053725e | = "modelName"
     LEA EAX,[EBX + 0x158]               ; 00537263
     PUSH EAX                            ; 00537269
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 0053726a

@@ -12,7 +12,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043b400(CDemonCam
   CDemonCamera *pCVar1;
   
   pCVar1 = (CDemonCamera *)core_camview_cpp_CCameraView_ctor_FUN_00422200(&this_ptr->base);
-  (pCVar1->base).vtable = (CCameraView_vtable *)&g_CDemonCameraVTable;
+  (pCVar1->base).vtable = &g_CDemonCameraVTable;
   pCVar1->framebuffer_aligned = (void *)0x0;
   pCVar1->framebuffer_raw = (void *)0x0;
   pCVar1->zbuffer_aligned = (void *)0x0;

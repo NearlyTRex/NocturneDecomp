@@ -14,9 +14,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_limb_wav_005c9213
-;   undefined4 DAT_005c9224
-;   undefined4 DAT_005c922c
-;   undefined4 DAT_005c9234
+;   double g_DOUBLE_005c9224 = 7
+;   double g_DOUBLE_005c922c = 0.5
+;   double g_DOUBLE_005c9234 = 2.5
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.blood_flag
 ;   undefined4 g_CGameInstance.gratuitous_dismemberment
@@ -157,7 +157,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 004f9177
         ;   Label: LAB_004f9177
     FLD ST0                             ; 004f917a
-    FMUL double ptr [0x005c9224]        ; 004f917c | DAT_005c9224
+    FMUL double ptr [0x005c9224]        ; 004f917c | g_DOUBLE_005c9224
     FSTP ST1                            ; 004f9182
     FSTP float ptr [ESI + 0x8]          ; 004f9184
     MOV EDI,dword ptr [EBX + 0xcdd8]    ; 004f9187
@@ -167,7 +167,7 @@ section .text
         ;   XREF to: 004f91b2 (CONDITIONAL_JUMP)  ; LAB_004f91b2
     FLD float ptr [ESI + 0x4]           ; 004f9191
     FLD ST0                             ; 004f9194
-    FMUL double ptr [0x005c9234]        ; 004f9196 | DAT_005c9234
+    FMUL double ptr [0x005c9234]        ; 004f9196 | g_DOUBLE_005c9234
     FSTP ST1                            ; 004f919c
     FSTP float ptr [ESI + 0x4]          ; 004f919e
     ADD ESP,0xc                         ; 004f91a1
@@ -183,7 +183,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 004f91b2
         ;   Label: LAB_004f91b2
     FLD ST0                             ; 004f91b5
-    FMUL double ptr [0x005c922c]        ; 004f91b7 | DAT_005c922c
+    FMUL double ptr [0x005c922c]        ; 004f91b7 | g_DOUBLE_005c922c
     FSTP ST1                            ; 004f91bd
     FSTP float ptr [ESI + 0x4]          ; 004f91bf
     ADD ESP,0xc                         ; 004f91c2

@@ -6,23 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_00558bc0(int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed)
 
 {
   if (out_bits_per_sample != (int *)0x0) {
-    *out_bits_per_sample = _DAT_0060425c;
+    *out_bits_per_sample = g_INT_0060425c;
   }
   if (out_channels != (int *)0x0) {
-    *out_channels = _DAT_00604260;
+    *out_channels = g_INT_00604260;
   }
   if (out_sample_rate != (int *)0x0) {
-    *out_sample_rate = _DAT_00604264;
+    *out_sample_rate = g_INT_00604264;
   }
   if (out_signed == (int *)0x0) {
     return;
   }
-  *out_signed = _DAT_02cf3c70;
+  *out_signed = g_INT_02cf3c70;
   return;
 }

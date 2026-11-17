@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_ptr,float delta_time)
 
@@ -129,7 +128,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
         fStack_38 = SQRT(CStack_128.z * CStack_128.z +
                          CStack_128.x * CStack_128.x + CStack_128.y * CStack_128.y);
         fStack_2c = fStack_38;
-        if (fStack_38 < 0x40000000) {
+        if (fStack_38 < 2.0f) {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_128,&CStack_80);
           fStack_8c = CStack_80.x;
           afStack_88[(uint)bVar9 * -2] = *(float *)((int)&CStack_80 + (uint)bVar9 * -8 + 4);
@@ -137,7 +136,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
                *(float *)((int)&CStack_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
           fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                                 (afStack_88[0] - (this_ptr->base).base.base.orient.vec.y);
-          if (ABS(fStack_14) < (float)_DAT_005e51c2) {
+          if (ABS(fStack_14) < (float)0.52359877558333301) {
             if (iStack_1c == 0) {
               iVar5 = 2;
             }
@@ -155,7 +154,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
         }
         if (fStack_2c < (this_ptr->base).guard_distance) {
           pCVar1 = &(this_ptr->base).base.model;
-          if (_DAT_00602308 <= fStack_2c) {
+          if (10.0f <= fStack_2c) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,7,1);
             (this_ptr->base).attack_cooldown = 0.0;
           }
@@ -170,7 +169,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
     case 7:
     case 0xf:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar11 = 0x40000000;
+      fVar11 = 2.0f;
       pCStack_20 = &(this_ptr->base).base.model.base;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a0fe0(&this_ptr->base,delta_time);
@@ -187,7 +186,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
         }
       }
       else {
-        fStack_28 = 0x40000000;
+        fStack_28 = 2.0f;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
              (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -220,7 +219,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
           fStack_18 = SQRT(afStack_13c[1] * afStack_13c[1] + fStack_140 * fStack_140);
           afStack_13c[0] = 0.0;
           fStack_30 = fStack_18;
-          if ((_DAT_00602308 < fStack_18) && (iStack_1c != 7)) {
+          if ((10.0f < fStack_18) && (iStack_1c != 7)) {
             (this_ptr->base).attack_cooldown = 0.0;
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_20,7,1);
           }
@@ -245,7 +244,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
                  *(float *)((int)&CStack_44 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                                   (afStack_70[3] - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS(fStack_14) < (float)_DAT_005e51c2) {
+            if (ABS(fStack_14) < (float)0.52359877558333301) {
               if (iStack_1c == 7) {
                 iVar5 = 8;
               }
@@ -287,9 +286,9 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
       fVar11 = 0.4;
       fStack_14 = SStack_1a0.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                ((CVector3f *)&DAT_02c8af28,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d06bd4,
-                 &CStack_110);
+                (&g_CVector3f_02c8af28,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_01d06bcc[2],&CStack_110);
       pCVar10 = &CStack_104;
       CStack_104.x = CStack_110.x;
       *(uint *)((int)&CStack_104 + (uint)bVar9 * -8 + 4) =

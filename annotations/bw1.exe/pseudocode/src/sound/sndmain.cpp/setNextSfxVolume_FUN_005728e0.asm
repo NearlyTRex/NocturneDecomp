@@ -20,13 +20,13 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c78cec
+;   int g_INT_02c78cec
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c78cec]      ; 005728e0 | DAT_02c78cec
+    MOV EDX,dword ptr [0x02c78cec]      ; 005728e0 | g_INT_02c78cec
         ;   Label: sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0
     LEA EAX,[EDX*0x4 + 0x0]             ; 005728e6
     SUB EAX,EDX                         ; 005728ed

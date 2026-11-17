@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,float delta_time)
 
 {
@@ -167,7 +165,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
   }
   if ((this_ptr->hold_pos_flag == 0) &&
      (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (0x01C38BC0,this_ptr->hold_pos_condition), iVar6 != 0)) {
+                        (g_CEventList_PTR_006141f0,this_ptr->hold_pos_condition), iVar6 != 0)) {
     this_ptr->hold_pos_flag = 1;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -225,7 +223,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
             afStack_120[(uint)bVar16 * -2] = afStack_1d4[(uint)bVar16 * -2];
             afStack_120[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
                  afStack_1d4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
-            if ((float)_DAT_005dedc5 <
+            if ((float)2 <
                 SQRT(afStack_120[1] * afStack_120[1] +
                      fStack_124 * fStack_124 + afStack_120[0] * afStack_120[0])) {
               this_ptr->post_mode = 1;
@@ -252,7 +250,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
           fStack_30 = SQRT(CStack_64.z * CStack_64.z +
                            CStack_64.x * CStack_64.x + CStack_64.y * CStack_64.y);
           fStack_1c = fStack_30;
-          if (fStack_30 < 0x40400000 + 1.0) {
+          if (fStack_30 < 3.0f + 1.0) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_64,&CStack_130)
             ;
             afStack_84[2] = CStack_130.x;
@@ -262,15 +260,15 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
                  *(float *)((int)&CStack_130 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                   (afStack_84[3] - (this_ptr->base).base.base.orient.vec.y);
-            if ((ABS(fStack_14) < (float)_DAT_005dedbd) && ((this_ptr->base).attack_cooldown <= 0.0)
-               ) {
+            if ((ABS(fStack_14) < (float)0.52359877558333301) &&
+               ((this_ptr->base).attack_cooldown <= 0.0)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                         (&(this_ptr->base).base.model.base,9,1);
               (this_ptr->base).attack_cooldown = 2.0;
             }
           }
           if (fStack_30 < (this_ptr->base).guard_distance) {
-            if (_DAT_005fa238 <= fStack_30) {
+            if (20.0f <= fStack_30) {
               fVar17 = 1.12104e-44;
             }
             else {
@@ -289,7 +287,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
           }
           break;
         }
-        if (this_ptr->firing_blend <= (float)_DAT_005dedb5) break;
+        if (this_ptr->firing_blend <= (float)0.5) break;
         iVar6 = core_actor_cpp_randomChance_FUN_0040d060(0.25);
         if (iVar6 != 0) {
           core_mobster_cpp_CMobster_dismountVehicle_FUN_004fdd50(this_ptr);
@@ -298,8 +296,8 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
       }
       else {
         fVar17 = this_ptr->firing_blend;
-        (this_ptr->base).victim = *(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4);
-        if (fVar17 <= (float)_DAT_005dedb5) break;
+        (this_ptr->base).victim = &g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base;
+        if (fVar17 <= (float)0.5) break;
       }
       core_mobster_cpp_CMobster_startFiringAttack_FUN_004ffb00(this_ptr);
       break;
@@ -319,9 +317,9 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
       else if (this_ptr->post_mode == 0) {
         iVar6 = core_mobster_cpp_CMobster_processWeaponPickup_FUN_004ff610(this_ptr,delta_time);
         if (iVar6 == 0) {
-          fStack_38 = 0x40400000 + 1.0;
+          fStack_38 = 3.0f + 1.0;
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
-            fStack_38 = 0x41F00000;
+            fStack_38 = 30.0f;
           }
           fVar17 = 0.17453292;
           pCVar19 = (CVector3f *)0x3f000000;
@@ -331,8 +329,8 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
           (this_ptr->base).base.model.accumulated_root_motion.x =
                (this_ptr->base).base.model.accumulated_root_motion.y;
           uStack_d0 = 0;
-          fStack_34 = 0x40400000;
-          fStack_c8 = 0x40400000;
+          fStack_34 = 3.0f;
+          fStack_c8 = 3.0f;
           uStack_cc = 0;
           pCVar13 = (this_ptr->base).victim;
           pCVar14 = (*((pCVar13->base).vtable._ub)->getPathMap)(&pCVar13->base);
@@ -380,12 +378,12 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
                      *(float *)((int)&CStack_b8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
                 fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                       (afStack_120[3] - (this_ptr->base).base.base.orient.vec.y);
-                if (ABS(fStack_14) < (float)_DAT_005dedbd) {
+                if (ABS(fStack_14) < (float)0.52359877558333301) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_2c,9,1);
                 }
               }
               else if (fStack_34 + 1.0 <= fStack_24) {
-                if (((float)_DAT_005dedb5 < this_ptr->firing_blend) &&
+                if (((float)0.5 < this_ptr->firing_blend) &&
                    (this_ptr->firing_cooldown <= 0.0)) {
                   this_ptr->taunt_timer = 0.0;
                   iVar6 = core_actor_cpp_randomChance_FUN_0040d060(0.3);
@@ -430,7 +428,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
                      *(float *)((int)&CStack_148 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
                 fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                       (afStack_15c[0] - (this_ptr->base).base.base.orient.vec.y);
-                if ((ABS(fStack_14) < (float)_DAT_005dedbd) &&
+                if ((ABS(fStack_14) < (float)0.52359877558333301) &&
                    ((this_ptr->base).attack_cooldown <= 0.0)) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_2c,9,1);
                   (this_ptr->base).attack_cooldown = 2.0;
@@ -454,7 +452,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
         (this_ptr->base).base.model.accumulated_root_motion.x =
              (this_ptr->base).base.model.accumulated_root_motion.y;
         uStack_f4 = 0;
-        fStack_ec = 0x40400000;
+        fStack_ec = 3.0f;
         uStack_f0 = 0;
         pCVar14 = (*((this_ptr->our_post->vtable)._ub)->getPathMap)(this_ptr->our_post);
         iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
@@ -511,7 +509,8 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
           }
         }
       }
-      if ((this_ptr->firing_blend < (float)_DAT_005dedb5) || (this_ptr->firing_cooldown <= 0.0)) {
+      if ((this_ptr->firing_blend < (float)0.5) || (this_ptr->firing_cooldown <= 0.0))
+      {
         if (this_ptr->hold_pos_flag == 0) {
           max_value = 4.0;
           fVar17 = 2.0;
@@ -565,10 +564,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
         pSVar18 = &SStack_22c;
         fVar17 = 0.4;
         core_xform_cpp_transformVector3x4_FUN_00591530
-                  ((CVector3f *)&DAT_0265370c,
+                  (&g_CVector3f_0265370c,
                    (CMatrix3x4f *)
-                   (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01d1c714].m,
-                   &CStack_1e4);
+                   (this_ptr->base).base.model.bone_transform.bone_model_matrices
+                   [g_INT_ARRAY_01d1c710[1]].m,&CStack_1e4);
         pCVar19 = &CStack_70;
         CStack_70.x = CStack_1e4.x;
         *(uint *)((int)&CStack_70 + (uint)bVar16 * -8 + 4) =
@@ -592,10 +591,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
         pSVar18 = &SStack_22c;
         fVar17 = 0.4;
         core_xform_cpp_transformVector3x4_FUN_00591530
-                  ((CVector3f *)&DAT_0265370c,
+                  (&g_CVector3f_0265370c,
                    (CMatrix3x4f *)
-                   (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01d1c718].m,
-                   &CStack_58);
+                   (this_ptr->base).base.model.bone_transform.bone_model_matrices
+                   [g_INT_ARRAY_01d1c710[2]].m,&CStack_58);
         pCVar19 = &CStack_19c;
         CStack_19c.x = CStack_58.x;
         *(uint *)((int)&CStack_19c + (uint)bVar16 * -8 + 4) =

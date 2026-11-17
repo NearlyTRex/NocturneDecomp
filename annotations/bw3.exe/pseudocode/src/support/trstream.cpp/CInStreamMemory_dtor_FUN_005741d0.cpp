@@ -17,7 +17,7 @@ CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_dtor_FUN_005741d0
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable = &g_CInStreamMemoryVTable;
+  (this_ptr->base).vtable = g_CInStreamMemoryVTable;
   support_trstream_cpp_CInStreamMemory_close_FUN_005743f0(this_ptr);
   ptr = (CInStreamMemory *)support_trstream_cpp_CInStream_dtor_FUN_00572540(&this_ptr->base,1);
   if ((flags & 2) == 0) {

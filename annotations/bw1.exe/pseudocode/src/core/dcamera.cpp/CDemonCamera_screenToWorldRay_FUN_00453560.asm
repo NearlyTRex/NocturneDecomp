@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   screen_y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7907
+;   double g_DOUBLE_005d7907 = 0.00390625
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044dd70
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [ESP + 0x3c],EAX      ; 004535b2
     FILD dword ptr [ESP + 0x3c]         ; 004535b6
     MOV EAX,dword ptr [ESP + 0x34]      ; 004535ba
-    FLD double ptr [0x005d7907]         ; 004535be | DAT_005d7907
+    FLD double ptr [0x005d7907]         ; 004535be | g_DOUBLE_005d7907
     FXCH                                ; 004535c4
     FMUL ST1                            ; 004535c6
     MOV dword ptr [ESP + 0x3c],EAX      ; 004535c8

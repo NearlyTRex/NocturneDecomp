@@ -15,21 +15,21 @@
 ;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0 at 004f53ba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e29c0
-;   undefined4 DAT_005e29c8
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01d80d50
-;   undefined4 DAT_01d80d54
-;   undefined4 DAT_01d80d58
-;   undefined4 DAT_01d80d5c
-;   undefined4 DAT_01d80d60
-;   undefined4 DAT_01d80d64
-;   undefined4 DAT_01d80d68
-;   undefined4 DAT_01d80ed4
-;   undefined4 DAT_01d80ed8
-;   undefined4 DAT_01d80edc
-;   undefined4 DAT_01d80ee0
+;   float g_FLOAT_005e29c0 = 256
+;   float g_FLOAT_005e29c8 = 0.00390625
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   int g_INT_01d80d50
+;   CVector3f[32] g_CVector3f_ARRAY_01d80d54
+;   undefined4 g_CVector3f_ARRAY_01d80d54[0].y
+;   undefined4 g_CVector3f_ARRAY_01d80d54[0].z
+;   undefined4 g_CVector3f_ARRAY_01d80d54[1].x
+;   undefined4 g_CVector3f_ARRAY_01d80d54[1].y
+;   undefined4 g_CVector3f_ARRAY_01d80d54[1].z
+;   int g_INT_01d80ed4
+;   CVector3f[32] g_CVector3f_ARRAY_01d80ed8
+;   undefined4 g_CVector3f_ARRAY_01d80ed8[0].y
+;   undefined4 g_CVector3f_ARRAY_01d80ed8[0].z
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004f5137
     MOV EAX,dword ptr [EDI + 0x4]       ; 004f513b
     XOR EBP,EBP                         ; 004f513e
-    MOV [0x01d80d50],EAX                ; 004f5140 | DAT_01d80d50
+    MOV [0x01d80d50],EAX                ; 004f5140 | g_INT_01d80d50
     TEST EAX,EAX                        ; 004f5145
     JLE 0x004f51a0                      ; 004f5147
         ;   XREF to: 004f51a0 (CONDITIONAL_JUMP)  ; LAB_004f51a0
@@ -58,21 +58,21 @@ section .text
     MOV EBX,dword ptr [ESI + 0x18]      ; 004f5150
         ;   Label: LAB_004f5150
     IMUL EBX,EBX,0x30                   ; 004f5153
-    MOV EAX,[0x005f2afc]                ; 004f5156 | DAT_005f2afc
-    MOV EAX,dword ptr [EAX]             ; 004f515b | DAT_01bdd7e4
+    MOV EAX,[0x005f2afc]                ; 004f5156 | g_CDemonRenderer_PTR_005f2afc
+    MOV EAX,dword ptr [EAX]             ; 004f515b | g_CDemonRenderer_01bdd7e4
     ADD ESI,0x4                         ; 004f515d
     ADD EAX,EBX                         ; 004f5160
     MOV EBX,EDX                         ; 004f5162
     INC EBP                             ; 004f5164
     FILD dword ptr [EAX]                ; 004f5165
-    FMUL float ptr [0x005e29c8]         ; 004f5167 | DAT_005e29c8
-    FSTP float ptr [EBX]                ; 004f516d | DAT_01d80d54 | DAT_01d80d60
+    FMUL float ptr [0x005e29c8]         ; 004f5167 | g_FLOAT_005e29c8
+    FSTP float ptr [EBX]                ; 004f516d | g_CVector3f_ARRAY_01d80d54 | g_CVector3f_ARRAY_01d80d54[1].x
     FILD dword ptr [EAX + 0x4]          ; 004f516f
-    FMUL float ptr [0x005e29c8]         ; 004f5172 | DAT_005e29c8
-    FSTP float ptr [EBX + 0x4]          ; 004f5178 | DAT_01d80d58 | DAT_01d80d64
+    FMUL float ptr [0x005e29c8]         ; 004f5172 | g_FLOAT_005e29c8
+    FSTP float ptr [EBX + 0x4]          ; 004f5178 | g_CVector3f_ARRAY_01d80d54[0].y | g_CVector3f_ARRAY_01d80d54[1].y
     FILD dword ptr [EAX + 0x8]          ; 004f517b
-    FMUL float ptr [0x005e29c8]         ; 004f517e | DAT_005e29c8
-    FSTP float ptr [EBX + 0x8]          ; 004f5184 | DAT_01d80d5c | DAT_01d80d68
+    FMUL float ptr [0x005e29c8]         ; 004f517e | g_FLOAT_005e29c8
+    FSTP float ptr [EBX + 0x8]          ; 004f5184 | g_CVector3f_ARRAY_01d80d54[0].z | g_CVector3f_ARRAY_01d80d54[1].z
     MOV ECX,dword ptr [EDI + 0x4]       ; 004f5187
     ADD EDX,0xc                         ; 004f518a
     CMP EBP,ECX                         ; 004f518d
@@ -81,18 +81,18 @@ section .text
     LEA EAX,[EAX]                       ; 004f5191
     LEA EDX,[EDX]                       ; 004f5197
     LEA EAX,[EAX]                       ; 004f519d
-    PUSH 0x1d80ed4                      ; 004f51a0 | DAT_01d80ed4
+    PUSH 0x1d80ed4                      ; 004f51a0 | g_INT_01d80ed4
         ;   Label: LAB_004f51a0
-    PUSH 0x1d80ed8                      ; 004f51a5 | DAT_01d80ed8
-    MOV EBX,dword ptr [0x01d80d50]      ; 004f51aa | DAT_01d80d50
+    PUSH 0x1d80ed8                      ; 004f51a5 | g_CVector3f_ARRAY_01d80ed8
+    MOV EBX,dword ptr [0x01d80d50]      ; 004f51aa | g_INT_01d80d50
     PUSH EBX                            ; 004f51b0
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f51b1
-    PUSH 0x1d80d54                      ; 004f51b5 | DAT_01d80d54
+    PUSH 0x1d80d54                      ; 004f51b5 | g_CVector3f_ARRAY_01d80d54
     ADD EAX,0x98                        ; 004f51ba
     PUSH EAX                            ; 004f51bf
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90 ; 004f51c0
         ;   XREF to: 004f3e90 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV ESI,dword ptr [0x01d80ed4]      ; 004f51c5 | DAT_01d80ed4
+    MOV ESI,dword ptr [0x01d80ed4]      ; 004f51c5 | g_INT_01d80ed4
     ADD ESP,0x14                        ; 004f51cb
     CMP ESI,0x3                         ; 004f51ce
     JGE 0x004f51dd                      ; 004f51d1
@@ -105,9 +105,9 @@ section .text
     POP ESI                             ; 004f51da
     POP EBX                             ; 004f51db
     RET                                 ; 004f51dc
-    PUSH 0x1d80d50                      ; 004f51dd | DAT_01d80d50
+    PUSH 0x1d80d50                      ; 004f51dd | g_INT_01d80d50
         ;   Label: LAB_004f51dd
-    PUSH 0x1d80d54                      ; 004f51e2 | DAT_01d80d54
+    PUSH 0x1d80d54                      ; 004f51e2 | g_CVector3f_ARRAY_01d80d54
     PUSH ESI                            ; 004f51e7
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f51e8
     PUSH 0x1d80ed8                      ; 004f51ec
@@ -115,27 +115,27 @@ section .text
     PUSH EAX                            ; 004f51f6
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90 ; 004f51f7
         ;   XREF to: 004f3e90 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV EAX,[0x01d80d50]                ; 004f51fc | DAT_01d80d50
+    MOV EAX,[0x01d80d50]                ; 004f51fc | g_INT_01d80d50
     ADD ESP,0x14                        ; 004f5201
     CMP EAX,0x3                         ; 004f5204
     JL 0x004f51d3                       ; 004f5207
         ;   XREF to: 004f51d3 (CONDITIONAL_JUMP)  ; LAB_004f51d3
-    PUSH 0x1d80ed4                      ; 004f5209 | DAT_01d80ed4
+    PUSH 0x1d80ed4                      ; 004f5209 | g_INT_01d80ed4
     PUSH 0x1d80ed8                      ; 004f520e
     PUSH EAX                            ; 004f5213
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f5214
-    PUSH 0x1d80d54                      ; 004f5218 | DAT_01d80d54
+    PUSH 0x1d80d54                      ; 004f5218 | g_CVector3f_ARRAY_01d80d54
     ADD EAX,0xb8                        ; 004f521d
     PUSH EAX                            ; 004f5222
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90 ; 004f5223
         ;   XREF to: 004f3e90 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV ECX,dword ptr [0x01d80ed4]      ; 004f5228 | DAT_01d80ed4
+    MOV ECX,dword ptr [0x01d80ed4]      ; 004f5228 | g_INT_01d80ed4
     ADD ESP,0x14                        ; 004f522e
     CMP ECX,0x3                         ; 004f5231
     JL 0x004f51d3                       ; 004f5234
         ;   XREF to: 004f51d3 (CONDITIONAL_JUMP)  ; LAB_004f51d3
-    PUSH 0x1d80d50                      ; 004f5236 | DAT_01d80d50
-    PUSH 0x1d80d54                      ; 004f523b | DAT_01d80d54
+    PUSH 0x1d80d50                      ; 004f5236 | g_INT_01d80d50
+    PUSH 0x1d80d54                      ; 004f523b | g_CVector3f_ARRAY_01d80d54
     PUSH ECX                            ; 004f5240
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f5241
     PUSH 0x1d80ed8                      ; 004f5245
@@ -143,21 +143,21 @@ section .text
     PUSH EAX                            ; 004f524f
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90 ; 004f5250
         ;   XREF to: 004f3e90 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV ESI,dword ptr [0x01d80d50]      ; 004f5255 | DAT_01d80d50
+    MOV ESI,dword ptr [0x01d80d50]      ; 004f5255 | g_INT_01d80d50
     ADD ESP,0x14                        ; 004f525b
     CMP ESI,0x3                         ; 004f525e
     JL 0x004f51d3                       ; 004f5261
         ;   XREF to: 004f51d3 (CONDITIONAL_JUMP)  ; LAB_004f51d3
-    PUSH 0x1d80ed4                      ; 004f5267 | DAT_01d80ed4
+    PUSH 0x1d80ed4                      ; 004f5267 | g_INT_01d80ed4
     PUSH 0x1d80ed8                      ; 004f526c
     PUSH ESI                            ; 004f5271
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f5272
-    PUSH 0x1d80d54                      ; 004f5276 | DAT_01d80d54
+    PUSH 0x1d80d54                      ; 004f5276 | g_CVector3f_ARRAY_01d80d54
     ADD EAX,0xd8                        ; 004f527b
     PUSH EAX                            ; 004f5280
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90 ; 004f5281
         ;   XREF to: 004f3e90 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
-    MOV EAX,[0x01d80ed4]                ; 004f5286 | DAT_01d80ed4
+    MOV EAX,[0x01d80ed4]                ; 004f5286 | g_INT_01d80ed4
     ADD ESP,0x14                        ; 004f528b
     CMP EAX,0x3                         ; 004f528e
     JL 0x004f51d3                       ; 004f5291
@@ -172,7 +172,7 @@ section .text
     MOV dword ptr [EDX + 0xf8],EAX      ; 004f52b6
     MOV EAX,dword ptr [EDI + 0x14]      ; 004f52bc
     MOV dword ptr [EDX + 0xfc],EAX      ; 004f52bf
-    MOV EDX,dword ptr [0x01d80ed4]      ; 004f52c5 | DAT_01d80ed4
+    MOV EDX,dword ptr [0x01d80ed4]      ; 004f52c5 | g_INT_01d80ed4
     XOR EBP,EBP                         ; 004f52cb
     TEST EDX,EDX                        ; 004f52cd
     JLE 0x004f5360                      ; 004f52cf
@@ -181,22 +181,22 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 004f52da
     MOV dword ptr [ESP],EDI             ; 004f52de
     MOV EDI,0x124980                    ; 004f52e1
-    MOV EAX,[0x005f2afc]                ; 004f52e6 | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 004f52e6 | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_004f52e6
-    MOV EBX,dword ptr [EAX]             ; 004f52eb | DAT_01bdd7e4
+    MOV EBX,dword ptr [EAX]             ; 004f52eb | g_CDemonRenderer_01bdd7e4
     MOV EAX,dword ptr [ESP]             ; 004f52ed
     ADD EBX,EDI                         ; 004f52f0
-    FLD float ptr [EAX]                 ; 004f52f2 | DAT_01d80ed8 | DAT_01d80ee4
-    FMUL float ptr [0x005e29c0]         ; 004f52f4 | DAT_005e29c0
+    FLD float ptr [EAX]                 ; 004f52f2 | g_CVector3f_ARRAY_01d80ed8 | g_CVector3f_ARRAY_01d80ed8[1].x
+    FMUL float ptr [0x005e29c0]         ; 004f52f4 | g_FLOAT_005e29c0
     FISTP dword ptr [EBX]               ; 004f52fa
-    FLD float ptr [EAX + 0x4]           ; 004f52fc | DAT_01d80edc | DAT_01d80ee8
-    FMUL float ptr [0x005e29c0]         ; 004f52ff | DAT_005e29c0
+    FLD float ptr [EAX + 0x4]           ; 004f52fc | g_CVector3f_ARRAY_01d80ed8[0].y | g_CVector3f_ARRAY_01d80ed8[1].y
+    FMUL float ptr [0x005e29c0]         ; 004f52ff | g_FLOAT_005e29c0
     FISTP dword ptr [EBX + 0x4]         ; 004f5305
-    FLD float ptr [EAX + 0x8]           ; 004f5308 | DAT_01d80ee0 | DAT_01d80eec
-    FMUL float ptr [0x005e29c0]         ; 004f530b | DAT_005e29c0
+    FLD float ptr [EAX + 0x8]           ; 004f5308 | g_CVector3f_ARRAY_01d80ed8[0].z | g_CVector3f_ARRAY_01d80ed8[1].z
+    FMUL float ptr [0x005e29c0]         ; 004f530b | g_FLOAT_005e29c0
     FISTP dword ptr [EBX + 0x8]         ; 004f5311
-    MOV EAX,[0x005f2afc]                ; 004f5314 | DAT_005f2afc
-    MOV EAX,dword ptr [EAX]             ; 004f5319 | DAT_01bdd7e4
+    MOV EAX,[0x005f2afc]                ; 004f5314 | g_CDemonRenderer_PTR_005f2afc
+    MOV EAX,dword ptr [EAX]             ; 004f5319 | g_CDemonRenderer_01bdd7e4
     LEA EDX,[EBP + 0x6188]              ; 004f531b
     ADD ESI,0x4                         ; 004f5321
     MOV dword ptr [EDI + EAX*0x1 + 0x10],0xffffffff ; 004f5324
@@ -209,7 +209,7 @@ section .text
     MOV ECX,dword ptr [ESP]             ; 004f533c
     ADD EDI,0x30                        ; 004f533f
     ADD ECX,0xc                         ; 004f5342
-    MOV EBX,dword ptr [0x01d80ed4]      ; 004f5345 | DAT_01d80ed4
+    MOV EBX,dword ptr [0x01d80ed4]      ; 004f5345 | g_INT_01d80ed4
     MOV dword ptr [ESP],ECX             ; 004f534b
     CMP EBP,EBX                         ; 004f534e
     JL 0x004f52e6                       ; 004f5350

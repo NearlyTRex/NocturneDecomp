@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c9400(CGhoul *this_ptr,SDamageInfo *damage_info)
 
@@ -43,7 +42,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c9400(CGhoul *this_ptr,S
       (this_ptr->prev_position).y = (this_ptr->base).base.base.location.position.y;
       (this_ptr->prev_position).z = (this_ptr->base).base.base.location.position.z;
     }
-    engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"@go berzerk\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"go berzerk\n");
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     this_ptr->stun_timer = 4.0;
@@ -108,7 +107,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c9400(CGhoul *this_ptr,S
         this_ptr->sfx_handles[2] = uVar8;
       }
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(4.0,10.0);
-      fVar4 = (float)_DAT_005c440d;
+      fVar4 = (float)65536;
       this_ptr->arise_timer = 0xa0000;
       pCVar3 = (this_ptr->base).base.base.vtable._ub;
       spawn_radius = 7.00649e-44;

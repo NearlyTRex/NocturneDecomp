@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   y2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c3f544
+;   int g_INT_01c3f544
 ;
 ; Called Functions:
 ;   engine_2d.c_drawVLine_FUN_00403040
@@ -23,7 +23,7 @@ section .text
         ;   Label: shape_edittool.cpp_editorDrawVLine_FUN_00492e10
     MOV ECX,dword ptr [ESP + 0x8]       ; 00492e14
     MOV EAX,dword ptr [ESP + 0xc]       ; 00492e18
-    CMP dword ptr [0x01c3f544],0x0      ; 00492e1c | DAT_01c3f544
+    CMP dword ptr [0x01c3f544],0x0      ; 00492e1c | g_INT_01c3f544
     JZ 0x00492e31                       ; 00492e23
         ;   XREF to: 00492e31 (CONDITIONAL_JUMP)  ; LAB_00492e31
     PUSH EAX                            ; 00492e25

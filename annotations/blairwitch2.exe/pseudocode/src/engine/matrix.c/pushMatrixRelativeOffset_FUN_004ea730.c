@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ea730(int offset_x,int offset_y,int offset_z)
 
 {
@@ -15,21 +13,21 @@ void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ea730(int offset_x,
   int iVar2;
   int iVar3;
   
-  iVar3 = _DAT_01d05014;
-  iVar1 = _DAT_01c38b70;
-  *(int *)(_DAT_01d05014 * 4 + 0x1d05180) = _DAT_01c38b6c;
-  iVar2 = _DAT_01c38b74;
-  *(int *)(iVar3 * 4 + 0x1d051a8) = _DAT_01c38b70;
-  *(int *)(iVar3 * 4 + 0x1d051d0) = _DAT_01c38b74;
-  _DAT_01d05014 = _DAT_01d05014 + 1;
-  _DAT_01c38b6c = _DAT_01c38b6c - offset_x;
-  _DAT_01c38b70 = iVar1 - offset_y;
-  _DAT_01c38b74 = iVar2 - offset_z;
-  if (_DAT_01d05014 < 10) {
+  iVar3 = g_INT_01d05014;
+  iVar1 = g_INT_01c38b70;
+  g_INT_ARRAY_01d05180[g_INT_01d05014] = g_INT_01c38b6c;
+  iVar2 = g_INT_01c38b74;
+  g_INT_ARRAY_01d051a8[iVar3] = g_INT_01c38b70;
+  g_INT_ARRAY_01d051d0[iVar3] = g_INT_01c38b74;
+  g_INT_01d05014 = g_INT_01d05014 + 1;
+  g_INT_01c38b6c = g_INT_01c38b6c - offset_x;
+  g_INT_01c38b70 = iVar1 - offset_y;
+  g_INT_01c38b74 = iVar2 - offset_z;
+  if (g_INT_01d05014 < 10) {
     return;
   }
-  _DAT_01d046a0 = "..\\engine\\matrix.c";
-  _DAT_01d046a4 = 0x5cc;
+  g_CHAR_PTR_01d046a0 = "..\\engine\\matrix.c";
+  g_INT_01d046a4 = 0x5cc;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance3");
   return;
 }

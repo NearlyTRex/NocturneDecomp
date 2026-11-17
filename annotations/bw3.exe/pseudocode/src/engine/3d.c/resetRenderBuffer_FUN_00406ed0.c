@@ -9,7 +9,7 @@
 void __cdecl engine_3d_c_resetRenderBuffer_FUN_00406ed0(void)
 
 {
-  DAT_0073047c = 0;
-  DAT_00730478 = 1;
+  g_INT_0073047c = 0;
+  g_INT_00730478 = 1;
   return;
 }

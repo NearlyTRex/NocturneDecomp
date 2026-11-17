@@ -9,6 +9,6 @@
 void __cdecl core_setdir_cpp_setPixelGrayscale_FUN_00540e80(int x,int y,int grayscale_value)
 
 {
-  *(int *)(*(int *)(&DAT_01c5faec + y * 4) + x * 4) = grayscale_value * 0x10101;
+  *(int *)(g_ARRAY_PTR_01c5faec[y] + x * 4) = grayscale_value * 0x10101;
   return;
 }

@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0057fe10_005e6534 = 0057fe10
+;   CFont_vtable g_CFont_vtable_005e6534
 ;   WatcomTypeInfo g_CWinFontTypeInfo
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     JNZ 0x0057fe49                      ; 0057fe1a
         ;   XREF to: 0057fe49 (CONDITIONAL_JUMP)  ; LAB_0057fe49
     PUSH EBX                            ; 0057fe1c
-    MOV dword ptr [EBX + 0x6a44],0x5e6534 ; 0057fe1d | PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0057fe10_005e6534
+    MOV dword ptr [EBX + 0x6a44],0x5e6534 ; 0057fe1d | g_CFont_vtable_005e6534
     CALL engine_winfont.cpp_CWinFont_reset_FUN_00580300 ; 0057fe27
         ;   XREF to: 00580300 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_reset_FUN_00580300(CWinFont * this_ptr)
     ADD ESP,0x4                         ; 0057fe2c

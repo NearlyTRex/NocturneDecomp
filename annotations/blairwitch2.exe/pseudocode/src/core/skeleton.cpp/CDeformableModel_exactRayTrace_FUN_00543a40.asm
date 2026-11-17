@@ -39,18 +39,18 @@
 ;   TerminatedCString s_core_skeleton_cpp_005e7193
 ;   TerminatedCString s_CDeformableModel_exactRa_005e71a8
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_005fb9a0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_020b58d4
-;   undefined4 DAT_020b58d8
-;   undefined4 DAT_020b58dc
-;   undefined4 DAT_020b58e0
-;   undefined4 DAT_020b58e4
-;   undefined4 DAT_020b58e8
-;   undefined4 DAT_020c4334
-;   undefined4 DAT_020ccfdc
-;   undefined4 DAT_020ccfe0
+;   float g_FLOAT_005fb9a0 = 0.00390625
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   CVector3f[5000] g_CVector3f_ARRAY_020b58d4
+;   undefined4 g_CVector3f_ARRAY_020b58d4[0].y
+;   undefined4 g_CVector3f_ARRAY_020b58d4[0].z
+;   undefined4 g_CVector3f_ARRAY_020b58d4[1].x
+;   undefined4 g_CVector3f_ARRAY_020b58d4[1].y
+;   undefined4 g_CVector3f_ARRAY_020b58d4[1].z
+;   uchar g_UCHAR_020c4334
+;   int g_INT_020ccfdc
+;   CVector3f g_CVector3f_020ccfe0
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     MOV EBP,ESP                         ; 00543a44
     SUB ESP,0x7c                        ; 00543a46
     AND ESP,0xfffffff8                  ; 00543a49
-    MOV AH,byte ptr [0x020c4334]        ; 00543a4c | DAT_020c4334
+    MOV AH,byte ptr [0x020c4334]        ; 00543a4c | g_UCHAR_020c4334
     TEST AH,0x1                         ; 00543a52
     JZ 0x00543ccf                       ; 00543a55
         ;   XREF to: 00543ccf (CONDITIONAL_JUMP)  ; LAB_00543ccf
@@ -86,8 +86,8 @@ section .text
     MOV EBX,0x5e7193                    ; 00543a6f | = "..\\core\\skeleton.cpp"
     MOV ESI,0x6e1                       ; 00543a74
     PUSH 0x5e71a8                       ; 00543a79 | = "CDeformableModel::exactRayTrace - too..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00543a7e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00543a84 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00543a7e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00543a84 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00543a8a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00543a8f
@@ -107,14 +107,14 @@ section .text
         ;   Label: LAB_00543aae
     MOV EBX,EDX                         ; 00543ab0
     FILD dword ptr [EAX]                ; 00543ab2
-    FMUL float ptr [0x005fb9a0]         ; 00543ab4 | DAT_005fb9a0
-    FSTP float ptr [EBX]                ; 00543aba | DAT_020b58d4 | DAT_020b58e0
+    FMUL float ptr [0x005fb9a0]         ; 00543ab4 | g_FLOAT_005fb9a0
+    FSTP float ptr [EBX]                ; 00543aba | g_CVector3f_ARRAY_020b58d4 | g_CVector3f_ARRAY_020b58d4[1].x
     FILD dword ptr [EAX + 0x4]          ; 00543abc
-    FMUL float ptr [0x005fb9a0]         ; 00543abf | DAT_005fb9a0
-    FSTP float ptr [EBX + 0x4]          ; 00543ac5 | DAT_020b58d8 | DAT_020b58e4
+    FMUL float ptr [0x005fb9a0]         ; 00543abf | g_FLOAT_005fb9a0
+    FSTP float ptr [EBX + 0x4]          ; 00543ac5 | g_CVector3f_ARRAY_020b58d4[0].y | g_CVector3f_ARRAY_020b58d4[1].y
     FILD dword ptr [EAX + 0x8]          ; 00543ac8
-    FMUL float ptr [0x005fb9a0]         ; 00543acb | DAT_005fb9a0
-    FSTP float ptr [EBX + 0x8]          ; 00543ad1 | DAT_020b58dc | DAT_020b58e8
+    FMUL float ptr [0x005fb9a0]         ; 00543acb | g_FLOAT_005fb9a0
+    FSTP float ptr [EBX + 0x8]          ; 00543ad1 | g_CVector3f_ARRAY_020b58d4[0].z | g_CVector3f_ARRAY_020b58d4[1].z
     INC ESI                             ; 00543ad4
     ADD EDX,0xc                         ; 00543ad5
     MOV EAX,dword ptr [EDI + 0x2c]      ; 00543ad8
@@ -243,17 +243,17 @@ section .text
     JZ 0x00543c61                       ; 00543c44
         ;   XREF to: 00543c61 (CONDITIONAL_JUMP)  ; LAB_00543c61
     MOV EAX,dword ptr [ESP + 0x50]      ; 00543c46
-    MOV [0x020ccfe0],EAX                ; 00543c4a | DAT_020ccfe0
+    MOV [0x020ccfe0],EAX                ; 00543c4a | g_CVector3f_020ccfe0
     MOV EAX,dword ptr [ESP + 0x54]      ; 00543c4f
-    MOV [0x020ccfe4],EAX                ; 00543c53 | DAT_020ccfe4
+    MOV [0x020ccfe4],EAX                ; 00543c53 | g_CVector3f_020ccfe0.y
     MOV EAX,dword ptr [ESP + 0x58]      ; 00543c58
-    MOV [0x020ccfe8],EAX                ; 00543c5c | DAT_020ccfe8
+    MOV [0x020ccfe8],EAX                ; 00543c5c | g_CVector3f_020ccfe0.z
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00543c61
         ;   Label: LAB_00543c61
-    MOV [0x020ccfdc],EAX                ; 00543c65 | DAT_020ccfdc
+    MOV [0x020ccfdc],EAX                ; 00543c65 | g_INT_020ccfdc
     MOV EAX,dword ptr [EBP + 0x18]      ; 00543c6a
-    MOV dword ptr [0x020ccff0],EBX      ; 00543c6d | DAT_020ccff0
-    MOV [0x020ccfec],EAX                ; 00543c73 | DAT_020ccfec
+    MOV dword ptr [0x020ccff0],EBX      ; 00543c6d | g_INT_020ccff0
+    MOV [0x020ccfec],EAX                ; 00543c73 | g_INT_020ccfec
     MOV EAX,dword ptr [ESP + 0x74]      ; 00543c78
         ;   Label: LAB_00543c78
     MOV EDX,dword ptr [ESP + 0x68]      ; 00543c7c
@@ -292,8 +292,8 @@ section .text
     MOV DL,AH                           ; 00543cd4
     PUSH 0x1388                         ; 00543cd6
     OR DL,0x1                           ; 00543cdb
-    PUSH 0x20b58d4                      ; 00543cde | DAT_020b58d4
-    MOV byte ptr [0x020c4334],DL        ; 00543ce3 | DAT_020c4334
+    PUSH 0x20b58d4                      ; 00543cde | g_CVector3f_ARRAY_020b58d4
+    MOV byte ptr [0x020c4334],DL        ; 00543ce3 | g_UCHAR_020c4334
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 00543ce9
         ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00543cee

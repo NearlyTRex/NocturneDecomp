@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamDebugVTable = 00574e20
+;   TerminatedCString g_COutStreamDebugVTable
 ;   WatcomTypeInfo g_COutStreamDebugTypeInfo
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
         ;   XREF to: 00574e4c (CONDITIONAL_JUMP)  ; LAB_00574e4c
     PUSH 0x1                            ; 00574e2c
     PUSH EBX                            ; 00574e2e
-    MOV dword ptr [EBX],0x5e5b74        ; 00574e2f | g_COutStreamDebugVTable
+    MOV dword ptr [EBX],0x5e5b74        ; 00574e2f | = " NW"
     CALL support_trstream.cpp_COutStream_dtor_FUN_005744a0 ; 00574e35
         ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_005744a0(COutStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00574e3a

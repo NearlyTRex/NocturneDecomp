@@ -6,70 +6,71 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_00494670(CSpark *this_ptr)
 
 {
   int iVar1;
-  uint *puVar2;
+  CMatrix3x3f *pCVar2;
   uint *puVar3;
-  byte bVar4;
-  double dVar5;
-  double dVar6;
+  float *pfVar4;
+  uint *puVar5;
+  byte bVar6;
   double dVar7;
+  double dVar8;
+  double dVar9;
   float afStackY_1000 [997];
   float local_60;
   float local_54;
   float local_48;
   CVector3i local_18;
   
-  bVar4 = 0;
-  _DAT_01c3ded4 = 4;
-  _DAT_01c3ded8 = 0;
-  _DAT_01c3dedc = 0;
-  _DAT_01c3dee0 = 0;
-  _DAT_01c3dee4 = 0;
-  _DAT_01c3dee8 = 0;
-  _DAT_01c3deec = 1;
-  DAT_0062202c = 0x80000;
-  _DAT_00622030 = 0xf80000;
-  _DAT_0062205c = 0xf80000;
-  _DAT_00622060 = 0xf80000;
-  _DAT_0062208c = 0xf80000;
-  DAT_00622090 = 0x80000;
-  _DAT_006220bc = 0x80000;
-  _DAT_006220c0 = 0x80000;
-  _DAT_01c3def0 = 2;
-  _DAT_01c3def4 = 3;
-  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650(DAT_0060b280,&local_18);
-  _DAT_01c3deb8 = local_18.x;
-  *(uint *)(&DAT_01c3debc + (uint)bVar4 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);
-  *(uint *)(&DAT_01c3dec0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  _DAT_01c3debc = 0;
-  puVar2 = (uint *)(DAT_007bda74 + 0x10);
+  bVar6 = 0;
+  g_SMRGLHeaderPrimitive_01c3ded0.base.count = 4;
+  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.A.i = 0;
+  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.B.i = 0;
+  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.C.i = 0;
+  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.D.i = 0;
+  g_INT_01c3dee8 = 0;
+  g_INT_01c3deec = 1;
+  g_SRenderVertex_ARRAY_00622014[0].u = 0x80000;
+  g_SRenderVertex_ARRAY_00622014[0].v = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[1].u = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[1].v = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[2].u = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[2].v = 0x80000;
+  g_SRenderVertex_ARRAY_00622014[3].u = 0x80000;
+  g_SRenderVertex_ARRAY_00622014[3].v = 0x80000;
+  g_INT_01c3def0 = 2;
+  g_INT_01c3def4 = 3;
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650
+            (g_CDemonRenderer_PTR_0060b280,&local_18);
+  g_CVector3i_01c3deb8.x = local_18.x;
+  *(uint *)((int)&g_CVector3i_01c3deb8 + (uint)bVar6 * -8 + 4) =
+       *(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);
+  *(uint *)((uint)bVar6 * -8 + 0x1c3dec0 + (uint)bVar6 * -8) =
+       *(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+  g_CVector3i_01c3deb8.y = 0;
+  pCVar2 = &(g_CDemonCamera_PTR_007bda74->base).rotation_matrix;
+  pfVar4 = (float *)&stack0xffffffc0;
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *pfVar4 = pCVar2->m[0].x;
+    pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar6 * -8 + 4);
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+  }
   puVar3 = (uint *)&stack0xffffffc0;
+  puVar5 = (uint *)&stack0xffffff98;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *puVar5 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  puVar2 = (uint *)&stack0xffffffc0;
-  puVar3 = (uint *)&stack0xffffff98;
-  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
-  }
-  dVar6 = (double)local_54 * _DAT_005d53a2;
-  dVar7 = (double)local_48 * _DAT_005d53a2;
-  dVar5 = round((double)local_60 * _DAT_005d53a2);
-  dVar6 = round(dVar6);
-  dVar7 = round(dVar7);
-  _DAT_01c3dec4 = (int)ROUND(dVar5);
-  _DAT_01c3dec8 = (int)ROUND(dVar6);
-  _DAT_01c3decc = (int)ROUND(dVar7);
+  dVar8 = (double)local_54 * -65536;
+  dVar9 = (double)local_48 * -65536;
+  dVar7 = round((double)local_60 * -65536);
+  dVar8 = round(dVar8);
+  dVar9 = round(dVar9);
+  g_CVector3i_01c3dec4.x = (int)ROUND(dVar7);
+  g_CVector3i_01c3dec4.y = (int)ROUND(dVar8);
+  g_CVector3i_01c3dec4.z = (int)ROUND(dVar9);
   return;
 }

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CMatrix3x4f * __stack_esi core_toxhand_cpp_CTheHand_getHandBoneMatrix_FUN_0056cbd0(CTheHand *this_ptr,CMatrix3x4f *out_matrix)
 
@@ -18,7 +17,7 @@ CMatrix3x4f * __stack_esi core_toxhand_cpp_CTheHand_getHandBoneMatrix_FUN_0056cb
   float *pfVar4;
   float afStack_34 [12];
   
-  pCVar2 = (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02cfd798;
+  pCVar2 = (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_INT_02cfd798;
   pfVar3 = afStack_34;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *pfVar3 = (float)pCVar2->m[0].w;

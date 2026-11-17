@@ -7,7 +7,7 @@
 ; CTextureList *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -30,7 +30,7 @@ section .text
     LEA ESI,[EDI + 0x4]                 ; 00596500
     PUSH ESI                            ; 00596503
         ;   Label: LAB_00596503
-    MOV ECX,dword ptr [0x00612560]      ; 00596504 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00596504 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 0059650a
     INC EBX                             ; 0059650b
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 0059650c

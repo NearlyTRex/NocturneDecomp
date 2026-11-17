@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_time)
 
 {
@@ -21,12 +19,12 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_t
   if (iVar2 != 0) {
     iVar2 = g_CGamePtr->goggles_active;
     if (this_ptr->quick_turn_active == 1) {
-      this_ptr->quick_turn_angle = this_ptr->quick_turn_angle - _DAT_005fecb4;
+      this_ptr->quick_turn_angle = this_ptr->quick_turn_angle - 0.785f;
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                 (&(this_ptr->base).base.model.base,0x75,1);
-      if (ABS(this_ptr->quick_turn_angle) <= (float)_DAT_005d9be4) {
+      if (ABS(this_ptr->quick_turn_angle) <= (float)3.1415926535000001) {
         (this_ptr->base).base.base.orient.vec.y =
-             _DAT_005fecb4 + (this_ptr->base).base.base.orient.vec.y;
+             0.785f + (this_ptr->base).base.base.orient.vec.y;
         core_charactr_cpp_CCharacter_setOrientation_FUN_00433d50
                   ((CCharacter *)this_ptr,&(this_ptr->base).base.base.orient);
       }
@@ -55,7 +53,7 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_t
       bVar1 = true;
     }
     if (((this_ptr->base).action_pending == 7) || (bVar1)) {
-      delta_time = delta_time * (float)_DAT_005d9bec;
+      delta_time = delta_time * (float)0.25;
       core_doc_cpp_CDoc_processFrame_FUN_00469550(this_ptr,delta_time);
       core_doc_cpp_CDoc_processFrame_FUN_00469550(this_ptr,delta_time);
       core_doc_cpp_CDoc_processFrame_FUN_00469550(this_ptr,delta_time);

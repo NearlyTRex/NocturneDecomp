@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004a0db0(CFlameThrower *this_ptr)
 
 {
@@ -45,13 +43,13 @@ int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004a0db0(CFlameThrower *thi
   CStack_28.x = CStack_34.x;
   *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =
        *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + 4);
-  this_ptr_00 = 0x01C3DEB4;
+  this_ptr_00 = g_CFireEffect_PTR_00614d30;
   *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   core_fire_cpp_CFireEffect_createGunFlames_FUN_0049e680
             (this_ptr_00,position,pCVar4,flame_count,flame_type);
   if (this_ptr->was_firing_prev_frame == 0) {
-    fVar2 = 1.0 / _DAT_005f6b50;
+    fVar2 = 1.0 / 4.0f;
     piVar1 = &(this_ptr->base).ammo_count;
     *piVar1 = *piVar1 + -1;
     this_ptr->fire_rate_timer = fVar2;

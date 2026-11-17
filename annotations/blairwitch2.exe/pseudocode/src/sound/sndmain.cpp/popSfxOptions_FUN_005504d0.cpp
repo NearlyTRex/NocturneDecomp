@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005504d0(void)
 
 {
-  _DAT_0264161c = _DAT_0264161c + -1;
-  if (-1 < _DAT_0264161c) {
+  g_INT_0264161c = g_INT_0264161c + -1;
+  if (-1 < g_INT_0264161c) {
     return;
   }
-  _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-  _DAT_01d046a4 = 0xea7;
+  g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+  g_INT_01d046a4 = 0xea7;
   core_main_c_displayErrorAndQuit_FUN_004e4500("popSfxOptions - stack empty");
   return;
 }

@@ -14,18 +14,18 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_00523db0(CMotionList *this_ptr
   SMotion *pSStack_14;
   
   _fprintf(file_handle,"// motion list version\n");
-  _fprintf(file_handle,(char *)0x5eaa97);
+  _fprintf(file_handle,"%d\n");
   _fprintf(file_handle,"// state list\n");
-  _fprintf(file_handle,(char *)0x5eaaaa);
+  _fprintf(file_handle,"%d\n");
   iVar1 = 0;
   if (0 < this_ptr->state_count) {
     do {
-      _fprintf(file_handle,(char *)0x5eaaae);
+      _fprintf(file_handle,"%s\n");
       iVar1 = iVar1 + 1;
     } while (iVar1 < this_ptr->state_count);
   }
   _fprintf(file_handle,"// motion count\n");
-  _fprintf(file_handle,(char *)0x5eaac3);
+  _fprintf(file_handle,"%d\n");
   iStack_18 = 0;
   if (0 < this_ptr->motion_count) {
     pSStack_14 = this_ptr->motions;

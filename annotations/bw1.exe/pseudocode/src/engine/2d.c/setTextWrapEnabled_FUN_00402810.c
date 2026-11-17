@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402810(int enabled)
 
 {
-  DAT_0061049c = enabled;
+  g_INT_0061049c = enabled;
   return;
 }

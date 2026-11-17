@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 96,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "register_param",
       "undefined_data",
@@ -39,15 +39,15 @@
     },
     {
       "addr": "0061f6cc",
-      "name": "DAT_0061f6cc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PTR_0061f6cc",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "0061f6d0",
-      "name": "DAT_0061f6d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PTR_0061f6d0",
+      "type": "void*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -136,22 +136,6 @@
       "match": "DAT_0061f764",
       "severity": "mild",
       "text": "*(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)(&DAT_0061f764 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0061f6cc",
-      "severity": "mild",
-      "text": "DAT_0061f6cc = &UNK_005c4e8c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0061f6d0",
-      "severity": "mild",
-      "text": "DAT_0061f6d0 = processSignal;",
       "type": "undefined_data"
     },
     {

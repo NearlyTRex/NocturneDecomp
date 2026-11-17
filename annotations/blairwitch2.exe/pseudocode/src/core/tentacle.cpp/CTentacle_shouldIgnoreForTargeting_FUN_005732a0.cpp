@@ -13,7 +13,7 @@ int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_005732a0(CT
   int iVar1;
   char *str2;
   
-  str2 = &DAT_005ec542;
+  str2 = "wait";
   str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
                    (&(this_ptr->base).base.model.base);
   iVar1 = _stricmp(str1->motion_name,str2);

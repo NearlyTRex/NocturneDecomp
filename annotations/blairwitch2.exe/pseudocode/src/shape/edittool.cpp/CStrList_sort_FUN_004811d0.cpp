@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004811d0(CStrList *this_ptr,int start_index,int end_index)
 
 {
   if (start_index < end_index) {
     if ((start_index < 0) || (this_ptr->item_count <= end_index)) {
-      _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-      _DAT_01d046a4 = 0xc2a;
+      g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+      g_INT_01d046a4 = 0xc2a;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::sort - invalid range!");
     }
     _qsort

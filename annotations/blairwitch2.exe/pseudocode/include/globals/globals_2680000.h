@@ -4,10 +4,59 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2680000
 // =============================================================================
+
+// CVector3i
+extern CVector3i g_CVector3i_026810c0;
+
+// WCHAR*
+extern WCHAR* g_WCHAR_PTR_02680178;
+
+// byte
+extern byte g_BYTE_02681084;
+
+// char*
+extern char* g_CHAR_PTR_02680174;
+
+// char**
+extern char** g_CHAR_PTR_PTR_026807e0;
+extern char** g_CHAR_PTR_PTR_026807e4;
+
+// char[16]
+extern char g_CHAR_ARRAY_026807a0[16];
+
+// char[1]
+extern char g_CHAR_ARRAY_02680800[1];
+
+// char[256]
+extern char g_CHAR_ARRAY_02680801[256];
+
+// char[260]
+extern char g_CHAR_ARRAY_02680180[260];
+extern char g_CHAR_ARRAY_0268048c[260];
+
+// int
+extern int g_INT_0268014c;
+extern int g_INT_02680150;
+extern int g_INT_02680170;
+extern int g_INT_026807e8;
+extern int g_INT_026807f0;
+extern int g_INT_02681070;
+extern int g_INT_02681074;
+extern int g_INT_02681090;
+extern int g_INT_02681094;
+extern int g_INT_02681098;
+
+// void*
+extern void* g_PTR_0268017c;
+extern void* g_PTR_02681078;
+extern void* g_PTR_026810a0;
+extern void* g_PTR_026810b0;
 
 // word
 extern word DAT_026820D6;

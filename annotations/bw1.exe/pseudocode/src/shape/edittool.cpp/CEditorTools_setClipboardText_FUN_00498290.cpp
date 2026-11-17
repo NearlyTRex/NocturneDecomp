@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00498290(CEditorTools *this_ptr,char *text_data)
 
 {
@@ -33,7 +31,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00498290(CEdit
     pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
   uVar4 = ~uVar4;
-  BVar2 = OpenClipboard(_DAT_02c9be68);
+  BVar2 = OpenClipboard(g_HWND_02c9be68);
   if (BVar2 != 0) {
     hMem = GlobalAlloc(0x2002,uVar4);
     if (hMem != (HGLOBAL)0x0) {
@@ -59,11 +57,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00498290(CEdit
     }
     CloseClipboard();
   }
-  _DAT_01c3eb58 = realloc(_DAT_01c3eb58,uVar4);
-  if (_DAT_01c3eb58 == (char *)0x0) {
+  g_CHAR_PTR_01c3eb58 = realloc(g_CHAR_PTR_01c3eb58,uVar4);
+  if (g_CHAR_PTR_01c3eb58 == (char *)0x0) {
     return;
   }
-  pcVar3 = _DAT_01c3eb58;
+  pcVar3 = g_CHAR_PTR_01c3eb58;
   for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(uint *)pcVar3 = *(uint *)text_data;
     text_data = text_data + (uint)bVar7 * -8 + 4;

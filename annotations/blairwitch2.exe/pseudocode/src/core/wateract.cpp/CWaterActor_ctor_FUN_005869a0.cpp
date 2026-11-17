@@ -30,7 +30,7 @@ CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005869a0(CWaterActo
   *(uint *)((int)pvVar3 + -0x130) = 0x3f800000;
   *(uint *)((int)pvVar3 + -300) = 0x3f800000;
   *(uint *)((int)pvVar3 + -0x134) = 0;
-  pcVar4 = (char *)0x5edf22;
+  pcVar4 = "none";
   *(uint *)((int)pvVar3 + -0x20) = 0;
   *(byte *)((int)pvVar3 + -0x128) = 0;
   pcVar5 = (char *)((int)pvVar3 + -0xe8);
@@ -44,7 +44,7 @@ CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005869a0(CWaterActo
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = (char *)0x5edf27;
+  pcVar4 = "none";
   pcVar5 = (char *)((int)pvVar3 + -0x84);
   do {
     cVar1 = *pcVar4;

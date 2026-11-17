@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004618a0(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal)
 
 {
@@ -66,21 +64,21 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004618a0(CKeyFram
           local_24 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)
                            .base.type + local_30;
           pCVar1 = local_28 + *(int *)(local_24 + 0x18);
-          local_b0.x = (float)pCVar1->x * _DAT_005de564;
-          local_b0.y = (float)pCVar1->y * _DAT_005de564;
-          local_b0.z = (float)pCVar1->z * _DAT_005de564;
+          local_b0.x = (float)pCVar1->x * 0.00390625f;
+          local_b0.y = (float)pCVar1->y * 0.00390625f;
+          local_b0.z = (float)pCVar1->z * 0.00390625f;
           pCVar1 = local_28 + *(int *)(local_24 + 0x24);
-          local_80.x = (float)pCVar1->x * _DAT_005de564;
-          local_80.y = (float)pCVar1->y * _DAT_005de564;
-          local_80.z = (float)pCVar1->z * _DAT_005de564;
+          local_80.x = (float)pCVar1->x * 0.00390625f;
+          local_80.y = (float)pCVar1->y * 0.00390625f;
+          local_80.z = (float)pCVar1->z * 0.00390625f;
           local_20 = 2;
           if (2 < *(int *)(local_24 + 4)) {
             local_1c = local_24 + 0x18;
             do {
               pCVar1 = local_28 + *(int *)(local_1c + 0x18);
-              local_68.x = (float)pCVar1->x * _DAT_005de564;
-              local_68.y = (float)pCVar1->y * _DAT_005de564;
-              local_68.z = (float)pCVar1->z * _DAT_005de564;
+              local_68.x = (float)pCVar1->x * 0.00390625f;
+              local_68.y = (float)pCVar1->y * 0.00390625f;
+              local_68.z = (float)pCVar1->z * 0.00390625f;
               core_dtri_cpp_CDemonTriangle_buildCollision_FUN_00478a50
                         (&local_118,&local_b0,&local_80,&local_68);
               if (&local_80 != &local_68) {

@@ -35,8 +35,8 @@
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 at 0053bf38
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bca19
-;   undefined4 DAT_005bca1d
+;   float g_FLOAT_005bca19 = 2
+;   float g_FLOAT_005bca1d = -10
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004545f0
@@ -63,7 +63,7 @@ section .text
     FLD float ptr [ESP + 0x1c]          ; 00474ba8
     LEA EDI,[ESP + 0xc]                 ; 00474bac
     MOV ESI,EAX                         ; 00474bb0
-    FADD float ptr [0x005bca19]         ; 00474bb2 | DAT_005bca19
+    FADD float ptr [0x005bca19]         ; 00474bb2 | g_FLOAT_005bca19
     MOVSD ES:EDI,ESI                    ; 00474bb8
     MOVSD ES:EDI,ESI                    ; 00474bb9
     MOVSD ES:EDI,ESI                    ; 00474bba
@@ -79,7 +79,7 @@ section .text
     FDIV float ptr [EBP + 0x28]         ; 00474bd8
     FLD float ptr [ESP + 0x20]          ; 00474bdb
     FLD float ptr [ESP + 0x10]          ; 00474bdf
-    FADD float ptr [0x005bca1d]         ; 00474be3 | DAT_005bca1d
+    FADD float ptr [0x005bca1d]         ; 00474be3 | g_FLOAT_005bca1d
     FXCH                                ; 00474be9
     FSUB float ptr [EBP + 0x18]         ; 00474beb
     FST float ptr [ESP + 0x2c]          ; 00474bee

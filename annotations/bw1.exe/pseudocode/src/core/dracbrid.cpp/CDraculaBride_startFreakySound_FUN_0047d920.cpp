@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume)
 
 {
@@ -65,7 +63,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDrac
     iVar1 = 0;
     do {
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(*puVar4);
-      bone_index = _DAT_01bc0d34;
+      bone_index = g_INT_ARRAY_01bc0d34[0];
       if (iVar2 == 0) {
         puVar4[7] = 0;
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -184,7 +182,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDrac
         sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005727e0((CVector3f *)(puVar4 + 1));
         sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00572880((CVector3f *)(puVar4 + 4));
         sound_sndmain_cpp_setNextSfxVolume_FUN_005728e0(volume);
-        core_sound_cpp_CSound_findRandomSoundFile_FUN_0057be00(0x02C82A60,local_1ac,sound_name);
+        core_sound_cpp_CSound_findRandomSoundFile_FUN_0057be00
+                  (g_CSound_PTR_006236b8,local_1ac,sound_name);
         uVar3 = sound_sndmain_cpp_startSfx_FUN_00572d20(local_1ac);
         *puVar4 = uVar3;
         sound_sndmain_cpp_popSfxOptions_FUN_00572b40();

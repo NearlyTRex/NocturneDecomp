@@ -6,42 +6,41 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80(CGore *this_ptr,CVector3f *position,int *out_blood_type)
 
 {
-  int iVar1;
-  int iVar2;
+  CBloodPool *pCVar1;
+  CBloodSplat *pCVar2;
+  int iVar3;
   
-  iVar2 = 0;
-  if (0 < _DAT_01cdde40) {
-    iVar1 = 0x1cdde44;
+  iVar3 = 0;
+  if (0 < g_INT_01cdde40) {
+    pCVar1 = g_CBloodPool_ARRAY_01cdde44;
     do {
-      if (((ABS(position->y - *(float *)(iVar1 + 8)) <= (float)_DAT_005d957a) &&
-          (ABS(position->x - *(float *)(iVar1 + 4)) <= (float)_DAT_005d9582)) &&
-         (ABS(position->z - *(float *)(iVar1 + 0xc)) <= (float)_DAT_005d9582)) {
-        *out_blood_type = *(int *)(iVar1 + 0x10);
+      if (((ABS(position->y - (pCVar1->position).y) <= (float)0.5) &&
+          (ABS(position->x - (pCVar1->position).x) <= (float)1.333)) &&
+         (ABS(position->z - (pCVar1->position).z) <= (float)1.333)) {
+        *out_blood_type = pCVar1->blood_type;
         return 1;
       }
-      iVar2 = iVar2 + 1;
-      iVar1 = iVar1 + 0x28;
-    } while (iVar2 < _DAT_01cdde40);
+      iVar3 = iVar3 + 1;
+      pCVar1 = pCVar1 + 1;
+    } while (iVar3 < g_INT_01cdde40);
   }
-  iVar2 = 0;
-  if (0 < _DAT_01cbcaf8) {
-    iVar1 = 0x1cbcafc;
+  iVar3 = 0;
+  if (0 < g_INT_01cbcaf8) {
+    pCVar2 = g_CBloodSplat_ARRAY_01cbcafc;
     do {
-      if (((*(int *)(iVar1 + 0x10) == 0) &&
-          (ABS(position->y - *(float *)(iVar1 + 8)) <= (float)_DAT_005d957a)) &&
-         ((ABS(position->x - *(float *)(iVar1 + 4)) <= (float)_DAT_005d957a &&
-          (ABS(position->z - *(float *)(iVar1 + 0xc)) <= (float)_DAT_005d957a)))) {
-        *out_blood_type = *(int *)(iVar1 + 0x14);
+      if (((pCVar2->is_wall_splat == 0) &&
+          (ABS(position->y - (pCVar2->position).y) <= (float)0.5)) &&
+         ((ABS(position->x - (pCVar2->position).x) <= (float)0.5 &&
+          (ABS(position->z - (pCVar2->position).z) <= (float)0.5)))) {
+        *out_blood_type = pCVar2->blood_type;
         return 1;
       }
-      iVar2 = iVar2 + 1;
-      iVar1 = iVar1 + 0x44;
-    } while (iVar2 < _DAT_01cbcaf8);
+      iVar3 = iVar3 + 1;
+      pCVar2 = pCVar2 + 1;
+    } while (iVar3 < g_INT_01cbcaf8);
   }
   return 0;
 }

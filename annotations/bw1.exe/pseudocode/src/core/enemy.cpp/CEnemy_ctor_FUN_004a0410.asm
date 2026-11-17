@@ -22,10 +22,10 @@
 ;   ... and 25 more
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005dcac1
-;   undefined1 DAT_005dcac2
-;   undefined1 DAT_005dcac3
-;   undefined1 DAT_005dcac4
+;   TerminatedCString s_ene_005dcac1
+;   undefined4 s_ne_005dcac1+1
+;   undefined4 s_e_005dcac1+2
+;   undefined4 s__005dcac1+3
 ;   CEnemy_full_vtable g_CEnemyVTable
 ;
 ; Called Functions:
@@ -62,7 +62,7 @@ section .text
     MOV dword ptr [EBX + 0xc1dc],0x0    ; 004a0484
     MOV byte ptr [EBX + 0xc1f4],0x0     ; 004a048e
     MOV dword ptr [EBX + 0xc1e0],0x42c80000 ; 004a0495
-    MOV ESI,0x5dcac1                    ; 004a049f | DAT_005dcac1
+    MOV ESI,0x5dcac1                    ; 004a049f | = "ene"
     MOV dword ptr [EBX + 0xc1e4],0x0    ; 004a04a4
     LEA EDI,[EBX + 0x120]               ; 004a04ae
     MOV dword ptr [EBX + 0xc25c],0x40c00000 ; 004a04b4
@@ -72,13 +72,13 @@ section .text
     ADD ESP,0x8                         ; 004a04d0
     FSTP float ptr [EBX + 0xc1d0]       ; 004a04d3
     PUSH EDI                            ; 004a04d9
-    MOV AL,byte ptr [ESI]               ; 004a04da | DAT_005dcac1 | DAT_005dcac3
+    MOV AL,byte ptr [ESI]               ; 004a04da | = "ene" | s_e_005dcac1+2
         ;   Label: LAB_004a04da
     MOV byte ptr [EDI],AL               ; 004a04dc
     CMP AL,0x0                          ; 004a04de
     JZ 0x004a04f2                       ; 004a04e0
         ;   XREF to: 004a04f2 (CONDITIONAL_JUMP)  ; LAB_004a04f2
-    MOV AL,byte ptr [ESI + 0x1]         ; 004a04e2 | DAT_005dcac2 | DAT_005dcac4
+    MOV AL,byte ptr [ESI + 0x1]         ; 004a04e2 | s_ne_005dcac1+1 | s__005dcac1+3
     ADD ESI,0x2                         ; 004a04e5
     MOV byte ptr [EDI + 0x1],AL         ; 004a04e8
     ADD EDI,0x2                         ; 004a04eb

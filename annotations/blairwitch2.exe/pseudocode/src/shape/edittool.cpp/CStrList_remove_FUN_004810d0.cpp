@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004810d0(CStrList *this_ptr,int start_index,int end_index)
 
 {
@@ -15,8 +13,8 @@ void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004810d0(CStrList *this_ptr,
   int iVar1;
   
   if (((start_index < 0) || (this_ptr->item_count <= end_index)) || (end_index < start_index)) {
-    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-    _DAT_01d046a4 = 0xbfb;
+    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+    g_INT_01d046a4 = 0xbfb;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::remove - invalid range");
   }
   if (start_index <= end_index) {

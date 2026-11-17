@@ -12,52 +12,52 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_005375c0(CDemonSet
 
 {
   int iVar1;
-  uint *puVar2;
+  float *pfVar2;
   
   if (position == (CVector3f *)0x0) {
-    _DAT_0207ffa8 = 1;
+    g_INT_0207ffa8 = 1;
   }
   else {
-    if (position != (CVector3f *)&DAT_0207ffac) {
-      _DAT_0207ffac = position->x;
-      _DAT_0207ffb4 = position->z;
+    if (position != (CVector3f *)&g_FLOAT_0207ffac) {
+      g_FLOAT_0207ffac = position->x;
+      g_FLOAT_0207ffb4 = position->z;
       _DAT_0207ffb0 = position->y;
     }
-    if (orientation != (UOrientationVector *)&DAT_0207ffb8) {
-      _DAT_0207ffb8 = (orientation->vec).x;
-      _DAT_0207ffc0 = (orientation->vec).z;
+    if (orientation != (UOrientationVector *)&g_FLOAT_0207ffb8) {
+      g_FLOAT_0207ffb8 = (orientation->vec).x;
+      g_FLOAT_0207ffc0 = (orientation->vec).z;
       _DAT_0207ffbc = (orientation->vec).y;
     }
-    if (aabb_min != (CVector3f *)&DAT_0207ffc4) {
-      _DAT_0207ffc4 = aabb_min->x;
-      _DAT_0207ffcc = aabb_min->z;
+    if (aabb_min != (CVector3f *)&g_FLOAT_0207ffc4) {
+      g_FLOAT_0207ffc4 = aabb_min->x;
+      g_FLOAT_0207ffcc = aabb_min->z;
       _DAT_0207ffc8 = aabb_min->y;
     }
-    if (aabb_max != (CVector3f *)&DAT_0207ffd0) {
-      _DAT_0207ffd0 = aabb_max->x;
-      _DAT_0207ffd8 = aabb_max->z;
+    if (aabb_max != (CVector3f *)&g_FLOAT_0207ffd0) {
+      g_FLOAT_0207ffd0 = aabb_max->x;
+      g_FLOAT_0207ffd8 = aabb_max->z;
       _DAT_0207ffd4 = aabb_max->y;
     }
     if (rotation_matrix == (CMatrix3x3f *)0x0) {
-      _DAT_0207ffe0 = rotation_matrix;
-      _DAT_0207ffe4 = rotation_matrix;
-      _DAT_0207ffe8 = rotation_matrix;
-      _DAT_0207fff0 = rotation_matrix;
-      _DAT_0207fff4 = rotation_matrix;
-      _DAT_0207fff8 = rotation_matrix;
-      _DAT_0207ffec = 0x3f800000;
-      _DAT_0207fffc = 0x3f800000;
-      _DAT_0207ffdc = 0x3f800000;
-      _DAT_0207ffa8 = 2;
+      g_CMatrix3x3f_0207ffdc.m[0].y = (float)rotation_matrix;
+      g_CMatrix3x3f_0207ffdc.m[0].z = (float)rotation_matrix;
+      g_CMatrix3x3f_0207ffdc.m[1].x = (float)rotation_matrix;
+      g_CMatrix3x3f_0207ffdc.m[1].z = (float)rotation_matrix;
+      g_CMatrix3x3f_0207ffdc.m[2].x = (float)rotation_matrix;
+      g_CMatrix3x3f_0207ffdc.m[2].y = (float)rotation_matrix;
+      g_CMatrix3x3f_0207ffdc.m[1].y = 1.0;
+      g_CMatrix3x3f_0207ffdc.m[2].z = 1.0;
+      g_CMatrix3x3f_0207ffdc.m[0].x = 1.0;
+      g_INT_0207ffa8 = 2;
       return;
     }
-    puVar2 = (uint *)&DAT_0207ffdc;
+    pfVar2 = (float *)&g_CMatrix3x3f_0207ffdc;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = *(uint *)rotation_matrix;
+      *pfVar2 = *(float *)rotation_matrix;
       rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);
-      puVar2 = puVar2 + 1;
+      pfVar2 = pfVar2 + 1;
     }
-    _DAT_0207ffa8 = 2;
+    g_INT_0207ffa8 = 2;
   }
   return;
 }

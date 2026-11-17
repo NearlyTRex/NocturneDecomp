@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 99,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 3,
+    "pseudocode_lines": 53,
+    "suspect_count": 2,
     "suspect_types": [
       "fast_sqrt_inline",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 269
+    "total_lines": 268
   },
   "cross_references": [
     {
@@ -40,8 +39,8 @@
   "globals": [
     {
       "addr": "01caf5b4",
-      "name": "DAT_01caf5b4",
-      "type": "undefined4",
+      "name": "g_INT_01caf5b4",
+      "type": "int",
       "value": null
     }
   ],
@@ -213,27 +212,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 20,
+      "line": 18,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(vertex_a->velocity).z = 0.0;",
       "type": "unrolled_memset"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 30,
+      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 28,
       "match": "fVar6 = (float)(((int)(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0",
       "severity": "moderate",
-      "text": "fVar6 = (float)(((int)(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0) >> 1 ) + _DAT_01caf5b4);",
+      "text": "fVar6 = (float)(((int)(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0) >> 1 ) + g_INT_01caf5b4);",
       "type": "fast_sqrt_inline"
     }
   ]

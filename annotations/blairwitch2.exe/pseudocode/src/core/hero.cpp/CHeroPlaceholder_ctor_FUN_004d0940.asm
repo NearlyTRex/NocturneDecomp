@@ -11,10 +11,10 @@
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280 at 004fd363
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005da037
-;   undefined1 DAT_005da038
-;   undefined1 DAT_005da039
-;   undefined1 DAT_005da03a
+;   TerminatedCString s_CDoc_005da037
+;   undefined4 s_Doc_005da037+1
+;   undefined4 s_oc_005da037+2
+;   undefined4 s_c_005da037+3
 ;   CDemonActor_vtable g_CHeroPlaceholderVTable
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     PUSH EDI                            ; 004d0941
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d0942
     PUSH EDX                            ; 004d0946
-    MOV ESI,0x5da037                    ; 004d0947 | DAT_005da037
+    MOV ESI,0x5da037                    ; 004d0947 | = "CDoc"
     CALL core_actor.cpp_CDemonActor_ctor_FUN_00408790 ; 004d094c
         ;   XREF to: 00408790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00408790(CDemonActor * this_ptr)
     MOV EDX,EAX                         ; 004d0951
@@ -39,13 +39,13 @@ section .text
     LEA EDI,[EAX + 0x2b8]               ; 004d096a
     MOV dword ptr [EAX + 0x2b4],0x0     ; 004d0970
     PUSH EDI                            ; 004d097a
-    MOV AL,byte ptr [ESI]               ; 004d097b | DAT_005da037 | DAT_005da039
+    MOV AL,byte ptr [ESI]               ; 004d097b | = "CDoc" | s_oc_005da037+2
         ;   Label: LAB_004d097b
     MOV byte ptr [EDI],AL               ; 004d097d
     CMP AL,0x0                          ; 004d097f
     JZ 0x004d0993                       ; 004d0981
         ;   XREF to: 004d0993 (CONDITIONAL_JUMP)  ; LAB_004d0993
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d0983 | DAT_005da038 | DAT_005da03a
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d0983 | s_Doc_005da037+1 | s_c_005da037+3
     ADD ESI,0x2                         ; 004d0986
     MOV byte ptr [EDI + 0x1],AL         ; 004d0989
     ADD EDI,0x2                         ; 004d098c

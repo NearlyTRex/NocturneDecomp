@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 59,
+    "complexity_score": 14,
     "cross_reference_count": 59,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 52
   },
   "cross_references": [
@@ -402,20 +400,20 @@
   "globals": [
     {
       "addr": "005fba40",
-      "name": "DAT_005fba40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_005fba40",
+      "type": "uint",
+      "value": "0x1"
     },
     {
       "addr": "007e3e88",
-      "name": "DAT_007e3e88",
-      "type": "undefined4",
+      "name": "g_INT_007e3e88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007e3e8c",
-      "name": "DAT_007e3e8c",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_007e3e8c",
+      "type": "SRenderVertex[16]",
       "value": null
     }
   ],
@@ -493,38 +491,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005fba40",
-      "severity": "mild",
-      "text": "if (DAT_005fba40 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_007e3e88",
-      "severity": "mild",
-      "text": "if ((iVar1 == 0) && (2 < DAT_007e3e88)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_007e3e8c",
-      "severity": "mild",
-      "text": "engine_prim_c_renderPolygonSoftware_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_007e3e88",
-      "severity": "mild",
-      "text": "engine_prim_c_renderPolygonSoftware_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

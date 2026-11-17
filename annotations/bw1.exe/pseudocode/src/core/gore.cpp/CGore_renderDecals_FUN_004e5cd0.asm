@@ -18,9 +18,9 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
-;   undefined4 DAT_01cd56b0
-;   undefined4 DAT_01cf69f8
-;   undefined4 DAT_01cf6f00
+;   int g_INT_01cd56b0
+;   int g_INT_01cf69f8
+;   int g_INT_01cf6f00
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_render_FUN_004e5180
@@ -60,7 +60,7 @@ section .text
     TEST EBP,EBP                        ; 004e5d02
     JZ 0x004e5dbb                       ; 004e5d04
         ;   XREF to: 004e5dbb (CONDITIONAL_JUMP)  ; LAB_004e5dbb
-    MOV EBX,dword ptr [0x01cd56b0]      ; 004e5d0a | DAT_01cd56b0
+    MOV EBX,dword ptr [0x01cd56b0]      ; 004e5d0a | g_INT_01cd56b0
     XOR ESI,ESI                         ; 004e5d10
     TEST EBX,EBX                        ; 004e5d12
     JLE 0x004e5d40                      ; 004e5d14
@@ -72,7 +72,7 @@ section .text
     INC ESI                             ; 004e5d1e
     CALL core_gore.cpp_CBloodSplat_render_FUN_004e49a0 ; 004e5d1f
         ;   XREF to: 004e49a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_render_FUN_004e49a0(CBloodSplat * this_ptr, int expire_flag)
-    MOV ECX,dword ptr [0x01cd56b0]      ; 004e5d24 | DAT_01cd56b0
+    MOV ECX,dword ptr [0x01cd56b0]      ; 004e5d24 | g_INT_01cd56b0
     ADD ESP,0x8                         ; 004e5d2a
     ADD EBX,0x44                        ; 004e5d2d
     CMP ESI,ECX                         ; 004e5d30
@@ -88,7 +88,7 @@ section .text
     TEST EBP,EBP                        ; 004e5d4d
     JZ 0x004e5dfc                       ; 004e5d4f
         ;   XREF to: 004e5dfc (CONDITIONAL_JUMP)  ; LAB_004e5dfc
-    MOV ESI,dword ptr [0x01cf69f8]      ; 004e5d55 | DAT_01cf69f8
+    MOV ESI,dword ptr [0x01cf69f8]      ; 004e5d55 | g_INT_01cf69f8
     XOR EBX,EBX                         ; 004e5d5b
     TEST ESI,ESI                        ; 004e5d5d
     JLE 0x004e5d80                      ; 004e5d5f
@@ -100,7 +100,7 @@ section .text
     INC EBX                             ; 004e5d69
     CALL core_gore.cpp_CBloodPool_render_FUN_004e5180 ; 004e5d6a
         ;   XREF to: 004e5180 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_render_FUN_004e5180(CBloodPool * this_ptr, int expire_flag)
-    MOV ECX,dword ptr [0x01cf69f8]      ; 004e5d6f | DAT_01cf69f8
+    MOV ECX,dword ptr [0x01cf69f8]      ; 004e5d6f | g_INT_01cf69f8
     ADD ESP,0x8                         ; 004e5d75
     ADD ESI,0x28                        ; 004e5d78
     CMP EBX,ECX                         ; 004e5d7b
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_004e5d80
     JZ 0x004e5e3d                       ; 004e5d82
         ;   XREF to: 004e5e3d (CONDITIONAL_JUMP)  ; LAB_004e5e3d
-    MOV ESI,dword ptr [0x01cf6f00]      ; 004e5d88 | DAT_01cf6f00
+    MOV ESI,dword ptr [0x01cf6f00]      ; 004e5d88 | g_INT_01cf6f00
     XOR EBX,EBX                         ; 004e5d8e
     TEST ESI,ESI                        ; 004e5d90
     JLE 0x004e5cf0                      ; 004e5d92
@@ -123,7 +123,7 @@ section .text
     INC EBX                             ; 004e5da0
     CALL core_gore.cpp_CFootstep_render_FUN_004e5860 ; 004e5da1
         ;   XREF to: 004e5860 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_render_FUN_004e5860(CFootstep * this_ptr, int expire_flag)
-    MOV EDX,dword ptr [0x01cf6f00]      ; 004e5da6 | DAT_01cf6f00
+    MOV EDX,dword ptr [0x01cf6f00]      ; 004e5da6 | g_INT_01cf6f00
     ADD ESP,0x8                         ; 004e5dac
     ADD ESI,0x40                        ; 004e5daf
     CMP EBX,EDX                         ; 004e5db2
@@ -134,7 +134,7 @@ section .text
     POP ESI                             ; 004e5db8
     POP EBX                             ; 004e5db9
     RET                                 ; 004e5dba
-    MOV ECX,dword ptr [0x01cd56b0]      ; 004e5dbb | DAT_01cd56b0
+    MOV ECX,dword ptr [0x01cd56b0]      ; 004e5dbb | g_INT_01cd56b0
         ;   Label: LAB_004e5dbb
     XOR ESI,ESI                         ; 004e5dc1
     TEST ECX,ECX                        ; 004e5dc3
@@ -145,7 +145,7 @@ section .text
         ;   Label: LAB_004e5dcd
     JZ 0x004e5de9                       ; 004e5dd4
         ;   XREF to: 004e5de9 (CONDITIONAL_JUMP)  ; LAB_004e5de9
-    MOV EAX,[0x01cd56b0]                ; 004e5dd6 | DAT_01cd56b0
+    MOV EAX,[0x01cd56b0]                ; 004e5dd6 | g_INT_01cd56b0
         ;   Label: LAB_004e5dd6
     INC ESI                             ; 004e5ddb
     ADD EBX,0x44                        ; 004e5ddc
@@ -164,7 +164,7 @@ section .text
     ADD ESP,0x8                         ; 004e5df7
     JMP 0x004e5dd6                      ; 004e5dfa
         ;   XREF to: 004e5dd6 (UNCONDITIONAL_JUMP)  ; LAB_004e5dd6
-    MOV EBX,dword ptr [0x01cf69f8]      ; 004e5dfc | DAT_01cf69f8
+    MOV EBX,dword ptr [0x01cf69f8]      ; 004e5dfc | g_INT_01cf69f8
         ;   Label: LAB_004e5dfc
     XOR ESI,ESI                         ; 004e5e02
     TEST EBX,EBX                        ; 004e5e04
@@ -175,7 +175,7 @@ section .text
         ;   Label: LAB_004e5e0e
     JZ 0x004e5e2a                       ; 004e5e15
         ;   XREF to: 004e5e2a (CONDITIONAL_JUMP)  ; LAB_004e5e2a
-    MOV EAX,[0x01cf69f8]                ; 004e5e17 | DAT_01cf69f8
+    MOV EAX,[0x01cf69f8]                ; 004e5e17 | g_INT_01cf69f8
         ;   Label: LAB_004e5e17
     INC ESI                             ; 004e5e1c
     ADD EBX,0x28                        ; 004e5e1d
@@ -194,7 +194,7 @@ section .text
     ADD ESP,0x8                         ; 004e5e38
     JMP 0x004e5e17                      ; 004e5e3b
         ;   XREF to: 004e5e17 (UNCONDITIONAL_JUMP)  ; LAB_004e5e17
-    MOV EBX,dword ptr [0x01cf6f00]      ; 004e5e3d | DAT_01cf6f00
+    MOV EBX,dword ptr [0x01cf6f00]      ; 004e5e3d | g_INT_01cf6f00
         ;   Label: LAB_004e5e3d
     XOR ESI,ESI                         ; 004e5e43
     TEST EBX,EBX                        ; 004e5e45
@@ -205,7 +205,7 @@ section .text
         ;   Label: LAB_004e5e4f
     JZ 0x004e5e6c                       ; 004e5e56
         ;   XREF to: 004e5e6c (CONDITIONAL_JUMP)  ; LAB_004e5e6c
-    MOV EBP,dword ptr [0x01cf6f00]      ; 004e5e58 | DAT_01cf6f00
+    MOV EBP,dword ptr [0x01cf6f00]      ; 004e5e58 | g_INT_01cf6f00
         ;   Label: LAB_004e5e58
     INC ESI                             ; 004e5e5e
     ADD EBX,0x40                        ; 004e5e5f

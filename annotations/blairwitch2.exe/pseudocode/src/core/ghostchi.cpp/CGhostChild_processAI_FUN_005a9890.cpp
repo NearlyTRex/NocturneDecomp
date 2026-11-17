@@ -41,7 +41,7 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processAI_FUN_005a9890(CGhostChild *t
   if (iVar2 == 0) {
     iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Animation");
     if (iVar2 == 0) {
-      iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,&DAT_005f0987);
+      iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Burn");
       if (iVar2 == 0) {
         (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
         return;

@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(int channel_index)
 
 {
   if ((-1 < channel_index) && (channel_index < 0x20)) {
-    return *(int *)(channel_index * 4 + 0x2cf2940);
+    return g_INT_ARRAY_02cf2940[channel_index];
   }
-  _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-  _DAT_01d71de4 = 0x1147;
+  g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+  g_INT_01d71de4 = 0x1147;
   core_main_c_displayErrorAndQuit_FUN_004e4330("isSfxChannelEnabled - invalid channel index: %d");
-  return *(int *)(channel_index * 4 + 0x2cf2940);
+  return g_INT_ARRAY_02cf2940[channel_index];
 }

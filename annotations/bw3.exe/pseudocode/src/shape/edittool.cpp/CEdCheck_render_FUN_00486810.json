@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 181,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 11,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_truncation",
-      "unaffected_reg",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
     "total_lines": 193
   },
@@ -75,38 +73,38 @@
   "globals": [
     {
       "addr": "01c5b0e0",
-      "name": "DAT_01c5b0e0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c5b0e0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c5baec",
-      "name": "DAT_01c5baec",
-      "type": "undefined4",
+      "name": "g_INT_01c5baec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af98",
-      "name": "DAT_01c6af98",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_01c6af98",
+      "type": "uchar[768]",
       "value": null
     },
     {
       "addr": "01c6af99",
-      "name": "DAT_01c6af99",
+      "name": "g_UCHAR_ARRAY_01c6af98+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6af9a",
-      "name": "DAT_01c6af9a",
+      "name": "g_UCHAR_ARRAY_01c6af98+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5c0",
-      "name": "DAT_01c6b5c0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5c0",
+      "type": "int",
       "value": null
     }
   ],
@@ -194,16 +192,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -211,7 +201,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 32,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(left,iVar1,iVar2,unaff_EBX,this_ptr->border_style_flag);",
@@ -219,7 +209,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 34,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
@@ -227,39 +217,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 34,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c6af9a",
-      "severity": "mild",
-      "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c6af99",
-      "severity": "mild",
-      "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c6af98",
-      "severity": "mild",
-      "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(left + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
@@ -267,7 +233,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 52,
+      "line": 51,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,left + 1,unaff_EBX + -2);",
@@ -275,10 +241,10 @@
     },
     {
       "description": "Pointer value `text_string` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "(int)text_string",
       "severity": "moderate",
-      "text": "(_DAT_01c5b0e0,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);",
+      "text": "(g_CBitFont_PTR_01c5b0e0,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);",
       "type": "pointer_truncation"
     }
   ]

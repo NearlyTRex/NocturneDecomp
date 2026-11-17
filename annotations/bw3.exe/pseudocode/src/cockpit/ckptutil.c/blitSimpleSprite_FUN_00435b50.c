@@ -6,60 +6,55 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00435b50(void *sprite_data,int dest_x,int dest_y,int width,int height)
 
 {
   ColorConversionFunc *pCVar1;
   int iVar2;
-  int iVar3;
-  void *pvVar4;
+  byte *puVar3;
   int iStack_1c;
   int iStack_18;
   int iStack_14;
   
-  iVar3 = _DAT_01c5faf0 - _DAT_01c5faec;
+  iVar2 = (int)g_ARRAY_PTR_01c5faec[1] - (int)g_ARRAY_PTR_01c5faec[0];
   if (sprite_data != (void *)0x0) {
     pCVar1 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80();
-    iVar2 = dest_y * 4;
-    if (DAT_005fba20 == 8) {
-      pvVar4 = (void *)(*(int *)(&DAT_01c5faec + iVar2) + dest_x);
+    if (g_INT_005fba20 == 8) {
+      puVar3 = g_ARRAY_PTR_01c5faec[dest_y] + dest_x;
       iStack_18 = 0;
       if (0 < height) {
         do {
-          (*pCVar1)(pvVar4,sprite_data,width);
+          (*pCVar1)(puVar3,sprite_data,width);
           sprite_data = (void *)((int)sprite_data + width);
           iStack_18 = iStack_18 + 1;
-          pvVar4 = (void *)((int)pvVar4 + iVar3);
+          puVar3 = puVar3 + iVar2;
         } while (iStack_18 < height);
         return;
       }
     }
-    else if (DAT_005fba20 == 0x10) {
-      pvVar4 = (void *)(*(int *)(&DAT_01c5faec + iVar2) + dest_x * 2);
+    else if (g_INT_005fba20 == 0x10) {
+      puVar3 = g_ARRAY_PTR_01c5faec[dest_y] + dest_x * 2;
       iStack_14 = 0;
       if (0 < height) {
         do {
-          (*pCVar1)(pvVar4,sprite_data,width);
+          (*pCVar1)(puVar3,sprite_data,width);
           sprite_data = (void *)((int)sprite_data + width);
           iStack_14 = iStack_14 + 1;
-          pvVar4 = (void *)((int)pvVar4 + (iVar3 / 2) * 2);
+          puVar3 = puVar3 + (iVar2 / 2) * 2;
         } while (iStack_14 < height);
         return;
       }
     }
     else {
-      pvVar4 = (void *)(*(int *)(&DAT_01c5faec + iVar2) + dest_x * 4);
+      puVar3 = g_ARRAY_PTR_01c5faec[dest_y] + dest_x * 4;
       iStack_1c = 0;
       if (0 < height) {
         do {
-          (*pCVar1)(pvVar4,sprite_data,width);
+          (*pCVar1)(puVar3,sprite_data,width);
           sprite_data = (void *)((int)sprite_data + width);
           iStack_1c = iStack_1c + 1;
-          pvVar4 = (void *)((int)pvVar4 +
-                           ((int)((iVar3 + (iVar3 >> 0x1f) * -4) - (uint)((iVar3 >> 0x1f) << 1 < 0))
-                           >> 2) * 4);
+          puVar3 = puVar3 + ((int)((iVar2 + (iVar2 >> 0x1f) * -4) - (uint)((iVar2 >> 0x1f) << 1 < 0)
+                                  ) >> 2) * 4;
         } while (iStack_1c < height);
         return;
       }

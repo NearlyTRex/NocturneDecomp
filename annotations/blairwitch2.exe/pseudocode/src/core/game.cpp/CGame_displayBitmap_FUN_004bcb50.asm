@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005d86f6
 ;   TerminatedCString s_CGame_displayBitmap_trie_005d8707
-;   undefined4 DAT_01cb80cc
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01cb80cc
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -63,7 +63,7 @@ section .text
     TEST ESI,0x7fffffff                 ; 004bcba2
     SETZ BL                             ; 004bcba8
     AND EBX,0xff                        ; 004bcbab
-    MOV dword ptr [0x01cb80cc],EBX      ; 004bcbb1 | DAT_01cb80cc
+    MOV dword ptr [0x01cb80cc],EBX      ; 004bcbb1 | g_INT_01cb80cc
     POP EDI                             ; 004bcbb7
     POP ESI                             ; 004bcbb8
     POP EBX                             ; 004bcbb9
@@ -75,8 +75,8 @@ section .text
     MOV EDX,0x5d86f6                    ; 004bcbc3 | = "..\\core\\game.cpp"
     MOV ECX,0x1219                      ; 004bcbc8
     PUSH 0x5d8707                       ; 004bcbcd | = "CGame::displayBitmap - tried to queue..."
-    MOV dword ptr [0x01d046a0],EDX      ; 004bcbd2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004bcbd8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004bcbd2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004bcbd8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004bcbde
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004bcbe3

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 53,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 65
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -45,8 +44,8 @@
   "globals": [
     {
       "addr": "01c5faec",
-      "name": "DAT_01c5faec",
-      "type": "undefined4",
+      "name": "g_ARRAY_PTR_01c5faec",
+      "type": "void*[1200]",
       "value": null
     }
   ],
@@ -177,28 +176,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01c5faec",
-      "severity": "mild",
-      "text": "((uint *)(*(int *)(&DAT_01c5faec + screen_y * 4) + screen_x * 4),",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "(uint *)((int)this_ptr->framebuffer_aligned +",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "(byte *)(iVar1 + iVar2 + 0xb3fd08 + offset),&DAT_0135ead0 + offset + iVar1 + iVar2);",
-      "type": "undefined_data"
     }
   ]
 }

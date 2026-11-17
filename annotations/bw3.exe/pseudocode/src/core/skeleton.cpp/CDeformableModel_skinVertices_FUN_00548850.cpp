@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00548850(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data)
 
 {
@@ -87,9 +85,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00548850(CDefor
         local_18 = (float *)((int)local_18 + 1);
       }
     }
-    *local_28 = (int)ROUND(local_4c[2] * _DAT_005e4758);
-    local_28[1] = (int)ROUND(local_4c[3] * _DAT_005e4758);
-    local_28[2] = (int)ROUND(local_4c[4] * _DAT_005e4758);
+    *local_28 = (int)ROUND(local_4c[2] * 256.0f);
+    local_28[1] = (int)ROUND(local_4c[3] * 256.0f);
+    local_28[2] = (int)ROUND(local_4c[4] * 256.0f);
     local_28 = local_28 + 3;
     local_20 = local_20 + 0x34;
   }

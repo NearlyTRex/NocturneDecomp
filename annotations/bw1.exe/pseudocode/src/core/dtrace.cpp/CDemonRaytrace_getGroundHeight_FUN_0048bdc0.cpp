@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)
 
 {
@@ -40,14 +38,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemon
   bVar6 = 0;
   local_64 = pos->x;
   local_5c.x = pos->z;
-  local_60 = pos->y + _DAT_005db954;
+  local_60 = pos->y + 2.0f;
   local_5c.y = pos->x;
   local_50 = pos->z;
   fVar3 = local_60 - (this_ptr->bbox_min).y;
   fVar4 = 1.0 / (this_ptr->cell_size).y;
   fVar2 = local_5c.x - (this_ptr->bbox_min).z;
   fVar1 = (this_ptr->cell_size).z;
-  local_5c.z = pos->y + _DAT_005db958;
+  local_5c.z = pos->y + -10.0f;
   fVar5 = local_5c.z - (this_ptr->bbox_min).y;
   CStack_44.y = local_5c.y - local_64;
   local_38 = local_50 - local_5c.x;
@@ -95,14 +93,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemon
     normal_out->z = 0.0;
     normal_out->x = 0.0;
   }
-  _DAT_0152c2c4 = _DAT_02c8af2c;
-  _DAT_0152c2c8 = _DAT_02c8af30;
-  _DAT_0152c2c0 = _DAT_02c8af28;
-  _DAT_0152c2b8 = _DAT_02c8af2c;
-  _DAT_0152c2bc = _DAT_02c8af30;
-  _DAT_0152c2b4 = _DAT_02c8af28;
-  _DAT_0152c2ac = _DAT_02c8af2c;
-  _DAT_0152c2b0 = _DAT_02c8af30;
-  _DAT_0152c2a8 = _DAT_02c8af28;
+  g_INT_0152c2c4 = (int)g_CVector3f_02c8af28.y;
+  g_FLOAT_0152c2c8 = g_CVector3f_02c8af28.z;
+  g_FLOAT_0152c2c0 = g_CVector3f_02c8af28.x;
+  g_INT_0152c2b8 = (int)g_CVector3f_02c8af28.y;
+  g_FLOAT_0152c2bc = g_CVector3f_02c8af28.z;
+  g_FLOAT_0152c2b4 = g_CVector3f_02c8af28.x;
+  g_INT_0152c2ac = (int)g_CVector3f_02c8af28.y;
+  g_FLOAT_0152c2b0 = g_CVector3f_02c8af28.z;
+  g_FLOAT_0152c2a8 = g_CVector3f_02c8af28.x;
   return local_64;
 }

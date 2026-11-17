@@ -15,10 +15,10 @@
 ;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d4a25
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4d99
-;   undefined4 DAT_005c4d9d
-;   undefined4 DAT_005c4da5
-;   undefined4 DAT_005c4dad
+;   float g_FLOAT_005c4d99 = 0.5
+;   double g_DOUBLE_005c4d9d = 1.20000000000000
+;   double g_DOUBLE_005c4da5 = 5
+;   double g_DOUBLE_005c4dad = 0.610865238180555
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -166,11 +166,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d366b
     MOVSD ES:EDI,ESI                    ; 004d366c
     FLD float ptr [ESP + 0xb0]          ; 004d366d
-    FMUL float ptr [0x005c4d99]         ; 004d3674 | DAT_005c4d99
+    FMUL float ptr [0x005c4d99]         ; 004d3674 | g_FLOAT_005c4d99
     FLD float ptr [ESP + 0xb4]          ; 004d367a
-    FMUL float ptr [0x005c4d99]         ; 004d3681 | DAT_005c4d99
+    FMUL float ptr [0x005c4d99]         ; 004d3681 | g_FLOAT_005c4d99
     FLD float ptr [ESP + 0xb8]          ; 004d3687
-    FMUL float ptr [0x005c4d99]         ; 004d368e | DAT_005c4d99
+    FMUL float ptr [0x005c4d99]         ; 004d368e | g_FLOAT_005c4d99
     LEA EDI,[ESP + 0xd4]                ; 004d3694
     LEA ESI,[ESP + 0xbc]                ; 004d369b
     FXCH ST2                            ; 004d36a2
@@ -225,11 +225,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d3745
     MOVSD ES:EDI,ESI                    ; 004d3746
     FLD float ptr [ESP + 0x44]          ; 004d3747
-    FMUL float ptr [0x005c4d99]         ; 004d374b | DAT_005c4d99
+    FMUL float ptr [0x005c4d99]         ; 004d374b | g_FLOAT_005c4d99
     FLD float ptr [ESP + 0x48]          ; 004d3751
-    FMUL float ptr [0x005c4d99]         ; 004d3755 | DAT_005c4d99
+    FMUL float ptr [0x005c4d99]         ; 004d3755 | g_FLOAT_005c4d99
     FLD float ptr [ESP + 0x4c]          ; 004d375b
-    FMUL float ptr [0x005c4d99]         ; 004d375f | DAT_005c4d99
+    FMUL float ptr [0x005c4d99]         ; 004d375f | g_FLOAT_005c4d99
     LEA EDI,[ESP + 0x98]                ; 004d3765
     LEA ESI,[ESP + 0x8c]                ; 004d376c
     FXCH ST2                            ; 004d3773
@@ -248,7 +248,7 @@ section .text
     XOR EDX,EDX                         ; 004d37a3
     FSUBR float ptr [ESP + 0x64]        ; 004d37a5
     MOV dword ptr [ESP + 0x9c],EDX      ; 004d37a9
-    FCOMP double ptr [0x005c4d9d]       ; 004d37b0 | DAT_005c4d9d
+    FCOMP double ptr [0x005c4d9d]       ; 004d37b0 | g_DOUBLE_005c4d9d
     FNSTSW AX                           ; 004d37b6
     SAHF                                ; 004d37b8
     JA 0x004d35b6                       ; 004d37b9
@@ -263,7 +263,7 @@ section .text
     JA 0x004d35b6                       ; 004d37d0
         ;   XREF to: 004d35b6 (CONDITIONAL_JUMP)  ; LAB_004d35b6
     FLD double ptr [ESP]                ; 004d37d6
-    FCOMP double ptr [0x005c4da5]       ; 004d37d9 | DAT_005c4da5
+    FCOMP double ptr [0x005c4da5]       ; 004d37d9 | g_DOUBLE_005c4da5
     FNSTSW AX                           ; 004d37df
     SAHF                                ; 004d37e1
     JA 0x004d35b6                       ; 004d37e2
@@ -286,7 +286,7 @@ section .text
     FLD float ptr [ESP + 0xec]          ; 004d381a
     FABS                                ; 004d3821
     ADD ESP,0x4                         ; 004d3823
-    FCOMP double ptr [0x005c4dad]       ; 004d3826 | DAT_005c4dad
+    FCOMP double ptr [0x005c4dad]       ; 004d3826 | g_DOUBLE_005c4dad
     FNSTSW AX                           ; 004d382c
     SAHF                                ; 004d382e
     JA 0x004d35b6                       ; 004d382f

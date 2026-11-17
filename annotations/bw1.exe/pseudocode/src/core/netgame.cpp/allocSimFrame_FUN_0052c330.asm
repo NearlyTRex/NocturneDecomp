@@ -7,9 +7,9 @@
 ; int              Stack[0x4]:4   sequence_number
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01d715a8
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_INT_01d715a8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -23,7 +23,7 @@ section .text
         ;   Label: core_netgame.cpp_allocSimFrame_FUN_0052c330
     PUSH EBP                            ; 0052c331
     MOV EBX,dword ptr [ESP + 0xc]       ; 0052c332
-    MOV ECX,dword ptr [0x01d715a8]      ; 0052c336 | DAT_01d715a8
+    MOV ECX,dword ptr [0x01d715a8]      ; 0052c336 | g_INT_01d715a8
     XOR EDX,EDX                         ; 0052c33c
     TEST ECX,ECX                        ; 0052c33e
     JLE 0x0052c373                      ; 0052c340
@@ -55,19 +55,19 @@ section .text
     CMP EAX,ECX                         ; 0052c36f
     JL 0x0052c357                       ; 0052c371
         ;   XREF to: 0052c357 (CONDITIONAL_JUMP)  ; LAB_0052c357
-    CMP dword ptr [0x01d715a8],0x200    ; 0052c373 | DAT_01d715a8
+    CMP dword ptr [0x01d715a8],0x200    ; 0052c373 | g_INT_01d715a8
         ;   Label: LAB_0052c373
     JL 0x0052c3a1                       ; 0052c37d
         ;   XREF to: 0052c3a1 (CONDITIONAL_JUMP)  ; LAB_0052c3a1
     MOV EBP,0x5eb62a                    ; 0052c37f
     MOV EAX,0x12b                       ; 0052c384
     PUSH 0x5eb63e                       ; 0052c389
-    MOV dword ptr [0x01d1d400],EBP      ; 0052c38e | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0052c394 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0052c38e | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0052c394 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052c399
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052c39e
-    MOV EDX,dword ptr [0x01d715a8]      ; 0052c3a1 | DAT_01d715a8
+    MOV EDX,dword ptr [0x01d715a8]      ; 0052c3a1 | g_INT_01d715a8
         ;   Label: LAB_0052c3a1
     LEA EAX,[EDX*0x4 + 0x0]             ; 0052c3a7
     SUB EAX,EDX                         ; 0052c3ae
@@ -78,11 +78,11 @@ section .text
     SHL EAX,0x3                         ; 0052c3bc
     PUSH 0x0                            ; 0052c3bf
     ADD EAX,EDX                         ; 0052c3c1
-    MOV EDX,dword ptr [0x01d715a8]      ; 0052c3c3 | DAT_01d715a8
+    MOV EDX,dword ptr [0x01d715a8]      ; 0052c3c3 | g_INT_01d715a8
     ADD EBX,EAX                         ; 0052c3c9
     INC EDX                             ; 0052c3cb
     PUSH EBX                            ; 0052c3cc
-    MOV dword ptr [0x01d715a8],EDX      ; 0052c3cd | DAT_01d715a8
+    MOV dword ptr [0x01d715a8],EDX      ; 0052c3cd | g_INT_01d715a8
     CALL crt_memory.c_memset_FUN_005bfb70 ; 0052c3d3
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0052c3d8

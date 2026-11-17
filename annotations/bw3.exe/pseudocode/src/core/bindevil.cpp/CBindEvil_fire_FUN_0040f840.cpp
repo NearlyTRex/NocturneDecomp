@@ -16,10 +16,10 @@ int __cdecl core_bindevil_cpp_CBindEvil_fire_FUN_0040f840(CBindEvil *this_ptr)
   position = &(this_ptr->base).base.location;
   if (iVar1 != 0) {
     core_fire_cpp_CFireEffect_createBindEvilToss_FUN_004a39a0
-              (0x01C73654,&position->position,&(this_ptr->base).base.orient,
+              (g_CFireEffect_PTR_005fc5a0,&position->position,&(this_ptr->base).base.orient,
                &this_ptr->toss_velocity);
     core_sound_cpp_CSound_playActorSound_FUN_005609d0
-              (0x02CF5680,(CDemonActor *)this_ptr,"wp_bindevil_throw.wav",
+              (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_bindevil_throw.wav",
                &position->position);
     (this_ptr->toss_velocity).z = 0.0;
     (this_ptr->toss_velocity).y = (this_ptr->toss_velocity).z;
@@ -28,6 +28,7 @@ int __cdecl core_bindevil_cpp_CBindEvil_fire_FUN_0040f840(CBindEvil *this_ptr)
     return 1;
   }
   core_sound_cpp_CSound_playActorSound_FUN_005609d0
-            (0x02CF5680,(CDemonActor *)this_ptr,"wp_nomana.wav",&position->position);
+            (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_nomana.wav",
+             &position->position);
   return 0;
 }

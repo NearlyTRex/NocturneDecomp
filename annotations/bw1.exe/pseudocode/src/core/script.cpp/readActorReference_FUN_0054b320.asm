@@ -14,10 +14,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005f004d
-;   undefined4 DAT_0061f650
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   TerminatedCString s_none_00622ad8
-;   undefined4 DAT_00622ae0
-;   undefined4 DAT_00622ae4
+;   char[200] g_CHAR_ARRAY_00622ae0
+;   undefined4 g_CHAR_ARRAY_00622ae0+4
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
@@ -39,9 +39,9 @@ section .text
     LEA EDI,[ESP + 0x4]                 ; 0054b330
     PUSH 0x5f004d                       ; 0054b334 | = "\"%[^\"]\"\n"
     MOV EDX,dword ptr [ESP + 0xdc]      ; 0054b339
-    MOV ESI,0x622ae0                    ; 0054b340 | DAT_00622ae0
+    MOV ESI,0x622ae0                    ; 0054b340 | g_CHAR_ARRAY_00622ae0
     PUSH EDX                            ; 0054b345
-    MOVSD.REP ES:EDI,ESI                ; 0054b346 | DAT_00622ae0 | DAT_00622ae4
+    MOVSD.REP ES:EDI,ESI                ; 0054b346 | g_CHAR_ARRAY_00622ae0 | g_CHAR_ARRAY_00622ae0+4
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054b348
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0054b34d
@@ -63,7 +63,7 @@ section .text
     MOV EAX,ESP                         ; 0054b37c
         ;   Label: LAB_0054b37c
     PUSH EAX                            ; 0054b37e
-    MOV ECX,dword ptr [0x0061f650]      ; 0054b37f | DAT_0061f650
+    MOV ECX,dword ptr [0x0061f650]      ; 0054b37f | g_CDemonMission_PTR_0061f650
     PUSH ECX                            ; 0054b385 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0 ; 0054b386
         ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission * this_ptr, char * name)

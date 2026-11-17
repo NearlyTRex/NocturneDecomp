@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float delta_time)
 
@@ -81,7 +80,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
   float fStack_18;
   
   bVar7 = 0;
-  if (this_ptr->cached_distance < _DAT_005f1434) {
+  if (this_ptr->cached_distance < -9900.0f) {
     fStack_18 = (float)(*this_ptr->vtable->playAmbientSoundWithDelay)
                                  ((CDemonActor *)this_ptr,(char *)0x3dcccccd,0.0);
     this_ptr->cached_distance = fStack_18;
@@ -144,7 +143,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     pCStack_3c->x = *pfStack_48 * pCStack_3c->x;
     pCStack_3c->y = *pfStack_48 * pCStack_3c->y;
     pCStack_3c->z = *pfStack_48 * pCStack_3c->z;
-    fStack_58 = this_ptr->weight * (float)_DAT_005f1438;
+    fStack_58 = this_ptr->weight * (float)0.03125;
     fStack_108 = 0.0 - this_ptr->weight;
     fVar8 = 1.0 / fStack_58;
     fStack_dc = fVar8 * 0.0;
@@ -275,7 +274,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
   iStack_54 = 0;
   pSStack_1c = (SChainVertex *)0x0;
   if (this_ptr->is_visible != 0) {
-    if ((float)in_stack_fffffe9c < this_ptr->chain_length * (float)_DAT_005f1440) {
+    if ((float)in_stack_fffffe9c < this_ptr->chain_length * (float)0.90000000000000002) {
       pSVar6 = this_ptr->vertices;
       fVar8 = 0.0;
       for (iVar3 = 0; pSVar6 = pSVar6 + 1, iVar3 < this_ptr->vertex_count + -1; iVar3 = iVar3 + 1) {
@@ -289,7 +288,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
         fVar8 = SQRT(fStack_74 * fStack_74 +
                      afStack_84[2] * afStack_84[2] + afStack_84[3] * afStack_84[3]) + fVar8;
       }
-      if (this_ptr->chain_length * (float)_DAT_005f1440 < fVar8) {
+      if (this_ptr->chain_length * (float)0.90000000000000002 < fVar8) {
         pSStack_1c = (SChainVertex *)0x1;
       }
     }
@@ -301,7 +300,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     afStack_d8[(uint)bVar7 * -2 + 3] = *(float *)(auStack_c4 + (uint)bVar7 * -8 + 0x10);
     afStack_d8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
          *(float *)(auStack_c4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0x14);
-    if (delta_time * (float)_DAT_005f1448 <
+    if (delta_time * (float)0.10000000000000001 <
         SQRT(fStack_c8 * fStack_c8 + afStack_d8[2] * afStack_d8[2] + afStack_d8[3] * afStack_d8[3]))
     {
       iStack_54 = 1;
@@ -312,7 +311,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->pull_wav_handle);
     if (iVar3 == 0) {
       uVar2 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0055ae80
-                        (0x0264B290,(CDemonActor *)this_ptr,this_ptr->pull_wav_name,
+                        (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,this_ptr->pull_wav_name,
                          &this_ptr->vertices[this_ptr->vertex_count + -1].position);
       this_ptr->move_wav_handle = uVar2;
     }
@@ -331,7 +330,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->move_wav_handle);
     if (iVar3 == 0) {
       uVar2 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0055ae80
-                        (0x0264B290,(CDemonActor *)this_ptr,this_ptr->move_wav_name,
+                        (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,this_ptr->move_wav_name,
                          &this_ptr->vertices[this_ptr->vertex_count + -1].position);
       this_ptr->move_wav_handle = uVar2;
     }

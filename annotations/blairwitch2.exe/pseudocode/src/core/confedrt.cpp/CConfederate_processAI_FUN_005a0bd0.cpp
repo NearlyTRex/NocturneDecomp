@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_confedrt_cpp_CConfederate_processAI_FUN_005a0bd0(CConfederate *this_ptr,float delta_time)
 
@@ -81,7 +80,7 @@ void __cdecl core_confedrt_cpp_CConfederate_processAI_FUN_005a0bd0(CConfederate 
     iVar2 = core_bwspart_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(pCStack_1c);
     if (iVar2 != 0) {
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,
+                (&g_CVector3f_0265370c,
                  (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
                  this_ptr->spine_bone,&CStack_6c);
       afStack_b0[2] = CStack_6c.x;
@@ -209,7 +208,7 @@ void __cdecl core_confedrt_cpp_CConfederate_processAI_FUN_005a0bd0(CConfederate 
         fVar11 = (pCVar1->base).location.position.z -
                  (this_ptr->base).base.base.base.location.position.z;
         fVar11 = SQRT(fVar12 * fVar12 + fVar11 * fVar11);
-        if (fVar11 < _DAT_005fedb0) {
+        if (fVar11 < 15.0f) {
           (this_ptr->base).attack_range = fVar11;
           return;
         }

@@ -26,10 +26,10 @@
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000 at 00420389
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cca31
-;   undefined4 DAT_005cca39
-;   undefined4 DAT_005cca41
-;   undefined4 DAT_005f3e34
+;   double g_DOUBLE_005cca31 = 2
+;   double g_DOUBLE_005cca39 = 0.0500000000000000
+;   float g_FLOAT_005cca41 = 0.5
+;   float g_FLOAT_005f3e34 = 2
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
@@ -125,7 +125,7 @@ section .text
     MOV dword ptr [ESP + 0x1a4],EAX     ; 00420454
     FILD dword ptr [ESP + 0x1a4]        ; 0042045b
     LEA EAX,[ESP + 0x4]                 ; 00420462
-    FMUL double ptr [0x005cca39]        ; 00420466 | DAT_005cca39
+    FMUL double ptr [0x005cca39]        ; 00420466 | g_DOUBLE_005cca39
     PUSH EAX                            ; 0042046c
     MOV dword ptr [ESP + 0x3c],EBX      ; 0042046d
     MOV dword ptr [ESP + 0x40],EBX      ; 00420471
@@ -223,7 +223,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042058e
     MOVSD ES:EDI,ESI                    ; 0042058f
     MOVSD ES:EDI,ESI                    ; 00420590
-    FLD float ptr [0x005cca41]          ; 00420591 | DAT_005cca41
+    FLD float ptr [0x005cca41]          ; 00420591 | g_FLOAT_005cca41
     FLD float ptr [ESP + 0x104]         ; 00420597
     FMUL ST1                            ; 0042059e
     FLD float ptr [ESP + 0x108]         ; 004205a0
@@ -299,7 +299,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00420690
     FLD float ptr [ESP + 0x180]         ; 00420691
     FABS                                ; 00420698
-    FCOMP double ptr [0x005cca31]       ; 0042069a | DAT_005cca31
+    FCOMP double ptr [0x005cca31]       ; 0042069a | g_DOUBLE_005cca31
     FNSTSW AX                           ; 004206a0
     SAHF                                ; 004206a2
     JBE 0x004207e5                      ; 004206a3
@@ -343,7 +343,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 00420711
         ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00420716
-    FLD float ptr [0x005f3e34]          ; 00420719 | DAT_005f3e34
+    FLD float ptr [0x005f3e34]          ; 00420719 | g_FLOAT_005f3e34
     FMUL float ptr [EBP + 0x18]         ; 0042071f
     FSTP float ptr [ESP + 0x1a4]        ; 00420722
     MOV EAX,dword ptr [ESP + 0x1a4]     ; 00420729
@@ -403,14 +403,14 @@ section .text
     FLD float ptr [ESP + 0x17c]         ; 004207e5
         ;   Label: LAB_004207e5
     FABS                                ; 004207ec
-    FCOMP double ptr [0x005cca31]       ; 004207ee | DAT_005cca31
+    FCOMP double ptr [0x005cca31]       ; 004207ee | g_DOUBLE_005cca31
     FNSTSW AX                           ; 004207f4
     SAHF                                ; 004207f6
     JA 0x004206a9                       ; 004207f7
         ;   XREF to: 004206a9 (CONDITIONAL_JUMP)  ; LAB_004206a9
     FLD float ptr [ESP + 0x184]         ; 004207fd
     FABS                                ; 00420804
-    FCOMP double ptr [0x005cca31]       ; 00420806 | DAT_005cca31
+    FCOMP double ptr [0x005cca31]       ; 00420806 | g_DOUBLE_005cca31
     FNSTSW AX                           ; 0042080c
     SAHF                                ; 0042080e
     JA 0x004206a9                       ; 0042080f

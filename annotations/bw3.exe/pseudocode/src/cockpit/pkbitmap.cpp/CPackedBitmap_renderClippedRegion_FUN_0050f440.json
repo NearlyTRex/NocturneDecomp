@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 199,
+    "complexity_score": 174,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 221
   },
@@ -46,9 +45,9 @@
   "globals": [
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     }
   ],
   "pcode_summary": {
@@ -175,14 +174,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "iVar4 = (dest_x - clip_left) * DAT_005fba20;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(int *)((int)this_ptr",
@@ -207,12 +198,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 31,
-      "match": "DAT_01c5faec",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_01c5faec + iStack_24);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_ARRAY_PTR_01c5faec",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_ARRAY_PTR_01c5faec + iStack_24);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -231,20 +222,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "while (iVar8 = (int)(DAT_005fba20 * uVar3) >> 0x1f,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "dest_buffer = (void *)(((int)((DAT_005fba20 * uVar3 + iVar8 * -8) -",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ARRAY_PTR_01c5faec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)g_ARRAY_PTR_01c5faec",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_ARRAY_PTR_01c5faec + iStack_24);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

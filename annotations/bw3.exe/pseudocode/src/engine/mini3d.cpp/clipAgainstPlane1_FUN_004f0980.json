@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 199,
+    "complexity_score": 183,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 12,
+    "pseudocode_lines": 63,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 181
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -70,14 +69,14 @@
     },
     {
       "addr": "01d76f6c",
-      "name": "DAT_01d76f6c",
-      "type": "undefined4",
+      "name": "g_INT_01d76f6c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d76f70",
-      "name": "DAT_01d76f70",
-      "type": "undefined4",
+      "name": "g_INT_01d76f70",
+      "type": "int",
       "value": null
     },
     {
@@ -231,16 +230,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 19,
       "match": "DAT_01d76f7c",
       "severity": "mild",
       "text": "from = (float *)&DAT_01d76f7c;",
@@ -248,7 +239,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 25,
       "match": "DAT_01d76f7c",
       "severity": "mild",
       "text": "pfVar4 = (float *)(&DAT_01d76f7c + uVar2 * 0x40);",
@@ -256,7 +247,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 27,
       "match": "DAT_01d76f84",
       "severity": "mild",
       "text": "if (*pfVar4 <= -*(float *)(&DAT_01d76f84 + uVar2 * 0x40)) {",
@@ -264,7 +255,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 35,
       "match": "DAT_01d77f7c",
       "severity": "mild",
       "text": "pfVar6 = (float *)(&DAT_01d77f7c + iVar5);",
@@ -272,15 +263,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 44,
       "match": "DAT_01d77f7c",
       "severity": "mild",
-      "text": "(pfVar4,from,(float *)(&DAT_01d77f7c + _DAT_01d76f70 * 0x40));",
+      "text": "(pfVar4,from,(float *)(&DAT_01d77f7c + g_INT_01d76f70 * 0x40));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 51,
       "match": "DAT_01d77f7c",
       "severity": "mild",
       "text": "pfVar7 = (float *)(&DAT_01d77f7c + iVar5);",
@@ -288,15 +279,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_01d77f7c",
       "severity": "mild",
-      "text": "(from,pfVar4,(float *)(&DAT_01d77f7c + _DAT_01d76f70 * 0x40));",
+      "text": "(from,pfVar4,(float *)(&DAT_01d77f7c + g_INT_01d76f70 * 0x40));",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 38,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -304,7 +295,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 54,
+      "line": 52,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {",

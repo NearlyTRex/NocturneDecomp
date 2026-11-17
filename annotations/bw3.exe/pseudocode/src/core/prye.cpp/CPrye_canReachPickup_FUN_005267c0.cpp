@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDemonActor *item,int pickup_type,float *best_distance)
 
@@ -56,8 +55,8 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   
   bVar6 = 0;
   iVar4 = 0;
-  for (iVar2 = 0; iVar2 < *(int *)(0x01D81080 + 0x1018); iVar2 = iVar2 + 1) {
-    if (item == *(CDemonActor **)(iVar4 + 0x101c + 0x01D81080)) {
+  for (iVar2 = 0; iVar2 < g_CDemonMission_PTR_00600530->delete_queue_count; iVar2 = iVar2 + 1) {
+    if (item == *(CDemonActor **)((int)g_CDemonMission_PTR_00600530->delete_queue_actors + iVar4)) {
       return 0;
     }
     iVar4 = iVar4 + 4;
@@ -131,7 +130,7 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
       afStack_2c[(uint)bVar6 * -2] = *(float *)((int)&CStack_120 + (uint)bVar6 * -8 + 4);
       afStack_2c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
            *(float *)((int)&CStack_120 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      if ((float)_DAT_005cd98f < ABS(afStack_2c[0])) {
+      if ((float)20 < ABS(afStack_2c[0])) {
         return 0;
       }
     }
@@ -181,10 +180,10 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
        afStack_68[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   input_local_point = &CStack_90;
-  fStack_114 = afStack_110[2] * _DAT_005cd997;
-  afStack_110[0] = afStack_110[3] * _DAT_005cd997;
-  afStack_110[1] = fStack_100 * _DAT_005cd997;
-  CStack_90.x = afStack_110[2] * _DAT_005cd997;
+  fStack_114 = afStack_110[2] * 0.5f;
+  afStack_110[0] = afStack_110[3] * 0.5f;
+  afStack_110[1] = fStack_100 * 0.5f;
+  CStack_90.x = afStack_110[2] * 0.5f;
   *(float *)((int)&CStack_90 + (uint)bVar6 * -8 + 4) = afStack_110[(uint)bVar6 * -2];
   *(float *)((int)&CStack_90 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
@@ -207,9 +206,9 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   afStack_d4[(uint)bVar6 * -2] = afStack_110[(uint)bVar6 * -2 + 6];
   afStack_d4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
        afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
-  if ((ABS(afStack_d4[0]) <= (float)_DAT_005cd99f) &&
+  if ((ABS(afStack_d4[0]) <= (float)5) &&
      (((fVar1 = SQRT(fStack_d8 * fStack_d8 + afStack_d4[1] * afStack_d4[1]), pickup_type == 5 ||
-       (fVar1 <= _DAT_005cd9a7)) && (0.0 <= afStack_d4[1])))) {
+       (fVar1 <= 3.0f)) && (0.0 <= afStack_d4[1])))) {
     if (*best_distance < fVar1) {
       return 0;
     }

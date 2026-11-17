@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(CHero *this_ptr)
 
 {
@@ -47,7 +45,7 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(CHero *thi
       *(float *)((int)&local_7c + (uint)bVar1 * -8 + 4) = local_6c[(uint)bVar1 * -2];
       *(float *)((int)&local_7c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
            local_6c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
-      if (ABS(local_7c.y) <= (float)_DAT_005d9c6c) {
+      if (ABS(local_7c.y) <= (float)4) {
         local_7c.y = 0.0;
         local_30[3] = SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x);
         if (local_30[3] < local_30[2]) {
@@ -63,7 +61,7 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(CHero *thi
           local_30[(uint)bVar1 * -2] = *(float *)((int)&local_88 + (uint)bVar1 * -8 + 4);
           local_30[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
                *(float *)((int)&local_88 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-          if (ABS(local_30[0]) <= (float)_DAT_005d9c74) {
+          if (ABS(local_30[0]) <= (float)0.34906585038888899) {
             this_ptr->hero_action_range = 0.0;
             this_ptr->hero_action_actor = (CDemonActor *)local_14;
             this_ptr->hero_action_target = (CDemonActor *)local_14;

@@ -25,7 +25,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa180
+;   float g_FLOAT_005fa180 = 0.5
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     SUB ESP,0x18                        ; 005b7b31
     MOV EDX,ESI                         ; 005b7b34
     FLD float ptr [ESP + 0x20]          ; 005b7b36
-    FMUL float ptr [0x005fa180]         ; 005b7b3a | DAT_005fa180
+    FMUL float ptr [0x005fa180]         ; 005b7b3a | g_FLOAT_005fa180
     FLD ST0                             ; 005b7b40
     FCOS                                ; 005b7b42
     FXCH                                ; 005b7b44

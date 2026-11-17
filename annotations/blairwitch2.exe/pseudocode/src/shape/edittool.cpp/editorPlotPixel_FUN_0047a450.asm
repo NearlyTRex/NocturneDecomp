@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c25f84
+;   int g_INT_01c25f84
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
@@ -21,7 +21,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0047a450
         ;   Label: shape_edittool.cpp_editorPlotPixel_FUN_0047a450
     MOV EDX,dword ptr [ESP + 0x8]       ; 0047a454
-    CMP dword ptr [0x01c25f84],0x0      ; 0047a458 | DAT_01c25f84
+    CMP dword ptr [0x01c25f84],0x0      ; 0047a458 | g_INT_01c25f84
     JZ 0x0047a46c                       ; 0047a45f
         ;   XREF to: 0047a46c (CONDITIONAL_JUMP)  ; LAB_0047a46c
     PUSH EDX                            ; 0047a461

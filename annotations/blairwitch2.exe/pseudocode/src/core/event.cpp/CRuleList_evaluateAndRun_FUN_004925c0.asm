@@ -11,7 +11,7 @@
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004d03b0 at 004d049a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
@@ -43,7 +43,7 @@ section .text
     ADD EDX,0x1f8                       ; 004925e7
     ADD EAX,EDX                         ; 004925ed
     PUSH EAX                            ; 004925ef
-    MOV ECX,dword ptr [0x006141f0]      ; 004925f0 | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 004925f0 | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 004925f6
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 004925f7
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)

@@ -17,7 +17,7 @@
 ;   wincore_winrun.cpp_saveControllerSettings_FUN_00582680 at 005826cf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c58b4
+;   TerminatedCString s_d_005c58b4
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -31,7 +31,7 @@ section .text
     SUB ESP,0x64                        ; 004d8c91
     MOV EDX,dword ptr [ESP + 0x74]      ; 004d8c94
     PUSH EDX                            ; 004d8c98
-    PUSH 0x5c58b4                       ; 004d8c99 | DAT_005c58b4
+    PUSH 0x5c58b4                       ; 004d8c99 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004d8c9e
     PUSH EAX                            ; 004d8ca2
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d8ca3

@@ -13,7 +13,7 @@
 ;   core_game.cpp_CGame_updateMusic_FUN_004c4bc0 at 004c4c24
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playSound_FUN_005609b0
@@ -142,7 +142,7 @@ section .text
     LEA EAX,[EBX + 0x298]               ; 004c4b47
     PUSH EAX                            ; 004c4b4d
     PUSH EBX                            ; 004c4b4e
-    MOV EDI,dword ptr [0x006045f8]      ; 004c4b4f | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 004c4b4f | g_CSound_PTR_006045f8
     PUSH EDI                            ; 004c4b55
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 004c4b56
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)

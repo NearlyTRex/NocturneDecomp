@@ -12,9 +12,9 @@
 ;   core_hand.cpp_CHand_renderOpaque_FUN_005aa450 at 005aa455
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CGameHook* g_CGameHookPtr = 02668118
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CGameHook g_CGameHookInstance
 ;
 ; Called Functions:
@@ -40,9 +40,9 @@ section .text
         ;   XREF to: 004254b0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0059fa38
     MOV EBX,EAX                         ; 0059fa3b
-    MOV ECX,dword ptr [0x0060b280]      ; 0059fa3d | DAT_0060b280
+    MOV ECX,dword ptr [0x0060b280]      ; 0059fa3d | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_0059fa3d
-    PUSH ECX                            ; 0059fa43 | DAT_01ba5c50
+    PUSH ECX                            ; 0059fa43 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 0059fa44
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0059fa49

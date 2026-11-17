@@ -10,8 +10,8 @@
 ;   core_unionzom.cpp_factoryFuncUnionZombie_FUN_005a3d00 at 005a3d13
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ff53c
-;   undefined4 DAT_005ff540
+;   float g_FLOAT_005ff53c = 25
+;   float g_FLOAT_005ff540 = 8
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
@@ -50,7 +50,7 @@ section .text
     MOV dword ptr [EBX + 0x11384],0x0   ; 005a3d99
     LEA EDI,[EBX + 0x113d4]             ; 005a3da3
     MOV dword ptr [EBX + 0x11388],0x1   ; 005a3da9
-    FLD float ptr [0x005ff53c]          ; 005a3db3 | DAT_005ff53c
+    FLD float ptr [0x005ff53c]          ; 005a3db3 | g_FLOAT_005ff53c
     MOV dword ptr [EBX + 0x1138c],0x1   ; 005a3db9
     MOV ESI,0x5f0232                    ; 005a3dc3
     MOV dword ptr [EBX + 0x11418],0x1   ; 005a3dc8
@@ -82,7 +82,7 @@ section .text
     PUSH 0x5f0239                       ; 005a3e0c
     LEA ESI,[EBX + 0x10af8]             ; 005a3e11
     PUSH 0x5f0246                       ; 005a3e17
-    FLD float ptr [0x005ff540]          ; 005a3e1c | DAT_005ff540
+    FLD float ptr [0x005ff540]          ; 005a3e1c | g_FLOAT_005ff540
     PUSH ESI                            ; 005a3e22
     FSTP float ptr [EBX + 0x11394]      ; 005a3e23
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a3e29

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   grab_type
 ;
 ; Referenced Globals:
-;   undefined4 s_CDoc_startGettingGrabbed_005d0826+1
+;   TerminatedCString s_CDoc_startGettingGrabbed_005d0827
 ;   TerminatedCString s_current_motion_is_s_005d0851
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
@@ -45,7 +45,7 @@ section .text
         ;   Label: LAB_0045dc57
     PUSH EDX                            ; 0045dc5b
     PUSH ESI                            ; 0045dc5c
-    PUSH 0x5d0827                       ; 0045dc5d | s_CDoc_startGettingGrabbed_005d0826+1
+    PUSH 0x5d0827                       ; 0045dc5d | = "CDoc::startGettingGrabbed by %s, type..."
     MOV ECX,dword ptr [0x00609ed0]      ; 0045dc62 | g_CConsolePtr
     PUSH ECX                            ; 0045dc68 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0045dc69

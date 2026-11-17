@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity2_FUN_00555dc0(CVector3d *velocity_source_ptr)
 
 {
   int iVar1;
   
-  iVar1 = _DAT_02ceb91c * 0x60;
-  *(uint *)(iVar1 + 0x2ceb954) = 2;
-  *(CVector3d **)(iVar1 + 0x2ceb950) = velocity_source_ptr;
+  iVar1 = g_INT_02ceb91c;
+  g_CSfxOptions_ARRAY_02ceb920[g_INT_02ceb91c].velocity_format = 2;
+  g_CSfxOptions_ARRAY_02ceb920[iVar1].velocity_source_ptr = velocity_source_ptr;
   return;
 }

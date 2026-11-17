@@ -14,10 +14,10 @@
 ;   core_stone.cpp_CTempleStone_archive_FUN_00584ee0 at 00584ee5
 ;
 ; Referenced Globals:
-;   undefined4 s_L_modelName_005d4c1a+2
+;   TerminatedCString s_modelName_005d4c1c
 ;   TerminatedCString s_weightInPounds_005d4c26
-;   undefined4 DAT_005d4c35
-;   undefined4 DAT_005d4c39
+;   TerminatedCString s_fps_005d4c35
+;   TerminatedCString s_rpm_005d4c39
 ;   TerminatedCString s_loopWavName_005d4c3d
 ;   TerminatedCString s_collisionWavName_005d4c49
 ;   TerminatedCString s_canBeCarried_005d4c5a
@@ -55,7 +55,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 00422770
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00422775
-    PUSH 0x5d4c1c                       ; 00422778 | s_L_modelName_005d4c1a+2
+    PUSH 0x5d4c1c                       ; 00422778 | = "modelName"
     LEA EAX,[EBX + 0x158]               ; 0042277d
     PUSH EAX                            ; 00422783
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 00422784
@@ -67,13 +67,13 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00422798
         ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042279d
-    PUSH 0x5d4c35                       ; 004227a0 | DAT_005d4c35
+    PUSH 0x5d4c35                       ; 004227a0 | = "fps"
     LEA EAX,[EBX + 0x30c]               ; 004227a5
     PUSH EAX                            ; 004227ab
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004227ac
         ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004227b1
-    PUSH 0x5d4c39                       ; 004227b4 | DAT_005d4c39
+    PUSH 0x5d4c39                       ; 004227b4 | = "rpm"
     LEA EAX,[EBX + 0x300]               ; 004227b9
     PUSH EAX                            ; 004227bf
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 004227c0

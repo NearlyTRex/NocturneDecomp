@@ -6,20 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004a27e0(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length)
 
 {
+  CBulletTrail *this_ptr_00;
   int iVar1;
   
-  iVar1 = _DAT_01cefd10 * 0x24;
-  _DAT_01cefd10 = _DAT_01cefd10 + 1;
-  if (9 < _DAT_01cefd10) {
-    _DAT_01cefd10 = 0;
+  iVar1 = g_INT_01cefd10 + 1;
+  this_ptr_00 = g_CBulletTrail_ARRAY_01cefd14 + g_INT_01cefd10;
+  g_INT_01cefd10 = iVar1;
+  if (9 < iVar1) {
+    g_INT_01cefd10 = 0;
   }
   core_fire_cpp_CBulletTrail_init_FUN_0049aca0
-            ((CBulletTrail *)(iVar1 + 0x1cefd14),start_position,end_position,model_ptr,
-             segment_length);
+            (this_ptr_00,start_position,end_position,model_ptr,segment_length);
   return;
 }

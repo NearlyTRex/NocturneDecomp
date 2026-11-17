@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00623320
-;   undefined4 DAT_00623324
-;   undefined4 DAT_00623328
-;   undefined4 DAT_02c81038
-;   undefined4 DAT_02c8103c
-;   undefined4 DAT_02c81040
+;   int g_INT_00623320 = 0x8
+;   int g_INT_00623324 = 0x1
+;   int g_INT_00623328 = 0x2b11
+;   CSoundDevice* g_CSoundDevice_PTR_02c81038
+;   int g_INT_02c8103c
+;   int g_INT_02c81040
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00575990
@@ -47,13 +47,13 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00575abf
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
         ;   Label: LAB_00575abf
-    MOV EDX,dword ptr [0x02c81040]      ; 00575ac4 | DAT_02c81040
+    MOV EDX,dword ptr [0x02c81040]      ; 00575ac4 | g_INT_02c81040
     PUSH EDX                            ; 00575aca
-    MOV ECX,dword ptr [0x00623328]      ; 00575acb | DAT_00623328
+    MOV ECX,dword ptr [0x00623328]      ; 00575acb | g_INT_00623328
     PUSH ECX                            ; 00575ad1
-    MOV EBX,dword ptr [0x00623324]      ; 00575ad2 | DAT_00623324
+    MOV EBX,dword ptr [0x00623324]      ; 00575ad2 | g_INT_00623324
     PUSH EBX                            ; 00575ad8
-    MOV ESI,dword ptr [0x00623320]      ; 00575ad9 | DAT_00623320
+    MOV ESI,dword ptr [0x00623320]      ; 00575ad9 | g_INT_00623320
     PUSH ESI                            ; 00575adf
     CALL sound_sndmain.cpp_setRecordingFormat_FUN_005759b0 ; 00575ae0
         ;   XREF to: 005759b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setRecordingFormat_FUN_005759b0(int bits_per_sample, int channels, int sample_rate, int signed_samples)
@@ -61,7 +61,7 @@ section .text
     TEST EAX,EAX                        ; 00575ae8
     JZ 0x00575b15                       ; 00575aea
         ;   XREF to: 00575b15 (CONDITIONAL_JUMP)  ; LAB_00575b15
-    MOV EAX,[0x02c81038]                ; 00575aec | DAT_02c81038
+    MOV EAX,[0x02c81038]                ; 00575aec | g_CSoundDevice_PTR_02c81038
     PUSH EAX                            ; 00575af1
     MOV EDX,dword ptr [EAX]             ; 00575af2
     CALL dword ptr [EDX + 0x4]          ; 00575af4
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 00575b15 (CONDITIONAL_JUMP)  ; LAB_00575b15
     PUSH EDI                            ; 00575afe
     MOV EDI,0x1                         ; 00575aff
-    MOV dword ptr [0x02c8103c],EDI      ; 00575b04 | DAT_02c8103c
+    MOV dword ptr [0x02c8103c],EDI      ; 00575b04 | g_INT_02c8103c
     CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00575b0a
         ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,EDI                         ; 00575b0f

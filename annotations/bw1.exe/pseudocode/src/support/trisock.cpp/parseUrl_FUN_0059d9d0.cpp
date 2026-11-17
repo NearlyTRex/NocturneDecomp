@@ -21,11 +21,11 @@ int __cdecl support_trisock_cpp_parseUrl_FUN_0059d9d0(char *url,char *host_out,u
   *host_out = '\0';
   *path_out = '\0';
   *port_out = 0x50;
-  iVar2 = _strnicmp(url,(char *)0x5f8607,5);
+  iVar2 = _strnicmp(url,"http:",5);
   if (iVar2 == 0) {
     url = url + 5;
   }
-  iVar2 = _strnicmp(url,(char *)0x5f860d,2);
+  iVar2 = _strnicmp(url,"//",2);
   if (iVar2 == 0) {
     url = url + 2;
   }
@@ -65,6 +65,6 @@ int __cdecl support_trisock_cpp_parseUrl_FUN_0059d9d0(char *url,char *host_out,u
     path_out[iVar2] = '\0';
     return 1;
   }
-  sscanf(url,(char *)0x5f8610);
+  sscanf(url,":%d%n");
   return 0;
 }

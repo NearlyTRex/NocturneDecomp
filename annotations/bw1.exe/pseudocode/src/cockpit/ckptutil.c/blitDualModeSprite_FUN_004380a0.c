@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004380a0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 {
@@ -21,19 +19,19 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004380a0(void *sprite_dat
   int iVar8;
   int iStack_28;
   int iStack_24;
-  void *pvStack_18;
-  void *pvStack_14;
+  byte *puStack_18;
+  byte *puStack_14;
   
-  iVar4 = _DAT_01c43550 - _DAT_01c4354c;
+  iVar4 = (int)g_ARRAY_PTR_01c4354c[1] - (int)g_ARRAY_PTR_01c4354c[0];
   if (sprite_data != (void *)0x0) {
     pCVar5 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
-    if (DAT_0061b4a0 == 8) {
-      pvStack_18 = (void *)(dest_x + *(int *)(&DAT_01c4354c + dest_y * 4));
+    if (g_INT_0061b4a0 == 8) {
+      puStack_18 = g_ARRAY_PTR_01c4354c[dest_y] + dest_x;
       if (0 < height) {
         iStack_28 = 0;
         do {
           if (span_data == (void *)0x0) {
-            (*pCVar5)(pvStack_18,sprite_data,width);
+            (*pCVar5)(puStack_18,sprite_data,width);
           }
           else {
             iVar8 = 0;
@@ -43,24 +41,24 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004380a0(void *sprite_dat
               iVar2 = iVar8 + 4;
               iVar3 = iVar8 + 4;
               iVar8 = iVar8 + 4;
-              (*pCVar5)((void *)((int)pvStack_18 + *(int *)(iVar3 + (int)piVar6)),
+              (*pCVar5)(puStack_18 + *(int *)(iVar3 + (int)piVar6),
                         (void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),
                         *(int *)(iVar1 + (int)piVar6));
             }
           }
           iStack_28 = iStack_28 + 0x84;
-          pvStack_18 = (void *)((int)pvStack_18 + iVar4);
+          puStack_18 = puStack_18 + iVar4;
           sprite_data = (void *)((int)sprite_data + width);
         } while (iStack_28 < height * 0x84);
       }
     }
     else {
-      pvStack_14 = (void *)(*(int *)(&DAT_01c4354c + dest_y * 4) + dest_x * 2);
+      puStack_14 = g_ARRAY_PTR_01c4354c[dest_y] + dest_x * 2;
       if (0 < height) {
         iStack_24 = 0;
         do {
           if (span_data == (void *)0x0) {
-            (*pCVar5)(pvStack_14,sprite_data,width);
+            (*pCVar5)(puStack_14,sprite_data,width);
           }
           else {
             iVar8 = 0;
@@ -70,13 +68,13 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004380a0(void *sprite_dat
               iVar2 = iVar8 + 4;
               iVar3 = iVar8 + 4;
               iVar8 = iVar8 + 4;
-              (*pCVar5)((void *)(*(int *)(iVar3 + (int)piVar6) * 2 + (int)pvStack_14),
+              (*pCVar5)(puStack_14 + *(int *)(iVar3 + (int)piVar6) * 2,
                         (void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),
                         *(int *)(iVar1 + (int)piVar6));
             }
           }
           iStack_24 = iStack_24 + 0x84;
-          pvStack_14 = (void *)((int)pvStack_14 + (iVar4 / 2) * 2);
+          puStack_14 = puStack_14 + (iVar4 / 2) * 2;
           sprite_data = (void *)((int)sprite_data + width);
         } while (iStack_24 < height * 0x84);
       }

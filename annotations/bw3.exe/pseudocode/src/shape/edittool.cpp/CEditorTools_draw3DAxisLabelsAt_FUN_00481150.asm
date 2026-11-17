@@ -11,8 +11,8 @@
 ; UOrientationVector * Stack[0x14]:4   orientation
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005deffc
-;   undefined4 DAT_005df00c
+;   float g_FLOAT_005deffc = 256
+;   float g_FLOAT_005df00c = 10430.38
 ;
 ; Called Functions:
 ;   engine_3d.c_processCameraRelativePoint_FUN_004037e0
@@ -32,13 +32,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 00481156
     LEA EBX,[ESP + 0x4]                 ; 0048115a
     FLD float ptr [EAX]                 ; 0048115e
-    FMUL float ptr [0x005deffc]         ; 00481160 | DAT_005deffc
+    FMUL float ptr [0x005deffc]         ; 00481160 | g_FLOAT_005deffc
     FISTP dword ptr [EBX]               ; 00481166
     FLD float ptr [EAX + 0x4]           ; 00481168
-    FMUL float ptr [0x005deffc]         ; 0048116b | DAT_005deffc
+    FMUL float ptr [0x005deffc]         ; 0048116b | g_FLOAT_005deffc
     FISTP dword ptr [EBX + 0x4]         ; 00481171
     FLD float ptr [EAX + 0x8]           ; 00481174
-    FMUL float ptr [0x005deffc]         ; 00481177 | DAT_005deffc
+    FMUL float ptr [0x005deffc]         ; 00481177 | g_FLOAT_005deffc
     FISTP dword ptr [EBX + 0x8]         ; 0048117d
     MOV EBX,ESP                         ; 00481180
     PUSH EBX                            ; 00481182
@@ -48,13 +48,13 @@ section .text
     LEA EBX,[ESP + 0x10]                ; 0048118b
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0048118f
     FLD float ptr [EAX]                 ; 00481193
-    FMUL float ptr [0x005df00c]         ; 00481195 | DAT_005df00c
+    FMUL float ptr [0x005df00c]         ; 00481195 | g_FLOAT_005df00c
     FISTP dword ptr [EBX]               ; 0048119b
     FLD float ptr [EAX + 0x8]           ; 0048119d
-    FMUL float ptr [0x005df00c]         ; 004811a0 | DAT_005df00c
+    FMUL float ptr [0x005df00c]         ; 004811a0 | g_FLOAT_005df00c
     FISTP dword ptr [EBX + 0x4]         ; 004811a6
     FLD float ptr [EAX + 0x4]           ; 004811a9
-    FMUL float ptr [0x005df00c]         ; 004811ac | DAT_005df00c
+    FMUL float ptr [0x005df00c]         ; 004811ac | g_FLOAT_005df00c
     FISTP dword ptr [EBX + 0x8]         ; 004811b2
     PUSH 0x0                            ; 004811b5
     PUSH 0x0                            ; 004811b7

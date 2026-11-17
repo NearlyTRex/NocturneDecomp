@@ -12,12 +12,12 @@
 ;   engine_3d.c_drawLineStrip3D_FUN_004044d0 at 00404556
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0072ff3c
-;   undefined4 DAT_0072ff44
-;   undefined4 DAT_0072ff48
-;   undefined4 DAT_0072ff6c
-;   undefined4 DAT_0072ff74
-;   undefined4 DAT_0072ff78
+;   uint g_UINT_0072ff3c
+;   int g_INT_0072ff44
+;   int g_INT_0072ff48
+;   uint g_UINT_0072ff6c
+;   int g_INT_0072ff74
+;   int g_INT_0072ff78
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine3D_FUN_00401310
@@ -281,20 +281,20 @@ section .text
     CALL engine_prim.c_prepareDepthBuffer_FUN_00515920 ; 00408091
         ;   XREF to: 00515920 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_00515920(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 00408096
-    MOV ECX,dword ptr [0x0072ff6c]      ; 00408099 | DAT_0072ff6c
-    MOV EAX,[0x0072ff78]                ; 0040809f | DAT_0072ff78
+    MOV ECX,dword ptr [0x0072ff6c]      ; 00408099 | g_UINT_0072ff6c
+    MOV EAX,[0x0072ff78]                ; 0040809f | g_INT_0072ff78
     PUSH ECX                            ; 004080a4
     SAR EAX,0x10                        ; 004080a5
     PUSH EAX                            ; 004080a8
-    MOV EAX,[0x0072ff74]                ; 004080a9 | DAT_0072ff74
+    MOV EAX,[0x0072ff74]                ; 004080a9 | g_INT_0072ff74
     SAR EAX,0x10                        ; 004080ae
     PUSH EAX                            ; 004080b1
-    MOV EBX,dword ptr [0x0072ff3c]      ; 004080b2 | DAT_0072ff3c
-    MOV EAX,[0x0072ff48]                ; 004080b8 | DAT_0072ff48
+    MOV EBX,dword ptr [0x0072ff3c]      ; 004080b2 | g_UINT_0072ff3c
+    MOV EAX,[0x0072ff48]                ; 004080b8 | g_INT_0072ff48
     PUSH EBX                            ; 004080bd
     SAR EAX,0x10                        ; 004080be
     PUSH EAX                            ; 004080c1
-    MOV EAX,[0x0072ff44]                ; 004080c2 | DAT_0072ff44
+    MOV EAX,[0x0072ff44]                ; 004080c2 | g_INT_0072ff44
     SAR EAX,0x10                        ; 004080c7
     PUSH EAX                            ; 004080ca
     CALL engine_2d.c_drawLine3D_FUN_00401310 ; 004080cb

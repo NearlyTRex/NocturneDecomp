@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_handleFireButton_FUN_00475920(CDoc *this_ptr,float delta_time)
 
 {
@@ -136,7 +134,7 @@ switchD_00475a0b_caseD_3:
   pCVar3 = (CDemonActor *)
            core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
                      ((CCharacter *)this_ptr,iVar6);
-  if (((((float)_DAT_005da5c4 <= (float)pCVar3) &&
+  if (((((float)0.98999999999999999 <= (float)pCVar3) &&
        (1.0 <= (this_ptr->right_arm_aim).kickback_factor)) &&
       ((this_ptr->right_arm_aim).recoil_timer <= 0.0)) &&
      (iVar6 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canBeGrabbed)

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(CBoxActor *this_ptr)
 
 {
@@ -54,10 +52,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(CBoxActor 
       afStack_10[(uint)bVar5 * -2] = *(float *)(&stack0xfffffffc + (uint)bVar5 * -8);
       afStack_10[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            *(float *)(&stack0x00000000 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      fStack_2c = fStack_14 * _DAT_005d4c04;
-      afStack_28[0] = afStack_10[0] * _DAT_005d4c04;
-      afStack_28[1] = afStack_10[1] * _DAT_005d4c04;
-      CStack_20.x = fStack_14 * _DAT_005d4c04;
+      fStack_2c = fStack_14 * 0.5f;
+      afStack_28[0] = afStack_10[0] * 0.5f;
+      afStack_28[1] = afStack_10[1] * 0.5f;
+      CStack_20.x = fStack_14 * 0.5f;
       *(float *)((int)&CStack_20 + (uint)bVar5 * -8 + 4) = afStack_28[(uint)bVar5 * -2];
       *(float *)((int)&CStack_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
            afStack_28[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_ptr,int arm_side)
 
@@ -71,8 +70,8 @@ void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_pt
   
   bVar10 = 0;
   if (arm_side == 0) {
-    local_24 = _DAT_01ed36e8;
-    local_2c = _DAT_01ed36f0;
+    local_24 = g_INT_01ed36e8;
+    local_2c = g_INT_ARRAY_01ed36ec[1];
     core_xform_cpp_quaternionFromAngleY_FUN_00585d10(1.5707964,&local_17c);
     local_22c.w = local_17c.w;
     puVar6 = (uint *)((int)&local_22c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -86,8 +85,8 @@ void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_pt
     pCVar4 = &local_20c;
   }
   else {
-    local_24 = _DAT_01ed36ec;
-    local_2c = _DAT_01ed36f4;
+    local_24 = g_INT_ARRAY_01ed36ec[0];
+    local_2c = g_INT_ARRAY_01ed36ec[2];
     core_xform_cpp_quaternionFromAngleY_FUN_00585d10(-1.5707964,&local_15c);
     local_22c.w = local_15c.w;
     puVar6 = (uint *)((int)&local_22c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -151,8 +150,7 @@ void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_pt
          *(uint *)((int)&local_cc + (uint)bVar10 * -8 + 4);
     *puVar6 = *puVar5;
     puVar6[(uint)bVar10 * -2 + 1] = puVar5[(uint)bVar10 * -2 + 1];
-    core_xform_cpp_slerpQuaternion_FUN_00585b20
-              ((CQuaternion4f *)&DAT_005e65b0,pCVar4,fVar12,&local_4c);
+    core_xform_cpp_slerpQuaternion_FUN_00585b20(&g_CQuaternion4f_005e65b0,pCVar4,fVar12,&local_4c);
     pCVar4 = &local_1ec;
     local_1bc.w = local_4c.w;
     puVar6 = (uint *)((int)&local_1bc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -206,7 +204,7 @@ void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_pt
     if (arm_side == 0) {
       pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(pCVar1);
       local_18 = (float)core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                                  (pCVar2,"?Bip01 L Finger1" + 1,1);
+                                  (pCVar2,"Bip01 L Finger1",1);
       local_34 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
                            (pCVar2,"Bip01 L Finger11",1);
       core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(1.5707964,&local_6c);
@@ -265,7 +263,7 @@ void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_pt
       pfVar9[(uint)bVar10 * -2 + 1] = *pfVar7;
       (pfVar9 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] = pfVar7[(uint)bVar10 * -2 + 1];
     }
-    if ((float)_DAT_005cd48f < this_ptr->arm_recoil_blend) {
+    if ((float)0.0001 < this_ptr->arm_recoil_blend) {
       core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(1.5707964,&local_bc);
       pCVar4 = &local_16c;
       local_16c.w = local_bc.w;

@@ -31,7 +31,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnem
   local_70.attacker = (CDemonActor *)this_ptr;
   local_70.wielder = (CDemonActor *)this_ptr;
   core_xform_cpp_transformVector3x4_FUN_00591530
-            ((CVector3f *)&DAT_0265370c,
+            (&g_CVector3f_0265370c,
              (this_ptr->base).base.model.bone_transform.bone_model_matrices + bone_index,&local_1c);
   pCVar3 = &local_10;
   local_10.x = local_1c.x;

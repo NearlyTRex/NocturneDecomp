@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CVector3f * __stack2_esi core_flies_cpp_CFlies_generateRandomPoint_FUN_004ae380(CFlies *this_ptr,CVector3f *reference_point,CVector3f *out_point)
 
@@ -69,11 +68,11 @@ CVector3f * __stack2_esi core_flies_cpp_CFlies_generateRandomPoint_FUN_004ae380(
   local_c0 = local_14 * local_14 * (this_ptr->box_size).y;
   fVar1 = (this_ptr->box_size).x;
   local_c4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
-                       (fVar1 * (float)_DAT_005c1c81,fVar1 * (float)_DAT_005c1c79);
+                       (fVar1 * (float)-0.5,fVar1 * (float)0.5);
   fVar1 = (this_ptr->box_size).z;
   local_14 = local_c4;
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
-                       (fVar1 * (float)_DAT_005c1c81,fVar1 * (float)_DAT_005c1c79);
+                       (fVar1 * (float)-0.5,fVar1 * (float)0.5);
   local_bc = local_14;
   if (reference_point != (CVector3f *)0x0) {
     local_64 = local_c4 - reference_point->x;
@@ -85,16 +84,16 @@ CVector3f * __stack2_esi core_flies_cpp_CFlies_generateRandomPoint_FUN_004ae380(
     *(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
          *(uint *)((int)&stack0xffffffa4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
     fVar1 = SQRT(local_2c * local_2c + local_34 * local_34 + local_30 * local_30);
-    if ((float)_DAT_005c1c89 < fVar1) {
-      local_4c = local_34 * _DAT_005c1c91;
-      local_48 = local_30 * _DAT_005c1c91;
-      local_44 = local_2c * _DAT_005c1c91;
+    if ((float)4 < fVar1) {
+      local_4c = local_34 * 4.0f;
+      local_48 = local_30 * 4.0f;
+      local_44 = local_2c * 4.0f;
       *(uint *)((int)&stack0xffffff28 + (uint)bVar3 * -8) =
            *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8);
       *(uint *)((int)&stack0xffffff2c + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
            *(uint *)((int)&stack0xffffffbc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
       fVar1 = 1.0 / fVar1;
-      local_88 = local_34 * _DAT_005c1c91 * fVar1;
+      local_88 = local_34 * 4.0f * fVar1;
       local_84 = local_d8 * fVar1;
       local_80 = local_d4 * fVar1;
       local_b8 = local_88;

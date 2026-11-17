@@ -11,8 +11,8 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d4917
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01342360
-;   undefined4 DAT_01354f60
+;   undefined4 g_CHAR_ARRAY_01342220+0x140
+;   undefined4 g_CHAR_ARRAY_01354e20+0x140
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     IMUL EAX,ECX,0x140                  ; 00454945
     INC EAX                             ; 0045494b
         ;   Label: LAB_0045494b
-    MOV byte ptr [EAX + 0x1354e1f],BL   ; 0045494c | DAT_01354f60
-    MOV byte ptr [EAX + 0x134221f],BL   ; 00454952 | DAT_01342360
+    MOV byte ptr [EAX + 0x1354e1f],BL   ; 0045494c | g_CHAR_ARRAY_01354e20+0x140
+    MOV byte ptr [EAX + 0x134221f],BL   ; 00454952 | g_CHAR_ARRAY_01342220+0x140
     CMP EAX,EDX                         ; 00454958
     JNZ 0x0045494b                      ; 0045495a
         ;   XREF to: 0045494b (CONDITIONAL_JUMP)  ; LAB_0045494b

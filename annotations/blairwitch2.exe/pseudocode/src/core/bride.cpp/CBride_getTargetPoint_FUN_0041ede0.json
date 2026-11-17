@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 188,
+    "complexity_score": 173,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 78
@@ -47,8 +46,8 @@
   "globals": [
     {
       "addr": "007bccdc",
-      "name": "DAT_007bccdc",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_007bccdc",
+      "type": "int[11]",
       "value": null
     }
   ],
@@ -132,14 +131,6 @@
       "severity": "moderate",
       "text": "uint auStackY_1000 [989];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_007bccdc",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,DAT_007bccdc,&CStack_54);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

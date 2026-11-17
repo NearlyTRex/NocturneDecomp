@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1d22
 ;   TerminatedCString s_Can_t_find_part_s_in_mod_005d1d37
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -87,8 +87,8 @@ section .text
     MOV ESI,0x5d1d22                    ; 0054a36a | = "..\\core\\skeleton.cpp"
     MOV EAX,0x5d8                       ; 0054a36f
     PUSH 0x5d1d37                       ; 0054a374 | = "Can't find part %s in model %s"
-    MOV dword ptr [0x01d71de0],ESI      ; 0054a379 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 0054a37f | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0054a379 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 0054a37f | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054a384
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0054a389

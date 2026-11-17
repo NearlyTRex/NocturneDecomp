@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061d2e4
-;   undefined4 DAT_01cc4270
-;   undefined4 DAT_01cc4470
+;   int g_INT_0061d2e4 = 0x1
+;   char[512] g_CHAR_ARRAY_01cc4270
+;   int g_INT_01cc4470
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_layout_FUN_004bc130
@@ -34,12 +34,12 @@ section .text
     XOR ESI,ESI                         ; 004ba653
     CALL core_fldnotes.cpp_STextView_reset_FUN_004bb1c0 ; 004ba655
         ;   XREF to: 004bb1c0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_reset_FUN_004bb1c0(STextView * this_ptr)
-    MOV ECX,dword ptr [0x01cc4470]      ; 004ba65a | DAT_01cc4470
+    MOV ECX,dword ptr [0x01cc4470]      ; 004ba65a | g_INT_01cc4470
     ADD ESP,0x4                         ; 004ba660
     XOR EDX,EDX                         ; 004ba663
     XOR AH,AH                           ; 004ba665
-    MOV dword ptr [0x0061d2e4],EDX      ; 004ba667 | DAT_0061d2e4
-    MOV byte ptr [0x01cc4270],AH        ; 004ba66d | DAT_01cc4270
+    MOV dword ptr [0x0061d2e4],EDX      ; 004ba667 | g_INT_0061d2e4
+    MOV byte ptr [0x01cc4270],AH        ; 004ba66d | g_CHAR_ARRAY_01cc4270
     TEST ECX,ECX                        ; 004ba673
     JLE 0x004ba69f                      ; 004ba675
         ;   XREF to: 004ba69f (CONDITIONAL_JUMP)  ; LAB_004ba69f
@@ -53,7 +53,7 @@ section .text
     TEST EAX,EAX                        ; 004ba68a
     JZ 0x004ba6a4                       ; 004ba68c
         ;   XREF to: 004ba6a4 (CONDITIONAL_JUMP)  ; LAB_004ba6a4
-    MOV EDI,dword ptr [0x01cc4470]      ; 004ba68e | DAT_01cc4470
+    MOV EDI,dword ptr [0x01cc4470]      ; 004ba68e | g_INT_01cc4470
     INC ESI                             ; 004ba694
     ADD EBX,0x2e4                       ; 004ba695
     CMP ESI,EDI                         ; 004ba69b

@@ -59,9 +59,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f241b
 ;   TerminatedCString s_CDeformableModel_compute_005f2430
-;   undefined4 DAT_00605890
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   float g_FLOAT_00605890 = 0.00390625
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -138,8 +138,8 @@ section .text
     MOV ESI,0x5f241b                    ; 00566aae | = "..\\core\\skeleton.cpp"
     MOV EDI,0x7f2                       ; 00566ab3
     PUSH 0x5f2430                       ; 00566ab8 | = "CDeformableModel::computePartDominant..."
-    MOV dword ptr [0x01d1d400],ESI      ; 00566abd | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00566ac3 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00566abd | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00566ac3 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00566ac9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00566ace
@@ -214,13 +214,13 @@ section .text
     LEA EBX,[ESP + 0x1cc]               ; 00566baf
     ADD EAX,ECX                         ; 00566bb6
     FILD dword ptr [EAX]                ; 00566bb8
-    FMUL float ptr [0x00605890]         ; 00566bba | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566bba | g_FLOAT_00605890
     FSTP float ptr [EBX]                ; 00566bc0
     FILD dword ptr [EAX + 0x4]          ; 00566bc2
-    FMUL float ptr [0x00605890]         ; 00566bc5 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566bc5 | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x4]          ; 00566bcb
     FILD dword ptr [EAX + 0x8]          ; 00566bce
-    FMUL float ptr [0x00605890]         ; 00566bd1 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566bd1 | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x8]          ; 00566bd7
     XOR EAX,EAX                         ; 00566bda
     MOV AX,word ptr [EDX + 0x2]         ; 00566bdc
@@ -230,13 +230,13 @@ section .text
     LEA EBX,[ESP + 0x1c0]               ; 00566bf0
     ADD EAX,ECX                         ; 00566bf7
     FILD dword ptr [EAX]                ; 00566bf9
-    FMUL float ptr [0x00605890]         ; 00566bfb | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566bfb | g_FLOAT_00605890
     FSTP float ptr [EBX]                ; 00566c01
     FILD dword ptr [EAX + 0x4]          ; 00566c03
-    FMUL float ptr [0x00605890]         ; 00566c06 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566c06 | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x4]          ; 00566c0c
     FILD dword ptr [EAX + 0x8]          ; 00566c0f
-    FMUL float ptr [0x00605890]         ; 00566c12 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566c12 | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x8]          ; 00566c18
     XOR EAX,EAX                         ; 00566c1b
     MOV AX,word ptr [EDX + 0x4]         ; 00566c1d
@@ -248,13 +248,13 @@ section .text
     ADD EAX,ECX                         ; 00566c3f
     LEA ESI,[ESP + 0x190]               ; 00566c41
     FILD dword ptr [EAX]                ; 00566c48
-    FMUL float ptr [0x00605890]         ; 00566c4a | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566c4a | g_FLOAT_00605890
     FSTP float ptr [EBX]                ; 00566c50
     FILD dword ptr [EAX + 0x4]          ; 00566c52
-    FMUL float ptr [0x00605890]         ; 00566c55 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566c55 | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x4]          ; 00566c5b
     FILD dword ptr [EAX + 0x8]          ; 00566c5e
-    FMUL float ptr [0x00605890]         ; 00566c61 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00566c61 | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x8]          ; 00566c67
     FLD float ptr [ESP + 0x1f0]         ; 00566c6a
     FLD float ptr [ESP + 0x1f4]         ; 00566c71

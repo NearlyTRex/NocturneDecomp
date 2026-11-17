@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_lightsta_cpp_CLightStaff_process_FUN_004e2050(CLightStaff *this_ptr,float delta_time)
 
@@ -310,7 +309,8 @@ LAB_004e20c0:
     if ((this_ptr->chain_active == 0) &&
        (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle), iVar3 == 0)) {
       uVar4 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                        (0x02CF5680,(CDemonActor *)this_ptr,"wp_lightningstaff_loop.wav",
+                        (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,
+                         "wp_lightningstaff_loop.wav",
                          &(this_ptr->base).base.location.position);
       this_ptr->sfx_handle = uVar4;
     }
@@ -358,10 +358,10 @@ LAB_004e20c0:
         afStack_11c[(uint)bVar11 * -2 + 5] = afStack_524[(uint)bVar11 * -2];
         afStack_11c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6] =
              afStack_524[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        fStack_84 = fStack_108 + _DAT_005c6a8a;
-        fStack_80 = fStack_104 + _DAT_005c6a8e;
-        afStack_7c[0] = fStack_100 + _DAT_005c6a92;
-        CStack_51c.x = fStack_108 + _DAT_005c6a8a;
+        fStack_84 = fStack_108 + 0.73f;
+        fStack_80 = fStack_104 + 0.28f;
+        afStack_7c[0] = fStack_100 + -0.03f;
+        CStack_51c.x = fStack_108 + 0.73f;
         *(float *)((int)&CStack_51c + (uint)bVar11 * -8 + 4) = afStack_7c[(uint)bVar11 * -2 + -1];
         *(float *)((int)&CStack_51c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
              afStack_7c[(uint)bVar11 * -2 + (uint)bVar11 * -2];
@@ -384,10 +384,10 @@ LAB_004e20c0:
         afStack_45c[(uint)bVar11 * -2 + 2] = afStack_618[(uint)bVar11 * -2];
         afStack_45c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3] =
              afStack_618[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        fStack_3e8 = afStack_45c[2] + _DAT_005c6a8a;
-        fStack_3e4 = afStack_45c[3] + _DAT_005c6a8e;
-        afStack_3e0[0] = fStack_44c + _DAT_005c6a92;
-        auStack_e4._8_4_ = afStack_45c[2] + _DAT_005c6a8a;
+        fStack_3e8 = afStack_45c[2] + 0.73f;
+        fStack_3e4 = afStack_45c[3] + 0.28f;
+        afStack_3e0[0] = fStack_44c + -0.03f;
+        auStack_e4._8_4_ = afStack_45c[2] + 0.73f;
         afStack_d8[(uint)bVar11 * -2] = afStack_3e0[(uint)bVar11 * -2 + -1];
         afStack_d8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
              afStack_3e0[(uint)bVar11 * -2 + (uint)bVar11 * -2];
@@ -408,10 +408,10 @@ LAB_004e20c0:
         afStack_11c[(uint)bVar11 * -2 + 2] = afStack_704[(uint)bVar11 * -2];
         afStack_11c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3] =
              afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        fStack_5d0 = afStack_11c[2] + _DAT_005c6a9e;
-        fStack_5cc = afStack_11c[3] + _DAT_005c6aa2;
-        afStack_5c8[0] = fStack_10c + _DAT_005c6a92;
-        CStack_a8.x = afStack_11c[2] + _DAT_005c6a9e;
+        fStack_5d0 = afStack_11c[2] + -0.71f;
+        fStack_5cc = afStack_11c[3] + 0.5f;
+        afStack_5c8[0] = fStack_10c + -0.03f;
+        CStack_a8.x = afStack_11c[2] + -0.71f;
         afStack_9c[(uint)bVar11 * -2 + -2] = afStack_5c8[(uint)bVar11 * -2 + -1];
         afStack_9c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + -1] =
              afStack_5c8[(uint)bVar11 * -2 + (uint)bVar11 * -2];
@@ -435,10 +435,10 @@ LAB_004e20c0:
         afStack_1c8[(uint)bVar11 * -2 + 8] = afStack_274[(uint)bVar11 * -2 + 4];
         afStack_1c8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 9] =
              afStack_274[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5];
-        fStack_34c = fStack_1a8 + _DAT_005c6a9e;
-        fStack_348 = fStack_1a4 + _DAT_005c6aa2;
-        fStack_344 = fStack_1a0 + _DAT_005c6a92;
-        CStack_46c.x = fStack_1a8 + _DAT_005c6a9e;
+        fStack_34c = fStack_1a8 + -0.71f;
+        fStack_348 = fStack_1a4 + 0.5f;
+        fStack_344 = fStack_1a0 + -0.03f;
+        CStack_46c.x = fStack_1a8 + -0.71f;
         *(float *)((int)&CStack_46c + (uint)bVar11 * -8 + 4) = afStack_35c[(uint)bVar11 * -2 + 5];
         *(float *)((int)&CStack_46c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
              afStack_35c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6];
@@ -459,10 +459,10 @@ LAB_004e20c0:
         afStack_328[(uint)bVar11 * -2 + 4] = afStack_6e0[(uint)bVar11 * -2 + 3];
         afStack_328[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5] =
              afStack_6e0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-        fStack_6e4 = fStack_318 + _DAT_005c6a96;
-        afStack_6e0[0] = fStack_314 + _DAT_005c6a9a;
-        afStack_6e0[1] = fStack_310 + _DAT_005c6a92;
-        CStack_42c.x = fStack_318 + _DAT_005c6a96;
+        fStack_6e4 = fStack_318 + 0.37f;
+        afStack_6e0[0] = fStack_314 + -0.4f;
+        afStack_6e0[1] = fStack_310 + -0.03f;
+        CStack_42c.x = fStack_318 + 0.37f;
         *(float *)((int)&CStack_42c + (uint)bVar11 * -8 + 4) = afStack_6e0[(uint)bVar11 * -2];
         *(float *)((int)&CStack_42c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
              afStack_6e0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -486,10 +486,10 @@ LAB_004e20c0:
         afStack_4e4[(uint)bVar11 * -2 + 0xc] = afStack_6b4[(uint)bVar11 * -2];
         afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd] =
              afStack_6b4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        CStack_400.x = fStack_4b4 + _DAT_005c6a96;
-        CStack_400.y = fStack_4b0 + _DAT_005c6a9a;
-        CStack_400.z = fStack_4ac + _DAT_005c6a92;
-        CStack_3f4.x = fStack_4b4 + _DAT_005c6a96;
+        CStack_400.x = fStack_4b4 + 0.37f;
+        CStack_400.y = fStack_4b0 + -0.4f;
+        CStack_400.z = fStack_4ac + -0.03f;
+        CStack_3f4.x = fStack_4b4 + 0.37f;
         *(uint *)((int)&CStack_3f4 + (uint)bVar11 * -8 + 4) =
              *(uint *)((int)&CStack_400 + (uint)bVar11 * -8 + 4);
         *(uint *)((int)&CStack_3f4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
@@ -511,10 +511,10 @@ LAB_004e20c0:
         afStack_3b4[(uint)bVar11 * -2] = *(float *)((int)&CStack_568 + (uint)bVar11 * -8 + 8);
         afStack_3b4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
              *(float *)((int)&CStack_55c + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-        afStack_240[0] = afStack_3b4[0] + _DAT_005c6a7e;
-        afStack_240[1] = afStack_3b4[1] + _DAT_005c6a82;
-        afStack_240[2] = afStack_3b4[2] + _DAT_005c6a86;
-        CStack_f0.x = afStack_3b4[0] + _DAT_005c6a7e;
+        afStack_240[0] = afStack_3b4[0] + -0.76f;
+        afStack_240[1] = afStack_3b4[1] + -0.63f;
+        afStack_240[2] = afStack_3b4[2] + -0.05f;
+        CStack_f0.x = afStack_3b4[0] + -0.76f;
         *(float *)((int)&CStack_f0 + (uint)bVar11 * -8 + 4) = afStack_240[(uint)bVar11 * -2 + 1];
         *(float *)((int)&CStack_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
              afStack_240[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 2];
@@ -538,10 +538,10 @@ LAB_004e20c0:
         afStack_484[(uint)bVar11 * -2 + 3] = afStack_66c[(uint)bVar11 * -2];
         afStack_484[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
              afStack_66c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        CStack_440.y = afStack_484[3] + _DAT_005c6a7e;
-        CStack_440.z = fStack_474 + _DAT_005c6a82;
-        afStack_434[0] = fStack_470 + _DAT_005c6a86;
-        aCStack_13c[0].x = afStack_484[3] + _DAT_005c6a7e;
+        CStack_440.y = afStack_484[3] + -0.76f;
+        CStack_440.z = fStack_474 + -0.63f;
+        afStack_434[0] = fStack_470 + -0.05f;
+        aCStack_13c[0].x = afStack_484[3] + -0.76f;
         *(float *)((int)aCStack_13c + (uint)bVar11 * -8 + 4) = afStack_434[(uint)bVar11 * -2 + -1];
         *(float *)((int)aCStack_13c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
              afStack_434[(uint)bVar11 * -2 + (uint)bVar11 * -2];
@@ -562,10 +562,10 @@ LAB_004e20c0:
         afStack_9c[(uint)bVar11 * -2] = afStack_644[(uint)bVar11 * -2];
         afStack_9c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
              afStack_644[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        afStack_3e0[2] = afStack_9c[0] + _DAT_005c6a8a;
-        afStack_3e0[3] = afStack_9c[1] + _DAT_005c6a8e;
-        fStack_3d0 = CStack_94.x + _DAT_005c6a92;
-        auStack_598._4_4_ = afStack_9c[0] + _DAT_005c6a8a;
+        afStack_3e0[2] = afStack_9c[0] + 0.73f;
+        afStack_3e0[3] = afStack_9c[1] + 0.28f;
+        fStack_3d0 = CStack_94.x + -0.03f;
+        auStack_598._4_4_ = afStack_9c[0] + 0.73f;
         afStack_590[(uint)bVar11 * -2] = afStack_3e0[(uint)bVar11 * -2 + 3];
         afStack_590[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
              afStack_3e0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
@@ -583,7 +583,7 @@ LAB_004e20c0:
         }
       }
       core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                (0x01C73654,&CStack_5b8,&CStack_33c,0,0.25,0.25,3,0.01,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_5b8,&CStack_33c,0,0.25,0.25,3,0.01,0xffff);
       iVar3 = this_ptr->flicker_frame;
       if ((iVar3 == 1) || (iVar3 - 1U < 5)) {
         switch(iVar3) {
@@ -596,10 +596,10 @@ LAB_004e20c0:
           *(uint *)((int)aCStack_13c + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4) =
                *(uint *)
                 ((int)&CStack_15c + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 4) * 4 + 8);
-          fStack_308 = fStack_140 + _DAT_005c6a8a;
-          fStack_304 = aCStack_13c[0].x + _DAT_005c6a8e;
-          afStack_300[0] = aCStack_13c[0].y + _DAT_005c6a92;
-          CStack_5a8.x = fStack_140 + _DAT_005c6a8a;
+          fStack_308 = fStack_140 + 0.73f;
+          fStack_304 = aCStack_13c[0].x + 0.28f;
+          afStack_300[0] = aCStack_13c[0].y + -0.03f;
+          CStack_5a8.x = fStack_140 + 0.73f;
           *(float *)((int)&CStack_5a8 + (uint)bVar11 * -8 + 4) = afStack_300[(uint)bVar11 * -2 + -1]
           ;
           *(float *)((int)&CStack_5a8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
@@ -621,10 +621,10 @@ LAB_004e20c0:
           afStack_228[(uint)bVar11 * -2 + 5] = afStack_378[(uint)bVar11 * -2];
           afStack_228[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6] =
                afStack_378[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-          fStack_508 = fStack_214 + _DAT_005c6a9e;
-          afStack_504[0] = fStack_210 + _DAT_005c6aa2;
-          afStack_504[1] = fStack_20c + _DAT_005c6a92;
-          CStack_568.x = fStack_214 + _DAT_005c6a9e;
+          fStack_508 = fStack_214 + -0.71f;
+          afStack_504[0] = fStack_210 + 0.5f;
+          afStack_504[1] = fStack_20c + -0.03f;
+          CStack_568.x = fStack_214 + -0.71f;
           *(float *)((int)&CStack_568 + (uint)bVar11 * -8 + 4) = afStack_504[(uint)bVar11 * -2];
           *(float *)((int)&CStack_568 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
                afStack_504[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -647,10 +647,10 @@ LAB_004e20c0:
           afStack_1c8[(uint)bVar11 * -2 + 7] = afStack_328[(uint)bVar11 * -2];
           afStack_1c8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 8] =
                afStack_328[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-          fStack_1f4 = fStack_1ac + _DAT_005c6a9e;
-          fStack_1f0 = fStack_1a8 + _DAT_005c6aa2;
-          CStack_1ec.x = fStack_1a4 + _DAT_005c6a92;
-          CStack_530.x = fStack_1ac + _DAT_005c6a9e;
+          fStack_1f4 = fStack_1ac + -0.71f;
+          fStack_1f0 = fStack_1a8 + 0.5f;
+          CStack_1ec.x = fStack_1a4 + -0.03f;
+          CStack_530.x = fStack_1ac + -0.71f;
           afStack_524[(uint)bVar11 * -2 + -2] = (&fStack_1f0)[(uint)bVar11 * -2];
           afStack_524[(uint)bVar11 * -2 + (uint)bVar11 * -2 + -1] =
                *(float *)((int)&CStack_1ec + (uint)bVar11 * -8 + (uint)bVar11 * -8);
@@ -671,10 +671,10 @@ LAB_004e20c0:
           afStack_6c[(uint)bVar11 * -2 + 5] = *(float *)((int)&CStack_15c + (uint)bVar11 * -8);
           afStack_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6] =
                *(float *)((int)&CStack_15c + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + -1) * 4 + 8);
-          fStack_22c = fStack_58 + _DAT_005c6a96;
-          afStack_228[0] = fStack_54 + _DAT_005c6a9a;
-          afStack_228[1] = fStack_50 + _DAT_005c6a92;
-          CStack_4f0.x = fStack_58 + _DAT_005c6a96;
+          fStack_22c = fStack_58 + 0.37f;
+          afStack_228[0] = fStack_54 + -0.4f;
+          afStack_228[1] = fStack_50 + -0.03f;
+          CStack_4f0.x = fStack_58 + 0.37f;
           afStack_4e4[(uint)bVar11 * -2 + -2] = afStack_228[(uint)bVar11 * -2];
           afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + -1] =
                afStack_228[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -697,10 +697,10 @@ LAB_004e20c0:
           afStack_1c8[(uint)bVar11 * -2 + 4] = afStack_2e0[(uint)bVar11 * -2];
           afStack_1c8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5] =
                afStack_2e0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-          afStack_418[2] = fStack_1b8 + _DAT_005c6a96;
-          afStack_418[3] = fStack_1b4 + _DAT_005c6a9a;
-          fStack_408 = fStack_1b0 + _DAT_005c6a92;
-          CStack_bc.x = fStack_1b8 + _DAT_005c6a96;
+          afStack_418[2] = fStack_1b8 + 0.37f;
+          afStack_418[3] = fStack_1b4 + -0.4f;
+          fStack_408 = fStack_1b0 + -0.03f;
+          CStack_bc.x = fStack_1b8 + 0.37f;
           afStack_b0[(uint)bVar11 * -2 + -2] = afStack_418[(uint)bVar11 * -2 + 3];
           afStack_b0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + -1] =
                afStack_418[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
@@ -721,10 +721,10 @@ LAB_004e20c0:
           afStack_3a0[(uint)bVar11 * -2] = afStack_2c4[(uint)bVar11 * -2 + 3];
           afStack_3a0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
                afStack_2c4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-          fStack_244 = afStack_3a0[0] + _DAT_005c6a7e;
-          afStack_240[0] = afStack_3a0[1] + _DAT_005c6a82;
-          afStack_240[1] = afStack_3a0[2] + _DAT_005c6a86;
-          auStack_124._0_4_ = afStack_3a0[0] + _DAT_005c6a7e;
+          fStack_244 = afStack_3a0[0] + -0.76f;
+          afStack_240[0] = afStack_3a0[1] + -0.63f;
+          afStack_240[1] = afStack_3a0[2] + -0.05f;
+          auStack_124._0_4_ = afStack_3a0[0] + -0.76f;
           afStack_11c[(uint)bVar11 * -2 + -1] = afStack_240[(uint)bVar11 * -2];
           afStack_11c[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
                afStack_240[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -747,10 +747,10 @@ LAB_004e20c0:
           *(float *)((int)&CStack_288 + (uint)bVar11 * -8 + 4) = (&fStack_f4)[(uint)bVar11 * -2];
           *(uint *)((int)&CStack_288 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4 + 8) =
                *(uint *)((int)&CStack_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-          fStack_278 = CStack_288.y + _DAT_005c6a7e;
-          afStack_274[0] = CStack_288.z + _DAT_005c6a82;
-          afStack_274[1] = fStack_27c + _DAT_005c6a86;
-          CStack_440.x = CStack_288.y + _DAT_005c6a7e;
+          fStack_278 = CStack_288.y + -0.76f;
+          afStack_274[0] = CStack_288.z + -0.63f;
+          afStack_274[1] = fStack_27c + -0.05f;
+          CStack_440.x = CStack_288.y + -0.76f;
           afStack_434[(uint)bVar11 * -2 + -2] = afStack_274[(uint)bVar11 * -2];
           afStack_434[(uint)bVar11 * -2 + (uint)bVar11 * -2 + -1] =
                afStack_274[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -771,10 +771,10 @@ LAB_004e20c0:
           afStack_c4[(uint)bVar11 * -2] = *(float *)((int)&CStack_288 + (uint)bVar11 * -8);
           afStack_c4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
                *(float *)((int)&CStack_288 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4 + 4);
-          fStack_2c8 = afStack_c4[0] + _DAT_005c6a8a;
-          afStack_2c4[0] = afStack_c4[1] + _DAT_005c6a8e;
-          afStack_2c4[1] = CStack_bc.x + _DAT_005c6a92;
-          CStack_400.x = afStack_c4[0] + _DAT_005c6a8a;
+          fStack_2c8 = afStack_c4[0] + 0.73f;
+          afStack_2c4[0] = afStack_c4[1] + 0.28f;
+          afStack_2c4[1] = CStack_bc.x + -0.03f;
+          CStack_400.x = afStack_c4[0] + 0.73f;
           *(float *)((int)&CStack_400 + (uint)bVar11 * -8 + 4) = afStack_2c4[(uint)bVar11 * -2];
           *(float *)((int)&CStack_400 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4 + 8) =
                afStack_2c4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -792,7 +792,7 @@ LAB_004e20c0:
         }
       }
       core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                (0x01C73654,&CStack_5b8,&CStack_33c,0,0.25,0.25,3,0.01,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_5b8,&CStack_33c,0,0.25,0.25,3,0.01,0xffff);
       return;
     }
   }
@@ -883,10 +883,10 @@ LAB_004e25da:
         afStack_4e4[(uint)bVar11 * -2 + 2] = afStack_274[(uint)bVar11 * -2 + 2];
         afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3] =
              afStack_274[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3];
-        fStack_4c8 = afStack_4e4[1] * _DAT_005c6aa2;
-        fStack_4c4 = afStack_4e4[2] * _DAT_005c6aa2;
-        fStack_4c0 = afStack_4e4[3] * _DAT_005c6aa2;
-        afStack_378[0] = afStack_4e4[1] * _DAT_005c6aa2;
+        fStack_4c8 = afStack_4e4[1] * 0.5f;
+        fStack_4c4 = afStack_4e4[2] * 0.5f;
+        fStack_4c0 = afStack_4e4[3] * 0.5f;
+        afStack_378[0] = afStack_4e4[1] * 0.5f;
         afStack_378[(uint)bVar11 * -2 + 1] = afStack_4e4[(uint)bVar11 * -2 + 8];
         afStack_378[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 2] =
              afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 9];
@@ -907,7 +907,7 @@ LAB_004e25da:
           fStack_680 = afStack_35c[3];
           fStack_67c = fStack_34c;
         }
-        fStack_680 = fStack_650 * _DAT_005c6aa2 + fStack_680;
+        fStack_680 = fStack_650 * 0.5f + fStack_680;
         this_ptr_03 = &pCStack_2c->model;
         if ((((pCStack_2c->model).model_name[0] != '\0') &&
             (this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -942,10 +942,11 @@ LAB_004e25da:
         }
         pCVar13 = &this_ptr->chain_pos;
         core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                  (0x01C73654,pCVar13,(CVector3f *)(auStack_68c + 8),0,0.75,0.75,3,0.25,0xffff);
+                  (g_CFireEffect_PTR_005fc5a0,pCVar13,(CVector3f *)(auStack_68c + 8),0,0.75,0.75,3,
+                   0.25,0xffff);
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                  (0x02CF5680,(CDemonActor *)this_ptr,"wp_lightningstaff_arc.wav",pCVar13)
-        ;
+                  (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_lightningstaff_arc.wav"
+                   ,pCVar13);
         pCStack_2c->bind_time = 1.0;
         pCStack_2c->bind_type = 1;
         this_ptr->chain_targets[this_ptr->chain_count] = pCStack_2c;
@@ -977,7 +978,7 @@ LAB_004e25da:
           }
           iVar3 = iVar3 + 1;
           core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                    (0x01C73654,&CStack_294,&CStack_288,0x20000,0x10000,1,0xffff);
+                    (g_CFireEffect_PTR_005fc5a0,&CStack_294,&CStack_288,0x20000,0x10000,1,0xffff);
         } while (iVar3 < 0x10);
       }
     }

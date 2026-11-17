@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00458210(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material)
 
 {
@@ -59,22 +57,22 @@ float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00458210(CDemo
     }
     *hit_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + local_1c);
     pCVar2 = this_ptr->triangle_buffer[local_1c].triangle.vertices[0];
-    if (pCVar2 != (CVector3f *)&DAT_0152c2a8) {
-      _DAT_0152c2a8 = pCVar2->x;
-      _DAT_0152c2b0 = pCVar2->z;
-      _DAT_0152c2ac = pCVar2->y;
+    if (pCVar2 != (CVector3f *)&g_FLOAT_0152c2a8) {
+      g_FLOAT_0152c2a8 = pCVar2->x;
+      g_FLOAT_0152c2b0 = pCVar2->z;
+      g_INT_0152c2ac = (int)pCVar2->y;
     }
     pCVar2 = this_ptr->triangle_buffer[local_1c].triangle.vertices[1];
-    if (pCVar2 != (CVector3f *)&DAT_0152c2b4) {
-      _DAT_0152c2b4 = pCVar2->x;
-      _DAT_0152c2bc = pCVar2->z;
-      _DAT_0152c2b8 = pCVar2->y;
+    if (pCVar2 != (CVector3f *)&g_FLOAT_0152c2b4) {
+      g_FLOAT_0152c2b4 = pCVar2->x;
+      g_FLOAT_0152c2bc = pCVar2->z;
+      g_INT_0152c2b8 = (int)pCVar2->y;
     }
     pCVar2 = this_ptr->triangle_buffer[local_1c].triangle.vertices[2];
-    if (pCVar2 != (CVector3f *)&DAT_0152c2c0) {
-      _DAT_0152c2c4 = pCVar2->y;
-      _DAT_0152c2c8 = pCVar2->z;
-      _DAT_0152c2c0 = pCVar2->x;
+    if (pCVar2 != (CVector3f *)&g_FLOAT_0152c2c0) {
+      g_INT_0152c2c4 = (int)pCVar2->y;
+      g_FLOAT_0152c2c8 = pCVar2->z;
+      g_FLOAT_0152c2c0 = pCVar2->x;
       return local_18;
     }
   }

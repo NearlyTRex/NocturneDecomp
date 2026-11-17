@@ -8,14 +8,14 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_ChaseFood_005f0dfd+1
+;   TerminatedCString s_ChaseFood_005f0dfe
 ;   TerminatedCString s_Death_005f0e08
 ;   TerminatedCString s_Animation_005f0e0e
 ;   TerminatedCString s_Death_005f0e18
 ;   TerminatedCString s_meat1_kfm_005f0e1e
 ;   TerminatedCString s_ChaseFoodComplete_005f0e28
 ;   TerminatedCString s_ChaseFood_005f0e3a
-;   undefined4 DAT_00600c54
+;   float g_FLOAT_00600c54 = 20
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
@@ -54,7 +54,7 @@ section .text
     JZ 0x005ac460                       ; 005ac311
         ;   XREF to: 005ac460 (CONDITIONAL_JUMP)  ; LAB_005ac460
     MOV dword ptr [EDI + 0x1134c],0x40000000 ; 005ac317
-    PUSH 0x5f0dfe                       ; 005ac321 | s_ChaseFood_005f0dfd+1
+    PUSH 0x5f0dfe                       ; 005ac321 | = "ChaseFood"
         ;   Label: LAB_005ac321
     LEA EAX,[EDI + 0x10af8]             ; 005ac326
     PUSH EAX                            ; 005ac32c
@@ -157,7 +157,7 @@ section .text
     FMUL ST0                            ; 005ac444
     FADDP                               ; 005ac446
     FSQRT                               ; 005ac448
-    FCOMP float ptr [0x00600c54]        ; 005ac44a | DAT_00600c54
+    FCOMP float ptr [0x00600c54]        ; 005ac44a | g_FLOAT_00600c54
     FNSTSW AX                           ; 005ac450
     SAHF                                ; 005ac452
     JBE 0x005ac4d7                      ; 005ac453

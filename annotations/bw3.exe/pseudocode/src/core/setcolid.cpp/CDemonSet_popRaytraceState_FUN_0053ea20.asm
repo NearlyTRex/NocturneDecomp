@@ -14,9 +14,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005d0bb5
 ;   TerminatedCString s_CDemonSet_popRaytraceSta_005d0bca
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_021221f0
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_021221f0
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -30,13 +30,13 @@ section .text
     PUSH ESI                            ; 0053ea21
     PUSH EDI                            ; 0053ea22
     MOV EBX,dword ptr [ESP + 0x10]      ; 0053ea23
-    CMP dword ptr [0x021221f0],0x1      ; 0053ea27 | DAT_021221f0
+    CMP dword ptr [0x021221f0],0x1      ; 0053ea27 | g_INT_021221f0
     JL 0x0053eb95                       ; 0053ea2e
         ;   XREF to: 0053eb95 (CONDITIONAL_JUMP)  ; LAB_0053eb95
-    MOV EDI,dword ptr [0x021221f0]      ; 0053ea34 | DAT_021221f0
+    MOV EDI,dword ptr [0x021221f0]      ; 0053ea34 | g_INT_021221f0
         ;   Label: LAB_0053ea34
     DEC EDI                             ; 0053ea3a
-    MOV dword ptr [0x021221f0],EDI      ; 0053ea3b | DAT_021221f0
+    MOV dword ptr [0x021221f0],EDI      ; 0053ea3b | g_INT_021221f0
     LEA EAX,[EDI*0x4 + 0x0]             ; 0053ea41
     ADD EAX,EDI                         ; 0053ea48
     MOV EDI,0x21221f4                   ; 0053ea4a
@@ -152,8 +152,8 @@ section .text
         ;   Label: LAB_0053eb95
     MOV ESI,0x42a                       ; 0053eb9a
     PUSH 0x5d0bca                       ; 0053eb9f | = "CDemonSet::popRaytraceState - stack e..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0053eba4 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0053ebaa | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0053eba4 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0053ebaa | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053ebb0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0053ebb5

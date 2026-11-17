@@ -39,15 +39,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_005c96ab
 ;   TerminatedCString s_CMorphModel_rotatePoints_005c96bd
-;   undefined4 DAT_005e2c00
-;   undefined4 DAT_005f2afc
+;   float g_FLOAT_005e2c00 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d88648
-;   undefined4 DAT_01d8864c
-;   undefined4 DAT_01d88650
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   CVector3i[2000] g_CVector3i_ARRAY_01d88648
+;   undefined4 g_CVector3i_ARRAY_01d88648[0].y
+;   undefined4 g_CVector3i_ARRAY_01d88648[0].z
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -153,26 +153,26 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004fa58f
     MOVSD ES:EDI,ESI                    ; 004fa590
     FLD float ptr [EAX]                 ; 004fa591
-    FMUL float ptr [0x005e2c00]         ; 004fa593 | DAT_005e2c00
-    FISTP dword ptr [EBX]               ; 004fa599 | DAT_01d88648
+    FMUL float ptr [0x005e2c00]         ; 004fa593 | g_FLOAT_005e2c00
+    FISTP dword ptr [EBX]               ; 004fa599 | g_CVector3i_ARRAY_01d88648
     FLD float ptr [EAX + 0x4]           ; 004fa59b
-    FMUL float ptr [0x005e2c00]         ; 004fa59e | DAT_005e2c00
-    FISTP dword ptr [EBX + 0x4]         ; 004fa5a4 | DAT_01d8864c
+    FMUL float ptr [0x005e2c00]         ; 004fa59e | g_FLOAT_005e2c00
+    FISTP dword ptr [EBX + 0x4]         ; 004fa5a4 | g_CVector3i_ARRAY_01d88648[0].y
     FLD float ptr [EAX + 0x8]           ; 004fa5a7
-    FMUL float ptr [0x005e2c00]         ; 004fa5aa | DAT_005e2c00
-    FISTP dword ptr [EBX + 0x8]         ; 004fa5b0 | DAT_01d88650
-    MOV EAX,[0x005f2afc]                ; 004fa5b3 | DAT_005f2afc
+    FMUL float ptr [0x005e2c00]         ; 004fa5aa | g_FLOAT_005e2c00
+    FISTP dword ptr [EBX + 0x8]         ; 004fa5b0 | g_CVector3i_ARRAY_01d88648[0].z
+    MOV EAX,[0x005f2afc]                ; 004fa5b3 | g_CDemonRenderer_PTR_005f2afc
     MOV EDX,dword ptr [ESP + 0x5c]      ; 004fa5b8
-    MOV EAX,dword ptr [EAX]             ; 004fa5bc | DAT_01bdd7e4
-    PUSH EBP                            ; 004fa5be | DAT_01d88648
+    MOV EAX,dword ptr [EAX]             ; 004fa5bc | g_CDemonRenderer_01bdd7e4
+    PUSH EBP                            ; 004fa5be | g_CVector3i_ARRAY_01d88648
     ADD EAX,EDX                         ; 004fa5bf
     PUSH EAX                            ; 004fa5c1
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004fa5c2
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004fa5c7
-    MOV EAX,[0x005f2afc]                ; 004fa5ca | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 004fa5ca | g_CDemonRenderer_PTR_005f2afc
     MOV ECX,dword ptr [ESP + 0x5c]      ; 004fa5cf
-    MOV EAX,dword ptr [EAX]             ; 004fa5d3 | DAT_01bdd7e4
+    MOV EAX,dword ptr [EAX]             ; 004fa5d3 | g_CDemonRenderer_01bdd7e4
     ADD EAX,ECX                         ; 004fa5d5
     MOV EAX,dword ptr [EAX + 0x10]      ; 004fa5d7
     TEST EAX,0x80000000                 ; 004fa5da
@@ -214,8 +214,8 @@ section .text
         ;   Label: LAB_004fa639
     MOV EBX,0x1f8                       ; 004fa63e
     PUSH 0x5c96bd                       ; 004fa643 | = "CMorphModel::rotatePoints - too many ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004fa648 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004fa64e | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004fa648 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 004fa64e | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fa654
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fa659
@@ -238,7 +238,7 @@ section .text
     PUSH EBP                            ; 004fa680
     PUSH 0x3                            ; 004fa681
     MOV EAX,dword ptr [ESP + 0x7c]      ; 004fa683
-    PUSH 0x1d88648                      ; 004fa687 | DAT_01d88648
+    PUSH 0x1d88648                      ; 004fa687 | g_CVector3i_ARRAY_01d88648
     MOV EBX,dword ptr [EAX + 0x60]      ; 004fa68c
     PUSH EBX                            ; 004fa68f
     MOV ESI,dword ptr [EAX + 0x5c]      ; 004fa690
@@ -252,8 +252,8 @@ section .text
     ADD ESP,0x1c                        ; 004fa6a4
     MOV EAX,dword ptr [ESP + 0x48]      ; 004fa6a7
     PUSH EAX                            ; 004fa6ab
-    MOV EDX,dword ptr [0x005f2afc]      ; 004fa6ac | DAT_005f2afc
-    PUSH EDX                            ; 004fa6b2 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004fa6ac | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004fa6b2 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500 ; 004fa6b3
         ;   XREF to: 0046d500 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 004fa6b8

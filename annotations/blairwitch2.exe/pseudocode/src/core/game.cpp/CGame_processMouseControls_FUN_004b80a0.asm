@@ -19,16 +19,16 @@
 ;   core_game.cpp_CGame_playerControls_FUN_004b7050 at 004b70e7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d78f3
-;   undefined4 DAT_005d78fb
-;   undefined4 DAT_005d7903
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
+;   double g_DOUBLE_005d78f3 = 0.0000152587890625
+;   double g_DOUBLE_005d78fb = 0.75
+;   double g_DOUBLE_005d7903 = -1
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01c2a37c
-;   undefined4 DAT_01c2a380
-;   undefined4 DAT_01c37790
-;   undefined4 DAT_01cb7784
+;   int g_INT_01c2a37c
+;   int g_INT_01c2a380
+;   char[4952] g_CHAR_ARRAY_01c37790
+;   int g_INT_01cb7784
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
@@ -65,24 +65,24 @@ section .text
     POP ESI                             ; 004b80ca
     POP EBX                             ; 004b80cb
     RET                                 ; 004b80cc
-    MOV EAX,[0x006141b8]                ; 004b80cd | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 004b80cd | g_INT_006141b8
         ;   Label: LAB_004b80cd
     MOV EDX,EAX                         ; 004b80d2
     SAR EDX,0x1f                        ; 004b80d4
     SUB EAX,EDX                         ; 004b80d7
     SAR EAX,0x1                         ; 004b80d9
     MOV dword ptr [ESP + 0x20],EAX      ; 004b80db
-    MOV EAX,[0x006141bc]                ; 004b80df | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 004b80df | g_INT_006141bc
     MOV EDX,EAX                         ; 004b80e4
     SAR EDX,0x1f                        ; 004b80e6
     SUB EAX,EDX                         ; 004b80e9
     SAR EAX,0x1                         ; 004b80eb
     MOV ECX,dword ptr [ESP + 0x20]      ; 004b80ed
     MOV ESI,EAX                         ; 004b80f1
-    MOV EAX,[0x01c2a37c]                ; 004b80f3 | DAT_01c2a37c
+    MOV EAX,[0x01c2a37c]                ; 004b80f3 | g_INT_01c2a37c
     SUB EAX,ECX                         ; 004b80f8
     MOV dword ptr [ESP + 0x18],EAX      ; 004b80fa
-    MOV EAX,[0x01c2a380]                ; 004b80fe | DAT_01c2a380
+    MOV EAX,[0x01c2a380]                ; 004b80fe | g_INT_01c2a380
     PUSH ESI                            ; 004b8103
     SUB EAX,ESI                         ; 004b8104
     PUSH ECX                            ; 004b8106
@@ -90,7 +90,7 @@ section .text
     CALL wincore_winrun.cpp_setCursorPosition_FUN_0058ed10 ; 004b810b
         ;   XREF to: 0058ed10 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_0058ed10(int x, int y)
     MOV EAX,[0x0061b5a8]                ; 004b8110 | g_CDemonSetPtr
-    MOV EDX,dword ptr [0x01cb7784]      ; 004b8115 | DAT_01cb7784
+    MOV EDX,dword ptr [0x01cb7784]      ; 004b8115 | g_INT_01cb7784
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b811b | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0x8                         ; 004b8121
     CMP EAX,EDX                         ; 004b8124
@@ -109,12 +109,12 @@ section .text
     FILD dword ptr [ESP + 0x24]         ; 004b814e
     FILD dword ptr [ESP + 0x28]         ; 004b8152
     FDIVP                               ; 004b8156
-    FLD double ptr [0x005d78f3]         ; 004b8158 | DAT_005d78f3
+    FLD double ptr [0x005d78f3]         ; 004b8158 | g_DOUBLE_005d78f3
     FILD dword ptr [EDI + 0xb0]         ; 004b815e
     FMUL ST1                            ; 004b8164
     FILD dword ptr [EDI + 0xb4]         ; 004b8166
     FMULP ST2                           ; 004b816c
-    FMUL double ptr [0x005d78fb]        ; 004b816e | DAT_005d78fb
+    FMUL double ptr [0x005d78fb]        ; 004b816e | g_DOUBLE_005d78fb
     FMUL ST3                            ; 004b8174
     FXCH ST2                            ; 004b8176
     FXCH                                ; 004b8178
@@ -127,7 +127,7 @@ section .text
     FSTP ST2                            ; 004b8188
     FXCH                                ; 004b818a
     FSTP float ptr [ESP]                ; 004b818c
-    FCOMP double ptr [0x005d7903]       ; 004b818f | DAT_005d7903
+    FCOMP double ptr [0x005d7903]       ; 004b818f | g_DOUBLE_005d7903
     FNSTSW AX                           ; 004b8195
     SAHF                                ; 004b8197
     JNC 0x004b81a2                      ; 004b8198
@@ -144,7 +144,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x3f800000 ; 004b81af
     FLD float ptr [ESP]                 ; 004b81b7
         ;   Label: LAB_004b81b7
-    FCOMP double ptr [0x005d7903]       ; 004b81ba | DAT_005d7903
+    FCOMP double ptr [0x005d7903]       ; 004b81ba | g_DOUBLE_005d7903
     FNSTSW AX                           ; 004b81c0
     SAHF                                ; 004b81c2
     JNC 0x004b81cc                      ; 004b81c3
@@ -166,7 +166,7 @@ section .text
     XOR byte ptr [ESP + 0x3],0x80       ; 004b81e8
     MOV EAX,dword ptr [EDI + 0x34]      ; 004b81ed
         ;   Label: LAB_004b81ed
-    CMP byte ptr [EAX + 0x1c37790],0x0  ; 004b81f0 | DAT_01c37790
+    CMP byte ptr [EAX + 0x1c37790],0x0  ; 004b81f0 | g_CHAR_ARRAY_01c37790
     JZ 0x004b8234                       ; 004b81f7
         ;   XREF to: 004b8234 (CONDITIONAL_JUMP)  ; LAB_004b8234
     FLD float ptr [EBX + 0x24]          ; 004b81f9

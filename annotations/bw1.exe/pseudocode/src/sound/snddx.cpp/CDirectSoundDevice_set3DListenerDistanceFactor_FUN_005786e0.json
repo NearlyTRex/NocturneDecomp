@@ -32,9 +32,9 @@
   "globals": [
     {
       "addr": "005f4df3",
-      "name": "DAT_005f4df3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f4df3",
+      "type": "float",
+      "value": "0.3048000"
     },
     {
       "addr": "02c81da0",
@@ -139,7 +139,7 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81da0 + 0x2c))(_DAT_02c81da0,distance_in_feet * _DAT_005f4df3,0);",
+      "text": "(**(code **)(*_DAT_02c81da0 + 0x2c))(_DAT_02c81da0,distance_in_feet * 0.3048f,0);",
       "type": "unresolved_funcptr"
     }
   ],

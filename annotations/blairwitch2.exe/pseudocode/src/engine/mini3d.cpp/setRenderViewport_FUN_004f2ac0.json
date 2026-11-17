@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 89
   },
@@ -63,98 +62,98 @@
   "globals": [
     {
       "addr": "005ddae8",
-      "name": "DAT_005ddae8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ddae8",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005ddaec",
-      "name": "DAT_005ddaec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ddaec",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0986c",
-      "name": "DAT_01d0986c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d0986c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09870",
-      "name": "DAT_01d09870",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09870",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09874",
-      "name": "DAT_01d09874",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09874",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09878",
-      "name": "DAT_01d09878",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09878",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d0987c",
-      "name": "DAT_01d0987c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d0987c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09880",
-      "name": "DAT_01d09880",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09880",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09884",
-      "name": "DAT_01d09884",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09884",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09888",
-      "name": "DAT_01d09888",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09888",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d098dc",
-      "name": "DAT_01d098dc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d098dc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d098e0",
-      "name": "DAT_01d098e0",
-      "type": "undefined4",
+      "name": "g_INT_01d098e0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0c398",
-      "name": "DAT_01d0c398",
-      "type": "undefined4",
+      "name": "g_INT_01d0c398",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0d2b4",
-      "name": "DAT_01d0d2b4",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bc74",
-      "name": "DAT_0264bc74",
-      "type": "undefined4",
+      "name": "g_PTR_0264bc74",
+      "type": "void*",
       "value": null
     }
   ],
@@ -242,19 +241,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (((_DAT_01d0d2b4 == 0) && (_DAT_0264bc74 != (code *)0x0)) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_PTR_0264bc74)(left,top,right,bottom,g_FLOAT_01d098dc,g_INT_01d098e0);",
       "type": "unresolved_funcptr"
     }
   ]

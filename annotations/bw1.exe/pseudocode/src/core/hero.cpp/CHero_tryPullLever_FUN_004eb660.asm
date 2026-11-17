@@ -31,8 +31,8 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005936f4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e485d
-;   undefined4 DAT_005e4865
+;   double g_DOUBLE_005e485d = 5
+;   double g_DOUBLE_005e4865 = 3
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -109,7 +109,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eb6f8
     FLD float ptr [ESP + 0x24]          ; 004eb6f9
     FABS                                ; 004eb6fd
-    FCOMP double ptr [0x005e485d]       ; 004eb6ff | DAT_005e485d
+    FCOMP double ptr [0x005e485d]       ; 004eb6ff | g_DOUBLE_005e485d
     FNSTSW AX                           ; 004eb705
     SAHF                                ; 004eb707
     JA 0x004eb7cc                       ; 004eb708
@@ -124,14 +124,14 @@ section .text
     JA 0x004eb7cc                       ; 004eb71f
         ;   XREF to: 004eb7cc (CONDITIONAL_JUMP)  ; LAB_004eb7cc
     FLD double ptr [ESP]                ; 004eb725
-    FCOMP double ptr [0x005e4865]       ; 004eb728 | DAT_005e4865
+    FCOMP double ptr [0x005e4865]       ; 004eb728 | g_DOUBLE_005e4865
     FNSTSW AX                           ; 004eb72e
     SAHF                                ; 004eb730
     JA 0x004eb7cc                       ; 004eb731
         ;   XREF to: 004eb7cc (CONDITIONAL_JUMP)  ; LAB_004eb7cc
     FLD float ptr [ESP + 0x20]          ; 004eb737
     FABS                                ; 004eb73b
-    FCOMP double ptr [0x005e4865]       ; 004eb73d | DAT_005e4865
+    FCOMP double ptr [0x005e4865]       ; 004eb73d | g_DOUBLE_005e4865
     FNSTSW AX                           ; 004eb743
     SAHF                                ; 004eb745
     JA 0x004eb7cc                       ; 004eb746

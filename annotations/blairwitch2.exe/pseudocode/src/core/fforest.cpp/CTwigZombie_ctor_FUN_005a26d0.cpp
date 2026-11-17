@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr)
 
 {
@@ -28,9 +26,9 @@ CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie
   (this_ptr_01->base).idle_motion = 0;
   pcVar5 = (this_ptr_01->base).flinch_motion_name;
   (this_ptr_01->base).walk_motion = 1;
-  fVar2 = _DAT_005ff16c;
+  fVar2 = 15.0f;
   (this_ptr_01->base).run_motion = 6;
-  fVar3 = _DAT_005ff170;
+  fVar3 = 3.0f;
   (this_ptr_01->base).run_distance = 999.0;
   pcVar4 = "flinch";
   (this_ptr_01->base).can_flinch = 1;

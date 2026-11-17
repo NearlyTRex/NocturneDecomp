@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 133,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 6,
+    "pseudocode_lines": 57,
+    "suspect_count": 5,
     "suspect_types": [
       "unaffected_reg",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -76,21 +75,21 @@
   "globals": [
     {
       "addr": "005efcc3",
-      "name": "s_BChasing_005efcc2+1",
-      "type": "undefined4",
+      "name": "s_Chasing_005efcc3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005efccf",
-      "name": "DAT_005efccf",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005efccf",
+      "type": "double",
+      "value": "0.900000000000000"
     },
     {
       "addr": "005fedb4",
-      "name": "DAT_005fedb4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fedb4",
+      "type": "float",
+      "value": "7"
     }
   ],
   "pcode_summary": {
@@ -165,16 +164,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 15,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
@@ -182,7 +173,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 33,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = 5;",
@@ -190,7 +181,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 36,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = 9;",
@@ -198,7 +189,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 39,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,unaff_EDI,1);",

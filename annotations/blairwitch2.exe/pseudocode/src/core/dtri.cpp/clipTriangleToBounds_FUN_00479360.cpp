@@ -12,372 +12,367 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
 
 {
   float fVar1;
-  byte bVar2;
-  uint uVar3;
-  int iVar4;
-  byte bVar5;
-  float *pfVar6;
-  int iVar7;
-  CVector3f *pCVar8;
-  byte bVar9;
-  CVector3f *pCVar10;
+  int iVar2;
+  byte bVar3;
+  uint uVar4;
+  int iVar5;
+  byte bVar6;
+  float *pfVar7;
+  int iVar8;
+  CVector3f *pCVar9;
+  byte bVar10;
+  CVector3f *pCVar11;
   
-  _DAT_01c21e84 = 3;
-  if (triangle_vertices != (CVector3f *)&DAT_01c21e88) {
-    _DAT_01c21e88 = triangle_vertices->x;
-    _DAT_01c21e90 = triangle_vertices->z;
+  g_INT_01c21e84 = 3;
+  if (triangle_vertices != (CVector3f *)&g_FLOAT_01c21e88) {
+    g_FLOAT_01c21e88 = triangle_vertices->x;
+    g_FLOAT_01c21e90 = triangle_vertices->z;
     _DAT_01c21e8c = triangle_vertices->y;
   }
-  if (triangle_vertices + 1 != (CVector3f *)&DAT_01c21e94) {
-    _DAT_01c21e94 = triangle_vertices[1].x;
-    _DAT_01c21e9c = triangle_vertices[1].z;
+  if (triangle_vertices + 1 != (CVector3f *)&g_FLOAT_01c21e94) {
+    g_FLOAT_01c21e94 = triangle_vertices[1].x;
+    g_FLOAT_01c21e9c = triangle_vertices[1].z;
     _DAT_01c21e98 = triangle_vertices[1].y;
   }
-  if (triangle_vertices + 2 != (CVector3f *)&DAT_01c21ea0) {
-    _DAT_01c21ea0 = triangle_vertices[2].x;
-    _DAT_01c21ea8 = triangle_vertices[2].z;
+  if (triangle_vertices + 2 != (CVector3f *)&g_FLOAT_01c21ea0) {
+    g_FLOAT_01c21ea0 = triangle_vertices[2].x;
+    g_FLOAT_01c21ea8 = triangle_vertices[2].z;
     _DAT_01c21ea4 = triangle_vertices[2].y;
   }
-  bVar9 = 0;
-  iVar7 = 0;
-  bVar2 = 0xff;
-  pfVar6 = (float *)&DAT_01c21e88;
+  bVar10 = 0;
+  iVar8 = 0;
+  bVar3 = 0xff;
+  pfVar7 = &g_FLOAT_01c21e88;
   do {
-    bVar5 = bounds_max->x < *pfVar6;
-    if (bounds_max->y < pfVar6[1]) {
-      bVar5 = bVar5 | 2;
+    bVar6 = bounds_max->x < *pfVar7;
+    if (bounds_max->y < pfVar7[1]) {
+      bVar6 = bVar6 | 2;
     }
-    if (bounds_max->z < pfVar6[2]) {
-      bVar5 = bVar5 | 4;
+    if (bounds_max->z < pfVar7[2]) {
+      bVar6 = bVar6 | 4;
     }
-    if (*pfVar6 < bounds_min->x) {
-      bVar5 = bVar5 | 8;
+    if (*pfVar7 < bounds_min->x) {
+      bVar6 = bVar6 | 8;
     }
-    if (pfVar6[1] < bounds_min->y) {
-      bVar5 = bVar5 | 0x10;
+    if (pfVar7[1] < bounds_min->y) {
+      bVar6 = bVar6 | 0x10;
     }
-    if (pfVar6[2] < bounds_min->z) {
-      bVar5 = bVar5 | 0x20;
+    if (pfVar7[2] < bounds_min->z) {
+      bVar6 = bVar6 | 0x20;
     }
-    pfVar6 = pfVar6 + 3;
-    iVar7 = iVar7 + 1;
-    bVar2 = bVar2 & bVar5;
-    bVar9 = bVar9 | bVar5;
-  } while (iVar7 < 3);
-  if (bVar9 == 0) {
-    _DAT_01c2231c = 3;
-    if (triangle_vertices != (CVector3f *)&DAT_01c22320) {
-      _DAT_01c22320 = triangle_vertices->x;
-      _DAT_01c22328 = triangle_vertices->z;
+    pfVar7 = pfVar7 + 3;
+    iVar8 = iVar8 + 1;
+    bVar3 = bVar3 & bVar6;
+    bVar10 = bVar10 | bVar6;
+  } while (iVar8 < 3);
+  if (bVar10 == 0) {
+    g_INT_01c2231c = 3;
+    if (triangle_vertices != (CVector3f *)&g_FLOAT_01c22320) {
+      g_FLOAT_01c22320 = triangle_vertices->x;
+      g_FLOAT_01c22328 = triangle_vertices->z;
       _DAT_01c22324 = triangle_vertices->y;
     }
-    if (triangle_vertices + 1 != (CVector3f *)&DAT_01c2232c) {
-      _DAT_01c2232c = triangle_vertices[1].x;
-      _DAT_01c22334 = triangle_vertices[1].z;
+    if (triangle_vertices + 1 != (CVector3f *)&g_FLOAT_01c2232c) {
+      g_FLOAT_01c2232c = triangle_vertices[1].x;
+      g_FLOAT_01c22334 = triangle_vertices[1].z;
       _DAT_01c22330 = triangle_vertices[1].y;
     }
-    if (triangle_vertices + 2 != (CVector3f *)&DAT_01c22338) {
-      _DAT_01c22338 = triangle_vertices[2].x;
-      _DAT_01c22340 = triangle_vertices[2].z;
+    if (triangle_vertices + 2 != (CVector3f *)&g_FLOAT_01c22338) {
+      g_FLOAT_01c22338 = triangle_vertices[2].x;
+      g_FLOAT_01c22340 = triangle_vertices[2].z;
       _DAT_01c2233c = triangle_vertices[2].y;
     }
     return 1;
   }
-  if (bVar2 == 0) {
+  if (bVar3 == 0) {
     fVar1 = bounds_max->y;
-    iVar7 = 0;
-    pCVar8 = (CVector3f *)&DAT_01c21e88;
-    _DAT_01c21f48 = 0;
-    _DAT_01c2200c = 0;
-    _DAT_01c220d0 = 0;
-    _DAT_01c22194 = 0;
-    _DAT_01c22258 = 0;
-    _DAT_01c2231c = 0;
+    iVar8 = 0;
+    pfVar7 = &g_FLOAT_01c21e88;
+    g_INT_01c21f48 = 0;
+    g_INT_01c2200c = 0;
+    g_INT_01c220d0 = 0;
+    g_INT_01c22194 = 0;
+    g_INT_01c22258 = 0;
+    g_INT_01c2231c = 0;
     do {
-      uVar3 = iVar7 + 1;
-      if (uVar3 == _DAT_01c21e84) {
-        uVar3 = uVar3 ^ _DAT_01c21e84;
+      iVar2 = g_INT_01c21f48;
+      uVar4 = iVar8 + 1;
+      if (uVar4 == g_INT_01c21e84) {
+        uVar4 = uVar4 ^ g_INT_01c21e84;
       }
-      bVar2 = fVar1 < pCVar8->y;
-      if (fVar1 < *(float *)(&DAT_01c21e8c + uVar3 * 0xc)) {
-        bVar2 = bVar2 | 2;
+      bVar3 = fVar1 < ((CVector3f *)pfVar7)->y;
+      if (fVar1 < *(float *)(&DAT_01c21e8c + uVar4 * 0xc)) {
+        bVar3 = bVar3 | 2;
       }
-      switch(bVar2) {
+      switch(bVar3) {
       case 0:
-        iVar4 = _DAT_01c21f48 * 0xc;
-        if ((CVector3f *)(&DAT_01c21f4c + iVar4) != pCVar8) {
-          ((CVector3f *)(&DAT_01c21f4c + iVar4))->x = pCVar8->x;
-          *(float *)(&DAT_01c21f50 + iVar4) = pCVar8->y;
-          *(float *)(&DAT_01c21f54 + iVar4) = pCVar8->z;
+        if (g_CVector3f_ARRAY_01c21f4c + g_INT_01c21f48 != (CVector3f *)pfVar7) {
+          g_CVector3f_ARRAY_01c21f4c[g_INT_01c21f48].x = ((CVector3f *)pfVar7)->x;
+          g_CVector3f_ARRAY_01c21f4c[iVar2].y = ((CVector3f *)pfVar7)->y;
+          g_CVector3f_ARRAY_01c21f4c[iVar2].z = ((CVector3f *)pfVar7)->z;
         }
-        _DAT_01c21f48 = _DAT_01c21f48 + 1;
+        g_INT_01c21f48 = g_INT_01c21f48 + 1;
         break;
       case 1:
         core_dtri_cpp_clipLineToPlane_FUN_00478900
-                  ((CVector3f *)(&DAT_01c21e88 + uVar3 * 0xc),pCVar8,
-                   (CVector3f *)(&DAT_01c21f4c + _DAT_01c21f48 * 0xc),0.0,1.0,0.0,(double)-fVar1);
-        _DAT_01c21f48 = _DAT_01c21f48 + 1;
+                  ((CVector3f *)(&g_FLOAT_01c21e88 + uVar4 * 3),(CVector3f *)pfVar7,
+                   g_CVector3f_ARRAY_01c21f4c + g_INT_01c21f48,0.0,1.0,0.0,(double)-fVar1);
+        g_INT_01c21f48 = g_INT_01c21f48 + 1;
         break;
       case 2:
-        iVar4 = _DAT_01c21f48 * 0xc;
-        if ((CVector3f *)(&DAT_01c21f4c + iVar4) != pCVar8) {
-          ((CVector3f *)(&DAT_01c21f4c + iVar4))->x = pCVar8->x;
-          *(float *)(&DAT_01c21f50 + iVar4) = pCVar8->y;
-          *(float *)(&DAT_01c21f54 + iVar4) = pCVar8->z;
+        if (g_CVector3f_ARRAY_01c21f4c + g_INT_01c21f48 != (CVector3f *)pfVar7) {
+          g_CVector3f_ARRAY_01c21f4c[g_INT_01c21f48].x = ((CVector3f *)pfVar7)->x;
+          g_CVector3f_ARRAY_01c21f4c[iVar2].y = ((CVector3f *)pfVar7)->y;
+          g_CVector3f_ARRAY_01c21f4c[iVar2].z = ((CVector3f *)pfVar7)->z;
         }
-        _DAT_01c21f48 = _DAT_01c21f48 + 1;
+        g_INT_01c21f48 = g_INT_01c21f48 + 1;
         core_dtri_cpp_clipLineToPlane_FUN_00478900
-                  (pCVar8,(CVector3f *)(&DAT_01c21e88 + uVar3 * 0xc),
-                   (CVector3f *)(&DAT_01c21f4c + _DAT_01c21f48 * 0xc),0.0,1.0,0.0,(double)-fVar1);
-        _DAT_01c21f48 = _DAT_01c21f48 + 1;
+                  ((CVector3f *)pfVar7,(CVector3f *)(&g_FLOAT_01c21e88 + uVar4 * 3),
+                   g_CVector3f_ARRAY_01c21f4c + g_INT_01c21f48,0.0,1.0,0.0,(double)-fVar1);
+        g_INT_01c21f48 = g_INT_01c21f48 + 1;
       }
-      iVar7 = iVar7 + 1;
-      pCVar8 = pCVar8 + 1;
-    } while (iVar7 < (int)_DAT_01c21e84);
-    if (2 < (int)_DAT_01c21f48) {
+      iVar8 = iVar8 + 1;
+      pfVar7 = (float *)((int)pfVar7 + 0xc);
+    } while (iVar8 < g_INT_01c21e84);
+    if (2 < g_INT_01c21f48) {
       fVar1 = bounds_min->y;
-      iVar7 = 0;
-      if (0 < (int)_DAT_01c21f48) {
-        pCVar8 = (CVector3f *)&DAT_01c21f4c;
+      iVar8 = 0;
+      if (0 < g_INT_01c21f48) {
+        pCVar9 = g_CVector3f_ARRAY_01c21f4c;
         do {
-          uVar3 = iVar7 + 1;
-          if (uVar3 == _DAT_01c21f48) {
-            uVar3 = uVar3 ^ _DAT_01c21f48;
+          iVar2 = g_INT_01c2200c;
+          uVar4 = iVar8 + 1;
+          if (uVar4 == g_INT_01c21f48) {
+            uVar4 = uVar4 ^ g_INT_01c21f48;
           }
-          bVar2 = pCVar8->y < fVar1;
-          if (*(float *)(&DAT_01c21f50 + uVar3 * 0xc) < fVar1) {
-            bVar2 = bVar2 | 2;
+          bVar3 = pCVar9->y < fVar1;
+          if (g_CVector3f_ARRAY_01c21f4c[uVar4].y < fVar1) {
+            bVar3 = bVar3 | 2;
           }
-          switch(bVar2) {
+          switch(bVar3) {
           case 0:
-            iVar4 = _DAT_01c2200c * 0xc;
-            if ((CVector3f *)(&DAT_01c22010 + iVar4) != pCVar8) {
-              ((CVector3f *)(&DAT_01c22010 + iVar4))->x = pCVar8->x;
-              *(float *)(&DAT_01c22014 + iVar4) = pCVar8->y;
-              *(float *)(&DAT_01c22018 + iVar4) = pCVar8->z;
+            if (g_CVector3f_ARRAY_01c22010 + g_INT_01c2200c != pCVar9) {
+              g_CVector3f_ARRAY_01c22010[g_INT_01c2200c].x = pCVar9->x;
+              g_CVector3f_ARRAY_01c22010[iVar2].y = pCVar9->y;
+              g_CVector3f_ARRAY_01c22010[iVar2].z = pCVar9->z;
             }
-            _DAT_01c2200c = _DAT_01c2200c + 1;
+            g_INT_01c2200c = g_INT_01c2200c + 1;
             break;
           case 1:
             core_dtri_cpp_clipLineToPlane_FUN_00478900
-                      ((CVector3f *)(&DAT_01c21f4c + uVar3 * 0xc),pCVar8,
-                       (CVector3f *)(&DAT_01c22010 + _DAT_01c2200c * 0xc),0.0,-1.0,0.0,(double)fVar1
-                      );
-            _DAT_01c2200c = _DAT_01c2200c + 1;
+                      (g_CVector3f_ARRAY_01c21f4c + uVar4,pCVar9,
+                       g_CVector3f_ARRAY_01c22010 + g_INT_01c2200c,0.0,-1.0,0.0,(double)fVar1);
+            g_INT_01c2200c = g_INT_01c2200c + 1;
             break;
           case 2:
-            iVar4 = _DAT_01c2200c * 0xc;
-            if ((CVector3f *)(&DAT_01c22010 + iVar4) != pCVar8) {
-              ((CVector3f *)(&DAT_01c22010 + iVar4))->x = pCVar8->x;
-              *(float *)(&DAT_01c22014 + iVar4) = pCVar8->y;
-              *(float *)(&DAT_01c22018 + iVar4) = pCVar8->z;
+            if (g_CVector3f_ARRAY_01c22010 + g_INT_01c2200c != pCVar9) {
+              g_CVector3f_ARRAY_01c22010[g_INT_01c2200c].x = pCVar9->x;
+              g_CVector3f_ARRAY_01c22010[iVar2].y = pCVar9->y;
+              g_CVector3f_ARRAY_01c22010[iVar2].z = pCVar9->z;
             }
-            _DAT_01c2200c = _DAT_01c2200c + 1;
+            g_INT_01c2200c = g_INT_01c2200c + 1;
             core_dtri_cpp_clipLineToPlane_FUN_00478900
-                      (pCVar8,(CVector3f *)(&DAT_01c21f4c + uVar3 * 0xc),
-                       (CVector3f *)(&DAT_01c22010 + _DAT_01c2200c * 0xc),0.0,-1.0,0.0,(double)fVar1
-                      );
-            _DAT_01c2200c = _DAT_01c2200c + 1;
+                      (pCVar9,g_CVector3f_ARRAY_01c21f4c + uVar4,
+                       g_CVector3f_ARRAY_01c22010 + g_INT_01c2200c,0.0,-1.0,0.0,(double)fVar1);
+            g_INT_01c2200c = g_INT_01c2200c + 1;
           }
-          iVar7 = iVar7 + 1;
-          pCVar8 = pCVar8 + 1;
-        } while (iVar7 < (int)_DAT_01c21f48);
+          iVar8 = iVar8 + 1;
+          pCVar9 = pCVar9 + 1;
+        } while (iVar8 < g_INT_01c21f48);
       }
-      if (2 < (int)_DAT_01c2200c) {
+      if (2 < g_INT_01c2200c) {
         fVar1 = bounds_max->x;
-        iVar7 = 0;
-        if (0 < (int)_DAT_01c2200c) {
-          pCVar8 = (CVector3f *)&DAT_01c22010;
+        iVar8 = 0;
+        if (0 < g_INT_01c2200c) {
+          pCVar9 = g_CVector3f_ARRAY_01c22010;
           do {
-            uVar3 = iVar7 + 1;
-            if (uVar3 == _DAT_01c2200c) {
-              uVar3 = uVar3 ^ _DAT_01c2200c;
+            iVar2 = g_INT_01c220d0;
+            uVar4 = iVar8 + 1;
+            if (uVar4 == g_INT_01c2200c) {
+              uVar4 = uVar4 ^ g_INT_01c2200c;
             }
-            pCVar10 = (CVector3f *)(&DAT_01c22010 + uVar3 * 0xc);
-            bVar2 = fVar1 < pCVar8->x;
-            if (fVar1 < pCVar10->x) {
-              bVar2 = bVar2 | 2;
+            pCVar11 = g_CVector3f_ARRAY_01c22010 + uVar4;
+            bVar3 = fVar1 < pCVar9->x;
+            if (fVar1 < pCVar11->x) {
+              bVar3 = bVar3 | 2;
             }
-            switch(bVar2) {
+            switch(bVar3) {
             case 0:
-              iVar4 = _DAT_01c220d0 * 0xc;
-              if ((CVector3f *)(&DAT_01c220d4 + iVar4) != pCVar8) {
-                ((CVector3f *)(&DAT_01c220d4 + iVar4))->x = pCVar8->x;
-                *(float *)(&DAT_01c220d8 + iVar4) = pCVar8->y;
-                *(float *)(&DAT_01c220dc + iVar4) = pCVar8->z;
+              if (g_CVector3f_ARRAY_01c220d4 + g_INT_01c220d0 != pCVar9) {
+                g_CVector3f_ARRAY_01c220d4[g_INT_01c220d0].x = pCVar9->x;
+                g_CVector3f_ARRAY_01c220d4[iVar2].y = pCVar9->y;
+                g_CVector3f_ARRAY_01c220d4[iVar2].z = pCVar9->z;
               }
-              _DAT_01c220d0 = _DAT_01c220d0 + 1;
+              g_INT_01c220d0 = g_INT_01c220d0 + 1;
               break;
             case 1:
               core_dtri_cpp_clipLineToPlane_FUN_00478900
-                        (pCVar10,pCVar8,(CVector3f *)(&DAT_01c220d4 + _DAT_01c220d0 * 0xc),1.0,0.0,
-                         0.0,(double)-fVar1);
-              _DAT_01c220d0 = _DAT_01c220d0 + 1;
+                        (pCVar11,pCVar9,g_CVector3f_ARRAY_01c220d4 + g_INT_01c220d0,1.0,0.0,0.0,
+                         (double)-fVar1);
+              g_INT_01c220d0 = g_INT_01c220d0 + 1;
               break;
             case 2:
-              iVar4 = _DAT_01c220d0 * 0xc;
-              if ((CVector3f *)(&DAT_01c220d4 + iVar4) != pCVar8) {
-                ((CVector3f *)(&DAT_01c220d4 + iVar4))->x = pCVar8->x;
-                *(float *)(&DAT_01c220d8 + iVar4) = pCVar8->y;
-                *(float *)(&DAT_01c220dc + iVar4) = pCVar8->z;
+              if (g_CVector3f_ARRAY_01c220d4 + g_INT_01c220d0 != pCVar9) {
+                g_CVector3f_ARRAY_01c220d4[g_INT_01c220d0].x = pCVar9->x;
+                g_CVector3f_ARRAY_01c220d4[iVar2].y = pCVar9->y;
+                g_CVector3f_ARRAY_01c220d4[iVar2].z = pCVar9->z;
               }
-              _DAT_01c220d0 = _DAT_01c220d0 + 1;
+              g_INT_01c220d0 = g_INT_01c220d0 + 1;
               core_dtri_cpp_clipLineToPlane_FUN_00478900
-                        (pCVar8,pCVar10,(CVector3f *)(&DAT_01c220d4 + _DAT_01c220d0 * 0xc),1.0,0.0,
-                         0.0,(double)-fVar1);
-              _DAT_01c220d0 = _DAT_01c220d0 + 1;
+                        (pCVar9,pCVar11,g_CVector3f_ARRAY_01c220d4 + g_INT_01c220d0,1.0,0.0,0.0,
+                         (double)-fVar1);
+              g_INT_01c220d0 = g_INT_01c220d0 + 1;
             }
-            iVar7 = iVar7 + 1;
-            pCVar8 = pCVar8 + 1;
-          } while (iVar7 < (int)_DAT_01c2200c);
+            iVar8 = iVar8 + 1;
+            pCVar9 = pCVar9 + 1;
+          } while (iVar8 < g_INT_01c2200c);
         }
-        if (2 < (int)_DAT_01c220d0) {
+        if (2 < g_INT_01c220d0) {
           fVar1 = bounds_min->x;
-          iVar7 = 0;
-          if (0 < (int)_DAT_01c220d0) {
-            pCVar8 = (CVector3f *)&DAT_01c220d4;
+          iVar8 = 0;
+          if (0 < g_INT_01c220d0) {
+            pCVar9 = g_CVector3f_ARRAY_01c220d4;
             do {
-              uVar3 = iVar7 + 1;
-              if (uVar3 == _DAT_01c220d0) {
-                uVar3 = uVar3 ^ _DAT_01c220d0;
+              iVar2 = g_INT_01c22194;
+              uVar4 = iVar8 + 1;
+              if (uVar4 == g_INT_01c220d0) {
+                uVar4 = uVar4 ^ g_INT_01c220d0;
               }
-              pCVar10 = (CVector3f *)(&DAT_01c220d4 + uVar3 * 0xc);
-              bVar2 = pCVar8->x < fVar1;
-              if (pCVar10->x < fVar1) {
-                bVar2 = bVar2 | 2;
+              pCVar11 = g_CVector3f_ARRAY_01c220d4 + uVar4;
+              bVar3 = pCVar9->x < fVar1;
+              if (pCVar11->x < fVar1) {
+                bVar3 = bVar3 | 2;
               }
-              switch(bVar2) {
+              switch(bVar3) {
               case 0:
-                iVar4 = _DAT_01c22194 * 0xc;
-                if ((CVector3f *)(&DAT_01c22198 + iVar4) != pCVar8) {
-                  ((CVector3f *)(&DAT_01c22198 + iVar4))->x = pCVar8->x;
-                  *(float *)(&DAT_01c2219c + iVar4) = pCVar8->y;
-                  *(float *)(&DAT_01c221a0 + iVar4) = pCVar8->z;
+                if (g_CVector3f_ARRAY_01c22198 + g_INT_01c22194 != pCVar9) {
+                  g_CVector3f_ARRAY_01c22198[g_INT_01c22194].x = pCVar9->x;
+                  g_CVector3f_ARRAY_01c22198[iVar2].y = pCVar9->y;
+                  g_CVector3f_ARRAY_01c22198[iVar2].z = pCVar9->z;
                 }
-                _DAT_01c22194 = _DAT_01c22194 + 1;
+                g_INT_01c22194 = g_INT_01c22194 + 1;
                 break;
               case 1:
                 core_dtri_cpp_clipLineToPlane_FUN_00478900
-                          (pCVar10,pCVar8,(CVector3f *)(&DAT_01c22198 + _DAT_01c22194 * 0xc),-1.0,
-                           0.0,0.0,(double)fVar1);
-                _DAT_01c22194 = _DAT_01c22194 + 1;
+                          (pCVar11,pCVar9,g_CVector3f_ARRAY_01c22198 + g_INT_01c22194,-1.0,0.0,0.0,
+                           (double)fVar1);
+                g_INT_01c22194 = g_INT_01c22194 + 1;
                 break;
               case 2:
-                iVar4 = _DAT_01c22194 * 0xc;
-                if ((CVector3f *)(&DAT_01c22198 + iVar4) != pCVar8) {
-                  ((CVector3f *)(&DAT_01c22198 + iVar4))->x = pCVar8->x;
-                  *(float *)(&DAT_01c2219c + iVar4) = pCVar8->y;
-                  *(float *)(&DAT_01c221a0 + iVar4) = pCVar8->z;
+                if (g_CVector3f_ARRAY_01c22198 + g_INT_01c22194 != pCVar9) {
+                  g_CVector3f_ARRAY_01c22198[g_INT_01c22194].x = pCVar9->x;
+                  g_CVector3f_ARRAY_01c22198[iVar2].y = pCVar9->y;
+                  g_CVector3f_ARRAY_01c22198[iVar2].z = pCVar9->z;
                 }
-                _DAT_01c22194 = _DAT_01c22194 + 1;
+                g_INT_01c22194 = g_INT_01c22194 + 1;
                 core_dtri_cpp_clipLineToPlane_FUN_00478900
-                          (pCVar8,pCVar10,(CVector3f *)(&DAT_01c22198 + _DAT_01c22194 * 0xc),-1.0,
-                           0.0,0.0,(double)fVar1);
-                _DAT_01c22194 = _DAT_01c22194 + 1;
+                          (pCVar9,pCVar11,g_CVector3f_ARRAY_01c22198 + g_INT_01c22194,-1.0,0.0,0.0,
+                           (double)fVar1);
+                g_INT_01c22194 = g_INT_01c22194 + 1;
               }
-              iVar7 = iVar7 + 1;
-              pCVar8 = pCVar8 + 1;
-            } while (iVar7 < (int)_DAT_01c220d0);
+              iVar8 = iVar8 + 1;
+              pCVar9 = pCVar9 + 1;
+            } while (iVar8 < g_INT_01c220d0);
           }
-          if (2 < (int)_DAT_01c22194) {
+          if (2 < g_INT_01c22194) {
             fVar1 = bounds_min->z;
-            iVar7 = 0;
-            if (0 < (int)_DAT_01c22194) {
-              pCVar8 = (CVector3f *)&DAT_01c22198;
+            iVar8 = 0;
+            if (0 < g_INT_01c22194) {
+              pCVar9 = g_CVector3f_ARRAY_01c22198;
               do {
-                uVar3 = iVar7 + 1;
-                if (uVar3 == _DAT_01c22194) {
-                  uVar3 = uVar3 ^ _DAT_01c22194;
+                iVar2 = g_INT_01c22258;
+                uVar4 = iVar8 + 1;
+                if (uVar4 == g_INT_01c22194) {
+                  uVar4 = uVar4 ^ g_INT_01c22194;
                 }
-                bVar2 = pCVar8->z < fVar1;
-                if (*(float *)(&DAT_01c221a0 + uVar3 * 0xc) < fVar1) {
-                  bVar2 = bVar2 | 2;
+                bVar3 = pCVar9->z < fVar1;
+                if (g_CVector3f_ARRAY_01c22198[uVar4].z < fVar1) {
+                  bVar3 = bVar3 | 2;
                 }
-                switch(bVar2) {
+                switch(bVar3) {
                 case 0:
-                  iVar4 = _DAT_01c22258 * 0xc;
-                  if ((CVector3f *)(&DAT_01c2225c + iVar4) != pCVar8) {
-                    ((CVector3f *)(&DAT_01c2225c + iVar4))->x = pCVar8->x;
-                    *(float *)(&DAT_01c22260 + iVar4) = pCVar8->y;
-                    *(float *)(&DAT_01c22264 + iVar4) = pCVar8->z;
+                  if (g_CVector3f_ARRAY_01c2225c + g_INT_01c22258 != pCVar9) {
+                    g_CVector3f_ARRAY_01c2225c[g_INT_01c22258].x = pCVar9->x;
+                    g_CVector3f_ARRAY_01c2225c[iVar2].y = pCVar9->y;
+                    g_CVector3f_ARRAY_01c2225c[iVar2].z = pCVar9->z;
                   }
-                  _DAT_01c22258 = _DAT_01c22258 + 1;
+                  g_INT_01c22258 = g_INT_01c22258 + 1;
                   break;
                 case 1:
                   core_dtri_cpp_clipLineToPlane_FUN_00478900
-                            ((CVector3f *)(&DAT_01c22198 + uVar3 * 0xc),pCVar8,
-                             (CVector3f *)(&DAT_01c2225c + _DAT_01c22258 * 0xc),0.0,0.0,-1.0,
-                             (double)fVar1);
-                  _DAT_01c22258 = _DAT_01c22258 + 1;
+                            (g_CVector3f_ARRAY_01c22198 + uVar4,pCVar9,
+                             g_CVector3f_ARRAY_01c2225c + g_INT_01c22258,0.0,0.0,-1.0,(double)fVar1)
+                  ;
+                  g_INT_01c22258 = g_INT_01c22258 + 1;
                   break;
                 case 2:
-                  iVar4 = _DAT_01c22258 * 0xc;
-                  if ((CVector3f *)(&DAT_01c2225c + iVar4) != pCVar8) {
-                    ((CVector3f *)(&DAT_01c2225c + iVar4))->x = pCVar8->x;
-                    *(float *)(&DAT_01c22260 + iVar4) = pCVar8->y;
-                    *(float *)(&DAT_01c22264 + iVar4) = pCVar8->z;
+                  if (g_CVector3f_ARRAY_01c2225c + g_INT_01c22258 != pCVar9) {
+                    g_CVector3f_ARRAY_01c2225c[g_INT_01c22258].x = pCVar9->x;
+                    g_CVector3f_ARRAY_01c2225c[iVar2].y = pCVar9->y;
+                    g_CVector3f_ARRAY_01c2225c[iVar2].z = pCVar9->z;
                   }
-                  _DAT_01c22258 = _DAT_01c22258 + 1;
+                  g_INT_01c22258 = g_INT_01c22258 + 1;
                   core_dtri_cpp_clipLineToPlane_FUN_00478900
-                            (pCVar8,(CVector3f *)(&DAT_01c22198 + uVar3 * 0xc),
-                             (CVector3f *)(&DAT_01c2225c + _DAT_01c22258 * 0xc),0.0,0.0,-1.0,
-                             (double)fVar1);
-                  _DAT_01c22258 = _DAT_01c22258 + 1;
+                            (pCVar9,g_CVector3f_ARRAY_01c22198 + uVar4,
+                             g_CVector3f_ARRAY_01c2225c + g_INT_01c22258,0.0,0.0,-1.0,(double)fVar1)
+                  ;
+                  g_INT_01c22258 = g_INT_01c22258 + 1;
                 }
-                iVar7 = iVar7 + 1;
-                pCVar8 = pCVar8 + 1;
-              } while (iVar7 < (int)_DAT_01c22194);
+                iVar8 = iVar8 + 1;
+                pCVar9 = pCVar9 + 1;
+              } while (iVar8 < g_INT_01c22194);
             }
-            if (2 < (int)_DAT_01c22258) {
+            if (2 < g_INT_01c22258) {
               fVar1 = bounds_max->z;
-              iVar7 = 0;
-              if (0 < (int)_DAT_01c22258) {
-                pCVar8 = (CVector3f *)&DAT_01c2225c;
+              iVar8 = 0;
+              if (0 < g_INT_01c22258) {
+                pCVar9 = g_CVector3f_ARRAY_01c2225c;
                 do {
-                  uVar3 = iVar7 + 1;
-                  if (uVar3 == _DAT_01c22258) {
-                    uVar3 = uVar3 ^ _DAT_01c22258;
+                  iVar2 = g_INT_01c2231c;
+                  uVar4 = iVar8 + 1;
+                  if (uVar4 == g_INT_01c22258) {
+                    uVar4 = uVar4 ^ g_INT_01c22258;
                   }
-                  bVar2 = fVar1 < pCVar8->z;
-                  if (fVar1 < *(float *)(&DAT_01c22264 + uVar3 * 0xc)) {
-                    bVar2 = bVar2 | 2;
+                  bVar3 = fVar1 < pCVar9->z;
+                  if (fVar1 < g_CVector3f_ARRAY_01c2225c[uVar4].z) {
+                    bVar3 = bVar3 | 2;
                   }
-                  switch(bVar2) {
+                  switch(bVar3) {
                   case 0:
-                    iVar4 = _DAT_01c2231c * 0xc;
-                    if ((CVector3f *)(&DAT_01c22320 + iVar4) != pCVar8) {
-                      ((CVector3f *)(&DAT_01c22320 + iVar4))->x = pCVar8->x;
-                      *(float *)(&DAT_01c22324 + iVar4) = pCVar8->y;
-                      *(float *)(&DAT_01c22328 + iVar4) = pCVar8->z;
+                    iVar5 = g_INT_01c2231c * 0xc;
+                    if ((CVector3f *)(&g_FLOAT_01c22320 + g_INT_01c2231c * 3) != pCVar9) {
+                      ((CVector3f *)(&g_FLOAT_01c22320 + g_INT_01c2231c * 3))->x = pCVar9->x;
+                      *(float *)(&DAT_01c22324 + iVar5) = pCVar9->y;
+                      (&g_FLOAT_01c22328)[iVar2 * 3] = pCVar9->z;
                     }
-                    _DAT_01c2231c = _DAT_01c2231c + 1;
+                    g_INT_01c2231c = g_INT_01c2231c + 1;
                     break;
                   case 1:
                     core_dtri_cpp_clipLineToPlane_FUN_00478900
-                              ((CVector3f *)(&DAT_01c2225c + uVar3 * 0xc),pCVar8,
-                               (CVector3f *)(&DAT_01c22320 + _DAT_01c2231c * 0xc),0.0,0.0,-1.0,
+                              (g_CVector3f_ARRAY_01c2225c + uVar4,pCVar9,
+                               (CVector3f *)(&g_FLOAT_01c22320 + g_INT_01c2231c * 3),0.0,0.0,-1.0,
                                (double)fVar1);
-                    _DAT_01c2231c = _DAT_01c2231c + 1;
+                    g_INT_01c2231c = g_INT_01c2231c + 1;
                     break;
                   case 2:
-                    iVar4 = _DAT_01c2231c * 0xc;
-                    if ((CVector3f *)(&DAT_01c22320 + iVar4) != pCVar8) {
-                      ((CVector3f *)(&DAT_01c22320 + iVar4))->x = pCVar8->x;
-                      *(float *)(&DAT_01c22324 + iVar4) = pCVar8->y;
-                      *(float *)(&DAT_01c22328 + iVar4) = pCVar8->z;
+                    iVar5 = g_INT_01c2231c * 0xc;
+                    if ((CVector3f *)(&g_FLOAT_01c22320 + g_INT_01c2231c * 3) != pCVar9) {
+                      ((CVector3f *)(&g_FLOAT_01c22320 + g_INT_01c2231c * 3))->x = pCVar9->x;
+                      *(float *)(&DAT_01c22324 + iVar5) = pCVar9->y;
+                      (&g_FLOAT_01c22328)[iVar2 * 3] = pCVar9->z;
                     }
-                    _DAT_01c2231c = _DAT_01c2231c + 1;
+                    g_INT_01c2231c = g_INT_01c2231c + 1;
                     core_dtri_cpp_clipLineToPlane_FUN_00478900
-                              (pCVar8,(CVector3f *)(&DAT_01c2225c + uVar3 * 0xc),
-                               (CVector3f *)(&DAT_01c22320 + _DAT_01c2231c * 0xc),0.0,0.0,-1.0,
+                              (pCVar9,g_CVector3f_ARRAY_01c2225c + uVar4,
+                               (CVector3f *)(&g_FLOAT_01c22320 + g_INT_01c2231c * 3),0.0,0.0,-1.0,
                                (double)fVar1);
-                    _DAT_01c2231c = _DAT_01c2231c + 1;
+                    g_INT_01c2231c = g_INT_01c2231c + 1;
                   }
-                  iVar7 = iVar7 + 1;
-                  pCVar8 = pCVar8 + 1;
-                } while (iVar7 < (int)_DAT_01c22258);
+                  iVar8 = iVar8 + 1;
+                  pCVar9 = pCVar9 + 1;
+                } while (iVar8 < g_INT_01c22258);
               }
-              if (2 < _DAT_01c2231c) {
+              if (2 < g_INT_01c2231c) {
                 return 1;
               }
             }

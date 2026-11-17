@@ -2,20 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 352,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 152,
-    "suspect_count": 18,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 150,
+    "suspect_count": 12,
     "suspect_types": [
-      "raw_address_constant",
-      "undefined_data",
+      "signed_shift_global_idiom",
+      "stack_ref",
+      "unknown_field",
       "unresolved_funcptr",
+      "warning_max_restarts",
       "warning_overlapping_globals"
     ],
-    "total_lines": 545
+    "total_lines": 543
   },
   "cross_references": [],
   "function": {
@@ -118,20 +120,20 @@
     },
     {
       "addr": "02c81d94",
-      "name": "DAT_02c81d94",
-      "type": "undefined4",
+      "name": "g_IDirectSound_PTR_02c81d94",
+      "type": "IDirectSound*",
       "value": null
     },
     {
       "addr": "02c81d98",
-      "name": "DAT_02c81d98",
-      "type": "undefined4",
+      "name": "g_IDirectSoundBuffer_PTR_02c81d98",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02c81d9c",
-      "name": "DAT_02c81d9c",
-      "type": "undefined4",
+      "name": "g_IDirectSoundBuffer_PTR_02c81d9c",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
@@ -142,38 +144,38 @@
     },
     {
       "addr": "02c81da8",
-      "name": "DAT_02c81da8",
-      "type": "undefined4",
+      "name": "g_INT_02c81da8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81dac",
-      "name": "DAT_02c81dac",
-      "type": "undefined4",
+      "name": "g_INT_02c81dac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81db0",
-      "name": "DAT_02c81db0",
-      "type": "undefined4",
+      "name": "g_INT_02c81db0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81db4",
-      "name": "DAT_02c81db4",
-      "type": "undefined4",
+      "name": "g_INT_02c81db4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81db8",
-      "name": "DAT_02c81db8",
-      "type": "undefined4",
+      "name": "g_INT_02c81db8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81dbc",
-      "name": "DAT_02c81dbc",
-      "type": "undefined4",
+      "name": "g_INT_02c81dbc",
+      "type": "int",
       "value": null
     }
   ],
@@ -309,51 +311,35 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81da4 + 8))(_DAT_02c81da4);",
-      "type": "unresolved_funcptr"
+      "description": "Decompiler iteration limit exceeded",
+      "line": 3,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*_DAT_02c81d98 + 0x38))(_DAT_02c81d98,&uStack_48);",
+      "text": "(**(code **)(*_DAT_02c81da4 + 8))();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*_DAT_02c81d98 + 0x14))(_DAT_02c81d98,&uStack_48,0x12,0);",
-      "type": "unresolved_funcptr"
+      "description": "Unknown/mangled field access",
+      "line": 33,
+      "match": "._4_2_",
+      "severity": "mild",
+      "text": "auStack_4c._4_2_ = 1;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81da4 + 8))(_DAT_02c81da4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 74,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_6c,&uStack_20,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 76,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)*piStack_30)(piStack_30,&g_IID_IDirectSound3DBuffer,&piStack_2c);",
+      "text": "(**(code **)(*_DAT_02c81da4 + 8))();",
       "type": "unresolved_funcptr"
     },
     {
@@ -361,88 +347,56 @@
       "line": 79,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
+      "text": "(**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 84,
+      "line": 85,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)*piStack_2c)(piStack_2c,&g_IID_IKsPropertySet,&DAT_02c81da4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_02c81da4",
-      "severity": "mild",
-      "text": "(**(code **)*piStack_2c)(piStack_2c,&g_IID_IKsPropertySet,&DAT_02c81da4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 86,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
+      "text": "(**(code **)(*piStack_1c + 8))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 90,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*piStack_2c + 8))(piStack_2c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 102,
+      "line": 97,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c81da4 + 0x10))",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 127,
-      "match": "code *",
+      "description": "Direct stack address reference",
+      "line": 133,
+      "match": "&stack0xfffff92c",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81d9c + 8))(_DAT_02c81d9c,uVar3);",
-      "type": "unresolved_funcptr"
+      "text": "_sprintf(&stack0xfffff92c,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 130,
-      "match": "code *",
+      "description": "Direct stack address reference",
+      "line": 134,
+      "match": "&stack0xfffff92c",
       "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_a4,&DAT_02c81d9c,0);",
-      "type": "unresolved_funcptr"
+      "text": "sound_sndmain_cpp_logSoundError_FUN_005773f0(&stack0xfffff92c);",
+      "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_02c81d9c",
-      "severity": "mild",
-      "text": "uVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_a4,&DAT_02c81d9c,0);",
-      "type": "undefined_data"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 113,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_INT_02c81da8 + (g_INT_02c81da8 >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 152,
-      "match": "code *",
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 114,
+      "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81d9c + 8))(_DAT_02c81d9c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Raw hex address 0x578279 assigned to bare local `uVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 112,
-      "match": "0x578279",
-      "severity": "moderate",
-      "text": "uVar3 = 0x578279;",
-      "type": "raw_address_constant"
+      "text": "(uint)((g_INT_02c81da8 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c81db0;",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "vtable_info": {

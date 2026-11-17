@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Death_005f0693
 ;   TerminatedCString s_Animation_005f0699
-;   undefined4 DAT_005f06a6
-;   undefined4 DAT_005f06ae
-;   undefined4 DAT_005f06b6
-;   undefined4 DAT_0265370c
-;   undefined4 DAT_02653710
-;   undefined4 DAT_02653714
+;   float g_FLOAT_005f06a6 = 0.5
+;   double g_DOUBLE_005f06ae = 10
+;   double g_DOUBLE_005f06b6 = 0.5
+;   CVector3f g_CVector3f_0265370c
+;   undefined4 g_CVector3f_0265370c.y
+;   undefined4 g_CVector3f_0265370c.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -125,7 +125,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a630c
     MOVSD ES:EDI,ESI                    ; 005a630d
     MOVSD ES:EDI,ESI                    ; 005a630e
-    FLD float ptr [0x005f06a6]          ; 005a630f | DAT_005f06a6
+    FLD float ptr [0x005f06a6]          ; 005a630f | g_FLOAT_005f06a6
     FLD float ptr [EBP + -0x66]         ; 005a6315
     FMUL ST1                            ; 005a6318
     FLD float ptr [EBP + -0x62]         ; 005a631a
@@ -408,7 +408,7 @@ section .text
     FXCH                                ; 005a6629
     FSIN                                ; 005a662b
     FXCH                                ; 005a662d
-    FLD double ptr [0x005f06ae]         ; 005a662f | DAT_005f06ae
+    FLD double ptr [0x005f06ae]         ; 005a662f | g_DOUBLE_005f06ae
     FXCH                                ; 005a6635
     FMUL ST1                            ; 005a6637
     ADD ESP,0x8                         ; 005a6639
@@ -428,7 +428,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 005a665f
     ADD ESP,0x8                         ; 005a6662
     FLD float ptr [EBP + 0x76]          ; 005a6665
-    FCOMP double ptr [0x005f06b6]       ; 005a6668 | DAT_005f06b6
+    FCOMP double ptr [0x005f06b6]       ; 005a6668 | g_DOUBLE_005f06b6
     FNSTSW AX                           ; 005a666e
     SAHF                                ; 005a6670
     JA 0x005a66f1                       ; 005a6671
@@ -437,11 +437,11 @@ section .text
     CMP EAX,0x265370c                   ; 005a667a
     JZ 0x005a6699                       ; 005a667f
         ;   XREF to: 005a6699 (CONDITIONAL_JUMP)  ; LAB_005a6699
-    MOV EAX,[0x0265370c]                ; 005a6681 | DAT_0265370c
+    MOV EAX,[0x0265370c]                ; 005a6681 | g_CVector3f_0265370c
     MOV dword ptr [EBP + 0x42],EAX      ; 005a6686
-    MOV EAX,[0x02653710]                ; 005a6689 | DAT_02653710
+    MOV EAX,[0x02653710]                ; 005a6689 | g_CVector3f_0265370c.y
     MOV dword ptr [EBP + 0x46],EAX      ; 005a668e
-    MOV EAX,[0x02653714]                ; 005a6691 | DAT_02653714
+    MOV EAX,[0x02653714]                ; 005a6691 | g_CVector3f_0265370c.z
     MOV dword ptr [EBP + 0x4a],EAX      ; 005a6696
     MOV EAX,0x3fc00000                  ; 005a6699
         ;   Label: LAB_005a6699

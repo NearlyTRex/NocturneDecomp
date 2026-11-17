@@ -8,8 +8,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370 at 0046b3ff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c6b5d4
+;   void*[1200] g_ARRAY_PTR_01c5faec
+;   undefined4 g_UINT_ARRAY_01c6b5d0[1]
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     SHR EAX,0x10                        ; 0046fa03
         ;   Label: LAB_0046fa03
     SHR ECX,0x10                        ; 0046fa06
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c5faec] ; 0046fa09 | DAT_01c5faec
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c5faec] ; 0046fa09 | g_ARRAY_PTR_01c5faec
     SUB ECX,EAX                         ; 0046fa10
     JLE 0x0046fa45                      ; 0046fa12
         ;   XREF to: 0046fa45 (CONDITIONAL_JUMP)  ; LAB_0046fa45
@@ -36,7 +36,7 @@ section .text
     ADD EBX,EAX                         ; 0046fa16
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046fa18
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046fa1b
-    IMUL dword ptr [ECX*0x4 + 0x1c6b5d4] ; 0046fa1e | DAT_01c6b5d4
+    IMUL dword ptr [ECX*0x4 + 0x1c6b5d4] ; 0046fa1e | g_UINT_ARRAY_01c6b5d0[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046fa25
     MOV EAX,ESI                         ; 0046fa28
         ;   Label: LAB_0046fa28

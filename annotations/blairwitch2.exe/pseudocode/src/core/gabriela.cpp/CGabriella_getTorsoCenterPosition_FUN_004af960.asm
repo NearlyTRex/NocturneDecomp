@@ -28,9 +28,9 @@
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add66
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7033
-;   undefined4 DAT_01cb06b8
-;   undefined4 DAT_01cb06bc
+;   float g_FLOAT_005d7033 = 0.5
+;   undefined4 g_INT_ARRAY_01cb0678[16]
+;   undefined4 g_INT_ARRAY_01cb0678[17]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 004af962
     SUB ESP,0x54                        ; 004af963
     MOV EBX,ESI                         ; 004af966
-    MOV EDX,dword ptr [0x01cb06bc]      ; 004af968 | DAT_01cb06bc
+    MOV EDX,dword ptr [0x01cb06bc]      ; 004af968 | g_INT_ARRAY_01cb0678[17]
     MOV EBP,dword ptr [ESP + 0x64]      ; 004af96e
     PUSH EDX                            ; 004af972
     ADD EBP,0x2b4                       ; 004af973
@@ -55,7 +55,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 004af982
         ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004af987
-    MOV ECX,dword ptr [0x01cb06b8]      ; 004af98a | DAT_01cb06b8
+    MOV ECX,dword ptr [0x01cb06b8]      ; 004af98a | g_INT_ARRAY_01cb0678[16]
     LEA ESI,[ESP + 0x18]                ; 004af990
     PUSH ECX                            ; 004af994
     MOVSD ES:EDI,ESI                    ; 004af995
@@ -90,7 +90,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004af9e5
     MOVSD ES:EDI,ESI                    ; 004af9e6
     MOVSD ES:EDI,ESI                    ; 004af9e7
-    FLD float ptr [0x005d7033]          ; 004af9e8 | DAT_005d7033
+    FLD float ptr [0x005d7033]          ; 004af9e8 | g_FLOAT_005d7033
     FLD float ptr [ESP + 0x3c]          ; 004af9ee
     FMUL ST1                            ; 004af9f2
     FLD float ptr [ESP + 0x40]          ; 004af9f4

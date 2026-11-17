@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_00482150(CPickList *this_ptr,char *text)
 
 {
@@ -28,8 +26,8 @@ void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_00482150(CPickList
     pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
   if (99 < ~uVar2 - 1) {
-    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-    _DAT_01d046a4 = 0xe3a;
+    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+    g_INT_01d046a4 = 0xe3a;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CPickList::setOkButtonText - too long!");
   }
   pcVar3 = this_ptr->ok_button_text;

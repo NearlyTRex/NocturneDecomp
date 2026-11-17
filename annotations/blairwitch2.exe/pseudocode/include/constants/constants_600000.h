@@ -3,14 +3,8 @@
 #pragma once
 
 // Dependencies
+#include <math.h>
 #include "system/basetypes.h"
-#include "globals.h"
-#include "constants.h"
-#include "prototypes/prototypes_400000.h"
-#include "prototypes/prototypes_410000.h"
-#include "prototypes/prototypes_4D0000.h"
-#include "prototypes/prototypes_570000.h"
-#include "prototypes/prototypes_5B0000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -36,7 +30,6 @@ static TerminatedCString s_CFlame_006097c4 = "$CFlame$$";
 static TerminatedCString s_CEnemy_006097d4 = "$CEnemy$$";
 static TerminatedCString s_CArmour_006097e4 = "$CArmour$$";
 static TerminatedCString s_CBackgroundActor_006097f8 = "$CBackgroundActor$$";
-static TerminatedCString s_BLUEGLOW_RAW_00609818 = "BLUEGLOW.RAW";
 static TerminatedCString s_CBaron_00609830 = "$CBaron$$";
 static TerminatedCString s_CBaronWeapon_00609840 = "$CBaronWeapon$$";
 static TerminatedCString s_CBarrier_00609858 = "$CBarrier$$";
@@ -59,11 +52,7 @@ static TerminatedCString s_CBugs_006099bc = "$CBugs$$";
 static TerminatedCString s_CKeyFramedModelInstance_006099cc = "$CKeyFramedModelInstance$$";
 static TerminatedCString s_SBug_006099ec = "$SBug$$";
 static TerminatedCString s_CCameraView_006099f8 = "$CCameraView$$";
-static TerminatedCString s_BOLT1_RAW_00609a18 = "BOLT1.RAW";
-static TerminatedCString s_BOLT2_RAW_00609a30 = "BOLT2.RAW";
 static TerminatedCString s_noCollision_00609ac0 = "noCollision";
-static TerminatedCString s_CHAR2_RAW_00609ad4 = "CHAR2.RAW";
-static TerminatedCString s_BLUSPARK_RAW_00609aec = "BLUSPARK.RAW";
 static TerminatedCString s_CCharacter_00609b04 = "$CCharacter$$";
 static TerminatedCString s_SFire_00609b24 = "$SFire$$";
 static TerminatedCString s_s_0123456789ABCDEFGHJKLM_00609b40 = "!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
@@ -85,14 +74,11 @@ static TerminatedCString s_CConveyor_00609f34 = "$CConveyor$$";
 static TerminatedCString s_CZombieCow_00609f4c = "$CZombieCow$$";
 static TerminatedCString s_CCrate_00609f64 = "$CCrate$$";
 static TerminatedCString s_CCrossbow_00609f78 = "$CCrossbow$$";
-static TerminatedCString s_BACKGND_RAW_00609ff8 = "BACKGND.RAW";
+static TerminatedCString s_EFD_0060a00c = "EFD";
 static TerminatedCString s_CDemonCamera_0060a014 = "$CDemonCamera$$";
 static TerminatedCString s_CActorDestination_0060a02c = "$CActorDestination$$";
 static TerminatedCString s_CFilterFX_0060a0c0 = "$CFilterFX$$";
 static TerminatedCString s_CFilterCache_0060a0d4 = "$CFilterCache$$";
-static TerminatedCString s_headlite_raw_0060a0ec = "headlite.raw";
-static TerminatedCString s_LITEFUZZ_RAW_0060afd0 = "LITEFUZZ.RAW";
-static TerminatedCString s_HEADLITE_RAW_0060afe8 = "HEADLITE.RAW";
 static TerminatedCString s_SUNCRAM_RAW_0060b090 = "SUNCRAM.RAW";
 static TerminatedCString s_SUNCRAM_RAW_0060b150 = "SUNCRAM.RAW";
 static TerminatedCString s_SUNCRAM_RAW_0060b180 = "SUNCRAM.RAW";
@@ -104,119 +90,59 @@ static TerminatedCString s_CDoor_0060b21c = "$CDoor$$";
 static TerminatedCString s_CFileFinder_0060b230 = "$CFileFinder$$";
 static TerminatedCString s_CDraculaBride_0060b24c = "$CDraculaBride$$";
 static TerminatedCString s_SFreaky_0060b264 = "$SFreaky$$";
+static TerminatedCString s_A_A_0060b278 = "A+A";
 static TerminatedCString s_CDrip_0060d1d0 = "$CDrip$$";
 static TerminatedCString s_CDrone_0060d1e4 = "$CDrone$$";
 
-// undefined1* constants
-static undefined1* DAT_006012A0 = (undefined1*)core_chain_cpp_CChain_getBoundingBox_FUN_005b5ca0;
-static undefined1* DAT_006012A4 = (undefined1*)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c990;
-static undefined1* DAT_006012A8 = (undefined1*)core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40;
-static undefined1* DAT_006012AC = (undefined1*)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60;
-static undefined1* DAT_006012B0 = (undefined1*)core_actor_cpp_CDemonActor_playSound_FUN_00408e50;
-static undefined1* DAT_006012B4 = (undefined1*)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408e70;
-static undefined1* DAT_006012B8 = (undefined1*)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408e90;
-static undefined1* DAT_006012BC = (undefined1*)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0;
-static undefined1* DAT_006012C0 = (undefined1*)core_chain_cpp_CChain_getCollisionType_FUN_005b5f40;
-static undefined1* DAT_006012C4 = (undefined1*)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30;
-static undefined1* DAT_0060132C = (undefined1*)core_actor_cpp_CDemonActor_spawnFlies_FUN_00409db0;
-static undefined1* DAT_00601330 = (undefined1*)core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408f00;
-static undefined1* DAT_00601334 = (undefined1*)core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408f90;
-static undefined1* DAT_00601338 = (undefined1*)core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830;
-static undefined1* DAT_0060133C = (undefined1*)core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408b90;
-static undefined1* DAT_00601340 = (undefined1*)core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0;
-static undefined1* DAT_00601344 = (undefined1*)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0;
-static undefined1* DAT_0060134C = (undefined1*)core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409df0;
-static undefined1* DAT_00601350 = (undefined1*)core_chain_cpp_CChain_getActorType_FUN_005b4710;
-static undefined1* DAT_00601354 = (undefined1*)core_chain_cpp_CChain_dtor_FUN_005b5f50;
-static undefined1* DAT_00601358 = (undefined1*)core_chain_cpp_CChain_archive_FUN_005b5e10;
-static undefined1* DAT_006093C8 = (undefined1*)engine_3d_c_processCameraRelativePoint_FUN_00403830;
-static undefined1* DAT_006093CC = (undefined1*)engine_3d_c_transformAndBufferVertices_FUN_00403890;
-static undefined1* DAT_006093D0 = (undefined1*)engine_3d_c_processVertexLighting_FUN_00403a40;
-static undefined1* DAT_006093D4 = (undefined1*)engine_3d_c_processTextureCoordinates_FUN_00403aa0;
-static undefined1* DAT_006093D8 = (undefined1*)engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403af0;
-static undefined1* DAT_006093DC = (undefined1*)engine_3d_c_renderPolygonFogColorOp6_FUN_00403bc0;
-static undefined1* DAT_006093E0 = (undefined1*)engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403ce0;
-static undefined1* DAT_006093E4 = (undefined1*)engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00403d80;
-static undefined1* DAT_006093E8 = (undefined1*)engine_3d_c_abortOldFuncOp9_FUN_00403e20;
-static undefined1* DAT_006093EC = (undefined1*)engine_3d_c_processPolygonColor_FUN_00403e50;
-static undefined1* DAT_006093F0 = (undefined1*)engine_3d_c_abortOldFuncOp11_FUN_00403ee0;
-static undefined1* DAT_006093F4 = (undefined1*)engine_3d_c_abortOldFuncOp12_FUN_00403f10;
-static undefined1* DAT_006093F8 = (undefined1*)engine_texture_cpp_ensureTextureLoaded_FUN_00574e00;
-static undefined1* DAT_006093FC = (undefined1*)engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403f40;
-static undefined1* DAT_00609400 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00404140;
-static undefined1* DAT_00609404 = (undefined1*)engine_3d_c_abortOldFuncOp16_FUN_004041f0;
-static undefined1* DAT_00609408 = (undefined1*)engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00404240;
-static undefined1* DAT_0060940C = (undefined1*)engine_3d_c_abortOldFuncOp18_FUN_00404440;
-static undefined1* DAT_00609410 = (undefined1*)engine_3d_c_badMRGLStruct_FUN_00403800;
-static undefined1* DAT_00609414 = (undefined1*)engine_3d_c_setRelativeCoord_FUN_00404470;
-static undefined1* DAT_00609418 = (undefined1*)engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_004044c0;
-static undefined1* DAT_0060941C = (undefined1*)engine_3d_c_drawLineStrip2D_FUN_00404590;
-static undefined1* DAT_00609420 = (undefined1*)engine_3d_c_abortOldFuncOp23_FUN_004046b0;
-static undefined1* DAT_00609424 = (undefined1*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046e0;
-static undefined1* DAT_00609428 = (undefined1*)engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404b00;
-static undefined1* DAT_0060942C = (undefined1*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c80;
-static undefined1* DAT_00609430 = (undefined1*)engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00404d70;
-static undefined1* DAT_00609434 = (undefined1*)engine_3d_c_abortOldFuncOp28_FUN_00404e10;
-static undefined1* DAT_00609438 = (undefined1*)engine_3d_c_updateAnimatedTexture_FUN_004050e0;
-static undefined1* DAT_0060943C = (undefined1*)engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00405190;
-static undefined1* DAT_00609440 = (undefined1*)engine_3d_c_setVertexTextureU_FUN_00405290;
-static undefined1* DAT_00609444 = (undefined1*)engine_keyframe_c_interpolateCubicKeyframes_FUN_004df960;
-static undefined1* DAT_00609448 = (undefined1*)engine_3d_c_renderPolygonDestReadBlendOp33_FUN_004052d0;
-static undefined1* DAT_0060944C = (undefined1*)engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404860;
-static undefined1* DAT_00609450 = (undefined1*)engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00404a60;
-static undefined1* DAT_00609454 = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004056b0;
-static undefined1* DAT_00609458 = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057d0;
-static undefined1* DAT_0060945C = (undefined1*)engine_boss_c_modelStructNotSupported1_FUN_0041a480;
-static undefined1* DAT_00609460 = (undefined1*)engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_004058f0;
-static undefined1* DAT_00609464 = (undefined1*)engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405a20;
-static undefined1* DAT_00609468 = (undefined1*)engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70;
-static undefined1* DAT_0060946C = (undefined1*)engine_3d_c_renderPolygonFogTexturedDepthOp42_FUN_00405d00;
-static undefined1* DAT_00609470 = (undefined1*)engine_3d_c_renderPolygonTexturedDepthWriteOp43_FUN_00405da0;
-static undefined1* DAT_00609474 = (undefined1*)engine_3d_c_renderPolygonFogTexturedDepthWriteOp44_FUN_00405e40;
-static undefined1* DAT_00609478 = (undefined1*)engine_3d_c_renderPolygonTexturedOp45_FUN_00405ee0;
-static undefined1* DAT_0060947C = (undefined1*)engine_3d_c_renderPolygonTexturedOp46_FUN_00405f80;
-static undefined1* DAT_00609480 = (undefined1*)engine_3d_c_renderPolygonTexturedDepthWriteOp47_FUN_00406020;
-static undefined1* DAT_00609484 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_004060c0;
-static undefined1* DAT_00609488 = (undefined1*)engine_3d_c_renderPolygonTexturedDepthLitOp49_FUN_00406170;
-static undefined1* DAT_0060948C = (undefined1*)engine_3d_c_renderPolygonTexturedNormalizedOp50_FUN_00406210;
-static undefined1* DAT_00609490 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004062b0;
-static undefined1* DAT_00609494 = (undefined1*)engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450;
-static undefined1* DAT_00609498 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_00405ac0;
-static undefined1* DAT_0060949C = (undefined1*)engine_3d_c_renderPolygonGrayscaleLitOp54_FUN_004066f0;
-static undefined1* DAT_006094A0 = (undefined1*)engine_3d_c_renderPolygonDestReadBlendDepthLitOp55_FUN_004067c0;
-static undefined1* DAT_006094A4 = (undefined1*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406880;
-static undefined1* DAT_006094A8 = (undefined1*)engine_3d_c_renderPolygonFullEffectsLitOp57_FUN_00406b60;
-static undefined1* DAT_006094AC = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406e00;
-static undefined1* DAT_006094B0 = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f40;
-static undefined1* DAT_006094B4 = (undefined1*)engine_3d_c_renderPolygonVertexAlphaLitOp60_FUN_00406c00;
-static undefined1* DAT_006094B8 = (undefined1*)engine_3d_c_setRenderAlphaFromBlock_FUN_00406d80;
-static undefined1* DAT_006094BC = (undefined1*)engine_3d_c_renderPolygonSolidLitOp62_FUN_00406a40;
-static undefined1* DAT_006094C0 = (undefined1*)engine_3d_c_renderPolygonBlendedLitOp63_FUN_00406ca0;
-static undefined1* DAT_006094C4 = (undefined1*)engine_texture_cpp_loadTextureAndGetData_FUN_00574e80;
-static undefined1* DAT_006094C8 = (undefined1*)engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004072b0;
-static undefined1* DAT_006094CC = (undefined1*)engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490;
+// double constants
+static double g_DOUBLE_006013ec = 8.9170892898641982e-312;
+static double g_DOUBLE_00601428 = -1.79399301312127e-307;
+static double g_DOUBLE_00601430 = INFINITY;
+
+// float constants
+static float g_FLOAT_006002bc = 256.0f;
+static float g_FLOAT_006006ac = 3.0f;
+static float g_FLOAT_006006b0 = 0.4f;
+static float g_FLOAT_006006b4 = 0.5f;
+static float g_FLOAT_0060088c = 5.0f;
+static float g_FLOAT_00600890 = 10.0f;
+static float g_FLOAT_00600894 = 15.0f;
+static float g_FLOAT_00600a6c = 6.0f;
+static float g_FLOAT_00600a70 = 4.0f;
+static float g_FLOAT_00600a74 = 25.0f;
+static float g_FLOAT_00600a78 = 15.0f;
+static float g_FLOAT_00600c4c = 6.0f;
+static float g_FLOAT_00600c50 = 12.0f;
+static float g_FLOAT_00600c54 = 20.0f;
+static float g_FLOAT_00600c58 = 5.0f;
+static float g_FLOAT_00600c5c = 10.0f;
+static float g_FLOAT_006011a0 = 256.0f;
+static float g_FLOAT_006011a8 = 0.00390625f;
+static float g_FLOAT_006011b8 = 0.125f;
+static float g_FLOAT_006011bc = 32.0f;
+static float g_FLOAT_006011c0 = 0.9f;
+static float g_FLOAT_006011c4 = 0.005f;
+static float g_FLOAT_006011c8 = 0.5f;
+static float g_FLOAT_006011cc = 0.5f;
+static float g_FLOAT_006011d0 = 0.05f;
+static float g_FLOAT_006011d4 = 0.15f;
+static float g_FLOAT_00601260 = 256.0f;
+static float g_FLOAT_006013a0 = 256.0f;
+static float g_FLOAT_006013a8 = 0.00390625f;
+
+// float[6] constants
+static float g_FLOAT_ARRAY_00609aa0[6] = {
+    2.3561945f, 3.9269907f, 1.5707964f, 4.712389f,
+    0.78539819f, 5.497787f
+};
+
+// uchar[8] constants
+static uchar g_UCHAR_ARRAY_0060afc0[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined4 constants
 static undefined4 DAT_006006b8 = 0x41200000;
-static undefined4 DAT_00600890 = 0x41200000;
-static undefined4 DAT_00600894 = 0x41700000;
-static undefined4 DAT_00600a74 = 0x41C80000;
-static undefined4 DAT_00600a78 = 0x41700000;
-static undefined4 DAT_00600c58 = 0x40A00000;
-static undefined4 DAT_00600c5c = 0x41200000;
-static undefined4 DAT_006013f6 = 0x003B001F;
-static undefined4 DAT_00601434 = 0x7FF00000;
-static undefined4 DAT_006093bc = 0x00000001;
-static undefined4 DAT_00609fb4 = 0x00000001;
-static undefined4 DAT_00609fd0 = 0xFFFFFFFF;
-static undefined4 DAT_00609fd4 = 0xFFFFFFFF;
-static undefined4 DAT_0060a00c = 0x00444645;
 static undefined4 DAT_0060a088 = 0x01510E64;
 static undefined4 DAT_0060a0a8 = 0x01510E64;
-static undefined4 DAT_0060a100 = 0x00000100;
-static undefined4 DAT_0060a108 = 0xFFFFFF92;
-static undefined4 DAT_0060a10c = 0x000000DD;
-static undefined4 DAT_0060a110 = 0xFFFFFFC0;
 static undefined4 DAT_0060a3e4 = 0x00000003;
 static undefined4 DAT_0060a3e8 = 0x00004219;
 static undefined4 DAT_0060a3ec = 0xFFFF0952;
@@ -231,6 +157,4 @@ static undefined4 DAT_0060a414 = 0x00003063;
 static undefined4 DAT_0060a418 = 0xFF0951BE;
 static undefined4 DAT_0060a41c = 0x00000001;
 static undefined4 DAT_0060a420 = 0x00000003;
-static undefined4 DAT_0060b27c = 0x01BA5C50;
-static undefined4 DAT_0060d1f0 = 0x01BD3A00;
 

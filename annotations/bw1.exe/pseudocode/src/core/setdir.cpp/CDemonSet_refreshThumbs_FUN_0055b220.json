@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 48,
+    "complexity_score": 13,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 57
   },
   "cross_references": [
@@ -64,14 +62,14 @@
   "globals": [
     {
       "addr": "005f1015",
-      "name": "DAT_005f1015",
-      "type": "undefined4",
+      "name": "s_rb_005f1015",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f1018",
-      "name": "DAT_005f1018",
-      "type": "undefined4",
+      "name": "s_data_005f1018",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -167,30 +165,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005f1018",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005f1018,filename,&DAT_005f1015);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005f1015",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005f1018,filename,&DAT_005f1015);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_020b28f4",
-      "severity": "mild",
-      "text": "_fread(&DAT_020b28f4,0x3000,this_ptr->camera_count,file);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

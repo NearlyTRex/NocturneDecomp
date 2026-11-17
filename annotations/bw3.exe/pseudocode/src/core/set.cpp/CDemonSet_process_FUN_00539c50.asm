@@ -15,13 +15,13 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00535139
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d0803
+;   TerminatedCString s_son_005d0803
 ;   TerminatedCString s_soff_005d0808
-;   undefined4 DAT_005d080e
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_0203a418
-;   undefined4 DAT_0203a598
-;   undefined4 DAT_0203a59c
+;   TerminatedCString s_moon_005d080e
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a418
+;   int g_INT_0203a598
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a59c
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -70,17 +70,17 @@ section .text
     RET                                 ; 00539ca4
     MOV EBX,dword ptr [ESP + 0x104]     ; 00539ca5
         ;   Label: LAB_00539ca5
-    MOV EBX,dword ptr [EBX + 0x203a418] ; 00539cac | DAT_0203a418
+    MOV EBX,dword ptr [EBX + 0x203a418] ; 00539cac | g_CDemonLight_PTR_ARRAY_0203a418
     TEST EBX,EBX                        ; 00539cb2
     JZ 0x00539c9a                       ; 00539cb4
         ;   XREF to: 00539c9a (CONDITIONAL_JUMP)  ; LAB_00539c9a
-    MOV ECX,dword ptr [0x0203a598]      ; 00539cb6 | DAT_0203a598
+    MOV ECX,dword ptr [0x0203a598]      ; 00539cb6 | g_INT_0203a598
     MOV dword ptr [ESP + 0x100],EAX     ; 00539cbc
     TEST ECX,ECX                        ; 00539cc3
     JLE 0x00539ce5                      ; 00539cc5
         ;   XREF to: 00539ce5 (CONDITIONAL_JUMP)  ; LAB_00539ce5
     LEA EDX,[ECX*0x4 + 0x0]             ; 00539cc7
-    CMP EBX,dword ptr [EAX + 0x203a59c] ; 00539cce | DAT_0203a59c
+    CMP EBX,dword ptr [EAX + 0x203a59c] ; 00539cce | g_CDemonLight_PTR_ARRAY_0203a59c
         ;   Label: LAB_00539cce
     JNZ 0x00539da1                      ; 00539cd4
         ;   XREF to: 00539da1 (CONDITIONAL_JUMP)  ; LAB_00539da1
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0xc                         ; 00539cf4
     LEA EAX,[ESI + 0x4]                 ; 00539cf7
     PUSH EAX                            ; 00539cfa
-    PUSH 0x5d0803                       ; 00539cfb | DAT_005d0803
+    PUSH 0x5d0803                       ; 00539cfb | = "%son"
     LEA EAX,[ESP + 0x8]                 ; 00539d00
     PUSH EAX                            ; 00539d04
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00539d05
@@ -103,7 +103,7 @@ section .text
     ADD ESP,0xc                         ; 00539d0a
     MOV EAX,ESP                         ; 00539d0d
     PUSH EAX                            ; 00539d0f
-    MOV ECX,dword ptr [0x005fba60]      ; 00539d10 | DAT_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 00539d10 | g_CEventList_PTR_005fba60
     PUSH ECX                            ; 00539d16
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00539d17
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -123,7 +123,7 @@ section .text
     ADD ESP,0xc                         ; 00539d40
     MOV EAX,ESP                         ; 00539d43
     PUSH EAX                            ; 00539d45
-    MOV EAX,[0x005fba60]                ; 00539d46 | DAT_005fba60
+    MOV EAX,[0x005fba60]                ; 00539d46 | g_CEventList_PTR_005fba60
     PUSH EAX                            ; 00539d4b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00539d4c
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -134,7 +134,7 @@ section .text
     MOV dword ptr [EBX + 0x1cb4],0x0    ; 00539d58
     PUSH 0x4                            ; 00539d62
         ;   Label: LAB_00539d62
-    PUSH 0x5d080e                       ; 00539d64 | DAT_005d080e
+    PUSH 0x5d080e                       ; 00539d64 | = "moon"
     ADD ESI,0x4                         ; 00539d69
     PUSH ESI                            ; 00539d6c
     CALL crt_string.c__strnicmp_FUN_005a3f90 ; 00539d6d

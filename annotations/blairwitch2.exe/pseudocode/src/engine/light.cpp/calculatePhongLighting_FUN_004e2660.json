@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 300,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 18,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "stack_alignment_array",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "stack_alignment_array"
     ],
     "total_lines": 295
   },
@@ -48,97 +46,97 @@
   "globals": [
     {
       "addr": "00617e40",
-      "name": "DAT_00617e40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00617e40",
+      "type": "int",
+      "value": "0x8000"
     },
     {
       "addr": "00617e44",
-      "name": "DAT_00617e44",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00617e44",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "00617e48",
-      "name": "DAT_00617e48",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00617e48",
+      "type": "int",
+      "value": "0x10000"
     },
     {
       "addr": "00617e4c",
-      "name": "DAT_00617e4c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00617e4c",
+      "type": "int",
+      "value": "0x10000"
     },
     {
       "addr": "01c38b6c",
-      "name": "DAT_01c38b6c",
-      "type": "undefined4",
+      "name": "g_INT_01c38b6c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b70",
-      "name": "DAT_01c38b70",
-      "type": "undefined4",
+      "name": "g_INT_01c38b70",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b74",
-      "name": "DAT_01c38b74",
-      "type": "undefined4",
+      "name": "g_INT_01c38b74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b90",
-      "name": "DAT_01c38b90",
-      "type": "undefined4",
+      "name": "g_INT_01c38b90",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b94",
-      "name": "DAT_01c38b94",
-      "type": "undefined4",
+      "name": "g_INT_01c38b94",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b98",
-      "name": "DAT_01c38b98",
-      "type": "undefined4",
+      "name": "g_INT_01c38b98",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d03510",
-      "name": "DAT_01d03510",
-      "type": "undefined4",
+      "name": "g_CVector3i_01d03510",
+      "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01d03514",
-      "name": "DAT_01d03514",
+      "name": "g_CVector3i_01d03510.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d03518",
-      "name": "DAT_01d03518",
+      "name": "g_CVector3i_01d03510.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d0351c",
-      "name": "DAT_01d0351c",
-      "type": "undefined4",
+      "name": "g_CVector3i_01d0351c",
+      "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01d03520",
-      "name": "DAT_01d03520",
+      "name": "g_CVector3i_01d0351c.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d03524",
-      "name": "DAT_01d03524",
+      "name": "g_CVector3i_01d0351c.z",
       "type": "undefined4",
       "value": null
     }
@@ -282,120 +280,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 11,
       "match": "aiStackY_100c",
       "severity": "moderate",
       "text": "int aiStackY_100c [1017];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00617e40",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)iVar4 * (longlong)(0xffff - DAT_00617e40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00617e40",
-      "severity": "mild",
-      "text": "uVar5 = DAT_00617e40 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_00617e44",
-      "severity": "mild",
-      "text": "if (DAT_00617e44 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_00617e48",
-      "severity": "mild",
-      "text": "uVar5 = (uint)((longlong)DAT_00617e48 * (longlong)(int)uVar5) >> 0x10 |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_00617e48",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)DAT_00617e48 * (longlong)(int)uVar5) >> 0x20) << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_CVector3i_01d0351c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 59,
-      "match": "DAT_01d03510",
-      "severity": "mild",
-      "text": "engine_matrix_c_normalizeVector3DFloat_FUN_004e9ae0((CVector3i *)&DAT_01d03510,&local_24);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01d03520",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01d03520 + (uint)bVar6 * -8) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_01d03524",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01d03524 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_00617e48",
-      "severity": "mild",
-      "text": "uVar5 = ((uint)((longlong)DAT_00617e48 * (longlong)(int)uVar5) >> 0x10 |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_00617e48",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)DAT_00617e48 * (longlong)(int)uVar5) >> 0x20) << 0x10) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_00617e4c",
-      "severity": "mild",
-      "text": "((uint)((longlong)DAT_00617e4c * (longlong)(int)uVar2) >> 0x10 |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_00617e4c",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)DAT_00617e4c * (longlong)(int)uVar2) >> 0x20) << 0x10);",
-      "type": "undefined_data"
+      "match": "(int)&g_CVector3i_01d0351c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CVector3i_01d0351c + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "(int)&local_24",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);",
@@ -403,7 +305,7 @@
     },
     {
       "description": "Pointer value `&local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&local_24",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -411,7 +313,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 59,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CVector3i_01d0351c + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);",
@@ -419,7 +329,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",

@@ -14,13 +14,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d272c
 ;   TerminatedCString s_CStrList_set_invalid_ind_005d2742
-;   undefined1 DAT_005d2760
+;   char g_CHAR_005d2760 = \x00
 ;   TerminatedCString s_shape_edittool_cpp_005d2761
 ;   undefined4 s_shape_edittool_cpp_005d2761+1
 ;   undefined4 s_shape_edittool_cpp_005d2761+2
 ;   TerminatedCString s_CStrList_set_out_of_memo_005d2777
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_00481409
     MOV EDI,0xc93                       ; 0048140e
     PUSH 0x5d2742                       ; 00481413 | = "CStrList::set - invalid index"
-    MOV dword ptr [0x01d046a0],EBX      ; 00481418 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0048141e | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00481418 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0048141e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00481424
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00481429
@@ -57,14 +57,14 @@ section .text
         ;   Label: LAB_0048142c
     JNZ 0x00481435                      ; 0048142e
         ;   XREF to: 00481435 (CONDITIONAL_JUMP)  ; LAB_00481435
-    MOV ESI,0x5d2760                    ; 00481430 | DAT_005d2760
+    MOV ESI,0x5d2760                    ; 00481430 | g_CHAR_005d2760
     MOV EDI,ESI                         ; 00481435
         ;   Label: LAB_00481435
     MOV EBX,dword ptr [ESP + 0x18]      ; 00481437
     SUB ECX,ECX                         ; 0048143b
     DEC ECX                             ; 0048143d
     XOR EAX,EAX                         ; 0048143e
-    SCASB.REPNE ES:EDI                  ; 00481440 | DAT_005d2760 | = "..\\shape\\edittool.cpp"
+    SCASB.REPNE ES:EDI                  ; 00481440 | g_CHAR_005d2760 | = "..\\shape\\edittool.cpp"
     NOT ECX                             ; 00481442
     DEC ECX                             ; 00481444
     INC ECX                             ; 00481445
@@ -87,7 +87,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8]       ; 0048146a
     MOV EDI,dword ptr [EAX + ECX*0x4]   ; 0048146d
     PUSH EDI                            ; 00481470
-    MOV AL,byte ptr [ESI]               ; 00481471 | DAT_005d2760 | s_shape_edittool_cpp_005d2761+1
+    MOV AL,byte ptr [ESI]               ; 00481471 | g_CHAR_005d2760 | s_shape_edittool_cpp_005d2761+1
         ;   Label: LAB_00481471
     MOV byte ptr [EDI],AL               ; 00481473
     CMP AL,0x0                          ; 00481475
@@ -111,8 +111,8 @@ section .text
         ;   Label: LAB_0048148f
     MOV EDI,0xc9c                       ; 00481494
     PUSH 0x5d2777                       ; 00481499 | = "CStrList::set - out of memory!"
-    MOV dword ptr [0x01d046a0],EBX      ; 0048149e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004814a4 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 0048149e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 004814a4 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004814aa
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004814af

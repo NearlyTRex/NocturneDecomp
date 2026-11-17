@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_ptr,float delta_time)
 
@@ -38,11 +37,11 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
   iVar4 = pSVar6->state_index;
   if ((iVar4 == 0x91) || (iVar4 == 0x92)) {
     if ((iVar4 == 0x92) &&
-       ((fVar2 = delta_time / _DAT_005e36d8 + this_ptr->morph_time, this_ptr->morph_time = fVar2,
+       ((fVar2 = delta_time / 2.0f + this_ptr->morph_time, this_ptr->morph_time = fVar2,
         1.0 <= fVar2 && (this_ptr->target_actor != (CDemonActor *)0x0)))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                (0x01D81080,this_ptr->target_actor);
-      this_ptr_01 = 0x01D81080;
+                (g_CDemonMission_PTR_00600530,this_ptr->target_actor);
+      this_ptr_01 = g_CDemonMission_PTR_00600530;
       this_ptr->target_actor = (CDemonActor *)0x0;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
                 (this_ptr_01,(CDemonActor *)this_ptr,1);
@@ -50,7 +49,7 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
   }
   else {
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (0x01C6E360,this_ptr->transform_event);
+                      (g_CEventList_PTR_005fba60,this_ptr->transform_event);
     if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,0x91,1);
       if (this_ptr->transform_wav[0] != '\0') {

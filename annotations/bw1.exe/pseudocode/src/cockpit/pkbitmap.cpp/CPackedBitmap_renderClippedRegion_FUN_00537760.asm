@@ -16,7 +16,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_005378e0 at 005379b9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a0
+;   int g_INT_0061b4a0 = 0x8
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
@@ -49,7 +49,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x34]      ; 00537783
         ;   Label: LAB_00537783
     MOV EBX,dword ptr [ESP + 0x3c]      ; 00537787
-    MOV ESI,dword ptr [0x0061b4a0]      ; 0053778b | DAT_0061b4a0
+    MOV ESI,dword ptr [0x0061b4a0]      ; 0053778b | g_INT_0061b4a0
     SUB EDX,EBX                         ; 00537791
     IMUL EDX,ESI                        ; 00537793
     MOV EAX,EDX                         ; 00537796
@@ -130,7 +130,7 @@ section .text
         ;   Label: LAB_0053785d
     JL 0x0053788f                       ; 0053785f
         ;   XREF to: 0053788f (CONDITIONAL_JUMP)  ; LAB_0053788f
-    MOV EDX,dword ptr [0x0061b4a0]      ; 00537861 | DAT_0061b4a0
+    MOV EDX,dword ptr [0x0061b4a0]      ; 00537861 | g_INT_0061b4a0
         ;   Label: LAB_00537861
     IMUL EDX,EAX                        ; 00537867
     MOV EAX,EDX                         ; 0053786a

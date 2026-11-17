@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_index_005e4bd5
 ;   TerminatedCString s_heroName_005e4bdb
-;   undefined4 DAT_0061ef24
+;   int g_INT_0061ef24 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
@@ -32,7 +32,7 @@ section .text
     PUSH EAX                            ; 004ecd69
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 004ecd6a
         ;   XREF to: 0040b670 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b670(int * int_ptr, char * property_name)
-    MOV EDX,dword ptr [0x0061ef24]      ; 004ecd6f | DAT_0061ef24
+    MOV EDX,dword ptr [0x0061ef24]      ; 004ecd6f | g_INT_0061ef24
     ADD ESP,0x8                         ; 004ecd75
     CMP EDX,0x2                         ; 004ecd78
     JGE 0x004ecd7f                      ; 004ecd7b

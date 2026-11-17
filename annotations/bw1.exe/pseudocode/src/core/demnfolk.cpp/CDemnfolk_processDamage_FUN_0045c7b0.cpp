@@ -18,7 +18,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_0045c7b0(CDemnfolk *t
   
   if ((this_ptr->base).base.is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (0x01C51D80,"@ShotInvulnerable" + 1);
+              (g_CEventList_PTR_0061b4d0,"ShotInvulnerable");
     return;
   }
   core_demnfolk_cpp_CDemnfolk_processDismemberment_FUN_0045c4a0(this_ptr,damage_info);

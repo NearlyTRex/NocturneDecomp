@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_cross_cpp_CSimpleCross_getActorType_FUN_005a7970(CSimpleCross *this_ptr)
 
 {
-  return (CDemonActorType *)0x2668738;
+  return &g_CDemonActorType_02668738;
 }

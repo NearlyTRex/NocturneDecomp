@@ -7,9 +7,9 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_count_005b7770+1
+;   TerminatedCString s_count_005b7771
 ;   TerminatedCString s_modelCount_005b7777
-;   undefined4 DAT_005b7782
+;   char g_CHAR_005b7782 = \x00
 ;   TerminatedCString s_modelName_005b7783
 ;   TerminatedCString s_allowChase_005b778d
 ;   TerminatedCString s_allowSwarm_005b7798
@@ -19,7 +19,7 @@
 ;   TerminatedCString s_remove_bug_timer_005b77d0
 ;   TerminatedCString s_max_life_timer_005b77e1
 ;   int g_CBugsClassVersion = 0x2
-;   undefined4 DAT_007df9b8
+;   int g_INT_007df9b8
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040b830
@@ -43,7 +43,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 00421969
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0042196e
-    PUSH 0x5b7771                       ; 00421971 | s_count_005b7770+1
+    PUSH 0x5b7771                       ; 00421971 | = "count"
     LEA EBX,[EDI + 0xd058]              ; 00421976
     PUSH EBX                            ; 0042197c
     CALL core_actor.cpp_archiveInteger_FUN_0040b8b0 ; 0042197d
@@ -54,7 +54,7 @@ section .text
     PUSH EBX                            ; 00421990
     CALL core_actor.cpp_archiveInteger_FUN_0040b8b0 ; 00421991
         ;   XREF to: 0040b8b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b8b0(int * int_ptr, char * property_name)
-    MOV EDX,dword ptr [0x007df9b8]      ; 00421996 | DAT_007df9b8
+    MOV EDX,dword ptr [0x007df9b8]      ; 00421996 | g_INT_007df9b8
     ADD ESP,0x8                         ; 0042199c
     CMP EDX,0x1                         ; 0042199f
     JZ 0x00421a53                       ; 004219a2
@@ -120,7 +120,7 @@ section .text
     POP ESI                             ; 00421a50
     POP EBX                             ; 00421a51
     RET                                 ; 00421a52
-    PUSH 0x5b7782                       ; 00421a53 | DAT_005b7782
+    PUSH 0x5b7782                       ; 00421a53 | g_CHAR_005b7782
         ;   Label: LAB_00421a53
     LEA EBX,[EDI + 0x13460]             ; 00421a58
     PUSH EBX                            ; 00421a5e

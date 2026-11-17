@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin *this_ptr,float delta_time)
 
@@ -28,7 +27,7 @@ void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin 
             (this_ptr->base).base.base.base.base.location.position.x;
     fVar3 = (pCVar1->base).location.position.z -
             *(float *)((int)&(this_ptr->base).base.base.base.base.location.position + 8);
-    if (_DAT_005ffc9c < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
+    if (7.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
       this_ptr_01 = &(this_ptr->base).base.state_machine;
       core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,1.0);
       core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");

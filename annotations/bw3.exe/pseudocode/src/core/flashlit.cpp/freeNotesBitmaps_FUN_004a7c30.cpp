@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flashlit_cpp_freeNotesBitmaps_FUN_004a7c30(void)
 
 {
@@ -27,10 +25,10 @@ void __cdecl core_flashlit_cpp_freeNotesBitmaps_FUN_004a7c30(void)
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19cb0);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19cc4);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19cd8);
-  DAT_005fe3a8 = 0xffffffff;
-  DAT_005fe370 = 1;
-  _DAT_01d19f78 = 0;
-  DAT_01d19f90 = 0;
-  _DAT_01d1a058 = 0;
+  g_INT_005fe3a8 = -1;
+  g_INT_005fe370 = 1;
+  g_INT_01d19f78 = 0;
+  g_CHAR_01d19f90 = '\0';
+  g_INT_01d1a058 = 0;
   return;
 }

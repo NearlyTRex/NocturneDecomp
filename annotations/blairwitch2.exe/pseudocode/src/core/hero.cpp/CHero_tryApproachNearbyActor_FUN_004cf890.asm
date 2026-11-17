@@ -29,9 +29,9 @@
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e77f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9d1c
-;   undefined4 DAT_005d9d24
-;   undefined4 DAT_005d9d2c
+;   double g_DOUBLE_005d9d1c = 10
+;   double g_DOUBLE_005d9d24 = 1.04719755116667
+;   double g_DOUBLE_005d9d2c = 5
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -91,7 +91,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cf91b
     FLD float ptr [ESP + 0x48]          ; 004cf91c
     FABS                                ; 004cf920
-    FCOMP double ptr [0x005d9d1c]       ; 004cf922 | DAT_005d9d1c
+    FCOMP double ptr [0x005d9d1c]       ; 004cf922 | g_DOUBLE_005d9d1c
     FNSTSW AX                           ; 004cf928
     SAHF                                ; 004cf92a
     JBE 0x004cf952                      ; 004cf92b
@@ -114,7 +114,7 @@ section .text
     FADDP                               ; 004cf960
     MOV dword ptr [ESP + 0x48],EAX      ; 004cf962
     FSQRT                               ; 004cf966
-    FCOMP double ptr [0x005d9d1c]       ; 004cf968 | DAT_005d9d1c
+    FCOMP double ptr [0x005d9d1c]       ; 004cf968 | g_DOUBLE_005d9d1c
     FNSTSW AX                           ; 004cf96e
     SAHF                                ; 004cf970
     JA 0x004cf92d                       ; 004cf971
@@ -144,7 +144,7 @@ section .text
     FLD float ptr [ESP + 0xa4]          ; 004cf9b0
     FABS                                ; 004cf9b7
     ADD ESP,0x4                         ; 004cf9b9
-    FCOMP double ptr [0x005d9d24]       ; 004cf9bc | DAT_005d9d24
+    FCOMP double ptr [0x005d9d24]       ; 004cf9bc | g_DOUBLE_005d9d24
     FNSTSW AX                           ; 004cf9c2
     SAHF                                ; 004cf9c4
     JA 0x004cf92d                       ; 004cf9c5
@@ -206,7 +206,7 @@ section .text
     FMUL ST0                            ; 004cfa74
     FADDP                               ; 004cfa76
     FSQRT                               ; 004cfa78
-    FCOMP double ptr [0x005d9d2c]       ; 004cfa7a | DAT_005d9d2c
+    FCOMP double ptr [0x005d9d2c]       ; 004cfa7a | g_DOUBLE_005d9d2c
     FNSTSW AX                           ; 004cfa80
     SAHF                                ; 004cfa82
     JA 0x004cf92d                       ; 004cfa83

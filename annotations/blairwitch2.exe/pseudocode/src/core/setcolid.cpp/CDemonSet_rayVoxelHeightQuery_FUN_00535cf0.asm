@@ -21,8 +21,8 @@
 ;   core_sound.cpp_updateListeners_FUN_00558d50 at 0055934f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e5dad
-;   undefined4 DAT_005e5db1
+;   float g_FLOAT_005e5dad = -1
+;   float g_FLOAT_005e5db1 = 150
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -65,11 +65,11 @@ section .text
     PUSH EAX                            ; 00535d3d
     LEA EAX,[ESP + 0xc]                 ; 00535d3e
     FXCH                                ; 00535d42
-    FADD float ptr [0x005e5dad]         ; 00535d44 | DAT_005e5dad
+    FADD float ptr [0x005e5dad]         ; 00535d44 | g_FLOAT_005e5dad
     PUSH EAX                            ; 00535d4a
     LEA EAX,[ESP + 0x1c]                ; 00535d4b
     FXCH                                ; 00535d4f
-    FADD float ptr [0x005e5db1]         ; 00535d51 | DAT_005e5db1
+    FADD float ptr [0x005e5db1]         ; 00535d51 | g_FLOAT_005e5db1
     PUSH EAX                            ; 00535d57
     FXCH                                ; 00535d58
     FSTP float ptr [ESP + 0x24]         ; 00535d5a

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr,float delta_time)
 
@@ -120,8 +119,8 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
                afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
           fStack_34 = afStack_12c[1] * afStack_12c[1] +
                       fStack_130 * fStack_130 + afStack_12c[0] * afStack_12c[0];
-          fStack_30 = (float)(((int)fStack_34 >> 1) + _DAT_01d1a0a4);
-          if (fStack_30 < _DAT_005e4358) {
+          fStack_30 = (float)(((int)fStack_34 >> 1) + g_INT_01d1a0a4);
+          if (fStack_30 < 9.0f) {
             iVar12 = 1;
             iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
           }
@@ -132,7 +131,7 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                     (&pCStack_1c->base,iVar4 + 2,iVar12);
           iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
-                            (0x02CF5680,this_ptr->sfx_handle);
+                            (g_CSound_PTR_006045f8,this_ptr->sfx_handle);
           if (iVar4 == 0) {
             uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"dog5.wav");
@@ -144,7 +143,7 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
         pCStack_14 = (CMatrix3x4f *)
                      core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                (&pCStack_1c->base);
-        if ((float)_DAT_005d14de < (float)pCStack_14) {
+        if ((float)0.90000000000000002 < (float)pCStack_14) {
           iVar12 = 1;
           iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -167,7 +166,7 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
           pCStack_14 = (CMatrix3x4f *)
                        core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                  (&pCStack_1c->base);
-          if ((float)_DAT_005d14de < (float)pCStack_14) {
+          if ((float)0.90000000000000002 < (float)pCStack_14) {
             iVar12 = 1;
             iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -190,12 +189,12 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
       fStack_28 = SQRT(afStack_fc[1] * afStack_fc[1] +
                        fStack_100 * fStack_100 + afStack_fc[0] * afStack_fc[0]);
       fStack_20 = fStack_28;
-      if ((_DAT_005e4358 < fStack_28) && (iStack_24 == 2)) {
-        if ((this_ptr->base).attack_cooldown <= (float)_DAT_005d14d6) {
+      if ((9.0f < fStack_28) && (iStack_24 == 2)) {
+        if ((this_ptr->base).attack_cooldown <= (float)0.5) {
           pCStack_14 = (CMatrix3x4f *)
                        core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                  (&pCStack_1c->base);
-          if ((float)_DAT_005d14de < (float)pCStack_14) {
+          if ((float)0.90000000000000002 < (float)pCStack_14) {
             iVar12 = 1;
             iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
             goto LAB_00546b5f;
@@ -205,7 +204,7 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
           pCStack_14 = (CMatrix3x4f *)
                        core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                                  (&pCStack_1c->base);
-          if ((float)_DAT_005d14de < (float)pCStack_14) {
+          if ((float)0.90000000000000002 < (float)pCStack_14) {
             iVar12 = 1;
             iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
             pCVar9 = pCStack_1c;
@@ -215,7 +214,7 @@ LAB_00546b5f:
           }
         }
       }
-      if (((_DAT_005d14e6 < fStack_20) && (fStack_20 < _DAT_005d14ea)) &&
+      if (((8.0f < fStack_20) && (fStack_20 < 12.0f)) &&
          (iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,10), iVar4 == 5)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                   (&(this_ptr->base).base.model.base,3,1);
@@ -259,7 +258,7 @@ LAB_00546b5f:
       pCStack_14 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       fVar11 = 1.7;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                ((CVector3f *)&DAT_02cfd900,pCStack_14 + this_ptr->bone_indices[2],&CStack_e8);
+                (&g_CVector3f_02cfd900,pCStack_14 + this_ptr->bone_indices[2],&CStack_e8);
       pCVar10 = &CStack_13c;
       CStack_13c.x = CStack_e8.x;
       *(uint *)((int)&CStack_13c + (uint)bVar8 * -8 + 4) =
@@ -279,7 +278,7 @@ LAB_00546b5f:
       pSVar13 = &SStack_184;
       fVar11 = 1.7;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                ((CVector3f *)&DAT_02cfd900,pCStack_14 + this_ptr->bone_indices[3],&CStack_ac);
+                (&g_CVector3f_02cfd900,pCStack_14 + this_ptr->bone_indices[3],&CStack_ac);
       pCVar10 = &CStack_124;
       CStack_124.x = CStack_ac.x;
       *(uint *)((int)&CStack_124 + (uint)bVar8 * -8 + 4) =
@@ -296,7 +295,8 @@ LAB_00546b5f:
       *(uint *)((int)&CStack_b8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
            *(uint *)((int)&CStack_a0 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004893f0(&pCVar6->base,pCVar10,fVar11,pSVar13);
-      iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0(0x02CF5680,this_ptr->sfx_handle);
+      iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
+                        (g_CSound_PTR_006045f8,this_ptr->sfx_handle);
       if (iVar4 == 0) {
         uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"dog5.wav");
@@ -337,7 +337,7 @@ LAB_0054652d:
       pCStack_14 = (CMatrix3x4f *)
                    core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                              (&(this_ptr->base).base.model.base);
-      if ((float)pCStack_14 <= (float)_DAT_005d14de) goto LAB_0054656e;
+      if ((float)pCStack_14 <= (float)0.90000000000000002) goto LAB_0054656e;
       iVar12 = 1;
       iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
       iVar4 = iVar4 + 2;
@@ -347,7 +347,7 @@ LAB_00546726:
       pCStack_14 = (CMatrix3x4f *)
                    core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                              (&(this_ptr->base).base.model.base);
-      if ((float)pCStack_14 <= (float)_DAT_005d14de) goto LAB_0054656e;
+      if ((float)pCStack_14 <= (float)0.90000000000000002) goto LAB_0054656e;
       iVar12 = 1;
       iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0);
       iVar4 = iVar4 + 1;

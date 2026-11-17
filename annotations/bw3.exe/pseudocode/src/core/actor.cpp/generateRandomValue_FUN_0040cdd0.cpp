@@ -9,6 +9,6 @@
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cdd0(void)
 
 {
-  DAT_007dfce8 = DAT_007dfce8 * 0x2ff0bd + 1 & 0xffffff;
-  return DAT_007dfce8;
+  g_UINT_007dfce8 = g_UINT_007dfce8 * 0x2ff0bd + 1 & 0xffffff;
+  return g_UINT_007dfce8;
 }

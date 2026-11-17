@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_dosio_c_005d0c95
 ;   TerminatedCString s_CFileFinder_convertStruc_005d0ca7
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -99,8 +99,8 @@ section .text
         ;   Label: LAB_00461048
     MOV EBP,0x2ff                       ; 0046104d
     PUSH 0x5d0ca7                       ; 00461052 | = "CFileFinder::convertStruct - file too..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00461057 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0046105d | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00461057 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0046105d | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00461063
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00461068

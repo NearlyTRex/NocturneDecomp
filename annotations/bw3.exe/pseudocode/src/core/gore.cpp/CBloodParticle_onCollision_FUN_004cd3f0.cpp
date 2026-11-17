@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004cd3f0(CBloodParticle *this_ptr,CVector3f *collision_normal)
 
 {
@@ -15,7 +13,7 @@ int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004cd3f0(CBloodParticle
   
   blood_type = this_ptr->blood_type;
   if (blood_type != (BLOOD_TYPE_NONE|BLOOD_TYPE_ICHOR)) {
-    if ((float)_DAT_005c4649 < collision_normal->y) {
+    if ((float)0.90000000000000002 < collision_normal->y) {
       core_gore_cpp_CGore_createGroundBloodSplat_FUN_004ce950
                 (g_CGorePtr,(CVector3f *)this_ptr,blood_type);
       return 1;

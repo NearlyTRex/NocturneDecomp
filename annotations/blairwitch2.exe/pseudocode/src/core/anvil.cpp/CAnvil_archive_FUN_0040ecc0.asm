@@ -7,11 +7,11 @@
 ; CAnvil *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005cb323+1
+;   TerminatedCString s_modelName_005cb324
 ;   TerminatedCString s_dropCondition_005cb32e
 ;   TerminatedCString s_dropHeight_005cb33c
 ;   TerminatedCString s_triggered_005cb347
-;   undefined4 DAT_005cb351
+;   TerminatedCString s_yvel_005cb351
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040b8e0
@@ -31,7 +31,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 0040ecc6
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040eccb
-    PUSH 0x5cb324                       ; 0040ecce | s_modelName_005cb323+1
+    PUSH 0x5cb324                       ; 0040ecce | = "modelName"
     LEA EAX,[EBX + 0x2b4]               ; 0040ecd3
     PUSH EAX                            ; 0040ecd9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 0040ecda
@@ -55,7 +55,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 0040ed16
         ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b960(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040ed1b
-    PUSH 0x5cb351                       ; 0040ed1e | DAT_005cb351
+    PUSH 0x5cb351                       ; 0040ed1e | = "yvel"
     ADD EBX,0x49c                       ; 0040ed23
     PUSH EBX                            ; 0040ed29
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0040ed2a

@@ -694,6 +694,9 @@ CCharacter_full_vtable g_CAsgayaVTable = {
     }
 };
 
+// CDemonActor*
+CDemonActor* g_CDemonActor_PTR_005e39c0 = (CDemonActor*)0xFFFFFFFF;
+
 // CDemonActor_vtable
 CDemonActor_vtable g_CFliesVTable = {
     .setup = (CDemonActor_setup *)core_flies_cpp_CFlies_setup_FUN_004ad870,
@@ -5269,6 +5272,15 @@ CEnemy_full_vtable g_CStylerDemonVTable = {
     }
 };
 
+// CFont_vtable
+CFont_vtable g_CFont_vtable_005e6534 = {
+    .ctor = (void *)engine_winfont_cpp_CWinFont_dtor_FUN_0057fe10,
+    .drawText = (void *)engine_winfont_cpp_CWinFont_drawText_FUN_0057fe80,
+    .getStringWidth = (void *)engine_winfont_cpp_CWinFont_getStringWidth_FUN_00580380,
+    .getStringHeight = (void *)engine_winfont_cpp_CWinFont_getStringHeight_FUN_005803e0,
+    .getLineSpacing = (void *)engine_winfont_cpp_CWinFont_getLineSpacing_FUN_00580450
+};
+
 // CHero_full_vtable
 CHero_full_vtable g_CPryeVTable = {
     ._ub = {
@@ -5365,6 +5377,38 @@ CHero_full_vtable g_CPryeVTable = {
         .doHeroAction = (CHero_doHeroAction *)core_prye_cpp_CPrye_doHeroAction_FUN_00525a20,
         .canDoHeroAction = (CHero_canDoHeroAction *)core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0
     }
+};
+
+// CParticle_vtable
+CParticle_vtable g_CBloodParticleVTable = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00509e40,
+    .process = (CParticle_process *)core_particle_cpp_CParticle_process_FUN_00509f30,
+    .render = (CParticle_render *)core_gore_cpp_CBloodParticle_render_FUN_004ccbe0,
+    .onCollision = (CParticle_onCollision *)core_gore_cpp_CBloodParticle_onCollision_FUN_004cd3f0
+};
+CParticle_vtable g_CParticle_vtable_005e2fa4 = {
+    .setup = (CParticle_setup *)core_particle_cpp_CParticle_setup_FUN_00509e40,
+    .process = (CParticle_process *)core_particle_cpp_CParticle_process_FUN_00509f30,
+    .render = (CParticle_render *)core_particle_cpp_CParticle_render_FUN_0050a3b0,
+    .onCollision = (CParticle_onCollision *)core_particle_cpp_CParticle_onCollision_FUN_0050a3e0
+};
+
+// CPod_vtable
+CPod_vtable g_CPod_vtable_005e3424 = {
+    .dtor = (void *)engine_pod_cpp_CPod_dtor_FUN_00514350,
+    .load = (CPod_load *)0x00514380,
+    .findFile = (CPod_findFile *)engine_pod_cpp_CPod_findFile_FUN_00514cb0,
+    .mount = (CPod_mount *)engine_pod_cpp_CPod_mount_FUN_005143b0,
+    .dismount = (CPod_dismount *)engine_pod_cpp_CPod_dismount_FUN_00514560,
+    .remount = (CPod_remount *)engine_pod_cpp_CPod_remount_FUN_005144b0
+};
+
+// CQuaternion4f
+CQuaternion4f g_CQuaternion4f_005e65b0 = {
+    .w = 1.0f,
+    .x = 0.0f,
+    .y = 0.0f,
+    .z = 0.0f
 };
 
 // CSoundDeviceBasic_vtable
@@ -6418,6 +6462,12 @@ CZombiePriest_full_vtable g_CZombiePriestVTable = {
     },
     ._uzombiepriest = {.reset = (CZombiePriest_reset *)core_zombiepriest_cpp_CZombiePriest_reset_FUN_0058f610}
 };
+
+// TerminatedCString
+TerminatedCString g_CInStreamFileVTable = "@:W";
+TerminatedCString g_COutStreamFileVTable = "PHW";
+TerminatedCString g_COutStreamMemoryVTable = "PKW";
+TerminatedCString g_COutStreamDebugVTable = " NW";
 
 // WatcomDestructorCall
 WatcomDestructorCall DAT_005E01B0 = {
@@ -7890,17 +7940,13 @@ WatcomTypeInfo g_CAsgayaTypeInfo = {
     .class_name = (char *)s_CAsgaya_006074ac
 };
 
-// undefined1*
-undefined1* g_CBloodParticleVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00509e40;
-undefined1* g_CDemonPodVTable = (undefined1*)core_podmain_cpp_CDemonPod_dtor_FUN_00515490;
-undefined1* g_CInStreamFileVTable = (undefined1*)support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40;
-undefined1* g_CInStreamMemoryVTable = (undefined1*)support_trstream_cpp_CInStreamMemory_dtor_FUN_005741d0;
-undefined1* g_COutStreamFileVTable = (undefined1*)support_trstream_cpp_COutStreamFile_dtor_FUN_00574850;
-undefined1* g_COutStreamMemoryVTable = (undefined1*)support_trstream_cpp_COutStreamMemory_dtor_FUN_00574b50;
-undefined1* g_COutStreamDebugVTable = (undefined1*)support_trstream_cpp_COutStreamDebug_dtor_FUN_00574e20;
+// int
+int g_INT_005e8806 = 0x3B001F;
 
-// undefined4
-undefined4 DAT_005e8838 = 0x00000000;
+// short
+short g_SHORT_005e8804 = 0;
+short g_SHORT_005e881c = 0x16D;
+short g_SHORT_005e881e = 0;
 
 // void*
 void* g_SPageResourceVTable = (void*)core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0;
@@ -7910,4 +7956,33 @@ void* g_SPageResourceTwanaCharacterVTable = (void*)core_fldnotes_cpp_SPageResour
 void* g_SPageResourceTwanaEntryVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980;
 void* g_SPageResourceMapVTable = (void*)core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004ad3c0;
 void* g_CDeformableModelInstanceVTable = (void*)core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80;
+
+// void*[12]
+void* g_CInStreamMemoryVTable[12] = {
+    (void*)support_trstream_cpp_CInStreamMemory_dtor_FUN_005741d0, (void*)support_trstream_cpp_CInStreamMemory_getChar_FUN_00574230, (void*)support_trstream_cpp_CInStreamMemory_ungetChar_FUN_00574280, (void*)support_trstream_cpp_CInStreamMemory_peekChar_FUN_005742c0,
+    (void*)support_trstream_cpp_CInStreamMemory_read_FUN_005742f0, (void*)support_trstream_cpp_CInStreamMemory_seek_FUN_00574350, (void*)support_trstream_cpp_CInStreamMemory_tell_FUN_005743a0, (void*)support_trstream_cpp_CInStreamFile_isOpen_FUN_00573d60,
+    (void*)support_trstream_cpp_CInStreamMemory_isEof_FUN_005743c0, (void*)support_trstream_cpp_CInStreamMemory_close_FUN_005743f0, (void*)support_trstream_cpp_CInStreamMemory_open_FUN_00574440, (void*)support_trstream_cpp_CInStreamMemory_openOwned_FUN_00574470
+};
+
+// void*[2]
+void* g_ARRAY_PTR_005e0704[2] = {(void*)core_game_cpp_CGame_setGogglesActive_FUN_004ba220, (void*)core_game_cpp_CGame_setSpecialViewActive_FUN_004ba280};
+
+// void*[3]
+void* g_ARRAY_PTR_005e224c[3] = {(void*)engine_keys_cpp_CKeys_getKeyState_FUN_004df540, (void*)engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004df550, (void*)engine_keys_cpp_clearKeypresses_FUN_004df570};
+
+// void*[5]
+void* g_ARRAY_PTR_005e2f74[5] = {
+    (void*)engine_palette_cpp_CFont_dtor_FUN_00509bb0, (void*)crt_unknown_c_FUN_005a3e21, (void*)crt_unknown_c_FUN_005a3e21, (void*)crt_unknown_c_FUN_005a3e21,
+    (void*)engine_palette_cpp_CFont_getLineSpacing_FUN_00509e00
+};
+void* g_ARRAY_PTR_005e5b04[5] = {
+    (void*)support_trstream_cpp_COutStream_dtor_FUN_005744a0, (void*)crt_unknown_c_FUN_005a3e21, (void*)crt_unknown_c_FUN_005a3e21, (void*)support_trstream_cpp_COutStream_seek_FUN_00574380,
+    (void*)support_trstream_cpp_COutStream_tell_FUN_005743b0
+};
+
+// void*[6]
+void* g_CDemonPodVTable[6] = {
+    (void*)core_podmain_cpp_CDemonPod_dtor_FUN_00515490, (void*)core_podmain_cpp_CDemonPod_load_FUN_005152e0, (void*)engine_pod_cpp_CPod_findFile_FUN_00514cb0, (void*)engine_pod_cpp_CPod_mount_FUN_005143b0,
+    (void*)engine_pod_cpp_CPod_dismount_FUN_00514560, (void*)engine_pod_cpp_CPod_remount_FUN_005144b0
+};
 

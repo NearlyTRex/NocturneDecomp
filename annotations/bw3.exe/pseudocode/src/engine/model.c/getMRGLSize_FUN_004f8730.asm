@@ -19,8 +19,8 @@
 ;   void* switchdataD_004f861c = 004f874f
 ;   TerminatedCString s_MRGLSize_Bad_type_d_005c9096
 ;   TerminatedCString s_engine_model_c_005c90ae
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -141,8 +141,8 @@ section .text
     MOV EAX,ESP                         ; 004f886d
     MOV ECX,0x25c                       ; 004f886f
     PUSH EAX                            ; 004f8874
-    MOV dword ptr [0x01d71de0],EDX      ; 004f8875 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004f887b | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004f8875 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004f887b | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f8881
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     MOV EAX,0x4                         ; 004f8886

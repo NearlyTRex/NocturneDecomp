@@ -11,8 +11,8 @@
 ; int              Stack[0x14]:4   buffer_height
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -65,11 +65,11 @@ section .text
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x5b8be8                    ; 00436d1d
     ADD ESP,0xc                         ; 00436d22
-    MOV [0x01d71de0],EAX                ; 00436d25 | DAT_01d71de0
+    MOV [0x01d71de0],EAX                ; 00436d25 | g_CHAR_PTR_01d71de0
     MOV EAX,ESP                         ; 00436d2a
     MOV EDX,0x54a                       ; 00436d2c
     PUSH EAX                            ; 00436d31
-    MOV dword ptr [0x01d71de4],EDX      ; 00436d32 | DAT_01d71de4
+    MOV dword ptr [0x01d71de4],EDX      ; 00436d32 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00436d38
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00436d3d
@@ -101,11 +101,11 @@ section .text
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x5b8c19                    ; 00436d85
     ADD ESP,0xc                         ; 00436d8a
-    MOV [0x01d71de0],EAX                ; 00436d8d | DAT_01d71de0
+    MOV [0x01d71de0],EAX                ; 00436d8d | g_CHAR_PTR_01d71de0
     MOV EAX,ESP                         ; 00436d92
     MOV EDX,0x553                       ; 00436d94
     PUSH EAX                            ; 00436d99
-    MOV dword ptr [0x01d71de4],EDX      ; 00436d9a | DAT_01d71de4
+    MOV dword ptr [0x01d71de4],EDX      ; 00436d9a | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00436da0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00436da5

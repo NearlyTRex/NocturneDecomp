@@ -11,8 +11,8 @@ void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(CIniFile *this_ptr,
 {
   char local_6c [100];
   
-  _sprintf(local_6c,&DAT_005c58ae);
+  _sprintf(local_6c,"%d");
   (**(code **)((int)this_ptr->vtable + 4))(this_ptr,key_name,local_6c,100);
-  sscanf(local_6c,&DAT_005c58b1);
+  sscanf(local_6c,"%d");
   return;
 }

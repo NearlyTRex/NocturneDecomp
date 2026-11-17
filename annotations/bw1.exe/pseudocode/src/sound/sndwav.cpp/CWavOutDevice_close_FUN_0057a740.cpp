@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_0057a740(CWavOutDevice *this_ptr)
 
 {
@@ -33,14 +31,14 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_0057a740(CWavOutDevice *thi
     *(uint *)(iVar1 + 0x2c82864) = 0;
     iVar1 = iVar3;
   } while (iVar3 != 0x20);
-  if (_DAT_02c82840 == (HWAVEOUT)0x0) {
+  if (g_INT_02c82840 == 0) {
     return uVar4;
   }
-  MVar2 = waveOutClose(_DAT_02c82840);
+  MVar2 = waveOutClose((HWAVEOUT)g_INT_02c82840);
   if (MVar2 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005773f0("waveOutClose failed.");
     uVar4 = 0;
   }
-  _DAT_02c82840 = (HWAVEOUT)0x0;
+  g_INT_02c82840 = 0;
   return uVar4;
 }

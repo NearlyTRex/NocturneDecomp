@@ -8,14 +8,14 @@
 ; char *           Stack[0x8]:4   format_string
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5b0e0
-;   undefined4 DAT_01c5bae0
-;   undefined4 DAT_01c5bae4
-;   undefined4 DAT_01c5bb20
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5ac
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   CBitFont* g_CBitFont_PTR_01c5b0e0
+;   int g_INT_01c5bae0
+;   int g_INT_01c5bae4
+;   int g_INT_01c5bb20
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5ac
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -37,19 +37,19 @@ section .text
     PUSH EDI                            ; 0047d0a2
     PUSH EBP                            ; 0047d0a3
     SUB ESP,0x404                       ; 0047d0a4
-    CMP dword ptr [0x01c5b0e0],0x0      ; 0047d0aa | DAT_01c5b0e0
+    CMP dword ptr [0x01c5b0e0],0x0      ; 0047d0aa | g_CBitFont_PTR_01c5b0e0
     JZ 0x0047d170                       ; 0047d0b1
         ;   XREF to: 0047d170 (CONDITIONAL_JUMP)  ; LAB_0047d170
-    MOV EAX,[0x01c5b0e0]                ; 0047d0b7 | DAT_01c5b0e0
+    MOV EAX,[0x01c5b0e0]                ; 0047d0b7 | g_CBitFont_PTR_01c5b0e0
         ;   Label: LAB_0047d0b7
     PUSH 0x6a                           ; 0047d0bc
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047d0be
     PUSH EAX                            ; 0047d0c4
-    MOV dword ptr [0x01c5bae0],EDX      ; 0047d0c5 | DAT_01c5bae0
+    MOV dword ptr [0x01c5bae0],EDX      ; 0047d0c5 | g_INT_01c5bae0
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047d0cb
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047d0d0
-    MOV [0x01c5bae4],EAX                ; 0047d0d3 | DAT_01c5bae4
+    MOV [0x01c5bae4],EAX                ; 0047d0d3 | g_INT_01c5bae4
     LEA EAX,[ESP + 0x420]               ; 0047d0d8
     MOV dword ptr [ESP + 0x400],EAX     ; 0047d0df
     LEA EAX,[ESP + 0x400]               ; 0047d0e6
@@ -77,15 +77,15 @@ section .text
         ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047d133
     PUSH -0x1                           ; 0047d136
-    MOV EAX,[0x01c5bb20]                ; 0047d138 | DAT_01c5bb20
+    MOV EAX,[0x01c5bb20]                ; 0047d138 | g_INT_01c5bb20
     PUSH EAX                            ; 0047d13d
-    MOV EDX,dword ptr [0x01c6b5ac]      ; 0047d13e | DAT_01c6b5ac
+    MOV EDX,dword ptr [0x01c6b5ac]      ; 0047d13e | g_INT_01c6b5ac
     PUSH EDX                            ; 0047d144
-    MOV ECX,dword ptr [0x01c6b5a8]      ; 0047d145 | DAT_01c6b5a8
+    MOV ECX,dword ptr [0x01c6b5a8]      ; 0047d145 | g_INT_01c6b5a8
     PUSH ECX                            ; 0047d14b
     LEA EAX,[ESP + 0x10]                ; 0047d14c
     PUSH EAX                            ; 0047d150
-    MOV EBX,dword ptr [0x01c5b0e0]      ; 0047d151 | DAT_01c5b0e0
+    MOV EBX,dword ptr [0x01c5b0e0]      ; 0047d151 | g_CBitFont_PTR_01c5b0e0
     PUSH EBX                            ; 0047d157
     CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 0047d158
         ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_0047d170
     MOV EBX,0xa7                        ; 0047d175
     PUSH 0x5bcd3b                       ; 0047d17a
-    MOV dword ptr [0x01d71de0],ECX      ; 0047d17f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0047d185 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0047d17f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0047d185 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047d18b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047d190

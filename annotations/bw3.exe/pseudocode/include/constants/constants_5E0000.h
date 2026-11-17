@@ -3,28 +3,175 @@
 #pragma once
 
 // Dependencies
+#include <math.h>
 #include "system/basetypes.h"
 #include "globals.h"
 #include "constants.h"
 #include "prototypes/prototypes_400000.h"
 #include "prototypes/prototypes_420000.h"
 #include "prototypes/prototypes_430000.h"
-#include "prototypes/prototypes_4C0000.h"
 #include "prototypes/prototypes_4D0000.h"
-#include "prototypes/prototypes_500000.h"
-#include "prototypes/prototypes_510000.h"
 #include "prototypes/prototypes_570000.h"
-#include "prototypes/prototypes_580000.h"
 #include "prototypes/prototypes_5A0000.h"
 
 // =============================================================================
 // CONSTANTS
 // =============================================================================
 
+// TerminatedCString constants
+static TerminatedCString s_W_005e5a54 = "@%W";
+
+// double constants
+static double g_DOUBLE_005e87fc = 8.9170892898641982e-312;
+static double g_DOUBLE_005e8838 = INFINITY;
+
+// float constants
+static float g_FLOAT_005e008c = 8.0f;
+static float g_FLOAT_005e0400 = 256.0f;
+static float g_FLOAT_005e06dc = 256.0f;
+static float g_FLOAT_005e06e4 = 0.00390625f;
+static float g_FLOAT_005e076c = 3.0f;
+static float g_FLOAT_005e0770 = 50.0f;
+static float g_FLOAT_005e0774 = 100.0f;
+static float g_FLOAT_005e0778 = 10.0f;
+static float g_FLOAT_005e0a28 = 2.5f;
+static float g_FLOAT_005e0a2c = 3.4f;
+static float g_FLOAT_005e0a30 = 2.5f;
+static float g_FLOAT_005e0a38 = 5.5f;
+static float g_FLOAT_005e0a3c = 0.7f;
+static float g_FLOAT_005e0a40 = 50.0f;
+static float g_FLOAT_005e0a44 = 100.0f;
+static float g_FLOAT_005e0bc0 = 256.0f;
+static float g_FLOAT_005e0e18 = 256.0f;
+static float g_FLOAT_005e0e1c = 65536.0f;
+static float g_FLOAT_005e18fc = 2.0f;
+static float g_FLOAT_005e1900 = 50.0f;
+static float g_FLOAT_005e1904 = 100.0f;
+static float g_FLOAT_005e1908 = 10.0f;
+static float g_FLOAT_005e1eec = 2.0f;
+static float g_FLOAT_005e1ef0 = 50.0f;
+static float g_FLOAT_005e1ef4 = 100.0f;
+static float g_FLOAT_005e1ef8 = 10.0f;
+static float g_FLOAT_005e1efc = 4.0f;
+static float g_FLOAT_005e23b8 = 0.00390625f;
+static float g_FLOAT_005e24ec = 8.0f;
+static float g_FLOAT_005e2920 = 0.25f;
+static float g_FLOAT_005e2924 = 0.25f;
+static float g_FLOAT_005e2928 = 1.0f;
+static float g_FLOAT_005e2974 = 3.0f;
+static float g_FLOAT_005e29c0 = 256.0f;
+static float g_FLOAT_005e29c4 = 65536.0f;
+static float g_FLOAT_005e29c8 = 0.00390625f;
+static float g_FLOAT_005e29cc = 1.525879e-05f;
+static float g_FLOAT_005e2a38 = 50.0f;
+static float g_FLOAT_005e2a3c = 100.0f;
+static float g_FLOAT_005e2c00 = 256.0f;
+static float g_FLOAT_005e2c08 = 0.00390625f;
+static float g_FLOAT_005e2c60 = 256.0f;
+static float g_FLOAT_005e2fd8 = 2.0f;
+static float g_FLOAT_005e31a8 = 0.00390625f;
+static float g_FLOAT_005e32e0 = 256.0f;
+static float g_FLOAT_005e34ec = 1.1f;
+static float g_FLOAT_005e34f0 = 1.2f;
+static float g_FLOAT_005e34f4 = 0.2f;
+static float g_FLOAT_005e34f8 = 2.0f;
+static float g_FLOAT_005e34fc = 0.05f;
+static float g_FLOAT_005e3500 = 0.5f;
+static float g_FLOAT_005e3504 = 1.0f;
+static float g_FLOAT_005e3508 = 10.0f;
+static float g_FLOAT_005e350c = 5.0f;
+static float g_FLOAT_005e3510 = 20.0f;
+static float g_FLOAT_005e3520 = 1.5f;
+static float g_FLOAT_005e3524 = -0.7853982f;
+static float g_FLOAT_005e3528 = 0.7853982f;
+static float g_FLOAT_005e352c = 2.7f;
+static float g_FLOAT_005e36d8 = 2.0f;
+static float g_FLOAT_005e386c = 8.0f;
+static float g_FLOAT_005e3a08 = 4.0f;
+static float g_FLOAT_005e3a0c = 50.0f;
+static float g_FLOAT_005e3a10 = 100.0f;
+static float g_FLOAT_005e3a14 = 12.0f;
+static float g_FLOAT_005e3bc0 = 256.0f;
+static float g_FLOAT_005e3bc4 = 65536.0f;
+static float g_FLOAT_005e3ce0 = 256.0f;
+static float g_FLOAT_005e3cf8 = 200.0f;
+static float g_FLOAT_005e3cfc = 100.0f;
+static float g_FLOAT_005e3d18 = 256.0f;
+static float g_FLOAT_005e3d30 = 256.0f;
+static float g_FLOAT_005e3d4c = 13.0f;
+static float g_FLOAT_005e3d50 = 3.0f;
+static float g_FLOAT_005e3d54 = 50.0f;
+static float g_FLOAT_005e3d58 = 100.0f;
+static float g_FLOAT_005e3d5c = 10.0f;
+static float g_FLOAT_005e3d60 = 0.2f;
+static float g_FLOAT_005e3d64 = 0.2f;
+static float g_FLOAT_005e3d68 = 0.2f;
+static float g_FLOAT_005e4350 = 50.0f;
+static float g_FLOAT_005e4354 = 100.0f;
+static float g_FLOAT_005e4358 = 9.0f;
+static float g_FLOAT_005e4758 = 256.0f;
+static float g_FLOAT_005e4760 = 0.00390625f;
+static float g_FLOAT_005e4824 = -1.0f;
+static float g_FLOAT_005e4840 = 0.25f;
+static float g_FLOAT_005e4844 = 1116.4f;
+static float g_FLOAT_005e4848 = 4.0f;
+static float g_FLOAT_005e484c = 20.0f;
+static float g_FLOAT_005e4850 = 4.0f;
+static float g_FLOAT_005e4854 = 20.0f;
+static float g_FLOAT_005e4858 = 10000.0f;
+static float g_FLOAT_005e485c = 2.0f;
+static float g_FLOAT_005e49d4 = 0.25f;
+static float g_FLOAT_005e49d8 = 0.25f;
+static float g_FLOAT_005e49dc = 1.0f;
+static float g_FLOAT_005e53bc = 8.0f;
+static float g_FLOAT_005e54f8 = 0.01f;
+static float g_FLOAT_005e58b0 = 256.0f;
+static float g_FLOAT_005e5e7c = 256.0f;
+static float g_FLOAT_005e5ec0 = 256.0f;
+static float g_FLOAT_005e6360 = 256.0f;
+static float g_FLOAT_005e6380 = 256.0f;
+static float g_FLOAT_005e639c = 3.0f;
+static float g_FLOAT_005e63a0 = 50.0f;
+static float g_FLOAT_005e63a4 = 100.0f;
+static float g_FLOAT_005e63a8 = 10.0f;
+static float g_FLOAT_005e63ac = 0.2f;
+static float g_FLOAT_005e63b0 = 0.2f;
+static float g_FLOAT_005e65e0 = 50.0f;
+static float g_FLOAT_005e65e4 = 100.0f;
+static float g_FLOAT_005e65e8 = 9.0f;
+static float g_FLOAT_005e6778 = 1.3f;
+static float g_FLOAT_005e677c = 50.0f;
+static float g_FLOAT_005e6780 = 100.0f;
+static float g_FLOAT_005e7048 = 3.0f;
+static float g_FLOAT_005e7050 = 50.0f;
+static float g_FLOAT_005e7054 = 100.0f;
+static float g_FLOAT_005e7058 = 20.0f;
+static float g_FLOAT_005e71f8 = 3.8f;
+static float g_FLOAT_005e7388 = 5.0f;
+static float g_FLOAT_005e7500 = 256.0f;
+static float g_FLOAT_005e751c = 3.0f;
+static float g_FLOAT_005e7520 = 50.0f;
+static float g_FLOAT_005e7524 = 100.0f;
+static float g_FLOAT_005e7528 = 10.0f;
+static float g_FLOAT_005e752c = 0.2f;
+static float g_FLOAT_005e7530 = 0.2f;
+static float g_FLOAT_005e76c8 = 5.0f;
+static float g_FLOAT_005e7860 = 50.0f;
+static float g_FLOAT_005e7864 = 100.0f;
+static float g_FLOAT_005e79f8 = 50.0f;
+static float g_FLOAT_005e79fc = 100.0f;
+static float g_FLOAT_005e81ac = 3.5f;
+static float g_FLOAT_005e81b0 = 50.0f;
+static float g_FLOAT_005e81b4 = 100.0f;
+static float g_FLOAT_005e81b8 = 10.0f;
+static float g_FLOAT_005e8348 = 50.0f;
+static float g_FLOAT_005e834c = 100.0f;
+static float g_FLOAT_005e84dc = 5.2f;
+static float g_FLOAT_005e84e0 = 50.0f;
+static float g_FLOAT_005e84e4 = 100.0f;
+static float g_FLOAT_005e84e8 = 10.0f;
+
 // undefined1* constants
-static undefined1* DAT_005E0E48 = (undefined1*)core_particle_cpp_CParticle_process_FUN_00509f30;
-static undefined1* DAT_005E0E4C = (undefined1*)core_gore_cpp_CBloodParticle_render_FUN_004ccbe0;
-static undefined1* DAT_005E0E50 = (undefined1*)core_gore_cpp_CBloodParticle_onCollision_FUN_004cd3f0;
 static undefined1* DAT_005E1544 = (undefined1*)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220;
 static undefined1* DAT_005E1548 = (undefined1*)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510;
 static undefined1* DAT_005E154C = (undefined1*)core_charactr_cpp_CCharacter_renderBackground_FUN_0042e300;
@@ -84,24 +231,6 @@ static undefined1* DAT_005E1678 = (undefined1*)crt_unknown_c_FUN_005a3e21;
 static undefined1* DAT_005E167C = (undefined1*)crt_unknown_c_FUN_005a3e21;
 static undefined1* DAT_005E1680 = (undefined1*)core_hero_cpp_CHero_reset_FUN_004d4410;
 static undefined1* DAT_005E1684 = (undefined1*)core_hero_cpp_CHero_toggleGoggles_FUN_004d48d0;
-static undefined1* DAT_005E2F78 = (undefined1*)crt_unknown_c_FUN_005a3e21;
-static undefined1* DAT_005E2F7C = (undefined1*)crt_unknown_c_FUN_005a3e21;
-static undefined1* DAT_005E2F80 = (undefined1*)crt_unknown_c_FUN_005a3e21;
-static undefined1* DAT_005E2F84 = (undefined1*)engine_palette_cpp_CFont_getLineSpacing_FUN_00509e00;
-static undefined1* DAT_005E2FA4 = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00509e40;
-static undefined1* DAT_005E2FA8 = (undefined1*)core_particle_cpp_CParticle_process_FUN_00509f30;
-static undefined1* DAT_005E2FAC = (undefined1*)core_particle_cpp_CParticle_render_FUN_0050a3b0;
-static undefined1* DAT_005E2FB0 = (undefined1*)core_particle_cpp_CParticle_onCollision_FUN_0050a3e0;
-static undefined1* DAT_005E3428 = (undefined1*)0x00514380; // LAB_00514380
-static undefined1* DAT_005E342C = (undefined1*)engine_pod_cpp_CPod_findFile_FUN_00514cb0;
-static undefined1* DAT_005E3430 = (undefined1*)engine_pod_cpp_CPod_mount_FUN_005143b0;
-static undefined1* DAT_005E3434 = (undefined1*)engine_pod_cpp_CPod_dismount_FUN_00514560;
-static undefined1* DAT_005E3438 = (undefined1*)engine_pod_cpp_CPod_remount_FUN_005144b0;
-static undefined1* DAT_005E3498 = (undefined1*)core_podmain_cpp_CDemonPod_load_FUN_005152e0;
-static undefined1* DAT_005E349C = (undefined1*)engine_pod_cpp_CPod_findFile_FUN_00514cb0;
-static undefined1* DAT_005E34A0 = (undefined1*)engine_pod_cpp_CPod_mount_FUN_005143b0;
-static undefined1* DAT_005E34A4 = (undefined1*)engine_pod_cpp_CPod_dismount_FUN_00514560;
-static undefined1* DAT_005E34A8 = (undefined1*)engine_pod_cpp_CPod_remount_FUN_005144b0;
 static undefined1* DAT_005E5A58 = (undefined1*)crt_unknown_c_FUN_005a3e21;
 static undefined1* DAT_005E5A5C = (undefined1*)support_trstream_cpp_CInStream_ungetChar_FUN_00572570;
 static undefined1* DAT_005E5A60 = (undefined1*)crt_unknown_c_FUN_005a3e21;
@@ -122,20 +251,6 @@ static undefined1* DAT_005E5AA8 = (undefined1*)support_trstream_cpp_CInStreamFil
 static undefined1* DAT_005E5AAC = (undefined1*)support_trstream_cpp_CInStreamFile_open_FUN_00573f50;
 static undefined1* DAT_005E5AB0 = (undefined1*)support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0;
 static undefined1* DAT_005E5AB4 = (undefined1*)support_trstream_cpp_CInStreamFile_openHandle_FUN_00574080;
-static undefined1* DAT_005E5AC8 = (undefined1*)support_trstream_cpp_CInStreamMemory_getChar_FUN_00574230;
-static undefined1* DAT_005E5ACC = (undefined1*)support_trstream_cpp_CInStreamMemory_ungetChar_FUN_00574280;
-static undefined1* DAT_005E5AD0 = (undefined1*)support_trstream_cpp_CInStreamMemory_peekChar_FUN_005742c0;
-static undefined1* DAT_005E5AD4 = (undefined1*)support_trstream_cpp_CInStreamMemory_read_FUN_005742f0;
-static undefined1* DAT_005E5AD8 = (undefined1*)support_trstream_cpp_CInStreamMemory_seek_FUN_00574350;
-static undefined1* DAT_005E5ADC = (undefined1*)support_trstream_cpp_CInStreamMemory_tell_FUN_005743a0;
-static undefined1* DAT_005E5AE0 = (undefined1*)support_trstream_cpp_CInStreamFile_isOpen_FUN_00573d60;
-static undefined1* DAT_005E5AE4 = (undefined1*)support_trstream_cpp_CInStreamMemory_isEof_FUN_005743c0;
-static undefined1* DAT_005E5AE8 = (undefined1*)support_trstream_cpp_CInStreamMemory_close_FUN_005743f0;
-static undefined1* DAT_005E5AEC = (undefined1*)support_trstream_cpp_CInStreamMemory_open_FUN_00574440;
-static undefined1* DAT_005E5AF0 = (undefined1*)support_trstream_cpp_CInStreamMemory_openOwned_FUN_00574470;
-static undefined1* DAT_005E5B08 = (undefined1*)crt_unknown_c_FUN_005a3e21;
-static undefined1* DAT_005E5B0C = (undefined1*)crt_unknown_c_FUN_005a3e21;
-static undefined1* DAT_005E5B10 = (undefined1*)support_trstream_cpp_COutStream_seek_FUN_00574380;
 static undefined1* DAT_005E5B28 = (undefined1*)support_trstream_cpp_COutStreamFile_putChar_FUN_005748b0;
 static undefined1* DAT_005E5B2C = (undefined1*)support_trstream_cpp_COutStreamFile_write_FUN_005748e0;
 static undefined1* DAT_005E5B30 = (undefined1*)support_trstream_cpp_COutStreamFile_seek_FUN_00574930;
@@ -155,54 +270,14 @@ static undefined1* DAT_005E5B78 = (undefined1*)support_trstream_cpp_COutStreamDe
 static undefined1* DAT_005E5B7C = (undefined1*)support_trstream_cpp_COutStreamDebug_write_FUN_00574eb0;
 static undefined1* DAT_005E5B80 = (undefined1*)support_trstream_cpp_COutStreamDebug_seek_FUN_00574f70;
 static undefined1* DAT_005E5B84 = (undefined1*)support_trstream_cpp_COutStreamDebug_tell_FUN_00574fa0;
-static undefined1* DAT_005E6538 = (undefined1*)engine_winfont_cpp_CWinFont_drawText_FUN_0057fe80;
-static undefined1* DAT_005E653C = (undefined1*)engine_winfont_cpp_CWinFont_getStringWidth_FUN_00580380;
-static undefined1* DAT_005E6540 = (undefined1*)engine_winfont_cpp_CWinFont_getStringHeight_FUN_005803e0;
-static undefined1* DAT_005E6544 = (undefined1*)engine_winfont_cpp_CWinFont_getLineSpacing_FUN_00580450;
 
 // undefined4 constants
-static undefined4 DAT_005e076c = 0x40400000;
-static undefined4 DAT_005e0a28 = 0x40200000;
-static undefined4 DAT_005e0a2c = 0x4059999A;
-static undefined4 DAT_005e0a30 = 0x40200000;
 static undefined4 DAT_005e0a34 = 0x40000000;
-static undefined4 DAT_005e0a38 = 0x40B00000;
-static undefined4 DAT_005e18fc = 0x40000000;
-static undefined4 DAT_005e1eec = 0x40000000;
-static undefined4 DAT_005e3508 = 0x41200000;
-static undefined4 DAT_005e3510 = 0x41A00000;
 static undefined4 DAT_005e3514 = 0x41200000;
 static undefined4 DAT_005e3518 = 0x41000000;
 static undefined4 DAT_005e351c = 0x3F000000;
-static undefined4 DAT_005e3524 = 0xBF490FDB;
-static undefined4 DAT_005e3528 = 0x3F490FDB;
-static undefined4 DAT_005e39c0 = 0xFFFFFFFF;
-static undefined4 DAT_005e3a08 = 0x40800000;
-static undefined4 DAT_005e3d50 = 0x40400000;
 static undefined4 DAT_005e434c = 0x41000000;
-static undefined4 DAT_005e4848 = 0x40800000;
-static undefined4 DAT_005e484c = 0x41A00000;
-static undefined4 DAT_005e485c = 0x40000000;
-static undefined4 DAT_005e49d4 = 0x3E800000;
-static undefined4 DAT_005e49d8 = 0x3E800000;
-static undefined4 DAT_005e49dc = 0x3F800000;
-static undefined4 DAT_005e639c = 0x40400000;
-static undefined4 DAT_005e63a8 = 0x41200000;
-static undefined4 DAT_005e63ac = 0x3E4CCCCD;
-static undefined4 DAT_005e63b0 = 0x3E4CCCCD;
 static undefined4 DAT_005e65dc = 0x40800000;
-static undefined4 DAT_005e6778 = 0x3FA66666;
-static undefined4 DAT_005e7048 = 0x40400000;
 static undefined4 DAT_005e704c = 0x41F00000;
-static undefined4 DAT_005e71f8 = 0x40733333;
-static undefined4 DAT_005e7388 = 0x40A00000;
-static undefined4 DAT_005e751c = 0x40400000;
-static undefined4 DAT_005e7528 = 0x41200000;
-static undefined4 DAT_005e752c = 0x3E4CCCCD;
-static undefined4 DAT_005e7530 = 0x3E4CCCCD;
-static undefined4 DAT_005e76c8 = 0x40A00000;
 static undefined4 DAT_005e785c = 0x41400000;
-static undefined4 DAT_005e81ac = 0x40600000;
-static undefined4 DAT_005e8806 = 0x003B001F;
-static undefined4 DAT_005e883c = 0x7FF00000;
 

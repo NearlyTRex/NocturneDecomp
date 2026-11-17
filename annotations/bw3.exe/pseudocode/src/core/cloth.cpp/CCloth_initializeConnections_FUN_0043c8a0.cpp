@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(CCloth *this_ptr)
 
 {
@@ -95,8 +93,8 @@ void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(CCloth *th
                   iVar3 = pSVar1->connected_count + 1;
                   pSVar1->connected_count = iVar3;
                   if (0xf < iVar3) {
-                    _DAT_01d71de0 = "..\\core\\cloth.cpp";
-                    _DAT_01d71de4 = 0x1c3;
+                    g_CHAR_PTR_01d71de0 = "..\\core\\cloth.cpp";
+                    g_INT_01d71de4 = 0x1c3;
                     core_main_c_displayErrorAndQuit_FUN_004e4330
                               ("Too many connecting verticies");
                   }

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005b4400(int controller_index)
 
 {
   int iVar1;
   int iVar2;
   
-  _DAT_02c9d294 = 0;
+  g_INT_02c9d294 = 0;
   iVar2 = controller_index * 0x30;
   do {
     iVar1 = iVar2 + 0xc;

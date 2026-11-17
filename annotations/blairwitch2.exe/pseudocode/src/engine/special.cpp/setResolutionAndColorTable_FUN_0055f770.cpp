@@ -6,49 +6,49 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_0055f770(int width,int height,int bits_per_pixel)
 
 {
-  int *piVar1;
-  int iVar2;
-  bool bVar3;
+  ushort uVar1;
+  uint uVar2;
+  byte *puVar3;
+  int iVar4;
+  bool bVar5;
   
-  _DAT_0264bbb0 = 0;
+  g_INT_0264bbb0 = 0;
   if (bits_per_pixel < 0x10) {
     bits_per_pixel = 0x10;
   }
-  if ((_DAT_0264bcdc == 0) &&
-     (iVar2 = engine_special_cpp_loadExternalRenderer_FUN_0055e8c0(_DAT_0264bcf0), iVar2 == 0)) {
+  if ((g_INT_0264bcdc == 0) &&
+     (iVar4 = engine_special_cpp_loadExternalRenderer_FUN_0055e8c0(g_HWND_0264bcf0), iVar4 == 0)) {
     return 0;
   }
-  iVar2 = (*_DAT_0264bbc8)(width,height,bits_per_pixel,&DAT_01c2a38c);
-  if (iVar2 == 0) {
-    _DAT_01c37788 = iVar2;
+  iVar4 = (*(code *)g_PTR_0264bbc8)(width,height,bits_per_pixel,g_ARRAY_PTR_01c2a38c);
+  if (iVar4 == 0) {
+    g_INT_01c37788 = iVar4;
     return 0;
   }
-  (*_DAT_0264bc2c)(&DAT_01c35838,&DAT_01c34910);
+  (*(code *)g_PTR_0264bc2c)(g_UCHAR_ARRAY_01c35838,g_USHORT_ARRAY_01c34910);
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10();
-  (*_DAT_0264bc1c)(_DAT_0264bce4,_DAT_0264bce8,_DAT_0264bcec);
-  _DAT_01c37788 = 1;
-  _DAT_0264bcf4 = bits_per_pixel;
+  (*(code *)g_PTR_0264bc1c)(g_INT_0264bce4,g_INT_0264bce8,g_INT_0264bcec);
+  g_INT_01c37788 = 1;
+  g_INT_0264bcf4 = bits_per_pixel;
   engine_special_cpp_lockFrame_FUN_0055f500();
-  piVar1 = _DAT_01c2a38c;
-  if (DAT_006141c0 == 0x10) {
-    iVar2 = *_DAT_01c2a38c;
-    *(short *)_DAT_01c2a38c = -0x5433;
-    bVar3 = (short)*piVar1 != -0x5433;
-    *(short *)piVar1 = (short)iVar2;
+  puVar3 = g_ARRAY_PTR_01c2a38c[0];
+  if (g_INT_006141c0 == 0x10) {
+    uVar1 = *(ushort *)g_ARRAY_PTR_01c2a38c[0];
+    *(ushort *)g_ARRAY_PTR_01c2a38c[0] = 0xabcd;
+    bVar5 = *(short *)puVar3 != -0x5433;
+    *(ushort *)puVar3 = uVar1;
   }
   else {
-    if (DAT_006141c0 != 0x20) goto LAB_0055f846;
-    iVar2 = *_DAT_01c2a38c;
-    *_DAT_01c2a38c = -0x55443323;
-    bVar3 = *piVar1 != -0x55443323;
-    *piVar1 = iVar2;
+    if (g_INT_006141c0 != 0x20) goto LAB_0055f846;
+    uVar2 = *(uint *)g_ARRAY_PTR_01c2a38c[0];
+    *(uint *)g_ARRAY_PTR_01c2a38c[0] = 0xaabbccdd;
+    bVar5 = *(int *)puVar3 != -0x55443323;
+    *(uint *)puVar3 = uVar2;
   }
-  _DAT_0264bbb0 = (uint)bVar3;
+  g_INT_0264bbb0 = (int)bVar5;
 LAB_0055f846:
   engine_special_cpp_unlockFrame_FUN_0055f550(0);
   return 1;

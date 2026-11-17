@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 
 {
@@ -17,7 +15,7 @@ void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0
   (this_ptr->velocity).z = 0.0;
   (this_ptr->velocity).y = (this_ptr->velocity).z;
   (this_ptr->velocity).x = (this_ptr->velocity).y;
-  this_ptr->closest_distance_threshold = _DAT_005f4084;
+  this_ptr->closest_distance_threshold = 9999.0f;
   core_cloth_cpp_CClothList_process_FUN_005b1780
             (&this_ptr->cloth_list,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec,
              10.0,this_ptr->closest_distance_threshold,&this_ptr->model);

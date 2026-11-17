@@ -28,7 +28,7 @@
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f92b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df66c
+;   double g_DOUBLE_005df66c = 8
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createTrailSegment_FUN_004b70f0
@@ -77,7 +77,7 @@ section .text
     FADDP                               ; 004b71a7
     MOV ESI,EAX                         ; 004b71a9
     FSQRT                               ; 004b71ab
-    FMUL double ptr [0x005df66c]        ; 004b71ad | DAT_005df66c
+    FMUL double ptr [0x005df66c]        ; 004b71ad | g_DOUBLE_005df66c
     FDIV float ptr [EBP + 0x20]         ; 004b71b3
     FLD1                                ; 004b71b6
     FADDP                               ; 004b71b8

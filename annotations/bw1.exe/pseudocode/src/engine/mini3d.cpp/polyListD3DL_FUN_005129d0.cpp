@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_polyListD3DL_FUN_005129d0(float *vertices,int vertex_count,ushort *indices,int triangle_count)
 
 {
@@ -21,30 +19,30 @@ void __cdecl engine_mini3d_cpp_polyListD3DL_FUN_005129d0(float *vertices,int ver
   int iVar5;
   int iVar6;
   
-  _DAT_01e7dac8 = _DAT_01e7dac8 + triangle_count;
-  _DAT_01d224b4 = _DAT_01d224b4 + vertex_count;
-  if (_DAT_01d25f14 == 0) {
+  g_INT_01e7dac8 = g_INT_01e7dac8 + triangle_count;
+  g_INT_01d224b4 = g_INT_01d224b4 + vertex_count;
+  if (g_INT_01d25f14 == 0) {
     engine_mini3d_cpp_updateTransform_FUN_005124f0();
     engine_mini3d_cpp_updateRenderState_FUN_00516c60();
-    if ((_DAT_02c83464 == (code *)0x0) || (_DAT_01c50948 == 0)) {
+    if ((g_PTR_02c83464 == (byte *)0x0) || (g_INT_01c50948 == 0)) {
       engine_mini3d_cpp_allocVertexList_FUN_00512670();
       if (10000 < vertex_count) {
-        _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
-        _DAT_01d1d404 = 0x75f;
+        g_CHAR_PTR_01d1d400 = "..\\engine\\mini3d.cpp";
+        g_INT_01d1d404 = 0x75f;
         core_main_c_displayErrorAndQuit_FUN_005030e0("CMini3D::polyList - Too many verticies : %d");
       }
       clip_flags = 0;
       if (0 < vertex_count) {
-        out = _DAT_01d227e0;
+        out = g_FLOAT_PTR_01d227e0;
         iVar5 = 0;
         do {
           engine_mini3d_cpp_transformVertex_FUN_00513260((CVector3f *)vertices,out);
           fVar1 = ((CVector3f *)((int)vertices + 0xc))->y;
-          fVar2 = (float)((uint)fVar1 >> 8 & 0xff) * _DAT_005e8da3;
-          fVar3 = (float)((uint)fVar1 >> 0x10 & 0xff) * _DAT_005e8da3;
-          fVar4 = (float)((uint)fVar1 >> 0x18) * _DAT_005e8da3;
+          fVar2 = (float)((uint)fVar1 >> 8 & 0xff) * 0.003921569f;
+          fVar3 = (float)((uint)fVar1 >> 0x10 & 0xff) * 0.003921569f;
+          fVar4 = (float)((uint)fVar1 >> 0x18) * 0.003921569f;
           iVar6 = iVar5 + 0x40;
-          out[9] = (float)((uint)fVar1 & 0xff) * _DAT_005e8da3;
+          out[9] = (float)((uint)fVar1 & 0xff) * 0.003921569f;
           out[10] = fVar2;
           out[0xb] = fVar3;
           out[0xc] = fVar4;
@@ -52,21 +50,22 @@ void __cdecl engine_mini3d_cpp_polyListD3DL_FUN_005129d0(float *vertices,int ver
           out[8] = ((CVector3f *)((int)vertices + 0x18))->y;
           engine_mini3d_cpp_computeVertexFog_FUN_005140c0(out);
           out = out + 0x10;
-          clip_flags = clip_flags | *(uint *)(iVar5 + 0x10 + (int)_DAT_01d227e0);
+          clip_flags = clip_flags | *(uint *)(iVar5 + 0x10 + (int)g_FLOAT_PTR_01d227e0);
           vertices = &((CVector3f *)((int)vertices + 0x18))->z;
           iVar5 = iVar6;
         } while (iVar6 < unaff_ESI);
       }
-      if (_DAT_01d25f18 == 0) {
+      if (g_INT_01d25f18 == 0) {
         engine_mini3d_cpp_drawTransformedList_FUN_00515ae0
-                  (_DAT_01d227e0,vertex_count,indices,triangle_count,clip_flags);
+                  (g_FLOAT_PTR_01d227e0,vertex_count,indices,triangle_count,clip_flags);
         return;
       }
       engine_mini3d_cpp_userClipPolyList_FUN_00517660
-                (_DAT_01d227e0,vertex_count,indices,triangle_count);
+                (g_FLOAT_PTR_01d227e0,vertex_count,indices,triangle_count);
     }
     else {
-      (*_DAT_02c83464)(vertices,vertex_count,indices,triangle_count,_DAT_01c51d14);
+      (*(code *)g_PTR_02c83464)
+                (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c51d14.dword);
     }
   }
   else {

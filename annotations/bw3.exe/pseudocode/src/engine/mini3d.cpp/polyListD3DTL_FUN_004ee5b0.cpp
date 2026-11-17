@@ -32,26 +32,27 @@ void __cdecl engine_mini3d_cpp_polyListD3DTL_FUN_004ee5b0(float *vertices,int ve
   uint local_14;
   
   bVar11 = 0;
-  _DAT_01ed3198 = _DAT_01ed3198 + triangle_count;
-  _DAT_01d76c34 = _DAT_01d76c34 + vertex_count;
-  if (_DAT_01d7a694 == 0) {
+  g_INT_01ed3198 = g_INT_01ed3198 + triangle_count;
+  g_INT_01d76c34 = g_INT_01d76c34 + vertex_count;
+  if (g_INT_01d7a694 == 0) {
     engine_mini3d_cpp_updateTransform_FUN_004edcc0();
     engine_mini3d_cpp_updateRenderState_FUN_004f2430();
-    if ((_DAT_02cf60c8 == (code *)0x0) || (_DAT_01c6cee8 == 0)) {
+    if ((g_PTR_02cf60c8 == (byte *)0x0) || (g_INT_01c6cee8 == 0)) {
       engine_mini3d_cpp_allocVertexList_FUN_004ede40();
       if (10000 < vertex_count) {
-        _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
-        _DAT_01d71de4 = 0x844;
+        g_CHAR_PTR_01d71de0 = "..\\engine\\mini3d.cpp";
+        g_INT_01d71de4 = 0x844;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CMini3D::polyList - Too many verticies : %d");
       }
       clip_flags = 0;
       iVar9 = 0;
-      pfVar8 = _DAT_01d76f60;
+      pfVar8 = g_FLOAT_PTR_01d76f60;
       if (0 < vertex_count) {
         do {
-          fVar1 = _DAT_01d76cc4;
-          *pfVar8 = ((*vertices * _DAT_01d76cc4 - _DAT_01d76c64) * vertices[2]) / _DAT_01d76c5c;
-          pfVar8[1] = ((fVar1 * vertices[1] - _DAT_01d76c68) * vertices[2]) / _DAT_01d76c60;
+          fVar1 = g_FLOAT_01d76cc4;
+          *pfVar8 = ((*vertices * g_FLOAT_01d76cc4 - g_FLOAT_01d76c64) * vertices[2]) /
+                    g_FLOAT_01d76c5c;
+          pfVar8[1] = ((fVar1 * vertices[1] - g_FLOAT_01d76c68) * vertices[2]) / g_FLOAT_01d76c60;
           pfVar8[2] = vertices[2];
           fVar1 = vertices[3];
           pfVar8[4] = 0.0;
@@ -71,21 +72,21 @@ void __cdecl engine_mini3d_cpp_polyListD3DTL_FUN_004ee5b0(float *vertices,int ve
           if (pfVar8[2] <= 0.0) {
             *(byte *)(pfVar8 + 4) = *(byte *)(pfVar8 + 4) | 0x10;
           }
-          fVar1 = _DAT_01d76cc4;
-          pfVar8[5] = *vertices * _DAT_01d76cc4;
+          fVar1 = g_FLOAT_01d76cc4;
+          pfVar8[5] = *vertices * g_FLOAT_01d76cc4;
           clip_flags = clip_flags | (uint)pfVar8[4];
           pfVar8[6] = fVar1 * vertices[1];
           pfVar8[7] = vertices[6];
           pfVar8[8] = vertices[7];
           fVar1 = vertices[4];
-          fVar6 = (float)((uint)fVar1 & 0xff) * _DAT_005c817d;
-          fVar4 = (float)((uint)fVar1 >> 8 & 0xff) * _DAT_005c817d;
+          fVar6 = (float)((uint)fVar1 & 0xff) * 0.003921569f;
+          fVar4 = (float)((uint)fVar1 >> 8 & 0xff) * 0.003921569f;
           uStack_20 = 0;
           uStack_18 = 0;
           local_1c = (uint)fVar1 >> 0x18;
           local_24 = (uint)fVar1 >> 0x10 & 0xff;
-          fVar1 = (float)local_24 * _DAT_005c817d;
-          fVar5 = (float)local_1c * _DAT_005c817d;
+          fVar1 = (float)local_24 * 0.003921569f;
+          fVar5 = (float)local_1c * 0.003921569f;
           iVar9 = iVar9 + 1;
           vertices = vertices + 8;
           pfVar8[0xd] = 0.0;
@@ -96,16 +97,16 @@ void __cdecl engine_mini3d_cpp_polyListD3DTL_FUN_004ee5b0(float *vertices,int ve
           pfVar8 = pfVar8 + 0x10;
         } while (iVar9 < vertex_count);
       }
-      if (((_DAT_01c6cee8 != 0) || (vertex_count != 4)) || (triangle_count != 2)) {
+      if (((g_INT_01c6cee8 != 0) || (vertex_count != 4)) || (triangle_count != 2)) {
         engine_mini3d_cpp_drawTransformedList_FUN_004f12b0
-                  (_DAT_01d76f60,vertex_count,indices,triangle_count,clip_flags);
+                  (g_FLOAT_PTR_01d76f60,vertex_count,indices,triangle_count,clip_flags);
         return;
       }
       local_14 = _DAT_01d7f57c;
       iVar9 = 0;
       do {
         uVar3 = *indices;
-        pfVar8 = _DAT_01d76f60 + (uint)uVar3 * 0x10;
+        pfVar8 = g_FLOAT_PTR_01d76f60 + (uint)uVar3 * 0x10;
         pfVar10 = (float *)((int)local_124 + iVar9);
         for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {
           *pfVar10 = *pfVar8;
@@ -123,7 +124,7 @@ void __cdecl engine_mini3d_cpp_polyListD3DTL_FUN_004ee5b0(float *vertices,int ve
         cVar2 = *(char *)((int)&local_14 + iVar9 + 1);
         iVar9 = iVar9 + 1;
       }
-      pfVar8 = _DAT_01d76f60 + iVar9 * 0x10;
+      pfVar8 = g_FLOAT_PTR_01d76f60 + iVar9 * 0x10;
       pfVar10 = local_64;
       for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {
         *pfVar10 = *pfVar8;
@@ -138,7 +139,8 @@ LAB_004ee87c:
       engine_mini3d_cpp_fillPolygon_FUN_004f2090(local_124,4);
     }
     else {
-      (*_DAT_02cf60c8)(vertices,vertex_count,indices,triangle_count,_DAT_01c6e2b4);
+      (*(code *)g_PTR_02cf60c8)
+                (vertices,vertex_count,indices,triangle_count,g_BIT_INTEGER32_01c6e2b4.dword);
     }
   }
   else {

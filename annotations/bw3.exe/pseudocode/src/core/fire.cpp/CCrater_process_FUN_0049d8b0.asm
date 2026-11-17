@@ -14,9 +14,9 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a1995
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0778
-;   undefined4 DAT_005c0780
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005c0778 = 0.200000000000000
+;   float g_FLOAT_005c0780 = -0.2000000
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -50,14 +50,14 @@ section .text
     FADD float ptr [EAX]                ; 0049d8e2
     FSTP float ptr [EAX]                ; 0049d8e4
     FLD float ptr [EBX + 0x18]          ; 0049d8e6
-    FCOMP double ptr [0x005c0778]       ; 0049d8e9 | DAT_005c0778
+    FCOMP double ptr [0x005c0778]       ; 0049d8e9 | g_DOUBLE_005c0778
     FNSTSW AX                           ; 0049d8ef
     SAHF                                ; 0049d8f1
     JBE 0x0049d940                      ; 0049d8f2
         ;   XREF to: 0049d940 (CONDITIONAL_JUMP)  ; LAB_0049d940
     FLD float ptr [EBX + 0x18]          ; 0049d8f4
     MOV ESI,0x3f800000                  ; 0049d8f7
-    FADD float ptr [0x005c0780]         ; 0049d8fc | DAT_005c0780
+    FADD float ptr [0x005c0780]         ; 0049d8fc | g_FLOAT_005c0780
     XOR ECX,ECX                         ; 0049d902
     FSTP float ptr [EBX + 0x18]         ; 0049d904
     MOV dword ptr [ESP],ECX             ; 0049d907
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 0049d923
     PUSH 0x3f800000                     ; 0049d924
     PUSH EBX                            ; 0049d929
-    MOV EBP,dword ptr [0x005fc5a0]      ; 0049d92a | DAT_005fc5a0
+    MOV EBP,dword ptr [0x005fc5a0]      ; 0049d92a | g_CFireEffect_PTR_005fc5a0
     PUSH EBP                            ; 0049d930
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560 ; 0049d931
         ;   XREF to: 004a2560 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 1198,
+    "complexity_score": 1182,
     "cross_reference_count": 6,
     "function_call_count": 13,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 298,
-    "suspect_count": 86,
+    "pseudocode_lines": 297,
+    "suspect_count": 85,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,10 +16,9 @@
       "stack_alignment_array",
       "stack_param",
       "unknown_field",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 1005
+    "total_lines": 1004
   },
   "cross_references": [
     {
@@ -166,20 +165,20 @@
     },
     {
       "addr": "005e5e55",
-      "name": "DAT_005e5e55",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e5e55",
+      "type": "double",
+      "value": "-0.00100000000000000"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
@@ -609,16 +608,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 24,
+      "line": 22,
       "match": "afStackY_108c",
       "severity": "moderate",
       "text": "float afStackY_108c [859];",
@@ -626,7 +617,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_fffffd08",
       "severity": "moderate",
       "text": "CDemonActor *in_stack_fffffd08;",
@@ -634,7 +625,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_fffffd0c",
       "severity": "moderate",
       "text": "float *in_stack_fffffd0c;",
@@ -642,7 +633,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 67,
+      "line": 65,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_dc = (float)local_198._0_4_ - (float)local_198._16_4_;",
@@ -650,7 +641,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 67,
+      "line": 65,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_dc = (float)local_198._0_4_ - (float)local_198._16_4_;",
@@ -658,7 +649,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 66,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_d4.min.y = (float)local_198._0_4_ + (float)local_198._16_4_;",
@@ -666,7 +657,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 66,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_d4.min.y = (float)local_198._0_4_ + (float)local_198._16_4_;",
@@ -674,7 +665,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 67,
       "match": "._8_4_",
       "severity": "mild",
       "text": "if ((float)local_198._8_4_ <= 0.0) {",
@@ -682,7 +673,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 68,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_dc = local_dc + (float)local_198._8_4_;",
@@ -690,7 +681,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 71,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_d4.min.y = local_d4.min.y + (float)local_198._8_4_;",
@@ -698,7 +689,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 73,
       "match": "._24_4_",
       "severity": "mild",
       "text": "local_d8 = (float)local_198._24_4_;",
@@ -706,7 +697,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 76,
+      "line": 74,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_d4.min.x = (float)local_198._4_4_ - (float)local_198._16_4_;",
@@ -714,7 +705,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 76,
+      "line": 74,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_d4.min.x = (float)local_198._4_4_ - (float)local_198._16_4_;",
@@ -722,7 +713,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 75,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_d4.max.x = (float)local_198._4_4_ + (float)local_198._16_4_;",
@@ -730,7 +721,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 75,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_d4.max.x = (float)local_198._4_4_ + (float)local_198._16_4_;",
@@ -738,7 +729,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 76,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_d4.min.z = (float)local_198._20_4_;",
@@ -746,7 +737,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 77,
       "match": "._12_4_",
       "severity": "mild",
       "text": "if ((float)local_198._12_4_ <= 0.0) {",
@@ -754,7 +745,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 78,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_d4.min.x = local_d4.min.x + (float)local_198._12_4_;",
@@ -762,7 +753,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 83,
+      "line": 81,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_d4.max.x = local_d4.max.x + (float)local_198._12_4_;",
@@ -770,7 +761,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 86,
+      "line": 84,
       "match": "._76_4_",
       "severity": "mild",
       "text": "local_198._76_4_ = (this_ptr->ray_query).ray_type;",
@@ -778,7 +769,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 107,
       "match": "(CBoundingBox3D *)((int)pCVar10",
       "severity": "moderate",
       "text": "pCVar10 = (CBoundingBox3D *)((int)pCVar10 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -786,7 +777,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 127,
       "match": "in_stack_fffffd08",
       "severity": "moderate",
       "text": "(CBoundingBox3D *)auStack_fc,(CVector3f *)in_stack_fffffd08,",
@@ -794,7 +785,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 128,
       "match": "in_stack_fffffd0c",
       "severity": "moderate",
       "text": "(CMatrix3x3f *)in_stack_fffffd0c);",
@@ -802,7 +793,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 146,
       "match": "._28_4_",
       "severity": "mild",
       "text": "if ((local_144.cylinder_bottom_y < (float)local_198._28_4_) &&",
@@ -810,7 +801,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 147,
       "match": "._32_4_",
       "severity": "mild",
       "text": "((float)local_198._32_4_ < local_144.cylinder_top_y)) {",
@@ -818,7 +809,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 150,
+      "line": 148,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fVar2 = fVar8 - (float)local_198._8_4_;",
@@ -826,7 +817,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 151,
+      "line": 149,
       "match": "._12_4_",
       "severity": "mild",
       "text": "fVar4 = fVar1 - (float)local_198._12_4_;",
@@ -834,7 +825,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 152,
+      "line": 150,
       "match": "._24_4_",
       "severity": "mild",
       "text": "fVar5 = local_144.cylinder_radius + (float)local_198._24_4_;",
@@ -842,7 +833,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 156,
+      "line": 154,
       "match": "._48_4_",
       "severity": "mild",
       "text": "fVar2 = fVar4 * (float)local_198._48_4_ + fVar2 * (float)local_198._44_4_;",
@@ -850,7 +841,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 156,
+      "line": 154,
       "match": "._44_4_",
       "severity": "mild",
       "text": "fVar2 = fVar4 * (float)local_198._48_4_ + fVar2 * (float)local_198._44_4_;",
@@ -858,7 +849,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 156,
       "match": "._44_4_",
       "severity": "mild",
       "text": "fVar5 = (float)local_198._44_4_ * fVar2 + (float)local_198._8_4_;",
@@ -866,7 +857,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 156,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fVar5 = (float)local_198._44_4_ * fVar2 + (float)local_198._8_4_;",
@@ -874,7 +865,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 158,
       "match": "._48_4_",
       "severity": "mild",
       "text": "fVar4 = (float)local_198._48_4_ * fVar2 + (float)local_198._12_4_;",
@@ -882,7 +873,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 158,
       "match": "._12_4_",
       "severity": "mild",
       "text": "fVar4 = (float)local_198._48_4_ * fVar2 + (float)local_198._12_4_;",
@@ -890,7 +881,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 165,
+      "line": 163,
       "match": "._44_4_",
       "severity": "mild",
       "text": "fVar5 = fVar5 - (float)local_198._44_4_ * fVar2;",
@@ -898,7 +889,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 164,
       "match": "._48_4_",
       "severity": "mild",
       "text": "fVar4 = fVar4 - (float)local_198._48_4_ * fVar2;",
@@ -906,7 +897,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 167,
+      "line": 165,
       "match": "._16_4_",
       "severity": "mild",
       "text": "if (ABS((float)local_198._16_4_) <= ABS((float)local_198._20_4_)) {",
@@ -914,7 +905,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 167,
+      "line": 165,
       "match": "._20_4_",
       "severity": "mild",
       "text": "if (ABS((float)local_198._16_4_) <= ABS((float)local_198._20_4_)) {",
@@ -922,7 +913,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 168,
+      "line": 166,
       "match": "._12_4_",
       "severity": "mild",
       "text": "fVar2 = (fVar4 - (float)local_198._12_4_) / (float)local_198._20_4_;",
@@ -930,7 +921,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 168,
+      "line": 166,
       "match": "._20_4_",
       "severity": "mild",
       "text": "fVar2 = (fVar4 - (float)local_198._12_4_) / (float)local_198._20_4_;",
@@ -938,7 +929,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 171,
+      "line": 169,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fVar2 = (fVar5 - (float)local_198._8_4_) / (float)local_198._16_4_;",
@@ -946,7 +937,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 171,
+      "line": 169,
       "match": "._16_4_",
       "severity": "mild",
       "text": "fVar2 = (fVar5 - (float)local_198._8_4_) / (float)local_198._16_4_;",
@@ -954,7 +945,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 175,
+      "line": 173,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_198._4_4_ = fVar4 - fVar1;",
@@ -962,7 +953,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 176,
+      "line": 174,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_198._0_4_ = 0.0;",
@@ -970,7 +961,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 190,
+      "line": 188,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_198._4_4_ = -fVar4;",
@@ -978,7 +969,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 189,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_198._0_4_ = 0.0;",
@@ -986,7 +977,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 200,
+      "line": 198,
       "match": "._8_4_",
       "severity": "mild",
       "text": "CStack_98.x = (float)local_198._8_4_;",
@@ -994,7 +985,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 201,
+      "line": 199,
       "match": "._12_4_",
       "severity": "mild",
       "text": "CStack_98.z = (float)local_198._12_4_;",
@@ -1002,7 +993,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 205,
+      "line": 203,
       "match": "._20_4_",
       "severity": "mild",
       "text": "uVar7 = local_198._20_4_;",
@@ -1010,7 +1001,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 206,
+      "line": 204,
       "match": "._16_4_",
       "severity": "mild",
       "text": "aCStack_50[0].x = (float)local_198._16_4_;",
@@ -1018,7 +1009,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 207,
+      "line": 205,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fStack_a4 = (float)auStack_84._4_4_;",
@@ -1026,7 +1017,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 226,
+      "line": 224,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (SStack_258.push_normal.y < (float)local_198._0_4_) {",
@@ -1034,7 +1025,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 227,
+      "line": 225,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_198._0_4_ = SStack_258.push_normal.y;",
@@ -1042,7 +1033,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 228,
+      "line": 226,
       "match": "in_stack_fffffd0c",
       "severity": "moderate",
       "text": "in_stack_fffffd0c = &SStack_258.push_normal.z;",
@@ -1050,7 +1041,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 229,
+      "line": 227,
       "match": "in_stack_fffffd08",
       "severity": "moderate",
       "text": "in_stack_fffffd08 = actor;",
@@ -1058,7 +1049,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 231,
+      "line": 229,
       "match": "in_stack_fffffd0c",
       "severity": "moderate",
       "text": "(actor,(CVector3f *)in_stack_fffffd0c,(CVector3f *)auStack_84);",
@@ -1066,7 +1057,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 232,
+      "line": 230,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_54 = (float)auStack_84._0_4_;",
@@ -1074,7 +1065,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 231,
       "match": "(float *)((int)aCStack_50",
       "severity": "moderate",
       "text": "*(float *)((int)aCStack_50 + (uint)bVar14 * -8) =",
@@ -1082,7 +1073,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 235,
+      "line": 233,
       "match": "(float *)((int)aCStack_50",
       "severity": "moderate",
       "text": "*(float *)((int)aCStack_50 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 4) =",
@@ -1090,7 +1081,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 238,
+      "line": 236,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_198._4_4_ = fStack_54;",
@@ -1098,7 +1089,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 239,
+      "line": 237,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_198._8_4_ = aCStack_50[0].x;",
@@ -1106,7 +1097,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 240,
+      "line": 238,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_198._12_4_ = aCStack_50[0].y;",
@@ -1114,7 +1105,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 256,
+      "line": 254,
       "match": "._8_4_",
       "severity": "mild",
       "text": "(float)local_198._8_4_ - (actor->location).position.x,",
@@ -1122,7 +1113,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 257,
+      "line": 255,
       "match": "._12_4_",
       "severity": "mild",
       "text": "(float)local_198._12_4_ - (actor->location).position.z,",
@@ -1130,7 +1121,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 258,
+      "line": 256,
       "match": "._16_4_",
       "severity": "mild",
       "text": "(float)local_198._16_4_,(float)local_198._20_4_,radius,",
@@ -1138,7 +1129,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 258,
+      "line": 256,
       "match": "._20_4_",
       "severity": "mild",
       "text": "(float)local_198._16_4_,(float)local_198._20_4_,radius,",
@@ -1146,7 +1137,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 261,
+      "line": 259,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_1fc._0_4_ = local_1a0;",
@@ -1154,7 +1145,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 264,
+      "line": 262,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if ((float)auStack_1fc._0_4_ < local_1a0) {",
@@ -1162,7 +1153,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 266,
+      "line": 264,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_19c = (float)auStack_1fc._4_4_;",
@@ -1170,7 +1161,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 267,
+      "line": 265,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_198._0_4_ = auStack_1fc._8_4_;",
@@ -1178,7 +1169,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 267,
+      "line": 265,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_198._0_4_ = auStack_1fc._8_4_;",
@@ -1186,7 +1177,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 266,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_198._4_4_ = auStack_1fc._12_4_;",
@@ -1194,7 +1185,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 266,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_198._4_4_ = auStack_1fc._12_4_;",
@@ -1202,7 +1193,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 271,
+      "line": 269,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1a0 = (float)auStack_1fc._0_4_;",
@@ -1210,7 +1201,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 281,
+      "line": 279,
       "match": "._84_4_",
       "severity": "mild",
       "text": "if ((float)auStack_1fc._84_4_ <= 1.0) {",
@@ -1218,7 +1209,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 298,
+      "line": 296,
       "match": "._84_4_",
       "severity": "mild",
       "text": "return (float)auStack_1fc._84_4_;",
@@ -1226,7 +1217,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 301,
+      "line": 299,
       "match": "._84_4_",
       "severity": "mild",
       "text": "return (float)auStack_1fc._84_4_;",
@@ -1234,7 +1225,7 @@
     },
     {
       "description": "Pointer value `pCVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 109,
+      "line": 107,
       "match": "(int)pCVar10",
       "severity": "moderate",
       "text": "pCVar10 = (CBoundingBox3D *)((int)pCVar10 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -1242,7 +1233,7 @@
     },
     {
       "description": "Pointer value `&CStack_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 217,
+      "line": 215,
       "match": "(int)&CStack_68",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_68 + (uint)bVar14 * -8 + 4);",
@@ -1250,7 +1241,7 @@
     },
     {
       "description": "Pointer value `&CStack_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 219,
+      "line": 217,
       "match": "(int)&CStack_68",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_68 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
@@ -1258,7 +1249,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 107,
+      "line": 105,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {",
@@ -1266,7 +1257,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 122,
+      "line": 120,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {",
@@ -1274,7 +1265,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 217,
+      "line": 215,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_68 + (uint)bVar14 * -8 + 4);",
@@ -1282,7 +1273,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 219,
+      "line": 217,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_68 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
@@ -1290,7 +1281,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 276,
+      "line": 274,
       "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
       "text": "local_18 = (CDemonSet *)local_18->cameras;",

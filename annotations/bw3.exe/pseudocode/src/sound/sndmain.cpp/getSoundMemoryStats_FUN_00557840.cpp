@@ -51,7 +51,7 @@ void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_00557840(int *out_referen
     *out_free_slots = 0x40 - (iVar3 + iVar2);
   }
   if ((out_available_memory != (int *)0x0) &&
-     (iVar1 = DAT_0060424c - (iVar4 + iVar5), *out_available_memory = iVar1, iVar1 < 0)) {
+     (iVar1 = g_INT_0060424c - (iVar4 + iVar5), *out_available_memory = iVar1, iVar1 < 0)) {
     *out_available_memory = 0;
     return;
   }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 
 {
@@ -156,12 +154,12 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
     out_euler_angles->z = local_58.z;
     return 2;
   }
-  _DAT_01e501fc = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
-  _DAT_01e50208 = 0x32;
-  _DAT_01e50204 = 0x32;
-  _DAT_01e50200 = (this_ptr->dest_voxel_coords).z - (this_ptr->grid_origin).z;
-  if ((((_DAT_01e501fc < 0) || (99 < _DAT_01e501fc)) || (_DAT_01e50200 < 0)) || (99 < _DAT_01e50200)
-     ) {
+  g_INT_01e501fc = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
+  g_INT_01e50208 = 0x32;
+  g_INT_01e50204 = 0x32;
+  g_INT_01e50200 = (this_ptr->dest_voxel_coords).z - (this_ptr->grid_origin).z;
+  if ((((g_INT_01e501fc < 0) || (99 < g_INT_01e501fc)) || (g_INT_01e50200 < 0)) ||
+     (99 < g_INT_01e50200)) {
     local_16c[0] = (this_ptr->current_position).x - dest_position->x;
     local_16c[1] = (this_ptr->current_position).y - dest_position->y;
     local_164[0].x = (this_ptr->current_position).z - dest_position->z;
@@ -183,7 +181,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
     out_euler_angles->z = local_a0.z;
     return 2;
   }
-  if ((_DAT_01e501fc == 0x32) && (_DAT_01e50200 == 0x32)) {
+  if ((g_INT_01e501fc == 0x32) && (g_INT_01e50200 == 0x32)) {
     local_34[0] = (this_ptr->current_position).x - dest_position->x;
     local_34[1] = (this_ptr->current_position).y - dest_position->y;
     local_34[2] = (this_ptr->current_position).z - dest_position->z;
@@ -215,11 +213,12 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
   dVar8 = round((double)*(float *)(unaff_retaddr + 8));
   fStack_24 = (float)(int)ROUND(dVar8);
   iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                    (this_ptr,_DAT_01e50200,_DAT_01e501fc,(this_ptr->dest_voxel_coords).y);
+                    (this_ptr,g_INT_01e50200,g_INT_01e501fc,(this_ptr->dest_voxel_coords).y);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                    (this_ptr,_DAT_01e50208,_DAT_01e50204,(this_ptr->voxel_coords).y);
+                    (this_ptr,g_INT_01e50208,g_INT_01e50204,(this_ptr->voxel_coords).y);
   iVar1 = core_path_cpp_CPathMap_isLineWalkable_FUN_00512390
-                    (this_ptr,_DAT_01e501fc,_DAT_01e50200,iVar1,_DAT_01e50204,_DAT_01e50208,iVar2);
+                    (this_ptr,g_INT_01e501fc,g_INT_01e50200,iVar1,g_INT_01e50204,g_INT_01e50208,
+                     iVar2);
   if (iVar1 != 0) {
     local_88.z = g_CDemonRaytraceInstance.adjusted_size.x;
     local_7c[(uint)bVar7 * -2] =
@@ -258,12 +257,12 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
     return 1;
   }
   iVar1 = core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0
-                    (this_ptr,_DAT_01e50204,_DAT_01e50208,_DAT_01e501fc,_DAT_01e50200);
+                    (this_ptr,g_INT_01e50204,g_INT_01e50208,g_INT_01e501fc,g_INT_01e50200);
   if (iVar1 == 0) {
     uVar4 = core_path_cpp_CPathMap_searchGrid_FUN_00514140(this_ptr,(this_ptr->dest_voxel_coords).y)
     ;
     if (uVar4 != 0) {
-      uVar4 = this_ptr->height_cache[_DAT_01e50208][_DAT_01e50204] - (this_ptr->voxel_coords).y;
+      uVar4 = this_ptr->height_cache[g_INT_01e50208][g_INT_01e50204] - (this_ptr->voxel_coords).y;
       uVar5 = (int)uVar4 >> 0x1f;
       if (3 < (int)((uVar4 ^ uVar5) - uVar5)) {
         fStack_188 = (this_ptr->current_position).x - unaff_ESI->x;
@@ -289,12 +288,12 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
       }
       uVar4 = 0xffffffff;
       local_28 = 0xffffffff;
-      iVar1 = _DAT_01e50208;
-      iVar2 = _DAT_01e50204;
+      iVar1 = g_INT_01e50208;
+      iVar2 = g_INT_01e50204;
       do {
         local_34[2] = (float)local_28;
         local_28 = uVar4;
-        uVar4 = (uint)*(byte *)(iVar2 + 0x1e5ec78 + iVar1 * 100);
+        uVar4 = (uint)(byte)g_CHAR_ARRAY_01e5ec78[iVar1 * 100 + iVar2];
         if (uVar4 == 0) {
           local_19c[2] = (this_ptr->current_position).x - unaff_ESI->x;
           local_19c[3] = (this_ptr->current_position).y - unaff_ESI->y;
@@ -317,29 +316,29 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
           unaff_EBX[2] = local_16c[1];
           return 2;
         }
-        iVar2 = iVar2 - *(int *)(&DAT_0061b328 + uVar4 * 4);
-        iVar1 = iVar1 - *(int *)(&DAT_0061b34c + uVar4 * 4);
+        iVar2 = iVar2 - g_INT_ARRAY_0061b328[uVar4];
+        iVar1 = iVar1 - g_INT_ARRAY_0061b34c[uVar4];
         if (iVar2 < 0) {
-          _DAT_01d046a0 = "..\\core\\path.cpp";
-          _DAT_01d046a4 = 0x547;
+          g_CHAR_PTR_01d046a0 = "..\\core\\path.cpp";
+          g_INT_01d046a4 = 0x547;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Out of bounds1!");
         }
         if (iVar1 < 0) {
-          _DAT_01d046a0 = "..\\core\\path.cpp";
-          _DAT_01d046a4 = 0x548;
+          g_CHAR_PTR_01d046a0 = "..\\core\\path.cpp";
+          g_INT_01d046a4 = 0x548;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Out of bounds2!");
         }
         if (99 < iVar2) {
-          _DAT_01d046a0 = "..\\core\\path.cpp";
-          _DAT_01d046a4 = 0x549;
+          g_CHAR_PTR_01d046a0 = "..\\core\\path.cpp";
+          g_INT_01d046a4 = 0x549;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Out of bounds3!");
         }
         if (99 < iVar1) {
-          _DAT_01d046a0 = "..\\core\\path.cpp";
-          _DAT_01d046a4 = 0x54a;
+          g_CHAR_PTR_01d046a0 = "..\\core\\path.cpp";
+          g_INT_01d046a4 = 0x54a;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Out of bounds4!");
         }
-      } while ((iVar2 != _DAT_01e501fc) || (iVar1 != _DAT_01e50200));
+      } while ((iVar2 != g_INT_01e501fc) || (iVar1 != g_INT_01e50200));
       *unaff_EBX = 0.0;
       unaff_EBX[2] = 0.0;
       fVar3 = core_path_cpp_CPathMap_getDirection_FUN_00511df0
@@ -369,11 +368,11 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
     return 2;
   }
   if (iVar1 == 1) {
-    if (_DAT_01e50204 <= _DAT_01e501fc) {
-      if (_DAT_01e50204 < _DAT_01e501fc) {
+    if (g_INT_01e50204 <= g_INT_01e501fc) {
+      if (g_INT_01e50204 < g_INT_01e501fc) {
         iVar1 = 4;
       }
-      else if (_DAT_01e50200 < _DAT_01e50208) {
+      else if (g_INT_01e50200 < g_INT_01e50208) {
         iVar1 = 1;
       }
       else {
@@ -383,15 +382,15 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
     }
   }
   else {
-    if (_DAT_01e50200 < _DAT_01e50208) {
+    if (g_INT_01e50200 < g_INT_01e50208) {
       iVar1 = 1;
       goto LAB_005130ef;
     }
-    if (_DAT_01e50208 < _DAT_01e50200) {
+    if (g_INT_01e50208 < g_INT_01e50200) {
       iVar1 = 2;
       goto LAB_005130ef;
     }
-    if (_DAT_01e50204 <= _DAT_01e501fc) {
+    if (g_INT_01e50204 <= g_INT_01e501fc) {
       iVar1 = 4;
       goto LAB_005130ef;
     }

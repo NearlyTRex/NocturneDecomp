@@ -13,7 +13,7 @@ void __cdecl core_grave_cpp_CGrave_archive_FUN_004e6c50(CGrave *this_ptr)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"model name");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->fps,&DAT_005e41a8);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->fps,"fps");
   if (g_CGraveClassVersion < 2) {
     core_actor_cpp_archiveInteger_FUN_0040b670(&iStack_c,"active");
     this_ptr->grave_state = 0;

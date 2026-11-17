@@ -10,8 +10,8 @@
 ;   core_fforest.cpp_factoryFuncTwigZombie_FUN_005a26a0 at 005a26b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ff16c
-;   undefined4 DAT_005ff170
+;   float g_FLOAT_005ff16c = 15
+;   float g_FLOAT_005ff170 = 3
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
@@ -46,9 +46,9 @@ section .text
     MOV dword ptr [EBX + 0x11384],0x0   ; 005a2711
     LEA EDI,[EBX + 0x113d4]             ; 005a271b
     MOV dword ptr [EBX + 0x11388],0x1   ; 005a2721
-    FLD float ptr [0x005ff16c]          ; 005a272b | DAT_005ff16c
+    FLD float ptr [0x005ff16c]          ; 005a272b | g_FLOAT_005ff16c
     MOV dword ptr [EBX + 0x1138c],0x6   ; 005a2731
-    FLD float ptr [0x005ff170]          ; 005a273b | DAT_005ff170
+    FLD float ptr [0x005ff170]          ; 005a273b | g_FLOAT_005ff170
     MOV dword ptr [EBX + 0x11398],0x4479c000 ; 005a2741
     MOV ESI,0x5eff8a                    ; 005a274b
     MOV dword ptr [EBX + 0x11418],0x1   ; 005a2750

@@ -62,8 +62,8 @@ section .text
         ;   Label: LAB_00578fa2
     MOV EDI,0x4f3                       ; 00578fa7
     PUSH 0x5f5038                       ; 00578fac | = "DirectSoundDevice::setSfxPos - invali..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00578fb1 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00578fb7 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00578fb1 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00578fb7 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00578fbd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00578fc2
@@ -274,7 +274,7 @@ section .text
     FLDLN2                              ; 00579218
     FXCH                                ; 0057921a
     FYL2X                               ; 0057921c
-    FMUL double ptr [0x005f5293]        ; 0057921e | DAT_005f5293
+    FMUL double ptr [0x005f5293]        ; 0057921e | g_DOUBLE_005f5293
     SUB ESP,0x8                         ; 00579224
     FSTP double ptr [ESP]               ; 00579227
     CALL crt_math.c_floor_FUN_005c0880  ; 0057922a
@@ -324,7 +324,7 @@ section .text
     FLDLN2                              ; 005792b9
     FXCH                                ; 005792bb
     FYL2X                               ; 005792bd
-    FMUL double ptr [0x005f528b]        ; 005792bf | DAT_005f528b
+    FMUL double ptr [0x005f528b]        ; 005792bf | g_DOUBLE_005f528b
     SUB ESP,0x8                         ; 005792c5
     FSTP double ptr [ESP]               ; 005792c8
     CALL crt_math.c_floor_FUN_005c0880  ; 005792cb

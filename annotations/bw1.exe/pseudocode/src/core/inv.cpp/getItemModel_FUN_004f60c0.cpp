@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004f60c0(CDemonActor *actor_ptr)
 
 {
@@ -62,8 +60,8 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004f60c0(CDemonA
       pCVar2 = (CBattery *)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,g_CBatteryClassInfo.name_hash);
       return (CKeyFramedModelInstance *)(pCVar2 + 1);
     }
-    _DAT_01d1d400 = "..\\core\\inv.cpp";
-    _DAT_01d1d404 = 0xaf;
+    g_CHAR_PTR_01d1d400 = "..\\core\\inv.cpp";
+    g_INT_01d1d404 = 0xaf;
     core_main_c_displayErrorAndQuit_FUN_005030e0("getModel - Can't classify : %s");
     return (CKeyFramedModelInstance *)0x0;
   }

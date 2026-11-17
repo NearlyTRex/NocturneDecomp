@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
 
 {
@@ -19,14 +17,14 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
   int *piVar6;
   int *unaff_EBP;
   int *piVar7;
-  int *piVar8;
+  SRenderVertex *pSVar8;
   byte bVar9;
   
   bVar9 = 0;
-  if (DAT_0070caf8 != 0) {
-    if (0 < (int)DAT_0070cafc) {
+  if (g_INT_0070caf8 != 0) {
+    if (0 < g_INT_0070cafc) {
       puVar5 = &DAT_0070cb00;
-      iVar3 = DAT_0070cafc * 4;
+      iVar3 = g_INT_0070cafc * 4;
       iVar2 = 0;
       do {
         *(byte **)(iVar2 + 0x7b7960) = puVar5;
@@ -35,24 +33,24 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
       } while (iVar2 < iVar3);
     }
     _qsort
-              ((void *)0x7b7960,DAT_0070cafc,4,(QSORT_COMPARATOR)&UNK_004070a0);
-    if (_DAT_01c38b40 == 0) {
-      if (DAT_006141c0 == 0x20) {
-        _DAT_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3;
+              ((void *)0x7b7960,g_INT_0070cafc,4,(QSORT_COMPARATOR)&UNK_004070a0);
+    if (g_INT_01c38b40 == 0) {
+      if (g_INT_006141c0 == 0x20) {
+        g_PTR_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3;
       }
       else {
-        _DAT_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9;
+        g_PTR_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9;
       }
     }
-    else if (DAT_006141c0 == 0x20) {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+    else if (g_INT_006141c0 == 0x20) {
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
     }
     else {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
     }
-    _DAT_01c38b58 = 1;
-    _DAT_01c38b54 = 0x1e7;
-    if (0 < (int)DAT_0070cafc) {
+    g_INT_01c38b58 = 1;
+    g_BIT_INTEGER32_01c38b54.dword = 0x1e7;
+    if (0 < g_INT_0070cafc) {
       do {
         piVar1 = piRam007b7960;
         iVar3 = 0;
@@ -61,28 +59,28 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
           iVar2 = 0;
           do {
             piVar7 = piVar6 + 1;
-            piVar8 = &DAT_00622014 + iVar3 * 0xc;
+            pSVar8 = g_SRenderVertex_ARRAY_00622014 + iVar3;
             for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *piVar8 = *piVar7;
+              (pSVar8->projected_vertex).transformed_x = *piVar7;
               piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
-              piVar8 = piVar8 + (uint)bVar9 * -2 + 1;
+              pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);
             }
-            *(ushort *)(&DAT_00622040 + iVar3 * 0xc) =
-                 *(ushort *)(&DAT_00622040 + iVar3 * 0xc) ^ 0xffff;
-            *(int *)((int)&DAT_0070ca98 + iVar2) = iVar3;
+            *(ushort *)&g_SRenderVertex_ARRAY_00622014[iVar3].a =
+                 (ushort)g_SRenderVertex_ARRAY_00622014[iVar3].a ^ 0xffff;
+            *(int *)((int)g_INT_ARRAY_0070ca98 + iVar2) = iVar3;
             iVar3 = iVar3 + 1;
             piVar6 = piVar6 + 0xc;
             iVar2 = iVar2 + 4;
           } while (iVar3 < *piVar1);
         }
         engine_texture_cpp_loadTextureAndGetData_FUN_00574e80((SMRGLTextureBasic *)(piVar1 + 0x31));
-        _DAT_01c38b4c = unaff_EBP[0x44];
-        DAT_006141d8 = unaff_EBP[0x43];
-        engine_clipper_c_clipAndRasterize_FUN_00431d90(*unaff_EBP,&DAT_0070ca98);
-      } while ((int)piVar1 + 1 < (int)DAT_0070cafc);
+        g_INT_01c38b4c = unaff_EBP[0x44];
+        g_INT_006141d8 = unaff_EBP[0x43];
+        engine_clipper_c_clipAndRasterize_FUN_00431d90(*unaff_EBP,g_INT_ARRAY_0070ca98);
+      } while ((int)piVar1 + 1 < g_INT_0070cafc);
     }
-    DAT_0070cafc = 0;
-    DAT_0070caf8 = 0;
+    g_INT_0070cafc = 0;
+    g_INT_0070caf8 = 0;
     engine_3d_c_setBlendMode_FUN_00406df0(0);
   }
   return;

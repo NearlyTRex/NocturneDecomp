@@ -6,22 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl support_trisock_cpp_cleanupWinsock_FUN_00571f10(void)
 
 {
   int iVar1;
   
   wincore_winrun_cpp_outputDebugString_FUN_00581c70("killSockets\n");
-  if (_DAT_02cfd8a8 != (HANDLE)0x0) {
-    wincore_winrun_cpp_waitForMutex_FUN_00581930(_DAT_02cfd8a8);
-    while (_DAT_02cfd8ac != (void *)0x0) {
-      support_trisock_cpp_dnsRequestCancel_FUN_00570e80(_DAT_02cfd8ac);
+  if (g_HANDLE_02cfd8a8 != (HANDLE)0x0) {
+    wincore_winrun_cpp_waitForMutex_FUN_00581930(g_HANDLE_02cfd8a8);
+    while (g_PTR_02cfd8ac != (byte *)0x0) {
+      support_trisock_cpp_dnsRequestCancel_FUN_00570e80(g_PTR_02cfd8ac);
     }
-    wincore_winrun_cpp_releaseMutex_FUN_00581990(_DAT_02cfd8a8);
+    wincore_winrun_cpp_releaseMutex_FUN_00581990(g_HANDLE_02cfd8a8);
   }
-  while (_DAT_02cfd8b4 != 0) {
+  while (g_INT_02cfd8b4 != 0) {
     wincore_winrun_cpp_sleep_FUN_00581a40(0.0);
   }
   iVar1 = WSACleanup();

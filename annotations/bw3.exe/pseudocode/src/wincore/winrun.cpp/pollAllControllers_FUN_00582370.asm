@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7f02
-;   undefined4 DAT_01c5fad0
+;   float g_FLOAT_005d7f02 = 0.00001525879
+;   int g_INT_01c5fad0
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_pollController_FUN_00581f50
@@ -28,8 +28,8 @@ section .text
     CMP EBX,0x4                         ; 0058237d
     JL 0x00582373                       ; 00582380
         ;   XREF to: 00582373 (CONDITIONAL_JUMP)  ; LAB_00582373
-    FILD dword ptr [0x01c5fad0]         ; 00582382 | DAT_01c5fad0
-    FMUL float ptr [0x005d7f02]         ; 00582388 | DAT_005d7f02
+    FILD dword ptr [0x01c5fad0]         ; 00582382 | g_INT_01c5fad0
+    FMUL float ptr [0x005d7f02]         ; 00582388 | g_FLOAT_005d7f02
     SUB ESP,0x4                         ; 0058238e
     FSTP float ptr [ESP]                ; 00582391
     CALL wincore_winrun.cpp_updateInputIdleTimers_FUN_00582500 ; 00582394

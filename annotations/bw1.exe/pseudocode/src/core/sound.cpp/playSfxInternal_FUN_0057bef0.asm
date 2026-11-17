@@ -47,12 +47,12 @@
 ;   TerminatedCString s_d_d_n_005f5942
 ;   TerminatedCString s_core_sound_cpp_005f594c
 ;   TerminatedCString s_Invalid_sfx_string_s_005f595e
-;   undefined4 DAT_005f5975
-;   undefined4 DAT_005f5977
-;   undefined1 DAT_005f5979
-;   undefined1 DAT_005f597a
-;   undefined1 DAT_005f597b
-;   undefined1 DAT_005f597c
+;   TerminatedCString s_anon_005f5975
+;   TerminatedCString s_anon_005f5977
+;   TerminatedCString s_wav_005f5979
+;   undefined4 s_wav_005f5979+1
+;   undefined4 s_wav_005f5979+2
+;   undefined4 s_wav_005f5979+3
 ;   TerminatedCString s_Can_t_find_wav_s_005f597e
 ;   TerminatedCString s_f_n_005f5992
 ;   TerminatedCString s_core_sound_cpp_005f5998
@@ -115,7 +115,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0057bf3b
     INC AL                              ; 0057bf3d
     AND EAX,0xff                        ; 0057bf3f
-    TEST byte ptr [EAX + 0x626114],0x2  ; 0057bf44 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 0057bf44 | g_UCHAR_ARRAY_00626114
     JZ 0x0057c148                       ; 0057bf4b
         ;   XREF to: 0057c148 (CONDITIONAL_JUMP)  ; LAB_0057c148
     MOV DL,0x2e                         ; 0057bf51
@@ -145,7 +145,7 @@ section .text
         ;   Label: LAB_0057bf72
     JNZ 0x0057bfa1                      ; 0057bf74
         ;   XREF to: 0057bfa1 (CONDITIONAL_JUMP)  ; LAB_0057bfa1
-    MOV ESI,0x5f5979                    ; 0057bf76 | DAT_005f5979
+    MOV ESI,0x5f5979                    ; 0057bf76 | = ".wav"
     LEA EDI,[ESP + 0x8]                 ; 0057bf7b
     PUSH EDI                            ; 0057bf7f
     SUB ECX,ECX                         ; 0057bf80
@@ -153,13 +153,13 @@ section .text
     MOV AL,0x0                          ; 0057bf83
     SCASB.REPNE ES:EDI                  ; 0057bf85
     DEC EDI                             ; 0057bf87
-    MOV AL,byte ptr [ESI]               ; 0057bf88 | DAT_005f5979 | DAT_005f597b
+    MOV AL,byte ptr [ESI]               ; 0057bf88 | = ".wav" | s_wav_005f5979+2
         ;   Label: LAB_0057bf88
     MOV byte ptr [EDI],AL               ; 0057bf8a
     CMP AL,0x0                          ; 0057bf8c
     JZ 0x0057bfa0                       ; 0057bf8e
         ;   XREF to: 0057bfa0 (CONDITIONAL_JUMP)  ; LAB_0057bfa0
-    MOV AL,byte ptr [ESI + 0x1]         ; 0057bf90 | DAT_005f597a | DAT_005f597c
+    MOV AL,byte ptr [ESI + 0x1]         ; 0057bf90 | s_wav_005f5979+1 | s_wav_005f5979+3
     ADD ESI,0x2                         ; 0057bf93
     MOV byte ptr [EDI + 0x1],AL         ; 0057bf96
     ADD EDI,0x2                         ; 0057bf99
@@ -171,8 +171,8 @@ section .text
     MOV ECX,0x19                        ; 0057bfa1
         ;   Label: LAB_0057bfa1
     LEA EDI,[ESP + 0xd0]                ; 0057bfa6
-    MOV ESI,0x623870                    ; 0057bfad | DAT_00623870
-    MOVSD.REP ES:EDI,ESI                ; 0057bfb2 | DAT_00623870 | DAT_00623874
+    MOV ESI,0x623870                    ; 0057bfad | g_CHAR_ARRAY_00623870
+    MOVSD.REP ES:EDI,ESI                ; 0057bfb2 | g_CHAR_ARRAY_00623870 | g_CHAR_ARRAY_00623870+4
     MOV DL,0x21                         ; 0057bfb4
     LEA ESI,[ESP + 0x8]                 ; 0057bfb6
     MOV AL,byte ptr [ESI]               ; 0057bfba
@@ -265,7 +265,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0057c0ad
     INC AL                              ; 0057c0af
     AND EAX,0xff                        ; 0057c0b1
-    TEST byte ptr [EAX + 0x626114],BL   ; 0057c0b6 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],BL   ; 0057c0b6 | g_UCHAR_ARRAY_00626114
     JZ 0x0057c350                       ; 0057c0bc
         ;   XREF to: 0057c350 (CONDITIONAL_JUMP)  ; LAB_0057c350
     INC dword ptr [ESP + 0x164]         ; 0057c0c2
@@ -364,12 +364,12 @@ section .text
     MOV ECX,0x5f594c                    ; 0057c1b3 | = "..\\core\\sound.cpp"
     MOV EBX,0x137                       ; 0057c1b8
     PUSH 0x5f595e                       ; 0057c1bd | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0057c1c2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0057c1c8 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0057c1c2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 0057c1c8 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057c1ce
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0057c1d3
-    PUSH 0x5f5975                       ; 0057c1d6 | DAT_005f5975
+    PUSH 0x5f5975                       ; 0057c1d6 | = "?"
         ;   Label: LAB_0057c1d6
     PUSH ESI                            ; 0057c1db
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0057c1dc
@@ -379,7 +379,7 @@ section .text
     CMP dword ptr [ESP + 0x14c],0x9     ; 0057c1e6
     JLE 0x0057c200                      ; 0057c1ee
         ;   XREF to: 0057c200 (CONDITIONAL_JUMP)  ; LAB_0057c200
-    PUSH 0x5f5977                       ; 0057c1f0 | DAT_005f5977
+    PUSH 0x5f5977                       ; 0057c1f0 | = "?"
     PUSH ESI                            ; 0057c1f5
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0057c1f6
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
@@ -467,7 +467,7 @@ section .text
     PUSH EAX                            ; 0057c2e0
     LEA EAX,[ESP + 0xd4]                ; 0057c2e1
     PUSH EAX                            ; 0057c2e8
-    MOV EAX,[0x006236b8]                ; 0057c2e9 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 0057c2e9 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 0057c2ee
     MOV byte ptr [EDX],0x0              ; 0057c2ef
     CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00 ; 0057c2f2
@@ -483,7 +483,7 @@ section .text
     PUSH EAX                            ; 0057c311
     LEA EAX,[ESP + 0xd4]                ; 0057c312
     PUSH EAX                            ; 0057c319
-    MOV ECX,dword ptr [0x006236b8]      ; 0057c31a | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 0057c31a | g_CSound_PTR_006236b8
     PUSH ECX                            ; 0057c320
     CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00 ; 0057c321
         ;   XREF to: 0057be00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00(CSound * this_ptr, char * out_result, char * wildcard_pattern)
@@ -532,8 +532,8 @@ section .text
     MOV EDX,0x5f5998                    ; 0057c398 | = "..\\core\\sound.cpp"
     MOV ECX,0x1a4                       ; 0057c39d
     PUSH 0x5f59aa                       ; 0057c3a2 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0057c3a7 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0057c3ad | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0057c3a7 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0057c3ad | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057c3b3
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0057c3b8
@@ -577,8 +577,8 @@ section .text
     MOV EDI,0x5f59c7                    ; 0057c42c | = "..\\core\\sound.cpp"
     MOV EAX,0x1aa                       ; 0057c431
     PUSH 0x5f59d9                       ; 0057c436 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d1d400],EDI      ; 0057c43b | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0057c441 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0057c43b | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0057c441 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057c446
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0057c44b
@@ -604,8 +604,8 @@ section .text
     MOV ECX,0x5f59f0                    ; 0057c485 | = "..\\core\\sound.cpp"
     MOV EDI,0x1ad                       ; 0057c48a
     PUSH 0x5f5a02                       ; 0057c48f | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0057c494 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0057c49a | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0057c494 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0057c49a | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057c4a0
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0057c4a5

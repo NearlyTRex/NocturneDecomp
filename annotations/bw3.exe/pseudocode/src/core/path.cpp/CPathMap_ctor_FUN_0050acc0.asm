@@ -16,9 +16,9 @@
 ;   core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60 at 00599f79
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01ec1518
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01ec1518
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -39,16 +39,16 @@ section .text
     MOV dword ptr [EBX + 0x138b0],EAX   ; 0050acdd
     CALL core_path.cpp_CPathMap_reset_FUN_0050cee0 ; 0050ace3
         ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_0050cee0(CPathMap * this_ptr)
-    MOV EDX,dword ptr [0x01ec1518]      ; 0050ace8 | DAT_01ec1518
+    MOV EDX,dword ptr [0x01ec1518]      ; 0050ace8 | g_INT_01ec1518
     ADD ESP,0x4                         ; 0050acee
     CMP EDX,0xc8                        ; 0050acf1
     JGE 0x0050ad13                      ; 0050acf7
         ;   XREF to: 0050ad13 (CONDITIONAL_JUMP)  ; LAB_0050ad13
-    MOV EAX,[0x01ec1518]                ; 0050acf9 | DAT_01ec1518
+    MOV EAX,[0x01ec1518]                ; 0050acf9 | g_INT_01ec1518
         ;   Label: LAB_0050acf9
     LEA EDI,[EAX + 0x1]                 ; 0050acfe
     MOV dword ptr [EAX*0x4 + 0x1ec151c],EBX ; 0050ad01
-    MOV dword ptr [0x01ec1518],EDI      ; 0050ad08 | DAT_01ec1518
+    MOV dword ptr [0x01ec1518],EDI      ; 0050ad08 | g_INT_01ec1518
     MOV EAX,EBX                         ; 0050ad0e
     POP EDI                             ; 0050ad10
     POP EBX                             ; 0050ad11
@@ -58,8 +58,8 @@ section .text
     MOV ECX,0x5cb76e                    ; 0050ad14
     MOV ESI,0x123                       ; 0050ad19
     PUSH 0x5cb77f                       ; 0050ad1e
-    MOV dword ptr [0x01d71de0],ECX      ; 0050ad23 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0050ad29 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0050ad23 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0050ad29 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050ad2f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050ad34

@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0047b690(CEditorTools *this_ptr,uint flags)
 
 {
-  while (0 < _DAT_01c2559c) {
+  while (0 < g_INT_01c2559c) {
     shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047e780(this_ptr);
   }
-  if (_DAT_01c25598 == (void *)0x0) {
+  if (g_CHAR_PTR_01c25598 == (char *)0x0) {
     return this_ptr;
   }
-  debugFree(_DAT_01c25598);
-  _DAT_01c25598 = (void *)0x0;
+  debugFree(g_CHAR_PTR_01c25598);
+  g_CHAR_PTR_01c25598 = (char *)0x0;
   return this_ptr;
 }

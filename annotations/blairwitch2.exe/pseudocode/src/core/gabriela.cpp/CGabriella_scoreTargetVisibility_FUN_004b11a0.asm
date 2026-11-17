@@ -14,12 +14,12 @@
 ;   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004b1530 at 004b175e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7143
-;   undefined4 DAT_005d714b
-;   undefined4 DAT_005d7153
-;   undefined4 DAT_005d715b
-;   undefined4 DAT_005d7163
-;   undefined4 DAT_005d7167
+;   double g_DOUBLE_005d7143 = 30
+;   double g_DOUBLE_005d714b = -0.781490709825871
+;   double g_DOUBLE_005d7153 = 1.56298141965174
+;   double g_DOUBLE_005d715b = 35
+;   float g_FLOAT_005d7163 = -0.7853982
+;   float g_FLOAT_005d7167 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CEnemyClassInfo.name_hash
@@ -144,13 +144,13 @@ section .text
     JZ 0x004b12fa                       ; 004b12bd
         ;   XREF to: 004b12fa (CONDITIONAL_JUMP)  ; LAB_004b12fa
     FLD float ptr [ESP + 0x8]           ; 004b12bf
-    FCOMP double ptr [0x005d715b]       ; 004b12c3 | DAT_005d715b
+    FCOMP double ptr [0x005d715b]       ; 004b12c3 | g_DOUBLE_005d715b
     FNSTSW AX                           ; 004b12c9
     SAHF                                ; 004b12cb
     JA 0x004b120c                       ; 004b12cc
         ;   XREF to: 004b120c (CONDITIONAL_JUMP)  ; LAB_004b120c
     FLD float ptr [ESP + 0x10c]         ; 004b12d2
-    FCOMP float ptr [0x005d7163]        ; 004b12d9 | DAT_005d7163
+    FCOMP float ptr [0x005d7163]        ; 004b12d9 | g_FLOAT_005d7163
     FNSTSW AX                           ; 004b12df
     SAHF                                ; 004b12e1
     JC 0x004b120c                       ; 004b12e2
@@ -162,20 +162,20 @@ section .text
         ;   XREF to: 004b120c (UNCONDITIONAL_JUMP)  ; LAB_004b120c
     FLD float ptr [ESP + 0x8]           ; 004b12fa
         ;   Label: LAB_004b12fa
-    FCOMP double ptr [0x005d7143]       ; 004b12fe | DAT_005d7143
+    FCOMP double ptr [0x005d7143]       ; 004b12fe | g_DOUBLE_005d7143
     FNSTSW AX                           ; 004b1304
     SAHF                                ; 004b1306
     JA 0x004b120c                       ; 004b1307
         ;   XREF to: 004b120c (CONDITIONAL_JUMP)  ; LAB_004b120c
     FLD float ptr [ESP + 0x10c]         ; 004b130d
     FST double ptr [ESP]                ; 004b1314
-    FCOMP double ptr [0x005d714b]       ; 004b1317 | DAT_005d714b
+    FCOMP double ptr [0x005d714b]       ; 004b1317 | g_DOUBLE_005d714b
     FNSTSW AX                           ; 004b131d
     SAHF                                ; 004b131f
     JC 0x004b120c                       ; 004b1320
         ;   XREF to: 004b120c (CONDITIONAL_JUMP)  ; LAB_004b120c
     FLD double ptr [ESP]                ; 004b1326
-    FCOMP double ptr [0x005d7153]       ; 004b1329 | DAT_005d7153
+    FCOMP double ptr [0x005d7153]       ; 004b1329 | g_DOUBLE_005d7153
     FNSTSW AX                           ; 004b132f
     SAHF                                ; 004b1331
     JA 0x004b120c                       ; 004b1332
@@ -212,7 +212,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b13b9
     MOVSD ES:EDI,ESI                    ; 004b13ba
     MOVSD ES:EDI,ESI                    ; 004b13bb
-    FLD float ptr [0x005d7167]          ; 004b13bc | DAT_005d7167
+    FLD float ptr [0x005d7167]          ; 004b13bc | g_FLOAT_005d7167
     FLD float ptr [ESP + 0xd8]          ; 004b13c2
     FMUL ST1                            ; 004b13c9
     FLD float ptr [ESP + 0xdc]          ; 004b13cb

@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_popMatrixRelativeOffset_FUN_004ed910(void)
 
 {
-  _DAT_01d76d00 = _DAT_01d76d00 + -1;
-  if (_DAT_01d76d00 < 0) {
-    _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
-    _DAT_01d71de4 = 0x505;
+  g_PTR_01d76d00 = g_PTR_01d76d00 + -1;
+  if ((int)g_PTR_01d76d00 < 0) {
+    g_CHAR_PTR_01d71de0 = "..\\engine\\mini3d.cpp";
+    g_INT_01d71de4 = 0x505;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Matrix unbalance2");
   }
-  _DAT_01d7977c = 1;
-  _DAT_01d76cfc = &DAT_01d76d04 + _DAT_01d76d00 * 0x3c;
+  g_INT_01d7977c = 1;
+  g_PTR_01d76cfc = (byte *)(&g_FLOAT_01d76d04 + (int)g_PTR_01d76d00 * 0xf);
   return;
 }

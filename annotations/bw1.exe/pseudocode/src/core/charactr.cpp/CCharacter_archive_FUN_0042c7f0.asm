@@ -82,7 +82,7 @@ section .text
     CMP EDX,0x2                         ; 0042c81e
     JL 0x0042c8a2                       ; 0042c821
         ;   XREF to: 0042c8a2 (CONDITIONAL_JUMP)  ; LAB_0042c8a2
-    CMP dword ptr [0x007c3038],0x1      ; 0042c827 | DAT_007c3038
+    CMP dword ptr [0x007c3038],0x1      ; 0042c827 | g_INT_007c3038
     JZ 0x0042c9d6                       ; 0042c82e
         ;   XREF to: 0042c9d6 (CONDITIONAL_JUMP)  ; LAB_0042c9d6
     XOR ESI,ESI                         ; 0042c834

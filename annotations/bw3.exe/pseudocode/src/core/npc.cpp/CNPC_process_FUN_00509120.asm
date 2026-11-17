@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_STAND_005cb567+1
+;   TerminatedCString s_STAND_005cb568
 ;   TerminatedCString s_s_confused_while_walking_005cb56e
-;   undefined4 DAT_005cb598
-;   undefined4 DAT_005cb59c
+;   TerminatedCString s_RUN_005cb598
+;   TerminatedCString s_WALK_005cb59c
 ;   TerminatedCString s_STAND_005cb5a1
 ;   TerminatedCString s_APPEAR_005cb5a7
 ;   TerminatedCString s_DISAPPEAR_005cb5ae
@@ -188,7 +188,7 @@ section .text
         ;   XREF to: 0050947c (CONDITIONAL_JUMP)  ; LAB_0050947c
     PUSH 0x1                            ; 0050929a
         ;   Label: LAB_0050929a
-    PUSH 0x5cb59c                       ; 0050929c | DAT_005cb59c
+    PUSH 0x5cb59c                       ; 0050929c | = "WALK"
     LEA EAX,[EBX + 0x158]               ; 005092a1
         ;   Label: LAB_005092a1
     PUSH EAX                            ; 005092a7
@@ -330,7 +330,7 @@ section .text
     RET                                 ; 0050941e
     PUSH 0x1                            ; 0050941f
         ;   Label: LAB_0050941f
-    PUSH 0x5cb568                       ; 00509421 | s_STAND_005cb567+1
+    PUSH 0x5cb568                       ; 00509421 | = "STAND"
     PUSH ESI                            ; 00509426
     CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160 ; 00509427
         ;   XREF to: 004fc160 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160(CMotionController * this_ptr, char * state_name, int force_immediate)
@@ -345,7 +345,7 @@ section .text
         ;   XREF to: 005092ad (UNCONDITIONAL_JUMP)  ; LAB_005092ad
     PUSH 0x0                            ; 00509446
         ;   Label: LAB_00509446
-    PUSH 0x5cb598                       ; 00509448 | DAT_005cb598
+    PUSH 0x5cb598                       ; 00509448 | = "RUN"
     PUSH ESI                            ; 0050944d
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 0050944e
         ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)

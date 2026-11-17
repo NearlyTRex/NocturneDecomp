@@ -11,7 +11,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00472ab0(C
 {
   _FILE *file_handle;
   
-  file_handle = engine_dosio_cpp_getFile_FUN_00460c70(&DAT_005d1b4e,filename,&DAT_005d1b4b);
+  file_handle = engine_dosio_cpp_getFile_FUN_00460c70("data",filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     return 0;
   }

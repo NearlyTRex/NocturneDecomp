@@ -9,5 +9,5 @@
 int __cdecl engine_2d_c_getTextWrapEnabled_FUN_00402800(void)
 
 {
-  return DAT_0061049c;
+  return g_INT_0061049c;
 }

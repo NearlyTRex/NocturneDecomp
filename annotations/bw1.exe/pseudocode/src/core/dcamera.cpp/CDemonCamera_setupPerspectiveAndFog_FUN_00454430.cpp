@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex)
 
 {
@@ -16,29 +14,30 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430(C
   CVector3i local_10;
   
   if (position == (CVector3f *)0x0) {
-    _DAT_01c51cac = position;
+    g_INT_01c51cac = (int)position;
     return;
   }
-  if (_DAT_01482658 != 0) {
-    _DAT_01c51cac = (CVector3f *)0x0;
+  if (g_INT_01482658 != 0) {
+    g_INT_01c51cac = 0;
     return;
   }
-  local_10.x = (int)ROUND(position->x * _DAT_005fe5fc);
-  local_10.y = (int)ROUND(position->y * _DAT_005fe5fc);
-  local_10.z = (int)ROUND(position->z * _DAT_005fe5fc);
-  _DAT_01c51cac =
-       (CVector3f *)
+  local_10.x = (int)ROUND(position->x * 256.0f);
+  local_10.y = (int)ROUND(position->y * 256.0f);
+  local_10.z = (int)ROUND(position->z * 256.0f);
+  g_INT_01c51cac =
        (*((this_ptr->base).vtable)->getFogValueAtPosition)(this_ptr,&local_10,projected_vertex);
-  uVar1 = *(uint *)(&DAT_00b8189c + DAT_00611238 * 4) & 0xff;
-  if (DAT_0061b4a0 == 0x20) {
-    uVar2 = (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << (DAT_01c4e9d4 & 0x1f) |
-            (*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << (DAT_01c4e9e0 & 0x1f);
-    uVar1 = uVar1 << (DAT_01c4e9ec & 0x1f);
+  uVar1 = g_UINT_ARRAY_00b8189c[g_INT_00611238] & 0xff;
+  if (g_INT_0061b4a0 == 0x20) {
+    uVar2 = (g_UINT_ARRAY_00b8189c[g_INT_00611230] & 0xff) <<
+            (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f) |
+            (g_UINT_ARRAY_00b8189c[g_INT_00611234] & 0xff) <<
+            (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
+    uVar1 = uVar1 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
   }
   else {
-    uVar2 = (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << 0x10 |
-            (*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << 8;
+    uVar2 = (g_UINT_ARRAY_00b8189c[g_INT_00611230] & 0xff) << 0x10 |
+            (g_UINT_ARRAY_00b8189c[g_INT_00611234] & 0xff) << 8;
   }
-  _DAT_01c51d1c = uVar2 | uVar1;
+  g_ULONG_01c51d1c = uVar2 | uVar1;
   return;
 }

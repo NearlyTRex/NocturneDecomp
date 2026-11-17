@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 299,
+    "complexity_score": 194,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 22,
+    "pseudocode_lines": 49,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 143
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -99,62 +97,62 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "007c6120",
-      "name": "DAT_007c6120",
-      "type": "undefined4",
+      "name": "g_CDemonCamera_PTR_007c6120",
+      "type": "CDemonCamera*",
       "value": null
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "020af5ac",
-      "name": "DAT_020af5ac",
-      "type": "undefined4",
+      "name": "g_UVector3_020af5ac",
+      "type": "UVector3",
       "value": null
     },
     {
       "addr": "020af5b0",
-      "name": "DAT_020af5b0",
+      "name": "g_UVector3_020af5ac+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020af5b4",
-      "name": "DAT_020af5b4",
+      "name": "g_UVector3_020af5ac+8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020af5b8",
-      "name": "DAT_020af5b8",
-      "type": "undefined4",
+      "name": "g_CVector3f_020af5b8",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "020af5bc",
-      "name": "DAT_020af5bc",
+      "name": "g_CVector3f_020af5b8.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020af5c0",
-      "name": "DAT_020af5c0",
+      "name": "g_CVector3f_020af5b8.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020af5c4",
-      "name": "DAT_020af5c4",
-      "type": "undefined4",
+      "name": "g_FLOAT_020af5c4",
+      "type": "float",
       "value": null
     }
   ],
@@ -426,132 +424,68 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
+      "line": 6,
       "match": "afStackY_102c",
       "severity": "moderate",
       "text": "float afStackY_102c [1014];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0(DAT_00612560,&local_44);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_ffffffbc",
+      "severity": "moderate",
+      "text": "float in_stack_ffffffbc;",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0x00000000",
+      "line": 16,
+      "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x20af5cc) {",
+      "text": "(g_CDemonRenderer_PTR_00612560,(CVector3f *)&stack0xffffffbc);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70(DAT_00612560,&local_38);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffbc",
+      "severity": "moderate",
+      "text": "local_28[2] = in_stack_ffffffbc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "local_28[(uint)bVar1 * -2 + 3] = *(float *)(&stack0xffffffc0 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "if ((SRaytraceState *)&stack0x00000000 != g_SRaytraceState_ARRAY_020af5cc) {",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 32,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x20af5e4) {",
+      "text": "if ((int *)&stack0x00000000 != &g_SRaytraceState_ARRAY_020af5cc[0].collision_flag) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_00483bf0(DAT_00612560);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_020af5ac",
-      "severity": "mild",
-      "text": "(CVector3f *)&DAT_020af5ac,(CVector3f *)&DAT_020af5b8,_DAT_020af5c4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_020af5b8",
-      "severity": "mild",
-      "text": "(CVector3f *)&DAT_020af5ac,(CVector3f *)&DAT_020af5b8,_DAT_020af5c4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 0x10))(DAT_007c6120);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_007c6120",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 0x10))(DAT_007c6120);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_007c6120",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 0x10))(DAT_007c6120);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_00484170(DAT_00612560,mirror_index + 1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
-      "match": "(int)&local_44",
-      "severity": "moderate",
-      "text": "local_28[(uint)bVar1 * -2 + 3] = *(float *)((int)&local_44 + (uint)bVar1 * -8 + 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
-      "match": "(int)&local_44",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
-      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -568,22 +502,6 @@
       "severity": "moderate",
       "text": "*(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "local_28[(uint)bVar1 * -2 + 3] = *(float *)((int)&local_44 + (uint)bVar1 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 21,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
-      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

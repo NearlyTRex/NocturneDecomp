@@ -55,11 +55,11 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6c7a
-;   undefined4 DAT_005b6c82
-;   undefined4 DAT_02cfd900
-;   undefined4 DAT_02cfd904
-;   undefined4 DAT_02cfd908
+;   double g_DOUBLE_005b6c7a = 0.00390625
+;   double g_DOUBLE_005b6c82 = 65535
+;   CVector3f g_CVector3f_02cfd900
+;   undefined4 g_CVector3f_02cfd900.y
+;   undefined4 g_CVector3f_02cfd900.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -105,11 +105,11 @@ section .text
     CMP EAX,0x2cfd900                   ; 00415800
     JZ 0x00415821                       ; 00415805
         ;   XREF to: 00415821 (CONDITIONAL_JUMP)  ; LAB_00415821
-    MOV ECX,dword ptr [0x02cfd900]      ; 00415807 | DAT_02cfd900
+    MOV ECX,dword ptr [0x02cfd900]      ; 00415807 | g_CVector3f_02cfd900
     MOV dword ptr [EAX],ECX             ; 0041580d
-    MOV ECX,dword ptr [0x02cfd904]      ; 0041580f | DAT_02cfd904
+    MOV ECX,dword ptr [0x02cfd904]      ; 0041580f | g_CVector3f_02cfd900.y
     MOV dword ptr [EAX + 0x4],ECX       ; 00415815
-    MOV ECX,dword ptr [0x02cfd908]      ; 00415818 | DAT_02cfd908
+    MOV ECX,dword ptr [0x02cfd908]      ; 00415818 | g_CVector3f_02cfd900.z
     MOV dword ptr [EAX + 0x8],ECX       ; 0041581e
     ADD EBX,0x15c                       ; 00415821
         ;   Label: LAB_00415821
@@ -215,7 +215,7 @@ section .text
     ADD ECX,dword ptr [ESP + 0x20]      ; 0041592a
     MOV EAX,dword ptr [ESP + 0x70]      ; 0041592e
     MOV dword ptr [ESP + 0xb0],EAX      ; 00415932
-    FLD double ptr [0x005b6c7a]         ; 00415939 | DAT_005b6c7a
+    FLD double ptr [0x005b6c7a]         ; 00415939 | g_DOUBLE_005b6c7a
     FILD dword ptr [ESP + 0xb0]         ; 0041593f
     FMUL ST1                            ; 00415946
     MOV dword ptr [ESP + 0x78],ESI      ; 00415948
@@ -471,7 +471,7 @@ section .text
     JNC 0x00415e17                      ; 00415cd8
         ;   XREF to: 00415e17 (CONDITIONAL_JUMP)  ; LAB_00415e17
     FLD double ptr [ESP + 0x18]         ; 00415cde
-    FLD double ptr [0x005b6c82]         ; 00415ce2 | DAT_005b6c82
+    FLD double ptr [0x005b6c82]         ; 00415ce2 | g_DOUBLE_005b6c82
     FDIV double ptr [ESP]               ; 00415ce8
     FXCH                                ; 00415ceb
     FMUL ST1                            ; 00415ced

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_ptr,float delta_time)
 
 {
@@ -20,7 +18,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
   CCharacter *pCVar6;
   int iVar7;
   SBoneGuyBox *pSVar8;
-  CDemonActor *pCVar9;
+  CHero *pCVar9;
   SMotion *pSVar10;
   int iVar11;
   uint uVar12;
@@ -101,7 +99,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
   
   bVar16 = 0;
   iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (0x01C38BC0,this_ptr->death_event);
+                    (g_CEventList_PTR_006141f0,this_ptr->death_event);
   if (iVar7 != 0) {
     (this_ptr->base).base.hit_points = 0.0;
     (this_ptr->base).pool_me = 1;
@@ -126,33 +124,35 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
       if (this_ptr_00 == (CBodyPart *)0x0) {
         return;
       }
-      pCVar9 = (*((this_ptr_00->base).vtable._ub)->getCarrier)(&this_ptr_00->base);
-      if (pCVar9 != *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4)) {
+      pCVar9 = (CHero *)(*((this_ptr_00->base).vtable._ub)->getCarrier)(&this_ptr_00->base);
+      if (pCVar9 != g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]) {
         return;
       }
-      core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,this_ptr->death_event);
       core_event_cpp_CEventList_executeCommands_FUN_004894f0
-                (0x01C38BC0,"ConstructKilled");
+                (g_CEventList_PTR_006141f0,this_ptr->death_event);
+      core_event_cpp_CEventList_executeCommands_FUN_004894f0
+                (g_CEventList_PTR_006141f0,"ConstructKilled");
       pCVar2 = &(this_ptr_00->base).location;
       CStack_e0.y = 3.0;
       CStack_e0.x = 0.0;
       CStack_e0.z = 0.0;
       iVar7 = 0;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-                (0x01C3DEB4,&pCVar2->position,0.5,&CStack_e0,0xffff);
+                (g_CFireEffect_PTR_00614d30,&pCVar2->position,0.5,&CStack_e0,0xffff);
       do {
         iVar7 = iVar7 + 1;
         core_fire_cpp_CFireEffect_createFirefly_FUN_0049d6a0
-                  (0x01C3DEB4,&pCVar2->position,(CVector3f *)0x0,0x4000,0x10000,0,0xffff,1.0,0.4);
+                  (g_CFireEffect_PTR_00614d30,&pCVar2->position,(CVector3f *)0x0,0x4000,0x10000,0,
+                   0xffff,1.0,0.4);
       } while (iVar7 < 10);
       core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00
-                (*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));
+                (&g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base);
       return;
     }
     core_construc_cpp_CConstruct_startRecombine_FUN_004382a0(this_ptr);
   }
   if (this_ptr->blown_up == 2) {
-    fVar19 = delta_time / _DAT_005f46a8 + this_ptr->recombine_interpolation;
+    fVar19 = delta_time / 2.0f + this_ptr->recombine_interpolation;
     this_ptr->recombine_interpolation = fVar19;
     if (fVar19 < 1.0) {
       iStack_24 = 0;
@@ -203,7 +203,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
         afStack_19c[(uint)bVar16 * -2] = *(float *)((int)&CStack_17c + (uint)bVar16 * -8 + 4);
         afStack_19c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
              *(float *)((int)&CStack_17c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
-        fStack_1a0 = this_ptr->recombine_interpolation * (float)_DAT_005cde1b + fStack_1a0;
+        fStack_1a0 = this_ptr->recombine_interpolation * (float)6.2831853070000001 + fStack_1a0;
         (pCStack_3c->base).location.position.x = fStack_f8;
         (pCStack_3c->base).location.position.y = fStack_f4;
         pUVar1 = &(pCStack_3c->base).orient;
@@ -238,7 +238,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
     if (0 < this_ptr->box_count) {
       do {
         core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
-                  (0x01D182F0,&(pCVar14->boxes[0].body_part)->base,1);
+                  (g_CDemonMission_PTR_00618170,&(pCVar14->boxes[0].body_part)->base,1);
         pCVar14->boxes[0].body_part = (CBodyPart *)0x0;
         iVar7 = iVar7 + 1;
         pCVar14 = (CConstruct *)((pCVar14->base).base.base.orient_matrix.m + 1);
@@ -297,11 +297,11 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
       else {
         fVar19 = 0.17453292;
         uStack_1b8 = 0;
-        fStack_1b0 = 0x40400000;
+        fStack_1b0 = 3.0f;
         uStack_1b4 = 0;
         pCVar18 = (CVector3f *)0x3f000000;
         pCVar6 = (this_ptr->base).victim;
-        fStack_44 = 0x40400000 + (float)_DAT_005cde03;
+        fStack_44 = 3.0f + (float)0.5;
         path_map = (*((pCVar6->base).vtable._ub)->getPathMap)(&pCVar6->base);
         iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                           ((CCharacter *)this_ptr,
@@ -348,7 +348,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
             pCStack_14 = (CMatrix3x4f *)
                          core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                    (afStack_148[0] - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS((float)pCStack_14) < (float)_DAT_005cde0b) {
+            if (ABS((float)pCStack_14) < (float)0.52359877558333301) {
               fVar19 = 1.4013e-45;
               iVar7 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
@@ -365,7 +365,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
               }
             }
           }
-          if ((this_ptr->base).guard_distance * _DAT_005cde13 < fStack_40) {
+          if ((this_ptr->base).guard_distance * 4.0f < fStack_40) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                       (&(this_ptr->base).base.model.base,0,1);
           }
@@ -380,7 +380,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
       pCStack_14 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       fVar19 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,pCStack_14 + DAT_007c2560,&CStack_158);
+                (&g_CVector3f_0265370c,pCStack_14 + g_INT_007c2560,&CStack_158);
       pCVar18 = &CStack_188;
       CStack_188.x = CStack_158.x;
       *(uint *)((int)&CStack_188 + (uint)bVar16 * -8 + 4) =
@@ -400,7 +400,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
       pSVar17 = (SDamageInfo *)&stack0xfffffdec;
       fVar19 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,pCStack_14 + DAT_007c2554,&CStack_128);
+                (&g_CVector3f_0265370c,pCStack_14 + g_INT_007c2554,&CStack_128);
       pCVar18 = &CStack_80;
       CStack_80.x = CStack_128.x;
       *(uint *)((int)&CStack_80 + (uint)bVar16 * -8 + 4) =
@@ -428,7 +428,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if (((this_ptr->base).victim != (CCharacter *)0x0) ||
          (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                            (0x01C38BC0,this_ptr->fall_event), iVar7 != 0)) {
+                            (g_CEventList_PTR_006141f0,this_ptr->fall_event), iVar7 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr->base).base.model.base,0xe,1);
         iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
@@ -445,7 +445,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
       break;
     case 0xe:
       if ((this_ptr->base).base.base.location.position.y <
-          (this_ptr->base).base.closest_distance_threshold + (float)_DAT_005cddfb) {
+          (this_ptr->base).base.closest_distance_threshold + (float)4) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar3->base,0xf,1);
       }
       break;

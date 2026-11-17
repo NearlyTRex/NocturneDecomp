@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00571500(CSvetlana *this_ptr,int bone_index)
 
@@ -53,8 +52,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00571500(CSvetla
   }
   local_18 = iVar5;
   if (local_18 == -1) {
-    _DAT_01d046a0 = "..\\core\\svetlana.cpp";
-    _DAT_01d046a4 = 0x2ef;
+    g_CHAR_PTR_01d046a0 = "..\\core\\svetlana.cpp";
+    g_INT_01d046a4 = 0x2ef;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Can't find svetlana's parent bone");
   }
   this_ptr_00 = &(this_ptr->base).base.model;

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 217,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 198
+    "total_lines": 194
   },
   "cross_references": [],
   "function": {
@@ -51,14 +50,14 @@
     },
     {
       "addr": "01c22194",
-      "name": "DAT_01c22194",
-      "type": "undefined4",
+      "name": "g_INT_01c22194",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c22258",
-      "name": "DAT_01c22258",
-      "type": "undefined4",
+      "name": "g_INT_01c22258",
+      "type": "int",
       "value": null
     }
   ],
@@ -171,124 +170,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 25,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01c2225c[g_INT_01c22258].x = point1_ptr->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "point1_ptr = (CVector3f *)&DAT_01c22198;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c221a0",
-      "severity": "mild",
-      "text": "if (*(float *)(&DAT_01c221a0 + uVar2 * 0xc) < z_near) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c2225c + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c2225c + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c22260",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22260 + iVar3) = point1_ptr->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01c22264",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22264 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c22198 + uVar2 * 0xc),point1_ptr,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 37,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c2225c + _DAT_01c22258 * 0xc),0.0,0.0,-1.0,(double)z_near);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c2225c + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c2225c + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c22260",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22260 + iVar3) = point1_ptr->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01c22264",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c22264 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_01c22198",
-      "severity": "mild",
-      "text": "(point1_ptr,(CVector3f *)(&DAT_01c22198 + uVar2 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c2225c",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c2225c + _DAT_01c22258 * 0xc),0.0,0.0,-1.0,(double)z_near);",
-      "type": "undefined_data"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01c2225c[g_INT_01c22258].x = point1_ptr->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

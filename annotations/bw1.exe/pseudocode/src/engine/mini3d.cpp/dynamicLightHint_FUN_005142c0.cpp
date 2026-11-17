@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_005142c0(float *arg1,float *arg2,float *arg3,float *arg4)
 
 {
@@ -25,28 +23,29 @@ void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_005142c0(float *arg1,float *
   float *pfStack_20;
   int iStack_1c;
   
-  iVar3 = _DAT_01d25004;
-  if ((_DAT_01d25004 != 0) &&
-     (((_DAT_02c834a4 == 0 || (_DAT_01c50948 == 0)) || (_DAT_02c834a8 != (code *)0x0)))) {
+  iVar3 = g_INT_01d25004;
+  if ((g_INT_01d25004 != 0) &&
+     (((g_PTR_02c834a4 == (byte *)0x0 || (g_INT_01c50948 == 0)) ||
+      (g_PTR_02c834a8 != (byte *)0x0)))) {
     if (arg1 == (float *)0x0) {
       iVar9 = 0;
-      if (0 < _DAT_01d25004) {
+      if (0 < g_INT_01d25004) {
         do {
           iVar10 = iVar9 + 1;
           *(byte *)(iVar9 + 0x1d25ee0) = 1;
           iVar9 = iVar10;
         } while (iVar10 < iVar3);
       }
-      if ((_DAT_02c834a8 != (code *)0x0) && (_DAT_01c50948 != 0)) {
-        (*_DAT_02c834a8)(0x1d25ee0);
+      if ((g_PTR_02c834a8 != (byte *)0x0) && (g_INT_01c50948 != 0)) {
+        (*(code *)g_PTR_02c834a8)(0x1d25ee0);
       }
     }
     else {
       iStack_1c = 0;
-      if (0 < _DAT_01d25004) {
+      if (0 < g_INT_01d25004) {
         pfStack_20 = (float *)0x1d25008;
         do {
-          iVar3 = _DAT_01d25004;
+          iVar3 = g_INT_01d25004;
           uVar11 = 0;
           bVar4 = 0xff;
           do {
@@ -100,8 +99,8 @@ void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_005142c0(float *arg1,float *
           pfStack_20 = pfStack_20 + 0x13;
         } while (iStack_1c < iVar3);
       }
-      if ((_DAT_02c834a8 != (code *)0x0) && (_DAT_01c50948 != 0)) {
-        (*_DAT_02c834a8)(0x1d25ee0);
+      if ((g_PTR_02c834a8 != (byte *)0x0) && (g_INT_01c50948 != 0)) {
+        (*(code *)g_PTR_02c834a8)(0x1d25ee0);
         return;
       }
     }

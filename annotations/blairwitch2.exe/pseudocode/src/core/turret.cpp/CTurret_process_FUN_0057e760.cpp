@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,float delta_time)
 
 {
@@ -50,7 +48,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,floa
       (this_ptr->base).base.orient.vec.z = (this_ptr->home_orient).vec.z;
     }
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (0x01C38BC0,this_ptr->activate_event);
+                      (g_CEventList_PTR_006141f0,this_ptr->activate_event);
     if (iVar6 == 0) {
       this_ptr->timer = 0.0;
       break;
@@ -59,7 +57,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,floa
     this_ptr->state = TURRET_STATE_CHARGING;
     this_ptr->timer = this_ptr->charge_time;
     sound_sndmain_cpp_killSfx_FUN_00551050(uVar7);
-    sound_name = "?turret-ani?.wav" + 1;
+    sound_name = "turret-ani?.wav";
     goto LAB_0057e7f7;
   case TURRET_STATE_CHARGING:
     fVar2 = this_ptr->timer - delta_time;
@@ -72,7 +70,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,floa
     break;
   case TURRET_STATE_ACTIVE:
     (this_ptr->base).muzzle_flash_color.r = 0xff;
-    pCVar4 = 0x01C38BC0;
+    pCVar4 = g_CEventList_PTR_006141f0;
     (this_ptr->base).muzzle_flash_color.g = 0;
     (this_ptr->base).muzzle_flash_color.b = 0;
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
@@ -88,7 +86,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,floa
     break;
   case TURRET_STATE_PATROL:
     (this_ptr->base).muzzle_flash_color.r = 0;
-    pCVar4 = 0x01C38BC0;
+    pCVar4 = g_CEventList_PTR_006141f0;
     (this_ptr->base).muzzle_flash_color.g = 0xff;
     (this_ptr->base).muzzle_flash_color.b = 0;
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
@@ -137,7 +135,8 @@ LAB_0057e7f7:
       puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_00593df0
                 (&CStack_80,&CStack_70,
-                 (delta_time / (this_ptr->timer + delta_time)) * (float)_DAT_005ed70c,&CStack_60);
+                 (delta_time / (this_ptr->timer + delta_time)) * (float)2,&CStack_60
+                );
       CStack_50.w = CStack_60.w;
       puVar9 = (uint *)((int)&CStack_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       puVar8 = (uint *)((int)&CStack_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -170,8 +169,8 @@ LAB_0057e7f7:
     }
     break;
   default:
-    _DAT_01d046a0 = "..\\core\\turret.cpp";
-    _DAT_01d046a4 = 0x15a;
+    g_CHAR_PTR_01d046a0 = "..\\core\\turret.cpp";
+    g_INT_01d046a4 = 0x15a;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CTurret::process - invalid state");
   }
   if (-1 < (this_ptr->base).muzzle_flash_color.r) {

@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_gb_die_1_6_wav_005d7193
 ;   TerminatedCString s_gb_hit_1_6_wav_005d71a3
-;   undefined4 DAT_005d71b3
-;   undefined4 DAT_005f7344
+;   float g_FLOAT_005d71b3 = 50
+;   float g_FLOAT_005f7344 = 0.5
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CGame g_CGameInstance
@@ -55,7 +55,7 @@ section .text
     TEST EDI,EDI                        ; 004b1c2f
     JZ 0x004b1d63                       ; 004b1c31
         ;   XREF to: 004b1d63 (CONDITIONAL_JUMP)  ; LAB_004b1d63
-    MOV EAX,[0x005f7344]                ; 004b1c37 | DAT_005f7344
+    MOV EAX,[0x005f7344]                ; 004b1c37 | g_FLOAT_005f7344
         ;   Label: LAB_004b1c37
     MOV dword ptr [EBX + 0x10a60],EAX   ; 004b1c3c
     FLD float ptr [ESI + 0x4]           ; 004b1c42
@@ -94,7 +94,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 004b1cb0
     ADD ESP,0x8                         ; 004b1cb3
     FLD float ptr [EBP + -0x4]          ; 004b1cb6
-    FCOMP float ptr [0x005d71b3]        ; 004b1cb9 | DAT_005d71b3
+    FCOMP float ptr [0x005d71b3]        ; 004b1cb9 | g_FLOAT_005d71b3
     FNSTSW AX                           ; 004b1cbf
     SAHF                                ; 004b1cc1
     SETBE AL                            ; 004b1cc2

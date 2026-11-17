@@ -13,18 +13,18 @@
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0 at 0052c601
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e60b1
+;   TerminatedCString s_s_005e60b1
 ;   TerminatedCString s_f_f_f_005e60b5
 ;   TerminatedCString s_f_f_f_005e60bf
-;   undefined4 DAT_005e60c9
+;   TerminatedCString s_f_005e60c9
 ;   TerminatedCString s_f_f_f_005e60cd
 ;   TerminatedCString s_f_f_f_005e60d7
 ;   TerminatedCString s_f_f_f_005e60e1
-;   undefined4 DAT_005e60eb
+;   TerminatedCString s_d_005e60eb
 ;   TerminatedCString s_f_f_f_005e60ef
 ;   TerminatedCString s_f_f_f_005e60f9
-;   undefined4 DAT_005e6103
-;   undefined4 DAT_005e6107
+;   TerminatedCString s_d_005e6103
+;   TerminatedCString s_d_005e6107
 ;   TerminatedCString s_core_setutil_cpp_005e610b
 ;   TerminatedCString s_Panning_cameras_not_supp_005e611f
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0053a925
     PUSH EBX                            ; 0053a928
-    PUSH 0x5e60b1                       ; 0053a929 | DAT_005e60b1
+    PUSH 0x5e60b1                       ; 0053a929 | = "%s\n"
     LEA EAX,[ESP + 0x8]                 ; 0053a92e
     PUSH EAX                            ; 0053a932
     CALL crt_stdio.c_sscanf_FUN_005ba8cc ; 0053a933
@@ -137,7 +137,7 @@ section .text
     LEA EAX,[EBX + 0x144]               ; 0053a9ea
         ;   Label: LAB_0053a9ea
     PUSH EAX                            ; 0053a9f0
-    PUSH 0x5e60c9                       ; 0053a9f1 | DAT_005e60c9
+    PUSH 0x5e60c9                       ; 0053a9f1 | = "%f\n"
     PUSH ESI                            ; 0053a9f6
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053a9f7
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -190,7 +190,7 @@ section .text
         ;   XREF to: 0053aba6 (CONDITIONAL_JUMP)  ; LAB_0053aba6
     LEA EAX,[EBX + 0x150]               ; 0053aa95
     PUSH EAX                            ; 0053aa9b
-    PUSH 0x5e60eb                       ; 0053aa9c | DAT_005e60eb
+    PUSH 0x5e60eb                       ; 0053aa9c | = "%d\n"
     PUSH ESI                            ; 0053aaa1
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053aaa2
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -255,7 +255,7 @@ section .text
     ADD ESP,0xc                         ; 0053ab4f
     LEA EAX,[EBX + 0x178]               ; 0053ab52
     PUSH EAX                            ; 0053ab58
-    PUSH 0x5e6103                       ; 0053ab59 | DAT_005e6103
+    PUSH 0x5e6103                       ; 0053ab59 | = "%d\n"
     PUSH ESI                            ; 0053ab5e
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053ab5f
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -324,7 +324,7 @@ section .text
     ADD ESP,0xc                         ; 0053ac0e
     LEA EAX,[EBX + 0x140]               ; 0053ac11
     PUSH EAX                            ; 0053ac17
-    PUSH 0x5e6107                       ; 0053ac18 | DAT_005e6107
+    PUSH 0x5e6107                       ; 0053ac18 | = "%d\n"
     PUSH ESI                            ; 0053ac1d
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053ac1e
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -336,8 +336,8 @@ section .text
     MOV EAX,0x5e610b                    ; 0053ac34 | = "..\\core\\setutil.cpp"
     MOV EDX,0xd5                        ; 0053ac39
     PUSH 0x5e611f                       ; 0053ac3e | = "Panning cameras not supported, bucko!"
-    MOV [0x01d046a0],EAX                ; 0053ac43 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0053ac48 | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0053ac43 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 0053ac48 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053ac4e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0053ac53

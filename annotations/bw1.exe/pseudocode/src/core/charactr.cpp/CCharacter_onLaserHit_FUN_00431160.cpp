@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_onLaserHit_FUN_00431160(CCharacter *this_ptr,SLaserInfo *laser_info)
 
 {
@@ -18,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_onLaserHit_FUN_00431160(CCharacter *th
     return;
   }
   laser_info->transparency = 0.0;
-  fVar1 = (float)_DAT_005d5a5f;
+  fVar1 = (float)2;
   laser_info->reflectivity = 0.9;
   laser_info->stored_angle = laser_info->incidence_angle * fVar1;
   return;

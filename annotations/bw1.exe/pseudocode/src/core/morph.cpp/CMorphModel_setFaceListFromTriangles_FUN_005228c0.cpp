@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0(CMorphModel *this_ptr,int part_index,SInputFace *face_data,STextureSet *texture_sets ,int *index_data,int start_face,int face_count)
 
 {
@@ -22,15 +20,15 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0(CM
   int local_14;
   
   if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
-    _DAT_01d1d400 = "..\\core\\morph.cpp";
-    _DAT_01d1d404 = 0x191;
+    g_CHAR_PTR_01d1d400 = "..\\core\\morph.cpp";
+    g_INT_01d1d404 = 0x191;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CMorphModel::setFaceList - invalid part index");
   }
   iVar2 = this_ptr->parts[part_index].start_face;
   iVar5 = start_face + iVar2;
   if (iVar2 + this_ptr->parts[part_index].face_count < face_count + iVar5) {
-    _DAT_01d1d400 = "..\\core\\morph.cpp";
-    _DAT_01d1d404 = 0x198;
+    g_CHAR_PTR_01d1d400 = "..\\core\\morph.cpp";
+    g_INT_01d1d404 = 0x198;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CMorphModel::setFaceList - invalid vertex range");
   }
   local_1c = 0;
@@ -46,7 +44,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0(CM
       pSVar3 = local_24;
       do {
         iVar4 = iVar5;
-        if (_DAT_01d39d30 != 0) {
+        if (g_INT_01d39d30 != 0) {
           iVar4 = 2 - iVar5;
         }
         *(uint *)((int)&this_ptr->faces->vertices[iVar4].vertex_index + local_14) =

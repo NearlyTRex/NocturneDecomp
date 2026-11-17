@@ -6,54 +6,52 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044a3e0(CDemonLight *this_ptr)
 
 {
   uint uVar1;
   int iVar2;
   int iVar3;
-  uint *puVar4;
-  uint *puVar5;
+  byte **ppuVar4;
+  byte **ppuVar5;
   byte bVar6;
   
   bVar6 = 0;
   if ((this_ptr->base).scene_open_flag == 0) {
-    _DAT_01d046a0 = "..\\core\\dlight.cpp";
-    _DAT_01d046a4 = 0x1b0;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dlight.cpp";
+    g_INT_01d046a4 = 0x1b0;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonLight::beginBackgroundScene - Scene not open");
   }
-  _DAT_01b11db4 = _DAT_01b11db4 + 1;
-  if (_DAT_01b11db4 == 1) {
-    puVar4 = (uint *)&DAT_01c2a38c;
-    puVar5 = (uint *)&DAT_01b11db8;
+  g_INT_01b11db4 = g_INT_01b11db4 + 1;
+  if (g_INT_01b11db4 == 1) {
+    ppuVar4 = g_ARRAY_PTR_01c2a38c;
+    ppuVar5 = g_ARRAY_PTR_01b11db8;
     for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-      puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+      *ppuVar5 = *ppuVar4;
+      ppuVar4 = ppuVar4 + (uint)bVar6 * -2 + 1;
+      ppuVar5 = ppuVar5 + (uint)bVar6 * -2 + 1;
     }
     for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar5 = *(byte *)puVar4;
-      puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);
-      puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
+      *(byte *)ppuVar5 = *(byte *)ppuVar4;
+      ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar6 * -2 + 1);
+      ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar6 * -2 + 1);
     }
     if (this_ptr->master_zbuffer == (void *)0x0) {
-      _DAT_01d046a0 = "..\\core\\dlight.cpp";
-      _DAT_01d046a4 = 0x1bd;
+      g_CHAR_PTR_01d046a0 = "..\\core\\dlight.cpp";
+      g_INT_01d046a4 = 0x1bd;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonLight::beginBackgroundScene - No master Z buffer");
     }
     iVar2 = 0;
     if (0 < this_ptr->shadow_map_height) {
       iVar3 = 0;
       do {
-        *(void **)(&DAT_01c2a38c + iVar3) =
+        *(void **)((int)g_ARRAY_PTR_01c2a38c + iVar3) =
              (void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;
       } while (iVar2 < this_ptr->shadow_map_height);
     }
-    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,1);
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(g_CDemonRenderer_PTR_0060b280,1);
   }
   return;
 }

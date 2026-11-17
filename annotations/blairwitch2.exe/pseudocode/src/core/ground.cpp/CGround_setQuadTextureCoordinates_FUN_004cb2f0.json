@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 100,
+    "complexity_score": 15,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
@@ -44,13 +42,13 @@
   "globals": [
     {
       "addr": "0062202c",
-      "name": "DAT_0062202c",
+      "name": "g_SRenderVertex_ARRAY_00622014[0].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00622030",
-      "name": "DAT_00622030",
+      "name": "g_SRenderVertex_ARRAY_00622014[0].v",
       "type": "undefined4",
       "value": null
     }
@@ -162,70 +160,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0062202c",
-      "severity": "mild",
-      "text": "(&DAT_0062202c)[this_ptr->vertex_indices[1] * 0xc] = 0xf80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_00622030",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00622030 + this_ptr->vertex_indices[1] * 0x30) = 0xf80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_0062202c",
-      "severity": "mild",
-      "text": "(&DAT_0062202c)[this_ptr->vertex_indices[0] * 0xc] = 0x80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00622030",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00622030 + this_ptr->vertex_indices[0] * 0x30) = 0xf80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0062202c",
-      "severity": "mild",
-      "text": "(&DAT_0062202c)[this_ptr->vertex_indices[3] * 0xc] = 0x80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00622030",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00622030 + this_ptr->vertex_indices[3] * 0x30) = 0x80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0062202c",
-      "severity": "mild",
-      "text": "(&DAT_0062202c)[this_ptr->vertex_indices[2] * 0xc] = 0xf80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00622030",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00622030 + this_ptr->vertex_indices[2] * 0x30) = 0x80000;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

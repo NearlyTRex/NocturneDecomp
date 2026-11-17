@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_ptr,float delta_time)
 
 {
@@ -31,10 +29,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
     core_bodypart_cpp_CBodyPart_setCounts_FUN_00414910(this_ptr,0,0);
     pCVar2 = &(this_ptr->bounding_box).max;
-    if (pCVar2 != (CVector3f *)&DAT_02cfd900) {
-      pCVar2->x = _DAT_02cfd900;
-      (this_ptr->bounding_box).max.y = _DAT_02cfd904;
-      (this_ptr->bounding_box).max.z = _DAT_02cfd908;
+    if (pCVar2 != &g_CVector3f_02cfd900) {
+      pCVar2->x = g_CVector3f_02cfd900.x;
+      (this_ptr->bounding_box).max.y = g_CVector3f_02cfd900.y;
+      (this_ptr->bounding_box).max.z = g_CVector3f_02cfd900.z;
     }
     if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar2) {
       (this_ptr->bounding_box).min.x = pCVar2->x;
@@ -73,9 +71,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
           fVar3 = (this_ptr->physics_box).linear_velocity.y;
           fVar4 = (this_ptr->physics_box).linear_velocity.x;
           fVar5 = (this_ptr->physics_box).linear_velocity.z;
-          if (((float)_DAT_005b6c52 < SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3)) &&
+          if (((float)3 < SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3)) &&
              (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                                (0x01C6E360,"disableBodyPartDamage"), iVar6 == 0)) {
+                                (g_CEventList_PTR_005fba60,"disableBodyPartDamage"),
+             iVar6 == 0)) {
             (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff88);
             core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_70);
             SStack_70.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,15.0)

@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004bf0af
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f54c8
+;   float g_FLOAT_005f54c8 = 0.00390625
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -67,13 +67,13 @@ section .text
     MOV EBX,ESP                         ; 0045ff30
     ADD EAX,EDI                         ; 0045ff32
     FILD dword ptr [EAX]                ; 0045ff34
-    FMUL float ptr [0x005f54c8]         ; 0045ff36 | DAT_005f54c8
+    FMUL float ptr [0x005f54c8]         ; 0045ff36 | g_FLOAT_005f54c8
     FSTP float ptr [EBX]                ; 0045ff3c
     FILD dword ptr [EAX + 0x4]          ; 0045ff3e
-    FMUL float ptr [0x005f54c8]         ; 0045ff41 | DAT_005f54c8
+    FMUL float ptr [0x005f54c8]         ; 0045ff41 | g_FLOAT_005f54c8
     FSTP float ptr [EBX + 0x4]          ; 0045ff47
     FILD dword ptr [EAX + 0x8]          ; 0045ff4a
-    FMUL float ptr [0x005f54c8]         ; 0045ff4d | DAT_005f54c8
+    FMUL float ptr [0x005f54c8]         ; 0045ff4d | g_FLOAT_005f54c8
     FSTP float ptr [EBX + 0x8]          ; 0045ff53
     MOV EAX,ESP                         ; 0045ff56
     PUSH EAX                            ; 0045ff58

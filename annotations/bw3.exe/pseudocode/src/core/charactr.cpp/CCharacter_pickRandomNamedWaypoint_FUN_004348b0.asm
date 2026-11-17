@@ -16,7 +16,7 @@
 ;   core_shadow.cpp_CShadow_process_FUN_005438d0 at 00543f3c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b892a
+;   float g_FLOAT_005b892a = 40
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.waypoint_count
 ;
@@ -106,7 +106,7 @@ section .text
     FMUL ST0                            ; 00434966
     FADDP                               ; 00434968
     FSQRT                               ; 0043496a
-    FCOMP float ptr [0x005b892a]        ; 0043496c | DAT_005b892a
+    FCOMP float ptr [0x005b892a]        ; 0043496c | g_FLOAT_005b892a
     FNSTSW AX                           ; 00434972
     SAHF                                ; 00434974
     JA 0x0043498d                       ; 00434975

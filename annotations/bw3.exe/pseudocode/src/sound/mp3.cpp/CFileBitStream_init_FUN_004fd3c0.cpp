@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004fd3c0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length)
 
 {
@@ -30,8 +28,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004fd3c0(CFileBitStream *this
   pcVar2 = (char *)malloc(buffer_size);
   this_ptr->buffer = pcVar2;
   if (pcVar2 == (char *)0x0) {
-    _DAT_01d71de0 = "..\\sound\\mp3.cpp";
-    _DAT_01d71de4 = 0x23d;
+    g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
+    g_INT_01d71de4 = 0x23d;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory.  File: %s");
   }
   _fseek(this_ptr->file_handle,this_ptr->stream_start_position,0);

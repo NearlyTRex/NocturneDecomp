@@ -19,10 +19,10 @@
 ;   core_turret.cpp_CTurret_fire_FUN_005a3870 at 005a3deb
 ;
 ; Referenced Globals:
-;   undefined4 s_s_exploding_005d7362+1
+;   TerminatedCString s_s_exploding_005d7363
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   undefined4 DAT_0061c010
-;   undefined4 DAT_0061f650
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01d2c900
 ;
@@ -49,7 +49,7 @@ section .text
         ;   Label: LAB_00449613
     PUSH ESI                            ; 00449614
     PUSH EBX                            ; 00449615
-    PUSH 0x5d7363                       ; 00449616 | s_s_exploding_005d7362+1
+    PUSH 0x5d7363                       ; 00449616 | = "%s exploding!\n"
     MOV ECX,dword ptr [0x00611100]      ; 0044961b | g_CConsolePtr
     PUSH ECX                            ; 00449621 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00449622
@@ -80,7 +80,7 @@ section .text
     FLD float ptr [ESP + 0x34]          ; 0044966e
     PUSH 0x44bb8000                     ; 00449672
     LEA EAX,[ESP + 0x40]                ; 00449677
-    MOV ESI,dword ptr [0x0061c010]      ; 0044967b | DAT_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 0044967b | g_CFireEffect_PTR_0061c010
     PUSH 0x42000000                     ; 00449681
     FSUB float ptr [ESP + 0x30]         ; 00449686
     PUSH EAX                            ; 0044968a
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x14                        ; 00449699
     PUSH 0x1                            ; 0044969c
     PUSH EBX                            ; 0044969e
-    MOV EDI,dword ptr [0x0061f650]      ; 0044969f | DAT_0061f650
+    MOV EDI,dword ptr [0x0061f650]      ; 0044969f | g_CDemonMission_PTR_0061f650
     PUSH EDI                            ; 004496a5 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004496a6
         ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)

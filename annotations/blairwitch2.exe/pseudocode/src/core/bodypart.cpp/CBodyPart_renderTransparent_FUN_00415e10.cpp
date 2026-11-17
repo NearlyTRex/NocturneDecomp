@@ -18,7 +18,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00415e10(CBodyPart
       g_CDemonSetPtr->disable_directional_lighting = this_ptr->dont_use_normals;
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
-                (DAT_0060b280,this_ptr->render_alpha);
+                (g_CDemonRenderer_PTR_0060b280,this_ptr->render_alpha);
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_004159e0(this_ptr,0x2e7);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);
       g_CDemonSetPtr->disable_directional_lighting = 0;

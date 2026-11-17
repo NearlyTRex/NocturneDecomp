@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_ptr,float delta_time)
 
 {
@@ -29,10 +27,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_pt
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
     core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00(this_ptr,0,0);
     pCVar2 = &(this_ptr->bounding_box).max;
-    if (pCVar2 != (CVector3f *)&DAT_02c8af28) {
-      pCVar2->x = _DAT_02c8af28;
-      (this_ptr->bounding_box).max.y = _DAT_02c8af2c;
-      (this_ptr->bounding_box).max.z = _DAT_02c8af30;
+    if (pCVar2 != &g_CVector3f_02c8af28) {
+      pCVar2->x = g_CVector3f_02c8af28.x;
+      (this_ptr->bounding_box).max.y = g_CVector3f_02c8af28.y;
+      (this_ptr->bounding_box).max.z = g_CVector3f_02c8af28.z;
     }
     if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar2) {
       (this_ptr->bounding_box).min.x = pCVar2->x;
@@ -71,9 +69,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_pt
           fVar3 = (this_ptr->physics_box).linear_velocity.y;
           fVar4 = (this_ptr->physics_box).linear_velocity.x;
           fVar5 = (this_ptr->physics_box).linear_velocity.z;
-          if ((float)_DAT_005d44a9 < SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3)) {
+          if ((float)3 < SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3)) {
             iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                              (0x01C51D80,"disableBodyPartDamage");
+                              (g_CEventList_PTR_0061b4d0,"disableBodyPartDamage");
             if (iVar6 == 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_60);
               SStack_60.damage_amount =

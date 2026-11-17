@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 crt_unknown_c_FUN_005cbddd(uint param_1,undefined4 *param_2,undefined4 *param_3)
+; undefined8 crt_unknown_c_FUN_005cbddd(uint param_1,undefined4 *param_2,double *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -22,9 +22,9 @@
 ;   crt_unknown.c_FUN_005cbdaa at 005cbdb9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00608560
-;   undefined4 DAT_00608564
-;   undefined4 DAT_00626a74
+;   double g_DOUBLE_00608560 = +Infinity
+;   undefined4 g_DOUBLE_00608560+4
+;   int g_INT_00626a74 = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005cdaad
@@ -92,13 +92,13 @@ section .text
     MOV EAX,EDX                         ; 005cbe4a
         ;   Label: LAB_005cbe4a
     AND EAX,0x1f                        ; 005cbe4c
-    MOV EAX,dword ptr [EAX*0x4 + 0x626a74] ; 005cbe4f | DAT_00626a74
+    MOV EAX,dword ptr [EAX*0x4 + 0x626a74] ; 005cbe4f | g_INT_00626a74
     MOV dword ptr [EBP + -0x38],EBX     ; 005cbe56
     MOV dword ptr [EBP + -0x34],EAX     ; 005cbe59
     TEST DH,0x10                        ; 005cbe5c
     JZ 0x005cbe6e                       ; 005cbe5f
         ;   XREF to: 005cbe6e (CONDITIONAL_JUMP)  ; LAB_005cbe6e
-    FLD double ptr [0x00608560]         ; 005cbe61 | DAT_00608560
+    FLD double ptr [0x00608560]         ; 005cbe61 | g_DOUBLE_00608560
     FCHS                                ; 005cbe67
     FSTP double ptr [EBP + -0x20]       ; 005cbe69
     JMP 0x005cbeb0                      ; 005cbe6c
@@ -126,9 +126,9 @@ section .text
         ;   Label: LAB_005cbe91
     JZ 0x005cbea5                       ; 005cbe94
         ;   XREF to: 005cbea5 (CONDITIONAL_JUMP)  ; LAB_005cbea5
-    MOV EAX,[0x00608560]                ; 005cbe96 | DAT_00608560
+    MOV EAX,[0x00608560]                ; 005cbe96 | g_DOUBLE_00608560
     MOV dword ptr [EBP + -0x20],EAX     ; 005cbe9b
-    MOV EAX,[0x00608564]                ; 005cbe9e | DAT_00608564
+    MOV EAX,[0x00608564]                ; 005cbe9e | g_DOUBLE_00608560+4
     JMP 0x005cbead                      ; 005cbea3
         ;   XREF to: 005cbead (UNCONDITIONAL_JUMP)  ; LAB_005cbead
     MOV EAX,dword ptr [ECX]             ; 005cbea5

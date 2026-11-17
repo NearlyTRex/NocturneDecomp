@@ -22,9 +22,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005dbb4c
 ;   TerminatedCString s_Parity_Check_999_005dbb5f
-;   undefined4 DAT_0061ab68
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   uchar[8] g_UCHAR_ARRAY_0061ab68
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_00457bc0
@@ -130,8 +130,8 @@ section .text
     MOV EDX,0x5dbb4c                    ; 0048f9e3 | = "..\\core\\dtrace.cpp"
     MOV ECX,0xb19                       ; 0048f9e8
     PUSH 0x5dbb5f                       ; 0048f9ed | = "Parity Check 999"
-    MOV dword ptr [0x01d1d400],EDX      ; 0048f9f2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0048f9f8 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0048f9f2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0048f9f8 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048f9fe
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048fa03
@@ -152,7 +152,7 @@ section .text
     ADD EAX,EBX                         ; 0048fa23
     MOV EBX,dword ptr [ESP + 0xc]       ; 0048fa25
     MOV DL,byte ptr [EAX]               ; 0048fa29
-    MOV BL,byte ptr [EBX + 0x61ab68]    ; 0048fa2b | DAT_0061ab68
+    MOV BL,byte ptr [EBX + 0x61ab68]    ; 0048fa2b | g_UCHAR_ARRAY_0061ab68
     OR DL,BL                            ; 0048fa31
     MOV byte ptr [EAX],DL               ; 0048fa33
     ADD ESP,0x30                        ; 0048fa35

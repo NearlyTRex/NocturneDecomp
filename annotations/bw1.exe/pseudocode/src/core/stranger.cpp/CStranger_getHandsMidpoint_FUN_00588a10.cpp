@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00588a10(CStranger *this_ptr,CVector3f *out_position)
 
 {
@@ -34,10 +32,10 @@ CVector3f * __stack_esi core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00588a1
   bVar2 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-            (this_ptr_00,_DAT_02c83638,&local_48);
+            (this_ptr_00,g_INT_ARRAY_02c83600[0xe],&local_48);
   local_30 = local_48.x;
   local_2c[(uint)bVar2 * -2] = *(float *)((int)&local_48 + (uint)bVar2 * -8 + 4);
-  bone_index = _DAT_02c83634;
+  bone_index = g_INT_ARRAY_02c83600[0xd];
   local_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        *(float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
@@ -54,11 +52,11 @@ CVector3f * __stack_esi core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00588a1
   local_2c[(uint)bVar2 * -2 + 3] = *(float *)((int)&stack0xffffffb0 + (uint)bVar2 * -8);
   local_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
        *(float *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  local_18 = local_2c[2] * _DAT_005f6a31;
-  local_14 = local_2c[3] * _DAT_005f6a31;
-  local_10 = local_1c * _DAT_005f6a31;
+  local_18 = local_2c[2] * 0.5f;
+  local_14 = local_2c[3] * 0.5f;
+  local_10 = local_1c * 0.5f;
   pfVar1 = (float *)((int)out_position + (uint)bVar2 * -8 + 4);
-  out_position->x = local_2c[2] * _DAT_005f6a31;
+  out_position->x = local_2c[2] * 0.5f;
   *pfVar1 = local_2c[(uint)bVar2 * -2 + 6];
   pfVar1[(uint)bVar2 * -2 + 1] = local_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7];
   return out_position;

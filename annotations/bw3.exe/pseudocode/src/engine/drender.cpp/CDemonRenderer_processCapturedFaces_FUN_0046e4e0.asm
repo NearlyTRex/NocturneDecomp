@@ -20,9 +20,9 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bdd858
-;   undefined4 DAT_01bdd860
-;   undefined4 DAT_01bdd864
+;   int g_INT_01bdd858
+;   SFace[5000] g_SFace_ARRAY_01bdd860
+;   undefined4 g_SFace_ARRAY_01bdd860[0].render_flags
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005a29e8
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 0046e4ef
     PUSH ESI                            ; 0046e4f0
     PUSH EBX                            ; 0046e4f1
-    MOV ECX,dword ptr [0x01bdd858]      ; 0046e4f2 | DAT_01bdd858
+    MOV ECX,dword ptr [0x01bdd858]      ; 0046e4f2 | g_INT_01bdd858
     TEST ECX,ECX                        ; 0046e4f8
     JLE 0x0046e520                      ; 0046e4fa
         ;   XREF to: 0046e520 (CONDITIONAL_JUMP)  ; LAB_0046e520
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 0046e5c5 (CONDITIONAL_JUMP)  ; LAB_0046e5c5
     PUSH 0x46e480                       ; 0046e52a
     PUSH 0x4                            ; 0046e52f
-    MOV ESI,dword ptr [0x01bdd858]      ; 0046e531 | DAT_01bdd858
+    MOV ESI,dword ptr [0x01bdd858]      ; 0046e531 | g_INT_01bdd858
     PUSH ESI                            ; 0046e537
     PUSH 0x1c04960                      ; 0046e538
         ;   Label: LAB_0046e538
@@ -83,7 +83,7 @@ section .text
     ADD ESP,0x8                         ; 0046e55b
     MOV EDI,0xffffffff                  ; 0046e55e
         ;   Label: LAB_0046e55e
-    MOV EDX,dword ptr [0x01bdd858]      ; 0046e563 | DAT_01bdd858
+    MOV EDX,dword ptr [0x01bdd858]      ; 0046e563 | g_INT_01bdd858
     XOR ESI,ESI                         ; 0046e569
     TEST EDX,EDX                        ; 0046e56b
     JLE 0x0046e5b5                      ; 0046e56d
@@ -91,7 +91,7 @@ section .text
     XOR EBX,EBX                         ; 0046e56f
     MOV EAX,dword ptr [EBX + 0x1c04960] ; 0046e571
         ;   Label: LAB_0046e571
-    MOV EDX,dword ptr [EAX]             ; 0046e577 | DAT_01bdd860
+    MOV EDX,dword ptr [EAX]             ; 0046e577 | g_SFace_ARRAY_01bdd860
     CMP EDI,EDX                         ; 0046e579
     JZ 0x0046e591                       ; 0046e57b
         ;   XREF to: 0046e591 (CONDITIONAL_JUMP)  ; LAB_0046e591
@@ -105,7 +105,7 @@ section .text
     ADD ESP,0x8                         ; 0046e58e
     MOV EAX,dword ptr [EBX + 0x1c04960] ; 0046e591
         ;   Label: LAB_0046e591
-    MOV ECX,dword ptr [EAX + 0x4]       ; 0046e597 | DAT_01bdd864
+    MOV ECX,dword ptr [EAX + 0x4]       ; 0046e597 | g_SFace_ARRAY_01bdd860[0].render_flags
     PUSH ECX                            ; 0046e59a
     ADD EAX,0xc                         ; 0046e59b
     PUSH EAX                            ; 0046e59e
@@ -114,7 +114,7 @@ section .text
     INC ESI                             ; 0046e5a3
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0046ba70 ; 0046e5a4
         ;   XREF to: 0046ba70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0046ba70(CDemonRenderer * this_ptr, SInputFace * face, int render_flags)
-    MOV EAX,[0x01bdd858]                ; 0046e5a9 | DAT_01bdd858
+    MOV EAX,[0x01bdd858]                ; 0046e5a9 | g_INT_01bdd858
     ADD ESP,0xc                         ; 0046e5ae
     CMP ESI,EAX                         ; 0046e5b1
     JL 0x0046e571                       ; 0046e5b3
@@ -134,7 +134,7 @@ section .text
     PUSH 0x46e4b0                       ; 0046e5c5
         ;   Label: LAB_0046e5c5
     PUSH 0x4                            ; 0046e5ca
-    MOV EDI,dword ptr [0x01bdd858]      ; 0046e5cc | DAT_01bdd858
+    MOV EDI,dword ptr [0x01bdd858]      ; 0046e5cc | g_INT_01bdd858
     PUSH EDI                            ; 0046e5d2
     JMP 0x0046e538                      ; 0046e5d3
         ;   XREF to: 0046e538 (UNCONDITIONAL_JUMP)  ; LAB_0046e538

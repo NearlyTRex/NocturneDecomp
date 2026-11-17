@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0(CDeformableModel *this_ptr,int bone_index)
 
 {
@@ -55,8 +53,8 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0054bf00(pCVar1);
     }
     if (local_24 == (CDeformableModelInstance *)0x0) {
-      _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-      _DAT_01d71de4 = 0x600;
+      g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+      g_INT_01d71de4 = 0x600;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
     }
     pCVar1 = local_24;
@@ -105,9 +103,9 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a
                 }
               }
               pCVar3 = local_24->skinned_vertices_buffer + *puVar7;
-              local_60 = (float)pCVar3->x * _DAT_005e4760;
-              local_5c = (float)pCVar3->y * _DAT_005e4760;
-              local_58 = (float)pCVar3->z * _DAT_005e4760;
+              local_60 = (float)pCVar3->x * 0.00390625f;
+              local_5c = (float)pCVar3->y * 0.00390625f;
+              local_58 = (float)pCVar3->z * 0.00390625f;
               puVar7 = puVar7 + 1;
               local_1c = local_1c + 1;
               local_18 = (local_58 - local_70) * (local_58 - local_70) +

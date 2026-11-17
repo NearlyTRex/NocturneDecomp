@@ -170,11 +170,11 @@
 ;   core_cloth.cpp_CCloth_process_FUN_0043e270 at 0043e28e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9128
-;   undefined4 DAT_005b9130
-;   undefined4 DAT_005b9138
-;   undefined4 DAT_005b9140
-;   undefined4 DAT_005dd3b0
+;   double g_DOUBLE_005b9128 = 9999
+;   double g_DOUBLE_005b9130 = 0.0100000000000000
+;   double g_DOUBLE_005b9138 = -1
+;   float g_FLOAT_005b9140 = 0.1000000
+;   float g_FLOAT_005dd3b0 = 256
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
@@ -205,14 +205,14 @@ section .text
     XOR EDX,EDX                         ; 0043e2af
     FLD float ptr [EBP + 0x24]          ; 0043e2b1
     MOV dword ptr [ESP + 0x23c],EDX     ; 0043e2b4
-    FCOMP double ptr [0x005b9128]       ; 0043e2bb | DAT_005b9128
+    FCOMP double ptr [0x005b9128]       ; 0043e2bb | g_DOUBLE_005b9128
     FNSTSW AX                           ; 0043e2c1
     SAHF                                ; 0043e2c3
     JNC 0x0043edb7                      ; 0043e2c4
         ;   XREF to: 0043edb7 (CONDITIONAL_JUMP)  ; LAB_0043edb7
     FLD float ptr [EBP + 0x20]          ; 0043e2ca
         ;   Label: LAB_0043e2ca
-    FCOMP double ptr [0x005b9130]       ; 0043e2cd | DAT_005b9130
+    FCOMP double ptr [0x005b9130]       ; 0043e2cd | g_DOUBLE_005b9130
     FNSTSW AX                           ; 0043e2d3
     SAHF                                ; 0043e2d5
     JNC 0x0043e2df                      ; 0043e2d6
@@ -527,7 +527,7 @@ section .text
     FLD float ptr [ESP]                 ; 0043e78c
         ;   Label: LAB_0043e78c
     MOV EAX,[0x00603b28]                ; 0043e78f | g_CDemonSetPtr
-    FMUL double ptr [0x005b9138]        ; 0043e794 | DAT_005b9138
+    FMUL double ptr [0x005b9138]        ; 0043e794 | g_DOUBLE_005b9138
     FLD float ptr [EAX + 0x15ac70]      ; 0043e79a | g_CDemonSetInstance.active_fog.scroll.x
     FXCH                                ; 0043e7a0
     FSTP float ptr [ESP]                ; 0043e7a2
@@ -932,13 +932,13 @@ section .text
     MOV EAX,EDX                         ; 0043ed6d
     ADD EBX,ECX                         ; 0043ed6f
     FLD float ptr [EAX]                 ; 0043ed71
-    FMUL float ptr [0x005dd3b0]         ; 0043ed73 | DAT_005dd3b0
+    FMUL float ptr [0x005dd3b0]         ; 0043ed73 | g_FLOAT_005dd3b0
     FISTP dword ptr [EBX]               ; 0043ed79
     FLD float ptr [EAX + 0x4]           ; 0043ed7b
-    FMUL float ptr [0x005dd3b0]         ; 0043ed7e | DAT_005dd3b0
+    FMUL float ptr [0x005dd3b0]         ; 0043ed7e | g_FLOAT_005dd3b0
     FISTP dword ptr [EBX + 0x4]         ; 0043ed84
     FLD float ptr [EAX + 0x8]           ; 0043ed87
-    FMUL float ptr [0x005dd3b0]         ; 0043ed8a | DAT_005dd3b0
+    FMUL float ptr [0x005dd3b0]         ; 0043ed8a | g_FLOAT_005dd3b0
     FISTP dword ptr [EBX + 0x8]         ; 0043ed90
     MOV EAX,dword ptr [EBP + 0x14]      ; 0043ed93
     INC ESI                             ; 0043ed96
@@ -1081,7 +1081,7 @@ section .text
     FMUL ST0                            ; 0043ef76
     FADDP                               ; 0043ef78
     FSQRT                               ; 0043ef7a
-    FCOMP float ptr [0x005b9140]        ; 0043ef7c | DAT_005b9140
+    FCOMP float ptr [0x005b9140]        ; 0043ef7c | g_FLOAT_005b9140
     FNSTSW AX                           ; 0043ef82
     SAHF                                ; 0043ef84
     JC 0x0043f0b2                       ; 0043ef85
@@ -1196,7 +1196,7 @@ section .text
     FMUL ST0                            ; 0043f0df
     FADDP                               ; 0043f0e1
     FSQRT                               ; 0043f0e3
-    FCOMP float ptr [0x005b9140]        ; 0043f0e5 | DAT_005b9140
+    FCOMP float ptr [0x005b9140]        ; 0043f0e5 | g_FLOAT_005b9140
     FNSTSW AX                           ; 0043f0eb
     SAHF                                ; 0043f0ed
     JC 0x0043ec8d                       ; 0043f0ee

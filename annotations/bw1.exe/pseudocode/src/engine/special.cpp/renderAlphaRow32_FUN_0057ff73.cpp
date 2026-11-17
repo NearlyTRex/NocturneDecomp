@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0057ff73(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 
 {
@@ -37,17 +35,17 @@ void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0057ff73(uint *destPixels,u
   uint5 uVar24;
   
   do {
-    uVar8 = *(uint *)(&DAT_01c4e3d4 + (uint)*srcIndices * 4);
+    uVar8 = g_UINT_ARRAY_01c4e3d4[*srcIndices];
     uVar4 = (uint)*srcAlpha * ((uint)globalAlpha >> 8);
-    if (_DAT_01c51d0c == 1) {
+    if (g_INT_01c51d0c == 1) {
 LAB_0057ffb4:
       uVar3 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar8 >> 0x18) << 0x30) >> 0x28
                                                      ),CONCAT14((char)(uVar8 >> 0x10),uVar8)) >>
                                     0x20),uVar8) >> 0x18);
       uVar11 = (uint5)uVar3 & 0xffffffff00;
       uVar7 = (ushort)CONCAT41(uVar3,(char)(uVar8 >> 8)) & 0xff;
-      uVar1 = (&DAT_006247d0)[uVar4 >> 8];
-      uVar21 = uVar1 ^ 0x000000FF00FF00FF;
+      uVar1 = g_QWORD_ARRAY_006247d0[uVar4 >> 8];
+      uVar21 = uVar1 ^ g_QWORD_ARRAY_006247d0[0xff];
       uVar4 = *destPixels;
       uVar3 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar4 >> 0x18) << 0x30) >> 0x28
                                                      ),CONCAT14((char)(uVar4 >> 0x10),uVar4)) >>
@@ -60,7 +58,7 @@ LAB_0057ffb4:
       sVar20 = (short)(uVar1 >> 0x30);
       sVar12 = (short)(uVar11 >> 8);
       sVar15 = (short)(uVar11 >> 0x18);
-      if (_DAT_01c51d0c == 1) {
+      if (g_INT_01c51d0c == 1) {
         uVar23 = psllw(CONCAT62((int6)(uVar22 >> 0x10),uVar6) & 0xffffffffffff00ff,8);
         uVar23 = paddusw(CONCAT26(sVar15 * sVar20,
                                   CONCAT24(sVar12 * sVar19,

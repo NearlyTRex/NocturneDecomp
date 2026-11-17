@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_00462c90(CDraculaBride *this_ptr)
 
 {
@@ -53,21 +51,21 @@ LAB_00462d25:
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
   pCVar1 = &(this_ptr->base).base.model;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar1);
-  _DAT_01ba5778 =
+  g_INT_ARRAY_01ba5778[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Head",1);
-  _DAT_01ba577c =
+  g_INT_ARRAY_01ba5778[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Hand",1);
-  _DAT_01ba5780 =
+  g_INT_ARRAY_01ba5778[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Hand",1);
-  _DAT_01ba5784 =
+  g_INT_ARRAY_01ba5778[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L UpperArm",1);
-  _DAT_01ba5788 =
+  g_INT_ARRAY_01ba5778[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R UpperArm",1);
-  _DAT_01ba578c =
+  g_INT_ARRAY_01ba5778[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
-  _DAT_01ba5790 =
+  g_INT_ARRAY_01ba5778[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine1",1);
-  _DAT_01ba5794 =
+  g_INT_ARRAY_01ba5778[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine2",1);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(pCVar1);
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100

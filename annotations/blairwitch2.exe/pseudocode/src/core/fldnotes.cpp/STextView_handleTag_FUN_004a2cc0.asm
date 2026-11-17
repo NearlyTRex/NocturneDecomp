@@ -18,10 +18,10 @@
 ;   core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 at 004a29d7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5b91
-;   undefined4 DAT_005d5b94
-;   undefined4 DAT_005d5b97
-;   undefined4 DAT_005d5b9a
+;   TerminatedCString s_br_005d5b91
+;   TerminatedCString s_pg_005d5b94
+;   TerminatedCString s_ul_005d5b97
+;   TerminatedCString s_ul_005d5b9a
 ;   TerminatedCString s_image_005d5b9e
 ;   TerminatedCString s_s_d_d_n_005d5ba4
 ;   TerminatedCString s_Error_parsing_image_tag_005d5baf
@@ -62,7 +62,7 @@ section .text
     SUB ESP,0x210                       ; 004a2cc4
     MOV EBX,dword ptr [ESP + 0x224]     ; 004a2cca
     MOV ESI,dword ptr [ESP + 0x228]     ; 004a2cd1
-    PUSH 0x5d5b91                       ; 004a2cd8 | DAT_005d5b91
+    PUSH 0x5d5b91                       ; 004a2cd8 | = "br"
     PUSH ESI                            ; 004a2cdd
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004a2cde
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
@@ -92,7 +92,7 @@ section .text
     POP ESI                             ; 004a2d10
     POP EBX                             ; 004a2d11
     RET                                 ; 004a2d12
-    PUSH 0x5d5b94                       ; 004a2d13 | DAT_005d5b94
+    PUSH 0x5d5b94                       ; 004a2d13 | = "pg"
         ;   Label: LAB_004a2d13
     PUSH ESI                            ; 004a2d18
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004a2d19
@@ -101,7 +101,7 @@ section .text
     TEST EAX,EAX                        ; 004a2d21
     JZ 0x004a2d4e                       ; 004a2d23
         ;   XREF to: 004a2d4e (CONDITIONAL_JUMP)  ; LAB_004a2d4e
-    PUSH 0x5d5b97                       ; 004a2d25 | DAT_005d5b97
+    PUSH 0x5d5b97                       ; 004a2d25 | = "ul"
     PUSH ESI                            ; 004a2d2a
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004a2d2b
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
@@ -129,7 +129,7 @@ section .text
     POP ESI                             ; 004a2d64
     POP EBX                             ; 004a2d65
     RET                                 ; 004a2d66
-    PUSH 0x5d5b9a                       ; 004a2d67 | DAT_005d5b9a
+    PUSH 0x5d5b9a                       ; 004a2d67 | = "/ul"
         ;   Label: LAB_004a2d67
     PUSH ESI                            ; 004a2d6c
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004a2d6d
@@ -211,8 +211,8 @@ section .text
     MOV EBP,0x5d5bd5                    ; 004a2e45 | = "..\\core\\fldnotes.cpp"
     MOV EAX,0x5b1                       ; 004a2e4a
     PUSH 0x5d5bea                       ; 004a2e4f | = "Out of memory"
-    MOV dword ptr [0x01d046a0],EBP      ; 004a2e54 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004a2e5a | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004a2e54 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004a2e5a | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a2e5f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2e64
@@ -240,7 +240,7 @@ section .text
     PUSH ESI                            ; 004a2e9b
         ;   Label: LAB_004a2e9b
     PUSH 0x5d5baf                       ; 004a2e9c | = "Error parsing 'image' tag parms: '%s'"
-    PUSH 0x1cab7f0                      ; 004a2ea1 | DAT_01cab7f0
+    PUSH 0x1cab7f0                      ; 004a2ea1 | g_CHAR_ARRAY_01cab7f0
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a2ea6
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a2eab
@@ -297,8 +297,8 @@ section .text
     MOV EBP,0x5d5c2e                    ; 004a2f2b | = "..\\core\\fldnotes.cpp"
     MOV EAX,0x5c7                       ; 004a2f30
     PUSH 0x5d5c43                       ; 004a2f35 | = "Out of memory"
-    MOV dword ptr [0x01d046a0],EBP      ; 004a2f3a | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004a2f40 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004a2f3a | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004a2f40 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a2f45
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2f4a
@@ -337,7 +337,7 @@ section .text
     PUSH ESI                            ; 004a2f92
         ;   Label: LAB_004a2f92
     PUSH 0x5d5c08                       ; 004a2f93 | = "Error parsing 'twanachar' parms: '%s'"
-    PUSH 0x1cab7f0                      ; 004a2f98 | DAT_01cab7f0
+    PUSH 0x1cab7f0                      ; 004a2f98 | g_CHAR_ARRAY_01cab7f0
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a2f9d
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004a2fa2
@@ -389,8 +389,8 @@ section .text
     MOV EDX,0x5d5c5c                    ; 004a3003 | = "..\\core\\fldnotes.cpp"
     MOV ECX,0x5df                       ; 004a3008
     PUSH 0x5d5c71                       ; 004a300d | = "Out of memory"
-    MOV dword ptr [0x01d046a0],EDX      ; 004a3012 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004a3018 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004a3012 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004a3018 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a301e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a3023
@@ -429,7 +429,7 @@ section .text
     PUSH ESI                            ; 004a306f
         ;   Label: LAB_004a306f
     PUSH 0x5d5c7f                       ; 004a3070 | = "Ignoring unknown markup tag: %s"
-    PUSH 0x1cab7f0                      ; 004a3075 | DAT_01cab7f0
+    PUSH 0x1cab7f0                      ; 004a3075 | g_CHAR_ARRAY_01cab7f0
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a307a
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004a307f

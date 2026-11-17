@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_00476260(CDoc *this_ptr,CDemonActor *grabber,int grab_type)
 
 {
@@ -28,7 +26,7 @@ int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_00476260(CDoc *this_ptr,CDemonActor
                         (&this_ptr_00->base);
       iVar2 = (this_ptr->base).base.layer_action_index;
       if ((iVar2 == 0xc) || (iVar2 == 0xd)) {
-        if ((fVar1 <= (float)_DAT_005da64c) || (_DAT_005da654 <= (double)fVar1)) {
+        if ((fVar1 <= (float)0.29999999999999999) || (0.69999999999999996 <= (double)fVar1)) {
 LAB_0047631f:
           iVar2 = core_hero_cpp_CHero_getGrabbed_FUN_004eadf0(&this_ptr->base,grabber,grab_type);
           if (iVar2 != 0) {

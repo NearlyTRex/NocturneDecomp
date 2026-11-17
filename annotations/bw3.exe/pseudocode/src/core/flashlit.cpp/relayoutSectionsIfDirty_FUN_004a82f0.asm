@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fe374
-;   undefined4 DAT_01d0d010
-;   undefined4 DAT_01d0d210
+;   int g_INT_005fe374 = 0x1
+;   char[512] g_CHAR_ARRAY_01d0d010
+;   int g_INT_01d0d210
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_layout_FUN_004a9d90
@@ -22,7 +22,7 @@ section .text
         ;   Label: core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004a82f0
     PUSH ESI                            ; 004a82f1
     PUSH EDI                            ; 004a82f2
-    CMP dword ptr [0x005fe374],0x0      ; 004a82f3 | DAT_005fe374
+    CMP dword ptr [0x005fe374],0x0      ; 004a82f3 | g_INT_005fe374
     JNZ 0x004a8300                      ; 004a82fa
         ;   XREF to: 004a8300 (CONDITIONAL_JUMP)  ; LAB_004a8300
     POP EDI                             ; 004a82fc
@@ -43,12 +43,12 @@ section .text
     XOR ESI,ESI                         ; 004a8320
     CALL core_fldnotes.cpp_STextView_reset_FUN_004a8e00 ; 004a8322
         ;   XREF to: 004a8e00 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_reset_FUN_004a8e00(STextView * this_ptr)
-    MOV EBX,dword ptr [0x01d0d210]      ; 004a8327 | DAT_01d0d210
+    MOV EBX,dword ptr [0x01d0d210]      ; 004a8327 | g_INT_01d0d210
     ADD ESP,0x4                         ; 004a832d
     XOR ECX,ECX                         ; 004a8330
     XOR AH,AH                           ; 004a8332
-    MOV dword ptr [0x005fe374],ECX      ; 004a8334 | DAT_005fe374
-    MOV byte ptr [0x01d0d010],AH        ; 004a833a | DAT_01d0d010
+    MOV dword ptr [0x005fe374],ECX      ; 004a8334 | g_INT_005fe374
+    MOV byte ptr [0x01d0d010],AH        ; 004a833a | g_CHAR_ARRAY_01d0d010
     TEST EBX,EBX                        ; 004a8340
     JLE 0x004a82fc                      ; 004a8342
         ;   XREF to: 004a82fc (CONDITIONAL_JUMP)  ; LAB_004a82fc
@@ -62,7 +62,7 @@ section .text
     TEST EAX,EAX                        ; 004a8357
     JZ 0x004a82fc                       ; 004a8359
         ;   XREF to: 004a82fc (CONDITIONAL_JUMP)  ; LAB_004a82fc
-    MOV EDI,dword ptr [0x01d0d210]      ; 004a835b | DAT_01d0d210
+    MOV EDI,dword ptr [0x01d0d210]      ; 004a835b | g_INT_01d0d210
     INC ESI                             ; 004a8361
     ADD EBX,0x2e4                       ; 004a8362
     CMP ESI,EDI                         ; 004a8368

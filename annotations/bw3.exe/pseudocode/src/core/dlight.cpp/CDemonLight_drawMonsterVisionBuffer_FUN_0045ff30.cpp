@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset)
 
 {
@@ -26,23 +24,23 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CD
   int local_14;
   
   engine_special_cpp_clearScreen_FUN_00560d70();
-  if (DAT_005fba20 == 0x20) {
+  if (g_INT_005fba20 == 0x20) {
     local_28 = 0;
     if (0 < this_ptr->shadow_map_height) {
       do {
         iVar3 = local_28;
-        if (0xf0 < DAT_005fba1c) {
+        if (0xf0 < g_INT_005fba1c) {
           iVar3 = local_28 * 2;
         }
         iVar3 = iVar3 + screen_y;
-        if ((-1 < iVar3) && (iVar3 < DAT_005fba1c)) {
+        if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
           local_24 = 0;
-          puVar6 = (uint *)(*(int *)(&DAT_01c5faec + iVar3 * 4) + screen_x * 4);
+          puVar6 = (uint *)(g_ARRAY_PTR_01c5faec[iVar3] + screen_x * 4);
           puVar7 = this_ptr->shadow_depth_buffer + local_28 * this_ptr->shadow_map_width;
           iVar3 = 0;
           if (0 < this_ptr->shadow_map_width) {
             do {
-              iVar1 = DAT_005fba18;
+              iVar1 = g_INT_005fba18;
               if (*puVar7 != 0) {
                 uVar5 = (uint)(*puVar7 >> 6);
                 if (0x7f < uVar5) {
@@ -56,9 +54,10 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CD
                 local_24 = uVar5 >> 1;
                 iVar4 = (int)(local_24 * 3 + 0x96) >> 1;
                 uVar5 = uVar5 >> 2;
-                if (DAT_005fba20 == 0x20) {
-                  uVar5 = uVar5 << (DAT_01c6af8c & 0x1f) |
-                          iVar4 << (DAT_01c6af74 & 0x1f) | uVar5 << (DAT_01c6af80 & 0x1f);
+                if (g_INT_005fba20 == 0x20) {
+                  uVar5 = uVar5 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
+                          iVar4 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+                          uVar5 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
                 }
                 else {
                   uVar5 = iVar4 << 0x10 | uVar5 << 8 | uVar5;
@@ -69,7 +68,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CD
                 }
               }
               puVar7 = puVar7 + 1;
-              if (DAT_005fba18 < 0x141) {
+              if (g_INT_005fba18 < 0x141) {
                 puVar6 = puVar6 + 1;
               }
               else {
@@ -88,18 +87,18 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CD
     if (0 < this_ptr->shadow_map_height) {
       do {
         iVar3 = local_2c;
-        if (0xf0 < DAT_005fba1c) {
+        if (0xf0 < g_INT_005fba1c) {
           iVar3 = local_2c * 2;
         }
         iVar3 = iVar3 + screen_y;
-        if ((-1 < iVar3) && (iVar3 < DAT_005fba1c)) {
-          puVar7 = (ushort *)(*(int *)(&DAT_01c5faec + iVar3 * 4) + screen_x * 2);
+        if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
+          puVar7 = (ushort *)(g_ARRAY_PTR_01c5faec[iVar3] + screen_x * 2);
           local_18 = this_ptr->shadow_depth_buffer + local_2c * this_ptr->shadow_map_width;
           local_20 = 0;
           local_14 = 0;
           if (0 < this_ptr->shadow_map_width) {
             do {
-              iVar3 = DAT_005fba18;
+              iVar3 = g_INT_005fba18;
               if (*local_18 != 0) {
                 uVar5 = (uint)(*local_18 >> 6);
                 if (0x7f < uVar5) {
@@ -111,16 +110,19 @@ void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CD
                 }
                 local_20 = uVar5 + local_20 >> 1;
                 uVar5 = local_20 * 3 >> 2;
-                uVar2 = (ushort)(local_20 / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f)) |
-                        (ushort)(uVar5 / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) |
-                        (ushort)(uVar5 / _DAT_01c6af78 << (DAT_01c6af74 & 0x1f));
+                uVar2 = (ushort)(local_20 / (uint)g_INT_01c6af90 <<
+                                (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) |
+                        (ushort)(uVar5 / (uint)g_INT_01c6af84 <<
+                                (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
+                        (ushort)(uVar5 / (uint)g_INT_01c6af78 <<
+                                (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f));
                 *puVar7 = uVar2;
                 if (0x140 < iVar3) {
                   puVar7[1] = uVar2;
                 }
               }
               local_18 = local_18 + 1;
-              if (DAT_005fba18 < 0x141) {
+              if (g_INT_005fba18 < 0x141) {
                 puVar7 = puVar7 + 1;
               }
               else {

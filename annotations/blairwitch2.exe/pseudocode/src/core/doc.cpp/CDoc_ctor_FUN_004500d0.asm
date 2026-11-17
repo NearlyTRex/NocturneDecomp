@@ -10,7 +10,7 @@
 ;   core_doc.cpp_factoryFuncDoc_FUN_004500a0 at 004500b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f5134
+;   float g_FLOAT_005f5134 = 10
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_0041bd30
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [EBX + 0x2569c],0x0   ; 004501bd
     MOV dword ptr [EBX + 0x256a8],0x0   ; 004501c7
     MOV dword ptr [EBX + 0x256ac],0x0   ; 004501d1
-    FLD float ptr [0x005f5134]          ; 004501db | DAT_005f5134
+    FLD float ptr [0x005f5134]          ; 004501db | g_FLOAT_005f5134
     MOV dword ptr [EBX + 0x25718],0xf149f2ca ; 004501e1
     ADD ESP,0x4                         ; 004501eb
     FSTP float ptr [EBX + 0x25650]      ; 004501ee

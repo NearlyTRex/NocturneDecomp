@@ -5,16 +5,16 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061d310
-;   undefined4 DAT_0152d240
-;   undefined4 DAT_01cc7f1c
-;   undefined4 DAT_01cc7f20
-;   undefined4 DAT_01cc7f24
-;   undefined4 DAT_01cc7f28
-;   undefined4 DAT_01cc7f2c
-;   undefined4 DAT_01cc7f30
-;   undefined4 DAT_01cc7f38
-;   undefined4 DAT_01cc8000
+;   int g_INT_0061d310 = -0x1
+;   CBitFont* g_CBitFont_PTR_0152d240
+;   int g_INT_01cc7f1c
+;   int g_INT_01cc7f20
+;   int g_INT_01cc7f24
+;   int g_INT_01cc7f28
+;   int g_INT_01cc7f2c
+;   int g_INT_01cc7f30
+;   char g_CHAR_01cc7f38
+;   int g_INT_01cc8000
 ;
 ; Called Functions:
 ;   engine_2d.c_fillRectColor_FUN_004031c0
@@ -27,33 +27,33 @@ section .text
     PUSH ESI                            ; 004b9f70
         ;   Label: core_flashlit.cpp_drawTooltip_FUN_004b9f70
     PUSH EBP                            ; 004b9f71
-    MOV EDX,dword ptr [0x0061d310]      ; 004b9f72 | DAT_0061d310
+    MOV EDX,dword ptr [0x0061d310]      ; 004b9f72 | g_INT_0061d310
     TEST EDX,EDX                        ; 004b9f78
     JL 0x004b9f9f                       ; 004b9f7a
         ;   XREF to: 004b9f9f (CONDITIONAL_JUMP)  ; LAB_004b9f9f
-    MOV ECX,dword ptr [0x01cc8000]      ; 004b9f7c | DAT_01cc8000
+    MOV ECX,dword ptr [0x01cc8000]      ; 004b9f7c | g_INT_01cc8000
     TEST ECX,ECX                        ; 004b9f82
     JNZ 0x004b9fa2                      ; 004b9f84
         ;   XREF to: 004b9fa2 (CONDITIONAL_JUMP)  ; LAB_004b9fa2
     MOV ESI,0xffffffff                  ; 004b9f86
     XOR AH,AH                           ; 004b9f8b
-    MOV dword ptr [0x01cc7f1c],ECX      ; 004b9f8d | DAT_01cc7f1c
-    MOV byte ptr [0x01cc7f38],AH        ; 004b9f93 | DAT_01cc7f38
-    MOV dword ptr [0x0061d310],ESI      ; 004b9f99 | DAT_0061d310
+    MOV dword ptr [0x01cc7f1c],ECX      ; 004b9f8d | g_INT_01cc7f1c
+    MOV byte ptr [0x01cc7f38],AH        ; 004b9f93 | g_CHAR_01cc7f38
+    MOV dword ptr [0x0061d310],ESI      ; 004b9f99 | g_INT_0061d310
     POP EBP                             ; 004b9f9f
         ;   Label: LAB_004b9f9f
     POP ESI                             ; 004b9fa0
     RET                                 ; 004b9fa1
     PUSH EBX                            ; 004b9fa2
         ;   Label: LAB_004b9fa2
-    MOV EAX,[0x01cc7f28]                ; 004b9fa3 | DAT_01cc7f28
+    MOV EAX,[0x01cc7f28]                ; 004b9fa3 | g_INT_01cc7f28
     PUSH 0x0                            ; 004b9fa8
     DEC EAX                             ; 004b9faa
     PUSH EAX                            ; 004b9fab
-    MOV EAX,[0x01cc7f24]                ; 004b9fac | DAT_01cc7f24
+    MOV EAX,[0x01cc7f24]                ; 004b9fac | g_INT_01cc7f24
     DEC EAX                             ; 004b9fb1
     PUSH EAX                            ; 004b9fb2
-    MOV EBP,dword ptr [0x01cc7f20]      ; 004b9fb3 | DAT_01cc7f20
+    MOV EBP,dword ptr [0x01cc7f20]      ; 004b9fb3 | g_INT_01cc7f20
     PUSH EBP                            ; 004b9fb9
     PUSH EDX                            ; 004b9fba
     CALL engine_2d.c_fillRectColor_FUN_004031c0 ; 004b9fbb
@@ -61,12 +61,12 @@ section .text
     ADD ESP,0x14                        ; 004b9fc0
     PUSH -0x1                           ; 004b9fc3
     PUSH 0xff                           ; 004b9fc5
-    MOV EDX,dword ptr [0x01cc7f30]      ; 004b9fca | DAT_01cc7f30
+    MOV EDX,dword ptr [0x01cc7f30]      ; 004b9fca | g_INT_01cc7f30
     PUSH EDX                            ; 004b9fd0
-    MOV ECX,dword ptr [0x01cc7f2c]      ; 004b9fd1 | DAT_01cc7f2c
+    MOV ECX,dword ptr [0x01cc7f2c]      ; 004b9fd1 | g_INT_01cc7f2c
     PUSH ECX                            ; 004b9fd7
     PUSH 0x1cc7f38                      ; 004b9fd8
-    MOV EBX,dword ptr [0x0152d240]      ; 004b9fdd | DAT_0152d240
+    MOV EBX,dword ptr [0x0152d240]      ; 004b9fdd | g_CBitFont_PTR_0152d240
     PUSH EBX                            ; 004b9fe3
     CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 004b9fe4
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)

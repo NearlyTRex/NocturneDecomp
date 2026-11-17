@@ -30,8 +30,8 @@
 ; Referenced Globals:
 ;   void* PTR_FindClose_005b3554 = 001b3d64
 ;   void* PTR_FindFirstFileA_005b3558 = 001b3d70
-;   undefined4 DAT_005da884
-;   undefined4 DAT_006074b8
+;   TerminatedCString s_anon_005da884
+;   uchar[257] g_UCHAR_ARRAY_006074b8
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005a35a0
@@ -67,7 +67,7 @@ section .text
     TEST AH,AH                          ; 005aaef0
     JZ 0x005aaf06                       ; 005aaef2
         ;   XREF to: 005aaf06 (CONDITIONAL_JUMP)  ; LAB_005aaf06
-    PUSH 0x5da884                       ; 005aaef4 | DAT_005da884
+    PUSH 0x5da884                       ; 005aaef4 | = "*?"
     PUSH ESI                            ; 005aaef9
     CALL crt_unknown.c_FUN_005aede0     ; 005aaefa
         ;   XREF to: 005aede0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005aede0()
@@ -103,7 +103,7 @@ section .text
     MOV AL,byte ptr [ESP + 0x140]       ; 005aaf49
     INC AL                              ; 005aaf50
     AND EAX,0xff                        ; 005aaf52
-    TEST byte ptr [EAX + 0x6074b8],0xc0 ; 005aaf57 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0xc0 ; 005aaf57 | g_UCHAR_ARRAY_006074b8
     JZ 0x005aaf83                       ; 005aaf5e
         ;   XREF to: 005aaf83 (CONDITIONAL_JUMP)  ; LAB_005aaf83
     CMP byte ptr [ESP + 0x141],0x3a     ; 005aaf60

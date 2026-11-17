@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_004e6ec0(void)
 
 {
-  _DAT_01d726a0 = _DAT_01d726a0 + -1;
-  if (_DAT_01d726a0 < 0) {
-    _DAT_01d71de0 = "..\\engine\\matrix.c";
-    _DAT_01d71de4 = 0x5d9;
+  g_INT_01d726a0 = g_INT_01d726a0 + -1;
+  if (g_INT_01d726a0 < 0) {
+    g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
+    g_INT_01d71de4 = 0x5d9;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Matrix unbalance4");
   }
-  _DAT_01c6e2cc = *(uint *)(_DAT_01d726a0 * 4 + 0x1d7280c);
-  _DAT_01c6e2d0 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d72834);
-  _DAT_01c6e2d4 = *(uint *)(_DAT_01d726a0 * 4 + 0x1d7285c);
+  g_INT_01c6e2cc = g_INT_ARRAY_01d7280c[g_INT_01d726a0];
+  g_INT_01c6e2d0 = g_INT_ARRAY_01d72834[g_INT_01d726a0];
+  g_INT_01c6e2d4 = g_INT_ARRAY_01d7285c[g_INT_01d726a0];
   return;
 }

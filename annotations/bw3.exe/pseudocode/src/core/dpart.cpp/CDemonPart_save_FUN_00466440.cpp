@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00466440(CDemonPart *this_ptr)
 
 {
-  _DAT_01d71de0 = "..\\core\\dpart.cpp";
-  _DAT_01d71de4 = 0x132;
+  g_CHAR_PTR_01d71de0 = "..\\core\\dpart.cpp";
+  g_INT_01d71de4 = 0x132;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonPart::save is no longer needed");
   return;
 }

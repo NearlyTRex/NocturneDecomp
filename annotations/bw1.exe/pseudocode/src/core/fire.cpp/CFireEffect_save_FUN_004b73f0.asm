@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Fire_state_005df678
-;   undefined4 DAT_005df684
+;   TerminatedCString s_s_1_005df684
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_save_FUN_004b2740
@@ -32,7 +32,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004b73fd
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004b7402
-    PUSH 0x5df684                       ; 004b7405 | DAT_005df684
+    PUSH 0x5df684                       ; 004b7405 | = "1\n"
     MOV EBX,0x1cb4f60                   ; 004b740a
     PUSH ESI                            ; 004b740f
     LEA EDI,[EBX + 0x8c0]               ; 004b7410

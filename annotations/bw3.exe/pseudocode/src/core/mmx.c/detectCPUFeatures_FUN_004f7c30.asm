@@ -8,12 +8,12 @@
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4588
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba34
-;   undefined1 DAT_00600698
-;   undefined1 DAT_0060069c
-;   undefined1 DAT_006006a1
-;   undefined4 DAT_01c6e2a0
-;   undefined4 DAT_01c6e2a4
+;   uint g_UINT_005fba34 = 0x5
+;   uchar g_UCHAR_00600698 = \n
+;   uchar g_UCHAR_0060069c = \x00
+;   uchar g_UCHAR_006006a1 = \x00
+;   int g_INT_01c6e2a0
+;   int g_INT_01c6e2a4
 ;
 ; Called Functions:
 ;   core_mmx.c_detectIntelProcessor_FUN_004f7c6c
@@ -30,13 +30,13 @@ section .text
     CALL core_mmx.c_detectMMXSupport_FUN_004f7d19 ; 004f7c36
         ;   XREF to: 004f7d19 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectMMXSupport_FUN_004f7d19()
     XOR EAX,EAX                         ; 004f7c3b
-    MOV AL,[0x006006a1]                 ; 004f7c3d | DAT_006006a1
-    MOV [0x01c6e2a0],EAX                ; 004f7c42 | DAT_01c6e2a0
+    MOV AL,[0x006006a1]                 ; 004f7c3d | g_UCHAR_006006a1
+    MOV [0x01c6e2a0],EAX                ; 004f7c42 | g_INT_01c6e2a0
     XOR EAX,EAX                         ; 004f7c47
-    MOV AL,[0x00600698]                 ; 004f7c49 | DAT_00600698
-    MOV [0x005fba34],EAX                ; 004f7c4e | DAT_005fba34
-    MOVZX EAX,byte ptr [0x0060069c]     ; 004f7c53 | DAT_0060069c
-    MOV [0x01c6e2a4],EAX                ; 004f7c5a | DAT_01c6e2a4
+    MOV AL,[0x00600698]                 ; 004f7c49 | g_UCHAR_00600698
+    MOV [0x005fba34],EAX                ; 004f7c4e | g_UINT_005fba34
+    MOVZX EAX,byte ptr [0x0060069c]     ; 004f7c53 | g_UCHAR_0060069c
+    MOV [0x01c6e2a4],EAX                ; 004f7c5a | g_INT_01c6e2a4
     POP EAX                             ; 004f7c5f
     RET                                 ; 004f7c60
 

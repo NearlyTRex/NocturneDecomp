@@ -16,15 +16,15 @@
 ;   CFieldNotes* g_CFieldNotesPtr = 01caf56c
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01c2a384
-;   undefined4 DAT_01c37790
-;   undefined4 DAT_01c37794
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c2a384
+;   char[4952] g_CHAR_ARRAY_01c37790
+;   undefined4 g_CHAR_ARRAY_01c37790+4
 ;   undefined4 g_CFieldNotesInstance.is_displayed
-;   undefined4 DAT_01cb7528
-;   undefined4 DAT_01cb752c
-;   undefined4 DAT_01cb7780
-;   undefined4 DAT_01cb7784
-;   undefined4 DAT_01cb7788
+;   char[600] g_CHAR_ARRAY_01cb7528
+;   undefined4 g_CHAR_ARRAY_01cb7528+4
+;   int g_INT_01cb7780
+;   int g_INT_01cb7784
+;   int g_INT_01cb7788
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -43,14 +43,14 @@ section .text
     PUSH ESI                            ; 004b7050
         ;   Label: core_game.cpp_CGame_playerControls_FUN_004b7050
     MOV ESI,dword ptr [ESP + 0x8]       ; 004b7051
-    CMP dword ptr [0x01cb7788],0x0      ; 004b7055 | DAT_01cb7788
+    CMP dword ptr [0x01cb7788],0x0      ; 004b7055 | g_INT_01cb7788
     JNZ 0x004b708a                      ; 004b705c
         ;   XREF to: 004b708a (CONDITIONAL_JUMP)  ; LAB_004b708a
     MOV EAX,[0x00616044]                ; 004b705e | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004b7063 | g_CFieldNotesInstance.is_displayed
     JNZ 0x004b708a                      ; 004b7067
         ;   XREF to: 004b708a (CONDITIONAL_JUMP)  ; LAB_004b708a
-    CMP dword ptr [0x026677e0],0x0      ; 004b7069 | DAT_026677e0
+    CMP dword ptr [0x026677e0],0x0      ; 004b7069 | g_INT_026677e0
     JNZ 0x004b708a                      ; 004b7070
         ;   XREF to: 004b708a (CONDITIONAL_JUMP)  ; LAB_004b708a
     CMP dword ptr [ESI + 0x218],0x0     ; 004b7072
@@ -81,19 +81,19 @@ section .text
     MOV ECX,0x258                       ; 004b70a0
     MOV ESI,0x1c37790                   ; 004b70a5
     MOV EDI,0x1cb7528                   ; 004b70aa
-    PUSH EDI                            ; 004b70af | DAT_01cb7528
+    PUSH EDI                            ; 004b70af | g_CHAR_ARRAY_01cb7528
     MOV EAX,ECX                         ; 004b70b0
     SHR ECX,0x2                         ; 004b70b2
-    MOVSD.REP ES:EDI,ESI                ; 004b70b5 | DAT_01c37790 | DAT_01cb7528 | DAT_01c37794
+    MOVSD.REP ES:EDI,ESI                ; 004b70b5 | g_CHAR_ARRAY_01c37790 | g_CHAR_ARRAY_01cb7528 | g_CHAR_ARRAY_01c37790+4
     MOV CL,AL                           ; 004b70b7
     AND CL,0x3                          ; 004b70b9
-    MOVSB.REP ES:EDI,ESI                ; 004b70bc | DAT_01c37794 | DAT_01cb752c
+    MOVSB.REP ES:EDI,ESI                ; 004b70bc | g_CHAR_ARRAY_01c37790+4 | g_CHAR_ARRAY_01cb7528+4
     POP EDI                             ; 004b70be
-    MOV EAX,[0x01c2a384]                ; 004b70bf | DAT_01c2a384
-    MOV [0x01cb7780],EAX                ; 004b70c4 | DAT_01cb7780
+    MOV EAX,[0x01c2a384]                ; 004b70bf | g_BIT_INTEGER32_01c2a384
+    MOV [0x01cb7780],EAX                ; 004b70c4 | g_INT_01cb7780
     MOV EAX,[0x0061b5a8]                ; 004b70c9 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b70ce | g_CDemonSetInstance.selected_camera_index
-    MOV [0x01cb7784],EAX                ; 004b70d4 | DAT_01cb7784
+    MOV [0x01cb7784],EAX                ; 004b70d4 | g_INT_01cb7784
     POP EDI                             ; 004b70d9
     POP ESI                             ; 004b70da
     RET                                 ; 004b70db
@@ -122,8 +122,8 @@ section .text
         ;   Label: default
     MOV ECX,0x7d9                       ; 004b70fc
     PUSH 0x5d7895                       ; 004b7101 | = "CGame::playerControls - unknown contr..."
-    MOV dword ptr [0x01d046a0],EDX      ; 004b7106 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004b710c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004b7106 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004b710c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b7112
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004b7117

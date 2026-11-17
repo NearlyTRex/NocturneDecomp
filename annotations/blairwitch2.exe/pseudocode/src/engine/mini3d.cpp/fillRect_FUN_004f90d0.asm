@@ -29,17 +29,17 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ddff8
-;   undefined4 DAT_005ddffc
-;   undefined4 DAT_006180f0
+;   float g_FLOAT_005ddff8 = -0.5
+;   float g_FLOAT_005ddffc = 0.5
+;   ushort g_USHORT_006180f0 = 0x0
 ;   undefined4 DAT_00618100
-;   undefined4 DAT_01d09858
-;   undefined4 DAT_01d0986c
-;   undefined4 DAT_01d09870
-;   undefined4 DAT_01d09874
-;   undefined4 DAT_01d09878
-;   undefined4 DAT_01d0d2e4
-;   undefined4 DAT_01d12114
+;   int g_INT_01d09858
+;   float g_FLOAT_01d0986c
+;   float g_FLOAT_01d09870
+;   float g_FLOAT_01d09874
+;   float g_FLOAT_01d09878
+;   int g_INT_01d0d2e4
+;   float* g_FLOAT_PTR_01d12114
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -56,7 +56,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f90d3
     MOV dword ptr [ESP + 0x10],EAX      ; 004f90d7
     FILD dword ptr [ESP + 0x10]         ; 004f90db
-    FCOMP float ptr [0x01d0986c]        ; 004f90df | DAT_01d0986c
+    FCOMP float ptr [0x01d0986c]        ; 004f90df | g_FLOAT_01d0986c
     FNSTSW AX                           ; 004f90e5
     SAHF                                ; 004f90e7
     JC 0x004f9178                       ; 004f90e8
@@ -65,12 +65,12 @@ section .text
         ;   Label: LAB_004f90ee
     MOV dword ptr [ESP + 0x10],EAX      ; 004f90f2
     FILD dword ptr [ESP + 0x10]         ; 004f90f6
-    FCOMP float ptr [0x01d09874]        ; 004f90fa | DAT_01d09874
+    FCOMP float ptr [0x01d09874]        ; 004f90fa | g_FLOAT_01d09874
     FNSTSW AX                           ; 004f9100
     SAHF                                ; 004f9102
     JBE 0x004f9114                      ; 004f9103
         ;   XREF to: 004f9114 (CONDITIONAL_JUMP)  ; LAB_004f9114
-    FLD float ptr [0x01d09874]          ; 004f9105 | DAT_01d09874
+    FLD float ptr [0x01d09874]          ; 004f9105 | g_FLOAT_01d09874
     CALL crt_math.c_round_FUN_005b7ff0  ; 004f910b
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x20]        ; 004f9110
@@ -82,12 +82,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004f911e
     MOV dword ptr [ESP + 0x10],EAX      ; 004f9122
     FILD dword ptr [ESP + 0x10]         ; 004f9126
-    FCOMP float ptr [0x01d09870]        ; 004f912a | DAT_01d09870
+    FCOMP float ptr [0x01d09870]        ; 004f912a | g_FLOAT_01d09870
     FNSTSW AX                           ; 004f9130
     SAHF                                ; 004f9132
     JNC 0x004f9144                      ; 004f9133
         ;   XREF to: 004f9144 (CONDITIONAL_JUMP)  ; LAB_004f9144
-    FLD float ptr [0x01d09870]          ; 004f9135 | DAT_01d09870
+    FLD float ptr [0x01d09870]          ; 004f9135 | g_FLOAT_01d09870
     CALL crt_math.c_round_FUN_005b7ff0  ; 004f913b
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 004f9140
@@ -95,12 +95,12 @@ section .text
         ;   Label: LAB_004f9144
     MOV dword ptr [ESP + 0x10],EAX      ; 004f9148
     FILD dword ptr [ESP + 0x10]         ; 004f914c
-    FCOMP float ptr [0x01d09878]        ; 004f9150 | DAT_01d09878
+    FCOMP float ptr [0x01d09878]        ; 004f9150 | g_FLOAT_01d09878
     FNSTSW AX                           ; 004f9156
     SAHF                                ; 004f9158
     JBE 0x004f916a                      ; 004f9159
         ;   XREF to: 004f916a (CONDITIONAL_JUMP)  ; LAB_004f916a
-    FLD float ptr [0x01d09878]          ; 004f915b | DAT_01d09878
+    FLD float ptr [0x01d09878]          ; 004f915b | g_FLOAT_01d09878
     CALL crt_math.c_round_FUN_005b7ff0  ; 004f9161
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x24]        ; 004f9166
@@ -112,7 +112,7 @@ section .text
     ADD ESP,0x14                        ; 004f9174
         ;   Label: LAB_004f9174
     RET                                 ; 004f9177
-    FLD float ptr [0x01d0986c]          ; 004f9178 | DAT_01d0986c
+    FLD float ptr [0x01d0986c]          ; 004f9178 | g_FLOAT_01d0986c
         ;   Label: LAB_004f9178
     CALL crt_math.c_round_FUN_005b7ff0  ; 004f917e
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
@@ -130,12 +130,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004f919a
     MOV dword ptr [ESP + 0x18],EAX      ; 004f919e
     FDIV float ptr [ESP + 0x18]         ; 004f91a2
-    MOV EBX,dword ptr [0x01d12114]      ; 004f91a6 | DAT_01d12114
+    MOV EBX,dword ptr [0x01d12114]      ; 004f91a6 | g_FLOAT_PTR_01d12114
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f91ac
     MOV dword ptr [EBX + 0x14],0x0      ; 004f91b0
     MOV dword ptr [ESP + 0x1c],EAX      ; 004f91b7
     MOV dword ptr [EBX + 0x18],0x3f000000 ; 004f91bb
-    FLD float ptr [0x005ddff8]          ; 004f91c2 | DAT_005ddff8
+    FLD float ptr [0x005ddff8]          ; 004f91c2 | g_FLOAT_005ddff8
     FILD dword ptr [ESP + 0x1c]         ; 004f91c8
     FADD ST0,ST1                        ; 004f91cc
     MOV dword ptr [EBX + 0x1c],0x3f000000 ; 004f91ce
@@ -157,13 +157,13 @@ section .text
     FSTP float ptr [ESP + 0x14]         ; 004f9214
     MOV EAX,dword ptr [ESP + 0x14]      ; 004f9218
     MOV dword ptr [EBX + 0xc],EAX       ; 004f921c
-    MOV EAX,[0x01d0d2e4]                ; 004f921f | DAT_01d0d2e4
+    MOV EAX,[0x01d0d2e4]                ; 004f921f | g_INT_01d0d2e4
     MOV dword ptr [EBX + 0x10],EAX      ; 004f9224
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004f9227
     MOV dword ptr [EBX + 0x54],0x0      ; 004f922b
     MOV dword ptr [ESP + 0x1c],EAX      ; 004f9232
     MOV dword ptr [EBX + 0x58],0x3f000000 ; 004f9236
-    FLD float ptr [0x005ddffc]          ; 004f923d | DAT_005ddffc
+    FLD float ptr [0x005ddffc]          ; 004f923d | g_FLOAT_005ddffc
     FILD dword ptr [ESP + 0x1c]         ; 004f9243
     FADD ST0,ST1                        ; 004f9247
     MOV dword ptr [EBX + 0x5c],0x3f000000 ; 004f9249
@@ -176,7 +176,7 @@ section .text
     MOV dword ptr [EBX + 0x28],EAX      ; 004f9266
     MOV EAX,dword ptr [ESP + 0x14]      ; 004f9269
     MOV dword ptr [EBX + 0x2c],EAX      ; 004f926d
-    MOV EAX,[0x01d0d2e4]                ; 004f9270 | DAT_01d0d2e4
+    MOV EAX,[0x01d0d2e4]                ; 004f9270 | g_INT_01d0d2e4
     MOV dword ptr [EBX + 0x30],EAX      ; 004f9275
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004f9278
     MOV dword ptr [EBX + 0x40],EAX      ; 004f927c
@@ -194,7 +194,7 @@ section .text
     MOV dword ptr [EBX + 0x48],EAX      ; 004f92b1
     MOV EAX,dword ptr [ESP + 0x14]      ; 004f92b4
     MOV dword ptr [EBX + 0x4c],EAX      ; 004f92b8
-    MOV EAX,[0x01d0d2e4]                ; 004f92bb | DAT_01d0d2e4
+    MOV EAX,[0x01d0d2e4]                ; 004f92bb | g_INT_01d0d2e4
     MOV dword ptr [EBX + 0x50],EAX      ; 004f92c0
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f92c3
     MOV dword ptr [EBX + 0x60],EAX      ; 004f92c7
@@ -204,23 +204,23 @@ section .text
     MOV dword ptr [EBX + 0x68],EAX      ; 004f92d5
     MOV EAX,dword ptr [ESP + 0x14]      ; 004f92d8
     MOV dword ptr [EBX + 0x6c],EAX      ; 004f92dc
-    MOV EAX,[0x01d0d2e4]                ; 004f92df | DAT_01d0d2e4
+    MOV EAX,[0x01d0d2e4]                ; 004f92df | g_INT_01d0d2e4
     PUSH 0x618100                       ; 004f92e4 | DAT_00618100
     MOV dword ptr [EBX + 0x70],EAX      ; 004f92e9
     CALL engine_mini3d.cpp_useTexture_FUN_004f3380 ; 004f92ec
         ;   XREF to: 004f3380 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_useTexture_FUN_004f3380(int texture)
     ADD ESP,0x4                         ; 004f92f1
     PUSH 0x2                            ; 004f92f4
-    PUSH 0x6180f0                       ; 004f92f6 | DAT_006180f0
+    PUSH 0x6180f0                       ; 004f92f6 | g_USHORT_006180f0
     PUSH 0x4                            ; 004f92fb
     XOR EDI,EDI                         ; 004f92fd
     PUSH EBX                            ; 004f92ff
-    MOV ESI,dword ptr [0x01d09858]      ; 004f9300 | DAT_01d09858
-    MOV dword ptr [0x01d09858],EDI      ; 004f9306 | DAT_01d09858
+    MOV ESI,dword ptr [0x01d09858]      ; 004f9300 | g_INT_01d09858
+    MOV dword ptr [0x01d09858],EDI      ; 004f9306 | g_INT_01d09858
     CALL engine_mini3d.cpp_polyListD3DTL_FUN_004f40a0 ; 004f930c
         ;   XREF to: 004f40a0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_polyListD3DTL_FUN_004f40a0(float * vertices, int vertex_count, ushort * indices, int triangle_count)
     ADD ESP,0x10                        ; 004f9311
-    MOV dword ptr [0x01d09858],ESI      ; 004f9314 | DAT_01d09858
+    MOV dword ptr [0x01d09858],ESI      ; 004f9314 | g_INT_01d09858
     POP EBX                             ; 004f931a
     POP ESI                             ; 004f931b
     POP EDI                             ; 004f931c

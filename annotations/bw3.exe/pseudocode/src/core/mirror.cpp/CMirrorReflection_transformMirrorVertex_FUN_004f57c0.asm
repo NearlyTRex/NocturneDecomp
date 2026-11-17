@@ -25,8 +25,8 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00537e20 at 00537fa5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e29c0
-;   undefined4 DAT_005e29c8
+;   float g_FLOAT_005e29c0 = 256
+;   float g_FLOAT_005e29c8 = 0.00390625
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004f50f0
@@ -44,13 +44,13 @@ section .text
     MOV EBP,ESI                         ; 004f57ca
     LEA EBX,[ESP + 0x24]                ; 004f57cc
     FILD dword ptr [EAX]                ; 004f57d0
-    FMUL float ptr [0x005e29c8]         ; 004f57d2 | DAT_005e29c8
+    FMUL float ptr [0x005e29c8]         ; 004f57d2 | g_FLOAT_005e29c8
     FSTP float ptr [EBX]                ; 004f57d8
     FILD dword ptr [EAX + 0x4]          ; 004f57da
-    FMUL float ptr [0x005e29c8]         ; 004f57dd | DAT_005e29c8
+    FMUL float ptr [0x005e29c8]         ; 004f57dd | g_FLOAT_005e29c8
     FSTP float ptr [EBX + 0x4]          ; 004f57e3
     FILD dword ptr [EAX + 0x8]          ; 004f57e6
-    FMUL float ptr [0x005e29c8]         ; 004f57e9 | DAT_005e29c8
+    FMUL float ptr [0x005e29c8]         ; 004f57e9 | g_FLOAT_005e29c8
     FSTP float ptr [EBX + 0x8]          ; 004f57ef
     LEA EAX,[ESP + 0x24]                ; 004f57f2
     PUSH EAX                            ; 004f57f6
@@ -82,13 +82,13 @@ section .text
     LEA ESI,[ESP + 0x18]                ; 004f583c
     MOV EDI,EBP                         ; 004f5840
     FLD float ptr [EAX]                 ; 004f5842
-    FMUL float ptr [0x005e29c0]         ; 004f5844 | DAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f5844 | g_FLOAT_005e29c0
     FISTP dword ptr [EBX]               ; 004f584a
     FLD float ptr [EAX + 0x4]           ; 004f584c
-    FMUL float ptr [0x005e29c0]         ; 004f584f | DAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f584f | g_FLOAT_005e29c0
     FISTP dword ptr [EBX + 0x4]         ; 004f5855
     FLD float ptr [EAX + 0x8]           ; 004f5858
-    FMUL float ptr [0x005e29c0]         ; 004f585b | DAT_005e29c0
+    FMUL float ptr [0x005e29c0]         ; 004f585b | g_FLOAT_005e29c0
     FISTP dword ptr [EBX + 0x8]         ; 004f5861
     MOVSD ES:EDI,ESI                    ; 004f5864
     MOVSD ES:EDI,ESI                    ; 004f5865

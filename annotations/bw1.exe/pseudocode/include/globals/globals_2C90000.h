@@ -4,7 +4,17 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/ddraw.h"
+#include "system/unknwn.h"
+#include "system/winnt.h"
+#include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/classes/CWeather.h"
+#include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2C90000
@@ -17,4 +27,170 @@ extern CDemonActorType g_CWeaponClassInfo;
 extern CDemonActorType g_CWerewolfClassInfo;
 extern CDemonActorType g_CYowClassInfo;
 extern CDemonActorType g_CZombieClassInfo;
+
+// CDemonGlobe
+extern CDemonGlobe g_CDemonGlobe_02c99774;
+
+// CVector3f
+extern CVector3f g_CVector3f_02c9a544;
+extern CVector3f g_CVector3f_02c9a550;
+
+// CVector3f[200]
+extern CVector3f g_CVector3f_ARRAY_02c997f8[200];
+
+// CVector3i
+extern CVector3i g_CVector3i_02c9ffb0;
+
+// CVector3i[1000]
+extern CVector3i g_CVector3i_ARRAY_02c94468[1000];
+
+// CWeather
+extern CWeather g_CWeather_02c997c0;
+
+// HWND
+extern HWND g_HWND_02c9be68;
+
+// IDirectDraw*
+extern IDirectDraw* g_IDirectDraw_PTR_02c99300;
+
+// IDirectDrawSurface*
+extern IDirectDrawSurface* g_IDirectDrawSurface_PTR_02c99304;
+extern IDirectDrawSurface* g_IDirectDrawSurface_PTR_02c99308;
+
+// IUnknown*
+extern IUnknown* g_IUnknown_PTR_02c9930c;
+
+// PALETTEENTRY[256]
+extern PALETTEENTRY g_PALETTEENTRY_ARRAY_02c99338[256];
+
+// SRenderVertex[32]
+extern SRenderVertex g_SRenderVertex_ARRAY_02c9d2f8[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_02c9d8f8[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_02c9def8[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_02c9e4f8[32];
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_02c9eb38[16];
+
+// WCHAR*
+extern WCHAR* g_WCHAR_PTR_02c9f068;
+
+// _struct_19
+extern _struct_19 g_struct_19_02c9a5a8;
+extern _struct_19 g_struct_19_02c9a5b0;
+
+// byte
+extern byte g_BYTE_02c9a624;
+extern byte g_BYTE_02c9ff74;
+
+// char*
+extern char* g_CHAR_PTR_02c9cb0c;
+extern char* g_CHAR_PTR_02c9f064;
+
+// char**
+extern char** g_CHAR_PTR_PTR_02c9f6d0;
+extern char** g_CHAR_PTR_PTR_02c9f6d4;
+
+// char[16]
+extern char g_CHAR_ARRAY_02c9f690[16];
+
+// char[1]
+extern char g_CHAR_ARRAY_02c9f6f0[1];
+
+// char[200]
+extern char g_CHAR_ARRAY_02c9a478[200];
+extern char g_CHAR_ARRAY_02c9bda0[200];
+
+// char[256]
+extern char g_CHAR_ARRAY_02c9f6f1[256];
+
+// char[260]
+extern char g_CHAR_ARRAY_02c9f070[260];
+extern char g_CHAR_ARRAY_02c9f37c[260];
+
+// char[4]
+extern char g_CHAR_ARRAY_02c97384[4];
+
+// char[6000]
+extern char g_CHAR_ARRAY_02c9a630[6000];
+
+// double
+extern double g_DOUBLE_02c9a5b8;
+
+// float
+extern float g_FLOAT_02c93008;
+extern float g_FLOAT_02c9c7e0;
+extern float g_FLOAT_02c9c7e4;
+
+// float[200]
+extern float g_FLOAT_ARRAY_02c9a158[200];
+
+// int
+extern int g_INT_02c93004;
+extern int g_INT_02c9300c;
+extern int g_INT_02c93010;
+extern int g_INT_02c99314;
+extern int g_INT_02c99318;
+extern int g_INT_02c9931c;
+extern int g_INT_02c99320;
+extern int g_INT_02c99324;
+extern int g_INT_02c99328;
+extern int g_INT_02c9932c;
+extern int g_INT_02c99330;
+extern int g_INT_02c99334;
+extern int g_INT_02c9a5a4;
+extern int g_INT_02c9a5c0;
+extern int g_INT_02c9a618;
+extern int g_INT_02c9a61c;
+extern int g_INT_02c9a620;
+extern int g_INT_02c9a628;
+extern int g_INT_02c9be6c;
+extern int g_INT_02c9be70;
+extern int g_INT_02c9be74;
+extern int g_INT_02c9be78;
+extern int g_INT_02c9be7c;
+extern int g_INT_02c9c7e8;
+extern int g_INT_02c9cb08;
+extern int g_INT_02c9d294;
+extern int g_INT_02c9d298;
+extern int g_INT_02c9d29c;
+extern int g_INT_02c9d2a0;
+extern int g_INT_02c9d2a8;
+extern int g_INT_02c9d2e8;
+extern int g_INT_02c9d2ec;
+extern int g_INT_02c9d2f0;
+extern int g_INT_02c9d2f4;
+extern int g_INT_02c9eb34;
+extern int g_INT_02c9f038;
+extern int g_INT_02c9f03c;
+extern int g_INT_02c9f040;
+extern int g_INT_02c9f060;
+extern int g_INT_02c9f6d8;
+extern int g_INT_02c9f6e0;
+extern int g_INT_02c9ff60;
+extern int g_INT_02c9ff64;
+extern int g_INT_02c9ff80;
+extern int g_INT_02c9ff84;
+extern int g_INT_02c9ff88;
+
+// int[1]
+extern int g_INT_ARRAY_02c9a5c4[1];
+extern int g_INT_ARRAY_02c9d1c4[1];
+
+// int[20]
+extern int g_INT_ARRAY_02c9a5c8[20];
+
+// int[600]
+extern int g_INT_ARRAY_02c9be80[600];
+
+// uint
+extern uint g_UINT_02c9a540;
+
+// void*
+extern void* g_PTR_02c99310;
+extern void* g_PTR_02c9cf0c;
+extern void* g_PTR_02c9f06c;
+extern void* g_PTR_02c9ff68;
+extern void* g_PTR_02c9ff90;
+extern void* g_PTR_02c9ffa0;
 

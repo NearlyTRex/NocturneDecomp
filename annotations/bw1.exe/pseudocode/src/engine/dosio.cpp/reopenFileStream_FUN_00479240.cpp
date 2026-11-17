@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream)
 
 {
@@ -28,7 +26,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *directory_path
   if ((in_stack_00000018 & 0x52) == 0) {
     iVar1 = engine_dosio_cpp_findFile_FUN_00478e90((SFoundFileInfo *)acStack_214);
     if (iVar1 != 0) {
-      openFile(file_stream,acStack_114,in_stack_00000018,_DAT_00608528);
+      openFile(file_stream,acStack_114,in_stack_00000018,g_INT_00608528);
       if (unaff_EBX != 0) {
         acStack_210[0] = '\b';
         acStack_210[1] = -0x6d;
@@ -43,7 +41,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *directory_path
     if (directory_path != (char *)0x0) {
       _mkdir(directory_path);
     }
-    openFile(file_stream,acStack_214,in_stack_00000018,_DAT_00608528);
+    openFile(file_stream,acStack_214,in_stack_00000018,g_INT_00608528);
   }
   return;
 }

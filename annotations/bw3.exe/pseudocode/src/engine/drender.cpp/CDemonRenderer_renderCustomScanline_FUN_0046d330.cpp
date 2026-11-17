@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer)
 
 {
@@ -27,13 +25,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330
       return;
     }
   }
-  _DAT_01c6e2b4 = 0xc4;
-  _DAT_01c6e2b8 = 6;
+  g_BIT_INTEGER32_01c6e2b4.dword = 0xc4;
+  g_INT_01c6e2b8 = 6;
   core_xform_cpp_transformAndClipGeometry_FUN_00587cd0((prim->base).count,(int *)(prim + 1));
-  if (DAT_007e3e88 < 3) {
+  if (g_INT_007e3e88 < 3) {
     return;
   }
   core_asgaya_cpp_rasterizePolygonCustom_FUN_005a23c0
-            ((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);
+            (g_SRenderVertex_ARRAY_007e3e8c,g_INT_007e3e88,scanline_renderer);
   return;
 }

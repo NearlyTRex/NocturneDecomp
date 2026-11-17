@@ -10,7 +10,7 @@ void __cdecl core_batcreat_cpp_staticInit_FUN_00411630(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CBatCreatureClassInfo,"?CBatCreature" + 1,
+            (&g_CBatCreatureClassInfo,"CBatCreature",
              core_batcreat_cpp_factoryFuncBatCreature_FUN_00411660,&g_CBatCreatureClassVersion,1,
              &g_CEnemyClassInfo);
   return;

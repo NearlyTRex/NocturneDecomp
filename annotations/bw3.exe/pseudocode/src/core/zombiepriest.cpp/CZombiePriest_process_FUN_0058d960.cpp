@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePriest *this_ptr,float param_2)
 
 {
@@ -156,7 +154,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
   }
   if ((this_ptr->hold_pos_flag == 0) &&
      (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                        (0x01C6E360,this_ptr->hold_pos_condition), iVar6 != 0)) {
+                        (g_CEventList_PTR_005fba60,this_ptr->hold_pos_condition), iVar6 != 0)) {
     this_ptr->hold_pos_flag = 1;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -213,7 +211,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
               afStack_138[(uint)bVar16 * -2] = afStack_c0[(uint)bVar16 * -2];
               afStack_138[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
                    afStack_c0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
-              if ((float)_DAT_005d8bb0 <
+              if ((float)2 <
                   SQRT(afStack_138[1] * afStack_138[1] +
                        fStack_13c * fStack_13c + afStack_138[0] * afStack_138[0])) {
                 this_ptr->post_mode = 1;
@@ -240,7 +238,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
           fStack_1c = SQRT(CStack_1c0.z * CStack_1c0.z +
                            CStack_1c0.x * CStack_1c0.x + CStack_1c0.y * CStack_1c0.y);
           pCStack_24 = &(this_ptr->base).base.model.base;
-          if (fStack_1c < 0x40400000 + 1.0) {
+          if (fStack_1c < 3.0f + 1.0) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
                       (&CStack_1c0,&CStack_154);
             fStack_160 = CStack_154.x;
@@ -249,14 +247,14 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
                  *(float *)((int)&CStack_154 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                   (afStack_15c[0] - (this_ptr->base).base.base.orient.vec.y);
-            if ((ABS(fStack_14) < (float)_DAT_005d8ba8) && ((this_ptr->base).attack_cooldown <= 0.0)
-               ) {
+            if ((ABS(fStack_14) < (float)0.52359877558333301) &&
+               ((this_ptr->base).attack_cooldown <= 0.0)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_24,9,1);
               (this_ptr->base).attack_cooldown = 2.0;
             }
           }
           else if (fStack_1c < (this_ptr->base).guard_distance) {
-            if (_DAT_005e7058 <= fStack_1c) {
+            if (20.0f <= fStack_1c) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_24,8,1);
             }
             else {
@@ -267,8 +265,8 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
       }
       else {
         fVar17 = this_ptr->firing_blend;
-        (this_ptr->base).victim = *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-        if ((float)_DAT_005d8ba0 < fVar17) {
+        (this_ptr->base).victim = &g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base;
+        if ((float)0.5 < fVar17) {
           core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(this_ptr);
         }
       }
@@ -290,7 +288,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
         iVar6 = core_zombiepriest_cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0
                           (this_ptr,param_2);
         if (iVar6 == 0) {
-          fStack_30 = 0x40400000 + 1.0;
+          fStack_30 = 3.0f + 1.0;
           if (((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) ||
              ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0)) {
             fStack_30 = 0x41F00000;
@@ -303,8 +301,8 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
           (this_ptr->base).base.model.accumulated_root_motion.x =
                (this_ptr->base).base.model.accumulated_root_motion.y;
           uStack_e8 = 0;
-          fStack_2c = 0x40400000;
-          fStack_e0 = 0x40400000;
+          fStack_2c = 3.0f;
+          fStack_e0 = 3.0f;
           uStack_e4 = 0;
           pCVar13 = (this_ptr->base).victim;
           pCVar14 = (*((pCVar13->base).vtable._ub)->getPathMap)(&pCVar13->base);
@@ -353,12 +351,12 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
                      *(float *)((int)&CStack_100 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
                 fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                       (afStack_114[0] - (this_ptr->base).base.base.orient.vec.y);
-                if (ABS(fStack_14) < (float)_DAT_005d8ba8) {
+                if (ABS(fStack_14) < (float)0.52359877558333301) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_28,9,1);
                 }
               }
               else if (fStack_2c + 1.0 <= fStack_20) {
-                if (((float)_DAT_005d8ba0 < this_ptr->firing_blend) &&
+                if (((float)0.5 < this_ptr->firing_blend) &&
                    (this_ptr->firing_cooldown <= 0.0)) {
                   core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(this_ptr);
                 }
@@ -385,7 +383,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
                      *(float *)((int)&CStack_64 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
                 fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                       (afStack_114[3] - (this_ptr->base).base.base.orient.vec.y);
-                if ((ABS(fStack_14) < (float)_DAT_005d8ba8) &&
+                if ((ABS(fStack_14) < (float)0.52359877558333301) &&
                    ((this_ptr->base).attack_cooldown <= 0.0)) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_28,9,1);
                   (this_ptr->base).attack_cooldown = 2.0;
@@ -409,7 +407,7 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
         (this_ptr->base).base.model.accumulated_root_motion.x =
              (this_ptr->base).base.model.accumulated_root_motion.y;
         uStack_1f0 = 0;
-        fStack_1e8 = 0x40400000;
+        fStack_1e8 = 3.0f;
         uStack_1ec = 0;
         pCVar14 = (*((this_ptr->our_post->vtable)._ub)->getPathMap)(this_ptr->our_post);
         iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0
@@ -467,7 +465,8 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
           }
         }
       }
-      if ((this_ptr->firing_blend < (float)_DAT_005d8ba0) || (this_ptr->firing_cooldown <= 0.0)) {
+      if ((this_ptr->firing_blend < (float)0.5) || (this_ptr->firing_cooldown <= 0.0))
+      {
         if (this_ptr->hold_pos_flag == 0) {
           max_value = 4.0;
           fVar17 = 2.0;
@@ -514,9 +513,9 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
         pSVar18 = (SDamageInfo *)&stack0xfffffd98;
         fVar17 = 0.4;
         core_xform_cpp_transformVector3x4_FUN_00583260
-                  ((CVector3f *)&DAT_02cfd900,
+                  (&g_CVector3f_02cfd900,
                    (CMatrix3x4f *)
-                   (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02d24974].m,
+                   (this_ptr->base).base.model.bone_transform.bone_model_matrices[g_INT_02d24974].m,
                    &CStack_148);
         pCVar19 = &CStack_f4;
         CStack_f4.x = CStack_148.x;
@@ -540,9 +539,9 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
         pSVar18 = (SDamageInfo *)&stack0xfffffd98;
         fVar17 = 0.4;
         core_xform_cpp_transformVector3x4_FUN_00583260
-                  ((CVector3f *)&DAT_02cfd900,
+                  (&g_CVector3f_02cfd900,
                    (CMatrix3x4f *)
-                   (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02d24978].m,
+                   (this_ptr->base).base.model.bone_transform.bone_model_matrices[g_INT_02d24978].m,
                    &CStack_16c);
         pCVar19 = &CStack_19c;
         CStack_19c.x = CStack_16c.x;

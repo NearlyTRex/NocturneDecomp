@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 44,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 44
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -45,15 +44,15 @@
   "globals": [
     {
       "addr": "006104f4",
-      "name": "PTR_engine_3d.c_badMRGLStruct_FUN_004037b0_006104f4",
-      "type": "undefined1*",
-      "value": "004037b0"
+      "name": "g_ARRAY_PTR_006104f4",
+      "type": "void*[67]",
+      "value": null
     },
     {
       "addr": "0061b4c0",
-      "name": "DAT_0061b4c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_0061b4c0",
+      "type": "uint",
+      "value": "0x1"
     }
   ],
   "param_estimates": {
@@ -159,19 +158,11 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 11,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)(&PTR_engine_3d_c_badMRGLStruct_FUN_004037b0_006104f4)[iVar1])(chain);",
+      "text": "chain = (SMRGLHeaderExtended *)(*(code *)g_ARRAY_PTR_006104f4[iVar1])(chain);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0061b4c0",
-      "severity": "mild",
-      "text": "DAT_0061b4c0 = 1;",
-      "type": "undefined_data"
     }
   ]
 }

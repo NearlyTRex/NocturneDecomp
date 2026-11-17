@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
 
 {
@@ -80,7 +78,8 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
   iVar2 = core_weapon_cpp_CWeapon_fire_FUN_005adde0(&this_ptr_04->base);
   if (iVar2 == 0) {
     core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
-              (0x02C82A60,(CDemonActor *)this_ptr,"?shotgun-noammo.wav" + 1,&CStack_90);
+              (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"shotgun-noammo.wav",
+               &CStack_90);
     return 0;
   }
   CStack_d8.z = (this_ptr->base).bolt_velocity;
@@ -102,7 +101,7 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
   afStack_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -1] =
        *(float *)(auStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
   fVar3 = CStack_90.x;
-  afStack_34[2] = (float)_DAT_005edc67 / (this_ptr->base).bolt_velocity;
+  afStack_34[2] = (float)1.5 / (this_ptr->base).bolt_velocity;
   afStack_44[2] = afStack_78[3] * afStack_34[2];
   pCStack_38 = (CDemonActor *)(fStack_68 * afStack_34[2]);
   afStack_34[0] = fStack_64 * afStack_34[2];
@@ -155,7 +154,7 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
           if (pCStack_14 == (CCharacter *)0x0) {
             if (pCStack_18 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_004b56a0
-                        (0x01C57074,&g_CDemonSetPtr->collision_impact_position,
+                        (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor);
               break;
@@ -207,7 +206,7 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
       afStack_fc[(uint)bVar4 * -2 + -1] = afStack_34[(uint)bVar4 * -2];
       afStack_fc[(uint)bVar4 * -2 + (uint)bVar4 * -2] =
            afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-      fVar3 = (float)_DAT_005edc77 /
+      fVar3 = (float)10 /
               SQRT(afStack_fc[0] * afStack_fc[0] +
                    CStack_108.y * CStack_108.y + CStack_108.z * CStack_108.z);
       fStack_e0 = CStack_108.y * fVar3;
@@ -255,11 +254,13 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00540080(CRifle *this_ptr)
   afStack_a4[(uint)bVar4 * -2] = *(float *)((int)&CStack_90 + (uint)bVar4 * -8 + 4);
   afStack_a4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        *(float *)((int)&CStack_90 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  afStack_a4[0] = afStack_a4[0] + _DAT_005edc6f;
+  afStack_a4[0] = afStack_a4[0] + -0.25f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
-            (0x01C57074,(CVector3f *)(auStack_b0 + 8),&(this_ptr->base).base.orient_matrix);
+            (g_CFireEffect_PTR_0061c010,(CVector3f *)(auStack_b0 + 8),
+             &(this_ptr->base).base.orient_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
-            (0x02C82A60,(CDemonActor *)this_ptr,"rifle-silencer.wav",&CStack_90);
+            (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"rifle-silencer.wav",&CStack_90)
+  ;
   (this_ptr->base).fire_cooldown_timer = 1.5;
   return 1;
 }

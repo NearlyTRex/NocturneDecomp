@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 88,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 2,
+    "pseudocode_lines": 57,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 182
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -106,21 +105,21 @@
     },
     {
       "addr": "005f0552",
-      "name": "DAT_005f0552",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f0552",
+      "type": "float",
+      "value": "24"
     },
     {
       "addr": "005f0556",
-      "name": "DAT_005f0556",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f0556",
+      "type": "float",
+      "value": "35"
     },
     {
       "addr": "005ff8f4",
-      "name": "DAT_005ff8f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ff8f4",
+      "type": "float",
+      "value": "7"
     }
   ],
   "pcode_summary": {
@@ -181,14 +180,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
     }
   ]
 }

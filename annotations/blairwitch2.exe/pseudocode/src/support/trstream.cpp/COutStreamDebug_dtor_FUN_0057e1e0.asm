@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamDebugVTable = 0057e1e0
+;   void*[5] g_COutStreamDebugVTable
 ;   WatcomTypeInfo g_COutStreamDebugTypeInfo
 ;
 ; Called Functions:

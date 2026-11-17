@@ -11,9 +11,9 @@
 ; CVector3f *      Stack[0x14]:4   out_hit
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ccdde
-;   undefined4 DAT_005ccde6
-;   undefined4 DAT_005ccdea
+;   double g_DOUBLE_005ccdde = 0.400000000000000
+;   float g_FLOAT_005ccde6 = 10
+;   float g_FLOAT_005ccdea = 0.5
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
@@ -97,7 +97,7 @@ section .text
     JNC 0x00427e75                      ; 00427d27
         ;   XREF to: 00427e75 (CONDITIONAL_JUMP)  ; LAB_00427e75
     FLD double ptr [ESP]                ; 00427d2d
-    FMUL double ptr [0x005ccdde]        ; 00427d30 | DAT_005ccdde
+    FMUL double ptr [0x005ccdde]        ; 00427d30 | g_DOUBLE_005ccdde
     CALL crt_math.c_round_FUN_005b7ff0  ; 00427d36
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xd4]        ; 00427d3b
@@ -158,7 +158,7 @@ section .text
     FSTP float ptr [ESP + 0x20]         ; 00427de4
     FSTP float ptr [ESP + 0x24]         ; 00427de8
     FSTP float ptr [ESP + 0x28]         ; 00427dec
-    FLD float ptr [0x005ccde6]          ; 00427df0 | DAT_005ccde6
+    FLD float ptr [0x005ccde6]          ; 00427df0 | g_FLOAT_005ccde6
         ;   Label: LAB_00427df0
     FLD float ptr [ESP + 0x20]          ; 00427df6
     FMUL ST1                            ; 00427dfa
@@ -220,7 +220,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00427eae
     MOVSD ES:EDI,ESI                    ; 00427eaf
     MOVSD ES:EDI,ESI                    ; 00427eb0
-    FLD float ptr [0x005ccdea]          ; 00427eb1 | DAT_005ccdea
+    FLD float ptr [0x005ccdea]          ; 00427eb1 | g_FLOAT_005ccdea
     FLD float ptr [ESP + 0xb0]          ; 00427eb7
     FMUL ST1                            ; 00427ebe
     FLD float ptr [ESP + 0xb4]          ; 00427ec0

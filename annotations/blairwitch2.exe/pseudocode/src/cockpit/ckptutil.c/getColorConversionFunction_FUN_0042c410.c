@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void)
 
 {
-  if (DAT_006141c0 == 8) {
-    if (_DAT_01c38b40 != 0) {
+  if (g_INT_006141c0 == 8) {
+    if (g_INT_01c38b40 != 0) {
       return cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042c2d2;
     }
     return cockpit_ckptutil_c_optimizedMemcpy_FUN_0042c1d8;
   }
-  if (DAT_006141c0 != 0x10) {
+  if (g_INT_006141c0 != 0x10) {
     return cockpit_ckptutil_c_expandIndexedToRGB_FUN_0042c1aa;
   }
   return cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_0042c3e0;

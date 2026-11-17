@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 125,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
-    "suspect_count": 3,
+    "pseudocode_lines": 84,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 302
+    "total_lines": 301
   },
   "cross_references": [],
   "function": {
@@ -48,14 +47,14 @@
   "globals": [
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -186,16 +185,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(byte *)((int)bitmap_data",
       "severity": "moderate",
       "text": "for (pbVar3 = (byte *)((int)bitmap_data + iVar5 + (start_x + -1) * end_x);",
@@ -203,7 +194,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(byte *)((int)bitmap_data",
       "severity": "moderate",
       "text": "for (pbVar3 = (byte *)((int)bitmap_data + iStack_14 + iVar5 + (start_x + -1) * end_x);",

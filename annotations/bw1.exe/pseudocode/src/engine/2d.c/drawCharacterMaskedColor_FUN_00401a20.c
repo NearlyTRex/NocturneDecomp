@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int x_pos,int y_pos,int color)
 
 {
@@ -22,17 +20,17 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
   
   iVar3 = (char_code + -0x20) * 0x91;
   uVar5 = (uint)(byte)(&DAT_00608570)[iVar3];
-  if ((((x_pos < _DAT_01c4f008) || (y_pos < _DAT_01c4f00c)) ||
-      ((int)((_DAT_01c4f010 + 1) - uVar5) < x_pos)) || (_DAT_01c4f014 + -10 < y_pos)) {
+  if ((((x_pos < g_INT_01c4f008) || (y_pos < g_INT_01c4f00c)) ||
+      ((int)((g_INT_01c4f010 + 1) - uVar5) < x_pos)) || (g_INT_01c4f014 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
     iVar6 = y_pos * 4;
     pcVar1 = &DAT_00608571 + iVar3;
     iVar3 = iVar6 + 0x2c;
-    if (DAT_0061b4a0 == 8) {
+    if (g_INT_0061b4a0 == 8) {
       do {
-        puVar7 = (byte *)(*(int *)(&DAT_01c4354c + iVar6) + x_pos);
+        puVar7 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar6) + x_pos);
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
@@ -47,14 +45,14 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
         iVar6 = iVar6 + 4;
       } while (iVar6 != iVar3);
     }
-    else if (DAT_0061b4a0 == 0x10) {
+    else if (g_INT_0061b4a0 == 0x10) {
       do {
-        puVar8 = (ushort *)(*(int *)(&DAT_01c4354c + iVar6) + x_pos * 2);
+        puVar8 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar6) + x_pos * 2);
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
             if (*pcVar1 != '\0') {
-              *puVar8 = *(ushort *)(&DAT_01c4dad0 + color * 2);
+              *puVar8 = g_USHORT_ARRAY_01c4dad0[color];
             }
             pcVar1 = pcVar1 + 1;
             iVar2 = iVar2 + 1;
@@ -67,11 +65,11 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
     else {
       do {
         iVar2 = 0;
-        puVar4 = (uint *)(*(int *)(&DAT_01c4354c + iVar6) + x_pos * 4);
+        puVar4 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar6) + x_pos * 4);
         if (uVar5 != 0) {
           do {
             if (*pcVar1 != '\0') {
-              *puVar4 = *(uint *)(color * 4 + 0x1c4dcd0);
+              *puVar4 = g_UINT_ARRAY_01c4dcd0[color];
             }
             pcVar1 = pcVar1 + 1;
             iVar2 = iVar2 + 1;

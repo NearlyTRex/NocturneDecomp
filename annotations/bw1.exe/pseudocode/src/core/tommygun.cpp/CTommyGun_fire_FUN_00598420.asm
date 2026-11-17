@@ -9,11 +9,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_45_dry_wav_2_0_005f7ee7
 ;   TerminatedCString s_bullet_kfm_005f7ef9
-;   undefined4 DAT_005f7f04
-;   undefined4 DAT_005f7f08
-;   undefined4 DAT_005f7f10
-;   undefined4 DAT_005f7f18
-;   undefined4 DAT_0061c010
+;   float g_FLOAT_005f7f04 = 0.1000000
+;   double g_DOUBLE_005f7f08 = 2.5
+;   float g_FLOAT_005f7f10 = -0.125
+;   double g_DOUBLE_005f7f18 = 10
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CCrateClassInfo.name_hash
@@ -75,7 +75,7 @@ section .text
     LEA ESI,[ESP + 0xfc]                ; 0059845a
     LEA EDI,[ESP + 0x168]               ; 00598461
     PUSH EBX                            ; 00598468
-    FADD float ptr [0x005f7f04]         ; 00598469 | DAT_005f7f04
+    FADD float ptr [0x005f7f04]         ; 00598469 | g_FLOAT_005f7f04
     MOV EAX,dword ptr [EBX + 0x154]     ; 0059846f
     FSTP float ptr [EBX + 0x300]        ; 00598475
     CALL dword ptr [EAX + 0xe0]         ; 0059847b
@@ -140,7 +140,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00598566
     MOVSD ES:EDI,ESI                    ; 00598567
     FLD float ptr [EBX + 0x2e8]         ; 00598568
-    FDIVR double ptr [0x005f7f08]       ; 0059856e | DAT_005f7f08
+    FDIVR double ptr [0x005f7f08]       ; 0059856e | g_DOUBLE_005f7f08
     FLD float ptr [ESP + 0x180]         ; 00598574
     FXCH                                ; 0059857b
     FSTP float ptr [ESP + 0x1a4]        ; 0059857d
@@ -240,9 +240,9 @@ section .text
     PUSH EAX                            ; 005986e0
     FLD float ptr [ESP + 0xa4]          ; 005986e1
     LEA EAX,[ESP + 0xa0]                ; 005986e8
-    MOV EDI,dword ptr [0x0061c010]      ; 005986ef | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 005986ef | g_CFireEffect_PTR_0061c010
     PUSH EAX                            ; 005986f5
-    FADD float ptr [0x005f7f10]         ; 005986f6 | DAT_005f7f10
+    FADD float ptr [0x005f7f10]         ; 005986f6 | g_FLOAT_005f7f10
     PUSH EDI                            ; 005986fc
     FSTP float ptr [ESP + 0xac]         ; 005986fd
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70 ; 00598704
@@ -327,7 +327,7 @@ section .text
     PUSH EAX                            ; 00598847
     ADD EBX,0x20                        ; 00598848
     PUSH EBX                            ; 0059884b
-    MOV EDI,dword ptr [0x0061c010]      ; 0059884c | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 0059884c | g_CFireEffect_PTR_0061c010
     PUSH EDI                            ; 00598852
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004b7270 ; 00598853
         ;   XREF to: 004b7270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004b7270(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
@@ -541,7 +541,7 @@ section .text
     FMUL ST0                            ; 00598adb
     FADDP                               ; 00598add
     FSQRT                               ; 00598adf
-    FDIVR double ptr [0x005f7f18]       ; 00598ae1 | DAT_005f7f18
+    FDIVR double ptr [0x005f7f18]       ; 00598ae1 | g_DOUBLE_005f7f18
     FLD float ptr [ESP + 0x138]         ; 00598ae7
     FXCH                                ; 00598aee
     FSTP float ptr [ESP + 0x1b4]        ; 00598af0
@@ -706,7 +706,7 @@ section .text
     PUSH ESI                            ; 00598cfb | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 00598cfc
     PUSH EAX                            ; 00598d01 | g_CDemonSetInstance.collision_impact_position.x
-    MOV ECX,dword ptr [0x0061c010]      ; 00598d02 | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 00598d02 | g_CFireEffect_PTR_0061c010
     PUSH ECX                            ; 00598d08
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 ; 00598d09
         ;   XREF to: 004b56a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)

@@ -13,8 +13,8 @@
 ;   core_pendulum.cpp_CPendulum_process_FUN_00537020 at 00537143
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ecc81
-;   undefined4 DAT_006047d8
+;   float g_FLOAT_005ecc81 = 0.5
+;   float g_FLOAT_006047d8 = 0.00390625
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
@@ -118,7 +118,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00536379
     MOVSD ES:EDI,ESI                    ; 0053637a
     MOVSD ES:EDI,ESI                    ; 0053637b
-    FLD float ptr [0x005ecc81]          ; 0053637c | DAT_005ecc81
+    FLD float ptr [0x005ecc81]          ; 0053637c | g_FLOAT_005ecc81
     FLD float ptr [ESP + 0x16c]         ; 00536382
     FMUL ST1                            ; 00536389
     FLD float ptr [ESP + 0x170]         ; 0053638b
@@ -272,13 +272,13 @@ section .text
         ;   Label: LAB_005365ce
     LEA EBX,[ESP + 0x184]               ; 005365d5
     FILD dword ptr [EAX]                ; 005365dc
-    FMUL float ptr [0x006047d8]         ; 005365de | DAT_006047d8
+    FMUL float ptr [0x006047d8]         ; 005365de | g_FLOAT_006047d8
     FSTP float ptr [EBX]                ; 005365e4
     FILD dword ptr [EAX + 0x4]          ; 005365e6
-    FMUL float ptr [0x006047d8]         ; 005365e9 | DAT_006047d8
+    FMUL float ptr [0x006047d8]         ; 005365e9 | g_FLOAT_006047d8
     FSTP float ptr [EBX + 0x4]          ; 005365ef
     FILD dword ptr [EAX + 0x8]          ; 005365f2
-    FMUL float ptr [0x006047d8]         ; 005365f5 | DAT_006047d8
+    FMUL float ptr [0x006047d8]         ; 005365f5 | g_FLOAT_006047d8
     FSTP float ptr [EBX + 0x8]          ; 005365fb
     LEA EAX,[ESP + 0x184]               ; 005365fe
     PUSH EAX                            ; 00536605
@@ -434,7 +434,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00536830
     MOVSD ES:EDI,ESI                    ; 00536831
     MOVSD ES:EDI,ESI                    ; 00536832
-    FLD float ptr [0x005ecc81]          ; 00536833 | DAT_005ecc81
+    FLD float ptr [0x005ecc81]          ; 00536833 | g_FLOAT_005ecc81
     FLD float ptr [ESP + 0x148]         ; 00536839
     FMUL ST1                            ; 00536840
     FLD float ptr [ESP + 0x14c]         ; 00536842

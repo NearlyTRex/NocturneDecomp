@@ -14,10 +14,10 @@ uint FUN_005ba300(uint *param_1,uint param_2)
   
   FUN_005c1168();
   uVar1 = *param_1;
-  FUN_005c1500(0x63df,uVar1,DAT_0061f638,param_2);
+  FUN_005c1500(0x63df,uVar1,g_INT_0061f638,param_2);
   iVar2 = FUN_005c1824(param_2);
   if (iVar2 != 0) {
-    FUN_005c1500(0x63df,uVar1,DAT_0061f638 - DAT_0061f640,param_2);
+    FUN_005c1500(0x63df,uVar1,g_INT_0061f638 - g_INT_0061f640,param_2);
   }
   return param_2;
 }

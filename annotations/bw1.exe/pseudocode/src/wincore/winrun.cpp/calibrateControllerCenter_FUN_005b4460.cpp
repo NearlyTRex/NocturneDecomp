@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_005b4460(int controller_index)
 
 {
-  _DAT_02c9d294 = 1;
+  g_INT_02c9d294 = 1;
   wincore_winrun_cpp_pollController_FUN_005b3d70(controller_index);
-  _DAT_02c9d294 = 0;
+  g_INT_02c9d294 = 0;
   return;
 }

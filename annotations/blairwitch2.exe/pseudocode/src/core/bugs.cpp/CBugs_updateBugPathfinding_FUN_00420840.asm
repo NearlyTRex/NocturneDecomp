@@ -66,14 +66,14 @@
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000 at 004200f9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cca45
-;   undefined4 DAT_005cca49
-;   undefined4 DAT_005cca51
-;   undefined4 DAT_005cca59
-;   undefined4 DAT_005cca61
-;   undefined4 DAT_005cca65
-;   undefined4 DAT_005f3e28
-;   undefined4 DAT_005f3e30
+;   float g_FLOAT_005cca45 = 12
+;   double g_DOUBLE_005cca49 = 0.5
+;   float g_FLOAT_005cca51 = -12
+;   double g_DOUBLE_005cca59 = 0.400000000000000
+;   float g_FLOAT_005cca61 = 3.141593
+;   float g_FLOAT_005cca65 = 4
+;   float g_FLOAT_005f3e28 = 0.5
+;   float g_FLOAT_005f3e30 = 3
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -137,7 +137,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x98]      ; 004208eb
     FLD float ptr [ESP + 0x98]          ; 004208f2
     MOV dword ptr [ESP],EAX             ; 004208f9
-    FCOMP float ptr [0x005f3e28]        ; 004208fc | DAT_005f3e28
+    FCOMP float ptr [0x005f3e28]        ; 004208fc | g_FLOAT_005f3e28
     FNSTSW AX                           ; 00420902
     SAHF                                ; 00420904
     JNC 0x00420a76                      ; 00420905
@@ -156,13 +156,13 @@ section .text
     TEST ESI,ESI                        ; 00420931
     JNZ 0x00420d56                      ; 00420933
         ;   XREF to: 00420d56 (CONDITIONAL_JUMP)  ; LAB_00420d56
-    FLD float ptr [0x005f3e28]          ; 00420939 | DAT_005f3e28
+    FLD float ptr [0x005f3e28]          ; 00420939 | g_FLOAT_005f3e28
     FLD ST0                             ; 0042093f
-    FMUL float ptr [0x005cca45]         ; 00420941 | DAT_005cca45
+    FMUL float ptr [0x005cca45]         ; 00420941 | g_FLOAT_005cca45
     FXCH                                ; 00420947
-    FMUL float ptr [0x005cca51]         ; 00420949 | DAT_005cca51
+    FMUL float ptr [0x005cca51]         ; 00420949 | g_FLOAT_005cca51
     FXCH                                ; 0042094f
-    FLD double ptr [0x005cca49]         ; 00420951 | DAT_005cca49
+    FLD double ptr [0x005cca49]         ; 00420951 | g_DOUBLE_005cca49
     FXCH                                ; 00420957
     FMUL ST1                            ; 00420959
     FXCH ST2                            ; 0042095b
@@ -260,7 +260,7 @@ section .text
     SAHF                                ; 00420a9b
     JNC 0x00420e20                      ; 00420a9c
         ;   XREF to: 00420e20 (CONDITIONAL_JUMP)  ; LAB_00420e20
-    FLD float ptr [0x005f3e30]          ; 00420aa2 | DAT_005f3e30
+    FLD float ptr [0x005f3e30]          ; 00420aa2 | g_FLOAT_005f3e30
     FMUL float ptr [EBP + 0x1c]         ; 00420aa8
     FST float ptr [ESP + 0xac]          ; 00420aab
     FCOMP float ptr [ESP]               ; 00420ab2
@@ -318,7 +318,7 @@ section .text
     FST float ptr [ESP + 0xc4]          ; 00420b73
     FSUB float ptr [EBX + 0xc]          ; 00420b7a
     FLD float ptr [ESP]                 ; 00420b7d
-    FMUL double ptr [0x005cca59]        ; 00420b80 | DAT_005cca59
+    FMUL double ptr [0x005cca59]        ; 00420b80 | g_DOUBLE_005cca59
     FCOMPP                              ; 00420b86
     FNSTSW AX                           ; 00420b88
     SAHF                                ; 00420b8a
@@ -372,8 +372,8 @@ section .text
     FLD float ptr [ESP + 0xd4]          ; 00420c21
     ADD ESP,0x4                         ; 00420c28
     FLD float ptr [EBP + 0x1c]          ; 00420c2b
-    FMUL float ptr [0x005cca61]         ; 00420c2e | DAT_005cca61
-    FMUL float ptr [0x005cca65]         ; 00420c34 | DAT_005cca65
+    FMUL float ptr [0x005cca61]         ; 00420c2e | g_FLOAT_005cca61
+    FMUL float ptr [0x005cca65]         ; 00420c34 | g_FLOAT_005cca65
     FLD float ptr [ESP + 0xa4]          ; 00420c3a
     FXCH ST2                            ; 00420c41
     FSTP float ptr [ESP + 0xb0]         ; 00420c43
@@ -517,7 +517,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa0]      ; 00420e00
     FLD float ptr [ESP + 0xa0]          ; 00420e07
     MOV dword ptr [ESP],EAX             ; 00420e0e
-    FCOMP float ptr [0x005f3e28]        ; 00420e11 | DAT_005f3e28
+    FCOMP float ptr [0x005f3e28]        ; 00420e11 | g_FLOAT_005f3e28
     FNSTSW AX                           ; 00420e17
     SAHF                                ; 00420e19
     JNC 0x00420a76                      ; 00420e1a

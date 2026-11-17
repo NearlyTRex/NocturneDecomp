@@ -10,7 +10,7 @@
 ;   core_dcamera.cpp_CDemonCamera_ctor_FUN_0043b400 at 0043b405
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_camview.cpp_CCameraView_dtor_FUN_00422220_005f4024 = 00422220
+;   CCameraView_vtable g_CCameraView_vtable_005f4024
 ;
 ; *****************************************************************************
 
@@ -20,6 +20,6 @@ section .text
         ;   Label: core_camview.cpp_CCameraView_ctor_FUN_00422200
     MOV dword ptr [EAX + 0x38],0x41e00000 ; 00422204
     MOV dword ptr [EAX],0x43800000      ; 0042220b
-    MOV dword ptr [EAX + 0x3c],0x5f4024 ; 00422211 | PTR_core_camview.cpp_CCameraView_dtor_FUN_00422220_005f4024
+    MOV dword ptr [EAX + 0x3c],0x5f4024 ; 00422211 | g_CCameraView_vtable_005f4024
     RET                                 ; 00422218
 

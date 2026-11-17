@@ -8,9 +8,9 @@
 ; SRenderVertex *  Stack[0x8]:4   end_vertex
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e61648
-;   undefined4 DAT_01e61b4c
-;   undefined4 DAT_01e61b50
+;   int g_INT_01e61648
+;   int g_INT_01e61b4c
+;   int g_INT_01e61b50
 ;
 ; *****************************************************************************
 
@@ -41,24 +41,24 @@ section .text
     MOV EAX,EBX                         ; 0051c1e1
     MOV EBX,EDI                         ; 0051c1e3
     MOV EDI,EAX                         ; 0051c1e5
-    MOV EAX,[0x01e61648]                ; 0051c1e7 | DAT_01e61648
+    MOV EAX,[0x01e61648]                ; 0051c1e7 | g_INT_01e61648
         ;   Label: LAB_0051c1e7
     LEA ECX,[EAX*0x4 + 0x0]             ; 0051c1ec
     ADD ECX,EAX                         ; 0051c1f3
     SHL ECX,0x4                         ; 0051c1f5
     ADD ECX,0x1e6164c                   ; 0051c1f8
     MOV dword ptr [ECX],EBX             ; 0051c1fe
-    MOV EAX,[0x01e61b4c]                ; 0051c200 | DAT_01e61b4c
+    MOV EAX,[0x01e61b4c]                ; 0051c200 | g_INT_01e61b4c
     MOV dword ptr [ECX + 0x4],EDI       ; 0051c205
     CMP EBX,EAX                         ; 0051c208
     JGE 0x0051c212                      ; 0051c20a
         ;   XREF to: 0051c212 (CONDITIONAL_JUMP)  ; LAB_0051c212
-    MOV dword ptr [0x01e61b4c],EBX      ; 0051c20c | DAT_01e61b4c
-    CMP EDI,dword ptr [0x01e61b50]      ; 0051c212 | DAT_01e61b50
+    MOV dword ptr [0x01e61b4c],EBX      ; 0051c20c | g_INT_01e61b4c
+    CMP EDI,dword ptr [0x01e61b50]      ; 0051c212 | g_INT_01e61b50
         ;   Label: LAB_0051c212
     JLE 0x0051c220                      ; 0051c218
         ;   XREF to: 0051c220 (CONDITIONAL_JUMP)  ; LAB_0051c220
-    MOV dword ptr [0x01e61b50],EDI      ; 0051c21a | DAT_01e61b50
+    MOV dword ptr [0x01e61b50],EDI      ; 0051c21a | g_INT_01e61b50
     MOV EDI,dword ptr [ESI + 0x14]      ; 0051c220
         ;   Label: LAB_0051c220
     MOV EBX,dword ptr [EBP + 0x14]      ; 0051c223
@@ -166,11 +166,11 @@ section .text
     MOV EAX,EDI                         ; 0051c337
     IMUL EDX                            ; 0051c339
     SHRD EAX,EDX,0x10                   ; 0051c33b
-    MOV EDX,dword ptr [0x01e61648]      ; 0051c33f | DAT_01e61648
+    MOV EDX,dword ptr [0x01e61648]      ; 0051c33f | g_INT_01e61648
     MOV EBX,dword ptr [ESI + 0x8]       ; 0051c345
     INC EDX                             ; 0051c348
     ADD EBX,EAX                         ; 0051c349
-    MOV dword ptr [0x01e61648],EDX      ; 0051c34b | DAT_01e61648
+    MOV dword ptr [0x01e61648],EDX      ; 0051c34b | g_INT_01e61648
     MOV dword ptr [ECX + 0x28],EBX      ; 0051c351
     ADD ESP,0x4                         ; 0051c354
         ;   Label: LAB_0051c354

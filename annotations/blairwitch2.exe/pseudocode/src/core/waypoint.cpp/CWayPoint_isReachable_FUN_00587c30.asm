@@ -22,10 +22,10 @@
 ;   core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005882d0 at 005882f5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ee09f
-;   undefined4 DAT_005ee0a7
-;   undefined4 DAT_005ee0af
-;   undefined4 DAT_005ee0b7
+;   double g_DOUBLE_005ee09f = 10
+;   double g_DOUBLE_005ee0a7 = 30
+;   double g_DOUBLE_005ee0af = 8
+;   double g_DOUBLE_005ee0b7 = 25
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
@@ -70,21 +70,21 @@ section .text
         ;   XREF to: 00587cc3 (CONDITIONAL_JUMP)  ; LAB_00587cc3
     FLD float ptr [ESP + 0x28]          ; 00587c7a
     FABS                                ; 00587c7e
-    FCOMP double ptr [0x005ee0af]       ; 00587c80 | DAT_005ee0af
+    FCOMP double ptr [0x005ee0af]       ; 00587c80 | g_DOUBLE_005ee0af
     FNSTSW AX                           ; 00587c86
     SAHF                                ; 00587c88
     JA 0x00587cbf                       ; 00587c89
         ;   XREF to: 00587cbf (CONDITIONAL_JUMP)  ; LAB_00587cbf
     FLD float ptr [ESP + 0x24]          ; 00587c8b
     FABS                                ; 00587c8f
-    FCOMP double ptr [0x005ee0b7]       ; 00587c91 | DAT_005ee0b7
+    FCOMP double ptr [0x005ee0b7]       ; 00587c91 | g_DOUBLE_005ee0b7
     FNSTSW AX                           ; 00587c97
     SAHF                                ; 00587c99
     JA 0x00587cbf                       ; 00587c9a
         ;   XREF to: 00587cbf (CONDITIONAL_JUMP)  ; LAB_00587cbf
     FLD float ptr [ESP + 0x2c]          ; 00587c9c
     FABS                                ; 00587ca0
-    FCOMP double ptr [0x005ee0b7]       ; 00587ca2 | DAT_005ee0b7
+    FCOMP double ptr [0x005ee0b7]       ; 00587ca2 | g_DOUBLE_005ee0b7
     FNSTSW AX                           ; 00587ca8
     SAHF                                ; 00587caa
     JA 0x00587cbf                       ; 00587cab
@@ -108,21 +108,21 @@ section .text
     FLD float ptr [ESP + 0x28]          ; 00587cc3
         ;   Label: LAB_00587cc3
     FABS                                ; 00587cc7
-    FCOMP double ptr [0x005ee09f]       ; 00587cc9 | DAT_005ee09f
+    FCOMP double ptr [0x005ee09f]       ; 00587cc9 | g_DOUBLE_005ee09f
     FNSTSW AX                           ; 00587ccf
     SAHF                                ; 00587cd1
     JA 0x00587cf6                       ; 00587cd2
         ;   XREF to: 00587cf6 (CONDITIONAL_JUMP)  ; LAB_00587cf6
     FLD float ptr [ESP + 0x24]          ; 00587cd4
     FABS                                ; 00587cd8
-    FCOMP double ptr [0x005ee0a7]       ; 00587cda | DAT_005ee0a7
+    FCOMP double ptr [0x005ee0a7]       ; 00587cda | g_DOUBLE_005ee0a7
     FNSTSW AX                           ; 00587ce0
     SAHF                                ; 00587ce2
     JA 0x00587cf6                       ; 00587ce3
         ;   XREF to: 00587cf6 (CONDITIONAL_JUMP)  ; LAB_00587cf6
     FLD float ptr [ESP + 0x2c]          ; 00587ce5
     FABS                                ; 00587ce9
-    FCOMP double ptr [0x005ee0a7]       ; 00587ceb | DAT_005ee0a7
+    FCOMP double ptr [0x005ee0a7]       ; 00587ceb | g_DOUBLE_005ee0a7
     FNSTSW AX                           ; 00587cf1
     SAHF                                ; 00587cf3
     JBE 0x00587cad                      ; 00587cf4

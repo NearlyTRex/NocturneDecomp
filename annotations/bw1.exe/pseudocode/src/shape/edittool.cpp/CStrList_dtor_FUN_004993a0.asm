@@ -16,7 +16,7 @@
 ;   shape_edittool.cpp_CPickList_dtor_FUN_0049a710 at 0049a764
 ;
 ; Referenced Globals:
-;   undefined1* g_CStrListVTable = 004993a0
+;   CStrList_vtable g_CStrListVTable
 ;   WatcomTypeInfo g_CStrListTypeInfo
 ;
 ; Called Functions:

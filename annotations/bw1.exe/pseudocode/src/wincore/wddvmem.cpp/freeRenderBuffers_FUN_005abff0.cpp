@@ -6,24 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005abff0(void)
 
 {
-  if (DAT_00629010 == (void *)0x0) {
-    if (_DAT_02c99310 == (void *)0x0) {
+  if (g_PTR_00629010 == (byte *)0x0) {
+    if (g_PTR_02c99310 == (byte *)0x0) {
       return;
     }
   }
   else {
-    debugFree(DAT_00629010);
-    DAT_00629010 = (void *)0x0;
-    if (_DAT_02c99310 == (void *)0x0) {
+    debugFree(g_PTR_00629010);
+    g_PTR_00629010 = (byte *)0x0;
+    if (g_PTR_02c99310 == (byte *)0x0) {
       return;
     }
   }
-  debugFree(_DAT_02c99310);
-  DAT_0071362c = 0;
+  debugFree(g_PTR_02c99310);
+  g_PTR_0071362c = (byte *)0x0;
   return;
 }

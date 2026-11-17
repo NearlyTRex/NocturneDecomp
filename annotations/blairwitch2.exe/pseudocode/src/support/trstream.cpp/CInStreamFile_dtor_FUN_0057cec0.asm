@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CInStreamFileTypeInfo
-;   undefined1* g_CInStreamFileVTable = 0057cec0
+;   void*[13] g_CInStreamFileVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005b7fa7

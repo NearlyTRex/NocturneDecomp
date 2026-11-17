@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422ab0(CBoxActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 
 {
@@ -62,7 +60,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422ab0(CBoxActor *
     fStack_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
                           (&CStack_98,(CVector3f *)local_44,&local_68,(CVector3f *)auStack_5c);
     if ((0.0 <= fStack_14) && (fStack_14 < 1.0)) {
-      fStack_14 = (float)_DAT_005d4d60 - fStack_14;
+      fStack_14 = (float)1.01 - fStack_14;
       afStack_28[2] = ray_direction->x * fStack_14;
       pCVar1 = &(this_ptr->base).location;
       afStack_28[3] = ray_direction->y * fStack_14;

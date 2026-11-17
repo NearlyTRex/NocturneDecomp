@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 250,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 12,
+    "pseudocode_lines": 104,
+    "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 374
+    "total_lines": 373
   },
   "cross_references": [
     {
@@ -93,26 +91,26 @@
   "globals": [
     {
       "addr": "005e66a0",
-      "name": "DAT_005e66a0",
-      "type": "undefined4",
+      "name": "s_d_005e66a0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e66a4",
-      "name": "DAT_005e66a4",
-      "type": "undefined4",
+      "name": "s_d_005e66a4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e66a8",
-      "name": "DAT_005e66a8",
-      "type": "undefined4",
+      "name": "s_d_005e66a8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e66ac",
-      "name": "DAT_005e66ac",
-      "type": "undefined4",
+      "name": "s_f_005e66ac",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -135,44 +133,44 @@
     },
     {
       "addr": "0061f1a8",
-      "name": "DAT_0061f1a8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_0061f1a8",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "0061f1ac",
-      "name": "DAT_0061f1ac",
+      "name": "g_CHAR_ARRAY_0061f1a8+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f210",
-      "name": "DAT_0061f210",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_0061f210",
+      "type": "char[100]",
       "value": null
     },
     {
       "addr": "0061f214",
-      "name": "DAT_0061f214",
+      "name": "g_CHAR_ARRAY_0061f210+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
@@ -331,64 +329,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005e66a0",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e66a0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005e66a4",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e66a4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005e66a8",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e66a8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005e66ac",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e66ac);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_0061f1a8",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_0061f1a8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_0061f210",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_0061f210;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -396,7 +338,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -404,7 +346,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -412,7 +354,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 77,
+      "line": 75,
       "match": "pCVar6 = (T *)&pCVar6->FIELD",
       "severity": "moderate",
       "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
@@ -420,7 +362,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 87,
+      "line": 85,
       "match": "pCVar6 = (T *)&pCVar6->FIELD",
       "severity": "moderate",
       "text": "pCVar6 = (CInventory *)&pCVar6->owner;",

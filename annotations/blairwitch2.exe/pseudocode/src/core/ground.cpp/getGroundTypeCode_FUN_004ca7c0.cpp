@@ -11,21 +11,21 @@ char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
 {
   if (type < GROUND_TYPE_CONCRETE) {
     if (type == GROUND_TYPE_NONE) {
-      return &DAT_005d9665;
+      return "dirt";
     }
   }
   else {
     if (type < GROUND_TYPE_DIRT) {
-      return &DAT_005d9671;
+      return "rock";
     }
     if (GROUND_TYPE_WATER < type) {
       if (type < GROUND_TYPE_MARBLE) {
-        return &DAT_005d9676;
+        return "wood";
       }
       if (type == (GROUND_TYPE_GLASS|GROUND_TYPE_CONCRETE)) {
         return "leaves";
       }
     }
   }
-  return &DAT_005d967b;
+  return "dirt";
 }

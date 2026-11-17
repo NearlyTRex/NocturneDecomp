@@ -13,14 +13,14 @@
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80 at 0052f172
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CSimpleParticleSystem* g_CSimpleParticleSystemPtr = 026687b0
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01c3f8e0
-;   undefined4 DAT_01c3f90c
-;   undefined4 DAT_01c558e0
-;   undefined4 DAT_01c594e8
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c3f8e0
+;   undefined4 g_CSmokeParticle_ARRAY_01c3f8e0[1].active
+;   int g_INT_01c558e0
+;   int g_INT_01c594e8
 ;   undefined4 g_SparkPool[0].base.lifetime_remaining
 ;   undefined4 g_SparkPool[0].base.vtable
 ;   undefined4 g_SparkPool[1].base.lifetime_remaining
@@ -59,7 +59,7 @@ section .text
     PUSH EBP                            ; 0049c783
     MOV EBP,ESP                         ; 0049c784
     AND ESP,0xfffffff8                  ; 0049c786
-    MOV EDX,dword ptr [0x01c594e8]      ; 0049c789 | DAT_01c594e8
+    MOV EDX,dword ptr [0x01c594e8]      ; 0049c789 | g_INT_01c594e8
     XOR ESI,ESI                         ; 0049c78f
     TEST EDX,EDX                        ; 0049c791
     JLE 0x0049c7b5                      ; 0049c793
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_0049c797
     JZ 0x0049cb38                       ; 0049c79e
         ;   XREF to: 0049cb38 (CONDITIONAL_JUMP)  ; LAB_0049cb38
-    MOV ECX,dword ptr [0x01c594e8]      ; 0049c7a4 | DAT_01c594e8
+    MOV ECX,dword ptr [0x01c594e8]      ; 0049c7a4 | g_INT_01c594e8
         ;   Label: LAB_0049c7a4
     INC ESI                             ; 0049c7aa
     ADD EBX,0x260                       ; 0049c7ab
@@ -168,8 +168,8 @@ section .text
     CMP EBX,ESI                         ; 0049c87d
     JNZ 0x0049c870                      ; 0049c87f
         ;   XREF to: 0049c870 (CONDITIONAL_JUMP)  ; LAB_0049c870
-    MOV EAX,[0x0060b280]                ; 0049c881 | DAT_0060b280
-    PUSH EAX                            ; 0049c886 | DAT_01ba5c50
+    MOV EAX,[0x0060b280]                ; 0049c881 | g_CDemonRenderer_PTR_0060b280
+    PUSH EAX                            ; 0049c886 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 0049c887
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0049c88c
@@ -190,7 +190,7 @@ section .text
     XOR ESI,ESI                         ; 0049c8b0
     CALL core_fire.cpp_CBulletHole_setupRenderState_FUN_00493d50 ; 0049c8b2
         ;   XREF to: 00493d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_setupRenderState_FUN_00493d50(CBulletHole * this_ptr)
-    MOV ECX,dword ptr [0x01c558e0]      ; 0049c8b7 | DAT_01c558e0
+    MOV ECX,dword ptr [0x01c558e0]      ; 0049c8b7 | g_INT_01c558e0
     ADD ESP,0x4                         ; 0049c8bd
     TEST ECX,ECX                        ; 0049c8c0
     JLE 0x0049c8ed                      ; 0049c8c2
@@ -206,26 +206,26 @@ section .text
     CALL core_fire.cpp_CBulletHole_render_FUN_00493dd0 ; 0049c8d7
         ;   XREF to: 00493dd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_00493dd0(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 0049c8dc
-    MOV EDI,dword ptr [0x01c558e0]      ; 0049c8df | DAT_01c558e0
+    MOV EDI,dword ptr [0x01c558e0]      ; 0049c8df | g_INT_01c558e0
         ;   Label: LAB_0049c8df
     INC ESI                             ; 0049c8e5
     ADD EBX,0x3c                        ; 0049c8e6
     CMP ESI,EDI                         ; 0049c8e9
     JL 0x0049c8c6                       ; 0049c8eb
         ;   XREF to: 0049c8c6 (CONDITIONAL_JUMP)  ; LAB_0049c8c6
-    PUSH 0x1c3f8e0                      ; 0049c8ed | DAT_01c3f8e0
+    PUSH 0x1c3f8e0                      ; 0049c8ed | g_CSmokeParticle_ARRAY_01c3f8e0
         ;   Label: LAB_0049c8ed
     MOV EBX,0x1c3f8e0                   ; 0049c8f2
     CALL core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00493410 ; 0049c8f7
         ;   XREF to: 00493410 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00493410(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0049c8fc
     LEA ESI,[EBX + 0x16000]             ; 0049c8ff
-    MOV EAX,dword ptr [EBX]             ; 0049c905 | DAT_01c3f8e0 | DAT_01c3f90c
+    MOV EAX,dword ptr [EBX]             ; 0049c905 | g_CSmokeParticle_ARRAY_01c3f8e0 | g_CSmokeParticle_ARRAY_01c3f8e0[1].active
         ;   Label: LAB_0049c905
     TEST EAX,EAX                        ; 0049c907
     JZ 0x0049c914                       ; 0049c909
         ;   XREF to: 0049c914 (CONDITIONAL_JUMP)  ; LAB_0049c914
-    PUSH EBX                            ; 0049c90b | DAT_01c3f8e0 | DAT_01c3f90c
+    PUSH EBX                            ; 0049c90b | g_CSmokeParticle_ARRAY_01c3f8e0 | g_CSmokeParticle_ARRAY_01c3f8e0[1].active
     CALL core_fire.cpp_CSmokeParticle_render_FUN_00493710 ; 0049c90c
         ;   XREF to: 00493710 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_render_FUN_00493710(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0049c911
@@ -237,21 +237,21 @@ section .text
     MOV EBX,0x1c86730                   ; 0049c91b
     MOV ESI,0x1c85ffc                   ; 0049c920
     LEA EDI,[EBX + 0x730]               ; 0049c925
-    MOV EAX,dword ptr [ESI]             ; 0049c92b | DAT_01c85ffc | DAT_01c86058
+    MOV EAX,dword ptr [ESI]             ; 0049c92b | g_CMuzzleFlash_01c85ffc | DAT_01c86058
         ;   Label: LAB_0049c92b
     TEST EAX,EAX                        ; 0049c92d
     JZ 0x0049c93a                       ; 0049c92f
         ;   XREF to: 0049c93a (CONDITIONAL_JUMP)  ; LAB_0049c93a
-    PUSH ESI                            ; 0049c931 | DAT_01c85ffc | DAT_01c86058
+    PUSH ESI                            ; 0049c931 | g_CMuzzleFlash_01c85ffc | DAT_01c86058
     CALL core_fire.cpp_CMuzzleFlash_render_FUN_00496a90 ; 0049c932
         ;   XREF to: 00496a90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CMuzzleFlash_render_FUN_00496a90(CMuzzleFlash * this_ptr)
     ADD ESP,0x4                         ; 0049c937
-    MOV EAX,dword ptr [EBX]             ; 0049c93a | DAT_01c86730 | DAT_01c8678c
+    MOV EAX,dword ptr [EBX]             ; 0049c93a | g_CMuzzleFlash_ARRAY_01c86730 | g_CMuzzleFlash_ARRAY_01c86730[1].frames_remaining
         ;   Label: LAB_0049c93a
     TEST EAX,EAX                        ; 0049c93c
     JZ 0x0049c949                       ; 0049c93e
         ;   XREF to: 0049c949 (CONDITIONAL_JUMP)  ; LAB_0049c949
-    PUSH EBX                            ; 0049c940 | DAT_01c86730 | DAT_01c8678c
+    PUSH EBX                            ; 0049c940 | g_CMuzzleFlash_ARRAY_01c86730 | g_CMuzzleFlash_ARRAY_01c86730[1].frames_remaining
     CALL core_muzzle.cpp_CMuzzleEffect_render_FUN_0059d440 ; 0049c941
         ;   XREF to: 0059d440 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_CMuzzleEffect_render_FUN_0059d440(CMuzzleEffect * this_ptr)
     ADD ESP,0x4                         ; 0049c946
@@ -261,7 +261,7 @@ section .text
     CMP EBX,EDI                         ; 0049c94f
     JNZ 0x0049c92b                      ; 0049c951
         ;   XREF to: 0049c92b (CONDITIONAL_JUMP)  ; LAB_0049c92b
-    MOV EDX,dword ptr [0x01c965dc]      ; 0049c953 | DAT_01c965dc
+    MOV EDX,dword ptr [0x01c965dc]      ; 0049c953 | g_INT_01c965dc
     XOR ESI,ESI                         ; 0049c959
     TEST EDX,EDX                        ; 0049c95b
     JLE 0x0049c980                      ; 0049c95d
@@ -272,7 +272,7 @@ section .text
     CALL core_fire.cpp_CLaserBeam_render_FUN_00497800 ; 0049c965
         ;   XREF to: 00497800 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_render_FUN_00497800(CLaserBeam * this_ptr)
     INC ESI                             ; 0049c96a
-    MOV ECX,dword ptr [0x01c965dc]      ; 0049c96b | DAT_01c965dc
+    MOV ECX,dword ptr [0x01c965dc]      ; 0049c96b | g_INT_01c965dc
     ADD ESP,0x4                         ; 0049c971
     ADD EBX,0x40                        ; 0049c974
     CMP ESI,ECX                         ; 0049c977
@@ -348,7 +348,7 @@ section .text
         ;   XREF to: 0049c9f5 (CONDITIONAL_JUMP)  ; LAB_0049c9f5
     MOV EBX,0x1c91268                   ; 0049ca15
     LEA ESI,[EBX + 0x168]               ; 0049ca1a
-    MOV EAX,dword ptr [EBX + 0x20]      ; 0049ca20 | DAT_01c91288 | DAT_01c912ac
+    MOV EAX,dword ptr [EBX + 0x20]      ; 0049ca20 | g_CBulletTrail_ARRAY_01c91268[0].frames_remaining | g_CBulletTrail_ARRAY_01c91268[1].frames_remaining
         ;   Label: LAB_0049ca20
     TEST EAX,EAX                        ; 0049ca23
     JZ 0x0049ca30                       ; 0049ca25
@@ -364,7 +364,7 @@ section .text
         ;   XREF to: 0049ca20 (CONDITIONAL_JUMP)  ; LAB_0049ca20
     MOV EBX,0x1c975e4                   ; 0049ca37
     LEA ESI,[EBX + 0x118]               ; 0049ca3c
-    PUSH EBX                            ; 0049ca42 | DAT_01c97600
+    PUSH EBX                            ; 0049ca42 | g_CExplosion_ARRAY_01c975e4[1].position.x
         ;   Label: LAB_0049ca42
     CALL core_fire.cpp_CExplosion_render_FUN_00498ed0 ; 0049ca43
         ;   XREF to: 00498ed0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_render_FUN_00498ed0(CExplosion * this_ptr)
@@ -386,7 +386,7 @@ section .text
         ;   XREF to: 0049ca5d (CONDITIONAL_JUMP)  ; LAB_0049ca5d
     MOV EBX,0x1c9cd98                   ; 0049ca70
     LEA ESI,[EBX + 0x4650]              ; 0049ca75
-    PUSH EBX                            ; 0049ca7b | DAT_01c9cd98 | DAT_01c9cdbc
+    PUSH EBX                            ; 0049ca7b | g_CGunFlame_ARRAY_01c9cd98 | g_CGunFlame_ARRAY_01c9cd98[1].lifetime
         ;   Label: LAB_0049ca7b
     CALL core_fire.cpp_CGunFlame_render_FUN_0049a500 ; 0049ca7c
         ;   XREF to: 0049a500 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_render_FUN_0049a500(CGunFlame * this_ptr)
@@ -456,8 +456,8 @@ section .text
     JNZ 0x0049caf4                      ; 0049cb0f
         ;   XREF to: 0049caf4 (CONDITIONAL_JUMP)  ; LAB_0049caf4
     PUSH 0x0                            ; 0049cb11
-    MOV EBX,dword ptr [0x0060b280]      ; 0049cb13 | DAT_0060b280
-    PUSH EBX                            ; 0049cb19 | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 0049cb13 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 0049cb19 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880 ; 0049cb1a
         ;   XREF to: 0046b880 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 0049cb1f

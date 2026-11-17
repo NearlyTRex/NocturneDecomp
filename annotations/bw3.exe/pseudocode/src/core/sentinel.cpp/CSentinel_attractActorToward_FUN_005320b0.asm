@@ -9,12 +9,12 @@
 ; CVector3f *      Stack[0xc]:4   target_local_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d00b2
-;   undefined4 DAT_005d00b6
-;   undefined4 DAT_005d00ba
-;   undefined4 DAT_01ed7860
-;   undefined4 DAT_01ed7864
-;   undefined4 DAT_02cfd900
+;   float g_FLOAT_005d00b2 = 0.5
+;   float g_FLOAT_005d00b6 = -0.5
+;   float g_FLOAT_005d00ba = -4
+;   undefined4 g_INT_ARRAY_01ed785c[1]
+;   undefined4 g_INT_ARRAY_01ed785c[2]
+;   CVector3f g_CVector3f_02cfd900
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -39,7 +39,7 @@ section .text
         ;   Label: LAB_005320c6
     PUSH ESI                            ; 005320c7
     PUSH EBX                            ; 005320c8
-    MOV ESI,dword ptr [0x01ed7860]      ; 005320c9 | DAT_01ed7860
+    MOV ESI,dword ptr [0x01ed7860]      ; 005320c9 | g_INT_ARRAY_01ed785c[1]
     LEA EAX,[ESI*0x4 + 0x0]             ; 005320cf
     MOV EBX,dword ptr [ESP + 0x8c]      ; 005320d6
     SUB EAX,ESI                         ; 005320dd
@@ -47,7 +47,7 @@ section .text
     SHL EAX,0x4                         ; 005320e5
     ADD EAX,EBX                         ; 005320e8
     PUSH EAX                            ; 005320ea
-    PUSH 0x2cfd900                      ; 005320eb | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 005320eb | g_CVector3f_02cfd900
     LEA ESI,[ESP + 0x74]                ; 005320f0
     LEA EDI,[ESP + 0x5c]                ; 005320f4
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 005320f8
@@ -57,13 +57,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00532104
     MOVSD ES:EDI,ESI                    ; 00532105
     MOVSD ES:EDI,ESI                    ; 00532106
-    MOV ESI,dword ptr [0x01ed7864]      ; 00532107 | DAT_01ed7864
+    MOV ESI,dword ptr [0x01ed7864]      ; 00532107 | g_INT_ARRAY_01ed785c[2]
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053210d
     SUB EAX,ESI                         ; 00532114
     SHL EAX,0x4                         ; 00532116
     ADD EAX,EBX                         ; 00532119
     PUSH EAX                            ; 0053211b
-    PUSH 0x2cfd900                      ; 0053211c | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 0053211c | g_CVector3f_02cfd900
     LEA ESI,[ESP + 0x68]                ; 00532121
     LEA EDI,[ESP + 0x80]                ; 00532125
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0053212c
@@ -92,7 +92,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00532174
     MOVSD ES:EDI,ESI                    ; 00532175
     MOVSD ES:EDI,ESI                    ; 00532176
-    FLD float ptr [0x005d00b2]          ; 00532177 | DAT_005d00b2
+    FLD float ptr [0x005d00b2]          ; 00532177 | g_FLOAT_005d00b2
     FLD float ptr [ESP + 0x18]          ; 0053217d
     FMUL ST1                            ; 00532181
     FLD float ptr [ESP + 0x1c]          ; 00532183
@@ -114,7 +114,7 @@ section .text
     PUSH EDX                            ; 005321b4
     FLD float ptr [ESP + 0x40]          ; 005321b5
     LEA ESI,[ESP + 0x14]                ; 005321b9
-    FADD float ptr [0x005d00b6]         ; 005321bd | DAT_005d00b6
+    FADD float ptr [0x005d00b6]         ; 005321bd | g_FLOAT_005d00b6
     LEA EDI,[ESP + 0x50]                ; 005321c3
     FSTP float ptr [ESP + 0x40]         ; 005321c7
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 005321cb
@@ -129,7 +129,7 @@ section .text
     LEA EAX,[ESP + 0x4c]                ; 005321de
     FLD float ptr [ESP + 0x50]          ; 005321e2
     PUSH EAX                            ; 005321e6
-    FADD float ptr [0x005d00ba]         ; 005321e7 | DAT_005d00ba
+    FADD float ptr [0x005d00ba]         ; 005321e7 | g_FLOAT_005d00ba
     PUSH EBP                            ; 005321ed
     FSTP float ptr [ESP + 0x58]         ; 005321ee
     MOV EBX,dword ptr [EBP + 0x154]     ; 005321f2

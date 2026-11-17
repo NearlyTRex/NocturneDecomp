@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
 
 {
@@ -16,8 +14,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCa
   ushort **ppuVar3;
   CDemonLight *pCVar4;
   ushort *puVar5;
-  byte *puVar6;
-  byte *puVar7;
+  uint uVar6;
+  uint uVar7;
   uint *puVar8;
   uint *puVar9;
   int iVar10;
@@ -30,8 +28,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCa
   CVector3i local_70;
   CVector3i local_64;
   int local_58;
-  int local_54;
-  int local_50;
+  CVector3f *local_54;
+  CVector3i *local_50;
   int local_4c;
   int local_48;
   int local_44;
@@ -50,40 +48,40 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCa
   bVar11 = 0;
   local_40 = 0x80;
   local_3c = 0;
-  iVar1 = _strcmp(light_source->filter_name,"@movscrn.raw" + 1);
+  iVar1 = _strcmp(light_source->filter_name,"movscrn.raw");
   if (iVar1 == 0) {
     local_3c = 1;
     local_40 = 0x100;
   }
   if (rect == (CRect *)0x0) {
-    _DAT_012a6558 = rect;
-    _DAT_00b9e554 = rect;
+    g_INT_012a6558 = (int)rect;
+    g_INT_00b9e554 = (int)rect;
   }
-  puVar7 = (byte *)((int)&_DAT_00b9e554->x_min + 1);
-  piVar2 = (int *)((int)_DAT_00b9e554 * 0x4b000 + 0xb9e558);
-  if ((byte *)0x18 < puVar7) {
+  uVar7 = g_INT_00b9e554 + 1;
+  piVar2 = (int *)(g_CHAR_ARRAY_00b9e558 + g_INT_00b9e554 * 0x4b000);
+  if (0x18 < uVar7) {
     piVar2 = (int *)0x0;
   }
-  _DAT_00b9e554 = (CRect *)puVar7;
+  g_INT_00b9e554 = uVar7;
   light_source->corona_visibility_buffers = piVar2;
-  puVar6 = (byte *)((int)_DAT_00b9e554 + 1);
-  ppuVar3 = (ushort **)((int)puVar7 * 0x4b000 + 0xb9e558);
-  if ((byte *)0x18 < puVar6) {
+  uVar6 = g_INT_00b9e554 + 1;
+  ppuVar3 = (ushort **)(g_CHAR_ARRAY_00b9e558 + uVar7 * 0x4b000);
+  if (0x18 < uVar6) {
     ppuVar3 = (ushort **)0x0;
   }
-  _DAT_00b9e554 = (CRect *)puVar6;
+  g_INT_00b9e554 = uVar6;
   light_source->corona_depth_buffer = ppuVar3;
-  _DAT_00b9e554 = (CRect *)((int)_DAT_00b9e554 + 1);
-  piVar2 = (int *)((int)puVar6 * 0x4b000 + 0xb9e558);
-  if ((byte *)0x18 < _DAT_00b9e554) {
+  g_INT_00b9e554 = g_INT_00b9e554 + 1;
+  piVar2 = (int *)(g_CHAR_ARRAY_00b9e558 + uVar6 * 0x4b000);
+  if (0x18 < (uint)g_INT_00b9e554) {
     piVar2 = (int *)0x0;
   }
   light_source->corona_lightmap_indices = piVar2;
   if (((light_source->corona_visibility_buffers == (int *)0x0) ||
       (light_source->corona_depth_buffer == (ushort **)0x0)) ||
      (light_source->corona_lightmap_indices == (int *)0x0)) {
-    _DAT_01d71de0 = "..\\core\\dcamera.cpp";
-    _DAT_01d71de4 = 0x6ca;
+    g_CHAR_PTR_01d71de0 = "..\\core\\dcamera.cpp";
+    g_INT_01d71de4 = 0x6ca;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCamera::precomputeLight - Too many lights visible from camera %s");
   }
   core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_0045f490(light_source);
@@ -127,13 +125,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCa
     local_58 = local_80 * 0xc;
     local_4c = local_80 * 4;
     local_44 = local_78 * 0x500;
-    local_50 = local_78 * 0xf00 + 0x874588;
-    local_54 = local_78 * 0xf00 + 0xa38388;
+    local_50 = g_CVector3i_ARRAY_00874588 + local_78 * 0x140;
+    local_54 = g_CVector3f_ARRAY_00a38388 + local_78 * 0x140;
     local_48 = (int)(light_source->base).base.rotation_matrix.m + local_78 * 4 + -0x10;
     do {
-      local_30 = (CVector3i *)(local_50 + local_58);
+      local_30 = (CVector3i *)((int)&local_50->x + local_58);
       local_34 = 999;
-      local_28 = (float *)(local_54 + local_58);
+      local_28 = (float *)((int)&local_54->x + local_58);
       local_20 = (int *)((int)light_source->corona_visibility_buffers + local_4c + local_44);
       local_1c = (uint *)((int)light_source->corona_depth_buffer + local_4c + local_44);
       local_38 = 0;
@@ -195,8 +193,8 @@ LAB_0044ac97:
         } while (local_18 <= local_7c);
       }
       local_44 = local_44 + 0x500;
-      local_54 = local_54 + 0xf00;
-      local_50 = local_50 + 0xf00;
+      local_54 = local_54 + 0x140;
+      local_50 = local_50 + 0x140;
       *(int *)(local_48 + 0x14c8) = local_34;
       *(int *)(local_48 + 0x1888) = local_38;
       local_48 = local_48 + 4;

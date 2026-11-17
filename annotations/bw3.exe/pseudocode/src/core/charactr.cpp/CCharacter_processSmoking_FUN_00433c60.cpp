@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter *this_ptr,float delta_time)
 
 {
@@ -43,15 +41,15 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter
       (EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr),
       EVar1 == DEATH_STATE_ALIVE)))) {
     if (this_ptr->is_spectral == 0) {
-      if (((float)_DAT_005b8866 <= (g_CDemonSetPtr->active_fog).temperature) &&
-         (iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(&this_ptr->base,"?CZombieDog" + 1),
+      if (((float)32 <= (g_CDemonSetPtr->active_fog).temperature) &&
+         (iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(&this_ptr->base,"CZombieDog"),
          iVar4 == 0)) {
         return;
       }
       if (((float)this_ptr->smoke_occluded == 0.0) &&
          (fVar2 = this_ptr->smoke_emit_timer - delta_time, this_ptr->smoke_emit_timer = fVar2,
          fVar2 < 0.0)) {
-        this_ptr->smoke_emit_timer = this_ptr->smoke_emit_timer + _DAT_005b886e;
+        this_ptr->smoke_emit_timer = this_ptr->smoke_emit_timer + 0.2f;
         local_2c.y = -0.5;
         local_2c.z = 1.0;
         local_2c.x = (float)this_ptr->smoke_occluded;
@@ -88,7 +86,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter
           local_50.x = local_5c.x;
           *(uint *)((int)&local_50 + (uint)bVar6 * -8 + 4) =
                *(uint *)((int)&local_5c + (uint)bVar6 * -8 + 4);
-          this_ptr_00 = 0x01C73654;
+          this_ptr_00 = g_CFireEffect_PTR_005fc5a0;
           *(uint *)((int)&local_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
                *(uint *)((int)&local_5c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004a2560
@@ -153,7 +151,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter
         }
         this_ptr->smoke_check_timer = fVar2;
         this_ptr->smoke_occluded = (uint)(this_ptr->smoke_occluded == 0);
-        _DAT_007e2cb0 = 0;
+        g_FLOAT_007e2cb0 = 0.0;
       }
     }
   }

@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 599,
-    "complexity_score": 861,
+    "complexity_score": 1063,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 286,
-    "suspect_count": 53,
+    "pseudocode_lines": 293,
+    "suspect_count": 73,
     "suspect_types": [
+      "displaced_global_access",
       "fast_sqrt_inline",
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "wrong_global"
     ],
-    "total_lines": 885
+    "total_lines": 892
   },
   "cross_references": [
     {
@@ -68,92 +67,92 @@
   "globals": [
     {
       "addr": "005e5972",
-      "name": "DAT_005e5972",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e5972",
+      "type": "float",
+      "value": "0.6660000"
     },
     {
       "addr": "005e597a",
-      "name": "DAT_005e597a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e597a",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005fb210",
-      "name": "DAT_005fb210",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fb210",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "01caf5b4",
-      "name": "DAT_01caf5b4",
-      "type": "undefined4",
+      "name": "g_INT_01caf5b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01fc8e84",
-      "name": "DAT_01fc8e84",
-      "type": "undefined4",
+      "name": "g_INT_01fc8e84",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01fc9608",
-      "name": "DAT_01fc9608",
-      "type": "undefined4",
+      "name": "g_INT_01fc9608",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01fc961c",
-      "name": "DAT_01fc961c",
-      "type": "undefined4",
+      "name": "g_INT_01fc961c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01fc9ad4",
-      "name": "DAT_01fc9ad4",
-      "type": "undefined4",
+      "name": "g_INT_01fc9ad4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01fc9cd4",
-      "name": "DAT_01fc9cd4",
-      "type": "undefined4",
+      "name": "g_INT_01fc9cd4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0200e23c",
-      "name": "DAT_0200e23c",
-      "type": "undefined4",
+      "name": "g_INT_0200e23c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0200e240",
-      "name": "DAT_0200e240",
-      "type": "undefined4",
+      "name": "g_CDemonLight_PTR_ARRAY_0200e240",
+      "type": "CDemonLight*[96]",
       "value": null
     },
     {
       "addr": "0200e3c0",
-      "name": "DAT_0200e3c0",
-      "type": "undefined4",
+      "name": "g_INT_0200e3c0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0200e3c4",
-      "name": "DAT_0200e3c4",
-      "type": "undefined4",
+      "name": "g_CDemonLight_PTR_ARRAY_0200e3c4",
+      "type": "CDemonLight*[4]",
       "value": null
     },
     {
       "addr": "0200e3d4",
-      "name": "DAT_0200e3d4",
-      "type": "undefined4",
+      "name": "g_INT_0200e3d4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0200e3d8",
-      "name": "DAT_0200e3d8",
-      "type": "undefined4",
+      "name": "g_INT_0200e3d8",
+      "type": "int",
       "value": null
     },
     {
@@ -164,32 +163,32 @@
     },
     {
       "addr": "0200e568",
-      "name": "DAT_0200e568",
-      "type": "undefined4",
+      "name": "g_INT_0200e568",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0200e56c",
-      "name": "DAT_0200e56c",
-      "type": "undefined4",
+      "name": "g_C3DSLight_PTR_ARRAY_0200e56c",
+      "type": "C3DSLight*[200]",
       "value": null
     },
     {
       "addr": "0200e8e8",
-      "name": "DAT_0200e8e8",
-      "type": "undefined4",
+      "name": "g_INT_0200e8e8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0200e8ec",
-      "name": "DAT_0200e8ec",
-      "type": "undefined4",
+      "name": "g_INT_0200e8ec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0200e8f0",
-      "name": "DAT_0200e8f0",
-      "type": "undefined4",
+      "name": "g_INT_0200e8f0",
+      "type": "int",
       "value": null
     }
   ],
@@ -662,336 +661,480 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 14,
       "match": "afStackY_10c8",
       "severity": "moderate",
       "text": "float afStackY_10c8 [1013];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "if (*(int *)(*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar5) + 0x1cb4) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(int *)((int)g_CDemonLight_PTR_ARRAY_0200e3c4",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_0200e3c4 + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 56,
-      "match": "DAT_0200e3c4",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_0200e3c4 + iVar5) = *(int *)(iVar4 + 0x1fc960c);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar5);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 69,
-      "match": "DAT_01fc8e88",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)(&DAT_01fc8e88 + iVar5) + 0x1cb4) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_0200e240",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_0200e240 + iVar7) = *(int *)(&DAT_01fc8e88 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_01fc8e88",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_0200e240 + iVar7) = *(int *)(&DAT_01fc8e88 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_0200e3d8",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_0200e3d8 + iVar7) = *(uint *)(iVar7 + 0x1fc9620);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_0200e56c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_0200e56c + iVar7) = *(uint *)(&DAT_01fc9cd8 + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_01fc9cd8",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_0200e56c + iVar7) = *(uint *)(&DAT_01fc9cd8 + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 106,
-      "match": "*(CDemonCamera **)(iVar5 + 0x1fc960c",
+      "match": "(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88",
       "severity": "moderate",
-      "text": "if (((*(CDemonCamera **)(iVar5 + 0x1fc960c))[1].rect_array[0x61].y_min != 0) &&",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 108,
-      "match": "*(CDemonCamera **)(iVar5 + 0x1fc960c",
-      "severity": "moderate",
-      "text": "(*(CDemonCamera **)(iVar5 + 0x1fc960c),position,orientation,aabb_min,",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 110,
-      "match": "(uint *)(&DAT_0200e3c4 + (int)_DAT_0200e3c0",
-      "severity": "moderate",
-      "text": "*(uint *)(&DAT_0200e3c4 + (int)_DAT_0200e3c0 * 4) =",
+      "text": "if (*(int *)(*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6) + 0x1cb4) != 0) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_0200e3c4",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_0200e3c4 + (int)_DAT_0200e3c0 * 4) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_01fc8e88",
-      "severity": "mild",
-      "text": "if (((*(CDemonCamera **)(&DAT_01fc8e88 + iVar5))[1].rect_array[0x61].y_min != 0) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_01fc8e88",
-      "severity": "mild",
-      "text": "(*(CDemonCamera **)(&DAT_01fc8e88 + iVar5),position,orientation,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_0200e23c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_0200e23c + _DAT_0200e23c * 4) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_01fc8e88",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01fc8e88 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_01fc9cd8",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)(&DAT_01fc9cd8 + local_18);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)g_CDemonLight_PTR_ARRAY_0200e240",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_0200e240 + iVar8) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 73,
+      "match": "(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(uint *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(uint *)((int)g_C3DSLight_PTR_ARRAY_0200e56c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_C3DSLight_PTR_ARRAY_0200e56c + iVar8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "if (((*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6))[1].rect_array[0x61]",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "(*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "*(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "if (((*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6))[1].rect_array[0x61]",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "(*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
       "match": "(uint *)((int)local_44",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_44 + (uint)bVar8 * -8 + -8);",
+      "text": "*(uint *)((int)local_44 + (uint)bVar9 * -8 + -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 160,
       "match": "(uint *)((int)local_44",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + -4);",
+      "text": "*(uint *)((int)local_44 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + -4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 167,
-      "match": "DAT_0200e56c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_0200e56c + _DAT_0200e568 * 4) = iVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 180,
-      "match": "*(CDemonGlobe **)(iVar5 + 0x1fc9620",
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
       "severity": "moderate",
-      "text": "(*(CDemonGlobe **)(iVar5 + 0x1fc9620),position,rotation_matrix,aabb_min,",
-      "type": "raw_address_pointer_store"
+      "text": "(*(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar6),position",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_0200e3d8",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_0200e3d8 + _DAT_0200e3d4 * 4) = *(uint *)(iVar5 + 0x1fc9620);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 189,
+      "match": "(int *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar6);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 196,
-      "match": "DAT_01fc9ad8",
-      "severity": "mild",
-      "text": "(*(CDemonGlobe **)(&DAT_01fc9ad8 + iVar5),position,rotation_matrix,",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 202,
+      "match": "(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8",
+      "severity": "moderate",
+      "text": "(*(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8 + iVar6),position",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 200,
-      "match": "DAT_01fc9ad8",
-      "severity": "mild",
-      "text": "local_cc = *(int *)(&DAT_01fc9ad8 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 201,
-      "match": "DAT_0200e3d8",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_0200e3d8 + _DAT_0200e3d4 * 4) = local_cc;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 206,
+      "match": "(int *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8",
+      "severity": "moderate",
+      "text": "local_cc = *(int *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8 + iVar6);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 214,
+      "line": 220,
       "match": "&stack0xffffff24",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff24 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff24 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 216,
+      "line": 222,
       "match": "&stack0xffffff28",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff28 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff28 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 225,
       "match": "(float *)((int)local_44",
       "severity": "moderate",
-      "text": "local_a0[(uint)bVar8 * -2] = *(float *)((int)local_44 + (uint)bVar8 * -8 + 4);",
+      "text": "local_a0[(uint)bVar9 * -2] = *(float *)((int)local_44 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 227,
       "match": "(float *)((int)local_44",
       "severity": "moderate",
-      "text": "*(float *)((int)local_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "text": "*(float *)((int)local_44 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 239,
-      "match": "DAT_0200e56c",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&DAT_0200e56c + iVar5);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 245,
+      "match": "(int *)((int)g_C3DSLight_PTR_ARRAY_0200e56c",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)g_C3DSLight_PTR_ARRAY_0200e56c + iVar6);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `&_DAT_0200e3c0->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Scalar global g_INT_0200e23c accessed via (&g_INT_0200e23c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CDemonLight_PTR_ARRAY_0200e240 (at 0x0200e240, +4 bytes).",
+      "line": 133,
+      "match": "g_INT_0200e23c",
+      "severity": "moderate",
+      "text": "(&g_INT_0200e23c)[g_INT_0200e23c] =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_INT_0200e3d8 accessed via (&g_INT_0200e3d8)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_0200e568 (at 0x0200e568, +400 bytes).",
+      "line": 188,
+      "match": "g_INT_0200e3d8",
+      "severity": "moderate",
+      "text": "(&g_INT_0200e3d8)[g_INT_0200e3d4] =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_INT_0200e3d8 accessed via (&g_INT_0200e3d8)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_0200e568 (at 0x0200e568, +400 bytes).",
+      "line": 207,
+      "match": "g_INT_0200e3d8",
+      "severity": "moderate",
+      "text": "(&g_INT_0200e3d8)[g_INT_0200e3d4] = local_cc;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc960c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "if (*(int *)(*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar5) + 0x1cb4) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_0200e3c4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 55,
-      "match": "(int)&_DAT_0200e3c0->x",
+      "match": "(int)g_CDemonLight_PTR_ARRAY_0200e3c4",
       "severity": "moderate",
-      "text": "_DAT_0200e3c0 = (CVector3f *)((int)&_DAT_0200e3c0->x + 1);",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_0200e3c4 + iVar6) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&_DAT_0200e3c0->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc960c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc8e88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "if (*(int *)(*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6) + 0x1cb4) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_0200e240` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 72,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_0200e240",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_0200e240 + iVar8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc8e88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_INT_0200e3d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 85,
+      "match": "(int)&g_INT_0200e3d8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_INT_0200e3d8 + iVar8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_C3DSLight_PTR_ARRAY_0200e56c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
+      "match": "(int)g_C3DSLight_PTR_ARRAY_0200e56c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_C3DSLight_PTR_ARRAY_0200e56c + iVar8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_INT_01fc9cd8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)&g_INT_01fc9cd8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_INT_01fc9cd8 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc960c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 109,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "if (((*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6))[1].rect_array[0x61]",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc960c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 112,
-      "match": "(int)&_DAT_0200e3c0->x",
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc960c",
       "severity": "moderate",
-      "text": "_DAT_0200e3c0 = (CVector3f *)((int)&_DAT_0200e3c0->x + 1);",
+      "text": "(*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc960c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 115,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc960c",
+      "severity": "moderate",
+      "text": "*(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fc960c + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc8e88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 127,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "if (((*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6))[1].rect_array[0x61]",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc8e88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 130,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "(*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_ARRAY_01fc8e88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 134,
+      "match": "(int)g_CDemonLight_PTR_ARRAY_01fc8e88",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonLight_PTR_ARRAY_01fc8e88 + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_INT_01fc9cd8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 145,
+      "match": "(int)&g_INT_01fc9cd8",
+      "severity": "moderate",
+      "text": "pCVar1 = *(C3DSLight **)((int)&g_INT_01fc9cd8 + local_18);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
+      "line": 151,
       "match": "(int)&local_68",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_68 + (uint)bVar8 * -8 + 4) = local_58[(uint)bVar8 * -2];",
+      "text": "*(float *)((int)&local_68 + (uint)bVar9 * -8 + 4) = local_58[(uint)bVar9 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 147,
-      "match": "(int)&local_68",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_68 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&local_c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 152,
-      "match": "(int)&local_c8",
+      "match": "(int)&local_68",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_c8 + (uint)bVar8 * -8 + 4) =",
+      "text": "*(float *)((int)&local_68 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 154,
+      "line": 157,
       "match": "(int)&local_c8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_c8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_c8 + (uint)bVar9 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 159,
+      "match": "(int)&local_c8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_c8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 185,
+      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "severity": "moderate",
+      "text": "(*(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar6),position",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 189,
+      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9620 + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9ad8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 202,
+      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8",
+      "severity": "moderate",
+      "text": "(*(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8 + iVar6),position",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonGlobe_PTR_ARRAY_01fc9ad8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 206,
+      "match": "(int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8",
+      "severity": "moderate",
+      "text": "local_cc = *(int *)((int)g_CDemonGlobe_PTR_ARRAY_01fc9ad8 + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 213,
+      "line": 219,
       "match": "(int)&local_98",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_98 + (uint)bVar8 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_98 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 214,
+      "line": 220,
       "match": "(int)&stack0xffffff24",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff24 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff24 + (uint)bVar9 * -8);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 215,
+      "line": 221,
       "match": "(int)&local_98",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_98 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 216,
+      "line": 222,
       "match": "(int)&stack0xffffff28",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff28 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff28 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_C3DSLight_PTR_ARRAY_0200e56c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 245,
+      "match": "(int)g_C3DSLight_PTR_ARRAY_0200e56c",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)g_C3DSLight_PTR_ARRAY_0200e56c + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 157,
+      "line": 162,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_68.x = local_c8.x;",
@@ -999,34 +1142,34 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 55,
+      "line": 85,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "_DAT_0200e3c0 = (CVector3f *)((int)&_DAT_0200e3c0->x + 1);",
+      "text": "*(uint *)((int)&g_INT_0200e3d8 + iVar8) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 112,
+      "line": 98,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "_DAT_0200e3c0 = (CVector3f *)((int)&_DAT_0200e3c0->x + 1);",
+      "text": "*(uint *)((int)&g_INT_01fc9cd8 + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 146,
+      "line": 145,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_68 + (uint)bVar8 * -8 + 4) = local_58[(uint)bVar8 * -2];",
+      "text": "pCVar1 = *(C3DSLight **)((int)&g_INT_01fc9cd8 + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 147,
+      "line": 151,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_68 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
+      "text": "*(float *)((int)&local_68 + (uint)bVar9 * -8 + 4) = local_58[(uint)bVar9 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -1034,56 +1177,77 @@
       "line": 152,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_c8 + (uint)bVar8 * -8 + 4) =",
+      "text": "*(float *)((int)&local_68 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 154,
+      "line": 157,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_c8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_c8 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 213,
+      "line": 159,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_98 + (uint)bVar8 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_c8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 214,
+      "line": 219,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff24 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&local_98 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 215,
+      "line": 220,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_98 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
+      "text": "*(uint *)((int)&stack0xffffff24 + (uint)bVar9 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 216,
+      "line": 221,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff28 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&local_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 252,
-      "match": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01caf5b4) * *(float *)(iVar4 + 0",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 222,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01caf5b4) * *(float *)(iVar4 + 0x11dc) ) * _DAT_005e5972;",
+      "text": "*(uint *)((int)&stack0xffffff28 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `g_INT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `g_INT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 258,
+      "match": "fVar2 = (1.0 - (float)(((int)fVar2 >> 1) + g_INT_01caf5b4) * *(float *)(iVar5 + ",
+      "severity": "moderate",
+      "text": "fVar2 = (1.0 - (float)(((int)fVar2 >> 1) + g_INT_01caf5b4) * *(float *)(iVar5 + 0x11dc)) * 0.666f;",
       "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x200e23c] lands in g_INT_0200e23c but intended target is g_CDemonLight_PTR_ARRAY_0200e240 at 0x200e240 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_0200e23c",
+      "displacement": "0x200e23c",
+      "instruction_address": "",
+      "intended_global": "g_CDemonLight_PTR_ARRAY_0200e240",
+      "line": 175,
+      "match": "0x200e23c",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 00530c69: MOV dword ptr [EAX*0x4 + 0x200e23c],EDX  ; g_CDemonLight_PTR_ARRAY_0200e240",
+      "type": "displaced_global_access"
     }
   ]
 }

@@ -15,7 +15,7 @@
 ;   core_spireagl.cpp_CSpiritEagle_ctor_FUN_005991d0 at 005991db
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dd238
+;   float g_FLOAT_005dd238 = 6
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408600
@@ -246,7 +246,7 @@ section .text
     MOV dword ptr [ESI + 0xcdc4],0x0    ; 0042b088
     MOV dword ptr [ESI + 0xcdc8],0x0    ; 0042b092
     MOV dword ptr [ESI + 0x3264],0x1    ; 0042b09c
-    FLD float ptr [0x005dd238]          ; 0042b0a6 | DAT_005dd238
+    FLD float ptr [0x005dd238]          ; 0042b0a6 | g_FLOAT_005dd238
     MOV dword ptr [ESI + 0x3268],0x0    ; 0042b0ac
     MOV EAX,ESI                         ; 0042b0b6
     FSTP float ptr [ESI + 0xcd88]       ; 0042b0b8

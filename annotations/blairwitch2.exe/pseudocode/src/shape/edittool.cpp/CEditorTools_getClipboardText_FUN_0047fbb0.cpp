@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_0047fbb0(CEditorTools *this_ptr)
 
 {
@@ -20,7 +18,7 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_0047fbb0(CEd
   byte bVar7;
   
   bVar7 = 0;
-  BVar2 = OpenClipboard(_DAT_02664628);
+  BVar2 = OpenClipboard(g_HWND_02664628);
   if (BVar2 != 0) {
     pcVar3 = GetClipboardData(1);
     if (pcVar3 != (char *)0x0) {
@@ -33,9 +31,9 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_0047fbb0(CEd
         pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
-      _DAT_01c25598 = realloc(_DAT_01c25598,uVar4);
-      if (_DAT_01c25598 != (char *)0x0) {
-        pcVar6 = _DAT_01c25598;
+      g_CHAR_PTR_01c25598 = realloc(g_CHAR_PTR_01c25598,uVar4);
+      if (g_CHAR_PTR_01c25598 != (char *)0x0) {
+        pcVar6 = g_CHAR_PTR_01c25598;
         for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
           *(uint *)pcVar6 = *(uint *)pcVar3;
           pcVar3 = pcVar3 + (uint)bVar7 * -8 + 4;
@@ -50,8 +48,8 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_0047fbb0(CEd
     }
     CloseClipboard();
   }
-  if (_DAT_01c25598 != (char *)0x0) {
-    return _DAT_01c25598;
+  if (g_CHAR_PTR_01c25598 != (char *)0x0) {
+    return g_CHAR_PTR_01c25598;
   }
   return &DAT_005d24cf;
 }

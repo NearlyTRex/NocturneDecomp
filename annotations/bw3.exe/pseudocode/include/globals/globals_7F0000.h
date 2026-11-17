@@ -6,6 +6,8 @@
 #include "system/basetypes.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SCollisionInfo.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7F0000
@@ -16,16 +18,28 @@ extern CConsole g_CConsoleInstance;
 
 // CDemonActorType
 extern CDemonActorType g_CConstructClassInfo;
+extern CDemonActorType g_CDemonActorType_007f8edc;
+extern CDemonActorType g_CDemonActorType_007f8f18;
 extern CDemonActorType g_CZombieCowClassInfo;
 extern CDemonActorType g_CCrateClassInfo;
 extern CDemonActorType g_CCurtainClassInfo;
 
-// undefined4
-extern undefined4 DAT_007f8e64;
-extern undefined4 DAT_007f8e68;
-extern undefined4 DAT_007f8e6c;
-extern undefined4 DAT_007f8e74;
-extern undefined4 DAT_007f8e94;
-extern undefined4 DAT_007f8e9c;
-extern undefined4 DAT_007fa460;
+// CVector3f[100]
+extern CVector3f g_CVector3f_ARRAY_007f8fd0[100];
+
+// SCollisionInfo[100]
+extern SCollisionInfo g_SCollisionInfo_ARRAY_007f9480[100];
+
+// char[221596]
+extern char g_CHAR_ARRAY_007fa464[221596];
+
+// int
+extern int g_INT_007f8e64;
+extern int g_INT_007f8e68;
+extern int g_INT_007f8e6c;
+extern int g_INT_007f8e74;
+extern int g_INT_007f8e94;
+extern int g_INT_007f8e9c;
+extern int g_INT_007f8fcc;
+extern int g_INT_007fa460;
 

@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 54,
+    "complexity_score": 26,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 105
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -66,20 +63,20 @@
   "globals": [
     {
       "addr": "007303f4",
-      "name": "DAT_007303f4",
-      "type": "undefined4",
+      "name": "g_INT_007303f4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cfd0cc",
-      "name": "DAT_02cfd0cc",
-      "type": "undefined4",
+      "name": "g_INT_02cfd0cc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cfd0d0",
-      "name": "DAT_02cfd0d0",
-      "type": "undefined4",
+      "name": "g_CTextureCache_PTR_02cfd0d0",
+      "type": "CTextureCache*",
       "value": null
     }
   ],
@@ -198,22 +195,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_007303f4",
-      "severity": "mild",
-      "text": "if ((DAT_007303f4 == 0) && (texture->texture_name[0] != '\\0')) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

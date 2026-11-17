@@ -16,7 +16,7 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 00503181
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00601360
+;   double[64] g_DOUBLE_ARRAY_00601360
 ;
 ; *****************************************************************************
 
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_004fe9d4
     MOV EBX,dword ptr [EDX]             ; 004fe9d6
     FLD ST0                             ; 004fe9d8
-    FMUL double ptr [EBX*0x8 + 0x601360] ; 004fe9da | DAT_00601360
+    FMUL double ptr [EBX*0x8 + 0x601360] ; 004fe9da | g_DOUBLE_ARRAY_00601360
     FLD float ptr [EAX + 0x80]          ; 004fe9e1
     FXCH                                ; 004fe9e7
     FSTP ST2                            ; 004fe9e9
@@ -62,7 +62,7 @@ section .text
     FSTP float ptr [EAX]                ; 004fe9ed
     MOV EBX,dword ptr [EDX]             ; 004fe9ef
     FLD ST0                             ; 004fe9f1
-    FMUL double ptr [EBX*0x8 + 0x601360] ; 004fe9f3 | DAT_00601360
+    FMUL double ptr [EBX*0x8 + 0x601360] ; 004fe9f3 | g_DOUBLE_ARRAY_00601360
     FLD float ptr [EAX + 0x100]         ; 004fe9fa
     FXCH                                ; 004fea00
     FSTP ST2                            ; 004fea02
@@ -70,7 +70,7 @@ section .text
     FSTP float ptr [EAX + 0x80]         ; 004fea06
     MOV EBX,dword ptr [EDX]             ; 004fea0c
     FLD ST0                             ; 004fea0e
-    FMUL double ptr [EBX*0x8 + 0x601360] ; 004fea10 | DAT_00601360
+    FMUL double ptr [EBX*0x8 + 0x601360] ; 004fea10 | g_DOUBLE_ARRAY_00601360
     ADD EDX,0x180                       ; 004fea17
     ADD EAX,0x180                       ; 004fea1d
     INC ECX                             ; 004fea22

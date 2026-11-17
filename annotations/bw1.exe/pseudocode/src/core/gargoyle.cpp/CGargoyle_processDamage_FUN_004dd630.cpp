@@ -31,7 +31,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004dd630(CGargoyle *t
   do {
     iVar4 = iVar4 + 1;
     core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-              (0x01C57074,&CStack_28,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
+              (g_CFireEffect_PTR_0061c010,&CStack_28,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
   } while (iVar4 < 3);
   this_ptr_00 = &(this_ptr->base).base.model;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
@@ -54,7 +54,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004dd630(CGargoyle *t
       if (pSVar2->state_index != 8) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,8,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                  ((CDemonActor *)this_ptr,"@gargoyle-shatter.wav" + 1);
+                  ((CDemonActor *)this_ptr,"gargoyle-shatter.wav");
         core_charactr_cpp_CCharacter_dismember_FUN_00430d90
                   ((CCharacter *)this_ptr,(CVector3f *)0x0,-1.0,1);
       }

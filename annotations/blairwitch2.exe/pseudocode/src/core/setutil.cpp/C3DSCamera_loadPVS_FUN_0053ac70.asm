@@ -11,12 +11,12 @@
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0 at 0052caad
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6145
+;   TerminatedCString s_d_005e6145
 ;   TerminatedCString s_core_setutil_cpp_005e6149
 ;   TerminatedCString s_Out_of_memory_for_pvsLis_005e615d
-;   undefined4 DAT_005e617c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   TerminatedCString s_d_005e617c
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -35,7 +35,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 0053ac77
     LEA EAX,[EDI + 0x194]               ; 0053ac7b
     PUSH EAX                            ; 0053ac81
-    PUSH 0x5e6145                       ; 0053ac82 | DAT_005e6145
+    PUSH 0x5e6145                       ; 0053ac82 | = "%d\n"
     PUSH EBP                            ; 0053ac87
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053ac88
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0053accc
     ADD EAX,EBX                         ; 0053acd2
     PUSH EAX                            ; 0053acd4
-    PUSH 0x5e617c                       ; 0053acd5 | DAT_005e617c
+    PUSH 0x5e617c                       ; 0053acd5 | = "\t%d\n"
     PUSH EBP                            ; 0053acda
     INC ESI                             ; 0053acdb
     ADD EBX,0x4                         ; 0053acdc
@@ -90,8 +90,8 @@ section .text
     MOV ESI,0x5e6149                    ; 0053acf7 | = "..\\core\\setutil.cpp"
     MOV EAX,0xe4                        ; 0053acfc
     PUSH 0x5e615d                       ; 0053ad01 | = "Out of memory for pvsList - %d"
-    MOV dword ptr [0x01d046a0],ESI      ; 0053ad06 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0053ad0c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0053ad06 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0053ad0c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053ad11
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0053ad16

@@ -26,8 +26,8 @@
 ;   TerminatedCString s_SampleInfo_cvtPlaybackPo_005f3ce3
 ;   TerminatedCString s_sound_sndmain_cpp_005f3d43
 ;   TerminatedCString s_SampleInfo_cvtPlaybackPo_005f3d58
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_00572467
     MOV EDX,0xdd4                       ; 0057246c
     PUSH 0x5f3d58                       ; 00572471 | = "SampleInfo::cvtPlaybackPos - Invalid ..."
-    MOV [0x01d1d400],EAX                ; 00572476 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0057247b | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 00572476 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0057247b | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572481
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572486
@@ -105,8 +105,8 @@ section .text
     MOV ECX,0x5f3c09                    ; 005724ca | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xdbc                       ; 005724cf
     PUSH 0x5f3c1e                       ; 005724d4 | = "SampleInfo::cvtPlaybackPos - can't us..."
-    MOV dword ptr [0x01d1d400],ECX      ; 005724d9 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 005724df | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 005724d9 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 005724df | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005724e5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 005724ea
@@ -125,8 +125,8 @@ section .text
         ;   Label: LAB_00572505
     MOV EDX,0xdc1                       ; 0057250a
     PUSH 0x5f3c93                       ; 0057250f | = "SampleInfo::cvtPlaybackPos - Invalid ..."
-    MOV [0x01d1d400],EAX                ; 00572514 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00572519 | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 00572514 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00572519 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057251f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572524
@@ -152,8 +152,8 @@ section .text
     MOV ESI,0x5f3cce                    ; 00572558 | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xdcf                       ; 0057255d
     PUSH 0x5f3ce3                       ; 00572562 | = "SampleInfo::cvtPlaybackPos - can't us..."
-    MOV dword ptr [0x01d1d400],ESI      ; 00572567 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0057256d | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00572567 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0057256d | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572573
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00572578

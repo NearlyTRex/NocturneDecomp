@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004a8df0(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
 
 {
@@ -20,7 +18,7 @@ int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004a8df0(CBitFont *this_ptr,ch
   double dVar6;
   char *local_14;
   
-  if ((this_ptr->use_3d_rendering != 0) && (_DAT_01c37788 != 0)) {
+  if ((this_ptr->use_3d_rendering != 0) && (g_INT_01c37788 != 0)) {
     if (this_ptr->win_font_enabled == 0) {
       iVar1 = engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004ab840
                         (this_ptr,text,x,y,color_mode);
@@ -69,14 +67,15 @@ LAB_004a8e88:
   y_00 = y;
   if (this_ptr->use_3d_rendering == 0) goto LAB_004a8f2c;
   if (color_mode == -2) {
-    if (DAT_006141c0 == 0x20) {
-      uVar2 = _DAT_01cb024c << (DAT_01c35820 & 0x1f) | _DAT_01cb0248 << (DAT_01c35814 & 0x1f);
-      uVar4 = _DAT_01cb0250;
+    if (g_INT_006141c0 == 0x20) {
+      uVar2 = g_INT_01cb024c << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f) |
+              g_INT_01cb0248 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
+      uVar4 = g_INT_01cb0250;
 LAB_004a8f94:
-      uVar2 = uVar4 << (DAT_01c3582c & 0x1f) | uVar2;
+      uVar2 = uVar4 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) | uVar2;
     }
     else {
-      uVar2 = _DAT_01cb0248 << 0x10 | _DAT_01cb024c << 8 | _DAT_01cb0250;
+      uVar2 = g_INT_01cb0248 << 0x10 | g_INT_01cb024c << 8 | g_INT_01cb0250;
     }
   }
   else if (color_mode < 0) {
@@ -84,16 +83,16 @@ LAB_004a8f94:
   }
   else {
     iVar3 = color_mode * 3;
-    uVar4 = (uint)(byte)(&DAT_01c3583a)[iVar3];
-    if (DAT_006141c0 == 0x20) {
-      uVar2 = (uint)(byte)(&DAT_01c35839)[iVar3] << (DAT_01c35820 & 0x1f) |
-              (uint)(byte)(&DAT_01c35838)[iVar3] << (DAT_01c35814 & 0x1f);
+    uVar4 = (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 2];
+    if (g_INT_006141c0 == 0x20) {
+      uVar2 = (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f)
+              | (uint)g_UCHAR_ARRAY_01c35838[iVar3] << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
       goto LAB_004a8f94;
     }
-    uVar2 = (uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c35839)[iVar3] << 8 |
-            uVar4;
+    uVar2 = (uint)g_UCHAR_ARRAY_01c35838[iVar3] << 0x10 |
+            (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << 8 | uVar4;
   }
-  dVar6 = round((double)(_DAT_01d09860 * (float)_DAT_005d69dd));
+  dVar6 = round((double)(g_FLOAT_01d09860 * (float)255));
   this_ptr->accel_color = uVar2 | (int)ROUND(dVar6) << 0x18;
 LAB_004a8f2c:
   while (uVar2 = (uint)(byte)*text, uVar2 != 0) {

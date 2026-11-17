@@ -20,9 +20,9 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.collision_render_enabled
 ;
@@ -60,8 +60,8 @@ section .text
         ;   XREF to: 0042d9c7 (CONDITIONAL_JUMP)  ; LAB_0042d9c7
     PUSH EDI                            ; 0042d90d
     PUSH 0x1                            ; 0042d90e
-    MOV EDI,dword ptr [0x005f2afc]      ; 0042d910 | DAT_005f2afc
-    PUSH EDI                            ; 0042d916 | DAT_01bdd7e4
+    MOV EDI,dword ptr [0x005f2afc]      ; 0042d910 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDI                            ; 0042d916 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0 ; 0042d917
         ;   XREF to: 0046d4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 0042d91c
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 0042d930
     PUSH 0x0                            ; 0042d933
-    MOV EBP,dword ptr [0x005f2afc]      ; 0042d935 | DAT_005f2afc
-    PUSH EBP                            ; 0042d93b | DAT_01bdd7e4
+    MOV EBP,dword ptr [0x005f2afc]      ; 0042d935 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBP                            ; 0042d93b | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0 ; 0042d93c
         ;   XREF to: 0046d4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 0042d941
@@ -89,9 +89,9 @@ section .text
         ;   XREF to: 0043fc50 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_render_FUN_0043fc50(CClothList * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 0042d958
     POP ESI                             ; 0042d95b
-    MOV EAX,[0x005f2afc]                ; 0042d95c | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 0042d95c | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_0042d95c
-    PUSH EAX                            ; 0042d961 | DAT_01bdd7e4
+    PUSH EAX                            ; 0042d961 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0042d962
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0042d967

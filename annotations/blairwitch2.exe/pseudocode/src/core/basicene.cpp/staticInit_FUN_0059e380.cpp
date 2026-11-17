@@ -10,7 +10,7 @@ void __cdecl core_basicene_cpp_staticInit_FUN_0059e380(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CBasicEnemyClassInfo,"@CBasicEnemy" + 1,(CDemonActor_FactoryFunc *)0x0,
+            (&g_CBasicEnemyClassInfo,"CBasicEnemy",(CDemonActor_FactoryFunc *)0x0,
              &g_CBasicEnemyClassVersion,10,&g_CEnemyClassInfo);
   return;
 }

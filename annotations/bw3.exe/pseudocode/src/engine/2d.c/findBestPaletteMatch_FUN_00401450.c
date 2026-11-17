@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401450(int red,int green,int blue,int start_index,int end_index)
 
 {
@@ -21,7 +19,7 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401450(int red,int green,int 
   int unaff_EDI;
   float local_20;
   
-  pbVar5 = &DAT_01c6af98 + start_index * 3;
+  pbVar5 = g_UCHAR_ARRAY_01c6af98 + start_index * 3;
   local_20 = 1e+30;
   if (start_index <= end_index) {
     iVar7 = start_index << 2;
@@ -32,12 +30,12 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401450(int red,int green,int 
       fVar2 = (float)(int)((green - (uint)pbVar5[1] ^ uVar6) - uVar6);
       uVar6 = (int)(blue - (uint)pbVar5[2]) >> 0x1f;
       fVar3 = ABS(SQRT((float)blue * (float)blue +
-                       (float)green * (float)green + (float)red * (float)red) * (float)_DAT_005b5034
-                  - *(float *)((int)&DAT_0072ffb8 + iVar7));
+                       (float)green * (float)green + (float)red * (float)red) *
+                  (float)0.57735027000000005 - *(float *)((int)&DAT_0072ffb8 + iVar7));
       fVar4 = (float)(int)((blue - (uint)pbVar5[2] ^ uVar6) - uVar6);
-      fVar1 = fVar3 * fVar3 * (float)_DAT_005b5054 +
-              fVar4 * fVar4 * (float)_DAT_005b504c +
-              fVar2 * fVar2 * (float)_DAT_005b5044 + fVar1 * fVar1 * (float)_DAT_005b503c;
+      fVar1 = fVar3 * fVar3 * (float)0.14999999999999999 +
+              fVar4 * fVar4 * (float)0.11 +
+              fVar2 * fVar2 * (float)0.58999999999999997 + fVar1 * fVar1 * (float)0.29999999999999999;
       if (fVar1 < local_20) {
         unaff_EDI = start_index;
         local_20 = fVar1;

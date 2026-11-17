@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 74,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 34,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 181
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 180
   },
   "cross_references": [],
   "function": {
@@ -150,103 +147,103 @@
     },
     {
       "addr": "007db570",
-      "name": "DAT_007db570",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_007db570",
+      "type": "int[17]",
       "value": null
     },
     {
       "addr": "007db574",
-      "name": "DAT_007db574",
+      "name": "g_INT_ARRAY_007db570[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db578",
-      "name": "DAT_007db578",
+      "name": "g_INT_ARRAY_007db570[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db57c",
-      "name": "DAT_007db57c",
+      "name": "g_INT_ARRAY_007db570[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db580",
-      "name": "DAT_007db580",
+      "name": "g_INT_ARRAY_007db570[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db584",
-      "name": "DAT_007db584",
+      "name": "g_INT_ARRAY_007db570[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db588",
-      "name": "DAT_007db588",
+      "name": "g_INT_ARRAY_007db570[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db58c",
-      "name": "DAT_007db58c",
+      "name": "g_INT_ARRAY_007db570[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db590",
-      "name": "DAT_007db590",
+      "name": "g_INT_ARRAY_007db570[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db594",
-      "name": "DAT_007db594",
+      "name": "g_INT_ARRAY_007db570[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db598",
-      "name": "DAT_007db598",
+      "name": "g_INT_ARRAY_007db570[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db59c",
-      "name": "DAT_007db59c",
+      "name": "g_INT_ARRAY_007db570[11]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db5a0",
-      "name": "DAT_007db5a0",
+      "name": "g_INT_ARRAY_007db570[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db5a4",
-      "name": "DAT_007db5a4",
+      "name": "g_INT_ARRAY_007db570[13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db5a8",
-      "name": "DAT_007db5a8",
+      "name": "g_INT_ARRAY_007db570[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db5ac",
-      "name": "DAT_007db5ac",
+      "name": "g_INT_ARRAY_007db570[15]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007db5b0",
-      "name": "DAT_007db5b0",
+      "name": "g_INT_ARRAY_007db570[16]",
       "type": "undefined4",
       "value": null
     }
@@ -316,24 +313,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_007db570",
-      "severity": "mild",
-      "text": "DAT_007db570 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

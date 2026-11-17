@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo laser_info,int recursion_depth)
 
@@ -82,8 +81,8 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
   float local_48;
   float local_44;
   int local_30;
-  uint local_2c;
-  float local_28;
+  CDemonActor *local_2c;
+  CDemonActor *local_28;
   float fStack_24;
   float local_20;
   float fStack_1c;
@@ -129,15 +128,16 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
           local_f4.y = local_d0.y;
           local_f4.z = local_d0.z;
         }
-        local_28 = SQRT(local_f4.z * local_f4.z + local_f4.x * local_f4.x + local_f4.y * local_f4.y)
+        local_28 = (CDemonActor *)
+                   SQRT(local_f4.z * local_f4.z + local_f4.x * local_f4.x + local_f4.y * local_f4.y)
         ;
-        if (local_28 <= 0.0) {
+        if ((float)local_28 <= 0.0) {
           local_f4.y = 0.0;
           local_f4.x = 0.0;
           local_f4.z = 0.0;
         }
         else {
-          fVar16 = 1.0 / local_28;
+          fVar16 = 1.0 / (float)local_28;
           local_f4.x = local_f4.x * fVar16;
           local_f4.y = local_f4.y * fVar16;
           local_f4.z = local_f4.z * fVar16;
@@ -170,9 +170,8 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
         }
       }
       local_18 = g_CDemonSetPtr->collision_actor;
-      iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      local_2c = *(uint *)(iVar1 + 0x20b8c);
-      *(uint *)(iVar1 + 0x20b8c) = 0;
+      local_2c = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->aim_target_actor;
+      g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->aim_target_actor = (CDemonActor *)0x0;
       laser_info.reflectivity = 0.0;
       laser_info.stored_angle = 0.0;
       laser_info.transparency = 0.0;
@@ -225,13 +224,12 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
                  core_actor_cpp_castToClassHash_FUN_0040c840(local_18,g_CEnemyClassInfo.name_hash);
         if ((pCVar2 != (CCharacter *)0x0) &&
            (iVar3 = (*(((pCVar2->base).vtable._uc)->_uc).isInvulnerable)(pCVar2),
-           iVar1 = _DAT_01d5ba14, iVar3 == 0)) {
-          *(CCharacter **)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x20b8c) = pCVar2;
-          iVar1 = *(int *)(iVar1 * 4 + 0x1d5ba04);
-          if (local_28 == *(float *)(iVar1 + 0x20b8c)) {
+           iVar1 = g_INT_01d5ba14, iVar3 == 0)) {
+          g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->aim_target_actor = (CDemonActor *)pCVar2;
+          if (local_28 == g_CHero_PTR_ARRAY_01d5ba04[iVar1]->aim_target_actor) {
             return;
           }
-          *(uint *)(iVar1 + 0x20b90) = 0;
+          g_CHero_PTR_ARRAY_01d5ba04[iVar1]->aim_target_pulse = 0.0;
           return;
         }
         puVar4 = (uint *)((int)direction + (uint)bVar7 * -8 + 4);
@@ -254,7 +252,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
         }
         fVar16 = fStack_140 * direction->z + fStack_148 * direction->x + fStack_144 * direction->y;
         dVar8 = (double)fVar16;
-        if ((float)_DAT_005c09f0 < fVar16) {
+        if ((float)-1 < fVar16) {
           if (dVar8 < 1.0) {
             dVar8 = acos(dVar8);
             local_20 = (float)dVar8;
@@ -276,7 +274,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
       }
       if (0.0 < laser_info.transparency) {
         local_20 = (local_f4.z * direction->z +
-                   local_f4.x * direction->x + local_f4.y * direction->y) * _DAT_005c09e4;
+                   local_f4.x * direction->x + local_f4.y * direction->y) * 2.0f;
         fVar16 = local_f4.x * local_20;
         local_b8 = fVar16;
         local_b4[0] = local_f4.y * local_20;
@@ -340,7 +338,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
         core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20
                   (this_ptr,&local_c4,&local_dc,laser_info_00,iVar1);
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_0053ea20(g_CDemonSetPtr);
-        local_168 = (1.0 - laser_info.transparency) * (float)_DAT_005c09e8 * local_168;
+        local_168 = (1.0 - laser_info.transparency) * (float)0.25 * local_168;
       }
       if (laser_info.reflectivity <= 0.0) goto LAB_004a32cf;
       if ((laser_info.reflectivity != 1.0) ||
@@ -390,7 +388,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
     laser_info_01.transparency = (float)pCVar15;
     core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20
               (this_ptr,&local_c4,&local_88,laser_info_01,iVar1);
-    local_168 = (1.0 - laser_info.reflectivity) * (float)_DAT_005c09e8 * local_168;
+    local_168 = (1.0 - laser_info.reflectivity) * (float)0.25 * local_168;
 LAB_004a32cf:
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_004a2aa0
               (this_ptr,&local_e8,&local_c4,laser_info.intensity,local_168,&local_f4,

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_00552bd0(void)
 
 {
@@ -32,54 +30,56 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_00552bd0(void)
   float fStack_14;
   
   bVar7 = 0;
-  if (_DAT_02cf341c < 1) {
-    _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d71de4 = 0x595;
+  if (g_INT_02cf341c < 1) {
+    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d71de4 = 0x595;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::kill - must be locked!");
   }
-  if (0 < _DAT_02cf3294) {
-    _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d71de4 = 0x599;
+  if (0 < g_INT_02cf3294) {
+    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d71de4 = 0x599;
     core_main_c_displayErrorAndQuit_FUN_004e4330("nextMixingBuffer - shouldn't have any data pending!");
   }
   iVar5 = 0;
-  count = _DAT_02cf329c * 4;
-  if (0 < DAT_0060422c) {
+  count = g_INT_02cf329c * 4;
+  if (0 < g_INT_0060422c) {
     iVar2 = 0;
     do {
       memmove
-                (*(void **)(iVar2 + 0x2cf32cc),
-                 (void *)(_DAT_02cf329c * 4 + (int)*(void **)(iVar2 + 0x2cf32cc)),
-                 (_DAT_02cf32a0 + -1) * count);
-      piVar1 = (int *)(iVar2 + 0x2cf32cc);
+                (*(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2),
+                 (void *)(g_INT_02cf329c * 4 +
+                         (int)*(void **)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2)),
+                 (g_INT_02cf32a0 + -1) * count);
+      piVar1 = (int *)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2);
       iVar2 = iVar2 + 4;
       iVar5 = iVar5 + 1;
       in_stack_ffffffb0 = 0x552c76;
       memset
-                ((void *)(*piVar1 + (_DAT_02cf32a0 + -1) * _DAT_02cf329c * 4),0,count);
-    } while (iVar5 < DAT_0060422c);
+                ((void *)(*piVar1 + (g_INT_02cf32a0 + -1) * g_INT_02cf329c * 4),0,count);
+    } while (iVar5 < g_INT_0060422c);
   }
-  iStack_20 = _DAT_02cf329c;
-  iStack_1c = DAT_0060422c;
-  iStack_18 = DAT_00604230;
-  if (0 < DAT_0060422c) {
+  iStack_20 = g_INT_02cf329c;
+  iStack_1c = g_INT_0060422c;
+  iStack_18 = g_INT_00604230;
+  if (0 < g_INT_0060422c) {
     iVar5 = 0;
     do {
       iVar2 = iVar5 + 4;
-      *(uint *)((int)auStack_40 + iVar5) = *(uint *)(iVar5 + 0x2cf32cc);
+      *(uint *)((int)auStack_40 + iVar5) =
+           *(uint *)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar5);
       iVar5 = iVar2;
-    } while (iVar2 < DAT_0060422c * 4);
+    } while (iVar2 < g_INT_0060422c * 4);
   }
-  fStack_14 = (float)_DAT_02cf329c / (float)DAT_00604230;
-  pCVar3 = (CSfxSlot *)0x2ce721c;
+  fStack_14 = (float)g_INT_02cf329c / (float)g_INT_00604230;
+  pCVar3 = g_CSfxSlot_ARRAY_02ce721c;
   do {
     uVar8 = 0x552cf7;
     pCVar9 = pCVar3;
     fVar10 = fStack_14;
     sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(pCVar3,fStack_14);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != (CSfxSlot *)&DAT_02ceb91c);
-  pCVar3 = (CSfxSlot *)0x2ce721c;
+  } while (pCVar3 != g_CSfxSlot_ARRAY_02ce721c + sizeof(g_CSfxSlot_ARRAY_02ce721c) / sizeof(g_CSfxSlot_ARRAY_02ce721c[0]));
+  pCVar3 = g_CSfxSlot_ARRAY_02ce721c;
   do {
     puVar4 = auStack_40;
     puVar6 = (uint *)&stack0xffffff94;
@@ -101,9 +101,9 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_00552bd0(void)
     mix_buffer.output_sample_rate = (int)fVar10;
     sound_sndmain_cpp_CSfxSlot_mix_FUN_00554920(pCVar3,mix_buffer);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != (CSfxSlot *)&DAT_02ceb91c);
-  _DAT_02cf3294 = _DAT_02cf329c;
-  _DAT_02cf3298 = 0;
-  _DAT_02cf3338 = _DAT_02cf3338 + 1;
+  } while (pCVar3 != g_CSfxSlot_ARRAY_02ce721c + sizeof(g_CSfxSlot_ARRAY_02ce721c) / sizeof(g_CSfxSlot_ARRAY_02ce721c[0]));
+  g_INT_02cf3294 = g_INT_02cf329c;
+  g_INT_02cf3298 = 0;
+  g_INT_02cf3338 = g_INT_02cf3338 + 1;
   return;
 }

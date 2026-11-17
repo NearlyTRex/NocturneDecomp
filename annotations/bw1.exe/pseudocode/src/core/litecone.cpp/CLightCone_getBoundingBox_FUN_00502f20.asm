@@ -7,7 +7,7 @@
 ; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e705a
+;   double g_DOUBLE_005e705a = 18
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00502f25
     MOV EDX,ESI                         ; 00502f29
     FLD float ptr [ECX + 0x158]         ; 00502f2b
-    FDIVR double ptr [0x005e705a]       ; 00502f31 | DAT_005e705a
+    FDIVR double ptr [0x005e705a]       ; 00502f31 | g_DOUBLE_005e705a
     FMUL float ptr [ECX + 0x15c]        ; 00502f37
     MOV EDI,ESI                         ; 00502f3d
     FST float ptr [ESP + 0x18]          ; 00502f3f

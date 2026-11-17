@@ -37,7 +37,8 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0058a440(CWeapon *this_pt
   uint uStack_c;
   
   bVar5 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
   if (iVar1 != 0) {
     return;
   }
@@ -112,7 +113,7 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0058a440(CWeapon *this_pt
   laser_info.reflectivity = (float)in_stack_fffffef4._72_4_;
   laser_info.transparency = (float)actor_ptr;
   core_fire_cpp_CFireEffect_traceLaser_FUN_0049db20
-            (0x01C3DEB4,&CStack_58,&CStack_40,laser_info,recursion_depth);
+            (g_CFireEffect_PTR_00614d30,&CStack_58,&CStack_40,laser_info,recursion_depth);
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
   return;
 }

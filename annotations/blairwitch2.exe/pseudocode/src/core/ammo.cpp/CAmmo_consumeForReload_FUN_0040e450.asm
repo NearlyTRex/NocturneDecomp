@@ -12,7 +12,7 @@
 ;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dc9fa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cb23d
+;   TerminatedCString s_CGun_005cb23d
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880
@@ -33,7 +33,7 @@ section .text
     RET                                 ; 0040e461
     MOV EAX,dword ptr [ESP + 0xc]       ; 0040e462
         ;   Label: LAB_0040e462
-    PUSH 0x5cb23d                       ; 0040e466 | DAT_005cb23d
+    PUSH 0x5cb23d                       ; 0040e466 | = "CGun"
     ADD EAX,0x2437c                     ; 0040e46b
     PUSH EAX                            ; 0040e470
     CALL core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880 ; 0040e471

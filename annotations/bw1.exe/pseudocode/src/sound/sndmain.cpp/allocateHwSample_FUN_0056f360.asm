@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c78ff0
-;   undefined4 DAT_02c80650
+;   int g_INT_02c78ff0
+;   CSoundDevice* g_CSoundDevice_PTR_02c80650
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020
@@ -19,13 +19,13 @@ section .text
     PUSH EBX                            ; 0056f360
         ;   Label: sound_sndmain.cpp_allocateHwSample_FUN_0056f360
     PUSH ESI                            ; 0056f361
-    CMP dword ptr [0x02c80650],0x0      ; 0056f362 | DAT_02c80650
+    CMP dword ptr [0x02c80650],0x0      ; 0056f362 | g_CSoundDevice_PTR_02c80650
     JZ 0x0056f3bf                       ; 0056f369
         ;   XREF to: 0056f3bf (CONDITIONAL_JUMP)  ; LAB_0056f3bf
     XOR ESI,ESI                         ; 0056f36b
     LEA EDX,[ESP + 0xc]                 ; 0056f36d
         ;   Label: LAB_0056f36d
-    MOV EAX,[0x02c80650]                ; 0056f371 | DAT_02c80650
+    MOV EAX,[0x02c80650]                ; 0056f371 | g_CSoundDevice_PTR_02c80650
     PUSH EDX                            ; 0056f376
     MOV ECX,dword ptr [EAX]             ; 0056f377
     PUSH EAX                            ; 0056f379
@@ -34,7 +34,7 @@ section .text
     TEST EAX,EAX                        ; 0056f380
     JNZ 0x0056f3c1                      ; 0056f382
         ;   XREF to: 0056f3c1 (CONDITIONAL_JUMP)  ; LAB_0056f3c1
-    MOV EAX,[0x02c78ff0]                ; 0056f384 | DAT_02c78ff0
+    MOV EAX,[0x02c78ff0]                ; 0056f384 | g_INT_02c78ff0
     MOV EBX,ESI                         ; 0056f389
     IMUL ECX,EAX,0x1b0                  ; 0056f38b
     INC EAX                             ; 0056f391

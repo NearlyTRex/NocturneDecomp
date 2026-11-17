@@ -15,10 +15,10 @@
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540 at 00402562
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f076c
-;   undefined4 DAT_005f0770
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
+;   int g_INT_005f076c = 0x1
+;   int g_INT_005f0770 = 0xf8
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextMultilineColor_FUN_00401f50
@@ -35,15 +35,15 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00402443
     MOV EAX,dword ptr [ESP + 0x14]      ; 00402447
     MOV ECX,dword ptr [ESP + 0x18]      ; 0040244b
-    CMP dword ptr [0x005f076c],0x0      ; 0040244f | DAT_005f076c
+    CMP dword ptr [0x005f076c],0x0      ; 0040244f | g_INT_005f076c
     JZ 0x0040247e                       ; 00402456
         ;   XREF to: 0040247e (CONDITIONAL_JUMP)  ; LAB_0040247e
     PUSH EBX                            ; 00402458
-    MOV EBX,dword ptr [0x005f0770]      ; 00402459 | DAT_005f0770
+    MOV EBX,dword ptr [0x005f0770]      ; 00402459 | g_INT_005f0770
     PUSH EBX                            ; 0040245f
-    MOV ESI,dword ptr [0x01c6b5b4]      ; 00402460 | DAT_01c6b5b4
+    MOV ESI,dword ptr [0x01c6b5b4]      ; 00402460 | g_INT_01c6b5b4
     PUSH ESI                            ; 00402466
-    MOV EDI,dword ptr [0x01c6b5b0]      ; 00402467 | DAT_01c6b5b0
+    MOV EDI,dword ptr [0x01c6b5b0]      ; 00402467 | g_INT_01c6b5b0
     PUSH EDI                            ; 0040246d
     PUSH ECX                            ; 0040246e
     PUSH EAX                            ; 0040246f
@@ -56,12 +56,12 @@ section .text
     POP EDI                             ; 0040247b
     POP ESI                             ; 0040247c
     RET                                 ; 0040247d
-    MOV ESI,dword ptr [0x005f0770]      ; 0040247e | DAT_005f0770
+    MOV ESI,dword ptr [0x005f0770]      ; 0040247e | g_INT_005f0770
         ;   Label: LAB_0040247e
     PUSH ESI                            ; 00402484
-    MOV EDI,dword ptr [0x01c6b5b4]      ; 00402485 | DAT_01c6b5b4
+    MOV EDI,dword ptr [0x01c6b5b4]      ; 00402485 | g_INT_01c6b5b4
     PUSH EDI                            ; 0040248b
-    MOV EBP,dword ptr [0x01c6b5b0]      ; 0040248c | DAT_01c6b5b0
+    MOV EBP,dword ptr [0x01c6b5b0]      ; 0040248c | g_INT_01c6b5b0
     PUSH EBP                            ; 00402492
     PUSH ECX                            ; 00402493
     PUSH EAX                            ; 00402494

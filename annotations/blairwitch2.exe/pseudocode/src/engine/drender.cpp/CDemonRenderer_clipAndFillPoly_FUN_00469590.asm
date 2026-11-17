@@ -24,12 +24,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005d14d0
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_005d14e6
-;   undefined4 DAT_007bee30
-;   undefined4 DAT_007bee34
-;   undefined4 DAT_01c38b54
-;   undefined4 DAT_01c38b55
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_007bee30
+;   SRenderVertex[16] g_SRenderVertex_ARRAY_007bee34
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   undefined4 g_BIT_INTEGER32_01c38b54+1
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -62,10 +62,10 @@ section .text
     CMP dword ptr [EDI + 0x4],0x0       ; 004695ac
     JZ 0x004695bb                       ; 004695b0
         ;   XREF to: 004695bb (CONDITIONAL_JUMP)  ; LAB_004695bb
-    TEST byte ptr [0x01c38b54],0x1      ; 004695b2 | DAT_01c38b54
+    TEST byte ptr [0x01c38b54],0x1      ; 004695b2 | g_BIT_INTEGER32_01c38b54
     JZ 0x004695c4                       ; 004695b9
         ;   XREF to: 004695c4 (CONDITIONAL_JUMP)  ; LAB_004695c4
-    TEST byte ptr [0x01c38b54],0x5      ; 004695bb | DAT_01c38b54
+    TEST byte ptr [0x01c38b54],0x5      ; 004695bb | g_BIT_INTEGER32_01c38b54
         ;   Label: LAB_004695bb
     JNZ 0x004695f8                      ; 004695c2
         ;   XREF to: 004695f8 (CONDITIONAL_JUMP)  ; LAB_004695f8
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_004695d3
     MOV EBP,0xad                        ; 004695d8
     PUSH 0x5d14e6                       ; 004695dd | = "CDemonRenderer::clipAndFillPoly - Bad..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004695e2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004695e8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004695e2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 004695e8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004695ee
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004695f3
@@ -104,14 +104,14 @@ section .text
         ;   Label: LAB_00469601
     JZ 0x00469610                       ; 00469605
         ;   XREF to: 00469610 (CONDITIONAL_JUMP)  ; LAB_00469610
-    TEST byte ptr [0x01c38b54],0x1      ; 00469607 | DAT_01c38b54
+    TEST byte ptr [0x01c38b54],0x1      ; 00469607 | g_BIT_INTEGER32_01c38b54
     JZ 0x00469631                       ; 0046960e
         ;   XREF to: 00469631 (CONDITIONAL_JUMP)  ; LAB_00469631
-    TEST byte ptr [0x01c38b54],0x5      ; 00469610 | DAT_01c38b54
+    TEST byte ptr [0x01c38b54],0x5      ; 00469610 | g_BIT_INTEGER32_01c38b54
         ;   Label: LAB_00469610
     JZ 0x00469631                       ; 00469617
         ;   XREF to: 00469631 (CONDITIONAL_JUMP)  ; LAB_00469631
-    TEST byte ptr [0x01c38b55],0x2      ; 00469619 | DAT_01c38b55
+    TEST byte ptr [0x01c38b55],0x2      ; 00469619 | g_BIT_INTEGER32_01c38b54+1
     JZ 0x00469659                       ; 00469620
         ;   XREF to: 00469659 (CONDITIONAL_JUMP)  ; LAB_00469659
     PUSH ESI                            ; 00469622
@@ -129,13 +129,13 @@ section .text
     PUSH EBX                            ; 00469632
     CALL core_xform.cpp_transformAndClipGeometry_FUN_00594f40 ; 00469633
         ;   XREF to: 00594f40 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_00594f40(int vertex_count, int * vertex_indices)
-    MOV ECX,dword ptr [0x007bee30]      ; 00469638 | DAT_007bee30
+    MOV ECX,dword ptr [0x007bee30]      ; 00469638 | g_INT_007bee30
     ADD ESP,0x8                         ; 0046963e
     CMP ECX,0x2                         ; 00469641
     JLE 0x004695ce                      ; 00469644
         ;   XREF to: 004695ce (CONDITIONAL_JUMP)  ; LAB_004695ce
     PUSH ECX                            ; 00469646
-    PUSH 0x7bee34                       ; 00469647 | DAT_007bee34
+    PUSH 0x7bee34                       ; 00469647 | g_SRenderVertex_ARRAY_007bee34
     CALL engine_zraster.c_rasterizeTriangle_FUN_0059a0b0 ; 0046964c
         ;   XREF to: 0059a0b0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_0059a0b0(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 00469651

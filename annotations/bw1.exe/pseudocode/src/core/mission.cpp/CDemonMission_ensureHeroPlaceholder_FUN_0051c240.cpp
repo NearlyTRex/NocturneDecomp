@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240(CDemonMission *this_ptr)
 
 {
@@ -35,8 +33,8 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240(C
           name = shape_edittool_cpp_CStrList_getStringAt_FUN_004998a0(&local_3cc.base,iVar1);
           pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0(this_ptr,name);
           if (pCVar3 == (CDemonActor *)0x0) {
-            _DAT_01d1d400 = "..\\core\\mission.cpp";
-            _DAT_01d1d404 = 0x6e4;
+            g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
+            g_INT_01d1d404 = 0x6e4;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze finding hero.");
           }
           this_ptr_00 = operator_new(0x17c);
@@ -71,7 +69,8 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240(C
     if (iVar1 != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_3cc.base,pCVar3->actor_name);
     }
-    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar3,_DAT_01d06b4c);
+    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c600
+                       (pCVar3,g_CDemonActorType_01d06b14.name_hash);
     if ((pCVar2 != (CDemonActor *)0x0) && (*(int *)pCVar2[1].actor_name == 0)) break;
     pCVar3 = pCVar3->next_actor;
   }

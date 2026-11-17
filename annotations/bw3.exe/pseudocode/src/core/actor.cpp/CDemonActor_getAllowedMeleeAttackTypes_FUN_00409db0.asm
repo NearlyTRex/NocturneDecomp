@@ -10,9 +10,9 @@
 ;   core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_00416b60 at 00416b71
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b5601
-;   undefined4 DAT_005b5609
-;   undefined4 DAT_005b5611
+;   double g_DOUBLE_005b5601 = 2
+;   double g_DOUBLE_005b5609 = 0.700000000000000
+;   double g_DOUBLE_005b5611 = 6
 ;
 ; *****************************************************************************
 
@@ -59,7 +59,7 @@ section .text
     XOR EBX,EBX                         ; 00409e19
     FLD float ptr [ESP + 0x64]          ; 00409e1b
     FST double ptr [ESP + 0x18]         ; 00409e1f
-    FCOMP double ptr [0x005b5601]       ; 00409e23 | DAT_005b5601
+    FCOMP double ptr [0x005b5601]       ; 00409e23 | g_DOUBLE_005b5601
     FNSTSW AX                           ; 00409e29
     SAHF                                ; 00409e2b
     JC 0x00409eed                       ; 00409e2c
@@ -81,13 +81,13 @@ section .text
         ;   XREF to: 00409e89 (CONDITIONAL_JUMP)  ; LAB_00409e89
     FLD float ptr [ESP + 0x6c]          ; 00409e4c
     FST double ptr [ESP]                ; 00409e50
-    FCOMP double ptr [0x005b5601]       ; 00409e53 | DAT_005b5601
+    FCOMP double ptr [0x005b5601]       ; 00409e53 | g_DOUBLE_005b5601
     FNSTSW AX                           ; 00409e59
     SAHF                                ; 00409e5b
     JBE 0x00409e89                      ; 00409e5c
         ;   XREF to: 00409e89 (CONDITIONAL_JUMP)  ; LAB_00409e89
     FLD double ptr [ESP]                ; 00409e5e
-    FCOMP double ptr [0x005b5611]       ; 00409e61 | DAT_005b5611
+    FCOMP double ptr [0x005b5611]       ; 00409e61 | g_DOUBLE_005b5611
     FNSTSW AX                           ; 00409e67
     SAHF                                ; 00409e69
     JNC 0x00409e89                      ; 00409e6a
@@ -130,7 +130,7 @@ section .text
     JNC 0x00409ee4                      ; 00409eb6
         ;   XREF to: 00409ee4 (CONDITIONAL_JUMP)  ; LAB_00409ee4
     FLD double ptr [ESP + 0x8]          ; 00409eb8
-    FCOMP double ptr [0x005b5601]       ; 00409ebc | DAT_005b5601
+    FCOMP double ptr [0x005b5601]       ; 00409ebc | g_DOUBLE_005b5601
     FNSTSW AX                           ; 00409ec2
     SAHF                                ; 00409ec4
     JNC 0x00409ee4                      ; 00409ec5
@@ -159,32 +159,32 @@ section .text
     FLD float ptr [ESP + 0x68]          ; 00409eed
         ;   Label: LAB_00409eed
     FST double ptr [ESP + 0x20]         ; 00409ef1
-    FCOMP double ptr [0x005b5601]       ; 00409ef5 | DAT_005b5601
+    FCOMP double ptr [0x005b5601]       ; 00409ef5 | g_DOUBLE_005b5601
     FNSTSW AX                           ; 00409efb
     SAHF                                ; 00409efd
     JNC 0x00409e32                      ; 00409efe
         ;   XREF to: 00409e32 (CONDITIONAL_JUMP)  ; LAB_00409e32
     FLD float ptr [ESP + 0x6c]          ; 00409f04
     FST double ptr [ESP + 0x10]         ; 00409f08
-    FCOMP double ptr [0x005b5601]       ; 00409f0c | DAT_005b5601
+    FCOMP double ptr [0x005b5601]       ; 00409f0c | g_DOUBLE_005b5601
     FNSTSW AX                           ; 00409f12
     SAHF                                ; 00409f14
     JNC 0x00409e32                      ; 00409f15
         ;   XREF to: 00409e32 (CONDITIONAL_JUMP)  ; LAB_00409e32
     FLD double ptr [ESP + 0x18]         ; 00409f1b
-    FCOMP double ptr [0x005b5609]       ; 00409f1f | DAT_005b5609
+    FCOMP double ptr [0x005b5609]       ; 00409f1f | g_DOUBLE_005b5609
     FNSTSW AX                           ; 00409f25
     SAHF                                ; 00409f27
     JBE 0x00409e32                      ; 00409f28
         ;   XREF to: 00409e32 (CONDITIONAL_JUMP)  ; LAB_00409e32
     FLD double ptr [ESP + 0x20]         ; 00409f2e
-    FCOMP double ptr [0x005b5609]       ; 00409f32 | DAT_005b5609
+    FCOMP double ptr [0x005b5609]       ; 00409f32 | g_DOUBLE_005b5609
     FNSTSW AX                           ; 00409f38
     SAHF                                ; 00409f3a
     JBE 0x00409e32                      ; 00409f3b
         ;   XREF to: 00409e32 (CONDITIONAL_JUMP)  ; LAB_00409e32
     FLD double ptr [ESP + 0x10]         ; 00409f41
-    FCOMP double ptr [0x005b5609]       ; 00409f45 | DAT_005b5609
+    FCOMP double ptr [0x005b5609]       ; 00409f45 | g_DOUBLE_005b5609
     FNSTSW AX                           ; 00409f4b
     SAHF                                ; 00409f4d
     JBE 0x00409e32                      ; 00409f4e

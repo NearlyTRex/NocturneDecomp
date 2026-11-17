@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   card_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264bba4
-;   undefined4 DAT_0264bcf0
+;   int g_INT_0264bba4
+;   HWND g_HWND_0264bcf0
 ;
 ; Called Functions:
 ;   engine_special.cpp_kill_FUN_0055f4d0
@@ -27,7 +27,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00560477
     MOV ESI,dword ptr [ESP + 0xc]       ; 0056047b
     MOV EDI,0x61e180                    ; 0056047f
-    MOV [0x0264bba4],EAX                ; 00560484 | DAT_0264bba4
+    MOV [0x0264bba4],EAX                ; 00560484 | g_INT_0264bba4
     PUSH EDI                            ; 00560489
     MOV AL,byte ptr [ESI]               ; 0056048a
         ;   Label: LAB_0056048a
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 0056048a (CONDITIONAL_JUMP)  ; LAB_0056048a
     POP EDI                             ; 005604a2
         ;   Label: LAB_005604a2
-    MOV EDX,dword ptr [0x0264bcf0]      ; 005604a3 | DAT_0264bcf0
+    MOV EDX,dword ptr [0x0264bcf0]      ; 005604a3 | g_HWND_0264bcf0
     PUSH EDX                            ; 005604a9
     CALL engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 ; 005604aa
         ;   XREF to: 0055e8c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_0055e8c0(HWND window_handle)

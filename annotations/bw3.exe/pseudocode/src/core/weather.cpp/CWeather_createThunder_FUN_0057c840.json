@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 27,
+    "complexity_score": 12,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 36
   },
   "cross_references": [
@@ -55,9 +53,9 @@
     },
     {
       "addr": "006045f8",
-      "name": "DAT_006045f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006045f8",
+      "type": "CSound*",
+      "value": "02cf5680"
     }
   ],
   "param_estimates": {
@@ -153,14 +151,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex address 0x2cf5680 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 9,
-      "match": "0x2cf5680",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x02CF5680;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

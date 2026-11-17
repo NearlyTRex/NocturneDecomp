@@ -7,8 +7,8 @@
 ; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
@@ -29,16 +29,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x40]      ; 0043a136
     LEA EAX,[EBX + 0x20]                ; 0043a13a
     PUSH EAX                            ; 0043a13d
-    MOV EDX,dword ptr [0x0060b280]      ; 0043a13e | DAT_0060b280
-    PUSH EDX                            ; 0043a144 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 0043a13e | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 0043a144 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0 ; 0043a145
         ;   XREF to: 0046b2b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0043a14a
     PUSH 0x0                            ; 0043a14d
     LEA EAX,[EBX + 0x30]                ; 0043a14f
     PUSH EAX                            ; 0043a152
-    MOV ECX,dword ptr [0x0060b280]      ; 0043a153 | DAT_0060b280
-    PUSH ECX                            ; 0043a159 | DAT_01ba5c50
+    MOV ECX,dword ptr [0x0060b280]      ; 0043a153 | g_CDemonRenderer_PTR_0060b280
+    PUSH ECX                            ; 0043a159 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 0043a15a
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0043a15f
@@ -61,9 +61,9 @@ section .text
     TEST EAX,EAX                        ; 0043a193
     JNZ 0x0043a1b1                      ; 0043a195
         ;   XREF to: 0043a1b1 (CONDITIONAL_JUMP)  ; LAB_0043a1b1
-    MOV EBX,dword ptr [0x0060b280]      ; 0043a197 | DAT_0060b280
+    MOV EBX,dword ptr [0x0060b280]      ; 0043a197 | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_0043a197
-    PUSH EBX                            ; 0043a19d | DAT_01ba5c50
+    PUSH EBX                            ; 0043a19d | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 0043a19e
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 0043a1a3

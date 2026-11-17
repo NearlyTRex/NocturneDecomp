@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr,float delta_time)
 
@@ -60,8 +59,9 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
     afStack_a4[(uint)bVar7 * -2 + 3] = afStack_80[(uint)bVar7 * -2 + 3];
     afStack_a4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
          afStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-    if ((ABS(afStack_a4[3]) < (float)_DAT_005cca21) &&
-       ((ABS(afStack_a4[2]) < (float)_DAT_005cca21 && (ABS(fStack_94) < (float)_DAT_005cca21)))) {
+    if ((ABS(afStack_a4[3]) < (float)2) &&
+       ((ABS(afStack_a4[2]) < (float)2 &&
+        (ABS(fStack_94) < (float)2)))) {
       core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0(this_ptr);
       core_bugs_cpp_CBugs_setSwarmTarget_FUN_00421b10(this_ptr,&((this_ptr->base).victim)->base);
       if (this_ptr->state == BUGS_STATE_ATTACK) {
@@ -84,7 +84,7 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
                        (this_ptr->base).base.base.direction_hint);
     if (iVar6 != 0) {
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&CStack_e8,&CStack_90);
-      CStack_6c.z = _DAT_005f3e34 * delta_time;
+      CStack_6c.z = 2.0f * delta_time;
       CStack_6c.x = 0.0;
       CStack_6c.y = 0.0;
       fStack_14 = CStack_6c.z;
@@ -125,10 +125,10 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
       afStack_5c[(uint)bVar7 * -2] = afStack_80[(uint)bVar7 * -2];
       afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
            afStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      afStack_2c[2] = fStack_60 * _DAT_005cca29;
-      afStack_2c[3] = afStack_5c[0] * _DAT_005cca29;
-      fStack_1c = afStack_5c[1] * _DAT_005cca29;
-      fStack_a8 = fStack_60 * _DAT_005cca29;
+      afStack_2c[2] = fStack_60 * 0.5f;
+      afStack_2c[3] = afStack_5c[0] * 0.5f;
+      fStack_1c = afStack_5c[1] * 0.5f;
+      fStack_a8 = fStack_60 * 0.5f;
       afStack_a4[(uint)bVar7 * -2] = afStack_2c[(uint)bVar7 * -2 + 3];
       afStack_a4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
            afStack_2c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];

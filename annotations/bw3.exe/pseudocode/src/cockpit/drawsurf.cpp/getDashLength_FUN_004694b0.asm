@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2aec
+;   int g_INT_005f2aec = 0x1
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x005f2aec]                ; 004694b0 | DAT_005f2aec
+    MOV EAX,[0x005f2aec]                ; 004694b0 | g_INT_005f2aec
         ;   Label: cockpit_drawsurf.cpp_getDashLength_FUN_004694b0
     RET                                 ; 004694b5
 

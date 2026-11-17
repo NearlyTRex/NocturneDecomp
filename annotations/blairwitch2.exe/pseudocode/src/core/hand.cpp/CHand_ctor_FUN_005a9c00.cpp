@@ -15,7 +15,7 @@ CHand * __cdecl core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
   this_ptr_01 = (CHand *)core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_01->base).base.base.base.vtable._ub = &g_CHandVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(this_ptr_01->base).base.base.model,(char *)0x5f09e9);
+            (&(this_ptr_01->base).base.base.model,"Hand.dfm");
   (this_ptr_01->base).base.base.collision_cylinder_radius = 0.5;
   (this_ptr_01->base).anim_speed_scale = 1.7;
   (this_ptr_01->base).base.base.base.is_transparent = 1;

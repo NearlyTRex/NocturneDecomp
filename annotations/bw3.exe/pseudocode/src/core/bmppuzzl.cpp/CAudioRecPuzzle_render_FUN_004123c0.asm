@@ -7,10 +7,10 @@
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b678e
+;   double g_DOUBLE_005b678e = 0.300000000000000
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01c5fadc
-;   undefined4 DAT_01c5fae0
+;   int g_INT_01c5fadc
+;   int g_INT_01c5fae0
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
@@ -78,7 +78,7 @@ section .text
     INC EAX                             ; 0041242d
     FLD float ptr [EDX + 0x314]         ; 0041242e
     MOV dword ptr [ESP + 0x8],EAX       ; 00412434
-    FMUL double ptr [0x005b678e]        ; 00412438 | DAT_005b678e
+    FMUL double ptr [0x005b678e]        ; 00412438 | g_DOUBLE_005b678e
     FILD dword ptr [ESP + 0x8]          ; 0041243e
     FMULP                               ; 00412442
     LEA EAX,[EDI + 0x50]                ; 00412444
@@ -93,7 +93,7 @@ section .text
     INC EAX                             ; 0041245a
     FLD float ptr [EDX + 0x314]         ; 0041245b
     MOV dword ptr [ESP + 0x8],EAX       ; 00412461
-    FMUL double ptr [0x005b678e]        ; 00412465 | DAT_005b678e
+    FMUL double ptr [0x005b678e]        ; 00412465 | g_DOUBLE_005b678e
     FILD dword ptr [ESP + 0x8]          ; 0041246b
     FMULP                               ; 0041246f
     LEA EAX,[EDI + 0x50]                ; 00412471
@@ -140,13 +140,13 @@ section .text
     CALL dword ptr [EAX + 0x3c]         ; 004124d6
     MOV EDX,dword ptr [EDI + 0x18]      ; 004124d9
     ADD ESP,0x14                        ; 004124dc
-    MOV EAX,[0x01c5fae0]                ; 004124df | DAT_01c5fae0
+    MOV EAX,[0x01c5fae0]                ; 004124df | g_INT_01c5fae0
     MOV ECX,dword ptr [EDI + EDX*0x4 + 0xbf4] ; 004124e4
     PUSH 0xffff                         ; 004124eb
     SUB EAX,ECX                         ; 004124f0
     MOV EBX,dword ptr [EDI + EDX*0x4 + 0xbe4] ; 004124f2
     PUSH EAX                            ; 004124f9
-    MOV EAX,[0x01c5fadc]                ; 004124fa | DAT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 004124fa | g_INT_01c5fadc
     SUB EAX,EBX                         ; 004124ff
     PUSH EAX                            ; 00412501
     LEA EAX,[EDX*0x4 + 0x0]             ; 00412502

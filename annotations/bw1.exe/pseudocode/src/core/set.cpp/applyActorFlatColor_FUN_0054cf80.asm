@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_02026358
+;   int g_INT_02026358
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_00555770
@@ -21,7 +21,7 @@ section .text
         ;   Label: core_set.cpp_applyActorFlatColor_FUN_0054cf80
     PUSH ESI                            ; 0054cf81
     MOV EAX,dword ptr [ESP + 0xc]       ; 0054cf82
-    MOV EDX,dword ptr [0x02026358]      ; 0054cf86 | DAT_02026358
+    MOV EDX,dword ptr [0x02026358]      ; 0054cf86 | g_INT_02026358
     MOV EBX,dword ptr [EAX + 0x10c]     ; 0054cf8c
     MOV ECX,dword ptr [EAX + 0x110]     ; 0054cf92
     MOV ESI,dword ptr [EAX + 0x108]     ; 0054cf98

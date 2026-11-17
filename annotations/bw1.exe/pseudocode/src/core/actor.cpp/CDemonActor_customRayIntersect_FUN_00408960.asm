@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005d2406
 ;   TerminatedCString s_CDemonActor_customRayInt_005d2418
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -28,8 +28,8 @@ section .text
     MOV ECX,0x2dc                       ; 00408966
     PUSH 0x5d2418                       ; 0040896b | = "CDemonActor::customRayIntersect shoul..."
     MOV EBX,0x40000000                  ; 00408970
-    MOV dword ptr [0x01d1d400],EDX      ; 00408975 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040897b | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00408975 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0040897b | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00408981
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00408986

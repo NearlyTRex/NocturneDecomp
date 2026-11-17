@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_005071a0(CNetGame *this_ptr,int player_index)
 
 {
@@ -19,13 +17,13 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_005071a0(CNetGame *this_
   void *local_14;
   
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
-    _DAT_01d71de0 = "..\\core\\netgame.cpp";
-    _DAT_01d71de4 = 0x862;
+    g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
+    g_INT_01d71de4 = 0x862;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::removePlayer - invalid player index");
   }
   if (player_index == this_ptr->local_player_index) {
-    _DAT_01d71de0 = "..\\core\\netgame.cpp";
-    _DAT_01d71de4 = 0x869;
+    g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
+    g_INT_01d71de4 = 0x869;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::removePlayer - tried to remove myself!");
   }
   if (player_index == this_ptr->server_player_index) {
@@ -40,7 +38,7 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_005071a0(CNetGame *this_
   memmove
             (this_ptr->players + player_index,this_ptr->players + player_index + 1,
              (iVar1 - player_index) * 0x80);
-  if (0 < _DAT_01dc2690) {
+  if (0 < g_INT_01dc2690) {
     dest = &DAT_01dc269c + player_index;
     src = &DAT_01dc269d + player_index;
     local_14 = (void *)(player_index * 4 + 0x1dc26a0);
@@ -54,7 +52,7 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_005071a0(CNetGame *this_
       dest = dest + 0x114;
       src_00 = src_00 + 0x114;
       local_14 = (void *)((int)local_14 + 0x114);
-    } while (iVar2 < _DAT_01dc2690);
+    } while (iVar2 < g_INT_01dc2690);
   }
   if (player_index < this_ptr->server_player_index) {
     this_ptr->server_player_index = this_ptr->server_player_index + -1;

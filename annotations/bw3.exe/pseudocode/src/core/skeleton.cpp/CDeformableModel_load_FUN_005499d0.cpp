@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005499d0(CDeformableModel *this_ptr,char *filename)
 
 {
@@ -15,10 +13,10 @@ void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005499d0(CDeformableMod
   _FILE *file_handle;
   char *pcVar2;
   
-  file_handle = engine_dosio_cpp_getFile_FUN_004659c0("models",filename,&DAT_005d1b14);
+  file_handle = engine_dosio_cpp_getFile_FUN_004659c0("models",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-    _DAT_01d71de4 = 0x4c1;
+    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+    g_INT_01d71de4 = 0x4c1;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::load - Can't open %s");
   }
   core_skeleton_cpp_CDeformableModel_loadStream_FUN_00549a60(this_ptr,file_handle);

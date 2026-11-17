@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_box_cpp_CBox_setupN_FUN_0041b030(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume)
 
@@ -31,8 +30,8 @@ void __cdecl core_box_cpp_CBox_setupN_FUN_0041b030(CBox *this_ptr,CVector3f *pos
   
   bVar3 = 0;
   if (8 < point_count) {
-    _DAT_01d71de0 = "..\\core\\box.cpp";
-    _DAT_01d71de4 = 0x80;
+    g_CHAR_PTR_01d71de0 = "..\\core\\box.cpp";
+    g_INT_01d71de4 = 0x80;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CBox::setupN - Too many scrape points");
   }
   fStack_30 = 999.0;

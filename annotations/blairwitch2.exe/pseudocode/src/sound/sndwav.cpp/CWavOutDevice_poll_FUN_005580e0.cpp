@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005580e0(CWavOutDevice *this_ptr)
 
 {
@@ -16,7 +14,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005580e0(CWavOutDevice *this
   int buffer_index;
   
   buffer_index = 0;
-  if (0 < _DAT_0264b104) {
+  if (0 < g_INT_0264b104) {
     iVar2 = 0;
     do {
       if ((*(int *)(iVar2 + 0x264b094) == 0) || (*(int *)(iVar2 + 0x264b0d4) == 0)) {
@@ -30,7 +28,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005580e0(CWavOutDevice *this
       }
       buffer_index = buffer_index + 1;
       iVar2 = iVar2 + 4;
-    } while (buffer_index < _DAT_0264b104);
+    } while (buffer_index < g_INT_0264b104);
   }
   return 1;
 }

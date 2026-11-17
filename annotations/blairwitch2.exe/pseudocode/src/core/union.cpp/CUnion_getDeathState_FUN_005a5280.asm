@@ -7,7 +7,7 @@
 ; CUnion *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_BDeath_005f0571+1
+;   TerminatedCString s_Death_005f0572
 ;   TerminatedCString s_Animation_005f0578
 ;
 ; Called Functions:
@@ -21,7 +21,7 @@ section .text
     PUSH EBX                            ; 005a5280
         ;   Label: core_union.cpp_CUnion_getDeathState_FUN_005a5280
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a5281
-    PUSH 0x5f0572                       ; 005a5285 | s_BDeath_005f0571+1
+    PUSH 0x5f0572                       ; 005a5285 | = "Death"
     ADD EBX,0x10af8                     ; 005a528a
     PUSH EBX                            ; 005a5290
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a5291

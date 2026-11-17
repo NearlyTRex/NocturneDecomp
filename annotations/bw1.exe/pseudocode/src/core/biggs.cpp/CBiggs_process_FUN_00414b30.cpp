@@ -129,15 +129,15 @@ LAB_00414c01:
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
   iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,this_ptr->morph_event);
+                    (g_CEventList_PTR_0061b4d0,this_ptr->morph_event);
   if (iVar5 != 0) {
     this_ptr->morph_timer = 0.0;
     this_ptr->morphing = 1;
   }
   if ((this_ptr->morphing != 0) &&
      (fVar4 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar4,
-     0x40800000 < fVar4)) {
-    this_ptr->morph_timer = 0x40800000;
+     4.0f < fVar4)) {
+    this_ptr->morph_timer = 4.0f;
     return;
   }
   return;

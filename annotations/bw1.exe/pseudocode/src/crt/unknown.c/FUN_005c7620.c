@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005c7620(void)
 
 {
@@ -16,8 +14,8 @@ uint FUN_005c7620(void)
   float10 fVar1;
   float10 fVar2;
   
-  if (in_ST0 <= (float10)_DAT_006267bc) {
-    if ((float10)_DAT_006267c4 < in_ST0) {
+  if (in_ST0 <= (float10)709.78271289338397) {
+    if ((float10)-709.78271289338397 < in_ST0) {
       fVar1 = ROUND((float10)1.4426950408889634 * in_ST0);
       fVar2 = (float10)f2xm1((float10)1.4426950408889634 * in_ST0 - fVar1);
       fscale((float10)1 + fVar2,fVar1);

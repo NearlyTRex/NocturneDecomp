@@ -23,12 +23,12 @@ void __cdecl core_bird_cpp_CBird_processDamage_FUN_00415910(CBird *this_ptr,SDam
       (this_ptr->base).hit_points = 0.0;
       (*pCVar1->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0(&this_ptr->base);
-      motion_name = &DAT_005d3d6a;
+      motion_name = "DIE";
     }
     else {
       if ((damage_info->damage_amount <= 0.0) || ((this_ptr->base).grabbed_by != (CDemonActor *)0x0)
          ) goto LAB_00415973;
-      motion_name = &DAT_005d3d6e;
+      motion_name = "DIE";
     }
     core_bird_cpp_setRandomMotionVariant_FUN_00415830(&(this_ptr->base).model.base,motion_name);
   }

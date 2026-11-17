@@ -39,12 +39,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_wav_005efd2c
-;   undefined4 DAT_005efd3b
-;   undefined4 DAT_005efd3f
+;   float g_FLOAT_005efd3b = 0.6600000
+;   double g_DOUBLE_005efd3f = 10
 ;   undefined4 DAT_005fedb8
-;   undefined4 DAT_00614d30
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.ray_origin.x
@@ -100,7 +100,7 @@ section .text
     ADD EAX,EDX                         ; 005a151a
     PUSH EAX                            ; 005a151c
     LEA ESI,[ESP + 0x114]               ; 005a151d
-    PUSH 0x265370c                      ; 005a1524 | DAT_0265370c
+    PUSH 0x265370c                      ; 005a1524 | g_CVector3f_0265370c
     LEA EDI,[ESP + 0x94]                ; 005a1529
     MOV dword ptr [ESP + 0x15c],EDX     ; 005a1530
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a1537
@@ -129,7 +129,7 @@ section .text
     SHL EAX,0x4                         ; 005a1585
     ADD EAX,ESI                         ; 005a1588
     PUSH EAX                            ; 005a158a
-    PUSH 0x265370c                      ; 005a158b | DAT_0265370c
+    PUSH 0x265370c                      ; 005a158b | g_CVector3f_0265370c
     LEA ESI,[ESP + 0x7c]                ; 005a1590
     LEA EDI,[ESP + 0x13c]               ; 005a1594
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a159b
@@ -170,7 +170,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a1621
     MOVSD ES:EDI,ESI                    ; 005a1622
     MOVSD ES:EDI,ESI                    ; 005a1623
-    FLD float ptr [0x005efd3b]          ; 005a1624 | DAT_005efd3b
+    FLD float ptr [0x005efd3b]          ; 005a1624 | g_FLOAT_005efd3b
     FLD float ptr [ESP + 0x104]         ; 005a162a
     FMUL ST1                            ; 005a1631
     FLD float ptr [ESP + 0x108]         ; 005a1633
@@ -216,7 +216,7 @@ section .text
     PUSH EAX                            ; 005a16f5
     LEA EAX,[ESP + 0x108]               ; 005a16f6
     PUSH EAX                            ; 005a16fd
-    MOV EDI,dword ptr [0x00614d30]      ; 005a16fe | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 005a16fe | g_CFireEffect_PTR_00614d30
     PUSH EDI                            ; 005a1704
     CALL core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170 ; 005a1705
         ;   XREF to: 0049d170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
@@ -226,7 +226,7 @@ section .text
     LEA EAX,[ESP + 0xc4]                ; 005a1714
     PUSH 0x3fc00000                     ; 005a171b
     PUSH EAX                            ; 005a1720
-    MOV EAX,[0x00614d30]                ; 005a1721 | DAT_00614d30
+    MOV EAX,[0x00614d30]                ; 005a1721 | g_CFireEffect_PTR_00614d30
     PUSH EAX                            ; 005a1726
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230 ; 005a1727
         ;   XREF to: 0049d230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -235,7 +235,7 @@ section .text
     PUSH EAX                            ; 005a1733
     PUSH 0x5efd2c                       ; 005a1734 | = "shotgun.wav"
     PUSH EBX                            ; 005a1739
-    MOV EDX,dword ptr [0x0061c068]      ; 005a173a | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 005a173a | g_CSound_PTR_0061c068
     PUSH EDX                            ; 005a1740
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a1741
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -404,7 +404,7 @@ section .text
     FMUL ST0                            ; 005a1943
     FADDP                               ; 005a1945
     FSQRT                               ; 005a1947
-    FDIVR double ptr [0x005efd3f]       ; 005a1949 | DAT_005efd3f
+    FDIVR double ptr [0x005efd3f]       ; 005a1949 | g_DOUBLE_005efd3f
     FLD float ptr [ESP + 0xec]          ; 005a194f
     FXCH                                ; 005a1956
     FSTP float ptr [ESP + 0x14c]        ; 005a1958

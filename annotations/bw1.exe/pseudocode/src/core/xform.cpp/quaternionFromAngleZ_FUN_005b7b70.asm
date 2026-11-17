@@ -18,7 +18,7 @@
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0058aab0 at 0058ab11
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa184
+;   float g_FLOAT_005fa184 = 0.5
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     SUB ESP,0x18                        ; 005b7b71
     MOV EDX,ESI                         ; 005b7b74
     FLD float ptr [ESP + 0x20]          ; 005b7b76
-    FMUL float ptr [0x005fa184]         ; 005b7b7a | DAT_005fa184
+    FMUL float ptr [0x005fa184]         ; 005b7b7a | g_FLOAT_005fa184
     FLD ST0                             ; 005b7b80
     FCOS                                ; 005b7b82
     FXCH                                ; 005b7b84

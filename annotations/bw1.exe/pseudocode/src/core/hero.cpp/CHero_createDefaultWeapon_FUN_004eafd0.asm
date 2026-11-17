@@ -10,15 +10,15 @@
 ;   core_hero.cpp_CHero_ctor_FUN_004ea830 at 004ea942
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4800
+;   TerminatedCString s_CGun_005e4800
 ;   TerminatedCString s_core_hero_cpp_005e4805
 ;   TerminatedCString s_Out_of_memory_005e4816
 ;   TerminatedCString s_Your_weapon_005e4825
 ;   undefined4 s_our_weapon_005e4825+1
 ;   undefined4 s_ur_weapon_005e4825+2
 ;   undefined4 s_r_weapon_005e4825+3
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     ADD ESP,0x4                         ; 004eafe2
     MOV EDX,dword ptr [0x02c99770]      ; 004eafe5 | g_CWeaponClassInfo.name_hash
     PUSH EDX                            ; 004eafeb
-    PUSH 0x5e4800                       ; 004eafec | DAT_005e4800
+    PUSH 0x5e4800                       ; 004eafec | = "CGun"
     CALL core_actor.cpp_createActorByName_FUN_0040c2b0 ; 004eaff1
         ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004eaff6
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_004eb05c
     MOV ESI,0x1d3                       ; 004eb061
     PUSH 0x5e4816                       ; 004eb066 | = "Out of memory!"
-    MOV dword ptr [0x01d1d400],ECX      ; 004eb06b | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004eb071 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004eb06b | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 004eb071 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004eb077
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004eb07c

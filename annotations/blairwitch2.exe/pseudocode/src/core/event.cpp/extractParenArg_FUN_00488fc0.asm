@@ -16,7 +16,7 @@
 ;   TerminatedCString s_No_opening_parenthesis_005d2f24
 ;   TerminatedCString s_Argument_too_long_005d2f3b
 ;   TerminatedCString s_Can_t_find_closing_paren_005d2f4d
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005ba1f0
@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_00488fce
     INC AL                              ; 00488fd0
     AND EAX,0xff                        ; 00488fd2
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00488fd7 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00488fd7 | g_UCHAR_ARRAY_0061ed94
     JZ 0x00488fe3                       ; 00488fde
         ;   XREF to: 00488fe3 (CONDITIONAL_JUMP)  ; LAB_00488fe3
     INC ECX                             ; 00488fe0
@@ -141,7 +141,7 @@ section .text
         ;   Label: LAB_00489079
     INC CL                              ; 0048907c
     AND ECX,0xff                        ; 0048907e
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489084 | DAT_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 00489084 | g_UCHAR_ARRAY_0061ed94
     JNZ 0x004890b7                      ; 0048908b
         ;   XREF to: 004890b7 (CONDITIONAL_JUMP)  ; LAB_004890b7
     LEA EAX,[EBX + EBP*0x1]             ; 0048908d
@@ -152,7 +152,7 @@ section .text
         ;   Label: LAB_00489096
     INC AL                              ; 00489099
     AND EAX,0xff                        ; 0048909b
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004890a0 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 004890a0 | g_UCHAR_ARRAY_0061ed94
     JZ 0x004890bf                       ; 004890a7
         ;   XREF to: 004890bf (CONDITIONAL_JUMP)  ; LAB_004890bf
     PUSH EBX                            ; 004890a9
@@ -179,7 +179,7 @@ section .text
     XOR ECX,ECX                         ; 004890c3
     INC BL                              ; 004890c5
     MOV CL,BL                           ; 004890c7
-    TEST byte ptr [ECX + 0x61ed94],0x2  ; 004890c9 | DAT_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],0x2  ; 004890c9 | g_UCHAR_ARRAY_0061ed94
     JZ 0x004890d5                       ; 004890d0
         ;   XREF to: 004890d5 (CONDITIONAL_JUMP)  ; LAB_004890d5
     INC EAX                             ; 004890d2

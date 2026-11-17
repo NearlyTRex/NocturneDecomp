@@ -5,19 +5,19 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf6084
+;   void* g_PTR_02cf6084
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x02cf6084],0x0      ; 005664a0 | DAT_02cf6084
+    CMP dword ptr [0x02cf6084],0x0      ; 005664a0 | g_PTR_02cf6084
         ;   Label: engine_special.cpp_unlockTexture_FUN_005664a0
     JNZ 0x005664ac                      ; 005664a7
         ;   XREF to: 005664ac (CONDITIONAL_JUMP)  ; LAB_005664ac
     XOR EAX,EAX                         ; 005664a9
     RET                                 ; 005664ab
-    CALL dword ptr [0x02cf6084]         ; 005664ac | DAT_02cf6084
+    CALL dword ptr [0x02cf6084]         ; 005664ac | g_PTR_02cf6084
         ;   Label: LAB_005664ac
     RET                                 ; 005664b2
 

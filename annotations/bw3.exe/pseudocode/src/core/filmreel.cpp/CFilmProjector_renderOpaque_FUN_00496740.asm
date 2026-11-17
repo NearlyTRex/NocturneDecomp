@@ -7,7 +7,7 @@
 ; CFilmProjector * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -73,7 +73,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EDX      ; 004967b5
     MOV dword ptr [ESP + 0x3c],EDX      ; 004967b9
     PUSH 0x2cfd900                      ; 004967bd
-    MOV EDX,dword ptr [0x005f2afc]      ; 004967c2 | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 004967c2 | g_CDemonRenderer_PTR_005f2afc
     MOV EBP,0x40000000                  ; 004967c8
     PUSH EDX                            ; 004967cd
     MOV dword ptr [ESP + 0x40],EBP      ; 004967ce
@@ -83,7 +83,7 @@ section .text
     PUSH 0x2cfd900                      ; 004967da
     LEA EAX,[ESP + 0x40]                ; 004967df
     PUSH EAX                            ; 004967e3
-    MOV ECX,dword ptr [0x005f2afc]      ; 004967e4 | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 004967e4 | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 004967ea
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30 ; 004967eb
         ;   XREF to: 0046cf30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
@@ -95,12 +95,12 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540 ; 004967fe
         ;   XREF to: 00462540 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 00496803
-    MOV EDI,dword ptr [0x005f2afc]      ; 00496806 | DAT_005f2afc
+    MOV EDI,dword ptr [0x005f2afc]      ; 00496806 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDI                            ; 0049680c
     CALL engine_drender.cpp_pop_FUN_0046d080 ; 0049680d
         ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 00496812
-    MOV EBP,dword ptr [0x005f2afc]      ; 00496815 | DAT_005f2afc
+    MOV EBP,dword ptr [0x005f2afc]      ; 00496815 | g_CDemonRenderer_PTR_005f2afc
     PUSH EBP                            ; 0049681b
     CALL engine_drender.cpp_pop_FUN_0046d080 ; 0049681c
         ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()

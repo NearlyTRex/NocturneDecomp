@@ -28,10 +28,10 @@
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_005a2d00 at 005a32f4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f8b6c
-;   undefined4 DAT_005f8b70
-;   undefined4 DAT_006074cc
-;   undefined4 DAT_006074d0
+;   float g_FLOAT_005f8b6c = 0.01745329
+;   double g_DOUBLE_005f8b70 = 0.00100000000000000
+;   float g_FLOAT_006074cc = -0.5235988
+;   float g_FLOAT_006074d0 = 1.221730
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
@@ -82,19 +82,19 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a33ac
     MOVSD ES:EDI,ESI                    ; 005a33ad
     FLD float ptr [ESP + 0x20]          ; 005a33ae
-    FCOMP float ptr [0x006074cc]        ; 005a33b2 | DAT_006074cc
+    FCOMP float ptr [0x006074cc]        ; 005a33b2 | g_FLOAT_006074cc
     FNSTSW AX                           ; 005a33b8
     SAHF                                ; 005a33ba
     JC 0x005a350f                       ; 005a33bb
         ;   XREF to: 005a350f (CONDITIONAL_JUMP)  ; LAB_005a350f
     FLD float ptr [ESP + 0x20]          ; 005a33c1
         ;   Label: LAB_005a33c1
-    FCOMP float ptr [0x006074d0]        ; 005a33c5 | DAT_006074d0
+    FCOMP float ptr [0x006074d0]        ; 005a33c5 | g_FLOAT_006074d0
     FNSTSW AX                           ; 005a33cb
     SAHF                                ; 005a33cd
     JBE 0x005a33d9                      ; 005a33ce
         ;   XREF to: 005a33d9 (CONDITIONAL_JUMP)  ; LAB_005a33d9
-    MOV EAX,[0x006074d0]                ; 005a33d0 | DAT_006074d0
+    MOV EAX,[0x006074d0]                ; 005a33d0 | g_FLOAT_006074d0
     MOV dword ptr [ESP + 0x20],EAX      ; 005a33d5
     FLD float ptr [ESP + 0x24]          ; 005a33d9
         ;   Label: LAB_005a33d9
@@ -116,7 +116,7 @@ section .text
         ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     FLD float ptr [EBX + 0x778]         ; 005a340e
     MOV dword ptr [ESP + 0x48],EAX      ; 005a3414
-    FMUL float ptr [0x005f8b6c]         ; 005a3418 | DAT_005f8b6c
+    FMUL float ptr [0x005f8b6c]         ; 005a3418 | g_FLOAT_005f8b6c
     FLD float ptr [ESP + 0x48]          ; 005a341e
     ADD ESP,0x4                         ; 005a3422
     FXCH                                ; 005a3425
@@ -179,7 +179,7 @@ section .text
         ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005a34b3
     FLD float ptr [ESP + 0x4]           ; 005a34b6
-    FCOMP double ptr [0x005f8b70]       ; 005a34ba | DAT_005f8b70
+    FCOMP double ptr [0x005f8b70]       ; 005a34ba | g_DOUBLE_005f8b70
     FNSTSW AX                           ; 005a34c0
     SAHF                                ; 005a34c2
     JNC 0x005a351d                      ; 005a34c3
@@ -196,7 +196,7 @@ section .text
     JZ 0x005a3525                       ; 005a34db
         ;   XREF to: 005a3525 (CONDITIONAL_JUMP)  ; LAB_005a3525
     FLD float ptr [ESP]                 ; 005a34dd
-    FCOMP double ptr [0x005f8b70]       ; 005a34e0 | DAT_005f8b70
+    FCOMP double ptr [0x005f8b70]       ; 005a34e0 | g_DOUBLE_005f8b70
     FNSTSW AX                           ; 005a34e6
     SAHF                                ; 005a34e8
     JNC 0x005a3521                      ; 005a34e9
@@ -219,7 +219,7 @@ section .text
     POP ESI                             ; 005a350c
     POP EBX                             ; 005a350d
     RET                                 ; 005a350e
-    MOV EAX,[0x006074cc]                ; 005a350f | DAT_006074cc
+    MOV EAX,[0x006074cc]                ; 005a350f | g_FLOAT_006074cc
         ;   Label: LAB_005a350f
     MOV dword ptr [ESP + 0x20],EAX      ; 005a3514
     JMP 0x005a33c1                      ; 005a3518

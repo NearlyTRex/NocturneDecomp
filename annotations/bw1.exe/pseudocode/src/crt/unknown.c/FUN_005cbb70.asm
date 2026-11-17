@@ -11,7 +11,7 @@
 ;   void* PTR_FlushFileBuffers_005d0560 = 001d0d8c
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626600 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626604 = 005c50d4
-;   undefined4 DAT_006267e0
+;   uint g_UINT_006267e0 = 0x14
 ;   undefined4 DAT_00626838
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     TEST EBX,EBX                        ; 005cbb78
     JL 0x005cbb84                       ; 005cbb7a
         ;   XREF to: 005cbb84 (CONDITIONAL_JUMP)  ; LAB_005cbb84
-    CMP EBX,dword ptr [0x006267e0]      ; 005cbb7c | DAT_006267e0
+    CMP EBX,dword ptr [0x006267e0]      ; 005cbb7c | g_UINT_006267e0
     JBE 0x005cbb96                      ; 005cbb82
         ;   XREF to: 005cbb96 (CONDITIONAL_JUMP)  ; LAB_005cbb96
     PUSH 0x4                            ; 005cbb84

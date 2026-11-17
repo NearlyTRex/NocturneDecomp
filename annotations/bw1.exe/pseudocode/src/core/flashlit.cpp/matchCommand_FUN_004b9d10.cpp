@@ -14,7 +14,7 @@ int __cdecl core_flashlit_cpp_matchCommand_FUN_004b9d10(char *line,char *keyword
   int iVar3;
   int iVar4;
   
-  while (((&DAT_00626114)[(byte)(*line + 1)] & 2) != 0) {
+  while ((g_UCHAR_ARRAY_00626114[(byte)(*line + 1)] & 2) != 0) {
     line = line + 1;
   }
   if (*line == 0x5c) {
@@ -29,7 +29,7 @@ int __cdecl core_flashlit_cpp_matchCommand_FUN_004b9d10(char *line,char *keyword
       keyword = keyword + 1;
       bVar2 = *pbVar1;
     }
-    while (((&DAT_00626114)[(byte)(*line + 1)] & 2) != 0) {
+    while ((g_UCHAR_ARRAY_00626114[(byte)(*line + 1)] & 2) != 0) {
       line = line + 1;
     }
     do {

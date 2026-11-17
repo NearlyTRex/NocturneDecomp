@@ -62,7 +62,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005996d0(CZombie *this_pt
              || ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]]
                  != 0)))) {
         iVar6 = 0;
-        pcVar5 = "@lookForHead" + 1;
+        pcVar5 = "lookForHead";
         this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
                                 (&(this_ptr->base).base.model.base);
         iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr_01,pcVar5,iVar6);

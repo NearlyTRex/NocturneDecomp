@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 70,
+    "complexity_score": 25,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 63
   },
   "cross_references": [
@@ -50,25 +48,25 @@
   "globals": [
     {
       "addr": "01c2c910",
-      "name": "DAT_01c2c910",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_01c2c910",
+      "type": "uchar[32768]",
       "value": null
     },
     {
       "addr": "01c2ccf0",
-      "name": "DAT_01c2ccf0",
+      "name": "g_UCHAR_ARRAY_01c2c910+0x3e0",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c3452f",
-      "name": "DAT_01c3452f",
+      "name": "g_UCHAR_ARRAY_01c2c910+0x7c1f",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c3490f",
-      "name": "DAT_01c3490f",
+      "name": "g_UCHAR_ARRAY_01c2c910+0x7fff",
       "type": "undefined4",
       "value": null
     }
@@ -171,38 +169,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01c2c910",
-      "severity": "mild",
-      "text": "return (uint)DAT_01c2c910;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c3490f",
-      "severity": "mild",
-      "text": "return (uint)DAT_01c3490f;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c2ccf0",
-      "severity": "mild",
-      "text": "return (uint)DAT_01c2ccf0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_01c3452f",
-      "severity": "mild",
-      "text": "return (uint)DAT_01c3452f;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

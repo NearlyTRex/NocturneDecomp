@@ -8,10 +8,10 @@
 ; void *           Stack[0x8]:4   span_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f014
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b4a0 = 0x8
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f014
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
@@ -29,13 +29,13 @@ section .text
     MOV EBP,dword ptr [ESP + 0x48]      ; 00438567
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270 ; 0043856b
         ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270()
-    MOV EDX,dword ptr [0x0061b4a0]      ; 00438570 | DAT_0061b4a0
+    MOV EDX,dword ptr [0x0061b4a0]      ; 00438570 | g_INT_0061b4a0
     MOV EDI,EAX                         ; 00438576
     CMP EDX,0x8                         ; 00438578
     JNZ 0x00438641                      ; 0043857b
         ;   XREF to: 00438641 (CONDITIONAL_JUMP)  ; LAB_00438641
-    MOV EAX,[0x01c4f00c]                ; 00438581 | DAT_01c4f00c
-    MOV EBX,dword ptr [0x01c4f014]      ; 00438586 | DAT_01c4f014
+    MOV EAX,[0x01c4f00c]                ; 00438581 | g_INT_01c4f00c
+    MOV EBX,dword ptr [0x01c4f014]      ; 00438586 | g_INT_01c4f014
     MOV dword ptr [ESP + 0x14],EAX      ; 0043858c
     CMP EAX,EBX                         ; 00438590
     JG 0x00438616                       ; 00438592
@@ -51,7 +51,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004385af
         ;   Label: LAB_004385af
     MOV EAX,dword ptr [EAX + 0x1c4354c] ; 004385b3
-    MOV ECX,dword ptr [0x0061b498]      ; 004385b9 | DAT_0061b498
+    MOV ECX,dword ptr [0x0061b498]      ; 004385b9 | g_INT_0061b498
     MOV dword ptr [ESP + 0x18],EAX      ; 004385bf
     MOV EAX,dword ptr [ESP + 0x14]      ; 004385c3
     IMUL EAX,ECX                        ; 004385c7
@@ -71,7 +71,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 004385ea
     MOV EBX,dword ptr [ESP + 0x8]       ; 004385ee
     MOV ESI,dword ptr [ESP + 0x14]      ; 004385f2
-    MOV EDX,dword ptr [0x01c4f014]      ; 004385f6 | DAT_01c4f014
+    MOV EDX,dword ptr [0x01c4f014]      ; 004385f6 | g_INT_01c4f014
     ADD ECX,0x84                        ; 004385fc
     ADD EBX,0x4                         ; 00438602
     INC ESI                             ; 00438605
@@ -104,9 +104,9 @@ section .text
     ADD ESP,0xc                         ; 0043863c
     JMP 0x004385e0                      ; 0043863f
         ;   XREF to: 004385e0 (UNCONDITIONAL_JUMP)  ; LAB_004385e0
-    MOV EAX,[0x01c4f00c]                ; 00438641 | DAT_01c4f00c
+    MOV EAX,[0x01c4f00c]                ; 00438641 | g_INT_01c4f00c
         ;   Label: LAB_00438641
-    MOV ECX,dword ptr [0x01c4f014]      ; 00438646 | DAT_01c4f014
+    MOV ECX,dword ptr [0x01c4f014]      ; 00438646 | g_INT_01c4f014
     MOV dword ptr [ESP + 0x10],EAX      ; 0043864c
     CMP EAX,ECX                         ; 00438650
     JG 0x00438616                       ; 00438652
@@ -122,7 +122,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0043866a
         ;   Label: LAB_0043866a
     MOV EAX,dword ptr [EAX + 0x1c4354c] ; 0043866d
-    MOV EBX,dword ptr [0x0061b498]      ; 00438673 | DAT_0061b498
+    MOV EBX,dword ptr [0x0061b498]      ; 00438673 | g_INT_0061b498
     MOV dword ptr [ESP + 0x28],EAX      ; 00438679
     MOV EAX,dword ptr [ESP + 0x10]      ; 0043867d
     IMUL EAX,EBX                        ; 00438681
@@ -142,7 +142,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x4]       ; 004386a4
     MOV EAX,dword ptr [ESP]             ; 004386a8
     MOV EDX,dword ptr [ESP + 0x10]      ; 004386ab
-    MOV ECX,dword ptr [0x01c4f014]      ; 004386af | DAT_01c4f014
+    MOV ECX,dword ptr [0x01c4f014]      ; 004386af | g_INT_01c4f014
     ADD ESI,0x84                        ; 004386b5
     ADD EAX,0x4                         ; 004386bb
     INC EDX                             ; 004386be

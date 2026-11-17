@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00434790(CCharacter *this_ptr,float delta_time)
 
 {
@@ -37,13 +35,13 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00434790(CCharacter
   if ((this_ptr->was_rendered_opaque != 0) &&
      ((this_ptr->is_spectral != 0 || (this_ptr->was_rendered_opaque != 0)))) {
     if (this_ptr->is_spectral == 0) {
-      if (((g_CDemonSetPtr->active_fog).temperature < (float)_DAT_005d5f1f) ||
-         ((iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(&this_ptr->base,"?CZombieDog" + 1),
+      if (((g_CDemonSetPtr->active_fog).temperature < (float)32) ||
+         ((iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(&this_ptr->base,"CZombieDog"),
           iVar3 != 0 && (this_ptr->is_spectral == 0)))) {
         if (((float)this_ptr->smoke_occluded == 0.0) &&
            (fVar1 = this_ptr->smoke_emit_timer - delta_time, this_ptr->smoke_emit_timer = fVar1,
            fVar1 < 0.0)) {
-          this_ptr->smoke_emit_timer = this_ptr->smoke_emit_timer + _DAT_005d5f27;
+          this_ptr->smoke_emit_timer = this_ptr->smoke_emit_timer + 0.2f;
           local_38.y = -0.5;
           local_38.z = 1.0;
           local_38.x = (float)this_ptr->smoke_occluded;
@@ -82,13 +80,13 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00434790(CCharacter
             *(uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                  *(uint *)((int)&local_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-                      (0x01C57074,&local_2c,fVar1,pCVar5,iVar3);
+                      (g_CFireEffect_PTR_0061c010,&local_2c,fVar1,pCVar5,iVar3);
           }
         }
         fVar1 = this_ptr->smoke_check_timer - delta_time;
         this_ptr->smoke_check_timer = fVar1;
         if (fVar1 < 0.0) {
-          this_ptr->smoke_check_timer = this_ptr->smoke_check_timer + _DAT_005d5f2b;
+          this_ptr->smoke_check_timer = this_ptr->smoke_check_timer + 1.5f;
           pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
                              (&this_ptr->model);
           iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(pCVar2,"Bip01 head",0);
@@ -135,7 +133,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00434790(CCharacter
           fVar1 = this_ptr->smoke_check_timer + 1.0;
         }
         this_ptr->smoke_check_timer = fVar1;
-        _DAT_007c6340 = 0;
+        g_FLOAT_007c6340 = 0.0;
         this_ptr->smoke_occluded = (uint)(this_ptr->smoke_occluded == 0);
       }
     }

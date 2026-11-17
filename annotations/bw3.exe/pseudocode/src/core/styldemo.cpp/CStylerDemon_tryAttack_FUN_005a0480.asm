@@ -32,10 +32,10 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005a046c = 005a05a8
-;   undefined4 s_Casting_d_005da53d+1
-;   undefined4 DAT_005da54e
-;   undefined4 DAT_005da556
-;   undefined4 DAT_005e84dc
+;   TerminatedCString s_Casting_d_005da53e
+;   double g_DOUBLE_005da54e = -0.5
+;   double g_DOUBLE_005da556 = 0.349065850388889
+;   float g_FLOAT_005e84dc = 5.200000
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CConsole g_CConsoleInstance
 ;
@@ -87,10 +87,10 @@ section .text
         ;   XREF to: 0040cea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cea0(int min_value, int max_value)
     MOV dword ptr [ESP + 0x70],EAX      ; 005a04c6
     ADD ESP,0x8                         ; 005a04ca
-    FLD float ptr [0x005e84dc]          ; 005a04cd | DAT_005e84dc
+    FLD float ptr [0x005e84dc]          ; 005a04cd | g_FLOAT_005e84dc
     MOV dword ptr [ESP + 0x60],EAX      ; 005a04d3
     MOV EAX,dword ptr [ESP + 0x88]      ; 005a04d7
-    FADD double ptr [0x005da54e]        ; 005a04de | DAT_005da54e
+    FADD double ptr [0x005da54e]        ; 005a04de | g_DOUBLE_005da54e
     MOV dword ptr [ESP + 0x6c],EAX      ; 005a04e4
     LEA ESI,[EBX + 0x20]                ; 005a04e8
     FILD dword ptr [ESP + 0x6c]         ; 005a04eb
@@ -138,7 +138,7 @@ section .text
     FLD float ptr [ESP + 0x70]          ; 005a0560
     FABS                                ; 005a0564
     ADD ESP,0x4                         ; 005a0566
-    FCOMP double ptr [0x005da556]       ; 005a0569 | DAT_005da556
+    FCOMP double ptr [0x005da556]       ; 005a0569 | g_DOUBLE_005da556
     FNSTSW AX                           ; 005a056f
     SAHF                                ; 005a0571
     JNC 0x005a05d1                      ; 005a0572
@@ -148,7 +148,7 @@ section .text
         ;   XREF to: 005a05d1 (CONDITIONAL_JUMP)  ; LAB_005a05d1
     MOV ECX,dword ptr [EBX + 0xdc90]    ; 005a057b
     PUSH ECX                            ; 005a0581
-    PUSH 0x5da53e                       ; 005a0582 | s_Casting_d_005da53d+1
+    PUSH 0x5da53e                       ; 005a0582 | = "Casting %d\n"
     MOV ESI,dword ptr [0x005f1690]      ; 005a0587 | g_CConsolePtr
     PUSH ESI                            ; 005a058d | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005a058e
@@ -227,7 +227,7 @@ section .text
     FLD float ptr [ESP + 0x70]          ; 005a064f
     FABS                                ; 005a0653
     ADD ESP,0x4                         ; 005a0655
-    FCOMP double ptr [0x005da556]       ; 005a0658 | DAT_005da556
+    FCOMP double ptr [0x005da556]       ; 005a0658 | g_DOUBLE_005da556
     FNSTSW AX                           ; 005a065e
     SAHF                                ; 005a0660
     JNC 0x005a049d                      ; 005a0661

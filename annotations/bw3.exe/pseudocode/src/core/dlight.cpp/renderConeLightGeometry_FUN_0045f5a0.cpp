@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(CVector3f *position,CVector3f *rotation,float fov,float falloff)
 
 {
@@ -49,34 +47,36 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(CVector3f *pos
   int local_18;
   
   local_c0.base.count = (int)fov;
-  iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if (iVar4 != 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(DAT_005f2afc,position);
+  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
+            (g_CDemonRenderer_PTR_005f2afc,position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-            (DAT_005f2afc,rotation,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005f2afc,rotation,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f2828);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);
+            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005f2828);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,1);
   local_30 = 1.0 / falloff;
   iVar4 = 1;
   do {
-    fVar6 = (float10)iVar4 * ((float10)_DAT_005bb5ac / (float10)(float)local_c0.base.count) *
-            (float10)_DAT_005bb58c;
+    fVar6 = (float10)iVar4 * ((float10)18 / (float10)(float)local_c0.base.count) *
+            (float10)0.125;
     local_c0.base.type = (int)(float)fVar6;
     Var10 = fpatan(fVar6,(float10)1);
     fVar6 = (float10)fcos(Var10);
     iVar5 = 0;
     local_1c = (float)(fVar6 * (float10)falloff);
     do {
-      pCVar3 = DAT_005f2afc;
-      fVar6 = (float10)iVar5 * (float10)_DAT_005bb594 * (float10)_DAT_005bb598 *
-              (float10)_DAT_005bb59c;
+      pCVar3 = g_CDemonRenderer_PTR_005f2afc;
+      fVar6 = (float10)iVar5 * (float10)0.125f * (float10)3.141593f *
+              (float10)2;
       iVar5 = iVar5 + 1;
       fVar7 = (float10)fsin(fVar6);
-      fVar11 = (float10)iVar5 * (float10)_DAT_005bb594 * (float10)_DAT_005bb598 *
-               (float10)_DAT_005bb59c;
+      fVar11 = (float10)iVar5 * (float10)0.125f * (float10)3.141593f *
+               (float10)2;
       fVar8 = (float10)fsin(fVar11);
       fVar6 = (float10)fcos(fVar6);
       fVar11 = (float10)fcos(fVar11);
@@ -89,44 +89,44 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(CVector3f *pos
       local_90 = (float)local_8c.y * local_2c;
       local_8c.x = (int)((float)local_8c.y * local_28);
       fVar1 = (falloff - (float)local_8c.y) * local_30;
-      fVar2 = (float)_DAT_005bb5a4;
+      fVar2 = (float)1024;
       local_40 = (float)local_8c.y;
       local_18 = iVar5;
       dVar12 = round((double)((falloff - local_1c) * local_30 * fVar2));
       local_38 = (int)ROUND(dVar12);
       dVar12 = round((double)(fVar1 * fVar2));
       local_40 = (float)(int)ROUND(dVar12);
-      local_8c.z = (int)ROUND(local_90 * _DAT_005de4f0);
-      local_80.x = (int)ROUND((float)local_8c.x * _DAT_005de4f0);
-      local_80.y = (int)ROUND((float)local_8c.y * _DAT_005de4f0);
+      local_8c.z = (int)ROUND(local_90 * 256.0f);
+      local_80.x = (int)ROUND((float)local_8c.x * 256.0f);
+      local_80.y = (int)ROUND((float)local_8c.y * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                 (&pCVar3->vertex_buffer_ptr->projected_vertex,&local_8c);
       local_98 = fStack_48 * local_2c;
       local_94 = fStack_48 * local_28;
       local_90 = fStack_48;
-      local_80.x = (int)ROUND(local_98 * _DAT_005de4f0);
-      local_80.y = (int)ROUND(local_94 * _DAT_005de4f0);
-      local_80.z = (int)ROUND(fStack_48 * _DAT_005de4f0);
+      local_80.x = (int)ROUND(local_98 * 256.0f);
+      local_80.y = (int)ROUND(local_94 * 256.0f);
+      local_80.z = (int)ROUND(fStack_48 * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_80);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_80);
       local_98 = local_24 * local_2c;
       local_94 = local_24 * local_28;
       local_90 = local_24;
-      local_74.x = (int)ROUND(local_98 * _DAT_005de4f0);
-      local_74.y = (int)ROUND(local_94 * _DAT_005de4f0);
-      local_74.z = (int)ROUND(local_24 * _DAT_005de4f0);
+      local_74.x = (int)ROUND(local_98 * 256.0f);
+      local_74.y = (int)ROUND(local_94 * 256.0f);
+      local_74.z = (int)ROUND(local_24 * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_74);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_74);
       local_98 = local_24 * local_34;
       local_94 = local_24 * local_30;
       local_90 = local_24;
-      local_68[0].x = (int)ROUND(local_98 * _DAT_005de4f0);
-      local_68[0].y = (int)ROUND(local_94 * _DAT_005de4f0);
-      local_68[0].z = (int)ROUND(local_24 * _DAT_005de4f0);
+      local_68[0].x = (int)ROUND(local_98 * 256.0f);
+      local_68[0].y = (int)ROUND(local_94 * 256.0f);
+      local_68[0].z = (int)ROUND(local_24 * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,local_68);
-      pCVar3 = DAT_005f2afc;
-      DAT_005f2afc->vertex_buffer_ptr->a = (int)local_40;
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[3].projected_vertex,local_68);
+      pCVar3 = g_CDemonRenderer_PTR_005f2afc;
+      g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->a = (int)local_40;
       pCVar3->vertex_buffer_ptr->b = 0xffff;
       pCVar3->vertex_buffer_ptr->g = 0xffff;
       pCVar3->vertex_buffer_ptr->r = 0xffff;
@@ -164,6 +164,6 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(CVector3f *pos
     iVar4 = iVar4 + 1;
   } while (iVar4 < 8);
   engine_drender_cpp_pop_FUN_0046d080();
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,0);
   return;
 }

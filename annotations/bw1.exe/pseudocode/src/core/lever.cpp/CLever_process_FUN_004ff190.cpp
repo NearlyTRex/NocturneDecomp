@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_lever_cpp_CLever_process_FUN_004ff190(CLever *this_ptr,float delta_time)
 
 {
@@ -21,27 +19,27 @@ void __cdecl core_lever_cpp_CLever_process_FUN_004ff190(CLever *this_ptr,float d
   if (this_ptr->moving == 0) goto LAB_004ff1a8;
   fVar1 = this_ptr->param;
   if (this_ptr->move_to_pct <= fVar1) {
-    fVar2 = fVar1 - delta_time * (float)_DAT_005e6d42;
+    fVar2 = fVar1 - delta_time * (float)6;
     this_ptr->param = fVar2;
     if (fVar2 < this_ptr->move_to_pct) {
       this_ptr->moving = 0;
       this_ptr->param = this_ptr->move_to_pct;
-      if ((this_ptr->momentary_flag != 0) && (this_ptr->param < (float)_DAT_005e6d4a)) {
+      if ((this_ptr->momentary_flag != 0) && (this_ptr->param < (float)0.10000000000000001)) {
         commands = this_ptr->off_event;
         goto LAB_004ff27c;
       }
     }
   }
   else {
-    fVar2 = delta_time * (float)_DAT_005e6d42 + fVar1;
+    fVar2 = delta_time * (float)6 + fVar1;
     this_ptr->param = fVar2;
     if (this_ptr->move_to_pct < fVar2) {
       this_ptr->moving = 0;
       this_ptr->param = this_ptr->move_to_pct;
-      if ((this_ptr->momentary_flag != 0) && ((float)_DAT_005e6d52 < this_ptr->param)) {
+      if ((this_ptr->momentary_flag != 0) && ((float)0.90000000000000002 < this_ptr->param)) {
         commands = this_ptr->on_event;
 LAB_004ff27c:
-        core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,commands);
+        core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventList_PTR_0061b4d0,commands);
       }
     }
   }
@@ -71,11 +69,13 @@ LAB_004ff27c:
   }
 LAB_004ff1a8:
   if (this_ptr->momentary_flag == 0) {
-    if ((this_ptr->param < (float)_DAT_005e6d4a) && (this_ptr->off_event[0] != '\0')) {
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,this_ptr->off_event);
+    if ((this_ptr->param < (float)0.10000000000000001) && (this_ptr->off_event[0] != '\0')) {
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+                (g_CEventList_PTR_0061b4d0,this_ptr->off_event);
     }
-    if (((float)_DAT_005e6d52 < this_ptr->param) && (this_ptr->on_event[0] != '\0')) {
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,this_ptr->on_event);
+    if (((float)0.90000000000000002 < this_ptr->param) && (this_ptr->on_event[0] != '\0')) {
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+                (g_CEventList_PTR_0061b4d0,this_ptr->on_event);
       return;
     }
   }

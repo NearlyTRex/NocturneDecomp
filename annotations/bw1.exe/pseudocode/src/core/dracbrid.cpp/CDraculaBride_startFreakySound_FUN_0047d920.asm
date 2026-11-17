@@ -50,8 +50,8 @@
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047ba9d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006236b8
-;   undefined4 DAT_01bc0d34
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
+;   int[8] g_INT_ARRAY_01bc0d34
 ;   undefined4 DAT_01bc0d54
 ;   undefined4 DAT_01bc0d58
 ;   undefined4 DAT_01bc0d5c
@@ -132,7 +132,7 @@ section .text
     RET                                 ; 0047d989
     PUSH EDI                            ; 0047d98a
         ;   Label: LAB_0047d98a
-    MOV ECX,dword ptr [0x01bc0d34]      ; 0047d98b | DAT_01bc0d34
+    MOV ECX,dword ptr [0x01bc0d34]      ; 0047d98b | g_INT_ARRAY_01bc0d34
     MOV dword ptr [EBX + 0x1c],EAX      ; 0047d991 | DAT_01bc0d70
     MOV EAX,dword ptr [ESP + 0x1b4]     ; 0047d994
     PUSH ECX                            ; 0047d99b
@@ -413,7 +413,7 @@ section .text
     PUSH EDI                            ; 0047ddb7
     LEA EAX,[ESP + 0x8]                 ; 0047ddb8
     PUSH EAX                            ; 0047ddbc
-    MOV EAX,[0x006236b8]                ; 0047ddbd | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 0047ddbd | g_CSound_PTR_006236b8
     PUSH EAX                            ; 0047ddc2
     CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00 ; 0047ddc3
         ;   XREF to: 0057be00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00(CSound * this_ptr, char * out_result, char * wildcard_pattern)

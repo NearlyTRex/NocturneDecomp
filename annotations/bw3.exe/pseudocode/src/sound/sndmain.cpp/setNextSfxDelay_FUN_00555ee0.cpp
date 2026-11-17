@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_00555ee0(double delay_seconds)
 
 {
-  *(uint *)(_DAT_02ceb91c * 0x60 + 0x2ceb960) = delay_seconds._0_4_;
+  g_CSfxOptions_ARRAY_02ceb920[g_INT_02ceb91c].delay_remaining = delay_seconds._0_4_;
   return;
 }

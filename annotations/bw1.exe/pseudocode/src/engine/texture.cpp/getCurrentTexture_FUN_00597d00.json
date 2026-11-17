@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 88,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 59
+    "total_lines": 58
   },
   "cross_references": [
     {
@@ -46,49 +44,49 @@
   "globals": [
     {
       "addr": "02c8a67c",
-      "name": "DAT_02c8a67c",
-      "type": "undefined4",
+      "name": "g_INT_02c8a67c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8a680",
-      "name": "DAT_02c8a680",
-      "type": "undefined4",
+      "name": "g_CTextureCache_PTR_02c8a680",
+      "type": "CTextureCache*",
       "value": null
     },
     {
       "addr": "02c8acc4",
-      "name": "DAT_02c8acc4",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureModel_02c8acc4",
+      "type": "SMRGLTextureModel",
       "value": null
     },
     {
       "addr": "02c8acc8",
-      "name": "DAT_02c8acc8",
+      "name": "g_SMRGLTextureModel_02c8acc4.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c8accc",
-      "name": "DAT_02c8accc",
+      "name": "g_SMRGLTextureModel_02c8acc4.texture_name[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c8accd",
-      "name": "DAT_02c8accd",
+      "name": "g_SMRGLTextureModel_02c8acc4.texture_name[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c8acce",
-      "name": "DAT_02c8acce",
+      "name": "g_SMRGLTextureModel_02c8acc4.texture_name[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c8accf",
-      "name": "DAT_02c8accf",
+      "name": "g_SMRGLTextureModel_02c8acc4.texture_name[3]",
       "type": "undefined4",
       "value": null
     }
@@ -156,40 +154,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_02c8accc",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_02c8accc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02c8acc4",
-      "severity": "mild",
-      "text": "return (SMRGLTextureBasic *)&DAT_02c8acc4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_02c8acc4",
-      "severity": "mild",
-      "text": "return (SMRGLTextureBasic *)&DAT_02c8acc4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 15,
+      "line": 13,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

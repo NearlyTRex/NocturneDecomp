@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00543fd0(CScript *this_ptr)
 
 {
@@ -28,21 +26,21 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00543fd0(CScript *this
     if (iVar2 <= index) {
       return;
     }
-    pcVar7 = &DAT_01e808a8;
+    pcVar7 = g_CHAR_ARRAY_01e808a8;
     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004998a0(&this_ptr->script_text,index);
     core_script_cpp_trimLine_FUN_005431a0(pcVar3,pcVar7);
-    if (DAT_01e808a8 != '\0') {
+    if (g_CHAR_ARRAY_01e808a8[0] != '\0') {
       pSVar4 = (SScriptLine *)realloc
                          (this_ptr->parsed_lines,(this_ptr->parsed_line_count + 1) * 8);
       this_ptr->parsed_lines = pSVar4;
       if (pSVar4 == (SScriptLine *)0x0) {
-        _DAT_01d1d400 = "..\\core\\script.cpp";
-        _DAT_01d1d404 = 0x3a3;
+        g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
+        g_INT_01d1d404 = 0x3a3;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory loading script at line %d");
       }
       this_ptr->parsed_lines[this_ptr->parsed_line_count].line_number = index + 1;
       uVar5 = 0xffffffff;
-      pcVar3 = &DAT_01e808a8;
+      pcVar3 = g_CHAR_ARRAY_01e808a8;
       do {
         if (uVar5 == 0) break;
         uVar5 = uVar5 - 1;
@@ -52,11 +50,11 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00543fd0(CScript *this
       pcVar3 = (char *)malloc(~uVar5);
       this_ptr->parsed_lines[this_ptr->parsed_line_count].text = pcVar3;
       if (this_ptr->parsed_lines == (SScriptLine *)0x0) {
-        _DAT_01d1d400 = "..\\core\\script.cpp";
-        _DAT_01d1d404 = 0x3a6;
+        g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
+        g_INT_01d1d404 = 0x3a6;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory loading script at line %d");
       }
-      pcVar7 = &DAT_01e808a8;
+      pcVar7 = g_CHAR_ARRAY_01e808a8;
       pcVar3 = this_ptr->parsed_lines[this_ptr->parsed_line_count].text;
       do {
         cVar1 = *pcVar7;

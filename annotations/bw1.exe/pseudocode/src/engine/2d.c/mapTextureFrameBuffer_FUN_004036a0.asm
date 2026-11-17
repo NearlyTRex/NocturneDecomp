@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a8
-;   undefined4 DAT_01c50930
+;   int g_INT_0061b4a8 = 0x100
+;   uchar* g_UCHAR_PTR_01c50930
 ;
 ; Called Functions:
 ;   engine_2d.c_mapFrameBuffer_FUN_00403480
@@ -17,12 +17,12 @@ section .text
 
     PUSH ESI                            ; 004036a0
         ;   Label: engine_2d.c_mapTextureFrameBuffer_FUN_004036a0
-    MOV EDX,dword ptr [0x0061b4a8]      ; 004036a1 | DAT_0061b4a8
+    MOV EDX,dword ptr [0x0061b4a8]      ; 004036a1 | g_INT_0061b4a8
     PUSH EDX                            ; 004036a7
     PUSH 0x8                            ; 004036a8
     PUSH EDX                            ; 004036aa
     PUSH EDX                            ; 004036ab
-    MOV ESI,dword ptr [0x01c50930]      ; 004036ac | DAT_01c50930
+    MOV ESI,dword ptr [0x01c50930]      ; 004036ac | g_UCHAR_PTR_01c50930
     PUSH ESI                            ; 004036b2
     CALL engine_2d.c_mapFrameBuffer_FUN_00403480 ; 004036b3
         ;   XREF to: 00403480 (UNCONDITIONAL_CALL)  ; int engine_2d.c_mapFrameBuffer_FUN_00403480(void * frame_buffer, int width, int height, int bits_per_pixel, ...)

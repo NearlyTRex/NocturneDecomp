@@ -20,8 +20,8 @@
 ;   ... and 58 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
@@ -35,8 +35,8 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
     ADD EAX,0x20                        ; 004087f4
     PUSH EAX                            ; 004087f7
-    MOV EDX,dword ptr [0x005f2afc]      ; 004087f8 | DAT_005f2afc
-    PUSH EDX                            ; 004087fe | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004087f8 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004087fe | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90 ; 004087ff
         ;   XREF to: 0046ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00408804
@@ -44,8 +44,8 @@ section .text
     PUSH 0x0                            ; 0040880b
     ADD EAX,0x30                        ; 0040880d
     PUSH EAX                            ; 00408810
-    MOV ECX,dword ptr [0x005f2afc]      ; 00408811 | DAT_005f2afc
-    PUSH ECX                            ; 00408817 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 00408811 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 00408817 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30 ; 00408818
         ;   XREF to: 0046cf30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0040881d

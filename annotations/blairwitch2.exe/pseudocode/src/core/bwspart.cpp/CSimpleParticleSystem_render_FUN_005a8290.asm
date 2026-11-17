@@ -20,8 +20,8 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0
@@ -37,8 +37,8 @@ section .text
     PUSH EDI                            ; 005a8292
     PUSH EBP                            ; 005a8293
     MOV EDI,dword ptr [ESP + 0x14]      ; 005a8294
-    MOV EDX,dword ptr [0x0060b280]      ; 005a8298 | DAT_0060b280
-    PUSH EDX                            ; 005a829e | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 005a8298 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 005a829e | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 005a829f
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005a82a4

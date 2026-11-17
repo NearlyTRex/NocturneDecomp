@@ -16,9 +16,9 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_007c3978
-;   undefined4 DAT_007c3980
-;   undefined4 DAT_01c43544
+;   CPuzzle* g_CPuzzle_PTR_007c3978
+;   int g_INT_007c3980
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
 ;   CGame g_CGameInstance
 ;
 ; Called Functions:
@@ -35,9 +35,9 @@ section .text
     TEST ECX,ECX                        ; 00415be9
     JZ 0x00415c18                       ; 00415beb
         ;   XREF to: 00415c18 (CONDITIONAL_JUMP)  ; LAB_00415c18
-    MOV EAX,[0x01c43544]                ; 00415bed | DAT_01c43544
-    MOV dword ptr [0x007c3978],EDX      ; 00415bf2 | DAT_007c3978
-    MOV [0x007c3980],EAX                ; 00415bf8 | DAT_007c3980
+    MOV EAX,[0x01c43544]                ; 00415bed | g_BIT_INTEGER32_01c43544
+    MOV dword ptr [0x007c3978],EDX      ; 00415bf2 | g_CPuzzle_PTR_007c3978
+    MOV [0x007c3980],EAX                ; 00415bf8 | g_INT_007c3980
     PUSH ECX                            ; 00415bfd
         ;   Label: LAB_00415bfd
     MOV EAX,dword ptr [EDX]             ; 00415bfe
@@ -51,7 +51,7 @@ section .text
     ADD ESP,0x4                         ; 00415c13
     POP ESI                             ; 00415c16
     RET                                 ; 00415c17
-    MOV dword ptr [0x007c3978],ECX      ; 00415c18 | DAT_007c3978
+    MOV dword ptr [0x007c3978],ECX      ; 00415c18 | g_CPuzzle_PTR_007c3978
         ;   Label: LAB_00415c18
     JMP 0x00415bfd                      ; 00415c1e
         ;   XREF to: 00415bfd (UNCONDITIONAL_JUMP)  ; LAB_00415bfd

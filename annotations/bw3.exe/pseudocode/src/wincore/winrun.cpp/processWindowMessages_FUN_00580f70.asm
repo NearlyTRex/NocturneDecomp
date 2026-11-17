@@ -17,9 +17,9 @@
 ;   void* PTR_PeekMessageA_005b34e4 = 001b3b80
 ;   void* PTR_TranslateMessage_005b350c = 001b3c24
 ;   void* PTR_Sleep_005b3658 = 001b4236
-;   undefined4 DAT_00607288
-;   undefined4 DAT_0060728c
-;   undefined4 DAT_02d21b80
+;   int g_INT_00607288 = -0x1
+;   int g_INT_0060728c = 0x1
+;   int g_INT_02d21b80
 ;
 ; Called Functions:
 ;   DispatchMessageA
@@ -74,19 +74,19 @@ section .text
         ;   Label: LAB_00580fc3
     JMP 0x00580f85                      ; 00580fc9
         ;   XREF to: 00580f85 (UNCONDITIONAL_JUMP)  ; LAB_00580f85
-    MOV ESI,dword ptr [0x00607288]      ; 00580fcb | DAT_00607288
+    MOV ESI,dword ptr [0x00607288]      ; 00580fcb | g_INT_00607288
         ;   Label: LAB_00580fcb
     CMP EBX,ESI                         ; 00580fd1
     JNZ 0x00580fef                      ; 00580fd3
         ;   XREF to: 00580fef (CONDITIONAL_JUMP)  ; LAB_00580fef
-    MOV EDI,dword ptr [0x02d21b80]      ; 00580fd5 | DAT_02d21b80
+    MOV EDI,dword ptr [0x02d21b80]      ; 00580fd5 | g_INT_02d21b80
     CMP ESI,EDI                         ; 00580fdb
     JNZ 0x00580fef                      ; 00580fdd
         ;   XREF to: 00580fef (CONDITIONAL_JUMP)  ; LAB_00580fef
-    CMP EDI,dword ptr [0x00607288]      ; 00580fdf | DAT_00607288
+    CMP EDI,dword ptr [0x00607288]      ; 00580fdf | g_INT_00607288
     JZ 0x00580ff6                       ; 00580fe5
         ;   XREF to: 00580ff6 (CONDITIONAL_JUMP)  ; LAB_00580ff6
-    CMP EBX,dword ptr [0x0060728c]      ; 00580fe7 | DAT_0060728c
+    CMP EBX,dword ptr [0x0060728c]      ; 00580fe7 | g_INT_0060728c
     JNZ 0x00580f98                      ; 00580fed
         ;   XREF to: 00580f98 (CONDITIONAL_JUMP)  ; LAB_00580f98
     ADD ESP,0x1c                        ; 00580fef
@@ -98,7 +98,7 @@ section .text
     PUSH 0x14                           ; 00580ff6
         ;   Label: LAB_00580ff6
     CALL dword ptr CS:[0x5b3658]        ; 00580ff8 | PTR_Sleep_005b3658
-    CMP EBX,dword ptr [0x0060728c]      ; 00580fff | DAT_0060728c
+    CMP EBX,dword ptr [0x0060728c]      ; 00580fff | g_INT_0060728c
     JNZ 0x00580f98                      ; 00581005
         ;   XREF to: 00580f98 (CONDITIONAL_JUMP)  ; LAB_00580f98
     ADD ESP,0x1c                        ; 00581007

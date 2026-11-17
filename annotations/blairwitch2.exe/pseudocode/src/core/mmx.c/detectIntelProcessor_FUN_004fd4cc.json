@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 772,
+    "complexity_score": 687,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 77,
-    "suspect_count": 66,
+    "suspect_count": 58,
     "suspect_types": [
       "cpuid_intrinsic",
       "eflags_input",
       "register_param",
-      "undefined_data",
       "unresolved_register",
       "warning_overlapping_globals",
       "warning_unreachable"
@@ -62,51 +61,51 @@
     },
     {
       "addr": "006182d0",
-      "name": "DAT_006182d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006182d0",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "006182d4",
-      "name": "DAT_006182d4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006182d4",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "006182d8",
-      "name": "DAT_006182d8",
-      "type": "undefined1",
-      "value": null
+      "name": "g_UCHAR_006182d8",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "006182d9",
-      "name": "DAT_006182d9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UCHAR_006182d9",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "006182da",
-      "name": "DAT_006182da",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UCHAR_006182da",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "006182db",
-      "name": "DAT_006182db",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BYTE_006182db",
+      "type": "byte",
+      "value": "0x0"
     },
     {
       "addr": "006182dc",
-      "name": "DAT_006182dc",
-      "type": "undefined1",
-      "value": null
+      "name": "g_UCHAR_006182dc",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "006182dd",
-      "name": "DAT_006182dd",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_006182dd",
+      "type": "uint",
+      "value": "0x0"
     }
   ],
   "pcode_summary": {
@@ -646,30 +645,6 @@
       "type": "eflags_input"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_006182d8",
-      "severity": "mild",
-      "text": "DAT_006182d8 = 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_006182d8",
-      "severity": "mild",
-      "text": "DAT_006182d8 = 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_006182db",
-      "severity": "mild",
-      "text": "DAT_006182db = 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "CPUID intrinsic (CPU detection)",
       "line": 55,
       "match": "cpuid_basic_info",
@@ -686,52 +661,12 @@
       "type": "unresolved_register"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_006182dc",
-      "severity": "mild",
-      "text": "if ((iVar7 == 0) && (DAT_006182dc = 1, 0 < *piVar3)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "CPUID intrinsic (CPU detection)",
       "line": 71,
       "match": "cpuid_Version_info",
       "severity": "mild",
       "text": "puVar4 = (uint *)cpuid_Version_info(1);",
       "type": "cpuid_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_006182dd",
-      "severity": "mild",
-      "text": "DAT_006182dd = puVar4[2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_006182da",
-      "severity": "mild",
-      "text": "DAT_006182da = bVar5 & 0xf;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_006182d9",
-      "severity": "mild",
-      "text": "DAT_006182d9 = bVar5 >> 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_006182d8",
-      "severity": "mild",
-      "text": "DAT_006182d8 = (byte)((uint)*puVar4 >> 8) & 0xf;",
-      "type": "undefined_data"
     }
   ]
 }

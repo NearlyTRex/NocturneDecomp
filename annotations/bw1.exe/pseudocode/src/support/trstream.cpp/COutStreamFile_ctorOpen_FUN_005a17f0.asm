@@ -13,7 +13,7 @@
 ;   support_codec.cpp_CCodec_processFiles_FUN_00442e10 at 00442e4e
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamFileVTable = 005a1860
+;   void*[10] g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_005a14b0

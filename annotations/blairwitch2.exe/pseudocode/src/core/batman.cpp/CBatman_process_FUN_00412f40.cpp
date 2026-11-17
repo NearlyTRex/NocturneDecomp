@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,float delta_time)
 
@@ -193,7 +192,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
         *(float *)((int)&CStack_21c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
              afStack_1c4[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7];
         if (SQRT(CStack_21c.z * CStack_21c.z +
-                 CStack_21c.x * CStack_21c.x + CStack_21c.y * CStack_21c.y) < 0x40600000) {
+                 CStack_21c.x * CStack_21c.x + CStack_21c.y * CStack_21c.y) < 3.5f) {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_21c,&CStack_fc);
           fStack_120 = CStack_fc.x;
           afStack_11c[(uint)bVar13 * -2] = *(float *)((int)&CStack_fc + (uint)bVar13 * -8 + 4);
@@ -201,7 +200,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
                *(float *)((int)&CStack_fc + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
           fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                 (afStack_11c[0] - (this_ptr->base).base.base.orient.vec.y);
-          if (ABS(fStack_14) < (float)_DAT_005cbb4e) {
+          if (ABS(fStack_14) < (float)0.52359877558333301) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                       (&(this_ptr->base).base.model.base,3,1);
           }
@@ -212,7 +211,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
     case 1:
     case 2:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar17 = 0x40600000;
+      fVar17 = 3.5f;
       pCStack_44 = &(this_ptr->base).base.model.base;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00488970(&this_ptr->base,delta_time);
@@ -225,7 +224,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
       }
       else {
         max_distance = 0.17453292;
-        fStack_48 = 0x40600000;
+        fStack_48 = 3.5f;
         min_distance = 0.5;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -277,7 +276,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
                  *(float *)((int)&CStack_60 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                   (afStack_1dc[0] - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS(fStack_14) < (float)_DAT_005cbb4e) {
+            if (ABS(fStack_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_44,3,1);
               uVar10 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 1.0;
@@ -307,9 +306,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
       fVar17 = 0.4;
       fStack_14 = SStack_27c.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007bc7c0,
-                 &CStack_228);
+                (&g_CVector3f_0265370c,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_007bc7b8[2],&CStack_228);
       pCVar14 = &CStack_84;
       CStack_84.x = CStack_228.x;
       *(uint *)((int)&CStack_84 + (uint)bVar13 * -8 + 4) =
@@ -357,7 +356,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if (((this_ptr->base).victim != (CCharacter *)0x0) ||
          (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                            (0x01C38BC0,this_ptr->fall_event), iVar6 != 0)) {
+                            (g_CEventList_PTR_006141f0,this_ptr->fall_event), iVar6 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr->base).base.model.base,0xb,1);
         iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
@@ -386,9 +385,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
       case 1:
         fVar17 = this_ptr->vanish_timer + delta_time;
         this_ptr->vanish_timer = fVar17;
-        if (0x3F800000 < fVar17) {
+        if (1.0f < fVar17) {
           this_ptr->mist_state = 2;
-          this_ptr->vanish_timer = 0x3F800000;
+          this_ptr->vanish_timer = 1.0f;
         }
         pCVar5 = &(this_ptr->base).base.model;
         CStack_108.x = 0.0;
@@ -419,7 +418,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
                  *(uint *)((int)&CStack_b4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             iVar6 = iStack_20 + 1;
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-                      (0x01C3DEB4,&CStack_1f8,fVar17,pCVar14,iVar8);
+                      (g_CFireEffect_PTR_00614d30,&CStack_1f8,fVar17,pCVar14,iVar8);
             pCVar5 = pCStack_3c;
             iStack_20 = iVar6;
           } while (iVar6 < pCStack_34->bone_count);
@@ -429,7 +428,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
         iStack_4c = 1;
         pCStack_28 = &this_ptr->new_pos;
         iStack_2c = 0;
-        for (iStack_30 = 0; fVar17 = 0x3F800000, iStack_30 < g_CDemonSetPtr->character_count;
+        for (iStack_30 = 0; fVar17 = 1.0f, iStack_30 < g_CDemonSetPtr->character_count;
             iStack_30 = iStack_30 + 1) {
           pCVar15 = *(CBatman **)((int)g_CDemonSetPtr->characters + iStack_2c);
           if (((pCVar15 != (CBatman *)0x0) && (pCVar15 != this_ptr)) &&
@@ -443,7 +442,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
             afStack_1c4[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 0xd] =
                  afStack_8c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
             if (SQRT(fStack_190 * fStack_190 + fStack_198 * fStack_198 + fStack_194 * fStack_194) <
-                (float)_DAT_005cbb56) goto switchD_004135d2_default;
+                (float)5) goto switchD_004135d2_default;
           }
           iStack_2c = iStack_2c + 4;
         }
@@ -513,7 +512,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
             CStack_9c.x = CStack_174.x;
             *(uint *)((int)&CStack_9c + (uint)bVar13 * -8 + 4) =
                  *(uint *)((int)&CStack_174 + (uint)bVar13 * -8 + 4);
-            this_ptr_00 = 0x01C3DEB4;
+            this_ptr_00 = g_CFireEffect_PTR_00614d30;
             *(uint *)((int)&CStack_9c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
                  *(uint *)((int)&CStack_174 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230

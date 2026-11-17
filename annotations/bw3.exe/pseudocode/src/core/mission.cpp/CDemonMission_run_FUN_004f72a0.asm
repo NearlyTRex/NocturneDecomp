@@ -23,10 +23,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CFieldNotes g_CFieldNotesInstance
 ;   undefined4 g_CGameInstance.act_completion_state
-;   undefined4 DAT_01d5ba00
-;   undefined4 DAT_01d5ba14
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_INT_01d5ba00
+;   int g_INT_01d5ba14
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -56,11 +56,11 @@ section .text
     PUSH EDI                            ; 004f72a2
     PUSH EBP                            ; 004f72a3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004f72a4
-    CMP dword ptr [0x01d5ba00],0x1      ; 004f72a8 | DAT_01d5ba00
+    CMP dword ptr [0x01d5ba00],0x1      ; 004f72a8 | g_INT_01d5ba00
         ;   Label: LAB_004f72a8
     JL 0x004f7390                       ; 004f72af
         ;   XREF to: 004f7390 (CONDITIONAL_JUMP)  ; LAB_004f7390
-    MOV EAX,[0x01d5ba14]                ; 004f72b5 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004f72b5 | g_INT_01d5ba14
         ;   Label: LAB_004f72b5
     CMP dword ptr [EAX*0x4 + 0x1d5ba04],0x0 ; 004f72ba
     JNZ 0x004f72e6                      ; 004f72c2
@@ -68,12 +68,12 @@ section .text
     MOV EBP,0x5c8bfc                    ; 004f72c4 | = "..\\core\\mission.cpp"
     MOV EAX,0x521                       ; 004f72c9
     PUSH 0x5c8c10                       ; 004f72ce | = "CDemonMission::run - no gLocalHero"
-    MOV dword ptr [0x01d71de0],EBP      ; 004f72d3 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004f72d9 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004f72d3 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004f72d9 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f72de
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f72e3
-    MOV EAX,[0x01d5ba14]                ; 004f72e6 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004f72e6 | g_INT_01d5ba14
         ;   Label: LAB_004f72e6
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004f72eb
     MOV EDX,dword ptr [EAX + 0x2c]      ; 004f72f2
@@ -84,7 +84,7 @@ section .text
     ADD ESP,0x8                         ; 004f72fc
     XOR AH,AH                           ; 004f72ff
     PUSH EBX                            ; 004f7301
-    MOV byte ptr [0x01d882a0],AH        ; 004f7302 | DAT_01d882a0
+    MOV byte ptr [0x01d882a0],AH        ; 004f7302 | g_CHAR_01d882a0
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80 ; 004f7308
         ;   XREF to: 004f6f80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004f730d
@@ -92,7 +92,7 @@ section .text
     PUSH ECX                            ; 004f7316
     CALL core_game.cpp_CGame_runGameSession_FUN_004b7f90 ; 004f7317
         ;   XREF to: 004b7f90 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_runGameSession_FUN_004b7f90(CGame * this_ptr)
-    MOV ESI,dword ptr [0x01d5ba14]      ; 004f731c | DAT_01d5ba14
+    MOV ESI,dword ptr [0x01d5ba14]      ; 004f731c | g_INT_01d5ba14
     ADD ESP,0x4                         ; 004f7322
     MOV ESI,dword ptr [ESI*0x4 + 0x1d5ba04] ; 004f7325
     PUSH ESI                            ; 004f732c
@@ -112,7 +112,7 @@ section .text
     TEST EDI,EDI                        ; 004f7351
     JZ 0x004f735e                       ; 004f7353
         ;   XREF to: 004f735e (CONDITIONAL_JUMP)  ; LAB_004f735e
-    CMP byte ptr [0x01d882a0],0x0       ; 004f7355 | DAT_01d882a0
+    CMP byte ptr [0x01d882a0],0x0       ; 004f7355 | g_CHAR_01d882a0
     JNZ 0x004f73b8                      ; 004f735c
         ;   XREF to: 004f73b8 (CONDITIONAL_JUMP)  ; LAB_004f73b8
     PUSH 0x1                            ; 004f735e
@@ -141,8 +141,8 @@ section .text
         ;   Label: LAB_004f7390
     MOV ESI,0x520                       ; 004f7395
     PUSH 0x5c8bd7                       ; 004f739a | = "CDemonMission::run - hero list empty"
-    MOV dword ptr [0x01d71de0],ECX      ; 004f739f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f73a5 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f739f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004f73a5 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f73ab
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f73b0
@@ -169,7 +169,7 @@ section .text
         ;   Label: LAB_004f73df
     ADD ESP,0x10                        ; 004f73e4
     PUSH 0x0                            ; 004f73e7
-    PUSH 0x1d882a0                      ; 004f73e9 | DAT_01d882a0
+    PUSH 0x1d882a0                      ; 004f73e9 | g_CHAR_01d882a0
     PUSH EBX                            ; 004f73ee
     CALL core_mission.cpp_CDemonMission_load_FUN_004f5bc0 ; 004f73ef
         ;   XREF to: 004f5bc0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission * this_ptr, char * mission_filename, int load_flags)

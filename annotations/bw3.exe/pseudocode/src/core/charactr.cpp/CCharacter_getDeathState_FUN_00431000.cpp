@@ -31,7 +31,7 @@ EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431000(CCha
   if ((this_ptr->base).lifecycle_state == ACTOR_DESTROYED) {
     return DEATH_STATE_DEAD;
   }
-  iVar3 = _strnicmp(local_70,&DAT_005b83d7,3);
+  iVar3 = _strnicmp(local_70,"die",3);
   if (iVar3 == 0) {
     return DEATH_STATE_DYING;
   }
@@ -39,7 +39,7 @@ EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431000(CCha
   if (iVar3 == 0) {
     return ~DEATH_STATE_DYING;
   }
-  pcVar2 = strstr(local_70,&DAT_005b83e7);
+  pcVar2 = strstr(local_70,"dead");
   if ((pcVar2 != (char *)0x0) && (this_ptr->hit_points <= 0.0)) {
     return DEATH_STATE_DEAD;
   }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
 
 {
@@ -16,8 +14,8 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
   
   iVar1 = _chmod(".\\system\\bw3.ini",0x180);
   if (iVar1 != 0) {
-    _DAT_01d71de0 = "..\\core\\inivar.cpp";
-    _DAT_01d71de4 = 0x57;
+    g_CHAR_PTR_01d71de0 = "..\\core\\inivar.cpp";
+    g_INT_01d71de4 = 0x57;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004d8a20(&local_210,".\\system\\bw3.ini",(char *)0x0);
@@ -28,19 +26,18 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
             (&local_210,"gamePIXY",&g_CGamePtr->game_pixy);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
             (&local_210,"gameBPP",&g_CGamePtr->game_bpp);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
-            (&local_210,"useDirect3D",(int *)&DAT_02cf5fcc);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
-            (&local_210,"useAGPFlag",(int *)&DAT_02cf5fd8);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(&local_210,"useDirect3D",&g_INT_02cf5fcc)
+  ;
+  engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(&local_210,"useAGPFlag",&g_INT_02cf5fd8);
   engine_ini_cpp_CIniFile_getString_FUN_004d8b20
-            (&local_210,"rendererDLLPath",&DAT_00606730,0xfa);
+            (&local_210,"rendererDLLPath",g_CHAR_ARRAY_00606730,0xfa);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(&local_210,"gamma",&g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
             (&local_210,"heroNumber",(int *)&g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
             (&local_210,"haloMode",&g_CGamePtr->halo_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
-            (&local_210,"firstTimeFlag",(int *)&DAT_01d5bc7c);
+            (&local_210,"firstTimeFlag",&g_INT_01d5bc7c);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
             (&local_210,"subtitleMode",&g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
@@ -51,9 +48,9 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
             (&local_210,"foulLanguageFlag",&g_CGamePtr->foul_language_flag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
             (&local_210,"shadowFlag",&g_CGamePtr->shadow_flag);
-  _DAT_01d74020 = 0;
+  g_INT_01d74020 = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
-            (&local_210,"currentBoard",(int *)&DAT_01d74020);
+            (&local_210,"currentBoard",&g_INT_01d74020);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Sound");
   sound_sndmain_cpp_readIni_FUN_00559220(&local_210);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Control");

@@ -29,7 +29,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
   core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->hit_points,"hitPoints");
   if (1 < g_CCharacterClassVersion) {
-    if (DAT_007df9b8 == 1) {
+    if (g_INT_007df9b8 == 1) {
       core_actor_cpp_archiveInteger_FUN_0040b8b0(aiStack_28 + 2,"numCarryHands");
       local_14 = 0;
       if (0 < aiStack_28[2]) {

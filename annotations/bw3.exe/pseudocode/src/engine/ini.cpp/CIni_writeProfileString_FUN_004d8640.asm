@@ -20,18 +20,18 @@
 ;   engine_ini.cpp_writeProfileString_FUN_004d89f0 at 004d8a0b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c5701
+;   TerminatedCString s_rt_005c5701
 ;   TerminatedCString s_engine_ini_cpp_005c5704
 ;   TerminatedCString s_cIni_writeProfileString_005c5716
-;   undefined4 DAT_005c5745
+;   TerminatedCString s_wt_005c5745
 ;   TerminatedCString s_engine_ini_cpp_005c5748
 ;   TerminatedCString s_cIni_writeProfileString_005c575a
 ;   TerminatedCString s_s_005c578a
 ;   TerminatedCString s_s_s_005c5790
 ;   TerminatedCString s_s_s_005c5797
 ;   TerminatedCString s_s_s_005c579e
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -82,7 +82,7 @@ section .text
     POP ESI                             ; 004d8698
     POP EBX                             ; 004d8699
     RET                                 ; 004d869a
-    PUSH 0x5c5701                       ; 004d869b | DAT_005c5701
+    PUSH 0x5c5701                       ; 004d869b | = "rt"
         ;   Label: LAB_004d869b
     PUSH ESI                            ; 004d86a0
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 004d86a1
@@ -95,8 +95,8 @@ section .text
     MOV ECX,0x5c5704                    ; 004d86af | = "..\\engine\\ini.cpp"
     MOV ESI,0x18b                       ; 004d86b4
     PUSH 0x5c5716                       ; 004d86b9 | = "cIni::writeProfileString: Unable to o..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004d86be | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004d86c4 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004d86be | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004d86c4 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d86ca
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d86cf
@@ -127,7 +127,7 @@ section .text
     NOT ECX                             ; 004d8708
     DEC ECX                             ; 004d870a
     MOV AH,0x78                         ; 004d870b
-    PUSH 0x5c5745                       ; 004d870d | DAT_005c5745
+    PUSH 0x5c5745                       ; 004d870d | = "wt"
     MOV byte ptr [ESP + ECX*0x1 + 0x103],AH ; 004d8712
     LEA EAX,[ESP + 0x104]               ; 004d8719
     PUSH EAX                            ; 004d8720
@@ -141,8 +141,8 @@ section .text
     MOV EDI,0x5c5748                    ; 004d872f | = "..\\engine\\ini.cpp"
     MOV EAX,0x18f                       ; 004d8734
     PUSH 0x5c575a                       ; 004d8739 | = "cIni::writeProfileString: Unable to o..."
-    MOV dword ptr [0x01d71de0],EDI      ; 004d873e | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004d8744 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 004d873e | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004d8744 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d8749
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d874e

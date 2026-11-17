@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setClipPlane_FUN_00514c40(float a,float b,float c,float d)
 
 {
-  _DAT_01d25f1c = a;
-  _DAT_01d25f20 = b;
-  _DAT_01d25f24 = c;
-  _DAT_01d25f28 = d;
+  g_FLOAT_01d25f1c = a;
+  g_FLOAT_01d25f20 = b;
+  g_FLOAT_01d25f24 = c;
+  g_FLOAT_01d25f28 = d;
   return;
 }

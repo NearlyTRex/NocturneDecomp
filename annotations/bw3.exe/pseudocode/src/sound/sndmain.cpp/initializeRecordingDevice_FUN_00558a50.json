@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 81,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 60
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
   },
   "cross_references": [],
   "function": {
@@ -48,14 +45,14 @@
   "globals": [
     {
       "addr": "00604258",
-      "name": "DAT_00604258",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00604258",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "02cf3c68",
-      "name": "DAT_02cf3c68",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02cf3c68",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -118,46 +115,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00604258",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_selectRecordingDevice_FUN_005589e0(DAT_00604258);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00604258",
-      "severity": "mild",
-      "text": "if (-1 < DAT_00604258) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00604258",
-      "severity": "mild",
-      "text": "if (*(int *)(DAT_00604258 * 0x108 + 0x2cf3528) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00604258",
-      "severity": "mild",
-      "text": "sound_sndwav_cpp_getWavInDevice_FUN_0055e630(*(UINT *)(DAT_00604258 * 0x108 + 0x2cf352c))",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

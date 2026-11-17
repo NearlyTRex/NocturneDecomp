@@ -4,12 +4,183 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEventList.h"
+#include "types/classes/CFireEffect.h"
+#include "types/classes/CFlameCan.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CSmokeParticle.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRGBColorPalette.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C30000
 // =============================================================================
 
+// CCharacter*[50]
+extern CCharacter* g_CCharacter_PTR_ARRAY_01c3f5ac[50];
+
 // CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
+extern CDemonActorType g_CDemonActorType_01c3de78;
+
+// CEventList
+extern CEventList g_CEventList_01c38bc0;
+
+// CFireEffect
+extern CFireEffect g_CFireEffect_01c3deb4;
+
+// CFlameCan*[150]
+extern CFlameCan* g_CFlameCan_PTR_ARRAY_01c3f678[150];
+
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c3def8;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c3e074;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c3e1f0;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c3e36c;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c3e4e8;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c3ead8;
+
+// CKeyFramedModelInstance[5]
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_ARRAY_01c3ec5c[5];
+
+// CSmokeParticle[2048]
+extern CSmokeParticle g_CSmokeParticle_ARRAY_01c3f8e0[2048];
+
+// CVector3i
+extern CVector3i g_CVector3i_01c3deb8;
+extern CVector3i g_CVector3i_01c3dec4;
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c3ded0;
+
+// SMRGLTextureBasic[20]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01c3f3c8[20];
+
+// SRGBColorPalette*
+extern SRGBColorPalette* g_SRGBColorPalette_PTR_01c35210;
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c35814;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c3581c;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c35820;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c35828;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c35834;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54;
+
+// byte
+extern byte g_BYTE_01c38b00;
+extern byte g_BYTE_01c38b01;
+
+// char[256]
+extern char g_CHAR_ARRAY_01c3dd10[256];
+
+// char[4952]
+extern char g_CHAR_ARRAY_01c37790[4952];
+
+// int
+extern int g_INT_01c35818;
+extern int g_INT_01c35824;
+extern int g_INT_01c35830;
+extern int g_INT_01c35e38;
+extern int g_INT_01c35e3c;
+extern int g_INT_01c35e40;
+extern int g_INT_01c35e44;
+extern int g_INT_01c35e48;
+extern int g_INT_01c35e4c;
+extern int g_INT_01c35e50;
+extern int g_INT_01c35e54;
+extern int g_INT_01c35e58;
+extern int g_INT_01c35e5c;
+extern int g_INT_01c35e60;
+extern int g_INT_01c35e64;
+extern int g_INT_01c35e68;
+extern int g_INT_01c37780;
+extern int g_INT_01c37784;
+extern int g_INT_01c37788;
+extern int g_INT_01c3778c;
+extern int g_INT_01c38aec;
+extern int g_INT_01c38af0;
+extern int g_INT_01c38af4;
+extern int g_INT_01c38afc;
+extern int g_INT_01c38b04;
+extern int g_INT_01c38b08;
+extern int g_INT_01c38b0c;
+extern int g_INT_01c38b14;
+extern int g_INT_01c38b18;
+extern int g_INT_01c38b40;
+extern int g_INT_01c38b44;
+extern int g_INT_01c38b48;
+extern int g_INT_01c38b4c;
+extern int g_INT_01c38b50;
+extern int g_INT_01c38b58;
+extern int g_INT_01c38b60;
+extern int g_INT_01c38b64;
+extern int g_INT_01c38b68;
+extern int g_INT_01c38b6c;
+extern int g_INT_01c38b70;
+extern int g_INT_01c38b74;
+extern int g_INT_01c38b78;
+extern int g_INT_01c38b7c;
+extern int g_INT_01c38b80;
+extern int g_INT_01c38b84;
+extern int g_INT_01c38b88;
+extern int g_INT_01c38b8c;
+extern int g_INT_01c38b90;
+extern int g_INT_01c38b94;
+extern int g_INT_01c38b98;
+extern int g_INT_01c38b9c;
+extern int g_INT_01c38ba0;
+extern int g_INT_01c38ba4;
+extern int g_INT_01c38ba8;
+extern int g_INT_01c38bac;
+extern int g_INT_01c38bb0;
+extern int g_INT_01c38bb4;
+extern int g_INT_01c38bb8;
+extern int g_INT_01c38bbc;
+extern int g_INT_01c3dd0c;
+extern int g_INT_01c3dee8;
+extern int g_INT_01c3deec;
+extern int g_INT_01c3def0;
+extern int g_INT_01c3def4;
+extern int g_INT_01c3ec54;
+extern int g_INT_01c3ec58;
+extern int g_INT_01c3f5a8;
+extern int g_INT_01c3f674;
+extern int g_INT_01c3f8dc;
+
+// uchar*
+extern uchar* g_UCHAR_PTR_01c37770;
+extern uchar* g_UCHAR_PTR_01c37774;
+
+// uchar[768]
+extern uchar g_UCHAR_ARRAY_01c35838[768];
+extern uchar g_UCHAR_ARRAY_01c35b38[768];
+
+// uint[1600]
+extern uint g_UINT_ARRAY_01c35e70[1600];
+
+// uint[256]
+extern uint g_UINT_ARRAY_01c35214[256];
+
+// uint[3]
+extern uint g_UINT_ARRAY_01c3f8d0[3];
+
+// uint[448]
+extern uint g_UINT_ARRAY_01c34b10[448];
+
+// ulong
+extern ulong g_ULONG_01c38b5c;
+
+// ushort[256]
+extern ushort g_USHORT_ARRAY_01c34910[256];
+extern ushort g_USHORT_ARRAY_01c35614[256];
+
+// void*
+extern void* g_PTR_01c35e6c;
 

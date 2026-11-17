@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 561,
-    "complexity_score": 388,
+    "complexity_score": 296,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 238,
-    "suspect_count": 13,
+    "pseudocode_lines": 241,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 799
+    "total_lines": 802
   },
   "cross_references": [
     {
@@ -130,8 +129,8 @@
     },
     {
       "addr": "005ec6f1",
-      "name": "DAT_005ec6f1",
-      "type": "undefined4",
+      "name": "s_art_005ec6f1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -148,26 +147,26 @@
     },
     {
       "addr": "005ec73b",
-      "name": "DAT_005ec73b",
-      "type": "undefined4",
+      "name": "s_act_005ec73b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ec740",
-      "name": "DAT_005ec740",
-      "type": "undefined4",
+      "name": "s_art_005ec740",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ec744",
-      "name": "DAT_005ec744",
-      "type": "undefined4",
+      "name": "s_opa_005ec744",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ec749",
-      "name": "DAT_005ec749",
-      "type": "undefined4",
+      "name": "s_art_005ec749",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -220,20 +219,20 @@
     },
     {
       "addr": "005ec842",
-      "name": "DAT_005ec842",
-      "type": "undefined4",
+      "name": "s_art_005ec842",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ec846",
-      "name": "DAT_005ec846",
-      "type": "undefined4",
+      "name": "s_art_005ec846",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ec84a",
-      "name": "DAT_005ec84a",
-      "type": "undefined4",
+      "name": "s_art_005ec84a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -262,38 +261,38 @@
     },
     {
       "addr": "005ec8cf",
-      "name": "DAT_005ec8cf",
-      "type": "undefined4",
+      "name": "s_art_005ec8cf",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ec8d6",
-      "name": "DAT_005ec8d6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ec8d6",
+      "type": "float",
+      "value": "0.3000000"
     },
     {
       "addr": "005ec8da",
-      "name": "DAT_005ec8da",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ec8da",
+      "type": "float",
+      "value": "0.5900000"
     },
     {
       "addr": "005ec8de",
-      "name": "DAT_005ec8de",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ec8de",
+      "type": "float",
+      "value": "0.1100000"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
@@ -304,8 +303,8 @@
     },
     {
       "addr": "026530bc",
-      "name": "DAT_026530bc",
-      "type": "undefined4",
+      "name": "g_ULONG_026530bc",
+      "type": "ulong",
       "value": null
     }
   ],
@@ -524,80 +523,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005ec6f1",
-      "severity": "mild",
-      "text": "((char *)0x2652eb8,&DAT_005ec6f1,texture_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_005ec73b",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_changeFileExtension_FUN_004611a0(local_1d8,&DAT_005ec73b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005ec740",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910((char *)0x26530cc,&DAT_005ec740,local_1d8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_005ec744",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_changeFileExtension_FUN_004611a0(local_158,&DAT_005ec744);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005ec749",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910((char *)0x26532e0,&DAT_005ec749,local_158);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_005ec8cf",
-      "severity": "mild",
-      "text": "(&local_58,&DAT_005ec8cf,texture_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 200,
-      "match": "DAT_005ec842",
-      "severity": "mild",
-      "text": "support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(&local_58,&DAT_005ec842,local_1d8)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 206,
-      "match": "DAT_005ec846",
-      "severity": "mild",
-      "text": "(&local_58,&DAT_005ec846,local_158);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 212,
-      "match": "DAT_005ec84a",
-      "severity": "mild",
-      "text": "(&local_58,&DAT_005ec84a,texture_name);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 75,
+      "line": 76,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -605,7 +532,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 89,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -613,7 +540,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 36,
+      "line": 37,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

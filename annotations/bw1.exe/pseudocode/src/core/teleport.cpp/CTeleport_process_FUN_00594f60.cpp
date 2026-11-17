@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_teleport_cpp_CTeleport_process_FUN_00594f60(CTeleport *this_ptr,float delta_time)
 
 {
@@ -30,8 +28,9 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_00594f60(CTeleport *this_pt
   bVar4 = 0;
   if (this_ptr->destination != (CDemonActor *)0x0) {
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
-              (&this_ptr->base,(CVector3f *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x20),
-               &CStack_18);
+              (&this_ptr->base,
+               &(g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base).base.location.position,&CStack_18
+              );
     fStack_24 = CStack_18.x;
     *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8) =
          *(uint *)((int)&CStack_18 + (uint)bVar4 * -8 + 4);
@@ -48,7 +47,7 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_00594f60(CTeleport *this_pt
     if ((((fStack_4c <= fStack_1c) && (fStack_48 <= CStack_18.x)) && (fStack_44 <= CStack_18.y)) &&
        (((fStack_1c <= fStack_40 && (CStack_18.x <= fStack_3c)) && (CStack_18.y <= fStack_38)))) {
       core_mission_cpp_CDemonMission_setTeleportTarget_FUN_0051b700
-                (0x01D2C900,&this_ptr->destination->location);
+                (g_CDemonMission_PTR_0061f650,&this_ptr->destination->location);
       return;
     }
   }

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 842,
+    "complexity_score": 747,
     "cross_reference_count": 0,
     "function_call_count": 20,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 232,
-    "suspect_count": 57,
+    "suspect_count": 48,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
@@ -151,8 +150,8 @@
     },
     {
       "addr": "00609810",
-      "name": "DAT_00609810",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_00609810",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
@@ -163,38 +162,38 @@
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_006141f0",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "00614d30",
-      "name": "DAT_00614d30",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_00614d30",
+      "type": "CFireEffect*",
+      "value": "01c3deb4"
     },
     {
       "addr": "007bc498",
-      "name": "DAT_007bc498",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_007bc498",
+      "type": "int[17]",
       "value": null
     },
     {
       "addr": "007bc4cc",
-      "name": "DAT_007bc4cc",
+      "name": "g_INT_ARRAY_007bc498[13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007bc4d0",
-      "name": "DAT_007bc4d0",
+      "name": "g_INT_ARRAY_007bc498[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007bc4dc",
-      "name": "DAT_007bc4dc",
-      "type": "undefined4",
+      "name": "g_FLOAT_007bc4dc",
+      "type": "float",
       "value": null
     },
     {
@@ -205,8 +204,8 @@
     },
     {
       "addr": "0265370c",
-      "name": "DAT_0265370c",
-      "type": "undefined4",
+      "name": "g_CVector3f_0265370c",
+      "type": "CVector3f",
       "value": null
     }
   ],
@@ -327,78 +326,6 @@
       "severity": "moderate",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "((CVector3f *)&DAT_0265370c,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_007bc4cc",
-      "severity": "mild",
-      "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007bc4cc,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "((CVector3f *)&DAT_0265370c,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 133,
-      "match": "DAT_007bc4d0",
-      "severity": "mild",
-      "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007bc4d0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_00609810",
-      "severity": "mild",
-      "text": "(SMRGLTextureBasic *)&DAT_00609810);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 159,
-      "match": "DAT_00609810",
-      "severity": "mild",
-      "text": "(SMRGLTextureBasic *)&DAT_00609810);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 208,
-      "match": "DAT_007bc498",
-      "severity": "mild",
-      "text": "iVar2 = DAT_007bc498;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 234,
-      "match": "DAT_007bc4dc",
-      "severity": "mild",
-      "text": "DAT_007bc4dc = DAT_007bc4dc + delta_time;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 234,
-      "match": "DAT_007bc4dc",
-      "severity": "mild",
-      "text": "DAT_007bc4dc = DAT_007bc4dc + delta_time;",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&CStack_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

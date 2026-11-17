@@ -18,8 +18,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0047d980(CEditor
   _vsprintf((char *)aCStack_418,format_string,(va_list_t)&puStack_8);
   puStack_8 = (byte *)0x0;
   shape_edittool_cpp_CStrList_ctor_FUN_00481f20(&CStack_18);
-  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,(char *)0x5bce9c);
-  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,(char *)0x5bcea1);
+  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,"^Yes");
+  shape_edittool_cpp_CStrList_add_FUN_00482070(&CStack_18,"^No");
   iVar1 = shape_edittool_cpp_showMultiChoiceDialog_FUN_0047d230(aCStack_418,(char *)&CStack_18,0);
   shape_edittool_cpp_CStrList_dtor_FUN_00481f40(&CStack_18,0);
   return (uint)(iVar1 == 0);

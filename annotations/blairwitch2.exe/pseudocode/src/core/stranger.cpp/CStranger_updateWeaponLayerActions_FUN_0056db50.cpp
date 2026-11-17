@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0056db50(CStranger *this_ptr,float delta_time)
 
 {
@@ -92,11 +90,11 @@ LAB_0056dbda:
                             ((CCharacter *)this_ptr,6);
       local_18 = 6;
       iVar6 = local_18;
-      if ((float)_DAT_005ebda5 < fStack_14) {
-        fVar3 = delta_time * (float)_DAT_005ebd9d + this_ptr->aim_speed_factor;
+      if ((float)0.98999999999999999 < fStack_14) {
+        fVar3 = delta_time * (float)25 + this_ptr->aim_speed_factor;
         this_ptr->aim_speed_factor = fVar3;
-        if (0x428C0000 < fVar3) {
-          this_ptr->aim_speed_factor = 0x428C0000;
+        if (70.0f < fVar3) {
+          this_ptr->aim_speed_factor = 70.0f;
         }
         if ((this_ptr->base).player_input.action_state.fire != 0) {
           return;
@@ -274,7 +272,7 @@ switchD_0056dff9_caseD_3:
                     ((CCharacter *)this_ptr,1,(CVector3f *)&stack0xffffff8c);
         }
         this_ptr->action_pending = 0;
-        this_ptr->aim_speed_factor = 0x41200000;
+        this_ptr->aim_speed_factor = 10.0f;
       }
       if (1.0 <= (this_ptr->base).base.layer_action_t) {
         (this_ptr->base).base.layer_action_index = 0;
@@ -375,7 +373,7 @@ LAB_0056dcd2:
       if ((pCVar9 != (CDemonActor *)0x0) && (local_1c == 3)) {
         core_inv_cpp_CInventory_removeItem_FUN_004db8e0(local_24,pCVar9,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
-                  (0x01D182F0,(this_ptr->base).target_actor);
+                  (g_CDemonMission_PTR_00618170,(this_ptr->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
                   ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0,(CMatrix3x4f *)0x0);
         iVar6 = core_actor_cpp_isOfClass_FUN_0040c840

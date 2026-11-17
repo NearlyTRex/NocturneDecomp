@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd69
 ;   TerminatedCString s_CInputString_calcX_strin_005bcd7f
-;   undefined4 DAT_01c5b0e0
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   CBitFont* g_CBitFont_PTR_01c5b0e0
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -54,8 +54,8 @@ section .text
     MOV EDI,0x5bcd69                    ; 0047bfbc | = "..\\shape\\edittool.cpp"
     MOV EBP,0x211                       ; 0047bfc1
     PUSH 0x5bcd7f                       ; 0047bfc6 | = "CInputString::calcX - string too big ..."
-    MOV dword ptr [0x01d71de0],EDI      ; 0047bfcb | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0047bfd1 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 0047bfcb | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 0047bfd1 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047bfd7
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047bfdc
@@ -71,7 +71,7 @@ section .text
     MOV byte ptr [ESP + EBX*0x1 + 0x4],AH ; 0047bff1
     LEA EAX,[ESP + 0x4]                 ; 0047bff5
     PUSH EAX                            ; 0047bff9
-    MOV EAX,[0x01c5b0e0]                ; 0047bffa | DAT_01c5b0e0
+    MOV EAX,[0x01c5b0e0]                ; 0047bffa | g_CBitFont_PTR_01c5b0e0
     PUSH EAX                            ; 0047bfff
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 0047c000
         ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
@@ -91,7 +91,7 @@ section .text
     PUSH EAX                            ; 0047c017
     ADD EBX,EAX                         ; 0047c018
     XOR EDX,EDX                         ; 0047c01a
-    MOV ESI,dword ptr [0x01c5b0e0]      ; 0047c01c | DAT_01c5b0e0
+    MOV ESI,dword ptr [0x01c5b0e0]      ; 0047c01c | g_CBitFont_PTR_01c5b0e0
     MOV DL,byte ptr [EBX]               ; 0047c022
     PUSH ESI                            ; 0047c024
     MOV dword ptr [ESP + 0x410],EDX     ; 0047c025

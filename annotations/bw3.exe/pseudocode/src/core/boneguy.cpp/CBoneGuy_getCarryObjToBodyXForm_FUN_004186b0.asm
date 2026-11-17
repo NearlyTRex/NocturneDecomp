@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6f7a
-;   undefined4 DAT_005b6f82
-;   undefined4 DAT_02cfd900
+;   float g_FLOAT_005b6f7a = 0.5
+;   double g_DOUBLE_005b6f82 = 0.400000000000000
+;   CVector3f g_CVector3f_02cfd900
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d220
@@ -43,7 +43,7 @@ section .text
     LEA EAX,[EBP + 0x16]                ; 004186ec
     PUSH EAX                            ; 004186ef
     MOV ECX,0xbf456042                  ; 004186f0
-    PUSH 0x2cfd900                      ; 004186f5 | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 004186f5 | g_CVector3f_02cfd900
     LEA EAX,[EBP + 0xffffff62]          ; 004186fa
     MOV EDI,0x40224dd3                  ; 00418700
     PUSH EAX                            ; 00418705
@@ -89,7 +89,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041876e
     CALL core_actor.cpp_CVector3f_ctor_FUN_0040d220 ; 0041876f
         ;   XREF to: 0040d220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040d220(CVector3f * this_ptr)
-    FLD float ptr [0x005b6f7a]          ; 00418774 | DAT_005b6f7a
+    FLD float ptr [0x005b6f7a]          ; 00418774 | g_FLOAT_005b6f7a
     FLD float ptr [EBP + 0x46]          ; 0041877a
     FMUL ST1                            ; 0041877d
     FLD float ptr [EBP + 0x4a]          ; 0041877f
@@ -110,7 +110,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004187a8
     MOVSD ES:EDI,ESI                    ; 004187a9
     MOVSD ES:EDI,ESI                    ; 004187aa
-    FADD double ptr [0x005b6f82]        ; 004187ab | DAT_005b6f82
+    FADD double ptr [0x005b6f82]        ; 004187ab | g_DOUBLE_005b6f82
     LEA EDI,[EBP + -0x1a]               ; 004187b1
     LEA ESI,[EBP + -0xe]                ; 004187b4
     FSTP float ptr [EBP + -0x6]         ; 004187b7

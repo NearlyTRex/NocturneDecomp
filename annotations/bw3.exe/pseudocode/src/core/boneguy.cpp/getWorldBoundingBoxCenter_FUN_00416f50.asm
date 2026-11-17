@@ -7,8 +7,8 @@
 ; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6d32
-;   undefined4 DAT_005b6d3a
+;   float g_FLOAT_005b6d32 = 0.5
+;   double g_DOUBLE_005b6d3a = 0.400000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -66,7 +66,7 @@ section .text
     CALL core_actor.cpp_CVector3f_ctor_FUN_0040d220 ; 00416fcc
         ;   XREF to: 0040d220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040d220(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 00416fd1
-    FLD float ptr [0x005b6d32]          ; 00416fd4 | DAT_005b6d32
+    FLD float ptr [0x005b6d32]          ; 00416fd4 | g_FLOAT_005b6d32
     FLD float ptr [ESP + 0x6c]          ; 00416fda
     FMUL ST1                            ; 00416fde
     FLD float ptr [ESP + 0x70]          ; 00416fe0
@@ -84,7 +84,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00417008
     MOVSD ES:EDI,ESI                    ; 00417009
     MOVSD ES:EDI,ESI                    ; 0041700a
-    FADD double ptr [0x005b6d3a]        ; 0041700b | DAT_005b6d3a
+    FADD double ptr [0x005b6d3a]        ; 0041700b | g_DOUBLE_005b6d3a
     LEA EDI,[ESP + 0x48]                ; 00417011
     LEA ESI,[ESP + 0x3c]                ; 00417015
     FSTP float ptr [ESP + 0x44]         ; 00417019

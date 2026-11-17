@@ -62,7 +62,7 @@
 ;   core_tvbat.cpp_CTVBat_process_FUN_00575380 at 00575bdb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bca09
+;   float g_FLOAT_005bca09 = 2.684355E+8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00454360
@@ -288,7 +288,7 @@ section .text
     FLD float ptr [ESP + 0x14]          ; 00473f4d
     FSUB float ptr [ESP + 0x8]          ; 00473f51
     FABS                                ; 00473f55
-    FLD float ptr [0x005bca09]          ; 00473f57 | DAT_005bca09
+    FLD float ptr [0x005bca09]          ; 00473f57 | g_FLOAT_005bca09
     FDIV float ptr [ESP]                ; 00473f5d
     FXCH ST3                            ; 00473f60
     FMUL ST3                            ; 00473f62

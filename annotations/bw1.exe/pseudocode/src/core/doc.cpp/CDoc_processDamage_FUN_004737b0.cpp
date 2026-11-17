@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -41,21 +39,21 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
     damage_info->damage_amount = 0.0;
     return;
   }
-  (this_ptr->base).invincibility_timer = _DAT_005feca8;
+  (this_ptr->base).invincibility_timer = 2.0f;
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->wielder,"CBugs");
   if (iVar2 != 0) {
     (this_ptr->base).invincibility_timer = 0.15;
   }
   if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005da3c4;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.45000000000000001;
   }
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->wielder,"CShadowsc");
   if ((iVar2 != 0) &&
      (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (0x01C51D80,"ScorpTailAttack"), iVar2 != 0)) {
-    core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,"HitByShadowScorp")
-    ;
+                        (g_CEventList_PTR_0061b4d0,"ScorpTailAttack"), iVar2 != 0)) {
+    core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+              (g_CEventList_PTR_0061b4d0,"HitByShadowScorp");
   }
   this_ptr_00 = g_CConsolePtr;
   if (((g_CGamePtr->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
@@ -84,7 +82,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
         else {
           iVar2 = 1;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,100.0);
-          desired_state_index = (fStack_14 <= _DAT_005da3cc) + 0x2a;
+          desired_state_index = (fStack_14 <= 50.0f) + 0x2a;
           this_ptr_01 = &(this_ptr->base).base.model.base;
         }
       }

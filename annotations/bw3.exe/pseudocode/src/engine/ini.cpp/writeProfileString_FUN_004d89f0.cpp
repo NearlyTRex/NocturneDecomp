@@ -9,6 +9,6 @@
 void __cdecl engine_ini_cpp_writeProfileString_FUN_004d89f0(char *section,char *key,char *value,char *filename)
 
 {
-  engine_ini_cpp_CIni_writeProfileString_FUN_004d8640((CIni *)0x1d5bc78,section,key,value,filename);
+  engine_ini_cpp_CIni_writeProfileString_FUN_004d8640(&g_CIni_01d5bc78,section,key,value,filename);
   return;
 }

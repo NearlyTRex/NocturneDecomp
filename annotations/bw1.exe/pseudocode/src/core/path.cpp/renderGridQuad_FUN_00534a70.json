@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 255,
+    "complexity_score": 174,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 17,
+    "pseudocode_lines": 64,
+    "suspect_count": 10,
     "suspect_types": [
       "suspect_float",
-      "unaffected_reg",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 242
+    "total_lines": 241
   },
   "cross_references": [],
   "function": {
@@ -50,21 +48,21 @@
   "globals": [
     {
       "addr": "005eca84",
-      "name": "DAT_005eca84",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005eca84",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005eca8c",
-      "name": "DAT_005eca8c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005eca8c",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "01fe5c30",
@@ -222,16 +220,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "float unaff_EBX;",
@@ -239,7 +229,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -247,87 +237,39 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 13,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar5 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar5 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 33,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "round((double)((float)(int)fVar1 + unaff_EBX));",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar5 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 38,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "round((double)((float)(int)ROUND(dVar7) + unaff_ESI));",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar5 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 45,
+      "line": 43,
       "match": "7.649255e-39",
       "severity": "mild",
       "text": "round((double)((float)(int)fVar2 - 7.649255e-39));",
       "type": "suspect_float"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar5 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "DAT_00612560->vertex_buffer_ptr->r = iStack_8;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 49,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr->g = unaff_EBP;",
@@ -335,7 +277,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 53,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[1].g = unaff_EBP;",
@@ -343,7 +285,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 59,
+      "line": 57,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[2].g = unaff_EBP;",
@@ -351,7 +293,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 61,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[3].g = unaff_EBP;",

@@ -17,7 +17,8 @@ void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_005964f0(CText
     texture = this_ptr->texture_entries;
     do {
       iVar1 = iVar1 + 1;
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
+                (g_CDemonRenderer_PTR_00612560,texture);
       texture = texture + 1;
     } while (iVar1 < this_ptr->texture_count);
   }

@@ -16,10 +16,10 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0045d27c = 0045d3c3
-;   undefined4 s_swordswing0_wav_005d07de+1
-;   undefined4 DAT_005d07f7
-;   undefined4 DAT_005d07ff
-;   undefined4 DAT_0061c068
+;   TerminatedCString s_swordswing0_wav_005d07df
+;   double g_DOUBLE_005d07f7 = 0.990000000000000
+;   double g_DOUBLE_005d07ff = 0.100000000000000
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   undefined4 g_CAmmoClassInfo.name_hash
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
@@ -125,7 +125,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 0045d3cf
     ADD ESP,0x8                         ; 0045d3d2
     FLD float ptr [EBP + -0x4]          ; 0045d3d5
-    FCOMP double ptr [0x005d07f7]       ; 0045d3d8 | DAT_005d07f7
+    FCOMP double ptr [0x005d07f7]       ; 0045d3d8 | g_DOUBLE_005d07f7
     FNSTSW AX                           ; 0045d3de
     SAHF                                ; 0045d3e0
     JNC 0x0045d589                      ; 0045d3e1
@@ -246,9 +246,9 @@ section .text
     MOV dword ptr [EBX + 0x2d04],EAX    ; 0045d4e8
     LEA EAX,[EBX + 0x20]                ; 0045d4ee
     PUSH EAX                            ; 0045d4f1
-    PUSH 0x5d07df                       ; 0045d4f2 | s_swordswing0_wav_005d07de+1
+    PUSH 0x5d07df                       ; 0045d4f2 | = "swordswing0?.wav"
     PUSH EBX                            ; 0045d4f7
-    MOV EDX,dword ptr [0x0061c068]      ; 0045d4f8 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 0045d4f8 | g_CSound_PTR_0061c068
     MOV dword ptr [EBX + 0x2d08],0x0    ; 0045d4fe
     PUSH EDX                            ; 0045d508
     MOV dword ptr [EBX + 0x256a4],0x7   ; 0045d509
@@ -308,7 +308,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 0045d591
     ADD ESP,0x8                         ; 0045d594
     FLD float ptr [EBP + -0x4]          ; 0045d597
-    FCOMP double ptr [0x005d07ff]       ; 0045d59a | DAT_005d07ff
+    FCOMP double ptr [0x005d07ff]       ; 0045d59a | g_DOUBLE_005d07ff
     FNSTSW AX                           ; 0045d5a0
     SAHF                                ; 0045d5a2
     JA 0x0045d3e7                       ; 0045d5a3

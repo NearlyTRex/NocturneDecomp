@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00562edc = 00562f4e
-;   undefined4 DAT_005eb49d
+;   double g_DOUBLE_005eb49d = 0.25
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.delta_time_float
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00562ff2 (CONDITIONAL_JUMP)  ; LAB_00562ff2
     FLD float ptr [ESP + 0x18]          ; 00562f60
         ;   Label: LAB_00562f60
-    FMUL double ptr [0x005eb49d]        ; 00562f64 | DAT_005eb49d
+    FMUL double ptr [0x005eb49d]        ; 00562f64 | g_DOUBLE_005eb49d
     FSTP float ptr [ESP + 0x4]          ; 00562f6a
     PUSH dword ptr [ESP + 0x4]          ; 00562f6e
     PUSH EBX                            ; 00562f72

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setdir_cpp_CZThumb_render_FUN_00538a60(CZThumb *this_ptr,int screen_x,int screen_y)
 
 {
@@ -19,9 +17,9 @@ void __cdecl core_setdir_cpp_CZThumb_render_FUN_00538a60(CZThumb *this_ptr,int s
   int local_1c;
   int local_14;
   
-  if ((((-1 < screen_x) && (-1 < screen_y)) && (screen_x + this_ptr->width < DAT_006141b8)) &&
-     (this_ptr->height + screen_y < DAT_006141bc)) {
-    if (DAT_006141c0 == 0x20) {
+  if ((((-1 < screen_x) && (-1 < screen_y)) && (screen_x + this_ptr->width < g_INT_006141b8)) &&
+     (this_ptr->height + screen_y < g_INT_006141bc)) {
+    if (g_INT_006141c0 == 0x20) {
       iVar4 = screen_y * 4;
       for (local_14 = 1; local_1c = iVar4 + 4, local_14 < this_ptr->height + -1;
           local_14 = local_14 + 1) {
@@ -34,7 +32,7 @@ void __cdecl core_setdir_cpp_CZThumb_render_FUN_00538a60(CZThumb *this_ptr,int s
           if (0xff < uVar2) {
             uVar2 = 0xff;
           }
-          *(uint *)(*(int *)(&DAT_01c2a390 + iVar4) + iVar1) = uVar2 * 0x10101;
+          *(uint *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar4 + 4) + iVar1) = uVar2 * 0x10101;
         }
         iVar4 = local_1c;
       }
@@ -50,7 +48,7 @@ void __cdecl core_setdir_cpp_CZThumb_render_FUN_00538a60(CZThumb *this_ptr,int s
           if (0xff < uVar2) {
             uVar2 = 0xff;
           }
-          _DAT_01c35e60 = (uint)(byte)(&DAT_01c2c910)[(uVar2 >> 3) * 0x421];
+          g_INT_01c35e60 = (int)g_UCHAR_ARRAY_01c2c910[(uVar2 >> 3) * 0x421];
           engine_2d_c_plotPixel_FUN_00401130(iVar1,local_20);
         }
         screen_y = local_20;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionController *this_ptr,float *delta_time)
 
 {
@@ -33,7 +31,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
   local_28 = &this_ptr->current_motion_index;
   local_18 = 0;
   do {
-    if (*delta_time <= (float)_DAT_005dfc28) break;
+    if (*delta_time <= (float)1.0000000000000001e-05) break;
     iVar2 = core_motion_cpp_CMotionController_findAndStartTransition_FUN_00503470(this_ptr);
     if (iVar2 != 0) goto LAB_00503122;
     local_b0 = *delta_time;
@@ -59,14 +57,14 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
         core_motion_cpp_CMotionController_startTransition_FUN_005036e0(this_ptr,&local_44);
         break;
       default:
-        _DAT_01d046a0 = "..\\core\\motion.cpp";
-        _DAT_01d046a4 = 0x1e2;
+        g_CHAR_PTR_01d046a0 = "..\\core\\motion.cpp";
+        g_INT_01d046a4 = 0x1e2;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid transition command returned by CMotionControler::advanceComplex: %d");
       }
       goto LAB_00503261;
     }
     if (this_ptr->tween_direction == 0) {
-      local_ac = (float)_DAT_005dfc30 - this_ptr->tween_progress;
+      local_ac = (float)0.5 - this_ptr->tween_progress;
     }
     else {
       local_ac = this_ptr->tween_progress;
@@ -101,8 +99,8 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
       local_14 = 1;
       goto LAB_005031da;
     default:
-      _DAT_01d046a0 = "..\\core\\motion.cpp";
-      _DAT_01d046a4 = 0x1a9;
+      g_CHAR_PTR_01d046a0 = "..\\core\\motion.cpp";
+      g_INT_01d046a4 = 0x1a9;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CMotionController::advance: Tweening active but invalid tweenType: %d");
     }
 switchD_005031c9_caseD_3:
@@ -120,7 +118,7 @@ LAB_005031da:
     if (this_ptr->tween_direction == 0) {
       fVar1 = local_b0 * this_ptr->tween_speed + this_ptr->tween_progress;
       this_ptr->tween_progress = fVar1;
-      if (((float)_DAT_005dfc38 < fVar1) &&
+      if (((float)0.49990000000000001 < fVar1) &&
          (core_motion_cpp_CMotionController_reverseTransition_FUN_00503560(this_ptr),
          this_ptr->tween_set_new_state != 0)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
@@ -130,7 +128,7 @@ LAB_005031da:
     else {
       fVar1 = this_ptr->tween_progress - local_b0 * this_ptr->tween_speed;
       this_ptr->tween_progress = fVar1;
-      if (fVar1 < (float)_DAT_005dfc40) {
+      if (fVar1 < (float)0.0001) {
         core_motion_cpp_CMotionController_clearTweenState_FUN_005039e0(this_ptr);
       }
     }
@@ -142,7 +140,7 @@ LAB_00503261:
     }
     if (iVar2 != 0) {
       _sprintf(local_a8,"signal%d");
-      core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,local_a8);
+      core_event_cpp_CEventList_executeCommands_FUN_004894f0(g_CEventList_PTR_006141f0,local_a8);
       return iVar2;
     }
 LAB_00503122:

@@ -7,11 +7,11 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ec1514
-;   undefined4 DAT_01ec183c
-;   undefined4 DAT_01ec1840
-;   undefined4 DAT_01ec1844
-;   undefined4 DAT_01ec1848
+;   int g_INT_01ec1514
+;   int g_INT_01ec183c
+;   int g_INT_01ec1840
+;   int g_INT_01ec1844
+;   int g_INT_01ec1848
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_searchGrid_FUN_0050d170
@@ -30,13 +30,13 @@ section .text
     MOV EBX,0x32                        ; 0050d131
     MOV EDI,0x2                         ; 0050d136
     MOV EBP,dword ptr [EAX + 0x10]      ; 0050d13b
-    MOV dword ptr [0x01ec1848],EDX      ; 0050d13e | DAT_01ec1848
+    MOV dword ptr [0x01ec1848],EDX      ; 0050d13e | g_INT_01ec1848
     PUSH EBP                            ; 0050d144
-    MOV dword ptr [0x01ec1844],ECX      ; 0050d145 | DAT_01ec1844
-    MOV dword ptr [0x01ec183c],EBX      ; 0050d14b | DAT_01ec183c
+    MOV dword ptr [0x01ec1844],ECX      ; 0050d145 | g_INT_01ec1844
+    MOV dword ptr [0x01ec183c],EBX      ; 0050d14b | g_INT_01ec183c
     PUSH EAX                            ; 0050d151
-    MOV dword ptr [0x01ec1840],EBX      ; 0050d152 | DAT_01ec1840
-    MOV dword ptr [0x01ec1514],EDI      ; 0050d158 | DAT_01ec1514
+    MOV dword ptr [0x01ec1840],EBX      ; 0050d152 | g_INT_01ec1840
+    MOV dword ptr [0x01ec1514],EDI      ; 0050d158 | g_INT_01ec1514
     CALL core_path.cpp_CPathMap_searchGrid_FUN_0050d170 ; 0050d15e
         ;   XREF to: 0050d170 (UNCONDITIONAL_CALL)  ; uint core_path.cpp_CPathMap_searchGrid_FUN_0050d170(CPathMap * this_ptr, int start_height)
     ADD ESP,0x8                         ; 0050d163

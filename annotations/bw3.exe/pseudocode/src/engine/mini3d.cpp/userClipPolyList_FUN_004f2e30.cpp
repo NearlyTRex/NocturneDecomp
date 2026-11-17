@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f2e30(float *vertices,int vertex_count,ushort *indices,int triangle_count)
 
 {
@@ -20,7 +18,7 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f2e30(float *vertices,int 
   float fVar7;
   float fVar8;
   float fVar9;
-  void *pvVar10;
+  byte *puVar10;
   float *pfVar11;
   int extraout_EAX;
   ushort *puVar12;
@@ -46,38 +44,38 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f2e30(float *vertices,int 
   int iStack_18;
   int iStack_14;
   
-  fVar5 = _DAT_01d76c94;
+  fVar5 = g_FLOAT_01d76c94;
   iVar17 = 0;
   pfVar11 = vertices;
   if (0 < vertex_count) {
     do {
       fStack_3c = *pfVar11;
-      fVar1 = fStack_3c * _DAT_01d76c70;
+      fVar1 = fStack_3c * g_FLOAT_01d76c70;
       fStack_38 = pfVar11[1];
-      fVar2 = fStack_38 * _DAT_01d76c7c;
+      fVar2 = fStack_38 * g_FLOAT_01d76c7c;
       fStack_34 = pfVar11[2];
-      fVar3 = fStack_34 * _DAT_01d76c88;
+      fVar3 = fStack_34 * g_FLOAT_01d76c88;
       iVar17 = iVar17 + 1;
-      fVar4 = fStack_34 * _DAT_01d76c8c + fStack_38 * _DAT_01d76c80 + fStack_3c * _DAT_01d76c74 +
-              _DAT_01d76c98;
-      *pfVar11 = fStack_34 * _DAT_01d76c84 + fStack_38 * _DAT_01d76c78 + fStack_3c * _DAT_01d76c6c +
-                 _DAT_01d76c90;
+      fVar4 = fStack_34 * g_FLOAT_01d76c8c +
+              fStack_38 * g_FLOAT_01d76c80 + fStack_3c * g_FLOAT_01d76c74 + g_FLOAT_01d76c98;
+      *pfVar11 = fStack_34 * g_FLOAT_01d76c84 +
+                 fStack_38 * g_FLOAT_01d76c78 + fStack_3c * g_FLOAT_01d76c6c + g_FLOAT_01d76c90;
       pfVar11[1] = fVar3 + fVar2 + fVar1 + fVar5;
       pfVar11[2] = fVar4;
       pfVar11 = pfVar11 + 0x10;
     } while (iVar17 < vertex_count);
   }
-  if (_DAT_01d7a6ac == (void *)0x0) {
-    _DAT_01d7a6ac = malloc(360000);
-    if (_DAT_01d7a6ac == (void *)0x0) {
-      _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
-      _DAT_01d71de4 = 0x14e5;
+  if (g_PTR_01d7a6ac == (byte *)0x0) {
+    g_PTR_01d7a6ac = malloc(360000);
+    if (g_PTR_01d7a6ac == (byte *)0x0) {
+      g_CHAR_PTR_01d71de0 = "..\\engine\\mini3d.cpp";
+      g_INT_01d71de4 = 0x14e5;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CMini3D::userClipPolyList - Out of memory");
     }
-    _DAT_01d7a6b0 = malloc(60000);
-    if (_DAT_01d7a6b0 == (ushort *)0x0) {
-      _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
-      _DAT_01d71de4 = 0x14e9;
+    g_PTR_01d7a6b0 = malloc(60000);
+    if (g_PTR_01d7a6b0 == (byte *)0x0) {
+      g_CHAR_PTR_01d71de0 = "..\\engine\\mini3d.cpp";
+      g_INT_01d71de4 = 0x14e9;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CMini3D::userClipPolyList - Out of memory");
     }
   }
@@ -106,17 +104,17 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f2e30(float *vertices,int 
       } while (puVar12 != (ushort *)((int)indices + iVar13));
       iStack_40 = 0;
       engine_mini3d_cpp_clipToUserPlane_FUN_004f2cf0
-                (afStack_ac,3,(float *)((int)_DAT_01d7a6ac + iStack_14 * 0x24),&iStack_40);
+                (afStack_ac,3,(float *)(g_PTR_01d7a6ac + iStack_14 * 0x24),&iStack_40);
       if (2 < iStack_30) {
         iVar16 = unaff_EBX + 2;
         iVar18 = iVar17 * 2;
         iVar13 = unaff_EBX;
-        for (iVar15 = 0; puVar12 = _DAT_01d7a6b0, iVar13 = iVar13 + 1, iVar15 < iStack_30 + -2;
+        for (iVar15 = 0; puVar10 = g_PTR_01d7a6b0, iVar13 = iVar13 + 1, iVar15 < iStack_30 + -2;
             iVar15 = iVar15 + 1) {
-          *(short *)(iVar18 + (int)_DAT_01d7a6b0) = (short)unaff_EBX;
+          *(short *)(g_PTR_01d7a6b0 + iVar18) = (short)unaff_EBX;
           iVar17 = iVar17 + 3;
-          *(short *)(iVar18 + 2 + (int)puVar12) = (short)iVar13;
-          *(short *)(iVar18 + 4 + (int)puVar12) = (short)iVar16;
+          *(short *)(puVar10 + iVar18 + 2) = (short)iVar13;
+          *(short *)(puVar10 + iVar18 + 4) = (short)iVar16;
           iVar16 = iVar16 + 1;
           iVar18 = iVar18 + 6;
         }
@@ -127,50 +125,43 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f2e30(float *vertices,int 
   }
   clip_flags = 0;
   pfVar11 = (float *)(iStack_14 << 6);
-  if (_DAT_01d76d00 == 0) {
+  if (g_PTR_01d76d00 == (byte *)0x0) {
     if (0 < iStack_14) {
       iVar13 = 0;
       iVar18 = 0;
       pfStack_24 = pfVar11;
       do {
-        pvVar10 = _DAT_01d7a6ac;
-        fVar1 = (float)_DAT_01c6e308;
-        fVar5 = *(float *)(iVar18 + (int)_DAT_01d7a6ac) - _DAT_01d76c90;
-        *(float *)(iVar18 + 4 + (int)_DAT_01d7a6ac) =
-             *(float *)(iVar18 + 4 + (int)_DAT_01d7a6ac) - _DAT_01d76c94;
-        *(float *)(iVar18 + (int)pvVar10) = fVar5;
-        pfVar11 = _DAT_01d76f60;
-        fVar5 = (float)_DAT_01c6e2fc;
-        *(float *)(iVar18 + 8 + (int)pvVar10) =
-             *(float *)(iVar18 + 8 + (int)pvVar10) - _DAT_01d76c98;
+        puVar10 = g_PTR_01d7a6ac;
+        fVar1 = (float)g_INT_01c6e308;
+        fVar5 = *(float *)(g_PTR_01d7a6ac + iVar18) - g_FLOAT_01d76c90;
+        *(float *)(g_PTR_01d7a6ac + iVar18 + 4) =
+             *(float *)(g_PTR_01d7a6ac + iVar18 + 4) - g_FLOAT_01d76c94;
+        *(float *)(puVar10 + iVar18) = fVar5;
+        pfVar11 = g_FLOAT_PTR_01d76f60;
+        fVar5 = (float)g_INT_01c6e2fc;
+        *(float *)(puVar10 + iVar18 + 8) = *(float *)(puVar10 + iVar18 + 8) - g_FLOAT_01d76c98;
         pfVar11 = (float *)((int)pfVar11 + iVar13);
-        fVar2 = (float)_DAT_01c6e30c;
-        *pfVar11 = (float)_DAT_01c6e314 * *(float *)(iVar18 + 8 + (int)pvVar10) +
-                   fVar5 * *(float *)(iVar18 + (int)pvVar10) +
-                   fVar1 * *(float *)(iVar18 + 4 + (int)pvVar10);
-        fVar5 = (float)_DAT_01c6e310;
-        pfVar11[1] = (float)_DAT_01c6e318 * *(float *)(iVar18 + 8 + (int)pvVar10) +
-                     (float)_DAT_01c6e300 * *(float *)(iVar18 + (int)pvVar10) +
-                     fVar2 * *(float *)(iVar18 + 4 + (int)pvVar10);
+        fVar2 = (float)g_INT_01c6e30c;
+        *pfVar11 = (float)g_INT_01c6e314 * *(float *)(puVar10 + iVar18 + 8) +
+                   fVar5 * *(float *)(puVar10 + iVar18) + fVar1 * *(float *)(puVar10 + iVar18 + 4);
+        fVar5 = (float)g_INT_01c6e310;
+        pfVar11[1] = (float)g_INT_01c6e318 * *(float *)(puVar10 + iVar18 + 8) +
+                     (float)g_INT_01c6e300 * *(float *)(puVar10 + iVar18) +
+                     fVar2 * *(float *)(puVar10 + iVar18 + 4);
         iVar15 = iVar13 + 0x40;
-        pfVar11[2] = (float)_DAT_01c6e31c * *(float *)(iVar18 + 8 + (int)pvVar10) +
-                     (float)_DAT_01c6e304 * *(float *)(iVar18 + (int)pvVar10) +
-                     fVar5 * *(float *)(iVar18 + 4 + (int)pvVar10);
+        pfVar11[2] = (float)g_INT_01c6e31c * *(float *)(puVar10 + iVar18 + 8) +
+                     (float)g_INT_01c6e304 * *(float *)(puVar10 + iVar18) +
+                     fVar5 * *(float *)(puVar10 + iVar18 + 4);
         engine_mini3d_cpp_projectVertex_FUN_004efd80(pfVar11);
-        pvVar10 = _DAT_01d7a6ac;
-        pfVar11 = _DAT_01d76f60;
-        *(uint *)(iVar13 + 0x1c + (int)_DAT_01d76f60) =
-             *(uint *)((int)_DAT_01d7a6ac + iVar18 + 0x1c);
-        *(uint *)(iVar13 + 0x20 + (int)pfVar11) =
-             *(uint *)((int)pvVar10 + iVar18 + 0x20);
-        *(uint *)(iVar13 + 0x24 + (int)pfVar11) = *(uint *)((int)pvVar10 + iVar18 + 0xc)
-        ;
-        *(uint *)(iVar13 + 0x28 + (int)pfVar11) =
-             *(uint *)((int)pvVar10 + iVar18 + 0x10);
-        *(uint *)(iVar13 + 0x2c + (int)pfVar11) =
-             *(uint *)((int)pvVar10 + iVar18 + 0x14);
-        *(uint *)(iVar13 + 0x30 + (int)pfVar11) =
-             *(uint *)((int)pvVar10 + iVar18 + 0x18);
+        puVar10 = g_PTR_01d7a6ac;
+        pfVar11 = g_FLOAT_PTR_01d76f60;
+        *(uint *)(iVar13 + 0x1c + (int)g_FLOAT_PTR_01d76f60) =
+             *(uint *)(g_PTR_01d7a6ac + iVar18 + 0x1c);
+        *(uint *)(iVar13 + 0x20 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x20);
+        *(uint *)(iVar13 + 0x24 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0xc);
+        *(uint *)(iVar13 + 0x28 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x10);
+        *(uint *)(iVar13 + 0x2c + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x14);
+        *(uint *)(iVar13 + 0x30 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x18);
         clip_flags = clip_flags | *(uint *)(iVar13 + 0x10 + (int)pfVar11);
         iVar13 = iVar15;
         iVar18 = iVar18 + 0x24;
@@ -182,30 +173,30 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f2e30(float *vertices,int 
     iVar18 = 0;
     pfStack_20 = pfVar11;
     do {
-      fVar5 = *(float *)(iVar18 + 4 + (int)_DAT_01d7a6ac) - _DAT_01d76c94;
-      fVar8 = *(float *)(iVar18 + (int)_DAT_01d7a6ac) - _DAT_01d76c90;
-      fVar7 = fVar8 * _DAT_01d76d08;
-      fVar9 = fVar8 * _DAT_01d76d0c;
-      fVar1 = fVar5 * _DAT_01d76d14;
-      fVar2 = fVar5 * _DAT_01d76d18;
-      fVar4 = *(float *)(iVar18 + 8 + (int)_DAT_01d7a6ac) - _DAT_01d76c98;
-      fVar6 = fVar4 * _DAT_01d76d20;
-      fVar3 = fVar4 * _DAT_01d76d24;
-      pfVar11 = (float *)((int)_DAT_01d76f60 + iVar13);
+      fVar5 = *(float *)(g_PTR_01d7a6ac + iVar18 + 4) - g_FLOAT_01d76c94;
+      fVar8 = *(float *)(g_PTR_01d7a6ac + iVar18) - g_FLOAT_01d76c90;
+      fVar7 = fVar8 * g_FLOAT_01d76d08;
+      fVar9 = fVar8 * g_FLOAT_01d76d0c;
+      fVar1 = fVar5 * g_FLOAT_01d76d14;
+      fVar2 = fVar5 * g_FLOAT_01d76d18;
+      fVar4 = *(float *)(g_PTR_01d7a6ac + iVar18 + 8) - g_FLOAT_01d76c98;
+      fVar6 = fVar4 * g_FLOAT_01d76d20;
+      fVar3 = fVar4 * g_FLOAT_01d76d24;
+      pfVar11 = (float *)((int)g_FLOAT_PTR_01d76f60 + iVar13);
       iVar15 = iVar13 + 0x40;
-      *pfVar11 = fVar4 * _DAT_01d76d1c + fVar8 * _DAT_01d76d04 + fVar5 * _DAT_01d76d10;
+      *pfVar11 = fVar4 * g_FLOAT_01d76d1c + fVar8 * g_FLOAT_01d76d04 + fVar5 * g_FLOAT_01d76d10;
       pfVar11[1] = fVar6 + fVar1 + fVar7;
       pfVar11[2] = fVar3 + fVar2 + fVar9;
       engine_mini3d_cpp_projectVertex_FUN_004efd80(pfVar11);
-      pvVar10 = _DAT_01d7a6ac;
-      pfVar11 = _DAT_01d76f60;
-      *(uint *)(iVar13 + 0x1c + (int)_DAT_01d76f60) =
-           *(uint *)((int)_DAT_01d7a6ac + iVar18 + 0x1c);
-      *(uint *)(iVar13 + 0x20 + (int)pfVar11) = *(uint *)((int)pvVar10 + iVar18 + 0x20);
-      *(uint *)(iVar13 + 0x24 + (int)pfVar11) = *(uint *)((int)pvVar10 + iVar18 + 0xc);
-      *(uint *)(iVar13 + 0x28 + (int)pfVar11) = *(uint *)((int)pvVar10 + iVar18 + 0x10);
-      *(uint *)(iVar13 + 0x2c + (int)pfVar11) = *(uint *)((int)pvVar10 + iVar18 + 0x14);
-      *(uint *)(iVar13 + 0x30 + (int)pfVar11) = *(uint *)((int)pvVar10 + iVar18 + 0x18);
+      puVar10 = g_PTR_01d7a6ac;
+      pfVar11 = g_FLOAT_PTR_01d76f60;
+      *(uint *)(iVar13 + 0x1c + (int)g_FLOAT_PTR_01d76f60) =
+           *(uint *)(g_PTR_01d7a6ac + iVar18 + 0x1c);
+      *(uint *)(iVar13 + 0x20 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x20);
+      *(uint *)(iVar13 + 0x24 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0xc);
+      *(uint *)(iVar13 + 0x28 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x10);
+      *(uint *)(iVar13 + 0x2c + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x14);
+      *(uint *)(iVar13 + 0x30 + (int)pfVar11) = *(uint *)(puVar10 + iVar18 + 0x18);
       clip_flags = clip_flags | *(uint *)(iVar13 + 0x10 + (int)pfVar11);
       iVar13 = iVar15;
       iVar18 = iVar18 + 0x24;
@@ -213,7 +204,7 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f2e30(float *vertices,int 
   }
   if ((2 < iStack_14) && (0 < iVar17 / 3)) {
     engine_mini3d_cpp_drawTransformedList_FUN_004f12b0
-              (_DAT_01d76f60,iStack_14,_DAT_01d7a6b0,iVar17 / 3,clip_flags);
+              (g_FLOAT_PTR_01d76f60,iStack_14,(ushort *)g_PTR_01d7a6b0,iVar17 / 3,clip_flags);
     return extraout_EAX;
   }
   return (int)pfVar11;

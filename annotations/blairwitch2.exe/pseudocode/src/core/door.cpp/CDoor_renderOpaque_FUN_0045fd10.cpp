@@ -40,7 +40,8 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_0045fd10(CDoor *this_ptr)
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_48,unaff_EDI);
   if (iVar2 != 0) {
     if (this_ptr->plot_as_box_in_shadow != 0) {
-      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                        (g_CDemonRenderer_PTR_0060b280);
       if (iVar1 != 0) {
         (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff98);
         puVar4 = auStack_58;

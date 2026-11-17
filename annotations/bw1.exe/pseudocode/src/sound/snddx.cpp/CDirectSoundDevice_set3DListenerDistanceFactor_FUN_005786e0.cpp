@@ -14,6 +14,6 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_
   if (_DAT_02c81da0 == (int *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02c81da0 + 0x2c))(_DAT_02c81da0,distance_in_feet * _DAT_005f4df3,0);
+  (**(code **)(*_DAT_02c81da0 + 0x2c))(_DAT_02c81da0,distance_in_feet * 0.3048f,0);
   return;
 }

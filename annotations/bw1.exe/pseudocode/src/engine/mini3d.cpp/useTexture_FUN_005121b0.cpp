@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_useTexture_FUN_005121b0(int texture)
 
 {
-  if (_DAT_01d25f14 != 0) {
+  if (g_INT_01d25f14 != 0) {
     return;
   }
   engine_texture_cpp_ensureTextureLoaded_FUN_00597a20((SMRGLTextureBasic *)texture);

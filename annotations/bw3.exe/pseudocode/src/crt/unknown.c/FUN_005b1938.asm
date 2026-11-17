@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_ExitThread_005b3544 = 001b3d0c
 ;   void* PTR_crt_unknown.c_FUN_005a7f68_006079e4 = 005a7f68
-;   undefined4 DAT_02d252b0
+;   int g_INT_02d252b0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f68
@@ -26,7 +26,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005b1938
     CALL crt_unknown.c_FUN_005ae464     ; 005b193e
         ;   XREF to: 005ae464 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ae464()
-    CMP dword ptr [0x02d252b0],0x0      ; 005b1943 | DAT_02d252b0
+    CMP dword ptr [0x02d252b0],0x0      ; 005b1943 | g_INT_02d252b0
     JNZ 0x005b1956                      ; 005b194a
         ;   XREF to: 005b1956 (CONDITIONAL_JUMP)  ; LAB_005b1956
     PUSH 0x1                            ; 005b194c

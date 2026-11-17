@@ -19,7 +19,7 @@ CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00411bb0(CA
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable = &g_CAudioRecPuzzleVTable;
+  (this_ptr->base).vtable = g_CAudioRecPuzzleVTable;
   pSVar1 = core_bmppuzzl_cpp_SButtonStruct_arrdtor50_FUN_004144c0(this_ptr->buttons,0);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300
                      ((CAlphaBitmap *)&pSVar1[-2].bitmap.act,0);

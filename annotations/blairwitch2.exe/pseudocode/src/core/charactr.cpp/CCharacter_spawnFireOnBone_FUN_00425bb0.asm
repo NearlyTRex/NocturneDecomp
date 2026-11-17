@@ -54,7 +54,7 @@
 ;   core_charactr.cpp_CCharacter_setup_FUN_00422930 at 00422a53
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ccd2e
+;   double g_DOUBLE_005ccd2e = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -146,7 +146,7 @@ section .text
     FMUL ST0                            ; 00425c88
     FADDP                               ; 00425c8a
     FSQRT                               ; 00425c8c
-    FMUL double ptr [0x005ccd2e]        ; 00425c8e | DAT_005ccd2e
+    FMUL double ptr [0x005ccd2e]        ; 00425c8e | g_DOUBLE_005ccd2e
     CALL crt_math.c_round_FUN_005b7ff0  ; 00425c94
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xb0]        ; 00425c99
@@ -330,7 +330,7 @@ section .text
     MOV dword ptr [EAX + 0x14],0x3f000000 ; 00425f13
     FLD float ptr [EAX + 0x14]          ; 00425f1a
     MOV EAX,dword ptr [EBX + 0x3564]    ; 00425f1d
-    FLD double ptr [0x005ccd2e]         ; 00425f23 | DAT_005ccd2e
+    FLD double ptr [0x005ccd2e]         ; 00425f23 | g_DOUBLE_005ccd2e
     FXCH                                ; 00425f29
     FMUL ST1                            ; 00425f2b
     DEC EAX                             ; 00425f2d

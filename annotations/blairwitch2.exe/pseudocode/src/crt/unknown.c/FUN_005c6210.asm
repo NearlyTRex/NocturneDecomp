@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c59e0 at 005c5b0e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_026807e8
+;   int g_INT_026807e8
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005b8580
@@ -184,7 +184,7 @@ section .text
     POP ESI                             ; 005c635c
     POP EBX                             ; 005c635d
     RET                                 ; 005c635e
-    CMP dword ptr [0x026807e8],0x0      ; 005c635f | DAT_026807e8
+    CMP dword ptr [0x026807e8],0x0      ; 005c635f | g_INT_026807e8
         ;   Label: LAB_005c635f
     JZ 0x005c63d4                       ; 005c6366
         ;   XREF to: 005c63d4 (CONDITIONAL_JUMP)  ; LAB_005c63d4

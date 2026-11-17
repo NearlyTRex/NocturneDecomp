@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d975d
 ;   TerminatedCString s_CKeyFramedModel_buildCol_005d9770
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c8af28
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   CVector3f g_CVector3f_02c8af28
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
@@ -83,12 +83,12 @@ section .text
     MOV EBP,0x5d975d                    ; 004683ea | = "..\\core\\dmodel.cpp"
     MOV EAX,0x470                       ; 004683ef
     PUSH 0x5d9770                       ; 004683f4 | = "CKeyFramedModel::buildCollisionTriLis..."
-    MOV dword ptr [0x01d1d400],EBP      ; 004683f9 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 004683ff | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 004683f9 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 004683ff | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00468404
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00468409
-    PUSH 0x2c8af28                      ; 0046840c | DAT_02c8af28
+    PUSH 0x2c8af28                      ; 0046840c | g_CVector3f_02c8af28
         ;   Label: LAB_0046840c
     PUSH EBX                            ; 00468411
     CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420 ; 00468412

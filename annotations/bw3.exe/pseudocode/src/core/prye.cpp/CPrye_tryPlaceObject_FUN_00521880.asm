@@ -59,11 +59,11 @@
 ;   core_prye.cpp_CPrye_handleActionButton_FUN_00525930 at 0052597a
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_prye_cpp_005cd58e+1
-;   undefined4 DAT_005cd5b7
-;   undefined4 DAT_005cd5bf
-;   undefined4 DAT_005cd5c7
-;   undefined4 DAT_005cd5cf
+;   TerminatedCString s_actionPending_d_prye_cpp_005cd58f
+;   double g_DOUBLE_005cd5b7 = 0.990000000000000
+;   double g_DOUBLE_005cd5bf = 3
+;   double g_DOUBLE_005cd5c7 = 2
+;   double g_DOUBLE_005cd5cf = 4
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CCrateClassInfo.name_hash
@@ -117,7 +117,7 @@ section .text
     MOV dword ptr [ESP + 0x10c],EAX     ; 005218bd
     FLD float ptr [ESP + 0x10c]         ; 005218c4
     ADD ESP,0x8                         ; 005218cb
-    FCOMP double ptr [0x005cd5b7]       ; 005218ce | DAT_005cd5b7
+    FCOMP double ptr [0x005cd5b7]       ; 005218ce | g_DOUBLE_005cd5b7
     FNSTSW AX                           ; 005218d4
     SAHF                                ; 005218d6
     JC 0x0052197d                       ; 005218d7
@@ -243,14 +243,14 @@ section .text
     JNC 0x0052195b                      ; 00521a38
         ;   XREF to: 0052195b (CONDITIONAL_JUMP)  ; LAB_0052195b
     FLD float ptr [ESP + 0x1c]          ; 00521a3e
-    FCOMP double ptr [0x005cd5bf]       ; 00521a42 | DAT_005cd5bf
+    FCOMP double ptr [0x005cd5bf]       ; 00521a42 | g_DOUBLE_005cd5bf
     FNSTSW AX                           ; 00521a48
     SAHF                                ; 00521a4a
     JNC 0x0052195b                      ; 00521a4b
         ;   XREF to: 0052195b (CONDITIONAL_JUMP)  ; LAB_0052195b
     FLD float ptr [ESP + 0x14]          ; 00521a51
     FABS                                ; 00521a55
-    FCOMP double ptr [0x005cd5c7]       ; 00521a57 | DAT_005cd5c7
+    FCOMP double ptr [0x005cd5c7]       ; 00521a57 | g_DOUBLE_005cd5c7
     FNSTSW AX                           ; 00521a5d
     SAHF                                ; 00521a5f
     JNC 0x0052195b                      ; 00521a60
@@ -265,7 +265,7 @@ section .text
     JNC 0x0052195b                      ; 00521a77
         ;   XREF to: 0052195b (CONDITIONAL_JUMP)  ; LAB_0052195b
     FLD double ptr [ESP]                ; 00521a7d
-    FCOMP double ptr [0x005cd5cf]       ; 00521a80 | DAT_005cd5cf
+    FCOMP double ptr [0x005cd5cf]       ; 00521a80 | g_DOUBLE_005cd5cf
     FNSTSW AX                           ; 00521a86
     SAHF                                ; 00521a88
     JNC 0x0052195b                      ; 00521a89
@@ -292,7 +292,7 @@ section .text
         ;   XREF to: 00521adb (CONDITIONAL_JUMP)  ; LAB_00521adb
     PUSH 0x11b5                         ; 00521ac2
     PUSH ESI                            ; 00521ac7
-    PUSH 0x5cd58f                       ; 00521ac8 | s_actionPending_d_prye_cpp_005cd58e+1
+    PUSH 0x5cd58f                       ; 00521ac8 | = "actionPending = %d\nprye.cpp line %d"
     MOV EAX,[0x005fb140]                ; 00521acd | g_CEditorToolsPtr
     PUSH EAX                            ; 00521ad2
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 00521ad3
@@ -628,7 +628,7 @@ section .text
     FMUL ST0                            ; 00521eec
     FADDP                               ; 00521eee
     FSQRT                               ; 00521ef0
-    FCOMP double ptr [0x005cd5c7]       ; 00521ef2 | DAT_005cd5c7
+    FCOMP double ptr [0x005cd5c7]       ; 00521ef2 | g_DOUBLE_005cd5c7
     FNSTSW AX                           ; 00521ef8
     SAHF                                ; 00521efa
     JNC 0x00521e61                      ; 00521efb

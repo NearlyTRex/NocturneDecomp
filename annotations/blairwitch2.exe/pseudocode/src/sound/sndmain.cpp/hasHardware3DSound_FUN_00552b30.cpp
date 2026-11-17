@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl sound_sndmain_cpp_hasHardware3DSound_FUN_00552b30(void)
 
 {
-  return _DAT_02648e88;
+  return g_INT_02648e88;
 }

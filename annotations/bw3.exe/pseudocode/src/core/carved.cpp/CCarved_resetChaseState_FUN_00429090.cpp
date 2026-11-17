@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_carved_cpp_CCarved_resetChaseState_FUN_00429090(CCarved *this_ptr)
 
@@ -41,7 +40,7 @@ void __cdecl core_carved_cpp_CCarved_resetChaseState_FUN_00429090(CCarved *this_
     }
     local_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
                          (&this_ptr_00->base);
-    if (local_14 <= (float)_DAT_005b7ec7) {
+    if (local_14 <= (float)0.90000000000000002) {
       return;
     }
     pCVar1 = (this_ptr->base).victim;
@@ -58,8 +57,8 @@ void __cdecl core_carved_cpp_CCarved_resetChaseState_FUN_00429090(CCarved *this_
       local_34 = local_28;
       local_30 = local_24;
     }
-    if ((_DAT_005dcf4c <= SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34)) ||
-       (iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3), iVar2 != 1)) {
+    if ((5.0f <= SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34))
+       || (iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3), iVar2 != 1)) {
       iVar2 = 1;
       iVar3 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3);
       iVar3 = iVar3 + 7;

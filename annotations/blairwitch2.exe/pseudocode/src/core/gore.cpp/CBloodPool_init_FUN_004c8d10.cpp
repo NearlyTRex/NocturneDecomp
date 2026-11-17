@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodPool_init_FUN_004c8d10(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type)
 
 {
@@ -24,10 +22,10 @@ void __cdecl core_gore_cpp_CBloodPool_init_FUN_004c8d10(CBloodPool *this_ptr,CVe
   fVar2 = (this_ptr->position).y;
   (this_ptr->position).z = position->z;
   this_ptr->age = 0.0;
-  (this_ptr->position).y = fVar2 + _DAT_005d94ea;
-  (this_ptr->position_fixed).x = (int)ROUND((this_ptr->position).x * _DAT_005f7ba8);
-  (this_ptr->position_fixed).y = (int)ROUND((this_ptr->position).y * _DAT_005f7ba8);
-  (this_ptr->position_fixed).z = (int)ROUND((this_ptr->position).z * _DAT_005f7ba8);
+  (this_ptr->position).y = fVar2 + 0.1f;
+  (this_ptr->position_fixed).x = (int)ROUND((this_ptr->position).x * 256.0f);
+  (this_ptr->position_fixed).y = (int)ROUND((this_ptr->position).y * 256.0f);
+  (this_ptr->position_fixed).z = (int)ROUND((this_ptr->position).z * 256.0f);
   this_ptr->blood_type = blood_type;
   return;
 }

@@ -25,8 +25,8 @@
 ;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d49fe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4d2d
-;   undefined4 DAT_005c4d35
+;   double g_DOUBLE_005c4d2d = 5
+;   double g_DOUBLE_005c4d35 = 3
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -103,7 +103,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d3368
     FLD float ptr [ESP + 0x24]          ; 004d3369
     FABS                                ; 004d336d
-    FCOMP double ptr [0x005c4d2d]       ; 004d336f | DAT_005c4d2d
+    FCOMP double ptr [0x005c4d2d]       ; 004d336f | g_DOUBLE_005c4d2d
     FNSTSW AX                           ; 004d3375
     SAHF                                ; 004d3377
     JA 0x004d343c                       ; 004d3378
@@ -118,14 +118,14 @@ section .text
     JA 0x004d343c                       ; 004d338f
         ;   XREF to: 004d343c (CONDITIONAL_JUMP)  ; LAB_004d343c
     FLD double ptr [ESP]                ; 004d3395
-    FCOMP double ptr [0x005c4d35]       ; 004d3398 | DAT_005c4d35
+    FCOMP double ptr [0x005c4d35]       ; 004d3398 | g_DOUBLE_005c4d35
     FNSTSW AX                           ; 004d339e
     SAHF                                ; 004d33a0
     JA 0x004d343c                       ; 004d33a1
         ;   XREF to: 004d343c (CONDITIONAL_JUMP)  ; LAB_004d343c
     FLD float ptr [ESP + 0x20]          ; 004d33a7
     FABS                                ; 004d33ab
-    FCOMP double ptr [0x005c4d35]       ; 004d33ad | DAT_005c4d35
+    FCOMP double ptr [0x005c4d35]       ; 004d33ad | g_DOUBLE_005c4d35
     FNSTSW AX                           ; 004d33b3
     SAHF                                ; 004d33b5
     JA 0x004d343c                       ; 004d33b6

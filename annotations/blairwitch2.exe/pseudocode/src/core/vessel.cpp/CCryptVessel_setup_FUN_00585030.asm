@@ -7,7 +7,7 @@
 ; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eddd2
+;   double g_DOUBLE_005eddd2 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
@@ -81,7 +81,7 @@ section .text
     FMUL ST0                            ; 005850d8
     FADDP                               ; 005850da
     FSQRT                               ; 005850dc
-    FCOMP double ptr [0x005eddd2]       ; 005850de | DAT_005eddd2
+    FCOMP double ptr [0x005eddd2]       ; 005850de | g_DOUBLE_005eddd2
     FNSTSW AX                           ; 005850e4
     SAHF                                ; 005850e6
     JNC 0x0058511f                      ; 005850e7

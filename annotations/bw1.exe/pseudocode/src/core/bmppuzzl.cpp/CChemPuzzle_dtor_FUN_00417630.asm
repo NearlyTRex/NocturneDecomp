@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_CChemPuzzleVTable = 00417630
+;   TerminatedCString g_CChemPuzzleVTable
 ;   WatcomTypeInfo g_CChemPuzzleTypeInfo
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     JNZ 0x0041767b                      ; 0041763a
         ;   XREF to: 0041767b (CONDITIONAL_JUMP)  ; LAB_0041767b
     PUSH 0x0                            ; 0041763c
-    MOV dword ptr [EBX],0x5fc9d4        ; 0041763e | g_CChemPuzzleVTable
+    MOV dword ptr [EBX],0x5fc9d4        ; 0041763e | = "0vA"
     ADD EBX,0x70                        ; 00417644
     PUSH EBX                            ; 00417647
     CALL core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_00418890 ; 00417648

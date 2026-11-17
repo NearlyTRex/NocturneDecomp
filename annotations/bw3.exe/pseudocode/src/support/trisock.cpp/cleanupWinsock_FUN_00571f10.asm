@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_killSockets_005d6df7
-;   undefined4 DAT_02cfd8a8
-;   undefined4 DAT_02cfd8ac
-;   undefined4 DAT_02cfd8b4
+;   HANDLE g_HANDLE_02cfd8a8
+;   void* g_PTR_02cfd8ac
+;   int g_INT_02cfd8b4
 ;
 ; Called Functions:
 ;   crt_wsock32.c_WSACleanup
@@ -35,12 +35,12 @@ section .text
     PUSH 0x5d6df7                       ; 00571f19 | = "killSockets\n"
     CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 00571f1e
         ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
-    MOV EDX,dword ptr [0x02cfd8a8]      ; 00571f23 | DAT_02cfd8a8
+    MOV EDX,dword ptr [0x02cfd8a8]      ; 00571f23 | g_HANDLE_02cfd8a8
     ADD ESP,0x4                         ; 00571f29
     TEST EDX,EDX                        ; 00571f2c
     JNZ 0x00571f45                      ; 00571f2e
         ;   XREF to: 00571f45 (CONDITIONAL_JUMP)  ; LAB_00571f45
-    CMP dword ptr [0x02cfd8b4],0x0      ; 00571f30 | DAT_02cfd8b4
+    CMP dword ptr [0x02cfd8b4],0x0      ; 00571f30 | g_INT_02cfd8b4
         ;   Label: LAB_00571f30
     JNZ 0x00571f90                      ; 00571f37
         ;   XREF to: 00571f90 (CONDITIONAL_JUMP)  ; LAB_00571f90
@@ -56,17 +56,17 @@ section .text
         ;   Label: LAB_00571f45
     CALL wincore_winrun.cpp_waitForMutex_FUN_00581930 ; 00571f46
         ;   XREF to: 00581930 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_waitForMutex_FUN_00581930(HANDLE mutex_handle)
-    MOV EBX,dword ptr [0x02cfd8ac]      ; 00571f4b | DAT_02cfd8ac
+    MOV EBX,dword ptr [0x02cfd8ac]      ; 00571f4b | g_PTR_02cfd8ac
     ADD ESP,0x4                         ; 00571f51
     TEST EBX,EBX                        ; 00571f54
     JZ 0x00571f80                       ; 00571f56
         ;   XREF to: 00571f80 (CONDITIONAL_JUMP)  ; LAB_00571f80
-    MOV ESI,dword ptr [0x02cfd8ac]      ; 00571f58 | DAT_02cfd8ac
+    MOV ESI,dword ptr [0x02cfd8ac]      ; 00571f58 | g_PTR_02cfd8ac
         ;   Label: LAB_00571f58
     PUSH ESI                            ; 00571f5e
     CALL support_trisock.cpp_dnsRequestCancel_FUN_00570e80 ; 00571f5f
         ;   XREF to: 00570e80 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_dnsRequestCancel_FUN_00570e80(void * request)
-    MOV EDI,dword ptr [0x02cfd8ac]      ; 00571f64 | DAT_02cfd8ac
+    MOV EDI,dword ptr [0x02cfd8ac]      ; 00571f64 | g_PTR_02cfd8ac
     ADD ESP,0x4                         ; 00571f6a
     TEST EDI,EDI                        ; 00571f6d
     JNZ 0x00571f58                      ; 00571f6f
@@ -74,7 +74,7 @@ section .text
     LEA EAX,[EAX]                       ; 00571f71
     LEA EDX,[EDX]                       ; 00571f77
     LEA EAX,[EAX]                       ; 00571f7d
-    MOV EAX,[0x02cfd8a8]                ; 00571f80 | DAT_02cfd8a8
+    MOV EAX,[0x02cfd8a8]                ; 00571f80 | g_HANDLE_02cfd8a8
         ;   Label: LAB_00571f80
     PUSH EAX                            ; 00571f85
     CALL wincore_winrun.cpp_releaseMutex_FUN_00581990 ; 00571f86

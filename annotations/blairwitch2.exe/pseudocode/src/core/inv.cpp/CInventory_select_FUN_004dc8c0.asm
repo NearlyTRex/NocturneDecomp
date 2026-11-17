@@ -22,18 +22,18 @@
 ;   TerminatedCString s_CAmmo_005db929
 ;   TerminatedCString s_core_inv_cpp_005db92f
 ;   TerminatedCString s_CInventory_select_Catch_005db93f
-;   undefined4 DAT_005db95d
+;   TerminatedCString s_CGun_005db95d
 ;   TerminatedCString s_Reloading_Revolver_005db962
 ;   TerminatedCString s_CWeapon_005db977
 ;   TerminatedCString s_CHealthItem_005db97f
 ;   TerminatedCString s_core_inv_cpp_005db98b
 ;   TerminatedCString s_CInventory_select_Catch_005db99b
 ;   TerminatedCString s_You_have_used_005db9b9
-;   undefined4 DAT_005db9ca
+;   TerminatedCString s_anon_005db9ca
 ;   TerminatedCString s_CGasMask_005db9cc
 ;   TerminatedCString s_CBoxActor_005db9d5
-;   undefined4 DAT_005db9e2
-;   undefined4 DAT_006141f0
+;   double g_DOUBLE_005db9e2 = 98
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -83,12 +83,12 @@ section .text
     MOV EDI,0x5db92f                    ; 004dc8fc | = "..\\core\\inv.cpp"
     MOV EAX,0x6a3                       ; 004dc901
     PUSH 0x5db93f                       ; 004dc906 | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01d046a0],EDI      ; 004dc90b | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004dc911 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004dc90b | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004dc911 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dc916
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dc91b
-    MOV EAX,[0x01cedef4]                ; 004dc91e | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004dc91e | g_INT_01cedef4
         ;   Label: LAB_004dc91e
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004dc923
     PUSH EAX                            ; 004dc92a
@@ -98,7 +98,7 @@ section .text
     TEST EAX,EAX                        ; 004dc93a
     JZ 0x004dc95b                       ; 004dc93c
         ;   XREF to: 004dc95b (CONDITIONAL_JUMP)  ; LAB_004dc95b
-    MOV EAX,[0x01cedef4]                ; 004dc93e | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004dc93e | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004dc943
     MOV EDX,dword ptr [EAX + 0x247e4]   ; 004dc94a
     MOV EAX,dword ptr [EAX + EDX*0x4 + 0x2498c] ; 004dc950
@@ -112,7 +112,7 @@ section .text
     POP ESI                             ; 004dc95f
     POP EBX                             ; 004dc960
     RET                                 ; 004dc961
-    PUSH 0x5db95d                       ; 004dc962 | DAT_005db95d
+    PUSH 0x5db95d                       ; 004dc962 | = "CGun"
         ;   Label: LAB_004dc962
     PUSH EAX                            ; 004dc967
     CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dc968
@@ -121,7 +121,7 @@ section .text
     TEST EAX,EAX                        ; 004dc970
     JZ 0x004dc95b                       ; 004dc972
         ;   XREF to: 004dc95b (CONDITIONAL_JUMP)  ; LAB_004dc95b
-    MOV EAX,[0x01cedef4]                ; 004dc974 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004dc974 | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004dc979
     MOV EDX,dword ptr [EAX + 0x247e4]   ; 004dc980
     MOV EAX,dword ptr [EAX + EDX*0x4 + 0x2498c] ; 004dc986
@@ -165,7 +165,7 @@ section .text
     PUSH ECX                            ; 004dc9e0 | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004dc9e1
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01cedef4]                ; 004dc9e6 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004dc9e6 | g_INT_01cedef4
     ADD ESP,0xc                         ; 004dc9eb
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004dc9ee
     PUSH ESI                            ; 004dc9f5
@@ -177,7 +177,7 @@ section .text
     CMP EAX,0x1                         ; 004dca02
     JNZ 0x004dca5a                      ; 004dca05
         ;   XREF to: 004dca5a (CONDITIONAL_JUMP)  ; LAB_004dca5a
-    MOV EAX,[0x01cedef4]                ; 004dca07 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004dca07 | g_INT_01cedef4
     MOV EDI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004dca0c
     MOV EDX,dword ptr [EDI + 0x247e4]   ; 004dca13
     MOV EDX,dword ptr [EDI + EDX*0x4 + 0x2498c] ; 004dca19
@@ -270,16 +270,16 @@ section .text
     MOV EDX,0x5db98b                    ; 004dcad6 | = "..\\core\\inv.cpp"
     MOV ECX,0x6c2                       ; 004dcadb
     PUSH 0x5db99b                       ; 004dcae0 | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01d046a0],EDX      ; 004dcae5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004dcaeb | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004dcae5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004dcaeb | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dcaf1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dcaf6
-    MOV EAX,[0x01cedef4]                ; 004dcaf9 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004dcaf9 | g_INT_01cedef4
         ;   Label: LAB_004dcaf9
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004dcafe
     FLD float ptr [EAX + 0x25a8]        ; 004dcb05
-    FCOMP double ptr [0x005db9e2]       ; 004dcb0b | DAT_005db9e2
+    FCOMP double ptr [0x005db9e2]       ; 004dcb0b | g_DOUBLE_005db9e2
     FNSTSW AX                           ; 004dcb11
     SAHF                                ; 004dcb13
     JBE 0x004dcb22                      ; 004dcb14
@@ -341,7 +341,7 @@ section .text
         ;   XREF to: 004dcb6b (CONDITIONAL_JUMP)  ; LAB_004dcb6b
     POP EDI                             ; 004dcb83
         ;   Label: LAB_004dcb83
-    PUSH 0x5db9ca                       ; 004dcb84 | DAT_005db9ca
+    PUSH 0x5db9ca                       ; 004dcb84 | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004dcb89
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 004dcb8e
@@ -375,7 +375,7 @@ section .text
     PUSH ESI                            ; 004dcbcd | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_004b31a0 ; 004dcbce
         ;   XREF to: 004b31a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b31a0(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01cedef4]                ; 004dcbd3 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004dcbd3 | g_INT_01cedef4
     ADD ESP,0xc                         ; 004dcbd8
     MOV EDI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004dcbdb
     PUSH EDI                            ; 004dcbe2
@@ -449,7 +449,7 @@ section .text
     PUSH 0x1                            ; 004dcc84
     ADD EAX,0x75c                       ; 004dcc86
     PUSH EAX                            ; 004dcc8b
-    MOV ECX,dword ptr [0x006141f0]      ; 004dcc8c | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 004dcc8c | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 004dcc92
     CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004dcc93
         ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)

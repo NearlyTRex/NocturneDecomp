@@ -22,14 +22,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd25
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_005bcd3b
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
-;   undefined4 DAT_01c5b0e0
-;   undefined4 DAT_01c5bae0
-;   undefined4 DAT_01c5bae4
-;   undefined4 DAT_01c5bb1c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
+;   CBitFont* g_CBitFont_PTR_01c5b0e0
+;   int g_INT_01c5bae0
+;   int g_INT_01c5bae4
+;   int g_INT_01c5bb1c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -51,19 +51,19 @@ section .text
     PUSH EDI                            ; 0047cfa2
     PUSH EBP                            ; 0047cfa3
     SUB ESP,0x404                       ; 0047cfa4
-    CMP dword ptr [0x01c5b0e0],0x0      ; 0047cfaa | DAT_01c5b0e0
+    CMP dword ptr [0x01c5b0e0],0x0      ; 0047cfaa | g_CBitFont_PTR_01c5b0e0
     JZ 0x0047d073                       ; 0047cfb1
         ;   XREF to: 0047d073 (CONDITIONAL_JUMP)  ; LAB_0047d073
-    MOV EAX,[0x01c5b0e0]                ; 0047cfb7 | DAT_01c5b0e0
+    MOV EAX,[0x01c5b0e0]                ; 0047cfb7 | g_CBitFont_PTR_01c5b0e0
         ;   Label: LAB_0047cfb7
     PUSH 0x6a                           ; 0047cfbc
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047cfbe
     PUSH EAX                            ; 0047cfc4
-    MOV dword ptr [0x01c5bae0],EDX      ; 0047cfc5 | DAT_01c5bae0
+    MOV dword ptr [0x01c5bae0],EDX      ; 0047cfc5 | g_INT_01c5bae0
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047cfcb
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047cfd0
-    MOV [0x01c5bae4],EAX                ; 0047cfd3 | DAT_01c5bae4
+    MOV [0x01c5bae4],EAX                ; 0047cfd3 | g_INT_01c5bae4
     LEA EAX,[ESP + 0x420]               ; 0047cfd8
     MOV dword ptr [ESP + 0x400],EAX     ; 0047cfdf
     LEA EAX,[ESP + 0x400]               ; 0047cfe6
@@ -89,22 +89,22 @@ section .text
     ADD ESP,0x4                         ; 0047d028
     MOV EAX,ESP                         ; 0047d02b
     PUSH EAX                            ; 0047d02d
-    MOV EAX,[0x005fba1c]                ; 0047d02e | DAT_005fba1c
+    MOV EAX,[0x005fba1c]                ; 0047d02e | g_INT_005fba1c
     MOV EDX,EAX                         ; 0047d033
     SAR EDX,0x1f                        ; 0047d035
     SUB EAX,EDX                         ; 0047d038
     SAR EAX,0x1                         ; 0047d03a
     PUSH -0x1                           ; 0047d03c
-    MOV EBP,dword ptr [0x01c5bb1c]      ; 0047d03e | DAT_01c5bb1c
+    MOV EBP,dword ptr [0x01c5bb1c]      ; 0047d03e | g_INT_01c5bb1c
     PUSH EBP                            ; 0047d044
     PUSH EAX                            ; 0047d045
-    MOV EAX,[0x005fba18]                ; 0047d046 | DAT_005fba18
+    MOV EAX,[0x005fba18]                ; 0047d046 | g_INT_005fba18
     MOV EDX,EAX                         ; 0047d04b
     SAR EDX,0x1f                        ; 0047d04d
     SUB EAX,EDX                         ; 0047d050
     SAR EAX,0x1                         ; 0047d052
     PUSH EAX                            ; 0047d054
-    MOV EAX,[0x01c5b0e0]                ; 0047d055 | DAT_01c5b0e0
+    MOV EAX,[0x01c5b0e0]                ; 0047d055 | g_CBitFont_PTR_01c5b0e0
     PUSH EAX                            ; 0047d05a
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0 ; 0047d05b
         ;   XREF to: 004b0ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
@@ -121,8 +121,8 @@ section .text
         ;   Label: LAB_0047d073
     MOV EBX,0xa7                        ; 0047d078
     PUSH 0x5bcd3b                       ; 0047d07d | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d71de0],ECX      ; 0047d082 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0047d088 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0047d082 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0047d088 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047d08e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047d093

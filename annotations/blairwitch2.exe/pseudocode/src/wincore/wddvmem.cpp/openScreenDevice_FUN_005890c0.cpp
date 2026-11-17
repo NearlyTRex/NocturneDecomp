@@ -6,35 +6,33 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005890c0(void)
 
 {
   int iVar1;
-  int iVar2;
+  HRESULT HVar2;
   int iVar3;
-  uint local_74 [4];
-  int iStack_64;
+  DDSURFACEDESC local_74;
   
-  if ((_DAT_02661afc == 0) && (_DAT_01c37788 == 0)) {
-    memset(local_74,0,0x6c);
-    iVar3 = 0;
-    local_74[0] = 0x6c;
-    iVar1 = (**(code **)(*_DAT_02661ae8 + 100))(_DAT_02661ae8,0,local_74,1);
-    if (iVar1 != 0) {
-      _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
-      _DAT_01d046a4 = 0x23b;
+  if ((g_INT_02661afc == 0) && (g_INT_01c37788 == 0)) {
+    memset(&local_74,0,0x6c);
+    local_74.dwSize = 0x6c;
+    HVar2 = (*g_IDirectDrawSurface_PTR_02661ae8->vtable->Lock)
+                      (g_IDirectDrawSurface_PTR_02661ae8,(RECT *)0x0,&local_74,1,(void *)0x0);
+    if (HVar2 != 0) {
+      g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
+      g_INT_01d046a4 = 0x23b;
       core_main_c_displayErrorAndQuit_FUN_004e4500("openScreenDevice - Unable to lock screen!");
     }
-    if (0 < DAT_006141bc) {
-      iVar1 = DAT_006141bc * 4;
-      iVar2 = 0;
+    if (0 < g_INT_006141bc) {
+      iVar1 = g_INT_006141bc * 4;
+      iVar3 = 0;
       do {
-        *(int *)(&DAT_01c2a38c + iVar2) = iStack_64;
-        iVar2 = iVar2 + 4;
-        iStack_64 = iStack_64 + iVar3;
-      } while (iVar2 < iVar1);
+        *(LPVOID *)((int)g_ARRAY_PTR_01c2a38c + iVar3) = local_74.lpSurface;
+        iVar3 = iVar3 + 4;
+        local_74.lpSurface = (LPVOID)((int)local_74.lpSurface + local_74.dwPitchOrLinearSize.lPitch)
+        ;
+      } while (iVar3 < iVar1);
       return;
     }
   }

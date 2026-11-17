@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc7d2
 ;   TerminatedCString s_CPickList_getItemHotKey_005dc7e8
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -41,8 +41,8 @@ section .text
     MOV ECX,0x5dc7d2                    ; 0049c243 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x11af                      ; 0049c248
     PUSH 0x5dc7e8                       ; 0049c24d | = "CPickList::getItemHotKey - invalid index"
-    MOV dword ptr [0x01d1d400],ECX      ; 0049c252 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0049c258 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0049c252 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0049c258 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049c25e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049c263

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
 
 {
@@ -79,7 +77,7 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
     local_2c = fVar15;
     fVar12 = this_ptr->lifetime - fVar15;
     this_ptr->lifetime = fVar12;
-    fVar13 = _DAT_005c0908;
+    fVar13 = 10.0f;
     pCVar4 = this_ptr;
     if (fVar12 < 0.0) {
       this_ptr->lifetime = 0.0;
@@ -112,7 +110,7 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
       fVar15 = this_ptr->directions[0].y;
       fVar12 = this_ptr->directions[0].x;
       fVar13 = this_ptr->directions[0].z;
-      fVar15 = SQRT(fVar13 * fVar13 + fVar12 * fVar12 + fVar15 * fVar15) * _DAT_005c0908;
+      fVar15 = SQRT(fVar13 * fVar13 + fVar12 * fVar12 + fVar15 * fVar15) * 10.0f;
       this_ptr->segment_timer = this_ptr->segment_timer - local_2c;
       this_ptr->radius = fVar15 * local_2c + this_ptr->radius;
       fVar15 = this_ptr->segment_timer;
@@ -146,8 +144,8 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
           if (this_ptr->ring_type == 0) {
             iVar16 = 0x49ffac;
             dVar10 = round
-                               ((double)(this_ptr->lifetime * (float)_DAT_005c0910 *
-                                        (float)_DAT_005c0918));
+                               ((double)(this_ptr->lifetime * (float)0.5 *
+                                        (float)65535));
             fVar15 = (float)(int)ROUND(dVar10);
             iVar14 = 0x3d4ccccd;
             fVar13 = 2.8026e-45;
@@ -167,7 +165,7 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
             iVar11 = 0;
             end_position = &local_90;
             start_position = &local_c0;
-            this_ptr_00 = 0x01C73654;
+            this_ptr_00 = (CVector3f *)g_CFireEffect_PTR_005fc5a0;
           }
           core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
                     ((CFireEffect *)this_ptr_00,start_position,end_position,iVar11,fVar12,fVar13,
@@ -208,7 +206,8 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
             local_b4[1] = 0.0;
             local_4c = (double)this_ptr->radius;
             local_54 = (double)fVar15;
-            if ((this_ptr->radius + (float)_DAT_005c0928 < fVar15) && (local_54 < local_4c + 1.0)) {
+            if ((this_ptr->radius + (float)-1 < fVar15) &&
+               (local_54 < local_4c + 1.0)) {
               pCVar4 = this_ptr;
               if (0 < this_ptr->hit_count) {
                 do {
@@ -221,8 +220,8 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
                 if (this_ptr->ring_type == 0) {
                   local_138.damage_type = DAMAGE_TYPE_ATTACK_FIRE;
                   local_138.damage_amount =
-                       this_ptr->lifetime * _DAT_005c0920 * (float)_DAT_005c0910 +
-                       (float)_DAT_005c0930;
+                       this_ptr->lifetime * 15.0f * (float)0.5 +
+                       (float)5;
                   (*(((local_24->base).vtable._uc)->_uc).processDamage)(local_24,&local_138);
                   if (pCVar2->gun_flame_ignitable != 0) {
                     fVar12 = 5.0;
@@ -233,7 +232,7 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
                     iVar11 = 0;
                     local_a4[1] = (pCVar2->base).location.position.z;
                     pCVar1 = &local_9c;
-                    local_a4[0] = (pCVar2->base).location.position.y + _DAT_005c0938;
+                    local_a4[0] = (pCVar2->base).location.position.y + 2.0f;
                     local_9c.x = local_a8;
                     *(float *)((int)&local_9c + (uint)bVar9 * -8 + 4) = local_a4[(uint)bVar9 * -2];
                     *(float *)((int)&local_9c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -296,7 +295,7 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
                     local_18 = local_cc.x;
                     local_14 = local_cc.x;
                     core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                              ((CFireEffect *)0x01C73654,&local_6c,&local_fc,0x20000,0x10000,4,
+                              (g_CFireEffect_PTR_005fc5a0,&local_6c,&local_fc,0x20000,0x10000,4,
                                0xffff);
                   } while (iVar11 < 0x20);
                 }

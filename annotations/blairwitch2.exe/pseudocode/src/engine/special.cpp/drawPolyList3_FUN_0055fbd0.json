@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 58,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 112
+    "total_lines": 111
   },
   "cross_references": [],
   "function": {
@@ -32,26 +31,26 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e61b58",
-      "name": "DAT_01e61b58",
-      "type": "undefined4",
+      "name": "g_INT_01e61b58",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bbf8",
-      "name": "DAT_0264bbf8",
-      "type": "undefined4",
+      "name": "g_PTR_0264bbf8",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "0264bc04",
-      "name": "DAT_0264bc04",
-      "type": "undefined4",
+      "name": "g_PTR_0264bc04",
+      "type": "void*",
       "value": null
     }
   ],
@@ -153,19 +152,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (*(code *)g_PTR_0264bc04)(vertex_buffer,polygons,polygon_count,render_flags);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (_DAT_0264bc04 != (code *)0x0) {",
+      "text": "(*(code *)g_PTR_0264bbf8)(&pSStack_1c,3,render_flags);",
       "type": "unresolved_funcptr"
     }
   ]

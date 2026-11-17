@@ -6,30 +6,26 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005060b0(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output)
 
 {
-  int iVar1;
-  int iVar2;
-  double dVar3;
-  float fVar4;
-  int iVar5;
+  double dVar1;
+  float fVar2;
+  int iVar3;
+  uint uVar4;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  int iVar9;
-  float *pfVar10;
-  float *pfVar11;
-  float10 fVar12;
+  int iVar7;
+  float *pfVar8;
+  float *pfVar9;
+  float10 fVar10;
   int aiStack_e4 [32];
   double local_64;
   double local_5c [2];
   int local_4c;
   int local_48;
   float *local_44;
-  byte *local_40;
+  float *local_40;
   float *local_3c;
   int local_30;
   float *local_24;
@@ -37,86 +33,85 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005060b0(CMP3Deco
   int local_1c;
   int local_14;
   
-  if (DAT_00618de0 != 0) {
+  if (g_INT_00618de0 != 0) {
     local_1c = 0;
-    local_24 = (float *)&DAT_01d1cdd0;
+    local_24 = g_FLOAT_ARRAY_01d1cdd0;
     do {
-      iVar9 = 1;
-      pfVar10 = local_24;
-      pfVar11 = local_24;
+      iVar7 = 1;
+      pfVar8 = local_24;
+      pfVar9 = local_24;
       do {
-        fVar12 = (float10)fcos((float10)iVar9 *
-                               ((float10)local_1c * (float10)_DAT_005e002b + (float10)_DAT_005e0043)
-                              );
-        *pfVar10 = (float)(fVar12 * (float10)_DAT_005e0033);
-        local_14 = iVar9;
-        if (*pfVar10 < 0.0) {
-          local_5c[0] = (double)*pfVar10;
-          modf((double)(*pfVar10 + (float)_DAT_005e004b),local_5c);
-          dVar3 = local_5c[0];
+        fVar10 = (float10)fcos((float10)iVar7 *
+                               ((float10)local_1c * (float10)0.049087385211999998 +
+                               (float10)0.78539816339699997));
+        *pfVar8 = (float)(fVar10 * (float10)1000000000);
+        local_14 = iVar7;
+        if (*pfVar8 < 0.0) {
+          local_5c[0] = (double)*pfVar8;
+          modf((double)(*pfVar8 + (float)-0.5),local_5c);
+          dVar1 = local_5c[0];
         }
         else {
-          local_64 = (double)*pfVar10;
-          modf((double)(*pfVar10 + (float)_DAT_005e0053),&local_64);
-          dVar3 = local_64;
+          local_64 = (double)*pfVar8;
+          modf((double)(*pfVar8 + (float)0.5),&local_64);
+          dVar1 = local_64;
         }
-        *pfVar10 = (float)dVar3;
-        pfVar10 = pfVar10 + 1;
-        iVar9 = iVar9 + 2;
-        *pfVar11 = *pfVar11 * (float)_DAT_005e003b;
-        pfVar11 = pfVar11 + 1;
-      } while (iVar9 != 0x41);
+        *pfVar8 = (float)dVar1;
+        pfVar8 = pfVar8 + 1;
+        iVar7 = iVar7 + 2;
+        *pfVar9 = *pfVar9 * (float)1.0000000000000001e-09;
+        pfVar9 = pfVar9 + 1;
+      } while (iVar7 != 0x41);
       local_1c = local_1c + 1;
       local_24 = local_24 + 0x20;
     } while (local_1c < 0x40);
-    DAT_00618de0 = 0;
+    g_INT_00618de0 = 0;
   }
-  uVar8 = this_ptr->synthesis_buffer_index[channel_index] - 0x40U & 0x3ff;
-  this_ptr->synthesis_buffer_index[channel_index] = uVar8;
-  local_44 = this_ptr->synthesis_v_buffer[channel_index] + uVar8;
-  iVar9 = 0;
+  uVar6 = this_ptr->synthesis_buffer_index[channel_index] - 0x40U & 0x3ff;
+  this_ptr->synthesis_buffer_index[channel_index] = uVar6;
+  local_44 = this_ptr->synthesis_v_buffer[channel_index] + uVar6;
+  iVar7 = 0;
   local_4c = 0;
   do {
-    if ((float)_DAT_005e005b < ABS(subband_samples[iVar9])) {
-      aiStack_e4[local_4c] = iVar9;
+    if ((float)0.00035 < ABS(subband_samples[iVar7])) {
+      aiStack_e4[local_4c] = iVar7;
       local_4c = local_4c + 1;
     }
-    iVar9 = iVar9 + 1;
-  } while (iVar9 < 0x20);
+    iVar7 = iVar7 + 1;
+  } while (iVar7 < 0x20);
   local_20 = 0;
   do {
-    local_40 = &DAT_01d1cdd0 + local_20 * 0x80;
+    local_40 = g_FLOAT_ARRAY_01d1cdd0 + local_20 * 0x20;
     local_3c = subband_samples;
-    fVar4 = 0.0;
-    iVar9 = local_4c;
-    while (0 < iVar9) {
-      iVar9 = iVar9 + -1;
-      fVar4 = *(float *)(&DAT_01d1cdd0 + local_20 * 0x80 + aiStack_e4[iVar9] * 4) *
-              subband_samples[aiStack_e4[iVar9]] + fVar4;
+    fVar2 = 0.0;
+    iVar7 = local_4c;
+    while (0 < iVar7) {
+      iVar7 = iVar7 + -1;
+      fVar2 = (g_FLOAT_ARRAY_01d1cdd0 + local_20 * 0x20)[aiStack_e4[iVar7]] *
+              subband_samples[aiStack_e4[iVar7]] + fVar2;
     }
-    *local_44 = fVar4;
+    *local_44 = fVar2;
     local_44 = local_44 + 1;
     local_20 = local_20 + 1;
   } while (local_20 < 0x40);
   local_48 = 0;
   do {
-    uVar8 = local_48 + this_ptr->synthesis_buffer_index[channel_index];
-    fVar4 = 0.0;
-    iVar5 = 8;
-    iVar9 = local_48;
+    uVar6 = local_48 + this_ptr->synthesis_buffer_index[channel_index];
+    fVar2 = 0.0;
+    iVar3 = 8;
+    iVar7 = local_48;
     do {
-      iVar1 = iVar9 * 4;
-      uVar6 = uVar8 & 0x3ff;
-      iVar2 = iVar9 * 4;
-      uVar7 = uVar6 + 0x60 & 0x3ff;
-      iVar9 = iVar9 + 0x40;
-      uVar8 = uVar7 + 0x20;
-      fVar4 = *(float *)(&DAT_00618660 + iVar2) * this_ptr->synthesis_v_buffer[channel_index][uVar7]
-              + *(float *)(&DAT_006185e0 + iVar1) *
-                this_ptr->synthesis_v_buffer[channel_index][uVar6] + fVar4;
-      iVar5 = iVar5 + -1;
-    } while (iVar5 != 0);
-    local_30 = (int)ROUND(fVar4 * 32768.0);
+      pfVar8 = g_FLOAT_ARRAY_006185e0 + iVar7;
+      uVar4 = uVar6 & 0x3ff;
+      pfVar9 = g_FLOAT_ARRAY_00618660 + iVar7;
+      uVar5 = uVar4 + 0x60 & 0x3ff;
+      iVar7 = iVar7 + 0x40;
+      uVar6 = uVar5 + 0x20;
+      fVar2 = *pfVar9 * this_ptr->synthesis_v_buffer[channel_index][uVar5] +
+              *pfVar8 * this_ptr->synthesis_v_buffer[channel_index][uVar4] + fVar2;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    local_30 = (int)ROUND(fVar2 * 32768.0);
     if (local_30 < 0x8000) {
       if (local_30 < -0x8000) {
         local_30 = -0x8000;

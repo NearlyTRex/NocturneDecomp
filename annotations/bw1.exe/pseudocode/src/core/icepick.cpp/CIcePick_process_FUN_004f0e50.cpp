@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004f14e5) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f0e50(CIcePick *this_ptr,float delta_time)
 
@@ -280,13 +279,13 @@ LAB_004f0f65:
     pCStack_1c = (CCharacter_full_vtable *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_48[0]);
     fVar14 = (float)pCStack_1c;
-    if ((float)pCStack_1c < _DAT_005e539f) {
-      fVar14 = (float)pCStack_1c + _DAT_005e53a3;
+    if ((float)pCStack_1c < -1.570796f) {
+      fVar14 = (float)pCStack_1c + 3.141593f;
     }
-    if (_DAT_005e53a7 < fVar14) {
-      fVar14 = fVar14 + _DAT_005e53ab;
+    if (1.570796f < fVar14) {
+      fVar14 = fVar14 + -3.141593f;
     }
-    fVar3 = in_stack_00000010 * _DAT_005e53a3;
+    fVar3 = in_stack_00000010 * 3.141593f;
     fStack_18 = -fVar3;
     if (fVar14 < fStack_18) {
       fVar14 = fStack_18;
@@ -343,7 +342,7 @@ LAB_004f111a:
   if (EVar7 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar14 = this_ptr->head_look_blend_weight;
-    iVar5 = _DAT_01d06c74;
+    iVar5 = g_INT_ARRAY_01d06c74[0];
     core_xform_cpp_eulerToQuaternion_FUN_005b7ed0
               (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff44);
     source_quaternions = &CStack_ac;

@@ -14,8 +14,8 @@
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050aae8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c83418
-;   undefined4 DAT_02c834ac
+;   void* g_PTR_02c83418
+;   int g_INT_02c834ac
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
 
     PUSH EBP                            ; 00582b30
         ;   Label: engine_special.cpp_buildCardList_FUN_00582b30
-    CMP dword ptr [0x02c834ac],0x0      ; 00582b31 | DAT_02c834ac
+    CMP dword ptr [0x02c834ac],0x0      ; 00582b31 | g_INT_02c834ac
     JNZ 0x00582b3e                      ; 00582b38
         ;   XREF to: 00582b3e (CONDITIONAL_JUMP)  ; LAB_00582b3e
     XOR EAX,EAX                         ; 00582b3a
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 00582b54
     MOV EBP,dword ptr [ESP + 0x24]      ; 00582b55
     PUSH EBP                            ; 00582b59
-    CALL dword ptr [0x02c83418]         ; 00582b5a | DAT_02c83418
+    CALL dword ptr [0x02c83418]         ; 00582b5a | g_PTR_02c83418
     ADD ESP,0x14                        ; 00582b60
     POP EBX                             ; 00582b63
     POP ESI                             ; 00582b64

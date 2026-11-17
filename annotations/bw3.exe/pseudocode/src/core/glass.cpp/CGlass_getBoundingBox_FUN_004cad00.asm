@@ -7,8 +7,8 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4538
-;   undefined4 DAT_005c4540
+;   double g_DOUBLE_005c4538 = 0.5
+;   double g_DOUBLE_005c4540 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 004cad01
     MOV EDX,dword ptr [ESP + 0x20]      ; 004cad04
     MOV EAX,ESI                         ; 004cad08
-    FLD double ptr [0x005c4538]         ; 004cad0a | DAT_005c4538
+    FLD double ptr [0x005c4538]         ; 004cad0a | g_DOUBLE_005c4538
     FLD float ptr [EDX + 0x158]         ; 004cad10
     FMUL ST1                            ; 004cad16
     FLD float ptr [EDX + 0x160]         ; 004cad18
@@ -35,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 004cad3f
     MOV ESI,ESP                         ; 004cad41
     MOV dword ptr [ESP + 0x4],ECX       ; 004cad43
-    FADD double ptr [0x005c4540]        ; 004cad47 | DAT_005c4540
+    FADD double ptr [0x005c4540]        ; 004cad47 | g_DOUBLE_005c4540
     FXCH ST3                            ; 004cad4d
     FSTP float ptr [ESP + 0xc]          ; 004cad4f
     FXCH ST2                            ; 004cad53

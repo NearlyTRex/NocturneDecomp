@@ -9,7 +9,7 @@
 ; float *          Stack[0xc]:4   out_average
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf329c
+;   int g_INT_02cf329c
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_lockSound_FUN_00558e90
@@ -50,7 +50,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 00559cd3
     CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00559cd7
         ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
-    MOV ECX,dword ptr [0x02cf329c]      ; 00559cdc | DAT_02cf329c
+    MOV ECX,dword ptr [0x02cf329c]      ; 00559cdc | g_INT_02cf329c
     XOR EDX,EDX                         ; 00559ce2
     TEST ECX,ECX                        ; 00559ce4
     JLE 0x00559d20                      ; 00559ce6
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 00559d16 (CONDITIONAL_JUMP)  ; LAB_00559d16
     MOV EAX,dword ptr [ESP + 0x8]       ; 00559d0e
     MOV dword ptr [ESP + 0x4],EAX       ; 00559d12
-    MOV EAX,[0x02cf329c]                ; 00559d16 | DAT_02cf329c
+    MOV EAX,[0x02cf329c]                ; 00559d16 | g_INT_02cf329c
         ;   Label: LAB_00559d16
     INC EDX                             ; 00559d1b
     CMP EDX,EAX                         ; 00559d1c
@@ -82,7 +82,7 @@ section .text
     CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 00559d20
         ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
         ;   Label: LAB_00559d20
-    FILD dword ptr [0x02cf329c]         ; 00559d25 | DAT_02cf329c
+    FILD dword ptr [0x02cf329c]         ; 00559d25 | g_INT_02cf329c
     FDIVR float ptr [ESP]               ; 00559d2b
     FLD float ptr [ESP + 0x4]           ; 00559d2e
     FLD1                                ; 00559d32
@@ -120,7 +120,7 @@ section .text
     POP ESI                             ; 00559d6f
     POP EBX                             ; 00559d70
     RET                                 ; 00559d71
-    CMP dword ptr [0x02cf329c],0x1      ; 00559d72 | DAT_02cf329c
+    CMP dword ptr [0x02cf329c],0x1      ; 00559d72 | g_INT_02cf329c
         ;   Label: LAB_00559d72
     JL 0x00559cb3                       ; 00559d79
         ;   XREF to: 00559cb3 (CONDITIONAL_JUMP)  ; LAB_00559cb3

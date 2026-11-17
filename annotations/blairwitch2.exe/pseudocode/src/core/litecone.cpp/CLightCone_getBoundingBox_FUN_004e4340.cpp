@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBoundingBox3D * __stack_esi core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4340(CLightCone *this_ptr,CBoundingBox3D *out_box)
 
 {
@@ -19,7 +17,7 @@ CBoundingBox3D * __stack_esi core_litecone_cpp_CLightCone_getBoundingBox_FUN_004
   float fStack_10;
   float fStack_c;
   
-  fStack_c = ((float)_DAT_005dc112 / this_ptr->fov) * this_ptr->falloff;
+  fStack_c = ((float)18 / this_ptr->fov) * this_ptr->falloff;
   afStack_24[0] = -fStack_c;
   afStack_24[1] = -fStack_c;
   afStack_24[3] = fStack_c;

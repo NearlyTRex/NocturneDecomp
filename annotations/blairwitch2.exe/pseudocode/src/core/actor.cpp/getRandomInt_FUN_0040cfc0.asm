@@ -26,9 +26,9 @@
 ;   ... and 49 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005caf26
-;   undefined4 DAT_005caf2e
-;   undefined4 DAT_005caf32
+;   double g_DOUBLE_005caf26 = 0.999990000000000
+;   float g_FLOAT_005caf2e = 0.00003051851
+;   float g_FLOAT_005caf32 = 5.960465E-8
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.is_processing
 ;
@@ -55,7 +55,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cfd5
     FILD dword ptr [ESP + 0x10]         ; 0040cfd9
     MOV EAX,[0x00616494]                ; 0040cfdd | g_CGamePtr
-    FADD double ptr [0x005caf26]        ; 0040cfe2 | DAT_005caf26
+    FADD double ptr [0x005caf26]        ; 0040cfe2 | g_DOUBLE_005caf26
     MOV EDX,dword ptr [EAX + 0x258]     ; 0040cfe8 | g_CGameInstance.is_processing
     FSTP double ptr [ESP]               ; 0040cfee
     TEST EDX,EDX                        ; 0040cff1
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 005b849c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005b849c()
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cffa
     FILD dword ptr [ESP + 0x10]         ; 0040cffe
-    FMUL float ptr [0x005caf2e]         ; 0040d002 | DAT_005caf2e
+    FMUL float ptr [0x005caf2e]         ; 0040d002 | g_FLOAT_005caf2e
     FSTP float ptr [ESP + 0x8]          ; 0040d008
         ;   Label: LAB_0040d008
     FLD float ptr [ESP + 0x8]           ; 0040d00c
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_0040d03a
     MOV dword ptr [ESP + 0x10],EAX      ; 0040d03f
     FILD dword ptr [ESP + 0x10]         ; 0040d043
-    FMUL float ptr [0x005caf32]         ; 0040d047 | DAT_005caf32
+    FMUL float ptr [0x005caf32]         ; 0040d047 | g_FLOAT_005caf32
     JMP 0x0040d008                      ; 0040d04d
         ;   XREF to: 0040d008 (UNCONDITIONAL_JUMP)  ; LAB_0040d008
     MOV EAX,EBX                         ; 0040d04f

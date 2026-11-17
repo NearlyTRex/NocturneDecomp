@@ -23,7 +23,7 @@ int __cdecl core_hand_cpp_CHand_renderTransparent_FUN_005aa4a0(CHand *this_ptr)
      pSVar2->state_index == 6)) {
     (this_ptr->base).fade_val = 0.0;
   }
-  pcVar5 = &DAT_005f0adf;
+  pcVar5 = "rise";
   pCVar1 = &(this_ptr->base).base.base.model;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
   iVar3 = _strcmp(pSVar2->motion_name,pcVar5);
@@ -36,7 +36,7 @@ int __cdecl core_hand_cpp_CHand_renderTransparent_FUN_005aa4a0(CHand *this_ptr)
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
   iVar3 = _strcmp(pSVar2->motion_name,pcVar5);
   if (iVar3 != 0) {
-    pcVar5 = &DAT_005f0aea;
+    pcVar5 = "die";
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
     iVar3 = _strcmp(pSVar2->motion_name,pcVar5);
     if (iVar3 != 0) goto LAB_005aa54b;

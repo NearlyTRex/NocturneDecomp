@@ -18,8 +18,8 @@ void __cdecl core_fire_cpp_CStormEffect_activate_FUN_004a0480(CStormEffect *this
   CVector3f local_20;
   CVector3f local_14;
   
-  this_ptr_01 = 0x02D0C1A0;
-  EVar1 = 0x02D0C1A0->weather_type;
+  this_ptr_01 = g_CWeather_PTR_006071f0;
+  EVar1 = g_CWeather_PTR_006071f0->weather_type;
   this_ptr->saved_weather_type = EVar1;
   if (EVar1 == WEATHER_TYPE_NONE) {
     iVar2 = g_CDemonSetPtr->selected_camera_index;
@@ -35,16 +35,17 @@ void __cdecl core_fire_cpp_CStormEffect_activate_FUN_004a0480(CStormEffect *this
       local_20.y = g_CDemonSetPtr->cameras[iVar2].orientation.y;
       local_20.z = g_CDemonSetPtr->cameras[iVar2].orientation.z;
     }
-    core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(0x02D0C1A0,5);
-    core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(0x02D0C1A0,&local_14,&local_20);
+    core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(g_CWeather_PTR_006071f0,5);
+    core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0
+              (g_CWeather_PTR_006071f0,&local_14,&local_20);
   }
   else {
     core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(this_ptr_01,5);
   }
-  this_ptr_00 = 0x02CF5680;
+  this_ptr_00 = g_CSound_PTR_006045f8;
   this_ptr->time_remaining = 5.0;
   uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                    (this_ptr_00,(CDemonActor *)this_ptr,"@wp_storm.wav" + 1,&position);
+                    (this_ptr_00,(CDemonActor *)this_ptr,"wp_storm.wav",&position);
   this_ptr->sfx_handle = uVar3;
   return;
 }

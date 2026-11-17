@@ -19,9 +19,9 @@
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047db84
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bd6c2
+;   TerminatedCString s_OK_005bd6c2
 ;   TerminatedCString s_Cancel_005bd6c5
-;   undefined1* g_CPickListVTable = 004832b0
+;   CPickList_full_vtable g_CPickListVTable
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_00486020
@@ -64,7 +64,7 @@ section .text
     MOV dword ptr [EBX + 0x1b0],0x0     ; 00483220
     ADD ESP,0x4                         ; 0048322a
     MOV dword ptr [EBX + 0x1b4],0x0     ; 0048322d
-    PUSH 0x5bd6c2                       ; 00483237 | DAT_005bd6c2
+    PUSH 0x5bd6c2                       ; 00483237 | = "OK"
     MOV dword ptr [EBX + 0x1b8],0x0     ; 0048323c
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 00483246
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)

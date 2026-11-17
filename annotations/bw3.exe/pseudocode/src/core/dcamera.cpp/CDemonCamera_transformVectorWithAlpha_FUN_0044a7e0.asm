@@ -8,7 +8,7 @@
 ; CVector3i *      Stack[0x8]:4   input_vector
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046d860
@@ -70,7 +70,7 @@ section .text
     ADD EAX,EBX                         ; 0044a862
     ADC EDX,ECX                         ; 0044a864
     SHRD EAX,EDX,0x10                   ; 0044a866
-    MOV EDX,dword ptr [0x005f2afc]      ; 0044a86a | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 0044a86a | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 0044a870
     MOV dword ptr [ESP + 0xc],EAX       ; 0044a871
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046d860 ; 0044a875

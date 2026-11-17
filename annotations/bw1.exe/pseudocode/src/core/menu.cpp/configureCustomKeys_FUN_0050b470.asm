@@ -213,7 +213,7 @@ section .text
         ;   Label: LAB_0050b650
     MOV EAX,[0x0061d95c]                ; 0050b651 | g_CGamePtr
     FILD dword ptr [EAX + 0xb0]         ; 0050b656 | g_CGameInstance.x_mouse_sensitivity
-    FMUL double ptr [0x005e801a]        ; 0050b65c | DAT_005e801a
+    FMUL double ptr [0x005e801a]        ; 0050b65c | g_DOUBLE_005e801a
     SUB ESP,0x8                         ; 0050b662
     FSTP double ptr [ESP]               ; 0050b665
     PUSH 0x5e7f83                       ; 0050b668 | = "%5.2f"
@@ -271,7 +271,7 @@ section .text
         ;   Label: LAB_0050b6d2
     MOV EAX,[0x0061d95c]                ; 0050b6d3 | g_CGamePtr
     FILD dword ptr [EAX + 0xb4]         ; 0050b6d8 | g_CGameInstance.y_mouse_sensitivity
-    FMUL double ptr [0x005e801a]        ; 0050b6de | DAT_005e801a
+    FMUL double ptr [0x005e801a]        ; 0050b6de | g_DOUBLE_005e801a
     SUB ESP,0x8                         ; 0050b6e4
     FSTP double ptr [ESP]               ; 0050b6e7
     PUSH 0x5e7f9f                       ; 0050b6ea | = "%5.2f"
@@ -348,7 +348,7 @@ section .text
         ;   XREF to: 0050b7f6 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EBX*0x4 + 0x50b444]  ; 0050b79b | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV EDI,dword ptr [0x01d1ee8c]      ; 0050b7a2 | DAT_01d1ee8c
+    MOV EDI,dword ptr [0x01d1ee8c]      ; 0050b7a2 | g_INT_01d1ee8c
         ;   Label: caseD_0
     CMP EDI,0x1                         ; 0050b7a8
     JNZ 0x0050b8d4                      ; 0050b7ab
@@ -365,7 +365,7 @@ section .text
     CMP dword ptr [EAX + 0xd0],0x3      ; 0050b7d1 | g_CGameInstance.game_control
     JZ 0x0050b7f6                       ; 0050b7d8
         ;   XREF to: 0050b7f6 (CONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x01d06ab4]                ; 0050b7da | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0050b7da | g_INT_01d06ab4
     SHL EAX,0x2                         ; 0050b7df
     MOV EBX,dword ptr [EAX + 0x1d06aa4] ; 0050b7e2
     TEST EBX,EBX                        ; 0050b7e8
@@ -374,9 +374,9 @@ section .text
     MOV dword ptr [EBX + 0xc1d8],0x0    ; 0050b7ec
     PUSH 0x1                            ; 0050b7f6
         ;   Label: default
-    MOV EAX,[0x0061f2a4]                ; 0050b7f8 | DAT_0061f2a4
-    PUSH EAX                            ; 0050b7fd | DAT_01d1bca0
-    MOV EBX,dword ptr [EAX]             ; 0050b7fe | DAT_01d1bca0
+    MOV EAX,[0x0061f2a4]                ; 0050b7f8 | g_CKeys_PTR_0061f2a4
+    PUSH EAX                            ; 0050b7fd | g_PTR_01d1bca0
+    MOV EBX,dword ptr [EAX]             ; 0050b7fe | g_PTR_01d1bca0
     CALL dword ptr [EBX + 0x4]          ; 0050b800
     ADD ESP,0x8                         ; 0050b803
     TEST EAX,EAX                        ; 0050b806

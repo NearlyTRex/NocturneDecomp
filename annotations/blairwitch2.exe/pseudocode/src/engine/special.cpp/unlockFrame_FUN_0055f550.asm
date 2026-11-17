@@ -17,34 +17,34 @@
 ;   shape_edittool.cpp_restoreScreen_FUN_0047bbd0 at 0047bc83
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_0264bbdc
-;   undefined4 DAT_0264bcfc
-;   undefined4 DAT_0264bd00
+;   int g_INT_006141c0 = 0x8
+;   int g_INT_01c37788
+;   void* g_PTR_0264bbdc
+;   int g_INT_0264bcfc
+;   int g_INT_0264bd00
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x0264bd00],0x0      ; 0055f550 | DAT_0264bd00
+    CMP dword ptr [0x0264bd00],0x0      ; 0055f550 | g_INT_0264bd00
         ;   Label: engine_special.cpp_unlockFrame_FUN_0055f550
     JZ 0x0055f510                       ; 0055f557
         ;   XREF to: 0055f510 (CONDITIONAL_JUMP)  ; LAB_0055f510
     PUSH EBX                            ; 0055f559
     MOV ECX,0x1                         ; 0055f55a
-    MOV EAX,[0x0264bcfc]                ; 0055f55f | DAT_0264bcfc
+    MOV EAX,[0x0264bcfc]                ; 0055f55f | g_INT_0264bcfc
     MOV EBX,dword ptr [ESP + 0x8]       ; 0055f564
-    MOV [0x006141c0],EAX                ; 0055f568 | DAT_006141c0
-    MOV dword ptr [0x01c37788],ECX      ; 0055f56d | DAT_01c37788
+    MOV [0x006141c0],EAX                ; 0055f568 | g_INT_006141c0
+    MOV dword ptr [0x01c37788],ECX      ; 0055f56d | g_INT_01c37788
     TEST EBX,EBX                        ; 0055f573
     JZ 0x0055f581                       ; 0055f575
         ;   XREF to: 0055f581 (CONDITIONAL_JUMP)  ; LAB_0055f581
     PUSH ESI                            ; 0055f577
     XOR ESI,ESI                         ; 0055f578
-    MOV dword ptr [0x0264bd00],ESI      ; 0055f57a | DAT_0264bd00
+    MOV dword ptr [0x0264bd00],ESI      ; 0055f57a | g_INT_0264bd00
     POP ESI                             ; 0055f580
-    CALL dword ptr [0x0264bbdc]         ; 0055f581 | DAT_0264bbdc
+    CALL dword ptr [0x0264bbdc]         ; 0055f581 | g_PTR_0264bbdc
         ;   Label: LAB_0055f581
     POP EBX                             ; 0055f587
     RET                                 ; 0055f588

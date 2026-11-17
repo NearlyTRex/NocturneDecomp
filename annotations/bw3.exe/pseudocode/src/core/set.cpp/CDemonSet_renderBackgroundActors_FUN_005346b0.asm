@@ -20,9 +20,9 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f4a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_00600530
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 DAT_01d81080
 ;   undefined4 DAT_01d82088
 ;
@@ -43,7 +43,7 @@ section .text
     PUSH EBP                            ; 005346b3
     SUB ESP,0x50                        ; 005346b4
     MOV EBP,dword ptr [ESP + 0x64]      ; 005346b7
-    MOV EAX,[0x00600530]                ; 005346bb | DAT_00600530 | DAT_01d81080
+    MOV EAX,[0x00600530]                ; 005346bb | g_CDemonMission_PTR_00600530 | DAT_01d81080
     CMP dword ptr [EAX + 0x1008],0x0    ; 005346c0 | DAT_01d82088
     JNZ 0x005347f2                      ; 005346c7
         ;   XREF to: 005347f2 (CONDITIONAL_JUMP)  ; LAB_005347f2
@@ -110,8 +110,8 @@ section .text
         ;   XREF to: 0053b100 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00534776
     PUSH 0xffff                         ; 00534779
-    MOV ECX,dword ptr [0x005f2afc]      ; 0053477e | DAT_005f2afc
-    PUSH ECX                            ; 00534784 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 0053477e | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 00534784 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0 ; 00534785
         ;   XREF to: 0046d4c0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0053478a
@@ -129,8 +129,8 @@ section .text
         ;   XREF to: 0053b100 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 005347b4
     PUSH 0x1                            ; 005347b7
-    MOV EDI,dword ptr [0x005f2afc]      ; 005347b9 | DAT_005f2afc
-    PUSH EDI                            ; 005347bf | DAT_01bdd7e4
+    MOV EDI,dword ptr [0x005f2afc]      ; 005347b9 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDI                            ; 005347bf | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500 ; 005347c0
         ;   XREF to: 0046d500 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 005347c5

@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Set_hardware_sfx_seconda_005d4dcc
 ;   TerminatedCString s_Set_hardware_sfx_seconda_005d4e00
 ;   TerminatedCString s_Play_hardware_sfx_second_005d4e29
-;   undefined4 DAT_01d71de0
+;   char* g_CHAR_PTR_01d71de0
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -56,8 +56,8 @@ section .text
     MOV ECX,0x5d4c3a                    ; 0055cc69 | = "..\\sound\\snddx.cpp"
     MOV EDI,0x612                       ; 0055cc6e
     PUSH 0x5d4c4d                       ; 0055cc73 | = "DirectSoundDevice::startSfx - invalid..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0055cc78 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0055cc7e | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0055cc78 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 0055cc7e | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055cc84
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055cc89
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_0055ccc5
     MOV EDX,0x61e                       ; 0055ccca
     PUSH 0x5d4cce                       ; 0055cccf | = "DirectSoundDevice::startSfx - exotic ..."
-    MOV [0x01d71de0],EAX                ; 0055ccd4 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0055ccd9 | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0055ccd4 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 0055ccd9 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055ccdf
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055cce4
@@ -149,8 +149,8 @@ section .text
         ;   Label: LAB_0055cd8c
     MOV ECX,0x61c                       ; 0055cd91
     PUSH 0x5d4c91                       ; 0055cd96 | = "DirectSoundDevice::startSfx - no samp..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0055cd9b | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0055cda1 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0055cd9b | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0055cda1 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055cda7
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055cdac

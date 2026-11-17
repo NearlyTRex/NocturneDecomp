@@ -15,7 +15,7 @@
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004dccd0 at 004dcd1a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
     PUSH ESI                            ; 004dd270
         ;   Label: core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270
     MOV EAX,dword ptr [ESP + 0x8]       ; 004dd271
-    MOV EDX,dword ptr [0x01cedef4]      ; 004dd275 | DAT_01cedef4
+    MOV EDX,dword ptr [0x01cedef4]      ; 004dd275 | g_INT_01cedef4
     MOV ECX,dword ptr [EAX + 0x4]       ; 004dd27b
     CMP ECX,dword ptr [EDX*0x4 + 0x1cedee4] ; 004dd27e
     JNZ 0x004dd2a3                      ; 004dd285

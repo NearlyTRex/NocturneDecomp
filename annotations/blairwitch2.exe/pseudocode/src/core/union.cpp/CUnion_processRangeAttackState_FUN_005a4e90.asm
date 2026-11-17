@@ -16,9 +16,9 @@
 ;   TerminatedCString s_MeleeAttack_005f052d
 ;   TerminatedCString s_ChaseComplete_005f0539
 ;   TerminatedCString s_Chasing_005f0547
-;   undefined4 DAT_005f0552
-;   undefined4 DAT_005f0556
-;   undefined4 DAT_005ff8f4
+;   float g_FLOAT_005f0552 = 24
+;   float g_FLOAT_005f0556 = 35
+;   float g_FLOAT_005ff8f4 = 7
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -64,7 +64,7 @@ section .text
     JNZ 0x005a4fbb                      ; 005a4edb
         ;   XREF to: 005a4fbb (CONDITIONAL_JUMP)  ; LAB_005a4fbb
     FLD float ptr [ESI + 0x8]           ; 005a4ee1
-    FCOMP float ptr [0x005f0552]        ; 005a4ee4 | DAT_005f0552
+    FCOMP float ptr [0x005f0552]        ; 005a4ee4 | g_FLOAT_005f0552
     FNSTSW AX                           ; 005a4eea
     SAHF                                ; 005a4eec
     JA 0x005a4f80                       ; 005a4eed
@@ -77,7 +77,7 @@ section .text
     PUSH 0x5f050b                       ; 005a4ef7 | = "MeleeAttack"
         ;   Label: LAB_005a4ef7
     PUSH 0x5f0517                       ; 005a4efc | = "ChaseComplete"
-    FLD float ptr [0x005ff8f4]          ; 005a4f01 | DAT_005ff8f4
+    FLD float ptr [0x005ff8f4]          ; 005a4f01 | g_FLOAT_005ff8f4
     PUSH EDI                            ; 005a4f07
     FSTP float ptr [EBX + 0x11394]      ; 005a4f08
     MOV dword ptr [EBX + 0x11398],EDX   ; 005a4f0e
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 00423850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850(CCharacter * this_ptr, CVector3f * target)
     FLD float ptr [ESI + 0x8]           ; 005a4f3e
     ADD ESP,0x8                         ; 005a4f41
-    FCOMP float ptr [0x005f0556]        ; 005a4f44 | DAT_005f0556
+    FCOMP float ptr [0x005f0556]        ; 005a4f44 | g_FLOAT_005f0556
     FNSTSW AX                           ; 005a4f4a
     SAHF                                ; 005a4f4c
     JBE 0x005a4ef3                      ; 005a4f4d
@@ -128,7 +128,7 @@ section .text
     PUSH 0x5f052d                       ; 005a4f80 | = "MeleeAttack"
         ;   Label: LAB_005a4f80
     PUSH 0x5f0539                       ; 005a4f85 | = "ChaseComplete"
-    FLD float ptr [0x005ff8f4]          ; 005a4f8a | DAT_005ff8f4
+    FLD float ptr [0x005ff8f4]          ; 005a4f8a | g_FLOAT_005ff8f4
     MOV dword ptr [EBX + 0x11398],0x0   ; 005a4f90
     PUSH EDI                            ; 005a4f9a
     FSTP float ptr [EBX + 0x11394]      ; 005a4f9b

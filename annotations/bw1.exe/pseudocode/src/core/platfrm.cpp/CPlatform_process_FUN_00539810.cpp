@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_platfrm_cpp_CPlatform_process_FUN_00539810(CPlatform *this_ptr,float delta_time)
 
 {
@@ -81,7 +79,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_00539810(CPlatform *this_ptr
   switch(this_ptr->state) {
   case PLATFORM_STATE_TYPE_AT_START:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->to_end_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->to_end_event);
     bVar15 = iVar3 != 0;
     if (bVar15) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_0053a340
@@ -91,7 +89,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_00539810(CPlatform *this_ptr
     break;
   case PLATFORM_STATE_TYPE_AT_END:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->to_start_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->to_start_event);
     bVar15 = iVar3 != 0;
     if (bVar15) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_0053a340
@@ -101,10 +99,10 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_00539810(CPlatform *this_ptr
     break;
   case PLATFORM_STATE_TYPE_STOPPED:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->to_end_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->to_end_event);
     if (iVar3 == 0) {
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (0x01C51D80,this_ptr->to_start_event);
+                        (g_CEventList_PTR_0061b4d0,this_ptr->to_start_event);
       if (iVar3 != 0) {
         core_platfrm_cpp_CPlatform_startMovement_FUN_0053a340
                   (this_ptr,0.0,1.0 / this_ptr->travel_time_to_start);
@@ -117,7 +115,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_00539810(CPlatform *this_ptr
     break;
   case PLATFORM_STATE_TYPE_MOVING_TO_END:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->stop_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->stop_event);
     if (iVar3 != 0) {
       this_ptr->state = PLATFORM_STATE_TYPE_STOPPED;
       if (this_ptr->stop_sound[0] != '\0') {
@@ -144,7 +142,7 @@ LAB_00539ca2:
     goto LAB_00539c90;
   case PLATFORM_STATE_TYPE_MOVING_TO_START:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->stop_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->stop_event);
     if (iVar3 != 0) {
       this_ptr->state = PLATFORM_STATE_TYPE_STOPPED;
       if (this_ptr->stop_sound[0] != '\0') {
@@ -210,10 +208,11 @@ LAB_00539950:
   }
   if (this_ptr->param != local_38[2]) {
     if ((local_38[3] == 0.0) || (this_ptr->active_sound[0] == '\0')) {
-      core_sound_cpp_CSound_killSound_FUN_0057d9d0(0x02C82A60,this_ptr->sfx_handle);
+      core_sound_cpp_CSound_killSound_FUN_0057d9d0(g_CSound_PTR_006236b8,this_ptr->sfx_handle);
     }
     else {
-      iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
+      iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                        (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
       if (iVar3 == 0) {
         uVar4 = (*((this_ptr->base).vtable._ub)->playAmbientSound)
                           (&this_ptr->base,this_ptr->active_sound);
@@ -262,7 +261,7 @@ LAB_00539950:
           *(float *)((int)&CStack_b4 + (uint)bVar16 * -8 + 4) = afStack_80[(uint)bVar16 * -2];
           *(float *)((int)&CStack_b4 + ((uint)bVar16 * -2 + (uint)bVar16 * -2) * 4 + 8) =
                afStack_80[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
-          if ((CStack_b4.y <= fStack_ec) && (fStack_f8 + (float)_DAT_005ed423 <= CStack_b4.y)) {
+          if ((CStack_b4.y <= fStack_ec) && (fStack_f8 + (float)-20 <= CStack_b4.y)) {
             in_stack_fffffc60 = (CCharacter *)(auStack_104 + 2);
             core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421af0
                       ((CBoundingBox3D *)in_stack_fffffc60,&CStack_b4,&CStack_a8);
@@ -279,8 +278,8 @@ LAB_00539950:
             local_38[(uint)bVar16 * -2] = afStack_d4[(uint)bVar16 * -2];
             local_38[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
                  afStack_d4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
-            if ((ABS(fStack_3c) <= (float)_DAT_005ed42b) &&
-               (ABS(local_38[1]) <= (float)_DAT_005ed42b)) {
+            if ((ABS(fStack_3c) <= (float)10) &&
+               (ABS(local_38[1]) <= (float)10)) {
               local_38[0] = 0.0;
               core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0(&SStack_13c);
               SStack_13c.ray_query.ray_type = 0;
@@ -294,7 +293,7 @@ LAB_00539950:
                   fVar7 <= (float)SStack_13c.keyframed_model * (float)SStack_13c.keyframed_model &&
                   (fVar7 = SQRT(fVar7), 0.0 < fVar7)))) {
                 this_ptr = (CPlatform *)
-                           (((float)SStack_13c.keyframed_model + (float)_DAT_005ed433) / fVar7);
+                           (((float)SStack_13c.keyframed_model + (float)0.050000000000000003) / fVar7);
                 local_38[1] = local_38[1] * (float)this_ptr;
                 local_38[3] = local_38[3] * (float)this_ptr;
                 input_local_point = (CVector3f *)auStack_88;

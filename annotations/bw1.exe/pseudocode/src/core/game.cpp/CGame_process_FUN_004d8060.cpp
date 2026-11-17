@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_process_FUN_004d8060(CGame *this_ptr)
 
 {
@@ -30,22 +28,22 @@ void __cdecl core_game_cpp_CGame_process_FUN_004d8060(CGame *this_ptr)
   core_actor_cpp_setRandomSeed_FUN_0040cb80(seed_value);
   core_game_cpp_CGame_updateFadeTransition_FUN_004d60e0(this_ptr);
   if (g_CGamePtr->profile_mode == 1) {
-    _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+    g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
   core_dfilter_cpp_CFilterFX_process_FUN_0045df40(g_CFilterFXPtr);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005b2420();
-    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s : %3.2f ms\n");
   }
   if (g_CGamePtr->profile_mode == 1) {
-    _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+    g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
   core_script_cpp_CScript_process_FUN_005437f0(g_CScriptPtr);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005b2420();
-    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s : %3.2f ms\n");
   }
-  this_ptr_00 = 0x02C82A60;
+  this_ptr_00 = g_CSound_PTR_006236b8;
   if (this_ptr->cinematic_skip_in_progress != 0) {
     if (this_ptr->letterbox_mode == 0) {
       this_ptr->cinematic_skip_in_progress = 0;
@@ -60,40 +58,40 @@ void __cdecl core_game_cpp_CGame_process_FUN_004d8060(CGame *this_ptr)
     }
   }
   if (g_CGamePtr->profile_mode == 1) {
-    _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+    g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
   core_set_cpp_CDemonSet_process_FUN_005542c0(g_CDemonSetPtr);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005b2420();
-    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s : %3.2f ms\n");
   }
   if (g_CGamePtr->profile_mode == 1) {
-    _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+    g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
   core_gore_cpp_CGore_process_FUN_004e5e80(g_CGorePtr);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005b2420();
-    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s : %3.2f ms\n");
   }
   core_water_cpp_CWater_process_FUN_005a9a90(g_CWaterPtr);
   if (g_CGamePtr->profile_mode == 1) {
-    _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+    g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
-  core_fire_cpp_CFireEffect_process_FUN_004b4dd0(0x01C57074);
+  core_fire_cpp_CFireEffect_process_FUN_004b4dd0(g_CFireEffect_PTR_0061c010);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005b2420();
-    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s : %3.2f ms\n");
   }
   if (g_CGamePtr->profile_mode == 1) {
-    _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+    g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
-  core_event_cpp_CEventList_process_FUN_004a1a40(0x01C51D80);
+  core_event_cpp_CEventList_process_FUN_004a1a40(g_CEventList_PTR_0061b4d0);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005b2420();
-    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s : %3.2f ms\n");
   }
-  core_terrain_cpp_CTerrain_process_FUN_0059f4f0(0x02C8AE68);
-  core_weather_cpp_CWeather_update_FUN_005ae190(0x02C997C0);
+  core_terrain_cpp_CTerrain_process_FUN_0059f4f0(g_CTerrain_PTR_00625bc0);
+  core_weather_cpp_CWeather_update_FUN_005ae190(g_CWeather_PTR_0062604c);
   core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(this_ptr);
   core_fldnotes_cpp_CFieldNotes_process_FUN_004be970(g_CFieldNotesPtr);
   core_bmppuzzl_cpp_processActivePuzzle_FUN_00415cd0();
@@ -101,12 +99,12 @@ void __cdecl core_game_cpp_CGame_process_FUN_004d8060(CGame *this_ptr)
     core_set_cpp_CDemonSet_processActors_FUN_0054fc20(g_CDemonSetPtr);
   }
   if (g_CGamePtr->profile_mode == 1) {
-    _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
+    g_INT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();
   }
-  core_mission_cpp_CDemonMission_process_FUN_0051b8d0(0x01D2C900);
+  core_mission_cpp_CDemonMission_process_FUN_0051b8d0(g_CDemonMission_PTR_0061f650);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005b2420();
-    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s : %3.2f ms\n");
   }
   pCVar1 = g_CGamePtr;
   this_ptr->is_processing = 0;

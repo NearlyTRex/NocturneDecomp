@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_00466350(CBitFont *font_ptr)
 
 {
-  _DAT_01ba5c30 = font_ptr;
+  g_CBitFont_PTR_01ba5c30 = font_ptr;
   return;
 }

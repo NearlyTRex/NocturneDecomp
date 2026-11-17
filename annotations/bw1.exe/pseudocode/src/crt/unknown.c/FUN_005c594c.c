@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005c594c(int param_1,int *param_2)
 
 {
@@ -52,7 +50,7 @@ int FUN_005c594c(int param_1,int *param_2)
   }
   iVar7 = 0;
   while (uVar4 = FUN_005c5430(param_1),
-        ((&DAT_00626114)[(byte)((char)uVar4 + 1)] & 2) != 0) {
+        (g_UCHAR_ARRAY_00626114[(byte)((char)uVar4 + 1)] & 2) != 0) {
     iVar7 = iVar7 + 1;
   }
   if ((*(byte *)(param_1 + 0x10) & 2) == 0) {
@@ -68,7 +66,7 @@ int FUN_005c594c(int param_1,int *param_2)
           }
           else {
             local_1c = uVar6;
-            if ((_DAT_02c9f6e0 != 0) && ((*(byte *)((uVar4 & 0xff) + 0x2c9f6f1) & 1) != 0)) {
+            if ((g_INT_02c9f6e0 != 0) && ((g_CHAR_ARRAY_02c9f6f1[uVar4 & 0xff] & 1U) != 0)) {
               local_1b = FUN_005c5430(param_1);
             }
             iVar5 = FUN_005cb6f0(local_20,&local_1c,2);
@@ -81,7 +79,7 @@ int FUN_005c594c(int param_1,int *param_2)
         }
         uVar4 = FUN_005c6418(param_1);
         if (uVar4 == 0xffffffff) goto LAB_005c5a88;
-      } while (((&DAT_00626114)[(byte)((char)uVar4 + 1)] & 2) == 0);
+      } while ((g_UCHAR_ARRAY_00626114[(byte)((char)uVar4 + 1)] & 2) == 0);
     }
     FUN_005c543c(uVar4,param_1);
   }

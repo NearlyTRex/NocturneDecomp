@@ -11,14 +11,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_GenuineIntel_nJ_00600680
 ;   undefined4 s_nJ_00600680+0xc
-;   undefined4 DAT_00600690
-;   undefined4 DAT_00600694
-;   undefined1 DAT_00600698
-;   undefined4 DAT_00600699
-;   undefined4 DAT_0060069a
-;   undefined4 DAT_0060069b
-;   undefined1 DAT_0060069c
-;   undefined4 DAT_0060069d
+;   int g_INT_00600690 = 0x730a0600
+;   int g_INT_00600694 = 0x900004a
+;   uchar g_UCHAR_00600698 = \n
+;   uchar g_UCHAR_00600699 = \xcb
+;   uchar g_UCHAR_0060069a = J
+;   byte g_BYTE_0060069b = 0x0
+;   uchar g_UCHAR_0060069c = \x00
+;   uint g_UINT_0060069d = 0x0
 ;
 ; *****************************************************************************
 
@@ -40,12 +40,12 @@ section .text
     PUSHFD                              ; 004f7c7d
     POP EAX                             ; 004f7c7e
     XOR EAX,ECX                         ; 004f7c7f
-    MOV byte ptr [0x00600698],0x3       ; 004f7c81 | DAT_00600698
+    MOV byte ptr [0x00600698],0x3       ; 004f7c81 | g_UCHAR_00600698
     JZ 0x004f7d12                       ; 004f7c88
         ;   XREF to: 004f7d12 (CONDITIONAL_JUMP)  ; LAB_004f7d12
     PUSH ECX                            ; 004f7c8e
     POPFD                               ; 004f7c8f
-    MOV byte ptr [0x00600698],0x4       ; 004f7c90 | DAT_00600698
+    MOV byte ptr [0x00600698],0x4       ; 004f7c90 | g_UCHAR_00600698
     MOV EAX,ECX                         ; 004f7c97
     XOR EAX,0x200000                    ; 004f7c99
     PUSH EAX                            ; 004f7c9e
@@ -55,12 +55,12 @@ section .text
     XOR EAX,ECX                         ; 004f7ca2
     JZ 0x004f7d12                       ; 004f7ca4
         ;   XREF to: 004f7d12 (CONDITIONAL_JUMP)  ; LAB_004f7d12
-    MOV byte ptr [0x0060069b],0x1       ; 004f7ca6 | DAT_0060069b
+    MOV byte ptr [0x0060069b],0x1       ; 004f7ca6 | g_BYTE_0060069b
     XOR EAX,EAX                         ; 004f7cad
     CPUID                               ; 004f7caf
     MOV dword ptr [0x0060068c],EBX      ; 004f7cb1 | s_nJ_00600680+0xc
-    MOV dword ptr [0x00600690],EDX      ; 004f7cb7 | DAT_00600690
-    MOV dword ptr [0x00600694],ECX      ; 004f7cbd | DAT_00600694
+    MOV dword ptr [0x00600690],EDX      ; 004f7cb7 | g_INT_00600690
+    MOV dword ptr [0x00600694],ECX      ; 004f7cbd | g_INT_00600694
     MOV ESI,0x60068c                    ; 004f7cc3 | s_nJ_00600680+0xc
     MOV EDI,0x600680                    ; 004f7cc8 | = "GenuineIntel\nnJ"
     MOV ECX,0x1                         ; 004f7ccd
@@ -68,22 +68,22 @@ section .text
     OR ECX,ECX                          ; 004f7cd4
     JNZ 0x004f7d12                      ; 004f7cd6
         ;   XREF to: 004f7d12 (CONDITIONAL_JUMP)  ; LAB_004f7d12
-    MOV byte ptr [0x0060069c],0x1       ; 004f7cd8 | DAT_0060069c
+    MOV byte ptr [0x0060069c],0x1       ; 004f7cd8 | g_UCHAR_0060069c
     CMP EAX,0x1                         ; 004f7cdf
     JL 0x004f7d12                       ; 004f7ce2
         ;   XREF to: 004f7d12 (CONDITIONAL_JUMP)  ; LAB_004f7d12
     XOR EAX,EAX                         ; 004f7ce4
     INC EAX                             ; 004f7ce6
     CPUID                               ; 004f7ce7
-    MOV [0x0060069a],AL                 ; 004f7ce9 | DAT_0060069a
-    AND byte ptr [0x0060069a],0xf       ; 004f7cee | DAT_0060069a
+    MOV [0x0060069a],AL                 ; 004f7ce9 | g_UCHAR_0060069a
+    AND byte ptr [0x0060069a],0xf       ; 004f7cee | g_UCHAR_0060069a
     AND AL,0xf0                         ; 004f7cf5
     SHR AL,0x4                          ; 004f7cf7
-    MOV [0x00600699],AL                 ; 004f7cfa | DAT_00600699
+    MOV [0x00600699],AL                 ; 004f7cfa | g_UCHAR_00600699
     AND EAX,0xf00                       ; 004f7cff
     SHR EAX,0x8                         ; 004f7d04
-    MOV [0x00600698],AL                 ; 004f7d07 | DAT_00600698
-    MOV dword ptr [0x0060069d],EDX      ; 004f7d0c | DAT_0060069d
+    MOV [0x00600698],AL                 ; 004f7d07 | g_UCHAR_00600698
+    MOV dword ptr [0x0060069d],EDX      ; 004f7d0c | g_UINT_0060069d
     POP EDX                             ; 004f7d12
         ;   Label: LAB_004f7d12
     POP ECX                             ; 004f7d13

@@ -2,24 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 799,
+    "complexity_score": 660,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 169,
-    "suspect_count": 59,
+    "pseudocode_lines": 170,
+    "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
-      "undefined_data",
       "unknown_field",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 501
+    "total_lines": 502
   },
   "cross_references": [],
   "function": {
@@ -105,74 +103,74 @@
   "globals": [
     {
       "addr": "005d66e9",
-      "name": "DAT_005d66e9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d66e9",
+      "type": "double",
+      "value": "0.015625"
     },
     {
       "addr": "005d66f1",
-      "name": "DAT_005d66f1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d66f1",
+      "type": "float",
+      "value": "64"
     },
     {
       "addr": "005d66f9",
-      "name": "DAT_005d66f9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d66f9",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005f7060",
-      "name": "DAT_005f7060",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f7060",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38aec",
-      "name": "DAT_01c38aec",
-      "type": "undefined4",
+      "name": "g_INT_01c38aec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01caf5ec",
-      "name": "DAT_01caf5ec",
-      "type": "undefined4",
+      "name": "g_INT_01caf5ec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01caf62c",
-      "name": "DAT_01caf62c",
-      "type": "undefined4",
+      "name": "g_UINT_01caf62c",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01caf630",
-      "name": "DAT_01caf630",
-      "type": "undefined4",
+      "name": "g_UINT_01caf630",
+      "type": "uint",
       "value": null
     }
   ],
@@ -286,16 +284,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 22,
+      "line": 20,
       "match": "afStackY_1020",
       "severity": "moderate",
       "text": "float afStackY_1020 [980];",
@@ -303,43 +293,19 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_ffffff44",
       "severity": "moderate",
       "text": "int in_stack_ffffff44;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_ffffff44",
       "severity": "moderate",
       "text": "((CBoundingBox3D *)(auStack_b8 + 0x60),in_stack_ffffff44);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "pCVar3 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0(DAT_0060b280,0,0,0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -454,78 +420,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "DAT_0060b280->vertex_buffer_ptr->r = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(float *)((int)pSStack_14",
-      "severity": "moderate",
-      "text": "((float *)((int)pSStack_14 * 0x20 + 0x1caf634),pSVar4->control_points,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_44);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "pCVar3 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "vertices = DAT_0060b280->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 136,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar5) && (iVar5 < DAT_006141b8)) && (-1 < screen_y)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "(screen_y < DAT_006141bc)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 142,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "else if ((iVar5 < DAT_006141b8 + -1) && (screen_y < DAT_006141bc + -1)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 142,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "else if ((iVar5 < DAT_006141b8 + -1) && (screen_y < DAT_006141bc + -1)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(SRenderVertex *)((int)pSVar8",
@@ -586,7 +480,7 @@
       "line": 117,
       "match": "(int)pSStack_14",
       "severity": "moderate",
-      "text": "((float *)((int)pSStack_14 * 0x20 + 0x1caf634),pSVar4->control_points,",
+      "text": "(g_FLOAT_ARRAY_01caf634 + (int)pSStack_14 * 8,pSVar4->control_points,",
       "type": "pointer_truncation"
     },
     {
@@ -671,7 +565,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 43,
+      "line": 42,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",

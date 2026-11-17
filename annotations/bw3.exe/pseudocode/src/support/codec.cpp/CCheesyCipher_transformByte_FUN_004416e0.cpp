@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte param_2)
 
 {
@@ -20,8 +18,8 @@ uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyC
   if (this_ptr->mode == 1) {
     return (uint)(byte)((&DAT_005f1468)[param_2] - (char)this_ptr->key_state);
   }
-  _DAT_01d71de0 = "..\\support\\codec.cpp";
-  _DAT_01d71de4 = 0x70b;
+  g_CHAR_PTR_01d71de0 = "..\\support\\codec.cpp";
+  g_INT_01d71de4 = 0x70b;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid mode.");
   return extraout_EAX & 0xffffff00;
 }

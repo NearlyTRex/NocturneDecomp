@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_freezeTextureCache_FUN_00575140(void)
 
 {
-  _DAT_02652eb4 = 1;
+  g_INT_02652eb4 = 1;
   return;
 }

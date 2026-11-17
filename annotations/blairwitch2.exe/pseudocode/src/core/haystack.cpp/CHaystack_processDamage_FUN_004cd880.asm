@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f7f78
+;   float g_FLOAT_005f7f78 = 0.5
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   undefined4 g_CGameInstance.god_mode_enabled
@@ -45,7 +45,7 @@ section .text
     TEST ESI,ESI                        ; 004cd8bb
     JZ 0x004cd928                       ; 004cd8bd
         ;   XREF to: 004cd928 (CONDITIONAL_JUMP)  ; LAB_004cd928
-    MOV EAX,[0x005f7f78]                ; 004cd8bf | DAT_005f7f78
+    MOV EAX,[0x005f7f78]                ; 004cd8bf | g_FLOAT_005f7f78
         ;   Label: LAB_004cd8bf
     MOV dword ptr [EBX + 0x10a60],EAX   ; 004cd8c4
     FLD float ptr [EDI + 0x4]           ; 004cd8ca

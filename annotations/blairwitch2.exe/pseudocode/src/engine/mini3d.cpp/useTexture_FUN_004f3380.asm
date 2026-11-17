@@ -12,7 +12,7 @@
 ;   engine_mini3d.cpp_useDefaultTexture_FUN_004f9330 at 004f9335
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0d2b4
+;   int g_INT_01d0d2b4
 ;
 ; Called Functions:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
@@ -21,7 +21,7 @@
 
 section .text
 
-    CMP dword ptr [0x01d0d2b4],0x0      ; 004f3380 | DAT_01d0d2b4
+    CMP dword ptr [0x01d0d2b4],0x0      ; 004f3380 | g_INT_01d0d2b4
         ;   Label: engine_mini3d.cpp_useTexture_FUN_004f3380
     JZ 0x004f338a                       ; 004f3387
         ;   XREF to: 004f338a (CONDITIONAL_JUMP)  ; LAB_004f338a

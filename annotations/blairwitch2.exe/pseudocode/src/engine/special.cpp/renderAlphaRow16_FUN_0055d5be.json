@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 458,
+    "complexity_score": 433,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 32,
+    "suspect_count": 30,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
-      "undefined_data",
       "undefined_type",
       "warning_overlapping_globals"
     ],
@@ -49,80 +48,80 @@
   "globals": [
     {
       "addr": "0061c8d0",
-      "name": "DAT_0061c8d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061c8d0",
+      "type": "int",
+      "value": "0xf800"
     },
     {
       "addr": "0061c8d8",
-      "name": "DAT_0061c8d8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061c8d8",
+      "type": "int",
+      "value": "0x7e0"
     },
     {
       "addr": "0061c8e0",
-      "name": "DAT_0061c8e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061c8e0",
+      "type": "int",
+      "value": "0x1f"
     },
     {
       "addr": "0061c8e8",
-      "name": "DAT_0061c8e8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_QWORD_0061c8e8",
+      "type": "qword",
+      "value": "0xf80000"
     },
     {
       "addr": "0061c908",
-      "name": "DAT_0061c908",
-      "type": "undefined4",
-      "value": null
+      "name": "g_QWORD_0061c908",
+      "type": "qword",
+      "value": "0xfc00"
     },
     {
       "addr": "0061c928",
-      "name": "DAT_0061c928",
-      "type": "undefined4",
-      "value": null
+      "name": "g_QWORD_0061c928",
+      "type": "qword",
+      "value": "0xf8"
     },
     {
       "addr": "0061c930",
-      "name": "DAT_0061c930",
-      "type": "undefined4",
-      "value": null
+      "name": "g_QWORD_0061c930",
+      "type": "qword",
+      "value": "0x8"
     },
     {
       "addr": "0061c950",
-      "name": "DAT_0061c950",
-      "type": "undefined4",
-      "value": null
+      "name": "g_QWORD_0061c950",
+      "type": "qword",
+      "value": "0x5"
     },
     {
       "addr": "0061c970",
-      "name": "DAT_0061c970",
-      "type": "undefined4",
-      "value": null
+      "name": "g_QWORD_0061c970",
+      "type": "qword",
+      "value": "0x3"
     },
     {
       "addr": "0061d180",
-      "name": "DAT_0061d180",
-      "type": "undefined8",
+      "name": "g_QWORD_ARRAY_0061d180",
+      "type": "qword[512]",
       "value": null
     },
     {
       "addr": "0061d978",
-      "name": "DAT_0061d978",
-      "type": "undefined8",
+      "name": "g_QWORD_ARRAY_0061d180[255]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c35214",
-      "name": "DAT_01c35214",
-      "type": "undefined4",
+      "name": "g_UINT_ARRAY_01c35214",
+      "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01c38b4c",
-      "name": "DAT_01c38b4c",
-      "type": "undefined4",
+      "name": "g_INT_01c38b4c",
+      "type": "int",
       "value": null
     }
   ],
@@ -307,14 +306,6 @@
       "type": "nonstandard_int"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01c35214",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)(&DAT_01c35214 + (uint)*srcIndices * 4);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 39,
       "match": "int3",
@@ -339,19 +330,11 @@
       "type": "nonstandard_int"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_0061d180",
-      "severity": "mild",
-      "text": "uVar10 = (&DAT_0061d180)[uVar6 >> 8];",
-      "type": "undefined_data"
-    },
-    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 47,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar24 = (uint7)((uVar6 & _DAT_0061c8e0) << _DAT_0061c970) |",
+      "text": "uVar24 = (uint7)((uVar6 & _g_INT_0061c8e0) << g_QWORD_0061c970) |",
       "type": "nonstandard_int"
     },
     {
@@ -359,7 +342,7 @@
       "line": 48,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar6 & _DAT_0061c8d8) << _DAT_0061c950) |",
+      "text": "(uint7)((uVar6 & _g_INT_0061c8d8) << g_QWORD_0061c950) |",
       "type": "nonstandard_int"
     },
     {
@@ -367,7 +350,7 @@
       "line": 49,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar6 & _DAT_0061c8d0) << _DAT_0061c930);",
+      "text": "(uint7)((uVar6 & _g_INT_0061c8d0) << g_QWORD_0061c930);",
       "type": "nonstandard_int"
     },
     {

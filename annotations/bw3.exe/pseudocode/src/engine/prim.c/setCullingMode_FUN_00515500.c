@@ -9,6 +9,6 @@
 void __cdecl engine_prim_c_setCullingMode_FUN_00515500(int culling_mode)
 
 {
-  DAT_007303fc = culling_mode;
+  g_INT_007303fc = culling_mode;
   return;
 }

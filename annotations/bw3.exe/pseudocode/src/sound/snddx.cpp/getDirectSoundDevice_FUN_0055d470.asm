@@ -18,10 +18,10 @@
 ;   TerminatedCString s_Create_the_primary_buffe_005d4f2c
 ;   TerminatedCString s_Create_the_primary_buffe_005d4f46
 ;   GUID g_IID_IDirectSound3DListener = IDirectSound3DListener 279afa84-4981-11ce-a521-0020af0be560
-;   undefined4 DAT_02cf49c4
-;   undefined4 DAT_02cf49c8
+;   IDirectSound* g_IDirectSound_PTR_02cf49c4
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49c8
 ;   undefined4 DAT_02cf49d0
-;   undefined4 DAT_02d21b78
+;   HWND g_HWND_02d21b78
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
@@ -80,7 +80,7 @@ section .text
     LEA ECX,[EAX + 0x4]                 ; 0055d4d2
     PUSH 0x0                            ; 0055d4d5
         ;   Label: LAB_0055d4d5
-    PUSH 0x2cf49c4                      ; 0055d4d7 | DAT_02cf49c4
+    PUSH 0x2cf49c4                      ; 0055d4d7 | g_IDirectSound_PTR_02cf49c4
     PUSH ECX                            ; 0055d4dc
     CALL crt_dsound.c_DirectSoundCreate ; 0055d4dd
         ;   XREF to: 005b25f2 (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundCreate(LPGUID lp_guid, LPDIRECTSOUND * pp_ds, LPUNKNOWN p_unk_outer)
@@ -117,8 +117,8 @@ section .text
     RET                                 ; 0055d532
     PUSH 0x2                            ; 0055d533
         ;   Label: LAB_0055d533
-    MOV ECX,dword ptr [0x02d21b78]      ; 0055d535 | DAT_02d21b78
-    MOV EAX,[0x02cf49c4]                ; 0055d53b | DAT_02cf49c4
+    MOV ECX,dword ptr [0x02d21b78]      ; 0055d535 | g_HWND_02d21b78
+    MOV EAX,[0x02cf49c4]                ; 0055d53b | g_IDirectSound_PTR_02cf49c4
     PUSH ECX                            ; 0055d540
     MOV EDX,dword ptr [EAX]             ; 0055d541
     PUSH EAX                            ; 0055d543
@@ -137,8 +137,8 @@ section .text
     MOV EDI,0x11                        ; 0055d567
     PUSH 0x0                            ; 0055d56c
     LEA EDX,[ESP + 0x75c]               ; 0055d56e
-    MOV EAX,[0x02cf49c4]                ; 0055d575 | DAT_02cf49c4
-    PUSH 0x2cf49c8                      ; 0055d57a | DAT_02cf49c8
+    MOV EAX,[0x02cf49c4]                ; 0055d575 | g_IDirectSound_PTR_02cf49c4
+    PUSH 0x2cf49c8                      ; 0055d57a | g_IDirectSoundBuffer_PTR_02cf49c8
     MOV dword ptr [ESP + 0x760],ESI     ; 0055d57f
     MOV dword ptr [ESP + 0x764],EDI     ; 0055d586
     PUSH EDX                            ; 0055d58d
@@ -162,7 +162,7 @@ section .text
     JL 0x0055d5ce                       ; 0055d5b8
         ;   XREF to: 0055d5ce (CONDITIONAL_JUMP)  ; LAB_0055d5ce
     PUSH 0x2cf49d0                      ; 0055d5ba | DAT_02cf49d0
-    MOV EAX,[0x02cf49c8]                ; 0055d5bf | DAT_02cf49c8
+    MOV EAX,[0x02cf49c8]                ; 0055d5bf | g_IDirectSoundBuffer_PTR_02cf49c8
     PUSH 0x608bc8                       ; 0055d5c4 | g_IID_IDirectSound3DListener
     MOV EDX,dword ptr [EAX]             ; 0055d5c9
     PUSH EAX                            ; 0055d5cb
@@ -210,12 +210,12 @@ section .text
     ADD ESP,0x4                         ; 0055d636
     PUSH 0x0                            ; 0055d639
     MOV AH,byte ptr [ESP + 0x760]       ; 0055d63b
-    PUSH 0x2cf49c8                      ; 0055d642 | DAT_02cf49c8
+    PUSH 0x2cf49c8                      ; 0055d642 | g_IDirectSoundBuffer_PTR_02cf49c8
     LEA EDX,[ESP + 0x760]               ; 0055d647
     AND AH,0xef                         ; 0055d64e
     PUSH EDX                            ; 0055d651
     MOV byte ptr [ESP + 0x768],AH       ; 0055d652
-    MOV EAX,[0x02cf49c4]                ; 0055d659 | DAT_02cf49c4
+    MOV EAX,[0x02cf49c4]                ; 0055d659 | g_IDirectSound_PTR_02cf49c4
     PUSH EAX                            ; 0055d65e
     MOV ECX,dword ptr [EAX]             ; 0055d65f
     CALL dword ptr [ECX + 0xc]          ; 0055d661

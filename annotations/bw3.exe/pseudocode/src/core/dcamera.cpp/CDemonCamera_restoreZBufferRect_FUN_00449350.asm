@@ -11,10 +11,10 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430 at 004496bd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
-;   undefined4 DAT_01c60dac
-;   undefined4 DAT_01c6cee8
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
+;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   int g_INT_01c6cee8
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_00471271
@@ -47,7 +47,7 @@ section .text
     CMP EBP,dword ptr [ESI + 0x8]       ; 0044938e
     JLE 0x00449400                      ; 00449391
         ;   XREF to: 00449400 (CONDITIONAL_JUMP)  ; LAB_00449400
-    CMP dword ptr [0x01c6cee8],0x0      ; 00449397 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 00449397 | g_INT_01c6cee8
     JNZ 0x00449405                      ; 0044939e
         ;   XREF to: 00449405 (CONDITIONAL_JUMP)  ; LAB_00449405
     MOV EDX,dword ptr [ESI + 0xc]       ; 004493a0
@@ -58,7 +58,7 @@ section .text
     LEA EBP,[EDI*0x4 + 0x0]             ; 004493aa
     MOV ECX,dword ptr [ESI]             ; 004493b1
         ;   Label: LAB_004493b1
-    MOV EAX,dword ptr [EBP + 0x1c60dac] ; 004493b3 | DAT_01c60dac
+    MOV EAX,dword ptr [EBP + 0x1c60dac] ; 004493b3 | g_UINT_PTR_ARRAY_01c60dac
     SHL ECX,0x2                         ; 004493b9
     ADD ECX,EAX                         ; 004493bc
     MOV EAX,dword ptr [ESP + 0x14]      ; 004493be
@@ -93,11 +93,11 @@ section .text
     POP ESI                             ; 00449402
     POP EBX                             ; 00449403
     RET                                 ; 00449404
-    MOV EAX,[0x005fba1c]                ; 00449405 | DAT_005fba1c
+    MOV EAX,[0x005fba1c]                ; 00449405 | g_INT_005fba1c
         ;   Label: LAB_00449405
     DEC EAX                             ; 0044940a
     PUSH EAX                            ; 0044940b
-    MOV EAX,[0x005fba18]                ; 0044940c | DAT_005fba18
+    MOV EAX,[0x005fba18]                ; 0044940c | g_INT_005fba18
     DEC EAX                             ; 00449411
     PUSH EAX                            ; 00449412
     PUSH 0x0                            ; 00449413

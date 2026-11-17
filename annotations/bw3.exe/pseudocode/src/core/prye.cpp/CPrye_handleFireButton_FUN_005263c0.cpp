@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_CPrye_handleFireButton_FUN_005263c0(CPrye *this_ptr,float delta_time)
 
 {
@@ -81,7 +79,7 @@ switchD_005265a3_caseD_0:
         (this_ptr->base).base.layer_action_index = iVar6 + 0xd;
         pCVar3 = (this_ptr->base).base.base.vtable._ub;
         (this_ptr->base).action_pending = 7;
-        (*pCVar3->playSound)((CDemonActor *)this_ptr,"?wp_holystaff.wav" + 1);
+        (*pCVar3->playSound)((CDemonActor *)this_ptr,"wp_holystaff.wav");
         return;
       }
       iVar8 = iVar8 + 1;
@@ -130,7 +128,7 @@ LAB_00526426:
     pCVar4 = (CDemonActor *)
              core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
                        ((CCharacter *)this_ptr,iVar6);
-    if ((((float)_DAT_005cd987 <= (float)pCVar4) &&
+    if ((((float)0.98999999999999999 <= (float)pCVar4) &&
         (1.0 <= (this_ptr->right_arm_aim).kickback_factor)) &&
        ((this_ptr->right_arm_aim).recoil_timer <= 0.0)) {
       if (0.0 < (this_ptr->base).base.bind_time) {

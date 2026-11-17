@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 126,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 6,
+    "pseudocode_lines": 45,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 109
+    "total_lines": 108
   },
   "cross_references": [
     {
@@ -86,14 +85,14 @@
     },
     {
       "addr": "01c25598",
-      "name": "DAT_01c25598",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01c25598",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "02664628",
-      "name": "DAT_02664628",
-      "type": "undefined4",
+      "name": "g_HWND_02664628",
+      "type": "HWND",
       "value": null
     }
   ],
@@ -195,16 +194,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_005d24cf",
       "severity": "mild",
       "text": "return &DAT_005d24cf;",
@@ -212,7 +203,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -220,7 +211,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
@@ -228,7 +219,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 22,
+      "line": 20,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

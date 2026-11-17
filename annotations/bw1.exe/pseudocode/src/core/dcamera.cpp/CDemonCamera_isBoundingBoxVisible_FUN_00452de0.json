@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 355,
+    "complexity_score": 241,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 210,
-    "suspect_count": 13,
+    "pseudocode_lines": 211,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 572
+    "total_lines": 573
   },
   "cross_references": [
     {
@@ -78,98 +77,98 @@
   "globals": [
     {
       "addr": "005d78f7",
-      "name": "DAT_005d78f7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d78f7",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "005fe5fc",
-      "name": "DAT_005fe5fc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fe5fc",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c51d2c",
-      "name": "DAT_01c51d2c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d2c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d30",
-      "name": "DAT_01c51d30",
-      "type": "undefined4",
+      "name": "g_INT_01c51d30",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d34",
-      "name": "DAT_01c51d34",
-      "type": "undefined4",
+      "name": "g_INT_01c51d34",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d5c",
-      "name": "DAT_01c51d5c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d5c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d60",
-      "name": "DAT_01c51d60",
-      "type": "undefined4",
+      "name": "g_INT_01c51d60",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d64",
-      "name": "DAT_01c51d64",
-      "type": "undefined4",
+      "name": "g_INT_01c51d64",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d68",
-      "name": "DAT_01c51d68",
-      "type": "undefined4",
+      "name": "g_INT_01c51d68",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d6c",
-      "name": "DAT_01c51d6c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d6c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d70",
-      "name": "DAT_01c51d70",
-      "type": "undefined4",
+      "name": "g_INT_01c51d70",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d74",
-      "name": "DAT_01c51d74",
-      "type": "undefined4",
+      "name": "g_INT_01c51d74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d78",
-      "name": "DAT_01c51d78",
-      "type": "undefined4",
+      "name": "g_INT_01c51d78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d7c",
-      "name": "DAT_01c51d7c",
-      "type": "undefined4",
+      "name": "g_INT_01c51d7c",
+      "type": "int",
       "value": null
     }
   ],
@@ -834,107 +833,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "CStack_13c.z = (int)DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,euler_angles,translation);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[0x4e18].projected_vertex,&local_f4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 133,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[0x4e19].projected_vertex,&local_dc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 144,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_100);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_118);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 166,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[0x4e1c].projected_vertex,&CStack_13c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 177,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 188,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 199,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[19999].projected_vertex,&local_c4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 203,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 203,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Pointer value `g_CDemonRenderer_PTR_00612560` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)g_CDemonRenderer_PTR_00612560",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar8);",
+      "text": "CStack_13c.z = (int)g_CDemonRenderer_PTR_00612560;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 202,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     }
   ]

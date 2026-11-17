@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr)
 
 {
@@ -20,16 +18,16 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr)
   char *pcVar7;
   
   pCVar3 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
-  pcVar6 = (char *)0x5eee4e;
+  pcVar6 = "true";
   (pCVar3->base).base.base.vtable._ub = &g_CZombieVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(pCVar3->base).base.model,(char *)0x5eee42);
+            (&(pCVar3->base).base.model,"zombie1.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.5;
   pcVar7 = pCVar3->rise_from_grave_condition;
   (pCVar3->base).base.collision_cylinder_radius = 1.0;
-  fVar4 = _DAT_005fe31c;
+  fVar4 = 50.0f;
   pCVar3->pickup_target = (CDemonActor *)0x0;
-  fVar2 = _DAT_005fe320;
+  fVar2 = 100.0f;
   pCVar3->pickup_approach_progress = 0.0;
   (pCVar3->base).base.ai_detection_range_min = fVar4;
   (pCVar3->base).base.ai_detection_range_max = fVar2;

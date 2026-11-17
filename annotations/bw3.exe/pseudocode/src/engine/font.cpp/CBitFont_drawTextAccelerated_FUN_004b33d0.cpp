@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004b33d0(CBitFont *this_ptr,char *text,int x,int y,int color_mode)
 
 {
@@ -30,17 +28,18 @@ int __cdecl engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004b33d0(CBitFont *
   iVar8 = x;
   this_ptr_00 = this_ptr;
   if (color_mode == -2) {
-    uVar11 = _DAT_01d1ad68 << 0x10 | _DAT_01d1ad6c << 8 | _DAT_01d1ad70;
+    uVar11 = g_INT_01d1ad68 << 0x10 | g_INT_01d1ad6c << 8 | g_INT_01d1ad70;
   }
   else if (color_mode < 0) {
     uVar11 = 0xffffff;
   }
   else {
     iVar13 = color_mode * 3;
-    uVar11 = (uint)(byte)(&DAT_01c6af9a)[iVar13] |
-             (uint)(byte)(&DAT_01c6af99)[iVar13] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar13] << 0x10;
+    uVar11 = (uint)g_UCHAR_ARRAY_01c6af98[iVar13 + 2] |
+             (uint)g_UCHAR_ARRAY_01c6af98[iVar13 + 1] << 8 |
+             (uint)g_UCHAR_ARRAY_01c6af98[iVar13] << 0x10;
   }
-  dVar14 = round((double)(_DAT_01d76c40 * _DAT_005c2100));
+  dVar14 = round((double)(g_FLOAT_01d76c40 * 255.0f));
   fVar12 = (float)(uVar11 | (int)ROUND(dVar14) << 0x18);
   iVar13 = iVar8;
   while (uVar11 = (uint)(byte)this_ptr->bitmap_count, uVar11 != 0) {
@@ -62,10 +61,10 @@ int __cdecl engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004b33d0(CBitFont *
         engine_font_cpp_CBitFont_flushAccelBatch_FUN_004b13a0(this_ptr_00);
       }
       pfVar9 = (float *)(this_ptr_00->accel_vertex_count * 0x20 + (int)this_ptr_00->accel_vertices);
-      fVar7 = (float)iVar13 + _DAT_005c2104;
+      fVar7 = (float)iVar13 + -0.5f;
       iVar1 = this_ptr_00->char_widths[uVar11];
       iVar2 = this_ptr_00->char_heights[uVar11];
-      fVar6 = (float)x + _DAT_005c2104 + (float)this_ptr_00->char_y_offsets[uVar11];
+      fVar6 = (float)x + -0.5f + (float)this_ptr_00->char_y_offsets[uVar11];
       *pfVar9 = fVar7;
       fVar5 = (float)iVar1 + fVar7 + 1.0;
       pfVar9[1] = fVar6;

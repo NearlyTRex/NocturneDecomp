@@ -12,583 +12,591 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb9
 
 {
   ulonglong uVar1;
-  int iVar2;
-  bool bVar3;
-  byte bVar4;
-  uint3 uVar8;
-  undefined5 uVar9;
+  bool bVar2;
+  byte bVar3;
+  uint3 uVar7;
+  undefined5 uVar8;
+  uint uVar9;
   uint uVar10;
   int iVar11;
   uint uVar12;
-  uint uVar13;
+  int iVar13;
   uint uVar14;
-  byte *pbVar15;
-  uint uVar16;
+  uint uVar15;
+  SSoftwareEdge *pSVar16;
   int iVar17;
-  SSoftwareEdge *pSVar18;
-  int *piVar19;
-  uint uVar20;
+  uint *puVar18;
+  uint uVar19;
+  ushort uVar20;
   ushort uVar21;
-  ushort uVar22;
+  ushort uVar23;
   ushort uVar25;
-  uint uVar23;
+  ushort uVar26;
   ushort uVar27;
+  ulonglong uVar22;
   ushort uVar28;
   ushort uVar29;
-  ulonglong uVar24;
+  uint5 uVar24;
   ushort uVar30;
   ushort uVar31;
-  uint5 uVar26;
-  ushort uVar32;
-  ushort uVar33;
-  byte bVar34;
-  short sVar36;
-  short sVar37;
-  ulonglong uVar35;
-  ulonglong uVar38;
-  uint7 uVar39;
-  short sVar40;
-  ushort uVar41;
+  byte bVar32;
+  short sVar34;
+  short sVar35;
+  ulonglong uVar33;
+  ulonglong uVar36;
+  uint7 uVar37;
+  short sVar38;
+  ushort uVar39;
+  short sVar41;
+  short sVar42;
+  ulonglong uVar40;
   short sVar43;
   short sVar44;
-  ulonglong uVar42;
-  short sVar45;
   short sVar46;
+  short sVar47;
+  ulonglong uVar45;
   short sVar48;
-  short sVar49;
-  ulonglong uVar47;
-  short sVar50;
-  ushort uVar51;
-  ushort uVar52;
+  ushort uVar49;
+  ushort uVar50;
+  char cVar4;
   char cVar5;
   char cVar6;
-  char cVar7;
   
-  uVar20 = (right_vertex->base).x_current;
+  uVar19 = (right_vertex->base).x_current;
   uVar12 = (left_vertex->base).x_current;
-  uVar10 = uVar20;
-  pSVar18 = right_vertex;
-  if (uVar12 < uVar20) {
-    uVar10 = uVar12;
-    uVar12 = uVar20;
-    pSVar18 = left_vertex;
+  uVar9 = uVar19;
+  pSVar16 = right_vertex;
+  if (uVar12 < uVar19) {
+    uVar9 = uVar12;
+    uVar12 = uVar19;
+    pSVar16 = left_vertex;
     left_vertex = right_vertex;
   }
-  uVar10 = uVar10 >> 0x10;
-  iVar11 = (uVar12 >> 0x10) - uVar10;
-  if (iVar11 != 0 && uVar10 <= uVar12 >> 0x10) {
-    DAT_0061c378 = *(int *)(&DAT_01c2a38c + scanline_y * 4) + uVar10 * 2;
-    DAT_0061c314 = iVar11 * 4;
-    piVar19 = (int *)(*(int *)(&DAT_01c2b64c + scanline_y * 4) + uVar10 * 4);
-    DAT_0061c37c = piVar19;
-    if (_DAT_01c38b54 == 0x80) {
-      iVar11 = (pSVar18->base).depth_current;
+  uVar9 = uVar9 >> 0x10;
+  iVar11 = (uVar12 >> 0x10) - uVar9;
+  if (iVar11 != 0 && uVar9 <= uVar12 >> 0x10) {
+    g_INT_PTR_0061c378 = (int *)(g_ARRAY_PTR_01c2a38c[scanline_y] + uVar9 * 2);
+    g_INT_0061c314 = iVar11 * 4;
+    puVar18 = g_UINT_PTR_ARRAY_01c2b64c[scanline_y] + uVar9;
+    g_INT_PTR_0061c37c = (int *)puVar18;
+    if (g_BIT_INTEGER32_01c38b54.dword == 0x80) {
+      uVar19 = (pSVar16->base).depth_current;
       iVar17 = (int)((ulonglong)
-                     ((longlong)((left_vertex->base).depth_current - iVar11) *
-                     (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-      uVar20 = DAT_0061c314;
-      DAT_0061c35c = iVar11;
-      DAT_0061c788 = iVar17;
+                     ((longlong)(int)((left_vertex->base).depth_current - uVar19) *
+                     (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+      iVar11 = g_INT_0061c314;
+      g_INT_0061c35c = uVar19;
+      g_INT_0061c788 = iVar17;
       do {
-        *piVar19 = iVar11;
-        iVar11 = iVar11 + iVar17;
-        piVar19 = piVar19 + 1;
-        uVar12 = uVar20 - 4;
-        bVar3 = 3 < (int)uVar20;
-        uVar20 = uVar12;
-      } while (uVar12 != 0 && bVar3);
+        *puVar18 = uVar19;
+        uVar19 = uVar19 + iVar17;
+        puVar18 = puVar18 + 1;
+        iVar13 = iVar11 + -4;
+        bVar2 = 3 < iVar11;
+        iVar11 = iVar13;
+      } while (iVar13 != 0 && bVar2);
       return;
     }
-    if (_DAT_01c38b58 == 5) {
-      uVar20 = (pSVar18->base).u_current;
-      DAT_0061c350 = (uint)(CONCAT44(((int)uVar20 >> 0x1f) << 0x18 | uVar20 >> 8,uVar20 << 0x18) /
-                           (longlong)(pSVar18->base).depth_current);
-      uVar20 = (left_vertex->base).u_current;
-      _DAT_0061c780 =
+    if (g_INT_01c38b58 == 5) {
+      uVar19 = (pSVar16->base).u_current;
+      g_INT_0061c350 =
+           (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+                (longlong)(pSVar16->base).depth_current);
+      uVar19 = (left_vertex->base).u_current;
+      g_INT_0061c780 =
            (int)((ulonglong)
                  ((longlong)
-                  (int)((int)(CONCAT44(((int)uVar20 >> 0x1f) << 0x18 | uVar20 >> 8,uVar20 << 0x18) /
-                             (longlong)(left_vertex->base).depth_current) - DAT_0061c350) *
-                 (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-      uVar20 = (pSVar18->base).v_current;
-      DAT_0061c354 = (uint)(CONCAT44(((int)uVar20 >> 0x1f) << 0x18 | uVar20 >> 8,uVar20 << 0x18) /
-                           (longlong)(pSVar18->base).depth_current);
-      uVar20 = (left_vertex->base).v_current;
-      _DAT_0061c784 =
+                  ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+                        (longlong)(left_vertex->base).depth_current) - g_INT_0061c350) *
+                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+      uVar19 = (pSVar16->base).v_current;
+      g_INT_0061c354 =
+           (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+                (longlong)(pSVar16->base).depth_current);
+      uVar19 = (left_vertex->base).v_current;
+      g_INT_0061c784 =
            (int)((ulonglong)
                  ((longlong)
-                  (int)((int)(CONCAT44(((int)uVar20 >> 0x1f) << 0x18 | uVar20 >> 8,uVar20 << 0x18) /
-                             (longlong)(left_vertex->base).depth_current) - DAT_0061c354) *
-                 (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
+                  ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+                        (longlong)(left_vertex->base).depth_current) - g_INT_0061c354) *
+                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
     }
     else {
-      DAT_0061c350 = (pSVar18->base).u_current;
-      _DAT_0061c780 =
+      g_INT_0061c350 = (pSVar16->base).u_current;
+      g_INT_0061c780 =
            (int)((ulonglong)
-                 ((longlong)(int)((left_vertex->base).u_current - DAT_0061c350) *
-                 (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-      DAT_0061c354 = (pSVar18->base).v_current;
-      _DAT_0061c784 =
+                 ((longlong)((left_vertex->base).u_current - g_INT_0061c350) *
+                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+      g_INT_0061c354 = (pSVar16->base).v_current;
+      g_INT_0061c784 =
            (int)((ulonglong)
-                 ((longlong)(int)((left_vertex->base).v_current - DAT_0061c354) *
-                 (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
+                 ((longlong)((left_vertex->base).v_current - g_INT_0061c354) *
+                 (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
     }
-    iVar11 = (pSVar18->base).depth_current;
-    DAT_0061c788 = (int)((ulonglong)
-                         ((longlong)((left_vertex->base).depth_current - iVar11) *
-                         (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-    DAT_0061c840 = (pSVar18->base).alpha_current;
-    _DAT_0061c848 =
+    iVar17 = (pSVar16->base).depth_current;
+    g_INT_0061c788 =
          (int)((ulonglong)
-               ((longlong)((left_vertex->base).alpha_current - DAT_0061c840) *
-               (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-    if ((_DAT_01c38b54 & 0x200) == 0) {
-      if ((_DAT_01c38b54 & 4) == 0) {
-        if ((_DAT_01c38b54 & 0x10) == 0) {
-          uVar42 = psllw(0x000000FF00FF00FF,7);
-          uVar47 = 0;
+               ((longlong)((left_vertex->base).depth_current - iVar17) *
+               (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+    g_INT_0061c840 = (pSVar16->base).alpha_current;
+    g_INT_0061c848 =
+         (int)((ulonglong)
+               ((longlong)((left_vertex->base).alpha_current - g_INT_0061c840) *
+               (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+    if ((g_BIT_INTEGER32_01c38b54.dword & 0x200) == 0) {
+      if ((g_BIT_INTEGER32_01c38b54.dword & 4) == 0) {
+        if ((g_BIT_INTEGER32_01c38b54.dword & 0x10) == 0) {
+          uVar40 = psllw(g_QWORD_ARRAY_0061d180[0xff],7);
+          uVar45 = 0;
         }
         else {
-          uVar20 = _DAT_01c35e64 - 0x100U >> 4;
-          if (0xfe < uVar20) {
-            uVar20 = 0xff;
+          uVar19 = g_INT_01c35e64 - 0x100U >> 4;
+          if (0xfe < uVar19) {
+            uVar19 = 0xff;
           }
-          uVar42 = psllw((&DAT_0061d180)[uVar20],7);
-          uVar47 = 0;
+          uVar40 = psllw(g_QWORD_ARRAY_0061d180[uVar19],7);
+          uVar45 = 0;
         }
       }
       else {
-        uVar20 = (left_vertex->base).red_current - 0x100;
-        uVar12 = (pSVar18->base).red_current - 0x100;
-        if (0xfff < uVar20) {
-          uVar20 = 0xfff;
+        uVar19 = (left_vertex->base).red_current - 0x100;
+        uVar12 = (pSVar16->base).red_current - 0x100;
+        if (0xfff < uVar19) {
+          uVar19 = 0xfff;
         }
         if (0xfff < uVar12) {
           uVar12 = 0xfff;
         }
-        uVar10 = uVar12 * 8;
-        uVar20 = (uint)((ulonglong)
-                        ((longlong)(int)(uVar20 * 8 + uVar12 * -8) *
-                        (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-        DAT_0061c800._0_4_ = uVar10 & 0xffff;
-        DAT_0061c820._0_4_ = uVar20 & 0xffff;
-        uVar42 = ((CONCAT44(DAT_0061c800._4_4_,uVar10) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(DAT_0061c800._4_4_,uVar10) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(DAT_0061c800._4_4_,uVar10) & 0xffffffff0000ffff;
-        uVar47 = ((CONCAT44(DAT_0061c820._4_4_,uVar20) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(DAT_0061c820._4_4_,uVar20) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(DAT_0061c820._4_4_,uVar20) & 0xffffffff0000ffff;
+        uVar9 = uVar12 * 8;
+        uVar19 = (uint)((ulonglong)
+                        ((longlong)(int)(uVar19 * 8 + uVar12 * -8) *
+                        (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+        g_QWORD_0061c800._0_4_ = uVar9 & 0xffff;
+        g_QWORD_0061c820._0_4_ = uVar19 & 0xffff;
+        uVar40 = ((CONCAT44(g_QWORD_0061c800._4_4_,uVar9) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_QWORD_0061c800._4_4_,uVar9) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_QWORD_0061c800._4_4_,uVar9) & 0xffffffff0000ffff;
+        uVar45 = ((CONCAT44(g_QWORD_0061c820._4_4_,uVar19) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_QWORD_0061c820._4_4_,uVar19) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_QWORD_0061c820._4_4_,uVar19) & 0xffffffff0000ffff;
       }
     }
     else {
-      uVar14 = (uint)(pSVar18->base).red_current >> 1;
-      uVar20 = (uint)((ulonglong)
-                      ((longlong)(int)(((uint)(left_vertex->base).red_current >> 1) - uVar14) *
-                      (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-      DAT_0061c800._0_4_ = uVar14 & 0xffff;
-      DAT_0061c820._0_4_ = uVar20 & 0xffff;
-      uVar16 = (uint)pSVar18->green_current >> 1;
+      uVar10 = (uint)(pSVar16->base).red_current >> 1;
+      uVar19 = (uint)((ulonglong)
+                      ((longlong)(int)(((uint)(left_vertex->base).red_current >> 1) - uVar10) *
+                      (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+      g_QWORD_0061c800._0_4_ = uVar10 & 0xffff;
+      g_QWORD_0061c820._0_4_ = uVar19 & 0xffff;
+      uVar15 = (uint)pSVar16->green_current >> 1;
       uVar12 = (uint)((ulonglong)
-                      ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar16) *
-                      (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-      _DAT_0061c808 = uVar16 & 0xffff;
-      _DAT_0061c828 = uVar12 & 0xffff;
-      uVar13 = (uint)pSVar18->blue_current >> 1;
-      uVar10 = (uint)((ulonglong)
-                      ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar13) *
-                      (longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);
-      _DAT_0061c810 = uVar13 & 0xffff;
-      _DAT_0061c830 = uVar10 & 0xffff;
-      uVar42 = ((CONCAT44(DAT_0061c800._4_4_,uVar14) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c80c,uVar16) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c814,uVar13) & 0xffffffff0000ffff;
-      uVar47 = ((CONCAT44(DAT_0061c820._4_4_,uVar20) & 0xffffffff0000ffff) << 0x10 |
+                      ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar15) *
+                      (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+      g_INT_0061c808 = uVar15 & 0xffff;
+      g_INT_0061c828 = uVar12 & 0xffff;
+      uVar14 = (uint)pSVar16->blue_current >> 1;
+      uVar9 = (uint)((ulonglong)
+                     ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar14) *
+                     (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
+      g_INT_0061c810 = uVar14 & 0xffff;
+      g_INT_0061c830 = uVar9 & 0xffff;
+      uVar40 = ((CONCAT44(g_QWORD_0061c800._4_4_,uVar10) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam0061c80c,uVar15) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam0061c814,uVar14) & 0xffffffff0000ffff;
+      uVar45 = ((CONCAT44(g_QWORD_0061c820._4_4_,uVar19) & 0xffffffff0000ffff) << 0x10 |
                CONCAT44(uRam0061c82c,uVar12) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c834,uVar10) & 0xffffffff0000ffff;
+               CONCAT44(uRam0061c834,uVar9) & 0xffffffff0000ffff;
     }
-    uVar20 = 0;
-    sVar46 = (short)uVar47;
-    sVar48 = (short)(uVar47 >> 0x10);
-    sVar49 = (short)(uVar47 >> 0x20);
-    sVar50 = (short)(uVar47 >> 0x30);
-    DAT_0061c35c = iVar11;
-    if ((_DAT_01c37774 == 0) && ((_DAT_01c38b54 & 2) == 0)) {
-      uVar1 = (ulonglong)_DAT_01c38b5c >> 0x10;
-      uVar41 = (ushort)(((uint7)(byte)((ulonglong)_DAT_01c38b5c >> 0x18) << 0x30) >> 0x28);
-      uVar47 = (ulonglong)_DAT_01c38b5c >> 8;
-      bVar34 = (byte)_DAT_01c38b5c;
-      uVar12 = DAT_0061c350;
-      uVar10 = DAT_0061c354;
-      iVar17 = DAT_0061c840;
-      if ((_DAT_01c38b54 & 8) == 0) {
-        iVar17 = 0;
-        _DAT_0061c848 = 0;
+    uVar19 = 0;
+    sVar44 = (short)uVar45;
+    sVar46 = (short)(uVar45 >> 0x10);
+    sVar47 = (short)(uVar45 >> 0x20);
+    sVar48 = (short)(uVar45 >> 0x30);
+    g_INT_0061c35c = iVar17;
+    if ((g_UCHAR_PTR_01c37774 == (uchar *)0x0) && ((g_BIT_INTEGER32_01c38b54.dword & 2) == 0)) {
+      uVar1 = (ulonglong)_g_ULONG_01c38b5c >> 0x10;
+      uVar39 = (ushort)(((uint7)(byte)((ulonglong)_g_ULONG_01c38b5c >> 0x18) << 0x30) >> 0x28);
+      uVar45 = (ulonglong)_g_ULONG_01c38b5c >> 8;
+      bVar32 = (byte)_g_ULONG_01c38b5c;
+      uVar12 = g_INT_0061c350;
+      uVar9 = g_INT_0061c354;
+      iVar11 = g_INT_0061c840;
+      if ((g_BIT_INTEGER32_01c38b54.dword & 8) == 0) {
+        iVar11 = 0;
+        g_INT_0061c848 = 0;
       }
       while( true ) {
-        uVar51 = (ushort)(uVar42 >> 0x10);
-        uVar52 = (ushort)(uVar42 >> 0x20);
-        uVar21 = (ushort)(uVar42 >> 0x30);
-        if (((_DAT_01c38b54 & 0x40) == 0) || (*(int *)(uVar20 + (int)DAT_0061c37c) <= iVar11)) {
-          if ((_DAT_01c38b54 & 1) == 0) {
-            uVar23 = 0x00FFFFFF;
-            if ((_DAT_01c38b54 & 0x200) == 0) {
-              uVar23 = _DAT_01c35e60;
+        uVar49 = (ushort)(uVar40 >> 0x10);
+        uVar50 = (ushort)(uVar40 >> 0x20);
+        uVar20 = (ushort)(uVar40 >> 0x30);
+        if (((g_BIT_INTEGER32_01c38b54.dword & 0x40) == 0) ||
+           (*(int *)(uVar19 + (int)g_INT_PTR_0061c37c) <= iVar17)) {
+          if ((g_BIT_INTEGER32_01c38b54.dword & 1) == 0) {
+            uVar10 = g_INT_0061c978;
+            if ((g_BIT_INTEGER32_01c38b54.dword & 0x200) == 0) {
+              uVar10 = g_INT_01c35e60;
             }
           }
           else {
-            uVar23 = *(uint *)
-                      (&DAT_01c35214 +
-                      (uint)*(byte *)((uVar12 >> _DAT_0061c868 & (uint)_DAT_0061c8a8) +
-                                      (uVar10 >> _DAT_0061c888 & (uint)_DAT_0061c8c8) +
-                                     _DAT_01c37770) * 4);
+            uVar10 = g_UINT_ARRAY_01c35214
+                     [g_UCHAR_PTR_01c37770
+                      [(uVar12 >> g_QWORD_0061c868 & (uint)g_QWORD_0061c8a8) +
+                       (uVar9 >> g_QWORD_0061c888 & (uint)g_QWORD_0061c8c8)]];
           }
-          uVar24 = psllw((ulonglong)
-                         CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)((
-                                                  uint)uVar23 >> 0x18) << 0x30) >> 0x28),
-                                                  (char)((uint)uVar23 >> 0x10)) << 0x20) >> 0x18),
-                                                  CONCAT12((char)((uint)uVar23 >> 8),(short)uVar23))
-                                        >> 0x10),(short)uVar23) & 0xffffffff00ff00ff,4);
-          uVar24 = pmulhw(uVar24,CONCAT26(uVar21 >> 3,
-                                          CONCAT24(uVar52 >> 3,
-                                                   CONCAT22(uVar51 >> 3,(ushort)uVar42 >> 3))));
-          sVar40 = (short)uVar24;
-          bVar4 = (0 < sVar40) * (sVar40 < 0x100) * (char)uVar24 - (0xff < sVar40);
-          sVar40 = (short)((ulonglong)uVar24 >> 0x10);
-          cVar5 = (0 < sVar40) * (sVar40 < 0x100) * (char)((ulonglong)uVar24 >> 0x10) -
-                  (0xff < sVar40);
-          uVar22 = CONCAT11(cVar5,bVar4);
-          sVar40 = (short)((ulonglong)uVar24 >> 0x20);
-          cVar6 = (0 < sVar40) * (sVar40 < 0x100) * (char)((ulonglong)uVar24 >> 0x20) -
-                  (0xff < sVar40);
-          sVar40 = (short)((ulonglong)uVar24 >> 0x30);
-          cVar7 = (0 < sVar40) * (sVar40 < 0x100) * (char)((ulonglong)uVar24 >> 0x30) -
-                  (0xff < sVar40);
-          uVar14 = CONCAT13(cVar7,CONCAT12(cVar6,uVar22));
-          uVar38 = (ulonglong)(uint6)uVar14;
-          if ((_DAT_01c38b54 & 8) != 0) {
-            uVar38 = (&DAT_0061d180)[iVar17 >> 8];
-            uVar35 = uVar38 ^ 0x000000FF00FF00FF;
-            uVar14 = (uint)(CONCAT34((int3)(CONCAT25((short)(CONCAT16(cVar7,(uint6)uVar14) >> 0x28),
-                                                     CONCAT14(cVar6,uVar14)) >> 0x20),uVar14) >>
+          uVar22 = psllw((ulonglong)
+                         CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(
+                                                  uVar10 >> 0x18) << 0x30) >> 0x28),
+                                                  (char)(uVar10 >> 0x10)) << 0x20) >> 0x18),
+                                                  CONCAT12((char)(uVar10 >> 8),(short)uVar10)) >>
+                                        0x10),(short)uVar10) & 0xffffffff00ff00ff,4);
+          uVar22 = pmulhw(uVar22,CONCAT26(uVar20 >> 3,
+                                          CONCAT24(uVar50 >> 3,
+                                                   CONCAT22(uVar49 >> 3,(ushort)uVar40 >> 3))));
+          sVar38 = (short)uVar22;
+          bVar3 = (0 < sVar38) * (sVar38 < 0x100) * (char)uVar22 - (0xff < sVar38);
+          sVar38 = (short)((ulonglong)uVar22 >> 0x10);
+          cVar4 = (0 < sVar38) * (sVar38 < 0x100) * (char)((ulonglong)uVar22 >> 0x10) -
+                  (0xff < sVar38);
+          uVar21 = CONCAT11(cVar4,bVar3);
+          sVar38 = (short)((ulonglong)uVar22 >> 0x20);
+          cVar5 = (0 < sVar38) * (sVar38 < 0x100) * (char)((ulonglong)uVar22 >> 0x20) -
+                  (0xff < sVar38);
+          sVar38 = (short)((ulonglong)uVar22 >> 0x30);
+          cVar6 = (0 < sVar38) * (sVar38 < 0x100) * (char)((ulonglong)uVar22 >> 0x30) -
+                  (0xff < sVar38);
+          uVar10 = CONCAT13(cVar6,CONCAT12(cVar5,uVar21));
+          uVar36 = (ulonglong)(uint6)uVar10;
+          if ((g_BIT_INTEGER32_01c38b54.dword & 8) != 0) {
+            uVar36 = g_QWORD_ARRAY_0061d180[iVar11 >> 8];
+            uVar33 = uVar36 ^ g_QWORD_ARRAY_0061d180[0xff];
+            uVar10 = (uint)(CONCAT34((int3)(CONCAT25((short)(CONCAT16(cVar6,(uint6)uVar10) >> 0x28),
+                                                     CONCAT14(cVar5,uVar10)) >> 0x20),uVar10) >>
                            0x18);
-            uVar26 = (uint5)uVar14 & 0xffff00ff00;
-            uVar25 = (ushort)bVar4 * (short)uVar35 + (ushort)bVar34 * (short)uVar38;
-            uVar30 = ((ushort)(CONCAT43(uVar14,CONCAT12(cVar5,uVar22)) >> 0x10) & 0xff) *
-                     (short)(uVar35 >> 0x10) + (ushort)(byte)uVar47 * (short)(uVar38 >> 0x10);
-            uVar28 = (short)(uVar26 >> 8) * (short)(uVar35 >> 0x20) +
-                     (short)CONCAT21(uVar41,(char)uVar1) * (short)(uVar38 >> 0x20);
-            uVar32 = (short)(uVar26 >> 0x18) * (short)(uVar35 >> 0x30) +
-                     (uVar41 >> 8) * (short)(uVar38 >> 0x30);
-            uVar27 = uVar25 >> 8;
-            uVar31 = uVar30 >> 8;
+            uVar24 = (uint5)uVar10 & 0xffff00ff00;
+            uVar23 = (ushort)bVar3 * (short)uVar33 + (ushort)bVar32 * (short)uVar36;
+            uVar28 = ((ushort)(CONCAT43(uVar10,CONCAT12(cVar4,uVar21)) >> 0x10) & 0xff) *
+                     (short)(uVar33 >> 0x10) + (ushort)(byte)uVar45 * (short)(uVar36 >> 0x10);
+            uVar26 = (short)(uVar24 >> 8) * (short)(uVar33 >> 0x20) +
+                     (short)CONCAT21(uVar39,(char)uVar1) * (short)(uVar36 >> 0x20);
+            uVar30 = (short)(uVar24 >> 0x18) * (short)(uVar33 >> 0x30) +
+                     (uVar39 >> 8) * (short)(uVar36 >> 0x30);
+            uVar25 = uVar23 >> 8;
             uVar29 = uVar28 >> 8;
-            uVar33 = uVar32 >> 8;
-            uVar38 = (ulonglong)
-                     CONCAT13((uVar33 != 0) * (uVar33 < 0x100) * (char)(uVar32 >> 8) -
-                              (0xff < uVar33),
-                              CONCAT12((uVar29 != 0) * (uVar29 < 0x100) * (char)(uVar28 >> 8) -
-                                       (0xff < uVar29),
-                                       CONCAT11((uVar31 != 0) * (uVar31 < 0x100) *
-                                                (char)(uVar30 >> 8) - (0xff < uVar31),
-                                                (uVar27 != 0) * (uVar27 < 0x100) *
-                                                (char)(uVar25 >> 8) - (0xff < uVar27))));
+            uVar27 = uVar26 >> 8;
+            uVar31 = uVar30 >> 8;
+            uVar36 = (ulonglong)
+                     CONCAT13((uVar31 != 0) * (uVar31 < 0x100) * (char)(uVar30 >> 8) -
+                              (0xff < uVar31),
+                              CONCAT12((uVar27 != 0) * (uVar27 < 0x100) * (char)(uVar26 >> 8) -
+                                       (0xff < uVar27),
+                                       CONCAT11((uVar29 != 0) * (uVar29 < 0x100) *
+                                                (char)(uVar28 >> 8) - (0xff < uVar29),
+                                                (uVar25 != 0) * (uVar25 < 0x100) *
+                                                (char)(uVar23 >> 8) - (0xff < uVar25))));
           }
-          *(ushort *)((uVar20 >> 1) + DAT_0061c378) =
-               (ushort)((uVar38 & _DAT_0061c928) >> _DAT_0061c970) |
-               (ushort)((uVar38 & _DAT_0061c908) >> _DAT_0061c950) |
-               (ushort)((uVar38 & _DAT_0061c8e8) >> _DAT_0061c930);
-          if ((_DAT_01c38b54 & 0x80) != 0) {
-            *(int *)((int)DAT_0061c37c + uVar20) = iVar11;
+          *(ushort *)((uVar19 >> 1) + (int)g_INT_PTR_0061c378) =
+               (ushort)((uVar36 & g_QWORD_0061c928) >> g_QWORD_0061c970) |
+               (ushort)((uVar36 & g_QWORD_0061c908) >> g_QWORD_0061c950) |
+               (ushort)((uVar36 & g_QWORD_0061c8e8) >> g_QWORD_0061c930);
+          if ((g_BIT_INTEGER32_01c38b54.dword & 0x80) != 0) {
+            *(int *)((int)g_INT_PTR_0061c37c + uVar19) = iVar17;
           }
         }
-        uVar20 = uVar20 + 4;
-        if (DAT_0061c314 <= uVar20) break;
-        uVar12 = uVar12 + _DAT_0061c780;
-        sVar40 = (ushort)uVar42 + sVar46;
-        sVar43 = uVar51 + sVar48;
-        sVar44 = uVar52 + sVar49;
-        sVar45 = uVar21 + sVar50;
-        uVar10 = uVar10 + _DAT_0061c784;
-        iVar11 = iVar11 + DAT_0061c788;
-        iVar17 = iVar17 + _DAT_0061c848;
-        uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x30) < sVar45),
-                          CONCAT24(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x20) < sVar44),
-                                   CONCAT22(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x10) <
-                                                     sVar43),-(ushort)((short)DAT_0061c78c < sVar40)
-                                           ))) &
-                 CONCAT26(sVar45,CONCAT24(sVar44,CONCAT22(sVar43,sVar40)));
+        uVar19 = uVar19 + 4;
+        if ((uint)g_INT_0061c314 <= uVar19) break;
+        uVar12 = uVar12 + g_INT_0061c780;
+        sVar38 = (ushort)uVar40 + sVar44;
+        sVar41 = uVar49 + sVar46;
+        sVar42 = uVar50 + sVar47;
+        sVar43 = uVar20 + sVar48;
+        uVar9 = uVar9 + g_INT_0061c784;
+        iVar17 = iVar17 + g_INT_0061c788;
+        iVar11 = iVar11 + g_INT_0061c848;
+        uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x30) < sVar43),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x20) < sVar42)
+                                   ,CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x10)
+                                                      < sVar41),
+                                             -(ushort)(SUB82(g_DOUBLE_0061c78c,0) < sVar38)))) &
+                 CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
       }
     }
     else {
-      iVar17 = DAT_0061c840;
-      if ((_DAT_01c38b54 & 0x100) == 0) {
-        iVar17 = DAT_006141d8 << 8;
-        _DAT_0061c848 = 0;
+      iVar11 = g_INT_0061c840;
+      if ((g_BIT_INTEGER32_01c38b54.dword & 0x100) == 0) {
+        iVar11 = g_INT_006141d8 << 8;
+        g_INT_0061c848 = 0;
       }
-      uVar12 = DAT_0061c350;
-      uVar10 = DAT_0061c354;
-      if (_DAT_01c37774 != 0) {
+      uVar12 = g_INT_0061c350;
+      uVar9 = g_INT_0061c354;
+      if (g_UCHAR_PTR_01c37774 != (uchar *)0x0) {
         while( true ) {
-          uVar41 = (ushort)uVar42;
-          uVar51 = (ushort)(uVar42 >> 0x10);
-          uVar52 = (ushort)(uVar42 >> 0x20);
-          uVar21 = (ushort)(uVar42 >> 0x30);
-          if (((_DAT_01c38b54 & 0x40) == 0) || (*(int *)(uVar20 + (int)DAT_0061c37c) <= iVar11)) {
-            pbVar15 = (byte *)((uVar12 >> _DAT_0061c868 & (uint)_DAT_0061c8a8) +
-                               (uVar10 >> _DAT_0061c888 & (uint)_DAT_0061c8c8) + _DAT_01c37770);
-            uVar23 = *(uint *)(&DAT_01c35214 + (uint)*pbVar15 * 4);
-            uVar42 = (ulonglong)
-                     CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-                                                  uVar23 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)((uint)uVar23 >> 0x10),uVar23)) >>
-                                                  0x20),uVar23) >> 0x18),(char)((uint)uVar23 >> 8)),
-                              (ushort)(byte)uVar23) & 0xffffffff00ffffff;
-            uVar14 = (uint)pbVar15[_DAT_01c37774 - _DAT_01c37770];
-            if (uVar14 != 0) {
-              if ((((iVar17 < 0xff01) || (uVar14 < 0xff)) || (iVar17 < 0xff)) ||
-                 (_DAT_01c38b4c != 0)) {
-                uVar16 = (uint)*(ushort *)((uVar20 >> 1) + DAT_0061c378);
-                uVar39 = (uint7)((uVar16 & _DAT_0061c8e0) << _DAT_0061c970) |
-                         (uint7)((uVar16 & _DAT_0061c8d8) << _DAT_0061c950) |
-                         (uint7)((uVar16 & _DAT_0061c8d0) << _DAT_0061c930);
-                uVar25 = (ushort)(((uVar39 >> 0x18) << 0x30) >> 0x28);
-                uVar8 = CONCAT21(uVar25,(char)(uVar39 >> 0x10));
-                uVar9 = CONCAT41((int)(((uint7)uVar8 << 0x20) >> 0x18),(char)(uVar39 >> 8));
-                uVar24 = psllw(uVar42,4);
-                uVar24 = pmulhw(uVar24,CONCAT26(uVar21 >> 3,
-                                                CONCAT24(uVar52 >> 3,
-                                                         CONCAT22(uVar51 >> 3,uVar41 >> 3))));
-                uVar42 = (&DAT_0061d180)[uVar14 * iVar17 >> 0x10];
-                sVar40 = (short)uVar24;
-                sVar43 = (short)((ulonglong)uVar24 >> 0x10);
-                sVar44 = (short)((ulonglong)uVar24 >> 0x20);
-                sVar45 = (short)((ulonglong)uVar24 >> 0x30);
-                uVar47 = uVar42 ^ 0x000000FF00FF00FF;
-                uVar30 = (ushort)(((uint7)(byte)((0 < sVar45) * (sVar45 < 0x100) *
-                                                 (char)((ulonglong)uVar24 >> 0x30) - (0xff < sVar45)
+          uVar39 = (ushort)uVar40;
+          uVar49 = (ushort)(uVar40 >> 0x10);
+          uVar50 = (ushort)(uVar40 >> 0x20);
+          uVar20 = (ushort)(uVar40 >> 0x30);
+          if (((g_BIT_INTEGER32_01c38b54.dword & 0x40) == 0) ||
+             (*(int *)(uVar19 + (int)g_INT_PTR_0061c37c) <= iVar17)) {
+            uVar10 = g_UINT_ARRAY_01c35214
+                     [g_UCHAR_PTR_01c37770
+                      [(uVar12 >> g_QWORD_0061c868 & (uint)g_QWORD_0061c8a8) +
+                       (uVar9 >> g_QWORD_0061c888 & (uint)g_QWORD_0061c8c8)]];
+            uVar40 = (ulonglong)
+                     CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar10 
+                                                  >> 0x18) << 0x30) >> 0x28),
+                                                  CONCAT14((char)(uVar10 >> 0x10),uVar10)) >> 0x20),
+                                                  uVar10) >> 0x18),(char)(uVar10 >> 8)),
+                              (ushort)(byte)uVar10) & 0xffffffff00ffffff;
+            uVar10 = (uint)g_UCHAR_PTR_01c37774
+                           [(int)(g_UCHAR_PTR_01c37770 +
+                                 (uVar12 >> g_QWORD_0061c868 & (uint)g_QWORD_0061c8a8) +
+                                 (uVar9 >> g_QWORD_0061c888 & (uint)g_QWORD_0061c8c8)) -
+                            (int)g_UCHAR_PTR_01c37770];
+            if (uVar10 != 0) {
+              if ((((iVar11 < 0xff01) || (uVar10 < 0xff)) || (iVar11 < 0xff)) ||
+                 (g_INT_01c38b4c != 0)) {
+                uVar15 = (uint)*(ushort *)((uVar19 >> 1) + (int)g_INT_PTR_0061c378);
+                uVar37 = (uint7)((uVar15 & _g_INT_0061c8e0) << g_QWORD_0061c970) |
+                         (uint7)((uVar15 & _g_INT_0061c8d8) << g_QWORD_0061c950) |
+                         (uint7)((uVar15 & _g_INT_0061c8d0) << g_QWORD_0061c930);
+                uVar23 = (ushort)(((uVar37 >> 0x18) << 0x30) >> 0x28);
+                uVar7 = CONCAT21(uVar23,(char)(uVar37 >> 0x10));
+                uVar8 = CONCAT41((int)(((uint7)uVar7 << 0x20) >> 0x18),(char)(uVar37 >> 8));
+                uVar22 = psllw(uVar40,4);
+                uVar22 = pmulhw(uVar22,CONCAT26(uVar20 >> 3,
+                                                CONCAT24(uVar50 >> 3,
+                                                         CONCAT22(uVar49 >> 3,uVar39 >> 3))));
+                uVar40 = g_QWORD_ARRAY_0061d180[uVar10 * iVar11 >> 0x10];
+                sVar38 = (short)uVar22;
+                sVar41 = (short)((ulonglong)uVar22 >> 0x10);
+                sVar42 = (short)((ulonglong)uVar22 >> 0x20);
+                sVar43 = (short)((ulonglong)uVar22 >> 0x30);
+                uVar45 = uVar40 ^ g_QWORD_ARRAY_0061d180[0xff];
+                uVar28 = (ushort)(((uint7)(byte)((0 < sVar43) * (sVar43 < 0x100) *
+                                                 (char)((ulonglong)uVar22 >> 0x30) - (0xff < sVar43)
                                                 ) << 0x30) >> 0x28);
-                uVar27 = (ushort)(byte)((0 < sVar40) * (sVar40 < 0x100) * (char)uVar24 -
-                                       (0xff < sVar40));
-                sVar45 = (short)(uVar42 >> 0x10);
-                sVar36 = (short)(uVar42 >> 0x20);
-                sVar37 = (short)(uVar42 >> 0x30);
-                uVar31 = (ushort)(byte)((0 < sVar43) * (sVar43 < 0x100) *
-                                        (char)((ulonglong)uVar24 >> 0x10) - (0xff < sVar43));
-                sVar40 = (short)CONCAT21(uVar30,(0 < sVar44) * (sVar44 < 0x100) *
-                                                (char)((ulonglong)uVar24 >> 0x20) - (0xff < sVar44))
+                uVar25 = (ushort)(byte)((0 < sVar38) * (sVar38 < 0x100) * (char)uVar22 -
+                                       (0xff < sVar38));
+                sVar43 = (short)(uVar40 >> 0x10);
+                sVar34 = (short)(uVar40 >> 0x20);
+                sVar35 = (short)(uVar40 >> 0x30);
+                uVar29 = (ushort)(byte)((0 < sVar41) * (sVar41 < 0x100) *
+                                        (char)((ulonglong)uVar22 >> 0x10) - (0xff < sVar41));
+                sVar38 = (short)CONCAT21(uVar28,(0 < sVar42) * (sVar42 < 0x100) *
+                                                (char)((ulonglong)uVar22 >> 0x20) - (0xff < sVar42))
                 ;
-                uVar30 = uVar30 >> 8;
-                if (_DAT_01c38b4c == 0) {
-                  uVar24 = paddusw(CONCAT26(uVar30 * sVar37,
-                                            CONCAT24(sVar40 * sVar36,
-                                                     CONCAT22(uVar31 * sVar45,uVar27 * (short)uVar42
+                uVar28 = uVar28 >> 8;
+                if (g_INT_01c38b4c == 0) {
+                  uVar22 = paddusw(CONCAT26(uVar28 * sVar35,
+                                            CONCAT24(sVar38 * sVar34,
+                                                     CONCAT22(uVar29 * sVar43,uVar25 * (short)uVar40
                                                              ))),
-                                   CONCAT26((uVar25 >> 8) * (short)(uVar47 >> 0x30),
-                                            CONCAT24((short)uVar8 * (short)(uVar47 >> 0x20),
-                                                     CONCAT22((short)uVar9 * (short)(uVar47 >> 0x10)
-                                                              ,(ushort)(byte)uVar39 * (short)uVar47)
+                                   CONCAT26((uVar23 >> 8) * (short)(uVar45 >> 0x30),
+                                            CONCAT24((short)uVar7 * (short)(uVar45 >> 0x20),
+                                                     CONCAT22((short)uVar8 * (short)(uVar45 >> 0x10)
+                                                              ,(ushort)(byte)uVar37 * (short)uVar45)
                                                     )));
-                  uVar25 = (ushort)uVar24 >> 8;
-                  uVar27 = (ushort)((ulonglong)uVar24 >> 0x10) >> 8;
-                  uVar30 = (ushort)((ulonglong)uVar24 >> 0x20) >> 8;
-                  uVar31 = (ushort)((ulonglong)uVar24 >> 0x38);
-                  uVar42 = (ulonglong)
-                           CONCAT13((uVar31 != 0) * (uVar31 < 0x100) *
-                                    (char)((ulonglong)uVar24 >> 0x38) - (0xff < uVar31),
-                                    CONCAT12((uVar30 != 0) * (uVar30 < 0x100) *
-                                             (char)((ulonglong)uVar24 >> 0x28) - (0xff < uVar30),
-                                             CONCAT11((uVar27 != 0) * (uVar27 < 0x100) *
-                                                      (char)((ulonglong)uVar24 >> 0x18) -
-                                                      (0xff < uVar27),
-                                                      (uVar25 != 0) * (uVar25 < 0x100) *
-                                                      (char)((ulonglong)uVar24 >> 8) -
-                                                      (0xff < uVar25))));
+                  uVar23 = (ushort)uVar22 >> 8;
+                  uVar25 = (ushort)((ulonglong)uVar22 >> 0x10) >> 8;
+                  uVar28 = (ushort)((ulonglong)uVar22 >> 0x20) >> 8;
+                  uVar29 = (ushort)((ulonglong)uVar22 >> 0x38);
+                  uVar40 = (ulonglong)
+                           CONCAT13((uVar29 != 0) * (uVar29 < 0x100) *
+                                    (char)((ulonglong)uVar22 >> 0x38) - (0xff < uVar29),
+                                    CONCAT12((uVar28 != 0) * (uVar28 < 0x100) *
+                                             (char)((ulonglong)uVar22 >> 0x28) - (0xff < uVar28),
+                                             CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
+                                                      (char)((ulonglong)uVar22 >> 0x18) -
+                                                      (0xff < uVar25),
+                                                      (uVar23 != 0) * (uVar23 < 0x100) *
+                                                      (char)((ulonglong)uVar22 >> 8) -
+                                                      (0xff < uVar23))));
                 }
                 else {
-                  uVar24 = psllw((ulonglong)CONCAT52(uVar9,(ushort)(byte)uVar39),8);
-                  uVar24 = paddusw(CONCAT26(uVar30 * sVar37,
-                                            CONCAT24(sVar40 * sVar36,
-                                                     CONCAT22(uVar31 * sVar45,uVar27 * (short)uVar42
-                                                             ))),uVar24);
-                  uVar25 = (ushort)uVar24 >> 8;
-                  uVar27 = (ushort)((ulonglong)uVar24 >> 0x10) >> 8;
-                  uVar30 = (ushort)((ulonglong)uVar24 >> 0x20) >> 8;
-                  uVar31 = (ushort)((ulonglong)uVar24 >> 0x38);
-                  uVar42 = (ulonglong)
-                           CONCAT13((uVar31 != 0) * (uVar31 < 0x100) *
-                                    (char)((ulonglong)uVar24 >> 0x38) - (0xff < uVar31),
-                                    CONCAT12((uVar30 != 0) * (uVar30 < 0x100) *
-                                             (char)((ulonglong)uVar24 >> 0x28) - (0xff < uVar30),
-                                             CONCAT11((uVar27 != 0) * (uVar27 < 0x100) *
-                                                      (char)((ulonglong)uVar24 >> 0x18) -
-                                                      (0xff < uVar27),
-                                                      (uVar25 != 0) * (uVar25 < 0x100) *
-                                                      (char)((ulonglong)uVar24 >> 8) -
-                                                      (0xff < uVar25))));
+                  uVar22 = psllw((ulonglong)CONCAT52(uVar8,(ushort)(byte)uVar37),8);
+                  uVar22 = paddusw(CONCAT26(uVar28 * sVar35,
+                                            CONCAT24(sVar38 * sVar34,
+                                                     CONCAT22(uVar29 * sVar43,uVar25 * (short)uVar40
+                                                             ))),uVar22);
+                  uVar23 = (ushort)uVar22 >> 8;
+                  uVar25 = (ushort)((ulonglong)uVar22 >> 0x10) >> 8;
+                  uVar28 = (ushort)((ulonglong)uVar22 >> 0x20) >> 8;
+                  uVar29 = (ushort)((ulonglong)uVar22 >> 0x38);
+                  uVar40 = (ulonglong)
+                           CONCAT13((uVar29 != 0) * (uVar29 < 0x100) *
+                                    (char)((ulonglong)uVar22 >> 0x38) - (0xff < uVar29),
+                                    CONCAT12((uVar28 != 0) * (uVar28 < 0x100) *
+                                             (char)((ulonglong)uVar22 >> 0x28) - (0xff < uVar28),
+                                             CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
+                                                      (char)((ulonglong)uVar22 >> 0x18) -
+                                                      (0xff < uVar25),
+                                                      (uVar23 != 0) * (uVar23 < 0x100) *
+                                                      (char)((ulonglong)uVar22 >> 8) -
+                                                      (0xff < uVar23))));
                 }
               }
               else {
-                uVar24 = psllw(uVar42,4);
-                uVar24 = pmulhw(uVar24,CONCAT26(uVar21 >> 3,
-                                                CONCAT24(uVar52 >> 3,
-                                                         CONCAT22(uVar51 >> 3,uVar41 >> 3))));
-                sVar40 = (short)uVar24;
-                sVar43 = (short)((ulonglong)uVar24 >> 0x10);
-                sVar44 = (short)((ulonglong)uVar24 >> 0x20);
-                sVar45 = (short)((ulonglong)uVar24 >> 0x30);
-                uVar42 = (ulonglong)
-                         CONCAT13((0 < sVar45) * (sVar45 < 0x100) *
-                                  (char)((ulonglong)uVar24 >> 0x30) - (0xff < sVar45),
-                                  CONCAT12((0 < sVar44) * (sVar44 < 0x100) *
-                                           (char)((ulonglong)uVar24 >> 0x20) - (0xff < sVar44),
-                                           CONCAT11((0 < sVar43) * (sVar43 < 0x100) *
-                                                    (char)((ulonglong)uVar24 >> 0x10) -
-                                                    (0xff < sVar43),
-                                                    (0 < sVar40) * (sVar40 < 0x100) * (char)uVar24 -
-                                                    (0xff < sVar40))));
+                uVar22 = psllw(uVar40,4);
+                uVar22 = pmulhw(uVar22,CONCAT26(uVar20 >> 3,
+                                                CONCAT24(uVar50 >> 3,
+                                                         CONCAT22(uVar49 >> 3,uVar39 >> 3))));
+                sVar38 = (short)uVar22;
+                sVar41 = (short)((ulonglong)uVar22 >> 0x10);
+                sVar42 = (short)((ulonglong)uVar22 >> 0x20);
+                sVar43 = (short)((ulonglong)uVar22 >> 0x30);
+                uVar40 = (ulonglong)
+                         CONCAT13((0 < sVar43) * (sVar43 < 0x100) *
+                                  (char)((ulonglong)uVar22 >> 0x30) - (0xff < sVar43),
+                                  CONCAT12((0 < sVar42) * (sVar42 < 0x100) *
+                                           (char)((ulonglong)uVar22 >> 0x20) - (0xff < sVar42),
+                                           CONCAT11((0 < sVar41) * (sVar41 < 0x100) *
+                                                    (char)((ulonglong)uVar22 >> 0x10) -
+                                                    (0xff < sVar41),
+                                                    (0 < sVar38) * (sVar38 < 0x100) * (char)uVar22 -
+                                                    (0xff < sVar38))));
               }
-              *(ushort *)((uVar20 >> 1) + DAT_0061c378) =
-                   (ushort)((uVar42 & _DAT_0061c928) >> _DAT_0061c970) |
-                   (ushort)((uVar42 & _DAT_0061c908) >> _DAT_0061c950) |
-                   (ushort)((uVar42 & _DAT_0061c8e8) >> _DAT_0061c930);
-              if ((_DAT_01c38b54 & 0x80) != 0) {
-                *(int *)(uVar20 + (int)DAT_0061c37c) = iVar11;
+              *(ushort *)((uVar19 >> 1) + (int)g_INT_PTR_0061c378) =
+                   (ushort)((uVar40 & g_QWORD_0061c928) >> g_QWORD_0061c970) |
+                   (ushort)((uVar40 & g_QWORD_0061c908) >> g_QWORD_0061c950) |
+                   (ushort)((uVar40 & g_QWORD_0061c8e8) >> g_QWORD_0061c930);
+              if ((g_BIT_INTEGER32_01c38b54.dword & 0x80) != 0) {
+                *(int *)(uVar19 + (int)g_INT_PTR_0061c37c) = iVar17;
               }
             }
           }
-          uVar20 = uVar20 + 4;
-          if (DAT_0061c314 <= uVar20) break;
-          uVar12 = uVar12 + _DAT_0061c780;
-          uVar10 = uVar10 + _DAT_0061c784;
-          iVar11 = iVar11 + DAT_0061c788;
-          iVar17 = iVar17 + _DAT_0061c848;
-          uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x30) <
-                                     (short)(uVar21 + sVar50)),
-                            CONCAT24(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x20) <
-                                              (short)(uVar52 + sVar49)),
-                                     CONCAT22(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x10) <
-                                                       (short)(uVar51 + sVar48)),
-                                              -(ushort)((short)DAT_0061c78c <
-                                                       (short)(uVar41 + sVar46))))) &
-                   CONCAT26(uVar21 + sVar50,
-                            CONCAT24(uVar52 + sVar49,CONCAT22(uVar51 + sVar48,uVar41 + sVar46)));
+          uVar19 = uVar19 + 4;
+          if ((uint)g_INT_0061c314 <= uVar19) break;
+          uVar12 = uVar12 + g_INT_0061c780;
+          uVar9 = uVar9 + g_INT_0061c784;
+          iVar17 = iVar17 + g_INT_0061c788;
+          iVar11 = iVar11 + g_INT_0061c848;
+          uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x30) <
+                                     (short)(uVar20 + sVar48)),
+                            CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x20) <
+                                              (short)(uVar50 + sVar47)),
+                                     CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x10
+                                                               ) < (short)(uVar49 + sVar46)),
+                                              -(ushort)(SUB82(g_DOUBLE_0061c78c,0) <
+                                                       (short)(uVar39 + sVar44))))) &
+                   CONCAT26(uVar20 + sVar48,
+                            CONCAT24(uVar50 + sVar47,CONCAT22(uVar49 + sVar46,uVar39 + sVar44)));
         }
         return;
       }
       while( true ) {
-        uVar41 = (ushort)(uVar42 >> 0x10);
-        uVar51 = (ushort)(uVar42 >> 0x20);
-        uVar52 = (ushort)(uVar42 >> 0x30);
-        if ((((_DAT_01c38b54 & 0x40) == 0) || (*(int *)(uVar20 + (int)DAT_0061c37c) <= iVar11)) &&
-           (iVar2 = *(int *)(&DAT_01c35214 +
-                            (uint)*(byte *)((uVar12 >> _DAT_0061c868 & (uint)_DAT_0061c8a8) +
-                                            (uVar10 >> _DAT_0061c888 & (uint)_DAT_0061c8c8) +
-                                           _DAT_01c37770) * 4), iVar2 != 0)) {
-          uVar47 = 0;
-          if ((_DAT_01c38b54 & 0x20) != 0) {
-            uVar14 = (uint)*(ushort *)((uVar20 >> 1) + DAT_0061c378);
-            uVar39 = (uint7)((uVar14 & _DAT_0061c8e0) << _DAT_0061c970) |
-                     (uint7)((uVar14 & _DAT_0061c8d8) << _DAT_0061c950) |
-                     (uint7)((uVar14 & _DAT_0061c8d0) << _DAT_0061c930);
-            uVar47 = (ulonglong)
-                     CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar39 >> 0x18) << 0x30) >>
-                                                                     0x28),(char)(uVar39 >> 0x10))
-                                             << 0x20) >> 0x18),(char)(uVar39 >> 8)),
-                              (ushort)(byte)uVar39);
+        uVar39 = (ushort)(uVar40 >> 0x10);
+        uVar49 = (ushort)(uVar40 >> 0x20);
+        uVar50 = (ushort)(uVar40 >> 0x30);
+        if ((((g_BIT_INTEGER32_01c38b54.dword & 0x40) == 0) ||
+            (*(int *)(uVar19 + (int)g_INT_PTR_0061c37c) <= iVar17)) &&
+           (uVar10 = g_UINT_ARRAY_01c35214
+                     [g_UCHAR_PTR_01c37770
+                      [(uVar12 >> g_QWORD_0061c868 & (uint)g_QWORD_0061c8a8) +
+                       (uVar9 >> g_QWORD_0061c888 & (uint)g_QWORD_0061c8c8)]], uVar10 != 0)) {
+          uVar45 = 0;
+          if ((g_BIT_INTEGER32_01c38b54.dword & 0x20) != 0) {
+            uVar15 = (uint)*(ushort *)((uVar19 >> 1) + (int)g_INT_PTR_0061c378);
+            uVar37 = (uint7)((uVar15 & _g_INT_0061c8e0) << g_QWORD_0061c970) |
+                     (uint7)((uVar15 & _g_INT_0061c8d8) << g_QWORD_0061c950) |
+                     (uint7)((uVar15 & _g_INT_0061c8d0) << g_QWORD_0061c930);
+            uVar45 = (ulonglong)
+                     CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar37 >> 0x18) << 0x30) >>
+                                                                     0x28),(char)(uVar37 >> 0x10))
+                                             << 0x20) >> 0x18),(char)(uVar37 >> 8)),
+                              (ushort)(byte)uVar37);
           }
-          uVar24 = psllw((ulonglong)
-                         CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-                                                  uint)iVar2 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)((uint)iVar2 >> 0x10),iVar2)) >>
-                                                  0x20),iVar2) >> 0x18),(char)((uint)iVar2 >> 8)),
-                                  (ushort)(byte)iVar2) & 0xffffffff00ffffff,4);
-          uVar24 = pmulhw(uVar24,CONCAT26(uVar52 >> 3,
-                                          CONCAT24(uVar51 >> 3,
-                                                   CONCAT22(uVar41 >> 3,(ushort)uVar42 >> 3))));
-          uVar1 = (&DAT_0061d180)[iVar17 >> 8];
-          sVar40 = (short)uVar24;
-          sVar43 = (short)((ulonglong)uVar24 >> 0x10);
-          sVar44 = (short)((ulonglong)uVar24 >> 0x20);
-          sVar45 = (short)((ulonglong)uVar24 >> 0x30);
-          uVar38 = uVar1 ^ 0x000000FF00FF00FF;
-          uVar25 = (ushort)(((uint7)(byte)((0 < sVar45) * (sVar45 < 0x100) *
-                                           (char)((ulonglong)uVar24 >> 0x30) - (0xff < sVar45)) <<
+          uVar22 = psllw((ulonglong)
+                         CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(
+                                                  uVar10 >> 0x18) << 0x30) >> 0x28),
+                                                  CONCAT14((char)(uVar10 >> 0x10),uVar10)) >> 0x20),
+                                                  uVar10) >> 0x18),(char)(uVar10 >> 8)),
+                                  (ushort)(byte)uVar10) & 0xffffffff00ffffff,4);
+          uVar22 = pmulhw(uVar22,CONCAT26(uVar50 >> 3,
+                                          CONCAT24(uVar49 >> 3,
+                                                   CONCAT22(uVar39 >> 3,(ushort)uVar40 >> 3))));
+          uVar1 = g_QWORD_ARRAY_0061d180[iVar11 >> 8];
+          sVar38 = (short)uVar22;
+          sVar41 = (short)((ulonglong)uVar22 >> 0x10);
+          sVar42 = (short)((ulonglong)uVar22 >> 0x20);
+          sVar43 = (short)((ulonglong)uVar22 >> 0x30);
+          uVar36 = uVar1 ^ g_QWORD_ARRAY_0061d180[0xff];
+          uVar23 = (ushort)(((uint7)(byte)((0 < sVar43) * (sVar43 < 0x100) *
+                                           (char)((ulonglong)uVar22 >> 0x30) - (0xff < sVar43)) <<
                             0x30) >> 0x28);
-          uVar21 = (ushort)(byte)((0 < sVar40) * (sVar40 < 0x100) * (char)uVar24 - (0xff < sVar40));
-          sVar45 = (short)(uVar1 >> 0x10);
-          sVar36 = (short)(uVar1 >> 0x20);
-          sVar37 = (short)(uVar1 >> 0x30);
-          uVar27 = (ushort)(byte)((0 < sVar43) * (sVar43 < 0x100) *
-                                  (char)((ulonglong)uVar24 >> 0x10) - (0xff < sVar43));
-          sVar40 = (short)CONCAT21(uVar25,(0 < sVar44) * (sVar44 < 0x100) *
-                                          (char)((ulonglong)uVar24 >> 0x20) - (0xff < sVar44));
-          uVar25 = uVar25 >> 8;
-          if (_DAT_01c38b4c == 0) {
-            uVar24 = paddusw(CONCAT26(uVar25 * sVar37,
-                                      CONCAT24(sVar40 * sVar36,
-                                               CONCAT22(uVar27 * sVar45,uVar21 * (short)uVar1))),
-                             CONCAT26((short)(uVar47 >> 0x30) * (short)(uVar38 >> 0x30),
-                                      CONCAT24((short)(uVar47 >> 0x20) * (short)(uVar38 >> 0x20),
-                                               CONCAT22((short)(uVar47 >> 0x10) *
-                                                        (short)(uVar38 >> 0x10),
-                                                        (short)uVar47 * (short)uVar38))));
-            uVar21 = (ushort)uVar24 >> 8;
-            uVar25 = (ushort)((ulonglong)uVar24 >> 0x10) >> 8;
-            uVar27 = (ushort)((ulonglong)uVar24 >> 0x20) >> 8;
-            uVar30 = (ushort)((ulonglong)uVar24 >> 0x38);
-            uVar14 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) * (char)((ulonglong)uVar24 >> 0x38) -
-                              (0xff < uVar30),
-                              CONCAT12((uVar27 != 0) * (uVar27 < 0x100) *
-                                       (char)((ulonglong)uVar24 >> 0x28) - (0xff < uVar27),
-                                       CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
-                                                (char)((ulonglong)uVar24 >> 0x18) - (0xff < uVar25),
-                                                (uVar21 != 0) * (uVar21 < 0x100) *
-                                                (char)((ulonglong)uVar24 >> 8) - (0xff < uVar21))));
+          uVar20 = (ushort)(byte)((0 < sVar38) * (sVar38 < 0x100) * (char)uVar22 - (0xff < sVar38));
+          sVar43 = (short)(uVar1 >> 0x10);
+          sVar34 = (short)(uVar1 >> 0x20);
+          sVar35 = (short)(uVar1 >> 0x30);
+          uVar25 = (ushort)(byte)((0 < sVar41) * (sVar41 < 0x100) *
+                                  (char)((ulonglong)uVar22 >> 0x10) - (0xff < sVar41));
+          sVar38 = (short)CONCAT21(uVar23,(0 < sVar42) * (sVar42 < 0x100) *
+                                          (char)((ulonglong)uVar22 >> 0x20) - (0xff < sVar42));
+          uVar23 = uVar23 >> 8;
+          if (g_INT_01c38b4c == 0) {
+            uVar22 = paddusw(CONCAT26(uVar23 * sVar35,
+                                      CONCAT24(sVar38 * sVar34,
+                                               CONCAT22(uVar25 * sVar43,uVar20 * (short)uVar1))),
+                             CONCAT26((short)(uVar45 >> 0x30) * (short)(uVar36 >> 0x30),
+                                      CONCAT24((short)(uVar45 >> 0x20) * (short)(uVar36 >> 0x20),
+                                               CONCAT22((short)(uVar45 >> 0x10) *
+                                                        (short)(uVar36 >> 0x10),
+                                                        (short)uVar45 * (short)uVar36))));
+            uVar20 = (ushort)uVar22 >> 8;
+            uVar23 = (ushort)((ulonglong)uVar22 >> 0x10) >> 8;
+            uVar25 = (ushort)((ulonglong)uVar22 >> 0x20) >> 8;
+            uVar28 = (ushort)((ulonglong)uVar22 >> 0x38);
+            uVar10 = CONCAT13((uVar28 != 0) * (uVar28 < 0x100) * (char)((ulonglong)uVar22 >> 0x38) -
+                              (0xff < uVar28),
+                              CONCAT12((uVar25 != 0) * (uVar25 < 0x100) *
+                                       (char)((ulonglong)uVar22 >> 0x28) - (0xff < uVar25),
+                                       CONCAT11((uVar23 != 0) * (uVar23 < 0x100) *
+                                                (char)((ulonglong)uVar22 >> 0x18) - (0xff < uVar23),
+                                                (uVar20 != 0) * (uVar20 < 0x100) *
+                                                (char)((ulonglong)uVar22 >> 8) - (0xff < uVar20))));
           }
           else {
-            uVar24 = psllw(uVar47,8);
-            uVar24 = paddusw(CONCAT26(uVar25 * sVar37,
-                                      CONCAT24(sVar40 * sVar36,
-                                               CONCAT22(uVar27 * sVar45,uVar21 * (short)uVar1))),
-                             uVar24);
-            uVar21 = (ushort)uVar24 >> 8;
-            uVar25 = (ushort)((ulonglong)uVar24 >> 0x10) >> 8;
-            uVar27 = (ushort)((ulonglong)uVar24 >> 0x20) >> 8;
-            uVar30 = (ushort)((ulonglong)uVar24 >> 0x38);
-            uVar14 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) * (char)((ulonglong)uVar24 >> 0x38) -
-                              (0xff < uVar30),
-                              CONCAT12((uVar27 != 0) * (uVar27 < 0x100) *
-                                       (char)((ulonglong)uVar24 >> 0x28) - (0xff < uVar27),
-                                       CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
-                                                (char)((ulonglong)uVar24 >> 0x18) - (0xff < uVar25),
-                                                (uVar21 != 0) * (uVar21 < 0x100) *
-                                                (char)((ulonglong)uVar24 >> 8) - (0xff < uVar21))));
+            uVar22 = psllw(uVar45,8);
+            uVar22 = paddusw(CONCAT26(uVar23 * sVar35,
+                                      CONCAT24(sVar38 * sVar34,
+                                               CONCAT22(uVar25 * sVar43,uVar20 * (short)uVar1))),
+                             uVar22);
+            uVar20 = (ushort)uVar22 >> 8;
+            uVar23 = (ushort)((ulonglong)uVar22 >> 0x10) >> 8;
+            uVar25 = (ushort)((ulonglong)uVar22 >> 0x20) >> 8;
+            uVar28 = (ushort)((ulonglong)uVar22 >> 0x38);
+            uVar10 = CONCAT13((uVar28 != 0) * (uVar28 < 0x100) * (char)((ulonglong)uVar22 >> 0x38) -
+                              (0xff < uVar28),
+                              CONCAT12((uVar25 != 0) * (uVar25 < 0x100) *
+                                       (char)((ulonglong)uVar22 >> 0x28) - (0xff < uVar25),
+                                       CONCAT11((uVar23 != 0) * (uVar23 < 0x100) *
+                                                (char)((ulonglong)uVar22 >> 0x18) - (0xff < uVar23),
+                                                (uVar20 != 0) * (uVar20 < 0x100) *
+                                                (char)((ulonglong)uVar22 >> 8) - (0xff < uVar20))));
           }
-          uVar47 = (ulonglong)uVar14;
-          *(ushort *)((uVar20 >> 1) + DAT_0061c378) =
-               (ushort)((uVar47 & _DAT_0061c928) >> _DAT_0061c970) |
-               (ushort)((uVar47 & _DAT_0061c908) >> _DAT_0061c950) |
-               (ushort)((uVar47 & _DAT_0061c8e8) >> _DAT_0061c930);
-          if ((_DAT_01c38b54 & 0x80) != 0) {
-            *(int *)(uVar20 + (int)DAT_0061c37c) = iVar11;
+          uVar45 = (ulonglong)uVar10;
+          *(ushort *)((uVar19 >> 1) + (int)g_INT_PTR_0061c378) =
+               (ushort)((uVar45 & g_QWORD_0061c928) >> g_QWORD_0061c970) |
+               (ushort)((uVar45 & g_QWORD_0061c908) >> g_QWORD_0061c950) |
+               (ushort)((uVar45 & g_QWORD_0061c8e8) >> g_QWORD_0061c930);
+          if ((g_BIT_INTEGER32_01c38b54.dword & 0x80) != 0) {
+            *(int *)(uVar19 + (int)g_INT_PTR_0061c37c) = iVar17;
           }
         }
-        uVar20 = uVar20 + 4;
-        if (DAT_0061c314 <= uVar20) break;
-        uVar12 = uVar12 + _DAT_0061c780;
-        sVar40 = (ushort)uVar42 + sVar46;
-        sVar43 = uVar41 + sVar48;
-        sVar44 = uVar51 + sVar49;
-        sVar45 = uVar52 + sVar50;
-        uVar10 = uVar10 + _DAT_0061c784;
-        iVar11 = iVar11 + DAT_0061c788;
-        iVar17 = iVar17 + _DAT_0061c848;
-        uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x30) < sVar45),
-                          CONCAT24(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x20) < sVar44),
-                                   CONCAT22(-(ushort)((short)((ulonglong)DAT_0061c78c >> 0x10) <
-                                                     sVar43),-(ushort)((short)DAT_0061c78c < sVar40)
-                                           ))) &
-                 CONCAT26(sVar45,CONCAT24(sVar44,CONCAT22(sVar43,sVar40)));
+        uVar19 = uVar19 + 4;
+        if ((uint)g_INT_0061c314 <= uVar19) break;
+        uVar12 = uVar12 + g_INT_0061c780;
+        sVar38 = (ushort)uVar40 + sVar44;
+        sVar41 = uVar39 + sVar46;
+        sVar42 = uVar49 + sVar47;
+        sVar43 = uVar50 + sVar48;
+        uVar9 = uVar9 + g_INT_0061c784;
+        iVar17 = iVar17 + g_INT_0061c788;
+        iVar11 = iVar11 + g_INT_0061c848;
+        uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x30) < sVar43),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x20) < sVar42)
+                                   ,CONCAT22(-(ushort)((short)((ulonglong)g_DOUBLE_0061c78c >> 0x10)
+                                                      < sVar41),
+                                             -(ushort)(SUB82(g_DOUBLE_0061c78c,0) < sVar38)))) &
+                 CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
       }
     }
   }

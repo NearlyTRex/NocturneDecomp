@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40(CDemonActor *this_ptr,CVector3f *location,float volume)
 
 {
@@ -41,7 +39,7 @@ uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40(CDe
   *(float *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) = afStack_38[(uint)bVar2 * -2];
   *(float *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  if (_DAT_005caeda <
+  if (10000.0f <
       (CStack_30.z - fStack_4c) * (CStack_30.z - fStack_4c) +
       (CStack_30.y - fStack_50) * (CStack_30.y - fStack_50) +
       (CStack_30.x - fStack_54) * (CStack_30.x - fStack_54)) {
@@ -56,7 +54,7 @@ uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40(CDe
                         (g_CDemonSetPtr,&(this_ptr->location).position,0.0);
   fStack_10 = fStack_20;
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
-  if (fStack_24 < fStack_20 + (float)_DAT_005caede) {
+  if (fStack_24 < fStack_20 + (float)-1) {
     ground_type = g_CDemonSetPtr->ground_type;
   }
   uVar1 = (*((this_ptr->vtable)._ub)->handleFootstep)(this_ptr,&CStack_30,ground_type,volume);

@@ -7,14 +7,14 @@
 ; CLightGun *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dc0da
-;   undefined4 DAT_005dc0e2
-;   undefined4 DAT_005dc0ea
-;   undefined4 DAT_005dc0f2
-;   undefined4 DAT_005f95d4
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_00614d30
-;   undefined4 DAT_01ba5c50
+;   double g_DOUBLE_005dc0da = 18
+;   double g_DOUBLE_005dc0e2 = 0.100000000000000
+;   double g_DOUBLE_005dc0ea = 0.015625
+;   double g_DOUBLE_005dc0f2 = 0.150000000000000
+;   float g_FLOAT_005f95d4 = 56
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -37,8 +37,8 @@ section .text
     MOV EBP,ESP                         ; 004e3b14
     SUB ESP,0x124                       ; 004e3b16
     AND ESP,0xfffffff8                  ; 004e3b1c
-    MOV EDX,dword ptr [0x0060b280]      ; 004e3b1f | DAT_0060b280
-    PUSH EDX                            ; 004e3b25 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 004e3b1f | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 004e3b25 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 004e3b26
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004e3b2b
@@ -175,9 +175,9 @@ section .text
     FSTP float ptr [ESP + 0x88]         ; 004e3d08
     FSTP float ptr [ESP + 0x8c]         ; 004e3d0f
     FSTP float ptr [ESP + 0x90]         ; 004e3d16
-    FLD float ptr [0x005f95d4]          ; 004e3d1d | DAT_005f95d4
+    FLD float ptr [0x005f95d4]          ; 004e3d1d | g_FLOAT_005f95d4
         ;   Label: LAB_004e3d1d
-    FDIVR double ptr [0x005dc0da]       ; 004e3d23 | DAT_005dc0da
+    FDIVR double ptr [0x005dc0da]       ; 004e3d23 | g_DOUBLE_005dc0da
     FLD1                                ; 004e3d29
     FPATAN                              ; 004e3d2b
     MOV EDX,dword ptr [EBP + 0x14]      ; 004e3d2d
@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 004e3d8c
     LEA EAX,[ESP + 0xdc]                ; 004e3d8d
     PUSH EAX                            ; 004e3d94
-    MOV EBX,dword ptr [0x00614d30]      ; 004e3d95 | DAT_00614d30
+    MOV EBX,dword ptr [0x00614d30]      ; 004e3d95 | g_CFireEffect_PTR_00614d30
     PUSH EBX                            ; 004e3d9b
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0049d7e0 ; 004e3d9c
         ;   XREF to: 0049d7e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_0049d7e0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
@@ -224,7 +224,7 @@ section .text
     XOR ESI,ESI                         ; 004e3dc3
     FLD float ptr [ESP]                 ; 004e3dc5
         ;   Label: LAB_004e3dc5
-    FMUL double ptr [0x005dc0e2]        ; 004e3dc8 | DAT_005dc0e2
+    FMUL double ptr [0x005dc0e2]        ; 004e3dc8 | g_DOUBLE_005dc0e2
     MOV dword ptr [ESP + 0x120],EBX     ; 004e3dce
     FILD dword ptr [ESP + 0x120]        ; 004e3dd5
     FMULP                               ; 004e3ddc
@@ -238,7 +238,7 @@ section .text
     PUSH EAX                            ; 004e3df4
     LEA EAX,[ESP + 0xdc]                ; 004e3df5
     PUSH EAX                            ; 004e3dfc
-    MOV EDI,dword ptr [0x00614d30]      ; 004e3dfd | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 004e3dfd | g_CFireEffect_PTR_00614d30
     PUSH EDI                            ; 004e3e03
     INC EBX                             ; 004e3e04
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0049d7e0 ; 004e3e05
@@ -295,7 +295,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004e3ebe
         ;   Label: LAB_004e3ebe
     FLD float ptr [EAX + 0x6f0]         ; 004e3ec1
-    FMUL double ptr [0x005dc0ea]        ; 004e3ec7 | DAT_005dc0ea
+    FMUL double ptr [0x005dc0ea]        ; 004e3ec7 | g_DOUBLE_005dc0ea
     FLD float ptr [ESP + 0xa0]          ; 004e3ecd
     FXCH                                ; 004e3ed4
     FSTP float ptr [ESP + 0x11c]        ; 004e3ed6
@@ -331,7 +331,7 @@ section .text
     ADD ESP,0x8                         ; 004e3f50
     MOV dword ptr [ESP + 0x120],EBX     ; 004e3f53
     FILD dword ptr [ESP + 0x120]        ; 004e3f5a
-    FMUL double ptr [0x005dc0f2]        ; 004e3f61 | DAT_005dc0f2
+    FMUL double ptr [0x005dc0f2]        ; 004e3f61 | g_DOUBLE_005dc0f2
     FSTP double ptr [ESP + 0x100]       ; 004e3f67
     FMUL double ptr [ESP + 0x100]       ; 004e3f6e
     PUSH 0x40a00000                     ; 004e3f75
@@ -358,7 +358,7 @@ section .text
     LEA EAX,[ESP + 0xa4]                ; 004e3fd3
     PUSH EAX                            ; 004e3fda
     LEA EAX,[ESP + 0x54]                ; 004e3fdb
-    MOV EDI,dword ptr [0x00614d30]      ; 004e3fdf | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 004e3fdf | g_CFireEffect_PTR_00614d30
     PUSH EAX                            ; 004e3fe5
     FMUL double ptr [ESP + 0x118]       ; 004e3fe6
     PUSH EDI                            ; 004e3fed

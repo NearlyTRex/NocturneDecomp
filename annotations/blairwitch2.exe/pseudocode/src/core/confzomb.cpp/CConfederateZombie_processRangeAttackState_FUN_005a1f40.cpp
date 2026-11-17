@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40(CConfederateZombie *this_ptr,float delta_time)
 
@@ -32,11 +31,11 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_00
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
                      (&(this_ptr->base).base.base.model.base);
   if (pSVar4->state_index == 2) {
-    if ((this_ptr->base).base.base.model.base.current_frame_number < _DAT_005efe5f) {
+    if ((this_ptr->base).base.base.model.base.current_frame_number < 70.0f) {
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
                 ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
     }
-    if (_DAT_005efe63 < (this_ptr->base).base.base.model.base.current_frame_number) {
+    if (74.0f < (this_ptr->base).base.base.model.base.current_frame_number) {
       (this_ptr->base).base.base.model.accumulated_root_motion.z = 0.0;
       (this_ptr->base).base.base.model.accumulated_root_motion.y =
            (this_ptr->base).base.base.model.accumulated_root_motion.z;
@@ -48,14 +47,14 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_00
       fVar3 = (this_ptr->base).base.base.base.location.position.z -
               (pCVar1->base).location.position.z;
       this_ptr_00 = &(this_ptr->base).state_machine;
-      if (SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= _DAT_005fef90) {
-        (this_ptr->base).attack_range = _DAT_005fef94;
+      if (SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= 6.0f) {
+        (this_ptr->base).attack_range = 2.0f;
         core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
                   (this_ptr_00,"ChaseComplete","MeleeAttack");
         core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"MeleeAttack");
         return;
       }
-      (this_ptr->base).attack_range = _DAT_005fef90;
+      (this_ptr->base).attack_range = 6.0f;
       core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
                 (this_ptr_00,"ChaseComplete","RangeAttack");
       core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_00,0.1);
@@ -81,7 +80,7 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_00
     fStack_3c = afStack_24[0];
     uStack_38 = afStack_24[1];
   }
-  if ((float)_DAT_005efe57 < fStack_3c) {
+  if ((float)0.10000000000000001 < fStack_3c) {
     (this_ptr->base).base.base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.base.model.accumulated_root_motion.y =
          (this_ptr->base).base.base.model.accumulated_root_motion.z;

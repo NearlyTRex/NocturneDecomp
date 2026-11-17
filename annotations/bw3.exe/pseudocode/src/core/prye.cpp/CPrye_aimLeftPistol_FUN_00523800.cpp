@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
 
 {
@@ -65,14 +63,14 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
   
   bVar4 = 0;
   if (this_ptr->weapon == (CWeapon *)0x0) {
-    _DAT_01d71de0 = "..\\core\\prye.cpp";
-    _DAT_01d71de4 = 0x1405;
+    g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
+    g_INT_01d71de4 = 0x1405;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CPrye::aimLeftPistol - no weapon?");
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)
             ((CCharacter *)this_ptr->weapon);
   pSStack_20 = &this_ptr->left_arm_aim;
-  fStack_2c = _DAT_01ed36e8;
+  fStack_2c = (float)g_INT_01ed36e8;
   CStack_120.x = local_6c;
   *(float *)((int)&CStack_120 + (uint)bVar4 * -8 + 4) = afStack_90[(uint)bVar4 * -2 + 10];
   *(float *)((int)&CStack_120 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
@@ -166,9 +164,9 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
   afStack_90[(uint)bVar4 * -2 + 1] = *(float *)((int)&CStack_fc + (uint)bVar4 * -8 + 4);
   afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 2] =
        *(float *)((int)&CStack_fc + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  if ((float)_DAT_005cd727 < fVar1) {
+  if ((float)0.01 < fVar1) {
     fStack_28 = -CStack_120.x;
-    if ((((float)_DAT_005cd727 <= fVar1) &&
+    if ((((float)0.01 <= fVar1) &&
         (dVar5 = (double)(SQRT(fVar1 * fVar1 - fStack_28 * fStack_28) / fVar1), dVar5 < 1.0)) &&
        (0.0 <= dVar5)) {
       dVar5 = acos(dVar5);
@@ -182,7 +180,7 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
       fStack_1c = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(afStack_90[0]);
       afStack_90[0] = fStack_1c;
     }
-    if ((((float)_DAT_005cd727 <= fStack_150) &&
+    if ((((float)0.01 <= fStack_150) &&
         (dVar5 = (double)(SQRT(fStack_150 * fStack_150 - CStack_120.x * CStack_120.x) / fStack_150),
         dVar5 < 1.0)) && (0.0 <= dVar5)) {
       dVar5 = acos(dVar5);
@@ -203,11 +201,11 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
        afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   pSStack_20 = (SArmAimData *)afStack_110[2];
   fStack_28 = afStack_110[1];
-  if (afStack_110[1] < 0xBF490FDB) {
-    fStack_28 = 0xBF490FDB;
+  if (afStack_110[1] < -0.7853982f) {
+    fStack_28 = -0.7853982f;
   }
-  if (0x3F490FDB < fStack_28) {
-    fStack_28 = 0x3F490FDB;
+  if (0.7853982f < fStack_28) {
+    fStack_28 = 0.7853982f;
   }
   if (afStack_110[2] < fStack_38) {
     pSStack_20 = (SArmAimData *)fStack_38;

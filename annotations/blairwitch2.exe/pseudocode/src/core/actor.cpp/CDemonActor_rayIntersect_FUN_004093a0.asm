@@ -44,15 +44,15 @@
 ;   TerminatedCString s_core_actor_cpp_005ca5c2
 ;   TerminatedCString s_CDemonActor_rayIntersect_005ca5d4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   undefined4 g_CDemonSetInstance.skip_exact_collisions
-;   undefined4 DAT_020ccfdc
-;   undefined4 DAT_020ccfe0
-;   undefined4 DAT_020ccfe4
-;   undefined4 DAT_020ccfe8
-;   undefined4 DAT_020ccfec
-;   undefined4 DAT_020ccff0
+;   int g_INT_020ccfdc
+;   CVector3f g_CVector3f_020ccfe0
+;   undefined4 g_CVector3f_020ccfe0.y
+;   undefined4 g_CVector3f_020ccfe0.z
+;   int g_INT_020ccfec
+;   int g_INT_020ccff0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0
@@ -346,8 +346,8 @@ section .text
         ;   Label: LAB_004096bd
     MOV EDX,0x4ab                       ; 004096c2
     PUSH 0x5ca5d4                       ; 004096c7 | = "CDemonActor::rayIntersect - Invalid c..."
-    MOV [0x01d046a0],EAX                ; 004096cc | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004096d1 | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 004096cc | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 004096d1 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004096d7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004096dc
@@ -426,14 +426,14 @@ section .text
     SAHF                                ; 004097af
     JC 0x004093b9                       ; 004097b0
         ;   XREF to: 004093b9 (CONDITIONAL_JUMP)  ; LAB_004093b9
-    MOV EAX,[0x020ccfdc]                ; 004097b6 | DAT_020ccfdc
+    MOV EAX,[0x020ccfdc]                ; 004097b6 | g_INT_020ccfdc
     MOV dword ptr [EBX + 0xc],EAX       ; 004097bb
-    MOV EAX,[0x020ccfec]                ; 004097be | DAT_020ccfec
+    MOV EAX,[0x020ccfec]                ; 004097be | g_INT_020ccfec
     MOV dword ptr [EBX + 0x10],EAX      ; 004097c3
-    MOV EAX,[0x020ccff0]                ; 004097c6 | DAT_020ccff0
+    MOV EAX,[0x020ccff0]                ; 004097c6 | g_INT_020ccff0
     PUSH EAX                            ; 004097cb
     MOV dword ptr [EBX + 0x14],EAX      ; 004097cc
-    MOV EAX,[0x020ccfec]                ; 004097cf | DAT_020ccfec
+    MOV EAX,[0x020ccfec]                ; 004097cf | g_INT_020ccfec
     PUSH EAX                            ; 004097d4
     MOV EAX,dword ptr [EBP + 0x24]      ; 004097d5
     MOV EDX,dword ptr [EAX + 0x20]      ; 004097d8
@@ -450,11 +450,11 @@ section .text
     CMP EAX,0x20ccfe0                   ; 004097f7
     JZ 0x004095d5                       ; 004097fc
         ;   XREF to: 004095d5 (CONDITIONAL_JUMP)  ; LAB_004095d5
-    MOV EAX,[0x020ccfe0]                ; 00409802 | DAT_020ccfe0
+    MOV EAX,[0x020ccfe0]                ; 00409802 | g_CVector3f_020ccfe0
     MOV dword ptr [ESP + 0xb8],EAX      ; 00409807
-    MOV EAX,[0x020ccfe4]                ; 0040980e | DAT_020ccfe4
+    MOV EAX,[0x020ccfe4]                ; 0040980e | g_CVector3f_020ccfe0.y
     MOV dword ptr [ESP + 0xbc],EAX      ; 00409813
-    MOV EAX,[0x020ccfe8]                ; 0040981a | DAT_020ccfe8
+    MOV EAX,[0x020ccfe8]                ; 0040981a | g_CVector3f_020ccfe0.z
     MOV dword ptr [ESP + 0xc0],EAX      ; 0040981f
     JMP 0x004095d5                      ; 00409826
         ;   XREF to: 004095d5 (UNCONDITIONAL_JUMP)  ; LAB_004095d5

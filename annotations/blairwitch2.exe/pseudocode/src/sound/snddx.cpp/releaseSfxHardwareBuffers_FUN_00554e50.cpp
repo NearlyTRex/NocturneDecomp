@@ -9,52 +9,55 @@
 int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00554e50(int sfx_handle)
 
 {
-  int *piVar1;
-  int iVar2;
-  int iVar3;
-  int *piVar4;
-  uint uVar5;
-  int unaff_retaddr;
-  int *apiStack_1a4 [101];
+  LPDIRECTSOUNDBUFFER this_ptr;
+  IDirectSoundBuffer *pIVar1;
+  IDirectSoundBuffer *this_ptr_00;
+  IDirectSoundBuffer **ppIVar2;
+  uint uVar3;
+  char acStack_1a0 [400];
   
-  iVar2 = sfx_handle * 0x24;
-  piVar4 = (int *)(iVar2 + 0x264ac10);
-  apiStack_1a4[0] = (int *)*piVar4;
-  uVar5 = 1;
-  if (apiStack_1a4[0] != (int *)0x0) {
-    uVar5 = (**(code **)(*apiStack_1a4[0] + 0x48))();
-    if (uVar5 != 0) {
-      sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar5);
-      _sprintf((char *)apiStack_1a4,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)apiStack_1a4);
+  ppIVar2 = g_IDirectSoundBuffer_PTR_ARRAY_0264ac10 + sfx_handle * 9;
+  this_ptr = *ppIVar2;
+  uVar3 = 1;
+  if (this_ptr != (LPDIRECTSOUNDBUFFER)0x0) {
+    uVar3 = (*this_ptr->vtable->Stop)(this_ptr);
+    if (uVar3 != 0) {
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar3);
+      _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_1a0);
     }
-    uVar5 = (uint)(uVar5 == 0);
-    piVar1 = *(int **)(iVar2 + 0x264ac14);
-    if (piVar1 != (int *)0x0) {
-      (**(code **)(*piVar1 + 8))(piVar1);
-      *(int *)(iVar2 + 0x264ac14) = 0;
+    uVar3 = (uint)(uVar3 == 0);
+    pIVar1 = g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 1];
+    if (pIVar1 != (IDirectSoundBuffer *)0x0) {
+      (*pIVar1->vtable->Release)((IUnknown *)pIVar1);
+      g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 1] = (IDirectSoundBuffer *)0x0;
     }
-    iVar3 = *(int *)(iVar2 + 0x264ac18) * 0x18;
-    if (*(int *)(iVar2 + 0x264ac20) != 0) {
-      *(uint *)(*(int *)(iVar2 + 0x264ac20) * 0x24 + 0x264ac1c) =
-           *(uint *)(iVar2 + 0x264ac1c);
+    pIVar1 = g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 2];
+    if (g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4] != (IDirectSoundBuffer *)0x0) {
+      g_IDirectSoundBuffer_PTR_ARRAY_0264ac10
+      [(int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4] * 9 + 3] =
+           g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 3];
     }
-    if (unaff_retaddr == *(int *)(iVar3 + 0x264a5f8)) {
-      *(uint *)(iVar3 + 0x264a5f8) = *(uint *)(iVar2 + 0x264ac20);
+    if ((IDirectSoundBuffer *)sfx_handle ==
+        g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[(int)pIVar1 * 6 + 1]) {
+      g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[(int)pIVar1 * 6 + 1] =
+           g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4];
     }
     else {
-      *(uint *)(*(int *)(iVar2 + 0x264ac1c) * 0x24 + 0x264ac20) =
-           *(uint *)(iVar2 + 0x264ac20);
+      g_IDirectSoundBuffer_PTR_ARRAY_0264ac10
+      [(int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 3] * 9 + 4] =
+           g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4];
     }
-    piVar1 = (int *)*piVar4;
-    if ((piVar1 != *(int **)(iVar3 + 0x264a5f4)) && (piVar1 != (int *)0x0)) {
-      (**(code **)(*piVar1 + 8))(piVar1);
-      *piVar4 = 0;
+    this_ptr_00 = *ppIVar2;
+    if ((this_ptr_00 != g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[(int)pIVar1 * 6]) &&
+       (this_ptr_00 != (IDirectSoundBuffer *)0x0)) {
+      (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
+      *ppIVar2 = (IDirectSoundBuffer *)0x0;
     }
   }
-  *piVar4 = 0;
-  *(uint *)(iVar2 + 0x264ac20) = 0;
-  *(uint *)(iVar2 + 0x264ac1c) = 0;
-  *(uint *)(iVar2 + 0x264ac18) = 0;
-  return uVar5;
+  *ppIVar2 = (IDirectSoundBuffer *)0x0;
+  g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 4] = (IDirectSoundBuffer *)0x0;
+  g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 3] = (IDirectSoundBuffer *)0x0;
+  g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[sfx_handle * 9 + 2] = (IDirectSoundBuffer *)0x0;
+  return uVar3;
 }

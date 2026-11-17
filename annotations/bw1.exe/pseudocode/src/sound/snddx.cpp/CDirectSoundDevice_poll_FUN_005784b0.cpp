@@ -6,43 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005784b0(CDirectSoundDevice *this_ptr)
 
 {
   uint uVar1;
   int iVar2;
-  int *piStack_1a8;
-  byte *puStack_1a4;
-  byte *puStack_1a0;
-  uint uStack_14;
-  byte auStack_c [4];
-  byte auStack_8 [4];
+  char acStack_19c [400];
+  DWORD DStack_c;
+  uint uStack_8;
   
-  puStack_1a0 = (byte *)0x5784bc;
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_00575560();
   if ((int)uVar1 < 1) {
-    if (_DAT_02c81d9c != (int *)0x0) {
-      puStack_1a0 = auStack_c;
-      puStack_1a4 = auStack_8;
-      piStack_1a8 = _DAT_02c81d9c;
-      uVar1 = (**(code **)(*_DAT_02c81d9c + 0x10))();
+    if (g_IDirectSoundBuffer_PTR_02c81d9c != (IDirectSoundBuffer *)0x0) {
+      uVar1 = (*g_IDirectSoundBuffer_PTR_02c81d9c->vtable->GetCurrentPosition)
+                        (g_IDirectSoundBuffer_PTR_02c81d9c,&uStack_8,&DStack_c);
       if (uVar1 != 0) {
         sound_snddx_cpp_getDirectSoundErrorString_FUN_00577500(uVar1);
-        _sprintf((char *)&piStack_1a8,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_logSoundError_FUN_005773f0((char *)&piStack_1a8);
+        _sprintf(acStack_19c,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_19c);
         return 0;
       }
-      uVar1 = uStack_14 / _DAT_02c81db8;
-      if (_DAT_02c81dbc <= (int)uVar1) {
-        uVar1 = _DAT_02c81dbc - 1;
+      uVar1 = uStack_8 / (uint)g_INT_02c81db8;
+      if (g_INT_02c81dbc <= (int)uVar1) {
+        uVar1 = g_INT_02c81dbc - 1;
       }
       if ((int)uVar1 < 0) {
         uVar1 = 0;
       }
       do {
-        if (uVar1 == _DAT_02c81dc0) {
+        if (uVar1 == g_INT_02c81dc0) {
           return 1;
         }
         iVar2 = sound_snddx_cpp_fillStreamBuffer_FUN_005776b0();
@@ -52,7 +44,6 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005784b0(CDirectSoundDev
     iVar2 = 0;
   }
   else {
-    puStack_1a0 = (byte *)0x5784da;
     sound_sndmain_cpp_pollAllSfxSlots_FUN_00576f40();
     iVar2 = 1;
   }

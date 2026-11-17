@@ -15,9 +15,9 @@
 ;   engine_texture.cpp_cacheTextureAtFullSize_FUN_0056ad60 at 0056b1d8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007303f4
-;   undefined4 DAT_02cfd0cc
-;   undefined4 DAT_02cfd0d0
+;   int g_INT_007303f4
+;   int g_INT_02cfd0cc
+;   CTextureCache* g_CTextureCache_PTR_02cfd0d0
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_addPalettedTexture_FUN_00569e50
@@ -33,7 +33,7 @@ section .text
         ;   Label: engine_texture.cpp_storePalettedTexture_FUN_0056aab0
     PUSH EBP                            ; 0056aab1
     MOV EBX,dword ptr [ESP + 0xc]       ; 0056aab2
-    CMP dword ptr [0x007303f4],0x0      ; 0056aab6 | DAT_007303f4
+    CMP dword ptr [0x007303f4],0x0      ; 0056aab6 | g_INT_007303f4
     JNZ 0x0056aac5                      ; 0056aabd
         ;   XREF to: 0056aac5 (CONDITIONAL_JUMP)  ; LAB_0056aac5
     CMP byte ptr [EBX + 0x8],0x0        ; 0056aabf
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 0056aad0
     AND ESI,0xffff                      ; 0056aad1
     PUSH ESI                            ; 0056aad7
-    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056aad8 | DAT_02cfd0d0
+    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056aad8 | g_CTextureCache_PTR_02cfd0d0
     PUSH ECX                            ; 0056aade
     CALL engine_texture.cpp_CTextureCache_findTexture_FUN_0056a0a0 ; 0056aadf
         ;   XREF to: 0056a0a0 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_findTexture_FUN_0056a0a0(CTextureCache * this_ptr, int hint_index, char * texture_name)
@@ -69,7 +69,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 0056aafd
     PUSH EDX                            ; 0056ab01
     PUSH EDI                            ; 0056ab02
-    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056ab03 | DAT_02cfd0d0
+    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056ab03 | g_CTextureCache_PTR_02cfd0d0
     PUSH ECX                            ; 0056ab09
     CALL engine_texture.cpp_CTextureCache_addPalettedTexture_FUN_00569e50 ; 0056ab0a
         ;   XREF to: 00569e50 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_addPalettedTexture_FUN_00569e50(CTextureCache * this_ptr, char * texture_name, int dimension, uchar * texture_data, ...)
@@ -80,9 +80,9 @@ section .text
     PUSH EAX                            ; 0056ab1c
         ;   Label: LAB_0056ab1c
     PUSH EBX                            ; 0056ab1d
-    MOV EBX,dword ptr [0x02cfd0d0]      ; 0056ab1e | DAT_02cfd0d0
+    MOV EBX,dword ptr [0x02cfd0d0]      ; 0056ab1e | g_CTextureCache_PTR_02cfd0d0
     PUSH EBX                            ; 0056ab24
-    MOV dword ptr [0x02cfd0cc],ESI      ; 0056ab25 | DAT_02cfd0cc
+    MOV dword ptr [0x02cfd0cc],ESI      ; 0056ab25 | g_INT_02cfd0cc
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130 ; 0056ab2b
         ;   XREF to: 0056a130 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130(CTextureCache * this_ptr, SMRGLTextureBasic * texture, int upload_mode)
     ADD ESP,0xc                         ; 0056ab30
@@ -102,7 +102,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 0056ab4a
     PUSH EDX                            ; 0056ab4e
     PUSH EBX                            ; 0056ab4f
-    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056ab50 | DAT_02cfd0d0
+    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056ab50 | g_CTextureCache_PTR_02cfd0d0
     PUSH ECX                            ; 0056ab56
     CALL engine_texture.cpp_CTextureCache_replacePalettedTexture_FUN_00569f20 ; 0056ab57
         ;   XREF to: 00569f20 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_replacePalettedTexture_FUN_00569f20(CTextureCache * this_ptr, SMRGLTextureBasic * texture, int dimension, uchar * texture_data, ...)

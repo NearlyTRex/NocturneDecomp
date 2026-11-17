@@ -17,7 +17,7 @@ CRobin * __cdecl core_weaver_cpp_CRobin_ctor_FUN_005a5e70(CRobin *this_ptr)
   this_ptr_01 = (CRobin *)core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(&this_ptr->base);
   (this_ptr_01->base).base.base.base.base.vtable._ub = &g_CRobinVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(this_ptr_01->base).base.base.base.model,(char *)0x5f062d);
+            (&(this_ptr_01->base).base.base.base.model,"Robin.dfm");
   (this_ptr_01->base).base.base.base.collision_cylinder_radius = 0.5;
   (this_ptr_01->base).base.anim_speed_scale = 1.2;
   (this_ptr_01->base).base.base.base.base.is_transparent = 1;

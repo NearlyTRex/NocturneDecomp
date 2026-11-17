@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *filename)
 
 {
@@ -49,17 +47,17 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Loading set");
   core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar4,iVar11);
   core_set_cpp_CDemonSet_clear_FUN_00532b30(this_ptr);
-  p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0("models",filename,&DAT_005d012d);
+  p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0("models",filename,"rt");
   if (p_Var5 == (_FILE *)0x0) {
-    _DAT_01d71de0 = "..\\core\\set.cpp";
-    _DAT_01d71de4 = 0x16a;
+    g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
+    g_INT_01d71de4 = 0x16a;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::Unable to open %s");
   }
-  _fscanf(p_Var5,&DAT_005d0164);
-  _fscanf(p_Var5,&DAT_005d0168);
-  _fscanf(p_Var5,&DAT_005d016c);
-  _fscanf(p_Var5,&DAT_005d0170);
-  _fscanf(p_Var5,&DAT_005d0174);
+  _fscanf(p_Var5,"%d\n");
+  _fscanf(p_Var5,"%f\n");
+  _fscanf(p_Var5,"%s\n");
+  _fscanf(p_Var5,"%s\n");
+  _fscanf(p_Var5,"%f\n");
   pCVar7 = &this_ptr->directional_light_dir;
   if (this_ptr->set_file_version < 0x1e) {
     (this_ptr->directional_light_dir).x = -1.0;
@@ -105,10 +103,10 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   _fgets(local_330,0xff,p_Var5);
   _fscanf(p_Var5,"%f,%f\n");
   if (this_ptr->set_file_version < 0x1f) {
-    DAT_00606b28 = 0x2000;
-    _DAT_02cfd960 = 0;
-    _DAT_02cfd964 = 0;
-    _DAT_00606b24 = 0x3e800000;
+    g_INT_00606b28 = 0x2000;
+    g_FLOAT_02cfd960 = 0.0;
+    g_FLOAT_02cfd964 = 0.0;
+    g_FLOAT_00606b24 = 0.25;
   }
   else {
     _fgets(local_330,0xff,p_Var5);
@@ -117,7 +115,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   _fgets(local_330,0xff,p_Var5);
   _fscanf(p_Var5,"%d,%s\n");
   if (this_ptr->set_file_version < 5) {
-    iVar11 = _strnicmp(local_130,&DAT_005d01c8,4);
+    iVar11 = _strnicmp(local_130,"ndun",4);
     if (iVar11 == 0) {
       g_CWaterPtr->wave_animation_enabled = 1;
     }
@@ -127,14 +125,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d01c4);
+    _fscanf(p_Var5,"%d\n");
   }
   if (this_ptr->set_file_version < 6) {
     this_ptr->has_sky = 1;
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d01cd);
+    _fscanf(p_Var5,"%d\n");
   }
   pcVar4 = this_ptr->sky_texture_name;
   if (this_ptr->set_file_version < 0xc) {
@@ -155,7 +153,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   pcVar4 = this_ptr->world_geometry_name;
   if (this_ptr->set_file_version < 0xd) {
-    pcVar9 = &DAT_005d01eb;
+    pcVar9 = "none";
     this_ptr->use_world_geometry_flag = 0;
     do {
       cVar3 = *pcVar9;
@@ -176,30 +174,30 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d01f0);
+    _fscanf(p_Var5,"%d\n");
   }
   if (this_ptr->set_file_version < 0x1d) {
     this_ptr->altitude_reference_y = 0.0;
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d01f4);
+    _fscanf(p_Var5,"%f\n");
   }
   engine_dosio_cpp_splitPath_FUN_00465e50(local_130,(char *)0x0,(char *)0x0,local_230,(char *)0x0);
   iVar11 = _stricmp(local_230,"train");
-  this_ptr_00 = 0x02CFD8B8;
+  this_ptr_00 = g_CTerrain_PTR_00606aa0;
   if (iVar11 == 0) {
     this_ptr->player_on_train = 1;
     core_terrain_cpp_CTerrain_init_FUN_00572370(this_ptr_00);
   }
   else {
-    core_terrain_cpp_CTerrain_free_FUN_005723b0(0x02CFD8B8);
+    core_terrain_cpp_CTerrain_free_FUN_005723b0(g_CTerrain_PTR_00606aa0);
     this_ptr->player_on_train = 0;
   }
   if (10 < this_ptr->set_file_version) {
     _fgets(local_330,0xff,p_Var5);
   }
-  _fscanf(p_Var5,&DAT_005d01fe);
+  _fscanf(p_Var5,"%d\n");
   iVar11 = 0;
   if (0 < this_ptr->light_count) {
     this_ptr_01 = this_ptr->lights;
@@ -212,7 +210,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   if (10 < this_ptr->set_file_version) {
     _fgets(local_330,0xff,p_Var5);
   }
-  _fscanf(p_Var5,&DAT_005d0202);
+  _fscanf(p_Var5,"%d\n");
   iVar11 = 0;
   if (0 < this_ptr->camera_count) {
     pCVar8 = this_ptr->cameras;
@@ -228,7 +226,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     if (iVar11 == 0) {
       this_ptr->default_room_size = 2;
     }
-    iVar11 = _strnicmp(local_130,&DAT_005d0236,4);
+    iVar11 = _strnicmp(local_130,"h109",4);
     if (iVar11 == 0) {
       this_ptr->default_room_size = 0;
     }
@@ -240,7 +238,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     if (iVar11 == 0) {
       this_ptr->default_room_size = 0;
     }
-    iVar11 = _strnicmp(local_130,&DAT_005d0248,4);
+    iVar11 = _strnicmp(local_130,"ndun",4);
     if (iVar11 == 0) {
       this_ptr->default_room_size = 3;
     }
@@ -248,8 +246,8 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d0206);
-    _fscanf(p_Var5,&DAT_005d020a);
+    _fscanf(p_Var5,"%d\n");
+    _fscanf(p_Var5,"%d\n");
     iVar11 = 0;
     if (0 < this_ptr->room_count) {
       local_44 = this_ptr->rooms;
@@ -264,7 +262,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
         _fscanf(p_Var5,"%f,%f,%f\n");
         _fscanf(p_Var5,"%f,%f,%f\n");
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(local_34,&local_5c);
-        _fscanf(p_Var5,&DAT_005d022c);
+        _fscanf(p_Var5,"%d\n");
         iVar11 = iVar11 + 1;
         local_14 = local_14 + 0x11;
         local_34 = (CMatrix3x3f *)((int)(local_34 + 1) + 0x20);
@@ -281,7 +279,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     if (iVar11 == 0) {
       this_ptr->default_ground_type = 8;
     }
-    iVar11 = _strnicmp(local_130,&DAT_005d0257,4);
+    iVar11 = _strnicmp(local_130,"h109",4);
     if (iVar11 == 0) {
       this_ptr->default_ground_type = 3;
     }
@@ -297,21 +295,21 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     if (iVar11 == 0) {
       this_ptr->default_ground_type = 2;
     }
-    iVar11 = _strnicmp(local_130,&DAT_005d0270,4);
+    iVar11 = _strnicmp(local_130,"ndun",4);
     if (iVar11 == 0) {
       this_ptr->default_ground_type = 8;
     }
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d024d);
+    _fscanf(p_Var5,"%d\n");
   }
   if (this_ptr->set_file_version < 0x18) {
     this_ptr->default_master_reverb = 0;
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d0275);
+    _fscanf(p_Var5,"%d\n");
   }
   if ((3 < this_ptr->set_file_version) && (this_ptr->set_file_version < 10)) {
     core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005412b0(this_ptr,p_Var5);
@@ -321,7 +319,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_330,0xff,p_Var5);
-    _fscanf(p_Var5,&DAT_005d0279);
+    _fscanf(p_Var5,"%d\n");
     iVar11 = 0;
     if (0 < this_ptr->vdir_box_count) {
       local_40 = this_ptr->vdir_boxes;
@@ -382,7 +380,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
       pcVar10[1] = cVar3;
       pcVar10 = pcVar10 + 2;
     } while (cVar3 != '\0');
-    p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d02b3,pcVar4,&DAT_005d02b0);
+    p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0("data",pcVar4,"rb");
     if (p_Var5 == (_FILE *)0x0) {
       engine_special_cpp_clearScreen_FUN_00560d70();
       engine_2d_c_drawText_FUN_00401fe0("Warning!  No .GEO file.  Press any key",0,0);
@@ -435,7 +433,7 @@ LAB_0053367e:
     pcVar9 = (char *)0x0;
   }
 LAB_005336a7:
-  pcVar4 = &DAT_005d02ee;
+  pcVar4 = ".zth";
   do {
     cVar3 = *pcVar4;
     *pcVar9 = cVar3;
@@ -462,6 +460,6 @@ LAB_005336a7:
       pCVar6 = (CDemonSet *)&pCVar6->cameras[0].enabled;
     } while (iVar11 < this_ptr->camera_count);
   }
-  _DAT_0207baa8 = 1;
+  g_INT_0207baa8 = 1;
   return;
 }

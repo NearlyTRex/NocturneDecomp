@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00476300(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 {
@@ -42,11 +40,11 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_004763
   dVar16 = round
                      ((double)((world_position->x - (this_ptr->bbox_min).x) /
                               (this_ptr->cell_size).x));
-  fVar14 = _DAT_005d1d23;
+  fVar14 = 0.125f;
   fVar8 = (this_ptr->cell_size).x;
   fVar9 = (this_ptr->bbox_min).x;
   fVar10 = world_position->x;
-  fVar13 = (this_ptr->cell_size).x * _DAT_005d1d23;
+  fVar13 = (this_ptr->cell_size).x * 0.125f;
   dVar17 = round((double)((fVar2 - fVar3) / fVar4));
   fVar2 = (this_ptr->cell_size).y;
   fVar3 = (this_ptr->bbox_min).y;
@@ -76,7 +74,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_004763
     {
       if ((pCVar15->voxel_buffer1 != (SVoxelGrid *)0x0) &&
          ((pCVar15->voxel_buffer1->voxels[iVar1][iStack_30] & bRam00a89be4) != 0)) {
-        return (float)iStack_30 * (this_ptr->cell_size).y * _DAT_005d1d23 +
+        return (float)iStack_30 * (this_ptr->cell_size).y * 0.125f +
                (float)iStack_34 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
       }
       iStack_30 = iStack_30 + -1;

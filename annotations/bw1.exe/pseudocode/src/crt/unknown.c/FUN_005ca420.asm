@@ -9,13 +9,13 @@
 ;   crt_unknown.c_FUN_005c9f70 at 005c9f7e
 ;
 ; Referenced Globals:
-;   undefined1 DAT_006269d0
+;   byte g_BYTE_006269d0 = 0x0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP byte ptr [0x006269d0],0x0       ; 005ca420 | DAT_006269d0
+    CMP byte ptr [0x006269d0],0x0       ; 005ca420 | g_BYTE_006269d0
         ;   Label: crt_unknown.c_FUN_005ca420
     JZ 0x005ca448                       ; 005ca427
         ;   XREF to: 005ca448 (CONDITIONAL_JUMP)  ; LAB_005ca448

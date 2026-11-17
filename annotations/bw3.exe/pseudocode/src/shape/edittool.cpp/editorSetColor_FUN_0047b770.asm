@@ -7,8 +7,8 @@
 ; uint             Stack[0x4]:4   color
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5baec
-;   undefined4 DAT_01c6b5c0
+;   int g_INT_01c5baec
+;   int g_INT_01c6b5c0
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_setColor_FUN_004f3520
@@ -19,10 +19,10 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0047b770
         ;   Label: shape_edittool.cpp_editorSetColor_FUN_0047b770
-    CMP dword ptr [0x01c5baec],0x0      ; 0047b774 | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 0047b774 | g_INT_01c5baec
     JNZ 0x0047b783                      ; 0047b77b
         ;   XREF to: 0047b783 (CONDITIONAL_JUMP)  ; LAB_0047b783
-    MOV [0x01c6b5c0],EAX                ; 0047b77d | DAT_01c6b5c0
+    MOV [0x01c6b5c0],EAX                ; 0047b77d | g_INT_01c6b5c0
     RET                                 ; 0047b782
     AND EAX,0xff                        ; 0047b783
         ;   Label: LAB_0047b783

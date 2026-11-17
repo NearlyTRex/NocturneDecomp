@@ -9,7 +9,7 @@
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004f76f0 at 004f76f5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4b848
+;   int g_INT_01b4b848
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
@@ -33,7 +33,7 @@ section .text
     JNZ 0x004624dd                      ; 004624ee
         ;   XREF to: 004624dd (CONDITIONAL_JUMP)  ; LAB_004624dd
     XOR EDX,EDX                         ; 004624f0
-    MOV dword ptr [0x01b4b848],EDX      ; 004624f2 | DAT_01b4b848
+    MOV dword ptr [0x01b4b848],EDX      ; 004624f2 | g_INT_01b4b848
     POP ESI                             ; 004624f8
     POP EBX                             ; 004624f9
     RET                                 ; 004624fa

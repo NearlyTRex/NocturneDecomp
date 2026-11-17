@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(CGame *this_ptr)
 
 {
   CAlphaBitmap local_18;
   
   engine_2d_c_reinitializeGraphicsSystem_FUN_00402ad0();
-  if ((DAT_006141bc != 0x1e0) || (this_ptr->game_bpp != 0x20)) {
+  if ((g_INT_006141bc != 0x1e0) || (this_ptr->game_bpp != 0x20)) {
     wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(0x280,0x1e0,0x20);
   }
-  if (*(int *)(0x01D182F0 + 0x1008) == 0) {
-    _DAT_01c25590 = _DAT_01511cc0;
+  if (g_CDemonMission_PTR_00618170->is_in_editor == 0) {
+    g_CBitFont_PTR_01c25590 = g_CBitFont_PTR_01511cc0;
   }
   engine_special_cpp_clearScreen_FUN_0055b1f0();
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&local_18);

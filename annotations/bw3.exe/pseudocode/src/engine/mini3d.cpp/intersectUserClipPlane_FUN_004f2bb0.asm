@@ -16,12 +16,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005c828e
 ;   TerminatedCString s_Bad_clip_005c82a3
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d7a69c
-;   undefined4 DAT_01d7a6a0
-;   undefined4 DAT_01d7a6a4
-;   undefined4 DAT_01d7a6a8
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   float g_FLOAT_01d7a69c
+;   float g_FLOAT_01d7a6a0
+;   float g_FLOAT_01d7a6a4
+;   float g_FLOAT_01d7a6a8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -41,27 +41,27 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 004f2bbf
     FLD float ptr [ESI + 0x4]           ; 004f2bc3
     FSUB float ptr [EBX + 0x4]          ; 004f2bc6
-    FMUL float ptr [0x01d7a6a0]         ; 004f2bc9 | DAT_01d7a6a0
+    FMUL float ptr [0x01d7a6a0]         ; 004f2bc9 | g_FLOAT_01d7a6a0
     FLD float ptr [ESI]                 ; 004f2bcf
     FSUB float ptr [EBX]                ; 004f2bd1
-    FMUL float ptr [0x01d7a69c]         ; 004f2bd3 | DAT_01d7a69c
+    FMUL float ptr [0x01d7a69c]         ; 004f2bd3 | g_FLOAT_01d7a69c
     FADDP                               ; 004f2bd9
     FLD float ptr [ESI + 0x8]           ; 004f2bdb
     FSUB float ptr [EBX + 0x8]          ; 004f2bde
-    FMUL float ptr [0x01d7a6a4]         ; 004f2be1 | DAT_01d7a6a4
+    FMUL float ptr [0x01d7a6a4]         ; 004f2be1 | g_FLOAT_01d7a6a4
     FADDP                               ; 004f2be7
     FSTP float ptr [ESP + 0x4]          ; 004f2be9
     TEST dword ptr [ESP + 0x4],0x7fffffff ; 004f2bed
     JZ 0x004f2cad                       ; 004f2bf5
         ;   XREF to: 004f2cad (CONDITIONAL_JUMP)  ; LAB_004f2cad
-    FLD float ptr [0x01d7a69c]          ; 004f2bfb | DAT_01d7a69c
+    FLD float ptr [0x01d7a69c]          ; 004f2bfb | g_FLOAT_01d7a69c
         ;   Label: LAB_004f2bfb
     FMUL float ptr [EBX]                ; 004f2c01
-    FADD float ptr [0x01d7a6a8]         ; 004f2c03 | DAT_01d7a6a8
-    FLD float ptr [0x01d7a6a0]          ; 004f2c09 | DAT_01d7a6a0
+    FADD float ptr [0x01d7a6a8]         ; 004f2c03 | g_FLOAT_01d7a6a8
+    FLD float ptr [0x01d7a6a0]          ; 004f2c09 | g_FLOAT_01d7a6a0
     FMUL float ptr [EBX + 0x4]          ; 004f2c0f
     FADDP                               ; 004f2c12
-    FLD float ptr [0x01d7a6a4]          ; 004f2c14 | DAT_01d7a6a4
+    FLD float ptr [0x01d7a6a4]          ; 004f2c14 | g_FLOAT_01d7a6a4
     FMUL float ptr [EBX + 0x8]          ; 004f2c1a
     FADDP                               ; 004f2c1d
     FLD ST0                             ; 004f2c1f
@@ -124,8 +124,8 @@ section .text
         ;   Label: LAB_004f2cad
     MOV EBP,0x1473                      ; 004f2cb2
     PUSH 0x5c82a3                       ; 004f2cb7 | = "Bad clip!"
-    MOV dword ptr [0x01d71de0],ECX      ; 004f2cbc | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 004f2cc2 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f2cbc | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 004f2cc2 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f2cc8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f2ccd

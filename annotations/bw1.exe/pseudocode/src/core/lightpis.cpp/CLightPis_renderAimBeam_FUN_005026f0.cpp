@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *this_ptr)
 
 {
@@ -58,7 +56,8 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
   float fStack_18;
   
   bVar4 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar1 == 0) {
     if (this_ptr->hit_enemy == 0) {
       core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(&this_ptr->base);
@@ -119,7 +118,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
       fStack_ac = fStack_ac * fVar2;
       fStack_a8 = fStack_a8 * fVar2;
     }
-    fVar5 = (float10)fpatan((float10)_DAT_005e7022 / (float10)_DAT_00603174,(float10)1);
+    fVar5 = (float10)fpatan((float10)18 / (float10)56.0f,(float10)1);
     fStack_138 = (float)fVar5;
     (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
     input_local_point = &CStack_68;
@@ -130,7 +129,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
               ((CDemonActor *)this_ptr,input_local_point,&CStack_104);
     core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0
-              (0x01C57074,&CStack_74,&CStack_ec,1.0,0xff,0,0,fStack_138);
+              (g_CFireEffect_PTR_0061c010,&CStack_74,&CStack_ec,1.0,0xff,0,0,fStack_138);
     if (this_ptr->hit_enemy != 0) {
       this_ptr->hit_enemy = 0;
       fVar2 = 1.4013e-45;
@@ -138,8 +137,8 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
         fVar3 = (float)((int)fVar2 + 1);
         fStack_18 = fVar2;
         core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0
-                  (0x01C57074,&CStack_74,&CStack_ec,1.0,0xff,0,0,
-                   (float)(int)fVar2 * fStack_138 * (float)_DAT_005e702a);
+                  (g_CFireEffect_PTR_0061c010,&CStack_74,&CStack_ec,1.0,0xff,0,0,
+                   (float)(int)fVar2 * fStack_138 * (float)0.10000000000000001);
         fVar2 = fVar3;
       } while ((int)fVar3 < 10);
       fVar2 = CStack_ec.x - CStack_74.x;
@@ -168,7 +167,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
         fStack_98 = 0.0;
         afStack_94[1] = 0.0;
       }
-      fStack_1c = this_ptr->beam_length * (float)_DAT_005e7032;
+      fStack_1c = this_ptr->beam_length * (float)0.015625;
       fStack_110 = fStack_98 * fStack_1c;
       afStack_10c[0] = afStack_94[0] * fStack_1c;
       afStack_10c[1] = afStack_94[1] * fStack_1c;
@@ -184,7 +183,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
       iVar1 = 0;
       do {
         CStack_a4.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
-        dStack_38 = (double)iVar1 * _DAT_005e703a;
+        dStack_38 = (double)iVar1 * 0.14999999999999999;
         CStack_a4.x = CStack_a4.x * (float)dStack_38;
         fStack_18 = (float)iVar1;
         fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
@@ -192,7 +191,7 @@ void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *t
         fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
         CStack_a4.z = fStack_18 * (float)dStack_38;
         core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                  (0x01C57074,&CStack_f8,&CStack_a4,0xffdc,5000,3,5000);
+                  (g_CFireEffect_PTR_0061c010,&CStack_f8,&CStack_a4,0xffdc,5000,3,5000);
         iVar1 = iVar1 + 1;
         CStack_f8.x = CStack_f8.x + fStack_98;
         CStack_f8.y = CStack_f8.y + afStack_94[0];

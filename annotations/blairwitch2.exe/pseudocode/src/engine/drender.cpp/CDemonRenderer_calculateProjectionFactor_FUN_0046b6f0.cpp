@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046b6f0(CDemonRenderer *this_ptr)
 
 {
-  return ((float)_DAT_005d15e3 / (float)DAT_006141e4) * (float)_DAT_005d15eb;
+  return ((float)18 / (float)g_INT_006141e4) * (float)65536;
 }

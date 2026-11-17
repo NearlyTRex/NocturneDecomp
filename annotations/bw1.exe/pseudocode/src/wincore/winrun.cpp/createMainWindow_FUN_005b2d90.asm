@@ -14,8 +14,8 @@
 ;   TerminatedCString s_Nocturne_005f9ea6
 ;   void* PTR_s_Nocturne_006260dc = 005f9e9d
 ;   void* PTR_s_Nocturne_006260e0 = 005f9ea6
-;   undefined4 DAT_02c9be68
-;   undefined4 DAT_02c9be6c
+;   HWND g_HWND_02c9be68
+;   int g_INT_02c9be6c
 ;
 ; Called Functions:
 ;   CreateWindowExA
@@ -28,7 +28,7 @@ section .text
     PUSH EBX                            ; 005b2d90
         ;   Label: wincore_winrun.cpp_createMainWindow_FUN_005b2d90
     PUSH 0x0                            ; 005b2d91
-    MOV EDX,dword ptr [0x02c9be6c]      ; 005b2d93 | DAT_02c9be6c
+    MOV EDX,dword ptr [0x02c9be6c]      ; 005b2d93 | g_INT_02c9be6c
     PUSH EDX                            ; 005b2d99
     PUSH 0x0                            ; 005b2d9a
     PUSH 0x0                            ; 005b2d9c
@@ -43,7 +43,7 @@ section .text
     PUSH EBX                            ; 005b2db8 | = "Nocturne"
     PUSH 0x40000                        ; 005b2db9
     CALL dword ptr CS:[0x5d04a8]        ; 005b2dbe | PTR_CreateWindowExA_005d04a8
-    MOV [0x02c9be68],EAX                ; 005b2dc5 | DAT_02c9be68
+    MOV [0x02c9be68],EAX                ; 005b2dc5 | g_HWND_02c9be68
     TEST EAX,EAX                        ; 005b2dca
     JZ 0x005b2dd0                       ; 005b2dcc
         ;   XREF to: 005b2dd0 (CONDITIONAL_JUMP)  ; LAB_005b2dd0

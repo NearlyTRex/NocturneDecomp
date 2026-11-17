@@ -8,11 +8,11 @@
 ;   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_00481cb0 at 00481d91
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c4480c
-;   undefined4 DAT_01c4e3d4
-;   undefined4 DAT_01c4f020
-;   undefined4 DAT_01c4f030
+;   void*[1200] g_ARRAY_PTR_01c4354c
+;   uint*[1200] g_UINT_PTR_ARRAY_01c4480c
+;   uint[256] g_UINT_ARRAY_01c4e3d4
+;   int g_INT_01c4f020
+;   uint[1600] g_UINT_ARRAY_01c4f030
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     SHR EAX,0x10                        ; 00487002
         ;   Label: LAB_00487002
     SHR ECX,0x10                        ; 00487005
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c4480c] ; 00487008 | DAT_01c4480c
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c4354c] ; 0048700f | DAT_01c4354c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c4480c] ; 00487008 | g_UINT_PTR_ARRAY_01c4480c
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c4354c] ; 0048700f | g_ARRAY_PTR_01c4354c
     SUB ECX,EAX                         ; 00487016
     JLE 0x00487144                      ; 00487018
         ;   XREF to: 00487144 (CONDITIONAL_JUMP)  ; LAB_00487144
@@ -43,14 +43,14 @@ section .text
     INC ECX                             ; 00487025
     MOV EAX,dword ptr [EDI + 0x28]      ; 00487026
     SUB EAX,dword ptr [ESI + 0x28]      ; 00487029
-    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 0048702c | DAT_01c4f030
+    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 0048702c | g_UINT_ARRAY_01c4f030
     MOV EDI,EBX                         ; 00487033
     MOV EBX,EBP                         ; 00487035
     DEC ECX                             ; 00487037
     MOV ESI,dword ptr [ESI + 0x28]      ; 00487038
     XOR EAX,EAX                         ; 0048703b
-    MOV AL,[0x01c4f020]                 ; 0048703d | DAT_01c4f020
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c4e3d4] ; 00487042 | DAT_01c4e3d4
+    MOV AL,[0x01c4f020]                 ; 0048703d | g_INT_01c4f020
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c4e3d4] ; 00487042 | g_UINT_ARRAY_01c4e3d4
     SUB ECX,0x4                         ; 00487049
         ;   Label: LAB_00487049
     JL 0x0048711e                       ; 0048704c

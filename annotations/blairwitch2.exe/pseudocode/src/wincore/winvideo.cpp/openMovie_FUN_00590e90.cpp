@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_00590e90(HWND parent_window,char *movie_filename)
 
 {
@@ -20,26 +18,26 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_00590e90(HWND parent_window,char
   tagRECT tStack_30;
   tagRECT tStack_20;
   
-  if (_DAT_02665a50 != 0) {
+  if (g_INT_02665a50 != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_00590e40(parent_window);
   }
   _sprintf(acStack_1b4,"open \"%s\" alias mov style child parent %d");
   MVar2 = mciSendStringA(acStack_1b4,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar2 != 0) {
     MessageBoxA(parent_window,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
-    _DAT_02665a50 = 0;
+    g_INT_02665a50 = 0;
     return;
   }
-  _DAT_02665a50 = 1;
+  g_INT_02665a50 = 1;
   MVar2 = mciSendStringA("status mov window handle",acStack_1b4,0x104,(HWND)0x0);
   if (MVar2 == 0) {
-    _DAT_02665a48 = (HWND)atoi(acStack_1b4);
+    g_INT_02665a48 = atoi(acStack_1b4);
   }
   else {
     mciGetErrorStringA(MVar2,acStack_1b4,0x104);
     MessageBoxA(parent_window,acStack_1b4,(LPCSTR)0x0,0x30);
   }
-  if ((_DAT_02665a58 == 0) && (_DAT_02665a50 != 0)) {
+  if ((g_INT_02665a58 == 0) && (g_INT_02665a50 != 0)) {
     GetClientRect(parent_window,&tStack_20);
     mciSendStringA("where mov source",(LPSTR)&bStack_b0,0x80,(HWND)0x0);
     SetRectEmpty(&tStack_30);
@@ -69,7 +67,7 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_00590e90(HWND parent_window,char
       tStack_30.right = tStack_30.right * 2;
       tStack_30.bottom = tStack_30.bottom * 2;
     }
-    MoveWindow(_DAT_02665a48,tStack_20.right / 2 - tStack_30.right / 2,
+    MoveWindow((HWND)g_INT_02665a48,tStack_20.right / 2 - tStack_30.right / 2,
                tStack_20.bottom / 2 - tStack_30.bottom / 2,tStack_30.right,tStack_30.bottom,1);
     return;
   }

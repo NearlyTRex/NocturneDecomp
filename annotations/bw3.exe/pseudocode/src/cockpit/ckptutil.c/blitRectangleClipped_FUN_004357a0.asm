@@ -11,11 +11,11 @@
 ; int              Stack[0x14]:4   height
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5b0
+;   int g_INT_005fba20 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c5faec
+;   undefined4 g_ARRAY_PTR_01c5faec[1]
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5b0
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80
@@ -32,12 +32,12 @@ section .text
     SUB ESP,0x1c                        ; 004357a4
     MOV EBX,dword ptr [ESP + 0x30]      ; 004357a7
     MOV EBP,dword ptr [ESP + 0x34]      ; 004357ab
-    MOV EAX,[0x01c6b5b0]                ; 004357af | DAT_01c6b5b0
+    MOV EAX,[0x01c6b5b0]                ; 004357af | g_INT_01c6b5b0
     SUB EAX,EBP                         ; 004357b4
-    MOV EDX,dword ptr [0x01c5faec]      ; 004357b6 | DAT_01c5faec
+    MOV EDX,dword ptr [0x01c5faec]      ; 004357b6 | g_ARRAY_PTR_01c5faec
     MOV dword ptr [ESP],EAX             ; 004357bc
-    MOV EAX,[0x01c5faf0]                ; 004357bf | DAT_01c5faf0
-    MOV ESI,dword ptr [0x01c6b5a8]      ; 004357c4 | DAT_01c6b5a8
+    MOV EAX,[0x01c5faf0]                ; 004357bf | g_ARRAY_PTR_01c5faec[1]
+    MOV ESI,dword ptr [0x01c6b5a8]      ; 004357c4 | g_INT_01c6b5a8
     SUB EAX,EDX                         ; 004357ca
     SUB ESI,EBP                         ; 004357cc
     MOV dword ptr [ESP + 0x14],EAX      ; 004357ce
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
         ;   Label: LAB_004357e8
     MOV ECX,dword ptr [ESP + 0x38]      ; 004357ed
-    MOV EDI,dword ptr [0x005fba20]      ; 004357f1 | DAT_005fba20
+    MOV EDI,dword ptr [0x005fba20]      ; 004357f1 | g_INT_005fba20
     MOV dword ptr [ESP + 0x18],EAX      ; 004357f7
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004357fb
     SHL ECX,0x2                         ; 004357ff

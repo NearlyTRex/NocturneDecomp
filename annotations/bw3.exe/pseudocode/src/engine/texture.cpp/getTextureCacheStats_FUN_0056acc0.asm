@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b76ec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cfd0d0
+;   CTextureCache* g_CTextureCache_PTR_02cfd0d0
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_0056a700
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0056acc0
         ;   Label: engine_texture.cpp_getTextureCacheStats_FUN_0056acc0
     PUSH EDX                            ; 0056acc4
-    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056acc5 | DAT_02cfd0d0
+    MOV ECX,dword ptr [0x02cfd0d0]      ; 0056acc5 | g_CTextureCache_PTR_02cfd0d0
     PUSH ECX                            ; 0056accb
     CALL engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_0056a700 ; 0056accc
         ;   XREF to: 0056a700 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_0056a700(CTextureCache * this_ptr, char * output_buffer)

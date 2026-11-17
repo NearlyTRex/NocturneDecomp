@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004101f0(CBaron *this_ptr)
 
 {
@@ -44,12 +42,12 @@ LAB_004103e7:
       goto LAB_00410269;
     }
 LAB_00410253:
-    fVar3 = afStack_5c[0] * (float)_DAT_005d350a;
+    fVar3 = afStack_5c[0] * (float)65000;
   }
   else {
     if (uVar2 < 7) goto LAB_00410253;
     if (uVar2 != 7) goto LAB_004103e7;
-    fVar3 = ((float)pSVar4->frame_count - fStack_1c) * (float)_DAT_005d350a;
+    fVar3 = ((float)pSVar4->frame_count - fStack_1c) * (float)65000;
   }
   dVar9 = round((double)(fVar3 / (float)pSVar4->frame_count));
   fStack_1c = (float)(int)ROUND(dVar9);
@@ -57,14 +55,14 @@ LAB_00410269:
   if (this_ptr->shell_visible != 0) {
     engine_3d_c_setRenderAlpha_FUN_00406bd0(((int)fStack_1c * 2) / 3);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-              (DAT_00612560,&(this_ptr->base).base.base.location.position);
-    CStack_2c.y = DAT_007c34dc;
+              (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).base.base.location.position);
+    CStack_2c.y = g_FLOAT_007c34dc;
     CStack_2c.x = 0.0;
     CStack_2c.z = 0.0;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-              (DAT_00612560,&CStack_2c,(CVector3f *)0x0);
+              (g_CDemonRenderer_PTR_00612560,&CStack_2c,(CVector3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-              ((CKeyFramedModelInstance *)&DAT_007c351c,0.0,0x23);
+              (&g_CKeyFramedModelInstance_007c351c,0.0,0x23);
     engine_drender_cpp_pop_FUN_004839a0();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
@@ -80,16 +78,19 @@ LAB_00410269:
   }
   iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_44,skip_shadow_test);
   if (iVar5 != 0) {
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,(int)fStack_1c);
-    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
+              (g_CDemonRenderer_PTR_00612560,(int)fStack_1c);
+    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
+              (g_CDemonRenderer_PTR_00612560,1);
     pCVar1 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810(pCVar1,-1,0x2e7,1,0);
-    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);
-    if (_DAT_01d39d34 != 0) {
+    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
+              (g_CDemonRenderer_PTR_00612560);
+    if (g_INT_01d39d34 != 0) {
       core_motion_cpp_CMotionController_render_FUN_005254b0(&pCVar1->base,(CDemonActor *)this_ptr);
     }
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   return iVar5;

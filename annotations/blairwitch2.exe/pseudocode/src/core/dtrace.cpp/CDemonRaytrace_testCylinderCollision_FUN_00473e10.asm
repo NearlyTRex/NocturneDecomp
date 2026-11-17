@@ -18,18 +18,18 @@
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030 at 00537083
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01510da8
-;   undefined4 DAT_01510dac
-;   undefined4 DAT_01510db0
-;   undefined4 DAT_01510db4
-;   undefined4 DAT_01510db8
-;   undefined4 DAT_01510dbc
-;   undefined4 DAT_01510dc0
-;   undefined4 DAT_01510dc4
-;   undefined4 DAT_01510dc8
-;   undefined4 DAT_0265370c
-;   undefined4 DAT_02653710
-;   undefined4 DAT_02653714
+;   float g_FLOAT_01510da8
+;   int g_INT_01510dac
+;   float g_FLOAT_01510db0
+;   float g_FLOAT_01510db4
+;   int g_INT_01510db8
+;   float g_FLOAT_01510dbc
+;   float g_FLOAT_01510dc0
+;   int g_INT_01510dc4
+;   float g_FLOAT_01510dc8
+;   CVector3f g_CVector3f_0265370c
+;   undefined4 g_CVector3f_0265370c.y
+;   undefined4 g_CVector3f_0265370c.z
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00446d20
@@ -56,23 +56,23 @@ section .text
     CMP EAX,0x1510dc0                   ; 00473e30
     JZ 0x00473e59                       ; 00473e35
         ;   XREF to: 00473e59 (CONDITIONAL_JUMP)  ; LAB_00473e59
-    FLD float ptr [0x01510dc0]          ; 00473e37 | DAT_01510dc0
-    FLD float ptr [0x01510dc8]          ; 00473e3d | DAT_01510dc8
-    MOV EAX,[0x01510dc4]                ; 00473e43 | DAT_01510dc4
-    MOV [0x01510db8],EAX                ; 00473e48 | DAT_01510db8
-    FSTP float ptr [0x01510dbc]         ; 00473e4d | DAT_01510dbc
-    FSTP float ptr [0x01510db4]         ; 00473e53 | DAT_01510db4
+    FLD float ptr [0x01510dc0]          ; 00473e37 | g_FLOAT_01510dc0
+    FLD float ptr [0x01510dc8]          ; 00473e3d | g_FLOAT_01510dc8
+    MOV EAX,[0x01510dc4]                ; 00473e43 | g_INT_01510dc4
+    MOV [0x01510db8],EAX                ; 00473e48 | g_INT_01510db8
+    FSTP float ptr [0x01510dbc]         ; 00473e4d | g_FLOAT_01510dbc
+    FSTP float ptr [0x01510db4]         ; 00473e53 | g_FLOAT_01510db4
     MOV EAX,0x1510da8                   ; 00473e59
         ;   Label: LAB_00473e59
     CMP EAX,0x1510db4                   ; 00473e5e
     JZ 0x00473e87                       ; 00473e63
         ;   XREF to: 00473e87 (CONDITIONAL_JUMP)  ; LAB_00473e87
-    FLD float ptr [0x01510db4]          ; 00473e65 | DAT_01510db4
-    FLD float ptr [0x01510dbc]          ; 00473e6b | DAT_01510dbc
-    MOV EAX,[0x01510db8]                ; 00473e71 | DAT_01510db8
-    MOV [0x01510dac],EAX                ; 00473e76 | DAT_01510dac
-    FSTP float ptr [0x01510db0]         ; 00473e7b | DAT_01510db0
-    FSTP float ptr [0x01510da8]         ; 00473e81 | DAT_01510da8
+    FLD float ptr [0x01510db4]          ; 00473e65 | g_FLOAT_01510db4
+    FLD float ptr [0x01510dbc]          ; 00473e6b | g_FLOAT_01510dbc
+    MOV EAX,[0x01510db8]                ; 00473e71 | g_INT_01510db8
+    MOV [0x01510dac],EAX                ; 00473e76 | g_INT_01510dac
+    FSTP float ptr [0x01510db0]         ; 00473e7b | g_FLOAT_01510db0
+    FSTP float ptr [0x01510da8]         ; 00473e81 | g_FLOAT_01510da8
     FLDZ                                ; 00473e87
         ;   Label: LAB_00473e87
     FCOMP float ptr [EBP + 0x18]        ; 00473e89
@@ -211,13 +211,13 @@ section .text
     POP ESI                             ; 00473fb2
     POP EBX                             ; 00473fb3
     RET                                 ; 00473fb4
-    FLD float ptr [0x0265370c]          ; 00473fb5 | DAT_0265370c
+    FLD float ptr [0x0265370c]          ; 00473fb5 | g_CVector3f_0265370c
         ;   Label: LAB_00473fb5
-    FLD float ptr [0x02653714]          ; 00473fbb | DAT_02653714
-    MOV EAX,[0x02653710]                ; 00473fc1 | DAT_02653710
-    MOV [0x01510dc4],EAX                ; 00473fc6 | DAT_01510dc4
-    FSTP float ptr [0x01510dc8]         ; 00473fcb | DAT_01510dc8
-    FSTP float ptr [0x01510dc0]         ; 00473fd1 | DAT_01510dc0
+    FLD float ptr [0x02653714]          ; 00473fbb | g_CVector3f_0265370c.z
+    MOV EAX,[0x02653710]                ; 00473fc1 | g_CVector3f_0265370c.y
+    MOV [0x01510dc4],EAX                ; 00473fc6 | g_INT_01510dc4
+    FSTP float ptr [0x01510dc8]         ; 00473fcb | g_FLOAT_01510dc8
+    FSTP float ptr [0x01510dc0]         ; 00473fd1 | g_FLOAT_01510dc0
     JMP 0x00473e2b                      ; 00473fd7
         ;   XREF to: 00473e2b (UNCONDITIONAL_JUMP)  ; LAB_00473e2b
     FLD float ptr [EBP + 0x10]          ; 00473fdc

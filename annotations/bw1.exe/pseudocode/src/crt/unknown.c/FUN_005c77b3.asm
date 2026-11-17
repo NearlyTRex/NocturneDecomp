@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005cbf70 at 005cc006
 ;
 ; Referenced Globals:
-;   undefined1* PTR_crt_unknown.c_FUN_005c77bd_00628bcc = 005c77bd
+;   void* g_PTR_00628bcc = 005c77bd
 ;
 ; *****************************************************************************
 
@@ -17,5 +17,5 @@ section .text
 
     SUB ESP,0x2c                        ; 005c77b3
         ;   Label: crt_unknown.c_FUN_005c77b3
-    JMP dword ptr [EAX*0x4 + 0x628bcc]  ; 005c77b6 | PTR_crt_unknown.c_FUN_005c77bd_00628bcc
+    JMP dword ptr [EAX*0x4 + 0x628bcc]  ; 005c77b6 | g_PTR_00628bcc
 

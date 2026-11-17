@@ -16,9 +16,10 @@ int __cdecl core_inv_cpp_playSpsSound_FUN_004f6b50(CCharacter *character,char *s
   iVar3 = 0;
   do {
     iVar1 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
-                      (0x02C82A60,*(uint *)(iVar3 + 0x1d1bc4c));
+                      (g_CSound_PTR_006236b8,*(uint *)(iVar3 + 0x1d1bc4c));
     if (iVar1 == 0) {
-      uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,(void *)0x0,sound_name);
+      uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880
+                        (g_CSound_PTR_006236b8,(void *)0x0,sound_name);
       character->spectral_sound_handle = uVar2;
       *(uint *)(iVar3 + 0x1d1bc4c) = uVar2;
       return 1;

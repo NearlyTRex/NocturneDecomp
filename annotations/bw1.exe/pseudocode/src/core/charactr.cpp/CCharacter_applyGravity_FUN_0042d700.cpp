@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter *this_ptr,float delta_time)
 
 {
@@ -17,6 +15,6 @@ void __cdecl core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter *
     (this_ptr->velocity).x = (this_ptr->velocity).y;
     return;
   }
-  (this_ptr->velocity).y = delta_time * _DAT_005d5907 + (this_ptr->velocity).y;
+  (this_ptr->velocity).y = delta_time * -32.0f + (this_ptr->velocity).y;
   return;
 }

@@ -10,9 +10,9 @@
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_00557910 at 00557925
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264a5c4
-;   undefined4 DAT_0264a5c8
-;   undefined4 DAT_0264a5cc
+;   IDirectSound* g_IDirectSound_PTR_0264a5c4
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_0264a5c8
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_0264a5cc
 ;   undefined4 DAT_0264a5d0
 ;   undefined4 DAT_0264a5d4
 ;
@@ -55,7 +55,7 @@ section .text
     CALL dword ptr [EBX + 0x8]          ; 0055509d
     XOR ECX,ECX                         ; 005550a0
     MOV dword ptr [0x0264a5d0],ECX      ; 005550a2 | DAT_0264a5d0
-    MOV EBX,dword ptr [0x0264a5cc]      ; 005550a8 | DAT_0264a5cc
+    MOV EBX,dword ptr [0x0264a5cc]      ; 005550a8 | g_IDirectSoundBuffer_PTR_0264a5cc
         ;   Label: LAB_005550a8
     TEST EBX,EBX                        ; 005550ae
     JZ 0x005550c2                       ; 005550b0
@@ -65,7 +65,7 @@ section .text
     MOV EBX,dword ptr [EBX]             ; 005550b5
     XOR ESI,ESI                         ; 005550b7
     CALL dword ptr [EBX + 0x8]          ; 005550b9
-    MOV dword ptr [0x0264a5cc],ESI      ; 005550bc | DAT_0264a5cc
+    MOV dword ptr [0x0264a5cc],ESI      ; 005550bc | g_IDirectSoundBuffer_PTR_0264a5cc
     MOV EBP,dword ptr [0x0264a5d4]      ; 005550c2 | DAT_0264a5d4
         ;   Label: LAB_005550c2
     TEST EBP,EBP                        ; 005550c8
@@ -76,7 +76,7 @@ section .text
     CALL dword ptr [EBX + 0x8]          ; 005550d0
     XOR EAX,EAX                         ; 005550d3
     MOV [0x0264a5d4],EAX                ; 005550d5 | DAT_0264a5d4
-    MOV EDX,dword ptr [0x0264a5c8]      ; 005550da | DAT_0264a5c8
+    MOV EDX,dword ptr [0x0264a5c8]      ; 005550da | g_IDirectSoundBuffer_PTR_0264a5c8
         ;   Label: LAB_005550da
     TEST EDX,EDX                        ; 005550e0
     JZ 0x005550f2                       ; 005550e2
@@ -85,8 +85,8 @@ section .text
     MOV EBX,dword ptr [EDX]             ; 005550e5
     CALL dword ptr [EBX + 0x8]          ; 005550e7
     XOR ECX,ECX                         ; 005550ea
-    MOV dword ptr [0x0264a5c8],ECX      ; 005550ec | DAT_0264a5c8
-    MOV EBX,dword ptr [0x0264a5c4]      ; 005550f2 | DAT_0264a5c4
+    MOV dword ptr [0x0264a5c8],ECX      ; 005550ec | g_IDirectSoundBuffer_PTR_0264a5c8
+    MOV EBX,dword ptr [0x0264a5c4]      ; 005550f2 | g_IDirectSound_PTR_0264a5c4
         ;   Label: LAB_005550f2
     TEST EBX,EBX                        ; 005550f8
     JNZ 0x0055510a                      ; 005550fa
@@ -107,7 +107,7 @@ section .text
     MOV EBX,dword ptr [EBX]             ; 0055510d
     XOR ESI,ESI                         ; 0055510f
     CALL dword ptr [EBX + 0x8]          ; 00555111
-    MOV dword ptr [0x0264a5c4],ESI      ; 00555114 | DAT_0264a5c4
+    MOV dword ptr [0x0264a5c4],ESI      ; 00555114 | g_IDirectSound_PTR_0264a5c4
     MOV EAX,EDI                         ; 0055511a
     POP EBP                             ; 0055511c
     POP EDI                             ; 0055511d

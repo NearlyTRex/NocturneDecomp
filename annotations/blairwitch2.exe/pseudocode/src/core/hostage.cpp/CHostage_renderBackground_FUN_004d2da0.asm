@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; Referenced Globals:
-;   undefined4 s_ScatDazzle_005da3ad+1
+;   TerminatedCString s_ScatDazzle_005da3ae
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_renderBackground_FUN_005108d0
@@ -31,7 +31,7 @@ section .text
     POP EBX                             ; 004d2dba
         ;   Label: LAB_004d2dba
     RET                                 ; 004d2dbb
-    PUSH 0x5da3ae                       ; 004d2dbc | s_ScatDazzle_005da3ad+1
+    PUSH 0x5da3ae                       ; 004d2dbc | = "ScatDazzle"
         ;   Label: LAB_004d2dbc
     PUSH EBX                            ; 004d2dc1
     CALL crt_string.c__stricmp_FUN_005b8130 ; 004d2dc2

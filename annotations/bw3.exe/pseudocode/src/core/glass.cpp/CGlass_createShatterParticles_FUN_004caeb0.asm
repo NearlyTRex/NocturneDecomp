@@ -227,10 +227,10 @@
 ;   core_glass.cpp_CGlass_shatter_FUN_004cc040 at 004cc3ad
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c45b8
-;   undefined4 DAT_005c45bc
+;   float g_FLOAT_005c45b8 = 0.5
+;   float g_FLOAT_005c45bc = 0.25
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cf40
@@ -335,7 +335,7 @@ section .text
     PUSH EAX                            ; 004cafc4
     LEA EAX,[ESP + 0x10]                ; 004cafc5
     PUSH EAX                            ; 004cafc9
-    MOV EAX,[0x005fc5a0]                ; 004cafca | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 004cafca | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 004cafcf
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780 ; 004cafd0
         ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
@@ -385,7 +385,7 @@ section .text
     PUSH EAX                            ; 004cb05d
     LEA EAX,[ESP + 0x10]                ; 004cb05e
     PUSH EAX                            ; 004cb062
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004cb063 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004cb063 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004cb069
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780 ; 004cb06a
         ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
@@ -425,7 +425,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb0cf
     MOVSD ES:EDI,ESI                    ; 004cb0d0
     MOVSD ES:EDI,ESI                    ; 004cb0d1
-    FLD float ptr [0x005c45b8]          ; 004cb0d2 | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cb0d2 | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0x248]         ; 004cb0d8
     FMUL ST1                            ; 004cb0df
     FLD float ptr [ESP + 0x24c]         ; 004cb0e1
@@ -513,7 +513,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb21f
     MOVSD ES:EDI,ESI                    ; 004cb220
     MOVSD ES:EDI,ESI                    ; 004cb221
-    FLD float ptr [0x005c45bc]          ; 004cb222 | DAT_005c45bc
+    FLD float ptr [0x005c45bc]          ; 004cb222 | g_FLOAT_005c45bc
     FLD float ptr [ESP + 0x320]         ; 004cb228
     FMUL ST1                            ; 004cb22f
     FLD float ptr [ESP + 0x324]         ; 004cb231
@@ -561,7 +561,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb2db
     MOVSD ES:EDI,ESI                    ; 004cb2dc
     MOVSD ES:EDI,ESI                    ; 004cb2dd
-    FLD float ptr [0x005c45b8]          ; 004cb2de | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cb2de | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0xc8]          ; 004cb2e4
     FMUL ST1                            ; 004cb2eb
     FLD float ptr [ESP + 0xcc]          ; 004cb2ed
@@ -691,7 +691,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb492
     MOVSD ES:EDI,ESI                    ; 004cb493
     MOVSD ES:EDI,ESI                    ; 004cb494
-    FLD float ptr [0x005c45b8]          ; 004cb495 | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cb495 | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0x29c]         ; 004cb49b
     FMUL ST1                            ; 004cb4a2
     FLD float ptr [ESP + 0x2a0]         ; 004cb4a4
@@ -752,7 +752,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb561
     MOVSD ES:EDI,ESI                    ; 004cb562
     MOVSD ES:EDI,ESI                    ; 004cb563
-    FLD float ptr [0x005c45b8]          ; 004cb564 | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cb564 | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0x1b8]         ; 004cb56a
     FMUL ST1                            ; 004cb571
     FLD float ptr [ESP + 0x1bc]         ; 004cb573
@@ -840,7 +840,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb6bd
     MOVSD ES:EDI,ESI                    ; 004cb6be
     MOVSD ES:EDI,ESI                    ; 004cb6bf
-    FLD float ptr [0x005c45bc]          ; 004cb6c0 | DAT_005c45bc
+    FLD float ptr [0x005c45bc]          ; 004cb6c0 | g_FLOAT_005c45bc
     FLD float ptr [ESP + 0x8c]          ; 004cb6c6
     FMUL ST1                            ; 004cb6cd
     FLD float ptr [ESP + 0x90]          ; 004cb6cf
@@ -1011,7 +1011,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb91d
     MOVSD ES:EDI,ESI                    ; 004cb91e
     MOVSD ES:EDI,ESI                    ; 004cb91f
-    FLD float ptr [0x005c45bc]          ; 004cb920 | DAT_005c45bc
+    FLD float ptr [0x005c45bc]          ; 004cb920 | g_FLOAT_005c45bc
     FLD float ptr [ESP + 0x278]         ; 004cb926
     FMUL ST1                            ; 004cb92d
     FLD float ptr [ESP + 0x27c]         ; 004cb92f
@@ -1060,7 +1060,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cb9d9
     MOVSD ES:EDI,ESI                    ; 004cb9da
     MOVSD ES:EDI,ESI                    ; 004cb9db
-    FLD float ptr [0x005c45b8]          ; 004cb9dc | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cb9dc | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0x170]         ; 004cb9e2
     FMUL ST1                            ; 004cb9e9
     FLD float ptr [ESP + 0x174]         ; 004cb9eb
@@ -1121,7 +1121,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cbab7
     MOVSD ES:EDI,ESI                    ; 004cbab8
     MOVSD ES:EDI,ESI                    ; 004cbab9
-    FLD float ptr [0x005c45b8]          ; 004cbaba | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cbaba | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0x134]         ; 004cbac0
     FMUL ST1                            ; 004cbac7
     FLD float ptr [ESP + 0x138]         ; 004cbac9
@@ -1252,7 +1252,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cbc78
     MOVSD ES:EDI,ESI                    ; 004cbc79
     MOVSD ES:EDI,ESI                    ; 004cbc7a
-    FLD float ptr [0x005c45b8]          ; 004cbc7b | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cbc7b | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0x218]         ; 004cbc81
     FMUL ST1                            ; 004cbc88
     FLD float ptr [ESP + 0x21c]         ; 004cbc8a
@@ -1340,7 +1340,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cbdc5
     MOVSD ES:EDI,ESI                    ; 004cbdc6
     MOVSD ES:EDI,ESI                    ; 004cbdc7
-    FLD float ptr [0x005c45bc]          ; 004cbdc8 | DAT_005c45bc
+    FLD float ptr [0x005c45bc]          ; 004cbdc8 | g_FLOAT_005c45bc
     FLD float ptr [ESP + 0x224]         ; 004cbdce
     FMUL ST1                            ; 004cbdd5
     FLD float ptr [ESP + 0x228]         ; 004cbdd7
@@ -1389,7 +1389,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cbe78
     MOVSD ES:EDI,ESI                    ; 004cbe79
     MOVSD ES:EDI,ESI                    ; 004cbe7a
-    FLD float ptr [0x005c45b8]          ; 004cbe7b | DAT_005c45b8
+    FLD float ptr [0x005c45b8]          ; 004cbe7b | g_FLOAT_005c45b8
     FLD float ptr [ESP + 0x32c]         ; 004cbe81
     FMUL ST1                            ; 004cbe88
     FLD float ptr [ESP + 0x330]         ; 004cbe8a

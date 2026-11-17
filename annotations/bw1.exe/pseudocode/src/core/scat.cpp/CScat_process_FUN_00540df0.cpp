@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_scat_cpp_CScat_process_FUN_00540df0(CScat *this_ptr,float delta_time)
 
 {
@@ -247,13 +245,13 @@ LAB_005412cd:
   afStack_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
        *(float *)((int)&CStack_28 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
   this_ptr_00 = (CMotionController *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_6c[3]);
-  if ((float)this_ptr_00 < _DAT_005ede4b) {
-    this_ptr_00 = (CMotionController *)((float)this_ptr_00 + _DAT_005ede4f);
+  if ((float)this_ptr_00 < -1.570796f) {
+    this_ptr_00 = (CMotionController *)((float)this_ptr_00 + 3.141593f);
   }
-  if (_DAT_005ede53 < (float)this_ptr_00) {
-    this_ptr_00 = (CMotionController *)((float)this_ptr_00 + _DAT_005ede57);
+  if (1.570796f < (float)this_ptr_00) {
+    this_ptr_00 = (CMotionController *)((float)this_ptr_00 + -3.141593f);
   }
-  pCVar5 = (CMotionController *)(in_stack_0000001c * _DAT_005ede4f);
+  pCVar5 = (CMotionController *)(in_stack_0000001c * 3.141593f);
   if ((float)this_ptr_00 < -(float)pCVar5) {
     this_ptr_00 = (CMotionController *)-(float)pCVar5;
   }
@@ -330,7 +328,7 @@ LAB_00541092:
                         ((CCharacter *)this_ptr), EVar9 == DEATH_STATE_ALIVE)) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar8 = this_ptr->head_blend_weight;
-    iVar6 = _DAT_01e7e014;
+    iVar6 = g_INT_ARRAY_01e7e014[0];
     core_xform_cpp_eulerToQuaternion_FUN_005b7ed0
               (&this_ptr->head_euler_angles,(CQuaternion4f *)&stack0xffffff60);
     source_quaternions = (CQuaternion4f *)auStack_90;

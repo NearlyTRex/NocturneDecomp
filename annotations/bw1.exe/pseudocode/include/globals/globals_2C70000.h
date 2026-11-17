@@ -4,12 +4,61 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSfxOptions.h"
 #include "types/classes/CSfxSample.h"
+#include "types/classes/CSfxSlot.h"
+#include "types/classes/CVector3d.h"
+#include "types/structs/SSoundDeviceInfo.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2C70000
 // =============================================================================
 
+// CSfxOptions[8]
+extern CSfxOptions g_CSfxOptions_ARRAY_02c78cf0[8];
+
 // CSfxSample[64]
 extern CSfxSample g_SfxSamples[64];
+
+// CSfxSlot[64]
+extern CSfxSlot g_CSfxSlot_ARRAY_02c745ec[64];
+
+// CVector3d
+extern CVector3d g_CVector3d_02c7fc28;
+extern CVector3d g_CVector3d_02c7fc40;
+
+// SSoundDeviceInfo[8]
+extern SSoundDeviceInfo g_SSoundDeviceInfo_ARRAY_02c7fd90[8];
+
+// byte
+extern byte g_BYTE_02c745b8;
+
+// double
+extern double g_DOUBLE_02c7fbf8;
+extern double g_DOUBLE_02c7fc00;
+extern double g_DOUBLE_02c7fc08;
+extern double g_DOUBLE_02c7fc10;
+extern double g_DOUBLE_02c7fc18;
+extern double g_DOUBLE_02c7fc20;
+
+// float
+extern float g_FLOAT_02c745e0;
+
+// float[32]
+extern float g_FLOAT_ARRAY_02c7fc90[32];
+
+// int
+extern int g_INT_02c745bc;
+extern int g_INT_02c745e4;
+extern int g_INT_02c745e8;
+extern int g_INT_02c78cec;
+extern int g_INT_02c78ff0;
+extern int g_INT_02c7fc88;
+extern int g_INT_02c7fc8c;
+
+// int[32]
+extern int g_INT_ARRAY_02c7fd10[32];
+
+// int[8]
+extern int g_INT_ARRAY_02c745c0[8];
 

@@ -48,10 +48,12 @@ LAB_004a41fa:
         texture = (SMRGLTextureBasic *)(&DAT_005fd8dc + iVar3);
       }
       else {
-        texture = (SMRGLTextureBasic *)(&DAT_005fd60c + iVar3);
+        texture = (SMRGLTextureBasic *)
+                  (g_SMRGLTextureBasic_ARRAY_005fd60c[0].texture_name + iVar3 + -8);
       }
     }
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+              (g_CDemonRenderer_PTR_005f2afc,texture);
     iVar3 = iVar3 + 0x18;
     if (iVar1 * 0x18 <= iVar3) {
       return;

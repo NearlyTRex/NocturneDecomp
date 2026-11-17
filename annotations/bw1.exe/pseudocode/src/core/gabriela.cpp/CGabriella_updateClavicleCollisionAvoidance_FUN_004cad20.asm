@@ -17,12 +17,12 @@
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c6c97
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600d6c
+;   float g_FLOAT_00600d6c = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01cc910c
-;   undefined4 DAT_01cc9110
-;   undefined4 DAT_01cc9148
-;   undefined4 DAT_01cc914c
+;   undefined4 g_INT_ARRAY_01cc9108[1]
+;   undefined4 g_INT_ARRAY_01cc9108[2]
+;   undefined4 g_INT_ARRAY_01cc9108[16]
+;   undefined4 g_INT_ARRAY_01cc9108[17]
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     FLD float ptr [EBX + 0x1ffc8]       ; 004cad38
     FLD float ptr [EBX + 0x1ffcc]       ; 004cad3e
     FXCH ST2                            ; 004cad44
-    FDIV float ptr [0x00600d6c]         ; 004cad46 | DAT_00600d6c
+    FDIV float ptr [0x00600d6c]         ; 004cad46 | g_FLOAT_00600d6c
     FXCH                                ; 004cad4c
     FSUB ST0,ST1                        ; 004cad4e
     FXCH ST2                            ; 004cad50
@@ -152,9 +152,9 @@ section .text
     LEA EAX,[ESP + 0x90]                ; 004cae81
         ;   Label: LAB_004cae81
     PUSH EAX                            ; 004cae88
-    MOV EAX,[0x01cc910c]                ; 004cae89 | DAT_01cc910c
+    MOV EAX,[0x01cc910c]                ; 004cae89 | g_INT_ARRAY_01cc9108[1]
     PUSH EAX                            ; 004cae8e
-    MOV EDX,dword ptr [0x01cc9148]      ; 004cae8f | DAT_01cc9148
+    MOV EDX,dword ptr [0x01cc9148]      ; 004cae8f | g_INT_ARRAY_01cc9108[16]
     PUSH EDX                            ; 004cae95
     LEA EAX,[EBX + 0x1ffc8]             ; 004cae96
     PUSH EAX                            ; 004cae9c
@@ -201,9 +201,9 @@ section .text
     LEA EAX,[ESP + 0x90]                ; 004caf23
         ;   Label: LAB_004caf23
     PUSH EAX                            ; 004caf2a
-    MOV EDI,dword ptr [0x01cc9110]      ; 004caf2b | DAT_01cc9110
+    MOV EDI,dword ptr [0x01cc9110]      ; 004caf2b | g_INT_ARRAY_01cc9108[2]
     PUSH EDI                            ; 004caf31
-    MOV EBP,dword ptr [0x01cc914c]      ; 004caf32 | DAT_01cc914c
+    MOV EBP,dword ptr [0x01cc914c]      ; 004caf32 | g_INT_ARRAY_01cc9108[17]
     PUSH EBP                            ; 004caf38
     LEA EAX,[EBX + 0x1ffcc]             ; 004caf39
     PUSH EAX                            ; 004caf3f
@@ -237,7 +237,7 @@ section .text
         ;   XREF to: 004caf23 (UNCONDITIONAL_JUMP)  ; LAB_004caf23
     PUSH 0x567360                       ; 004caf95
         ;   Label: LAB_004caf95
-    MOV ECX,dword ptr [0x01cc910c]      ; 004caf9a | DAT_01cc910c
+    MOV ECX,dword ptr [0x01cc910c]      ; 004caf9a | g_INT_ARRAY_01cc9108[1]
     PUSH ECX                            ; 004cafa0
     PUSH dword ptr [EBX + 0x1ffc8]      ; 004cafa1
     PUSH 0x0                            ; 004cafa7
@@ -248,7 +248,7 @@ section .text
         ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 004cafb6
     PUSH 0x567360                       ; 004cafb9
-    MOV EDI,dword ptr [0x01cc9110]      ; 004cafbe | DAT_01cc9110
+    MOV EDI,dword ptr [0x01cc9110]      ; 004cafbe | g_INT_ARRAY_01cc9108[2]
     PUSH EDI                            ; 004cafc4
     PUSH dword ptr [EBX + 0x1ffcc]      ; 004cafc5
     PUSH 0x0                            ; 004cafcb

@@ -4,12 +4,22 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/ddraw.h"
+#include "system/unknwn.h"
+#include "system/winnt.h"
+#include "system/winuser.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CAudioRecPuzzle.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
 #include "types/classes/CExamplePuzzle.h"
 #include "types/classes/CGameHook.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CSimpleParticleSystem.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeather.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2660000
@@ -41,6 +51,7 @@ extern CDemonActorType g_CUnionClassInfo;
 extern CDemonActorType g_CSteubenClassInfo;
 extern CDemonActorType g_CRobinClassInfo;
 extern CDemonActorType g_CCrossClassInfo;
+extern CDemonActorType g_CDemonActorType_02668738;
 extern CDemonActorType g_CGrandmaClassInfo;
 extern CDemonActorType g_CSearchPartyClassInfo;
 extern CDemonActorType g_CBellingClassInfo;
@@ -52,12 +63,139 @@ extern CDemonActorType g_CParticleBoxClassInfo;
 extern CDemonActorType g_CSpiritMineClassInfo;
 extern CDemonActorType g_CNecklaceClassInfo;
 
+// CDemonGlobe
+extern CDemonGlobe g_CDemonGlobe_02661f3c;
+extern CDemonGlobe g_CDemonGlobe_026686b8;
+
 // CExamplePuzzle
 extern CExamplePuzzle g_CExamplePuzzleInstance;
 
 // CGameHook
 extern CGameHook g_CGameHookInstance;
 
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_026681e0;
+
 // CSimpleParticleSystem
 extern CSimpleParticleSystem g_CSimpleParticleSystemInstance;
+
+// CVector3f
+extern CVector3f g_CVector3f_02662d04;
+extern CVector3f g_CVector3f_02662d10;
+
+// CVector3f[200]
+extern CVector3f g_CVector3f_ARRAY_02661fb8[200];
+
+// CWeather
+extern CWeather g_CWeather_02661f80;
+
+// HWND
+extern HWND g_HWND_02664628;
+
+// IDirectDraw*
+extern IDirectDraw* g_IDirectDraw_PTR_02661ae0;
+
+// IDirectDrawSurface*
+extern IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae4;
+extern IDirectDrawSurface* g_IDirectDrawSurface_PTR_02661ae8;
+
+// IUnknown*
+extern IUnknown* g_IUnknown_PTR_02661aec;
+
+// PALETTEENTRY[256]
+extern PALETTEENTRY g_PALETTEENTRY_ARRAY_02661b00[256];
+
+// SMRGLPrimitiveQuad[1000]
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_02668a10[1000];
+
+// SRenderVertex[32]
+extern SRenderVertex g_SRenderVertex_ARRAY_02665a6c[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_0266606c[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_0266666c[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_02666c6c[32];
+
+// _struct_19
+extern _struct_19 g_struct_19_02662d68;
+extern _struct_19 g_struct_19_02662d70;
+
+// byte
+extern byte g_BYTE_02662de4;
+extern byte g_BYTE_026686f8;
+
+// char*[128]
+extern char* g_CHAR_PTR_ARRAY_026652bc[128];
+
+// char[200]
+extern char g_CHAR_ARRAY_02662c38[200];
+extern char g_CHAR_ARRAY_02664560[200];
+
+// char[256]
+extern char g_CHAR_ARRAY_02664fb8[256];
+extern char g_CHAR_ARRAY_026650b8[256];
+extern char g_CHAR_ARRAY_026651b8[256];
+extern char g_CHAR_ARRAY_02668360[256];
+
+// char[6000]
+extern char g_CHAR_ARRAY_02662df0[6000];
+
+// double
+extern double g_DOUBLE_02662d78;
+
+// float
+extern float g_FLOAT_02664fa0;
+extern float g_FLOAT_02664fa4;
+
+// float[200]
+extern float g_FLOAT_ARRAY_02662918[200];
+
+// int
+extern int g_INT_02661af4;
+extern int g_INT_02661af8;
+extern int g_INT_02661afc;
+extern int g_INT_02662d64;
+extern int g_INT_02662d80;
+extern int g_INT_02662dd8;
+extern int g_INT_02662ddc;
+extern int g_INT_02662de0;
+extern int g_INT_02662de8;
+extern int g_INT_02664630;
+extern int g_INT_02664634;
+extern int g_INT_02664638;
+extern int g_INT_0266463c;
+extern int g_INT_02664fa8;
+extern int g_INT_026652b8;
+extern int g_INT_02665a44;
+extern int g_INT_02665a48;
+extern int g_INT_02665a4c;
+extern int g_INT_02665a50;
+extern int g_INT_02665a58;
+extern int g_INT_02665a5c;
+extern int g_INT_02665a60;
+extern int g_INT_02665a64;
+extern int g_INT_02665a68;
+extern int g_INT_026672a8;
+extern int g_INT_026677ac;
+extern int g_INT_026677b0;
+extern int g_INT_026677e0;
+extern int g_INT_026677e4;
+extern int g_INT_026677e8;
+extern int g_INT_02668128;
+
+// int[1]
+extern int g_INT_ARRAY_02662d84[1];
+extern int g_INT_ARRAY_02665974[1];
+extern int g_INT_ARRAY_026677b4[1];
+
+// int[20]
+extern int g_INT_ARRAY_02662d88[20];
+
+// int[600]
+extern int g_INT_ARRAY_02664640[600];
+
+// uint
+extern uint g_UINT_02662d00;
+
+// void*
+extern void* g_PTR_02661af0;
+extern void* g_PTR_026656bc;
 

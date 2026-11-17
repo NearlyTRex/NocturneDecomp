@@ -28,10 +28,11 @@ void __cdecl core_fire_cpp_CFireEffect_preloadTossAssets_FUN_004a4340(CFireEffec
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
               (&CStack_180,"scarabstone.kfm");
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&CStack_180);
-    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(&CStack_180,(char *)0x5c0a94);
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
+              (&CStack_180,"disbug.kfm");
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&CStack_180);
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-              ((CDeformableModelInstance *)&stack0xffffdadc,(char *)0x5c0a9f);
+              ((CDeformableModelInstance *)&stack0xffffdadc,"guul.dfm");
     core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
               ((CDeformableModelInstance *)&stack0xffffdadc);
     sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_disease_loop.wav");

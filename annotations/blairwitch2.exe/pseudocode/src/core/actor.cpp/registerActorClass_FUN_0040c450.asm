@@ -27,11 +27,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005cae00
 ;   TerminatedCString s_Too_many_actor_types_005cae12
-;   undefined4 DAT_0061ed94
-;   undefined4 DAT_007bc044
-;   undefined4 DAT_007bc048
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
+;   int g_INT_007bc044
+;   CDemonActorType*[200] g_CDemonActorType_PTR_ARRAY_007bc048
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -82,16 +82,16 @@ section .text
     TEST EAX,EAX                        ; 0040c49d
     JNZ 0x0040c4ce                      ; 0040c49f
         ;   XREF to: 0040c4ce (CONDITIONAL_JUMP)  ; LAB_0040c4ce
-    MOV EDX,dword ptr [0x007bc044]      ; 0040c4a1 | DAT_007bc044
+    MOV EDX,dword ptr [0x007bc044]      ; 0040c4a1 | g_INT_007bc044
     MOV dword ptr [EBP + 0x38],EBX      ; 0040c4a7
     CMP EDX,0xc8                        ; 0040c4aa
     JGE 0x0040c4ff                      ; 0040c4b0
         ;   XREF to: 0040c4ff (CONDITIONAL_JUMP)  ; LAB_0040c4ff
-    MOV EAX,[0x007bc044]                ; 0040c4b2 | DAT_007bc044
+    MOV EAX,[0x007bc044]                ; 0040c4b2 | g_INT_007bc044
         ;   Label: LAB_0040c4b2
     LEA ESI,[EAX + 0x1]                 ; 0040c4b7
-    MOV dword ptr [EAX*0x4 + 0x7bc048],EBP ; 0040c4ba | DAT_007bc048
-    MOV dword ptr [0x007bc044],ESI      ; 0040c4c1 | DAT_007bc044
+    MOV dword ptr [EAX*0x4 + 0x7bc048],EBP ; 0040c4ba | g_CDemonActorType_PTR_ARRAY_007bc048
+    MOV dword ptr [0x007bc044],ESI      ; 0040c4c1 | g_INT_007bc044
     MOV EAX,EBP                         ; 0040c4c7
     POP EBP                             ; 0040c4c9
     POP EDI                             ; 0040c4ca
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_0040c4ce
     INC DL                              ; 0040c4d0
     AND EDX,0xff                        ; 0040c4d2
-    TEST byte ptr [EDX + 0x61ed94],0xe0 ; 0040c4d8 | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0xe0 ; 0040c4d8 | g_UCHAR_ARRAY_0061ed94
     JZ 0x0040c498                       ; 0040c4df
         ;   XREF to: 0040c498 (CONDITIONAL_JUMP)  ; LAB_0040c498
     PUSH EAX                            ; 0040c4e1
@@ -123,8 +123,8 @@ section .text
         ;   Label: LAB_0040c4ff
     MOV EBX,0xa7c                       ; 0040c504
     PUSH 0x5cae12                       ; 0040c509 | = "Too many actor types!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0040c50e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0040c514 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0040c50e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 0040c514 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040c51a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040c51f

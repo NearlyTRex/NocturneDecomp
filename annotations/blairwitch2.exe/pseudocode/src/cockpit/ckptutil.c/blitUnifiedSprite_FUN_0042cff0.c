@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 {
@@ -22,21 +20,21 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data
   int iVar9;
   int iStack_2c;
   int iStack_28;
-  void *pvStack_1c;
-  void *pvStack_18;
+  byte *puStack_1c;
+  byte *puStack_18;
   
-  iVar6 = _DAT_01c35e50 - dest_x;
-  iVar1 = _DAT_01c2a390 - _DAT_01c2a38c;
-  iVar8 = _DAT_01c35e48 - dest_x;
+  iVar6 = g_INT_01c35e50 - dest_x;
+  iVar1 = (int)g_ARRAY_PTR_01c2a38c[1] - (int)g_ARRAY_PTR_01c2a38c[0];
+  iVar8 = g_INT_01c35e48 - dest_x;
   if (sprite_data != (void *)0x0) {
     pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
-    if (DAT_006141c0 == 8) {
-      pvStack_18 = (void *)(dest_x + *(int *)(&DAT_01c2a38c + dest_y * 4));
+    if (g_INT_006141c0 == 8) {
+      puStack_18 = g_ARRAY_PTR_01c2a38c[dest_y] + dest_x;
       if (0 < height) {
         iStack_28 = 0;
         do {
           if (span_data == (void *)0x0) {
-            (*pCVar2)(pvStack_18,sprite_data,width);
+            (*pCVar2)(puStack_18,sprite_data,width);
           }
           else {
             iVar7 = 0;
@@ -50,26 +48,26 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data
                 iVar7 = iVar7 + 4;
               }
               else {
-                (*pCVar2)((void *)(iVar3 + (int)pvStack_18),(void *)((int)sprite_data + iVar3),
-                          (iVar5 - iVar3) + 1);
+                (*pCVar2)(puStack_18 + iVar3,(void *)((int)sprite_data + iVar3),(iVar5 - iVar3) + 1)
+                ;
                 iVar9 = iVar9 + 1;
                 iVar7 = iVar7 + 4;
               }
             }
           }
           iStack_28 = iStack_28 + 0x84;
-          pvStack_18 = (void *)((int)pvStack_18 + iVar1);
+          puStack_18 = puStack_18 + iVar1;
           sprite_data = (void *)((int)sprite_data + width);
         } while (iStack_28 < height * 0x84);
       }
     }
     else {
-      pvStack_1c = (void *)(*(int *)(&DAT_01c2a38c + dest_y * 4) + dest_x * 2);
+      puStack_1c = g_ARRAY_PTR_01c2a38c[dest_y] + dest_x * 2;
       if (0 < height) {
         iStack_2c = 0;
         do {
           if (span_data == (void *)0x0) {
-            (*pCVar2)(pvStack_1c,sprite_data,width);
+            (*pCVar2)(puStack_1c,sprite_data,width);
           }
           else {
             iVar7 = 0;
@@ -83,7 +81,7 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data
                 iVar7 = iVar7 + 4;
               }
               else {
-                (*pCVar2)((void *)(iVar3 * 2 + (int)pvStack_1c),(void *)((int)sprite_data + iVar3),
+                (*pCVar2)(puStack_1c + iVar3 * 2,(void *)((int)sprite_data + iVar3),
                           (iVar5 - iVar3) + 1);
                 iVar9 = iVar9 + 1;
                 iVar7 = iVar7 + 4;
@@ -91,7 +89,7 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data
             }
           }
           iStack_2c = iStack_2c + 0x84;
-          pvStack_1c = (void *)((int)pvStack_1c + (iVar1 / 2) * 2);
+          puStack_1c = puStack_1c + (iVar1 / 2) * 2;
           sprite_data = (void *)((int)sprite_data + width);
         } while (iStack_2c < height * 0x84);
       }

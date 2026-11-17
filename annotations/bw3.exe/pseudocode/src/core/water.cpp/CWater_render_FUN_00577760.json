@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 425,
-    "complexity_score": 520,
+    "complexity_score": 281,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 41,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 175,
-    "suspect_count": 33,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 186,
+    "suspect_count": 8,
     "suspect_types": [
+      "pointer_cast",
       "suspect_float",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 600
+    "total_lines": 611
   },
   "cross_references": [
     {
@@ -103,39 +103,39 @@
   "globals": [
     {
       "addr": "005d71bb",
-      "name": "DAT_005d71bb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d71bb",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "005d71c3",
-      "name": "DAT_005d71c3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d71c3",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005d71cb",
-      "name": "DAT_005d71cb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d71cb",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005d71d3",
-      "name": "DAT_005d71d3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d71d3",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005e5e7c",
-      "name": "DAT_005e5e7c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e5e7c",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005fe9dc",
@@ -145,98 +145,98 @@
     },
     {
       "addr": "00606b24",
-      "name": "DAT_00606b24",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00606b24",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "00606b28",
-      "name": "DAT_00606b28",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00606b28",
+      "type": "int",
+      "value": "0x2000"
     },
     {
       "addr": "00606cac",
-      "name": "DAT_00606cac",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_ARRAY_00606cac",
+      "type": "SMRGLTextureBasic[16]",
       "value": null
     },
     {
       "addr": "00606e2c",
-      "name": "DAT_00606e2c",
-      "type": "undefined4",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c",
+      "type": "SMRGLPrimitiveQuad",
       "value": null
     },
     {
       "addr": "00606e48",
-      "name": "DAT_00606e48",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[0].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e4c",
-      "name": "DAT_00606e4c",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[0].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e54",
-      "name": "DAT_00606e54",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[1].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e58",
-      "name": "DAT_00606e58",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[1].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e60",
-      "name": "DAT_00606e60",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[2].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e64",
-      "name": "DAT_00606e64",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[2].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e6c",
-      "name": "DAT_00606e6c",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[3].texture_u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00606e70",
-      "name": "DAT_00606e70",
+      "name": "g_SMRGLPrimitiveQuad_00606e2c.vertices[3].texture_v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c5fad0",
-      "name": "DAT_01c5fad0",
-      "type": "undefined4",
+      "name": "g_INT_01c5fad0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e24c",
-      "name": "DAT_01c6e24c",
-      "type": "undefined4",
+      "name": "g_INT_01c6e24c",
+      "type": "int",
       "value": null
     },
     {
@@ -253,97 +253,97 @@
     },
     {
       "addr": "02cfd960",
-      "name": "DAT_02cfd960",
-      "type": "undefined4",
+      "name": "g_FLOAT_02cfd960",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02cfd964",
-      "name": "DAT_02cfd964",
-      "type": "undefined4",
+      "name": "g_FLOAT_02cfd964",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02cfd968",
-      "name": "DAT_02cfd968",
-      "type": "undefined4",
+      "name": "g_FLOAT_02cfd968",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02cfd96c",
-      "name": "DAT_02cfd96c",
-      "type": "undefined4",
+      "name": "g_FLOAT_02cfd96c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02cfd970",
-      "name": "DAT_02cfd970",
-      "type": "undefined4",
+      "name": "g_FLOAT_02cfd970",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02cfd974",
-      "name": "DAT_02cfd974",
-      "type": "undefined4",
+      "name": "g_INT_02cfd974",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cfd978",
-      "name": "DAT_02cfd978",
-      "type": "undefined4",
+      "name": "g_INT_02cfd978",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cfd97c",
-      "name": "DAT_02cfd97c",
-      "type": "undefined4",
+      "name": "g_INT_02cfd97c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cfd980",
-      "name": "DAT_02cfd980",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_02cfd980",
+      "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02d01980",
-      "name": "DAT_02d01980",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_02d01980",
+      "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02d059a4",
-      "name": "DAT_02d059a4",
-      "type": "undefined4",
+      "name": "g_INT_02d059a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d059a8",
-      "name": "DAT_02d059a8",
-      "type": "undefined4",
+      "name": "g_FLOAT_02d059a8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02d059ac",
-      "name": "DAT_02d059ac",
-      "type": "undefined4",
+      "name": "g_INT_02d059ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d059af",
-      "name": "DAT_02d059af",
+      "name": "g_INT_02d059ac+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d059b0",
-      "name": "DAT_02d059b0",
-      "type": "undefined4",
+      "name": "g_INT_02d059b0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d059b3",
-      "name": "DAT_02d059b3",
+      "name": "g_INT_02d059b0+3",
       "type": "undefined4",
       "value": null
     }
@@ -662,32 +662,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_00606b28",
-      "severity": "mild",
-      "text": "if (DAT_00606b28 < _DAT_02cfd974) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00606b28",
-      "severity": "mild",
-      "text": "_DAT_02cfd974 = _DAT_02cfd974 - DAT_00606b28;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 41,
+      "line": 39,
       "match": "8.032708e-39",
       "severity": "mild",
       "text": "CStack_80.y = 8.032708e-39;",
@@ -695,235 +671,59 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 44,
+      "line": 42,
       "match": "8.032718e-39",
       "severity": "mild",
       "text": "CStack_80.x = 8.032718e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_02d059af",
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._3_1_",
       "severity": "mild",
-      "text": "DAT_02d059af = DAT_02d059af + '\\x01';",
-      "type": "undefined_data"
+      "text": "g_INT_02d059ac._3_1_ = g_INT_02d059ac._3_1_ + '\\x01';",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_02d059af",
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._3_1_",
       "severity": "mild",
-      "text": "DAT_02d059af = DAT_02d059af + '\\x01';",
-      "type": "undefined_data"
+      "text": "g_INT_02d059ac._3_1_ = g_INT_02d059ac._3_1_ + '\\x01';",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_02d059b3",
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._3_1_",
       "severity": "mild",
-      "text": "DAT_02d059b3 = DAT_02d059b3 + '\\x01';",
-      "type": "undefined_data"
+      "text": "g_INT_02d059b0._3_1_ = g_INT_02d059b0._3_1_ + '\\x01';",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_02d059b3",
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._3_1_",
       "severity": "mild",
-      "text": "DAT_02d059b3 = DAT_02d059b3 + '\\x01';",
-      "type": "undefined_data"
+      "text": "g_INT_02d059b0._3_1_ = g_INT_02d059b0._3_1_ + '\\x01';",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_00606e54",
-      "severity": "mild",
-      "text": "DAT_00606e54 = _DAT_02d059ac + 0x1000000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_00606e64",
-      "severity": "mild",
-      "text": "DAT_00606e64 = _DAT_02d059b0 + 0x1000000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_00606b28",
-      "severity": "mild",
-      "text": "_DAT_02d059a4 = (int)(((longlong)_DAT_02cfd974 * 0xffff) / (longlong)DAT_00606b28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_00606e54",
-      "severity": "mild",
-      "text": "_DAT_00606e60 = DAT_00606e54;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_00606e64",
-      "severity": "mild",
-      "text": "_DAT_00606e70 = DAT_00606e64;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(&DAT_00606cac + _DAT_02cfd978 * 0x18));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_00606cac",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(&DAT_00606cac + _DAT_02cfd978 * 0x18));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 87,
-      "match": "DAT_02cfd980",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_02cfd980 + local_28);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_INT_ARRAY_02cfd980",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_INT_ARRAY_02cfd980 + local_28);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 88,
-      "match": "DAT_02d01980",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_02d01980 + local_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&CStack_80);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,local_50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_68);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_74);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 150,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_00606e2c",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 159,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 159,
-      "match": "DAT_00606e2c",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 163,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0(DAT_005f2afc,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_00606e2c",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 169,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xc000);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 171,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 171,
-      "match": "DAT_00606e2c",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_INT_ARRAY_02d01980",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)g_INT_ARRAY_02d01980 + local_28);",
+      "type": "pointer_cast"
     }
   ]
 }

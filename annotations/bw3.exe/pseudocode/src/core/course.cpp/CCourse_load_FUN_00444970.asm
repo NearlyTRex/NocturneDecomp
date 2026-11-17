@@ -12,8 +12,8 @@
 ;   core_platfrm.cpp_CPlatform_setup_FUN_005112b0 at 0051130d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_00444910
@@ -163,8 +163,8 @@ section .text
     MOV EDX,0x5b9844                    ; 00444a72
     MOV ECX,0x7c                        ; 00444a77
     PUSH 0x5b9857                       ; 00444a7c
-    MOV dword ptr [0x01d71de0],EDX      ; 00444a81 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00444a87 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00444a81 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00444a87 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00444a8d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00444a92

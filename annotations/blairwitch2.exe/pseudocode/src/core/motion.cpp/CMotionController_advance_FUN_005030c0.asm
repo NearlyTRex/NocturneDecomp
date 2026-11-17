@@ -46,13 +46,13 @@
 ;   TerminatedCString s_core_motion_cpp_005dfbbf
 ;   TerminatedCString s_Invalid_transition_comma_005dfbd2
 ;   TerminatedCString s_signal_d_005dfc1e
-;   undefined4 DAT_005dfc28
-;   undefined4 DAT_005dfc30
-;   undefined4 DAT_005dfc38
-;   undefined4 DAT_005dfc40
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005dfc28 = 0.0000100000000000000
+;   double g_DOUBLE_005dfc30 = 0.5
+;   double g_DOUBLE_005dfc38 = 0.499900000000000
+;   double g_DOUBLE_005dfc40 = 0.000100000000000000
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
@@ -93,7 +93,7 @@ section .text
     MOV dword ptr [ESP + 0x90],EAX      ; 005030ff
     FLD float ptr [EDI]                 ; 00503106
         ;   Label: LAB_00503106
-    FCOMP double ptr [0x005dfc28]       ; 00503108 | DAT_005dfc28
+    FCOMP double ptr [0x005dfc28]       ; 00503108 | g_DOUBLE_005dfc28
     FNSTSW AX                           ; 0050310e
     SAHF                                ; 00503110
     JA 0x00503138                       ; 00503111
@@ -224,7 +224,7 @@ section .text
     FMUL float ptr [EBX + 0x10]         ; 00503244
     FSUBR float ptr [EBX + 0x14]        ; 00503247
     FST float ptr [EBX + 0x14]          ; 0050324a
-    FCOMP double ptr [0x005dfc40]       ; 0050324d | DAT_005dfc40
+    FCOMP double ptr [0x005dfc40]       ; 0050324d | g_DOUBLE_005dfc40
     FNSTSW AX                           ; 00503253
     SAHF                                ; 00503255
     JNC 0x00503261                      ; 00503256
@@ -259,7 +259,7 @@ section .text
     ADD ESP,0xc                         ; 00503297
     LEA EAX,[ESP + 0x10]                ; 0050329a
     PUSH EAX                            ; 0050329e
-    MOV ECX,dword ptr [0x006141f0]      ; 0050329f | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 0050329f | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 005032a5
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 005032a6
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -271,7 +271,7 @@ section .text
     POP ESI                             ; 005032b4
     POP EBX                             ; 005032b5
     RET                                 ; 005032b6
-    FLD double ptr [0x005dfc30]         ; 005032b7 | DAT_005dfc30
+    FLD double ptr [0x005dfc30]         ; 005032b7 | g_DOUBLE_005dfc30
         ;   Label: LAB_005032b7
     FSUB double ptr [ESP]               ; 005032bd
     JMP 0x0050316e                      ; 005032c0
@@ -331,8 +331,8 @@ section .text
     MOV ECX,0x5dfb66                    ; 00503344 | = "..\\core\\motion.cpp"
     MOV EAX,0x1a9                       ; 00503349
     PUSH 0x5dfb79                       ; 0050334e | = "CMotionController::advance: Tweening ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00503353 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00503359 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00503353 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00503359 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050335e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00503363
@@ -343,7 +343,7 @@ section .text
     FMUL float ptr [EBX + 0x10]         ; 0050336f
     FADD float ptr [EBX + 0x14]         ; 00503372
     FST float ptr [EBX + 0x14]          ; 00503375
-    FCOMP double ptr [0x005dfc38]       ; 00503378 | DAT_005dfc38
+    FCOMP double ptr [0x005dfc38]       ; 00503378 | g_DOUBLE_005dfc38
     FNSTSW AX                           ; 0050337e
     SAHF                                ; 00503380
     JBE 0x00503261                      ; 00503381
@@ -395,8 +395,8 @@ section .text
     MOV EAX,0x5dfbbf                    ; 005033fa | = "..\\core\\motion.cpp"
     MOV EDX,0x1e2                       ; 005033ff
     PUSH 0x5dfbd2                       ; 00503404 | = "Invalid transition command returned b..."
-    MOV [0x01d046a0],EAX                ; 00503409 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0050340e | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00503409 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 0050340e | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00503414
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00503419

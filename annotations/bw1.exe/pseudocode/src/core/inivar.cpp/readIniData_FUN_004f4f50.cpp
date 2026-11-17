@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
 
 {
@@ -16,8 +14,8 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
   
   iVar1 = _chmod(".\\system\\nocturne.ini",0x180);
   if (iVar1 != 0) {
-    _DAT_01d1d400 = "..\\core\\inivar.cpp";
-    _DAT_01d1d404 = 0x57;
+    g_CHAR_PTR_01d1d400 = "..\\core\\inivar.cpp";
+    g_INT_01d1d404 = 0x57;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Please copy Nocturne to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_210,".\\system\\nocturne.ini",(char *)0x0);
@@ -28,19 +26,18 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
             (&local_210,"gamePIXY",&g_CGamePtr->game_pixy);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"gameBPP",&g_CGamePtr->game_bpp);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
-            (&local_210,"useDirect3D",(int *)&DAT_02c83370);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
-            (&local_210,"useAGPFlag",(int *)&DAT_02c8337c);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(&local_210,"useDirect3D",&g_INT_02c83370)
+  ;
+  engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(&local_210,"useAGPFlag",&g_INT_02c8337c);
   engine_ini_cpp_CIniFile_getString_FUN_004f4c00
-            (&local_210,"rendererDLLPath",&DAT_006257d0,0xfa);
+            (&local_210,"rendererDLLPath",g_CHAR_ARRAY_006257d0,0xfa);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(&local_210,"gamma",&g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"heroNumber",(int *)&g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"haloMode",&g_CGamePtr->halo_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
-            (&local_210,"firstTimeFlag",(int *)&DAT_01d06d68);
+            (&local_210,"firstTimeFlag",&g_INT_01d06d68);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"subtitleMode",&g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
@@ -53,9 +50,9 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
             (&local_210,"shadowFlag",&g_CGamePtr->shadow_flag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"quimbyFlag",&g_CGamePtr->quimby_flag);
-  _DAT_01d1f5d4 = 0;
+  g_CHAR_PTR_ARRAY_01d1f5b8[7] = (char *)0x0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
-            (&local_210,"currentBoard",(int *)&DAT_01d1f5d4);
+            (&local_210,"currentBoard",(int *)(g_CHAR_PTR_ARRAY_01d1f5b8 + 7));
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
             (&local_210,"puzzleDifficultyMode",&g_CGamePtr->puzzle_difficulty_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10

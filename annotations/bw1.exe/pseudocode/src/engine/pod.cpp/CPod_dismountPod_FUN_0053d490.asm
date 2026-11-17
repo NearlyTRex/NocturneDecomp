@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_005edb64
 ;   TerminatedCString s_CPod_dismountPod_invalid_005edb76
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -43,8 +43,8 @@ section .text
     MOV ECX,0x5edb64                    ; 0053d4a4 | = "..\\engine\\pod.cpp"
     MOV EDI,0x6be                       ; 0053d4a9
     PUSH 0x5edb76                       ; 0053d4ae | = "CPod::dismountPod - invalid index"
-    MOV dword ptr [0x01d1d400],ECX      ; 0053d4b3 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0053d4b9 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0053d4b3 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0053d4b9 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053d4bf
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053d4c4

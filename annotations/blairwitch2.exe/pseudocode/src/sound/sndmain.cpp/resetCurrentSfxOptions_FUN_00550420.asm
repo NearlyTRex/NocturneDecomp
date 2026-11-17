@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264161c
+;   int g_INT_0264161c
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxOptions_reset_FUN_00550070
@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x0264161c]      ; 00550420 | DAT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 00550420 | g_INT_0264161c
         ;   Label: sound_sndmain.cpp_resetCurrentSfxOptions_FUN_00550420
     LEA EAX,[EDX*0x4 + 0x0]             ; 00550426
     SUB EAX,EDX                         ; 0055042d

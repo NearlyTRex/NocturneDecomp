@@ -20,8 +20,8 @@
 ;   core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00562100 at 005622de
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fffac
-;   undefined4 DAT_01caf068
+;   float g_FLOAT_005fffac = 0.02000000
+;   int g_INT_01caf068
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLaserBeam_init_FUN_004b0000
@@ -32,7 +32,7 @@ section .text
 
     PUSH EBP                            ; 004b60e0
         ;   Label: core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0
-    MOV EDX,dword ptr [0x01caf068]      ; 004b60e1 | DAT_01caf068
+    MOV EDX,dword ptr [0x01caf068]      ; 004b60e1 | g_INT_01caf068
     CMP EDX,0x40                        ; 004b60e7
     JL 0x004b60ee                       ; 004b60ea
         ;   XREF to: 004b60ee (CONDITIONAL_JUMP)  ; LAB_004b60ee
@@ -44,7 +44,7 @@ section .text
     PUSH EBX                            ; 004b60f0
     PUSH dword ptr [ESP + 0x30]         ; 004b60f1
     MOV ECX,dword ptr [ESP + 0x30]      ; 004b60f5
-    PUSH dword ptr [0x005fffac]         ; 004b60f9 | DAT_005fffac
+    PUSH dword ptr [0x005fffac]         ; 004b60f9 | g_FLOAT_005fffac
     PUSH ECX                            ; 004b60ff
     MOV EBX,dword ptr [ESP + 0x34]      ; 004b6100
     PUSH EBX                            ; 004b6104
@@ -63,10 +63,10 @@ section .text
     PUSH EAX                            ; 004b6126
     CALL core_fire.cpp_CLaserBeam_init_FUN_004b0000 ; 004b6127
         ;   XREF to: 004b0000 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_init_FUN_004b0000(CLaserBeam * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
-    MOV EAX,[0x01caf068]                ; 004b612c | DAT_01caf068
+    MOV EAX,[0x01caf068]                ; 004b612c | g_INT_01caf068
     INC EAX                             ; 004b6131
     ADD ESP,0x2c                        ; 004b6132
-    MOV [0x01caf068],EAX                ; 004b6135 | DAT_01caf068
+    MOV [0x01caf068],EAX                ; 004b6135 | g_INT_01caf068
     POP EBX                             ; 004b613a
     POP ESI                             ; 004b613b
     POP EDI                             ; 004b613c

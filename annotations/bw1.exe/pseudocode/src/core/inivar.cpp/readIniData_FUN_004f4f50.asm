@@ -96,14 +96,14 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004f4fe1
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f4fe6
-    PUSH 0x2c83370                      ; 004f4fe9 | DAT_02c83370
+    PUSH 0x2c83370                      ; 004f4fe9 | g_INT_02c83370
     PUSH 0x5e595b                       ; 004f4fee | = "useDirect3D"
     LEA EAX,[ESP + 0xc]                 ; 004f4ff3
     PUSH EAX                            ; 004f4ff7
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004f4ff8
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f4ffd
-    PUSH 0x2c8337c                      ; 004f5000 | DAT_02c8337c
+    PUSH 0x2c8337c                      ; 004f5000 | g_INT_02c8337c
     PUSH 0x5e5967                       ; 004f5005 | = "useAGPFlag"
     LEA EAX,[ESP + 0xc]                 ; 004f500a
     PUSH EAX                            ; 004f500e
@@ -111,7 +111,7 @@ section .text
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f5014
     PUSH 0xfa                           ; 004f5017
-    PUSH 0x6257d0                       ; 004f501c | DAT_006257d0
+    PUSH 0x6257d0                       ; 004f501c | g_CHAR_ARRAY_006257d0
     PUSH 0x5e5972                       ; 004f5021 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x10]                ; 004f5026
     PUSH EAX                            ; 004f502a
@@ -146,7 +146,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004f5081
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f5086
-    PUSH 0x1d06d68                      ; 004f5089 | DAT_01d06d68
+    PUSH 0x1d06d68                      ; 004f5089 | g_INT_01d06d68
     PUSH 0x5e599c                       ; 004f508e | = "firstTimeFlag"
     LEA EAX,[ESP + 0x8]                 ; 004f5093
     PUSH EAX                            ; 004f5097
@@ -207,12 +207,12 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004f513a
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f513f
-    PUSH 0x1d1f5d4                      ; 004f5142 | DAT_01d1f5d4
+    PUSH 0x1d1f5d4                      ; 004f5142 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
     PUSH 0x5e59f3                       ; 004f5147 | = "currentBoard"
     LEA EAX,[ESP + 0x8]                 ; 004f514c
     XOR ESI,ESI                         ; 004f5150
     PUSH EAX                            ; 004f5152
-    MOV dword ptr [0x01d1f5d4],ESI      ; 004f5153 | DAT_01d1f5d4
+    MOV dword ptr [0x01d1f5d4],ESI      ; 004f5153 | g_CHAR_PTR_ARRAY_01d1f5b8[7]
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004f5159
         ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004f515e
@@ -705,8 +705,8 @@ section .text
         ;   Label: LAB_004f5738
     MOV ECX,0x57                        ; 004f573d
     PUSH 0x5e5919                       ; 004f5742 | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01d1d400],EDX      ; 004f5747 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004f574d | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004f5747 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004f574d | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f5753
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f5758

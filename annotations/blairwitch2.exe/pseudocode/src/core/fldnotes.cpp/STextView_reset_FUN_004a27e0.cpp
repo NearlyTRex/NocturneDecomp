@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_STextView_reset_FUN_004a27e0(STextView *this_ptr)
 
 {
@@ -39,7 +37,7 @@ void __cdecl core_fldnotes_cpp_STextView_reset_FUN_004a27e0(STextView *this_ptr)
   this_ptr->margin_bottom = this_ptr->rect_bottom;
   this_ptr->cursor_x = this_ptr->margin_left;
   this_ptr->cursor_y = this_ptr->margin_top;
-  this_ptr->font = _DAT_01511cd0;
+  this_ptr->font = g_CBitFont_PTR_01511cd0;
   this_ptr->word_x = this_ptr->margin_left;
   this_ptr->word_y = this_ptr->margin_bottom;
   return;

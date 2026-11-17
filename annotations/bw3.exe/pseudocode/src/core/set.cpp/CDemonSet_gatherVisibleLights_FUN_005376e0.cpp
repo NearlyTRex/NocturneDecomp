@@ -6,19 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)
 
 {
-  float fVar1;
+  C3DSLight *pCVar1;
   float fVar2;
   float fVar3;
-  int iVar4;
+  float fVar4;
   int iVar5;
   int iVar6;
   int iVar7;
-  byte bVar8;
+  int iVar8;
+  byte bVar9;
   float afStackY_10c8 [1013];
   CVector3f *input;
   float local_e0;
@@ -48,184 +47,191 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *t
   int local_18;
   int local_14;
   
-  bVar8 = 0;
+  bVar9 = 0;
   if (position == (CVector3f *)0x0) {
-    _DAT_0207fadc = position;
-    if (0 < _DAT_0203ad1c) {
-      iVar7 = _DAT_0203ad1c * 4;
-      iVar4 = 0;
+    g_INT_0207fadc = (int)position;
+    if (0 < g_INT_0203ad1c) {
+      iVar8 = g_INT_0203ad1c * 4;
       iVar5 = 0;
+      iVar6 = 0;
       do {
-        iVar6 = iVar5;
-        if (*(int *)(*(int *)(iVar4 + 0x203ad20) + 0x1cb4) != 0) {
-          iVar6 = iVar5 + 4;
-          _DAT_0207fadc = (CVector3f *)((int)&_DAT_0207fadc->x + 1);
-          *(int *)(&DAT_0207fae0 + iVar5) = *(int *)(iVar4 + 0x203ad20);
-        }
-        iVar4 = iVar4 + 4;
-        iVar5 = iVar6;
-      } while (iVar4 < iVar7);
-    }
-    _DAT_0207f958 = 0;
-    if (0 < _DAT_0203a598) {
-      iVar4 = _DAT_0203a598 * 4;
-      iVar5 = 0;
-      iVar7 = 0;
-      do {
-        iVar6 = iVar7;
-        if (*(int *)(*(int *)(&DAT_0203a59c + iVar5) + 0x1cb4) != 0) {
-          iVar6 = iVar7 + 4;
-          _DAT_0207f958 = _DAT_0207f958 + 1;
-          *(int *)(&DAT_0207f95c + iVar7) = *(int *)(&DAT_0203a59c + iVar5);
+        iVar7 = iVar6;
+        if (*(int *)(*(int *)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar5) + 0x1cb4) != 0) {
+          iVar7 = iVar6 + 4;
+          g_INT_0207fadc = g_INT_0207fadc + 1;
+          *(int *)((int)g_CDemonLight_PTR_ARRAY_0207fae0 + iVar6) =
+               *(int *)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar5);
         }
         iVar5 = iVar5 + 4;
-        iVar7 = iVar6;
-      } while (iVar5 < iVar4);
+        iVar6 = iVar7;
+      } while (iVar5 < iVar8);
     }
-    _DAT_0207faf0 = _DAT_0203ad30;
-    if (0 < _DAT_0203ad30) {
-      iVar5 = _DAT_0203ad30 * 4;
-      iVar7 = 0;
+    g_INT_0207f958 = 0;
+    if (0 < g_INT_0203a598) {
+      iVar5 = g_INT_0203a598 * 4;
+      iVar6 = 0;
+      iVar8 = 0;
       do {
-        iVar4 = iVar7 + 4;
-        *(uint *)(&DAT_0207faf4 + iVar7) = *(uint *)(iVar7 + 0x203ad34);
-        iVar7 = iVar4;
-      } while (iVar4 < iVar5);
+        iVar7 = iVar8;
+        if (*(int *)(*(int *)((int)g_CDemonLight_PTR_ARRAY_0203a59c + iVar6) + 0x1cb4) != 0) {
+          iVar7 = iVar8 + 4;
+          g_INT_0207f958 = g_INT_0207f958 + 1;
+          *(int *)((int)g_CDemonLight_PTR_ARRAY_0207f95c + iVar8) =
+               *(int *)((int)g_CDemonLight_PTR_ARRAY_0203a59c + iVar6);
+        }
+        iVar6 = iVar6 + 4;
+        iVar8 = iVar7;
+      } while (iVar6 < iVar5);
     }
-    _DAT_0207fc84 = _DAT_0203b3e8;
-    local_cc = _DAT_0203b3e8;
-    if (0 < _DAT_0203b3e8) {
-      iVar5 = _DAT_0203b3e8 * 4;
-      iVar7 = 0;
+    g_INT_0207faf0 = g_INT_0203ad30;
+    if (0 < g_INT_0203ad30) {
+      iVar6 = g_INT_0203ad30 * 4;
+      iVar8 = 0;
       do {
-        local_cc = iVar7 + 4;
-        *(uint *)(&DAT_0207fc88 + iVar7) = *(uint *)(&DAT_0203b3ec + iVar7);
-        iVar7 = local_cc;
-      } while (local_cc < iVar5);
+        iVar5 = iVar8 + 4;
+        *(uint *)((int)&g_INT_0207faf4 + iVar8) =
+             *(uint *)((int)g_CDemonGlobe_PTR_ARRAY_0203ad34 + iVar8);
+        iVar8 = iVar5;
+      } while (iVar5 < iVar6);
+    }
+    g_INT_0207fc84 = g_INT_0203b3e8;
+    local_cc = g_INT_0203b3e8;
+    if (0 < g_INT_0203b3e8) {
+      iVar6 = g_INT_0203b3e8 * 4;
+      iVar8 = 0;
+      do {
+        local_cc = iVar8 + 4;
+        *(uint *)((int)g_C3DSLight_PTR_ARRAY_0207fc88 + iVar8) =
+             *(uint *)((int)&g_INT_0203b3ec + iVar8);
+        iVar8 = local_cc;
+      } while (local_cc < iVar6);
     }
   }
   else {
-    iVar7 = 0;
-    _DAT_0207fadc = (CVector3f *)0x0;
-    if (0 < _DAT_0203ad1c) {
-      iVar5 = 0;
+    iVar8 = 0;
+    g_INT_0207fadc = 0;
+    if (0 < g_INT_0203ad1c) {
+      iVar6 = 0;
       do {
-        if (((*(CDemonCamera **)(iVar5 + 0x203ad20))[1].rect_array[0x61].y_min != 0) &&
-           (iVar4 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20
-                              (*(CDemonCamera **)(iVar5 + 0x203ad20),position,orientation,aabb_min,
-                               aabb_max), iVar4 != 0)) {
-          *(uint *)(&DAT_0207fae0 + (int)_DAT_0207fadc * 4) =
-               *(uint *)(iVar5 + 0x203ad20);
-          _DAT_0207fadc = (CVector3f *)((int)&_DAT_0207fadc->x + 1);
+        if (((*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar6))[1].rect_array[0x61]
+             .y_min != 0) &&
+           (iVar5 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20
+                              (*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar6),
+                               position,orientation,aabb_min,aabb_max), iVar5 != 0)) {
+          g_CDemonLight_PTR_ARRAY_0207fae0[g_INT_0207fadc] =
+               *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_0203ad20 + iVar6);
+          g_INT_0207fadc = g_INT_0207fadc + 1;
         }
-        iVar7 = iVar7 + 1;
-        iVar5 = iVar5 + 4;
-      } while (iVar7 < _DAT_0203ad1c);
+        iVar8 = iVar8 + 1;
+        iVar6 = iVar6 + 4;
+      } while (iVar8 < g_INT_0203ad1c);
     }
-    iVar7 = 0;
-    _DAT_0207f958 = 0;
-    if (0 < _DAT_0203a598) {
-      iVar5 = 0;
+    iVar8 = 0;
+    g_INT_0207f958 = 0;
+    if (0 < g_INT_0203a598) {
+      iVar6 = 0;
       do {
-        if (((*(CDemonCamera **)(&DAT_0203a59c + iVar5))[1].rect_array[0x61].y_min != 0) &&
-           (iVar4 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20
-                              (*(CDemonCamera **)(&DAT_0203a59c + iVar5),position,orientation,
-                               aabb_min,aabb_max), iVar4 != 0)) {
-          _DAT_0207f958 = _DAT_0207f958 + 1;
-          *(uint *)(&DAT_0207f958 + _DAT_0207f958 * 4) =
-               *(uint *)(&DAT_0203a59c + iVar5);
+        if (((*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_0203a59c + iVar6))[1].rect_array[0x61]
+             .y_min != 0) &&
+           (iVar5 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20
+                              (*(CDemonCamera **)((int)g_CDemonLight_PTR_ARRAY_0203a59c + iVar6),
+                               position,orientation,aabb_min,aabb_max), iVar5 != 0)) {
+          g_INT_0207f958 = g_INT_0207f958 + 1;
+          (&g_INT_0207f958)[g_INT_0207f958] =
+               *(int *)((int)g_CDemonLight_PTR_ARRAY_0203a59c + iVar6);
         }
-        iVar7 = iVar7 + 1;
-        iVar5 = iVar5 + 4;
-      } while (iVar7 < _DAT_0203a598);
+        iVar8 = iVar8 + 1;
+        iVar6 = iVar6 + 4;
+      } while (iVar8 < g_INT_0203a598);
     }
     local_14 = 0;
-    _DAT_0207fc84 = 0;
-    if (0 < _DAT_0203b3e8) {
+    g_INT_0207fc84 = 0;
+    if (0 < g_INT_0203b3e8) {
       local_18 = 0;
       do {
-        iVar7 = *(int *)(&DAT_0203b3ec + local_18);
+        pCVar1 = *(C3DSLight **)((int)&g_INT_0203b3ec + local_18);
         input = &local_68;
-        local_5c = *(float *)(iVar7 + 0x104) - position->x;
-        local_58[0] = *(float *)(iVar7 + 0x108) - position->y;
-        local_58[1] = *(float *)(iVar7 + 0x10c) - position->z;
+        local_5c = (pCVar1->pos).x - position->x;
+        local_58[0] = (pCVar1->pos).y - position->y;
+        local_58[1] = (pCVar1->pos).z - position->z;
         local_68.x = local_5c;
-        *(float *)((int)&local_68 + (uint)bVar8 * -8 + 4) = local_58[(uint)bVar8 * -2];
-        *(float *)((int)&local_68 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-             local_58[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+        *(float *)((int)&local_68 + (uint)bVar9 * -8 + 4) = local_58[(uint)bVar9 * -2];
+        *(float *)((int)&local_68 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+             local_58[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
         core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
                   (rotation_matrix,input,&local_50);
         local_c8.x = local_50.x;
-        *(uint *)((int)&local_c8 + (uint)bVar8 * -8 + 4) =
-             *(uint *)((int)local_44 + (uint)bVar8 * -8 + -8);
-        *(uint *)((int)&local_c8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-             *(uint *)((int)local_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + -4);
+        *(uint *)((int)&local_c8 + (uint)bVar9 * -8 + 4) =
+             *(uint *)((int)local_44 + (uint)bVar9 * -8 + -8);
+        *(uint *)((int)&local_c8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+             *(uint *)((int)local_44 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + -4);
         if (&local_68 != &local_c8) {
           local_68.x = local_c8.x;
           local_68.y = local_c8.y;
           local_68.z = local_c8.z;
         }
-        if ((((aabb_min->x <= local_68.x + *(float *)(iVar7 + 0x11d4)) &&
-             (aabb_min->y <= local_68.y + *(float *)(iVar7 + 0x11d4))) &&
-            (aabb_min->z <= local_68.z + *(float *)(iVar7 + 0x11d4))) &&
-           (((local_68.x - *(float *)(iVar7 + 0x11d4) <= aabb_max->x &&
-             (local_68.y - *(float *)(iVar7 + 0x11d4) <= aabb_max->y)) &&
-            (local_68.z - *(float *)(iVar7 + 0x11d4) <= aabb_max->z)))) {
-          *(int *)(&DAT_0207fc88 + _DAT_0207fc84 * 4) = iVar7;
-          _DAT_0207fc84 = _DAT_0207fc84 + 1;
+        if ((((aabb_min->x <= local_68.x + pCVar1->atten_end) &&
+             (aabb_min->y <= local_68.y + pCVar1->atten_end)) &&
+            (aabb_min->z <= local_68.z + pCVar1->atten_end)) &&
+           (((local_68.x - pCVar1->atten_end <= aabb_max->x &&
+             (local_68.y - pCVar1->atten_end <= aabb_max->y)) &&
+            (local_68.z - pCVar1->atten_end <= aabb_max->z)))) {
+          g_C3DSLight_PTR_ARRAY_0207fc88[g_INT_0207fc84] = pCVar1;
+          g_INT_0207fc84 = g_INT_0207fc84 + 1;
         }
         local_14 = local_14 + 1;
         local_18 = local_18 + 4;
-      } while (local_14 < _DAT_0203b3e8);
+      } while (local_14 < g_INT_0203b3e8);
     }
-    iVar7 = 0;
-    _DAT_0207faf0 = 0;
-    if (0 < _DAT_0203ad30) {
-      iVar5 = 0;
+    iVar8 = 0;
+    g_INT_0207faf0 = 0;
+    if (0 < g_INT_0203ad30) {
+      iVar6 = 0;
       do {
-        iVar4 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0045af60
-                          (*(CDemonGlobe **)(iVar5 + 0x203ad34),position,rotation_matrix,aabb_min,
-                           aabb_max);
-        if (iVar4 != 0) {
-          *(uint *)(&DAT_0207faf4 + _DAT_0207faf0 * 4) = *(uint *)(iVar5 + 0x203ad34);
-          _DAT_0207faf0 = _DAT_0207faf0 + 1;
+        iVar5 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0045af60
+                          (*(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_0203ad34 + iVar6),position
+                           ,rotation_matrix,aabb_min,aabb_max);
+        if (iVar5 != 0) {
+          (&g_INT_0207faf4)[g_INT_0207faf0] =
+               *(int *)((int)g_CDemonGlobe_PTR_ARRAY_0203ad34 + iVar6);
+          g_INT_0207faf0 = g_INT_0207faf0 + 1;
         }
-        iVar7 = iVar7 + 1;
-        iVar5 = iVar5 + 4;
-      } while (iVar7 < _DAT_0203ad30);
+        iVar8 = iVar8 + 1;
+        iVar6 = iVar6 + 4;
+      } while (iVar8 < g_INT_0203ad30);
     }
-    iVar7 = 0;
-    local_cc = _DAT_0203b1e8;
-    if (0 < _DAT_0203b1e8) {
-      iVar5 = 0;
+    iVar8 = 0;
+    local_cc = g_INT_0203b1e8;
+    if (0 < g_INT_0203b1e8) {
+      iVar6 = 0;
       do {
-        iVar4 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0045af60
-                          (*(CDemonGlobe **)(&DAT_0203b1ec + iVar5),position,rotation_matrix,
-                           aabb_min,aabb_max);
+        iVar5 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0045af60
+                          (*(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_0203b1ec + iVar6),position
+                           ,rotation_matrix,aabb_min,aabb_max);
         local_cc = 0;
-        if (iVar4 != 0) {
-          local_cc = *(int *)(&DAT_0203b1ec + iVar5);
-          *(int *)(&DAT_0207faf4 + _DAT_0207faf0 * 4) = local_cc;
-          _DAT_0207faf0 = _DAT_0207faf0 + 1;
+        if (iVar5 != 0) {
+          local_cc = *(int *)((int)g_CDemonGlobe_PTR_ARRAY_0203b1ec + iVar6);
+          (&g_INT_0207faf4)[g_INT_0207faf0] = local_cc;
+          g_INT_0207faf0 = g_INT_0207faf0 + 1;
         }
-        iVar7 = iVar7 + 1;
-        iVar5 = iVar5 + 4;
-      } while (iVar7 < _DAT_0203b1e8);
+        iVar8 = iVar8 + 1;
+        iVar6 = iVar6 + 4;
+      } while (iVar8 < g_INT_0203b1e8);
     }
-    if (0 < _DAT_0207fc84) {
+    if (0 < g_INT_0207fc84) {
       local_e0 = aabb_max->x - aabb_min->x;
       local_dc = aabb_max->y - aabb_min->y;
       local_d8 = aabb_max->z - aabb_min->z;
       local_98.x = local_e0;
-      *(uint *)((int)&local_98 + (uint)bVar8 * -8 + 4) =
-           *(uint *)((int)&stack0xffffff24 + (uint)bVar8 * -8);
-      *(uint *)((int)&local_98 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-           *(uint *)((int)&stack0xffffff28 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+      *(uint *)((int)&local_98 + (uint)bVar9 * -8 + 4) =
+           *(uint *)((int)&stack0xffffff24 + (uint)bVar9 * -8);
+      *(uint *)((int)&local_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+           *(uint *)((int)&stack0xffffff28 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(rotation_matrix,&local_98,local_44);
       local_a4 = local_44[0].x;
-      local_a0[(uint)bVar8 * -2] = *(float *)((int)local_44 + (uint)bVar8 * -8 + 4);
-      local_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-           *(float *)((int)local_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      local_a0[(uint)bVar9 * -2] = *(float *)((int)local_44 + (uint)bVar9 * -8 + 4);
+      local_a0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+           *(float *)((int)local_44 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
       local_80 = position->x + local_a4;
       local_7c[0] = position->y + local_a0[0];
       local_7c[1] = position->z + local_a0[1];
@@ -236,59 +242,59 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *t
       local_88 = 0.0;
       local_8c = 0.0;
       local_7c[2] = local_80;
-      local_7c[(uint)bVar8 * -2 + 3] = local_7c[(uint)bVar8 * -2];
-      local_7c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-           local_7c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-      iVar7 = 0;
-      if (0 < _DAT_0207fc84) {
-        iVar5 = 0;
+      local_7c[(uint)bVar9 * -2 + 3] = local_7c[(uint)bVar9 * -2];
+      local_7c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+           local_7c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+      iVar8 = 0;
+      if (0 < g_INT_0207fc84) {
+        iVar6 = 0;
         do {
-          iVar4 = *(int *)(&DAT_0207fc88 + iVar5);
-          if ((*(uint *)(iVar4 + 0x11d4) & 0x7fffffff) == 0) {
-            local_8c = *(float *)(iVar4 + 0x11c4) + local_8c;
-            local_88 = *(float *)(iVar4 + 0x11c8) + local_88;
-            local_84 = *(float *)(iVar4 + 0x11cc) + local_84;
-            iVar7 = iVar7 + 1;
+          iVar5 = *(int *)((int)g_C3DSLight_PTR_ARRAY_0207fc88 + iVar6);
+          if ((*(uint *)(iVar5 + 0x11d4) & 0x7fffffff) == 0) {
+            local_8c = *(float *)(iVar5 + 0x11c4) + local_8c;
+            local_88 = *(float *)(iVar5 + 0x11c8) + local_88;
+            local_84 = *(float *)(iVar5 + 0x11cc) + local_84;
+            iVar8 = iVar8 + 1;
           }
           else {
-            fVar3 = *(float *)(iVar4 + 0x104) - local_7c[2];
-            fVar1 = *(float *)(iVar4 + 0x108) - local_7c[3];
-            fVar2 = *(float *)(iVar4 + 0x10c) - local_6c;
-            fVar1 = fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3;
-            if (fVar1 <= *(float *)(iVar4 + 0x11d8)) {
-              fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01d1a0a4) * *(float *)(iVar4 + 0x11dc)
-                      ) * _DAT_005d063f;
-              fVar2 = (float)_DAT_005d0647;
-              local_bc = fVar1 * *(float *)(iVar4 + 0x11c4) * fVar2 + local_bc;
-              local_b8 = fVar1 * *(float *)(iVar4 + 0x11c8) * fVar2 + local_b8;
-              local_b4 = fVar1 * *(float *)(iVar4 + 0x11cc) * fVar2 + local_b4;
+            fVar4 = *(float *)(iVar5 + 0x104) - local_7c[2];
+            fVar2 = *(float *)(iVar5 + 0x108) - local_7c[3];
+            fVar3 = *(float *)(iVar5 + 0x10c) - local_6c;
+            fVar2 = fVar3 * fVar3 + fVar2 * fVar2 + fVar4 * fVar4;
+            if (fVar2 <= *(float *)(iVar5 + 0x11d8)) {
+              fVar2 = (1.0 - (float)(((int)fVar2 >> 1) + g_INT_01d1a0a4) *
+                             *(float *)(iVar5 + 0x11dc)) * 0.666f;
+              fVar3 = (float)2;
+              local_bc = fVar2 * *(float *)(iVar5 + 0x11c4) * fVar3 + local_bc;
+              local_b8 = fVar2 * *(float *)(iVar5 + 0x11c8) * fVar3 + local_b8;
+              local_b4 = fVar2 * *(float *)(iVar5 + 0x11cc) * fVar3 + local_b4;
             }
           }
-          iVar5 = iVar5 + 4;
-        } while (iVar5 < _DAT_0207fc84 * 4);
+          iVar6 = iVar6 + 4;
+        } while (iVar6 < g_INT_0207fc84 * 4);
       }
-      if (iVar7 == 0) {
+      if (iVar8 == 0) {
         local_d0 = 0xaaaa;
         local_cc = 0xaaaa;
         local_d4 = 0xaaaa;
       }
       else {
-        local_d4 = (int)ROUND(local_8c * _DAT_005e3bc0);
-        local_d0 = (int)ROUND(local_88 * _DAT_005e3bc0);
-        local_cc = (int)ROUND(local_84 * _DAT_005e3bc0);
+        local_d4 = (int)ROUND(local_8c * 256.0f);
+        local_d0 = (int)ROUND(local_88 * 256.0f);
+        local_cc = (int)ROUND(local_84 * 256.0f);
       }
-      _DAT_02080004 = (int)ROUND(local_bc * _DAT_005e3bc0) + local_d4;
-      _DAT_02080008 = (int)ROUND(local_b8 * _DAT_005e3bc0) + local_d0;
-      local_cc = (int)ROUND(local_b4 * _DAT_005e3bc0) + local_cc;
-      if (0xffff < _DAT_02080004) {
-        _DAT_02080004 = 0xffff;
+      g_INT_02080004 = (int)ROUND(local_bc * 256.0f) + local_d4;
+      g_INT_02080008 = (int)ROUND(local_b8 * 256.0f) + local_d0;
+      local_cc = (int)ROUND(local_b4 * 256.0f) + local_cc;
+      if (0xffff < g_INT_02080004) {
+        g_INT_02080004 = 0xffff;
       }
-      if (0xffff < _DAT_02080008) {
-        _DAT_02080008 = 0xffff;
+      if (0xffff < g_INT_02080008) {
+        g_INT_02080008 = 0xffff;
       }
-      _DAT_0208000c = local_cc;
+      g_INT_0208000c = local_cc;
       if (0xffff < local_cc) {
-        _DAT_0208000c = 0xffff;
+        g_INT_0208000c = 0xffff;
         return local_cc;
       }
     }

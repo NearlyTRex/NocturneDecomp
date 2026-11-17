@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnemy *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -25,7 +23,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnem
       }
       this_ptr->flinch_timer = 0.0;
       fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
-      if ((float)_DAT_005ef9b7 < fVar1) {
+      if ((float)0.20000000000000001 < fVar1) {
         this_ptr->flinch_active = 1;
       }
       if ((this_ptr->hit_sound[0] != '\0') &&
@@ -40,7 +38,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnem
     else {
       if (this_ptr->death_sound[0] != '\0') {
         core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                  (0x0264B290,(CDemonActor *)this_ptr,this_ptr->death_sound,
+                  (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,this_ptr->death_sound,
                    &(this_ptr->base).base.base.location.position);
       }
       (this_ptr->base).base.hit_points = 0.0;
@@ -49,8 +47,8 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnem
     }
   }
   else {
-    core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,"ShotInvulnerable")
-    ;
+    core_event_cpp_CEventList_executeCommands_FUN_004894f0
+              (g_CEventList_PTR_006141f0,"ShotInvulnerable");
   }
   return;
 }

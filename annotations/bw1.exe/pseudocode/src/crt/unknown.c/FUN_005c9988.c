@@ -18,12 +18,12 @@ int FUN_005c9988(int param_1,int param_2)
   if (*(int *)(param_1 + 0x20) == 0) {
     iVar1 = FUN_005c9950(param_2 + 0x76c);
     if (iVar1 == 0) {
-      iVar1 = *(int *)(&DAT_0060852c + *(int *)(param_1 + 0x10) * 2);
-      iVar2 = *(int *)(&DAT_0060852a + *(int *)(param_1 + 0x10) * 2);
+      iVar1 = *(int *)(&g_SHORT_0060852c + *(int *)(param_1 + 0x10));
+      iVar2 = *(int *)((int)&g_INT_00608528 + *(int *)(param_1 + 0x10) * 2 + 2);
     }
     else {
-      iVar1 = *(int *)(&DAT_00608546 + *(int *)(param_1 + 0x10) * 2);
-      iVar2 = *(int *)(&DAT_00608544 + *(int *)(param_1 + 0x10) * 2);
+      iVar1 = *(int *)(&g_SHORT_00608546 + *(int *)(param_1 + 0x10));
+      iVar2 = *(int *)(&g_SHORT_00608544 + *(int *)(param_1 + 0x10));
     }
     local_34.tm_sec = 0;
     local_34.tm_min = 0;

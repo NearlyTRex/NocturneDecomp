@@ -26,8 +26,8 @@
 ;   TerminatedCString s_Can_t_create_instance_of_005b5e28
 ;   TerminatedCString s_core_actor_cpp_005b5e52
 ;   TerminatedCString s_Not_enough_memory_to_cre_005b5e64
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getActorClassByName_FUN_0040c480
@@ -58,8 +58,8 @@ section .text
     MOV EBP,0x5b5e16                    ; 0040c50d | = "..\\core\\actor.cpp"
     MOV EAX,0xab2                       ; 0040c512
     PUSH 0x5b5e28                       ; 0040c517 | = "Can't create instance of abstract typ..."
-    MOV dword ptr [0x01d71de0],EBP      ; 0040c51c | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 0040c522 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 0040c51c | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 0040c522 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040c527
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0040c52c
@@ -79,8 +79,8 @@ section .text
     MOV EDX,0x5b5dd7                    ; 0040c53f | = "..\\core\\actor.cpp"
     MOV ECX,0xaac                       ; 0040c544
     PUSH 0x5b5de9                       ; 0040c549 | = "Can't create actor of unknown class t..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0040c54e | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0040c554 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0040c54e | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0040c554 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040c55a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0040c55f
@@ -91,8 +91,8 @@ section .text
     MOV EDX,0x5b5e52                    ; 0040c565 | = "..\\core\\actor.cpp"
     MOV ECX,0xabb                       ; 0040c56a
     PUSH 0x5b5e64                       ; 0040c56f | = "Not enough memory to create %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 0040c574 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0040c57a | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0040c574 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0040c57a | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040c580
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0040c585

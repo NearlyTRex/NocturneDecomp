@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0056bd50(CVector3f *direction,float *offset_pair,CVector3f *out_angles)
 
 {
@@ -35,9 +33,9 @@ CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0056
        (CVector3f *)afStack_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + -1];
   fVar1 = SQRT(direction->z * direction->z +
                direction->x * direction->x + direction->y * direction->y);
-  if ((float)_DAT_005ebc5d < fVar1) {
+  if ((float)0.01 < fVar1) {
     fStack_1c = -*offset_pair;
-    if ((((float)_DAT_005ebc5d <= fVar1) &&
+    if ((((float)0.01 <= fVar1) &&
         (dVar4 = (double)(SQRT(fVar1 * fVar1 - fStack_1c * fStack_1c) / fVar1), dVar4 < 1.0)) &&
        (0.0 <= dVar4)) {
       dVar4 = acos(dVar4);
@@ -53,7 +51,7 @@ CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0056
     }
     fStack_4c = (float)((ulonglong)(double)fVar1 >> 0x20);
     fStack_24 = offset_pair[1];
-    if (((_DAT_005ebc5d <= (double)fStack_4c) &&
+    if (((0.01 <= (double)fStack_4c) &&
         (dVar4 = (double)(SQRT(fStack_4c * fStack_4c - fStack_24 * fStack_24) / fStack_4c),
         dVar4 < 1.0)) && (0.0 <= dVar4)) {
       dVar4 = acos(dVar4);

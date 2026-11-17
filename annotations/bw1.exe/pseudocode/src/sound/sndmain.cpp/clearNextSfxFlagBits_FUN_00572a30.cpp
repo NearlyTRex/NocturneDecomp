@@ -6,14 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_clearNextSfxFlagBits_FUN_00572a30(uint flag_mask)
 
 {
-  uint *puVar1;
-  
-  puVar1 = (uint *)(_DAT_02c78cec * 0x60 + 0x2c78d3c);
-  *puVar1 = *puVar1 & ~flag_mask;
+  g_CSfxOptions_ARRAY_02c78cf0[g_INT_02c78cec].flags =
+       g_CSfxOptions_ARRAY_02c78cf0[g_INT_02c78cec].flags & ~flag_mask;
   return;
 }

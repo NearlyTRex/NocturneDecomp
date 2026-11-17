@@ -19,9 +19,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTommyGun_005d8c28
-;   undefined4 DAT_005d8c38
-;   undefined4 DAT_005d8c40
-;   undefined4 DAT_005d8c48
+;   double g_DOUBLE_005d8c38 = 0.333333333333333
+;   double g_DOUBLE_005d8c40 = 5
+;   double g_DOUBLE_005d8c48 = 0.400000000000000
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -168,8 +168,8 @@ section .text
     FMUL ST0                            ; 0058f157
     FADDP                               ; 0058f159
     FSQRT                               ; 0058f15b
-    FMUL double ptr [0x005d8c38]        ; 0058f15d | DAT_005d8c38
-    FSUBR double ptr [0x005d8c40]       ; 0058f163 | DAT_005d8c40
+    FMUL double ptr [0x005d8c38]        ; 0058f15d | g_DOUBLE_005d8c38
+    FSUBR double ptr [0x005d8c40]       ; 0058f163 | g_DOUBLE_005d8c40
     FST float ptr [ESP + 0x4]           ; 0058f169
     FLD1                                ; 0058f16d
     FCOMPP                              ; 0058f16f
@@ -245,7 +245,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0058f25c
     PUSH EAX                            ; 0058f25d
     LEA EDI,[ESP + 0xd0]                ; 0058f25e
-    FADD double ptr [0x005d8c48]        ; 0058f265 | DAT_005d8c48
+    FADD double ptr [0x005d8c48]        ; 0058f265 | g_DOUBLE_005d8c48
     LEA ESI,[ESP + 0x70]                ; 0058f26b
     FSTP float ptr [ESP + 0x78]         ; 0058f26f
     MOVSD ES:EDI,ESI                    ; 0058f273
@@ -386,7 +386,7 @@ section .text
     FADDP                               ; 0058f3e7
     FSQRT                               ; 0058f3e9
     FST float ptr [ESP]                 ; 0058f3eb
-    FCOMP double ptr [0x005d8c40]       ; 0058f3ee | DAT_005d8c40
+    FCOMP double ptr [0x005d8c40]       ; 0058f3ee | g_DOUBLE_005d8c40
     FNSTSW AX                           ; 0058f3f4
     SAHF                                ; 0058f3f6
     JC 0x0058f09e                       ; 0058f3f7

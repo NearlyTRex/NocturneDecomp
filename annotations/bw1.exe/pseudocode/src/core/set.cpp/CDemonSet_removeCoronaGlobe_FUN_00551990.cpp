@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(CDemonSet *this_ptr,CDemonGlobe *globe)
 
 {
@@ -16,20 +14,21 @@ void __cdecl core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(CDemonSet *th
   int iVar3;
   
   iVar3 = 0;
-  if (0 < _DAT_01fe55d0) {
+  if (0 < g_INT_01fe55d0) {
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
-      if (globe == *(CDemonGlobe **)(iVar2 + 0x1fe55d4)) {
-        _DAT_01fe55d0 = _DAT_01fe55d0 + -1;
+      if (globe == *(CDemonGlobe **)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + iVar2)) {
+        g_INT_01fe55d0 = g_INT_01fe55d0 + -1;
         memmove
-                  ((void *)(iVar2 + 0x1fe55d4),(void *)(iVar2 + 0x1fe55d8),
-                   (_DAT_01fe55d0 - iVar3) * 4);
+                  ((void *)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + iVar2),
+                   (void *)((int)g_CDemonGlobe_PTR_ARRAY_01fe55d4 + iVar2 + 4),
+                   (g_INT_01fe55d0 - iVar3) * 4);
         return;
       }
       iVar3 = iVar3 + 1;
       iVar2 = iVar1;
-    } while (iVar1 < _DAT_01fe55d0 * 4);
+    } while (iVar1 < g_INT_01fe55d0 * 4);
   }
   return;
 }

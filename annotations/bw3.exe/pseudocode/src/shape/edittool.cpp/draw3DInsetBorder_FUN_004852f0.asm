@@ -15,12 +15,12 @@
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00485640 at 0048581f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5baec
-;   undefined4 DAT_01c5bb64
-;   undefined4 DAT_01c6af98
-;   undefined4 DAT_01c6af99
-;   undefined4 DAT_01c6af9a
-;   undefined4 DAT_01c6b5c0
+;   int g_INT_01c5baec
+;   int g_INT_01c5bb64
+;   uchar[768] g_UCHAR_ARRAY_01c6af98
+;   undefined4 g_UCHAR_ARRAY_01c6af98+1
+;   undefined4 g_UCHAR_ARRAY_01c6af98+2
+;   int g_INT_01c6b5c0
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00402f30
@@ -40,12 +40,12 @@ section .text
     PUSH EBP                            ; 004852f3
     MOV ESI,dword ptr [ESP + 0x24]      ; 004852f4
     MOV EDI,dword ptr [ESP + 0x28]      ; 004852f8
-    MOV EDX,dword ptr [0x01c5baec]      ; 004852fc | DAT_01c5baec
-    MOV EBX,dword ptr [0x01c5bb64]      ; 00485302 | DAT_01c5bb64
+    MOV EDX,dword ptr [0x01c5baec]      ; 004852fc | g_INT_01c5baec
+    MOV EBX,dword ptr [0x01c5bb64]      ; 00485302 | g_INT_01c5bb64
     TEST EDX,EDX                        ; 00485308
     JNZ 0x00485380                      ; 0048530a
         ;   XREF to: 00485380 (CONDITIONAL_JUMP)  ; LAB_00485380
-    MOV dword ptr [0x01c6b5c0],EBX      ; 0048530c | DAT_01c6b5c0
+    MOV dword ptr [0x01c6b5c0],EBX      ; 0048530c | g_INT_01c6b5c0
     TEST EDI,EDI                        ; 00485312
         ;   Label: LAB_00485312
     JNZ 0x004853bf                      ; 00485314
@@ -76,7 +76,7 @@ section .text
     JLE 0x0048537b                      ; 00485358
         ;   XREF to: 0048537b (CONDITIONAL_JUMP)  ; LAB_0048537b
     MOV EDI,EBX                         ; 0048535a
-    CMP dword ptr [0x01c5baec],0x0      ; 0048535c | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 0048535c | g_INT_01c5baec
         ;   Label: LAB_0048535c
     JNZ 0x00485439                      ; 00485363
         ;   XREF to: 00485439 (CONDITIONAL_JUMP)  ; LAB_00485439
@@ -104,15 +104,15 @@ section .text
     SHL EBX,0x2                         ; 00485388
     SUB EBX,EAX                         ; 0048538b
     XOR EAX,EAX                         ; 0048538d
-    MOV AL,byte ptr [EBX + 0x1c6af99]   ; 0048538f | DAT_01c6af99
+    MOV AL,byte ptr [EBX + 0x1c6af99]   ; 0048538f | g_UCHAR_ARRAY_01c6af98+1
     MOV EDX,EAX                         ; 00485395
     XOR EAX,EAX                         ; 00485397
-    MOV AL,byte ptr [EBX + 0x1c6af98]   ; 00485399 | DAT_01c6af98
+    MOV AL,byte ptr [EBX + 0x1c6af98]   ; 00485399 | g_UCHAR_ARRAY_01c6af98
     SHL EDX,0x8                         ; 0048539f
     SHL EAX,0x10                        ; 004853a2
     OR EDX,EAX                          ; 004853a5
     XOR EAX,EAX                         ; 004853a7
-    MOV AL,byte ptr [EBX + 0x1c6af9a]   ; 004853a9 | DAT_01c6af9a
+    MOV AL,byte ptr [EBX + 0x1c6af9a]   ; 004853a9 | g_UCHAR_ARRAY_01c6af98+2
     OR EAX,EDX                          ; 004853af
     PUSH EAX                            ; 004853b1
     CALL engine_mini3d.cpp_setColor_FUN_004f3520 ; 004853b2
@@ -152,7 +152,7 @@ section .text
         ;   XREF to: 0048537b (CONDITIONAL_JUMP)  ; LAB_0048537b
     MOV ESI,EBX                         ; 00485410
     MOV EBP,EDX                         ; 00485412
-    CMP dword ptr [0x01c5baec],0x0      ; 00485414 | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 00485414 | g_INT_01c5baec
         ;   Label: LAB_00485414
     JNZ 0x004854a3                      ; 0048541b
         ;   XREF to: 004854a3 (CONDITIONAL_JUMP)  ; LAB_004854a3
@@ -197,7 +197,7 @@ section .text
     JLE 0x0048537b                      ; 00485462
         ;   XREF to: 0048537b (CONDITIONAL_JUMP)  ; LAB_0048537b
     MOV ESI,EBX                         ; 00485468
-    CMP dword ptr [0x01c5baec],0x0      ; 0048546a | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 0048546a | g_INT_01c5baec
         ;   Label: LAB_0048546a
     JNZ 0x0048548b                      ; 00485471
         ;   XREF to: 0048548b (CONDITIONAL_JUMP)  ; LAB_0048548b
@@ -255,7 +255,7 @@ section .text
         ;   XREF to: 0048537b (CONDITIONAL_JUMP)  ; LAB_0048537b
     MOV ESI,EBX                         ; 004854d1
     MOV EBP,EDX                         ; 004854d3
-    CMP dword ptr [0x01c5baec],0x0      ; 004854d5 | DAT_01c5baec
+    CMP dword ptr [0x01c5baec],0x0      ; 004854d5 | g_INT_01c5baec
         ;   Label: LAB_004854d5
     JNZ 0x004854f6                      ; 004854dc
         ;   XREF to: 004854f6 (CONDITIONAL_JUMP)  ; LAB_004854f6

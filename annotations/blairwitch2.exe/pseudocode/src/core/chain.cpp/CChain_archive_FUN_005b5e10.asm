@@ -7,7 +7,7 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_vertexCount_005f144f+1
+;   TerminatedCString s_vertexCount_005f1450
 ;   TerminatedCString s_chainLength_005f145c
 ;   TerminatedCString s_target_005f1468
 ;   TerminatedCString s_targetBone_005f146f
@@ -39,7 +39,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 005b5e16
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005b5e1b
-    PUSH 0x5f1450                       ; 005b5e1e | s_vertexCount_005f144f+1
+    PUSH 0x5f1450                       ; 005b5e1e | = "vertexCount"
     LEA EAX,[EBX + 0x158]               ; 005b5e23
     PUSH EAX                            ; 005b5e29
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 005b5e2a

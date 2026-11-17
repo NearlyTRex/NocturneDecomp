@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 101,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 15,
     "suspect_count": 6,
     "suspect_types": [
       "concat_reconstruction",
       "fnstsw_flag_artifact",
       "nan_function_artifact",
       "nonstandard_int",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 45
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -35,8 +35,8 @@
   "globals": [
     {
       "addr": "01d76cfc",
-      "name": "DAT_01d76cfc",
-      "type": "undefined4",
+      "name": "g_PTR_01d76cfc",
+      "type": "void*",
       "value": null
     }
   ],
@@ -116,16 +116,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 8,
+      "line": 6,
       "match": "uint3",
       "severity": "mild",
       "text": "uint3 uVar2;",
@@ -133,31 +125,39 @@
     },
     {
       "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 13,
-      "match": "CONCAT22((short)((uint)_DAT_01d76cfc >> 0x10",
+      "line": 11,
+      "match": "CONCAT22((short)((uint)g_PTR_01d76cfc >> 0x10",
       "severity": "severe",
-      "text": "uVar2 = (uint3)(CONCAT22((short)((uint)_DAT_01d76cfc >> 0x10),",
+      "text": "uVar2 = (uint3)(CONCAT22((short)((uint)g_PTR_01d76cfc >> 0x10),",
       "type": "fnstsw_flag_artifact"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 13,
+      "line": 11,
       "match": "uint3",
       "severity": "mild",
-      "text": "uVar2 = (uint3)(CONCAT22((short)((uint)_DAT_01d76cfc >> 0x10),",
+      "text": "uVar2 = (uint3)(CONCAT22((short)((uint)g_PTR_01d76cfc >> 0x10),",
       "type": "nonstandard_int"
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 14,
+      "line": 12,
       "match": "NAN(",
       "severity": "severe",
       "text": "(ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |",
       "type": "nan_function_artifact"
     },
     {
+      "description": "Pointer value `g_PTR_01d76cfc` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(uint)g_PTR_01d76cfc",
+      "severity": "moderate",
+      "text": "uVar2 = (uint3)(CONCAT22((short)((uint)g_PTR_01d76cfc >> 0x10),",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 17,
+      "line": 15,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "return CONCAT31(uVar2,0x10);",

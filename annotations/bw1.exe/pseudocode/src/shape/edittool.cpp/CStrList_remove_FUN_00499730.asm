@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc458
 ;   TerminatedCString s_CStrList_remove_invalid_005dc46e
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -44,8 +44,8 @@ section .text
         ;   Label: LAB_0049974c
     MOV EDI,0xc74                       ; 00499751
     PUSH 0x5dc46e                       ; 00499756 | = "CStrList::remove - invalid range"
-    MOV dword ptr [0x01d1d400],EBX      ; 0049975b | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00499761 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 0049975b | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00499761 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00499767
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049976c

@@ -20,9 +20,9 @@ void __cdecl core_drip_cpp_CDrip_setup_FUN_00485450(CDrip *this_ptr)
                     (this_ptr->min_auto_drip_time,this_ptr->max_auto_drip_time);
   this_ptr->drip_timer = fVar1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)0x1beee04,"stalrock.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)0x1beee04);
+            (&g_CKeyFramedModelInstance_01beee04,"stalrock.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(&g_CKeyFramedModelInstance_01beee04)
+  ;
   this_ptr->is_visible = 0;
   return;
 }

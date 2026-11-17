@@ -13,7 +13,7 @@
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aebe9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560
@@ -28,7 +28,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004a2017
     PUSH 0x3f19999a                     ; 004a201b
     PUSH EDX                            ; 004a2020
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004a2021 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004a2021 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004a2027
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560 ; 004a2028
         ;   XREF to: 004a2560 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

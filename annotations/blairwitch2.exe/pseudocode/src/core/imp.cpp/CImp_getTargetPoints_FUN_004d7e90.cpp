@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7e90(CImp *this_ptr,CVector3f *out_points_array)
 
@@ -31,7 +30,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7e90(CImp *this_ptr,CVecto
   iVar2 = 0;
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] != 0) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-              (&(this_ptr->base).base.model,_DAT_01cee138,&CStack_70);
+              (&(this_ptr->base).base.model,g_INT_ARRAY_01cee138[0],&CStack_70);
     CStack_4c.x = CStack_70.x;
     *(uint *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) =
          *(uint *)((int)&CStack_70 + (uint)bVar3 * -8 + 4);
@@ -46,7 +45,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7e90(CImp *this_ptr,CVecto
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-              (&(this_ptr->base).base.model,_DAT_01cee14c,&CStack_34);
+              (&(this_ptr->base).base.model,g_INT_ARRAY_01cee138[5],&CStack_34);
     pCVar1 = out_points_array + iVar2;
     CStack_88.x = CStack_34.x;
     *(uint *)((int)&CStack_88 + (uint)bVar3 * -8 + 4) =
@@ -62,7 +61,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7e90(CImp *this_ptr,CVecto
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-              (&(this_ptr->base).base.model,_DAT_01cee150,&CStack_7c);
+              (&(this_ptr->base).base.model,g_INT_ARRAY_01cee138[6],&CStack_7c);
     pCVar1 = out_points_array + iVar2;
     CStack_1c.x = CStack_7c.x;
     *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + 4) =
@@ -78,7 +77,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7e90(CImp *this_ptr,CVecto
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-              (&(this_ptr->base).base.model,_DAT_01cee15c,&CStack_64);
+              (&(this_ptr->base).base.model,g_INT_ARRAY_01cee138[9],&CStack_64);
     pCVar1 = out_points_array + iVar2;
     CStack_28.x = CStack_64.x;
     *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =
@@ -96,7 +95,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7e90(CImp *this_ptr,CVecto
     return iVar2;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-            (&(this_ptr->base).base.model,_DAT_01cee164,&CStack_58);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_01cee138[0xb],&CStack_58);
   pCVar1 = out_points_array + iVar2;
   CStack_40.x = CStack_58.x;
   *(uint *)((int)&CStack_40 + (uint)bVar3 * -8 + 4) =

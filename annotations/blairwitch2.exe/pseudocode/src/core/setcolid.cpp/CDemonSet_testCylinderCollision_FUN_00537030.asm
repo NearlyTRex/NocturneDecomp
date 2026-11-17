@@ -54,9 +54,9 @@
 ;   TerminatedCString s_info_keyFramedModelInsta_005e5dda
 ;   TerminatedCString s_core_setcolid_cpp_005e5e26
 ;   TerminatedCString s_Invalid_collision_type_005e5e3b
-;   undefined4 DAT_005e5e55
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005e5e55 = -0.00100000000000000
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -329,8 +329,8 @@ section .text
     MOV EDX,0x5e5dc5                    ; 005373be | = "..\\core\\setcolid.cpp"
     MOV ECX,0x389                       ; 005373c3
     PUSH 0x5e5dda                       ; 005373c8 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01d046a0],EDX      ; 005373cd | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 005373d3 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 005373cd | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 005373d3 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005373d9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005373de
@@ -477,7 +477,7 @@ section .text
     FSQRT                               ; 00537604
     FSUB double ptr [ESP + 0x78]        ; 00537606
     FST double ptr [ESP + 0x58]         ; 0053760a
-    FCOMP double ptr [0x005e5e55]       ; 0053760e | DAT_005e5e55
+    FCOMP double ptr [0x005e5e55]       ; 0053760e | g_DOUBLE_005e5e55
     FNSTSW AX                           ; 00537614
     SAHF                                ; 00537616
     JBE 0x0053762b                      ; 00537617
@@ -747,8 +747,8 @@ section .text
         ;   Label: LAB_005379f7
     MOV EAX,0x3f1                       ; 005379fc
     PUSH 0x5e5e3b                       ; 00537a01 | = "Invalid collision type!"
-    MOV dword ptr [0x01d046a0],EDI      ; 00537a06 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00537a0c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00537a06 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00537a0c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00537a11
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00537a16

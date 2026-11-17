@@ -118,9 +118,9 @@
     {
       "description": "Complex pointer cast",
       "line": 10,
-      "match": "(byte ***)((int)pvVar2",
+      "match": "(CParticle_vtable **)((int)pvVar2",
       "severity": "moderate",
-      "text": "*(byte ***)((int)pvVar2 + -0x44) = &g_CGlassParticleVTable;",
+      "text": "*(CParticle_vtable **)((int)pvVar2 + -0x44) = &g_CGlassParticleVTable;",
       "type": "pointer_cast"
     },
     {
@@ -136,7 +136,7 @@
       "line": 10,
       "match": "(int)pvVar2",
       "severity": "moderate",
-      "text": "*(byte ***)((int)pvVar2 + -0x44) = &g_CGlassParticleVTable;",
+      "text": "*(CParticle_vtable **)((int)pvVar2 + -0x44) = &g_CGlassParticleVTable;",
       "type": "pointer_truncation"
     },
     {

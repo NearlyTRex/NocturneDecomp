@@ -27,8 +27,8 @@
 ;   core_weather.cpp_CWeather_renderParticles_FUN_0058ad40 at 0058ad71
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d15d3
-;   undefined4 DAT_005d15db
+;   double g_DOUBLE_005d15d3 = 0.000030517578125
+;   double g_DOUBLE_005d15db = 3.14159265350000
 ;
 ; Called Functions:
 ;   engine_matrix.c_getCameraRotation_FUN_004ea3e0
@@ -50,11 +50,11 @@ section .text
         ;   XREF to: 004ea3e0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraRotation_FUN_004ea3e0(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 0046b684
     MOV dword ptr [ESP + 0x18],EAX      ; 0046b687
-    FLD double ptr [0x005d15d3]         ; 0046b68b | DAT_005d15d3
+    FLD double ptr [0x005d15d3]         ; 0046b68b | g_DOUBLE_005d15d3
     FILD dword ptr [ESP + 0x18]         ; 0046b691
     FMUL ST1                            ; 0046b695
     MOV EAX,dword ptr [ESP + 0x4]       ; 0046b697
-    FLD double ptr [0x005d15db]         ; 0046b69b | DAT_005d15db
+    FLD double ptr [0x005d15db]         ; 0046b69b | g_DOUBLE_005d15db
     FXCH                                ; 0046b6a1
     FMUL ST1                            ; 0046b6a3
     MOV dword ptr [ESP + 0x18],EAX      ; 0046b6a5

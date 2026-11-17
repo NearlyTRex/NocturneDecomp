@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
 
 {
@@ -31,8 +29,8 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
   if ((((this_ptr->background_flag == 0) && ((this_ptr->base).is_transparent == 0)) &&
       (64999 < this_ptr->opacity)) &&
      ((this_ptr->shattered == 0 &&
-      (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc), iVar2 == 0
-      )))) {
+      (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                         (g_CDemonRenderer_PTR_005f2afc), iVar2 == 0)))) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
     puVar6 = auStack_20;
@@ -45,15 +43,15 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
     iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_38,in_stack_ffffffc0);
     iVar7 = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-              (DAT_005f2afc,(SMRGLTextureBasic *)&this_ptr->glass_texture);
+              (g_CDemonRenderer_PTR_005f2afc,(SMRGLTextureBasic *)&this_ptr->glass_texture);
     pCVar3 = this_ptr->broken_vertices;
     input_vertices = this_ptr->render_vertices;
     pCVar4 = input_vertices;
     if (0 < this_ptr->broken_vertex_count) {
       do {
-        pCVar4->x = (int)ROUND(pCVar3->x * _DAT_005e0bc0);
-        pCVar4->y = (int)ROUND(pCVar3->y * _DAT_005e0bc0);
-        pCVar4->z = (int)ROUND(pCVar3->z * _DAT_005e0bc0);
+        pCVar4->x = (int)ROUND(pCVar3->x * 256.0f);
+        pCVar4->y = (int)ROUND(pCVar3->y * 256.0f);
+        pCVar4->z = (int)ROUND(pCVar3->z * 256.0f);
         iVar7 = iVar7 + 1;
         pCVar3 = pCVar3 + 1;
         pCVar4 = pCVar4 + 1;
@@ -61,9 +59,10 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
     }
     core_set_cpp_CDemonSet_rotateVerticies_FUN_00538ad0
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,input_vertices);
-    lVar1 = (longlong)(0xffff - _DAT_01c6e24c) * (longlong)this_ptr->opacity;
+    lVar1 = (longlong)(0xffff - g_INT_01c6e24c) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-              (DAT_005f2afc,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+              (g_CDemonRenderer_PTR_005f2afc,
+               (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
     iVar7 = 0;
     core_set_cpp_CDemonSet_lightVerticies_FUN_00538dd0
@@ -72,7 +71,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
     pCVar5 = this_ptr;
     if (0 < this_ptr->broken_polygon_count) {
       do {
-        this_ptr_00 = DAT_005f2afc;
+        this_ptr_00 = g_CDemonRenderer_PTR_005f2afc;
         pCVar5->broken_quads[0].base.surface_normal.A.i = 0;
         pCVar5->broken_quads[0].base.surface_normal.B.i = 0;
         iVar7 = iVar7 + 1;

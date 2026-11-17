@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_getMixBufferCount_FUN_00558850(void)
 
 {
-  return _DAT_02cf3338;
+  return g_INT_02cf3338;
 }

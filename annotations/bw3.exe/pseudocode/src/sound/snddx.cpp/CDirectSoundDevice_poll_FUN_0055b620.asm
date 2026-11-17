@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005d452f
 ;   TerminatedCString s_Get_position_of_secondar_005d46aa
-;   undefined4 DAT_02cf49cc
-;   undefined4 DAT_02cf49e8
-;   undefined4 DAT_02cf49ec
-;   undefined4 DAT_02cf49f0
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49cc
+;   int g_INT_02cf49e8
+;   int g_INT_02cf49ec
+;   int g_INT_02cf49f0
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -34,7 +34,7 @@ section .text
     CMP EAX,0x1                         ; 0055b62c
     JGE 0x0055b645                      ; 0055b62f
         ;   XREF to: 0055b645 (CONDITIONAL_JUMP)  ; LAB_0055b645
-    MOV EDX,dword ptr [0x02cf49cc]      ; 0055b631 | DAT_02cf49cc
+    MOV EDX,dword ptr [0x02cf49cc]      ; 0055b631 | g_IDirectSoundBuffer_PTR_02cf49cc
     TEST EDX,EDX                        ; 0055b637
     JNZ 0x0055b651                      ; 0055b639
         ;   XREF to: 0055b651 (CONDITIONAL_JUMP)  ; LAB_0055b651
@@ -63,10 +63,10 @@ section .text
         ;   XREF to: 0055b6a8 (CONDITIONAL_JUMP)  ; LAB_0055b6a8
     PUSH ESI                            ; 0055b66d
     MOV EAX,dword ptr [ESP + 0x198]     ; 0055b66e
-    MOV ECX,dword ptr [0x02cf49e8]      ; 0055b675 | DAT_02cf49e8
+    MOV ECX,dword ptr [0x02cf49e8]      ; 0055b675 | g_INT_02cf49e8
     XOR EDX,EDX                         ; 0055b67b
     DIV ECX                             ; 0055b67d
-    MOV ESI,dword ptr [0x02cf49ec]      ; 0055b67f | DAT_02cf49ec
+    MOV ESI,dword ptr [0x02cf49ec]      ; 0055b67f | g_INT_02cf49ec
     MOV EBX,EAX                         ; 0055b685
     CMP EAX,ESI                         ; 0055b687
     JL 0x0055b68e                       ; 0055b689
@@ -78,7 +78,7 @@ section .text
         ;   XREF to: 0055b6de (CONDITIONAL_JUMP)  ; LAB_0055b6de
     POP ESI                             ; 0055b692
         ;   Label: LAB_0055b692
-    CMP EBX,dword ptr [0x02cf49f0]      ; 0055b693 | DAT_02cf49f0
+    CMP EBX,dword ptr [0x02cf49f0]      ; 0055b693 | g_INT_02cf49f0
         ;   Label: LAB_0055b693
     JNZ 0x0055b6e2                      ; 0055b699
         ;   XREF to: 0055b6e2 (CONDITIONAL_JUMP)  ; LAB_0055b6e2

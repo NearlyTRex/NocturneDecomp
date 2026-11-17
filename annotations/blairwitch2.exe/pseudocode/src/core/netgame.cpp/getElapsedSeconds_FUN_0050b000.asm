@@ -7,9 +7,9 @@
 ; uint             Stack[0x4]:4   timestamp
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e038d
-;   undefined4 DAT_005e0395
-;   undefined4 DAT_01d34e38
+;   double g_DOUBLE_005e038d = 0.0000152587890625
+;   double g_DOUBLE_005e0395 = 30
+;   uint g_UINT_01d34e38
 ;
 ; *****************************************************************************
 
@@ -21,11 +21,11 @@ section .text
     SUB ESP,0x8                         ; 0050b003
     AND ESP,0xfffffff8                  ; 0050b006
     MOV EDX,dword ptr [EBP + 0x8]       ; 0050b009
-    MOV EAX,[0x01d34e38]                ; 0050b00c | DAT_01d34e38
+    MOV EAX,[0x01d34e38]                ; 0050b00c | g_UINT_01d34e38
     SUB EAX,EDX                         ; 0050b011
     MOV dword ptr [ESP + 0x4],EAX       ; 0050b013
     FILD dword ptr [ESP + 0x4]          ; 0050b017
-    FMUL double ptr [0x005e038d]        ; 0050b01b | DAT_005e038d
+    FMUL double ptr [0x005e038d]        ; 0050b01b | g_DOUBLE_005e038d
     FST float ptr [ESP]                 ; 0050b021
     FLDZ                                ; 0050b024
     FCOMPP                              ; 0050b026
@@ -35,7 +35,7 @@ section .text
         ;   XREF to: 0050b042 (CONDITIONAL_JUMP)  ; LAB_0050b042
     FLD float ptr [ESP]                 ; 0050b02d
         ;   Label: LAB_0050b02d
-    FCOMP double ptr [0x005e0395]       ; 0050b030 | DAT_005e0395
+    FCOMP double ptr [0x005e0395]       ; 0050b030 | g_DOUBLE_005e0395
     FNSTSW AX                           ; 0050b036
     SAHF                                ; 0050b038
     JA 0x0050b049                       ; 0050b039

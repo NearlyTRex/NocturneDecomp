@@ -12,11 +12,11 @@
 ;   core_mimic.cpp_CMimic_process_FUN_004f08a0 at 004f09fb
 ;
 ; Referenced Globals:
-;   undefined4 s_s_attacking_hero_005dd977+2
+;   TerminatedCString s_s_attacking_hero_005dd979
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CGabriellaClassInfo.name_hash
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 005ae680 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_005ae680(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 004f17cb
     MOV EDX,dword ptr [0x01cb0700]      ; 004f17ce | g_CGabriellaClassInfo.name_hash
-    MOV EAX,[0x01cedef4]                ; 004f17d4 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004f17d4 | g_INT_01cedef4
     PUSH EDX                            ; 004f17d9
     MOV ECX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004f17da
     PUSH ECX                            ; 004f17e1
@@ -58,7 +58,7 @@ section .text
     TEST EAX,EAX                        ; 004f17ec
     JNZ 0x004f184b                      ; 004f17ee
         ;   XREF to: 004f184b (CONDITIONAL_JUMP)  ; LAB_004f184b
-    MOV EAX,[0x01cedef4]                ; 004f17f0 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004f17f0 | g_INT_01cedef4
         ;   Label: LAB_004f17f0
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004f17f5
     SUB ESP,0x4                         ; 004f17fc
@@ -82,7 +82,7 @@ section .text
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004f1830
     PUSH EBX                            ; 004f1833
-    PUSH 0x5dd979                       ; 004f1834 | s_s_attacking_hero_005dd977+2
+    PUSH 0x5dd979                       ; 004f1834 | = "%s attacking hero\n"
     MOV EBX,dword ptr [0x00609ed0]      ; 004f1839 | g_CConsolePtr
     PUSH EBX                            ; 004f183f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 004f1840

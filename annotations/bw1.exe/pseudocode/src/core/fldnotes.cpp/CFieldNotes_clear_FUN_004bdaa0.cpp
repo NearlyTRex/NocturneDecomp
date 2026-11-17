@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(CFieldNotes *this_ptr)
 
 {
@@ -22,16 +20,16 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(CFieldNotes *this_
   do {
     core_fldnotes_cpp_SNotesSection_clear_FUN_004bbf60(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (SNotesSection *)&DAT_01cc55cc);
+  } while (this_ptr_00 != (SNotesSection *)&g_INT_01cc55cc);
   this_ptr_01 = SNotesMap_ARRAY_01cc55d0;
-  _DAT_01cc4470 = 0;
+  g_INT_01cc4470 = 0;
   do {
     core_fldnotes_cpp_SNotesMap_reset_FUN_004bc250(this_ptr_01);
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (SNotesMap *)&DAT_01cc7b90);
+  } while (this_ptr_01 != (SNotesMap *)&g_INT_01cc7b90);
   pcVar2 = "fieldnote";
-  pcVar3 = &DAT_01cc4228;
-  _DAT_01cc55cc = 0;
+  pcVar3 = &g_CHAR_01cc4228;
+  g_INT_01cc55cc = 0;
   DAT_01cc4208 = 0;
   this_ptr->is_displayed = 0;
   do {
@@ -57,11 +55,11 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(CFieldNotes *this_
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c98);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cac);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cc0);
-  DAT_0061d2e0 = 1;
-  _DAT_01cc7f1c = 0;
-  DAT_0061d310 = 0xffffffff;
-  _DAT_01cc8000 = 0;
-  DAT_01cc7f38 = 0;
+  g_INT_0061d2e0 = 1;
+  g_INT_01cc7f1c = 0;
+  g_INT_0061d310 = -1;
+  g_INT_01cc8000 = 0;
+  g_CHAR_01cc7f38 = '\0';
   this_ptr->file_name[0] = '\0';
   return;
 }

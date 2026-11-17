@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,float delta_time)
 
 {
@@ -95,7 +93,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
     core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
               ((CCharacter *)this_ptr,0,(CDemonActor *)this_ptr->bible,0.0,(CMatrix3x4f *)0x0);
     core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-              (0x01D81080,(CDemonActor *)this_ptr->bible);
+              (g_CDemonMission_PTR_00600530,(CDemonActor *)this_ptr->bible);
     this_ptr->bible_spawned = 1;
   }
   if (this_ptr->appear_state == 0) {
@@ -166,7 +164,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
     }
     if (iVar4 == 0x95) {
       dVar14 = (double)fStack_188;
-      if ((1.0 < dVar14) && (dVar14 < _DAT_005da5fe)) {
+      if ((1.0 < dVar14) && (dVar14 < 4)) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
                   (&(this_ptr->base).base.model,this_ptr->bone_indices[1],&CStack_108);
         pCVar12 = aCStack_b4;
@@ -188,7 +186,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
           CStack_174.z = CStack_48.z;
         }
         core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                  (0x01C73654,&CStack_174,(CVector3f *)&DAT_02cfd900,1,0,4);
+                  (g_CFireEffect_PTR_005fc5a0,&CStack_174,&g_CVector3f_02cfd900,1,0,4);
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
                   (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&CStack_e4);
         pCVar12 = &CStack_60;
@@ -210,10 +208,10 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
           CStack_174.z = aCStack_120[0].z;
         }
         core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                  (0x01C73654,&CStack_174,(CVector3f *)&DAT_02cfd900,1,0,4);
+                  (g_CFireEffect_PTR_005fc5a0,&CStack_174,&g_CVector3f_02cfd900,1,0,4);
       }
       grabber = (CDemonActor *)((ulonglong)dVar14 >> 0x20);
-      if ((1.0 < (double)fStack_188) && ((double)fStack_188 < _DAT_005da606)) {
+      if ((1.0 < (double)fStack_188) && ((double)fStack_188 < 2)) {
         iVar4 = 1;
         pCVar9 = &(this_ptr->base).base.base.location;
         do {
@@ -227,12 +225,12 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
             CStack_3c.y = (this_ptr->base).base.base.location.position.y;
             CStack_3c.z = (this_ptr->base).base.base.location.position.z;
           }
-          fVar1 = (float)iVar4 * (float)_DAT_005da60e;
+          fVar1 = (float)iVar4 * (float)5;
           iVar4 = iVar4 + 1;
-          CStack_3c.y = fVar1 + (float)_DAT_005da62e + CStack_3c.y;
-          CStack_cc.y = fVar1 + (float)_DAT_005da60e + CStack_cc.y;
+          CStack_3c.y = fVar1 + (float)10 + CStack_3c.y;
+          CStack_cc.y = fVar1 + (float)5 + CStack_cc.y;
           core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                    (0x01C73654,&CStack_3c,&CStack_cc,0,0.75,0.75,3,0.25,0xffff);
+                    (g_CFireEffect_PTR_005fc5a0,&CStack_3c,&CStack_cc,0,0.75,0.75,3,0.25,0xffff);
           grabber = (CDemonActor *)((ulonglong)dVar14 >> 0x20);
         } while (iVar4 < 0xb);
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
@@ -261,9 +259,9 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
           CStack_3c.y = (this_ptr->base).base.base.location.position.y;
           CStack_3c.z = (this_ptr->base).base.base.location.position.z;
         }
-        CStack_3c.y = CStack_3c.y + _DAT_005da616;
+        CStack_3c.y = CStack_3c.y + 10.0f;
         core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                  (0x01C73654,&CStack_3c,&CStack_cc,0,0.75,0.75,3,0.25,0xffff);
+                  (g_CFireEffect_PTR_005fc5a0,&CStack_3c,&CStack_cc,0,0.75,0.75,3,0.25,0xffff);
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
                   (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&CStack_144);
         CStack_138.x = CStack_144.x;
@@ -289,19 +287,19 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
           CStack_3c.y = (this_ptr->base).base.base.location.position.y;
           CStack_3c.z = (this_ptr->base).base.base.location.position.z;
         }
-        CStack_3c.y = CStack_3c.y + _DAT_005da616;
+        CStack_3c.y = CStack_3c.y + 10.0f;
         core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                  (0x01C73654,&CStack_3c,&CStack_cc,0,0.75,0.75,3,0.25,0xffff);
+                  (g_CFireEffect_PTR_005fc5a0,&CStack_3c,&CStack_cc,0,0.75,0.75,3,0.25,0xffff);
       }
       dVar14 = (double)fStack_188;
-      if ((((float)_DAT_005da61e < fStack_188) && (dVar14 < _DAT_005da5fe)) &&
+      if ((((float)3 < fStack_188) && (dVar14 < 4)) &&
          (iVar4 = (*(((((CCharacter *)this_ptr->bible)->base).vtable._uc)->_uc).canBeGrabbed)
                             ((CCharacter *)this_ptr->bible,SUB84(__BITCAST_UINT64(dVar14),0),
                              (int)((ulonglong)dVar14 >> 0x20)), iVar4 != 0)) {
         (*(((((CCharacter *)this_ptr->bible)->base).vtable._uc)->_uc).isGrabbable)
                   ((CCharacter *)this_ptr->bible,grabber);
       }
-      if (((float)_DAT_005da626 < CStack_174.x) && (this_ptr->cast_count < 6)) {
+      if (((float)3.75 < CStack_174.x) && (this_ptr->cast_count < 6)) {
         this_ptr->cast_count = this_ptr->cast_count + 1;
         core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0
                   (&(this_ptr->base).base.model.base,"indian_cast",70.0);
@@ -313,7 +311,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
   if (EVar3 < 2) {
     if (EVar3 == WALK_STATE_WALKING) {
 LAB_005a0e97:
-      pcVar13 = &DAT_005da5d4;
+      pcVar13 = "WALK";
     }
     else {
 LAB_005a10e8:
@@ -324,7 +322,7 @@ LAB_005a10e8:
   }
   else if (EVar3 < WALK_STATE_NO_PATH) {
     iVar4 = 0;
-    pcVar13 = &DAT_005da5d0;
+    pcVar13 = "RUN";
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&pCVar10->base);
     iVar4 = core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(this_ptr_00,pcVar13,iVar4);
     if (iVar4 < 0) goto LAB_005a0e97;

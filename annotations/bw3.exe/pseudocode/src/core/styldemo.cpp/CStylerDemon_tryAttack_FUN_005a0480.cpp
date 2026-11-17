@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_styldemo_cpp_CStylerDemon_tryAttack_FUN_005a0480(CStylerDemon *this_ptr,int distance)
 
@@ -45,7 +44,7 @@ int __cdecl core_styldemo_cpp_CStylerDemon_tryAttack_FUN_005a0480(CStylerDemon *
   local_20 = local_18;
   local_14 = (float)distance;
   pCVar1 = &(this_ptr->base).base.base.location;
-  if ((float)distance <= _DAT_005e84dc + (float)_DAT_005da54e) {
+  if ((float)distance <= 5.2f + (float)-0.5) {
     pCVar2 = (this_ptr->base).victim;
     local_74 = (pCVar2->base).location.position.x - (pCVar1->position).x;
     local_70[0] = (pCVar2->base).location.position.y -
@@ -63,7 +62,7 @@ int __cdecl core_styldemo_cpp_CStylerDemon_tryAttack_FUN_005a0480(CStylerDemon *
          *(float *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                          (local_70[3] - (this_ptr->base).base.base.orient.vec.y);
-    if ((float)_DAT_005da556 <= ABS(local_14)) {
+    if ((float)0.34906585038888899 <= ABS(local_14)) {
       return 0;
     }
     if (((local_1c == 8) || (local_1c == 9)) || (local_1c == 7)) {
@@ -91,8 +90,8 @@ int __cdecl core_styldemo_cpp_CStylerDemon_tryAttack_FUN_005a0480(CStylerDemon *
        *(float *)((int)&local_80 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                        (local_58 - (this_ptr->base).base.base.orient.vec.y);
-  if (((float)_DAT_005da556 <= ABS(local_14)) || (4 < local_18)) goto LAB_005a05d1;
-  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"?Casting %d\n" + 1);
+  if (((float)0.34906585038888899 <= ABS(local_14)) || (4 < local_18)) goto LAB_005a05d1;
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Casting %d\n");
   switch(this_ptr->spell_index) {
   case 0:
     iVar4 = 0xc;

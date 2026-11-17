@@ -14,8 +14,8 @@
 ;   void* PTR_GetClipboardData_005d04c0 = 001d0af2
 ;   void* PTR_OpenClipboard_005d04e4 = 001d0b82
 ;   undefined4 DAT_005dc268
-;   undefined4 DAT_01c3eb58
-;   undefined4 DAT_02c9be68
+;   char* g_CHAR_PTR_01c3eb58
+;   HWND g_HWND_02c9be68
 ;
 ; Called Functions:
 ;   CloseClipboard
@@ -29,13 +29,13 @@ section .text
 
     PUSH EBX                            ; 00498210
         ;   Label: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00498210
-    MOV EDX,dword ptr [0x02c9be68]      ; 00498211 | DAT_02c9be68
+    MOV EDX,dword ptr [0x02c9be68]      ; 00498211 | g_HWND_02c9be68
     PUSH EDX                            ; 00498217
     CALL dword ptr CS:[0x5d04e4]        ; 00498218 | PTR_OpenClipboard_005d04e4
     TEST EAX,EAX                        ; 0049821f
     JNZ 0x00498234                      ; 00498221
         ;   XREF to: 00498234 (CONDITIONAL_JUMP)  ; LAB_00498234
-    MOV EBX,dword ptr [0x01c3eb58]      ; 00498223 | DAT_01c3eb58
+    MOV EBX,dword ptr [0x01c3eb58]      ; 00498223 | g_CHAR_PTR_01c3eb58
         ;   Label: LAB_00498223
     TEST EBX,EBX                        ; 00498229
     JNZ 0x0049828c                      ; 0049822b
@@ -61,12 +61,12 @@ section .text
     DEC ECX                             ; 00498250
     LEA EBX,[ECX + 0x1]                 ; 00498251
     PUSH EBX                            ; 00498254
-    MOV ECX,dword ptr [0x01c3eb58]      ; 00498255 | DAT_01c3eb58
+    MOV ECX,dword ptr [0x01c3eb58]      ; 00498255 | g_CHAR_PTR_01c3eb58
     PUSH ECX                            ; 0049825b
     CALL crt_memory.c_realloc_FUN_005c10d0 ; 0049825c
         ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00498261
-    MOV [0x01c3eb58],EAX                ; 00498264 | DAT_01c3eb58
+    MOV [0x01c3eb58],EAX                ; 00498264 | g_CHAR_PTR_01c3eb58
     TEST EAX,EAX                        ; 00498269
     JZ 0x00498281                       ; 0049826b
         ;   XREF to: 00498281 (CONDITIONAL_JUMP)  ; LAB_00498281

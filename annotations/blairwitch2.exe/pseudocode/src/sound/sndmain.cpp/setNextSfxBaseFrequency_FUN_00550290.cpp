@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_00550290(float base_frequency)
 
 {
-  *(float *)(_DAT_0264161c * 0x60 + 0x264165c) = base_frequency;
+  g_CSfxOptions_ARRAY_02641620[g_INT_0264161c].base_frequency = base_frequency;
   return;
 }

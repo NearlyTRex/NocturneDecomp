@@ -51,16 +51,16 @@
 ;   TerminatedCString s_core_netgame_cpp_005ca43b
 ;   TerminatedCString s_allocSimFrame_sim_histor_005ca44f
 ;   TerminatedCString s_You_have_been_disconnect_005caa17
-;   undefined4 DAT_005caa40
+;   char g_CHAR_005caa40 = \x00
 ;   TerminatedCString s_core_netgame_cpp_005caa41
 ;   TerminatedCString s_Player_list_mismatch_pro_005caa55
 ;   TerminatedCString s_core_netgame_cpp_005caa8d
 ;   TerminatedCString s_Player_list_mismatch_005caaa1
-;   undefined4 DAT_005caab9
-;   undefined4 DAT_005caac1
-;   undefined4 DAT_005caac9
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   double g_DOUBLE_005caab9 = 0.0000152587890625
+;   double g_DOUBLE_005caac1 = -30
+;   double g_DOUBLE_005caac9 = 30
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   ... and 9 more
 ;
 ; Called Functions:
@@ -109,7 +109,7 @@ section .text
     SHL EAX,0x7                         ; 00504d94
     ADD EDX,0x20                        ; 00504d97
     ADD EDX,EAX                         ; 00504d9a
-    MOV EAX,[0x01da6478]                ; 00504d9c | DAT_01da6478
+    MOV EAX,[0x01da6478]                ; 00504d9c | g_UINT_01da6478
     MOV dword ptr [ESP + 0xd8],EDX      ; 00504da1
     MOV dword ptr [EDX + 0x24],EAX      ; 00504da8
     MOV AL,byte ptr [ESI + 0x4]         ; 00504dab
@@ -306,7 +306,7 @@ section .text
     JNZ 0x00504b06                      ; 00504f9f
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
     MOV EAX,dword ptr [ESI + 0x5]       ; 00504fa5
-    MOV [0x01da647c],EAX                ; 00504fa8 | DAT_01da647c
+    MOV [0x01da647c],EAX                ; 00504fa8 | g_INT_01da647c
     MOV ESP,EBP                         ; 00504fad
     POP EBP                             ; 00504faf
     POP EDI                             ; 00504fb0
@@ -331,7 +331,7 @@ section .text
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
     MOV EDI,dword ptr [ESP + 0xd8]      ; 00504fd6
     LEA ESI,[EDX + 0x5]                 ; 00504fdd
-    MOV dword ptr [0x01da647c],ECX      ; 00504fe0 | DAT_01da647c
+    MOV dword ptr [0x01da647c],ECX      ; 00504fe0 | g_INT_01da647c
     PUSH EDI                            ; 00504fe6
     MOV AL,byte ptr [ESI]               ; 00504fe7
         ;   Label: LAB_00504fe7
@@ -357,7 +357,7 @@ section .text
     LEA ESI,[EDX + 0x69]                ; 00505014
     MOVSD ES:EDI,ESI                    ; 00505017
     MOVSD ES:EDI,ESI                    ; 00505018
-    MOV dword ptr [0x01da6484],0xffffffff ; 00505019 | DAT_01da6484
+    MOV dword ptr [0x01da6484],0xffffffff ; 00505019 | g_INT_01da6484
     MOV ESP,EBP                         ; 00505023
     POP EBP                             ; 00505025
     POP EDI                             ; 00505026
@@ -442,9 +442,9 @@ section .text
     SUB EDX,EAX                         ; 005050d3
     MOV dword ptr [ESP + 0xe0],EDX      ; 005050d5
     FILD dword ptr [ESP + 0xe0]         ; 005050dc
-    FMUL double ptr [0x005caab9]        ; 005050e3 | DAT_005caab9
+    FMUL double ptr [0x005caab9]        ; 005050e3 | g_DOUBLE_005caab9
     FST float ptr [ESP]                 ; 005050e9
-    FCOMP double ptr [0x005caac1]       ; 005050ec | DAT_005caac1
+    FCOMP double ptr [0x005caac1]       ; 005050ec | g_DOUBLE_005caac1
     FNSTSW AX                           ; 005050f2
     SAHF                                ; 005050f4
     JNC 0x005050fe                      ; 005050f5
@@ -452,7 +452,7 @@ section .text
     MOV dword ptr [ESP],0xc1f00000      ; 005050f7
     FLD float ptr [ESP]                 ; 005050fe
         ;   Label: LAB_005050fe
-    FCOMP double ptr [0x005caac9]       ; 00505101 | DAT_005caac9
+    FCOMP double ptr [0x005caac9]       ; 00505101 | g_DOUBLE_005caac9
     FNSTSW AX                           ; 00505107
     SAHF                                ; 00505109
     JBE 0x00505113                      ; 0050510a
@@ -466,13 +466,13 @@ section .text
     SAHF                                ; 0050511c
     JNC 0x00504b06                      ; 0050511d
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
-    MOV EDX,dword ptr [0x01da6478]      ; 00505123 | DAT_01da6478
+    MOV EDX,dword ptr [0x01da6478]      ; 00505123 | g_UINT_01da6478
         ;   Label: LAB_00505123
     MOV EAX,dword ptr [ESI + 0x5]       ; 00505129
     SUB EDX,EAX                         ; 0050512c
     MOV dword ptr [ESP + 0xe0],EDX      ; 0050512e
     FILD dword ptr [ESP + 0xe0]         ; 00505135
-    FMUL double ptr [0x005caab9]        ; 0050513c | DAT_005caab9
+    FMUL double ptr [0x005caab9]        ; 0050513c | g_DOUBLE_005caab9
     FST float ptr [ESP + 0x4]           ; 00505142
     FLDZ                                ; 00505146
     FCOMPP                              ; 00505148
@@ -484,7 +484,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 00505151
     FLD float ptr [ESP + 0x4]           ; 00505155
         ;   Label: LAB_00505155
-    FCOMP double ptr [0x005caac9]       ; 00505159 | DAT_005caac9
+    FCOMP double ptr [0x005caac9]       ; 00505159 | g_DOUBLE_005caac9
     FNSTSW AX                           ; 0050515f
     SAHF                                ; 00505161
     JBE 0x0050516c                      ; 00505162
@@ -494,7 +494,7 @@ section .text
         ;   Label: LAB_0050516c
     MOV EAX,dword ptr [ESP + 0x4]       ; 00505173
     MOV dword ptr [EDX + 0x28],EAX      ; 00505177
-    MOV EAX,[0x01da6478]                ; 0050517a | DAT_01da6478
+    MOV EAX,[0x01da6478]                ; 0050517a | g_UINT_01da6478
     MOV dword ptr [EDX + 0x30],EAX      ; 0050517f
     MOV ESP,EBP                         ; 00505182
     POP EBP                             ; 00505184
@@ -522,7 +522,7 @@ section .text
     TEST EBX,EBX                        ; 005051a4
     JL 0x00504b06                       ; 005051a6
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
-    MOV EDX,dword ptr [0x01da648c]      ; 005051ac | DAT_01da648c
+    MOV EDX,dword ptr [0x01da648c]      ; 005051ac | g_INT_01da648c
     XOR EAX,EAX                         ; 005051b2
     CMP EAX,EDX                         ; 005051b4
     JGE 0x005051f0                      ; 005051b6
@@ -542,10 +542,10 @@ section .text
     JNZ 0x00505256                      ; 005051e3
         ;   XREF to: 00505256 (CONDITIONAL_JUMP)  ; LAB_00505256
     MOV ESI,dword ptr [EDI + 0x5]       ; 005051e5
-    CMP ESI,dword ptr [EDX + 0x1da6498] ; 005051e8 | DAT_01da65b8
+    CMP ESI,dword ptr [EDX + 0x1da6498] ; 005051e8 | g_SChatHistory_ARRAY_01da6490[1].message_id
     JNZ 0x00505256                      ; 005051ee
         ;   XREF to: 00505256 (CONDITIONAL_JUMP)  ; LAB_00505256
-    CMP EAX,dword ptr [0x01da648c]      ; 005051f0 | DAT_01da648c
+    CMP EAX,dword ptr [0x01da648c]      ; 005051f0 | g_INT_01da648c
         ;   Label: LAB_005051f0
     JNZ 0x00505218                      ; 005051f6
         ;   XREF to: 00505218 (CONDITIONAL_JUMP)  ; LAB_00505218
@@ -584,7 +584,7 @@ section .text
     POP ESI                             ; 00505253
     POP EBX                             ; 00505254
     RET                                 ; 00505255
-    MOV ESI,dword ptr [0x01da648c]      ; 00505256 | DAT_01da648c
+    MOV ESI,dword ptr [0x01da648c]      ; 00505256 | g_INT_01da648c
         ;   Label: LAB_00505256
     INC EAX                             ; 0050525c
     ADD EBX,0x120                       ; 0050525d
@@ -603,7 +603,7 @@ section .text
     TEST EBX,EBX                        ; 00505281
     JL 0x00504b06                       ; 00505283
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
-    MOV EDI,dword ptr [0x01dc2690]      ; 00505289 | DAT_01dc2690
+    MOV EDI,dword ptr [0x01dc2690]      ; 00505289 | g_INT_01dc2690
     XOR ESI,ESI                         ; 0050528f
     CMP ESI,EDI                         ; 00505291
     JGE 0x00504b06                      ; 00505293
@@ -680,13 +680,13 @@ section .text
     PUSH EDX                            ; 00505360
     CALL core_netgame.cpp_CNetGame_send_FUN_00505870 ; 00505361
         ;   XREF to: 00505870 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_00505870(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
-    MOV EDI,dword ptr [0x01da6480]      ; 00505366 | DAT_01da6480
+    MOV EDI,dword ptr [0x01da6480]      ; 00505366 | g_INT_01da6480
     MOV EAX,dword ptr [ESI + 0x5]       ; 0050536c
     ADD ESP,0xc                         ; 0050536f
     CMP EAX,EDI                         ; 00505372
     JLE 0x00504b06                      ; 00505374
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
-    MOV [0x01da6480],EAX                ; 0050537a | DAT_01da6480
+    MOV [0x01da6480],EAX                ; 0050537a | g_INT_01da6480
     MOV ESP,EBP                         ; 0050537f
     POP EBP                             ; 00505381
     POP EDI                             ; 00505382
@@ -754,16 +754,16 @@ section .text
     SUB EBX,EAX                         ; 0050540d
     MOV dword ptr [ESP + 0xe0],EBX      ; 0050540f
     FILD dword ptr [ESP + 0xe0]         ; 00505416
-    FMUL double ptr [0x005caab9]        ; 0050541d | DAT_005caab9
+    FMUL double ptr [0x005caab9]        ; 0050541d | g_DOUBLE_005caab9
     FST float ptr [ESP + 0x8]           ; 00505423
-    FCOMP double ptr [0x005caac1]       ; 00505427 | DAT_005caac1
+    FCOMP double ptr [0x005caac1]       ; 00505427 | g_DOUBLE_005caac1
     FNSTSW AX                           ; 0050542d
     SAHF                                ; 0050542f
     JC 0x005054b6                       ; 00505430
         ;   XREF to: 005054b6 (CONDITIONAL_JUMP)  ; LAB_005054b6
     FLD float ptr [ESP + 0x8]           ; 00505436
         ;   Label: LAB_00505436
-    FCOMP double ptr [0x005caac9]       ; 0050543a | DAT_005caac9
+    FCOMP double ptr [0x005caac9]       ; 0050543a | g_DOUBLE_005caac9
     FNSTSW AX                           ; 00505440
     SAHF                                ; 00505442
     JBE 0x0050544d                      ; 00505443
@@ -843,7 +843,7 @@ section .text
     CMP dword ptr [EAX + 0x4],0x1       ; 005054e3
     JNZ 0x00504b06                      ; 005054e7
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
-    MOV EAX,[0x01da6484]                ; 005054ed | DAT_01da6484
+    MOV EAX,[0x01da6484]                ; 005054ed | g_INT_01da6484
     CMP EAX,dword ptr [ESI + 0x5]       ; 005054f2
     JGE 0x00505514                      ; 005054f5
         ;   XREF to: 00505514 (CONDITIONAL_JUMP)  ; LAB_00505514
@@ -857,11 +857,11 @@ section .text
     JZ 0x00504b06                       ; 00505506
         ;   XREF to: 00504b06 (CONDITIONAL_JUMP)  ; caseD_e
     MOV EAX,dword ptr [ESI + 0x5]       ; 0050550c
-    MOV [0x01da6484],EAX                ; 0050550f | DAT_01da6484
+    MOV [0x01da6484],EAX                ; 0050550f | g_INT_01da6484
     MOV dword ptr [ESP + 0xa4],0x9      ; 00505514
         ;   Label: LAB_00505514
     MOV byte ptr [ESP + 0xa8],0xc       ; 0050551f
-    MOV EAX,[0x01da6484]                ; 00505527 | DAT_01da6484
+    MOV EAX,[0x01da6484]                ; 00505527 | g_INT_01da6484
     MOV dword ptr [ESP + 0xa9],EAX      ; 0050552c
     LEA EAX,[ESP + 0xa4]                ; 00505533
     PUSH EAX                            ; 0050553a
@@ -943,10 +943,10 @@ section .text
         ;   XREF to: 005043b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_005043b0(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 005055ec
     PUSH 0x5caa17                       ; 005055ef | = "You have been disconnected from the game"
-    PUSH 0x5caa40                       ; 005055f4 | DAT_005caa40
+    PUSH 0x5caa40                       ; 005055f4 | g_CHAR_005caa40
     PUSH 0x0                            ; 005055f9
     PUSH 0x0                            ; 005055fb
-    MOV EBX,dword ptr [0x02cfd89c]      ; 005055fd | DAT_02cfd89c
+    MOV EBX,dword ptr [0x02cfd89c]      ; 005055fd | g_UCHAR_ARRAY_02cfd89c
     PUSH EBX                            ; 00505603
     LEA EAX,[ESP + 0xd0]                ; 00505604
     PUSH EAX                            ; 0050560b
@@ -990,7 +990,7 @@ section .text
     CMP EBX,ECX                         ; 00505662
     JNZ 0x0050502a                      ; 00505664
         ;   XREF to: 0050502a (CONDITIONAL_JUMP)  ; LAB_0050502a
-    MOV EDI,dword ptr [0x01dc5c80]      ; 0050566a | DAT_01dc5c80
+    MOV EDI,dword ptr [0x01dc5c80]      ; 0050566a | g_INT_01dc5c80
     MOV EAX,dword ptr [ESI + 0x5]       ; 00505670
     XOR EBX,ECX                         ; 00505673
     MOV ESI,EAX                         ; 00505675
@@ -1039,8 +1039,8 @@ section .text
     MOV EDX,0x5caa8d                    ; 005056f8 | = "..\\core\\netgame.cpp"
     MOV ECX,0x597                       ; 005056fd
     PUSH 0x5caaa1                       ; 00505702 | = "Player list mismatch!"
-    MOV dword ptr [0x01d71de0],EDX      ; 00505707 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0050570d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00505707 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0050570d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00505713
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00505718
@@ -1069,19 +1069,19 @@ section .text
     CMP EAX,EDX                         ; 0050575f
     JL 0x00505699                       ; 00505761
         ;   XREF to: 00505699 (CONDITIONAL_JUMP)  ; LAB_00505699
-    CMP dword ptr [0x01dc5c80],0x200    ; 00505767 | DAT_01dc5c80
+    CMP dword ptr [0x01dc5c80],0x200    ; 00505767 | g_INT_01dc5c80
         ;   Label: LAB_00505767
     JL 0x00505796                       ; 00505771
         ;   XREF to: 00505796 (CONDITIONAL_JUMP)  ; LAB_00505796
     MOV EDX,0x5ca43b                    ; 00505773 | = "..\\core\\netgame.cpp"
     MOV ECX,0x12b                       ; 00505778
     PUSH 0x5ca44f                       ; 0050577d | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01d71de0],EDX      ; 00505782 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00505788 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00505782 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00505788 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050578e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00505793
-    MOV EDX,dword ptr [0x01dc5c80]      ; 00505796 | DAT_01dc5c80
+    MOV EDX,dword ptr [0x01dc5c80]      ; 00505796 | g_INT_01dc5c80
         ;   Label: LAB_00505796
     LEA EAX,[EDX*0x8 + 0x0]             ; 0050579c
     SUB EAX,EDX                         ; 005057a3
@@ -1094,7 +1094,7 @@ section .text
     ADD EBX,EAX                         ; 005057b6
     LEA ESI,[EDX + 0x1]                 ; 005057b8
     PUSH EBX                            ; 005057bb
-    MOV dword ptr [0x01dc5c80],ESI      ; 005057bc | DAT_01dc5c80
+    MOV dword ptr [0x01dc5c80],ESI      ; 005057bc | g_INT_01dc5c80
     CALL crt_memory.c_memset_FUN_005a28f0 ; 005057c2
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005057c7
@@ -1107,8 +1107,8 @@ section .text
         ;   Label: LAB_005057da
     MOV EAX,0x596                       ; 005057df
     PUSH 0x5caa55                       ; 005057e4 | = "Player list mismatch processing SimFr..."
-    MOV dword ptr [0x01d71de0],EDI      ; 005057e9 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 005057ef | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 005057e9 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 005057ef | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005057f4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005057f9

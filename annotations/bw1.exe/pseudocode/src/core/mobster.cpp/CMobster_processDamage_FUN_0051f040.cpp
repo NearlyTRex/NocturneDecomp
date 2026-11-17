@@ -38,7 +38,7 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_0051f040(CMobster *this
       if (this_ptr->death_sound_played == 0) {
         sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
         uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                          ((CDemonActor *)this_ptr,"@mobster-die-?.wav" + 1);
+                          ((CDemonActor *)this_ptr,"mobster-die-?.wav");
         this_ptr->death_sound_played = 1;
         this_ptr->sfx_handles[0] = uVar5;
         core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);

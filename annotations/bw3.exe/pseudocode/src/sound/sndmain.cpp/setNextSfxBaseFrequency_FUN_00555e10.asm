@@ -10,13 +10,13 @@
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f247
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ceb91c
+;   int g_INT_02ceb91c
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555e10 | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555e10 | g_INT_02ceb91c
         ;   Label: sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00555e10
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555e16
     SUB EAX,EDX                         ; 00555e1d

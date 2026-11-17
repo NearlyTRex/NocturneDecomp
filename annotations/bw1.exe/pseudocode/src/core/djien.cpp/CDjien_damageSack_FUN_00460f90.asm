@@ -11,9 +11,9 @@
 ;   TerminatedCString s_limb_wav_005d8e2f
 ;   TerminatedCString s_djien_heart_wav_6_005d8e38
 ;   TerminatedCString s_DjienSackBlown_005d8e4d
-;   undefined4 DAT_005d8e60
-;   undefined4 DAT_00612270
-;   undefined4 DAT_0061b4d0
+;   double g_DOUBLE_005d8e60 = 7
+;   int g_INT_00612270 = 0x14
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 00460fe2 (CONDITIONAL_JUMP)  ; LAB_00460fe2
     FLD float ptr [ESI + 0x4]           ; 00460fb6
     FADD float ptr [EBX + EAX*0x4 + 0xc2d8] ; 00460fb9
-    FILD dword ptr [0x00612270]         ; 00460fc0 | DAT_00612270
+    FILD dword ptr [0x00612270]         ; 00460fc0 | g_INT_00612270
     FXCH                                ; 00460fc6
     FSTP float ptr [EBX + EAX*0x4 + 0xc2d8] ; 00460fc8
     FCOMP float ptr [EBX + EAX*0x4 + 0xc2d8] ; 00460fcf
@@ -106,10 +106,10 @@ section .text
         ;   XREF to: 00419b90 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90(CBodyPart * this_ptr)
     FLD float ptr [ESI + 0x8]           ; 0046105c
     ADD ESP,0x4                         ; 0046105f
-    MOV EAX,[0x0061b4d0]                ; 00461062 | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 00461062 | g_CEventList_PTR_0061b4d0
     FLD ST0                             ; 00461067
     PUSH 0x5d8e4d                       ; 00461069 | = "DjienSackBlown"
-    FMUL double ptr [0x005d8e60]        ; 0046106e | DAT_005d8e60
+    FMUL double ptr [0x005d8e60]        ; 0046106e | g_DOUBLE_005d8e60
     PUSH EAX                            ; 00461074
     FSTP ST1                            ; 00461075
     FSTP float ptr [ESI + 0x8]          ; 00461077

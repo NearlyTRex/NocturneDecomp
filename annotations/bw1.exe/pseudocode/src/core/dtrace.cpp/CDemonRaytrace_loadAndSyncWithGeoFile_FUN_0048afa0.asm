@@ -11,8 +11,8 @@
 ;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054de47
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db944
-;   undefined4 DAT_005db947
+;   TerminatedCString s_rb_005db944
+;   TerminatedCString s_data_005db947
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0
@@ -25,10 +25,10 @@ section .text
 
     PUSH EBX                            ; 0048afa0
         ;   Label: core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0
-    PUSH 0x5db944                       ; 0048afa1 | DAT_005db944
+    PUSH 0x5db944                       ; 0048afa1 | = "rb"
     MOV EDX,dword ptr [ESP + 0x10]      ; 0048afa6
     PUSH EDX                            ; 0048afaa
-    PUSH 0x5db947                       ; 0048afab | DAT_005db947
+    PUSH 0x5db947                       ; 0048afab | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0048afb0
         ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 0048afb5

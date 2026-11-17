@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
 
 {
@@ -21,16 +19,16 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
   pCVar1 = (CGhoul *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CGhoulVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(pCVar1->base).base.model,(char *)0x5d8e8e);
+            (&(pCVar1->base).base.model,"guul.dfm");
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(20.0,35.0);
   max_value = 4.0;
   fVar4 = 6.987474e-39;
-  dVar3 = round((double)(fVar2 * (float)_DAT_005d8e97));
+  dVar3 = round((double)(fVar2 * (float)65536));
   pCVar1->burp_timer = (int)ROUND(dVar3);
   fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar4,max_value);
   pCVar1->arise_timer = 0xa0000;
   pCVar1->pending_eat_state = -1;
-  fVar2 = (float)_DAT_005d8e97;
+  fVar2 = (float)65536;
   pCVar1->flinch_blend_weight = 0.0;
   pCVar1->spasm_count = 2;
   iVar5 = 0x4c1687;
@@ -44,9 +42,9 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
   pCVar1->heal_timer = 0.0;
   pCVar1->is_berserk = 0;
   pCVar1->stuck_timer = 0.0;
-  fVar2 = _DAT_005f78d0;
+  fVar2 = 50.0f;
   (pCVar1->base).base.turn_rate = 1.5707964;
-  fVar4 = _DAT_005f78d4;
+  fVar4 = 100.0f;
   pCVar1->lives_left = iVar5;
   (pCVar1->base).base.ai_detection_range_min = fVar2;
   (pCVar1->base).base.ai_detection_range_max = fVar4;

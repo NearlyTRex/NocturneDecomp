@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc *this_ptr)
 
@@ -72,7 +71,7 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc *this_ptr)
   }
   if (((this_ptr->base).base.layer_action_index != 0xe) &&
      (local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
-                           ((CCharacter *)this_ptr,0), local_14 < (float)_DAT_005da1d4)) {
+                           ((CCharacter *)this_ptr,0), local_14 < (float)0.98999999999999999)) {
     return 0;
   }
   local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
@@ -115,8 +114,8 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc *this_ptr)
       local_100[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
            local_b8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
       if ((0.0 < local_100[1]) &&
-         ((((local_100[1] < (float)_DAT_005da1dc && (ABS(local_104) < (float)_DAT_005da1e4)) &&
-           (0.0 < (double)local_100[0])) && ((double)local_100[0] < _DAT_005da1ec)))) {
+         ((((local_100[1] < (float)3 && (ABS(local_104) < (float)2))
+           && (0.0 < (double)local_100[0])) && ((double)local_100[0] < 4)))) {
         pCVar3 = (this_ptr->base).base.carry_hands[1].carry_actor;
         if ((pCVar3 == (CDemonActor *)0x0) ||
            (iVar1 = (*((pCVar3->vtable)._ub)->canPickup)(pCVar3,(CDemonActor *)this_ptr), iVar1 != 4
@@ -147,7 +146,7 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc *this_ptr)
         iVar1 = (this_ptr->base).action_pending;
         if (iVar1 != 0) {
           shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
-                    (g_CEditorToolsPtr,"?actionPending = %d\ndoc.cpp line %d" + 1,iVar1,0xfa1);
+                    (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d",iVar1,0xfa1);
         }
         pCVar9 = &(this_ptr->base).target_position;
         pCVar4 = &(local_28->base).location;
@@ -251,7 +250,7 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc *this_ptr)
         local_dc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
              local_b8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
         if (SQRT(local_cc * local_cc + local_dc[2] * local_dc[2] + local_dc[3] * local_dc[3]) <
-            (float)_DAT_005da1e4) {
+            (float)2) {
           return 0;
         }
       }

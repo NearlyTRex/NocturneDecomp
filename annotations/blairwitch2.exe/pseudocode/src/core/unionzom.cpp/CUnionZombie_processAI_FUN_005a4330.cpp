@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie *this_ptr,float delta_time)
 
@@ -35,7 +34,7 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie 
   core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
             ((this_ptr->base).base.base.base.particle_systems + 4,delta_time);
   iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
-                    (&(this_ptr->base).state_machine,&DAT_005f0312);
+                    (&(this_ptr->base).state_machine,"Burn");
   if (iVar5 != 0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
               (&(this_ptr->base).base.base.model.base,8,1);
@@ -45,8 +44,8 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie 
   if (((iVar5 == 0) &&
       (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Animation"),
       iVar5 == 0)) &&
-     (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,&DAT_005f0327), iVar5 == 0))
-  {
+     (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Burn"), iVar5 == 0
+     )) {
     (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
   }
   if ((this_ptr->base).base.victim != (CCharacter *)0x0) {
@@ -60,14 +59,14 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie 
                (this_ptr->base).base.base.base.location.position.x,
        fVar4 = (pCVar2->base).location.position.z -
                (this_ptr->base).base.base.base.location.position.z,
-       _DAT_005ff540 <= SQRT(fVar4 * fVar4 + fVar3 * fVar3))) {
-      (this_ptr->base).attack_range = _DAT_005ff540;
+       8.0f <= SQRT(fVar4 * fVar4 + fVar3 * fVar3))) {
+      (this_ptr->base).attack_range = 8.0f;
       core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
                 (pSVar1,"ChaseComplete","VanishAttack");
     }
   }
   pSVar1 = &(this_ptr->base).state_machine;
-  iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,&DAT_005f0369);
+  iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Burn");
   if ((((iVar5 != 0) ||
        (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Chasing"),
        iVar5 != 0)) ||
@@ -79,9 +78,9 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie 
     core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0(&this_ptr->base,fVar3,1.0,0.5);
     core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(&this_ptr->base);
   }
-  fStack_38 = (this_ptr->base).move_velocity.x * _DAT_005f038e;
-  fStack_34 = (this_ptr->base).move_velocity.y * _DAT_005f038e;
-  fStack_30 = (this_ptr->base).move_velocity.z * _DAT_005f038e;
+  fStack_38 = (this_ptr->base).move_velocity.x * -2000.0f;
+  fStack_34 = (this_ptr->base).move_velocity.y * -2000.0f;
+  fStack_30 = (this_ptr->base).move_velocity.z * -2000.0f;
   fStack_44 = fStack_38;
   *(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8) =
        *(uint *)((int)&stack0xffffffcc + (uint)bVar6 * -8);

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d7edb0
-;   undefined4 DAT_01d7edb4
+;   UNetPacket g_UNetPacket_01d7edb0
+;   undefined4 g_UNetPacket_01d7edb0+4
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_ctor_FUN_0052c470
@@ -34,7 +34,7 @@ section .text
     MOV EDX,0x405                       ; 0052c0ce
     ADD ESP,0xc                         ; 0052c0d3
     XOR AH,AH                           ; 0052c0d6
-    MOV dword ptr [0x01d7edb0],EDX      ; 0052c0d8 | DAT_01d7edb0
-    MOV byte ptr [0x01d7edb4],AH        ; 0052c0de | DAT_01d7edb4
+    MOV dword ptr [0x01d7edb0],EDX      ; 0052c0d8 | g_UNetPacket_01d7edb0
+    MOV byte ptr [0x01d7edb4],AH        ; 0052c0de | g_UNetPacket_01d7edb0+4
     RET                                 ; 0052c0e4
 

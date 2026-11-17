@@ -20,8 +20,8 @@
 ;   TerminatedCString s_CDemonMission_load_Unabl_005e9096
 ;   TerminatedCString s_Loading_mission_005e90c0
 ;   CLevelLoader* g_CLevelLoaderPtr = 01d1bd1c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0
@@ -89,8 +89,8 @@ section .text
     MOV ECX,0x5e9082                    ; 0051a45d | = "..\\core\\mission.cpp"
     MOV ESI,0xa3                        ; 0051a462
     PUSH 0x5e9096                       ; 0051a467 | = "CDemonMission::load - Unable to open ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0051a46c | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0051a472 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0051a46c | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0051a472 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a478
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a47d

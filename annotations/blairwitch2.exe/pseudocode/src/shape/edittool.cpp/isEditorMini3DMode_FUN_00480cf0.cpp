@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_isEditorMini3DMode_FUN_00480cf0(void)
 
 {
-  return _DAT_01c25f84;
+  return g_INT_01c25f84;
 }

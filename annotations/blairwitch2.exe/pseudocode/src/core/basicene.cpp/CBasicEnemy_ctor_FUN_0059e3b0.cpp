@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_ptr)
 
 {
@@ -17,11 +15,11 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   char (*pacVar3) [25];
   SStateMachine *pSVar4;
   SStateRef *pSVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  uint uVar10;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
   CEnemy *pCVar11;
   SStateMachine *this_ptr_01;
   char *pcVar12;
@@ -105,31 +103,31 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   *(uint *)(this_ptr_01[1].state_names[4] + 0x18) = 0x3f800000;
   pacVar3 = this_ptr_01[1].state_names;
   *(char *)((int)(pacVar3 + 5) + 0xb) = '\0';
-  uVar8 = _DAT_005febe4;
+  fVar8 = 5.0f;
   *(char *)((int)(pacVar3 + 5) + 0xc) = '\0';
   *(char *)((int)(pacVar3 + 5) + 0xd) = '\0';
   *(char *)((int)(pacVar3 + 5) + 0xe) = '\0';
   pacVar3 = this_ptr_01[1].state_names;
   *(char *)((int)(pacVar3 + 5) + 7) = '\0';
-  uVar9 = _DAT_005febe8;
+  fVar9 = 100.0f;
   *(char *)((int)(pacVar3 + 5) + 8) = '\0';
   *(char *)((int)(pacVar3 + 5) + 9) = -0x60;
   *(char *)((int)(pacVar3 + 5) + 10) = '@';
   pacVar3 = this_ptr_01[1].state_names;
   *(char *)((int)(pacVar3 + 5) + 3) = '\0';
-  uVar10 = _DAT_005febec;
+  fVar10 = 999.0f;
   *(char *)((int)(pacVar3 + 5) + 4) = '\0';
   *(char *)((int)(pacVar3 + 5) + 5) = -0x80;
   *(char *)((int)(pacVar3 + 5) + 6) = '?';
   pacVar3 = this_ptr_01[1].state_names;
   *(char *)((int)(pacVar3 + 4) + 0x10) = '\0';
-  uVar7 = _DAT_005febe0;
+  fVar7 = 50.0f;
   *(char *)((int)(pacVar3 + 4) + 0x11) = '\0';
   *(char *)((int)(pacVar3 + 4) + 0x12) = '\0';
   *(char *)((int)(pacVar3 + 4) + 0x13) = '\0';
   pacVar3 = this_ptr_01[1].state_names;
   *(char *)((int)(pacVar3 + 4) + 0xc) = '\0';
-  uVar6 = _DAT_005febdc;
+  fVar6 = 200.0f;
   *(char *)((int)(pacVar3 + 4) + 0xd) = '\0';
   *(char *)((int)(pacVar3 + 4) + 0xe) = '\0';
   *(char *)((int)(pacVar3 + 4) + 0xf) = '\0';
@@ -138,11 +136,11 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   *(char *)((int)(pacVar3 + 8) + 0xd) = '\0';
   *(char *)((int)(pacVar3 + 8) + 0xe) = '\0';
   *(char *)((int)(pacVar3 + 8) + 0xf) = '\0';
-  *(uint *)(this_ptr_01[1].state_names[1] + 0x13) = uVar8;
-  *(uint *)(this_ptr_01[1].state_names[1] + 0x17) = uVar9;
-  *(uint *)(this_ptr_01[1].state_names[2] + 2) = uVar10;
-  *(uint *)(this_ptr_01[-0x1a].state_names[9] + 0x17) = uVar7;
-  *(uint *)(this_ptr_01[-0x1a].state_names[10] + 2) = uVar6;
+  *(float *)(this_ptr_01[1].state_names[1] + 0x13) = fVar8;
+  *(float *)(this_ptr_01[1].state_names[1] + 0x17) = fVar9;
+  *(float *)(this_ptr_01[1].state_names[2] + 2) = fVar10;
+  *(float *)(this_ptr_01[-0x1a].state_names[9] + 0x17) = fVar7;
+  *(float *)(this_ptr_01[-0x1a].state_names[10] + 2) = fVar6;
   iVar2 = *(int *)(this_ptr_01[1].state_names[8] + 0xc);
   pacVar3 = this_ptr_01[1].state_names;
   *(char *)((int)(pacVar3 + 5) + 0xf) = '\0';
@@ -150,7 +148,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   *(char *)((int)(pacVar3 + 5) + 0x11) = '\0';
   *(char *)((int)(pacVar3 + 5) + 0x12) = '\0';
   if (iVar2 != 0) {
-    pcVar12 = (char *)0x5ef863;
+    pcVar12 = "idle";
     pcVar13 = this_ptr_01[1].state_names[5] + 0x13;
     do {
       cVar1 = *pcVar12;
@@ -232,7 +230,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   this_ptr_01[1].ref_states[0x10].identifier[9] = '\0';
   pSVar5 = this_ptr_01[1].ref_states;
   pSVar5[0x18].identifier[0xc] = '\0';
-  uVar6 = _DAT_005febf0;
+  fVar6 = 10.0f;
   pSVar5[0x18].identifier[0xd] = '\0';
   pSVar5[0x18].identifier[0xe] = ' ';
   pSVar5[0x18].identifier[0xf] = 'A';
@@ -248,7 +246,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   pSVar5[0x18].identifier[0x16] = '\0';
   pSVar5[0x18].identifier[0x17] = '\0';
   pcVar13 = this_ptr_01[1].ref_states[8].identifier + 10;
-  *(uint *)(this_ptr_01[1].state_names[10] + 2) = uVar6;
+  *(float *)(this_ptr_01[1].state_names[10] + 2) = fVar6;
   do {
     cVar1 = *pcVar12;
     *pcVar13 = cVar1;

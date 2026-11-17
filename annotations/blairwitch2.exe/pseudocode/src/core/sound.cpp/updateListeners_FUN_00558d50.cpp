@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
 
 {
@@ -86,14 +84,14 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
       local_60[3] = g_CDemonCameraInstance.base.position.f.y;
       local_50 = g_CDemonCameraInstance.base.position.f.z;
     }
-    local_dc = local_60[2] - _DAT_0264b29c;
-    local_d8 = local_60[3] - _DAT_0264b2a0;
-    local_d4 = local_50 - _DAT_0264b2a4;
+    local_dc = local_60[2] - g_FLOAT_0264b29c;
+    local_d8 = local_60[3] - g_FLOAT_0264b2a0;
+    local_d4 = local_50 - g_FLOAT_0264b2a4;
     local_70 = local_dc;
     local_6c = local_d8;
     local_68 = local_d4;
-    if (SQRT(local_d4 * local_d4 + local_dc * local_dc + local_d8 * local_d8) < (float)_DAT_005ea6fc
-       ) {
+    if (SQRT(local_d4 * local_d4 + local_dc * local_dc + local_d8 * local_d8) <
+        (float)0.0001) {
       return;
     }
     pCVar5 = &g_CDemonCameraInstance.base.rotation_matrix;
@@ -165,7 +163,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   sound_sndmain_cpp_set3DListenerOrient_FUN_005514f0
             (local_b8,local_b4[0],local_b4[1],local_10c,local_108[0],local_108[1],local_124,
              local_120[0],local_120[1]);
-  _DAT_0264b2a8 = 0.0;
+  g_FLOAT_0264b2a8 = 0.0;
   if (g_CGamePtr->goggles_active == 0) {
     iVar2 = _strnicmp
                       (g_CDemonSetPtr->geometry_filename,"castle",6);
@@ -200,7 +198,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
             local_114[(uint)bVar8 * -2] = *(int *)((int)&local_34 + (uint)bVar8 * -8 + 4);
             local_114[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                  *(int *)((int)&local_34 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-            fVar1 = (float)_DAT_005ea704;
+            fVar1 = (float)0.00390625;
             local_18 = (float)local_114[1];
             local_ac.x = (float)local_118 * fVar1;
             local_ac.y = (float)local_114[0] * fVar1;
@@ -214,46 +212,46 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
                  local_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
             fVar1 = SQRT(local_3c[1] * local_3c[1] + local_40 * local_40 + local_3c[0] * local_3c[0]
                         );
-            if ((float)_DAT_005ea724 < fVar1) {
-              local_1b8 = (fVar1 + (float)_DAT_005ea72c) * (float)_DAT_005ea70c + 0.0;
+            if ((float)50 < fVar1) {
+              local_1b8 = (fVar1 + (float)-50) * (float)0.02 + 0.0;
             }
             local_ac.y = local_ac.y + 1.0;
             local_18 = core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0
                                  (g_CDemonSetPtr,&local_ac);
-            if ((float)_DAT_005ea734 < local_18 - local_ac.y) {
-              local_1b8 = ((local_18 - local_ac.y) + (float)_DAT_005ea73c) * (float)_DAT_005ea714 +
-                          local_1b8;
+            if ((float)60 < local_18 - local_ac.y) {
+              local_1b8 = ((local_18 - local_ac.y) + (float)-60) *
+                          (float)0.016666666666666701 + local_1b8;
             }
           }
           else {
             local_1b8 = 1.0;
           }
           if (0.0 < local_1b8) {
-            local_1b8 = local_1b8 + _DAT_005ea744;
+            local_1b8 = local_1b8 + 0.2f;
           }
           local_1b8 = local_1b8 * local_1b8;
           if (1.0 < local_1b8) {
             local_1b8 = 1.0;
           }
-          _DAT_0264b2a8 = local_1b8 * _DAT_005ea71c + _DAT_0264b2a8;
+          g_FLOAT_0264b2a8 = local_1b8 * 0.015625f + g_FLOAT_0264b2a8;
           iVar2 = iVar2 + 2;
         } while (iVar2 != 0x21);
         local_20 = local_20 + 2;
       } while (local_20 != 0x21);
     }
-    _DAT_0264b2a8 = _DAT_0264b2a8 * _DAT_0264b2a8;
-    if (0.0 < _DAT_0264b2a8) {
-      _DAT_0264b2a8 = _DAT_0264b2a8 + _DAT_005ea720;
+    g_FLOAT_0264b2a8 = g_FLOAT_0264b2a8 * g_FLOAT_0264b2a8;
+    if (0.0 < g_FLOAT_0264b2a8) {
+      g_FLOAT_0264b2a8 = g_FLOAT_0264b2a8 + 0.3f;
     }
-    if (1.0 < _DAT_0264b2a8) {
-      _DAT_0264b2a8 = 1.0;
+    if (1.0 < g_FLOAT_0264b2a8) {
+      g_FLOAT_0264b2a8 = 1.0;
     }
   }
   if (&stack0x00000000 == (byte *)0x264b2f4) {
     return;
   }
-  _DAT_0264b29c = local_60[2];
-  _DAT_0264b2a0 = local_60[3];
-  _DAT_0264b2a4 = local_50;
+  g_FLOAT_0264b29c = local_60[2];
+  g_FLOAT_0264b2a0 = local_60[3];
+  g_FLOAT_0264b2a4 = local_50;
   return;
 }

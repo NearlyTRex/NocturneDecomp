@@ -8,9 +8,9 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_Death_005f0c8d+1
-;   undefined4 DAT_005f0c96
-;   undefined4 DAT_0061c068
+;   TerminatedCString s_Death_005f0c8e
+;   double g_DOUBLE_005f0c96 = 0.100000000000000
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
@@ -53,12 +53,12 @@ section .text
     LEA EAX,[EBX + 0x11543]             ; 005ab811
     PUSH EAX                            ; 005ab817
     PUSH EBX                            ; 005ab818
-    MOV ESI,dword ptr [0x0061c068]      ; 005ab819 | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 005ab819 | g_CSound_PTR_0061c068
     PUSH ESI                            ; 005ab81f
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005ab820
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 005ab825
-    PUSH 0x5f0c8e                       ; 005ab828 | s_Death_005f0c8d+1
+    PUSH 0x5f0c8e                       ; 005ab828 | = "Death"
         ;   Label: LAB_005ab828
     ADD EBX,0x10af8                     ; 005ab82d
     PUSH EBX                            ; 005ab833
@@ -74,7 +74,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 005ab84c
         ;   Label: LAB_005ab84c
     FLD ST0                             ; 005ab84f
-    FMUL double ptr [0x005f0c96]        ; 005ab851 | DAT_005f0c96
+    FMUL double ptr [0x005f0c96]        ; 005ab851 | g_DOUBLE_005f0c96
     FSTP ST1                            ; 005ab857
     FSTP float ptr [ESI + 0x4]          ; 005ab859
     JMP 0x005ab7ec                      ; 005ab85c

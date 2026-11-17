@@ -19,7 +19,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0 at 0054e14f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2024
+;   double g_DOUBLE_005d2024 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -37,7 +37,7 @@ section .text
     PUSH EBP                            ; 0054d8f3
     SUB ESP,0x1c                        ; 0054d8f4
     FLD float ptr [ESP + 0x38]          ; 0054d8f7
-    FCOMP double ptr [0x005d2024]       ; 0054d8fb | DAT_005d2024
+    FCOMP double ptr [0x005d2024]       ; 0054d8fb | g_DOUBLE_005d2024
     FNSTSW AX                           ; 0054d901
     SAHF                                ; 0054d903
     JA 0x0054d90e                       ; 0054d904

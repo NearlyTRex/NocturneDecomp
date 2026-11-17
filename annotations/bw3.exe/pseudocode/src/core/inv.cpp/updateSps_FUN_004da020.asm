@@ -5,17 +5,17 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c5ee7
-;   undefined4 DAT_005c5eef
-;   undefined4 DAT_005c5ef7
-;   undefined4 DAT_005c5eff
+;   double g_DOUBLE_005c5ee7 = 1600
+;   double g_DOUBLE_005c5eef = 900
+;   double g_DOUBLE_005c5ef7 = 400
+;   double g_DOUBLE_005c5eff = 100
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_01d5ba14
-;   undefined4 DAT_01d5be80
-;   undefined4 DAT_01d70a20
+;   int g_INT_01d5ba14
+;   float g_FLOAT_01d5be80
+;   int g_INT_01d70a20
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -38,11 +38,11 @@ section .text
     AND ESP,0xfffffff8                  ; 004da029
     MOV EAX,[0x005fe9dc]                ; 004da02c | g_CGamePtr
     FLD float ptr [EAX + 0x314]         ; 004da031
-    FSUBR float ptr [0x01d5be80]        ; 004da037 | DAT_01d5be80
+    FSUBR float ptr [0x01d5be80]        ; 004da037 | g_FLOAT_01d5be80
     FLDZ                                ; 004da03d
     FXCH                                ; 004da03f
-    FSTP float ptr [0x01d5be80]         ; 004da041 | DAT_01d5be80
-    FCOMP float ptr [0x01d5be80]        ; 004da047 | DAT_01d5be80
+    FSTP float ptr [0x01d5be80]         ; 004da041 | g_FLOAT_01d5be80
+    FCOMP float ptr [0x01d5be80]        ; 004da047 | g_FLOAT_01d5be80
     FNSTSW AX                           ; 004da04d
     SAHF                                ; 004da04f
     JNC 0x004da059                      ; 004da050
@@ -64,8 +64,8 @@ section .text
     MOV dword ptr [ESP + 0x3c],EAX      ; 004da06c
     MOV EDX,0xffffffff                  ; 004da070
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004da075
-    MOV [0x01d5be80],EAX                ; 004da079 | DAT_01d5be80
-    MOV dword ptr [0x01d70a20],EDX      ; 004da07e | DAT_01d70a20
+    MOV [0x01d5be80],EAX                ; 004da079 | g_FLOAT_01d5be80
+    MOV dword ptr [0x01d70a20],EDX      ; 004da07e | g_INT_01d70a20
     ADD ESP,0x8                         ; 004da084
     MOV EAX,[0x00603b28]                ; 004da087 | g_CDemonSetPtr
         ;   Label: LAB_004da087
@@ -112,7 +112,7 @@ section .text
     TEST EAX,EAX                        ; 004da0eb
     JNZ 0x004da0b1                      ; 004da0ed
         ;   XREF to: 004da0b1 (CONDITIONAL_JUMP)  ; LAB_004da0b1
-    MOV EDX,dword ptr [0x01d5ba14]      ; 004da0ef | DAT_01d5ba14
+    MOV EDX,dword ptr [0x01d5ba14]      ; 004da0ef | g_INT_01d5ba14
     MOV EDX,dword ptr [EDX*0x4 + 0x1d5ba04] ; 004da0f5
     LEA EAX,[EBX + 0x20]                ; 004da0fc
     FLD float ptr [EDX + 0x20]          ; 004da0ff
@@ -128,13 +128,13 @@ section .text
     FMUL ST0                            ; 004da118
     FADDP                               ; 004da11a
     FST double ptr [ESP]                ; 004da11c
-    FCOMP double ptr [0x005c5ee7]       ; 004da11f | DAT_005c5ee7
+    FCOMP double ptr [0x005c5ee7]       ; 004da11f | g_DOUBLE_005c5ee7
     FNSTSW AX                           ; 004da125
     SAHF                                ; 004da127
     JA 0x004da0b1                       ; 004da128
         ;   XREF to: 004da0b1 (CONDITIONAL_JUMP)  ; LAB_004da0b1
     FLD double ptr [ESP]                ; 004da12a
-    FCOMP double ptr [0x005c5eef]       ; 004da12d | DAT_005c5eef
+    FCOMP double ptr [0x005c5eef]       ; 004da12d | g_DOUBLE_005c5eef
     FNSTSW AX                           ; 004da133
     SAHF                                ; 004da135
     JBE 0x004da1a7                      ; 004da136
@@ -143,12 +143,12 @@ section .text
     MOV EAX,0x3                         ; 004da13d
     MOV dword ptr [ESP + 0x28],EBX      ; 004da142
     MOV dword ptr [ESP + 0x18],EDX      ; 004da146
-    MOV [0x01d70a20],EAX                ; 004da14a | DAT_01d70a20
+    MOV [0x01d70a20],EAX                ; 004da14a | g_INT_01d70a20
     XOR EBX,EBX                         ; 004da14f
     MOV ECX,dword ptr [EBX + 0x1d70a24] ; 004da151
         ;   Label: LAB_004da151
     PUSH ECX                            ; 004da157
-    MOV EAX,[0x006045f8]                ; 004da158 | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 004da158 | g_CSound_PTR_006045f8
     PUSH EAX                            ; 004da15d
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 004da15e
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
@@ -170,7 +170,7 @@ section .text
         ;   Label: LAB_004da179
     PUSH EDX                            ; 004da17d
     PUSH EAX                            ; 004da17e
-    MOV ECX,dword ptr [0x006045f8]      ; 004da17f | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004da17f | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004da185
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 004da186
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)
@@ -184,7 +184,7 @@ section .text
         ;   XREF to: 004da087 (UNCONDITIONAL_JUMP)  ; LAB_004da087
     FLD double ptr [ESP]                ; 004da1a7
         ;   Label: LAB_004da1a7
-    FCOMP double ptr [0x005c5ef7]       ; 004da1aa | DAT_005c5ef7
+    FCOMP double ptr [0x005c5ef7]       ; 004da1aa | g_DOUBLE_005c5ef7
     FNSTSW AX                           ; 004da1b0
     SAHF                                ; 004da1b2
     JBE 0x004da227                      ; 004da1b3
@@ -192,13 +192,13 @@ section .text
     MOV ECX,0x2                         ; 004da1b5
     MOV dword ptr [ESP + 0x2c],EBX      ; 004da1ba
     MOV EBX,0x5c5ec2                    ; 004da1be
-    MOV dword ptr [0x01d70a20],ECX      ; 004da1c3 | DAT_01d70a20
+    MOV dword ptr [0x01d70a20],ECX      ; 004da1c3 | g_INT_01d70a20
     MOV dword ptr [ESP + 0x1c],EBX      ; 004da1c9
     XOR EBX,EBX                         ; 004da1cd
     MOV EDX,dword ptr [EBX + 0x1d70a24] ; 004da1cf
         ;   Label: LAB_004da1cf
     PUSH EDX                            ; 004da1d5
-    MOV ECX,dword ptr [0x006045f8]      ; 004da1d6 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004da1d6 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004da1dc
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 004da1dd
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
@@ -220,7 +220,7 @@ section .text
         ;   Label: LAB_004da1f8
     PUSH EAX                            ; 004da1fc
     PUSH 0x0                            ; 004da1fd
-    MOV EDX,dword ptr [0x006045f8]      ; 004da1ff | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 004da1ff | g_CSound_PTR_006045f8
     PUSH EDX                            ; 004da205
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 004da206
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)
@@ -234,7 +234,7 @@ section .text
         ;   XREF to: 004da087 (UNCONDITIONAL_JUMP)  ; LAB_004da087
     FLD double ptr [ESP]                ; 004da227
         ;   Label: LAB_004da227
-    FCOMP double ptr [0x005c5eff]       ; 004da22a | DAT_005c5eff
+    FCOMP double ptr [0x005c5eff]       ; 004da22a | g_DOUBLE_005c5eff
     FNSTSW AX                           ; 004da230
     SAHF                                ; 004da232
     JBE 0x004da2a4                      ; 004da233
@@ -243,12 +243,12 @@ section .text
     MOV EAX,0x1                         ; 004da23a
     MOV dword ptr [ESP + 0x24],EBX      ; 004da23f
     MOV dword ptr [ESP + 0x14],EDX      ; 004da243
-    MOV [0x01d70a20],EAX                ; 004da247 | DAT_01d70a20
+    MOV [0x01d70a20],EAX                ; 004da247 | g_INT_01d70a20
     XOR EBX,EBX                         ; 004da24c
     MOV EAX,dword ptr [EBX + 0x1d70a24] ; 004da24e
         ;   Label: LAB_004da24e
     PUSH EAX                            ; 004da254
-    MOV EDX,dword ptr [0x006045f8]      ; 004da255 | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 004da255 | g_CSound_PTR_006045f8
     PUSH EDX                            ; 004da25b
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 004da25c
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
@@ -270,7 +270,7 @@ section .text
         ;   Label: LAB_004da277
     PUSH ECX                            ; 004da27b
     PUSH EAX                            ; 004da27c
-    MOV EAX,[0x006045f8]                ; 004da27d | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 004da27d | g_CSound_PTR_006045f8
     PUSH EAX                            ; 004da282
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 004da283
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)
@@ -286,13 +286,13 @@ section .text
         ;   Label: LAB_004da2a4
     XOR ECX,ECX                         ; 004da2a8
     MOV EBX,0x5c5eda                    ; 004da2aa
-    MOV dword ptr [0x01d70a20],ECX      ; 004da2af | DAT_01d70a20
+    MOV dword ptr [0x01d70a20],ECX      ; 004da2af | g_INT_01d70a20
     MOV dword ptr [ESP + 0x20],EBX      ; 004da2b5
     XOR EBX,EBX                         ; 004da2b9
     MOV ECX,dword ptr [EBX + 0x1d70a24] ; 004da2bb
         ;   Label: LAB_004da2bb
     PUSH ECX                            ; 004da2c1
-    MOV EAX,[0x006045f8]                ; 004da2c2 | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 004da2c2 | g_CSound_PTR_006045f8
     PUSH EAX                            ; 004da2c7
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 004da2c8
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
@@ -314,7 +314,7 @@ section .text
         ;   Label: LAB_004da2e3
     PUSH EDX                            ; 004da2e7
     PUSH EAX                            ; 004da2e8
-    MOV ECX,dword ptr [0x006045f8]      ; 004da2e9 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004da2e9 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004da2ef
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 004da2f0
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)

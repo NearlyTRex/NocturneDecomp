@@ -14,11 +14,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005c7f95
 ;   TerminatedCString s_CMini3D_allocVertexList_005c7faa
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d76f5c
-;   undefined4 DAT_01d76f60
-;   undefined4 DAT_01d76f64
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01d76f5c
+;   float* g_FLOAT_PTR_01d76f60
+;   float* g_FLOAT_PTR_01d76f64
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -28,7 +28,7 @@
 
 section .text
 
-    CMP dword ptr [0x01d76f5c],0x0      ; 004ede40 | DAT_01d76f5c
+    CMP dword ptr [0x01d76f5c],0x0      ; 004ede40 | g_INT_01d76f5c
         ;   Label: engine_mini3d.cpp_allocVertexList_FUN_004ede40
     JZ 0x004ede4a                       ; 004ede47
         ;   XREF to: 004ede4a (CONDITIONAL_JUMP)  ; LAB_004ede4a
@@ -38,7 +38,7 @@ section .text
     CALL crt_memory.c_malloc_FUN_005a3650 ; 004ede4f
         ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004ede54
-    MOV [0x01d76f5c],EAX                ; 004ede57 | DAT_01d76f5c
+    MOV [0x01d76f5c],EAX                ; 004ede57 | g_INT_01d76f5c
     TEST EAX,EAX                        ; 004ede5c
     JNZ 0x004ede85                      ; 004ede5e
         ;   XREF to: 004ede85 (CONDITIONAL_JUMP)  ; LAB_004ede85
@@ -46,17 +46,17 @@ section .text
     MOV ECX,0x5c7f95                    ; 004ede61 | = "..\\engine\\mini3d.cpp"
     MOV EBX,0x67d                       ; 004ede66
     PUSH 0x5c7faa                       ; 004ede6b | = "CMini3D::allocVertexList - Out of mem..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004ede70 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004ede76 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004ede70 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 004ede76 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ede7c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ede81
     POP EBX                             ; 004ede84
-    MOV EAX,[0x01d76f5c]                ; 004ede85 | DAT_01d76f5c
+    MOV EAX,[0x01d76f5c]                ; 004ede85 | g_INT_01d76f5c
         ;   Label: LAB_004ede85
     ADD EAX,0x3f                        ; 004ede8a
     AND AL,0xc0                         ; 004ede8d
-    MOV [0x01d76f60],EAX                ; 004ede8f | DAT_01d76f60
-    MOV [0x01d76f64],EAX                ; 004ede94 | DAT_01d76f64
+    MOV [0x01d76f60],EAX                ; 004ede8f | g_FLOAT_PTR_01d76f60
+    MOV [0x01d76f64],EAX                ; 004ede94 | g_FLOAT_PTR_01d76f64
     RET                                 ; 004ede99
 

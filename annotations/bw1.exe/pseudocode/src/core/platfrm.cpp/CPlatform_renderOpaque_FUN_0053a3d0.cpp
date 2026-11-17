@@ -22,19 +22,20 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0053a3d0(CPlatform *this
   uint auStack_20 [4];
   
   bVar5 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if ((iVar1 == 0) || (this_ptr->plot_in_shadow_flag != 0)) {
     if ((2 < (int)this_ptr->one_shot) &&
-       (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-       iVar1 == 0)) {
+       (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                          (g_CDemonRenderer_PTR_00612560), iVar1 == 0)) {
       return 0;
     }
     if ((((this_ptr->render_in_background_when_not_moving_flag != 0) &&
          (this_ptr->state != PLATFORM_STATE_TYPE_MOVING_TO_END)) &&
         (this_ptr->state != PLATFORM_STATE_TYPE_MOVING_TO_START)) &&
        ((this_ptr->rendered_in_background != 0 &&
-        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-        iVar1 == 0)))) {
+        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                           (g_CDemonRenderer_PTR_00612560), iVar1 == 0)))) {
       return 0;
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
@@ -49,8 +50,8 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0053a3d0(CPlatform *this
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_50,in_stack_ffffff94);
     if (iVar1 != 0) {
       if ((this_ptr->plot_as_box_in_shadow == 0) ||
-         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-         iVar2 == 0)) {
+         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                            (g_CDemonRenderer_PTR_00612560), iVar2 == 0)) {
         core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                   (&this_ptr->model,0.0,-1);
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(&this_ptr->base);

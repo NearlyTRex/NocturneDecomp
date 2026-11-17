@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_00594060(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 
 {
@@ -17,8 +15,8 @@ CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_00594060
   float10 fVar4;
   float10 fVar5;
   
-  fVar4 = (float10)fsin((float10)angle_radians * (float10)_DAT_005eedb6);
-  fVar5 = (float10)fcos((float10)angle_radians * (float10)_DAT_005eedb6);
+  fVar4 = (float10)fsin((float10)angle_radians * (float10)0.5f);
+  fVar5 = (float10)fcos((float10)angle_radians * (float10)0.5f);
   fVar1 = axis_ptr->x;
   fVar2 = axis_ptr->y;
   fVar3 = axis_ptr->z;

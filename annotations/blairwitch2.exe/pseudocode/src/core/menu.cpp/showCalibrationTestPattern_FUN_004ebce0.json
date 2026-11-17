@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 129,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 5,
+    "pseudocode_lines": 57,
+    "suspect_count": 4,
     "suspect_types": [
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 197
+    "total_lines": 195
   },
   "cross_references": [
     {
@@ -87,8 +86,8 @@
   "globals": [
     {
       "addr": "005dcb45",
-      "name": "s_Press_any_key_to_continu_005dcb44+1",
-      "type": "undefined4",
+      "name": "s_Press_any_key_to_continu_005dcb45",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -99,8 +98,8 @@
     },
     {
       "addr": "01511cc4",
-      "name": "DAT_01511cc4",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01511cc4",
+      "type": "CBitFont*",
       "value": null
     }
   ],
@@ -280,16 +279,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -297,7 +288,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 40,
+      "line": 37,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -305,7 +296,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 31,
+      "line": 28,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -313,7 +304,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 31,
+      "line": 28,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

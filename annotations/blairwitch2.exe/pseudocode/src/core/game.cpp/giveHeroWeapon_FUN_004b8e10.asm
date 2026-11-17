@@ -13,21 +13,21 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9d3b
 ;
 ; Referenced Globals:
-;   undefined4 s_CMeleeAxe_005d79f1+2
-;   undefined1 DAT_005d79fd
-;   undefined1 DAT_005d79fe
-;   undefined1 DAT_005d79ff
-;   undefined1 DAT_005d7a00
+;   TerminatedCString s_CMeleeAxe_005d79f3
+;   TerminatedCString s_Axe_005d79fd
+;   undefined4 s_xe_005d79fd+1
+;   undefined4 s_e_005d79fd+2
+;   undefined4 s__005d79fd+3
 ;   TerminatedCString s_CBoxActor_005d7a01
 ;   TerminatedCString s_Lantern_005d7a0b
 ;   TerminatedCString s_Lantern_kfm_005d7a13
 ;   TerminatedCString s_core_game_cpp_005d7a1f
 ;   TerminatedCString s_giveHeroWeapon_This_is_n_005d7a30
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 g_CBoxActorClassInfo.name_hash
-;   undefined4 DAT_01cedef4
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01cedef4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -56,7 +56,7 @@ section .text
     CALL core_actor.cpp_createActorByName_FUN_0040c5a0 ; 004b8e1c
         ;   XREF to: 0040c5a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c5a0(char * class_name)
     ADD ESP,0x4                         ; 004b8e21
-    PUSH 0x5d79f3                       ; 004b8e24 | s_CMeleeAxe_005d79f1+2
+    PUSH 0x5d79f3                       ; 004b8e24 | = "CMeleeAxe"
     PUSH EAX                            ; 004b8e29
     MOV EDI,EAX                         ; 004b8e2a
     MOV EBP,EAX                         ; 004b8e2c
@@ -66,15 +66,15 @@ section .text
     TEST EAX,EAX                        ; 004b8e36
     JZ 0x004b8ef1                       ; 004b8e38
         ;   XREF to: 004b8ef1 (CONDITIONAL_JUMP)  ; LAB_004b8ef1
-    MOV ESI,0x5d79fd                    ; 004b8e3e | DAT_005d79fd
+    MOV ESI,0x5d79fd                    ; 004b8e3e | = "Axe"
     PUSH EDI                            ; 004b8e43
-    MOV AL,byte ptr [ESI]               ; 004b8e44 | DAT_005d79fd | DAT_005d79ff
+    MOV AL,byte ptr [ESI]               ; 004b8e44 | = "Axe" | s_e_005d79fd+2
         ;   Label: LAB_004b8e44
     MOV byte ptr [EDI],AL               ; 004b8e46
     CMP AL,0x0                          ; 004b8e48
     JZ 0x004b8e5c                       ; 004b8e4a
         ;   XREF to: 004b8e5c (CONDITIONAL_JUMP)  ; LAB_004b8e5c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b8e4c | DAT_005d79fe | DAT_005d7a00
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b8e4c | s_xe_005d79fd+1 | s__005d79fd+3
     ADD ESI,0x2                         ; 004b8e4f
     MOV byte ptr [EDI + 0x1],AL         ; 004b8e52
     ADD EDI,0x2                         ; 004b8e55
@@ -101,14 +101,14 @@ section .text
     MOV EDX,0x5d7a1f                    ; 004b8e7f | = "..\\core\\game.cpp"
     MOV ECX,0xb63                       ; 004b8e84
     PUSH 0x5d7a30                       ; 004b8e89 | = "giveHeroWeapon - This is not a weapon"
-    MOV dword ptr [0x01d046a0],EDX      ; 004b8e8e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004b8e94 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004b8e8e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004b8e94 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b8e9a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004b8e9f
     MOV dword ptr [EBX + 0x6c4],0x1f4   ; 004b8ea2
         ;   Label: LAB_004b8ea2
-    MOV EBX,dword ptr [0x01cedef4]      ; 004b8eac | DAT_01cedef4
+    MOV EBX,dword ptr [0x01cedef4]      ; 004b8eac | g_INT_01cedef4
     MOV ESI,dword ptr [EBX*0x4 + 0x1cedee4] ; 004b8eb2
     PUSH ESI                            ; 004b8eb9
     MOV EAX,dword ptr [EBP + 0x2b0]     ; 004b8eba
@@ -116,7 +116,7 @@ section .text
     CALL dword ptr [EAX + 0x90]         ; 004b8ec1
     ADD ESP,0x8                         ; 004b8ec7
     PUSH 0x0                            ; 004b8eca
-    MOV EAX,[0x01cedef4]                ; 004b8ecc | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b8ecc | g_INT_01cedef4
     PUSH 0x1                            ; 004b8ed1
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b8ed3
     PUSH EBP                            ; 004b8eda
@@ -201,13 +201,13 @@ section .text
     PUSH 0x1                            ; 004b8f92
     MOV dword ptr [EAX + 0x470],0x2     ; 004b8f94
     PUSH EAX                            ; 004b8f9e
-    MOV EAX,[0x01cedef4]                ; 004b8f9f | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b8f9f | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b8fa4
     JMP 0x004b8edb                      ; 004b8fab
         ;   XREF to: 004b8edb (UNCONDITIONAL_JUMP)  ; LAB_004b8edb
     PUSH EDI                            ; 004b8fb0
         ;   Label: LAB_004b8fb0
-    MOV ECX,dword ptr [0x00618170]      ; 004b8fb1 | DAT_00618170
+    MOV ECX,dword ptr [0x00618170]      ; 004b8fb1 | g_CDemonMission_PTR_00618170
     PUSH ECX                            ; 004b8fb7
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 004b8fb8
         ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission * this_ptr, CDemonActor * actor)

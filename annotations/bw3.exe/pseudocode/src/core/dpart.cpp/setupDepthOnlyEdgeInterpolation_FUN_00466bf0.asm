@@ -8,10 +8,10 @@
 ; SSoftwareEdge *  Stack[0x8]:4   vertex_b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bdcfd4
-;   undefined4 DAT_01bdd4d8
-;   undefined4 DAT_01bdd4dc
-;   undefined4 DAT_01bdd520
+;   int g_INT_01bdcfd4
+;   int g_INT_01bdd4d8
+;   int g_INT_01bdd4dc
+;   int g_INT_01bdd520
 ;
 ; *****************************************************************************
 
@@ -41,7 +41,7 @@ section .text
     MOV ECX,EAX                         ; 00466c1e
     MOV EAX,EDX                         ; 00466c20
     MOV EDX,ECX                         ; 00466c22
-    MOV ESI,dword ptr [0x01bdcfd4]      ; 00466c24 | DAT_01bdcfd4
+    MOV ESI,dword ptr [0x01bdcfd4]      ; 00466c24 | g_INT_01bdcfd4
         ;   Label: LAB_00466c24
     LEA ECX,[ESI*0x4 + 0x0]             ; 00466c2a
     ADD ECX,ESI                         ; 00466c31
@@ -49,17 +49,17 @@ section .text
     SHL ECX,0x4                         ; 00466c38
     ADD ESI,ECX                         ; 00466c3b
     MOV dword ptr [ESI],EAX             ; 00466c3d
-    MOV EBP,dword ptr [0x01bdd4d8]      ; 00466c3f | DAT_01bdd4d8
+    MOV EBP,dword ptr [0x01bdd4d8]      ; 00466c3f | g_INT_01bdd4d8
     MOV dword ptr [ESI + 0x4],EDX       ; 00466c45
     CMP EAX,EBP                         ; 00466c48
     JGE 0x00466c51                      ; 00466c4a
         ;   XREF to: 00466c51 (CONDITIONAL_JUMP)  ; LAB_00466c51
-    MOV [0x01bdd4d8],EAX                ; 00466c4c | DAT_01bdd4d8
-    CMP EDX,dword ptr [0x01bdd4dc]      ; 00466c51 | DAT_01bdd4dc
+    MOV [0x01bdd4d8],EAX                ; 00466c4c | g_INT_01bdd4d8
+    CMP EDX,dword ptr [0x01bdd4dc]      ; 00466c51 | g_INT_01bdd4dc
         ;   Label: LAB_00466c51
     JLE 0x00466c5f                      ; 00466c57
         ;   XREF to: 00466c5f (CONDITIONAL_JUMP)  ; LAB_00466c5f
-    MOV dword ptr [0x01bdd4dc],EDX      ; 00466c59 | DAT_01bdd4dc
+    MOV dword ptr [0x01bdd4dc],EDX      ; 00466c59 | g_INT_01bdd4dc
     MOV EDX,dword ptr [EBX + 0x14]      ; 00466c5f
         ;   Label: LAB_00466c5f
     MOV ECX,dword ptr [EDI + 0x14]      ; 00466c62
@@ -94,7 +94,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00466cb4
     MOV EDX,EAX                         ; 00466cb8
     MOV EAX,dword ptr [EBX + 0x10]      ; 00466cba
-    MOV EDI,dword ptr [0x01bdd520]      ; 00466cbd | DAT_01bdd520
+    MOV EDI,dword ptr [0x01bdd520]      ; 00466cbd | g_INT_01bdd520
     ADD EAX,EDX                         ; 00466cc3
     MOV EDX,dword ptr [ESI + 0x2c]      ; 00466cc5
     MOV dword ptr [ESI + 0x8],EAX       ; 00466cc8
@@ -103,11 +103,11 @@ section .text
     IMUL EDX                            ; 00466cd0
     SHRD EAX,EDX,0x10                   ; 00466cd2
     SHL EBX,0x8                         ; 00466cd6
-    MOV EBP,dword ptr [0x01bdcfd4]      ; 00466cd9 | DAT_01bdcfd4
+    MOV EBP,dword ptr [0x01bdcfd4]      ; 00466cd9 | g_INT_01bdcfd4
     SUB EBX,EDI                         ; 00466cdf
     INC EBP                             ; 00466ce1
     ADD EBX,EAX                         ; 00466ce2
-    MOV dword ptr [0x01bdcfd4],EBP      ; 00466ce4 | DAT_01bdcfd4
+    MOV dword ptr [0x01bdcfd4],EBP      ; 00466ce4 | g_INT_01bdcfd4
     MOV dword ptr [ESI + 0x28],EBX      ; 00466cea
     POP ESI                             ; 00466ced
     POP EBP                             ; 00466cee

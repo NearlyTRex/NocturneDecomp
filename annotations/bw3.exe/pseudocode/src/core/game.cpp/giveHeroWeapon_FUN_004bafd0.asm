@@ -12,10 +12,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005c2928
 ;   TerminatedCString s_giveHeroWeapon_This_is_n_005c2939
-;   undefined4 DAT_00600530
-;   undefined4 DAT_01d5ba14
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
+;   int g_INT_01d5ba14
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   undefined4 DAT_01d81080
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
@@ -41,7 +41,7 @@ section .text
         ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 004bafde
     PUSH EAX                            ; 004bafe1
-    MOV ECX,dword ptr [0x00600530]      ; 004bafe2 | DAT_00600530
+    MOV ECX,dword ptr [0x00600530]      ; 004bafe2 | g_CDemonMission_PTR_00600530
     PUSH ECX                            ; 004bafe8 | DAT_01d81080
     MOV EBX,EAX                         ; 004bafe9
     MOV ESI,EAX                         ; 004bafeb
@@ -64,14 +64,14 @@ section .text
         ;   XREF to: 004bb061 (CONDITIONAL_JUMP)  ; LAB_004bb061
     MOV dword ptr [EBX + 0x568],0x1f4   ; 004bb017
         ;   Label: LAB_004bb017
-    MOV EBX,dword ptr [0x01d5ba14]      ; 004bb021 | DAT_01d5ba14
+    MOV EBX,dword ptr [0x01d5ba14]      ; 004bb021 | g_INT_01d5ba14
     MOV EDX,dword ptr [EBX*0x4 + 0x1d5ba04] ; 004bb027
     PUSH EDX                            ; 004bb02e
     MOV EAX,dword ptr [ESI + 0x154]     ; 004bb02f
     PUSH ESI                            ; 004bb035
     CALL dword ptr [EAX + 0x88]         ; 004bb036
     ADD ESP,0x8                         ; 004bb03c
-    MOV EAX,[0x01d5ba14]                ; 004bb03f | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004bb03f | g_INT_01d5ba14
     PUSH 0x1                            ; 004bb044
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004bb046
     PUSH ESI                            ; 004bb04d
@@ -89,8 +89,8 @@ section .text
         ;   Label: LAB_004bb061
     MOV EAX,0xc18                       ; 004bb066
     PUSH 0x5c2939                       ; 004bb06b | = "giveHeroWeapon - This is not a weapon"
-    MOV dword ptr [0x01d71de0],EBP      ; 004bb070 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004bb076 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004bb070 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004bb076 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004bb07b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004bb080

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 120,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
     "total_lines": 343
   },
@@ -46,44 +45,44 @@
   "globals": [
     {
       "addr": "005d01df",
-      "name": "DAT_005d01df",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d01df",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "005d01e7",
-      "name": "DAT_005d01e7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d01e7",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "005d01ef",
-      "name": "DAT_005d01ef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d01ef",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005d01f7",
-      "name": "DAT_005d01f7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d01f7",
+      "type": "float",
+      "value": "0.3183099"
     },
     {
       "addr": "005d01ff",
-      "name": "DAT_005d01ff",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d01ff",
+      "type": "double",
+      "value": "0.00100000000000000"
     },
     {
       "addr": "01b4d2a8",
-      "name": "DAT_01b4d2a8",
-      "type": "undefined4",
+      "name": "g_INT_01b4d2a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d2ac",
-      "name": "DAT_01b4d2ac",
-      "type": "undefined4",
+      "name": "g_INT_01b4d2ac",
+      "type": "int",
       "value": null
     }
   ],
@@ -262,16 +261,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 12,
+      "line": 10,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_velocity).z = 0.0;",

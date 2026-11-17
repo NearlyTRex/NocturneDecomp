@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626628 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_0062662c = 005c50d4
-;   undefined4 DAT_02c9ffa0
+;   void* g_PTR_02c9ffa0
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_005c1cb0
@@ -60,8 +60,8 @@ section .text
     XOR EAX,EAX                         ; 005ccea7
     MOV AL,byte ptr [EDI + 0x52]        ; 005ccea9
     MOV dword ptr [EBX + 0xc],EAX       ; 005cceac
-    MOV EAX,[0x02c9ffa0]                ; 005cceaf | DAT_02c9ffa0
-    MOV dword ptr [0x02c9ffa0],EBX      ; 005cceb4 | DAT_02c9ffa0
+    MOV EAX,[0x02c9ffa0]                ; 005cceaf | g_PTR_02c9ffa0
+    MOV dword ptr [0x02c9ffa0],EBX      ; 005cceb4 | g_PTR_02c9ffa0
     MOV dword ptr [EBX],EAX             ; 005cceba
     JMP 0x005ccec0                      ; 005ccebc
         ;   XREF to: 005ccec0 (UNCONDITIONAL_JUMP)  ; LAB_005ccec0

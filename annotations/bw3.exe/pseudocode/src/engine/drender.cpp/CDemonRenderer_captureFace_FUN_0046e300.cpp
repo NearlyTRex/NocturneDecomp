@@ -6,74 +6,76 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300(CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags)
 
 {
   SRenderVertex *pSVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
-  uint uVar5;
+  SFace *pSVar4;
+  ushort uVar5;
   int iVar6;
-  int iVar7;
-  uint *puVar8;
+  uint uVar7;
+  int iVar8;
   uint *puVar9;
   uint *puVar10;
   uint *puVar11;
-  byte bVar12;
+  uint *puVar12;
+  byte bVar13;
   
-  bVar12 = 0;
+  bVar13 = 0;
   if (this_ptr->face_capture_enabled == 0) {
-    iVar6 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_00515d60(triangle_indices);
-    if (iVar6 == 0) {
+    iVar8 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_00515d60(triangle_indices);
+    if (iVar8 == 0) {
       return;
     }
   }
   else {
     pSVar1 = this_ptr->vertex_buffer_ptr;
-    uVar5 = pSVar1[triangle_indices->vertex_index_2].projected_vertex.screen_x &
+    uVar7 = pSVar1[triangle_indices->vertex_index_2].projected_vertex.screen_x &
             pSVar1[triangle_indices->vertex_index_0].projected_vertex.screen_x &
             pSVar1[triangle_indices->vertex_index_1].projected_vertex.screen_x;
-    if (((uVar5 & 0x80000000) != 0) && ((char)uVar5 != '\0')) {
+    if (((uVar7 & 0x80000000) != 0) && ((char)uVar7 != '\0')) {
       return;
     }
   }
-  if (4999 < _DAT_01bdd858) {
-    _DAT_01d71de0 = "..\\engine\\drender.cpp";
-    _DAT_01d71de4 = 0xb78;
+  if (4999 < g_INT_01bdd858) {
+    g_CHAR_PTR_01d71de0 = "..\\engine\\drender.cpp";
+    g_INT_01d71de4 = 0xb78;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDR::captureFace - too many faces captured");
   }
-  uVar4 = _DAT_01bdd85c;
-  iVar7 = _DAT_01bdd858 * 0x20;
-  puVar10 = (uint *)(iVar7 + 0x1bdd870 + (uint)bVar12 * -8);
-  puVar8 = (uint *)((int)triangle_indices + (uint)bVar12 * -8 + 4);
-  *(uint *)(iVar7 + 0x1bdd86c) = *(uint *)triangle_indices;
-  puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
-  puVar9 = puVar8 + (uint)bVar12 * -2 + 1;
-  *puVar10 = *puVar8;
+  iVar8 = g_INT_01bdd85c;
+  iVar6 = g_INT_01bdd858;
+  pSVar4 = g_SFace_ARRAY_01bdd860 + g_INT_01bdd858;
+  puVar11 = (uint *)(g_INT_01bdd858 * 0x20 + 0x1bdd870 + (uint)bVar13 * -8);
+  puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);
+  uVar5 = triangle_indices->vertex_index_1;
+  (pSVar4->face_data).vertex_indices.vertex_index_0 = triangle_indices->vertex_index_0;
+  (pSVar4->face_data).vertex_indices.vertex_index_1 = uVar5;
+  puVar12 = puVar11 + (uint)bVar13 * -2 + 1;
+  puVar10 = puVar9 + (uint)bVar13 * -2 + 1;
   *puVar11 = *puVar9;
-  puVar11[(uint)bVar12 * -2 + 1] = puVar9[(uint)bVar12 * -2 + 1];
-  *(ushort *)(puVar11 + (uint)bVar12 * -2 + 1 + (uint)bVar12 * -2 + 1) =
-       *(ushort *)(puVar9 + (uint)bVar12 * -2 + 1 + (uint)bVar12 * -2 + 1);
-  *(uint *)(&DAT_01bdd860 + iVar7) = uVar4;
-  *(int *)(&DAT_01bdd864 + iVar7) = render_flags;
+  *puVar12 = *puVar10;
+  puVar12[(uint)bVar13 * -2 + 1] = puVar10[(uint)bVar13 * -2 + 1];
+  *(ushort *)(puVar12 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1) =
+       *(ushort *)(puVar10 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1);
+  g_SFace_ARRAY_01bdd860[iVar6].texture_index = iVar8;
+  g_SFace_ARRAY_01bdd860[iVar6].render_flags = render_flags;
   pSVar1 = this_ptr->vertex_buffer_ptr;
-  iVar6 = pSVar1[triangle_indices->vertex_index_0].projected_vertex.transformed_z;
+  iVar8 = pSVar1[triangle_indices->vertex_index_0].projected_vertex.transformed_z;
   iVar2 = pSVar1[triangle_indices->vertex_index_1].projected_vertex.transformed_z;
   iVar3 = pSVar1[triangle_indices->vertex_index_2].projected_vertex.transformed_z;
-  if ((iVar6 < iVar2) && (iVar6 < iVar3)) {
-    *(int *)(iVar7 + 0x1bdd868) = iVar6;
-    _DAT_01bdd858 = _DAT_01bdd858 + 1;
+  if ((iVar8 < iVar2) && (iVar8 < iVar3)) {
+    g_SFace_ARRAY_01bdd860[iVar6].depth = iVar8;
+    g_INT_01bdd858 = g_INT_01bdd858 + 1;
     return;
   }
   if (iVar3 <= iVar2) {
-    *(int *)(_DAT_01bdd858 * 0x20 + 0x1bdd868) = iVar3;
-    _DAT_01bdd858 = _DAT_01bdd858 + 1;
+    g_SFace_ARRAY_01bdd860[g_INT_01bdd858].depth = iVar3;
+    g_INT_01bdd858 = g_INT_01bdd858 + 1;
     return;
   }
-  *(int *)(_DAT_01bdd858 * 0x20 + 0x1bdd868) = iVar2;
-  _DAT_01bdd858 = _DAT_01bdd858 + 1;
+  g_SFace_ARRAY_01bdd860[g_INT_01bdd858].depth = iVar2;
+  g_INT_01bdd858 = g_INT_01bdd858 + 1;
   return;
 }

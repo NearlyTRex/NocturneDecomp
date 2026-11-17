@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e5590(SProjectedVertex *point)
 
 {
@@ -18,7 +16,7 @@ void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e5590(SProjectedVert
   int iVar5;
   byte bVar6;
   
-  iVar4 = _DAT_01c6b598;
+  iVar4 = g_INT_01c6b598;
   iVar1 = point->transformed_y;
   iVar2 = point->transformed_z;
   iVar3 = point->transformed_x;
@@ -41,8 +39,8 @@ void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e5590(SProjectedVert
     return;
   }
   point->inv_z = (int)(0x7fffffff / (longlong)iVar2);
-  iVar5 = _DAT_01c6b59c;
-  point->screen_x = (int)(((longlong)iVar3 * (longlong)iVar4) / (longlong)iVar2) + _DAT_01c6b5a0;
-  point->screen_y = (int)(((longlong)iVar1 * (longlong)iVar5) / (longlong)iVar2) + _DAT_01c6b5a4;
+  iVar5 = g_INT_01c6b59c;
+  point->screen_x = (int)(((longlong)iVar3 * (longlong)iVar4) / (longlong)iVar2) + g_INT_01c6b5a0;
+  point->screen_y = (int)(((longlong)iVar1 * (longlong)iVar5) / (longlong)iVar2) + g_INT_01c6b5a4;
   return;
 }

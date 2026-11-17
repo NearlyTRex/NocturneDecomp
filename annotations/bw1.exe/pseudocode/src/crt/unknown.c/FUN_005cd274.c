@@ -11,11 +11,11 @@ bool FUN_005cd274(void)
 {
   BOOL BVar1;
   
-  if (DAT_00626b4c != '\0') {
+  if (g_BYTE_00626b4c != 0) {
     BVar1 = SetConsoleCtrlHandler(FUN_005cd1b0,0);
     if (BVar1 != 0) {
-      DAT_00626b4c = '\0';
+      g_BYTE_00626b4c = 0;
     }
   }
-  return DAT_00626b4c == '\0';
+  return g_BYTE_00626b4c == 0;
 }

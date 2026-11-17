@@ -15,12 +15,12 @@
 ;   engine_zraster.c_rasterizeTriangle_FUN_0059a0b0 at 0059a54a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c35e6c
+;   void* g_PTR_01c35e6c
 ;
 ; *****************************************************************************
 
 section .text
 
-    JMP dword ptr [0x01c35e6c]          ; 0055d6d7 | DAT_01c35e6c
+    JMP dword ptr [0x01c35e6c]          ; 0055d6d7 | g_PTR_01c35e6c
         ;   Label: engine_special.cpp_renderScanline_FUN_0055d6d7
 

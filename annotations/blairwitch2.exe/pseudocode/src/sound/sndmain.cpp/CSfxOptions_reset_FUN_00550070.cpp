@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00550070(CSfxOptions *this_ptr)
 
 {
@@ -32,7 +30,7 @@ void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00550070(CSfxOptions *this_
   *(uint *)&this_ptr->playback_position = 0;
   *(uint *)((int)&this_ptr->playback_position + 4) = 0;
   this_ptr->playback_position_type = 0;
-  fVar1 = _DAT_005fbc14;
+  fVar1 = -1.0f;
   this_ptr->dead = 0;
   this_ptr->delay_remaining = fVar1;
   return;

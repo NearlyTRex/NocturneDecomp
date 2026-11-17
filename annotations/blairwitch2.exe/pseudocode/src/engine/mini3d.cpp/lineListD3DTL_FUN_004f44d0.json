@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 40
+    "total_lines": 39
   },
   "cross_references": [
     {
@@ -50,20 +49,20 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c38b54",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "0264bcb0",
-      "name": "DAT_0264bcb0",
-      "type": "undefined4",
+      "name": "g_PTR_0264bcb0",
+      "type": "void*",
       "value": null
     }
   ],
@@ -152,19 +151,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
+      "line": 8,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bcb0 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_PTR_0264bcb0)(vertices,vertex_count,g_BIT_INTEGER32_01c38b54.dword);",
       "type": "unresolved_funcptr"
     }
   ]

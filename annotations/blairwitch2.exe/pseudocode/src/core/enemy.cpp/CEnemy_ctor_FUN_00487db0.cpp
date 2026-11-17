@@ -28,7 +28,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr)
   pCVar2->is_in_combat = 0;
   pCVar2->patrol_name_pattern[0] = '\0';
   pCVar2->guard_distance = 100.0;
-  pcVar4 = &DAT_005d2d28;
+  pcVar4 = "ene";
   pCVar2->attack_cooldown = 0.0;
   pcVar5 = (pCVar2->base).base.footstep_sound_code;
   pCVar2->victim_height = 6.0;

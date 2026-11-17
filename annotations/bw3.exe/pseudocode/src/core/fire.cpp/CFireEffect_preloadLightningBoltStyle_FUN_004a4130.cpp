@@ -17,12 +17,14 @@ void __cdecl core_fire_cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(CF
   iVar1 = 0;
   do {
     if (bolt_style == 1) {
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture_00);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+                (g_CDemonRenderer_PTR_005f2afc,texture_00);
     }
     if (bolt_style == 2) {
       texture = (SMRGLTextureBasic *)(&DAT_005fd984 + iVar1);
 LAB_004a4158:
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+                (g_CDemonRenderer_PTR_005f2afc,texture);
     }
     else {
       if (bolt_style == 3) {

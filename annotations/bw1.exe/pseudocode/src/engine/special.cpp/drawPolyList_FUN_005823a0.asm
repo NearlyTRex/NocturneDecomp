@@ -20,10 +20,10 @@
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_00484280 at 004844d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01e7dac8
-;   undefined4 DAT_02c833c8
-;   undefined4 DAT_02c833cc
+;   int g_INT_01c50948
+;   int g_INT_01e7dac8
+;   void* g_PTR_02c833c8
+;   void* g_PTR_02c833cc
 ;
 ; *****************************************************************************
 
@@ -38,16 +38,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 005823a7
     MOV EDX,dword ptr [ESP + 0x28]      ; 005823ab
     MOV EBP,dword ptr [ESP + 0x2c]      ; 005823af
-    CMP dword ptr [0x01c50948],0x0      ; 005823b3 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 005823b3 | g_INT_01c50948
     JZ 0x00582498                       ; 005823ba
         ;   XREF to: 00582498 (CONDITIONAL_JUMP)  ; LAB_00582498
-    MOV EAX,[0x01e7dac8]                ; 005823c0 | DAT_01e7dac8
-    MOV ESI,dword ptr [0x02c833cc]      ; 005823c5 | DAT_02c833cc
+    MOV EAX,[0x01e7dac8]                ; 005823c0 | g_INT_01e7dac8
+    MOV ESI,dword ptr [0x02c833cc]      ; 005823c5 | g_PTR_02c833cc
     ADD EAX,EBP                         ; 005823cb
     TEST ESI,ESI                        ; 005823cd
     JNZ 0x005824b4                      ; 005823cf
         ;   XREF to: 005824b4 (CONDITIONAL_JUMP)  ; LAB_005824b4
-    MOV [0x01e7dac8],EAX                ; 005823d5 | DAT_01e7dac8
+    MOV [0x01e7dac8],EAX                ; 005823d5 | g_INT_01e7dac8
     XOR EDI,EDI                         ; 005823da
     TEST EBP,EBP                        ; 005823dc
     JLE 0x00582489                      ; 005823de
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 00582473
     ADD ESI,0x4                         ; 00582474
     INC EDI                             ; 00582477
-    CALL dword ptr [0x02c833c8]         ; 00582478 | DAT_02c833c8
+    CALL dword ptr [0x02c833c8]         ; 00582478 | g_PTR_02c833c8
     ADD ESP,0xc                         ; 0058247e
     CMP EDI,EBP                         ; 00582481
     JL 0x005823e6                       ; 00582483
@@ -139,8 +139,8 @@ section .text
     PUSH EBP                            ; 005824b9
     PUSH EDX                            ; 005824ba
     PUSH EBX                            ; 005824bb
-    MOV [0x01e7dac8],EAX                ; 005824bc | DAT_01e7dac8
-    CALL dword ptr [0x02c833cc]         ; 005824c1 | DAT_02c833cc
+    MOV [0x01e7dac8],EAX                ; 005824bc | g_INT_01e7dac8
+    CALL dword ptr [0x02c833cc]         ; 005824c1 | g_PTR_02c833cc
     ADD ESP,0x10                        ; 005824c7
     MOV EDX,EAX                         ; 005824ca
     MOV EAX,EDX                         ; 005824cc

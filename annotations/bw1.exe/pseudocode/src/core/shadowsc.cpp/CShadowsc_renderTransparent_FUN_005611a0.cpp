@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc *this_ptr)
 
 {
@@ -27,7 +25,7 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc
   this_ptr_00 = &(this_ptr->base).base.model;
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-  this_ptr_02 = 0x01C51D80;
+  this_ptr_02 = g_CEventList_PTR_0061b4d0;
   (this_ptr->base).base.was_rendered_opaque = 0;
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                     (this_ptr_02,"heroCanSee");
@@ -43,17 +41,19 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_30,unaff_EDI);
-    this_ptr_01 = DAT_00612560;
+    this_ptr_01 = g_CDemonRenderer_PTR_00612560;
     if (iVar1 != 0) {
       iVar1 = this_ptr->fade_alpha;
       (this_ptr->base).base.was_rendered_opaque = 1;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(this_ptr_01,iVar1);
-      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
-      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);
+      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,0);
+      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
+                (g_CDemonRenderer_PTR_00612560,1);
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
                 (this_ptr_00,-1,0x2e7,1,0);
-      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);
-      if (_DAT_01d39d34 != 0) {
+      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
+                (g_CDemonRenderer_PTR_00612560);
+      if (g_INT_01d39d34 != 0) {
         core_motion_cpp_CMotionController_render_FUN_005254b0
                   (&this_ptr_00->base,(CDemonActor *)this_ptr);
       }

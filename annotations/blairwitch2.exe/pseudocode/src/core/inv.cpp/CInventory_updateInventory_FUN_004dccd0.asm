@@ -17,9 +17,9 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00563ddc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db9ea
-;   undefined4 DAT_005f901c
-;   undefined4 DAT_005f9020
+;   double g_DOUBLE_005db9ea = 100
+;   float g_FLOAT_005f901c = 500
+;   float g_FLOAT_005f9020 = 15
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CBatteryClassInfo.name_hash
 ;   undefined4 g_CGameInstance.goggles_active
@@ -81,7 +81,7 @@ section .text
     TEST EDI,EDI                        ; 004dcd46
     JZ 0x004dced2                       ; 004dcd48
         ;   XREF to: 004dced2 (CONDITIONAL_JUMP)  ; LAB_004dced2
-    MOV EAX,[0x005f901c]                ; 004dcd4e | DAT_005f901c
+    MOV EAX,[0x005f901c]                ; 004dcd4e | g_FLOAT_005f901c
         ;   Label: LAB_004dcd4e
     MOV EDI,dword ptr [EBX + 0x10]      ; 004dcd53
     XOR ESI,ESI                         ; 004dcd56
@@ -111,7 +111,7 @@ section .text
     MOV EAX,[0x00616494]                ; 004dcd87 | g_CGamePtr
         ;   Label: LAB_004dcd87
     FLD float ptr [EAX + 0x284]         ; 004dcd8c | g_CGameInstance.delta_time_float
-    FMUL double ptr [0x005db9ea]        ; 004dcd92 | DAT_005db9ea
+    FMUL double ptr [0x005db9ea]        ; 004dcd92 | g_DOUBLE_005db9ea
     FDIV float ptr [ESP]                ; 004dcd98
     FSUBR float ptr [EBX]               ; 004dcd9b
     FST float ptr [EBX]                 ; 004dcd9d
@@ -227,7 +227,7 @@ section .text
         ;   Label: LAB_004dced2
     JNZ 0x004dcd4e                      ; 004dced9
         ;   XREF to: 004dcd4e (CONDITIONAL_JUMP)  ; LAB_004dcd4e
-    FLD float ptr [0x005f9020]          ; 004dcedf | DAT_005f9020
+    FLD float ptr [0x005f9020]          ; 004dcedf | g_FLOAT_005f9020
     FLD1                                ; 004dcee5
     FDIVRP                              ; 004dcee7
     MOV ECX,dword ptr [EBX + 0x10]      ; 004dcee9
@@ -256,7 +256,7 @@ section .text
         ;   XREF to: 004dcef6 (CONDITIONAL_JUMP)  ; LAB_004dcef6
     MOV EAX,[0x00616494]                ; 004dcf18 | g_CGamePtr
         ;   Label: LAB_004dcf18
-    FLD double ptr [0x005db9ea]         ; 004dcf1d | DAT_005db9ea
+    FLD double ptr [0x005db9ea]         ; 004dcf1d | g_DOUBLE_005db9ea
     FLD float ptr [EAX + 0x284]         ; 004dcf23 | g_CGameInstance.delta_time_float
     FMUL ST1                            ; 004dcf29
     FMUL float ptr [ESP + 0x4]          ; 004dcf2b

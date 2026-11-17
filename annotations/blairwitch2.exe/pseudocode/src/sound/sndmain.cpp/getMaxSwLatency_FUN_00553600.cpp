@@ -9,5 +9,5 @@
 float __cdecl sound_sndmain_cpp_getMaxSwLatency_FUN_00553600(void)
 
 {
-  return DAT_0061bcc4;
+  return g_FLOAT_0061bcc4;
 }

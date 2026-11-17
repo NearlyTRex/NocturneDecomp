@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamMemoryTypeInfo
-;   undefined1* g_COutStreamMemoryVTable = 0057df10
+;   void*[7] g_COutStreamMemoryVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005b7fa7

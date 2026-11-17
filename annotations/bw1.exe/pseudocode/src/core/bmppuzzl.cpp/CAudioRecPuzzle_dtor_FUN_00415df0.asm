@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_CAudioRecPuzzleVTable = 00415df0
+;   void*[23] g_CAudioRecPuzzleVTable
 ;   WatcomTypeInfo g_CAudioRecPuzzleTypeInfo
 ;
 ; Called Functions:

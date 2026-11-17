@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4e9d4
-;   undefined4 DAT_01c4e9e0
-;   undefined4 DAT_01c4e9ec
+;   int g_INT_0061b4a0 = 0x8
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9d4
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9e0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c4e9ec
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     PUSH ESI                            ; 004ecef1
     PUSH EDI                            ; 004ecef2
     PUSH EBP                            ; 004ecef3
-    MOV EBP,dword ptr [0x0061b4a0]      ; 004ecef4 | DAT_0061b4a0
+    MOV EBP,dword ptr [0x0061b4a0]      ; 004ecef4 | g_INT_0061b4a0
     XOR EDX,EDX                         ; 004ecefa
     XOR EAX,EAX                         ; 004ecefc
     MOVZX ESI,byte ptr [EAX + 0x1c4e9f9] ; 004ecefe
@@ -30,11 +30,11 @@ section .text
     CMP EBP,0x20                        ; 004ecf14
     JNZ 0x004ecf61                      ; 004ecf17
         ;   XREF to: 004ecf61 (CONDITIONAL_JUMP)  ; LAB_004ecf61
-    MOV CL,byte ptr [0x01c4e9d4]        ; 004ecf19 | DAT_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 004ecf19 | g_BIT_INTEGER32_01c4e9d4
     SHL EDI,CL                          ; 004ecf1f
-    MOV CL,byte ptr [0x01c4e9e0]        ; 004ecf21 | DAT_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 004ecf21 | g_BIT_INTEGER32_01c4e9e0
     SHL ESI,CL                          ; 004ecf27
-    MOV CL,byte ptr [0x01c4e9ec]        ; 004ecf29 | DAT_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 004ecf29 | g_BIT_INTEGER32_01c4e9ec
     SHL EBX,CL                          ; 004ecf2f
     OR EDI,ESI                          ; 004ecf31
     MOV ECX,EBX                         ; 004ecf33
@@ -46,7 +46,7 @@ section .text
     CMP EDX,0x400                       ; 004ecf43
     JNZ 0x004ecefe                      ; 004ecf49
         ;   XREF to: 004ecefe (CONDITIONAL_JUMP)  ; LAB_004ecefe
-    MOV dword ptr [0x0061b4a0],EBP      ; 004ecf4b | DAT_0061b4a0
+    MOV dword ptr [0x0061b4a0],EBP      ; 004ecf4b | g_INT_0061b4a0
     POP EBP                             ; 004ecf51
     POP EDI                             ; 004ecf52
     POP ESI                             ; 004ecf53

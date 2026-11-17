@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005ede24
-;   undefined4 DAT_005ede2e
+;   TerminatedCString s_prey_005ede2e
 ;   TerminatedCString s_neutral_005ede33
 ;   TerminatedCString s_destroyedEvent_005ede3b
 ;   TerminatedCString s_startLoc_005ede4a
@@ -45,7 +45,7 @@ section .text
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 00585b7a
         ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00585b7f
-    PUSH 0x5ede2e                       ; 00585b82 | DAT_005ede2e
+    PUSH 0x5ede2e                       ; 00585b82 | = "prey"
     LEA EAX,[EBX + 0x434]               ; 00585b87
     PUSH EAX                            ; 00585b8d
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 00585b8e

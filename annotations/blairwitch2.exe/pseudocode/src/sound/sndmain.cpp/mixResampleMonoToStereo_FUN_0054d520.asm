@@ -26,7 +26,7 @@
 ;   sound_sndmain.cpp_CSfxSlot_mix_FUN_0054edb0 at 0054f616
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e809e
+;   double g_DOUBLE_005e809e = 4294967296
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005b84d0
@@ -81,7 +81,7 @@ section .text
     MOV dword ptr [EBP + -0x24],EAX     ; 0054d577
     FILD qword ptr [EBP + -0x24]        ; 0054d57a
     FSUBR double ptr [EBP + 0x20]       ; 0054d57d
-    FMUL double ptr [0x005e809e]        ; 0054d580 | DAT_005e809e
+    FMUL double ptr [0x005e809e]        ; 0054d580 | g_DOUBLE_005e809e
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054d586
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP qword ptr [EBP + -0x24]       ; 0054d58b
@@ -107,7 +107,7 @@ section .text
     MOV dword ptr [EBP + -0x24],EAX     ; 0054d5c1
     FILD qword ptr [EBP + -0x24]        ; 0054d5c4
     FSUBR double ptr [EBP + 0x28]       ; 0054d5c7
-    FMUL double ptr [0x005e809e]        ; 0054d5ca | DAT_005e809e
+    FMUL double ptr [0x005e809e]        ; 0054d5ca | g_DOUBLE_005e809e
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054d5d0
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP qword ptr [EBP + -0x24]       ; 0054d5d5

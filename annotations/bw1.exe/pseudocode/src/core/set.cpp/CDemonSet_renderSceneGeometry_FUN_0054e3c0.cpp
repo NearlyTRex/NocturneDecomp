@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(CDemonSet *this_ptr,float frustum_param,int render_mode)
 
 {
@@ -18,8 +16,9 @@ void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(CDemonSet *
   CVector3f local_1c;
   
   engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_00483a20
-            (DAT_00612560,(CVector3i *)&DAT_00622c1c);
-  engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_004839f0(DAT_00612560,0.25);
+            (g_CDemonRenderer_PTR_00612560,&g_CVector3i_00622c1c);
+  engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_004839f0
+            (g_CDemonRenderer_PTR_00612560,0.25);
   if ((render_mode == 0) || (iVar1 = this_ptr->selected_camera_index, iVar1 < 0)) {
 LAB_0054e5a1:
     if (render_mode == 1) {
@@ -48,24 +47,26 @@ LAB_0054e42b:
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list);
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar1 == 0) {
-    if (_DAT_01c50948 == 0.0) {
+    if (g_INT_01c50948 == 0) {
       core_set_cpp_CDemonSet_buildMirrorList_FUN_00555610(this_ptr);
     }
-    if (_DAT_01c50948 == 0.0) {
+    if (g_INT_01c50948 == 0) {
       if (this_ptr->use_enviro_model != 0) {
-        local_1c.x = _DAT_01c50948;
-        local_1c.y = _DAT_01c50948;
-        local_1c.z = _DAT_01c50948;
+        local_1c.x = (float)g_INT_01c50948;
+        local_1c.y = (float)g_INT_01c50948;
+        local_1c.z = (float)g_INT_01c50948;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-                  (DAT_00612560,&local_1c);
+                  (g_CDemonRenderer_PTR_00612560,&local_1c);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00467270
                   (&g_CKeyFramedModelInstance,0,(CKeyFramedModelInstance *)0x0,-1);
       }
       if ((this_ptr->disable_sky_rendering == 0) && (this_ptr->has_sky != 0)) {
         core_dskybox_cpp_renderSkyDome_FUN_00486900
-                  (0x01BEEFBC,this_ptr->sky_texture_name,this_ptr->sky_brightness);
+                  (g_SMRGLSkyTexture_PTR_006144d0,this_ptr->sky_texture_name,
+                   this_ptr->sky_brightness);
       }
       if ((this_ptr->disable_water_rendering == 0) &&
          (core_water_cpp_CWater_calculateVisibleTiles_FUN_005a9a40(g_CWaterPtr),
@@ -73,7 +74,7 @@ LAB_0054e42b:
         core_water_cpp_CWater_render_FUN_005a9f10(g_CWaterPtr,1);
       }
       if (this_ptr->player_on_train != 0) {
-        core_terrain_cpp_CTerrain_render_FUN_0059f3e0(0x02C8AE68,1);
+        core_terrain_cpp_CTerrain_render_FUN_0059f3e0(g_CTerrain_PTR_00625bc0,1);
       }
     }
     iVar1 = 0;
@@ -94,7 +95,7 @@ LAB_0054e42b:
       } while (iVar1 < this_ptr->mirror_glass_actor_count);
     }
   }
-  else if ((DAT_00622c28 != 0) &&
+  else if ((g_INT_00622c28 != 0) &&
           (iVar1 = 0, pCVar2 = this_ptr, 0 < this_ptr->mirror_glass_actor_count)) {
     do {
       core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00519e40

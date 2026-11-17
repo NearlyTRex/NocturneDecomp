@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_CDocClassInfo.name_hash
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -17,7 +17,7 @@ section .text
 
     MOV EDX,dword ptr [0x01b4d2ec]      ; 004b2930 | g_CDocClassInfo.name_hash
         ;   Label: core_game.cpp_isPlayerLanternOut_FUN_004b2930
-    MOV EAX,[0x01cedef4]                ; 004b2936 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004b2936 | g_INT_01cedef4
     PUSH EDX                            ; 004b293b
     MOV ECX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b293c
     PUSH ECX                            ; 004b2943

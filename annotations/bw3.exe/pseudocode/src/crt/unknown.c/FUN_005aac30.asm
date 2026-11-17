@@ -13,9 +13,9 @@
 ;   void* PTR_WriteFile_005b368c = 001b430e
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a8 = 005a7f44
-;   undefined4 DAT_00607b18
-;   undefined4 DAT_00607b44
-;   undefined4 DAT_00607b84
+;   void* g_PTR_00607b18 = 00000000
+;   void* g_PTR_00607b44 = 00000000
+;   uint g_UINT_00607b84 = 0x14
 ;   undefined4 DAT_00607bdc
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     TEST EBX,EBX                        ; 005aac3f
     JL 0x005aac4b                       ; 005aac41
         ;   XREF to: 005aac4b (CONDITIONAL_JUMP)  ; LAB_005aac4b
-    CMP EBX,dword ptr [0x00607b84]      ; 005aac43 | DAT_00607b84
+    CMP EBX,dword ptr [0x00607b84]      ; 005aac43 | g_UINT_00607b84
     JBE 0x005aac5f                      ; 005aac49
         ;   XREF to: 005aac5f (CONDITIONAL_JUMP)  ; LAB_005aac5f
     PUSH 0x4                            ; 005aac4b
@@ -84,12 +84,12 @@ section .text
     POP ESI                             ; 005aaca6
     POP EBX                             ; 005aaca7
     RET                                 ; 005aaca8
-    CMP dword ptr [0x00607b44],0x0      ; 005aaca9 | DAT_00607b44
+    CMP dword ptr [0x00607b44],0x0      ; 005aaca9 | g_PTR_00607b44
         ;   Label: LAB_005aaca9
     JZ 0x005aace6                       ; 005aacb0
         ;   XREF to: 005aace6 (CONDITIONAL_JUMP)  ; LAB_005aace6
     PUSH EBX                            ; 005aacb2
-    CALL dword ptr [0x00607b18]         ; 005aacb3 | DAT_00607b18
+    CALL dword ptr [0x00607b18]         ; 005aacb3 | g_PTR_00607b18
     ADD ESP,0x4                         ; 005aacb9
     TEST EAX,EAX                        ; 005aacbc
     JZ 0x005aace6                       ; 005aacbe
@@ -98,7 +98,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 005aacc1
     PUSH EDX                            ; 005aacc5
     PUSH EAX                            ; 005aacc6
-    CALL dword ptr [0x00607b44]         ; 005aacc7 | DAT_00607b44
+    CALL dword ptr [0x00607b44]         ; 005aacc7 | g_PTR_00607b44
     ADD ESP,0xc                         ; 005aaccd
     PUSH EBX                            ; 005aacd0
     MOV ESI,EAX                         ; 005aacd1

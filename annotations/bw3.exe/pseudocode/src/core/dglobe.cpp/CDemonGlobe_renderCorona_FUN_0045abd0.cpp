@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045abd0(CDemonGlobe *this_ptr)
 
 {
@@ -43,8 +41,9 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045abd0(CDemonGlobe *
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-            (0x01BDD7E4,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0(DAT_005f2afc,&local_50);
+            (g_CDemonRenderer_PTR_005f2af8,&this_ptr->position);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0
+            (g_CDemonRenderer_PTR_005f2afc,&local_50);
   local_5c = local_50.x;
   local_58[(uint)bVar4 * -2] = *(float *)((int)&local_50 + (uint)bVar4 * -8 + 4);
   local_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -63,26 +62,26 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045abd0(CDemonGlobe *
   }
   if (this_ptr->radius_squared <=
       local_58[1] * local_58[1] + local_5c * local_5c + local_58[0] * local_58[0]) {
-    local_14 = this_ptr->radius * (float)_DAT_005bafe9;
+    local_14 = this_ptr->radius * (float)0.00390625;
     iVar3 = 0;
     iVar2 = 0;
     do {
-      local_44 = (float)*(int *)((int)&DAT_005f1954 + iVar2) * local_14;
-      local_40 = (float)*(int *)((int)&DAT_005f1958 + iVar2) * local_14;
-      local_3c = (float)*(int *)((int)&DAT_005f195c + iVar2) * local_14;
-      local_38.x = (int)ROUND(local_44 * _DAT_005de380);
-      local_38.y = (int)ROUND(local_40 * _DAT_005de380);
-      local_38.z = (int)ROUND(local_3c * _DAT_005de380);
+      local_44 = (float)*(int *)((int)&g_CVector3i_ARRAY_005f1954[0].x + iVar2) * local_14;
+      local_40 = (float)*(int *)((int)&g_CVector3i_ARRAY_005f1954[0].y + iVar2) * local_14;
+      local_3c = (float)*(int *)((int)&g_CVector3i_ARRAY_005f1954[0].z + iVar2) * local_14;
+      local_38.x = (int)ROUND(local_44 * 256.0f);
+      local_38.y = (int)ROUND(local_40 * 256.0f);
+      local_38.z = (int)ROUND(local_3c * 256.0f);
       iVar2 = iVar2 + 0xc;
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                 ((SProjectedVertex *)
-                 ((int)&(0x01BDD7E4->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
-                 &local_38);
+                 ((int)&(g_CDemonRenderer_PTR_005f2af8->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iVar3),&local_38);
       iVar3 = iVar3 + 0x30;
     } while (iVar2 != 0x2e8);
     iVar2 = 0;
     do {
-      this_ptr_00 = 0x01BDD7E4;
+      this_ptr_00 = g_CDemonRenderer_PTR_005f2af8;
       scanline_renderer = (CustomScanlineFunc *)local_84;
       local_80 = *(uint *)((int)&DAT_005f1c3c + iVar2);
       local_7c = *(uint *)((int)&DAT_005f1c40 + iVar2);

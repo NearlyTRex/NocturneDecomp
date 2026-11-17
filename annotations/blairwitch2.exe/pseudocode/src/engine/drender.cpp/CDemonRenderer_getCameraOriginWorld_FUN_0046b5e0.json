@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 54,
+    "complexity_score": 38,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -94,9 +93,9 @@
   "globals": [
     {
       "addr": "005d15cb",
-      "name": "DAT_005d15cb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d15cb",
+      "type": "double",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -382,16 +381,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(float *)((int)output",
       "severity": "moderate",
       "text": "pfVar2 = (float *)((int)output + (uint)bVar3 * -8 + 4);",

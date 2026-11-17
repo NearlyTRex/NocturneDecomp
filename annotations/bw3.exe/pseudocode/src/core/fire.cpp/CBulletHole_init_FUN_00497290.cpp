@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CBulletHole_init_FUN_00497290(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor,int decal_type)
 
 {
@@ -36,9 +34,9 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00497290(CBulletHole *this_ptr,C
     (this_ptr->position).y = hit_position->y;
     (this_ptr->position).z = hit_position->z;
   }
-  local_7c.actor_local_space.x = surface_normal->x * _DAT_005c0504;
-  local_7c.actor_local_space.y = surface_normal->y * _DAT_005c0504;
-  local_7c.actor_local_space.z = surface_normal->z * _DAT_005c0504;
+  local_7c.actor_local_space.x = surface_normal->x * 0.1f;
+  local_7c.actor_local_space.y = surface_normal->y * 0.1f;
+  local_7c.actor_local_space.z = surface_normal->z * 0.1f;
   local_7c.position.x = (this_ptr->position).x + local_7c.actor_local_space.x;
   local_7c.position.y = (this_ptr->position).y + local_7c.actor_local_space.y;
   local_7c.position.z = (this_ptr->position).z + local_7c.actor_local_space.z;

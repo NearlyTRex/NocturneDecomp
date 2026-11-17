@@ -34,7 +34,7 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_004fe840(CLevelLoader *this_pt
   (this_ptr->color).b = 0xff;
   core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(&g_LoadingMoonModel,"moon.kfm");
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (DAT_00612560,(SMRGLTextureBasic *)&DAT_0061f2e4);
+            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061f2e4);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(&local_18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&local_18,"load1",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&local_18,0,0,0xffff);

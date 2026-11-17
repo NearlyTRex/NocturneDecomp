@@ -8,9 +8,9 @@
 ; SMRGLTextureBasic * Stack[0x8]:4   texture
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0264bcb8
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   void* g_PTR_0264bcb8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -42,7 +42,7 @@ section .text
     PUSH 0x0                            ; 00574a30
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x60] ; 00574a32
     PUSH EDX                            ; 00574a36
-    CALL dword ptr [0x0264bcb8]         ; 00574a37 | DAT_0264bcb8
+    CALL dword ptr [0x0264bcb8]         ; 00574a37 | g_PTR_0264bcb8
     ADD ESP,0x8                         ; 00574a3d
     POP EBP                             ; 00574a40
     POP EBX                             ; 00574a41
@@ -57,8 +57,8 @@ section .text
     MOV ESI,0x5ec8e2                    ; 00574a4d
     MOV EDI,0x2e9                       ; 00574a52
     PUSH 0x5ec8f8                       ; 00574a57
-    MOV dword ptr [0x01d046a0],ESI      ; 00574a5c | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00574a62 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00574a5c | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00574a62 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00574a68
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00574a6d

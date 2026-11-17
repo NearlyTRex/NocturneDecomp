@@ -8,16 +8,16 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f95d0
-;   undefined4 DAT_005f95d8
-;   undefined4 DAT_005f95dc
-;   undefined4 DAT_005f95e0
-;   undefined4 DAT_005f95e4
+;   float g_FLOAT_005f95d0 = 2
+;   float g_FLOAT_005f95d8 = 2
+;   float g_FLOAT_005f95dc = 2.5
+;   float g_FLOAT_005f95e0 = 0.5
+;   float g_FLOAT_005f95e4 = 2.5
 ;   CFilterCache* g_CFilterCachePtr = 015111a8
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_0061e8f4
+;   CWeather* g_CWeather_PTR_0061e8f4 = 02661f80
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
@@ -51,41 +51,41 @@ section .text
     PUSH EBX                            ; 004e38de
     CALL core_weapon.cpp_CWeapon_process_FUN_00589c80 ; 004e38df
         ;   XREF to: 00589c80 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_00589c80(CWeapon * this_ptr, float delta_time)
-    MOV EAX,[0x01cedef4]                ; 004e38e4 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004e38e4 | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004e38e9
     ADD ESP,0x8                         ; 004e38f0
     ADD EAX,0x2437c                     ; 004e38f3
-    PUSH dword ptr [0x005f95d0]         ; 004e38f8 | DAT_005f95d0
+    PUSH dword ptr [0x005f95d0]         ; 004e38f8 | g_FLOAT_005f95d0
     PUSH EAX                            ; 004e38fe
     CALL core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0 ; 004e38ff
         ;   XREF to: 004dcfb0 (UNCONDITIONAL_CALL)  ; float core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0(CInventory * this_ptr, float max_charge)
     MOV dword ptr [ESP + 0x10],EAX      ; 004e3904
     FLD float ptr [ESP + 0x10]          ; 004e3908
-    FDIVR float ptr [0x005f95d0]        ; 004e390c | DAT_005f95d0
+    FDIVR float ptr [0x005f95d0]        ; 004e390c | g_FLOAT_005f95d0
     ADD ESP,0x8                         ; 004e3912
     FMUL float ptr [ESP + 0x20]         ; 004e3915
     FADD float ptr [EBX + 0x6dc]        ; 004e3919
     FST float ptr [EBX + 0x6dc]         ; 004e391f
-    FCOMP float ptr [0x005f95d0]        ; 004e3925 | DAT_005f95d0
+    FCOMP float ptr [0x005f95d0]        ; 004e3925 | g_FLOAT_005f95d0
     FNSTSW AX                           ; 004e392b
     SAHF                                ; 004e392d
     JA 0x004e3a4e                       ; 004e392e
         ;   XREF to: 004e3a4e (CONDITIONAL_JUMP)  ; LAB_004e3a4e
     FLD float ptr [EBX + 0x6dc]         ; 004e3934
         ;   Label: LAB_004e3934
-    FDIV float ptr [0x005f95d0]         ; 004e393a | DAT_005f95d0
+    FDIV float ptr [0x005f95d0]         ; 004e393a | g_FLOAT_005f95d0
     MOV EDX,dword ptr [EBX + 0x430]     ; 004e3940
     FSTP float ptr [EBX + 0x6e0]        ; 004e3946
     CMP EDX,0x2                         ; 004e394c
     JNZ 0x004e3a5e                      ; 004e394f
         ;   XREF to: 004e3a5e (CONDITIONAL_JUMP)  ; LAB_004e3a5e
     PUSH ESI                            ; 004e3955
-    FLD float ptr [0x005f95d8]          ; 004e3956 | DAT_005f95d8
-    FLD float ptr [0x005f95dc]          ; 004e395c | DAT_005f95dc
+    FLD float ptr [0x005f95d8]          ; 004e3956 | g_FLOAT_005f95d8
+    FLD float ptr [0x005f95dc]          ; 004e395c | g_FLOAT_005f95dc
     FSUB ST0,ST1                        ; 004e3962
     FMUL float ptr [EBX + 0x6e0]        ; 004e3964
-    FLD float ptr [0x005f95e0]          ; 004e396a | DAT_005f95e0
-    FLD float ptr [0x005f95e4]          ; 004e3970 | DAT_005f95e4
+    FLD float ptr [0x005f95e0]          ; 004e396a | g_FLOAT_005f95e0
+    FLD float ptr [0x005f95e4]          ; 004e3970 | g_FLOAT_005f95e4
     FSUB ST0,ST1                        ; 004e3976
     MOV ECX,dword ptr [EBX + 0x6d8]     ; 004e3978
     FMUL float ptr [EBX + 0x6e0]        ; 004e397e
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 0044b600 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_0044b600(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 004e3a0f
     PUSH 0x0                            ; 004e3a12
-    MOV ECX,dword ptr [0x0061e8f4]      ; 004e3a14 | DAT_0061e8f4
+    MOV ECX,dword ptr [0x0061e8f4]      ; 004e3a14 | g_CWeather_PTR_0061e8f4
     PUSH 0x3dcccccd                     ; 004e3a1a
     PUSH ECX                            ; 004e3a1f
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30 ; 004e3a20
@@ -161,7 +161,7 @@ section .text
     POP EDI                             ; 004e3a4b
     POP EBX                             ; 004e3a4c
     RET                                 ; 004e3a4d
-    MOV EAX,[0x005f95d0]                ; 004e3a4e | DAT_005f95d0
+    MOV EAX,[0x005f95d0]                ; 004e3a4e | g_FLOAT_005f95d0
         ;   Label: LAB_004e3a4e
     MOV dword ptr [EBX + 0x6dc],EAX     ; 004e3a53
     JMP 0x004e3934                      ; 004e3a59

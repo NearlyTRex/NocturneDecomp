@@ -18,8 +18,8 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 005351fe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9d6e
-;   undefined4 DAT_005b9d76
+;   double g_DOUBLE_005b9d6e = 255
+;   double g_DOUBLE_005b9d76 = 0.25
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -117,8 +117,8 @@ section .text
     FLD float ptr [ESP]                 ; 0044b041
         ;   Label: LAB_0044b041
     FMUL float ptr [EBP + 0x1c]         ; 0044b044
-    FMUL double ptr [0x005b9d6e]        ; 0044b047 | DAT_005b9d6e
-    FMUL double ptr [0x005b9d76]        ; 0044b04d | DAT_005b9d76
+    FMUL double ptr [0x005b9d6e]        ; 0044b047 | g_DOUBLE_005b9d6e
+    FMUL double ptr [0x005b9d76]        ; 0044b04d | g_DOUBLE_005b9d76
     CALL crt_math.c_round_FUN_005a3120  ; 0044b053
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x10]        ; 0044b058

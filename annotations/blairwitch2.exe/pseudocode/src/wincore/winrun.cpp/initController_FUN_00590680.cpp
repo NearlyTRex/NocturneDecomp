@@ -19,7 +19,7 @@ void __cdecl wincore_winrun_cpp_initController_FUN_00590680(int controller_index
   iVar2 = controller_index * 0xac;
   wincore_winrun_cpp_clearController_FUN_00590790(controller_index);
   *(int *)(iVar2 + 0x26656c4) = controller_type;
-  *(UINT_PTR *)(controller_index * 4 + 0x2665974) = in_stack_00000010;
+  g_INT_ARRAY_02665974[controller_index] = in_stack_00000010;
   *(uint *)(iVar2 + 0x26656c8) = 1;
   *(uint *)(iVar2 + 0x26656cc) = 0;
   memset((void *)(iVar2 + 0x26656d0),0,0x10);

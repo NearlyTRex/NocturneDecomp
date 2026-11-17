@@ -24,9 +24,9 @@
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 00422549
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7861
-;   undefined4 DAT_005b7869
-;   undefined4 DAT_005dcbd4
+;   double g_DOUBLE_005b7861 = 2
+;   float g_FLOAT_005b7869 = 0.5
+;   float g_FLOAT_005dcbd4 = 6
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
@@ -216,7 +216,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042274e
     MOVSD ES:EDI,ESI                    ; 0042274f
     MOVSD ES:EDI,ESI                    ; 00422750
-    FLD float ptr [0x005b7869]          ; 00422751 | DAT_005b7869
+    FLD float ptr [0x005b7869]          ; 00422751 | g_FLOAT_005b7869
     FLD float ptr [ESP + 0xf4]          ; 00422757
     FMUL ST1                            ; 0042275e
     FLD float ptr [ESP + 0xf8]          ; 00422760
@@ -292,7 +292,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00422850
     FLD float ptr [ESP + 0x164]         ; 00422851
     FABS                                ; 00422858
-    FCOMP double ptr [0x005b7861]       ; 0042285a | DAT_005b7861
+    FCOMP double ptr [0x005b7861]       ; 0042285a | g_DOUBLE_005b7861
     FNSTSW AX                           ; 00422860
     SAHF                                ; 00422862
     JBE 0x004229a5                      ; 00422863
@@ -336,7 +336,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 004228d1
         ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004228d6
-    FLD float ptr [0x005dcbd4]          ; 004228d9 | DAT_005dcbd4
+    FLD float ptr [0x005dcbd4]          ; 004228d9 | g_FLOAT_005dcbd4
     FMUL float ptr [EBP + 0x18]         ; 004228df
     FSTP float ptr [ESP + 0x19c]        ; 004228e2
     MOV EAX,dword ptr [ESP + 0x19c]     ; 004228e9
@@ -396,14 +396,14 @@ section .text
     FLD float ptr [ESP + 0x160]         ; 004229a5
         ;   Label: LAB_004229a5
     FABS                                ; 004229ac
-    FCOMP double ptr [0x005b7861]       ; 004229ae | DAT_005b7861
+    FCOMP double ptr [0x005b7861]       ; 004229ae | g_DOUBLE_005b7861
     FNSTSW AX                           ; 004229b4
     SAHF                                ; 004229b6
     JA 0x00422869                       ; 004229b7
         ;   XREF to: 00422869 (CONDITIONAL_JUMP)  ; LAB_00422869
     FLD float ptr [ESP + 0x168]         ; 004229bd
     FABS                                ; 004229c4
-    FCOMP double ptr [0x005b7861]       ; 004229c6 | DAT_005b7861
+    FCOMP double ptr [0x005b7861]       ; 004229c6 | g_DOUBLE_005b7861
     FNSTSW AX                           ; 004229cc
     SAHF                                ; 004229ce
     JA 0x00422869                       ; 004229cf

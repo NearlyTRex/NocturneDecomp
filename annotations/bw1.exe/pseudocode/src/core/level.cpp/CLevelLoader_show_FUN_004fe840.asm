@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_moon_kfm_005e6cdb
 ;   TerminatedCString s_load1_005e6ce4
-;   undefined4 DAT_00612560
-;   undefined4 DAT_0061f2e4
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   SMRGLTextureBasic g_SMRGLTextureBasic_0061f2e4
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0
@@ -62,8 +62,8 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0 ; 004fe8c5
         ;   XREF to: 004668a0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004fe8ca
-    PUSH 0x61f2e4                       ; 004fe8cd | DAT_0061f2e4
-    MOV EDX,dword ptr [0x00612560]      ; 004fe8d2 | DAT_00612560
+    PUSH 0x61f2e4                       ; 004fe8cd | g_SMRGLTextureBasic_0061f2e4
+    MOV EDX,dword ptr [0x00612560]      ; 004fe8d2 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 004fe8d8
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004fe8d9
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

@@ -10,11 +10,11 @@
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 00535e45
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00b9dd48
-;   undefined4 DAT_0134017c
-;   undefined4 DAT_0149d6d0
-;   undefined4 DAT_0149d6d4
-;   undefined4 DAT_0149d6d8
+;   int g_INT_00b9dd48
+;   int g_INT_0134017c
+;   int g_INT_0149d6d0
+;   int g_INT_0149d6d4
+;   int g_INT_0149d6d8
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_0044ff10
@@ -40,16 +40,16 @@ section .text
     SBB EAX,EDX                         ; 0044def0
     SAR EAX,0x2                         ; 0044def2
     PUSH 0x12c00                        ; 0044def5
-    MOV [0x00b9dd48],EAX                ; 0044defa | DAT_00b9dd48
+    MOV [0x00b9dd48],EAX                ; 0044defa | g_INT_00b9dd48
     XOR EDX,EDX                         ; 0044deff
     MOV ECX,0xb2cfc8                    ; 0044df01
-    MOV DL,byte ptr [0x00b9dd48]        ; 0044df06 | DAT_00b9dd48
+    MOV DL,byte ptr [0x00b9dd48]        ; 0044df06 | g_INT_00b9dd48
     CALL crt_watcom.c__memset_FUN_00495ec0 ; 0044df0c
         ;   XREF to: 00495ec0 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_00495ec0(void * dest, int fill_byte, uint size)
-    CMP dword ptr [0x0149d6d8],0x1      ; 0044df11 | DAT_0149d6d8
+    CMP dword ptr [0x0149d6d8],0x1      ; 0044df11 | g_INT_0149d6d8
     JG 0x0044df25                       ; 0044df18
         ;   XREF to: 0044df25 (CONDITIONAL_JUMP)  ; LAB_0044df25
-    CMP dword ptr [0x0134017c],0x0      ; 0044df1a | DAT_0134017c
+    CMP dword ptr [0x0134017c],0x0      ; 0044df1a | g_INT_0134017c
     JNZ 0x0044df42                      ; 0044df21
         ;   XREF to: 0044df42 (CONDITIONAL_JUMP)  ; LAB_0044df42
     POP EBX                             ; 0044df23
@@ -57,9 +57,9 @@ section .text
     PUSH EDI                            ; 0044df25
         ;   Label: LAB_0044df25
     PUSH ESI                            ; 0044df26
-    MOV ESI,dword ptr [0x0149d6d4]      ; 0044df27 | DAT_0149d6d4
+    MOV ESI,dword ptr [0x0149d6d4]      ; 0044df27 | g_INT_0149d6d4
     PUSH ESI                            ; 0044df2d
-    MOV EDI,dword ptr [0x0149d6d0]      ; 0044df2e | DAT_0149d6d0
+    MOV EDI,dword ptr [0x0149d6d0]      ; 0044df2e | g_INT_0149d6d0
     PUSH EDI                            ; 0044df34
     PUSH EBX                            ; 0044df35
     CALL core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_0044ff10 ; 0044df36
@@ -76,7 +76,7 @@ section .text
     XOR EBX,EBX                         ; 0044df51
     CALL crt_watcom.c__memcpy_FUN_00495f68 ; 0044df53
         ;   XREF to: 00495f68 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_00495f68(void * dest, void * src, uint size)
-    MOV dword ptr [0x0134017c],EBX      ; 0044df58 | DAT_0134017c
+    MOV dword ptr [0x0134017c],EBX      ; 0044df58 | g_INT_0134017c
     POP EBX                             ; 0044df5e
     RET                                 ; 0044df5f
 

@@ -8,8 +8,8 @@
 ; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8a80
-;   undefined4 DAT_005e8a88
+;   double g_DOUBLE_005e8a80 = 1.30000000000000
+;   float g_FLOAT_005e8a88 = 0.5
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -49,9 +49,9 @@ section .text
     MOV dword ptr [EAX + 0x14],0xbdcccccd ; 00510acc
     FLD ST1                             ; 00510ad3
     FXCH                                ; 00510ad5
-    FADD float ptr [0x005e8a88]         ; 00510ad7 | DAT_005e8a88
+    FADD float ptr [0x005e8a88]         ; 00510ad7 | g_FLOAT_005e8a88
     FXCH                                ; 00510add
-    FMUL double ptr [0x005e8a80]        ; 00510adf | DAT_005e8a80
+    FMUL double ptr [0x005e8a80]        ; 00510adf | g_DOUBLE_005e8a80
     FXCH                                ; 00510ae5
     FSTP float ptr [EAX + 0x18]         ; 00510ae7
     FSTP ST1                            ; 00510aea

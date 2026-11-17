@@ -21,7 +21,7 @@ void __cdecl core_union_cpp_CUnion_processMotionEvent_FUN_005a5300(CUnion *this_
     iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,4);
     if (2 < iVar1) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                (0x0264B290,(CDemonActor *)this_ptr,"confedstab01.wav",
+                (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"confedstab01.wav",
                  &(this_ptr->base).base.base.base.base.location.position);
       core_basicnpc_cpp_CBasicNPC_processMotionEvent_FUN_005a48f0(&this_ptr->base,event_id);
       return;
@@ -29,16 +29,16 @@ void __cdecl core_union_cpp_CUnion_processMotionEvent_FUN_005a5300(CUnion *this_
     break;
   case 0x206e:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"confedbutt01.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"confedbutt01.wav",
                &(this_ptr->base).base.base.base.base.location.position);
     core_basicnpc_cpp_CBasicNPC_processMotionEvent_FUN_005a48f0(&this_ptr->base,event_id);
     return;
   case 0x206f:
     iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
-                      ((CBasicEnemy *)this_ptr,0x40200000,this_ptr->gun2_bone,1.0);
+                      ((CBasicEnemy *)this_ptr,2.5f,this_ptr->gun2_bone,1.0);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                (0x0264B290,(CDemonActor *)this_ptr,"swordimpactflesh0?.wav",
+                (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"swordimpactflesh0?.wav",
                  &(this_ptr->base).base.base.base.base.location.position);
       core_basicnpc_cpp_CBasicNPC_processMotionEvent_FUN_005a48f0(&this_ptr->base,event_id);
       return;
@@ -46,10 +46,10 @@ void __cdecl core_union_cpp_CUnion_processMotionEvent_FUN_005a5300(CUnion *this_
     break;
   case 0x2070:
     iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
-                      ((CBasicEnemy *)this_ptr,0x40200000,this_ptr->gun_bone,1.0);
+                      ((CBasicEnemy *)this_ptr,2.5f,this_ptr->gun_bone,1.0);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                (0x0264B290,(CDemonActor *)this_ptr,"riflebutt01",
+                (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"riflebutt01",
                  &(this_ptr->base).base.base.base.base.location.position);
       core_basicnpc_cpp_CBasicNPC_processMotionEvent_FUN_005a48f0(&this_ptr->base,event_id);
       return;

@@ -14,12 +14,12 @@ void __cdecl core_construc_cpp_staticInit_FUN_00442380(void)
              core_construc_cpp_factoryFuncConstruct_FUN_004423f0,&g_CConstructClassVersion,3,
              &g_CEnemyClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)&DAT_007f8edc,"CConstruct_Bone",
-             core_construc_cpp_factoryFuncConstructBone_FUN_00444520,(int *)0x5f170c,1,
+            (&g_CDemonActorType_007f8edc,"CConstruct_Bone",
+             core_construc_cpp_factoryFuncConstructBone_FUN_00444520,&g_INT_005f170c,1,
              &g_CConstructClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)&DAT_007f8f18,"CConstruct_Red",
-             core_construc_cpp_factoryFuncConstructRed_FUN_004445d0,(int *)0x5f1710,1,
+            (&g_CDemonActorType_007f8f18,"CConstruct_Red",
+             core_construc_cpp_factoryFuncConstructRed_FUN_004445d0,&g_INT_005f1710,1,
              &g_CConstructClassInfo);
   return;
 }

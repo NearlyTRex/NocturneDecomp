@@ -9,13 +9,13 @@
 ; int              Stack[0xc]:4   use_skull_effect
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5fae4
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV ECX,dword ptr [0x01c5fae4]      ; 00508cb0 | DAT_01c5fae4
+    MOV ECX,dword ptr [0x01c5fae4]      ; 00508cb0 | g_BIT_INTEGER32_01c5fae4
         ;   Label: engine_ncursfx.cpp_CMouse_consumeButton_FUN_00508cb0
     MOV EDX,dword ptr [ESP + 0x4]       ; 00508cb6
     MOV EAX,dword ptr [ESP + 0x8]       ; 00508cba
@@ -36,7 +36,7 @@ section .text
     MOV EAX,0x1                         ; 00508ce2
         ;   Label: LAB_00508ce2
     POP EBX                             ; 00508ce7
-    MOV dword ptr [0x01c5fae4],ECX      ; 00508ce8 | DAT_01c5fae4
+    MOV dword ptr [0x01c5fae4],ECX      ; 00508ce8 | g_BIT_INTEGER32_01c5fae4
     RET                                 ; 00508cee
     MOV dword ptr [EDX + 0x25c],0x1     ; 00508cef
         ;   Label: LAB_00508cef
@@ -44,6 +44,6 @@ section .text
         ;   XREF to: 00508ce2 (UNCONDITIONAL_JUMP)  ; LAB_00508ce2
     XOR EAX,EAX                         ; 00508cfb
         ;   Label: LAB_00508cfb
-    MOV dword ptr [0x01c5fae4],ECX      ; 00508cfd | DAT_01c5fae4
+    MOV dword ptr [0x01c5fae4],ECX      ; 00508cfd | g_BIT_INTEGER32_01c5fae4
     RET                                 ; 00508d03
 

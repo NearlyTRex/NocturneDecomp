@@ -14,7 +14,7 @@ COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctor_FUN_00574a
   
   pCVar1 = (COutStreamMemory *)
            support_trstream_cpp_COutStream_dtor_FUN_005744a0(&this_ptr->base,unaff_retaddr);
-  (pCVar1->base).vtable = &g_COutStreamMemoryVTable;
+  (pCVar1->base).vtable = g_COutStreamMemoryVTable;
   pCVar1->buffer = (char *)0x0;
   pCVar1->capacity = 0;
   pCVar1->position = 0;

@@ -5,6 +5,11 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDoor.h"
+#include "types/classes/CLever.h"
+#include "types/classes/CVector3f.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1B60000
@@ -14,4 +19,50 @@
 extern CDemonActorType g_CDocClassInfo;
 extern CDemonActorType g_CZombieDogClassInfo;
 extern CDemonActorType g_CDoorClassInfo;
+
+// CDoor*
+extern CDoor* g_CDoor_PTR_01b687e0;
+
+// CLever*
+extern CLever* g_CLever_PTR_01b687f0;
+
+// CVector3f
+extern CVector3f g_CVector3f_01b687e4;
+extern CVector3f g_CVector3f_01b687f8;
+extern CVector3f g_CVector3f_01b68804;
+
+// FileSearchHandlerFunc*[5]
+extern FileSearchHandlerFunc* g_FileSearchHandlerFunc_PTR_ARRAY_01b68930[5];
+
+// SMRGLPrimitiveQuad[5000]
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_01b68944[5000];
+
+// byte
+extern byte g_BYTE_01b687f4;
+
+// float
+extern float g_FLOAT_01b688ac;
+
+// int
+extern int g_INT_01b68814;
+extern int g_INT_01b68818;
+extern int g_INT_01b6881c;
+extern int g_INT_01b68820;
+extern int g_INT_01b68824;
+extern int g_INT_01b68828;
+extern int g_INT_01b6882c;
+extern int g_INT_01b68830;
+extern int g_INT_01b68834;
+extern int g_INT_01b68844;
+extern int g_INT_01b68848;
+extern int g_INT_01b6884c;
+extern int g_INT_01b68854;
+extern int g_INT_01b68858;
+extern int g_INT_01b68864;
+extern int g_INT_01b68868;
+extern int g_INT_01b6886c;
+extern int g_INT_01b6892c;
+
+// uint
+extern uint g_UINT_01b688ec;
 

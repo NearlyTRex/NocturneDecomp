@@ -14,6 +14,6 @@ COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_ctor_FUN_0057e1c0
   
   pCVar1 = (COutStreamDebug *)
            support_trstream_cpp_COutStream_dtor_FUN_0057d860(&this_ptr->base,unaff_retaddr);
-  (pCVar1->base).vtable = &g_COutStreamDebugVTable;
+  (pCVar1->base).vtable = g_COutStreamDebugVTable;
   return pCVar1;
 }

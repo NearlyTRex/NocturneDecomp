@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuzzleCircle *this_ptr)
 
 {
@@ -74,7 +72,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(&this_ptr->gem_model);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(&this_ptr->reflector_model);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (DAT_00612560,(SMRGLTextureBasic *)&this_ptr->light_texture);
+            (g_CDemonRenderer_PTR_00612560,(SMRGLTextureBasic *)&this_ptr->light_texture);
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->panel_model);
   pCVar12 = &pCVar8->bounds;
   pfVar14 = &fStack_f4;
@@ -84,7 +82,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
     pfVar14 = pfVar14 + (uint)bVar16 * -2 + 1;
   }
   this_ptr->panel_radius = 12.1391;
-  fVar17 = (float10)fcos((float10)_DAT_0060343c * (float10)_DAT_005e743d);
+  fVar17 = (float10)fcos((float10)0.5235988f * (float10)0.5);
   fVar1 = (this_ptr->emitter_pos).f.y;
   fVar2 = (this_ptr->emitter_pos).f.x;
   fVar3 = (this_ptr->emitter_pos).f.z;
@@ -93,7 +91,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
   if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {
     fVar1 = this_ptr->bbox_height;
     (this_ptr->emitter_pos).f.x = 0.0;
-    fVar2 = (float)_DAT_005e7445;
+    fVar2 = (float)2;
     (this_ptr->emitter_pos).i.z = -0x40733333;
     (this_ptr->emitter_pos).f.y = fVar1 + fVar2;
   }
@@ -135,7 +133,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
     (pSVar10->light).g = (pSVar10->light).b;
     fVar1 = (pSVar10->light).g;
     iStack_14 = iVar9;
-    CStack_94.y = (float)iVar9 * _DAT_0060343c;
+    CStack_94.y = (float)iVar9 * 0.5235988f;
     pSVar10->sfx_handles[0] = 0;
     pSVar10->sfx_handles[1] = 0;
     (pSVar10->light).r = fVar1;
@@ -216,15 +214,15 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
     pfStack_34 = pfStack_34 + 0x2e;
     iStack_28 = iStack_28 + 1;
   } while (iStack_28 < 0xc);
-  fVar17 = (float10)fcos((float10)_DAT_0060343c);
-  fVar18 = (float10)fsin((float10)_DAT_0060343c);
+  fVar17 = (float10)fcos((float10)0.5235988f);
+  fVar18 = (float10)fsin((float10)0.5235988f);
   fVar1 = (this_ptr->gem_pos).y;
-  fVar5 = (float)_DAT_005e744d;
-  fVar19 = (float10)_DAT_005e743d;
+  fVar5 = (float)0.75;
+  fVar19 = (float10)0.5;
   fVar2 = this_ptr->panel_radius;
   pCVar11 = &this_ptr->reflectors[0].target_position;
   fVar3 = (this_ptr->emitter_pos).f.y;
-  fVar4 = (float)_DAT_005e7455;
+  fVar4 = (float)0.25;
   this_ptr->reflectors[0].target_position.z =
        (float)(fVar17 * (float10)this_ptr->panel_radius * fVar19);
   pCVar11->x = (float)((float10)fVar2 * fVar18 * fVar19);
@@ -239,7 +237,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
   this_ptr->reflectors[0].rotation.z = 0.0;
   this_ptr->reflectors[0].rotation.y = -1.54034;
   this_ptr->reflectors[0].start_position.y =
-       this_ptr->reflectors[0].start_position.y + _DAT_005e745d;
+       this_ptr->reflectors[0].start_position.y + -4.0f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
             (&this_ptr->reflectors[0].rotation_matrix,pCVar11);
   fVar1 = this_ptr->reflectors[0].start_position.x;

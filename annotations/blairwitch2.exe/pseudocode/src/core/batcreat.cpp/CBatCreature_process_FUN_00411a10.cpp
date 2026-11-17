@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *this_ptr,float delta_time)
 
@@ -137,7 +136,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
         fStack_34 = SQRT(CStack_5c.z * CStack_5c.z +
                          CStack_5c.x * CStack_5c.x + CStack_5c.y * CStack_5c.y);
         fStack_2c = fStack_34;
-        if (fStack_34 < 0x40600000) {
+        if (fStack_34 < 3.5f) {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_5c,&CStack_140);
           fStack_158 = CStack_140.x;
           afStack_154[(uint)bVar8 * -2] = *(float *)((int)&CStack_140 + (uint)bVar8 * -8 + 4);
@@ -145,7 +144,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
                *(float *)((int)&CStack_140 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                 (afStack_154[0] - (this_ptr->base).base.base.orient.vec.y);
-          if (ABS(fStack_14) < (float)_DAT_005cb8f6) {
+          if (ABS(fStack_14) < (float)0.52359877558333301) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_20->base,3,1);
             iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
             if ((iVar5 == 0) &&
@@ -159,7 +158,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
         }
         if (fStack_34 < (this_ptr->base).guard_distance) {
           pCStack_24 = &(this_ptr->base).base.model.base;
-          if (fStack_34 < _DAT_005f2ee8) {
+          if (fStack_34 < 10.0f) {
             iVar5 = 1;
             (this_ptr->base).attack_cooldown = 0.0;
           }
@@ -192,10 +191,10 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
                    *(float *)((int)&CStack_170 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
               fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                     (fStack_19c - (this_ptr->base).base.base.orient.vec.y);
-              if ((float)_DAT_005cb8f6 <= ABS(fStack_14)) {
+              if ((float)0.52359877558333301 <= ABS(fStack_14)) {
                 iVar5 = 1;
               }
-              else if ((float)_DAT_005cb8fe <=
+              else if ((float)2 <=
                        ABS((((this_ptr->base).victim)->base).location.position.y -
                            (this_ptr->base).base.base.location.position.y)) {
                 iVar5 = 1;
@@ -223,7 +222,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
       break;
     case 1:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar10 = 0x40600000;
+      fVar10 = 3.5f;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00488970(&this_ptr->base,delta_time);
         if (iVar5 == 0) {
@@ -235,7 +234,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
       }
       else {
         max_distance = 0.17453292;
-        fStack_18 = 0x40600000;
+        fStack_18 = 3.5f;
         min_distance = 0.5;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -267,7 +266,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
           afStack_7c[0] = 0.0;
           fStack_1c = SQRT(afStack_7c[1] * afStack_7c[1] + fStack_80 * fStack_80);
           fStack_30 = fStack_1c;
-          if ((_DAT_005f2ee8 < fStack_1c) &&
+          if ((10.0f < fStack_1c) &&
              ((this_ptr->base).attack_cooldown = 0.0, iStack_28 == 1)) {
             pCVar4 = (this_ptr->base).victim;
             afStack_4c[2] = (pCVar4->base).location.position.x - (pCVar1->position).x;
@@ -288,9 +287,9 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
                  *(float *)((int)&CStack_134 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                   (afStack_94[0] - (this_ptr->base).base.base.orient.vec.y);
-            if ((ABS(fStack_14) < (float)_DAT_005cb8f6) &&
+            if ((ABS(fStack_14) < (float)0.52359877558333301) &&
                (ABS((((this_ptr->base).victim)->base).location.position.y -
-                    (this_ptr->base).base.base.location.position.y) < (float)_DAT_005cb8fe)) {
+                    (this_ptr->base).base.base.location.position.y) < (float)2)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_20->base,2,1);
               uVar7 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 0.0;
@@ -326,7 +325,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
                  *(float *)((int)&CStack_11c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                   (afStack_154[3] - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS(fStack_14) < (float)_DAT_005cb8f6) {
+            if (ABS(fStack_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                         (&(this_ptr->base).base.model.base,3,1);
               uVar7 = this_ptr->sfx_handles[1];
@@ -357,9 +356,9 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
       fVar10 = 0.4;
       fStack_14 = SStack_200.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007bc754,
-                 &CStack_e0);
+                (&g_CVector3f_0265370c,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 g_INT_ARRAY_007bc74c[2],&CStack_e0);
       pCVar9 = &CStack_194;
       CStack_194.x = CStack_e0.x;
       *(uint *)((int)&CStack_194 + (uint)bVar8 * -8 + 4) =

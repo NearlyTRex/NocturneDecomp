@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_004154f0(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,EBloodType blood_type)
 
 {
@@ -28,8 +26,8 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_004154f0(CVector3f *pos
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_004156e0(this_ptr);
   }
   if (this_ptr_00 == (CBodyPart *)0x0) {
-    _DAT_01d046a0 = "..\\core\\bodypart.cpp";
-    _DAT_01d046a4 = 0x32;
+    g_CHAR_PTR_01d046a0 = "..\\core\\bodypart.cpp";
+    g_INT_01d046a4 = 0x32;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Can't create body part!");
   }
   (this_ptr_00->base).location.position.x = position->x;
@@ -49,7 +47,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_004154f0(CVector3f *pos
     fVar5 = (float10)fcos((float10)fVar2);
     fVar6 = (float10)fsin((float10)fVar3);
     fVar7 = (float10)fsin((float10)fVar2);
-    fVar8 = (float10)_DAT_005cbd52;
+    fVar8 = (float10)10.0f;
     (this_ptr_00->initial_velocity).y = (float)(fVar7 * fVar8);
     (this_ptr_00->initial_velocity).x = (float)(fVar4 * fVar8 * fVar5);
     (this_ptr_00->initial_velocity).z = (float)(fVar6 * fVar8 * fVar5);
@@ -59,8 +57,10 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_004154f0(CVector3f *pos
     (this_ptr_00->initial_velocity).y = initial_velocity->y;
     (this_ptr_00->initial_velocity).z = initial_velocity->z;
   }
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(0x01D182F0,&this_ptr_00->base);
-  core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(0x01D182F0,&this_ptr_00->base);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0
+            (g_CDemonMission_PTR_00618170,&this_ptr_00->base);
+  core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
+            (g_CDemonMission_PTR_00618170,&this_ptr_00->base);
   if (scale_source != (CDemonActor *)0x0) {
     (this_ptr_00->base).scale.x = (scale_source->scale).x;
     (this_ptr_00->base).scale.y = (scale_source->scale).y;

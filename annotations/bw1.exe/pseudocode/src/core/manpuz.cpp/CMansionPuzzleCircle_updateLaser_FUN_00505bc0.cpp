@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 
 {
@@ -92,9 +90,9 @@ LAB_00505c17:
          *(uint *)((int)&CStack_70 + (uint)bVar5 * -8 + 4);
     *(uint *)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
          *(uint *)((int)&CStack_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-    CStack_58.y = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).f.y) * _DAT_005e7541;
-    CStack_58.z = -(this_ptr->panel_radius * _DAT_005e753d + (this_ptr->emitter_pos).f.z +
-                   (this_ptr->gem_pos).z) * _DAT_005e7541;
+    CStack_58.y = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).f.y) * 4.0f;
+    CStack_58.z = -(this_ptr->panel_radius * 2.0f + (this_ptr->emitter_pos).f.z +
+                   (this_ptr->gem_pos).z) * 4.0f;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
               ((CMatrix3x3f *)(unaff_EDI + 0x24),&CStack_58,&CStack_28);
     pCVar12 = &CStack_40;
@@ -155,7 +153,7 @@ LAB_00505c17:
     laser_info.stored_angle = (float)uVar10;
     laser_info.transparency = fVar11;
     core_fire_cpp_CFireEffect_traceLaser_FUN_004b6420
-              (0x01C57074,&CStack_7c,&CStack_34,laser_info,recursion_depth);
+              (g_CFireEffect_PTR_0061c010,&CStack_7c,&CStack_34,laser_info,recursion_depth);
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     return;
   }

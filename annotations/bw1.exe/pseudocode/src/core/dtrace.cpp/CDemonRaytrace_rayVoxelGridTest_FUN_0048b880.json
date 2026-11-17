@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 347,
+    "complexity_score": 331,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 192,
-    "suspect_count": 13,
+    "pseudocode_lines": 191,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
       "sub84_truncation",
-      "suspect_float",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 614
+    "total_lines": 613
   },
   "cross_references": [
     {
@@ -64,9 +63,9 @@
   "globals": [
     {
       "addr": "005db950",
-      "name": "DAT_005db950",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005db950",
+      "type": "float",
+      "value": "2.684355E+8"
     }
   ],
   "param_estimates": {
@@ -448,16 +447,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
+      "line": 17,
       "match": "afStackY_1094",
       "severity": "moderate",
       "text": "float afStackY_1094 [1000];",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 57,
+      "line": 55,
       "match": "6.678465e-39",
       "severity": "mild",
       "text": "CStack_bc.z = 6.678465e-39;",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 60,
+      "line": 58,
       "match": "6.678483e-39",
       "severity": "mild",
       "text": "CStack_bc.y = 6.678483e-39;",
@@ -481,7 +472,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 64,
+      "line": 62,
       "match": "6.678509e-39",
       "severity": "mild",
       "text": "CStack_bc.x = 6.678509e-39;",
@@ -489,7 +480,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 69,
+      "line": 67,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_8c = SUB84(__BITCAST_UINT64(dVar10),0);",
@@ -497,7 +488,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 77,
+      "line": 75,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_90 = SUB84(__BITCAST_UINT64(dVar10),0);",
@@ -505,7 +496,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 85,
+      "line": 83,
       "match": "6.678684e-39",
       "severity": "mild",
       "text": "fStack_d0 = 6.678684e-39;",
@@ -513,7 +504,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 89,
+      "line": 87,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_94 = SUB84(__BITCAST_UINT64(dVar10),0);",
@@ -521,7 +512,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 112,
+      "line": 110,
       "match": "6.67897e-39",
       "severity": "mild",
       "text": "fStack_d0 = 6.67897e-39;",
@@ -529,7 +520,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 114,
+      "line": 112,
       "match": "6.67898e-39",
       "severity": "mild",
       "text": "fStack_d4 = 6.67898e-39;",
@@ -537,7 +528,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 126,
+      "line": 124,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_6c = 1.4013e-45;",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 169,
+      "line": 167,
       "match": "&stack0xffffff2c",
       "severity": "moderate",
       "text": "(this_ptr_00,start_pos,&CStack_bc,(CVector3f *)&stack0xffffff2c,",

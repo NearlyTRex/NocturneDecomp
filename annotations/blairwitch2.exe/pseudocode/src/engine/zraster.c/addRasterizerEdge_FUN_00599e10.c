@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_zraster_c_addRasterizerEdge_FUN_00599e10(SRenderVertex *v0,SRenderVertex *v1)
 
 {
@@ -31,15 +29,15 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_00599e10(SRenderVertex *v0,S
       pSVar7 = v1;
       v1 = v0;
     }
-    iVar4 = _DAT_026672a8 * 0x50;
+    iVar4 = g_INT_026672a8 * 0x50;
     *(int *)(&DAT_026672ac + iVar4) = iVar3;
-    iVar2 = _DAT_026677ac;
+    iVar2 = g_INT_026677ac;
     *(int *)(iVar4 + 0x26672b0) = iVar6;
     if (iVar3 < iVar2) {
-      _DAT_026677ac = iVar3;
+      g_INT_026677ac = iVar3;
     }
-    if (_DAT_026677b0 < iVar6) {
-      _DAT_026677b0 = iVar6;
+    if (g_INT_026677b0 < iVar6) {
+      g_INT_026677b0 = iVar6;
     }
     uVar5 = (v1->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
     if (uVar5 < 0x10000) {
@@ -63,9 +61,9 @@ void __cdecl engine_zraster_c_addRasterizerEdge_FUN_00599e10(SRenderVertex *v0,S
             0x100);
     *(uint *)(iVar4 + 0x26672d8) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)(int)uVar8 * (longlong)*(int *)(iVar4 + 0x26672d8);
-    _DAT_026672a8 = _DAT_026672a8 + 1;
+    g_INT_026672a8 = g_INT_026672a8 + 1;
     *(uint *)(iVar4 + 0x26672d4) =
-         ((pSVar7->projected_vertex).transformed_z * 0x100 - _DAT_01ba5714) +
+         ((pSVar7->projected_vertex).transformed_z * 0x100 - g_INT_01ba5714) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
   return;

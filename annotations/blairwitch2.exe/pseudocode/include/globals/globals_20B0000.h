@@ -5,6 +5,8 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x20B0000
@@ -15,4 +17,24 @@ extern CDemonActorType g_CShadowClassInfo;
 extern CDemonActorType g_CShotgunClassInfo;
 extern CDemonActorType g_CShovelClassInfo;
 extern CDemonActorType g_CSimBoxClassInfo;
+
+// CDemonGlobe
+extern CDemonGlobe g_CDemonGlobe_020b1924;
+
+// CVector3f[5000]
+extern CVector3f g_CVector3f_ARRAY_020b58d4[5000];
+
+// int
+extern int g_INT_020b1518;
+extern int g_INT_020b151c;
+extern int g_INT_020b1520;
+
+// int[250]
+extern int g_INT_ARRAY_020b1524[250];
+
+// int[4000]
+extern int g_INT_ARRAY_020b1a54[4000];
+
+// uint*[1200]
+extern uint* g_UINT_PTR_ARRAY_020b0258[1200];
 

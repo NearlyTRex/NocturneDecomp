@@ -32,8 +32,8 @@
 ;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d49a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4d05
-;   undefined4 DAT_005c4d0d
+;   double g_DOUBLE_005c4d05 = 4
+;   double g_DOUBLE_005c4d0d = 0.349065850388889
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
@@ -123,7 +123,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d2f6c
     FLD float ptr [ESP + 0x10]          ; 004d2f6d
     FABS                                ; 004d2f71
-    FCOMP double ptr [0x005c4d05]       ; 004d2f73 | DAT_005c4d05
+    FCOMP double ptr [0x005c4d05]       ; 004d2f73 | g_DOUBLE_005c4d05
     FNSTSW AX                           ; 004d2f79
     SAHF                                ; 004d2f7b
     JA 0x004d2f1d                       ; 004d2f7c
@@ -167,7 +167,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d2fdd
     FLD float ptr [ESP + 0x58]          ; 004d2fde
     FABS                                ; 004d2fe2
-    FCOMP double ptr [0x005c4d0d]       ; 004d2fe4 | DAT_005c4d0d
+    FCOMP double ptr [0x005c4d0d]       ; 004d2fe4 | g_DOUBLE_005c4d0d
     FNSTSW AX                           ; 004d2fea
     SAHF                                ; 004d2fec
     JA 0x004d2f1d                       ; 004d2fed

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *this_ptr)
 
 {
@@ -21,16 +19,16 @@ CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *thi
   char *pcVar7;
   
   pCVar3 = (CDemnfolk *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
-  pcVar6 = (char *)0x5ba3c7;
+  pcVar6 = "true";
   (pCVar3->base).base.base.vtable._ub = &g_CDemnfolkVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar3->base).base.model,"@d_deputy.dfm" + 1);
+            (&(pCVar3->base).base.model,"d_deputy.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.5;
   pcVar7 = pCVar3->rise_from_grave_condition;
   (pCVar3->base).base.collision_cylinder_radius = 1.0;
-  fVar4 = _DAT_005de05c;
+  fVar4 = 50.0f;
   pCVar3->pickup_target = (CDemonActor *)0x0;
-  fVar2 = _DAT_005de060;
+  fVar2 = 100.0f;
   pCVar3->pickup_approach_progress = 0.0;
   (pCVar3->base).base.ai_detection_range_min = fVar4;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
@@ -62,7 +60,7 @@ CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *thi
   pCVar3->bleedout_timer = 0.0;
   pCVar3->sfx_handles[0] = 0;
   pCVar3->sfx_handles[1] = 0;
-  this_ptr_00 = 0x01C6E360;
+  this_ptr_00 = g_CEventList_PTR_005fba60;
   pCVar3->pickup_seed = iVar5;
   pCVar3->is_miner_zombie = 0;
   iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0

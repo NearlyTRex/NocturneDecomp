@@ -51,9 +51,9 @@ double FUN_005cd4be(void)
     }
     in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;
   }
-  if (DAT_0062621d != '\0') {
+  if (g_BYTE_0062621d != 0) {
     fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX));
-    if ((DAT_006267b8 & 1) == 0) {
+    if ((g_BYTE_006267b8 & 1) == 0) {
       fVar22 = fVar22 / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));
     }
     else {

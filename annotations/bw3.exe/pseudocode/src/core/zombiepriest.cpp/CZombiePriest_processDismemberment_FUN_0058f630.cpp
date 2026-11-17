@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_zombiepriest_cpp_CZombiePriest_processDismemberment_FUN_0058f630(CZombiePriest *this_ptr,SDamageInfo *damage_info)
 
@@ -54,8 +53,8 @@ switchD_0058f669_default:
   }
   if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
     fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,1.0);
-    if ((float)_DAT_005d8cb8 <= fVar2) {
-      if (_DAT_005d8cc0 <= (double)fVar2) goto LAB_0058f6c3;
+    if ((float)0.33300000000000002 <= fVar2) {
+      if (0.66600000000000004 <= (double)fVar2) goto LAB_0058f6c3;
       iVar1 = this_ptr->part_indices[2];
     }
     else {
@@ -116,7 +115,7 @@ LAB_0058f6c3:
     if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
       damage_info->damage_amount = 9999.0;
     }
-    damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005d8cc8;
+    damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     if ((damage_info->hit_part_index == this_ptr->part_indices[2]) ||
        (damage_info->hit_part_index == this_ptr->part_indices[3])) {
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)

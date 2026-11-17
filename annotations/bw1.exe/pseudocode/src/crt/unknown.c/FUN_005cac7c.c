@@ -9,13 +9,13 @@
 bool FUN_005cac7c(void)
 
 {
-  if (DAT_006265f8 == 0xffffffff) {
-    DAT_006265f8 = TlsAlloc();
-    if ((0x7fff < DAT_006265e1) && (DAT_006265df < 4)) {
-      while ((DAT_006265f8 != 0xffffffff && (DAT_006265f8 < 3))) {
-        DAT_006265f8 = TlsAlloc();
+  if (g_INT_006265f8 == -1) {
+    g_INT_006265f8 = TlsAlloc();
+    if ((0x7fff < (ushort)g_SHORT_006265e1) && (g_BYTE_006265df < 4)) {
+      while ((g_INT_006265f8 != 0xffffffff && ((uint)g_INT_006265f8 < 3))) {
+        g_INT_006265f8 = TlsAlloc();
       }
     }
   }
-  return DAT_006265f8 != 0xffffffff;
+  return g_INT_006265f8 != 0xffffffff;
 }

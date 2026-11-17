@@ -17,7 +17,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_dtor_FUN_0044cb00(CDemonCam
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable = (CCameraView_vtable *)&g_CDemonCameraVTable;
+  (this_ptr->base).vtable = &g_CDemonCameraVTable;
   core_dcamera_cpp_CDemonCamera_free_FUN_0044cdf0(this_ptr);
   ptr = (CDemonCamera *)core_camview_cpp_CCameraView_dtor_FUN_00428240(&this_ptr->base,1);
   if ((flags & 2) == 0) {

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hellhag_cpp_CHag_processHagAlertState_FUN_005aaa80(CHag *this_ptr,float delta_time)
 
 {
@@ -37,7 +35,7 @@ void __cdecl core_hellhag_cpp_CHag_processHagAlertState_FUN_005aaa80(CHag *this_
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.base.model.base,0,1);
       this_ptr_01 = &(this_ptr->base).state_machine;
-      (this_ptr->base).attack_range = _DAT_00600a6c;
+      (this_ptr->base).attack_range = 6.0f;
       core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,0.5);
       core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
       return;

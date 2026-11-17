@@ -49,8 +49,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00415cd0(CBodyPart
     iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_2c,unaff_EDI);
     if ((iVar2 != 0) &&
        ((this_ptr->transparent_geometry_flag == 0 ||
-        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),
-        iVar1 != 0)))) {
+        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                           (g_CDemonRenderer_PTR_0060b280), iVar1 != 0)))) {
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_004159e0(this_ptr,-1);
     }
     engine_drender_cpp_pop_FUN_0046b4a0();

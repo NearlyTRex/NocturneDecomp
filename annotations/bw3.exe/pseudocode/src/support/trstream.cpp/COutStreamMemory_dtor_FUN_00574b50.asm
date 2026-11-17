@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamMemoryTypeInfo
-;   undefined1* g_COutStreamMemoryVTable = 00574b50
+;   TerminatedCString g_COutStreamMemoryVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005a308f
@@ -34,7 +34,7 @@ section .text
     JNZ 0x00574b85                      ; 00574b5a
         ;   XREF to: 00574b85 (CONDITIONAL_JUMP)  ; LAB_00574b85
     PUSH EBX                            ; 00574b5c
-    MOV dword ptr [EBX],0x5e5b54        ; 00574b5d | g_COutStreamMemoryVTable
+    MOV dword ptr [EBX],0x5e5b54        ; 00574b5d | = "PKW"
     CALL support_trstream.cpp_COutStreamMemory_close_FUN_00574d10 ; 00574b63
         ;   XREF to: 00574d10 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_COutStreamMemory_close_FUN_00574d10(COutStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 00574b68

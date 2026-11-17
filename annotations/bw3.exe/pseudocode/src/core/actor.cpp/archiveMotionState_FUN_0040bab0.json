@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 128,
+    "complexity_score": 33,
     "cross_reference_count": 37,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
-    "suspect_count": 9,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 138
   },
   "cross_references": [
@@ -303,26 +301,26 @@
     },
     {
       "addr": "005b5b4b",
-      "name": "DAT_005b5b4b",
-      "type": "undefined4",
+      "name": "s_s_005b5b4b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f0990",
-      "name": "DAT_005f0990",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_005f0990",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "007df9b4",
-      "name": "DAT_007df9b4",
-      "type": "undefined4",
+      "name": "g_FILE_PTR_007df9b4",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "007df9b8",
-      "name": "DAT_007df9b8",
-      "type": "undefined4",
+      "name": "g_INT_007df9b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -401,78 +399,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_007df9b8",
-      "severity": "mild",
-      "text": "if (DAT_007df9b8 != 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007df9b4,\"%s{ // %s\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "(motion_controller,DAT_007df9b4,&DAT_005f0990);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005f0990",
-      "severity": "mild",
-      "text": "(motion_controller,DAT_007df9b4,&DAT_005f0990);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007df9b4,&DAT_005b5b4b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b5b4b",
-      "severity": "mild",
-      "text": "_fprintf(DAT_007df9b4,&DAT_005b5b4b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_007df9b4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_load_FUN_004fcc90(motion_controller,DAT_007df9b4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_007df9b4);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

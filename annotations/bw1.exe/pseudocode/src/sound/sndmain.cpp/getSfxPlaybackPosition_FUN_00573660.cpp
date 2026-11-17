@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00573660(uint sfx_handle,uint output_format)
 
 {
@@ -25,7 +23,8 @@ double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00573660(uint sfx_ha
     local_28 = 0;
   }
   else {
-    if ((this_ptr->hardware_buffer_handle != 0) && (_DAT_02c80650 != 0)) {
+    if ((this_ptr->hardware_buffer_handle != 0) &&
+       (g_CSoundDevice_PTR_02c80650 != (CSoundDevice *)0x0)) {
       iVar1 = sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_00571fa0(this_ptr);
       if (iVar1 == 0) {
         sound_sndmain_cpp_unlockSound_FUN_00573e70();

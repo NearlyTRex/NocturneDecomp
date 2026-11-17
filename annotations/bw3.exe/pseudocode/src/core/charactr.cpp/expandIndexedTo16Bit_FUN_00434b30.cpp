@@ -6,18 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_expandIndexedTo16Bit_FUN_00434b30(void *output_buffer,void *indexed_input_buffer,int pixel_count)
 
 {
   byte *pbVar1;
   byte bVar2;
   
-  if (_DAT_005fba34 < 6) {
+  if (g_UINT_005fba34 < 6) {
     if (((uint)output_buffer & 2) != 0) {
-      *(ushort *)output_buffer =
-           *(ushort *)((uint)*(byte *)indexed_input_buffer * 2 + 0x1c6ad74);
+      *(ushort *)output_buffer = g_USHORT_ARRAY_01c6ad74[*(byte *)indexed_input_buffer];
       output_buffer = (void *)((int)output_buffer + 2);
       indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);
       pixel_count = pixel_count + -1;
@@ -25,21 +22,19 @@ void __cdecl core_charactr_cpp_expandIndexedTo16Bit_FUN_00434b30(void *output_bu
     while( true ) {
       if (pixel_count < 2) break;
       *(uint *)output_buffer =
-           CONCAT22(*(ushort *)((uint)*(byte *)((int)indexed_input_buffer + 1) * 2 + 0x1c6ad74),
-                    *(ushort *)((uint)*(byte *)indexed_input_buffer * 2 + 0x1c6ad74));
+           CONCAT22(g_USHORT_ARRAY_01c6ad74[*(byte *)((int)indexed_input_buffer + 1)],
+                    g_USHORT_ARRAY_01c6ad74[*(byte *)indexed_input_buffer]);
       indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
       output_buffer = (void *)((int)output_buffer + 4);
       pixel_count = pixel_count + -2;
     }
     if (pixel_count + -2 == -1) {
-      *(ushort *)output_buffer =
-           *(ushort *)((uint)*(byte *)indexed_input_buffer * 2 + 0x1c6ad74);
+      *(ushort *)output_buffer = g_USHORT_ARRAY_01c6ad74[*(byte *)indexed_input_buffer];
     }
     return;
   }
   if (((uint)output_buffer & 2) != 0) {
-    *(ushort *)output_buffer =
-         *(ushort *)((uint)*(byte *)indexed_input_buffer * 2 + 0x1c6ad74);
+    *(ushort *)output_buffer = g_USHORT_ARRAY_01c6ad74[*(byte *)indexed_input_buffer];
     output_buffer = (void *)((int)output_buffer + 2);
     indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);
     pixel_count = pixel_count + -1;
@@ -49,14 +44,12 @@ void __cdecl core_charactr_cpp_expandIndexedTo16Bit_FUN_00434b30(void *output_bu
     bVar2 = *(byte *)indexed_input_buffer;
     indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
     *(uint *)output_buffer =
-         CONCAT22(*(ushort *)((uint)*pbVar1 * 2 + 0x1c6ad74),
-                  *(ushort *)((uint)bVar2 * 2 + 0x1c6ad74));
+         CONCAT22(g_USHORT_ARRAY_01c6ad74[*pbVar1],g_USHORT_ARRAY_01c6ad74[bVar2]);
     output_buffer = (void *)((int)output_buffer + 4);
     pixel_count = pixel_count + -2;
   }
   if (pixel_count + -2 == -1) {
-    *(ushort *)output_buffer =
-         *(ushort *)((uint)*(byte *)indexed_input_buffer * 2 + 0x1c6ad74);
+    *(ushort *)output_buffer = g_USHORT_ARRAY_01c6ad74[*(byte *)indexed_input_buffer];
   }
   return;
 }

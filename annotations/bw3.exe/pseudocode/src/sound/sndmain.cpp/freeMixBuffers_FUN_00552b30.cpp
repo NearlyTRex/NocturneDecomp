@@ -6,38 +6,36 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_00552b30(void)
 
 {
   int iVar1;
   int iVar2;
   
-  if (_DAT_02cf32c8 != (void *)0x0) {
-    debugFree(_DAT_02cf32c8);
-    _DAT_02cf32c8 = (void *)0x0;
+  if (g_FLOAT_PTR_02cf32c8 != (float *)0x0) {
+    debugFree(g_FLOAT_PTR_02cf32c8);
+    g_FLOAT_PTR_02cf32c8 = (float *)0x0;
   }
-  if (_DAT_02cf32ec != (void *)0x0) {
-    debugFree(_DAT_02cf32ec);
-    _DAT_02cf32ec = (void *)0x0;
+  if (g_FLOAT_PTR_02cf32ec != (float *)0x0) {
+    debugFree(g_FLOAT_PTR_02cf32ec);
+    g_FLOAT_PTR_02cf32ec = (float *)0x0;
   }
-  if (_DAT_02cf32a4 != (void *)0x0) {
-    debugFree(_DAT_02cf32a4);
-    _DAT_02cf32a4 = (void *)0x0;
+  if (g_FLOAT_PTR_02cf32a4 != (float *)0x0) {
+    debugFree(g_FLOAT_PTR_02cf32a4);
+    g_FLOAT_PTR_02cf32a4 = (float *)0x0;
   }
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 4;
-    *(uint *)(iVar2 + 0x2cf32a8) = 0;
-    *(uint *)(iVar2 + 0x2cf32f0) = 0;
-    *(uint *)(iVar2 + 0x2cf3310) = 0;
-    *(uint *)(iVar2 + 0x2cf32cc) = 0;
+    *(uint *)((int)g_FLOAT_PTR_ARRAY_02cf32a8 + iVar2) = 0;
+    *(uint *)((int)g_FLOAT_PTR_ARRAY_02cf32f0 + iVar2) = 0;
+    *(uint *)((int)g_FLOAT_PTR_ARRAY_02cf3310 + iVar2) = 0;
+    *(uint *)((int)g_FLOAT_PTR_ARRAY_02cf32cc + iVar2) = 0;
     iVar2 = iVar1;
   } while (iVar1 != 0x20);
-  _DAT_02cf32a0 = 0;
-  _DAT_02cf3294 = 0;
-  _DAT_02cf3298 = 0;
-  _DAT_02cf329c = 0;
+  g_INT_02cf32a0 = 0;
+  g_INT_02cf3294 = 0;
+  g_INT_02cf3298 = 0;
+  g_INT_02cf329c = 0;
   return;
 }

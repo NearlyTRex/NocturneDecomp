@@ -7,13 +7,13 @@
 ; CVector3d *      Stack[0x4]:4   velocity_source_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c78cec
+;   int g_INT_02c78cec
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c78cec]      ; 005728b0 | DAT_02c78cec
+    MOV EDX,dword ptr [0x02c78cec]      ; 005728b0 | g_INT_02c78cec
         ;   Label: sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005728b0
     LEA EAX,[EDX*0x4 + 0x0]             ; 005728b6
     SUB EAX,EDX                         ; 005728bd

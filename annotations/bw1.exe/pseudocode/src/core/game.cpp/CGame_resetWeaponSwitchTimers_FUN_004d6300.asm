@@ -10,7 +10,7 @@
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c6b85
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d06ab4
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
@@ -19,7 +19,7 @@
 
 section .text
 
-    MOV EAX,[0x01d06ab4]                ; 004d6300 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 004d6300 | g_INT_01d06ab4
         ;   Label: core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004d6300
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 004d6305
     PUSH 0x0                            ; 004d630c

@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 220,
+    "complexity_score": 279,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 13,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 21,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation",
+      "suspicious_cast",
+      "wrong_global"
     ],
-    "total_lines": 152
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -52,79 +54,79 @@
   "globals": [
     {
       "addr": "005e7f2e",
-      "name": "DAT_005e7f2e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e7f2e",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "0061bc9c",
-      "name": "DAT_0061bc9c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061bc9c",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "0061bcb8",
-      "name": "DAT_0061bcb8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0061bcb8",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "02648428",
-      "name": "DAT_02648428",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02648428",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02648438",
-      "name": "DAT_02648438",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02648438",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02648448",
-      "name": "DAT_02648448",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02648448",
+      "type": "double",
       "value": null
     },
     {
       "addr": "026484b8",
-      "name": "DAT_026484b8",
-      "type": "undefined4",
+      "name": "g_INT_026484b8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648f40",
-      "name": "DAT_02648f40",
-      "type": "undefined4",
+      "name": "g_DOUBLE_ARRAY_02648f40",
+      "type": "double[8]",
       "value": null
     },
     {
       "addr": "02648f48",
-      "name": "DAT_02648f48",
+      "name": "g_DOUBLE_ARRAY_02648f40[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02648f80",
-      "name": "DAT_02648f80",
-      "type": "undefined4",
+      "name": "g_DOUBLE_ARRAY_02648f80",
+      "type": "double[8]",
       "value": null
     },
     {
       "addr": "02648f88",
-      "name": "DAT_02648f88",
+      "name": "g_DOUBLE_ARRAY_02648f80[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02648fc0",
-      "name": "DAT_02648fc0",
-      "type": "undefined4",
+      "name": "g_DOUBLE_ARRAY_02648fc0",
+      "type": "double[8]",
       "value": null
     },
     {
       "addr": "02648fc8",
-      "name": "DAT_02648fc8",
+      "name": "g_DOUBLE_ARRAY_02648fc0[1]",
       "type": "undefined4",
       "value": null
     }
@@ -279,132 +281,172 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_02648f40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_02648f40 + iVar11) = uVar4;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "if (DAT_0061bc9c != 2) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_02648f40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_02648f40 + iVar11 + 4) = uVar5;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "if (0 < DAT_0061bc9c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_02648428",
-      "severity": "mild",
-      "text": "uVar4 = *(uint *)(&DAT_02648428 + iVar11);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_02648438",
-      "severity": "mild",
-      "text": "uVar6 = *(uint *)(&DAT_02648438 + iVar11);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02648448",
-      "severity": "mild",
-      "text": "uVar8 = *(uint *)(&DAT_02648448 + iVar11);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 32,
-      "match": "DAT_02648f40",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02648f40 + iVar11) = uVar4;",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_02648f80",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_02648f80 + iVar11) = uVar6;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_02648f80",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_02648f80 + iVar11 + 4) = uVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 34,
-      "match": "DAT_02648f80",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02648f80 + iVar11) = uVar6;",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_02648fc0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_02648fc0 + iVar11) = uVar8;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_02648fc0",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02648fc0 + iVar11) = uVar8;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)g_DOUBLE_ARRAY_02648fc0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DOUBLE_ARRAY_02648fc0 + iVar11 + 4) = uVar9;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "} while (iVar12 < DAT_0061bc9c * 8);",
-      "type": "undefined_data"
+      "description": "Scalar global g_DOUBLE_02648428 accessed via (&g_DOUBLE_02648428)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648430 (at 0x02648430, +8 bytes).",
+      "line": 45,
+      "match": "g_DOUBLE_02648428",
+      "severity": "moderate",
+      "text": "g_DOUBLE_ARRAY_02648f40[0] = (&g_DOUBLE_02648428)[g_INT_026484b8] - dVar1;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02648438 accessed via (&g_DOUBLE_02648438)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648440 (at 0x02648440, +8 bytes).",
+      "line": 46,
+      "match": "g_DOUBLE_02648438",
+      "severity": "moderate",
+      "text": "g_DOUBLE_ARRAY_02648f80[0] = (&g_DOUBLE_02648438)[g_INT_026484b8] - dVar2;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_DOUBLE_02648448 accessed via (&g_DOUBLE_02648448)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648450 (at 0x02648450, +8 bytes).",
       "line": 47,
-      "match": "DAT_02648428",
-      "severity": "mild",
-      "text": "_DAT_02648f40 = *(double *)(&DAT_02648428 + iVar11) - dVar1;",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02648448",
+      "severity": "moderate",
+      "text": "g_DOUBLE_ARRAY_02648fc0[0] = (&g_DOUBLE_02648448)[g_INT_026484b8] - dVar3;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02648428 accessed via (&g_DOUBLE_02648428)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648430 (at 0x02648430, +8 bytes).",
       "line": 48,
-      "match": "DAT_02648438",
-      "severity": "mild",
-      "text": "_DAT_02648f80 = *(double *)(&DAT_02648438 + iVar11) - dVar2;",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02648428",
+      "severity": "moderate",
+      "text": "g_DOUBLE_ARRAY_02648f40[1] = (&g_DOUBLE_02648428)[g_INT_026484b8] + dVar1;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02648438 accessed via (&g_DOUBLE_02648438)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648440 (at 0x02648440, +8 bytes).",
       "line": 49,
-      "match": "DAT_02648448",
-      "severity": "mild",
-      "text": "_DAT_02648fc0 = *(double *)(&DAT_02648448 + iVar11) - dVar3;",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02648438",
+      "severity": "moderate",
+      "text": "g_DOUBLE_ARRAY_02648f80[1] = (&g_DOUBLE_02648438)[g_INT_026484b8] + dVar2;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02648448 accessed via (&g_DOUBLE_02648448)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648450 (at 0x02648450, +8 bytes).",
       "line": 50,
-      "match": "DAT_02648428",
-      "severity": "mild",
-      "text": "_DAT_02648f48 = *(double *)(&DAT_02648428 + iVar11) + dVar1;",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02648448",
+      "severity": "moderate",
+      "text": "g_DOUBLE_ARRAY_02648fc0[1] = (&g_DOUBLE_02648448)[g_INT_026484b8] + dVar3;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_02648438",
-      "severity": "mild",
-      "text": "_DAT_02648f88 = *(double *)(&DAT_02648438 + iVar11) + dVar2;",
-      "type": "undefined_data"
+      "description": "Cast-and-add on &g_DOUBLE_02648428 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648430 (at 0x02648430, +8 bytes).",
+      "line": 21,
+      "match": "g_DOUBLE_02648428",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)(&g_DOUBLE_02648428 + g_INT_026484b8);",
+      "type": "suspicious_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_02648448",
-      "severity": "mild",
-      "text": "_DAT_02648fc8 = *(double *)(&DAT_02648448 + iVar11) + dVar3;",
-      "type": "undefined_data"
+      "description": "Cast-and-add on &g_DOUBLE_02648438 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648440 (at 0x02648440, +8 bytes).",
+      "line": 23,
+      "match": "g_DOUBLE_02648438",
+      "severity": "moderate",
+      "text": "uVar6 = *(uint *)(&g_DOUBLE_02648438 + g_INT_026484b8);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_DOUBLE_02648448 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02648450 (at 0x02648450, +8 bytes).",
+      "line": 25,
+      "match": "g_DOUBLE_02648448",
+      "severity": "moderate",
+      "text": "uVar8 = *(uint *)(&g_DOUBLE_02648448 + g_INT_026484b8);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02648428` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)&g_DOUBLE_02648428",
+      "severity": "moderate",
+      "text": "uVar5 = *(uint *)((int)&g_DOUBLE_02648428 + iVar11 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02648438` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)&g_DOUBLE_02648438",
+      "severity": "moderate",
+      "text": "uVar7 = *(uint *)((int)&g_DOUBLE_02648438 + iVar11 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02648448` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)&g_DOUBLE_02648448",
+      "severity": "moderate",
+      "text": "uVar9 = *(uint *)((int)&g_DOUBLE_02648448 + iVar11 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar5 = *(uint *)((int)&g_DOUBLE_02648428 + iVar11 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar7 = *(uint *)((int)&g_DOUBLE_02648438 + iVar11 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar9 = *(uint *)((int)&g_DOUBLE_02648448 + iVar11 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -10,7 +10,7 @@ void __cdecl core_scat_cpp_staticInit_FUN_00540a10(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CScatClassInfo,(char *)0x5edcb7,core_scat_cpp_factoryFuncScat_FUN_00540aa0,
+            (&g_CScatClassInfo,"CScat",core_scat_cpp_factoryFuncScat_FUN_00540aa0,
              &g_CScatClassVersion,1,&g_CHeroClassInfo);
   return;
 }

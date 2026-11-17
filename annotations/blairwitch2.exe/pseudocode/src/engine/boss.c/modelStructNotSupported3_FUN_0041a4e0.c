@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_boss_c_modelStructNotSupported3_FUN_0041a4e0(SMRGLHeaderExtended *mrgl_data)
 
 {
-  _DAT_01d046a0 = "..\\engine\\boss.c";
-  _DAT_01d046a4 = 0x3f;
+  g_CHAR_PTR_01d046a0 = "..\\engine\\boss.c";
+  g_INT_01d046a4 = 0x3f;
   core_main_c_displayErrorAndQuit_FUN_004e4500("modelStruct not supported");
   return;
 }

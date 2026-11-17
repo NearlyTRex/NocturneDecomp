@@ -4,13 +4,30 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCrater.h"
+#include "types/classes/CExplosion.h"
+#include "types/classes/CGunFlame.h"
+#include "types/classes/CLightningBolt.h"
 #include "types/classes/CPopcorn.h"
 #include "types/classes/CShell.h"
 #include "types/classes/CToss.h"
+#include "types/classes/CTrail.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CB0000
 // =============================================================================
+
+// CCrater[20]
+extern CCrater g_CCrater_ARRAY_01cb4f60[20];
+
+// CExplosion[10]
+extern CExplosion g_CExplosion_ARRAY_01cb0070[10];
+
+// CGunFlame[500]
+extern CGunFlame g_CGunFlame_ARRAY_01cb5824[500];
+
+// CLightningBolt[10]
+extern CLightningBolt g_CLightningBolt_ARRAY_01cb9e78[10];
 
 // CPopcorn[256]
 extern CPopcorn g_PopcornPool[256];
@@ -20,4 +37,17 @@ extern CShell g_ShellPool[50];
 
 // CToss[20]
 extern CToss g_TossPool[20];
+
+// CTrail[100]
+extern CTrail g_CTrail_ARRAY_01cba034[100];
+
+// int
+extern int g_INT_01cb006c;
+extern int g_INT_01cb0188;
+extern int g_INT_01cb4f5c;
+extern int g_INT_01cb5820;
+extern int g_INT_01cb9e74;
+extern int g_INT_01cba030;
+extern int g_INT_01cbae44;
+extern int g_INT_01cbc108;
 

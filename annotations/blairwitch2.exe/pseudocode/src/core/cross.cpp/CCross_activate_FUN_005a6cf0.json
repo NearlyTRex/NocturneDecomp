@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 274,
+    "complexity_score": 259,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 74,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
     "total_lines": 233
@@ -54,8 +53,8 @@
   "globals": [
     {
       "addr": "005f072d",
-      "name": "s_crosssmall_wav_005f072b+2",
-      "type": "undefined4",
+      "name": "s_crosssmall_wav_005f072d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -66,21 +65,21 @@
     },
     {
       "addr": "005f074d",
-      "name": "DAT_005f074d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f074d",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005f0755",
-      "name": "DAT_005f0755",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f0755",
+      "type": "double",
+      "value": "15"
     },
     {
       "addr": "005f075d",
-      "name": "DAT_005f075d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f075d",
+      "type": "double",
+      "value": "5"
     },
     {
       "addr": "0061b5a8",
@@ -90,9 +89,9 @@
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     },
     {
       "addr": "007bdc94",
@@ -245,16 +244,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 15,
       "match": "afStackY_1028",
       "severity": "moderate",
       "text": "float afStackY_1028 [1014];",
@@ -262,7 +253,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),",

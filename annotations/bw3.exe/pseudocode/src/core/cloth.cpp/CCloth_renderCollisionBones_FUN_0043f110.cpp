@@ -12,7 +12,8 @@ void __cdecl core_cloth_cpp_CCloth_renderCollisionBones_FUN_0043f110(CCloth *thi
   int bone_index;
   
   bone_index = 0;
-  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0(DAT_005f2afc,0xff);
+  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0
+            (g_CDemonRenderer_PTR_005f2afc,0xff);
   if (0 < this_ptr->collide_bone_count) {
     do {
       core_cloth_cpp_CCloth_renderBone_FUN_0043f160(this_ptr,bone_index,0);

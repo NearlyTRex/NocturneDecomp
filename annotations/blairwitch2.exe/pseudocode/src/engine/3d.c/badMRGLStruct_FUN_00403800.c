@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_00403800(SMRGLHeaderExtended *prim)
 
 {
-  _DAT_01d046a0 = "..\\engine\\3d.c";
-  _DAT_01d046a4 = 0x122;
+  g_CHAR_PTR_01d046a0 = "..\\engine\\3d.c";
+  g_INT_01d046a4 = 0x122;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Bad MRGL struct");
   return prim;
 }

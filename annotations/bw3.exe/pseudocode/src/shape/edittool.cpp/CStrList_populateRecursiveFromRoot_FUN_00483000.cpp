@@ -10,6 +10,6 @@ void __cdecl shape_edittool_cpp_CStrList_populateRecursiveFromRoot_FUN_00483000(
 
 {
   shape_edittool_cpp_CStrList_populateRecursive_FUN_00482ea0
-            (this_ptr,base_path,(char *)0x5bd6c1,file_pattern);
+            (this_ptr,base_path,&g_CHAR_005bd6c1,file_pattern);
   return;
 }

@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   param_2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4f02c
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d18
+;   void* g_PTR_01c4f02c
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14
+;   int g_INT_01c51d18
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -35,9 +35,9 @@ section .text
         ;   XREF to: 00482147 (CONDITIONAL_JUMP)  ; LAB_00482147
     XOR ECX,ECX                         ; 00482107
     MOV EDX,0x486e26                    ; 00482109
-    MOV dword ptr [0x01c51d14],ECX      ; 0048210e | DAT_01c51d14
-    MOV dword ptr [0x01c51d18],ECX      ; 00482114 | DAT_01c51d18
-    MOV dword ptr [0x01c4f02c],EDX      ; 0048211a | DAT_01c4f02c
+    MOV dword ptr [0x01c51d14],ECX      ; 0048210e | g_BIT_INTEGER32_01c51d14
+    MOV dword ptr [0x01c51d18],ECX      ; 00482114 | g_INT_01c51d18
+    MOV dword ptr [0x01c4f02c],EDX      ; 0048211a | g_PTR_01c4f02c
     LEA EAX,[ESI + 0x18]                ; 00482120
         ;   Label: LAB_00482120
     PUSH EAX                            ; 00482123
@@ -68,9 +68,9 @@ section .text
     MOV EBP,0x1                         ; 00482148
     MOV EAX,0x6                         ; 0048214d
     MOV EDI,0x48a7d9                    ; 00482152
-    MOV dword ptr [0x01c51d14],EBP      ; 00482157 | DAT_01c51d14
-    MOV [0x01c51d18],EAX                ; 0048215d | DAT_01c51d18
-    MOV dword ptr [0x01c4f02c],EDI      ; 00482162 | DAT_01c4f02c
+    MOV dword ptr [0x01c51d14],EBP      ; 00482157 | g_BIT_INTEGER32_01c51d14
+    MOV [0x01c51d18],EAX                ; 0048215d | g_INT_01c51d18
+    MOV dword ptr [0x01c4f02c],EDI      ; 00482162 | g_PTR_01c4f02c
     POP EDI                             ; 00482168
     JMP 0x00482120                      ; 00482169
         ;   XREF to: 00482120 (UNCONDITIONAL_JUMP)  ; LAB_00482120

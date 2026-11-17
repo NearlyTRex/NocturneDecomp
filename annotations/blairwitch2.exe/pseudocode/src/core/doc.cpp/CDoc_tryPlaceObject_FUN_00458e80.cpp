@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_00458e80(CDoc *this_ptr)
 
@@ -92,7 +91,7 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_00458e80(CDoc *this_ptr)
   }
   if (((this_ptr->base).base.layer_action_index != 9) &&
      (fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
-                            ((CCharacter *)this_ptr,0), fStack_14 < (float)_DAT_005d0407)) {
+                            ((CCharacter *)this_ptr,0), fStack_14 < (float)0.98999999999999999)) {
     return 0;
   }
   fStack_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
@@ -142,8 +141,9 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_00458e80(CDoc *this_ptr)
         dVar3 = (double)fStack_10c;
         engine_console_cpp_CConsole_printf_FUN_00436710
                   (g_CConsolePtr,"Delta to dest : %3.2f,%3.2f,%3.2f\n");
-        if ((((0.0 < fStack_104) && ((dVar1 < _DAT_005d040f && (ABS(dVar3) < _DAT_005d0417)))) &&
-            (0.0 < dVar2)) && (dVar2 < _DAT_005d041f)) {
+        if ((((0.0 < fStack_104) &&
+             ((dVar1 < 3 && (ABS(dVar3) < 2)))) && (0.0 < dVar2)) &&
+           (dVar2 < 4)) {
           pCVar12 = &(this_ptr->base).target_position;
           this_ptr->action_pending = 2;
           if ((CLocation *)pCVar12 != pCStack_38) {
@@ -202,8 +202,8 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_00458e80(CDoc *this_ptr)
         *(uint *)((int)&stack0xfffffe9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
              *(uint *)((int)&stack0xfffffe90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
         if ((0.0 < fStack_164) &&
-           ((((fStack_164 < (float)_DAT_005d040f && (ABS(fStack_16c) < (float)_DAT_005d0417)) &&
-             (0.0 < (double)fStack_168)) && ((double)fStack_168 < _DAT_005d041f)))) {
+           ((((fStack_164 < (float)3 && (ABS(fStack_16c) < (float)2)
+              ) && (0.0 < (double)fStack_168)) && ((double)fStack_168 < 4)))) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                     (&(this_ptr->base).base.model.base,0x1a,1);
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
@@ -332,8 +332,8 @@ int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_00458e80(CDoc *this_ptr)
         afStack_120[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
              afStack_e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
         if (SQRT(afStack_120[1] * afStack_120[1] +
-                 fStack_124 * fStack_124 + afStack_120[0] * afStack_120[0]) < (float)_DAT_005d0417)
-        {
+                 fStack_124 * fStack_124 + afStack_120[0] * afStack_120[0]) <
+            (float)2) {
           return 0;
         }
       }

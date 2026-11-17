@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_005461c0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,CVector3f *source_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 {
@@ -59,7 +57,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   CQuaternion4f *pCVar6;
   
   bVar9 = 0;
-  if ((float)_DAT_005e731f < blend_weight) {
+  if ((float)0.001 < blend_weight) {
     local_28 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
     local_18 = local_28;
     local_30 = (this_ptr->bone_transform).pose_data.bone_rotations;
@@ -151,8 +149,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       }
     }
     else {
-      _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-      _DAT_01d046a4 = 0xae4;
+      g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+      g_INT_01d046a4 = 0xae4;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Write me!");
     }
     if (bone_index < 0) {

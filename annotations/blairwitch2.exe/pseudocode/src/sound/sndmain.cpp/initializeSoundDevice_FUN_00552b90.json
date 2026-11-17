@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 109,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
-    "suspect_count": 7,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 100
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -66,32 +63,32 @@
   "globals": [
     {
       "addr": "0061bcac",
-      "name": "DAT_0061bcac",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061bcac",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "026485a8",
-      "name": "DAT_026485a8",
+      "name": "g_INT_ARRAY_02648540[26]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026485ac",
-      "name": "DAT_026485ac",
+      "name": "g_INT_ARRAY_02648540[27]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02648e80",
-      "name": "DAT_02648e80",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02648e80",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02648e88",
-      "name": "DAT_02648e88",
-      "type": "undefined4",
+      "name": "g_INT_02648e88",
+      "type": "int",
       "value": null
     }
   ],
@@ -213,62 +210,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061bcac",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_selectSoundDevice_FUN_00552aa0(DAT_0061bcac);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0061bcac",
-      "severity": "mild",
-      "text": "if (-1 < DAT_0061bcac) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_0061bcac",
-      "severity": "mild",
-      "text": "if (*(int *)(DAT_0061bcac * 0x118 + 0x26486c0) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0061bcac",
-      "severity": "mild",
-      "text": "(*(UINT *)(DAT_0061bcac * 0x118 + 0x26486c4));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_0061bcac",
-      "severity": "mild",
-      "text": "if (*(int *)(DAT_0061bcac * 0x118 + 0x26486c0) == 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061bcac",
-      "severity": "mild",
-      "text": "(*(UINT *)(DAT_0061bcac * 0x118 + 0x26486c4));",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

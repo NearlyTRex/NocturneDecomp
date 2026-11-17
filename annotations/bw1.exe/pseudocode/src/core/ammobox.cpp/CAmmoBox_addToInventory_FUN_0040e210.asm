@@ -19,8 +19,8 @@
 ;   undefined4 s_ome_ammo_005d31fe+1
 ;   undefined4 s_me_ammo_005d31fe+2
 ;   undefined4 s_e_ammo_005d31fe+3
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0
@@ -83,8 +83,8 @@ section .text
     MOV ESI,0x5d31dc                    ; 0040e275 | = "..\\core\\ammobox.cpp"
     MOV EDI,0xa2                        ; 0040e27a
     PUSH 0x5d31f0                       ; 0040e27f | = "Out of memory"
-    MOV dword ptr [0x01d1d400],ESI      ; 0040e284 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0040e28a | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0040e284 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0040e28a | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040e290
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0040e295

@@ -39,12 +39,13 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *t
   
   bVar4 = 0;
   if (this_ptr->is_visible != 0) {
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+              (g_CDemonRenderer_PTR_0060b280,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (DAT_0060b280,(SMRGLTextureBasic *)0x617f2c);
+              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00617f2c);
     pCVar2 = &this_ptr->course;
-    if (*(int *)(0x01D182F0 + 0x1008) == 0) {
+    if (g_CDemonMission_PTR_00618170->is_in_editor == 0) {
       if (this_ptr->type == MARQUEE_DISPLAY_CURSIVE) {
         dVar5 = round((double)this_ptr->param);
         iStack_18 = (int)ROUND(dVar5);
@@ -137,7 +138,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *t
         } while (iVar3 < (int)pCStack_28);
       }
     }
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
     return 1;
   }
   return 0;

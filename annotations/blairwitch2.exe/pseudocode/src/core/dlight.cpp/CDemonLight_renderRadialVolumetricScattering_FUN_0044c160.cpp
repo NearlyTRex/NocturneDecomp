@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0044c160(CDemonLight *this_ptr)
 
 {
@@ -67,7 +65,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   bVar7 = 0;
   if (this_ptr->volumetric_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-              (DAT_0060b280,&(this_ptr->base).base.position.f);
+              (g_CDemonRenderer_PTR_0060b280,&(this_ptr->base).base.position.f);
     core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0
               (&(this_ptr->base).base.rotation_matrix,&CStack_b4);
     translation = (CVector3f *)0x0;
@@ -75,31 +73,31 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
     auStack_a8._0_4_ = CStack_b4.x;
     *(uint *)(auStack_a8 + (uint)bVar7 * -8 + 4) =
          *(uint *)(auStack_a8 + (uint)bVar7 * -8 + -8);
-    pCVar16 = DAT_0060b280;
+    pCVar16 = g_CDemonRenderer_PTR_0060b280;
     *(uint *)(auStack_a8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          *(uint *)(auStack_a8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + -4);
     uStack_100 = 0x44c1c6;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
               (pCVar16,euler_angles,translation);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (DAT_0060b280,(SMRGLTextureBasic *)&DAT_0060afc8);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
+              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_0060afc8);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
     UStack_ec.i = 1;
     do {
       fVar8 = (float10)UStack_ec.i *
-              ((float10)_DAT_005cf507 / (float10)(this_ptr->base).base.focal_length) *
-              (float10)_DAT_005cf4d7;
+              ((float10)18 / (float10)(this_ptr->base).base.focal_length) *
+              (float10)0.0625;
       UStack_f0.f = (float)fVar8;
       Var12 = fpatan(fVar8,(float10)1);
       fVar8 = (float10)fcos(Var12);
       iVar6 = 0;
       fStack_48 = (float)fVar8;
       do {
-        fVar8 = (float10)iVar6 * (float10)_DAT_005cf4df * (float10)_DAT_005cf4e3 *
-                (float10)_DAT_005cf4e7;
+        fVar8 = (float10)iVar6 * (float10)0.0625f * (float10)3.141593f *
+                (float10)2;
         fVar9 = (float10)fsin(fVar8);
-        fVar13 = (float10)(iVar6 + 1) * (float10)_DAT_005cf4df * (float10)_DAT_005cf4e3 *
-                 (float10)_DAT_005cf4e7;
+        fVar13 = (float10)(iVar6 + 1) * (float10)0.0625f * (float10)3.141593f *
+                 (float10)2;
         fVar10 = (float10)fsin(fVar13);
         fVar8 = (float10)fcos(fVar8);
         fVar13 = (float10)fcos(fVar13);
@@ -116,19 +114,20 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         dVar14 = round
                            ((double)((float)iStack_20 * fStack_40 + (float)iStack_20));
         iStack_58 = (int)ROUND(dVar14);
-        fStack_34 = (float)this_ptr->shadow_depth_buffer[iVar5 + iStack_58] * (float)_DAT_005cf4ef;
+        fStack_34 = (float)this_ptr->shadow_depth_buffer[iVar5 + iStack_58] *
+                    (float)0.00390625;
         iVar5 = 0;
         fStack_4c = (float)(fVar10 * fVar11);
         fStack_48 = (float)(fVar13 * fVar11);
         fStack_30 = fStack_34;
         do {
           fStack_54 = (this_ptr->base).max_distance;
-          fVar1 = (float)iVar5 * fStack_50 * fStack_54 * _DAT_005cf4f7;
+          fVar1 = (float)iVar5 * fStack_50 * fStack_54 * 0.25f;
           fVar4 = 1.0 / fStack_54;
           iStack_20 = iVar5 + 1;
-          fStack_2c = (float)iStack_20 * fStack_50 * fStack_54 * _DAT_005cf4f7;
+          fStack_2c = (float)iStack_20 * fStack_50 * fStack_54 * 0.25f;
           fVar3 = fStack_54 - fStack_2c;
-          fVar2 = (float)_DAT_005cf4ff;
+          fVar2 = (float)1024;
           iVar17 = 0x44c435;
           fStack_28 = fVar1;
           dVar14 = round((double)((fStack_54 - fVar1) * fVar4 * fVar2));
@@ -142,22 +141,23 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           }
           CStack_b4.z = (float)auStack_a8._4_4_ * fStack_4c;
           auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;
-          aCStack_d0[0].x = (int)ROUND(CStack_b4.z * _DAT_005f5050);
-          aCStack_d0[0].y = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);
-          aCStack_d0[0].z = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);
+          aCStack_d0[0].x = (int)ROUND(CStack_b4.z * 256.0f);
+          aCStack_d0[0].y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);
+          aCStack_d0[0].z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_d0);
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_d0)
+          ;
           auStack_a8._4_4_ = fStack_3c;
           if (fStack_30 < fStack_3c) {
             auStack_a8._4_4_ = fStack_30;
           }
           CStack_b4.z = (float)auStack_a8._4_4_ * fStack_54;
           auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_50;
-          auStack_a8._8_4_ = (uint)ROUND(CStack_b4.z * _DAT_005f5050);
-          iStack_9c = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);
-          iStack_98 = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);
+          auStack_a8._8_4_ = (uint)ROUND(CStack_b4.z * 256.0f);
+          iStack_9c = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);
+          iStack_98 = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,
                      (CVector3i *)(auStack_a8 + 8));
           auStack_a8._4_4_ = fStack_3c;
           if (fStack_34 < fStack_3c) {
@@ -165,24 +165,26 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           }
           CStack_b4.z = (float)auStack_a8._4_4_ * fStack_54;
           auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_50;
-          CStack_94.x = (int)ROUND(CStack_b4.z * _DAT_005f5050);
-          CStack_94.y = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);
-          CStack_94.z = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);
+          CStack_94.x = (int)ROUND(CStack_b4.z * 256.0f);
+          CStack_94.y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);
+          CStack_94.z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_94);
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[2].projected_vertex,
+                     &CStack_94);
           auStack_a8._4_4_ = fStack_38;
           if (fStack_34 < fStack_38) {
             auStack_a8._4_4_ = fStack_34;
           }
           CStack_b4.z = (float)auStack_a8._4_4_ * fStack_4c;
           auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;
-          aCStack_88[0].x = (int)ROUND(CStack_b4.z * _DAT_005f5050);
-          aCStack_88[0].y = (int)ROUND((float)auStack_a8._0_4_ * _DAT_005f5050);
-          aCStack_88[0].z = (int)ROUND((float)auStack_a8._4_4_ * _DAT_005f5050);
+          aCStack_88[0].x = (int)ROUND(CStack_b4.z * 256.0f);
+          aCStack_88[0].y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);
+          aCStack_88[0].z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);
           engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                    (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,aCStack_88);
-          pCVar16 = DAT_0060b280;
-          DAT_0060b280->vertex_buffer_ptr->a = (int)fStack_40;
+                    (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,
+                     aCStack_88);
+          pCVar16 = g_CDemonRenderer_PTR_0060b280;
+          g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->a = (int)fStack_40;
           pCVar16->vertex_buffer_ptr->b = 0xffff;
           pCVar16->vertex_buffer_ptr->g = 0xffff;
           pCVar16->vertex_buffer_ptr->r = 0xffff;
@@ -222,7 +224,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
       } while (iVar6 < 0x10);
     } while (iVar17 + 1 < 0x10);
     engine_drender_cpp_pop_FUN_0046b4a0();
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
     return;
   }
   return;

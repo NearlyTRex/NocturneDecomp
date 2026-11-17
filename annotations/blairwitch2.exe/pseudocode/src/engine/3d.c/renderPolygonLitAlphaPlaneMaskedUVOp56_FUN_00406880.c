@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406880(SMRGLHeaderPrimitive *prim)
 
 {
@@ -22,33 +20,33 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56
   pSVar4 = prim + 1;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403970(&prim->surface_normal);
   if (iVar2 != 0) {
-    if (_DAT_01c38b40 == 0) {
-      if (DAT_006141c0 == 0x20) {
-        _DAT_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3;
+    if (g_INT_01c38b40 == 0) {
+      if (g_INT_006141c0 == 0x20) {
+        g_PTR_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3;
       }
       else {
-        _DAT_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9;
+        g_PTR_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9;
       }
     }
-    else if (DAT_006141c0 == 0x20) {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+    else if (g_INT_006141c0 == 0x20) {
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
     }
     else {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
     }
-    _DAT_01c38b54 = 0xd3;
+    g_BIT_INTEGER32_01c38b54.dword = 0xd3;
     engine_3d_c_calculatePolygonLighting_FUN_00403a20(prim);
-    if (DAT_006141d8 < 0xff) {
-      _DAT_01c38b54 = _DAT_01c38b54 | 0x20;
+    if (g_INT_006141d8 < 0xff) {
+      g_BIT_INTEGER32_01c38b54.dword = g_BIT_INTEGER32_01c38b54.dword | 0x20;
     }
     iVar6 = 0;
-    _DAT_01c38b58 = 1;
+    g_INT_01c38b58 = 1;
     vertex_count = 0;
     for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
-      *(int *)((int)&DAT_0070ca98 + iVar6) = (pSVar4->base).type;
+      *(int *)((int)g_INT_ARRAY_0070ca98 + iVar6) = (pSVar4->base).type;
       iVar3 = (pSVar4->base).count;
       iVar5 = (pSVar4->surface_normal).A.i;
-      if (DAT_006141c8 < 0x41) {
+      if (g_INT_006141c8 < 0x41) {
         if (iVar3 < 0x40000) {
           iVar3 = 0x40000;
         }
@@ -76,14 +74,14 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56
           iVar5 = 0xfeffff;
         }
       }
-      (&DAT_0062202c)[(pSVar4->base).type * 0xc] = iVar3;
+      g_SRenderVertex_ARRAY_00622014[(pSVar4->base).type].u = iVar3;
       pSVar1 = &pSVar4->base;
       iVar6 = iVar6 + 4;
       vertex_count = vertex_count + 1;
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-      *(int *)(&DAT_00622030 + pSVar1->type * 0x30) = iVar5;
+      g_SRenderVertex_ARRAY_00622014[pSVar1->type].v = iVar5;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00431d90(vertex_count,&DAT_0070ca98);
+    engine_clipper_c_clipAndRasterize_FUN_00431d90(vertex_count,g_INT_ARRAY_0070ca98);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

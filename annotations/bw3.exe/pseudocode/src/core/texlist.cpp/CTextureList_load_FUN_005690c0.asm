@@ -24,18 +24,18 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_texlist_cpp_005d5d2a
 ;   TerminatedCString s_CTextureList_load_No_ext_005d5d3e
-;   undefined1 DAT_005d5d66
-;   undefined1 DAT_005d5d67
-;   undefined1 DAT_005d5d68
-;   undefined1 DAT_005d5d69
-;   undefined4 DAT_005d5d6b
-;   undefined4 DAT_005d5d6e
+;   TerminatedCString s_tex_005d5d66
+;   undefined4 s_tex_005d5d66+1
+;   undefined4 s_tex_005d5d66+2
+;   undefined4 s_tex_005d5d66+3
+;   TerminatedCString s_rt_005d5d6b
+;   TerminatedCString s_data_005d5d6e
 ;   TerminatedCString s_core_texlist_cpp_005d5d73
 ;   TerminatedCString s_CTextureList_load_Bad_fi_005d5d87
-;   undefined4 DAT_005d5daa
-;   undefined4 DAT_005d5dae
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   TerminatedCString s_d_005d5daa
+;   TerminatedCString s_s_005d5dae
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -100,16 +100,16 @@ section .text
     TEST ESI,ESI                        ; 00569112
     JZ 0x00569296                       ; 00569114
         ;   XREF to: 00569296 (CONDITIONAL_JUMP)  ; LAB_00569296
-    MOV ESI,0x5d5d66                    ; 0056911a | DAT_005d5d66
+    MOV ESI,0x5d5d66                    ; 0056911a | = ".tex"
         ;   Label: LAB_0056911a
     PUSH EDI                            ; 0056911f
-    MOV AL,byte ptr [ESI]               ; 00569120 | DAT_005d5d66 | DAT_005d5d68
+    MOV AL,byte ptr [ESI]               ; 00569120 | = ".tex" | s_tex_005d5d66+2
         ;   Label: LAB_00569120
     MOV byte ptr [EDI],AL               ; 00569122
     CMP AL,0x0                          ; 00569124
     JZ 0x00569138                       ; 00569126
         ;   XREF to: 00569138 (CONDITIONAL_JUMP)  ; LAB_00569138
-    MOV AL,byte ptr [ESI + 0x1]         ; 00569128 | DAT_005d5d67 | DAT_005d5d69
+    MOV AL,byte ptr [ESI + 0x1]         ; 00569128 | s_tex_005d5d66+1 | s_tex_005d5d66+3
     ADD ESI,0x2                         ; 0056912b
     MOV byte ptr [EDI + 0x1],AL         ; 0056912e
     ADD EDI,0x2                         ; 00569131
@@ -118,10 +118,10 @@ section .text
         ;   XREF to: 00569120 (CONDITIONAL_JUMP)  ; LAB_00569120
     POP EDI                             ; 00569138
         ;   Label: LAB_00569138
-    PUSH 0x5d5d6b                       ; 00569139 | DAT_005d5d6b
+    PUSH 0x5d5d6b                       ; 00569139 | = "rt"
     LEA EAX,[ESP + 0x4]                 ; 0056913e
     PUSH EAX                            ; 00569142
-    PUSH 0x5d5d6e                       ; 00569143 | DAT_005d5d6e
+    PUSH 0x5d5d6e                       ; 00569143 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00569148
         ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0056914d
@@ -132,14 +132,14 @@ section .text
     MOV EBX,0x5d5d73                    ; 0056915b | = "..\\core\\texlist.cpp"
     MOV ESI,0x6a                        ; 00569160
     PUSH 0x5d5d87                       ; 00569165 | = "CTextureList::load - Bad filename!"
-    MOV dword ptr [0x01d71de0],EBX      ; 0056916a | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00569170 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0056916a | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00569170 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569176
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0056917b
     PUSH EBP                            ; 0056917e
         ;   Label: LAB_0056917e
-    PUSH 0x5d5daa                       ; 0056917f | DAT_005d5daa
+    PUSH 0x5d5daa                       ; 0056917f | = "%d\n"
     MOV EDI,dword ptr [ESP + 0x108]     ; 00569184
     PUSH EDI                            ; 0056918b
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0056918c
@@ -162,7 +162,7 @@ section .text
     MOV EAX,ESP                         ; 005691d3
         ;   Label: LAB_005691d3
     PUSH EAX                            ; 005691d5
-    PUSH 0x5d5dae                       ; 005691d6 | DAT_005d5dae
+    PUSH 0x5d5dae                       ; 005691d6 | = "%s\n"
     MOV EBX,dword ptr [ESP + 0x108]     ; 005691db
     PUSH EBX                            ; 005691e2
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 005691e3
@@ -252,8 +252,8 @@ section .text
         ;   Label: LAB_00569296
     MOV ECX,0x61                        ; 0056929b
     PUSH 0x5d5d3e                       ; 005692a0 | = "CTextureList::load - No extension found"
-    MOV dword ptr [0x01d71de0],EDX      ; 005692a5 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 005692ab | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 005692a5 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 005692ab | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005692b1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005692b6

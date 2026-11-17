@@ -10,5 +10,5 @@ float * __cdecl engine_mini3d_cpp_getTransformMatrix_FUN_004eef80(void)
 
 {
   engine_mini3d_cpp_updateTransform_FUN_004edcc0();
-  return (float *)&DAT_01d7f53c;
+  return &g_FLOAT_01d7f53c;
 }

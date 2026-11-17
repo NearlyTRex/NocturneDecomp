@@ -13,10 +13,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fangs_005e179a
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_0061f650
-;   undefined4 DAT_0152d244
-;   undefined4 DAT_01c3eb50
+;   int g_INT_0061b49c = 0xc8
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
+;   CBitFont* g_CBitFont_PTR_0152d244
+;   CBitFont* g_CBitFont_PTR_01c3eb50
 ;   undefined4 DAT_01d2d908
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x14                        ; 004cf531
     CALL engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0 ; 004cf534
         ;   XREF to: 00402ad0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0()
-    CMP dword ptr [0x0061b49c],0x1e0    ; 004cf539 | DAT_0061b49c
+    CMP dword ptr [0x0061b49c],0x1e0    ; 004cf539 | g_INT_0061b49c
     JNZ 0x004cf54f                      ; 004cf543
         ;   XREF to: 004cf54f (CONDITIONAL_JUMP)  ; LAB_004cf54f
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004cf545
@@ -52,7 +52,7 @@ section .text
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300 ; 004cf55b
         ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 004cf560
-    MOV EAX,[0x0061f650]                ; 004cf563 | DAT_0061f650
+    MOV EAX,[0x0061f650]                ; 004cf563 | g_CDemonMission_PTR_0061f650
         ;   Label: LAB_004cf563
     CMP dword ptr [EAX + 0x1008],0x0    ; 004cf568 | DAT_01d2d908
     JZ 0x004cf5cc                       ; 004cf56f
@@ -92,9 +92,9 @@ section .text
     ADD ESP,0x14                        ; 004cf5c7
     POP EBX                             ; 004cf5ca
     RET                                 ; 004cf5cb
-    MOV EAX,[0x0152d244]                ; 004cf5cc | DAT_0152d244
+    MOV EAX,[0x0152d244]                ; 004cf5cc | g_CBitFont_PTR_0152d244
         ;   Label: LAB_004cf5cc
-    MOV [0x01c3eb50],EAX                ; 004cf5d1 | DAT_01c3eb50
+    MOV [0x01c3eb50],EAX                ; 004cf5d1 | g_CBitFont_PTR_01c3eb50
     JMP 0x004cf571                      ; 004cf5d6
         ;   XREF to: 004cf571 (UNCONDITIONAL_JUMP)  ; LAB_004cf571
 

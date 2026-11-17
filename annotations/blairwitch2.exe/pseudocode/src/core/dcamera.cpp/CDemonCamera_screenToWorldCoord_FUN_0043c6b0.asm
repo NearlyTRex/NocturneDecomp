@@ -21,7 +21,7 @@
 ;   core_sound.cpp_updateListeners_FUN_00558d50 at 005590fa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2b64c
+;   uint*[1200] g_UINT_PTR_ARRAY_01c2b64c
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     SHL EBX,0x10                        ; 0043c6c1
     MOV dword ptr [ESP],EBX             ; 0043c6c4
     MOV EBX,EDX                         ; 0043c6c7
-    MOV EDX,dword ptr [EDX*0x4 + 0x1c2b64c] ; 0043c6c9 | DAT_01c2b64c
+    MOV EDX,dword ptr [EDX*0x4 + 0x1c2b64c] ; 0043c6c9 | g_UINT_PTR_ARRAY_01c2b64c
     SHL EBX,0x10                        ; 0043c6d0
     MOV EAX,dword ptr [EDX + EAX*0x4]   ; 0043c6d3
     MOV dword ptr [ESP + 0x4],EBX       ; 0043c6d6

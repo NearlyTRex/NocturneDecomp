@@ -15,7 +15,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004be970 at 004beaaf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4470
+;   int g_INT_01cc4470
 ;   undefined4 SNotesSection_ARRAY_01cc4474[0].first_page
 ;   undefined4 SNotesSection_ARRAY_01cc4474[0].page_count
 ;   undefined4 SNotesSection_ARRAY_01cc4474[0].tab_x
@@ -24,7 +24,7 @@
 ;   undefined4 SNotesSection_ARRAY_01cc4474[1].page_count
 ;   undefined4 SNotesSection_ARRAY_01cc4474[1].tab_x
 ;   undefined4 SNotesSection_ARRAY_01cc4474[1].tab_y
-;   undefined4 DAT_01cc7b90
+;   int g_INT_01cc7b90
 ;   undefined4 CAlphaBitmap_ARRAY_01cc7ba8[1].width
 ;   undefined4 CAlphaBitmap_ARRAY_01cc7ba8[1].height
 ;
@@ -38,7 +38,7 @@ section .text
     PUSH EDI                            ; 004ba492
     PUSH EBP                            ; 004ba493
     SUB ESP,0x8                         ; 004ba494
-    MOV ECX,dword ptr [0x01cc4470]      ; 004ba497 | DAT_01cc4470
+    MOV ECX,dword ptr [0x01cc4470]      ; 004ba497 | g_INT_01cc4470
     XOR EDX,EDX                         ; 004ba49d
     TEST ECX,ECX                        ; 004ba49f
     JLE 0x004ba51f                      ; 004ba4a1
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ESI       ; 004ba4c8
     MOV ESI,dword ptr [ECX + 0x1cc7bb8] ; 004ba4cc | CAlphaBitmap_ARRAY_01cc7ba8[1].height
     ADD ESI,EBP                         ; 004ba4d2
-    MOV EDI,dword ptr [0x01cc7b90]      ; 004ba4d4 | DAT_01cc7b90
+    MOV EDI,dword ptr [0x01cc7b90]      ; 004ba4d4 | g_INT_01cc7b90
     MOV dword ptr [ESP],ESI             ; 004ba4da
     MOV ESI,dword ptr [EAX + 0x140]     ; 004ba4dd | SNotesSection_ARRAY_01cc4474[0].first_page | SNotesSection_ARRAY_01cc4474[1].first_page
     CMP EDI,ESI                         ; 004ba4e3
@@ -79,7 +79,7 @@ section .text
     CMP EBX,dword ptr [ESP]             ; 004ba507
     JL 0x004ba533                       ; 004ba50a
         ;   XREF to: 004ba533 (CONDITIONAL_JUMP)  ; LAB_004ba533
-    MOV EBX,dword ptr [0x01cc4470]      ; 004ba50c | DAT_01cc4470
+    MOV EBX,dword ptr [0x01cc4470]      ; 004ba50c | g_INT_01cc4470
         ;   Label: LAB_004ba50c
     ADD EAX,0x2e4                       ; 004ba512
     INC EDX                             ; 004ba517

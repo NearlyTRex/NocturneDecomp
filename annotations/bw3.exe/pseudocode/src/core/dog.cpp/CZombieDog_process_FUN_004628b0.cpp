@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,float delta_time)
 
@@ -17,15 +16,16 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
   CVector3f *pCVar3;
   EWalkState EVar4;
   CCharacter *pCVar5;
-  int iVar6;
-  SMotion *pSVar7;
-  CZombieDog *pCVar8;
-  uint uVar9;
+  CHero *pCVar6;
+  int iVar7;
+  SMotion *pSVar8;
+  CZombieDog *pCVar9;
+  uint uVar10;
   CPathMap *path_map;
-  byte bVar10;
+  byte bVar11;
   float afStackY_11a8 [997];
-  CVector3f *pCVar11;
-  float fVar12;
+  CVector3f *pCVar12;
+  float fVar13;
   SDamageInfo *damage_info;
   EBloodType blood_type;
   float max_distance;
@@ -87,9 +87,9 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
   float fStack_18;
   float fStack_14;
   
-  bVar10 = 0;
-  iVar6 = (*(((this_ptr->base).base.base.vtable._ue)->_ue).randomize)(&this_ptr->base);
-  if (iVar6 == 0) {
+  bVar11 = 0;
+  iVar7 = (*(((this_ptr->base).base.base.vtable._ue)->_ue).randomize)(&this_ptr->base);
+  if (iVar7 == 0) {
     return;
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60((CCharacter *)this_ptr,delta_time);
@@ -103,68 +103,71 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
   fStack_44 = delta_time * (this_ptr->base).speed;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < fStack_44) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar2->base,afStack_6c + 10);
-    core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar6);
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar2->base,afStack_6c + 10);
+    core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar7);
   }
-  pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base);
-  fVar12 = (this_ptr->base).speed;
-  iVar6 = pSVar7->state_index;
+  pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base);
+  fVar13 = (this_ptr->base).speed;
+  iVar7 = pSVar8->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  iStack_28 = iVar6;
+  iStack_28 = iVar7;
   core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
-            ((CCharacter *)this_ptr,delta_time * fVar12);
-  if (iVar6 == 8) {
-    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005bbc44;
+            ((CCharacter *)this_ptr,delta_time * fVar13);
+  if (iVar7 == 8) {
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)2;
   }
-  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
+  iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
-  if (iVar6 == 0) {
+  if (iVar7 == 0) {
     switch(iStack_28) {
     case 0:
     case 1:
     case 2:
     case 3:
     case 4:
-      iVar6 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      afStack_1a4[2] = *(float *)(iVar6 + 0x20) - (this_ptr->base).base.base.location.position.x;
-      afStack_1a4[3] = *(float *)(iVar6 + 0x24) - (this_ptr->base).base.base.location.position.y;
-      fStack_194 = *(float *)(iVar6 + 0x28) - (this_ptr->base).base.base.location.position.z;
+      pCVar6 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
+      afStack_1a4[2] =
+           (pCVar6->base).base.location.position.x - (this_ptr->base).base.base.location.position.x;
+      afStack_1a4[3] =
+           (pCVar6->base).base.location.position.y - (this_ptr->base).base.base.location.position.y;
+      fStack_194 = (pCVar6->base).base.location.position.z -
+                   (this_ptr->base).base.base.location.position.z;
       CStack_100.x = afStack_1a4[2];
-      *(float *)((int)&CStack_100 + (uint)bVar10 * -8 + 4) = afStack_1a4[(uint)bVar10 * -2 + 3];
-      *(float *)((int)&CStack_100 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-           afStack_1a4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+      *(float *)((int)&CStack_100 + (uint)bVar11 * -8 + 4) = afStack_1a4[(uint)bVar11 * -2 + 3];
+      *(float *)((int)&CStack_100 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+           afStack_1a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_100,&CStack_178);
-      fVar12 = CStack_100.z * CStack_100.z +
+      fVar13 = CStack_100.z * CStack_100.z +
                CStack_100.x * CStack_100.x + CStack_100.y * CStack_100.y;
       fStack_1c0 = CStack_178.x;
-      afStack_1bc[(uint)bVar10 * -2] = *(float *)((int)&CStack_178 + (uint)bVar10 * -8 + 4);
-      afStack_1bc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-           *(float *)((int)&CStack_178 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      fStack_34 = (float)(((int)fVar12 >> 1) + _DAT_01d1a0a4);
-      fStack_40 = fVar12;
+      afStack_1bc[(uint)bVar11 * -2] = *(float *)((int)&CStack_178 + (uint)bVar11 * -8 + 4);
+      afStack_1bc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+           *(float *)((int)&CStack_178 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+      fStack_34 = (float)(((int)fVar13 >> 1) + g_INT_01d1a0a4);
+      fStack_40 = fVar13;
       fStack_2c = fStack_34;
       fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                             (afStack_1bc[0] - (this_ptr->base).base.base.orient.vec.y);
-      if (ABS(fStack_14) < (float)_DAT_005bbc54) {
+      if (ABS(fStack_14) < (float)0.17453292519444399) {
         if ((0.0 < (this_ptr->base).attack_cooldown) &&
-           (fStack_2c < _DAT_005de5b8 + (float)_DAT_005bbc5c)) break;
-        if (((this_ptr->base).attack_cooldown <= 0.0) && (fStack_34 <= _DAT_005de5b8)) {
-          iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-          if (iVar6 < 0x32) {
-            iVar6 = 0xb;
+           (fStack_2c < 4.5f + (float)5.0999999999999996)) break;
+        if (((this_ptr->base).attack_cooldown <= 0.0) && (fStack_34 <= 4.5f)) {
+          iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+          if (iVar7 < 0x32) {
+            iVar7 = 0xb;
           }
           else {
-            iVar6 = 0xc;
+            iVar7 = 0xc;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
-                    (&(this_ptr->base).base.model.base,iVar6,1);
+                    (&(this_ptr->base).base.model.base,iVar7,1);
           (this_ptr->base).attack_cooldown = 2.5;
           break;
         }
       }
-      iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
+      iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
       pCStack_1c = &(this_ptr->base).base.model.base;
-      if (iVar6 == 0) {
+      if (iVar7 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar5 = (this_ptr->base).victim;
         if (pCVar5 != (CCharacter *)0x0) {
@@ -175,43 +178,43 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
           afStack_6c[1] =
                (pCVar5->base).location.position.z - (this_ptr->base).base.base.location.position.z;
           fStack_1a8 = fStack_70;
-          afStack_1a4[(uint)bVar10 * -2] = afStack_6c[(uint)bVar10 * -2];
-          afStack_1a4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-               afStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          afStack_1a4[(uint)bVar11 * -2] = afStack_6c[(uint)bVar11 * -2];
+          afStack_1a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+               afStack_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           fStack_3c = afStack_1a4[1] * afStack_1a4[1] +
                       fStack_1a8 * fStack_1a8 + afStack_1a4[0] * afStack_1a4[0];
-          fStack_24 = (float)(((int)fStack_3c >> 1) + _DAT_01d1a0a4);
-          if (fStack_24 < _DAT_005de5c4) {
-            iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-            if (iVar6 < 0x21) {
-              iVar6 = 5;
+          fStack_24 = (float)(((int)fStack_3c >> 1) + g_INT_01d1a0a4);
+          if (fStack_24 < 8.0f) {
+            iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+            if (iVar7 < 0x21) {
+              iVar7 = 5;
             }
-            else if (iVar6 < 0x42) {
-              iVar6 = 6;
+            else if (iVar7 < 0x42) {
+              iVar7 = 6;
             }
             else {
-              iVar6 = 7;
+              iVar7 = 7;
             }
           }
           else {
-            iVar6 = 8;
+            iVar7 = 8;
           }
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_1c,iVar6,1);
-          iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
-                            (0x02CF5680,this_ptr->sfx_handle);
-          if (iVar6 == 0) {
-            uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                              ((CDemonActor *)this_ptr,"dog5.wav");
-            this_ptr->sfx_handle = uVar9;
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_1c,iVar7,1);
+          iVar7 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
+                            (g_CSound_PTR_006045f8,this_ptr->sfx_handle);
+          if (iVar7 == 0) {
+            uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                               ((CDemonActor *)this_ptr,"dog5.wav");
+            this_ptr->sfx_handle = uVar10;
           }
         }
       }
       else {
-        iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-        if (iVar6 < 0x21) {
+        iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+        if (iVar7 < 0x21) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_1c,5,1);
         }
-        else if (iVar6 < 0x42) {
+        else if (iVar7 < 0x42) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_1c,6,1);
         }
         else {
@@ -226,20 +229,20 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CCharacter *)0x0) {
-        iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
+        iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
         pCVar2 = &(this_ptr->base).base.model;
-        if (iVar6 == 0) {
-          iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-          if (iVar6 < 0x14) {
+        if (iVar7 == 0) {
+          iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+          if (iVar7 < 0x14) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,0,1);
           }
-          else if (iVar6 < 0x28) {
+          else if (iVar7 < 0x28) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,1,1);
           }
-          else if (iVar6 < 0x3c) {
+          else if (iVar7 < 0x3c) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,2,1);
           }
-          else if (iVar6 < 0x50) {
+          else if (iVar7 < 0x50) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,3,1);
           }
           else {
@@ -247,11 +250,11 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
           }
         }
         else {
-          iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-          if (iVar6 < 0x21) {
+          iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+          if (iVar7 < 0x21) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,5,1);
           }
-          else if (iVar6 < 0x42) {
+          else if (iVar7 < 0x42) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,6,1);
           }
           else {
@@ -267,10 +270,10 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
         fStack_98 = (this_ptr->base).base.base.location.position.z -
                     (pCVar5->base).location.position.z;
         afStack_6c[2] = afStack_a8[2];
-        afStack_6c[(uint)bVar10 * -2 + 3] = afStack_a8[(uint)bVar10 * -2 + 3];
-        afStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-             afStack_a8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-        if ((_DAT_005de5c4 <
+        afStack_6c[(uint)bVar11 * -2 + 3] = afStack_a8[(uint)bVar11 * -2 + 3];
+        afStack_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
+             afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+        if ((8.0f <
              SQRT(fStack_5c * fStack_5c +
                   afStack_6c[2] * afStack_6c[2] + afStack_6c[3] * afStack_6c[3])) &&
            (((iStack_28 == 5 || (iStack_28 == 6)) || (iStack_28 == 7)))) {
@@ -278,63 +281,65 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
                     (&(this_ptr->base).base.model.base,8,1);
         }
         max_distance = 0.17453292;
-        fVar12 = 1.5;
-        CStack_190.z = _DAT_005de5b8 + (float)_DAT_005bbc4c;
+        fVar13 = 1.5;
+        CStack_190.z = 4.5f + (float)5;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
              (this_ptr->base).base.model.accumulated_root_motion.z;
         (this_ptr->base).base.model.accumulated_root_motion.x =
              (this_ptr->base).base.model.accumulated_root_motion.y;
         CStack_190.x = 0.0;
-        pCVar11 = &CStack_190;
+        pCVar12 = &CStack_190;
         CStack_190.y = 0.0;
         pCVar5 = (this_ptr->base).victim;
         fStack_30 = CStack_190.z;
         path_map = (*((pCVar5->base).vtable._ub)->getPathMap)(&pCVar5->base);
-        iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0
+        iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0
                           ((CCharacter *)this_ptr,
-                           &(((this_ptr->base).victim)->base).location.position,path_map,pCVar11,
-                           fVar12,max_distance);
+                           &(((this_ptr->base).victim)->base).location.position,path_map,pCVar12,
+                           fVar13,max_distance);
         pCStack_20 = &(this_ptr->base).base.model.base;
-        if (iVar6 < 0) {
+        if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441ff0
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,0,1);
         }
         else {
           pCVar1 = &(this_ptr->base).base.base.location;
-          if (iVar6 < 1) {
-            iVar6 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-            fStack_e8 = *(float *)(iVar6 + 0x20) - (pCVar1->position).x;
+          if (iVar7 < 1) {
+            pCVar6 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
+            fStack_e8 = (pCVar6->base).base.location.position.x - (pCVar1->position).x;
             afStack_e4[0] =
-                 *(float *)(iVar6 + 0x24) - (this_ptr->base).base.base.location.position.y;
+                 (pCVar6->base).base.location.position.y -
+                 (this_ptr->base).base.base.location.position.y;
             afStack_e4[1] =
-                 *(float *)(iVar6 + 0x28) - (this_ptr->base).base.base.location.position.z;
+                 (pCVar6->base).base.location.position.z -
+                 (this_ptr->base).base.base.location.position.z;
             CStack_1b4.x = fStack_e8;
-            *(float *)((int)&CStack_1b4 + (uint)bVar10 * -8 + 4) = afStack_e4[(uint)bVar10 * -2];
-            *(float *)((int)&CStack_1b4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-                 afStack_e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+            *(float *)((int)&CStack_1b4 + (uint)bVar11 * -8 + 4) = afStack_e4[(uint)bVar11 * -2];
+            *(float *)((int)&CStack_1b4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+                 afStack_e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
                       (&CStack_1b4,&CStack_154);
-            fVar12 = CStack_1b4.x * CStack_1b4.x;
+            fVar13 = CStack_1b4.x * CStack_1b4.x;
             fStack_184 = CStack_154.x;
-            afStack_180[(uint)bVar10 * -2] = *(float *)((int)&CStack_154 + (uint)bVar10 * -8 + 4);
-            afStack_180[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-                 *(float *)((int)&CStack_154 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-            fStack_38 = CStack_1b4.z * CStack_1b4.z + fVar12 + CStack_1b4.y * CStack_1b4.y;
-            fStack_18 = (float)(((int)fStack_38 >> 1) + _DAT_01d1a0a4);
+            afStack_180[(uint)bVar11 * -2] = *(float *)((int)&CStack_154 + (uint)bVar11 * -8 + 4);
+            afStack_180[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+                 *(float *)((int)&CStack_154 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+            fStack_38 = CStack_1b4.z * CStack_1b4.z + fVar13 + CStack_1b4.y * CStack_1b4.y;
+            fStack_18 = (float)(((int)fStack_38 >> 1) + g_INT_01d1a0a4);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                   (afStack_180[0] - (this_ptr->base).base.base.orient.vec.y);
-            if (((ABS(fStack_14) < (float)_DAT_005bbc54) &&
-                ((this_ptr->base).attack_cooldown <= 0.0)) && (fStack_18 <= _DAT_005de5b8)) {
-              iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-              if (iVar6 < 0x32) {
-                iVar6 = 0xb;
+            if (((ABS(fStack_14) < (float)0.17453292519444399) &&
+                ((this_ptr->base).attack_cooldown <= 0.0)) && (fStack_18 <= 4.5f)) {
+              iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+              if (iVar7 < 0x32) {
+                iVar7 = 0xb;
               }
               else {
-                iVar6 = 0xc;
+                iVar7 = 0xc;
               }
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,iVar6,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,iVar7,1);
               (this_ptr->base).attack_cooldown = 2.5;
             }
           }
@@ -348,30 +353,30 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
                  (pCVar5->base).location.position.z - (this_ptr->base).base.base.location.position.z
             ;
             CStack_dc.x = fStack_88;
-            *(float *)((int)&CStack_dc + (uint)bVar10 * -8 + 4) = afStack_84[(uint)bVar10 * -2];
-            *(float *)((int)&CStack_dc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-                 afStack_84[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+            *(float *)((int)&CStack_dc + (uint)bVar11 * -8 + 4) = afStack_84[(uint)bVar11 * -2];
+            *(float *)((int)&CStack_dc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+                 afStack_84[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_dc,&CStack_7c);
             fStack_58 = CStack_7c.x;
-            afStack_6c[(uint)bVar10 * -2 + 6] = *(float *)((int)&CStack_7c + (uint)bVar10 * -8 + 4);
-            afStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-                 *(float *)((int)&CStack_7c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+            afStack_6c[(uint)bVar11 * -2 + 6] = *(float *)((int)&CStack_7c + (uint)bVar11 * -8 + 4);
+            afStack_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
+                 *(float *)((int)&CStack_7c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                   (fStack_54 - (this_ptr->base).base.base.orient.vec.y);
-            if (ABS(fStack_14) < (float)_DAT_005bbc54) {
-              iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+            if (ABS(fStack_14) < (float)0.17453292519444399) {
+              iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
               if (0.0 < (this_ptr->base).attack_cooldown) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,0,1);
               }
               else {
-                if (_DAT_005de5b8 < fStack_30) {
-                  if (iVar6 < 0x32) {
-                    iVar6 = 9;
+                if (4.5f < fStack_30) {
+                  if (iVar7 < 0x32) {
+                    iVar7 = 9;
                   }
                   else {
-                    iVar6 = 10;
+                    iVar7 = 10;
                   }
-                  core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,iVar6,1)
+                  core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,iVar7,1)
                   ;
                 }
                 (this_ptr->base).attack_cooldown = 2.5;
@@ -390,32 +395,33 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
       SStack_1fc.attacker = (CDemonActor *)this_ptr;
       SStack_1fc.wielder = (CDemonActor *)this_ptr;
       damage_info = &SStack_1fc;
-      fVar12 = 0.7;
+      fVar13 = 0.7;
       core_xform_cpp_transformVector3x4_FUN_00583260
-                ((CVector3f *)&DAT_02cfd900,
+                (&g_CVector3f_02cfd900,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[1],&CStack_94);
-      pCVar11 = &CStack_c4;
+      pCVar12 = &CStack_c4;
       CStack_c4.x = CStack_94.x;
-      *(uint *)((int)&CStack_c4 + (uint)bVar10 * -8 + 4) =
-           *(uint *)((int)&CStack_94 + (uint)bVar10 * -8 + 4);
-      *(uint *)((int)&CStack_c4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-           *(uint *)((int)&CStack_94 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&CStack_c4 + (uint)bVar11 * -8 + 4) =
+           *(uint *)((int)&CStack_94 + (uint)bVar11 * -8 + 4);
+      *(uint *)((int)&CStack_c4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+           *(uint *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
-                ((CDemonActor *)this_ptr,pCVar11,&CStack_f4);
-      pCVar11 = &CStack_b8;
+                ((CDemonActor *)this_ptr,pCVar12,&CStack_f4);
+      pCVar12 = &CStack_b8;
       CStack_b8.x = CStack_f4.x;
-      *(uint *)((int)&CStack_b8 + (uint)bVar10 * -8 + 4) =
-           *(uint *)((int)&CStack_f4 + (uint)bVar10 * -8 + 4);
-      pCVar8 = this_ptr;
-      *(uint *)((int)&CStack_b8 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-           *(uint *)((int)&CStack_f4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      core_enemy_cpp_CEnemy_testAttackRadius_FUN_004893f0(&pCVar8->base,pCVar11,fVar12,damage_info);
-      iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0(0x02CF5680,this_ptr->sfx_handle);
-      if (iVar6 == 0) {
-        uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                          ((CDemonActor *)this_ptr,"dog5.wav");
-        this_ptr->sfx_handle = uVar9;
+      *(uint *)((int)&CStack_b8 + (uint)bVar11 * -8 + 4) =
+           *(uint *)((int)&CStack_f4 + (uint)bVar11 * -8 + 4);
+      pCVar9 = this_ptr;
+      *(uint *)((int)&CStack_b8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+           *(uint *)((int)&CStack_f4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+      core_enemy_cpp_CEnemy_testAttackRadius_FUN_004893f0(&pCVar9->base,pCVar12,fVar13,damage_info);
+      iVar7 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
+                        (g_CSound_PTR_006045f8,this_ptr->sfx_handle);
+      if (iVar7 == 0) {
+        uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                           ((CDemonActor *)this_ptr,"dog5.wav");
+        this_ptr->sfx_handle = uVar10;
       }
       break;
     case 0x13:
@@ -425,20 +431,20 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
                   (&(this_ptr->base).base.model,0,&CStack_124);
-        pCVar11 = &CStack_13c;
+        pCVar12 = &CStack_13c;
         CStack_13c.x = CStack_124.x;
-        *(uint *)((int)&CStack_13c + (uint)bVar10 * -8 + 4) =
-             *(uint *)((int)&CStack_124 + (uint)bVar10 * -8 + 4);
-        *(uint *)((int)&CStack_13c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-             *(uint *)((int)&CStack_124 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+        *(uint *)((int)&CStack_13c + (uint)bVar11 * -8 + 4) =
+             *(uint *)((int)&CStack_124 + (uint)bVar11 * -8 + 4);
+        *(uint *)((int)&CStack_13c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+             *(uint *)((int)&CStack_124 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
-                  ((CDemonActor *)this_ptr,pCVar11,&CStack_118);
+                  ((CDemonActor *)this_ptr,pCVar12,&CStack_118);
         blood_type = BLOOD_TYPE_RED;
         CStack_148.x = CStack_118.x;
-        *(uint *)((int)&CStack_148 + (uint)bVar10 * -8 + 4) =
-             *(uint *)((int)&CStack_118 + (uint)bVar10 * -8 + 4);
-        *(uint *)((int)&CStack_148 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-             *(uint *)((int)&CStack_118 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+        *(uint *)((int)&CStack_148 + (uint)bVar11 * -8 + 4) =
+             *(uint *)((int)&CStack_118 + (uint)bVar11 * -8 + 4);
+        *(uint *)((int)&CStack_148 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+             *(uint *)((int)&CStack_118 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
         core_gore_cpp_CGore_createBloodPool_FUN_004cec40(g_CGorePtr,&CStack_148,blood_type);
         (this_ptr->base).pool_me = 1;
       }
@@ -449,14 +455,14 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
   if (EVar4 < 2) {
     if (EVar4 == WALK_STATE_WALKING) {
 LAB_004629d9:
-      iVar6 = 5;
+      iVar7 = 5;
     }
     else {
 LAB_00462bcc:
-      iVar6 = 0;
+      iVar7 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
-              (&(this_ptr->base).base.model.base,iVar6,1);
+              (&(this_ptr->base).base.model.base,iVar7,1);
   }
   else {
     if (EVar4 < WALK_STATE_NO_PATH) goto LAB_004629d9;
@@ -475,12 +481,12 @@ switchD_00463453_caseD_d:
   if (0.0 < (this_ptr->base).attack_cooldown) {
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
-  iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0((CCharacter *)this_ptr);
-  if (iVar6 != 0) {
+  iVar7 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0((CCharacter *)this_ptr);
+  if (iVar7 != 0) {
     pCVar5 = (this_ptr->base).victim;
     if ((pCVar5 != (CCharacter *)0x0) &&
-       (pCVar8 = (CZombieDog *)(*(((pCVar5->base).vtable._uc)->_uc).getGrabber)(pCVar5),
-       pCVar8 == this_ptr)) {
+       (pCVar9 = (CZombieDog *)(*(((pCVar5->base).vtable._uc)->_uc).getGrabber)(pCVar5),
+       pCVar9 == this_ptr)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
@@ -489,28 +495,28 @@ switchD_00463453_caseD_d:
     afStack_108[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_108[1] = (this_ptr->base).base.velocity.z * delta_time;
     fStack_ac = fStack_10c;
-    afStack_a8[(uint)bVar10 * -2] = afStack_108[(uint)bVar10 * -2];
-    afStack_a8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-         afStack_108[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-    pCVar11 = &(this_ptr->base).base.position_delta;
-    fStack_160 = fStack_ac + pCVar11->x;
+    afStack_a8[(uint)bVar11 * -2] = afStack_108[(uint)bVar11 * -2];
+    afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+         afStack_108[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+    pCVar12 = &(this_ptr->base).base.position_delta;
+    fStack_160 = fStack_ac + pCVar12->x;
     afStack_15c[0] = afStack_a8[0] + (this_ptr->base).base.position_delta.y;
     afStack_15c[1] = afStack_a8[1] + (this_ptr->base).base.position_delta.z;
     fStack_130 = fStack_160;
-    afStack_12c[(uint)bVar10 * -2] = afStack_15c[(uint)bVar10 * -2];
-    afStack_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-         afStack_15c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+    afStack_12c[(uint)bVar11 * -2] = afStack_15c[(uint)bVar11 * -2];
+    afStack_12c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+         afStack_15c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
     pCVar3 = &(this_ptr->base).base.model.accumulated_root_motion;
     fStack_d0 = fStack_130 + pCVar3->x;
     afStack_cc[0] = afStack_12c[0] + (this_ptr->base).base.model.accumulated_root_motion.y;
     afStack_cc[1] = afStack_12c[1] + (this_ptr->base).base.model.accumulated_root_motion.z;
     CStack_16c.x = fStack_d0;
-    *(float *)((int)&CStack_16c + (uint)bVar10 * -8 + 4) = afStack_cc[(uint)bVar10 * -2];
-    *(float *)((int)&CStack_16c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         afStack_cc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+    *(float *)((int)&CStack_16c + (uint)bVar11 * -8 + 4) = afStack_cc[(uint)bVar11 * -2];
+    *(float *)((int)&CStack_16c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+         afStack_cc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
     (this_ptr->base).base.position_delta.z = 0.0;
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar11->x = (this_ptr->base).base.position_delta.y;
+    pCVar12->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;

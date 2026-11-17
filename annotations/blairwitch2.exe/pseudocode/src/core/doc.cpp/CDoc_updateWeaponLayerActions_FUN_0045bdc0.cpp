@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_doc_cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0(CDoc *this_ptr,float delta_time)
 
@@ -96,7 +95,7 @@ LAB_0045be11:
     iVar5 = this_ptr->action_pending;
     if (iVar5 == 1) {
       local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(local_30,0x13);
-      if ((float)_DAT_005d065f <= local_14) {
+      if ((float)0.10000000000000001 <= local_14) {
         local_18 = 0;
         iVar5 = local_18;
       }
@@ -116,11 +115,11 @@ LAB_0045be77:
         local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                              ((CCharacter *)this_ptr,4);
         iVar5 = local_18;
-        if ((float)_DAT_005d0657 < local_14) {
-          fVar3 = delta_time * (float)_DAT_005d064f + this_ptr->aim_speed_factor;
+        if ((float)0.98999999999999999 < local_14) {
+          fVar3 = delta_time * (float)25 + this_ptr->aim_speed_factor;
           this_ptr->aim_speed_factor = fVar3;
-          if (0x428C0000 < fVar3) {
-            this_ptr->aim_speed_factor = 0x428C0000;
+          if (70.0f < fVar3) {
+            this_ptr->aim_speed_factor = 70.0f;
           }
           if ((this_ptr->base).player_input.action_state.fire != 0) {
             return;
@@ -360,7 +359,7 @@ switchD_0045c465_caseD_3:
       if (((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(this_ptr->base).base.layer_action_t))
       {
         core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                  (0x0264B290,(CDemonActor *)this_ptr,"axeswing0?.wav",local_40);
+                  (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"axeswing0?.wav",local_40);
       }
       break;
     case 8:
@@ -419,7 +418,7 @@ switchD_0045c465_caseD_3:
                     ((CCharacter *)this_ptr,1,&local_60);
         }
         this_ptr->action_pending = 0;
-        this_ptr->aim_speed_factor = 0x41200000;
+        this_ptr->aim_speed_factor = 10.0f;
       }
       if (1.0 <= (this_ptr->base).base.layer_action_t) {
         (this_ptr->base).base.layer_action_index = 0;
@@ -504,7 +503,7 @@ LAB_0045bfdc:
           if (local_20 == 5) {
             core_inv_cpp_CInventory_removeItem_FUN_004db8e0(local_24,pCVar7,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
-                      (0x01D182F0,(this_ptr->base).target_actor);
+                      (g_CDemonMission_PTR_00618170,(this_ptr->base).target_actor);
             core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
                       ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0,(CMatrix3x4f *)0x0
                       );
@@ -512,7 +511,7 @@ LAB_0045bfdc:
           else if (local_20 == 6) {
             core_inv_cpp_CInventory_removeItem_FUN_004db8e0(local_24,pCVar7,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
-                      (0x01D182F0,(this_ptr->base).target_actor);
+                      (g_CDemonMission_PTR_00618170,(this_ptr->base).target_actor);
             core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
                       ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0,(CMatrix3x4f *)0x0
                       );

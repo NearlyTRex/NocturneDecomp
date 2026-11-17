@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d99bc
+;   float g_FLOAT_005d99bc = 0.5
 ;   CSimpleParticleSystem* g_CSimpleParticleSystemPtr = 026687b0
 ;
 ; Called Functions:
@@ -83,7 +83,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cdbff
     MOVSD ES:EDI,ESI                    ; 004cdc00
     MOVSD ES:EDI,ESI                    ; 004cdc01
-    FLD float ptr [0x005d99bc]          ; 004cdc02 | DAT_005d99bc
+    FLD float ptr [0x005d99bc]          ; 004cdc02 | g_FLOAT_005d99bc
     FLD float ptr [EBP + -0x1a]         ; 004cdc08
     FMUL ST1                            ; 004cdc0b
     FLD float ptr [EBP + -0x16]         ; 004cdc0d

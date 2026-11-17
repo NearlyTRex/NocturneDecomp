@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList *this_ptr,char *name,int add_flag)
 
 {
@@ -34,8 +32,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(C
     }
     else if (iVar2 < 0) {
       if (99 < (this_ptr->persistent_events).count) {
-        _DAT_01d046a0 = "..\\core\\event.cpp";
-        _DAT_01d046a4 = 0xcee;
+        g_CHAR_PTR_01d046a0 = "..\\core\\event.cpp";
+        g_INT_01d046a4 = 0xcee;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Too many persistent events!");
       }
       uVar3 = 0xffffffff;
@@ -47,8 +45,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(C
         pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar3 - 1) {
-        _DAT_01d046a0 = "..\\core\\event.cpp";
-        _DAT_01d046a4 = 0xcf4;
+        g_CHAR_PTR_01d046a0 = "..\\core\\event.cpp";
+        g_INT_01d046a4 = 0xcf4;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Event name %s too long!");
       }
       pacVar6 = (this_ptr->persistent_events).names + (this_ptr->persistent_events).count;

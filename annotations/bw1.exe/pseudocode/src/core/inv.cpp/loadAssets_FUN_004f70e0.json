@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 410,
-    "complexity_score": 216,
+    "complexity_score": 135,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 55,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
-    "suspect_count": 8,
+    "pseudocode_lines": 120,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 531
+    "total_lines": 530
   },
   "cross_references": [
     {
@@ -88,8 +86,8 @@
   "globals": [
     {
       "addr": "005e6078",
-      "name": "DAT_005e6078",
-      "type": "undefined4",
+      "name": "s_rt_005e6078",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -100,8 +98,8 @@
     },
     {
       "addr": "005e6087",
-      "name": "DAT_005e6087",
-      "type": "undefined4",
+      "name": "s_data_005e6087",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -328,8 +326,8 @@
     },
     {
       "addr": "005e61c6",
-      "name": "DAT_005e61c6",
-      "type": "undefined4",
+      "name": "s_rt_005e61c6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -340,15 +338,15 @@
     },
     {
       "addr": "005e61d6",
-      "name": "DAT_005e61d6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e61d6",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "0061d95c",
@@ -358,15 +356,15 @@
     },
     {
       "addr": "0061f1a0",
-      "name": "DAT_0061f1a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061f1a0",
+      "type": "int",
+      "value": "0xd0"
     },
     {
       "addr": "0061f1a4",
-      "name": "DAT_0061f1a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061f1a4",
+      "type": "int",
+      "value": "0x60"
     },
     {
       "addr": "01ccf394",
@@ -376,44 +374,44 @@
     },
     {
       "addr": "01d08dc8",
-      "name": "DAT_01d08dc8",
-      "type": "undefined4",
+      "name": "g_INT_01d08dc8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1bab4",
-      "name": "DAT_01d1bab4",
+      "name": "g_SMRGLTextureBasic_01d1baac.texture_name[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1bab5",
-      "name": "DAT_01d1bab5",
+      "name": "g_SMRGLTextureBasic_01d1baac.texture_name[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1bab6",
-      "name": "DAT_01d1bab6",
+      "name": "g_SMRGLTextureBasic_01d1baac.texture_name[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1bab7",
-      "name": "DAT_01d1bab7",
+      "name": "g_SMRGLTextureBasic_01d1baac.texture_name[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1bc48",
-      "name": "DAT_01d1bc48",
-      "type": "undefined4",
+      "name": "g_INT_01d1bc48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1bc5c",
-      "name": "DAT_01d1bc5c",
-      "type": "undefined4",
+      "name": "g_INT_01d1bc5c",
+      "type": "int",
       "value": null
     }
   ],
@@ -483,64 +481,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "_DAT_01d1bc5c = DAT_0061b49c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005e6087",
-      "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e6087,\"invsize.txt\",&DAT_005e6078)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005e6078",
-      "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e6087,\"invsize.txt\",&DAT_005e6078)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_01d1bab4",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_01d1bab4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_005e61d6",
-      "severity": "mild",
-      "text": "(&DAT_005e61d6,\"itemlist.txt\",&DAT_005e61c6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_005e61c6",
-      "severity": "mild",
-      "text": "(&DAT_005e61d6,\"itemlist.txt\",&DAT_005e61c6);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 86,
+      "line": 84,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

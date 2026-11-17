@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_0056f2c0(CSuccubus *this_ptr)
 
 {
   CSuccubus *pCVar1;
   char cVar2;
   SMRGLTextureModel *pSVar3;
-  int iVar4;
-  uint uVar5;
+  float fVar4;
+  float fVar5;
   CEnemy *pCVar6;
   CDeformableModelInstance *pCVar7;
   CClothList *pCVar8;
@@ -39,15 +37,15 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_0056f2c0(CSuccubus *thi
             ((CDeformableModelInstance *)pCVar9[-3].models[0].parts,"hotdemon.dfm");
   pSVar3 = pCVar9[-0x15].models[0].textures;
   pSVar3[0xd].texture_name[0x3c] = -0x66;
-  iVar4 = _DAT_005fc3cc;
+  fVar4 = 50.0f;
   pSVar3[0xd].texture_name[0x3d] = -0x67;
   pSVar3[0xd].texture_name[0x3e] = '\x19';
   pSVar3[0xd].texture_name[0x3f] = '?';
   pCVar9[-0x15].models[0].textures[0xe].base.type = 0x3f666666;
-  uVar5 = _DAT_005fc3d0;
+  fVar5 = 100.0f;
   pCVar9[-1].models[1].textures[0xe].base.type = 1;
-  pCVar9[-0x15].models[0].textures[0xe].base.count = iVar4;
-  *(uint *)pCVar9[-0x15].models[0].textures[0xe].texture_name = uVar5;
+  pCVar9[-0x15].models[0].textures[0xe].base.count = (int)fVar4;
+  *(float *)pCVar9[-0x15].models[0].textures[0xe].texture_name = fVar5;
   do {
     cVar2 = *pcVar10;
     *(char *)piVar11 = cVar2;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_005bcdfc(void)
+; undefined * crt_unknown_c_FUN_005bcdfc(void)
 ;
 ;
 ; XREF[12]:
@@ -18,13 +18,13 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0268017c
+;   void* g_PTR_0268017c
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x0268017c]                ; 005bcdfc | DAT_0268017c
+    MOV EAX,[0x0268017c]                ; 005bcdfc | g_PTR_0268017c
         ;   Label: crt_unknown.c_FUN_005bcdfc
     LEA EAX,[EAX]                       ; 005bce01
 

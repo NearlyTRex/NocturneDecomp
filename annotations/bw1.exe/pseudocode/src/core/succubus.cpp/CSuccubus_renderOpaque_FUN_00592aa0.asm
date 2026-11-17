@@ -7,10 +7,10 @@
 ; CSuccubus *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00606278
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01d39d34
+;   float g_FLOAT_00606278 = 4
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   int g_INT_01d39d34
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
@@ -35,8 +35,8 @@ section .text
     PUSH EBP                            ; 00592aa1
     SUB ESP,0x34                        ; 00592aa2
     MOV EBX,dword ptr [ESP + 0x40]      ; 00592aa5
-    MOV EDX,dword ptr [0x00612560]      ; 00592aa9 | DAT_00612560
-    PUSH EDX                            ; 00592aaf | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 00592aa9 | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 00592aaf | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180 ; 00592ab0
         ;   XREF to: 00484180 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00592ab5
@@ -94,12 +94,12 @@ section .text
         ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_render_FUN_00441ff0(CClothList * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 00592b4f
         ;   Label: LAB_00592b4f
-    CMP dword ptr [0x01d39d34],0x0      ; 00592b52 | DAT_01d39d34
+    CMP dword ptr [0x01d39d34],0x0      ; 00592b52 | g_INT_01d39d34
         ;   Label: LAB_00592b52
     JZ 0x00592b8b                       ; 00592b59
         ;   XREF to: 00592b8b (CONDITIONAL_JUMP)  ; LAB_00592b8b
-    MOV EDI,dword ptr [0x00612560]      ; 00592b5b | DAT_00612560
-    PUSH EDI                            ; 00592b61 | DAT_01bc120c
+    MOV EDI,dword ptr [0x00612560]      ; 00592b5b | g_CDemonRenderer_PTR_00612560
+    PUSH EDI                            ; 00592b61 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00592b62
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00592b67
@@ -176,7 +176,7 @@ section .text
     CALL core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_005232d0 ; 00592c04
         ;   XREF to: 005232d0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_005232d0(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index, ...)
     FLD float ptr [EBX + 0xe7d4]        ; 00592c09
-    FDIV float ptr [0x00606278]         ; 00592c0f | DAT_00606278
+    FDIV float ptr [0x00606278]         ; 00592c0f | g_FLOAT_00606278
     ADD ESP,0x14                        ; 00592c15
     SUB ESP,0x4                         ; 00592c18
     FSTP float ptr [ESP]                ; 00592c1b

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor *this_ptr)
 
 {
@@ -26,13 +24,13 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor
   if (0 < pCVar1->poly_count) {
     if (0.0 <= this_ptr->fade_timer) {
       dVar6 = round
-                        ((double)((this_ptr->fade_timer / this_ptr->fade_time) * _DAT_005b7505));
+                        ((double)((this_ptr->fade_timer / this_ptr->fade_time) * 65536.0f));
       this_ptr->fade_alpha = (int)ROUND(dVar6);
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-              (0x01BDD7E4,&(this_ptr->base).location.position);
+              (g_CDemonRenderer_PTR_005f2af8,&(this_ptr->base).location.position);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-              (0x01BDD7E4,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+              (g_CDemonRenderer_PTR_005f2af8,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
     puVar3 = auStack_34;
     puVar4 = auStack_24;
@@ -43,8 +41,8 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor
     }
     iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0
                       ((CBoundingBox3D *)(auStack_24 + 2),unaff_EDI);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->fade_alpha)
-    ;
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
+              (g_CDemonRenderer_PTR_005f2afc,this_ptr->fade_alpha);
     if (this_ptr->dont_use_normals != 0) {
       g_CDemonSetPtr->disable_directional_lighting = 1;
     }

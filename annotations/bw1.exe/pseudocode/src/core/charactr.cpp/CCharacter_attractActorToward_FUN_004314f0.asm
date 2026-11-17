@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   target_local_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5a67
+;   double g_DOUBLE_005d5a67 = 5
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -91,7 +91,7 @@ section .text
     FXCH                                ; 00431581
     FSQRT                               ; 00431583
     FXCH                                ; 00431585
-    FMUL double ptr [0x005d5a67]        ; 00431587 | DAT_005d5a67
+    FMUL double ptr [0x005d5a67]        ; 00431587 | g_DOUBLE_005d5a67
     XOR ECX,ECX                         ; 0043158d
     ADD ESP,0x8                         ; 0043158f
     MOV dword ptr [EBP + -0x14],ECX     ; 00431592

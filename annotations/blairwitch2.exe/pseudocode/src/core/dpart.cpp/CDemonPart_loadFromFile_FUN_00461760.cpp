@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00461760(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 
 {
@@ -51,7 +49,7 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00461760(CDemonPart *thi
   }
   else {
     iVar7 = 0;
-    _fread((void *)0x1b4d388,0x48,this_ptr->face_count,file_handle);
+    _fread(g_CHAR_ARRAY_01b4d388,0x48,this_ptr->face_count,file_handle);
     if (0 < this_ptr->face_count) {
       iVar6 = 0;
       iVar5 = 0;
@@ -84,11 +82,11 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00461760(CDemonPart *thi
     }
   }
   if (in_stack_00000010 != (float *)0x0) {
-    dVar9 = (double)in_stack_00000010[1] * _DAT_005d0e04;
-    dVar10 = (double)in_stack_00000010[2] * _DAT_005d0e04;
+    dVar9 = (double)in_stack_00000010[1] * 256;
+    dVar10 = (double)in_stack_00000010[2] * 256;
     iVar7 = this_ptr->vertex_count;
     iVar5 = 0;
-    dVar8 = round((double)*in_stack_00000010 * _DAT_005d0e04);
+    dVar8 = round((double)*in_stack_00000010 * 256);
     dVar9 = round(dVar9);
     dVar10 = round(dVar10);
     if (0 < iVar7) {
@@ -106,7 +104,7 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00461760(CDemonPart *thi
     }
   }
   core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00461690(this_ptr);
-  fVar4 = (float)_DAT_005d0e0c;
+  fVar4 = (float)0.00390625;
   iVar7 = (this_ptr->bbox3).y;
   iVar5 = (this_ptr->bbox3).z;
   iVar6 = (this_ptr->bbox4).x;

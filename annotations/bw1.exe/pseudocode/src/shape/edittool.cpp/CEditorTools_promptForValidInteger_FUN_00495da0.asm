@@ -20,8 +20,8 @@
 ;   core_game.cpp_setupMovieRecording_FUN_004cb870 at 004cb8ce
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005dbed4
-;   undefined4 DAT_005dbed7
+;   TerminatedCString s_d_005dbed4
+;   TerminatedCString s_d_005dbed7
 ;   TerminatedCString s_Please_enter_a_valid_int_005dbeda
 ;   TerminatedCString s_Please_enter_a_valid_int_005dbef8
 ;
@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_00495de2
     MOV EDX,dword ptr [EAX]             ; 00495de6
     PUSH EDX                            ; 00495de8
-    PUSH 0x5dbed4                       ; 00495de9 | DAT_005dbed4
+    PUSH 0x5dbed4                       ; 00495de9 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 00495dee
     PUSH EAX                            ; 00495df2
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00495df3
@@ -84,7 +84,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 00495dfd
         ;   Label: LAB_00495dfd
     PUSH EAX                            ; 00495e01
-    PUSH 0x5dbed7                       ; 00495e02 | DAT_005dbed7
+    PUSH 0x5dbed7                       ; 00495e02 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 00495e07
     PUSH EAX                            ; 00495e0b
     CALL crt_stdio.c_sscanf_FUN_005c2cac ; 00495e0c

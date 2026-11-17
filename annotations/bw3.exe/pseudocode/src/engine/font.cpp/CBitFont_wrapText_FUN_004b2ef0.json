@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 165,
+    "complexity_score": 155,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy"
+      "unrolled_memcpy",
+      "wrong_global"
     ],
     "total_lines": 293
   },
@@ -178,28 +178,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "for (; (((&DAT_006074b8)[(byte)(*source_text + 1)] & 2) != 0 && (*source_text != '\\n'));",
-      "type": "undefined_data"
+      "description": "Scalar global g_CHAR_01d1a960 accessed via (&g_CHAR_01d1a960)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_USHORT_01d1ad62 (at 0x01d1ad62, +1026 bytes).",
+      "line": 46,
+      "match": "g_CHAR_01d1a960",
+      "severity": "moderate",
+      "text": "(&g_CHAR_01d1a960)[uVar8] = '\\0';",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((&DAT_006074b8)[(byte)(cVar1 + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((&DAT_006074b8)[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;",
-      "type": "undefined_data"
+      "description": "Scalar global g_CHAR_01d1a960 accessed via (&g_CHAR_01d1a960)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_USHORT_01d1ad62 (at 0x01d1ad62, +1026 bytes).",
+      "line": 59,
+      "match": "g_CHAR_01d1a960",
+      "severity": "moderate",
+      "text": "(&g_CHAR_01d1a960)[uVar8] = cVar1;",
+      "type": "wrong_global"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

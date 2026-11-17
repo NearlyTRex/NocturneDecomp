@@ -30,8 +30,8 @@
 ;   core_gargoyle.cpp_CGargoyle_process_FUN_004c0050 at 004c04af
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8d62
-;   undefined4 DAT_005d8d66
+;   float g_FLOAT_005d8d62 = -0.3141593
+;   float g_FLOAT_005d8d66 = 0.3141593
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
@@ -181,13 +181,13 @@ section .text
     FLD float ptr [ESP + 0x50]          ; 004bfffc
     ADD ESP,0x4                         ; 004c0000
     FST float ptr [ESP + 0x48]          ; 004c0003
-    FCOMP float ptr [0x005d8d62]        ; 004c0007 | DAT_005d8d62
+    FCOMP float ptr [0x005d8d62]        ; 004c0007 | g_FLOAT_005d8d62
     FNSTSW AX                           ; 004c000d
     SAHF                                ; 004c000f
     JC 0x004c0025                       ; 004c0010
         ;   XREF to: 004c0025 (CONDITIONAL_JUMP)  ; LAB_004c0025
     FLD float ptr [ESP + 0x48]          ; 004c0012
-    FCOMP float ptr [0x005d8d66]        ; 004c0016 | DAT_005d8d66
+    FCOMP float ptr [0x005d8d66]        ; 004c0016 | g_FLOAT_005d8d66
     FNSTSW AX                           ; 004c001c
     SAHF                                ; 004c001e
     JBE 0x004bff81                      ; 004c001f

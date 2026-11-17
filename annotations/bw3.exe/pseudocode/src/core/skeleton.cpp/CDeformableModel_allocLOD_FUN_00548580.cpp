@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00548580(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)
 
 {
@@ -19,8 +17,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00548580(CDeformabl
   WatcomTypeInfo *type_info;
   
   if ((lod_index < 0) || (this_ptr->num_lods <= lod_index)) {
-    _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-    _DAT_01d71de4 = 0x29a;
+    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+    g_INT_01d71de4 = 0x29a;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::allocLOD - invalid lod number %d");
   }
   free(this_ptr->vertex_data_ptr[lod_index]);
@@ -56,8 +54,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00548580(CDeformabl
     return;
   }
   core_skeleton_cpp_CDeformableModel_free_FUN_00548370(this_ptr);
-  _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-  _DAT_01d71de4 = 0x2be;
+  g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+  g_INT_01d71de4 = 0x2be;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d");
   return;
 }

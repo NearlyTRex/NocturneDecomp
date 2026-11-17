@@ -10,7 +10,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005b1330(CWerewolf *this_pt
 
 {
   core_enemy_cpp_CEnemy_archive_FUN_004a0520(&this_ptr->base);
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&(this_ptr->base).speed,"?speed" + 1);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0
             (&(this_ptr->base).base.model,"modelName");
   if (g_CWerewolfClassVersion < 3) {
@@ -27,7 +27,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005b1330(CWerewolf *this_pt
     core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->chain_length,"chainLength");
   }
   if (4 < g_CWerewolfClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->type,&DAT_005f9b89);
+    core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->type,"type");
   }
   if (g_CWerewolfClassVersion < 6) {
     return;

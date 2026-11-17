@@ -10,11 +10,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_005efb6c
 ;   TerminatedCString s_BurnComplete_005efb72
-;   undefined4 DAT_005efb7f
-;   undefined4 DAT_005efb87
+;   float g_FLOAT_005efb7f = 0.5
+;   double g_DOUBLE_005efb87 = 0.200000000000000
 ;   CGore* g_CGorePtr = 01cb8284
-;   undefined4 DAT_01cedef4
-;   undefined4 DAT_0265370c
+;   int g_INT_01cedef4
+;   CVector3f g_CVector3f_0265370c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -60,7 +60,7 @@ section .text
     ADD ESP,0x4                         ; 005a03bf
     MOV EAX,dword ptr [EBP + 0x14]      ; 005a03c2
     FLD float ptr [EAX + 0x11440]       ; 005a03c5
-    MOV EAX,[0x01cedef4]                ; 005a03cb | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005a03cb | g_INT_01cedef4
     FMUL float ptr [EBP + 0x18]         ; 005a03d0
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 005a03d3
     MOV EBX,dword ptr [EBP + 0x14]      ; 005a03da
@@ -128,14 +128,14 @@ section .text
     MOV dword ptr [ESP + 0x104],EAX     ; 005a04b6
     FLD float ptr [ESP + 0x104]         ; 005a04bd
     ADD ESP,0x8                         ; 005a04c4
-    FCOMP double ptr [0x005efb87]       ; 005a04c7 | DAT_005efb87
+    FCOMP double ptr [0x005efb87]       ; 005a04c7 | g_DOUBLE_005efb87
     FNSTSW AX                           ; 005a04cd
     SAHF                                ; 005a04cf
     JBE 0x005a0716                      ; 005a04d0
         ;   XREF to: 005a0716 (CONDITIONAL_JUMP)  ; LAB_005a0716
     MOV ECX,dword ptr [ESP + 0xf4]      ; 005a04d6
     PUSH ECX                            ; 005a04dd
-    PUSH 0x265370c                      ; 005a04de | DAT_0265370c
+    PUSH 0x265370c                      ; 005a04de | g_CVector3f_0265370c
     LEA ESI,[ESP + 0xbc]                ; 005a04e3
     LEA EDI,[ESP + 0xa4]                ; 005a04ea
     CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a04f1
@@ -174,7 +174,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a0566
     MOVSD ES:EDI,ESI                    ; 005a0567
     MOVSD ES:EDI,ESI                    ; 005a0568
-    FLD float ptr [0x005efb7f]          ; 005a0569 | DAT_005efb7f
+    FLD float ptr [0x005efb7f]          ; 005a0569 | g_FLOAT_005efb7f
     FLD float ptr [ESP + 0x48]          ; 005a056f
     FMUL ST1                            ; 005a0573
     FLD float ptr [ESP + 0x4c]          ; 005a0575
@@ -201,7 +201,7 @@ section .text
     PUSH 0x2                            ; 005a05be
     MOV dword ptr [ESP + 0xac],EAX      ; 005a05c0
     MOV EAX,dword ptr [ESP + 0x60]      ; 005a05c7
-    PUSH 0x265370c                      ; 005a05cb | DAT_0265370c
+    PUSH 0x265370c                      ; 005a05cb | g_CVector3f_0265370c
     MOV dword ptr [ESP + 0xb8],EAX      ; 005a05d0
     LEA EAX,[ESP + 0x74]                ; 005a05d7
     PUSH EAX                            ; 005a05db

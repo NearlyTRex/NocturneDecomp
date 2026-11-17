@@ -10,8 +10,8 @@
 ;   core_batman.cpp_factoryFuncBatman_FUN_00412af0 at 00412b03
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f3090
-;   undefined4 DAT_005f3094
+;   float g_FLOAT_005f3090 = 50
+;   float g_FLOAT_005f3094 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
@@ -39,9 +39,9 @@ section .text
     LEA EDI,[EBX + 0x10af8]             ; 00412b49
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0 ; 00412b4f
         ;   XREF to: 005478b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x005f3090]          ; 00412b54 | DAT_005f3090
+    FLD float ptr [0x005f3090]          ; 00412b54 | g_FLOAT_005f3090
     MOV dword ptr [EBX + 0x3430],0x3f19999a ; 00412b5a
-    FLD float ptr [0x005f3094]          ; 00412b64 | DAT_005f3094
+    FLD float ptr [0x005f3094]          ; 00412b64 | g_FLOAT_005f3094
     MOV dword ptr [EBX + 0x3434],0x40000000 ; 00412b6a
     ADD ESP,0x8                         ; 00412b74
     FXCH                                ; 00412b77

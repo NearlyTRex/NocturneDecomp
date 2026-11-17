@@ -8,15 +8,15 @@
 ; int              Stack[0x8]:4   hit_type
 ;
 ; Referenced Globals:
-;   undefined4 s_CHolycross_005b5618+1
+;   TerminatedCString s_CHolycross_005b5619
 ;   TerminatedCString s_CHero_005b5624
 ;   TerminatedCString s_s_causing_5_2f_damage_to_005b562a
 ;   TerminatedCString s_CHolycross_005b5649
 ;   TerminatedCString s_CHero_005b5654
 ;   TerminatedCString s_s_causing_5_2f_damage_to_005b565a
-;   undefined4 DAT_005b5679
-;   undefined4 DAT_005b5681
-;   undefined4 DAT_005b5689
+;   double g_DOUBLE_005b5679 = 0.5
+;   double g_DOUBLE_005b5681 = 10
+;   float g_FLOAT_005b5689 = -3
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
@@ -137,7 +137,7 @@ section .text
     MOV dword ptr [ESP + 0x29c],EAX     ; 0040a0cd
     MOV EAX,dword ptr [ESP + 0x240]     ; 0040a0d4
     MOV dword ptr [ESP + 0x2a0],EAX     ; 0040a0db
-    PUSH 0x5b5619                       ; 0040a0e2 | s_CHolycross_005b5618+1
+    PUSH 0x5b5619                       ; 0040a0e2 | = "CHolycross"
         ;   Label: LAB_0040a0e2
     PUSH EBX                            ; 0040a0e7
     CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 0040a0e8
@@ -325,7 +325,7 @@ section .text
     JNC 0x0040a2aa                      ; 0040a392
         ;   XREF to: 0040a2aa (CONDITIONAL_JUMP)  ; LAB_0040a2aa
     FLD double ptr [ESP]                ; 0040a398
-    FMUL double ptr [0x005b5679]        ; 0040a39b | DAT_005b5679
+    FMUL double ptr [0x005b5679]        ; 0040a39b | g_DOUBLE_005b5679
     MOV EDX,dword ptr [EDI + 0x27a0]    ; 0040a3a1
     FLD1                                ; 0040a3a7
     FADDP                               ; 0040a3a9
@@ -626,7 +626,7 @@ section .text
     LEA EAX,[ESP + 0x29c]               ; 0040a76e
     MOV ESI,dword ptr [0x00603b28]      ; 0040a775 | g_CDemonSetPtr
     PUSH EAX                            ; 0040a77b
-    FADD float ptr [0x005b5689]         ; 0040a77c | DAT_005b5689
+    FADD float ptr [0x005b5689]         ; 0040a77c | g_FLOAT_005b5689
     PUSH ESI                            ; 0040a782 | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x2a8]        ; 0040a783
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 0040a78a
@@ -766,7 +766,7 @@ section .text
     FMUL ST0                            ; 0040a95e
     FADDP                               ; 0040a960
     FSQRT                               ; 0040a962
-    FDIVR double ptr [0x005b5681]       ; 0040a964 | DAT_005b5681
+    FDIVR double ptr [0x005b5681]       ; 0040a964 | g_DOUBLE_005b5681
     FLD float ptr [ESP + 0x22c]         ; 0040a96a
     FXCH                                ; 0040a971
     FSTP float ptr [ESP + 0x35c]        ; 0040a973

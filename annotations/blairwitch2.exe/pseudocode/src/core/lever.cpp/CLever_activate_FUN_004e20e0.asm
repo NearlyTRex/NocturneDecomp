@@ -12,7 +12,7 @@
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440 at 004cf4a8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dbf52
+;   double g_DOUBLE_005dbf52 = 0.5
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x10]      ; 004e20eb
     FLD float ptr [EDX + 0x438]         ; 004e20ee
     MOV dword ptr [EDX + 0x574],0x1     ; 004e20f4
-    FCOMP double ptr [0x005dbf52]       ; 004e20fe | DAT_005dbf52
+    FCOMP double ptr [0x005dbf52]       ; 004e20fe | g_DOUBLE_005dbf52
     FNSTSW AX                           ; 004e2104
     SAHF                                ; 004e2106
     JNC 0x004e2126                      ; 004e2107

@@ -26,18 +26,18 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005d2507
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005d251c
 ;   TerminatedCString s_sound_005d29c7
-;   undefined4 DAT_005d29cd
-;   undefined4 DAT_005d29d1
+;   TerminatedCString s_mp3_005d29cd
+;   TerminatedCString s_mp3_005d29d1
 ;   TerminatedCString s_startSfx_can_t_get_sampl_005d37f9
-;   undefined4 DAT_00604210
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_INT_00604210 = 0x1
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   undefined4 g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]
-;   undefined4 DAT_02ce7280
-;   undefined4 DAT_02ce7338
-;   undefined4 DAT_02ce7398
-;   undefined4 DAT_02ce739c
-;   undefined4 DAT_02ce73a0
+;   undefined4 g_CSfxSlot_ARRAY_02ce721c[0].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
+;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].hardware_buffer_handle
+;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].sample
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -113,7 +113,7 @@ section .text
         ;   XREF to: 0055628f (CONDITIONAL_JUMP)  ; LAB_0055628f
     POP EDI                             ; 005562a7
         ;   Label: LAB_005562a7
-    MOV EBX,dword ptr [0x02ceb91c]      ; 005562a8 | DAT_02ceb91c
+    MOV EBX,dword ptr [0x02ceb91c]      ; 005562a8 | g_INT_02ceb91c
     LEA EAX,[EBX*0x4 + 0x0]             ; 005562ae
     SUB EAX,EBX                         ; 005562b5
     MOV ECX,0x18                        ; 005562b7
@@ -131,10 +131,10 @@ section .text
         ;   XREF to: 0055625c (CONDITIONAL_JUMP)  ; LAB_0055625c
     CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 005562e6
         ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
-    CMP dword ptr [0x02cf341c],0x0      ; 005562eb | DAT_02cf341c
+    CMP dword ptr [0x02cf341c],0x0      ; 005562eb | g_INT_02cf341c
     JLE 0x005564d5                      ; 005562f2
         ;   XREF to: 005564d5 (CONDITIONAL_JUMP)  ; LAB_005564d5
-    MOV EBP,dword ptr [0x02ce7280]      ; 005562f8 | DAT_02ce7280
+    MOV EBP,dword ptr [0x02ce7280]      ; 005562f8 | g_CSfxSlot_ARRAY_02ce721c[0].playback_state
         ;   Label: LAB_005562f8
     XOR EAX,EAX                         ; 005562fe
     XOR EBX,EBX                         ; 00556300
@@ -147,7 +147,7 @@ section .text
     CMP EAX,0x4700                      ; 0055630c
     JGE 0x005564fd                      ; 00556311
         ;   XREF to: 005564fd (CONDITIONAL_JUMP)  ; LAB_005564fd
-    CMP dword ptr [EAX + 0x2ce7280],0x0 ; 00556317 | DAT_02ce739c
+    CMP dword ptr [EAX + 0x2ce7280],0x0 ; 00556317 | g_CSfxSlot_ARRAY_02ce721c[1].playback_state
     JNZ 0x00556306                      ; 0055631e
         ;   XREF to: 00556306 (CONDITIONAL_JUMP)  ; LAB_00556306
     MOV dword ptr [ESP + 0x260],EBX     ; 00556320
@@ -165,7 +165,7 @@ section .text
     ADD EBP,EAX                         ; 0055634a
     LEA ESI,[ESP + 0x200]               ; 0055634c
     MOV EDI,EBP                         ; 00556353
-    MOVSD.REP ES:EDI,ESI                ; 00556355 | DAT_02ce7338 | g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]
+    MOVSD.REP ES:EDI,ESI                ; 00556355 | g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index | g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]
     MOV EBX,0x2cebc24                   ; 00556357
     MOV EDI,dword ptr [ESP + 0x278]     ; 0055635c
     XOR ESI,ESI                         ; 00556363
@@ -192,16 +192,16 @@ section .text
         ;   XREF to: 00552350 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350(int slot_index, char * filename)
         ;   Label: LAB_0055639c
     ADD ESP,0x8                         ; 005563a1
-    MOV dword ptr [EBP + 0x68],EAX      ; 005563a4 | DAT_02ce73a0
+    MOV dword ptr [EBP + 0x68],EAX      ; 005563a4 | g_CSfxSlot_ARRAY_02ce721c[1].sample
         ;   Label: LAB_005563a4
-    MOV EAX,dword ptr [EBP + 0x68]      ; 005563a7 | DAT_02ce73a0
+    MOV EAX,dword ptr [EBP + 0x68]      ; 005563a7 | g_CSfxSlot_ARRAY_02ce721c[1].sample
         ;   Label: LAB_005563a7
     TEST EAX,EAX                        ; 005563aa
     JZ 0x005565aa                       ; 005563ac
         ;   XREF to: 005565aa (CONDITIONAL_JUMP)  ; LAB_005565aa
     MOV EDX,dword ptr [EAX + 0x154]     ; 005563b2 | g_SfxSamples[0].ref_count
     INC EDX                             ; 005563b8
-    PUSH EBP                            ; 005563b9 | DAT_02ce7338
+    PUSH EBP                            ; 005563b9 | g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
     MOV dword ptr [EAX + 0x154],EDX     ; 005563ba | g_SfxSamples[0].ref_count
     CALL sound_sndmain.cpp_CSfxSlot_seek_FUN_00555750 ; 005563c0
         ;   XREF to: 00555750 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_seek_FUN_00555750(CSfxSlot * this_ptr)
@@ -219,30 +219,30 @@ section .text
     CMP EAX,EBX                         ; 00556401
     JNZ 0x005563f4                      ; 00556403
         ;   XREF to: 005563f4 (CONDITIONAL_JUMP)  ; LAB_005563f4
-    MOV EAX,dword ptr [EBP + 0x68]      ; 00556405 | DAT_02ce73a0
-    MOV ECX,dword ptr [0x00604210]      ; 00556408 | DAT_00604210
+    MOV EAX,dword ptr [EBP + 0x68]      ; 00556405 | g_CSfxSlot_ARRAY_02ce721c[1].sample
+    MOV ECX,dword ptr [0x00604210]      ; 00556408 | g_INT_00604210
     FLD float ptr [EAX + 0x114]         ; 0055640e
     INC ECX                             ; 00556414
-    MOV EAX,dword ptr [EBP + 0x68]      ; 00556415 | DAT_02ce73a0
+    MOV EAX,dword ptr [EBP + 0x68]      ; 00556415 | g_CSfxSlot_ARRAY_02ce721c[1].sample
     FSTP float ptr [EBP + 0xf0]         ; 00556418
-    MOV dword ptr [0x00604210],ECX      ; 0055641e | DAT_00604210
+    MOV dword ptr [0x00604210],ECX      ; 0055641e | g_INT_00604210
     FLD float ptr [EAX + 0x118]         ; 00556424
-    MOV EAX,dword ptr [EBP + 0x68]      ; 0055642a | DAT_02ce73a0
+    MOV EAX,dword ptr [EBP + 0x68]      ; 0055642a | g_CSfxSlot_ARRAY_02ce721c[1].sample
     FSTP float ptr [EBP + 0xf4]         ; 0055642d
     MOV EDX,dword ptr [EAX + 0x11c]     ; 00556433
     MOV dword ptr [EBP + 0xf8],EDX      ; 00556439
-    MOV dword ptr [EBP + 0x118],0xffffffff ; 0055643f | DAT_02ce7450
+    MOV dword ptr [EBP + 0x118],0xffffffff ; 0055643f | g_CSfxSlot_ARRAY_02ce721c[1].changed_flags
     CMP ECX,0xffffff                    ; 00556449
     JL 0x0055645b                       ; 0055644f
         ;   XREF to: 0055645b (CONDITIONAL_JUMP)  ; LAB_0055645b
-    MOV dword ptr [0x00604210],0x1      ; 00556451 | DAT_00604210
+    MOV dword ptr [0x00604210],0x1      ; 00556451 | g_INT_00604210
     PUSH 0x4479c000                     ; 0055645b
         ;   Label: LAB_0055645b
     PUSH 0x4479c000                     ; 00556460
-    MOV EDI,dword ptr [EBP + 0x68]      ; 00556465 | DAT_02ce73a0
-    MOV EBX,dword ptr [0x00604210]      ; 00556468 | DAT_00604210
+    MOV EDI,dword ptr [EBP + 0x68]      ; 00556465 | g_CSfxSlot_ARRAY_02ce721c[1].sample
+    MOV EBX,dword ptr [0x00604210]      ; 00556468 | g_INT_00604210
     PUSH EDI                            ; 0055646e
-    MOV dword ptr [EBP + 0x64],EBX      ; 0055646f | DAT_02ce739c
+    MOV dword ptr [EBP + 0x64],EBX      ; 0055646f | g_CSfxSlot_ARRAY_02ce721c[1].playback_state
     CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960 ; 00556472
         ;   XREF to: 00553960 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960(CSfxSample * this_ptr, float time_window, float update_interval)
     ADD ESP,0xc                         ; 00556477
@@ -250,7 +250,7 @@ section .text
     JZ 0x005564ba                       ; 0055647c
         ;   XREF to: 005564ba (CONDITIONAL_JUMP)  ; LAB_005564ba
     PUSH 0x0                            ; 0055647e
-    PUSH EBP                            ; 00556480 | DAT_02ce7338
+    PUSH EBP                            ; 00556480 | g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430 ; 00556481
         ;   XREF to: 00554430 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00556486
@@ -259,19 +259,19 @@ section .text
     CMP EAX,0x1                         ; 0055648e
     JL 0x005565c4                       ; 00556491
         ;   XREF to: 005565c4 (CONDITIONAL_JUMP)  ; LAB_005565c4
-    MOV EDI,dword ptr [EBP + 0x68]      ; 00556497 | DAT_02ce73a0
+    MOV EDI,dword ptr [EBP + 0x68]      ; 00556497 | g_CSfxSlot_ARRAY_02ce721c[1].sample
     MOV EDX,dword ptr [EDI + 0x158]     ; 0055649a
-    MOV EAX,[0x02cf3280]                ; 005564a0 | DAT_02cf3280
+    MOV EAX,[0x02cf3280]                ; 005564a0 | g_CSoundDevice_PTR_02cf3280
     PUSH EDX                            ; 005564a5
     MOV ESI,dword ptr [EAX]             ; 005564a6
     PUSH EAX                            ; 005564a8
     CALL dword ptr [ESI + 0x40]         ; 005564a9
     ADD ESP,0x8                         ; 005564ac
-    MOV dword ptr [EBP + 0x60],EAX      ; 005564af | DAT_02ce7398
+    MOV dword ptr [EBP + 0x60],EAX      ; 005564af | g_CSfxSlot_ARRAY_02ce721c[1].hardware_buffer_handle
     TEST EAX,EAX                        ; 005564b2
     JNZ 0x005565c4                      ; 005564b4
         ;   XREF to: 005565c4 (CONDITIONAL_JUMP)  ; LAB_005565c4
-    PUSH EBP                            ; 005564ba | DAT_02ce7338
+    PUSH EBP                            ; 005564ba | g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
         ;   Label: LAB_005564ba
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270 ; 005564bb
         ;   XREF to: 00555270 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270(CSfxSlot * this_ptr)
@@ -290,8 +290,8 @@ section .text
         ;   Label: LAB_005564d5
     MOV EDI,0x24b                       ; 005564da
     PUSH 0x5d251c                       ; 005564df | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d71de0],ESI      ; 005564e4 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005564ea | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 005564e4 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 005564ea | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005564f0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005564f5
@@ -327,7 +327,7 @@ section .text
     CALL engine_dosio.cpp_splitPath_FUN_00465e50 ; 00556544
         ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00556549
-    PUSH 0x5d29cd                       ; 0055654c | DAT_005d29cd
+    PUSH 0x5d29cd                       ; 0055654c | = "mp3"
     LEA EAX,[ESP + 0x4]                 ; 00556551
     PUSH EAX                            ; 00556555
     CALL crt_string.c__stricmp_FUN_005a3260 ; 00556556
@@ -336,7 +336,7 @@ section .text
     TEST EAX,EAX                        ; 0055655e
     JZ 0x00556578                       ; 00556560
         ;   XREF to: 00556578 (CONDITIONAL_JUMP)  ; LAB_00556578
-    PUSH 0x5d29d1                       ; 00556562 | DAT_005d29d1
+    PUSH 0x5d29d1                       ; 00556562 | = ".mp3"
     LEA EAX,[ESP + 0x4]                 ; 00556567
     PUSH EAX                            ; 0055656b
     CALL crt_string.c__stricmp_FUN_005a3260 ; 0055656c
@@ -352,7 +352,7 @@ section .text
     PUSH ECX                            ; 00556587
     JMP 0x0055639c                      ; 00556588
         ;   XREF to: 0055639c (UNCONDITIONAL_JUMP)  ; LAB_0055639c
-    MOV dword ptr [EBP + 0x68],EBX      ; 0055658d | DAT_02ce73a0
+    MOV dword ptr [EBP + 0x68],EBX      ; 0055658d | g_CSfxSlot_ARRAY_02ce721c[1].sample
         ;   Label: LAB_0055658d
     JMP 0x005563a7                      ; 00556590
         ;   XREF to: 005563a7 (UNCONDITIONAL_JUMP)  ; LAB_005563a7

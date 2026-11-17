@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 469,
-    "complexity_score": 358,
+    "complexity_score": 252,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 203,
-    "suspect_count": 14,
+    "pseudocode_lines": 202,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 672
+    "total_lines": 671
   },
   "cross_references": [
     {
@@ -93,8 +92,8 @@
     },
     {
       "addr": "005e02da",
-      "name": "DAT_005e02da",
-      "type": "undefined4",
+      "name": "s_d_005e02da",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -123,8 +122,8 @@
     },
     {
       "addr": "005e0349",
-      "name": "DAT_005e0349",
-      "type": "undefined4",
+      "name": "s_anon_005e0349",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -135,8 +134,8 @@
     },
     {
       "addr": "005e0354",
-      "name": "DAT_005e0354",
-      "type": "undefined4",
+      "name": "s_d_005e0354",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -159,8 +158,8 @@
     },
     {
       "addr": "005e03bd",
-      "name": "DAT_005e03bd",
-      "type": "undefined4",
+      "name": "s_d_005e03bd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -219,20 +218,20 @@
     },
     {
       "addr": "005e04b7",
-      "name": "DAT_005e04b7",
-      "type": "undefined4",
+      "name": "s_anon_005e04b7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e04b9",
-      "name": "DAT_005e04b9",
-      "type": "undefined4",
+      "name": "s_s_2X_005e04b9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e04bd",
-      "name": "DAT_005e04bd",
-      "type": "undefined4",
+      "name": "s_anon_005e04bd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -243,14 +242,14 @@
     },
     {
       "addr": "005e04c7",
-      "name": "DAT_005e04c7",
-      "type": "undefined4",
+      "name": "s_d_005e04c7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e04cb",
-      "name": "DAT_005e04cb",
-      "type": "undefined4",
+      "name": "s_s_005e04cb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -303,26 +302,26 @@
     },
     {
       "addr": "01cc4470",
-      "name": "DAT_01cc4470",
-      "type": "undefined4",
+      "name": "g_INT_01cc4470",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc55cc",
-      "name": "DAT_01cc55cc",
-      "type": "undefined4",
+      "name": "g_INT_01cc55cc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -544,96 +543,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005e02da",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e02da);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
+      "line": 45,
       "match": "DAT_0061d420",
       "severity": "mild",
       "text": "puVar5 = &DAT_0061d420;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005e0349",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e0349);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_005e0354",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e0354);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005e03bd",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e03bd);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 172,
-      "match": "DAT_005e04b7",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e04b7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 178,
-      "match": "DAT_005e04b9",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e04b9);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 184,
-      "match": "DAT_005e04bd",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e04bd);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 191,
-      "match": "DAT_005e04c7",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e04c7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 194,
-      "match": "DAT_005e04cb",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e04cb);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 49,
+      "line": 47,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -641,7 +560,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 68,
+      "line": 66,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -649,7 +568,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 125,
+      "line": 123,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",

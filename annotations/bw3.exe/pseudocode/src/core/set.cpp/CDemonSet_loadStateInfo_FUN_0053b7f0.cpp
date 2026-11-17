@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
@@ -20,14 +18,14 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_p
   int local_14;
   
   _fscanf(file_handle,"%*[^\n]\n");
-  _fscanf(file_handle,&DAT_005d0923);
+  _fscanf(file_handle,"%d\n");
   if ((local_24 < 1) || (3 < local_24)) {
-    _DAT_01d71de0 = "..\\core\\set.cpp";
-    _DAT_01d71de4 = 0x14ae;
+    g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
+    g_INT_01d71de4 = 0x14ae;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Set saveState info is invalid version %d");
   }
   _fscanf(file_handle,"%*[^\n]\n");
-  _fscanf(file_handle,&DAT_005d0968);
+  _fscanf(file_handle,"%d\n");
   if (this_ptr->camera_count != local_20) {
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0
               (g_CEditorToolsPtr,"The set has changed since you saved you game last.\nThere might be problems with the virtual director.");
@@ -36,7 +34,7 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_p
   pCVar2 = this_ptr;
   if (0 < local_20) {
     do {
-      _fscanf(file_handle,&DAT_005d09d2);
+      _fscanf(file_handle,"%d\n");
       if (iVar1 < this_ptr->camera_count) {
         pCVar2->cameras[0].enabled = local_1c;
       }
@@ -51,7 +49,7 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_p
       pCVar2 = this_ptr;
       if (0 < local_20) {
         do {
-          _fscanf(file_handle,&DAT_005d09de);
+          _fscanf(file_handle,"%f\n");
           if (iVar1 < this_ptr->camera_count) {
             pCVar2->cameras[0].ambient_value = local_18;
           }
@@ -68,7 +66,7 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_p
       pCVar2 = this_ptr;
       if (0 < local_20) {
         do {
-          _fscanf(file_handle,&DAT_005d09ea);
+          _fscanf(file_handle,"%d\n");
           if (iVar1 < this_ptr->camera_count) {
             pCVar2->cameras[0].camera_group = local_14;
           }

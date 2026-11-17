@@ -33,7 +33,7 @@
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 00566246
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7337
+;   double g_DOUBLE_005e7337 = 0.0000100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -131,7 +131,7 @@ section .text
     FMUL float ptr [ESP + 0xc0]         ; 00547021
     FST float ptr [ESP]                 ; 00547028
     FABS                                ; 0054702b
-    FCOMP double ptr [0x005e7337]       ; 0054702d | DAT_005e7337
+    FCOMP double ptr [0x005e7337]       ; 0054702d | g_DOUBLE_005e7337
     FNSTSW AX                           ; 00547033
     SAHF                                ; 00547035
     JBE 0x00546fbe                      ; 00547036

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 65,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 92
   },
@@ -39,13 +38,13 @@
   "globals": [
     {
       "addr": "0135ec10",
-      "name": "DAT_0135ec10",
+      "name": "g_CHAR_ARRAY_0135ead0+0x140",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01371810",
-      "name": "DAT_01371810",
+      "name": "g_CHAR_ARRAY_013716d0+0x140",
       "type": "undefined4",
       "value": null
     }
@@ -157,14 +156,6 @@
       "severity": "moderate",
       "text": "*(int *)((int)this_ptr->framebuffer_aligned +",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "(&DAT_0135ead0)[iVar3] = 0;",
-      "type": "undefined_data"
     }
   ]
 }

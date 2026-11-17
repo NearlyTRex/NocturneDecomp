@@ -9,9 +9,10 @@
 uint __cdecl engine_font_cpp_packPixelNative_FUN_004abbf0(int red,int green,int blue)
 
 {
-  if (DAT_006141c0 == 0x20) {
-    return blue << (DAT_01c3582c & 0x1f) |
-           red << (DAT_01c35814 & 0x1f) | green << (DAT_01c35820 & 0x1f);
+  if (g_INT_006141c0 == 0x20) {
+    return blue << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) |
+           red << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f) |
+           green << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
   }
   return red << 0x10 | green << 8 | blue;
 }

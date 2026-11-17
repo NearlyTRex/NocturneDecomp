@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_ptr,float delta_time,int is_weapon_active)
 
 {
@@ -76,8 +74,8 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
       local_108[(uint)bVar5 * -2 + 3] = *(float *)((int)&local_70 + (uint)bVar5 * -8 + 4);
       local_108[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
            *(float *)((int)&local_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-      if (((ABS(local_108[2]) <= (float)_DAT_005cd767) &&
-          (ABS(local_108[3]) <= (float)_DAT_005cd76f)) &&
+      if (((ABS(local_108[2]) <= (float)1.5) &&
+          (ABS(local_108[3]) <= (float)4)) &&
          ((0.0 <= local_f8 &&
           ((((int)local_f8 < 0x40c00001 && (this_ptr_00 != this_ptr)) &&
            (EVar3 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
@@ -86,8 +84,8 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
         EVar4 = (*((this_ptr_00->base).base.base.vtable._ub)->getCollisionType)
                           ((CDemonActor *)this_ptr_00,&SStack_14c);
         if ((EVar4 == COLLISION_TYPE_CYLINDER) &&
-           (fStack_150 = 1.0 - ((local_f8 - SStack_14c.cylinder_radius) + (float)_DAT_005cd777) *
-                               (float)_DAT_005cd75f, local_158 <= fStack_150)) {
+           (fStack_150 = 1.0 - ((local_f8 - SStack_14c.cylinder_radius) + (float)-1.5)
+                               * (float)0.40000000000000002, local_158 <= fStack_150)) {
           if (fStack_150 < 0.0) {
             fStack_150 = 0.0;
           }
@@ -115,7 +113,7 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
       local_74 = local_48[1];
     }
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-              (&(this_ptr->base).base.model,_DAT_01ed36e0,&local_d0);
+              (&(this_ptr->base).base.model,g_INT_01ed36e0,&local_d0);
     pCVar6 = &local_f4;
     local_f4.x = local_d0.x;
     *(uint *)((int)&local_f4 + (uint)bVar5 * -8 + 4) =
@@ -154,7 +152,7 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
       local_158 = fVar2;
     }
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-              (&(this_ptr->base).base.model,_DAT_01ed36e4,&local_58);
+              (&(this_ptr->base).base.model,g_INT_01ed36e4,&local_58);
     pCVar6 = &local_88;
     local_88.x = local_58.x;
     *(uint *)((int)&local_88 + (uint)bVar5 * -8 + 4) =
@@ -199,12 +197,12 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
   }
   local_15c = local_158 - this_ptr->arm_recoil_blend;
   if (0.0 <= local_15c) {
-    if ((0.0 < local_15c) && (delta_time / _DAT_005e34fc < local_15c)) {
-      local_15c = delta_time / _DAT_005e34fc;
+    if ((0.0 < local_15c) && (delta_time / 0.05f < local_15c)) {
+      local_15c = delta_time / 0.05f;
     }
   }
   else {
-    fVar2 = -delta_time * (1.0 / _DAT_005e3500);
+    fVar2 = -delta_time * (1.0 / 0.5f);
     if (local_15c < fVar2) {
       local_15c = fVar2;
     }

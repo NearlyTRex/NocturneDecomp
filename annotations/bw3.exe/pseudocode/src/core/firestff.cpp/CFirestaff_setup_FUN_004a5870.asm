@@ -7,7 +7,7 @@
 ; CFirestaff *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004a58a1
     PUSH 0x0                            ; 004a58a4
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004a58a6 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004a58a6 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004a58ac
     CALL core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0 ; 004a58ad
         ;   XREF to: 004a42c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0(CFireEffect * this_ptr, int variant)

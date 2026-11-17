@@ -11,7 +11,7 @@
 ;   core_script.cpp_CScript_step_FUN_00522350 at 005282b2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00616010
+;   int g_INT_00616010 = 0x1
 ;   undefined4 DAT_01cab788
 ;   undefined4 DAT_01cab789
 ;   undefined4 DAT_01cab78a
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 004a56d1 (CONDITIONAL_JUMP)  ; LAB_004a56d1
     POP EDI                             ; 004a56e9
         ;   Label: LAB_004a56e9
-    MOV dword ptr [0x00616010],EDX      ; 004a56ea | DAT_00616010
+    MOV dword ptr [0x00616010],EDX      ; 004a56ea | g_INT_00616010
     POP EDI                             ; 004a56f0
     POP ESI                             ; 004a56f1
     RET                                 ; 004a56f2

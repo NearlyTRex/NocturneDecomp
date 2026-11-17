@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap *this_ptr,int param_2,int param_3)
 
 {
@@ -20,15 +18,15 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap
   pcVar1 = (char *)malloc(param_2 * param_3);
   this_ptr->raw = pcVar1;
   if (pcVar1 == (char *)0x0) {
-    _DAT_01d046a0 = "..\\engine\\alphabit.cpp";
-    _DAT_01d046a4 = 0xb0;
+    g_CHAR_PTR_01d046a0 = "..\\engine\\alphabit.cpp";
+    g_INT_01d046a4 = 0xb0;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CAlphaBitmap::allocate - Out of memory");
   }
   pcVar1 = (char *)malloc(param_2 * param_3);
   this_ptr->opa = pcVar1;
   if (pcVar1 == (char *)0x0) {
-    _DAT_01d046a0 = "..\\engine\\alphabit.cpp";
-    _DAT_01d046a4 = 0xb3;
+    g_CHAR_PTR_01d046a0 = "..\\engine\\alphabit.cpp";
+    g_INT_01d046a4 = 0xb3;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CAlphaBitmap::allocate - Out of memory");
   }
   puVar2 = (uint *)malloc(0x400);
@@ -36,8 +34,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap
   if (puVar2 != (uint *)0x0) {
     return;
   }
-  _DAT_01d046a0 = "..\\engine\\alphabit.cpp";
-  _DAT_01d046a4 = 0xb6;
+  g_CHAR_PTR_01d046a0 = "..\\engine\\alphabit.cpp";
+  g_INT_01d046a4 = 0xb6;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CAlphaBitmap::allocate - Out of memory");
   return;
 }

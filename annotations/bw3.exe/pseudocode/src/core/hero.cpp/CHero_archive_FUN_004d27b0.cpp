@@ -52,7 +52,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004d27b0(CHero *this_ptr)
                 ((CDemonActor **)&this_ptr->pushed_object,"pushedObject");
     }
     if (g_CHeroClassVersion == 10) {
-      core_actor_cpp_archiveInteger_FUN_0040b8b0(&local_c,&DAT_005c4bbf);
+      core_actor_cpp_archiveInteger_FUN_0040b8b0(&local_c,"keys");
     }
     if ((7 < g_CHeroClassVersion) && (g_CHeroClassVersion < 0xb)) {
       iVar1 = 0;
@@ -74,15 +74,15 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004d27b0(CHero *this_ptr)
                 (&this_ptr->is_wearing_goggles,"isWearingGoggles");
     }
     if (5 < g_CHeroClassVersion) {
-      if (DAT_007df9b8 == 1) {
-        core_inv_cpp_CInventory_load_FUN_004dc750(&this_ptr->inventory,DAT_007df9b4);
+      if (g_INT_007df9b8 == 1) {
+        core_inv_cpp_CInventory_load_FUN_004dc750(&this_ptr->inventory,g_FILE_PTR_007df9b4);
       }
       else {
-        core_inv_cpp_CInventory_save_FUN_004dc560(&this_ptr->inventory,DAT_007df9b4);
+        core_inv_cpp_CInventory_save_FUN_004dc560(&this_ptr->inventory,g_FILE_PTR_007df9b4);
       }
     }
     if (0xd < g_CHeroClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->mana,&DAT_005c4bfd);
+      core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->mana,"mana");
       core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->bullets,"bullets");
     }
     if (0xe < g_CHeroClassVersion) {

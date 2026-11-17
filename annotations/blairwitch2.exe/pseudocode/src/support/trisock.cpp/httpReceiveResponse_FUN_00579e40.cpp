@@ -60,7 +60,7 @@ int __cdecl support_trisock_cpp_httpReceiveResponse_FUN_00579e40(CSocket *socket
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  sscanf(acStack_8fc,(char *)0x5ed15d);
+  sscanf(acStack_8fc,"%*[^ ]%d %255[^\n]");
   (*status_callback)();
   return 0;
 }

@@ -11,7 +11,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_00559220(CIniFile *ini_file)
 {
   int iVar1;
   int iVar2;
-  uint *puVar3;
+  char *pcVar3;
   char *pcVar4;
   SSoundDeviceInfo SStack_3b4;
   SRecordingDeviceInfo SStack_29c;
@@ -26,14 +26,14 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_00559220(CIniFile *ini_file)
   float fStack_18;
   float fStack_14;
   
-  puVar3 = &DAT_00604268;
+  pcVar3 = g_CHAR_ARRAY_00604268;
   pcVar4 = local_194;
   for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar4 = *puVar3;
-    puVar3 = puVar3 + 1;
+    *(uint *)pcVar4 = *(uint *)pcVar3;
+    pcVar3 = pcVar3 + 4;
     pcVar4 = pcVar4 + 4;
   }
-  (**(code **)((int)ini_file->vtable + 4))(ini_file,"@DeviceName" + 1,local_194,0x100);
+  (**(code **)((int)ini_file->vtable + 4))(ini_file,"DeviceName",local_194,0x100);
   sound_sndmain_cpp_closeSoundDevice_FUN_005587e0();
   for (iVar2 = 0; iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00558430(), iVar2 < iVar1;
       iVar2 = iVar2 + 1) {
@@ -60,15 +60,15 @@ LAB_0055931a:
       engine_ini_cpp_CIniFile_getFloat_FUN_004d8cd0(ini_file,"MaxSwLatency",&fStack_2c);
       sound_sndmain_cpp_setMaxSwSoundLatency_FUN_005591b0(fStack_2c);
       sound_sndmain_cpp_getAudioFormat_FUN_00558330(&iStack_28,&iStack_24,&iStack_20);
-      engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,&DAT_005d3dfb,&iStack_28);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,"Bits",&iStack_28);
       engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,"Channels",&iStack_24);
-      engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,&DAT_005d3e09,&iStack_20);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,"Hz",&iStack_20);
       sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(iStack_28,iStack_24,iStack_20);
       iStack_30 = sound_sndmain_cpp_isSoundMuted_FUN_00556750();
-      engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,&DAT_005d3e0c,&iStack_30);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,"Mute",&iStack_30);
       iVar2 = 0;
       sound_sndmain_cpp_setSoundMuted_FUN_00556760(iStack_30);
-      if (0 < DAT_00604224) {
+      if (0 < g_INT_00604224) {
         do {
           _sprintf(acStack_94,"SfxChannel%dEnabled");
           iStack_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(iVar2);
@@ -80,7 +80,7 @@ LAB_0055931a:
           engine_ini_cpp_CIniFile_getFloat_FUN_004d8cd0(ini_file,acStack_94,&fStack_18);
           sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(iVar2,fStack_18);
           iVar2 = iVar2 + 1;
-        } while (iVar2 < DAT_00604224);
+        } while (iVar2 < g_INT_00604224);
       }
       return;
     }

@@ -15,7 +15,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490 at 004a5526
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5dc8
+;   TerminatedCString s_pg_005d5dc8
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004a32e0
@@ -56,7 +56,7 @@ section .text
     CMP EBX,ECX                         ; 004a3781
     JL 0x004a3763                       ; 004a3783
         ;   XREF to: 004a3763 (CONDITIONAL_JUMP)  ; LAB_004a3763
-    PUSH 0x5d5dc8                       ; 004a3785 | DAT_005d5dc8
+    PUSH 0x5d5dc8                       ; 004a3785 | = "<pg>"
         ;   Label: LAB_004a3785
     PUSH EBP                            ; 004a378a
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a378b

@@ -15,8 +15,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_VirtualQuery_005c8668 = 001c9280
-;   undefined1 DAT_0061f287
-;   undefined2 DAT_0061f289
+;   byte g_BYTE_0061f287 = 0x0
+;   short g_SHORT_0061f289 = 0x0
 ;
 ; Called Functions:
 ;   VirtualQuery
@@ -38,7 +38,7 @@ section .text
     CALL dword ptr CS:[0x5c8668]        ; 005c2db5 | PTR_VirtualQuery_005c8668
     MOV EDX,dword ptr [ESP]             ; 005c2dbc
     ADD EDX,dword ptr [ESP + 0xc]       ; 005c2dbf
-    MOV CX,word ptr [0x0061f289]        ; 005c2dc3 | DAT_0061f289
+    MOV CX,word ptr [0x0061f289]        ; 005c2dc3 | g_SHORT_0061f289
     MOV EAX,dword ptr [ESP + 0x4]       ; 005c2dca
     CMP CX,0x8000                       ; 005c2dce
     JNC 0x005c2ddc                      ; 005c2dd3
@@ -49,7 +49,7 @@ section .text
     JC 0x005c2dee                       ; 005c2ddc
         ;   XREF to: 005c2dee (CONDITIONAL_JUMP)  ; LAB_005c2dee
         ;   Label: LAB_005c2ddc
-    CMP byte ptr [0x0061f287],0x4       ; 005c2dde | DAT_0061f287
+    CMP byte ptr [0x0061f287],0x4       ; 005c2dde | g_BYTE_0061f287
     JNC 0x005c2dee                      ; 005c2de5
         ;   XREF to: 005c2dee (CONDITIONAL_JUMP)  ; LAB_005c2dee
     ADD EAX,0x12000                     ; 005c2de7

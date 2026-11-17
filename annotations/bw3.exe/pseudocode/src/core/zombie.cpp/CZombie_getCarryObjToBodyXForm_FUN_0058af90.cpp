@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_0058af90(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -106,10 +104,10 @@ CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00
       afStack_58[(uint)bVar7 * -2] = afStack_f4[(uint)bVar7 * -2];
       afStack_58[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
            afStack_f4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      fStack_110 = fStack_5c * _DAT_005d8743;
-      afStack_10c[0] = afStack_58[0] * _DAT_005d8743;
-      afStack_10c[1] = afStack_58[1] * _DAT_005d8743;
-      CStack_98.x = fStack_5c * _DAT_005d8743;
+      fStack_110 = fStack_5c * 0.5f;
+      afStack_10c[0] = afStack_58[0] * 0.5f;
+      afStack_10c[1] = afStack_58[1] * 0.5f;
+      CStack_98.x = fStack_5c * 0.5f;
       *(float *)((int)&CStack_98 + (uint)bVar7 * -8 + 4) = afStack_10c[(uint)bVar7 * -2];
       *(float *)((int)&CStack_98 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4 + 4) =
            afStack_10c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
@@ -128,7 +126,7 @@ CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00
     }
     else {
       iVar2 = _strnicmp
-                        ((this_ptr->base).base.model.model_name,&DAT_005d873f,3);
+                        ((this_ptr->base).base.model.model_name,"new",3);
       if (iVar2 == 0) {
         CStack_74.z = -0.986001;
         CStack_74.y = 0.950253;
@@ -140,7 +138,7 @@ CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00
         CStack_74.x = 0.155;
       }
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-                ((CMatrix3x4f *)&stack0xfffffdf4,(CVector3f *)&DAT_02cfd900,&CStack_74);
+                ((CMatrix3x4f *)&stack0xfffffdf4,&g_CVector3f_02cfd900,&CStack_74);
       (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffdf4);
       pfVar4 = afStack_164;
       pfVar6 = &fStack_17c;
@@ -160,14 +158,14 @@ CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00
       *(uint *)((int)&CStack_98 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 4) * 4 + 4) =
            *(uint *)((int)&CStack_d4 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8);
       core_actor_cpp_CVector3f_ctor_FUN_0040d220(this_ptr_01);
-      CStack_80.x = fStack_8c * _DAT_005d8743;
-      CStack_80.y = fStack_88 * _DAT_005d8743;
-      CStack_80.z = fStack_84 * _DAT_005d8743;
-      afStack_58[2] = fStack_8c * _DAT_005d8743;
+      CStack_80.x = fStack_8c * 0.5f;
+      CStack_80.y = fStack_88 * 0.5f;
+      CStack_80.z = fStack_84 * 0.5f;
+      afStack_58[2] = fStack_8c * 0.5f;
       afStack_58[(uint)bVar7 * -2 + 3] = *(float *)((int)&CStack_80 + (uint)bVar7 * -8 + 4);
       afStack_58[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
            *(float *)((int)&CStack_80 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8);
-      fStack_48 = fStack_174 + (float)_DAT_005d8747;
+      fStack_48 = fStack_174 + (float)0.40000000000000002;
       CStack_c8.x = afStack_58[2];
       *(float *)((int)&CStack_c8 + (uint)bVar7 * -8 + 4) = afStack_58[(uint)bVar7 * -2 + 3];
       *(float *)((int)&CStack_c8 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4 + 4) =

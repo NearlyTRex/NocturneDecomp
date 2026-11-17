@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d367d
 ;   TerminatedCString s_setNextSfxUserData_inval_005d3692
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02ceb91c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_02ceb91c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -33,7 +33,7 @@ section .text
     CMP EBX,0x2                         ; 00555e39
     JGE 0x00555e5d                      ; 00555e3c
         ;   XREF to: 00555e5d (CONDITIONAL_JUMP)  ; LAB_00555e5d
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555e3e | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555e3e | g_INT_02ceb91c
         ;   Label: LAB_00555e3e
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555e44
     SUB EAX,EDX                         ; 00555e4b
@@ -47,8 +47,8 @@ section .text
     MOV EDX,0x5d367d                    ; 00555e5e | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xe6e                       ; 00555e63
     PUSH 0x5d3692                       ; 00555e68 | = "setNextSfxUserData - invalid user dat..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00555e6d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00555e73 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00555e6d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00555e73 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555e79
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00555e7e

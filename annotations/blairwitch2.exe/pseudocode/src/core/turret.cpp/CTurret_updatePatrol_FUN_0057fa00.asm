@@ -16,8 +16,8 @@
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 at 0057f6ef
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ed81c
-;   undefined4 DAT_005ed824
+;   double g_DOUBLE_005ed81c = 0.333333333333333
+;   float g_FLOAT_005ed824 = 25
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -68,7 +68,7 @@ section .text
     JZ 0x0057fa2c                       ; 0057fa4d
         ;   XREF to: 0057fa2c (CONDITIONAL_JUMP)  ; LAB_0057fa2c
     FLD float ptr [ESP + 0x88]          ; 0057fa4f
-    FMUL double ptr [0x005ed81c]        ; 0057fa56 | DAT_005ed81c
+    FMUL double ptr [0x005ed81c]        ; 0057fa56 | g_DOUBLE_005ed81c
     SUB ESP,0x4                         ; 0057fa5c
     LEA EBX,[EBP + 0x9a8]               ; 0057fa5f
     FSTP float ptr [ESP]                ; 0057fa65
@@ -163,7 +163,7 @@ section .text
     FSUB float ptr [ESP + 0x50]         ; 0057fb73
     FMUL ST0                            ; 0057fb77
     FADDP                               ; 0057fb79
-    FCOMP float ptr [0x005ed824]        ; 0057fb7b | DAT_005ed824
+    FCOMP float ptr [0x005ed824]        ; 0057fb7b | g_FLOAT_005ed824
     FNSTSW AX                           ; 0057fb81
     SAHF                                ; 0057fb83
     JA 0x0057fa2c                       ; 0057fb84

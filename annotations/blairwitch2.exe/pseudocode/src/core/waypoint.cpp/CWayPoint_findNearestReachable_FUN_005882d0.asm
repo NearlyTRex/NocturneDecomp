@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDemonSetInstance.waypoint_count
-;   undefined4 DAT_0265fb64
+;   char[4] g_CHAR_ARRAY_0265fb64
 ;
 ; Called Functions:
 ;   core_waypoint.cpp_CWayPoint_isReachable_FUN_00587c30
@@ -84,15 +84,15 @@ section .text
     RET                                 ; 0058833a
     MOV ESI,0x1                         ; 0058833b
         ;   Label: LAB_0058833b
-    MOV dword ptr [0x0265fb64],EBX      ; 00588340 | DAT_0265fb64
+    MOV dword ptr [0x0265fb64],EBX      ; 00588340 | g_CHAR_ARRAY_0265fb64
     MOV dword ptr [EBX + 0x6b4],0x0     ; 00588346
     DEC ESI                             ; 00588350
         ;   Label: LAB_00588350
     LEA EBX,[ESI*0x4 + 0x0]             ; 00588351
     PUSH EBX                            ; 00588358
     PUSH 0x265fb68                      ; 00588359
-    MOV EAX,[0x0265fb64]                ; 0058835e | DAT_0265fb64
-    PUSH 0x265fb64                      ; 00588363 | DAT_0265fb64
+    MOV EAX,[0x0265fb64]                ; 0058835e | g_CHAR_ARRAY_0265fb64
+    PUSH 0x265fb64                      ; 00588363 | g_CHAR_ARRAY_0265fb64
     MOV dword ptr [ESP + 0x18],EAX      ; 00588368
     CALL crt_string.c_memmove_FUN_005ba1f0 ; 0058836c
         ;   XREF to: 005ba1f0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005ba1f0(void * dest, void * src, SIZE_T n)
@@ -125,7 +125,7 @@ section .text
         ;   XREF to: 005883d6 (CONDITIONAL_JUMP)  ; LAB_005883d6
     LEA EBX,[ESI*0x4 + 0x0]             ; 005883c5
     XOR EAX,EAX                         ; 005883cc
-    CMP ECX,dword ptr [EAX + 0x265fb64] ; 005883ce | DAT_0265fb64
+    CMP ECX,dword ptr [EAX + 0x265fb64] ; 005883ce | g_CHAR_ARRAY_0265fb64
         ;   Label: LAB_005883ce
     JNZ 0x0058843e                      ; 005883d4
         ;   XREF to: 0058843e (CONDITIONAL_JUMP)  ; LAB_0058843e
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 005883e4 (CONDITIONAL_JUMP)  ; LAB_005883e4
     ADD EBP,0x4                         ; 005883da
     INC ESI                             ; 005883dd
-    MOV dword ptr [EBP + 0x265fb60],ECX ; 005883de | DAT_0265fb64
+    MOV dword ptr [EBP + 0x265fb60],ECX ; 005883de | g_CHAR_ARRAY_0265fb64
     MOV ECX,dword ptr [ESP + 0x14]      ; 005883e4
         ;   Label: LAB_005883e4
     MOV EDX,dword ptr [ESP + 0xc]       ; 005883e8

@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bcd19
-;   undefined4 DAT_005bcd21
-;   undefined4 DAT_005deecc
-;   undefined4 DAT_005fc5a0
-;   undefined4 DAT_006045f8
+;   double g_DOUBLE_005bcd19 = 5
+;   float g_FLOAT_005bcd21 = 0.5
+;   float g_FLOAT_005deecc = 3.5
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -58,9 +58,9 @@ section .text
     JA 0x0047b2e6                       ; 0047b2b9
         ;   XREF to: 0047b2e6 (CONDITIONAL_JUMP)  ; LAB_0047b2e6
     FLD float ptr [EBP + 0x18]          ; 0047b2bb
-    FMUL double ptr [0x005bcd19]        ; 0047b2be | DAT_005bcd19
+    FMUL double ptr [0x005bcd19]        ; 0047b2be | g_DOUBLE_005bcd19
     FMUL double ptr [ESP]               ; 0047b2c4
-    FDIV float ptr [0x005deecc]         ; 0047b2c7 | DAT_005deecc
+    FDIV float ptr [0x005deecc]         ; 0047b2c7 | g_FLOAT_005deecc
     SUB ESP,0x4                         ; 0047b2cd
     FSTP float ptr [ESP]                ; 0047b2d0
     CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 0047b2d3
@@ -79,7 +79,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x5a4]     ; 0047b2e6
         ;   Label: LAB_0047b2e6
     PUSH ECX                            ; 0047b2ec
-    MOV ESI,dword ptr [0x006045f8]      ; 0047b2ed | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 0047b2ed | g_CSound_PTR_006045f8
     PUSH ESI                            ; 0047b2f3
     MOV dword ptr [EBX + 0x594],0x0     ; 0047b2f4
     CALL core_sound.cpp_CSound_killSound_FUN_00560b00 ; 0047b2fe
@@ -118,7 +118,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0047b378
     MOVSD ES:EDI,ESI                    ; 0047b379
     MOVSD ES:EDI,ESI                    ; 0047b37a
-    FLD float ptr [0x005bcd21]          ; 0047b37b | DAT_005bcd21
+    FLD float ptr [0x005bcd21]          ; 0047b37b | g_FLOAT_005bcd21
     FLD float ptr [ESP + 0x80]          ; 0047b381
     FMUL ST1                            ; 0047b388
     FLD float ptr [ESP + 0x84]          ; 0047b38a
@@ -176,7 +176,7 @@ section .text
     PUSH 0x0                            ; 0047b444
     LEA EAX,[ESP + 0x88]                ; 0047b446
     PUSH EAX                            ; 0047b44d
-    MOV EDX,dword ptr [0x005fc5a0]      ; 0047b44e | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 0047b44e | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 0047b454
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 0047b455
         ;   XREF to: 004a23c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

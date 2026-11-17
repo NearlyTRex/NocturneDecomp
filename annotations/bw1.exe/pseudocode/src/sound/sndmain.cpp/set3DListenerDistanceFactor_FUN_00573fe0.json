@@ -2,18 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 56,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 30
   },
   "cross_references": [
@@ -40,20 +36,20 @@
   "globals": [
     {
       "addr": "00623304",
-      "name": "DAT_00623304",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00623304",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "00623308",
-      "name": "DAT_00623308",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00623308",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "02c80650",
-      "name": "DAT_02c80650",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02c80650",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -145,30 +141,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_00623304",
-      "severity": "mild",
-      "text": "DAT_00623304 = distance_in_feet;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c80650 + 0x28))(_DAT_02c80650,distance_in_feet);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

@@ -8,10 +8,10 @@
 ; SMRGLPrimitivePoly * Stack[0x8]:4   poly
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35e6c
-;   undefined4 DAT_01c38b54
-;   undefined4 DAT_01c38b58
+;   int g_INT_006141c0 = 0x8
+;   void* g_PTR_01c35e6c
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54
+;   int g_INT_01c38b58
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
@@ -73,9 +73,9 @@ section .text
         ;   XREF to: 0046af07 (CONDITIONAL_JUMP)  ; LAB_0046af07
     XOR ESI,ESI                         ; 0046aeb3
     MOV ECX,0x46e936                    ; 0046aeb5
-    MOV dword ptr [0x01c38b54],ESI      ; 0046aeba | DAT_01c38b54
-    MOV dword ptr [0x01c38b58],ESI      ; 0046aec0 | DAT_01c38b58
-    MOV dword ptr [0x01c35e6c],ECX      ; 0046aec6 | DAT_01c35e6c
+    MOV dword ptr [0x01c38b54],ESI      ; 0046aeba | g_BIT_INTEGER32_01c38b54
+    MOV dword ptr [0x01c38b58],ESI      ; 0046aec0 | g_INT_01c38b58
+    MOV dword ptr [0x01c35e6c],ECX      ; 0046aec6 | g_PTR_01c35e6c
     LEA EAX,[EAX]                       ; 0046aecc
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0046aed0
         ;   Label: LAB_0046aed0
@@ -105,17 +105,17 @@ section .text
         ;   XREF to: 0046aee6 (CONDITIONAL_JUMP)  ; LAB_0046aee6
     JMP 0x0046ae55                      ; 0046af02
         ;   XREF to: 0046ae55 (UNCONDITIONAL_JUMP)  ; LAB_0046ae55
-    CMP dword ptr [0x006141c0],0x20     ; 0046af07 | DAT_006141c0
+    CMP dword ptr [0x006141c0],0x20     ; 0046af07 | g_INT_006141c0
         ;   Label: LAB_0046af07
     JNZ 0x0046af81                      ; 0046af0e
         ;   XREF to: 0046af81 (CONDITIONAL_JUMP)  ; LAB_0046af81
-    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046af10 | DAT_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55b3b1 ; 0046af10 | g_PTR_01c35e6c
     MOV EDI,0x327                       ; 0046af1a
         ;   Label: LAB_0046af1a
     XOR EBP,EBP                         ; 0046af1f
     MOV EAX,dword ptr [EBX + 0x20]      ; 0046af21
-    MOV dword ptr [0x01c38b58],EBP      ; 0046af24 | DAT_01c38b58
-    MOV dword ptr [0x01c38b54],EDI      ; 0046af2a | DAT_01c38b54
+    MOV dword ptr [0x01c38b58],EBP      ; 0046af24 | g_INT_01c38b58
+    MOV dword ptr [0x01c38b54],EDI      ; 0046af2a | g_BIT_INTEGER32_01c38b54
     TEST EAX,EAX                        ; 0046af30
     JNZ 0x0046aed0                      ; 0046af32
         ;   XREF to: 0046aed0 (CONDITIONAL_JUMP)  ; LAB_0046aed0
@@ -149,7 +149,7 @@ section .text
         ;   XREF to: 0046af45 (CONDITIONAL_JUMP)  ; LAB_0046af45
     JMP 0x0046aed0                      ; 0046af7c
         ;   XREF to: 0046aed0 (UNCONDITIONAL_JUMP)  ; LAB_0046aed0
-    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046af81 | DAT_01c35e6c
+    MOV dword ptr [0x01c35e6c],0x55bb93 ; 0046af81 | g_PTR_01c35e6c
         ;   Label: LAB_0046af81
     JMP 0x0046af1a                      ; 0046af8b
         ;   XREF to: 0046af1a (UNCONDITIONAL_JUMP)  ; LAB_0046af1a

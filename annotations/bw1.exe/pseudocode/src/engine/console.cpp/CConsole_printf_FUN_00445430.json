@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 96,
+    "complexity_score": 71,
     "cross_reference_count": 102,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 130
@@ -672,14 +671,14 @@
   "globals": [
     {
       "addr": "005d6cf7",
-      "name": "DAT_005d6cf7",
-      "type": "undefined4",
+      "name": "s_at_005d6cf7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d6cfa",
-      "name": "DAT_005d6cfa",
-      "type": "undefined4",
+      "name": "s_s_005d6cfa",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -910,22 +909,6 @@
       "severity": "moderate",
       "text": "local_14 = &stack0x0000000c;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005d6cf7",
-      "severity": "mild",
-      "text": "file = _fopen(\"console.txt\",&DAT_005d6cf7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005d6cfa",
-      "severity": "mild",
-      "text": "_fprintf(file,&DAT_005d6cfa);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

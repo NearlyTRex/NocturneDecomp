@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00591474 = 00591594
-;   undefined4 DAT_005f70c1
+;   double g_DOUBLE_005f70c1 = 0.990000000000000
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
@@ -110,7 +110,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 005915a0
     FLD float ptr [ESP + 0x8]           ; 005915a4
     ADD ESP,0x8                         ; 005915a8
-    FCOMP double ptr [0x005f70c1]       ; 005915ab | DAT_005f70c1
+    FCOMP double ptr [0x005f70c1]       ; 005915ab | g_DOUBLE_005f70c1
     FNSTSW AX                           ; 005915b1
     SAHF                                ; 005915b3
     JC 0x005915f7                       ; 005915b4

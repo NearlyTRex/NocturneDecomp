@@ -18,12 +18,12 @@
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea786
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c37cd
+;   TerminatedCString s_rb_005c37cd
 ;   TerminatedCString s_blairhero_pod_005c37d0
-;   undefined4 DAT_005c37de
-;   undefined4 DAT_005c37df
+;   char g_CHAR_005c37de = \x00
+;   TerminatedCString s_rt_005c37df
 ;   TerminatedCString s_pod_ini_005c37e2
-;   undefined4 DAT_005c37ea
+;   TerminatedCString s_Game_005c37ea
 ;   TerminatedCString s_system_bw3_ini_005c37ef
 ;   TerminatedCString s_Act1Code_005c37fe
 ;   TerminatedCString s_The_Rustin_Parr_Investig_005c3807
@@ -64,9 +64,9 @@ section .text
     PUSH EBP                            ; 004be8d3
     SUB ESP,0x310                       ; 004be8d4
     MOV EBX,dword ptr [ESP + 0x324]     ; 004be8da
-    PUSH 0x5c37cd                       ; 004be8e1 | DAT_005c37cd
+    PUSH 0x5c37cd                       ; 004be8e1 | = "rb"
     PUSH 0x5c37d0                       ; 004be8e6 | = "blairhero.pod"
-    PUSH 0x5c37de                       ; 004be8eb | DAT_005c37de
+    PUSH 0x5c37de                       ; 004be8eb | g_CHAR_005c37de
     CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004be8f0
         ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004be8f5
@@ -85,12 +85,12 @@ section .text
         ;   XREF to: 004c4d10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetMusic_FUN_004c4d10(CGame * this_ptr)
     ADD ESP,0x4                         ; 004be93d
     XOR ESI,ESI                         ; 004be940
-    PUSH 0x5c37df                       ; 004be942 | DAT_005c37df
-    MOV EBP,dword ptr [0x01c5b0e0]      ; 004be947 | DAT_01c5b0e0
-    MOV EAX,[0x01549aa8]                ; 004be94d | DAT_01549aa8
+    PUSH 0x5c37df                       ; 004be942 | = "rt"
+    MOV EBP,dword ptr [0x01c5b0e0]      ; 004be947 | g_CBitFont_PTR_01c5b0e0
+    MOV EAX,[0x01549aa8]                ; 004be94d | g_CBitFont_PTR_01549aa8
     PUSH 0x5c37e2                       ; 004be952 | = "pod.ini"
     MOV dword ptr [EBX + 0x258],0x0     ; 004be957
-    MOV [0x01c5b0e0],EAX                ; 004be961 | DAT_01c5b0e0
+    MOV [0x01c5b0e0],EAX                ; 004be961 | g_CBitFont_PTR_01c5b0e0
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 004be966
         ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 004be96b
@@ -110,7 +110,7 @@ section .text
     MOV ESI,EDX                         ; 004be98c
     TEST EDI,EDI                        ; 004be98e
         ;   Label: LAB_004be98e
-    PUSH 0x5c37ea                       ; 004be990 | DAT_005c37ea
+    PUSH 0x5c37ea                       ; 004be990 | = "Game"
     PUSH 0x5c37ef                       ; 004be995 | = "system\\bw3.ini"
     LEA EAX,[ESP + 0x8]                 ; 004be99a
     PUSH EAX                            ; 004be99e
@@ -152,16 +152,16 @@ section .text
         ;   XREF to: 004beb7a (CONDITIONAL_JUMP)  ; LAB_004beb7a
     XOR AH,AH                           ; 004bea1a
     XOR EDX,EDX                         ; 004bea1c
-    MOV byte ptr [0x01d229f0],AH        ; 004bea1e | DAT_01d229f0
-    MOV dword ptr [0x01d22af4],EDX      ; 004bea24 | DAT_01d22af4
-    MOV dword ptr [0x01d22af0],EDX      ; 004bea2a | DAT_01d22af0
+    MOV byte ptr [0x01d229f0],AH        ; 004bea1e | g_CHAR_ARRAY_01d229f0
+    MOV dword ptr [0x01d22af4],EDX      ; 004bea24 | g_FLOAT_01d22af4
+    MOV dword ptr [0x01d22af0],EDX      ; 004bea2a | g_INT_01d22af0
     MOV ESI,dword ptr [0x005fe4b0]      ; 004bea30 | g_CFieldNotesPtr
         ;   Label: LAB_004bea30
     PUSH ESI                            ; 004bea36
     CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0 ; 004bea37
         ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004bea3c
-    MOV EDI,dword ptr [0x005fba60]      ; 004bea3f | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 004bea3f | g_CEventList_PTR_005fba60
     PUSH EDI                            ; 004bea45
     CALL core_event.cpp_CEventList_resetGameFlags_FUN_00494880 ; 004bea46
         ;   XREF to: 00494880 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_00494880(CEventList * this_ptr)
@@ -181,13 +181,13 @@ section .text
     PUSH EDI                            ; 004bea78
     MOV AL,byte ptr [ESI]               ; 004bea79
         ;   Label: LAB_004bea79
-    MOV byte ptr [EDI],AL               ; 004bea7b | DAT_01d225c8 | DAT_01d225ca
+    MOV byte ptr [EDI],AL               ; 004bea7b | g_CHAR_ARRAY_01d225c8 | g_CHAR_ARRAY_01d225c8+2
     CMP AL,0x0                          ; 004bea7d
     JZ 0x004bea91                       ; 004bea7f
         ;   XREF to: 004bea91 (CONDITIONAL_JUMP)  ; LAB_004bea91
     MOV AL,byte ptr [ESI + 0x1]         ; 004bea81
     ADD ESI,0x2                         ; 004bea84
-    MOV byte ptr [EDI + 0x1],AL         ; 004bea87 | DAT_01d225c9 | DAT_01d225cb
+    MOV byte ptr [EDI + 0x1],AL         ; 004bea87 | g_CHAR_ARRAY_01d225c8+1 | g_CHAR_ARRAY_01d225c8+3
     ADD EDI,0x2                         ; 004bea8a
     CMP AL,0x0                          ; 004bea8d
     JNZ 0x004bea79                      ; 004bea8f
@@ -208,13 +208,13 @@ section .text
     PUSH ESI                            ; 004beaaf
     LEA EAX,[ESP + 0x208]               ; 004beab0
     PUSH EAX                            ; 004beab7
-    MOV ECX,dword ptr [0x00600530]      ; 004beab8 | DAT_00600530
+    MOV ECX,dword ptr [0x00600530]      ; 004beab8 | g_CDemonMission_PTR_00600530
     PUSH ECX                            ; 004beabe
     CALL core_mission.cpp_CDemonMission_load_FUN_004f5bc0 ; 004beabf
         ;   XREF to: 004f5bc0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission * this_ptr, char * mission_filename, int load_flags)
     ADD ESP,0xc                         ; 004beac4
     PUSH 0x0                            ; 004beac7
-    MOV ESI,dword ptr [0x00600530]      ; 004beac9 | DAT_00600530
+    MOV ESI,dword ptr [0x00600530]      ; 004beac9 | g_CDemonMission_PTR_00600530
     PUSH ESI                            ; 004beacf
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_004f7880 ; 004bead0
         ;   XREF to: 004f7880 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_004f7880(CDemonMission * this_ptr, CCharacter * existing_hero)
@@ -222,12 +222,12 @@ section .text
     TEST EAX,EAX                        ; 004bead8
     JZ 0x004beb1f                       ; 004beada
         ;   XREF to: 004beb1f (CONDITIONAL_JUMP)  ; LAB_004beb1f
-    MOV EDI,dword ptr [0x00600530]      ; 004beadc | DAT_00600530
+    MOV EDI,dword ptr [0x00600530]      ; 004beadc | g_CDemonMission_PTR_00600530
     PUSH EDI                            ; 004beae2
     CALL core_mission.cpp_CDemonMission_startMission_FUN_004f7590 ; 004beae3
         ;   XREF to: 004f7590 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004f7590(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004beae8
-    MOV EAX,[0x00600530]                ; 004beaeb | DAT_00600530
+    MOV EAX,[0x00600530]                ; 004beaeb | g_CDemonMission_PTR_00600530
     PUSH EAX                            ; 004beaf0
     CALL core_mission.cpp_CDemonMission_run_FUN_004f72a0 ; 004beaf1
         ;   XREF to: 004f72a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_run_FUN_004f72a0(CDemonMission * this_ptr)
@@ -249,7 +249,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004beb21
         ;   Label: LAB_004beb21
     PUSH EAX                            ; 004beb25
-    MOV dword ptr [0x01c5b0e0],EBP      ; 004beb26 | DAT_01c5b0e0
+    MOV dword ptr [0x01c5b0e0],EBP      ; 004beb26 | g_CBitFont_PTR_01c5b0e0
     CALL engine_ini.cpp_CIniFile_dtor_FUN_004d8a50 ; 004beb2c
         ;   XREF to: 004d8a50 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_dtor_FUN_004d8a50(CIniFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004beb31

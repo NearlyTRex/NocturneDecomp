@@ -15,7 +15,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0 at 004ac7ef
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0d210
+;   int g_INT_01d0d210
 ;   undefined4 SNotesSection_ARRAY_01d0d214[0].first_page
 ;   undefined4 SNotesSection_ARRAY_01d0d214[0].page_count
 ;   undefined4 SNotesSection_ARRAY_01d0d214[0].tab_x
@@ -24,7 +24,7 @@
 ;   undefined4 SNotesSection_ARRAY_01d0d214[1].page_count
 ;   undefined4 SNotesSection_ARRAY_01d0d214[1].tab_x
 ;   undefined4 SNotesSection_ARRAY_01d0d214[1].tab_y
-;   undefined4 DAT_01d19ba8
+;   int g_INT_01d19ba8
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     PUSH EDI                            ; 004a80d2
     PUSH EBP                            ; 004a80d3
     SUB ESP,0x8                         ; 004a80d4
-    MOV ECX,dword ptr [0x01d0d210]      ; 004a80d7 | DAT_01d0d210
+    MOV ECX,dword ptr [0x01d0d210]      ; 004a80d7 | g_INT_01d0d210
     XOR EDX,EDX                         ; 004a80dd
     TEST ECX,ECX                        ; 004a80df
     JLE 0x004a815f                      ; 004a80e1
@@ -52,7 +52,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ESI       ; 004a8108
     MOV ESI,dword ptr [ECX + 0x1d19bd0] ; 004a810c
     ADD ESI,EBP                         ; 004a8112
-    MOV EDI,dword ptr [0x01d19ba8]      ; 004a8114 | DAT_01d19ba8
+    MOV EDI,dword ptr [0x01d19ba8]      ; 004a8114 | g_INT_01d19ba8
     MOV dword ptr [ESP],ESI             ; 004a811a
     MOV ESI,dword ptr [EAX + 0x140]     ; 004a811d | SNotesSection_ARRAY_01d0d214[0].first_page | SNotesSection_ARRAY_01d0d214[1].first_page
     CMP EDI,ESI                         ; 004a8123
@@ -77,7 +77,7 @@ section .text
     CMP EBX,dword ptr [ESP]             ; 004a8147
     JL 0x004a8173                       ; 004a814a
         ;   XREF to: 004a8173 (CONDITIONAL_JUMP)  ; LAB_004a8173
-    MOV EBX,dword ptr [0x01d0d210]      ; 004a814c | DAT_01d0d210
+    MOV EBX,dword ptr [0x01d0d210]      ; 004a814c | g_INT_01d0d210
         ;   Label: LAB_004a814c
     ADD EAX,0x2e4                       ; 004a8152
     INC EDX                             ; 004a8157

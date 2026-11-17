@@ -10,7 +10,7 @@
 ;   core_menu.cpp_getKeyDisplayName_FUN_004eaa60 at 004eac9f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7cb1
+;   TerminatedCString s_Esc_005d7cb1
 ;   undefined4 DAT_005d7cb5
 ;   undefined4 DAT_005d7cb7
 ;   undefined4 DAT_005d7cb9
@@ -24,7 +24,7 @@
 ;   undefined4 DAT_005d7cc9
 ;   undefined4 DAT_005d7ccb
 ;   TerminatedCString s_BackSpace_005d7ccd
-;   undefined4 DAT_005d7cd7
+;   TerminatedCString s_Tab_005d7cd7
 ;   ... and 87 more
 ;
 ; *****************************************************************************
@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 00581628 (CONDITIONAL_JUMP)  ; LAB_00581628
     JA 0x005813a4                       ; 0058139c
         ;   XREF to: 005813a4 (CONDITIONAL_JUMP)  ; LAB_005813a4
-    MOV EAX,0x5d7cb1                    ; 0058139e | DAT_005d7cb1
+    MOV EAX,0x5d7cb1                    ; 0058139e | = "Esc"
     RET                                 ; 005813a3
     MOV EAX,0x5d7cb5                    ; 005813a4 | DAT_005d7cb5
         ;   Label: LAB_005813a4
@@ -83,7 +83,7 @@ section .text
     MOV EAX,0x5d7ccb                    ; 005813d4 | DAT_005d7ccb
         ;   Label: LAB_005813d4
     RET                                 ; 005813d9
-    MOV EAX,0x5d7cd7                    ; 005813da | DAT_005d7cd7
+    MOV EAX,0x5d7cd7                    ; 005813da | = "Tab"
         ;   Label: LAB_005813da
     RET                                 ; 005813df
     MOV EAX,0x5d7cdb                    ; 005813e0 | DAT_005d7cdb
@@ -194,7 +194,7 @@ section .text
     MOV EAX,0x5d7d7a                    ; 005814b2 | DAT_005d7d7a
         ;   Label: LAB_005814b2
     RET                                 ; 005814b7
-    MOV EAX,0x5d7d7d                    ; 005814b8 | DAT_005d7d7d
+    MOV EAX,0x5d7d7d                    ; 005814b8 | = "F10"
         ;   Label: LAB_005814b8
     RET                                 ; 005814bd
     MOV EAX,0x5d7d87                    ; 005814be | = "ScrollLock"
@@ -227,10 +227,10 @@ section .text
     MOV EAX,0x5d7df2                    ; 005814f4 | = "NumPad."
         ;   Label: LAB_005814f4
     RET                                 ; 005814f9
-    MOV EAX,0x5d7dfa                    ; 005814fa | DAT_005d7dfa
+    MOV EAX,0x5d7dfa                    ; 005814fa | = "F11"
         ;   Label: LAB_005814fa
     RET                                 ; 005814ff
-    MOV EAX,0x5d7dfe                    ; 00581500 | DAT_005d7dfe
+    MOV EAX,0x5d7dfe                    ; 00581500 | = "F12"
         ;   Label: LAB_00581500
     RET                                 ; 00581505
     MOV EAX,0x5d7e02                    ; 00581506 | = "NumPadEnter"
@@ -248,28 +248,28 @@ section .text
     MOV EAX,0x5d7e29                    ; 0058151e | = "NumLock"
         ;   Label: LAB_0058151e
     RET                                 ; 00581523
-    MOV EAX,0x5d7e31                    ; 00581524 | DAT_005d7e31
+    MOV EAX,0x5d7e31                    ; 00581524 | = "Home"
         ;   Label: LAB_00581524
     RET                                 ; 00581529
-    MOV EAX,0x5d7e39                    ; 0058152a | DAT_005d7e39
+    MOV EAX,0x5d7e39                    ; 0058152a | = "PgUp"
         ;   Label: LAB_0058152a
     RET                                 ; 0058152f
-    MOV EAX,0x5d7e3e                    ; 00581530 | DAT_005d7e3e
+    MOV EAX,0x5d7e3e                    ; 00581530 | = "Left"
         ;   Label: LAB_00581530
     RET                                 ; 00581535
     MOV EAX,0x5d7e43                    ; 00581536 | = "Right"
         ;   Label: LAB_00581536
     RET                                 ; 0058153b
-    MOV EAX,0x5d7e49                    ; 0058153c | DAT_005d7e49
+    MOV EAX,0x5d7e49                    ; 0058153c | = "End"
         ;   Label: LAB_0058153c
     RET                                 ; 00581541
-    MOV EAX,0x5d7e4d                    ; 00581542 | DAT_005d7e4d
+    MOV EAX,0x5d7e4d                    ; 00581542 | = "Down"
         ;   Label: LAB_00581542
     RET                                 ; 00581547
-    MOV EAX,0x5d7e57                    ; 00581548 | DAT_005d7e57
+    MOV EAX,0x5d7e57                    ; 00581548 | = "Ins"
         ;   Label: LAB_00581548
     RET                                 ; 0058154d
-    MOV EAX,0x5d7e5b                    ; 0058154e | DAT_005d7e5b
+    MOV EAX,0x5d7e5b                    ; 0058154e | = "Del"
         ;   Label: LAB_0058154e
     RET                                 ; 00581553
     MOV EAX,0x5d7e5f                    ; 00581554 | = "Left Mouse Button"
@@ -340,7 +340,7 @@ section .text
     CMP EDX,0x150                       ; 005815fc
     JBE 0x00581542                      ; 00581602
         ;   XREF to: 00581542 (CONDITIONAL_JUMP)  ; LAB_00581542
-    MOV EAX,0x5d7e52                    ; 00581608 | DAT_005d7e52
+    MOV EAX,0x5d7e52                    ; 00581608 | = "PgDn"
     RET                                 ; 0058160d
     JBE 0x00581548                      ; 0058160e
         ;   XREF to: 00581548 (CONDITIONAL_JUMP)  ; LAB_00581548

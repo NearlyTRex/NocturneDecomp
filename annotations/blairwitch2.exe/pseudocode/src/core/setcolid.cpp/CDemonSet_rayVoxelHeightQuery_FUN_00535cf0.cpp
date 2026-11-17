@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0(CDemonSet *this_ptr,CVector3f *position)
 
 {
@@ -27,8 +25,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0(CDemo
     local_2c.y = position->y;
     local_2c.z = position->z;
   }
-  local_20.y = local_20.y + _DAT_005e5dad;
-  local_2c.y = local_2c.y + _DAT_005e5db1;
+  local_20.y = local_20.y + -1.0f;
+  local_2c.y = local_2c.y + 150.0f;
   local_10 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
                        (&g_CDemonRaytraceInstance,&local_20,&local_2c,&this_ptr->collision_normal,
                         &this_ptr->ground_type);

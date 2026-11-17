@@ -19,7 +19,7 @@ int __cdecl core_doc_cpp_CDoc_tryThrowDynamite_FUN_0045d1f0(CDoc *this_ptr)
      (uVar2 & 4) != 0)) {
     return 0;
   }
-  fVar1 = 0x41200000;
+  fVar1 = 10.0f;
   if ((this_ptr->weapon != (CWeapon *)0x0) &&
      (this_ptr->weapon->weapon_type == WEAPON_TYPE_DYNAMITE)) {
     this_ptr->action_pending = 3;

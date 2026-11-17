@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7d13
+;   double g_DOUBLE_005d7d13 = 0.5
 ;
 ; *****************************************************************************
 
@@ -57,7 +57,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004586a6
     MOVSD ES:EDI,ESI                    ; 004586a7
     FLD float ptr [ESP + 0x48]          ; 004586a8
-    FMUL double ptr [0x005d7d13]        ; 004586ac | DAT_005d7d13
+    FMUL double ptr [0x005d7d13]        ; 004586ac | g_DOUBLE_005d7d13
     FLD1                                ; 004586b2
     FADDP                               ; 004586b4
     FSTP float ptr [ESP + 0x4c]         ; 004586b6

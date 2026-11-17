@@ -2,20 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 245,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
-    "suspect_count": 14,
+    "pseudocode_lines": 86,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strchr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 264
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -74,32 +74,32 @@
     },
     {
       "addr": "005cb9e1",
-      "name": "DAT_005cb9e1",
-      "type": "undefined1",
+      "name": "s_RAW_005cb9e1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cb9e2",
-      "name": "DAT_005cb9e2",
-      "type": "undefined1",
+      "name": "s_RAW_005cb9e1+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cb9e3",
-      "name": "DAT_005cb9e3",
-      "type": "undefined1",
+      "name": "s_RAW_005cb9e1+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cb9e4",
-      "name": "DAT_005cb9e4",
-      "type": "undefined1",
+      "name": "s_RAW_005cb9e1+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cb9e6",
-      "name": "DAT_005cb9e6",
-      "type": "undefined4",
+      "name": "s_wb_005cb9e6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -116,74 +116,74 @@
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c5faec",
-      "name": "DAT_01c5faec",
-      "type": "undefined4",
+      "name": "g_ARRAY_PTR_01c5faec",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c5faf0",
-      "name": "DAT_01c5faf0",
+      "name": "g_ARRAY_PTR_01c5faec[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6af74",
-      "name": "DAT_01c6af74",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af78",
-      "name": "DAT_01c6af78",
-      "type": "undefined4",
+      "name": "g_INT_01c6af78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af80",
-      "name": "DAT_01c6af80",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af84",
-      "name": "DAT_01c6af84",
-      "type": "undefined4",
+      "name": "g_INT_01c6af84",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6af8c",
-      "name": "DAT_01c6af8c",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af90",
-      "name": "DAT_01c6af90",
-      "type": "undefined4",
+      "name": "g_INT_01c6af90",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -358,96 +358,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(ushort **)((int)g_ARRAY_PTR_01c5faec",
+      "severity": "moderate",
+      "text": "puVar6 = *(ushort **)((int)g_ARRAY_PTR_01c5faec + local_18);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005cb9e1",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005cb9e1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005cb9e6",
-      "severity": "mild",
-      "text": "file = _fopen(local_70,&DAT_005cb9e6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (0 < DAT_005fba1c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_01c5faec",
-      "severity": "mild",
-      "text": "puVar6 = *(ushort **)(&DAT_01c5faec + local_18);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (0 < DAT_005fba18) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_01c6af74",
-      "severity": "mild",
-      "text": "local_20 = (uint)(uVar2 >> (DAT_01c6af74 & 0x1f)) * _DAT_01c6af78 & 0xff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_01c6af80",
-      "severity": "mild",
-      "text": "local_1c = (uint)(uVar2 >> (DAT_01c6af80 & 0x1f)) * _DAT_01c6af84 & 0xff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_01c6af8c",
-      "severity": "mild",
-      "text": "uVar4 = (uint)(uVar2 >> (DAT_01c6af8c & 0x1f)) * _DAT_01c6af90;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "} while (iVar3 < DAT_005fba18);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "} while (local_14 < DAT_005fba1c);",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ARRAY_PTR_01c5faec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)g_ARRAY_PTR_01c5faec",
+      "severity": "moderate",
+      "text": "puVar6 = *(ushort **)((int)g_ARRAY_PTR_01c5faec + local_18);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -455,7 +383,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 49,
+      "line": 47,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -463,7 +391,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

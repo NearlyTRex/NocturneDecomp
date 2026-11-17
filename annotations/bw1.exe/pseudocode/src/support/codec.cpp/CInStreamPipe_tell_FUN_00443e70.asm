@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005d6aec
 ;   TerminatedCString s_CInStreamPipe_tell_not_a_005d6b01
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -23,8 +23,8 @@ section .text
         ;   Label: support_codec.cpp_CInStreamPipe_tell_FUN_00443e70
     MOV ECX,0x831                       ; 00443e75
     PUSH 0x5d6b01                       ; 00443e7a | = "CInStreamPipe::tell - not allowed"
-    MOV dword ptr [0x01d1d400],EDX      ; 00443e7f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00443e85 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00443e7f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00443e85 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00443e8b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     MOV EAX,0xffffffff                  ; 00443e90

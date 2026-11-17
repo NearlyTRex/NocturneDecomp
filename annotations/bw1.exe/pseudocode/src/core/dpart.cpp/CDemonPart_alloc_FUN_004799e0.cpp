@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004799e0(CDemonPart *this_ptr)
 
 {
@@ -21,15 +19,15 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004799e0(CDemonPart *this_ptr)
     this_ptr->vertex_positions = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
       _sprintf(acStack_108,"CDemonPart::alloc - Out of vertex %d memory!");
-      _DAT_01d1d404 = 0x8b;
-      _DAT_01d1d400 = "..\\core\\dpart.cpp";
+      g_INT_01d1d404 = 0x8b;
+      g_CHAR_PTR_01d1d400 = "..\\core\\dpart.cpp";
       core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_108);
     }
     pCVar1 = (CVector3i *)calloc(this_ptr->vertex_count,0xc);
     this_ptr->vertex_normals = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
-      _DAT_01d1d400 = "..\\core\\dpart.cpp";
-      _DAT_01d1d404 = 0x91;
+      g_CHAR_PTR_01d1d400 = "..\\core\\dpart.cpp";
+      g_INT_01d1d404 = 0x91;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonPart::alloc - Out of normal memory!");
     }
   }
@@ -37,8 +35,8 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004799e0(CDemonPart *this_ptr)
     pSVar2 = (SSurfacePlane *)calloc(this_ptr->face_count,0x20);
     this_ptr->face_data = pSVar2;
     if (pSVar2 == (SSurfacePlane *)0x0) {
-      _DAT_01d1d400 = "..\\core\\dpart.cpp";
-      _DAT_01d1d404 = 0x99;
+      g_CHAR_PTR_01d1d400 = "..\\core\\dpart.cpp";
+      g_INT_01d1d404 = 0x99;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonPart::alloc - Out of face memory!");
       return;
     }

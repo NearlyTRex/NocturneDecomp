@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 
 {
@@ -16,8 +14,8 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(
   
   iVar1 = (this_ptr->course).len;
   if (iVar1 < 1) {
-    _DAT_01d046a0 = "..\\core\\frankgen.cpp";
-    _DAT_01d046a4 = 0x1dc;
+    g_CHAR_PTR_01d046a0 = "..\\core\\frankgen.cpp";
+    g_INT_01d046a4 = 0x1dc;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CFrankenstienMachine::setCourseFrame - no course!");
   }
   local_20 = ((float)iVar1 * (this_ptr->master_frame - start_frame)) / (end_frame - start_frame);

@@ -16,7 +16,6 @@
 /* WARNING: Removing unreachable block (ram,0x00502b6e) */
 /* WARNING: Removing unreachable block (ram,0x00502b70) */
 /* WARNING: Removing unreachable block (ram,0x00502b7d) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_motion_cpp_CMotionList_load_FUN_00502820(CMotionList *this_ptr,_FILE *file_handle)
 
@@ -33,19 +32,19 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_00502820(CMotionList *this_ptr
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(file_handle,&DAT_005df720);
-  _DAT_01d046a0 = "..\\core\\motion.cpp";
-  _DAT_01d046a4 = 0x80;
+  _fscanf(file_handle,"%d\n");
+  g_CHAR_PTR_01d046a0 = "..\\core\\motion.cpp";
+  g_INT_01d046a4 = 0x80;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Error reading motion list.");
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(file_handle,&DAT_005df7d8);
+  _fscanf(file_handle,"%d\n");
   iVar1 = 0;
   if (0 < this_ptr->state_count) {
     do {
-      _fscanf(file_handle,&DAT_005df7dc);
+      _fscanf(file_handle,"%s\n");
       iVar1 = iVar1 + 1;
     } while (iVar1 < this_ptr->state_count);
   }
@@ -53,7 +52,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_00502820(CMotionList *this_ptr
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(file_handle,&DAT_005df7e0);
+  _fscanf(file_handle,"%d\n");
   local_1c = 0;
   if (0 < this_ptr->motion_count) {
     local_20 = this_ptr->motions;
@@ -84,13 +83,13 @@ LAB_00502933:
         iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
-      _fscanf(file_handle,&DAT_005df814);
+      _fscanf(file_handle,"%d\n");
       if (0 < local_20->transition_count) {
         pSVar2 = (SMotionTransition *)malloc(local_20->transition_count * 0x18);
         local_20->transitions = pSVar2;
         if (pSVar2 == (SMotionTransition *)0x0) {
-          _DAT_01d046a0 = "..\\core\\motion.cpp";
-          _DAT_01d046a4 = 0xb1;
+          g_CHAR_PTR_01d046a0 = "..\\core\\motion.cpp";
+          g_INT_01d046a4 = 0xb1;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
         }
         iVar1 = 0;
@@ -110,7 +109,7 @@ LAB_00502933:
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
       iVar1 = 0;
-      _fscanf(file_handle,&DAT_005df84c);
+      _fscanf(file_handle,"%d\n");
       if (0 < local_20->signal_count) {
         do {
           iVar1 = iVar1 + 1;

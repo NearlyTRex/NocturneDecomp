@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20(CAudioRecPuzzle *this_ptr,int knob)
 
 {
@@ -23,7 +21,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20(CAudioRecPu
       }
     } while (iVar1 != this_ptr->selected_button);
   }
-  if (DAT_007c397c < _DAT_01c4353c) {
+  if (g_INT_007c397c < g_INT_01c4353c) {
     iVar1 = this_ptr->knob_positions[knob] + 1;
     this_ptr->knob_positions[knob] = iVar1;
     if (iVar1 < 5) {
@@ -47,7 +45,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20(CAudioRecPu
       this_ptr->dial_sfx = uVar2;
     }
   }
-  DAT_007c397c = _DAT_01c4353c;
+  g_INT_007c397c = g_INT_01c4353c;
   if ((this_ptr->knob_positions[knob] < 4) && (0 < this_ptr->knob_positions[knob])) {
     this_ptr->cursor_index = 1;
     return;

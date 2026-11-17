@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   page
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0d210
+;   int g_INT_01d0d210
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     PUSH EBX                            ; 004a8080
         ;   Label: core_flashlit.cpp_findSectionForPage_FUN_004a8080
     PUSH ESI                            ; 004a8081
-    MOV ESI,dword ptr [0x01d0d210]      ; 004a8082 | DAT_01d0d210
+    MOV ESI,dword ptr [0x01d0d210]      ; 004a8082 | g_INT_01d0d210
     MOV EBX,dword ptr [ESP + 0xc]       ; 004a8088
     XOR ECX,ECX                         ; 004a808c
     TEST ESI,ESI                        ; 004a808e
@@ -40,13 +40,13 @@ section .text
         ;   XREF to: 004a8097 (CONDITIONAL_JUMP)  ; LAB_004a8097
     MOV EAX,0xffffffff                  ; 004a80b5
         ;   Label: LAB_004a80b5
-    MOV dword ptr [0x01d0d210],ESI      ; 004a80ba | DAT_01d0d210
+    MOV dword ptr [0x01d0d210],ESI      ; 004a80ba | g_INT_01d0d210
     POP ESI                             ; 004a80c0
     POP EBX                             ; 004a80c1
     RET                                 ; 004a80c2
     MOV EAX,ECX                         ; 004a80c3
         ;   Label: LAB_004a80c3
-    MOV dword ptr [0x01d0d210],ESI      ; 004a80c5 | DAT_01d0d210
+    MOV dword ptr [0x01d0d210],ESI      ; 004a80c5 | g_INT_01d0d210
     POP ESI                             ; 004a80cb
     POP EBX                             ; 004a80cc
     RET                                 ; 004a80cd

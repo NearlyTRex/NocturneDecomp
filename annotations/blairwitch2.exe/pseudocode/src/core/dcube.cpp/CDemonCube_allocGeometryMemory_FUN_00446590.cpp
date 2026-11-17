@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00446590(CDemonCube *this_ptr)
 
 {
@@ -19,29 +17,29 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00446590(CDemonCu
   pCVar1 = operator_new_array(this_ptr->vertex_count * 0xc);
   this_ptr->vertex_buffer = pCVar1;
   if (pCVar1 == (CVector3f *)0x0) {
-    _DAT_01d046a0 = "..\\core\\dcube.cpp";
-    _DAT_01d046a4 = 0x600;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dcube.cpp";
+    g_INT_01d046a4 = 0x600;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCube::allocMemory - Out of vertex memory");
   }
   pCVar2 = operator_new_array(this_ptr->triangle_count << 5);
   this_ptr->triangle_buffer = pCVar2;
   if (pCVar2 == (CDemonCubeTriangle *)0x0) {
-    _DAT_01d046a0 = "..\\core\\dcube.cpp";
-    _DAT_01d046a4 = 0x602;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dcube.cpp";
+    g_INT_01d046a4 = 0x602;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCube::allocMemory - Out of tri memory");
   }
   pvVar3 = malloc(this_ptr->triangle_count);
   this_ptr->ground_type_memory = pvVar3;
   if (pvVar3 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\core\\dcube.cpp";
-    _DAT_01d046a4 = 0x604;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dcube.cpp";
+    g_INT_01d046a4 = 0x604;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCube::allocMemory - Out of ground type memory");
   }
   pSVar4 = (SVoxelGrid *)malloc(0x40);
   this_ptr->voxel_buffer1 = pSVar4;
   if (pSVar4 == (SVoxelGrid *)0x0) {
-    _DAT_01d046a0 = "..\\core\\dcube.cpp";
-    _DAT_01d046a4 = 0x606;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dcube.cpp";
+    g_INT_01d046a4 = 0x606;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCube::allocMemory - Out of voxel memory");
   }
   pSVar4 = (SVoxelGrid *)malloc(0x40);
@@ -49,8 +47,8 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00446590(CDemonCu
   if (pSVar4 != (SVoxelGrid *)0x0) {
     return;
   }
-  _DAT_01d046a0 = "..\\core\\dcube.cpp";
-  _DAT_01d046a4 = 0x608;
+  g_CHAR_PTR_01d046a0 = "..\\core\\dcube.cpp";
+  g_INT_01d046a4 = 0x608;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCube::allocMemory - Out of voxel memory");
   return;
 }

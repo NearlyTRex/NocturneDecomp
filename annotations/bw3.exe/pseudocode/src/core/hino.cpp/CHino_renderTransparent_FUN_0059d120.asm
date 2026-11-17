@@ -7,10 +7,10 @@
 ; CHino *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9e74
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01d8e40c
+;   double g_DOUBLE_005d9e74 = 4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   int g_INT_01d8e40c
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@ section .text
     JNC 0x0059d1ec                      ; 0059d142
         ;   XREF to: 0059d1ec (CONDITIONAL_JUMP)  ; LAB_0059d1ec
     FLD double ptr [ESP + 0x8]          ; 0059d148
-    FMUL double ptr [0x005d9e74]        ; 0059d14c | DAT_005d9e74
+    FMUL double ptr [0x005d9e74]        ; 0059d14c | g_DOUBLE_005d9e74
     MOV EDX,dword ptr [EBX + 0xd06c]    ; 0059d152
     FSTP double ptr [ESP]               ; 0059d158
     TEST EDX,EDX                        ; 0059d15b
@@ -150,21 +150,21 @@ section .text
     MOV ECX,dword ptr [EBX + 0xd05c]    ; 0059d271
         ;   Label: LAB_0059d271
     PUSH ECX                            ; 0059d277
-    MOV ESI,dword ptr [0x005f2afc]      ; 0059d278 | DAT_005f2afc
-    PUSH ESI                            ; 0059d27e | DAT_01bdd7e4
+    MOV ESI,dword ptr [0x005f2afc]      ; 0059d278 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ESI                            ; 0059d27e | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [EBX + 0x27bc],0x1    ; 0059d27f
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0 ; 0059d289
         ;   XREF to: 0046d4c0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0059d28e
     PUSH 0x0                            ; 0059d291
-    MOV EDI,dword ptr [0x005f2afc]      ; 0059d293 | DAT_005f2afc
-    PUSH EDI                            ; 0059d299 | DAT_01bdd7e4
+    MOV EDI,dword ptr [0x005f2afc]      ; 0059d293 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDI                            ; 0059d299 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0 ; 0059d29a
         ;   XREF to: 0046d4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 0059d29f
     PUSH 0x1                            ; 0059d2a2
-    MOV EAX,[0x005f2afc]                ; 0059d2a4 | DAT_005f2afc
-    PUSH EAX                            ; 0059d2a9 | DAT_01bdd7e4
+    MOV EAX,[0x005f2afc]                ; 0059d2a4 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EAX                            ; 0059d2a9 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120 ; 0059d2aa
         ;   XREF to: 0046e120 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(CDemonRenderer * this_ptr, int enable_advanced_mode)
     ADD ESP,0x8                         ; 0059d2af
@@ -177,11 +177,11 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 ; 0059d2c4
         ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 0059d2c9
-    MOV EDX,dword ptr [0x005f2afc]      ; 0059d2cc | DAT_005f2afc
-    PUSH EDX                            ; 0059d2d2 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 0059d2cc | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 0059d2d2 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0 ; 0059d2d3
         ;   XREF to: 0046e4e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(CDemonRenderer * this_ptr)
-    MOV ECX,dword ptr [0x01d8e40c]      ; 0059d2d8 | DAT_01d8e40c
+    MOV ECX,dword ptr [0x01d8e40c]      ; 0059d2d8 | g_INT_01d8e40c
     ADD ESP,0x4                         ; 0059d2de
     TEST ECX,ECX                        ; 0059d2e1
     JZ 0x0059d2ef                       ; 0059d2e3

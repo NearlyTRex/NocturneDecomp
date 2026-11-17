@@ -22,10 +22,10 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004197c3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d44b1
-;   undefined4 DAT_005d44b9
-;   undefined4 DAT_005d44c1
-;   undefined4 DAT_005d44c9
+;   double g_DOUBLE_005d44b1 = 1.5
+;   double g_DOUBLE_005d44b9 = 3
+;   double g_DOUBLE_005d44c1 = 0.200000000000000
+;   double g_DOUBLE_005d44c9 = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -94,20 +94,20 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004199ec
     FLD float ptr [EAX + 0xccc]         ; 004199ef
     FST double ptr [ESP]                ; 004199f5
-    FCOMP double ptr [0x005d44c9]       ; 004199f8 | DAT_005d44c9
+    FCOMP double ptr [0x005d44c9]       ; 004199f8 | g_DOUBLE_005d44c9
     FNSTSW AX                           ; 004199fe
     SAHF                                ; 00419a00
     JNC 0x00419a10                      ; 00419a01
         ;   XREF to: 00419a10 (CONDITIONAL_JUMP)  ; LAB_00419a10
     FLD double ptr [ESP]                ; 00419a03
-    FMUL double ptr [0x005d44c1]        ; 00419a06 | DAT_005d44c1
+    FMUL double ptr [0x005d44c1]        ; 00419a06 | g_DOUBLE_005d44c1
     FSTP float ptr [ESP + 0x8]          ; 00419a0c
     FLD float ptr [ESP + 0x8]           ; 00419a10
         ;   Label: LAB_00419a10
     FLD ST0                             ; 00419a14
-    FMUL double ptr [0x005d44b1]        ; 00419a16 | DAT_005d44b1
+    FMUL double ptr [0x005d44b1]        ; 00419a16 | g_DOUBLE_005d44b1
     FXCH                                ; 00419a1c
-    FMUL double ptr [0x005d44b9]        ; 00419a1e | DAT_005d44b9
+    FMUL double ptr [0x005d44b9]        ; 00419a1e | g_DOUBLE_005d44b9
     ADD EBX,0xc                         ; 00419a24
     FXCH                                ; 00419a27
     FSTP float ptr [ESP + 0x2c]         ; 00419a29

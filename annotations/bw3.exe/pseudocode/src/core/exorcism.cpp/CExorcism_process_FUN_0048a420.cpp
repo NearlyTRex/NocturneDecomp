@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_ptr,float delta_time)
 
 {
@@ -112,8 +110,8 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
   }
   if (this_ptr->is_firing == 0) {
     if (this_ptr->was_firing_prev_frame != 0) {
-      sound_sndmain_cpp_killSfx_FUN_00556be0(_DAT_01c6e35c);
-      _DAT_01c6e35c = 0;
+      sound_sndmain_cpp_killSfx_FUN_00556be0(g_UINT_01c6e35c);
+      g_UINT_01c6e35c = 0;
     }
   }
   else {
@@ -138,7 +136,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
     }
     if (unaff_ESI == 0) {
       core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                (0x01C73654,&CStack_19c,(CVector3f *)&DAT_02cfd900,1,0,2);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_19c,&g_CVector3f_02cfd900,1,0,2);
       iVar8 = 7;
       iVar3 = 4;
     }
@@ -147,7 +145,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
       iVar3 = 3;
     }
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-              (0x01C73654,&CStack_19c,(CVector3f *)&DAT_02cfd900,1,0,iVar8);
+              (g_CFireEffect_PTR_005fc5a0,&CStack_19c,&g_CVector3f_02cfd900,1,0,iVar8);
     this_ptr->zap_timer = this_ptr->zap_timer - in_stack_00000018;
     if (this_ptr->zap_timer <= 0.0) {
       if (&CStack_180.z != &CStack_1d4.z) {
@@ -165,7 +163,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         CStack_34.y = afStack_134[2];
         afStack_28[0] = CStack_124.x;
         pCVar7 = &CStack_18c;
-        CStack_34.z = afStack_134[3] + _DAT_005bdd4e;
+        CStack_34.z = afStack_134[3] + 20.0f;
         CStack_18c.x = afStack_134[2];
         *(float *)((int)&CStack_18c + (uint)bVar6 * -8 + 4) = afStack_28[(uint)bVar6 * -2 + -1];
         *(float *)((int)&CStack_18c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
@@ -199,10 +197,10 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         *(float *)((int)&stack0xfffffe28 + (uint)bVar6 * -8) = afStack_1a8[(uint)bVar6 * -2];
         *(float *)((int)&CStack_1d4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
              afStack_1a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-        afStack_1a8[2] = fStack_1dc * _DAT_005bdd52;
-        CStack_19c.x = fStack_1d8 * _DAT_005bdd52;
-        CStack_19c.y = CStack_1d4.x * _DAT_005bdd52;
-        fStack_74 = fStack_1dc * _DAT_005bdd52;
+        afStack_1a8[2] = fStack_1dc * 0.5f;
+        CStack_19c.x = fStack_1d8 * 0.5f;
+        CStack_19c.y = CStack_1d4.x * 0.5f;
+        fStack_74 = fStack_1dc * 0.5f;
         afStack_88[(uint)bVar6 * -2 + 6] = *(float *)((int)&CStack_19c + (uint)bVar6 * -8);
         afStack_88[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
              *(float *)((int)&CStack_19c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
@@ -224,7 +222,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
           CStack_15c.z = afStack_88[3];
           uStack_150 = uStack_78;
         }
-        CStack_15c.z = fStack_a0 * _DAT_005bdd52 + CStack_15c.z;
+        CStack_15c.z = fStack_a0 * 0.5f + CStack_15c.z;
       }
       fStack_b0 = CStack_15c.y - CStack_174.y;
       CStack_ac.x = CStack_15c.z - CStack_174.z;
@@ -238,9 +236,9 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         fStack_1b8 = afStack_164[0];
         fStack_1b4 = afStack_164[1];
       }
-      fStack_1bc = fStack_1bc * _DAT_005bdd56;
-      fStack_1b8 = fStack_1b8 * _DAT_005bdd56;
-      fStack_1b4 = fStack_1b4 * _DAT_005bdd56;
+      fStack_1bc = fStack_1bc * 0.33f;
+      fStack_1b8 = fStack_1b8 * 0.33f;
+      fStack_1b4 = fStack_1b4 * 0.33f;
       fStack_114 = CStack_174.x + fStack_1bc;
       afStack_110[0] = CStack_174.y + fStack_1b8;
       afStack_110[1] = CStack_174.z + fStack_1b4;
@@ -262,7 +260,8 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
       auStack_108._4_4_ = (float)auStack_108._4_4_ + fStack_18;
       auStack_108._8_4_ = (float)auStack_108._8_4_ + fStack_14;
       core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                (0x01C73654,&CStack_174,(CVector3f *)auStack_108,0,0.25,1.25,iVar3,0.25,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_174,(CVector3f *)auStack_108,0,0.25,1.25,iVar3,
+                 0.25,0xffff);
       fStack_60 = CStack_15c.x - CStack_174.x;
       fStack_5c = CStack_15c.y - CStack_174.y;
       fStack_58 = CStack_15c.z - CStack_174.z;
@@ -275,9 +274,9 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         fStack_1b8 = fStack_68;
         fStack_1b4 = fStack_64;
       }
-      fStack_1bc = fStack_1bc * _DAT_005bdd5a;
-      fStack_1b8 = fStack_1b8 * _DAT_005bdd5a;
-      fStack_1b4 = fStack_1b4 * _DAT_005bdd5a;
+      fStack_1bc = fStack_1bc * 0.66f;
+      fStack_1b8 = fStack_1b8 * 0.66f;
+      fStack_1b4 = fStack_1b4 * 0.66f;
       fStack_1ec = CStack_174.x + fStack_1bc;
       fStack_1e8 = CStack_174.y + fStack_1b8;
       fStack_1e4 = CStack_174.z + fStack_1b4;
@@ -297,9 +296,10 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
       CStack_e4.y = CStack_e4.y + fStack_14;
       CStack_e4.z = CStack_e4.z + fStack_18;
       core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                (0x01C73654,(CVector3f *)auStack_108,&CStack_e4,0,1.25,1.25,iVar3,0.25,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,(CVector3f *)auStack_108,&CStack_e4,0,1.25,1.25,iVar3,
+                 0.25,0xffff);
       core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                (0x01C73654,&CStack_e4,&CStack_15c,0,1.25,0.25,iVar3,0.25,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_e4,&CStack_15c,0,1.25,0.25,iVar3,0.25,0xffff);
       this_ptr->zap_timer = 0.05;
       core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045aae0
                 (this_ptr->globes,(CVector3f *)auStack_108);
@@ -338,7 +338,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         fVar1 = 1.4013e-45;
         CStack_40.z = (pCVar2->base).location.position.z;
         pCVar7 = &CStack_34;
-        CStack_40.y = (pCVar2->base).location.position.y + _DAT_005bdd62;
+        CStack_40.y = (pCVar2->base).location.position.y + 3.0f;
         auStack_13c._0_4_ = CStack_40.x;
         *(uint *)(auStack_13c + (uint)bVar6 * -8 + 4) =
              *(uint *)((int)&CStack_40 + (uint)bVar6 * -8 + 4);
@@ -348,10 +348,10 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         CStack_34.y = 3.0;
         CStack_34.z = 0.0;
         core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                  (0x01C73654,(CVector3f *)auStack_13c,pCVar7,(int)fVar1,(int)flame_type,
-                   (int)flame_style);
+                  (g_CFireEffect_PTR_005fc5a0,(CVector3f *)auStack_13c,pCVar7,(int)fVar1,
+                   (int)flame_type,(int)flame_style);
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                  (0x02CF5680,(CDemonActor *)this_ptr,"wp_exorcism_success.wav",
+                  (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_exorcism_success.wav",
                    &(this_ptr->base).base.location.position);
         this_ptr->target = (CCharacter *)0x0;
       }

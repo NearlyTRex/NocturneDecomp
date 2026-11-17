@@ -15,9 +15,9 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0 at 0046b5ef
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c38b78
-;   undefined4 DAT_01c38b7c
-;   undefined4 DAT_01c38b80
+;   int g_INT_01c38b78
+;   int g_INT_01c38b7c
+;   int g_INT_01c38b80
 ;
 ; *****************************************************************************
 
@@ -27,12 +27,12 @@ section .text
         ;   Label: engine_matrix.c_getCameraOrigin_FUN_004ea3b0
     SUB ESP,0xc                         ; 004ea3b1
     MOV EAX,ESI                         ; 004ea3b4
-    MOV EDX,dword ptr [0x01c38b78]      ; 004ea3b6 | DAT_01c38b78
+    MOV EDX,dword ptr [0x01c38b78]      ; 004ea3b6 | g_INT_01c38b78
     MOV dword ptr [ESP],EDX             ; 004ea3bc
-    MOV EDX,dword ptr [0x01c38b7c]      ; 004ea3bf | DAT_01c38b7c
+    MOV EDX,dword ptr [0x01c38b7c]      ; 004ea3bf | g_INT_01c38b7c
     MOV EDI,ESI                         ; 004ea3c5
     MOV dword ptr [ESP + 0x4],EDX       ; 004ea3c7
-    MOV EDX,dword ptr [0x01c38b80]      ; 004ea3cb | DAT_01c38b80
+    MOV EDX,dword ptr [0x01c38b80]      ; 004ea3cb | g_INT_01c38b80
     MOV ESI,ESP                         ; 004ea3d1
     MOV dword ptr [ESP + 0x8],EDX       ; 004ea3d3
     MOVSD ES:EDI,ESI                    ; 004ea3d7

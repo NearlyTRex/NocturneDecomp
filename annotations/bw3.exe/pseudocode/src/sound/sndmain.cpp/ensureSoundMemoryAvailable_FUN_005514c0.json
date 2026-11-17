@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 99,
+    "complexity_score": 68,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 4,
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 134
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -58,14 +56,14 @@
   "globals": [
     {
       "addr": "0060424c",
-      "name": "DAT_0060424c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0060424c",
+      "type": "int",
+      "value": "0x400000"
     },
     {
       "addr": "02cebc20",
-      "name": "DAT_02cebc20",
-      "type": "undefined4",
+      "name": "g_INT_02cebc20",
+      "type": "int",
       "value": null
     },
     {
@@ -199,16 +197,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(int *)((int)g_SfxSamples",
       "severity": "moderate",
       "text": "if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar1 + -8) != 0) {",
@@ -216,19 +206,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
       "match": "(int *)((int)g_SfxSamples",
       "severity": "moderate",
       "text": "iVar3 = iVar3 + *(int *)((int)g_SfxSamples[0].loop_destinations + iVar1 + 0x2c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0060424c",
-      "severity": "mild",
-      "text": "if (iVar3 + requested_bytes <= DAT_0060424c) {",
-      "type": "undefined_data"
     }
   ]
 }

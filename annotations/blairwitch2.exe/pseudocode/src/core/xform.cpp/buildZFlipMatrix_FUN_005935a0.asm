@@ -23,7 +23,7 @@
 ;   core_mimic.cpp_CMimic_updatePose_FUN_004f0a50 at 004f0c52
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eed8e
+;   float g_FLOAT_005eed8e = 2
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x30                        ; 005935a1
     MOV EAX,ESI                         ; 005935a4
     FLD float ptr [ESP + 0x38]          ; 005935a6
-    FMUL float ptr [0x005eed8e]         ; 005935aa | DAT_005eed8e
+    FMUL float ptr [0x005eed8e]         ; 005935aa | g_FLOAT_005eed8e
     MOV EDX,0x3f800000                  ; 005935b0
     MOV EDI,0xbf800000                  ; 005935b5
     XOR ECX,ECX                         ; 005935ba

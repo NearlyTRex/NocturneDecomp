@@ -15,16 +15,16 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8a87
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c3a88
-;   undefined4 DAT_005c3a8c
+;   TerminatedCString s_sav_005c3a88
+;   TerminatedCString s_sav_005c3a8c
 ;   TerminatedCString s_sav_005c3a91
-;   undefined4 DAT_005c3a97
+;   TerminatedCString s_save_005c3a97
 ;   TerminatedCString s_Select_file_to_load_005c3a9c
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   undefined4 DAT_01d225c8
-;   undefined4 DAT_01d225c9
-;   undefined4 DAT_01d225ca
-;   undefined4 DAT_01d225cb
+;   char[256] g_CHAR_ARRAY_01d225c8
+;   undefined4 g_CHAR_ARRAY_01d225c8+1
+;   undefined4 g_CHAR_ARRAY_01d225c8+2
+;   undefined4 g_CHAR_ARRAY_01d225c8+3
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260
@@ -48,12 +48,12 @@ section .text
     PUSH 0x0                            ; 004bfa5a
     PUSH 0x0                            ; 004bfa5c
     MOV dword ptr [EBX + 0xa78],0x0     ; 004bfa5e
-    PUSH 0x1d225c8                      ; 004bfa68 | DAT_01d225c8
+    PUSH 0x1d225c8                      ; 004bfa68 | g_CHAR_ARRAY_01d225c8
     MOV byte ptr [EBX + 0xa7c],0x0      ; 004bfa6d
     CALL crt_string.c_splitpath_FUN_005a5128 ; 004bfa74
         ;   XREF to: 005a5128 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005a5128(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 004bfa79
-    PUSH 0x5c3a88                       ; 004bfa7c | DAT_005c3a88
+    PUSH 0x5c3a88                       ; 004bfa7c | = "sav"
     LEA EAX,[ESP + 0x108]               ; 004bfa81
     PUSH EAX                            ; 004bfa88
     CALL crt_string.c__stricmp_FUN_005a3260 ; 004bfa89
@@ -62,7 +62,7 @@ section .text
     TEST EAX,EAX                        ; 004bfa91
     JZ 0x004bfaae                       ; 004bfa93
         ;   XREF to: 004bfaae (CONDITIONAL_JUMP)  ; LAB_004bfaae
-    PUSH 0x5c3a8c                       ; 004bfa95 | DAT_005c3a8c
+    PUSH 0x5c3a8c                       ; 004bfa95 | = ".sav"
     LEA EAX,[ESP + 0x108]               ; 004bfa9a
     PUSH EAX                            ; 004bfaa1
     CALL crt_string.c__stricmp_FUN_005a3260 ; 004bfaa2
@@ -75,13 +75,13 @@ section .text
         ;   Label: LAB_004bfaae
     MOV EDI,ESP                         ; 004bfab3
     PUSH EDI                            ; 004bfab5
-    MOV AL,byte ptr [ESI]               ; 004bfab6 | DAT_01d225c8 | DAT_01d225ca
+    MOV AL,byte ptr [ESI]               ; 004bfab6 | g_CHAR_ARRAY_01d225c8 | g_CHAR_ARRAY_01d225c8+2
         ;   Label: LAB_004bfab6
     MOV byte ptr [EDI],AL               ; 004bfab8
     CMP AL,0x0                          ; 004bfaba
     JZ 0x004bface                       ; 004bfabc
         ;   XREF to: 004bface (CONDITIONAL_JUMP)  ; LAB_004bface
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bfabe | DAT_01d225c9 | DAT_01d225cb
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bfabe | g_CHAR_ARRAY_01d225c8+1 | g_CHAR_ARRAY_01d225c8+3
     ADD ESI,0x2                         ; 004bfac1
     MOV byte ptr [EDI + 0x1],AL         ; 004bfac4
     ADD EDI,0x2                         ; 004bfac7
@@ -95,7 +95,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004bfad1
     PUSH EAX                            ; 004bfad5
     PUSH 0x5c3a91                       ; 004bfad6 | = "*.sav"
-    PUSH 0x5c3a97                       ; 004bfadb | DAT_005c3a97
+    PUSH 0x5c3a97                       ; 004bfadb | = "save"
     PUSH 0x5c3a9c                       ; 004bfae0 | = "Select file to load"
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004bfae5
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)

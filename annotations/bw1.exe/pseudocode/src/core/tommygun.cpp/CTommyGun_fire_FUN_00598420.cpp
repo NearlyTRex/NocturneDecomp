@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr)
 
 {
@@ -77,7 +75,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr)
     return 0;
   }
   pCVar1 = (this_ptr->base).base.vtable._uc;
-  (this_ptr->base).fire_cooldown_timer = (this_ptr->base).fire_cooldown_timer + _DAT_005f7f04;
+  (this_ptr->base).fire_cooldown_timer = (this_ptr->base).fire_cooldown_timer + 0.1f;
   (*(pCVar1->_uc).isInvulnerable)((CCharacter *)this_ptr);
   pCVar7 = &CStack_64;
   CStack_70.z = fStack_d0;
@@ -119,7 +117,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr)
   fVar4 = fStack_b8;
   *(float *)((int)&CStack_100 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        afStack_54[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-  fStack_28 = (float)_DAT_005f7f08 / (this_ptr->base).bolt_velocity;
+  fStack_28 = (float)2.5 / (this_ptr->base).bolt_velocity;
   fStack_118 = afStack_54[2] * fStack_28;
   afStack_114[0] = afStack_54[3] * fStack_28;
   afStack_114[1] = fStack_44 * fStack_28;
@@ -172,7 +170,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr)
           if (pCStack_20 == (CCrate *)0x0) {
             if (this_ptr_03 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_004b56a0
-                        (0x01C57074,&g_CDemonSetPtr->collision_impact_position,
+                        (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor);
               goto LAB_005986af;
@@ -232,7 +230,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr)
       afStack_7c[(uint)bVar6 * -2 + -1] = *(float *)((int)&CStack_130 + (uint)bVar6 * -8 + 8);
       afStack_7c[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
            *(float *)((int)&CStack_124 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-      fVar4 = (float)_DAT_005f7f18 /
+      fVar4 = (float)10 /
               SQRT(afStack_7c[0] * afStack_7c[0] +
                    CStack_88.y * CStack_88.y + CStack_88.z * CStack_88.z);
       CStack_70.y = CStack_88.y * fVar4;
@@ -279,9 +277,9 @@ LAB_005986af:
         *(float *)((int)&CStack_130 + (uint)bVar6 * -8 + 4) = afStack_b4[(uint)bVar6 * -2];
         *(float *)((int)&CStack_130 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
              afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-        CStack_130.y = CStack_130.y + _DAT_005f7f10;
+        CStack_130.y = CStack_130.y + -0.125f;
         core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
-                  (0x01C57074,&CStack_130,&(this_ptr->base).base.orient_matrix);
+                  (g_CFireEffect_PTR_0061c010,&CStack_130,&(this_ptr->base).base.orient_matrix);
         CStack_f4.x = 5.0;
         CStack_f4.y = 6.0;
         CStack_f4.z = -6.0;
@@ -310,7 +308,7 @@ LAB_005986af:
         }
         model_ptr = core_dmodel_cpp_loadModel_FUN_00468780("bullet.kfm");
         core_fire_cpp_CFireEffect_createShell_FUN_004b7270
-                  (0x01C57074,&(this_ptr->base).base.location.position,
+                  (g_CFireEffect_PTR_0061c010,&(this_ptr->base).base.location.position,
                    &(this_ptr->base).base.orient.vec,&CStack_f4,model_ptr);
       }
       return 1;

@@ -25,8 +25,8 @@
 ;   TerminatedCString s_core_construc_cpp_005cdf16
 ;   TerminatedCString s_CConstruct_explode_Not_e_005cdf2b
 ;   TerminatedCString s_boneguy_fallapart_wav_005cdf57
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -217,8 +217,8 @@ section .text
         ;   Label: LAB_0043825b
     MOV ESI,0x294                       ; 00438260
     PUSH 0x5cdf2b                       ; 00438265 | = "CConstruct::explode - Not enough cont..."
-    MOV dword ptr [0x01d046a0],EBX      ; 0043826a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00438270 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 0043826a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00438270 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00438276
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043827b

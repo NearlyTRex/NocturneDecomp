@@ -14,10 +14,10 @@
 ;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00415740 at 00415753
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6cd6
-;   undefined4 DAT_02cfd900
-;   undefined4 DAT_02cfd904
-;   undefined4 DAT_02cfd908
+;   float g_FLOAT_005b6cd6 = 0.5
+;   CVector3f g_CVector3f_02cfd900
+;   undefined4 g_CVector3f_02cfd900.y
+;   undefined4 g_CVector3f_02cfd900.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -51,11 +51,11 @@ section .text
     CMP EAX,0x2cfd900                   ; 004169ac
     JZ 0x004169cd                       ; 004169b1
         ;   XREF to: 004169cd (CONDITIONAL_JUMP)  ; LAB_004169cd
-    MOV ECX,dword ptr [0x02cfd900]      ; 004169b3 | DAT_02cfd900
+    MOV ECX,dword ptr [0x02cfd900]      ; 004169b3 | g_CVector3f_02cfd900
     MOV dword ptr [EAX],ECX             ; 004169b9
-    MOV ECX,dword ptr [0x02cfd904]      ; 004169bb | DAT_02cfd904
+    MOV ECX,dword ptr [0x02cfd904]      ; 004169bb | g_CVector3f_02cfd900.y
     MOV dword ptr [EAX + 0x4],ECX       ; 004169c1
-    MOV ECX,dword ptr [0x02cfd908]      ; 004169c4 | DAT_02cfd908
+    MOV ECX,dword ptr [0x02cfd908]      ; 004169c4 | g_CVector3f_02cfd900.z
     MOV dword ptr [EAX + 0x8],ECX       ; 004169ca
     ADD EBX,0x15c                       ; 004169cd
         ;   Label: LAB_004169cd
@@ -106,7 +106,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00416a49
     MOVSD ES:EDI,ESI                    ; 00416a4a
     MOVSD ES:EDI,ESI                    ; 00416a4b
-    FLD float ptr [0x005b6cd6]          ; 00416a4c | DAT_005b6cd6
+    FLD float ptr [0x005b6cd6]          ; 00416a4c | g_FLOAT_005b6cd6
     FLD float ptr [ESP + 0x50]          ; 00416a52
     FMUL ST1                            ; 00416a56
     FLD float ptr [ESP + 0x54]          ; 00416a58

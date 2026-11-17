@@ -39,7 +39,7 @@ CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004c48a0(CGlass *this_ptr)
   *(uint *)((int)pvVar4 + -0x228) = 0xd;
   *(uint *)((int)pvVar4 + -0x210) = 0x8000;
   *(uint *)((int)pvVar4 + -0x20c) = 0;
-  pcVar5 = (char *)0x5d9286;
+  pcVar5 = "true";
   *(byte *)((int)pvVar4 + -0x208) = 0;
   pcVar6 = (char *)((int)pvVar4 + -0x80);
   *(uint *)((int)pvVar4 + -0x1a4) = 0;

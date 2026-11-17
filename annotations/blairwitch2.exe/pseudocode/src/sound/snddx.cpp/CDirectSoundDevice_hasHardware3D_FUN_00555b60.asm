@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005e9a3b
 ;   TerminatedCString s_Querry_DirectSound_capab_005e9bd7
-;   undefined4 DAT_0264a5c4
+;   IDirectSound* g_IDirectSound_PTR_0264a5c4
 ;   undefined4 DAT_0264a5d0
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 00555b60
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_00555b60
     SUB ESP,0x1f0                       ; 00555b61
-    CMP dword ptr [0x0264a5c4],0x0      ; 00555b67 | DAT_0264a5c4
+    CMP dword ptr [0x0264a5c4],0x0      ; 00555b67 | g_IDirectSound_PTR_0264a5c4
     JZ 0x00555b87                       ; 00555b6e
         ;   XREF to: 00555b87 (CONDITIONAL_JUMP)  ; LAB_00555b87
     MOV ECX,dword ptr [0x0264a5d0]      ; 00555b70 | DAT_0264a5d0
@@ -52,7 +52,7 @@ section .text
     LEA ECX,[ESP + 0x190]               ; 00555b9e
     MOV EBX,0x60                        ; 00555ba5
     PUSH ECX                            ; 00555baa
-    MOV EAX,[0x0264a5c4]                ; 00555bab | DAT_0264a5c4
+    MOV EAX,[0x0264a5c4]                ; 00555bab | g_IDirectSound_PTR_0264a5c4
     MOV dword ptr [ESP + 0x194],EBX     ; 00555bb0
     PUSH EAX                            ; 00555bb7
     MOV EDX,dword ptr [EAX]             ; 00555bb8

@@ -11,7 +11,7 @@ void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004ecd50(CHeroPlaceholde
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->index,"index");
-  if (0x00000002 < 2) {
+  if (g_INT_0061ef24 < 2) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040b440(this_ptr->hero_name,"heroName");

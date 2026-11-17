@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00448fd0(CDemonCamera *this_ptr)
 
 {
-  _DAT_00874584 = 0;
-  DAT_007e2a54 = 0;
+  g_CDemonCamera_PTR_00874584 = (CDemonCamera *)0x0;
+  g_CDemonCamera_PTR_007e2a54 = (CDemonCamera *)0x0;
   return;
 }

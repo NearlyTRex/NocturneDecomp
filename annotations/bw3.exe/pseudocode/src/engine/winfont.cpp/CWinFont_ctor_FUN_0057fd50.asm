@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFontA_005b340c = 001b3814
-;   undefined1* PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0057fe10_005e6534 = 0057fe10
+;   CFont_vtable g_CFont_vtable_005e6534
 ;
 ; Called Functions:
 ;   CreateFontA
@@ -36,7 +36,7 @@ section .text
     PUSH ECX                            ; 0057fd62
     PUSH 0x0                            ; 0057fd63
     PUSH 0x0                            ; 0057fd65
-    MOV dword ptr [EAX + 0x6a44],0x5e6534 ; 0057fd67 | PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0057fe10_005e6534
+    MOV dword ptr [EAX + 0x6a44],0x5e6534 ; 0057fd67 | g_CFont_vtable_005e6534
     PUSH 0x0                            ; 0057fd71
     MOV dword ptr [EAX + 0x6a48],0x0    ; 0057fd73
     PUSH 0x0                            ; 0057fd7d

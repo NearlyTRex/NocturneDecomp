@@ -15,36 +15,36 @@ int __cdecl core_event_cpp_CEventList_saveState_FUN_004aa9d0(CEventList *this_pt
   int local_14;
   
   _fprintf(file_handle,"// CEventList version\n");
-  _fprintf(file_handle,&DAT_005deec6);
+  _fprintf(file_handle,"%d\n");
   _fprintf(file_handle,"// eventCount, list\n");
   iVar1 = 0;
-  _fprintf(file_handle,&DAT_005deedf);
+  _fprintf(file_handle,"%d\n");
   if (0 < (this_ptr->events).count) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(file_handle,&DAT_005deee3);
+      _fprintf(file_handle,"%s\n");
     } while (iVar1 < (this_ptr->events).count);
   }
   _fprintf(file_handle,"// currentEventCount, list\n");
   iVar1 = 0;
-  _fprintf(file_handle,&DAT_005def03);
+  _fprintf(file_handle,"%d\n");
   if (0 < (this_ptr->current_events).count) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(file_handle,&DAT_005def07);
+      _fprintf(file_handle,"%s\n");
     } while (iVar1 < (this_ptr->current_events).count);
   }
   _fprintf(file_handle,"// persistentEventCount, list\n");
   iVar1 = 0;
-  _fprintf(file_handle,&DAT_005def2a);
+  _fprintf(file_handle,"%d\n");
   if (0 < (this_ptr->persistent_events).count) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(file_handle,&DAT_005def2e);
+      _fprintf(file_handle,"%s\n");
     } while (iVar1 < (this_ptr->persistent_events).count);
   }
   _fprintf(file_handle,"// timerCount, list(duration, name)\n");
-  _fprintf(file_handle,&DAT_005def57);
+  _fprintf(file_handle,"%d\n");
   local_18 = 0;
   if (0 < (this_ptr->timers).count) {
     do {
@@ -53,7 +53,7 @@ int __cdecl core_event_cpp_CEventList_saveState_FUN_004aa9d0(CEventList *this_pt
     } while (local_18 < (this_ptr->timers).count);
   }
   _fprintf(file_handle,"// counterCount, list(value, name)\n");
-  _fprintf(file_handle,&DAT_005def87);
+  _fprintf(file_handle,"%d\n");
   local_14 = 0;
   if (0 < (this_ptr->counters).count) {
     do {
@@ -63,7 +63,7 @@ int __cdecl core_event_cpp_CEventList_saveState_FUN_004aa9d0(CEventList *this_pt
   }
   _fprintf(file_handle,"// actorVarCount, list(varName, actorName)\n");
   iVar1 = 0;
-  _fprintf(file_handle,&DAT_005defbf);
+  _fprintf(file_handle,"%d\n");
   if (0 < (this_ptr->actor_vars).count) {
     do {
       _fprintf(file_handle,"\"%s\", \"%s\"\n");
@@ -72,11 +72,11 @@ int __cdecl core_event_cpp_CEventList_saveState_FUN_004aa9d0(CEventList *this_pt
   }
   _fprintf(file_handle,"// gameFlagCount, list\n");
   iVar2 = 0;
-  iVar1 = _fprintf(file_handle,&DAT_005defe7);
+  iVar1 = _fprintf(file_handle,"%d\n");
   if (0 < (this_ptr->game_flags).count) {
     do {
       iVar2 = iVar2 + 1;
-      _fprintf(file_handle,&DAT_005defeb);
+      _fprintf(file_handle,"%s\n");
       iVar1 = (this_ptr->game_flags).count;
     } while (iVar2 < iVar1);
   }

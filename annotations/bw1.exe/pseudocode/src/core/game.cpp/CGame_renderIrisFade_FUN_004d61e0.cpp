@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004d61e0(CGame *this_ptr)
 
 {
@@ -17,37 +15,37 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004d61e0(CGame *this_ptr)
   int iVar4;
   double dVar5;
   
-  if ((_DAT_01cd0c7c != 0) && (g_CFieldNotesPtr->is_displayed == 0)) {
-    if ((_DAT_01cd0c7c < 4) && ((_DAT_01cd0c7c != 1 && (0x3f7fffff < (int)_DAT_01cd0c80)))) {
+  if ((g_INT_01cd0c7c != 0) && (g_CFieldNotesPtr->is_displayed == 0)) {
+    if ((g_INT_01cd0c7c < 4) && ((g_INT_01cd0c7c != 1 && (0x3f7fffff < (int)g_FLOAT_01cd0c80)))) {
       core_game_cpp_calculateIrisFadeCenter_FUN_004d60b0();
-      iVar3 = DAT_0061b49c;
-      if (DAT_0061b4a0 == 0x20) {
+      iVar3 = g_INT_0061b49c;
+      if (g_INT_0061b4a0 == 0x20) {
         iVar4 = 0;
-        dVar5 = round((double)(_DAT_01cd0c80 * _DAT_01cd0c80));
+        dVar5 = round((double)(g_FLOAT_01cd0c80 * g_FLOAT_01cd0c80));
         if (0 < iVar3) {
           iVar3 = 0;
           do {
-            puVar2 = *(uint **)(&DAT_01c4354c + iVar3);
+            puVar2 = *(uint **)((int)g_ARRAY_PTR_01c4354c + iVar3);
             iVar1 = 0;
-            if (0 < DAT_0061b498) {
+            if (0 < g_INT_0061b498) {
               do {
                 if ((int)ROUND(dVar5) <
-                    (_DAT_01cd0c88 - iVar4) * (_DAT_01cd0c88 - iVar4) +
-                    (_DAT_01cd0c84 - iVar1) * (_DAT_01cd0c84 - iVar1)) {
+                    (g_INT_01cd0c88 - iVar4) * (g_INT_01cd0c88 - iVar4) +
+                    (g_INT_01cd0c84 - iVar1) * (g_INT_01cd0c84 - iVar1)) {
                   *puVar2 = 0;
                 }
                 iVar1 = iVar1 + 1;
                 puVar2 = puVar2 + 1;
-              } while (iVar1 < DAT_0061b498);
+              } while (iVar1 < g_INT_0061b498);
             }
             iVar3 = iVar3 + 4;
             iVar4 = iVar4 + 1;
-          } while (iVar4 < DAT_0061b49c);
+          } while (iVar4 < g_INT_0061b49c);
         }
       }
     }
     else {
-      engine_2d_c_fillRectColor_FUN_004031c0(0,0,DAT_0061b498 + -1,DAT_0061b49c + -1,0);
+      engine_2d_c_fillRectColor_FUN_004031c0(0,0,g_INT_0061b498 + -1,g_INT_0061b49c + -1,0);
     }
   }
   return;

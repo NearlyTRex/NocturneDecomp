@@ -10,7 +10,7 @@
 ;   core_hellhag.cpp_factoryFuncHag_FUN_005aa5d0 at 005aa5e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600a6c
+;   float g_FLOAT_00600a6c = 6
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
@@ -100,7 +100,7 @@ section .text
     PUSH ESI                            ; 005aa71a
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005aa71b
         ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
-    FLD float ptr [0x00600a6c]          ; 005aa720 | DAT_00600a6c
+    FLD float ptr [0x00600a6c]          ; 005aa720 | g_FLOAT_00600a6c
     ADD ESP,0xc                         ; 005aa726
     FSTP float ptr [EBX + 0x11394]      ; 005aa729
     PUSH 0x5f0b41                       ; 005aa72f

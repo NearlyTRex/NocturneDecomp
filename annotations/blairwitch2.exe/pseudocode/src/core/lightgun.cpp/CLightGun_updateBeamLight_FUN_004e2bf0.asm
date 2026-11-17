@@ -14,7 +14,7 @@
 ;   core_lightgun.cpp_CLightGun_process_FUN_004e38d0 at 004e39cc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f95d4
+;   float g_FLOAT_005f95d4 = 56
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
 ;   undefined4 g_CDemonLightInstance.base.base.position+8
@@ -84,7 +84,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 004e2c7e
         ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004e2c83
-    FLD float ptr [0x005f95d4]          ; 004e2c86 | DAT_005f95d4
+    FLD float ptr [0x005f95d4]          ; 004e2c86 | g_FLOAT_005f95d4
     PUSH 0x3f800000                     ; 004e2c8c
     MOV dword ptr [0x01cb3a90],EBX      ; 004e2c91 | g_CDemonLightInstance.base.max_distance
     PUSH 0x1cb3950                      ; 004e2c97

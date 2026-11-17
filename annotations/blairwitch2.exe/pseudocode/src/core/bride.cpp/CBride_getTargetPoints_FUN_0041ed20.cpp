@@ -23,7 +23,7 @@ int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_0041ed20(CBride *this_ptr,
   this_ptr_00 = &(this_ptr->base).base.model;
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] == 0) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-              (this_ptr_00,DAT_007bcd00,&CStack_24);
+              (this_ptr_00,g_INT_ARRAY_007bccdc[9],&CStack_24);
     CStack_30.x = CStack_24.x;
     *(uint *)((int)&CStack_30 + (uint)bVar1 * -8 + 4) =
          *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + 4);
@@ -38,7 +38,7 @@ int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_0041ed20(CBride *this_ptr,
   }
   else {
     core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-              (this_ptr_00,DAT_007bccdc,&CStack_18);
+              (this_ptr_00,g_INT_ARRAY_007bccdc[0],&CStack_18);
     CStack_3c.x = CStack_18.x;
     *(uint *)((int)&CStack_3c + (uint)bVar1 * -8 + 4) =
          *(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + 4);

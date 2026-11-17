@@ -22,13 +22,13 @@
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c8335
-;   undefined4 DAT_005c8339
-;   undefined4 DAT_01d76c40
-;   undefined4 DAT_01d7a6b8
-;   undefined4 DAT_01d7a6bc
-;   undefined4 DAT_01d7a6c0
-;   undefined4 DAT_01d7a6c4
+;   float g_FLOAT_005c8335 = 0.003921569
+;   float g_FLOAT_005c8339 = 255
+;   float g_FLOAT_01d76c40
+;   float g_FLOAT_01d7a6b8
+;   float g_FLOAT_01d7a6bc
+;   float g_FLOAT_01d7a6c0
+;   int g_INT_01d7a6c4
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -41,15 +41,15 @@ section .text
         ;   Label: engine_mini3d.cpp_setColor_FUN_004f3520
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f3523
     MOV EDX,EAX                         ; 004f3527
-    FLD float ptr [0x01d76c40]          ; 004f3529 | DAT_01d76c40
+    FLD float ptr [0x01d76c40]          ; 004f3529 | g_FLOAT_01d76c40
     SHR EDX,0x10                        ; 004f352f
-    FMUL float ptr [0x005c8339]         ; 004f3532 | DAT_005c8339
+    FMUL float ptr [0x005c8339]         ; 004f3532 | g_FLOAT_005c8339
     AND EDX,0xff                        ; 004f3538
     MOV dword ptr [ESP],EDX             ; 004f353e
     MOV EDX,EAX                         ; 004f3541
     FILD dword ptr [ESP]                ; 004f3543
     SHR EDX,0x8                         ; 004f3546
-    FLD float ptr [0x005c8335]          ; 004f3549 | DAT_005c8335
+    FLD float ptr [0x005c8335]          ; 004f3549 | g_FLOAT_005c8335
     FXCH                                ; 004f354f
     FMUL ST1                            ; 004f3551
     AND EDX,0xff                        ; 004f3553
@@ -65,15 +65,15 @@ section .text
     CALL crt_math.c_round_FUN_005a3120  ; 004f3573
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 004f3578
-    FSTP float ptr [0x01d7a6b8]         ; 004f357b | DAT_01d7a6b8
+    FSTP float ptr [0x01d7a6b8]         ; 004f357b | g_FLOAT_01d7a6b8
     MOV EDX,dword ptr [ESP]             ; 004f3581
     AND EAX,0xffffff                    ; 004f3584
     SHL EDX,0x18                        ; 004f3589
     FXCH                                ; 004f358c
-    FSTP float ptr [0x01d7a6bc]         ; 004f358e | DAT_01d7a6bc
+    FSTP float ptr [0x01d7a6bc]         ; 004f358e | g_FLOAT_01d7a6bc
     OR EAX,EDX                          ; 004f3594
-    FSTP float ptr [0x01d7a6c0]         ; 004f3596 | DAT_01d7a6c0
-    MOV [0x01d7a6c4],EAX                ; 004f359c | DAT_01d7a6c4
+    FSTP float ptr [0x01d7a6c0]         ; 004f3596 | g_FLOAT_01d7a6c0
+    MOV [0x01d7a6c4],EAX                ; 004f359c | g_INT_01d7a6c4
     ADD ESP,0x4                         ; 004f35a1
     RET                                 ; 004f35a4
 

@@ -8,12 +8,12 @@
 ; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9422
-;   undefined4 DAT_005d942a
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_006141c8
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01c37770
+;   double g_DOUBLE_005d9422 = 0.0000152590218966964
+;   double g_DOUBLE_005d942a = 0.5
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   int g_INT_006141c8 = 0x100
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   uchar* g_UCHAR_PTR_01c37770
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409830
@@ -61,16 +61,16 @@ section .text
     PUSH EBX                            ; 004c71d7
     FLD1                                ; 004c71d8
     FXCH                                ; 004c71da
-    FADD double ptr [0x005d942a]        ; 004c71dc | DAT_005d942a
-    MOV EBX,dword ptr [0x0060b280]      ; 004c71e2 | DAT_0060b280
+    FADD double ptr [0x005d942a]        ; 004c71dc | g_DOUBLE_005d942a
+    MOV EBX,dword ptr [0x0060b280]      ; 004c71e2 | g_CDemonRenderer_PTR_0060b280
     FSTP float ptr [ESP + 0x8]          ; 004c71e8
     FSUBRP                              ; 004c71ec
-    PUSH EBX                            ; 004c71ee | DAT_01ba5c50
+    PUSH EBX                            ; 004c71ee | g_CDemonRenderer_01ba5c50
     FSTP float ptr [ESP + 0x10]         ; 004c71ef
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 004c71f3
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004c71f8
-    FILD dword ptr [0x006141c8]         ; 004c71fb | DAT_006141c8
+    FILD dword ptr [0x006141c8]         ; 004c71fb | g_INT_006141c8
     FLD float ptr [ESP + 0x4]           ; 004c7201
     FMUL ST1                            ; 004c7205
     FLD float ptr [ESP + 0x8]           ; 004c7207
@@ -89,7 +89,7 @@ section .text
         ;   XREF to: 004c728b (CONDITIONAL_JUMP)  ; LAB_004c728b
     MOV EAX,dword ptr [ESP + 0xc]       ; 004c722b
         ;   Label: LAB_004c722b
-    MOV EDX,dword ptr [0x006141c8]      ; 004c722f | DAT_006141c8
+    MOV EDX,dword ptr [0x006141c8]      ; 004c722f | g_INT_006141c8
     CMP EAX,EDX                         ; 004c7235
     JL 0x004c7240                       ; 004c7237
         ;   XREF to: 004c7240 (CONDITIONAL_JUMP)  ; LAB_004c7240
@@ -101,7 +101,7 @@ section .text
         ;   XREF to: 004c7293 (CONDITIONAL_JUMP)  ; LAB_004c7293
     MOV EAX,dword ptr [ESP + 0x10]      ; 004c7247
         ;   Label: LAB_004c7247
-    MOV EDI,dword ptr [0x006141c8]      ; 004c724b | DAT_006141c8
+    MOV EDI,dword ptr [0x006141c8]      ; 004c724b | g_INT_006141c8
     CMP EAX,EDI                         ; 004c7251
     JL 0x004c725c                       ; 004c7253
         ;   XREF to: 004c725c (CONDITIONAL_JUMP)  ; LAB_004c725c
@@ -109,10 +109,10 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 004c7258
     MOV EAX,dword ptr [ESP + 0x10]      ; 004c725c
         ;   Label: LAB_004c725c
-    IMUL EAX,dword ptr [0x006141c8]     ; 004c7260 | DAT_006141c8
+    IMUL EAX,dword ptr [0x006141c8]     ; 004c7260 | g_INT_006141c8
     MOV EBX,dword ptr [ESP + 0xc]       ; 004c7267
     ADD EBX,EAX                         ; 004c726b
-    MOV EAX,[0x01c37770]                ; 004c726d | DAT_01c37770
+    MOV EAX,[0x01c37770]                ; 004c726d | g_UCHAR_PTR_01c37770
     CMP byte ptr [EBX + EAX*0x1],0x0    ; 004c7272
     JNZ 0x004c71b7                      ; 004c7276
         ;   XREF to: 004c71b7 (CONDITIONAL_JUMP)  ; LAB_004c71b7
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 004c7247 (UNCONDITIONAL_JUMP)  ; LAB_004c7247
     FILD dword ptr [EBX + 0x2d8]        ; 004c729b
         ;   Label: LAB_004c729b
-    FMUL double ptr [0x005d9422]        ; 004c72a1 | DAT_005d9422
+    FMUL double ptr [0x005d9422]        ; 004c72a1 | g_DOUBLE_005d9422
     FLD1                                ; 004c72a7
     FSUBRP                              ; 004c72a9
     FSTP float ptr [ESI + 0x48]         ; 004c72ab

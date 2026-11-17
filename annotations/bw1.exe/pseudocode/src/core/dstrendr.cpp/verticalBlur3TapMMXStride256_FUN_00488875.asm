@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   pixel_count
 ;
 ; Referenced Globals:
-;   undefined8 DAT_006185a8
+;   int g_INT_006185a8 = 0x0
 ;
 ; *****************************************************************************
 
@@ -26,18 +26,18 @@ section .text
     MOVQ MM0,qword ptr [ESI + 0xffffff00] ; 00488883
     MOVQ MM2,qword ptr [ESI]            ; 0048888a
     MOVQ MM3,qword ptr [ESI + 0x100]    ; 0048888d
-    PUNPCKLBW MM0,dword ptr [0x006185a8] ; 00488894 | DAT_006185a8
-    PUNPCKLBW MM2,dword ptr [0x006185a8] ; 0048889b | DAT_006185a8
-    PUNPCKLBW MM3,dword ptr [0x006185a8] ; 004888a2 | DAT_006185a8
+    PUNPCKLBW MM0,dword ptr [0x006185a8] ; 00488894 | g_INT_006185a8
+    PUNPCKLBW MM2,dword ptr [0x006185a8] ; 0048889b | g_INT_006185a8
+    PUNPCKLBW MM3,dword ptr [0x006185a8] ; 004888a2 | g_INT_006185a8
     PADDUSW MM0,MM2                     ; 004888a9
     PADDUSW MM2,MM3                     ; 004888ac
     PADDUSW MM0,MM2                     ; 004888af
     MOVQ MM1,qword ptr [ESI + 0xfffffef8] ; 004888b2
     MOVQ MM2,qword ptr [ESI + -0x8]     ; 004888b9
     MOVQ MM3,qword ptr [ESI + 0xf8]     ; 004888bd
-    PUNPCKHBW MM1,qword ptr [0x006185a8] ; 004888c4 | DAT_006185a8
-    PUNPCKHBW MM2,qword ptr [0x006185a8] ; 004888cb | DAT_006185a8
-    PUNPCKHBW MM3,qword ptr [0x006185a8] ; 004888d2 | DAT_006185a8
+    PUNPCKHBW MM1,qword ptr [0x006185a8] ; 004888c4 | g_INT_006185a8
+    PUNPCKHBW MM2,qword ptr [0x006185a8] ; 004888cb | g_INT_006185a8
+    PUNPCKHBW MM3,qword ptr [0x006185a8] ; 004888d2 | g_INT_006185a8
     PADDUSW MM1,MM2                     ; 004888d9
     PADDUSW MM2,MM3                     ; 004888dc
     PADDUSW MM1,MM2                     ; 004888df
@@ -53,9 +53,9 @@ section .text
     MOVQ MM1,qword ptr [ESI + 0xffffff00] ; 004888fd
     MOVQ MM2,qword ptr [ESI]            ; 00488904
     MOVQ MM3,qword ptr [ESI + 0x100]    ; 00488907
-    PUNPCKHBW MM1,qword ptr [0x006185a8] ; 0048890e | DAT_006185a8
-    PUNPCKHBW MM2,qword ptr [0x006185a8] ; 00488915 | DAT_006185a8
-    PUNPCKHBW MM3,qword ptr [0x006185a8] ; 0048891c | DAT_006185a8
+    PUNPCKHBW MM1,qword ptr [0x006185a8] ; 0048890e | g_INT_006185a8
+    PUNPCKHBW MM2,qword ptr [0x006185a8] ; 00488915 | g_INT_006185a8
+    PUNPCKHBW MM3,qword ptr [0x006185a8] ; 0048891c | g_INT_006185a8
     PADDUSW MM1,MM2                     ; 00488923
     PADDUSW MM2,MM3                     ; 00488926
     PADDUSW MM1,MM2                     ; 00488929
@@ -74,9 +74,9 @@ section .text
     MOVQ MM0,qword ptr [ESI + 0xffffff08] ; 00488954
     MOVQ MM2,qword ptr [ESI + 0x8]      ; 0048895b
     MOVQ MM3,qword ptr [ESI + 0x108]    ; 0048895f
-    PUNPCKLBW MM0,dword ptr [0x006185a8] ; 00488966 | DAT_006185a8
-    PUNPCKLBW MM2,dword ptr [0x006185a8] ; 0048896d | DAT_006185a8
-    PUNPCKLBW MM3,dword ptr [0x006185a8] ; 00488974 | DAT_006185a8
+    PUNPCKLBW MM0,dword ptr [0x006185a8] ; 00488966 | g_INT_006185a8
+    PUNPCKLBW MM2,dword ptr [0x006185a8] ; 0048896d | g_INT_006185a8
+    PUNPCKLBW MM3,dword ptr [0x006185a8] ; 00488974 | g_INT_006185a8
     PADDUSW MM0,MM2                     ; 0048897b
     PADDUSW MM2,MM3                     ; 0048897e
     PADDUSW MM0,MM2                     ; 00488981

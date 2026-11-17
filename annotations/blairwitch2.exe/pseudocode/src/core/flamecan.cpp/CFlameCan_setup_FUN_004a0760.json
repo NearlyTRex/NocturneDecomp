@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 293,
+    "complexity_score": 277,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 18,
+    "pseudocode_lines": 82,
+    "suspect_count": 17,
     "suspect_types": [
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 199
+    "total_lines": 198
   },
   "cross_references": [],
   "function": {
@@ -48,9 +47,9 @@
   "globals": [
     {
       "addr": "005d5955",
-      "name": "DAT_005d5955",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d5955",
+      "type": "double",
+      "value": "2"
     }
   ],
   "param_estimates": {
@@ -170,16 +169,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 15,
       "match": "afStackY_1028",
       "severity": "moderate",
       "text": "float afStackY_1028 [999];",
@@ -187,7 +178,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_ffffff78",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff78;",
@@ -195,7 +186,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
       "match": "in_stack_ffffff78",
       "severity": "moderate",
       "text": "(*pCVar4->getBoundingBox)(&this_ptr->base,in_stack_ffffff78);",
@@ -203,7 +194,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 42,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "puVar6 = (uint *)&stack0xffffffa8;",
@@ -211,7 +202,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 43,
       "match": "&stack0xffffff88",
       "severity": "moderate",
       "text": "puVar7 = (uint *)&stack0xffffff88;",
@@ -219,7 +210,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 59,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + 3] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + 3] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 6];",
@@ -228,14 +227,6 @@
     {
       "description": "Direct stack address reference",
       "line": 60,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + 3] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 6];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 61,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =",
@@ -243,7 +234,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 61,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];",
@@ -251,7 +242,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 68,
+      "line": 67,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 9];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&stack0xffffffc4)[(uint)bVar8 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 9];",
@@ -260,14 +259,6 @@
     {
       "description": "Direct stack address reference",
       "line": 68,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "(&stack0xffffffc4)[(uint)bVar8 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 9];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =",
@@ -275,7 +266,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 69,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];",
@@ -283,7 +274,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 71,
+      "line": 70,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "if (pCVar1 != (CVector3f *)&stack0xffffffc0) {",
@@ -291,7 +282,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -299,7 +290,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 50,
+      "line": 49,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;",

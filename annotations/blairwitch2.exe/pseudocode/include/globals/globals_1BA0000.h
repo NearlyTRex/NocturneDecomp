@@ -4,12 +4,57 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonRenderer.h"
+#include "types/structs/SFace.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1BA0000
 // =============================================================================
 
+// CBitFont*
+extern CBitFont* g_CBitFont_PTR_01ba5c30;
+
 // CDemonActorType
 extern CDemonActorType g_CDraculaBrideClassInfo;
+
+// CDemonRenderer
+extern CDemonRenderer g_CDemonRenderer_01ba5c50;
+
+// SFace[5000]
+extern SFace g_SFace_ARRAY_01ba5ccc[5000];
+
+// float
+extern float g_FLOAT_01ba5990;
+extern float g_FLOAT_01ba5994;
+extern float g_FLOAT_01ba599c;
+extern float g_FLOAT_01ba59a0;
+
+// int
+extern int g_INT_01ba51c8;
+extern int g_INT_01ba56cc;
+extern int g_INT_01ba56d0;
+extern int g_INT_01ba5714;
+extern int g_INT_01ba5998;
+extern int g_INT_01ba59a4;
+extern int g_INT_01ba5c28;
+extern int g_INT_01ba5c2c;
+extern int g_INT_01ba5c34;
+extern int g_INT_01ba5c38;
+extern int g_INT_01ba5c3c;
+extern int g_INT_01ba5c40;
+extern int g_INT_01ba5c44;
+extern int g_INT_01ba5c48;
+extern int g_INT_01ba5c4c;
+extern int g_INT_01ba5c7c;
+extern int g_INT_01ba5c80;
+extern int g_INT_01ba5cc4;
+extern int g_INT_01ba5cc8;
+
+// int[16]
+extern int g_INT_ARRAY_01ba5c84[16];
+
+// int[8]
+extern int g_INT_ARRAY_01ba5778[8];
 

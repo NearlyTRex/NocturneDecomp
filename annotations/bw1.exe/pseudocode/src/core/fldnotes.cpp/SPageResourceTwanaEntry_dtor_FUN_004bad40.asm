@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* g_SPageResourceTwanaEntryVTable = 004bad40
 ;   WatcomTypeInfo g_PageResource_TwanaEntryTypeInfo
-;   undefined4 DAT_01cc4200
+;   int g_INT_01cc4200
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_CAlphaBitmap_arrdtor3_FUN_004bf6c0
@@ -29,13 +29,13 @@ section .text
     TEST byte ptr [ESP + 0xc],0x4       ; 004bad45
     JNZ 0x004bad96                      ; 004bad4a
         ;   XREF to: 004bad96 (CONDITIONAL_JUMP)  ; LAB_004bad96
-    MOV EDX,dword ptr [0x01cc4200]      ; 004bad4c | DAT_01cc4200
+    MOV EDX,dword ptr [0x01cc4200]      ; 004bad4c | g_INT_01cc4200
     MOV dword ptr [EBX + 0x14],0x600964 ; 004bad52 | g_SPageResourceTwanaEntryVTable
     CMP EBX,EDX                         ; 004bad59
     JNZ 0x004bad65                      ; 004bad5b
         ;   XREF to: 004bad65 (CONDITIONAL_JUMP)  ; LAB_004bad65
     XOR ECX,ECX                         ; 004bad5d
-    MOV dword ptr [0x01cc4200],ECX      ; 004bad5f | DAT_01cc4200
+    MOV dword ptr [0x01cc4200],ECX      ; 004bad5f | g_INT_01cc4200
     PUSH 0x0                            ; 004bad65
         ;   Label: LAB_004bad65
     ADD EBX,0xdc                        ; 004bad67

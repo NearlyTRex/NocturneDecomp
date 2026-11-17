@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_00538c70(CVector3i *input,CVector3i *output)
 
 {
@@ -21,36 +19,36 @@ CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_00538c70(CVec
   int iVar8;
   int iVar9;
   
-  lVar4 = (longlong)_DAT_01c6e2fc * (longlong)input->x;
-  lVar5 = (longlong)_DAT_01c6e308 * (longlong)input->y;
-  lVar6 = (longlong)_DAT_01c6e314 * (longlong)input->z;
+  lVar4 = (longlong)g_INT_01c6e2fc * (longlong)input->x;
+  lVar5 = (longlong)g_INT_01c6e308 * (longlong)input->y;
+  lVar6 = (longlong)g_INT_01c6e314 * (longlong)input->z;
   iVar7 = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
           ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
-  lVar4 = (longlong)_DAT_01c6e300 * (longlong)input->x;
-  lVar5 = (longlong)_DAT_01c6e30c * (longlong)input->y;
-  lVar6 = (longlong)_DAT_01c6e318 * (longlong)input->z;
+  lVar4 = (longlong)g_INT_01c6e300 * (longlong)input->x;
+  lVar5 = (longlong)g_INT_01c6e30c * (longlong)input->y;
+  lVar6 = (longlong)g_INT_01c6e318 * (longlong)input->z;
   iVar8 = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
           ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
-  lVar4 = (longlong)_DAT_01c6e304 * (longlong)input->x;
-  lVar5 = (longlong)_DAT_01c6e310 * (longlong)input->y;
-  lVar6 = (longlong)_DAT_01c6e31c * (longlong)input->z;
+  lVar4 = (longlong)g_INT_01c6e304 * (longlong)input->x;
+  lVar5 = (longlong)g_INT_01c6e310 * (longlong)input->y;
+  lVar6 = (longlong)g_INT_01c6e31c * (longlong)input->z;
   iVar9 = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
           ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
-  lVar4 = (longlong)_DAT_01d72648;
-  lVar5 = (longlong)_DAT_01d72654;
-  lVar6 = (longlong)_DAT_01d72660;
-  lVar1 = (longlong)_DAT_01d7264c;
-  lVar2 = (longlong)_DAT_01d72658;
-  lVar3 = (longlong)_DAT_01d72664;
-  output->x = ((uint)((longlong)_DAT_01d72644 * (longlong)iVar7) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d72644 * (longlong)iVar7) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d72650 * (longlong)iVar8) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d72650 * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d7265c * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d7265c * (longlong)iVar9) >> 0x20) << 0x10);
+  lVar4 = (longlong)g_INT_01d72648;
+  lVar5 = (longlong)g_INT_01d72654;
+  lVar6 = (longlong)g_INT_01d72660;
+  lVar1 = (longlong)g_INT_01d7264c;
+  lVar2 = (longlong)g_INT_01d72658;
+  lVar3 = (longlong)g_INT_01d72664;
+  output->x = ((uint)((longlong)g_INT_01d72644 * (longlong)iVar7) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d72644 * (longlong)iVar7) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01d72650 * (longlong)iVar8) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d72650 * (longlong)iVar8) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01d7265c * (longlong)iVar9) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d7265c * (longlong)iVar9) >> 0x20) << 0x10);
   output->y = ((uint)(lVar4 * iVar7) >> 0x10 | (int)((ulonglong)(lVar4 * iVar7) >> 0x20) << 0x10) +
               ((uint)(lVar5 * iVar8) >> 0x10 | (int)((ulonglong)(lVar5 * iVar8) >> 0x20) << 0x10) +
               ((uint)(lVar6 * iVar9) >> 0x10 | (int)((ulonglong)(lVar6 * iVar9) >> 0x20) << 0x10);

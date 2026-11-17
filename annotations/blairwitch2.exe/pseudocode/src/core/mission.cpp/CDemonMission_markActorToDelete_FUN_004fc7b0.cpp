@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 
 {
@@ -20,8 +18,8 @@ void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemo
   if (iVar1 < 100) {
     return;
   }
-  _DAT_01d046a0 = "..\\core\\mission.cpp";
-  _DAT_01d046a4 = 0x446;
+  g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
+  g_INT_01d046a4 = 0x446;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::markActorToDelete - Too many of them!");
   return;
 }

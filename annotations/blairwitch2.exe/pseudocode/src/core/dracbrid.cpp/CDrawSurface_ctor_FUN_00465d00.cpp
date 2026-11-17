@@ -10,6 +10,6 @@ CDrawSurface * __cdecl core_dracbrid_cpp_CDrawSurface_ctor_FUN_00465d00(CDrawSur
 
 {
   cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00465d70
-            (this_ptr,0,0,DAT_006141b8 + -1,DAT_006141bc + -1,(CDrawSurface *)0x0);
+            (this_ptr,0,0,g_INT_006141b8 + -1,g_INT_006141bc + -1,(CDrawSurface *)0x0);
   return this_ptr;
 }

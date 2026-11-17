@@ -20,7 +20,7 @@
 ;   ... and 55 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_pop_FUN_0046d080
@@ -29,7 +29,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x005f2afc]      ; 00408830 | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 00408830 | g_CDemonRenderer_PTR_005f2afc
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
     PUSH EDX                            ; 00408836
     CALL engine_drender.cpp_pop_FUN_0046d080 ; 00408837

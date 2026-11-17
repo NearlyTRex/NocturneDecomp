@@ -16,7 +16,7 @@
 ;   core_fire.cpp_CFireEffect_createRing_FUN_004a3f70 at 004a3f9d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0900
+;   double g_DOUBLE_005c0900 = 0.392699081687500
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -95,7 +95,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 0049fd76
         ;   Label: LAB_0049fd76
     FILD dword ptr [ESP + 0xc]          ; 0049fd7a
-    FMUL double ptr [0x005c0900]        ; 0049fd7e | DAT_005c0900
+    FMUL double ptr [0x005c0900]        ; 0049fd7e | g_DOUBLE_005c0900
     FLD ST0                             ; 0049fd84
     FCOS                                ; 0049fd86
     FXCH                                ; 0049fd88

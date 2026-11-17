@@ -11,7 +11,7 @@ void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004d8c30(CIniFile *this_p
 {
   char local_68 [100];
   
-  _sprintf(local_68,&DAT_005dad96);
+  _sprintf(local_68,"%g");
   (**(code **)((int)this_ptr->vtable + 8))(this_ptr,key,local_68);
   return;
 }

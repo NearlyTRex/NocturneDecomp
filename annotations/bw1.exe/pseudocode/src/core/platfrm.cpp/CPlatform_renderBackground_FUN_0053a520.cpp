@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0053a520(CPlatform *this_ptr,int layer_flag)
 
 {
@@ -16,13 +14,13 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0053a520(CPlatform 
   int unaff_EDI;
   uint *puVar3;
   byte bVar4;
-  uint auStack_3c [4];
   uint auStack_2c [2];
   CBoundingBox3D CStack_24;
   int iStack_c;
   
   bVar4 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar1 != 0) {
     return;
   }
@@ -38,17 +36,18 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0053a520(CPlatform 
       return;
     }
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->to_end_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->to_end_event);
     if (iVar1 != 0) {
       return;
     }
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->to_start_event);
+                      (g_CEventList_PTR_0061b4d0,this_ptr->to_start_event);
     if (iVar1 != 0) {
       return;
     }
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar1 == 0) {
     if (this_ptr->render_in_background_when_not_moving_flag == 0) {
       this_ptr->one_shot = ONE_SHOT_DONE_IN_BACKGROUND;
@@ -59,7 +58,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0053a520(CPlatform 
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_3c;
+  puVar2 = (uint *)&stack0xffffffc4;
   puVar3 = auStack_2c;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
@@ -69,16 +68,18 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0053a520(CPlatform 
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_24,unaff_EDI);
   if (iVar1 != 0) {
     if ((this_ptr->recompute_fog == 0) ||
-       (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-       iVar1 != 0)) {
+       (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                          (g_CDemonRenderer_PTR_00612560), iVar1 != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                 (&this_ptr->model,0.0,-1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(&this_ptr->base);
       return;
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
-    iStack_c = (int)ROUND((this_ptr->base).location.position.x * _DAT_00604910);
-    _DAT_0152a950 = (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 8))(DAT_007c6120,&iStack_c,0);
+    iStack_c = (int)ROUND((this_ptr->base).location.position.x * 256.0f);
+    g_INT_0152a950 =
+         (*((g_CDemonCamera_PTR_007c6120->base).vtable)->getFogValueAtPosition)
+                   (g_CDemonCamera_PTR_007c6120,(CVector3i *)&iStack_c,(SProjectedVertex *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&this_ptr->model,0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

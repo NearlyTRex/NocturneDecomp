@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   max
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00603974
+;   int g_INT_00603974 = 0x4b0
 ;
 ; *****************************************************************************
 
@@ -15,6 +15,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 005154f0
         ;   Label: core_podmain.cpp_setMaxViewportScanline_FUN_005154f0
-    MOV [0x00603974],EAX                ; 005154f4 | DAT_00603974
+    MOV [0x00603974],EAX                ; 005154f4 | g_INT_00603974
     RET                                 ; 005154f9
 

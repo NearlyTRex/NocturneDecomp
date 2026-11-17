@@ -17,10 +17,10 @@
 ;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 005954a4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c83880
-;   undefined4 DAT_02c83884
-;   undefined4 DAT_02c83888
-;   undefined4 DAT_02c8388c
+;   int[4] g_INT_ARRAY_02c83880
+;   undefined4 g_INT_ARRAY_02c83880[1]
+;   undefined4 g_INT_ARRAY_02c83880[2]
+;   undefined4 g_INT_ARRAY_02c83880[3]
 ;
 ; Called Functions:
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005b72c0
@@ -35,7 +35,7 @@ section .text
     PUSH EBP                            ; 00595f12
     SUB ESP,0xf0                        ; 00595f13
     MOV EBX,ESI                         ; 00595f19
-    MOV EBP,dword ptr [0x02c83884]      ; 00595f1b | DAT_02c83884
+    MOV EBP,dword ptr [0x02c83884]      ; 00595f1b | g_INT_ARRAY_02c83880[1]
     LEA EAX,[EBP*0x4 + 0x0]             ; 00595f21
     SUB EAX,EBP                         ; 00595f28
     MOV EBP,dword ptr [ESP + 0x100]     ; 00595f2a
@@ -43,7 +43,7 @@ section .text
     ADD EBP,0xfd8                       ; 00595f34
     PUSH 0x3f000000                     ; 00595f3a
     ADD EAX,EBP                         ; 00595f3f
-    MOV ESI,dword ptr [0x02c83880]      ; 00595f41 | DAT_02c83880
+    MOV ESI,dword ptr [0x02c83880]      ; 00595f41 | g_INT_ARRAY_02c83880
     PUSH EAX                            ; 00595f47
     LEA EAX,[ESI*0x4 + 0x0]             ; 00595f48
     SUB EAX,ESI                         ; 00595f4f
@@ -58,13 +58,13 @@ section .text
     LEA ESI,[ESP + 0x9c]                ; 00595f6c
     ADD ESP,0xc                         ; 00595f73
     MOVSD.REP ES:EDI,ESI                ; 00595f76
-    MOV ESI,dword ptr [0x02c8388c]      ; 00595f78 | DAT_02c8388c
+    MOV ESI,dword ptr [0x02c8388c]      ; 00595f78 | g_INT_ARRAY_02c83880[3]
     LEA EAX,[ESI*0x4 + 0x0]             ; 00595f7e
     SUB EAX,ESI                         ; 00595f85
     SHL EAX,0x4                         ; 00595f87
     PUSH 0x3f000000                     ; 00595f8a
     ADD EAX,EBP                         ; 00595f8f
-    MOV ESI,dword ptr [0x02c83888]      ; 00595f91 | DAT_02c83888
+    MOV ESI,dword ptr [0x02c83888]      ; 00595f91 | g_INT_ARRAY_02c83880[2]
     PUSH EAX                            ; 00595f97
     LEA EAX,[ESI*0x4 + 0x0]             ; 00595f98
     SUB EAX,ESI                         ; 00595f9f

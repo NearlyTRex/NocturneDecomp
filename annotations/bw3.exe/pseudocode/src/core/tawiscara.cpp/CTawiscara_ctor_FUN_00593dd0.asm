@@ -10,9 +10,9 @@
 ;   core_tawiscara.cpp_factoryFuncTawiscara_FUN_00593da0 at 00593db3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7520
-;   undefined4 DAT_005e7524
-;   undefined4 DAT_005e7528
+;   float g_FLOAT_005e7520 = 50
+;   float g_FLOAT_005e7524 = 100
+;   float g_FLOAT_005e7528 = 10
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -41,11 +41,11 @@ section .text
     MOV dword ptr [EBX + 0xd054],0x0    ; 00593e0b
     MOV dword ptr [EBX + 0xd06c],0x1    ; 00593e15
     MOV dword ptr [EBX + 0xd080],0x0    ; 00593e1f
-    FLD float ptr [0x005e7520]          ; 00593e29 | DAT_005e7520
+    FLD float ptr [0x005e7520]          ; 00593e29 | g_FLOAT_005e7520
     MOV dword ptr [EBX + 0xd084],0x40a00000 ; 00593e2f
-    FLD float ptr [0x005e7524]          ; 00593e39 | DAT_005e7524
+    FLD float ptr [0x005e7524]          ; 00593e39 | g_FLOAT_005e7524
     MOV dword ptr [EBX + 0xd088],0x0    ; 00593e3f
-    FLD float ptr [0x005e7528]          ; 00593e49 | DAT_005e7528
+    FLD float ptr [0x005e7528]          ; 00593e49 | g_FLOAT_005e7528
     MOV dword ptr [EBX + 0xd08c],0x0    ; 00593e4f
     ADD ESP,0x8                         ; 00593e59
     MOV dword ptr [EBX + 0xd090],0x0    ; 00593e5c

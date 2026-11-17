@@ -10,11 +10,11 @@
 ; Referenced Globals:
 ;   void* PTR_GetConsoleMode_005c8570 = 001c8dee
 ;   void* PTR_SetConsoleMode_005c8610 = 001c90f2
-;   undefined4 DAT_0061f270
+;   int g_INT_0061f270 = 0x0
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2ac = 005bce04
-;   undefined4 DAT_0061f414
-;   undefined4 DAT_0061f448
+;   void* g_PTR_0061f414 = 00000000
+;   void* g_PTR_0061f448 = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bce04
@@ -31,23 +31,23 @@ section .text
         ;   Label: crt_unknown.c_FUN_005c3628
     PUSH ESI                            ; 005c3629
     SUB ESP,0x4                         ; 005c362a
-    MOV EAX,[0x0061f270]                ; 005c362d | DAT_0061f270
+    MOV EAX,[0x0061f270]                ; 005c362d | g_INT_0061f270
     TEST EAX,EAX                        ; 005c3632
     JZ 0x005c3640                       ; 005c3634
         ;   XREF to: 005c3640 (CONDITIONAL_JUMP)  ; LAB_005c3640
     XOR ESI,ESI                         ; 005c3636
-    MOV dword ptr [0x0061f270],ESI      ; 005c3638 | DAT_0061f270
+    MOV dword ptr [0x0061f270],ESI      ; 005c3638 | g_INT_0061f270
     JMP 0x005c36ab                      ; 005c363e
         ;   XREF to: 005c36ab (UNCONDITIONAL_JUMP)  ; LAB_005c36ab
-    CMP dword ptr [0x0061f448],0x0      ; 005c3640 | DAT_0061f448
+    CMP dword ptr [0x0061f448],0x0      ; 005c3640 | g_PTR_0061f448
         ;   Label: LAB_005c3640
     JZ 0x005c3661                       ; 005c3647
         ;   XREF to: 005c3661 (CONDITIONAL_JUMP)  ; LAB_005c3661
     PUSH EAX                            ; 005c3649
-    CALL dword ptr [0x0061f414]         ; 005c364a | DAT_0061f414
+    CALL dword ptr [0x0061f414]         ; 005c364a | g_PTR_0061f414
     ADD ESP,0x4                         ; 005c3650
     PUSH EAX                            ; 005c3653
-    CALL dword ptr [0x0061f448]         ; 005c3654 | DAT_0061f448
+    CALL dword ptr [0x0061f448]         ; 005c3654 | g_PTR_0061f448
     ADD ESP,0x4                         ; 005c365a
     MOV ESI,EAX                         ; 005c365d
     JMP 0x005c36a9                      ; 005c365f

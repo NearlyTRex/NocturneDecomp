@@ -6,36 +6,34 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_pushViewport_FUN_004e6af0(int x,int y,int width,int height)
 
 {
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d729c8) = _DAT_01c6e2d8;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d729f0) = _DAT_01c6e2dc;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72a18) = _DAT_01c6e2e0;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72a40) = _DAT_01c6e2e4;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72a68) = _DAT_01c6e2e8;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72a90) = _DAT_01c6e2ec;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72ab8) = _DAT_01c6e2f0;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72ae0) = _DAT_01c6e2f4;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72b08) = _DAT_01c6e2f8;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72900) = _DAT_01c6b598;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72928) = _DAT_01c6b59c;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72950) = _DAT_01c6b5a0;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72978) = _DAT_01c6b5a4;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d729a0) = DAT_005fba44;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72b30) = _DAT_01c6b5a8;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72b58) = _DAT_01c6b5b0;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72b80) = _DAT_01c6b5ac;
-  *(uint *)(_DAT_01d728fc * 4 + 0x1d72ba8) = _DAT_01c6b5b4;
-  _DAT_01d728fc = _DAT_01d728fc + 1;
-  if (9 < _DAT_01d728fc) {
-    _DAT_01d71de0 = "..\\engine\\matrix.c";
-    _DAT_01d71de4 = 0x540;
+  g_INT_ARRAY_01d729c8[g_INT_01d728fc] = g_INT_01c6e2d8;
+  g_INT_ARRAY_01d729f0[g_INT_01d728fc] = g_INT_01c6e2dc;
+  g_INT_ARRAY_01d72a18[g_INT_01d728fc] = g_INT_01c6e2e0;
+  g_INT_ARRAY_01d72a40[g_INT_01d728fc] = g_INT_01c6e2e4;
+  g_INT_ARRAY_01d72a68[g_INT_01d728fc] = g_INT_01c6e2e8;
+  g_INT_ARRAY_01d72a90[g_INT_01d728fc] = g_INT_01c6e2ec;
+  g_INT_ARRAY_01d72ab8[g_INT_01d728fc] = g_INT_01c6e2f0;
+  g_INT_ARRAY_01d72ae0[g_INT_01d728fc] = g_INT_01c6e2f4;
+  g_INT_ARRAY_01d72b08[g_INT_01d728fc] = g_INT_01c6e2f8;
+  g_INT_ARRAY_01d72900[g_INT_01d728fc] = g_INT_01c6b598;
+  g_INT_ARRAY_01d72928[g_INT_01d728fc] = g_INT_01c6b59c;
+  g_INT_ARRAY_01d72950[g_INT_01d728fc] = g_INT_01c6b5a0;
+  g_INT_ARRAY_01d72978[g_INT_01d728fc] = g_INT_01c6b5a4;
+  g_INT_ARRAY_01d729a0[g_INT_01d728fc] = g_INT_005fba44;
+  g_INT_ARRAY_01d72b30[g_INT_01d728fc] = g_INT_01c6b5a8;
+  g_INT_ARRAY_01d72b58[g_INT_01d728fc] = g_INT_01c6b5b0;
+  g_INT_ARRAY_01d72b80[g_INT_01d728fc] = g_INT_01c6b5ac;
+  g_INT_ARRAY_01d72ba8[g_INT_01d728fc] = g_INT_01c6b5b4;
+  g_INT_01d728fc = g_INT_01d728fc + 1;
+  if (9 < g_INT_01d728fc) {
+    g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
+    g_INT_01d71de4 = 0x540;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Too many 3D windows");
   }
   engine_2d_c_setupViewportAndClipping_FUN_00401810(x,y,x + width,y + height);
-  DAT_005fba44 = 0x10000;
+  g_INT_005fba44 = 0x10000;
   return;
 }

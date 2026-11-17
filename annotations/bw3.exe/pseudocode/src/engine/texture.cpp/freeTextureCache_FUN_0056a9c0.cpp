@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_freeTextureCache_FUN_0056a9c0(void)
 
 {
   CTextureCache *ptr;
   
-  engine_texture_cpp_CTextureCache_reset_FUN_005695b0(_DAT_02cfd0d0);
-  ptr = _DAT_02cfd0d0;
-  if (_DAT_02cfd0d0 == (CTextureCache *)0x0) {
-    _DAT_02cfd0d0 = (CTextureCache *)0x0;
+  engine_texture_cpp_CTextureCache_reset_FUN_005695b0(g_CTextureCache_PTR_02cfd0d0);
+  ptr = g_CTextureCache_PTR_02cfd0d0;
+  if (g_CTextureCache_PTR_02cfd0d0 == (CTextureCache *)0x0) {
+    g_CTextureCache_PTR_02cfd0d0 = (CTextureCache *)0x0;
     return;
   }
-  engine_texture_cpp_CTextureCache_freeTextures_FUN_005695c0(_DAT_02cfd0d0);
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005695c0(g_CTextureCache_PTR_02cfd0d0);
   debugFreeChecked(ptr);
-  _DAT_02cfd0d0 = (CTextureCache *)0x0;
+  g_CTextureCache_PTR_02cfd0d0 = (CTextureCache *)0x0;
   return;
 }

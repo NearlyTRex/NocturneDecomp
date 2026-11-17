@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl support_trstream_cpp_CInStreamFile_allocBuffer_FUN_0057d1d0(CInStreamFile *this_ptr)
 
 {
@@ -18,8 +16,8 @@ void __cdecl support_trstream_cpp_CInStreamFile_allocBuffer_FUN_0057d1d0(CInStre
   pvVar1 = malloc(this_ptr->buffer_capacity + 0x1f);
   this_ptr->buffer_alloc = pvVar1;
   if (pvVar1 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\support\\trstream.cpp";
-    _DAT_01d046a4 = 0x605;
+    g_CHAR_PTR_01d046a0 = "..\\support\\trstream.cpp";
+    g_INT_01d046a4 = 0x605;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   this_ptr->buffer_start = 0;

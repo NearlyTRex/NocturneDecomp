@@ -13,10 +13,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_005e4b9d
 ;   TerminatedCString s_CHeroPlaceholder_createH_005e4bae
-;   undefined4 DAT_0061f650
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   undefined4 g_CHeroClassInfo.name_hash
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
@@ -54,15 +54,15 @@ section .text
     MOV ECX,0x5e4b9d                    ; 004ecccd | = "..\\core\\hero.cpp"
     MOV EDI,0x6cf                       ; 004eccd2
     PUSH 0x5e4bae                       ; 004eccd7 | = "CHeroPlaceholder::createHero - failed."
-    MOV dword ptr [0x01d1d400],ECX      ; 004eccdc | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004ecce2 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004eccdc | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 004ecce2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004ecce8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004ecced
     POP EDI                             ; 004eccf0
     PUSH EBX                            ; 004eccf1
         ;   Label: LAB_004eccf1
-    MOV EBP,dword ptr [0x0061f650]      ; 004eccf2 | DAT_0061f650
+    MOV EBP,dword ptr [0x0061f650]      ; 004eccf2 | g_CDemonMission_PTR_0061f650
     PUSH EBP                            ; 004eccf8 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60 ; 004eccf9
         ;   XREF to: 0051bd60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60(CDemonMission * this_ptr, CDemonActor * actor)

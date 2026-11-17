@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_004873a5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
@@ -37,19 +35,19 @@ void __edi_esi_ebx core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN
   uVar2 = uVar2 >> 0x10;
   iVar4 = (uVar3 >> 0x10) - uVar2;
   if (iVar4 != 0 && uVar2 <= uVar3 >> 0x10) {
-    puVar7 = (ushort *)(*(int *)(&DAT_01c4354c + scanline_y * 4) + uVar2 * 2);
+    puVar7 = (ushort *)(g_ARRAY_PTR_01c4354c[scanline_y] + uVar2 * 2);
     uVar9 = (pSVar8->base).depth_current;
     iVar5 = iVar4;
     do {
       if ((uVar9 >> 8 < (uint)*puVar7) &&
-         (_DAT_01bc1238 = _DAT_01bc1238 + 1, DAT_00612564 <= _DAT_01bc1238)) {
-        _DAT_01bc123c = 1;
+         (g_INT_01bc1238 = g_INT_01bc1238 + 1, (uint)g_INT_00612564 <= (uint)g_INT_01bc1238)) {
+        g_INT_01bc123c = 1;
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)
                             ((longlong)
                              ((left_edge->base).depth_current - (pSVar8->base).depth_current) *
-                            (longlong)*(int *)(&DAT_01c4f030 + (iVar4 + 1) * 4)) >> 0x20) * 2;
+                            (longlong)(int)g_UINT_ARRAY_01c4f030[iVar4 + 1]) >> 0x20) * 2;
       puVar7 = puVar7 + 2;
       iVar6 = iVar5 + -2;
       bVar1 = 1 < iVar5;

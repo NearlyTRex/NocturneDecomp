@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 328,
-    "complexity_score": 233,
+    "complexity_score": 313,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 19,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 73,
-    "suspect_count": 15,
+    "suspect_count": 23,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unnamed_field",
+      "wrong_global"
     ],
     "total_lines": 401
   },
@@ -45,116 +45,116 @@
   "globals": [
     {
       "addr": "006004e0",
-      "name": "DAT_006004e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006004e0",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "006004e4",
-      "name": "DAT_006004e4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006004e4",
+      "type": "float",
+      "value": "65535"
     },
     {
       "addr": "006004e8",
-      "name": "DAT_006004e8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006004e8",
+      "type": "float",
+      "value": "65536"
     },
     {
       "addr": "006004ec",
-      "name": "DAT_006004ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006004ec",
+      "type": "float",
+      "value": "1.677722E+7"
     },
     {
       "addr": "006004f0",
-      "name": "DAT_006004f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006004f0",
+      "type": "float",
+      "value": "2.147484E+9"
     },
     {
       "addr": "01d80844",
-      "name": "DAT_01d80844",
-      "type": "undefined4",
+      "name": "g_INT_01d80844",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d80848",
-      "name": "DAT_01d80848",
-      "type": "undefined4",
+      "name": "g_SSoftwareEdge_01d80848",
+      "type": "SSoftwareEdge",
       "value": null
     },
     {
       "addr": "01d8084c",
-      "name": "DAT_01d8084c",
+      "name": "g_SSoftwareEdge_01d80848.base.y_max",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80850",
-      "name": "DAT_01d80850",
+      "name": "g_SSoftwareEdge_01d80848.base.x_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80854",
-      "name": "DAT_01d80854",
+      "name": "g_SSoftwareEdge_01d80848.base.x_gradient",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80858",
-      "name": "DAT_01d80858",
+      "name": "g_SSoftwareEdge_01d80848.base.red_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80860",
-      "name": "DAT_01d80860",
+      "name": "g_SSoftwareEdge_01d80848.base.u_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80864",
-      "name": "DAT_01d80864",
+      "name": "g_SSoftwareEdge_01d80848.base.u_gradient",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80868",
-      "name": "DAT_01d80868",
+      "name": "g_SSoftwareEdge_01d80848.base.v_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d8086c",
-      "name": "DAT_01d8086c",
+      "name": "g_SSoftwareEdge_01d80848.base.v_gradient",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80870",
-      "name": "DAT_01d80870",
+      "name": "g_SSoftwareEdge_01d80848.base.depth_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80874",
-      "name": "DAT_01d80874",
+      "name": "g_SSoftwareEdge_01d80848.base.depth_gradient",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80d48",
-      "name": "DAT_01d80d48",
-      "type": "undefined4",
+      "name": "g_INT_01d80d48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d80d4c",
-      "name": "DAT_01d80d4c",
-      "type": "undefined4",
+      "name": "g_INT_01d80d4c",
+      "type": "int",
       "value": null
     }
   ],
@@ -433,124 +433,188 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x4c",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "*(int *)&(&g_SSoftwareEdge_01d80848)[iVar3].field_0x4c =",
+      "type": "unnamed_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01d80848",
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "piVar5 = (int *)(&DAT_01d80848 + iVar4);",
-      "type": "undefined_data"
+      "text": "*(int *)&(&g_SSoftwareEdge_01d80848)[iVar3].field_0x48 =",
+      "type": "unnamed_field"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 20,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.y_max = (int)ROUND(v1[6] - 0.5f);",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
       "line": 22,
-      "match": "DAT_01d8084c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d8084c + iVar4) = (int)ROUND(v1[6] - _DAT_006004e0);",
-      "type": "undefined_data"
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "if (iVar1 != (&g_SSoftwareEdge_01d80848)[iVar3].base.y_max) {",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01d8084c",
-      "severity": "mild",
-      "text": "if (iVar1 != *(int *)(&DAT_01d8084c + iVar4)) {",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 26,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "iVar1 = (&g_SSoftwareEdge_01d80848)[iVar3].base.y_max;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01d8084c",
-      "severity": "mild",
-      "text": "if (_DAT_01d80d4c < *(int *)(&DAT_01d8084c + iVar4)) {",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 37,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.x_gradient =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01d8084c",
-      "severity": "mild",
-      "text": "_DAT_01d80d4c = *(int *)(&DAT_01d8084c + iVar4);",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 39,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.x_current =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01d80854",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80854 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 41,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.u_gradient =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01d80850",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80850 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 43,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.u_current =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_01d80864",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80864 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 45,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.v_gradient =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01d80860",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80860 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 47,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.v_current =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_01d8086c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d8086c + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 49,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.red_gradient =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_01d80868",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80868 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 51,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.red_current =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01d80858",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80858 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 53,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.alpha_gradient =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_01d80874",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80874 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 55,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.alpha_current =",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_01d80870",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d80870 + iVar4) =",
-      "type": "undefined_data"
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 57,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "*(int *)&(&g_SSoftwareEdge_01d80848)[iVar3].field_0x4c =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 59,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "*(int *)&(&g_SSoftwareEdge_01d80848)[iVar3].field_0x48 =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 61,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.depth_gradient =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 63,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].base.depth_current =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 65,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].green_gradient =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 67,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].green_current =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 69,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].blue_gradient =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_SSoftwareEdge_01d80848 accessed via (&g_SSoftwareEdge_01d80848)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_01d80d48 (at 0x01d80d48, +1280 bytes).",
+      "line": 71,
+      "match": "g_SSoftwareEdge_01d80848",
+      "severity": "moderate",
+      "text": "(&g_SSoftwareEdge_01d80848)[iVar3].blue_current =",
+      "type": "wrong_global"
     }
   ]
 }

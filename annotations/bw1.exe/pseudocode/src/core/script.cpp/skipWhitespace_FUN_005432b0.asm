@@ -12,7 +12,7 @@
 ;   core_script.cpp_parseArgument_FUN_005432d0 at 005432df
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626114
+;   uchar[257] g_UCHAR_ARRAY_00626114
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
         ;   Label: LAB_005432b4
     INC DL                              ; 005432b6
     AND EDX,0xff                        ; 005432b8
-    TEST byte ptr [EDX + 0x626114],0x2  ; 005432be | DAT_00626114
+    TEST byte ptr [EDX + 0x626114],0x2  ; 005432be | g_UCHAR_ARRAY_00626114
     JZ 0x0054328e                       ; 005432c5
         ;   XREF to: 0054328e (CONDITIONAL_JUMP)  ; LAB_0054328e
     INC EAX                             ; 005432c7

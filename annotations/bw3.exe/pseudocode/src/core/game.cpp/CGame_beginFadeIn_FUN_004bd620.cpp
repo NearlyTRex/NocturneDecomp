@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004bd620(CGame *this_ptr)
 
 {
-  _DAT_01d22c84 = 1;
-  _DAT_01d22c8c = DAT_005fba18 / 2;
-  _DAT_01d22c90 = DAT_005fba1c / 2;
-  _DAT_01d22c88 = 0;
+  g_INT_01d22c84 = 1;
+  g_INT_01d22c8c = g_INT_005fba18 / 2;
+  g_INT_01d22c90 = g_INT_005fba1c / 2;
+  g_FLOAT_01d22c88 = 0.0;
   core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0();
   return;
 }

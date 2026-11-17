@@ -11,7 +11,7 @@
 ;   engine_2d.c_disableTextWrap_FUN_00402830 at 00402832
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061049c
+;   int g_INT_0061049c = 0x1
 ;
 ; *****************************************************************************
 
@@ -19,6 +19,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00402810
         ;   Label: engine_2d.c_setTextWrapEnabled_FUN_00402810
-    MOV [0x0061049c],EAX                ; 00402814 | DAT_0061049c
+    MOV [0x0061049c],EAX                ; 00402814 | g_INT_0061049c
     RET                                 ; 00402819
 

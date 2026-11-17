@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0054d8f0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 {
@@ -25,7 +23,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
   float fStack_14;
   
   bVar4 = 0;
-  if ((float)_DAT_005d2024 < blend_weight) {
+  if ((float)0.001 < blend_weight) {
     start_bone_index = 0;
     local_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
     if (0 < local_1c->bone_count) {

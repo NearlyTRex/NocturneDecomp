@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_0061c010
-;   undefined4 DAT_0061f650
+;   CEventList* g_CEventList_PTR_0061b4d0 = 01c51d80
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
@@ -29,7 +29,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 004b91d4
     LEA EAX,[EBX + 0x2dc]               ; 004b91d8
     PUSH EAX                            ; 004b91de
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004b91df | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004b91df | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 004b91e5
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004b91e6
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -75,7 +75,7 @@ section .text
     PUSH ESI                            ; 004b9244
     PUSH 0x1                            ; 004b9245
     PUSH EBX                            ; 004b9247
-    MOV ESI,dword ptr [0x0061f650]      ; 004b9248 | DAT_0061f650
+    MOV ESI,dword ptr [0x0061f650]      ; 004b9248 | g_CDemonMission_PTR_0061f650
     PUSH ESI                            ; 004b924e
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004b924f
         ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -90,7 +90,7 @@ section .text
     ADD EBX,0x360                       ; 004b9272
     PUSH 0x41800000                     ; 004b9278
     PUSH EBX                            ; 004b927d
-    MOV EDI,dword ptr [0x0061c010]      ; 004b927e | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 004b927e | g_CFireEffect_PTR_0061c010
     PUSH EDI                            ; 004b9284
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60 ; 004b9285
         ;   XREF to: 004b6c60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)

@@ -10,14 +10,14 @@ void __cdecl sound_sndmain_cpp_getAudioFormat_FUN_005751c0(int *bits_per_sample,
 
 {
   if (bits_per_sample != (int *)0x0) {
-    *bits_per_sample = DAT_006232e8;
+    *bits_per_sample = g_INT_006232e8;
   }
   if (channels != (int *)0x0) {
-    *channels = DAT_006232ec;
+    *channels = g_INT_006232ec;
   }
   if (sample_rate == (int *)0x0) {
     return;
   }
-  *sample_rate = DAT_006232f0;
+  *sample_rate = g_INT_006232f0;
   return;
 }

@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CPuzzle * __cdecl core_bmppuzzl_cpp_CPuzzle_ctor_FUN_0059ab30(CPuzzle *this_ptr)
 
 {
-  _DAT_026677b4 = _DAT_026677b4 + 1;
-  this_ptr->vtable = &PTR_core_bmppuzzl_cpp_CPuzzle_dtor_FUN_0059ab50_005fe4f4;
-  *(CPuzzle **)(&DAT_026677b4 + _DAT_026677b4 * 4) = this_ptr;
+  g_INT_ARRAY_026677b4[0] = g_INT_ARRAY_026677b4[0] + 1;
+  this_ptr->vtable = g_ARRAY_PTR_005fe4f4;
+  g_INT_ARRAY_026677b4[g_INT_ARRAY_026677b4[0]] = (int)this_ptr;
   return this_ptr;
 }

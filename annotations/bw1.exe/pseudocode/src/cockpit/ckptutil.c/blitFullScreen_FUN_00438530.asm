@@ -8,8 +8,8 @@
 ; void *           Stack[0x8]:4   span_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0
@@ -21,9 +21,9 @@ section .text
     PUSH EBX                            ; 00438530
         ;   Label: cockpit_ckptutil.c_blitFullScreen_FUN_00438530
     PUSH ESI                            ; 00438531
-    MOV EDX,dword ptr [0x0061b49c]      ; 00438532 | DAT_0061b49c
+    MOV EDX,dword ptr [0x0061b49c]      ; 00438532 | g_INT_0061b49c
     PUSH EDX                            ; 00438538
-    MOV ECX,dword ptr [0x0061b498]      ; 00438539 | DAT_0061b498
+    MOV ECX,dword ptr [0x0061b498]      ; 00438539 | g_INT_0061b498
     PUSH ECX                            ; 0043853f
     PUSH 0x0                            ; 00438540
     PUSH 0x0                            ; 00438542

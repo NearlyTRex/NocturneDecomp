@@ -2,27 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 523,
+    "complexity_score": 469,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 98,
-    "suspect_count": 37,
+    "pseudocode_lines": 99,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation",
       "raw_address_constant",
-      "raw_address_pointer_store",
       "stack_param",
       "stack_ref",
-      "undefined_data",
       "unknown_field",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 243
+    "total_lines": 244
   },
   "cross_references": [],
   "function": {
@@ -67,62 +64,62 @@
   "globals": [
     {
       "addr": "0061bc9c",
-      "name": "DAT_0061bc9c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061bc9c",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "0061bca0",
-      "name": "DAT_0061bca0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061bca0",
+      "type": "int",
+      "value": "0x5622"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e90",
-      "name": "DAT_02648e90",
-      "type": "undefined4",
+      "name": "g_INT_02648e90",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e94",
-      "name": "DAT_02648e94",
-      "type": "undefined4",
+      "name": "g_INT_02648e94",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e98",
-      "name": "DAT_02648e98",
-      "type": "undefined4",
+      "name": "g_INT_02648e98",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e9c",
-      "name": "DAT_02648e9c",
-      "type": "undefined4",
+      "name": "g_INT_02648e9c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648f38",
-      "name": "DAT_02648f38",
-      "type": "undefined4",
+      "name": "g_INT_02648f38",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264901c",
-      "name": "DAT_0264901c",
-      "type": "undefined4",
+      "name": "g_INT_0264901c",
+      "type": "int",
       "value": null
     }
   ],
@@ -225,16 +222,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_ffffff94",
       "severity": "moderate",
       "text": "byte in_stack_ffffff94 [28];",
@@ -242,107 +231,59 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "uint in_stack_ffffffb0;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "if (0 < DAT_0061bc9c) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(void **)((int)g_FLOAT_PTR_ARRAY_02648ec8",
+      "severity": "moderate",
+      "text": "(*(void **)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar2),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 44,
-      "match": "*(void **)(iVar2 + 0x2648ec8",
+      "match": "(void **)((int)g_FLOAT_PTR_ARRAY_02648ec8",
       "severity": "moderate",
-      "text": "(*(void **)(iVar2 + 0x2648ec8),",
-      "type": "raw_address_pointer_store"
+      "text": "(int)*(void **)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar2)),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 45,
-      "match": "*(void **)(iVar2 + 0x2648ec8",
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)g_FLOAT_PTR_ARRAY_02648ec8",
       "severity": "moderate",
-      "text": "(void *)(_DAT_02648e98 * 4 + (int)*(void **)(iVar2 + 0x2648ec8)),",
-      "type": "raw_address_pointer_store"
+      "text": "piVar1 = (int *)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "in_stack_ffffffb0 = 0x54d106;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "} while (iVar5 < DAT_0061bc9c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "iStack_1c = DAT_0061bc9c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_0061bca0",
-      "severity": "mild",
-      "text": "iStack_18 = DAT_0061bca0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "if (0 < DAT_0061bc9c) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(uint *)((int)auStack_40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_40 + iVar5) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(uint *)((int)auStack_40",
+      "match": "(uint *)((int)g_FLOAT_PTR_ARRAY_02648ec8",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_40 + iVar5) = *(uint *)(iVar5 + 0x2648ec8);",
+      "text": "*(uint *)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar5);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "} while (iVar2 < DAT_0061bc9c * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_0061bca0",
-      "severity": "mild",
-      "text": "fStack_14 = (float)_DAT_02648e98 / (float)DAT_0061bca0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_0264161c",
-      "severity": "mild",
-      "text": "} while (pCVar3 != (CSfxSlot *)&DAT_0264161c);",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
@@ -473,12 +414,36 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_0264161c",
-      "severity": "mild",
-      "text": "} while (pCVar3 != (CSfxSlot *)&DAT_0264161c);",
-      "type": "undefined_data"
+      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02648ec8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)g_FLOAT_PTR_ARRAY_02648ec8",
+      "severity": "moderate",
+      "text": "(*(void **)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar2),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02648ec8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)g_FLOAT_PTR_ARRAY_02648ec8",
+      "severity": "moderate",
+      "text": "(int)*(void **)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar2)),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02648ec8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_FLOAT_PTR_ARRAY_02648ec8",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_FLOAT_PTR_ARRAY_02648ec8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)g_FLOAT_PTR_ARRAY_02648ec8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_FLOAT_PTR_ARRAY_02648ec8 + iVar5);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pCVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -490,7 +455,7 @@
     },
     {
       "description": "Raw hex address 0x54d106 assigned to bare local `in_stack_ffffffb0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffb0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 50,
+      "line": 49,
       "match": "0x54d106",
       "severity": "moderate",
       "text": "in_stack_ffffffb0 = 0x54d106;",
@@ -514,7 +479,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride (count = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 51,
+      "line": 50,
       "match": "memset",
       "severity": "moderate",
       "text": "memset",

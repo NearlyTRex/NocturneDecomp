@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_00449d90(CDemonLight *this_ptr)
 
 {
@@ -23,8 +21,8 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_00449d90(CDemonLight *this_ptr
                      (this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2 + 0x210);
   this_ptr->shadow_buffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\core\\dlight.cpp";
-    _DAT_01d046a4 = 0x6d;
+    g_CHAR_PTR_01d046a0 = "..\\core\\dlight.cpp";
+    g_INT_01d046a4 = 0x6d;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCamera::init - Unable to alloc frame buffer");
   }
   this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);
@@ -32,7 +30,7 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_00449d90(CDemonLight *this_ptr
   iVar5 = iVar4 >> 0x1f;
   puVar3 = (uchar *)malloc
                      ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3);
-  fVar1 = (float)_DAT_005cf20f;
+  fVar1 = (float)7;
   this_ptr->lightmap_visibility_bits = puVar3;
   iVar4 = 0x449e19;
   dVar6 = round((double)(this_ptr->volumetric_intensity * fVar1));

@@ -8,11 +8,11 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0 at 004a253e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fd60c
-;   undefined4 DAT_005fd624
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   SMRGLTextureBasic[6] g_SMRGLTextureBasic_ARRAY_005fd60c
+;   undefined4 g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
 ;   undefined4 DAT_005fd7ec
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -24,12 +24,12 @@ section .text
     PUSH EBX                            ; 0049e170
         ;   Label: core_fire.cpp_loadGunFlameAssets_FUN_0049e170
     PUSH ESI                            ; 0049e171
-    MOV EBX,0x5fd60c                    ; 0049e172 | DAT_005fd60c
+    MOV EBX,0x5fd60c                    ; 0049e172 | g_SMRGLTextureBasic_ARRAY_005fd60c
     LEA ESI,[EBX + 0x1e0]               ; 0049e177 | DAT_005fd7ec
-    PUSH EBX                            ; 0049e17d | DAT_005fd60c | DAT_005fd624
+    PUSH EBX                            ; 0049e17d | g_SMRGLTextureBasic_ARRAY_005fd60c | g_SMRGLTextureBasic_ARRAY_005fd60c[1].base.type
         ;   Label: LAB_0049e17d
-    MOV EDX,dword ptr [0x005f2afc]      ; 0049e17e | DAT_005f2afc
-    PUSH EDX                            ; 0049e184 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 0049e17e | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 0049e184 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0049e185
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 0049e18a

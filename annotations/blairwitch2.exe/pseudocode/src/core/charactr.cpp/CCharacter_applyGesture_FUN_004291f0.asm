@@ -17,10 +17,10 @@
 ;   TerminatedCString s_core_charactr_cpp_005cd003
 ;   TerminatedCString s_CCharacter_applyGesture_005cd018
 ;   TerminatedCString s_Bip01_spine1_005cd05c
-;   undefined4 DAT_005cd06a
-;   undefined4 DAT_005cd06e
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005cd06a = 0.3000000
+;   float g_FLOAT_005cd06e = 0.8500000
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -69,7 +69,7 @@ section .text
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_00503860 ; 00429252
         ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00503860(CMotionController * this_ptr)
     FLD float ptr [EDI + EAX*0x1 + 0x1c48] ; 00429257
-    FMUL float ptr [0x005cd06a]         ; 0042925e | DAT_005cd06a
+    FMUL float ptr [0x005cd06a]         ; 0042925e | g_FLOAT_005cd06a
     FLD float ptr [EBX + 0x27c8]        ; 00429264
     ADD ESP,0x4                         ; 0042926a
     FLD1                                ; 0042926d
@@ -83,7 +83,7 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 0042928b
     FSTP float ptr [ESP + 0x10]         ; 0042928f
     FLD float ptr [ESP + 0xc]           ; 00429293
-    FCOMP float ptr [0x005cd06e]        ; 00429297 | DAT_005cd06e
+    FCOMP float ptr [0x005cd06e]        ; 00429297 | g_FLOAT_005cd06e
     FNSTSW AX                           ; 0042929d
     SAHF                                ; 0042929f
     JNC 0x004292aa                      ; 004292a0
@@ -124,8 +124,8 @@ section .text
     MOV ESI,0x5cd003                    ; 004292f4 | = "..\\core\\charactr.cpp"
     MOV EDI,0xf08                       ; 004292f9
     PUSH 0x5cd018                       ; 004292fe | = "CCharacter::applyGesture - never set ..."
-    MOV dword ptr [0x01d046a0],ESI      ; 00429303 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00429309 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00429303 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00429309 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042930f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00429314

@@ -20,21 +20,21 @@
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00456864
 ;
 ; Referenced Globals:
-;   undefined4 s_s_can_t_pick_up_s_sombod_005ba741+1
+;   TerminatedCString s_s_can_t_pick_up_s_sombod_005ba742
 ;   TerminatedCString s_s_can_t_pick_up_s_giving_005ba774
 ;   TerminatedCString s_s_beginning_to_pickup_s_005ba794
 ;   TerminatedCString s_core_demnfolk_cpp_005ba7af
 ;   TerminatedCString s_Invalid_demon_townsfolk_005ba7c4
 ;   TerminatedCString s_CBodyPart_005ba7ea
 ;   TerminatedCString s_s_is_going_to_try_to_pic_005ba7f4
-;   undefined4 DAT_005ba81a
-;   undefined4 DAT_005ba822
-;   undefined4 DAT_005ba82a
-;   undefined4 DAT_005ba832
+;   double g_DOUBLE_005ba81a = 0.333333333333333
+;   double g_DOUBLE_005ba822 = 5
+;   double g_DOUBLE_005ba82a = 0.400000000000000
+;   float g_FLOAT_005ba832 = 15
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01d71de0
+;   char* g_CHAR_PTR_01d71de0
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -189,8 +189,8 @@ section .text
     FMUL ST0                            ; 004578dc
     FADDP                               ; 004578de
     FSQRT                               ; 004578e0
-    FMUL double ptr [0x005ba81a]        ; 004578e2 | DAT_005ba81a
-    FSUBR double ptr [0x005ba822]       ; 004578e8 | DAT_005ba822
+    FMUL double ptr [0x005ba81a]        ; 004578e2 | g_DOUBLE_005ba81a
+    FSUBR double ptr [0x005ba822]       ; 004578e8 | g_DOUBLE_005ba822
     FST float ptr [ESP + 0x4]           ; 004578ee
     FLD1                                ; 004578f2
     FCOMPP                              ; 004578f4
@@ -298,7 +298,7 @@ section .text
     PUSH EAX                            ; 00457a4f
     LEA EDI,[ESP + 0x140]               ; 00457a50
     LEA ESI,[ESP + 0x1dc]               ; 00457a57
-    FADD double ptr [0x005ba82a]        ; 00457a5e | DAT_005ba82a
+    FADD double ptr [0x005ba82a]        ; 00457a5e | g_DOUBLE_005ba82a
     PUSH EBX                            ; 00457a64
     FSTP float ptr [ESP + 0x1e8]        ; 00457a65
     MOVSD ES:EDI,ESI                    ; 00457a6c
@@ -329,9 +329,9 @@ section .text
         ;   Label: LAB_00457acb
     MOV ESI,0x2cfd900                   ; 00457ad2
     MOV EAX,dword ptr [ESP + 0x200]     ; 00457ad7
-    MOVSD ES:EDI,ESI                    ; 00457ade | DAT_02cfd900
-    MOVSD ES:EDI,ESI                    ; 00457adf | DAT_02cfd904
-    MOVSD ES:EDI,ESI                    ; 00457ae0 | DAT_02cfd908
+    MOVSD ES:EDI,ESI                    ; 00457ade | g_CVector3f_02cfd900
+    MOVSD ES:EDI,ESI                    ; 00457adf | g_CVector3f_02cfd900.y
+    MOVSD ES:EDI,ESI                    ; 00457ae0 | g_CVector3f_02cfd900.z
     TEST EAX,EAX                        ; 00457ae1
     JNZ 0x00457b28                      ; 00457ae3
         ;   XREF to: 00457b28 (CONDITIONAL_JUMP)  ; LAB_00457b28
@@ -398,7 +398,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0xd064]    ; 00457bb8
     PUSH EDX                            ; 00457bbe
     PUSH EAX                            ; 00457bbf
-    PUSH 0x5ba742                       ; 00457bc0 | s_s_can_t_pick_up_s_sombod_005ba741+1
+    PUSH 0x5ba742                       ; 00457bc0 | = "%s can't pick up %s, sombody else bea..."
     MOV EBX,dword ptr [0x005f1690]      ; 00457bc5 | g_CConsolePtr
     PUSH EBX                            ; 00457bcb | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00457bcc
@@ -463,7 +463,7 @@ section .text
     PUSH EAX                            ; 00457ca9
     LEA EDI,[ESP + 0x110]               ; 00457caa
     LEA ESI,[ESP + 0x194]               ; 00457cb1
-    FADD double ptr [0x005ba82a]        ; 00457cb8 | DAT_005ba82a
+    FADD double ptr [0x005ba82a]        ; 00457cb8 | g_DOUBLE_005ba82a
     PUSH EBX                            ; 00457cbe
     FSTP float ptr [ESP + 0x1a0]        ; 00457cbf
     MOVSD ES:EDI,ESI                    ; 00457cc6
@@ -592,8 +592,8 @@ section .text
         ;   Label: LAB_00457e1a
     MOV EDX,0x615                       ; 00457e1f
     PUSH 0x5ba7c4                       ; 00457e24 | = "Invalid demon townsfolk object shape!"
-    MOV [0x01d71de0],EAX                ; 00457e29 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00457e2e | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00457e29 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 00457e2e | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00457e34
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00457e39
@@ -711,14 +711,14 @@ section .text
     FADDP                               ; 00457fbb
     FSQRT                               ; 00457fbd
     FST float ptr [ESP]                 ; 00457fbf
-    FCOMP double ptr [0x005ba822]       ; 00457fc2 | DAT_005ba822
+    FCOMP double ptr [0x005ba822]       ; 00457fc2 | g_DOUBLE_005ba822
     FNSTSW AX                           ; 00457fc8
     SAHF                                ; 00457fca
     JC 0x0045788c                       ; 00457fcb
         ;   XREF to: 0045788c (CONDITIONAL_JUMP)  ; LAB_0045788c
     MOV EAX,dword ptr [EBP + 0x14]      ; 00457fd1
     FLD float ptr [EAX + 0xd054]        ; 00457fd4
-    FMUL float ptr [0x005ba832]         ; 00457fda | DAT_005ba832
+    FMUL float ptr [0x005ba832]         ; 00457fda | g_FLOAT_005ba832
     FCOMP float ptr [ESP]               ; 00457fe0
     FNSTSW AX                           ; 00457fe3
     SAHF                                ; 00457fe5

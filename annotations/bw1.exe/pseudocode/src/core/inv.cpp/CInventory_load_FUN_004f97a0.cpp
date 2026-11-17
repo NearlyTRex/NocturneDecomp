@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_load_FUN_004f97a0(CInventory *this_ptr,_FILE *file_handle)
 
 {
@@ -18,7 +16,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004f97a0(CInventory *this_ptr,_FIL
   int iVar5;
   CInventory *pCVar6;
   int iVar7;
-  uint *puVar8;
+  char *pcVar8;
   char *pcVar9;
   byte bVar10;
   char local_1dc [256];
@@ -31,45 +29,45 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004f97a0(CInventory *this_ptr,_FIL
   core_inv_cpp_CInventory_initialize_FUN_004f7050(this_ptr);
   _fgets(local_1dc,0xff,file_handle);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005e66a0);
+  _fscanf(file_handle,"%d\n");
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005e66a4);
+  _fscanf(file_handle,"%d\n");
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005e66a8);
+  _fscanf(file_handle,"%d\n");
   if (0 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005e66ac);
+    _fscanf(file_handle,"%f\n");
   }
   _fgets(local_1dc,0xff,file_handle);
   iVar7 = 0;
   pCVar6 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      puVar8 = &DAT_0061f1a8;
+      pcVar8 = g_CHAR_ARRAY_0061f1a8;
       pcVar9 = local_dc;
       for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pcVar9 = *puVar8;
-        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+        *(uint *)pcVar9 = *(uint *)pcVar8;
+        pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
         pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       }
-      puVar8 = &DAT_0061f210;
+      pcVar8 = g_CHAR_ARRAY_0061f210;
       pcVar9 = local_78;
       for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pcVar9 = *puVar8;
-        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+        *(uint *)pcVar9 = *(uint *)pcVar8;
+        pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
         pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       }
       _fscanf(file_handle," %s \"%[^\"]\"\n");
-      if (0x01D2C900->has_inventory_actors == 0) {
-        pcVar9 = local_78;
+      if (g_CDemonMission_PTR_0061f650->has_inventory_actors == 0) {
+        pcVar8 = local_78;
         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c2b0(local_dc);
         pCVar2 = pCVar3;
         do {
-          cVar1 = *pcVar9;
+          cVar1 = *pcVar8;
           pCVar2->actor_name[0] = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar9[1];
-          pcVar9 = pcVar9 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
           pCVar2->actor_name[1] = cVar1;
           pCVar2 = (CDemonActor *)(pCVar2->actor_name + 2);
         } while (cVar1 != '\0');
@@ -77,7 +75,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004f97a0(CInventory *this_ptr,_FIL
       }
       else {
         pCVar2 = core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_0051ab60
-                           (0x01D2C900,local_78);
+                           (g_CDemonMission_PTR_0061f650,local_78);
         pCVar6->items[0] = pCVar2;
       }
       iVar7 = iVar7 + 1;
@@ -97,7 +95,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004f97a0(CInventory *this_ptr,_FIL
   if (1 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,file_handle);
   }
-  iVar7 = 0x01D2C900->has_inventory_actors;
+  iVar7 = g_CDemonMission_PTR_0061f650->has_inventory_actors;
   this_ptr->selected_weapon = (CWeapon *)0x0;
   this_ptr->preserve_items = iVar7;
   if (-1 < local_14) {
@@ -106,8 +104,8 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004f97a0(CInventory *this_ptr,_FIL
                        (this_ptr->items[local_14],g_CWeaponClassInfo.name_hash);
     this_ptr->selected_weapon = pCVar4;
     if (this_ptr->selected_weapon == (CWeapon *)0x0) {
-      _DAT_01d1d400 = "..\\core\\inv.cpp";
-      _DAT_01d1d404 = 0x69d;
+      g_CHAR_PTR_01d1d400 = "..\\core\\inv.cpp";
+      g_INT_01d1d404 = 0x69d;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CInventory::load - Can't find your weapon");
     }
   }

@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d8ff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
@@ -32,7 +32,7 @@ section .text
     PUSH EBX                            ; 0053c10c
         ;   Label: LAB_0053c10c
     FLD float ptr [EDX + 0x11d4]        ; 0053c10d
-    MOV EBX,dword ptr [0x0060b280]      ; 0053c113 | DAT_0060b280
+    MOV EBX,dword ptr [0x0060b280]      ; 0053c113 | g_CDemonRenderer_PTR_0060b280
     FCHS                                ; 0053c119
     ADD EDX,0x104                       ; 0053c11b
     FSTP float ptr [ESP + 0x4]          ; 0053c121

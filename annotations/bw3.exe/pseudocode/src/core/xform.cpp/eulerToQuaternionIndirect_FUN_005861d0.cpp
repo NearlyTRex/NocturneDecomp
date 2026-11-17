@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005861d0(CVector3f *euler_angles,CQuaternion4f *quat_out)
 
 {
@@ -31,11 +29,11 @@ CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005861d
   float afStack_10 [2];
   
   bVar3 = 0;
-  fStack_20 = euler_angles->x * _DAT_005d81eb;
+  fStack_20 = euler_angles->x * 0.5f;
   core_dirmat_cpp_sinCos_FUN_0045bef0(&stack0xffffffcc,&fStack_28,&fStack_20);
-  fStack_1c = euler_angles->z * _DAT_005d81eb;
+  fStack_1c = euler_angles->z * 0.5f;
   core_dirmat_cpp_sinCos_FUN_0045bef0(&stack0xffffffd0,afStack_10,&fStack_1c);
-  fStack_18 = euler_angles->y * _DAT_005d81eb;
+  fStack_18 = euler_angles->y * 0.5f;
   core_dirmat_cpp_sinCos_FUN_0045bef0(&fStack_2c,&fStack_24,&fStack_18);
   fStack_14 = fStack_28 * afStack_10[0];
   fStack_40 = -fStack_34 * afStack_10[0] * fStack_24 - fStack_28 * fStack_30 * fStack_2c;

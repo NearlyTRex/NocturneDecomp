@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 40,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 22
+    "total_lines": 21
   },
   "cross_references": [],
   "function": {
@@ -32,8 +31,8 @@
   "globals": [
     {
       "addr": "02c83424",
-      "name": "DAT_02c83424",
-      "type": "undefined4",
+      "name": "g_PTR_02c83424",
+      "type": "void*",
       "value": null
     }
   ],
@@ -109,19 +108,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
+      "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (_DAT_02c83424 == (code *)0x0) {",
+      "text": "iVar1 = (*(code *)g_PTR_02c83424)(texture_id);",
       "type": "unresolved_funcptr"
     }
   ]

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_renderSps_FUN_004f64f0(void)
 
 {
@@ -18,8 +16,8 @@ void __cdecl core_inv_cpp_renderSps_FUN_004f64f0(void)
   int alpha;
   
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CAlphaBitmap_01d1baf4,2,2,0xffff);
-  iVar1 = _DAT_01d1bc48;
-  if (_DAT_01d1bc48 == -1) {
+  iVar1 = g_INT_01d1bc48;
+  if (g_INT_01d1bc48 == -1) {
     return;
   }
   alpha = 0xffff;

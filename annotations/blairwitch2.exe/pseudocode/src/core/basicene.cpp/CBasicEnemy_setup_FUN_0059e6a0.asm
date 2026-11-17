@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_005ef8aa
 ;   TerminatedCString s_Bip01_Spine1_005ef8b5
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d192f8
 ;
 ; Called Functions:
@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_0059e71e
     JZ 0x0059e735                       ; 0059e725
         ;   XREF to: 0059e735 (CONDITIONAL_JUMP)  ; LAB_0059e735
-    MOV EAX,[0x00618170]                ; 0059e727 | DAT_00618170
+    MOV EAX,[0x00618170]                ; 0059e727 | g_CDemonMission_PTR_00618170
     CMP dword ptr [EAX + 0x1008],0x0    ; 0059e72c | DAT_01d192f8
     JZ 0x0059e78b                       ; 0059e733
         ;   XREF to: 0059e78b (CONDITIONAL_JUMP)  ; LAB_0059e78b

@@ -10,7 +10,7 @@
 ;   core_stranger.cpp_factoryFuncStranger_FUN_00585240 at 00585253
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00606084
+;   float g_FLOAT_00606084 = 10
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_00434320
@@ -60,7 +60,7 @@ section .text
     MOV dword ptr [EBX + 0x20008],0x0   ; 0058534f
     MOV dword ptr [EBX + 0x20010],0x0   ; 00585359
     MOV dword ptr [EBX + 0x20014],0x0   ; 00585363
-    FLD float ptr [0x00606084]          ; 0058536d | DAT_00606084
+    FLD float ptr [0x00606084]          ; 0058536d | g_FLOAT_00606084
     MOV dword ptr [EBX + 0x20018],0x0   ; 00585373
     ADD ESP,0x4                         ; 0058537d
     FSTP float ptr [EBX + 0x1ffbc]      ; 00585380

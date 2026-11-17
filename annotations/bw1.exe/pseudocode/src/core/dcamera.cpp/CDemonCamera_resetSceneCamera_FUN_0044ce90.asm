@@ -11,8 +11,8 @@
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0 at 00462b91
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c6120
-;   undefined4 DAT_00857cd4
+;   CDemonCamera* g_CDemonCamera_PTR_007c6120
+;   CDemonCamera* g_CDemonCamera_PTR_00857cd4
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
 
     XOR EDX,EDX                         ; 0044ce90
         ;   Label: core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90
-    MOV dword ptr [0x00857cd4],EDX      ; 0044ce92 | DAT_00857cd4
-    MOV dword ptr [0x007c6120],EDX      ; 0044ce98 | DAT_007c6120
+    MOV dword ptr [0x00857cd4],EDX      ; 0044ce92 | g_CDemonCamera_PTR_00857cd4
+    MOV dword ptr [0x007c6120],EDX      ; 0044ce98 | g_CDemonCamera_PTR_007c6120
     RET                                 ; 0044ce9e
 

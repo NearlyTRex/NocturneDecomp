@@ -8,10 +8,10 @@
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470 at 0046b558
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bdd810
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c60dac
-;   undefined4 DAT_01c6b5d0
+;   int g_INT_01bdd810
+;   void*[1200] g_ARRAY_PTR_01c5faec
+;   uint*[1200] g_UINT_PTR_ARRAY_01c60dac
+;   uint[1600] g_UINT_ARRAY_01c6b5d0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     SHR EAX,0x10                        ; 0046ffb5
         ;   Label: LAB_0046ffb5
     SHR ECX,0x10                        ; 0046ffb8
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c60dac] ; 0046ffbb | DAT_01c60dac
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c5faec] ; 0046ffc2 | DAT_01c5faec
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c60dac] ; 0046ffbb | g_UINT_PTR_ARRAY_01c60dac
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c5faec] ; 0046ffc2 | g_ARRAY_PTR_01c5faec
     SUB ECX,EAX                         ; 0046ffc9
     JLE 0x0047012c                      ; 0046ffcb
         ;   XREF to: 0047012c (CONDITIONAL_JUMP)  ; LAB_0047012c
@@ -42,12 +42,12 @@ section .text
     INC ECX                             ; 0046ffd8
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046ffd9
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046ffdc
-    IMUL dword ptr [ECX*0x4 + 0x1c6b5d0] ; 0046ffdf | DAT_01c6b5d0
+    IMUL dword ptr [ECX*0x4 + 0x1c6b5d0] ; 0046ffdf | g_UINT_ARRAY_01c6b5d0
     MOV EDI,EBX                         ; 0046ffe6
     MOV EBX,EBP                         ; 0046ffe8
     DEC ECX                             ; 0046ffea
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046ffeb
-    MOV EAX,[0x01bdd810]                ; 0046ffee | DAT_01bdd810
+    MOV EAX,[0x01bdd810]                ; 0046ffee | g_INT_01bdd810
     SUB ECX,0x4                         ; 0046fff3
         ;   Label: LAB_0046fff3
     JL 0x004700f8                       ; 0046fff6
@@ -175,7 +175,7 @@ section .text
     SHR EBP,0x8                         ; 0047011e
     CMP EBP,dword ptr [EBX + 0x8]       ; 00470121
     SBB EAX,-0x1                        ; 00470124
-    MOV [0x01bdd810],EAX                ; 00470127 | DAT_01bdd810
+    MOV [0x01bdd810],EAX                ; 00470127 | g_INT_01bdd810
         ;   Label: LAB_00470127
     POP EBP                             ; 0047012c
         ;   Label: LAB_0047012c

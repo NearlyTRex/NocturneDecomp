@@ -15,7 +15,7 @@ EDeathState __cdecl core_union_cpp_CUnion_getDeathState_FUN_005a5280(CUnion *thi
   SStateMachine *this_ptr_00;
   
   this_ptr_00 = &(this_ptr->base).base.state_machine;
-  iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"BDeath" + 1);
+  iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Death");
   if ((iVar2 == 0) &&
      (iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Animation"),
      iVar2 == 0)) {

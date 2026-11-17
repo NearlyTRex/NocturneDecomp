@@ -47,15 +47,15 @@
 ;   void* switchdataD_00511dd4 = 005120cf
 ;   TerminatedCString s_core_path_cpp_005e16cf
 ;   TerminatedCString s_CPathMap_getDirection_Sh_005e16e0
-;   undefined4 DAT_005e1759
-;   undefined4 DAT_005e175d
-;   undefined4 DAT_005e1761
-;   undefined4 DAT_005e1769
-;   undefined4 DAT_005e1771
-;   undefined4 DAT_005e1779
-;   undefined4 DAT_005e1781
-;   undefined4 DAT_005e1789
-;   undefined4 DAT_005e1791
+;   float g_FLOAT_005e1759 = 0.01000000
+;   float g_FLOAT_005e175d = -1
+;   double g_DOUBLE_005e1761 = -2.35619449012500
+;   double g_DOUBLE_005e1769 = 2.35619449012500
+;   double g_DOUBLE_005e1771 = -0.785398163375000
+;   double g_DOUBLE_005e1779 = 0.785398163375000
+;   double g_DOUBLE_005e1781 = -1.57079632675000
+;   double g_DOUBLE_005e1789 = 1.57079632675000
+;   float g_FLOAT_005e1791 = 3.141593
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -104,7 +104,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00511e4b
     MOVSD ES:EDI,ESI                    ; 00511e4c
     MOVSD ES:EDI,ESI                    ; 00511e4d
-    FLD float ptr [0x005e1759]          ; 00511e4e | DAT_005e1759
+    FLD float ptr [0x005e1759]          ; 00511e4e | g_FLOAT_005e1759
     FLD float ptr [ESP + 0x18]          ; 00511e54
     FMUL ST1                            ; 00511e58
     FLD float ptr [ESP + 0x1c]          ; 00511e5a
@@ -211,7 +211,7 @@ section .text
         ;   Label: switchD
     FLD float ptr [ESP + 0x44]          ; 00511f83
         ;   Label: caseD_2
-    FADD float ptr [0x005e175d]         ; 00511f87 | DAT_005e175d
+    FADD float ptr [0x005e175d]         ; 00511f87 | g_FLOAT_005e175d
     JMP 0x00511ecc                      ; 00511f8d
         ;   XREF to: 00511ecc (UNCONDITIONAL_JUMP)  ; LAB_00511ecc
     FLD1                                ; 00511f92
@@ -223,14 +223,14 @@ section .text
         ;   XREF to: 00511ed1 (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x3c]          ; 00511fa2
         ;   Label: caseD_4
-    FADD float ptr [0x005e175d]         ; 00511fa6 | DAT_005e175d
+    FADD float ptr [0x005e175d]         ; 00511fa6 | g_FLOAT_005e175d
     INC EBX                             ; 00511fac
     FSTP float ptr [ESP + 0x3c]         ; 00511fad
     JMP 0x00511ed1                      ; 00511fb1
         ;   XREF to: 00511ed1 (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x28]          ; 00511fb6
         ;   Label: caseD_5
-    FADD double ptr [0x005e1779]        ; 00511fba | DAT_005e1779
+    FADD double ptr [0x005e1779]        ; 00511fba | g_DOUBLE_005e1779
     FSTP float ptr [ESP + 0x8c]         ; 00511fc0
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00511fc7
     MOV ESP,EBP                         ; 00511fce
@@ -241,7 +241,7 @@ section .text
     RET                                 ; 00511fd4
     FLD float ptr [ESP + 0x28]          ; 00511fd5
         ;   Label: caseD_3
-    FADD double ptr [0x005e1789]        ; 00511fd9 | DAT_005e1789
+    FADD double ptr [0x005e1789]        ; 00511fd9 | g_DOUBLE_005e1789
     FSTP float ptr [ESP + 0x8c]         ; 00511fdf
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00511fe6
     MOV ESP,EBP                         ; 00511fed
@@ -252,7 +252,7 @@ section .text
     RET                                 ; 00511ff3
     FLD float ptr [ESP + 0x28]          ; 00511ff4
         ;   Label: caseD_7
-    FADD double ptr [0x005e1769]        ; 00511ff8 | DAT_005e1769
+    FADD double ptr [0x005e1769]        ; 00511ff8 | g_DOUBLE_005e1769
     FSTP float ptr [ESP + 0x8c]         ; 00511ffe
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00512005
     MOV ESP,EBP                         ; 0051200c
@@ -263,7 +263,7 @@ section .text
     RET                                 ; 00512012
     FLD float ptr [ESP + 0x28]          ; 00512013
         ;   Label: caseD_2
-    FADD float ptr [0x005e1791]         ; 00512017 | DAT_005e1791
+    FADD float ptr [0x005e1791]         ; 00512017 | g_FLOAT_005e1791
     FSTP float ptr [ESP + 0x8c]         ; 0051201d
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00512024
     MOV ESP,EBP                         ; 0051202b
@@ -274,7 +274,7 @@ section .text
     RET                                 ; 00512031
     FLD float ptr [ESP + 0x28]          ; 00512032
         ;   Label: caseD_8
-    FADD double ptr [0x005e1761]        ; 00512036 | DAT_005e1761
+    FADD double ptr [0x005e1761]        ; 00512036 | g_DOUBLE_005e1761
     FSTP float ptr [ESP + 0x8c]         ; 0051203c
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00512043
     MOV ESP,EBP                         ; 0051204a
@@ -285,7 +285,7 @@ section .text
     RET                                 ; 00512050
     FLD float ptr [ESP + 0x28]          ; 00512051
         ;   Label: caseD_4
-    FADD double ptr [0x005e1781]        ; 00512055 | DAT_005e1781
+    FADD double ptr [0x005e1781]        ; 00512055 | g_DOUBLE_005e1781
     FSTP float ptr [ESP + 0x8c]         ; 0051205b
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00512062
     MOV ESP,EBP                         ; 00512069
@@ -296,7 +296,7 @@ section .text
     RET                                 ; 0051206f
     FLD float ptr [ESP + 0x28]          ; 00512070
         ;   Label: caseD_6
-    FADD double ptr [0x005e1771]        ; 00512074 | DAT_005e1771
+    FADD double ptr [0x005e1771]        ; 00512074 | g_DOUBLE_005e1771
     FSTP float ptr [ESP + 0x8c]         ; 0051207a
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00512081
     MOV ESP,EBP                         ; 00512088
@@ -309,8 +309,8 @@ section .text
         ;   Label: default
     MOV EAX,0x183                       ; 00512094
     PUSH 0x5e16e0                       ; 00512099 | = "CPathMap::getDirection - Should never..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0051209e | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 005120a4 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0051209e | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 005120a4 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005120a9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005120ae
@@ -386,7 +386,7 @@ section .text
         ;   XREF to: 005120da (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x44]          ; 0051216b
         ;   Label: caseD_2
-    FADD float ptr [0x005e175d]         ; 0051216f | DAT_005e175d
+    FADD float ptr [0x005e175d]         ; 0051216f | g_FLOAT_005e175d
     JMP 0x005120d5                      ; 00512175
         ;   XREF to: 005120d5 (UNCONDITIONAL_JUMP)  ; LAB_005120d5
     FLD1                                ; 0051217a
@@ -398,7 +398,7 @@ section .text
         ;   XREF to: 005120da (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x3c]          ; 0051218a
         ;   Label: caseD_4
-    FADD float ptr [0x005e175d]         ; 0051218e | DAT_005e175d
+    FADD float ptr [0x005e175d]         ; 0051218e | g_FLOAT_005e175d
     INC EBX                             ; 00512194
     FSTP float ptr [ESP + 0x3c]         ; 00512195
     JMP 0x005120da                      ; 00512199

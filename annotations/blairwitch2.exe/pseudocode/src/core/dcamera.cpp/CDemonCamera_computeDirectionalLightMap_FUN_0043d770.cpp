@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0043d770(CDemonCamera *this_ptr,CVector3f *light_dir,float intensity)
 
 {
   float fVar1;
-  byte *puVar2;
+  char *pcVar2;
   float *pfVar3;
   int iVar4;
   double dVar5;
@@ -20,27 +18,27 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0043d7
   int local_20;
   int local_1c;
   
-  memset((void *)0xae24d8,0,0x12d40);
+  memset(g_CHAR_ARRAY_00ae24d8,0,0x12d40);
   if ((light_dir != (CVector3f *)0x0) && (local_20 = 0, 0 < this_ptr->display_height)) {
     local_24 = 0;
     local_1c = 0;
     do {
-      puVar2 = (byte *)(local_1c + 0xae24d8);
-      pfVar3 = (float *)(local_24 + 0xa005d4);
+      pcVar2 = g_CHAR_ARRAY_00ae24d8 + local_1c;
+      pfVar3 = (float *)((int)&g_CVector3f_ARRAY_00a005d4[0].x + local_24);
       iVar4 = 0;
       if (0 < this_ptr->display_width) {
         do {
           fVar1 = light_dir->z * pfVar3[2] + light_dir->x * *pfVar3 + light_dir->y * pfVar3[1];
           if (0.0 < fVar1) {
             dVar5 = round
-                              ((double)(fVar1 * intensity * (float)_DAT_005ce43e *
-                                       (float)_DAT_005ce446));
+                              ((double)(fVar1 * intensity * (float)255 *
+                                       (float)0.25));
             local_1c = (int)ROUND(dVar5);
-            *puVar2 = (byte)local_1c;
+            *pcVar2 = (char)local_1c;
           }
           pfVar3 = pfVar3 + 3;
           iVar4 = iVar4 + 1;
-          puVar2 = puVar2 + 1;
+          pcVar2 = pcVar2 + 1;
         } while (iVar4 < this_ptr->display_width);
       }
       local_24 = local_24 + 0xf00;

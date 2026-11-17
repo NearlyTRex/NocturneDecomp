@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 138,
+    "complexity_score": 103,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 71
@@ -58,15 +57,15 @@
     },
     {
       "addr": "0061f287",
-      "name": "DAT_0061f287",
-      "type": "undefined1",
-      "value": null
+      "name": "g_BYTE_0061f287",
+      "type": "byte",
+      "value": "0x0"
     },
     {
       "addr": "0061f289",
-      "name": "DAT_0061f289",
-      "type": "undefined2",
-      "value": null
+      "name": "g_SHORT_0061f289",
+      "type": "short",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -207,30 +206,6 @@
       "severity": "mild",
       "text": "void FUN_005c2da0(int *param_1,int *param_2)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_0061f289",
-      "severity": "mild",
-      "text": "if (DAT_0061f289 < 0x8000) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061f289",
-      "severity": "mild",
-      "text": "else if ((DAT_0061f289 < 0x8000) || (3 < DAT_0061f287)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061f287",
-      "severity": "mild",
-      "text": "else if ((DAT_0061f289 < 0x8000) || (3 < DAT_0061f287)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

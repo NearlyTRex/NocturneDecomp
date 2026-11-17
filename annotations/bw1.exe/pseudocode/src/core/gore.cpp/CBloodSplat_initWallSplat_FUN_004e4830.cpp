@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004e4830(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type)
 
 {
@@ -31,12 +29,12 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004e4830(CBloodSplat *t
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
   this_ptr->texture_variant = iVar1;
   this_ptr->age = 0.0;
-  (this_ptr->position_fixed).x = (int)ROUND(position->x * _DAT_006016a8);
-  (this_ptr->position_fixed).y = (int)ROUND(position->y * _DAT_006016a8);
-  (this_ptr->position_fixed).z = (int)ROUND(position->z * _DAT_006016a8);
-  (this_ptr->normal_fixed).x = (int)ROUND(normal->x * _DAT_006016ac);
-  (this_ptr->normal_fixed).y = (int)ROUND(normal->y * _DAT_006016ac);
-  (this_ptr->normal_fixed).z = (int)ROUND(normal->z * _DAT_006016ac);
+  (this_ptr->position_fixed).x = (int)ROUND(position->x * 256.0f);
+  (this_ptr->position_fixed).y = (int)ROUND(position->y * 256.0f);
+  (this_ptr->position_fixed).z = (int)ROUND(position->z * 256.0f);
+  (this_ptr->normal_fixed).x = (int)ROUND(normal->x * 65536.0f);
+  (this_ptr->normal_fixed).y = (int)ROUND(normal->y * 65536.0f);
+  (this_ptr->normal_fixed).z = (int)ROUND(normal->z * 65536.0f);
   this_ptr->expired = 0;
   this_ptr->blood_type = (EBloodType)position;
   return;

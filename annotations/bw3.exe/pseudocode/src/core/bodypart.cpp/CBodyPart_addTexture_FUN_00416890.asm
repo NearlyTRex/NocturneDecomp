@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_005b6ca4
 ;   TerminatedCString s_Too_many_body_part_textu_005b6cb9
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -60,8 +60,8 @@ section .text
     MOV EDI,0x5b6ca4                    ; 004168d7 | = "..\\core\\bodypart.cpp"
     MOV EAX,0x48e                       ; 004168dc
     PUSH 0x5b6cb9                       ; 004168e1 | = "Too many body part textures!"
-    MOV dword ptr [0x01d71de0],EDI      ; 004168e6 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004168ec | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 004168e6 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004168ec | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004168f1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004168f6

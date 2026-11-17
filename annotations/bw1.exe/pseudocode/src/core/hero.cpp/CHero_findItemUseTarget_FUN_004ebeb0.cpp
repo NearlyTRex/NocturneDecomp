@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr)
 
 {
@@ -44,15 +42,15 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr)
         *(uint *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
              *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
         if (((1.0 <= (double)local_38.y) &&
-            ((((double)local_38.y <= _DAT_005e48fd && ((float)_DAT_005e4905 <= local_38.z)) &&
-             ((double)local_38.z <= _DAT_005e490d)))) && (ABS(local_38.x) <= (float)_DAT_005e490d))
-        {
+            ((((double)local_38.y <= 6 && ((float)0.5 <= local_38.z))
+             && ((double)local_38.z <= 3)))) &&
+           (ABS(local_38.x) <= (float)3)) {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_38,&local_50);
           local_44 = local_50.x;
           local_40[(uint)bVar2 * -2] = *(float *)((int)&local_50 + (uint)bVar2 * -8 + 4);
           local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
                *(float *)((int)&local_50 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-          if (ABS(local_40[0]) <= (float)_DAT_005e4915) {
+          if (ABS(local_40[0]) <= (float)60) {
             this_ptr->hero_action_range = 0.0;
             this_ptr->hero_action = 5;
             this_ptr->hero_action_actor = local_20;

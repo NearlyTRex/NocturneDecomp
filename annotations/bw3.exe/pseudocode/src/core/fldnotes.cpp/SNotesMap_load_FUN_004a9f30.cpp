@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004a9f30(SNotesMap *this_ptr)
 
 {
@@ -29,8 +27,8 @@ int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004a9f30(SNotesMap *this_ptr)
                      (this_ptr->saved_alpha,(this_ptr->image).width * (this_ptr->image).height);
   this_ptr->saved_alpha = pvVar1;
   if (pvVar1 == (void *)0x0) {
-    _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-    _DAT_01d71de4 = 0x77a;
+    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+    g_INT_01d71de4 = 0x77a;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   uVar4 = (this_ptr->image).height * (this_ptr->image).width;

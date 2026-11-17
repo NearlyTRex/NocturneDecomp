@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0045ff13
     PUSH 0x5d8ad1                       ; 0045ff16 | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0045ff1b | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0045ff1b | g_CEventList_PTR_0061b4d0
     PUSH EDX                            ; 0045ff21
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0045ff22
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -245,14 +245,14 @@ section .text
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780 ; 00460170
         ;   XREF to: 00565780 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     MOV dword ptr [EBX + 0xc2c4],EAX    ; 00460175
-    MOV EAX,[0x0061f650]                ; 0046017b | DAT_0061f650
+    MOV EAX,[0x0061f650]                ; 0046017b | g_CDemonMission_PTR_0061f650
     MOV ECX,dword ptr [EAX + 0x1008]    ; 00460180 | DAT_01d2d908
     ADD ESP,0xc                         ; 00460186
     TEST ECX,ECX                        ; 00460189
     JNZ 0x004601af                      ; 0046018b
         ;   XREF to: 004601af (CONDITIONAL_JUMP)  ; LAB_004601af
     PUSH 0x5d8bd1                       ; 0046018d | = "PuzzleModeHard"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 00460192 | DAT_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 00460192 | g_CEventList_PTR_0061b4d0
     PUSH ESI                            ; 00460198
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460199
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -267,7 +267,7 @@ section .text
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH EBX                            ; 004601ba
     MOV dword ptr [EBX + 0xc9c4],0x0    ; 004601bb
-    FISTP dword ptr [0x00612270]        ; 004601c5 | DAT_00612270
+    FISTP dword ptr [0x00612270]        ; 004601c5 | g_INT_00612270
     CALL core_enemy.cpp_CEnemy_setup_FUN_004a0510 ; 004601cb
         ;   XREF to: 004a0510 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a0510(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004601d0

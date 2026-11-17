@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 114,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 14,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -83,9 +82,9 @@
     },
     {
       "addr": "00607960",
-      "name": "DAT_00607960",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_PTR_00607960",
+      "type": "uint*",
+      "value": "00000000"
     },
     {
       "addr": "006079a0",
@@ -208,16 +207,8 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (*(code *)PTR_crt_unknown_c_FUN_005a7f3c_006079a0)(&DAT_00607960);",
+      "text": "uVar2 = (*(code *)PTR_crt_unknown_c_FUN_005a7f3c_006079a0)(&g_UINT_PTR_00607960);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00607960",
-      "severity": "mild",
-      "text": "uVar2 = (*(code *)PTR_crt_unknown_c_FUN_005a7f3c_006079a0)(&DAT_00607960);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

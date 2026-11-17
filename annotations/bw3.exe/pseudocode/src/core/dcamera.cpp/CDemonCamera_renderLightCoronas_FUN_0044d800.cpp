@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 {
@@ -16,21 +14,22 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
   uint uVar3;
   int iVar4;
   int iVar5;
-  float *pfVar6;
+  CVector3f *pCVar6;
   CMatrix3x3f *pCVar7;
-  byte bVar8;
-  bool bVar9;
-  double dVar10;
+  int *piVar8;
+  byte bVar9;
+  bool bVar10;
   double dVar11;
+  double dVar12;
   int aiStackY_1050 [1016];
   int iStack_68;
   int iStack_5c;
   int iStack_58;
   int local_54;
-  int iStack_48;
-  int iStack_44;
-  int local_40;
-  int local_3c;
+  char *pcStack_48;
+  int *piStack_44;
+  CVector3f *local_40;
+  CVector3i *local_3c;
   int local_38;
   int local_34;
   int local_30;
@@ -40,14 +39,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
   int local_20;
   char *local_1c;
   
-  bVar8 = 0;
-  _DAT_01340584 = light_source;
+  bVar9 = 0;
+  g_CDemonLight_PTR_01340584 = light_source;
   pCVar7 = &(light_source->base).base.rotation_matrix;
-  pfVar6 = (float *)&DAT_01340588;
+  piVar8 = (int *)&g_CMatrix3x3i_01340588;
   for (iVar5 = 10; iVar4 = 0, iVar5 != 0; iVar5 = iVar5 + -1) {
-    *pfVar6 = pCVar7->m[0].x;
+    *piVar8 = (int)pCVar7->m[0].x;
     pCVar7 = (CMatrix3x3f *)&pCVar7->m[0].y;
-    pfVar6 = pfVar6 + 1;
+    piVar8 = piVar8 + 1;
   }
   do {
     iVar5 = iVar4 + 4;
@@ -59,88 +58,92 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
   if (0 < this_ptr->display_height) {
     iVar4 = 0;
     do {
-      *(int *)(iVar4 + 0x14fb300) = this_ptr->display_width;
-      *(uint *)(iVar4 + 0x14fb6c0) = 0;
+      *(int *)((int)g_INT_ARRAY_014fb300 + iVar4) = this_ptr->display_width;
+      *(uint *)((int)g_INT_ARRAY_014fb6c0 + iVar4) = 0;
       iVar5 = iVar5 + 1;
       iVar4 = iVar4 + 4;
     } while (iVar5 < this_ptr->display_height);
   }
   iStack_68 = 0x44d889;
   core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170(light_source);
-  fVar1 = (light_source->base).max_distance * (float)_DAT_005b9eee;
-  fVar2 = (float)_DAT_005b9ef6;
-  dVar10 = round((double)fVar1);
+  fVar1 = (light_source->base).max_distance * (float)256;
+  fVar2 = (float)3.3219280948900001;
+  dVar11 = round((double)fVar1);
   iStack_68 = 0x44d8b6;
-  dVar11 = round((double)(fVar1 * 0.30103 * fVar2));
+  dVar12 = round((double)(fVar1 * 0.30103 * fVar2));
   local_38 = 0;
-  _DAT_00b9e550 = (int)ROUND(dVar11);
-  _DAT_00b9e54c = (int)ROUND(dVar10);
-  _DAT_00b9e550 = _DAT_00b9e550 + -1;
+  g_INT_00b9e550 = (int)ROUND(dVar12);
+  g_INT_00b9e54c = (int)ROUND(dVar11);
+  g_INT_00b9e550 = g_INT_00b9e550 + -1;
   if (0 < this_ptr->display_height) {
     local_34 = 0;
-    local_40 = 0xa38388;
-    iStack_44 = 0x14fba80;
-    iStack_48 = 0xb2cfc8;
-    local_3c = 0x956488;
+    local_40 = g_CVector3f_ARRAY_00a38388;
+    piStack_44 = g_INT_ARRAY_014fba80;
+    pcStack_48 = g_CHAR_ARRAY_00b2cfc8;
+    local_3c = g_CVector3i_ARRAY_00956488;
     do {
-      if (this_ptr->display_width != *(int *)(local_34 + 0x14fb300)) {
-        local_20 = *(int *)(local_34 + 0x14fb300);
-        local_30 = *(int *)(local_34 + 0x14fb6c0);
-        local_24 = (CVector3i *)(local_3c + local_20 * 0xc);
-        local_1c = (char *)(iStack_48 + local_20);
-        local_2c = (uint *)(iStack_44 + local_20 * 4);
-        local_28 = (uint *)(*(int *)(&DAT_01c60dac + (local_38 << (DAT_013405b0 & 0x1f)) * 4) +
-                           (local_20 << (DAT_013405b0 & 0x1f)) * 4);
-        pfVar6 = (float *)(local_20 * 0xc + local_40);
+      if (this_ptr->display_width != *(int *)((int)g_INT_ARRAY_014fb300 + local_34)) {
+        local_20 = *(int *)((int)g_INT_ARRAY_014fb300 + local_34);
+        local_30 = *(int *)((int)g_INT_ARRAY_014fb6c0 + local_34);
+        local_24 = local_3c + local_20;
+        local_1c = pcStack_48 + local_20;
+        local_2c = (uint *)(piStack_44 + local_20);
+        local_28 = g_UINT_PTR_ARRAY_01c60dac[local_38 << (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f)]
+                   + (local_20 << (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f));
+        pCVar6 = local_40 + local_20;
         iVar5 = local_20 - local_30;
-        bVar9 = SBORROW4(local_20,local_30);
-        while (bVar9 != iVar5 < 0) {
+        bVar10 = SBORROW4(local_20,local_30);
+        while (bVar10 != iVar5 < 0) {
           if ((*local_28 < *local_2c) &&
-             (0.0 <= pfVar6[2] * _DAT_013405a8 + *pfVar6 * _DAT_01340590 + pfVar6[1] * _DAT_0134059c
-             )) {
+             (0.0 <= pCVar6->z * (float)g_CMatrix3x3i_01340588.m[2].z +
+                     pCVar6->x * (float)g_CMatrix3x3i_01340588.m[0].z +
+                     pCVar6->y * (float)g_CMatrix3x3i_01340588.m[1].z)) {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
-                      (&_DAT_01340584->base,local_24,(CVector3i *)&stack0xffffff98);
+                      (&g_CDemonLight_PTR_01340584->base,local_24,(CVector3i *)&stack0xffffff98);
             iStack_5c = iStack_68;
-            *(uint *)((int)&stack0xffffffa8 + (uint)bVar8 * -8) =
-                 *(uint *)(&stack0xffffff9c + (uint)bVar8 * -8);
-            *(uint *)((int)&stack0xffffffac + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-                 *(uint *)(&stack0xffffffa0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+            *(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =
+                 *(uint *)(&stack0xffffff9c + (uint)bVar9 * -8);
+            *(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
+                 *(uint *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
             if ((0 < local_54) &&
-               ((uVar3 = (uint)_DAT_01340584->shadow_depth_buffer
-                               [(iStack_58 >> 0x10) * _DAT_01340584->shadow_map_width +
-                                (iStack_5c >> 0x10)], (int)uVar3 < _DAT_00b9e54c &&
+               ((uVar3 = (uint)g_CDemonLight_PTR_01340584->shadow_depth_buffer
+                               [(iStack_58 >> 0x10) * g_CDemonLight_PTR_01340584->shadow_map_width +
+                                (iStack_5c >> 0x10)], (int)uVar3 < g_INT_00b9e54c &&
                 (local_54 < (int)(uVar3 + 0x80))))) {
               *local_1c = *local_1c +
-                          (char)((int)((_DAT_00b9e54c - uVar3) *
-                                      (uint)_DAT_01340584->precomputed_lighting_textures
-                                            [((_DAT_01340584->texture_coord_mask &
+                          (char)((int)((g_INT_00b9e54c - uVar3) *
+                                      (uint)g_CDemonLight_PTR_01340584->
+                                            precomputed_lighting_textures
+                                            [((g_CDemonLight_PTR_01340584->texture_coord_mask &
                                               iStack_58 >>
-                                              ((byte)_DAT_01340584->shadow_y_shift & 0x1f)) <<
-                                             ((byte)_DAT_01340584->texture_row_shift & 0x1f)) +
-                                             (iStack_5c >>
-                                              ((byte)_DAT_01340584->shadow_x_shift & 0x1f) &
-                                             _DAT_01340584->texture_coord_mask)]) >>
-                                (DAT_00b9e550 & 0x1f));
+                                              ((byte)g_CDemonLight_PTR_01340584->shadow_y_shift &
+                                              0x1f)) <<
+                                             ((byte)g_CDemonLight_PTR_01340584->texture_row_shift &
+                                             0x1f)) + (iStack_5c >>
+                                                       ((byte)g_CDemonLight_PTR_01340584->
+                                                              shadow_x_shift & 0x1f) &
+                                                      g_CDemonLight_PTR_01340584->texture_coord_mask
+                                                      )]) >> ((byte)g_INT_00b9e550 & 0x1f));
             }
           }
-          pfVar6 = pfVar6 + 3;
+          pCVar6 = pCVar6 + 1;
           local_2c = local_2c + 1;
           local_24 = local_24 + 1;
           local_20 = local_20 + 1;
-          local_28 = local_28 + (1 << (DAT_013405b0 & 0x1f));
+          local_28 = local_28 + (1 << (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f));
           local_1c = local_1c + 1;
           iVar5 = local_20 - local_30;
-          bVar9 = SBORROW4(local_20,local_30);
+          bVar10 = SBORROW4(local_20,local_30);
         }
       }
       local_34 = local_34 + 4;
-      local_40 = local_40 + 0xf00;
-      iStack_44 = iStack_44 + 0x500;
-      iStack_48 = iStack_48 + 0x140;
-      local_3c = local_3c + 0xf00;
+      local_40 = local_40 + 0x140;
+      piStack_44 = piStack_44 + 0x140;
+      pcStack_48 = pcStack_48 + 0x140;
+      local_3c = local_3c + 0x140;
       local_38 = local_38 + 1;
     } while (local_38 < this_ptr->display_height);
   }
-  _DAT_0134017c = 1;
+  g_INT_0134017c = 1;
   return;
 }

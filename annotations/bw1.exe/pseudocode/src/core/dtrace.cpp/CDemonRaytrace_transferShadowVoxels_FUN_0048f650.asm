@@ -47,8 +47,8 @@
 ;   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005594e0 at 0055954a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dbb3c
-;   undefined4 DAT_005dbb44
+;   double g_DOUBLE_005dbb3c = 2
+;   double g_DOUBLE_005dbb44 = 0.5
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
@@ -104,7 +104,7 @@ section .text
     FLD float ptr [ESP + 0x6c]          ; 0048f6b8
     FDIV float ptr [EAX + 0x3c]         ; 0048f6bc
     FXCH ST2                            ; 0048f6bf
-    FLD double ptr [0x005dbb3c]         ; 0048f6c1 | DAT_005dbb3c
+    FLD double ptr [0x005dbb3c]         ; 0048f6c1 | g_DOUBLE_005dbb3c
     FXCH                                ; 0048f6c7
     FMUL ST1                            ; 0048f6c9
     FLD1                                ; 0048f6cb
@@ -173,7 +173,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa4]      ; 0048f7bd
     MOV dword ptr [ESP + 0xa8],EAX      ; 0048f7c4
     FXCH                                ; 0048f7cb
-    FLD double ptr [0x005dbb44]         ; 0048f7cd | DAT_005dbb44
+    FLD double ptr [0x005dbb44]         ; 0048f7cd | g_DOUBLE_005dbb44
     FXCH                                ; 0048f7d3
     FMUL ST1                            ; 0048f7d5
     FLD float ptr [ESP + 0x4]           ; 0048f7d7

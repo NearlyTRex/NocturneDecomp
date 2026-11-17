@@ -41,15 +41,15 @@
 ;   core_yow.cpp_CYow_process_FUN_005b8440 at 005b849b
 ;
 ; Referenced Globals:
-;   undefined4 s_CZombieDog_005d5ef6+1
+;   TerminatedCString s_CZombieDog_005d5ef7
 ;   TerminatedCString s_Bip01_head_005d5f02
 ;   TerminatedCString s_Bip01_head_005d5f0d
-;   undefined4 DAT_005d5f1f
-;   undefined4 DAT_005d5f27
-;   undefined4 DAT_005d5f2b
-;   undefined4 DAT_0061c010
+;   double g_DOUBLE_005d5f1f = 32
+;   float g_FLOAT_005d5f27 = 0.2000000
+;   float g_FLOAT_005d5f2b = 1.5
+;   CFireEffect* g_CFireEffect_PTR_0061c010 = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_007c6340
+;   float g_FLOAT_007c6340
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.active_fog.temperature
 ;
@@ -108,7 +108,7 @@ section .text
     SETZ AL                             ; 004347fe
     XOR ECX,ECX                         ; 00434801
     AND EAX,0xff                        ; 00434803
-    MOV dword ptr [0x007c6340],ECX      ; 00434808 | DAT_007c6340
+    MOV dword ptr [0x007c6340],ECX      ; 00434808 | g_FLOAT_007c6340
     MOV dword ptr [EBX + 0x2e64],EAX    ; 0043480e
     LEA ESP,[EBP + 0x7a]                ; 00434814
         ;   Label: LAB_00434814
@@ -137,7 +137,7 @@ section .text
     MOV EAX,[0x00622c18]                ; 00434842 | g_CDemonSetPtr
         ;   Label: LAB_00434842
     FLD float ptr [EAX + 0x15ac84]      ; 00434847 | g_CDemonSetInstance.active_fog.temperature
-    FCOMP double ptr [0x005d5f1f]       ; 0043484d | DAT_005d5f1f
+    FCOMP double ptr [0x005d5f1f]       ; 0043484d | g_DOUBLE_005d5f1f
     FNSTSW AX                           ; 00434853
     SAHF                                ; 00434855
     JNC 0x00434952                      ; 00434856
@@ -159,7 +159,7 @@ section .text
         ;   XREF to: 00434814 (CONDITIONAL_JUMP)  ; LAB_00434814
     FLD float ptr [EBX + 0x2e60]        ; 00434885
     LEA EAX,[EBX + 0x158]               ; 0043488b
-    FADD float ptr [0x005d5f2b]         ; 00434891 | DAT_005d5f2b
+    FADD float ptr [0x005d5f2b]         ; 00434891 | g_FLOAT_005d5f2b
     PUSH EAX                            ; 00434897
     FSTP float ptr [EBX + 0x2e60]       ; 00434898
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30 ; 0043489e
@@ -231,7 +231,7 @@ section .text
     POP ESI                             ; 0043494f
     POP EBX                             ; 00434950
     RET                                 ; 00434951
-    PUSH 0x5d5ef7                       ; 00434952 | s_CZombieDog_005d5ef6+1
+    PUSH 0x5d5ef7                       ; 00434952 | = "CZombieDog"
         ;   Label: LAB_00434952
     PUSH EBX                            ; 00434957
     CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 00434958
@@ -259,7 +259,7 @@ section .text
     MOV ESI,0xbf000000                  ; 0043499f
     MOV EDI,0x3f800000                  ; 004349a4
     LEA EAX,[EBP + 0x52]                ; 004349a9
-    FADD float ptr [0x005d5f27]         ; 004349ac | DAT_005d5f27
+    FADD float ptr [0x005d5f27]         ; 004349ac | g_FLOAT_005d5f27
     PUSH EAX                            ; 004349b2
     FSTP float ptr [EBX + 0x2e5c]       ; 004349b3
     PUSH EBX                            ; 004349b9
@@ -332,7 +332,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00434a69
     MOVSD ES:EDI,ESI                    ; 00434a6a
     PUSH EAX                            ; 00434a6b
-    MOV ESI,dword ptr [0x0061c010]      ; 00434a6c | DAT_0061c010
+    MOV ESI,dword ptr [0x0061c010]      ; 00434a6c | g_CFireEffect_PTR_0061c010
     PUSH ESI                            ; 00434a72
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30 ; 00434a73
         ;   XREF to: 004b5b30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

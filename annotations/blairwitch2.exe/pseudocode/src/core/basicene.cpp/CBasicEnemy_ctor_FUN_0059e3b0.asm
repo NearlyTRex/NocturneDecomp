@@ -19,12 +19,12 @@
 ;   core_unionzom.cpp_CUnionZombie_ctor_FUN_005a3d30 at 005a3d38
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005febdc
-;   undefined4 DAT_005febe0
-;   undefined4 DAT_005febe4
-;   undefined4 DAT_005febe8
-;   undefined4 DAT_005febec
-;   undefined4 DAT_005febf0
+;   float g_FLOAT_005febdc = 200
+;   float g_FLOAT_005febe0 = 50
+;   float g_FLOAT_005febe4 = 5
+;   float g_FLOAT_005febe8 = 100
+;   float g_FLOAT_005febec = 999
+;   float g_FLOAT_005febf0 = 10
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
@@ -74,15 +74,15 @@ section .text
     MOV dword ptr [EBX + 0x113bc],0x0   ; 0059e46a
     MOV dword ptr [EBX + 0x113c0],0x3f800000 ; 0059e474
     MOV dword ptr [EBX + 0x113cc],0x0   ; 0059e47e
-    FLD float ptr [0x005febe4]          ; 0059e488 | DAT_005febe4
+    FLD float ptr [0x005febe4]          ; 0059e488 | g_FLOAT_005febe4
     MOV dword ptr [EBX + 0x113c8],0x40a00000 ; 0059e48e
-    FLD float ptr [0x005febe8]          ; 0059e498 | DAT_005febe8
+    FLD float ptr [0x005febe8]          ; 0059e498 | g_FLOAT_005febe8
     MOV dword ptr [EBX + 0x113c4],0x3f800000 ; 0059e49e
-    FLD float ptr [0x005febec]          ; 0059e4a8 | DAT_005febec
+    FLD float ptr [0x005febec]          ; 0059e4a8 | g_FLOAT_005febec
     MOV dword ptr [EBX + 0x113b8],0x0   ; 0059e4ae
-    FLD float ptr [0x005febe0]          ; 0059e4b8 | DAT_005febe0
+    FLD float ptr [0x005febe0]          ; 0059e4b8 | g_FLOAT_005febe0
     MOV dword ptr [EBX + 0x113b4],0x0   ; 0059e4be
-    FLD float ptr [0x005febdc]          ; 0059e4c8 | DAT_005febdc
+    FLD float ptr [0x005febdc]          ; 0059e4c8 | g_FLOAT_005febdc
     MOV dword ptr [EBX + 0x11418],0x0   ; 0059e4ce
     ADD ESP,0x4                         ; 0059e4d8
     FXCH ST4                            ; 0059e4db
@@ -185,7 +185,7 @@ section .text
     MOV byte ptr [EBX + 0x11642],0x0    ; 0059e62c
     MOV byte ptr [EBX + 0x11741],0x0    ; 0059e633
     MOV dword ptr [EBX + 0x11844],0x41200000 ; 0059e63a
-    FLD float ptr [0x005febf0]          ; 0059e644 | DAT_005febf0
+    FLD float ptr [0x005febf0]          ; 0059e644 | g_FLOAT_005febf0
     MOV dword ptr [EBX + 0x11840],0x0   ; 0059e64a
     MOV ESI,0x5ef89b                    ; 0059e654
     MOV dword ptr [EBX + 0x1184c],0x0   ; 0059e659

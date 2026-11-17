@@ -59,8 +59,8 @@
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00416330 at 004166a9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6c8a
-;   undefined4 DAT_02cfd900
+;   float g_FLOAT_005b6c8a = 65536
+;   CVector3f g_CVector3f_02cfd900
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -92,31 +92,31 @@ section .text
         ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00415e4f
     FLD float ptr [ESP + 0x120]         ; 00415e52
-    FMUL float ptr [0x005b6c8a]         ; 00415e59 | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415e59 | g_FLOAT_005b6c8a
     FLD float ptr [ESP + 0x124]         ; 00415e5f
-    FMUL float ptr [0x005b6c8a]         ; 00415e66 | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415e66 | g_FLOAT_005b6c8a
     FLD float ptr [ESP + 0x128]         ; 00415e6c
-    FMUL float ptr [0x005b6c8a]         ; 00415e73 | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415e73 | g_FLOAT_005b6c8a
     FLD float ptr [ESP + 0x12c]         ; 00415e79
-    FMUL float ptr [0x005b6c8a]         ; 00415e80 | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415e80 | g_FLOAT_005b6c8a
     FLD float ptr [ESP + 0x130]         ; 00415e86
-    FMUL float ptr [0x005b6c8a]         ; 00415e8d | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415e8d | g_FLOAT_005b6c8a
     FLD float ptr [ESP + 0x134]         ; 00415e93
-    FMUL float ptr [0x005b6c8a]         ; 00415e9a | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415e9a | g_FLOAT_005b6c8a
     FLD float ptr [ESP + 0x138]         ; 00415ea0
-    FMUL float ptr [0x005b6c8a]         ; 00415ea7 | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415ea7 | g_FLOAT_005b6c8a
     FXCH ST6                            ; 00415ead
     CALL crt_math.c_round_FUN_005a3120  ; 00415eaf
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1d0]       ; 00415eb4
     FLD float ptr [ESP + 0x13c]         ; 00415ebb
-    FMUL float ptr [0x005b6c8a]         ; 00415ec2 | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415ec2 | g_FLOAT_005b6c8a
     FXCH ST5                            ; 00415ec8
     CALL crt_math.c_round_FUN_005a3120  ; 00415eca
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1c4]       ; 00415ecf
     FLD float ptr [ESP + 0x140]         ; 00415ed6
-    FMUL float ptr [0x005b6c8a]         ; 00415edd | DAT_005b6c8a
+    FMUL float ptr [0x005b6c8a]         ; 00415edd | g_FLOAT_005b6c8a
     MOV EAX,dword ptr [ESP + 0x204]     ; 00415ee3
     XOR EDI,EDI                         ; 00415eea
     MOV ECX,dword ptr [EAX + 0x174]     ; 00415eec
@@ -221,7 +221,7 @@ section .text
         ;   Label: LAB_00416050
     ADD EBX,0x30                        ; 00416057
     PUSH EBX                            ; 0041605a
-    PUSH 0x2cfd900                      ; 0041605b | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 0041605b | g_CVector3f_02cfd900
     LEA EAX,[ESP + 0xc8]                ; 00416060
     PUSH EAX                            ; 00416067
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800 ; 00416068
@@ -229,7 +229,7 @@ section .text
     ADD ESP,0xc                         ; 0041606d
     MOV ESI,dword ptr [ESP + 0x208]     ; 00416070
     PUSH ESI                            ; 00416077
-    PUSH 0x2cfd900                      ; 00416078 | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 00416078 | g_CVector3f_02cfd900
     LEA EAX,[ESP + 0x98]                ; 0041607d
     PUSH EAX                            ; 00416084
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800 ; 00416085
@@ -368,7 +368,7 @@ section .text
     ADD EBP,0xc                         ; 00416271
         ;   Label: LAB_00416271
     PUSH EBP                            ; 00416274
-    PUSH 0x2cfd900                      ; 00416275 | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 00416275 | g_CVector3f_02cfd900
     LEA EAX,[ESP + 0x68]                ; 0041627a
     PUSH EAX                            ; 0041627e
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0041627f

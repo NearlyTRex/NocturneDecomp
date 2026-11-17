@@ -2,20 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 774,
-    "complexity_score": 948,
+    "complexity_score": 256,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 248,
-    "suspect_count": 68,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 1022
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 256,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1030
   },
   "cross_references": [
     {
@@ -79,57 +74,57 @@
   "globals": [
     {
       "addr": "005d78c3",
-      "name": "DAT_005d78c3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d78c3",
+      "type": "float",
+      "value": "0.01000000"
     },
     {
       "addr": "005d78c7",
-      "name": "DAT_005d78c7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d78c7",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "005d78cb",
-      "name": "DAT_005d78cb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d78cb",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "005d78cf",
-      "name": "DAT_005d78cf",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d78cf",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "005d78d3",
-      "name": "DAT_005d78d3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d78d3",
+      "type": "double",
+      "value": "0.300000000000000"
     },
     {
       "addr": "005d78db",
-      "name": "DAT_005d78db",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d78db",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005d78e3",
-      "name": "DAT_005d78e3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d78e3",
+      "type": "float",
+      "value": "-0.25"
     },
     {
       "addr": "005d78e7",
-      "name": "DAT_005d78e7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d78e7",
+      "type": "float",
+      "value": "0.1000000"
     },
     {
       "addr": "005d78eb",
-      "name": "DAT_005d78eb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d78eb",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "00616494",
@@ -139,9 +134,9 @@
     },
     {
       "addr": "00617dd4",
-      "name": "DAT_00617dd4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_00617dd4",
+      "type": "CKeys*",
+      "value": "01d02f84"
     },
     {
       "addr": "01b4d2ec",
@@ -151,8 +146,8 @@
     },
     {
       "addr": "01c37790",
-      "name": "DAT_01c37790",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01c37790",
+      "type": "char[4952]",
       "value": null
     },
     {
@@ -163,20 +158,20 @@
     },
     {
       "addr": "01cb7528",
-      "name": "DAT_01cb7528",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cb7528",
+      "type": "char[600]",
       "value": null
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d02f84",
-      "name": "DAT_01d02f84",
-      "type": "undefined4",
+      "name": "g_PTR_01d02f84",
+      "type": "void*",
       "value": null
     }
   ],
@@ -348,550 +343,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 15,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x200);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x200);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x201);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x201);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01c37790)[this_ptr->key_strafe_left] == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((((&DAT_01c37790)[this_ptr->key_strafe_right] != '\\0') && ((int)*pfVar1 < 0x3f800000)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01c37790)[this_ptr->key_strafe] == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if (((&DAT_01c37790)[this_ptr->key_left] != '\\0') ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "((&DAT_01c37790)[this_ptr->key_right] != '\\0')) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01c37790)[this_ptr->key_left] == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((((&DAT_01c37790)[this_ptr->key_right] != '\\0') && ((int)*pfVar1 < 0x3e800000)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01c37790)[this_ptr->key_left] == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((((&DAT_01c37790)[this_ptr->key_right] != '\\0') && ((int)*pfVar1 < 0x3f800000)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if (((&DAT_01c37790)[this_ptr->key_point_up] == '\\0') &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "((&DAT_01c37790)[this_ptr->key_point_down] == '\\0')) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01c37790)[this_ptr->key_point_up] == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((((&DAT_01c37790)[this_ptr->key_point_down] != '\\0') && ((int)*pfVar1 < 0x3e800000)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "bVar6 = (&DAT_01c37790)[this_ptr->key_run];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "bVar6 = (&DAT_01c37790)[this_ptr->key_run] == '\\0';",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_walk] != (&DAT_01c37790)[this_ptr->key_walk]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_walk] != (&DAT_01c37790)[this_ptr->key_walk]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "(player_control->action_state).walk = (uint)(byte)(&DAT_01c37790)[this_ptr->key_walk];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 133,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_backup] != (&DAT_01c37790)[this_ptr->key_backup]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 133,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_backup] != (&DAT_01c37790)[this_ptr->key_backup]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "(player_control->action_state).backup = (uint)(byte)(&DAT_01c37790)[this_ptr->key_backup];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 137,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x114))(iVar4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_fire] != (&DAT_01c37790)[this_ptr->key_fire]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_fire] != (&DAT_01c37790)[this_ptr->key_fire]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "(player_control->action_state).fire = (uint)(byte)(&DAT_01c37790)[this_ptr->key_fire];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 147,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_use_item] == (&DAT_01c37790)[this_ptr->key_use_item]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 147,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_use_item] == (&DAT_01c37790)[this_ptr->key_use_item]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 151,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "*piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_use_item];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_light] == (&DAT_01c37790)[this_ptr->key_light]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_light] == (&DAT_01c37790)[this_ptr->key_light]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 158,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "*piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_light];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 161,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_draw] == (&DAT_01c37790)[this_ptr->key_draw]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 161,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_draw] == (&DAT_01c37790)[this_ptr->key_draw]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "*piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_draw];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 168,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_quick_turn] == (&DAT_01c37790)[this_ptr->key_quick_turn]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 168,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_quick_turn] == (&DAT_01c37790)[this_ptr->key_quick_turn]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 172,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "*piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_quick_turn];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 174,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_drop] == (&DAT_01c37790)[this_ptr->key_drop]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 174,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "if ((&DAT_01cb7528)[this_ptr->key_drop] == (&DAT_01c37790)[this_ptr->key_drop]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 178,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "player_control->drop_item = (uint)(byte)(&DAT_01c37790)[this_ptr->key_drop];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 180,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_weapon);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 180,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_weapon);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 183,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 190,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_weapon);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 190,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_weapon);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 193,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 200,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_item);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 200,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_item);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 205,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_item);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 205,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_item);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 210,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_ammo);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 210,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_ammo);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 215,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_item_desc);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 215,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_item_desc);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 220,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 220,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 223,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 230,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_2);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 230,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 233,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 240,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_3);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 240,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 243,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

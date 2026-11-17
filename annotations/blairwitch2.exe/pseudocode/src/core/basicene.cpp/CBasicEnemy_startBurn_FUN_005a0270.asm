@@ -9,9 +9,9 @@
 ; float            Stack[0xc]:4   strength
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005efb55
+;   TerminatedCString s_Burn_005efb55
 ;   TerminatedCString s_BurnComplete_005efb5a
-;   undefined4 DAT_005efb67
+;   TerminatedCString s_Burn_005efb67
 ;
 ; Called Functions:
 ;   core_muzzle.cpp_SStateMachine_getStateName_FUN_0059db70
@@ -42,7 +42,7 @@ section .text
     POP ESI                             ; 005a028f
     POP EBX                             ; 005a0290
     RET                                 ; 005a0291
-    PUSH 0x5efb55                       ; 005a0292 | DAT_005efb55
+    PUSH 0x5efb55                       ; 005a0292 | = "Burn"
         ;   Label: LAB_005a0292
     LEA ESI,[EBX + 0x10af8]             ; 005a0297
     PUSH ESI                            ; 005a029d
@@ -52,7 +52,7 @@ section .text
     TEST EAX,EAX                        ; 005a02a6
     JZ 0x005a0343                       ; 005a02a8
         ;   XREF to: 005a0343 (CONDITIONAL_JUMP)  ; LAB_005a0343
-    PUSH 0x5efb67                       ; 005a02ae | DAT_005efb67
+    PUSH 0x5efb67                       ; 005a02ae | = "Burn"
         ;   Label: LAB_005a02ae
     LEA EAX,[EBX + 0x10af8]             ; 005a02b3
     PUSH EAX                            ; 005a02b9

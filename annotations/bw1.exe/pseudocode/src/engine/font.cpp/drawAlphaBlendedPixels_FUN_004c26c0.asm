@@ -14,7 +14,7 @@
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004c2810 at 004c3a55
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006104f0
+;   int g_INT_006104f0 = 0xffffff
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x1c]      ; 004c26d2
     MOV ECX,dword ptr [EBP + 0x20]      ; 004c26d8
     PXOR MM7,MM7                        ; 004c26de
-    MOVD MM4,dword ptr [0x006104f0]     ; 004c26e1 | DAT_006104f0
+    MOVD MM4,dword ptr [0x006104f0]     ; 004c26e1 | g_INT_006104f0
     PUNPCKLBW MM4,MM7                   ; 004c26e8
     MOV EAX,0xffffffff                  ; 004c26eb
     MOVD MM6,EAX                        ; 004c26f0

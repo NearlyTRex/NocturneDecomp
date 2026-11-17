@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 80,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data"
+      "shadow_pointer_walk"
     ],
     "total_lines": 94
   },
@@ -50,9 +49,9 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061d95c",
@@ -62,13 +61,13 @@
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01bc1224",
-      "name": "DAT_01bc1224",
+      "name": "g_CDemonRenderer_01bc120c.advanced_culling_enabled",
       "type": "undefined4",
       "value": null
     },
@@ -184,22 +183,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "if (DAT_00612560->advanced_culling_enabled == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,primitive_array);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `primitive_array` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*primitive_array) + offsetof(subfield)` equals the real array stride. Replace `primitive_array->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 15,

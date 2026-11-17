@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40(CDeformableModelInstance *this_ptr,CQuaternion4f *rotation_quat,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 {
@@ -50,7 +48,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
       if (-1 < hierarchy_distance) {
         fStack_18 = (*blend_callback)(iVar2,bone_index,blend_weight,hierarchy_distance,this_ptr);
         fStack_e8 = fStack_18 * local_28;
-        if ((float)_DAT_005e7337 < ABS(fStack_e8)) {
+        if ((float)1.0000000000000001e-05 < ABS(fStack_e8)) {
           core_xform_cpp_quaternionFromAxisAngle_FUN_00594060(fStack_e8,&local_34,&CStack_44);
           CStack_64.w = CStack_44.w;
           puVar5 = (uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

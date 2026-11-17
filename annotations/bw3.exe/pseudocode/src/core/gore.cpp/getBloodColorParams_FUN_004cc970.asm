@@ -29,7 +29,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004cc960 = 004cc98d
-;   undefined4 DAT_005c4621
+;   float g_FLOAT_005c4621 = 256
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -119,7 +119,7 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 004cca51
     MOV EAX,dword ptr [ESP + 0x28]      ; 004cca55
     MOV dword ptr [ESP + 0x34],EAX      ; 004cca59
-    FLD float ptr [0x005c4621]          ; 004cca5d | DAT_005c4621
+    FLD float ptr [0x005c4621]          ; 004cca5d | g_FLOAT_005c4621
         ;   Label: LAB_004cca5d
     FLD float ptr [ESP + 0x2c]          ; 004cca63
     FMUL ST1                            ; 004cca67

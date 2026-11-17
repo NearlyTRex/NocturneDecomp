@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 81,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
     "total_lines": 139
   },
@@ -32,26 +31,26 @@
   "globals": [
     {
       "addr": "01c5bb78",
-      "name": "DAT_01c5bb78",
-      "type": "undefined4",
+      "name": "g_PTR_01c5bb78",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c5fadc",
-      "name": "DAT_01c5fadc",
-      "type": "undefined4",
+      "name": "g_INT_01c5fadc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5fae0",
-      "name": "DAT_01c5fae0",
-      "type": "undefined4",
+      "name": "g_INT_01c5fae0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5fae4",
-      "name": "DAT_01c5fae4",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c5fae4",
+      "type": "_BIT_INTEGER32",
       "value": null
     }
   ],
@@ -135,28 +134,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_01c5fae4",
-      "severity": "mild",
-      "text": "bVar1 = DAT_01c5fae4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_01c5fae4",
-      "severity": "mild",
-      "text": "if (((_DAT_01c5bb78 == (CEdCheck *)0x0) && ((DAT_01c5fae4 & 1) != 0)) && (iVar2 != 0)) {",
-      "type": "undefined_data"
+      "description": "Pointer value `g_PTR_01c5bb78` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(uint)g_PTR_01c5bb78",
+      "severity": "moderate",
+      "text": "(g_PTR_01c5bb78 = (byte *)((uint)g_PTR_01c5bb78 ^ (uint)this_ptr), iVar2 != 0)) {",
+      "type": "pointer_truncation"
     }
   ]
 }

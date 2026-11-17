@@ -22,21 +22,21 @@
 ;   core_trigger.cpp_CTrigger_process_FUN_0059b240 at 0059b56a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fe55bc
+;   int g_INT_01fe55bc
 ;   undefined4 DAT_0202634c
 ;   undefined4 DAT_02026350
 ;   undefined4 DAT_02026354
-;   undefined4 DAT_0202a1f0
-;   undefined4 DAT_0202a1f4
-;   undefined4 DAT_0202a374
-;   undefined4 DAT_0202a378
-;   undefined4 DAT_0202a388
-;   undefined4 DAT_0202a38c
+;   int g_INT_0202a1f0
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0202a1f4
+;   int g_INT_0202a374
+;   CDemonLight*[4] g_CDemonLight_PTR_ARRAY_0202a378
+;   int g_INT_0202a388
+;   int g_INT_0202a38c
 ;   undefined4 DAT_0202a390
-;   undefined4 DAT_0202a840
-;   undefined4 DAT_0202a844
-;   undefined4 DAT_0202a850
-;   undefined4 DAT_0202a85c
+;   int g_INT_0202a840
+;   float g_FLOAT_0202a844
+;   float g_FLOAT_0202a850
+;   float g_FLOAT_0202a85c
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -57,7 +57,7 @@ section .text
     PUSH EBP                            ; 00552493
     SUB ESP,0x38                        ; 00552494
     MOV EBP,dword ptr [ESP + 0x54]      ; 00552497
-    MOV EDX,dword ptr [0x0202a840]      ; 0055249b | DAT_0202a840
+    MOV EDX,dword ptr [0x0202a840]      ; 0055249b | g_INT_0202a840
     TEST EDX,EDX                        ; 005524a1
     JZ 0x005524cd                       ; 005524a3
         ;   XREF to: 005524cd (CONDITIONAL_JUMP)  ; LAB_005524cd
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_005524bd
     ADD ESP,0x18                        ; 005524c2
     XOR EDI,EDI                         ; 005524c5
-    MOV dword ptr [0x0202a840],EDI      ; 005524c7 | DAT_0202a840
-    MOV EAX,[0x0202a374]                ; 005524cd | DAT_0202a374
+    MOV dword ptr [0x0202a840],EDI      ; 005524c7 | g_INT_0202a840
+    MOV EAX,[0x0202a374]                ; 005524cd | g_INT_0202a374
         ;   Label: LAB_005524cd
     XOR ESI,ESI                         ; 005524d2
     XOR EBX,EBX                         ; 005524d4
@@ -87,7 +87,7 @@ section .text
     XOR EDI,EDI                         ; 005524da
     PUSH EBP                            ; 005524dc
         ;   Label: LAB_005524dc
-    MOV EDX,dword ptr [EDI + 0x202a378] ; 005524dd | DAT_0202a378
+    MOV EDX,dword ptr [EDI + 0x202a378] ; 005524dd | g_CDemonLight_PTR_ARRAY_0202a378
     PUSH EDX                            ; 005524e3
     MOV ECX,dword ptr [ESP + 0x58]      ; 005524e4
     PUSH ECX                            ; 005524e8
@@ -97,7 +97,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0 ; 005524f2
         ;   XREF to: 0044f9c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
     ADD EBX,EAX                         ; 005524f7
-    MOV EAX,[0x0202a374]                ; 005524f9 | DAT_0202a374
+    MOV EAX,[0x0202a374]                ; 005524f9 | g_INT_0202a374
     ADD ESP,0x10                        ; 005524fe
     CMP ESI,EAX                         ; 00552501
     JL 0x005524dc                       ; 00552503
@@ -105,7 +105,7 @@ section .text
     LEA EAX,[EAX]                       ; 00552505
     LEA EDX,[EDX]                       ; 0055250b
     MOV EBX,EBX                         ; 0055250e
-    MOV EDX,dword ptr [0x0202a1f0]      ; 00552510 | DAT_0202a1f0
+    MOV EDX,dword ptr [0x0202a1f0]      ; 00552510 | g_INT_0202a1f0
         ;   Label: LAB_00552510
     XOR EDI,EDI                         ; 00552516
     TEST EDX,EDX                        ; 00552518
@@ -114,7 +114,7 @@ section .text
     XOR ESI,ESI                         ; 0055251c
     PUSH EBP                            ; 0055251e
         ;   Label: LAB_0055251e
-    MOV ECX,dword ptr [ESI + 0x202a1f4] ; 0055251f | DAT_0202a1f4
+    MOV ECX,dword ptr [ESI + 0x202a1f4] ; 0055251f | g_CDemonLight_PTR_ARRAY_0202a1f4
     PUSH ECX                            ; 00552525
     MOV EAX,dword ptr [ESP + 0x58]      ; 00552526
     PUSH EAX                            ; 0055252a
@@ -123,7 +123,7 @@ section .text
     INC EDI                             ; 00552533
     CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0 ; 00552534
         ;   XREF to: 0044f9c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
-    MOV EDX,dword ptr [0x0202a1f0]      ; 00552539 | DAT_0202a1f0
+    MOV EDX,dword ptr [0x0202a1f0]      ; 00552539 | g_INT_0202a1f0
     ADD ESP,0x10                        ; 0055253f
     ADD EBX,EAX                         ; 00552542
     CMP EDI,EDX                         ; 00552544
@@ -131,7 +131,7 @@ section .text
         ;   XREF to: 0055251e (CONDITIONAL_JUMP)  ; LAB_0055251e
     LEA EAX,[EAX]                       ; 00552548
     MOV EDX,EDX                         ; 0055254e
-    MOV ECX,dword ptr [0x0202a388]      ; 00552550 | DAT_0202a388
+    MOV ECX,dword ptr [0x0202a388]      ; 00552550 | g_INT_0202a388
         ;   Label: LAB_00552550
     XOR ESI,ESI                         ; 00552556
     TEST ECX,ECX                        ; 00552558
@@ -142,13 +142,13 @@ section .text
         ;   Label: LAB_0055255e
     MOV EAX,dword ptr [ESP + 0x54]      ; 0055255f
     PUSH EAX                            ; 00552563
-    MOV EDX,dword ptr [EDI + 0x202a38c] ; 00552564 | DAT_0202a38c | DAT_0202a390
+    MOV EDX,dword ptr [EDI + 0x202a38c] ; 00552564 | g_INT_0202a38c | DAT_0202a390
     PUSH EDX                            ; 0055256a
     ADD EDI,0x4                         ; 0055256b
     INC ESI                             ; 0055256e
     CALL core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045ef00 ; 0055256f
         ;   XREF to: 0045ef00 (UNCONDITIONAL_CALL)  ; int core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045ef00(CDemonGlobe * this_ptr, CVector3i * vertex_position, CVector3i * surface_normal)
-    MOV ECX,dword ptr [0x0202a388]      ; 00552574 | DAT_0202a388
+    MOV ECX,dword ptr [0x0202a388]      ; 00552574 | g_INT_0202a388
     ADD ESP,0xc                         ; 0055257a
     ADD EBX,EAX                         ; 0055257d
     CMP ESI,ECX                         ; 0055257f
@@ -211,7 +211,7 @@ section .text
     TEST EBP,EBP                        ; 00552624
     JNZ 0x005526c9                      ; 00552626
         ;   XREF to: 005526c9 (CONDITIONAL_JUMP)  ; LAB_005526c9
-    MOV ECX,dword ptr [0x01fe55bc]      ; 0055262c | DAT_01fe55bc
+    MOV ECX,dword ptr [0x01fe55bc]      ; 0055262c | g_INT_01fe55bc
         ;   Label: LAB_0055262c
     XOR EDI,EDI                         ; 00552632
     TEST ECX,ECX                        ; 00552634
@@ -234,7 +234,7 @@ section .text
         ;   XREF to: 0044f9c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
     ADD ESP,0x10                        ; 0055265d
     ADD EBX,EAX                         ; 00552660
-    MOV EAX,[0x01fe55bc]                ; 00552662 | DAT_01fe55bc
+    MOV EAX,[0x01fe55bc]                ; 00552662 | g_INT_01fe55bc
     INC EDI                             ; 00552667
     ADD ESI,0x4                         ; 00552668
     CMP EDI,EAX                         ; 0055266b
@@ -260,12 +260,12 @@ section .text
     POP ESI                             ; 0055269c
     POP EBX                             ; 0055269d
     RET                                 ; 0055269e
-    PUSH 0x202a874                      ; 0055269f | DAT_0202a874
+    PUSH 0x202a874                      ; 0055269f | g_CMatrix3x3f_0202a874
         ;   Label: LAB_0055269f
-    PUSH 0x202a868                      ; 005526a4 | DAT_0202a868
-    PUSH 0x202a85c                      ; 005526a9 | DAT_0202a85c
-    PUSH 0x202a850                      ; 005526ae | DAT_0202a850
-    PUSH 0x202a844                      ; 005526b3 | DAT_0202a844
+    PUSH 0x202a868                      ; 005526a4 | g_FLOAT_0202a868
+    PUSH 0x202a85c                      ; 005526a9 | g_FLOAT_0202a85c
+    PUSH 0x202a850                      ; 005526ae | g_FLOAT_0202a850
+    PUSH 0x202a844                      ; 005526b3 | g_FLOAT_0202a844
     MOV EBX,dword ptr [ESP + 0x60]      ; 005526b8
     PUSH EBX                            ; 005526bc
     JMP 0x005524bd                      ; 005526bd

@@ -8,19 +8,19 @@
 ; int              Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a8
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_02c833bc
+;   int g_INT_0061b4a8 = 0x100
+;   int g_INT_01c50948
+;   void* g_PTR_02c833bc
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c50948],0x0      ; 00582160 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 00582160 | g_INT_01c50948
         ;   Label: engine_special.cpp_updateTextureBGRA_FUN_00582160
     JZ 0x00582172                       ; 00582167
         ;   XREF to: 00582172 (CONDITIONAL_JUMP)  ; LAB_00582172
-    CMP dword ptr [0x02c833bc],0x0      ; 00582169 | DAT_02c833bc
+    CMP dword ptr [0x02c833bc],0x0      ; 00582169 | g_PTR_02c833bc
     JNZ 0x00582175                      ; 00582170
         ;   XREF to: 00582175 (CONDITIONAL_JUMP)  ; LAB_00582175
     XOR EAX,EAX                         ; 00582172
@@ -32,11 +32,11 @@ section .text
     PUSH EBX                            ; 00582177
     MOV EBX,dword ptr [ESP + 0x14]      ; 00582178
     PUSH EBX                            ; 0058217c
-    MOV ESI,dword ptr [0x0061b4a8]      ; 0058217d | DAT_0061b4a8
+    MOV ESI,dword ptr [0x0061b4a8]      ; 0058217d | g_INT_0061b4a8
     PUSH ESI                            ; 00582183
     MOV EDI,dword ptr [ESP + 0x18]      ; 00582184
     PUSH EDI                            ; 00582188
-    CALL dword ptr [0x02c833bc]         ; 00582189 | DAT_02c833bc
+    CALL dword ptr [0x02c833bc]         ; 00582189 | g_PTR_02c833bc
     ADD ESP,0xc                         ; 0058218f
     POP EBX                             ; 00582192
     POP ESI                             ; 00582193

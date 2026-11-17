@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
 
 {
@@ -17,21 +15,21 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
   char *pcVar4;
   char *pcVar5;
   
-  _DAT_01d1bc5c = DAT_0061b49c;
-  p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e6087,"invsize.txt",&DAT_005e6078)
-  ;
+  g_INT_01d1bc5c = g_INT_0061b49c;
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00479180
+                     ("data","invsize.txt","rt");
   if (p_Var2 != (_FILE *)0x0) {
     _fscanf(p_Var2,"%d,%d\n");
     _fclose(p_Var2);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08d78,"invback",0x000000D0,0x00000060);
+            (&CAlphaBitmap_01d08d78,"invback",g_INT_0061f1a0,g_INT_0061f1a4);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08d8c,"invback2",0x00000060,0x00000060);
+            (&CAlphaBitmap_01d08d8c,"invback2",g_INT_0061f1a4,g_INT_0061f1a4);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08da0,"weapback",0x000000D0,0x00000060);
+            (&CAlphaBitmap_01d08da0,"weapback",g_INT_0061f1a0,g_INT_0061f1a4);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&CAlphaBitmap_01d08db4,"weapback2",0x00000060,0x00000060);
+            (&CAlphaBitmap_01d08db4,"weapback2",g_INT_0061f1a4,g_INT_0061f1a4);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
             (&CAlphaBitmap_01d1b9d0,"battery",0x10,0x20);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
@@ -89,7 +87,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
             (&CAlphaBitmap_01d1ba98,"compass_background",0x40,0x40);
   pcVar4 = "compass_arrow.raw";
-  pcVar5 = &DAT_01d1bab4;
+  pcVar5 = g_SMRGLTextureBasic_01d1baac.texture_name;
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -99,8 +97,8 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20((SMRGLTextureBasic *)0x1d1baac);
-  _DAT_01d1bc48 = 0xffffffff;
+  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20(&g_SMRGLTextureBasic_01d1baac);
+  g_INT_01d1bc48 = -1;
   if (g_CGamePtr->game_pixy < 0x180) {
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d08d8c,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d08db4,2,2);
@@ -116,15 +114,15 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d1ba98,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d1baf4,2,2);
   }
-  _DAT_01d08dc8 = 0;
+  g_INT_01d08dc8 = 0;
   p_Var2 = engine_dosio_cpp_getFile_FUN_00479180
-                     (&DAT_005e61d6,"itemlist.txt",&DAT_005e61c6);
+                     (&g_CHAR_005e61d6,"itemlist.txt","rt");
   if (p_Var2 != (_FILE *)0x0) {
     while ((p_Var2->_flag & 0x10) == 0) {
       iVar3 = core_inv_cpp_loadItem_FUN_004f6e90
-                        ((SInventoryItemInfo *)(_DAT_01d08dc8 * 0x300 + 0x1d08dd0),p_Var2);
+                        (g_SInventoryItemInfo_ARRAY_01d08dd0 + g_INT_01d08dc8,p_Var2);
       if (iVar3 == 0) break;
-      _DAT_01d08dc8 = _DAT_01d08dc8 + 1;
+      g_INT_01d08dc8 = g_INT_01d08dc8 + 1;
     }
     _fclose(p_Var2);
   }

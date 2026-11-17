@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex *output,CVector3i *input)
 
 {
@@ -20,18 +18,18 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0055d723(SProjected
   int iVar7;
   int iVar8;
   
-  if (_DAT_01c38b40 != 0) {
-    iVar2 = input->x - _DAT_01c38b6c;
-    iVar7 = input->y - _DAT_01c38b70;
-    iVar8 = input->z - _DAT_01c38b74;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c38ba8 + (longlong)iVar2 * (longlong)_DAT_01c38b9c +
-            (longlong)iVar8 * (longlong)_DAT_01c38bb4;
+  if (g_INT_01c38b40 != 0) {
+    iVar2 = input->x - g_INT_01c38b6c;
+    iVar7 = input->y - g_INT_01c38b70;
+    iVar8 = input->z - g_INT_01c38b74;
+    lVar1 = (longlong)iVar7 * (longlong)g_INT_01c38ba8 + (longlong)iVar2 * (longlong)g_INT_01c38b9c
+            + (longlong)iVar8 * (longlong)g_INT_01c38bb4;
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c38bac + (longlong)iVar2 * (longlong)_DAT_01c38ba0 +
-            (longlong)iVar8 * (longlong)_DAT_01c38bb8;
+    lVar1 = (longlong)iVar7 * (longlong)g_INT_01c38bac + (longlong)iVar2 * (longlong)g_INT_01c38ba0
+            + (longlong)iVar8 * (longlong)g_INT_01c38bb8;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c38bb0 + (longlong)iVar2 * (longlong)_DAT_01c38ba4 +
-            (longlong)iVar8 * (longlong)_DAT_01c38bbc;
+    lVar1 = (longlong)iVar7 * (longlong)g_INT_01c38bb0 + (longlong)iVar2 * (longlong)g_INT_01c38ba4
+            + (longlong)iVar8 * (longlong)g_INT_01c38bbc;
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     uVar6 = 0;
     if ((int)uVar5 < (int)uVar3) {
@@ -55,36 +53,36 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0055d723(SProjected
     if (uVar6 == 0) {
       output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar5);
       output->screen_x =
-           (int)(((longlong)(int)uVar3 * (longlong)_DAT_01c35e38) / (longlong)(int)uVar5) +
-           _DAT_01c35e40;
+           (int)(((longlong)(int)uVar3 * (longlong)g_INT_01c35e38) / (longlong)(int)uVar5) +
+           g_INT_01c35e40;
       output->screen_y =
-           (int)(((longlong)(int)uVar4 * (longlong)_DAT_01c35e3c) / (longlong)(int)uVar5) +
-           _DAT_01c35e44;
+           (int)(((longlong)(int)uVar4 * (longlong)g_INT_01c35e3c) / (longlong)(int)uVar5) +
+           g_INT_01c35e44;
       return;
     }
     output->screen_x = uVar6;
     return;
   }
-  DAT_0061c7d8 = input->x - _DAT_01c38b6c;
-  DAT_0061c7dc = input->y - _DAT_01c38b70;
-  DAT_0061c7e0 = input->z - _DAT_01c38b74;
-  lVar1 = (longlong)DAT_0061c7dc * (longlong)_DAT_01c38ba8 +
-          (longlong)DAT_0061c7d8 * (longlong)_DAT_01c38b9c +
-          (longlong)DAT_0061c7e0 * (longlong)_DAT_01c38bb4;
-  DAT_0061c7e8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)DAT_0061c7dc * (longlong)_DAT_01c38bac +
-          (longlong)DAT_0061c7d8 * (longlong)_DAT_01c38ba0 +
-          (longlong)DAT_0061c7e0 * (longlong)_DAT_01c38bb8;
+  g_INT_0061c7d8 = input->x - g_INT_01c38b6c;
+  g_INT_0061c7dc = input->y - g_INT_01c38b70;
+  g_INT_0061c7e0 = input->z - g_INT_01c38b74;
+  lVar1 = (longlong)g_INT_0061c7dc * (longlong)g_INT_01c38ba8 +
+          (longlong)g_INT_0061c7d8 * (longlong)g_INT_01c38b9c +
+          (longlong)g_INT_0061c7e0 * (longlong)g_INT_01c38bb4;
+  g_INT_0061c7e8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)g_INT_0061c7dc * (longlong)g_INT_01c38bac +
+          (longlong)g_INT_0061c7d8 * (longlong)g_INT_01c38ba0 +
+          (longlong)g_INT_0061c7e0 * (longlong)g_INT_01c38bb8;
   uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)DAT_0061c7dc * (longlong)_DAT_01c38bb0 +
-          (longlong)DAT_0061c7d8 * (longlong)_DAT_01c38ba4 +
-          (longlong)DAT_0061c7e0 * (longlong)_DAT_01c38bbc;
+  lVar1 = (longlong)g_INT_0061c7dc * (longlong)g_INT_01c38bb0 +
+          (longlong)g_INT_0061c7d8 * (longlong)g_INT_01c38ba4 +
+          (longlong)g_INT_0061c7e0 * (longlong)g_INT_01c38bbc;
   uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   uVar5 = 0;
-  if ((int)uVar4 < (int)DAT_0061c7e8) {
+  if ((int)uVar4 < g_INT_0061c7e8) {
     uVar5 = 0x80000001;
   }
-  if ((int)DAT_0061c7e8 < (int)-uVar4) {
+  if (g_INT_0061c7e8 < (int)-uVar4) {
     uVar5 = uVar5 | 0x80000002;
   }
   if ((int)uVar4 < (int)uVar3) {
@@ -96,22 +94,22 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0055d723(SProjected
   if ((int)uVar4 < 1) {
     uVar5 = uVar5 | 0x80000010;
   }
-  DAT_0061c7ec = uVar3;
-  DAT_0061c7f0 = uVar4;
+  g_INT_0061c7ec = uVar3;
+  g_INT_0061c7f0 = uVar4;
   if (uVar5 == 0) {
-    output->transformed_x = DAT_0061c7e8;
+    output->transformed_x = g_INT_0061c7e8;
     output->transformed_y = uVar3;
     output->transformed_z = uVar4;
     output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar4);
     output->screen_x =
-         (int)(((longlong)(int)DAT_0061c7e8 * (longlong)_DAT_01c35e38) / (longlong)(int)uVar4) +
-         _DAT_01c35e40;
+         (int)(((longlong)g_INT_0061c7e8 * (longlong)g_INT_01c35e38) / (longlong)(int)uVar4) +
+         g_INT_01c35e40;
     output->screen_y =
-         (int)(((longlong)(int)DAT_0061c7ec * (longlong)_DAT_01c35e3c) / (longlong)(int)uVar4) +
-         _DAT_01c35e44;
+         (int)(((longlong)g_INT_0061c7ec * (longlong)g_INT_01c35e3c) / (longlong)(int)uVar4) +
+         g_INT_01c35e44;
     return;
   }
-  output->transformed_x = DAT_0061c7e8;
+  output->transformed_x = g_INT_0061c7e8;
   output->transformed_y = uVar3;
   output->transformed_z = uVar4;
   output->screen_x = uVar5;

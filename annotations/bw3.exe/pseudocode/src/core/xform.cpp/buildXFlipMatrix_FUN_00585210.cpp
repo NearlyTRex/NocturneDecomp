@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_00585210(float x_offset,CMatrix3x4f *matrix_out)
 
 {
@@ -35,7 +33,7 @@ CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_00585210(float x_o
   uStack_10 = 0;
   uStack_c = 0x3f800000;
   uStack_8 = 0;
-  afStack_34[3] = x_offset * _DAT_005d8183;
+  afStack_34[3] = x_offset * 2.0f;
   pfVar2 = afStack_34;
   pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

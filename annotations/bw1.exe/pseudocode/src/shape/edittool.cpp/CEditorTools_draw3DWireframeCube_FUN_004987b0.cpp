@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
 
 {
@@ -21,9 +19,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
   float unaff_EBP;
   float *pfVar2;
   int iVar3;
-  uint *puVar4;
+  SRenderVertex *pSVar4;
   float unaff_EDI;
-  uint *puVar5;
+  int *piVar5;
   byte bVar6;
   uint unaff_retaddr;
   float afStackY_10fc [972];
@@ -33,7 +31,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
   uint in_stack_fffffe50;
   byte in_stack_fffffe54 [16];
   byte in_stack_fffffe64 [16];
-  uint uVar7;
+  int iVar7;
   uint uVar8;
   uint uVar9;
   int iVar10;
@@ -78,7 +76,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
   float fStack_14;
   
   bVar6 = 0;
-  uVar7 = 0x4987e0;
+  iVar7 = 0x4987e0;
   __arrinit(&stack0xfffffe84,8,&g_CVectorTypeInfo);
   uVar1 = 0;
   do {
@@ -103,36 +101,36 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
       *(float *)(&stack0xfffffe8c + iVar3) = fStack_14;
       if (7 < (int)uVar1) {
         iVar3 = color_value;
-        if (_DAT_01c3f544 != 0) {
+        if (g_INT_01c3f544 != 0) {
           iVar3 = (color_value & 0xffU) * 3;
           engine_mini3d_cpp_setColor_FUN_00517d50
-                    ((uint)(byte)(&DAT_01c4e9fa)[iVar3] |
-                     (uint)(byte)(&DAT_01c4e9f8)[iVar3] << 0x10 |
-                     (uint)(byte)(&DAT_01c4e9f9)[iVar3] << 8);
-          iVar3 = _DAT_01c4f020;
+                    ((uint)g_UCHAR_ARRAY_01c4e9f8[iVar3 + 2] |
+                     (uint)g_UCHAR_ARRAY_01c4e9f8[iVar3] << 0x10 |
+                     (uint)g_UCHAR_ARRAY_01c4e9f8[iVar3 + 1] << 8);
+          iVar3 = g_INT_01c4f020;
         }
-        _DAT_01c4f020 = iVar3;
+        g_INT_01c4f020 = iVar3;
         pfVar2 = (float *)&stack0xfffffe84;
         auStack_28._8_4_ = 0;
         do {
           iVar3 = (auStack_28._8_4_ ^ 1) * 0xc;
-          auStack_98._0_4_ = (int)ROUND(*pfVar2 * _DAT_005ff7ec);
-          auStack_98._4_4_ = (int)ROUND(pfVar2[1] * _DAT_005ff7ec);
-          auStack_98._8_4_ = (uint)ROUND(pfVar2[2] * _DAT_005ff7ec);
+          auStack_98._0_4_ = (int)ROUND(*pfVar2 * 256.0f);
+          auStack_98._4_4_ = (int)ROUND(pfVar2[1] * 256.0f);
+          auStack_98._8_4_ = (uint)ROUND(pfVar2[2] * 256.0f);
           uVar9 = 0;
           uVar8 = 0x4988f2;
           engine_matrix_c_transformToCache_FUN_00507b00(0,(CVector3i *)auStack_98);
-          afStack_80[2] = *(float *)(&stack0xfffffe84 + iVar3) * _DAT_005dc288;
-          afStack_80[3] = *(float *)(&stack0xfffffe88 + iVar3) * _DAT_005dc288;
-          fStack_70 = *(float *)(&stack0xfffffe8c + iVar3) * _DAT_005dc288;
-          fStack_60 = *(float *)(&stack0xfffffe84 + iVar3) * _DAT_005dc288;
+          afStack_80[2] = *(float *)(&stack0xfffffe84 + iVar3) * 0.2f;
+          afStack_80[3] = *(float *)(&stack0xfffffe88 + iVar3) * 0.2f;
+          fStack_70 = *(float *)(&stack0xfffffe8c + iVar3) * 0.2f;
+          fStack_60 = *(float *)(&stack0xfffffe84 + iVar3) * 0.2f;
           afStack_80[(uint)bVar6 * -2 + 9] = afStack_80[(uint)bVar6 * -2 + 3];
           afStack_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10] =
                afStack_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-          fStack_114 = *pfVar2 * _DAT_005dc28c;
-          fStack_110 = pfVar2[1] * _DAT_005dc28c;
-          fStack_10c = pfVar2[2] * _DAT_005dc28c;
-          afStack_e4[0] = *pfVar2 * _DAT_005dc28c;
+          fStack_114 = *pfVar2 * 0.8f;
+          fStack_110 = pfVar2[1] * 0.8f;
+          fStack_10c = pfVar2[2] * 0.8f;
+          afStack_e4[0] = *pfVar2 * 0.8f;
           afStack_e4[(uint)bVar6 * -2 + 1] = *(float *)(auStack_f0 + (uint)bVar6 * -8 + -0x20);
           afStack_e4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 2] =
                *(float *)((int)&stack0xfffffef4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
@@ -143,26 +141,26 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           afStack_80[(uint)bVar6 * -2] = afStack_80[(uint)bVar6 * -2 + 6];
           afStack_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                afStack_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
-          auStack_98._8_4_ = (uint)ROUND(fStack_84 * _DAT_005ff7ec);
-          fStack_8c = (float)(int)ROUND(afStack_80[0] * _DAT_005ff7ec);
-          iStack_88 = (int)ROUND(afStack_80[1] * _DAT_005ff7ec);
+          auStack_98._8_4_ = (uint)ROUND(fStack_84 * 256.0f);
+          fStack_8c = (float)(int)ROUND(afStack_80[0] * 256.0f);
+          iStack_88 = (int)ROUND(afStack_80[1] * 256.0f);
           pCVar12 = (CVector3i *)(auStack_98 + 8);
           fVar11 = 1.4013e-45;
           iVar10 = 0x498a07;
           engine_matrix_c_transformToCache_FUN_00507b00(1,pCVar12);
-          puVar4 = &DAT_00629044;
-          puVar5 = (uint *)&stack0xfffffe64;
+          pSVar4 = g_SRenderVertex_ARRAY_00629014 + 1;
+          piVar5 = (int *)&stack0xfffffe64;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
+            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          puVar4 = &DAT_00629014;
-          puVar5 = (uint *)&stack0xfffffe34;
+          pSVar4 = g_SRenderVertex_ARRAY_00629014;
+          piVar5 = (int *)&stack0xfffffe34;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
+            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
           vertex1.projected_vertex.inv_z = in_stack_fffffe40;
           vertex1.projected_vertex.transformed_x = in_stack_fffffe34._0_4_;
@@ -176,7 +174,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           vertex1.g = in_stack_fffffe54._4_4_;
           vertex1.b = in_stack_fffffe54._8_4_;
           vertex1.a = in_stack_fffffe54._12_4_;
-          vertex2.projected_vertex.screen_x = uVar7;
+          vertex2.projected_vertex.screen_x = iVar7;
           vertex2.projected_vertex.transformed_x = in_stack_fffffe64._0_4_;
           vertex2.projected_vertex.transformed_y = in_stack_fffffe64._4_4_;
           vertex2.projected_vertex.transformed_z = in_stack_fffffe64._8_4_;
@@ -190,24 +188,24 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           vertex2.a = in_stack_fffffe90;
           engine_3d_c_clipAndDrawLine2D_FUN_00407af0(vertex1,vertex2);
           iVar3 = ((uint)unaff_EBP ^ 2) * 0xc;
-          auStack_28._0_4_ = (int)ROUND(*pfVar2 * _DAT_005ff7ec);
-          auStack_28._4_4_ = (int)ROUND(pfVar2[1] * _DAT_005ff7ec);
-          auStack_28._8_4_ = (uint)ROUND(pfVar2[2] * _DAT_005ff7ec);
+          auStack_28._0_4_ = (int)ROUND(*pfVar2 * 256.0f);
+          auStack_28._4_4_ = (int)ROUND(pfVar2[1] * 256.0f);
+          auStack_28._8_4_ = (uint)ROUND(pfVar2[2] * 256.0f);
           in_stack_fffffe8c = 0;
           uVar13 = 0x498a7e;
           engine_matrix_c_transformToCache_FUN_00507b00(0,(CVector3i *)auStack_28);
-          auStack_98._0_4_ = *(float *)(&stack0xfffffe94 + iVar3) * _DAT_005dc288;
-          auStack_98._4_4_ = *(float *)(&stack0xfffffe98 + iVar3) * _DAT_005dc288;
-          auStack_98._8_4_ = *(float *)(&stack0xfffffe9c + iVar3) * _DAT_005dc288;
-          auStack_f0._4_4_ = *(float *)(&stack0xfffffe94 + iVar3) * _DAT_005dc288;
+          auStack_98._0_4_ = *(float *)(&stack0xfffffe94 + iVar3) * 0.2f;
+          auStack_98._4_4_ = *(float *)(&stack0xfffffe98 + iVar3) * 0.2f;
+          auStack_98._8_4_ = *(float *)(&stack0xfffffe9c + iVar3) * 0.2f;
+          auStack_f0._4_4_ = *(float *)(&stack0xfffffe94 + iVar3) * 0.2f;
           *(uint *)(auStack_f0 + (uint)bVar6 * -8 + 8) =
                *(uint *)(auStack_98 + (uint)bVar6 * -8 + 4);
           afStack_e4[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
                *(float *)(auStack_98 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-          afStack_34[2] = *pfVar2 * _DAT_005dc28c;
-          auStack_28._0_4_ = pfVar2[1] * _DAT_005dc28c;
-          auStack_28._4_4_ = pfVar2[2] * _DAT_005dc28c;
-          fStack_14 = *pfVar2 * _DAT_005dc28c;
+          afStack_34[2] = *pfVar2 * 0.8f;
+          auStack_28._0_4_ = pfVar2[1] * 0.8f;
+          auStack_28._4_4_ = pfVar2[2] * 0.8f;
+          fStack_14 = *pfVar2 * 0.8f;
           *(uint *)(&stack0xfffffff0 + (uint)bVar6 * -8) =
                *(uint *)(auStack_28 + (uint)bVar6 * -8);
           *(uint *)(&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
@@ -219,26 +217,26 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           afStack_b4[(uint)bVar6 * -2 + 2] = afStack_34[(uint)bVar6 * -2];
           afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3] =
                afStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-          auStack_28._8_4_ = (uint)ROUND(afStack_b4[1] * _DAT_005ff7ec);
-          fStack_1c = (float)(int)ROUND(afStack_b4[2] * _DAT_005ff7ec);
-          fStack_18 = (float)(int)ROUND(afStack_b4[3] * _DAT_005ff7ec);
+          auStack_28._8_4_ = (uint)ROUND(afStack_b4[1] * 256.0f);
+          fStack_1c = (float)(int)ROUND(afStack_b4[2] * 256.0f);
+          fStack_18 = (float)(int)ROUND(afStack_b4[3] * 256.0f);
           pCVar12 = (CVector3i *)(auStack_28 + 8);
           uVar14 = 1;
           in_stack_fffffe90 = 0x498b99;
           engine_matrix_c_transformToCache_FUN_00507b00(1,pCVar12);
-          puVar4 = &DAT_00629044;
-          puVar5 = (uint *)&stack0xfffffe74;
+          pSVar4 = g_SRenderVertex_ARRAY_00629014 + 1;
+          piVar5 = (int *)&stack0xfffffe74;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
+            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          puVar4 = &DAT_00629014;
-          puVar5 = (uint *)&stack0xfffffe44;
+          pSVar4 = g_SRenderVertex_ARRAY_00629014;
+          piVar5 = (int *)&stack0xfffffe44;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
+            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
           in_stack_fffffe40 = 0x498bc3;
           vertex1_00.projected_vertex.inv_z = in_stack_fffffe50;
@@ -254,7 +252,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           vertex1_00.b = in_stack_fffffe64._8_4_;
           vertex1_00.a = in_stack_fffffe64._12_4_;
           vertex2_00.projected_vertex.transformed_y = uVar8;
-          vertex2_00.projected_vertex.transformed_x = uVar7;
+          vertex2_00.projected_vertex.transformed_x = iVar7;
           vertex2_00.projected_vertex.transformed_z = uVar9;
           vertex2_00.projected_vertex.inv_z = iVar10;
           vertex2_00.projected_vertex.screen_x = (int)fVar11;
@@ -267,23 +265,23 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           vertex2_00.a = in_stack_fffffea0;
           engine_3d_c_clipAndDrawLine2D_FUN_00407af0(vertex1_00,vertex2_00);
           iVar3 = (unaff_retaddr ^ 4) * 0xc;
-          auStack_f0._0_4_ = (int)ROUND(*pfVar2 * _DAT_005ff7ec);
-          auStack_f0._4_4_ = (int)ROUND(pfVar2[1] * _DAT_005ff7ec);
-          auStack_f0._8_4_ = (uint)ROUND(pfVar2[2] * _DAT_005ff7ec);
+          auStack_f0._0_4_ = (int)ROUND(*pfVar2 * 256.0f);
+          auStack_f0._4_4_ = (int)ROUND(pfVar2[1] * 256.0f);
+          auStack_f0._8_4_ = (uint)ROUND(pfVar2[2] * 256.0f);
           in_stack_fffffe9c = 0;
           uVar15 = 0x498c0a;
           engine_matrix_c_transformToCache_FUN_00507b00(0,(CVector3i *)auStack_f0);
-          afStack_b4[2] = *(float *)(&stack0xfffffea4 + iVar3) * _DAT_005dc288;
-          afStack_b4[3] = *(float *)(&stack0xfffffea8 + iVar3) * _DAT_005dc288;
-          fStack_a4 = *(float *)(&stack0xfffffeac + iVar3) * _DAT_005dc288;
-          fStack_b8 = *(float *)(&stack0xfffffea4 + iVar3) * _DAT_005dc288;
+          afStack_b4[2] = *(float *)(&stack0xfffffea4 + iVar3) * 0.2f;
+          afStack_b4[3] = *(float *)(&stack0xfffffea8 + iVar3) * 0.2f;
+          fStack_a4 = *(float *)(&stack0xfffffeac + iVar3) * 0.2f;
+          fStack_b8 = *(float *)(&stack0xfffffea4 + iVar3) * 0.2f;
           afStack_b4[(uint)bVar6 * -2] = afStack_b4[(uint)bVar6 * -2 + 3];
           afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-          afStack_80[1] = *pfVar2 * _DAT_005dc28c;
-          afStack_80[2] = pfVar2[1] * _DAT_005dc28c;
-          afStack_80[3] = pfVar2[2] * _DAT_005dc28c;
-          afStack_34[0] = *pfVar2 * _DAT_005dc28c;
+          afStack_80[1] = *pfVar2 * 0.8f;
+          afStack_80[2] = pfVar2[1] * 0.8f;
+          afStack_80[3] = pfVar2[2] * 0.8f;
+          afStack_34[0] = *pfVar2 * 0.8f;
           afStack_34[(uint)bVar6 * -2 + 1] = afStack_80[(uint)bVar6 * -2 + 2];
           afStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 2] =
                afStack_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3];
@@ -294,26 +292,26 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           afStack_cc[(uint)bVar6 * -2] = *(float *)(auStack_98 + (uint)bVar6 * -8 + 8);
           afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                (&fStack_8c)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
-          auStack_f0._8_4_ = (uint)ROUND(fStack_d0 * _DAT_005ff7ec);
-          afStack_e4[0] = (float)(int)ROUND(afStack_cc[0] * _DAT_005ff7ec);
-          afStack_e4[1] = (float)(int)ROUND(afStack_cc[1] * _DAT_005ff7ec);
+          auStack_f0._8_4_ = (uint)ROUND(fStack_d0 * 256.0f);
+          afStack_e4[0] = (float)(int)ROUND(afStack_cc[0] * 256.0f);
+          afStack_e4[1] = (float)(int)ROUND(afStack_cc[1] * 256.0f);
           pCVar12 = (CVector3i *)(auStack_f0 + 8);
           uVar16 = 1;
           in_stack_fffffea0 = 0x498d19;
           engine_matrix_c_transformToCache_FUN_00507b00(1,pCVar12);
-          puVar4 = &DAT_00629044;
-          puVar5 = (uint *)&stack0xfffffe84;
+          pSVar4 = g_SRenderVertex_ARRAY_00629014 + 1;
+          piVar5 = (int *)&stack0xfffffe84;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
+            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          puVar4 = &DAT_00629014;
-          puVar5 = (uint *)&stack0xfffffe54;
+          pSVar4 = g_SRenderVertex_ARRAY_00629014;
+          piVar5 = (int *)&stack0xfffffe54;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
+            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
           in_stack_fffffe50 = 0x498d43;
           vertex1_01.projected_vertex.screen_x = in_stack_fffffe64._0_4_;
@@ -324,7 +322,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0(CE
           vertex1_01.projected_vertex.transformed_y = in_stack_fffffe54._4_4_;
           vertex1_01.projected_vertex.transformed_z = in_stack_fffffe54._8_4_;
           vertex1_01.projected_vertex.inv_z = in_stack_fffffe54._12_4_;
-          vertex1_01.r = uVar7;
+          vertex1_01.r = iVar7;
           vertex1_01.g = uVar8;
           vertex1_01.b = uVar9;
           vertex1_01.a = iVar10;

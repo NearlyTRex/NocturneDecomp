@@ -15,13 +15,13 @@
 ;   void* PTR_GlobalAlloc_005b35dc = 001b3fd0
 ;   void* PTR_GlobalLock_005b35e4 = 001b3fec
 ;   TerminatedCString s_waveOutOpen_failed_005d4fe5
-;   undefined4 DAT_00604514
-;   undefined4 DAT_02cf546c
-;   undefined4 DAT_02cf54f0
-;   undefined4 DAT_02cf54f4
-;   undefined4 DAT_02cf54f8
-;   undefined4 DAT_02cf54fc
-;   undefined4 DAT_02cf5500
+;   int g_INT_00604514 = -0x1
+;   int g_INT_02cf546c
+;   int g_INT_02cf54f0
+;   int g_INT_02cf54f4
+;   int g_INT_02cf54f8
+;   int g_INT_02cf54fc
+;   int g_INT_02cf5500
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -57,43 +57,43 @@ section .text
     RET                                 ; 0055da7e
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0055da7f
         ;   Label: LAB_0055da7f
-    MOV [0x02cf54f0],EAX                ; 0055da83 | DAT_02cf54f0
+    MOV [0x02cf54f0],EAX                ; 0055da83 | g_INT_02cf54f0
     MOV EAX,dword ptr [ESP + 0x30]      ; 0055da88
     MOV EDX,0x4                         ; 0055da8c
-    MOV [0x02cf54f4],EAX                ; 0055da91 | DAT_02cf54f4
+    MOV [0x02cf54f4],EAX                ; 0055da91 | g_INT_02cf54f4
     MOV EAX,dword ptr [ESP + 0x34]      ; 0055da96
-    MOV dword ptr [0x02cf5500],EDX      ; 0055da9a | DAT_02cf5500
-    MOV [0x02cf54f8],EAX                ; 0055daa0 | DAT_02cf54f8
+    MOV dword ptr [0x02cf5500],EDX      ; 0055da9a | g_INT_02cf5500
+    MOV [0x02cf54f8],EAX                ; 0055daa0 | g_INT_02cf54f8
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0 ; 0055daa5
         ;   XREF to: 005591a0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0()
     MOV dword ptr [ESP + 0x10],EAX      ; 0055daaa
     FLD float ptr [ESP + 0x10]          ; 0055daae
-    FILD dword ptr [0x02cf54f8]         ; 0055dab2 | DAT_02cf54f8
+    FILD dword ptr [0x02cf54f8]         ; 0055dab2 | g_INT_02cf54f8
     FMULP                               ; 0055dab8
-    FILD dword ptr [0x02cf5500]         ; 0055daba | DAT_02cf5500
+    FILD dword ptr [0x02cf5500]         ; 0055daba | g_INT_02cf5500
     FDIVP                               ; 0055dac0
     CALL crt_math.c_round_FUN_005a3120  ; 0055dac2
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
-    FISTP dword ptr [0x02cf54fc]        ; 0055dac7 | DAT_02cf54fc
-    MOV EAX,[0x02cf54fc]                ; 0055dacd | DAT_02cf54fc
+    FISTP dword ptr [0x02cf54fc]        ; 0055dac7 | g_INT_02cf54fc
+    MOV EAX,[0x02cf54fc]                ; 0055dacd | g_INT_02cf54fc
     ADD EAX,0xf                         ; 0055dad2
     XOR ESI,ESI                         ; 0055dad5
     AND AL,0xf0                         ; 0055dad7
-    MOV ECX,dword ptr [0x02cf5500]      ; 0055dad9 | DAT_02cf5500
-    MOV [0x02cf54fc],EAX                ; 0055dadf | DAT_02cf54fc
+    MOV ECX,dword ptr [0x02cf5500]      ; 0055dad9 | g_INT_02cf5500
+    MOV [0x02cf54fc],EAX                ; 0055dadf | g_INT_02cf54fc
     TEST ECX,ECX                        ; 0055dae4
     JLE 0x0055db80                      ; 0055dae6
         ;   XREF to: 0055db80 (CONDITIONAL_JUMP)  ; LAB_0055db80
     XOR EBX,EBX                         ; 0055daec
-    MOV EAX,[0x02cf54f0]                ; 0055daee | DAT_02cf54f0
+    MOV EAX,[0x02cf54f0]                ; 0055daee | g_INT_02cf54f0
         ;   Label: LAB_0055daee
     MOV EDX,EAX                         ; 0055daf3
     SAR EDX,0x1f                        ; 0055daf5
     SHL EDX,0x3                         ; 0055daf8
     SBB EAX,EDX                         ; 0055dafb
     SAR EAX,0x3                         ; 0055dafd
-    IMUL EAX,dword ptr [0x02cf54fc]     ; 0055db00 | DAT_02cf54fc
-    IMUL EAX,dword ptr [0x02cf54f4]     ; 0055db07 | DAT_02cf54f4
+    IMUL EAX,dword ptr [0x02cf54fc]     ; 0055db00 | g_INT_02cf54fc
+    IMUL EAX,dword ptr [0x02cf54f4]     ; 0055db07 | g_INT_02cf54f4
     PUSH EAX                            ; 0055db0e
     PUSH 0x2002                         ; 0055db0f
     CALL dword ptr CS:[0x5b35dc]        ; 0055db14 | PTR_GlobalAlloc_005b35dc
@@ -119,18 +119,18 @@ section .text
     INC ESI                             ; 0055db62
     CALL dword ptr CS:[0x5b35e4]        ; 0055db63 | PTR_GlobalLock_005b35e4
     MOV dword ptr [EBX + 0x2cf5490],EAX ; 0055db6a
-    MOV EAX,[0x02cf5500]                ; 0055db70 | DAT_02cf5500
+    MOV EAX,[0x02cf5500]                ; 0055db70 | g_INT_02cf5500
     ADD EBX,0x4                         ; 0055db75
     CMP ESI,EAX                         ; 0055db78
     JL 0x0055daee                       ; 0055db7a
         ;   XREF to: 0055daee (CONDITIONAL_JUMP)  ; LAB_0055daee
     MOV EDX,0x1                         ; 0055db80
         ;   Label: LAB_0055db80
-    MOV AX,[0x02cf54f0]                 ; 0055db85 | DAT_02cf54f0
+    MOV AX,[0x02cf54f0]                 ; 0055db85 | g_INT_02cf54f0
     MOV word ptr [ESP],DX               ; 0055db8b
     MOV word ptr [ESP + 0xe],AX         ; 0055db8f
     XOR EDX,EDX                         ; 0055db94
-    MOV AX,[0x02cf54f4]                 ; 0055db96 | DAT_02cf54f4
+    MOV AX,[0x02cf54f4]                 ; 0055db96 | g_INT_02cf54f4
     MOV DX,word ptr [ESP + 0xe]         ; 0055db9c
     MOV word ptr [ESP + 0x2],AX         ; 0055dba1
     MOV EAX,EDX                         ; 0055dba6
@@ -142,7 +142,7 @@ section .text
     MOV DX,word ptr [ESP + 0x2]         ; 0055dbb5
     IMUL EAX,EDX                        ; 0055dbba
     MOV word ptr [ESP + 0xc],AX         ; 0055dbbd
-    MOV EAX,[0x02cf54f8]                ; 0055dbc2 | DAT_02cf54f8
+    MOV EAX,[0x02cf54f8]                ; 0055dbc2 | g_INT_02cf54f8
     MOV dword ptr [ESP + 0x4],EAX       ; 0055dbc7
     XOR EAX,EAX                         ; 0055dbcb
     MOV EDX,dword ptr [ESP + 0x4]       ; 0055dbcd
@@ -154,9 +154,9 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0055dbdf
     PUSH EAX                            ; 0055dbe3
     MOV dword ptr [ESP + 0x18],EDX      ; 0055dbe4
-    MOV EDX,dword ptr [0x00604514]      ; 0055dbe8 | DAT_00604514
+    MOV EDX,dword ptr [0x00604514]      ; 0055dbe8 | g_INT_00604514
     PUSH EDX                            ; 0055dbee
-    PUSH 0x2cf546c                      ; 0055dbef | DAT_02cf546c
+    PUSH 0x2cf546c                      ; 0055dbef | g_INT_02cf546c
     CALL dword ptr CS:[0x5b3484]        ; 0055dbf4 | PTR_waveOutOpen_005b3484
     TEST EAX,EAX                        ; 0055dbfb
     JZ 0x0055dc1e                       ; 0055dbfd
@@ -179,7 +179,7 @@ section .text
     RET                                 ; 0055dc1d
     MOV EDX,dword ptr [ESP + 0x38]      ; 0055dc1e
         ;   Label: LAB_0055dc1e
-    MOV EAX,[0x02cf54fc]                ; 0055dc22 | DAT_02cf54fc
+    MOV EAX,[0x02cf54fc]                ; 0055dc22 | g_INT_02cf54fc
     MOV dword ptr [EDX],EAX             ; 0055dc27
     MOV EAX,0x1                         ; 0055dc29
     ADD ESP,0x14                        ; 0055dc2e

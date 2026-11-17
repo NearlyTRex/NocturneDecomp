@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004eaf30(int x_center,int y_top,int height_half)
 
 {
@@ -20,13 +18,13 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004eaf30(int x_center,int 
   uint local_10;
   uint local_c;
   
-  this_ptr = DAT_0060b280;
+  this_ptr = g_CDemonRenderer_PTR_0060b280;
   if (0x140 < x_center) {
     x_center = 0x280 - (x_center + -0x140);
   }
   if (0 < height_half * 2) {
     iVar2 = (x_center + -0x10) * 0x10000;
-    (DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = iVar2;
+    (g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = iVar2;
     (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y_top << 0x10;
     iVar1 = (x_center + 0x10) * 0x10000;
     this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar1;
@@ -54,18 +52,19 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004eaf30(int x_center,int 
     local_c = 3;
     local_14 = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(this_ptr,0x8000);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (DAT_0060b280,
+              (g_CDemonRenderer_PTR_0060b280,
                (SMRGLTextureBasic *)
                (&DAT_00617fc8 +
-               (((int)((_DAT_01d06134 + (_DAT_01d06134 >> 0x1f) * -0x10000) -
-                      (uint)((_DAT_01d06134 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7U) * 0x18))
-    ;
-    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60(DAT_0060b280,&local_30,0x23)
-    ;
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
+               (((int)((g_INT_01d06134 + (g_INT_01d06134 >> 0x1f) * -0x10000) -
+                      (uint)((g_INT_01d06134 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7U) * 0x18)
+              );
+    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
+              (g_CDemonRenderer_PTR_0060b280,&local_30,0x23);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+              (g_CDemonRenderer_PTR_0060b280,0xffff);
   }
   return;
 }

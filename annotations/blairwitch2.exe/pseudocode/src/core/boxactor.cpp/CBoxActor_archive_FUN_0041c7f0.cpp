@@ -13,11 +13,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041c7f0(CBoxActor *this_pt
   int local_c;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60
-            (&this_ptr->model,"L>modelName" + 2);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60(&this_ptr->model,"modelName");
   core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->weight_in_pounds,"weightInPounds");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->fps,&DAT_005cc546);
-  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->rpm,&DAT_005cc54a);
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->fps,"fps");
+  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->rpm,"rpm");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->loop_wav_name,"loopWavName");
   core_actor_cpp_archiveString_FUN_0040b730
             (this_ptr->collision_wav_name,"collisionWavName");

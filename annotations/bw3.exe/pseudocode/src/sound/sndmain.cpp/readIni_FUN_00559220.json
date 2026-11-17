@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 200,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 10,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "unrolled_memcpy"
     ],
     "total_lines": 342
   },
@@ -161,8 +161,8 @@
   "globals": [
     {
       "addr": "005d3dc2",
-      "name": "s_DeviceName_005d3dc1+1",
-      "type": "undefined4",
+      "name": "s_DeviceName_005d3dc2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -185,8 +185,8 @@
     },
     {
       "addr": "005d3dfb",
-      "name": "DAT_005d3dfb",
-      "type": "undefined4",
+      "name": "s_Bits_005d3dfb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -197,14 +197,14 @@
     },
     {
       "addr": "005d3e09",
-      "name": "DAT_005d3e09",
-      "type": "undefined4",
+      "name": "s_Hz_005d3e09",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d3e0c",
-      "name": "DAT_005d3e0c",
-      "type": "undefined4",
+      "name": "s_Mute_005d3e0c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -221,19 +221,19 @@
     },
     {
       "addr": "00604224",
-      "name": "DAT_00604224",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00604224",
+      "type": "int",
+      "value": "0x20"
     },
     {
       "addr": "00604268",
-      "name": "DAT_00604268",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_00604268",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "0060426c",
-      "name": "DAT_0060426c",
+      "name": "g_CHAR_ARRAY_00604268+4",
       "type": "undefined4",
       "value": null
     }
@@ -342,19 +342,11 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00604268",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_00604268;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(code **)((int)ini_file",
       "severity": "moderate",
-      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"@DeviceName\" + 1,local_194,0x100);",
+      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"DeviceName\",local_194,0x100);",
       "type": "pointer_cast"
     },
     {
@@ -362,7 +354,7 @@
       "line": 29,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"@DeviceName\" + 1,local_194,0x100);",
+      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"DeviceName\",local_194,0x100);",
       "type": "unresolved_funcptr"
     },
     {
@@ -382,44 +374,12 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005d3dfb",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,&DAT_005d3dfb,&iStack_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005d3e09",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,&DAT_005d3e09,&iStack_20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_005d3e0c",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(ini_file,&DAT_005d3e0c,&iStack_30);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_00604224",
-      "severity": "mild",
-      "text": "if (0 < DAT_00604224) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_00604224",
-      "severity": "mild",
-      "text": "} while (iVar2 < DAT_00604224);",
-      "type": "undefined_data"
+      "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
+      "line": 24,
+      "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

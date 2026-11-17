@@ -12,16 +12,16 @@
 ; int              Stack[0x18]:4   transport_state
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b67ca
-;   undefined4 DAT_005b67cd
-;   undefined4 DAT_005b67d0
+;   TerminatedCString s_d_005b67ca
+;   TerminatedCString s_d_005b67cd
+;   TerminatedCString s_d_005b67d0
 ;   TerminatedCString s_AR_d_005b67d3
-;   undefined1 DAT_005b67d9
-;   undefined1 DAT_005b67da
-;   undefined1 DAT_005b67db
-;   undefined1 DAT_005b67dc
-;   undefined4 DAT_005b67de
-;   undefined4 DAT_005b67e1
+;   TerminatedCString s_wav_005b67d9
+;   undefined4 s_wav_005b67d9+1
+;   undefined4 s_wav_005b67d9+2
+;   undefined4 s_wav_005b67d9+3
+;   TerminatedCString s_f_005b67de
+;   TerminatedCString s_f_005b67e1
 ;   undefined1 DAT_005b67e4
 ;   undefined1 DAT_005b67e5
 ;   undefined1 DAT_005b67e6
@@ -49,7 +49,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00412eef
     MOV EDX,dword ptr [EBP + 0x20]      ; 00412ef2
     PUSH EDX                            ; 00412ef5
-    PUSH 0x5b67ca                       ; 00412ef6 | DAT_005b67ca
+    PUSH 0x5b67ca                       ; 00412ef6 | = "%d"
     LEA EAX,[ESP + 0x530]               ; 00412efb
     PUSH EAX                            ; 00412f02
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00412f03
@@ -57,7 +57,7 @@ section .text
     ADD ESP,0xc                         ; 00412f08
     MOV ECX,dword ptr [EBP + 0x24]      ; 00412f0b
     PUSH ECX                            ; 00412f0e
-    PUSH 0x5b67cd                       ; 00412f0f | DAT_005b67cd
+    PUSH 0x5b67cd                       ; 00412f0f | = "%d"
     LEA EAX,[ESP + 0x50c]               ; 00412f14
     PUSH EAX                            ; 00412f1b
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00412f1c
@@ -65,7 +65,7 @@ section .text
     ADD ESP,0xc                         ; 00412f21
     MOV ESI,dword ptr [EBP + 0x28]      ; 00412f24
     PUSH ESI                            ; 00412f27
-    PUSH 0x5b67d0                       ; 00412f28 | DAT_005b67d0
+    PUSH 0x5b67d0                       ; 00412f28 | = "%d"
     LEA EAX,[ESP + 0x518]               ; 00412f2d
     PUSH EAX                            ; 00412f34
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00412f35
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 00412ff8 (CONDITIONAL_JUMP)  ; LAB_00412ff8
     POP EDI                             ; 00413010
         ;   Label: LAB_00413010
-    MOV ESI,0x5b67d9                    ; 00413011 | DAT_005b67d9
+    MOV ESI,0x5b67d9                    ; 00413011 | = ".wav"
     LEA EDI,[ESP + 0x304]               ; 00413016
     PUSH EDI                            ; 0041301d
     SUB ECX,ECX                         ; 0041301e
@@ -174,13 +174,13 @@ section .text
     MOV AL,0x0                          ; 00413021
     SCASB.REPNE ES:EDI                  ; 00413023
     DEC EDI                             ; 00413025
-    MOV AL,byte ptr [ESI]               ; 00413026 | DAT_005b67d9 | DAT_005b67db
+    MOV AL,byte ptr [ESI]               ; 00413026 | = ".wav" | s_wav_005b67d9+2
         ;   Label: LAB_00413026
     MOV byte ptr [EDI],AL               ; 00413028
     CMP AL,0x0                          ; 0041302a
     JZ 0x0041303e                       ; 0041302c
         ;   XREF to: 0041303e (CONDITIONAL_JUMP)  ; LAB_0041303e
-    MOV AL,byte ptr [ESI + 0x1]         ; 0041302e | DAT_005b67da | DAT_005b67dc
+    MOV AL,byte ptr [ESI + 0x1]         ; 0041302e | s_wav_005b67d9+1 | s_wav_005b67d9+3
     ADD ESI,0x2                         ; 00413031
     MOV byte ptr [EDI + 0x1],AL         ; 00413034
     ADD EDI,0x2                         ; 00413037
@@ -204,7 +204,7 @@ section .text
     FSTP float ptr [ESP]                ; 00413075
     SUB ESP,0x8                         ; 00413078
     FSTP double ptr [ESP]               ; 0041307b
-    PUSH 0x5b67de                       ; 0041307e | DAT_005b67de
+    PUSH 0x5b67de                       ; 0041307e | = "%f"
     LEA EAX,[ESP + 0x210]               ; 00413083
     PUSH EAX                            ; 0041308a
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0041308b
@@ -213,7 +213,7 @@ section .text
     FLD float ptr [ESP]                 ; 00413093
     SUB ESP,0x8                         ; 00413096
     FSTP double ptr [ESP]               ; 00413099
-    PUSH 0x5b67e1                       ; 0041309c | DAT_005b67e1
+    PUSH 0x5b67e1                       ; 0041309c | = "%f"
     LEA EAX,[ESP + 0x110]               ; 004130a1
     PUSH EAX                            ; 004130a8
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004130a9
@@ -304,7 +304,7 @@ section .text
     LEA EAX,[ESP + 0x404]               ; 00413157
     PUSH EAX                            ; 0041315e
     PUSH EBX                            ; 0041315f
-    MOV ESI,dword ptr [0x006045f8]      ; 00413160 | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 00413160 | g_CSound_PTR_006045f8
     PUSH ESI                            ; 00413166
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 00413167
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)
@@ -313,7 +313,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00413175
     PUSH EAX                            ; 00413179
     PUSH EBX                            ; 0041317a
-    MOV EDI,dword ptr [0x006045f8]      ; 0041317b | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0041317b | g_CSound_PTR_006045f8
     PUSH EDI                            ; 00413181
     CALL core_sound.cpp_CSound_playSound_FUN_005609b0 ; 00413182
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)

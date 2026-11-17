@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 335,
+    "complexity_score": 215,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 145,
-    "suspect_count": 17,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_truncation",
-      "raw_address_constant",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
     "total_lines": 550
   },
@@ -98,39 +96,39 @@
   "globals": [
     {
       "addr": "005e139c",
-      "name": "s_d_s_005e139b+1",
-      "type": "undefined4",
+      "name": "s_d_s_005e139c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e13a4",
-      "name": "DAT_005e13a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e13a4",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "005e13ac",
-      "name": "DAT_005e13ac",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e13ac",
+      "type": "double",
+      "value": "0.600000000000000"
     },
     {
       "addr": "005e13b4",
-      "name": "DAT_005e13b4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e13b4",
+      "type": "double",
+      "value": "0.350000000000000"
     },
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00622ad0",
@@ -140,44 +138,44 @@
     },
     {
       "addr": "0152d23c",
-      "name": "DAT_0152d23c",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d23c",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d240",
-      "name": "DAT_0152d240",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d240",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d244",
-      "name": "DAT_0152d244",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d244",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "0152d248",
-      "name": "DAT_0152d248",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_0152d248",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01cd09e8",
-      "name": "DAT_01cd09e8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cd09e8",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01cd0ae8",
-      "name": "DAT_01cd0ae8",
-      "type": "undefined4",
+      "name": "g_INT_01cd0ae8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0aec",
-      "name": "DAT_01cd0aec",
-      "type": "undefined4",
+      "name": "g_FLOAT_01cd0aec",
+      "type": "float",
       "value": null
     },
     {
@@ -484,96 +482,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "local_60 = DAT_0061b498;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "local_5c = DAT_0061b49c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "local_64 = DAT_0061b49c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "iVar2 = DAT_0061b49c - iVar2 * iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "local_4c = DAT_0061b498 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "if ((DAT_0061b49c < 0x1e0) && (this_ptr_00 = _DAT_0152d240, DAT_0061b49c < 0x180)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "if ((DAT_0061b49c < 0x1e0) && (this_ptr_00 = _DAT_0152d240, DAT_0061b49c < 0x180)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "iVar4 = DAT_0061b49c - iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "if (0x280 < DAT_0061b498) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "if (800 < DAT_0061b498) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 105,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "if ((int)local_44 < iVar4) {",
@@ -581,7 +491,7 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 115,
+      "line": 114,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "local_50 = ((int)local_44 * 3) / 2;",
@@ -589,7 +499,7 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 119,
+      "line": 118,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "local_34 = iVar2 - (int)local_44;",
@@ -597,7 +507,7 @@
     },
     {
       "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 137,
+      "line": 136,
       "match": "(int)local_38",
       "severity": "moderate",
       "text": "(iVar3,(int)local_38,local_30 + iVar3,local_28,iVar4);",
@@ -605,7 +515,7 @@
     },
     {
       "description": "Pointer value `local_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
+      "line": 140,
       "match": "(int)local_40",
       "severity": "moderate",
       "text": "(local_44,local_20,(int)local_40,local_34,0xf8,0);",
@@ -613,7 +523,7 @@
     },
     {
       "description": "Raw hex address 0x4cc692 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 44,
+      "line": 42,
       "match": "0x4cc692",
       "severity": "moderate",
       "text": "iVar2 = 0x4cc692;",

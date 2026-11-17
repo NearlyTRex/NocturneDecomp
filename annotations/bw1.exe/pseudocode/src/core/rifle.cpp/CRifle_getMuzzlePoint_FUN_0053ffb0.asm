@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_LITEDESLILE_kfm_005edc12
-;   undefined4 DAT_005edc27
-;   undefined4 DAT_005edc2f
-;   undefined4 DAT_005edc37
+;   double g_DOUBLE_005edc27 = -0.100000000000000
+;   double g_DOUBLE_005edc2f = -1
+;   float g_FLOAT_005edc37 = 0.5
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
@@ -57,15 +57,15 @@ section .text
         ;   XREF to: 00540050 (CONDITIONAL_JUMP)  ; LAB_00540050
     FLD float ptr [EBP + -0x14]         ; 00540007
     FLD float ptr [EBP + -0x10]         ; 0054000a
-    FADD double ptr [0x005edc2f]        ; 0054000d | DAT_005edc2f
+    FADD double ptr [0x005edc2f]        ; 0054000d | g_DOUBLE_005edc2f
     FXCH                                ; 00540013
-    FADD double ptr [0x005edc27]        ; 00540015 | DAT_005edc27
+    FADD double ptr [0x005edc27]        ; 00540015 | g_DOUBLE_005edc27
     FXCH                                ; 0054001b
     FSTP float ptr [EBP + -0x4]         ; 0054001d
     FSTP float ptr [EBP + -0x8]         ; 00540020
     FLD float ptr [EBP + -0x18]         ; 00540023
         ;   Label: LAB_00540023
-    FMUL float ptr [0x005edc37]         ; 00540026 | DAT_005edc37
+    FMUL float ptr [0x005edc37]         ; 00540026 | g_FLOAT_005edc37
     PUSH 0x0                            ; 0054002c
     LEA EAX,[EBP + 0xffffdc38]          ; 0054002e
     LEA ESI,[EBP + -0xc]                ; 00540034

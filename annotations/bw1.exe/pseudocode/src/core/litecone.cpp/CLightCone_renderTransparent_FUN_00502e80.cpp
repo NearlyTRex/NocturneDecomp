@@ -19,7 +19,8 @@ int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_00502e80(CLightCo
   
   bVar4 = 0;
   if (this_ptr->state != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                      (g_CDemonRenderer_PTR_00612560);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);

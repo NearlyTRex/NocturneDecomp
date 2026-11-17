@@ -66,7 +66,7 @@ int __cdecl core_prye_cpp_CPrye_tryClimbLadder_FUN_00520df0(CPrye *this_ptr)
   (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
                         ((CCharacter *)this_ptr,0);
-  if ((float)_DAT_005cd517 <= fStack_14) {
+  if ((float)0.98999999999999999 <= fStack_14) {
     if (((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) &&
        ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       pCStack_24 = &(this_ptr->base).base.base.location.position;
@@ -80,7 +80,7 @@ int __cdecl core_prye_cpp_CPrye_tryClimbLadder_FUN_00520df0(CPrye *this_ptr)
         pCStack_18 = this_ptr_01;
         if ((this_ptr_01 != (CDemonActor *)0x0) &&
            (ABS((this_ptr->base).base.base.location.position.y - (this_ptr_01->location).position.y)
-            <= (float)_DAT_005cd527)) {
+            <= (float)2)) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                     (this_ptr_01,pCStack_24,&CStack_f0);
           CStack_70.y = CStack_f0.x;
@@ -88,7 +88,7 @@ int __cdecl core_prye_cpp_CPrye_tryClimbLadder_FUN_00520df0(CPrye *this_ptr)
                *(uint *)((int)&CStack_f0 + (uint)bVar4 * -8 + 4);
           *(uint *)((int)&CStack_64 + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4) =
                *(uint *)((int)&CStack_f0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-          if ((ABS(CStack_64.x) <= (float)_DAT_005cd52f) && (0.0 <= (double)CStack_64.x)) {
+          if ((ABS(CStack_64.x) <= (float)4) && (0.0 <= (double)CStack_64.x)) {
             (*((this_ptr_01->vtable)._ub)->getBoundingBox)(this_ptr_01,SUB84(__BITCAST_UINT64((double)CStack_64.x),0))
             ;
             puVar2 = (uint *)&stack0xfffffeb8;
@@ -103,7 +103,7 @@ int __cdecl core_prye_cpp_CPrye_tryClimbLadder_FUN_00520df0(CPrye *this_ptr)
               CStack_64.x = fStack_124;
             }
             if (CStack_64.x < fStack_130) {
-              if (CStack_64.x < fStack_130 + (float)_DAT_005cd537) goto LAB_00520e7b;
+              if (CStack_64.x < fStack_130 + (float)-1) goto LAB_00520e7b;
               CStack_64.x = fStack_130;
             }
             fStack_f4 = fStack_130 + fStack_124;
@@ -113,10 +113,10 @@ int __cdecl core_prye_cpp_CPrye_tryClimbLadder_FUN_00520df0(CPrye *this_ptr)
             afStack_84[(uint)bVar4 * -2] = *(float *)((int)&CStack_f0 + (uint)bVar4 * -8);
             afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
                  *(float *)((int)&CStack_f0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
-            afStack_54[2] = fStack_88 * _DAT_005cd51f;
-            afStack_54[3] = afStack_84[0] * _DAT_005cd51f;
-            fStack_44 = afStack_84[1] * _DAT_005cd51f;
-            fStack_40 = fStack_88 * _DAT_005cd51f;
+            afStack_54[2] = fStack_88 * 0.5f;
+            afStack_54[3] = afStack_84[0] * 0.5f;
+            fStack_44 = afStack_84[1] * 0.5f;
+            fStack_40 = fStack_88 * 0.5f;
             afStack_54[(uint)bVar4 * -2 + 6] = afStack_54[(uint)bVar4 * -2 + 3];
             afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
                  afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];

@@ -8,8 +8,8 @@
 ;   core_sound.cpp_CSound_ctor_FUN_0055fc40 at 0055fc55
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d3aa2
-;   undefined4 DAT_005e4840
+;   double g_DOUBLE_005d3aa2 = 0.600000000000000
+;   float g_FLOAT_005e4840 = 0.25
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00556db0
@@ -45,8 +45,8 @@ section .text
     CMP EBX,0x20                        ; 00557f7d
     JL 0x00557f63                       ; 00557f80
         ;   XREF to: 00557f63 (CONDITIONAL_JUMP)  ; LAB_00557f63
-    FLD float ptr [0x005e4840]          ; 00557f82 | DAT_005e4840
-    FMUL double ptr [0x005d3aa2]        ; 00557f88 | DAT_005d3aa2
+    FLD float ptr [0x005e4840]          ; 00557f82 | g_FLOAT_005e4840
+    FMUL double ptr [0x005d3aa2]        ; 00557f88 | g_DOUBLE_005d3aa2
     SUB ESP,0x4                         ; 00557f8e
     FSTP float ptr [ESP]                ; 00557f91
     PUSH 0x1                            ; 00557f94

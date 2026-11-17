@@ -9,8 +9,8 @@
 ; CVector3f *      Stack[0xc]:4   offset_position
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d0e04
-;   undefined4 DAT_005d0e0c
+;   double g_DOUBLE_005d0e04 = 256
+;   double g_DOUBLE_005d0e0c = 0.00390625
 ;
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_alloc_FUN_004614d0
@@ -211,7 +211,7 @@ section .text
     TEST EDI,EDI                        ; 0046192e
     JZ 0x004619b0                       ; 00461930
         ;   XREF to: 004619b0 (CONDITIONAL_JUMP)  ; LAB_004619b0
-    FLD double ptr [0x005d0e04]         ; 00461936 | DAT_005d0e04
+    FLD double ptr [0x005d0e04]         ; 00461936 | g_DOUBLE_005d0e04
     FLD float ptr [EDI]                 ; 0046193c
     FMUL ST1                            ; 0046193e
     FLD float ptr [EDI + 0x4]           ; 00461940
@@ -261,7 +261,7 @@ section .text
         ;   Label: LAB_004619b0
     CALL core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00461690 ; 004619b1
         ;   XREF to: 00461690 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00461690(CDemonPart * this_ptr)
-    FLD double ptr [0x005d0e0c]         ; 004619b6 | DAT_005d0e0c
+    FLD double ptr [0x005d0e0c]         ; 004619b6 | g_DOUBLE_005d0e0c
     FILD dword ptr [EBX + 0x354]        ; 004619bc
     FMUL ST1                            ; 004619c2
     FILD dword ptr [EBX + 0x358]        ; 004619c4

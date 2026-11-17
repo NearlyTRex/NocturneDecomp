@@ -16,15 +16,15 @@
 ;   CFieldNotes* g_CFieldNotesPtr = 01cc8004
 ;   CNetGame* g_CNetGamePtr = 01d51c20
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_007c3978
-;   undefined4 DAT_01c43544
-;   undefined4 DAT_01c50950
-;   undefined4 DAT_01c50954
+;   CPuzzle* g_CPuzzle_PTR_007c3978
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c43544
+;   char[4952] g_CHAR_ARRAY_01c50950
+;   undefined4 g_CHAR_ARRAY_01c50950+4
 ;   undefined4 g_CFieldNotesInstance.is_displayed
-;   undefined4 DAT_01ccff98
-;   undefined4 DAT_01ccff9c
-;   undefined4 DAT_01cd01f0
-;   undefined4 DAT_01cd01f4
+;   char[600] g_CHAR_ARRAY_01ccff98
+;   undefined4 g_CHAR_ARRAY_01ccff98+4
+;   int g_INT_01cd01f0
+;   int g_INT_01cd01f4
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -43,14 +43,14 @@ section .text
     PUSH ESI                            ; 004d0860
         ;   Label: core_game.cpp_CGame_playerControls_FUN_004d0860
     MOV ESI,dword ptr [ESP + 0x8]       ; 004d0861
-    CMP dword ptr [0x01cd01f8],0x0      ; 004d0865 | DAT_01cd01f8
+    CMP dword ptr [0x01cd01f8],0x0      ; 004d0865 | g_INT_01cd01f8
     JNZ 0x004d08a4                      ; 004d086c
         ;   XREF to: 004d08a4 (CONDITIONAL_JUMP)  ; LAB_004d08a4
     MOV EAX,[0x0061d418]                ; 004d086e | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004d0873 | g_CFieldNotesInstance.is_displayed
     JNZ 0x004d08a4                      ; 004d0877
         ;   XREF to: 004d08a4 (CONDITIONAL_JUMP)  ; LAB_004d08a4
-    CMP dword ptr [0x007c3978],0x0      ; 004d0879 | DAT_007c3978
+    CMP dword ptr [0x007c3978],0x0      ; 004d0879 | g_CPuzzle_PTR_007c3978
     JNZ 0x004d08a4                      ; 004d0880
         ;   XREF to: 004d08a4 (CONDITIONAL_JUMP)  ; LAB_004d08a4
     CMP dword ptr [ESI + 0x218],0x0     ; 004d0882
@@ -59,7 +59,7 @@ section .text
     CMP dword ptr [ESI + 0x254],0x0     ; 004d088b
     JZ 0x004d0936                       ; 004d0892
         ;   XREF to: 004d0936 (CONDITIONAL_JUMP)  ; LAB_004d0936
-    MOV dword ptr [0x01cd0b40],0xffffffff ; 004d0898 | DAT_01cd0b40
+    MOV dword ptr [0x01cd0b40],0xffffffff ; 004d0898 | g_INT_01cd0b40
     POP ESI                             ; 004d08a2
         ;   Label: LAB_004d08a2
     RET                                 ; 004d08a3
@@ -82,19 +82,19 @@ section .text
     MOV ECX,0x258                       ; 004d08ba
     MOV ESI,0x1c50950                   ; 004d08bf
     MOV EDI,0x1ccff98                   ; 004d08c4
-    PUSH EDI                            ; 004d08c9 | DAT_01ccff98
+    PUSH EDI                            ; 004d08c9 | g_CHAR_ARRAY_01ccff98
     MOV EAX,ECX                         ; 004d08ca
     SHR ECX,0x2                         ; 004d08cc
-    MOVSD.REP ES:EDI,ESI                ; 004d08cf | DAT_01c50950 | DAT_01ccff98 | DAT_01c50954
+    MOVSD.REP ES:EDI,ESI                ; 004d08cf | g_CHAR_ARRAY_01c50950 | g_CHAR_ARRAY_01ccff98 | g_CHAR_ARRAY_01c50950+4
     MOV CL,AL                           ; 004d08d1
     AND CL,0x3                          ; 004d08d3
-    MOVSB.REP ES:EDI,ESI                ; 004d08d6 | DAT_01c50954 | DAT_01ccff9c
+    MOVSB.REP ES:EDI,ESI                ; 004d08d6 | g_CHAR_ARRAY_01c50950+4 | g_CHAR_ARRAY_01ccff98+4
     POP EDI                             ; 004d08d8
-    MOV EAX,[0x01c43544]                ; 004d08d9 | DAT_01c43544
-    MOV [0x01cd01f0],EAX                ; 004d08de | DAT_01cd01f0
+    MOV EAX,[0x01c43544]                ; 004d08d9 | g_BIT_INTEGER32_01c43544
+    MOV [0x01cd01f0],EAX                ; 004d08de | g_INT_01cd01f0
     MOV EAX,[0x00622c18]                ; 004d08e3 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004d08e8 | g_CDemonSetInstance.selected_camera_index
-    MOV [0x01cd01f4],EAX                ; 004d08ee | DAT_01cd01f4
+    MOV [0x01cd01f4],EAX                ; 004d08ee | g_INT_01cd01f4
     POP EDI                             ; 004d08f3
     POP ESI                             ; 004d08f4
     RET                                 ; 004d08f5
@@ -123,8 +123,8 @@ section .text
         ;   Label: default
     MOV ECX,0x87c                       ; 004d0916
     PUSH 0x5e1995                       ; 004d091b | = "CGame::playerControls - unknown contr..."
-    MOV dword ptr [0x01d1d400],EDX      ; 004d0920 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004d0926 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004d0920 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004d0926 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004d092c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004d0931

@@ -6,27 +6,25 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004ad230(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr)
 
 {
   float fVar1;
   
   if (hierarchy_distance < 1) {
-    fVar1 = blend_weight * (float)_DAT_005d6dbb;
+    fVar1 = blend_weight * (float)0.20000000000000001;
   }
   else if (hierarchy_distance == 1) {
-    fVar1 = blend_weight * (float)_DAT_005d6db3;
+    fVar1 = blend_weight * (float)0.40000000000000002;
   }
   else if (hierarchy_distance == 2) {
-    fVar1 = blend_weight * (float)_DAT_005d6dab;
+    fVar1 = blend_weight * (float)0.59999999999999998;
   }
   else {
     if (hierarchy_distance != 3) {
       return blend_weight;
     }
-    fVar1 = blend_weight * (float)_DAT_005d6da3;
+    fVar1 = blend_weight * (float)0.80000000000000004;
   }
   return fVar1;
 }

@@ -8,21 +8,21 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0312
+;   TerminatedCString s_Burn_005f0312
 ;   TerminatedCString s_Death_005f0317
 ;   TerminatedCString s_Animation_005f031d
-;   undefined4 DAT_005f0327
+;   TerminatedCString s_Burn_005f0327
 ;   TerminatedCString s_Chasing_005f032c
 ;   TerminatedCString s_MeleeAttack_005f0334
 ;   TerminatedCString s_ChaseComplete_005f0340
 ;   TerminatedCString s_VanishAttack_005f034e
 ;   TerminatedCString s_ChaseComplete_005f035b
-;   undefined4 DAT_005f0369
+;   TerminatedCString s_Burn_005f0369
 ;   TerminatedCString s_Chasing_005f036e
 ;   TerminatedCString s_MeleeAttack_005f0376
 ;   TerminatedCString s_RangeAttack_005f0382
-;   undefined4 DAT_005f038e
-;   undefined4 DAT_005ff540
+;   float g_FLOAT_005f038e = -2000
+;   float g_FLOAT_005ff540 = 8
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0
@@ -50,7 +50,7 @@ section .text
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a4345
         ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     ADD ESP,0x8                         ; 005a434a
-    PUSH 0x5f0312                       ; 005a434d | DAT_005f0312
+    PUSH 0x5f0312                       ; 005a434d | = "Burn"
     LEA EAX,[EBX + 0x10af8]             ; 005a4352
     PUSH EAX                            ; 005a4358
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a4359
@@ -101,20 +101,20 @@ section .text
     FMUL ST0                            ; 005a43d7
     FADDP                               ; 005a43d9
     FSQRT                               ; 005a43db
-    FCOMP float ptr [0x005ff540]        ; 005a43dd | DAT_005ff540
+    FCOMP float ptr [0x005ff540]        ; 005a43dd | g_FLOAT_005ff540
     FNSTSW AX                           ; 005a43e3
     SAHF                                ; 005a43e5
     JC 0x005a4407                       ; 005a43e6
         ;   XREF to: 005a4407 (CONDITIONAL_JUMP)  ; LAB_005a4407
     PUSH 0x5f034e                       ; 005a43e8 | = "VanishAttack"
     PUSH 0x5f035b                       ; 005a43ed | = "ChaseComplete"
-    FLD float ptr [0x005ff540]          ; 005a43f2 | DAT_005ff540
+    FLD float ptr [0x005ff540]          ; 005a43f2 | g_FLOAT_005ff540
     PUSH ESI                            ; 005a43f8
     FSTP float ptr [EBX + 0x11394]      ; 005a43f9
     CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a43ff
         ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a4404
-    PUSH 0x5f0369                       ; 005a4407 | DAT_005f0369
+    PUSH 0x5f0369                       ; 005a4407 | = "Burn"
         ;   Label: LAB_005a4407
     LEA ESI,[EBX + 0x10af8]             ; 005a440c
     PUSH ESI                            ; 005a4412
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0x4                         ; 005a4454
     LEA ESI,[EBX + 0x11354]             ; 005a4457
         ;   Label: LAB_005a4457
-    FLD float ptr [0x005f038e]          ; 005a445d | DAT_005f038e
+    FLD float ptr [0x005f038e]          ; 005a445d | g_FLOAT_005f038e
     FLD float ptr [ESI]                 ; 005a4463
     FMUL ST1                            ; 005a4465
     FLD float ptr [ESI + 0x4]           ; 005a4467
@@ -208,7 +208,7 @@ section .text
     TEST EAX,EAX                        ; 005a44f7
     JNZ 0x005a4385                      ; 005a44f9
         ;   XREF to: 005a4385 (CONDITIONAL_JUMP)  ; LAB_005a4385
-    PUSH 0x5f0327                       ; 005a44ff | DAT_005f0327
+    PUSH 0x5f0327                       ; 005a44ff | = "Burn"
     PUSH ESI                            ; 005a4504
     CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a4505
         ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)

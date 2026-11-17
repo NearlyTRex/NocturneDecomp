@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005aa720(CWaterActor *this_ptr)
 
 {
@@ -51,16 +49,16 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005aa720(CWaterActor *this_
       iVar6 = ((int)ROUND(dVar17) + 1) * iVar12;
       this_ptr->vertex_count = iVar6;
       if (iVar6 < 0x3e9) break;
-      this_ptr->patch_size = this_ptr->patch_size * (float)_DAT_005f9292;
+      this_ptr->patch_size = this_ptr->patch_size * (float)2;
     }
     fVar1 = (this_ptr->size).z;
-    fVar4 = (float)_DAT_005f928a;
+    fVar4 = (float)0.5;
     iVar6 = 0;
     if (0 < (int)ROUND(dVar17) + 1) {
       do {
-        dVar5 = _DAT_005f92ba;
-        dVar18 = _DAT_005f92b2;
-        dVar17 = _DAT_005f928a;
+        dVar5 = 252;
+        dVar18 = 65536;
+        dVar17 = 0.5;
         iVar9 = 0;
         if (0 < iVar12) {
           pfVar7 = (float *)(iVar6 * 0x20);
@@ -143,21 +141,21 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005aa720(CWaterActor *this_
   else {
     this_ptr->primitive_count = 0x20;
     this_ptr->vertex_count = 0;
-    dVar5 = _DAT_005f92c2;
-    dVar18 = _DAT_005f92b2;
-    dVar17 = _DAT_005f92aa;
+    dVar5 = 8388608;
+    dVar18 = 65536;
+    dVar17 = 128;
     iVar6 = 0;
     if (0 < this_ptr->primitive_count) {
       do {
-        fVar15 = ((float10)iVar6 / (float10)this_ptr->primitive_count) * (float10)_DAT_005f929a *
-                 (float10)_DAT_005f9292;
+        fVar15 = ((float10)iVar6 / (float10)this_ptr->primitive_count) * (float10)3.141593f *
+                 (float10)2;
         fVar16 = (float10)fcos(fVar15);
         fVar15 = (float10)fsin(fVar15);
         this_ptr->vertices[this_ptr->vertex_count].local_position.x =
-             (float)(fVar16 * (float10)(this_ptr->size).x * (float10)_DAT_005f92a2);
+             (float)(fVar16 * (float10)(this_ptr->size).x * (float10)0.70699999999999996);
         this_ptr->vertices[this_ptr->vertex_count].local_position.y = 0.0;
         this_ptr->vertices[this_ptr->vertex_count].local_position.z =
-             (float)(fVar15 * (float10)(this_ptr->size).z * (float10)_DAT_005f92a2);
+             (float)(fVar15 * (float10)(this_ptr->size).z * (float10)0.70699999999999996);
         iVar12 = this_ptr->vertex_count;
         dVar19 = round
                            (((double)this_ptr->vertices[iVar12].local_position.x /

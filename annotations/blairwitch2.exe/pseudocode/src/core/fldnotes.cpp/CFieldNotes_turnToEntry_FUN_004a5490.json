@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 110,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 5,
+    "pseudocode_lines": 44,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 153
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -78,26 +76,26 @@
     },
     {
       "addr": "00616014",
-      "name": "DAT_00616014",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00616014",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "01cab7f0",
-      "name": "DAT_01cab7f0",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cab7f0",
+      "type": "char[512]",
       "value": null
     },
     {
       "addr": "01cab9f0",
-      "name": "DAT_01cab9f0",
-      "type": "undefined4",
+      "name": "g_INT_01cab9f0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01caf110",
-      "name": "DAT_01caf110",
-      "type": "undefined4",
+      "name": "g_INT_01caf110",
+      "type": "int",
       "value": null
     }
   ],
@@ -194,38 +192,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004a54c7) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_00616014",
-      "severity": "mild",
-      "text": "if (DAT_00616014 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01cab7f0",
-      "severity": "mild",
-      "text": "DAT_01cab7f0 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_00616014",
-      "severity": "mild",
-      "text": "DAT_00616014 = 0;",
-      "type": "undefined_data"
     }
   ]
 }

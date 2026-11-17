@@ -14,7 +14,7 @@ void __cdecl engine_mini3d_cpp_setRenderSurface_FUN_00514b70(int width,int heigh
   int iVar1;
   int iVar2;
   
-  _DAT_01d25f14 = (mode != 0) + 1;
+  g_INT_01d25f14 = (mode != 0) + 1;
   engine_mini3d_cpp_setRenderViewport_FUN_00511850(0.0,0.0,(float)(width + -1),(float)(height + -1))
   ;
   _DAT_01d2ae00 = height;
@@ -22,8 +22,8 @@ void __cdecl engine_mini3d_cpp_setRenderSurface_FUN_00514b70(int width,int heigh
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
-      *(uint *)(iVar2 + 0x1d2ae04) = *(uint *)(&DAT_01c4354c + iVar2);
-      *(void **)(&DAT_01c4354c + iVar2) = pixels;
+      *(uint *)(iVar2 + 0x1d2ae04) = *(uint *)((int)g_ARRAY_PTR_01c4354c + iVar2);
+      *(void **)((int)g_ARRAY_PTR_01c4354c + iVar2) = pixels;
       pixels = (void *)((int)pixels + width * 4);
       iVar2 = iVar1;
     } while (iVar1 < height * 4);

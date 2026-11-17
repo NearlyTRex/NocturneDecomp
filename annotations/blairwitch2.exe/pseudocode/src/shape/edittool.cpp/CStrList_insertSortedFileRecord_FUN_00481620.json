@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 205,
+    "complexity_score": 170,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
@@ -111,37 +110,37 @@
     },
     {
       "addr": "00613c08",
-      "name": "DAT_00613c08",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_00613c08",
+      "type": "char[512]",
       "value": null
     },
     {
       "addr": "00613c0c",
-      "name": "DAT_00613c0c",
+      "name": "g_CHAR_ARRAY_00613c08+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00613e08",
-      "name": "DAT_00613e08",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_00613e08",
+      "type": "char[512]",
       "value": null
     },
     {
       "addr": "00613e0c",
-      "name": "DAT_00613e0c",
+      "name": "g_CHAR_ARRAY_00613e08+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00614008",
-      "name": "DAT_00614008",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_00614008",
+      "type": "char[260]",
       "value": null
     },
     {
       "addr": "0061400c",
-      "name": "DAT_0061400c",
+      "name": "g_CHAR_ARRAY_00614008+4",
       "type": "undefined4",
       "value": null
     }
@@ -367,43 +366,19 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_00613c08",
-      "severity": "mild",
-      "text": "puVar6 = &DAT_00613c08;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_00613e08",
-      "severity": "mild",
-      "text": "puVar6 = &DAT_00613e08;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 47,
-      "match": "(char *)((int)pcVar2",
+      "match": "(char *)((int)pcVar6",
       "severity": "moderate",
-      "text": "pcVar2 = (char *)((int)pcVar2 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pcVar6 = (char *)((int)pcVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_00614008",
-      "severity": "mild",
-      "text": "puVar6 = &DAT_00614008;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `pcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pcVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 47,
-      "match": "(int)pcVar2",
+      "match": "(int)pcVar6",
       "severity": "moderate",
-      "text": "pcVar2 = (char *)((int)pcVar2 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pcVar6 = (char *)((int)pcVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {

@@ -22,13 +22,13 @@
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e765
 ;
 ; Referenced Globals:
-;   undefined4 s_Ladder_dot_f_005ebaec+1
-;   undefined4 DAT_005ebb05
-;   undefined4 DAT_005ebb0d
-;   undefined4 DAT_005ebb15
-;   undefined4 DAT_005ebb1d
-;   undefined4 DAT_005ebb25
-;   undefined4 DAT_005ebb2d
+;   TerminatedCString s_Ladder_dot_f_005ebaed
+;   double g_DOUBLE_005ebb05 = 0.990000000000000
+;   float g_FLOAT_005ebb0d = 0.5
+;   double g_DOUBLE_005ebb15 = 2
+;   double g_DOUBLE_005ebb1d = 4
+;   double g_DOUBLE_005ebb25 = -1
+;   double g_DOUBLE_005ebb2d = 0.261799387791667
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
@@ -66,7 +66,7 @@ section .text
     MOV dword ptr [ESP + 0x154],EAX     ; 0056a7a4
     FLD float ptr [ESP + 0x154]         ; 0056a7ab
     ADD ESP,0x8                         ; 0056a7b2
-    FCOMP double ptr [0x005ebb05]       ; 0056a7b5 | DAT_005ebb05
+    FCOMP double ptr [0x005ebb05]       ; 0056a7b5 | g_DOUBLE_005ebb05
     FNSTSW AX                           ; 0056a7bb
     SAHF                                ; 0056a7bd
     JC 0x0056a802                       ; 0056a7be
@@ -126,7 +126,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056a862
     FSUBR float ptr [EAX + 0x24]        ; 0056a865
     FABS                                ; 0056a868
-    FCOMP double ptr [0x005ebb15]       ; 0056a86a | DAT_005ebb15
+    FCOMP double ptr [0x005ebb15]       ; 0056a86a | g_DOUBLE_005ebb15
     FNSTSW AX                           ; 0056a870
     SAHF                                ; 0056a872
     JA 0x0056a80b                       ; 0056a873
@@ -146,7 +146,7 @@ section .text
     FLD float ptr [ESP + 0x78]          ; 0056a895
     FST double ptr [ESP + 0x8]          ; 0056a899
     FABS                                ; 0056a89d
-    FCOMP double ptr [0x005ebb1d]       ; 0056a89f | DAT_005ebb1d
+    FCOMP double ptr [0x005ebb1d]       ; 0056a89f | g_DOUBLE_005ebb1d
     FNSTSW AX                           ; 0056a8a5
     SAHF                                ; 0056a8a7
     JA 0x0056a80b                       ; 0056a8a8
@@ -191,7 +191,7 @@ section .text
     JNC 0x0056a937                      ; 0056a914
         ;   XREF to: 0056a937 (CONDITIONAL_JUMP)  ; LAB_0056a937
     FLD float ptr [ESP + 0x28]          ; 0056a916
-    FADD double ptr [0x005ebb25]        ; 0056a91a | DAT_005ebb25
+    FADD double ptr [0x005ebb25]        ; 0056a91a | g_DOUBLE_005ebb25
     FLD float ptr [ESP + 0x70]          ; 0056a920
     FCOMPP                              ; 0056a924
     FNSTSW AX                           ; 0056a926
@@ -220,7 +220,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0056a97c
     MOVSD ES:EDI,ESI                    ; 0056a97d
     MOVSD ES:EDI,ESI                    ; 0056a97e
-    FLD float ptr [0x005ebb0d]          ; 0056a97f | DAT_005ebb0d
+    FLD float ptr [0x005ebb0d]          ; 0056a97f | g_FLOAT_005ebb0d
     FLD float ptr [ESP + 0x94]          ; 0056a985
     FMUL ST1                            ; 0056a98c
     FLD float ptr [ESP + 0x98]          ; 0056a98e
@@ -284,7 +284,7 @@ section .text
     MOV dword ptr [ESP + 0x134],EAX     ; 0056aa75
     MOV EAX,dword ptr [ESP + 0x148]     ; 0056aa7c
     MOV EAX,dword ptr [EAX + 0x5c]      ; 0056aa83
-    FLD double ptr [0x005ebb2d]         ; 0056aa86 | DAT_005ebb2d
+    FLD double ptr [0x005ebb2d]         ; 0056aa86 | g_DOUBLE_005ebb2d
     MOV dword ptr [ESP + 0x13c],EAX     ; 0056aa8c
     FCOS                                ; 0056aa93
     FLD float ptr [ESP + 0x12c]         ; 0056aa95
@@ -327,7 +327,7 @@ section .text
     PUSH EDX                            ; 0056ab1b
     MOV ECX,dword ptr [ESP + 0x4]       ; 0056ab1c
     PUSH ECX                            ; 0056ab20
-    PUSH 0x5ebaed                       ; 0056ab21 | s_Ladder_dot_f_005ebaec+1
+    PUSH 0x5ebaed                       ; 0056ab21 | = "Ladder dot : %f\n"
     MOV EBX,dword ptr [0x00609ed0]      ; 0056ab26 | g_CConsolePtr
     PUSH EBX                            ; 0056ab2c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0056ab2d

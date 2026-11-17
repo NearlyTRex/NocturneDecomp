@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_ptr)
 
 {
@@ -43,7 +41,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
     return;
   }
   this_ptr->cinematic_skip_in_progress = 0;
-  iVar3 = engine_dosio_cpp_getFileSize_FUN_00460aa0(&DAT_005d8748,this_ptr->bitmap_filename);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_00460aa0("art",this_ptr->bitmap_filename);
   if (iVar3 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
               (g_CEditorToolsPtr,"Can't open %s");
@@ -58,7 +56,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
   }
   splitpath
             (this_ptr->bitmap_filename,(char *)0x0,(char *)0x0,local_144,(char *)0x0);
-  pcVar6 = &DAT_005d878a;
+  pcVar6 = ".act";
   iVar3 = -1;
   pcVar10 = local_144;
   do {
@@ -79,7 +77,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  p_Var4 = engine_dosio_cpp_getFile_FUN_00460c70(&DAT_005d8792,local_144,&DAT_005d878f);
+  p_Var4 = engine_dosio_cpp_getFile_FUN_00460c70("art",local_144,"rb");
   if (p_Var4 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
               (g_CEditorToolsPtr,"Can't open %s");
@@ -91,23 +89,26 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
     iVar7 = 0;
     local_24 = 0;
     do {
-      if (DAT_006141c0 == 0x10) {
+      if (g_INT_006141c0 == 0x10) {
         local_44 = (uint)local_644[iVar3 + 1];
         local_40 = local_44;
-        local_40 = local_44 / _DAT_01c35824;
-        local_3c = local_644[iVar3 + 2] / _DAT_01c35830;
+        local_40 = local_44 / (uint)g_INT_01c35824;
+        local_3c = (uint)local_644[iVar3 + 2] / (uint)g_INT_01c35830;
         *(ushort *)((int)auStack_344 + iVar7) =
-             (ushort)(local_644[iVar3 + 2] / _DAT_01c35830 << (DAT_01c3582c & 0x1f)) |
-             (ushort)(local_644[iVar3] / _DAT_01c35818 << (DAT_01c35814 & 0x1f)) |
-             (ushort)(local_44 / _DAT_01c35824 << (DAT_01c35820 & 0x1f));
+             (ushort)((uint)local_644[iVar3 + 2] / (uint)g_INT_01c35830 <<
+                     (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f)) |
+             (ushort)((uint)local_644[iVar3] / (uint)g_INT_01c35818 <<
+                     (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f)) |
+             (ushort)(local_44 / (uint)g_INT_01c35824 << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f))
+        ;
       }
       else {
         local_30 = (uint)local_644[iVar3 + 2];
-        if (DAT_006141c0 == 0x20) {
+        if (g_INT_006141c0 == 0x20) {
           *(uint *)((int)auStack_a44 + local_24) =
-               local_30 << (DAT_01c3582c & 0x1f) |
-               (uint)local_644[iVar3] << (DAT_01c35814 & 0x1f) |
-               (uint)local_644[iVar3 + 1] << (DAT_01c35820 & 0x1f);
+               local_30 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f) |
+               (uint)local_644[iVar3] << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f) |
+               (uint)local_644[iVar3 + 1] << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
         }
         else {
           *(uint *)((int)auStack_a44 + local_24) =
@@ -127,41 +128,44 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
     local_18 = malloc(this_ptr->bitmap_width * this_ptr->bitmap_height);
     if (local_18 != (void *)0x0) {
       p_Var4 = engine_dosio_cpp_getFile_FUN_00460c70
-                         (&DAT_005d87a7,this_ptr->bitmap_filename,&DAT_005d87a4);
+                         ("art",this_ptr->bitmap_filename,"rb");
       if (p_Var4 == (_FILE *)0x0) {
-        _DAT_01d046a0 = "..\\core\\game.cpp";
-        _DAT_01d046a4 = 0x1275;
+        g_CHAR_PTR_01d046a0 = "..\\core\\game.cpp";
+        g_INT_01d046a4 = 0x1275;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open %s");
       }
       _fread(local_18,this_ptr->bitmap_width,this_ptr->bitmap_height,p_Var4)
       ;
       _fclose(p_Var4);
       local_1c = 0;
-      if (0 < DAT_006141bc) {
+      if (0 < g_INT_006141bc) {
         local_28 = 0;
         do {
-          local_14 = this_ptr->bitmap_width * ((local_1c * this_ptr->bitmap_height) / DAT_006141bc);
+          local_14 = this_ptr->bitmap_width *
+                     ((local_1c * this_ptr->bitmap_height) / g_INT_006141bc);
           iVar3 = 0;
-          if (0 < DAT_006141b8) {
+          if (0 < g_INT_006141b8) {
             iVar7 = 0;
             iVar8 = 0;
             do {
-              pbVar5 = (byte *)((this_ptr->bitmap_width * iVar3) / DAT_006141b8 + local_14 +
+              pbVar5 = (byte *)((this_ptr->bitmap_width * iVar3) / g_INT_006141b8 + local_14 +
                                (int)local_18);
-              if (DAT_006141c0 == 0x10) {
-                *(ushort *)(*(int *)(&DAT_01c2a38c + local_28) + iVar8) = auStack_344[*pbVar5];
+              if (g_INT_006141c0 == 0x10) {
+                *(ushort *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + local_28) + iVar8) =
+                     auStack_344[*pbVar5];
               }
               else {
-                *(uint *)(*(int *)(&DAT_01c2a38c + local_28) + iVar7) = auStack_a44[*pbVar5];
+                *(uint *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + local_28) + iVar7) =
+                     auStack_a44[*pbVar5];
               }
               iVar7 = iVar7 + 4;
               iVar3 = iVar3 + 1;
               iVar8 = iVar8 + 2;
-            } while (iVar3 < DAT_006141b8);
+            } while (iVar3 < g_INT_006141b8);
           }
           local_1c = local_1c + 1;
           local_28 = local_28 + 4;
-        } while (local_1c < DAT_006141bc);
+        } while (local_1c < g_INT_006141bc);
       }
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(this_ptr);
@@ -173,9 +177,10 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
         }
         iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_0058eb40();
         if (((iVar3 != 0) ||
-            (iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,this_ptr->key_fire), iVar3 != 0)) ||
-           (_DAT_01c2a384 != 0)) break;
-        if (_DAT_01cb80cc == 1) {
+            (iVar3 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)
+                               (g_CKeys_PTR_00617dd4,this_ptr->key_fire), iVar3 != 0)) ||
+           (g_BIT_INTEGER32_01c2a384.dword != 0)) break;
+        if (g_INT_01cb80cc == 1) {
           *pfVar1 = *pfVar1 - g_CGamePtr->delta_time_float;
         }
         else {
@@ -184,8 +189,9 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
         }
       }
       do {
-        if (_DAT_01c2a384 == 0) {
-          iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,this_ptr->key_fire);
+        if (g_BIT_INTEGER32_01c2a384.dword == 0) {
+          iVar3 = (*g_CKeys_PTR_00617dd4->vtable->getKeyState)
+                            (g_CKeys_PTR_00617dd4,this_ptr->key_fire);
           if (iVar3 == 0) {
             engine_2d_c_clearInputAndWait_FUN_004032b0();
             core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(this_ptr);
@@ -193,30 +199,32 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
             this_ptr->bitmap_filename[0] = '\0';
             debugFree(local_18);
             iStack_20 = 0;
-            if (DAT_006141bc < 1) {
+            if (g_INT_006141bc < 1) {
               return;
             }
             iStack_2c = 0;
             do {
               iVar3 = 0;
-              if (0 < DAT_006141b8) {
+              if (0 < g_INT_006141b8) {
                 iVar8 = 0;
                 iVar7 = 0;
                 do {
-                  if (DAT_006141c0 == 0x10) {
-                    *(ushort *)(*(int *)(&DAT_01c2a38c + iStack_2c) + iVar7) = auStack_344[0];
+                  if (g_INT_006141c0 == 0x10) {
+                    *(ushort *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iStack_2c) + iVar7) =
+                         auStack_344[0];
                   }
                   else {
-                    *(uint *)(*(int *)(&DAT_01c2a38c + iStack_2c) + iVar8) = auStack_a44[0];
+                    *(uint *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iStack_2c) + iVar8) =
+                         auStack_a44[0];
                   }
                   iVar8 = iVar8 + 4;
                   iVar3 = iVar3 + 1;
                   iVar7 = iVar7 + 2;
-                } while (iVar3 < DAT_006141b8);
+                } while (iVar3 < g_INT_006141b8);
               }
               iStack_2c = iStack_2c + 4;
               iStack_20 = iStack_20 + 1;
-            } while (iStack_20 < DAT_006141bc);
+            } while (iStack_20 < g_INT_006141bc);
             return;
           }
         }

@@ -96,7 +96,7 @@
 ;   core_cloth.cpp_CClothList_setup_FUN_0043fbc0 at 0043fbec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dd3b0
+;   float g_FLOAT_005dd3b0 = 256
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_initializeConnections_FUN_0043c8a0
@@ -396,13 +396,13 @@ section .text
     ADD EBX,ESI                         ; 0043ceed
     INC EBP                             ; 0043ceef
     FLD float ptr [EAX]                 ; 0043cef0
-    FMUL float ptr [0x005dd3b0]         ; 0043cef2 | DAT_005dd3b0
+    FMUL float ptr [0x005dd3b0]         ; 0043cef2 | g_FLOAT_005dd3b0
     FISTP dword ptr [EBX]               ; 0043cef8
     FLD float ptr [EAX + 0x4]           ; 0043cefa
-    FMUL float ptr [0x005dd3b0]         ; 0043cefd | DAT_005dd3b0
+    FMUL float ptr [0x005dd3b0]         ; 0043cefd | g_FLOAT_005dd3b0
     FISTP dword ptr [EBX + 0x4]         ; 0043cf03
     FLD float ptr [EAX + 0x8]           ; 0043cf06
-    FMUL float ptr [0x005dd3b0]         ; 0043cf09 | DAT_005dd3b0
+    FMUL float ptr [0x005dd3b0]         ; 0043cf09 | g_FLOAT_005dd3b0
     FISTP dword ptr [EBX + 0x8]         ; 0043cf0f
     MOV EAX,dword ptr [ESP + 0x16c]     ; 0043cf12
     ADD EDX,0x11c                       ; 0043cf19

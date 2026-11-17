@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fire_cpp_CCrater_activate_FUN_00499610(CCrater *this_ptr,CVector3f *center_position,float radius)
 
@@ -65,11 +64,13 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_00499610(CCrater *this_ptr,CVect
   do {
     local_18 = -radius;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(local_18,radius);
-    pCVar5->smoke_positions[0].x = local_14 * (float)_DAT_005d55a2 + (this_ptr->center_position).x;
+    pCVar5->smoke_positions[0].x =
+         local_14 * (float)0.5 + (this_ptr->center_position).x;
     pCVar5->smoke_positions[0].y = (this_ptr->center_position).y;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(local_18,radius);
     pCVar6 = &pCVar5->center_position;
-    pCVar5->smoke_positions[0].z = local_14 * (float)_DAT_005d55a2 + (this_ptr->center_position).z;
+    pCVar5->smoke_positions[0].z =
+         local_14 * (float)0.5 + (this_ptr->center_position).z;
     pCVar5 = (CCrater *)pCVar6;
   } while (pCVar6 != (CVector3f *)&this_ptr->smoke_positions[0].z);
   local_3c = (this_ptr->center_position).x + local_18;
@@ -127,20 +128,20 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_00499610(CCrater *this_ptr,CVect
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
                        (g_CDemonSetPtr,this_ptr->corner_positions,0.0);
   pCVar3 = g_CDemonSetPtr;
-  this_ptr->corner_positions[0].y = local_14 + (float)_DAT_005d55aa;
+  this_ptr->corner_positions[0].y = local_14 + (float)0.14999999999999999;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
                        (pCVar3,this_ptr->corner_positions + 1,0.0);
   pCVar3 = g_CDemonSetPtr;
-  this_ptr->corner_positions[1].y = local_14 + (float)_DAT_005d55aa;
+  this_ptr->corner_positions[1].y = local_14 + (float)0.14999999999999999;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
                        (pCVar3,this_ptr->corner_positions + 2,0.0);
   pCVar3 = g_CDemonSetPtr;
-  this_ptr->corner_positions[2].y = local_14 + (float)_DAT_005d55aa;
+  this_ptr->corner_positions[2].y = local_14 + (float)0.14999999999999999;
   fVar4 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
                     (pCVar3,this_ptr->corner_positions + 3,0.0);
   fVar1 = this_ptr->corner_positions[0].y;
   fVar2 = (this_ptr->center_position).y;
-  this_ptr->corner_positions[3].y = fVar4 + (float)_DAT_005d55aa;
+  this_ptr->corner_positions[3].y = fVar4 + (float)0.14999999999999999;
   if (1.0 < ABS(fVar1 - fVar2)) {
     this_ptr->corner_positions[0].y = (this_ptr->center_position).y;
   }

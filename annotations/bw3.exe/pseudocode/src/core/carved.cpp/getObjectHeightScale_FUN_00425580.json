@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 269,
+    "complexity_score": 253,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 19,
+    "pseudocode_lines": 43,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "unaffected_reg",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 97
+    "total_lines": 96
   },
   "cross_references": [],
   "function": {
@@ -37,9 +36,9 @@
   "globals": [
     {
       "addr": "005b7987",
-      "name": "DAT_005b7987",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005b7987",
+      "type": "double",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -109,16 +108,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float unaff_ESI;",
@@ -126,7 +117,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "CBoundingBox3D *unaff_EDI;",
@@ -134,7 +125,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 11,
       "match": "afStackY_1000",
       "severity": "moderate",
       "text": "float afStackY_1000 [1002];",
@@ -142,7 +133,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 29,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(*((actor->vtable)._ub)->getBoundingBox)(actor,unaff_EDI);",
@@ -150,7 +141,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 32,
+      "line": 30,
       "match": "&stack0xffffffd0",
       "severity": "moderate",
       "text": "puVar2 = (uint *)&stack0xffffffd0;",
@@ -158,7 +149,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 31,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffffb0;",
@@ -166,7 +157,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 41,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff8 + (uint)bVar4 * -8) =",
@@ -174,7 +165,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 42,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8);",
@@ -182,7 +173,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 43,
       "match": "&stack0xfffffffc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffffc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
@@ -190,7 +181,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
+      "line": 44,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
@@ -198,15 +189,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 47,
+      "line": 45,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "return unaff_ESI * (float)_DAT_005b7987 + 1.0;",
+      "text": "return unaff_ESI * (float)0.5 + 1.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Pointer value `&stack0xfffffff8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&stack0xfffffff8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff8 + (uint)bVar4 * -8) =",
@@ -214,7 +205,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
+      "line": 42,
       "match": "(int)&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8);",
@@ -222,7 +213,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
@@ -230,7 +221,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 34,
+      "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -238,7 +229,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff8 + (uint)bVar4 * -8) =",
@@ -246,7 +237,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 44,
+      "line": 42,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8);",
@@ -254,7 +245,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",

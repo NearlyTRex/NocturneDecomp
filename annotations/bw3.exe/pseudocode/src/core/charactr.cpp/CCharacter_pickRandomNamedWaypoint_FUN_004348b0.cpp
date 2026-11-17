@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CWayPoint * __cdecl core_charactr_cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0(CCharacter *this_ptr,char *name_pattern)
 
 {
@@ -35,7 +33,7 @@ CWayPoint * __cdecl core_charactr_cpp_CCharacter_pickRandomNamedWaypoint_FUN_004
        (fVar1 = (this_ptr->base).location.position.x - *(float *)(target_string + 0x20),
        fVar3 = (this_ptr->base).location.position.y - *(float *)(target_string + 0x24),
        fVar2 = (this_ptr->base).location.position.z - *(float *)(target_string + 0x28),
-       SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) <= _DAT_005b892a)) {
+       SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) <= 40.0f)) {
       iVar4 = iVar7 + 4;
       local_1c = local_1c + 1;
       *(char **)((int)local_1f64 + iVar7) = target_string;

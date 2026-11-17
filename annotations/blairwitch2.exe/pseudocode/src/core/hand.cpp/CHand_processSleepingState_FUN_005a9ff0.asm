@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_MeleeAttack_005f0a5a+1
-;   undefined4 DAT_0060088c
+;   TerminatedCString s_MeleeAttack_005f0a5b
+;   float g_FLOAT_0060088c = 5
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -141,12 +141,12 @@ section .text
     FMUL ST0                            ; 005aa118
     FADDP                               ; 005aa11a
     FSQRT                               ; 005aa11c
-    FCOMP float ptr [0x0060088c]        ; 005aa11e | DAT_0060088c
+    FCOMP float ptr [0x0060088c]        ; 005aa11e | g_FLOAT_0060088c
     FNSTSW AX                           ; 005aa124
     SAHF                                ; 005aa126
     JNC 0x005aa034                      ; 005aa127
         ;   XREF to: 005aa034 (CONDITIONAL_JUMP)  ; LAB_005aa034
-    PUSH 0x5f0a5b                       ; 005aa12d | s_MeleeAttack_005f0a5a+1
+    PUSH 0x5f0a5b                       ; 005aa12d | = "MeleeAttack"
     ADD EBX,0x10af8                     ; 005aa132
     PUSH EBX                            ; 005aa138
     CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aa139

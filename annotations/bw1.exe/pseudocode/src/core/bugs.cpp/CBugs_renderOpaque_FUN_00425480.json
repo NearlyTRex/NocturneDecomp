@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 327,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 20,
+    "pseudocode_lines": 79,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -17,11 +17,10 @@
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "undefined_data",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 239
+    "total_lines": 241
   },
   "cross_references": [],
   "function": {
@@ -86,9 +85,9 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "00622c18",
@@ -98,8 +97,8 @@
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -231,16 +230,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 34,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "puVar2 = (uint *)&stack0xffffff98;",
@@ -248,7 +239,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 35,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffffa8;",
@@ -256,31 +247,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 41,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "iStack_14 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_50,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,euler_angles,translation);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 74,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "} while (iVar1 < (int)in_stack_0000000c[0x90].platform_orientation_delta.x);",
@@ -288,7 +263,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 78,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(in_stack_0000000c);",
@@ -296,7 +271,7 @@
     },
     {
       "description": "Pointer value `&CStack_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 57,
       "match": "(int)&CStack_38",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) = afStack_28[(uint)bVar4 * -2];",
@@ -304,7 +279,7 @@
     },
     {
       "description": "Pointer value `&CStack_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 58,
       "match": "(int)&CStack_38",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
@@ -312,7 +287,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 35,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -320,7 +295,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 60,
+      "line": 61,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_20.x = CStack_38.x;",
@@ -328,7 +303,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 56,
+      "line": 57,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) = afStack_28[(uint)bVar4 * -2];",
@@ -336,7 +311,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 57,
+      "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
@@ -344,7 +319,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `euler_angles` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*euler_angles) + offsetof(subfield)` equals the real array stride. Replace `euler_angles->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 69,
+      "line": 71,
       "match": "euler_angles = (T *)&euler_angles[N].SUBFIELD",
       "severity": "moderate",
       "text": "euler_angles = (CVector3f *)&euler_angles[5].y;",
@@ -352,7 +327,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `translation` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*translation) + offsetof(subfield)` equals the real array stride. Replace `translation->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 71,
+      "line": 73,
       "match": "translation = (T *)&translation[N].SUBFIELD",
       "severity": "moderate",
       "text": "translation = (CVector3f *)&translation[5].y;",

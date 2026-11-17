@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00431cc0(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )
 
 {
@@ -44,8 +42,9 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00431cc0(CCharacter *t
   local_40 = local_6c.z;
   if (0.0 <= min_dist) {
     if ((this_ptr->is_spectral == 0) &&
-       ((((float)_DAT_005d5b1f < ABS(local_50[3]) || ((float)_DAT_005d5b27 < ABS(local_6c.x))) ||
-        ((float)_DAT_005d5b27 < ABS(local_6c.z))))) {
+       ((((float)20 < ABS(local_50[3]) ||
+         ((float)40 < ABS(local_6c.x))) ||
+        ((float)40 < ABS(local_6c.z))))) {
       local_6c.y = local_50[3];
       engine_console_cpp_CConsole_printf_FUN_00445430
                 (g_CConsolePtr,"%s confused while following %s\n");
@@ -57,7 +56,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00431cc0(CCharacter *t
     if (max_dist < 0.0) {
       max_dist = 1e+30;
     }
-    local_20 = min_dist * (float)_DAT_005d5b2f;
+    local_20 = min_dist * (float)0.10000000000000001;
     iVar1 = *out_state;
     if (iVar1 == 0) {
       min_dist = min_dist + local_20;
@@ -69,13 +68,13 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00431cc0(CCharacter *t
     else if (iVar1 == 2) {
       max_dist = max_dist - local_20;
     }
-    if (min_dist < (float)_DAT_005d5b37) {
+    if (min_dist < (float)0.01) {
       min_dist = 0.01;
     }
     if (min_dist <= local_30) {
       fVar4 = 0.0;
       fVar3 = 0.0;
-      direction = (CVector3f *)&DAT_02c8af28;
+      direction = &g_CVector3f_02c8af28;
       path_map = (*((actor->vtable)._ub)->getPathMap)(actor);
       iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_0042ccf0
                         (this_ptr,&(actor->location).position,path_map,direction,fVar3,fVar4);
@@ -110,11 +109,11 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00431cc0(CCharacter *t
        *(float *)((int)&local_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   this_ptr->turn_angle_accumulator = local_50[0];
   if (*out_state == 0) {
-    if ((float)_DAT_005d5b47 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_00431e84;
+    if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_00431e84;
     if (*out_state != 1) goto LAB_00431f2b;
   }
   else {
-    if (ABS(this_ptr->turn_angle_accumulator) < (float)_DAT_005d5b3f) {
+    if (ABS(this_ptr->turn_angle_accumulator) < (float)0.034906585038888903) {
       *out_state = 0;
 LAB_00431f2b:
       this_ptr->turn_angle_accumulator = 0.0;

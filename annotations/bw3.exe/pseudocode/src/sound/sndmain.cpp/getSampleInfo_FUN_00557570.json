@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 223,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 98,
-    "suspect_count": 10,
+    "pseudocode_lines": 97,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unrolled_memcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 343
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -139,8 +137,8 @@
     },
     {
       "addr": "005d3a0f",
-      "name": "DAT_005d3a0f",
-      "type": "undefined4",
+      "name": "s_wav_005d3a0f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -151,8 +149,8 @@
     },
     {
       "addr": "005d3a19",
-      "name": "DAT_005d3a19",
-      "type": "undefined4",
+      "name": "s_mp3_005d3a19",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -187,14 +185,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
@@ -211,8 +209,8 @@
     },
     {
       "addr": "02ce71e8",
-      "name": "DAT_02ce71e8",
-      "type": "undefined4",
+      "name": "g_BYTE_02ce71e8",
+      "type": "byte",
       "value": null
     }
   ],
@@ -359,64 +357,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(CSfxSample *)((int)out_sample",
       "severity": "moderate",
       "text": "out_sample = (CSfxSample *)((int)out_sample + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005d3a0f",
-      "severity": "mild",
-      "text": "iVar4 = _stricmp(&local_140,&DAT_005d3a0f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005d3a19",
-      "severity": "mild",
-      "text": "iVar4 = _stricmp(&local_140,&DAT_005d3a19);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_02ce71e8",
-      "severity": "mild",
-      "text": "if ((DAT_02ce71e8 & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_02ce71e8",
-      "severity": "mild",
-      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_02ce71e8",
-      "severity": "mild",
-      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x54; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -424,7 +374,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 47,
+      "line": 45,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

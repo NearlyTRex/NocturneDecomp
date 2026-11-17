@@ -7,8 +7,8 @@
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_init_FUN_0047e280
@@ -20,11 +20,11 @@ section .text
     PUSH EBX                            ; 0047e210
         ;   Label: core_dracbrid.cpp_CDrawSurface_ctor_FUN_0047e210
     MOV EBX,dword ptr [ESP + 0x8]       ; 0047e211
-    MOV EAX,[0x0061b49c]                ; 0047e215 | DAT_0061b49c
+    MOV EAX,[0x0061b49c]                ; 0047e215 | g_INT_0061b49c
     PUSH 0x0                            ; 0047e21a
     DEC EAX                             ; 0047e21c
     PUSH EAX                            ; 0047e21d
-    MOV EAX,[0x0061b498]                ; 0047e21e | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 0047e21e | g_INT_0061b498
     DEC EAX                             ; 0047e223
     PUSH EAX                            ; 0047e224
     PUSH 0x0                            ; 0047e225

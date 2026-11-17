@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLaserInfo *laser_info)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLas
   
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(&this_ptr->base,laser_info);
   if (this_ptr->mirror_flag == 0) {
-    laser_info->reflectivity = 1.0 - (float)this_ptr->opacity * (float)_DAT_005e3fdc;
+    laser_info->reflectivity = 1.0 - (float)this_ptr->opacity * (float)1.5259021896696401e-05;
     return;
   }
   if (this_ptr->shattered == 0) {
@@ -35,10 +33,10 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLas
     fVar2 = (this_ptr->glass_size).y;
     fVar3 = (laser_info->local_hit_position).x;
     fVar4 = (this_ptr->glass_size).x;
-    fVar5 = (float)_DAT_005e3fe4;
+    fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (DAT_00612560,&this_ptr->broken_texture);
-    fVar6 = (float)DAT_0061b4a8;
+              (g_CDemonRenderer_PTR_00612560,&this_ptr->broken_texture);
+    fVar6 = (float)g_INT_0061b4a8;
     dVar7 = round((double)((fVar3 / fVar4 + fVar5) * fVar6));
     dVar8 = round((double)((1.0 - fVar1 / fVar2) * fVar6));
     iStack_20 = (int)ROUND(dVar7);
@@ -46,16 +44,16 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLas
     if (iStack_20 < 0) {
       iStack_20 = 0;
     }
-    if (DAT_0061b4a8 <= iStack_20) {
-      iStack_20 = DAT_0061b4a8 + -1;
+    if (g_INT_0061b4a8 <= iStack_20) {
+      iStack_20 = g_INT_0061b4a8 + -1;
     }
     if (iStack_1c < 0) {
       iStack_1c = 0;
     }
-    if (DAT_0061b4a8 <= iStack_1c) {
-      iStack_1c = DAT_0061b4a8 + -1;
+    if (g_INT_0061b4a8 <= iStack_1c) {
+      iStack_1c = g_INT_0061b4a8 + -1;
     }
-    if (*(char *)(iStack_20 + iStack_1c * DAT_0061b4a8 + _DAT_01c50930) == '\0') {
+    if (g_UCHAR_PTR_01c50930[iStack_20 + iStack_1c * g_INT_0061b4a8] == '\0') {
       laser_info->transparency = 1.0;
       return;
     }

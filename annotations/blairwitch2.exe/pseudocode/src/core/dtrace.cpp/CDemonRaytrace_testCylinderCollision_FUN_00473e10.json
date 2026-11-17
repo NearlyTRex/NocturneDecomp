@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 258,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 18,
+    "pseudocode_lines": 62,
+    "suspect_count": 17,
     "suspect_types": [
       "unaffected_reg",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 265
+    "total_lines": 264
   },
   "cross_references": [
     {
@@ -56,73 +55,73 @@
   "globals": [
     {
       "addr": "01510da8",
-      "name": "DAT_01510da8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01510da8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01510dac",
-      "name": "DAT_01510dac",
-      "type": "undefined4",
+      "name": "g_INT_01510dac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01510db0",
-      "name": "DAT_01510db0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01510db0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01510db4",
-      "name": "DAT_01510db4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01510db4",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01510db8",
-      "name": "DAT_01510db8",
-      "type": "undefined4",
+      "name": "g_INT_01510db8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01510dbc",
-      "name": "DAT_01510dbc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01510dbc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01510dc0",
-      "name": "DAT_01510dc0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01510dc0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01510dc4",
-      "name": "DAT_01510dc4",
-      "type": "undefined4",
+      "name": "g_INT_01510dc4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01510dc8",
-      "name": "DAT_01510dc8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01510dc8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0265370c",
-      "name": "DAT_0265370c",
-      "type": "undefined4",
+      "name": "g_CVector3f_0265370c",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02653710",
-      "name": "DAT_02653710",
+      "name": "g_CVector3f_0265370c.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02653714",
-      "name": "DAT_02653714",
+      "name": "g_CVector3f_0265370c.z",
       "type": "undefined4",
       "value": null
     }
@@ -339,16 +338,8 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 9,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 19,
+      "line": 18,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -356,7 +347,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 20,
+      "line": 19,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
@@ -364,7 +355,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 44,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);",
@@ -372,7 +363,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 47,
+      "line": 46,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "fVar4 = *(float *)(unaff_EBX + 0x14);",
@@ -380,7 +371,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 48,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "((double)((cylinder->bottom_y - *(float *)(unaff_EBX + 0x14)) * fVar5));",
@@ -388,7 +379,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 52,
+      "line": 51,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fVar5 = ((cylinder->center_z + cylinder->dir_z) - *(float *)(unaff_EDI + 0x18)) -",
@@ -396,7 +387,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 53,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
@@ -404,7 +395,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 58,
+      "line": 57,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fVar5 = (cylinder->center_z - *(float *)(unaff_EDI + 0x18)) - cylinder->radius;",
@@ -412,7 +403,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 59,
+      "line": 58,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
@@ -420,7 +411,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 61,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fVar2 = *(float *)(unaff_EDI + 0x18);",

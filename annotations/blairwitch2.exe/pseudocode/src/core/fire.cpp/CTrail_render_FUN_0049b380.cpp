@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CTrail_render_FUN_0049b380(CTrail *this_ptr)
 
 {
@@ -33,7 +31,8 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_0049b380(CTrail *this_ptr)
   if (this_ptr->lifetime <= 0.0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,this_ptr->texture_ptr);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
+            (g_CDemonRenderer_PTR_0060b280,this_ptr->texture_ptr);
   local_84.base.count = 4;
   local_84.surface_normal.D.i = 0;
   local_84.surface_normal.C.i = 0;
@@ -44,11 +43,12 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_0049b380(CTrail *this_ptr)
   local_68 = 1;
   local_64 = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0046b8f0
-            (DAT_0060b280,this_ptr->current_alpha);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
+            (g_CDemonRenderer_PTR_0060b280,this_ptr->current_alpha);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670(DAT_0060b280,&local_44);
+            (g_CDemonRenderer_PTR_0060b280,&this_ptr->position);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670
+            (g_CDemonRenderer_PTR_0060b280,&local_44);
   translation = (CVector3f *)0x0;
   local_38.x = local_44.x;
   *(uint *)((int)&local_38 + (uint)bVar1 * -8 + 4) =
@@ -56,55 +56,56 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_0049b380(CTrail *this_ptr)
   *(uint *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
        *(uint *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,&local_38,translation);
+            (g_CDemonRenderer_PTR_0060b280,&local_38,translation);
   local_48 = 0.0;
   local_50 = this_ptr->size * this_ptr->current_alpha;
-  local_2c.x = (int)ROUND(local_50 * _DAT_005f64e4);
-  local_2c.y = (int)ROUND(local_50 * _DAT_005f64e4);
-  local_2c.z = (int)ROUND(_DAT_005f64e4 * 0.0);
+  local_2c.x = (int)ROUND(local_50 * 256.0f);
+  local_2c.y = (int)ROUND(local_50 * 256.0f);
+  local_2c.z = (int)ROUND(256.0f * 0.0);
   local_4c = local_50;
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_2c);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,&local_2c);
   local_50 = -local_50;
-  local_20.x = (int)ROUND(local_50 * _DAT_005f64e4);
-  local_20.y = (int)ROUND(local_4c * _DAT_005f64e4);
-  local_20.z = (int)ROUND(local_48 * _DAT_005f64e4);
+  local_20.x = (int)ROUND(local_50 * 256.0f);
+  local_20.y = (int)ROUND(local_4c * 256.0f);
+  local_20.z = (int)ROUND(local_48 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_20);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_20);
   local_4c = -local_4c;
-  local_14.x = (int)ROUND(local_50 * _DAT_005f64e4);
-  local_14.y = (int)ROUND(local_4c * _DAT_005f64e4);
-  local_14.z = (int)ROUND(local_48 * _DAT_005f64e4);
+  local_14.x = (int)ROUND(local_50 * 256.0f);
+  local_14.y = (int)ROUND(local_4c * 256.0f);
+  local_14.z = (int)ROUND(local_48 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_14);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_14);
   local_50 = -local_50;
-  local_5c.x = (int)ROUND(local_50 * _DAT_005f64e4);
-  local_5c.y = (int)ROUND(local_4c * _DAT_005f64e4);
-  local_5c.z = (int)ROUND(local_48 * _DAT_005f64e4);
+  local_5c.x = (int)ROUND(local_50 * 256.0f);
+  local_5c.y = (int)ROUND(local_4c * 256.0f);
+  local_5c.z = (int)ROUND(local_48 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_5c);
-  DAT_0062202c = 0x80000;
-  _DAT_00622030 = 0xf80000;
-  _DAT_0062205c = 0xf80000;
-  _DAT_00622060 = 0xf80000;
-  _DAT_0062208c = 0xf80000;
-  DAT_00622090 = 0x80000;
-  _DAT_006220bc = 0x80000;
-  _DAT_006220c0 = 0x80000;
-  DAT_00622034 = 0xffff;
-  DAT_00622038 = 0xffff;
-  DAT_0062203c = 0xffff;
-  DAT_00622064 = 0xffff;
-  DAT_00622068 = 0xffff;
-  DAT_0062206c = 0xffff;
-  DAT_00622094 = 0xffff;
-  DAT_00622098 = 0xffff;
-  DAT_0062209c = 0xffff;
-  DAT_006220c4 = 0xffff;
-  DAT_006220c8 = 0xffff;
-  DAT_006220cc = 0xffff;
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&local_84);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_5c);
+  g_SRenderVertex_ARRAY_00622014[0].u = 0x80000;
+  g_SRenderVertex_ARRAY_00622014[0].v = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[1].u = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[1].v = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[2].u = 0xf80000;
+  g_SRenderVertex_ARRAY_00622014[2].v = 0x80000;
+  g_SRenderVertex_ARRAY_00622014[3].u = 0x80000;
+  g_SRenderVertex_ARRAY_00622014[3].v = 0x80000;
+  g_SRenderVertex_ARRAY_00622014[0].r = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[0].g = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[0].b = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[1].r = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[1].g = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[1].b = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[2].r = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[2].g = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[2].b = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[3].r = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[3].g = 0xffff;
+  g_SRenderVertex_ARRAY_00622014[3].b = 0xffff;
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
+            (g_CDemonRenderer_PTR_0060b280,&local_84);
   engine_drender_cpp_pop_FUN_0046b4a0();
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
   return;
 }

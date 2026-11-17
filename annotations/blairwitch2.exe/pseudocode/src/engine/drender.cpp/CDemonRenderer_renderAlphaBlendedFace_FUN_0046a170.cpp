@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0046a170(CDemonRenderer *this_ptr,SInputFace *face)
 
 {
@@ -25,24 +23,24 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0046a1
       this_ptr->vertex_buffer_ptr[uVar2].v = (uint)*puVar1 << 8;
     } while (pSVar3 != (SInputFace *)&face->u_coord_0);
   }
-  _DAT_01ba5c84 = (uint)(face->vertex_indices).vertex_index_0;
-  _DAT_01ba5c88 = (uint)(face->vertex_indices).vertex_index_1;
-  _DAT_01ba5c8c = (uint)(face->vertex_indices).vertex_index_2;
+  g_INT_ARRAY_01ba5c84[0] = (int)(face->vertex_indices).vertex_index_0;
+  g_INT_ARRAY_01ba5c84[1] = (int)(face->vertex_indices).vertex_index_1;
+  g_INT_ARRAY_01ba5c84[2] = (int)(face->vertex_indices).vertex_index_2;
   if (this_ptr->shadow_pass_active == 0) {
-    if (DAT_006141c0 == 0x20) {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
+    if (g_INT_006141c0 == 0x20) {
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
     }
     else {
-      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+      g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
     }
-    _DAT_01c38b58 = 6;
-    _DAT_01c38b54 = 0x2cd;
+    g_INT_01c38b58 = 6;
+    g_BIT_INTEGER32_01c38b54.dword = 0x2cd;
   }
   else {
-    _DAT_01c38b54 = 0;
-    _DAT_01c38b58 = 0;
-    _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
+    g_BIT_INTEGER32_01c38b54.dword = 0;
+    g_INT_01c38b58 = 0;
+    g_PTR_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
   }
-  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590(this_ptr,3,(int *)&DAT_01ba5c84);
+  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590(this_ptr,3,g_INT_ARRAY_01ba5c84);
   return;
 }

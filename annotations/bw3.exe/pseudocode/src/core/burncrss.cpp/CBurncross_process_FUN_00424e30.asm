@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7936
+;   float g_FLOAT_005b7936 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -41,7 +41,7 @@ section .text
     FLD ST0                             ; 00424e6d
     FMUL float ptr [EBX + 0x1ac8]       ; 00424e6f
     FLD ST1                             ; 00424e75
-    FMUL float ptr [0x005b7936]         ; 00424e77 | DAT_005b7936
+    FMUL float ptr [0x005b7936]         ; 00424e77 | g_FLOAT_005b7936
     FXCH                                ; 00424e7d
     FSTP float ptr [ESI + 0x700]        ; 00424e7f
     FMUL float ptr [EBX + 0x1ac8]       ; 00424e85
@@ -308,7 +308,7 @@ section .text
     JZ 0x004252a5                       ; 00425244
         ;   XREF to: 004252a5 (CONDITIONAL_JUMP)  ; LAB_004252a5
     FLD float ptr [ESP + 0x13c]         ; 00425246
-    FMUL float ptr [0x005b7936]         ; 0042524d | DAT_005b7936
+    FMUL float ptr [0x005b7936]         ; 0042524d | g_FLOAT_005b7936
     FADD float ptr [EBX + 0x1ac8]       ; 00425253
     FSTP float ptr [EBX + 0x1ac8]       ; 00425259
     CMP dword ptr [EBX + 0x1ac8],0x3f800000 ; 0042525f

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00464f60(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -32,7 +30,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00464f60(CDracula
   bVar2 = 0;
   iStack_14 = 0;
   if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d11d4;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
               ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_40);
     iVar4 = 0;
@@ -44,7 +42,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00464f60(CDracula
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                (0x01C3DEB4,&CStack_4c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_00614d30,&CStack_4c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
     iStack_14 = 1;
   }
@@ -91,7 +89,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00464f60(CDracula
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,7,1);
         (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
-                  ((CDemonActor *)this_ptr,"4@bride-launch.wav" + 2);
+                  ((CDemonActor *)this_ptr,"bride-launch.wav");
       }
     }
     iVar4 = core_actor_cpp_randomChance_FUN_0040d060(0.4);

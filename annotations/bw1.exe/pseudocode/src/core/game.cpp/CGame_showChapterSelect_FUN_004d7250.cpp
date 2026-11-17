@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,int select_mode)
 
 {
@@ -23,11 +21,11 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
   char local_134 [260];
   char *local_30 [5];
   int local_1c;
-  uint local_18;
+  CBitFont *local_18;
   int local_14;
   
   p_Var2 = engine_dosio_cpp_getFile_FUN_00479180
-                     (&DAT_005e3115,"blairhero.pod",&DAT_005e3104);
+                     (&g_CHAR_005e3115,"blairhero.pod","rb");
   if (p_Var2 != (_FILE *)0x0) {
     _fclose(p_Var2);
   }
@@ -36,14 +34,14 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
   this_ptr->total_game_time = 0.0;
   this_ptr->total_play_time = 0.0;
   this_ptr->is_loading = 0;
-  local_18 = _DAT_01c3eb50;
-  _DAT_01c3eb50 = _DAT_0152d244;
-  p_Var2 = _fopen("pod.ini",&DAT_005e3116);
+  local_18 = g_CBitFont_PTR_01c3eb50;
+  g_CBitFont_PTR_01c3eb50 = g_CBitFont_PTR_0152d244;
+  p_Var2 = _fopen("pod.ini","rt");
   if (p_Var2 != (_FILE *)0x0) {
     _fclose(p_Var2);
   }
-  engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_338,"system\\nocturne.ini",&DAT_005e3121)
-  ;
+  engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
+            (&local_338,"system\\nocturne.ini","Game");
   local_1c = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(&local_338,"Act1Code",&local_1c);
   local_30[0] = support_newmsg_cpp_getLocalizedString_FUN_00531090
@@ -55,9 +53,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_134,0);
     if (iVar3 == 0) goto LAB_004d757b;
-    DAT_01cd09e8 = 0;
-    _DAT_01cd0ae8 = 0;
-    _DAT_01cd0aec = 0;
+    g_CHAR_ARRAY_01cd09e8[0] = '\0';
+    g_INT_01cd0ae8 = 0;
+    g_FLOAT_01cd0aec = 0.0;
   }
   else {
     while (iVar3 < 0) {
@@ -73,7 +71,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
                         (&local_6f8,pcVar6,iVar5,uVar7);
       local_14 = iVar5;
       if (iVar5 < 0) {
-        _DAT_01c3eb50 = local_18;
+        g_CBitFont_PTR_01c3eb50 = local_18;
         shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&local_6f8,0);
         goto LAB_004d7589;
       }
@@ -101,7 +99,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
       shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&local_6f8,0);
     }
     pcVar6 = local_134;
-    pcVar4 = PTR_DAT_0061da58;
+    pcVar4 = PTR_s_hq_bw1_msn_005e36ab_0061da58;
     do {
       cVar1 = *pcVar4;
       *pcVar6 = cVar1;
@@ -130,8 +128,8 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
     p_Var2 = engine_dosio_cpp_getFile_FUN_00479180("world",local_134,"rt");
     if (p_Var2 == (_FILE *)0x0) goto LAB_004d757b;
     _fclose(p_Var2);
-    pcVar4 = &DAT_01cd09e8;
-    _DAT_01cd0ae8 = *(uint *)(&DAT_0061db5c + local_14 * 4);
+    pcVar4 = g_CHAR_ARRAY_01cd09e8;
+    g_INT_01cd0ae8 = g_INT_ARRAY_0061db5c[local_14];
     pcVar6 = local_30[local_14];
     do {
       cVar1 = *pcVar6;
@@ -142,15 +140,15 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    _DAT_01cd0aec = 0x41000000;
+    g_FLOAT_01cd0aec = 8.0;
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
-  core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(0x01C51D80);
+  core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(g_CEventList_PTR_0061b4d0);
   iVar5 = 1;
-  iVar3 = _stricmp(&DAT_01cd05c0,local_134);
+  iVar3 = _stricmp(g_CHAR_ARRAY_01cd05c0,local_134);
   if (iVar3 != 0) {
     pcVar6 = local_134;
-    pcVar4 = &DAT_01cd05c0;
+    pcVar4 = g_CHAR_ARRAY_01cd05c0;
     do {
       cVar1 = *pcVar6;
       *pcVar4 = cVar1;
@@ -163,18 +161,19 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
     iVar5 = 0;
   }
   core_level_cpp_CLevelLoader_show_FUN_004fe840(g_CLevelLoaderPtr,10,0,local_14);
-  core_mission_cpp_CDemonMission_load_FUN_0051a3f0(0x01D2C900,local_134,iVar5);
-  iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(0x01D2C900,(CCharacter *)0x0);
+  core_mission_cpp_CDemonMission_load_FUN_0051a3f0(g_CDemonMission_PTR_0061f650,local_134,iVar5);
+  iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0
+                    (g_CDemonMission_PTR_0061f650,(CCharacter *)0x0);
   if (iVar3 != 0) {
-    core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0(0x01D2C900);
-    core_mission_cpp_CDemonMission_run_FUN_0051bad0(0x01D2C900);
+    core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0(g_CDemonMission_PTR_0061f650);
+    core_mission_cpp_CDemonMission_run_FUN_0051bad0(g_CDemonMission_PTR_0061f650);
     if (this_ptr->need_chapter_reload != 0) {
       this_ptr->need_chapter_reload = 0;
       core_game_cpp_CGame_loadGame_FUN_004d6990(this_ptr,this_ptr->chapter_reload_filename,1);
     }
   }
 LAB_004d757b:
-  _DAT_01c3eb50 = local_18;
+  g_CBitFont_PTR_01c3eb50 = local_18;
 LAB_004d7589:
   engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(&local_338,0);
   return;

@@ -25,7 +25,7 @@ CBird * __cdecl core_bird_cpp_CBird_ctor_FUN_004151f0(CBird *this_ptr)
   pCVar2[1].voxel_coords.y = 0;
   pCVar2[1].current_position.z = fVar3;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            ((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4c] + 0x5d),(char *)0x5d3c93);
+            ((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4c] + 0x5d),"owl.dfm");
   pCVar2[-1].height_cache_tags[1][0x33] = 0;
   pCVar2[1].current_position.x = 0.0;
   pCVar2[1].current_position.y = 0.0;

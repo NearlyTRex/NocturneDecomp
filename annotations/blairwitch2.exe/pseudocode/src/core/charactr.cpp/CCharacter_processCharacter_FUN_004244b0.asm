@@ -23,8 +23,8 @@
 ;   ... and 32 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ccc9e
-;   undefined4 DAT_005f4084
+;   double g_DOUBLE_005ccc9e = 0.0100000000000000
+;   float g_FLOAT_005f4084 = 9999
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CScript* g_CScriptPtr = 01e65cd0
 ;   CGame g_CGameInstance
@@ -125,7 +125,7 @@ section .text
     JNZ 0x0042466f                      ; 00424599
         ;   XREF to: 0042466f (CONDITIONAL_JUMP)  ; LAB_0042466f
     FLD float ptr [ESI + 0x2574]        ; 0042459f
-    FCOMP float ptr [0x005f4084]        ; 004245a5 | DAT_005f4084
+    FCOMP float ptr [0x005f4084]        ; 004245a5 | g_FLOAT_005f4084
     FNSTSW AX                           ; 004245ab
     SAHF                                ; 004245ad
     JZ 0x00424673                       ; 004245ae
@@ -137,7 +137,7 @@ section .text
     FLD float ptr [ESI + 0x2574]        ; 004245c7
     FXCH                                ; 004245cd
     FSTP float ptr [ESI + 0x24]         ; 004245cf
-    FCOMP float ptr [0x005f4084]        ; 004245d2 | DAT_005f4084
+    FCOMP float ptr [0x005f4084]        ; 004245d2 | g_FLOAT_005f4084
     FNSTSW AX                           ; 004245d8
     SAHF                                ; 004245da
     JZ 0x004245e6                       ; 004245db
@@ -157,7 +157,7 @@ section .text
     ADD ESP,0xc                         ; 00424606
     FLD float ptr [ESI + 0x2574]        ; 00424609
         ;   Label: LAB_00424609
-    FADD double ptr [0x005ccc9e]        ; 0042460f | DAT_005ccc9e
+    FADD double ptr [0x005ccc9e]        ; 0042460f | g_DOUBLE_005ccc9e
     FLD float ptr [ESI + 0x24]          ; 00424615
     FCOMPP                              ; 00424618
     FNSTSW AX                           ; 0042461a

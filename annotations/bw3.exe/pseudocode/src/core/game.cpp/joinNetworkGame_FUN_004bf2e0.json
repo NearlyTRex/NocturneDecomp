@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 99,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_ref",
-      "undefined_data",
-      "unrolled_memcpy"
+      "stack_ref"
     ],
     "total_lines": 122
   },
@@ -70,9 +68,9 @@
     },
     {
       "addr": "00600530",
-      "name": "DAT_00600530",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00600530",
+      "type": "CDemonMission*",
+      "value": "01d81080"
     },
     {
       "addr": "00603450",
@@ -82,8 +80,8 @@
     },
     {
       "addr": "01d225c8",
-      "name": "DAT_01d225c8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01d225c8",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -182,22 +180,6 @@
       "severity": "moderate",
       "text": "server_ip = support_trisock_cpp_parseIPAddress_FUN_0056f4c0(&uStack_10,&stack0xffffff8c);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01d225c8",
-      "severity": "mild",
-      "text": "DAT_01d225c8 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 13,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
     }
   ]
 }

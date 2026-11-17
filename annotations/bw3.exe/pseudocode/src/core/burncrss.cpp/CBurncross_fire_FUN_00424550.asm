@@ -10,11 +10,11 @@
 ;   TerminatedCString s_wp_nomana_wav_005b78e7
 ;   TerminatedCString s_wp_burningcross_wav_005b78f5
 ;   TerminatedCString s_wp_burningcross_scorch_w_005b7909
-;   undefined4 DAT_005b7926
-;   undefined4 DAT_005b792e
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005b7926 = 1.5
+;   double g_DOUBLE_005b792e = 10
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 g_CGlassClassInfo.name_hash
@@ -153,7 +153,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004246af
     MOVSD ES:EDI,ESI                    ; 004246b0
     FLD float ptr [EAX + 0x2e8]         ; 004246b1
-    FDIVR double ptr [0x005b7926]       ; 004246b7 | DAT_005b7926
+    FDIVR double ptr [0x005b7926]       ; 004246b7 | g_DOUBLE_005b7926
     FLD float ptr [ESP + 0xe0]          ; 004246bd
     FXCH                                ; 004246c4
     FSTP float ptr [ESP + 0x154]        ; 004246c6
@@ -352,7 +352,7 @@ section .text
     FMUL ST0                            ; 00424971
     FADDP                               ; 00424973
     FSQRT                               ; 00424975
-    FDIVR double ptr [0x005b792e]       ; 00424977 | DAT_005b792e
+    FDIVR double ptr [0x005b792e]       ; 00424977 | g_DOUBLE_005b792e
     FLD float ptr [ESP + 0xc8]          ; 0042497d
     FXCH                                ; 00424984
     FSTP float ptr [ESP + 0x158]        ; 00424986
@@ -490,7 +490,7 @@ section .text
     PUSH EAX                            ; 00424bc9
     LEA EAX,[ESP + 0x94]                ; 00424bca
     PUSH EAX                            ; 00424bd1
-    MOV ESI,dword ptr [0x005fc5a0]      ; 00424bd2 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 00424bd2 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 00424bd8
     INC EBX                             ; 00424bd9
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 00424bda
@@ -533,7 +533,7 @@ section .text
     PUSH EAX                            ; 00424c42
     PUSH 0x5b78e7                       ; 00424c43 | = "wp_nomana.wav"
     PUSH EBX                            ; 00424c48
-    MOV EDI,dword ptr [0x006045f8]      ; 00424c49 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 00424c49 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 00424c4f
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 00424c50
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -553,7 +553,7 @@ section .text
     PUSH EAX                            ; 00424c7e
     PUSH 0x5b78f5                       ; 00424c7f | = "wp_burningcross.wav"
     PUSH EBX                            ; 00424c84
-    MOV EBX,dword ptr [0x006045f8]      ; 00424c85 | DAT_006045f8
+    MOV EBX,dword ptr [0x006045f8]      ; 00424c85 | g_CSound_PTR_006045f8
     PUSH EBX                            ; 00424c8b
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 00424c8c
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -667,7 +667,7 @@ section .text
     PUSH EBX                            ; 00424dbf | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 00424dc0
     PUSH EAX                            ; 00424dc5 | g_CDemonSetInstance.collision_impact_position.x
-    MOV EDI,dword ptr [0x005fc5a0]      ; 00424dc6 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 00424dc6 | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 00424dcc
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 ; 00424dcd
         ;   XREF to: 004a2090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)
@@ -680,7 +680,7 @@ section .text
     PUSH EBX                            ; 00424de6 | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 00424de7
     PUSH EAX                            ; 00424dec | g_CDemonSetInstance.collision_impact_position.x
-    MOV EAX,[0x005fc5a0]                ; 00424ded | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 00424ded | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 00424df2
     CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 00424df3
         ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
@@ -691,7 +691,7 @@ section .text
     PUSH 0x5b7909                       ; 00424e06 | = "wp_burningcross_scorch.wav"
     MOV EDX,dword ptr [EBP + 0x14]      ; 00424e0b
     PUSH EDX                            ; 00424e0e
-    MOV ECX,dword ptr [0x006045f8]      ; 00424e0f | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 00424e0f | g_CSound_PTR_006045f8
     PUSH ECX                            ; 00424e15
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 00424e16
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

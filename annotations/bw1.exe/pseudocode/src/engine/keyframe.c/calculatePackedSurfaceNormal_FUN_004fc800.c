@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004fc800(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)
 
 {
@@ -45,7 +43,7 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004fc800(CVector
   }
   local_30 = 1.0 / local_30;
   iVar4 = texture->vertices[0];
-  fVar9 = (float)_DAT_005e6a03;
+  fVar9 = (float)65535;
   fVar7 = fVar8 * local_30 * fVar9;
   fVar6 = fVar6 * local_30 * fVar9;
   iVar2 = vertex_data[iVar4].y;

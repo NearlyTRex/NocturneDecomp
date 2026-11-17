@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 {
 __asm {
@@ -30,7 +28,7 @@ __asm {
         mov EAX,dword ptr [EBP + 0x1c]
         sub EAX,ECX
         mov dword ptr [EBP + -0x8],EAX
-        mov EAX,[DAT_01510718]
+        mov EAX,[g_CDemonGlobe_PTR_01510718]
         mov EAX,dword ptr [EAX + 0x3c]
         mov dword ptr [EBP + -0x4],EAX
         mov ECX,dword ptr [EBP + 0xfffffff8]

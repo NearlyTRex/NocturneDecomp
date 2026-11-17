@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004ec090(CHero *this_ptr,char *class_name)
 
 {
@@ -24,11 +22,11 @@ bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004ec090(CHero *this_
   for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
     this_ptr_00 = *(CHero **)((int)g_CDemonSetPtr->actors + local_1c);
     if ((((ABS((this_ptr_00->base).base.location.position.x -
-               (this_ptr->base).base.location.position.x) <= (float)_DAT_005e492d) &&
+               (this_ptr->base).base.location.position.x) <= (float)10) &&
          (ABS((this_ptr_00->base).base.location.position.y -
-              (this_ptr->base).base.location.position.y) <= (float)_DAT_005e492d)) &&
+              (this_ptr->base).base.location.position.y) <= (float)10)) &&
         (ABS((this_ptr_00->base).base.location.position.z -
-             (this_ptr->base).base.location.position.z) <= (float)_DAT_005e492d)) &&
+             (this_ptr->base).base.location.position.z) <= (float)10)) &&
        (this_ptr_00 != this_ptr)) {
       pCVar1 = (*((this_ptr_00->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr_00);
       if (pCVar1 == (CDemonActor *)0x0) {

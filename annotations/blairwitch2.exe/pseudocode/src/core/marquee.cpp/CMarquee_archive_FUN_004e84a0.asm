@@ -11,7 +11,7 @@
 ;   TerminatedCString s_totalTime_005dc763
 ;   TerminatedCString s_param_005dc76d
 ;   TerminatedCString s_phase_005dc773
-;   undefined4 DAT_005dc779
+;   TerminatedCString s_type_005dc779
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040b8e0
@@ -54,7 +54,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 004e84f6
         ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b960(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e84fb
-    PUSH 0x5dc779                       ; 004e84fe | DAT_005dc779
+    PUSH 0x5dc779                       ; 004e84fe | = "type"
     ADD EBX,0x2fc                       ; 004e8503
     PUSH EBX                            ; 004e8509
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 004e850a

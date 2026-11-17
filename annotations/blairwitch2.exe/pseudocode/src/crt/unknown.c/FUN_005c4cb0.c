@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005c4cb0(void)
 
 {
   uint *puVar1;
   uint *ptr;
   
-  ptr = _DAT_026810b0;
+  ptr = (uint *)g_PTR_026810b0;
   while (ptr != (uint *)0x0) {
     puVar1 = (uint *)*ptr;
     if (ptr[3] != 0) {

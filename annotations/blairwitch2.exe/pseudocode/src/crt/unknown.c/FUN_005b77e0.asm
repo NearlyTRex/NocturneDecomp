@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_crt_unknown.c_FUN_005bcc3f_0061f22c = 005bcc3f
-;   undefined1* PTR_crt_unknown.c_FUN_005bcc3f_0061f230 = 005bcc3f
-;   undefined1* PTR_crt_unknown.c_FUN_005bcc3f_0061f234 = 005bcc3f
-;   undefined1* PTR_crt_unknown.c_FUN_005bcc3f_0061f238 = 005bcc3f
+;   void*[4] g_ARRAY_PTR_0061f22c
+;   undefined4 g_ARRAY_PTR_0061f22c[1]
+;   undefined4 g_ARRAY_PTR_0061f22c[2]
+;   undefined4 g_ARRAY_PTR_0061f22c[3]
 ;
 ; *****************************************************************************
 
@@ -21,10 +21,10 @@ section .text
     MOV ECX,0x5bc0b5                    ; 005b77e7
     MOV EBX,0x5bc288                    ; 005b77ec
     MOV ESI,0x5bcc3a                    ; 005b77f1
-    MOV dword ptr [0x0061f22c],EDX      ; 005b77f6 | PTR_crt_unknown.c_FUN_005bcc3f_0061f22c
-    MOV dword ptr [0x0061f230],ECX      ; 005b77fc | PTR_crt_unknown.c_FUN_005bcc3f_0061f230
-    MOV dword ptr [0x0061f234],EBX      ; 005b7802 | PTR_crt_unknown.c_FUN_005bcc3f_0061f234
-    MOV dword ptr [0x0061f238],ESI      ; 005b7808 | PTR_crt_unknown.c_FUN_005bcc3f_0061f238
+    MOV dword ptr [0x0061f22c],EDX      ; 005b77f6 | g_ARRAY_PTR_0061f22c
+    MOV dword ptr [0x0061f230],ECX      ; 005b77fc | g_ARRAY_PTR_0061f22c[1]
+    MOV dword ptr [0x0061f234],EBX      ; 005b7802 | g_ARRAY_PTR_0061f22c[2]
+    MOV dword ptr [0x0061f238],ESI      ; 005b7808 | g_ARRAY_PTR_0061f22c[3]
     POP ESI                             ; 005b780e
     POP EBX                             ; 005b780f
     RET                                 ; 005b7810

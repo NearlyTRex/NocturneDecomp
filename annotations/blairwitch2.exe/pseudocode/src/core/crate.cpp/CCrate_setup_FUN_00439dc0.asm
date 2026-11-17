@@ -7,7 +7,7 @@
 ; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ce1cb
+;   double g_DOUBLE_005ce1cb = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
@@ -47,7 +47,7 @@ section .text
     FXCH                                ; 00439e0d
     FSUB float ptr [ESP + 0x8]          ; 00439e0f
     FXCH                                ; 00439e13
-    FLD double ptr [0x005ce1cb]         ; 00439e15 | DAT_005ce1cb
+    FLD double ptr [0x005ce1cb]         ; 00439e15 | g_DOUBLE_005ce1cb
     FXCH                                ; 00439e1b
     FMUL ST1                            ; 00439e1d
     FXCH ST2                            ; 00439e1f

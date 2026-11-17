@@ -7,7 +7,7 @@
 ; CDemnfolk *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   undefined4 DAT_01d82088
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     CMP EAX,0x23                        ; 004581d5
     JNZ 0x004581eb                      ; 004581d8
         ;   XREF to: 004581eb (CONDITIONAL_JUMP)  ; LAB_004581eb
-    MOV EAX,[0x00600530]                ; 004581da | DAT_00600530
+    MOV EAX,[0x00600530]                ; 004581da | g_CDemonMission_PTR_00600530
     CMP dword ptr [EAX + 0x1008],0x0    ; 004581df | DAT_01d82088
     JNZ 0x004581eb                      ; 004581e6
         ;   XREF to: 004581eb (CONDITIONAL_JUMP)  ; LAB_004581eb

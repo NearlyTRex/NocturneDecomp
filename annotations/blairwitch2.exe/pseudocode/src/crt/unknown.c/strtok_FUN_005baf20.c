@@ -20,7 +20,7 @@ char * __cdecl strtok(char *str,char *delimiters)
     return (char *)0x0;
   }
   do {
-    if ((local_24[uVar1 >> 3] & (&DAT_00601428)[uVar1 & 7]) != 0) {
+    if ((local_24[uVar1 >> 3] & *(byte *)((int)&g_DOUBLE_00601428 + (uVar1 & 7))) != 0) {
       return pcVar2;
     }
     pcVar2 = pcVar2 + 1;

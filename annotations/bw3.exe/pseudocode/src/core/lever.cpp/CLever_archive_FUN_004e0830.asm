@@ -7,7 +7,7 @@
 ; CLever *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005c6921+1
+;   TerminatedCString s_modelName_005c6922
 ;   TerminatedCString s_modelName_005c692c
 ;   TerminatedCString s_leverType_005c6936
 ;   TerminatedCString s_onEvent_005c6940
@@ -46,7 +46,7 @@ section .text
     PUSH EBX                            ; 004e0840
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 004e0841
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
-    MOV EDX,dword ptr [0x007df9b8]      ; 004e0846 | DAT_007df9b8
+    MOV EDX,dword ptr [0x007df9b8]      ; 004e0846 | g_INT_007df9b8
     ADD ESP,0x4                         ; 004e084c
     LEA EDI,[EBX + 0x158]               ; 004e084f
     CMP EDX,0x1                         ; 004e0855
@@ -182,7 +182,7 @@ section .text
     POP ESI                             ; 004e09ca
     POP EBX                             ; 004e09cb
     RET                                 ; 004e09cc
-    PUSH 0x5c6922                       ; 004e09cd | s_modelName_005c6921+1
+    PUSH 0x5c6922                       ; 004e09cd | = "modelName"
         ;   Label: LAB_004e09cd
     LEA ESI,[ESP + 0x4]                 ; 004e09d2
     PUSH ESI                            ; 004e09d6

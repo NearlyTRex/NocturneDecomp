@@ -18,7 +18,7 @@
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 at 00434925
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0fc9
+;   float g_FLOAT_005f0fc9 = -10
 ;   CWater* g_CWaterPtr = 02c8afb0
 ;   undefined4 g_CWaterInstance.water_level_y
 ;   undefined4 g_CWaterActorClassInfo.name_hash
@@ -116,7 +116,7 @@ section .text
     ADD ESP,0x4                         ; 0055965a
     MOVSD.REP ES:EDI,ESI                ; 0055965d
     FLD float ptr [ESP + 0x1c]          ; 0055965f
-    FADD float ptr [0x005f0fc9]         ; 00559663 | DAT_005f0fc9
+    FADD float ptr [0x005f0fc9]         ; 00559663 | g_FLOAT_005f0fc9
     FLD float ptr [ESP + 0x18]          ; 00559669
     FXCH                                ; 0055966d
     FSTP float ptr [ESP + 0x1c]         ; 0055966f

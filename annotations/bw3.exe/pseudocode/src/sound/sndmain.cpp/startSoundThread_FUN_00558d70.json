@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 70,
+    "complexity_score": 54,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 3,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
     "suspect_types": [
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 102
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -67,26 +66,26 @@
   "globals": [
     {
       "addr": "005d3c92",
-      "name": "DAT_005d3c92",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d3c92",
+      "type": "double",
+      "value": "0.00200000000000000"
     },
     {
       "addr": "02cf340c",
-      "name": "DAT_02cf340c",
-      "type": "undefined4",
+      "name": "g_FLOAT_02cf340c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02cf3410",
-      "name": "DAT_02cf3410",
-      "type": "undefined4",
+      "name": "g_INT_02cf3410",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf3414",
-      "name": "DAT_02cf3414",
-      "type": "undefined4",
+      "name": "g_INT_02cf3414",
+      "type": "int",
       "value": null
     }
   ],
@@ -217,27 +216,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 12,
+      "line": 10,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "_DAT_02cf340c = latency_seconds._0_4_;",
+      "text": "g_FLOAT_02cf340c = latency_seconds._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 13,
+      "line": 11,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "if (latency_seconds._0_4_ < (float)_DAT_005d3c92) {",
+      "text": "if (latency_seconds._0_4_ < (float)0.002) {",
       "type": "unknown_field"
     }
   ]

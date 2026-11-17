@@ -10,9 +10,9 @@
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e45c2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c6eba
-;   undefined4 DAT_005c6ebe
-;   undefined4 DAT_005c6ec2
+;   float g_FLOAT_005c6eba = 3.141593
+;   float g_FLOAT_005c6ebe = 0.0078125
+;   double g_DOUBLE_005c6ec2 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -25,9 +25,9 @@ section .text
         ;   Label: core_main.c_initializeTrigTables_FUN_004e4d00
     XOR ECX,ECX                         ; 004e4d03
     XOR EDX,EDX                         ; 004e4d05
-    FLD double ptr [0x005c6ec2]         ; 004e4d07 | DAT_005c6ec2
-    FLD float ptr [0x005c6ebe]          ; 004e4d0d | DAT_005c6ebe
-    FLD float ptr [0x005c6eba]          ; 004e4d13 | DAT_005c6eba
+    FLD double ptr [0x005c6ec2]         ; 004e4d07 | g_DOUBLE_005c6ec2
+    FLD float ptr [0x005c6ebe]          ; 004e4d0d | g_FLOAT_005c6ebe
+    FLD float ptr [0x005c6eba]          ; 004e4d13 | g_FLOAT_005c6eba
     MOV dword ptr [ESP + 0x8],EDX       ; 004e4d19
         ;   Label: LAB_004e4d19
     FILD dword ptr [ESP + 0x8]          ; 004e4d1d

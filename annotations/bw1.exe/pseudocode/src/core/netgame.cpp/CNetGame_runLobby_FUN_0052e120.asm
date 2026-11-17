@@ -10,21 +10,21 @@
 ;   core_game.cpp_joinNetworkGame_FUN_004d7e90 at 004d7f01
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ebdf8
-;   undefined4 DAT_005ebe00
-;   undefined4 DAT_005ebe08
-;   undefined4 DAT_005ebe10
+;   float g_FLOAT_005ebdf8 = 1000
+;   double g_DOUBLE_005ebe00 = 0.0000152587890625
+;   double g_DOUBLE_005ebe08 = 30
+;   double g_DOUBLE_005ebe10 = 0.200000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_0061f2a4
-;   undefined4 DAT_0061f650
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
+;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   CNetGame* g_CNetGamePtr = 01d51c20
-;   undefined4 DAT_00622584
-;   undefined4 DAT_006260e8
-;   undefined4 DAT_01c4f020
-;   undefined4 DAT_01d51d9c
-;   undefined4 DAT_01d51da0
+;   int g_INT_00622584 = 0x1
+;   int g_INT_006260e8 = 0x1
+;   int g_INT_01c4f020
+;   int g_INT_01d51d9c
+;   uint g_UINT_01d51da0
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -61,7 +61,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 0052e132
     JZ 0x0052e484                       ; 0052e135
         ;   XREF to: 0052e484 (CONDITIONAL_JUMP)  ; LAB_0052e484
-    MOV EAX,[0x006260e8]                ; 0052e13b | DAT_006260e8
+    MOV EAX,[0x006260e8]                ; 0052e13b | g_INT_006260e8
     MOV dword ptr [ESP + 0x108],EAX     ; 0052e140
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052e147
     MOV EAX,dword ptr [EAX + 0x11c]     ; 0052e14a
@@ -80,7 +80,7 @@ section .text
     ADD EAX,EBX                         ; 0052e176
     XOR ECX,ECX                         ; 0052e178
     MOV dword ptr [EAX + 0x64],ECX      ; 0052e17a
-    MOV dword ptr [0x006260e8],ECX      ; 0052e17d | DAT_006260e8
+    MOV dword ptr [0x006260e8],ECX      ; 0052e17d | g_INT_006260e8
     MOV EDI,dword ptr [EBX]             ; 0052e183
     MOV dword ptr [EBX + 0x4],0x1       ; 0052e185
     CMP EDI,0x1                         ; 0052e18c
@@ -116,7 +116,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 0052e1e1
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0052e1e6
-    MOV ESI,dword ptr [0x01d51dac]      ; 0052e1e9 | DAT_01d51dac
+    MOV ESI,dword ptr [0x01d51dac]      ; 0052e1e9 | g_INT_01d51dac
     PUSH ESI                            ; 0052e1ef
     PUSH 0x5ebd6c                       ; 0052e1f0
     LEA EAX,[ESP + 0x10]                ; 0052e1f5
@@ -166,14 +166,14 @@ section .text
     PUSH 0x5ebd9e                       ; 0052e27b
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 0052e280
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
-    MOV EAX,[0x0061b498]                ; 0052e285 | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 0052e285 | g_INT_0061b498
     ADD ESP,0xc                         ; 0052e28a
     DEC EAX                             ; 0052e28d
     PUSH EAX                            ; 0052e28e
     PUSH 0x31                           ; 0052e28f
     MOV EDI,0xff                        ; 0052e291
     PUSH 0x0                            ; 0052e296
-    MOV dword ptr [0x01c4f020],EDI      ; 0052e298 | DAT_01c4f020
+    MOV dword ptr [0x01c4f020],EDI      ; 0052e298 | g_INT_01c4f020
     CALL engine_2d.c_drawHLine_FUN_00402f30 ; 0052e29e
         ;   XREF to: 00402f30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402f30(int x1, int y, int x2)
     ADD ESP,0xc                         ; 0052e2a3
@@ -198,7 +198,7 @@ section .text
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0052e2ed
     MOV ESI,dword ptr [ESP + 0x11c]     ; 0052e2f0
-    MOV EAX,[0x02c8ae4c]                ; 0052e2f7 | DAT_02c8ae4c
+    MOV EAX,[0x02c8ae4c]                ; 0052e2f7 | g_UCHAR_ARRAY_02c8ae4c
     MOV EDX,dword ptr [ESI + 0x1c]      ; 0052e2fc
     ADD ESI,0x1c                        ; 0052e2ff
     CMP EAX,EDX                         ; 0052e302
@@ -350,7 +350,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0052e473
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     MOV EAX,dword ptr [ESP + 0x108]     ; 0052e478
-    MOV [0x006260e8],EAX                ; 0052e47f | DAT_006260e8
+    MOV [0x006260e8],EAX                ; 0052e47f | g_INT_006260e8
     XOR EAX,EAX                         ; 0052e484
         ;   Label: LAB_0052e484
     MOV ESP,EBP                         ; 0052e486
@@ -379,7 +379,7 @@ section .text
         ;   XREF to: 0052e4ee (CONDITIONAL_JUMP)  ; LAB_0052e4ee
     MOV EAX,dword ptr [ESP + 0x11c]     ; 0052e4b3
     FLD float ptr [EAX + 0x28]          ; 0052e4ba
-    FMUL float ptr [0x005ebdf8]         ; 0052e4bd | DAT_005ebdf8
+    FMUL float ptr [0x005ebdf8]         ; 0052e4bd | g_FLOAT_005ebdf8
     CALL crt_math.c_round_FUN_005c03a0  ; 0052e4c3
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x120]       ; 0052e4c8
@@ -420,7 +420,7 @@ section .text
     ADD ESP,0xc                         ; 0052e52f
     JMP 0x0052e40e                      ; 0052e532
         ;   XREF to: 0052e40e (UNCONDITIONAL_JUMP)  ; LAB_0052e40e
-    MOV EDX,dword ptr [0x0061b49c]      ; 0052e537 | DAT_0061b49c
+    MOV EDX,dword ptr [0x0061b49c]      ; 0052e537 | g_INT_0061b49c
         ;   Label: LAB_0052e537
     ADD EBX,0x2c                        ; 0052e53d
     SUB EDX,EBX                         ; 0052e540
@@ -428,7 +428,7 @@ section .text
     MOV EAX,EDX                         ; 0052e547
     SAR EDX,0x1f                        ; 0052e549
     IDIV ESI                            ; 0052e54c
-    MOV ESI,dword ptr [0x01d51db4]      ; 0052e54e | DAT_01d51db4
+    MOV ESI,dword ptr [0x01d51db4]      ; 0052e54e | g_INT_01d51db4
     SUB ESI,EAX                         ; 0052e554
     INC ESI                             ; 0052e556
     TEST ESI,ESI                        ; 0052e557
@@ -441,7 +441,7 @@ section .text
     ADD EDI,0xc                         ; 0052e569
     MOV dword ptr [ESP + 0x110],EAX     ; 0052e56c
     ADD EDI,0x1d51db8                   ; 0052e573
-    CMP ESI,dword ptr [0x01d51db4]      ; 0052e579 | DAT_01d51db4
+    CMP ESI,dword ptr [0x01d51db4]      ; 0052e579 | g_INT_01d51db4
         ;   Label: LAB_0052e579
     JGE 0x0052e5c4                      ; 0052e57f
         ;   XREF to: 0052e5c4 (CONDITIONAL_JUMP)  ; LAB_0052e5c4
@@ -504,7 +504,7 @@ section .text
     IMUL EAX,dword ptr [EAX + 0x11c],0x7c ; 0052e610
     MOV EDX,dword ptr [EBP + 0x14]      ; 0052e617
     ADD EDX,EAX                         ; 0052e61a
-    MOV EAX,[0x01d51dac]                ; 0052e61c | DAT_01d51dac
+    MOV EAX,[0x01d51dac]                ; 0052e61c | g_INT_01d51dac
     MOV dword ptr [EDX + 0x54],EAX      ; 0052e621
     MOV EDX,dword ptr [EBP + 0x14]      ; 0052e624
     XOR ESI,ESI                         ; 0052e627
@@ -518,17 +518,17 @@ section .text
         ;   Label: LAB_0052e638
     JZ 0x0052e8b7                       ; 0052e63c
         ;   XREF to: 0052e8b7 (CONDITIONAL_JUMP)  ; LAB_0052e8b7
-    MOV EDX,dword ptr [0x01d51dac]      ; 0052e642 | DAT_01d51dac
+    MOV EDX,dword ptr [0x01d51dac]      ; 0052e642 | g_INT_01d51dac
         ;   Label: LAB_0052e642
     CMP EDX,dword ptr [EBX + 0x54]      ; 0052e648
     JZ 0x0052e6b4                       ; 0052e64b
         ;   XREF to: 0052e6b4 (CONDITIONAL_JUMP)  ; LAB_0052e6b4
-    MOV EDX,dword ptr [0x01d51da0]      ; 0052e64d | DAT_01d51da0
+    MOV EDX,dword ptr [0x01d51da0]      ; 0052e64d | g_UINT_01d51da0
     MOV EAX,dword ptr [EBX + 0x58]      ; 0052e653
     SUB EDX,EAX                         ; 0052e656
     MOV dword ptr [ESP + 0x120],EDX     ; 0052e658
     FILD dword ptr [ESP + 0x120]        ; 0052e65f
-    FMUL double ptr [0x005ebe00]        ; 0052e666 | DAT_005ebe00
+    FMUL double ptr [0x005ebe00]        ; 0052e666 | g_DOUBLE_005ebe00
     FST float ptr [ESP + 0x4]           ; 0052e66c
     FLDZ                                ; 0052e670
     FCOMPP                              ; 0052e672
@@ -540,7 +540,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 0052e67b
     FLD float ptr [ESP + 0x4]           ; 0052e67f
         ;   Label: LAB_0052e67f
-    FCOMP double ptr [0x005ebe08]       ; 0052e683 | DAT_005ebe08
+    FCOMP double ptr [0x005ebe08]       ; 0052e683 | g_DOUBLE_005ebe08
     FNSTSW AX                           ; 0052e689
     SAHF                                ; 0052e68b
     JBE 0x0052e696                      ; 0052e68c
@@ -548,7 +548,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x41f00000 ; 0052e68e
     FLD float ptr [ESP + 0x4]           ; 0052e696
         ;   Label: LAB_0052e696
-    FCOMP double ptr [0x005ebe10]       ; 0052e69a | DAT_005ebe10
+    FCOMP double ptr [0x005ebe10]       ; 0052e69a | g_DOUBLE_005ebe10
     FNSTSW AX                           ; 0052e6a0
     SAHF                                ; 0052e6a2
     JBE 0x0052e6b2                      ; 0052e6a3
@@ -609,13 +609,13 @@ section .text
     ADD ESP,0x4                         ; 0052e733
     PUSH 0x0                            ; 0052e736
     PUSH EDI                            ; 0052e738
-    MOV ESI,dword ptr [0x0061f650]      ; 0052e739 | DAT_0061f650
+    MOV ESI,dword ptr [0x0061f650]      ; 0052e739 | g_CDemonMission_PTR_0061f650
     PUSH ESI                            ; 0052e73f
     CALL core_mission.cpp_CDemonMission_load_FUN_0051a3f0 ; 0052e740
         ;   XREF to: 0051a3f0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_0051a3f0(CDemonMission * this_ptr, char * mission_filename, int load_flags)
     ADD ESP,0xc                         ; 0052e745
     PUSH 0x0                            ; 0052e748
-    MOV EDI,dword ptr [0x0061f650]      ; 0052e74a | DAT_0061f650
+    MOV EDI,dword ptr [0x0061f650]      ; 0052e74a | g_CDemonMission_PTR_0061f650
     PUSH EDI                            ; 0052e750
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0 ; 0052e751
         ;   XREF to: 0051c0a0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0(CDemonMission * this_ptr, CCharacter * existing_hero)
@@ -623,7 +623,7 @@ section .text
     TEST EAX,EAX                        ; 0052e759
     JZ 0x0052e781                       ; 0052e75b
         ;   XREF to: 0052e781 (CONDITIONAL_JUMP)  ; LAB_0052e781
-    MOV EAX,[0x0061f650]                ; 0052e75d | DAT_0061f650
+    MOV EAX,[0x0061f650]                ; 0052e75d | g_CDemonMission_PTR_0061f650
     PUSH EAX                            ; 0052e762
     CALL core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0 ; 0052e763
         ;   XREF to: 0051bdc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0(CDemonMission * this_ptr)
@@ -654,17 +654,17 @@ section .text
     CMP dword ptr [EAX],0x2             ; 0052e7a1
     JNZ 0x0052e81c                      ; 0052e7a4
         ;   XREF to: 0052e81c (CONDITIONAL_JUMP)  ; LAB_0052e81c
-    CMP dword ptr [0x00622584],0x0      ; 0052e7aa | DAT_00622584
+    CMP dword ptr [0x00622584],0x0      ; 0052e7aa | g_INT_00622584
     JZ 0x0052e81c                       ; 0052e7b1
         ;   XREF to: 0052e81c (CONDITIONAL_JUMP)  ; LAB_0052e81c
     IMUL EAX,dword ptr [EAX + 0x11c],0x7c ; 0052e7b3
     ADD EAX,dword ptr [EBP + 0x14]      ; 0052e7ba
-    MOV EDX,dword ptr [0x01d51da0]      ; 0052e7bd | DAT_01d51da0
+    MOV EDX,dword ptr [0x01d51da0]      ; 0052e7bd | g_UINT_01d51da0
     MOV EAX,dword ptr [EAX + 0x60]      ; 0052e7c3
     SUB EDX,EAX                         ; 0052e7c6
     MOV dword ptr [ESP + 0x120],EDX     ; 0052e7c8
     FILD dword ptr [ESP + 0x120]        ; 0052e7cf
-    FMUL double ptr [0x005ebe00]        ; 0052e7d6 | DAT_005ebe00
+    FMUL double ptr [0x005ebe00]        ; 0052e7d6 | g_DOUBLE_005ebe00
     FST float ptr [ESP]                 ; 0052e7dc
     FLDZ                                ; 0052e7df
     FCOMPP                              ; 0052e7e1
@@ -676,7 +676,7 @@ section .text
     MOV dword ptr [ESP],ECX             ; 0052e7ea
     FLD float ptr [ESP]                 ; 0052e7ed
         ;   Label: LAB_0052e7ed
-    FCOMP double ptr [0x005ebe08]       ; 0052e7f0 | DAT_005ebe08
+    FCOMP double ptr [0x005ebe08]       ; 0052e7f0 | g_DOUBLE_005ebe08
     FNSTSW AX                           ; 0052e7f6
     SAHF                                ; 0052e7f8
     JBE 0x0052e802                      ; 0052e7f9
@@ -684,7 +684,7 @@ section .text
     MOV dword ptr [ESP],0x41f00000      ; 0052e7fb
     FLD float ptr [ESP]                 ; 0052e802
         ;   Label: LAB_0052e802
-    FCOMP double ptr [0x005ebe10]       ; 0052e805 | DAT_005ebe10
+    FCOMP double ptr [0x005ebe10]       ; 0052e805 | g_DOUBLE_005ebe10
     FNSTSW AX                           ; 0052e80b
     SAHF                                ; 0052e80d
     JBE 0x0052e81c                      ; 0052e80e
@@ -696,7 +696,7 @@ section .text
     ADD ESP,0x4                         ; 0052e819
     PUSH 0x1                            ; 0052e81c
         ;   Label: LAB_0052e81c
-    MOV EAX,[0x0061f2a4]                ; 0052e81e | DAT_0061f2a4
+    MOV EAX,[0x0061f2a4]                ; 0052e81e | g_CKeys_PTR_0061f2a4
     PUSH EAX                            ; 0052e823
     MOV EDX,dword ptr [EAX]             ; 0052e824
     CALL dword ptr [EDX + 0x4]          ; 0052e826
@@ -705,7 +705,7 @@ section .text
     JNZ 0x0052e460                      ; 0052e82e
         ;   XREF to: 0052e460 (CONDITIONAL_JUMP)  ; LAB_0052e460
     PUSH 0x1c                           ; 0052e834
-    MOV EAX,[0x0061f2a4]                ; 0052e836 | DAT_0061f2a4
+    MOV EAX,[0x0061f2a4]                ; 0052e836 | g_CKeys_PTR_0061f2a4
     PUSH EAX                            ; 0052e83b
     MOV EDX,dword ptr [EAX]             ; 0052e83c
     CALL dword ptr [EDX + 0x4]          ; 0052e83e
@@ -731,7 +731,7 @@ section .text
         ;   Label: LAB_0052e877
     PUSH 0x1f                           ; 0052e87a
         ;   Label: LAB_0052e87a
-    MOV EAX,[0x0061f2a4]                ; 0052e87c | DAT_0061f2a4
+    MOV EAX,[0x0061f2a4]                ; 0052e87c | g_CKeys_PTR_0061f2a4
     PUSH EAX                            ; 0052e881
     MOV EDX,dword ptr [EAX]             ; 0052e882
     CALL dword ptr [EDX + 0x4]          ; 0052e884
@@ -791,13 +791,13 @@ section .text
     ADD ESP,0x4                         ; 0052e906
     PUSH 0x0                            ; 0052e909
     PUSH EBX                            ; 0052e90b
-    MOV EAX,[0x0061f650]                ; 0052e90c | DAT_0061f650
+    MOV EAX,[0x0061f650]                ; 0052e90c | g_CDemonMission_PTR_0061f650
     PUSH EAX                            ; 0052e911
     CALL core_mission.cpp_CDemonMission_load_FUN_0051a3f0 ; 0052e912
         ;   XREF to: 0051a3f0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_0051a3f0(CDemonMission * this_ptr, char * mission_filename, int load_flags)
     ADD ESP,0xc                         ; 0052e917
     PUSH 0x0                            ; 0052e91a
-    MOV EDX,dword ptr [0x0061f650]      ; 0052e91c | DAT_0061f650
+    MOV EDX,dword ptr [0x0061f650]      ; 0052e91c | g_CDemonMission_PTR_0061f650
     PUSH EDX                            ; 0052e922
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0 ; 0052e923
         ;   XREF to: 0051c0a0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0(CDemonMission * this_ptr, CCharacter * existing_hero)
@@ -805,7 +805,7 @@ section .text
     TEST EAX,EAX                        ; 0052e92b
     JZ 0x0052e9ae                       ; 0052e92d
         ;   XREF to: 0052e9ae (CONDITIONAL_JUMP)  ; LAB_0052e9ae
-    MOV ECX,dword ptr [0x0061f650]      ; 0052e933 | DAT_0061f650
+    MOV ECX,dword ptr [0x0061f650]      ; 0052e933 | g_CDemonMission_PTR_0061f650
     PUSH ECX                            ; 0052e939
     CALL core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0 ; 0052e93a
         ;   XREF to: 0051bdc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0(CDemonMission * this_ptr)
@@ -825,10 +825,10 @@ section .text
     MOV EBX,0x12                        ; 0052e95b
     SAR EDX,0x1f                        ; 0052e960
     IDIV EBX                            ; 0052e963
-    MOV ESI,dword ptr [0x01d51d9c]      ; 0052e965 | DAT_01d51d9c
+    MOV ESI,dword ptr [0x01d51d9c]      ; 0052e965 | g_INT_01d51d9c
     MOV EDX,EAX                         ; 0052e96b
     SUB EAX,ESI                         ; 0052e96d
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052e96f | DAT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052e96f | g_INT_01d51d9c
     TEST EAX,EAX                        ; 0052e975
     JL 0x0052e9aa                       ; 0052e977
         ;   XREF to: 0052e9aa (CONDITIONAL_JUMP)  ; LAB_0052e9aa
@@ -836,12 +836,12 @@ section .text
     JLE 0x0052e985                      ; 0052e97e
         ;   XREF to: 0052e985 (CONDITIONAL_JUMP)  ; LAB_0052e985
     MOV EAX,0x20000                     ; 0052e980
-    MOV EDI,dword ptr [0x01d51da0]      ; 0052e985 | DAT_01d51da0
+    MOV EDI,dword ptr [0x01d51da0]      ; 0052e985 | g_UINT_01d51da0
         ;   Label: LAB_0052e985
     ADD EDI,EAX                         ; 0052e98b
-    MOV dword ptr [0x01d51da0],EDI      ; 0052e98d | DAT_01d51da0
+    MOV dword ptr [0x01d51da0],EDI      ; 0052e98d | g_UINT_01d51da0
     LEA EAX,[EDI + 0xffe20000]          ; 0052e993
-    MOV [0x01d51db0],EAX                ; 0052e999 | DAT_01d51db0
+    MOV [0x01d51db0],EAX                ; 0052e999 | g_UINT_01d51db0
     MOV EAX,0x1                         ; 0052e99e
     MOV ESP,EBP                         ; 0052e9a3
     POP EBP                             ; 0052e9a5

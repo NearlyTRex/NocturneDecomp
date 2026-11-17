@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005907b0(void)
 
 {
   int iVar1;
   int iVar2;
   
-  _DAT_02664fa0 = 0;
-  _DAT_02664fa4 = 0;
+  g_FLOAT_02664fa0 = 0.0;
+  g_FLOAT_02664fa4 = 0.0;
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 0xac;

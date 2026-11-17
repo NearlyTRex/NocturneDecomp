@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_styldemo_cpp_CStylerDemon_processDamage_FUN_005a0330(CStylerDemon *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -19,14 +17,14 @@ void __cdecl core_styldemo_cpp_CStylerDemon_processDamage_FUN_005a0330(CStylerDe
   sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
-  if (fVar1 <= (float)_DAT_005da536) {
+  if (fVar1 <= (float)0.10000000000000001) {
     (this_ptr->base).base.hit_points = 0.0;
     (this_ptr->base).base.health_bar_mode = HEALTH_BAR_NONE;
     if ((damage_info->damage_type == DAMAGE_TYPE_EXORCISM) &&
        (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (0x01C6E360,"exorcism_death"), iVar2 == 0)) {
+                          (g_CEventList_PTR_005fba60,"exorcism_death"), iVar2 == 0)) {
       core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0
-                (0x01C6E360,"exorcism_death",1);
+                (g_CEventList_PTR_005fba60,"exorcism_death",1);
     }
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                        (&(this_ptr->base).base.model.base);

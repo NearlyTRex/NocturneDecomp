@@ -47,7 +47,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417690(CBodyPart *this_pt
     input_local_point[0x41].z = 0.0;
     input_local_point[0x3a].z = 1.5;
     input_local_point[0x3b].x = 3.0;
-    pcVar5 = "GCHAR2.RAW" + 1;
+    pcVar5 = "CHAR2.RAW";
     input_local_point[0x3b].y = 1.5;
     (this_ptr->base).is_transparent = 1;
     pcVar6 = this_ptr->textures[0].texture_name;

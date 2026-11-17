@@ -17,10 +17,10 @@
 ;   TerminatedCString s_core_charactr_cpp_005b85d7
 ;   TerminatedCString s_CCharacter_applyGesture_005b85ec
 ;   TerminatedCString s_Bip01_spine1_005b8630
-;   undefined4 DAT_005b863e
-;   undefined4 DAT_005b8642
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005b863e = 0.3000000
+;   float g_FLOAT_005b8642 = 0.8500000
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -76,7 +76,7 @@ section .text
     JZ 0x00432209                       ; 0043214e
         ;   XREF to: 00432209 (CONDITIONAL_JUMP)  ; LAB_00432209
     FLD float ptr [EAX + 0x20]          ; 00432154
-    FMUL float ptr [0x005b863e]         ; 00432157 | DAT_005b863e
+    FMUL float ptr [0x005b863e]         ; 00432157 | g_FLOAT_005b863e
     FLD float ptr [EBX + 0x2758]        ; 0043215d
     FILD dword ptr [EAX + 0x64]         ; 00432163
     FSUB float ptr [EBX + 0x2758]       ; 00432166
@@ -89,7 +89,7 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 00432178
     FSTP float ptr [ESP + 0xc]          ; 0043217c
     FLD float ptr [ESP + 0x10]          ; 00432180
-    FCOMP float ptr [0x005b8642]        ; 00432184 | DAT_005b8642
+    FCOMP float ptr [0x005b8642]        ; 00432184 | g_FLOAT_005b8642
     FNSTSW AX                           ; 0043218a
     SAHF                                ; 0043218c
     JNC 0x00432197                      ; 0043218d
@@ -130,8 +130,8 @@ section .text
     MOV ESI,0x5b85d7                    ; 004321e1 | = "..\\core\\charactr.cpp"
     MOV EDI,0xff7                       ; 004321e6
     PUSH 0x5b85ec                       ; 004321eb | = "CCharacter::applyGesture - never set ..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004321f0 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004321f6 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004321f0 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004321f6 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004321fc
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00432201

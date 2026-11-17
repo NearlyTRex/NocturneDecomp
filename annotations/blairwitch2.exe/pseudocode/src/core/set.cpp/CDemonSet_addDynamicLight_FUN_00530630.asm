@@ -19,9 +19,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e592a
 ;   TerminatedCString s_Too_many_dynamic_lights_005e593a
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01fc9608
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_INT_01fc9608
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -33,7 +33,7 @@ section .text
     PUSH EBX                            ; 00530630
         ;   Label: core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630
     PUSH ESI                            ; 00530631
-    MOV ESI,dword ptr [0x01fc9608]      ; 00530632 | DAT_01fc9608
+    MOV ESI,dword ptr [0x01fc9608]      ; 00530632 | g_INT_01fc9608
     MOV EBX,dword ptr [ESP + 0x10]      ; 00530638
     CMP dword ptr [EBX + 0x1cb4],0x0    ; 0053063c
     JZ 0x0053067a                       ; 00530643
@@ -51,16 +51,16 @@ section .text
     CMP EAX,EDX                         ; 0053065d
     JL 0x00530652                       ; 0053065f
         ;   XREF to: 00530652 (CONDITIONAL_JUMP)  ; LAB_00530652
-    MOV dword ptr [0x01fc9608],ESI      ; 00530661 | DAT_01fc9608
+    MOV dword ptr [0x01fc9608],ESI      ; 00530661 | g_INT_01fc9608
         ;   Label: LAB_00530661
     CMP ESI,0x4                         ; 00530667
     JGE 0x00530683                      ; 0053066a
         ;   XREF to: 00530683 (CONDITIONAL_JUMP)  ; LAB_00530683
-    MOV ESI,dword ptr [0x01fc9608]      ; 0053066c | DAT_01fc9608
+    MOV ESI,dword ptr [0x01fc9608]      ; 0053066c | g_INT_01fc9608
         ;   Label: LAB_0053066c
     INC ESI                             ; 00530672
-    MOV dword ptr [ESI*0x4 + 0x1fc9608],EBX ; 00530673 | DAT_01fc9608
-    MOV dword ptr [0x01fc9608],ESI      ; 0053067a | DAT_01fc9608
+    MOV dword ptr [ESI*0x4 + 0x1fc9608],EBX ; 00530673 | g_INT_01fc9608
+    MOV dword ptr [0x01fc9608],ESI      ; 0053067a | g_INT_01fc9608
         ;   Label: LAB_0053067a
     POP ESI                             ; 00530680
     POP EBX                             ; 00530681
@@ -70,8 +70,8 @@ section .text
     MOV ECX,0x5e592a                    ; 00530684 | = "..\\core\\set.cpp"
     MOV EDI,0x9b1                       ; 00530689
     PUSH 0x5e593a                       ; 0053068e | = "Too many dynamic lights!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00530693 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00530699 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00530693 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00530699 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053069f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005306a4

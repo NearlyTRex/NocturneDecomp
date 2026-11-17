@@ -10,6 +10,6 @@ void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_0053ba00(CDemonSet *this_pt
 
 {
   core_gore_cpp_CGore_renderDecals_FUN_004ce630(g_CGorePtr,0,expire_flag);
-  core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(0x01C73654,0,expire_flag);
+  core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(g_CFireEffect_PTR_005fc5a0,0,expire_flag);
   return;
 }

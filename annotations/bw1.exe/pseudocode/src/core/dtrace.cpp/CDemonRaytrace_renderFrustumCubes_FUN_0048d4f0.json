@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1390,
-    "complexity_score": 923,
+    "complexity_score": 944,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 713,
-    "suspect_count": 17,
+    "pseudocode_lines": 714,
+    "suspect_count": 19,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "sign_compare_idiom",
+      "signed_shift_global_idiom",
       "stack_alignment_array",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 2103
+    "total_lines": 2104
   },
   "cross_references": [
     {
@@ -77,128 +77,128 @@
   "globals": [
     {
       "addr": "005db9bc",
-      "name": "DAT_005db9bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005db9bc",
+      "type": "double",
+      "value": "0.00390625"
     },
     {
       "addr": "005db9c4",
-      "name": "DAT_005db9c4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005db9c4",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005db9cc",
-      "name": "DAT_005db9cc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005db9cc",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "0061255c",
-      "name": "DAT_0061255c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0061255c",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01bef208",
-      "name": "DAT_01bef208",
-      "type": "undefined4",
+      "name": "g_INT_01bef208",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bef20c",
-      "name": "DAT_01bef20c",
-      "type": "undefined4",
+      "name": "g_INT_01bef20c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bef210",
-      "name": "DAT_01bef210",
-      "type": "undefined4",
+      "name": "g_INT_01bef210",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bef214",
-      "name": "DAT_01bef214",
-      "type": "undefined4",
+      "name": "g_INT_01bef214",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bef218",
-      "name": "DAT_01bef218",
-      "type": "undefined4",
+      "name": "g_INT_01bef218",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bef21c",
-      "name": "DAT_01bef21c",
-      "type": "undefined4",
+      "name": "g_INT_01bef21c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd18",
-      "name": "DAT_01d1dd18",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd18",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd1c",
-      "name": "DAT_01d1dd1c",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd1c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd20",
-      "name": "DAT_01d1dd20",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd20",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd24",
-      "name": "DAT_01d1dd24",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd24",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd28",
-      "name": "DAT_01d1dd28",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd28",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd2c",
-      "name": "DAT_01d1dd2c",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd2c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd30",
-      "name": "DAT_01d1dd30",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd30",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd34",
-      "name": "DAT_01d1dd34",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd34",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1dd38",
-      "name": "DAT_01d1dd38",
-      "type": "undefined4",
+      "name": "g_INT_01d1dd38",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e7dac8",
-      "name": "DAT_01e7dac8",
-      "type": "undefined4",
+      "name": "g_INT_01e7dac8",
+      "type": "int",
       "value": null
     }
   ],
@@ -1009,16 +1009,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 24,
+      "line": 22,
       "match": "aiStackY_1144",
       "severity": "moderate",
       "text": "int aiStackY_1144 [985];",
@@ -1026,7 +1018,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 253,
+      "line": 252,
       "match": "(int *)((int)local_1a8",
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)local_1a8 + iVar7 + 4);",
@@ -1034,7 +1026,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 254,
+      "line": 253,
       "match": "(int *)((int)local_1a8",
       "severity": "moderate",
       "text": "dVar17 = (double)*(int *)((int)local_1a8 + iVar7 + 8) / dStack_1c0;",
@@ -1042,7 +1034,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 262,
+      "line": 261,
       "match": "(int *)((int)local_1a8",
       "severity": "moderate",
       "text": "((double)local_148 + (double)*(int *)((int)local_1a8 + iVar7) / dVar14);",
@@ -1050,7 +1042,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 265,
+      "line": 264,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dStack_1c0 = __BITCAST_DOUBLE(CONCAT44(dStack_1c0._4_4_,0x48d95c));",
@@ -1058,7 +1050,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 265,
+      "line": 264,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "dStack_1c0 = __BITCAST_DOUBLE(CONCAT44(dStack_1c0._4_4_,0x48d95c));",
@@ -1098,7 +1090,7 @@
     },
     {
       "description": "Pointer value `&local_15c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 122,
       "match": "(int)&local_15c",
       "severity": "moderate",
       "text": "local_134[(uint)bVar12 * -2] = *(int *)((int)&local_15c + (uint)bVar12 * -8 + 4);",
@@ -1106,7 +1098,7 @@
     },
     {
       "description": "Pointer value `&local_15c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 125,
+      "line": 124,
       "match": "(int)&local_15c",
       "severity": "moderate",
       "text": "*(int *)((int)&local_15c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
@@ -1114,7 +1106,7 @@
     },
     {
       "description": "Raw hex address 0x48d94e assigned to bare local `uStack_1c4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_1c4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 260,
+      "line": 259,
       "match": "0x48d94e",
       "severity": "moderate",
       "text": "uStack_1c4 = 0x48d94e;",
@@ -1122,15 +1114,39 @@
     },
     {
       "description": "Raw hex address 0x48d955 assigned to bare local `uStack_1c8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_1c8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 263,
+      "line": 262,
       "match": "0x48d955",
       "severity": "moderate",
       "text": "uStack_1c8 = 0x48d955;",
       "type": "raw_address_constant"
     },
     {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 324,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iStack_118 = (g_INT_01d1dd30 ^ g_INT_01d1dd30 >> 0x1f) - (g_INT_01d1dd30 >> 0x1f);",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 325,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar9 = (g_INT_01d1dd34 ^ g_INT_01d1dd34 >> 0x1f) - (g_INT_01d1dd34 >> 0x1f);",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 326,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar6 = (g_INT_01d1dd38 ^ g_INT_01d1dd38 >> 0x1f) - (g_INT_01d1dd38 >> 0x1f);",
+      "type": "signed_shift_global_idiom"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 123,
+      "line": 122,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_134[(uint)bVar12 * -2] = *(int *)((int)&local_15c + (uint)bVar12 * -8 + 4);",
@@ -1138,7 +1154,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 125,
+      "line": 124,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_15c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",

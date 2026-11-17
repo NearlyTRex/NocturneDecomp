@@ -15,8 +15,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetFullPathNameA_005b35ac = 001b3ef2
-;   undefined4 DAT_005da6d8
-;   undefined4 DAT_006e6f63
+;   TerminatedCString s_con_005da6d8
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[18769].v+3
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0
@@ -80,7 +80,7 @@ section .text
     POP ESI                             ; 005a5446
     POP EBX                             ; 005a5447
     RET                                 ; 005a5448
-    PUSH 0x5da6d8                       ; 005a5449 | DAT_005da6d8
+    PUSH 0x5da6d8                       ; 005a5449 | = "con"
         ;   Label: LAB_005a5449
     PUSH ESI                            ; 005a544e
     CALL crt_string.c__stricmp_FUN_005a3260 ; 005a544f
@@ -107,9 +107,9 @@ section .text
     POP ESI                             ; 005a547a
     POP EBX                             ; 005a547b
     RET                                 ; 005a547c
-    MOV EAX,[0x005da6d8]                ; 005a547d | DAT_005da6d8
+    MOV EAX,[0x005da6d8]                ; 005a547d | = "con"
         ;   Label: LAB_005a547d
-    MOV dword ptr [EBX],EAX             ; 005a5482 | DAT_006e6f63
+    MOV dword ptr [EBX],EAX             ; 005a5482 | g_SRenderVertex_ARRAY_0060b014[18769].v+3
     JMP 0x005a54a6                      ; 005a5484
         ;   XREF to: 005a54a6 (UNCONDITIONAL_JUMP)  ; LAB_005a54a6
     MOV EAX,ESP                         ; 005a5486

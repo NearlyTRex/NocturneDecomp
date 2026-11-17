@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 168,
+    "complexity_score": 152,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 11,
+    "pseudocode_lines": 37,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 126
+    "total_lines": 125
   },
   "cross_references": [],
   "function": {
@@ -70,9 +69,9 @@
   "globals": [
     {
       "addr": "00608528",
-      "name": "DAT_00608528",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00608528",
+      "type": "int",
+      "value": "0x1a4"
     }
   ],
   "param_estimates": {
@@ -172,16 +171,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -189,7 +180,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "char *in_stack_00000014;",
@@ -197,7 +188,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "uint in_stack_00000018;",
@@ -205,7 +196,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(int *)((int)(file_stream->_fstreambase_core).layout_info",
       "severity": "moderate",
       "text": "*(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);",
@@ -213,7 +204,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "(acStack_214,directory_path,in_stack_00000014);",
@@ -221,7 +212,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "if ((in_stack_00000018 & 0x52) == 0) {",
@@ -229,15 +220,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "openFile(file_stream,acStack_114,in_stack_00000018,_DAT_00608528);",
+      "text": "openFile(file_stream,acStack_114,in_stack_00000018,g_INT_00608528);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 25,
+      "line": 23,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (unaff_EBX != 0) {",
@@ -245,7 +236,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 28,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "istream_seekg(&file_stream->_istream_core,unaff_EBX);",
@@ -253,10 +244,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 37,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "openFile(file_stream,acStack_214,in_stack_00000018,_DAT_00608528);",
+      "text": "openFile(file_stream,acStack_214,in_stack_00000018,g_INT_00608528);",
       "type": "stack_param"
     }
   ]

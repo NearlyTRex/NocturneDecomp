@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610(CPathMap *this_ptr,int start_x,int start_z,int end_x,int end_z)
 
 {
@@ -55,14 +53,14 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610(CPathMap *t
       unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                             (this_ptr,end_z,iVar4,iVar3);
       uVar7 = unaff_EDI - iVar3 >> 0x1f;
-      if (((_DAT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7)) ||
+      if (((g_INT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7)) ||
           (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                  (this_ptr,end_z + -1,iVar5,iVar3),
           uVar7 = unaff_EDI - iVar3 >> 0x1f,
-          _DAT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) ||
+          g_INT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) ||
          (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                 (this_ptr,end_z + 1,iVar5,iVar3), uVar7 = unaff_EDI - iVar3 >> 0x1f,
-         _DAT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) break;
+         g_INT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) break;
       iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320(this_ptr,end_z,iVar4,iVar3);
       local_2c = local_2c + -1;
       iVar5 = iVar4;
@@ -77,15 +75,15 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610(CPathMap *t
         unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                               (this_ptr,iVar4,iVar5,iVar3);
         uVar8 = unaff_EDI - iVar3 >> 0x1f;
-        if (((_DAT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8)) ||
+        if (((g_INT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8)) ||
             (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                    (this_ptr,local_14,iVar5 + -1,iVar3),
             uVar8 = unaff_EDI - iVar3 >> 0x1f,
-            _DAT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) ||
+            g_INT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) ||
            (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                   (this_ptr,local_14,iVar5 + 1,iVar3),
            uVar8 = unaff_EDI - iVar3 >> 0x1f,
-           _DAT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) break;
+           g_INT_01ec1514 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) break;
         iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320(this_ptr,iVar4,iVar5,iVar3)
         ;
         local_30 = local_30 + -1;
@@ -109,14 +107,14 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610(CPathMap *t
       unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                             (this_ptr,iVar3,end_x,iVar5);
       uVar2 = unaff_EDI - iVar5 >> 0x1f;
-      if (((_DAT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2)) ||
+      if (((g_INT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2)) ||
           (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                  (this_ptr,end_z,end_x + -1,iVar5),
           uVar2 = unaff_EDI - iVar5 >> 0x1f,
-          _DAT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) ||
+          g_INT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) ||
          (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                 (this_ptr,end_z,end_x + 1,iVar5), uVar2 = unaff_EDI - iVar5 >> 0x1f,
-         _DAT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) break;
+         g_INT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) break;
       iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320(this_ptr,iVar3,end_x,iVar5);
       local_34 = local_34 + -1;
       end_z = iVar3;
@@ -130,15 +128,15 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610(CPathMap *t
         unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                               (this_ptr,end_z,iVar3,iVar5);
         uVar1 = unaff_EDI - iVar5 >> 0x1f;
-        if (((_DAT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1)) ||
+        if (((g_INT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1)) ||
             (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                    (this_ptr,end_z + -1,local_18,iVar5),
             uVar1 = unaff_EDI - iVar5 >> 0x1f,
-            _DAT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) ||
+            g_INT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) ||
            (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
                                   (this_ptr,end_z + 1,local_18,iVar5),
            uVar1 = unaff_EDI - iVar5 >> 0x1f,
-           _DAT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) break;
+           g_INT_01ec1514 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) break;
         iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320(this_ptr,end_z,iVar3,iVar5)
         ;
         local_38 = local_38 + -1;

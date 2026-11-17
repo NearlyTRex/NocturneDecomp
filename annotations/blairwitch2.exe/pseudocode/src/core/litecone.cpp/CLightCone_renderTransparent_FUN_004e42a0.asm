@@ -7,7 +7,7 @@
 ; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -32,7 +32,7 @@ section .text
     ADD ESP,0x30                        ; 004e42b3
     POP EBX                             ; 004e42b6
     RET                                 ; 004e42b7
-    MOV ECX,dword ptr [0x0060b280]      ; 004e42b8 | DAT_0060b280
+    MOV ECX,dword ptr [0x0060b280]      ; 004e42b8 | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_004e42b8
     PUSH ECX                            ; 004e42be
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 004e42bf

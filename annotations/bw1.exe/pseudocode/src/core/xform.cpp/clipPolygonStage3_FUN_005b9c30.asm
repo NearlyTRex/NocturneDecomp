@@ -7,13 +7,13 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_005b9c14 = 005b9c92
 ;   undefined1* PTR_caseD_3_005b9c20 = 005b9cd7
-;   undefined4 DAT_02c9d2f0
-;   undefined4 DAT_02c9d2f4
-;   undefined4 DAT_02c9defc
-;   undefined4 DAT_02c9df00
-;   undefined4 DAT_02c9e4f8
-;   undefined4 DAT_02c9e4fc
-;   undefined4 DAT_02c9e504
+;   int g_INT_02c9d2f0
+;   int g_INT_02c9d2f4
+;   undefined4 g_SRenderVertex_ARRAY_02c9def8[0].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_02c9def8[0].projected_vertex.transformed_z
+;   SRenderVertex[32] g_SRenderVertex_ARRAY_02c9e4f8
+;   undefined4 g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.inv_z
 ;
 ; Called Functions:
 ;   core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0
@@ -29,7 +29,7 @@ section .text
     PUSH EBP                            ; 005b9c33
     SUB ESP,0x4                         ; 005b9c34
     XOR EDX,EDX                         ; 005b9c37
-    MOV ECX,dword ptr [0x02c9d2f0]      ; 005b9c39 | DAT_02c9d2f0
+    MOV ECX,dword ptr [0x02c9d2f0]      ; 005b9c39 | g_INT_02c9d2f0
     MOV dword ptr [ESP],EDX             ; 005b9c3f
     TEST ECX,ECX                        ; 005b9c42
     JLE 0x005b9cef                      ; 005b9c44
@@ -37,7 +37,7 @@ section .text
     MOV EBX,0x2c9def8                   ; 005b9c4a
     MOV EAX,dword ptr [ESP]             ; 005b9c4f
         ;   Label: LAB_005b9c4f
-    MOV EBP,dword ptr [0x02c9d2f0]      ; 005b9c52 | DAT_02c9d2f0
+    MOV EBP,dword ptr [0x02c9d2f0]      ; 005b9c52 | g_INT_02c9d2f0
     INC EAX                             ; 005b9c58
     CMP EAX,EBP                         ; 005b9c59
     JNZ 0x005b9c5f                      ; 005b9c5b
@@ -55,9 +55,9 @@ section .text
     JL 0x005b9c7c                       ; 005b9c75
         ;   XREF to: 005b9c7c (CONDITIONAL_JUMP)  ; LAB_005b9c7c
     MOV EAX,0x1                         ; 005b9c77
-    MOV ESI,dword ptr [EBP + 0x8]       ; 005b9c7c | DAT_02c9df00
+    MOV ESI,dword ptr [EBP + 0x8]       ; 005b9c7c | g_SRenderVertex_ARRAY_02c9def8[0].projected_vertex.transformed_z
         ;   Label: LAB_005b9c7c
-    CMP ESI,dword ptr [EBP + 0x4]       ; 005b9c7f | DAT_02c9defc
+    CMP ESI,dword ptr [EBP + 0x4]       ; 005b9c7f | g_SRenderVertex_ARRAY_02c9def8[0].projected_vertex.transformed_y
     JG 0x005b9c86                       ; 005b9c82
         ;   XREF to: 005b9c86 (CONDITIONAL_JUMP)  ; LAB_005b9c86
     OR AL,0x2                           ; 005b9c84
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 005b9cd7 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x5b9c14]  ; 005b9c8b | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL EDI,dword ptr [0x02c9d2f4],0x30 ; 005b9c92 | DAT_02c9d2f4
+    IMUL EDI,dword ptr [0x02c9d2f4],0x30 ; 005b9c92 | g_INT_02c9d2f4
         ;   Label: caseD_0
     MOV ECX,0x30                        ; 005b9c99
     MOV ESI,EDX                         ; 005b9c9e
@@ -75,7 +75,7 @@ section .text
     TEST EDI,0x7                        ; 005b9ca6
     JZ 0x005b9cb4                       ; 005b9cac
         ;   XREF to: 005b9cb4 (CONDITIONAL_JUMP)  ; LAB_005b9cb4
-    MOVSD ES:EDI,ESI                    ; 005b9cae | DAT_02c9e4f8
+    MOVSD ES:EDI,ESI                    ; 005b9cae | g_SRenderVertex_ARRAY_02c9e4f8
     SUB ECX,0x4                         ; 005b9caf
     JLE 0x005b9cd1                      ; 005b9cb2
         ;   XREF to: 005b9cd1 (CONDITIONAL_JUMP)  ; LAB_005b9cd1
@@ -85,7 +85,7 @@ section .text
         ;   XREF to: 005b9cc5 (CONDITIONAL_JUMP)  ; LAB_005b9cc5
     FILD qword ptr [ESI]                ; 005b9cb9
     ADD ESI,0x8                         ; 005b9cbb
-    FISTP qword ptr [EDI]               ; 005b9cbe | DAT_02c9e4fc | DAT_02c9e504 | DAT_02c9e4f8
+    FISTP qword ptr [EDI]               ; 005b9cbe | g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.transformed_y | g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.inv_z
     ADD EDI,0x8                         ; 005b9cc0
     JMP 0x005b9cb4                      ; 005b9cc3
         ;   XREF to: 005b9cb4 (UNCONDITIONAL_JUMP)  ; LAB_005b9cb4
@@ -93,16 +93,16 @@ section .text
         ;   Label: LAB_005b9cc5
     JLE 0x005b9cd1                      ; 005b9cc8
         ;   XREF to: 005b9cd1 (CONDITIONAL_JUMP)  ; LAB_005b9cd1
-    MOVSD ES:EDI,ESI                    ; 005b9cca | DAT_02c9e504
+    MOVSD ES:EDI,ESI                    ; 005b9cca | g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.inv_z
     SUB ECX,0x4                         ; 005b9ccb
     JLE 0x005b9cd1                      ; 005b9cce
         ;   XREF to: 005b9cd1 (CONDITIONAL_JUMP)  ; LAB_005b9cd1
     MOVSD ES:EDI,ESI                    ; 005b9cd0
-    INC dword ptr [0x02c9d2f4]          ; 005b9cd1 | DAT_02c9d2f4
+    INC dword ptr [0x02c9d2f4]          ; 005b9cd1 | g_INT_02c9d2f4
         ;   Label: LAB_005b9cd1
     MOV ESI,dword ptr [ESP]             ; 005b9cd7
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x02c9d2f0]      ; 005b9cda | DAT_02c9d2f0
+    MOV EDI,dword ptr [0x02c9d2f0]      ; 005b9cda | g_INT_02c9d2f0
     INC ESI                             ; 005b9ce0
     ADD EBX,0x30                        ; 005b9ce1
     MOV dword ptr [ESP],ESI             ; 005b9ce4
@@ -116,7 +116,7 @@ section .text
     POP ESI                             ; 005b9cf4
     POP EBX                             ; 005b9cf5
     RET                                 ; 005b9cf6
-    IMUL EAX,dword ptr [0x02c9d2f4],0x30 ; 005b9cf7 | DAT_02c9d2f4
+    IMUL EAX,dword ptr [0x02c9d2f4],0x30 ; 005b9cf7 | g_INT_02c9d2f4
         ;   Label: caseD_1
     ADD EAX,0x2c9e4f8                   ; 005b9cfe
     PUSH EAX                            ; 005b9d03
@@ -124,13 +124,13 @@ section .text
     PUSH EBP                            ; 005b9d05
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0 ; 005b9d06
         ;   XREF to: 005b97b0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
-    MOV ESI,dword ptr [0x02c9d2f4]      ; 005b9d0b | DAT_02c9d2f4
+    MOV ESI,dword ptr [0x02c9d2f4]      ; 005b9d0b | g_INT_02c9d2f4
     INC ESI                             ; 005b9d11
     ADD ESP,0xc                         ; 005b9d12
-    MOV dword ptr [0x02c9d2f4],ESI      ; 005b9d15 | DAT_02c9d2f4
+    MOV dword ptr [0x02c9d2f4],ESI      ; 005b9d15 | g_INT_02c9d2f4
     JMP 0x005b9cd7                      ; 005b9d1b
         ;   XREF to: 005b9cd7 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL EDI,dword ptr [0x02c9d2f4],0x30 ; 005b9d1d | DAT_02c9d2f4
+    IMUL EDI,dword ptr [0x02c9d2f4],0x30 ; 005b9d1d | g_INT_02c9d2f4
         ;   Label: caseD_2
     MOV ECX,0x30                        ; 005b9d24
     MOV ESI,EDX                         ; 005b9d29
@@ -138,7 +138,7 @@ section .text
     TEST EDI,0x7                        ; 005b9d31
     JZ 0x005b9d3f                       ; 005b9d37
         ;   XREF to: 005b9d3f (CONDITIONAL_JUMP)  ; LAB_005b9d3f
-    MOVSD ES:EDI,ESI                    ; 005b9d39 | DAT_02c9e4f8
+    MOVSD ES:EDI,ESI                    ; 005b9d39 | g_SRenderVertex_ARRAY_02c9e4f8
     SUB ECX,0x4                         ; 005b9d3a
     JLE 0x005b9d5c                      ; 005b9d3d
         ;   XREF to: 005b9d5c (CONDITIONAL_JUMP)  ; LAB_005b9d5c
@@ -148,7 +148,7 @@ section .text
         ;   XREF to: 005b9d50 (CONDITIONAL_JUMP)  ; LAB_005b9d50
     FILD qword ptr [ESI]                ; 005b9d44
     ADD ESI,0x8                         ; 005b9d46
-    FISTP qword ptr [EDI]               ; 005b9d49 | DAT_02c9e4fc | DAT_02c9e504 | DAT_02c9e4f8
+    FISTP qword ptr [EDI]               ; 005b9d49 | g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.transformed_y | g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.inv_z
     ADD EDI,0x8                         ; 005b9d4b
     JMP 0x005b9d3f                      ; 005b9d4e
         ;   XREF to: 005b9d3f (UNCONDITIONAL_JUMP)  ; LAB_005b9d3f
@@ -156,15 +156,15 @@ section .text
         ;   Label: LAB_005b9d50
     JLE 0x005b9d5c                      ; 005b9d53
         ;   XREF to: 005b9d5c (CONDITIONAL_JUMP)  ; LAB_005b9d5c
-    MOVSD ES:EDI,ESI                    ; 005b9d55 | DAT_02c9e504
+    MOVSD ES:EDI,ESI                    ; 005b9d55 | g_SRenderVertex_ARRAY_02c9e4f8[0].projected_vertex.inv_z
     SUB ECX,0x4                         ; 005b9d56
     JLE 0x005b9d5c                      ; 005b9d59
         ;   XREF to: 005b9d5c (CONDITIONAL_JUMP)  ; LAB_005b9d5c
     MOVSD ES:EDI,ESI                    ; 005b9d5b
-    MOV ECX,dword ptr [0x02c9d2f4]      ; 005b9d5c | DAT_02c9d2f4
+    MOV ECX,dword ptr [0x02c9d2f4]      ; 005b9d5c | g_INT_02c9d2f4
         ;   Label: LAB_005b9d5c
     INC ECX                             ; 005b9d62
-    MOV dword ptr [0x02c9d2f4],ECX      ; 005b9d63 | DAT_02c9d2f4
+    MOV dword ptr [0x02c9d2f4],ECX      ; 005b9d63 | g_INT_02c9d2f4
     IMUL EAX,ECX,0x30                   ; 005b9d69
     ADD EAX,0x2c9e4f8                   ; 005b9d6c
     PUSH EAX                            ; 005b9d71
@@ -172,10 +172,10 @@ section .text
     PUSH EDX                            ; 005b9d73
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0 ; 005b9d74
         ;   XREF to: 005b97b0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
-    MOV EDI,dword ptr [0x02c9d2f4]      ; 005b9d79 | DAT_02c9d2f4
+    MOV EDI,dword ptr [0x02c9d2f4]      ; 005b9d79 | g_INT_02c9d2f4
     INC EDI                             ; 005b9d7f
     ADD ESP,0xc                         ; 005b9d80
-    MOV dword ptr [0x02c9d2f4],EDI      ; 005b9d83 | DAT_02c9d2f4
+    MOV dword ptr [0x02c9d2f4],EDI      ; 005b9d83 | g_INT_02c9d2f4
     JMP 0x005b9cd7                      ; 005b9d89
         ;   XREF to: 005b9cd7 (UNCONDITIONAL_JUMP)  ; caseD_3
 

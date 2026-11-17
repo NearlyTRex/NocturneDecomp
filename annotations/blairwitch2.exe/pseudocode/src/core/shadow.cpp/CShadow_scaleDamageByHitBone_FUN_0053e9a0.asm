@@ -11,8 +11,8 @@
 ;   core_shadow.cpp_CShadow_processDamage_FUN_0053ea00 at 0053ea11
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6785
-;   undefined4 DAT_005e678d
+;   double g_DOUBLE_005e6785 = 0.5
+;   double g_DOUBLE_005e678d = 5
 ;
 ; *****************************************************************************
 
@@ -37,7 +37,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0053e9c8
         ;   Label: LAB_0053e9c8
     FLD ST0                             ; 0053e9cb
-    FMUL double ptr [0x005e678d]        ; 0053e9cd | DAT_005e678d
+    FMUL double ptr [0x005e678d]        ; 0053e9cd | g_DOUBLE_005e678d
     FSTP ST1                            ; 0053e9d3
     FSTP float ptr [EAX + 0x4]          ; 0053e9d5
     ADD ESP,0x8                         ; 0053e9d8
@@ -52,7 +52,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0053e9e8
         ;   Label: LAB_0053e9e8
     FLD ST0                             ; 0053e9eb
-    FMUL double ptr [0x005e6785]        ; 0053e9ed | DAT_005e6785
+    FMUL double ptr [0x005e6785]        ; 0053e9ed | g_DOUBLE_005e6785
     FSTP ST1                            ; 0053e9f3
     FSTP float ptr [EAX + 0x4]          ; 0053e9f5
     ADD ESP,0x8                         ; 0053e9f8

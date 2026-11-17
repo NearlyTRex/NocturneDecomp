@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 220,
-    "complexity_score": 152,
+    "complexity_score": 99,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 6,
+    "pseudocode_lines": 84,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
-    "total_lines": 302
+    "total_lines": 304
   },
   "cross_references": [
     {
@@ -104,14 +103,14 @@
     },
     {
       "addr": "00626114",
-      "name": "DAT_00626114",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_00626114",
+      "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "01cc4270",
-      "name": "DAT_01cc4270",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cc4270",
+      "type": "char[512]",
       "value": null
     }
   ],
@@ -242,48 +241,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "} while (((&DAT_00626114)[(byte)(*pcVar4 + 1)] & 2) != 0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01cc4270",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01cc4270,\"Incomplete markup tag beginning with '%s'\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01cc4270",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01cc4270,\"Markup tag beginning with '%s' - tag text too long\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_01cc4270",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01cc4270,\"Unexpected '>' found near '%s'\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "for (; (((((&DAT_00626114)[(byte)(*pcVar6 + 1)] & 2) == 0 && (cVar1 = *pcVar6, cVar1 != '\\0'))",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `pcVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 84,
+      "line": 86,
       "match": "(int)pcVar6",
       "severity": "moderate",
       "text": "return (int)pcVar6 - (int)text;",

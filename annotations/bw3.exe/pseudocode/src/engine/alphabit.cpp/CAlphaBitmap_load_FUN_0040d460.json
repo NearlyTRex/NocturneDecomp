@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 204,
+    "complexity_score": 84,
     "cross_reference_count": 24,
     "function_call_count": 7,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 12,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 295
   },
@@ -220,14 +218,14 @@
     },
     {
       "addr": "005b5ff2",
-      "name": "DAT_005b5ff2",
-      "type": "undefined4",
+      "name": "s_rb_005b5ff2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005b5ff5",
-      "name": "DAT_005b5ff5",
-      "type": "undefined4",
+      "name": "s_art_005b5ff5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -250,14 +248,14 @@
     },
     {
       "addr": "005b603a",
-      "name": "DAT_005b603a",
-      "type": "undefined4",
+      "name": "s_rb_005b603a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005b603d",
-      "name": "DAT_005b603d",
-      "type": "undefined4",
+      "name": "s_art_005b603d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -280,50 +278,50 @@
     },
     {
       "addr": "005b6082",
-      "name": "DAT_005b6082",
-      "type": "undefined4",
+      "name": "s_rb_005b6082",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005b6085",
-      "name": "DAT_005b6085",
-      "type": "undefined4",
+      "name": "s_art_005b6085",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c6af74",
-      "name": "DAT_01c6af74",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af80",
-      "name": "DAT_01c6af80",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af8c",
-      "name": "DAT_01c6af8c",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -559,100 +557,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_005b5ff5",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b5ff5,local_114,&DAT_005b5ff2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_005b5ff2",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b5ff5,local_114,&DAT_005b5ff2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005b603d",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b603d,local_114,&DAT_005b603a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005b603a",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b603d,local_114,&DAT_005b603a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_01c6af74",
-      "severity": "mild",
-      "text": "uVar5 = iVar1 << (DAT_01c6af74 & 0x1f) | iVar2 << (DAT_01c6af80 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_01c6af80",
-      "severity": "mild",
-      "text": "uVar5 = iVar1 << (DAT_01c6af74 & 0x1f) | iVar2 << (DAT_01c6af80 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01c6af8c",
-      "severity": "mild",
-      "text": "uVar3 = uVar3 << (DAT_01c6af8c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(uint *)(iVar4 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)(iVar4 + (int)this_ptr->act) = uVar5 | uVar3;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005b6085",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b6085,local_114,&DAT_005b6082);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005b6082",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b6085,local_114,&DAT_005b6082);",
-      "type": "undefined_data"
     }
   ]
 }

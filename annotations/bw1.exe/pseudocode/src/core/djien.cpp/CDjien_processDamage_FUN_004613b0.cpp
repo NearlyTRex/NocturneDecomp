@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,S
   if (this_ptr->is_alert == 0) {
     if ((this_ptr->base).attack_cooldown <= 0.0) {
       pCVar1 = (this_ptr->base).base.base.vtable._uh;
-      (this_ptr->base).attack_cooldown = _DAT_005fea28;
+      (this_ptr->base).attack_cooldown = 3.666f;
       (*(pCVar1->_uh).isWeaponDrawn)((CHero *)this_ptr);
       if (((iVar3 != 0xb) && (iVar3 != 0xc)) && (iVar3 != 0xd)) {
         iVar6 = 1;
@@ -35,7 +33,7 @@ void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,S
       }
       pCVar5 = &(this_ptr->base).base.model;
       fVar4 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020(&pCVar5->base);
-      if ((float)_DAT_005d8ed8 < fVar4) {
+      if ((float)0.94999999999999996 < fVar4) {
         iVar6 = 1;
         iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -46,24 +44,24 @@ void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,S
   }
   else {
     if (iVar3 == 0x12) {
-      iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,&DAT_005d8e6c);
+      iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,"CGun");
       if (iVar3 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (0x01C51D80,"ShotDjienWithPistol");
+                  (g_CEventList_PTR_0061b4d0,"ShotDjienWithPistol");
       }
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,"CRifle");
       if (iVar3 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (0x01C51D80,"ShotDjienWithRifle");
+                  (g_CEventList_PTR_0061b4d0,"ShotDjienWithRifle");
       }
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,"CLightgun");
       if (iVar3 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (0x01C51D80,"ShotDjienWithLightgun");
+                  (g_CEventList_PTR_0061b4d0,"ShotDjienWithLightgun");
       }
     }
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (0x01C51D80,"DjienInvulnerable");
+              (g_CEventList_PTR_0061b4d0,"DjienInvulnerable");
   }
   return;
 }

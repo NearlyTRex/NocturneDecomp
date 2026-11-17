@@ -8,11 +8,11 @@
 ; CVector3f *      Stack[0x8]:4   out_attract_position
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e3d91
-;   undefined4 DAT_01cd0d9c
-;   undefined4 DAT_01cd0da0
-;   undefined4 DAT_01cd0da4
-;   undefined4 DAT_01cd0da8
+;   float g_FLOAT_005e3d91 = 0.5
+;   undefined4 g_INT_ARRAY_01cd0d98[1]
+;   undefined4 g_INT_ARRAY_01cd0d98[2]
+;   undefined4 g_INT_ARRAY_01cd0d98[3]
+;   undefined4 g_INT_ARRAY_01cd0d98[4]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 004e0289
         ;   Label: LAB_004e0289
     PUSH ESI                            ; 004e028a
-    MOV EDX,dword ptr [0x01cd0d9c]      ; 004e028b | DAT_01cd0d9c
+    MOV EDX,dword ptr [0x01cd0d9c]      ; 004e028b | g_INT_ARRAY_01cd0d98[1]
     PUSH EDX                            ; 004e0291
     PUSH EBX                            ; 004e0292
     LEA ESI,[ESP + 0x7c]                ; 004e0293
@@ -59,7 +59,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 004e029b
         ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004e02a0
-    MOV ECX,dword ptr [0x01cd0da4]      ; 004e02a3 | DAT_01cd0da4
+    MOV ECX,dword ptr [0x01cd0da4]      ; 004e02a3 | g_INT_ARRAY_01cd0d98[3]
     LEA ESI,[ESP + 0x74]                ; 004e02a9
     PUSH ECX                            ; 004e02ad
     MOVSD ES:EDI,ESI                    ; 004e02ae
@@ -95,11 +95,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e0306
     MOVSD ES:EDI,ESI                    ; 004e0307
     FLD float ptr [ESP + 0x5c]          ; 004e0308
-    FMUL float ptr [0x005e3d91]         ; 004e030c | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e030c | g_FLOAT_005e3d91
     FLD float ptr [ESP + 0x60]          ; 004e0312
-    FMUL float ptr [0x005e3d91]         ; 004e0316 | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e0316 | g_FLOAT_005e3d91
     FLD float ptr [ESP + 0x64]          ; 004e031c
-    FMUL float ptr [0x005e3d91]         ; 004e0320 | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e0320 | g_FLOAT_005e3d91
     LEA EDI,[ESP + 0x14]                ; 004e0326
     LEA ESI,[ESP + 0xb0]                ; 004e032a
     FXCH ST2                            ; 004e0331
@@ -109,7 +109,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e0348
     MOVSD ES:EDI,ESI                    ; 004e0349
     MOVSD ES:EDI,ESI                    ; 004e034a
-    MOV ESI,dword ptr [0x01cd0da0]      ; 004e034b | DAT_01cd0da0
+    MOV ESI,dword ptr [0x01cd0da0]      ; 004e034b | g_INT_ARRAY_01cd0d98[2]
     PUSH ESI                            ; 004e0351
     PUSH EBX                            ; 004e0352
     LEA ESI,[ESP + 0x94]                ; 004e0353
@@ -121,7 +121,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e036d
     MOVSD ES:EDI,ESI                    ; 004e036e
     MOVSD ES:EDI,ESI                    ; 004e036f
-    MOV EDI,dword ptr [0x01cd0da8]      ; 004e0370 | DAT_01cd0da8
+    MOV EDI,dword ptr [0x01cd0da8]      ; 004e0370 | g_INT_ARRAY_01cd0d98[4]
     PUSH EDI                            ; 004e0376
     PUSH EBX                            ; 004e0377
     LEA ESI,[ESP + 0xa0]                ; 004e0378
@@ -153,11 +153,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e03db
     MOVSD ES:EDI,ESI                    ; 004e03dc
     FLD float ptr [ESP + 0xd4]          ; 004e03dd
-    FMUL float ptr [0x005e3d91]         ; 004e03e4 | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e03e4 | g_FLOAT_005e3d91
     FLD float ptr [ESP + 0xd8]          ; 004e03ea
-    FMUL float ptr [0x005e3d91]         ; 004e03f1 | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e03f1 | g_FLOAT_005e3d91
     FLD float ptr [ESP + 0xdc]          ; 004e03f7
-    FMUL float ptr [0x005e3d91]         ; 004e03fe | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e03fe | g_FLOAT_005e3d91
     FLD float ptr [ESP + 0x14]          ; 004e0404
     FLD float ptr [ESP + 0x18]          ; 004e0408
     LEA EDI,[ESP + 0xf8]                ; 004e040c
@@ -187,12 +187,12 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e047b
     MOVSD ES:EDI,ESI                    ; 004e047c
     FLD float ptr [ESP + 0xe0]          ; 004e047d
-    FMUL float ptr [0x005e3d91]         ; 004e0484 | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e0484 | g_FLOAT_005e3d91
     FLD float ptr [ESP + 0xe4]          ; 004e048a
-    FMUL float ptr [0x005e3d91]         ; 004e0491 | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e0491 | g_FLOAT_005e3d91
     LEA EAX,[ESP + 0x20]                ; 004e0497
     FLD float ptr [ESP + 0xe8]          ; 004e049b
-    FMUL float ptr [0x005e3d91]         ; 004e04a2 | DAT_005e3d91
+    FMUL float ptr [0x005e3d91]         ; 004e04a2 | g_FLOAT_005e3d91
     PUSH EAX                            ; 004e04a8
     MOV EAX,dword ptr [ESP + 0x124]     ; 004e04a9
     LEA EDI,[ESP + 0x24]                ; 004e04b0

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0(CDemonCamera *this_ptr)
 
 {
@@ -22,39 +20,42 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
   uint uVar8;
   int iVar9;
   
-  _DAT_01480e24 = _DAT_01480e24 + _DAT_01c43530 * 4;
+  g_INT_01480e24 = g_INT_01480e24 + g_INT_01c43530 * 4;
   iVar9 = 0;
-  if (0x10000 < _DAT_01480e24) {
-    _DAT_01480e24 = _DAT_01480e24 + -0x10000;
-    _DAT_01480e20 = _DAT_01480e20 + 1;
-    if (0xf < _DAT_01480e20) {
-      _DAT_01480e20 = 0;
+  if (0x10000 < g_INT_01480e24) {
+    g_INT_01480e24 = g_INT_01480e24 + -0x10000;
+    g_INT_01480e20 = g_INT_01480e20 + 1;
+    if (0xf < g_INT_01480e20) {
+      g_INT_01480e20 = 0;
     }
     core_dcamera_cpp_updateFogScrollOffset_FUN_0044ca20
-              ((SFogGrid *)0x1480e2c,_DAT_01480e20,_DAT_01480e24);
+              (&g_SFogGrid_01480e2c,g_INT_01480e20,g_INT_01480e24);
   }
   core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004515b0(this_ptr);
-  if (DAT_0061b4a0 == 0x20) {
-    _DAT_01c51d1c =
-         (*(uint *)(&DAT_00b8189c + DAT_00611238 * 4) & 0xff) << (DAT_01c4e9ec & 0x1f) |
-         (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << (DAT_01c4e9d4 & 0x1f) |
-         (*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << (DAT_01c4e9e0 & 0x1f);
+  if (g_INT_0061b4a0 == 0x20) {
+    g_ULONG_01c51d1c =
+         (g_UINT_ARRAY_00b8189c[g_INT_00611238] & 0xff) <<
+         (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
+         (g_UINT_ARRAY_00b8189c[g_INT_00611230] & 0xff) <<
+         (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f) |
+         (g_UINT_ARRAY_00b8189c[g_INT_00611234] & 0xff) <<
+         (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
   }
   else {
-    _DAT_01c51d1c =
-         (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << 0x10 |
-         (*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << 8 |
-         *(uint *)(&DAT_00b8189c + DAT_00611238 * 4) & 0xff;
+    g_ULONG_01c51d1c =
+         (g_UINT_ARRAY_00b8189c[g_INT_00611230] & 0xff) << 0x10 |
+         (g_UINT_ARRAY_00b8189c[g_INT_00611234] & 0xff) << 8 |
+         g_UINT_ARRAY_00b8189c[g_INT_00611238] & 0xff;
   }
-  if (DAT_0061b4a0 == 0x10) {
+  if (g_INT_0061b4a0 == 0x10) {
     uVar8 = 1;
     while ((int)uVar8 < this_ptr->framebuffer_height + -1) {
-      puVar5 = (uint *)(*(int *)(&DAT_01c4354c + (uVar8 - _DAT_0134221c) * 4) + _DAT_01342218 * 2);
+      puVar5 = (uint *)(g_ARRAY_PTR_01c4354c[uVar8 - g_INT_0134221c] + g_INT_01342218 * 2);
       puVar6 = (ulonglong *)
                ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4);
-      iVar3 = ((int)uVar8 >> (DAT_01323d00 & 0x1f)) * 0x140;
-      pbVar4 = &DAT_01342220 + iVar3;
-      pbVar7 = (byte *)(iVar3 + 0xb23458);
+      iVar3 = ((int)uVar8 >> (g_BIT_INTEGER32_01323d00.bytes[0] & 0x1f)) * 0x140;
+      pbVar4 = (byte *)(g_CHAR_ARRAY_01342220 + iVar3);
+      pbVar7 = (byte *)(g_CHAR_ARRAY_00b23458 + iVar3);
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00489f50
@@ -76,7 +77,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
         }
       }
       iVar3 = iVar9 * 0xc;
-      if (iVar9 < _DAT_01323d04) {
+      if (iVar9 < g_INT_01323d04) {
         do {
           puVar5 = (uint *)(iVar3 + 0x1323d10);
           if (uVar8 != *puVar5) goto LAB_0045406c;
@@ -86,7 +87,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
           iVar9 = iVar9 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00454a10
                     (this_ptr,*piVar2,*puVar5,*piVar1);
-        } while (iVar9 < _DAT_01323d04);
+        } while (iVar9 < g_INT_01323d04);
         uVar8 = uVar8 + 1;
       }
       else {
@@ -98,14 +99,13 @@ LAB_0045406c:
   else {
     uVar8 = 1;
     while ((int)uVar8 < this_ptr->framebuffer_height + -1) {
-      puVar6 = (ulonglong *)
-               (*(int *)(&DAT_01c4354c + (uVar8 - _DAT_0134221c) * 4) + _DAT_01342218 * 4);
+      puVar6 = (ulonglong *)(g_ARRAY_PTR_01c4354c[uVar8 - g_INT_0134221c] + g_INT_01342218 * 4);
       texture_buffer =
            (ulonglong *)
            ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4);
-      iVar3 = ((int)uVar8 >> (DAT_01323d00 & 0x1f)) * 0x140;
-      pbVar4 = &DAT_01342220 + iVar3;
-      pbVar7 = (byte *)(iVar3 + 0xb23458);
+      iVar3 = ((int)uVar8 >> (g_BIT_INTEGER32_01323d00.bytes[0] & 0x1f)) * 0x140;
+      pbVar4 = (byte *)(g_CHAR_ARRAY_01342220 + iVar3);
+      pbVar7 = (byte *)(g_CHAR_ARRAY_00b23458 + iVar3);
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_00488dd1
@@ -128,7 +128,7 @@ LAB_0045406c:
         }
       }
       iVar3 = iVar9 * 0xc;
-      if (iVar9 < _DAT_01323d04) {
+      if (iVar9 < g_INT_01323d04) {
         do {
           puVar5 = (uint *)(iVar3 + 0x1323d10);
           if (uVar8 != *puVar5) goto LAB_004541e3;
@@ -138,7 +138,7 @@ LAB_0045406c:
           iVar9 = iVar9 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00454970
                     (this_ptr,*piVar2,*puVar5,*piVar1);
-        } while (iVar9 < _DAT_01323d04);
+        } while (iVar9 < g_INT_01323d04);
         uVar8 = uVar8 + 1;
       }
       else {

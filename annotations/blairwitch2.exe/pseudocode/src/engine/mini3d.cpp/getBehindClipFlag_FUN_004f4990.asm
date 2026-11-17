@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d09918
+;   void* g_PTR_01d09918
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     SUB ESP,0xc                         ; 004f4990
         ;   Label: engine_mini3d.cpp_getBehindClipFlag_FUN_004f4990
     MOV EDX,dword ptr [ESP + 0x10]      ; 004f4993
-    MOV EAX,[0x01d09918]                ; 004f4997 | DAT_01d09918
+    MOV EAX,[0x01d09918]                ; 004f4997 | g_PTR_01d09918
     FLD float ptr [EDX]                 ; 004f499c
     FSUB float ptr [EAX + 0x24]         ; 004f499e
     FMUL float ptr [EAX + 0x8]          ; 004f49a1

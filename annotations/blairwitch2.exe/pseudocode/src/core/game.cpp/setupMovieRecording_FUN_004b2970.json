@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 91,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 115
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 113
   },
   "cross_references": [],
   "function": {
@@ -54,20 +51,20 @@
     },
     {
       "addr": "01cb80d0",
-      "name": "DAT_01cb80d0",
-      "type": "undefined4",
+      "name": "g_INT_01cb80d0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cb80d4",
-      "name": "DAT_01cb80d4",
-      "type": "undefined4",
+      "name": "g_INT_01cb80d4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cb80dc",
-      "name": "DAT_01cb80dc",
-      "type": "undefined4",
+      "name": "g_INT_01cb80dc",
+      "type": "int",
       "value": null
     }
   ],
@@ -137,46 +134,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_006164a0",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"?Enter Movie FPS\" + 1,(float *)&DAT_006164a0,1,0.25,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01cb80d8",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter number of frames to record (or 0 to record until CTRL+V is pressed)\",(int *)&DAT_01cb80d8,1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_006164a4",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter image width\",&DAT_006164a4,1,1,9999,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_006164a8",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter image height\",&DAT_006164a8,1,1,9999,1)",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

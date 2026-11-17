@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00578628 = 00578675
-;   undefined4 DAT_005ecf02
+;   double g_DOUBLE_005ecf02 = 10
 ;
 ; Called Functions:
 ;   crt_math.c_ceil_FUN_005bae37
@@ -77,7 +77,7 @@ section .text
     FMUL ST0                            ; 005786de
     FADDP                               ; 005786e0
     FSQRT                               ; 005786e2
-    FADD double ptr [0x005ecf02]        ; 005786e4 | DAT_005ecf02
+    FADD double ptr [0x005ecf02]        ; 005786e4 | g_DOUBLE_005ecf02
     SUB ESP,0x8                         ; 005786ea
     FSTP double ptr [ESP]               ; 005786ed
     CALL crt_math.c_ceil_FUN_005bae37   ; 005786f0

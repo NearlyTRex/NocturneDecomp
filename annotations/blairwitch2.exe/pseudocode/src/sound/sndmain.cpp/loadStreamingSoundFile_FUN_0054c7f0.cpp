@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_0054c7f0(int slot_index,char *filename)
 
 {
@@ -26,14 +24,14 @@ CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_0054c7f0(int s
   
   iVar4 = 0;
   do {
-    _DAT_02641920 = _DAT_02641920 + 1;
-    if (0x3f < _DAT_02641920) {
-      _DAT_02641920 = 0;
+    g_INT_02641920 = g_INT_02641920 + 1;
+    if (0x3f < g_INT_02641920) {
+      g_INT_02641920 = 0;
     }
-    if ((((g_SfxSamples[_DAT_02641920].taken == 0) && (g_SfxSamples[_DAT_02641920].ref_count == 0))
-        && (g_SfxSamples[_DAT_02641920].is_user_sample == 0)) &&
-       (g_SfxSamples[_DAT_02641920].locked_length == 0)) {
-      local_14 = g_SfxSamples + _DAT_02641920;
+    if ((((g_SfxSamples[g_INT_02641920].taken == 0) && (g_SfxSamples[g_INT_02641920].ref_count == 0)
+         ) && (g_SfxSamples[g_INT_02641920].is_user_sample == 0)) &&
+       (g_SfxSamples[g_INT_02641920].locked_length == 0)) {
+      local_14 = g_SfxSamples + g_INT_02641920;
       goto LAB_0054c832;
     }
     iVar4 = iVar4 + 1;
@@ -45,9 +43,9 @@ LAB_0054c832:
     return (CSfxSample *)0x0;
   }
   engine_dosio_cpp_splitPath_FUN_00461070(filename,(char *)0x0,(char *)0x0,(char *)0x0,local_118);
-  iVar4 = _stricmp(local_118,&DAT_005e7ef2);
+  iVar4 = _stricmp(local_118,"mp3");
   if ((iVar4 == 0) ||
-     (iVar4 = _stricmp(local_118,&DAT_005e7ef6), iVar4 == 0)) {
+     (iVar4 = _stricmp(local_118,".mp3"), iVar4 == 0)) {
     iVar4 = engine_dosio_cpp_getFileSize_FUN_00460aa0("sound",filename);
     if (iVar4 < 1) goto LAB_0054cb48;
     this_ptr = operator_new(0x8630);
@@ -57,8 +55,8 @@ LAB_0054c832:
     }
     sfx_sample->mp3_data = pCVar3;
     if (pCVar3 == (CMP3Decoder *)0x0) {
-      _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-      _DAT_01d046a4 = 0x461;
+      g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+      g_INT_01d046a4 = 0x461;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory.");
     }
     sound_mp3_cpp_CMP3Decoder_openFile_FUN_00509cd0(sfx_sample->mp3_data,filename);
@@ -83,7 +81,7 @@ LAB_0054c832:
     sfx_sample->taken = 0;
     iVar4 = (sfx_sample->sample_info).sample_rate;
     sfx_sample->ref_count = 0;
-    fVar2 = (float)iVar4 * 0x40000000;
+    fVar2 = (float)iVar4 * 2.0f;
     sfx_sample->buffer_id = 0;
     sfx_sample->is_user_sample = 0;
     dVar6 = round((double)fVar2);
@@ -120,7 +118,7 @@ LAB_0054c832:
     sfx_sample->taken = 0;
     iVar4 = (sfx_sample->sample_info).sample_rate;
     sfx_sample->ref_count = 0;
-    fVar2 = (float)iVar4 * 0x40000000;
+    fVar2 = (float)iVar4 * 2.0f;
     sfx_sample->buffer_id = 0;
     sfx_sample->is_user_sample = 0;
     dVar6 = round((double)fVar2);

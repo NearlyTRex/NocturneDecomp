@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 217,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "wrong_global"
     ],
-    "total_lines": 198
+    "total_lines": 194
   },
   "cross_references": [],
   "function": {
@@ -51,14 +50,14 @@
     },
     {
       "addr": "01c59db0",
-      "name": "DAT_01c59db0",
-      "type": "undefined4",
+      "name": "g_INT_01c59db0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c59e74",
-      "name": "DAT_01c59e74",
-      "type": "undefined4",
+      "name": "g_INT_01c59e74",
+      "type": "int",
       "value": null
     }
   ],
@@ -171,124 +170,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Scalar global g_CVector3f_01c59e78 accessed via (&g_CVector3f_01c59e78)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c59e84 (at 0x01c59e84, +12 bytes).",
+      "line": 25,
+      "match": "g_CVector3f_01c59e78",
+      "severity": "moderate",
+      "text": "(&g_CVector3f_01c59e78)[g_INT_01c59e74].x = point1_ptr->x;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c59db4",
-      "severity": "mild",
-      "text": "point1_ptr = (CVector3f *)&DAT_01c59db4;",
-      "type": "undefined_data"
+      "description": "Scalar global g_CVector3f_01c59e78 accessed via (&g_CVector3f_01c59e78)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c59e84 (at 0x01c59e84, +12 bytes).",
+      "line": 26,
+      "match": "g_CVector3f_01c59e78",
+      "severity": "moderate",
+      "text": "(&g_CVector3f_01c59e78)[g_INT_01c59e74].y = point1_ptr->y;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c59dbc",
-      "severity": "mild",
-      "text": "if (z_far < *(float *)(&DAT_01c59dbc + uVar2 * 0xc)) {",
-      "type": "undefined_data"
+      "description": "Scalar global g_CVector3f_01c59e78 accessed via (&g_CVector3f_01c59e78)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c59e84 (at 0x01c59e84, +12 bytes).",
+      "line": 27,
+      "match": "g_CVector3f_01c59e78",
+      "severity": "moderate",
+      "text": "(&g_CVector3f_01c59e78)[g_INT_01c59e74].z = point1_ptr->z;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01c59e78",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c59e78 + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01c59e78",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c59e78 + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c59e7c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c59e7c + iVar3) = point1_ptr->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01c59e80",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c59e80 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01c59db4",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c59db4 + uVar2 * 0xc),point1_ptr,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_CVector3f_01c59e78 accessed via (&g_CVector3f_01c59e78)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c59e84 (at 0x01c59e84, +12 bytes).",
       "line": 37,
-      "match": "DAT_01c59e78",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c59e78 + _DAT_01c59e74 * 0xc),0.0,0.0,-1.0,(double)z_far);",
-      "type": "undefined_data"
+      "match": "g_CVector3f_01c59e78",
+      "severity": "moderate",
+      "text": "(&g_CVector3f_01c59e78)[g_INT_01c59e74].x = point1_ptr->x;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_01c59e78",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c59e78 + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
+      "description": "Scalar global g_CVector3f_01c59e78 accessed via (&g_CVector3f_01c59e78)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c59e84 (at 0x01c59e84, +12 bytes).",
+      "line": 38,
+      "match": "g_CVector3f_01c59e78",
+      "severity": "moderate",
+      "text": "(&g_CVector3f_01c59e78)[g_INT_01c59e74].y = point1_ptr->y;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_01c59e78",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c59e78 + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c59e7c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c59e7c + iVar3) = point1_ptr->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01c59e80",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c59e80 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_01c59db4",
-      "severity": "mild",
-      "text": "(point1_ptr,(CVector3f *)(&DAT_01c59db4 + uVar2 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c59e78",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c59e78 + _DAT_01c59e74 * 0xc),0.0,0.0,-1.0,(double)z_far);",
-      "type": "undefined_data"
+      "description": "Scalar global g_CVector3f_01c59e78 accessed via (&g_CVector3f_01c59e78)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c59e84 (at 0x01c59e84, +12 bytes).",
+      "line": 39,
+      "match": "g_CVector3f_01c59e78",
+      "severity": "moderate",
+      "text": "(&g_CVector3f_01c59e78)[g_INT_01c59e74].z = point1_ptr->z;",
+      "type": "wrong_global"
     }
   ]
 }

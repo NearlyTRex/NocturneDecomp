@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_carved_cpp_CCarved_setup_FUN_00425ab0(CCarved *this_ptr)
 
@@ -79,7 +78,7 @@ void __cdecl core_carved_cpp_CCarved_setup_FUN_00425ab0(CCarved *this_ptr)
   core_enemy_cpp_CEnemy_setup_FUN_00489110(&this_ptr->base);
   if ((-1 < this_ptr->part_indices[4]) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {
     (this_ptr->base).base.collision_cylinder_top =
-         (this_ptr->base).base.model.bounding_box.max.y + (float)_DAT_005b7ab7;
+         (this_ptr->base).base.model.bounding_box.max.y + (float)-0.75;
   }
   this_ptr->is_female = 0;
   this_ptr->sfx_handles[0] = 0;

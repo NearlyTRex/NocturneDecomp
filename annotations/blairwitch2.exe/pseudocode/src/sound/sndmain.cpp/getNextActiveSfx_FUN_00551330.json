@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 52,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 54
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -38,13 +38,13 @@
   "globals": [
     {
       "addr": "0263cf80",
-      "name": "DAT_0263cf80",
+      "name": "g_CSfxSlot_ARRAY_0263cf1c[0].playback_state",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0263d09c",
-      "name": "DAT_0263d09c",
+      "name": "g_CSfxSlot_ARRAY_0263cf1c[1].playback_state",
       "type": "undefined4",
       "value": null
     }
@@ -142,28 +142,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_0263cf84 + iVar1) != 0) && (*(int *)(&DAT_0263cf80 + iVar1) != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0263cf80",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_0263cf84 + iVar1) != 0) && (*(int *)(&DAT_0263cf80 + iVar1) != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 13,
-      "match": "DAT_0263cf80",
-      "severity": "mild",
-      "text": "return *(int *)(&DAT_0263cf80 + iVar1) << 6 | uVar2;",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_0263cf1c",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_CSfxSlot_ARRAY_0263cf1c[0].distance_to_speakers + iVar2 + -8) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_0263cf1c",
+      "severity": "moderate",
+      "text": "(iVar1 = *(int *)((int)g_CSfxSlot_ARRAY_0263cf1c[0].distance_to_speakers + iVar2 + -0xc),",
+      "type": "pointer_cast"
     }
   ]
 }

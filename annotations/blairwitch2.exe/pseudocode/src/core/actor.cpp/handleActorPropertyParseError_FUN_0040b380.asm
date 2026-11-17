@@ -24,14 +24,14 @@
 ;   TerminatedCString s_unknown_005caa1c
 ;   TerminatedCString s_unknown_005caa26
 ;   TerminatedCString s_unknown_005caa30
-;   undefined4 DAT_005caa3a
-;   undefined4 DAT_005caa3f
+;   TerminatedCString s_load_005caa3a
+;   TerminatedCString s_save_005caa3f
 ;   TerminatedCString s_core_actor_cpp_005caa44
 ;   TerminatedCString s_Error_sing_actor_propert_005caa56
-;   undefined4 DAT_007bc038
-;   undefined4 DAT_007bc03c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_007bc038
+;   CDemonActor* g_CDemonActor_PTR_007bc03c
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
@@ -48,7 +48,7 @@ section .text
     PUSH EBP                            ; 0040b383
     MOV ESI,dword ptr [ESP + 0x18]      ; 0040b384
     MOV EAX,0x5caa26                    ; 0040b388 | = "(unknown)"
-    MOV EDX,dword ptr [0x007bc03c]      ; 0040b38d | DAT_007bc03c
+    MOV EDX,dword ptr [0x007bc03c]      ; 0040b38d | g_CDemonActor_PTR_007bc03c
     MOV EBX,0x5caa1c                    ; 0040b393 | = "(unknown)"
     TEST EDX,EDX                        ; 0040b398
     JNZ 0x0040b3eb                      ; 0040b39a
@@ -58,25 +58,25 @@ section .text
     JNZ 0x0040b3a5                      ; 0040b39e
         ;   XREF to: 0040b3a5 (CONDITIONAL_JUMP)  ; LAB_0040b3a5
     MOV ESI,0x5caa30                    ; 0040b3a0 | = "(unknown)"
-    MOV ECX,dword ptr [0x007bc038]      ; 0040b3a5 | DAT_007bc038
+    MOV ECX,dword ptr [0x007bc038]      ; 0040b3a5 | g_INT_007bc038
         ;   Label: LAB_0040b3a5
-    MOV EDX,0x5caa3a                    ; 0040b3ab | DAT_005caa3a
+    MOV EDX,0x5caa3a                    ; 0040b3ab | = "load"
     CMP ECX,0x2                         ; 0040b3b0
     JNZ 0x0040b3ba                      ; 0040b3b3
         ;   XREF to: 0040b3ba (CONDITIONAL_JUMP)  ; LAB_0040b3ba
-    MOV EDX,0x5caa3f                    ; 0040b3b5 | DAT_005caa3f
+    MOV EDX,0x5caa3f                    ; 0040b3b5 | = "save"
     MOV ECX,dword ptr [ESP + 0x14]      ; 0040b3ba
         ;   Label: LAB_0040b3ba
     PUSH ECX                            ; 0040b3be
     PUSH ESI                            ; 0040b3bf | = "(unknown)"
     PUSH EAX                            ; 0040b3c0 | = "(unknown)"
     PUSH EBX                            ; 0040b3c1 | = "(unknown)"
-    PUSH EDX                            ; 0040b3c2 | DAT_005caa3f | DAT_005caa3a
+    PUSH EDX                            ; 0040b3c2 | = "save" | s_load_005caa3a
     MOV EDI,0x5caa44                    ; 0040b3c3 | = "..\\core\\actor.cpp"
     MOV EBP,0x85e                       ; 0040b3c8
     PUSH 0x5caa56                       ; 0040b3cd | = "Error %sing actor property.\nActor na..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0040b3d2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0040b3d8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0040b3d2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0040b3d8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040b3de
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x18                        ; 0040b3e3

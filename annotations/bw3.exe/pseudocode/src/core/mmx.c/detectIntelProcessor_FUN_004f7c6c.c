@@ -8,7 +8,6 @@
 
 /* WARNING: Removing unreachable block (ram,0x004f7ce7) */
 /* WARNING: Removing unreachable block (ram,0x004f7caf) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mmx_c_detectIntelProcessor_FUN_004f7c6c(void)
 
@@ -43,14 +42,14 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004f7c6c(void)
            (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
            (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
   uVar6 = uVar10 ^ 0x40000;
-  DAT_00600698 = 3;
+  g_UCHAR_00600698 = '\x03';
   if (((uint)((uVar6 & 0x4000) != 0) * 0x4000 | (uint)((uVar6 & 0x800) != 0) * 0x800 |
        (uint)((uVar6 & 0x200) != 0) * 0x200 | (uint)((uVar6 & 0x100) != 0) * 0x100 |
        (uint)((uVar6 & 0x80) != 0) * 0x80 | (uint)((uVar6 & 0x40) != 0) * 0x40 |
        (uint)((uVar6 & 0x10) != 0) * 0x10 | (uint)((uVar6 & 4) != 0) * 4 | (uint)((uVar6 & 1) != 0)
        | (uint)((uVar6 & 0x200000) != 0) * 0x200000 | (uint)((uVar6 & 0x40000) != 0) * 0x40000) !=
       uVar10) {
-    DAT_00600698 = 4;
+    g_UCHAR_00600698 = '\x04';
     uVar6 = uVar10 ^ 0x200000;
     if (((uint)((uVar6 & 0x4000) != 0) * 0x4000 | (uint)((uVar6 & 0x800) != 0) * 0x800 |
          (uint)((uVar6 & 0x200) != 0) * 0x200 | (uint)((uVar6 & 0x100) != 0) * 0x100 |
@@ -58,11 +57,11 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004f7c6c(void)
          (uint)((uVar6 & 0x10) != 0) * 0x10 | (uint)((uVar6 & 4) != 0) * 4 |
          (uint)((uVar6 & 1) != 0) | (uint)((uVar6 & 0x200000) != 0) * 0x200000 |
         (uint)((uVar6 & 0x40000) != 0) * 0x40000) != uVar10) {
-      DAT_0060069b = 1;
+      g_BYTE_0060069b = 1;
       piVar3 = (int *)cpuid_basic_info(0);
       "GenuineIntel\nnJ"._12_4_ = piVar3[1];
-      _DAT_00600690 = piVar3[2];
-      _DAT_00600694 = piVar3[3];
+      g_INT_00600690 = piVar3[2];
+      g_INT_00600694 = piVar3[3];
       iVar7 = 1;
       pcVar8 = "GenuineIntel\nnJ" + 0xc;
       pcVar9 = "GenuineIntel\nnJ";
@@ -74,13 +73,13 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004f7c6c(void)
         pcVar8 = pcVar8 + 1;
         pcVar9 = pcVar9 + 1;
       } while (cVar1 == cVar2);
-      if ((iVar7 == 0) && (DAT_0060069c = 1, 0 < *piVar3)) {
+      if ((iVar7 == 0) && (g_UCHAR_0060069c = '\x01', 0 < *piVar3)) {
         puVar4 = (uint *)cpuid_Version_info(1);
-        DAT_0060069d = puVar4[2];
+        g_UINT_0060069d = puVar4[2];
         bVar5 = (byte)*puVar4;
-        DAT_0060069a = bVar5 & 0xf;
-        DAT_00600699 = bVar5 >> 4;
-        DAT_00600698 = (byte)((uint)*puVar4 >> 8) & 0xf;
+        g_UCHAR_0060069a = bVar5 & 0xf;
+        g_UCHAR_00600699 = bVar5 >> 4;
+        g_UCHAR_00600698 = (byte)((uint)*puVar4 >> 8) & 0xf;
       }
     }
   }

@@ -10,8 +10,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_0048aaf0 at 0048ab4b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -56,8 +56,8 @@ section .text
     MOV EDI,0x5db7f5                    ; 0048acad
     MOV EBP,0xf9                        ; 0048acb2
     PUSH 0x5db808                       ; 0048acb7
-    MOV dword ptr [0x01d1d400],EDI      ; 0048acbc | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0048acc2 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0048acbc | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0048acc2 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048acc8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048accd

@@ -10,8 +10,8 @@
 ;   core_armour.cpp_factoryFuncArmour_FUN_0040ee10 at 0040ee23
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2678
-;   undefined4 DAT_005f267c
+;   float g_FLOAT_005f2678 = 50
+;   float g_FLOAT_005f267c = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
@@ -38,8 +38,8 @@ section .text
     MOV dword ptr [EAX + 0x2b0],0x5f2684 ; 0040ee63
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0 ; 0040ee6d
         ;   XREF to: 005478b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x005f2678]          ; 0040ee72 | DAT_005f2678
-    FLD float ptr [0x005f267c]          ; 0040ee78 | DAT_005f267c
+    FLD float ptr [0x005f2678]          ; 0040ee72 | g_FLOAT_005f2678
+    FLD float ptr [0x005f267c]          ; 0040ee78 | g_FLOAT_005f267c
     MOV dword ptr [EBX + 0x3430],0x3f19999a ; 0040ee7e
     ADD ESP,0x8                         ; 0040ee88
     MOV dword ptr [EBX + 0x3434],0x40000000 ; 0040ee8b

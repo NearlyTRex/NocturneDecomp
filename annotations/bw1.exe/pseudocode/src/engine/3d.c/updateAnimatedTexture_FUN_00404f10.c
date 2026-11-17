@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(SMRGLAnimatedTexture *texture)
 
 {
@@ -17,7 +15,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(SMR
   char *pcVar4;
   SMRGLTextureBasic SStack_28;
   
-  iVar2 = texture->accumulated_time + _DAT_01c43530;
+  iVar2 = texture->accumulated_time + g_INT_01c43530;
   texture->accumulated_time = iVar2;
   iVar2 = (iVar2 / texture->frame_duration) % texture->frame_count;
   if (iVar2 != texture->current_frame) {

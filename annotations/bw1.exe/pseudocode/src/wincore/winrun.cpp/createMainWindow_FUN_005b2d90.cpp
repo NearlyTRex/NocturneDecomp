@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_createMainWindow_FUN_005b2d90(void)
 
 {
-  _DAT_02c9be68 =
+  g_HWND_02c9be68 =
        CreateWindowExA(0x40000,PTR_s_Nocturne_006260dc,PTR_s_Nocturne_006260e0,0x80000000,0,0,0,0,
-                       (HWND)0x0,(HMENU)0x0,_DAT_02c9be6c,(LPVOID)0x0);
-  if (_DAT_02c9be68 != (HWND)0x0) {
+                       (HWND)0x0,(HMENU)0x0,(HINSTANCE)g_INT_02c9be6c,(LPVOID)0x0);
+  if (g_HWND_02c9be68 != (HWND)0x0) {
     return;
   }
                     /* WARNING: Subroutine does not return */

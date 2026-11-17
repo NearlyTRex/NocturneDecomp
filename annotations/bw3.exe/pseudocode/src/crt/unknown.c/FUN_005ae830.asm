@@ -13,8 +13,8 @@
 ;   void* PTR_WriteConsoleA_005b3688 = 001b42fe
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a8 = 005a7f44
-;   undefined4 DAT_00607b18
-;   undefined4 DAT_00607b54
+;   void* g_PTR_00607b18 = 00000000
+;   void* g_PTR_00607b54 = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f44
@@ -29,17 +29,17 @@ section .text
         ;   Label: crt_unknown.c_FUN_005ae830
     SUB ESP,0x8                         ; 005ae831
     MOV EBX,dword ptr [ESP + 0x10]      ; 005ae834
-    MOV EDX,dword ptr [0x00607b54]      ; 005ae838 | DAT_00607b54
+    MOV EDX,dword ptr [0x00607b54]      ; 005ae838 | g_PTR_00607b54
     MOV byte ptr [ESP + 0x4],BL         ; 005ae83e
     TEST EDX,EDX                        ; 005ae842
     JZ 0x005ae85e                       ; 005ae844
         ;   XREF to: 005ae85e (CONDITIONAL_JUMP)  ; LAB_005ae85e
     PUSH 0x1                            ; 005ae846
-    CALL dword ptr [0x00607b18]         ; 005ae848 | DAT_00607b18
+    CALL dword ptr [0x00607b18]         ; 005ae848 | g_PTR_00607b18
     ADD ESP,0x4                         ; 005ae84e
     PUSH EBX                            ; 005ae851
     PUSH EAX                            ; 005ae852
-    CALL dword ptr [0x00607b54]         ; 005ae853 | DAT_00607b54
+    CALL dword ptr [0x00607b54]         ; 005ae853 | g_PTR_00607b54
     ADD ESP,0x8                         ; 005ae859
     JMP 0x005ae88f                      ; 005ae85c
         ;   XREF to: 005ae88f (UNCONDITIONAL_JUMP)  ; LAB_005ae88f

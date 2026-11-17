@@ -2,21 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 231,
+    "complexity_score": 150,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 126,
-    "suspect_count": 8,
+    "pseudocode_lines": 125,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 450
+    "total_lines": 449
   },
   "cross_references": [
     {
@@ -124,8 +120,8 @@
     },
     {
       "addr": "005ca77b",
-      "name": "DAT_005ca77b",
-      "type": "undefined4",
+      "name": "s_d_005ca77b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -148,62 +144,62 @@
     },
     {
       "addr": "005ca821",
-      "name": "DAT_005ca821",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ca821",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005ca829",
-      "name": "DAT_005ca829",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ca829",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005ca831",
-      "name": "DAT_005ca831",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ca831",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "00600284",
-      "name": "DAT_00600284",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_00600284",
+      "type": "CKeys*",
+      "value": "01d70a78"
     },
     {
       "addr": "01d70a78",
-      "name": "DAT_01d70a78",
-      "type": "undefined4",
+      "name": "g_PTR_01d70a78",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da6474",
-      "name": "DAT_01da6474",
-      "type": "undefined4",
+      "name": "g_INT_01da6474",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da6478",
-      "name": "DAT_01da6478",
-      "type": "undefined4",
+      "name": "g_UINT_01da6478",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01da6480",
-      "name": "DAT_01da6480",
-      "type": "undefined4",
+      "name": "g_INT_01da6480",
+      "type": "int",
       "value": null
     }
   ],
@@ -461,56 +457,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005ca77b",
-      "severity": "mild",
-      "text": "_sprintf(local_194,&DAT_005ca77b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 100,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 100,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 117,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 66,
+      "line": 64,
       "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.use_item;",
@@ -518,7 +466,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 96,
+      "line": 94,
       "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.use_item;",

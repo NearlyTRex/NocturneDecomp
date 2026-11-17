@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 40,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 24
+    "total_lines": 23
   },
   "cross_references": [],
   "function": {
@@ -38,14 +37,14 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bcbc",
-      "name": "DAT_0264bcbc",
-      "type": "undefined4",
+      "name": "g_PTR_0264bcbc",
+      "type": "void*",
       "value": null
     }
   ],
@@ -105,19 +104,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
+      "line": 7,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bcbc != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_PTR_0264bcbc)();",
       "type": "unresolved_funcptr"
     }
   ]

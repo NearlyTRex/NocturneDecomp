@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_0050fe80(char *key)
 
 {
@@ -16,21 +14,21 @@ char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_0050fe80(char *key)
   char *pcVar3;
   int upper_bound;
   
-  if (_DAT_01d63254 == 0) {
+  if (g_INT_01d63254 == 0) {
     return key;
   }
-  upper_bound = _DAT_01d63258 + -1;
+  upper_bound = g_INT_01d63258 + -1;
   if (upper_bound < 0) {
     return key;
   }
   iVar1 = upper_bound / 2;
-  iVar2 = _strcmp(key,*(char **)(iVar1 * 4 + 0x1d6325c));
+  iVar2 = _strcmp(key,g_CHAR_PTR_ARRAY_01d6325c[iVar1]);
   if (iVar2 < 0) {
     pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_0050fe00(key,0,iVar1 + -1);
     return pcVar3;
   }
   if (iVar2 < 1) {
-    return *(char **)(iVar1 * 4 + 0x1d63a2c);
+    return g_CHAR_PTR_ARRAY_01d63a2c[iVar1];
   }
   pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_0050fe00(key,iVar1 + 1,upper_bound);
   return pcVar3;

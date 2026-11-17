@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_getColor4f_FUN_004f8fa0(float *alpha,float *red,float *green,float *blue)
 
 {
-  *alpha = _DAT_01d09860;
-  *red = _DAT_01d0d2d8;
-  *green = _DAT_01d0d2dc;
-  *blue = _DAT_01d0d2e0;
+  *alpha = g_FLOAT_01d09860;
+  *red = g_FLOAT_01d0d2d8;
+  *green = g_FLOAT_01d0d2dc;
+  *blue = g_FLOAT_01d0d2e0;
   return;
 }

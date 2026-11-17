@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_confused_while_walking_005cbcac
-;   undefined4 DAT_005f3510
+;   float g_FLOAT_005f3510 = 4
 ;   CConsole* g_CConsolePtr = 007c158c
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
@@ -225,7 +225,7 @@ section .text
     ADD ESP,0x8                         ; 00415055
     LEA EAX,[EBX + 0x118a8]             ; 00415058
     PUSH EAX                            ; 0041505e
-    MOV ECX,dword ptr [0x006141f0]      ; 0041505f | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 0041505f | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 00415065
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00415066
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -242,7 +242,7 @@ section .text
     FLD float ptr [EBX + 0x10c78]       ; 0041508f
     FADD float ptr [EBP + 0x18]         ; 00415095
     FST float ptr [EBX + 0x10c78]       ; 00415098
-    FCOMP float ptr [0x005f3510]        ; 0041509e | DAT_005f3510
+    FCOMP float ptr [0x005f3510]        ; 0041509e | g_FLOAT_005f3510
     FNSTSW AX                           ; 004150a4
     SAHF                                ; 004150a6
     JA 0x00415103                       ; 004150a7
@@ -294,7 +294,7 @@ section .text
     PUSH 0x0                            ; 004150fc
     JMP 0x00414efa                      ; 004150fe
         ;   XREF to: 00414efa (UNCONDITIONAL_JUMP)  ; LAB_00414efa
-    MOV EAX,[0x005f3510]                ; 00415103 | DAT_005f3510
+    MOV EAX,[0x005f3510]                ; 00415103 | g_FLOAT_005f3510
         ;   Label: LAB_00415103
     MOV dword ptr [EBX + 0x10c78],EAX   ; 00415108
     MOV ESP,EBP                         ; 0041510e

@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_0047a094 = 0047a154
 ;   undefined1* PTR_caseD_3_0047a09c = 0047a139
-;   undefined4 DAT_01c59cec
-;   undefined4 DAT_01c59db0
+;   int g_INT_01c59cec
+;   int g_INT_01c59db0
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00479970
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 0047a0a4
     SUB ESP,0x8                         ; 0047a0a6
     AND ESP,0xfffffff8                  ; 0047a0a9
-    MOV EBX,dword ptr [0x01c59db0]      ; 0047a0ac | DAT_01c59db0
+    MOV EBX,dword ptr [0x01c59db0]      ; 0047a0ac | g_INT_01c59db0
     MOV EDX,dword ptr [EBP + 0x14]      ; 0047a0b2
     MOV dword ptr [ESP],EDX             ; 0047a0b5
-    MOV EDX,dword ptr [0x01c59cec]      ; 0047a0b8 | DAT_01c59cec
+    MOV EDX,dword ptr [0x01c59cec]      ; 0047a0b8 | g_INT_01c59cec
     XOR EDI,EDI                         ; 0047a0be
     TEST EDX,EDX                        ; 0047a0c0
     JLE 0x0047a147                      ; 0047a0c2
         ;   XREF to: 0047a147 (CONDITIONAL_JUMP)  ; LAB_0047a147
     MOV ESI,0x1c59cf0                   ; 0047a0c8
-    MOV EAX,[0x01c59cec]                ; 0047a0cd | DAT_01c59cec
+    MOV EAX,[0x01c59cec]                ; 0047a0cd | g_INT_01c59cec
         ;   Label: LAB_0047a0cd
     LEA ECX,[EDI + 0x1]                 ; 0047a0d2
     CMP ECX,EAX                         ; 0047a0d5
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 0047a135
     INC EBX                             ; 0047a138
         ;   Label: LAB_0047a138
-    MOV ECX,dword ptr [0x01c59cec]      ; 0047a139 | DAT_01c59cec
+    MOV ECX,dword ptr [0x01c59cec]      ; 0047a139 | g_INT_01c59cec
         ;   Label: caseD_3
     INC EDI                             ; 0047a13f
     ADD ESI,0xc                         ; 0047a140
     CMP EDI,ECX                         ; 0047a143
     JL 0x0047a0cd                       ; 0047a145
         ;   XREF to: 0047a0cd (CONDITIONAL_JUMP)  ; LAB_0047a0cd
-    MOV dword ptr [0x01c59db0],EBX      ; 0047a147 | DAT_01c59db0
+    MOV dword ptr [0x01c59db0],EBX      ; 0047a147 | g_INT_01c59db0
         ;   Label: LAB_0047a147
     MOV ESP,EBP                         ; 0047a14d
     POP EBP                             ; 0047a14f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 0047a176
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0047a177
     PUSH EAX                            ; 0047a17b
-    MOV dword ptr [0x01c59db0],EBX      ; 0047a17c | DAT_01c59db0
+    MOV dword ptr [0x01c59db0],EBX      ; 0047a17c | g_INT_01c59db0
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047a182
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59db0]      ; 0047a187 | DAT_01c59db0
+    MOV EBX,dword ptr [0x01c59db0]      ; 0047a187 | g_INT_01c59db0
     ADD ESP,0x2c                        ; 0047a18d
     JMP 0x0047a138                      ; 0047a190
         ;   XREF to: 0047a138 (UNCONDITIONAL_JUMP)  ; LAB_0047a138
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 0047a1d2
     PUSH ECX                            ; 0047a1d6
     PUSH EDX                            ; 0047a1d7
-    MOV dword ptr [0x01c59db0],EBX      ; 0047a1d8 | DAT_01c59db0
+    MOV dword ptr [0x01c59db0],EBX      ; 0047a1d8 | g_INT_01c59db0
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047a1de
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59db0]      ; 0047a1e3 | DAT_01c59db0
+    MOV EBX,dword ptr [0x01c59db0]      ; 0047a1e3 | g_INT_01c59db0
     ADD ESP,0x2c                        ; 0047a1e9
     JMP 0x0047a138                      ; 0047a1ec
         ;   XREF to: 0047a138 (UNCONDITIONAL_JUMP)  ; LAB_0047a138

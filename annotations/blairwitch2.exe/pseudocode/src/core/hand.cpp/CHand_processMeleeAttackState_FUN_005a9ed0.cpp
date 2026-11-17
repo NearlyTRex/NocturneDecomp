@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0(CHand *this_ptr,float delta_time)
 
@@ -31,8 +30,8 @@ void __cdecl core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0(CHand *thi
      (fVar5 = (this_ptr->base).base.base.base.location.position.x -
               (pCVar1->base).location.position.x,
      fVar2 = (this_ptr->base).base.base.base.location.position.z -
-             (pCVar1->base).location.position.z, _DAT_0060088c < SQRT(fVar2 * fVar2 + fVar5 * fVar5)
-     )) {
+             (pCVar1->base).location.position.z,
+     5.0f < SQRT(fVar2 * fVar2 + fVar5 * fVar5))) {
     core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
               (&(this_ptr->base).state_machine,"Sleeping");
     return;
@@ -54,7 +53,7 @@ LAB_005a9f63:
   if ((iVar6 != 3) && (iVar6 != 4)) {
     return;
   }
-  if (fVar5 <= (float)_DAT_005f0a53) {
+  if (fVar5 <= (float)0.90000000000000002) {
     return;
   }
   iVar6 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);

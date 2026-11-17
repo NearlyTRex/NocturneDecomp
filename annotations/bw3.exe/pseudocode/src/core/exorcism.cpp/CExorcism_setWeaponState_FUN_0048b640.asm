@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   weapon_state
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6e35c
+;   uint g_UINT_01c6e35c
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_setWeaponState_FUN_0057b7f0
@@ -30,14 +30,14 @@ section .text
         ;   XREF to: 0048b67d (CONDITIONAL_JUMP)  ; LAB_0048b67d
     PUSH EDI                            ; 0048b656
     PUSH ESI                            ; 0048b657
-    MOV ESI,dword ptr [0x01c6e35c]      ; 0048b658 | DAT_01c6e35c
+    MOV ESI,dword ptr [0x01c6e35c]      ; 0048b658 | g_UINT_01c6e35c
     PUSH ESI                            ; 0048b65e
     XOR EDI,EDI                         ; 0048b65f
     CALL sound_sndmain.cpp_killSfx_FUN_00556be0 ; 0048b661
         ;   XREF to: 00556be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00556be0(uint sfx_handle)
     ADD ESP,0x4                         ; 0048b666
     MOV dword ptr [EBX + 0x598],EDI     ; 0048b669
-    MOV dword ptr [0x01c6e35c],EDI      ; 0048b66f | DAT_01c6e35c
+    MOV dword ptr [0x01c6e35c],EDI      ; 0048b66f | g_UINT_01c6e35c
     MOV dword ptr [EBX + 0x594],EDI     ; 0048b675
     POP ESI                             ; 0048b67b
     POP EDI                             ; 0048b67c

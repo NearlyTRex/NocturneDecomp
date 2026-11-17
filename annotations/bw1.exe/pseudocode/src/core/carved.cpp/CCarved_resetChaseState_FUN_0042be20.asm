@@ -21,7 +21,7 @@
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429bf3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fd46c
+;   float g_FLOAT_005fd46c = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -83,7 +83,7 @@ section .text
     FMUL ST0                            ; 0042be9e
     FADDP                               ; 0042bea0
     FSQRT                               ; 0042bea2
-    FCOMP float ptr [0x005fd46c]        ; 0042bea4 | DAT_005fd46c
+    FCOMP float ptr [0x005fd46c]        ; 0042bea4 | g_FLOAT_005fd46c
     FNSTSW AX                           ; 0042beaa
     SAHF                                ; 0042beac
     JNC 0x0042bf18                      ; 0042bead

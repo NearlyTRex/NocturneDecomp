@@ -19,15 +19,15 @@
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4580
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cb309
-;   undefined4 DAT_005cb30a
-;   undefined4 DAT_005cb30d
-;   undefined4 DAT_005cb30e
-;   undefined4 DAT_005cb312
+;   char g_CHAR_005cb309 = \x00
+;   TerminatedCString s_rt_005cb30a
+;   char g_CHAR_005cb30d = \x00
+;   TerminatedCString s_d_005cb30e
+;   TerminatedCString s_d_005cb312
 ;   TerminatedCString s_support_newmsg_cpp_005cb316
 ;   TerminatedCString s_Unknown_message_file_ver_005cb32c
 ;   TerminatedCString s_anon_005cb349
-;   undefined4 DAT_005cb352
+;   TerminatedCString s_anon_005cb352
 ;   TerminatedCString s_anon_005cb354
 ;   TerminatedCString s_support_newmsg_cpp_005cb366
 ;   TerminatedCString s_Error_reading_s_005cb37c
@@ -60,7 +60,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x320]     ; 005084ca
     PUSH EBP                            ; 005084d1
     XOR EDX,EDX                         ; 005084d2
-    PUSH 0x5cb309                       ; 005084d4 | DAT_005cb309
+    PUSH 0x5cb309                       ; 005084d4 | g_CHAR_005cb309
     MOV dword ptr [ESP + 0x308],EDX     ; 005084d9
     CALL engine_dosio.cpp_getFileSize_FUN_004657f0 ; 005084e0
         ;   XREF to: 004657f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004657f0(char * directory, char * filename)
@@ -76,10 +76,10 @@ section .text
     POP ESI                             ; 005084f6
     POP EBX                             ; 005084f7
     RET                                 ; 005084f8
-    PUSH 0x5cb30a                       ; 005084f9 | DAT_005cb30a
+    PUSH 0x5cb30a                       ; 005084f9 | = "rt"
         ;   Label: LAB_005084f9
     PUSH EBP                            ; 005084fe
-    PUSH 0x5cb30d                       ; 005084ff | DAT_005cb30d
+    PUSH 0x5cb30d                       ; 005084ff | g_CHAR_005cb30d
     CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00508504
         ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 00508509
@@ -103,7 +103,7 @@ section .text
     ADD ESP,0xc                         ; 00508539
     LEA EAX,[ESP + 0x300]               ; 0050853c
     PUSH EAX                            ; 00508543
-    PUSH 0x5cb30e                       ; 00508544 | DAT_005cb30e
+    PUSH 0x5cb30e                       ; 00508544 | = "%d\n"
     PUSH ESI                            ; 00508549
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0050854a
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -115,8 +115,8 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005a3f00 ; 00508560
         ;   XREF to: 005a3f00 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005a3f00(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00508565
-    PUSH 0x1dd4890                      ; 00508568 | DAT_01dd4890
-    PUSH 0x5cb312                       ; 0050856d | DAT_005cb312
+    PUSH 0x1dd4890                      ; 00508568 | g_INT_01dd4890
+    PUSH 0x5cb312                       ; 0050856d | = "%d\n"
     PUSH ESI                            ; 00508572
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00508573
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -132,13 +132,13 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005a3f00 ; 00508597
         ;   XREF to: 005a3f00 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005a3f00(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0050859c
-    PUSH 0x6034c0                       ; 0050859f | DAT_006034c0
+    PUSH 0x6034c0                       ; 0050859f | g_CHAR_ARRAY_006034c0
     PUSH 0x5cb349                       ; 005085a4 | = "\"%[^\"]\"\n"
     PUSH EBX                            ; 005085a9
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 005085aa
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005085af
-    PUSH 0x5cb352                       ; 005085b2 | DAT_005cb352
+    PUSH 0x5cb352                       ; 005085b2 | = " "
         ;   Label: LAB_005085b2
     PUSH EBX                            ; 005085b7
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 005085b8
@@ -154,7 +154,7 @@ section .text
     PUSH EBX                            ; 005085d6
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 005085d7
         ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
-    MOV EDI,dword ptr [0x01dd4898]      ; 005085dc | DAT_01dd4898
+    MOV EDI,dword ptr [0x01dd4898]      ; 005085dc | g_INT_01dd4898
     ADD ESP,0x4                         ; 005085e2
     TEST EDI,EDI                        ; 005085e5
     JLE 0x00508620                      ; 005085e7
@@ -164,9 +164,9 @@ section .text
     ADD EAX,0x4                         ; 005085f2
         ;   Label: LAB_005085f2
     MOV EDX,dword ptr [EAX + 0x1dd5838] ; 005085f5
-    MOV dword ptr [EAX + 0x1dd4898],EDX ; 005085fb | DAT_01dd48a0
+    MOV dword ptr [EAX + 0x1dd4898],EDX ; 005085fb | g_CHAR_PTR_ARRAY_01dd489c[1]
     MOV EDX,dword ptr [EAX + 0x1dd6008] ; 00508601
-    MOV dword ptr [EAX + 0x1dd5068],EDX ; 00508607 | DAT_01dd5070
+    MOV dword ptr [EAX + 0x1dd5068],EDX ; 00508607 | g_CHAR_PTR_ARRAY_01dd506c[1]
     CMP EAX,EBP                         ; 0050860d
     JL 0x005085f2                       ; 0050860f
         ;   XREF to: 005085f2 (CONDITIONAL_JUMP)  ; LAB_005085f2
@@ -176,23 +176,23 @@ section .text
     XOR EBP,EBP                         ; 00508620
         ;   Label: LAB_00508620
     MOV dword ptr [ESP + 0x308],EBP     ; 00508622
-    MOV EAX,[0x01dd4898]                ; 00508629 | DAT_01dd4898
+    MOV EAX,[0x01dd4898]                ; 00508629 | g_INT_01dd4898
         ;   Label: LAB_00508629
     DEC EAX                             ; 0050862e
     CMP EBP,EAX                         ; 0050862f
     JGE 0x00508867                      ; 00508631
         ;   XREF to: 00508867 (CONDITIONAL_JUMP)  ; LAB_00508867
-    MOV ECX,dword ptr [0x01dd4898]      ; 00508637 | DAT_01dd4898
+    MOV ECX,dword ptr [0x01dd4898]      ; 00508637 | g_INT_01dd4898
     LEA EDI,[EBP + 0x1]                 ; 0050863d
     CMP EDI,ECX                         ; 00508640
     JGE 0x005086a9                      ; 00508642
         ;   XREF to: 005086a9 (CONDITIONAL_JUMP)  ; LAB_005086a9
     MOV ESI,dword ptr [ESP + 0x308]     ; 00508644
     LEA EBX,[EDI*0x4 + 0x0]             ; 0050864b
-    MOV ECX,dword ptr [EBX + 0x1dd489c] ; 00508652 | DAT_01dd48a0 | DAT_01dd48a4
+    MOV ECX,dword ptr [EBX + 0x1dd489c] ; 00508652 | g_CHAR_PTR_ARRAY_01dd489c[1] | g_CHAR_PTR_ARRAY_01dd489c[2]
         ;   Label: LAB_00508652
     PUSH ECX                            ; 00508658
-    MOV EAX,dword ptr [ESI + 0x1dd489c] ; 00508659 | DAT_01dd48a0
+    MOV EAX,dword ptr [ESI + 0x1dd489c] ; 00508659 | g_CHAR_PTR_ARRAY_01dd489c[1]
     PUSH EAX                            ; 0050865f
     CALL crt_string.c__strcmp_FUN_005a3d00 ; 00508660
         ;   XREF to: 005a3d00 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005a3d00(char * str1, char * str2)
@@ -200,15 +200,15 @@ section .text
     TEST EAX,EAX                        ; 00508668
     JLE 0x0050869c                      ; 0050866a
         ;   XREF to: 0050869c (CONDITIONAL_JUMP)  ; LAB_0050869c
-    MOV EDX,dword ptr [EBX + 0x1dd489c] ; 0050866c | DAT_01dd48a0
+    MOV EDX,dword ptr [EBX + 0x1dd489c] ; 0050866c | g_CHAR_PTR_ARRAY_01dd489c[1]
     MOV EAX,dword ptr [ESI + 0x1dd489c] ; 00508672
     MOV dword ptr [ESI + 0x1dd489c],EDX ; 00508678
-    MOV EDX,dword ptr [EBX + 0x1dd506c] ; 0050867e | DAT_01dd5070
-    MOV dword ptr [EBX + 0x1dd489c],EAX ; 00508684 | DAT_01dd48a0
+    MOV EDX,dword ptr [EBX + 0x1dd506c] ; 0050867e | g_CHAR_PTR_ARRAY_01dd506c[1]
+    MOV dword ptr [EBX + 0x1dd489c],EAX ; 00508684 | g_CHAR_PTR_ARRAY_01dd489c[1]
     MOV EAX,dword ptr [ESI + 0x1dd506c] ; 0050868a
     MOV dword ptr [ESI + 0x1dd506c],EDX ; 00508690
-    MOV dword ptr [EBX + 0x1dd506c],EAX ; 00508696 | DAT_01dd5070
-    MOV EAX,[0x01dd4898]                ; 0050869c | DAT_01dd4898
+    MOV dword ptr [EBX + 0x1dd506c],EAX ; 00508696 | g_CHAR_PTR_ARRAY_01dd506c[1]
+    MOV EAX,[0x01dd4898]                ; 0050869c | g_INT_01dd4898
         ;   Label: LAB_0050869c
     INC EDI                             ; 005086a1
     ADD EBX,0x4                         ; 005086a2
@@ -226,8 +226,8 @@ section .text
         ;   Label: LAB_005086c0
     MOV EDI,0x5b                        ; 005086c5
     PUSH 0x5cb32c                       ; 005086ca | = "Unknown message file version"
-    MOV dword ptr [0x01d71de0],ESI      ; 005086cf | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005086d5 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 005086cf | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 005086d5 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005086db
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005086e0
@@ -250,12 +250,12 @@ section .text
     MOV ECX,0x5cb366                    ; 00508707 | = "..\\support\\newmsg.cpp"
     MOV ESI,0x6f                        ; 0050870c
     PUSH 0x5cb37c                       ; 00508711 | = "Error reading %s"
-    MOV dword ptr [0x01d71de0],ECX      ; 00508716 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0050871c | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00508716 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0050871c | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00508722
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00508727
-    CMP dword ptr [0x01dd4898],0x1f4    ; 0050872a | DAT_01dd4898
+    CMP dword ptr [0x01dd4898],0x1f4    ; 0050872a | g_INT_01dd4898
         ;   Label: LAB_0050872a
     JL 0x00508759                       ; 00508734
         ;   XREF to: 00508759 (CONDITIONAL_JUMP)  ; LAB_00508759
@@ -263,8 +263,8 @@ section .text
     MOV EAX,0x5cb38d                    ; 00508737 | = "..\\support\\newmsg.cpp"
     MOV EDX,0x74                        ; 0050873c
     PUSH 0x5cb3a3                       ; 00508741 | = "Too many messages in %s"
-    MOV [0x01d71de0],EAX                ; 00508746 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0050874b | DAT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00508746 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 0050874b | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00508751
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00508756
@@ -281,7 +281,7 @@ section .text
     CALL crt_memory.c_malloc_FUN_005a3650 ; 0050876c
         ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     MOV EDX,EAX                         ; 00508771
-    MOV EAX,[0x01dd4898]                ; 00508773 | DAT_01dd4898
+    MOV EAX,[0x01dd4898]                ; 00508773 | g_INT_01dd4898
     ADD ESP,0x4                         ; 00508778
     MOV ECX,EDX                         ; 0050877b
     MOV dword ptr [EAX*0x4 + 0x1dd583c],EDX ; 0050877d
@@ -293,8 +293,8 @@ section .text
     MOV ESI,0x5cb3bb                    ; 00508790 | = "..\\support\\newmsg.cpp"
     MOV EDI,0x77                        ; 00508795
     PUSH 0x5cb3d1                       ; 0050879a | = "Out of memory mallocing message tag : %s"
-    MOV dword ptr [0x01d71de0],ESI      ; 0050879f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005087a5 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0050879f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 005087a5 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005087ab
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005087b0
@@ -310,13 +310,13 @@ section .text
     PUSH ECX                            ; 005087c0
     CALL crt_memory.c_malloc_FUN_005a3650 ; 005087c1
         ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
-    MOV EDX,dword ptr [0x01dd4898]      ; 005087c6 | DAT_01dd4898
+    MOV EDX,dword ptr [0x01dd4898]      ; 005087c6 | g_INT_01dd4898
     ADD ESP,0x4                         ; 005087cc
     MOV dword ptr [EDX*0x4 + 0x1dd600c],EAX ; 005087cf
     TEST EAX,EAX                        ; 005087d6
     JZ 0x0050883c                       ; 005087d8
         ;   XREF to: 0050883c (CONDITIONAL_JUMP)  ; LAB_0050883c
-    MOV EDI,dword ptr [0x01dd4898]      ; 005087da | DAT_01dd4898
+    MOV EDI,dword ptr [0x01dd4898]      ; 005087da | g_INT_01dd4898
         ;   Label: LAB_005087da
     LEA ESI,[ESP + 0x200]               ; 005087e0
     MOV EDI,dword ptr [EDI*0x4 + 0x1dd583c] ; 005087e7
@@ -336,7 +336,7 @@ section .text
         ;   XREF to: 005087ef (CONDITIONAL_JUMP)  ; LAB_005087ef
     POP EDI                             ; 00508807
         ;   Label: LAB_00508807
-    MOV EDI,dword ptr [0x01dd4898]      ; 00508808 | DAT_01dd4898
+    MOV EDI,dword ptr [0x01dd4898]      ; 00508808 | g_INT_01dd4898
     MOV ESI,ESP                         ; 0050880e
     MOV EDI,dword ptr [EDI*0x4 + 0x1dd600c] ; 00508810
     PUSH EDI                            ; 00508817
@@ -355,7 +355,7 @@ section .text
         ;   XREF to: 00508818 (CONDITIONAL_JUMP)  ; LAB_00508818
     POP EDI                             ; 00508830
         ;   Label: LAB_00508830
-    INC dword ptr [0x01dd4898]          ; 00508831 | DAT_01dd4898
+    INC dword ptr [0x01dd4898]          ; 00508831 | g_INT_01dd4898
     JMP 0x005085b2                      ; 00508837
         ;   XREF to: 005085b2 (UNCONDITIONAL_JUMP)  ; LAB_005085b2
     MOV EAX,ESP                         ; 0050883c
@@ -364,14 +364,14 @@ section .text
     MOV EDX,0x5cb3fa                    ; 0050883f | = "..\\support\\newmsg.cpp"
     MOV ECX,0x7a                        ; 00508844
     PUSH 0x5cb410                       ; 00508849 | = "Out of memory mallocing message tag : %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 0050884e | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00508854 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0050884e | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00508854 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050885a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0050885f
     JMP 0x005087da                      ; 00508862
         ;   XREF to: 005087da (UNCONDITIONAL_JUMP)  ; LAB_005087da
-    MOV dword ptr [0x01dd4894],0x1      ; 00508867 | DAT_01dd4894
+    MOV dword ptr [0x01dd4894],0x1      ; 00508867 | g_INT_01dd4894
         ;   Label: LAB_00508867
     ADD ESP,0x30c                       ; 00508871
     POP EBP                             ; 00508877

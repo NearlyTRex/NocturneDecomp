@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CNetGame.h"
+#include "types/structs/SChatHistory.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D50000
@@ -12,4 +13,21 @@
 
 // CNetGame
 extern CNetGame g_CNetGameInstance;
+
+// SChatHistory[400]
+extern SChatHistory g_SChatHistory_ARRAY_01d51db8[400];
+
+// char[256]
+extern char g_CHAR_ARRAY_01d51b20[256];
+
+// int
+extern int g_INT_01d51d9c;
+extern int g_INT_01d51da4;
+extern int g_INT_01d51da8;
+extern int g_INT_01d51dac;
+extern int g_INT_01d51db4;
+
+// uint
+extern uint g_UINT_01d51da0;
+extern uint g_UINT_01d51db0;
 

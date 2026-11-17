@@ -46,7 +46,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_0040ef00(CArmour *this_ptr,floa
               (&(this_ptr->base).base.model);
     core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90((CCharacter *)this_ptr,delta_time);
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (0x01C38BC0,this_ptr->fall_apart_event);
+                      (g_CEventList_PTR_006141f0,this_ptr->fall_apart_event);
     if (iVar2 != 0) {
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");

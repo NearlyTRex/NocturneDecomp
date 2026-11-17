@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_00514f40(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor)
 
 {
@@ -97,10 +95,10 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_00514f40(CPe
     afStack_54[(uint)bVar10 * -2 + 4] = afStack_ac[(uint)bVar10 * -2 + -1];
     afStack_54[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =
          afStack_ac[(uint)bVar10 * -2 + (uint)bVar10 * -2];
-    CStack_28.y = afStack_54[3] * _DAT_005e1a26;
-    CStack_28.z = fStack_44 * _DAT_005e1a26;
-    afStack_1c[0] = fStack_40 * _DAT_005e1a26;
-    fStack_e4 = afStack_54[3] * _DAT_005e1a26;
+    CStack_28.y = afStack_54[3] * 0.5f;
+    CStack_28.z = fStack_44 * 0.5f;
+    afStack_1c[0] = fStack_40 * 0.5f;
+    fStack_e4 = afStack_54[3] * 0.5f;
     *(float *)((int)&stack0xffffff20 + (uint)bVar10 * -8) = afStack_1c[(uint)bVar10 * -2 + -1];
     *(float *)((int)&stack0xffffff20 + ((uint)bVar10 * -2 + (uint)bVar10 * -2 + 1) * 4) =
          afStack_1c[(uint)bVar10 * -2 + (uint)bVar10 * -2];
@@ -150,9 +148,9 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_00514f40(CPe
         pCVar2 = &this_ptr->base;
         this_ptr = (CPendulum *)pCVar6->vertex_list;
         while( true ) {
-          CStack_28.x = (float)*(int *)(this_ptr->base).actor_name * _DAT_005faae8;
-          CStack_28.y = (float)*(int *)((this_ptr->base).actor_name + 4) * _DAT_005faae8;
-          CStack_28.z = (float)*(int *)((this_ptr->base).actor_name + 8) * _DAT_005faae8;
+          CStack_28.x = (float)*(int *)(this_ptr->base).actor_name * 0.00390625f;
+          CStack_28.y = (float)*(int *)((this_ptr->base).actor_name + 4) * 0.00390625f;
+          CStack_28.z = (float)*(int *)((this_ptr->base).actor_name + 8) * 0.00390625f;
           core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
                     (&pCVar2->orient_matrix,&CStack_28,aCStack_94);
           CStack_b8.x = aCStack_94[0].x;
@@ -199,10 +197,10 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_00514f40(CPe
         afStack_54[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_60 + (uint)bVar10 * -8);
         afStack_54[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
              afStack_54[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -2];
-        fStack_70 = afStack_54[2] * _DAT_005e1a26;
-        afStack_6c[0] = afStack_54[3] * _DAT_005e1a26;
-        afStack_6c[1] = fStack_44 * _DAT_005e1a26;
-        fStack_d0 = afStack_54[2] * _DAT_005e1a26;
+        fStack_70 = afStack_54[2] * 0.5f;
+        afStack_6c[0] = afStack_54[3] * 0.5f;
+        afStack_6c[1] = fStack_44 * 0.5f;
+        fStack_d0 = afStack_54[2] * 0.5f;
         *(float *)((int)&stack0xffffff20 + ((uint)bVar10 * -2 + 5) * 4) =
              afStack_6c[(uint)bVar10 * -2];
         *(float *)((int)&stack0xffffff20 + ((uint)bVar10 * -2 + (uint)bVar10 * -2 + 6) * 4) =

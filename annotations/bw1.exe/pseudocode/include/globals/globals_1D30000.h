@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D30000
@@ -22,4 +23,49 @@ extern CAlphaBitmap g_MoonAnimTextures[30];
 extern CDemonActorType g_CMobsterClassInfo;
 extern CDemonActorType g_CMolochClassInfo;
 extern CDemonActorType g_CMooCowClassInfo;
+
+// CVector3i[2000]
+extern CVector3i g_CVector3i_ARRAY_01d33f70[2000];
+
+// char
+extern char g_CHAR_01d33b20;
+extern char g_CHAR_01d33b88;
+
+// double[12]
+extern double g_DOUBLE_ARRAY_01d3ee48[12];
+
+// double[200]
+extern double g_DOUBLE_ARRAY_01d3bd48[200];
+extern double g_DOUBLE_ARRAY_01d3c388[200];
+
+// double[36]
+extern double g_DOUBLE_ARRAY_01d3f088[36];
+
+// double[4]
+extern double g_DOUBLE_ARRAY_01d3e9c8[4];
+
+// double[8]
+extern double g_DOUBLE_ARRAY_01d3e948[8];
+extern double g_DOUBLE_ARRAY_01d3e988[8];
+
+// float
+extern float g_FLOAT_01d33f6c;
+extern float g_FLOAT_01d3d748;
+
+// float[64]
+extern float g_FLOAT_ARRAY_01d39d40[64];
+
+// int
+extern int g_INT_01d33f64;
+extern int g_INT_01d33f68;
+extern int g_INT_01d39d30;
+extern int g_INT_01d39d34;
+extern int g_INT_01d3bd40;
+extern int g_INT_01d3bd44;
+
+// int[12]
+extern int g_INT_ARRAY_01d33c00[12];
+
+// int[5]
+extern int g_INT_ARRAY_01d33bec[5];
 

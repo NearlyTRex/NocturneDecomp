@@ -7,8 +7,8 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d661b
-;   undefined4 DAT_005d6623
+;   double g_DOUBLE_005d661b = 0.5
+;   double g_DOUBLE_005d6623 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 0056e8c1
     MOV EDX,dword ptr [ESP + 0x20]      ; 0056e8c4
     MOV EAX,ESI                         ; 0056e8c8
-    FLD double ptr [0x005d661b]         ; 0056e8ca | DAT_005d661b
+    FLD double ptr [0x005d661b]         ; 0056e8ca | g_DOUBLE_005d661b
     FLD float ptr [EDX + 0x160]         ; 0056e8d0
     FMUL ST1                            ; 0056e8d6
     FLD float ptr [EDX + 0x168]         ; 0056e8d8
@@ -35,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 0056e8ff
     MOV ESI,ESP                         ; 0056e901
     MOV dword ptr [ESP + 0x4],ECX       ; 0056e903
-    FADD double ptr [0x005d6623]        ; 0056e907 | DAT_005d6623
+    FADD double ptr [0x005d6623]        ; 0056e907 | g_DOUBLE_005d6623
     FXCH ST3                            ; 0056e90d
     FSTP float ptr [ESP + 0xc]          ; 0056e90f
     FXCH ST2                            ; 0056e913

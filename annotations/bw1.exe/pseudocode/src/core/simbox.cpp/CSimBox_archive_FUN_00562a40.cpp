@@ -10,8 +10,7 @@ void __cdecl core_simbox_cpp_CSimBox_archive_FUN_00562a40(CSimBox *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->model,"@modelName" + 1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
   core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->weight,"weight");
   if (g_CSimBoxClassVersion < 2) {
     if (g_CSimBoxClassVersion < 3) {
@@ -27,6 +26,6 @@ void __cdecl core_simbox_cpp_CSimBox_archive_FUN_00562a40(CSimBox *this_ptr)
       return;
     }
   }
-  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->type,&DAT_005f1ac4);
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->type,"type");
   return;
 }

@@ -11,7 +11,7 @@
 ;   core_dlight.cpp_CDemonLight_dtor_FUN_0045c240 at 0045c25f
 ;
 ; Referenced Globals:
-;   undefined1* g_CDemonCameraVTable = 00448c40
+;   CCameraView_vtable g_CDemonCameraVTable
 ;   WatcomTypeInfo g_CDemonCameraTypeInfo
 ;
 ; Called Functions:

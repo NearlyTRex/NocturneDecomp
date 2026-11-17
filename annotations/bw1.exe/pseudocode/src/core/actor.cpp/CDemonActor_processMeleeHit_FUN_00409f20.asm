@@ -8,12 +8,12 @@
 ; int              Stack[0x8]:4   hit_type
 ;
 ; Referenced Globals:
-;   undefined4 s_CHero_005d25e0+1
+;   TerminatedCString s_CHero_005d25e1
 ;   TerminatedCString s_s_causing_5_2f_damage_to_005d25e7
 ;   TerminatedCString s_CHero_005d2606
 ;   TerminatedCString s_s_causing_5_2f_damage_to_005d260c
-;   undefined4 DAT_005d2631
-;   undefined4 DAT_005d2639
+;   double g_DOUBLE_005d2631 = 0.5
+;   double g_DOUBLE_005d2639 = 10
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
@@ -212,7 +212,7 @@ section .text
     TEST EAX,EAX                        ; 0040a1a9
     JZ 0x0040a1c6                       ; 0040a1ab
         ;   XREF to: 0040a1c6 (CONDITIONAL_JUMP)  ; LAB_0040a1c6
-    PUSH 0x5d25e1                       ; 0040a1ad | s_CHero_005d25e0+1
+    PUSH 0x5d25e1                       ; 0040a1ad | = "CHero"
     MOV EDI,dword ptr [ESP + 0x314]     ; 0040a1b2
     PUSH EDI                            ; 0040a1b9
     CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 0040a1ba
@@ -255,7 +255,7 @@ section .text
     JNC 0x0040a14a                      ; 0040a234
         ;   XREF to: 0040a14a (CONDITIONAL_JUMP)  ; LAB_0040a14a
     FLD double ptr [ESP + 0x8]          ; 0040a23a
-    FMUL double ptr [0x005d2631]        ; 0040a23e | DAT_005d2631
+    FMUL double ptr [0x005d2631]        ; 0040a23e | g_DOUBLE_005d2631
     MOV EDI,dword ptr [ESI + 0x27a0]    ; 0040a244
     FLD1                                ; 0040a24a
     FADDP                               ; 0040a24c
@@ -685,7 +685,7 @@ section .text
     FMUL ST0                            ; 0040a79d
     FADDP                               ; 0040a79f
     FSQRT                               ; 0040a7a1
-    FDIVR double ptr [0x005d2639]       ; 0040a7a3 | DAT_005d2639
+    FDIVR double ptr [0x005d2639]       ; 0040a7a3 | g_DOUBLE_005d2639
     FLD float ptr [ESP + 0x250]         ; 0040a7a9
     FXCH                                ; 0040a7b0
     FSTP float ptr [ESP + 0x330]        ; 0040a7b2

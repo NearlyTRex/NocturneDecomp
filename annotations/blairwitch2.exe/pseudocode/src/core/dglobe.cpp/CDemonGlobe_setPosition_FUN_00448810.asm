@@ -21,7 +21,7 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ceffa
+;   double g_DOUBLE_005ceffa = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -37,7 +37,7 @@ section .text
     CMP EDX,EAX                         ; 0044881b
     JNZ 0x00448849                      ; 0044881d
         ;   XREF to: 00448849 (CONDITIONAL_JUMP)  ; LAB_00448849
-    FLD double ptr [0x005ceffa]         ; 0044881f | DAT_005ceffa
+    FLD double ptr [0x005ceffa]         ; 0044881f | g_DOUBLE_005ceffa
         ;   Label: LAB_0044881f
     FLD float ptr [EAX]                 ; 00448825
     FMUL ST1                            ; 00448827

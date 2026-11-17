@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 71,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 2,
+    "pseudocode_lines": 40,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -49,8 +48,8 @@
     },
     {
       "addr": "02c82c30",
-      "name": "DAT_02c82c30",
-      "type": "undefined4",
+      "name": "g_INT_02c82c30",
+      "type": "int",
       "value": null
     }
   ],
@@ -136,16 +135,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -11,8 +11,8 @@
 ; int              Stack[0x14]:4   color
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5baec
-;   undefined4 DAT_01c6b5c0
+;   int g_INT_01c5baec
+;   int g_INT_01c6b5c0
 ;
 ; Called Functions:
 ;   engine_2d.c_fillRectColor_FUN_004031c0
@@ -26,13 +26,13 @@ section .text
     PUSH EBX                            ; 0047b8e0
         ;   Label: shape_edittool.cpp_editorFillRectColor_FUN_0047b8e0
     MOV EAX,dword ptr [ESP + 0x18]      ; 0047b8e1
-    MOV EDX,dword ptr [0x01c5baec]      ; 0047b8e5 | DAT_01c5baec
+    MOV EDX,dword ptr [0x01c5baec]      ; 0047b8e5 | g_INT_01c5baec
     TEST EDX,EDX                        ; 0047b8eb
     JZ 0x0047b952                       ; 0047b8ed
         ;   XREF to: 0047b952 (CONDITIONAL_JUMP)  ; LAB_0047b952
     JNZ 0x0047b914                      ; 0047b8ef
         ;   XREF to: 0047b914 (CONDITIONAL_JUMP)  ; LAB_0047b914
-    MOV [0x01c6b5c0],EAX                ; 0047b8f1 | DAT_01c6b5c0
+    MOV [0x01c6b5c0],EAX                ; 0047b8f1 | g_INT_01c6b5c0
     MOV EAX,dword ptr [ESP + 0x14]      ; 0047b8f6
         ;   Label: LAB_0047b8f6
     PUSH EAX                            ; 0047b8fa

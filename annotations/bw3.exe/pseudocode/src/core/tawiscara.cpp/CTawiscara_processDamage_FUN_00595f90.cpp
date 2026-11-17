@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -31,7 +29,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara
     return;
   }
   if (damage_info->ammo_type == AMMO_TYPE_SILVER) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d9451;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
               ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_24);
     iVar4 = 0;
@@ -43,7 +41,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                (0x01C73654,&CStack_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -58,8 +56,8 @@ void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara
       if ((this_ptr->type == WEREWOLF_TYPE_TRAIN) && (g_CDemonSetPtr->last_switch_area_invalid != 0)
          ) {
         fVar1 = (this_ptr->base).base.base.location.position.x;
-        if (fVar1 <= (float)_DAT_005d9459) {
-          if ((double)fVar1 < _DAT_005d9461) {
+        if (fVar1 <= (float)5) {
+          if ((double)fVar1 < -5) {
             (this_ptr->base).base.base.orient.vec.y = 1.5707964;
           }
         }

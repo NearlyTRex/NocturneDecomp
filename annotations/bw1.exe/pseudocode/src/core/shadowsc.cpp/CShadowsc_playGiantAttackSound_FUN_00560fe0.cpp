@@ -17,7 +17,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0(CShad
     return;
   }
   uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                    ((CDemonActor *)this_ptr,"Gscorp-attack?.wav @ 4" + 1);
+                    ((CDemonActor *)this_ptr,"scorp-attack?.wav @ 4");
   this_ptr->sound_cooldown = 15.0;
   this_ptr->sfx_handle = uVar2;
   return;

@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_dcamera_cpp_CDemonCamera_allocLight_FUN_0044a9f0(CDemonCamera *this_ptr)
 
 {
   char *pcVar1;
   
-  pcVar1 = (char *)(_DAT_00b9e554 * 0x4b000 + 0xb9e558);
-  if (0x18 < _DAT_00b9e554 + 1) {
+  pcVar1 = g_CHAR_ARRAY_00b9e558 + g_INT_00b9e554 * 0x4b000;
+  if (0x18 < g_INT_00b9e554 + 1U) {
     pcVar1 = (char *)0x0;
   }
-  _DAT_00b9e554 = _DAT_00b9e554 + 1;
+  g_INT_00b9e554 = g_INT_00b9e554 + 1U;
   return pcVar1;
 }

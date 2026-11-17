@@ -31,19 +31,19 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534bc9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d798b
-;   undefined4 DAT_005d7993
-;   undefined4 DAT_005d799b
-;   undefined4 DAT_005d79a3
-;   undefined4 DAT_005d79a7
+;   double g_DOUBLE_005d798b = 100
+;   double g_DOUBLE_005d7993 = 0.785398163375000
+;   double g_DOUBLE_005d799b = -0.785398163375000
+;   float g_FLOAT_005d79a3 = 50
+;   float g_FLOAT_005d79a7 = -50
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02cfd900
-;   undefined4 DAT_02cfd904
-;   undefined4 DAT_02cfd908
-;   undefined4 DAT_02d0c208
-;   undefined4 DAT_02d0c20c
-;   undefined4 DAT_02d0c210
+;   CVector3f g_CVector3f_02cfd900
+;   undefined4 g_CVector3f_02cfd900.y
+;   undefined4 g_CVector3f_02cfd900.z
+;   CVector3f g_CVector3f_02d0c208
+;   undefined4 g_CVector3f_02d0c208.y
+;   undefined4 g_CVector3f_02d0c208.z
 ;   undefined4 DAT_02d11fc8
 ;   undefined4 DAT_02d11fcc
 ;   ... and 4 more
@@ -113,10 +113,10 @@ section .text
     FSTP float ptr [ESP + 0x40]         ; 0057d229
     FLD float ptr [EAX + 0x4]           ; 0057d22d
     FLD ST0                             ; 0057d230
-    FADD double ptr [0x005d7993]        ; 0057d232 | DAT_005d7993
+    FADD double ptr [0x005d7993]        ; 0057d232 | g_DOUBLE_005d7993
     SUB ESP,0x4                         ; 0057d238
     FSTP float ptr [ESP]                ; 0057d23b
-    FADD double ptr [0x005d799b]        ; 0057d23e | DAT_005d799b
+    FADD double ptr [0x005d799b]        ; 0057d23e | g_DOUBLE_005d799b
     SUB ESP,0x4                         ; 0057d244
     FSTP float ptr [ESP]                ; 0057d247
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0057d24a
@@ -170,9 +170,9 @@ section .text
     FLD float ptr [ESP + 0x1c]          ; 0057d2d2
     PUSH EAX                            ; 0057d2d6 | g_CDemonSetInstance
     FXCH                                ; 0057d2d7
-    FADD float ptr [0x005d79a3]         ; 0057d2d9 | DAT_005d79a3
+    FADD float ptr [0x005d79a3]         ; 0057d2d9 | g_FLOAT_005d79a3
     FXCH                                ; 0057d2df
-    FADD float ptr [0x005d79a7]         ; 0057d2e1 | DAT_005d79a7
+    FADD float ptr [0x005d79a7]         ; 0057d2e1 | g_FLOAT_005d79a7
     FXCH                                ; 0057d2e7
     FSTP float ptr [ESP + 0x14]         ; 0057d2e9
     FSTP float ptr [ESP + 0x20]         ; 0057d2ed
@@ -208,7 +208,7 @@ section .text
         ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x4c],EAX      ; 0057d354
     FLD float ptr [ESP + 0x4c]          ; 0057d358
-    FMUL double ptr [0x005d798b]        ; 0057d35c | DAT_005d798b
+    FMUL double ptr [0x005d798b]        ; 0057d35c | g_DOUBLE_005d798b
     ADD ESP,0x8                         ; 0057d362
     FADD double ptr [ESP + 0x2c]        ; 0057d365
     MOV EAX,ESP                         ; 0057d369
@@ -217,11 +217,11 @@ section .text
     JZ 0x0057d386                       ; 0057d371
         ;   XREF to: 0057d386 (CONDITIONAL_JUMP)  ; LAB_0057d386
     MOV EAX,dword ptr [ESP]             ; 0057d373
-    MOV dword ptr [EBX],EAX             ; 0057d376 | DAT_02d0c208
+    MOV dword ptr [EBX],EAX             ; 0057d376 | g_CVector3f_02d0c208
     MOV EAX,dword ptr [ESP + 0x4]       ; 0057d378
-    MOV dword ptr [EBX + 0x4],EAX       ; 0057d37c | DAT_02d0c20c
+    MOV dword ptr [EBX + 0x4],EAX       ; 0057d37c | g_CVector3f_02d0c208.y
     MOV EAX,dword ptr [ESP + 0x8]       ; 0057d37f
-    MOV dword ptr [EBX + 0x8],EAX       ; 0057d383 | DAT_02d0c210
+    MOV dword ptr [EBX + 0x8],EAX       ; 0057d383 | g_CVector3f_02d0c208.z
     MOV EAX,ESP                         ; 0057d386
         ;   Label: LAB_0057d386
     CMP ESI,EAX                         ; 0057d388
@@ -237,11 +237,11 @@ section .text
         ;   Label: LAB_0057d39f
     JZ 0x0057d3be                       ; 0057d3a5
         ;   XREF to: 0057d3be (CONDITIONAL_JUMP)  ; LAB_0057d3be
-    MOV EAX,[0x02cfd900]                ; 0057d3a7 | DAT_02cfd900
+    MOV EAX,[0x02cfd900]                ; 0057d3a7 | g_CVector3f_02cfd900
     MOV dword ptr [EDI],EAX             ; 0057d3ac | DAT_02d17d88
-    MOV EAX,[0x02cfd904]                ; 0057d3ae | DAT_02cfd904
+    MOV EAX,[0x02cfd904]                ; 0057d3ae | g_CVector3f_02cfd900.y
     MOV dword ptr [EDI + 0x4],EAX       ; 0057d3b3 | DAT_02d17d8c
-    MOV EAX,[0x02cfd908]                ; 0057d3b6 | DAT_02cfd908
+    MOV EAX,[0x02cfd908]                ; 0057d3b6 | g_CVector3f_02cfd900.z
     MOV dword ptr [EDI + 0x8],EAX       ; 0057d3bb | DAT_02d17d90
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0057d3be
         ;   Label: LAB_0057d3be

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_union_cpp_CUnion_processMeleeAttackState_FUN_005a4fe0(CUnion *this_ptr)
 
@@ -30,10 +29,10 @@ void __cdecl core_union_cpp_CUnion_processMeleeAttackState_FUN_005a4fe0(CUnion *
             (this_ptr->base).base.base.base.base.location.position.x;
     fVar3 = (pCVar2->base).location.position.z -
             *(float *)((int)&(this_ptr->base).base.base.base.base.location.position + 8);
-    if (_DAT_005ff8f4 < SQRT(fVar3 * fVar3 + fVar6 * fVar6)) {
+    if (7.0f < SQRT(fVar3 * fVar3 + fVar6 * fVar6)) {
       this_ptr_00 = &(this_ptr->base).base.state_machine;
       core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_00,1.0);
-      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"BChasing" + 1);
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"Chasing");
     }
     else {
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -49,7 +48,7 @@ void __cdecl core_union_cpp_CUnion_processMeleeAttackState_FUN_005a4fe0(CUnion *
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
       if (pSVar5->state_index == 5) {
         fVar6 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar1->base);
-        if ((float)_DAT_005f0562 < fVar6) {
+        if ((float)0.90000000000000002 < fVar6) {
           iVar7 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
           this_ptr->melee_variant = iVar7;
         }
@@ -58,7 +57,7 @@ void __cdecl core_union_cpp_CUnion_processMeleeAttackState_FUN_005a4fe0(CUnion *
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
       if (pSVar5->state_index == 9) {
         fVar6 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar1->base);
-        if ((float)_DAT_005f0562 < fVar6) {
+        if ((float)0.90000000000000002 < fVar6) {
           iVar7 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
           this_ptr->melee_variant = iVar7;
           return;

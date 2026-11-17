@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,float delta_time)
 
 {
@@ -45,7 +43,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,fl
   if (pCVar1 == (CCharacter *)0x0) {
     if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                          (0x01C51D80,"?Capture" + 1), iVar3 != 0)) {
+                          (g_CEventList_PTR_0061b4d0,"Capture"), iVar3 != 0)) {
       this_ptr->is_in_combat = 0;
       this_ptr->victim_search_timer = 0.0;
       this_ptr->victim = (CCharacter *)0x0;
@@ -81,12 +79,12 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,fl
           afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
                *(float *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8);
           if (ABS(afStack_40[0]) <= fStack_60) {
-            afStack_40[0] = afStack_40[0] * _DAT_005dcb8e;
+            afStack_40[0] = afStack_40[0] * 3.0f;
             fStack_30 = afStack_40[1] * afStack_40[1] +
                         fStack_44 * fStack_44 + afStack_40[0] * afStack_40[0];
             if (fStack_30 <= fStack_34) {
-              *(int *)(&DAT_01c3f6a4 + iStack_24) = iVar3;
-              *(float *)(&DAT_01c415e4 + iStack_24) = fStack_30;
+              *(int *)((int)g_CDemonActor_PTR_ARRAY_01c3f6a4 + iStack_24) = iVar3;
+              *(float *)((int)g_FLOAT_ARRAY_01c415e4 + iStack_24) = fStack_30;
               iStack_24 = iStack_24 + 4;
               iStack_1c = iStack_1c + 1;
             }
@@ -104,8 +102,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,fl
         if (0 < iStack_1c) {
           iVar5 = 0;
           do {
-            if (*(float *)(&DAT_01c415e4 + iVar5) < fStack_18) {
-              fStack_18 = *(float *)(&DAT_01c415e4 + iVar5);
+            if (*(float *)((int)g_FLOAT_ARRAY_01c415e4 + iVar5) < fStack_18) {
+              fStack_18 = *(float *)((int)g_FLOAT_ARRAY_01c415e4 + iVar5);
               iVar3 = iVar6;
             }
             iVar6 = iVar6 + 1;
@@ -113,15 +111,15 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,fl
           } while (iVar6 < iStack_1c);
         }
         if (iVar3 < 0) break;
-        target = *(CCharacter **)(&DAT_01c3f6a4 + iVar3 * 4);
-        iVar6 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a0980(this_ptr,&target->base);
+        target = (CCharacter *)g_CDemonActor_PTR_ARRAY_01c3f6a4[iVar3];
+        iVar6 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a0980(this_ptr,(CDemonActor *)target);
         if (iVar6 != 0) {
           this_ptr->victim = target;
           engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s can see hero\n");
           return;
         }
         if ((((this_ptr->allow_pathfind_to_new_targets != 0) || (target == pCVar1)) &&
-            (this_ptr_00 = (*((target->base).vtable._ub)->getPathMap)(&target->base),
+            (this_ptr_00 = (*((target->base).vtable._ub)->getPathMap)((CDemonActor *)target),
             this_ptr_00 != (CPathMap *)0x0)) &&
            (iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
                               (this_ptr_00,pCStack_38,&CStack_50,
@@ -129,7 +127,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,fl
           this_ptr->victim = target;
           return;
         }
-        *(uint *)(&DAT_01c415e4 + iVar3 * 4) = 0x7149f2ca;
+        g_FLOAT_ARRAY_01c415e4[iVar3] = 1e+30;
         if (target == pCVar1) {
           this_ptr->victim = pCVar1;
         }
@@ -148,7 +146,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,fl
     }
   }
   else {
-    if (pCVar1 == 0xFFFFFFFF) {
+    if (pCVar1 == (CCharacter *)NAN) {
       this_ptr->victim = (CCharacter *)0x0;
     }
     else {

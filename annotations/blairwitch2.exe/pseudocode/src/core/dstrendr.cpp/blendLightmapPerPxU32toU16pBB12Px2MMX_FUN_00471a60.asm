@@ -14,21 +14,21 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820 at 0044299c
 ;
 ; Referenced Globals:
-;   undefined8 DAT_00611308
-;   undefined8 DAT_00611310
-;   undefined4 DAT_00612880
-;   undefined4 DAT_006128a0
-;   undefined4 DAT_006128c0
-;   undefined4 DAT_006128e0
-;   undefined4 DAT_00612900
-;   undefined4 DAT_00612920
-;   undefined4 DAT_00612940
-;   undefined4 DAT_00612960
-;   undefined4 DAT_00612980
-;   undefined4 DAT_006129a0
-;   undefined4 DAT_006129c0
-;   undefined4 DAT_006129e0
-;   undefined4 DAT_00612a00
+;   qword g_QWORD_00611308 = 0x0
+;   qword g_QWORD_00611310 = 0x8000800080008
+;   ushort[2048] g_USHORT_ARRAY_00612880
+;   undefined4 g_USHORT_ARRAY_00612880[16]
+;   undefined4 g_USHORT_ARRAY_00612880[32]
+;   undefined4 g_USHORT_ARRAY_00612880[48]
+;   undefined4 g_USHORT_ARRAY_00612880[64]
+;   undefined4 g_USHORT_ARRAY_00612880[80]
+;   undefined4 g_USHORT_ARRAY_00612880[96]
+;   undefined4 g_USHORT_ARRAY_00612880[112]
+;   undefined4 g_USHORT_ARRAY_00612880[128]
+;   undefined4 g_USHORT_ARRAY_00612880[144]
+;   undefined4 g_USHORT_ARRAY_00612880[160]
+;   undefined4 g_USHORT_ARRAY_00612880[176]
+;   undefined4 g_USHORT_ARRAY_00612880[192]
 ;   ... and 91 more
 ;
 ; *****************************************************************************
@@ -47,7 +47,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00471a6f
     MOV EBP,dword ptr [EBP + 0x14]      ; 00471a72
     PXOR MM7,MM7                        ; 00471a75
-    MOVD MM5,dword ptr [0x01c38b5c]     ; 00471a78 | DAT_01c38b5c
+    MOVD MM5,dword ptr [0x01c38b5c]     ; 00471a78 | g_ULONG_01c38b5c
     PUNPCKLBW MM5,MM7                   ; 00471a7f
     PSLLW MM5,0x6                       ; 00471a82
     MOV EAX,dword ptr [EBX]             ; 00471a86
@@ -150,130 +150,130 @@ section .text
     MOV EAX,dword ptr [ESI + 0x9a0]     ; 00471ca6
     MOV EAX,dword ptr [ESI + 0x9c0]     ; 00471cac
     MOV EAX,dword ptr [ESI + 0x9e0]     ; 00471cb2
-    MOV EAX,[0x00b6639c]                ; 00471cb8 | DAT_00b6639c
-    MOV EAX,[0x00b663bc]                ; 00471cbd | DAT_00b663bc
-    MOV EAX,[0x00b663dc]                ; 00471cc2 | DAT_00b663dc
-    MOV EAX,[0x00b663fc]                ; 00471cc7 | DAT_00b663fc
-    MOV EAX,[0x00b6641c]                ; 00471ccc | DAT_00b6641c
-    MOV EAX,[0x00b6643c]                ; 00471cd1 | DAT_00b6643c
-    MOV EAX,[0x00b6645c]                ; 00471cd6 | DAT_00b6645c
-    MOV EAX,[0x00b6647c]                ; 00471cdb | DAT_00b6647c
-    MOV EAX,[0x00b6649c]                ; 00471ce0 | DAT_00b6649c
-    MOV EAX,[0x00b664bc]                ; 00471ce5 | DAT_00b664bc
-    MOV EAX,[0x00b664dc]                ; 00471cea | DAT_00b664dc
-    MOV EAX,[0x00b664fc]                ; 00471cef | DAT_00b664fc
-    MOV EAX,[0x00b6651c]                ; 00471cf4 | DAT_00b6651c
-    MOV EAX,[0x00b6653c]                ; 00471cf9 | DAT_00b6653c
-    MOV EAX,[0x00b6655c]                ; 00471cfe | DAT_00b6655c
-    MOV EAX,[0x00b6657c]                ; 00471d03 | DAT_00b6657c
-    MOV EAX,[0x00b6659c]                ; 00471d08 | DAT_00b6659c
-    MOV EAX,[0x00b665bc]                ; 00471d0d | DAT_00b665bc
-    MOV EAX,[0x00b665dc]                ; 00471d12 | DAT_00b665dc
-    MOV EAX,[0x00b665fc]                ; 00471d17 | DAT_00b665fc
-    MOV EAX,[0x00b6661c]                ; 00471d1c | DAT_00b6661c
-    MOV EAX,[0x00b6663c]                ; 00471d21 | DAT_00b6663c
-    MOV EAX,[0x00b6665c]                ; 00471d26 | DAT_00b6665c
-    MOV EAX,[0x00b6667c]                ; 00471d2b | DAT_00b6667c
-    MOV EAX,[0x00b6669c]                ; 00471d30 | DAT_00b6669c
-    MOV EAX,[0x00b666bc]                ; 00471d35 | DAT_00b666bc
-    MOV EAX,[0x00b666dc]                ; 00471d3a | DAT_00b666dc
-    MOV EAX,[0x00b666fc]                ; 00471d3f | DAT_00b666fc
-    MOV EAX,[0x00b6671c]                ; 00471d44 | DAT_00b6671c
-    MOV EAX,[0x00b6673c]                ; 00471d49 | DAT_00b6673c
-    MOV EAX,[0x00b6675c]                ; 00471d4e | DAT_00b6675c
-    MOV EAX,[0x00b6677c]                ; 00471d53 | DAT_00b6677c
-    MOV EAX,[0x00612880]                ; 00471d58 | DAT_00612880
-    MOV EAX,[0x006128a0]                ; 00471d5d | DAT_006128a0
-    MOV EAX,[0x006128c0]                ; 00471d62 | DAT_006128c0
-    MOV EAX,[0x006128e0]                ; 00471d67 | DAT_006128e0
-    MOV EAX,[0x00612900]                ; 00471d6c | DAT_00612900
-    MOV EAX,[0x00612920]                ; 00471d71 | DAT_00612920
-    MOV EAX,[0x00612940]                ; 00471d76 | DAT_00612940
-    MOV EAX,[0x00612960]                ; 00471d7b | DAT_00612960
-    MOV EAX,[0x00612980]                ; 00471d80 | DAT_00612980
-    MOV EAX,[0x006129a0]                ; 00471d85 | DAT_006129a0
-    MOV EAX,[0x006129c0]                ; 00471d8a | DAT_006129c0
-    MOV EAX,[0x006129e0]                ; 00471d8f | DAT_006129e0
-    MOV EAX,[0x00612a00]                ; 00471d94 | DAT_00612a00
-    MOV EAX,[0x00612a20]                ; 00471d99 | DAT_00612a20
-    MOV EAX,[0x00612a40]                ; 00471d9e | DAT_00612a40
-    MOV EAX,[0x00612a60]                ; 00471da3 | DAT_00612a60
-    MOV EAX,[0x00612a80]                ; 00471da8 | DAT_00612a80
-    MOV EAX,[0x00612aa0]                ; 00471dad | DAT_00612aa0
-    MOV EAX,[0x00612ac0]                ; 00471db2 | DAT_00612ac0
-    MOV EAX,[0x00612ae0]                ; 00471db7 | DAT_00612ae0
-    MOV EAX,[0x00612b00]                ; 00471dbc | DAT_00612b00
-    MOV EAX,[0x00612b20]                ; 00471dc1 | DAT_00612b20
-    MOV EAX,[0x00612b40]                ; 00471dc6 | DAT_00612b40
-    MOV EAX,[0x00612b60]                ; 00471dcb | DAT_00612b60
-    MOV EAX,[0x00612b80]                ; 00471dd0 | DAT_00612b80
-    MOV EAX,[0x00612ba0]                ; 00471dd5 | DAT_00612ba0
-    MOV EAX,[0x00612bc0]                ; 00471dda | DAT_00612bc0
-    MOV EAX,[0x00612be0]                ; 00471ddf | DAT_00612be0
-    MOV EAX,[0x00612c00]                ; 00471de4 | DAT_00612c00
-    MOV EAX,[0x00612c20]                ; 00471de9 | DAT_00612c20
-    MOV EAX,[0x00612c40]                ; 00471dee | DAT_00612c40
-    MOV EAX,[0x00612c60]                ; 00471df3 | DAT_00612c60
-    MOV EAX,[0x00612c80]                ; 00471df8 | DAT_00612c80
-    MOV EAX,[0x00612ca0]                ; 00471dfd | DAT_00612ca0
-    MOV EAX,[0x00612cc0]                ; 00471e02 | DAT_00612cc0
-    MOV EAX,[0x00612ce0]                ; 00471e07 | DAT_00612ce0
-    MOV EAX,[0x00612d00]                ; 00471e0c | DAT_00612d00
-    MOV EAX,[0x00612d20]                ; 00471e11 | DAT_00612d20
-    MOV EAX,[0x00612d40]                ; 00471e16 | DAT_00612d40
-    MOV EAX,[0x00612d60]                ; 00471e1b | DAT_00612d60
-    MOV EAX,[0x00612d80]                ; 00471e20 | DAT_00612d80
-    MOV EAX,[0x00612da0]                ; 00471e25 | DAT_00612da0
-    MOV EAX,[0x00612dc0]                ; 00471e2a | DAT_00612dc0
-    MOV EAX,[0x00612de0]                ; 00471e2f | DAT_00612de0
-    MOV EAX,[0x00612e00]                ; 00471e34 | DAT_00612e00
-    MOV EAX,[0x00612e20]                ; 00471e39 | DAT_00612e20
-    MOV EAX,[0x00612e40]                ; 00471e3e | DAT_00612e40
-    MOV EAX,[0x00612e60]                ; 00471e43 | DAT_00612e60
-    MOV EAX,[0x00612e80]                ; 00471e48 | DAT_00612e80
-    MOV EAX,[0x00612ea0]                ; 00471e4d | DAT_00612ea0
-    MOV EAX,[0x00612ec0]                ; 00471e52 | DAT_00612ec0
-    MOV EAX,[0x00612ee0]                ; 00471e57 | DAT_00612ee0
-    MOV EAX,[0x00612f00]                ; 00471e5c | DAT_00612f00
-    MOV EAX,[0x00612f20]                ; 00471e61 | DAT_00612f20
-    MOV EAX,[0x00612f40]                ; 00471e66 | DAT_00612f40
-    MOV EAX,[0x00612f60]                ; 00471e6b | DAT_00612f60
-    MOV EAX,[0x00612f80]                ; 00471e70 | DAT_00612f80
-    MOV EAX,[0x00612fa0]                ; 00471e75 | DAT_00612fa0
-    MOV EAX,[0x00612fc0]                ; 00471e7a | DAT_00612fc0
-    MOV EAX,[0x00612fe0]                ; 00471e7f | DAT_00612fe0
-    MOV EAX,[0x00613000]                ; 00471e84 | DAT_00613000
-    MOV EAX,[0x00613020]                ; 00471e89 | DAT_00613020
-    MOV EAX,[0x00613040]                ; 00471e8e | DAT_00613040
-    MOV EAX,[0x00613060]                ; 00471e93 | DAT_00613060
+    MOV EAX,[0x00b6639c]                ; 00471cb8 | g_UINT_ARRAY_00b6639c
+    MOV EAX,[0x00b663bc]                ; 00471cbd | g_UINT_ARRAY_00b6639c[8]
+    MOV EAX,[0x00b663dc]                ; 00471cc2 | g_UINT_ARRAY_00b6639c[16]
+    MOV EAX,[0x00b663fc]                ; 00471cc7 | g_UINT_ARRAY_00b6639c[24]
+    MOV EAX,[0x00b6641c]                ; 00471ccc | g_UINT_ARRAY_00b6639c[32]
+    MOV EAX,[0x00b6643c]                ; 00471cd1 | g_UINT_ARRAY_00b6639c[40]
+    MOV EAX,[0x00b6645c]                ; 00471cd6 | g_UINT_ARRAY_00b6639c[48]
+    MOV EAX,[0x00b6647c]                ; 00471cdb | g_UINT_ARRAY_00b6639c[56]
+    MOV EAX,[0x00b6649c]                ; 00471ce0 | g_UINT_ARRAY_00b6639c[64]
+    MOV EAX,[0x00b664bc]                ; 00471ce5 | g_UINT_ARRAY_00b6639c[72]
+    MOV EAX,[0x00b664dc]                ; 00471cea | g_UINT_ARRAY_00b6639c[80]
+    MOV EAX,[0x00b664fc]                ; 00471cef | g_UINT_ARRAY_00b6639c[88]
+    MOV EAX,[0x00b6651c]                ; 00471cf4 | g_UINT_ARRAY_00b6639c[96]
+    MOV EAX,[0x00b6653c]                ; 00471cf9 | g_UINT_ARRAY_00b6639c[104]
+    MOV EAX,[0x00b6655c]                ; 00471cfe | g_UINT_ARRAY_00b6639c[112]
+    MOV EAX,[0x00b6657c]                ; 00471d03 | g_UINT_ARRAY_00b6639c[120]
+    MOV EAX,[0x00b6659c]                ; 00471d08 | g_UINT_ARRAY_00b6639c[128]
+    MOV EAX,[0x00b665bc]                ; 00471d0d | g_UINT_ARRAY_00b6639c[136]
+    MOV EAX,[0x00b665dc]                ; 00471d12 | g_UINT_ARRAY_00b6639c[144]
+    MOV EAX,[0x00b665fc]                ; 00471d17 | g_UINT_ARRAY_00b6639c[152]
+    MOV EAX,[0x00b6661c]                ; 00471d1c | g_UINT_ARRAY_00b6639c[160]
+    MOV EAX,[0x00b6663c]                ; 00471d21 | g_UINT_ARRAY_00b6639c[168]
+    MOV EAX,[0x00b6665c]                ; 00471d26 | g_UINT_ARRAY_00b6639c[176]
+    MOV EAX,[0x00b6667c]                ; 00471d2b | g_UINT_ARRAY_00b6639c[184]
+    MOV EAX,[0x00b6669c]                ; 00471d30 | g_UINT_ARRAY_00b6639c[192]
+    MOV EAX,[0x00b666bc]                ; 00471d35 | g_UINT_ARRAY_00b6639c[200]
+    MOV EAX,[0x00b666dc]                ; 00471d3a | g_UINT_ARRAY_00b6639c[208]
+    MOV EAX,[0x00b666fc]                ; 00471d3f | g_UINT_ARRAY_00b6639c[216]
+    MOV EAX,[0x00b6671c]                ; 00471d44 | g_UINT_ARRAY_00b6639c[224]
+    MOV EAX,[0x00b6673c]                ; 00471d49 | g_UINT_ARRAY_00b6639c[232]
+    MOV EAX,[0x00b6675c]                ; 00471d4e | g_UINT_ARRAY_00b6639c[240]
+    MOV EAX,[0x00b6677c]                ; 00471d53 | g_UINT_ARRAY_00b6639c[248]
+    MOV EAX,[0x00612880]                ; 00471d58 | g_USHORT_ARRAY_00612880
+    MOV EAX,[0x006128a0]                ; 00471d5d | g_USHORT_ARRAY_00612880[16]
+    MOV EAX,[0x006128c0]                ; 00471d62 | g_USHORT_ARRAY_00612880[32]
+    MOV EAX,[0x006128e0]                ; 00471d67 | g_USHORT_ARRAY_00612880[48]
+    MOV EAX,[0x00612900]                ; 00471d6c | g_USHORT_ARRAY_00612880[64]
+    MOV EAX,[0x00612920]                ; 00471d71 | g_USHORT_ARRAY_00612880[80]
+    MOV EAX,[0x00612940]                ; 00471d76 | g_USHORT_ARRAY_00612880[96]
+    MOV EAX,[0x00612960]                ; 00471d7b | g_USHORT_ARRAY_00612880[112]
+    MOV EAX,[0x00612980]                ; 00471d80 | g_USHORT_ARRAY_00612880[128]
+    MOV EAX,[0x006129a0]                ; 00471d85 | g_USHORT_ARRAY_00612880[144]
+    MOV EAX,[0x006129c0]                ; 00471d8a | g_USHORT_ARRAY_00612880[160]
+    MOV EAX,[0x006129e0]                ; 00471d8f | g_USHORT_ARRAY_00612880[176]
+    MOV EAX,[0x00612a00]                ; 00471d94 | g_USHORT_ARRAY_00612880[192]
+    MOV EAX,[0x00612a20]                ; 00471d99 | g_USHORT_ARRAY_00612880[208]
+    MOV EAX,[0x00612a40]                ; 00471d9e | g_USHORT_ARRAY_00612880[224]
+    MOV EAX,[0x00612a60]                ; 00471da3 | g_USHORT_ARRAY_00612880[240]
+    MOV EAX,[0x00612a80]                ; 00471da8 | g_USHORT_ARRAY_00612880[256]
+    MOV EAX,[0x00612aa0]                ; 00471dad | g_USHORT_ARRAY_00612880[272]
+    MOV EAX,[0x00612ac0]                ; 00471db2 | g_USHORT_ARRAY_00612880[288]
+    MOV EAX,[0x00612ae0]                ; 00471db7 | g_USHORT_ARRAY_00612880[304]
+    MOV EAX,[0x00612b00]                ; 00471dbc | g_USHORT_ARRAY_00612880[320]
+    MOV EAX,[0x00612b20]                ; 00471dc1 | g_USHORT_ARRAY_00612880[336]
+    MOV EAX,[0x00612b40]                ; 00471dc6 | g_USHORT_ARRAY_00612880[352]
+    MOV EAX,[0x00612b60]                ; 00471dcb | g_USHORT_ARRAY_00612880[368]
+    MOV EAX,[0x00612b80]                ; 00471dd0 | g_USHORT_ARRAY_00612880[384]
+    MOV EAX,[0x00612ba0]                ; 00471dd5 | g_USHORT_ARRAY_00612880[400]
+    MOV EAX,[0x00612bc0]                ; 00471dda | g_USHORT_ARRAY_00612880[416]
+    MOV EAX,[0x00612be0]                ; 00471ddf | g_USHORT_ARRAY_00612880[432]
+    MOV EAX,[0x00612c00]                ; 00471de4 | g_USHORT_ARRAY_00612880[448]
+    MOV EAX,[0x00612c20]                ; 00471de9 | g_USHORT_ARRAY_00612880[464]
+    MOV EAX,[0x00612c40]                ; 00471dee | g_USHORT_ARRAY_00612880[480]
+    MOV EAX,[0x00612c60]                ; 00471df3 | g_USHORT_ARRAY_00612880[496]
+    MOV EAX,[0x00612c80]                ; 00471df8 | g_USHORT_ARRAY_00612880[512]
+    MOV EAX,[0x00612ca0]                ; 00471dfd | g_USHORT_ARRAY_00612880[528]
+    MOV EAX,[0x00612cc0]                ; 00471e02 | g_USHORT_ARRAY_00612880[544]
+    MOV EAX,[0x00612ce0]                ; 00471e07 | g_USHORT_ARRAY_00612880[560]
+    MOV EAX,[0x00612d00]                ; 00471e0c | g_USHORT_ARRAY_00612880[576]
+    MOV EAX,[0x00612d20]                ; 00471e11 | g_USHORT_ARRAY_00612880[592]
+    MOV EAX,[0x00612d40]                ; 00471e16 | g_USHORT_ARRAY_00612880[608]
+    MOV EAX,[0x00612d60]                ; 00471e1b | g_USHORT_ARRAY_00612880[624]
+    MOV EAX,[0x00612d80]                ; 00471e20 | g_USHORT_ARRAY_00612880[640]
+    MOV EAX,[0x00612da0]                ; 00471e25 | g_USHORT_ARRAY_00612880[656]
+    MOV EAX,[0x00612dc0]                ; 00471e2a | g_USHORT_ARRAY_00612880[672]
+    MOV EAX,[0x00612de0]                ; 00471e2f | g_USHORT_ARRAY_00612880[688]
+    MOV EAX,[0x00612e00]                ; 00471e34 | g_USHORT_ARRAY_00612880[704]
+    MOV EAX,[0x00612e20]                ; 00471e39 | g_USHORT_ARRAY_00612880[720]
+    MOV EAX,[0x00612e40]                ; 00471e3e | g_USHORT_ARRAY_00612880[736]
+    MOV EAX,[0x00612e60]                ; 00471e43 | g_USHORT_ARRAY_00612880[752]
+    MOV EAX,[0x00612e80]                ; 00471e48 | g_USHORT_ARRAY_00612880[768]
+    MOV EAX,[0x00612ea0]                ; 00471e4d | g_USHORT_ARRAY_00612880[784]
+    MOV EAX,[0x00612ec0]                ; 00471e52 | g_USHORT_ARRAY_00612880[800]
+    MOV EAX,[0x00612ee0]                ; 00471e57 | g_USHORT_ARRAY_00612880[816]
+    MOV EAX,[0x00612f00]                ; 00471e5c | g_USHORT_ARRAY_00612880[832]
+    MOV EAX,[0x00612f20]                ; 00471e61 | g_USHORT_ARRAY_00612880[848]
+    MOV EAX,[0x00612f40]                ; 00471e66 | g_USHORT_ARRAY_00612880[864]
+    MOV EAX,[0x00612f60]                ; 00471e6b | g_USHORT_ARRAY_00612880[880]
+    MOV EAX,[0x00612f80]                ; 00471e70 | g_USHORT_ARRAY_00612880[896]
+    MOV EAX,[0x00612fa0]                ; 00471e75 | g_USHORT_ARRAY_00612880[912]
+    MOV EAX,[0x00612fc0]                ; 00471e7a | g_USHORT_ARRAY_00612880[928]
+    MOV EAX,[0x00612fe0]                ; 00471e7f | g_USHORT_ARRAY_00612880[944]
+    MOV EAX,[0x00613000]                ; 00471e84 | g_USHORT_ARRAY_00612880[960]
+    MOV EAX,[0x00613020]                ; 00471e89 | g_USHORT_ARRAY_00612880[976]
+    MOV EAX,[0x00613040]                ; 00471e8e | g_USHORT_ARRAY_00612880[992]
+    MOV EAX,[0x00613060]                ; 00471e93 | g_USHORT_ARRAY_00612880[1008]
     MOVZX EDX,byte ptr [EBX]            ; 00471e98
         ;   Label: LAB_00471e98
     MOVD MM0,dword ptr [ESI]            ; 00471e9b
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 00471e9e | DAT_00b6639c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 00471e9e | g_UINT_ARRAY_00b6639c
     MOVZX EAX,byte ptr [EBP]            ; 00471ea6
     PUNPCKLBW MM0,MM7                   ; 00471eaa
     SHR EDX,0x1                         ; 00471ead
     PUNPCKLBW MM2,MM7                   ; 00471eaf
     ADD EAX,EDX                         ; 00471eb2
     PMULLW MM0,MM2                      ; 00471eb4
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00471eb7 | DAT_00612880
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00471eb7 | g_USHORT_ARRAY_00612880
     MOVQ MM2,MM3                        ; 00471ebf
     MOVQ MM4,MM5                        ; 00471ec2
-    PXOR MM2,qword ptr [0x00613078]     ; 00471ec5 | DAT_00613078
+    PXOR MM2,qword ptr [0x00613078]     ; 00471ec5 | g_USHORT_ARRAY_00612880[1020]
     PMULHW MM0,MM2                      ; 00471ecc
     PMULHW MM4,MM3                      ; 00471ecf
     PADDW MM0,MM4                       ; 00471ed2
-    PADDW MM0,qword ptr [0x00611308]    ; 00471ed5 | DAT_00611308
+    PADDW MM0,qword ptr [0x00611308]    ; 00471ed5 | g_QWORD_00611308
     PSRLW MM0,0x4                       ; 00471edc
     PACKUSWB MM0,MM7                    ; 00471ee0
     MOVQ MM2,MM0                        ; 00471ee3
     MOVQ MM3,MM0                        ; 00471ee6
-    PAND MM0,qword ptr [0x0061c928]     ; 00471ee9 | DAT_0061c928
-    PAND MM2,qword ptr [0x0061c908]     ; 00471ef0 | DAT_0061c908
-    PAND MM3,qword ptr [0x0061c8e8]     ; 00471ef7 | DAT_0061c8e8
-    PSRLQ MM0,qword ptr [0x0061c970]    ; 00471efe | DAT_0061c970
-    PSRLQ MM2,qword ptr [0x0061c950]    ; 00471f05 | DAT_0061c950
-    PSRLQ MM3,qword ptr [0x0061c930]    ; 00471f0c | DAT_0061c930
+    PAND MM0,qword ptr [0x0061c928]     ; 00471ee9 | g_QWORD_0061c928
+    PAND MM2,qword ptr [0x0061c908]     ; 00471ef0 | g_QWORD_0061c908
+    PAND MM3,qword ptr [0x0061c8e8]     ; 00471ef7 | g_QWORD_0061c8e8
+    PSRLQ MM0,qword ptr [0x0061c970]    ; 00471efe | g_QWORD_0061c970
+    PSRLQ MM2,qword ptr [0x0061c950]    ; 00471f05 | g_QWORD_0061c950
+    PSRLQ MM3,qword ptr [0x0061c930]    ; 00471f0c | g_QWORD_0061c930
     POR MM0,MM2                         ; 00471f13
     POR MM0,MM3                         ; 00471f16
     MOVQ MM6,MM0                        ; 00471f19
@@ -282,31 +282,31 @@ section .text
     INC EBP                             ; 00471f20
     MOVZX EDX,byte ptr [EBX]            ; 00471f21
     MOVD MM0,dword ptr [ESI]            ; 00471f24
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 00471f27 | DAT_00b6639c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 00471f27 | g_UINT_ARRAY_00b6639c
     MOVZX EAX,byte ptr [EBP]            ; 00471f2f
     PUNPCKLBW MM0,MM7                   ; 00471f33
     SHR EDX,0x1                         ; 00471f36
     PUNPCKLBW MM2,MM7                   ; 00471f38
     ADD EAX,EDX                         ; 00471f3b
     PMULLW MM0,MM2                      ; 00471f3d
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00471f40 | DAT_00612880
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00471f40 | g_USHORT_ARRAY_00612880
     MOVQ MM2,MM3                        ; 00471f48
     MOVQ MM4,MM5                        ; 00471f4b
-    PXOR MM2,qword ptr [0x00613078]     ; 00471f4e | DAT_00613078
+    PXOR MM2,qword ptr [0x00613078]     ; 00471f4e | g_USHORT_ARRAY_00612880[1020]
     PMULHW MM0,MM2                      ; 00471f55
     PMULHW MM4,MM3                      ; 00471f58
     PADDW MM0,MM4                       ; 00471f5b
-    PADDW MM0,qword ptr [0x00611310]    ; 00471f5e | DAT_00611310
+    PADDW MM0,qword ptr [0x00611310]    ; 00471f5e | g_QWORD_00611310
     PSRLW MM0,0x4                       ; 00471f65
     PACKUSWB MM0,MM7                    ; 00471f69
     MOVQ MM2,MM0                        ; 00471f6c
     MOVQ MM3,MM0                        ; 00471f6f
-    PAND MM0,qword ptr [0x0061c928]     ; 00471f72 | DAT_0061c928
-    PAND MM2,qword ptr [0x0061c908]     ; 00471f79 | DAT_0061c908
-    PAND MM3,qword ptr [0x0061c8e8]     ; 00471f80 | DAT_0061c8e8
-    PSRLQ MM0,qword ptr [0x0061c970]    ; 00471f87 | DAT_0061c970
-    PSRLQ MM2,qword ptr [0x0061c950]    ; 00471f8e | DAT_0061c950
-    PSRLQ MM3,qword ptr [0x0061c930]    ; 00471f95 | DAT_0061c930
+    PAND MM0,qword ptr [0x0061c928]     ; 00471f72 | g_QWORD_0061c928
+    PAND MM2,qword ptr [0x0061c908]     ; 00471f79 | g_QWORD_0061c908
+    PAND MM3,qword ptr [0x0061c8e8]     ; 00471f80 | g_QWORD_0061c8e8
+    PSRLQ MM0,qword ptr [0x0061c970]    ; 00471f87 | g_QWORD_0061c970
+    PSRLQ MM2,qword ptr [0x0061c950]    ; 00471f8e | g_QWORD_0061c950
+    PSRLQ MM3,qword ptr [0x0061c930]    ; 00471f95 | g_QWORD_0061c930
     POR MM0,MM2                         ; 00471f9c
     POR MM0,MM3                         ; 00471f9f
     PSLLQ MM0,0x10                      ; 00471fa2

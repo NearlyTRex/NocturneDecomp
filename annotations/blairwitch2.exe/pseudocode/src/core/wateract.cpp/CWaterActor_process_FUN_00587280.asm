@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005edfa6
-;   undefined4 DAT_005edfae
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005edfa6 = 65536
+;   double g_DOUBLE_005edfae = 8
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
@@ -30,8 +30,8 @@ section .text
     SUB ESP,0x4                         ; 00587283
     MOV EBX,dword ptr [ESP + 0x14]      ; 00587286
     FLD float ptr [ESP + 0x18]          ; 0058728a
-    FMUL double ptr [0x005edfa6]        ; 0058728e | DAT_005edfa6
-    FMUL double ptr [0x005edfae]        ; 00587294 | DAT_005edfae
+    FMUL double ptr [0x005edfa6]        ; 0058728e | g_DOUBLE_005edfa6
+    FMUL double ptr [0x005edfae]        ; 00587294 | g_DOUBLE_005edfae
     MOV EDX,dword ptr [EBX + 0x2b388]   ; 0058729a
     CALL crt_math.c_round_FUN_005b7ff0  ; 005872a0
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
@@ -57,7 +57,7 @@ section .text
     FDIVRP                              ; 005872e9
     LEA EAX,[EBX + 0x310]               ; 005872eb
     PUSH EAX                            ; 005872f1
-    MOV EAX,[0x006141f0]                ; 005872f2 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 005872f2 | g_CEventList_PTR_006141f0
     PUSH EAX                            ; 005872f7
     FSTP float ptr [EBX + 0x80f8]       ; 005872f8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 005872fe
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBX + 0x374]               ; 00587314
         ;   Label: LAB_00587314
     PUSH EAX                            ; 0058731a
-    MOV EDX,dword ptr [0x006141f0]      ; 0058731b | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 0058731b | g_CEventList_PTR_006141f0
     PUSH EDX                            ; 00587321
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00587322
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -130,8 +130,8 @@ section .text
         ;   Label: default
     MOV ESI,0x1a5                       ; 005873d7
     PUSH 0x5edf83                       ; 005873dc
-    MOV dword ptr [0x01d046a0],ECX      ; 005873e1 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 005873e7 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005873e1 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 005873e7 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005873ed
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005873f2

@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl support_codec_cpp_CInStreamPipe_tell_FUN_00443e70(CInStreamPipe *this_ptr)
 
 {
-  _DAT_01d1d400 = "..\\support\\codec.cpp";
-  _DAT_01d1d404 = 0x831;
+  g_CHAR_PTR_01d1d400 = "..\\support\\codec.cpp";
+  g_INT_01d1d404 = 0x831;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CInStreamPipe::tell - not allowed");
   return -1;
 }

@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 263,
-    "complexity_score": 315,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 14,
+    "pseudocode_lines": 144,
+    "suspect_count": 8,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_strchr",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 408
+    "total_lines": 407
   },
   "cross_references": [
     {
@@ -86,38 +84,38 @@
     },
     {
       "addr": "005d5d66",
-      "name": "DAT_005d5d66",
-      "type": "undefined1",
+      "name": "s_tex_005d5d66",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5d67",
-      "name": "DAT_005d5d67",
-      "type": "undefined1",
+      "name": "s_tex_005d5d66+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d5d68",
-      "name": "DAT_005d5d68",
-      "type": "undefined1",
+      "name": "s_tex_005d5d66+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d5d69",
-      "name": "DAT_005d5d69",
-      "type": "undefined1",
+      "name": "s_tex_005d5d66+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d5d6b",
-      "name": "DAT_005d5d6b",
-      "type": "undefined4",
+      "name": "s_rt_005d5d6b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5d6e",
-      "name": "DAT_005d5d6e",
-      "type": "undefined4",
+      "name": "s_data_005d5d6e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -134,26 +132,26 @@
     },
     {
       "addr": "005d5daa",
-      "name": "DAT_005d5daa",
-      "type": "undefined4",
+      "name": "s_d_005d5daa",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5dae",
-      "name": "DAT_005d5dae",
-      "type": "undefined4",
+      "name": "s_s_005d5dae",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -368,56 +366,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_005d5d66",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_005d5d66;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005d5d6e",
-      "severity": "mild",
-      "text": "local_2c = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d5d6e,local_12c,&DAT_005d5d6b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005d5d6b",
-      "severity": "mild",
-      "text": "local_2c = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d5d6e,local_12c,&DAT_005d5d6b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_005d5daa",
-      "severity": "mild",
-      "text": "_fscanf(local_2c,&DAT_005d5daa);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_005d5dae",
-      "severity": "mild",
-      "text": "_fscanf(local_2c,&DAT_005d5dae);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -425,7 +375,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -433,7 +383,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 114,
+      "line": 112,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -441,7 +391,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 142,
+      "line": 140,
       "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
       "text": "local_18 = (CTextureList *)local_18->texture_entries;",
@@ -449,7 +399,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_24->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 144,
+      "line": 142,
       "match": "local_24 = (T *)(local_24->FIELD[N].SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "local_24 = (CTextureList *)(local_24->texture_entries[0].texture_name + 0xc);",
@@ -457,7 +407,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 129,
+      "line": 127,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -465,7 +415,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -473,7 +423,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ',' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ',') in a .keep.",
-      "line": 92,
+      "line": 90,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

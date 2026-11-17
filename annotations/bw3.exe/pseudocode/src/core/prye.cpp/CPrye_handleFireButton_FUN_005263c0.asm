@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   void* switchdataD_0052636c = 005265aa
 ;   void* switchdataD_00526380 = 00526455
-;   undefined4 s_wp_holystaff_wav_005cd96e+1
-;   undefined4 DAT_005cd987
+;   TerminatedCString s_wp_holystaff_wav_005cd96f
+;   double g_DOUBLE_005cd987 = 0.990000000000000
 ;   undefined4 g_CFirestaffClassInfo.name_hash
 ;   undefined4 g_CLightStaffClassInfo.name_hash
 ;   undefined4 g_CWeaponClassInfo.name_hash
@@ -86,7 +86,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00526461
     FLD float ptr [ESP + 0x8]           ; 00526465
     ADD ESP,0x8                         ; 00526469
-    FCOMP double ptr [0x005cd987]       ; 0052646c | DAT_005cd987
+    FCOMP double ptr [0x005cd987]       ; 0052646c | g_DOUBLE_005cd987
     FNSTSW AX                           ; 00526472
     SAHF                                ; 00526474
     JC 0x0052651b                       ; 00526475
@@ -228,7 +228,7 @@ section .text
         ;   Label: LAB_005265e2
     MOV dword ptr [EBX + 0x2f04],0x0    ; 005265e8
     ADD EAX,0xd                         ; 005265f2
-    PUSH 0x5cd96f                       ; 005265f5 | s_wp_holystaff_wav_005cd96e+1
+    PUSH 0x5cd96f                       ; 005265f5 | = "wp_holystaff.wav"
     MOV dword ptr [EBX + 0x2f00],EAX    ; 005265fa
     PUSH EBX                            ; 00526600
     MOV EAX,dword ptr [EBX + 0x154]     ; 00526601

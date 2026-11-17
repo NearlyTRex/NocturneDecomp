@@ -51,17 +51,17 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFo
   } while (cVar1 != '\0');
   SetTextColor(this_ptr->device_context_handle,0);
   TextOutA(this_ptr->device_context_handle,0,0,text_string,~uVar5 - 1);
-  if (this_ptr->right + x < DAT_005fba18) {
+  if (this_ptr->right + x < g_INT_005fba18) {
     iVar2 = this_ptr->right;
   }
   else {
-    iVar2 = DAT_005fba18 - x;
+    iVar2 = g_INT_005fba18 - x;
   }
-  if (this_ptr->top + y < DAT_005fba1c) {
+  if (this_ptr->top + y < g_INT_005fba1c) {
     iStack_2c = this_ptr->top;
   }
   else {
-    iStack_2c = DAT_005fba1c - y;
+    iStack_2c = g_INT_005fba1c - y;
   }
   if (this_ptr->cached_string_width < iVar2) {
     iVar2 = this_ptr->cached_string_width;
@@ -69,16 +69,16 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFo
   if (this_ptr->cached_string_height < iStack_2c) {
     iStack_2c = this_ptr->cached_string_height;
   }
-  if (DAT_005fba20 == 0x10) {
+  if (g_INT_005fba20 == 0x10) {
     iStack_18 = 0;
     if (0 < iStack_2c) {
       iStack_24 = y;
       do {
         iVar3 = iStack_24 + this_ptr->y_offset1;
-        if ((-1 < iVar3) && (iVar3 < DAT_005fba1c)) {
+        if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
           iVar4 = 0;
           if (0 < iVar2) {
-            puVar6 = (ushort *)(x * 2 + *(int *)(&DAT_01c5faec + iVar3 * 4));
+            puVar6 = (ushort *)(g_ARRAY_PTR_01c5faec[iVar3] + x * 2);
             do {
               if (*(short *)((int)this_ptr->ppv_bits + (iStack_18 * this_ptr->right + iVar4) * 2) !=
                   0x7c1f) {
@@ -100,10 +100,10 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFo
       iStack_28 = y;
       do {
         iVar3 = iStack_28 + this_ptr->y_offset1;
-        if ((-1 < iVar3) && (iVar3 < DAT_005fba1c)) {
+        if ((-1 < iVar3) && (iVar3 < g_INT_005fba1c)) {
           iVar4 = 0;
           if (0 < iVar2) {
-            piVar7 = (int *)(*(int *)(&DAT_01c5faec + iVar3 * 4) + x * 4);
+            piVar7 = (int *)(g_ARRAY_PTR_01c5faec[iVar3] + x * 4);
             do {
               if (*(int *)((int)this_ptr->ppv_bits + (iStack_1c * this_ptr->right + iVar4) * 4) !=
                   0xff00ff) {

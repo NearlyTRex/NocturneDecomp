@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_cross_cpp_CCross_activate_FUN_005a6cf0(CCross *this_ptr)
 
@@ -36,14 +35,14 @@ void __cdecl core_cross_cpp_CCross_activate_FUN_005a6cf0(CCross *this_ptr)
     this_ptr->unused_83c = 0;
     this_ptr->charge_time = 0.0;
     this_ptr->blast_strength = this_ptr->charge;
-    if (this_ptr->charge < (float)_DAT_005f074d) {
-      sound_name = "$@crosssmall.wav" + 2;
+    if (this_ptr->charge < (float)0.5) {
+      sound_name = "crosssmall.wav";
     }
     else {
       sound_name = "crossfull.wav";
     }
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,sound_name,
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,sound_name,
                &(this_ptr->base).base.base.location.position);
     pCVar6 = &(this_ptr->base).base.base.location;
     local_1c = 0;
@@ -59,7 +58,8 @@ void __cdecl core_cross_cpp_CCross_activate_FUN_005a6cf0(CCross *this_ptr)
            fVar2 = (pCVar6->position).x - (pCVar1->position).x,
            fVar3 = (this_ptr->base).base.base.location.position.z -
                    (this_ptr_00->base).base.location.position.z,
-           SQRT(fVar3 * fVar3 + fVar2 * fVar2) < this_ptr->blast_strength * (float)_DAT_005f0755)) {
+           SQRT(fVar3 * fVar3 + fVar2 * fVar2) < this_ptr->blast_strength * (float)15
+           )) {
           fStack_34 = (pCVar1->position).x - (pCVar6->position).x;
           fStack_30 = (this_ptr_00->base).base.location.position.y -
                       (this_ptr->base).base.base.location.position.y;

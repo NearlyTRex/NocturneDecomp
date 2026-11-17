@@ -14,8 +14,8 @@
 ;   TerminatedCString s_sound_snddx_cpp_005e9ca1
 ;   TerminatedCString s_DirectSoundDevice_unlock_005e9cb4
 ;   TerminatedCString s_Unlock_hw_sample_buffer_005e9cf6
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -45,8 +45,8 @@ section .text
     MOV ESI,0x5e9ca1                    ; 005561cf | = "..\\sound\\snddx.cpp"
     MOV EDI,0x465                       ; 005561d4
     PUSH 0x5e9cb4                       ; 005561d9 | = "DirectSoundDevice::unlockSample - Can..."
-    MOV dword ptr [0x01d046a0],ESI      ; 005561de | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005561e4 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 005561de | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 005561e4 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005561ea
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005561ef

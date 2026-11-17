@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00576130(CTommyGun *this_ptr,float delta_time)
 
 {
@@ -27,7 +25,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00576130(CTommyGun *this_pt
     fVar2 = (float)uStack_18;
     if (0.0 <= fVar2) {
       sound_sndmain_cpp_lockSound_FUN_005532f0();
-      dStack_20 = (double)(fVar2 * _DAT_005eccd0);
+      dStack_20 = (double)(fVar2 * 6.0f);
       uStack_18 = floor(dStack_20);
       fVar5 = (float10)uStack_18;
       fVar1 = (float10)dStack_20;
@@ -36,7 +34,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00576130(CTommyGun *this_pt
       if (iVar3 != 0) {
         dVar6 = round
                           ((double)((float)CStack_1d4.sample_info.sample_count *
-                                    (float)(fVar1 - fVar5) * _DAT_005eccd4));
+                                    (float)(fVar1 - fVar5) * 0.1666667f));
         sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
         uStack_18 = __BITCAST_DOUBLE(CONCAT44((int)ROUND(dVar6),(uint)uStack_18));
         dVar6 = (double)(int)ROUND(dVar6);
@@ -62,7 +60,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00576130(CTommyGun *this_pt
     return;
   }
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[0]);
-  _sprintf((char *)&CStack_1d4.taken,"$@m-gun1.wav @ 2.3 * %f" + 2);
+  _sprintf((char *)&CStack_1d4.taken,"m-gun1.wav @ 2.3 * %f");
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
   uVar4 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                     ((CDemonActor *)this_ptr,(char *)&CStack_1d4.taken);

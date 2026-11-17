@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f0119
-;   undefined4 DAT_005ff350
+;   float g_FLOAT_005ff350 = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -61,7 +61,7 @@ section .text
     ADD ESP,0x4                         ; 005a32d1
     MOV EDI,dword ptr [EAX + 0x24]      ; 005a32d4
     FLD float ptr [ESP]                 ; 005a32d7
-    FCOMP float ptr [0x005ff350]        ; 005a32da | DAT_005ff350
+    FCOMP float ptr [0x005ff350]        ; 005a32da | g_FLOAT_005ff350
     FNSTSW AX                           ; 005a32e0
     SAHF                                ; 005a32e2
     JA 0x005a3323                       ; 005a32e3
@@ -97,7 +97,7 @@ section .text
     PUSH 0x3f000000                     ; 005a3323
         ;   Label: LAB_005a3323
     ADD EBX,0x10af8                     ; 005a3328
-    FLD float ptr [0x005ff350]          ; 005a332e | DAT_005ff350
+    FLD float ptr [0x005ff350]          ; 005a332e | g_FLOAT_005ff350
     PUSH EBX                            ; 005a3334
     FSTP float ptr [EBX + 0x89c]        ; 005a3335
     CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005a333b

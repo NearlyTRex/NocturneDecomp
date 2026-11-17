@@ -7,12 +7,11 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino *this_ptr)
 
 {
-  int iVar1;
+  CHero *pCVar1;
   char *pcVar2;
   CDemonActor *pCVar3;
   int iVar4;
@@ -41,10 +40,10 @@ int __cdecl core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino *this_ptr)
                        (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
                         g_CWayPointClassInfo.name_hash);
     if (pCVar3 != (CDemonActor *)0x0) {
-      iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      local_44 = *(float *)(iVar1 + 0x20) - (pCVar3->location).position.x;
-      local_40 = *(float *)(iVar1 + 0x24) - (pCVar3->location).position.y;
-      local_3c = *(float *)(iVar1 + 0x28) - (pCVar3->location).position.z;
+      pCVar1 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14];
+      local_44 = (pCVar1->base).base.location.position.x - (pCVar3->location).position.x;
+      local_40 = (pCVar1->base).base.location.position.y - (pCVar3->location).position.y;
+      local_3c = (pCVar1->base).base.location.position.z - (pCVar3->location).position.z;
       local_2c = local_44;
       (&stack0xffffffd8)[(uint)bVar6 * 0xfffffffe] =
            (float)*(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8);
@@ -56,7 +55,7 @@ int __cdecl core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino *this_ptr)
         local_30 = local_24;
       }
       local_20 = local_30 * local_30 + local_38 * local_38 + local_34 * local_34;
-      local_14 = (float)(((int)local_20 >> 1) + _DAT_01d1a0a4);
+      local_14 = (float)(((int)local_20 >> 1) + g_INT_01d1a0a4);
       if (local_14 < local_18) {
         local_1c = pCVar3;
         local_18 = local_14;
@@ -64,6 +63,6 @@ int __cdecl core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino *this_ptr)
     }
     iVar5 = iVar5 + 4;
   }
-  pcVar2 = strstr(local_1c->actor_name,"@Platform" + 1);
+  pcVar2 = strstr(local_1c->actor_name,"Platform");
   return (uint)(pcVar2 != (char *)0x0);
 }

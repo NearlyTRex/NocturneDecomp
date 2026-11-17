@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_wp_nomana_wav_005b632d
 ;   TerminatedCString s_wp_bindevil_throw_wav_005b633b
-;   undefined4 DAT_005fc5a0
-;   undefined4 DAT_006045f8
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createBindEvilToss_FUN_004a39a0
@@ -39,7 +39,7 @@ section .text
     LEA EAX,[ESI + 0x30]                ; 0040f85e
     PUSH EAX                            ; 0040f861
     PUSH EDI                            ; 0040f862
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0040f863 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0040f863 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 0040f869
     CALL core_fire.cpp_CFireEffect_createBindEvilToss_FUN_004a39a0 ; 0040f86a
         ;   XREF to: 004a39a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBindEvilToss_FUN_004a39a0(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity)
@@ -47,7 +47,7 @@ section .text
     PUSH EDI                            ; 0040f872
     PUSH 0x5b633b                       ; 0040f873 | = "wp_bindevil_throw.wav"
     PUSH ESI                            ; 0040f878
-    MOV EDI,dword ptr [0x006045f8]      ; 0040f879 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0040f879 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0040f87f
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0040f880
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -67,7 +67,7 @@ section .text
         ;   Label: LAB_0040f8ad
     PUSH 0x5b632d                       ; 0040f8ae | = "wp_nomana.wav"
     PUSH ESI                            ; 0040f8b3
-    MOV EDX,dword ptr [0x006045f8]      ; 0040f8b4 | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 0040f8b4 | g_CSound_PTR_006045f8
     PUSH EDX                            ; 0040f8ba
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0040f8bb
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

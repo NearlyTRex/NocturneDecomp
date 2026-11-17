@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
@@ -49,7 +49,7 @@ section .text
     LEA EAX,[EBX + 0x2e8]               ; 004cf3aa
         ;   Label: LAB_004cf3aa
     PUSH EAX                            ; 004cf3b0
-    MOV ESI,dword ptr [0x005fba60]      ; 004cf3b1 | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004cf3b1 | g_CEventList_PTR_005fba60
     PUSH ESI                            ; 004cf3b7
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004cf3b8
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

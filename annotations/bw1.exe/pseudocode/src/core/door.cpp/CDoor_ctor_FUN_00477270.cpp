@@ -22,7 +22,8 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00477270(CDoor *this_ptr)
   core_event_cpp_CRuleList_clear_FUN_004aacc0
             ((CRuleList *)(this_ptr_00[2].part_visibility_flags + 10));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CDoorVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(this_ptr_00,(char *)0x5da752);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
+            (this_ptr_00,"nocdoor1.kfm");
   this_ptr_00[1].part_visibility_flags[1] = 0;
   this_ptr_00[1].part_visibility_flags[2] = 1;
   this_ptr_00[1].part_visibility_flags[3] = 0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
 
 {
@@ -39,17 +37,17 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
   
   bVar11 = 0;
   if (this_ptr->act_completion_state == 2) {
-    pCVar8 = _DAT_01511cc0;
+    pCVar8 = g_CBitFont_PTR_01511cc0;
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
-      pCVar8 = _DAT_01511cc4;
+      pCVar8 = g_CBitFont_PTR_01511cc4;
     }
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(pCVar8,0x58);
     core_game_cpp_CGame_saveClockTime_FUN_004b3000(this_ptr);
     for (local_550 = 0.0; 0.0 < local_550; local_550 = local_550 - this_ptr->delta_time_float) {
       engine_special_cpp_clearScreen_FUN_0055b1f0();
-      pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Y@To be continued..." + 2);
+      pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("To be continued...");
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0
-                (pCVar8,0,DAT_006141b8 + -1,(DAT_006141bc - iVar3) / 2,0xf8,0,pcVar4);
+                (pCVar8,0,g_INT_006141b8 + -1,(g_INT_006141bc - iVar3) / 2,0xf8,0,pcVar4);
       wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
       core_game_cpp_CGame_updateDT_FUN_004b3010(this_ptr);
     }
@@ -66,14 +64,14 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
             ((CAlphaBitmap *)(auStack_5c + 0x10),0,0,0xffff);
   fVar1 = this_ptr->total_game_time;
-  dVar12 = round((double)(fVar1 * (float)_DAT_005d8a13));
+  dVar12 = round((double)(fVar1 * (float)0.00027777777777777799));
   local_2c = (CBitFont *)(int)ROUND(dVar12);
-  fVar1 = fVar1 - (float)(int)local_2c * (float)_DAT_005d8a1b;
+  fVar1 = fVar1 - (float)(int)local_2c * (float)3600;
   this_ptr->total_game_time = fVar1;
   local_18 = (int)local_2c;
-  dVar12 = round((double)(fVar1 * (float)_DAT_005d8a23));
+  dVar12 = round((double)(fVar1 * (float)0.016666666666666701));
   iStack_38 = (int)ROUND(dVar12);
-  fVar1 = fVar1 - (float)iStack_38 * (float)_DAT_005d8a2b;
+  fVar1 = fVar1 - (float)iStack_38 * (float)60;
   this_ptr->total_game_time = fVar1;
   local_1c = iStack_38;
   dVar12 = round((double)fVar1);
@@ -82,7 +80,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
   this_ptr->total_game_time = fVar1;
   pcVar4 = (char *)0x4be1bc;
   local_20 = local_24;
-  dVar12 = round((double)(fVar1 * (float)_DAT_005d8a33));
+  dVar12 = round((double)(fVar1 * (float)100));
   iStack_3c = (int)ROUND(dVar12);
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(pcVar4);
   pcVar4 = &stack0xfffffaa4;
@@ -95,7 +93,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
     pcVar4[1] = cVar2;
     pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
-  pcVar5 = &DAT_005d89e5;
+  pcVar5 = "\n\n";
   iVar3 = -1;
   pcVar4 = &stack0xfffffaa4;
   do {
@@ -175,7 +173,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  pcVar5 = &DAT_005d8a0b;
+  pcVar5 = "\n\n";
   iVar3 = -1;
   pcVar4 = &stack0xfffffaa4;
   do {
@@ -196,7 +194,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  _sprintf(acStack_15c,&DAT_005d8a0e);
+  _sprintf(acStack_15c,"%d\n\n");
   pcVar4 = acStack_15c;
   iVar3 = -1;
   pcVar5 = &stack0xfffffaa4;
@@ -218,17 +216,17 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  local_2c = _DAT_01511cc0;
+  local_2c = g_CBitFont_PTR_01511cc0;
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   pCVar8 = local_2c;
   iVar3 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
-                    (local_2c,&stack0xfffffaa4,(char *)0x1cb2520,0x14,0x100,0xc0);
+                    (local_2c,&stack0xfffffaa4,g_CHAR_ARRAY_01cb2520,0x14,0x100,0xc0);
   iVar10 = 0;
   iStack_34 = iVar3;
   local_30 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(pCVar8,0x58);
   y = 0xf0;
   if (0 < iVar3) {
-    pcVar4 = (char *)0x1cb2520;
+    pcVar4 = g_CHAR_ARRAY_01cb2520;
     do {
       iVar10 = iVar10 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0

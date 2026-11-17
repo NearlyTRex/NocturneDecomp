@@ -12,7 +12,7 @@
 ;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004c97e0 at 004c9802
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f7ba8
+;   float g_FLOAT_005f7ba8 = 256
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -49,13 +49,13 @@ section .text
     MOV EAX,EDI                         ; 004c7e3b
     MOV dword ptr [ESI + 0x24],0x0      ; 004c7e3d
     FLD float ptr [EAX]                 ; 004c7e44
-    FMUL float ptr [0x005f7ba8]         ; 004c7e46 | DAT_005f7ba8
+    FMUL float ptr [0x005f7ba8]         ; 004c7e46 | g_FLOAT_005f7ba8
     FISTP dword ptr [EBX]               ; 004c7e4c
     FLD float ptr [EAX + 0x4]           ; 004c7e4e
-    FMUL float ptr [0x005f7ba8]         ; 004c7e51 | DAT_005f7ba8
+    FMUL float ptr [0x005f7ba8]         ; 004c7e51 | g_FLOAT_005f7ba8
     FISTP dword ptr [EBX + 0x4]         ; 004c7e57
     FLD float ptr [EAX + 0x8]           ; 004c7e5a
-    FMUL float ptr [0x005f7ba8]         ; 004c7e5d | DAT_005f7ba8
+    FMUL float ptr [0x005f7ba8]         ; 004c7e5d | g_FLOAT_005f7ba8
     FISTP dword ptr [EBX + 0x8]         ; 004c7e63
     MOV dword ptr [ESI + 0x38],0x0      ; 004c7e66
     MOV dword ptr [ESI + 0x3c],0xffff   ; 004c7e6d

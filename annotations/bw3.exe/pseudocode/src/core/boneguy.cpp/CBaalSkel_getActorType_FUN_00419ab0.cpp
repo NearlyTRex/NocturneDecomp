@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_boneguy_cpp_CBaalSkel_getActorType_FUN_00419ab0(CBaalSkel *this_ptr)
 
 {
-  return (CDemonActorType *)&DAT_007e173c;
+  return &g_CDemonActorType_007e173c;
 }

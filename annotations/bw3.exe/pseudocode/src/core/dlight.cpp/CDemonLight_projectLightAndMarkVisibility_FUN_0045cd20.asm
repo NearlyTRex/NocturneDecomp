@@ -13,7 +13,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044aa20 at 0044aeae
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2820
+;   uchar[8] g_UCHAR_ARRAY_005f2820
 ;
 ; *****************************************************************************
 
@@ -111,7 +111,7 @@ section .text
     ADD EAX,EDI                         ; 0045cde2
     MOV EDI,ECX                         ; 0045cde4
     AND EDI,0x7                         ; 0045cde6
-    MOV DL,byte ptr [EDI + 0x5f2820]    ; 0045cde9 | DAT_005f2820
+    MOV DL,byte ptr [EDI + 0x5f2820]    ; 0045cde9 | g_UCHAR_ARRAY_005f2820
     OR byte ptr [EAX],DL                ; 0045cdef
     IMUL ESI,dword ptr [EBX + 0x1cc0]   ; 0045cdf1
     ADD ECX,ESI                         ; 0045cdf8

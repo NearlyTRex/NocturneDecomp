@@ -14,8 +14,8 @@
 ;   undefined4 s_angs_005e9073+1
 ;   undefined4 s_ngs_005e9073+2
 ;   undefined4 s_gs_005e9073+3
-;   undefined4 DAT_01d33b20
-;   undefined4 DAT_01d33b88
+;   char g_CHAR_01d33b20
+;   char g_CHAR_01d33b88
 ;   undefined4 DAT_01d33b89
 ;   undefined4 DAT_01d33b8a
 ;   undefined4 DAT_01d33b8b
@@ -43,11 +43,11 @@ section .text
     MOV byte ptr [EDX + 0x1018],0x0     ; 0051a320
     XOR AH,AH                           ; 0051a327
     MOV dword ptr [EDX + 0x1130],0x0    ; 0051a329
-    MOV byte ptr [0x01d33b20],AH        ; 0051a333 | DAT_01d33b20
+    MOV byte ptr [0x01d33b20],AH        ; 0051a333 | g_CHAR_01d33b20
     PUSH EDI                            ; 0051a339
     MOV AL,byte ptr [ESI]               ; 0051a33a | = "fangs" | s_ngs_005e9073+2
         ;   Label: LAB_0051a33a
-    MOV byte ptr [EDI],AL               ; 0051a33c | DAT_01d33b88 | DAT_01d33b8a
+    MOV byte ptr [EDI],AL               ; 0051a33c | g_CHAR_01d33b88 | DAT_01d33b8a
     CMP AL,0x0                          ; 0051a33e
     JZ 0x0051a352                       ; 0051a340
         ;   XREF to: 0051a352 (CONDITIONAL_JUMP)  ; LAB_0051a352

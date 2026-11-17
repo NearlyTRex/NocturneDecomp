@@ -10,6 +10,6 @@ void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_0042d820(void *sprite_data,vo
 
 {
   cockpit_ckptutil_c_blitDualModeSprite_FUN_0042d390
-            (sprite_data,span_data,0,0,DAT_006141b8,DAT_006141bc);
+            (sprite_data,span_data,0,0,g_INT_006141b8,g_INT_006141bc);
   return;
 }

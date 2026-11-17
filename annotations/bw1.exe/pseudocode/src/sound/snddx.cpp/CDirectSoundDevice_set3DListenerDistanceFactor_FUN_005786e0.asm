@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   distance_in_feet
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f4df3
+;   float g_FLOAT_005f4df3 = 0.3048000
 ;   undefined4 DAT_02c81da0
 ;
 ; *****************************************************************************
@@ -23,7 +23,7 @@ section .text
     RET                                 ; 005786ea
     FLD float ptr [ESP + 0x8]           ; 005786eb
         ;   Label: LAB_005786eb
-    FMUL float ptr [0x005f4df3]         ; 005786ef | DAT_005f4df3
+    FMUL float ptr [0x005f4df3]         ; 005786ef | g_FLOAT_005f4df3
     PUSH 0x0                            ; 005786f5
     MOV EAX,EDX                         ; 005786f7
     SUB ESP,0x4                         ; 005786f9

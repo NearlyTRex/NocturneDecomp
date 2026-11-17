@@ -16,7 +16,7 @@ int __cdecl core_hero_cpp_CHero_tryUseSelectedItem_FUN_004cfc80(CHero *this_ptr)
   if (actor_ptr == (CDemonActor *)0x0) {
     return 0;
   }
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(actor_ptr,"N@CHealthItem" + 2);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(actor_ptr,"CHealthItem");
   if (iVar1 == 0) {
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c840
                       (this_ptr->inventories[0].selected_items

@@ -13,7 +13,7 @@ int __cdecl core_spirindi_cpp_CSpiritIndian_renderTransparent_FUN_0059a850(CSpir
   
   if ((((this_ptr->base).base.is_spectral != 0) &&
       (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                         (0x01C6E360,"?heroCanSee" + 1), iVar1 != 0)) &&
+                         (g_CEventList_PTR_005fba60,"heroCanSee"), iVar1 != 0)) &&
      (this_ptr->pool_me == 0)) {
     core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(&this_ptr->base);
     return (this_ptr->base).base.was_rendered_opaque;

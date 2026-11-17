@@ -8,8 +8,8 @@
 ; SDamageInfo *    Stack[0x8]:4   param_2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6795
-;   undefined4 DAT_01cedef4
+;   double g_DOUBLE_005e6795 = 10
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -143,7 +143,7 @@ section .text
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 0053eb02
     FLD float ptr [ESP + 0x38]          ; 0053eb06
-    FMUL double ptr [0x005e6795]        ; 0053eb0a | DAT_005e6795
+    FMUL double ptr [0x005e6795]        ; 0053eb0a | g_DOUBLE_005e6795
     LEA EAX,[EBP + 0x1c]                ; 0053eb10
     ADD ESP,0x8                         ; 0053eb13
     FLD float ptr [EBP + 0x4]           ; 0053eb16
@@ -179,7 +179,7 @@ section .text
     CMP EAX,0xe                         ; 0053eb66
     JZ 0x0053ead8                       ; 0053eb69
         ;   XREF to: 0053ead8 (CONDITIONAL_JUMP)  ; LAB_0053ead8
-    MOV EAX,[0x01cedef4]                ; 0053eb6f | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 0053eb6f | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 0053eb74
     ADD EAX,0x20                        ; 0053eb7b
     PUSH EAX                            ; 0053eb7e

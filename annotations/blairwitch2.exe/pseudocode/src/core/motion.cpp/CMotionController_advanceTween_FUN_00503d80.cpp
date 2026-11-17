@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_00503d80(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time)
 
 {
@@ -26,8 +24,8 @@ void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_00503d80(CMotion
   if (0 < pSVar5->signal_count) {
     do {
       fVar2 = (float)pSVar3->signals[0].frame_number;
-      if ((current_frame <= fVar2) && (fVar2 <= local_1c + (float)_DAT_005dfd28)) {
-        local_1c = fVar2 + (float)_DAT_005dfd28;
+      if ((current_frame <= fVar2) && (fVar2 <= local_1c + (float)0.001)) {
+        local_1c = fVar2 + (float)0.001;
       }
       iVar4 = iVar4 + 1;
       pSVar3 = (SMotion *)(pSVar3->motion_name + 8);

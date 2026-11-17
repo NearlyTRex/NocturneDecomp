@@ -23,12 +23,12 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_processDamage_FUN_00599d60(CSpiritEa
       (this_ptr->base).hit_points = 0.0;
       (*pCVar1->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(&this_ptr->base);
-      motion_name = &DAT_005d9a11;
+      motion_name = "DIE";
     }
     else {
       if ((damage_info->damage_amount <= 0.0) || ((this_ptr->base).grabbed_by != (CDemonActor *)0x0)
          ) goto LAB_00599dc3;
-      motion_name = &DAT_005d9a15;
+      motion_name = "DIE";
     }
     core_spireagl_cpp_playRandomMotionVariant_FUN_00599c80(&(this_ptr->base).model.base,motion_name)
     ;

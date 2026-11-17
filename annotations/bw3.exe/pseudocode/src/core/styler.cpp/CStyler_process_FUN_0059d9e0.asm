@@ -9,10 +9,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_confused_while_walking_005d9eeb
-;   undefined4 DAT_005d9f19
-;   undefined4 DAT_005d9f21
+;   double g_DOUBLE_005d9f19 = 2
+;   double g_DOUBLE_005d9f21 = 0.5
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01d81080
 ;
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 0059dac1 (CONDITIONAL_JUMP)  ; LAB_0059dac1
     FLD float ptr [EBX + 0x2528]        ; 0059daab
     FLD ST0                             ; 0059dab1
-    FMUL double ptr [0x005d9f19]        ; 0059dab3 | DAT_005d9f19
+    FMUL double ptr [0x005d9f19]        ; 0059dab3 | g_DOUBLE_005d9f19
     FSTP ST1                            ; 0059dab9
     FSTP float ptr [EBX + 0x2528]       ; 0059dabb
     PUSH dword ptr [EBP + 0x18]         ; 0059dac1
@@ -371,7 +371,7 @@ section .text
     JNZ 0x0059dc9c                      ; 0059dd3c
         ;   XREF to: 0059dc9c (CONDITIONAL_JUMP)  ; LAB_0059dc9c
     FLD float ptr [EBP + 0x18]          ; 0059dd42
-    FMUL double ptr [0x005d9f21]        ; 0059dd45 | DAT_005d9f21
+    FMUL double ptr [0x005d9f21]        ; 0059dd45 | g_DOUBLE_005d9f21
     FADD float ptr [EBX + 0x487c4]      ; 0059dd4b
     FST float ptr [EBX + 0x487c4]       ; 0059dd51
     FLD1                                ; 0059dd57
@@ -385,14 +385,14 @@ section .text
     JZ 0x0059dc9c                       ; 0059dd6c
         ;   XREF to: 0059dc9c (CONDITIONAL_JUMP)  ; LAB_0059dc9c
     PUSH ECX                            ; 0059dd72
-    MOV EAX,[0x00600530]                ; 0059dd73 | DAT_00600530
+    MOV EAX,[0x00600530]                ; 0059dd73 | g_CDemonMission_PTR_00600530
     PUSH EAX                            ; 0059dd78 | DAT_01d81080
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 0059dd79
         ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0059dd7e
     PUSH 0x1                            ; 0059dd81
     PUSH EBX                            ; 0059dd83
-    MOV EDX,dword ptr [0x00600530]      ; 0059dd84 | DAT_00600530
+    MOV EDX,dword ptr [0x00600530]      ; 0059dd84 | g_CDemonMission_PTR_00600530
     PUSH EDX                            ; 0059dd8a | DAT_01d81080
     MOV dword ptr [EBX + 0x47b94],0x0   ; 0059dd8b
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 0059dd95

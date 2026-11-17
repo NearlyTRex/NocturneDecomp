@@ -47,7 +47,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
            (actor_ptr = core_charactr_cpp_CCharacter_findNearestReachableWaypoint_FUN_0042b420
                                   (this_ptr,target_waypoint), actor_ptr == (CWayPoint *)0x0)) {
           engine_console_cpp_CConsole_printf_FUN_00436710
-                    (g_CConsolePtr,"@%s can't figure out next waypoint trying to reach %s\n" + 1);
+                    (g_CConsolePtr,"%s can't figure out next waypoint trying to reach %s\n");
           return 1;
         }
         core_charactr_cpp_CCharacter_followActor_FUN_00428260
@@ -65,7 +65,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
            *(uint *)((int)&local_48 + (uint)bVar3 * -8 + 4);
       *(uint *)((int)&local_30 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
            *(uint *)((int)&local_48 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-      direction = (CVector3f *)&DAT_0265370c;
+      direction = &g_CVector3f_0265370c;
       path_map = (*((this_ptr->door_target->base).vtable._ub)->getPathMap)
                            (&this_ptr->door_target->base);
       iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_004177e0(CBodyPart *this_ptr,char *texture_name)
 
 {
@@ -29,8 +27,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_004177e0(CBodyPart *this_
     } while (iVar3 < this_ptr->texture_count);
   }
   if (9 < this_ptr->texture_count) {
-    _DAT_01d046a0 = "..\\core\\bodypart.cpp";
-    _DAT_01d046a4 = 0x47a;
+    g_CHAR_PTR_01d046a0 = "..\\core\\bodypart.cpp";
+    g_INT_01d046a4 = 0x47a;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many body part textures!");
   }
   memset(this_ptr->textures + this_ptr->texture_count,0,0x18);

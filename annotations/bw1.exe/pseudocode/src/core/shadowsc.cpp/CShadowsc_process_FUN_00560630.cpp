@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_ptr,float delta_time)
 
@@ -103,7 +102,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
   if (iVar5 == 0) {
     switch(iStack_24) {
     case 0:
-      fVar12 = (float)_DAT_005f18bd;
+      fVar12 = (float)65000;
       this_ptr->is_opaque = 0;
       this_ptr->render_mode = 3;
       pCVar11 = (CShadowsc *)0x560a45;
@@ -127,7 +126,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
       else {
         fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
                               (&pCVar1->base);
-        if ((float)_DAT_005f18ad < fStack_14) {
+        if ((float)0.90000000000000002 < fStack_14) {
           iVar13 = 1;
           iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0);
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -156,7 +155,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
         else {
           fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
                                 (pCStack_20);
-          if ((float)_DAT_005f18ad < fStack_14) {
+          if ((float)0.90000000000000002 < fStack_14) {
             iVar13 = 1;
             iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0);
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCVar9,iVar5 + 2,iVar13);
@@ -178,11 +177,11 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
       fStack_2c = SQRT(fStack_e0 * fStack_e0 +
                        afStack_f0[2] * afStack_f0[2] + afStack_f0[3] * afStack_f0[3]);
       fStack_1c = fStack_2c;
-      if ((_DAT_00605348 < fStack_2c) && (iStack_24 == 2)) {
-        if ((this_ptr->base).attack_cooldown <= (float)_DAT_005f18a5) {
+      if ((9.0f < fStack_2c) && (iStack_24 == 2)) {
+        if ((this_ptr->base).attack_cooldown <= (float)0.5) {
           fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
                                 (pCStack_20);
-          if ((float)_DAT_005f18ad < fStack_14) {
+          if ((float)0.90000000000000002 < fStack_14) {
             iVar13 = 1;
             iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0);
             pCVar9 = pCStack_20;
@@ -192,7 +191,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
         else {
           fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
                                 (pCStack_20);
-          if ((float)_DAT_005f18ad < fStack_14) {
+          if ((float)0.90000000000000002 < fStack_14) {
             iVar13 = 1;
             iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0);
 LAB_00560d8f:
@@ -200,7 +199,7 @@ LAB_00560d8f:
           }
         }
       }
-      if (((_DAT_005f18b5 < fStack_2c) && (fStack_2c < _DAT_005f18b9)) &&
+      if (((8.0f < fStack_2c) && (fStack_2c < 12.0f)) &&
          (iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,10), iVar5 == 5)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr->base).base.model.base,3,1);
@@ -244,7 +243,7 @@ LAB_00560d8f:
       fVar12 = 4.0;
       fStack_14 = SStack_190.damage_amount;
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                ((CVector3f *)&DAT_02c8af28,
+                (&g_CVector3f_02c8af28,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[4],&CStack_7c);
       pCVar10 = &CStack_b8;
@@ -265,15 +264,17 @@ LAB_00560d8f:
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(&pCVar11->base,pCVar10,fVar12,damage_info)
       ;
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                (0x01C51D80,"ScorpTailAttack");
-      iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
+                (g_CEventList_PTR_0061b4d0,"ScorpTailAttack");
+      iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                        (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
       if (iVar5 == 0) {
         core_shadowsc_cpp_CShadowsc_playAttackSound_FUN_00561020(this_ptr);
       }
       break;
     case 6:
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,"ScorpDying");
-      fVar12 = (1.0 - fStack_18 / fStack_34) * _DAT_005f189d;
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+                (g_CEventList_PTR_0061b4d0,"ScorpDying");
+      fVar12 = (1.0 - fStack_18 / fStack_34) * 65000.0f;
       this_ptr->render_mode = 3;
       dVar8 = round((double)fVar12);
       this_ptr->fade_alpha = (int)ROUND(dVar8);
@@ -304,7 +305,7 @@ LAB_00560d8f:
 LAB_00560768:
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
                             (&(this_ptr->base).base.model.base);
-      if (fStack_14 <= (float)_DAT_005f18ad) goto LAB_005607a9;
+      if (fStack_14 <= (float)0.90000000000000002) goto LAB_005607a9;
       iVar13 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0);
       iVar5 = iVar5 + 2;
@@ -313,7 +314,7 @@ LAB_00560768:
 LAB_005609e5:
       fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
                             (&(this_ptr->base).base.model.base);
-      if (fStack_14 <= (float)_DAT_005f18ad) goto LAB_005607a9;
+      if (fStack_14 <= (float)0.90000000000000002) goto LAB_005607a9;
       iVar13 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0);
       iVar5 = iVar5 + 1;
@@ -355,11 +356,12 @@ switchD_00560f6e_caseD_5:
            afStack_90[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
       fStack_30 = SQRT(afStack_114[1] * afStack_114[1] +
                        fStack_118 * fStack_118 + afStack_114[0] * afStack_114[0]);
-      fStack_28 = (this_ptr->base).guard_distance * _DAT_005f18c5;
+      fStack_28 = (this_ptr->base).guard_distance * 0.5f;
       if (fStack_30 <= fStack_28) {
         fVar12 = (fStack_28 - fStack_30) / fStack_28;
         dVar8 = round
-                          ((double)((fVar12 * _DAT_005f18c9 - fVar12 * fVar12) * _DAT_005f18cd));
+                          ((double)((fVar12 * 2.0f - fVar12 * fVar12) * 65500.0f
+                                   ));
         this_ptr->fade_alpha = (int)ROUND(dVar8);
         this_ptr->render_mode = 0;
         if (0xffdc < this_ptr->fade_alpha) {

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 53,
+    "complexity_score": 39,
     "cross_reference_count": 36,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 90
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -278,21 +277,21 @@
     },
     {
       "addr": "005ee852",
-      "name": "DAT_005ee852",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ee852",
+      "type": "double",
+      "value": "4294967296"
     },
     {
       "addr": "005ee85a",
-      "name": "DAT_005ee85a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ee85a",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "005ee862",
-      "name": "DAT_005ee862",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ee862",
+      "type": "double",
+      "value": "18"
     },
     {
       "addr": "02662d60",
@@ -302,38 +301,38 @@
     },
     {
       "addr": "02662d64",
-      "name": "DAT_02662d64",
-      "type": "undefined4",
+      "name": "g_INT_02662d64",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02662d68",
-      "name": "DAT_02662d68",
-      "type": "undefined4",
+      "name": "g_struct_19_02662d68",
+      "type": "_struct_19",
       "value": null
     },
     {
       "addr": "02662d6c",
-      "name": "DAT_02662d6c",
+      "name": "g_struct_19_02662d68.HighPart",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02662d78",
-      "name": "DAT_02662d78",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02662d78",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02662d80",
-      "name": "DAT_02662d80",
-      "type": "undefined4",
+      "name": "g_INT_02662d80",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02662d84",
-      "name": "DAT_02662d84",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_02662d84",
+      "type": "int[1]",
       "value": null
     }
   ],
@@ -470,14 +469,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_02662d68",
-      "severity": "mild",
-      "text": "QueryPerformanceCounter((LARGE_INTEGER *)&DAT_02662d68);",
-      "type": "undefined_data"
     }
   ]
 }

@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02ce7280
-;   undefined4 DAT_02cf341c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   undefined4 g_CSfxSlot_ARRAY_02ce721c[0].playback_state
+;   int g_INT_02cf341c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -19,10 +19,10 @@ section .text
 
     PUSH ESI                            ; 005513f0
         ;   Label: sound_sndmain.cpp_getActiveSfxCount_FUN_005513f0
-    CMP dword ptr [0x02cf341c],0x0      ; 005513f1 | DAT_02cf341c
+    CMP dword ptr [0x02cf341c],0x0      ; 005513f1 | g_INT_02cf341c
     JLE 0x00551422                      ; 005513f8
         ;   XREF to: 00551422 (CONDITIONAL_JUMP)  ; LAB_00551422
-    MOV ESI,dword ptr [0x02ce7280]      ; 005513fa | DAT_02ce7280
+    MOV ESI,dword ptr [0x02ce7280]      ; 005513fa | g_CSfxSlot_ARRAY_02ce721c[0].playback_state
         ;   Label: LAB_005513fa
     XOR EAX,EAX                         ; 00551400
     XOR EDX,EDX                         ; 00551402
@@ -47,8 +47,8 @@ section .text
     MOV ECX,0x5d2507                    ; 00551423
     MOV EBX,0x24b                       ; 00551428
     PUSH 0x5d251c                       ; 0055142d
-    MOV dword ptr [0x01d71de0],ECX      ; 00551432 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00551438 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00551432 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00551438 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055143e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00551443

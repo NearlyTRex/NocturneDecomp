@@ -7,9 +7,9 @@
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005baff1
-;   undefined4 DAT_005de380
-;   undefined4 DAT_005f2af8
+;   double g_DOUBLE_005baff1 = 0.00390625
+;   float g_FLOAT_005de380 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2af8 = 01bdd7e4
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -31,7 +31,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 0045add7
     LEA EAX,[EBP + 0x24]                ; 0045addb
     PUSH EAX                            ; 0045adde
-    MOV EDX,dword ptr [0x005f2af8]      ; 0045addf | DAT_005f2af8
+    MOV EDX,dword ptr [0x005f2af8]      ; 0045addf | g_CDemonRenderer_PTR_005f2af8
     PUSH EDX                            ; 0045ade5
     XOR ESI,ESI                         ; 0045ade6
     XOR EDI,EDI                         ; 0045ade8
@@ -40,30 +40,30 @@ section .text
     ADD ESP,0x8                         ; 0045adef
     FILD dword ptr [EDI + 0x5f1954]     ; 0045adf2
         ;   Label: LAB_0045adf2
-    FMUL double ptr [0x005baff1]        ; 0045adf8 | DAT_005baff1
+    FMUL double ptr [0x005baff1]        ; 0045adf8 | g_DOUBLE_005baff1
     FMUL float ptr [EBP + 0x30]         ; 0045adfe
     FILD dword ptr [EDI + 0x5f1958]     ; 0045ae01
-    FMUL double ptr [0x005baff1]        ; 0045ae07 | DAT_005baff1
+    FMUL double ptr [0x005baff1]        ; 0045ae07 | g_DOUBLE_005baff1
     FXCH                                ; 0045ae0d
     FSTP float ptr [ESP + 0x28]         ; 0045ae0f
     FMUL float ptr [EBP + 0x30]         ; 0045ae13
     FILD dword ptr [EDI + 0x5f195c]     ; 0045ae16
-    FMUL double ptr [0x005baff1]        ; 0045ae1c | DAT_005baff1
+    FMUL double ptr [0x005baff1]        ; 0045ae1c | g_DOUBLE_005baff1
     FXCH                                ; 0045ae22
     FSTP float ptr [ESP + 0x2c]         ; 0045ae24
     FMUL float ptr [EBP + 0x30]         ; 0045ae28
     LEA EBX,[ESP + 0x34]                ; 0045ae2b
     LEA EAX,[ESP + 0x28]                ; 0045ae2f
-    MOV EDX,dword ptr [0x005f2af8]      ; 0045ae33 | DAT_005f2af8
+    MOV EDX,dword ptr [0x005f2af8]      ; 0045ae33 | g_CDemonRenderer_PTR_005f2af8
     FSTP float ptr [ESP + 0x30]         ; 0045ae39
     FLD float ptr [EAX]                 ; 0045ae3d
-    FMUL float ptr [0x005de380]         ; 0045ae3f | DAT_005de380
+    FMUL float ptr [0x005de380]         ; 0045ae3f | g_FLOAT_005de380
     FISTP dword ptr [EBX]               ; 0045ae45
     FLD float ptr [EAX + 0x4]           ; 0045ae47
-    FMUL float ptr [0x005de380]         ; 0045ae4a | DAT_005de380
+    FMUL float ptr [0x005de380]         ; 0045ae4a | g_FLOAT_005de380
     FISTP dword ptr [EBX + 0x4]         ; 0045ae50
     FLD float ptr [EAX + 0x8]           ; 0045ae53
-    FMUL float ptr [0x005de380]         ; 0045ae56 | DAT_005de380
+    FMUL float ptr [0x005de380]         ; 0045ae56 | g_FLOAT_005de380
     FISTP dword ptr [EBX + 0x8]         ; 0045ae5c
     LEA EAX,[ESP + 0x34]                ; 0045ae5f
     PUSH EAX                            ; 0045ae63
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 0045ae68
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0045ae69
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005f2af8]                ; 0045ae6e | DAT_005f2af8
+    MOV EAX,[0x005f2af8]                ; 0045ae6e | g_CDemonRenderer_PTR_005f2af8
     MOV EBX,dword ptr [EAX]             ; 0045ae73
     MOV dword ptr [ESI + EBX*0x1 + 0x18],0x800000 ; 0045ae75
     MOV EBX,dword ptr [EAX]             ; 0045ae7d
@@ -114,7 +114,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x5f1c58]  ; 0045af18
     MOV dword ptr [ESP + 0x20],EAX      ; 0045af1e
     MOV EAX,dword ptr [EBX + 0x5f1c5c]  ; 0045af22
-    MOV ECX,dword ptr [0x005f2af8]      ; 0045af28 | DAT_005f2af8
+    MOV ECX,dword ptr [0x005f2af8]      ; 0045af28 | g_CDemonRenderer_PTR_005f2af8
     MOV dword ptr [ESP + 0x24],EAX      ; 0045af2e
     MOV EAX,ESP                         ; 0045af32
     ADD EBX,0x24                        ; 0045af34

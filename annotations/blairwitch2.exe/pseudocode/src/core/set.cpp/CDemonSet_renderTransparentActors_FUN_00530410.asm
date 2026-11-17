@@ -15,14 +15,14 @@
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f626
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0200a3a4
+;   int g_INT_0200a3a4
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0
@@ -45,11 +45,11 @@ section .text
     MOV EAX,[0x00616494]                ; 0053041b | g_CGamePtr
     XOR EDX,EDX                         ; 00530420
     MOV ECX,dword ptr [EAX + 0x244]     ; 00530422 | g_CGameInstance.letterbox_mode
-    MOV dword ptr [0x0200a3a4],EDX      ; 00530428 | DAT_0200a3a4
+    MOV dword ptr [0x0200a3a4],EDX      ; 00530428 | g_INT_0200a3a4
     TEST ECX,ECX                        ; 0053042e
     JNZ 0x0053045b                      ; 00530430
         ;   XREF to: 0053045b (CONDITIONAL_JUMP)  ; LAB_0053045b
-    MOV EAX,[0x01cedef4]                ; 00530432 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 00530432 | g_INT_01cedef4
     SHL EAX,0x2                         ; 00530437
     MOV EBX,dword ptr [EAX + 0x1cedee4] ; 0053043a
     TEST EBX,EBX                        ; 00530440
@@ -61,7 +61,7 @@ section .text
     JZ 0x0053045b                       ; 0053044e
         ;   XREF to: 0053045b (CONDITIONAL_JUMP)  ; LAB_0053045b
     MOV EAX,dword ptr [EBX + 0x255f8]   ; 00530450
-    MOV [0x0200a3a4],EAX                ; 00530456 | DAT_0200a3a4
+    MOV [0x0200a3a4],EAX                ; 00530456 | g_INT_0200a3a4
     MOV EAX,dword ptr [EBP + 0x15f6f8]  ; 0053045b
         ;   Label: LAB_0053045b
     DEC EAX                             ; 00530461
@@ -143,7 +143,7 @@ section .text
     PUSH EBP                            ; 00530523
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_00530980 ; 00530524
         ;   XREF to: 00530980 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_00530980(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
-    MOV EAX,[0x0200a3a4]                ; 00530529 | DAT_0200a3a4
+    MOV EAX,[0x0200a3a4]                ; 00530529 | g_INT_0200a3a4
     ADD ESP,0x18                        ; 0053052e
     MOV ESI,dword ptr [EBX + 0x108]     ; 00530531
     MOV ECX,dword ptr [EBX + 0x10c]     ; 00530537
@@ -188,8 +188,8 @@ section .text
     OR byte ptr [EBX + 0x144],0x8       ; 00530598
     PUSH 0x1                            ; 0053059f
         ;   Label: LAB_0053059f
-    MOV ECX,dword ptr [0x0060b280]      ; 005305a1 | DAT_0060b280
-    PUSH ECX                            ; 005305a7 | DAT_01ba5c50
+    MOV ECX,dword ptr [0x0060b280]      ; 005305a1 | g_CDemonRenderer_PTR_0060b280
+    PUSH ECX                            ; 005305a7 | g_CDemonRenderer_01ba5c50
     XOR ESI,ESI                         ; 005305a8
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920 ; 005305aa
         ;   XREF to: 0046b920 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(CDemonRenderer * this_ptr, int enabled)
@@ -215,8 +215,8 @@ section .text
     OR byte ptr [EBX + 0x144],0x8       ; 005305d9
     PUSH 0x1                            ; 005305e0
         ;   Label: LAB_005305e0
-    MOV EAX,[0x0060b280]                ; 005305e2 | DAT_0060b280
-    PUSH EAX                            ; 005305e7 | DAT_01ba5c50
+    MOV EAX,[0x0060b280]                ; 005305e2 | g_CDemonRenderer_PTR_0060b280
+    PUSH EAX                            ; 005305e7 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920 ; 005305e8
         ;   XREF to: 0046b920 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 005305ed

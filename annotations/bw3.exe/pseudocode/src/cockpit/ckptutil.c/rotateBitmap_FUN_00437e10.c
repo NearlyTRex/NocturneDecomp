@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00437e10(uchar *source_data,int width,int height,int bytes_per_pixel)
 
 {
@@ -32,8 +30,8 @@ void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00437e10(uchar *source_data,int
   puStack_24 = (uchar *)malloc(width * height * bytes_per_pixel);
   if (puStack_24 == (uchar *)0x0) {
     _sprintf(acStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.");
-    _DAT_01d71de4 = 0x801;
-    _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
+    g_INT_01d71de4 = 0x801;
+    g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_004e4330(acStack_78);
   }
   if (bytes_per_pixel == 1) {

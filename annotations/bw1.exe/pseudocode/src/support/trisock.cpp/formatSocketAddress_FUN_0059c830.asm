@@ -12,7 +12,7 @@
 ;   support_trisock.cpp_httpRequestUpdate_FUN_0059e350 at 0059ec20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f8368
+;   TerminatedCString s_d_005f8368
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -35,7 +35,7 @@ section .text
     MOV SI,word ptr [ESI + 0x4]         ; 0059c844
     AND ESI,0xffff                      ; 0059c848
     PUSH ESI                            ; 0059c84e
-    PUSH 0x5f8368                       ; 0059c84f | DAT_005f8368
+    PUSH 0x5f8368                       ; 0059c84f | = ":%d"
     XOR DL,DL                           ; 0059c854
     MOV ESI,EBX                         ; 0059c856
     MOV AL,byte ptr [ESI]               ; 0059c858

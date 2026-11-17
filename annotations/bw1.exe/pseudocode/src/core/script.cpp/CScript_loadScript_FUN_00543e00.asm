@@ -17,11 +17,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_world_005ee1d2
-;   undefined1 DAT_005ee1d8
-;   undefined1 DAT_005ee1d9
-;   undefined1 DAT_005ee1da
-;   undefined1 DAT_005ee1db
-;   undefined4 DAT_005ee1dd
+;   TerminatedCString s_txt_005ee1d8
+;   undefined4 s_txt_005ee1d8+1
+;   undefined4 s_txt_005ee1d8+2
+;   undefined4 s_txt_005ee1d8+3
+;   TerminatedCString s_rt_005ee1dd
 ;   TerminatedCString s_world_005ee1e0
 ;   TerminatedCString s_Probable_non_text_file_s_005ee1e6
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
@@ -86,20 +86,20 @@ section .text
         ;   XREF to: 005c2238 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005c2238(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 00543e60
     LEA EDI,[ESP + 0x200]               ; 00543e63
-    MOV ESI,0x5ee1d8                    ; 00543e6a | DAT_005ee1d8
+    MOV ESI,0x5ee1d8                    ; 00543e6a | = ".txt"
     PUSH EDI                            ; 00543e6f
     SUB ECX,ECX                         ; 00543e70
     DEC ECX                             ; 00543e72
     MOV AL,0x0                          ; 00543e73
     SCASB.REPNE ES:EDI                  ; 00543e75
     DEC EDI                             ; 00543e77
-    MOV AL,byte ptr [ESI]               ; 00543e78 | DAT_005ee1d8 | DAT_005ee1da
+    MOV AL,byte ptr [ESI]               ; 00543e78 | = ".txt" | s_txt_005ee1d8+2
         ;   Label: LAB_00543e78
     MOV byte ptr [EDI],AL               ; 00543e7a
     CMP AL,0x0                          ; 00543e7c
     JZ 0x00543e90                       ; 00543e7e
         ;   XREF to: 00543e90 (CONDITIONAL_JUMP)  ; LAB_00543e90
-    MOV AL,byte ptr [ESI + 0x1]         ; 00543e80 | DAT_005ee1d9 | DAT_005ee1db
+    MOV AL,byte ptr [ESI + 0x1]         ; 00543e80 | s_txt_005ee1d8+1 | s_txt_005ee1d8+3
     ADD ESI,0x2                         ; 00543e83
     MOV byte ptr [EDI + 0x1],AL         ; 00543e86
     ADD EDI,0x2                         ; 00543e89
@@ -115,7 +115,7 @@ section .text
     CALL core_script.cpp_CScript_dbLoad_FUN_0054af20 ; 00543ea1
         ;   XREF to: 0054af20 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_dbLoad_FUN_0054af20(CScript * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00543ea6
-    PUSH 0x5ee1dd                       ; 00543ea9 | DAT_005ee1dd
+    PUSH 0x5ee1dd                       ; 00543ea9 | = "rt"
     MOV EBP,dword ptr [ESP + 0x324]     ; 00543eae
     PUSH EBP                            ; 00543eb5
     PUSH 0x5ee1e0                       ; 00543eb6 | = "world"

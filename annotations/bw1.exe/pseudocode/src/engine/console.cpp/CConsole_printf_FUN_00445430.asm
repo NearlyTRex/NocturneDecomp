@@ -24,8 +24,8 @@
 ;   ... and 92 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d6cf7
-;   undefined4 DAT_005d6cfa
+;   TerminatedCString s_at_005d6cf7
+;   TerminatedCString s_s_005d6cfa
 ;   TerminatedCString s_console_txt_00611108
 ;
 ; Called Functions:
@@ -101,7 +101,7 @@ section .text
     POP ESI                             ; 004454ba
     POP EBX                             ; 004454bb
     RET                                 ; 004454bc
-    PUSH 0x5d6cf7                       ; 004454bd | DAT_005d6cf7
+    PUSH 0x5d6cf7                       ; 004454bd | = "at"
         ;   Label: LAB_004454bd
     PUSH 0x611108                       ; 004454c2 | = "console.txt"
     CALL crt_stdio.c_fopen_FUN_005c157c ; 004454c7
@@ -113,7 +113,7 @@ section .text
         ;   XREF to: 004454b2 (CONDITIONAL_JUMP)  ; LAB_004454b2
     MOV EAX,ESP                         ; 004454d5
     PUSH EAX                            ; 004454d7
-    PUSH 0x5d6cfa                       ; 004454d8 | DAT_005d6cfa
+    PUSH 0x5d6cfa                       ; 004454d8 | = "%s"
     PUSH EBX                            ; 004454dd
     CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004454de
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)

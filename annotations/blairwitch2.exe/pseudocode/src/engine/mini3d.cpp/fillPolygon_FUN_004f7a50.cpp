@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_fillPolygon_FUN_004f7a50(float *vertices,int vertex_count)
 
 {
@@ -22,9 +20,9 @@ void __cdecl engine_mini3d_cpp_fillPolygon_FUN_004f7a50(float *vertices,int vert
   if ((vertices[0x25] - vertices[0x15]) * (vertices[0x16] - vertices[6]) <
       (vertices[0x15] - vertices[5]) * (vertices[0x26] - vertices[0x16])) {
     iVar4 = 0;
-    _DAT_01d17fbc = 0;
-    _DAT_01d17ab4 = 0;
-    _DAT_01d17fb8 = 0x4b0;
+    g_INT_01d17fbc = 0;
+    g_INT_01d17ab4 = 0;
+    g_INT_01d17fb8 = 0x4b0;
     v0 = vertices;
     if (0 < vertex_count) {
       do {
@@ -37,29 +35,29 @@ void __cdecl engine_mini3d_cpp_fillPolygon_FUN_004f7a50(float *vertices,int vert
         v0 = v0 + 0x10;
       } while (iVar4 < vertex_count);
     }
-    iVar4 = _DAT_01d17fb8;
-    local_18 = (SSoftwareEdge *)&DAT_01d17ab8;
+    iVar4 = g_INT_01d17fb8;
+    local_18 = &g_SSoftwareEdge_01d17ab8;
     iVar3 = 0;
-    if (0 < _DAT_01d17ab4) {
+    if (0 < g_INT_01d17ab4) {
       do {
-        if ((_DAT_01d17fb8 == (local_18->base).y_min) && (local_18 != (SSoftwareEdge *)0x0))
+        if ((g_INT_01d17fb8 == (local_18->base).y_min) && (local_18 != (SSoftwareEdge *)0x0))
         goto LAB_004f7b0a;
         iVar3 = iVar3 + 1;
         local_18 = local_18 + 1;
-      } while (iVar3 < _DAT_01d17ab4);
+      } while (iVar3 < g_INT_01d17ab4);
     }
     local_18 = (SSoftwareEdge *)0x0;
 LAB_004f7b0a:
     if (local_18 != (SSoftwareEdge *)0x0) {
       iVar3 = 0;
-      local_14 = (SSoftwareEdge *)&DAT_01d17ab8;
-      if (0 < _DAT_01d17ab4) {
+      local_14 = &g_SSoftwareEdge_01d17ab8;
+      if (0 < g_INT_01d17ab4) {
         do {
-          if ((_DAT_01d17fb8 == (local_14->base).y_min) && (local_14 != local_18))
+          if ((g_INT_01d17fb8 == (local_14->base).y_min) && (local_14 != local_18))
           goto LAB_004f7b3d;
           iVar3 = iVar3 + 1;
           local_14 = local_14 + 1;
-        } while (iVar3 < _DAT_01d17ab4);
+        } while (iVar3 < g_INT_01d17ab4);
       }
       local_14 = (SSoftwareEdge *)0x0;
 LAB_004f7b3d:
@@ -67,14 +65,14 @@ LAB_004f7b3d:
         do {
           if ((local_18->base).y_max <= iVar4) {
             (local_18->base).y_min = -1;
-            local_18 = (SSoftwareEdge *)&DAT_01d17ab8;
+            local_18 = &g_SSoftwareEdge_01d17ab8;
             iVar3 = 0;
-            if (0 < _DAT_01d17ab4) {
+            if (0 < g_INT_01d17ab4) {
               do {
                 if ((iVar4 == (local_18->base).y_min) && (local_18 != local_14)) goto LAB_004f7b8a;
                 iVar3 = iVar3 + 1;
                 local_18 = local_18 + 1;
-              } while (iVar3 < _DAT_01d17ab4);
+              } while (iVar3 < g_INT_01d17ab4);
             }
             local_18 = (SSoftwareEdge *)0x0;
 LAB_004f7b8a:
@@ -84,14 +82,14 @@ LAB_004f7b8a:
           }
           if ((local_14->base).y_max <= iVar4) {
             (local_14->base).y_min = -1;
-            local_14 = (SSoftwareEdge *)&DAT_01d17ab8;
+            local_14 = &g_SSoftwareEdge_01d17ab8;
             iVar3 = 0;
-            if (0 < _DAT_01d17ab4) {
+            if (0 < g_INT_01d17ab4) {
               do {
                 if ((iVar4 == (local_14->base).y_min) && (local_14 != local_18)) goto LAB_004f7bce;
                 iVar3 = iVar3 + 1;
                 local_14 = local_14 + 1;
-              } while (iVar3 < _DAT_01d17ab4);
+              } while (iVar3 < g_INT_01d17ab4);
             }
             local_14 = (SSoftwareEdge *)0x0;
 LAB_004f7bce:
@@ -99,8 +97,8 @@ LAB_004f7bce:
               return;
             }
           }
-          if (_DAT_01c38b40 == 0) {
-            if (DAT_006141c0 == 0x20) {
+          if (g_INT_01c38b40 == 0) {
+            if (g_INT_006141c0 == 0x20) {
               engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3
                         (local_14,local_18,iVar4);
             }
@@ -109,7 +107,7 @@ LAB_004f7bce:
                         (local_14,local_18,iVar4);
             }
           }
-          else if (DAT_006141c0 == 0x20) {
+          else if (g_INT_006141c0 == 0x20) {
             engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c
                       (local_14,local_18,iVar4);
           }

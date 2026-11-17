@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 64,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 94
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -55,8 +52,8 @@
   "globals": [
     {
       "addr": "005d0dbe",
-      "name": "DAT_005d0dbe",
-      "type": "undefined4",
+      "name": "s_d_005d0dbe",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -73,20 +70,20 @@
     },
     {
       "addr": "005d0df5",
-      "name": "DAT_005d0df5",
-      "type": "undefined4",
+      "name": "s_d_005d0df5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -190,30 +187,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005d0dbe",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d0dbe);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005d0df5",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d0df5);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

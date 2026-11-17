@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl cockpit_drawsurf_cpp_getDashAnimationThreshold_FUN_004694c0(void)
 
 {
-  return _DAT_005f2af0;
+  return g_FLOAT_005f2af0;
 }

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 459,
+    "complexity_score": 443,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 169,
-    "suspect_count": 25,
+    "pseudocode_lines": 168,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,10 +16,9 @@
       "stack_ref",
       "unaffected_reg",
       "unresolved_funcptr",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 558
+    "total_lines": 557
   },
   "cross_references": [
     {
@@ -69,14 +68,14 @@
   "globals": [
     {
       "addr": "005f9ecf",
-      "name": "DAT_005f9ecf",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f9ecf",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "02c9cf0c",
-      "name": "DAT_02c9cf0c",
-      "type": "undefined4",
+      "name": "g_PTR_02c9cf0c",
+      "type": "void*",
       "value": null
     }
   ],
@@ -213,16 +212,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 13,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "uint unaff_EBP;",
@@ -230,7 +221,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 14,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint unaff_ESI;",
@@ -238,7 +229,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "uint in_stack_00000018;",
@@ -246,7 +237,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_ffffffbc",
       "severity": "moderate",
       "text": "int in_stack_ffffffbc;",
@@ -254,7 +245,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(uint *)((int)puVar9",
       "severity": "moderate",
       "text": "puVar9 = (uint *)((int)puVar9 + 1);",
@@ -262,23 +253,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(uint *)((int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if (_DAT_02c9cf0c == (code *)0x0) {",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 56,
+      "line": 54,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(unaff_EBP,(int *)(iVar6 + 0x2c9d1e0),-1.0,1.0);",
@@ -286,7 +269,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 66,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "piVar4[0x1a] = (uint)((in_stack_00000018 & 1 << (bVar1 & 0x1f)) != 0);",
@@ -294,7 +277,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
+      "line": 75,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "memset(&stack0xffffffa8,0,0x34);",
@@ -302,15 +285,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 79,
+      "line": 77,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
-      "text": "iVar6 = (*_DAT_02c9cf0c)(*(uint *)(controller_index * 4 + 0x2c9d1c4),&stack0xffffffa8);",
+      "text": "iVar6 = (*(code *)g_PTR_02c9cf0c)(g_INT_ARRAY_02c9d1c4[controller_index],&stack0xffffffa8);",
       "type": "stack_ref"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 77,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar6 = (*(code *)g_PTR_02c9cf0c)(g_INT_ARRAY_02c9d1c4[controller_index],&stack0xffffffa8);",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 85,
       "match": "in_stack_ffffffbc",
       "severity": "moderate",
       "text": "(in_stack_ffffffbc,(int *)(iVar6 + 0x2c9d1e0),-1.0,1.0);",
@@ -318,7 +309,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 94,
       "match": "(int *)((int)fVar2",
       "severity": "moderate",
       "text": "(jStack_24.wZpos,(int *)((int)fVar2 * 0x30 + 0x2c9d1f8),-1.0,1.0);",
@@ -326,7 +317,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 104,
+      "line": 102,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "piVar4[0x1a] = (uint)((1 << (bVar1 & 0x1f) & unaff_EBP) != 0);",
@@ -334,7 +325,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 108,
+      "line": 106,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI < 18000) {",
@@ -342,7 +333,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 109,
+      "line": 107,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI == 0) {",
@@ -350,7 +341,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 113,
+      "line": 111,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI == 9000) {",
@@ -358,7 +349,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 117,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI < 0x4651) {",
@@ -366,7 +357,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 123,
+      "line": 121,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if ((26999 < unaff_ESI) && (unaff_ESI < 0x6979)) {",
@@ -374,7 +365,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 123,
+      "line": 121,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if ((26999 < unaff_ESI) && (unaff_ESI < 0x6979)) {",
@@ -382,7 +373,7 @@
     },
     {
       "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 40,
       "match": "(int)puVar9",
       "severity": "moderate",
       "text": "puVar9 = (uint *)((int)puVar9 + 1);",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + 1);",
@@ -398,7 +389,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 35,
+      "line": 33,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {",

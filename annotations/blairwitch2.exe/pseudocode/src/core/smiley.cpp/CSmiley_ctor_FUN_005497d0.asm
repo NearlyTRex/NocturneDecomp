@@ -10,8 +10,8 @@
 ;   core_smiley.cpp_factoryFuncSmiley_FUN_005497a0 at 005497b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba5c
-;   undefined4 DAT_005fba60
+;   float g_FLOAT_005fba5c = 50
+;   float g_FLOAT_005fba60 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
@@ -40,9 +40,9 @@ section .text
     MOV dword ptr [EBX + 0x3430],0x3f19999a ; 0054980b
     MOV dword ptr [EBX + 0x3434],0x3f666666 ; 00549815
     MOV dword ptr [EBX + 0x10b2c],0x0   ; 0054981f
-    FLD float ptr [0x005fba5c]          ; 00549829 | DAT_005fba5c
+    FLD float ptr [0x005fba5c]          ; 00549829 | g_FLOAT_005fba5c
     MOV dword ptr [EBX + 0x10b30],0x0   ; 0054982f
-    FLD float ptr [0x005fba60]          ; 00549839 | DAT_005fba60
+    FLD float ptr [0x005fba60]          ; 00549839 | g_FLOAT_005fba60
     MOV dword ptr [EBX + 0x10b34],0x0   ; 0054983f
     ADD ESP,0x8                         ; 00549849
     MOV dword ptr [EBX + 0x10b38],0x1   ; 0054984c

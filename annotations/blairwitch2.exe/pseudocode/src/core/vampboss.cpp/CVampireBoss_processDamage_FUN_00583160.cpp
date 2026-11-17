@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireBoss *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -25,7 +23,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
   bVar6 = 0;
   if ((this_ptr->base).base.is_invulnerable == 0) {
     if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
-      damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005edb6c;
+      damage_info->damage_amount = damage_info->damage_amount * (float)2;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
                 ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_24);
       iVar2 = 0;
@@ -37,7 +35,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
       do {
         iVar2 = iVar2 + 1;
         core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                  (0x01C3DEB4,&CStack_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                  (g_CFireEffect_PTR_00614d30,&CStack_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
       } while (iVar2 < 5);
     }
     if (this_ptr->form == 0) {
@@ -58,17 +56,18 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
             if (pCVar5 == this_ptr_00) {
               core_inv_cpp_CInventory_removeItem_FUN_004db8e0
                         ((CInventory *)&pCVar4[0xd6].process_disabled,this_ptr_00,0);
-              core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(0x01D182F0,this_ptr_00);
+              core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
+                        (g_CDemonMission_PTR_00618170,this_ptr_00);
             }
           }
         }
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
                   ((CCharacter *)this_ptr,0,this_ptr_00,0.2,(CMatrix3x4f *)0x0);
         core_event_cpp_CEventList_executeCommands_FUN_004894f0
-                  (0x01C38BC0,"VampireBossBitesIt");
+                  (g_CEventList_PTR_006141f0,"VampireBossBitesIt");
         sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
         core_sound_cpp_CSound_playSound_FUN_0055ae30
-                  (0x0264B290,this_ptr,"voicudeath.wav @ 2.5");
+                  (g_CSound_PTR_0061c068,this_ptr,"voicudeath.wav @ 2.5");
         (this_ptr->base).base.hit_points = 0.0;
         return;
       }
@@ -80,7 +79,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
       }
       fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
       (this_ptr->base).base.hit_points = fVar1;
-      if (fVar1 < (float)_DAT_005edb74) {
+      if (fVar1 < (float)25) {
         (this_ptr->base).base.hit_points = 24.999;
       }
       iVar2 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,2);

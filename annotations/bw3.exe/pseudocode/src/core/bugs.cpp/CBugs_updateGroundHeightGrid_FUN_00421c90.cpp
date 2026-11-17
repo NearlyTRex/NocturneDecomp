@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421c90(CBugs *this_ptr)
 
@@ -19,13 +18,12 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421c90(CBugs *this
   int iVar5;
   int unaff_EBX;
   int iVar6;
-  uint *puVar7;
-  float *pfVar8;
-  int iVar9;
-  uint *puVar10;
-  int iVar11;
-  byte bVar12;
-  double dVar13;
+  float *pfVar7;
+  int iVar8;
+  float *pfVar9;
+  int iVar10;
+  byte bVar11;
+  double dVar12;
   float afStackY_1074 [1005];
   float local_a8;
   float local_a4;
@@ -55,14 +53,14 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421c90(CBugs *this
   int local_28;
   int local_24;
   
-  bVar12 = 0;
+  bVar11 = 0;
   local_a8 = (this_ptr->bounds).min.x + (this_ptr->bounds).max.x;
-  fVar4 = 1.0 / _DAT_005dcbc8;
+  fVar4 = 1.0 / 0.25f;
   local_a4 = (this_ptr->bounds).min.y + (this_ptr->bounds).max.y;
   local_a0 = (this_ptr->bounds).min.z + (this_ptr->bounds).max.z;
-  local_78 = local_a8 * _DAT_005b783d;
-  local_74 = local_a4 * _DAT_005b783d;
-  local_70[0] = local_a0 * _DAT_005b783d;
+  local_78 = local_a8 * 0.5f;
+  local_74 = local_a4 * 0.5f;
+  local_70[0] = local_a0 * 0.5f;
   local_9c = (this_ptr->base).base.base.location.position.x + local_78;
   fStack_98 = (this_ptr->base).base.base.location.position.y + local_74;
   local_94 = (this_ptr->base).base.base.location.position.z + local_70[0];
@@ -75,63 +73,64 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421c90(CBugs *this
   local_54 = local_78;
   local_50 = local_74;
   local_4c = local_70[0];
-  dVar13 = floor((double)(local_9c * fVar4));
-  local_48 = SUB84(__BITCAST_UINT64(dVar13),0);
-  iStack_44 = (int)((ulonglong)dVar13 >> 0x20);
+  dVar12 = floor((double)(local_9c * fVar4));
+  local_48 = SUB84(__BITCAST_UINT64(dVar12),0);
+  iStack_44 = (int)((ulonglong)dVar12 >> 0x20);
   fVar4 = local_94 * fVar4;
-  dVar13 = round(dVar13);
-  local_3c = (int)ROUND(dVar13);
-  dVar13 = floor((double)fVar4);
-  local_4c = SUB84(__BITCAST_UINT64(dVar13),0);
-  local_48 = (int)((ulonglong)dVar13 >> 0x20);
-  fVar1 = (float)local_3c * _DAT_005dcbc8;
+  dVar12 = round(dVar12);
+  local_3c = (int)ROUND(dVar12);
+  dVar12 = floor((double)fVar4);
+  local_4c = SUB84(__BITCAST_UINT64(dVar12),0);
+  local_48 = (int)((ulonglong)dVar12 >> 0x20);
+  fVar1 = (float)local_3c * 0.25f;
   fVar4 = (this_ptr->base).base.base.location.position.x;
-  fVar2 = _DAT_005dcbc8 * _DAT_005b7841 * (float)_DAT_005b7849;
-  dVar13 = round(dVar13);
-  iStack_44 = (int)ROUND(dVar13);
+  fVar2 = 0.25f * 11.0f * (float)0.5;
+  dVar12 = round(dVar12);
+  iStack_44 = (int)ROUND(dVar12);
   this_ptr->grid_origin_x = (fVar1 - fVar4) - fVar2;
   this_ptr->grid_origin_z =
-       ((float)iStack_44 * _DAT_005dcbc8 - (this_ptr->base).base.base.location.position.z) - fVar2;
+       ((float)iStack_44 * 0.25f - (this_ptr->base).base.base.location.position.z) -
+       fVar2;
   if ((local_40 != this_ptr->grid_cell_x) || (iStack_44 != this_ptr->grid_cell_z)) {
     iVar3 = *(int *)(unaff_EBX + 0x1be80) - local_40;
     local_28 = iVar3;
     local_2c = *(int *)(unaff_EBX + 0x1be84) - iStack_44;
     local_30 = iVar3 + 0xb;
     local_34 = local_2c + 0xb;
-    puVar7 = (uint *)(unaff_EBX + 0x135dc);
-    puVar10 = &DAT_007e1a54;
+    pfVar7 = (float *)(unaff_EBX + 0x135dc);
+    pfVar9 = g_FLOAT_ARRAY_007e1a54;
     for (iVar5 = 0x90; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar10 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar12 * -2 + 1;
-      puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
+      *pfVar9 = *pfVar7;
+      pfVar7 = pfVar7 + (uint)bVar11 * -2 + 1;
+      pfVar9 = pfVar9 + (uint)bVar11 * -2 + 1;
     }
     for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(byte *)puVar10 = *(byte *)puVar7;
-      puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);
-      puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);
+      *(byte *)pfVar9 = *(byte *)pfVar7;
+      pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);
+      pfVar9 = (float *)((int)pfVar9 + (uint)bVar11 * -2 + 1);
     }
-    pfVar8 = (float *)(unaff_EBX + 0x24 + (uint)bVar12 * -8);
+    pfVar7 = (float *)(unaff_EBX + 0x24 + (uint)bVar11 * -8);
     local_74 = *(float *)(unaff_EBX + 0x20);
-    local_70[(uint)bVar12 * -2] = *pfVar8;
-    local_70[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] = pfVar8[(uint)bVar12 * -2 + 1];
+    local_70[(uint)bVar11 * -2] = *pfVar7;
+    local_70[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] = pfVar7[(uint)bVar11 * -2 + 1];
     local_74 = local_74 + *(float *)(unaff_EBX + 0x1be88);
     local_70[1] = local_70[1] + *(float *)(unaff_EBX + 0x1be8c);
     local_8c.x = local_74;
-    *(float *)((int)&local_8c + (uint)bVar12 * -8 + 4) = local_70[(uint)bVar12 * -2];
-    *(float *)((int)&local_8c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-         local_70[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+    *(float *)((int)&local_8c + (uint)bVar11 * -8 + 4) = local_70[(uint)bVar11 * -2];
+    *(float *)((int)&local_8c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+         local_70[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
     local_3c = local_2c << 2;
     local_24 = 0;
     local_38 = iVar3 * -0x30;
     iVar3 = unaff_EBX;
     do {
       iVar6 = 0;
-      local_8c.x = (float)local_24 * _DAT_005dcbc8 + local_74;
-      iVar9 = local_38 - local_3c;
+      local_8c.x = (float)local_24 * 0.25f + local_74;
+      iVar8 = local_38 - local_3c;
       iVar5 = iVar3;
-      iVar11 = iVar3;
+      iVar10 = iVar3;
       do {
-        local_8c.z = (float)iVar6 * _DAT_005dcbc8 + local_70[1];
+        local_8c.z = (float)iVar6 * 0.25f + local_70[1];
         if ((((local_24 < local_28) || (local_30 < local_24)) || (iVar6 < local_2c)) ||
            (local_34 < iVar6)) {
           fVar4 = core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00474940
@@ -139,10 +138,10 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421c90(CBugs *this
           *(float *)(iVar5 + 0x135dc) = fVar4 - *(float *)(unaff_EBX + 0x24);
         }
         else {
-          *(uint *)(iVar11 + 0x135dc) = *(uint *)((int)&DAT_007e1a54 + iVar9);
+          *(uint *)(iVar10 + 0x135dc) = *(uint *)((int)g_FLOAT_ARRAY_007e1a54 + iVar8);
         }
-        iVar11 = iVar11 + 4;
-        iVar9 = iVar9 + 4;
+        iVar10 = iVar10 + 4;
+        iVar8 = iVar8 + 4;
         iVar6 = iVar6 + 1;
         iVar5 = iVar5 + 4;
       } while (iVar6 < 0xc);

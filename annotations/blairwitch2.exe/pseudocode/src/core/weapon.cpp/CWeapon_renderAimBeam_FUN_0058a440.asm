@@ -13,10 +13,10 @@
 ;   core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004e3b10 at 004e4048
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_00614d30
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CFireEffect* g_CFireEffect_PTR_00614d30 = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -39,8 +39,8 @@ section .text
     PUSH EBP                            ; 0058a441
     SUB ESP,0xa8                        ; 0058a442
     MOV EBX,dword ptr [ESP + 0xb4]      ; 0058a448
-    MOV EDX,dword ptr [0x0060b280]      ; 0058a44f | DAT_0060b280
-    PUSH EDX                            ; 0058a455 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 0058a44f | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 0058a455 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 0058a456
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0058a45b
@@ -152,7 +152,7 @@ section .text
     LEA EAX,[ESP + 0xb8]                ; 0058a5b4
     MOVSD.REP ES:EDI,ESI                ; 0058a5bb
     PUSH EAX                            ; 0058a5bd
-    MOV ECX,dword ptr [0x00614d30]      ; 0058a5be | DAT_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 0058a5be | g_CFireEffect_PTR_00614d30
     PUSH ECX                            ; 0058a5c4
     CALL core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 ; 0058a5c5
         ;   XREF to: 0049db20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo laser_info, ...)

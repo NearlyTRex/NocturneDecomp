@@ -2,21 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 291,
+    "complexity_score": 275,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 96,
-    "suspect_count": 17,
+    "pseudocode_lines": 95,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "pointer_truncation",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 321
+    "total_lines": 320
   },
   "cross_references": [
     {
@@ -83,8 +82,8 @@
   "globals": [
     {
       "addr": "02c9f6d8",
-      "name": "DAT_02c9f6d8",
-      "type": "undefined4",
+      "name": "g_INT_02c9f6d8",
+      "type": "int",
       "value": null
     }
   ],
@@ -178,16 +177,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint FUN_005ce510(CHAR *param_1)",
@@ -195,7 +186,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = (CHAR *)FUN_005cdb10(param_1,0x3d,1);",
@@ -203,7 +194,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "if (pCVar1 == param_1) {",
@@ -211,7 +202,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar3 = (int)pCVar1 - (int)param_1;",
@@ -219,7 +210,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar7 = param_1;",
@@ -227,7 +218,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = FUN_005ce6dc(param_1);",
@@ -235,7 +226,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = FUN_005cebe0(param_1);",
@@ -243,7 +234,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar10 = FUN_005cec10(ptr,param_1,(iVar5 + 1) * iVar10);",
@@ -251,7 +242,7 @@
     },
     {
       "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "(int)pCVar1",
       "severity": "moderate",
       "text": "uVar3 = (int)pCVar1 - (int)param_1;",
@@ -259,7 +250,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 38,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar6 = uVar3 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
@@ -267,7 +258,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar6 = uVar3 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",
@@ -275,7 +266,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 61,
+      "line": 59,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar6 = uVar3 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
@@ -283,7 +274,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar6 = uVar3 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",

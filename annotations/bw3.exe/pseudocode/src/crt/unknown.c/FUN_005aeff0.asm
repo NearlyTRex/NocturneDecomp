@@ -11,7 +11,7 @@
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a8 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f58_006079b0 = 005a7f58
-;   undefined4 DAT_00607b84
+;   uint g_UINT_00607b84 = 0x14
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0
@@ -28,7 +28,7 @@ section .text
     TEST EBX,EBX                        ; 005aeff6
     JL 0x005af002                       ; 005aeff8
         ;   XREF to: 005af002 (CONDITIONAL_JUMP)  ; LAB_005af002
-    CMP EBX,dword ptr [0x00607b84]      ; 005aeffa | DAT_00607b84
+    CMP EBX,dword ptr [0x00607b84]      ; 005aeffa | g_UINT_00607b84
     JBE 0x005af014                      ; 005af000
         ;   XREF to: 005af014 (CONDITIONAL_JUMP)  ; LAB_005af014
     PUSH 0x4                            ; 005af002

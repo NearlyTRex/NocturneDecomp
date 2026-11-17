@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_clipToUserPlane_FUN_004f8610(float *vertices,int vertex_count,float *out,int *out_count)
 
 {
@@ -32,10 +30,10 @@ void __cdecl engine_mini3d_cpp_clipToUserPlane_FUN_004f8610(float *vertices,int 
         uVar2 = uVar2 ^ vertex_count;
       }
       pfVar4 = vertices + uVar2 * 9;
-      bVar1 = 0.0 < _DAT_01d0d2c4 * from[2] + _DAT_01d0d2bc * *from + _DAT_01d0d2c0 * from[1] +
-                    _DAT_01d0d2c8;
-      if (0.0 < _DAT_01d0d2c4 * pfVar4[2] + _DAT_01d0d2bc * *pfVar4 + _DAT_01d0d2c0 * pfVar4[1] +
-                _DAT_01d0d2c8) {
+      bVar1 = 0.0 < g_FLOAT_01d0d2c4 * from[2] +
+                    g_FLOAT_01d0d2bc * *from + g_FLOAT_01d0d2c0 * from[1] + g_FLOAT_01d0d2c8;
+      if (0.0 < g_FLOAT_01d0d2c4 * pfVar4[2] +
+                g_FLOAT_01d0d2bc * *pfVar4 + g_FLOAT_01d0d2c0 * pfVar4[1] + g_FLOAT_01d0d2c8) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {

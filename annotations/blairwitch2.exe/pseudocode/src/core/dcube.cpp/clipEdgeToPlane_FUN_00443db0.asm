@@ -25,8 +25,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcube_cpp_005ce7be
 ;   TerminatedCString s_Bad_clip_005ce7d0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -193,8 +193,8 @@ section .text
         ;   Label: LAB_00443f06
     MOV EDX,0x6e                        ; 00443f0b
     PUSH 0x5ce7d0                       ; 00443f10 | = "Bad clip!"
-    MOV [0x01d046a0],EAX                ; 00443f15 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00443f1a | DAT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00443f15 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00443f1a | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00443f20
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00443f25

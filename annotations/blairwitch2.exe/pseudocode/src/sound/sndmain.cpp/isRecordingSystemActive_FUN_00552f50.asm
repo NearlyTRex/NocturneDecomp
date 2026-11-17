@@ -10,13 +10,13 @@
 ;   sound_sndmain.cpp_startRecording_FUN_00553070 at 00553072
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02649868
+;   CSoundDevice* g_CSoundDevice_PTR_02649868
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x02649868],0x0      ; 00552f50 | DAT_02649868
+    CMP dword ptr [0x02649868],0x0      ; 00552f50 | g_CSoundDevice_PTR_02649868
         ;   Label: sound_sndmain.cpp_isRecordingSystemActive_FUN_00552f50
     SETNZ AL                            ; 00552f57
     AND EAX,0xff                        ; 00552f5a

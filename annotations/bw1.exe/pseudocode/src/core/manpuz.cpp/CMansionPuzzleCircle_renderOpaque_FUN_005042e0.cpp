@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0(CMansionPuzzleCircle *this_ptr)
 
 {
@@ -33,18 +31,19 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0(CMans
   }
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_28,in_stack_ffffffbc);
   if (iVar1 != 0) {
-    iStack_10 = (int)ROUND(_DAT_02c8af28 * _DAT_00603420);
+    iStack_10 = (int)ROUND(g_CVector3f_02c8af28.x * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
-              (&DAT_00612560->vertex_buffer_ptr[1000].projected_vertex,(CVector3i *)&iStack_10);
+              (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[1000].projected_vertex,
+               (CVector3i *)&iStack_10);
     iVar2 = 0;
     do {
       core_manpuz_cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0(this_ptr,iVar2);
       core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00505060(this_ptr,iVar2);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0xc);
-    if ((*(int *)(0x01D2C900 + 0x1008) != 0) &&
-       (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-       iVar2 == 0)) {
+    if ((g_CDemonMission_PTR_0061f650->is_in_editor != 0) &&
+       (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                          (g_CDemonRenderer_PTR_00612560), iVar2 == 0)) {
       iVar2 = 0;
       do {
         iVar2 = iVar2 + 1;

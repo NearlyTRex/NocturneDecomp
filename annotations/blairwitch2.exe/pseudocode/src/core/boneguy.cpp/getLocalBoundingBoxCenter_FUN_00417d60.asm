@@ -7,8 +7,8 @@
 ; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cbfca
-;   undefined4 DAT_005cbfd2
+;   float g_FLOAT_005cbfca = 0.5
+;   double g_DOUBLE_005cbfd2 = 0.400000000000000
 ;
 ; *****************************************************************************
 
@@ -51,7 +51,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00417dc5
     MOVSD ES:EDI,ESI                    ; 00417dc6
     MOVSD ES:EDI,ESI                    ; 00417dc7
-    FLD float ptr [0x005cbfca]          ; 00417dc8 | DAT_005cbfca
+    FLD float ptr [0x005cbfca]          ; 00417dc8 | g_FLOAT_005cbfca
     FLD float ptr [ESP + 0x54]          ; 00417dce
     FMUL ST1                            ; 00417dd2
     FLD float ptr [ESP + 0x58]          ; 00417dd4
@@ -69,7 +69,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00417dfc
     MOVSD ES:EDI,ESI                    ; 00417dfd
     MOVSD ES:EDI,ESI                    ; 00417dfe
-    FADD double ptr [0x005cbfd2]        ; 00417dff | DAT_005cbfd2
+    FADD double ptr [0x005cbfd2]        ; 00417dff | g_DOUBLE_005cbfd2
     LEA ESI,[ESP + 0x3c]                ; 00417e05
     MOV EDI,EBX                         ; 00417e09
     FSTP float ptr [ESP + 0x44]         ; 00417e0b

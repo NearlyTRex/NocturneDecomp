@@ -23,7 +23,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_0044fdd0(CDe
     while( true ) {
       if (this_ptr->display_width + -1 <= iVar3) break;
       iVar3 = iVar3 + 1;
-      *(byte *)(iVar1 + 0x13716d1) = (&DAT_0135ead1)[iVar2];
+      g_CHAR_ARRAY_013716d0[iVar1 + 1] = g_CHAR_ARRAY_0135ead0[iVar2 + 1];
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 1;
     }
@@ -32,7 +32,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_0044fdd0(CDe
   if (0 < this_ptr->display_height) {
     iVar5 = plane_index * 0x12c00;
     do {
-      *(byte *)(iVar5 + 0x13716d0) = (&DAT_0135ead0)[iVar4 * 0x140];
+      g_CHAR_ARRAY_013716d0[iVar5] = g_CHAR_ARRAY_0135ead0[iVar4 * 0x140];
       *(byte *)(this_ptr->display_width + 0x13716cf + iVar5) =
            *(byte *)(this_ptr->display_width + 0x135eacf + iVar4 * 0x140);
       iVar4 = iVar4 + 1;
@@ -42,11 +42,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_0044fdd0(CDe
   iVar5 = 1;
   iVar4 = plane_index * 0x12c00;
   while (iVar5 < this_ptr->display_width + -1) {
-    *(byte *)(iVar4 + 0x13716d1) = (&DAT_0135ead0)[iVar5];
+    g_CHAR_ARRAY_013716d0[iVar4 + 1] = g_CHAR_ARRAY_0135ead0[iVar5];
     iVar2 = (this_ptr->display_height + -1) * 0x140;
     iVar1 = iVar2 + iVar5;
     iVar5 = iVar5 + 1;
-    *(byte *)(iVar2 + plane_index * 0x12c00 + 0x13716cf + iVar5) = (&DAT_0135ead0)[iVar1];
+    *(char *)(iVar2 + plane_index * 0x12c00 + 0x13716cf + iVar5) = g_CHAR_ARRAY_0135ead0[iVar1];
     iVar4 = iVar4 + 1;
   }
   return;

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *this_ptr,float delta_time)
 
@@ -95,12 +94,12 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
       (this_ptr->base).base.is_transparent = 0;
     }
     if (((iStack_14 == 7) &&
-        (fVar2 = delta_time * (float)_DAT_005d99bd + this_ptr->morph_time,
+        (fVar2 = delta_time * (float)0.5 + this_ptr->morph_time,
         this_ptr->morph_time = fVar2, 1.0 <= fVar2)) && (this_ptr->morph_actor != (CPryeMorph *)0x0)
        ) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                (0x01D81080,(CDemonActor *)this_ptr->morph_actor);
-      this_ptr_00 = 0x01D81080;
+                (g_CDemonMission_PTR_00600530,(CDemonActor *)this_ptr->morph_actor);
+      this_ptr_00 = g_CDemonMission_PTR_00600530;
       this_ptr->morph_actor = (CPryeMorph *)0x0;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
                 (this_ptr_00,(CDemonActor *)this_ptr,1);
@@ -164,7 +163,7 @@ LAB_005999f5:
   EVar4 = (this_ptr->base).walk_state;
   if (EVar4 < 2) {
     if (EVar4 == WALK_STATE_WALKING) {
-      state_name = &DAT_005d995c;
+      state_name = "WALK";
     }
     else {
 LAB_005997ec:
@@ -189,7 +188,7 @@ LAB_0059968b:
   }
   else {
     if (EVar4 < WALK_STATE_NO_PATH) {
-      state_name = &DAT_005d9958;
+      state_name = "RUN";
       goto LAB_0059968b;
     }
     if (EVar4 != WALK_STATE_NO_PATH) goto LAB_005997ec;

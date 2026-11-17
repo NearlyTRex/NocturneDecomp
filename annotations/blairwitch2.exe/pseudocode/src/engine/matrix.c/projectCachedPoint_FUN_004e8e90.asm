@@ -10,7 +10,7 @@
 ;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10 at 004fac13
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00622014
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_00622014
 ;
 ; Called Functions:
 ;   engine_matrix.c_projectTransformedPoint_FUN_004e8eb0
@@ -24,7 +24,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004e8e94
     SUB EAX,EDX                         ; 004e8e9b
     SHL EAX,0x4                         ; 004e8e9d
-    ADD EAX,0x622014                    ; 004e8ea0 | DAT_00622014
+    ADD EAX,0x622014                    ; 004e8ea0 | g_SRenderVertex_ARRAY_00622014
     PUSH EAX                            ; 004e8ea5
     CALL engine_matrix.c_projectTransformedPoint_FUN_004e8eb0 ; 004e8ea6
         ;   XREF to: 004e8eb0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_004e8eb0(SProjectedVertex * point)

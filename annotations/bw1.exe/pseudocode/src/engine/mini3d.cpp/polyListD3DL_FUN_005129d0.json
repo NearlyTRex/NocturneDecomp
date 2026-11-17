@@ -11,9 +11,9 @@
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "unaffected_reg",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 247
   },
@@ -80,68 +80,68 @@
   "globals": [
     {
       "addr": "005e8da3",
-      "name": "DAT_005e8da3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e8da3",
+      "type": "float",
+      "value": "0.003921569"
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d14",
-      "name": "DAT_01c51d14",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c51d14",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d224b4",
-      "name": "DAT_01d224b4",
-      "type": "undefined4",
+      "name": "g_INT_01d224b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d227e0",
-      "name": "DAT_01d227e0",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d227e0",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d25f14",
-      "name": "DAT_01d25f14",
-      "type": "undefined4",
+      "name": "g_INT_01d25f14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d25f18",
-      "name": "DAT_01d25f18",
-      "type": "undefined4",
+      "name": "g_INT_01d25f18",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e7dac8",
-      "name": "DAT_01e7dac8",
-      "type": "undefined4",
+      "name": "g_INT_01e7dac8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83464",
-      "name": "DAT_02c83464",
-      "type": "undefined4",
+      "name": "g_PTR_02c83464",
+      "type": "void*",
       "value": null
     }
   ],
@@ -243,32 +243,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((_DAT_02c83464 == (code *)0x0) || (_DAT_01c50948 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "fVar1 = ((CVector3f *)((int)vertices + 0xc))->y;",
@@ -276,7 +260,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[7] = ((CVector3f *)((int)vertices + 0x18))->x;",
@@ -284,7 +268,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[8] = ((CVector3f *)((int)vertices + 0x18))->y;",
@@ -292,15 +276,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)(iVar5 + 0x10 + (int)_DAT_01d227e0",
+      "line": 46,
+      "match": "(uint *)(iVar5 + 0x10 + (int)g_FLOAT_PTR_01d227e0",
       "severity": "moderate",
-      "text": "clip_flags = clip_flags | *(uint *)(iVar5 + 0x10 + (int)_DAT_01d227e0);",
+      "text": "clip_flags = clip_flags | *(uint *)(iVar5 + 0x10 + (int)g_FLOAT_PTR_01d227e0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "vertices = &((CVector3f *)((int)vertices + 0x18))->z;",
@@ -308,11 +292,27 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 49,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (iVar6 < unaff_ESI);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 60,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_PTR_02c83464)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `g_FLOAT_PTR_01d227e0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_FLOAT_PTR_01d227e0",
+      "severity": "moderate",
+      "text": "clip_flags = clip_flags | *(uint *)(iVar5 + 0x10 + (int)g_FLOAT_PTR_01d227e0);",
+      "type": "pointer_truncation"
     }
   ]
 }

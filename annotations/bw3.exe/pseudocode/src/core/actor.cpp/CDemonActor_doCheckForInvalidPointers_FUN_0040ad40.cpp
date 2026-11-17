@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ad40(CDemonActor *this_ptr,char *context_file,int context_line)
 
 {
@@ -24,21 +22,21 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ad40(C
   
   bVar9 = 0;
   if (this_ptr == (CDemonActor *)0x0) {
-    _DAT_01d71de0 = "..\\core\\actor.cpp";
-    _DAT_01d71de4 = 0x77b;
+    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+    g_INT_01d71de4 = 0x77b;
     core_main_c_displayErrorAndQuit_FUN_004e4330("NULL actor pointer detected, %s line %d");
   }
   if (((CDemonActor *)0xfeffffff < this_ptr) || ((int)this_ptr < 0x1000)) {
-    _DAT_01d71de0 = "..\\core\\actor.cpp";
-    _DAT_01d71de4 = 0x77f;
+    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+    g_INT_01d71de4 = 0x77f;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid actor pointer %08X detected at %s, line %d");
   }
   if ((byte *)this_ptr->validation_magic != &DAT_0078a123) {
-    _DAT_01d71de0 = "..\\core\\actor.cpp";
-    _DAT_01d71de4 = 0x789;
-    memset((void *)0x7df940,0,0x32);
+    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+    g_INT_01d71de4 = 0x789;
+    memset(g_CHAR_ARRAY_007df940,0,0x32);
     pCVar6 = this_ptr;
-    pcVar8 = (char *)0x7df940;
+    pcVar8 = g_CHAR_ARRAY_007df940;
     for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pcVar8 = *(uint *)pCVar6->actor_name;
       pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);
@@ -54,12 +52,12 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ad40(C
   fVar1 = (this_ptr->location).position.y;
   fVar2 = (this_ptr->location).position.x;
   fVar3 = (this_ptr->location).position.z;
-  if (_DAT_005b5849 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {
-    _DAT_01d71de0 = "..\\core\\actor.cpp";
-    _DAT_01d71de4 = 0x794;
-    memset((void *)0x7df940,0,0x32);
+  if (99999.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {
+    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+    g_INT_01d71de4 = 0x794;
+    memset(g_CHAR_ARRAY_007df940,0,0x32);
     pCVar6 = this_ptr;
-    pcVar8 = (char *)0x7df940;
+    pcVar8 = g_CHAR_ARRAY_007df940;
     for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pcVar8 = *(uint *)pCVar6->actor_name;
       pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);
@@ -76,13 +74,14 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ad40(C
   uStack_18 = 0;
   pCVar6 = this_ptr;
   while (cVar4 != '\0') {
-    if ((0x1c < uStack_18) || (((&DAT_006074b8)[(byte)(pCVar6->actor_name[0] + 1)] & 8) == 0)) {
-      _DAT_01d71de0 = "..\\core\\actor.cpp";
-      _DAT_01d71de4 = 0x7a2;
-      memset((void *)0x7df940,0,0x32);
+    if ((0x1c < uStack_18) || ((g_UCHAR_ARRAY_006074b8[(byte)(pCVar6->actor_name[0] + 1)] & 8) == 0)
+       ) {
+      g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+      g_INT_01d71de4 = 0x7a2;
+      memset(g_CHAR_ARRAY_007df940,0,0x32);
       if (this_ptr != (CDemonActor *)0x0) {
         pCVar7 = this_ptr;
-        pcVar8 = (char *)0x7df940;
+        pcVar8 = g_CHAR_ARRAY_007df940;
         for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
           *(uint *)pcVar8 = *(uint *)pCVar7->actor_name;
           pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);

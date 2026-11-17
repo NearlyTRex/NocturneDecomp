@@ -9,8 +9,7 @@
 void __cdecl core_charactr_cpp_staticInit_FUN_004222a0(void)
 
 {
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
-            ((CKeyFramedModelInstance *)&DAT_007bdadc);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80(&g_CKeyFramedModelInstance_007bdadc);
   core_actor_cpp_registerActorClass_FUN_0040c450
             (&g_CCharacterClassInfo,"CCharacter",(CDemonActor_FactoryFunc *)0x0,
              &g_CCharacterClassVersion,9,&g_CDemonActorClassInfo);

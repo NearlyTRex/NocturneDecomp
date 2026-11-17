@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00430d90(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background)
 
 {
@@ -113,10 +111,10 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00430d90(CCharacter *thi
   *(uint *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
        *(uint *)((int)&local_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
   pCVar6 = &CStack_74;
-  fStack_44 = fStack_8c * _DAT_005d5a57;
-  local_40.x = local_88.x * _DAT_005d5a57;
-  local_40.y = local_88.y * _DAT_005d5a57;
-  CStack_74.x = fStack_8c * _DAT_005d5a57;
+  fStack_44 = fStack_8c * 0.5f;
+  local_40.x = local_88.x * 0.5f;
+  local_40.y = local_88.y * 0.5f;
+  CStack_74.x = fStack_8c * 0.5f;
   *(uint *)((int)&CStack_74 + (uint)bVar5 * -8 + 4) =
        *(uint *)((int)&local_40 + (uint)bVar5 * -8);
   *(uint *)((int)&CStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =

@@ -96,14 +96,14 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20 ; 004d8df1
         ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004d8df6
-    PUSH 0x264bba0                      ; 004d8df9 | DAT_0264bba0
+    PUSH 0x264bba0                      ; 004d8df9 | g_INT_0264bba0
     PUSH 0x5dadfa                       ; 004d8dfe | = "useDirect3D"
     LEA EAX,[ESP + 0x10]                ; 004d8e03
     PUSH EAX                            ; 004d8e07
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20 ; 004d8e08
         ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004d8e0d
-    PUSH 0x264bbac                      ; 004d8e10 | DAT_0264bbac
+    PUSH 0x264bbac                      ; 004d8e10 | g_INT_0264bbac
     PUSH 0x5dae06                       ; 004d8e15 | = "useAGPFlag"
     LEA EAX,[ESP + 0x10]                ; 004d8e1a
     PUSH EAX                            ; 004d8e1e
@@ -111,7 +111,7 @@ section .text
         ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004d8e24
     PUSH 0xfa                           ; 004d8e27
-    PUSH 0x61e180                       ; 004d8e2c | DAT_0061e180
+    PUSH 0x61e180                       ; 004d8e2c | g_CHAR_ARRAY_0061e180
     PUSH 0x5dae11                       ; 004d8e31 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x14]                ; 004d8e36
     PUSH EAX                            ; 004d8e3a
@@ -146,7 +146,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20 ; 004d8e91
         ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004d8e96
-    PUSH 0x1cee1a8                      ; 004d8e99 | DAT_01cee1a8
+    PUSH 0x1cee1a8                      ; 004d8e99 | g_INT_01cee1a8
     PUSH 0x5dae3b                       ; 004d8e9e | = "firstTimeFlag"
     LEA EAX,[ESP + 0xc]                 ; 004d8ea3
     PUSH EAX                            ; 004d8ea7
@@ -207,7 +207,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20 ; 004d8f4a
         ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004d8f4f
-    PUSH 0x61ec60                       ; 004d8f52 | DAT_0061ec60
+    PUSH 0x61ec60                       ; 004d8f52 | g_INT_0061ec60
     PUSH 0x5dae92                       ; 004d8f57 | = "particleDensity"
     LEA EAX,[ESP + 0xc]                 ; 004d8f5c
     PUSH EAX                            ; 004d8f60
@@ -222,13 +222,13 @@ section .text
     MOV dword ptr [EAX + 0x18],0x0      ; 004d8f75 | g_CGameInstance.nudity_flag
     MOV dword ptr [EAX + 0x1c],0x0      ; 004d8f7c | g_CGameInstance.foul_language_flag
     MOV dword ptr [EAX + 0x14],0x0      ; 004d8f83 | g_CGameInstance.blood_flag
-    PUSH 0x1d06a74                      ; 004d8f8a | DAT_01d06a74
+    PUSH 0x1d06a74                      ; 004d8f8a | g_INT_01d06a74
         ;   Label: LAB_004d8f8a
     PUSH 0x5daea2                       ; 004d8f8f | = "currentBoard"
     LEA EAX,[ESP + 0xc]                 ; 004d8f94
     XOR EDI,EDI                         ; 004d8f98
     PUSH EAX                            ; 004d8f9a
-    MOV dword ptr [0x01d06a74],EDI      ; 004d8f9b | DAT_01d06a74
+    MOV dword ptr [0x01d06a74],EDI      ; 004d8f9b | g_INT_01d06a74
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20 ; 004d8fa1
         ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     MOV EAX,[0x00616494]                ; 004d8fa6 | g_CGamePtr
@@ -649,8 +649,8 @@ section .text
         ;   Label: LAB_004d94a7
     MOV ECX,0x58                        ; 004d94ac
     PUSH 0x5dadb8                       ; 004d94b1 | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01d046a0],EDX      ; 004d94b6 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004d94bc | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004d94b6 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004d94bc | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d94c2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004d94c7

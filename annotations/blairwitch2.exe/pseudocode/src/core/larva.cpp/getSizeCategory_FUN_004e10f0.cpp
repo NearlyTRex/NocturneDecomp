@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_larva_cpp_getSizeCategory_FUN_004e10f0(float scale)
 
 {
-  if (scale < (float)_DAT_005dbe8e) {
-    return &DAT_005dbe81;
+  if (scale < (float)0.29999999999999999) {
+    return "sml";
   }
-  if (scale < (float)_DAT_005dbe96) {
-    return &DAT_005dbe85;
+  if (scale < (float)0.69999999999999996) {
+    return "med";
   }
-  return &DAT_005dbe89;
+  return "big";
 }

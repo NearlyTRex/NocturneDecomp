@@ -13,7 +13,7 @@
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 at 004dbad8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db9f2
+;   TerminatedCString s_CGun_005db9f2
 ;   TerminatedCString s_CShotgun_005db9f7
 ;   TerminatedCString s_CCrossbow_005dba00
 ;   TerminatedCString s_CTommyGun_005dba0a
@@ -77,7 +77,7 @@ section .text
     POP ESI                             ; 004dd0e6
     POP EBX                             ; 004dd0e7
     RET                                 ; 004dd0e8
-    PUSH 0x5db9f2                       ; 004dd0e9 | DAT_005db9f2
+    PUSH 0x5db9f2                       ; 004dd0e9 | = "CGun"
         ;   Label: LAB_004dd0e9
     PUSH EBX                            ; 004dd0ee
     CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dd0ef

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int y_top,int height_half)
 
 {
@@ -20,10 +18,10 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int 
   uint uStack_c;
   uint uStack_8;
   
-  this_ptr = DAT_005f2afc;
+  this_ptr = g_CDemonRenderer_PTR_005f2afc;
   if (0 < height_half * 2) {
     iVar1 = (x_center + -0x10) * 0x10000;
-    (DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;
+    (g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;
     (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y_top << 0x10;
     iVar2 = (x_center + 0x10) * 0x10000;
     this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar2;
@@ -51,17 +49,17 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int 
     uStack_8 = 3;
     uStack_10 = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr,0x8000);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-              (DAT_005f2afc,
-               (SMRGLTextureBasic *)
-               ((((int)((_DAT_01d737e0 + (_DAT_01d737e0 >> 0x1f) * -0x10000) -
-                       (uint)((_DAT_01d737e0 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7U) * 0x18
-               + 0x6003b8));
+              (g_CDemonRenderer_PTR_005f2afc,
+               g_SMRGLTextureBasic_ARRAY_006003b8 +
+               (((int)((g_INT_01d737e0 + (g_INT_01d737e0 >> 0x1f) * -0x10000) -
+                      (uint)((g_INT_01d737e0 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7));
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
-              (DAT_005f2afc,&SStack_2c,0x23);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);
+              (g_CDemonRenderer_PTR_005f2afc,&SStack_2c,0x23);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,0);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
+              (g_CDemonRenderer_PTR_005f2afc,0xffff);
   }
   return;
 }

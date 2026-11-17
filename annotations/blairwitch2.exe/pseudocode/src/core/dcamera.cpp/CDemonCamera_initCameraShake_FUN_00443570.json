@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 113,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 7,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 85
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -45,56 +42,56 @@
   "globals": [
     {
       "addr": "005ce7b6",
-      "name": "DAT_005ce7b6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ce7b6",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "00609f98",
-      "name": "DAT_00609f98",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00609f98",
+      "type": "int",
+      "value": "0x10000"
     },
     {
       "addr": "00609f9c",
-      "name": "DAT_00609f9c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00609f9c",
+      "type": "int",
+      "value": "0xc80000"
     },
     {
       "addr": "00609fa0",
-      "name": "DAT_00609fa0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00609fa0",
+      "type": "int",
+      "value": "0x3"
     },
     {
       "addr": "01326d00",
-      "name": "DAT_01326d00",
-      "type": "undefined4",
+      "name": "g_INT_01326d00",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01326d04",
-      "name": "DAT_01326d04",
-      "type": "undefined4",
+      "name": "g_INT_01326d04",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01326d08",
-      "name": "DAT_01326d08",
-      "type": "undefined4",
+      "name": "g_INT_01326d08",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01326d0c",
-      "name": "DAT_01326d0c",
-      "type": "undefined4",
+      "name": "g_INT_01326d0c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01326d10",
-      "name": "DAT_01326d10",
-      "type": "undefined4",
+      "name": "g_INT_01326d10",
+      "type": "int",
       "value": null
     }
   ],
@@ -214,62 +211,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00609f9c",
-      "severity": "mild",
-      "text": "DAT_00609f9c = (int)ROUND(dVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_00609f98",
-      "severity": "mild",
-      "text": "DAT_00609f98 = (int)ROUND(dVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_00609f9c",
-      "severity": "mild",
-      "text": "_DAT_01326d00 = DAT_00609f9c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_00609f9c",
-      "severity": "mild",
-      "text": "if (DAT_00609f9c == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00609fa0",
-      "severity": "mild",
-      "text": "DAT_00609fa0 = 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_00609fa0",
-      "severity": "mild",
-      "text": "DAT_00609fa0 = uVar1;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -8,9 +8,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_0207bab8
-;   undefined4 DAT_0207babc
-;   undefined4 DAT_0207bac0
+;   int g_INT_0207bab8
+;   int g_INT_0207babc
+;   float g_FLOAT_0207bac0
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100
@@ -31,12 +31,12 @@ section .text
     MOV EAX,dword ptr [ECX + 0x10c]     ; 005326c4
     MOV dword ptr [ESP + 0x8],EAX       ; 005326ca
     MOV EAX,dword ptr [ECX + 0x110]     ; 005326ce
-    MOV EDX,dword ptr [0x0207bab8]      ; 005326d4 | DAT_0207bab8
+    MOV EDX,dword ptr [0x0207bab8]      ; 005326d4 | g_INT_0207bab8
     MOV dword ptr [ESP],EAX             ; 005326da
     CMP ECX,EDX                         ; 005326dd
     JZ 0x00532767                       ; 005326df
         ;   XREF to: 00532767 (CONDITIONAL_JUMP)  ; LAB_00532767
-    CMP ECX,dword ptr [0x0207babc]      ; 005326e5 | DAT_0207babc
+    CMP ECX,dword ptr [0x0207babc]      ; 005326e5 | g_INT_0207babc
         ;   Label: LAB_005326e5
     JNZ 0x00532744                      ; 005326eb
         ;   XREF to: 00532744 (CONDITIONAL_JUMP)  ; LAB_00532744
@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 005326f9
     FILD dword ptr [ESP + 0x10]         ; 005326fd
     FLD1                                ; 00532701
-    FLD float ptr [0x0207bac0]          ; 00532703 | DAT_0207bac0
+    FLD float ptr [0x0207bac0]          ; 00532703 | g_FLOAT_0207bac0
     FXCH                                ; 00532709
     FDIV ST0,ST1                        ; 0053270b
     FILD dword ptr [ESP + 0xc]          ; 0053270d

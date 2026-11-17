@@ -23,14 +23,14 @@
 ;   core_gore.cpp_CGore_createFootstep_FUN_004cee70 at 004ceed8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4739
-;   undefined4 DAT_005c4741
-;   undefined4 DAT_005c4749
-;   undefined4 DAT_005c474d
-;   undefined4 DAT_005ffe8c
-;   undefined4 DAT_005ffe90
+;   double g_DOUBLE_005c4739 = 0.5
+;   double g_DOUBLE_005c4741 = 4
+;   float g_FLOAT_005c4749 = -3
+;   float g_FLOAT_005c474d = 0.08333334
+;   float[2] g_FLOAT_ARRAY_005ffe8c
+;   undefined4 g_FLOAT_ARRAY_005ffe8c[1]
 ;   undefined4 DAT_005ffe9c
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -60,16 +60,16 @@ section .text
     FXCH                                ; 004ce191
     FCOS                                ; 004ce193
     FXCH                                ; 004ce195
-    FLD double ptr [0x005c4739]         ; 004ce197 | DAT_005c4739
+    FLD double ptr [0x005c4739]         ; 004ce197 | g_DOUBLE_005c4739
     FXCH                                ; 004ce19d
     FMUL ST1                            ; 004ce19f
     FXCH ST2                            ; 004ce1a1
     FMULP                               ; 004ce1a3
     FLD ST1                             ; 004ce1a5
-    FMUL float ptr [EBX + 0x5ffe8c]     ; 004ce1a7 | DAT_005ffe8c | DAT_005ffe90
+    FMUL float ptr [EBX + 0x5ffe8c]     ; 004ce1a7 | g_FLOAT_ARRAY_005ffe8c | g_FLOAT_ARRAY_005ffe8c[1]
     FLD ST1                             ; 004ce1ad
     FCHS                                ; 004ce1af
-    FMUL float ptr [EBX + 0x5ffe8c]     ; 004ce1b1 | DAT_005ffe8c | DAT_005ffe90
+    FMUL float ptr [EBX + 0x5ffe8c]     ; 004ce1b1 | g_FLOAT_ARRAY_005ffe8c | g_FLOAT_ARRAY_005ffe8c[1]
     FXCH ST2                            ; 004ce1b7
     FMUL float ptr [EBX + 0x5ffe9c]     ; 004ce1b9 | DAT_005ffe9c
     XOR EDX,EDX                         ; 004ce1bf
@@ -112,7 +112,7 @@ section .text
     PUSH EAX                            ; 004ce22c
     LEA EAX,[ESP + 0x18]                ; 004ce22d
     FXCH                                ; 004ce231
-    FADD float ptr [0x005c4749]         ; 004ce233 | DAT_005c4749
+    FADD float ptr [0x005c4749]         ; 004ce233 | g_FLOAT_005c4749
     PUSH EAX                            ; 004ce239
     FXCH                                ; 004ce23a
     FSTP float ptr [ESP + 0x20]         ; 004ce23c
@@ -122,10 +122,10 @@ section .text
         ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x3c],EAX      ; 004ce24e
     FLD float ptr [ESP + 0x3c]          ; 004ce252
-    FMUL double ptr [0x005c4741]        ; 004ce256 | DAT_005c4741
+    FMUL double ptr [0x005c4741]        ; 004ce256 | g_DOUBLE_005c4741
     ADD ESP,0x14                        ; 004ce25c
     FSUBR float ptr [ESP + 0x10]        ; 004ce25f
-    FADD float ptr [0x005c474d]         ; 004ce263 | DAT_005c474d
+    FADD float ptr [0x005c474d]         ; 004ce263 | g_FLOAT_005c474d
     LEA EAX,[ESP + 0xc]                 ; 004ce269
     FSTP float ptr [ESP + 0x10]         ; 004ce26d
     CMP ESI,EAX                         ; 004ce271
@@ -152,7 +152,7 @@ section .text
     FLD float ptr [EAX + 0x10]          ; 004ce2a7
     FSUB float ptr [EBX + 0x10]         ; 004ce2aa
     FABS                                ; 004ce2ad
-    FCOMP double ptr [0x005c4739]       ; 004ce2af | DAT_005c4739
+    FCOMP double ptr [0x005c4739]       ; 004ce2af | g_DOUBLE_005c4739
     FNSTSW AX                           ; 004ce2b5
     SAHF                                ; 004ce2b7
     JBE 0x004ce2c3                      ; 004ce2b8
@@ -173,7 +173,7 @@ section .text
     MOV dword ptr [EAX + 0x40],EDX      ; 004ce2dc
     MOV EDX,dword ptr [EBP + 0x28]      ; 004ce2df
     MOV dword ptr [EAX + 0x4],EDX       ; 004ce2e2
-    MOV EAX,[0x01d5ba14]                ; 004ce2e5 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004ce2e5 | g_INT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004ce2ea
     MOV EDX,dword ptr [EBP + 0x14]      ; 004ce2f1
     MOV EAX,dword ptr [EAX + 0x2c]      ; 004ce2f4

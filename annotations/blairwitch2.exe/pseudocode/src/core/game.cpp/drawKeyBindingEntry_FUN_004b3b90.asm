@@ -8,12 +8,12 @@
 ; char *           Stack[0x8]:4   action_name
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_01511cc0
-;   undefined4 DAT_01cb80e8
-;   undefined4 DAT_01cb80ec
-;   undefined4 DAT_01cb80f0
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
+;   CBitFont* g_CBitFont_PTR_01511cc0
+;   int g_INT_01cb80e8
+;   int g_INT_01cb80ec
+;   int g_INT_01cb80f0
 ;
 ; Called Functions:
 ;   core_menu.cpp_getKeyDisplayName_FUN_004ee960
@@ -46,24 +46,24 @@ section .text
     ADD ESP,0x10                        ; 004b3bc2
     PUSH -0x1                           ; 004b3bc5
     PUSH 0x7                            ; 004b3bc7
-    MOV EBX,dword ptr [0x01cb80ec]      ; 004b3bc9 | DAT_01cb80ec
+    MOV EBX,dword ptr [0x01cb80ec]      ; 004b3bc9 | g_INT_01cb80ec
     PUSH EBX                            ; 004b3bcf
-    MOV ESI,dword ptr [0x01cb80e8]      ; 004b3bd0 | DAT_01cb80e8
+    MOV ESI,dword ptr [0x01cb80e8]      ; 004b3bd0 | g_INT_01cb80e8
     PUSH ESI                            ; 004b3bd6
     LEA EAX,[ESP + 0x10]                ; 004b3bd7
     PUSH EAX                            ; 004b3bdb
-    MOV EDI,dword ptr [0x01511cc0]      ; 004b3bdc | DAT_01511cc0
+    MOV EDI,dword ptr [0x01511cc0]      ; 004b3bdc | g_CBitFont_PTR_01511cc0
     PUSH EDI                            ; 004b3be2
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004b3be3
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
-    MOV EAX,[0x01cb80f0]                ; 004b3be8 | DAT_01cb80f0
-    MOV EBP,dword ptr [0x01cb80ec]      ; 004b3bed | DAT_01cb80ec
-    MOV EDX,dword ptr [0x006141bc]      ; 004b3bf3 | DAT_006141bc
+    MOV EAX,[0x01cb80f0]                ; 004b3be8 | g_INT_01cb80f0
+    MOV EBP,dword ptr [0x01cb80ec]      ; 004b3bed | g_INT_01cb80ec
+    MOV EDX,dword ptr [0x006141bc]      ; 004b3bf3 | g_INT_006141bc
     ADD EBP,EAX                         ; 004b3bf9
     SHL EAX,0x2                         ; 004b3bfb
     ADD ESP,0x18                        ; 004b3bfe
     SUB EDX,EAX                         ; 004b3c01
-    MOV dword ptr [0x01cb80ec],EBP      ; 004b3c03 | DAT_01cb80ec
+    MOV dword ptr [0x01cb80ec],EBP      ; 004b3c03 | g_INT_01cb80ec
     CMP EDX,EBP                         ; 004b3c09
     JL 0x004b3c18                       ; 004b3c0b
         ;   XREF to: 004b3c18 (CONDITIONAL_JUMP)  ; LAB_004b3c18
@@ -73,18 +73,18 @@ section .text
     POP ESI                             ; 004b3c15
     POP EBX                             ; 004b3c16
     RET                                 ; 004b3c17
-    MOV EDX,dword ptr [0x01cb80f0]      ; 004b3c18 | DAT_01cb80f0
+    MOV EDX,dword ptr [0x01cb80f0]      ; 004b3c18 | g_INT_01cb80f0
         ;   Label: LAB_004b3c18
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b3c1e
     SUB EAX,EDX                         ; 004b3c25
     ADD EAX,EAX                         ; 004b3c27
-    MOV [0x01cb80ec],EAX                ; 004b3c29 | DAT_01cb80ec
-    MOV EAX,[0x006141b8]                ; 004b3c2e | DAT_006141b8
+    MOV [0x01cb80ec],EAX                ; 004b3c29 | g_INT_01cb80ec
+    MOV EAX,[0x006141b8]                ; 004b3c2e | g_INT_006141b8
     MOV EDX,EAX                         ; 004b3c33
     MOV ECX,0x3                         ; 004b3c35
     SAR EDX,0x1f                        ; 004b3c3a
     IDIV ECX                            ; 004b3c3d
-    ADD dword ptr [0x01cb80e8],EAX      ; 004b3c3f | DAT_01cb80e8
+    ADD dword ptr [0x01cb80e8],EAX      ; 004b3c3f | g_INT_01cb80e8
     ADD ESP,0x100                       ; 004b3c45
     POP EBP                             ; 004b3c4b
     POP EDI                             ; 004b3c4c

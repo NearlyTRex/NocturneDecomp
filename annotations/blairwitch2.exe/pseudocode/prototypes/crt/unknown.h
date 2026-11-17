@@ -99,7 +99,7 @@ void __cdecl debugFree(void *ptr);
 
 // Original: crt_unknown.c_FUN_005b86b0
 // Address: 005b86b0
-void FUN_005b86b0(int *param_1);
+void FUN_005b86b0(Heap *param_1);
 
 // Original: crt_unknown.c_FUN_005b8a04
 // Address: 005b8a04
@@ -215,7 +215,7 @@ void FUN_005ba890(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: crt_unknown.c_FUN_005ba910
 // Address: 005ba910
-undefined4 FUN_005ba910(int *param_1,uint *param_2);
+undefined4 FUN_005ba910(uint *param_1,Heap *param_2);
 
 // Original: crt_unknown.c_FUN_005ba9b4
 // Address: 005ba9b4
@@ -419,7 +419,7 @@ undefined4 FUN_005bcd10(int param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: crt_unknown.c_FUN_005bcdfc
 // Address: 005bcdfc
-undefined4 FUN_005bcdfc(void);
+undefined * FUN_005bcdfc(void);
 
 // Original: crt_unknown.c_FUN_005bce04
 // Address: 005bce04
@@ -551,7 +551,7 @@ void FUN_005be480(void);
 
 // Original: crt_unknown.c_FUN_005be5b0
 // Address: 005be5b0
-int * FUN_005be5b0(int *param_1);
+Heap ** FUN_005be5b0(Heap *param_1);
 
 // Original: crt_unknown.c_FUN_005be628
 // Address: 005be628
@@ -571,7 +571,7 @@ undefined4 FUN_005be740(void);
 
 // Original: crt_unknown.c_FUN_005be750
 // Address: 005be750
-undefined * FUN_005be750(void);
+_FILE ** FUN_005be750(void);
 
 // Original: crt_unknown.c_FUN_005be810
 // Address: 005be810
@@ -587,7 +587,7 @@ void FUN_005be870(void);
 
 // Original: crt_unknown.c_FUN_005be9ac
 // Address: 005be9ac
-undefined1 * FUN_005be9ac(void);
+char * FUN_005be9ac(void);
 
 // Original: crt_unknown.c_FUN_005bea80
 // Address: 005bea80
@@ -607,7 +607,7 @@ int FUN_005becf0(int param_1);
 
 // Original: crt_unknown.c_FUN_005bed18
 // Address: 005bed18
-undefined4 FUN_005bed18(short param_1,int *param_2,uint param_3,uint *param_4);
+undefined4 FUN_005bed18(short param_1,Heap *param_2,uint param_3,uint *param_4);
 
 // Original: crt_unknown.c_FUN_005beed4
 // Address: 005beed4
@@ -619,7 +619,7 @@ void FUN_005bef1e(void);
 
 // Original: crt_unknown.c_FUN_005bef45
 // Address: 005bef45
-void FUN_005bef45(undefined4 *param_1);
+void FUN_005bef45(WatcomStaticDestructorNode *param_1);
 
 // Original: crt_unknown.c_FUN_005bef94
 // Address: 005bef94
@@ -1411,7 +1411,7 @@ undefined4 FUN_005c3750(void);
 
 // Original: crt_unknown.c_FUN_005c378c
 // Address: 005c378c
-undefined4 FUN_005c378c(LPVOID param_1);
+undefined4 FUN_005c378c(Heap *param_1);
 
 // Original: crt_unknown.c_FUN_005c37ec
 // Address: 005c37ec
@@ -1443,7 +1443,7 @@ undefined8 FUN_005c3aaa(undefined4 param_1,undefined4 param_2);
 
 // Original: crt_unknown.c_FUN_005c3add
 // Address: 005c3add
-undefined8 FUN_005c3add(uint param_1,undefined4 *param_2,undefined4 *param_3);
+undefined8 FUN_005c3add(uint param_1,undefined4 *param_2,double *param_3);
 
 // Original: crt_unknown.c_FUN_005c3bdb
 // Address: 005c3bdb
@@ -1603,7 +1603,7 @@ undefined4 FUN_005c4b60(undefined4 param_1,int param_2);
 
 // Original: crt_unknown.c_FUN_005c4bcc
 // Address: 005c4bcc
-void FUN_005c4bcc(int param_1);
+void FUN_005c4bcc(undefined *param_1);
 
 // Original: crt_unknown.c_FUN_005c4c20
 // Address: 005c4c20
@@ -1639,11 +1639,11 @@ void FUN_005c4d4c(void);
 
 // Original: crt_unknown.c_FUN_005c4dc0
 // Address: 005c4dc0
-undefined4 FUN_005c4dc0(void);
+int FUN_005c4dc0(void);
 
 // Original: crt_unknown.c_FUN_005c4dcc
 // Address: 005c4dcc
-undefined4 FUN_005c4dcc(void);
+int FUN_005c4dcc(void);
 
 // Original: crt_unknown.c_FUN_005c4de0
 // Address: 005c4de0
@@ -1671,7 +1671,7 @@ undefined4 FUN_005c4f10(void);
 
 // Original: crt_unknown.c_FUN_005c4f48
 // Address: 005c4f48
-char FUN_005c4f48(void);
+byte FUN_005c4f48(void);
 
 // Original: crt_unknown.c_FUN_005c4f74
 // Address: 005c4f74
@@ -1791,7 +1791,7 @@ undefined4 FUN_005c5e14(void);
 
 // Original: crt_unknown.c_FUN_005c5e20
 // Address: 005c5e20
-undefined * FUN_005c5e20(uint param_1);
+int FUN_005c5e20(uint param_1);
 
 // Original: crt_unknown.c_FUN_005c5e50
 // Address: 005c5e50

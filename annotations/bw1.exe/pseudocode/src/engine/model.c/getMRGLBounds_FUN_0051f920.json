@@ -2,23 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 669,
+    "complexity_score": 653,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 194,
-    "suspect_count": 44,
+    "pseudocode_lines": 193,
+    "suspect_count": 43,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "subfield_vector_pun",
       "unknown_field",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 533
+    "total_lines": 532
   },
   "cross_references": [],
   "function": {
@@ -68,14 +67,14 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -186,16 +185,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 123,
+      "line": 122,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_a4._12_4_ =",
@@ -203,7 +194,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 126,
+      "line": 125,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_a4._16_4_ =",
@@ -211,7 +202,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 131,
+      "line": 130,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_a4._0_4_ =",
@@ -219,7 +210,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 134,
+      "line": 133,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_a4._4_4_ =",
@@ -227,7 +218,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 142,
+      "line": 141,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_a4._8_4_ = uVar3;",
@@ -235,7 +226,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 145,
+      "line": 144,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_a4._16_4_ =",
@@ -243,7 +234,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 151,
+      "line": 150,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_a4._16_4_ =",
@@ -251,7 +242,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 154,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_a4._16_4_ =",
@@ -259,7 +250,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 157,
       "match": "._24_4_",
       "severity": "mild",
       "text": "auStack_a4._24_4_ = (uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f);",
@@ -267,7 +258,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 159,
       "match": "._24_4_",
       "severity": "mild",
       "text": "if ((int)auStack_a4._24_4_ < (int)((uVar4 ^ uVar3) - uVar3)) {",
@@ -275,7 +266,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 161,
+      "line": 160,
       "match": "._24_4_",
       "severity": "mild",
       "text": "auStack_a4._24_4_ = (uVar4 ^ uVar3) - uVar3;",
@@ -283,7 +274,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 162,
       "match": "._28_4_",
       "severity": "mild",
       "text": "auStack_a4._28_4_ =",
@@ -291,7 +282,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 163,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(auStack_a4._0_4_ ^ (int)auStack_a4._0_4_ >> 0x1f) - ((int)auStack_a4._0_4_ >> 0x1f);",
@@ -299,7 +290,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 163,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(auStack_a4._0_4_ ^ (int)auStack_a4._0_4_ >> 0x1f) - ((int)auStack_a4._0_4_ >> 0x1f);",
@@ -307,7 +298,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 163,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(auStack_a4._0_4_ ^ (int)auStack_a4._0_4_ >> 0x1f) - ((int)auStack_a4._0_4_ >> 0x1f);",
@@ -315,7 +306,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 165,
       "match": "._28_4_",
       "severity": "mild",
       "text": "if ((int)auStack_a4._28_4_ < (int)((SStack_dc.extent.y ^ uVar3) - uVar3)) {",
@@ -323,7 +314,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 167,
+      "line": 166,
       "match": "._28_4_",
       "severity": "mild",
       "text": "auStack_a4._28_4_ = (SStack_dc.extent.y ^ uVar3) - uVar3;",
@@ -331,7 +322,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 169,
+      "line": 168,
       "match": "._32_4_",
       "severity": "mild",
       "text": "auStack_a4._32_4_ =",
@@ -339,7 +330,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 170,
+      "line": 169,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(auStack_a4._4_4_ ^ (int)auStack_a4._4_4_ >> 0x1f) - ((int)auStack_a4._4_4_ >> 0x1f);",
@@ -347,7 +338,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 170,
+      "line": 169,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(auStack_a4._4_4_ ^ (int)auStack_a4._4_4_ >> 0x1f) - ((int)auStack_a4._4_4_ >> 0x1f);",
@@ -355,7 +346,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 170,
+      "line": 169,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(auStack_a4._4_4_ ^ (int)auStack_a4._4_4_ >> 0x1f) - ((int)auStack_a4._4_4_ >> 0x1f);",
@@ -363,7 +354,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 172,
+      "line": 171,
       "match": "._32_4_",
       "severity": "mild",
       "text": "if ((int)auStack_a4._32_4_ < (int)((SStack_dc.extent.z ^ uVar3) - uVar3)) {",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 173,
+      "line": 172,
       "match": "._32_4_",
       "severity": "mild",
       "text": "auStack_a4._32_4_ = (SStack_dc.extent.z ^ uVar3) - uVar3;",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 175,
+      "line": 174,
       "match": "._32_4_",
       "severity": "mild",
       "text": "fStack_1c = (float)auStack_a4._32_4_;",
@@ -387,7 +378,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 178,
+      "line": 177,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "(SQRT((double)(int)auStack_a4._32_4_ * (double)(int)auStack_a4._32_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 177,
       "match": "._32_4_",
       "severity": "mild",
       "text": "(SQRT((double)(int)auStack_a4._32_4_ * (double)(int)auStack_a4._32_4_ +",
@@ -396,14 +395,14 @@
     {
       "description": "Unknown/mangled field access",
       "line": 178,
-      "match": "._32_4_",
+      "match": "._28_4_",
       "severity": "mild",
-      "text": "(SQRT((double)(int)auStack_a4._32_4_ * (double)(int)auStack_a4._32_4_ +",
+      "text": "(double)(int)auStack_a4._28_4_ * (double)(int)auStack_a4._28_4_ +",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 179,
+      "line": 178,
       "match": "._28_4_",
       "severity": "mild",
       "text": "(double)(int)auStack_a4._28_4_ * (double)(int)auStack_a4._28_4_ +",
@@ -412,14 +411,14 @@
     {
       "description": "Unknown/mangled field access",
       "line": 179,
-      "match": "._28_4_",
+      "match": "._24_4_",
       "severity": "mild",
-      "text": "(double)(int)auStack_a4._28_4_ * (double)(int)auStack_a4._28_4_ +",
+      "text": "(double)(int)auStack_a4._24_4_ * (double)(int)auStack_a4._24_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 180,
+      "line": 179,
       "match": "._24_4_",
       "severity": "mild",
       "text": "(double)(int)auStack_a4._24_4_ * (double)(int)auStack_a4._24_4_));",
@@ -428,14 +427,6 @@
     {
       "description": "Unknown/mangled field access",
       "line": 180,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "(double)(int)auStack_a4._24_4_ * (double)(int)auStack_a4._24_4_));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 181,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_a4._16_4_ = (int)ROUND(dVar15);",
@@ -443,7 +434,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 187,
+      "line": 186,
       "match": "(SMRGLModelBounds *)((int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -451,7 +442,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 194,
       "match": "(SMRGLModelBounds *)((int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + (uint)bVar14 * -8 + 4);",
@@ -459,7 +450,7 @@
     },
     {
       "description": "Pointer value `piStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
+      "line": 151,
       "match": "(int)piStack_34",
       "severity": "moderate",
       "text": "(uint)((longlong)(int)piStack_34 * (longlong)(int)fStack_18) >> 0x10 |",
@@ -467,7 +458,7 @@
     },
     {
       "description": "Pointer value `piStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 153,
+      "line": 152,
       "match": "(int)piStack_34",
       "severity": "moderate",
       "text": "(int)((ulonglong)((longlong)(int)piStack_34 * (longlong)(int)fStack_18) >> 0x20) << 0x10;",
@@ -475,7 +466,7 @@
     },
     {
       "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 187,
+      "line": 186,
       "match": "(int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -483,7 +474,7 @@
     },
     {
       "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 195,
+      "line": 194,
       "match": "(int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + (uint)bVar14 * -8 + 4);",
@@ -491,7 +482,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -499,7 +490,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 185,
+      "line": 184,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -507,7 +498,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 192,
+      "line": 191,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -515,7 +506,7 @@
     },
     {
       "description": "Sub-field-address struct field-pun \u2014 `(SMRGLModelBounds *)&SStack_dc.extent` takes the address of a field at offset 40 inside `SStack_dc` (a 52-byte SMRGLModelBounds), then casts it to SMRGLModelBounds * (same type as the local). A 52-byte access from that offset has only 12 bytes left and overruns `SStack_dc` by 40 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SMRGLModelBounds local (often just `&SStack_dc` itself).",
-      "line": 182,
+      "line": 181,
       "match": "(SMRGLModelBounds *)&SStack_dc.extent",
       "severity": "moderate",
       "text": "pSVar10 = (SMRGLModelBounds *)&SStack_dc.extent;",

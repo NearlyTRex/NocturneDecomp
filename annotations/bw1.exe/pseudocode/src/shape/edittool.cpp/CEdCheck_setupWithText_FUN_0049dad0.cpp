@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_0049dad0(CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text)
 
 {
@@ -33,20 +31,22 @@ void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_0049dad0(CEdCheck *th
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  if (_DAT_01c3eb50 == (CBitFont *)0x0) {
-    _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-    _DAT_01d1d404 = 0xa4;
+  if (g_CBitFont_PTR_01c3eb50 == (CBitFont *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+    g_INT_01d1d404 = 0xa4;
     core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
-  _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
-  iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50(_DAT_01c3eb50,this_ptr->checkbox_text)
+  g_INT_01c3f538 = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
   ;
+  iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50
+                    (g_CBitFont_PTR_01c3eb50,this_ptr->checkbox_text);
   this_ptr->right_boundary = this_ptr->y_position + iVar2;
   iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0(this_ptr);
   iVar2 = this_ptr->x_position;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_0049dc50(this_ptr);
-  iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,this_ptr->checkbox_text);
+  iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
+                    (g_CBitFont_PTR_01c3eb50,this_ptr->checkbox_text);
   this_ptr->total_width = iVar2 + iVar3 + iVar4 + iVar5;
   return;
 }

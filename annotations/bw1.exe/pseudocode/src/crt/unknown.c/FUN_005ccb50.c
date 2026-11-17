@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005ccb50(UINT param_1)
 
 {
@@ -25,27 +23,27 @@ uint FUN_005ccb50(UINT param_1)
   }
   else {
     if (param_1 == 0xfffffffd) {
-      memset((void *)0x2c9f6f0,0,0x101);
-      DAT_00626ad8 = 0;
-      _DAT_02c9f6e0 = 0;
+      memset(g_CHAR_ARRAY_02c9f6f0,0,0x101);
+      g_UINT_00626ad8 = 0;
+      g_INT_02c9f6e0 = 0;
       return 0;
     }
     if (param_1 == 0xfffffffc) {
-      memset((void *)0x2c9f6f0,0,0x101);
+      memset(g_CHAR_ARRAY_02c9f6f0,0,0x101);
       iVar4 = 0x81;
       do {
         iVar1 = iVar4 + 1;
-        *(byte *)(iVar4 + 0x2c9f6f1) = 1;
+        g_CHAR_ARRAY_02c9f6f1[iVar4] = '\x01';
         iVar4 = iVar1;
       } while (iVar1 < 0xa0);
       iVar4 = 0xe0;
       do {
         iVar1 = iVar4 + 1;
-        *(byte *)(iVar4 + 0x2c9f6f1) = 1;
+        g_CHAR_ARRAY_02c9f6f1[iVar4] = '\x01';
         iVar4 = iVar1;
       } while (iVar1 < 0xfd);
-      DAT_00626ad8 = 0x3a4;
-      _DAT_02c9f6e0 = 1;
+      g_UINT_00626ad8 = 0x3a4;
+      g_INT_02c9f6e0 = 1;
       return 0;
     }
   }
@@ -56,19 +54,19 @@ uint FUN_005ccb50(UINT param_1)
   if (BVar2 == 0) {
     return 1;
   }
-  memset((void *)0x2c9f6f0,0,0x101);
-  _DAT_02c9f6e0 = (uint)(_Stack_20.LeadByte[0] != '\0');
+  memset(g_CHAR_ARRAY_02c9f6f0,0,0x101);
+  g_INT_02c9f6e0 = (int)(_Stack_20.LeadByte[0] != '\0');
   for (iVar4 = 0; (_Stack_20.LeadByte[iVar4] != '\0' || (_Stack_20.LeadByte[iVar4 + 1] != '\0'));
       iVar4 = iVar4 + 2) {
     for (uVar3 = (uint)_Stack_20.LeadByte[iVar4];
         (int)uVar3 <= (int)(uint)_Stack_20.LeadByte[iVar4 + 1]; uVar3 = uVar3 + 1) {
-      *(byte *)(uVar3 + 0x2c9f6f1) = 1;
+      g_CHAR_ARRAY_02c9f6f1[uVar3] = '\x01';
     }
   }
   if (param_1 != 1) {
-    DAT_00626ad8 = param_1;
+    g_UINT_00626ad8 = param_1;
     return 0;
   }
-  DAT_00626ad8 = GetOEMCP();
+  g_UINT_00626ad8 = GetOEMCP();
   return 0;
 }

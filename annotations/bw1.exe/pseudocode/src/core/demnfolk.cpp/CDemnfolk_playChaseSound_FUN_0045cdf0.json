@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 208,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 78,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcat",
@@ -45,26 +45,26 @@
   "globals": [
     {
       "addr": "005d82cd",
-      "name": "DAT_005d82cd",
-      "type": "undefined1",
+      "name": "s_demn_005d82cd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d82ce",
-      "name": "DAT_005d82ce",
-      "type": "undefined1",
+      "name": "s_demn_005d82cd+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d82cf",
-      "name": "DAT_005d82cf",
-      "type": "undefined1",
+      "name": "s_demn_005d82cd+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d82d0",
-      "name": "DAT_005d82d0",
-      "type": "undefined1",
+      "name": "s_demn_005d82cd+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -182,14 +182,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005d82cd",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_005d82cd;",
-      "type": "undefined_data"
-    },
     {
       "description": "Undefined global data reference",
       "line": 15,

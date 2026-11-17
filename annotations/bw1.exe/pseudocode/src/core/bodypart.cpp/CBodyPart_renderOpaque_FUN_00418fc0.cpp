@@ -36,8 +36,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_00418fc0(CBodyPart *thi
     this_ptr->is_visible = iVar2;
     if (iVar2 != 0) {
       if ((this_ptr->transparent_geometry_flag == 0) ||
-         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-         iVar2 != 0)) {
+         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                            (g_CDemonRenderer_PTR_00612560), iVar2 != 0)) {
         core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00418e50(this_ptr,-1);
       }
       iVar2 = 0;
@@ -46,7 +46,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_00418fc0(CBodyPart *thi
         euler_angles = &this_ptr->attached_models[0].euler_angles;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-                    (DAT_00612560,euler_angles,&this_ptr->attached_models[iVar2].position_offset);
+                    (g_CDemonRenderer_PTR_00612560,euler_angles,
+                     &this_ptr->attached_models[iVar2].position_offset);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                     (&pSVar1->model,0.0,-1);
           iVar2 = iVar2 + 1;

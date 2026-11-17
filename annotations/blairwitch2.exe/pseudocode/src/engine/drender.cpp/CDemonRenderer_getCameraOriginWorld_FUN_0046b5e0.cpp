@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0(CDemonRenderer *this_ptr,CVector3f *output)
 
 {
@@ -22,7 +20,7 @@ CVector3f * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_F
   
   bVar3 = 0;
   engine_matrix_c_getCameraOrigin_FUN_004ea3b0(&local_28);
-  fVar1 = (float)_DAT_005d15cb;
+  fVar1 = (float)0.00390625;
   local_10 = local_28.z;
   local_1c = (float)local_28.x * fVar1;
   local_18[0] = (float)local_28.y * fVar1;

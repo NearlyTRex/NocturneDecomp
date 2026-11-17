@@ -51,7 +51,7 @@ section .text
     TEST EAX,EAX                        ; 00447eb1
     JNZ 0x00448386                      ; 00447eb3
         ;   XREF to: 00448386 (CONDITIONAL_JUMP)  ; LAB_00448386
-    MOV [0x01511cb8],EAX                ; 00447eb9 | DAT_01511cb8
+    MOV [0x01511cb8],EAX                ; 00447eb9 | g_CBitFont_PTR_01511cb8
         ;   Label: LAB_00447eb9
     TEST EAX,EAX                        ; 00447ebe
     JZ 0x00448394                       ; 00447ec0
@@ -61,12 +61,12 @@ section .text
     PUSH 0x1ae                          ; 00447ec8
     PUSH 0x136                          ; 00447ecd
     PUSH 0x5ced8c                       ; 00447ed2 | = "nocfont.raw"
-    MOV EBX,dword ptr [0x01511cb8]      ; 00447ed7 | DAT_01511cb8
+    MOV EBX,dword ptr [0x01511cb8]      ; 00447ed7 | g_CBitFont_PTR_01511cb8
     PUSH EBX                            ; 00447edd
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0 ; 00447ede
         ;   XREF to: 004a7cd0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 00447ee3
-    MOV ESI,dword ptr [0x01511cb8]      ; 00447ee6 | DAT_01511cb8
+    MOV ESI,dword ptr [0x01511cb8]      ; 00447ee6 | g_CBitFont_PTR_01511cb8
     PUSH ESI                            ; 00447eec
     CALL engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0 ; 00447eed
         ;   XREF to: 004a88d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont * this_ptr)
@@ -74,7 +74,7 @@ section .text
     PUSH 0x7e                           ; 00447ef5
     PUSH 0x20                           ; 00447ef7
     PUSH 0x3                            ; 00447ef9
-    MOV EAX,[0x01511cb8]                ; 00447efb | DAT_01511cb8
+    MOV EAX,[0x01511cb8]                ; 00447efb | g_CBitFont_PTR_01511cb8
     PUSH EAX                            ; 00447f00
     MOV dword ptr [EAX + 0x3668],0x8    ; 00447f01
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00447f0b
@@ -83,12 +83,12 @@ section .text
     PUSH 0xdf                           ; 00447f13
     PUSH 0xc0                           ; 00447f18
     PUSH 0x1                            ; 00447f1d
-    MOV EDI,dword ptr [0x01511cb8]      ; 00447f1f | DAT_01511cb8
+    MOV EDI,dword ptr [0x01511cb8]      ; 00447f1f | g_CBitFont_PTR_01511cb8
     PUSH EDI                            ; 00447f25
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00447f26
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00447f2b
-    MOV EAX,[0x01511cb8]                ; 00447f2e | DAT_01511cb8
+    MOV EAX,[0x01511cb8]                ; 00447f2e | g_CBitFont_PTR_01511cb8
     PUSH 0x1                            ; 00447f33
     MOV dword ptr [EAX + 0x41fc],0x2    ; 00447f35
     PUSH EAX                            ; 00447f3f
@@ -107,7 +107,7 @@ section .text
     CALL engine_font.cpp_CBitFont_ctor_FUN_004a7b70 ; 00447f64
         ;   XREF to: 004a7b70 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004a7b70(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 00447f69
-    MOV [0x01511cbc],EAX                ; 00447f6c | DAT_01511cbc
+    MOV [0x01511cbc],EAX                ; 00447f6c | g_CBitFont_PTR_01511cbc
         ;   Label: LAB_00447f6c
     TEST EAX,EAX                        ; 00447f71
     JZ 0x004483bc                       ; 00447f73
@@ -117,12 +117,12 @@ section .text
     PUSH 0x158                          ; 00447f7b
     PUSH 0xf8                           ; 00447f80
     PUSH 0x5cedca                       ; 00447f85 | = "nocsmall.raw"
-    MOV EDX,dword ptr [0x01511cbc]      ; 00447f8a | DAT_01511cbc
+    MOV EDX,dword ptr [0x01511cbc]      ; 00447f8a | g_CBitFont_PTR_01511cbc
     PUSH EDX                            ; 00447f90
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0 ; 00447f91
         ;   XREF to: 004a7cd0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 00447f96
-    MOV ECX,dword ptr [0x01511cbc]      ; 00447f99 | DAT_01511cbc
+    MOV ECX,dword ptr [0x01511cbc]      ; 00447f99 | g_CBitFont_PTR_01511cbc
     PUSH ECX                            ; 00447f9f
     CALL engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0 ; 00447fa0
         ;   XREF to: 004a88d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont * this_ptr)
@@ -130,13 +130,13 @@ section .text
     PUSH 0x7e                           ; 00447fa8
     PUSH 0x20                           ; 00447faa
     PUSH 0x2                            ; 00447fac
-    MOV EAX,[0x01511cbc]                ; 00447fae | DAT_01511cbc
+    MOV EAX,[0x01511cbc]                ; 00447fae | g_CBitFont_PTR_01511cbc
     PUSH EAX                            ; 00447fb3
     MOV dword ptr [EAX + 0x3668],0x5    ; 00447fb4
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00447fbe
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00447fc3
-    MOV EAX,[0x01511cbc]                ; 00447fc6 | DAT_01511cbc
+    MOV EAX,[0x01511cbc]                ; 00447fc6 | g_CBitFont_PTR_01511cbc
     PUSH 0x1                            ; 00447fcb
     MOV dword ptr [EAX + 0x41fc],0x2    ; 00447fcd
     PUSH EAX                            ; 00447fd7
@@ -155,7 +155,7 @@ section .text
     CALL engine_font.cpp_CBitFont_ctor_FUN_004a7b70 ; 00447ffc
         ;   XREF to: 004a7b70 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004a7b70(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 00448001
-    MOV [0x01511cc0],EAX                ; 00448004 | DAT_01511cc0
+    MOV [0x01511cc0],EAX                ; 00448004 | g_CBitFont_PTR_01511cc0
         ;   Label: LAB_00448004
     TEST EAX,EAX                        ; 00448009
     JZ 0x004483e3                       ; 0044800b
@@ -165,12 +165,12 @@ section .text
     PUSH 0x23f                          ; 00448013
     PUSH 0xfa                           ; 00448018
     PUSH 0x5cee0a                       ; 0044801d | = "menufont.raw"
-    MOV EDI,dword ptr [0x01511cc0]      ; 00448022 | DAT_01511cc0
+    MOV EDI,dword ptr [0x01511cc0]      ; 00448022 | g_CBitFont_PTR_01511cc0
     PUSH EDI                            ; 00448028
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0 ; 00448029
         ;   XREF to: 004a7cd0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 0044802e
-    MOV EBP,dword ptr [0x01511cc0]      ; 00448031 | DAT_01511cc0
+    MOV EBP,dword ptr [0x01511cc0]      ; 00448031 | g_CBitFont_PTR_01511cc0
     PUSH EBP                            ; 00448037
     CALL engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0 ; 00448038
         ;   XREF to: 004a88d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont * this_ptr)
@@ -178,7 +178,7 @@ section .text
     PUSH 0x7e                           ; 00448040
     PUSH 0x20                           ; 00448042
     PUSH 0x3                            ; 00448044
-    MOV EAX,[0x01511cc0]                ; 00448046 | DAT_01511cc0
+    MOV EAX,[0x01511cc0]                ; 00448046 | g_CBitFont_PTR_01511cc0
     PUSH EAX                            ; 0044804b
     MOV dword ptr [EAX + 0x3668],0x8    ; 0044804c
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00448056
@@ -187,7 +187,7 @@ section .text
     PUSH 0xdf                           ; 0044805e
     PUSH 0xc0                           ; 00448063
     PUSH 0x0                            ; 00448068
-    MOV EAX,[0x01511cc0]                ; 0044806a | DAT_01511cc0
+    MOV EAX,[0x01511cc0]                ; 0044806a | g_CBitFont_PTR_01511cc0
     PUSH EAX                            ; 0044806f
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00448070
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
@@ -195,12 +195,12 @@ section .text
     PUSH 0xff                           ; 00448078
     PUSH 0xe0                           ; 0044807d
     PUSH 0x1                            ; 00448082
-    MOV EDX,dword ptr [0x01511cc0]      ; 00448084 | DAT_01511cc0
+    MOV EDX,dword ptr [0x01511cc0]      ; 00448084 | g_CBitFont_PTR_01511cc0
     PUSH EDX                            ; 0044808a
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 0044808b
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00448090
-    MOV EAX,[0x01511cc0]                ; 00448093 | DAT_01511cc0
+    MOV EAX,[0x01511cc0]                ; 00448093 | g_CBitFont_PTR_01511cc0
     PUSH 0x1                            ; 00448098
     MOV dword ptr [EAX + 0x41fc],0x2    ; 0044809a
     PUSH EAX                            ; 004480a4
@@ -219,7 +219,7 @@ section .text
     CALL engine_font.cpp_CBitFont_ctor_FUN_004a7b70 ; 004480c9
         ;   XREF to: 004a7b70 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004a7b70(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 004480ce
-    MOV [0x01511cc4],EAX                ; 004480d1 | DAT_01511cc4
+    MOV [0x01511cc4],EAX                ; 004480d1 | g_CBitFont_PTR_01511cc4
         ;   Label: LAB_004480d1
     TEST EAX,EAX                        ; 004480d6
     JZ 0x0044840b                       ; 004480d8
@@ -229,12 +229,12 @@ section .text
     PUSH 0xec                           ; 004480e0
     PUSH 0x94                           ; 004480e5
     PUSH 0x5cee4a                       ; 004480ea | = "fnte_pfd.RAW"
-    MOV ESI,dword ptr [0x01511cc4]      ; 004480ef | DAT_01511cc4
+    MOV ESI,dword ptr [0x01511cc4]      ; 004480ef | g_CBitFont_PTR_01511cc4
     PUSH ESI                            ; 004480f5
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0 ; 004480f6
         ;   XREF to: 004a7cd0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 004480fb
-    MOV EDI,dword ptr [0x01511cc4]      ; 004480fe | DAT_01511cc4
+    MOV EDI,dword ptr [0x01511cc4]      ; 004480fe | g_CBitFont_PTR_01511cc4
     PUSH EDI                            ; 00448104
     CALL engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0 ; 00448105
         ;   XREF to: 004a88d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont * this_ptr)
@@ -242,13 +242,13 @@ section .text
     PUSH 0x7e                           ; 0044810d
     PUSH 0x20                           ; 0044810f
     PUSH 0x3                            ; 00448111
-    MOV EAX,[0x01511cc4]                ; 00448113 | DAT_01511cc4
+    MOV EAX,[0x01511cc4]                ; 00448113 | g_CBitFont_PTR_01511cc4
     PUSH EAX                            ; 00448118
     MOV dword ptr [EAX + 0x3668],0x4    ; 00448119
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00448123
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00448128
-    MOV EAX,[0x01511cc4]                ; 0044812b | DAT_01511cc4
+    MOV EAX,[0x01511cc4]                ; 0044812b | g_CBitFont_PTR_01511cc4
     PUSH 0x1                            ; 00448130
     MOV dword ptr [EAX + 0x41fc],0x1    ; 00448132
     PUSH EAX                            ; 0044813c
@@ -256,9 +256,9 @@ section .text
     CALL engine_font.cpp_CBitFont_setFontReady_FUN_004ab620 ; 00448147
         ;   XREF to: 004ab620 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setFontReady_FUN_004ab620(CBitFont * this_ptr, int value)
     ADD ESP,0x8                         ; 0044814c
-    MOV EAX,[0x01511cc4]                ; 0044814f | DAT_01511cc4
+    MOV EAX,[0x01511cc4]                ; 0044814f | g_CBitFont_PTR_01511cc4
     PUSH 0x4220                         ; 00448154
-    MOV [0x01c25590],EAX                ; 00448159 | DAT_01c25590
+    MOV [0x01c25590],EAX                ; 00448159 | g_CBitFont_PTR_01c25590
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0044815e
         ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 00448163
@@ -269,7 +269,7 @@ section .text
     CALL engine_font.cpp_CBitFont_ctor_FUN_004a7b70 ; 0044816b
         ;   XREF to: 004a7b70 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004a7b70(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 00448170
-    MOV [0x01511cc8],EAX                ; 00448173 | DAT_01511cc8
+    MOV [0x01511cc8],EAX                ; 00448173 | g_CBitFont_PTR_01511cc8
         ;   Label: LAB_00448173
     TEST EAX,EAX                        ; 00448178
     JZ 0x00448433                       ; 0044817a
@@ -279,7 +279,7 @@ section .text
     PUSH 0xec                           ; 00448185
     PUSH 0x94                           ; 0044818a
     PUSH 0x5cee8c                       ; 0044818f | = "fnte_f.RAW"
-    MOV EDX,dword ptr [0x01511cc8]      ; 00448194 | DAT_01511cc8
+    MOV EDX,dword ptr [0x01511cc8]      ; 00448194 | g_CBitFont_PTR_01511cc8
     PUSH EDX                            ; 0044819a
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0 ; 0044819b
         ;   XREF to: 004a7cd0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont * this_ptr, char * filename, int width, int height, ...)
@@ -287,13 +287,13 @@ section .text
     PUSH 0x7e                           ; 004481a3
     PUSH 0x20                           ; 004481a5
     PUSH 0x3                            ; 004481a7
-    MOV EAX,[0x01511cc8]                ; 004481a9 | DAT_01511cc8
+    MOV EAX,[0x01511cc8]                ; 004481a9 | g_CBitFont_PTR_01511cc8
     PUSH EAX                            ; 004481ae
     MOV dword ptr [EAX + 0x3668],0x4    ; 004481af
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 004481b9
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 004481be
-    MOV EAX,[0x01511cc8]                ; 004481c1 | DAT_01511cc8
+    MOV EAX,[0x01511cc8]                ; 004481c1 | g_CBitFont_PTR_01511cc8
     PUSH 0x1                            ; 004481c6
     MOV dword ptr [EAX + 0x41fc],0x1    ; 004481c8
     PUSH EAX                            ; 004481d2
@@ -301,9 +301,9 @@ section .text
     CALL engine_font.cpp_CBitFont_setFontReady_FUN_004ab620 ; 004481dd
         ;   XREF to: 004ab620 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setFontReady_FUN_004ab620(CBitFont * this_ptr, int value)
     ADD ESP,0x8                         ; 004481e2
-    MOV EAX,[0x01511cc4]                ; 004481e5 | DAT_01511cc4
+    MOV EAX,[0x01511cc4]                ; 004481e5 | g_CBitFont_PTR_01511cc4
     PUSH 0x4220                         ; 004481ea
-    MOV [0x01c25590],EAX                ; 004481ef | DAT_01c25590
+    MOV [0x01c25590],EAX                ; 004481ef | g_CBitFont_PTR_01c25590
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004481f4
         ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004481f9
@@ -314,7 +314,7 @@ section .text
     CALL engine_font.cpp_CBitFont_ctor_FUN_004a7b70 ; 00448201
         ;   XREF to: 004a7b70 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004a7b70(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 00448206
-    MOV [0x01511ccc],EAX                ; 00448209 | DAT_01511ccc
+    MOV [0x01511ccc],EAX                ; 00448209 | g_CBitFont_PTR_01511ccc
         ;   Label: LAB_00448209
     TEST EAX,EAX                        ; 0044820e
     JZ 0x0044845a                       ; 00448210
@@ -324,12 +324,12 @@ section .text
     PUSH 0xec                           ; 00448218
     PUSH 0x94                           ; 0044821d
     PUSH 0x5ceeca                       ; 00448222 | = "micro.raw"
-    MOV ESI,dword ptr [0x01511ccc]      ; 00448227 | DAT_01511ccc
+    MOV ESI,dword ptr [0x01511ccc]      ; 00448227 | g_CBitFont_PTR_01511ccc
     PUSH ESI                            ; 0044822d
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0 ; 0044822e
         ;   XREF to: 004a7cd0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 00448233
-    MOV EDI,dword ptr [0x01511ccc]      ; 00448236 | DAT_01511ccc
+    MOV EDI,dword ptr [0x01511ccc]      ; 00448236 | g_CBitFont_PTR_01511ccc
     PUSH EDI                            ; 0044823c
     CALL engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0 ; 0044823d
         ;   XREF to: 004a88d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont * this_ptr)
@@ -337,13 +337,13 @@ section .text
     PUSH 0x7e                           ; 00448245
     PUSH 0x20                           ; 00448247
     PUSH 0x1                            ; 00448249
-    MOV EAX,[0x01511ccc]                ; 0044824b | DAT_01511ccc
+    MOV EAX,[0x01511ccc]                ; 0044824b | g_CBitFont_PTR_01511ccc
     PUSH EAX                            ; 00448250
     MOV dword ptr [EAX + 0x3668],0x4    ; 00448251
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 0044825b
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00448260
-    MOV EAX,[0x01511ccc]                ; 00448263 | DAT_01511ccc
+    MOV EAX,[0x01511ccc]                ; 00448263 | g_CBitFont_PTR_01511ccc
     PUSH 0x1                            ; 00448268
     MOV dword ptr [EAX + 0x41fc],0x1    ; 0044826a
     PUSH EAX                            ; 00448274
@@ -362,7 +362,7 @@ section .text
     CALL engine_font.cpp_CBitFont_ctor_FUN_004a7b70 ; 00448299
         ;   XREF to: 004a7b70 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004a7b70(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 0044829e
-    MOV [0x01511cd0],EAX                ; 004482a1 | DAT_01511cd0
+    MOV [0x01511cd0],EAX                ; 004482a1 | g_CBitFont_PTR_01511cd0
         ;   Label: LAB_004482a1
     TEST EAX,EAX                        ; 004482a6
     JNZ 0x004482cc                      ; 004482a8
@@ -370,8 +370,8 @@ section .text
     MOV EBP,0x5ceed4                    ; 004482aa | = "..\\core\\dfont.cpp"
     MOV EAX,0xa5                        ; 004482af
     PUSH 0x5ceee6                       ; 004482b4 | = "Hand font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004482b9 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004482bf | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004482b9 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004482bf | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004482c4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004482c9
@@ -380,12 +380,12 @@ section .text
     PUSH 0x100                          ; 004482ce
     PUSH 0x100                          ; 004482d3
     PUSH 0x5cef06                       ; 004482d8 | = "dochand.raw"
-    MOV EDX,dword ptr [0x01511cd0]      ; 004482dd | DAT_01511cd0
+    MOV EDX,dword ptr [0x01511cd0]      ; 004482dd | g_CBitFont_PTR_01511cd0
     PUSH EDX                            ; 004482e3
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0 ; 004482e4
         ;   XREF to: 004a7cd0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 004482e9
-    MOV ECX,dword ptr [0x01511cd0]      ; 004482ec | DAT_01511cd0
+    MOV ECX,dword ptr [0x01511cd0]      ; 004482ec | g_CBitFont_PTR_01511cd0
     PUSH ECX                            ; 004482f2
     CALL engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0 ; 004482f3
         ;   XREF to: 004a88d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont * this_ptr)
@@ -393,7 +393,7 @@ section .text
     PUSH 0x7e                           ; 004482fb
     PUSH 0x20                           ; 004482fd
     PUSH 0x3                            ; 004482ff
-    MOV EAX,[0x01511cd0]                ; 00448301 | DAT_01511cd0
+    MOV EAX,[0x01511cd0]                ; 00448301 | g_CBitFont_PTR_01511cd0
     PUSH EAX                            ; 00448306
     MOV dword ptr [EAX + 0x3668],0x8    ; 00448307
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00448311
@@ -402,7 +402,7 @@ section .text
     PUSH 0xdf                           ; 00448319
     PUSH 0xc0                           ; 0044831e
     PUSH 0x0                            ; 00448323
-    MOV EBX,dword ptr [0x01511cd0]      ; 00448325 | DAT_01511cd0
+    MOV EBX,dword ptr [0x01511cd0]      ; 00448325 | g_CBitFont_PTR_01511cd0
     PUSH EBX                            ; 0044832b
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 0044832c
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
@@ -410,19 +410,19 @@ section .text
     PUSH 0xff                           ; 00448334
     PUSH 0xe0                           ; 00448339
     PUSH 0x1                            ; 0044833e
-    MOV ESI,dword ptr [0x01511cd0]      ; 00448340 | DAT_01511cd0
+    MOV ESI,dword ptr [0x01511cd0]      ; 00448340 | g_CBitFont_PTR_01511cd0
     PUSH ESI                            ; 00448346
     CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0 ; 00448347
         ;   XREF to: 004ab5c0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 0044834c
-    MOV EAX,[0x01511cd0]                ; 0044834f | DAT_01511cd0
+    MOV EAX,[0x01511cd0]                ; 0044834f | g_CBitFont_PTR_01511cd0
     PUSH 0x1                            ; 00448354
     MOV dword ptr [EAX + 0x41fc],0x2    ; 00448356
     PUSH EAX                            ; 00448360
     MOV dword ptr [EAX + 0x4200],0x1    ; 00448361
     CALL engine_font.cpp_CBitFont_setFontReady_FUN_004ab620 ; 0044836b
         ;   XREF to: 004ab620 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setFontReady_FUN_004ab620(CBitFont * this_ptr, int value)
-    MOV EDI,dword ptr [0x01d63250]      ; 00448370 | DAT_01d63250
+    MOV EDI,dword ptr [0x01d63250]      ; 00448370 | g_INT_01d63250
     ADD ESP,0x8                         ; 00448376
     TEST EDI,EDI                        ; 00448379
     JNZ 0x00448482                      ; 0044837b
@@ -443,8 +443,8 @@ section .text
         ;   Label: LAB_00448394
     MOV ECX,0x41                        ; 00448399
     PUSH 0x5ced6a                       ; 0044839e | = "Medium font object not allocated!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004483a3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004483a9 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004483a3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004483a9 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004483af
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004483b4
@@ -454,8 +454,8 @@ section .text
         ;   Label: LAB_004483bc
     MOV EAX,0x51                        ; 004483c1
     PUSH 0x5cedaa                       ; 004483c6 | = "Tiny font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004483cb | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004483d1 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004483cb | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004483d1 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004483d6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004483db
@@ -465,8 +465,8 @@ section .text
         ;   Label: LAB_004483e3
     MOV ESI,0x60                        ; 004483e8
     PUSH 0x5cede9                       ; 004483ed | = "Theme font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBX      ; 004483f2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004483f8 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004483f2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004483f8 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004483fe
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00448403
@@ -476,8 +476,8 @@ section .text
         ;   Label: LAB_0044840b
     MOV EBX,0x71                        ; 00448410
     PUSH 0x5cee29                       ; 00448415 | = "Debug font object not allocated!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0044841a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00448420 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044841a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00448420 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00448426
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044842b
@@ -487,8 +487,8 @@ section .text
         ;   Label: LAB_00448433
     MOV EAX,0x84                        ; 00448438
     PUSH 0x5cee69                       ; 0044843d | = "Console font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBP      ; 00448442 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00448448 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00448442 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00448448 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044844d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00448452
@@ -498,8 +498,8 @@ section .text
         ;   Label: LAB_0044845a
     MOV EBX,0x96                        ; 0044845f
     PUSH 0x5ceea9                       ; 00448464 | = "Micro font object not allocated!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00448469 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0044846f | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00448469 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 0044846f | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00448475
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044847a
@@ -516,12 +516,12 @@ section .text
     PUSH 0x2                            ; 00448493
     PUSH 0x2                            ; 00448495
     PUSH 0xe                            ; 00448497
-    PUSH 0x61b190                       ; 00448499 | DAT_0061b190
+    PUSH 0x61b190                       ; 00448499 | g_CHAR_ARRAY_0061b190
     PUSH EAX                            ; 0044849e
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_0058df90 ; 0044849f
         ;   XREF to: 0058df90 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_0058df90(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 004484a4
-    MOV [0x01511cd4],EAX                ; 004484a7 | DAT_01511cd4
+    MOV [0x01511cd4],EAX                ; 004484a7 | g_CWinFont_PTR_01511cd4
         ;   Label: LAB_004484a7
     TEST EAX,EAX                        ; 004484ac
     JNZ 0x004484d2                      ; 004484ae
@@ -529,14 +529,14 @@ section .text
     MOV EBP,0x5cef12                    ; 004484b0 | = "..\\core\\dfont.cpp"
     MOV EAX,0xb7                        ; 004484b5
     PUSH 0x5cef24                       ; 004484ba | = "initFonts - Can't allocate gMediumOSFont"
-    MOV dword ptr [0x01d046a0],EBP      ; 004484bf | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004484c5 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004484bf | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004484c5 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004484ca
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004484cf
-    MOV EAX,[0x01511cb8]                ; 004484d2 | DAT_01511cb8
+    MOV EAX,[0x01511cb8]                ; 004484d2 | g_CBitFont_PTR_01511cb8
         ;   Label: LAB_004484d2
-    MOV EDX,dword ptr [0x01511cd4]      ; 004484d7 | DAT_01511cd4
+    MOV EDX,dword ptr [0x01511cd4]      ; 004484d7 | g_CWinFont_PTR_01511cd4
     MOV dword ptr [EAX + 0x4210],0x1    ; 004484dd
     PUSH 0x6b80                         ; 004484e7
     MOV dword ptr [EAX + 0x4214],EDX    ; 004484ec
@@ -549,12 +549,12 @@ section .text
     PUSH 0x0                            ; 004484fe
     PUSH 0x0                            ; 00448500
     PUSH 0x12                           ; 00448502
-    PUSH 0x61b190                       ; 00448504 | DAT_0061b190
+    PUSH 0x61b190                       ; 00448504 | g_CHAR_ARRAY_0061b190
     PUSH EAX                            ; 00448509
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_0058df90 ; 0044850a
         ;   XREF to: 0058df90 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_0058df90(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 0044850f
-    MOV [0x01511cdc],EAX                ; 00448512 | DAT_01511cdc
+    MOV [0x01511cdc],EAX                ; 00448512 | g_CWinFont_PTR_01511cdc
         ;   Label: LAB_00448512
     TEST EAX,EAX                        ; 00448517
     JNZ 0x0044853e                      ; 00448519
@@ -562,14 +562,14 @@ section .text
     MOV EDX,0x5cef4d                    ; 0044851b | = "..\\core\\dfont.cpp"
     MOV ECX,0xbd                        ; 00448520
     PUSH 0x5cef5f                       ; 00448525 | = "initFonts - Can't allocate gThemeOSFont"
-    MOV dword ptr [0x01d046a0],EDX      ; 0044852a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00448530 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0044852a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00448530 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00448536
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044853b
-    MOV EAX,[0x01511cc0]                ; 0044853e | DAT_01511cc0
+    MOV EAX,[0x01511cc0]                ; 0044853e | g_CBitFont_PTR_01511cc0
         ;   Label: LAB_0044853e
-    MOV EDX,dword ptr [0x01511cdc]      ; 00448543 | DAT_01511cdc
+    MOV EDX,dword ptr [0x01511cdc]      ; 00448543 | g_CWinFont_PTR_01511cdc
     MOV dword ptr [EAX + 0x4210],0x1    ; 00448549
     PUSH 0x6b80                         ; 00448553
     MOV dword ptr [EAX + 0x4214],EDX    ; 00448558
@@ -582,12 +582,12 @@ section .text
     PUSH 0x0                            ; 0044856a
     PUSH 0x0                            ; 0044856c
     PUSH 0xc                            ; 0044856e
-    PUSH 0x61b190                       ; 00448570 | DAT_0061b190
+    PUSH 0x61b190                       ; 00448570 | g_CHAR_ARRAY_0061b190
     PUSH EAX                            ; 00448575
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_0058df90 ; 00448576
         ;   XREF to: 0058df90 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_0058df90(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 0044857b
-    MOV [0x01511cd8],EAX                ; 0044857e | DAT_01511cd8
+    MOV [0x01511cd8],EAX                ; 0044857e | g_CWinFont_PTR_01511cd8
         ;   Label: LAB_0044857e
     TEST EAX,EAX                        ; 00448583
     JNZ 0x004485aa                      ; 00448585
@@ -595,14 +595,14 @@ section .text
     MOV EBX,0x5cef87                    ; 00448587 | = "..\\core\\dfont.cpp"
     MOV ESI,0xc3                        ; 0044858c
     PUSH 0x5cef99                       ; 00448591 | = "initFonts - Can't allocate gTinyOSFont"
-    MOV dword ptr [0x01d046a0],EBX      ; 00448596 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0044859c | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00448596 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0044859c | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004485a2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004485a7
-    MOV EAX,[0x01511cbc]                ; 004485aa | DAT_01511cbc
+    MOV EAX,[0x01511cbc]                ; 004485aa | g_CBitFont_PTR_01511cbc
         ;   Label: LAB_004485aa
-    MOV EDX,dword ptr [0x01511cd8]      ; 004485af | DAT_01511cd8
+    MOV EDX,dword ptr [0x01511cd8]      ; 004485af | g_CWinFont_PTR_01511cd8
     MOV dword ptr [EAX + 0x4210],0x1    ; 004485b5
     PUSH 0x6b80                         ; 004485bf
     MOV dword ptr [EAX + 0x4214],EDX    ; 004485c4
@@ -615,12 +615,12 @@ section .text
     PUSH 0x0                            ; 004485d6
     PUSH 0x0                            ; 004485d8
     PUSH 0xa                            ; 004485da
-    PUSH 0x61b190                       ; 004485dc | DAT_0061b190
+    PUSH 0x61b190                       ; 004485dc | g_CHAR_ARRAY_0061b190
     PUSH EAX                            ; 004485e1
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_0058df90 ; 004485e2
         ;   XREF to: 0058df90 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_0058df90(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 004485e7
-    MOV [0x01511ce0],EAX                ; 004485ea | DAT_01511ce0
+    MOV [0x01511ce0],EAX                ; 004485ea | g_CWinFont_PTR_01511ce0
         ;   Label: LAB_004485ea
     TEST EAX,EAX                        ; 004485ef
     JNZ 0x00448616                      ; 004485f1
@@ -628,14 +628,14 @@ section .text
     MOV EDI,0x5cefc0                    ; 004485f3 | = "..\\core\\dfont.cpp"
     MOV EBP,0xc9                        ; 004485f8
     PUSH 0x5cefd2                       ; 004485fd | = "initFonts - Can't allocate gDebugOSFont"
-    MOV dword ptr [0x01d046a0],EDI      ; 00448602 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00448608 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00448602 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 00448608 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044860e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00448613
-    MOV EAX,[0x01511cc4]                ; 00448616 | DAT_01511cc4
+    MOV EAX,[0x01511cc4]                ; 00448616 | g_CBitFont_PTR_01511cc4
         ;   Label: LAB_00448616
-    MOV EDX,dword ptr [0x01511ce0]      ; 0044861b | DAT_01511ce0
+    MOV EDX,dword ptr [0x01511ce0]      ; 0044861b | g_CWinFont_PTR_01511ce0
     MOV dword ptr [EAX + 0x4210],0x1    ; 00448621
     MOV dword ptr [EAX + 0x4214],EDX    ; 0044862b
     POP EBP                             ; 00448631

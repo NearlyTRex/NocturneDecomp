@@ -28,7 +28,6 @@
 /* WARNING: Removing unreachable block (ram,0x004db20f) */
 /* WARNING: Removing unreachable block (ram,0x004db21a) */
 /* WARNING: Removing unreachable block (ram,0x004db2b5) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
 
@@ -83,7 +82,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CD
         pCVar7[0x185].create_event[0x53] = '\0';
       }
       core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                (0x02CF5680,pCVar7,"wp_getmana.wav",&(pCVar7->location).position);
+                (g_CSound_PTR_006045f8,pCVar7,"wp_getmana.wav",&(pCVar7->location).position
+                );
       bVar2 = false;
     }
     else {
@@ -97,7 +97,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CD
           pCVar7[0x185].create_event[0x57] = '\0';
         }
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                  (0x02CF5680,pCVar7,"wp_getammo.wav",&(pCVar7->location).position);
+                  (g_CSound_PTR_006045f8,pCVar7,"wp_getammo.wav",
+                   &(pCVar7->location).position);
       }
       bVar2 = false;
     }
@@ -128,7 +129,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CD
     }
     bVar2 = false;
   }
-  if (((this_ptr->owner != *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) ||
+  if ((((CHero *)this_ptr->owner != g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]) ||
       (show_tutorial_message == 0)) || (g_CGamePtr->letterbox_mode != 0)) goto LAB_004db104;
   local_3c = core_inv_cpp_getItemDisplayName_FUN_004d9e40(item_actor);
   core_inv_cpp_getItemDescription_FUN_004d9eb0(item_actor);
@@ -153,7 +154,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CD
     _sprintf(acStack_240,"You've received : %d health");
   }
   else {
-    _sprintf(local_13c,&DAT_005c6010);
+    _sprintf(local_13c,"%d ");
     pcVar11 = local_13c;
     iVar8 = -1;
     pcVar5 = local_23c;
@@ -180,7 +181,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CD
     }
     else {
       if (local_30[2].validation_magic != 10) goto LAB_004daa67;
-      pcVar11 = &DAT_005c601c;
+      pcVar11 = "mana";
     }
 LAB_004daa3e:
     iVar8 = -1;
@@ -723,7 +724,7 @@ LAB_004daa67:
       pcVar12[1] = cVar1;
       pcVar12 = pcVar12 + 2;
     } while (cVar1 != '\0');
-    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c6195);
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960(".");
     iVar8 = -1;
     pcVar11 = local_33c;
     do {
@@ -758,16 +759,18 @@ LAB_004daa67:
   } while (cVar1 != '\0');
   local_14 = (CDemonActor *)
              engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80
-                       (_DAT_01549ab4,this_ptr->message_text);
-  this_ptr->message_display_timer = (float)(int)local_14 * (float)_DAT_005c627f;
+                       (g_CBitFont_PTR_01549ab4,this_ptr->message_text);
+  this_ptr->message_display_timer = (float)(int)local_14 * (float)0.025000000000000001;
 LAB_004db104:
   if ((local_38 != (CHealthItem *)0x0) && (!bVar2)) {
-    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,item_actor,1);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+              (g_CDemonMission_PTR_00600530,item_actor,1);
     return 1;
   }
   local_24 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c840(item_actor,g_CAmmoClassInfo.name_hash);
   if (local_24 != (CDemonActor *)0x0) {
-    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,item_actor,1);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+              (g_CDemonMission_PTR_00600530,item_actor,1);
     return 1;
   }
   pCVar4 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c840(item_actor,g_CWeaponClassInfo.name_hash);
@@ -775,7 +778,7 @@ LAB_004db104:
     pCVar7 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar4,g_CMeleeClassInfo.name_hash);
     if (pCVar7 != (CDemonActor *)0x0) {
       this_ptr->items[this_ptr->item_count] = item_actor;
-      pCVar3 = 0x01D81080;
+      pCVar3 = g_CDemonMission_PTR_00600530;
       this_ptr->item_count = this_ptr->item_count + 1;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(pCVar3,item_actor,0);
       (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
@@ -798,8 +801,8 @@ LAB_004db104:
                  *(int *)(pCVar7[4].actor_name + 8) + *(int *)(pCVar4[4].actor_name + 8);
             engine_console_cpp_CConsole_printf_FUN_00441ff0
                       (g_CConsolePtr,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,item_actor,1)
-            ;
+            core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                      (g_CDemonMission_PTR_00600530,item_actor,1);
             return 1;
           }
         }
@@ -820,7 +823,8 @@ LAB_004db104:
           if (iVar8 == 0) {
             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(pCVar4);
             actor = core_actor_cpp_createActorByName_FUN_0040c4f0(pcVar11);
-            core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(0x01D81080,actor);
+            core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530
+                      (g_CDemonMission_PTR_00600530,actor);
             (*((actor->vtable)._ub)->setup)(actor);
             *(int *)(actor[4].actor_name + 8) = pCVar7[2].health;
             *(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar7[2].validation_magic;
@@ -839,12 +843,13 @@ LAB_004db104:
       } while (local_20 < this_ptr->item_count);
     }
     if (bVar2) {
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,pCVar4,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                (g_CDemonMission_PTR_00600530,pCVar4,1);
       return 1;
     }
   }
   this_ptr->items[this_ptr->item_count] = item_actor;
-  pCVar3 = 0x01D81080;
+  pCVar3 = g_CDemonMission_PTR_00600530;
   this_ptr->item_count = this_ptr->item_count + 1;
   core_mission_cpp_CDemonMission_removeActorFromList_FUN_004f69a0(pCVar3,item_actor);
   (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);

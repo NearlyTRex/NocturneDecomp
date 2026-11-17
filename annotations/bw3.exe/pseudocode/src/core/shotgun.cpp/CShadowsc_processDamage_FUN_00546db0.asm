@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ShotShadowWithLead_005d1519
-;   undefined4 DAT_005d152e
-;   undefined4 DAT_005fba60
+;   double g_DOUBLE_005d152e = 10
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -101,7 +101,7 @@ section .text
     RET                                 ; 00546e65
     PUSH 0x5d1519                       ; 00546e66 | = "ShotShadowWithLead"
         ;   Label: LAB_00546e66
-    MOV EAX,[0x005fba60]                ; 00546e6b | DAT_005fba60
+    MOV EAX,[0x005fba60]                ; 00546e6b | g_CEventList_PTR_005fba60
     PUSH EAX                            ; 00546e70
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00546e71
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -118,7 +118,7 @@ section .text
         ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x20],EAX      ; 00546e95
     FLD float ptr [ESP + 0x20]          ; 00546e99
-    FMUL double ptr [0x005d152e]        ; 00546e9d | DAT_005d152e
+    FMUL double ptr [0x005d152e]        ; 00546e9d | g_DOUBLE_005d152e
     LEA EAX,[EBX + 0x1c]                ; 00546ea3
     ADD ESP,0x8                         ; 00546ea6
     FLD float ptr [EBX + 0x4]           ; 00546ea9

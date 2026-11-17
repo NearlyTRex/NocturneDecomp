@@ -45,24 +45,26 @@ void __cdecl core_charactr_cpp_CCharacter_renderPhantomEyes_FUN_0042b620(CCharac
        afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   core_xform_cpp_getTranslation_FUN_00592720(&local_68,&local_14);
   translation = &local_20;
-  euler_angles = (CVector3f *)&DAT_0265370c;
+  euler_angles = &g_CVector3f_0265370c;
   local_20.x = local_14.x;
   *(uint *)((int)&local_20 + (uint)bVar4 * -8 + 4) =
        *(uint *)((int)&local_14 + (uint)bVar4 * -8 + 4);
-  this_ptr_00 = DAT_0060b280;
+  this_ptr_00 = g_CDemonRenderer_PTR_0060b280;
   *(uint *)((int)&local_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        *(uint *)((int)&local_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (this_ptr_00,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,&local_2c,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_0060b280,&local_2c,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,&this_ptr->eye_glow_left_angles,&this_ptr->eye_glow_left_offset);
-  core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(this_ptr,(CVector3f *)&DAT_0265370c);
+            (g_CDemonRenderer_PTR_0060b280,&this_ptr->eye_glow_left_angles,
+             &this_ptr->eye_glow_left_offset);
+  core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(this_ptr,&g_CVector3f_0265370c);
   engine_drender_cpp_pop_FUN_0046b4a0();
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,&this_ptr->eye_glow_right_angles,&this_ptr->eye_glow_right_offset);
-  core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(this_ptr,(CVector3f *)&DAT_0265370c);
+            (g_CDemonRenderer_PTR_0060b280,&this_ptr->eye_glow_right_angles,
+             &this_ptr->eye_glow_right_offset);
+  core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(this_ptr,&g_CVector3f_0265370c);
   engine_drender_cpp_pop_FUN_0046b4a0();
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);

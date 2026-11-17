@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005b11c0(CWerewolf *this_ptr)
 
@@ -31,9 +30,9 @@ int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005b11c0(CWerewolf
     return 0;
   }
   if (1.0 < this_ptr->eye_glow_phase) {
-    this_ptr->eye_glow_phase = this_ptr->eye_glow_phase + _DAT_005f9b2e;
+    this_ptr->eye_glow_phase = this_ptr->eye_glow_phase + -1.0f;
   }
-  if (this_ptr->eye_glow_phase <= (float)_DAT_005f9b32) {
+  if (this_ptr->eye_glow_phase <= (float)0.80000000000000004) {
     if ((this_ptr->base).base.was_rendered_opaque != 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
       pCVar2 = (this_ptr->base).base.model.bone_transform.bone_model_matrices +
@@ -57,11 +56,11 @@ int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005b11c0(CWerewolf
       *(uint *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
            *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-                (DAT_00612560,(CVector3f *)&DAT_02c8af28,translation);
+                (g_CDemonRenderer_PTR_00612560,&g_CVector3f_02c8af28,translation);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-                (DAT_00612560,&CStack_2c,(CVector3f *)0x0);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(this_ptr,(CVector3f *)&DAT_02c9a544);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(this_ptr,(CVector3f *)&DAT_02c9a550);
+                (g_CDemonRenderer_PTR_00612560,&CStack_2c,(CVector3f *)0x0);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(this_ptr,&g_CVector3f_02c9a544);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(this_ptr,&g_CVector3f_02c9a550);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);

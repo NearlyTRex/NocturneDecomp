@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_applyActorFlatColor_FUN_005326b0(CDemonActor *actor)
 
 {
@@ -24,14 +22,14 @@ void __cdecl core_set_cpp_applyActorFlatColor_FUN_005326b0(CDemonActor *actor)
   iStack_1c = (actor->scale).x;
   iStack_18 = (actor->scale).y;
   iStack_20 = (actor->scale).z;
-  if (actor == _DAT_0207bab8) {
+  if (actor == (CDemonActor *)g_INT_0207bab8) {
     iStack_1c = (iStack_1c * 3) / 2;
     iStack_18 = (iStack_18 * 3) / 2;
     iStack_20 = (iStack_20 * 3) / 2;
   }
-  if (actor == _DAT_0207babc) {
-    fVar1 = 1.0 / _DAT_0207bac0;
-    round((double)((float)iStack_1c * _DAT_0207bac0));
+  if (actor == (CDemonActor *)g_INT_0207babc) {
+    fVar1 = 1.0 / g_FLOAT_0207bac0;
+    round((double)((float)iStack_1c * g_FLOAT_0207bac0));
     iStack_28 = 0x532734;
     dVar2 = round((double)((float)iStack_18 * fVar1));
     dVar3 = round((double)((float)iStack_20 * fVar1));

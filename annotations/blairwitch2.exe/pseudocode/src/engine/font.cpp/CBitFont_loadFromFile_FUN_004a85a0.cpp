@@ -39,23 +39,23 @@ void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004a85a0(CBitFont *this_p
   } while (cVar1 != '\0');
   strupr(this_ptr->font_filename);
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
-                    (&CStack_58,(char *)0x5d691b,font_path);
+                    (&CStack_58,"art",font_path);
   if (iVar2 != 0) {
     support_trstream_cpp_CInStream_readLine_FUN_0057cc20(&CStack_58.base,acStack_158,0xff);
-    support_trstream_cpp_CInStream_scanf_FUN_0057ba20(&CStack_58.base,(char *)0x5d691f,acStack_258);
+    support_trstream_cpp_CInStream_scanf_FUN_0057ba20(&CStack_58.base,"%s\n",acStack_258);
     support_trstream_cpp_CInStream_readLine_FUN_0057cc20(&CStack_58.base,acStack_158,0xff);
     support_trstream_cpp_CInStream_scanf_FUN_0057ba20
-              (&CStack_58.base,(char *)0x5d6923,&iStack_30,&iStack_2c);
+              (&CStack_58.base,"%d,%d\n",&iStack_30,&iStack_2c);
     support_trstream_cpp_CInStream_readLine_FUN_0057cc20(&CStack_58.base,acStack_158,0xff);
     support_trstream_cpp_CInStream_scanf_FUN_0057ba20
-              (&CStack_58.base,(char *)0x5d692a,&iStack_28,&iStack_24);
+              (&CStack_58.base,"%d,%d\n",&iStack_28,&iStack_24);
     support_trstream_cpp_CInStream_readLine_FUN_0057cc20(&CStack_58.base,acStack_158,0xff);
-    support_trstream_cpp_CInStream_scanf_FUN_0057ba20(&CStack_58.base,(char *)0x5d6931,&iStack_20);
+    support_trstream_cpp_CInStream_scanf_FUN_0057ba20(&CStack_58.base,"%d\n",&iStack_20);
     support_trstream_cpp_CInStream_readLine_FUN_0057cc20(&CStack_58.base,acStack_158,0xff);
-    support_trstream_cpp_CInStream_scanf_FUN_0057ba20(&CStack_58.base,(char *)0x5d6935,&iStack_1c);
+    support_trstream_cpp_CInStream_scanf_FUN_0057ba20(&CStack_58.base,"%d\n",&iStack_1c);
     support_trstream_cpp_CInStream_readLine_FUN_0057cc20(&CStack_58.base,acStack_158,0xff);
     support_trstream_cpp_CInStream_scanf_FUN_0057ba20
-              (&CStack_58.base,(char *)0x5d6939,&iStack_18,&iStack_14);
+              (&CStack_58.base,"%d,%d\n",&iStack_18,&iStack_14);
     support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_58);
     if ((iStack_28 == 0x20) && (iStack_24 == 0xff)) {
       engine_font_cpp_CBitFont_openFontFile_FUN_004a7cd0

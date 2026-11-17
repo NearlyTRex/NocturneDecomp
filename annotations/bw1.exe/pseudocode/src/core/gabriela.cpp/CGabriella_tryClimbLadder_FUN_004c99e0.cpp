@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella *this_ptr)
 
@@ -67,9 +66,9 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
       local_94[(uint)bVar1 * -2] = local_ac[(uint)bVar1 * -2];
       local_94[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
            local_ac[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
-      if ((ABS(local_94[0]) <= (float)_DAT_005e113c) &&
+      if ((ABS(local_94[0]) <= (float)5) &&
          (local_94[0] = 0.0,
-         SQRT(local_94[1] * local_94[1] + local_98 * local_98) <= (float)_DAT_005e1144)) {
+         SQRT(local_94[1] * local_94[1] + local_98 * local_98) <= (float)3)) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                   ((CDemonActor *)this_ptr,&input_world_point->position,&local_80);
         local_f8.x = local_80.x;
@@ -77,15 +76,16 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
              *(uint *)((int)&local_80 + (uint)bVar1 * -8 + 4);
         *(uint *)((int)&local_f8 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
              *(uint *)((int)&local_80 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-        if ((ABS(local_f8.x) <= (float)_DAT_005e114c) &&
-           (((float)_DAT_005e1154 <= local_f8.z && ((double)local_f8.z <= _DAT_005e1144)))) {
+        if ((ABS(local_f8.x) <= (float)0.29999999999999999) &&
+           (((float)0.5 <= local_f8.z && ((double)local_f8.z <= 3))))
+        {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_f8,&local_38);
           local_d4 = local_38.x;
           local_d0[(uint)bVar1 * -2] = *(float *)((int)&local_38 + (uint)bVar1 * -8 + 4);
           local_d0[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
                *(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
           local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_d0[0]);
-          if (ABS(local_18) <= (float)_DAT_005e115c) {
+          if (ABS(local_18) <= (float)0.17453292519444399) {
             local_28 = 0;
             core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                       ((CDemonActor *)this_ptr_00,local_1c,&local_5c);
@@ -103,15 +103,16 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
               local_28 = 1;
               local_f8.z = -local_f8.z;
             }
-            if (((ABS(local_f8.x) <= (float)_DAT_005e114c) && ((float)_DAT_005e1154 <= local_f8.z))
-               && ((double)local_f8.z <= _DAT_005e1144)) {
+            if (((ABS(local_f8.x) <= (float)0.29999999999999999) &&
+                ((float)0.5 <= local_f8.z)) &&
+               ((double)local_f8.z <= 3)) {
               core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_f8,&local_44);
               local_50 = local_44.x;
               local_4c[(uint)bVar1 * -2] = *(float *)((int)&local_44 + (uint)bVar1 * -8 + 4);
               local_4c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
                    *(float *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
               local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_4c[0]);
-              if (ABS(local_18) <= (float)_DAT_005e115c) {
+              if (ABS(local_18) <= (float)0.17453292519444399) {
                 (this_ptr->base).ladder_to_climb = local_2c;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                           (&(this_ptr->base).base.model.base,0x16,1);

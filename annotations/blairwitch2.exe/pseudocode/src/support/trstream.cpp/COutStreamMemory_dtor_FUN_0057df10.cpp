@@ -17,7 +17,7 @@ COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_dtor_FUN_0057df
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable = &g_COutStreamMemoryVTable;
+  (this_ptr->base).vtable = g_COutStreamMemoryVTable;
   support_trstream_cpp_COutStreamMemory_close_FUN_0057e0d0(this_ptr);
   ptr = (COutStreamMemory *)support_trstream_cpp_COutStream_dtor_FUN_0057d860(&this_ptr->base,1);
   if ((flags & 2) == 0) {

@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_updateRenderState_FUN_004f7da0(void)
 
 {
-  _DAT_01c38b54 = _DAT_01d09858 | 0x205;
-  _DAT_01c38b58 = 0;
-  if (_DAT_01d09868 != 0) {
-    _DAT_01c38b54 = _DAT_01d09858 | 0x20d;
+  g_BIT_INTEGER32_01c38b54.dword = g_INT_01d09858 | 0x205;
+  g_INT_01c38b58 = 0;
+  if (g_INT_01d09868 != 0) {
+    g_BIT_INTEGER32_01c38b54.dword = g_INT_01d09858 | 0x20d;
   }
-  if (_DAT_01d09864 == 0) {
-    _DAT_01c38b4c = _DAT_01d0985c;
+  if (g_INT_01d09864 == 0) {
+    g_INT_01c38b4c = g_INT_01d0985c;
     return;
   }
-  _DAT_01c38b54 = _DAT_01c38b54 | 0x122;
-  _DAT_01c38b4c = _DAT_01d0985c;
+  g_BIT_INTEGER32_01c38b54.dword = g_BIT_INTEGER32_01c38b54.dword | 0x122;
+  g_INT_01c38b4c = g_INT_01d0985c;
   return;
 }

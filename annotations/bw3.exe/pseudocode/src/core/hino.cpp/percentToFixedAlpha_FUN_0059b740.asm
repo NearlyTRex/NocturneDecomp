@@ -13,8 +13,8 @@
 ;   core_hino.cpp_CHino_renderTransparent_FUN_0059d120 at 0059d16e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9bdc
-;   undefined4 DAT_005d9be4
+;   double g_DOUBLE_005d9bdc = 0.0100000000000000
+;   double g_DOUBLE_005d9be4 = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -28,8 +28,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 0059b743
     MOV dword ptr [ESP + 0x4],EAX       ; 0059b747
     FILD dword ptr [ESP + 0x4]          ; 0059b74b
-    FMUL double ptr [0x005d9bdc]        ; 0059b74f | DAT_005d9bdc
-    FMUL double ptr [0x005d9be4]        ; 0059b755 | DAT_005d9be4
+    FMUL double ptr [0x005d9bdc]        ; 0059b74f | g_DOUBLE_005d9bdc
+    FMUL double ptr [0x005d9be4]        ; 0059b755 | g_DOUBLE_005d9be4
     CALL crt_math.c_round_FUN_005a3120  ; 0059b75b
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 0059b760

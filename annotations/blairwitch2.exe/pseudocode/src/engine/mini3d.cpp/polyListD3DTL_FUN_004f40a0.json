@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 250,
+    "complexity_score": 251,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 135,
+    "pseudocode_lines": 136,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 427
+    "total_lines": 428
   },
   "cross_references": [
     {
@@ -101,74 +101,74 @@
     },
     {
       "addr": "005dde34",
-      "name": "DAT_005dde34",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dde34",
+      "type": "float",
+      "value": "0.003921569"
     },
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c38b54",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09854",
-      "name": "DAT_01d09854",
-      "type": "undefined4",
+      "name": "g_INT_01d09854",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0987c",
-      "name": "DAT_01d0987c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d0987c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09880",
-      "name": "DAT_01d09880",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09880",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09884",
-      "name": "DAT_01d09884",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09884",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09888",
-      "name": "DAT_01d09888",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09888",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09b7c",
-      "name": "DAT_01d09b7c",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d09b7c",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d0d2b4",
-      "name": "DAT_01d0d2b4",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2b4",
+      "type": "int",
       "value": null
     },
     {
@@ -179,14 +179,14 @@
     },
     {
       "addr": "01e61b58",
-      "name": "DAT_01e61b58",
-      "type": "undefined4",
+      "name": "g_INT_01e61b58",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bc9c",
-      "name": "DAT_0264bc9c",
-      "type": "undefined4",
+      "name": "g_PTR_0264bc9c",
+      "type": "void*",
       "value": null
     }
   ],
@@ -361,20 +361,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((_DAT_0264bc9c == (code *)0x0) || (_DAT_01c37788 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(float *)((int)local_124",
       "severity": "moderate",
       "text": "pfVar10 = (float *)((int)local_124 + iVar9);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 132,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_PTR_0264bc9c)",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Pointer value `&local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

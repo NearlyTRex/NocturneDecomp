@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 30,
+    "complexity_score": 15,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 85
   },
   "cross_references": [
@@ -73,8 +71,8 @@
     },
     {
       "addr": "005ba0a9",
-      "name": "DAT_005ba0a9",
-      "type": "undefined4",
+      "name": "s_f_005ba0a9",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -196,14 +194,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005ba0a9",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005ba0a9);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

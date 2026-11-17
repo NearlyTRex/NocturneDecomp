@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 69,
+    "complexity_score": 53,
     "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 123
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -123,8 +122,8 @@
   "globals": [
     {
       "addr": "01e6be44",
-      "name": "DAT_01e6be44",
-      "type": "undefined4",
+      "name": "g_INT_01e6be44",
+      "type": "int",
       "value": null
     }
   ],
@@ -347,16 +346,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 13,
+      "line": 11,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->cached_world_position).x = dest_position->x;",
@@ -364,7 +355,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 27,
+      "line": 25,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "out_euler_angles->x = (this_ptr->path_heading).x;",

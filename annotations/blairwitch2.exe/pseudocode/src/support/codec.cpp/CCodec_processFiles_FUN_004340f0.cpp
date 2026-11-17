@@ -24,7 +24,7 @@ int __cdecl support_codec_cpp_CCodec_processFiles_FUN_004340f0(CCodec *this_ptr,
     goto LAB_00434193;
   }
   support_trstream_cpp_COutStreamFile_ctorOpen_FUN_0057dba0
-            (&CStack_c,output_file_path,&DAT_005cd993);
+            (&CStack_c,output_file_path,"wb");
   bVar1 = support_trstream_cpp_COutStreamFile_isOpen_FUN_0057dd40(&CStack_c);
   if (CONCAT31(extraout_var_00,bVar1) == 0) {
     support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(&CStack_c,0);

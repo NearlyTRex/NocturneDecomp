@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecPuzzle *this_ptr,int index,char *filename,int width,int height,int enabled,int x,int y,int visible)
 
 {
@@ -26,8 +24,8 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecP
   if (iVar1 < 0x33) {
     return;
   }
-  _DAT_01d1d400 = "..\\core\\bmppuzzl.cpp";
-  _DAT_01d1d404 = 0x299;
+  g_CHAR_PTR_01d1d400 = "..\\core\\bmppuzzl.cpp";
+  g_INT_01d1d404 = 0x299;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Too damn many buttons");
   return;
 }

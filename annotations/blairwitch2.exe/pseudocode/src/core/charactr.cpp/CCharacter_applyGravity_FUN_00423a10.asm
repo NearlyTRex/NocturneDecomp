@@ -21,7 +21,7 @@
 ;   ... and 24 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ccc76
+;   float g_FLOAT_005ccc76 = -32
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     JZ 0x00423a3d                       ; 00423a24
         ;   XREF to: 00423a3d (CONDITIONAL_JUMP)  ; LAB_00423a3d
     FLD float ptr [ESP + 0x8]           ; 00423a26
-    FMUL float ptr [0x005ccc76]         ; 00423a2a | DAT_005ccc76
+    FMUL float ptr [0x005ccc76]         ; 00423a2a | g_FLOAT_005ccc76
     FADD float ptr [EAX + 0x258c]       ; 00423a30
     FSTP float ptr [EAX + 0x258c]       ; 00423a36
     RET                                 ; 00423a3c

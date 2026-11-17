@@ -16,17 +16,17 @@
 ;   void* PTR_MessageBoxA_005b34d8 = 001b3b54
 ;   void* PTR_QueryPerformanceCounter_005b360c = 001b40b6
 ;   void* PTR_QueryPerformanceFrequency_005b3610 = 001b40d0
-;   undefined4 s_Unable_to_set_timer_005d7c2a+1
-;   undefined4 DAT_005d7c43
+;   TerminatedCString s_Unable_to_set_timer_005d7c2b
+;   double g_DOUBLE_005d7c43 = 4294967296
 ;   TerminatedCString s_Blair_Witch_3_005d7ecc
 ;   void* PTR_s_Blair_Witch_3_00607284 = 005d7ecc
-;   undefined4 DAT_01c6e2a8
-;   undefined4 DAT_02d202b8
-;   undefined4 DAT_02d202c0
-;   undefined4 DAT_02d202c4
-;   undefined4 DAT_02d202c8
-;   undefined4 DAT_02d202d4
-;   undefined4 DAT_02d21b78
+;   int g_INT_01c6e2a8
+;   _struct_19 g_struct_19_02d202b8
+;   _struct_19 g_struct_19_02d202c0
+;   undefined4 g_struct_19_02d202c0.HighPart
+;   double g_DOUBLE_02d202c8
+;   int[1] g_INT_ARRAY_02d202d4
+;   HWND g_HWND_02d21b78
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -47,21 +47,21 @@ section .text
     PUSH EBP                            ; 00580463
     MOV EBP,ESP                         ; 00580464
     SUB ESP,0x10                        ; 00580466
-    PUSH 0x2d202c0                      ; 00580469 | DAT_02d202c0
+    PUSH 0x2d202c0                      ; 00580469 | g_struct_19_02d202c0
     CALL dword ptr CS:[0x5b3610]        ; 0058046e | PTR_QueryPerformanceFrequency_005b3610
     CMP EAX,0x1                         ; 00580475
     JNZ 0x0058063a                      ; 00580478
         ;   XREF to: 0058063a (CONDITIONAL_JUMP)  ; LAB_0058063a
-    FILD dword ptr [0x02d202c4]         ; 0058047e | DAT_02d202c4
-    FMUL double ptr [0x005d7c43]        ; 00580484 | DAT_005d7c43
+    FILD dword ptr [0x02d202c4]         ; 0058047e | g_struct_19_02d202c0.HighPart
+    FMUL double ptr [0x005d7c43]        ; 00580484 | g_DOUBLE_005d7c43
     XOR EDX,EDX                         ; 0058048a
-    MOV EAX,[0x02d202c0]                ; 0058048c | DAT_02d202c0
+    MOV EAX,[0x02d202c0]                ; 0058048c | g_struct_19_02d202c0
     MOV dword ptr [EBP + -0xc],EDX      ; 00580491
     MOV dword ptr [EBP + -0x10],EAX     ; 00580494
     FILD qword ptr [EBP + -0x10]        ; 00580497
     FADDP                               ; 0058049a
-    PUSH 0x2d202b8                      ; 0058049c | DAT_02d202b8
-    FSTP double ptr [0x02d202c8]        ; 005804a1 | DAT_02d202c8
+    PUSH 0x2d202b8                      ; 0058049c | g_struct_19_02d202b8
+    FSTP double ptr [0x02d202c8]        ; 005804a1 | g_DOUBLE_02d202c8
     CALL dword ptr CS:[0x5b360c]        ; 005804a7 | PTR_QueryPerformanceCounter_005b360c
     XOR EAX,EAX                         ; 005804ae
         ;   Label: LAB_005804ae
@@ -195,7 +195,7 @@ section .text
     MOV EDX,dword ptr [EBP + -0x8]      ; 00580626
     SAR EDX,0x1f                        ; 00580629
     IDIV ECX                            ; 0058062c
-    MOV [0x01c6e2a8],EAX                ; 0058062e | DAT_01c6e2a8
+    MOV [0x01c6e2a8],EAX                ; 0058062e | g_INT_01c6e2a8
     MOV ESP,EBP                         ; 00580633
     POP EBP                             ; 00580635
     POP EDI                             ; 00580636
@@ -205,7 +205,7 @@ section .text
     MOV ECX,0x1                         ; 0058063a
         ;   Label: LAB_0058063a
     PUSH ECX                            ; 0058063f
-    MOV dword ptr [0x02d202d4],ECX      ; 00580640 | DAT_02d202d4
+    MOV dword ptr [0x02d202d4],ECX      ; 00580640 | g_INT_ARRAY_02d202d4
     CALL dword ptr CS:[0x5b3450]        ; 00580646 | PTR_timeBeginPeriod_005b3450
     TEST EAX,EAX                        ; 0058064d
     JZ 0x005804ae                       ; 0058064f
@@ -213,14 +213,14 @@ section .text
     PUSH 0x31                           ; 00580655
     MOV EBX,dword ptr [0x00607284]      ; 00580657 | PTR_s_Blair_Witch_3_00607284
     PUSH EBX                            ; 0058065d | = "Blair Witch 3"
-    PUSH 0x5d7c2b                       ; 0058065e | s_Unable_to_set_timer_005d7c2a+1
-    MOV ESI,dword ptr [0x02d21b78]      ; 00580663 | DAT_02d21b78
+    PUSH 0x5d7c2b                       ; 0058065e | = "Unable to set timer"
+    MOV ESI,dword ptr [0x02d21b78]      ; 00580663 | g_HWND_02d21b78
     PUSH ESI                            ; 00580669
     CALL dword ptr CS:[0x5b34d8]        ; 0058066a | PTR_MessageBoxA_005b34d8
     CMP EAX,0x2                         ; 00580671
     JNZ 0x005804ae                      ; 00580674
         ;   XREF to: 005804ae (CONDITIONAL_JUMP)  ; LAB_005804ae
-    MOV dword ptr [0x02d21b80],0x1      ; 0058067a | DAT_02d21b80
+    MOV dword ptr [0x02d21b80],0x1      ; 0058067a | g_INT_02d21b80
     JMP 0x005804ae                      ; 00580684
         ;   XREF to: 005804ae (UNCONDITIONAL_JUMP)  ; LAB_005804ae
 

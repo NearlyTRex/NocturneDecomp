@@ -13,16 +13,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_generic_005dcd05
 ;   TerminatedCString s_drown_005dcd0d
-;   undefined4 DAT_005dcd13
+;   TerminatedCString s_fall_005dcd13
 ;   TerminatedCString s_explode_005dcd18
 ;   TerminatedCString s_fallApart_005dcd20
 ;   TerminatedCString s_shatter_005dcd2a
 ;   TerminatedCString s_electrocute_005dcd32
-;   undefined4 DAT_005dcd3e
+;   TerminatedCString s_gas_005dcd3e
 ;   TerminatedCString s_Chopped_005dcd42
 ;   TerminatedCString s_Crushed_005dcd4a
 ;   TerminatedCString s_Impale_005dcd52
-;   undefined4 DAT_005dcd59
+;   TerminatedCString s_Fire_005dcd59
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -63,7 +63,7 @@ section .text
     POP ESI                             ; 004a1793
     POP EBX                             ; 004a1794
     RET                                 ; 004a1795
-    PUSH 0x5dcd13                       ; 004a1796 | DAT_005dcd13
+    PUSH 0x5dcd13                       ; 004a1796 | = "fall"
         ;   Label: LAB_004a1796
     PUSH EBX                            ; 004a179b
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 004a179c
@@ -133,7 +133,7 @@ section .text
     POP ESI                             ; 004a1833
     POP EBX                             ; 004a1834
     RET                                 ; 004a1835
-    PUSH 0x5dcd3e                       ; 004a1836 | DAT_005dcd3e
+    PUSH 0x5dcd3e                       ; 004a1836 | = "gas"
         ;   Label: LAB_004a1836
     PUSH EBX                            ; 004a183b
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 004a183c
@@ -189,7 +189,7 @@ section .text
     POP ESI                             ; 004a18b3
     POP EBX                             ; 004a18b4
     RET                                 ; 004a18b5
-    PUSH 0x5dcd59                       ; 004a18b6 | DAT_005dcd59
+    PUSH 0x5dcd59                       ; 004a18b6 | = "Fire"
         ;   Label: LAB_004a18b6
     PUSH EBX                            ; 004a18bb
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 004a18bc

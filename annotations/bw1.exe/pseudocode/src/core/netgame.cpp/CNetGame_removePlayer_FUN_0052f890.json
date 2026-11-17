@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 159,
+    "complexity_score": 143,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 8,
+    "pseudocode_lines": 53,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 222
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -83,20 +82,20 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d6dfb8",
-      "name": "DAT_01d6dfb8",
-      "type": "undefined4",
+      "name": "g_INT_01d6dfb8",
+      "type": "int",
       "value": null
     }
   ],
@@ -226,16 +225,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_01d6dfc4",
       "severity": "mild",
       "text": "dest_00 = &DAT_01d6dfc4 + player_index;",
@@ -243,7 +234,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 35,
       "match": "DAT_01d6dfc5",
       "severity": "mild",
       "text": "src = &DAT_01d6dfc5 + player_index;",
@@ -251,7 +242,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 36,
       "match": "DAT_01d6dfcc",
       "severity": "mild",
       "text": "local_14 = &DAT_01d6dfcc + player_index * 4;",
@@ -259,7 +250,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(void *)((int)dest",
       "severity": "moderate",
       "text": "dest = (void *)((int)dest + 0x114);",
@@ -267,7 +258,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
+      "line": 45,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "dest = (void *)((int)dest + 0x114);",
@@ -275,7 +266,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((iVar1 - player_index) * 0x7c) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 31,
+      "line": 29,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",
@@ -283,7 +274,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((this_ptr->player_count - player_index) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 44,
+      "line": 42,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove(dest,local_14,(this_ptr->player_count - player_index) * 4);",

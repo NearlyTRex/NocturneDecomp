@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fforest_cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0(CTwigZombie *this_ptr)
 
@@ -50,22 +49,22 @@ void __cdecl core_fforest_cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0(C
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,2,1);
       return;
     }
-    if ((_DAT_005ff174 <= fStack_18) && (fStack_18 <= _DAT_005ff178)) {
+    if ((0.15f <= fStack_18) && (fStack_18 <= 0.2f)) {
       (this_ptr->base).base.speed = 1.0;
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_c0);
-      SStack_c0.damage_amount = (this_ptr->base).base.base.size_scale * _DAT_005f001b;
+      SStack_c0.damage_amount = (this_ptr->base).base.base.size_scale * 10.0f;
       SStack_c0.attacker = (CDemonActor *)this_ptr;
       SStack_c0.wielder = (CDemonActor *)this_ptr;
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
       pCStack_14 = (this_ptr->base).base.base.model.bone_transform.bone_model_matrices;
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,pCStack_14 + this_ptr->finger_parent_bone,&CStack_30);
+                (&g_CVector3f_0265370c,pCStack_14 + this_ptr->finger_parent_bone,&CStack_30);
       afStack_44[2] = CStack_30.x;
       afStack_44[(uint)bVar6 * -2 + 3] = *(float *)((int)&CStack_30 + (uint)bVar6 * -8 + 4);
       afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
            *(float *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       core_xform_cpp_transformVector3x4_FUN_00591530
-                ((CVector3f *)&DAT_0265370c,pCStack_14 + this_ptr->finger_bone,&CStack_54);
+                (&g_CVector3f_0265370c,pCStack_14 + this_ptr->finger_bone,&CStack_54);
       fStack_48 = CStack_54.x;
       afStack_44[(uint)bVar6 * -2] = *(float *)((int)&CStack_54 + (uint)bVar6 * -8 + 4);
       afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
@@ -77,9 +76,9 @@ void __cdecl core_fforest_cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0(C
       *(float *)((int)&CStack_84 + (uint)bVar6 * -8 + 4) = afStack_74[(uint)bVar6 * -2];
       *(float *)((int)&CStack_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            afStack_74[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-      CStack_84.y = CStack_84.y * _DAT_005f001f + afStack_44[3];
-      CStack_84.x = CStack_84.x * _DAT_005f001f + afStack_44[2];
-      CStack_84.z = CStack_84.z * _DAT_005f001f + fStack_34;
+      CStack_84.y = CStack_84.y * 0.5f + afStack_44[3];
+      CStack_84.x = CStack_84.x * 0.5f + afStack_44[2];
+      CStack_84.z = CStack_84.z * 0.5f + fStack_34;
       fStack_1c = SQRT(CStack_84.z * CStack_84.z +
                        CStack_84.x * CStack_84.x + CStack_84.y * CStack_84.y);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -99,13 +98,13 @@ void __cdecl core_fforest_cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0(C
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
       return;
     }
-    if ((_DAT_005ff178 < fStack_18) &&
+    if ((0.2f < fStack_18) &&
        (pCVar1 = (this_ptr->base).base.victim,
        fVar2 = (pCVar1->base).location.position.x -
                (this_ptr->base).base.base.base.location.position.x,
        fVar3 = (pCVar1->base).location.position.z -
                (this_ptr->base).base.base.base.location.position.z,
-       _DAT_005ff170 < SQRT(fVar3 * fVar3 + fVar2 * fVar2))) {
+       3.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2))) {
       this_ptr_01 = &(this_ptr->base).state_machine;
       core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,1.0);
       core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");

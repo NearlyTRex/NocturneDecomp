@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero *this_ptr,int ignore_lock)
 
 {
@@ -34,11 +32,11 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero *this_ptr,i
                                       g_CDoorClassInfo.name_hash);
     if ((((this_ptr_00 != (CDoor *)0x0) &&
          (ABS((this_ptr_00->base).location.position.x - (this_ptr->base).base.location.position.x)
-          <= (float)_DAT_005e4845)) &&
+          <= (float)10)) &&
         (ABS((this_ptr_00->base).location.position.y - (this_ptr->base).base.location.position.y) <=
-         (float)_DAT_005e4845)) &&
+         (float)10)) &&
        ((ABS((this_ptr_00->base).location.position.z - (this_ptr->base).base.location.position.z) <=
-         (float)_DAT_005e4845 && (this_ptr_00->door_state == DOOR_STATE_CLOSED)))) {
+         (float)10 && (this_ptr_00->door_state == DOOR_STATE_CLOSED)))) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                 ((CDemonActor *)this_ptr,&this_ptr_00->open_position,&local_50);
       local_44.x = local_50.x;
@@ -52,7 +50,8 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero *this_ptr,i
         local_34[(uint)bVar2 * -2] = *(float *)((int)&local_2c + (uint)bVar2 * -8 + 4);
         local_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
              *(float *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-        if ((ABS(local_34[0]) <= _DAT_005e484d) && (ABS(local_44.y) <= (float)_DAT_005e4855)) {
+        if ((ABS(local_34[0]) <= 1.047198f) && (ABS(local_44.y) <= (float)5))
+        {
           local_44.y = 0.0;
           local_1c = SQRT(local_44.z * local_44.z + local_44.x * local_44.x);
           if (local_1c < local_20) {

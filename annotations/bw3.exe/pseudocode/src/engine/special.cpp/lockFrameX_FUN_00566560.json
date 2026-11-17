@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 66,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
-    "suspect_count": 4,
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 29
+    "total_lines": 28
   },
   "cross_references": [],
   "function": {
@@ -33,26 +31,26 @@
   "globals": [
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "02cf6094",
-      "name": "DAT_02cf6094",
-      "type": "undefined4",
+      "name": "g_PTR_02cf6094",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02cf6128",
-      "name": "DAT_02cf6128",
-      "type": "undefined4",
+      "name": "g_INT_02cf6128",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf6130",
-      "name": "DAT_02cf6130",
-      "type": "undefined4",
+      "name": "g_INT_02cf6130",
+      "type": "int",
       "value": null
     }
   ],
@@ -118,36 +116,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
+      "line": 7,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_02cf6094 != (code *)0x0) && (iVar1 = (*_DAT_02cf6094)(), iVar1 != 0)) {",
+      "text": "if ((g_PTR_02cf6094 != (byte *)0x0) && (iVar1 = (*(code *)g_PTR_02cf6094)(), iVar1 != 0)) {",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "_DAT_02cf6128 = DAT_005fba20;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "DAT_005fba20 = _DAT_02cf6130;",
-      "type": "undefined_data"
     }
   ]
 }

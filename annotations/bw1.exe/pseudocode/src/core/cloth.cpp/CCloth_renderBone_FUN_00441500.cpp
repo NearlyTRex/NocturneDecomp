@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_00441500(CCloth *this_ptr,int bone_index,int show_labels)
 
 {
@@ -45,37 +43,37 @@ void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_00441500(CCloth *this_ptr,int 
   vertex_index1 = 0;
   iVar1 = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,euler_angles,translation);
+            (g_CDemonRenderer_PTR_00612560,euler_angles,translation);
   iStack_1c = 0x270;
   iStack_20 = 0;
   iStack_24 = 0xc;
   iStack_18 = -1;
   do {
     iStack_14 = iStack_20;
-    fVar3 = (float10)iStack_20 * (float10)_DAT_005d68d4 * (float10)_DAT_005d68d8;
+    fVar3 = (float10)iStack_20 * (float10)3.141593f * (float10)0.08333334f;
     fVar4 = (float10)fsin(fVar3);
     fVar3 = (float10)fcos(fVar3);
     CStack_58.x = (int)ROUND((float)(fVar4 * (float10)this_ptr->collide_bones[bone_index].radius1) *
-                             _DAT_005fd8d0);
+                             256.0f);
     CStack_58.y = (int)ROUND((float)(fVar3 * (float10)this_ptr->collide_bones[bone_index].radius2) *
-                             _DAT_005fd8d0);
-    CStack_58.z = (int)ROUND(_DAT_005fd8d0 * 0.0);
+                             256.0f);
+    CStack_58.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)
-               ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar1),
-               &CStack_58);
+               ((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
+                      transformed_x + iVar1),&CStack_58);
     iStack_28 = vertex_index1 + 0xd;
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)
-               ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c)
-               ,(CVector3i *)&stack0xffffff90);
+               ((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
+                      transformed_x + iStack_1c),(CVector3i *)&stack0xffffff90);
     if (0 < vertex_index1) {
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
-                (DAT_00612560,vertex_index1,iStack_28);
+                (g_CDemonRenderer_PTR_00612560,vertex_index1,iStack_28);
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
-                (DAT_00612560,vertex_index1,unaff_EDI);
+                (g_CDemonRenderer_PTR_00612560,vertex_index1,unaff_EDI);
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
-                (DAT_00612560,unaff_EBP,unaff_EDI);
+                (g_CDemonRenderer_PTR_00612560,unaff_EBP,unaff_EDI);
     }
     iVar1 = iVar1 + 0x30;
     vertex_index1 = vertex_index1 + 1;

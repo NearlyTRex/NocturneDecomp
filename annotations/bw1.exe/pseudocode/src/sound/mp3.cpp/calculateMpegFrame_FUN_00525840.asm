@@ -22,10 +22,10 @@
 ;   TerminatedCString s_sound_mp3_cpp_005eb100
 ;   TerminatedCString s_js_bound_bad_layer_modex_005eb111
 ;   undefined4 s_CMotionController_0061f8e5+0xb
-;   undefined4 DAT_006202e8
+;   double[2] g_DOUBLE_ARRAY_006202e8
 ;   undefined4 DAT_00620328
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -74,8 +74,8 @@ section .text
     MOV EBP,0x5eb100                    ; 00525895 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x1ea                       ; 0052589a
     PUSH 0x5eb111                       ; 0052589f | = "js_bound bad layer/modext (%d/%d)  Fi..."
-    MOV dword ptr [0x01d1d400],EBP      ; 005258a4 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 005258aa | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 005258a4 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 005258aa | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005258af
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 005258b4
@@ -124,7 +124,7 @@ section .text
     MOV ECX,EDI                         ; 0052592a
     SHL ECX,0x5                         ; 0052592c
     MOV dword ptr [ESP + 0x8],EBX       ; 0052592f
-    FLD double ptr [ECX + EAX*0x8 + 0x6202e8] ; 00525933 | DAT_006202e8
+    FLD double ptr [ECX + EAX*0x8 + 0x6202e8] ; 00525933 | g_DOUBLE_ARRAY_006202e8
     CALL crt_math.c_round_FUN_005c03a0  ; 0052593a
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 0052593f
@@ -148,8 +148,8 @@ section .text
     MOV EAX,0x5eb0b6                    ; 00525968 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1d8                       ; 0052596d
     PUSH 0x5eb0c7                       ; 00525972 | = "MPEG Layer 2 - pick_table - can't loa..."
-    MOV [0x01d1d400],EAX                ; 00525977 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0052597c | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 00525977 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0052597c | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00525982
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00525987

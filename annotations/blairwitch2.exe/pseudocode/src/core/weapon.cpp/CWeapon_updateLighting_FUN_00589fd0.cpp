@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_00589fd0(CWeapon *this_ptr)
 
 {
@@ -51,7 +49,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_00589fd0(CWeapon *this_p
   *(uint *)((int)&CStack_44 + (uint)bVar3 * -8 + 4) = *puVar2;
   *(uint *)((int)&CStack_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        puVar2[(uint)bVar3 * -2 + 1];
-  CStack_44.x = CStack_44.x + _DAT_005ee532;
+  CStack_44.x = CStack_44.x + 0.3490658f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
             ((CMatrix3x3f *)&stack0xffffff64,pCVar4);
   CStack_20.x = 0.0;
@@ -78,18 +76,18 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_00589fd0(CWeapon *this_p
   g_CDemonLightInstance.antialiasing_enabled = 1;
   pCVar1 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,(uint)in_stack_ffffff64);
-  if ((pCVar1 != (CDemonActor *)0x0) && ((float)pCVar1[0xd6].process_disabled < _DAT_005ee536)) {
-    unaff_EDI = (float)pCVar1[0xd6].process_disabled * _DAT_005ee53a;
+  if ((pCVar1 != (CDemonActor *)0x0) && ((float)pCVar1[0xd6].process_disabled < 15.0f)) {
+    unaff_EDI = (float)pCVar1[0xd6].process_disabled * 0.06666667f;
   }
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570(&g_CDemonLightInstance,unaff_EDI);
   if (g_CGamePtr->flashlight_active == 0) {
     return;
   }
-  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810((CDemonGlobe *)0x2661f3c,&CStack_64);
-  _DAT_02661f78 = 0x8000;
-  DAT_02661f58 = 0x20;
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860((CDemonGlobe *)0x2661f3c,5.0);
-  _DAT_02661f5c = 0;
-  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005306b0(g_CDemonSetPtr,(CDemonGlobe *)0x2661f3c);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(&g_CDemonGlobe_02661f3c,&CStack_64);
+  g_CDemonGlobe_02661f3c.intensity_multiplier = 0x8000;
+  g_CDemonGlobe_02661f3c.intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860(&g_CDemonGlobe_02661f3c,5.0);
+  g_CDemonGlobe_02661f3c.corona_mode = 0;
+  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005306b0(g_CDemonSetPtr,&g_CDemonGlobe_02661f3c);
   return;
 }

@@ -9,6 +9,6 @@
 void __cdecl engine_light_cpp_setSpecularEnabled_FUN_004ffac0(int enabled)
 
 {
-  DAT_0061f314 = enabled;
+  g_INT_0061f314 = enabled;
   return;
 }

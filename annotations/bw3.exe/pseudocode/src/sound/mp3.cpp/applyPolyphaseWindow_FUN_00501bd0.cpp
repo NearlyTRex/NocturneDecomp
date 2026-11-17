@@ -6,33 +6,30 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_00501bd0(float *input_samples,float *output_samples,int mpeg_block_type)
 
 {
   double *pdVar1;
   double *pdVar2;
-  double *pdVar3;
-  double *pdVar4;
-  double *pdVar5;
-  double *pdVar6;
-  double *pdVar7;
-  float fVar8;
-  int iVar9;
-  float *pfVar10;
+  float fVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  float *pfVar9;
+  int iVar10;
   int iVar11;
-  int iVar12;
+  float10 fVar12;
   float10 fVar13;
   float10 fVar14;
   float10 fVar15;
-  float10 fVar16;
   int aiStack_9c [22];
   int local_44;
   float *local_40;
-  int local_3c;
+  double *local_3c;
   double *local_38;
-  int local_34;
+  double *local_34;
   uint local_30;
   int local_2c;
   int local_28;
@@ -42,237 +39,240 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_00501bd0(float *input_sample
   float *local_18;
   int local_14;
   
-  if (DAT_006011b0 == 1) {
+  if (g_INT_006011b0 == 1) {
+    iVar10 = 0;
+    fVar12 = (float10)0.087266463000000002;
+    fVar13 = (float10)0.5;
     iVar11 = 0;
-    fVar13 = (float10)_DAT_005ca2df;
-    fVar14 = (float10)_DAT_005ca2ff;
-    iVar12 = 0;
     do {
-      fVar15 = (float10)fsin(((float10)iVar11 + fVar14) * fVar13);
-      iVar11 = iVar11 + 1;
-      *(double *)(iVar12 + 0x1d93098) = (double)fVar15;
-      iVar12 = iVar12 + 8;
-    } while (iVar11 < 0x24);
+      fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
+      iVar10 = iVar10 + 1;
+      *(double *)((int)g_DOUBLE_ARRAY_01d93098 + iVar11) = (double)fVar14;
+      iVar11 = iVar11 + 8;
+    } while (iVar10 < 0x24);
+    iVar10 = 0;
+    fVar12 = (float10)0.087266463000000002;
+    fVar13 = (float10)0.5;
     iVar11 = 0;
-    fVar13 = (float10)_DAT_005ca2df;
-    fVar14 = (float10)_DAT_005ca2ff;
-    iVar12 = 0;
     do {
-      fVar15 = (float10)fsin(((float10)iVar11 + fVar14) * fVar13);
-      iVar11 = iVar11 + 1;
-      *(double *)(iVar12 + 0x1d931b8) = (double)fVar15;
-      iVar12 = iVar12 + 8;
-    } while (iVar11 < 0x12);
-    iVar12 = 0x90;
+      fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
+      iVar10 = iVar10 + 1;
+      *(double *)(iVar11 + 0x1d931b8) = (double)fVar14;
+      iVar11 = iVar11 + 8;
+    } while (iVar10 < 0x12);
+    iVar11 = 0x90;
     do {
-      iVar11 = iVar12 + 8;
-      *(uint *)(iVar12 + 0x1d931bc) = 0x3ff00000;
-      *(uint *)(iVar12 + 0x1d931b8) = 0;
-      iVar12 = iVar11;
-    } while (iVar11 != 0xc0);
-    iVar11 = 0x18;
-    fVar13 = (float10)_DAT_005ca2e7;
-    fVar14 = (float10)_DAT_005ca307;
-    fVar15 = (float10)_DAT_005ca2ff;
-    iVar12 = 0xc0;
+      iVar10 = iVar11 + 8;
+      *(uint *)(iVar11 + 0x1d931bc) = 0x3ff00000;
+      *(uint *)(iVar11 + 0x1d931b8) = 0;
+      iVar11 = iVar10;
+    } while (iVar10 != 0xc0);
+    iVar10 = 0x18;
+    fVar12 = (float10)0.26179938800000002;
+    fVar13 = (float10)-18;
+    fVar14 = (float10)0.5;
+    iVar11 = 0xc0;
     do {
-      fVar16 = (float10)fsin(((float10)iVar11 + fVar15 + fVar14) * fVar13);
-      iVar11 = iVar11 + 1;
-      *(double *)(iVar12 + 0x1d931b8) = (double)fVar16;
-      iVar12 = iVar12 + 8;
-    } while (iVar11 < 0x1e);
-    iVar12 = 0xf0;
+      fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);
+      iVar10 = iVar10 + 1;
+      *(double *)(iVar11 + 0x1d931b8) = (double)fVar15;
+      iVar11 = iVar11 + 8;
+    } while (iVar10 < 0x1e);
+    iVar11 = 0xf0;
     do {
-      iVar11 = iVar12 + 8;
-      *(uint *)(iVar12 + 0x1d931b8) = 0;
-      *(uint *)(iVar12 + 0x1d931bc) = 0;
-      iVar12 = iVar11;
-    } while (iVar11 != 0x120);
-    iVar12 = 0;
-    do {
-      iVar11 = iVar12 + 8;
-      *(uint *)(iVar12 + 0x1d933f8) = 0;
-      *(uint *)(iVar12 + 0x1d933fc) = 0;
-      iVar12 = iVar11;
-    } while (iVar11 != 0x30);
-    iVar11 = 6;
-    fVar13 = (float10)_DAT_005ca2e7;
-    fVar14 = (float10)_DAT_005ca30f;
-    fVar15 = (float10)_DAT_005ca2ff;
-    iVar12 = 0x30;
-    do {
-      fVar16 = (float10)fsin(((float10)iVar11 + fVar15 + fVar14) * fVar13);
-      iVar11 = iVar11 + 1;
-      *(double *)(iVar12 + 0x1d933f8) = (double)fVar16;
-      iVar12 = iVar12 + 8;
-    } while (iVar11 < 0xc);
-    iVar12 = 0x60;
-    do {
-      iVar11 = iVar12 + 8;
-      *(uint *)(iVar12 + 0x1d933fc) = 0x3ff00000;
-      *(uint *)(iVar12 + 0x1d933f8) = 0;
-      iVar12 = iVar11;
-    } while (iVar11 != 0x90);
-    iVar11 = 0x12;
-    fVar13 = (float10)_DAT_005ca2df;
-    fVar14 = (float10)_DAT_005ca2ff;
-    iVar12 = 0x90;
-    do {
-      fVar15 = (float10)fsin(((float10)iVar11 + fVar14) * fVar13);
-      iVar11 = iVar11 + 1;
-      *(double *)(iVar12 + 0x1d933f8) = (double)fVar15;
-      iVar12 = iVar12 + 8;
-    } while (iVar11 < 0x24);
+      iVar10 = iVar11 + 8;
+      *(uint *)(iVar11 + 0x1d931b8) = 0;
+      *(uint *)(iVar11 + 0x1d931bc) = 0;
+      iVar11 = iVar10;
+    } while (iVar10 != 0x120);
     iVar11 = 0;
-    fVar13 = (float10)_DAT_005ca2e7;
-    fVar14 = (float10)_DAT_005ca2ff;
-    iVar12 = 0;
     do {
-      fVar15 = (float10)fsin(((float10)iVar11 + fVar14) * fVar13);
-      iVar11 = iVar11 + 1;
-      *(double *)(iVar12 + 0x1d932d8) = (double)fVar15;
-      iVar12 = iVar12 + 8;
-    } while (iVar11 < 0xc);
-    iVar12 = 0x60;
+      iVar10 = iVar11 + 8;
+      *(uint *)(iVar11 + 0x1d933f8) = 0;
+      *(uint *)(iVar11 + 0x1d933fc) = 0;
+      iVar11 = iVar10;
+    } while (iVar10 != 0x30);
+    iVar10 = 6;
+    fVar12 = (float10)0.26179938800000002;
+    fVar13 = (float10)-6;
+    fVar14 = (float10)0.5;
+    iVar11 = 0x30;
     do {
-      iVar11 = iVar12 + 8;
-      *(uint *)(iVar12 + 0x1d932d8) = 0;
-      *(uint *)(iVar12 + 0x1d932dc) = 0;
-      iVar12 = iVar11;
-    } while (iVar11 != 0x120);
+      fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);
+      iVar10 = iVar10 + 1;
+      *(double *)(iVar11 + 0x1d933f8) = (double)fVar15;
+      iVar11 = iVar11 + 8;
+    } while (iVar10 < 0xc);
+    iVar11 = 0x60;
+    do {
+      iVar10 = iVar11 + 8;
+      *(uint *)(iVar11 + 0x1d933fc) = 0x3ff00000;
+      *(uint *)(iVar11 + 0x1d933f8) = 0;
+      iVar11 = iVar10;
+    } while (iVar10 != 0x90);
+    iVar10 = 0x12;
+    fVar12 = (float10)0.087266463000000002;
+    fVar13 = (float10)0.5;
+    iVar11 = 0x90;
+    do {
+      fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
+      iVar10 = iVar10 + 1;
+      *(double *)(iVar11 + 0x1d933f8) = (double)fVar14;
+      iVar11 = iVar11 + 8;
+    } while (iVar10 < 0x24);
+    iVar10 = 0;
+    fVar12 = (float10)0.26179938800000002;
+    fVar13 = (float10)0.5;
+    iVar11 = 0;
+    do {
+      fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);
+      iVar10 = iVar10 + 1;
+      *(double *)(iVar11 + 0x1d932d8) = (double)fVar14;
+      iVar11 = iVar11 + 8;
+    } while (iVar10 < 0xc);
+    iVar11 = 0x60;
+    do {
+      iVar10 = iVar11 + 8;
+      *(uint *)(iVar11 + 0x1d932d8) = 0;
+      *(uint *)(iVar11 + 0x1d932dc) = 0;
+      iVar11 = iVar10;
+    } while (iVar10 != 0x120);
     local_24 = 0;
-    iVar12 = 1;
+    iVar11 = 1;
     local_30 = 0xc;
     do {
-      iVar9 = 1;
-      fVar13 = (float10)_DAT_005ca2ef;
-      iVar11 = local_24;
+      iVar8 = 1;
+      fVar12 = (float10)0.13089969389957501;
+      iVar10 = local_24;
       do {
-        fVar14 = (float10)fcos((float10)iVar9 * (float10)(iVar12 + 6) * fVar13);
-        iVar9 = iVar9 + 2;
-        *(double *)(iVar11 + 0x1d93518) = (double)fVar14;
-        iVar11 = iVar11 + 8;
-      } while (iVar9 < 0xd);
-      iVar12 = iVar12 + 2;
+        fVar13 = (float10)fcos((float10)iVar8 * (float10)(iVar11 + 6) * fVar12);
+        iVar8 = iVar8 + 2;
+        *(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar10) = (double)fVar13;
+        iVar10 = iVar10 + 8;
+      } while (iVar8 < 0xd);
+      iVar11 = iVar11 + 2;
       local_24 = local_24 + 0x30;
-    } while (iVar12 != 0x19);
+    } while (iVar11 != 0x19);
     local_2c = 0x90;
     local_28 = 0x26;
     local_20 = 0;
     do {
-      iVar11 = local_20 * 2 + 0x13;
-      fVar13 = (float10)_DAT_005ca2f7;
-      iVar12 = local_20 * 0x90;
+      iVar10 = local_20 * 2 + 0x13;
+      fVar12 = (float10)0.043633231299858202;
+      iVar11 = local_20 * 0x90;
       do {
-        local_14 = iVar11 % 0x90;
-        fVar14 = (float10)fcos((float10)(iVar11 % 0x90) * fVar13);
-        iVar9 = iVar12 + 8;
-        iVar11 = iVar11 + local_28;
-        *(double *)(iVar12 + 0x1d93758) = (double)fVar14;
-        iVar12 = iVar9;
-      } while (iVar9 != local_2c);
+        local_14 = iVar10 % 0x90;
+        fVar13 = (float10)fcos((float10)(iVar10 % 0x90) * fVar12);
+        iVar8 = iVar11 + 8;
+        iVar10 = iVar10 + local_28;
+        *(double *)((int)g_DOUBLE_ARRAY_01d93758 + iVar11) = (double)fVar13;
+        iVar11 = iVar8;
+      } while (iVar8 != local_2c);
       local_20 = local_20 + 1;
       local_28 = local_28 + 4;
       local_2c = local_2c + 0x90;
     } while (local_20 < 0x24);
-    DAT_006011b0 = 0;
+    g_INT_006011b0 = 0;
   }
   if (mpeg_block_type != 2) {
-    iVar12 = 0;
+    iVar11 = 0;
     local_44 = 0;
     do {
-      iVar11 = local_44;
-      if ((float)_DAT_005ca317 < ABS(input_samples[iVar12])) {
+      iVar10 = local_44;
+      if ((float)1.0000000000000001e-05 < ABS(input_samples[iVar11])) {
         local_44 = local_44 + 1;
-        aiStack_9c[iVar11] = iVar12;
+        aiStack_9c[iVar10] = iVar11;
       }
-      iVar12 = iVar12 + 1;
-    } while (iVar12 < 0x12);
-    local_34 = mpeg_block_type * 0x120 + 0x1d93098;
+      iVar11 = iVar11 + 1;
+    } while (iVar11 < 0x12);
+    local_34 = g_DOUBLE_ARRAY_01d93098 + mpeg_block_type * 0x24;
     local_1c = 0;
     do {
       local_40 = output_samples + local_1c;
-      local_3c = local_1c * 0x90 + 0x1d93758;
+      local_3c = g_DOUBLE_ARRAY_01d93758 + local_1c * 0x12;
       local_18 = input_samples;
-      local_38 = (double *)(local_34 + local_1c * 8);
-      fVar8 = 0.0;
-      iVar12 = local_44;
+      local_38 = local_34 + local_1c;
+      fVar3 = 0.0;
+      iVar11 = local_44;
       if (0 < local_44) {
         do {
-          iVar12 = iVar12 + -1;
-          fVar8 = input_samples[aiStack_9c[iVar12]] *
-                  (float)*(double *)(local_3c + aiStack_9c[iVar12] * 8) + fVar8;
-        } while (0 < iVar12);
-        fVar8 = fVar8 * (float)*local_38;
+          iVar11 = iVar11 + -1;
+          fVar3 = input_samples[aiStack_9c[iVar11]] *
+                  (float)(g_DOUBLE_ARRAY_01d93758 + local_1c * 0x12)[aiStack_9c[iVar11]] + fVar3;
+        } while (0 < iVar11);
+        fVar3 = fVar3 * (float)local_34[local_1c];
       }
-      output_samples[local_1c] = fVar8;
+      output_samples[local_1c] = fVar3;
       local_1c = local_1c + 1;
     } while (local_1c < 0x24);
     return;
   }
   memset(output_samples,0,0x90);
+  iVar10 = 0;
   iVar11 = 0;
-  iVar12 = 0;
-  pfVar10 = output_samples;
+  pfVar9 = output_samples;
   do {
-    pdVar1 = (double *)(iVar12 + 0x1d93520);
-    pdVar2 = (double *)(iVar12 + 0x1d93518);
-    pdVar3 = (double *)(iVar12 + 0x1d93528);
-    pdVar4 = (double *)(iVar12 + 0x1d93530);
-    pdVar5 = (double *)(iVar12 + 0x1d93538);
-    pdVar6 = (double *)(iVar12 + 0x1d93540);
-    pdVar7 = (double *)(iVar11 + 0x1d932d8);
-    iVar11 = iVar11 + 8;
-    iVar12 = iVar12 + 0x30;
-    pfVar10[6] = (input_samples[0xf] * (float)*pdVar6 +
-                 input_samples[0xc] * (float)*pdVar5 +
-                 input_samples[9] * (float)*pdVar4 +
-                 input_samples[6] * (float)*pdVar3 +
-                 *input_samples * (float)*pdVar2 + input_samples[3] * (float)*pdVar1) *
-                 (float)*pdVar7 + pfVar10[6];
-    pfVar10 = pfVar10 + 1;
-  } while (iVar11 != 0x60);
-  iVar12 = 0;
+    iVar8 = iVar11 + 8;
+    pdVar1 = (double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar11);
+    iVar4 = iVar11 + 0x10;
+    iVar5 = iVar11 + 0x18;
+    iVar6 = iVar11 + 0x20;
+    iVar7 = iVar11 + 0x28;
+    pdVar2 = (double *)(iVar10 + 0x1d932d8);
+    iVar10 = iVar10 + 8;
+    iVar11 = iVar11 + 0x30;
+    pfVar9[6] = (input_samples[0xf] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar7) +
+                input_samples[0xc] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar6) +
+                input_samples[9] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar5) +
+                input_samples[6] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar4) +
+                *input_samples * (float)*pdVar1 +
+                input_samples[3] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar8)) *
+                (float)*pdVar2 + pfVar9[6];
+    pfVar9 = pfVar9 + 1;
+  } while (iVar10 != 0x60);
   iVar11 = 0;
-  pfVar10 = output_samples;
+  iVar10 = 0;
+  pfVar9 = output_samples;
   do {
-    pdVar1 = (double *)(iVar12 + 0x1d93520);
-    pdVar2 = (double *)(iVar12 + 0x1d93518);
-    pdVar3 = (double *)(iVar12 + 0x1d93528);
-    pdVar4 = (double *)(iVar12 + 0x1d93530);
-    pdVar5 = (double *)(iVar12 + 0x1d93538);
-    pdVar6 = (double *)(iVar12 + 0x1d93540);
-    pdVar7 = (double *)(iVar11 + 0x1d932d8);
-    iVar11 = iVar11 + 8;
-    iVar12 = iVar12 + 0x30;
-    pfVar10[0xc] = (input_samples[0x10] * (float)*pdVar6 +
-                   input_samples[0xd] * (float)*pdVar5 +
-                   input_samples[10] * (float)*pdVar4 +
-                   input_samples[7] * (float)*pdVar3 +
-                   input_samples[1] * (float)*pdVar2 + input_samples[4] * (float)*pdVar1) *
-                   (float)*pdVar7 + pfVar10[0xc];
-    pfVar10 = pfVar10 + 1;
-  } while (iVar11 != 0x60);
-  iVar12 = 0;
+    iVar8 = iVar11 + 8;
+    pdVar1 = (double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar11);
+    iVar4 = iVar11 + 0x10;
+    iVar5 = iVar11 + 0x18;
+    iVar6 = iVar11 + 0x20;
+    iVar7 = iVar11 + 0x28;
+    pdVar2 = (double *)(iVar10 + 0x1d932d8);
+    iVar10 = iVar10 + 8;
+    iVar11 = iVar11 + 0x30;
+    pfVar9[0xc] = (input_samples[0x10] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar7) +
+                  input_samples[0xd] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar6) +
+                  input_samples[10] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar5) +
+                  input_samples[7] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar4) +
+                  input_samples[1] * (float)*pdVar1 +
+                  input_samples[4] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar8)) *
+                  (float)*pdVar2 + pfVar9[0xc];
+    pfVar9 = pfVar9 + 1;
+  } while (iVar10 != 0x60);
   iVar11 = 0;
+  iVar10 = 0;
   do {
-    pdVar1 = (double *)(iVar12 + 0x1d93520);
-    pdVar2 = (double *)(iVar12 + 0x1d93518);
-    pdVar3 = (double *)(iVar12 + 0x1d93528);
-    pdVar4 = (double *)(iVar12 + 0x1d93530);
-    pdVar5 = (double *)(iVar12 + 0x1d93538);
-    pdVar6 = (double *)(iVar12 + 0x1d93540);
-    pdVar7 = (double *)(iVar11 + 0x1d932d8);
-    iVar11 = iVar11 + 8;
-    iVar12 = iVar12 + 0x30;
+    iVar8 = iVar11 + 8;
+    pdVar1 = (double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar11);
+    iVar4 = iVar11 + 0x10;
+    iVar5 = iVar11 + 0x18;
+    iVar6 = iVar11 + 0x20;
+    iVar7 = iVar11 + 0x28;
+    pdVar2 = (double *)(iVar10 + 0x1d932d8);
+    iVar10 = iVar10 + 8;
+    iVar11 = iVar11 + 0x30;
     output_samples[0x12] =
-         (input_samples[0x11] * (float)*pdVar6 +
-         input_samples[0xe] * (float)*pdVar5 +
-         input_samples[0xb] * (float)*pdVar4 +
-         input_samples[8] * (float)*pdVar3 +
-         input_samples[2] * (float)*pdVar2 + input_samples[5] * (float)*pdVar1) * (float)*pdVar7 +
-         output_samples[0x12];
+         (input_samples[0x11] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar7) +
+         input_samples[0xe] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar6) +
+         input_samples[0xb] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar5) +
+         input_samples[8] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar4) +
+         input_samples[2] * (float)*pdVar1 +
+         input_samples[5] * (float)*(double *)((int)g_DOUBLE_ARRAY_01d93518 + iVar8)) *
+         (float)*pdVar2 + output_samples[0x12];
     output_samples = output_samples + 1;
-  } while (iVar11 != 0x60);
+  } while (iVar10 != 0x60);
   return;
 }

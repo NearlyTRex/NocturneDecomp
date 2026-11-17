@@ -18,10 +18,10 @@
 ;   core_mobster.cpp_CMobster_process_FUN_004fde80 at 004febc8
 ;
 ; Referenced Globals:
-;   undefined4 s_CTommyGun_005dee24+1
-;   undefined4 DAT_005dee35
-;   undefined4 DAT_005dee3d
-;   undefined4 DAT_005dee45
+;   TerminatedCString s_CTommyGun_005dee25
+;   double g_DOUBLE_005dee35 = 0.333333333333333
+;   double g_DOUBLE_005dee3d = 5
+;   double g_DOUBLE_005dee45 = 0.400000000000000
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -168,8 +168,8 @@ section .text
     FMUL ST0                            ; 004ff7b7
     FADDP                               ; 004ff7b9
     FSQRT                               ; 004ff7bb
-    FMUL double ptr [0x005dee35]        ; 004ff7bd | DAT_005dee35
-    FSUBR double ptr [0x005dee3d]       ; 004ff7c3 | DAT_005dee3d
+    FMUL double ptr [0x005dee35]        ; 004ff7bd | g_DOUBLE_005dee35
+    FSUBR double ptr [0x005dee3d]       ; 004ff7c3 | g_DOUBLE_005dee3d
     FST float ptr [ESP + 0x4]           ; 004ff7c9
     FLD1                                ; 004ff7cd
     FCOMPP                              ; 004ff7cf
@@ -245,7 +245,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004ff8bc
     PUSH EAX                            ; 004ff8bd
     LEA EDI,[ESP + 0xd0]                ; 004ff8be
-    FADD double ptr [0x005dee45]        ; 004ff8c5 | DAT_005dee45
+    FADD double ptr [0x005dee45]        ; 004ff8c5 | g_DOUBLE_005dee45
     LEA ESI,[ESP + 0x70]                ; 004ff8cb
     FSTP float ptr [ESP + 0x78]         ; 004ff8cf
     MOVSD ES:EDI,ESI                    ; 004ff8d3
@@ -342,7 +342,7 @@ section .text
     POP ESI                             ; 004ff9c0
     POP EBX                             ; 004ff9c1
     RET                                 ; 004ff9c2
-    PUSH 0x5dee25                       ; 004ff9c3 | s_CTommyGun_005dee24+1
+    PUSH 0x5dee25                       ; 004ff9c3 | = "CTommyGun"
         ;   Label: LAB_004ff9c3
     PUSH EBX                            ; 004ff9c8
     CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004ff9c9
@@ -386,7 +386,7 @@ section .text
     FADDP                               ; 004ffa47
     FSQRT                               ; 004ffa49
     FST float ptr [ESP]                 ; 004ffa4b
-    FCOMP double ptr [0x005dee3d]       ; 004ffa4e | DAT_005dee3d
+    FCOMP double ptr [0x005dee3d]       ; 004ffa4e | g_DOUBLE_005dee3d
     FNSTSW AX                           ; 004ffa54
     SAHF                                ; 004ffa56
     JC 0x004ff6fe                       ; 004ffa57

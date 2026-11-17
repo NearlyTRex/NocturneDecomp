@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodPool_render_FUN_004c88a0(CBloodPool *this_ptr,int expire_flag)
 
 {
@@ -20,13 +18,13 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004c88a0(CBloodPool *this_ptr,i
   uint local_40;
   CVector3i local_3c;
   CVector3i local_30;
-  uint *local_24;
-  uint *local_20;
-  uint *local_1c;
+  int *local_24;
+  int *local_20;
+  int *local_1c;
   int local_18;
   
   CStack_60.x = 0x4c88b9;
-  dVar2 = round((double)(this_ptr->age * (float)_DAT_005d94da));
+  dVar2 = round((double)(this_ptr->age * (float)8));
   local_18 = (int)ROUND(dVar2);
   if (local_18 < 0) {
     local_18 = 0;
@@ -35,124 +33,123 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004c88a0(CBloodPool *this_ptr,i
     this_ptr->expired = 1;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,&this_ptr->position);
+            (g_CDemonRenderer_PTR_0060b280,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,
-             (SMRGLTextureBasic *)
-             (&DAT_00616e68 + local_18 * 0x18 + this_ptr->texture_variant * 0x2b8));
+            (g_CDemonRenderer_PTR_0060b280,
+             g_SMRGLTextureBasic_ARRAY_00616e68 + this_ptr->texture_variant * 0x1d + local_18);
   local_48 = 0xbfaa9fbe;
   local_40 = 0xbfaa9fbe;
   local_44 = 0;
-  local_54.x = (int)ROUND(_DAT_005f7ba8 * -1.333);
-  local_54.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
-  local_54.z = (int)ROUND(_DAT_005f7ba8 * -1.333);
+  local_54.x = (int)ROUND(256.0f * -1.333);
+  local_54.y = (int)ROUND(256.0f * 0.0);
+  local_54.z = (int)ROUND(256.0f * -1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_54);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,&local_54);
   local_48 = 0x3faa9fbe;
   local_44 = 0;
   local_40 = 0xbfaa9fbe;
-  CStack_60.x = (int)ROUND(_DAT_005f7ba8 * 1.333);
-  CStack_60.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
-  CStack_60.z = (int)ROUND(_DAT_005f7ba8 * -1.333);
+  CStack_60.x = (int)ROUND(256.0f * 1.333);
+  CStack_60.y = (int)ROUND(256.0f * 0.0);
+  CStack_60.z = (int)ROUND(256.0f * -1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_60);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_60);
   local_48 = 0x3faa9fbe;
   local_40 = 0x3faa9fbe;
   local_44 = 0;
-  local_3c.x = (int)ROUND(_DAT_005f7ba8 * 1.333);
-  local_3c.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
-  local_3c.z = (int)ROUND(_DAT_005f7ba8 * 1.333);
+  local_3c.x = (int)ROUND(256.0f * 1.333);
+  local_3c.y = (int)ROUND(256.0f * 0.0);
+  local_3c.z = (int)ROUND(256.0f * 1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_3c);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_3c);
   local_48 = 0xbfaa9fbe;
   local_44 = 0;
   local_40 = 0x3faa9fbe;
-  local_30.x = (int)ROUND(_DAT_005f7ba8 * -1.333);
-  local_30.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
-  local_30.z = (int)ROUND(_DAT_005f7ba8 * 1.333);
+  local_30.x = (int)ROUND(256.0f * -1.333);
+  local_30.y = (int)ROUND(256.0f * 0.0);
+  local_30.z = (int)ROUND(256.0f * 1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_30);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_30);
   EVar1 = this_ptr->blood_type;
-  local_24 = &DAT_00622038;
+  local_24 = &g_SRenderVertex_ARRAY_00622014[0].g;
   core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004c8aac:
-    DAT_00622034 = 0x2000;
+    g_SRenderVertex_ARRAY_00622014[0].r = 0x2000;
     *local_24 = 0;
-    DAT_0062203c = 0;
+    g_SRenderVertex_ARRAY_00622014[0].b = 0;
   }
   else if (EVar1 < BLOOD_TYPE_NONE) {
-    DAT_00622038 = 0x9a80;
-    DAT_0062203c = 0xb100;
-    DAT_00622034 = 0x9000;
+    g_SRenderVertex_ARRAY_00622014[0].g = 0x9a80;
+    g_SRenderVertex_ARRAY_00622014[0].b = 0xb100;
+    g_SRenderVertex_ARRAY_00622014[0].r = 0x9000;
   }
   else {
     if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004c8aac;
-    DAT_00622038 = 0;
-    DAT_0062203c = 0;
-    DAT_00622034 = 0;
+    g_SRenderVertex_ARRAY_00622014[0].g = 0;
+    g_SRenderVertex_ARRAY_00622014[0].b = 0;
+    g_SRenderVertex_ARRAY_00622014[0].r = 0;
   }
   EVar1 = this_ptr->blood_type;
-  local_1c = &DAT_0062206c;
+  local_1c = &g_SRenderVertex_ARRAY_00622014[1].b;
   core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004c8af1:
-    DAT_00622064 = 0x2000;
-    DAT_00622068 = 0;
+    g_SRenderVertex_ARRAY_00622014[1].r = 0x2000;
+    g_SRenderVertex_ARRAY_00622014[1].g = 0;
     *local_1c = 0;
   }
   else if (EVar1 < BLOOD_TYPE_NONE) {
-    DAT_00622068 = 0x9a80;
-    DAT_0062206c = 0xb100;
-    DAT_00622064 = 0x9000;
+    g_SRenderVertex_ARRAY_00622014[1].g = 0x9a80;
+    g_SRenderVertex_ARRAY_00622014[1].b = 0xb100;
+    g_SRenderVertex_ARRAY_00622014[1].r = 0x9000;
   }
   else {
     if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004c8af1;
-    DAT_00622068 = 0;
-    DAT_0062206c = 0;
-    DAT_00622064 = 0;
+    g_SRenderVertex_ARRAY_00622014[1].g = 0;
+    g_SRenderVertex_ARRAY_00622014[1].b = 0;
+    g_SRenderVertex_ARRAY_00622014[1].r = 0;
   }
   EVar1 = this_ptr->blood_type;
-  local_20 = &DAT_00622098;
+  local_20 = &g_SRenderVertex_ARRAY_00622014[2].g;
   core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004c8b36:
-    DAT_00622094 = 0x2000;
+    g_SRenderVertex_ARRAY_00622014[2].r = 0x2000;
     *local_20 = 0;
-    DAT_0062209c = 0;
+    g_SRenderVertex_ARRAY_00622014[2].b = 0;
   }
   else if (EVar1 < BLOOD_TYPE_NONE) {
-    DAT_00622098 = 0x9a80;
-    DAT_0062209c = 0xb100;
-    DAT_00622094 = 0x9000;
+    g_SRenderVertex_ARRAY_00622014[2].g = 0x9a80;
+    g_SRenderVertex_ARRAY_00622014[2].b = 0xb100;
+    g_SRenderVertex_ARRAY_00622014[2].r = 0x9000;
   }
   else {
     if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004c8b36;
-    DAT_00622098 = 0;
-    DAT_0062209c = 0;
-    DAT_00622094 = 0;
+    g_SRenderVertex_ARRAY_00622014[2].g = 0;
+    g_SRenderVertex_ARRAY_00622014[2].b = 0;
+    g_SRenderVertex_ARRAY_00622014[2].r = 0;
   }
   EVar1 = this_ptr->blood_type;
   core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (EVar1 != BLOOD_TYPE_RED) {
     if (EVar1 < BLOOD_TYPE_NONE) {
-      DAT_006220c8 = 0x9a80;
-      DAT_006220cc = 0xb100;
-      DAT_006220c4 = 0x9000;
+      g_SRenderVertex_ARRAY_00622014[3].g = 0x9a80;
+      g_SRenderVertex_ARRAY_00622014[3].b = 0xb100;
+      g_SRenderVertex_ARRAY_00622014[3].r = 0x9000;
       goto LAB_004c8b9a;
     }
     if (EVar1 == BLOOD_TYPE_NONE) {
-      DAT_006220c8 = 0;
-      DAT_006220cc = 0;
-      DAT_006220c4 = 0;
+      g_SRenderVertex_ARRAY_00622014[3].g = 0;
+      g_SRenderVertex_ARRAY_00622014[3].b = 0;
+      g_SRenderVertex_ARRAY_00622014[3].r = 0;
       goto LAB_004c8b9a;
     }
   }
-  DAT_006220c4 = 0x2000;
-  DAT_006220c8 = 0;
-  DAT_006220cc = 0;
+  g_SRenderVertex_ARRAY_00622014[3].r = 0x2000;
+  g_SRenderVertex_ARRAY_00622014[3].g = 0;
+  g_SRenderVertex_ARRAY_00622014[3].b = 0;
 LAB_004c8b9a:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-            (DAT_0060b280,(SMRGLHeaderPrimitive *)0x1cb8288);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLHeaderPrimitive_01cb8288);
   return;
 }

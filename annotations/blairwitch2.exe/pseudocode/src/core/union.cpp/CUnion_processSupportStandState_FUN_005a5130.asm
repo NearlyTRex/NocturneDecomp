@@ -11,8 +11,8 @@
 ;   core_union.cpp_CUnion_processStates_FUN_005a4c50 at 005a4d36
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f056a
-;   undefined4 DAT_005f056e
+;   float g_FLOAT_005f056a = 24
+;   float g_FLOAT_005f056e = 35
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -93,7 +93,7 @@ section .text
         ;   XREF to: 00423850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850(CCharacter * this_ptr, CVector3f * target)
     FLD float ptr [ESI + 0x8]           ; 005a51dd
     ADD ESP,0x8                         ; 005a51e0
-    FCOMP float ptr [0x005f056e]        ; 005a51e3 | DAT_005f056e
+    FCOMP float ptr [0x005f056e]        ; 005a51e3 | g_FLOAT_005f056e
     FNSTSW AX                           ; 005a51e9
     SAHF                                ; 005a51eb
     JBE 0x005a51b5                      ; 005a51ec
@@ -117,7 +117,7 @@ section .text
     RET                                 ; 005a521d
     FLD float ptr [ESI + 0x8]           ; 005a521e
         ;   Label: LAB_005a521e
-    FCOMP float ptr [0x005f056a]        ; 005a5221 | DAT_005f056a
+    FCOMP float ptr [0x005f056a]        ; 005a5221 | g_FLOAT_005f056a
     FNSTSW AX                           ; 005a5227
     SAHF                                ; 005a5229
     JBE 0x005a51b5                      ; 005a522a

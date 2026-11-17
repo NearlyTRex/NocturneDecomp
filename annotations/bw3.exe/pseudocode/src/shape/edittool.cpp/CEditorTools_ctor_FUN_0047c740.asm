@@ -10,7 +10,7 @@
 ;   shape_edittool.cpp_staticInit_FUN_0047b4c0 at 0047b4c5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5b104
+;   int g_INT_01c5b104
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -27,7 +27,7 @@ section .text
     XOR EDX,EDX                         ; 0047c74a
     PUSH EDX                            ; 0047c74c
     PUSH 0x1c5b108                      ; 0047c74d
-    MOV dword ptr [0x01c5b104],EDX      ; 0047c752 | DAT_01c5b104
+    MOV dword ptr [0x01c5b104],EDX      ; 0047c752 | g_INT_01c5b104
     CALL crt_memory.c_memset_FUN_005a28f0 ; 0047c758
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0047c75d

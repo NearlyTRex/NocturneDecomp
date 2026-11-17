@@ -31,7 +31,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0 at 0046316b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d10bc
+;   float g_FLOAT_005d10bc = 0.5
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
@@ -145,7 +145,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0046481a
     MOVSD ES:EDI,ESI                    ; 0046481b
     MOVSD ES:EDI,ESI                    ; 0046481c
-    FLD float ptr [0x005d10bc]          ; 0046481d | DAT_005d10bc
+    FLD float ptr [0x005d10bc]          ; 0046481d | g_FLOAT_005d10bc
     FLD float ptr [ESP + 0x98]          ; 00464823
     FMUL ST1                            ; 0046482a
     FLD float ptr [ESP + 0x9c]          ; 0046482c

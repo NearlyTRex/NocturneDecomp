@@ -11,12 +11,12 @@
 ;   core_skeleton.cpp_loadSkeleton_FUN_00548fc0 at 00549033
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e696f
-;   undefined4 DAT_005e6972
+;   TerminatedCString s_rt_005e696f
+;   TerminatedCString s_data_005e6972
 ;   TerminatedCString s_core_skeleton_cpp_005e6977
 ;   TerminatedCString s_CSkeleton_load_Can_t_ope_005e698c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -34,9 +34,9 @@ section .text
     PUSH EDI                            ; 00540a12
     MOV EDI,dword ptr [ESP + 0x10]      ; 00540a13
     MOV ESI,dword ptr [ESP + 0x14]      ; 00540a17
-    PUSH 0x5e696f                       ; 00540a1b | DAT_005e696f
+    PUSH 0x5e696f                       ; 00540a1b | = "rt"
     PUSH ESI                            ; 00540a20
-    PUSH 0x5e6972                       ; 00540a21 | DAT_005e6972
+    PUSH 0x5e6972                       ; 00540a21 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00540a26
         ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00540a2b
@@ -80,8 +80,8 @@ section .text
     MOV EDX,0x5e6977                    ; 00540a6c | = "..\\core\\skeleton.cpp"
     MOV ECX,0x100                       ; 00540a71
     PUSH 0x5e698c                       ; 00540a76 | = "CSkeleton::load - Can't open %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00540a7b | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00540a81 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00540a7b | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00540a81 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00540a87
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00540a8c

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_ptr,int layer_flag)
 
 {
@@ -52,15 +50,16 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_pt
     else {
       texture = &this_ptr->broken_texture;
     }
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
+              (g_CDemonRenderer_PTR_0060b280,texture);
     pCVar2 = this_ptr->broken_vertices;
     iVar1 = 0;
     pCVar3 = this_ptr->render_vertices;
     if (0 < this_ptr->broken_vertex_count) {
       do {
-        pCVar3->x = (int)ROUND(pCVar2->x * _DAT_005f7a60);
-        pCVar3->y = (int)ROUND(pCVar2->y * _DAT_005f7a60);
-        pCVar3->z = (int)ROUND(pCVar2->z * _DAT_005f7a60);
+        pCVar3->x = (int)ROUND(pCVar2->x * 256.0f);
+        pCVar3->y = (int)ROUND(pCVar2->y * 256.0f);
+        pCVar3->z = (int)ROUND(pCVar2->z * 256.0f);
         iVar1 = iVar1 + 1;
         pCVar2 = pCVar2 + 1;
         pCVar3 = pCVar3 + 1;
@@ -74,7 +73,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_pt
       pCVar4 = this_ptr;
       do {
         pCVar4->broken_quads[0].base.surface_normal.A.i = 0;
-        this_ptr_00 = DAT_0060b280;
+        this_ptr_00 = g_CDemonRenderer_PTR_0060b280;
         pCVar4->broken_quads[0].base.surface_normal.B.i = 0;
         iVar1 = iVar1 + 1;
         pCVar4->broken_quads[0].base.surface_normal.C.i = 0;

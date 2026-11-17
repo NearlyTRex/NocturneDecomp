@@ -28,9 +28,9 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00552490 at 005524f2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fe600
-;   undefined4 DAT_005fe604
-;   undefined4 DAT_01cc8050
+;   float g_FLOAT_005fe600 = 65536
+;   float g_FLOAT_005fe604 = 0.00390625
+;   int g_INT_01cc8050
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360
@@ -73,13 +73,13 @@ section .text
     MOV EAX,EBP                         ; 0044f9fa
     LEA ESI,[ESP + 0x24]                ; 0044f9fc
     FILD dword ptr [EAX]                ; 0044fa00
-    FMUL float ptr [0x005fe604]         ; 0044fa02 | DAT_005fe604
+    FMUL float ptr [0x005fe604]         ; 0044fa02 | g_FLOAT_005fe604
     FSTP float ptr [EBX]                ; 0044fa08
     FILD dword ptr [EAX + 0x4]          ; 0044fa0a
-    FMUL float ptr [0x005fe604]         ; 0044fa0d | DAT_005fe604
+    FMUL float ptr [0x005fe604]         ; 0044fa0d | g_FLOAT_005fe604
     FSTP float ptr [EBX + 0x4]          ; 0044fa13
     FILD dword ptr [EAX + 0x8]          ; 0044fa16
-    FMUL float ptr [0x005fe604]         ; 0044fa19 | DAT_005fe604
+    FMUL float ptr [0x005fe604]         ; 0044fa19 | g_FLOAT_005fe604
     FSTP float ptr [EBX + 0x8]          ; 0044fa1f
     FLD float ptr [ESP]                 ; 0044fa22
     FLD float ptr [ESP + 0x4]           ; 0044fa25
@@ -109,7 +109,7 @@ section .text
     FADDP                               ; 0044fa67
     FSTP float ptr [ESP + 0x30]         ; 0044fa69
     MOV EAX,dword ptr [ESP + 0x30]      ; 0044fa6d
-    MOV EDX,dword ptr [0x01cc8050]      ; 0044fa71 | DAT_01cc8050
+    MOV EDX,dword ptr [0x01cc8050]      ; 0044fa71 | g_INT_01cc8050
     SAR EAX,0x1                         ; 0044fa77
     SUB EDX,EAX                         ; 0044fa79
     MOV dword ptr [ESP + 0x34],EDX      ; 0044fa7b
@@ -126,13 +126,13 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 0044faa5
     FSTP float ptr [ESP + 0x14]         ; 0044faa9
     FLD float ptr [EAX]                 ; 0044faad
-    FMUL float ptr [0x005fe600]         ; 0044faaf | DAT_005fe600
+    FMUL float ptr [0x005fe600]         ; 0044faaf | g_FLOAT_005fe600
     FISTP dword ptr [EBX]               ; 0044fab5
     FLD float ptr [EAX + 0x4]           ; 0044fab7
-    FMUL float ptr [0x005fe600]         ; 0044faba | DAT_005fe600
+    FMUL float ptr [0x005fe600]         ; 0044faba | g_FLOAT_005fe600
     FISTP dword ptr [EBX + 0x4]         ; 0044fac0
     FLD float ptr [EAX + 0x8]           ; 0044fac3
-    FMUL float ptr [0x005fe600]         ; 0044fac6 | DAT_005fe600
+    FMUL float ptr [0x005fe600]         ; 0044fac6 | g_FLOAT_005fe600
     FISTP dword ptr [EBX + 0x8]         ; 0044facc
     MOV EAX,dword ptr [ESP + 0x18]      ; 0044facf
     MOV EDX,dword ptr [ECX]             ; 0044fad3

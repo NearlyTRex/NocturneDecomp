@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle)
 
 {
-  if (0x3f < _DAT_01caf068) {
+  if (0x3f < g_INT_01caf068) {
     return;
   }
   core_fire_cpp_CLaserBeam_init_FUN_004b0000
-            ((CLaserBeam *)(_DAT_01caf068 * 0x40 + 0x1caf06c),origin,hit_position,beam_width,0.0,
-             (CVector3f *)0x0,red,green,blue,0x3CA3D70A,cone_angle);
-  _DAT_01caf068 = _DAT_01caf068 + 1;
+            (g_CLaserBeam_ARRAY_01caf06c + g_INT_01caf068,origin,hit_position,beam_width,0.0,
+             (CVector3f *)0x0,red,green,blue,0.02f,cone_angle);
+  g_INT_01caf068 = g_INT_01caf068 + 1;
   return;
 }

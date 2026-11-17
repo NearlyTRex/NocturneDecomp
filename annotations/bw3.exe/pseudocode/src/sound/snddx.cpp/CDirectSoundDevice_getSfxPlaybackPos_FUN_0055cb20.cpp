@@ -6,33 +6,34 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0055cb20(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
-  int *piVar1;
   uint error_code;
-  int iVar2;
-  int iStack_28;
+  int iVar1;
+  char acStack_1b0 [400];
+  DWORD DStack_20;
+  DWORD aDStack_1c [3];
   
-  iVar2 = slot->hardware_buffer_handle;
-  if (((iVar2 < 1) || (0x1e < iVar2)) || (*(int *)(iVar2 * 0x24 + 0x2cf500c) == 0)) {
-    _DAT_01d71de0 = "..\\sound\\snddx.cpp";
-    _DAT_01d71de4 = 0x5f8;
+  iVar1 = slot->hardware_buffer_handle;
+  if (((iVar1 < 1) || (0x1e < iVar1)) ||
+     (g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9] == (IDirectSoundBuffer *)0x0)) {
+    g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
+    g_INT_01d71de4 = 0x5f8;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::getSfxPlaybackPos - invalid handle");
   }
   if (slot->sample != (CSfxSample *)0x0) {
-    piVar1 = *(int **)(iVar2 * 0x24 + 0x2cf500c);
-    error_code = (**(code **)(*piVar1 + 0x10))(piVar1);
+    error_code = (*g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9]->vtable->GetCurrentPosition)
+                           (g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9],aDStack_1c,&DStack_20
+                           );
     if (error_code != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(error_code);
-      _sprintf(&stack0xfffffe44,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xfffffe44);
+      _sprintf(acStack_1b0,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_1b0);
       return -1.0;
     }
-    iVar2 = sound_sndmain_cpp_CSfxSample_bytesToFrames_FUN_005558e0(slot->sample,iStack_28);
-    return (double)iVar2;
+    iVar1 = sound_sndmain_cpp_CSfxSample_bytesToFrames_FUN_005558e0(slot->sample,aDStack_1c[0]);
+    return (double)iVar1;
   }
   return -1.0;
 }

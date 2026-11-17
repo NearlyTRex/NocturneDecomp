@@ -16,7 +16,7 @@
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_00421de0 at 00421e63
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d4c04
+;   float g_FLOAT_005d4c04 = 0.5
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
@@ -82,7 +82,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00421f38
     MOVSD ES:EDI,ESI                    ; 00421f39
     MOVSD ES:EDI,ESI                    ; 00421f3a
-    FLD float ptr [0x005d4c04]          ; 00421f3b | DAT_005d4c04
+    FLD float ptr [0x005d4c04]          ; 00421f3b | g_FLOAT_005d4c04
     FLD float ptr [ESP + 0x80]          ; 00421f41
     FMUL ST1                            ; 00421f48
     FLD float ptr [ESP + 0x84]          ; 00421f4a

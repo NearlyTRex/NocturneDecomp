@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa918
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_00618170
+;   float g_FLOAT_005fa918 = 2
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d182f0
 ;
 ; Called Functions:
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 00511885 (CONDITIONAL_JUMP)  ; LAB_00511885
     LEA EAX,[EBX + 0x24348]             ; 005117eb
     PUSH EAX                            ; 005117f1
-    MOV EDX,dword ptr [0x006141f0]      ; 005117f2 | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 005117f2 | g_CEventList_PTR_006141f0
     PUSH EDX                            ; 005117f8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 005117f9
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -131,7 +131,7 @@ section .text
     JNZ 0x00511805                      ; 00511888
         ;   XREF to: 00511805 (CONDITIONAL_JUMP)  ; LAB_00511805
     FLD float ptr [EBP + 0x18]          ; 0051188e
-    FDIV float ptr [0x005fa918]         ; 00511891 | DAT_005fa918
+    FDIV float ptr [0x005fa918]         ; 00511891 | g_FLOAT_005fa918
     FADD float ptr [EBX + 0x25080]      ; 00511897
     FST float ptr [EBX + 0x25080]       ; 0051189d
     FLD1                                ; 005118a3
@@ -145,14 +145,14 @@ section .text
     JZ 0x00511805                       ; 005118b8
         ;   XREF to: 00511805 (CONDITIONAL_JUMP)  ; LAB_00511805
     PUSH EDX                            ; 005118be
-    MOV ESI,dword ptr [0x00618170]      ; 005118bf | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 005118bf | g_CDemonMission_PTR_00618170
     PUSH ESI                            ; 005118c5 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 005118c6
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005118cb
     PUSH 0x1                            ; 005118ce
     PUSH EBX                            ; 005118d0
-    MOV EAX,[0x00618170]                ; 005118d1 | DAT_00618170
+    MOV EAX,[0x00618170]                ; 005118d1 | g_CDemonMission_PTR_00618170
     PUSH EAX                            ; 005118d6 | DAT_01d182f0
     MOV dword ptr [EBX + 0x24450],0x0   ; 005118d7
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 005118e1

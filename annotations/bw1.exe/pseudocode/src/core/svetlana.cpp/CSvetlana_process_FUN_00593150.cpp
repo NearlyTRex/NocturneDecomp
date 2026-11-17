@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00593150(CSvetlana *this_ptr,float delta_time)
 
@@ -56,9 +55,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00593150(CSvetlana *this_pt
   CCharacter_full_vtable *pCStack_14;
   
   bVar11 = 0;
-  if (((this_ptr->base).base.hit_points < (float)_DAT_005f756f) &&
+  if (((this_ptr->base).base.hit_points < (float)100) &&
      (fVar13 = (this_ptr->base).base.hit_points + delta_time,
-     (this_ptr->base).base.hit_points = fVar13, (float)_DAT_005f756f < fVar13)) {
+     (this_ptr->base).base.hit_points = fVar13, (float)100 < fVar13)) {
     (this_ptr->base).base.hit_points = 100.0;
   }
   iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0
@@ -242,7 +241,7 @@ switchD_005935af_caseD_4:
                        (&(this_ptr->base).base.model.base);
     if (pSVar5->state_index == 0x1a) {
       (this_ptr->base).base.base.location.position.y =
-           delta_time * (float)_DAT_005f7577 + (this_ptr->base).base.base.location.position.y;
+           delta_time * (float)3 + (this_ptr->base).base.base.location.position.y;
     }
     goto LAB_00593467;
   }
@@ -262,13 +261,13 @@ switchD_005935af_caseD_4:
     pCStack_14 = (CCharacter_full_vtable *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_7c[0]);
     fStack_18 = (float)pCStack_14;
-    if ((float)pCStack_14 < _DAT_005f757f) {
-      fStack_18 = (float)pCStack_14 + _DAT_005f7583;
+    if ((float)pCStack_14 < -1.570796f) {
+      fStack_18 = (float)pCStack_14 + 3.141593f;
     }
-    if (_DAT_005f7587 < fStack_18) {
-      fStack_18 = fStack_18 + _DAT_005f758b;
+    if (1.570796f < fStack_18) {
+      fStack_18 = fStack_18 + -3.141593f;
     }
-    fStack_1c = delta_time * _DAT_005f7583;
+    fStack_1c = delta_time * 3.141593f;
     fStack_20 = -fStack_1c;
     if (fStack_18 < fStack_20) {
       fStack_18 = fStack_20;
@@ -310,7 +309,7 @@ LAB_00593467:
   if (EVar6 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar13 = this_ptr->head_blend_weight;
-    iVar4 = _DAT_02c83708;
+    iVar4 = g_INT_ARRAY_02c83708[0];
     core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(&this_ptr->head_euler_angles,&CStack_c0);
     source_quaternions = &CStack_d0;
     CStack_d0.w = CStack_c0.w;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,float delta_time)
 
 {
@@ -111,7 +109,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
   
   bVar18 = 0;
   iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,this_ptr->death_event);
+                    (g_CEventList_PTR_0061b4d0,this_ptr->death_event);
   if (iVar8 != 0) {
     (this_ptr->base).base.hit_points = 0.0;
     (this_ptr->base).pool_me = 1;
@@ -134,7 +132,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
     core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041d760(this_ptr);
   }
   if (this_ptr->blown_up == 2) {
-    fVar21 = delta_time / _DAT_005fcc38 + this_ptr->recombine_interpolation;
+    fVar21 = delta_time / 2.0f + this_ptr->recombine_interpolation;
     this_ptr->recombine_interpolation = fVar21;
     if (fVar21 < 1.0) {
       iStack_24 = 0;
@@ -187,7 +185,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
         afStack_a8[(uint)bVar18 * -2] = *(float *)((int)&CStack_b8 + (uint)bVar18 * -8 + 4);
         afStack_a8[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
              *(float *)((int)&CStack_b8 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
-        fStack_ac = this_ptr->recombine_interpolation * (float)_DAT_005d4761 + fStack_ac;
+        fStack_ac = this_ptr->recombine_interpolation * (float)6.2831853070000001 + fStack_ac;
         (pCStack_44->base).location.position.x = fStack_d0;
         (pCStack_44->base).location.position.y = afStack_cc[0];
         pUVar1 = &(pCStack_44->base).orient;
@@ -222,17 +220,17 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
     if (0 < this_ptr->box_count) {
       do {
         core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740
-                  (0x01D2C900,&(pCVar12->boxes[0].body_part)->base,1);
+                  (g_CDemonMission_PTR_0061f650,&(pCVar12->boxes[0].body_part)->base,1);
         pCVar12->boxes[0].body_part = (CBodyPart *)0x0;
         iVar8 = iVar8 + 1;
         pCVar12 = (CBoneGuy *)((pCVar12->base).base.base.orient_matrix.m + 1);
       } while (iVar8 < this_ptr->box_count);
     }
     this_ptr->blown_up = 0;
-    fVar21 = this_ptr->recombine_time * (float)_DAT_005d4749;
+    fVar21 = this_ptr->recombine_time * (float)0.5;
     (this_ptr->base).base.hit_points = 100.0;
     this_ptr->recombine_time = fVar21;
-    if (fVar21 <= (float)_DAT_005d4751) {
+    if (fVar21 <= (float)2.5) {
       this_ptr->recombine_time = 2.5;
     }
   }
@@ -291,9 +289,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
       else {
         iVar8 = core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0(this_ptr,delta_time);
         if (iVar8 == 0) {
-          fStack_38 = 0x40000000;
+          fStack_38 = 2.0f;
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
-            fStack_38 = 0x40400000;
+            fStack_38 = 3.0f;
           }
           uVar20._0_4_ = 0x3f000000;
           uVar20._4_4_ = 0.17453292;
@@ -318,7 +316,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
                      (pCVar6->base).location.position.x;
             fVar7 = (this_ptr->base).base.base.location.position.z -
                     (pCVar6->base).location.position.z;
-            if ((SQRT(fVar7 * fVar7 + fVar21 * fVar21) <= fStack_38 + (float)_DAT_005d4749) &&
+            if ((SQRT(fVar7 * fVar7 + fVar21 * fVar21) <= fStack_38 + (float)0.5) &&
                ((this_ptr->base).attack_cooldown <= 0.0)) {
               if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
                 fVar21 = 2.8026e-45;
@@ -343,10 +341,10 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
       damage_info = (SDamageInfo *)&stack0xfffffd90;
       fVar21 = 0.4;
       core_xform_cpp_transformVector3x4_FUN_005b5080
-                ((CVector3f *)&DAT_02c8af28,
+                (&g_CVector3f_02c8af28,
                  (CMatrix3x4f *)
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices[DAT_007c4ff0].m,
-                 &CStack_148);
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices
+                 [g_INT_ARRAY_007c4ff0[0]].m,&CStack_148);
       pCVar19 = &CStack_dc;
       CStack_dc.x = CStack_148.x;
       *(uint *)((int)&CStack_dc + (uint)bVar18 * -8 + 4) =
@@ -389,10 +387,10 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
         afStack_15c[(uint)bVar18 * -2] = afStack_198[(uint)bVar18 * -2 + 9];
         afStack_15c[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
              afStack_198[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 10];
-        fStack_94 = fStack_160 * _DAT_005d4759;
-        fStack_90 = afStack_15c[0] * _DAT_005d4759;
-        fStack_8c = afStack_15c[1] * _DAT_005d4759;
-        CStack_7c.x = fStack_160 * _DAT_005d4759;
+        fStack_94 = fStack_160 * 0.5f;
+        fStack_90 = afStack_15c[0] * 0.5f;
+        fStack_8c = afStack_15c[1] * 0.5f;
+        CStack_7c.x = fStack_160 * 0.5f;
         *(float *)((int)&CStack_7c + (uint)bVar18 * -8 + 4) = afStack_a8[(uint)bVar18 * -2 + 6];
         *(float *)((int)&CStack_7c + ((uint)bVar18 * -2 + (uint)bVar18 * -2 + 1) * 4 + 4) =
              afStack_a8[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 7];

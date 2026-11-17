@@ -14,7 +14,7 @@
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80 at 00441cba
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamMemoryVTable = 00574b50
+;   TerminatedCString g_COutStreamMemoryVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_005744a0
@@ -31,7 +31,7 @@ section .text
     PUSH EDX                            ; 00574ac6
     CALL support_trstream.cpp_COutStream_dtor_FUN_005744a0 ; 00574ac7
         ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_005744a0(COutStream * this_ptr, uint flags)
-    MOV dword ptr [EAX],0x5e5b54        ; 00574acc | g_COutStreamMemoryVTable
+    MOV dword ptr [EAX],0x5e5b54        ; 00574acc | = "PKW"
     ADD ESP,0x4                         ; 00574ad2
     MOV dword ptr [EAX + 0x4],0x0       ; 00574ad5
     MOV ECX,dword ptr [ESP + 0x14]      ; 00574adc

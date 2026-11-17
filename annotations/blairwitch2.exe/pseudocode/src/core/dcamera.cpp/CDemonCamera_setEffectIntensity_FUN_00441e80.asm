@@ -16,7 +16,7 @@
 ;   core_weather.cpp_CWeather_update_FUN_0058a660 at 0058a8d7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ce636
+;   double g_DOUBLE_005ce636 = 65535
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -27,7 +27,7 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 00441e80
         ;   Label: core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80
-    FMUL double ptr [0x005ce636]        ; 00441e84 | DAT_005ce636
+    FMUL double ptr [0x005ce636]        ; 00441e84 | g_DOUBLE_005ce636
     MOV EAX,dword ptr [ESP + 0x4]       ; 00441e8a
     CALL crt_math.c_round_FUN_005b7ff0  ; 00441e8e
         ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)

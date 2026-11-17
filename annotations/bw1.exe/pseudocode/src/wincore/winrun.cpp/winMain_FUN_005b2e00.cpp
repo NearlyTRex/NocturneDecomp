@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __stdcall wincore_winrun_cpp_winMain_FUN_005b2e00(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 {
@@ -67,15 +65,15 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005b2e00(HINSTANCE hInstance,HINSTA
   pcVar12 = &DAT_02c9ca08;
   if (DAT_02c9ca08 != '\0') {
     pbVar1 = (byte *)pcVar12;
-    iVar9 = _DAT_02c9cb08 << 2;
+    iVar9 = g_INT_02c9cb08 << 2;
     do {
       do {
         pbVar6 = pbVar1;
         pbVar1 = pbVar6 + 1;
       } while (0x20 < *pbVar6);
       *pbVar6 = 0;
-      _DAT_02c9cb08 = _DAT_02c9cb08 + 1;
-      *(char **)(iVar9 + 0x2c9cb0c) = pcVar12;
+      g_INT_02c9cb08 = g_INT_02c9cb08 + 1;
+      *(char **)((int)&g_CHAR_PTR_02c9cb0c + iVar9) = pcVar12;
       bVar3 = *pbVar1;
       pcVar12 = (char *)pbVar1;
       while (bVar3 == 0x20) {
@@ -117,18 +115,18 @@ LAB_005b2f58:
   local_58.lpszClassName = PTR_s_Nocturne_006260dc;
   local_58.lpszMenuName = (LPCSTR)0x0;
   RegisterClassA(&local_58);
-  _DAT_02c9be6c = hInstance;
+  g_INT_02c9be6c = (int)hInstance;
   wincore_winrun_cpp_createMainWindow_FUN_005b2d90();
-  ShowWindow(_DAT_02c9be68,nCmdShow);
-  UpdateWindow(_DAT_02c9be68);
+  ShowWindow(g_HWND_02c9be68,nCmdShow);
+  UpdateWindow(g_HWND_02c9be68);
   hThread = GetCurrentProcess();
   SetThreadPriority(hThread,2);
   memset(&local_30,0,0x20);
   local_30.dwLength = 0x20;
   GlobalMemoryStatus(&local_30);
-  _DAT_02c9be78 = local_30.dwTotalPhys;
-  _DAT_02c9be7c = local_30.dwAvailPageFile;
-  core_main_c_initializeGameSystems_FUN_005032a0(_DAT_02c9cb08,(char **)0x2c9cb0c);
+  g_INT_02c9be78 = local_30.dwTotalPhys;
+  g_INT_02c9be7c = local_30.dwAvailPageFile;
+  core_main_c_initializeGameSystems_FUN_005032a0(g_INT_02c9cb08,&g_CHAR_PTR_02c9cb0c);
   core_main_c_enterMainGameMenu_FUN_00503290();
   core_main_c_finalizeGameSystems_FUN_00503a30();
                     /* WARNING: Subroutine does not return */

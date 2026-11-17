@@ -13,19 +13,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc127
 ;   TerminatedCString s_CEditorTools_popWindow_c_005dc13d
-;   undefined4 DAT_01c3eb5c
-;   undefined4 DAT_01c4eff8
-;   undefined4 DAT_01c4effc
-;   undefined4 DAT_01c4f000
-;   undefined4 DAT_01c4f004
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
-;   undefined4 DAT_01c4f018
-;   undefined4 DAT_01c4f01c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_01c3eb5c
+;   int g_INT_01c4eff8
+;   int g_INT_01c4effc
+;   int g_INT_01c4f000
+;   int g_INT_01c4f004
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f010
+;   int g_INT_01c4f014
+;   int g_INT_01c4f018
+;   int g_INT_01c4f01c
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -40,13 +40,13 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_popWindowState_FUN_00496df0
     PUSH ESI                            ; 00496df1
     PUSH EDI                            ; 00496df2
-    CMP dword ptr [0x01c3eb5c],0x1      ; 00496df3 | DAT_01c3eb5c
+    CMP dword ptr [0x01c3eb5c],0x1      ; 00496df3 | g_INT_01c3eb5c
     JL 0x00496e97                       ; 00496dfa
         ;   XREF to: 00496e97 (CONDITIONAL_JUMP)  ; LAB_00496e97
-    MOV ESI,dword ptr [0x01c3eb5c]      ; 00496e00 | DAT_01c3eb5c
+    MOV ESI,dword ptr [0x01c3eb5c]      ; 00496e00 | g_INT_01c3eb5c
         ;   Label: LAB_00496e00
     DEC ESI                             ; 00496e06
-    MOV dword ptr [0x01c3eb5c],ESI      ; 00496e07 | DAT_01c3eb5c
+    MOV dword ptr [0x01c3eb5c],ESI      ; 00496e07 | g_INT_01c3eb5c
     LEA EBX,[ESI*0x8 + 0x0]             ; 00496e0d
     MOV EAX,EBX                         ; 00496e14
     SHL EBX,0x6                         ; 00496e16
@@ -64,26 +64,26 @@ section .text
     CALL engine_mini3d.cpp_setRenderViewport_FUN_00511850 ; 00496e3b
         ;   XREF to: 00511850 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderViewport_FUN_00511850(float left, float top, float right, float bottom)
     MOV EAX,dword ptr [EBX + 0x10]      ; 00496e40
-    MOV [0x01c4f008],EAX                ; 00496e43 | DAT_01c4f008
+    MOV [0x01c4f008],EAX                ; 00496e43 | g_INT_01c4f008
     MOV EAX,dword ptr [EBX + 0x14]      ; 00496e48
-    MOV [0x01c4f00c],EAX                ; 00496e4b | DAT_01c4f00c
+    MOV [0x01c4f00c],EAX                ; 00496e4b | g_INT_01c4f00c
     MOV EAX,dword ptr [EBX + 0x18]      ; 00496e50
-    MOV [0x01c4f010],EAX                ; 00496e53 | DAT_01c4f010
+    MOV [0x01c4f010],EAX                ; 00496e53 | g_INT_01c4f010
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00496e58
-    MOV [0x01c4f014],EAX                ; 00496e5b | DAT_01c4f014
+    MOV [0x01c4f014],EAX                ; 00496e5b | g_INT_01c4f014
     MOV EAX,dword ptr [EBX + 0x30]      ; 00496e60
-    MOV [0x01c4eff8],EAX                ; 00496e63 | DAT_01c4eff8
+    MOV [0x01c4eff8],EAX                ; 00496e63 | g_INT_01c4eff8
     MOV EAX,dword ptr [EBX + 0x34]      ; 00496e68
-    MOV [0x01c4effc],EAX                ; 00496e6b | DAT_01c4effc
+    MOV [0x01c4effc],EAX                ; 00496e6b | g_INT_01c4effc
     MOV EAX,dword ptr [EBX + 0x38]      ; 00496e70
-    MOV [0x01c4f000],EAX                ; 00496e73 | DAT_01c4f000
+    MOV [0x01c4f000],EAX                ; 00496e73 | g_INT_01c4f000
     MOV EAX,dword ptr [EBX + 0x3c]      ; 00496e78
-    MOV [0x01c4f004],EAX                ; 00496e7b | DAT_01c4f004
+    MOV [0x01c4f004],EAX                ; 00496e7b | g_INT_01c4f004
     MOV EAX,dword ptr [EBX + 0x40]      ; 00496e80
-    MOV [0x01c4f018],EAX                ; 00496e83 | DAT_01c4f018
+    MOV [0x01c4f018],EAX                ; 00496e83 | g_INT_01c4f018
     MOV EAX,dword ptr [EBX + 0x44]      ; 00496e88
     ADD ESP,0x10                        ; 00496e8b
-    MOV [0x01c4f01c],EAX                ; 00496e8e | DAT_01c4f01c
+    MOV [0x01c4f01c],EAX                ; 00496e8e | g_INT_01c4f01c
     POP EDI                             ; 00496e93
     POP ESI                             ; 00496e94
     POP EBX                             ; 00496e95
@@ -92,8 +92,8 @@ section .text
         ;   Label: LAB_00496e97
     MOV EBX,0x913                       ; 00496e9c
     PUSH 0x5dc13d                       ; 00496ea1 | = "CEditorTools::popWindow() called but ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00496ea6 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00496eac | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00496ea6 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00496eac | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00496eb2
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496eb7

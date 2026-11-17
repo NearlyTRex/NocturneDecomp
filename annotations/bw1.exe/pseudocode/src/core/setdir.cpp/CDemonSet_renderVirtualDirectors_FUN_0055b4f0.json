@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 265,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 145,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 143,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 437
+    "total_lines": 435
   },
   "cross_references": [
     {
@@ -55,50 +55,50 @@
   "globals": [
     {
       "addr": "005f106c",
-      "name": "DAT_005f106c",
-      "type": "undefined4",
+      "name": "s_g_005f106c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c4368c",
-      "name": "DAT_01c4368c",
+      "name": "g_ARRAY_PTR_01c4354c[80]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4dacf",
-      "name": "DAT_01c4dacf",
+      "name": "g_UCHAR_ARRAY_01c45ad0+0x7fff",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4f020",
-      "name": "DAT_01c4f020",
-      "type": "undefined4",
+      "name": "g_INT_01c4f020",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0268e900",
-      "name": "DAT_0268e900",
-      "type": "undefined4",
+      "name": "g_FLOAT_ARRAY_0268e900",
+      "type": "float[251]",
       "value": null
     },
     {
@@ -375,92 +375,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(int *)((int)g_ARRAY_PTR_01c4354c",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar6 + *(int *)((int)g_ARRAY_PTR_01c4354c + local_1c)) = uVar4 * 0x10101;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "local_54 = DAT_0061b49c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "local_40 = DAT_0061b49c + -0x78;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_0268e900",
-      "severity": "mild",
-      "text": "if (*(float *)(&DAT_0268e900 + iVar1 * 4) <",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_0268e900",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_0268e900 + *(int *)(iVar5 + 0x269c7b0) * 4)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "*(uint *)(iVar6 + *(int *)(&DAT_01c4354c + local_1c)) = uVar4 * 0x10101;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_01c45ad0",
-      "severity": "mild",
-      "text": "_DAT_01c4f020 = (uint)(byte)(&DAT_01c45ad0)[(uVar4 >> 3) * 0x421];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_005f106c",
-      "severity": "mild",
-      "text": "_sprintf(local_c4,&DAT_005f106c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "if (DAT_0061b498 < iVar6 + 0x81) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "bVar2 = DAT_0061b49c < local_54;",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ARRAY_PTR_01c4354c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)g_ARRAY_PTR_01c4354c",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar6 + *(int *)((int)g_ARRAY_PTR_01c4354c + local_1c)) = uVar4 * 0x10101;",
+      "type": "pointer_truncation"
     }
   ]
 }

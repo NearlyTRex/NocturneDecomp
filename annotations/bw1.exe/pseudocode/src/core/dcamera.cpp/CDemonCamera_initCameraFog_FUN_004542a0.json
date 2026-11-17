@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 124,
+    "complexity_score": 33,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 96
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -57,67 +54,67 @@
   "globals": [
     {
       "addr": "005d79f7",
-      "name": "DAT_005d79f7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d79f7",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "005d79ff",
-      "name": "DAT_005d79ff",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d79ff",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "00611230",
-      "name": "DAT_00611230",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00611230",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "00611234",
-      "name": "DAT_00611234",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00611234",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "00611238",
-      "name": "DAT_00611238",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00611238",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "00b8189c",
-      "name": "DAT_00b8189c",
-      "type": "undefined4",
+      "name": "g_UINT_ARRAY_00b8189c",
+      "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01481e38",
-      "name": "DAT_01481e38",
+      "name": "g_SFogGrid_01480e2c.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01481e3c",
-      "name": "DAT_01481e3c",
+      "name": "g_SFogGrid_01480e2c.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01481e40",
-      "name": "DAT_01481e40",
+      "name": "g_SFogGrid_01480e2c.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01481e44",
-      "name": "DAT_01481e44",
+      "name": "g_SFogGrid_01480e2c.height_threshold",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01481e48",
-      "name": "DAT_01481e48",
+      "name": "g_SFogGrid_01480e2c.density_multiplier",
       "type": "undefined4",
       "value": null
     }
@@ -228,70 +225,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00611230",
-      "severity": "mild",
-      "text": "DAT_00611230 = (fog_config->color_index).r;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00611234",
-      "severity": "mild",
-      "text": "DAT_00611234 = (fog_config->color_index).g;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00611238",
-      "severity": "mild",
-      "text": "DAT_00611238 = (fog_config->color_index).b;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_00b8189c",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b8189c + (fog_config->color_index).r * 4) & 0xff,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_00b8189c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b8189c + (fog_config->color_index).g * 4) & 0xff,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00b8189c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b8189c + DAT_00611238 * 4) & 0xff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00611238",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b8189c + DAT_00611238 * 4) & 0xff);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -28,14 +28,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Blair_Witch_Volume_I_Rus_005e7a0a
 ;   TerminatedCString s_Blair_Witch_Volume_I_Rus_005e7a5c
-;   undefined4 DAT_005e7aac
-;   undefined4 DAT_0061f2a4
-;   undefined4 DAT_0152d244
-;   undefined4 DAT_0152d248
-;   undefined4 DAT_01d1bca0
-;   undefined4 DAT_01d1ee8c
-;   undefined4 DAT_01d1ee9c
-;   undefined4 DAT_01d7f1b8
+;   char[2] g_CHAR_ARRAY_005e7aac
+;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
+;   CBitFont* g_CBitFont_PTR_0152d244
+;   CBitFont* g_CBitFont_PTR_0152d248
+;   void* g_PTR_01d1bca0
+;   int g_INT_01d1ee8c
+;   int g_INT_01d1ee9c
+;   int g_INT_01d7f1b8
 ;
 ; Called Functions:
 ;   core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_005220b0
@@ -57,7 +57,7 @@ section .text
     PUSH EBP                            ; 00509e23
     SUB ESP,0x1c                        ; 00509e24
     MOV EBP,dword ptr [ESP + 0x3c]      ; 00509e27
-    MOV EAX,[0x0152d244]                ; 00509e2b | DAT_0152d244
+    MOV EAX,[0x0152d244]                ; 00509e2b | g_CBitFont_PTR_0152d244
     MOV EDX,dword ptr [ESP + 0x40]      ; 00509e30
     MOV dword ptr [ESP + 0x18],EAX      ; 00509e34
     TEST EDX,EDX                        ; 00509e38
@@ -187,19 +187,19 @@ section .text
         ;   Label: LAB_00509f7e
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 00509f83
         ;   XREF to: 00406bd0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bd0(int alpha_color_value)
-    MOV ESI,dword ptr [0x01d7f1b8]      ; 00509f88 | DAT_01d7f1b8
+    MOV ESI,dword ptr [0x01d7f1b8]      ; 00509f88 | g_INT_01d7f1b8
     ADD ESP,0x4                         ; 00509f8e
     TEST ESI,ESI                        ; 00509f91
     JZ 0x0050a167                       ; 00509f93
         ;   XREF to: 0050a167 (CONDITIONAL_JUMP)  ; LAB_0050a167
     PUSH 0x5e7a0a                       ; 00509f99 | = "Blair Witch Volume I: Rustin Parr (c)..."
-    MOV EDX,dword ptr [0x0152d248]      ; 00509f9e | DAT_0152d248
+    MOV EDX,dword ptr [0x0152d248]      ; 00509f9e | g_CBitFont_PTR_0152d248
     PUSH EDX                            ; 00509fa4
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 00509fa5
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00509faa
     PUSH 0x5e7a0a                       ; 00509fad | = "Blair Witch Volume I: Rustin Parr (c)..."
-    MOV ECX,dword ptr [0x0152d248]      ; 00509fb2 | DAT_0152d248
+    MOV ECX,dword ptr [0x0152d248]      ; 00509fb2 | g_CBitFont_PTR_0152d248
     PUSH ECX                            ; 00509fb8
     MOV EBX,EAX                         ; 00509fb9
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50 ; 00509fbb
@@ -214,7 +214,7 @@ section .text
     SUB EAX,EBX                         ; 00509fd7
     PUSH EAX                            ; 00509fd9
     PUSH 0x5e7a0a                       ; 00509fda | = "Blair Witch Volume I: Rustin Parr (c)..."
-    MOV EBX,dword ptr [0x0152d248]      ; 00509fdf | DAT_0152d248
+    MOV EBX,dword ptr [0x0152d248]      ; 00509fdf | g_CBitFont_PTR_0152d248
     PUSH EBX                            ; 00509fe5
     CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 00509fe6
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -228,8 +228,8 @@ section .text
     PUSH 0xf8                           ; 00509ffd
     PUSH 0x18f                          ; 0050a002
     PUSH 0x206                          ; 0050a007
-    PUSH 0x5e7aac                       ; 0050a00c | DAT_005e7aac
-    MOV ESI,dword ptr [0x0152d248]      ; 0050a011 | DAT_0152d248
+    PUSH 0x5e7aac                       ; 0050a00c | g_CHAR_ARRAY_005e7aac
+    MOV ESI,dword ptr [0x0152d248]      ; 0050a011 | g_CBitFont_PTR_0152d248
     PUSH ESI                            ; 0050a017
     CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 0050a018
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -272,17 +272,17 @@ section .text
     MOV EBX,0x1                         ; 0050a05e
     PUSH 0x48                           ; 0050a063
         ;   Label: LAB_0050a063
-    MOV EAX,[0x0061f2a4]                ; 0050a065 | DAT_0061f2a4
+    MOV EAX,[0x0061f2a4]                ; 0050a065 | g_CKeys_PTR_0061f2a4
     XOR EBP,EBP                         ; 0050a06a
-    PUSH EAX                            ; 0050a06c | DAT_01d1bca0
-    MOV EDX,dword ptr [EAX]             ; 0050a06d | DAT_01d1bca0
-    MOV dword ptr [0x01d1ee9c],EBP      ; 0050a06f | DAT_01d1ee9c
+    PUSH EAX                            ; 0050a06c | g_PTR_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 0050a06d | g_PTR_01d1bca0
+    MOV dword ptr [0x01d1ee9c],EBP      ; 0050a06f | g_INT_01d1ee9c
     CALL dword ptr [EDX + 0x4]          ; 0050a075
     ADD ESP,0x8                         ; 0050a078
     TEST EAX,EAX                        ; 0050a07b
     JZ 0x0050a09a                       ; 0050a07d
         ;   XREF to: 0050a09a (CONDITIONAL_JUMP)  ; LAB_0050a09a
-    MOV dword ptr [0x01d1ee9c],0x1      ; 0050a07f | DAT_01d1ee9c
+    MOV dword ptr [0x01d1ee9c],0x1      ; 0050a07f | g_INT_01d1ee9c
     MOV EAX,dword ptr [ESP + 0x38]      ; 0050a089
     MOV EDX,dword ptr [EAX]             ; 0050a08d
     DEC EDX                             ; 0050a08f
@@ -292,9 +292,9 @@ section .text
         ;   XREF to: 0050a1b7 (CONDITIONAL_JUMP)  ; LAB_0050a1b7
     PUSH 0x50                           ; 0050a09a
         ;   Label: LAB_0050a09a
-    MOV EAX,[0x0061f2a4]                ; 0050a09c | DAT_0061f2a4
-    PUSH EAX                            ; 0050a0a1 | DAT_01d1bca0
-    MOV EDX,dword ptr [EAX]             ; 0050a0a2 | DAT_01d1bca0
+    MOV EAX,[0x0061f2a4]                ; 0050a09c | g_CKeys_PTR_0061f2a4
+    PUSH EAX                            ; 0050a0a1 | g_PTR_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 0050a0a2 | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 0050a0a4
     ADD ESP,0x8                         ; 0050a0a7
     TEST EAX,EAX                        ; 0050a0aa
@@ -305,7 +305,7 @@ section .text
     MOV EDI,dword ptr [EAX]             ; 0050a0b7
     MOV EBP,dword ptr [ESP + 0x34]      ; 0050a0b9
     ADD EDI,ESI                         ; 0050a0bd
-    MOV dword ptr [0x01d1ee9c],ESI      ; 0050a0bf | DAT_01d1ee9c
+    MOV dword ptr [0x01d1ee9c],ESI      ; 0050a0bf | g_INT_01d1ee9c
     MOV dword ptr [EAX],EDI             ; 0050a0c5
     CMP EDI,EBP                         ; 0050a0c7
     JL 0x0050a0d1                       ; 0050a0c9
@@ -317,19 +317,19 @@ section .text
         ;   XREF to: 0050a108 (CONDITIONAL_JUMP)  ; LAB_0050a108
     XOR EAX,EAX                         ; 0050a0d5
     PUSH 0x4b                           ; 0050a0d7
-    MOV [0x01d1ee8c],EAX                ; 0050a0d9 | DAT_01d1ee8c
-    MOV EAX,[0x0061f2a4]                ; 0050a0de | DAT_0061f2a4
-    PUSH EAX                            ; 0050a0e3 | DAT_01d1bca0
-    MOV EDX,dword ptr [EAX]             ; 0050a0e4 | DAT_01d1bca0
+    MOV [0x01d1ee8c],EAX                ; 0050a0d9 | g_INT_01d1ee8c
+    MOV EAX,[0x0061f2a4]                ; 0050a0de | g_CKeys_PTR_0061f2a4
+    PUSH EAX                            ; 0050a0e3 | g_PTR_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 0050a0e4 | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 0050a0e6
     ADD ESP,0x8                         ; 0050a0e9
     TEST EAX,EAX                        ; 0050a0ec
     JNZ 0x0050a1c7                      ; 0050a0ee
         ;   XREF to: 0050a1c7 (CONDITIONAL_JUMP)  ; LAB_0050a1c7
     PUSH 0x4d                           ; 0050a0f4
-    MOV EAX,[0x0061f2a4]                ; 0050a0f6 | DAT_0061f2a4
-    PUSH EAX                            ; 0050a0fb | DAT_01d1bca0
-    MOV EDX,dword ptr [EAX]             ; 0050a0fc | DAT_01d1bca0
+    MOV EAX,[0x0061f2a4]                ; 0050a0f6 | g_CKeys_PTR_0061f2a4
+    PUSH EAX                            ; 0050a0fb | g_PTR_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 0050a0fc | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 0050a0fe
     ADD ESP,0x8                         ; 0050a101
     TEST EAX,EAX                        ; 0050a104
@@ -337,9 +337,9 @@ section .text
         ;   XREF to: 0050a120 (CONDITIONAL_JUMP)  ; LAB_0050a120
     PUSH 0x1c                           ; 0050a108
         ;   Label: LAB_0050a108
-    MOV EAX,[0x0061f2a4]                ; 0050a10a | DAT_0061f2a4
-    PUSH EAX                            ; 0050a10f | DAT_01d1bca0
-    MOV EDX,dword ptr [EAX]             ; 0050a110 | DAT_01d1bca0
+    MOV EAX,[0x0061f2a4]                ; 0050a10a | g_CKeys_PTR_0061f2a4
+    PUSH EAX                            ; 0050a10f | g_PTR_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 0050a110 | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 0050a112
     ADD ESP,0x8                         ; 0050a115
     TEST EAX,EAX                        ; 0050a118
@@ -381,13 +381,13 @@ section .text
         ;   XREF to: 00509f20 (UNCONDITIONAL_JUMP)  ; LAB_00509f20
     PUSH 0x5e7a5c                       ; 0050a167 | = "Blair Witch Volume I: Rustin Parr  20..."
         ;   Label: LAB_0050a167
-    MOV EDI,dword ptr [0x0152d248]      ; 0050a16c | DAT_0152d248
+    MOV EDI,dword ptr [0x0152d248]      ; 0050a16c | g_CBitFont_PTR_0152d248
     PUSH EDI                            ; 0050a172
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 0050a173
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0050a178
     PUSH 0x5e7a5c                       ; 0050a17b | = "Blair Witch Volume I: Rustin Parr  20..."
-    MOV EBP,dword ptr [0x0152d248]      ; 0050a180 | DAT_0152d248
+    MOV EBP,dword ptr [0x0152d248]      ; 0050a180 | g_CBitFont_PTR_0152d248
     PUSH EBP                            ; 0050a186
     MOV EBX,EAX                         ; 0050a187
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50 ; 0050a189
@@ -402,7 +402,7 @@ section .text
     SUB EAX,EBX                         ; 0050a1a4
     PUSH EAX                            ; 0050a1a6
     PUSH 0x5e7a5c                       ; 0050a1a7 | = "Blair Witch Volume I: Rustin Parr  20..."
-    MOV EAX,[0x0152d248]                ; 0050a1ac | DAT_0152d248
+    MOV EAX,[0x0152d248]                ; 0050a1ac | g_CBitFont_PTR_0152d248
     PUSH EAX                            ; 0050a1b1
     JMP 0x00509fe6                      ; 0050a1b2
         ;   XREF to: 00509fe6 (UNCONDITIONAL_JUMP)  ; LAB_00509fe6
@@ -416,7 +416,7 @@ section .text
     MOV EDX,0x1                         ; 0050a1c7
         ;   Label: LAB_0050a1c7
     MOV EAX,dword ptr [ESP + 0x38]      ; 0050a1cc
-    MOV dword ptr [0x01d1ee8c],EDX      ; 0050a1d0 | DAT_01d1ee8c
+    MOV dword ptr [0x01d1ee8c],EDX      ; 0050a1d0 | g_INT_01d1ee8c
     MOV EAX,dword ptr [EAX]             ; 0050a1d6
     ADD ESP,0x1c                        ; 0050a1d8
     POP EBP                             ; 0050a1db

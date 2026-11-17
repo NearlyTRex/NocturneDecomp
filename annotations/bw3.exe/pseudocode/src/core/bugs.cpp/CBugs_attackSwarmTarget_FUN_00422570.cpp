@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(CBugs *this_ptr,float delta_time)
 
@@ -81,8 +80,8 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(CBugs *this_ptr,
     afStack_3c[2] = local_58;
     afStack_3c[3] = local_54;
     local_2c = local_50;
-    if ((((float)_DAT_005b7861 < ABS(local_54)) || ((float)_DAT_005b7861 < ABS(local_58))) ||
-       ((float)_DAT_005b7861 < ABS(local_50))) {
+    if ((((float)2 < ABS(local_54)) || ((float)2 < ABS(local_58)))
+       || ((float)2 < ABS(local_50))) {
       this_ptr_01 = (*((this_ptr->swarm_target->vtable)._ub)->getPathMap)(this_ptr->swarm_target);
       if (this_ptr_01 == (CPathMap *)0x0) {
         this_ptr_01 = core_path_cpp_getPathMap_FUN_0050ced0(&this_ptr->swarm_target->location);
@@ -93,7 +92,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(CBugs *this_ptr,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar4 != 0) {
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(&CStack_ec,&CStack_b8);
-        CStack_ac.z = _DAT_005dcbd4 * delta_time;
+        CStack_ac.z = 6.0f * delta_time;
         CStack_ac.x = 0.0;
         CStack_ac.y = 0.0;
         afStack_24[2] = CStack_ac.z;
@@ -176,10 +175,10 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(CBugs *this_ptr,
   afStack_c0[(uint)bVar9 * -2] = afStack_3c[(uint)bVar9 * -2];
   afStack_c0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
        afStack_3c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-  fStack_28 = fStack_c4 * _DAT_005b7869;
-  afStack_24[0] = afStack_c0[0] * _DAT_005b7869;
-  afStack_24[1] = afStack_c0[1] * _DAT_005b7869;
-  fStack_88 = fStack_c4 * _DAT_005b7869;
+  fStack_28 = fStack_c4 * 0.5f;
+  afStack_24[0] = afStack_c0[0] * 0.5f;
+  afStack_24[1] = afStack_c0[1] * 0.5f;
+  fStack_88 = fStack_c4 * 0.5f;
   afStack_84[(uint)bVar9 * -2] = afStack_24[(uint)bVar9 * -2];
   afStack_84[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
        afStack_24[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];

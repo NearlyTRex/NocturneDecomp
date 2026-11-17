@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 125,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 20,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 110,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 456
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 109,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 455
   },
   "cross_references": [
     {
@@ -55,8 +53,8 @@
   "globals": [
     {
       "addr": "005ebe55",
-      "name": "s_Bip01_L_Forearm_005ebe54+1",
-      "type": "undefined4",
+      "name": "s_Bip01_L_Forearm_005ebe55",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -139,39 +137,39 @@
     },
     {
       "addr": "005ebf35",
-      "name": "DAT_005ebf35",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ebf35",
+      "type": "double",
+      "value": "0.700000000000000"
     },
     {
       "addr": "005ebf3d",
-      "name": "DAT_005ebf3d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ebf3d",
+      "type": "double",
+      "value": "0.300000000000000"
     },
     {
       "addr": "005ebf45",
-      "name": "DAT_005ebf45",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ebf45",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005ebf4d",
-      "name": "DAT_005ebf4d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ebf4d",
+      "type": "double",
+      "value": "0.400000000000000"
     },
     {
       "addr": "005ebf55",
-      "name": "DAT_005ebf55",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ebf55",
+      "type": "double",
+      "value": "0.600000000000000"
     },
     {
       "addr": "005ebf5d",
-      "name": "DAT_005ebf5d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ebf5d",
+      "type": "double",
+      "value": "0.800000000000000"
     }
   ],
   "param_estimates": {
@@ -284,14 +282,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

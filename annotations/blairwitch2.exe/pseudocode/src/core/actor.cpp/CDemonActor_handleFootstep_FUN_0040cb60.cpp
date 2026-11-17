@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
 
 {
@@ -42,7 +40,7 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor 
   fVar1 = position->x - g_CDemonCameraInstance.base.position.f.x;
   fVar3 = position->y - g_CDemonCameraInstance.base.position.f.y;
   fVar2 = position->z - g_CDemonCameraInstance.base.position.f.z;
-  if (_DAT_005caf0e < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
+  if (10000.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
     return 0;
   }
   iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00538180(g_CDemonSetPtr,position);
@@ -50,7 +48,8 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor 
     ground_type = GROUND_TYPE_WATER;
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c840(this_ptr,"CHero");
     if (iVar4 != 0) {
-      core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,"FeetAreWet");
+      core_event_cpp_CEventList_executeCommands_FUN_004894f0
+                (g_CEventList_PTR_006141f0,"FeetAreWet");
     }
   }
   iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80
@@ -108,13 +107,13 @@ LAB_0040cc81:
         }
         iVar4 = iVar4 + 1;
         core_fire_cpp_CFireEffect_createLeaf_FUN_0049d600
-                  (0x01C3DEB4,position,aCStack_48,(CKeyFramedModel *)0x0,15.0);
+                  (g_CFireEffect_PTR_00614d30,position,aCStack_48,(CKeyFramedModel *)0x0,15.0);
       } while (iVar4 < this_ptr->footstep_particle_count);
     }
   }
   core_ground_cpp_getGroundTypeCode_FUN_004ca7c0(ground_type);
   _sprintf(acStack_d0,"footstep%s0?");
   uVar5 = core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                    (0x0264B290,this_ptr,acStack_d0,position);
+                    (g_CSound_PTR_0061c068,this_ptr,acStack_d0,position);
   return uVar5;
 }

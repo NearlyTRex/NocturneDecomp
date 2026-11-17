@@ -17,9 +17,9 @@
 ;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419280 at 004192e9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -71,17 +71,17 @@ section .text
     CMP EDI,0x1                         ; 00418eb2
     JZ 0x00418eca                       ; 00418eb5
         ;   XREF to: 00418eca (CONDITIONAL_JUMP)  ; LAB_00418eca
-    MOV EBP,dword ptr [0x00612560]      ; 00418eb7 | DAT_00612560
-    PUSH EBP                            ; 00418ebd | DAT_01bc120c
+    MOV EBP,dword ptr [0x00612560]      ; 00418eb7 | g_CDemonRenderer_PTR_00612560
+    PUSH EBP                            ; 00418ebd | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00418ebe
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00418ec3
     TEST EAX,EAX                        ; 00418ec6
     JZ 0x00418f2e                       ; 00418ec8
         ;   XREF to: 00418f2e (CONDITIONAL_JUMP)  ; LAB_00418f2e
-    MOV ECX,dword ptr [0x00612560]      ; 00418eca | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 00418eca | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_00418eca
-    PUSH ECX                            ; 00418ed0 | DAT_01bc120c
+    PUSH ECX                            ; 00418ed0 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00418ed1
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00418ed6
@@ -90,8 +90,8 @@ section .text
         ;   XREF to: 00418ef3 (CONDITIONAL_JUMP)  ; LAB_00418ef3
     LEA EAX,[ESI + 0x190]               ; 00418edd
     PUSH EAX                            ; 00418ee3
-    MOV EBX,dword ptr [0x00612560]      ; 00418ee4 | DAT_00612560
-    PUSH EBX                            ; 00418eea | DAT_01bc120c
+    MOV EBX,dword ptr [0x00612560]      ; 00418ee4 | g_CDemonRenderer_PTR_00612560
+    PUSH EBX                            ; 00418eea | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 00418eeb
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 00418ef0
@@ -102,15 +102,15 @@ section .text
     PUSH EBP                            ; 00418efe
     MOV EAX,dword ptr [ESI + 0x184]     ; 00418eff
     PUSH EAX                            ; 00418f05
-    MOV EDX,dword ptr [0x00612560]      ; 00418f06 | DAT_00612560
-    PUSH EDX                            ; 00418f0c | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 00418f06 | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 00418f0c | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004841a0 ; 00418f0d
         ;   XREF to: 004841a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004841a0(CDemonRenderer * this_ptr, SMRGLPrimitiveTriangle * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00418f12
     PUSH 0x1                            ; 00418f15
         ;   Label: LAB_00418f15
-    MOV EBX,dword ptr [0x00612560]      ; 00418f17 | DAT_00612560
-    PUSH EBX                            ; 00418f1d | DAT_01bc120c
+    MOV EBX,dword ptr [0x00612560]      ; 00418f17 | g_CDemonRenderer_PTR_00612560
+    PUSH EBX                            ; 00418f1d | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20 ; 00418f1e
         ;   XREF to: 00483e20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 00418f23
@@ -143,8 +143,8 @@ section .text
     IMUL EAX,EBX,0x18                   ; 00418f66
     ADD EAX,dword ptr [ESP]             ; 00418f69
     PUSH EAX                            ; 00418f6c
-    MOV ECX,dword ptr [0x00612560]      ; 00418f6d | DAT_00612560
-    PUSH ECX                            ; 00418f73 | DAT_01bc120c
+    MOV ECX,dword ptr [0x00612560]      ; 00418f6d | g_CDemonRenderer_PTR_00612560
+    PUSH ECX                            ; 00418f73 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 00418f74
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 00418f79
@@ -155,8 +155,8 @@ section .text
     PUSH ECX                            ; 00418f8a
     ADD EBX,EDI                         ; 00418f8b
     PUSH EBX                            ; 00418f8d
-    MOV EBX,dword ptr [0x00612560]      ; 00418f8e | DAT_00612560
-    PUSH EBX                            ; 00418f94 | DAT_01bc120c
+    MOV EBX,dword ptr [0x00612560]      ; 00418f8e | g_CDemonRenderer_PTR_00612560
+    PUSH EBX                            ; 00418f94 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210 ; 00418f95
         ;   XREF to: 00482210 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 00418f9a

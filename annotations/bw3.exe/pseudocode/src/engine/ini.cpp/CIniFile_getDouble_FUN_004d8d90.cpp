@@ -11,8 +11,8 @@ void __cdecl engine_ini_cpp_CIniFile_getDouble_FUN_004d8d90(CIniFile *this_ptr,c
 {
   char acStack_70 [100];
   
-  _sprintf(acStack_70,(char *)0x5c58c0);
+  _sprintf(acStack_70,"%lg");
   (**(code **)((int)this_ptr->vtable + 4))(this_ptr,key,acStack_70,100);
-  sscanf(acStack_70,(char *)0x5c58c4);
+  sscanf(acStack_70,"%lf");
   return;
 }

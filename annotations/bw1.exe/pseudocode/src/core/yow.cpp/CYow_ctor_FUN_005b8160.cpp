@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CYow * __cdecl core_yow_cpp_CYow_ctor_FUN_005b8160(CYow *this_ptr)
 
 {
@@ -19,9 +17,9 @@ CYow * __cdecl core_yow_cpp_CYow_ctor_FUN_005b8160(CYow *this_ptr)
   (pCVar3->base).base.base.vtable._ub = &g_CYowVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar3->base).base.model,"blackdog.dfm");
-  fVar1 = _DAT_00608210;
+  fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_height = 0.75;
-  fVar2 = _DAT_00608214;
+  fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
   pCVar3->sfx_handle = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

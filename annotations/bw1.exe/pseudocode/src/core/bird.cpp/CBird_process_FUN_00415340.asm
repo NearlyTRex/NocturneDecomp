@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_005d3cb5
 ;   TerminatedCString s_s_confused_while_walking_005d3cbb
-;   undefined4 DAT_005d3ce5
-;   undefined4 DAT_005d3ce9
+;   TerminatedCString s_FLY_005d3ce5
+;   TerminatedCString s_FLY_005d3ce9
 ;   TerminatedCString s_WPPerch_005d3ced
 ;   TerminatedCString s_LAND_TREE_005d3cf6
 ;   TerminatedCString s_LAND_GROUND_005d3d00
@@ -180,7 +180,7 @@ section .text
     JNZ 0x00415631                      ; 00415490
         ;   XREF to: 00415631 (CONDITIONAL_JUMP)  ; LAB_00415631
     PUSH EAX                            ; 00415496
-    PUSH 0x5d3ce9                       ; 00415497 | DAT_005d3ce9
+    PUSH 0x5d3ce9                       ; 00415497 | = "FLY"
     PUSH EDX                            ; 0041549c
         ;   Label: LAB_0041549c
     CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_00524850 ; 0041549d
@@ -316,7 +316,7 @@ section .text
         ;   XREF to: 004154a2 (UNCONDITIONAL_JUMP)  ; LAB_004154a2
     PUSH 0x1                            ; 00415604
         ;   Label: LAB_00415604
-    PUSH 0x5d3ce5                       ; 00415606 | DAT_005d3ce5
+    PUSH 0x5d3ce5                       ; 00415606 | = "FLY"
     JMP 0x0041549c                      ; 0041560b
         ;   XREF to: 0041549c (UNCONDITIONAL_JUMP)  ; LAB_0041549c
     PUSH 0x1                            ; 00415610

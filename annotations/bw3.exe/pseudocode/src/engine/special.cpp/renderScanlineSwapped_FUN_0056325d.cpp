@@ -6,20 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_0056325d(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
 
 {
-  uint in_EAX;
-  uint in_ECX;
-  uint in_EDX;
-  uint unaff_EBX;
+  int in_EAX;
+  int in_ECX;
+  int in_EDX;
+  int unaff_EBX;
   
-  _DAT_00604d34 = in_EAX;
-  _DAT_00604d38 = unaff_EBX;
-  _DAT_00604d3c = in_ECX;
-  _DAT_00604d40 = in_EDX;
-  (*_DAT_01c6b5cc)();
+  g_INT_00604d34 = in_EAX;
+  g_INT_00604d38 = unaff_EBX;
+  g_INT_00604d3c = in_ECX;
+  g_INT_00604d40 = in_EDX;
+  (*(code *)g_PTR_01c6b5cc)();
   return;
 }

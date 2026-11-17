@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
 
 {
@@ -95,7 +93,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
        afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   fVar3 = fStack_108;
   uVar1 = auStack_134._40_4_;
-  fStack_24 = (float)_DAT_005d739a / (this_ptr->base).bolt_velocity;
+  fStack_24 = (float)1.5 / (this_ptr->base).bolt_velocity;
   fStack_e8 = fStack_58 * fStack_24;
   afStack_e4[0] = afStack_54[0] * fStack_24;
   afStack_e4[1] = afStack_54[1] * fStack_24;
@@ -142,7 +140,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
       if (this_ptr_01 == (CGlass *)0x0) {
         if (this_ptr_02 == (CTrigger *)0x0) {
           core_fire_cpp_CFireEffect_createStake_FUN_004b5bc0
-                    (0x01C57074,&g_CDemonSetPtr->collision_impact_position,
+                    (g_CFireEffect_PTR_0061c010,&g_CDemonSetPtr->collision_impact_position,
                      &(this_ptr->base).base.orient.vec,&g_CDemonSetPtr->collision_normal,
                      g_CDemonSetPtr->ground_type);
           break;
@@ -191,7 +189,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
       afStack_98[(uint)bVar5 * -2] = *(float *)((int)&CStack_88 + (uint)bVar5 * -8 + 8);
       afStack_98[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            *(float *)((int)aCStack_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0xc);
-      fVar3 = (float)_DAT_005d73a2 /
+      fVar3 = (float)10 /
               SQRT(CStack_88.x * CStack_88.x +
                    afStack_98[2] * afStack_98[2] + afStack_98[3] * afStack_98[3]);
       fStack_cc = afStack_98[2] * fVar3;
@@ -233,7 +231,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
   } while (iStack_28 < 4);
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
-            (0x02C82A60,(CDemonActor *)this_ptr,"bow-!.wav",
+            (g_CSound_PTR_006236b8,(CDemonActor *)this_ptr,"bow-!.wav",
              (CVector3f *)(auStack_134 + 0x28));
   (this_ptr->base).fire_cooldown_timer = 0.666;
   return 1;

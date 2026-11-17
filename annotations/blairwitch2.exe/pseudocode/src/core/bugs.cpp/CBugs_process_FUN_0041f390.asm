@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0041f374 = 0041f3cb
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventList_PTR_006141f0 = 01c38bc0
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0
@@ -61,7 +61,7 @@ section .text
     LEA EAX,[EBX + 0x1e4dc]             ; 0041f3db
         ;   Label: LAB_0041f3db
     PUSH EAX                            ; 0041f3e1
-    MOV ECX,dword ptr [0x006141f0]      ; 0041f3e2 | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 0041f3e2 | g_CEventList_PTR_006141f0
     PUSH ECX                            ; 0041f3e8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0041f3e9
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -75,7 +75,7 @@ section .text
     LEA EAX,[EBX + 0x1e540]             ; 0041f401
         ;   Label: LAB_0041f401
     PUSH EAX                            ; 0041f407
-    MOV EDI,dword ptr [0x006141f0]      ; 0041f408 | DAT_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 0041f408 | g_CEventList_PTR_006141f0
     PUSH EDI                            ; 0041f40e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0041f40f
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

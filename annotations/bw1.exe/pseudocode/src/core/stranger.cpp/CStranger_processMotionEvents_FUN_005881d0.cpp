@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005881d0(CStranger *this_ptr,float delta_time)
 
 {
@@ -72,9 +70,9 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005881d0(CStran
         if (bone_index < 2) {
           if (bone_index == 1) {
 LAB_00588243:
-            iVar2 = _DAT_02c8361c;
+            iVar2 = g_INT_ARRAY_02c83600[7];
             if (bone_index == 7) {
-              iVar2 = _DAT_02c83620;
+              iVar2 = g_INT_ARRAY_02c83600[8];
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
                       (local_1c,iVar2,&local_50);
@@ -91,7 +89,7 @@ LAB_00588243:
                   local_18 = (UActorVTable)
                              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
                                        (&local_1c->base,4);
-                  if ((float)_DAT_005f6a29 < (float)local_18) {
+                  if ((float)0.40000000000000002 < (float)local_18) {
                     (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                               ((CDemonActor *)this_ptr,(CVector3f *)local_74,1.7);
                   }
@@ -99,11 +97,11 @@ LAB_00588243:
                     local_18 = (UActorVTable)
                                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
                                          (&this_ptr_01->base,1);
-                    if ((float)local_18 <= (float)_DAT_005f6a29) {
+                    if ((float)local_18 <= (float)0.40000000000000002) {
                       local_18 = (UActorVTable)
                                  core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
                                            (&this_ptr_01->base,2);
-                      if ((float)_DAT_005f6a29 < (float)local_18) {
+                      if ((float)0.40000000000000002 < (float)local_18) {
                         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                                   ((CDemonActor *)this_ptr,(CVector3f *)local_74,1.0);
                       }
@@ -205,7 +203,7 @@ LAB_0058833e:
           else {
             if (iVar2 == 6) goto LAB_0058833e;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
-                      (g_CEditorToolsPtr,"<actionPending = %d\nstranger.cpp line %d" + 1,iVar2,0x7c4);
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar2,0x7c4);
           }
           iVar2 = (this_ptr->base).base.layer_action_index;
           (this_ptr->base).target_actor = (CDemonActor *)0x0;
@@ -225,7 +223,7 @@ LAB_0058833e:
         local_20 = local_24;
         if (local_24 != (CCharacter *)0x0) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-                    (local_1c,_DAT_02c83630,&local_d4);
+                    (local_1c,g_INT_ARRAY_02c83600[0xc],&local_d4);
           pCVar9 = (CVector3f *)(auStack_88 + 8);
           auStack_88._8_4_ = local_d4.x;
           afStack_7c[(uint)bVar7 * -2] = *(float *)((int)&local_d4 + (uint)bVar7 * -8 + 4);
@@ -257,7 +255,7 @@ LAB_0058833e:
           (*(((local_24->base).vtable._uc)->_uc).processDamage)
                     (local_24,(SDamageInfo *)&stack0xfffffef0);
           if (0.0 < (double)fStack_104) {
-            dVar8 = round((double)fStack_104 * _DAT_005f6a21);
+            dVar8 = round((double)fStack_104 * 0.20000000000000001);
             iStack_14 = (int)ROUND(dVar8);
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060
                       (g_CGorePtr,(CVector3f *)(local_44 + 4),(CVector3f *)0x0,iStack_14 + 1,

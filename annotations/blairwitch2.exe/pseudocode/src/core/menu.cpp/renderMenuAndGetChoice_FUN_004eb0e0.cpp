@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)
 
 {
@@ -20,9 +18,9 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_a
   char *pcVar6;
   int local_14;
   
-  this_ptr = _DAT_01511cc0;
+  this_ptr = g_CBitFont_PTR_01511cc0;
   if (title != (char *)0x0) {
-    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cc0,title);
+    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(g_CBitFont_PTR_01511cc0,title);
     iVar4 = (0x280 - iVar4) / 2;
     engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr,title,iVar4 + 1,y_position + 1,2,0);
     engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr,title,iVar4,y_position,0xfa,0);
@@ -53,10 +51,11 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_a
     } while (iVar4 < menu_count);
   }
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
-  iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cc4,&DAT_005dcacd);
-  engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01511cc4,&DAT_005dcacd);
-  engine_font_cpp_CBitFont_drawText_FUN_004a8df0(_DAT_01511cc4,&DAT_005dcacd,0x280 - iVar4,0,0xfa,0)
-  ;
+  iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00
+                    (g_CBitFont_PTR_01511cc4,"1.2");
+  engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(g_CBitFont_PTR_01511cc4,"1.2");
+  engine_font_cpp_CBitFont_drawText_FUN_004a8df0
+            (g_CBitFont_PTR_01511cc4,"1.2",0x280 - iVar4,0,0xfa,0);
   engine_3d_c_setRenderAlpha_FUN_00406da0(0x8000);
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   pcVar6 = menu_text_array[*selected_index_ptr];
@@ -70,36 +69,36 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_a
   } while (*pcVar5 != '\0');
   pcVar5 = (char *)0x0;
 LAB_004eb260:
-  _DAT_01d06138 = 0;
-  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x48);
+  g_INT_01d06138 = 0;
+  iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD8);
   if (iVar4 != 0) {
     iVar4 = *selected_index_ptr;
-    _DAT_01d06138 = 1;
+    g_INT_01d06138 = 1;
     *selected_index_ptr = iVar4 + -1;
     if (iVar4 + -1 < 0) {
       *selected_index_ptr = menu_count + -1;
     }
   }
-  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x50);
+  iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD2);
   if (iVar4 != 0) {
     iVar4 = *selected_index_ptr;
-    _DAT_01d06138 = 1;
+    g_INT_01d06138 = 1;
     *selected_index_ptr = iVar4 + 1;
     if (menu_count <= iVar4 + 1) {
       *selected_index_ptr = 0;
     }
   }
   if (pcVar5 != (char *)0x0) {
-    _DAT_01d0612c = 0;
-    iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x4b);
+    g_INT_01d0612c = 0;
+    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD4);
     if (iVar4 != 0) {
-      _DAT_01d0612c = 1;
+      g_INT_01d0612c = 1;
       return *selected_index_ptr;
     }
-    iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x4d);
+    iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_NUMPAD6);
     if (iVar4 != 0) goto LAB_004eb328;
   }
-  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);
+  iVar4 = (*g_CKeys_PTR_00617dd4->vtable->getAndClearKeyState)(g_CKeys_PTR_00617dd4,DIK_RETURN);
   if (iVar4 == 0) {
     return -1;
   }

@@ -12,7 +12,7 @@
 ;   engine_texture.cpp_freeTextureCache_FUN_005979d0 at 005979f7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c8348c
+;   void* g_PTR_02c8348c
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -77,7 +77,7 @@ section .text
     PUSH EBX                            ; 00596641
     CALL crt_memory.c_memset_FUN_005bfb70 ; 00596642
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
-    MOV EBX,dword ptr [0x02c8348c]      ; 00596647 | DAT_02c8348c
+    MOV EBX,dword ptr [0x02c8348c]      ; 00596647 | g_PTR_02c8348c
     ADD ESP,0xc                         ; 0059664d
     MOV dword ptr [EBP],0x0             ; 00596650
     TEST EBX,EBX                        ; 00596657
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0x4                         ; 00596666
     JMP 0x00596600                      ; 00596669
         ;   XREF to: 00596600 (UNCONDITIONAL_JUMP)  ; LAB_00596600
-    CALL dword ptr [0x02c8348c]         ; 0059666b | DAT_02c8348c
+    CALL dword ptr [0x02c8348c]         ; 0059666b | g_PTR_02c8348c
         ;   Label: LAB_0059666b
     POP EBP                             ; 00596671
     POP EDI                             ; 00596672

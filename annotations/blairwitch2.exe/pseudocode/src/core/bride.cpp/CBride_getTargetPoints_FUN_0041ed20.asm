@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007bccdc
-;   undefined4 DAT_007bcd00
+;   int[11] g_INT_ARRAY_007bccdc
+;   undefined4 g_INT_ARRAY_007bccdc[9]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
@@ -33,7 +33,7 @@ section .text
     TEST EDX,EDX                        ; 0041ed44
     JZ 0x0041ed8c                       ; 0041ed46
         ;   XREF to: 0041ed8c (CONDITIONAL_JUMP)  ; LAB_0041ed8c
-    MOV ESI,dword ptr [0x007bccdc]      ; 0041ed48 | DAT_007bccdc
+    MOV ESI,dword ptr [0x007bccdc]      ; 0041ed48 | g_INT_ARRAY_007bccdc
     PUSH ESI                            ; 0041ed4e
     PUSH EAX                            ; 0041ed4f
     LEA ESI,[ESP + 0x2c]                ; 0041ed50
@@ -62,7 +62,7 @@ section .text
     POP ESI                             ; 0041ed89
     POP EBX                             ; 0041ed8a
     RET                                 ; 0041ed8b
-    MOV ECX,dword ptr [0x007bcd00]      ; 0041ed8c | DAT_007bcd00
+    MOV ECX,dword ptr [0x007bcd00]      ; 0041ed8c | g_INT_ARRAY_007bccdc[9]
         ;   Label: LAB_0041ed8c
     PUSH ECX                            ; 0041ed92
     PUSH EAX                            ; 0041ed93

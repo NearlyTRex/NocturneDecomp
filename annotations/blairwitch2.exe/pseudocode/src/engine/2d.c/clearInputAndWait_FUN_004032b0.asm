@@ -18,7 +18,7 @@
 ;   ... and 17 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37790
+;   char[4952] g_CHAR_ARRAY_01c37790
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_clearKeypresses_FUN_0058eab0
@@ -38,7 +38,7 @@ section .text
     INC EAX                             ; 004032bc
         ;   Label: LAB_004032bc
     XOR DL,DL                           ; 004032bd
-    MOV byte ptr [EAX + 0x1c3778f],DL   ; 004032bf | DAT_01c37790
+    MOV byte ptr [EAX + 0x1c3778f],DL   ; 004032bf | g_CHAR_ARRAY_01c37790
     CMP EAX,0x258                       ; 004032c5
     JL 0x004032bc                       ; 004032ca
         ;   XREF to: 004032bc (CONDITIONAL_JUMP)  ; LAB_004032bc
@@ -63,7 +63,7 @@ section .text
     INC EAX                             ; 004032f0
         ;   Label: LAB_004032f0
     XOR DH,DH                           ; 004032f1
-    MOV byte ptr [EAX + 0x1c3778f],DH   ; 004032f3 | DAT_01c37790
+    MOV byte ptr [EAX + 0x1c3778f],DH   ; 004032f3 | g_CHAR_ARRAY_01c37790
     CMP EAX,0x258                       ; 004032f9
     JL 0x004032f0                       ; 004032fe
         ;   XREF to: 004032f0 (CONDITIONAL_JUMP)  ; LAB_004032f0

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433b30(CCharacter *this_ptr)
 
 {
@@ -29,8 +27,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433b30(CCharacter *t
   bVar3 = 0;
   if (0.0 < this_ptr->look_at_weight) {
     if (this_ptr->look_at_head_bone < 0) {
-      _DAT_01d1d400 = "..\\core\\charactr.cpp";
-      _DAT_01d1d404 = 0x1036;
+      g_CHAR_PTR_01d1d400 = "..\\core\\charactr.cpp";
+      g_INT_01d1d404 = 0x1036;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CCharacter::applyLookAt - never set lookAtHeadBone for actor %s");
     }
     core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(this_ptr->look_at_pitch,&local_24);

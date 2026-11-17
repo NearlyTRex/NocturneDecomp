@@ -15,17 +15,17 @@
 ;   TerminatedCString s_WDDVMEM_Fatal_out_of_fra_005f948f
 ;   TerminatedCString s_wincore_wddvmem_cpp_005f94bb
 ;   TerminatedCString s_WDDVMEM_Fatal_out_of_Z_b_005f94d2
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_00629010
-;   undefined4 DAT_0071362c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c99300
-;   undefined4 DAT_02c99304
-;   undefined4 DAT_02c99308
-;   undefined4 DAT_02c9930c
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
+;   int g_INT_0061b4a0 = 0x8
+;   void* g_PTR_00629010
+;   void* g_PTR_0071362c
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   IDirectDraw* g_IDirectDraw_PTR_02c99300
+;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02c99304
+;   IDirectDrawSurface* g_IDirectDrawSurface_PTR_02c99308
+;   IUnknown* g_IUnknown_PTR_02c9930c
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -43,9 +43,9 @@ section .text
     PUSH ESI                            ; 005ac041
     PUSH EDI                            ; 005ac042
     PUSH EBP                            ; 005ac043
-    MOV ECX,dword ptr [0x0061b498]      ; 005ac044 | DAT_0061b498
-    IMUL ECX,dword ptr [0x0061b49c]     ; 005ac04a | DAT_0061b49c
-    MOV EAX,[0x0061b4a0]                ; 005ac051 | DAT_0061b4a0
+    MOV ECX,dword ptr [0x0061b498]      ; 005ac044 | g_INT_0061b498
+    IMUL ECX,dword ptr [0x0061b49c]     ; 005ac04a | g_INT_0061b49c
+    MOV EAX,[0x0061b4a0]                ; 005ac051 | g_INT_0061b4a0
     MOV EDX,EAX                         ; 005ac056
     SAR EDX,0x1f                        ; 005ac058
     SHL EDX,0x3                         ; 005ac05b
@@ -56,37 +56,37 @@ section .text
     CALL crt_memory.c_malloc_FUN_005c08d0 ; 005ac067
         ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005ac06c
-    MOV [0x00629010],EAX                ; 005ac06f | DAT_00629010
+    MOV [0x00629010],EAX                ; 005ac06f | g_PTR_00629010
     TEST EAX,EAX                        ; 005ac074
     JZ 0x005ac167                       ; 005ac076
         ;   XREF to: 005ac167 (CONDITIONAL_JUMP)  ; LAB_005ac167
-    MOV EAX,[0x0061b498]                ; 005ac07c | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 005ac07c | g_INT_0061b498
         ;   Label: LAB_005ac07c
-    IMUL EAX,dword ptr [0x0061b49c]     ; 005ac081 | DAT_0061b49c
+    IMUL EAX,dword ptr [0x0061b49c]     ; 005ac081 | g_INT_0061b49c
     SHL EAX,0x2                         ; 005ac088
     ADD EAX,0x40                        ; 005ac08b
     PUSH EAX                            ; 005ac08e
     CALL crt_memory.c_malloc_FUN_005c08d0 ; 005ac08f
         ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005ac094
-    MOV [0x02c99310],EAX                ; 005ac097 | DAT_02c99310
+    MOV [0x02c99310],EAX                ; 005ac097 | g_PTR_02c99310
     TEST EAX,EAX                        ; 005ac09c
     JNZ 0x005ac0c3                      ; 005ac09e
         ;   XREF to: 005ac0c3 (CONDITIONAL_JUMP)  ; LAB_005ac0c3
     MOV EDI,0x5f94bb                    ; 005ac0a0 | = "..\\wincore\\wddvmem.cpp"
     MOV EBP,0xf2                        ; 005ac0a5
     PUSH 0x5f94d2                       ; 005ac0aa | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 005ac0af | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 005ac0b5 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 005ac0af | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 005ac0b5 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ac0bb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ac0c0
-    MOV EAX,[0x02c99310]                ; 005ac0c3 | DAT_02c99310
+    MOV EAX,[0x02c99310]                ; 005ac0c3 | g_PTR_02c99310
         ;   Label: LAB_005ac0c3
     ADD EAX,0x10                        ; 005ac0c8
     AND AL,0xf0                         ; 005ac0cb
-    MOV [0x0071362c],EAX                ; 005ac0cd | DAT_0071362c
-    MOV EAX,[0x02c9930c]                ; 005ac0d2 | DAT_02c9930c
+    MOV [0x0071362c],EAX                ; 005ac0cd | g_PTR_0071362c
+    MOV EAX,[0x02c9930c]                ; 005ac0d2 | g_IUnknown_PTR_02c9930c
     TEST EAX,EAX                        ; 005ac0d7
     JZ 0x005ac0e9                       ; 005ac0d9
         ;   XREF to: 005ac0e9 (CONDITIONAL_JUMP)  ; LAB_005ac0e9
@@ -94,8 +94,8 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005ac0dc
     CALL dword ptr [EDX + 0x8]          ; 005ac0de
     XOR EDX,EDX                         ; 005ac0e1
-    MOV dword ptr [0x02c9930c],EDX      ; 005ac0e3 | DAT_02c9930c
-    MOV ECX,dword ptr [0x02c99308]      ; 005ac0e9 | DAT_02c99308
+    MOV dword ptr [0x02c9930c],EDX      ; 005ac0e3 | g_IUnknown_PTR_02c9930c
+    MOV ECX,dword ptr [0x02c99308]      ; 005ac0e9 | g_IDirectDrawSurface_PTR_02c99308
         ;   Label: LAB_005ac0e9
     TEST ECX,ECX                        ; 005ac0ef
     JZ 0x005ac101                       ; 005ac0f1
@@ -104,8 +104,8 @@ section .text
     MOV EDX,dword ptr [ECX]             ; 005ac0f4
     XOR EBX,EBX                         ; 005ac0f6
     CALL dword ptr [EDX + 0x8]          ; 005ac0f8
-    MOV dword ptr [0x02c99308],EBX      ; 005ac0fb | DAT_02c99308
-    MOV ESI,dword ptr [0x02c99304]      ; 005ac101 | DAT_02c99304
+    MOV dword ptr [0x02c99308],EBX      ; 005ac0fb | g_IDirectDrawSurface_PTR_02c99308
+    MOV ESI,dword ptr [0x02c99304]      ; 005ac101 | g_IDirectDrawSurface_PTR_02c99304
         ;   Label: LAB_005ac101
     TEST ESI,ESI                        ; 005ac107
     JZ 0x005ac119                       ; 005ac109
@@ -114,8 +114,8 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 005ac10c
     XOR EDI,EDI                         ; 005ac10e
     CALL dword ptr [EDX + 0x8]          ; 005ac110
-    MOV dword ptr [0x02c99304],EDI      ; 005ac113 | DAT_02c99304
-    MOV EBP,dword ptr [0x02c99300]      ; 005ac119 | DAT_02c99300
+    MOV dword ptr [0x02c99304],EDI      ; 005ac113 | g_IDirectDrawSurface_PTR_02c99304
+    MOV EBP,dword ptr [0x02c99300]      ; 005ac119 | g_IDirectDraw_PTR_02c99300
         ;   Label: LAB_005ac119
     TEST EBP,EBP                        ; 005ac11f
     JZ 0x005ac13c                       ; 005ac121
@@ -123,22 +123,22 @@ section .text
     PUSH EBP                            ; 005ac123
     MOV EDX,dword ptr [EBP]             ; 005ac124
     CALL dword ptr [EDX + 0x4c]         ; 005ac127
-    MOV EAX,[0x02c99300]                ; 005ac12a | DAT_02c99300
+    MOV EAX,[0x02c99300]                ; 005ac12a | g_IDirectDraw_PTR_02c99300
     PUSH EAX                            ; 005ac12f
     MOV EDX,dword ptr [EAX]             ; 005ac130
     CALL dword ptr [EDX + 0x8]          ; 005ac132
     XOR EAX,EAX                         ; 005ac135
-    MOV [0x02c99300],EAX                ; 005ac137 | DAT_02c99300
+    MOV [0x02c99300],EAX                ; 005ac137 | g_IDirectDraw_PTR_02c99300
     PUSH 0x0                            ; 005ac13c
         ;   Label: LAB_005ac13c
-    PUSH 0x2c99300                      ; 005ac13e | DAT_02c99300
+    PUSH 0x2c99300                      ; 005ac13e | g_IDirectDraw_PTR_02c99300
     PUSH 0x0                            ; 005ac143
     CALL crt_ddraw.c_DirectDrawCreate   ; 005ac145
         ;   XREF to: 005cf7ba (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 005ac14a
     JZ 0x005ac18f                       ; 005ac14c
         ;   XREF to: 005ac18f (CONDITIONAL_JUMP)  ; LAB_005ac18f
-    MOV EBX,dword ptr [0x02c9be68]      ; 005ac14e | DAT_02c9be68
+    MOV EBX,dword ptr [0x02c9be68]      ; 005ac14e | g_HWND_02c9be68
         ;   Label: LAB_005ac14e
     PUSH EBX                            ; 005ac154
     CALL engine_special.cpp_loadExternalRenderer_FUN_00581310 ; 005ac155
@@ -154,8 +154,8 @@ section .text
         ;   Label: LAB_005ac167
     MOV EBX,0xed                        ; 005ac16c
     PUSH 0x5f948f                       ; 005ac171 | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 005ac176 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 005ac17c | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 005ac176 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 005ac17c | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ac182
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ac187
@@ -163,8 +163,8 @@ section .text
         ;   XREF to: 005ac07c (UNCONDITIONAL_JUMP)  ; LAB_005ac07c
     PUSH 0x11                           ; 005ac18f
         ;   Label: LAB_005ac18f
-    MOV ECX,dword ptr [0x02c9be68]      ; 005ac191 | DAT_02c9be68
-    MOV EAX,[0x02c99300]                ; 005ac197 | DAT_02c99300
+    MOV ECX,dword ptr [0x02c9be68]      ; 005ac191 | g_HWND_02c9be68
+    MOV EAX,[0x02c99300]                ; 005ac197 | g_IDirectDraw_PTR_02c99300
     PUSH ECX                            ; 005ac19c
     MOV EDX,dword ptr [EAX]             ; 005ac19d
     PUSH EAX                            ; 005ac19f

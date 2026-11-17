@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004c6390(CGabriella *this_ptr)
 
 {
@@ -26,55 +24,58 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004c6390(CGabriella *this_pt
             (&this_ptr->coat_cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_00);
-  _DAT_01cc9108 =
+  g_INT_ARRAY_01cc9108[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 head",1);
-  _DAT_01cc910c =
+  g_INT_ARRAY_01cc9108[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Clavicle",1);
-  _DAT_01cc9110 =
+  g_INT_ARRAY_01cc9108[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Clavicle",1);
-  _DAT_01cc9114 =
+  g_INT_ARRAY_01cc9108[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01cc9118 =
+  g_INT_ARRAY_01cc9108[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01cc911c =
+  g_INT_ARRAY_01cc9108[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L ForeArm",1);
-  _DAT_01cc9120 =
+  g_INT_ARRAY_01cc9108[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_01cc9124 =
+  g_INT_ARRAY_01cc9108[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_01cc9128 =
+  g_INT_ARRAY_01cc9108[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Foot",1);
-  _DAT_01cc912c =
+  g_INT_ARRAY_01cc9108[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Thigh",1);
-  _DAT_01cc9130 =
+  g_INT_ARRAY_01cc9108[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Thigh",1);
-  _DAT_01cc9134 =
+  g_INT_ARRAY_01cc9108[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Calf",1);
-  _DAT_01cc9138 =
+  g_INT_ARRAY_01cc9108[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Calf",1);
-  _DAT_01cc9148 =
+  g_INT_ARRAY_01cc9108[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_01cc914c =
+  g_INT_ARRAY_01cc9108[0x11] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_01cc9150 =
+  g_INT_ARRAY_01cc9108[0x12] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine2",1);
-  _DAT_01cc9154 =
+  g_INT_ARRAY_01cc9108[0x13] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine",1);
   iVar3 = 1;
   pcVar2 = "gab draw";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
-  _DAT_01cc913c = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar2,iVar3);
+  g_INT_ARRAY_01cc9108[0xd] =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab shoot";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
-  _DAT_01cc9144 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar2,iVar3);
+  g_INT_ARRAY_01cc9108[0xf] =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab crossbow shoot";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
-  _DAT_01cc9140 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar2,iVar3);
+  g_INT_ARRAY_01cc9108[0xe] =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar2,iVar3);
   (this_ptr->base).pushed_object = (CBoxActor *)0x0;
   (this_ptr->base).lever_to_pull = (CLever *)0x0;
   (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01cc9148;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_ARRAY_01cc9108[0x10];
   return;
 }

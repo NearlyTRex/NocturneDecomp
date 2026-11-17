@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_SolvedChemistryPuzzle_005b69ee
 ;   TerminatedCString s_FailedChemistryPuzzle_005b6a04
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_00600284
-;   undefined4 DAT_01c5fadc
-;   undefined4 DAT_01c5fae0
-;   undefined4 DAT_01c5fae4
-;   undefined4 DAT_01d70a78
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
+;   CKeys* g_CKeys_PTR_00600284 = 01d70a78
+;   int g_INT_01c5fadc
+;   int g_INT_01c5fae0
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4
+;   void* g_PTR_01d70a78
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0
@@ -297,22 +297,22 @@ section .text
     RET                                 ; 00414172
     PUSH 0x5b69ee                       ; 00414173 | = "SolvedChemistryPuzzle"
         ;   Label: LAB_00414173
-    MOV ESI,dword ptr [0x005fba60]      ; 00414178 | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 00414178 | g_CEventList_PTR_005fba60
     PUSH ESI                            ; 0041417e
     MOV dword ptr [EBX + 0x930],0xffffffff ; 0041417f
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00414189
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0041418e
-    MOV EAX,[0x00600284]                ; 00414191 | DAT_00600284
+    MOV EAX,[0x00600284]                ; 00414191 | g_CKeys_PTR_00600284
     PUSH 0x200                          ; 00414196
-    MOV EDX,dword ptr [EAX]             ; 0041419b | DAT_01d70a78
-    PUSH EAX                            ; 0041419d | DAT_01d70a78
+    MOV EDX,dword ptr [EAX]             ; 0041419b | g_PTR_01d70a78
+    PUSH EAX                            ; 0041419d | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 0041419e
     ADD ESP,0x8                         ; 004141a1
     XOR EDI,EDI                         ; 004141a4
     PUSH EDI                            ; 004141a6
     PUSH EBX                            ; 004141a7
-    MOV dword ptr [0x01c5fae4],EDI      ; 004141a8 | DAT_01c5fae4
+    MOV dword ptr [0x01c5fae4],EDI      ; 004141a8 | g_BIT_INTEGER32_01c5fae4
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 ; 004141ae
         ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004141b3
@@ -321,10 +321,10 @@ section .text
     POP ESI                             ; 004141b8
     POP EBX                             ; 004141b9
     RET                                 ; 004141ba
-    MOV EBP,dword ptr [0x01c5fae0]      ; 004141bb | DAT_01c5fae0
+    MOV EBP,dword ptr [0x01c5fae0]      ; 004141bb | g_INT_01c5fae0
         ;   Label: LAB_004141bb
     PUSH EBP                            ; 004141c1
-    MOV EDX,dword ptr [0x01c5fadc]      ; 004141c2 | DAT_01c5fadc
+    MOV EDX,dword ptr [0x01c5fadc]      ; 004141c2 | g_INT_01c5fadc
     PUSH EDX                            ; 004141c8
     MOV EAX,dword ptr [EBX]             ; 004141c9
     PUSH EBX                            ; 004141cb
@@ -342,22 +342,22 @@ section .text
     JNZ 0x00414202                      ; 004141ec
         ;   XREF to: 00414202 (CONDITIONAL_JUMP)  ; LAB_00414202
     PUSH 0x5b6a04                       ; 004141ee | = "FailedChemistryPuzzle"
-    MOV EBP,dword ptr [0x005fba60]      ; 004141f3 | DAT_005fba60
+    MOV EBP,dword ptr [0x005fba60]      ; 004141f3 | g_CEventList_PTR_005fba60
     PUSH EBP                            ; 004141f9
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004141fa
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004141ff
     PUSH 0x200                          ; 00414202
         ;   Label: LAB_00414202
-    MOV EAX,[0x00600284]                ; 00414207 | DAT_00600284
-    PUSH EAX                            ; 0041420c | DAT_01d70a78
-    MOV EDX,dword ptr [EAX]             ; 0041420d | DAT_01d70a78
+    MOV EAX,[0x00600284]                ; 00414207 | g_CKeys_PTR_00600284
+    PUSH EAX                            ; 0041420c | g_PTR_01d70a78
+    MOV EDX,dword ptr [EAX]             ; 0041420d | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 0041420f
     ADD ESP,0x8                         ; 00414212
     XOR EAX,EAX                         ; 00414215
     PUSH EAX                            ; 00414217
     PUSH EBX                            ; 00414218
-    MOV [0x01c5fae4],EAX                ; 00414219 | DAT_01c5fae4
+    MOV [0x01c5fae4],EAX                ; 00414219 | g_BIT_INTEGER32_01c5fae4
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 ; 0041421e
         ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 00414223
@@ -375,10 +375,10 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0041423f
     CALL dword ptr [EAX + 0x8]          ; 00414241
     ADD ESP,0x4                         ; 00414244
-    MOV EAX,[0x00600284]                ; 00414247 | DAT_00600284
+    MOV EAX,[0x00600284]                ; 00414247 | g_CKeys_PTR_00600284
     PUSH 0x200                          ; 0041424c
-    MOV EDX,dword ptr [EAX]             ; 00414251 | DAT_01d70a78
-    PUSH EAX                            ; 00414253 | DAT_01d70a78
+    MOV EDX,dword ptr [EAX]             ; 00414251 | g_PTR_01d70a78
+    PUSH EAX                            ; 00414253 | g_PTR_01d70a78
     CALL dword ptr [EDX + 0x4]          ; 00414254
     ADD ESP,0x8                         ; 00414257
     MOV dword ptr [EBX + 0x930],0xffffffff ; 0041425a

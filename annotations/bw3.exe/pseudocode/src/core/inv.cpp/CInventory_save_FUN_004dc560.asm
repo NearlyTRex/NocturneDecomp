@@ -27,7 +27,7 @@
 ;   TerminatedCString s_s_actor_name_list_005c644a
 ;   TerminatedCString s_s_actor_data_list_005c6460
 ;   TerminatedCString s_s_End_inventory_005c6476
-;   undefined1 DAT_005f0990
+;   char[104] g_CHAR_ARRAY_005f0990
 ;
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040afa0
@@ -47,11 +47,11 @@ section .text
     SUB ESP,0x8                         ; 004dc564
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004dc567
     MOV EBP,dword ptr [ESP + 0x20]      ; 004dc56b
-    MOV EDX,0x5f0990                    ; 004dc56f | DAT_005f0990
-    PUSH EDX                            ; 004dc574 | DAT_005f0990
+    MOV EDX,0x5f0990                    ; 004dc56f | g_CHAR_ARRAY_005f0990
+    PUSH EDX                            ; 004dc574 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c63d3                       ; 004dc575 | = "%s{ // Inventory\n"
     PUSH EBP                            ; 004dc57a
-    MOV dword ptr [ESP + 0x10],EDX      ; 004dc57b | DAT_005f0990
+    MOV dword ptr [ESP + 0x10],EDX      ; 004dc57b | g_CHAR_ARRAY_005f0990
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc57f
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004dc584
@@ -59,7 +59,7 @@ section .text
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040afa0 ; 004dc589
         ;   XREF to: 0040afa0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040afa0(int indent_delta)
     ADD ESP,0x4                         ; 004dc58e
-    PUSH 0x5f0990                       ; 004dc591 | DAT_005f0990
+    PUSH 0x5f0990                       ; 004dc591 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c63e5                       ; 004dc596 | = "%s// fileVersion\n"
     PUSH EBP                            ; 004dc59b
     MOV dword ptr [EBX + 0x334],0x2     ; 004dc59c
@@ -68,13 +68,13 @@ section .text
     ADD ESP,0xc                         ; 004dc5ab
     MOV ECX,dword ptr [EBX + 0x334]     ; 004dc5ae
     PUSH ECX                            ; 004dc5b4
-    PUSH 0x5f0990                       ; 004dc5b5 | DAT_005f0990
+    PUSH 0x5f0990                       ; 004dc5b5 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c63f7                       ; 004dc5ba | = "%s%d\n"
     PUSH EBP                            ; 004dc5bf
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc5c0
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004dc5c5
-    PUSH 0x5f0990                       ; 004dc5c8 | DAT_005f0990
+    PUSH 0x5f0990                       ; 004dc5c8 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c63fd                       ; 004dc5cd | = "%s// itemCount\n"
     PUSH EBP                            ; 004dc5d2
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc5d3
@@ -82,7 +82,7 @@ section .text
     ADD ESP,0xc                         ; 004dc5d8
     MOV ESI,dword ptr [EBX + 0x10]      ; 004dc5db
     PUSH ESI                            ; 004dc5de
-    PUSH 0x5f0990                       ; 004dc5df | DAT_005f0990
+    PUSH 0x5f0990                       ; 004dc5df | g_CHAR_ARRAY_005f0990
     PUSH 0x5c640d                       ; 004dc5e4 | = "%s%d\n"
     PUSH EBP                            ; 004dc5e9
     MOV EDI,0xffffffff                  ; 004dc5ea
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004dc614
     MOV ECX,dword ptr [ESP + 0x4]       ; 004dc617
         ;   Label: LAB_004dc617
-    PUSH ECX                            ; 004dc61b | DAT_005f0990
+    PUSH ECX                            ; 004dc61b | g_CHAR_ARRAY_005f0990
     PUSH 0x5c6413                       ; 004dc61c | = "%s// currentWeapon\n"
     PUSH EBP                            ; 004dc621
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc622
@@ -113,13 +113,13 @@ section .text
     MOV ESI,dword ptr [ESP]             ; 004dc62a
     PUSH ESI                            ; 004dc62d
     MOV EDI,dword ptr [ESP + 0x8]       ; 004dc62e
-    PUSH EDI                            ; 004dc632 | DAT_005f0990
+    PUSH EDI                            ; 004dc632 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c6427                       ; 004dc633 | = "%s%d\n"
     PUSH EBP                            ; 004dc638
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc639
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004dc63e
-    PUSH EDI                            ; 004dc641 | DAT_005f0990
+    PUSH EDI                            ; 004dc641 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c642d                       ; 004dc642 | = "%s// battery strength\n"
     PUSH EBP                            ; 004dc647
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc648
@@ -128,13 +128,13 @@ section .text
     SUB ESP,0x8                         ; 004dc650
     FLD float ptr [EBX]                 ; 004dc653
     FSTP double ptr [ESP]               ; 004dc655
-    PUSH EDI                            ; 004dc658 | DAT_005f0990
+    PUSH EDI                            ; 004dc658 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c6444                       ; 004dc659 | = "%s%f\n"
     PUSH EBP                            ; 004dc65e
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc65f
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004dc664
-    PUSH EDI                            ; 004dc667 | DAT_005f0990
+    PUSH EDI                            ; 004dc667 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c644a                       ; 004dc668 | = "%s// actor name list\n"
     PUSH EBP                            ; 004dc66d
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc66e
@@ -145,7 +145,7 @@ section .text
     CALL core_inv.cpp_CInventory_saveItems_FUN_004dc700 ; 004dc678
         ;   XREF to: 004dc700 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_saveItems_FUN_004dc700(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004dc67d
-    PUSH EDI                            ; 004dc680 | DAT_005f0990
+    PUSH EDI                            ; 004dc680 | g_CHAR_ARRAY_005f0990
     PUSH 0x5c6460                       ; 004dc681 | = "%s// actor data list\n"
     PUSH EBP                            ; 004dc686
     XOR EDI,EDI                         ; 004dc687
@@ -179,7 +179,7 @@ section .text
         ;   XREF to: 0040afa0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040afa0(int indent_delta)
     ADD ESP,0x4                         ; 004dc6c7
     MOV EBX,dword ptr [ESP + 0x4]       ; 004dc6ca
-    PUSH EBX                            ; 004dc6ce | DAT_005f0990
+    PUSH EBX                            ; 004dc6ce | g_CHAR_ARRAY_005f0990
     PUSH 0x5c6476                       ; 004dc6cf | = "%s} // End inventory\n"
     PUSH EBP                            ; 004dc6d4
     CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc6d5

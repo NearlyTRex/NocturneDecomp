@@ -16,8 +16,8 @@
 ;   undefined4 s_one_005e9c67+1
 ;   undefined4 s_ne_005e9c67+2
 ;   undefined4 s_e_005e9c67+3
-;   undefined4 DAT_00603d60
-;   undefined4 DAT_00603d64
+;   float g_FLOAT_00603d60 = 50
+;   float g_FLOAT_00603d64 = 100
 ;   CMobster_full_vtable g_CMobsterVTable
 ;
 ; Called Functions:
@@ -45,10 +45,10 @@ section .text
     MOV dword ptr [EAX + -0x4],0x603d74 ; 0051c7ed | g_CMobsterVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 0051c7f4
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x00603d60]          ; 0051c7f9 | DAT_00603d60
+    FLD float ptr [0x00603d60]          ; 0051c7f9 | g_FLOAT_00603d60
     ADD ESP,0x8                         ; 0051c7ff
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 0051c802
-    FLD float ptr [0x00603d64]          ; 0051c80c | DAT_00603d64
+    FLD float ptr [0x00603d64]          ; 0051c80c | g_FLOAT_00603d64
     MOV dword ptr [EBX + 0x2ff0],0x3f666666 ; 0051c812
     PUSH 0xff                           ; 0051c81c
     FXCH                                ; 0051c821

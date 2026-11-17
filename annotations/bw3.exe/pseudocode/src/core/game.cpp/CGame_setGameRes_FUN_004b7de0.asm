@@ -12,14 +12,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005c25a8
 ;   TerminatedCString s_CGame_setGameRes_Unable_005c25b9
-;   undefined4 DAT_005fba1c
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01549ab4
-;   undefined4 DAT_01c5b0e0
-;   undefined4 DAT_01d22c3c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d74020
+;   int g_INT_005fba1c = 0xc8
+;   int g_INT_005fba20 = 0x8
+;   CBitFont* g_CBitFont_PTR_01549ab4
+;   CBitFont* g_CBitFont_PTR_01c5b0e0
+;   int g_INT_01d22c3c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01d74020
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00448d70
@@ -38,11 +38,11 @@ section .text
     PUSH EDI                            ; 004b7de2
     PUSH EBP                            ; 004b7de3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004b7de4
-    MOV EDX,dword ptr [0x01d74020]      ; 004b7de8 | DAT_01d74020
+    MOV EDX,dword ptr [0x01d74020]      ; 004b7de8 | g_INT_01d74020
     TEST EDX,EDX                        ; 004b7dee
     JNZ 0x004b7eaf                      ; 004b7df0
         ;   XREF to: 004b7eaf (CONDITIONAL_JUMP)  ; LAB_004b7eaf
-    MOV EAX,[0x005fba1c]                ; 004b7df6 | DAT_005fba1c
+    MOV EAX,[0x005fba1c]                ; 004b7df6 | g_INT_005fba1c
         ;   Label: LAB_004b7df6
     CMP EAX,dword ptr [EBX + 0x4]       ; 004b7dfb
     JZ 0x004b7ebd                       ; 004b7dfe
@@ -83,29 +83,29 @@ section .text
     MOV EBP,0x5c25a8                    ; 004b7e4a | = "..\\core\\game.cpp"
     MOV EAX,0x526                       ; 004b7e4f
     PUSH 0x5c25b9                       ; 004b7e54 | = "CGame::setGameRes - Unable to set the..."
-    MOV dword ptr [0x01d71de0],EBP      ; 004b7e59 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004b7e5f | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004b7e59 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004b7e5f | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004b7e64
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 004b7e69
     CALL engine_2d.c_resetGraphicsSystem_FUN_00402ac0 ; 004b7e6c
         ;   XREF to: 00402ac0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00402ac0()
         ;   Label: LAB_004b7e6c
-    MOV EDI,dword ptr [0x005fba1c]      ; 004b7e71 | DAT_005fba1c
+    MOV EDI,dword ptr [0x005fba1c]      ; 004b7e71 | g_INT_005fba1c
     PUSH EDI                            ; 004b7e77
     PUSH 0x2038f4c                      ; 004b7e78
     CALL core_dcamera.cpp_CDemonCamera_init_FUN_00448d70 ; 004b7e7d
         ;   XREF to: 00448d70 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_00448d70(CDemonCamera * this_ptr, int screen_height)
-    MOV EBP,dword ptr [0x005fba1c]      ; 004b7e82 | DAT_005fba1c
+    MOV EBP,dword ptr [0x005fba1c]      ; 004b7e82 | g_INT_005fba1c
     ADD ESP,0x8                         ; 004b7e88
     CMP EBP,0x180                       ; 004b7e8b
     JL 0x004b7ece                       ; 004b7e91
         ;   XREF to: 004b7ece (CONDITIONAL_JUMP)  ; LAB_004b7ece
-    CMP dword ptr [0x005fba1c],0x1e0    ; 004b7e93 | DAT_005fba1c
+    CMP dword ptr [0x005fba1c],0x1e0    ; 004b7e93 | g_INT_005fba1c
         ;   Label: LAB_004b7e93
     SETNZ AL                            ; 004b7e9d
     AND EAX,0xff                        ; 004b7ea0
-    MOV [0x01d22c3c],EAX                ; 004b7ea5 | DAT_01d22c3c
+    MOV [0x01d22c3c],EAX                ; 004b7ea5 | g_INT_01d22c3c
     POP EBP                             ; 004b7eaa
     POP EDI                             ; 004b7eab
     POP ESI                             ; 004b7eac
@@ -118,16 +118,16 @@ section .text
     ADD ESP,0x4                         ; 004b7eb5
     JMP 0x004b7df6                      ; 004b7eb8
         ;   XREF to: 004b7df6 (UNCONDITIONAL_JUMP)  ; LAB_004b7df6
-    MOV EDI,dword ptr [0x005fba20]      ; 004b7ebd | DAT_005fba20
+    MOV EDI,dword ptr [0x005fba20]      ; 004b7ebd | g_INT_005fba20
         ;   Label: LAB_004b7ebd
     CMP EDI,dword ptr [EBX + 0x8]       ; 004b7ec3
     JNZ 0x004b7e04                      ; 004b7ec6
         ;   XREF to: 004b7e04 (CONDITIONAL_JUMP)  ; LAB_004b7e04
     JMP 0x004b7e6c                      ; 004b7ecc
         ;   XREF to: 004b7e6c (UNCONDITIONAL_JUMP)  ; LAB_004b7e6c
-    MOV EAX,[0x01549ab4]                ; 004b7ece | DAT_01549ab4
+    MOV EAX,[0x01549ab4]                ; 004b7ece | g_CBitFont_PTR_01549ab4
         ;   Label: LAB_004b7ece
-    MOV [0x01c5b0e0],EAX                ; 004b7ed3 | DAT_01c5b0e0
+    MOV [0x01c5b0e0],EAX                ; 004b7ed3 | g_CBitFont_PTR_01c5b0e0
     JMP 0x004b7e93                      ; 004b7ed8
         ;   XREF to: 004b7e93 (UNCONDITIONAL_JUMP)  ; LAB_004b7e93
 

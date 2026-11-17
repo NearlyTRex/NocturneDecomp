@@ -29,7 +29,7 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info)
   
   bVar1 = false;
   if ((*filename == '\0') ||
-     (iVar3 = FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {
+     (iVar3 = FUN_005cc170(filename,"*?"), iVar3 != 0)) {
     setErrno(1);
     iVar3 = -1;
   }
@@ -37,7 +37,7 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info)
     FUN_005c91d0((char *)abStack_124,0x104);
     pcVar4 = _fullpath(&cStack_228,filename,0x104);
     if ((pcVar4 != (char *)0x0) &&
-       ((((((&DAT_00626114)[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&
+       (((((g_UCHAR_ARRAY_00626114[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&
          (cStack_226 == '\\')) && (cStack_225 == '\0')))) {
       bVar1 = true;
     }

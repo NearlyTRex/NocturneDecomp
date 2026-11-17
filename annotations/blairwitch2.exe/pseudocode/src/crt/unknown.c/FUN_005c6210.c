@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005c6210(CHAR *param_1)
 
 {
@@ -88,7 +86,7 @@ uint FUN_005c6210(CHAR *param_1)
       return 0xffffffff;
     }
     uVar2 = 0;
-    if (_DAT_026807e8 != 0) {
+    if (g_INT_026807e8 != 0) {
       iVar5 = FUN_005c68e0(param_1);
       ptr = malloc((iVar5 + 1) * 2);
       if (ptr == (void *)0x0) {

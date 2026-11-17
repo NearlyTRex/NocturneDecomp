@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004fd810(CMP3Decoder *this_ptr,uint num_bits)
 
 {
@@ -25,8 +23,8 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004fd810(CMP3Decoder *this_p
       uVar2 = (this_ptr->memory_bitstream).current_dword_index + 1;
       (this_ptr->memory_bitstream).current_dword_index = uVar2;
       if ((this_ptr->memory_bitstream).buffer_size_limit < uVar2) {
-        _DAT_01d71de0 = "..\\sound\\mp3.cpp";
-        _DAT_01d71de4 = 0x30a;
+        g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
+        g_INT_01d71de4 = 0x30a;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Buffer overflow!!  File: %s");
       }
     }
@@ -40,8 +38,7 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004fd810(CMP3Decoder *this_p
     local_14 = (byte)uVar2;
     uVar3 = uVar3 | (((this_ptr->memory_bitstream).frame_buffer
                       [(this_ptr->memory_bitstream).current_dword_index & 0xfff] &
-                     *(uint *)(&DAT_00601580 + uVar1 * 4)) >> (local_14 & 0x1f)) <<
-                    ((byte)num_bits & 0x1f);
+                     g_UINT_ARRAY_00601580[uVar1]) >> (local_14 & 0x1f)) << ((byte)num_bits & 0x1f);
     (this_ptr->memory_bitstream).bits_available = uVar2;
   }
   return uVar3;

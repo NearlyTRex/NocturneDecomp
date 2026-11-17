@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
 
@@ -31,64 +30,66 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004d26b0(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
-  _DAT_01ed36dc =
+  g_INT_01ed36dc =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 head",1);
-  _DAT_01ed36e0 =
+  g_INT_01ed36e0 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Clavicle",1);
-  _DAT_01ed36e4 =
+  g_INT_01ed36e4 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Clavicle",1);
-  _DAT_01ed36e8 =
+  g_INT_01ed36e8 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01ed36ec =
+  g_INT_ARRAY_01ed36ec[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01ed36f0 =
+  g_INT_ARRAY_01ed36ec[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L ForeArm",1);
-  _DAT_01ed36f4 =
+  g_INT_ARRAY_01ed36ec[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_01ed36f8 =
+  g_INT_ARRAY_01ed36ec[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_01ed36fc =
+  g_INT_ARRAY_01ed36ec[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Foot",1);
-  _DAT_01ed3700 =
+  g_INT_ARRAY_01ed36ec[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Thigh",1);
-  _DAT_01ed3704 =
+  g_INT_ARRAY_01ed36ec[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Thigh",1);
-  _DAT_01ed3708 =
+  g_INT_ARRAY_01ed36ec[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Calf",1);
-  _DAT_01ed370c =
+  g_INT_ARRAY_01ed36ec[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Calf",1);
-  _DAT_01ed3710 =
+  g_INT_ARRAY_01ed36ec[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_01ed3714 =
+  g_INT_ARRAY_01ed36ec[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_01ed3718 =
+  g_INT_ARRAY_01ed36ec[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Neck",1);
-  _DAT_01ed371c =
+  g_INT_ARRAY_01ed36ec[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
-  _DAT_01ed3720 =
+  g_INT_ARRAY_01ed36ec[0xd] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine1",1);
-  _DAT_01ed3724 =
+  g_INT_ARRAY_01ed36ec[0xe] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
-  _DAT_01ed3728 =
+  g_INT_ARRAY_01ed36ec[0xf] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Pelvis",1);
-  _DAT_01ed372c =
+  g_INT_ARRAY_01ed36ec[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Finger1",1);
-  _DAT_01ed3730 =
+  g_INT_ARRAY_01ed36ec[0x11] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Finger11",1);
-  _DAT_01ed3734 =
+  g_INT_ARRAY_01ed36ec[0x12] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Finger1",1);
-  _DAT_01ed3738 =
+  g_INT_ARRAY_01ed36ec[0x13] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Finger11",1);
   iVar4 = 1;
   pcVar3 = "turnlstart";
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01ed3710;
-  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_01ed3714;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_ARRAY_01ed36ec[9];
+  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_ARRAY_01ed36ec[10];
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&this_ptr_00->base);
-  _DAT_01ed373c = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(pCVar1,pcVar3,iVar4);
+  g_INT_ARRAY_01ed36ec[0x14] =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "turnrstart";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&this_ptr_00->base);
-  _DAT_01ed3740 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(pCVar1,pcVar3,iVar4);
+  g_INT_ARRAY_01ed36ec[0x15] =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "pickup";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&this_ptr_00->base);
@@ -96,7 +97,7 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0054c180
             (this_ptr_00,iVar4,22.0);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-            (this_ptr_00,_DAT_01ed3714,&CStack_34);
+            (this_ptr_00,g_INT_ARRAY_01ed36ec[10],&CStack_34);
   fStack_28 = CStack_34.x;
   afStack_24[(uint)bVar2 * -2] = *(float *)((int)&CStack_34 + (uint)bVar2 * -8 + 4);
   afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
@@ -107,7 +108,7 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
     (this_ptr->ref_r_hand_bone_pos).z = afStack_24[1];
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
-            (&(this_ptr->base).base.model,_DAT_01ed36ec,&CStack_1c);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_01ed36ec[0],&CStack_1c);
   fStack_40 = CStack_1c.x;
   (&stack0xffffffc4)[(uint)bVar2 * 0xfffffffe] =
        (float)*(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + 4);
@@ -128,7 +129,7 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
   this_ptr->goggle_sfx_handles[1] = 0;
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(&(this_ptr->base).base.model);
   this_ptr->quick_turn_active = 0;
-  _DAT_01ed3744 = 0;
+  g_INT_ARRAY_01ed36ec[0x16] = 0;
   this_ptr->quick_turn_angle = 0.0;
   sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-pain1.wav");
   sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-pain2.wav");

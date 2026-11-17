@@ -13,8 +13,8 @@
 ;   core_platfrm.cpp_CPlatform_process_FUN_00539810 at 0053a127
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ed61b
-;   undefined4 DAT_005ed623
+;   double g_DOUBLE_005ed61b = 0.0100000000000000
+;   float g_FLOAT_005ed623 = -1
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
@@ -82,14 +82,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa0]      ; 0053ab81
     MOV dword ptr [EBX + 0x38],EAX      ; 0053ab88
     ADD ESP,0x4                         ; 0053ab8b
-    FCOMP double ptr [0x005ed61b]       ; 0053ab8e | DAT_005ed61b
+    FCOMP double ptr [0x005ed61b]       ; 0053ab8e | g_DOUBLE_005ed61b
     FNSTSW AX                           ; 0053ab94
     SAHF                                ; 0053ab96
     JA 0x0053ab18                       ; 0053ab97
         ;   XREF to: 0053ab18 (CONDITIONAL_JUMP)  ; LAB_0053ab18
     FLD float ptr [EBX + 0x38]          ; 0053ab9d
     FABS                                ; 0053aba0
-    FCOMP double ptr [0x005ed61b]       ; 0053aba2 | DAT_005ed61b
+    FCOMP double ptr [0x005ed61b]       ; 0053aba2 | g_DOUBLE_005ed61b
     FNSTSW AX                           ; 0053aba8
     SAHF                                ; 0053abaa
     JA 0x0053ab18                       ; 0053abab
@@ -192,7 +192,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053acdf
     MOVSD ES:EDI,ESI                    ; 0053ace0
     PUSH EAX                            ; 0053ace1
-    FADD float ptr [0x005ed623]         ; 0053ace2 | DAT_005ed623
+    FADD float ptr [0x005ed623]         ; 0053ace2 | g_FLOAT_005ed623
     MOV ESI,0x3f800000                  ; 0053ace8
     PUSH ECX                            ; 0053aced
     FADD float ptr [ESP + 0x98]         ; 0053acee

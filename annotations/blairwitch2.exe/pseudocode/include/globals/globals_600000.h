@@ -9,12 +9,17 @@
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CDemonRenderer.h"
 #include "types/classes/CDog_full_vtable.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CFilterFX.h"
 #include "types/classes/CGhostChild_full_vtable.h"
 #include "types/classes/CHag_full_vtable.h"
 #include "types/classes/CHand_full_vtable.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLSkyTexture.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x600000
@@ -37,6 +42,10 @@ extern CDemonActor_vtable g_CNecklaceVTable;
 extern CDemonFilter* g_GlobalFilters;
 extern CDemonFilter* g_PlayerFilters;
 
+// CDemonRenderer*
+extern CDemonRenderer* g_CDemonRenderer_PTR_0060b27c;
+extern CDemonRenderer* g_CDemonRenderer_PTR_0060b280;
+
 // CDog_full_vtable
 extern CDog_full_vtable g_CDogVTable;
 
@@ -54,6 +63,28 @@ extern CHag_full_vtable g_CHagVTable;
 
 // CHand_full_vtable
 extern CHand_full_vtable g_CHandVTable;
+
+// CVector3i[62]
+extern CVector3i g_CVector3i_ARRAY_0060a0fc[62];
+
+// SMRGLPrimitiveQuad*[2000]
+extern SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_0060b288[2000];
+
+// SMRGLSkyTexture*
+extern SMRGLSkyTexture* g_SMRGLSkyTexture_PTR_0060d1f0;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00609810;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00609acc;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00609ae4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_00609ff0;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0060a0e4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0060afc8;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0060afe0;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_0060aff8;
+
+// SMRGLTextureBasic[6]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00609a10[6];
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_006002B0;
@@ -88,7 +119,22 @@ extern WatcomTypeInfo g_SChainVertexTypeInfo;
 extern WatcomTypeInfo g_CChainTypeInfo;
 extern WatcomTypeInfo g_CMorphModelTypeInfo;
 
+// char[104]
+extern char g_CHAR_ARRAY_00609590[104];
+
+// char[300]
+extern char g_CHAR_ARRAY_006095f8[300];
+
+// float
+extern float g_FLOAT_0060b274;
+extern float g_FLOAT_0060d1f4;
+
 // int
+extern int g_INT_006013f6;
+extern int g_INT_0060936c;
+extern int g_INT_00609370;
+extern int g_INT_006093bc;
+extern int g_INT_006093c0;
 extern int g_CDemonActorClassVersion;
 extern int g_CAmmoClassVersion;
 extern int g_CAmmoBoxClassVersion;
@@ -96,6 +142,7 @@ extern int g_CAnvilClassVersion;
 extern int g_CArmourClassVersion;
 extern int g_CBackgroundActorClassVersion;
 extern int g_CBaronClassVersion;
+extern int g_INT_00609828;
 extern int g_CBarrierClassVersion;
 extern int g_CBatClassVersion;
 extern int g_CBatCreatureClassVersion;
@@ -106,54 +153,74 @@ extern int g_CBiggsClassVersion;
 extern int g_CBodyPartClassVersion;
 extern int g_CBoneGuyClassVersion;
 extern int g_CBoxActorClassVersion;
+extern int g_INT_00609960;
 extern int g_CBrideClassVersion;
 extern int g_CBugsClassVersion;
 extern int g_CCharacterClassVersion;
+extern int g_INT_00609b30;
+extern int g_INT_00609b34;
 extern int g_CColonelClassVersion;
 extern int g_CConstructClassVersion;
 extern int g_CConveyorClassVersion;
 extern int g_CZombieCowClassVersion;
 extern int g_CCrateClassVersion;
 extern int g_CCrossbowClassVersion;
+extern int g_INT_00609f98;
+extern int g_INT_00609f9c;
+extern int g_INT_00609fa0;
+extern int g_INT_00609fa4;
+extern int g_INT_00609fa8;
+extern int g_INT_00609fac;
+extern int g_INT_0060a008;
 extern int g_CActorDestinationClassVersion;
 extern int g_CDocClassVersion;
 extern int g_CZombieDogClassVersion;
 extern int g_CDoorClassVersion;
 extern int g_CDraculaBrideClassVersion;
+extern int g_INT_0060b270;
+extern int g_INT_0060b284;
 extern int g_CDripClassVersion;
 extern int g_CDroneClassVersion;
+extern int g_INT_0060d254;
+extern int g_INT_0060d258;
+extern int g_INT_0060d25c;
+extern int g_INT_0060d264;
+
+// int[16]
+extern int g_INT_ARRAY_006094d0[16];
+
+// int[8]
+extern int g_INT_ARRAY_00609fb0[8];
+extern int g_INT_ARRAY_00609fd0[8];
+
+// short
+extern short g_SHORT_006013f4;
+extern short g_SHORT_0060140c;
+extern short g_SHORT_0060140e;
+
+// uint
+extern uint g_UINT_0060d238;
+extern uint g_UINT_0060d23c;
+extern uint g_UINT_0060d244;
+
+// uint*
+extern uint* g_UINT_PTR_0060d268;
 
 // undefined1
 extern undefined1 DAT_0060958f;
-extern undefined1 DAT_00609590;
-extern undefined1 DAT_00609591;
 
 // undefined4
-extern undefined4 DAT_00601430;
-extern undefined4 DAT_0060936c;
-extern undefined4 DAT_00609370;
-extern undefined4 DAT_006093c0;
-extern undefined4 DAT_006095f8;
-extern undefined4 DAT_006095fc;
-extern undefined4 DAT_00609b34;
-extern undefined4 DAT_00609f98;
-extern undefined4 DAT_00609f9c;
-extern undefined4 DAT_00609fa0;
-extern undefined4 DAT_00609fa4;
-extern undefined4 DAT_00609fa8;
-extern undefined4 DAT_00609fac;
-extern undefined4 DAT_00609fb0;
-extern undefined4 DAT_0060a0fc;
-extern undefined4 DAT_0060a104;
 extern undefined4 DAT_0060a400;
 extern undefined4 DAT_0060a404;
 extern undefined4 DAT_0060a424;
-extern undefined4 DAT_0060b280;
-extern undefined4 DAT_0060b284;
-extern undefined4 DAT_0060d238;
-extern undefined4 DAT_0060d23c;
-extern undefined4 DAT_0060d244;
-extern undefined4 DAT_0060d260;
-extern undefined4 DAT_0060d264;
-extern undefined4 DAT_0060d268;
+
+// void*
+extern void* g_PTR_006002e4;
+extern void* g_PTR_0060d260;
+
+// void*[54]
+extern void* g_CChainVTable[54];
+
+// void*[67]
+extern void* g_ARRAY_PTR_006093c4[67];
 

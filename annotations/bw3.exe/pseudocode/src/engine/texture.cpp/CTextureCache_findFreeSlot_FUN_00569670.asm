@@ -14,9 +14,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_005d5e3d
 ;   TerminatedCString s_CTextureCache_findFreeSl_005d5e53
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cfd0d4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_02cfd0d4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -108,7 +108,7 @@ section .text
     JL 0x005696a4                       ; 00569718
         ;   XREF to: 005696a4 (CONDITIONAL_JUMP)  ; LAB_005696a4
     MOV dword ptr [ESI],0x1             ; 0056971a
-    MOV EBX,dword ptr [0x02cfd0d4]      ; 00569720 | DAT_02cfd0d4
+    MOV EBX,dword ptr [0x02cfd0d4]      ; 00569720 | g_INT_02cfd0d4
     MOV dword ptr [ESI + 0x18004],0x400 ; 00569726
     TEST EBX,EBX                        ; 00569730
     JZ 0x005696a4                       ; 00569732
@@ -116,8 +116,8 @@ section .text
     MOV EBP,0x5d5e3d                    ; 00569738 | = "..\\engine\\texture.cpp"
     MOV EAX,0xbc                        ; 0056973d
     PUSH 0x5d5e53                       ; 00569742 | = "CTextureCache::findFreeSlot - Cache h..."
-    MOV dword ptr [0x01d71de0],EBP      ; 00569747 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 0056974d | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 00569747 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 0056974d | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569752
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569757

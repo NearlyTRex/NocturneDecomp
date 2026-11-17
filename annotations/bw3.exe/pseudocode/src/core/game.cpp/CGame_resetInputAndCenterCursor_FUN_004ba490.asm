@@ -16,18 +16,18 @@
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052dd0f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
 ;   CFieldNotes* g_CFieldNotesPtr = 01d1a05c
 ;   CNetGame* g_CNetGamePtr = 01da62f0
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_007dffb4
+;   CPuzzle* g_CPuzzle_PTR_007dffb4
 ;   CFieldNotes g_CFieldNotesInstance
 ;   undefined4 g_CFieldNotesInstance.is_displayed
-;   undefined4 DAT_01d21fa0
-;   undefined4 DAT_01d221f8
-;   undefined4 DAT_01d221fc
-;   undefined4 DAT_01d22b48
+;   char[600] g_CHAR_ARRAY_01d21fa0
+;   int g_INT_01d221f8
+;   int g_INT_01d221fc
+;   int g_INT_01d22b48
 ;   CNetGame g_CNetGameInstance
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
@@ -54,12 +54,12 @@ section .text
     ADD ESP,0xc                         ; 004ba4a9
     PUSH 0x258                          ; 004ba4ac
     PUSH 0x0                            ; 004ba4b1
-    PUSH 0x1d21fa0                      ; 004ba4b3 | DAT_01d21fa0
+    PUSH 0x1d21fa0                      ; 004ba4b3 | g_CHAR_ARRAY_01d21fa0
     CALL crt_memory.c_memset_FUN_005a28f0 ; 004ba4b8
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV EAX,[0x00603b28]                ; 004ba4bd | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004ba4c2 | g_CDemonSetInstance.selected_camera_index
-    MOV [0x01d221fc],EAX                ; 004ba4c8 | DAT_01d221fc
+    MOV [0x01d221fc],EAX                ; 004ba4c8 | g_INT_01d221fc
     MOV EAX,[0x005fe4b0]                ; 004ba4cd | g_CFieldNotesPtr
     MOV ECX,dword ptr [EAX + 0x40]      ; 004ba4d2 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0xc                         ; 004ba4d5
@@ -71,35 +71,35 @@ section .text
     CMP dword ptr [EAX + 0x40],0x0      ; 004ba4e1 | g_CFieldNotesInstance.is_displayed
     JZ 0x004ba4f1                       ; 004ba4e5
         ;   XREF to: 004ba4f1 (CONDITIONAL_JUMP)  ; LAB_004ba4f1
-    MOV dword ptr [0x01d22b48],0xffffffff ; 004ba4e7 | DAT_01d22b48
-    CMP dword ptr [0x007dffb4],0x0      ; 004ba4f1 | DAT_007dffb4
+    MOV dword ptr [0x01d22b48],0xffffffff ; 004ba4e7 | g_INT_01d22b48
+    CMP dword ptr [0x007dffb4],0x0      ; 004ba4f1 | g_CPuzzle_PTR_007dffb4
         ;   Label: LAB_004ba4f1
     JNZ 0x004ba532                      ; 004ba4f8
         ;   XREF to: 004ba532 (CONDITIONAL_JUMP)  ; LAB_004ba532
     RET                                 ; 004ba4fa
-    CMP dword ptr [0x007dffb4],0x0      ; 004ba4fb | DAT_007dffb4
+    CMP dword ptr [0x007dffb4],0x0      ; 004ba4fb | g_CPuzzle_PTR_007dffb4
         ;   Label: LAB_004ba4fb
     JNZ 0x004ba4dc                      ; 004ba502
         ;   XREF to: 004ba4dc (CONDITIONAL_JUMP)  ; LAB_004ba4dc
-    MOV EAX,[0x005fba1c]                ; 004ba504 | DAT_005fba1c
+    MOV EAX,[0x005fba1c]                ; 004ba504 | g_INT_005fba1c
     MOV EDX,EAX                         ; 004ba509
     SAR EDX,0x1f                        ; 004ba50b
     SUB EAX,EDX                         ; 004ba50e
     SAR EAX,0x1                         ; 004ba510
     PUSH EAX                            ; 004ba512
-    MOV EAX,[0x005fba18]                ; 004ba513 | DAT_005fba18
+    MOV EAX,[0x005fba18]                ; 004ba513 | g_INT_005fba18
     MOV EDX,EAX                         ; 004ba518
     SAR EDX,0x1f                        ; 004ba51a
     SUB EAX,EDX                         ; 004ba51d
     SAR EAX,0x1                         ; 004ba51f
     PUSH EAX                            ; 004ba521
-    MOV dword ptr [0x01d221f8],ECX      ; 004ba522 | DAT_01d221f8
+    MOV dword ptr [0x01d221f8],ECX      ; 004ba522 | g_INT_01d221f8
     CALL wincore_winrun.cpp_setCursorPosition_FUN_005809d0 ; 004ba528
         ;   XREF to: 005809d0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_005809d0(int x, int y)
     ADD ESP,0x8                         ; 004ba52d
     JMP 0x004ba4dc                      ; 004ba530
         ;   XREF to: 004ba4dc (UNCONDITIONAL_JUMP)  ; LAB_004ba4dc
-    MOV dword ptr [0x01d22b48],0xffffffff ; 004ba532 | DAT_01d22b48
+    MOV dword ptr [0x01d22b48],0xffffffff ; 004ba532 | g_INT_01d22b48
         ;   Label: LAB_004ba532
     RET                                 ; 004ba53c
 

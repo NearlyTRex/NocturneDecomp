@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 258,
+    "complexity_score": 177,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 143,
-    "suspect_count": 10,
+    "pseudocode_lines": 142,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "unnamed_field"
     ],
-    "total_lines": 488
+    "total_lines": 487
   },
   "cross_references": [
     {
@@ -72,85 +70,85 @@
   "globals": [
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c6e2a0",
-      "name": "DAT_01c6e2a0",
-      "type": "undefined4",
+      "name": "g_INT_01c6e2a0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d76cf8",
-      "name": "DAT_01d76cf8",
-      "type": "undefined4",
+      "name": "g_INT_01d76cf8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d80844",
-      "name": "DAT_01d80844",
-      "type": "undefined4",
+      "name": "g_INT_01d80844",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d80848",
-      "name": "DAT_01d80848",
-      "type": "undefined4",
+      "name": "g_SSoftwareEdge_01d80848",
+      "type": "SSoftwareEdge",
       "value": null
     },
     {
       "addr": "01d80850",
-      "name": "DAT_01d80850",
+      "name": "g_SSoftwareEdge_01d80848.base.x_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80854",
-      "name": "DAT_01d80854",
+      "name": "g_SSoftwareEdge_01d80848.base.x_gradient",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80858",
-      "name": "DAT_01d80858",
+      "name": "g_SSoftwareEdge_01d80848.base.red_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80860",
-      "name": "DAT_01d80860",
+      "name": "g_SSoftwareEdge_01d80848.base.u_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80864",
-      "name": "DAT_01d80864",
+      "name": "g_SSoftwareEdge_01d80848.base.u_gradient",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80868",
-      "name": "DAT_01d80868",
+      "name": "g_SSoftwareEdge_01d80848.base.v_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d8086c",
-      "name": "DAT_01d8086c",
+      "name": "g_SSoftwareEdge_01d80848.base.v_gradient",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80870",
-      "name": "DAT_01d80870",
+      "name": "g_SSoftwareEdge_01d80848.base.depth_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d80874",
-      "name": "DAT_01d80874",
+      "name": "g_SSoftwareEdge_01d80848.base.depth_gradient",
       "type": "undefined4",
       "value": null
     },
@@ -162,14 +160,14 @@
     },
     {
       "addr": "01d80d48",
-      "name": "DAT_01d80d48",
-      "type": "undefined4",
+      "name": "g_INT_01d80d48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d80d4c",
-      "name": "DAT_01d80d4c",
-      "type": "undefined4",
+      "name": "g_INT_01d80d4c",
+      "type": "int",
       "value": null
     }
   ],
@@ -344,64 +342,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01d80848",
-      "severity": "mild",
-      "text": "local_20 = (SSoftwareEdge *)&DAT_01d80848;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_01d80848",
-      "severity": "mild",
-      "text": "local_24 = (SSoftwareEdge *)&DAT_01d80848;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_01d80848",
-      "severity": "mild",
-      "text": "local_20 = (SSoftwareEdge *)&DAT_01d80848;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_01d80848",
-      "severity": "mild",
-      "text": "local_24 = (SSoftwareEdge *)&DAT_01d80848;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "else if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Auto-generated struct field name",
-      "line": 131,
+      "line": 129,
       "match": "field_0x48",
       "severity": "mild",
       "text": "*(int *)&local_24->field_0x48 =",
@@ -409,7 +351,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 132,
+      "line": 130,
       "match": "field_0x48",
       "severity": "mild",
       "text": "*(int *)&local_24->field_0x48 + *(int *)&local_24->field_0x4c;",
@@ -417,7 +359,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 132,
+      "line": 130,
       "match": "field_0x4c",
       "severity": "mild",
       "text": "*(int *)&local_24->field_0x48 + *(int *)&local_24->field_0x4c;",

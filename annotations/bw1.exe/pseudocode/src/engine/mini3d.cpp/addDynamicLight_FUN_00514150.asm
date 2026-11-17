@@ -13,10 +13,10 @@
 ; uint             Stack[0x1c]:4   arg7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8e8b
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01d25004
-;   undefined4 DAT_02c834a4
+;   double g_DOUBLE_005e8e8b = 2
+;   int g_INT_01c50948
+;   int g_INT_01d25004
+;   void* g_PTR_02c834a4
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 00514152
     SUB ESP,0x1c                        ; 00514153
     MOV ESI,dword ptr [ESP + 0x2c]      ; 00514156
-    MOV EDX,dword ptr [0x01d25004]      ; 0051415a | DAT_01d25004
+    MOV EDX,dword ptr [0x01d25004]      ; 0051415a | g_INT_01d25004
     CMP EDX,0x32                        ; 00514160
     JGE 0x00514237                      ; 00514163
         ;   XREF to: 00514237 (CONDITIONAL_JUMP)  ; LAB_00514237
@@ -47,7 +47,7 @@ section .text
     MOV EAX,EDX                         ; 00514181
     INC EAX                             ; 00514183
     MOV DL,0x1                          ; 00514184
-    MOV [0x01d25004],EAX                ; 00514186 | DAT_01d25004
+    MOV [0x01d25004],EAX                ; 00514186 | g_INT_01d25004
     MOV byte ptr [EAX + 0x1d25edf],DL   ; 0051418b
     CMP EBX,ESI                         ; 00514191
     JZ 0x005141a5                       ; 00514193
@@ -90,7 +90,7 @@ section .text
     MOV dword ptr [EBX + 0x44],EAX      ; 005141ff
     MOV EAX,dword ptr [ESP + 0x44]      ; 00514202
     MOV dword ptr [EBX + 0x48],EAX      ; 00514206
-    MOV EDI,dword ptr [0x02c834a4]      ; 00514209 | DAT_02c834a4
+    MOV EDI,dword ptr [0x02c834a4]      ; 00514209 | g_PTR_02c834a4
     FXCH ST5                            ; 0051420f
     FSTP float ptr [EBX + 0xc]          ; 00514211
     FXCH ST3                            ; 00514214
@@ -104,7 +104,7 @@ section .text
     TEST EDI,EDI                        ; 0051422a
     JZ 0x00514237                       ; 0051422c
         ;   XREF to: 00514237 (CONDITIONAL_JUMP)  ; LAB_00514237
-    CMP dword ptr [0x01c50948],0x0      ; 0051422e | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 0051422e | g_INT_01c50948
     JNZ 0x0051423e                      ; 00514235
         ;   XREF to: 0051423e (CONDITIONAL_JUMP)  ; LAB_0051423e
     ADD ESP,0x1c                        ; 00514237
@@ -136,7 +136,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 0051427a
     FLD1                                ; 0051427e
     FPATAN                              ; 00514280
-    FMUL double ptr [0x005e8e8b]        ; 00514282 | DAT_005e8e8b
+    FMUL double ptr [0x005e8e8b]        ; 00514282 | g_DOUBLE_005e8e8b
     PUSH dword ptr [EBX + 0x48]         ; 00514288
     PUSH dword ptr [EBX + 0x44]         ; 0051428b
     PUSH dword ptr [EBX + 0x40]         ; 0051428e
@@ -147,7 +147,7 @@ section .text
     PUSH EAX                            ; 005142a1
     LEA EAX,[ESP + 0x24]                ; 005142a2
     PUSH EAX                            ; 005142a6
-    CALL dword ptr [0x02c834a4]         ; 005142a7 | DAT_02c834a4
+    CALL dword ptr [0x02c834a4]         ; 005142a7 | g_PTR_02c834a4
     ADD ESP,0x1c                        ; 005142ad
     ADD ESP,0x1c                        ; 005142b0
     POP EDI                             ; 005142b3

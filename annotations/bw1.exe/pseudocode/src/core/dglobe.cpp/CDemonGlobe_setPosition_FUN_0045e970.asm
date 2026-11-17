@@ -19,7 +19,7 @@
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_005adb20 at 005adcfd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d88f3
+;   double g_DOUBLE_005d88f3 = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -35,7 +35,7 @@ section .text
     CMP EDX,EAX                         ; 0045e97b
     JNZ 0x0045e9a9                      ; 0045e97d
         ;   XREF to: 0045e9a9 (CONDITIONAL_JUMP)  ; LAB_0045e9a9
-    FLD double ptr [0x005d88f3]         ; 0045e97f | DAT_005d88f3
+    FLD double ptr [0x005d88f3]         ; 0045e97f | g_DOUBLE_005d88f3
         ;   Label: LAB_0045e97f
     FLD float ptr [EAX]                 ; 0045e985
     FMUL ST1                            ; 0045e987

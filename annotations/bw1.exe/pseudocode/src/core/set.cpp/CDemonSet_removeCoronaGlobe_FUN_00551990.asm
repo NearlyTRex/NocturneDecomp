@@ -12,7 +12,7 @@
 ;   core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60 at 0055fd9b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fe55d0
+;   int g_INT_01fe55d0
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -27,7 +27,7 @@ section .text
     PUSH EDI                            ; 00551992
     PUSH EBP                            ; 00551993
     MOV ESI,dword ptr [ESP + 0x18]      ; 00551994
-    MOV EDX,dword ptr [0x01fe55d0]      ; 00551998 | DAT_01fe55d0
+    MOV EDX,dword ptr [0x01fe55d0]      ; 00551998 | g_INT_01fe55d0
     XOR ECX,ECX                         ; 0055199e
     TEST EDX,EDX                        ; 005519a0
     JLE 0x005519c1                      ; 005519a2
@@ -51,7 +51,7 @@ section .text
     POP ESI                             ; 005519c3
     POP EBX                             ; 005519c4
     RET                                 ; 005519c5
-    MOV EBP,dword ptr [0x01fe55d0]      ; 005519c6 | DAT_01fe55d0
+    MOV EBP,dword ptr [0x01fe55d0]      ; 005519c6 | g_INT_01fe55d0
         ;   Label: LAB_005519c6
     DEC EBP                             ; 005519cc
     MOV EBX,EBP                         ; 005519cd
@@ -62,7 +62,7 @@ section .text
     PUSH EDX                            ; 005519df
     ADD EAX,0x1fe55d4                   ; 005519e0
     PUSH EAX                            ; 005519e5
-    MOV dword ptr [0x01fe55d0],EBP      ; 005519e6 | DAT_01fe55d0
+    MOV dword ptr [0x01fe55d0],EBP      ; 005519e6 | g_INT_01fe55d0
     CALL crt_string.c_memmove_FUN_005c25d0 ; 005519ec
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 005519f1

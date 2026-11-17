@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044fff0(CDemonCamera *this_ptr,char *filename)
 
 {
@@ -22,25 +20,27 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044fff0(CDemonCamera *
   uint uVar9;
   uint uVar10;
   uint uVar11;
-  uint uVar12;
-  uint uVar13;
+  int iVar12;
+  uint *puVar13;
   int iVar14;
-  uint *puVar15;
+  int iVar15;
   int iVar16;
-  int iVar17;
+  uint uVar17;
   int iVar18;
   uint uVar19;
-  int iVar20;
-  uint uVar21;
-  uint uVar22;
-  char *pcVar23;
-  char *pcVar24;
+  uint uVar20;
+  char *pcVar21;
+  char *pcVar22;
+  uint uVar23;
+  SRGBColorPalette *pSVar24;
   char *pcVar25;
-  int *piVar26;
-  uint *puVar27;
-  uint uVar28;
-  uint uVar29;
-  byte bVar30;
+  uint uVar26;
+  int *piVar27;
+  uint *puVar28;
+  SRGBColorPalette *pSVar29;
+  uint uVar30;
+  uint uVar31;
+  byte bVar32;
   char local_144 [80];
   char local_f4 [80];
   int local_a4;
@@ -81,99 +81,100 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044fff0(CDemonCamera *
   int iStack_18;
   _FILE *local_14;
   
-  bVar30 = 0;
+  bVar32 = 0;
   pcVar25 = local_144;
-  pcVar23 = filename;
+  pcVar21 = filename;
   do {
-    cVar4 = *pcVar23;
+    cVar4 = *pcVar21;
     *pcVar25 = cVar4;
-    pcVar24 = local_144;
+    pcVar22 = local_144;
     if (cVar4 == '\0') break;
-    cVar4 = pcVar23[1];
-    pcVar23 = pcVar23 + 2;
+    cVar4 = pcVar21[1];
+    pcVar21 = pcVar21 + 2;
     pcVar25[1] = cVar4;
     pcVar25 = pcVar25 + 2;
-    pcVar24 = local_144;
+    pcVar22 = local_144;
   } while (cVar4 != '\0');
   do {
-    pcVar23 = pcVar24;
-    if (*pcVar24 == '.') goto LAB_00450039;
-    if (*pcVar24 == '\0') break;
-    pcVar23 = pcVar24 + 1;
-    if (*pcVar23 == '.') goto LAB_00450039;
-    pcVar24 = pcVar24 + 2;
-  } while (*pcVar23 != '\0');
-  pcVar23 = (char *)0x0;
+    pcVar21 = pcVar22;
+    if (*pcVar22 == '.') goto LAB_00450039;
+    if (*pcVar22 == '\0') break;
+    pcVar21 = pcVar22 + 1;
+    if (*pcVar21 == '.') goto LAB_00450039;
+    pcVar22 = pcVar22 + 2;
+  } while (*pcVar21 != '\0');
+  pcVar21 = (char *)0x0;
 LAB_00450039:
-  if (pcVar23 == (char *)0x0) {
-    _DAT_01d1d400 = "..\\core\\dcamera.cpp";
-    _DAT_01d1d404 = 0x9c1;
+  if (pcVar21 == (char *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
+    g_INT_01d1d404 = 0x9c1;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonCamera::loadImage - no extention");
   }
   pcVar25 = ".ACT";
   do {
     cVar4 = *pcVar25;
-    *pcVar23 = cVar4;
+    *pcVar21 = cVar4;
     if (cVar4 == '\0') break;
     cVar4 = pcVar25[1];
     pcVar25 = pcVar25 + 2;
-    pcVar23[1] = cVar4;
-    pcVar23 = pcVar23 + 2;
+    pcVar21[1] = cVar4;
+    pcVar21 = pcVar21 + 2;
   } while (cVar4 != '\0');
   p_Var5 = engine_dosio_cpp_getFile_FUN_00479180("backdrop",local_144,"rb");
   if ((p_Var5 != (_FILE *)0x0) ||
      (p_Var5 = engine_dosio_cpp_getFile_FUN_00479180("art",local_144,"rb"),
      p_Var5 != (_FILE *)0x0)) {
-    _fread(&DAT_00b81198,0x100,3,p_Var5);
+    _fread(&g_SRGBColorPalette_00b81198,0x100,3,p_Var5);
     _fclose(p_Var5);
-    pcVar23 = local_f4;
+    pcVar21 = local_f4;
     pcVar25 = filename;
     do {
       cVar4 = *pcVar25;
-      *pcVar23 = cVar4;
+      *pcVar21 = cVar4;
       if (cVar4 == '\0') break;
       cVar4 = pcVar25[1];
       pcVar25 = pcVar25 + 2;
-      pcVar23[1] = cVar4;
-      pcVar23 = pcVar23 + 2;
+      pcVar21[1] = cVar4;
+      pcVar21 = pcVar21 + 2;
     } while (cVar4 != '\0');
-    pcVar23 = local_f4;
+    pcVar21 = local_f4;
     do {
-      pcVar25 = pcVar23;
-      if (*pcVar23 == '.') goto LAB_00450103;
-      if (*pcVar23 == '\0') break;
-      pcVar25 = pcVar23 + 1;
+      pcVar25 = pcVar21;
+      if (*pcVar21 == '.') goto LAB_00450103;
+      if (*pcVar21 == '\0') break;
+      pcVar25 = pcVar21 + 1;
       if (*pcVar25 == '.') goto LAB_00450103;
-      pcVar23 = pcVar23 + 2;
+      pcVar21 = pcVar21 + 2;
     } while (*pcVar25 != '\0');
     pcVar25 = (char *)0x0;
 LAB_00450103:
     if (pcVar25 == (char *)0x0) {
-      _DAT_01d1d400 = "..\\core\\dcamera.cpp";
-      _DAT_01d1d404 = 0x9d4;
+      g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
+      g_INT_01d1d404 = 0x9d4;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonCamera::loadImage - no ext");
     }
-    pcVar23 = ".fog";
+    pcVar21 = ".fog";
     do {
-      cVar4 = *pcVar23;
+      cVar4 = *pcVar21;
       *pcVar25 = cVar4;
       if (cVar4 == '\0') break;
-      cVar4 = pcVar23[1];
-      pcVar23 = pcVar23 + 2;
+      cVar4 = pcVar21[1];
+      pcVar21 = pcVar21 + 2;
       pcVar25[1] = cVar4;
       pcVar25 = pcVar25 + 2;
     } while (cVar4 != '\0');
     local_14 = engine_dosio_cpp_getFile_FUN_00479180("backdrop",local_f4,"rb");
     if (local_14 != (_FILE *)0x0) {
-      _fread((void *)0x1480e2c,0x1000,1,local_14);
+      _fread(&g_SFogGrid_01480e2c,0x1000,1,local_14);
       p_Var5 = local_14;
-      if (_DAT_01481e48 == 0) {
-        memset((void *)0x1354e20,0,0x12c000);
+      if (g_SFogGrid_01480e2c.density_multiplier == 0) {
+        memset(g_CHAR_ARRAY_01354e20,0,0x12c000);
       }
       else {
-        _DAT_01480e28 = 0x10;
-        if ((_DAT_01481e38 == 0 && _DAT_01481e3c == 0) && _DAT_01481e40 == 0) {
-          _DAT_01480e28 = 1;
+        g_INT_01480e28 = 0x10;
+        if ((g_SFogGrid_01480e2c.scroll_vector.x == 0 && g_SFogGrid_01480e2c.scroll_vector.y == 0)
+            && g_SFogGrid_01480e2c.scroll_vector.z == 0) {
+          g_INT_01480e28 = 1;
         }
         _fread(local_a0,3,1,local_14);
         local_9d = 0;
@@ -183,28 +184,28 @@ LAB_00450103:
           iVar6 = engine_dosio_cpp_getFileSize_FUN_00478fb0("backdrop",local_f4);
           local_9c = iVar6 - 0x1003;
           if ((int)local_9c < 1) {
-            _DAT_01d1d400 = "..\\core\\dcamera.cpp";
-            _DAT_01d1d404 = 0x9f4;
+            g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
+            g_INT_01d1d404 = 0x9f4;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze loading %s");
           }
           if (500000 < local_9c) {
-            _DAT_01d1d400 = "..\\core\\dcamera.cpp";
-            _DAT_01d1d404 = 0x9fa;
+            g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
+            g_INT_01d1d404 = 0x9fa;
             core_main_c_displayErrorAndQuit_FUN_005030e0("%s too big to fit in decompress buffer");
           }
-          _fread(&DAT_007ddbb4,local_9c,1,local_14);
+          _fread(g_CHAR_ARRAY_007ddbb4,local_9c,1,local_14);
           support_codec_cpp_CLZWDecompress_init_FUN_004436f0(&g_CLZWDecompressInstance);
-          local_98 = _DAT_01480e28 * 0x12c00;
+          local_98 = g_INT_01480e28 * 0x12c00;
           iVar6 = support_codec_cpp_CCodec_processBuffer_FUN_00442d90
-                            (&g_CLZWDecompressInstance.base,&DAT_007ddbb4,(int *)&local_9c,
-                             (char *)0x1354e20,&local_98,1);
+                            (&g_CLZWDecompressInstance.base,g_CHAR_ARRAY_007ddbb4,(int *)&local_9c,
+                             g_CHAR_ARRAY_01354e20,&local_98,1);
           if (iVar6 == 0) {
-            _DAT_01d1d400 = "..\\core\\dcamera.cpp";
-            _DAT_01d1d404 = 0xa03;
+            g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
+            g_INT_01d1d404 = 0xa03;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Error decompressing %s");
           }
           local_a4 = 0;
-          if (0 < (int)_DAT_01480e28) {
+          if (0 < g_INT_01480e28) {
             local_34 = 0;
             local_30 = -0x12c00;
             local_38 = 0x12c00;
@@ -214,19 +215,19 @@ LAB_00450103:
               local_40 = local_34;
               local_3c = local_38;
               do {
-                iVar16 = 0;
-                iVar20 = 0;
+                iVar14 = 0;
+                iVar18 = 0;
                 iVar6 = local_40;
                 do {
-                  iVar20 = (*(int *)(iVar16 + local_48 + 0x1354e1d) >> 0x18) + iVar20;
-                  cVar4 = (char)iVar20 * '\x04';
+                  iVar18 = (*(int *)(iVar14 + local_48 + 0x1354e1d) >> 0x18) + iVar18;
+                  cVar4 = (char)iVar18 * '\x04';
                   if (0 < local_a4) {
-                    cVar4 = cVar4 + *(char *)(local_44 + iVar16 + 0x1354e20);
+                    cVar4 = cVar4 + g_CHAR_ARRAY_01354e20[local_44 + iVar14];
                   }
-                  iVar16 = iVar16 + 1;
-                  *(char *)(iVar6 + 0x1354e20) = cVar4;
+                  iVar14 = iVar14 + 1;
+                  g_CHAR_ARRAY_01354e20[iVar6] = cVar4;
                   iVar6 = iVar6 + 1;
-                } while (iVar16 < 0x140);
+                } while (iVar14 < 0x140);
                 local_44 = local_44 + 0x140;
                 local_40 = local_40 + 0x140;
                 local_48 = local_48 + 0x140;
@@ -235,69 +236,71 @@ LAB_00450103:
               local_34 = local_34 + 0x12c00;
               local_30 = local_30 + 0x12c00;
               local_a4 = local_a4 + 1;
-            } while (local_a4 < (int)_DAT_01480e28);
+            } while (local_a4 < g_INT_01480e28);
           }
         }
         else {
           _fseek(p_Var5,-3,1);
-          _fread((void *)0x1354e20,0x12c00,_DAT_01480e28,p_Var5);
+          _fread(g_CHAR_ARRAY_01354e20,0x12c00,g_INT_01480e28,p_Var5);
         }
       }
       _fclose(local_14);
     }
-    p_Var5 = engine_dosio_cpp_getFile_FUN_00479180("backdrop",filename,&DAT_005d7869);
+    p_Var5 = engine_dosio_cpp_getFile_FUN_00479180("backdrop",filename,"rb");
     if ((p_Var5 != (_FILE *)0x0) ||
-       (p_Var5 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005d7878,filename,&DAT_005d7875),
+       (p_Var5 = engine_dosio_cpp_getFile_FUN_00479180("art",filename,"rb"),
        p_Var5 != (_FILE *)0x0)) {
-      iVar20 = 0;
+      iVar18 = 0;
       iVar6 = 0;
       do {
-        if (DAT_0061b4a0 == 0x20) {
-          uVar13 = (uint)*(byte *)(iVar20 + 0xb8119a) << (DAT_01c4e9ec & 0x1f) |
-                   (uint)*(byte *)(iVar20 + 0xb81199) << (DAT_01c4e9e0 & 0x1f) |
-                   (uint)(byte)(&DAT_00b81198)[iVar20] << (DAT_01c4e9d4 & 0x1f);
+        uVar23 = (uint)(&g_SRGBColorPalette_00b81198.colors[0].b)[iVar18];
+        uVar26 = (uint)(&g_SRGBColorPalette_00b81198.colors[0].r)[iVar18];
+        uVar8 = (uint)(&g_SRGBColorPalette_00b81198.colors[0].g)[iVar18];
+        if (g_INT_0061b4a0 == 0x20) {
+          uVar23 = uVar23 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f) |
+                   uVar8 << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f) |
+                   uVar26 << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
         }
         else {
-          uVar13 = (uint)*(byte *)(iVar20 + 0xb81199) << 8 |
-                   (uint)(byte)(&DAT_00b81198)[iVar20] << 0x10 | (uint)*(byte *)(iVar20 + 0xb8119a);
+          uVar23 = uVar8 << 8 | uVar26 << 0x10 | uVar23;
         }
-        iVar16 = iVar6 + 4;
-        iVar20 = iVar20 + 3;
-        *(uint *)(iVar6 + 0xb8149c) = uVar13;
-        iVar6 = iVar16;
-      } while (iVar16 != 0x400);
-      _fread(&DAT_01483a50,0x280,0x1e0,p_Var5);
+        iVar14 = iVar6 + 4;
+        iVar18 = iVar18 + 3;
+        *(uint *)((int)g_UINT_ARRAY_00b8149c + iVar6) = uVar23;
+        iVar6 = iVar14;
+      } while (iVar14 != 0x400);
+      _fread(g_CHAR_ARRAY_01483a50,0x280,0x1e0,p_Var5);
       _fclose(p_Var5);
       iVar6 = this_ptr->framebuffer_height;
       if (iVar6 == 0xf0) {
         local_20 = 0;
         do {
           local_94 = 0;
-          pbVar7 = &DAT_01483a50 + local_20;
-          piVar26 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
+          pbVar7 = (byte *)(g_CHAR_ARRAY_01483a50 + local_20);
+          piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
           do {
             local_94 = local_94 + 1;
-            *piVar26 = ((*(uint *)((uint)*pbVar7 * 4 + 0xb8149c) & 0xfcfcfc) >> 2) +
-                       ((*(uint *)((uint)pbVar7[1] * 4 + 0xb8149c) & 0xfcfcfc) >> 2) +
-                       ((*(uint *)((uint)pbVar7[0x280] * 4 + 0xb8149c) & 0xfcfcfc) >> 2) +
-                       ((*(uint *)((uint)pbVar7[0x281] * 4 + 0xb8149c) & 0xfcfcfc) >> 2);
+            *piVar27 = ((g_UINT_ARRAY_00b8149c[*pbVar7] & 0xfcfcfc) >> 2) +
+                       ((g_UINT_ARRAY_00b8149c[pbVar7[1]] & 0xfcfcfc) >> 2) +
+                       ((g_UINT_ARRAY_00b8149c[pbVar7[0x280]] & 0xfcfcfc) >> 2) +
+                       ((g_UINT_ARRAY_00b8149c[pbVar7[0x281]] & 0xfcfcfc) >> 2);
             pbVar7 = pbVar7 + 2;
-            piVar26 = piVar26 + 1;
+            piVar27 = piVar27 + 1;
           } while (local_94 < 0x140);
           local_20 = local_20 + 0x500;
         } while (local_20 != 0x4b000);
         local_20 = 0x4b000;
       }
       else if (iVar6 == 0x1e0) {
-        pbVar7 = &DAT_01483a50;
+        pcVar21 = g_CHAR_ARRAY_01483a50;
         iVar6 = 0;
-        puVar15 = this_ptr->framebuffer_aligned;
+        puVar13 = this_ptr->framebuffer_aligned;
         do {
-          bVar1 = *pbVar7;
-          pbVar7 = pbVar7 + 1;
+          bVar1 = *pcVar21;
+          pcVar21 = pcVar21 + 1;
           iVar6 = iVar6 + 1;
-          *puVar15 = *(uint *)((uint)bVar1 * 4 + 0xb8149c);
-          puVar15 = puVar15 + 1;
+          *puVar13 = g_UINT_ARRAY_00b8149c[bVar1];
+          puVar13 = puVar13 + 1;
         } while (iVar6 < 0x4b000);
       }
       else if (iVar6 < 0x1e1) {
@@ -316,52 +319,52 @@ LAB_00450103:
               local_64 = local_28;
               do {
                 uVar8 = local_2c / this_ptr->framebuffer_width;
-                uVar9 = local_28 / this_ptr->framebuffer_height;
+                uVar26 = local_28 / this_ptr->framebuffer_height;
                 local_6c = (int)(0x27d80 / (longlong)this_ptr->framebuffer_width) + uVar8;
-                iVar20 = ((int)uVar9 >> 8) * 0x280;
-                local_68 = (int)(0x1de20 / (longlong)this_ptr->framebuffer_height) + uVar9;
+                iVar18 = ((int)uVar26 >> 8) * 0x280;
+                local_68 = (int)(0x1de20 / (longlong)this_ptr->framebuffer_height) + uVar26;
                 local_60 = (int)uVar8 >> 8;
-                uVar13 = *(uint *)((uint)(byte)(&DAT_01483a50)[local_60 + iVar20] * 4 + 0xb8149c);
-                iVar16 = 0xff - (uVar9 & 0xff);
-                uVar19 = uVar13 >> 8 & 0xff;
-                uVar10 = uVar13 >> 0x10 & 0xff;
+                uVar23 = g_UINT_ARRAY_00b8149c[(byte)g_CHAR_ARRAY_01483a50[local_60 + iVar18]];
+                iVar14 = 0xff - (uVar26 & 0xff);
+                uVar17 = uVar23 >> 8 & 0xff;
+                uVar9 = uVar23 >> 0x10 & 0xff;
                 iVar6 = 0xff - (uVar8 & 0xff);
                 local_5c = (int)local_6c >> 8;
-                uVar8 = *(uint *)((uint)(byte)(&DAT_01483a50)[iVar20 + local_5c] * 4 + 0xb8149c);
-                uVar11 = uVar8 >> 0x10 & 0xff;
-                uVar21 = uVar8 >> 8 & 0xff;
-                uVar22 = local_6c & 0xff;
+                uVar8 = g_UINT_ARRAY_00b8149c[(byte)g_CHAR_ARRAY_01483a50[iVar18 + local_5c]];
+                uVar10 = uVar8 >> 0x10 & 0xff;
+                uVar19 = uVar8 >> 8 & 0xff;
+                uVar20 = local_6c & 0xff;
                 local_58 = ((int)local_68 >> 8) * 0x280;
-                uVar9 = *(uint *)((uint)(byte)(&DAT_01483a50)[local_58 + local_60] * 4 + 0xb8149c);
-                uVar12 = uVar9 >> 0x10 & 0xff;
-                uVar28 = uVar9 >> 8 & 0xff;
-                uVar29 = local_68 & 0xff;
-                local_54 = uVar28 * iVar6;
-                uVar2 = *(uint *)((uint)(byte)(&DAT_01483a50)[local_58 + local_5c] * 4 + 0xb8149c);
+                uVar26 = g_UINT_ARRAY_00b8149c[(byte)g_CHAR_ARRAY_01483a50[local_58 + local_60]];
+                uVar11 = uVar26 >> 0x10 & 0xff;
+                uVar30 = uVar26 >> 8 & 0xff;
+                uVar31 = local_68 & 0xff;
+                local_54 = uVar30 * iVar6;
+                uVar2 = g_UINT_ARRAY_00b8149c[(byte)g_CHAR_ARRAY_01483a50[local_58 + local_5c]];
                 local_78 = uVar2 & 0xff;
                 local_70 = uVar2 >> 0x10 & 0xff;
                 local_74 = uVar2 >> 8 & 0xff;
-                local_50 = local_74 * uVar22;
-                uVar13 = ((uVar13 & 0xff) * iVar16 + (uVar13 & 0xff) * iVar6 +
-                          (uVar8 & 0xff) * uVar22 + (uVar8 & 0xff) * iVar16 +
-                          (uVar9 & 0xff) * iVar6 + (uVar9 & 0xff) * uVar29 +
-                         local_78 * uVar29 + local_78 * uVar22) / local_84;
-                uVar8 = (uVar19 * iVar16 + uVar19 * iVar6 + uVar21 * uVar22 + uVar21 * iVar16 +
-                         local_54 + uVar28 * uVar29 + local_74 * uVar29 + local_50) / local_84;
-                uVar9 = (uVar10 * iVar16 + uVar10 * iVar6 + iVar16 * uVar11 + uVar11 * uVar22 +
-                         uVar12 * uVar29 + uVar12 * iVar6 + local_70 * uVar29 + uVar22 * local_70) /
-                        local_84;
-                if (0xff < uVar13) {
-                  uVar13 = 0xff;
+                local_50 = local_74 * uVar20;
+                uVar23 = ((uVar23 & 0xff) * iVar14 + (uVar23 & 0xff) * iVar6 +
+                          (uVar8 & 0xff) * uVar20 + (uVar8 & 0xff) * iVar14 +
+                          (uVar26 & 0xff) * iVar6 + (uVar26 & 0xff) * uVar31 +
+                         local_78 * uVar31 + local_78 * uVar20) / local_84;
+                uVar8 = (uVar17 * iVar14 + uVar17 * iVar6 + uVar19 * uVar20 + uVar19 * iVar14 +
+                         local_54 + uVar30 * uVar31 + local_74 * uVar31 + local_50) / local_84;
+                uVar26 = (uVar9 * iVar14 + uVar9 * iVar6 + iVar14 * uVar10 + uVar10 * uVar20 +
+                          uVar11 * uVar31 + uVar11 * iVar6 + local_70 * uVar31 + uVar20 * local_70)
+                         / local_84;
+                if (0xff < uVar23) {
+                  uVar23 = 0xff;
                 }
                 if (0xff < uVar8) {
                   uVar8 = 0xff;
                 }
-                if (0xff < uVar9) {
-                  uVar9 = 0xff;
+                if (0xff < uVar26) {
+                  uVar26 = 0xff;
                 }
                 local_80 = local_80 + 1;
-                *local_88 = uVar13 | uVar8 << 8 | uVar9 << 0x10;
+                *local_88 = uVar23 | uVar8 << 8 | uVar26 << 0x10;
                 local_88 = local_88 + 1;
                 local_2c = local_2c + 0x28000;
               } while (local_80 < this_ptr->framebuffer_width);
@@ -379,14 +382,13 @@ LAB_00450103:
           do {
             iVar6 = 0;
             if (0 < this_ptr->framebuffer_width) {
-              iVar20 = 0;
+              iVar18 = 0;
               do {
-                iVar16 = iVar20 / this_ptr->framebuffer_width;
-                iVar20 = iVar20 + 0x280;
-                *local_90 = *(uint *)
-                             ((uint)(byte)(&DAT_01483a50)
-                                          [iVar16 + (local_24 / this_ptr->framebuffer_height) *
-                                                    0x280] * 4 + 0xb8149c);
+                iVar14 = iVar18 / this_ptr->framebuffer_width;
+                iVar18 = iVar18 + 0x280;
+                *local_90 = g_UINT_ARRAY_00b8149c
+                            [(byte)g_CHAR_ARRAY_01483a50
+                                   [iVar14 + (local_24 / this_ptr->framebuffer_height) * 0x280]];
                 local_90 = local_90 + 1;
                 iVar6 = iVar6 + 1;
               } while (iVar6 < this_ptr->framebuffer_width);
@@ -396,76 +398,77 @@ LAB_00450103:
           } while (local_8c < this_ptr->framebuffer_height);
         }
       }
-      iVar20 = 0;
+      iVar18 = 0;
       iVar6 = 0;
       do {
-        iVar14 = 0;
-        iVar16 = iVar6;
+        iVar12 = 0;
+        iVar14 = iVar6;
         do {
-          iVar17 = iVar14 >> 0x1f;
-          iVar18 = iVar14 + iVar17 * -0x100;
-          iVar14 = iVar14 + 0x280;
-          (&DAT_014cea50)[iVar16] =
-               (&DAT_01483a50)
-               [((int)(iVar18 - (uint)(iVar17 << 7 < 0)) >> 8) +
-                ((int)((iVar20 + (iVar20 >> 0x1f) * -0x100) - (uint)((iVar20 >> 0x1f) << 7 < 0)) >>
+          iVar15 = iVar12 >> 0x1f;
+          iVar16 = iVar12 + iVar15 * -0x100;
+          iVar12 = iVar12 + 0x280;
+          *(char *)((int)g_UINT_ARRAY_014cea50 + iVar14) =
+               g_CHAR_ARRAY_01483a50
+               [((int)(iVar16 - (uint)(iVar15 << 7 < 0)) >> 8) +
+                ((int)((iVar18 + (iVar18 >> 0x1f) * -0x100) - (uint)((iVar18 >> 0x1f) << 7 < 0)) >>
                 8) * 0x280];
-          iVar16 = iVar16 + 1;
-        } while (iVar14 != 0x28000);
+          iVar14 = iVar14 + 1;
+        } while (iVar12 != 0x28000);
         iVar6 = iVar6 + 0x100;
-        iVar20 = iVar20 + 0x1e0;
+        iVar18 = iVar18 + 0x1e0;
       } while (iVar6 != 0x10000);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                (DAT_00612560,(SMRGLTextureBasic *)&DAT_0061127c);
-      puVar15 = (uint *)&DAT_014cea50;
-      puVar27 = _DAT_01c50930;
+                (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061127c);
+      puVar13 = g_UINT_ARRAY_014cea50;
+      puVar28 = (uint *)g_UCHAR_PTR_01c50930;
       for (iVar6 = 0x4000; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar27 = *puVar15;
-        puVar15 = puVar15 + (uint)bVar30 * -2 + 1;
-        puVar27 = puVar27 + (uint)bVar30 * -2 + 1;
+        *puVar28 = *puVar13;
+        puVar13 = puVar13 + (uint)bVar32 * -2 + 1;
+        puVar28 = puVar28 + (uint)bVar32 * -2 + 1;
       }
       for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *(byte *)puVar27 = *(byte *)puVar15;
-        puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);
-        puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);
+        *(uchar *)puVar28 = (uchar)*puVar13;
+        puVar13 = (uint *)((int)puVar13 + (uint)bVar32 * -2 + 1);
+        puVar28 = (uint *)((int)puVar28 + (uint)bVar32 * -2 + 1);
       }
-      puVar15 = (uint *)&DAT_00b81198;
-      puVar27 = _DAT_01c4e3d0;
+      pSVar24 = &g_SRGBColorPalette_00b81198;
+      pSVar29 = g_SRGBColorPalette_PTR_01c4e3d0;
       for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar27 = *puVar15;
-        puVar15 = puVar15 + (uint)bVar30 * -2 + 1;
-        puVar27 = puVar27 + (uint)bVar30 * -2 + 1;
+        *(uint *)pSVar29->colors = *(uint *)pSVar24->colors;
+        pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -8 + 4);
+        pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -8 + 4);
       }
       for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *(byte *)puVar27 = *(byte *)puVar15;
-        puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);
-        puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);
+        pSVar29->colors[0].r = pSVar24->colors[0].r;
+        pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -2 + 1);
+        pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -2 + 1);
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00484fb0
-                (DAT_00612560,(SMRGLTextureBasic *)&DAT_0061127c,(SRGBColorPalette *)&DAT_00b81198);
-      _memset((void *)0xb23458,0,0x12d40);
-      if (DAT_0061b49c == 0x180) {
+                (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061127c,
+                 &g_SRGBColorPalette_00b81198);
+      _memset(g_CHAR_ARRAY_00b23458,0,0x12d40);
+      if (g_INT_0061b49c == 0x180) {
         iStack_18 = 0;
         iStack_1c = 0;
         do {
-          iVar20 = 0;
+          iVar18 = 0;
           iVar6 = 0;
           do {
-            iVar16 = 0;
-            if (0 < (int)_DAT_01480e28) {
-              iVar14 = ((int)((iVar6 + (iVar6 >> 0x1f) * -0x100) - (uint)((iVar6 >> 0x1f) << 7 < 0))
+            iVar14 = 0;
+            if (0 < g_INT_01480e28) {
+              iVar12 = ((int)((iVar6 + (iVar6 >> 0x1f) * -0x100) - (uint)((iVar6 >> 0x1f) << 7 < 0))
                        >> 8) + (iStack_18 / 0xc0) * 0x140;
-              iVar18 = iStack_1c + iVar20;
+              iVar16 = iStack_1c + iVar18;
               do {
-                iVar16 = iVar16 + 1;
-                *(byte *)(iVar18 + 0x1354e20) = *(byte *)(iVar14 + 0x1354e20);
-                iVar14 = iVar14 + 0x12c00;
-                iVar18 = iVar18 + 0x12c00;
-              } while (iVar16 < (int)_DAT_01480e28);
+                iVar14 = iVar14 + 1;
+                g_CHAR_ARRAY_01354e20[iVar16] = g_CHAR_ARRAY_01354e20[iVar12];
+                iVar12 = iVar12 + 0x12c00;
+                iVar16 = iVar16 + 0x12c00;
+              } while (iVar14 < g_INT_01480e28);
             }
-            iVar20 = iVar20 + 1;
+            iVar18 = iVar18 + 1;
             iVar6 = iVar6 + 0x140;
-          } while (iVar20 < 0x100);
+          } while (iVar18 < 0x100);
           iStack_18 = iStack_18 + 0xf0;
           iStack_1c = iStack_1c + 0x140;
         } while (iStack_18 != 0xb400);

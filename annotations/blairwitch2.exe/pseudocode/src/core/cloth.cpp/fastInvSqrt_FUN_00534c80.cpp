@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_cloth_cpp_fastInvSqrt_FUN_00534c80(float dist_sq)
 
 {
-  return (float)(_DAT_01caf5b8 - ((int)dist_sq >> 1));
+  return (float)(g_INT_01caf5b8 - ((int)dist_sq >> 1));
 }

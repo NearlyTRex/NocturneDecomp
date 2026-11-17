@@ -10,8 +10,8 @@
 ;   core_djien.cpp_factoryFuncDjien_FUN_0045fde0 at 0045fdf3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fea20
-;   undefined4 DAT_005fea24
+;   float g_FLOAT_005fea20 = 50
+;   float g_FLOAT_005fea24 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -51,9 +51,9 @@ section .text
     MOV dword ptr [EBX + 0xc9c8],0x0    ; 0045fe86
     MOV dword ptr [EBX + 0xc9c0],0x1    ; 0045fe90
     MOV dword ptr [EBX + 0xc2f0],0x0    ; 0045fe9a
-    FLD float ptr [0x005fea20]          ; 0045fea4 | DAT_005fea20
+    FLD float ptr [0x005fea20]          ; 0045fea4 | g_FLOAT_005fea20
     MOV dword ptr [EBX + 0xc2f4],0x0    ; 0045feaa
-    FLD float ptr [0x005fea24]          ; 0045feb4 | DAT_005fea24
+    FLD float ptr [0x005fea24]          ; 0045feb4 | g_FLOAT_005fea24
     MOV dword ptr [EBX + 0xc2d0],0x0    ; 0045feba
     ADD ESP,0x8                         ; 0045fec4
     MOV dword ptr [EBX + 0xc2d4],0x6    ; 0045fec7

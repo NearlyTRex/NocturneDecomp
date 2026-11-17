@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004fc5a0(CDemonMission *this_ptr,int param_2,char *param_3)
 
 {
@@ -15,8 +13,8 @@ void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004fc5a0(CDemonMis
   char (*pacVar2) [256];
   
   if ((param_2 < 0) || (this_ptr->num_sets <= param_2)) {
-    _DAT_01d046a0 = "..\\core\\mission.cpp";
-    _DAT_01d046a4 = 0x3bb;
+    g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
+    g_INT_01d046a4 = 0x3bb;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::changeSetName - invalid index: %d, count = %d");
   }
   pacVar2 = this_ptr->set_names + param_2;
@@ -32,8 +30,8 @@ void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004fc5a0(CDemonMis
   if (param_2 != this_ptr->current_set_index) {
     return;
   }
-  _DAT_01d046a0 = "..\\core\\mission.cpp";
-  _DAT_01d046a4 = 0x3c5;
+  g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
+  g_INT_01d046a4 = 0x3c5;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Tried to change the set file for the set we are currently in.  Let's not allow this, OK?");
   return;
 }

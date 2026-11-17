@@ -21,7 +21,7 @@
 ;   shape_edittool.cpp_editorFillRectWithBorder_FUN_0047b7c0 at 0047b8d0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6b5c0
+;   int g_INT_01c6b5c0
 ;
 ; Called Functions:
 ;   engine_2d.c_drawRect_FUN_00403170
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 004031c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_004031c0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 00403271
     MOV EAX,dword ptr [ESP + 0x24]      ; 00403274
-    MOV EBX,dword ptr [0x01c6b5c0]      ; 00403278 | DAT_01c6b5c0
-    MOV [0x01c6b5c0],EAX                ; 0040327e | DAT_01c6b5c0
+    MOV EBX,dword ptr [0x01c6b5c0]      ; 00403278 | g_INT_01c6b5c0
+    MOV [0x01c6b5c0],EAX                ; 0040327e | g_INT_01c6b5c0
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00403283
     INC EAX                             ; 00403287
     PUSH EAX                            ; 00403288
@@ -64,7 +64,7 @@ section .text
     CALL engine_2d.c_drawRect_FUN_00403170 ; 00403297
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawRect_FUN_00403170(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0040329c
-    MOV dword ptr [0x01c6b5c0],EBX      ; 0040329f | DAT_01c6b5c0
+    MOV dword ptr [0x01c6b5c0],EBX      ; 0040329f | g_INT_01c6b5c0
     POP EDI                             ; 004032a5
     POP ESI                             ; 004032a6
     POP EBX                             ; 004032a7

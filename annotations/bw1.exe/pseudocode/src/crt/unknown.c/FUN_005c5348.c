@@ -14,7 +14,7 @@ void FUN_005c5348(uint param_1,uint param_2)
   
   pHVar1 = GetModuleHandleA((LPCSTR)0x0);
   FUN_005c50fc(0,param_2,pHVar1);
-  uVar2 = (*(code *)PTR_crt_unknown_c_FUN_005c50cc_006265fc)(&DAT_006265bc);
+  uVar2 = (*(code *)PTR_crt_unknown_c_FUN_005c50cc_006265fc)(&g_UINT_PTR_006265bc);
   FUN_005cb0a0(uVar2);
   FUN_005cb5a8(param_1);
   FUN_005cb630();

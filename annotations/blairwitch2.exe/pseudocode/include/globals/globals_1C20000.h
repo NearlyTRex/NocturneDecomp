@@ -4,12 +4,24 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CBitFont.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CEditorTools.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C20000
 // =============================================================================
+
+// CBitFont*
+extern CBitFont* g_CBitFont_PTR_01c25590;
+
+// CDemonActor*[2000]
+extern CDemonActor* g_CDemonActor_PTR_ARRAY_01c264e4[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CDynamiteClassInfo;
@@ -17,6 +29,139 @@ extern CDemonActorType g_CElephantGunClassInfo;
 extern CDemonActorType g_CEmitterClassInfo;
 extern CDemonActorType g_CEnemyClassInfo;
 
+// CDemonTriangle[8]
+extern CDemonTriangle g_CDemonTriangle_ARRAY_01c223e0[8];
+
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
+
+// CVector3f
+extern CVector3f g_CVector3f_01c21e74;
+extern CVector3f g_CVector3f_01c225dc;
+
+// CVector3f[16]
+extern CVector3f g_CVector3f_ARRAY_01c21f4c[16];
+extern CVector3f g_CVector3f_ARRAY_01c22010[16];
+extern CVector3f g_CVector3f_ARRAY_01c220d4[16];
+extern CVector3f g_CVector3f_ARRAY_01c22198[16];
+extern CVector3f g_CVector3f_ARRAY_01c2225c[16];
+
+// CVector3i
+extern CVector3i g_CVector3i_01c21e68;
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c2a384;
+
+// byte
+extern byte g_BYTE_01c21e80;
+
+// char*
+extern char* g_CHAR_PTR_01c25598;
+
+// char[1024]
+extern char g_CHAR_ARRAY_01c225f0[1024];
+extern char g_CHAR_ARRAY_01c229f0[1024];
+extern char g_CHAR_ARRAY_01c22df0[1024];
+extern char g_CHAR_ARRAY_01c231f0[1024];
+extern char g_CHAR_ARRAY_01c23df0[1024];
+extern char g_CHAR_ARRAY_01c241f0[1024];
+extern char g_CHAR_ARRAY_01c25f88[1024];
+
+// char[2048]
+extern char g_CHAR_ARRAY_01c235f0[2048];
+
+// char[4000]
+extern char g_CHAR_ARRAY_01c245f0[4000];
+
+// char[492]
+extern char g_CHAR_ARRAY_01c255a0[492];
+
+// float
+extern float g_FLOAT_01c21e88;
+extern float g_FLOAT_01c21e90;
+extern float g_FLOAT_01c21e94;
+extern float g_FLOAT_01c21e9c;
+extern float g_FLOAT_01c21ea0;
+extern float g_FLOAT_01c21ea8;
+extern float g_FLOAT_01c22320;
+extern float g_FLOAT_01c22328;
+extern float g_FLOAT_01c2232c;
+extern float g_FLOAT_01c22334;
+extern float g_FLOAT_01c22338;
+extern float g_FLOAT_01c22340;
+
+// float[2000]
+extern float g_FLOAT_ARRAY_01c28424[2000];
+
+// int
+extern int g_INT_01c21e64;
+extern int g_INT_01c21e84;
+extern int g_INT_01c21f48;
+extern int g_INT_01c2200c;
+extern int g_INT_01c220d0;
+extern int g_INT_01c22194;
+extern int g_INT_01c22258;
+extern int g_INT_01c2231c;
+extern int g_INT_01c2559c;
+extern int g_INT_01c25f78;
+extern int g_INT_01c25f7c;
+extern int g_INT_01c25f80;
+extern int g_INT_01c25f84;
+extern int g_INT_01c26388;
+extern int g_INT_01c2638c;
+extern int g_INT_01c26390;
+extern int g_INT_01c26394;
+extern int g_INT_01c26398;
+extern int g_INT_01c2639c;
+extern int g_INT_01c263a0;
+extern int g_INT_01c263a4;
+extern int g_INT_01c263a8;
+extern int g_INT_01c263ac;
+extern int g_INT_01c263b0;
+extern int g_INT_01c263b4;
+extern int g_INT_01c263b8;
+extern int g_INT_01c263bc;
+extern int g_INT_01c263c0;
+extern int g_INT_01c263c4;
+extern int g_INT_01c263c8;
+extern int g_INT_01c263cc;
+extern int g_INT_01c263d0;
+extern int g_INT_01c263d4;
+extern int g_INT_01c263d8;
+extern int g_INT_01c263dc;
+extern int g_INT_01c263e0;
+extern int g_INT_01c263e4;
+extern int g_INT_01c263e8;
+extern int g_INT_01c263ec;
+extern int g_INT_01c263f0;
+extern int g_INT_01c263f4;
+extern int g_INT_01c263f8;
+extern int g_INT_01c263fc;
+extern int g_INT_01c26400;
+extern int g_INT_01c26404;
+extern int g_INT_01c26408;
+extern int g_INT_01c2640c;
+extern int g_INT_01c26414;
+extern int g_INT_01c26418;
+extern int g_INT_01c2641c;
+extern int g_INT_01c26420;
+extern int g_INT_01c26424;
+extern int g_INT_01c26428;
+extern int g_INT_01c2642c;
+extern int g_INT_01c2a370;
+extern int g_INT_01c2a374;
+extern int g_INT_01c2a37c;
+extern int g_INT_01c2a380;
+
+// uchar[32768]
+extern uchar g_UCHAR_ARRAY_01c2c910[32768];
+
+// uint*[1200]
+extern uint* g_UINT_PTR_ARRAY_01c2b64c[1200];
+
+// void*
+extern void* g_PTR_01c26410;
+
+// void*[1200]
+extern void* g_ARRAY_PTR_01c2a38c[1200];
 

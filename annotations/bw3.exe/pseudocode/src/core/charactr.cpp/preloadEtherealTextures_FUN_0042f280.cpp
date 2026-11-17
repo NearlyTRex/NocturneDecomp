@@ -17,7 +17,8 @@ void __cdecl core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(int ethereal
     if (ethereal_type == 0) {
       texture = (SMRGLTextureBasic *)(&DAT_005f1124 + iVar1);
 LAB_0042f2a2:
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+                (g_CDemonRenderer_PTR_005f2afc,texture);
     }
     else {
       if (ethereal_type == 1) {

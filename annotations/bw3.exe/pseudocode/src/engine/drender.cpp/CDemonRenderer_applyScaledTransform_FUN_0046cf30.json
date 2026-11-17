@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 108,
+    "complexity_score": 92,
     "cross_reference_count": 48,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 5,
+    "pseudocode_lines": 47,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 175
+    "total_lines": 174
   },
   "cross_references": [
     {
@@ -332,21 +331,21 @@
   "globals": [
     {
       "addr": "005bc51b",
-      "name": "DAT_005bc51b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005bc51b",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "005bc523",
-      "name": "DAT_005bc523",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005bc523",
+      "type": "float",
+      "value": "0.3183099"
     },
     {
       "addr": "005bc52b",
-      "name": "DAT_005bc52b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005bc52b",
+      "type": "double",
+      "value": "32768"
     }
   ],
   "param_estimates": {
@@ -576,16 +575,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Raw hex address 0x46cf73 assigned to bare local `iVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 22,
+      "line": 20,
       "match": "0x46cf73",
       "severity": "moderate",
       "text": "iVar10 = 0x46cf73;",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Raw hex address 0x46cf7a assigned to bare local `iVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 24,
+      "line": 22,
       "match": "0x46cf7a",
       "severity": "moderate",
       "text": "iVar9 = 0x46cf7a;",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Raw hex address 0x46cf94 assigned to bare local `iVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 27,
+      "line": 25,
       "match": "0x46cf94",
       "severity": "moderate",
       "text": "iVar8 = 0x46cf94;",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Raw hex address 0x46d048 assigned to bare local `iVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 47,
+      "line": 45,
       "match": "0x46d048",
       "severity": "moderate",
       "text": "iVar10 = 0x46d048;",

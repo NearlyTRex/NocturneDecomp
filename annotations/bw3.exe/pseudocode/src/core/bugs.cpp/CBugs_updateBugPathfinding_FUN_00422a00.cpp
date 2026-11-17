@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex)
 
 {
@@ -67,13 +65,13 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs *this_pt
   local_68 = local_e4.y;
   local_64 = local_e4.z;
   local_5c[3] = local_e8;
-  if (local_e8 < _DAT_005dcbc8) {
+  if (local_e8 < 0.25f) {
     local_18 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00422070
                          (this_ptr,(bug_data->position).x,(bug_data->position).z);
     (bug_data->position).y = local_18;
     if (dest_vertex == (CVector3f *)0x0) {
-      local_5c[2] = _DAT_005dcbc8 * _DAT_005b786d * (float)_DAT_005b7871;
-      local_1c = _DAT_005dcbc8 * _DAT_005b7879 * (float)_DAT_005b7871;
+      local_5c[2] = 0.25f * 12.0f * (float)0.5;
+      local_1c = 0.25f * -12.0f * (float)0.5;
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(local_1c,local_5c[2]);
       (bug_data->dest_position).x = local_18;
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(local_1c,local_5c[2]);
@@ -115,7 +113,7 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs *this_pt
       }
       local_e8 = SQRT(local_e4.z * local_e4.z + local_e4.x * local_e4.x + local_e4.y * local_e4.y);
       local_48 = local_e8;
-      if (local_e8 < _DAT_005dcbc8) {
+      if (local_e8 < 0.25f) {
         return 1;
       }
     }
@@ -129,8 +127,8 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs *this_pt
   if (fVar1 <= 0.0) {
     return 1;
   }
-  local_3c = _DAT_005dcbd0 * delta_time;
-  if (local_e8 < _DAT_005dcbd0 * delta_time) {
+  local_3c = 6.0f * delta_time;
+  if (local_e8 < 6.0f * delta_time) {
     local_3c = local_e8;
   }
   local_4c = local_3c / local_e8;
@@ -147,7 +145,7 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs *this_pt
   local_2c = &bug_data->position;
   local_18 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00422070(this_ptr,local_a8,local_a0);
   local_24 = local_18;
-  if (local_18 - (bug_data->position).y <= local_e8 * (float)_DAT_005b7881) {
+  if (local_18 - (bug_data->position).y <= local_e8 * (float)0.40000000000000002) {
     if ((CVector3f *)(local_c8 + 8) != local_2c) {
       local_2c->x = local_a8;
       local_2c->y = local_a4;
@@ -178,7 +176,7 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs *this_pt
   local_44 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_c8[3]);
   local_18 = local_44;
   local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_c8[2]);
-  local_34 = delta_time * _DAT_005b7889 * _DAT_005b788d;
+  local_34 = delta_time * 3.141593f * 4.0f;
   local_40 = -local_34;
   if (local_44 < local_40) {
     local_44 = local_40;

@@ -25,7 +25,8 @@ void __cdecl shape_spotview_cpp_CSpotView_applyCamera_FUN_00561d90(CSpotView *th
   float fStack_10;
   
   bVar1 = 0;
-  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(DAT_0060b280,28.0);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
+            (g_CDemonRenderer_PTR_0060b280,28.0);
   CStack_54.x = this_ptr->pitch;
   CStack_54.z = 0.0;
   CStack_54.y = this_ptr->yaw;
@@ -47,11 +48,12 @@ void __cdecl shape_spotview_cpp_CSpotView_applyCamera_FUN_00561d90(CSpotView *th
   afStack_20[1] = (this_ptr->loat_at).z + afStack_38[1];
   CStack_60.x = fStack_24;
   *(float *)((int)&CStack_60 + (uint)bVar1 * -8 + 4) = afStack_20[(uint)bVar1 * -2];
-  this_ptr_00 = DAT_0060b280;
+  this_ptr_00 = g_CDemonRenderer_PTR_0060b280;
   *(float *)((int)&CStack_60 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
        afStack_20[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
             (this_ptr_00,point_ptr);
-  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030(DAT_0060b280,&CStack_54);
+  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
+            (g_CDemonRenderer_PTR_0060b280,&CStack_54);
   return;
 }

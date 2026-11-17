@@ -10,13 +10,13 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0050f780 at 0050f7c7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6e2a0
+;   int g_INT_01c6e2a0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c6e2a0],0x0      ; 00434ea0 | DAT_01c6e2a0
+    CMP dword ptr [0x01c6e2a0],0x0      ; 00434ea0 | g_INT_01c6e2a0
         ;   Label: cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00434ea0
     JZ 0x00434eaf                       ; 00434ea7
         ;   XREF to: 00434eaf (CONDITIONAL_JUMP)  ; LAB_00434eaf

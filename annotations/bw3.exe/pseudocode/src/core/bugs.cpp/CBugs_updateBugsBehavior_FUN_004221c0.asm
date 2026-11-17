@@ -11,9 +11,9 @@
 ;   core_bugs.cpp_CBugs_process_FUN_00421300 at 004213c5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7851
-;   undefined4 DAT_005b7859
-;   undefined4 DAT_005dcbd4
+;   double g_DOUBLE_005b7851 = 2
+;   float g_FLOAT_005b7859 = 0.5
+;   float g_FLOAT_005dcbd4 = 6
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423fb0
@@ -77,21 +77,21 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00422237
     FLD float ptr [ESP + 0x50]          ; 00422238
     FABS                                ; 0042223c
-    FCOMP double ptr [0x005b7851]       ; 0042223e | DAT_005b7851
+    FCOMP double ptr [0x005b7851]       ; 0042223e | g_DOUBLE_005b7851
     FNSTSW AX                           ; 00422244
     SAHF                                ; 00422246
     JNC 0x004222e0                      ; 00422247
         ;   XREF to: 004222e0 (CONDITIONAL_JUMP)  ; LAB_004222e0
     FLD float ptr [ESP + 0x4c]          ; 0042224d
     FABS                                ; 00422251
-    FCOMP double ptr [0x005b7851]       ; 00422253 | DAT_005b7851
+    FCOMP double ptr [0x005b7851]       ; 00422253 | g_DOUBLE_005b7851
     FNSTSW AX                           ; 00422259
     SAHF                                ; 0042225b
     JNC 0x004222e0                      ; 0042225c
         ;   XREF to: 004222e0 (CONDITIONAL_JUMP)  ; LAB_004222e0
     FLD float ptr [ESP + 0x54]          ; 00422262
     FABS                                ; 00422266
-    FCOMP double ptr [0x005b7851]       ; 00422268 | DAT_005b7851
+    FCOMP double ptr [0x005b7851]       ; 00422268 | g_DOUBLE_005b7851
     FNSTSW AX                           ; 0042226e
     SAHF                                ; 00422270
     JNC 0x004222e0                      ; 00422271
@@ -192,7 +192,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 00422358
         ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0042235d
-    FLD float ptr [0x005dcbd4]          ; 00422360 | DAT_005dcbd4
+    FLD float ptr [0x005dcbd4]          ; 00422360 | g_FLOAT_005dcbd4
     FMUL float ptr [EBP + 0x18]         ; 00422366
     FSTP float ptr [ESP + 0xd4]         ; 00422369
     MOV EAX,dword ptr [ESP + 0xd4]      ; 00422370
@@ -276,7 +276,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042247f
     MOVSD ES:EDI,ESI                    ; 00422480
     MOVSD ES:EDI,ESI                    ; 00422481
-    FLD float ptr [0x005b7859]          ; 00422482 | DAT_005b7859
+    FLD float ptr [0x005b7859]          ; 00422482 | g_FLOAT_005b7859
     FLD float ptr [ESP + 0x88]          ; 00422488
     FMUL ST1                            ; 0042248f
     FLD float ptr [ESP + 0x8c]          ; 00422491

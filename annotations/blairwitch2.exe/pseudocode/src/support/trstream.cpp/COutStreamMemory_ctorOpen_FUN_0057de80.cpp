@@ -14,7 +14,7 @@ COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_00
   
   this_ptr_00 = (COutStreamMemory *)
                 support_trstream_cpp_COutStream_dtor_FUN_0057d860(&this_ptr->base,unaff_ESI);
-  (this_ptr_00->base).vtable = &g_COutStreamMemoryVTable;
+  (this_ptr_00->base).vtable = g_COutStreamMemoryVTable;
   this_ptr_00->buffer = (char *)0x0;
   this_ptr_00->capacity = 0;
   this_ptr_00->position = 0;

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00525420(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)
 
 {
   if (this_ptr->current_motion_name[0] == '\0') {
     if (this_ptr->motion_list_ptr == (CMotionList *)0x0) {
-      _DAT_01d1d400 = "..\\core\\motion.cpp";
-      _DAT_01d1d404 = 0x596;
+      g_CHAR_PTR_01d1d400 = "..\\core\\motion.cpp";
+      g_INT_01d1d404 = 0x596;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Tried to save motion controller state without setting motion list pointer!");
     }
     core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(this_ptr);

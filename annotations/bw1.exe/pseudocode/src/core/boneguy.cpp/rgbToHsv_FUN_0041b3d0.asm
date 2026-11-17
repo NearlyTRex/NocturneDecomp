@@ -7,11 +7,11 @@
 ; CColor3f *       Stack[0x4]:4   in_rgb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d4561
-;   undefined4 DAT_005d4569
-;   undefined4 DAT_005d4571
-;   undefined4 DAT_005d4579
-;   undefined4 DAT_005d4581
+;   double g_DOUBLE_005d4561 = 255
+;   double g_DOUBLE_005d4569 = 4
+;   double g_DOUBLE_005d4571 = 2
+;   double g_DOUBLE_005d4579 = 42.5
+;   float g_FLOAT_005d4581 = 255
 ;
 ; *****************************************************************************
 
@@ -98,7 +98,7 @@ section .text
     JNC 0x0041b56f                      ; 0041b498
         ;   XREF to: 0041b56f (CONDITIONAL_JUMP)  ; LAB_0041b56f
     FLD double ptr [ESP]                ; 0041b49e
-    FMUL double ptr [0x005d4561]        ; 0041b4a1 | DAT_005d4561
+    FMUL double ptr [0x005d4561]        ; 0041b4a1 | g_DOUBLE_005d4561
     FLD float ptr [ESP + 0x3c]          ; 0041b4a7
     FXCH                                ; 0041b4ab
     FSTP float ptr [ESP + 0x8]          ; 0041b4ad
@@ -116,12 +116,12 @@ section .text
     FLD float ptr [ESP + 0x3c]          ; 0041b4cf
     FSUB float ptr [ESP + 0x38]         ; 0041b4d3
     FDIV float ptr [ESP + 0x2c]         ; 0041b4d7
-    FADD double ptr [0x005d4569]        ; 0041b4db | DAT_005d4569
+    FADD double ptr [0x005d4569]        ; 0041b4db | g_DOUBLE_005d4569
     FSTP float ptr [ESP + 0xc]          ; 0041b4e1
         ;   Label: LAB_0041b4e1
     FLD float ptr [ESP + 0xc]           ; 0041b4e5
     FLD ST0                             ; 0041b4e9
-    FMUL double ptr [0x005d4579]        ; 0041b4eb | DAT_005d4579
+    FMUL double ptr [0x005d4579]        ; 0041b4eb | g_DOUBLE_005d4579
     FSTP ST1                            ; 0041b4f1
     FST float ptr [ESP + 0xc]           ; 0041b4f3
     FLDZ                                ; 0041b4f7
@@ -167,12 +167,12 @@ section .text
         ;   Label: LAB_0041b54b
     FSUB float ptr [ESP + 0x3c]         ; 0041b54f
     FDIV float ptr [ESP + 0x2c]         ; 0041b553
-    FSUBR double ptr [0x005d4571]       ; 0041b557 | DAT_005d4571
+    FSUBR double ptr [0x005d4571]       ; 0041b557 | g_DOUBLE_005d4571
     JMP 0x0041b4e1                      ; 0041b55d
         ;   XREF to: 0041b4e1 (UNCONDITIONAL_JUMP)  ; LAB_0041b4e1
     FLD float ptr [ESP + 0xc]           ; 0041b55f
         ;   Label: LAB_0041b55f
-    FADD float ptr [0x005d4581]         ; 0041b563 | DAT_005d4581
+    FADD float ptr [0x005d4581]         ; 0041b563 | g_FLOAT_005d4581
     FSTP float ptr [ESP + 0xc]          ; 0041b569
     JMP 0x0041b500                      ; 0041b56d
         ;   XREF to: 0041b500 (UNCONDITIONAL_JUMP)  ; LAB_0041b500

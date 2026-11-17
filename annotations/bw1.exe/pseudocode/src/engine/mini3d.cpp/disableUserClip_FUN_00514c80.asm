@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d25f18
+;   int g_INT_01d25f18
 ;
 ; *****************************************************************************
 
@@ -13,6 +13,6 @@ section .text
 
     XOR EDX,EDX                         ; 00514c80
         ;   Label: engine_mini3d.cpp_disableUserClip_FUN_00514c80
-    MOV dword ptr [0x01d25f18],EDX      ; 00514c82 | DAT_01d25f18
+    MOV dword ptr [0x01d25f18],EDX      ; 00514c82 | g_INT_01d25f18
     RET                                 ; 00514c88
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv)
 
 {
@@ -32,32 +30,32 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
   int iStack_14;
   
   bVar12 = 0;
-  _DAT_01c6e2b0 = 0;
-  _DAT_0060683c = 0x10000;
-  _DAT_00606830 = 1;
-  file_handle = _fopen("stderr.txt",&DAT_005c6b99);
+  g_INT_01c6e2b0 = 0;
+  g_INT_0060683c = 0x10000;
+  g_INT_00606830 = 1;
+  file_handle = _fopen("stderr.txt","rb");
   if (file_handle != (_FILE *)0x0) {
     _fclose(file_handle);
     iVar6 = _chmod("stderr.txt",0x1c0);
     if (iVar6 != 0) {
-      _DAT_01d71de0 = "..\\core\\main.c";
-      _DAT_01d71de4 = 0x3b8;
+      g_CHAR_PTR_01d71de0 = "..\\core\\main.c";
+      g_INT_01d71de4 = 0x3b8;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
     }
   }
   pcVar11 = &stack0xfffff8d8;
-  _freopen("stderr.txt",&DAT_005c6bee,(_FILE *)&DAT_006076ac);
+  _freopen("stderr.txt","wt",&g_FILE_006076ac);
   core_flattn_cpp_doNothing_FUN_004ad4c0();
   core_inivar_cpp_readIniData_FUN_004d8e70();
-  _DAT_02cf5fd8 = 2;
+  g_INT_02cf5fd8 = 2;
   engine_pod_cpp_CPod_init_FUN_00514600(&g_CDemonPodPtr->base);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(engine_dosio_cpp_findFileNormally_FUN_00465730);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(engine_pod_cpp_findFileInPod_FUN_00515280);
   support_newmsg_cpp_readMessageFile_FUN_005084c0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_004f7c30();
-  if (_DAT_01c6e2a0 == 0) {
-    _DAT_01d71de0 = "..\\core\\main.c";
-    _DAT_01d71de4 = 0x3df;
+  if (g_INT_01c6e2a0 == 0) {
+    g_CHAR_PTR_01d71de0 = "..\\core\\main.c";
+    g_INT_01d71de4 = 0x3df;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960("This CPU does not have an MMX unit.")
     ;
     core_main_c_displayErrorAndQuit_FUN_004e4330(pcVar5);
@@ -69,12 +67,12 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
   wincore_winrun_cpp_initJoystick_FUN_00581c80();
   iVar6 = wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(0x280,0x1e0,0x20);
   if (iVar6 == 0) {
-    _DAT_01d71de0 = "..\\core\\main.c";
-    _DAT_01d71de4 = 0x3f7;
+    g_CHAR_PTR_01d71de0 = "..\\core\\main.c";
+    g_INT_01d71de4 = 0x3f7;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_00459f50();
-  if (_DAT_02d21b88 < 0x3c00000) {
+  if (g_INT_02d21b88 < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Windows is reporting ");
     pcVar5 = acStack_528;
     do {
@@ -86,7 +84,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_328,&DAT_005c6cf1);
+    _sprintf(acStack_328,"%.1f");
     pcVar5 = acStack_328;
     iVar6 = -1;
     pcVar7 = acStack_528;
@@ -302,7 +300,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
     } while (cVar2 != '\0');
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0(g_CEditorToolsPtr,acStack_528);
   }
-  if (_DAT_02d21b8c < 0xc800000) {
+  if (g_INT_02d21b8c < 0xc800000) {
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Windows is reporting ");
     do {
       cVar2 = *pcVar5;
@@ -313,7 +311,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_128,&DAT_005c6dcb);
+    _sprintf(acStack_128,"%.1f");
     pcVar11 = acStack_128;
     iVar6 = -1;
     pcVar5 = &stack0xfffff8d8;
@@ -444,11 +442,11 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0(g_CEditorToolsPtr,&stack0xfffff8d8);
   }
   pCVar4 = g_CGamePtr;
-  if (_DAT_01d5bc7c != 0) {
-    _DAT_01d5bc7c = 0;
+  if (g_INT_01d5bc7c != 0) {
+    g_INT_01d5bc7c = 0;
     g_CGamePtr->game_pixx = 0x280;
     pCVar4->game_pixy = 0x1e0;
-    _DAT_02cf5fcc = 0;
+    g_INT_02cf5fcc = 0;
     pCVar4->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_004e84d0();
   }
@@ -465,16 +463,16 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
     pcVar11[1] = cVar2;
     pcVar11 = pcVar11 + 2;
   } while (cVar2 != '\0');
-  engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549aa8,acStack_228);
-  engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01549aa8,0x58);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(g_CBitFont_PTR_01549aa8,acStack_228);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01549aa8,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0(&CStack_28);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&CStack_28,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(&CStack_28,0,0,0x8000);
   wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300(&CStack_28,0);
-  core_sound_cpp_CSound_findAllSoundFiles_FUN_0055fc60(0x02CF5680);
+  core_sound_cpp_CSound_findAllSoundFiles_FUN_0055fc60(g_CSound_PTR_006045f8);
   iVar6 = 0;
-  core_mission_cpp_CDemonMission_reset_FUN_004f5aa0(0x01D81080);
+  core_mission_cpp_CDemonMission_reset_FUN_004f5aa0(g_CDemonMission_PTR_00600530);
   iStack_14 = 0;
   do {
     puVar1 = (uint *)((int)&g_GlobalFilters + iVar6);
@@ -482,27 +480,27 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
     iVar8 = iStack_14 + 1;
     core_dfilter_cpp_CDemonFilter_init_FUN_00459b80
               ((CDemonFilter *)*puVar1,
-               (float)iStack_14 * (float)_DAT_005c6eaa + (float)_DAT_005c6eaa,0);
+               (float)iStack_14 * (float)0.125 + (float)0.125,0);
     iStack_14 = iVar8;
   } while (iVar8 < 8);
   iVar8 = 0;
   iVar6 = 0;
   do {
     **(uint **)((int)&g_PlayerFilters + iVar8) = 0x100;
-    fVar3 = (float)_DAT_005c6eb2;
+    fVar3 = (float)0.25;
     *(uint *)(*(int *)((int)&g_PlayerFilters + iVar8) + 4) = 0x100;
     puVar1 = (uint *)((int)&g_PlayerFilters + iVar8);
     iVar8 = iVar8 + 4;
     iVar9 = iVar6 + 1;
     iStack_14 = iVar6;
     core_dfilter_cpp_CDemonFilter_init_FUN_00459b80
-              ((CDemonFilter *)*puVar1,(float)iVar6 * fVar3 + (float)_DAT_005c6eb2,0);
+              ((CDemonFilter *)*puVar1,(float)iVar6 * fVar3 + (float)0.25,0);
     iVar6 = iVar9;
   } while (iVar9 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_00508b90(g_CMousePtr);
   core_netgame_cpp_CNetGame_init_FUN_00503e20(g_CNetGamePtr);
   core_bmppuzzl_cpp_resetAllPuzzles_FUN_004119e0();
   wincore_winrun_cpp_setRegistryStringValue_FUN_00581bf0
-            ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank",&DAT_005c6e6a);
+            ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
   return;
 }

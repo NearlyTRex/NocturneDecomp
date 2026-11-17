@@ -21,10 +21,10 @@
 ;   undefined1* switchdataD_00413f1c = 00413f7d
 ;   TerminatedCString s_limb_wav_005cbbaa
 ;   TerminatedCString s_Shot_thru_the_heart_005cbbb4
-;   undefined4 DAT_005cbbce
-;   undefined4 DAT_005cbbd6
-;   undefined4 DAT_005cbbde
-;   undefined4 DAT_005cbbe6
+;   double g_DOUBLE_005cbbce = 7
+;   double g_DOUBLE_005cbbd6 = 0.5
+;   double g_DOUBLE_005cbbde = 2.5
+;   double g_DOUBLE_005cbbe6 = 20
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CConsole g_CConsoleInstance
@@ -235,7 +235,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 00414101
         ;   Label: LAB_00414101
     FLD ST0                             ; 00414104
-    FMUL double ptr [0x005cbbce]        ; 00414106 | DAT_005cbbce
+    FMUL double ptr [0x005cbbce]        ; 00414106 | g_DOUBLE_005cbbce
     FSTP ST1                            ; 0041410c
     FSTP float ptr [ESI + 0x8]          ; 0041410e
     MOV EDX,dword ptr [EBX + 0x10b5c]   ; 00414111
@@ -246,7 +246,7 @@ section .text
         ;   XREF to: 004141d1 (CONDITIONAL_JUMP)  ; LAB_004141d1
     FLD float ptr [ESI + 0x4]           ; 00414121
     FLD ST0                             ; 00414124
-    FMUL double ptr [0x005cbbde]        ; 00414126 | DAT_005cbbde
+    FMUL double ptr [0x005cbbde]        ; 00414126 | g_DOUBLE_005cbbde
     FSTP ST1                            ; 0041412c
         ;   Label: LAB_0041412c
     FSTP float ptr [ESI + 0x4]          ; 0041412e
@@ -322,7 +322,7 @@ section .text
         ;   XREF to: 004141d9 (CONDITIONAL_JUMP)  ; LAB_004141d9
     FLD float ptr [ESI + 0x4]           ; 004141ec
     FLD ST0                             ; 004141ef
-    FMUL double ptr [0x005cbbd6]        ; 004141f1 | DAT_005cbbd6
+    FMUL double ptr [0x005cbbd6]        ; 004141f1 | g_DOUBLE_005cbbd6
     JMP 0x0041412c                      ; 004141f7
         ;   XREF to: 0041412c (UNCONDITIONAL_JUMP)  ; LAB_0041412c
     FLD float ptr [ESI + 0x4]           ; 004141fc
@@ -330,7 +330,7 @@ section .text
     PUSH 0x5cbbb4                       ; 004141ff | = "Shot thru the heart\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 00414204 | g_CConsolePtr
     FLD ST0                             ; 0041420a
-    FMUL double ptr [0x005cbbe6]        ; 0041420c | DAT_005cbbe6
+    FMUL double ptr [0x005cbbe6]        ; 0041420c | g_DOUBLE_005cbbe6
     PUSH EDX                            ; 00414212 | g_CConsoleInstance
     FSTP ST1                            ; 00414213
     FSTP float ptr [ESI + 0x4]          ; 00414215

@@ -6,23 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00536c90(CDemonSet *this_ptr)
 
 {
-  int iVar1;
-  float fVar2;
+  CHero *pCVar1;
+  int iVar2;
   float fVar3;
   float fVar4;
-  int iVar5;
+  float fVar5;
   int iVar6;
-  uint *puVar7;
-  byte bVar8;
-  float10 fVar9;
-  double dVar10;
+  int iVar7;
+  uint *puVar8;
+  byte bVar9;
+  float10 fVar10;
   double dVar11;
-  CVector3f *pCVar12;
+  double dVar12;
+  CVector3f *pCVar13;
   CVector3f local_74;
   CVector3f CStack_68;
   uint local_5c [6];
@@ -36,35 +35,34 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00536c90(CDemonSet *t
   int iStack_18;
   int iStack_14;
   
-  bVar8 = 0;
-  _DAT_0207babc = 0;
-  _DAT_0207bab8 = 0;
+  bVar9 = 0;
+  g_INT_0207babc = 0;
+  g_INT_0207bab8 = 0;
   if ((g_CGamePtr->letterbox_mode == 0) &&
-     (iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04), iVar1 != 0)) {
-    if (*(int *)(iVar1 + 0x20b68) != 0) {
-      _DAT_0207bab8 = *(int *)(iVar1 + 0x20b70);
+     (pCVar1 = g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14], pCVar1 != (CHero *)0x0)) {
+    if (pCVar1->hero_action != 0) {
+      g_INT_0207bab8 = (int)pCVar1->hero_action_target;
     }
-    iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-    _DAT_0207babc = *(int *)(iVar1 + 0x20b8c);
-    fVar9 = (float10)fcos((float10)*(float *)(iVar1 + 0x20b90));
-    _DAT_0207bac0 = (float)(fVar9 + (float10)_DAT_005d05e7);
+    g_INT_0207babc = (int)g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->aim_target_actor;
+    fVar10 = (float10)fcos((float10)g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->aim_target_pulse);
+    g_FLOAT_0207bac0 = (float)(fVar10 + (float10)2.25);
   }
   local_28 = this_ptr->sorted_render_actor_count + -1;
   if (-1 < local_28) {
     local_2c = this_ptr->cameras[0].name + this_ptr->sorted_render_actor_count * 4 + -8;
     do {
-      iVar1 = *(int *)(local_2c + 0x15f700);
-      if (*(int *)(iVar1 + 0xf8) == 0) {
-        *(byte *)(iVar1 + 0x144) = *(byte *)(iVar1 + 0x144) & 0xfb;
+      iVar2 = *(int *)(local_2c + 0x15f700);
+      if (*(int *)(iVar2 + 0xf8) == 0) {
+        *(byte *)(iVar2 + 0x144) = *(byte *)(iVar2 + 0x144) & 0xfb;
       }
       else {
-        (**(code **)(*(int *)(iVar1 + 0x154) + 0x1c))(iVar1);
-        puVar7 = local_5c;
-        pCVar12 = &local_74;
-        for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-          pCVar12->x = *puVar7;
-          puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
-          pCVar12 = (CVector3f *)((int)pCVar12 + ((uint)bVar8 * -2 + 1) * 4);
+        (**(code **)(*(int *)(iVar2 + 0x154) + 0x1c))(iVar2);
+        puVar8 = local_5c;
+        pCVar13 = &local_74;
+        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+          pCVar13->x = *puVar8;
+          puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+          pCVar13 = (CVector3f *)((int)pCVar13 + ((uint)bVar9 * -2 + 1) * 4);
         }
         if (&CStack_44 != &local_74) {
           CStack_44.x = local_74.x;
@@ -76,55 +74,58 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00536c90(CDemonSet *t
           CStack_38.y = CStack_68.y;
           CStack_38.z = CStack_68.z;
         }
-        pCVar12 = &CStack_44;
+        pCVar13 = &CStack_44;
         core_set_cpp_CDemonSet_setLightingParameters_FUN_005375c0
-                  (this_ptr,(CVector3f *)(iVar1 + 0x20),(UOrientationVector *)(iVar1 + 0x30),pCVar12
-                   ,&CStack_38,(CMatrix3x3f *)(iVar1 + 0x3c));
-        iStack_24 = *(int *)(iVar1 + 0x108);
-        iStack_20 = *(int *)(iVar1 + 0x10c);
-        iStack_1c = *(int *)(iVar1 + 0x110);
-        if (iVar1 == _DAT_0207bab8) {
+                  (this_ptr,(CVector3f *)(iVar2 + 0x20),(UOrientationVector *)(iVar2 + 0x30),pCVar13
+                   ,&CStack_38,(CMatrix3x3f *)(iVar2 + 0x3c));
+        iStack_24 = *(int *)(iVar2 + 0x108);
+        iStack_20 = *(int *)(iVar2 + 0x10c);
+        iStack_1c = *(int *)(iVar2 + 0x110);
+        if (iVar2 == g_INT_0207bab8) {
           iStack_24 = (iStack_24 * 3) / 2;
           iStack_20 = (iStack_20 * 3) / 2;
           iStack_1c = (iStack_1c * 3) / 2;
         }
-        if (iVar1 == _DAT_0207babc) {
+        if (iVar2 == g_INT_0207babc) {
           iStack_18 = iStack_24;
-          fVar3 = (float)iStack_20;
-          fVar2 = 1.0 / _DAT_0207bac0;
+          fVar4 = (float)iStack_20;
+          fVar3 = 1.0 / g_FLOAT_0207bac0;
           iStack_14 = iStack_1c;
-          fVar4 = (float)iStack_1c;
-          dVar10 = round((double)((float)iStack_24 * _DAT_0207bac0));
-          local_28 = (int)ROUND(dVar10);
-          dVar10 = round((double)(fVar3 * fVar2));
-          pCVar12 = (CVector3f *)0x536e9b;
-          dVar11 = round((double)(fVar4 * fVar2));
-          local_2c = (char *)(int)ROUND(dVar10);
+          fVar5 = (float)iStack_1c;
+          dVar11 = round((double)((float)iStack_24 * g_FLOAT_0207bac0));
           local_28 = (int)ROUND(dVar11);
+          dVar11 = round((double)(fVar4 * fVar3));
+          pCVar13 = (CVector3f *)0x536e9b;
+          dVar12 = round((double)(fVar5 * fVar3));
+          local_2c = (char *)(int)ROUND(dVar11);
+          local_28 = (int)ROUND(dVar12);
         }
         core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100
                   (g_CDemonSetPtr,(int)CStack_38.z,(int)local_2c,local_28);
-        engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);
-        iVar6 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x10))(iVar1,pCVar12);
-        if (iVar6 == 0) {
-          *(byte *)(iVar1 + 0x144) = *(byte *)(iVar1 + 0x144) & 0xfb;
+        engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
+                  (g_CDemonRenderer_PTR_005f2afc,0xffff);
+        iVar7 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x10))(iVar2,pCVar13);
+        if (iVar7 == 0) {
+          *(byte *)(iVar2 + 0x144) = *(byte *)(iVar2 + 0x144) & 0xfb;
         }
         else {
-          *(byte *)(iVar1 + 0x144) = *(byte *)(iVar1 + 0x144) | 4;
+          *(byte *)(iVar2 + 0x144) = *(byte *)(iVar2 + 0x144) | 4;
         }
-        iVar6 = 0;
-        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);
+        iVar7 = 0;
+        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
+                  (g_CDemonRenderer_PTR_005f2afc,1);
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
-            core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(this_ptr,iVar6,0);
-            iVar5 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x10))(iVar1);
-            if (iVar5 != 0) {
-              *(byte *)(iVar1 + 0x144) = *(byte *)(iVar1 + 0x144) | 4;
+            core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(this_ptr,iVar7,0);
+            iVar6 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x10))(iVar2);
+            if (iVar6 != 0) {
+              *(byte *)(iVar2 + 0x144) = *(byte *)(iVar2 + 0x144) | 4;
             }
-            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);
-            iVar6 = iVar6 + 1;
+            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
+                      (g_CDemonRenderer_PTR_005f2afc,1);
+            iVar7 = iVar7 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(this_ptr);
-          } while (iVar6 < this_ptr->mirror_glass_actor_count);
+          } while (iVar7 < this_ptr->mirror_glass_actor_count);
         }
         core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,0x10000,0x10000,0x10000);
       }

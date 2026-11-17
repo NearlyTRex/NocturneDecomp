@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset)
 
 {
@@ -42,7 +40,7 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
        *(uint *)((int)&local_3c + (uint)bVar6 * -8 + 4);
   *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        *(uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  local_24.y = local_24.y + _DAT_005d71b7;
+  local_24.y = local_24.y + -0.3f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
             ((CDemonActor *)this_ptr,&local_24,&local_48);
   local_30.x = local_48.x;
@@ -51,7 +49,7 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
   *(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        *(uint *)((int)&local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   local_18 = *clavicle_blend;
-  local_1b78 = delta_time / _DAT_005f7348 + local_18;
+  local_1b78 = delta_time / 0.05f + local_18;
   if (1.0 < local_1b78) {
     local_1b78 = 1.0;
   }
@@ -94,7 +92,7 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
       local_18 = *clavicle_blend;
     }
     iVar3 = iVar3 + 1;
-    *clavicle_blend = (local_18 + local_1b78) * (float)_DAT_005d71bb;
+    *clavicle_blend = (local_18 + local_1b78) * (float)0.5;
   } while (iVar3 < 7);
   return;
 }

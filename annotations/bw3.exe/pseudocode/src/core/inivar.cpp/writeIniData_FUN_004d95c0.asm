@@ -86,7 +86,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 004d9638
         ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d963d
-    MOV ESI,dword ptr [0x02cf5fcc]      ; 004d9640 | DAT_02cf5fcc
+    MOV ESI,dword ptr [0x02cf5fcc]      ; 004d9640 | g_INT_02cf5fcc
     PUSH ESI                            ; 004d9646
     PUSH 0x5c5bc7                       ; 004d9647 | = "useDirect3D"
     LEA EAX,[ESP + 0x8]                 ; 004d964c
@@ -94,7 +94,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 004d9651
         ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d9656
-    MOV EDI,dword ptr [0x02cf5fd8]      ; 004d9659 | DAT_02cf5fd8
+    MOV EDI,dword ptr [0x02cf5fd8]      ; 004d9659 | g_INT_02cf5fd8
     PUSH EDI                            ; 004d965f
     PUSH 0x5c5bd3                       ; 004d9660 | = "useAGPFlag"
     LEA EAX,[ESP + 0x8]                 ; 004d9665
@@ -102,7 +102,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 004d966a
         ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d966f
-    PUSH 0x606730                       ; 004d9672 | DAT_00606730
+    PUSH 0x606730                       ; 004d9672 | g_CHAR_ARRAY_00606730
     PUSH 0x5c5bde                       ; 004d9677 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x8]                 ; 004d967c
     PUSH EAX                            ; 004d9680
@@ -136,7 +136,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 004d96d8
         ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d96dd
-    MOV EBX,dword ptr [0x01d5bc7c]      ; 004d96e0 | DAT_01d5bc7c
+    MOV EBX,dword ptr [0x01d5bc7c]      ; 004d96e0 | g_INT_01d5bc7c
     PUSH EBX                            ; 004d96e6
     PUSH 0x5c5c08                       ; 004d96e7 | = "firstTimeFlag"
     LEA EAX,[ESP + 0x8]                 ; 004d96ec
@@ -162,7 +162,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 004d9727
         ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d972c
-    MOV EBP,dword ptr [0x01d74020]      ; 004d972f | DAT_01d74020
+    MOV EBP,dword ptr [0x01d74020]      ; 004d972f | g_INT_01d74020
     PUSH EBP                            ; 004d9735
     PUSH 0x5c5c2d                       ; 004d9736 | = "currentBoard"
     LEA EAX,[ESP + 0x8]                 ; 004d973b

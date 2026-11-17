@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *this_ptr)
 
 {
@@ -17,40 +15,40 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *th
   float local_14;
   int local_10;
   
-  _DAT_01ed6808 = 0;
+  g_INT_01ed6808 = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
     iVar1 = core_script_cpp_CScript_findLabelIndex_FUN_005303b0(this_ptr,"initSection");
     if (-1 < iVar1) {
       iVar2 = core_script_cpp_CScript_findLabelIndex_FUN_005303b0
                         (this_ptr,"initSectionEnd");
       if (iVar2 < 0) {
-        _DAT_01d71de0 = "..\\core\\script.cpp";
-        _DAT_01d71de4 = 0x42b;
+        g_CHAR_PTR_01d71de0 = "..\\core\\script.cpp";
+        g_INT_01d71de4 = 0x42b;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Script has \"initSection\" label, but no \"initSectionEnd\" label.");
       }
       local_10 = this_ptr->next_cmd;
-      _DAT_01ed7014 = 0;
+      g_INT_01ed7014 = 0;
       this_ptr->next_cmd = iVar1;
       iVar1 = 0;
       while( true ) {
         local_14 = 0.25;
         iVar3 = core_script_cpp_CScript_step_FUN_00529a70(this_ptr,&local_14);
         if (iVar3 < 0) {
-          _DAT_01d71de0 = "..\\core\\script.cpp";
-          _DAT_01d71de4 = 0x447;
+          g_CHAR_PTR_01d71de0 = "..\\core\\script.cpp";
+          g_INT_01d71de4 = 0x447;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n");
         }
         if (iVar2 == this_ptr->next_cmd) break;
         iVar1 = iVar1 + 1;
         if (10000 < iVar1) {
-          _DAT_01d71de0 = "..\\core\\script.cpp";
-          _DAT_01d71de4 = 0x459;
+          g_CHAR_PTR_01d71de0 = "..\\core\\script.cpp";
+          g_INT_01d71de4 = 0x459;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Infinite loop detected in initSection.\n");
         }
       }
-      if (_DAT_01ed7014 != 0) {
+      if (g_INT_01ed7014 != 0) {
         core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(g_CGamePtr);
-        _DAT_01ed7014 = 0;
+        g_INT_01ed7014 = 0;
       }
       this_ptr->next_cmd = local_10;
       return;

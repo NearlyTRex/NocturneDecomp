@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(CBasicEnemy *this_ptr)
 
 {
@@ -18,8 +16,9 @@ int __cdecl core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(CBasicE
   double dVar5;
   
   if ((this_ptr->base).base.base.is_transparent != 0) {
-    dVar5 = round((double)(this_ptr->fade_val * (float)_DAT_005ef9c7));
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,(int)ROUND(dVar5));
+    dVar5 = round((double)(this_ptr->fade_val * (float)65535));
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+              (g_CDemonRenderer_PTR_0060b280,(int)ROUND(dVar5));
     pCVar1 = &(this_ptr->base).base.cloth_list;
     fVar2 = this_ptr->fade_val;
     iVar3 = 0;

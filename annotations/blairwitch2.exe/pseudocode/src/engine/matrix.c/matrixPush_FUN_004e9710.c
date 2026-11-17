@@ -6,32 +6,30 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_matrixPush_FUN_004e9710(void)
 
 {
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05180) = _DAT_01c38b6c;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d051a8) = _DAT_01c38b70;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d051d0) = _DAT_01c38b74;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d051f8) = _DAT_01c38b90;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05220) = _DAT_01c38b94;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05248) = _DAT_01c38b98;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05018) = _DAT_01c38b9c;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05040) = _DAT_01c38ba0;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05068) = _DAT_01c38ba4;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05090) = _DAT_01c38ba8;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d050b8) = _DAT_01c38bac;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d050e0) = _DAT_01c38bb0;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05108) = _DAT_01c38bb4;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05130) = _DAT_01c38bb8;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05158) = _DAT_01c38bbc;
-  _DAT_01d05014 = _DAT_01d05014 + 1;
-  if (_DAT_01d05014 < 10) {
+  g_INT_ARRAY_01d05180[g_INT_01d05014] = g_INT_01c38b6c;
+  g_INT_ARRAY_01d051a8[g_INT_01d05014] = g_INT_01c38b70;
+  g_INT_ARRAY_01d051d0[g_INT_01d05014] = g_INT_01c38b74;
+  g_INT_ARRAY_01d051f8[g_INT_01d05014] = g_INT_01c38b90;
+  g_INT_ARRAY_01d05220[g_INT_01d05014] = g_INT_01c38b94;
+  g_INT_ARRAY_01d05248[g_INT_01d05014] = g_INT_01c38b98;
+  g_INT_ARRAY_01d05018[g_INT_01d05014] = g_INT_01c38b9c;
+  g_INT_ARRAY_01d05040[g_INT_01d05014] = g_INT_01c38ba0;
+  g_INT_ARRAY_01d05068[g_INT_01d05014] = g_INT_01c38ba4;
+  g_INT_ARRAY_01d05090[g_INT_01d05014] = g_INT_01c38ba8;
+  g_INT_ARRAY_01d050b8[g_INT_01d05014] = g_INT_01c38bac;
+  g_INT_ARRAY_01d050e0[g_INT_01d05014] = g_INT_01c38bb0;
+  g_INT_ARRAY_01d05108[g_INT_01d05014] = g_INT_01c38bb4;
+  g_INT_ARRAY_01d05130[g_INT_01d05014] = g_INT_01c38bb8;
+  g_INT_ARRAY_01d05158[g_INT_01d05014] = g_INT_01c38bbc;
+  g_INT_01d05014 = g_INT_01d05014 + 1;
+  if (g_INT_01d05014 < 10) {
     return;
   }
-  _DAT_01d046a0 = "..\\engine\\matrix.c";
-  _DAT_01d046a4 = 0x34b;
+  g_CHAR_PTR_01d046a0 = "..\\engine\\matrix.c";
+  g_INT_01d046a4 = 0x34b;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance");
   return;
 }

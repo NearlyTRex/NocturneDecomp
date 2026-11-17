@@ -13,10 +13,10 @@
 ;   core_shadow.cpp_factoryFuncShadow_FUN_005434d0 at 005434e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e3d54
-;   undefined4 DAT_005e3d58
-;   undefined4 DAT_005e3d5c
-;   undefined4 DAT_005fba60
+;   float g_FLOAT_005e3d54 = 50
+;   float g_FLOAT_005e3d58 = 100
+;   float g_FLOAT_005e3d5c = 10
+;   CEventList* g_CEventList_PTR_005fba60 = 01c6e360
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -58,13 +58,13 @@ section .text
     MOV dword ptr [EBX + 0xd0c4],0x0    ; 005435a2
     MOV dword ptr [EBX + 0xd0bc],0x0    ; 005435ac
     MOV dword ptr [EBX + 0xd0c0],0x0    ; 005435b6
-    FLD float ptr [0x005e3d54]          ; 005435c0 | DAT_005e3d54
+    FLD float ptr [0x005e3d54]          ; 005435c0 | g_FLOAT_005e3d54
     MOV dword ptr [EBX + 0xd0cc],0x0    ; 005435c6
-    FLD float ptr [0x005e3d58]          ; 005435d0 | DAT_005e3d58
+    FLD float ptr [0x005e3d58]          ; 005435d0 | g_FLOAT_005e3d58
     MOV dword ptr [EBX + 0xd0c8],0x41200000 ; 005435d6
-    FLD float ptr [0x005e3d5c]          ; 005435e0 | DAT_005e3d5c
+    FLD float ptr [0x005e3d5c]          ; 005435e0 | g_FLOAT_005e3d5c
     MOV dword ptr [EBX + 0xd0d8],0x0    ; 005435e6
-    MOV EDX,dword ptr [0x005fba60]      ; 005435f0 | DAT_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 005435f0 | g_CEventList_PTR_005fba60
     MOV dword ptr [EBX + 0xd0dc],0x0    ; 005435f6
     ADD ESP,0x8                         ; 00543600
     FXCH ST2                            ; 00543603

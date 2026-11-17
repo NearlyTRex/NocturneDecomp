@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inivar_cpp_writeIniData_FUN_004f5760(void)
 
 {
@@ -21,24 +19,25 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004f5760(void)
             (&local_214,"gamePIXY",g_CGamePtr->game_pixy);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"gameBPP",g_CGamePtr->game_bpp);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(&local_214,"useDirect3D",_DAT_02c83370);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(&local_214,"useAGPFlag",_DAT_02c8337c);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(&local_214,"useDirect3D",g_INT_02c83370);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(&local_214,"useAGPFlag",g_INT_02c8337c);
   engine_ini_cpp_CIniFile_setString_FUN_004f4c90
-            (&local_214,"rendererDLLPath",&DAT_006257d0);
+            (&local_214,"rendererDLLPath",g_CHAR_ARRAY_006257d0);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(&local_214,"gamma",g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"heroNumber",g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"haloMode",g_CGamePtr->halo_mode);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(&local_214,"firstTimeFlag",_DAT_01d06d68)
-  ;
+  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+            (&local_214,"firstTimeFlag",g_INT_01d06d68);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"subtitleMode",g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"bloodFlag",g_CGamePtr->blood_flag);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"quimbyFlag",g_CGamePtr->quimby_flag);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(&local_214,"currentBoard",_DAT_01d1f5d4);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+            (&local_214,"currentBoard",(int)g_CHAR_PTR_ARRAY_01d1f5b8[7]);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
             (&local_214,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
   engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70

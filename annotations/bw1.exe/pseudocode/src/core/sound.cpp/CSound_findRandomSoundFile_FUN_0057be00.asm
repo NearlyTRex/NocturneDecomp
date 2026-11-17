@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   CStrList g_CStrListInstance
-;   undefined4 DAT_02c82c30
+;   int g_INT_02c82c30
 ;
 ; Called Functions:
 ;   crt_stdlib.c_rand_FUN_005c084c
@@ -34,14 +34,14 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0057be08
     XOR EDX,EDX                         ; 0057be0c
     XOR EBX,EBX                         ; 0057be0e
-    MOV dword ptr [0x02c82c30],EDX      ; 0057be10 | DAT_02c82c30
+    MOV dword ptr [0x02c82c30],EDX      ; 0057be10 | g_INT_02c82c30
     MOV byte ptr [EAX],0x0              ; 0057be16
     MOV EAX,[0x02c82c20]                ; 0057be19 | g_CStrListInstance
         ;   Label: LAB_0057be19
     CMP EBX,EAX                         ; 0057be1e
     JL 0x0057be34                       ; 0057be20
         ;   XREF to: 0057be34 (CONDITIONAL_JUMP)  ; LAB_0057be34
-    CMP dword ptr [0x02c82c30],0x1      ; 0057be22 | DAT_02c82c30
+    CMP dword ptr [0x02c82c30],0x1      ; 0057be22 | g_INT_02c82c30
         ;   Label: LAB_0057be22
     JGE 0x0057bea1                      ; 0057be29
         ;   XREF to: 0057bea1 (CONDITIONAL_JUMP)  ; LAB_0057bea1
@@ -69,7 +69,7 @@ section .text
     PUSH 0x2c82c20                      ; 0057be53 | g_CStrListInstance
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0 ; 0057be58
         ;   XREF to: 004998a0 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0(CStrList * this_ptr, int index)
-    IMUL EDI,dword ptr [0x02c82c30],0x28 ; 0057be5d | DAT_02c82c30
+    IMUL EDI,dword ptr [0x02c82c30],0x28 ; 0057be5d | g_INT_02c82c30
     ADD ESP,0x8                         ; 0057be64
     MOV ESI,EAX                         ; 0057be67
     ADD EDI,0x2c82c38                   ; 0057be69
@@ -89,9 +89,9 @@ section .text
         ;   XREF to: 0057be70 (CONDITIONAL_JUMP)  ; LAB_0057be70
     POP EDI                             ; 0057be88
         ;   Label: LAB_0057be88
-    MOV ESI,dword ptr [0x02c82c30]      ; 0057be89 | DAT_02c82c30
+    MOV ESI,dword ptr [0x02c82c30]      ; 0057be89 | g_INT_02c82c30
     INC ESI                             ; 0057be8f
-    MOV dword ptr [0x02c82c30],ESI      ; 0057be90 | DAT_02c82c30
+    MOV dword ptr [0x02c82c30],ESI      ; 0057be90 | g_INT_02c82c30
     CMP ESI,0x28                        ; 0057be96
     JGE 0x0057be22                      ; 0057be99
         ;   XREF to: 0057be22 (CONDITIONAL_JUMP)  ; LAB_0057be22
@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 005c084c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005c084c()
         ;   Label: LAB_0057bea1
     MOV EDX,EAX                         ; 0057bea6
-    MOV ECX,dword ptr [0x02c82c30]      ; 0057bea8 | DAT_02c82c30
+    MOV ECX,dword ptr [0x02c82c30]      ; 0057bea8 | g_INT_02c82c30
     SAR EDX,0x1f                        ; 0057beae
     IDIV ECX                            ; 0057beb1
     LEA EAX,[EDX*0x4 + 0x0]             ; 0057beb3

@@ -16,8 +16,8 @@
 ;   TerminatedCString s_core_setutil_cpp_005e6462
 ;   TerminatedCString s_C3DSLight_addFilter_too_005e6476
 ;   CFilterCache* g_CFilterCachePtr = 015111a8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
@@ -94,8 +94,8 @@ section .text
     MOV ECX,0x5e6462                    ; 0053bc7c | = "..\\core\\setutil.cpp"
     MOV ESI,0x3b6                       ; 0053bc81
     PUSH 0x5e6476                       ; 0053bc86 | = "C3DSLight::addFilter - too many filte..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0053bc8b | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0053bc91 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0053bc8b | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0053bc91 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053bc97
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0053bc9c

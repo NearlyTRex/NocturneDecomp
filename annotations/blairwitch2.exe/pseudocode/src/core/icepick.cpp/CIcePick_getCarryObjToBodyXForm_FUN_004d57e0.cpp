@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004d57e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -50,8 +49,8 @@ CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_
     }
   }
   else {
-    _DAT_01d046a0 = "..\\core\\icepick.cpp";
-    _DAT_01d046a4 = 0x289;
+    g_CHAR_PTR_01d046a0 = "..\\core\\icepick.cpp";
+    g_INT_01d046a4 = 0x289;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10

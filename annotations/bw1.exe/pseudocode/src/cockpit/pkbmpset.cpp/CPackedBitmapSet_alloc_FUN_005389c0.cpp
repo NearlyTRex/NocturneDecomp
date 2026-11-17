@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_005389c0(CPackedBitmapSet *this_ptr,int bitmap_count)
 
 {
@@ -28,8 +26,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_005389c0(CPackedBit
   this_ptr->bitmap_array = pCVar1;
   if (pCVar1 == (CPackedBitmap *)0x0) {
     _sprintf(acStack_cc,"Unable to allocate %u bytes for %u CPackedBitmaps in CPackedBitmapSet::alloc");
-    _DAT_01d1d404 = 0x6e;
-    _DAT_01d1d400 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01d1d404 = 0x6e;
+    g_CHAR_PTR_01d1d400 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_cc);
   }
   this_ptr->bitmap_count = bitmap_count;

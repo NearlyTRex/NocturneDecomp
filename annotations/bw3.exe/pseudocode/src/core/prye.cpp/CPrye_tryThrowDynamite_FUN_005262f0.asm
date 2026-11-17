@@ -10,7 +10,7 @@
 ;   core_prye.cpp_CPrye_handleActionButton_FUN_00525930 at 00525953
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e3508
+;   float g_FLOAT_005e3508 = 10
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     TEST EAX,EAX                        ; 0052632a
     JZ 0x00526362                       ; 0052632c
         ;   XREF to: 00526362 (CONDITIONAL_JUMP)  ; LAB_00526362
-    FLD float ptr [0x005e3508]          ; 0052632e | DAT_005e3508
+    FLD float ptr [0x005e3508]          ; 0052632e | g_FLOAT_005e3508
         ;   Label: LAB_0052632e
     MOV dword ptr [EBX + 0x20b64],0x3   ; 00526334
     MOV EAX,0x1                         ; 0052633e

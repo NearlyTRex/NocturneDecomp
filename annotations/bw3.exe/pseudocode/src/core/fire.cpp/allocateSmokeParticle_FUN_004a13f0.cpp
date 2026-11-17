@@ -6,17 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSmokeParticle * __cdecl core_fire_cpp_allocateSmokeParticle_FUN_004a13f0(void)
 
 {
-  int iVar1;
+  CSmokeParticle *pCVar1;
+  int iVar2;
   
-  iVar1 = _DAT_01c74e9c * 0x2c;
-  _DAT_01c74e9c = _DAT_01c74e9c + 1;
-  if (0x7ff < _DAT_01c74e9c) {
-    _DAT_01c74e9c = 0;
+  iVar2 = g_INT_01c74e9c + 1;
+  pCVar1 = g_CSmokeParticle_ARRAY_01c74ea0 + g_INT_01c74e9c;
+  if (0x7ff < iVar2) {
+    iVar2 = 0;
   }
-  return (CSmokeParticle *)(&DAT_01c74ea0 + iVar1);
+  g_INT_01c74e9c = iVar2;
+  return pCVar1;
 }

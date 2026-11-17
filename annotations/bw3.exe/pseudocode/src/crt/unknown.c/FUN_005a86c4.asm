@@ -12,7 +12,7 @@
 ;   crt_unknown.c_FUN_005a82c0 at 005a84e6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d25930
+;   int g_INT_02d25930
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a82a0
@@ -90,7 +90,7 @@ section .text
     TEST CL,0x20                        ; 005a8743
     JZ 0x005a87a4                       ; 005a8746
         ;   XREF to: 005a87a4 (CONDITIONAL_JUMP)  ; LAB_005a87a4
-    MOV EDX,dword ptr [0x02d25930]      ; 005a8748 | DAT_02d25930
+    MOV EDX,dword ptr [0x02d25930]      ; 005a8748 | g_INT_02d25930
     MOV byte ptr [ESP + 0x4],AL         ; 005a874e
     TEST EDX,EDX                        ; 005a8752
     JZ 0x005a8777                       ; 005a8754

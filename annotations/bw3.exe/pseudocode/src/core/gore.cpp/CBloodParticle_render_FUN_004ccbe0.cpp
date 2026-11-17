@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *this_ptr)
 
 {
@@ -55,86 +53,90 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *th
   CVector3f *pCStack_14;
   
   bVar6 = 0;
-  output = DAT_005f2afc->vertex_buffer_ptr;
-  CStack_6c.x = (int)ROUND((this_ptr->base).position.x * _DAT_005e0e18);
-  CStack_6c.y = (int)ROUND((this_ptr->base).position.y * _DAT_005e0e18);
-  CStack_6c.z = (int)ROUND((this_ptr->base).position.z * _DAT_005e0e18);
+  output = g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr;
+  CStack_6c.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
+  CStack_6c.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
+  CStack_6c.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_0056356c(&output->projected_vertex,&CStack_6c);
   if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-              (DAT_005f2afc,(CVector3f *)this_ptr);
+              (g_CDemonRenderer_PTR_005f2afc,(CVector3f *)this_ptr);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
-              (DAT_005f2afc,(CVector3i *)&DAT_01d22e70,(CVector3i *)0x0);
+              (g_CDemonRenderer_PTR_005f2afc,&g_CVector3i_01d22e70,(CVector3i *)0x0);
     fStack_60 = -0.1;
     uStack_58 = 0;
     fStack_5c = -0.1;
-    CStack_a8.x = (int)ROUND(_DAT_005e0e18 * -0.1);
-    CStack_a8.y = (int)ROUND(_DAT_005e0e18 * -0.1);
-    CStack_a8.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+    CStack_a8.x = (int)ROUND(256.0f * -0.1);
+    CStack_a8.y = (int)ROUND(256.0f * -0.1);
+    CStack_a8.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-              (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_a8);
+              (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_a8);
     fStack_60 = 0.1;
     fStack_5c = -0.1;
     uStack_58 = 0;
-    CStack_9c.x = (int)ROUND(_DAT_005e0e18 * 0.1);
-    CStack_9c.y = (int)ROUND(_DAT_005e0e18 * -0.1);
-    CStack_9c.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+    CStack_9c.x = (int)ROUND(256.0f * 0.1);
+    CStack_9c.y = (int)ROUND(256.0f * -0.1);
+    CStack_9c.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-              (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_9c);
+              (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_9c);
     fStack_60 = 0.1;
     uStack_58 = 0;
     fStack_5c = 0.1;
-    CStack_fc.x = (int)ROUND(_DAT_005e0e18 * 0.1);
-    CStack_fc.y = (int)ROUND(_DAT_005e0e18 * 0.1);
-    CStack_fc.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+    CStack_fc.x = (int)ROUND(256.0f * 0.1);
+    CStack_fc.y = (int)ROUND(256.0f * 0.1);
+    CStack_fc.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-              (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_fc);
+              (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_fc);
     fStack_60 = -0.1;
     fStack_5c = 0.1;
     uStack_58 = 0;
-    aCStack_48[0].x = (int)ROUND(_DAT_005e0e18 * -0.1);
-    aCStack_48[0].y = (int)ROUND(_DAT_005e0e18 * 0.1);
-    aCStack_48[0].z = (int)ROUND(_DAT_005e0e18 * 0.0);
+    aCStack_48[0].x = (int)ROUND(256.0f * -0.1);
+    aCStack_48[0].y = (int)ROUND(256.0f * 0.1);
+    aCStack_48[0].z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-              (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,aCStack_48);
+              (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[3].projected_vertex,aCStack_48);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-              (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fed34);
-    _DAT_0060b05c = (this_ptr->texture_index & 3U) * 0x400000;
+              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005fed34);
+    iVar2 = (this_ptr->texture_index & 3U) * 0x400000;
     iVar3 = (this_ptr->texture_index >> 2 & 3U) * 0x400000;
-    DAT_0060b02c = _DAT_0060b05c + 0x80000;
-    _DAT_0060b030 = iVar3 + 0x80000;
-    _DAT_0060b05c = _DAT_0060b05c + 0x380000;
-    DAT_0060b090 = iVar3 + 0x380000;
-    CStack_108.x = (int)ROUND((this_ptr->base).position.x * _DAT_005e0e18);
-    CStack_108.y = (int)ROUND((this_ptr->base).position.y * _DAT_005e0e18);
-    CStack_108.z = (int)ROUND((this_ptr->base).position.z * _DAT_005e0e18);
-    _DAT_0060b060 = _DAT_0060b030;
-    _DAT_0060b08c = _DAT_0060b05c;
-    _DAT_0060b0bc = DAT_0060b02c;
-    _DAT_0060b0c0 = DAT_0060b090;
+    g_SRenderVertex_ARRAY_0060b014[0].u = iVar2 + 0x80000;
+    g_SRenderVertex_ARRAY_0060b014[0].v = iVar3 + 0x80000;
+    g_SRenderVertex_ARRAY_0060b014[1].u = iVar2 + 0x380000;
+    g_SRenderVertex_ARRAY_0060b014[2].v = iVar3 + 0x380000;
+    CStack_108.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
+    CStack_108.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
+    CStack_108.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
+    g_SRenderVertex_ARRAY_0060b014[1].v = g_SRenderVertex_ARRAY_0060b014[0].v;
+    g_SRenderVertex_ARRAY_0060b014[2].u = g_SRenderVertex_ARRAY_0060b014[1].u;
+    g_SRenderVertex_ARRAY_0060b014[3].u = g_SRenderVertex_ARRAY_0060b014[0].u;
+    g_SRenderVertex_ARRAY_0060b014[3].v = g_SRenderVertex_ARRAY_0060b014[2].v;
     core_set_cpp_CDemonSet_computeLighting_FUN_00538400
-              (g_CDemonSetPtr,&CStack_108,(CVector3i *)&DAT_01d22e7c,0,4);
+              (g_CDemonSetPtr,&CStack_108,&g_CVector3i_01d22e7c,0,4);
     core_gore_cpp_getBloodColorParams_FUN_004cc970
               (this_ptr->blood_type,&iStack_28,&iStack_24,&iStack_2c);
-    iVar3 = 0;
+    iVar2 = 0;
     do {
-      lVar1 = (longlong)iStack_28 * (longlong)*(int *)((int)&DAT_0060b034 + iVar3);
-      *(uint *)((int)&DAT_0060b034 + iVar3) =
+      lVar1 = (longlong)iStack_28 *
+              (longlong)*(int *)((int)&g_SRenderVertex_ARRAY_0060b014[0].r + iVar2);
+      *(uint *)((int)&g_SRenderVertex_ARRAY_0060b014[0].r + iVar2) =
            (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      lVar1 = (longlong)iStack_24 * (longlong)*(int *)((int)&DAT_0060b038 + iVar3);
-      *(uint *)((int)&DAT_0060b038 + iVar3) =
+      lVar1 = (longlong)iStack_24 *
+              (longlong)*(int *)((int)&g_SRenderVertex_ARRAY_0060b014[0].g + iVar2);
+      *(uint *)((int)&g_SRenderVertex_ARRAY_0060b014[0].g + iVar2) =
            (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      iVar2 = iVar3 + 0x30;
-      lVar1 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_0060b03c + iVar3);
-      *(uint *)((int)&DAT_0060b03c + iVar3) =
+      iVar3 = iVar2 + 0x30;
+      lVar1 = (longlong)iStack_2c *
+              (longlong)*(int *)((int)&g_SRenderVertex_ARRAY_0060b014[0].b + iVar2);
+      *(uint *)((int)&g_SRenderVertex_ARRAY_0060b014[0].b + iVar2) =
            (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      iVar3 = iVar2;
-    } while (iVar2 != 0xc0);
-    (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))(DAT_007e2a54,this_ptr,0);
+      iVar2 = iVar3;
+    } while (iVar3 != 0xc0);
+    (*((g_CDemonCamera_PTR_007e2a54->base).vtable)->setupPerspectiveAndFog)
+              (g_CDemonCamera_PTR_007e2a54,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-              (DAT_005f2afc,0xffff - _DAT_01c6e24c);
+              (g_CDemonRenderer_PTR_005f2afc,0xffff - g_INT_01c6e24c);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-              (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
+              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01d22e48);
     engine_drender_cpp_pop_FUN_0046d080();
     fStack_110 = 1.0;
     puVar4 = (uint *)((int)this_ptr + (uint)bVar6 * -8 + 4);
@@ -150,7 +152,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *th
     afStack_50[(uint)bVar6 * -2] = *pfVar5;
     afStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] = pfVar5[(uint)bVar6 * -2 + 1];
     do {
-      fStack_10c = fStack_10c * (float)_DAT_005c4631;
+      fStack_10c = fStack_10c * (float)0.69999999999999996;
       afStack_c8[2] = pCStack_14->x * fStack_10c;
       afStack_c8[3] = pCStack_14->y * fStack_10c;
       fStack_b8 = pCStack_14->z * fStack_10c;
@@ -159,7 +161,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *th
       afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
            afStack_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
       fStack_54 = fStack_54 - fStack_e4;
-      fStack_110 = fStack_110 * (float)_DAT_005c4631;
+      fStack_110 = fStack_110 * (float)0.69999999999999996;
       fStack_b4 = fStack_54 * fStack_10c;
       afStack_50[0] = afStack_50[0] - afStack_e0[0];
       afStack_50[1] = afStack_50[1] - afStack_e0[1];
@@ -174,67 +176,71 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *th
       CStack_90.y = CStack_90.y - afStack_c8[0];
       CStack_90.z = CStack_90.z - afStack_c8[1];
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-                (DAT_005f2afc,world_position);
+                (g_CDemonRenderer_PTR_005f2afc,world_position);
       engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
-                (DAT_005f2afc,(CVector3i *)&DAT_01d22e70,(CVector3i *)0x0);
-      fStack_60 = fStack_110 * (float)_DAT_005c4639;
+                (g_CDemonRenderer_PTR_005f2afc,&g_CVector3i_01d22e70,(CVector3i *)0x0);
+      fStack_60 = fStack_110 * (float)-0.10000000000000001;
       uStack_58 = 0;
-      CStack_f0.x = (int)ROUND(fStack_60 * _DAT_005e0e18);
-      CStack_f0.y = (int)ROUND(fStack_60 * _DAT_005e0e18);
-      CStack_f0.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      CStack_f0.x = (int)ROUND(fStack_60 * 256.0f);
+      CStack_f0.y = (int)ROUND(fStack_60 * 256.0f);
+      CStack_f0.z = (int)ROUND(256.0f * 0.0);
       fStack_5c = fStack_60;
       fStack_1c = fStack_60;
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_f0);
-      fStack_60 = fStack_110 * (float)_DAT_005c4641;
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_f0);
+      fStack_60 = fStack_110 * (float)0.10000000000000001;
       uStack_58 = 0;
       fStack_5c = fStack_1c;
-      CStack_78.x = (int)ROUND(fStack_60 * _DAT_005e0e18);
-      CStack_78.y = (int)ROUND(fStack_1c * _DAT_005e0e18);
-      CStack_78.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      CStack_78.x = (int)ROUND(fStack_60 * 256.0f);
+      CStack_78.y = (int)ROUND(fStack_1c * 256.0f);
+      CStack_78.z = (int)ROUND(256.0f * 0.0);
       fStack_20 = fStack_60;
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_78);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_78);
       fStack_60 = fStack_20;
       fStack_5c = fStack_20;
       uStack_58 = 0;
-      CStack_84.x = (int)ROUND(fStack_20 * _DAT_005e0e18);
-      CStack_84.y = (int)ROUND(fStack_20 * _DAT_005e0e18);
-      CStack_84.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      CStack_84.x = (int)ROUND(fStack_20 * 256.0f);
+      CStack_84.y = (int)ROUND(fStack_20 * 256.0f);
+      CStack_84.z = (int)ROUND(256.0f * 0.0);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_84);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_84);
       uStack_58 = 0;
       fStack_60 = fStack_1c;
       fStack_5c = fStack_20;
-      CStack_d8.x = (int)ROUND(fStack_1c * _DAT_005e0e18);
-      CStack_d8.y = (int)ROUND(fStack_20 * _DAT_005e0e18);
-      CStack_d8.z = (int)ROUND(_DAT_005e0e18 * 0.0);
+      CStack_d8.x = (int)ROUND(fStack_1c * 256.0f);
+      CStack_d8.y = (int)ROUND(fStack_20 * 256.0f);
+      CStack_d8.z = (int)ROUND(256.0f * 0.0);
       engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_d8);
-      CStack_108.x = (int)ROUND(CStack_90.x * _DAT_005e0e18);
-      CStack_108.y = (int)ROUND(CStack_90.y * _DAT_005e0e18);
-      CStack_108.z = (int)ROUND(CStack_90.z * _DAT_005e0e18);
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_d8);
+      CStack_108.x = (int)ROUND(CStack_90.x * 256.0f);
+      CStack_108.y = (int)ROUND(CStack_90.y * 256.0f);
+      CStack_108.z = (int)ROUND(CStack_90.z * 256.0f);
       core_set_cpp_CDemonSet_computeLighting_FUN_00538400
-                (g_CDemonSetPtr,&CStack_108,(CVector3i *)&DAT_01d22e7c,0,4);
-      iVar3 = 0;
+                (g_CDemonSetPtr,&CStack_108,&g_CVector3i_01d22e7c,0,4);
+      iVar2 = 0;
       do {
-        lVar1 = (longlong)iStack_28 * (longlong)*(int *)((int)&DAT_0060b034 + iVar3);
-        *(uint *)((int)&DAT_0060b034 + iVar3) =
+        lVar1 = (longlong)iStack_28 *
+                (longlong)*(int *)((int)&g_SRenderVertex_ARRAY_0060b014[0].r + iVar2);
+        *(uint *)((int)&g_SRenderVertex_ARRAY_0060b014[0].r + iVar2) =
              (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        lVar1 = (longlong)iStack_24 * (longlong)*(int *)((int)&DAT_0060b038 + iVar3);
-        *(uint *)((int)&DAT_0060b038 + iVar3) =
+        lVar1 = (longlong)iStack_24 *
+                (longlong)*(int *)((int)&g_SRenderVertex_ARRAY_0060b014[0].g + iVar2);
+        *(uint *)((int)&g_SRenderVertex_ARRAY_0060b014[0].g + iVar2) =
              (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        iVar2 = iVar3 + 0x30;
-        lVar1 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_0060b03c + iVar3);
-        *(uint *)((int)&DAT_0060b03c + iVar3) =
+        iVar3 = iVar2 + 0x30;
+        lVar1 = (longlong)iStack_2c *
+                (longlong)*(int *)((int)&g_SRenderVertex_ARRAY_0060b014[0].b + iVar2);
+        *(uint *)((int)&g_SRenderVertex_ARRAY_0060b014[0].b + iVar2) =
              (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        iVar3 = iVar2;
-      } while (iVar2 != 0xc0);
-      (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))(DAT_007e2a54,this_ptr,0);
+        iVar2 = iVar3;
+      } while (iVar3 != 0xc0);
+      (*((g_CDemonCamera_PTR_007e2a54->base).vtable)->setupPerspectiveAndFog)
+                (g_CDemonCamera_PTR_007e2a54,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-                (DAT_005f2afc,0xffff - _DAT_01c6e24c);
+                (g_CDemonRenderer_PTR_005f2afc,0xffff - g_INT_01c6e24c);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-                (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
+                (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01d22e48);
       engine_drender_cpp_pop_FUN_0046d080();
       iStack_18 = iStack_18 + 1;
     } while (iStack_18 < 3);

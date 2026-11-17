@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00585810(CCryptVessel *this_ptr)
 
 {
@@ -25,10 +23,10 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00585810(CCryptVessel 
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,&(this_ptr->base).location.position);
+            (g_CDemonRenderer_PTR_0060b280,&(this_ptr->base).location.position);
   pUStack_14 = &(this_ptr->base).orient;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,&pUStack_14->vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_0060b280,&pUStack_14->vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   puVar2 = auStack_28;
   pdVar3 = &dStack_48;
@@ -44,20 +42,24 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00585810(CCryptVessel 
     return this_ptr->is_visible;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,unaff_EDI,(CVector3f *)0x0);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
+            (g_CDemonRenderer_PTR_0060b280,unaff_EDI,(CVector3f *)0x0);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+            (g_CDemonRenderer_PTR_0060b280,0xffff);
   if ((this_ptr->state == 3) || (dStack_48 = (double)this_ptr->timer, dStack_48 <= 0.0)) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               (&this_ptr->model,0.0,-1);
   }
   else {
-    dVar5 = round(_DAT_005ede02 - dStack_48 * _DAT_005ede02);
+    dVar5 = round(65535 - dStack_48 * 65535);
     pUStack_14 = (UOrientationVector *)(int)ROUND(dVar5);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,(int)pUStack_14);
-    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540(DAT_0060b280,0);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
+              (g_CDemonRenderer_PTR_0060b280,(int)pUStack_14);
+    engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540
+              (g_CDemonRenderer_PTR_0060b280,0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               (&this_ptr->model,0.0,0x2e7);
-    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900(DAT_0060b280);
+    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900
+              (g_CDemonRenderer_PTR_0060b280);
   }
   engine_drender_cpp_pop_FUN_0046b4a0();
   return this_ptr->is_visible;

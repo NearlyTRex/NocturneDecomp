@@ -11,8 +11,8 @@ void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004d8cd0(CIniFile *this_ptr,ch
 {
   char local_6c [100];
   
-  _sprintf(local_6c,&DAT_005c58b7);
+  _sprintf(local_6c,"%g");
   (**(code **)((int)this_ptr->vtable + 4))(this_ptr,key,local_6c);
-  sscanf(local_6c,&DAT_005c58ba);
+  sscanf(local_6c,"%f");
   return;
 }

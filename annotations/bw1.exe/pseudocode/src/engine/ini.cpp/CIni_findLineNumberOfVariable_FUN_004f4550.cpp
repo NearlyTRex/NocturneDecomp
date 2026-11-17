@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004f4550(CIni *this_ptr,char *section,char *key,char *filename,char *value)
 
 {
@@ -27,8 +25,8 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004f4550(CIni *this
   this_ptr->initialized = 1;
   stream = _fopen(filename,"rt");
   if (stream == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\ini.cpp";
-    _DAT_01d1d404 = 0xfd;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\ini.cpp";
+    g_INT_01d1d404 = 0xfd;
     core_main_c_displayErrorAndQuit_FUN_005030e0("cIni::FindLineNumberOfVariable: Unable to open input");
   }
   _sprintf(local_114,"[%s]\n");

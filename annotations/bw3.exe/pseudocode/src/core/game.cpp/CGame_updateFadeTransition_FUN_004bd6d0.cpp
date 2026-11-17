@@ -6,46 +6,44 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004bd6d0(CGame *this_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  uVar1 = 0;
-  if (_DAT_01d22c84 != 0) {
-    if (3 < _DAT_01d22c84) {
-      _DAT_01d22c84 = 5;
+  iVar1 = 0;
+  if (g_INT_01d22c84 != 0) {
+    if (3 < g_INT_01d22c84) {
+      g_INT_01d22c84 = 5;
       return;
     }
-    if ((_DAT_01d22c84 == 2) &&
-       (_DAT_01d22c88 =
-             ((float)this_ptr->delta_time_int * (float)_DAT_005c3550) /
-             ((float)_DAT_005c3548 / (float)DAT_005fba1c) + _DAT_01d22c88,
-       (float)DAT_005fba18 < _DAT_01d22c88)) {
-      _DAT_01d22c84 = 0;
+    if ((g_INT_01d22c84 == 2) &&
+       (g_FLOAT_01d22c88 =
+             ((float)this_ptr->delta_time_int * (float)256) /
+             ((float)31457280 / (float)g_INT_005fba1c) + g_FLOAT_01d22c88,
+       (float)g_INT_005fba18 < g_FLOAT_01d22c88)) {
+      g_INT_01d22c84 = 0;
       return;
     }
-    if ((_DAT_01d22c84 == 3) &&
-       (_DAT_01d22c88 =
-             _DAT_01d22c88 -
-             ((float)this_ptr->delta_time_int * (float)_DAT_005c3550) /
-             ((float)_DAT_005c3548 / (float)DAT_005fba1c), _DAT_01d22c88 < 0.0)) {
-      _DAT_01d22c88 = 0.0;
-      _DAT_01d22c84 = 4;
+    if ((g_INT_01d22c84 == 3) &&
+       (g_FLOAT_01d22c88 =
+             g_FLOAT_01d22c88 -
+             ((float)this_ptr->delta_time_int * (float)256) /
+             ((float)31457280 / (float)g_INT_005fba1c), g_FLOAT_01d22c88 < 0.0)) {
+      g_FLOAT_01d22c88 = 0.0;
+      g_INT_01d22c84 = 4;
       return;
     }
-    if (_DAT_01d22c84 != 1) {
+    if (g_INT_01d22c84 != 1) {
       return;
     }
-    if (_DAT_01d22c94 + 1 < 3) {
-      _DAT_01d22c94 = _DAT_01d22c94 + 1;
+    if (g_INT_01d22c94 + 1 < 3) {
+      g_INT_01d22c94 = g_INT_01d22c94 + 1;
       return;
     }
-    uVar1 = 2;
+    iVar1 = 2;
   }
-  _DAT_01d22c94 = 0;
-  _DAT_01d22c84 = uVar1;
+  g_INT_01d22c94 = 0;
+  g_INT_01d22c84 = iVar1;
   return;
 }

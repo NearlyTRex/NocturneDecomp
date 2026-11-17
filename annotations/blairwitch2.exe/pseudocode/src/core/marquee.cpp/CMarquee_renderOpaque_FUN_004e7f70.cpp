@@ -19,7 +19,8 @@ int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_004e7f70(CMarquee *this_p
   uint auStack_14 [4];
   
   bVar4 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
   if (iVar1 != 0) {
     return 0;
   }

@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   volume
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2e39
+;   float g_FLOAT_005d2e39 = 10000
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.ground_type
@@ -55,7 +55,7 @@ section .text
     FSUB float ptr [ESP + 0x14]         ; 0040c6d9
     FMUL ST0                            ; 0040c6dd
     FADDP                               ; 0040c6df
-    FCOMP float ptr [0x005d2e39]        ; 0040c6e1 | DAT_005d2e39
+    FCOMP float ptr [0x005d2e39]        ; 0040c6e1 | g_FLOAT_005d2e39
     FNSTSW AX                           ; 0040c6e7
     SAHF                                ; 0040c6e9
     JBE 0x0040c6f6                      ; 0040c6ea

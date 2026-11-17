@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 301,
+    "complexity_score": 281,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 25,
+    "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -86,21 +86,21 @@
     },
     {
       "addr": "00626774",
-      "name": "DAT_00626774",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PTR_00626774",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "0062679c",
-      "name": "DAT_0062679c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PTR_0062679c",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "006267e0",
-      "name": "DAT_006267e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UINT_006267e0",
+      "type": "uint",
+      "value": "0x14"
     },
     {
       "addr": "00626838",
@@ -234,7 +234,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (0x00000014 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_UINT_006267e0 < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -242,7 +242,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((int)param_1 < 0) || (0x00000014 < param_1)) {",
+      "text": "if (((int)param_1 < 0) || (g_UINT_006267e0 < param_1)) {",
       "type": "unnamed_param"
     },
     {
@@ -263,42 +263,34 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 17,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (DAT_0062679c != (code *)0x0) {",
+      "text": "iVar1 = (*(code *)g_PTR_00626774)(param_1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_0062679c",
-      "severity": "mild",
-      "text": "if (DAT_0062679c != (code *)0x0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (*DAT_00626774)(param_1);",
+      "text": "iVar1 = (*(code *)g_PTR_00626774)(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00626774",
-      "severity": "mild",
-      "text": "iVar1 = (*DAT_00626774)(param_1);",
-      "type": "undefined_data"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 19,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (*(code *)g_PTR_0062679c)(iVar1,param_2,param_3);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar2 = (*DAT_0062679c)(iVar1,param_2,param_3);",
+      "text": "uVar2 = (*(code *)g_PTR_0062679c)(iVar1,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -306,16 +298,8 @@
       "line": 19,
       "match": "param_3",
       "severity": "mild",
-      "text": "uVar2 = (*DAT_0062679c)(iVar1,param_2,param_3);",
+      "text": "uVar2 = (*(code *)g_PTR_0062679c)(iVar1,param_2,param_3);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0062679c",
-      "severity": "mild",
-      "text": "uVar2 = (*DAT_0062679c)(iVar1,param_2,param_3);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

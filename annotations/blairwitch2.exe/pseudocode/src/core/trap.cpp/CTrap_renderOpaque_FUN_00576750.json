@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 119,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
       "stack_ref",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 110
@@ -60,9 +59,9 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     }
   ],
   "param_estimates": {
@@ -151,22 +150,6 @@
       "severity": "moderate",
       "text": "int in_stack_ffffffc4;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,&(this_ptr->base).location.position);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,&(this_ptr->base).orient.vec,(CVector3f *)0x0);",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

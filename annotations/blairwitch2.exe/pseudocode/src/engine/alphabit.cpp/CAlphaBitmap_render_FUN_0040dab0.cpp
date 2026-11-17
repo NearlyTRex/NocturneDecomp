@@ -25,12 +25,12 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040dab0(CAlphaBitmap *
   srcAlpha = (uchar *)(this_ptr->opa + iVar2);
   local_18 = dest_y * 4;
   iVar2 = iVar1 * 4 + local_18;
-  if (DAT_006141c0 == 0x20) {
+  if (g_INT_006141c0 == 0x20) {
     if (0 < iVar1) {
       do {
         engine_special_cpp_renderAlphaRow32_FUN_0055d523
-                  ((uint *)(*(int *)(&DAT_01c2a38c + local_18) + dest_x * 4),srcIndices,srcAlpha,
-                   global_alpha,pixelCount);
+                  ((uint *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + local_18) + dest_x * 4),srcIndices,
+                   srcAlpha,global_alpha,pixelCount);
         srcIndices = srcIndices + this_ptr->width;
         local_18 = local_18 + 4;
         srcAlpha = srcAlpha + this_ptr->width;
@@ -41,8 +41,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040dab0(CAlphaBitmap *
     local_14 = local_18;
     do {
       engine_special_cpp_renderAlphaRow16_FUN_0055d5be
-                ((ushort *)(*(int *)(&DAT_01c2a38c + local_14) + dest_x * 2),srcIndices,srcAlpha,
-                 global_alpha,pixelCount);
+                ((ushort *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + local_14) + dest_x * 2),srcIndices,
+                 srcAlpha,global_alpha,pixelCount);
       srcIndices = srcIndices + this_ptr->width;
       local_14 = local_14 + 4;
       srcAlpha = srcAlpha + this_ptr->width;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004a1060(CFlashlight *this_ptr)
 
 {
@@ -23,7 +21,7 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004a1060(CFlashligh
   pCVar2->weapon_type = WEAPON_TYPE_FLASHLIGHT;
   pCVar2->can_penetrate = 0;
   pCVar2->bolt_velocity = 0.0;
-  fVar1 = _DAT_005f6cac;
+  fVar1 = 8.0f;
   pCVar2->fire_cooldown = 0;
   pCVar2->ammo_count = 0;
   pCVar2->weight = fVar1;

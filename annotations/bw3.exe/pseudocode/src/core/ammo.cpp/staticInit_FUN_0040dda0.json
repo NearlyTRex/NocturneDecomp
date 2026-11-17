@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 84,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 13,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 57
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
   },
   "cross_references": [],
   "function": {
@@ -67,21 +65,21 @@
     },
     {
       "addr": "005f0b58",
-      "name": "DAT_005f0b58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005f0b58",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "005f0b5c",
-      "name": "DAT_005f0b5c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005f0b5c",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "005f0b60",
-      "name": "DAT_005f0b60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005f0b60",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "007df978",
@@ -97,20 +95,20 @@
     },
     {
       "addr": "007dfd28",
-      "name": "DAT_007dfd28",
-      "type": "undefined4",
+      "name": "g_CDemonActorType_007dfd28",
+      "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "007dfd64",
-      "name": "DAT_007dfd64",
-      "type": "undefined4",
+      "name": "g_CDemonActorType_007dfd64",
+      "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "007dfda0",
-      "name": "DAT_007dfda0",
-      "type": "undefined4",
+      "name": "g_CDemonActorType_007dfda0",
+      "type": "CDemonActorType",
       "value": null
     }
   ],
@@ -177,54 +175,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_007dfd28",
-      "severity": "mild",
-      "text": "((CDemonActorType *)&DAT_007dfd28,\"CAmmo_Mana\",",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005f0b58",
-      "severity": "mild",
-      "text": "core_ammo_cpp_factoryFuncAmmoMana_FUN_0040e0c0,(int *)&DAT_005f0b58,1,&g_CAmmoClassInfo",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_007dfd64",
-      "severity": "mild",
-      "text": "((CDemonActorType *)&DAT_007dfd64,\"CAmmo_ManaLarge\",",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005f0b5c",
-      "severity": "mild",
-      "text": "core_ammo_cpp_factoryFuncAmmoManaLarge_FUN_0040e230,(int *)&DAT_005f0b5c,1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_007dfda0",
-      "severity": "mild",
-      "text": "((CDemonActorType *)&DAT_007dfda0,\"CAmmo_Bullet\",",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_005f0b60",
-      "severity": "mild",
-      "text": "core_ammo_cpp_factoryFuncAmmoBullet_FUN_0040e3a0,(int *)&DAT_005f0b60,1,",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

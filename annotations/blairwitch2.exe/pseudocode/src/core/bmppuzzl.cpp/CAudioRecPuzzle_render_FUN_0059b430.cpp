@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_0059b430(CAudioRecPuzzle *this_ptr)
 
 {
@@ -32,13 +30,14 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_0059b430(CAudioRecPuzz
   }
   if (this_ptr->transport_state == 0) {
     this_ptr->reel_angle =
-         (float)(this_ptr->speed_setting + 1) * g_CGamePtr->delta_time_float * (float)_DAT_005ef584
-         + this_ptr->reel_angle;
+         (float)(this_ptr->speed_setting + 1) *
+         g_CGamePtr->delta_time_float * (float)0.29999999999999999 + this_ptr->reel_angle;
   }
   if (this_ptr->transport_state == 2) {
     this_ptr->reel_angle =
          this_ptr->reel_angle -
-         (float)(this_ptr->speed_setting + 1) * g_CGamePtr->delta_time_float * (float)_DAT_005ef584;
+         (float)(this_ptr->speed_setting + 1) *
+         g_CGamePtr->delta_time_float * (float)0.29999999999999999;
   }
   fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(this_ptr->reel_angle);
   this_ptr->reel_angle = fVar1;
@@ -48,7 +47,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_0059b430(CAudioRecPuzz
   (**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);
   iVar3 = this_ptr->cursor_index;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-            (CAlphaBitmap_ARRAY_026677ec + iVar3,_DAT_01c2a37c - this_ptr->cursor_offset_x[iVar3],
-             _DAT_01c2a380 - this_ptr->cursor_offset_y[iVar3],0xffff);
+            (CAlphaBitmap_ARRAY_026677ec + iVar3,g_INT_01c2a37c - this_ptr->cursor_offset_x[iVar3],
+             g_INT_01c2a380 - this_ptr->cursor_offset_y[iVar3],0xffff);
   return;
 }

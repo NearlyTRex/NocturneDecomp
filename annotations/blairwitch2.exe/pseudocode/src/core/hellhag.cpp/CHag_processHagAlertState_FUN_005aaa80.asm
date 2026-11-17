@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f0bc2
-;   undefined4 DAT_00600a6c
+;   float g_FLOAT_00600a6c = 6
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
@@ -60,7 +60,7 @@ section .text
     ADD ESP,0xc                         ; 005aaaf6
     ADD EBX,0x10af8                     ; 005aaaf9
     PUSH 0x3f000000                     ; 005aaaff
-    FLD float ptr [0x00600a6c]          ; 005aab04 | DAT_00600a6c
+    FLD float ptr [0x00600a6c]          ; 005aab04 | g_FLOAT_00600a6c
     PUSH EBX                            ; 005aab0a
     FSTP float ptr [EBX + 0x89c]        ; 005aab0b
     CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005aab11

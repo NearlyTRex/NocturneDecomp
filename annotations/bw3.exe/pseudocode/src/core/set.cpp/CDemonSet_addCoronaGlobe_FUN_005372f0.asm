@@ -21,13 +21,13 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0203ad30
+;   int g_INT_0203ad30
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0203ad30]      ; 005372f0 | DAT_0203ad30
+    MOV EDX,dword ptr [0x0203ad30]      ; 005372f0 | g_INT_0203ad30
         ;   Label: core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
     MOV ECX,dword ptr [ESP + 0x8]       ; 005372f6
     CMP dword ptr [ECX + 0xc],0x100     ; 005372fa
@@ -36,12 +36,12 @@ section .text
     CMP EDX,0x64                        ; 00537303
     JL 0x0053730f                       ; 00537306
         ;   XREF to: 0053730f (CONDITIONAL_JUMP)  ; LAB_0053730f
-    MOV dword ptr [0x0203ad30],EDX      ; 00537308 | DAT_0203ad30
+    MOV dword ptr [0x0203ad30],EDX      ; 00537308 | g_INT_0203ad30
         ;   Label: LAB_00537308
     RET                                 ; 0053730e
     INC EDX                             ; 0053730f
         ;   Label: LAB_0053730f
-    MOV dword ptr [EDX*0x4 + 0x203ad30],ECX ; 00537310 | DAT_0203ad30
-    MOV dword ptr [0x0203ad30],EDX      ; 00537317 | DAT_0203ad30
+    MOV dword ptr [EDX*0x4 + 0x203ad30],ECX ; 00537310 | g_INT_0203ad30
+    MOV dword ptr [0x0203ad30],EDX      ; 00537317 | g_INT_0203ad30
     RET                                 ; 0053731d
 

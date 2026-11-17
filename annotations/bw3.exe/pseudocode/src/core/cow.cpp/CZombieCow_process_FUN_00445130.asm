@@ -12,14 +12,14 @@
 ;   TerminatedCString s_s_confused_while_walking_005b992a
 ;   TerminatedCString s_cow_wav_005b9954
 ;   TerminatedCString s_s_gave_up_chase_I_m_conf_005b995d
-;   undefined4 DAT_005ddba8
+;   float g_FLOAT_005ddba8 = 4.5
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02cfd900
+;   CVector3f g_CVector3f_02cfd900
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -328,7 +328,7 @@ section .text
     ADD EAX,EDX                         ; 00445441
     PUSH 0x3f333333                     ; 00445443
     PUSH EAX                            ; 00445448
-    PUSH 0x2cfd900                      ; 00445449 | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 00445449 | g_CVector3f_02cfd900
     LEA ESI,[EBP + -0x46]               ; 0044544e
     LEA EDI,[EBP + 0x32]                ; 00445451
     CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00445454
@@ -428,7 +428,7 @@ section .text
         ;   XREF to: 0044522d (CONDITIONAL_JUMP)  ; caseD_4
     MOV EDI,dword ptr [EBX + 0xd05c]    ; 00445543
     PUSH EDI                            ; 00445549
-    MOV EAX,[0x006045f8]                ; 0044554a | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 0044554a | g_CSound_PTR_006045f8
     PUSH EAX                            ; 0044554f
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 00445550
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
@@ -478,7 +478,7 @@ section .text
     ADD ESP,0xc                         ; 004455cc
     JMP 0x0044522d                      ; 004455cf
         ;   XREF to: 0044522d (UNCONDITIONAL_JUMP)  ; caseD_4
-    MOV EAX,[0x005ddba8]                ; 004455d4 | DAT_005ddba8
+    MOV EAX,[0x005ddba8]                ; 004455d4 | g_FLOAT_005ddba8
         ;   Label: LAB_004455d4
     MOV dword ptr [EBP + 0x72],EAX      ; 004455d9
     LEA EAX,[EBX + 0x249c]              ; 004455dc

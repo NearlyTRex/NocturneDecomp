@@ -7,8 +7,8 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -64,8 +64,8 @@ section .text
     CMP dword ptr [EBX + 0x9d4],0x0     ; 00464aba
     JZ 0x00464b16                       ; 00464ac1
         ;   XREF to: 00464b16 (CONDITIONAL_JUMP)  ; LAB_00464b16
-    MOV ESI,dword ptr [0x005f2afc]      ; 00464ac3 | DAT_005f2afc
-    PUSH ESI                            ; 00464ac9 | DAT_01bdd7e4
+    MOV ESI,dword ptr [0x005f2afc]      ; 00464ac3 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ESI                            ; 00464ac9 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 00464aca
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00464acf

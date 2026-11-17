@@ -21,9 +21,9 @@
 ;   ... and 49 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141e0
-;   undefined4 DAT_007bee30
-;   undefined4 DAT_007bee34
+;   uint g_UINT_006141e0 = 0x1
+;   int g_INT_007bee30
+;   SRenderVertex[16] g_SRenderVertex_ARRAY_007bee34
 ;
 ; Called Functions:
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330
@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_clipper.c_clipAndRasterize_FUN_00431d90
     MOV EAX,dword ptr [ESP + 0x8]       ; 00431d91
     MOV EDX,dword ptr [ESP + 0xc]       ; 00431d95
-    CMP dword ptr [0x006141e0],0x0      ; 00431d99 | DAT_006141e0
+    CMP dword ptr [0x006141e0],0x0      ; 00431d99 | g_UINT_006141e0
     JZ 0x00431dbd                       ; 00431da0
         ;   XREF to: 00431dbd (CONDITIONAL_JUMP)  ; LAB_00431dbd
     PUSH EDX                            ; 00431da2
@@ -49,7 +49,7 @@ section .text
     TEST EAX,EAX                        ; 00431dac
     JNZ 0x00431dbb                      ; 00431dae
         ;   XREF to: 00431dbb (CONDITIONAL_JUMP)  ; LAB_00431dbb
-    MOV EBX,dword ptr [0x007bee30]      ; 00431db0 | DAT_007bee30
+    MOV EBX,dword ptr [0x007bee30]      ; 00431db0 | g_INT_007bee30
     CMP EBX,0x2                         ; 00431db6
     JG 0x00431dc9                       ; 00431db9
         ;   XREF to: 00431dc9 (CONDITIONAL_JUMP)  ; LAB_00431dc9
@@ -66,7 +66,7 @@ section .text
     RET                                 ; 00431dc8
     PUSH EBX                            ; 00431dc9
         ;   Label: LAB_00431dc9
-    PUSH 0x7bee34                       ; 00431dca | DAT_007bee34
+    PUSH 0x7bee34                       ; 00431dca | g_SRenderVertex_ARRAY_007bee34
     CALL engine_prim.c_renderPolygonSoftware_FUN_0051cb20 ; 00431dcf
         ;   XREF to: 0051cb20 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderPolygonSoftware_FUN_0051cb20(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 00431dd4

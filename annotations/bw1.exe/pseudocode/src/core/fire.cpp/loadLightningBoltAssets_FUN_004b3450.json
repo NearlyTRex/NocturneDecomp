@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 45,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 29
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
   },
   "cross_references": [
     {
@@ -44,32 +42,32 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061caac",
-      "name": "DAT_0061caac",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061caac",
+      "type": "SMRGLTextureBasic[6]",
       "value": null
     },
     {
       "addr": "0061cac4",
-      "name": "DAT_0061cac4",
+      "name": "g_SMRGLTextureBasic_ARRAY_0061caac[1].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061cb3c",
-      "name": "DAT_0061cb3c",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_0061cb3c",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -152,30 +150,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_0061caac",
-      "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)&DAT_0061caac;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061cb3c",
-      "severity": "mild",
-      "text": "} while (texture != (SMRGLTextureBasic *)&DAT_0061cb3c);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

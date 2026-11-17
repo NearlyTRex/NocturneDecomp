@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederate *this_ptr)
 
@@ -56,7 +55,7 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
   }
   local_14 = (this_ptr->base).base.base.model.bone_transform.bone_model_matrices;
   core_xform_cpp_transformVector3x4_FUN_00591530
-            ((CVector3f *)&DAT_0265370c,local_14 + this_ptr->gun2_bone,&local_58);
+            (&g_CVector3f_0265370c,local_14 + this_ptr->gun2_bone,&local_58);
   pCVar4 = &local_dc;
   local_dc.x = local_58.x;
   *(uint *)((int)&local_dc + (uint)bVar3 * -8 + 4) =
@@ -71,7 +70,7 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
   *(uint *)((int)&local_118 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        *(uint *)((int)&local_b8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   core_xform_cpp_transformVector3x4_FUN_00591530
-            ((CVector3f *)&DAT_0265370c,local_14 + this_ptr->gun_bone,&local_f4);
+            (&g_CVector3f_0265370c,local_14 + this_ptr->gun_bone,&local_f4);
   pCVar4 = &local_34;
   local_34.x = local_f4.x;
   *(uint *)((int)&local_34 + (uint)bVar3 * -8 + 4) =
@@ -93,9 +92,9 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
   *(float *)((int)&local_64 + (uint)bVar3 * -8 + 4) = local_48[(uint)bVar3 * -2];
   *(float *)((int)&local_64 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        local_48[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-  local_64.x = local_64.x * _DAT_005efd3b;
-  local_64.y = local_64.y * _DAT_005efd3b;
-  local_64.z = local_64.z * _DAT_005efd3b;
+  local_64.x = local_64.x * 0.66f;
+  local_64.y = local_64.y * 0.66f;
+  local_64.z = local_64.z * 0.66f;
   local_28 = local_64.x + local_ac.x;
   local_24[0] = local_64.y + local_ac.y;
   local_24[1] = local_64.z + local_ac.z;
@@ -109,11 +108,11 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
     local_64.z = local_a0.z;
   }
   core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170
-            (0x01C3DEB4,&local_64,&(this_ptr->base).base.base.base.orient_matrix);
+            (g_CFireEffect_PTR_00614d30,&local_64,&(this_ptr->base).base.base.base.orient_matrix);
   core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-            (0x01C3DEB4,&local_ac,1.5,(CVector3f *)0x0,0xffff);
+            (g_CFireEffect_PTR_00614d30,&local_ac,1.5,(CVector3f *)0x0,0xffff);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-            (0x0264B290,(CDemonActor *)this_ptr,"shotgun.wav",&local_118);
+            (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"shotgun.wav",&local_118);
   this_ptr_00 = (this_ptr->base).base.victim;
   (*((this_ptr_00->base).vtable._ub)->getTargetPoints)(&this_ptr_00->base,&local_d0);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -159,7 +158,7 @@ void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederat
     afStack_78[(uint)bVar3 * -2] = afStack_108[(uint)bVar3 * -2];
     afStack_78[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
          afStack_108[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    local_24[2] = (float)_DAT_005efd3f /
+    local_24[2] = (float)10 /
                   SQRT(afStack_78[1] * afStack_78[1] +
                        fStack_7c * fStack_7c + afStack_78[0] * afStack_78[0]);
     fStack_94 = fStack_7c * local_24[2];

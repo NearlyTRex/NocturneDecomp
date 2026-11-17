@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f3d30(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection)
 
 {
@@ -35,8 +33,8 @@ void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f3d30(SClipPlane *c
              (vertex_b->x - vertex_a->x) * (clip_plane->A).f +
              (vertex_b->y - vertex_a->y) * (clip_plane->B).f;
   if (ABS(local_14) == 0.0) {
-    _DAT_01d71de0 = "..\\core\\mirror.cpp";
-    _DAT_01d71de4 = 0x42;
+    g_CHAR_PTR_01d71de0 = "..\\core\\mirror.cpp";
+    g_INT_01d71de4 = 0x42;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Bad clip!");
   }
   fVar1 = -((clip_plane->C).f * vertex_a->z +

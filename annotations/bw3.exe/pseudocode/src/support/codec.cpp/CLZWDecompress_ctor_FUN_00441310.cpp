@@ -16,7 +16,7 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_00441310(CLZW
   pCVar1 = support_codec_cpp_CCodec_ctor_FUN_00440800(&this_ptr->base);
   pCVar2 = support_codec_cpp_CLZWDictionary_ctor_FUN_00440bd0((CLZWDictionary *)(pCVar1 + 1));
   puVar3 = &pCVar2[-1].bit_state.accumulated_bits;
-  *puVar3 = (uint)&PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00441e70_005dd494;
+  *puVar3 = (uint)g_ARRAY_PTR_005dd494;
   pCVar2[1].table_capacity = buffer_size;
   pCVar2[1].num_bits = initial_bits;
   return (CLZWDecompress *)puVar3;

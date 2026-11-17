@@ -11,7 +11,7 @@
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2d8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2dc = 005bce04
 ;   undefined4 DAT_0061f4d8
-;   undefined4 DAT_0061f4dc
+;   int g_INT_0061f4dc = 0x0
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_005b8ce0
@@ -62,7 +62,7 @@ section .text
     PUSH -0xc                           ; 005c09d1
     CALL dword ptr CS:[0x5c8638]        ; 005c09d3
         ;   Label: LAB_005c09d3
-    MOV EBP,dword ptr [0x0061f4dc]      ; 005c09da | DAT_0061f4dc
+    MOV EBP,dword ptr [0x0061f4dc]      ; 005c09da | g_INT_0061f4dc
         ;   Label: LAB_005c09da
     LEA EBX,[EDI*0x4 + 0x0]             ; 005c09e0
     MOV ESI,dword ptr [0x0061f4d8]      ; 005c09e7 | DAT_0061f4d8
@@ -80,7 +80,7 @@ section .text
     PUSH ESI                            ; 005c09ff
     CALL crt_memory.c_realloc_FUN_005b8ce0 ; 005c0a00
         ;   XREF to: 005b8ce0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005b8ce0(void * ptr, ulong new_size)
-    MOV EDX,dword ptr [0x0061f4dc]      ; 005c0a05 | DAT_0061f4dc
+    MOV EDX,dword ptr [0x0061f4dc]      ; 005c0a05 | g_INT_0061f4dc
     ADD ESP,0x8                         ; 005c0a0b
     MOV ESI,EAX                         ; 005c0a0e
     CMP EDX,EDI                         ; 005c0a10
@@ -102,7 +102,7 @@ section .text
     INC EDI                             ; 005c0a39
     ADD EAX,ESI                         ; 005c0a3a
     MOV dword ptr [0x0061f4d8],ESI      ; 005c0a3c | DAT_0061f4d8
-    MOV dword ptr [0x0061f4dc],EDI      ; 005c0a42 | DAT_0061f4dc
+    MOV dword ptr [0x0061f4dc],EDI      ; 005c0a42 | g_INT_0061f4dc
     MOV dword ptr [EAX],EDX             ; 005c0a48
     CALL dword ptr [0x0061f2dc]         ; 005c0a4a | PTR_crt_unknown.c_FUN_005bce04_0061f2dc
         ;   Label: LAB_005c0a4a

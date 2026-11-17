@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 450,
-    "complexity_score": 213,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 168,
-    "suspect_count": 3,
+    "pseudocode_lines": 174,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "warning_type_propagation"
     ],
-    "total_lines": 618
+    "total_lines": 624
   },
   "cross_references": [
     {
@@ -108,27 +107,27 @@
     },
     {
       "addr": "005c65df",
-      "name": "DAT_005c65df",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c65df",
+      "type": "double",
+      "value": "1600"
     },
     {
       "addr": "005c65e7",
-      "name": "DAT_005c65e7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c65e7",
+      "type": "double",
+      "value": "900"
     },
     {
       "addr": "005c65ef",
-      "name": "DAT_005c65ef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c65ef",
+      "type": "double",
+      "value": "400"
     },
     {
       "addr": "005c65f7",
-      "name": "DAT_005c65f7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c65f7",
+      "type": "double",
+      "value": "100"
     },
     {
       "addr": "005fe4b0",
@@ -150,14 +149,14 @@
     },
     {
       "addr": "006045f8",
-      "name": "DAT_006045f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006045f8",
+      "type": "CSound*",
+      "value": "02cf5680"
     },
     {
       "addr": "007dffb4",
-      "name": "DAT_007dffb4",
-      "type": "undefined4",
+      "name": "g_CPuzzle_PTR_007dffb4",
+      "type": "CPuzzle*",
       "value": null
     },
     {
@@ -192,8 +191,8 @@
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
@@ -204,14 +203,14 @@
     },
     {
       "addr": "01d5be80",
-      "name": "DAT_01d5be80",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d5be80",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d70a20",
-      "name": "DAT_01d70a20",
-      "type": "undefined4",
+      "name": "g_INT_01d70a20",
+      "type": "int",
       "value": null
     },
     {
@@ -357,27 +356,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_007dffb4",
-      "severity": "mild",
-      "text": "(DAT_007dffb4 != 0)) || (g_CGamePtr->letterbox_mode != 0)) {",
-      "type": "undefined_data"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 77,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar10),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar11),",
       "type": "pointer_cast"
     }
   ]

@@ -15,13 +15,13 @@
 ;   TerminatedCString s_RIC_WD0C_WAV_005c1cf0
 ;   TerminatedCString s_RIC_DT_WAV_005c1cfd
 ;   TerminatedCString s_wp_flintlock_wav_005c1d08
-;   undefined4 DAT_005c1d1d
-;   undefined4 DAT_005c1d25
-;   undefined4 DAT_005c1d2d
-;   undefined4 DAT_005c1d35
-;   undefined4 DAT_005c1d3d
-;   undefined4 DAT_005c1d45
-;   undefined4 DAT_005c1d4d
+;   double g_DOUBLE_005c1d1d = 1.5
+;   float g_FLOAT_005c1d25 = 20
+;   double g_DOUBLE_005c1d2d = 0.5
+;   double g_DOUBLE_005c1d35 = 0.330000000000000
+;   double g_DOUBLE_005c1d3d = 0.660000000000000
+;   double g_DOUBLE_005c1d45 = 10
+;   double g_DOUBLE_005c1d4d = -1.25
 ;   ... and 22 more
 ;
 ; Called Functions:
@@ -121,7 +121,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004ae962
     MOVSD ES:EDI,ESI                    ; 004ae963
     FLD float ptr [EBX + 0x2e8]         ; 004ae964
-    FDIVR double ptr [0x005c1d1d]       ; 004ae96a | DAT_005c1d1d
+    FDIVR double ptr [0x005c1d1d]       ; 004ae96a | g_DOUBLE_005c1d1d
     FLD float ptr [ESP + 0x138]         ; 004ae970
     FXCH                                ; 004ae977
     FSTP float ptr [ESP + 0x264]        ; 004ae979
@@ -257,7 +257,7 @@ section .text
     FLD float ptr [ESP + 0x1e0]         ; 004aeb78
     LEA ESI,[ESP + 0x88]                ; 004aeb7f
     LEA EDI,[ESP + 0x1e4]               ; 004aeb86
-    FADD double ptr [0x005c1d4d]        ; 004aeb8d | DAT_005c1d4d
+    FADD double ptr [0x005c1d4d]        ; 004aeb8d | g_DOUBLE_005c1d4d
     PUSH EBX                            ; 004aeb93
     FSTP float ptr [ESP + 0x19c]        ; 004aeb94
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004aeb9b
@@ -271,9 +271,9 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004aebc0
     MOVSD ES:EDI,ESI                    ; 004aebc1
     MOVSD ES:EDI,ESI                    ; 004aebc2
-    MOV EAX,[0x005fc5a0]                ; 004aebc3 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 004aebc3 | g_CFireEffect_PTR_005fc5a0
     FXCH                                ; 004aebc8
-    FLD float ptr [0x005c1d55]          ; 004aebca | DAT_005c1d55
+    FLD float ptr [0x005c1d55]          ; 004aebca | g_FLOAT_005c1d55
     FXCH                                ; 004aebd0
     FADD ST0,ST1                        ; 004aebd2
     FXCH ST2                            ; 004aebd4
@@ -289,7 +289,7 @@ section .text
     PUSH EAX                            ; 004aebf4
     LEA EAX,[ESP + 0x154]               ; 004aebf5
     PUSH EAX                            ; 004aebfc
-    MOV EDX,dword ptr [0x005fc5a0]      ; 004aebfd | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 004aebfd | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 004aec03
     XOR ESI,ESI                         ; 004aec04
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450 ; 004aec06
@@ -346,7 +346,7 @@ section .text
     PUSH EAX                            ; 004aecfe
     LEA EAX,[ESP + 0x1f4]               ; 004aecff
     PUSH EAX                            ; 004aed06
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004aed07 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004aed07 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004aed0d
     INC ESI                             ; 004aed0e
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 004aed0f
@@ -359,7 +359,7 @@ section .text
     PUSH EAX                            ; 004aed27
     PUSH 0x5c1d08                       ; 004aed28 | = "wp_flintlock.wav"
     PUSH EBX                            ; 004aed2d
-    MOV ESI,dword ptr [0x006045f8]      ; 004aed2e | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 004aed2e | g_CSound_PTR_006045f8
     PUSH ESI                            ; 004aed34
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004aed35
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -444,7 +444,7 @@ section .text
     PUSH EAX                            ; 004aee77
     PUSH 0x5c1cae                       ; 004aee78 | = "wp_noammo.wav"
     PUSH EBX                            ; 004aee7d
-    MOV EDX,dword ptr [0x006045f8]      ; 004aee7e | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 004aee7e | g_CSound_PTR_006045f8
     PUSH EDX                            ; 004aee84
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004aee85
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -534,7 +534,7 @@ section .text
     PUSH ESI                            ; 004aef80 | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 004aef81
     PUSH EAX                            ; 004aef86 | g_CDemonSetInstance.collision_impact_position.x
-    MOV EAX,[0x005fc5a0]                ; 004aef87 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 004aef87 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 004aef8c
     LEA EDI,[ESP + 0x24c]               ; 004aef8d
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 ; 004aef94
@@ -580,7 +580,7 @@ section .text
     FMUL ST0                            ; 004af048
     FADDP                               ; 004af04a
     FSQRT                               ; 004af04c
-    FCOMP float ptr [0x005c1d25]        ; 004af04e | DAT_005c1d25
+    FCOMP float ptr [0x005c1d25]        ; 004af04e | g_FLOAT_005c1d25
     FNSTSW AX                           ; 004af054
     SAHF                                ; 004af056
     JNC 0x004aeabc                      ; 004af057
@@ -604,13 +604,13 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 004af09b
         ;   Label: LAB_004af09b
     FST double ptr [ESP]                ; 004af09f
-    FCOMP double ptr [0x005c1d35]       ; 004af0a2 | DAT_005c1d35
+    FCOMP double ptr [0x005c1d35]       ; 004af0a2 | g_DOUBLE_005c1d35
     FNSTSW AX                           ; 004af0a8
     SAHF                                ; 004af0aa
     JC 0x004af3f2                       ; 004af0ab
         ;   XREF to: 004af3f2 (CONDITIONAL_JUMP)  ; LAB_004af3f2
     FLD double ptr [ESP]                ; 004af0b1
-    FCOMP double ptr [0x005c1d3d]       ; 004af0b4 | DAT_005c1d3d
+    FCOMP double ptr [0x005c1d3d]       ; 004af0b4 | g_DOUBLE_005c1d3d
     FNSTSW AX                           ; 004af0ba
     SAHF                                ; 004af0bc
     JNC 0x004af43a                      ; 004af0bd
@@ -628,7 +628,7 @@ section .text
     PUSH EAX                            ; 004af0f0
     PUSH 0x5c1cc9                       ; 004af0f1 | = "RIC-CT0B.WAV"
     PUSH EBX                            ; 004af0f6
-    MOV EAX,[0x006045f8]                ; 004af0f7 | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 004af0f7 | g_CSound_PTR_006045f8
     PUSH EAX                            ; 004af0fc
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004af0fd
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -690,7 +690,7 @@ section .text
     FMUL ST0                            ; 004af1da
     FADDP                               ; 004af1dc
     FSQRT                               ; 004af1de
-    FDIVR double ptr [0x005c1d45]       ; 004af1e0 | DAT_005c1d45
+    FDIVR double ptr [0x005c1d45]       ; 004af1e0 | g_DOUBLE_005c1d45
     FLD float ptr [ESP + 0x180]         ; 004af1e6
     FXCH                                ; 004af1ed
     FSTP float ptr [ESP + 0x260]        ; 004af1ef
@@ -854,7 +854,7 @@ section .text
     PUSH EAX                            ; 004af41f
     PUSH 0x5c1cbc                       ; 004af420 | = "RIC-CT0A.WAV"
     PUSH EBX                            ; 004af425
-    MOV EDX,dword ptr [0x006045f8]      ; 004af426 | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 004af426 | g_CSound_PTR_006045f8
     PUSH EDX                            ; 004af42c
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004af42d
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -875,7 +875,7 @@ section .text
     PUSH EAX                            ; 004af467
     PUSH 0x5c1cd6                       ; 004af468 | = "RIC-CT0C.WAV"
     PUSH EBX                            ; 004af46d
-    MOV EDI,dword ptr [0x006045f8]      ; 004af46e | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 004af46e | g_CSound_PTR_006045f8
     PUSH EDI                            ; 004af474
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004af475
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -884,7 +884,7 @@ section .text
         ;   XREF to: 004aeabc (UNCONDITIONAL_JUMP)  ; LAB_004aeabc
     FLD float ptr [ESP + 0x10]          ; 004af482
         ;   Label: LAB_004af482
-    FCOMP double ptr [0x005c1d2d]       ; 004af486 | DAT_005c1d2d
+    FCOMP double ptr [0x005c1d2d]       ; 004af486 | g_DOUBLE_005c1d2d
     FNSTSW AX                           ; 004af48c
     SAHF                                ; 004af48e
     JNC 0x004af4d9                      ; 004af48f
@@ -902,7 +902,7 @@ section .text
     PUSH EAX                            ; 004af4be
     PUSH 0x5c1ce3                       ; 004af4bf | = "RIC-WD0B.WAV"
     PUSH EBX                            ; 004af4c4
-    MOV ECX,dword ptr [0x006045f8]      ; 004af4c5 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004af4c5 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004af4cb
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004af4cc
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -923,7 +923,7 @@ section .text
     PUSH EAX                            ; 004af506
     PUSH 0x5c1cf0                       ; 004af507 | = "RIC-WD0C.WAV"
     PUSH EBX                            ; 004af50c
-    MOV EDX,dword ptr [0x006045f8]      ; 004af50d | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 004af50d | g_CSound_PTR_006045f8
     PUSH EDX                            ; 004af513
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004af514
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -950,7 +950,7 @@ section .text
     PUSH EAX                            ; 004af55d
     PUSH 0x5c1cfd                       ; 004af55e | = "RIC-DT.WAV"
     PUSH EBX                            ; 004af563
-    MOV ESI,dword ptr [0x006045f8]      ; 004af564 | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 004af564 | g_CSound_PTR_006045f8
     PUSH ESI                            ; 004af56a
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004af56b
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

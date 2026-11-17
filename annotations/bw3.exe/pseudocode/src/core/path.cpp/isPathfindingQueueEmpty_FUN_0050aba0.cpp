@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_path_cpp_isPathfindingQueueEmpty_FUN_0050aba0(void)
 
 {
-  return (uint)(_DAT_01ed02ac == _DAT_01ed02b0);
+  return (uint)(g_INT_01ed02ac == g_INT_01ed02b0);
 }

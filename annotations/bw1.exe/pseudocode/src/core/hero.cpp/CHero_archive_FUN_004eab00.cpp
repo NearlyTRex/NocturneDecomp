@@ -74,11 +74,11 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004eab00(CHero *this_ptr)
                 (&this_ptr->is_wearing_goggles,"isWearingGoggles");
     }
     if (5 < g_CHeroClassVersion) {
-      if (DAT_007c3038 != 1) {
-        core_inv_cpp_CInventory_save_FUN_004f95b0(&this_ptr->inventory,DAT_007c3034);
+      if (g_INT_007c3038 != 1) {
+        core_inv_cpp_CInventory_save_FUN_004f95b0(&this_ptr->inventory,g_FILE_PTR_007c3034);
         return;
       }
-      core_inv_cpp_CInventory_load_FUN_004f97a0(&this_ptr->inventory,DAT_007c3034);
+      core_inv_cpp_CInventory_load_FUN_004f97a0(&this_ptr->inventory,g_FILE_PTR_007c3034);
       return;
     }
   }

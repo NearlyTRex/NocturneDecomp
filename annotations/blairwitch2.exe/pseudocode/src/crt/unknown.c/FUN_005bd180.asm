@@ -11,7 +11,7 @@
 ;   crt_unknown.c_FUN_005ba890 at 005ba8be
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_UCHAR_ARRAY_0061ed94
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bd160
@@ -55,7 +55,7 @@ section .text
     MOV AL,BL                           ; 005bd1ba
     INC AL                              ; 005bd1bc
     AND EAX,0xff                        ; 005bd1be
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 005bd1c3 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 005bd1c3 | g_UCHAR_ARRAY_0061ed94
     JZ 0x005bd1dc                       ; 005bd1ca
         ;   XREF to: 005bd1dc (CONDITIONAL_JUMP)  ; LAB_005bd1dc
     PUSH ESI                            ; 005bd1cc

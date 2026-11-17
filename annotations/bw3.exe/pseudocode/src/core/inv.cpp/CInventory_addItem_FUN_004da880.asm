@@ -40,13 +40,13 @@
 ;   TerminatedCString s_wp_getmana_wav_005c5fe2
 ;   TerminatedCString s_wp_getammo_wav_005c5ff1
 ;   TerminatedCString s_You_ve_found_005c6000
-;   undefined4 DAT_005c6010
+;   TerminatedCString s_d_005c6010
 ;   TerminatedCString s_bullets_005c6014
 ;   undefined4 s_ullets_005c6014+1
 ;   undefined4 s_llets_005c6014+2
 ;   undefined4 s_lets_005c6014+3
-;   undefined1 DAT_005c601c
-;   undefined1 DAT_005c601d
+;   TerminatedCString s_mana_005c601c
+;   undefined4 s_ana_005c601c+1
 ;   TerminatedCString s_You_ve_received_d_health_005c6021
 ;   TerminatedCString s_CHealthItem_005c603d
 ;   TerminatedCString s_Press_005c6049
@@ -128,7 +128,7 @@ section .text
     ADD ESP,0x8                         ; 004da909
     XOR EBX,EBX                         ; 004da90c
         ;   Label: LAB_004da90c
-    MOV EAX,[0x01d5ba14]                ; 004da90e | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004da90e | g_INT_01d5ba14
         ;   Label: LAB_004da90e
     MOV EDX,dword ptr [EBP + 0x4]       ; 004da913
     CMP EDX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004da916
@@ -194,7 +194,7 @@ section .text
         ;   XREF to: 004db40a (CONDITIONAL_JUMP)  ; LAB_004db40a
     MOV ESI,dword ptr [EDX + 0x314]     ; 004da9d7
     PUSH ESI                            ; 004da9dd
-    PUSH 0x5c6010                       ; 004da9de | DAT_005c6010
+    PUSH 0x5c6010                       ; 004da9de | = "%d "
     LEA EAX,[ESP + 0x208]               ; 004da9e3
     PUSH EAX                            ; 004da9ea
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004da9eb
@@ -237,13 +237,13 @@ section .text
     MOV AL,0x0                          ; 004daa49
     SCASB.REPNE ES:EDI                  ; 004daa4b
     DEC EDI                             ; 004daa4d
-    MOV AL,byte ptr [ESI]               ; 004daa4e | = "bullets" | s_llets_005c6014+2 | DAT_005c601c
+    MOV AL,byte ptr [ESI]               ; 004daa4e | = "bullets" | s_llets_005c6014+2 | s_mana_005c601c
         ;   Label: LAB_004daa4e
     MOV byte ptr [EDI],AL               ; 004daa50
     CMP AL,0x0                          ; 004daa52
     JZ 0x004daa66                       ; 004daa54
         ;   XREF to: 004daa66 (CONDITIONAL_JUMP)  ; LAB_004daa66
-    MOV AL,byte ptr [ESI + 0x1]         ; 004daa56 | s_ullets_005c6014+1 | s_lets_005c6014+3 | DAT_005c601d
+    MOV AL,byte ptr [ESI + 0x1]         ; 004daa56 | s_ullets_005c6014+1 | s_lets_005c6014+3 | s_ana_005c601c+1
     ADD ESI,0x2                         ; 004daa59
     MOV byte ptr [EDI + 0x1],AL         ; 004daa5c
     ADD EDI,0x2                         ; 004daa5f
@@ -1013,7 +1013,7 @@ section .text
         ;   XREF to: 004db04e (CONDITIONAL_JUMP)  ; LAB_004db04e
     POP EDI                             ; 004db066
         ;   Label: LAB_004db066
-    PUSH 0x5c6195                       ; 004db067 | DAT_005c6195
+    PUSH 0x5c6195                       ; 004db067 | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004db06c
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004db071
@@ -1069,14 +1069,14 @@ section .text
     POP EDI                             ; 004db0d9
         ;   Label: LAB_004db0d9
     PUSH EDX                            ; 004db0da
-    MOV EDI,dword ptr [0x01549ab4]      ; 004db0db | DAT_01549ab4
+    MOV EDI,dword ptr [0x01549ab4]      ; 004db0db | g_CBitFont_PTR_01549ab4
     PUSH EDI                            ; 004db0e1
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004db0e2
         ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004db0e7
     MOV dword ptr [ESP + 0x328],EAX     ; 004db0ea
     FILD dword ptr [ESP + 0x328]        ; 004db0f1
-    FMUL double ptr [0x005c627f]        ; 004db0f8 | DAT_005c627f
+    FMUL double ptr [0x005c627f]        ; 004db0f8 | g_DOUBLE_005c627f
     FSTP float ptr [EBP + 0x34c]        ; 004db0fe
     CMP dword ptr [ESP + 0x304],0x0     ; 004db104
         ;   Label: LAB_004db104
@@ -1195,7 +1195,7 @@ section .text
         ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 004db227
     PUSH EAX                            ; 004db22a
-    MOV ESI,dword ptr [0x00600530]      ; 004db22b | DAT_00600530
+    MOV ESI,dword ptr [0x00600530]      ; 004db22b | g_CDemonMission_PTR_00600530
     PUSH ESI                            ; 004db231
     MOV EBX,EAX                         ; 004db232
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530 ; 004db234
@@ -1223,7 +1223,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x348]     ; 004db28b
     MOV ECX,dword ptr [EBP + 0x10]      ; 004db292
     PUSH EAX                            ; 004db295
-    MOV EDX,dword ptr [0x00600530]      ; 004db296 | DAT_00600530
+    MOV EDX,dword ptr [0x00600530]      ; 004db296 | g_CDemonMission_PTR_00600530
     INC ECX                             ; 004db29c
     PUSH EDX                            ; 004db29d
     MOV dword ptr [EBP + 0x10],ECX      ; 004db29e
@@ -1276,7 +1276,7 @@ section .text
     PUSH EAX                            ; 004db320
     PUSH 0x5c5ff1                       ; 004db321 | = "wp_getammo.wav"
     PUSH EDI                            ; 004db326
-    MOV EDI,dword ptr [0x006045f8]      ; 004db327 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 004db327 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 004db32d
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004db32e
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -1299,7 +1299,7 @@ section .text
     PUSH EAX                            ; 004db363
     PUSH 0x5c5fe2                       ; 004db364 | = "wp_getmana.wav"
     PUSH EDI                            ; 004db369
-    MOV ESI,dword ptr [0x006045f8]      ; 004db36a | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 004db36a | g_CSound_PTR_006045f8
     PUSH ESI                            ; 004db370
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004db371
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -1352,7 +1352,7 @@ section .text
         ;   Label: LAB_004db3f7
     JNZ 0x004daa67                      ; 004db3fa
         ;   XREF to: 004daa67 (CONDITIONAL_JUMP)  ; LAB_004daa67
-    MOV ESI,0x5c601c                    ; 004db400 | DAT_005c601c
+    MOV ESI,0x5c601c                    ; 004db400 | = "mana"
     JMP 0x004daa3e                      ; 004db405
         ;   XREF to: 004daa3e (UNCONDITIONAL_JUMP)  ; LAB_004daa3e
     TEST EAX,EAX                        ; 004db40a
@@ -1385,7 +1385,7 @@ section .text
         ;   Label: LAB_004db452
     MOV EDX,dword ptr [ESP + 0x348]     ; 004db454
     PUSH EDX                            ; 004db45b
-    MOV ECX,dword ptr [0x00600530]      ; 004db45c | DAT_00600530
+    MOV ECX,dword ptr [0x00600530]      ; 004db45c | g_CDemonMission_PTR_00600530
     PUSH ECX                            ; 004db462
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 004db463
         ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -1400,7 +1400,7 @@ section .text
     PUSH 0x1                            ; 004db47b
         ;   Label: LAB_004db47b
     PUSH ESI                            ; 004db47d
-    MOV EBX,dword ptr [0x00600530]      ; 004db47e | DAT_00600530
+    MOV EBX,dword ptr [0x00600530]      ; 004db47e | g_CDemonMission_PTR_00600530
     PUSH EBX                            ; 004db484
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 004db485
         ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -1442,7 +1442,7 @@ section .text
     PUSH 0x1                            ; 004db503
     MOV EBP,dword ptr [ESP + 0x348]     ; 004db505
     PUSH EBP                            ; 004db50c
-    MOV EAX,[0x00600530]                ; 004db50d | DAT_00600530
+    MOV EAX,[0x00600530]                ; 004db50d | g_CDemonMission_PTR_00600530
     PUSH EAX                            ; 004db512
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 004db513
         ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -1493,7 +1493,7 @@ section .text
     MOV EAX,dword ptr [EDX + 0x314]     ; 004db58f
     MOV ESI,dword ptr [EBX + 0x568]     ; 004db595
     PUSH EDI                            ; 004db59b
-    MOV EBP,dword ptr [0x00600530]      ; 004db59c | DAT_00600530
+    MOV EBP,dword ptr [0x00600530]      ; 004db59c | g_CDemonMission_PTR_00600530
     ADD ESI,EAX                         ; 004db5a2
     PUSH EBP                            ; 004db5a4
     MOV dword ptr [EBX + 0x568],ESI     ; 004db5a5
@@ -1522,7 +1522,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 004db5e7
     PUSH EDX                            ; 004db5ea
     MOV dword ptr [EBP + EAX*0x4 + 0x14],EDX ; 004db5eb
-    MOV ESI,dword ptr [0x00600530]      ; 004db5ef | DAT_00600530
+    MOV ESI,dword ptr [0x00600530]      ; 004db5ef | g_CDemonMission_PTR_00600530
     MOV EAX,dword ptr [EBP + 0x10]      ; 004db5f5
     PUSH ESI                            ; 004db5f8
     INC EAX                             ; 004db5f9
@@ -1635,7 +1635,7 @@ section .text
         ;   XREF to: 004db5e0 (CONDITIONAL_JUMP)  ; LAB_004db5e0
     PUSH 0x1                            ; 004db70d
     PUSH EDI                            ; 004db70f
-    MOV EBX,dword ptr [0x00600530]      ; 004db710 | DAT_00600530
+    MOV EBX,dword ptr [0x00600530]      ; 004db710 | g_CDemonMission_PTR_00600530
     PUSH EBX                            ; 004db716
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 004db717
         ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -1653,7 +1653,7 @@ section .text
     MOV dword ptr [EBP + EAX*0x4 + 0x14],ESI ; 004db734
     PUSH ESI                            ; 004db738
     MOV EAX,dword ptr [EBP + 0x10]      ; 004db739
-    MOV EDI,dword ptr [0x00600530]      ; 004db73c | DAT_00600530
+    MOV EDI,dword ptr [0x00600530]      ; 004db73c | g_CDemonMission_PTR_00600530
     INC EAX                             ; 004db742
     PUSH EDI                            ; 004db743
     MOV dword ptr [EBP + 0x10],EAX      ; 004db744
@@ -1706,7 +1706,7 @@ section .text
     PUSH 0x1                            ; 004db7cb
     MOV ESI,dword ptr [ESP + 0x348]     ; 004db7cd
     PUSH ESI                            ; 004db7d4
-    MOV EDI,dword ptr [0x00600530]      ; 004db7d5 | DAT_00600530
+    MOV EDI,dword ptr [0x00600530]      ; 004db7d5 | g_CDemonMission_PTR_00600530
     PUSH EDI                            ; 004db7db
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 004db7dc
         ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
@@ -1741,7 +1741,7 @@ section .text
         ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 004db824
     PUSH EAX                            ; 004db827
-    MOV ECX,dword ptr [0x00600530]      ; 004db828 | DAT_00600530
+    MOV ECX,dword ptr [0x00600530]      ; 004db828 | g_CDemonMission_PTR_00600530
     PUSH ECX                            ; 004db82e
     MOV EBX,EAX                         ; 004db82f
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530 ; 004db831

@@ -108,7 +108,7 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00581360(EInputCodeType keycode
           }
           return &DAT_005d7cdd;
         }
-        return &DAT_005d7cd7;
+        return "Tab";
       }
       if (keycode < DIK_R) {
         return &DAT_005d7cdf;
@@ -161,7 +161,7 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00581360(EInputCodeType keycode
       if (DIK_ESCAPE < keycode) {
         return &DAT_005d7cb5;
       }
-      return &DAT_005d7cb1;
+      return "Esc";
     }
   }
   else {
@@ -182,7 +182,7 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00581360(EInputCodeType keycode
           }
           if (DIK_F9 < keycode) {
             if (keycode < DIK_PAUSE) {
-              return &DAT_005d7d7d;
+              return "F10";
             }
             return "Pause";
           }
@@ -282,10 +282,10 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00581360(EInputCodeType keycode
       }
       if ((DIK_NUMPAD2|DIK_5) < keycode) {
         if (keycode < DIK_F12) {
-          return &DAT_005d7dfa;
+          return "F11";
         }
         if (keycode == DIK_F12) {
-          return &DAT_005d7dfe;
+          return "F12";
         }
         return "(invalid key)";
       }
@@ -298,18 +298,18 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00581360(EInputCodeType keycode
         if (keycode < DIK_PRIOR) {
           if (0x146 < keycode) {
             if (keycode < DIK_UP) {
-              return &DAT_005d7e31;
+              return "Home";
             }
             return &DAT_005d7e36;
           }
         }
         else {
           if (keycode < (DIK_UP|DIK_1)) {
-            return &DAT_005d7e39;
+            return "PgUp";
           }
           if ((DIK_UP|DIK_1) < keycode) {
             if (keycode < (DIK_UP|DIK_3)) {
-              return &DAT_005d7e3e;
+              return "Left";
             }
             if (keycode == DIK_RIGHT) {
               return "Right";
@@ -320,20 +320,20 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00581360(EInputCodeType keycode
       }
       else {
         if (keycode < DIK_DOWN) {
-          return &DAT_005d7e49;
+          return "End";
         }
         if (keycode < DIK_INSERT) {
           if (keycode < DIK_NEXT) {
-            return &DAT_005d7e4d;
+            return "Down";
           }
-          return &DAT_005d7e52;
+          return "PgDn";
         }
         if (keycode < DIK_DELETE) {
-          return &DAT_005d7e57;
+          return "Ins";
         }
         if (keycode < DIM_LBUTTON) {
           if (keycode == DIK_DELETE) {
-            return &DAT_005d7e5b;
+            return "Del";
           }
         }
         else {

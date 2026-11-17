@@ -12,11 +12,11 @@
 ;   void* PTR_TlsSetValue_005b366c = 001b427a
 ;   TerminatedCString s_Unable_to_resize_thread_005dae70
 ;   TerminatedCString s_Unable_to_resize_thread_005dae98
-;   undefined4 DAT_0060799c
+;   int g_INT_0060799c = -0x1
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079cc = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d0 = 005a7f44
-;   undefined4 DAT_00607e78
-;   undefined4 DAT_02d261f0
+;   ulong g_ULONG_00607e78 = 0xf4
+;   void* g_PTR_02d261f0
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_005a4b20
@@ -37,7 +37,7 @@ section .text
     PUSH EBP                            ; 005afb1b
     CALL dword ptr [0x006079cc]         ; 005afb1c | PTR_crt_unknown.c_FUN_005a7f44_006079cc
     CALL dword ptr CS:[0x5b3590]        ; 005afb22 | PTR_GetCurrentThreadId_005b3590
-    MOV EBX,dword ptr [0x02d261f0]      ; 005afb29 | DAT_02d261f0
+    MOV EBX,dword ptr [0x02d261f0]      ; 005afb29 | g_PTR_02d261f0
     TEST EBX,EBX                        ; 005afb2f
     JZ 0x005afb3e                       ; 005afb31
         ;   XREF to: 005afb3e (CONDITIONAL_JUMP)  ; LAB_005afb3e
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_005afb3e
     JZ 0x005afb6e                       ; 005afb42
         ;   XREF to: 005afb6e (CONDITIONAL_JUMP)  ; LAB_005afb6e
-    MOV EDI,dword ptr [0x00607e78]      ; 005afb44 | DAT_00607e78
+    MOV EDI,dword ptr [0x00607e78]      ; 005afb44 | g_ULONG_00607e78
     PUSH EDI                            ; 005afb4a
     MOV EBP,dword ptr [EBX + 0x8]       ; 005afb4b
     PUSH EBP                            ; 005afb4e
@@ -71,7 +71,7 @@ section .text
     ADD ESP,0x8                         ; 005afb69
     JMP 0x005afbbc                      ; 005afb6c
         ;   XREF to: 005afbbc (UNCONDITIONAL_JUMP)  ; LAB_005afbbc
-    MOV ESI,dword ptr [0x00607e78]      ; 005afb6e | DAT_00607e78
+    MOV ESI,dword ptr [0x00607e78]      ; 005afb6e | g_ULONG_00607e78
         ;   Label: LAB_005afb6e
     PUSH ESI                            ; 005afb74
     PUSH 0x1                            ; 005afb75
@@ -106,10 +106,10 @@ section .text
     MOV dword ptr [EBX + 0xc],0x1       ; 005afbb5
     MOV dword ptr [EBX + 0x8],EBP       ; 005afbbc
         ;   Label: LAB_005afbbc
-    MOV EAX,[0x00607e78]                ; 005afbbf | DAT_00607e78
+    MOV EAX,[0x00607e78]                ; 005afbbf | g_ULONG_00607e78
     PUSH EBP                            ; 005afbc4
     MOV dword ptr [EBP + 0xf0],EAX      ; 005afbc5
-    MOV EAX,[0x0060799c]                ; 005afbcb | DAT_0060799c
+    MOV EAX,[0x0060799c]                ; 005afbcb | g_INT_0060799c
     MOV byte ptr [EBP + 0x52],0x1       ; 005afbd0
     PUSH EAX                            ; 005afbd4
     MOV byte ptr [EBP + 0x53],0x0       ; 005afbd5

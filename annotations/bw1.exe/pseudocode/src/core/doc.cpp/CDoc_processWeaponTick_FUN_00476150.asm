@@ -11,7 +11,7 @@
 ;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a4b8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fecb8
+;   float g_FLOAT_005fecb8 = 10
 ;   undefined4 g_CDynamiteClassInfo.name_hash
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     CALL dword ptr [EAX + 0xe4]         ; 004761be
     MOV dword ptr [EBX + 0x20004],0x0   ; 004761c4
     MOV dword ptr [EBX + 0x2c98],0x0    ; 004761ce
-    FLD float ptr [0x005fecb8]          ; 004761d8 | DAT_005fecb8
+    FLD float ptr [0x005fecb8]          ; 004761d8 | g_FLOAT_005fecb8
     MOV dword ptr [EBX + 0x2c9c],0x0    ; 004761de
     ADD ESP,0x4                         ; 004761e8
     MOV EDI,dword ptr [EBX + 0x1ff5c]   ; 004761eb

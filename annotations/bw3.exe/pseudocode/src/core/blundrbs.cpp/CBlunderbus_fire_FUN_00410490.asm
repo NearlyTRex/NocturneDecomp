@@ -15,13 +15,13 @@
 ;   TerminatedCString s_RIC_WD0C_WAV_005b64b7
 ;   TerminatedCString s_RIC_DT_WAV_005b64c4
 ;   TerminatedCString s_wp_blunderbus_wav_005b64cf
-;   undefined4 DAT_005b64e2
-;   undefined4 DAT_005b64ea
-;   undefined4 DAT_005b64f2
-;   undefined4 DAT_005b64fa
-;   undefined4 DAT_005b6502
-;   undefined4 DAT_005b6506
-;   undefined4 DAT_005b650a
+;   float g_FLOAT_005b64e2 = 3.141593
+;   double g_DOUBLE_005b64ea = 0.00555555555555555
+;   double g_DOUBLE_005b64f2 = -2.75
+;   double g_DOUBLE_005b64fa = -2.5
+;   float g_FLOAT_005b6502 = 50
+;   float g_FLOAT_005b6506 = 100
+;   float g_FLOAT_005b650a = 150
 ;   ... and 30 more
 ;
 ; Called Functions:
@@ -88,8 +88,8 @@ section .text
     JZ 0x00411086                       ; 00410507
         ;   XREF to: 00411086 (CONDITIONAL_JUMP)  ; LAB_00411086
     FLD float ptr [EBX + 0x594]         ; 0041050d
-    FMUL float ptr [0x005b64e2]         ; 00410513 | DAT_005b64e2
-    FMUL double ptr [0x005b64ea]        ; 00410519 | DAT_005b64ea
+    FMUL float ptr [0x005b64e2]         ; 00410513 | g_FLOAT_005b64e2
+    FMUL double ptr [0x005b64ea]        ; 00410519 | g_DOUBLE_005b64ea
     FPTAN                               ; 0041051f
     FSTP ST0                            ; 00410521
     FMUL float ptr [EBX + 0x2e8]        ; 00410523
@@ -177,7 +177,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00410678
     MOVSD ES:EDI,ESI                    ; 00410679
     FLD float ptr [EAX + 0x2e8]         ; 0041067a
-    FDIVR double ptr [0x005b651a]       ; 00410680 | DAT_005b651a
+    FDIVR double ptr [0x005b651a]       ; 00410680 | g_DOUBLE_005b651a
     FLD float ptr [ESP + 0x164]         ; 00410686
     FXCH                                ; 0041068d
     FSTP float ptr [ESP + 0x4a8]        ; 0041068f
@@ -330,7 +330,7 @@ section .text
     FLD float ptr [ESP + 0x110]         ; 004108cf
     LEA ESI,[ESP + 0x3f0]               ; 004108d6
     LEA EDI,[ESP + 0x1ec]               ; 004108dd
-    FADD double ptr [0x005b64f2]        ; 004108e4 | DAT_005b64f2
+    FADD double ptr [0x005b64f2]        ; 004108e4 | g_DOUBLE_005b64f2
     PUSH EBX                            ; 004108ea
     FSTP float ptr [ESP + 0x270]        ; 004108eb
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004108f2
@@ -378,7 +378,7 @@ section .text
     PUSH EAX                            ; 00410999
     FLD float ptr [ESP + 0x1a0]         ; 0041099a
     LEA ESI,[ESP + 0x24c]               ; 004109a1
-    FADD double ptr [0x005b64fa]        ; 004109a8 | DAT_005b64fa
+    FADD double ptr [0x005b64fa]        ; 004109a8 | g_DOUBLE_005b64fa
     PUSH EBX                            ; 004109ae
     FSTP float ptr [ESP + 0x144]        ; 004109af
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004109b6
@@ -423,7 +423,7 @@ section .text
     FLD float ptr [ESP + 0x3b0]         ; 00410a5a
     LEA ESI,[ESP + 0x45c]               ; 00410a61
     LEA EDI,[ESP + 0x2e8]               ; 00410a68
-    FADD float ptr [0x005b6502]         ; 00410a6f | DAT_005b6502
+    FADD float ptr [0x005b6502]         ; 00410a6f | g_FLOAT_005b6502
     PUSH EBX                            ; 00410a75
     FSTP float ptr [ESP + 0x354]        ; 00410a76
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00410a7d
@@ -472,7 +472,7 @@ section .text
     FLD float ptr [ESP + 0x11c]         ; 00410b2b
     LEA ESI,[ESP + 0x15c]               ; 00410b32
     LEA EDI,[ESP + 0xf0]                ; 00410b39
-    FADD float ptr [0x005b6506]         ; 00410b40 | DAT_005b6506
+    FADD float ptr [0x005b6506]         ; 00410b40 | g_FLOAT_005b6506
     PUSH EBX                            ; 00410b46
     FSTP float ptr [ESP + 0x234]        ; 00410b47
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00410b4e
@@ -521,7 +521,7 @@ section .text
     FLD float ptr [ESP + 0x44c]         ; 00410bf6
     LEA ESI,[ESP + 0x1b0]               ; 00410bfd
     LEA EDI,[ESP + 0x318]               ; 00410c04
-    FADD float ptr [0x005b650a]         ; 00410c0b | DAT_005b650a
+    FADD float ptr [0x005b650a]         ; 00410c0b | g_FLOAT_005b650a
     PUSH EBX                            ; 00410c11
     FSTP float ptr [ESP + 0x12c]        ; 00410c12
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00410c19
@@ -570,7 +570,7 @@ section .text
     FLD float ptr [ESP + 0x1e8]         ; 00410cc1
     LEA ESI,[ESP + 0x384]               ; 00410cc8
     LEA EDI,[ESP + 0x324]               ; 00410ccf
-    FADD float ptr [0x005b650e]         ; 00410cd6 | DAT_005b650e
+    FADD float ptr [0x005b650e]         ; 00410cd6 | g_FLOAT_005b650e
     PUSH EBX                            ; 00410cdc
     FSTP float ptr [ESP + 0x18c]        ; 00410cdd
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00410ce4
@@ -620,7 +620,7 @@ section .text
     LEA ESI,[ESP + 0xa8]                ; 00410d99
     LEA EDI,[ESP + 0x3e4]               ; 00410da0
     PUSH EBX                            ; 00410da7
-    FADD float ptr [0x005b6512]         ; 00410da8 | DAT_005b6512
+    FADD float ptr [0x005b6512]         ; 00410da8 | g_FLOAT_005b6512
     ADD EBX,0x3c                        ; 00410dae
     FSTP float ptr [ESP + 0x21c]        ; 00410db1
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00410db8
@@ -634,10 +634,10 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00410dd7
     MOVSD ES:EDI,ESI                    ; 00410dd8
     FLD float ptr [ESP + 0x268]         ; 00410dd9
-    MOV ESI,dword ptr [0x005fc5a0]      ; 00410de0 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 00410de0 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 00410de6
     FXCH                                ; 00410de7
-    FLD float ptr [0x005b6516]          ; 00410de9 | DAT_005b6516
+    FLD float ptr [0x005b6516]          ; 00410de9 | g_FLOAT_005b6516
     FXCH                                ; 00410def
     FADD ST0,ST1                        ; 00410df1
     FXCH ST2                            ; 00410df3
@@ -651,7 +651,7 @@ section .text
     ADD ESP,0xc                         ; 00410e0d
     LEA EAX,[ESP + 0x230]               ; 00410e10
     PUSH EAX                            ; 00410e17
-    MOV EDI,dword ptr [0x005fc5a0]      ; 00410e18 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 00410e18 | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 00410e1e
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 ; 00410e1f
         ;   XREF to: 004a2010 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect * this_ptr, CVector3f * position)
@@ -659,14 +659,14 @@ section .text
     PUSH EBX                            ; 00410e27
     LEA EAX,[ESP + 0x2e8]               ; 00410e28
     PUSH EAX                            ; 00410e2f
-    MOV EAX,[0x005fc5a0]                ; 00410e30 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 00410e30 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 00410e35
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450 ; 00410e36
         ;   XREF to: 004a2450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 00410e3b
     LEA EAX,[ESP + 0x2e4]               ; 00410e3e
     PUSH EAX                            ; 00410e45
-    MOV EDX,dword ptr [0x005fc5a0]      ; 00410e46 | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 00410e46 | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 00410e4c
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 ; 00410e4d
         ;   XREF to: 004a2010 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect * this_ptr, CVector3f * position)
@@ -674,14 +674,14 @@ section .text
     PUSH EBX                            ; 00410e55
     LEA EAX,[ESP + 0xf0]                ; 00410e56
     PUSH EAX                            ; 00410e5d
-    MOV ECX,dword ptr [0x005fc5a0]      ; 00410e5e | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 00410e5e | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 00410e64
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450 ; 00410e65
         ;   XREF to: 004a2450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 00410e6a
     LEA EAX,[ESP + 0xec]                ; 00410e6d
     PUSH EAX                            ; 00410e74
-    MOV ESI,dword ptr [0x005fc5a0]      ; 00410e75 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 00410e75 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 00410e7b
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 ; 00410e7c
         ;   XREF to: 004a2010 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect * this_ptr, CVector3f * position)
@@ -689,14 +689,14 @@ section .text
     PUSH EBX                            ; 00410e84
     LEA EAX,[ESP + 0x318]               ; 00410e85
     PUSH EAX                            ; 00410e8c
-    MOV EDI,dword ptr [0x005fc5a0]      ; 00410e8d | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 00410e8d | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 00410e93
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450 ; 00410e94
         ;   XREF to: 004a2450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 00410e99
     LEA EAX,[ESP + 0x314]               ; 00410e9c
     PUSH EAX                            ; 00410ea3
-    MOV EAX,[0x005fc5a0]                ; 00410ea4 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 00410ea4 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 00410ea9
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 ; 00410eaa
         ;   XREF to: 004a2010 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect * this_ptr, CVector3f * position)
@@ -704,14 +704,14 @@ section .text
     PUSH EBX                            ; 00410eb2
     LEA EAX,[ESP + 0x324]               ; 00410eb3
     PUSH EAX                            ; 00410eba
-    MOV EDX,dword ptr [0x005fc5a0]      ; 00410ebb | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 00410ebb | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 00410ec1
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450 ; 00410ec2
         ;   XREF to: 004a2450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 00410ec7
     LEA EAX,[ESP + 0x320]               ; 00410eca
     PUSH EAX                            ; 00410ed1
-    MOV ECX,dword ptr [0x005fc5a0]      ; 00410ed2 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 00410ed2 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 00410ed8
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 ; 00410ed9
         ;   XREF to: 004a2010 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect * this_ptr, CVector3f * position)
@@ -719,14 +719,14 @@ section .text
     PUSH EBX                            ; 00410ee1
     LEA EAX,[ESP + 0x3e4]               ; 00410ee2
     PUSH EAX                            ; 00410ee9
-    MOV EBX,dword ptr [0x005fc5a0]      ; 00410eea | DAT_005fc5a0
+    MOV EBX,dword ptr [0x005fc5a0]      ; 00410eea | g_CFireEffect_PTR_005fc5a0
     PUSH EBX                            ; 00410ef0
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450 ; 00410ef1
         ;   XREF to: 004a2450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 00410ef6
     LEA EAX,[ESP + 0x3e0]               ; 00410ef9
     PUSH EAX                            ; 00410f00
-    MOV ESI,dword ptr [0x005fc5a0]      ; 00410f01 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 00410f01 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 00410f07
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 ; 00410f08
         ;   XREF to: 004a2010 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect * this_ptr, CVector3f * position)
@@ -737,7 +737,7 @@ section .text
     LEA EAX,[ESP + 0x238]               ; 00410f1d
     PUSH 0x3f8ccccd                     ; 00410f24
     PUSH EAX                            ; 00410f29
-    MOV EDI,dword ptr [0x005fc5a0]      ; 00410f2a | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 00410f2a | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 00410f30
     XOR ESI,ESI                         ; 00410f31
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560 ; 00410f33
@@ -794,7 +794,7 @@ section .text
     PUSH EAX                            ; 0041102b
     LEA EAX,[ESP + 0x1fc]               ; 0041102c
     PUSH EAX                            ; 00411033
-    MOV EDI,dword ptr [0x005fc5a0]      ; 00411034 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 00411034 | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 0041103a
     INC ESI                             ; 0041103b
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 0041103c
@@ -808,7 +808,7 @@ section .text
     PUSH 0x5b64cf                       ; 00411055 | = "wp_blunderbus.wav"
     MOV EAX,dword ptr [EBP + 0x14]      ; 0041105a
     PUSH EAX                            ; 0041105d
-    MOV EDX,dword ptr [0x006045f8]      ; 0041105e | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 0041105e | g_CSound_PTR_006045f8
     PUSH EDX                            ; 00411064
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 00411065
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -827,7 +827,7 @@ section .text
     PUSH EAX                            ; 0041108d
     PUSH 0x5b6475                       ; 0041108e | = "wp_noammo.wav"
     PUSH EBX                            ; 00411093
-    MOV EDI,dword ptr [0x006045f8]      ; 00411094 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 00411094 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0041109a
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0041109b
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -983,7 +983,7 @@ section .text
     FMUL ST0                            ; 0041125d
     FADDP                               ; 0041125f
     FSQRT                               ; 00411261
-    FDIVR double ptr [0x005b6542]       ; 00411263 | DAT_005b6542
+    FDIVR double ptr [0x005b6542]       ; 00411263 | g_DOUBLE_005b6542
     FLD float ptr [ESP + 0x2f0]         ; 00411269
     FXCH                                ; 00411270
     FSTP float ptr [ESP + 0x4a4]        ; 00411272
@@ -1108,7 +1108,7 @@ section .text
     PUSH EBX                            ; 00411428 | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 00411429
     PUSH EAX                            ; 0041142e | g_CDemonSetInstance.collision_impact_position.x
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0041142f | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0041142f | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 00411435
     LEA ESI,[ESP + 0x2e4]               ; 00411436
     LEA EDI,[ESP + 0x380]               ; 0041143d
@@ -1152,7 +1152,7 @@ section .text
     FMUL ST0                            ; 004114ed
     FADDP                               ; 004114ef
     FSQRT                               ; 004114f1
-    FCOMP float ptr [0x005b6522]        ; 004114f3 | DAT_005b6522
+    FCOMP float ptr [0x005b6522]        ; 004114f3 | g_FLOAT_005b6522
     FNSTSW AX                           ; 004114f9
     SAHF                                ; 004114fb
     JNC 0x004107d6                      ; 004114fc
@@ -1176,13 +1176,13 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 00411540
         ;   Label: LAB_00411540
     FST double ptr [ESP + 0x8]          ; 00411544
-    FCOMP double ptr [0x005b6532]       ; 00411548 | DAT_005b6532
+    FCOMP double ptr [0x005b6532]       ; 00411548 | g_DOUBLE_005b6532
     FNSTSW AX                           ; 0041154e
     SAHF                                ; 00411550
     JC 0x004115b0                       ; 00411551
         ;   XREF to: 004115b0 (CONDITIONAL_JUMP)  ; LAB_004115b0
     FLD double ptr [ESP + 0x8]          ; 00411553
-    FCOMP double ptr [0x005b653a]       ; 00411557 | DAT_005b653a
+    FCOMP double ptr [0x005b653a]       ; 00411557 | g_DOUBLE_005b653a
     FNSTSW AX                           ; 0041155d
     SAHF                                ; 0041155f
     JNC 0x004115fb                      ; 00411560
@@ -1201,7 +1201,7 @@ section .text
     PUSH 0x5b6490                       ; 00411594 | = "RIC-CT0B.WAV"
     MOV EDI,dword ptr [EBP + 0x14]      ; 00411599
     PUSH EDI                            ; 0041159c
-    MOV EAX,[0x006045f8]                ; 0041159d | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 0041159d | g_CSound_PTR_006045f8
     PUSH EAX                            ; 004115a2
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004115a3
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -1223,7 +1223,7 @@ section .text
     PUSH 0x5b6483                       ; 004115de | = "RIC-CT0A.WAV"
     MOV EDX,dword ptr [EBP + 0x14]      ; 004115e3
     PUSH EDX                            ; 004115e6
-    MOV ECX,dword ptr [0x006045f8]      ; 004115e7 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 004115e7 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 004115ed
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004115ee
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -1245,7 +1245,7 @@ section .text
     PUSH 0x5b649d                       ; 00411629 | = "RIC-CT0C.WAV"
     MOV EBX,dword ptr [EBP + 0x14]      ; 0041162e
     PUSH EBX                            ; 00411631
-    MOV ESI,dword ptr [0x006045f8]      ; 00411632 | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 00411632 | g_CSound_PTR_006045f8
     PUSH ESI                            ; 00411638
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 00411639
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -1254,7 +1254,7 @@ section .text
         ;   XREF to: 004107d6 (UNCONDITIONAL_JUMP)  ; LAB_004107d6
     FLD float ptr [ESP + 0x10]          ; 00411646
         ;   Label: LAB_00411646
-    FCOMP double ptr [0x005b652a]       ; 0041164a | DAT_005b652a
+    FCOMP double ptr [0x005b652a]       ; 0041164a | g_DOUBLE_005b652a
     FNSTSW AX                           ; 00411650
     SAHF                                ; 00411652
     JNC 0x0041169f                      ; 00411653
@@ -1273,7 +1273,7 @@ section .text
     PUSH 0x5b64aa                       ; 00411683 | = "RIC-WD0B.WAV"
     MOV EDI,dword ptr [EBP + 0x14]      ; 00411688
     PUSH EDI                            ; 0041168b
-    MOV EAX,[0x006045f8]                ; 0041168c | DAT_006045f8
+    MOV EAX,[0x006045f8]                ; 0041168c | g_CSound_PTR_006045f8
     PUSH EAX                            ; 00411691
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 00411692
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -1295,7 +1295,7 @@ section .text
     PUSH 0x5b64b7                       ; 004116cd | = "RIC-WD0C.WAV"
     MOV EBX,dword ptr [EBP + 0x14]      ; 004116d2
     PUSH EBX                            ; 004116d5
-    MOV ESI,dword ptr [0x006045f8]      ; 004116d6 | DAT_006045f8
+    MOV ESI,dword ptr [0x006045f8]      ; 004116d6 | g_CSound_PTR_006045f8
     PUSH ESI                            ; 004116dc
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004116dd
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -1323,7 +1323,7 @@ section .text
     PUSH 0x5b64c4                       ; 00411727 | = "RIC-DT.WAV"
     MOV EDX,dword ptr [EBP + 0x14]      ; 0041172c
     PUSH EDX                            ; 0041172f
-    MOV ECX,dword ptr [0x006045f8]      ; 00411730 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 00411730 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 00411736
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 00411737
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

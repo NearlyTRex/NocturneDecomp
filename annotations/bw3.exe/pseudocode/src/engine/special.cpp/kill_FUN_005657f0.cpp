@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_kill_FUN_005657f0(void)
 
 {
-  if (_DAT_02cf6108 == 0) {
+  if (g_INT_02cf6108 == 0) {
     return 1;
   }
-  (*_DAT_02cf5fe8)();
+  (*(code *)g_PTR_02cf5fe8)();
   engine_special_cpp_shutdownExternalRenderer_FUN_00564010();
   return 1;
 }

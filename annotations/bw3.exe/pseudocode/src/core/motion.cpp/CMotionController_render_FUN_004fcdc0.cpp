@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_render_FUN_004fcdc0(CMotionController *this_ptr,CDemonActor *actor)
 
 {
@@ -32,9 +30,9 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_004fcdc0(CMotionContro
   int local_14;
   
   bVar9 = 0;
-  if ((_DAT_01d8e40c != 0) &&
-     (local_20 = (float)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc),
-     local_20 == 0.0)) {
+  if ((g_INT_01d8e40c != 0) &&
+     (local_20 = (float)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                                  (g_CDemonRenderer_PTR_005f2afc), local_20 == 0.0)) {
     (*((actor->vtable)._ub)->getBoundingBox)(actor,in_stack_ffffff40);
     puVar6 = local_5c;
     puVar7 = local_44;
@@ -45,12 +43,12 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_004fcdc0(CMotionContro
     }
     local_1c = local_34;
     local_18 = 0;
-    local_2c.x = (int)ROUND(local_20 * _DAT_005e2c60);
-    local_2c.y = (int)ROUND(local_34 * _DAT_005e2c60);
-    local_2c.z = (int)ROUND(_DAT_005e2c60 * 0.0);
+    local_2c.x = (int)ROUND(local_20 * 256.0f);
+    local_2c.y = (int)ROUND(local_34 * 256.0f);
+    local_2c.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-              (&DAT_005f2afc->vertex_buffer_ptr[24999].projected_vertex,&local_2c);
-    pSVar2 = DAT_005f2afc->vertex_buffer_ptr;
+              (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[24999].projected_vertex,&local_2c);
+    pSVar2 = g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr;
     if ((int)(pSVar2[24999].projected_vertex.screen_x & -0x80000000) == 0) {
       iVar5 = pSVar2[24999].projected_vertex.screen_y >> 0x10;
       local_14 = (pSVar2[24999].projected_vertex.screen_x >> 0x10) + -0x23;

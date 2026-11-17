@@ -20,9 +20,9 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dc605
+;   TerminatedCString s_OK_005dc605
 ;   TerminatedCString s_Cancel_005dc608
-;   undefined1* g_CPickListVTable = 0049a710
+;   CPickList_full_vtable g_CPickListVTable
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_0049d480
@@ -65,7 +65,7 @@ section .text
     MOV dword ptr [EBX + 0x1b0],0x0     ; 0049a680
     ADD ESP,0x4                         ; 0049a68a
     MOV dword ptr [EBX + 0x1b4],0x0     ; 0049a68d
-    PUSH 0x5dc605                       ; 0049a697 | DAT_005dc605
+    PUSH 0x5dc605                       ; 0049a697 | = "OK"
     MOV dword ptr [EBX + 0x1b8],0x0     ; 0049a69c
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0049a6a6
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)

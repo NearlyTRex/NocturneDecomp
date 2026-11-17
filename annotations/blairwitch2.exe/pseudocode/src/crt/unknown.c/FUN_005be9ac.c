@@ -2,11 +2,11 @@
 // Address: 005be9ac
 // Address Range: [[005be9ac, 005bea79]]
 // Convention: unknown
-// Signature: undefined1 * crt_unknown_c_FUN_005be9ac(void)
+// Signature: char * crt_unknown_c_FUN_005be9ac(void)
 
 #include "nocturne.h"
 
-byte * FUN_005be9ac(void)
+char * FUN_005be9ac(void)
 
 {
   char cVar1;
@@ -17,8 +17,9 @@ byte * FUN_005be9ac(void)
   byte bVar6;
   
   bVar6 = 0;
-  if (DAT_0061f30c == '\0') {
-    for (ppuVar4 = &PTR_DAT_0061f2f8; **ppuVar4 != '\0'; ppuVar4 = ppuVar4 + 1) {
+  if (g_CHAR_ARRAY_0061f30c[0] == '\0') {
+    for (ppuVar4 = &PTR_g_CHAR_ARRAY_005f19e4_4_0061f2f8; **ppuVar4 != '\0'; ppuVar4 = ppuVar4 + 1)
+    {
       pcVar2 = getenv(*ppuVar4);
       if (pcVar2 != (char *)0x0) {
         uVar3 = 0xffffffff;
@@ -30,14 +31,14 @@ byte * FUN_005be9ac(void)
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
         if (~uVar3 - 1 < 0x104) {
-          _fullpath(&DAT_0061f30c,pcVar2,0x103);
+          _fullpath(g_CHAR_ARRAY_0061f30c,pcVar2,0x103);
           break;
         }
       }
     }
-    if (DAT_0061f30c == '\0') {
+    if (g_CHAR_ARRAY_0061f30c[0] == '\0') {
       pcVar2 = FUN_005c0f10((char *)0x0,0);
-      pcVar5 = &DAT_0061f30c;
+      pcVar5 = g_CHAR_ARRAY_0061f30c;
       do {
         cVar1 = *pcVar2;
         *pcVar5 = cVar1;
@@ -49,7 +50,7 @@ byte * FUN_005be9ac(void)
       } while (cVar1 != '\0');
     }
     uVar3 = 0xffffffff;
-    pcVar2 = &DAT_0061f30c;
+    pcVar2 = g_CHAR_ARRAY_0061f30c;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
@@ -59,8 +60,8 @@ byte * FUN_005be9ac(void)
     uVar3 = ~uVar3;
     if ((*(char *)(uVar3 + 0x61f30a) != '\\') && (*(char *)(uVar3 + 0x61f30a) != '/')) {
       (&DAT_0061f30b)[uVar3] = 0x5c;
-      (&DAT_0061f30c)[uVar3] = 0;
+      g_CHAR_ARRAY_0061f30c[uVar3] = '\0';
     }
   }
-  return &DAT_0061f30c;
+  return g_CHAR_ARRAY_0061f30c;
 }

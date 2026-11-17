@@ -4,7 +4,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBulletTrail.h"
+#include "types/classes/CCrater.h"
+#include "types/classes/CExplosion.h"
 #include "types/classes/CFireball.h"
+#include "types/classes/CGunFlame.h"
+#include "types/classes/CLaserBeam.h"
 #include "types/classes/CLeaf.h"
 #include "types/classes/CRock.h"
 #include "types/classes/CToss.h"
@@ -13,8 +18,23 @@
 // GLOBAL VARIABLES - Range 0x1C90000
 // =============================================================================
 
+// CBulletTrail[10]
+extern CBulletTrail g_CBulletTrail_ARRAY_01c91268[10];
+
+// CCrater[20]
+extern CCrater g_CCrater_ARRAY_01c9c4d4[20];
+
+// CExplosion[10]
+extern CExplosion g_CExplosion_ARRAY_01c975e4[10];
+
 // CFireball[64]
 extern CFireball g_FireballPool[64];
+
+// CGunFlame[500]
+extern CGunFlame g_CGunFlame_ARRAY_01c9cd98[500];
+
+// CLaserBeam[64]
+extern CLaserBeam g_CLaserBeam_ARRAY_01c965e0[64];
 
 // CLeaf[64]
 extern CLeaf CLeaf_ARRAY_01c950dc[64];
@@ -24,4 +44,15 @@ extern CRock g_RockPool[64];
 
 // CToss[20]
 extern CToss g_TossPool[20];
+
+// int
+extern int g_INT_01c91264;
+extern int g_INT_01c913d0;
+extern int g_INT_01c93cd4;
+extern int g_INT_01c950d8;
+extern int g_INT_01c965dc;
+extern int g_INT_01c975e0;
+extern int g_INT_01c976fc;
+extern int g_INT_01c9c4d0;
+extern int g_INT_01c9cd94;
 

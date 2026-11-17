@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1bc48
+;   int g_INT_01d1bc48
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -22,7 +22,7 @@ section .text
     PUSH 0x1d1baf4                      ; 004f64f9
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0 ; 004f64fe
         ;   XREF to: 0040d4b0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0(CAlphaBitmap * this_ptr, int x, int y, int alpha)
-    MOV EDX,dword ptr [0x01d1bc48]      ; 004f6503 | DAT_01d1bc48
+    MOV EDX,dword ptr [0x01d1bc48]      ; 004f6503 | g_INT_01d1bc48
     ADD ESP,0x10                        ; 004f6509
     CMP EDX,-0x1                        ; 004f650c
     JNZ 0x004f6512                      ; 004f650f

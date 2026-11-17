@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02664fa0
-;   undefined4 DAT_02664fa4
+;   float g_FLOAT_02664fa0
+;   float g_FLOAT_02664fa4
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
         ;   Label: wincore_winrun.cpp_resetInputIdleTimers_FUN_005907b0
     XOR EDX,EDX                         ; 005907b1
     XOR EAX,EAX                         ; 005907b3
-    MOV dword ptr [0x02664fa0],EDX      ; 005907b5 | DAT_02664fa0
-    MOV dword ptr [0x02664fa4],EDX      ; 005907bb | DAT_02664fa4
+    MOV dword ptr [0x02664fa0],EDX      ; 005907b5 | g_FLOAT_02664fa0
+    MOV dword ptr [0x02664fa4],EDX      ; 005907bb | g_FLOAT_02664fa4
     ADD EAX,0xac                        ; 005907c1
         ;   Label: LAB_005907c1
     XOR EBX,EBX                         ; 005907c6

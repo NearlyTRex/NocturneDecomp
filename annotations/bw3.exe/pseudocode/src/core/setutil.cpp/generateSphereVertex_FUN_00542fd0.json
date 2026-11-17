@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 83,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 108
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 106
   },
   "cross_references": [],
   "function": {
@@ -38,45 +35,45 @@
   "globals": [
     {
       "addr": "005d1126",
-      "name": "DAT_005d1126",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d1126",
+      "type": "float",
+      "value": "0.0625"
     },
     {
       "addr": "005d112a",
-      "name": "DAT_005d112a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d112a",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005d1132",
-      "name": "DAT_005d1132",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d1132",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005d113a",
-      "name": "DAT_005d113a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d113a",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "005d1142",
-      "name": "DAT_005d1142",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d1142",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005e3d18",
-      "name": "DAT_005e3d18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e3d18",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     }
   ],
   "param_estimates": {
@@ -185,38 +182,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*DAT_005f2afc + iVar2),aCStack_38);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "piVar1 = DAT_005f2afc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "*(uint *)(*DAT_005f2afc + 0x18 + iVar2) = 0x800000;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00413970(CBatman *this_ptr)
 
 {
@@ -25,13 +23,15 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00413970(CBatman *this_ptr)
   uint auStack_24 [5];
   
   bVar5 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar1 == 0) {
     (this_ptr->base).base.was_rendered_opaque = 0;
   }
   if (((this_ptr->mist_state != 2) &&
-      (((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-        iVar2 == 0 || (this_ptr->mist_state == 0)) && (iVar1 == 0)))) &&
+      (((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                           (g_CDemonRenderer_PTR_00612560), iVar2 == 0 ||
+        (this_ptr->mist_state == 0)) && (iVar1 == 0)))) &&
      ((this_ptr->base).base.render_active == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
@@ -52,21 +52,23 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00413970(CBatman *this_ptr)
       }
       else {
         if (iVar2 == 1) {
-          fStack_40 = (1.0 - this_ptr->vanish_timer) / 0x3F800000;
+          fStack_40 = (1.0 - this_ptr->vanish_timer) / 1.0f;
         }
         else {
-          fStack_40 = ((float)_DAT_005d3ad9 - this_ptr->vanish_timer) / 0x3F800000;
+          fStack_40 = ((float)0.5 - this_ptr->vanish_timer) / 1.0f;
           if (fStack_40 < 0.0) {
             fStack_40 = 0.0;
           }
         }
         dStack_48 = (double)fStack_40;
         if (0.0 < dStack_48) {
-          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
+          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
+                    (g_CDemonRenderer_PTR_00612560,0);
           engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00483df0
-                    (DAT_00612560,fStack_40);
-          engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);
-          if (dStack_48 <= _DAT_005d3ad9) {
+                    (g_CDemonRenderer_PTR_00612560,fStack_40);
+          engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
+                    (g_CDemonRenderer_PTR_00612560,1);
+          if (dStack_48 <= 0.5) {
             render_flags = 0x267;
           }
           else {
@@ -74,12 +76,13 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00413970(CBatman *this_ptr)
           }
           core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
                     (&(this_ptr->base).base.model,-1,render_flags,1,0);
-          engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);
+          engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
+                    (g_CDemonRenderer_PTR_00612560);
         }
       }
-      if ((_DAT_01d39d34 != 0) &&
-         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
-         iVar2 == 0)) {
+      if ((g_INT_01d39d34 != 0) &&
+         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                            (g_CDemonRenderer_PTR_00612560), iVar2 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_005254b0
                   (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);

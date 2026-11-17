@@ -27,9 +27,9 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_005f16bb
 ;   TerminatedCString s_core_morph_cpp_005f16e9
 ;   TerminatedCString s_CMorphModel_setFaceList_005f16fb
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0268014c
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_INT_0268014c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_005b679b
     MOV EBP,0x191                       ; 005b67a0
     PUSH 0x5f16bb                       ; 005b67a5 | = "CMorphModel::setFaceList - invalid pa..."
-    MOV dword ptr [0x01d046a0],ECX      ; 005b67aa | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 005b67b0 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005b67aa | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 005b67b0 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b67b6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b67bb
@@ -78,8 +78,8 @@ section .text
     MOV EBP,0x5f16e9                    ; 005b67d9 | = "..\\core\\morph.cpp"
     MOV EAX,0x198                       ; 005b67de
     PUSH 0x5f16fb                       ; 005b67e3 | = "CMorphModel::setFaceList - invalid ve..."
-    MOV dword ptr [0x01d046a0],EBP      ; 005b67e8 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 005b67ee | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 005b67e8 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 005b67ee | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b67f3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b67f8
@@ -120,7 +120,7 @@ section .text
     MOV ESI,EDI                         ; 005b685f
     MOV dword ptr [EAX + 0x4],0x3       ; 005b6861
     MOV EAX,dword ptr [ESP + 0x4]       ; 005b6868
-    CMP dword ptr [0x0268014c],0x0      ; 005b686c | DAT_0268014c
+    CMP dword ptr [0x0268014c],0x0      ; 005b686c | g_INT_0268014c
         ;   Label: LAB_005b686c
     JZ 0x005b6938                       ; 005b6873
         ;   XREF to: 005b6938 (CONDITIONAL_JUMP)  ; LAB_005b6938

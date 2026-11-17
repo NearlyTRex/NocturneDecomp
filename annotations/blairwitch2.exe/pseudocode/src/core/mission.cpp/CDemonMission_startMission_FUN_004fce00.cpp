@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004fce00(CDemonMission *this_ptr)
 
 {
@@ -15,21 +13,21 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004fce00(CDemonMissi
   int clear_screen;
   char *pcVar1;
   
-  if (_DAT_01cedee0 < 1) {
+  if (g_INT_01cedee0 < 1) {
     pcVar1 = "Can't run mission - no heros";
   }
   else {
-    if (*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) != 0) {
+    if (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4] != (CHero *)0x0) {
       core_mission_cpp_CDemonMission_prepareAllActors_FUN_004fc350(this_ptr);
       (this_ptr->pending_teleport).area_id = -1;
-      this_ptr_00 = 0x01C38BC0;
+      this_ptr_00 = g_CEventList_PTR_006141f0;
       (this_ptr->pending_teleport).position.z = 0.0;
       (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
       (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
       core_event_cpp_CEventList_reset_FUN_00489380(this_ptr_00);
       g_CGamePtr->letterbox_mode = 0;
       core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0
-                (this_ptr,*(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2c));
+                (this_ptr,(g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.location.area_id);
       clear_screen = 0;
       pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Loading script");
       core_level_cpp_CLevelLoader_update_FUN_004e1600(g_CLevelLoaderPtr,pcVar1,clear_screen);

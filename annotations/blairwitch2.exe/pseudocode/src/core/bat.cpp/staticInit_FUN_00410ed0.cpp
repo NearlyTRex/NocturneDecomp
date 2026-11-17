@@ -10,7 +10,7 @@ void __cdecl core_bat_cpp_staticInit_FUN_00410ed0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CBatClassInfo,(char *)0x5cb656,core_bat_cpp_factoryFuncBat_FUN_00410fa0,
+            (&g_CBatClassInfo,"CBat",core_bat_cpp_factoryFuncBat_FUN_00410fa0,
              &g_CBatClassVersion,4,&g_CDemonActorClassInfo);
   return;
 }

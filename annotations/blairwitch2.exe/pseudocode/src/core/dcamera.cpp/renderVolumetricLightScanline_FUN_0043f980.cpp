@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0043f980(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 
 {
   int *piVar1;
-  int iVar2;
+  uint *puVar2;
   bool bVar3;
   byte bVar4;
   SSoftwareEdge *pSVar5;
@@ -31,12 +29,14 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0043f980(int sca
   int iVar18;
   
   pSVar5 = left;
-  uVar9 = scanline_y - _DAT_01c35e4c;
-  if (((_DAT_01308800 != 1) || ((uVar9 & 1) == 0)) && ((_DAT_01308800 != 2 || ((uVar9 & 3) == 0))))
-  {
-    iVar17 = (int)uVar9 >> (DAT_01308800 & 0x1f);
-    iVar15 = ((right->base).x_current >> 0x10) - _DAT_01c35e48 >> (DAT_01308800 & 0x1f);
-    iVar18 = ((left->base).x_current >> 0x10) - _DAT_01c35e48 >> (DAT_01308800 & 0x1f);
+  uVar9 = scanline_y - g_INT_01c35e4c;
+  if (((g_BIT_INTEGER32_01308800.dword != 1) || ((uVar9 & 1) == 0)) &&
+     ((g_BIT_INTEGER32_01308800.dword != 2 || ((uVar9 & 3) == 0)))) {
+    iVar17 = (int)uVar9 >> (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
+    iVar15 = ((right->base).x_current >> 0x10) - g_INT_01c35e48 >>
+             (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
+    iVar18 = ((left->base).x_current >> 0x10) - g_INT_01c35e48 >>
+             (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
     iVar16 = iVar15;
     if (iVar18 < iVar15) {
       left = right;
@@ -54,14 +54,14 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0043f980(int sca
     iVar8 = (iVar18 - iVar16) + 1;
     iVar14 = (right->base).red_current;
     iVar13 = (left->base).red_current - iVar14;
-    bVar4 = DAT_01308800 & 0x1f;
-    iVar2 = *(int *)(&DAT_01c2b64c + (iVar17 << (DAT_01308800 & 0x1f)) * 4);
-    pbVar7 = &DAT_01326d20 + iVar16 + iVar17 * 0x140;
+    bVar4 = g_BIT_INTEGER32_01308800.bytes[0] & 0x1f;
+    puVar2 = g_UINT_PTR_ARRAY_01c2b64c[iVar17 << (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f)];
+    pbVar7 = (byte *)(g_CHAR_ARRAY_01326d20 + iVar16 + iVar17 * 0x140);
     iVar18 = (iVar18 - iVar16) * 4;
     do {
-      if (*(int *)(iVar18 + iVar2 + (iVar16 << bVar4) * 4) < iVar6) {
-        piVar1 = (int *)(_DAT_013083d0 + 0x13083d4);
-        _DAT_013083d0 = _DAT_013083d0 + 4 & 0x3fc;
+      if (*(int *)((int)puVar2 + iVar18 + (iVar16 << bVar4) * 4) < iVar6) {
+        piVar1 = (int *)(g_INT_013083d0 + 0x13083d4);
+        g_INT_013083d0 = g_INT_013083d0 + 4U & 0x3fc;
         uVar9 = (uint)*pbVar7 * 0x100 + iVar14 + *piVar1 >> 8;
         if (0xfe < uVar9) {
           uVar9 = 0xff;
@@ -76,7 +76,7 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0043f980(int sca
       bVar3 = 3 < iVar18;
       iVar18 = iVar17;
     } while (iVar17 != 0 && bVar3);
-    _DAT_013083cc = 1;
+    g_INT_013083cc = 1;
   }
   return;
 }

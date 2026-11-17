@@ -7,7 +7,7 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005cc2a2+1
+;   TerminatedCString s_modelName_005cc2a3
 ;   TerminatedCString s_toStartEvent_005cc2ad
 ;   TerminatedCString s_toEndEvent_005cc2ba
 ;   TerminatedCString s_stopEvent_005cc2c5
@@ -50,7 +50,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 0051242c
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00512431
-    PUSH 0x5cc2a3                       ; 00512434 | s_modelName_005cc2a2+1
+    PUSH 0x5cc2a3                       ; 00512434 | = "modelName"
     LEA EAX,[EDI + 0x158]               ; 00512439
     PUSH EAX                            ; 0051243f
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 00512440
@@ -203,7 +203,7 @@ section .text
     PUSH EAX                            ; 00512614
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00512615
         ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
-    MOV ECX,dword ptr [0x007df9b8]      ; 0051261a | DAT_007df9b8
+    MOV ECX,dword ptr [0x007df9b8]      ; 0051261a | g_INT_007df9b8
     ADD ESP,0x8                         ; 00512620
     CMP ECX,0x1                         ; 00512623
     JZ 0x00512755                       ; 00512626
@@ -329,8 +329,8 @@ section .text
     MOV EBP,0x5cc3f0                    ; 0051276d | = "..\\core\\platfrm.cpp"
     MOV EAX,0x316                       ; 00512772
     PUSH 0x5cc404                       ; 00512777 | = "CPlatform::archive - too many attache..."
-    MOV dword ptr [0x01d71de0],EBP      ; 0051277c | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00512782 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 0051277c | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00512782 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00512787
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051278c

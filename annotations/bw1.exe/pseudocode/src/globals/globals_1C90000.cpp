@@ -10,6 +10,15 @@ CFirefly CFirefly_ARRAY_01c9dab8[64] = {};
 // CGlassParticle[256]
 CGlassParticle g_GlassParticlePool[256] = {};
 
+// CMuzzleFlash[20]
+CMuzzleFlash g_CMuzzleFlash_ARRAY_01c9f1bc[20] = {};
+
 // CSpark[256]
 CSpark g_SparkPool[256] = {};
+
+// int
+int g_INT_01c986b0 = {};
+int g_INT_01c9dab4 = {};
+int g_INT_01c9f1b8 = {};
+int g_INT_01c9f8ec = {};
 

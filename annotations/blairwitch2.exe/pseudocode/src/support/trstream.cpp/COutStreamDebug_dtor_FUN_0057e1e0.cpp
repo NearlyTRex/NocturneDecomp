@@ -17,7 +17,7 @@ COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_dtor_FUN_0057e1e0
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable = &g_COutStreamDebugVTable;
+  (this_ptr->base).vtable = g_COutStreamDebugVTable;
   ptr = (COutStreamDebug *)support_trstream_cpp_COutStream_dtor_FUN_0057d860(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return ptr;

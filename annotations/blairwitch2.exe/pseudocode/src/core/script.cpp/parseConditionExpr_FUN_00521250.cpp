@@ -6,16 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_script_cpp_parseConditionExpr_FUN_00521250(char **cursor,char *out_buffer)
 
 {
   char *pcVar1;
   
   pcVar1 = core_script_cpp_parseArgument_FUN_005211a0(cursor,out_buffer,100);
-  if ((pcVar1 == (char *)0x0) && (_DAT_01e650f8 != 0)) {
-    pcVar1 = core_event_cpp_CEventList_validateCondition_FUN_0048e3a0(0x01C38BC0,out_buffer);
+  if ((pcVar1 == (char *)0x0) && (g_INT_01e650f8 != 0)) {
+    pcVar1 = core_event_cpp_CEventList_validateCondition_FUN_0048e3a0
+                       (g_CEventList_PTR_006141f0,out_buffer);
     return pcVar1;
   }
   return pcVar1;

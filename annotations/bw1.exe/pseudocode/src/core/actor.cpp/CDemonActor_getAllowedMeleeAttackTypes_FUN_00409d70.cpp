@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70(CDemonActor *this_ptr)
 
 {
@@ -49,20 +47,20 @@ int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70(C
   *(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
        *(uint *)((int)&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
   uVar2 = 0;
-  if (((((fStack_14 < (float)_DAT_005d25c9) && (unaff_EBP < (float)_DAT_005d25c9)) &&
-       (unaff_EDI < (float)_DAT_005d25c9)) &&
-      (((float)_DAT_005d25d1 < fStack_14 && ((float)_DAT_005d25d1 < unaff_EBP)))) &&
-     ((float)_DAT_005d25d1 < unaff_EDI)) {
+  if (((((fStack_14 < (float)2) && (unaff_EBP < (float)2)) &&
+       (unaff_EDI < (float)2)) &&
+      (((float)0.69999999999999996 < fStack_14 && ((float)0.69999999999999996 < unaff_EBP)))) &&
+     ((float)0.69999999999999996 < unaff_EDI)) {
     uVar2 = 4;
   }
   if (((fStack_14 < 1.0) && (unaff_EBP < 1.0)) &&
-     (((float)_DAT_005d25c9 < unaff_EDI &&
-      (((unaff_EDI < (float)_DAT_005d25d9 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))))
-     ) {
+     (((float)2 < unaff_EDI &&
+      (((unaff_EDI < (float)6 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)
+       ))))) {
     uVar2 = uVar2 | 2;
   }
   if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) &&
-      ((1.0 < unaff_EDI && ((unaff_EDI < (float)_DAT_005d25c9 && (fStack_14 < unaff_EDI)))))) &&
+      ((1.0 < unaff_EDI && ((unaff_EDI < (float)2 && (fStack_14 < unaff_EDI)))))) &&
      (unaff_EBP < unaff_EDI)) {
     uVar2 = uVar2 | 4;
   }

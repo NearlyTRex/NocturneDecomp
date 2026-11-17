@@ -42,7 +42,7 @@ int __cdecl engine_font_cpp_CBitFont_wrapLine_FUN_004c4030(CBitFont *this_ptr,ch
   }
   pcVar7 = source_text;
   if ((flags & 1) != 0) {
-    for (; (((&DAT_00626114)[(byte)(*pcVar7 + 1)] & 2) != 0 &&
+    for (; ((g_UCHAR_ARRAY_00626114[(byte)(*pcVar7 + 1)] & 2) != 0 &&
            (((flags & 8) == 0 || (*pcVar7 != '\n')))); pcVar7 = pcVar7 + 1) {
       iVar5 = iVar5 + 1;
     }
@@ -70,7 +70,7 @@ LAB_004c40a1:
 LAB_004c40b3:
       if ((flags & 2) != 0) {
         pcVar7 = dest_line + iVar8;
-        while ((0 < iVar8 && (((&DAT_00626114)[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {
+        while ((0 < iVar8 && ((g_UCHAR_ARRAY_00626114[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {
           iVar8 = iVar8 + -1;
           pcVar7 = pcVar7 + -1;
         }
@@ -78,7 +78,7 @@ LAB_004c40b3:
       dest_line[iVar8] = '\0';
       if ((flags & 4) != 0) {
         for (pcVar7 = source_text + iVar6;
-            (((&DAT_00626114)[(byte)(*pcVar7 + 1)] & 2) != 0 &&
+            ((g_UCHAR_ARRAY_00626114[(byte)(*pcVar7 + 1)] & 2) != 0 &&
             (((flags & 8) == 0 || (*pcVar7 != '\n')))); pcVar7 = pcVar7 + 1) {
           iVar6 = iVar6 + 1;
         }
@@ -99,7 +99,7 @@ LAB_004c40b3:
       pcVar7 = pcVar7 + 1;
       iVar3 = local_20;
       iVar2 = local_1c;
-      if (((&DAT_00626114)[(byte)(cVar1 + 1)] & 2) != 0) {
+      if ((g_UCHAR_ARRAY_00626114[(byte)(cVar1 + 1)] & 2) != 0) {
         iVar3 = iVar5;
         iVar2 = iVar8;
       }
@@ -110,7 +110,7 @@ LAB_004c40b3:
   else {
     local_18 = 1;
   }
-  if (((((&DAT_00626114)[(byte)(cVar1 + 1)] & 2) == 0) && ((flags & 0x10) == 0)) &&
+  if ((((g_UCHAR_ARRAY_00626114[(byte)(cVar1 + 1)] & 2) == 0) && ((flags & 0x10) == 0)) &&
      (((flags & 0x20) == 0 || (local_1c != 0)))) {
     iVar6 = local_20;
     iVar8 = local_1c;

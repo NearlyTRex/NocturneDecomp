@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemonSet *this_ptr)
 
 {
@@ -39,9 +37,9 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemo
   int local_18;
   int local_14;
   
-  local_54 = DAT_0061b49c;
+  local_54 = g_INT_0061b49c;
   iVar6 = 0;
-  local_40 = DAT_0061b49c + -0x78;
+  local_40 = g_INT_0061b49c + -0x78;
   local_2c = 2;
   if (0 < this_ptr->camera_count) {
     iVar3 = 0;
@@ -58,8 +56,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemo
       iVar5 = iVar3 * 4;
       do {
         iVar1 = *(int *)(local_50 + 0x269c7b0);
-        if (*(float *)(&DAT_0268e900 + iVar1 * 4) <
-            *(float *)(&DAT_0268e900 + *(int *)(iVar5 + 0x269c7b0) * 4)) {
+        if (g_FLOAT_ARRAY_0268e900[iVar1] < g_FLOAT_ARRAY_0268e900[*(int *)(iVar5 + 0x269c7b0)]) {
           *(uint *)(local_50 + 0x269c7b0) = *(uint *)(iVar5 + 0x269c7b0);
           *(int *)(iVar5 + 0x269c7b0) = iVar1;
         }
@@ -85,7 +82,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemo
     do {
       local_3c = *(int *)(local_38 + 0x269c7b0);
       iVar6 = local_3c * 0x3000;
-      if (DAT_0061b4a0 == 0x20) {
+      if (g_INT_0061b4a0 == 0x20) {
         local_1c = local_48;
         local_34 = local_58;
         local_24 = iVar6;
@@ -99,7 +96,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemo
             }
             iVar5 = iVar6 + 4;
             iVar3 = iVar3 + 4;
-            *(uint *)(iVar6 + *(int *)(&DAT_01c4354c + local_1c)) = uVar4 * 0x10101;
+            *(uint *)(iVar6 + *(int *)((int)g_ARRAY_PTR_01c4354c + local_1c)) = uVar4 * 0x10101;
             iVar6 = iVar5;
           } while (iVar5 != local_2c * 4 + 0x100);
           local_1c = local_1c + 4;
@@ -121,7 +118,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemo
             if (0xff < uVar4) {
               uVar4 = 0xff;
             }
-            _DAT_01c4f020 = (uint)(byte)(&DAT_01c45ad0)[(uVar4 >> 3) * 0x421];
+            g_INT_01c4f020 = (int)g_UCHAR_ARRAY_01c45ad0[(uVar4 >> 3) * 0x421];
             engine_2d_c_plotPixel_FUN_00401130(iVar3,iVar6);
             iVar5 = iVar5 + 4;
             iVar3 = iVar3 + 1;
@@ -131,19 +128,19 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemo
           local_20 = local_20 + 0x100;
         } while (local_18 < 0x30);
       }
-      _sprintf(local_c4,&DAT_005f106c);
+      _sprintf(local_c4,"%g");
       iVar6 = local_2c;
       engine_2d_c_drawText_FUN_00401fe0(local_c4,local_2c,local_44);
       engine_2d_c_drawText_FUN_00401fe0(local_60[local_3c].name,iVar6,local_4c);
       local_2c = iVar6 + 0x41;
-      if (DAT_0061b498 < iVar6 + 0x81) {
+      if (g_INT_0061b498 < iVar6 + 0x81) {
         local_2c = 2;
         local_58 = local_58 + 0xf0;
         local_48 = local_48 + 0xf0;
         local_4c = local_4c + 0x3c;
         local_44 = local_44 + 0x3c;
         local_40 = local_40 + 0x3c;
-        bVar2 = DAT_0061b49c < local_54;
+        bVar2 = g_INT_0061b49c < local_54;
         local_54 = local_54 + 0x3c;
         if (bVar2) {
           return;

@@ -11,7 +11,7 @@
 ;   crt_unknown.c_FUN_005ab55c at 005ab592
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00607b84
+;   uint g_UINT_00607b84 = 0x14
 ;   undefined4 DAT_00607b88
 ;   undefined4 DAT_00607b89
 ;   void* PTR_DAT_00607bd8 = 00607b88
@@ -27,7 +27,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005ab920
     PUSH ESI                            ; 005ab921
     MOV EBX,dword ptr [ESP + 0xc]       ; 005ab922
-    CMP EBX,dword ptr [0x00607b84]      ; 005ab926 | DAT_00607b84
+    CMP EBX,dword ptr [0x00607b84]      ; 005ab926 | g_UINT_00607b84
     JC 0x005ab933                       ; 005ab92c
         ;   XREF to: 005ab933 (CONDITIONAL_JUMP)  ; LAB_005ab933
     XOR EAX,EAX                         ; 005ab92e

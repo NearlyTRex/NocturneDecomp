@@ -19,7 +19,7 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048819b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cba2b4
+;   int g_INT_01cba2b4
 ;   undefined4 CFirefly_ARRAY_01cba2b8[0].base.vtable
 ;
 ; Called Functions:
@@ -33,23 +33,23 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0
     PUSH EDI                            ; 004a29d1
     PUSH EBP                            ; 004a29d2
-    MOV EBX,dword ptr [0x01cba2b4]      ; 004a29d3 | DAT_01cba2b4
+    MOV EBX,dword ptr [0x01cba2b4]      ; 004a29d3 | g_INT_01cba2b4
     LEA EAX,[EBX*0x4 + 0x0]             ; 004a29d9
     SUB EAX,EBX                         ; 004a29e0
-    MOV EDX,dword ptr [0x01cba2b4]      ; 004a29e2 | DAT_01cba2b4
+    MOV EDX,dword ptr [0x01cba2b4]      ; 004a29e2 | g_INT_01cba2b4
     SHL EAX,0x3                         ; 004a29e8
     INC EDX                             ; 004a29eb
     SUB EAX,EBX                         ; 004a29ec
     MOV EBX,0x1cba2b8                   ; 004a29ee
     SHL EAX,0x2                         ; 004a29f3
-    MOV dword ptr [0x01cba2b4],EDX      ; 004a29f6 | DAT_01cba2b4
+    MOV dword ptr [0x01cba2b4],EDX      ; 004a29f6 | g_INT_01cba2b4
     ADD EBX,EAX                         ; 004a29fc
     CMP EDX,0x40                        ; 004a29fe
     JL 0x004a2a0d                       ; 004a2a01
         ;   XREF to: 004a2a0d (CONDITIONAL_JUMP)  ; LAB_004a2a0d
     PUSH ESI                            ; 004a2a03
     XOR ESI,ESI                         ; 004a2a04
-    MOV dword ptr [0x01cba2b4],ESI      ; 004a2a06 | DAT_01cba2b4
+    MOV dword ptr [0x01cba2b4],ESI      ; 004a2a06 | g_INT_01cba2b4
     POP ESI                             ; 004a2a0c
     MOV EDI,dword ptr [ESP + 0x18]      ; 004a2a0d
         ;   Label: LAB_004a2a0d

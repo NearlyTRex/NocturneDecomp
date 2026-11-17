@@ -19,7 +19,7 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
   HANDLE pvStack_18;
   uint uStack_14;
   
-  if (((int)param_1 < 0) || (0x00000014 < param_1)) {
+  if (((int)param_1 < 0) || (g_UINT_00607b84 < param_1)) {
     setErrno(4);
     param_3 = 0xffffffff;
   }
@@ -61,8 +61,8 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
               *(byte *)((int)&DStack_24 + DStack_24) = 0xd;
               DStack_24 = DStack_24 + 1;
               if (DVar2 == DStack_24) {
-                if ((DAT_00607b44 == (code *)0x0) || (iVar3 = (*DAT_00607b18)(param_1), iVar3 == 0))
-                {
+                if ((g_PTR_00607b44 == (byte *)0x0) ||
+                   (iVar3 = (*(code *)g_PTR_00607b18)(param_1), iVar3 == 0)) {
                   BVar4 = WriteFile(pvStack_18,&DStack_24,DVar2,&DStack_24,(LPOVERLAPPED)0x0);
                   if (BVar4 == 0) {
                     (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);
@@ -71,7 +71,7 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
                   }
                 }
                 else {
-                  DStack_24 = (*DAT_00607b44)(iVar3,&DStack_24,DVar2);
+                  DStack_24 = (*(code *)g_PTR_00607b44)(iVar3,&DStack_24,DVar2);
                 }
                 if (DVar2 != DStack_24) {
                   setErrno(0xc);
@@ -87,7 +87,8 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
             DStack_20 = DStack_20 + 1;
             DStack_24 = DStack_24 + 1;
             if (DVar2 == DStack_24) {
-              if ((DAT_00607b44 == (code *)0x0) || (iVar3 = (*DAT_00607b18)(param_1), iVar3 == 0)) {
+              if ((g_PTR_00607b44 == (byte *)0x0) ||
+                 (iVar3 = (*(code *)g_PTR_00607b18)(param_1), iVar3 == 0)) {
                 BVar4 = WriteFile(pvStack_18,&DStack_24,DVar2,&DStack_24,(LPOVERLAPPED)0x0);
                 if (BVar4 == 0) {
                   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);
@@ -96,7 +97,7 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
                 }
               }
               else {
-                DStack_24 = (*DAT_00607b44)(iVar3,&DStack_24,DVar2);
+                DStack_24 = (*(code *)g_PTR_00607b44)(iVar3,&DStack_24,DVar2);
               }
               if (DVar2 != DStack_24) {
                 setErrno(0xc);
@@ -109,7 +110,8 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
           } while (DStack_20 < param_3);
         }
         if (DStack_24 != 0) {
-          if ((DAT_00607b44 == (code *)0x0) || (iVar3 = (*DAT_00607b18)(param_1), iVar3 == 0)) {
+          if ((g_PTR_00607b44 == (byte *)0x0) ||
+             (iVar3 = (*(code *)g_PTR_00607b18)(param_1), iVar3 == 0)) {
             BVar4 = WriteFile(pvStack_18,&DStack_24,DStack_24,&DStack_20,(LPOVERLAPPED)0x0);
             if (BVar4 == 0) {
               (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);
@@ -118,7 +120,7 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
             }
           }
           else {
-            DStack_20 = (*DAT_00607b44)(iVar3,&DStack_24,DStack_24);
+            DStack_20 = (*(code *)g_PTR_00607b44)(iVar3,&DStack_24,DStack_24);
           }
           if (DStack_20 != DStack_24) {
             setErrno(0xc);
@@ -128,7 +130,8 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
         }
       }
       else {
-        if ((DAT_00607b44 == (code *)0x0) || (iVar3 = (*DAT_00607b18)(param_1), iVar3 == 0)) {
+        if ((g_PTR_00607b44 == (byte *)0x0) ||
+           (iVar3 = (*(code *)g_PTR_00607b18)(param_1), iVar3 == 0)) {
           BVar4 = WriteFile(pvStack_18,param_2,param_3,&DStack_1c,(LPOVERLAPPED)0x0);
           if (BVar4 == 0) {
             (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);
@@ -137,7 +140,7 @@ DWORD FUN_005ab55c(uint param_1,LPCVOID param_2,DWORD param_3)
           }
         }
         else {
-          DStack_1c = (*DAT_00607b44)(iVar3,param_2,param_3);
+          DStack_1c = (*(code *)g_PTR_00607b44)(iVar3,param_2,param_3);
         }
         if (DStack_1c != param_3) {
           setErrno(0xc);

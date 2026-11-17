@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0053a740(CPlatform *this_ptr)
 
 {
@@ -68,11 +66,11 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0053a740(CPlatform *this_ptr
     core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->goal_param,"goalParam");
     core_actor_cpp_archiveFloat_FUN_0040b5f0
               (&this_ptr->current_movement_rate,"currentMovementRate");
-    if (DAT_007c3038 == 1) {
+    if (g_INT_007c3038 == 1) {
       core_actor_cpp_archiveInteger_FUN_0040b670(&local_1c,"attachCount");
       if (10 < local_1c) {
-        _DAT_01d1d400 = "..\\core\\platfrm.cpp";
-        _DAT_01d1d404 = 0x316;
+        g_CHAR_PTR_01d1d400 = "..\\core\\platfrm.cpp";
+        g_INT_01d1d404 = 0x316;
         core_main_c_displayErrorAndQuit_FUN_005030e0("CPlatform::archive - too many attached actors.");
       }
       iVar2 = 0;

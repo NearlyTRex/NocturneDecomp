@@ -6,73 +6,75 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive)
 
 {
   SMRGLHeaderPrimitive *pSVar1;
-  int *piVar2;
-  float *pfVar3;
-  int iVar4;
-  SMRGLHeaderPrimitive *pSVar5;
-  int iVar6;
-  float *local_14;
+  SRenderVertex *pSVar2;
+  CVector3f *pCVar3;
+  int *piVar4;
+  int iVar5;
+  SMRGLHeaderPrimitive *pSVar6;
+  int iVar7;
+  CVector3f *local_14;
   
-  _DAT_01d80d50 = (primitive->base).count;
-  iVar4 = 0;
-  if (0 < _DAT_01d80d50) {
-    pfVar3 = (float *)&DAT_01d80d54;
-    pSVar5 = primitive;
+  g_INT_01d80d50 = (primitive->base).count;
+  iVar5 = 0;
+  if (0 < g_INT_01d80d50) {
+    pCVar3 = g_CVector3f_ARRAY_01d80d54;
+    pSVar6 = primitive;
     do {
-      pSVar1 = pSVar5 + 1;
-      pSVar5 = (SMRGLHeaderPrimitive *)&(pSVar5->base).count;
-      piVar2 = (int *)(*DAT_005f2afc + (pSVar1->base).type * 0x30);
-      iVar4 = iVar4 + 1;
-      *pfVar3 = (float)*piVar2 * _DAT_005e29c8;
-      pfVar3[1] = (float)piVar2[1] * _DAT_005e29c8;
-      pfVar3[2] = (float)piVar2[2] * _DAT_005e29c8;
-      pfVar3 = pfVar3 + 3;
-    } while (iVar4 < (primitive->base).count);
+      pSVar1 = pSVar6 + 1;
+      pSVar6 = (SMRGLHeaderPrimitive *)&(pSVar6->base).count;
+      pSVar2 = g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr + (pSVar1->base).type;
+      iVar5 = iVar5 + 1;
+      pCVar3->x = (float)(pSVar2->projected_vertex).transformed_x * 0.00390625f;
+      pCVar3->y = (float)(pSVar2->projected_vertex).transformed_y * 0.00390625f;
+      pCVar3->z = (float)(pSVar2->projected_vertex).transformed_z * 0.00390625f;
+      pCVar3 = pCVar3 + 1;
+    } while (iVar5 < (primitive->base).count);
   }
   core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-            (this_ptr->clip_planes,(CVector3f *)&DAT_01d80d54,_DAT_01d80d50,
-             (CVector3f *)&DAT_01d80ed8,(int *)&DAT_01d80ed4);
-  if ((((2 < _DAT_01d80ed4) &&
+            (this_ptr->clip_planes,g_CVector3f_ARRAY_01d80d54,g_INT_01d80d50,
+             g_CVector3f_ARRAY_01d80ed8,&g_INT_01d80ed4);
+  if ((((2 < g_INT_01d80ed4) &&
        (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                  (this_ptr->clip_planes + 1,(CVector3f *)&DAT_01d80ed8,_DAT_01d80ed4,
-                   (CVector3f *)&DAT_01d80d54,(int *)&DAT_01d80d50), 2 < _DAT_01d80d50)) &&
+                  (this_ptr->clip_planes + 1,g_CVector3f_ARRAY_01d80ed8,g_INT_01d80ed4,
+                   g_CVector3f_ARRAY_01d80d54,&g_INT_01d80d50), 2 < g_INT_01d80d50)) &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                 (this_ptr->clip_planes + 2,(CVector3f *)&DAT_01d80d54,_DAT_01d80d50,
-                  (CVector3f *)&DAT_01d80ed8,(int *)&DAT_01d80ed4), 2 < _DAT_01d80ed4)) &&
+                 (this_ptr->clip_planes + 2,g_CVector3f_ARRAY_01d80d54,g_INT_01d80d50,
+                  g_CVector3f_ARRAY_01d80ed8,&g_INT_01d80ed4), 2 < g_INT_01d80ed4)) &&
      ((core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                 (this_ptr->clip_planes + 3,(CVector3f *)&DAT_01d80ed8,_DAT_01d80ed4,
-                  (CVector3f *)&DAT_01d80d54,(int *)&DAT_01d80d50), 2 < _DAT_01d80d50 &&
+                 (this_ptr->clip_planes + 3,g_CVector3f_ARRAY_01d80ed8,g_INT_01d80ed4,
+                  g_CVector3f_ARRAY_01d80d54,&g_INT_01d80d50), 2 < g_INT_01d80d50 &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                 (this_ptr->clip_planes + 4,(CVector3f *)&DAT_01d80d54,_DAT_01d80d50,
-                  (CVector3f *)&DAT_01d80ed8,(int *)&DAT_01d80ed4), 2 < _DAT_01d80ed4)))) {
-    (this_ptr->clip_primitive).base.base.count = _DAT_01d80ed4;
+                 (this_ptr->clip_planes + 4,g_CVector3f_ARRAY_01d80d54,g_INT_01d80d50,
+                  g_CVector3f_ARRAY_01d80ed8,&g_INT_01d80ed4), 2 < g_INT_01d80ed4)))) {
+    (this_ptr->clip_primitive).base.base.count = g_INT_01d80ed4;
     (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
     (this_ptr->clip_primitive).base.surface_normal.B = (primitive->surface_normal).B;
     (this_ptr->clip_primitive).base.surface_normal.C = (primitive->surface_normal).C;
     (this_ptr->clip_primitive).base.surface_normal.D = (primitive->surface_normal).D;
-    iVar4 = 0;
-    if (0 < _DAT_01d80ed4) {
-      local_14 = (float *)&DAT_01d80ed8;
-      iVar6 = 0x124980;
+    iVar5 = 0;
+    if (0 < g_INT_01d80ed4) {
+      local_14 = g_CVector3f_ARRAY_01d80ed8;
+      iVar7 = 0x124980;
       do {
-        piVar2 = (int *)(*DAT_005f2afc + iVar6);
-        *piVar2 = (int)ROUND(*local_14 * _DAT_005e29c0);
-        piVar2[1] = (int)ROUND(local_14[1] * _DAT_005e29c0);
-        piVar2[2] = (int)ROUND(local_14[2] * _DAT_005e29c0);
-        *(uint *)(iVar6 + 0x10 + *DAT_005f2afc) = 0xffffffff;
-        (this_ptr->clip_primitive).vertices[0] = iVar4 + 0x6188;
-        engine_matrix_c_projectCachedPoint_FUN_004e5570(iVar4 + 0x6188);
-        iVar4 = iVar4 + 1;
-        iVar6 = iVar6 + 0x30;
-        local_14 = local_14 + 3;
+        piVar4 = (int *)((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).
+                               transformed_x + iVar7);
+        *piVar4 = (int)ROUND(local_14->x * 256.0f);
+        piVar4[1] = (int)ROUND(local_14->y * 256.0f);
+        piVar4[2] = (int)ROUND(local_14->z * 256.0f);
+        *(uint *)
+         ((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x +
+         iVar7) = 0xffffffff;
+        (this_ptr->clip_primitive).vertices[0] = iVar5 + 0x6188;
+        engine_matrix_c_projectCachedPoint_FUN_004e5570(iVar5 + 0x6188);
+        iVar5 = iVar5 + 1;
+        iVar7 = iVar7 + 0x30;
+        local_14 = local_14 + 1;
         this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
-      } while (iVar4 < _DAT_01d80ed4);
+      } while (iVar5 < g_INT_01d80ed4);
     }
     return 1;
   }

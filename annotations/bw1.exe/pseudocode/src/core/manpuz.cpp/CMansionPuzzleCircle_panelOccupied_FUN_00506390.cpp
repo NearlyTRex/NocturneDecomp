@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_00506390(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
   int iVar1;
   
   if ((panel_index < 0) || (0xb < panel_index)) {
-    _DAT_01d1d400 = "..\\core\\manpuz.cpp";
-    _DAT_01d1d404 = 0x5e6;
+    g_CHAR_PTR_01d1d400 = "..\\core\\manpuz.cpp";
+    g_INT_01d1d404 = 0x5e6;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CMansionPuzzleCircle::panelOccupied - invalid index: %d");
   }
   if (this_ptr->panels[panel_index].exists == 0) {

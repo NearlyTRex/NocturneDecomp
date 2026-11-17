@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 217,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "warning_overlapping_globals"
+      "wrong_global"
     ],
-    "total_lines": 198
+    "total_lines": 196
   },
   "cross_references": [],
   "function": {
@@ -51,14 +51,14 @@
     },
     {
       "addr": "01c3d814",
-      "name": "DAT_01c3d814",
-      "type": "undefined4",
+      "name": "g_INT_01c3d814",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3d8d8",
-      "name": "DAT_01c3d8d8",
-      "type": "undefined4",
+      "name": "g_INT_01c3d8d8",
+      "type": "int",
       "value": null
     }
   ],
@@ -171,124 +171,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c3d818",
-      "severity": "mild",
-      "text": "point1_ptr = (CVector3f *)&DAT_01c3d818;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c3d820",
-      "severity": "mild",
-      "text": "if (z_far < *(float *)(&DAT_01c3d820 + uVar2 * 0xc)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01c3d8dc",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c3d8dc + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01c3d8dc",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c3d8dc + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
+      "line": 26,
       "match": "DAT_01c3d8e0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d8e0 + iVar3) = point1_ptr->y;",
+      "text": "*(float *)(&DAT_01c3d8e0 + g_INT_01c3d8d8 * 0xc) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01c3d8e4",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d8e4 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01c3d818",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c3d818 + uVar2 * 0xc),point1_ptr,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01c3d8dc",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc),0.0,0.0,-1.0,(double)z_far);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_01c3d8dc",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c3d8dc + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_01c3d8dc",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c3d8dc + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
+      "line": 39,
       "match": "DAT_01c3d8e0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d8e0 + iVar3) = point1_ptr->y;",
+      "text": "*(float *)(&DAT_01c3d8e0 + g_INT_01c3d8d8 * 0xc) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01c3d8e4",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d8e4 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01c3d8e4 accessed via (&g_FLOAT_01c3d8e4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c3d8e8 (at 0x01c3d8e8, +4 bytes).",
+      "line": 27,
+      "match": "g_FLOAT_01c3d8e4",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01c3d8e4)[g_INT_01c3d8d8 * 3] = point1_ptr->z;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_01c3d818",
-      "severity": "mild",
-      "text": "(point1_ptr,(CVector3f *)(&DAT_01c3d818 + uVar2 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c3d8dc",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc),0.0,0.0,-1.0,(double)z_far);",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01c3d8e4 accessed via (&g_FLOAT_01c3d8e4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01c3d8e8 (at 0x01c3d8e8, +4 bytes).",
+      "line": 40,
+      "match": "g_FLOAT_01c3d8e4",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01c3d8e4)[g_INT_01c3d8d8 * 3] = point1_ptr->z;",
+      "type": "wrong_global"
     }
   ]
 }

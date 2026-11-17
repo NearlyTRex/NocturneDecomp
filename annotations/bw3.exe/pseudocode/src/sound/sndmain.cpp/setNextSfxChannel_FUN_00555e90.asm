@@ -18,9 +18,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d36c3
 ;   TerminatedCString s_setNextSfxChannel_invali_005d36d8
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02ceb91c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_02ceb91c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -38,7 +38,7 @@ section .text
     CMP EBX,0x20                        ; 00555e99
     JGE 0x00555eb8                      ; 00555e9c
         ;   XREF to: 00555eb8 (CONDITIONAL_JUMP)  ; LAB_00555eb8
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555e9e | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555e9e | g_INT_02ceb91c
         ;   Label: LAB_00555e9e
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555ea4
     SUB EAX,EDX                         ; 00555eab
@@ -51,8 +51,8 @@ section .text
     MOV EDX,0x5d36c3                    ; 00555eb9 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xe73                       ; 00555ebe
     PUSH 0x5d36d8                       ; 00555ec3 | = "setNextSfxChannel - invalid channel i..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00555ec8 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00555ece | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00555ec8 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00555ece | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555ed4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00555ed9

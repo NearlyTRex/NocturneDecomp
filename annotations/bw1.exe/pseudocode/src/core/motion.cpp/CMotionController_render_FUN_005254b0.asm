@@ -37,10 +37,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_005eb0a2
 ;   TerminatedCString s_s_5_2f_005eb0ab
-;   undefined4 DAT_006042c0
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01d39d34
+;   float g_FLOAT_006042c0 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   int g_INT_01d39d34
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -63,7 +63,7 @@ section .text
     MOV EBP,ESP                         ; 005254b4
     SUB ESP,0xb0                        ; 005254b6
     SUB EBP,0x7a                        ; 005254bc
-    CMP dword ptr [0x01d39d34],0x0      ; 005254bf | DAT_01d39d34
+    CMP dword ptr [0x01d39d34],0x0      ; 005254bf | g_INT_01d39d34
     JNZ 0x005254d0                      ; 005254c6
         ;   XREF to: 005254d0 (CONDITIONAL_JUMP)  ; LAB_005254d0
     LEA ESP,[EBP + 0x7a]                ; 005254c8
@@ -73,9 +73,9 @@ section .text
     POP ESI                             ; 005254cd
     POP EBX                             ; 005254ce
     RET                                 ; 005254cf
-    MOV ECX,dword ptr [0x00612560]      ; 005254d0 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 005254d0 | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_005254d0
-    PUSH ECX                            ; 005254d6 | DAT_01bc120c
+    PUSH ECX                            ; 005254d6 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 005254d7
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005254dc
@@ -93,7 +93,7 @@ section .text
     MOV ECX,0x6                         ; 00525502
     LEA ESI,[EBP + 0x2e]                ; 00525507
     LEA EBX,[EBP + 0x5e]                ; 0052550a
-    MOV EDX,dword ptr [0x00612560]      ; 0052550d | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 0052550d | g_CDemonRenderer_PTR_00612560
     MOVSD.REP ES:EDI,ESI                ; 00525513
     ADD ESP,0x4                         ; 00525515
     MOV EAX,dword ptr [EBP + 0x56]      ; 00525518
@@ -102,23 +102,23 @@ section .text
     LEA EAX,[EBP + 0x6a]                ; 00525520
     MOV dword ptr [EBP + 0x72],EDI      ; 00525523
     FLD float ptr [EAX]                 ; 00525526
-    FMUL float ptr [0x006042c0]         ; 00525528 | DAT_006042c0
+    FMUL float ptr [0x006042c0]         ; 00525528 | g_FLOAT_006042c0
     FISTP dword ptr [EBX]               ; 0052552e
     FLD float ptr [EAX + 0x4]           ; 00525530
-    FMUL float ptr [0x006042c0]         ; 00525533 | DAT_006042c0
+    FMUL float ptr [0x006042c0]         ; 00525533 | g_FLOAT_006042c0
     FISTP dword ptr [EBX + 0x4]         ; 00525539
     FLD float ptr [EAX + 0x8]           ; 0052553c
-    FMUL float ptr [0x006042c0]         ; 0052553f | DAT_006042c0
+    FMUL float ptr [0x006042c0]         ; 0052553f | g_FLOAT_006042c0
     FISTP dword ptr [EBX + 0x8]         ; 00525545
     LEA EAX,[EBP + 0x5e]                ; 00525548
     PUSH EAX                            ; 0052554b
-    MOV EAX,dword ptr [EDX]             ; 0052554c | DAT_01bc120c
+    MOV EAX,dword ptr [EDX]             ; 0052554c | g_CDemonRenderer_01bc120c
     ADD EAX,0xea5d0                     ; 0052554e
     PUSH EAX                            ; 00525553
     CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00525554
         ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x00612560]                ; 00525559 | DAT_00612560
-    MOV EAX,dword ptr [EAX]             ; 0052555e | DAT_01bc120c
+    MOV EAX,[0x00612560]                ; 00525559 | g_CDemonRenderer_PTR_00612560
+    MOV EAX,dword ptr [EAX]             ; 0052555e | g_CDemonRenderer_01bc120c
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 00525560
     ADD ESP,0x8                         ; 00525566
     TEST DL,0x80                        ; 00525569

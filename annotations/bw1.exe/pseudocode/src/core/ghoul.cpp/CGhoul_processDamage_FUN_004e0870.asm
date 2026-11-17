@@ -8,11 +8,11 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_go_berzerk_005e3db8+1
+;   TerminatedCString s_go_berzerk_005e3db9
 ;   TerminatedCString s_ghoul_die_wav_1_6_005e3dc5
 ;   TerminatedCString s_guul_flinch_d_005e3ddc
 ;   TerminatedCString s_ghoul_mad_wav_005e3dea
-;   undefined4 DAT_005e3e01
+;   double g_DOUBLE_005e3e01 = 65536
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
 ;
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [EBP + -0x4],EAX      ; 004e09fe
     FLD float ptr [EBP + -0x4]          ; 004e0a01
-    FMUL double ptr [0x005e3e01]        ; 004e0a04 | DAT_005e3e01
+    FMUL double ptr [0x005e3e01]        ; 004e0a04 | g_DOUBLE_005e3e01
     ADD ESP,0x8                         ; 004e0a0a
     MOV dword ptr [EBX + 0xc274],0xa0000 ; 004e0a0d
     PUSH 0x41c80000                     ; 004e0a17
@@ -220,7 +220,7 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 004e0a9c
     MOV ECX,dword ptr [EDX + 0x8]       ; 004e0a9f
     MOV dword ptr [EAX + 0x8],ECX       ; 004e0aa2
-    PUSH 0x5e3db9                       ; 004e0aa5 | s_go_berzerk_005e3db8+1
+    PUSH 0x5e3db9                       ; 004e0aa5 | = "go berzerk\n"
         ;   Label: LAB_004e0aa5
     MOV ESI,dword ptr [0x00611100]      ; 004e0aaa | g_CConsolePtr
     PUSH ESI                            ; 004e0ab0 | g_CConsoleInstance

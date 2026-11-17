@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_dog_cpp_CDogForest_getActorType_FUN_00463670(CDogForest *this_ptr)
 
 {
-  return (CDemonActorType *)0x1b85088;
+  return &g_CDemonActorType_01b85088;
 }

@@ -7,7 +7,7 @@
 ; float            Stack[0x4]:4   y_offset
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eed8a
+;   float g_FLOAT_005eed8a = 2
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     SUB ESP,0x30                        ; 00593542
     MOV EAX,ESI                         ; 00593545
     FLD float ptr [ESP + 0x3c]          ; 00593547
-    FMUL float ptr [0x005eed8a]         ; 0059354b | DAT_005eed8a
+    FMUL float ptr [0x005eed8a]         ; 0059354b | g_FLOAT_005eed8a
     MOV EDX,0x3f800000                  ; 00593551
     MOV EBP,0xbf800000                  ; 00593556
     MOV EDI,ESI                         ; 0059355b

@@ -13,21 +13,21 @@
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00462820 at 00462981
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01c4eff8
-;   undefined4 DAT_01c4effc
-;   undefined4 DAT_01c4f000
-;   undefined4 DAT_01c4f004
-;   undefined4 DAT_01c51d5c
-;   undefined4 DAT_01c51d60
-;   undefined4 DAT_01c51d64
-;   undefined4 DAT_01c51d68
-;   undefined4 DAT_01c51d6c
-;   undefined4 DAT_01c51d70
-;   undefined4 DAT_01c51d74
-;   undefined4 DAT_01c51d78
-;   undefined4 DAT_01c51d7c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   int g_INT_01c4eff8
+;   int g_INT_01c4effc
+;   int g_INT_01c4f000
+;   int g_INT_01c4f004
+;   int g_INT_01c51d5c
+;   int g_INT_01c51d60
+;   int g_INT_01c51d64
+;   int g_INT_01c51d68
+;   int g_INT_01c51d6c
+;   int g_INT_01c51d70
+;   int g_INT_01c51d74
+;   int g_INT_01c51d78
+;   int g_INT_01c51d7c
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044d9f0
@@ -43,25 +43,25 @@ section .text
     PUSH EDI                            ; 0044dc92
     SUB ESP,0xc                         ; 0044dc93
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0044dc96
-    MOV ESI,dword ptr [0x01c51d5c]      ; 0044dc9a | DAT_01c51d5c
+    MOV ESI,dword ptr [0x01c51d5c]      ; 0044dc9a | g_INT_01c51d5c
     MOV dword ptr [EBX + 0x178],ESI     ; 0044dca0
-    MOV ESI,dword ptr [0x01c51d60]      ; 0044dca6 | DAT_01c51d60
+    MOV ESI,dword ptr [0x01c51d60]      ; 0044dca6 | g_INT_01c51d60
     MOV dword ptr [EBX + 0x17c],ESI     ; 0044dcac
-    MOV ESI,dword ptr [0x01c51d64]      ; 0044dcb2 | DAT_01c51d64
+    MOV ESI,dword ptr [0x01c51d64]      ; 0044dcb2 | g_INT_01c51d64
     MOV dword ptr [EBX + 0x180],ESI     ; 0044dcb8
-    MOV ESI,dword ptr [0x01c51d68]      ; 0044dcbe | DAT_01c51d68
+    MOV ESI,dword ptr [0x01c51d68]      ; 0044dcbe | g_INT_01c51d68
     MOV dword ptr [EBX + 0x184],ESI     ; 0044dcc4
-    MOV ESI,dword ptr [0x01c51d6c]      ; 0044dcca | DAT_01c51d6c
+    MOV ESI,dword ptr [0x01c51d6c]      ; 0044dcca | g_INT_01c51d6c
     MOV dword ptr [EBX + 0x188],ESI     ; 0044dcd0
-    MOV ESI,dword ptr [0x01c51d70]      ; 0044dcd6 | DAT_01c51d70
+    MOV ESI,dword ptr [0x01c51d70]      ; 0044dcd6 | g_INT_01c51d70
     MOV dword ptr [EBX + 0x18c],ESI     ; 0044dcdc
-    MOV ESI,dword ptr [0x01c51d74]      ; 0044dce2 | DAT_01c51d74
+    MOV ESI,dword ptr [0x01c51d74]      ; 0044dce2 | g_INT_01c51d74
     MOV dword ptr [EBX + 0x190],ESI     ; 0044dce8
-    MOV ESI,dword ptr [0x01c51d78]      ; 0044dcee | DAT_01c51d78
-    MOV EDX,dword ptr [0x00612560]      ; 0044dcf4 | DAT_00612560
+    MOV ESI,dword ptr [0x01c51d78]      ; 0044dcee | g_INT_01c51d78
+    MOV EDX,dword ptr [0x00612560]      ; 0044dcf4 | g_CDemonRenderer_PTR_00612560
     MOV dword ptr [EBX + 0x194],ESI     ; 0044dcfa
-    MOV ESI,dword ptr [0x01c51d7c]      ; 0044dd00 | DAT_01c51d7c
-    PUSH EDX                            ; 0044dd06 | DAT_01bc120c
+    MOV ESI,dword ptr [0x01c51d7c]      ; 0044dd00 | g_INT_01c51d7c
+    PUSH EDX                            ; 0044dd06 | g_CDemonRenderer_01bc120c
     MOV dword ptr [EBX + 0x198],ESI     ; 0044dd07
     LEA ESI,[ESP + 0x4]                 ; 0044dd0d
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0 ; 0044dd11
@@ -72,13 +72,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0044dd23
     MOVSD ES:EDI,ESI                    ; 0044dd24
     MOVSD ES:EDI,ESI                    ; 0044dd25
-    MOV ESI,dword ptr [0x01c4eff8]      ; 0044dd26 | DAT_01c4eff8
+    MOV ESI,dword ptr [0x01c4eff8]      ; 0044dd26 | g_INT_01c4eff8
     MOV dword ptr [EBX + 0x1c0],ESI     ; 0044dd2c
-    MOV ESI,dword ptr [0x01c4effc]      ; 0044dd32 | DAT_01c4effc
+    MOV ESI,dword ptr [0x01c4effc]      ; 0044dd32 | g_INT_01c4effc
     MOV dword ptr [EBX + 0x1c4],ESI     ; 0044dd38
-    MOV ESI,dword ptr [0x01c4f000]      ; 0044dd3e | DAT_01c4f000
+    MOV ESI,dword ptr [0x01c4f000]      ; 0044dd3e | g_INT_01c4f000
     MOV dword ptr [EBX + 0x1c8],ESI     ; 0044dd44
-    MOV ESI,dword ptr [0x01c4f004]      ; 0044dd4a | DAT_01c4f004
+    MOV ESI,dword ptr [0x01c4f004]      ; 0044dd4a | g_INT_01c4f004
     PUSH EBX                            ; 0044dd50
     MOV dword ptr [EBX + 0x1cc],ESI     ; 0044dd51
     CALL core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044d9f0 ; 0044dd57

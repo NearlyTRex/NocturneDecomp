@@ -6,37 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl support_trisock_cpp_dnsRequestUnlink_FUN_00570fb0(void *request)
 
 {
-  int iVar1;
-  int *piVar2;
+  byte *puVar1;
+  byte **ppuVar2;
   
-  if (_DAT_02cfd8a8 != (HANDLE)0x0) {
-    wincore_winrun_cpp_waitForMutex_FUN_00581930(_DAT_02cfd8a8);
+  if (g_HANDLE_02cfd8a8 != (HANDLE)0x0) {
+    wincore_winrun_cpp_waitForMutex_FUN_00581930(g_HANDLE_02cfd8a8);
   }
-  if (request == _DAT_02cfd8b0) {
-    _DAT_02cfd8b0 = (void *)0x0;
+  if (request == g_PTR_02cfd8b0) {
+    g_PTR_02cfd8b0 = (byte *)0x0;
   }
-  piVar2 = (int *)&DAT_02cfd8ac;
-  iVar1 = _DAT_02cfd8ac;
+  ppuVar2 = &g_PTR_02cfd8ac;
+  puVar1 = g_PTR_02cfd8ac;
   do {
-    if (iVar1 == 0) {
+    if (puVar1 == (byte *)0x0) {
 LAB_00570fef:
       *(uint *)((int)request + 0x3c0) = 0;
-      if (_DAT_02cfd8a8 == (HANDLE)0x0) {
+      if (g_HANDLE_02cfd8a8 == (HANDLE)0x0) {
         return;
       }
-      wincore_winrun_cpp_releaseMutex_FUN_00581990(_DAT_02cfd8a8);
+      wincore_winrun_cpp_releaseMutex_FUN_00581990(g_HANDLE_02cfd8a8);
       return;
     }
-    if (request == (void *)*piVar2) {
-      *piVar2 = *(int *)(*piVar2 + 0x3c0);
+    if (request == *ppuVar2) {
+      *ppuVar2 = *(byte **)(*ppuVar2 + 0x3c0);
       goto LAB_00570fef;
     }
-    iVar1 = *(int *)(*piVar2 + 0x3c0);
-    piVar2 = (int *)(*piVar2 + 0x3c0);
+    puVar1 = *(byte **)(*ppuVar2 + 0x3c0);
+    ppuVar2 = (byte **)(*ppuVar2 + 0x3c0);
   } while( true );
 }

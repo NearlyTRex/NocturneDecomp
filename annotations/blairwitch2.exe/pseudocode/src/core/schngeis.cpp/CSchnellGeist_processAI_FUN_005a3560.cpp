@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeist *this_ptr,float delta_time)
 
@@ -117,10 +116,10 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeis
   fVar3 = fStack_170;
   fVar8 = SQRT(CStack_164.z * CStack_164.z +
                CStack_164.x * CStack_164.x + CStack_164.y * CStack_164.y);
-  afStack_94[2] = CStack_164.x * _DAT_005f01ba;
-  afStack_94[3] = CStack_164.y * _DAT_005f01ba;
-  fStack_84 = CStack_164.z * _DAT_005f01ba;
-  fStack_e0 = CStack_164.x * _DAT_005f01ba;
+  afStack_94[2] = CStack_164.x * 0.6f;
+  afStack_94[3] = CStack_164.y * 0.6f;
+  fStack_84 = CStack_164.z * 0.6f;
+  fStack_e0 = CStack_164.x * 0.6f;
   afStack_dc[(uint)bVar7 * -2] = afStack_94[(uint)bVar7 * -2 + 3];
   afStack_dc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
        afStack_94[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
@@ -146,9 +145,9 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeis
   CStack_134.x = 0.0;
   CStack_134.y = -1.0;
   CStack_134.z = 0.0;
-  CStack_164.y = CStack_164.y * _DAT_005f01be;
-  CStack_164.z = CStack_164.z * _DAT_005f01be;
-  CStack_164.x = CStack_164.x * _DAT_005f01be;
+  CStack_164.y = CStack_164.y * 3.0f;
+  CStack_164.z = CStack_164.z * 3.0f;
+  CStack_164.x = CStack_164.x * 3.0f;
   if (&CStack_164 != &CStack_134) {
     CStack_164.y = -1.0;
     CStack_164.z = 0.0;
@@ -161,17 +160,17 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeis
   afStack_124[(uint)bVar7 * -2] = afStack_58[(uint)bVar7 * -2 + 6];
   afStack_124[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
        afStack_58[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-  fStack_194 = fStack_128 * _DAT_005f01c2;
-  afStack_190[0] = afStack_124[0] * _DAT_005f01c2;
-  afStack_190[1] = afStack_124[1] * _DAT_005f01c2;
-  fStack_110 = fStack_128 * _DAT_005f01c2;
+  fStack_194 = fStack_128 * 7.0f;
+  afStack_190[0] = afStack_124[0] * 7.0f;
+  afStack_190[1] = afStack_124[1] * 7.0f;
+  fStack_110 = fStack_128 * 7.0f;
   afStack_10c[(uint)bVar7 * -2] = afStack_190[(uint)bVar7 * -2];
   afStack_10c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
        afStack_190[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
   iVar4 = core_actor_cpp_randomChance_FUN_0040d060
                     (SQRT(afStack_10c[1] * afStack_10c[1] +
                           fStack_110 * fStack_110 + afStack_10c[0] * afStack_10c[0]) +
-                     (float)_DAT_005f01c6);
+                     (float)0.10000000000000001);
   if (iVar4 != 0) {
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004c9730
               (g_CGorePtr,&CStack_140,&CStack_164,BLOOD_TYPE_ICHOR);
@@ -214,7 +213,7 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeis
     *(uint *)((int)&CStack_80 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          *(uint *)((int)&CStack_104 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-              (0x01C3DEB4,&CStack_80,fVar8,pCVar9,iVar4);
+              (g_CFireEffect_PTR_00614d30,&CStack_80,fVar8,pCVar9,iVar4);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   }
   if (this_ptr->blood_frame_counter == 0) {
@@ -249,10 +248,10 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeis
                  (pCVar2->base).location.position.x,
          fVar3 = (this_ptr->base).base.base.base.location.position.z -
                  (pCVar2->base).location.position.z, fStack_24 = SQRT(fVar3 * fVar3 + fVar8 * fVar8)
-         , _DAT_005ff350 < fStack_24)) && (fStack_24 <= _DAT_005ff354)) &&
+         , 5.0f < fStack_24)) && (fStack_24 <= 10.0f)) &&
        (pCStack_14 = (CDeformableModelInstance *)
                      core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0),
-       (float)_DAT_005f01ce < (float)pCStack_14)) {
+       (float)0.29999999999999999 < (float)pCStack_14)) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                 ((CDemonActor *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position,
                  &CStack_68);
@@ -267,7 +266,7 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeis
       afStack_58[(uint)bVar7 * -2] = *(float *)((int)&CStack_a4 + (uint)bVar7 * -8 + 4);
       afStack_58[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
            *(float *)((int)&CStack_a4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-      if (ABS(afStack_58[0]) < (float)_DAT_005f01d6) {
+      if (ABS(afStack_58[0]) < (float)0.261799387791667) {
         core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(pSStack_20,"LeapAttack");
         return;
       }

@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 46,
+    "complexity_score": 11,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 30
   },
   "cross_references": [
@@ -62,9 +60,9 @@
     },
     {
       "addr": "00626b4c",
-      "name": "DAT_00626b4c",
-      "type": "undefined1",
-      "value": null
+      "name": "g_BYTE_00626b4c",
+      "type": "byte",
+      "value": "0x0"
     }
   ],
   "pcode_summary": {
@@ -123,30 +121,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00626b4c",
-      "severity": "mild",
-      "text": "if (DAT_00626b4c != '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00626b4c",
-      "severity": "mild",
-      "text": "DAT_00626b4c = '\\0';",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00626b4c",
-      "severity": "mild",
-      "text": "return DAT_00626b4c == '\\0';",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -11,8 +11,8 @@
 ;   engine_pcx.c_saveScreenshotGeneral_FUN_0050da60 at 0050db88
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_01c5faec
+;   int g_INT_005fba18 = 0x140
+;   void*[1200] g_ARRAY_PTR_01c5faec
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_005a5d70
@@ -28,9 +28,9 @@ section .text
     PUSH EBP                            ; 0050d623
     MOV EBX,dword ptr [ESP + 0x18]      ; 0050d624
     MOV ESI,dword ptr [ESP + 0x14]      ; 0050d628
-    MOV EDX,dword ptr [0x005fba18]      ; 0050d62c | DAT_005fba18
+    MOV EDX,dword ptr [0x005fba18]      ; 0050d62c | g_INT_005fba18
     XOR EDI,EDI                         ; 0050d632
-    MOV ESI,dword ptr [ESI*0x4 + 0x1c5faec] ; 0050d634 | DAT_01c5faec
+    MOV ESI,dword ptr [ESI*0x4 + 0x1c5faec] ; 0050d634 | g_ARRAY_PTR_01c5faec
     TEST EDX,EDX                        ; 0050d63b
     JLE 0x0050d67e                      ; 0050d63d
         ;   XREF to: 0050d67e (CONDITIONAL_JUMP)  ; LAB_0050d67e
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005a5d70(int character, _FILE * file)
         ;   Label: LAB_0050d66a
     ADD ESP,0x8                         ; 0050d66f
-    MOV ECX,dword ptr [0x005fba18]      ; 0050d672 | DAT_005fba18
+    MOV ECX,dword ptr [0x005fba18]      ; 0050d672 | g_INT_005fba18
         ;   Label: LAB_0050d672
     INC EDI                             ; 0050d678
     INC ESI                             ; 0050d679

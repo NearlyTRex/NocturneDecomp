@@ -2,15 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 80,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 4,
+    "suspect_count": 8,
     "suspect_types": [
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
+      "unknown_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 91
@@ -54,7 +56,7 @@
     },
     {
       "addr": "00626315",
-      "name": "DAT_00626315",
+      "name": "g_FILE_00626308._flag+1",
       "type": "undefined4",
       "value": null
     },
@@ -143,28 +145,60 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unknown/mangled field access",
       "line": 12,
-      "match": "DAT_00626315",
+      "match": "._1_1_",
       "severity": "mild",
-      "text": "DAT_00626315 = DAT_00626315 & 0xf8 | 4;",
-      "type": "undefined_data"
+      "text": "g_FILE_00626308._flag._1_1_ = g_FILE_00626308._flag._1_1_ & 0xf8 | 4;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unknown/mangled field access",
       "line": 12,
-      "match": "DAT_00626315",
+      "match": "._1_1_",
       "severity": "mild",
-      "text": "DAT_00626315 = DAT_00626315 & 0xf8 | 4;",
-      "type": "undefined_data"
+      "text": "g_FILE_00626308._flag._1_1_ = g_FILE_00626308._flag._1_1_ & 0xf8 | 4;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_006262d4",
-      "severity": "mild",
-      "text": "puVar4 = &DAT_006262d4;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)pp_Var4",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)pp_Var4 + 0x26);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(_FILE **)((int)pp_Var4",
+      "severity": "moderate",
+      "text": "pp_Var4 = (_FILE **)((int)pp_Var4 + 0x1a);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pp_Var4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)pp_Var4",
+      "severity": "moderate",
+      "text": "p_Var3->_cnt = (int)pp_Var4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pp_Var4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)pp_Var4",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)pp_Var4 + 0x26);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pp_Var4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pp_Var4",
+      "severity": "moderate",
+      "text": "pp_Var4 = (_FILE **)((int)pp_Var4 + 0x1a);",
+      "type": "pointer_truncation"
     }
   ]
 }

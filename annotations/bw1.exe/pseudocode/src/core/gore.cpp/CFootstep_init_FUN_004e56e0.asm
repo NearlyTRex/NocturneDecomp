@@ -23,12 +23,12 @@
 ;   core_gore.cpp_CGore_createFootstep_FUN_004e6510 at 004e6570
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4115
-;   undefined4 DAT_005e411d
-;   undefined4 DAT_005e4125
-;   undefined4 DAT_005e4129
-;   undefined4 DAT_0061ee0c
-;   undefined4 DAT_0061ee10
+;   double g_DOUBLE_005e4115 = 0.5
+;   double g_DOUBLE_005e411d = 4
+;   float g_FLOAT_005e4125 = -3
+;   float g_FLOAT_005e4129 = 0.08333334
+;   float[2] g_FLOAT_ARRAY_0061ee0c
+;   undefined4 g_FLOAT_ARRAY_0061ee0c[1]
 ;   undefined4 DAT_0061ee1c
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
@@ -59,16 +59,16 @@ section .text
     FXCH                                ; 004e5701
     FCOS                                ; 004e5703
     FXCH                                ; 004e5705
-    FLD double ptr [0x005e4115]         ; 004e5707 | DAT_005e4115
+    FLD double ptr [0x005e4115]         ; 004e5707 | g_DOUBLE_005e4115
     FXCH                                ; 004e570d
     FMUL ST1                            ; 004e570f
     FXCH ST2                            ; 004e5711
     FMULP                               ; 004e5713
     FLD ST1                             ; 004e5715
-    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5717 | DAT_0061ee0c | DAT_0061ee10
+    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5717 | g_FLOAT_ARRAY_0061ee0c | g_FLOAT_ARRAY_0061ee0c[1]
     FLD ST1                             ; 004e571d
     FCHS                                ; 004e571f
-    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5721 | DAT_0061ee0c | DAT_0061ee10
+    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5721 | g_FLOAT_ARRAY_0061ee0c | g_FLOAT_ARRAY_0061ee0c[1]
     FXCH ST2                            ; 004e5727
     FMUL float ptr [EBX + 0x61ee1c]     ; 004e5729 | DAT_0061ee1c
     XOR EDX,EDX                         ; 004e572f
@@ -111,7 +111,7 @@ section .text
     PUSH EAX                            ; 004e579a
     LEA EAX,[ESP + 0xc]                 ; 004e579b
     FXCH                                ; 004e579f
-    FADD float ptr [0x005e4125]         ; 004e57a1 | DAT_005e4125
+    FADD float ptr [0x005e4125]         ; 004e57a1 | g_FLOAT_005e4125
     PUSH EAX                            ; 004e57a7
     FXCH                                ; 004e57a8
     FSTP float ptr [ESP + 0x14]         ; 004e57aa
@@ -121,10 +121,10 @@ section .text
         ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x3c],EAX      ; 004e57bc
     FLD float ptr [ESP + 0x3c]          ; 004e57c0
-    FMUL double ptr [0x005e411d]        ; 004e57c4 | DAT_005e411d
+    FMUL double ptr [0x005e411d]        ; 004e57c4 | g_DOUBLE_005e411d
     ADD ESP,0x14                        ; 004e57ca
     FSUBR float ptr [ESP + 0x4]         ; 004e57cd
-    FADD float ptr [0x005e4129]         ; 004e57d1 | DAT_005e4129
+    FADD float ptr [0x005e4129]         ; 004e57d1 | g_FLOAT_005e4129
     MOV EAX,ESP                         ; 004e57d7
     FSTP float ptr [ESP + 0x4]          ; 004e57d9
     CMP ESI,EAX                         ; 004e57dd
@@ -151,7 +151,7 @@ section .text
     FLD float ptr [EAX + 0xc]           ; 004e5812
     FSUB float ptr [EBX + 0xc]          ; 004e5815
     FABS                                ; 004e5818
-    FCOMP double ptr [0x005e4115]       ; 004e581a | DAT_005e4115
+    FCOMP double ptr [0x005e4115]       ; 004e581a | g_DOUBLE_005e4115
     FNSTSW AX                           ; 004e5820
     SAHF                                ; 004e5822
     JBE 0x004e582e                      ; 004e5823

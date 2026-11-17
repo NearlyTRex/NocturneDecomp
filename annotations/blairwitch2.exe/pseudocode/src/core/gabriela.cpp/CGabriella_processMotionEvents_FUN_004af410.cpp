@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabriella *this_ptr,float delta_time)
 
 {
@@ -58,9 +56,9 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
     switch(iVar1) {
     case 1:
     case 7:
-      bone_index = _DAT_01cb0694;
+      bone_index = g_INT_ARRAY_01cb0678[7];
       if (iVar1 == 7) {
-        bone_index = _DAT_01cb0698;
+        bone_index = g_INT_ARRAY_01cb0678[8];
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
                 (local_1c,bone_index,&local_90);
@@ -75,7 +73,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
           local_18 = (UActorVTable)
                      core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
                                (&local_1c->base,2);
-          if ((float)_DAT_005d702b < (float)local_18) {
+          if ((float)0.40000000000000002 < (float)local_18) {
             (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                       ((CDemonActor *)this_ptr,(CVector3f *)local_48,1.7);
           }
@@ -83,11 +81,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
             local_18 = (UActorVTable)
                        core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
                                  (&local_1c->base,1);
-            if ((float)local_18 <= (float)_DAT_005d702b) {
+            if ((float)local_18 <= (float)0.40000000000000002) {
               local_18 = (UActorVTable)
                          core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
                                    (&local_1c->base,3);
-              if ((float)_DAT_005d702b < (float)local_18) {
+              if ((float)0.40000000000000002 < (float)local_18) {
                 (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                           ((CDemonActor *)this_ptr,(CVector3f *)local_48,1.0);
               }
@@ -118,7 +116,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       break;
     case 2:
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         ((this_ptr->base).object_to_pick_up,DAT_007bcc84);
+                         ((this_ptr->base).object_to_pick_up,g_CDemonActorType_007bcc4c.name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {
         if (pCVar2[2].particle_systems[4].position.z != 1.4013e-45) {
           this_ptr->flashlight_angle = -0.5235988;
@@ -146,7 +144,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       local_20 = local_24;
       if (local_24 != (CCharacter *)0x0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-                  (local_1c,_DAT_01cb06a8,&local_3c);
+                  (local_1c,g_INT_ARRAY_01cb0678[0xc],&local_3c);
         pCVar5 = (CVector3f *)(auStack_80 + 8);
         auStack_80._8_4_ = local_3c.x;
         afStack_74[(uint)bVar3 * -2] = *(float *)((int)&local_3c + (uint)bVar3 * -8 + 4);
@@ -177,7 +175,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
         (*(((local_24->base).vtable._uc)->_uc).processDamage)
                   (local_24,(SDamageInfo *)&stack0xffffff10);
         if (0.0 < (double)fStack_e4) {
-          dVar4 = round((double)fStack_e4 * _DAT_005d7023);
+          dVar4 = round((double)fStack_e4 * 0.20000000000000001);
           iStack_14 = (int)ROUND(dVar4);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
                     (g_CGorePtr,(CVector3f *)(local_b4 + 4),(CVector3f *)0x0,iStack_14 + 1,

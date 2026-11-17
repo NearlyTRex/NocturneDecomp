@@ -38,8 +38,8 @@
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047b5a7
 ;
 ; Referenced Globals:
-;   undefined4 s_s_5_2f_5_2f_5_2f_005dafd4+1
-;   undefined4 DAT_005dafe9
+;   TerminatedCString s_s_5_2f_5_2f_5_2f_005dafd5
+;   float g_FLOAT_005dafe9 = -1
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01bc0d54
@@ -151,7 +151,7 @@ section .text
         ;   XREF to: 0047e036 (CONDITIONAL_JUMP)  ; LAB_0047e036
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0047dedb
     FLD float ptr [EAX + 0x1c]          ; 0047dedf | DAT_01bc0dc4
-    FADD float ptr [0x005dafe9]         ; 0047dee2 | DAT_005dafe9
+    FADD float ptr [0x005dafe9]         ; 0047dee2 | g_FLOAT_005dafe9
     FSTP float ptr [EAX + 0x1c]         ; 0047dee8 | DAT_01bc0dc4
     MOV EAX,dword ptr [ESP + 0x80]      ; 0047deeb
     CMP EBX,EAX                         ; 0047def2
@@ -306,7 +306,7 @@ section .text
     SUB ESP,0x8                         ; 0047e0ba
     FLD float ptr [EAX + 0x4]           ; 0047e0bd | DAT_01bc0dac
     FSTP double ptr [ESP]               ; 0047e0c0
-    PUSH 0x5dafd5                       ; 0047e0c3 | s_s_5_2f_5_2f_5_2f_005dafd4+1
+    PUSH 0x5dafd5                       ; 0047e0c3 | = "%5.2f %5.2f %5.2f\n"
     MOV EDI,dword ptr [0x00611100]      ; 0047e0c8 | g_CConsolePtr
     PUSH EDI                            ; 0047e0ce | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0047e0cf

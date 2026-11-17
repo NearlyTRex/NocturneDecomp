@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_00439090(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
 
 {
@@ -26,16 +24,16 @@ void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_00439090(void *bitmap
         iVar1 = (int)edge_list->x0 + edge_list->y0 * buffer_width;
         if ((iVar1 < 0) || (iVar2 < iVar1)) {
           _sprintf(acStack_114,"Edge out of range: edge %d");
-          _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
-          _DAT_01d1d404 = 0x54a;
+          g_CHAR_PTR_01d1d400 = "..\\cockpit\\ckptutil.c";
+          g_INT_01d1d404 = 0x54a;
           core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_114);
         }
         *(byte *)(iVar1 + (int)bitmap_buffer) = (byte)uStack_14;
         iVar1 = (int)edge_list->x1 + buffer_width * ((short)(edge_list->y1 * 2) >> 1);
         if ((iVar1 < 0) || (iVar2 < iVar1)) {
           _sprintf(acStack_114,"Edge out of range: edge %d");
-          _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
-          _DAT_01d1d404 = 0x553;
+          g_CHAR_PTR_01d1d400 = "..\\cockpit\\ckptutil.c";
+          g_INT_01d1d404 = 0x553;
           core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_114);
         }
         edge_list = edge_list + 1;

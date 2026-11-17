@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20(CWeapon *this_ptr)
 
 {
@@ -52,7 +50,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20(CWeapon *this_p
   *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + 4) = *puVar3;
   *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        puVar3[(uint)bVar4 * -2 + 1];
-  CStack_44.x = CStack_44.x + _DAT_005f990a;
+  CStack_44.x = CStack_44.x + 0.3490658f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
             ((CMatrix3x3f *)&stack0xffffff64,pCVar5);
   CStack_20.x = 0.0;
@@ -80,18 +78,18 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20(CWeapon *this_p
   pCVar2 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar2,(uint)in_stack_ffffff64);
   if ((pCVar2 != (CDemonActor *)0x0) &&
-     (fVar1 = pCVar2[0x179].orient_matrix.m[1].z, fVar1 < _DAT_005f990e)) {
-    unaff_EDI = fVar1 * _DAT_005f9912;
+     (fVar1 = pCVar2[0x179].orient_matrix.m[1].z, fVar1 < 15.0f)) {
+    unaff_EDI = fVar1 * 0.06666667f;
   }
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(&g_CDemonLightInstance,unaff_EDI);
   if (g_CGamePtr->flashlight_active == 0) {
     return;
   }
-  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970((CDemonGlobe *)0x2c99774,&CStack_64);
-  _DAT_02c997b0 = 0x8000;
-  DAT_02c99790 = 0x20;
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0((CDemonGlobe *)0x2c99774,5.0);
-  _DAT_02c99794 = 0;
-  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(g_CDemonSetPtr,(CDemonGlobe *)0x2c99774);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970(&g_CDemonGlobe_02c99774,&CStack_64);
+  g_CDemonGlobe_02c99774.intensity_multiplier = 0x8000;
+  g_CDemonGlobe_02c99774.intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0(&g_CDemonGlobe_02c99774,5.0);
+  g_CDemonGlobe_02c99774.corona_mode = 0;
+  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(g_CDemonSetPtr,&g_CDemonGlobe_02c99774);
   return;
 }

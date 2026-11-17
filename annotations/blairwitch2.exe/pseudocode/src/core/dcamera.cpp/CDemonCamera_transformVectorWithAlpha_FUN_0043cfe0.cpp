@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0043cfe0(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 
 {
@@ -26,19 +24,20 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_
   uint uStack_10;
   
   bVar6 = 0;
-  lVar1 = (longlong)input_vector->y * (longlong)_DAT_01c38ba8 +
-          (longlong)input_vector->x * (longlong)_DAT_01c38b9c +
-          (longlong)input_vector->z * (longlong)_DAT_01c38bb4;
+  lVar1 = (longlong)input_vector->y * (longlong)g_INT_01c38ba8 +
+          (longlong)input_vector->x * (longlong)g_INT_01c38b9c +
+          (longlong)input_vector->z * (longlong)g_INT_01c38bb4;
   uStack_24 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)input_vector->y * (longlong)_DAT_01c38bac +
-          (longlong)input_vector->x * (longlong)_DAT_01c38ba0 +
-          (longlong)input_vector->z * (longlong)_DAT_01c38bb8;
+  lVar1 = (longlong)input_vector->y * (longlong)g_INT_01c38bac +
+          (longlong)input_vector->x * (longlong)g_INT_01c38ba0 +
+          (longlong)input_vector->z * (longlong)g_INT_01c38bb8;
   uStack_20 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)input_vector->y * (longlong)_DAT_01c38bb0 +
-          (longlong)input_vector->x * (longlong)_DAT_01c38ba4 +
-          (longlong)input_vector->z * (longlong)_DAT_01c38bbc;
+  lVar1 = (longlong)input_vector->y * (longlong)g_INT_01c38bb0 +
+          (longlong)input_vector->x * (longlong)g_INT_01c38ba4 +
+          (longlong)input_vector->z * (longlong)g_INT_01c38bbc;
   uStack_1c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(DAT_0060b280);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(g_CDemonRenderer_PTR_0060b280)
+  ;
   if (iVar4 == 0) {
     lVar1 = (longlong)(int)uStack_20 * (longlong)(this_ptr->inverted_matrix).m[1].x +
             (longlong)(int)uStack_24 * (longlong)(this_ptr->inverted_matrix).m[0].x +

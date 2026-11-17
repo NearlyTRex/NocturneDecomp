@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_displayActStats_FUN_004d8700(CGame *this_ptr)
 
 {
@@ -47,20 +45,20 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004d8700(CGame *this_ptr)
   fVar1 = this_ptr->total_play_time;
   iVar4 = this_ptr->damageable_enemy_count;
   iVar6 = this_ptr->total_kill_count;
-  dVar11 = round((double)(fVar1 * (float)_DAT_005e34ec));
+  dVar11 = round((double)(fVar1 * (float)0.00027777777777777799));
   local_24 = (int)ROUND(dVar11);
-  fVar1 = fVar1 - (float)local_24 * (float)_DAT_005e34f4;
+  fVar1 = fVar1 - (float)local_24 * (float)3600;
   local_18 = local_24;
-  dVar11 = round((double)(fVar1 * (float)_DAT_005e34fc));
+  dVar11 = round((double)(fVar1 * (float)0.016666666666666701));
   iStack_34 = (int)ROUND(dVar11);
-  fVar1 = fVar1 - (float)iStack_34 * (float)_DAT_005e3504;
+  fVar1 = fVar1 - (float)iStack_34 * (float)60;
   this_ptr->total_play_time = fVar1;
   local_1c = iStack_34;
   dVar11 = round((double)fVar1);
   iStack_34 = (int)ROUND(dVar11);
   fVar1 = this_ptr->total_play_time - (float)iStack_34;
   this_ptr->total_play_time = fVar1;
-  fVar3 = (float)_DAT_005e350c;
+  fVar3 = (float)100;
   this_ptr->total_kill_count = iVar6 + iVar4;
   pcVar12 = (char *)0x4d8836;
   local_20 = iStack_34;
@@ -77,7 +75,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004d8700(CGame *this_ptr)
     pcVar8[1] = cVar2;
     pcVar8 = pcVar8 + 2;
   } while (cVar2 != '\0');
-  pcVar8 = &DAT_005e34bd;
+  pcVar8 = "\n\n";
   iVar4 = -1;
   pcVar12 = &stack0xfffffaa8;
   do {
@@ -178,8 +176,8 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004d8700(CGame *this_ptr)
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  _sprintf(acStack_158,&DAT_005e34e0);
-  this_ptr_00 = _DAT_0152d244;
+  _sprintf(acStack_158,"%d\n\n");
+  this_ptr_00 = g_CBitFont_PTR_0152d244;
   pcVar12 = acStack_158;
   iVar4 = -1;
   pcVar8 = &stack0xfffffaa8;
@@ -203,13 +201,13 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004d8700(CGame *this_ptr)
   } while (cVar2 != '\0');
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
   iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
-                    (this_ptr_00,&stack0xfffffaa8,(char *)0x1cc9bb0,0x14,0x100,0xc0);
+                    (this_ptr_00,&stack0xfffffaa8,g_CHAR_ARRAY_01cc9bb0,0x14,0x100,0xc0);
   iVar6 = 0;
   local_28 = iVar4;
   local_2c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
   y = 0xf0;
   if (0 < iVar4) {
-    pcVar12 = (char *)0x1cc9bb0;
+    pcVar12 = g_CHAR_ARRAY_01cc9bb0;
     do {
       iVar6 = iVar6 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350

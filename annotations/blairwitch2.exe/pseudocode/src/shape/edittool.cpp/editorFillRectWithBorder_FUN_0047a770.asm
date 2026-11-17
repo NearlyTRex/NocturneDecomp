@@ -12,8 +12,8 @@
 ; int              Stack[0x18]:4   border_color
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c25f84
-;   undefined4 DAT_01c35e60
+;   int g_INT_01c25f84
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250
@@ -35,13 +35,13 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0047a77c
     MOV EBP,dword ptr [ESP + 0x20]      ; 0047a780
     MOV EAX,dword ptr [ESP + 0x28]      ; 0047a784
-    MOV EDX,dword ptr [0x01c25f84]      ; 0047a788 | DAT_01c25f84
+    MOV EDX,dword ptr [0x01c25f84]      ; 0047a788 | g_INT_01c25f84
     TEST EDX,EDX                        ; 0047a78e
     JZ 0x0047a876                       ; 0047a790
         ;   XREF to: 0047a876 (CONDITIONAL_JUMP)  ; LAB_0047a876
     JNZ 0x0047a81b                      ; 0047a796
         ;   XREF to: 0047a81b (CONDITIONAL_JUMP)  ; LAB_0047a81b
-    MOV [0x01c35e60],EAX                ; 0047a79c | DAT_01c35e60
+    MOV [0x01c35e60],EAX                ; 0047a79c | g_INT_01c35e60
     LEA EAX,[EBP + 0x1]                 ; 0047a7a1
         ;   Label: LAB_0047a7a1
     PUSH EAX                            ; 0047a7a4
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 0047a7b0
     CALL engine_mini3d.cpp_drawRect_FUN_004f9340 ; 0047a7b1
         ;   XREF to: 004f9340 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawRect_FUN_004f9340(int x1, int y1, int x2, int y2)
-    MOV ECX,dword ptr [0x01c25f84]      ; 0047a7b6 | DAT_01c25f84
+    MOV ECX,dword ptr [0x01c25f84]      ; 0047a7b6 | g_INT_01c25f84
     ADD ESP,0x10                        ; 0047a7bc
     TEST ECX,ECX                        ; 0047a7bf
     JZ 0x0047a85c                       ; 0047a7c1
@@ -113,7 +113,7 @@ section .text
         ;   XREF to: 0047a7a1 (UNCONDITIONAL_JUMP)  ; LAB_0047a7a1
     MOV EAX,dword ptr [ESP + 0x24]      ; 0047a85c
         ;   Label: LAB_0047a85c
-    MOV [0x01c35e60],EAX                ; 0047a860 | DAT_01c35e60
+    MOV [0x01c35e60],EAX                ; 0047a860 | g_INT_01c35e60
     PUSH EBP                            ; 0047a865
     PUSH ESI                            ; 0047a866
     PUSH EDI                            ; 0047a867

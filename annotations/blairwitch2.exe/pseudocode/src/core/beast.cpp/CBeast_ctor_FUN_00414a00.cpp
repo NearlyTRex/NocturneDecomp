@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00414a00(CBeast *this_ptr)
 
 {
@@ -19,8 +17,8 @@ CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00414a00(CBeast *this_ptr)
   (pCVar3->base).base.vtable._ub = &g_CBeastVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(pCVar3->base).model,"beast.dfm");
-  fVar2 = _DAT_005f336c;
-  fVar1 = _DAT_005f3368;
+  fVar2 = 100.0f;
+  fVar1 = 100.0f;
   (pCVar3->base).collision_cylinder_height = 10.0;
   (pCVar3->base).collision_cylinder_radius = 10.0;
   (pCVar3->base).ai_detection_range_min = fVar1;

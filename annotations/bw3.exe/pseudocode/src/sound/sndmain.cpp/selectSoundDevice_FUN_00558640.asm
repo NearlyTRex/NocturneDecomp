@@ -15,9 +15,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3b2e
 ;   TerminatedCString s_selectSoundDevice_device_005d3b43
-;   undefined4 DAT_0060423c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_INT_0060423c = -0x1
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_0055864e
     JGE 0x00558658                      ; 00558650
         ;   XREF to: 00558658 (CONDITIONAL_JUMP)  ; LAB_00558658
-    MOV EBX,dword ptr [0x0060423c]      ; 00558652 | DAT_0060423c
+    MOV EBX,dword ptr [0x0060423c]      ; 00558652 | g_INT_0060423c
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00558430 ; 00558658
         ;   XREF to: 00558430 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00558430()
         ;   Label: LAB_00558658
@@ -52,15 +52,15 @@ section .text
         ;   XREF to: 00558520 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestSoundDevice_FUN_00558520()
         ;   Label: LAB_00558661
     MOV EBX,EAX                         ; 00558666
-    MOV dword ptr [0x0060423c],EBX      ; 00558668 | DAT_0060423c
+    MOV dword ptr [0x0060423c],EBX      ; 00558668 | g_INT_0060423c
     POP EBX                             ; 0055866e
     RET                                 ; 0055866f
     MOV EDX,0x5d3b2e                    ; 00558670 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_00558670
     MOV ECX,0x1575                      ; 00558675
     PUSH 0x5d3b43                       ; 0055867a | = "selectSoundDevice - device already open."
-    MOV dword ptr [0x01d71de0],EDX      ; 0055867f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00558685 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0055867f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00558685 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055868b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00558690
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_00558695
     JL 0x00558661                       ; 00558697
         ;   XREF to: 00558661 (CONDITIONAL_JUMP)  ; LAB_00558661
-    MOV dword ptr [0x0060423c],EBX      ; 00558699 | DAT_0060423c
+    MOV dword ptr [0x0060423c],EBX      ; 00558699 | g_INT_0060423c
     POP EBX                             ; 0055869f
     RET                                 ; 005586a0
 

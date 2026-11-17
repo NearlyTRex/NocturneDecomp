@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_staticInit_FUN_005774f0(void)
 
 {
-  _DAT_02c8283c = &g_CDirectSoundDeviceVTable;
+  g_CDirectSoundDevice_02c8283c.base.vtable = (CSoundDevice)&g_CDirectSoundDeviceVTable;
   return;
 }

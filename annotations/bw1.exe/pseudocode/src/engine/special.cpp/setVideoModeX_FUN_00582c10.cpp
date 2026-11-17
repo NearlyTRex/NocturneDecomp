@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_setVideoModeX_FUN_00582c10(int width,int height,int bits_per_pixel,int flags)
 
 {
   int iVar1;
   
-  _DAT_02c834d4 = 0;
-  if ((_DAT_02c83430 != (code *)0x0) &&
-     (iVar1 = (*_DAT_02c83430)(width,height,bits_per_pixel,flags), iVar1 != 0)) {
-    _DAT_02c834d4 = bits_per_pixel;
+  g_INT_02c834d4 = 0;
+  if ((g_PTR_02c83430 != (byte *)0x0) &&
+     (iVar1 = (*(code *)g_PTR_02c83430)(width,height,bits_per_pixel,flags), iVar1 != 0)) {
+    g_INT_02c834d4 = bits_per_pixel;
     return 1;
   }
   return 0;

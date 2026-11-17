@@ -11,17 +11,17 @@
 ;   TerminatedCString s_Bad_keyframe_1_005c675c
 ;   TerminatedCString s_engine_keyframe_c_005c676b
 ;   TerminatedCString s_ZBP_not_found_005c6780
-;   undefined4 DAT_005c6795
-;   undefined4 DAT_005c679d
-;   undefined4 DAT_005c67a1
-;   undefined4 DAT_005c67a5
-;   undefined4 DAT_005c67ad
-;   undefined4 DAT_005c67b1
-;   undefined4 DAT_005c67b5
-;   undefined4 DAT_005c67b9
-;   undefined4 DAT_01c5fad4
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   double g_DOUBLE_005c6795 = 0.0000152587890625
+;   float g_FLOAT_005c679d = -0.5
+;   float g_FLOAT_005c67a1 = 0.5
+;   double g_DOUBLE_005c67a5 = 65536
+;   float g_FLOAT_005c67ad = 1.5
+;   float g_FLOAT_005c67b1 = -2.5
+;   float g_FLOAT_005c67b5 = 2
+;   float g_FLOAT_005c67b9 = -1.5
+;   int g_INT_01c5fad4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -71,7 +71,7 @@ section .text
     POP EDX                             ; 004df095
     SHRD EAX,EDX,0x10                   ; 004df096
     XOR EAX,ECX                         ; 004df09a
-    MOV EDX,dword ptr [0x01c5fad4]      ; 004df09c | DAT_01c5fad4
+    MOV EDX,dword ptr [0x01c5fad4]      ; 004df09c | g_INT_01c5fad4
     MOV ECX,EAX                         ; 004df0a2
     MOV EAX,EDX                         ; 004df0a4
     SAR EDX,0x1f                        ; 004df0a6
@@ -115,8 +115,8 @@ section .text
     MOV ECX,0x5c6747                    ; 004df101 | = "..\\engine\\keyframe.c"
     MOV EAX,0x16b                       ; 004df106
     PUSH 0x5c675c                       ; 004df10b | = "Bad keyframe 1"
-    MOV dword ptr [0x01d71de0],ECX      ; 004df110 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004df116 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004df110 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004df116 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004df11b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004df120
@@ -136,40 +136,40 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 004df154
     MOV dword ptr [ESP + 0x2c],EAX      ; 004df157
     FILD dword ptr [ESP + 0x2c]         ; 004df15b
-    FMUL double ptr [0x005c6795]        ; 004df15f | DAT_005c6795
+    FMUL double ptr [0x005c6795]        ; 004df15f | g_DOUBLE_005c6795
     FLD ST0                             ; 004df165
     FMUL ST1                            ; 004df167
     FLD ST0                             ; 004df169
     FMUL ST2                            ; 004df16b
     FLD ST1                             ; 004df16d
-    FMUL float ptr [0x005c67b5]         ; 004df16f | DAT_005c67b5
+    FMUL float ptr [0x005c67b5]         ; 004df16f | g_FLOAT_005c67b5
     FLD ST1                             ; 004df175
-    FMUL float ptr [0x005c679d]         ; 004df177 | DAT_005c679d
+    FMUL float ptr [0x005c679d]         ; 004df177 | g_FLOAT_005c679d
     FLD ST2                             ; 004df17d
-    FMUL float ptr [0x005c67ad]         ; 004df17f | DAT_005c67ad
+    FMUL float ptr [0x005c67ad]         ; 004df17f | g_FLOAT_005c67ad
     FLD ST3                             ; 004df185
     FXCH ST2                            ; 004df187
     FADD ST0,ST5                        ; 004df189
     FXCH ST2                            ; 004df18b
-    FMUL float ptr [0x005c67b9]         ; 004df18d | DAT_005c67b9
+    FMUL float ptr [0x005c67b9]         ; 004df18d | g_FLOAT_005c67b9
     FXCH ST6                            ; 004df193
-    FMUL float ptr [0x005c67a1]         ; 004df195 | DAT_005c67a1
+    FMUL float ptr [0x005c67a1]         ; 004df195 | g_FLOAT_005c67a1
     FXCH ST4                            ; 004df19b
-    FMUL float ptr [0x005c67a1]         ; 004df19d | DAT_005c67a1
+    FMUL float ptr [0x005c67a1]         ; 004df19d | g_FLOAT_005c67a1
     FXCH ST4                            ; 004df1a3
     FSTP float ptr [ESP + 0x2c]         ; 004df1a5
     FXCH                                ; 004df1a9
     FSUB float ptr [ESP + 0x2c]         ; 004df1ab
     FLD ST4                             ; 004df1af
-    FMUL float ptr [0x005c67a1]         ; 004df1b1 | DAT_005c67a1
+    FMUL float ptr [0x005c67a1]         ; 004df1b1 | g_FLOAT_005c67a1
     FXCH                                ; 004df1b7
-    FMUL double ptr [0x005c67a5]        ; 004df1b9 | DAT_005c67a5
+    FMUL double ptr [0x005c67a5]        ; 004df1b9 | g_DOUBLE_005c67a5
     FXCH                                ; 004df1bf
     FSUBP ST4,ST0                       ; 004df1c1
     FXCH ST4                            ; 004df1c3
-    FMUL float ptr [0x005c67b1]         ; 004df1c5 | DAT_005c67b1
+    FMUL float ptr [0x005c67b1]         ; 004df1c5 | g_FLOAT_005c67b1
     FXCH ST3                            ; 004df1cb
-    FMUL double ptr [0x005c67a5]        ; 004df1cd | DAT_005c67a5
+    FMUL double ptr [0x005c67a5]        ; 004df1cd | g_DOUBLE_005c67a5
     FXCH ST3                            ; 004df1d3
     FADDP                               ; 004df1d5
     FXCH ST4                            ; 004df1d7
@@ -178,9 +178,9 @@ section .text
     FADDP ST4,ST0                       ; 004df1dd
     FADD float ptr [ESP + 0x2c]         ; 004df1df
     FXCH ST3                            ; 004df1e3
-    FMUL double ptr [0x005c67a5]        ; 004df1e5 | DAT_005c67a5
+    FMUL double ptr [0x005c67a5]        ; 004df1e5 | g_DOUBLE_005c67a5
     FXCH ST3                            ; 004df1eb
-    FMUL double ptr [0x005c67a5]        ; 004df1ed | DAT_005c67a5
+    FMUL double ptr [0x005c67a5]        ; 004df1ed | g_DOUBLE_005c67a5
     SHL EBX,0x2                         ; 004df1f3
     MOV ECX,dword ptr [EDX + 0x14]      ; 004df1f6
     ADD EBX,EDX                         ; 004df1f9
@@ -377,8 +377,8 @@ section .text
         ;   Label: LAB_004df402
     MOV EAX,0x1a6                       ; 004df407
     PUSH 0x5c6780                       ; 004df40c | = "ZBP not found!"
-    MOV dword ptr [0x01d71de0],EDI      ; 004df411 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004df417 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 004df411 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004df417 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004df41c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004df421

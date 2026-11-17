@@ -9,8 +9,8 @@
 void __cdecl core_mmx_c_detectMMXSupport_FUN_004fd579(void)
 
 {
-  if ((DAT_006182dd & 0x800000) != 0) {
-    DAT_006182e1 = 1;
+  if ((g_UINT_006182dd & 0x800000) != 0) {
+    g_UCHAR_006182e1 = '\x01';
   }
   return;
 }

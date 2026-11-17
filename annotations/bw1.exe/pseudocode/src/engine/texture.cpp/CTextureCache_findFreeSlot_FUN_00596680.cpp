@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureCache *this_ptr)
 
 {
@@ -23,11 +21,11 @@ int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureC
     this_ptr->current_texture_count = iVar5 + 1;
     if (0x3ff < iVar5 + 1) {
       this_ptr->wrap_indicator = 1;
-      iVar4 = _DAT_02c8a684;
+      iVar4 = g_INT_02c8a684;
       this_ptr->current_texture_count = 0x400;
       if (iVar4 != 0) {
-        _DAT_01d1d400 = "..\\engine\\texture.cpp";
-        _DAT_01d1d404 = 0xbc;
+        g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+        g_INT_01d1d404 = 0xbc;
         core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
       }
     }

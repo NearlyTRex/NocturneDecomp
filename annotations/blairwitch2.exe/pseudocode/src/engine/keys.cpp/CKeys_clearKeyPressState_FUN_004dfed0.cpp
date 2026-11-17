@@ -9,6 +9,6 @@
 void __cdecl engine_keys_cpp_CKeys_clearKeyPressState_FUN_004dfed0(CKeys *this_ptr,EInputCodeType key_code)
 
 {
-  (&DAT_01c37790)[key_code] = 0;
+  g_CHAR_ARRAY_01c37790[key_code] = '\0';
   return;
 }

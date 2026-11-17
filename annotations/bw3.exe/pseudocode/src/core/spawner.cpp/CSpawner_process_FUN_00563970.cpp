@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)
 
 {
@@ -56,7 +54,7 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
       return;
     }
     pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90
-                       (0x01D81080,this_ptr->spawn_name);
+                       (g_CDemonMission_PTR_00600530,this_ptr->spawn_name);
     this_ptr_00 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c840(pCVar4,g_CEnemyClassInfo.name_hash);
     if ((this_ptr_00 == (CCharacter *)0x0) ||
@@ -68,7 +66,7 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
       this_ptr->spawn_timer = this_ptr->spawn_time;
     }
     else {
-      pcVar8 = (char *)0x5d54af;
+      pcVar8 = "_dead";
       iVar6 = -1;
       do {
         pCVar9 = this_ptr_00;
@@ -108,7 +106,7 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
                           (g_CDemonSetPtr,(this_ptr->base).location.position.x,
                            (this_ptr->base).location.position.z,0.0,0.0,1.0,
                            (this_ptr->base).location.position.y,
-                           (this_ptr->base).location.position.y + _DAT_005d54b7);
+                           (this_ptr->base).location.position.y + 6.0f);
     core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
     if (1.0 <= fStack_28) {
       if (this_ptr->dont_spawn_when_in_view != 0) {
@@ -185,13 +183,14 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
         if (pCVar5 != (CDemonActor *)0x0) {
           *(float *)(pCVar5[0x9b].create_event + 0x24) = this_ptr->start_guard_dist;
         }
-        core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,pCVar4);
+        core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
+                  (g_CDemonMission_PTR_00600530,pCVar4);
         if ((CLocation *)&CStack_38 != &pCVar4->location) {
           CStack_38.x = (pCVar4->location).position.x;
           CStack_38.y = (pCVar4->location).position.y;
           CStack_38.z = (pCVar4->location).position.z;
         }
-        CStack_38.y = CStack_38.y + _DAT_005d54bb;
+        CStack_38.y = CStack_38.y + 3.0f;
         iVar6 = 0;
         do {
           fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
@@ -207,7 +206,8 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
           }
           iVar6 = iVar6 + 1;
           core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                    (0x01C73654,&CStack_38,(CVector3f *)auStack_50,0x20000,0x10000,1,0xffff);
+                    (g_CFireEffect_PTR_005fc5a0,&CStack_38,(CVector3f *)auStack_50,0x20000,0x10000,1
+                     ,0xffff);
         } while (iVar6 < 0x20);
         this_ptr->number_of_spawns = this_ptr->number_of_spawns + 1;
         return;

@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 281,
+    "complexity_score": 156,
     "cross_reference_count": 5,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 12,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "unresolved_funcptr",
-      "unrolled_strchr",
-      "warning_overlapping_globals"
+      "unrolled_strchr"
     ],
     "total_lines": 556
   },
@@ -112,50 +109,50 @@
     },
     {
       "addr": "00600284",
-      "name": "DAT_00600284",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_00600284",
+      "type": "CKeys*",
+      "value": "01d70a78"
     },
     {
       "addr": "01549aac",
-      "name": "DAT_01549aac",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aac",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ab0",
-      "name": "DAT_01549ab0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ab0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ab4",
-      "name": "DAT_01549ab4",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549ab4",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d70a78",
-      "name": "DAT_01d70a78",
-      "type": "undefined4",
+      "name": "g_PTR_01d70a78",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d737d4",
-      "name": "DAT_01d737d4",
-      "type": "undefined4",
+      "name": "g_INT_01d737d4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d737e4",
-      "name": "DAT_01d737e4",
-      "type": "undefined4",
+      "name": "g_INT_01d737e4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01dd4890",
-      "name": "DAT_01dd4890",
-      "type": "undefined4",
+      "name": "g_INT_01dd4890",
+      "type": "int",
       "value": null
     }
   ],
@@ -380,96 +377,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 111,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x48);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x48);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 120,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x50);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 120,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x50);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 131,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4b);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4b);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 136,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4d);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 136,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 139,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 139,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
-      "line": 100,
+      "line": 99,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -14,20 +14,20 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfd3d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c58a9c
-;   undefined4 DAT_01c6eaa0
-;   undefined4 DAT_01c6eaa4
-;   undefined4 DAT_01c726a8
-;   undefined4 DAT_01c726ac
-;   undefined4 DAT_01c986b0
+;   int g_INT_01c58a9c
+;   int g_INT_01c6eaa0
+;   int g_INT_01c6eaa4
+;   int g_INT_01c726a8
+;   int g_INT_01c726ac
+;   int g_INT_01c986b0
 ;   undefined4 g_SparkPool[0].base.lifetime_remaining
 ;   undefined4 g_SparkPool[1].base.lifetime_remaining
-;   undefined4 DAT_01c9dab4
+;   int g_INT_01c9dab4
 ;   undefined4 CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining
 ;   undefined4 CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining
-;   undefined4 DAT_01c9f1bc
-;   undefined4 DAT_01c9f218
-;   undefined4 DAT_01c9f8ec
+;   CMuzzleFlash[20] g_CMuzzleFlash_ARRAY_01c9f1bc
+;   undefined4 g_CMuzzleFlash_ARRAY_01c9f1bc[1].frames_remaining
+;   int g_INT_01c9f8ec
 ;   undefined4 g_GlassParticlePool[0].base.lifetime_remaining
 ;   ... and 27 more
 ;
@@ -51,7 +51,7 @@ section .text
     MOV EBX,0x1c58aa0                   ; 004b4b33
     XOR EDX,EDX                         ; 004b4b38
     LEA ESI,[EBX + 0x16000]             ; 004b4b3a
-    MOV dword ptr [0x01c58a9c],EDX      ; 004b4b40 | DAT_01c58a9c
+    MOV dword ptr [0x01c58a9c],EDX      ; 004b4b40 | g_INT_01c58a9c
     PUSH EBX                            ; 004b4b46
         ;   Label: LAB_004b4b46
     CALL core_fire.cpp_CSmokeParticle_reset_FUN_004abea0 ; 004b4b47
@@ -64,9 +64,9 @@ section .text
     MOV EAX,0x1c986b4                   ; 004b4b56
     XOR ECX,ECX                         ; 004b4b5b
     XOR EBX,ESI                         ; 004b4b5d
-    MOV dword ptr [0x01c6eaa4],ECX      ; 004b4b5f | DAT_01c6eaa4
-    MOV dword ptr [0x01c6eaa0],EBX      ; 004b4b65 | DAT_01c6eaa0
-    MOV dword ptr [0x01c986b0],ECX      ; 004b4b6b | DAT_01c986b0
+    MOV dword ptr [0x01c6eaa4],ECX      ; 004b4b5f | g_INT_01c6eaa4
+    MOV dword ptr [0x01c6eaa0],EBX      ; 004b4b65 | g_INT_01c6eaa0
+    MOV dword ptr [0x01c986b0],ECX      ; 004b4b6b | g_INT_01c986b0
     LEA EBX,[EAX + 0x5400]              ; 004b4b71
     ADD EAX,0x54                        ; 004b4b77
         ;   Label: LAB_004b4b77
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 004b4b90 (CONDITIONAL_JUMP)  ; LAB_004b4b90
     MOV EAX,0x1c9f1bc                   ; 004b4b9e
     LEA EBX,[EAX + 0x730]               ; 004b4ba3
-    MOV dword ptr [EAX],0x0             ; 004b4ba9 | DAT_01c9f1bc | DAT_01c9f218
+    MOV dword ptr [EAX],0x0             ; 004b4ba9 | g_CMuzzleFlash_ARRAY_01c9f1bc | g_CMuzzleFlash_ARRAY_01c9f1bc[1].frames_remaining
         ;   Label: LAB_004b4ba9
     ADD EAX,0x5c                        ; 004b4baf
     CMP EAX,EBX                         ; 004b4bb2
@@ -93,10 +93,10 @@ section .text
     PUSH EDI                            ; 004b4bb6
     XOR EDI,EDI                         ; 004b4bb7
     XOR EAX,EBX                         ; 004b4bb9
-    MOV dword ptr [0x01c726a8],EDI      ; 004b4bbb | DAT_01c726a8
-    MOV [0x01c9f8ec],EAX                ; 004b4bc1 | DAT_01c9f8ec
+    MOV dword ptr [0x01c726a8],EDI      ; 004b4bbb | g_INT_01c726a8
+    MOV [0x01c9f8ec],EAX                ; 004b4bc1 | g_INT_01c9f8ec
     MOV EAX,0x1c9f8f0                   ; 004b4bc6
-    MOV dword ptr [0x01c726ac],EDI      ; 004b4bcb | DAT_01c726ac
+    MOV dword ptr [0x01c726ac],EDI      ; 004b4bcb | g_INT_01c726ac
     LEA EBX,[EAX + 0xa400]              ; 004b4bd1
     ADD EAX,0xa4                        ; 004b4bd7
         ;   Label: LAB_004b4bd7
@@ -108,13 +108,13 @@ section .text
     LEA EBX,[EAX + 0x168]               ; 004b4bec
     ADD EAX,0x24                        ; 004b4bf2
         ;   Label: LAB_004b4bf2
-    MOV dword ptr [EAX + -0x4],0x0      ; 004b4bf5 | DAT_01ca9d14 | DAT_01ca9d38
+    MOV dword ptr [EAX + -0x4],0x0      ; 004b4bf5 | g_CBulletTrail_ARRAY_01ca9cf4[0].frames_remaining | g_CBulletTrail_ARRAY_01ca9cf4[1].frames_remaining
     CMP EAX,EBX                         ; 004b4bfc
     JNZ 0x004b4bf2                      ; 004b4bfe
         ;   XREF to: 004b4bf2 (CONDITIONAL_JUMP)  ; LAB_004b4bf2
     XOR EDX,EDX                         ; 004b4c00
     MOV EAX,0x1ca9e60                   ; 004b4c02
-    MOV dword ptr [0x01ca9e5c],EDX      ; 004b4c07 | DAT_01ca9e5c
+    MOV dword ptr [0x01ca9e5c],EDX      ; 004b4c07 | g_INT_01ca9e5c
     LEA EBX,[EAX + 0x2900]              ; 004b4c0d
     ADD EAX,0xa4                        ; 004b4c13
         ;   Label: LAB_004b4c13
@@ -124,7 +124,7 @@ section .text
         ;   XREF to: 004b4c13 (CONDITIONAL_JUMP)  ; LAB_004b4c13
     XOR ECX,ECX                         ; 004b4c23
     MOV EAX,0x1cac764                   ; 004b4c25
-    MOV dword ptr [0x01cac760],ECX      ; 004b4c2a | DAT_01cac760
+    MOV dword ptr [0x01cac760],ECX      ; 004b4c2a | g_INT_01cac760
     LEA EBX,[EAX + 0x1400]              ; 004b4c30
     ADD EAX,0x50                        ; 004b4c36
         ;   Label: LAB_004b4c36
@@ -134,7 +134,7 @@ section .text
         ;   XREF to: 004b4c36 (CONDITIONAL_JUMP)  ; LAB_004b4c36
     XOR EBX,EBX                         ; 004b4c44
     MOV EAX,0x1cadb68                   ; 004b4c46
-    MOV dword ptr [0x01cadb64],EBX      ; 004b4c4b | DAT_01cadb64
+    MOV dword ptr [0x01cadb64],EBX      ; 004b4c4b | g_INT_01cadb64
     LEA EBX,[EAX + 0x1500]              ; 004b4c51
     ADD EAX,0x54                        ; 004b4c57
         ;   Label: LAB_004b4c57
@@ -144,7 +144,7 @@ section .text
         ;   XREF to: 004b4c57 (CONDITIONAL_JUMP)  ; LAB_004b4c57
     XOR ESI,ESI                         ; 004b4c65
     MOV EAX,0x1c9dab8                   ; 004b4c67
-    MOV dword ptr [0x01c9dab4],ESI      ; 004b4c6c | DAT_01c9dab4
+    MOV dword ptr [0x01c9dab4],ESI      ; 004b4c6c | g_INT_01c9dab4
     LEA EBX,[EAX + 0x1700]              ; 004b4c72
     ADD EAX,0x5c                        ; 004b4c78
         ;   Label: LAB_004b4c78
@@ -155,7 +155,7 @@ section .text
     MOV EBX,0x1cb0070                   ; 004b4c86
     XOR EDI,EDI                         ; 004b4c8b
     LEA ESI,[EBX + 0x118]               ; 004b4c8d
-    MOV dword ptr [0x01cb006c],EDI      ; 004b4c93 | DAT_01cb006c
+    MOV dword ptr [0x01cb006c],EDI      ; 004b4c93 | g_INT_01cb006c
     PUSH EBX                            ; 004b4c99
         ;   Label: LAB_004b4c99
     CALL core_fire.cpp_CExplosion_ctor_FUN_004b1620 ; 004b4c9a
@@ -168,7 +168,7 @@ section .text
     MOV EBX,0x1cb018c                   ; 004b4ca9
     XOR EBP,EBP                         ; 004b4cae
     LEA ESI,[EBX + 0x4dd0]              ; 004b4cb0
-    MOV dword ptr [0x01cb0188],EBP      ; 004b4cb6 | DAT_01cb0188
+    MOV dword ptr [0x01cb0188],EBP      ; 004b4cb6 | g_INT_01cb0188
     PUSH EBX                            ; 004b4cbc
         ;   Label: LAB_004b4cbc
     CALL core_fire.cpp_CToss_reset_FUN_004b1c40 ; 004b4cbd
@@ -181,7 +181,7 @@ section .text
     MOV EBX,0x1cb4f60                   ; 004b4ccf
     XOR EAX,EAX                         ; 004b4cd4
     LEA ESI,[EBX + 0x8c0]               ; 004b4cd6
-    MOV [0x01cb4f5c],EAX                ; 004b4cdc | DAT_01cb4f5c
+    MOV [0x01cb4f5c],EAX                ; 004b4cdc | g_INT_01cb4f5c
     PUSH EBX                            ; 004b4ce1
         ;   Label: LAB_004b4ce1
     CALL core_fire.cpp_CCrater_reset_FUN_004b1f90 ; 004b4ce2
@@ -194,7 +194,7 @@ section .text
     MOV EBX,0x1cb5824                   ; 004b4cf1
     XOR EDX,EDX                         ; 004b4cf6
     LEA ESI,[EBX + 0x4650]              ; 004b4cf8
-    MOV dword ptr [0x01cb5820],EDX      ; 004b4cfe | DAT_01cb5820
+    MOV dword ptr [0x01cb5820],EDX      ; 004b4cfe | g_INT_01cb5820
     PUSH EBX                            ; 004b4d04
         ;   Label: LAB_004b4d04
     CALL core_fire.cpp_CGunFlame_reset_FUN_004b2b40 ; 004b4d05
@@ -207,7 +207,7 @@ section .text
     MOV EBX,0x1cb9e78                   ; 004b4d14
     XOR ECX,ECX                         ; 004b4d19
     LEA ESI,[EBX + 0x1b8]               ; 004b4d1b
-    MOV dword ptr [0x01cb9e74],ECX      ; 004b4d21 | DAT_01cb9e74
+    MOV dword ptr [0x01cb9e74],ECX      ; 004b4d21 | g_INT_01cb9e74
     PUSH EBX                            ; 004b4d27
         ;   Label: LAB_004b4d27
     CALL core_fire.cpp_CLightningBolt_reset_FUN_004b3480 ; 004b4d28
@@ -218,7 +218,7 @@ section .text
     JNZ 0x004b4d27                      ; 004b4d35
         ;   XREF to: 004b4d27 (CONDITIONAL_JUMP)  ; LAB_004b4d27
     XOR EBX,ESI                         ; 004b4d37
-    MOV dword ptr [0x01cba030],EBX      ; 004b4d39 | DAT_01cba030
+    MOV dword ptr [0x01cba030],EBX      ; 004b4d39 | g_INT_01cba030
     MOV EBX,0x1cba034                   ; 004b4d3f
     LEA ESI,[EBX + 0xe10]               ; 004b4d44
     PUSH EBX                            ; 004b4d4a
@@ -232,7 +232,7 @@ section .text
         ;   XREF to: 004b4d4a (CONDITIONAL_JUMP)  ; LAB_004b4d4a
     XOR ESI,ESI                         ; 004b4d5a
     MOV EAX,0x1cbae48                   ; 004b4d5c
-    MOV dword ptr [0x01cbae44],ESI      ; 004b4d61 | DAT_01cbae44
+    MOV dword ptr [0x01cbae44],ESI      ; 004b4d61 | g_INT_01cbae44
     LEA EBX,[EAX + 0x12c0]              ; 004b4d67
     ADD EAX,0x60                        ; 004b4d6d
         ;   Label: LAB_004b4d6d
@@ -242,7 +242,7 @@ section .text
         ;   XREF to: 004b4d6d (CONDITIONAL_JUMP)  ; LAB_004b4d6d
     XOR EDI,EDI                         ; 004b4d7b
     MOV EAX,0x1cbc10c                   ; 004b4d7d
-    MOV dword ptr [0x01cbc108],EDI      ; 004b4d82 | DAT_01cbc108
+    MOV dword ptr [0x01cbc108],EDI      ; 004b4d82 | g_INT_01cbc108
     LEA EBX,[EAX + 0x4000]              ; 004b4d88
     POP EDI                             ; 004b4d8e
     ADD EAX,0x40                        ; 004b4d8f
@@ -253,7 +253,7 @@ section .text
         ;   XREF to: 004b4d8f (CONDITIONAL_JUMP)  ; LAB_004b4d8f
     XOR EBP,EBP                         ; 004b4d9d
     MOV EAX,0x1cc0110                   ; 004b4d9f
-    MOV dword ptr [0x01cc010c],EBP      ; 004b4da4 | DAT_01cc010c
+    MOV dword ptr [0x01cc010c],EBP      ; 004b4da4 | g_INT_01cc010c
     LEA EBX,[EAX + 0x4000]              ; 004b4daa
     ADD EAX,0x40                        ; 004b4db0
         ;   Label: LAB_004b4db0

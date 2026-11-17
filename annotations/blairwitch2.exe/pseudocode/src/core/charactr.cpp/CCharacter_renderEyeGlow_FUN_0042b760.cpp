@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter *this_ptr,CVector3f *eye_position)
 
 {
@@ -73,16 +71,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter 
   local_20 = 0.1;
   local_24 = 0.1;
   local_f8 = eye_position->z;
-  local_100 = eye_position->x + _DAT_005cd336;
-  local_fc = eye_position->y + _DAT_005cd336;
+  local_100 = eye_position->x + 0.1f;
+  local_fc = eye_position->y + 0.1f;
   if (&local_124 != local_114 + 5) {
     local_124 = local_100;
     local_120 = local_fc;
     local_11c = local_f8;
   }
-  local_64.x = (int)ROUND(local_124 * _DAT_005f4060);
-  local_64.y = (int)ROUND(local_120 * _DAT_005f4060);
-  local_64.z = (int)ROUND(local_11c * _DAT_005f4060);
+  local_64.x = (int)ROUND(local_124 * 256.0f);
+  local_64.y = (int)ROUND(local_120 * 256.0f);
+  local_64.z = (int)ROUND(local_11c * 256.0f);
   SStack_180.surface_normal.D.f = 6.12736e-39;
   local_f0[2] = local_100;
   local_f0[3] = local_fc;
@@ -94,7 +92,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter 
   local_9c = local_fc;
   local_98 = local_f8;
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);
   local_54[2] = -local_20 + eye_position->x;
   local_44 = eye_position->z;
   local_54[3] = eye_position->y + local_24;
@@ -114,12 +112,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter 
     local_120 = local_c0[3];
     local_11c = local_b0;
   }
-  local_d0.x = (int)ROUND(local_124 * _DAT_005f4060);
-  local_d0.y = (int)ROUND(local_120 * _DAT_005f4060);
-  local_d0.z = (int)ROUND(local_11c * _DAT_005f4060);
+  local_d0.x = (int)ROUND(local_124 * 256.0f);
+  local_d0.y = (int)ROUND(local_120 * 256.0f);
+  local_d0.z = (int)ROUND(local_11c * 256.0f);
   SStack_180.surface_normal.D.f = 6.127714e-39;
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d0);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d0);
   local_f4 = -local_20 + eye_position->x;
   local_f0[1] = eye_position->z;
   local_f0[0] = eye_position->y + -local_24;
@@ -139,12 +137,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter 
     local_120 = local_3c;
     local_11c = local_38;
   }
-  local_70.x = (int)ROUND(local_124 * _DAT_005f4060);
-  local_70.y = (int)ROUND(local_120 * _DAT_005f4060);
-  local_70.z = (int)ROUND(local_11c * _DAT_005f4060);
+  local_70.x = (int)ROUND(local_124 * 256.0f);
+  local_70.y = (int)ROUND(local_120 * 256.0f);
+  local_70.z = (int)ROUND(local_11c * 256.0f);
   SStack_180.surface_normal.D.f = 6.128076e-39;
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_70);
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_70);
   local_94 = eye_position->x + local_20;
   local_90[1] = eye_position->z;
   local_90[0] = eye_position->y + -local_24;
@@ -164,16 +162,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter 
     local_120 = local_c0[0];
     local_11c = local_c0[1];
   }
-  local_ac.x = (int)ROUND(local_124 * _DAT_005f4060);
-  local_ac.y = (int)ROUND(local_120 * _DAT_005f4060);
-  local_ac.z = (int)ROUND(local_11c * _DAT_005f4060);
+  local_ac.x = (int)ROUND(local_124 * 256.0f);
+  local_ac.y = (int)ROUND(local_120 * 256.0f);
+  local_ac.z = (int)ROUND(local_11c * 256.0f);
   SStack_180.surface_normal.D.f = 6.128422e-39;
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_ac);
-  this_ptr_00 = DAT_0060b280;
-  fVar2 = _DAT_005cd33a;
-  pSVar1 = DAT_0060b280->vertex_buffer_ptr;
-  dVar4 = round((double)((this_ptr->eye_glow_color).x * _DAT_005cd33a));
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_ac);
+  this_ptr_00 = g_CDemonRenderer_PTR_0060b280;
+  fVar2 = 65535.0f;
+  pSVar1 = g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr;
+  dVar4 = round((double)((this_ptr->eye_glow_color).x * 65535.0f));
   local_2c = (float)(int)ROUND(dVar4);
   pSVar1->r = (int)local_2c;
   pSVar1 = this_ptr_00->vertex_buffer_ptr;
@@ -225,7 +223,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter 
   uStack_188 = SUB84(__BITCAST_UINT64(dVar4),0);
   local_54[0] = (float)(int)ROUND(dVar5);
   pSVar1[3].g = (int)local_54[0];
-  dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_188,uStack_18c)) * _DAT_005cd33e;
+  dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_188,uStack_18c)) * 65535;
   pSVar1 = this_ptr_00->vertex_buffer_ptr;
   uStack_190 = 0x42bd51;
   dVar5 = round((double)((this_ptr->eye_glow_color).z * fVar2));
@@ -254,9 +252,10 @@ void __cdecl core_charactr_cpp_CCharacter_renderEyeGlow_FUN_0042b760(CCharacter 
   SStack_180.surface_normal.B.i = 0;
   SStack_180.surface_normal.A.i = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (this_ptr_00,(SMRGLTextureBasic *)&DAT_00609ae4);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
-  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(DAT_0060b280,&SStack_180);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
+            (this_ptr_00,&g_SMRGLTextureBasic_00609ae4);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
+            (g_CDemonRenderer_PTR_0060b280,&SStack_180);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
   return;
 }

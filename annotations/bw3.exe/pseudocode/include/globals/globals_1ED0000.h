@@ -7,8 +7,13 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
 #include "types/classes/CDemonSet.h"
+#include "types/classes/CDoor.h"
+#include "types/classes/CLever.h"
 #include "types/classes/CPickList.h"
 #include "types/classes/CScript.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1ED0000
@@ -28,9 +33,75 @@ extern CDemonPod g_CDemonPodInstance;
 // CDemonSet
 extern CDemonSet g_CDemonSetInstance;
 
+// CDoor*
+extern CDoor* g_CDoor_PTR_01ed36a8;
+
+// CLever*
+extern CLever* g_CLever_PTR_01ed36b8;
+
 // CPickList
 extern CPickList g_ScriptPickList;
 
 // CScript
 extern CScript g_CScriptInstance;
+
+// CVector3f
+extern CVector3f g_CVector3f_01ed36ac;
+extern CVector3f g_CVector3f_01ed36c0;
+extern CVector3f g_CVector3f_01ed36cc;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01ed2a30;
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01ed2c8c[16];
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01ed31a0[16];
+
+// byte
+extern byte g_BYTE_01ed36bc;
+
+// char[101]
+extern char g_CHAR_ARRAY_01ed02b8[101];
+
+// char[10]
+extern char g_CHAR_ARRAY_01ed3808[10];
+
+// char[2048]
+extern char g_CHAR_ARRAY_01ed6008[2048];
+extern char g_CHAR_ARRAY_01ed6810[2048];
+
+// float
+extern float g_FLOAT_01ed36d8;
+extern float g_FLOAT_01ed3784;
+extern float g_FLOAT_01ed7010;
+
+// int
+extern int g_INT_01ed02ac;
+extern int g_INT_01ed02b0;
+extern int g_INT_01ed2a2c;
+extern int g_INT_01ed2c88;
+extern int g_INT_01ed318c;
+extern int g_INT_01ed3190;
+extern int g_INT_01ed3198;
+extern int g_INT_01ed319c;
+extern int g_INT_01ed36a0;
+extern int g_INT_01ed36a4;
+extern int g_INT_01ed36dc;
+extern int g_INT_01ed36e0;
+extern int g_INT_01ed36e4;
+extern int g_INT_01ed36e8;
+extern int g_INT_01ed3800;
+extern int g_INT_01ed6808;
+extern int g_INT_01ed7014;
+extern int g_INT_01ed7018;
+extern int g_INT_01ed701c;
+
+// int[12]
+extern int g_INT_ARRAY_01ed785c[12];
+
+// int[23]
+extern int g_INT_ARRAY_01ed36ec[23];
+
+// uchar
+extern uchar g_UCHAR_01ed02b7;
 

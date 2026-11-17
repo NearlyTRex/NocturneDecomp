@@ -28,9 +28,9 @@
 ;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00450e85
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d013f
-;   undefined4 DAT_01b4d28c
-;   undefined4 DAT_01b4d290
+;   float g_FLOAT_005d013f = 0.5
+;   int g_INT_01b4d28c
+;   int g_INT_01b4d290
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 00453cc2
     SUB ESP,0x54                        ; 00453cc3
     MOV EBX,ESI                         ; 00453cc6
-    MOV EDX,dword ptr [0x01b4d290]      ; 00453cc8 | DAT_01b4d290
+    MOV EDX,dword ptr [0x01b4d290]      ; 00453cc8 | g_INT_01b4d290
     MOV EBP,dword ptr [ESP + 0x64]      ; 00453cce
     PUSH EDX                            ; 00453cd2
     ADD EBP,0x2b4                       ; 00453cd3
@@ -55,7 +55,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 00453ce2
         ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00453ce7
-    MOV ECX,dword ptr [0x01b4d28c]      ; 00453cea | DAT_01b4d28c
+    MOV ECX,dword ptr [0x01b4d28c]      ; 00453cea | g_INT_01b4d28c
     LEA ESI,[ESP + 0x18]                ; 00453cf0
     PUSH ECX                            ; 00453cf4
     MOVSD ES:EDI,ESI                    ; 00453cf5
@@ -90,7 +90,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00453d45
     MOVSD ES:EDI,ESI                    ; 00453d46
     MOVSD ES:EDI,ESI                    ; 00453d47
-    FLD float ptr [0x005d013f]          ; 00453d48 | DAT_005d013f
+    FLD float ptr [0x005d013f]          ; 00453d48 | g_FLOAT_005d013f
     FLD float ptr [ESP + 0x3c]          ; 00453d4e
     FMUL ST1                            ; 00453d52
     FLD float ptr [ESP + 0x40]          ; 00453d54

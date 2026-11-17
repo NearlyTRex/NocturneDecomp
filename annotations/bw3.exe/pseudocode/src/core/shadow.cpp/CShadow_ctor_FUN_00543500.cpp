@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)
 
 {
@@ -37,13 +35,13 @@ CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)
   pCVar4->walk_timeout = 0.0;
   pCVar4->walk_target = 0;
   pCVar4->walk_status = 0;
-  fVar1 = _DAT_005e3d54;
+  fVar1 = 50.0f;
   pCVar4->attack_loop_count = 0;
-  fVar2 = _DAT_005e3d58;
+  fVar2 = 100.0f;
   pCVar4->periodic_timer = 10.0;
-  fVar3 = _DAT_005e3d5c;
+  fVar3 = 10.0f;
   pCVar4->fade_alpha = 0;
-  this_ptr_00 = 0x01C6E360;
+  this_ptr_00 = g_CEventList_PTR_005fba60;
   pCVar4->corona_added = 0;
   (pCVar4->base).base.ai_detection_range_min = fVar1;
   (pCVar4->base).base.ai_detection_range_max = fVar2;

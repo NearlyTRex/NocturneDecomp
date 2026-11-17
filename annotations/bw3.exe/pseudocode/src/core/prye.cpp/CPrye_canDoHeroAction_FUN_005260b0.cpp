@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int action_type)
 
 {
@@ -56,12 +54,12 @@ int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int
                      (&this_ptr_00->base,0x10);
   fVar14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350(&this_ptr_00->base,5);
   fVar15 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350(&this_ptr_00->base,6);
-  fVar17 = (float)_DAT_005cd95f;
+  fVar17 = (float)0.999;
   switch(action_type) {
   case 4:
     fVar18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
                        ((CCharacter *)this_ptr,0);
-    if (fVar18 < (float)_DAT_005cd967) {
+    if (fVar18 < (float)0.98999999999999999) {
       return 0;
     }
   case 3:
@@ -78,7 +76,7 @@ int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int
   case 0xc:
     fVar17 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
                        ((CCharacter *)this_ptr,0);
-    if (fVar17 < (float)_DAT_005cd967) {
+    if (fVar17 < (float)0.98999999999999999) {
       return 0;
     }
   }

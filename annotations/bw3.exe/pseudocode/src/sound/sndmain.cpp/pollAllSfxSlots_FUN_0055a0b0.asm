@@ -13,14 +13,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3ed5
 ;   TerminatedCString s_SfxSlot_pollSfx_must_be_005d3eea
-;   undefined4 DAT_005d3f0e
-;   undefined4 DAT_005d3f12
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02ce7338
-;   undefined4 DAT_02cf28bc
-;   undefined4 DAT_02cf341c
-;   undefined4 DAT_02cf3420
+;   float g_FLOAT_005d3f0e = 8.477105E-7
+;   float g_FLOAT_005d3f12 = 0.25
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
+;   int g_INT_02cf28bc
+;   int g_INT_02cf341c
+;   int g_INT_02cf3420
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -40,13 +40,13 @@ section .text
     PUSH EDI                            ; 0055a0b2
     PUSH EBP                            ; 0055a0b3
     SUB ESP,0x8                         ; 0055a0b4
-    CMP dword ptr [0x02cf341c],0x0      ; 0055a0b7 | DAT_02cf341c
+    CMP dword ptr [0x02cf341c],0x0      ; 0055a0b7 | g_INT_02cf341c
     JLE 0x0055a136                      ; 0055a0be
         ;   XREF to: 0055a136 (CONDITIONAL_JUMP)  ; LAB_0055a136
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0055a0c4
         ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_0055a0c4
-    MOV EDI,dword ptr [0x02cf3420]      ; 0055a0c9 | DAT_02cf3420
+    MOV EDI,dword ptr [0x02cf3420]      ; 0055a0c9 | g_INT_02cf3420
     MOV EBX,EAX                         ; 0055a0cf
     SUB EBX,EDI                         ; 0055a0d1
     MOV ESI,EAX                         ; 0055a0d3
@@ -56,9 +56,9 @@ section .text
     CMP EBX,0x1cccc                     ; 0055a0d9
     JL 0x0055a12e                       ; 0055a0df
         ;   XREF to: 0055a12e (CONDITIONAL_JUMP)  ; LAB_0055a12e
-    MOV EBP,dword ptr [0x02cf28bc]      ; 0055a0e1 | DAT_02cf28bc
+    MOV EBP,dword ptr [0x02cf28bc]      ; 0055a0e1 | g_INT_02cf28bc
         ;   Label: LAB_0055a0e1
-    MOV dword ptr [0x02cf3420],ESI      ; 0055a0e7 | DAT_02cf3420
+    MOV dword ptr [0x02cf3420],ESI      ; 0055a0e7 | g_INT_02cf3420
     TEST EBP,EBP                        ; 0055a0ed
     JZ 0x0055a15e                       ; 0055a0ef
         ;   XREF to: 0055a15e (CONDITIONAL_JUMP)  ; LAB_0055a15e
@@ -75,7 +75,7 @@ section .text
     LEA ESI,[EBX + 0x4700]              ; 0055a105
     PUSH dword ptr [ESP]                ; 0055a10b
         ;   Label: LAB_0055a10b
-    PUSH EBX                            ; 0055a10e | DAT_02ce7338
+    PUSH EBX                            ; 0055a10e | g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430 ; 0055a10f
         ;   XREF to: 00554430 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055a114
@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_0055a136
     MOV EBX,0x19f6                      ; 0055a13b
     PUSH 0x5d3eea                       ; 0055a140 | = "SfxSlot::pollSfx - must be locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 0055a145 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0055a14b | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0055a145 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0055a14b | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055a151
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055a156
@@ -117,7 +117,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EBX       ; 0055a165
         ;   Label: LAB_0055a165
     FILD dword ptr [ESP + 0x4]          ; 0055a169
-    FMUL float ptr [0x005d3f0e]         ; 0055a16d | DAT_005d3f0e
+    FMUL float ptr [0x005d3f0e]         ; 0055a16d | g_FLOAT_005d3f0e
     FLDZ                                ; 0055a173
     FXCH                                ; 0055a175
     FSTP float ptr [ESP]                ; 0055a177
@@ -132,7 +132,7 @@ section .text
         ;   XREF to: 0055a100 (UNCONDITIONAL_JUMP)  ; LAB_0055a100
     FLD float ptr [ESP]                 ; 0055a18c
         ;   Label: LAB_0055a18c
-    FCOMP float ptr [0x005d3f12]        ; 0055a18f | DAT_005d3f12
+    FCOMP float ptr [0x005d3f12]        ; 0055a18f | g_FLOAT_005d3f12
     FNSTSW AX                           ; 0055a195
     SAHF                                ; 0055a197
     JBE 0x0055a100                      ; 0055a198

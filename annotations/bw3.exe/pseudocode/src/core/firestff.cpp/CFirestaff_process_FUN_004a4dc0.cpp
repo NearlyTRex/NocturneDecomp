@@ -109,8 +109,9 @@ void __cdecl core_firestff_cpp_CFirestaff_process_FUN_004a4dc0(CFirestaff *this_
       iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
       if (iVar3 == 0) {
         uVar6 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                          (0x02CF5680,(CDemonActor *)this_ptr,"wp_firestaff_loop.wav",
-                           &(this_ptr->base).base.location.position);
+                          (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,
+                           "wp_firestaff_loop.wav",&(this_ptr->base).base.location.position
+                          );
         this_ptr->sfx_handle = uVar6;
       }
       CStack_1c4.x = 0.0;

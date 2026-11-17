@@ -25,10 +25,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e59ea
 ;   TerminatedCString s_CDemonSet_rotateVerticie_005e59fa
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -53,17 +53,17 @@ section .text
         ;   XREF to: 00531f1a (CONDITIONAL_JUMP)  ; LAB_00531f1a
     PUSH 0x1                            ; 00531eab
         ;   Label: LAB_00531eab
-    MOV EDI,dword ptr [0x0060b280]      ; 00531ead | DAT_0060b280
-    PUSH EDI                            ; 00531eb3 | DAT_01ba5c50
+    MOV EDI,dword ptr [0x0060b280]      ; 00531ead | g_CDemonRenderer_PTR_0060b280
+    PUSH EDI                            ; 00531eb3 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920 ; 00531eb4
         ;   XREF to: 0046b920 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(CDemonRenderer * this_ptr, int enabled)
-    MOV ESI,dword ptr [0x0060b280]      ; 00531eb9 | DAT_0060b280
+    MOV ESI,dword ptr [0x0060b280]      ; 00531eb9 | g_CDemonRenderer_PTR_0060b280
     ADD ESP,0x8                         ; 00531ebf
     XOR EAX,EAX                         ; 00531ec2
     XOR EDI,EDI                         ; 00531ec4
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00531ec6
     MOV dword ptr [ESP],EAX             ; 00531eca
-    MOV ESI,dword ptr [ESI]             ; 00531ecd | DAT_01ba5c50
+    MOV ESI,dword ptr [ESI]             ; 00531ecd | g_CDemonRenderer_01ba5c50
     TEST EDX,EDX                        ; 00531ecf
     JLE 0x00531ef7                      ; 00531ed1
         ;   XREF to: 00531ef7 (CONDITIONAL_JUMP)  ; LAB_00531ef7
@@ -111,8 +111,8 @@ section .text
     MOV ECX,0x5e59ea                    ; 00531f20 | = "..\\core\\set.cpp"
     MOV EBX,0xe95                       ; 00531f25
     PUSH 0x5e59fa                       ; 00531f2a | = "CDemonSet::rotateVerticies - tried to..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00531f2f | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00531f35 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00531f2f | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00531f35 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00531f3b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00531f40
@@ -120,8 +120,8 @@ section .text
         ;   XREF to: 00531eab (UNCONDITIONAL_JUMP)  ; LAB_00531eab
     PUSH 0x0                            ; 00531f48
         ;   Label: LAB_00531f48
-    MOV ESI,dword ptr [0x0060b280]      ; 00531f4a | DAT_0060b280
-    PUSH ESI                            ; 00531f50 | DAT_01ba5c50
+    MOV ESI,dword ptr [0x0060b280]      ; 00531f4a | g_CDemonRenderer_PTR_0060b280
+    PUSH ESI                            ; 00531f50 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920 ; 00531f51
         ;   XREF to: 0046b920 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 00531f56

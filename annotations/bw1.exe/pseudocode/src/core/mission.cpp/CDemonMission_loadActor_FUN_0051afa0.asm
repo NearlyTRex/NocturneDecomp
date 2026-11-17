@@ -22,12 +22,12 @@
 ;   TerminatedCString s_Error_reading_actor_poin_005e95ff
 ;   TerminatedCString s_anon_005e9637
 ;   TerminatedCString s_WARNING_Can_t_find_actor_005e963d
-;   undefined4 DAT_005e9697
+;   TerminatedCString s_x_005e9697
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   TerminatedCString s_none_0061f790
-;   undefined4 DAT_00626114
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   uchar[257] g_UCHAR_ARRAY_00626114
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -68,7 +68,7 @@ section .text
     ADD ESP,0x4                         ; 0051afd9
     INC DL                              ; 0051afdc
     AND EDX,0xff                        ; 0051afde
-    TEST byte ptr [EDX + 0x626114],0x2  ; 0051afe4 | DAT_00626114
+    TEST byte ptr [EDX + 0x626114],0x2  ; 0051afe4 | g_UCHAR_ARRAY_00626114
     JNZ 0x0051afd1                      ; 0051afeb
         ;   XREF to: 0051afd1 (CONDITIONAL_JUMP)  ; LAB_0051afd1
     CMP EAX,0x22                        ; 0051afed
@@ -87,8 +87,8 @@ section .text
     MOV EAX,0x5e95eb                    ; 0051b006 | = "..\\core\\mission.cpp"
     MOV EDX,0x234                       ; 0051b00b
     PUSH 0x5e95ff                       ; 0051b010 | = "Error reading actor pointer.\nOwner: ..."
-    MOV [0x01d1d400],EAX                ; 0051b015 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0051b01a | DAT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0051b015 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0051b01a | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051b020
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0051b025
@@ -178,7 +178,7 @@ section .text
     ADD ESP,0x8                         ; 0051b0d1
     LEA EAX,[ESP + 0xc8]                ; 0051b0d4
     PUSH EAX                            ; 0051b0db
-    PUSH 0x5e9697                       ; 0051b0dc | DAT_005e9697
+    PUSH 0x5e9697                       ; 0051b0dc | = "%x"
     PUSH EBX                            ; 0051b0e1
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0051b0e2
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)

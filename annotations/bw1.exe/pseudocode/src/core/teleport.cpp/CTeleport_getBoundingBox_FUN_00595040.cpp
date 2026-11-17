@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBoundingBox3D * __stack_esi core_teleport_cpp_CTeleport_getBoundingBox_FUN_00595040(CTeleport *this_ptr,CBoundingBox3D *out_box)
 
 {
@@ -19,10 +17,10 @@ CBoundingBox3D * __stack_esi core_teleport_cpp_CTeleport_getBoundingBox_FUN_0059
   float fStack_c;
   float fStack_8;
   
-  fVar1 = (float)_DAT_005f76be;
+  fVar1 = (float)0.5;
   afStack_1c[1] = -0.1;
   afStack_1c[3] = (this_ptr->trigger_extents).x * fVar1;
-  fStack_c = (this_ptr->trigger_extents).y + (float)_DAT_005f76c6;
+  fStack_c = (this_ptr->trigger_extents).y + (float)0.10000000000000001;
   fStack_8 = (this_ptr->trigger_extents).z * fVar1;
   afStack_1c[2] = -(this_ptr->trigger_extents).z * fVar1;
   afStack_1c[0] = -(this_ptr->trigger_extents).x * fVar1;

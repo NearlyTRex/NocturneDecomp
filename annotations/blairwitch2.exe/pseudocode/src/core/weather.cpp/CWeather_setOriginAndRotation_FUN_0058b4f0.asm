@@ -27,16 +27,16 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e129
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ee5d2
-;   undefined4 DAT_005ee5da
-;   undefined4 DAT_005ee5e2
-;   undefined4 DAT_005ee5ea
-;   undefined4 DAT_005ee5ee
+;   double g_DOUBLE_005ee5d2 = 100
+;   double g_DOUBLE_005ee5da = 0.785398163375000
+;   double g_DOUBLE_005ee5e2 = -0.785398163375000
+;   float g_FLOAT_005ee5ea = 50
+;   float g_FLOAT_005ee5ee = -50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02661fb8
-;   undefined4 DAT_02661fbc
-;   undefined4 DAT_02661fc0
+;   CVector3f[200] g_CVector3f_ARRAY_02661fb8
+;   undefined4 g_CVector3f_ARRAY_02661fb8[0].y
+;   undefined4 g_CVector3f_ARRAY_02661fb8[0].z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -94,10 +94,10 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 0058b55a
     FLD float ptr [EAX + 0x4]           ; 0058b55e
     FLD ST0                             ; 0058b561
-    FADD double ptr [0x005ee5da]        ; 0058b563 | DAT_005ee5da
+    FADD double ptr [0x005ee5da]        ; 0058b563 | g_DOUBLE_005ee5da
     SUB ESP,0x4                         ; 0058b569
     FSTP float ptr [ESP]                ; 0058b56c
-    FADD double ptr [0x005ee5e2]        ; 0058b56f | DAT_005ee5e2
+    FADD double ptr [0x005ee5e2]        ; 0058b56f | g_DOUBLE_005ee5e2
     SUB ESP,0x4                         ; 0058b575
     FSTP float ptr [ESP]                ; 0058b578
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0058b57b
@@ -149,9 +149,9 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 0058b601
     PUSH EAX                            ; 0058b605 | g_CDemonSetInstance
     FXCH                                ; 0058b606
-    FADD float ptr [0x005ee5ea]         ; 0058b608 | DAT_005ee5ea
+    FADD float ptr [0x005ee5ea]         ; 0058b608 | g_FLOAT_005ee5ea
     FXCH                                ; 0058b60e
-    FADD float ptr [0x005ee5ee]         ; 0058b610 | DAT_005ee5ee
+    FADD float ptr [0x005ee5ee]         ; 0058b610 | g_FLOAT_005ee5ee
     FXCH                                ; 0058b616
     FSTP float ptr [ESP + 0x8]          ; 0058b618
     FSTP float ptr [ESP + 0x14]         ; 0058b61c
@@ -186,7 +186,7 @@ section .text
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 0058b67c
     FLD float ptr [ESP + 0x44]          ; 0058b680
-    FMUL double ptr [0x005ee5d2]        ; 0058b684 | DAT_005ee5d2
+    FMUL double ptr [0x005ee5d2]        ; 0058b684 | g_DOUBLE_005ee5d2
     ADD ESP,0x8                         ; 0058b68a
     FADD double ptr [ESP + 0x2c]        ; 0058b68d
     LEA EAX,[ESP + 0x18]                ; 0058b691
@@ -195,11 +195,11 @@ section .text
     JZ 0x0058b6b1                       ; 0058b69b
         ;   XREF to: 0058b6b1 (CONDITIONAL_JUMP)  ; LAB_0058b6b1
     MOV EAX,dword ptr [ESP + 0x18]      ; 0058b69d
-    MOV dword ptr [EBX],EAX             ; 0058b6a1 | DAT_02661fb8
+    MOV dword ptr [EBX],EAX             ; 0058b6a1 | g_CVector3f_ARRAY_02661fb8
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0058b6a3
-    MOV dword ptr [EBX + 0x4],EAX       ; 0058b6a7 | DAT_02661fbc
+    MOV dword ptr [EBX + 0x4],EAX       ; 0058b6a7 | g_CVector3f_ARRAY_02661fb8[0].y
     MOV EAX,dword ptr [ESP + 0x20]      ; 0058b6aa
-    MOV dword ptr [EBX + 0x8],EAX       ; 0058b6ae | DAT_02661fc0
+    MOV dword ptr [EBX + 0x8],EAX       ; 0058b6ae | g_CVector3f_ARRAY_02661fb8[0].z
     ADD ESI,0x4                         ; 0058b6b1
         ;   Label: LAB_0058b6b1
     ADD EBX,0xc                         ; 0058b6b4

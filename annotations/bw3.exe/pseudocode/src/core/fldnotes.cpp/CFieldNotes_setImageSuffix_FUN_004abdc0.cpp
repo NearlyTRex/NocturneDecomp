@@ -17,7 +17,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_setImageSuffix_FUN_004abdc0(CFieldNot
     cVar1 = *suffix;
     *pcVar2 = cVar1;
     if (cVar1 == '\0') {
-      DAT_005fe370 = 1;
+      g_INT_005fe370 = 1;
       return;
     }
     cVar1 = suffix[1];
@@ -25,6 +25,6 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_setImageSuffix_FUN_004abdc0(CFieldNot
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  DAT_005fe370 = 1;
+  g_INT_005fe370 = 1;
   return;
 }

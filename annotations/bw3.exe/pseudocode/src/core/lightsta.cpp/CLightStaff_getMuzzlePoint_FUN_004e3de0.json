@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 175,
+    "complexity_score": 159,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 12,
+    "pseudocode_lines": 29,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [],
   "function": {
@@ -41,15 +40,15 @@
   "globals": [
     {
       "addr": "005c6aa6",
-      "name": "DAT_005c6aa6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c6aa6",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "005c6aaa",
-      "name": "DAT_005c6aaa",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c6aaa",
+      "type": "float",
+      "value": "-1"
     }
   ],
   "param_estimates": {
@@ -115,16 +114,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 7,
+      "line": 5,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CVector3f *unaff_ESI;",
@@ -132,7 +123,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 8,
       "match": "afStackY_1014",
       "severity": "moderate",
       "text": "float afStackY_1014 [1017];",
@@ -140,7 +131,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 27,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);",
@@ -148,7 +139,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(float *)((int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);",
@@ -156,7 +147,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 28,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI->x = fStack_20;",
@@ -164,7 +155,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 31,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -172,7 +163,7 @@
     },
     {
       "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "(int)&CStack_2c",
       "severity": "moderate",
       "text": "afStack_1c[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_2c + (uint)bVar2 * -8 + 4);",
@@ -180,7 +171,7 @@
     },
     {
       "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)&CStack_2c",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -188,7 +179,7 @@
     },
     {
       "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "(int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);",
@@ -196,7 +187,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "afStack_1c[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_2c + (uint)bVar2 * -8 + 4);",
@@ -204,7 +195,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",

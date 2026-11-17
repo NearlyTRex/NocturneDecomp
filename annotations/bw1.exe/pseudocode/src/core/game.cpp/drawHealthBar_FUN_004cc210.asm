@@ -11,8 +11,8 @@
 ; float            Stack[0x14]:4   fill_percent
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e138c
-;   undefined4 DAT_005e1394
+;   double g_DOUBLE_005e138c = 0.600000000000000
+;   double g_DOUBLE_005e1394 = 0.350000000000000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -32,7 +32,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004cc217
     FLD float ptr [ESP + 0x2c]          ; 004cc21b
     MOV EBX,0x2                         ; 004cc21f
-    FCOMP double ptr [0x005e138c]       ; 004cc224 | DAT_005e138c
+    FCOMP double ptr [0x005e138c]       ; 004cc224 | g_DOUBLE_005e138c
     FNSTSW AX                           ; 004cc22a
     SAHF                                ; 004cc22c
     JNC 0x004cc234                      ; 004cc22d
@@ -40,7 +40,7 @@ section .text
     MOV EBX,0xfb                        ; 004cc22f
     FLD float ptr [ESP + 0x2c]          ; 004cc234
         ;   Label: LAB_004cc234
-    FCOMP double ptr [0x005e1394]       ; 004cc238 | DAT_005e1394
+    FCOMP double ptr [0x005e1394]       ; 004cc238 | g_DOUBLE_005e1394
     FNSTSW AX                           ; 004cc23e
     SAHF                                ; 004cc240
     JNC 0x004cc248                      ; 004cc241

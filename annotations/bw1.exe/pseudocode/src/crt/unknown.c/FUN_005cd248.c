@@ -2,20 +2,20 @@
 // Address: 005cd248
 // Address Range: [[005cd248, 005cd271]]
 // Convention: unknown
-// Signature: char crt_unknown_c_FUN_005cd248(void)
+// Signature: byte crt_unknown_c_FUN_005cd248(void)
 
 #include "nocturne.h"
 
-char FUN_005cd248(void)
+byte FUN_005cd248(void)
 
 {
   BOOL BVar1;
   
-  if (DAT_00626b4c == '\0') {
+  if (g_BYTE_00626b4c == 0) {
     BVar1 = SetConsoleCtrlHandler(FUN_005cd1b0,1);
     if (BVar1 != 0) {
-      DAT_00626b4c = '\x01';
+      g_BYTE_00626b4c = 1;
     }
   }
-  return DAT_00626b4c;
+  return g_BYTE_00626b4c;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_gore_cpp_CGore_save_FUN_004cf0c0(CGore *this_ptr,_FILE *file_handle)
 
 {
@@ -18,24 +16,24 @@ int __cdecl core_gore_cpp_CGore_save_FUN_004cf0c0(CGore *this_ptr,_FILE *file_ha
   
   _fprintf(file_handle,"--- Gore ---\n");
   iVar2 = 0;
-  _fprintf(file_handle,&DAT_005c47a7);
-  if (0 < _DAT_01d4a940) {
-    this_ptr_00 = (CBloodPool *)0x1d4a944;
+  _fprintf(file_handle,"%d\n");
+  if (0 < g_INT_01d4a940) {
+    this_ptr_00 = g_CBloodPool_ARRAY_01d4a944;
     do {
       iVar2 = iVar2 + 1;
       core_gore_cpp_CBloodPool_save_FUN_004ce0f0(this_ptr_00,file_handle);
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar2 < _DAT_01d4a940);
+    } while (iVar2 < g_INT_01d4a940);
   }
   iVar1 = 0;
-  iVar2 = _fprintf(file_handle,&DAT_005c47ab);
-  if (0 < _DAT_01d276b8) {
-    this_ptr_01 = (CBloodSplat *)0x1d276bc;
+  iVar2 = _fprintf(file_handle,"%d\n");
+  if (0 < g_INT_01d276b8) {
+    this_ptr_01 = g_CBloodSplat_ARRAY_01d276bc;
     do {
       iVar1 = iVar1 + 1;
       iVar2 = core_gore_cpp_CBloodSplat_save_FUN_004cdbe0(this_ptr_01,file_handle);
       this_ptr_01 = this_ptr_01 + 1;
-    } while (iVar1 < _DAT_01d276b8);
+    } while (iVar1 < g_INT_01d276b8);
   }
   return iVar2;
 }

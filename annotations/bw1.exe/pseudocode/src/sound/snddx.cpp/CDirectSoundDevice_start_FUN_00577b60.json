@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 160,
+    "complexity_score": 146,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 8,
+    "pseudocode_lines": 56,
+    "suspect_count": 7,
     "suspect_types": [
       "bitcast_double_pair",
+      "signed_shift_global_idiom",
       "stack_param",
-      "stack_ref",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 182
+    "total_lines": 183
   },
   "cross_references": [],
   "function": {
@@ -67,8 +66,8 @@
     },
     {
       "addr": "005f4cb3",
-      "name": "s_Position_secondary_buffe_005f4cb2+1",
-      "type": "undefined4",
+      "name": "s_Position_secondary_buffe_005f4cb3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -79,56 +78,56 @@
     },
     {
       "addr": "005f4cef",
-      "name": "DAT_005f4cef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f4cef",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "02c81d9c",
-      "name": "DAT_02c81d9c",
-      "type": "undefined4",
+      "name": "g_IDirectSoundBuffer_PTR_02c81d9c",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02c81da8",
-      "name": "DAT_02c81da8",
-      "type": "undefined4",
+      "name": "g_INT_02c81da8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81dac",
-      "name": "DAT_02c81dac",
-      "type": "undefined4",
+      "name": "g_INT_02c81dac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81db0",
-      "name": "DAT_02c81db0",
-      "type": "undefined4",
+      "name": "g_INT_02c81db0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81db4",
-      "name": "DAT_02c81db4",
-      "type": "undefined4",
+      "name": "g_INT_02c81db4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81db8",
-      "name": "DAT_02c81db8",
-      "type": "undefined4",
+      "name": "g_INT_02c81db8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81dbc",
-      "name": "DAT_02c81dbc",
-      "type": "undefined4",
+      "name": "g_INT_02c81dbc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c81dc0",
-      "name": "DAT_02c81dc0",
-      "type": "undefined4",
+      "name": "g_INT_02c81dc0",
+      "type": "int",
       "value": null
     }
   ],
@@ -226,16 +225,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_fffffcd0",
       "severity": "moderate",
       "text": "uint in_stack_fffffcd0;",
@@ -243,7 +234,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_fffffcd0",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_fffffcd0,fStack_10)));",
@@ -251,7 +242,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 34,
+      "line": 32,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_fffffcd0,fStack_10)));",
@@ -259,27 +250,11 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 37,
       "match": "&stack0xfffffcd0",
       "severity": "moderate",
       "text": "format = &stack0xfffffcd0;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02c81d9c + 0x34))(_DAT_02c81d9c,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02c81d9c + 0x30))(_DAT_02c81d9c,0,0,1);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",
@@ -288,6 +263,22 @@
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffcd0,\"DirectSux: Unable to %s.  (%s)\");",
       "type": "stack_ref"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 18,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_INT_02c81da8 + (g_INT_02c81da8 >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 19,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_INT_02c81da8 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c81db4 * g_INT_02c81db0;",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "vtable_info": {

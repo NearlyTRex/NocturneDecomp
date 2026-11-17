@@ -28,8 +28,8 @@
 ;   core_box.cpp_CBox_setupN_FUN_0041b030 at 0041b189
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7371
-;   undefined4 DAT_005b7379
+;   double g_DOUBLE_005b7371 = 0.03125
+;   double g_DOUBLE_005b7379 = 0.0833333333333333
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
@@ -77,7 +77,7 @@ section .text
     ADD ESP,0x8                         ; 0041b225
     FMUL float ptr [EBP + 0xa4]         ; 0041b228
     FLD float ptr [ESP + 0x5c]          ; 0041b22e
-    FMUL double ptr [0x005b7371]        ; 0041b232 | DAT_005b7371
+    FMUL double ptr [0x005b7371]        ; 0041b232 | g_DOUBLE_005b7371
     FLD float ptr [EBP + 0xac]          ; 0041b238
     FMUL ST0                            ; 0041b23e
     FLD float ptr [EBP + 0xac]          ; 0041b240
@@ -88,7 +88,7 @@ section .text
     FADDP ST6,ST0                       ; 0041b252
     FXCH ST2                            ; 0041b254
     FST float ptr [EBP + 0x94]          ; 0041b256
-    FLD double ptr [0x005b7379]         ; 0041b25c | DAT_005b7379
+    FLD double ptr [0x005b7379]         ; 0041b25c | g_DOUBLE_005b7379
     FXCH                                ; 0041b262
     FMUL ST1                            ; 0041b264
     FXCH ST3                            ; 0041b266

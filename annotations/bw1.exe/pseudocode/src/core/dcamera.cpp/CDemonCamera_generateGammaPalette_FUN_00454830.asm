@@ -16,14 +16,14 @@
 ;   core_set.cpp_CDemonSet_setGamma_FUN_00555830 at 00555843
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7a0f
-;   undefined4 DAT_005d7a17
-;   undefined4 DAT_005d7a1f
-;   undefined4 DAT_00611230
-;   undefined4 DAT_00611234
-;   undefined4 DAT_00611238
-;   undefined4 DAT_00b8189c
-;   undefined4 DAT_00b8199c
+;   double g_DOUBLE_005d7a0f = 0.0000152587890625
+;   double g_DOUBLE_005d7a17 = 0.00392156862745098
+;   double g_DOUBLE_005d7a1f = 255
+;   int g_INT_00611230 = 0x40
+;   int g_INT_00611234 = 0x40
+;   int g_INT_00611238 = 0x40
+;   uint[256] g_UINT_ARRAY_00b8189c
+;   undefined4 g_UINT_ARRAY_00b8189c[64]
 ;
 ; Called Functions:
 ;   crt_math.c_pow_FUN_005c18f4
@@ -42,13 +42,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 00454837
     MOV dword ptr [EBP + -0x4],EAX      ; 0045483a
     FILD dword ptr [EBP + -0x4]         ; 0045483d
-    FMUL double ptr [0x005d7a0f]        ; 00454840 | DAT_005d7a0f
+    FMUL double ptr [0x005d7a0f]        ; 00454840 | g_DOUBLE_005d7a0f
     XOR EDX,EDX                         ; 00454846
     XOR ECX,ECX                         ; 00454848
     FSTP float ptr [EBP + -0x8]         ; 0045484a
-    FLD double ptr [0x005d7a1f]         ; 0045484d | DAT_005d7a1f
+    FLD double ptr [0x005d7a1f]         ; 0045484d | g_DOUBLE_005d7a1f
     FLD float ptr [EBP + -0x8]          ; 00454853
-    FLD double ptr [0x005d7a17]         ; 00454856 | DAT_005d7a17
+    FLD double ptr [0x005d7a17]         ; 00454856 | g_DOUBLE_005d7a17
     MOV dword ptr [EBP + -0x4],EDX      ; 0045485c
         ;   Label: LAB_0045485c
     FILD dword ptr [EBP + -0x4]         ; 0045485f
@@ -72,20 +72,20 @@ section .text
     ADD ECX,0x4                         ; 0045488d
     OR EAX,EBX                          ; 00454890
     INC EDX                             ; 00454892
-    MOV dword ptr [ECX + 0xb81898],EAX  ; 00454893 | DAT_00b8189c
+    MOV dword ptr [ECX + 0xb81898],EAX  ; 00454893 | g_UINT_ARRAY_00b8189c
     CMP EDX,0x100                       ; 00454899
     JL 0x0045485c                       ; 0045489f
         ;   XREF to: 0045485c (CONDITIONAL_JUMP)  ; LAB_0045485c
-    MOV EAX,[0x00611238]                ; 004548a1 | DAT_00611238
-    MOV EAX,dword ptr [EAX*0x4 + 0xb8189c] ; 004548a6 | DAT_00b8199c
+    MOV EAX,[0x00611238]                ; 004548a1 | g_INT_00611238
+    MOV EAX,dword ptr [EAX*0x4 + 0xb8189c] ; 004548a6 | g_UINT_ARRAY_00b8189c[64]
     AND EAX,0xff                        ; 004548ad
     PUSH EAX                            ; 004548b2
-    MOV EAX,[0x00611234]                ; 004548b3 | DAT_00611234
-    MOV EAX,dword ptr [EAX*0x4 + 0xb8189c] ; 004548b8 | DAT_00b8199c
+    MOV EAX,[0x00611234]                ; 004548b3 | g_INT_00611234
+    MOV EAX,dword ptr [EAX*0x4 + 0xb8189c] ; 004548b8 | g_UINT_ARRAY_00b8189c[64]
     AND EAX,0xff                        ; 004548bf
     PUSH EAX                            ; 004548c4
-    MOV EAX,[0x00611230]                ; 004548c5 | DAT_00611230
-    MOV EAX,dword ptr [EAX*0x4 + 0xb8189c] ; 004548ca | DAT_00b8199c
+    MOV EAX,[0x00611230]                ; 004548c5 | g_INT_00611230
+    MOV EAX,dword ptr [EAX*0x4 + 0xb8189c] ; 004548ca | g_UINT_ARRAY_00b8189c[64]
     FSTP ST0                            ; 004548d1
     AND EAX,0xff                        ; 004548d3
     FSTP ST0                            ; 004548d8

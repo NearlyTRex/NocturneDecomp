@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_texlist_cpp_CTextureList_load_FUN_005960d0(CTextureList *this_ptr,char *filename)
 
 {
@@ -52,11 +50,11 @@ void __cdecl core_texlist_cpp_CTextureList_load_FUN_005960d0(CTextureList *this_
   pcVar7 = (char *)0x0;
 LAB_00596120:
   if (pcVar7 == (char *)0x0) {
-    _DAT_01d1d400 = "..\\core\\texlist.cpp";
-    _DAT_01d1d404 = 0x61;
+    g_CHAR_PTR_01d1d400 = "..\\core\\texlist.cpp";
+    g_INT_01d1d404 = 0x61;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureList::load - No extension found");
   }
-  pcVar6 = &DAT_005f77f7;
+  pcVar6 = ".tex";
   do {
     cVar1 = *pcVar6;
     *pcVar7 = cVar1;
@@ -66,13 +64,13 @@ LAB_00596120:
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  local_2c = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005f77ff,local_12c,&DAT_005f77fc);
+  local_2c = engine_dosio_cpp_getFile_FUN_00479180("data",local_12c,"rt");
   if (local_2c == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\core\\texlist.cpp";
-    _DAT_01d1d404 = 0x6a;
+    g_CHAR_PTR_01d1d400 = "..\\core\\texlist.cpp";
+    g_INT_01d1d404 = 0x6a;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureList::load - Bad filename!");
   }
-  _fscanf(local_2c,&DAT_005f783b);
+  _fscanf(local_2c,"%d\n");
   local_1c = 0;
   if (this_ptr->texture_count < 1) {
 LAB_0059632c:
@@ -94,7 +92,7 @@ LAB_0059632c:
   local_20 = this_ptr->texture_entries[0].texture_name;
   local_24 = this_ptr;
 LAB_005961e3:
-  _fscanf(local_2c,&DAT_005f783f);
+  _fscanf(local_2c,"%s\n");
   pcVar7 = local_12c;
   do {
     pcVar6 = pcVar7;

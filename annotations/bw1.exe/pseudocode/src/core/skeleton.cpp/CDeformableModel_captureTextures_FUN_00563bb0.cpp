@@ -26,7 +26,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00563bb0(CDe
       if (0 < this_ptr->num_textures) {
         do {
           iVar1 = iVar1 + 1;
-          engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);
+          engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
+                    (g_CDemonRenderer_PTR_00612560,texture);
           texture = texture + 3;
         } while (iVar1 < this_ptr->num_textures);
       }

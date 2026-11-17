@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 42,
+    "complexity_score": 11,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 31
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
   },
   "cross_references": [
     {
@@ -51,8 +48,8 @@
   "globals": [
     {
       "addr": "01b2efdc",
-      "name": "DAT_01b2efdc",
-      "type": "undefined4",
+      "name": "g_INT_01b2efdc",
+      "type": "int",
       "value": null
     }
   ],
@@ -147,22 +144,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01b687e0",
-      "severity": "mild",
-      "text": "} while (this_ptr != (CKeyFramedModel *)&DAT_01b687e0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

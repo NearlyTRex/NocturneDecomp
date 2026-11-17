@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CStake_spawn_FUN_004acb60(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal)
 
 {
@@ -57,7 +55,7 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_004acb60(CStake *this_ptr,CVector3f 
   *(uint *)((int)&local_84 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        *(uint *)((int)&local_54 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   local_20[2] = (surface_normal->z * local_84.z +
-                surface_normal->x * local_84.x + surface_normal->y * local_84.y) * _DAT_005df1d8;
+                surface_normal->x * local_84.x + surface_normal->y * local_84.y) * 2.0f;
   local_90 = surface_normal->x * local_20[2];
   local_8c = surface_normal->y * local_20[2];
   local_88 = surface_normal->z * local_20[2];
@@ -91,7 +89,7 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_004acb60(CStake *this_ptr,CVector3f 
   }
   this_ptr->active = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                     ((CKeyFramedModelInstance *)0x1c570b8);
+                     (&g_CKeyFramedModelInstance_01c570b8);
   pCVar3 = &pCVar1->bounds;
   pfVar4 = &local_cc;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {

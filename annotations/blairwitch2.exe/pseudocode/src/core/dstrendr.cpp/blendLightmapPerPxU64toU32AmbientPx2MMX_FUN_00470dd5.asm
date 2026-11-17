@@ -14,12 +14,12 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820 at 00442b76
 ;
 ; Referenced Globals:
-;   undefined8 DAT_00611318
-;   undefined8 DAT_00611320
-;   undefined4 DAT_00612880
-;   undefined4 DAT_00613078
-;   undefined4 DAT_00b6639c
-;   undefined4 DAT_01c38b5c
+;   qword g_QWORD_00611318 = 0x4000400040004
+;   qword g_QWORD_00611320 = 0xc000c000c000c
+;   ushort[2048] g_USHORT_ARRAY_00612880
+;   undefined4 g_USHORT_ARRAY_00612880[1020]
+;   uint[256] g_UINT_ARRAY_00b6639c
+;   ulong g_ULONG_01c38b5c
 ;
 ; *****************************************************************************
 
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00470de4
     MOV EBP,dword ptr [EBP + 0x14]      ; 00470de7
     PXOR MM7,MM7                        ; 00470dea
-    MOVD MM5,dword ptr [0x01c38b5c]     ; 00470ded | DAT_01c38b5c
+    MOVD MM5,dword ptr [0x01c38b5c]     ; 00470ded | g_ULONG_01c38b5c
     PUNPCKLBW MM5,MM7                   ; 00470df4
     PSLLW MM5,0x6                       ; 00470df7
     MOV EAX,dword ptr [ESI]             ; 00470dfb
@@ -123,21 +123,21 @@ section .text
     MOVZX EDX,byte ptr [EBX]            ; 00470fce
         ;   Label: LAB_00470fce
     MOVQ MM0,qword ptr [ESI]            ; 00470fd1
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 00470fd4 | DAT_00b6639c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 00470fd4 | g_UINT_ARRAY_00b6639c
     MOVZX EAX,byte ptr [EBP]            ; 00470fdc
     PUNPCKLBW MM0,MM7                   ; 00470fe0
     SHR EDX,0x1                         ; 00470fe3
     PUNPCKLBW MM2,MM7                   ; 00470fe5
     ADD EAX,EDX                         ; 00470fe8
     PMULLW MM0,MM2                      ; 00470fea
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00470fed | DAT_00612880
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00470fed | g_USHORT_ARRAY_00612880
     MOVQ MM2,MM3                        ; 00470ff5
     MOVQ MM4,MM5                        ; 00470ff8
-    PXOR MM2,qword ptr [0x00613078]     ; 00470ffb | DAT_00613078
+    PXOR MM2,qword ptr [0x00613078]     ; 00470ffb | g_USHORT_ARRAY_00612880[1020]
     PMULHW MM0,MM2                      ; 00471002
     PMULHW MM4,MM3                      ; 00471005
     PADDW MM0,MM4                       ; 00471008
-    PADDW MM0,qword ptr [0x00611318]    ; 0047100b | DAT_00611318
+    PADDW MM0,qword ptr [0x00611318]    ; 0047100b | g_QWORD_00611318
     PSRLW MM0,0x4                       ; 00471012
     PACKUSWB MM0,MM7                    ; 00471016
     MOVD dword ptr [EDI],MM0            ; 00471019
@@ -147,21 +147,21 @@ section .text
     ADD EDI,0x4                         ; 00471021
     MOVZX EDX,byte ptr [EBX]            ; 00471024
     MOVQ MM0,qword ptr [ESI]            ; 00471027
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 0047102a | DAT_00b6639c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 0047102a | g_UINT_ARRAY_00b6639c
     MOVZX EAX,byte ptr [EBP]            ; 00471032
     PUNPCKLBW MM0,MM7                   ; 00471036
     SHR EDX,0x1                         ; 00471039
     PUNPCKLBW MM2,MM7                   ; 0047103b
     ADD EAX,EDX                         ; 0047103e
     PMULLW MM0,MM2                      ; 00471040
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00471043 | DAT_00612880
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00471043 | g_USHORT_ARRAY_00612880
     MOVQ MM2,MM3                        ; 0047104b
     MOVQ MM4,MM5                        ; 0047104e
-    PXOR MM2,qword ptr [0x00613078]     ; 00471051 | DAT_00613078
+    PXOR MM2,qword ptr [0x00613078]     ; 00471051 | g_USHORT_ARRAY_00612880[1020]
     PMULHW MM0,MM2                      ; 00471058
     PMULHW MM4,MM3                      ; 0047105b
     PADDW MM0,MM4                       ; 0047105e
-    PADDW MM0,qword ptr [0x00611320]    ; 00471061 | DAT_00611320
+    PADDW MM0,qword ptr [0x00611320]    ; 00471061 | g_QWORD_00611320
     PSRLW MM0,0x4                       ; 00471068
     PACKUSWB MM0,MM7                    ; 0047106c
     MOVD dword ptr [EDI],MM0            ; 0047106f

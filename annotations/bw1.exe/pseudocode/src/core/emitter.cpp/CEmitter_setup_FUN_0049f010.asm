@@ -7,7 +7,7 @@
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d06ab4
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
@@ -76,7 +76,7 @@ section .text
     ADD ESP,0x4                         ; 0049f0b8
     JMP 0x0049f039                      ; 0049f0bb
         ;   XREF to: 0049f039 (UNCONDITIONAL_JUMP)  ; LAB_0049f039
-    MOV EAX,[0x01d06ab4]                ; 0049f0c0 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0049f0c0 | g_INT_01d06ab4
         ;   Label: LAB_0049f0c0
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0049f0c5
     MOV dword ptr [EBX + 0x3f0],EAX     ; 0049f0cc

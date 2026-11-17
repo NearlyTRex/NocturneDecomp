@@ -70,14 +70,14 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a1a86
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0908
-;   undefined4 DAT_005c0910
-;   undefined4 DAT_005c0918
-;   undefined4 DAT_005c0920
-;   undefined4 DAT_005c0928
-;   undefined4 DAT_005c0930
-;   undefined4 DAT_005c0938
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005c0908 = 10
+;   double g_DOUBLE_005c0910 = 0.5
+;   double g_DOUBLE_005c0918 = 65535
+;   float g_FLOAT_005c0920 = 15
+;   double g_DOUBLE_005c0928 = -1
+;   double g_DOUBLE_005c0930 = 5
+;   float g_FLOAT_005c0938 = 2
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -144,7 +144,7 @@ section .text
     MOV EDX,ECX                         ; 0049fe6d
     LEA EBX,[ECX + 0xc0]                ; 0049fe6f
     FLD float ptr [EBP + 0x62]          ; 0049fe75
-    FLD float ptr [0x005c0908]          ; 0049fe78 | DAT_005c0908
+    FLD float ptr [0x005c0908]          ; 0049fe78 | g_FLOAT_005c0908
     FLD float ptr [EDX]                 ; 0049fe7e
         ;   Label: LAB_0049fe7e
     FMUL ST1                            ; 0049fe80
@@ -206,7 +206,7 @@ section .text
     FMUL ST0                            ; 0049ff04
     FADDP                               ; 0049ff06
     FSQRT                               ; 0049ff08
-    FMUL float ptr [0x005c0908]         ; 0049ff0a | DAT_005c0908
+    FMUL float ptr [0x005c0908]         ; 0049ff0a | g_FLOAT_005c0908
     FLD float ptr [EBP + 0x62]          ; 0049ff10
     FXCH                                ; 0049ff13
     FMUL ST1                            ; 0049ff15
@@ -257,8 +257,8 @@ section .text
     JNZ 0x004a00a5                      ; 0049ff92
         ;   XREF to: 004a00a5 (CONDITIONAL_JUMP)  ; LAB_004a00a5
     FLD float ptr [EAX + 0x14]          ; 0049ff98
-    FMUL double ptr [0x005c0910]        ; 0049ff9b | DAT_005c0910
-    FMUL double ptr [0x005c0918]        ; 0049ffa1 | DAT_005c0918
+    FMUL double ptr [0x005c0910]        ; 0049ff9b | g_DOUBLE_005c0910
+    FMUL double ptr [0x005c0918]        ; 0049ffa1 | g_DOUBLE_005c0918
     CALL crt_math.c_round_FUN_005a3120  ; 0049ffa7
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBP + 0x4e]        ; 0049ffac
@@ -273,7 +273,7 @@ section .text
     PUSH EAX                            ; 0049ffc8
     LEA EAX,[EBP + -0x32]               ; 0049ffc9
     PUSH EAX                            ; 0049ffcc
-    MOV EDX,dword ptr [0x005fc5a0]      ; 0049ffcd | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 0049ffcd | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 0049ffd3
     CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0049ffd4
         ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
@@ -366,7 +366,7 @@ section .text
     PUSH EAX                            ; 004a00c0
     LEA EAX,[EBP + -0x32]               ; 004a00c1
     PUSH EAX                            ; 004a00c4
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004a00c5 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004a00c5 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004a00cb
     JMP 0x0049ffd4                      ; 004a00cc
         ;   XREF to: 0049ffd4 (UNCONDITIONAL_JUMP)  ; LAB_0049ffd4
@@ -423,7 +423,7 @@ section .text
     MOV dword ptr [EBP + -0x22],EBX     ; 004a0156
     FLD float ptr [EAX + 0x1b4]         ; 004a0159
     FST double ptr [EBP + 0x42]         ; 004a015f
-    FADD double ptr [0x005c0928]        ; 004a0162 | DAT_005c0928
+    FADD double ptr [0x005c0928]        ; 004a0162 | g_DOUBLE_005c0928
     FXCH                                ; 004a0168
     FSTP double ptr [EBP + 0x3a]        ; 004a016a
     FCOMP double ptr [EBP + 0x3a]       ; 004a016d
@@ -469,15 +469,15 @@ section .text
     JNZ 0x004a037a                      ; 004a01e1
         ;   XREF to: 004a037a (CONDITIONAL_JUMP)  ; LAB_004a037a
     FLD float ptr [EAX + 0x14]          ; 004a01e7
-    FMUL float ptr [0x005c0920]         ; 004a01ea | DAT_005c0920
-    FMUL double ptr [0x005c0910]        ; 004a01f0 | DAT_005c0910
+    FMUL float ptr [0x005c0920]         ; 004a01ea | g_FLOAT_005c0920
+    FMUL double ptr [0x005c0910]        ; 004a01f0 | g_DOUBLE_005c0910
     MOV ESI,0x66                        ; 004a01f6
     LEA EDX,[EBP + 0xffffff56]          ; 004a01fb
     MOV EDI,dword ptr [EBP + 0x6a]      ; 004a0201
     MOV EAX,dword ptr [EBP + 0x6a]      ; 004a0204
     MOV dword ptr [EBP + -0x7a],ESI     ; 004a0207
     PUSH EDX                            ; 004a020a
-    FADD double ptr [0x005c0930]        ; 004a020b | DAT_005c0930
+    FADD double ptr [0x005c0930]        ; 004a020b | g_DOUBLE_005c0930
     PUSH EDI                            ; 004a0211
     FSTP float ptr [EBP + 0xffffff5a]   ; 004a0212
     MOV EAX,dword ptr [EAX + 0x154]     ; 004a0218
@@ -496,7 +496,7 @@ section .text
     PUSH 0x3f800000                     ; 004a0243
     MOV dword ptr [EBP + -0x1a],EAX     ; 004a0248
     PUSH 0x0                            ; 004a024b
-    FADD float ptr [0x005c0938]         ; 004a024d | DAT_005c0938
+    FADD float ptr [0x005c0938]         ; 004a024d | g_FLOAT_005c0938
     MOV EAX,dword ptr [EDI + 0x28]      ; 004a0253
     PUSH 0x0                            ; 004a0256
     MOV dword ptr [EBP + -0x12],EAX     ; 004a0258
@@ -587,7 +587,7 @@ section .text
     PUSH EAX                            ; 004a0357
     LEA EAX,[EBP + 0x22]                ; 004a0358
     PUSH EAX                            ; 004a035b
-    MOV EDI,dword ptr [0x005fc5a0]      ; 004a035c | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 004a035c | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 004a0362
     INC EBX                             ; 004a0363
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 004a0364

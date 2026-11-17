@@ -18,9 +18,9 @@
 ;   void* PTR_LAB_005398b4 = 0053992b
 ;   TerminatedCString s_core_setdir_cpp_005e6025
 ;   TerminatedCString s_Hell_froze_005e6038
-;   undefined4 DAT_005e6045
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005e6045 = 0.0555555555555556
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -118,8 +118,8 @@ section .text
     MOV ESI,0x5e6025                    ; 005399c4 | = "..\\core\\setdir.cpp"
     MOV EDI,0x3aa                       ; 005399c9
     PUSH 0x5e6038                       ; 005399ce | = "Hell froze"
-    MOV dword ptr [0x01d046a0],ESI      ; 005399d3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005399d9 | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 005399d3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 005399d9 | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005399df
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005399e4
@@ -136,7 +136,7 @@ section .text
         ;   Label: LAB_00539b85
     FLD float ptr [EDX + 0x144]         ; 00539b8c
     PUSH ESI                            ; 00539b92
-    FMUL double ptr [0x005e6045]        ; 00539b93 | DAT_005e6045
+    FMUL double ptr [0x005e6045]        ; 00539b93 | g_DOUBLE_005e6045
     SUB ESP,0x4                         ; 00539b99
     FSTP float ptr [ESP]                ; 00539b9c
     PUSH 0x30                           ; 00539b9f

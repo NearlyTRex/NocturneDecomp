@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger *this_ptr,int hand_index,float delta_time)
 
@@ -104,14 +103,14 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
     if (((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (local_4c == WEAPON_TYPE_GUN)) {
       return;
     }
-    local_5c = _DAT_0264be64;
+    local_5c = g_INT_ARRAY_0264be30[0xd];
     local_30 = -1.3089969;
     local_34 = 0.5235988;
-    iVar7 = _DAT_0264be3c;
+    iVar7 = g_INT_ARRAY_0264be30[3];
   }
   else {
-    local_5c = _DAT_0264be68;
-    iVar7 = _DAT_0264be40;
+    local_5c = g_INT_ARRAY_0264be30[0xe];
+    iVar7 = g_INT_ARRAY_0264be30[4];
     if (local_4c == WEAPON_TYPE_GUN) {
       local_34 = 1.3089969;
       local_30 = -0.5235988;
@@ -121,15 +120,15 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
       local_30 = -0.5235988;
     }
   }
-  fVar8 = (this_ptr->base).player_input.look_up_down_speed * _DAT_005ebc65 * (float)_DAT_005ebc6d *
-          delta_time + local_28->aim_pitch;
+  fVar8 = (this_ptr->base).player_input.look_up_down_speed * 3.141593f *
+          (float)2 * delta_time + local_28->aim_pitch;
   local_28->aim_yaw = 0.0;
   local_28->aim_pitch = fVar8;
-  if (fVar8 < 0xBF860A92) {
-    local_28->aim_pitch = 0xBF860A92;
+  if (fVar8 < -1.047198f) {
+    local_28->aim_pitch = -1.047198f;
   }
-  if (0x3F9C61AA < local_28->aim_pitch) {
-    local_28->aim_pitch = 0x3F9C61AA;
+  if (1.22173f < local_28->aim_pitch) {
+    local_28->aim_pitch = 1.22173f;
   }
   if (local_28->target_yaw < local_30) {
     local_28->target_yaw = local_30;
@@ -254,7 +253,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
             *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + 4) = afStack_9c[(uint)bVar9 * -2];
             *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
                  afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-            if ((0.0 < (double)CStack_e8.z) && ((double)CStack_e8.z <= _DAT_005ebc95)) {
+            if ((0.0 < (double)CStack_e8.z) && ((double)CStack_e8.z <= 30)) {
               core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
                         (&CStack_e8,&CStack_13c);
               fVar8 = CStack_e8.z;
@@ -264,7 +263,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
               ;
               afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
                    *(float *)((int)&CStack_13c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-              if (fVar8 < (float)_DAT_005ebc9d) {
+              if (fVar8 < (float)10) {
                 fStack_21c = 1.5707964;
               }
               if (((ABS(fStack_88) <= fStack_21c) && (local_30 <= fStack_84)) &&
@@ -275,8 +274,8 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
                 CStack_e8.y = CStack_e8.y * fVar1;
                 CStack_e8.x = CStack_e8.x * fVar1;
                 CStack_e8.z = CStack_e8.z * fVar1;
-                fVar8 = fVar8 * (float)_DAT_005ebc75 +
-                        ((float)_DAT_005ebc6d -
+                fVar8 = fVar8 * (float)0.033333333333333298 +
+                        ((float)2 -
                         (CStack_e8.z * afStack_174[1] +
                         CStack_e8.x * fStack_178 + CStack_e8.y * afStack_174[0]));
                 if (fVar8 < fStack_24) {
@@ -305,11 +304,11 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
       iStack_40 = iStack_40 + 4;
     }
   }
-  dVar2 = _DAT_005ebc7d;
+  dVar2 = 1.5;
   if (local_4c != WEAPON_TYPE_GUN) {
-    dVar2 = _DAT_005ebc85;
+    dVar2 = 0.5;
   }
-  fStack_48 = delta_time * _DAT_005ebc65 * (float)dVar2;
+  fStack_48 = delta_time * 3.141593f * (float)dVar2;
   fStack_54 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_38 - local_28->target_yaw);
   fStack_18 = fStack_54;
   fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_3c - local_28->target_pitch);
@@ -334,8 +333,8 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger 
   local_28->target_pitch = fVar8;
   local_28->kickback_factor = 1.0;
   if (((local_28->aim_lock_state == 1) &&
-      (ABS(local_28->target_yaw - fStack_38) < (float)_DAT_005ebc8d)) &&
-     (ABS(local_28->target_pitch - fStack_3c) < (float)_DAT_005ebc8d)) {
+      (ABS(local_28->target_yaw - fStack_38) < (float)0.01)) &&
+     (ABS(local_28->target_pitch - fStack_3c) < (float)0.01)) {
     local_28->aim_lock_state = 2;
     return;
   }

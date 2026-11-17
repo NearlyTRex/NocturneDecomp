@@ -22,16 +22,16 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_005b4300(CBox *this_ptr,_FILE *f
   
   bVar1 = 0;
   _fgets(local_150,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f1340);
+  _fscanf(file_handle," %d\n");
   _fgets(local_150,0xff,file_handle);
   _fscanf(file_handle," %f,%f,%f\n");
   _fscanf(file_handle," %f,%f,%f\n");
   _fscanf(file_handle," %f,%f,%f\n");
-  _fscanf(file_handle,&DAT_005f1366);
+  _fscanf(file_handle," %f\n");
   core_box_cpp_CBox_setupCorners_FUN_005b1c80(this_ptr,&local_20,&local_44,&local_38,local_10);
   _fscanf(file_handle," %f,%f,%f\n");
   _fscanf(file_handle," %f,%f,%f\n");
-  _fscanf(file_handle,&DAT_005f1381);
+  _fscanf(file_handle," %d\n");
   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
             (&this_ptr->rotation_matrix,&this_ptr->linear_velocity_local,&local_50);
   local_2c = local_50.x;

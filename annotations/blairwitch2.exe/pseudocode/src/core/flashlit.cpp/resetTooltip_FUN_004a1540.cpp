@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flashlit_cpp_resetTooltip_FUN_004a1540(void)
 
 {
-  DAT_01caf4a0 = 0;
-  DAT_00616040 = 0xffffffff;
-  _DAT_01caf568 = 0;
-  _DAT_01caf488 = 0;
+  g_CHAR_01caf4a0 = '\0';
+  g_INT_00616040 = -1;
+  g_INT_01caf568 = 0;
+  g_INT_01caf488 = 0;
   return;
 }

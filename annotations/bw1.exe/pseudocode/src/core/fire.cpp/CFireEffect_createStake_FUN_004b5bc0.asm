@@ -29,9 +29,9 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004b5b88 = 004b5be0
 ;   TerminatedCString s_a_wood_wav_005df604
-;   undefined4 DAT_006236b8
-;   undefined4 DAT_01c726a8
-;   undefined4 DAT_01c726ac
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
+;   int g_INT_01c726a8
+;   int g_INT_01c726ac
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
@@ -113,7 +113,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x84]      ; 004b5c70
     PUSH EBX                            ; 004b5c77
     LEA EAX,[ESP + 0x60]                ; 004b5c78
-    MOV EDX,dword ptr [0x01c726ac]      ; 004b5c7c | DAT_01c726ac
+    MOV EDX,dword ptr [0x01c726ac]      ; 004b5c7c | g_INT_01c726ac
     PUSH EAX                            ; 004b5c82
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b5c83
     ADD EAX,EDX                         ; 004b5c8a
@@ -125,16 +125,16 @@ section .text
     CALL core_fire.cpp_CStake_spawn_FUN_004acb60 ; 004b5c9a
         ;   XREF to: 004acb60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_spawn_FUN_004acb60(CStake * this_ptr, CVector3f * spawn_position, CVector3f * orientation_angles, CVector3f * surface_normal)
     ADD ESP,0x10                        ; 004b5c9f
-    MOV ESI,dword ptr [0x01c726ac]      ; 004b5ca2 | DAT_01c726ac
+    MOV ESI,dword ptr [0x01c726ac]      ; 004b5ca2 | g_INT_01c726ac
         ;   Label: LAB_004b5ca2
     INC ESI                             ; 004b5ca8
-    MOV dword ptr [0x01c726ac],ESI      ; 004b5ca9 | DAT_01c726ac
+    MOV dword ptr [0x01c726ac],ESI      ; 004b5ca9 | g_INT_01c726ac
     CMP ESI,0x100                       ; 004b5caf
     JL 0x004b5cbf                       ; 004b5cb5
         ;   XREF to: 004b5cbf (CONDITIONAL_JUMP)  ; LAB_004b5cbf
     XOR EBP,EBP                         ; 004b5cb7
-    MOV dword ptr [0x01c726ac],EBP      ; 004b5cb9 | DAT_01c726ac
-    MOV EAX,[0x01c726a8]                ; 004b5cbf | DAT_01c726a8
+    MOV dword ptr [0x01c726ac],EBP      ; 004b5cb9 | g_INT_01c726ac
+    MOV EAX,[0x01c726a8]                ; 004b5cbf | g_INT_01c726a8
         ;   Label: LAB_004b5cbf
     CMP EAX,0x100                       ; 004b5cc4
     JL 0x004b5d36                       ; 004b5cc9
@@ -157,7 +157,7 @@ section .text
     PUSH 0x5df604                       ; 004b5ce4 | = "a-wood?.wav"
     MOV EBP,dword ptr [ESP + 0x84]      ; 004b5ce9
     PUSH EBP                            ; 004b5cf0
-    MOV EAX,[0x006236b8]                ; 004b5cf1 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 004b5cf1 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 004b5cf6
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940 ; 004b5cf7
         ;   XREF to: 0057d940 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
@@ -165,7 +165,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x80]      ; 004b5cff
     PUSH EDX                            ; 004b5d06
     LEA EAX,[ESP + 0x5c]                ; 004b5d07
-    MOV EDX,dword ptr [0x01c726ac]      ; 004b5d0b | DAT_01c726ac
+    MOV EDX,dword ptr [0x01c726ac]      ; 004b5d0b | g_INT_01c726ac
     PUSH EAX                            ; 004b5d11
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b5d12
     ADD EAX,EDX                         ; 004b5d19
@@ -181,7 +181,7 @@ section .text
         ;   XREF to: 004b5ca2 (UNCONDITIONAL_JUMP)  ; LAB_004b5ca2
     LEA EDX,[EAX + 0x1]                 ; 004b5d36
         ;   Label: LAB_004b5d36
-    MOV dword ptr [0x01c726a8],EDX      ; 004b5d39 | DAT_01c726a8
+    MOV dword ptr [0x01c726a8],EDX      ; 004b5d39 | g_INT_01c726a8
     ADD ESP,0x64                        ; 004b5d3f
     POP EBP                             ; 004b5d42
     POP EDI                             ; 004b5d43

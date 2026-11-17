@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 235,
-    "complexity_score": 208,
+    "complexity_score": 119,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 10,
+    "pseudocode_lines": 94,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 328
+    "total_lines": 329
   },
   "cross_references": [
     {
@@ -137,8 +135,8 @@
   "globals": [
     {
       "addr": "005c37cd",
-      "name": "DAT_005c37cd",
-      "type": "undefined4",
+      "name": "s_rb_005c37cd",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -149,14 +147,14 @@
     },
     {
       "addr": "005c37de",
-      "name": "DAT_005c37de",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005c37de",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "005c37df",
-      "name": "DAT_005c37df",
-      "type": "undefined4",
+      "name": "s_rt_005c37df",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -167,8 +165,8 @@
     },
     {
       "addr": "005c37ea",
-      "name": "DAT_005c37ea",
-      "type": "undefined4",
+      "name": "s_Game_005c37ea",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -239,9 +237,9 @@
     },
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005fba60",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "005fe4b0",
@@ -257,62 +255,62 @@
     },
     {
       "addr": "00600530",
-      "name": "DAT_00600530",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00600530",
+      "type": "CDemonMission*",
+      "value": "01d81080"
     },
     {
       "addr": "01549aa8",
-      "name": "DAT_01549aa8",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa8",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c5b0e0",
-      "name": "DAT_01c5b0e0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c5b0e0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d225c8",
-      "name": "DAT_01d225c8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01d225c8",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01d225c9",
-      "name": "DAT_01d225c9",
+      "name": "g_CHAR_ARRAY_01d225c8+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d225ca",
-      "name": "DAT_01d225ca",
+      "name": "g_CHAR_ARRAY_01d225c8+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d225cb",
-      "name": "DAT_01d225cb",
+      "name": "g_CHAR_ARRAY_01d225c8+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d229f0",
-      "name": "DAT_01d229f0",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01d229f0",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01d22af0",
-      "name": "DAT_01d22af0",
-      "type": "undefined4",
+      "name": "g_INT_01d22af0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22af4",
-      "name": "DAT_01d22af4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22af4",
+      "type": "float",
       "value": null
     }
   ],
@@ -460,72 +458,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c37de",
-      "severity": "mild",
-      "text": "(&DAT_005c37de,\"blairhero.pod\",&DAT_005c37cd);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c37cd",
-      "severity": "mild",
-      "text": "(&DAT_005c37de,\"blairhero.pod\",&DAT_005c37cd);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005c37df",
-      "severity": "mild",
-      "text": "p_Var3 = _fopen(\"pod.ini\",&DAT_005c37df);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005c37ea",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_ctor_FUN_004d8a20(&local_320,\"system\\\\bw3.ini\",&DAT_005c37ea);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_01d229f0",
-      "severity": "mild",
-      "text": "DAT_01d229f0 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_01d225c8",
-      "severity": "mild",
-      "text": "iVar4 = _stricmp(&DAT_01d225c8,local_11c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_01d225c8",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_01d225c8;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 54,
+      "line": 52,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -533,7 +467,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 71,
+      "line": 69,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

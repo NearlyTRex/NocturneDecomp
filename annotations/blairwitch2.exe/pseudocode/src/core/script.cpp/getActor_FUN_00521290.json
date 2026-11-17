@@ -2,20 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 189,
+    "complexity_score": 83,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 10,
+    "pseudocode_lines": 68,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 252
+    "total_lines": 251
   },
   "cross_references": [
     {
@@ -113,8 +110,8 @@
     },
     {
       "addr": "005e2d27",
-      "name": "DAT_005e2d27",
-      "type": "undefined4",
+      "name": "s_anon_005e2d27",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -143,15 +140,15 @@
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_006141f0",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "0061b120",
@@ -161,8 +158,8 @@
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     },
     {
@@ -173,32 +170,32 @@
     },
     {
       "addr": "01e65100",
-      "name": "DAT_01e65100",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01e65100",
+      "type": "char[2048]",
       "value": null
     },
     {
       "addr": "01e65101",
-      "name": "DAT_01e65101",
+      "name": "g_CHAR_ARRAY_01e65100+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e65102",
-      "name": "DAT_01e65102",
+      "name": "g_CHAR_ARRAY_01e65100+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e65103",
-      "name": "DAT_01e65103",
+      "name": "g_CHAR_ARRAY_01e65100+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e6590c",
-      "name": "DAT_01e6590c",
-      "type": "undefined4",
+      "name": "g_INT_01e6590c",
+      "type": "int",
       "value": null
     }
   ],
@@ -406,80 +403,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01e65100",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_01e65100;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_01e65100",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e65100,\"Actor variable %s not defined, or doesn't reference an existing actor\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005e2d27",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(actor_specifier,&DAT_005e2d27);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_01e65100",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e65100,\"Can't use '$' actor specifier in multi-player\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 50,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01e65100",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e65100,\"Hero doesn't exist!!?!\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01e65100",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e65100,\"Actor \\\"%s\\\" does not exist.\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_01e65100",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e65100,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\");",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 17,
+      "line": 15,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6fa2
+;   double g_DOUBLE_005e6fa2 = -0.300000000000000
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
@@ -38,7 +38,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 005018f4
     LEA ESI,[ESP + 0x18]                ; 005018f8
     MOV EDI,EBX                         ; 005018fc
-    FADD double ptr [0x005e6fa2]        ; 005018fe | DAT_005e6fa2
+    FADD double ptr [0x005e6fa2]        ; 005018fe | g_DOUBLE_005e6fa2
     MOV dword ptr [ESP + 0x20],EAX      ; 00501904
     FSTP float ptr [ESP + 0x1c]         ; 00501908
     MOVSD ES:EDI,ESI                    ; 0050190c

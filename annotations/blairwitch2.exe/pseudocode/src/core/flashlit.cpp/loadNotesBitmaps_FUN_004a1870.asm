@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00616010
-;   undefined4 DAT_00616040
-;   undefined4 DAT_01cab9f0
-;   undefined4 DAT_01caf488
-;   undefined4 DAT_01caf4a0
-;   undefined4 DAT_01caf568
+;   int g_INT_00616010 = 0x1
+;   int g_INT_00616040 = -0x1
+;   int g_INT_01cab9f0
+;   int g_INT_01caf488
+;   char g_CHAR_01caf4a0
+;   int g_INT_01caf568
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -79,18 +79,18 @@ section .text
     XOR ECX,ECX                         ; 004a1907
     XOR AH,AH                           ; 004a1909
     PUSH ECX                            ; 004a190b
-    MOV byte ptr [0x01caf4a0],AH        ; 004a190c | DAT_01caf4a0
+    MOV byte ptr [0x01caf4a0],AH        ; 004a190c | g_CHAR_01caf4a0
     LEA EAX,[ESP + 0x4]                 ; 004a1912
     PUSH EAX                            ; 004a1916
     PUSH ECX                            ; 004a1917
     MOV EBX,0xffffffff                  ; 004a1918
     MOV EDX,0x1                         ; 004a191d
     PUSH ECX                            ; 004a1922
-    MOV dword ptr [0x00616040],EBX      ; 004a1923 | DAT_00616040
-    MOV dword ptr [0x00616010],EDX      ; 004a1929 | DAT_00616010
+    MOV dword ptr [0x00616040],EBX      ; 004a1923 | g_INT_00616040
+    MOV dword ptr [0x00616010],EDX      ; 004a1929 | g_INT_00616010
     PUSH 0x1cab7a8                      ; 004a192f
-    MOV dword ptr [0x01caf488],ECX      ; 004a1934 | DAT_01caf488
-    MOV dword ptr [0x01caf568],ECX      ; 004a193a | DAT_01caf568
+    MOV dword ptr [0x01caf488],ECX      ; 004a1934 | g_INT_01caf488
+    MOV dword ptr [0x01caf568],ECX      ; 004a193a | g_INT_01caf568
     CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 004a1940
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a1945
@@ -117,7 +117,7 @@ section .text
     XOR EBX,EBX                         ; 004a1995
     CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20 ; 004a1997
         ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(CAlphaBitmap * this_ptr, int value)
-    MOV EDI,dword ptr [0x01cab9f0]      ; 004a199c | DAT_01cab9f0
+    MOV EDI,dword ptr [0x01cab9f0]      ; 004a199c | g_INT_01cab9f0
     ADD ESP,0x8                         ; 004a19a2
     TEST EDI,EDI                        ; 004a19a5
     JLE 0x004a1a80                      ; 004a19a7
@@ -170,7 +170,7 @@ section .text
     ADD ESI,0x2e4                       ; 004a1a57
     INC EBX                             ; 004a1a5d
     MOV EAX,dword ptr [EAX + 0x1caf138] ; 004a1a5e
-    MOV ECX,dword ptr [0x01cab9f0]      ; 004a1a64 | DAT_01cab9f0
+    MOV ECX,dword ptr [0x01cab9f0]      ; 004a1a64 | g_INT_01cab9f0
     ADD EAX,0xa                         ; 004a1a6a
     ADD EDI,0x14                        ; 004a1a6d
     ADD EBP,EAX                         ; 004a1a70
@@ -241,7 +241,7 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0 ; 004a1b3f
         ;   XREF to: 0040d5a0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004a1b44
-    MOV dword ptr [0x00616010],EBX      ; 004a1b47 | DAT_00616010
+    MOV dword ptr [0x00616010],EBX      ; 004a1b47 | g_INT_00616010
     ADD ESP,0x508                       ; 004a1b4d
     POP EBP                             ; 004a1b53
     POP EDI                             ; 004a1b54

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CUnion * __cdecl core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
 
@@ -34,9 +33,9 @@ CUnion * __cdecl core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
   (this_ptr_01->base).base.walk_motion = 1;
   pcVar5 = (this_ptr_01->base).base.flinch_motion_name;
   (this_ptr_01->base).base.run_motion = 4;
-  fVar2 = _DAT_005ff8ec;
+  fVar2 = 25.0f;
   (this_ptr_01->base).base.animation_state = 0;
-  fVar3 = _DAT_005ff8f0;
+  fVar3 = 15.0f;
   (this_ptr_01->base).base.run_distance = 5.0;
   pcVar4 = "flinch";
   (this_ptr_01->base).base.can_flinch = 1;

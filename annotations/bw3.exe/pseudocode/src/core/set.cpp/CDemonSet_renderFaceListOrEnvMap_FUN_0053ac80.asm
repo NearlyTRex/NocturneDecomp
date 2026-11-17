@@ -13,9 +13,9 @@
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00548c70 at 00548da5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.suppress_set_geometry
 ;   undefined4 g_CGameInstance.render_mode
@@ -39,8 +39,8 @@ section .text
     CMP dword ptr [EAX + 0x218],0x0     ; 0053ac90 | g_CGameInstance.render_mode
     JZ 0x0053acac                       ; 0053ac97
         ;   XREF to: 0053acac (CONDITIONAL_JUMP)  ; LAB_0053acac
-    MOV EBX,dword ptr [0x005f2afc]      ; 0053ac99 | DAT_005f2afc
-    PUSH EBX                            ; 0053ac9f | DAT_01bdd7e4
+    MOV EBX,dword ptr [0x005f2afc]      ; 0053ac99 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBX                            ; 0053ac9f | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0053aca0
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0053aca5
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 0053acb5
     MOV ECX,dword ptr [ESP + 0x18]      ; 0053acb6
     PUSH ECX                            ; 0053acba
-    MOV EBX,dword ptr [0x005f2afc]      ; 0053acbb | DAT_005f2afc
-    PUSH EBX                            ; 0053acc1 | DAT_01bdd7e4
+    MOV EBX,dword ptr [0x005f2afc]      ; 0053acbb | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBX                            ; 0053acc1 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0 ; 0053acc2
         ;   XREF to: 0046dbd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)
     ADD ESP,0x10                        ; 0053acc7

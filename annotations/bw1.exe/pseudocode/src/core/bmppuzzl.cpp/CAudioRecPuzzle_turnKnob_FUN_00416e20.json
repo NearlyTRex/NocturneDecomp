@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 90,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 149
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -50,14 +47,14 @@
     },
     {
       "addr": "007c397c",
-      "name": "DAT_007c397c",
-      "type": "undefined4",
+      "name": "g_INT_007c397c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4353c",
-      "name": "DAT_01c4353c",
-      "type": "undefined4",
+      "name": "g_INT_01c4353c",
+      "type": "int",
       "value": null
     }
   ],
@@ -135,32 +132,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_007c397c",
-      "severity": "mild",
-      "text": "if (DAT_007c397c < _DAT_01c4353c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_007c397c",
-      "severity": "mild",
-      "text": "DAT_007c397c = _DAT_01c4353c;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

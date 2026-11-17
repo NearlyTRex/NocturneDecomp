@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00441ea0(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3f *output_ray)
 
 {
@@ -38,7 +36,7 @@ void __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00441ea0(CD
   aiStack_14[(uint)bVar3 * -2] = *(int *)((int)&CStack_48 + (uint)bVar3 * -8 + 4);
   aiStack_14[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
        *(int *)((int)&CStack_48 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-  fVar1 = (float)_DAT_005ce63e;
+  fVar1 = (float)0.00390625;
   aiStack_14[2] = aiStack_14[1];
   fStack_30 = (float)iStack_18 * fVar1;
   afStack_2c[0] = (float)aiStack_14[0] * fVar1;

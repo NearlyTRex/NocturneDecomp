@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void)
 
 {
   float fVar1;
-  uint uVar2;
+  int iVar2;
   int iVar3;
   int y;
   int iVar4;
@@ -53,17 +51,17 @@ void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void)
   
   iVar3 = CAlphaBitmap_01d1ba98.width;
   bVar5 = 0;
-  iVar4 = DAT_0061b49c + -2;
+  iVar4 = g_INT_0061b49c + -2;
   y = iVar4 - CAlphaBitmap_01d1ba98.height;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CAlphaBitmap_01d1ba98,2,y,0xffff);
-  uVar2 = _DAT_01c50948;
-  fVar1 = (float)_DAT_005e5fc0;
-  _DAT_01c50948 = 0;
+  iVar2 = g_INT_01c50948;
+  fVar1 = (float)0.5;
+  g_INT_01c50948 = 0;
   uStack_30 = 0;
   afStack_2c[0] = 0.0;
   afStack_2c[2] = (float)iVar3 * fVar1;
   fStack_1c = (float)(iVar3 + 4) * fVar1;
-  fStack_14 = *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x34) -
+  fStack_14 = (g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base).base.orient.vec.y -
               g_CDemonSetPtr->altitude_reference_y;
   afStack_2c[3] = (float)(iVar4 - y) * fVar1;
   afStack_2c[1] = fStack_14;
@@ -99,7 +97,7 @@ void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void)
   *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        *(uint *)((int)&CStack_90 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_c0);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,&CStack_c0);
   CStack_48.y = -afStack_2c[3];
   CStack_48.x = afStack_2c[2];
   CStack_48.z = 0.0;
@@ -123,7 +121,7 @@ void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void)
   *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        *(uint *)((int)&CStack_3c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
   CStack_54.x = afStack_2c[2];
   CStack_54.y = afStack_2c[3];
   CStack_54.z = 0.0;
@@ -146,7 +144,7 @@ void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void)
   *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        *(uint *)((int)&CStack_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_c0);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_c0);
   CStack_84.y = afStack_2c[3];
   CStack_84.x = -afStack_2c[2];
   CStack_84.z = 0.0;
@@ -169,7 +167,7 @@ void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void)
   *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        *(uint *)((int)&CStack_a8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
   auStack_184._4_4_ = 4;
   auStack_184._24_4_ = 0;
   auStack_184._28_4_ = 0;
@@ -183,14 +181,17 @@ void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void)
   auStack_184._68_4_ = 0x1000000;
   auStack_184._60_4_ = 3;
   auStack_184._64_4_ = 0;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(g_CDemonRenderer_PTR_00612560,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70
+            (g_CDemonRenderer_PTR_00612560,0);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
+            (g_CDemonRenderer_PTR_00612560,0xffff);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-            (DAT_00612560,(SMRGLTextureBasic *)0x1d1baac);
+            (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_01d1baac);
   engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210
-            (DAT_00612560,(SMRGLPrimitivePoly *)auStack_184,0x23);
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);
-  _DAT_01c50948 = uVar2;
+            (g_CDemonRenderer_PTR_00612560,(SMRGLPrimitivePoly *)auStack_184,0x23);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70
+            (g_CDemonRenderer_PTR_00612560,1);
+  g_INT_01c50948 = iVar2;
   return;
 }

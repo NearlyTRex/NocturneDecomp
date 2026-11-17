@@ -12,7 +12,7 @@
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004eae80 at 004ec076
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba2c
+;   int g_INT_005fba2c = 0x7f
 ;
 ; *****************************************************************************
 
@@ -23,10 +23,10 @@ section .text
     JZ 0x004df5e3                       ; 004df5d5
         ;   XREF to: 004df5e3 (CONDITIONAL_JUMP)  ; LAB_004df5e3
     MOV EDX,0x1ff                       ; 004df5d7
-    MOV dword ptr [0x005fba2c],EDX      ; 004df5dc | DAT_005fba2c
+    MOV dword ptr [0x005fba2c],EDX      ; 004df5dc | g_INT_005fba2c
     RET                                 ; 004df5e2
     MOV EDX,0x7f                        ; 004df5e3
         ;   Label: LAB_004df5e3
-    MOV dword ptr [0x005fba2c],EDX      ; 004df5e8 | DAT_005fba2c
+    MOV dword ptr [0x005fba2c],EDX      ; 004df5e8 | g_INT_005fba2c
     RET                                 ; 004df5ee
 

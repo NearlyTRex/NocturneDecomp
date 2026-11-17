@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGunFlame_process_FUN_004b2d40(CGunFlame *this_ptr)
 
 {
@@ -27,28 +25,28 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004b2d40(CGunFlame *this_ptr)
     fVar2 = (this_ptr->velocity).y;
     fVar3 = (this_ptr->velocity).z;
     position = &this_ptr->position;
-    fVar5 = (float)_DAT_005df4fc;
+    fVar5 = (float)0.20000000000000001;
     position->x = position->x + pCVar1->x * fVar4;
     (this_ptr->position).y = (this_ptr->position).y + fVar2 * fVar4;
     (this_ptr->position).z = (this_ptr->position).z + fVar3 * fVar4;
-    fVar2 = (this_ptr->velocity).y * _DAT_005df4f4;
-    fVar3 = (this_ptr->velocity).z * _DAT_005df4f4;
-    pCVar1->x = pCVar1->x * _DAT_005df4f4;
+    fVar2 = (this_ptr->velocity).y * 0.97f;
+    fVar3 = (this_ptr->velocity).z * 0.97f;
+    pCVar1->x = pCVar1->x * 0.97f;
     (this_ptr->velocity).y = fVar2;
     (this_ptr->velocity).z = fVar3;
-    fVar2 = (float)_DAT_005df504;
+    fVar2 = (float)0.5;
     (this_ptr->velocity).y = fVar4 * fVar5 + (this_ptr->velocity).y;
     iVar6 = core_actor_cpp_randomChance_FUN_0040cd00(fVar4 * fVar2);
     if (iVar6 != 0) {
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-                (0x01C57074,position,0.5,(CVector3f *)0x0,0xffff);
+                (g_CFireEffect_PTR_0061c010,position,0.5,(CVector3f *)0x0,0xffff);
     }
     if ((this_ptr->flame_type != 0) &&
        (iVar6 = core_actor_cpp_randomChance_FUN_0040cd00(fVar4), iVar6 != 0)) {
       core_fire_cpp_CGunFlame_init_FUN_004b2980(this_ptr);
     }
-    this_ptr->anim_frame = fVar4 * _DAT_005fffb4 + this_ptr->anim_frame;
-    fVar4 = _DAT_005df50c;
+    this_ptr->anim_frame = fVar4 * 15.0f + this_ptr->anim_frame;
+    fVar4 = -20.0f;
     if (0x419fffff < (int)this_ptr->anim_frame) {
       do {
         this_ptr->anim_frame = this_ptr->anim_frame + fVar4;

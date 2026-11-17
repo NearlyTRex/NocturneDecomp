@@ -11,7 +11,7 @@
 ;   core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550 at 0051bf66
 ;
 ; Referenced Globals:
-;   undefined4 s_CHero_toggleLeverNow_005c4d3c+1
+;   TerminatedCString s_CHero_toggleLeverNow_005c4d3d
 ;   TerminatedCString s_current_motion_is_s_005c4d54
 ;   TerminatedCString s_toggling_lever_s_005c4d6c
 ;   TerminatedCString s_but_no_lever_set_005c4d81
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 004d3462
     PUSH EBP                            ; 004d3463
     MOV EBX,dword ptr [ESP + 0x14]      ; 004d3464
-    PUSH 0x5c4d3d                       ; 004d3468 | s_CHero_toggleLeverNow_005c4d3c+1
+    PUSH 0x5c4d3d                       ; 004d3468 | = "CHero::toggleLeverNow\n"
     MOV EDX,dword ptr [0x005f1690]      ; 004d346d | g_CConsolePtr
     PUSH EDX                            ; 004d3473 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004d3474

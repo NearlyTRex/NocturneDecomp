@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 317,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
-    "suspect_count": 20,
+    "pseudocode_lines": 91,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "suspect_float",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 272
+    "total_lines": 271
   },
   "cross_references": [
     {
@@ -58,27 +57,27 @@
   "globals": [
     {
       "addr": "005d8403",
-      "name": "DAT_005d8403",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d8403",
+      "type": "float",
+      "value": "65535"
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "006164ac",
@@ -88,8 +87,8 @@
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -249,48 +248,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "iVar6 = DAT_006141b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "pCVar3 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "iVar6 = DAT_006141bc;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 33,
+      "line": 31,
       "match": "6.9532e-39",
       "severity": "mild",
       "text": "SStack_58.surface_normal.D.f = 6.9532e-39;",
@@ -298,7 +257,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 37,
+      "line": 35,
       "match": "6.953236e-39",
       "severity": "mild",
       "text": "SStack_58.surface_normal.C.f = 6.953236e-39;",
@@ -306,7 +265,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 41,
+      "line": 39,
       "match": "6.953272e-39",
       "severity": "mild",
       "text": "SStack_58.surface_normal.B.f = 6.953272e-39;",
@@ -314,7 +273,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 45,
+      "line": 43,
       "match": "6.95331e-39",
       "severity": "mild",
       "text": "SStack_58.surface_normal.A.f = 6.95331e-39;",
@@ -322,7 +281,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 60,
+      "line": 58,
       "match": "6.953448e-39",
       "severity": "mild",
       "text": "SStack_58.surface_normal.A.f = 6.953448e-39;",
@@ -331,38 +290,14 @@
     {
       "description": "Undefined global data reference",
       "line": 66,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "DAT_0060b280 = pCVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
       "match": "DAT_006164ac",
       "severity": "mild",
       "text": "(pCVar3,(SMRGLTextureBasic *)(&DAT_006164ac + this_ptr->alpha_fade_texture * 0x18));",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "pCVar3 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "DAT_0060b280->vertex_buffer_ptr->u = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
+      "line": 52,
       "match": "(int)&pSVar1->r",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar1->r + iVar4) = (int)ROUND(dVar7);",
@@ -370,7 +305,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "(int)&pSVar1->g",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar1->g + iVar4) = (int)ROUND(dVar7);",
@@ -378,7 +313,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
+      "line": 61,
       "match": "(int)&pSVar1->b",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar1->b + iVar4) = (int)ROUND(dVar8);",
@@ -386,7 +321,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 54,
+      "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar1->r + iVar4) = (int)ROUND(dVar7);",
@@ -394,7 +329,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar1->g + iVar4) = (int)ROUND(dVar7);",
@@ -402,7 +337,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
+      "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar1->b + iVar4) = (int)ROUND(dVar8);",

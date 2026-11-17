@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 389,
+    "complexity_score": 343,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 57,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 174,
-    "suspect_count": 19,
+    "pseudocode_lines": 173,
+    "suspect_count": 15,
     "suspect_types": [
       "undefined_data",
       "unknown_param",
       "unrolled_strcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 553
+    "total_lines": 552
   },
   "cross_references": [],
   "function": {
@@ -154,8 +153,8 @@
     },
     {
       "addr": "005d7e0e",
-      "name": "DAT_005d7e0e",
-      "type": "undefined4",
+      "name": "s_larm_005d7e0e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -166,8 +165,8 @@
     },
     {
       "addr": "005d7e19",
-      "name": "DAT_005d7e19",
-      "type": "undefined4",
+      "name": "s_rarm_005d7e19",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -190,8 +189,8 @@
     },
     {
       "addr": "005d7e30",
-      "name": "DAT_005d7e30",
-      "type": "undefined4",
+      "name": "s_head_005d7e30",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -412,15 +411,15 @@
     },
     {
       "addr": "005d7ef3",
-      "name": "DAT_005d7ef3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d7ef3",
+      "type": "double",
+      "value": "-0.75"
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_0061b4d0",
+      "type": "CEventList*",
+      "value": "01c51d80"
     }
   ],
   "param_estimates": {
@@ -502,40 +501,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005d7e0e",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005d7e0e,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005d7e19",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005d7e19,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_005d7e30",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005d7e30,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_005d7e42",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7e42;",
@@ -543,7 +510,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 102,
       "match": "DAT_005d7e52",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7e52;",
@@ -551,7 +518,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 107,
       "match": "DAT_005d7e62",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7e62;",
@@ -559,7 +526,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 112,
       "match": "DAT_005d7e74",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7e74;",
@@ -567,7 +534,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 117,
       "match": "DAT_005d7e87",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7e87;",
@@ -575,7 +542,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 122,
       "match": "DAT_005d7e9a",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7e9a;",
@@ -583,7 +550,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 127,
       "match": "DAT_005d7ea8",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7ea8;",
@@ -591,7 +558,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 132,
       "match": "DAT_005d7eba",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7eba;",
@@ -599,7 +566,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 137,
       "match": "DAT_005d7eca",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7eca;",
@@ -607,7 +574,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 142,
       "match": "DAT_005d7edb",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7edb;",
@@ -615,7 +582,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 147,
       "match": "DAT_005d7eed",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7eed;",
@@ -623,7 +590,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 151,
+      "line": 150,
       "match": "DAT_005d7ef0",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d7ef0;",
@@ -631,7 +598,7 @@
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 175,
+      "line": 174,
       "match": "unknown_0xc364",
       "severity": "mild",
       "text": "this_ptr->unknown_0xc364 = 0;",
@@ -639,7 +606,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 163,
+      "line": 162,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

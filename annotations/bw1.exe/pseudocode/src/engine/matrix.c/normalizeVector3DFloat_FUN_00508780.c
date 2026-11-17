@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_00508780(CVector3i *input_vector,CVector3i *output_vector)
 
 {
@@ -32,9 +30,9 @@ CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_00508780(CVec
   }
   else {
     dVar4 = 1.0 / dVar4;
-    local_30 = dVar1 * dVar4 * _DAT_005e7786;
-    local_28 = dVar2 * dVar4 * _DAT_005e7786;
-    local_20 = _DAT_005e7786 * dVar3 * dVar4;
+    local_30 = dVar1 * dVar4 * 65535;
+    local_28 = dVar2 * dVar4 * 65535;
+    local_20 = 65535 * dVar3 * dVar4;
   }
   output_vector->x = (int)ROUND(local_30);
   output_vector->y = (int)ROUND(local_28);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename)
 
 {
@@ -43,29 +41,29 @@ void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename)
   pcVar4 = (char *)0x0;
 LAB_00402994:
   if (pcVar4 == (char *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\2d.c";
-    _DAT_01d1d404 = 0x769;
+    g_CHAR_PTR_01d1d400 = "..\\engine\\2d.c";
+    g_INT_01d1d404 = 0x769;
     core_main_c_displayErrorAndQuit_FUN_005030e0("hose!");
   }
-  _sprintf(pcVar4,&DAT_005d20a9);
+  _sprintf(pcVar4,".map");
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
-                    (&local_3c,&DAT_005d20ae,local_8c,1);
+                    (&local_3c,"fog",local_8c,1);
   if (iVar2 == 0) {
     engine_2d_c_buildColorLookupTable_FUN_00402880();
     support_trstream_cpp_COutStreamFile_ctor_FUN_005a17d0(&local_10);
     iVar2 = support_trstream_cpp_COutStreamFile_openInDirectory_FUN_005a1a20
-                      (&local_10,&DAT_005d20b5,local_8c,&DAT_005d20b2);
+                      (&local_10,"fog",local_8c,"wb");
     if (iVar2 == 0) {
-      _DAT_01d1d400 = "..\\engine\\2d.c";
-      _DAT_01d1d404 = 0x770;
+      g_CHAR_PTR_01d1d400 = "..\\engine\\2d.c";
+      g_INT_01d1d404 = 0x770;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Unable to write quick map!");
     }
-    support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_10,&DAT_01c45ad0,0x8000);
+    support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_10,g_UCHAR_ARRAY_01c45ad0,0x8000);
     support_trstream_cpp_COutStreamFile_close_FUN_005a19b0(&local_10);
     support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&local_10,0);
   }
   else {
-    support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_3c,&DAT_01c45ad0,0x8000);
+    support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_3c,g_UCHAR_ARRAY_01c45ad0,0x8000);
     support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_3c);
   }
   support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_3c,0);

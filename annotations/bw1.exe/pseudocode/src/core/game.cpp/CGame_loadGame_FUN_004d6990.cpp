@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *save_filename,int load_mode)
 
 {
@@ -37,7 +35,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *sav
   COutStreamFile local_40;
   byte local_38 [4];
   int local_34;
-  uint local_30;
+  CBitFont *local_30;
   int *local_2c;
   char *local_28;
   int *local_24;
@@ -49,12 +47,13 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *sav
   bVar12 = 0;
   _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
-  splitpath(&DAT_01cd05c0,(char *)0x0,(char *)0x0,(char *)0x0,local_368);
-  iVar2 = _stricmp(local_368,&DAT_005e2faf);
+  splitpath
+            (g_CHAR_ARRAY_01cd05c0,(char *)0x0,(char *)0x0,(char *)0x0,local_368);
+  iVar2 = _stricmp(local_368,"noc");
   if ((iVar2 == 0) ||
-     (iVar2 = _stricmp(local_368,&DAT_005e2fb3), iVar2 == 0)) {
+     (iVar2 = _stricmp(local_368,".noc"), iVar2 == 0)) {
     pcVar8 = local_570;
-    pcVar6 = &DAT_01cd05c0;
+    pcVar6 = g_CHAR_ARRAY_01cd05c0;
     do {
       cVar1 = *pcVar6;
       *pcVar8 = cVar1;
@@ -69,9 +68,9 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *sav
     local_570[0] = '\0';
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
-  local_30 = _DAT_01c3eb50;
+  local_30 = g_CBitFont_PTR_01c3eb50;
   if (load_mode != 0) {
-    _DAT_01c3eb50 = _DAT_0152d244;
+    g_CBitFont_PTR_01c3eb50 = g_CBitFont_PTR_0152d244;
   }
   local_28 = this_ptr->chapter_reload_filename;
   local_24 = &this_ptr->total_kill_count;
@@ -84,14 +83,14 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *sav
     if (save_filename == (char *)0x0) {
       uVar13 = 1;
       file_pattern = "*.noc";
-      search_directory = &DAT_005e2fbe;
+      search_directory = "save";
       pcVar8 = local_570;
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Select file to load");
       iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0
                         (g_CEditorToolsPtr,pcVar6,search_directory,file_pattern,pcVar8,uVar13);
       if (iVar2 == 0) {
 LAB_004d6e32:
-        _DAT_01c3eb50 = local_30;
+        g_CBitFont_PTR_01c3eb50 = local_30;
         core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
         this_ptr->is_loading = 0;
         _remove("save\\$$SAVE$$.TMP");
@@ -109,14 +108,14 @@ LAB_004d6e32:
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(0x01C51D80);
+    core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(g_CEventList_PTR_0061b4d0);
     core_level_cpp_CLevelLoader_show_FUN_004fe840(g_CLevelLoaderPtr,9,0,-1);
-    file_handle = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e2fda,local_570,&DAT_005e2fd7);
+    file_handle = engine_dosio_cpp_getFile_FUN_00479180("save",local_570,"rt");
     local_18 = _ftell(file_handle);
     iVar5 = 1;
-    iVar2 = _stricmp(&DAT_01cd05c0,local_570);
+    iVar2 = _stricmp(g_CHAR_ARRAY_01cd05c0,local_570);
     if (iVar2 != 0) {
-      pcVar6 = &DAT_01cd05c0;
+      pcVar6 = g_CHAR_ARRAY_01cd05c0;
       pcVar8 = local_570;
       do {
         cVar1 = *pcVar8;
@@ -139,7 +138,7 @@ LAB_004d6e32:
     iVar2 = 0;
     bVar11 = true;
     pbVar7 = local_38;
-    pbVar9 = &DAT_0061d98c;
+    pbVar9 = (byte *)"EFD";
     do {
       if (iVar4 == 0) break;
       iVar4 = iVar4 + -1;
@@ -168,7 +167,7 @@ LAB_004d6be4:
       }
       support_trstream_cpp_CInStreamFile_seek_FUN_005a0d00(&local_6c,4,0);
       iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005a19e0
-                        (&local_40,"save\\$$SAVE$$.TMP",&DAT_005e300a);
+                        (&local_40,"save\\$$SAVE$$.TMP","wb");
       if (iVar2 == 0) {
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                            ("Can't create temp file to load saved game file.");
@@ -183,10 +182,10 @@ LAB_004d6be4:
       support_codec_cpp_CLZWDecompress_finalize_FUN_00443790(&local_a0,&local_40);
       support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_6c);
       support_trstream_cpp_COutStreamFile_close_FUN_005a19b0(&local_40);
-      file_handle = _fopen("save\\$$SAVE$$.TMP",&DAT_005e303d);
+      file_handle = _fopen("save\\$$SAVE$$.TMP","rt");
       if (file_handle == (_FILE *)0x0) {
-        _DAT_01d1d400 = "..\\core\\game.cpp";
-        _DAT_01d1d404 = 0x1050;
+        g_CHAR_PTR_01d1d400 = "..\\core\\game.cpp";
+        g_INT_01d1d404 = 0x1050;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Can't reopen %s");
       }
       support_codec_cpp_CLZWDictionary_dtor_FUN_00442f90(&local_a0.lzw_dict,0);
@@ -200,7 +199,7 @@ LAB_004d6be4:
       iVar2 = 0;
       bVar11 = true;
       pbVar7 = local_38;
-      pbVar9 = &DAT_005e2fdf;
+      pbVar9 = (byte *)"LZW";
       do {
         if (iVar4 == 0) break;
         iVar4 = iVar4 + -1;
@@ -222,18 +221,19 @@ LAB_004d6be4:
                 (g_CEditorToolsPtr,"Can't load old save game file %s.  Sorry.");
     }
     else {
-      _fscanf(file_handle,&DAT_005e3096);
+      _fscanf(file_handle,"%d\n");
       if (local_34 < 3) {
         _fclose(file_handle);
         shape_edittool_cpp_CEditorTools_showMessage_FUN_004942e0
                   (g_CEditorToolsPtr,"Can't load old save game file %s.  Sorry.");
       }
       else {
-        core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(0x01D2C900,file_handle,iVar5);
+        core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0
+                  (g_CDemonMission_PTR_0061f650,file_handle,iVar5);
         _fgets(local_268,0xff,file_handle);
         _fscanf(file_handle,"%d, %d\n");
         local_14 = 0;
-        if (0 < _DAT_01d06aa0) {
+        if (0 < g_INT_01d06aa0) {
           iVar2 = 0;
           do {
             pcVar8 = "(file corrupt)";
@@ -246,9 +246,9 @@ LAB_004d6be4:
             _fscanf(file_handle,"%[^\n]\n");
             uVar13 = g_CHeroClassInfo.name_hash;
             pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0
-                               (0x01D2C900,local_168);
+                               (g_CDemonMission_PTR_0061f650,local_168);
             pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar3,uVar13);
-            *(CDemonActor **)(iVar2 + 0x1d06aa4) = pCVar3;
+            *(CDemonActor **)((int)g_CHero_PTR_ARRAY_01d06aa4 + iVar2) = pCVar3;
             if (pCVar3 == (CDemonActor *)0x0) {
               _fclose(file_handle);
               shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
@@ -256,11 +256,12 @@ LAB_004d6be4:
             }
             local_14 = local_14 + 1;
             iVar2 = iVar2 + 4;
-          } while (local_14 < _DAT_01d06aa0);
+          } while (local_14 < g_INT_01d06aa0);
         }
-        iVar2 = core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0(0x01D2C900);
+        iVar2 = core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0
+                          (g_CDemonMission_PTR_0061f650);
         if (iVar2 == 0) goto LAB_004d6e32;
-        core_event_cpp_CEventList_loadState_FUN_004aa610(0x01C51D80,file_handle);
+        core_event_cpp_CEventList_loadState_FUN_004aa610(g_CEventList_PTR_0061b4d0,file_handle);
         core_script_cpp_CScript_loadState_FUN_0054b3e0(g_CScriptPtr,file_handle);
         if (local_34 < 4) {
           core_gore_cpp_CGore_reset_FUN_004e5c00(g_CGorePtr);
@@ -269,25 +270,25 @@ LAB_004d6be4:
           core_gore_cpp_CGore_load_FUN_004e6680(g_CGorePtr,file_handle);
         }
         if (local_34 < 7) {
-          core_fire_cpp_CFireEffect_init_FUN_004b4b30(0x01C57074);
+          core_fire_cpp_CFireEffect_init_FUN_004b4b30(g_CFireEffect_PTR_0061c010);
         }
         else {
-          core_fire_cpp_CFireEffect_load_FUN_004b7370(0x01C57074,file_handle);
+          core_fire_cpp_CFireEffect_load_FUN_004b7370(g_CFireEffect_PTR_0061c010,file_handle);
         }
         if (local_34 < 6) {
-          _DAT_01cd06c0 = 0;
+          g_INT_01cd06c0 = 0;
         }
         else {
           _fgets(local_268,0xff,file_handle);
           iVar2 = 1;
-          _fscanf(file_handle,&DAT_005e30ef);
-          if (0 < _DAT_01cd06c4) {
+          _fscanf(file_handle,"%d\n");
+          if (0 < g_INT_ARRAY_01cd06c4[0]) {
             do {
               iVar2 = iVar2 + 1;
-              _fscanf(file_handle,&DAT_005e30f3);
-            } while (iVar2 <= _DAT_01cd06c4);
+              _fscanf(file_handle,"%d\n");
+            } while (iVar2 <= g_INT_ARRAY_01cd06c4[0]);
           }
-          _DAT_01cd06c0 = 1;
+          g_INT_01cd06c0 = 1;
         }
         if (7 < local_34) {
           _fgets(local_268,0xff,file_handle);
@@ -303,7 +304,7 @@ LAB_004d6be4:
         if (load_mode == 0) {
           return;
         }
-        core_mission_cpp_CDemonMission_run_FUN_0051bad0(0x01D2C900);
+        core_mission_cpp_CDemonMission_run_FUN_0051bad0(g_CDemonMission_PTR_0061f650);
         if (this_ptr->need_chapter_reload == 0) goto LAB_004d6e32;
         save_filename = local_28;
         this_ptr->need_chapter_reload = 0;

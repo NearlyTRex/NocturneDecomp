@@ -24,13 +24,13 @@
 ;   undefined4 DAT_00608571
 ;   undefined4 DAT_00608572
 ;   undefined4 DAT_00608573
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c43550
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
+;   int g_INT_0061b4a0 = 0x8
+;   void*[1200] g_ARRAY_PTR_01c4354c
+;   undefined4 g_ARRAY_PTR_01c4354c[1]
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   int g_INT_01c4f010
+;   int g_INT_01c4f014
 ;
 ; *****************************************************************************
 
@@ -51,28 +51,28 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 00401a3f
     ADD EAX,0x608570                    ; 00401a43 | DAT_00608570
     XOR EDX,EDX                         ; 00401a48
-    MOV EBX,dword ptr [0x01c4f008]      ; 00401a4a | DAT_01c4f008
+    MOV EBX,dword ptr [0x01c4f008]      ; 00401a4a | g_INT_01c4f008
     MOV DL,byte ptr [EAX]               ; 00401a50 | DAT_00608570
     CMP ECX,EBX                         ; 00401a52
     JL 0x00401ad2                       ; 00401a54
         ;   XREF to: 00401ad2 (CONDITIONAL_JUMP)  ; LAB_00401ad2
-    CMP EBP,dword ptr [0x01c4f00c]      ; 00401a5a | DAT_01c4f00c
+    CMP EBP,dword ptr [0x01c4f00c]      ; 00401a5a | g_INT_01c4f00c
     JL 0x00401ad2                       ; 00401a60
         ;   XREF to: 00401ad2 (CONDITIONAL_JUMP)  ; LAB_00401ad2
-    MOV ECX,dword ptr [0x01c4f010]      ; 00401a66 | DAT_01c4f010
+    MOV ECX,dword ptr [0x01c4f010]      ; 00401a66 | g_INT_01c4f010
     INC ECX                             ; 00401a6c
     MOV EDI,dword ptr [ESP + 0x24]      ; 00401a6d
     SUB ECX,EDX                         ; 00401a71
     CMP ECX,EDI                         ; 00401a73
     JL 0x00401ad2                       ; 00401a75
         ;   XREF to: 00401ad2 (CONDITIONAL_JUMP)  ; LAB_00401ad2
-    MOV ECX,dword ptr [0x01c4f014]      ; 00401a77 | DAT_01c4f014
+    MOV ECX,dword ptr [0x01c4f014]      ; 00401a77 | g_INT_01c4f014
     SUB ECX,0xa                         ; 00401a7d
     CMP EBP,ECX                         ; 00401a80
     JG 0x00401ad2                       ; 00401a82
         ;   XREF to: 00401ad2 (CONDITIONAL_JUMP)  ; LAB_00401ad2
     PUSH ESI                            ; 00401a84
-    MOV EBX,dword ptr [0x0061b4a0]      ; 00401a85 | DAT_0061b4a0
+    MOV EBX,dword ptr [0x0061b4a0]      ; 00401a85 | g_INT_0061b4a0
     SHL EBP,0x2                         ; 00401a8b
     INC EAX                             ; 00401a8e
     LEA ECX,[EBP + 0x2c]                ; 00401a8f
@@ -82,7 +82,7 @@ section .text
     MOV EDI,ECX                         ; 00401a97
     MOV ECX,dword ptr [ESP + 0x28]      ; 00401a99
         ;   Label: LAB_00401a99
-    MOV ESI,dword ptr [EBP + 0x1c4354c] ; 00401a9d | DAT_01c4354c | DAT_01c43550
+    MOV ESI,dword ptr [EBP + 0x1c4354c] ; 00401a9d | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
     ADD ESI,ECX                         ; 00401aa3
     XOR ECX,ECX                         ; 00401aa5
     TEST EDX,EDX                        ; 00401aa7
@@ -133,7 +133,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EBX       ; 00401aeb
     MOV ECX,dword ptr [ESP + 0x4]       ; 00401aef
         ;   Label: LAB_00401aef
-    MOV ESI,dword ptr [EBP + 0x1c4354c] ; 00401af3 | DAT_01c4354c | DAT_01c43550
+    MOV ESI,dword ptr [EBP + 0x1c4354c] ; 00401af3 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
     ADD ESI,ECX                         ; 00401af9
     XOR ECX,ECX                         ; 00401afb
     TEST EDX,EDX                        ; 00401afd
@@ -170,7 +170,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 00401b39
     MOV EBX,dword ptr [ESP + 0xc]       ; 00401b3d
         ;   Label: LAB_00401b3d
-    MOV ECX,dword ptr [EBP + 0x1c4354c] ; 00401b41 | DAT_01c4354c | DAT_01c43550
+    MOV ECX,dword ptr [EBP + 0x1c4354c] ; 00401b41 | g_ARRAY_PTR_01c4354c | g_ARRAY_PTR_01c4354c[1]
     XOR ESI,ESI                         ; 00401b47
     ADD ECX,EBX                         ; 00401b49
     TEST EDX,EDX                        ; 00401b4b

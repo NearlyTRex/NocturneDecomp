@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CFirestaff * __cdecl core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)
 
 {
@@ -29,7 +27,7 @@ CFirestaff * __cdecl core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *
   pCVar1 = (CFirestaff *)((int)pvVar7 + -0x614);
   *(CWeapon_full_vtable **)((int)pvVar7 + -0x4c0) = &g_CFirestaffVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)((int)pvVar7 + -0x4bc),(char *)0x5c0af8);
+            ((CKeyFramedModelInstance *)((int)pvVar7 + -0x4bc),"f_staff.kfm");
   *(uint *)((int)pvVar7 + -0x33c) = 0;
   *(uint *)((int)pvVar7 + -0x338) = 0;
   *(uint *)((int)pvVar7 + -0x330) = 1;
@@ -60,12 +58,12 @@ CFirestaff * __cdecl core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *
     pCVar9->flames[0].flame_size.z = 0.5;
     pCVar9->flames[0].which_flame = FLAME_TYPE_TORCH;
     pCVar9->flames[0].globe_scalar = 0.0;
-    fVar5 = _DAT_005c0b0d;
+    fVar5 = 2.0f;
     pCVar9 = pCVar8;
   } while (pCVar8 != (CFirestaff *)((int)pvVar7 + 0x199c));
   iVar10 = 0;
-  fVar3 = (float)_DAT_005c0b1d;
-  fVar4 = (float)_DAT_005c0b05;
+  fVar3 = (float)0.5;
+  fVar4 = (float)0.10000000000000001;
   pCVar9 = pCVar1;
   do {
     fVar2 = (float)iVar10 * fVar4 + fVar3;
@@ -76,8 +74,8 @@ CFirestaff * __cdecl core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *
     pCVar9 = (CFirestaff *)((pCVar9->base).model.model_name + 0xd4);
   } while (iVar10 < 6);
   iVar11 = 6;
-  fVar3 = (float)_DAT_005c0b1d;
-  fVar4 = (float)_DAT_005c0b15;
+  fVar3 = (float)0.5;
+  fVar4 = (float)0.050000000000000003;
   iVar10 = (int)pvVar7 + 0x9c4;
   do {
     fVar2 = (float)iVar11 * fVar4 + fVar3;

@@ -15,8 +15,8 @@
 ;   TerminatedCString s_core_setutil_cpp_005e62fd
 ;   TerminatedCString s_C3DSLight_create_Out_of_005e6311
 ;   CFilterCache* g_CFilterCachePtr = 015111a8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
@@ -52,8 +52,8 @@ section .text
     MOV EBX,0x5e62fd                    ; 0053b6d7 | = "..\\core\\setutil.cpp"
     MOV ESI,0x2f9                       ; 0053b6dc
     PUSH 0x5e6311                       ; 0053b6e1 | = "C3DSLight::create - Out of memory!"
-    MOV dword ptr [0x01d046a0],EBX      ; 0053b6e6 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0053b6ec | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 0053b6e6 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0053b6ec | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053b6f2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0053b6f7

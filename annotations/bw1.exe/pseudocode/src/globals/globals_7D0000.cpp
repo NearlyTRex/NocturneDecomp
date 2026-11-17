@@ -16,13 +16,25 @@ CDemonActorType g_CCrateClassInfo = {};
 CDemonActorType g_CCrossbowClassInfo = {};
 CDemonActorType g_CCurtainClassInfo = {};
 
-// undefined4
-undefined4 DAT_007db570 = {};
-undefined4 DAT_007dc5b0 = {};
-undefined4 DAT_007dc5b4 = {};
-undefined4 DAT_007dc5b8 = {};
-undefined4 DAT_007dc5c0 = {};
-undefined4 DAT_007dc5e0 = {};
-undefined4 DAT_007dc5e8 = {};
-undefined4 DAT_007ddbb0 = {};
+// CVector3f[100]
+CVector3f g_CVector3f_ARRAY_007dc71c[100] = {};
+
+// SCollisionInfo[100]
+SCollisionInfo g_SCollisionInfo_ARRAY_007dcbcc[100] = {};
+
+// char[500000]
+char g_CHAR_ARRAY_007ddbb4[500000] = {};
+
+// int
+int g_INT_007dc5b0 = {};
+int g_INT_007dc5b4 = {};
+int g_INT_007dc5b8 = {};
+int g_INT_007dc5c0 = {};
+int g_INT_007dc5e0 = {};
+int g_INT_007dc5e8 = {};
+int g_INT_007dc718 = {};
+int g_INT_007ddbb0 = {};
+
+// int[17]
+int g_INT_ARRAY_007db570[17] = {};
 

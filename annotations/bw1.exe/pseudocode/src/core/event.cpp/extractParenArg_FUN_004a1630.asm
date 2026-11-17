@@ -16,7 +16,7 @@
 ;   TerminatedCString s_No_opening_parenthesis_005dccbd
 ;   TerminatedCString s_Argument_too_long_005dccd4
 ;   TerminatedCString s_Can_t_find_closing_paren_005dcce6
-;   undefined4 DAT_00626114
+;   uchar[257] g_UCHAR_ARRAY_00626114
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_004a163e
     INC AL                              ; 004a1640
     AND EAX,0xff                        ; 004a1642
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004a1647 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004a1647 | g_UCHAR_ARRAY_00626114
     JZ 0x004a1653                       ; 004a164e
         ;   XREF to: 004a1653 (CONDITIONAL_JUMP)  ; LAB_004a1653
     INC ECX                             ; 004a1650
@@ -141,7 +141,7 @@ section .text
         ;   Label: LAB_004a16e9
     INC CL                              ; 004a16ec
     AND ECX,0xff                        ; 004a16ee
-    TEST byte ptr [ECX + 0x626114],0x2  ; 004a16f4 | DAT_00626114
+    TEST byte ptr [ECX + 0x626114],0x2  ; 004a16f4 | g_UCHAR_ARRAY_00626114
     JNZ 0x004a1727                      ; 004a16fb
         ;   XREF to: 004a1727 (CONDITIONAL_JUMP)  ; LAB_004a1727
     LEA EAX,[EBX + EBP*0x1]             ; 004a16fd
@@ -152,7 +152,7 @@ section .text
         ;   Label: LAB_004a1706
     INC AL                              ; 004a1709
     AND EAX,0xff                        ; 004a170b
-    TEST byte ptr [EAX + 0x626114],0x2  ; 004a1710 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 004a1710 | g_UCHAR_ARRAY_00626114
     JZ 0x004a172f                       ; 004a1717
         ;   XREF to: 004a172f (CONDITIONAL_JUMP)  ; LAB_004a172f
     PUSH EBX                            ; 004a1719
@@ -179,7 +179,7 @@ section .text
     XOR ECX,ECX                         ; 004a1733
     INC BL                              ; 004a1735
     MOV CL,BL                           ; 004a1737
-    TEST byte ptr [ECX + 0x626114],0x2  ; 004a1739 | DAT_00626114
+    TEST byte ptr [ECX + 0x626114],0x2  ; 004a1739 | g_UCHAR_ARRAY_00626114
     JZ 0x004a1745                       ; 004a1740
         ;   XREF to: 004a1745 (CONDITIONAL_JUMP)  ; LAB_004a1745
     INC EAX                             ; 004a1742

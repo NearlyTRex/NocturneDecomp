@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00540870(CSkeleton *this_ptr,int bone_count,int frame_count)
 
 {
@@ -16,8 +14,8 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00540870(CSkeleton *thi
   
   core_skeleton_cpp_CSkeleton_free_FUN_00540980(this_ptr,0);
   if (100 < bone_count) {
-    _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-    _DAT_01d046a4 = 199;
+    g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+    g_INT_01d046a4 = 199;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too bony!");
   }
   this_ptr->bone_count = bone_count;
@@ -34,8 +32,8 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00540870(CSkeleton *thi
      (this_ptr->frame_positions_2 != (CVector3f *)0x0)) {
     return;
   }
-  _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-  _DAT_01d046a4 = 0xdb;
+  g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+  g_INT_01d046a4 = 0xdb;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d");
   return;
 }

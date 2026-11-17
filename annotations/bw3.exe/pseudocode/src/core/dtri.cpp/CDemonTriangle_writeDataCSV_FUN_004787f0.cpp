@@ -9,6 +9,6 @@
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_004787f0(CDemonTriangle *this_ptr,_FILE *file_handle)
 
 {
-  _fprintf(file_handle,(char *)0x5bcc6d);
+  _fprintf(file_handle,"%f,%f,%f,%f,%f,%f,%f,%f,%f\n");
   return;
 }

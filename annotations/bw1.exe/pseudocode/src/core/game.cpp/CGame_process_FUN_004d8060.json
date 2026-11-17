@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 138,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 40,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 108,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 546
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 107,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 545
   },
   "cross_references": [
     {
@@ -155,8 +152,8 @@
   "globals": [
     {
       "addr": "005e33ac",
-      "name": "s_G_s_3_2f_ms_005e33ab+1",
-      "type": "undefined4",
+      "name": "s_s_3_2f_ms_005e33ac",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -209,21 +206,21 @@
     },
     {
       "addr": "005e346c",
-      "name": "DAT_005e346c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e346c",
+      "type": "double",
+      "value": "0.0555555555555556"
     },
     {
       "addr": "005e3474",
-      "name": "DAT_005e3474",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e3474",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005e347c",
-      "name": "DAT_005e347c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e347c",
+      "type": "double",
+      "value": "1000"
     },
     {
       "addr": "00611100",
@@ -239,15 +236,15 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_0061b4d0",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "0061c010",
-      "name": "DAT_0061c010",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_0061c010",
+      "type": "CFireEffect*",
+      "value": "01c57074"
     },
     {
       "addr": "0061d418",
@@ -269,9 +266,9 @@
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "00622580",
@@ -293,15 +290,15 @@
     },
     {
       "addr": "006236b8",
-      "name": "DAT_006236b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006236b8",
+      "type": "CSound*",
+      "value": "02c82a60"
     },
     {
       "addr": "00625bc0",
-      "name": "DAT_00625bc0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CTerrain_PTR_00625bc0",
+      "type": "CTerrain*",
+      "value": "02c8ae68"
     },
     {
       "addr": "00625c90",
@@ -311,9 +308,9 @@
     },
     {
       "addr": "0062604c",
-      "name": "DAT_0062604c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWeather_PTR_0062604c",
+      "type": "CWeather*",
+      "value": "02c997c0"
     },
     {
       "addr": "007db5f0",
@@ -353,8 +350,8 @@
     },
     {
       "addr": "01cd0c90",
-      "name": "DAT_01cd0c90",
-      "type": "undefined4",
+      "name": "g_INT_01cd0c90",
+      "type": "int",
       "value": null
     },
     {
@@ -512,22 +509,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x2c82a60 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 41,
-      "match": "0x2c82a60",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x02C82A60;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

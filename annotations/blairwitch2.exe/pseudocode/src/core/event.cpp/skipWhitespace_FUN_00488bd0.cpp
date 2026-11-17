@@ -9,7 +9,7 @@
 char * __cdecl core_event_cpp_skipWhitespace_FUN_00488bd0(char *str)
 
 {
-  while (((&DAT_0061ed94)[(byte)(*str + 1)] & 2) != 0) {
+  while ((g_UCHAR_ARRAY_0061ed94[(byte)(*str + 1)] & 2) != 0) {
     str = str + 1;
   }
   return str;

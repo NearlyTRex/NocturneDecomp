@@ -33,7 +33,7 @@ void __cdecl core_lantern_cpp_CLantern_updateLightTransform_FUN_0059ced0(CLanter
   }
   (this_ptr->light_rotation).x = 0.3926991;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
-            ((CDemonActor *)this_ptr,(CVector3f *)&DAT_0265370c,&CStack_18);
+            ((CDemonActor *)this_ptr,&g_CVector3f_0265370c,&CStack_18);
   fStack_3c = CStack_18.x;
   afStack_38[(uint)bVar5 * -2] = *(float *)((int)&CStack_18 + (uint)bVar5 * -8 + 4);
   afStack_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =

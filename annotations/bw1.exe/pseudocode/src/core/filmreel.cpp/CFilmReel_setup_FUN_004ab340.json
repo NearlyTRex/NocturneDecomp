@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 105,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 5,
+    "pseudocode_lines": 34,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
       "stack_ref",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 91
+    "total_lines": 90
   },
   "cross_references": [],
   "function": {
@@ -45,9 +44,9 @@
   "globals": [
     {
       "addr": "005df0b7",
-      "name": "DAT_005df0b7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df0b7",
+      "type": "double",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -140,16 +139,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_ffffffbc",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffffbc;",
@@ -157,7 +148,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_ffffffbc",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffffbc);",
@@ -165,7 +156,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 23,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
       "text": "puVar5 = (uint *)&stack0xffffffbc;",
@@ -173,7 +164,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",

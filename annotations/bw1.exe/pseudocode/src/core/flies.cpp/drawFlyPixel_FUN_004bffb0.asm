@@ -13,10 +13,10 @@
 ;   core_flies.cpp_drawFlyPixelClipped_FUN_004c0040 at 004c0069
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4f020
-;   undefined4 DAT_01cc80c4
-;   undefined4 DAT_01cc80c8
+;   int g_INT_0061b4a0 = 0x8
+;   int g_INT_01c4f020
+;   uint g_UINT_01cc80c4
+;   uint g_UINT_01cc80c8
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     CMP EBX,dword ptr [ECX + EDX*0x1]   ; 004bffce
     JBE 0x004bffdc                      ; 004bffd1
         ;   XREF to: 004bffdc (CONDITIONAL_JUMP)  ; LAB_004bffdc
-    CMP dword ptr [0x0061b4a0],0x20     ; 004bffd3 | DAT_0061b4a0
+    CMP dword ptr [0x0061b4a0],0x20     ; 004bffd3 | g_INT_0061b4a0
     JZ 0x004bffe3                       ; 004bffda
         ;   XREF to: 004bffe3 (CONDITIONAL_JUMP)  ; LAB_004bffe3
     MOV ESP,EBP                         ; 004bffdc
@@ -53,11 +53,11 @@ section .text
     ADD EAX,EDX                         ; 004bffe9
     MOV dword ptr [EBP + -0x4],EAX      ; 004bffeb
     MOV EDI,dword ptr [EBP + 0xfffffffc] ; 004bffee
-    MOVD MM0,dword ptr [0x01c4f020]     ; 004bfff4 | DAT_01c4f020
+    MOVD MM0,dword ptr [0x01c4f020]     ; 004bfff4 | g_INT_01c4f020
     PXOR MM7,MM7                        ; 004bfffb
     MOVD MM1,dword ptr [EDI]            ; 004bfffe
-    MOVD MM2,dword ptr [0x01cc80c4]     ; 004c0001 | DAT_01cc80c4
-    MOVD MM3,dword ptr [0x01cc80c8]     ; 004c0008 | DAT_01cc80c8
+    MOVD MM2,dword ptr [0x01cc80c4]     ; 004c0001 | g_UINT_01cc80c4
+    MOVD MM3,dword ptr [0x01cc80c8]     ; 004c0008 | g_UINT_01cc80c8
     PUNPCKLBW MM0,MM7                   ; 004c000f
     PUNPCKLBW MM1,MM7                   ; 004c0012
     PUNPCKLBW MM2,MM7                   ; 004c0015

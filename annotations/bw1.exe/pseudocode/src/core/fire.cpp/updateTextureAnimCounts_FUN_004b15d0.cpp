@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_updateTextureAnimCounts_FUN_004b15d0(void)
 
 {
   int iVar1;
   
-  iVar1 = _DAT_01c43530 >> 0x1f;
-  _DAT_01c57e18 =
-       _DAT_01c57e18 + ((int)((_DAT_01c43530 + iVar1 * -0x100) - (uint)(iVar1 << 7 < 0)) >> 8) &
+  iVar1 = g_INT_01c43530 >> 0x1f;
+  g_INT_01c57e18 =
+       g_INT_01c57e18 + ((int)((g_INT_01c43530 + iVar1 * -0x100) - (uint)(iVar1 << 7 < 0)) >> 8) &
        0xff;
-  _DAT_01c57e14 =
-       _DAT_01c57e14 + ((int)((_DAT_01c43530 + iVar1 * -0x80) - (uint)(iVar1 << 6 < 0)) >> 7) & 0x7f
-  ;
+  g_INT_01c57e14 =
+       g_INT_01c57e14 + ((int)((g_INT_01c43530 + iVar1 * -0x80) - (uint)(iVar1 << 6 < 0)) >> 7) &
+       0x7f;
   return;
 }

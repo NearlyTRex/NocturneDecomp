@@ -17,8 +17,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00449d30(CDemonLight 
     free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).base.vtable =
-       (CCameraView_vtable *)&PTR_core_dlight_cpp_CDemonLight_dtor_FUN_00449d30_005f5074;
+  (this_ptr->base).base.vtable = &g_CCameraView_vtable_005f5074;
   core_dlight_cpp_CDemonLight_free_FUN_00449e70(this_ptr);
   ptr = (CDemonLight *)core_dcamera_cpp_CDemonCamera_dtor_FUN_0043b460(&this_ptr->base,1);
   if ((flags & 2) == 0) {

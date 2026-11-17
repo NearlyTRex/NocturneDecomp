@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
 
 {
@@ -25,7 +23,6 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
   char *pcVar10;
   byte bVar11;
   double dVar12;
-  uint uVar13;
   uint local_154c [1023];
   char acStack_550 [1028];
   char local_14c [256];
@@ -54,8 +51,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
   } while (iVar4 != 0x1000);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0(&local_4c);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&local_4c,"stats",0x280,0x1e0);
-  stream = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005c3b9d,"credits.txt",&DAT_005c3b8e)
-  ;
+  stream = engine_dosio_cpp_getFile_FUN_004659c0
+                     ("data","credits.txt","rt");
   if (stream == (_FILE *)0x0) {
     engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300(&local_4c,0);
     return;
@@ -63,7 +60,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
   for (iVar9 = local_20 << 2; ((stream->_flag & 0x10) == 0 && (iVar9 < 0x1000)); iVar9 = iVar9 + 4)
   {
     _fgets(local_14c,0xff,stream);
-    iVar4 = _strcmp(local_14c,&DAT_005c3ba2);
+    iVar4 = _strcmp(local_14c,"end\n");
     if (iVar4 == 0) break;
     uVar7 = 0xffffffff;
     pcVar10 = local_14c;
@@ -76,8 +73,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
     pvVar6 = malloc(~uVar7 + 9);
     *(void **)((int)local_154c + iVar9) = pvVar6;
     if (pvVar6 == (void *)0x0) {
-      _DAT_01d71de0 = "..\\core\\game.cpp";
-      _DAT_01d71de4 = 0x14af;
+      g_CHAR_PTR_01d71de0 = "..\\core\\game.cpp";
+      g_INT_01d71de4 = 0x14af;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CGame::rollCredits - Out of memory");
     }
     pcVar10 = local_14c;
@@ -96,9 +93,9 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
   _fclose(stream);
   sound_sndmain_cpp_enableSoundSystem_FUN_00558050();
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  pCVar3 = _DAT_01549aa8;
-  local_10 = _DAT_01549aa8;
-  _DAT_01549aa8->win_font_enabled = 0;
+  pCVar3 = g_CBitFont_PTR_01549aa8;
+  local_10 = g_CBitFont_PTR_01549aa8;
+  g_CBitFont_PTR_01549aa8->win_font_enabled = 0;
   iVar9 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar3,0x58);
   local_24 = (CBitFont *)0xffffffff;
   local_34 = iVar9;
@@ -107,7 +104,6 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
   local_1c = 0x1df - iVar9;
   do {
     pCVar3 = local_24;
-    uVar13 = 0x4c03c9;
     dVar12 = round((double)local_38);
     local_10 = (CBitFont *)(int)ROUND(dVar12);
     if (local_10 != pCVar3) {
@@ -177,9 +173,9 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
       engine_2d_c_fillRectColor_FUN_004031c0(0,0x1b7,0x27f,0x1df,0);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-    iVar9 = (**(code **)*0x01D70A78)(0x01D70A78,1,uVar13);
+    iVar9 = (*g_CKeys_PTR_00600284->vtable->getKeyState)(g_CKeys_PTR_00600284,DIK_ESCAPE);
     if (iVar9 != 0) {
-      if (_DAT_01dd4890 != 0) {
+      if (g_INT_01dd4890 != 0) {
         local_10->win_font_enabled = 1;
       }
       engine_2d_c_clearInputAndWait_FUN_004032b0();
@@ -196,7 +192,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
       return;
     }
     core_game_cpp_CGame_updateDT_FUN_004b4440(this_ptr);
-    local_38 = local_38 - this_ptr->delta_time_float * _DAT_005c3bdc;
+    local_38 = local_38 - this_ptr->delta_time_float * 32.0f;
     if ((local_18 == 0) && (local_38 < 0.0)) {
       local_38 = 480.0;
       local_24 = (CBitFont *)0xffffffff;

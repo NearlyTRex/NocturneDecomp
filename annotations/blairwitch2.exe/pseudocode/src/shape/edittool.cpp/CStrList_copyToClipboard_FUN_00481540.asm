@@ -14,10 +14,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d27cd
 ;   TerminatedCString s_CStrList_copyToClipboard_005d27e3
-;   undefined4 DAT_005d2824
+;   TerminatedCString s_s_005d2824
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -82,8 +82,8 @@ section .text
     MOV ESI,0x5d27cd                    ; 00481595 | = "..\\shape\\edittool.cpp"
     MOV EDI,0xcd1                       ; 0048159a
     PUSH 0x5d27e3                       ; 0048159f | = "CStrList::copyToClipboard - out of me..."
-    MOV dword ptr [0x01d046a0],ESI      ; 004815a4 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004815aa | DAT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 004815a4 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 004815aa | g_INT_01d046a4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004815b0
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004815b5
@@ -101,7 +101,7 @@ section .text
         ;   XREF to: 00481240 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00481240(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004815ca
     PUSH EAX                            ; 004815cd
-    PUSH 0x5d2824                       ; 004815ce | DAT_005d2824
+    PUSH 0x5d2824                       ; 004815ce | = "%s\n"
     PUSH EDI                            ; 004815d3
     INC ESI                             ; 004815d4
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004815d5

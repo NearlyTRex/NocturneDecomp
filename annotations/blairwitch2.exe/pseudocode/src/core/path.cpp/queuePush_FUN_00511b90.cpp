@@ -6,22 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_queuePush_FUN_00511b90(int grid_x,int cost,int grid_z,char direction)
 
 {
   int iVar1;
   
-  *(char *)(grid_z * 100 + grid_x + 0x1e5ec78) = direction;
-  _DAT_01e613ec = _DAT_01e613ec + 1;
-  *(int *)(&DAT_01e5020c + _DAT_01e5ec70 * 0xc) = grid_x;
-  *(int *)(&DAT_01e50210 + _DAT_01e5ec70 * 0xc) = cost;
-  iVar1 = _DAT_01e5ec70 + 1;
-  *(int *)(&DAT_01e50214 + _DAT_01e5ec70 * 0xc) = grid_z;
+  g_CHAR_ARRAY_01e5ec78[grid_z * 100 + grid_x] = direction;
+  g_INT_01e613ec = g_INT_01e613ec + 1;
+  g_INT_ARRAY_01e5020c[g_INT_01e5ec70 * 3] = grid_x;
+  *(int *)(&DAT_01e50210 + g_INT_01e5ec70 * 0xc) = cost;
+  iVar1 = g_INT_01e5ec70 + 1;
+  *(int *)(&DAT_01e50214 + g_INT_01e5ec70 * 0xc) = grid_z;
   if (4999 < iVar1) {
     iVar1 = 0;
   }
-  _DAT_01e5ec70 = iVar1;
+  g_INT_01e5ec70 = iVar1;
   return;
 }

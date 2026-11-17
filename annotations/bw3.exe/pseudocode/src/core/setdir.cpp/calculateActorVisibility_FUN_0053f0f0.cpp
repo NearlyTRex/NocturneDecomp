@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor *actor,CVector3i *bounding_box_vertices,SMRGLHeaderPrimitive *primitives,int thumb_index,C3DSCamera *camera,float radius)
 
 {
@@ -19,13 +17,15 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
   int iVar6;
   SMRGLHeaderPrimitive *pSVar7;
   int iVar8;
-  byte *puVar9;
+  char *pcVar9;
   uint *puVar10;
-  int iVar11;
+  byte *puVar11;
+  int iVar12;
   SProjectedVertex *point;
-  uint *puVar12;
   uint *puVar13;
-  byte bVar14;
+  uint *puVar14;
+  char *pcVar15;
+  byte bVar16;
   float afStackY_1080 [995];
   float fStack_e8;
   SMRGLHeaderPrimitive SStack_e4;
@@ -42,7 +42,7 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
   CBoundingBox3D *pCStack_5c;
   uint uStack_58;
   float fStack_50;
-  uint *puStack_4c;
+  char *pcStack_4c;
   uint uStack_48;
   int iStack_44;
   int iStack_40;
@@ -57,46 +57,46 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
   uint uStack_1c;
   int iStack_18;
   
-  bVar14 = 0;
+  bVar16 = 0;
   if (camera->enabled != 0) {
     fVar2 = (camera->position).x - (actor->location).position.x;
     fVar4 = (camera->position).y - (actor->location).position.y;
     fVar3 = (camera->position).z - (actor->location).position.z;
-    if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= _DAT_005e3cf8 * _DAT_005e3cf8) {
+    if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= 200.0f * 200.0f) {
       iVar6 = core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0
                         (camera,&(actor->location).position,radius);
       if (iVar6 == 0) {
         return 0.0;
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
-                (DAT_005f2afc,&camera->position);
+                (g_CDemonRenderer_PTR_005f2afc,&camera->position);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
-                (DAT_005f2afc,camera->projection_scale);
+                (g_CDemonRenderer_PTR_005f2afc,camera->projection_scale);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
-                (DAT_005f2afc,&camera->orientation);
+                (g_CDemonRenderer_PTR_005f2afc,&camera->orientation);
       uStack_3c = 0x800000ff;
       uStack_48 = 0;
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-                (DAT_005f2afc,&(actor->location).position);
+                (g_CDemonRenderer_PTR_005f2afc,&(actor->location).position);
       CStack_a4.x = (actor->orient).vec.x;
       CStack_a4.z = (actor->orient).vec.z;
       CStack_a4.y = (camera->orientation).y;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-                (DAT_005f2afc,&CStack_a4,(CVector3f *)0x0);
+                (g_CDemonRenderer_PTR_005f2afc,&CStack_a4,(CVector3f *)0x0);
       iVar6 = 0;
       do {
         engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                   ((SProjectedVertex *)
-                   ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6)
-                   ,bounding_box_vertices);
-        iVar11 = iVar6 + 0x30;
+                   ((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).
+                          transformed_x + iVar6),bounding_box_vertices);
+        iVar12 = iVar6 + 0x30;
         bounding_box_vertices = bounding_box_vertices + 1;
-        uVar1 = *(uint *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x + iVar6
-                         );
+        uVar1 = *(uint *)((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex)
+                                .screen_x + iVar6);
         uStack_3c = uStack_3c & uVar1;
         uStack_48 = uStack_48 | uVar1;
-        iVar6 = iVar11;
-      } while (iVar11 != 0x180);
+        iVar6 = iVar12;
+      } while (iVar12 != 0x180);
       if (((uStack_3c & 0x80000000) != 0) && ((char)uStack_3c != '\0')) {
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(actor);
         return 0.0;
@@ -114,12 +114,13 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(actor);
       do {
         point = (SProjectedVertex *)
-                ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6);
-        iVar11 = point->transformed_z;
-        if (0 < iVar11) {
-          iVar8 = iVar11 + 0x80;
+                ((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).
+                       transformed_x + iVar6);
+        iVar12 = point->transformed_z;
+        if (0 < iVar12) {
+          iVar8 = iVar12 + 0x80;
           point->transformed_x =
-               (int)(((longlong)point->transformed_x * (longlong)iVar8) / (longlong)iVar11);
+               (int)(((longlong)point->transformed_x * (longlong)iVar8) / (longlong)iVar12);
           point->transformed_y =
                (int)(((longlong)point->transformed_y * (longlong)iVar8) /
                     (longlong)point->transformed_z);
@@ -131,12 +132,12 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
       iVar6 = 0;
       fStack_e8 = 1.0;
       do {
-        if ((*(byte *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x +
-                      iVar6 + 3) & 0x80) != 0) {
-          dVar5 = _DAT_005d0c7e;
-          if (0 < *(int *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_z +
-                          iVar6)) {
-            dVar5 = _DAT_005d0c76;
+        if ((*(byte *)((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).
+                             screen_x + iVar6 + 3) & 0x80) != 0) {
+          dVar5 = 0.0625;
+          if (0 < *(int *)((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex
+                                 ).transformed_z + iVar6)) {
+            dVar5 = 0.5;
           }
           fStack_e8 = fStack_e8 * (float)dVar5;
         }
@@ -144,14 +145,14 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
       } while (iVar6 != 0x180);
       iStack_2c = 0;
       iStack_40 = 0;
-      if (0 < _DAT_02701910) {
-        fStack_50 = _DAT_005e3cfc * _DAT_005e3cfc;
+      if (0 < (int)g_FLOAT_ARRAY_02701528[0xfa]) {
+        fStack_50 = 100.0f * 100.0f;
         iStack_30 = 0;
-        puStack_4c = (uint *)(&DAT_0212551c + thumb_index * 0x3000);
+        pcStack_4c = g_CHAR_ARRAY_0212551c + thumb_index * 0x3000;
         pCStack_38 = &camera->position;
         pCStack_34 = (CBoundingBox3D *)0x2703854;
         do {
-          pCStack_24 = *(CDemonActor **)(&DAT_02701914 + iStack_30);
+          pCStack_24 = *(CDemonActor **)((int)g_INT_ARRAY_02701914 + iStack_30);
           fVar2 = (pCStack_24->location).position.x - pCStack_38->x;
           fVar4 = (pCStack_24->location).position.y - pCStack_38->y;
           fVar3 = (pCStack_24->location).position.z - pCStack_38->z;
@@ -165,20 +166,20 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
             do {
               core_box_cpp_CBoundingBox3D_getCorner_FUN_0041d8b0(pCStack_5c,uStack_1c,&CStack_98);
               fStack_8c = CStack_98.x;
-              afStack_88[(uint)bVar14 * -2] = *(float *)((int)&CStack_98 + (uint)bVar14 * -8 + 4);
+              afStack_88[(uint)bVar16 * -2] = *(float *)((int)&CStack_98 + (uint)bVar16 * -8 + 4);
               iVar6 = iStack_18;
-              afStack_88[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
-                   *(float *)((int)&CStack_98 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
-              aCStack_80[0].x = (int)ROUND(fStack_8c * _DAT_005e3ce0);
-              aCStack_80[0].y = (int)ROUND(afStack_88[0] * _DAT_005e3ce0);
-              aCStack_80[0].z = (int)ROUND(afStack_88[1] * _DAT_005e3ce0);
+              afStack_88[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
+                   *(float *)((int)&CStack_98 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+              aCStack_80[0].x = (int)ROUND(fStack_8c * 256.0f);
+              aCStack_80[0].y = (int)ROUND(afStack_88[0] * 256.0f);
+              aCStack_80[0].z = (int)ROUND(afStack_88[1] * 256.0f);
               engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                         ((SProjectedVertex *)
-                         ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x +
-                         iStack_18),aCStack_80);
+                         ((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex)
+                                .transformed_x + iStack_18),aCStack_80);
               iStack_18 = iVar6 + 0x30;
-              uVar1 = *(uint *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x +
-                               iVar6);
+              uVar1 = *(uint *)((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->
+                                      projected_vertex).screen_x + iVar6);
               uStack_58 = uStack_58 & uVar1;
               uStack_20 = uStack_20 | uVar1;
               uStack_1c = uStack_1c + 1;
@@ -186,116 +187,120 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
             core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(pCStack_24);
             if (((uStack_58 & 0x80000000) == 0) || ((char)uStack_58 == '\0')) {
               if (iStack_40 == 0) {
-                puVar10 = puStack_4c;
-                puVar12 = (uint *)&DAT_02122514;
+                pcVar9 = pcStack_4c;
+                pcVar15 = &DAT_02122514;
                 for (iVar6 = 0xc00; iVar6 != 0; iVar6 = iVar6 + -1) {
-                  *puVar12 = *puVar10;
-                  puVar10 = puVar10 + (uint)bVar14 * -2 + 1;
-                  puVar12 = puVar12 + (uint)bVar14 * -2 + 1;
+                  *(uint *)pcVar15 = *(uint *)pcVar9;
+                  pcVar9 = pcVar9 + ((uint)bVar16 * -2 + 1) * 4;
+                  pcVar15 = pcVar15 + ((uint)bVar16 * -2 + 1) * 4;
                 }
                 for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-                  *(byte *)puVar12 = *(byte *)puVar10;
-                  puVar10 = (uint *)((int)puVar10 + (uint)bVar14 * -2 + 1);
-                  puVar12 = (uint *)((int)puVar12 + (uint)bVar14 * -2 + 1);
+                  *pcVar15 = *pcVar9;
+                  pcVar9 = pcVar9 + (uint)bVar16 * -2 + 1;
+                  pcVar15 = pcVar15 + (uint)bVar16 * -2 + 1;
                 }
-                puVar9 = &DAT_02122514;
+                puVar11 = &DAT_02122514;
                 iStack_40 = 1;
                 iVar6 = 0;
                 do {
-                  *(byte **)(&DAT_01c60dac + iVar6) = puVar9;
+                  *(byte **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6) = puVar11;
                   iVar6 = iVar6 + 4;
-                  puVar9 = puVar9 + 0x100;
+                  puVar11 = puVar11 + 0x100;
                 } while (iVar6 != 0xc0);
-                engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,1);
+                engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460
+                          (g_CDemonRenderer_PTR_005f2afc,1);
               }
               SStack_e4.base.count = 4;
               engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
-                        (DAT_005f2afc,(uint)((uStack_20 & 0x80000000) != 0));
+                        (g_CDemonRenderer_PTR_005f2afc,(uint)((uStack_20 & 0x80000000) != 0));
               uStack_cc = 8;
               uStack_c8 = 0xc;
               uStack_c4 = 0xe;
               uStack_c0 = 10;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
-                        (DAT_005f2afc,&SStack_e4);
+                        (g_CDemonRenderer_PTR_005f2afc,&SStack_e4);
               uStack_cc = 9;
               uStack_c8 = 0xb;
               uStack_c4 = 0xf;
               uStack_c0 = 0xd;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
-                        (DAT_005f2afc,&SStack_e4);
+                        (g_CDemonRenderer_PTR_005f2afc,&SStack_e4);
               uStack_c8 = 9;
               uStack_c4 = 0xd;
               uStack_cc = 8;
               uStack_c0 = 0xc;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
-                        (DAT_005f2afc,&SStack_e4);
+                        (g_CDemonRenderer_PTR_005f2afc,&SStack_e4);
               uStack_c4 = 0xf;
               uStack_cc = 10;
               uStack_c8 = 0xe;
               uStack_c0 = 0xb;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
-                        (DAT_005f2afc,&SStack_e4);
+                        (g_CDemonRenderer_PTR_005f2afc,&SStack_e4);
               uStack_cc = 8;
               uStack_c0 = 9;
               uStack_c8 = 10;
               uStack_c4 = 0xb;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
-                        (DAT_005f2afc,&SStack_e4);
+                        (g_CDemonRenderer_PTR_005f2afc,&SStack_e4);
               uStack_cc = 0xc;
               uStack_c8 = 0xd;
               uStack_c4 = 0xf;
               uStack_c0 = 0xe;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
-                        (DAT_005f2afc,&SStack_e4);
+                        (g_CDemonRenderer_PTR_005f2afc,&SStack_e4);
             }
           }
           iStack_30 = iStack_30 + 4;
           pCStack_34 = pCStack_34 + 1;
           iStack_2c = iStack_2c + 1;
-        } while (iStack_2c < _DAT_02701910);
+        } while (iStack_2c < (int)g_FLOAT_ARRAY_02701528[0xfa]);
       }
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460
+                (g_CDemonRenderer_PTR_005f2afc,0);
       if (iStack_40 == 0) {
-        puVar9 = &DAT_0212551c + thumb_index * 0x3000;
+        pcVar9 = g_CHAR_ARRAY_0212551c + thumb_index * 0x3000;
         iVar6 = 0;
         do {
-          *(byte **)(&DAT_01c60dac + iVar6) = puVar9;
+          *(char **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6) = pcVar9;
           iVar6 = iVar6 + 4;
-          puVar9 = puVar9 + 0x100;
+          pcVar9 = pcVar9 + 0x100;
         } while (iVar6 != 0xc0);
       }
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,1);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460
+                (g_CDemonRenderer_PTR_005f2afc,1);
       engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
-                (DAT_005f2afc,(uint)((uStack_48 & 0x80000000) != 0));
+                (g_CDemonRenderer_PTR_005f2afc,(uint)((uStack_48 & 0x80000000) != 0));
       iVar6 = 0;
       iStack_44 = 0;
       if (0 < iStack_28) {
-        iVar11 = iStack_28 * 4;
+        iVar12 = iStack_28 * 4;
         do {
           iVar8 = engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470
-                            (DAT_005f2afc,*(SMRGLPrimitivePoly **)((int)aiStack_bc + iVar6));
+                            (g_CDemonRenderer_PTR_005f2afc,
+                             *(SMRGLPrimitivePoly **)((int)aiStack_bc + iVar6));
           iVar6 = iVar6 + 4;
           iStack_44 = iStack_44 + iVar8;
-        } while (iVar6 < iVar11);
+        } while (iVar6 < iVar12);
       }
       if (g_CGamePtr->debug_toggle_flag != 0) {
         puVar10 = (uint *)(thumb_index * 0x3000 + 0x241351c);
         iVar6 = 0;
         do {
           iVar8 = iVar6 + 4;
-          puVar12 = *(uint **)(&DAT_01c60dac + iVar6);
-          puVar13 = puVar10;
-          for (iVar11 = 0x40; iVar11 != 0; iVar11 = iVar11 + -1) {
-            *puVar13 = *puVar12;
-            puVar12 = puVar12 + (uint)bVar14 * -2 + 1;
-            puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+          puVar13 = *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6);
+          puVar14 = puVar10;
+          for (iVar12 = 0x40; iVar12 != 0; iVar12 = iVar12 + -1) {
+            *puVar14 = *puVar13;
+            puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+            puVar14 = puVar14 + (uint)bVar16 * -2 + 1;
           }
-          for (iVar11 = 0; iVar11 != 0; iVar11 = iVar11 + -1) {
-            *(byte *)puVar13 = *(byte *)puVar12;
-            puVar12 = (uint *)((int)puVar12 + (uint)bVar14 * -2 + 1);
-            puVar13 = (uint *)((int)puVar13 + (uint)bVar14 * -2 + 1);
+          for (iVar12 = 0; iVar12 != 0; iVar12 = iVar12 + -1) {
+            *(byte *)puVar14 = *(byte *)puVar13;
+            puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);
+            puVar14 = (uint *)((int)puVar14 + (uint)bVar16 * -2 + 1);
           }
-          *(uint **)(&DAT_01c60dac + iVar6) = puVar10;
+          *(uint **)((int)g_UINT_PTR_ARRAY_01c60dac + iVar6) = puVar10;
           puVar10 = puVar10 + 0x40;
           iVar6 = iVar8;
         } while (iVar8 != 0xc0);
@@ -303,14 +308,16 @@ float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor 
         if (0 < iStack_28) {
           do {
             engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0
-                      (DAT_005f2afc,(SMRGLPrimitivePoly *)primitives);
+                      (g_CDemonRenderer_PTR_005f2afc,(SMRGLPrimitivePoly *)primitives);
             iVar6 = iVar6 + 1;
             primitives = (SMRGLHeaderPrimitive *)(((SMRGLPrimitivePoly *)primitives)->vertices + 4);
           } while (iVar6 < iStack_28);
         }
       }
-      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);
+      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
+                (g_CDemonRenderer_PTR_005f2afc,1);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460
+                (g_CDemonRenderer_PTR_005f2afc,0);
       return (float)iStack_44 * fStack_e8;
     }
   }

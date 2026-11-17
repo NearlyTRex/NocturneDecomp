@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004ab6c0(CFilmProjector *this_ptr,float delta_time)
 
 {
@@ -21,21 +19,21 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004ab6c0(CFilmProjecto
       core_dfilter_cpp_CFilterFX_openMovie_FUN_0045ddb0(g_CFilterFXPtr,(char *)0x0);
       sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
       uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
-                        ((CDemonActor *)this_ptr,(char *)0x5df152);
+                        ((CDemonActor *)this_ptr,"35-end.wav");
       this_ptr->sfx_handle = uVar4;
     }
   }
   else {
     pCVar3 = (this_ptr->base).dest_actor;
-    fVar1 = delta_time * _DAT_005df15f;
+    fVar1 = delta_time * 3.141593f;
     (pCVar3->orient).vec.z = (pCVar3->orient).vec.z - fVar1;
     this_ptr->reel_rotation = this_ptr->reel_rotation - fVar1;
     if (this_ptr->prev_dest_state == 0) {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
                          ((this_ptr->base).dest_actor,g_CFilmReelClassInfo.name_hash);
       if (pCVar3 == (CDemonActor *)0x0) {
-        _DAT_01d1d400 = "..\\core\\filmreel.cpp";
-        _DAT_01d1d404 = 0x11d;
+        g_CHAR_PTR_01d1d400 = "..\\core\\filmreel.cpp";
+        g_INT_01d1d404 = 0x11d;
         core_main_c_displayErrorAndQuit_FUN_005030e0("CFilmProjector::Need to put CFilmReel in place");
       }
       core_dfilter_cpp_CFilterFX_openMovie_FUN_0045ddb0
@@ -54,7 +52,8 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004ab6c0(CFilmProjecto
       }
     }
     if (this_ptr->key_reel == (this_ptr->base).dest_actor) {
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,this_ptr->key_event);
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+                (g_CEventList_PTR_0061b4d0,this_ptr->key_event);
     }
   }
   this_ptr->prev_dest_state = (this_ptr->base).triggered;

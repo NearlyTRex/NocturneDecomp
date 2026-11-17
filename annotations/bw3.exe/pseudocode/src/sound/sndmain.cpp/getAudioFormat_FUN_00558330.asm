@@ -16,9 +16,9 @@
 ;   sound_sndmain.cpp_writeIni_FUN_00559520 at 005595be
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00604228
-;   undefined4 DAT_0060422c
-;   undefined4 DAT_00604230
+;   int g_INT_00604228 = 0x10
+;   int g_INT_0060422c = 0x2
+;   int g_INT_00604230 = 0x5622
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
         ;   Label: LAB_00558341
     JZ 0x0055834c                       ; 00558343
         ;   XREF to: 0055834c (CONDITIONAL_JUMP)  ; LAB_0055834c
-    MOV EAX,[0x0060422c]                ; 00558345 | DAT_0060422c
+    MOV EAX,[0x0060422c]                ; 00558345 | g_INT_0060422c
     MOV dword ptr [ECX],EAX             ; 0055834a
     TEST EDX,EDX                        ; 0055834c
         ;   Label: LAB_0055834c
@@ -44,12 +44,12 @@ section .text
         ;   XREF to: 0055835b (CONDITIONAL_JUMP)  ; LAB_0055835b
     POP EBX                             ; 00558350
     RET                                 ; 00558351
-    MOV EAX,[0x00604228]                ; 00558352 | DAT_00604228
+    MOV EAX,[0x00604228]                ; 00558352 | g_INT_00604228
         ;   Label: LAB_00558352
     MOV dword ptr [EBX],EAX             ; 00558357
     JMP 0x00558341                      ; 00558359
         ;   XREF to: 00558341 (UNCONDITIONAL_JUMP)  ; LAB_00558341
-    MOV EAX,[0x00604230]                ; 0055835b | DAT_00604230
+    MOV EAX,[0x00604230]                ; 0055835b | g_INT_00604230
         ;   Label: LAB_0055835b
     MOV dword ptr [EDX],EAX             ; 00558360
     POP EBX                             ; 00558362

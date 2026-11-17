@@ -39,9 +39,10 @@ void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004e7c80(CGround *thi
   iVar3 = core_ground_cpp_CGround_getVertexIndex_FUN_004e7670(this_ptr,iVar3 + 1,row_00);
   iVar1 = this_ptr->vertex_indices[0];
   this_ptr->vertex_indices[3] = iVar3;
-  uVar2 = (&DAT_00629024)[this_ptr->vertex_indices[3] * 0xc] &
-          (&DAT_00629024)[iVar1 * 0xc] & (&DAT_00629024)[this_ptr->vertex_indices[1] * 0xc] &
-          (&DAT_00629024)[this_ptr->vertex_indices[2] * 0xc];
+  uVar2 = g_SRenderVertex_ARRAY_00629014[this_ptr->vertex_indices[3]].projected_vertex.screen_x &
+          g_SRenderVertex_ARRAY_00629014[iVar1].projected_vertex.screen_x &
+          g_SRenderVertex_ARRAY_00629014[this_ptr->vertex_indices[1]].projected_vertex.screen_x &
+          g_SRenderVertex_ARRAY_00629014[this_ptr->vertex_indices[2]].projected_vertex.screen_x;
   if (((uVar2 & 0x80000000) != 0) && ((char)uVar2 != '\0')) {
     return;
   }

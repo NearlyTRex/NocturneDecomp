@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_0045c400(int pixel_count)
 
 {
   int iVar1;
   
-  if (0x300060U - pixel_count < _DAT_01b49bdc) {
-    _DAT_01d71de0 = "..\\core\\dlight.cpp";
-    _DAT_01d71de4 = 0xa3;
+  if (0x300060U - pixel_count < g_UINT_01b49bdc) {
+    g_CHAR_PTR_01d71de0 = "..\\core\\dlight.cpp";
+    g_INT_01d71de4 = 0xa3;
     core_main_c_displayErrorAndQuit_FUN_004e4330("getRestoreMemory - Need more static memory");
   }
-  iVar1 = _DAT_01b49bdc * 2;
-  _DAT_01b49bdc = _DAT_01b49bdc + pixel_count + 8;
-  return (void *)(iVar1 + 0x1549b24U & 0xfffffff0);
+  iVar1 = g_UINT_01b49bdc * 2;
+  g_UINT_01b49bdc = g_UINT_01b49bdc + pixel_count + 8;
+  return (void *)((uint)(g_UCHAR_ARRAY_01549b14 + iVar1 + 0x10) & 0xfffffff0);
 }

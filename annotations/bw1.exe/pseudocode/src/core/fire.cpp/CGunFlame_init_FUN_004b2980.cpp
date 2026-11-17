@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGunFlame_init_FUN_004b2980(CGunFlame *this_ptr)
 
 {
@@ -28,16 +26,16 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004b2980(CGunFlame *this_ptr)
   
   bVar5 = 0;
   local_1c = 0;
-  if (0 < _DAT_01c58768) {
+  if (0 < g_INT_01c58768) {
     local_18 = &this_ptr->position;
     local_20 = 0;
     do {
-      this_ptr_00 = *(CCharacter **)(&DAT_01c5876c + local_20);
+      this_ptr_00 = *(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c5876c + local_20);
       if (((this_ptr->flame_type == 2) || (this_ptr_00->gun_flame_ignitable != 0)) &&
          (fVar1 = (this_ptr_00->base).location.position.x - local_18->x,
          fVar3 = (this_ptr_00->base).location.position.y - local_18->y,
          fVar2 = (this_ptr_00->base).location.position.z - local_18->z,
-         fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= _DAT_005df4d4)) {
+         fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= 25.0f)) {
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(&this_ptr_00->model);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                   (&this_ptr_00->base,local_18,local_44);
@@ -51,22 +49,22 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004b2980(CGunFlame *this_ptr)
       }
       local_20 = local_20 + 4;
       local_1c = local_1c + 1;
-    } while (local_1c < _DAT_01c58768);
+    } while (local_1c < g_INT_01c58768);
   }
   iVar4 = 0;
-  if (0 < _DAT_01c58834) {
+  if (0 < g_INT_01c58834) {
     local_24 = 0;
     do {
-      this_ptr_01 = *(CFlameCan **)(&DAT_01c58838 + local_24);
+      this_ptr_01 = *(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c58838 + local_24);
       fVar1 = (this_ptr_01->base).location.position.x - (this_ptr->position).x;
       fVar3 = (this_ptr_01->base).location.position.y - (this_ptr->position).y;
       fVar2 = (this_ptr_01->base).location.position.z - (this_ptr->position).z;
-      if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= (float)_DAT_005df4dc) {
+      if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= (float)25) {
         core_flamecan_cpp_CFlameCan_ignite_FUN_004b9180(this_ptr_01);
       }
       local_24 = local_24 + 4;
       iVar4 = iVar4 + 1;
-    } while (iVar4 < _DAT_01c58834);
+    } while (iVar4 < g_INT_01c58834);
   }
   return;
 }

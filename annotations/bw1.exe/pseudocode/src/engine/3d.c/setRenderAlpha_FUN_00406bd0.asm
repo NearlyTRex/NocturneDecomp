@@ -20,9 +20,9 @@
 ;   ... and 16 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006104f0
-;   undefined4 DAT_0061b4b8
-;   undefined4 DAT_00713a80
+;   int g_INT_006104f0 = 0xffffff
+;   int g_INT_0061b4b8 = 0xff
+;   int g_INT_00713a80
 ;
 ; *****************************************************************************
 
@@ -48,9 +48,9 @@ section .text
     OR ECX,EAX                          ; 00406bf6
     MOV EAX,ECX                         ; 00406bf8
     XOR EAX,0xffffff                    ; 00406bfa
-    MOV dword ptr [0x006104f0],ECX      ; 00406bff | DAT_006104f0
-    MOV [0x00713a80],EAX                ; 00406c05 | DAT_00713a80
-    MOV dword ptr [0x0061b4b8],EDX      ; 00406c0a | DAT_0061b4b8
+    MOV dword ptr [0x006104f0],ECX      ; 00406bff | g_INT_006104f0
+    MOV [0x00713a80],EAX                ; 00406c05 | g_INT_00713a80
+    MOV dword ptr [0x0061b4b8],EDX      ; 00406c0a | g_INT_0061b4b8
     RET                                 ; 00406c10
     XOR EDX,EDX                         ; 00406c11
         ;   Label: LAB_00406c11

@@ -14,14 +14,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_005f6f19
 ;   TerminatedCString s_CStranger_aimLeftPistol_005f6f2e
-;   undefined4 DAT_005f6f59
-;   undefined4 DAT_006060b0
-;   undefined4 DAT_006060b4
+;   double g_DOUBLE_005f6f59 = 0.0100000000000000
+;   float g_FLOAT_006060b0 = -1.047198
+;   float g_FLOAT_006060b4 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02c8360c
+;   undefined4 g_INT_ARRAY_02c83600[3]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -63,7 +63,7 @@ section .text
     LEA EAX,[EBX + 0x1ffe0]             ; 0058f69c
     LEA EDI,[ESP + 0x58]                ; 0058f6a2
     MOV dword ptr [ESP + 0x158],EAX     ; 0058f6a6
-    MOV EAX,[0x02c8360c]                ; 0058f6ad | DAT_02c8360c
+    MOV EAX,[0x02c8360c]                ; 0058f6ad | g_INT_ARRAY_02c83600[3]
     LEA ESI,[ESP + 0x10c]               ; 0058f6b2
     MOV dword ptr [ESP + 0x14c],EAX     ; 0058f6b9
     MOV EAX,0x3f060a92                  ; 0058f6c0
@@ -290,7 +290,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x30]      ; 0058f9fd
     FST double ptr [ESP + 0x10]         ; 0058fa01
     MOV dword ptr [ESP + 0x2c],EAX      ; 0058fa05
-    FCOMP double ptr [0x005f6f59]       ; 0058fa09 | DAT_005f6f59
+    FCOMP double ptr [0x005f6f59]       ; 0058fa09 | g_DOUBLE_005f6f59
     FNSTSW AX                           ; 0058fa0f
     SAHF                                ; 0058fa11
     JBE 0x0058fa3e                      ; 0058fa12
@@ -303,7 +303,7 @@ section .text
     FLD float ptr [ESP + 0x2c]          ; 0058fa27
         ;   Label: LAB_0058fa27
     FST double ptr [ESP + 0x8]          ; 0058fa2b
-    FCOMP double ptr [0x005f6f59]       ; 0058fa2f | DAT_005f6f59
+    FCOMP double ptr [0x005f6f59]       ; 0058fa2f | g_DOUBLE_005f6f59
     FNSTSW AX                           ; 0058fa35
     SAHF                                ; 0058fa37
     JNC 0x0058fbf4                      ; 0058fa38
@@ -319,21 +319,21 @@ section .text
     MOV EAX,dword ptr [ESP + 0x70]      ; 0058fa57
     FLD float ptr [ESP + 0x70]          ; 0058fa5b
     MOV dword ptr [ESP + 0x154],EAX     ; 0058fa5f
-    FCOMP float ptr [0x006060b0]        ; 0058fa66 | DAT_006060b0
+    FCOMP float ptr [0x006060b0]        ; 0058fa66 | g_FLOAT_006060b0
     FNSTSW AX                           ; 0058fa6c
     SAHF                                ; 0058fa6e
     JNC 0x0058fa7d                      ; 0058fa6f
         ;   XREF to: 0058fa7d (CONDITIONAL_JUMP)  ; LAB_0058fa7d
-    MOV EAX,[0x006060b0]                ; 0058fa71 | DAT_006060b0
+    MOV EAX,[0x006060b0]                ; 0058fa71 | g_FLOAT_006060b0
     MOV dword ptr [ESP + 0x154],EAX     ; 0058fa76
     FLD float ptr [ESP + 0x154]         ; 0058fa7d
         ;   Label: LAB_0058fa7d
-    FCOMP float ptr [0x006060b4]        ; 0058fa84 | DAT_006060b4
+    FCOMP float ptr [0x006060b4]        ; 0058fa84 | g_FLOAT_006060b4
     FNSTSW AX                           ; 0058fa8a
     SAHF                                ; 0058fa8c
     JBE 0x0058fa9b                      ; 0058fa8d
         ;   XREF to: 0058fa9b (CONDITIONAL_JUMP)  ; LAB_0058fa9b
-    MOV EAX,[0x006060b4]                ; 0058fa8f | DAT_006060b4
+    MOV EAX,[0x006060b4]                ; 0058fa8f | g_FLOAT_006060b4
     MOV dword ptr [ESP + 0x154],EAX     ; 0058fa94
     FLD float ptr [ESP + 0x15c]         ; 0058fa9b
         ;   Label: LAB_0058fa9b
@@ -372,8 +372,8 @@ section .text
         ;   Label: LAB_0058fb0f
     MOV ESI,0x1125                      ; 0058fb14
     PUSH 0x5f6f2e                       ; 0058fb19 | = "CStranger::aimLeftPistol - no weapon?"
-    MOV dword ptr [0x01d1d400],ECX      ; 0058fb1e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0058fb24 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0058fb1e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0058fb24 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0058fb2a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0058fb2f

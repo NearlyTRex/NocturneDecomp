@@ -11,10 +11,10 @@
 ; int              Stack[0x14]:4   pixel_count
 ;
 ; Referenced Globals:
-;   undefined8 DAT_006185f8
-;   undefined8 DAT_00618600
-;   undefined4 DAT_0061a358
-;   undefined4 DAT_01c51d1c
+;   qword g_QWORD_006185f8 = 0x4000400040004
+;   qword g_QWORD_00618600 = 0xc000c000c000c
+;   undefined4 g_USHORT_ARRAY_00619b60[1020]
+;   ulong g_ULONG_01c51d1c
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00488cc4
     MOV EBP,dword ptr [EBP + 0x14]      ; 00488cc7
     PXOR MM7,MM7                        ; 00488cca
-    MOVD MM5,dword ptr [0x01c51d1c]     ; 00488ccd | DAT_01c51d1c
+    MOVD MM5,dword ptr [0x01c51d1c]     ; 00488ccd | g_ULONG_01c51d1c
     PUNPCKLBW MM5,MM7                   ; 00488cd4
     PSLLW MM5,0x6                       ; 00488cd7
     MOVZX EDX,byte ptr [EBX]            ; 00488cdb
@@ -52,14 +52,14 @@ section .text
     PMULLW MM1,MM2                      ; 00488d0c
     MOVQ MM2,MM3                        ; 00488d0f
     MOVQ MM4,MM5                        ; 00488d12
-    PXOR MM2,qword ptr [0x0061a358]     ; 00488d15 | DAT_0061a358
+    PXOR MM2,qword ptr [0x0061a358]     ; 00488d15 | g_USHORT_ARRAY_00619b60[1020]
     PMULHW MM0,MM2                      ; 00488d1c
     PMULHW MM1,MM2                      ; 00488d1f
     PMULHW MM4,MM3                      ; 00488d22
     PADDW MM0,MM4                       ; 00488d25
     PADDW MM1,MM4                       ; 00488d28
-    PADDW MM0,qword ptr [0x006185f8]    ; 00488d2b | DAT_006185f8
-    PADDW MM1,qword ptr [0x00618600]    ; 00488d32 | DAT_00618600
+    PADDW MM0,qword ptr [0x006185f8]    ; 00488d2b | g_QWORD_006185f8
+    PADDW MM1,qword ptr [0x00618600]    ; 00488d32 | g_QWORD_00618600
     PSRLW MM0,0x4                       ; 00488d39
     PSRLW MM1,0x4                       ; 00488d3d
     PACKUSWB MM0,MM1                    ; 00488d41
@@ -82,14 +82,14 @@ section .text
     PMULLW MM1,MM2                      ; 00488d7e
     MOVQ MM2,MM3                        ; 00488d81
     MOVQ MM4,MM5                        ; 00488d84
-    PXOR MM2,qword ptr [0x0061a358]     ; 00488d87 | DAT_0061a358
+    PXOR MM2,qword ptr [0x0061a358]     ; 00488d87 | g_USHORT_ARRAY_00619b60[1020]
     PMULHW MM0,MM2                      ; 00488d8e
     PMULHW MM1,MM2                      ; 00488d91
     PMULHW MM4,MM3                      ; 00488d94
     PADDW MM0,MM4                       ; 00488d97
     PADDW MM1,MM4                       ; 00488d9a
-    PADDW MM0,qword ptr [0x006185f8]    ; 00488d9d | DAT_006185f8
-    PADDW MM1,qword ptr [0x00618600]    ; 00488da4 | DAT_00618600
+    PADDW MM0,qword ptr [0x006185f8]    ; 00488d9d | g_QWORD_006185f8
+    PADDW MM1,qword ptr [0x00618600]    ; 00488da4 | g_QWORD_00618600
     PSRLW MM0,0x4                       ; 00488dab
     PSRLW MM1,0x4                       ; 00488daf
     PACKUSWB MM0,MM1                    ; 00488db3

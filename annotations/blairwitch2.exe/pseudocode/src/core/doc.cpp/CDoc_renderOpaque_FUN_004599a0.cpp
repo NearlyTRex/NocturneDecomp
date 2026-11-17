@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
 
@@ -45,7 +44,7 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   fStack_c = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                        ((CCharacter *)this_ptr,4);
-  if ((float)_DAT_005d0507 < fStack_c) {
+  if ((float)0.98999999999999999 < fStack_c) {
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     pCVar4 = (CVector3f *)0x0;
     if (pCVar1 != (CDemonActor *)0x0) {
@@ -85,12 +84,12 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
         fStack_10 = 10.0;
       }
       core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840
-                (0x01C3DEB4,pCVar4,&CStack_64,1.0,1.0,&g_CDemonSetPtr->collision_normal,fStack_10,
-                 0xff,0,0);
+                (g_CFireEffect_PTR_00614d30,pCVar4,&CStack_64,1.0,1.0,
+                 &g_CDemonSetPtr->collision_normal,fStack_10,0xff,0,0);
       core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     }
   }
-  if ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01b4d2b0] != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_01b4d2b0] != 0) {
     pCVar2 = this_ptr->weapon;
     if (pCVar2 != (CWeapon *)0x0) {
       if ((pCVar2->weapon_type == WEAPON_TYPE_GUN) &&
@@ -129,8 +128,8 @@ LAB_00459b81:
   if ((((pCVar2 == (CWeapon *)0x0) ||
        (pCVar2 == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (pCVar2 == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     (((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01b4d2b0] == 0 ||
-      (iVar3 = core_actor_cpp_isOfClass_FUN_0040c840(&pCVar2->base,&DAT_005d0502), iVar3 == 0))))
+     (((this_ptr->base).base.model.part_data.visibility_flags[g_INT_01b4d2b0] == 0 ||
+      (iVar3 = core_actor_cpp_isOfClass_FUN_0040c840(&pCVar2->base,"CGun"), iVar3 == 0))))
   goto LAB_00459c91;
   if (this_ptr->weapon == (CWeapon *)0x0) {
 switchD_00459c4e_caseD_3:
@@ -166,14 +165,15 @@ switchD_00459c4e_caseD_3:
   }
   fStack_c = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                        ((CCharacter *)this_ptr,iVar3);
-  if ((float)_DAT_005d050f < fStack_c) {
+  if ((float)0.94999999999999996 < fStack_c) {
     (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
               ((CCharacter *)this_ptr->weapon);
   }
 LAB_00459c91:
-  if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01b4d2b0] == 0) &&
-      (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280), iVar3 == 0
-      )) && (0 < (this_ptr->base).base.cloth_list.count)) {
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_INT_01b4d2b0] == 0) &&
+      (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                         (g_CDemonRenderer_PTR_0060b280), iVar3 == 0)) &&
+     (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_005b1550(&(this_ptr->base).base.cloth_list);
   }
   return 1;

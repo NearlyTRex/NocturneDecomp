@@ -13,7 +13,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220 at 004e7366
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f98bc
+;   float g_FLOAT_005f98bc = 0.5235988
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -42,7 +42,7 @@ section .text
     ADD EBX,EAX                         ; 004e626a
     FILD dword ptr [ESP + 0x3c]         ; 004e626c
     FADD float ptr [EBX + 0x4]          ; 004e6270
-    FMUL float ptr [0x005f98bc]         ; 004e6273 | DAT_005f98bc
+    FMUL float ptr [0x005f98bc]         ; 004e6273 | g_FLOAT_005f98bc
     LEA EAX,[EBX + 0x18]                ; 004e6279
     MOV dword ptr [EBX + 0x18],0x0      ; 004e627c
     PUSH EAX                            ; 004e6283

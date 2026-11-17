@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_djien_cpp_CDjien_doStumpAttack_FUN_004609c0(CDjien *this_ptr)
 
 {
@@ -110,11 +108,11 @@ void __cdecl core_djien_cpp_CDjien_doStumpAttack_FUN_004609c0(CDjien *this_ptr)
   afStack_d0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        afStack_b8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
   afStack_34[2] = afStack_b8[2];
-  fStack_20 = fStack_d4 * _DAT_005d8d8c;
-  fStack_1c = afStack_d0[0] * _DAT_005d8d8c;
-  fStack_18 = afStack_d0[1] * _DAT_005d8d8c;
+  fStack_20 = fStack_d4 * 0.5f;
+  fStack_1c = afStack_d0[0] * 0.5f;
+  fStack_18 = afStack_d0[1] * 0.5f;
   afStack_34[3] = afStack_b8[3];
-  CStack_ec.x = fStack_d4 * _DAT_005d8d8c;
+  CStack_ec.x = fStack_d4 * 0.5f;
   *(float *)((int)&CStack_ec + (uint)bVar4 * -8 + 4) = afStack_34[(uint)bVar4 * -2 + 6];
   *(float *)((int)&CStack_ec + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
@@ -123,10 +121,10 @@ void __cdecl core_djien_cpp_CDjien_doStumpAttack_FUN_004609c0(CDjien *this_ptr)
   afStack_b8[(uint)bVar4 * -2] = afStack_34[(uint)bVar4 * -2 + 3];
   afStack_b8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-  fStack_38 = fStack_bc * _DAT_005d8d8c;
-  afStack_34[0] = afStack_b8[0] * _DAT_005d8d8c;
-  afStack_34[1] = afStack_b8[1] * _DAT_005d8d8c;
-  CStack_e0.x = fStack_bc * _DAT_005d8d8c;
+  fStack_38 = fStack_bc * 0.5f;
+  afStack_34[0] = afStack_b8[0] * 0.5f;
+  afStack_34[1] = afStack_b8[1] * 0.5f;
+  CStack_e0.x = fStack_bc * 0.5f;
   *(float *)((int)&CStack_e0 + (uint)bVar4 * -8 + 4) = afStack_34[(uint)bVar4 * -2];
   *(float *)((int)&CStack_e0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
@@ -137,12 +135,13 @@ void __cdecl core_djien_cpp_CDjien_doStumpAttack_FUN_004609c0(CDjien *this_ptr)
   fStack_14 = SStack_158.damage_amount;
   core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(&this_ptr->base,&CStack_e0,3.0,&SStack_158);
   core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(&this_ptr->base,&CStack_ec,3.0,&SStack_158);
-  iVar2 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
+  iVar2 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                    (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
   if (iVar2 != 0) {
     return;
   }
   uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                    ((CDemonActor *)this_ptr,"?stick-stump?.wav" + 1);
+                    ((CDemonActor *)this_ptr,"stick-stump?.wav");
   this_ptr->sfx_handle = uVar3;
   return;
 }

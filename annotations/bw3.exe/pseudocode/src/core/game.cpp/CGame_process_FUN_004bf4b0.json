@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 138,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 43,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 108,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 546
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 107,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 545
   },
   "cross_references": [
     {
@@ -155,14 +152,14 @@
   "globals": [
     {
       "addr": "005c39b0",
-      "name": "s_G_s_3_2f_ms_005c39af+1",
-      "type": "undefined4",
+      "name": "s_s_3_2f_ms_005c39b0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c39d8",
-      "name": "s_gFilterFX_process_005c39d7+1",
-      "type": "undefined4",
+      "name": "s_gFilterFX_process_005c39d8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -209,21 +206,21 @@
     },
     {
       "addr": "005c3a70",
-      "name": "DAT_005c3a70",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c3a70",
+      "type": "double",
+      "value": "0.0555555555555556"
     },
     {
       "addr": "005c3a78",
-      "name": "DAT_005c3a78",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c3a78",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005c3a80",
-      "name": "DAT_005c3a80",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c3a80",
+      "type": "double",
+      "value": "1000"
     },
     {
       "addr": "005f1690",
@@ -239,15 +236,15 @@
     },
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005fba60",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "005fc5a0",
-      "name": "DAT_005fc5a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005fc5a0",
+      "type": "CFireEffect*",
+      "value": "01c73654"
     },
     {
       "addr": "005fe4b0",
@@ -269,9 +266,9 @@
     },
     {
       "addr": "00600530",
-      "name": "DAT_00600530",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00600530",
+      "type": "CDemonMission*",
+      "value": "01d81080"
     },
     {
       "addr": "00603450",
@@ -293,15 +290,15 @@
     },
     {
       "addr": "006045f8",
-      "name": "DAT_006045f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006045f8",
+      "type": "CSound*",
+      "value": "02cf5680"
     },
     {
       "addr": "00606aa0",
-      "name": "DAT_00606aa0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CTerrain_PTR_00606aa0",
+      "type": "CTerrain*",
+      "value": "02cfd8b8"
     },
     {
       "addr": "00606b20",
@@ -311,9 +308,9 @@
     },
     {
       "addr": "006071f0",
-      "name": "DAT_006071f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWeather_PTR_006071f0",
+      "type": "CWeather*",
+      "value": "02d0c1a0"
     },
     {
       "addr": "007f7ea4",
@@ -353,8 +350,8 @@
     },
     {
       "addr": "01d22c98",
-      "name": "DAT_01d22c98",
-      "type": "undefined4",
+      "name": "g_INT_01d22c98",
+      "type": "int",
       "value": null
     },
     {
@@ -407,8 +404,8 @@
     },
     {
       "addr": "02d0c1a0",
-      "name": "DAT_02d0c1a0",
-      "type": "undefined4",
+      "name": "g_CWeather_02d0c1a0",
+      "type": "CWeather",
       "value": null
     }
   ],
@@ -530,22 +527,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x2cf5680 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 41,
-      "match": "0x2cf5680",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x02CF5680;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

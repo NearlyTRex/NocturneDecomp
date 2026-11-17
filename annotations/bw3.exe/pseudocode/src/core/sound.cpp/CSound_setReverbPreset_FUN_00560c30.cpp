@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_00560c30(CSound *this_ptr,int index)
 
 {
   if ((index < 0) || (0x1a < index)) {
-    _DAT_01d71de0 = "..\\core\\sound.cpp";
-    _DAT_01d71de4 = 0x3fd;
+    g_CHAR_PTR_01d71de0 = "..\\core\\sound.cpp";
+    g_INT_01d71de4 = 0x3fd;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CSound::setReverbPreset - invalid index");
   }
   core_sound_cpp_CSound_setReverb_FUN_00560c00

@@ -20,11 +20,11 @@
 ;   ... and 72 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007303e8
-;   undefined4 DAT_007303fc
-;   undefined4 DAT_01c6e2cc
-;   undefined4 DAT_01c6e2d0
-;   undefined4 DAT_01c6e2d4
+;   int g_INT_007303e8
+;   int g_INT_007303fc
+;   int g_INT_01c6e2cc
+;   int g_INT_01c6e2d0
+;   int g_INT_01c6e2d4
 ;
 ; *****************************************************************************
 
@@ -33,12 +33,12 @@ section .text
     PUSH EBX                            ; 00403920
         ;   Label: engine_3d.c_isVisiblePlane_FUN_00403920
     PUSH ESI                            ; 00403921
-    MOV EDX,dword ptr [0x007303e8]      ; 00403922 | DAT_007303e8
+    MOV EDX,dword ptr [0x007303e8]      ; 00403922 | g_INT_007303e8
     INC EDX                             ; 00403928
     MOV ESI,dword ptr [ESP + 0xc]       ; 00403929
-    MOV dword ptr [0x007303e8],EDX      ; 0040392d | DAT_007303e8
+    MOV dword ptr [0x007303e8],EDX      ; 0040392d | g_INT_007303e8
     MOV EAX,0x1                         ; 00403933
-    CMP dword ptr [0x007303fc],0x0      ; 00403938 | DAT_007303fc
+    CMP dword ptr [0x007303fc],0x0      ; 00403938 | g_INT_007303fc
     JNZ 0x00403988                      ; 0040393f
         ;   XREF to: 00403988 (CONDITIONAL_JUMP)  ; LAB_00403988
     MOV EBX,dword ptr [ESI]             ; 00403941
@@ -48,15 +48,15 @@ section .text
     JZ 0x00403988                       ; 0040394c
         ;   XREF to: 00403988 (CONDITIONAL_JUMP)  ; LAB_00403988
     MOV EAX,dword ptr [ESI]             ; 0040394e
-    IMUL dword ptr [0x01c6e2cc]         ; 00403950 | DAT_01c6e2cc
+    IMUL dword ptr [0x01c6e2cc]         ; 00403950 | g_INT_01c6e2cc
     MOV EBX,EAX                         ; 00403956
     MOV ECX,EDX                         ; 00403958
     MOV EAX,dword ptr [ESI + 0x4]       ; 0040395a
-    IMUL dword ptr [0x01c6e2d0]         ; 0040395d | DAT_01c6e2d0
+    IMUL dword ptr [0x01c6e2d0]         ; 0040395d | g_INT_01c6e2d0
     ADD EBX,EAX                         ; 00403963
     ADC ECX,EDX                         ; 00403965
     MOV EAX,dword ptr [ESI + 0x8]       ; 00403967
-    IMUL dword ptr [0x01c6e2d4]         ; 0040396a | DAT_01c6e2d4
+    IMUL dword ptr [0x01c6e2d4]         ; 0040396a | g_INT_01c6e2d4
     ADD EBX,EAX                         ; 00403970
     ADC ECX,EDX                         ; 00403972
     MOV EAX,dword ptr [ESI + 0xc]       ; 00403974

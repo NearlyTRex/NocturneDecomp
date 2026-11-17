@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 40,
+    "complexity_score": 39,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
     "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "displaced_global_access",
+      "wrong_global"
     ],
-    "total_lines": 27
+    "total_lines": 26
   },
   "cross_references": [
     {
@@ -81,8 +81,8 @@
   "globals": [
     {
       "addr": "01fc961c",
-      "name": "DAT_01fc961c",
-      "type": "undefined4",
+      "name": "g_INT_01fc961c",
+      "type": "int",
       "value": null
     }
   ],
@@ -258,20 +258,25 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Scalar global g_INT_01fc961c accessed via (&g_INT_01fc961c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CDemonGlobe_PTR_ARRAY_01fc9620 (at 0x01fc9620, +4 bytes).",
+      "line": 6,
+      "match": "g_INT_01fc961c",
+      "severity": "moderate",
+      "text": "(&g_INT_01fc961c)[g_INT_01fc961c + 1] = (int)globe;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_01fc961c",
-      "severity": "mild",
-      "text": "*(CDemonGlobe **)(&DAT_01fc961c + (_DAT_01fc961c + 1) * 4) = globe;",
-      "type": "undefined_data"
+      "description": "Compiler displaced index base: [reg*4 + 0x1fc961c] lands in g_INT_01fc961c but intended target is g_CDemonGlobe_PTR_ARRAY_01fc9620 at 0x1fc9620 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_01fc961c",
+      "displacement": "0x1fc961c",
+      "instruction_address": "",
+      "intended_global": "g_CDemonGlobe_PTR_ARRAY_01fc9620",
+      "line": 15,
+      "match": "0x1fc961c",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 005306d0: MOV dword ptr [EDX*0x4 + 0x1fc961c],ECX  ; g_INT_01fc961c",
+      "type": "displaced_global_access"
     }
   ]
 }

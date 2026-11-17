@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_lightpis_cpp_CLightPis_updateBeamLight_FUN_005017f0(CLightPis *this_ptr)
 
 {
@@ -40,7 +38,7 @@ void __cdecl core_lightpis_cpp_CLightPis_updateBeamLight_FUN_005017f0(CLightPis 
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
             (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);
   g_CDemonLightInstance.base.max_distance = 32.0;
-  g_CDemonLightInstance.base.base.focal_length = _DAT_00603174;
+  g_CDemonLightInstance.base.base.focal_length = 56.0f;
   g_CDemonLightInstance.antialiasing_enabled = 1;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(&g_CDemonLightInstance,1.0);
   return;

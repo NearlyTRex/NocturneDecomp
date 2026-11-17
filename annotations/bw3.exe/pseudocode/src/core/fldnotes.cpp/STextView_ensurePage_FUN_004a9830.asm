@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005c1007
 ;   TerminatedCString s_Out_of_memory_005c101c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_STextPage_init_FUN_004a8cb0
@@ -51,8 +51,8 @@ section .text
     MOV EDX,0x5c1007                    ; 004a985d | = "..\\core\\fldnotes.cpp"
     MOV ECX,0x67d                       ; 004a9862
     PUSH 0x5c101c                       ; 004a9867 | = "Out of memory"
-    MOV dword ptr [0x01d71de0],EDX      ; 004a986c | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004a9872 | DAT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004a986c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004a9872 | g_INT_01d71de4
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9878
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004a987d

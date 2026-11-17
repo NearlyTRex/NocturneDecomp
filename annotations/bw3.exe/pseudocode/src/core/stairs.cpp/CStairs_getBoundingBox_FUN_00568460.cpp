@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBoundingBox3D * __stack_esi core_stairs_cpp_CStairs_getBoundingBox_FUN_00568460(CStairs *this_ptr,CBoundingBox3D *out_box)
 
 {
@@ -20,10 +18,10 @@ CBoundingBox3D * __stack_esi core_stairs_cpp_CStairs_getBoundingBox_FUN_00568460
   
   afStack_20[1] = 0.0;
   afStack_20[2] = 0.0;
-  afStack_20[3] = this_ptr->width * (float)_DAT_005d5c78;
+  afStack_20[3] = this_ptr->width * (float)0.5;
   fStack_10 = this_ptr->rise * (float)this_ptr->stair_count;
   fStack_c = this_ptr->run * (float)this_ptr->stair_count;
-  afStack_20[0] = -this_ptr->width * (float)_DAT_005d5c78;
+  afStack_20[0] = -this_ptr->width * (float)0.5;
   pfVar2 = afStack_20;
   pCVar3 = out_box;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {

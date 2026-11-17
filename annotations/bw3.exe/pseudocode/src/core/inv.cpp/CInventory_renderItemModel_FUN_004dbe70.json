@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 632,
-    "complexity_score": 627,
+    "complexity_score": 435,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 48,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 217,
-    "suspect_count": 37,
+    "pseudocode_lines": 220,
+    "suspect_count": 18,
     "suspect_types": [
       "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation",
+      "signed_shift_global_idiom",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 849
+    "total_lines": 852
   },
   "cross_references": [
     {
@@ -159,8 +158,8 @@
     },
     {
       "addr": "005c62e2",
-      "name": "DAT_005c62e2",
-      "type": "undefined4",
+      "name": "s_CGun_005c62e2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -177,8 +176,8 @@
     },
     {
       "addr": "005c62fb",
-      "name": "DAT_005c62fb",
-      "type": "undefined4",
+      "name": "s_CSps_005c62fb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -237,8 +236,8 @@
     },
     {
       "addr": "005c635e",
-      "name": "DAT_005c635e",
-      "type": "undefined4",
+      "name": "s_CSps_005c635e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -285,69 +284,69 @@
     },
     {
       "addr": "005c63a7",
-      "name": "DAT_005c63a7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c63a7",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005c63af",
-      "name": "DAT_005c63af",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c63af",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005c63b7",
-      "name": "DAT_005c63b7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c63b7",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005c63bf",
-      "name": "DAT_005c63bf",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c63bf",
+      "type": "float",
+      "value": "-0.5"
     },
     {
       "addr": "005c63c3",
-      "name": "DAT_005c63c3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c63c3",
+      "type": "float",
+      "value": "4.712389"
     },
     {
       "addr": "005c63c7",
-      "name": "DAT_005c63c7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c63c7",
+      "type": "float",
+      "value": "1.570796"
     },
     {
       "addr": "005c63cb",
-      "name": "DAT_005c63cb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c63cb",
+      "type": "float",
+      "value": "5.497787"
     },
     {
       "addr": "005c63cf",
-      "name": "DAT_005c63cf",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c63cf",
+      "type": "float",
+      "value": "-1.570796"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00603b28",
@@ -363,26 +362,26 @@
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c5fad0",
-      "name": "DAT_01c5fad0",
-      "type": "undefined4",
+      "name": "g_INT_01c5fad0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e24c",
-      "name": "DAT_01c6e24c",
-      "type": "undefined4",
+      "name": "g_INT_01c6e24c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d70a38",
-      "name": "DAT_01d70a38",
-      "type": "undefined4",
+      "name": "g_INT_01d70a38",
+      "type": "int",
       "value": null
     },
     {
@@ -429,8 +428,8 @@
     },
     {
       "addr": "02cfd900",
-      "name": "DAT_02cfd900",
-      "type": "undefined4",
+      "name": "g_CVector3f_02cfd900",
+      "type": "CVector3f",
       "value": null
     }
   ],
@@ -872,64 +871,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 13,
       "match": "afStackY_1078",
       "severity": "moderate",
       "text": "float afStackY_1078 [1004];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (0x280 < DAT_005fba18) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "viewport_x = (viewport_x * 0x280) / DAT_005fba18;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "viewport_y = (viewport_y * 0x1e0) / DAT_005fba1c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "viewport_size = (viewport_size * 0x280) / DAT_005fba18;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,viewport_x,viewport_y,viewport_size,viewport_size);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 75,
+      "line": 73,
       "match": "&stack0xffffff4c",
       "severity": "moderate",
       "text": "pfVar7 = &stack0xffffff4c;",
@@ -937,135 +888,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 76,
       "match": "(CBoundingBox3D *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_005c62e2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,&DAT_005c62e2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_005c62fb",
-      "severity": "mild",
-      "text": "((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,&DAT_005c62fb), iVar2 != 0 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&local_9c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(DAT_005f2afc,36.0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_02cfd900",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_02cfd900",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 153,
-      "match": "DAT_005c635e",
-      "severity": "mild",
-      "text": "|| (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(item,&DAT_005c635e), iVar2 != 0)))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 203,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&local_30,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 205,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900,&local_60);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 205,
-      "match": "DAT_02cfd900",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900,&local_60);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 207,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,alpha);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 208,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 210,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 76,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
@@ -1073,7 +904,7 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 137,
+      "line": 136,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + 4) = local_8c[(uint)bVar8 * -2 + 9];",
@@ -1081,7 +912,7 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 139,
+      "line": 138,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
@@ -1089,15 +920,31 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 76,
+      "line": 74,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 58,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_INT_01c5fad0 + (g_INT_01c5fad0 >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 59,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_INT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);",
+      "type": "signed_shift_global_idiom"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 137,
+      "line": 136,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + 4) = local_8c[(uint)bVar8 * -2 + 9];",
@@ -1105,7 +952,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 139,
+      "line": 138,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
@@ -1113,7 +960,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 170,
+      "line": 169,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "else if (&local_30 != (CVector3f *)(pCVar5[5].actor_name + 0x18)) {",
@@ -1121,7 +968,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 171,
+      "line": 170,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "local_30.x = ((CVector3f *)(pCVar5[5].actor_name + 0x18))->x;",
@@ -1129,7 +976,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 172,
+      "line": 171,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "local_30.y = *(float *)(pCVar5[5].actor_name + 0x1c);",
@@ -1137,21 +984,21 @@
     },
     {
       "description": "'pCVar5[5].actor_name + 0x18' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x18 = 0x6d0, which is exactly offsetof(CBoxActor, cam_orientation). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar5)->cam_orientation (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_v[22] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 170,
+      "line": 169,
       "severity": "moderate",
       "text": "else if (&local_30 != (CVector3f *)(pCVar5[5].actor_name + 0x18)) {",
       "type": "derived_field_index_pun"
     },
     {
       "description": "'pCVar5[5].actor_name + 0x18' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x18 = 0x6d0, which is exactly offsetof(CBoxActor, cam_orientation). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar5)->cam_orientation (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_v[22] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 171,
+      "line": 170,
       "severity": "moderate",
       "text": "local_30.x = ((CVector3f *)(pCVar5[5].actor_name + 0x18))->x;",
       "type": "derived_field_index_pun"
     },
     {
       "description": "'pCVar5[5].actor_name + 0x1c' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x1c = 0x6d4, which is exactly offsetof(CGlass, texture_v[23]). Ghidra had no CGlass type here and reached the field by index arithmetic; write it as ((CGlass *)pCVar5)->texture_v[23] (\u00a7de-pun/\u00a712).",
-      "line": 172,
+      "line": 171,
       "severity": "moderate",
       "text": "local_30.y = *(float *)(pCVar5[5].actor_name + 0x1c);",
       "type": "derived_field_index_pun"

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor *this_ptr,int hit_type)
 
@@ -39,7 +38,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
   CBoundingBox3D *in_stack_fffffc10;
   CBoundingBox3D *in_stack_fffffc18;
   CBoundingBox3D *out_box;
-  CCharacter *in_stack_fffffc24;
+  char *in_stack_fffffc24;
   CVector3f *in_stack_fffffc28;
   EBloodType blood_type;
   float fVar12;
@@ -144,7 +143,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
     pfVar5 = pfVar5 + (uint)bVar10 * -2 + 1;
     pfVar8 = pfVar8 + (uint)bVar10 * -2 + 1;
   }
-  aCStack_164[0].z = (float)SStack_280.attacker + _DAT_005ca6ca;
+  aCStack_164[0].z = (float)SStack_280.attacker + -1.0f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(this_ptr,aCStack_164,&CStack_8c);
   CStack_14c.x = CStack_8c.x;
   *(uint *)((int)&CStack_14c + (uint)bVar10 * -8 + 4) =
@@ -241,7 +240,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
               if (iVar4 != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)(auStack_2c4 + 0x34))
                 ;
-                in_stack_fffffc24 = (CCharacter *)(auStack_2c4 + 0x34);
+                in_stack_fffffc24 = auStack_2c4 + 0x34;
                 (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                           (this_ptr,hit_type,(SDamageInfo *)in_stack_fffffc24,&unaff_ESI->base);
                 in_stack_fffffc28 = (CVector3f *)0x40a7f5;
@@ -281,7 +280,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
                 core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)auStack_344);
                 (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                           (this_ptr,hit_type,(SDamageInfo *)auStack_344,&unaff_EBX->base);
-                in_stack_fffffc24 = (CCharacter *)g_CConsolePtr;
+                in_stack_fffffc24 = (char *)g_CConsolePtr;
                 engine_console_cpp_CConsole_printf_FUN_00436710
                           (g_CConsolePtr,"%s causing %5.2f damage to %s\n");
                 core_trigger_cpp_CTrigger_applyDamage_FUN_005785b0(unaff_EBX,fStack_330);
@@ -295,22 +294,22 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
         else {
           if ((pCStack_14 != (CDemonActor *)0x0) &&
              (iVar4 = (*(((pCVar2->base).vtable._uc)->_uc).isInvulnerable)(pCVar2), iVar4 != 0)) {
-            in_stack_fffffc24 = (CCharacter *)("@CHero" + 1);
-            iVar4 = core_actor_cpp_isOfClass_FUN_0040c840(unaff_EBP,"@CHero" + 1);
+            in_stack_fffffc24 = "CHero";
+            iVar4 = core_actor_cpp_isOfClass_FUN_0040c840(unaff_EBP,"CHero");
             if (iVar4 != 0) goto LAB_0040a3a9;
           }
           core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)auStack_310);
           (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                     (this_ptr,hit_type,(SDamageInfo *)auStack_310,(CDemonActor *)pCVar2);
           in_stack_fffffc28 = (CVector3f *)(auStack_100 + 4);
-          in_stack_fffffc24 = pCVar2;
+          in_stack_fffffc24 = (char *)pCVar2;
           iVar4 = (*(((pCVar2->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                             (pCVar2,in_stack_fffffc28,(float)unaff_ESI,
                              (SDamageInfo *)(auStack_310 + 0x10));
           if ((iVar4 != 0) && (0.0 < (double)(float)auStack_2f4._8_4_)) {
             blood_type = 0x40a4b3;
             dVar11 = round
-                               ((double)(float)auStack_2f4._8_4_ * _DAT_005ca6ce + 1.0);
+                               ((double)(float)auStack_2f4._8_4_ * 0.5 + 1.0);
             in_stack_fffffc28 = (CVector3f *)0x40a4de;
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
                       (g_CGorePtr,(CVector3f *)(auStack_f4 + 4),(CVector3f *)(auStack_170 + 8),
@@ -324,7 +323,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
           if ((iVar4 != 0) && (dStack_390 = (double)fStack_2d0, 0.0 < dStack_390)) {
             pvStack_3a4 = (void *)pCVar2->blood_type;
             fVar12 = 5.936801e-39;
-            dVar11 = round(dStack_390 * _DAT_005ca6ce + 1.0);
+            dVar11 = round(dStack_390 * 0.5 + 1.0);
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
                       (g_CGorePtr,&CStack_5c,&CStack_14c,(int)ROUND(dVar11),(EBloodType)fVar12);
             (*((this_ptr->vtable)._ub)->playAttackHitEffects)
@@ -423,7 +422,7 @@ LAB_0040a3a9:
         (&fStack_38)[(uint)bVar10 * -2] = *(float *)((int)&CStack_140 + (uint)bVar10 * -8);
         (&pvStack_34)[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
              *(void **)((int)&CStack_140 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4);
-        fVar12 = (float)_DAT_005ca6d6 /
+        fVar12 = (float)10 /
                  SQRT((float)pvStack_34 * (float)pvStack_34 +
                       (float)pCStack_3c * (float)pCStack_3c + fStack_38 * fStack_38);
         afStack_9c[0] = (float)pCStack_3c * fVar12;

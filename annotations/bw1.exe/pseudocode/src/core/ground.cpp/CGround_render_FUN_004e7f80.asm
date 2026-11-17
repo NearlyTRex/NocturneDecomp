@@ -13,8 +13,8 @@
 ;   core_terrain.cpp_CTerrain_render_FUN_0059f3e0 at 0059f4c3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_renderVisibleTerrain_FUN_004e7e60
@@ -64,8 +64,8 @@ section .text
         ;   XREF to: 004e7780 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_transformAndStoreVertices_FUN_004e7780(CGround * this_ptr)
     ADD ESP,0x4                         ; 004e7fcc
     PUSH 0x1                            ; 004e7fcf
-    MOV EBP,dword ptr [0x00612560]      ; 004e7fd1 | DAT_00612560
-    PUSH EBP                            ; 004e7fd7 | DAT_01bc120c
+    MOV EBP,dword ptr [0x00612560]      ; 004e7fd1 | g_CDemonRenderer_PTR_00612560
+    PUSH EBP                            ; 004e7fd7 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80 ; 004e7fd8
         ;   XREF to: 00483d80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004e7fdd
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 004e7e60 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderVisibleTerrain_FUN_004e7e60(CGround * this_ptr)
     ADD ESP,0x4                         ; 004e7fe6
     PUSH 0x0                            ; 004e7fe9
-    MOV EAX,[0x00612560]                ; 004e7feb | DAT_00612560
-    PUSH EAX                            ; 004e7ff0 | DAT_01bc120c
+    MOV EAX,[0x00612560]                ; 004e7feb | g_CDemonRenderer_PTR_00612560
+    PUSH EAX                            ; 004e7ff0 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80 ; 004e7ff1
         ;   XREF to: 00483d80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004e7ff6

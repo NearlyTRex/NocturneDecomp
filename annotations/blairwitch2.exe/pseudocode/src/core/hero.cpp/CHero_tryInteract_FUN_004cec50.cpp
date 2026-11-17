@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004cec50(CHero *this_ptr)
 
@@ -63,10 +62,10 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004cec50(CHero *this_ptr)
        *(uint *)((int)&stack0xffffffbc + ((uint)bVar7 * -2 + 3) * 4);
   *(uint *)((int)&stack0xffffffa8 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4) =
        *(uint *)((int)&stack0xffffffbc + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 4) * 4);
-  fStack_54 = fStack_60 * _DAT_005d9c64;
-  fStack_50 = fStack_5c * _DAT_005d9c64;
-  fStack_4c = fStack_58 * _DAT_005d9c64;
-  fStack_6c = fStack_60 * _DAT_005d9c64;
+  fStack_54 = fStack_60 * 0.5f;
+  fStack_50 = fStack_5c * 0.5f;
+  fStack_4c = fStack_58 * 0.5f;
+  fStack_6c = fStack_60 * 0.5f;
   *(uint *)(&stack0xffffff9c + (uint)bVar7 * -8 + -4) =
        *(uint *)((int)&stack0xffffffb0 + (uint)bVar7 * -8);
   *(uint *)(&stack0xffffff9c + (uint)bVar7 * -8 + (uint)bVar7 * -8) =

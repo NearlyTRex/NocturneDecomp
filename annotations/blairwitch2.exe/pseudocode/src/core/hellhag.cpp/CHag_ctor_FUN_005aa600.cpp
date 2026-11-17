@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CHag * __cdecl core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
 
 {
@@ -21,7 +19,7 @@ CHag * __cdecl core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
   this_ptr_02 = (CHag *)core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_02->base).base.base.base.vtable._ub = &g_CHagVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(this_ptr_02->base).base.base.model,(char *)0x5f0af3);
+            (&(this_ptr_02->base).base.base.model,"hag.dfm");
   this_ptr_00 = &(this_ptr_02->base).base.base.cloth_list;
   core_cloth_cpp_CClothList_add_FUN_005b15c0(this_ptr_00,"hagdress.cth");
   core_cloth_cpp_CClothList_add_FUN_005b15c0(this_ptr_00,"haghair.cth");
@@ -53,11 +51,11 @@ CHag * __cdecl core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
   this_ptr_01 = &(this_ptr_02->base).state_machine;
   core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
             (this_ptr_01,"ChaseComplete","MeleeAttack");
-  (this_ptr_02->base).attack_range = _DAT_00600a6c;
+  (this_ptr_02->base).attack_range = 6.0f;
   core_muzzle_cpp_SStateMachine_setInitialState_FUN_0059d990(this_ptr_01,"Alert");
   pcVar3 = (this_ptr_02->base).hit_sound;
   core_muzzle_cpp_SStateMachine_reset_FUN_0059dc80(this_ptr_01);
-  pcVar2 = (char *)0x5f0b47;
+  pcVar2 = "haghit0?.wav";
   (this_ptr_02->base).can_burn = 1;
   do {
     cVar1 = *pcVar2;
@@ -79,7 +77,7 @@ CHag * __cdecl core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar2 = (char *)0x5f0b63;
+  pcVar2 = "hagamb0?.wav";
   pcVar3 = (this_ptr_02->base).idle_sound;
   do {
     cVar1 = *pcVar2;

@@ -55,11 +55,11 @@
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d44d1
-;   undefined4 DAT_005d44d9
-;   undefined4 DAT_02c8af28
-;   undefined4 DAT_02c8af2c
-;   undefined4 DAT_02c8af30
+;   double g_DOUBLE_005d44d1 = 0.00390625
+;   double g_DOUBLE_005d44d9 = 65535
+;   CVector3f g_CVector3f_02c8af28
+;   undefined4 g_CVector3f_02c8af28.y
+;   undefined4 g_CVector3f_02c8af28.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
@@ -105,11 +105,11 @@ section .text
     CMP EAX,0x2c8af28                   ; 00419bd0
     JZ 0x00419bf1                       ; 00419bd5
         ;   XREF to: 00419bf1 (CONDITIONAL_JUMP)  ; LAB_00419bf1
-    MOV ECX,dword ptr [0x02c8af28]      ; 00419bd7 | DAT_02c8af28
+    MOV ECX,dword ptr [0x02c8af28]      ; 00419bd7 | g_CVector3f_02c8af28
     MOV dword ptr [EAX],ECX             ; 00419bdd
-    MOV ECX,dword ptr [0x02c8af2c]      ; 00419bdf | DAT_02c8af2c
+    MOV ECX,dword ptr [0x02c8af2c]      ; 00419bdf | g_CVector3f_02c8af28.y
     MOV dword ptr [EAX + 0x4],ECX       ; 00419be5
-    MOV ECX,dword ptr [0x02c8af30]      ; 00419be8 | DAT_02c8af30
+    MOV ECX,dword ptr [0x02c8af30]      ; 00419be8 | g_CVector3f_02c8af28.z
     MOV dword ptr [EAX + 0x8],ECX       ; 00419bee
     ADD EBX,0x15c                       ; 00419bf1
         ;   Label: LAB_00419bf1
@@ -215,7 +215,7 @@ section .text
     ADD ECX,dword ptr [ESP + 0x20]      ; 00419cfa
     MOV EAX,dword ptr [ESP + 0x70]      ; 00419cfe
     MOV dword ptr [ESP + 0xb0],EAX      ; 00419d02
-    FLD double ptr [0x005d44d1]         ; 00419d09 | DAT_005d44d1
+    FLD double ptr [0x005d44d1]         ; 00419d09 | g_DOUBLE_005d44d1
     FILD dword ptr [ESP + 0xb0]         ; 00419d0f
     FMUL ST1                            ; 00419d16
     MOV dword ptr [ESP + 0x78],ESI      ; 00419d18
@@ -471,7 +471,7 @@ section .text
     JNC 0x0041a1e7                      ; 0041a0a8
         ;   XREF to: 0041a1e7 (CONDITIONAL_JUMP)  ; LAB_0041a1e7
     FLD double ptr [ESP + 0x18]         ; 0041a0ae
-    FLD double ptr [0x005d44d9]         ; 0041a0b2 | DAT_005d44d9
+    FLD double ptr [0x005d44d9]         ; 0041a0b2 | g_DOUBLE_005d44d9
     FDIV double ptr [ESP]               ; 0041a0b8
     FXCH                                ; 0041a0bb
     FMUL ST1                            ; 0041a0bd

@@ -7,7 +7,7 @@
 ; CDoc *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_stand_005da65b+1
+;   TerminatedCString s_stand_005da65c
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_reset_FUN_004ec570
@@ -30,7 +30,7 @@ section .text
     MOV dword ptr [EBX + 0x1feac],0x0   ; 004763de
     PUSH 0x0                            ; 004763e8
     MOV dword ptr [EBX + 0x1fe04],0x0   ; 004763ea
-    PUSH 0x5da65c                       ; 004763f4 | s_stand_005da65b+1
+    PUSH 0x5da65c                       ; 004763f4 | = "stand"
     MOV dword ptr [EBX + 0x2b40],0x0    ; 004763f9
     PUSH EBX                            ; 00476403
     MOV dword ptr [EBX + 0x2b44],0x0    ; 00476404

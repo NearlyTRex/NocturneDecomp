@@ -28,9 +28,9 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00585d67
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6a31
-;   undefined4 DAT_02c83634
-;   undefined4 DAT_02c83638
+;   float g_FLOAT_005f6a31 = 0.5
+;   undefined4 g_INT_ARRAY_02c83600[13]
+;   undefined4 g_INT_ARRAY_02c83600[14]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 00588a12
     SUB ESP,0x54                        ; 00588a13
     MOV EBX,ESI                         ; 00588a16
-    MOV EDX,dword ptr [0x02c83638]      ; 00588a18 | DAT_02c83638
+    MOV EDX,dword ptr [0x02c83638]      ; 00588a18 | g_INT_ARRAY_02c83600[14]
     MOV EBP,dword ptr [ESP + 0x64]      ; 00588a1e
     PUSH EDX                            ; 00588a22
     ADD EBP,0x158                       ; 00588a23
@@ -55,7 +55,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040 ; 00588a32
         ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00588a37
-    MOV ECX,dword ptr [0x02c83634]      ; 00588a3a | DAT_02c83634
+    MOV ECX,dword ptr [0x02c83634]      ; 00588a3a | g_INT_ARRAY_02c83600[13]
     LEA ESI,[ESP + 0x18]                ; 00588a40
     PUSH ECX                            ; 00588a44
     MOVSD ES:EDI,ESI                    ; 00588a45
@@ -90,7 +90,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00588a95
     MOVSD ES:EDI,ESI                    ; 00588a96
     MOVSD ES:EDI,ESI                    ; 00588a97
-    FLD float ptr [0x005f6a31]          ; 00588a98 | DAT_005f6a31
+    FLD float ptr [0x005f6a31]          ; 00588a98 | g_FLOAT_005f6a31
     FLD float ptr [ESP + 0x3c]          ; 00588a9e
     FMUL ST1                            ; 00588aa2
     FLD float ptr [ESP + 0x40]          ; 00588aa4

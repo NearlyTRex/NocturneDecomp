@@ -10,8 +10,8 @@
 ;   core_schngeis.cpp_factoryFuncSchnellGeist_FUN_005a2f80 at 005a2f93
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ff34c
-;   undefined4 DAT_005ff350
+;   float g_FLOAT_005ff34c = 25
+;   float g_FLOAT_005ff350 = 5
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [EBX + 0x11860],0x0   ; 005a3023
     LEA EDI,[EBX + 0x113d4]             ; 005a302d
     MOV dword ptr [EBX + 0x11864],0x0   ; 005a3033
-    FLD float ptr [0x005ff34c]          ; 005a303d | DAT_005ff34c
+    FLD float ptr [0x005ff34c]          ; 005a303d | g_FLOAT_005ff34c
     MOV dword ptr [EBX + 0x11868],0x2   ; 005a3043
     MOV ESI,0x5f0070                    ; 005a304d
     MOV dword ptr [EBX + 0x11418],0x1   ; 005a3052
@@ -79,7 +79,7 @@ section .text
     CALL core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0 ; 005a3084
         ;   XREF to: 005a31c0 (UNCONDITIONAL_CALL)  ; void core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0(CSchnellGeist * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a3089
-    FLD float ptr [0x005ff350]          ; 005a308c | DAT_005ff350
+    FLD float ptr [0x005ff350]          ; 005a308c | g_FLOAT_005ff350
     MOV dword ptr [EBX + 0x11398],0x0   ; 005a3092
     PUSH 0x5f0077                       ; 005a309c
     LEA ESI,[EBX + 0x10af8]             ; 005a30a1

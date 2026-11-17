@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_00419550(CBoneGuy *this_ptr)
 
@@ -49,8 +48,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_00419550(CBoneGuy *this_ptr)
   iVar2 = local_18->num_parts;
   this_ptr->box_count = iVar2;
   if (0x14 < iVar2) {
-    _DAT_01d71de0 = "..\\core\\boneguy.cpp";
-    _DAT_01d71de4 = 0x49c;
+    g_CHAR_PTR_01d71de0 = "..\\core\\boneguy.cpp";
+    g_INT_01d71de4 = 0x49c;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CBoneGuy::explode - Not enough containers");
   }
   local_1c = 0;

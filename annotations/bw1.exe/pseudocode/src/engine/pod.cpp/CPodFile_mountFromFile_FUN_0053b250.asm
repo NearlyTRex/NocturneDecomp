@@ -72,8 +72,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_File_not_found_005ed662
 ;   TerminatedCString s_Unable_to_open_file_s_005ed671
-;   undefined4 DAT_005ed68a
-;   undefined4 DAT_005ed68e
+;   TerminatedCString s_epd_005ed68a
+;   TerminatedCString s_epd_005ed68e
 ;   TerminatedCString s_I_O_Error_accessing_file_005ed693
 ;   TerminatedCString s_File_is_corrupt_005ed6c0
 ;   TerminatedCString s_Out_of_memory_005ed6d0
@@ -81,8 +81,8 @@
 ;   TerminatedCString s_realloc_returns_NULL_shr_005ed6f0
 ;   TerminatedCString s_Unknown_error_00622840
 ;   undefined4 s_Unknown_error_00622840+4
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -244,7 +244,7 @@ section .text
     CALL engine_dosio.cpp_splitPath_FUN_00479580 ; 0053b3a9
         ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0053b3ae
-    PUSH 0x5ed68a                       ; 0053b3b1 | DAT_005ed68a
+    PUSH 0x5ed68a                       ; 0053b3b1 | = "epd"
     LEA EAX,[ESP + 0x648]               ; 0053b3b6
     PUSH EAX                            ; 0053b3bd
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 0053b3be
@@ -253,7 +253,7 @@ section .text
     TEST EAX,EAX                        ; 0053b3c6
     JZ 0x0053b3e7                       ; 0053b3c8
         ;   XREF to: 0053b3e7 (CONDITIONAL_JUMP)  ; LAB_0053b3e7
-    PUSH 0x5ed68e                       ; 0053b3ca | DAT_005ed68e
+    PUSH 0x5ed68e                       ; 0053b3ca | = ".epd"
     LEA EAX,[ESP + 0x648]               ; 0053b3cf
     PUSH EAX                            ; 0053b3d6
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 0053b3d7
@@ -1110,8 +1110,8 @@ section .text
     MOV EDI,0x5ed6de                    ; 0053be03 | = "..\\engine\\pod.cpp"
     MOV EAX,0x2d5                       ; 0053be08
     PUSH 0x5ed6f0                       ; 0053be0d | = "realloc returns NULL shrinking filena..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0053be12 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0053be18 | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0053be12 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0053be18 | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053be1d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053be22

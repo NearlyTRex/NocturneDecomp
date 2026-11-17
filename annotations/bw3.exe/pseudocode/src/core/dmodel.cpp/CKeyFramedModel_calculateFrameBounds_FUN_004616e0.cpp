@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0(CKeyFramedModel *this_ptr)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0(C
     do {
       this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);
       pCVar1 = this_ptr->vertex_list + (int)local_28.max.y * this_ptr->vertex_count;
-      local_28.min.z = (float)_DAT_005bb95c;
+      local_28.min.z = (float)0.00390625;
       local_28.min.x = (float)pCVar1->x * local_28.min.z;
       local_28.min.y = (float)pCVar1->y * local_28.min.z;
       local_28.min.z = (float)pCVar1->z * local_28.min.z;
@@ -41,9 +39,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0(C
       iVar2 = 1;
       if (1 < this_ptr->vertex_count) {
         do {
-          local_28.min.x = (float)pCVar1[1].x * (float)_DAT_005bb95c;
-          local_28.min.y = (float)pCVar1[1].y * (float)_DAT_005bb95c;
-          local_28.min.z = (float)pCVar1[1].z * (float)_DAT_005bb95c;
+          local_28.min.x = (float)pCVar1[1].x * (float)0.00390625;
+          local_28.min.y = (float)pCVar1[1].y * (float)0.00390625;
+          local_28.min.z = (float)pCVar1[1].z * (float)0.00390625;
           pCVar1 = pCVar1 + 1;
           iVar2 = iVar2 + 1;
           core_box_cpp_CBoundingBox3D_expand_FUN_0041d840(this_ptr_01,&local_28.min);

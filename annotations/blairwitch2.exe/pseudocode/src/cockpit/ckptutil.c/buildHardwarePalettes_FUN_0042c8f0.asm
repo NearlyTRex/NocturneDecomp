@@ -7,14 +7,14 @@
 ; SRGBColorPalette * Stack[0x4]:4   rgb_palette_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35210
-;   undefined4 DAT_01c35814
-;   undefined4 DAT_01c35818
-;   undefined4 DAT_01c35820
-;   undefined4 DAT_01c35824
-;   undefined4 DAT_01c3582c
-;   undefined4 DAT_01c35830
+;   int g_INT_006141c0 = 0x8
+;   SRGBColorPalette* g_SRGBColorPalette_PTR_01c35210
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
+;   int g_INT_01c35818
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35820
+;   int g_INT_01c35824
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c
+;   int g_INT_01c35830
 ;
 ; *****************************************************************************
 
@@ -27,12 +27,12 @@ section .text
     PUSH EBP                            ; 0042c8f3
     SUB ESP,0x8                         ; 0042c8f4
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0042c8f7
-    MOV EDX,dword ptr [0x006141c0]      ; 0042c8fb | DAT_006141c0
-    MOV dword ptr [0x01c35210],EBX      ; 0042c901 | DAT_01c35210
+    MOV EDX,dword ptr [0x006141c0]      ; 0042c8fb | g_INT_006141c0
+    MOV dword ptr [0x01c35210],EBX      ; 0042c901 | g_SRGBColorPalette_PTR_01c35210
     CMP EDX,0x20                        ; 0042c907
     JNZ 0x0042c96b                      ; 0042c90a
         ;   XREF to: 0042c96b (CONDITIONAL_JUMP)  ; LAB_0042c96b
-    MOV EDX,dword ptr [0x006141c0]      ; 0042c90c | DAT_006141c0
+    MOV EDX,dword ptr [0x006141c0]      ; 0042c90c | g_INT_006141c0
     XOR EAX,EAX                         ; 0042c912
     MOVZX EBP,byte ptr [EBX + 0x1]      ; 0042c914
         ;   Label: LAB_0042c914
@@ -41,11 +41,11 @@ section .text
     CMP EDX,0x20                        ; 0042c91f
     JNZ 0x0042c95d                      ; 0042c922
         ;   XREF to: 0042c95d (CONDITIONAL_JUMP)  ; LAB_0042c95d
-    MOV CL,byte ptr [0x01c35814]        ; 0042c924 | DAT_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 0042c924 | g_BIT_INTEGER32_01c35814
     SHL EDI,CL                          ; 0042c92a
-    MOV CL,byte ptr [0x01c35820]        ; 0042c92c | DAT_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 0042c92c | g_BIT_INTEGER32_01c35820
     SHL EBP,CL                          ; 0042c932
-    MOV CL,byte ptr [0x01c3582c]        ; 0042c934 | DAT_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 0042c934 | g_BIT_INTEGER32_01c3582c
     SHL ESI,CL                          ; 0042c93a
     OR EDI,EBP                          ; 0042c93c
     MOV ECX,ESI                         ; 0042c93e
@@ -75,7 +75,7 @@ section .text
         ;   Label: LAB_0042c96b
     XOR EAX,EAX                         ; 0042c96d
         ;   Label: LAB_0042c96d
-    MOV EDI,dword ptr [0x01c35818]      ; 0042c96f | DAT_01c35818
+    MOV EDI,dword ptr [0x01c35818]      ; 0042c96f | g_INT_01c35818
     MOV AL,byte ptr [EBX]               ; 0042c975
     XOR EDX,EDX                         ; 0042c977
     MOV dword ptr [ESP],EAX             ; 0042c979
@@ -86,21 +86,21 @@ section .text
     MOV dword ptr [ESP],EAX             ; 0042c987
     XOR EDX,EDX                         ; 0042c98a
     MOV EAX,ECX                         ; 0042c98c
-    DIV dword ptr [0x01c35824]          ; 0042c98e | DAT_01c35824
+    DIV dword ptr [0x01c35824]          ; 0042c98e | g_INT_01c35824
     MOVZX EBP,byte ptr [EBX + 0x2]      ; 0042c994
-    MOV EDI,dword ptr [0x01c35830]      ; 0042c998 | DAT_01c35830
+    MOV EDI,dword ptr [0x01c35830]      ; 0042c998 | g_INT_01c35830
     MOV dword ptr [ESP + 0x4],EAX       ; 0042c99e
     XOR EDX,EDX                         ; 0042c9a2
     MOV EAX,EBP                         ; 0042c9a4
     DIV EDI                             ; 0042c9a6
-    MOV CL,byte ptr [0x01c35814]        ; 0042c9a8 | DAT_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 0042c9a8 | g_BIT_INTEGER32_01c35814
     MOV EDX,dword ptr [ESP]             ; 0042c9ae
     MOV EDI,EAX                         ; 0042c9b1
     MOV EAX,dword ptr [ESP + 0x4]       ; 0042c9b3
     SHL EDX,CL                          ; 0042c9b7
-    MOV CL,byte ptr [0x01c35820]        ; 0042c9b9 | DAT_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 0042c9b9 | g_BIT_INTEGER32_01c35820
     SHL EAX,CL                          ; 0042c9bf
-    MOV CL,byte ptr [0x01c3582c]        ; 0042c9c1 | DAT_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 0042c9c1 | g_BIT_INTEGER32_01c3582c
     OR EAX,EDX                          ; 0042c9c7
     SHL EDI,CL                          ; 0042c9c9
     ADD ESI,0x2                         ; 0042c9cb
