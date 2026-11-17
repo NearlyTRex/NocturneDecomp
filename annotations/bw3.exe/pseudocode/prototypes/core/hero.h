@@ -57,6 +57,10 @@ bool __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *param_2);
 // Address: 004d2aa0
 int __cdecl CHero::canBeGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
+// Original: core_hero.cpp_CHero_isInvulnerable_FUN_004d2ab0
+// Address: 004d2ab0
+int __cdecl CHero::isInvulnerable(CHero *this_ptr);
+
 // Original: core_hero.cpp_CHero_canReachPickup_FUN_004d2ae0
 // Address: 004d2ae0
 int __cdecl CHero::canReachPickup(CHero *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
@@ -168,6 +172,10 @@ void __cdecl CHero::doHeroAction(CHero *this_ptr);
 // Original: core_hero.cpp_CHero_canDoHeroAction_FUN_004d4840
 // Address: 004d4840
 int __cdecl CHero::canDoHeroAction(CHero *this_ptr,int action_type);
+
+// Original: core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004d48b0
+// Address: 004d48b0
+int __cdecl CHeroPlaceholder::renderTransparent(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHero_toggleGoggles_FUN_004d48d0
 // Address: 004d48d0

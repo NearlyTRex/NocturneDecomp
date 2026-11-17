@@ -83,7 +83,7 @@ int __cdecl crt_watcom_c__mkdir_FUN_005c2000(char *path);
 void __cdecl crt_unknown_c_openFile_FUN_005c2019(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
 _istream * __cdecl crt_unknown_c_istream_seekg_FUN_005c2078(void *this_ptr,int offset);
 char * __cdecl crt_string_c__strncpy_FUN_005c20d0(char *dest,char *src,SIZE_T count);
-int crt_unknown_c___I8D_FUN_005c2106(void);
+longlong crt_unknown_c___I8D_FUN_005c2106(longlong dividend,longlong divisor);
 undefined8 crt_unknown_c_FUN_005c215b(void);
 void crt_unknown_c_FUN_005c21f0(int param_1,undefined4 param_2,int param_3,int param_4);
 void __cdecl crt_string_c_splitpath_FUN_005c2238(char *path,char *drive,char *dir,char *fname,char *ext);

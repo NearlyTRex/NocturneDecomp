@@ -83,7 +83,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x18]      ; 00461022
     MOV EBX,0x989680                    ; 00461025
     CALL crt_unknown.c___I8D_FUN_005b9d26 ; 0046102a
-        ;   XREF to: 005b9d26 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c___I8D_FUN_005b9d26()
+        ;   XREF to: 005b9d26 (UNCONDITIONAL_CALL)  ; longlong crt_unknown.c___I8D_FUN_005b9d26(longlong dividend, longlong divisor)
     SUB EAX,0xb61082f0                  ; 0046102f
     MOV dword ptr [ESI + 0x108],EAX     ; 00461034
     POP EBP                             ; 0046103a

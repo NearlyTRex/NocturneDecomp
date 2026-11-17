@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 139,
+    "complexity_score": 149,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 29,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
@@ -277,6 +277,14 @@
       "match": "param_2",
       "severity": "mild",
       "text": "this_ptr->file_size = *(uint *)(param_2 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "lVar1 = __I8D(*(longlong *)(param_2 + 0x14),10000000);",
       "type": "unnamed_param"
     }
   ]

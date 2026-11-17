@@ -2,29 +2,30 @@
 // Address: 005c2106
 // Address Range: [[005c2106, 005c215a]]
 // Convention: unknown
-// Signature: int crt_unknown_c___I8D_FUN_005c2106(void)
+// Signature: longlong crt_unknown_c___I8D_FUN_005c2106(longlong dividend,longlong divisor)
 
 #include "nocturne.h"
 
-int __I8D(void)
+/* WARNING: Unknown calling convention */
+
+longlong __I8D(longlong dividend,longlong divisor)
 
 {
-  int iVar1;
-  int in_ECX;
-  int in_EDX;
+  longlong lVar1;
+  ulonglong uVar2;
   
-  if (in_EDX < 0) {
-    if (in_ECX < 0) {
-      iVar1 = FUN_005c215b();
-      return iVar1;
+  if (dividend < 0) {
+    if (divisor < 0) {
+      lVar1 = FUN_005c215b();
+      return lVar1;
     }
-    iVar1 = FUN_005c215b();
-    return -iVar1;
+    uVar2 = FUN_005c215b();
+    return CONCAT44(-(uint)((int)uVar2 != 0) - (int)((ulonglong)uVar2 >> 0x20),-(int)uVar2);
   }
-  if (-1 < in_ECX) {
-    iVar1 = FUN_005c215b();
-    return iVar1;
+  if (-1 < divisor) {
+    lVar1 = FUN_005c215b();
+    return lVar1;
   }
-  iVar1 = FUN_005c215b();
-  return -iVar1;
+  uVar2 = FUN_005c215b();
+  return CONCAT44(-(uint)((int)uVar2 != 0) - (int)((ulonglong)uVar2 >> 0x20),-(int)uVar2);
 }

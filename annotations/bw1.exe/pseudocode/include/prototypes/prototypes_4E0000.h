@@ -223,7 +223,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004eab00(CHero *this_ptr);
 CPathMap * __cdecl core_hero_cpp_CHero_getPathMap_FUN_004ead80(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004ead90(CHero *this_ptr,CDemonActor *grabber);
 int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004eada0(CHero *this_ptr,CDemonActor *grabber,int grab_type);
-undefined4 switchD_004ec9a0::caseD_1(void);
+int __cdecl switchD_004ec9a0::core_hero_cpp_CHero_isInvulnerable_FUN_004eadb0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canReachPickup_FUN_004eade0(CHero *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
 int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004eadf0(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004eaf20(CHero *this_ptr);
@@ -252,7 +252,7 @@ void __cdecl core_hero_cpp_CHero_kill_FUN_004ec540(CHero *this_ptr,int damage_ty
 void __cdecl core_hero_cpp_CHero_reset_FUN_004ec570(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004ec640(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004ec950(CHero *this_ptr,int action_type);
-undefined4 switchD_004ec9a0::default(void);
+int __cdecl switchD_004ec9a0::core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004ec9c0(CHeroPlaceholder *this_ptr);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004ec9e0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_findHeroAction_FUN_004eca10(CHero *this_ptr,int ignore_lock);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void);

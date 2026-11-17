@@ -171,7 +171,7 @@ _istream * __cdecl istream::seekg(void *this_ptr,int offset);
 
 // Original: crt_unknown.c___I8D_FUN_005c2106
 // Address: 005c2106
-int ::_I8D(void);
+longlong ::_I8D(longlong dividend,longlong divisor);
 
 // Original: crt_unknown.c_FUN_005c215b
 // Address: 005c215b

@@ -197,7 +197,7 @@ int __cdecl crt_watcom_c__mkdir_FUN_005b9c20(char *path);
 void __cdecl crt_unknown_c_openFile_FUN_005b9c39(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
 _istream * __cdecl crt_unknown_c_istream_seekg_FUN_005b9c98(void *this_ptr,int offset);
 char * __cdecl crt_string_c__strncpy_FUN_005b9cf0(char *dest,char *src,SIZE_T count);
-int crt_unknown_c___I8D_FUN_005b9d26(void);
+longlong crt_unknown_c___I8D_FUN_005b9d26(longlong dividend,longlong divisor);
 undefined8 crt_unknown_c_FUN_005b9d7b(void);
 void crt_unknown_c_FUN_005b9e10(int param_1,undefined4 param_2,int param_3,int param_4);
 void __cdecl crt_string_c_splitpath_FUN_005b9e58(char *path,char *drive,char *dir,char *fname,char *ext);

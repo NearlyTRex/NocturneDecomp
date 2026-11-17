@@ -1,6 +1,6 @@
 // Name: core_hero.cpp_CHero_canDoHeroAction_FUN_004d4840
 // Address: 004d4840
-// Address Range: [[004d4840, 004d48c5]]
+// Address Range: [[004d4840, 004d48af] [004d48b3, 004d48c5]]
 // Convention: __cdecl
 // Signature: int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d4840(CHero *this_ptr,int action_type)
 

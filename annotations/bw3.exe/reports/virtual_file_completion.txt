@@ -4,22 +4,21 @@ VIRTUAL FILE COMPLETION REPORT
 
 SUMMARY
 --------------------------------------------------
-Total virtual files: 206
-Total functions: 5182
-Clean functions: 1931 (37.3%)
-Files at 100%: 4
-Files at 90%+: 5
+Total virtual files: 205
+Total functions: 5183
+Clean functions: 1932 (37.3%)
+Files at 100%: 3
+Files at 90%+: 4
 Files at 50%+: 90
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
 ====================================================================================================
-  .: 1 functions, 4 lines
   core/armour.cpp: 2 functions, 22 lines
   core/camview.cpp: 4 functions, 32 lines
   core/shovel.cpp: 8 functions, 70 lines
 
-Total: 4 files
+Total: 3 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -595,6 +594,34 @@ FILES AT 50-89%
            - core_motion.cpp_CMotionController_load_FUN_004fcc90 (22 lines) [undefined_data, warning_overlapping_globals]
            - core_motion.cpp_CMotionController_save_FUN_004fcd30 (16 lines) [warning_overlapping_globals]
            - core_motion.cpp_CMotionController_render_FUN_004fcdc0 (76 lines) [stack_param, stack_ref, undefined_data, unrolled_memcpy, unrolled_strcpy, warning_overlapping_globals]
+   50.9% | core/hero.cpp
+         27/53 clean, 26 remaining
+           - core_hero.cpp_staticInit_FUN_004d2270 (11 lines) [undefined_data]
+           - core_hero.cpp_closestHeroToPoint_FUN_004d22c0 (35 lines) [raw_address_pointer_store, warning_overlapping_globals]
+           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004d2370 (25 lines) [warning_overlapping_globals]
+           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004d23f0 (25 lines) [warning_overlapping_globals]
+           - core_hero.cpp_CHero_ctor_FUN_004d24b0 (43 lines) [derived_field_index_pun, negative_offset, suspect_float]
+           - core_hero.cpp_CHero_dtor_FUN_004d2620 (32 lines) [negative_offset, pointer_cast, pointer_truncation, raw_address_pointer_store]
+           - core_hero.cpp_CHero_archive_FUN_004d27b0 (84 lines) [undefined_data]
+           - core_hero.cpp_CHero_isGrabbable_FUN_004d2a80 (6 lines) [unnamed_param]
+           - core_hero.cpp_CHero_getGrabbed_FUN_004d2af0 (57 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
+           - core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20 (30 lines) [undefined_data]
+           - core_hero.cpp_CHero_tryInteract_FUN_004d2cf0 (87 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy, warning_overlapping_globals]
+           - core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0 (68 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
+           - core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040 (65 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
+           - core_hero.cpp_CHero_tryPullLever_FUN_004d32d0 (59 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
+           - core_hero.cpp_CHero_tryPushNearbyBox_FUN_004d3500 (150 lines) [derived_field_index_pun, phantom_float_to_int, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unrolled_memcpy, warning_overlapping_globals]
+           - core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004d38b0 (89 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
+           - core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20 (57 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
+           - core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 (90 lines) [bit_int_float_compare, pointer_cast, warning_overlapping_globals]
+           - core_hero.cpp_CHero_canLookAt_FUN_004d4090 (26 lines) [warning_overlapping_globals]
+           - core_hero.cpp_CHero_closestEnemy_FUN_004d4230 (59 lines) [pointer_cast, stack_alignment_array, warning_overlapping_globals]
+           - core_hero.cpp_CHero_toggleGoggles_FUN_004d48d0 (9 lines) [unresolved_funcptr]
+           - core_hero.cpp_CHero_findHeroAction_FUN_004d4900 (53 lines) [concat_reconstruction, extra_output, undefined_type]
+           - core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d4ae0 (25 lines) [undefined_data, unrolled_strcpy]
+           - core_hero.cpp_CHeroPlaceholder_getBoundingBox_FUN_004d4ba0 (22 lines) [shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
+           - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d4be0 (31 lines) [unrolled_memcpy, warning_overlapping_globals]
+           - core_hero.cpp_initializeColorMasks_FUN_004d4ce0 (40 lines) [undefined_data, warning_overlapping_globals]
    50.0% | cockpit/pkbmpset.cpp
          8/16 clean, 8 remaining
            - cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0 (26 lines) [warning_overlapping_globals]
@@ -692,39 +719,11 @@ FILES AT 50-89%
            - engine_dosio.cpp_resolveRelativePath_FUN_00466040 (65 lines) [stack_ref, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
            - engine_dosio.cpp_createDirectoryTree_FUN_00466190 (35 lines) [unrolled_strcpy]
 
-Total: 85 files
+Total: 86 files
 
 ====================================================================================================
 FILES BELOW 50%
 ====================================================================================================
-   49.0% | core/hero.cpp
-         25/51 clean, 26 remaining
-           - core_hero.cpp_staticInit_FUN_004d2270 (11 lines) [undefined_data]
-           - core_hero.cpp_closestHeroToPoint_FUN_004d22c0 (35 lines) [raw_address_pointer_store, warning_overlapping_globals]
-           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004d2370 (25 lines) [warning_overlapping_globals]
-           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004d23f0 (25 lines) [warning_overlapping_globals]
-           - core_hero.cpp_CHero_ctor_FUN_004d24b0 (43 lines) [derived_field_index_pun, negative_offset, suspect_float]
-           - core_hero.cpp_CHero_dtor_FUN_004d2620 (32 lines) [negative_offset, pointer_cast, pointer_truncation, raw_address_pointer_store]
-           - core_hero.cpp_CHero_archive_FUN_004d27b0 (84 lines) [undefined_data]
-           - core_hero.cpp_CHero_isGrabbable_FUN_004d2a80 (6 lines) [unnamed_param]
-           - core_hero.cpp_CHero_getGrabbed_FUN_004d2af0 (57 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
-           - core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20 (30 lines) [undefined_data]
-           - core_hero.cpp_CHero_tryInteract_FUN_004d2cf0 (87 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy, warning_overlapping_globals]
-           - core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0 (68 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
-           - core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040 (65 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
-           - core_hero.cpp_CHero_tryPullLever_FUN_004d32d0 (59 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
-           - core_hero.cpp_CHero_tryPushNearbyBox_FUN_004d3500 (150 lines) [derived_field_index_pun, phantom_float_to_int, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unrolled_memcpy, warning_overlapping_globals]
-           - core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004d38b0 (89 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
-           - core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20 (57 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_overlapping_globals]
-           - core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 (90 lines) [bit_int_float_compare, pointer_cast, warning_overlapping_globals]
-           - core_hero.cpp_CHero_canLookAt_FUN_004d4090 (26 lines) [warning_overlapping_globals]
-           - core_hero.cpp_CHero_closestEnemy_FUN_004d4230 (59 lines) [pointer_cast, stack_alignment_array, warning_overlapping_globals]
-           - core_hero.cpp_CHero_toggleGoggles_FUN_004d48d0 (9 lines) [unresolved_funcptr]
-           - core_hero.cpp_CHero_findHeroAction_FUN_004d4900 (53 lines) [concat_reconstruction, extra_output, undefined_type]
-           - core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d4ae0 (25 lines) [undefined_data, unrolled_strcpy]
-           - core_hero.cpp_CHeroPlaceholder_getBoundingBox_FUN_004d4ba0 (22 lines) [shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
-           - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d4be0 (31 lines) [unrolled_memcpy, warning_overlapping_globals]
-           - core_hero.cpp_initializeColorMasks_FUN_004d4ce0 (40 lines) [undefined_data, warning_overlapping_globals]
    48.5% | support/codec.cpp
          33/68 clean, 35 remaining
            - support_codec.cpp_readBitsFromStream_FUN_004400f0 (49 lines) [unknown_field, unresolved_funcptr]
@@ -3692,4 +3691,4 @@ FILES BELOW 50%
            - wincore_winvideo.cpp_toggleMoviePlayback_FUN_00582e40 (24 lines) [warning_overlapping_globals]
            - wincore_winvideo.cpp_playMovie_FUN_00582eb0 (113 lines) [undefined_data, warning_overlapping_globals]
 
-Total: 116 files
+Total: 115 files

@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      13549
-  Named globals:             7179
+Total globals analyzed:      13548
+  Named globals:             7178
   DAT_ globals:              6370
-Gaps found:                  3819
-  With exact size bounds:    3800
+Gaps found:                  3818
+  With exact size bounds:    3799
   With estimated bounds:     19
-Total gap bytes:             38,743,930
-  Exact gap bytes:           38,737,528
+Total gap bytes:             38,743,934
+  Exact gap bytes:           38,737,532
 Overlaps (size <= 0):        6326
 
 --------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ GAP SIZE DISTRIBUTION
   65-256 bytes (medium data)                    233
   257-1024 bytes (large structs/arrays)         258
   1-4 KB                                        126
-  4-64 KB                                       158
+  4-64 KB                                       157
   64+ KB                                        41
 
 --------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: DAT_020b0258                             undefined4           at 0x020b0258
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (3800) - size bounds are known precisely
+ALL EXACT GAPS (3799) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b667a8  between DAT_00b667a4                   and DAT_0126e7a8
    6,291,656 bytes  at 0x01511ce8  between DAT_01511ce4                   and DAT_01b11db0
@@ -299,6 +299,7 @@ ALL EXACT GAPS (3800) - size bounds are known precisely
       12,376 bytes  at 0x0059c3b8  between switchdataD_0059c3b4           and switchdataD_0059f410
       12,200 bytes  at 0x01c225e8  between DAT_01c225e4                   and DAT_01c25590
       11,824 bytes  at 0x01d1edd8  between DAT_01d1edd4                   and DAT_01d21c08
+      11,576 bytes  at 0x004cd63c  between switchdataD_004cd638           and switchdataD_004d0374
       11,548 bytes  at 0x00465208  between switchdataD_00465204           and switchdataD_00467f24
       11,240 bytes  at 0x005398b8  between PTR_LAB_005398b4               and switchdataD_0053c4a0
       10,864 bytes  at 0x020ccff4  between DAT_020ccff0                   and g_DeformableModelPool[0].model
@@ -342,7 +343,6 @@ ALL EXACT GAPS (3800) - size bounds are known precisely
        6,796 bytes  at 0x005039f8  between switchdataD_005039f4           and switchdataD_00505484
        6,600 bytes  at 0x01d63a34  between DAT_01d63a30                   and DAT_01d653fc
        6,536 bytes  at 0x005c867c  between PTR_WriteFile_005c8678         and s_vga_act_005ca004
-       6,496 bytes  at 0x004cea14  between caseD_1                        and switchdataD_004d0374
        6,388 bytes  at 0x01c35e7c  between DAT_01c35e78                   and DAT_01c37770
        6,196 bytes  at 0x02662df4  between DAT_02662df0                   and DAT_02664628
        5,932 bytes  at 0x006196b4  between DAT_006196b0                   and DAT_0061ade0
@@ -353,7 +353,6 @@ ALL EXACT GAPS (3800) - size bounds are known precisely
        5,432 bytes  at 0x00611348  between DAT_00611340                   and DAT_00612880
        5,356 bytes  at 0x004d4c3c  between switchdataD_004d4c38           and switchdataD_004d6128
        5,228 bytes  at 0x01c95170  between CLeaf_ARRAY_01c950dc[1].base.v and DAT_01c965dc
-       5,076 bytes  at 0x004cd63c  between switchdataD_004cd638           and caseD_1
        5,054 bytes  at 0x01e5ec74  between DAT_01e5ec70                   and DAT_01e60032
        5,046 bytes  at 0x01e60036  between DAT_01e60032                   and DAT_01e613ec
        4,976 bytes  at 0x01c93d68  between g_RockPool[1].base.vtable      and DAT_01c950d8

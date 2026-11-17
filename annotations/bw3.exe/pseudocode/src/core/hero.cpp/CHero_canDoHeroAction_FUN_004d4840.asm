@@ -59,9 +59,6 @@ section .text
         ;   XREF to: 004d2ab0 (CONDITIONAL_JUMP)  ; caseD_3
     LEA EAX,[EAX]                       ; 004d48a8
     MOV EDX,EDX                         ; 004d48ae
-    XOR EAX,EAX                         ; 004d48b0
-        ;   Label: caseD_5
-    RET                                 ; 004d48b2
     PUSH EAX                            ; 004d48b3
         ;   Label: caseD_a
     CALL core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432060 ; 004d48b4

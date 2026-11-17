@@ -4,7 +4,7 @@
   {"program": "bw1.exe", "class": "CDemonActor", "slot": 1, "name": "markResourcesInUse", "ret": "void", "params": [],
    "basis": "CCharacter's override marks its model (+0x24a8) and skeleton in use in their pools; the mission's actor setup clears the marks, calls this slot on every actor, purges what is unmarked, then calls setup."},
   {"program": "bw1.exe", "class": "CDemonActor", "slot": 2, "name": "releaseResources", "ret": "void", "params": [],
-   "basis": "Best guess, no caller in any build. The slot after markResourcesInUse; CCharacter's override (detachMotionList) saves the current motion's name and drops its motion-list pointer into the model pool, which setMotionList later re-finds by that name."},
+   "basis": "Best guess, no caller in any build. The slot after markResourcesInUse; CCharacter's override saves the current motion's name and drops its motion-list pointer into the model pool, which setMotionList later re-finds by that name."},
   {"program": "bw1.exe", "class": "CHero", "slot": 84, "name": "toggleGoggles", "ret": "void", "params": [],
    "basis": "Called when CGame+0x54 (nocedit key_infrared) is pressed; CDoc's override flips its CGoggles item."},
   {"program": "bw1.exe", "class": "CHero", "slot": 85, "name": "canReachPickup", "ret": "int",

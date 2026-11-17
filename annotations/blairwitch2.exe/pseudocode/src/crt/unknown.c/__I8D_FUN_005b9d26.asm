@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c___I8D_FUN_005b9d26(void)
+; longlong crt_unknown_c___I8D_FUN_005b9d26(longlong dividend,longlong divisor)
 ;
 ;
 ; XREF[1]:
